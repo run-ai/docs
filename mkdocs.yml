@@ -18,7 +18,7 @@ nav:
         - 'Installing Run:AI on an on-premise Kubernetes Cluster': 'admin/cluster-setup/install.md'
         - 'Run:AI GPU Cluster Prerequisites': 'admin/cluster-setup/prereq.md'
     - Researcher:
-      - "Command Line Interface" :
-        - 'Introduction': 'license.md'
-        - 'runai bash': 'release-notes.md'
+      - "Command Line Interface - API Reference":
+        - "runai bash" : 'researcher/api-reference/bash.md'
+
 
