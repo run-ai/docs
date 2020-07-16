@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Administrator - Run:AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Administrator";
+    var mkdocs_page_input_path = "admin/admin.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Run:AI</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Administrator</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Cluster Setup</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../install/">Installing Run:AI on an on-premise Kubernetes Cluster</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../prereq/">Run:AI GPU Cluster Prerequisites</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Researcher</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Command Line Interface</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="../../license.md">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../release-notes.md">runai bash</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Run:AI</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Administrator</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="administrator">Administrator</h1>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs -h</code> - Print help message and exit.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<h1 id="introduction">Introduction</h1>
+<p>The Admin User Interface allows:</p>
+<ul>
+<li>The setup of Kubernetes GPU Clusters.</li>
+<li>Create, Update and Delete of users</li>
+<li>Create, Update and Delete Projects.</li>
+<li>Review short term and long term dashboards</li>
+<li>Review Node and Job-status</li>
+</ul>
+<p>This document is about the Creation, Update, and Deletion of Users.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>With Run:AI you need to differentiate between the users of the Admin UI and Researcher users which submit workloads on the GPU Kubernetes cluster. This document is about the former.</li>
+<li>It is possible to connect the Admin UI users module to the organization's LDAP directory. For further information please contact Run:AI customer support.</li>
+</ul>
+<h1 id="working-with-users">Working with Users</h1>
+<h2 id="create-user">Create User</h2>
+<p>Note: to be able to manipulate users, you must have <em>Administrator</em> access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)</p>
+<ul>
+<li>Log in to <a href="https://app.run.ai">https://app.run.ai</a></li>
+<li>On the top left, open the menu and select "Users"</li>
+<li>On the top right, select "Add New Users".</li>
+</ul>
+<p><img alt="mceclip2.png" src="/hc/article_attachments/360008635560/mceclip2.png" /></p>
+<ul>
+<li>Choose a user name and email. Leave password as blank, it will be set by the user</li>
+<li>Select Roles. Note -- more than one role can be selected</li>
+<li>Select a Cluster. This determines the Clusters accessible to this user</li>
+<li>Press "Save"</li>
+</ul>
+<p>The user will receive a join mail and will be able to set a password. </p>
+<h2 id="update-a-user">Update a User</h2>
+<ul>
+<li>Select an existing User. </li>
+<li>Right-click and press "Edit"</li>
+<li>Update the values and press "Save"</li>
+</ul>
+<h2 id="delete-an-existing-user">Delete an existing User</h2>
+<ul>
+<li>Select an existing User. </li>
+<li>Right-click and press "Delete"</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

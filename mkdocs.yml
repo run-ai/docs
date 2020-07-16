@@ -1,0 +1,24 @@
+site_name: Run:AI
+theme:
+  name: material
+  features:
+    - tabs
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - codehilite
+
+nav:
+    - Home: 'index.md'
+    - Administrator:
+      - "Cluster Setup":
+        - 'Installing Run:AI on an on-premise Kubernetes Cluster': 'admin/cluster-setup/install.md'
+        - 'Run:AI GPU Cluster Prerequisites': 'admin/cluster-setup/prereq.md'
+    - Researcher:
+      - "Command Line Interface" :
+        - 'Introduction': 'license.md'
+        - 'runai bash': 'release-notes.md'
+
