@@ -19,9 +19,9 @@ The Run:AI login page is app.run.ai and is the point of access to all Run:AI cus
 
 When the user is not yet authenticated, company.app.run.ai will automatically redirect to your generic company's authentication page. Post authentication, the user will be redirected back to company.app.run.ai and can start working.
 
-### <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Installation and Configuration</span>
+### Installation and Configuration
 
-### <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">Your company will need to create an OpenID Connect provider. We recommend </span><a href="https://github.com/dexidp/dex" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;" target="_self">dex.</a>
+Your company will need to create an OpenID Connect provider. We recommend <a href="https://github.com/dexidp/dex" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;" target="_self">dex.</a>
 
 After installing dex, you will want to create a _client_ and perform the following configuration:
 

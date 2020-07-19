@@ -138,7 +138,7 @@ __Usage of containers and images:__ The individual researcher's work is based on
 
 ## Fractional GPU Requirements
 
-The Run:AI platform provides a unique technology that allows the sharing of a single GPU between multiple containers. Each container receives an isolated subset of the GPU memory. For more details see [https://support.run.ai/hc/en-us/articles/360014989740-Walkthrough-Using-GPU-Fractions.](https://support.run.ai/hc/en-us/articles/360014989740-Walkthrough-Using-GPU-Fractions)
+The Run:AI platform provides a unique technology that allows the sharing of a single GPU between multiple containers. Each container receives an isolated subset of the GPU memory. For more details see [Walkthrough: Using GPU Fractions](../../Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions).
 
 This technology has more stringent software requirements than the rest of the Run:AI system. Specifically, virtualization has been tested on:
 
