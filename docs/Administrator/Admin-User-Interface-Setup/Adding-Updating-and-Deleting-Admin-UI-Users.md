@@ -19,30 +19,30 @@ __Notes:__
 
 ### Create User
 
-Note: to be able to manipulate users, you must have _Administrator_&nbsp;access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
+Note: to be able to manipulate users, you must have _Administrator_ access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
 
-*   Log in to&nbsp;<https://app.run.ai>
+*   Log in to <https://app.run.ai>
 *   On the top left, open the menu and select "Users"
 *   On the top right, select "Add New Users".
 
-<img alt="mceclip2.png" height="560" src="https://support.run.ai/hc/article_attachments/360008635560/mceclip2.png" width="459"/>
+![mceclip2.png](img/mceclip2.png)
 
 *   Choose a user name and email. Leave password as blank, it will be set by the user
 *   Select Roles. Note -- more than one role can be selected
 *   Select a Cluster. This determines the Clusters accessible to this user
 *   Press "Save"
 
-The user will receive a join mail and will be able to set a password.&nbsp;
+The user will receive a join mail and will be able to set a password. 
 
 ### Update a User
 
-*   Select an existing User.&nbsp;
+*   Select an existing User. 
 *   Right-click and press "Edit"
 *   Update the values and press "Save"
 
 ### Delete an existing User
 
-*   Select an existing User.&nbsp;
+*   Select an existing User. 
 *   Right-click and press "Delete"
 
-&nbsp;
+ 
