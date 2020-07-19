@@ -1,16 +1,16 @@
-# Description
+## Description
 
 Find and install the latest version of the runai command line utility. On mac and linux the command must be run with sudo:
 
 <pre>sudo runai update</pre>
 
-# Synopsis
+## Synopsis
 
 <pre>runai update<br/>[--loglevel &lt;value&gt;]<br/>[--help | -h]</pre>
 
 &nbsp;
 
-# Options
+## Options
 
 --loglevel (string)
 
@@ -20,8 +20,8 @@ Find and install the latest version of the runai command line utility. On mac an
 
 >  Show help text
 
-# Output
+## Output
 
 Update of the runai command line interface
 
-# See Also
+## See Also

@@ -1,14 +1,14 @@
-# Description
+## Description
 
 Display details of a training job
 
-# Synopsis
+## Synopsis
 
 <pre>runai get &lt;job-name&gt;<br/>[--output &lt;value&gt; | -o &lt;value&gt;]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
 &nbsp;
 
-# Options
+## Options
 
 &lt;job-name&gt; the name of the job to run the command in&nbsp;
 
@@ -16,7 +16,7 @@ Display details of a training job
 
 >  Output format. One of: json|yaml|wide
 
-## Global Flags
+### Global Flags
 
 --backward-compatibility | -b
 
@@ -34,8 +34,8 @@ Display details of a training job
 
 >  Show help text
 
-# Output
+## Output
 
 The command will show the job properties and status as well as lifecycle events and list of pods
 
-# See Also
+## See Also

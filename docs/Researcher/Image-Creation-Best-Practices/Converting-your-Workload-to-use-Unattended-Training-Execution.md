@@ -1,13 +1,13 @@
-# Motivation
+## Motivation
 
 Run:AI allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
 To achieve this flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.&nbsp;
 
 Unattended workloads are good for long-duration runs, or sets of smaller hyper-parameter-tuning runs.&nbsp;
 
-# Best&nbsp;Practices
+## Best&nbsp;Practices
 
-## Docker Image
+### Docker Image
 
 A docker container is based on a docker image.&nbsp; Some researchers use generic images such as ones provided by Nvidia (e.g.&nbsp;<https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow>). Others, use generic images as the <span class="wysiwyg-underline">base</span> image to a more customized image using _Dockerfiles_.&nbsp;_&nbsp;_&nbsp;[https://docs.docker.com/develop/develop-images/dockerfile\_best-practices/.](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
@@ -18,7 +18,7 @@ Realizing that researchers are not always proficient with building docker files,
 
 As such we recommend the following best practice:
 
-## Create a Startup Script
+### Create a Startup Script
 
 All the commands you run inside the interactive job after it has been allocated should be gathered into a single script. The script will be provided with the command-line at the start of the unattended execution (see the section _running the job_ below). This script should be kept next to your code, on a shared network drive (e.g. _/nfs/john_).
 
@@ -28,7 +28,7 @@ An example of a very common startup script __start.sh__&nbsp;will be:
 
 The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the researcher to add/remove libraries without needing changes to the image itself.&nbsp;
 
-## Support Variance Between Different Runs
+### Support Variance Between Different Runs
 
 Your training script must be flexible enough to support variance in execution without changing the code. For example, you will want to change the number of epochs to run, apply a different set of hyperparameters, etc. There are two ways to handle this in your script. You can use <span class="wysiwyg-underline">one</span> or <span class="wysiwyg-underline">both</span> methods:&nbsp;
 
@@ -42,7 +42,7 @@ In which case, change your start.sh script to:&nbsp;
 
 2.&nbsp;Your script can read from environment variables during script execution. In case you use environment variables, they will be passed to the training script automatically. No special action is required in this case.
 
-## Checkpoints
+### Checkpoints
 
 Run:AI can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:AI will give you back the resources and restore your workload. Thus, it is a good practice&nbsp;<span>to save your weights at various checkpoints and start a workload from the latest checkpoint&nbsp;</span>&nbsp;(typically between epochs).
 
@@ -52,7 +52,7 @@ It is important to&nbsp;__save the checkpoints to network storage__ and not the 
 
 For more information on best practices for saving checkpoints, see:&nbsp;<https://support.run.ai/hc/en-us/articles/360014636380-Saving-Deep-Learning-Checkpoints>&nbsp;
 
-# Running the Job
+## Running the Job
 
 Using _runai submit_, drop the flag _--interactive_. For submitting a job using the script created above, please use&nbsp;___--command___, and pass arguments and/or environment variables using the runai submit flags&nbsp;___--args ___and___ --environment___.&nbsp;
 
@@ -66,15 +66,15 @@ Example with Command-line arguments:
 
 Please refer to&nbsp;<https://support.run.ai/hc/en-us/articles/360011436120-runai-submit>&nbsp;for a list of all arguments accepted by the Run:AI CLI.
 
-## Use CLI Templates
+### Use CLI Templates
 
 Different run configurations may vary significantly and can be tedious to be written each time on the command line. To make life easier, our CLI offers a way to template those configurations and use preconfigured configuration when submitting a job. Please refer to&nbsp;<https://support.run.ai/hc/en-us/articles/360011627459-Configure-Command-Line-Interface-Templates>&nbsp;
 
-# Attached Files
+## Attached Files
 
 The 3 relevant files are attached to this document for reference
 
-# See Also
+## See Also
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">See the unattended training walkthrough:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads-></span>
 

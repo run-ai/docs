@@ -1,8 +1,8 @@
-# Description
+## Description
 
 Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
 
-# Synopsis
+## Synopsis
 
 <pre>runai submit-mpi &lt;job-name&gt; <br/>[--always-pull-image]<br/>[--args &lt;stringArray&gt;]<br/>[--backoffLimit &lt;int&gt;]<br/>[--command &lt;stringArray&gt;]<br/>[--cpu &lt;double&gt;]<br/>[--cpu-limit &lt;double&gt;]<br/>[--environment &lt;stringArray&gt; | -e &lt;stringArray&gt;]<br/>[--gpu &lt;int&gt; | -g &lt;int&gt;]<br/>[--host-ipc]<br/>[--host-network]<br/>[--image &lt;string&gt; | -i &lt;string&gt;]<br/>[--interactive]<br/>[--large-shm]<br/>[--local-image]<br/>[--memory &lt;string&gt;]<br/>[--memory-limit &lt;string&gt;]<br/>[--node-type &lt;string&gt;]<br/>[--processes &lt;int&gt;]<br/>[--<span>run-as-user]</span><br/>[--volume &lt;stringArray&gt; | -v stringArray]<br/>[<span>--working-dir]</span><br/><br/>[--loglevel &lt;string&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
@@ -10,7 +10,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 *   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.&nbsp;
 
-# Options
+## Options
 
 &lt;job-name&gt; the name of the job to run the command in&nbsp;
 
@@ -120,7 +120,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 >  Starts the container with the specified directory&nbsp;
 
-## Global Flags
+### Global Flags
 
 --loglevel (string)
 
@@ -134,17 +134,17 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 >  Show help text
 
-# Examples
+## Examples
 
 start an unattended mpi training job of name dist1, based on project _team-a_ using a _quickstart-distributed_ image:
 
 <pre>runai submit-mpi dist1 --num-processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed </pre>
 
-# Output
+## Output
 
 The command will <span class="wysiwyg-color-black">attempt to submit an mpi job. You can follow up on the job by running _runai list_ or _runai get &lt;job-name&gt;&nbsp;_</span>
 
-# See Also
+## See Also
 
 *   See Walkthrough documents here:&nbsp;<span class="wysiwyg-color-red">XXX</span>
 

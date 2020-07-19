@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Run:AI uses its a mechanism for authentication and authorization which is based on a third-party (<a href="https://auth0.com/" target="_self">auth0</a>). This is good as a baseline, but for enterprises, such a scheme is not scalable. For an enterprise, keeping separate users and roles mechanisms requires manual work, is error-prone, and increases the attack vector.
 
@@ -8,7 +8,7 @@ Run:AI uses the&nbsp;_OpenID Connect_&nbsp;protocol to allow organizations to in
 
 OpenID provides simple wrappers for LDAP and SAML. LDAP and SAML are similar protocols. Most notably, LDAP which is the underlying protocol for Microsoft Active Directory as well as other directories.
 
-# OpenID Connect Configuration
+## OpenID Connect Configuration
 
 With Run:AI OpenID Connect you synchronize:
 
@@ -19,9 +19,9 @@ The Run:AI login page is app.run.ai and is the point of access to all Run:AI cus
 
 When the user is not yet authenticated, company.app.run.ai will automatically redirect to your generic company's authentication page.&nbsp;Post authentication, the user will be redirected back to&nbsp;company.app.run.ai and can start working.
 
-## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Installation and Configuration</span>
+### <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Installation and Configuration</span>
 
-## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">Your company will need to&nbsp;create an OpenID Connect provider.&nbsp;We recommend </span><a href="https://github.com/dexidp/dex" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;" target="_self">dex.</a>
+### <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">Your company will need to&nbsp;create an OpenID Connect provider.&nbsp;We recommend </span><a href="https://github.com/dexidp/dex" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;" target="_self">dex.</a>
 
 After installing dex, you will want to create a _client_&nbsp;and perform the following configuration:
 
@@ -31,7 +31,7 @@ After installing dex, you will want to create a _client_&nbsp;and perform the fo
 *   Locate the authentication _redirection URL_. The redirection URL should to be sent to Run:AI
 *   Create a _public key_ in order for Run:AI to be able validate oauth tokens. The public key should be sent to Run:AI
 
-## Users and Roles
+### Users and Roles
 
 Now, go to the authorization page on Run:AI app and configure the required authorization using either specific users or groups in your organization.
 

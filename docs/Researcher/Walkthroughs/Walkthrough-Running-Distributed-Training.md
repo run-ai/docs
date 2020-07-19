@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a _worker node_.&nbsp;Worker nodes work in parallel to speed up model training.&nbsp; Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU&nbsp;to your workload which runs on a __single__ __container__.
 
@@ -6,16 +6,16 @@ Getting Distributed Training to work is more complex than multi-GPU training as 
 
 Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a walkthrough of such a scenario.
 
-# Prerequisites&nbsp;
+## Prerequisites&nbsp;
 
 To complete this walkthrough you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
 *   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
 
-# Step by Step Walkthrough
+## Step by Step Walkthrough
 
-## Setup
+### Setup
 
 *   Open the Run:AI user interface at<span>&nbsp;</span><https://app.run.ai>
 *   Login
@@ -23,7 +23,7 @@ To complete this walkthrough you must have:
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
 
-## Run Training Workload
+### Run Training Workload
 
 *   At the command line run:
 
@@ -62,7 +62,7 @@ Finally, you can delete the distributed training workload by running:
 
 <pre>runai delete dist</pre>
 
-## Run an Interactive Distributed training Workload
+### Run an Interactive Distributed training Workload
 
 It is also possible to run a distributed training job as "interactive". This is useful if you want to test your distributed training job before committing on a long, unattended training session. To run such a session use:&nbsp;
 

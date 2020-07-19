@@ -1,10 +1,10 @@
-# Introduction
+## Introduction
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">This walkthrough is an extension of&nbsp;https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads-</span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">When starting a container with the Run:AI Command Line Interface (CLI), it is possible to expose internal ports to the container user.&nbsp;</span>
 
-# Exposing a Container Port
+## Exposing a Container Port
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">There are a number of alternative ways to expose ports in Kubernetes:</span>
 
@@ -15,9 +15,9 @@
 
 Contact your administrator to see which methods are available in your cluster
 
-# Port Forwarding, Step by Step Walkthrough
+## Port Forwarding, Step by Step Walkthrough
 
-## Setup
+### Setup
 
 *   Open the Run:AI user interface at <https://app.run.ai>
 *   Login
@@ -25,7 +25,7 @@ Contact your administrator to see which methods are available in your cluster
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
 
-## Run Workload
+### Run Workload
 
 *   At the command line run:
 
@@ -37,7 +37,7 @@ Contact your administrator to see which methods are available in your cluster
 *   The job is assigned to team-a with an allocation of a single GPU.
 *   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the_ runai submit_ command is not stopped
 
-## Open the Jupyter notebook
+### Open the Jupyter notebook
 
 Open the following in the browser
 
@@ -45,15 +45,15 @@ Open the following in the browser
 
 You should see a Jupyter notebook.
 
-# Ingress, Step by Step Walkthrough
+## Ingress, Step by Step Walkthrough
 
 __Note:&nbsp;__Ingress must be set up by your administrator prior to usage. For more information see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011813620-Exposing-Ports-from-Researcher-Containers>
 
-## Setup
+### Setup
 
 *   Perform the setup steps for port forwarding above.&nbsp;
 
-## Run Workload
+### Run Workload
 
 *   At the command line run:
 

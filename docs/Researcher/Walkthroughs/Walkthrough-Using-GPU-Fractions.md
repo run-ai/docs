@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Run:AI provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU, enabling companies to run more workloads such as computer vision, voice recognition and natural language processing on the same hardware, lowering costs.
 
@@ -6,16 +6,16 @@ Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, w
 
 A typical use-case could see 2-8 jobs running on the same GPU, meaning you could do eight times the work with the same hardware.&nbsp;
 
-# Prerequisites&nbsp;
+## Prerequisites&nbsp;
 
 To complete this walkthrough you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
 *   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
 
-# Step by Step Walkthrough
+## Step by Step Walkthrough
 
-## Setup
+### Setup
 
 *   Open the Run:AI user interface at<span>&nbsp;</span><https://app.run.ai>
 *   Login
@@ -23,7 +23,7 @@ To complete this walkthrough you must have:
 *   Add a project named "team-a"
 *   Allocate 1 GPU to the project
 
-## Run Workload
+### Run Workload
 
 *   At the command line run:
 

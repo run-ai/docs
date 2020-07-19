@@ -2,14 +2,14 @@
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">There are other ways for data scientists to launch Workloads such as the Run:AI CLI or KubeFlow (<https://www.kubeflow.org/>).&nbsp; The advantage of Rancher is the usage of a user interface. The disadvantage is that it exposes the data scientist to Kubernetes/Docker terminology that would otherwise remain hidden</span>
 
-# <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Types of Workloads&nbsp;</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Types of Workloads&nbsp;</span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">We differentiate between two types of Workloads:</span>
 
 *   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">__Train__ workloads. Training is characterized by a deep learning run that has a start and a finish. A Train session can take from a few minutes to a couple of days. It can be interrupted in the midst and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU.</span>
 *   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">__Build__ workloads. Build workloads are interactive. They are used by data scientists to code a neural network and test it against subsets of the data. Build workloads typically do not maximize usage of the GPU. Coding is done by connecting a Jupyter notebook or PyCharm via TCP ports</span>
 
-# <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Terminology</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Terminology</span>
 
 <ul><li>
 <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Kubernetes <strong>Job</strong> - equivalent to the above definition of a Train workload. A Job has a </font>distinctive<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&nbsp;"end" at which time the job is either "Completed" or "Failed"</font>
@@ -24,7 +24,7 @@
 </li></ul>
 &nbsp;
 
-# Using Rancher to Launch Workloads&nbsp;
+## Using Rancher to Launch Workloads&nbsp;
 
 *   
     

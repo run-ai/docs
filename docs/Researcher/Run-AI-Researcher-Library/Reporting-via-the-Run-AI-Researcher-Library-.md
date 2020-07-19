@@ -2,9 +2,9 @@ The Run:AI Researcher Library is a python library you can add to your deep learn
 
 With the reporter module, you can externalize information such as progress, accuracy, and loss over time/epoch and more. In addition, you can externalize custom metrics of your choosing.
 
-# Sending Metrics
+## Sending Metrics
 
-## Python Deep-Learning Code
+### Python Deep-Learning Code
 
 In your command line run:
 
@@ -30,7 +30,7 @@ For example,&nbsp;
 
 <pre>reportParameter("state", "Training Model")</pre>
 
-## Recommended Metrics to send
+### Recommended Metrics to send
 
 For the sake of uniformity with the Keras implementation (see below), we recommend sending the following metrics:
 
@@ -104,7 +104,7 @@ For the sake of uniformity with the Keras implementation (see below), we recomme
 
 __epoch__ and __overall\_epochs__ are especially important since the job progress bar is computed by dividing these parameters.&nbsp;&nbsp;
 
-# Automatic Sending of Metrics for Keras-Based Scripts
+## Automatic Sending of Metrics for Keras-Based Scripts
 
 For Keras based deep learning runs, there is a python code that automates the task of sending metrics. Install the library as above and reference runai.reporter from your code. Then write:
 
@@ -112,7 +112,7 @@ For Keras based deep learning runs, there is a python code that automates the ta
 
 The above metrics will automatically be sent going forward.
 
-# Adding the Metrics to the User interface
+## Adding the Metrics to the User interface
 
 The metrics show up in the Job list of the user interface. To add a metric to the UI
 

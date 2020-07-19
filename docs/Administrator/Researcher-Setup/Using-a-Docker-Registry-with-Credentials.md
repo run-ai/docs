@@ -1,8 +1,8 @@
-# <span>Why?</span>
+## <span>Why?</span>
 
 <span>Some Docker images are stored in private docker registries. In order for the researcher to access the images, we will need to provide credentials for the registry.</span>
 
-# <span>How?</span>
+## <span>How?</span>
 
 <span>For each private registry you must perform the following&nbsp;</span><span>(The example below uses Docker Hub):</span>
 

@@ -1,4 +1,4 @@
-# What are Templates?
+## What are Templates?
 
 Templates are a way to reduce the number of flags required when using the Command Line Interface to start workloads. Using Templates the researcher can:
 
@@ -8,7 +8,7 @@ Templates are a way to reduce the number of flags required when using the Comman
 
 The purpose of this document is to provide the administrator with guidelines on how to create templates
 
-# The Template Implementation
+## The Template Implementation
 
 CLI Templates are implemented as_ Kubernetes <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_self">ConfigMaps</a>.&nbsp;_ConfigMaps in Kubernetes are a standard way to save cluster-wide settings.
 
@@ -32,7 +32,7 @@ _Use the template when submitting a workload_
 
 For further details, see the Run:AI command line reference <a href="https://support.run.ai/hc/en-us/articles/360011548039-runai-template" target="_self">template</a>&nbsp;&nbsp;and <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">submit</a> functions
 
-# Template Syntax
+## Template Syntax
 
 A template looks as follows:
 
@@ -50,7 +50,7 @@ To store this template run:
 
 For a complete list of template values, see the end of this document
 
-# The Default Template
+## The Default Template
 
 The administrator can also set a default template that is always used on _runai submit_&nbsp;whenever a template is __not__ specified. To create a default template use the annotation&nbsp;_<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">runai/default</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">: </span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">"true".&nbsp;</span>_<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Example:</span>
 
@@ -59,7 +59,7 @@ The administrator can also set a default template that is always used on _runai 
 <p>Sets a default template which mounts a volume</p>
 </div>
 
-# Syntax of all Values
+## Syntax of all Values
 
 The following template sets all runai submit flags.
 

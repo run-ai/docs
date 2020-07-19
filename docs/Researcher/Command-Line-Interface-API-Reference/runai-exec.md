@@ -1,16 +1,16 @@
-# Description
+## Description
 
 Execute a command inside a running job<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
 
 Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;[https://support.run.ai/hc/en-us/articles/360011544859-runai-exec&nbsp;](https://support.run.ai/hc/en-us/articles/360011544099-runai-bash)_
 
-# Synopsis
+## Synopsis
 
 <pre>runai exec &lt;job-name&gt; &lt;command&gt;<br/>[--stdin | -i]<br/>[--tty | -t]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
 &nbsp;
 
-# Options
+## Options
 
 &lt;job-name&gt; the name of the job to run the command in&nbsp;
 
@@ -24,7 +24,7 @@ Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;
 
 >  Allocate a pseudo-TTY
 
-## Global Flags
+### Global Flags
 
 --backward-compatibility | -b
 
@@ -42,10 +42,10 @@ Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;
 
 >  Show help text
 
-# Output
+## Output
 
 The command will run in the context of the container&nbsp;
 
-# See Also
+## See Also
 
 &nbsp;

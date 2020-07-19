@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Show list of jobs
 
@@ -6,13 +6,13 @@ Show list of jobs
 
 <pre>runai list &lt;job-name&gt;<br/>[--all-projects | -A]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
-# Options
+## Options
 
 --all-projects | -A
 
 >  Show jobs from all projects
 
-## Global Flags
+### Global Flags
 
 --backward-compatibility | -b
 
@@ -30,10 +30,10 @@ Show list of jobs
 
 >  Show help text
 
-# Output
+## Output
 
 A list of jobs will show. To show details for a specific job see <a href="https://support.run.ai/hc/en-us/articles/360011545919-runai-get" target="_self">runai get</a>&nbsp;
 
-# See Also
+## See Also
 
 &nbsp;

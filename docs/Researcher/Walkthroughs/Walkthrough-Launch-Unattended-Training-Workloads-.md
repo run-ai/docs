@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Deep learning workloads can be divided into two generic types:
 
@@ -12,16 +12,16 @@ With this Walkthrough you will learn how to:
 *   View training logs&nbsp;
 *   Stop the training
 
-# Prerequisites&nbsp;
+## Prerequisites&nbsp;
 
 To complete this walkthrough you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
 *   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
 
-# Step by Step Walkthrough
+## Step by Step Walkthrough
 
-## Setup
+### Setup
 
 *   Open the Run:AI user interface at <https://app.run.ai>
 *   Login
@@ -29,7 +29,7 @@ To complete this walkthrough you must have:
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
 
-## Run Workload
+### Run Workload
 
 *   At the command line run:
 
@@ -58,7 +58,7 @@ To get additional status on your job run:
 
 <pre>runai get hyper1</pre>
 
-## View Logs
+### View Logs
 
 Run the following:
 
@@ -68,7 +68,7 @@ You should see a log of a running deep learning session:
 
 ![mceclip1.png](https://support.run.ai/hc/article_attachments/360006987919/mceclip1.png)
 
-## View status on the Run:AI User Interface
+### View status on the Run:AI User Interface
 
 *   Go to <https://app.run.ai>
 *   Under Dashboards | Overview you should see:
@@ -92,7 +92,7 @@ Under Nodes you can see node utilization:
 
 ![mceclip2.png](https://support.run.ai/hc/article_attachments/360007522519/mceclip2.png)
 
-## Stop Workload
+### Stop Workload
 
 Run the following:
 
@@ -100,7 +100,7 @@ Run the following:
 
 This would stop the training workload. You can verify this by running _runai list_ again.
 
-# Next Steps
+## Next Steps
 
 *   Follow the Walkthrough: Launch Interactive Workloads&nbsp;<https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads->&nbsp;
 *   Use your own containers to run an unattended training workload

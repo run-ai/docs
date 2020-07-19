@@ -1,4 +1,4 @@
-# <span>Why?</span>
+## <span>Why?</span>
 
 <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">In some business scenarios, you may want to direct the Run:AI scheduler to schedule a Workload to a specific node or a node group. For example, in some academic </font>
 
@@ -10,7 +10,7 @@ institutions
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
 
-# <span>Configuring Node Groups</span>
+## <span>Configuring Node Groups</span>
 
 <span>To configure a node group:</span>
 
@@ -27,7 +27,7 @@ institutions
 
 <span>A node can only be set with a single value</span>
 
-# <span>Using Node Groups via the CLI</span>
+## <span>Using Node Groups via the CLI</span>
 
 <span>Use the node type label with the --node-type flag, such as:</span>
 
@@ -35,7 +35,7 @@ institutions
 
 See the runai submit [documentation](https://support.run.ai/hc/en-us/articles/360011436120-runai-submit) for further information&nbsp;
 
-# Assigning Node Groups to a Project
+## Assigning Node Groups to a Project
 
 To assign specific node groups to a project see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011591300-Working-with-Projects>&nbsp;.&nbsp;
 

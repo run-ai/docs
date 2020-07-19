@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Get a bash session inside a running job
 
@@ -6,13 +6,13 @@ This command is a shortcut to runai exec (_runai exec -it &lt;job-name&gt; bash_
 
 &nbsp;
 
-# Synopsis
+## Synopsis
 
 <pre>runai bash &lt;job-name&gt;<br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
-# Options
+## Options
 
-## Global Flags
+### Global Flags
 
 --backward-compatibility | -b
 
@@ -30,13 +30,13 @@ This command is a shortcut to runai exec (_runai exec -it &lt;job-name&gt; bash_
 
 >  Show help text
 
-# Output
+## Output
 
 The command will access the container that should be currently running in the current cluster and attempt to create a command line shell based on bash.
 
 The command will return an error if the container does not exist or has not been in running state yet.
 
-# See also
+## See also
 
 Build Workloads: <https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads->
 

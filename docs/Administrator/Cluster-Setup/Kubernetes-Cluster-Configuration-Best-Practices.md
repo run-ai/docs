@@ -1,8 +1,8 @@
-# Node Memory Management
+## Node Memory Management
 
 It is possible for researchers to over-allocate memory to the extent that, if not managed properly,&nbsp; will destabilize the chosen node&nbsp; (machine).&nbsp;
 
-## Symptoms
+### Symptoms
 
 1. The node enters the "NotReady" state, and won't be "Ready" again until the resource issues have been fixed. This issue enhances on certain versions of kubelet (1.17.4 for example), that have a bug which causes kubelet to not recover properly when encountering certain errors, and must be restarted manually.
 
@@ -12,7 +12,7 @@ It is possible for researchers to over-allocate memory to the extent that, if no
 
 To make sure the node remains stable regardless of any pod resources issues, Kubernetes offers two features to control the way resources are managed on the nodes:
 
-## Resource Reservation
+### Resource Reservation
 
 Kubernetes offers two variables that can be configured as part of kubelet configuration file:
 
@@ -29,7 +29,7 @@ To configure, edit the file&nbsp;_/etc/kubernetes/kubelet-config.yaml_&nbsp;and 
 
 <pre>kubeReserved:<br/> cpu: 100m<br/> memory: 1G<br/>systemReserved:<br/> cpu: 100m<br/> memory: 1G</pre>
 
-## <span>Eviction</span>
+### <span>Eviction</span>
 
 <span>Another argument that can be passed to kubelet is evictionHard, which specifies an absolute amount of memory that should always be available on the node. Setting this argument guarantees that critical processes might have extra room to expand __above__ their reserved resources in case they need to and prevent starvation for those processes on the node.</span>
 

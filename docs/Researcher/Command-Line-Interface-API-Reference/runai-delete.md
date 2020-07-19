@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Delete a training job and its associated pods
 
@@ -8,11 +8,11 @@ Delete a training job and its associated pods
 *   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">You will no longer be able access logs</span>
 *   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Any data saved on the container and not stored on a shared repository will be lost</span>
 
-# Synopsis
+## Synopsis
 
 <pre>runai delete &lt;job-name&gt;<br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
-# Options
+## Options
 
 --backward-compatibility | -b
 
@@ -30,13 +30,13 @@ Delete a training job and its associated pods
 
 >  Show help text
 
-# Output
+## Output
 
 The job will be deleted and not available via the command _runai list_
 
 The job will __not__ be deleted from the Run:AI user interface Job list
 
-# See Also
+## See Also
 
 *   Build Workloads:&nbsp;&nbsp;[https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads- ](https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads-)
 *   Training Workloads: <https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;

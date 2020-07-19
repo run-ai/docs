@@ -1,4 +1,4 @@
-# <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Why?</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Why?</span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">In a gradual approach for incorporating Run:AI in a research operation, it is possible that some researchers are using the system with Run:AI and some without.</span>
 
@@ -6,7 +6,7 @@
 
 &nbsp;
 
-# <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">How?</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">How?</span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">To configure restrictions on certain nodes:</span>
 

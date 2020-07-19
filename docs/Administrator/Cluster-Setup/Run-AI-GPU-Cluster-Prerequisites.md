@@ -2,17 +2,17 @@ Run:AI helps organizations optimize the resources of a data science operation. B
 
 __Important note__: This document relates to the cloud version of Run:AI and discusses the prerequisites for the GPU Cluster.&nbsp;
 
-# Kubernetes Software
+## Kubernetes Software
 
 Run:AI requires Kubernetes 1.15 or above. Kubernetes 1.17 is recommended (as of June 2020).
 
 If you are using Red Hat OpenShift. The minimal version is&nbsp; OpenShift 4.3 which runs on Kubernetes 1.16&nbsp;
 
-# NVIDIA Driver
+## NVIDIA Driver
 
 Run:AI requires all GPU nodes to be installed with NVIDIA driver version&nbsp;<span>384.81 or later due to this&nbsp;<a href="https://github.com/NVIDIA/k8s-device-plugin#prerequisites" target="_self">dependency.</a></span>
 
-# Hardware Requirements
+## Hardware Requirements
 
 *   __Kubernetes: Dedicated CPU-only machine:__&nbsp;To save on expensive GPUs-based hardware, we recommend a dedicated, CPU-only machine, that is not running user workloads.&nbsp; Run:AI requires the following resources <span class="wysiwyg-underline">on top</span> of the Kubernetes hardware requirements
     
@@ -23,11 +23,11 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version&nbsp;<s
     
 *   __Shared data volume:__ Run:AI, via Kubernetes,&nbsp;abstracts away the machine on which a container is running.&nbsp;For containers to run anywhere, they need to be able to access data from any machine in a uniform way. Typically, this requires a NAS (Network-attached storage) which allows any node to connect to storage outside the box.
 
-# Network Requirements
+## Network Requirements
 
 Run:AI user interface runs from the cloud. All container nodes must be able to connect to the Run:AI cloud.&nbsp;Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is proxied/limited, the following exceptions should be applied:&nbsp;
 
-## During Installation
+### During Installation
 
 Run:AI requires an installation over the Kubernetes cluster. The installation access the web to download various images and registries. Some organizations place limitations on what you can pull from the internet. The following list shows the various solution components and their origin:&nbsp;
 
@@ -88,7 +88,7 @@ Run:AI requires an installation over the Kubernetes cluster. The installation ac
 </caption>
 </table>
 
-## Post Installation
+### Post Installation
 
 In addition, once running, Run:AI will send metrics to two sources:
 
@@ -132,11 +132,11 @@ In addition, once running, Run:AI will send metrics to two sources:
 </tbody>
 </table>
 
-# User requirements
+## User requirements
 
 __Usage of containers and images:__&nbsp;The individual researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software&nbsp;
 
-# Fractional GPU Requirements
+## Fractional GPU Requirements
 
 The Run:AI platform provides a unique technology that allows the sharing of a single GPU between multiple containers. Each container receives an isolated subset of the GPU memory. For more details see&nbsp;[https://support.run.ai/hc/en-us/articles/360014989740-Walkthrough-Using-GPU-Fractions.](https://support.run.ai/hc/en-us/articles/360014989740-Walkthrough-Using-GPU-Fractions)
 

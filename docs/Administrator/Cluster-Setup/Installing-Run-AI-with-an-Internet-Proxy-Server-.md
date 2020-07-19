@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Run:AI is installed on GPU clusters. These clusters must have outbound internet connectivity to the Run:AI cloud. Details can be found here:&nbsp;<https://support.run.ai/hc/en-us/articles/360010227960-Run-AI-GPU-Cluster-Prerequisites>&nbsp;under "Network Requirements"
 
@@ -8,7 +8,7 @@ Organizations sometimes employ a further security measure by&nbsp;signing packet
 
 In-case the certificate is not trusted (or is a self-signed certificate), this certificate must be included in Run:AI configuration for outbound connectivity to work.
 
-# Run:AI Configuration
+## Run:AI Configuration
 
 The instructions below receive as input a certificate file from the organization and deploy it into the Run:AI cluster so that traffic originating in Run:AI will recognize the organizational proxy server.
 

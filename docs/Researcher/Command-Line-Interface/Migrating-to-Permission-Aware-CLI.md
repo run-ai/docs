@@ -1,10 +1,10 @@
-# Introduction
+## Introduction
 
 The current Run:AI command-line interface (CLI) is based on a single permission model. If you can run a workload using the CLI, then you can, in principle, use all projects, as well as view, change and delete other people's workloads. This is not a sustainable model for most organizations&nbsp;
 
 We now introduce a new version of the CLI which is permission-aware. This guide is about how to migrate to this new version.
 
-# Recap on Projects
+## Recap on Projects
 
 in Run:AI terminology, _Projects_ <span>are used to manage resource allocations for Researchers. Projects are defined by the administrator user interface (accessible</span> at <a href="https://app.run.ai" target="_self">app.run.ai</a>) and are associated, amongst other things, with a GPU quota available for users of this project.
 
@@ -12,13 +12,13 @@ in Run:AI terminology, _Projects_ <span>are used to manage resource allocations 
 
 <pre>runai submit &lt;job-name&gt; ..... --project team-a</pre>
 
-# Permissions are based on Projects&nbsp;
+## Permissions are based on Projects&nbsp;
 
 <span>With the new Run:AI architecture, permissions are based on the granularity of projects. Administrators can provide designated people with access to a project and only these people will be able to submit and view workloads based on that project.&nbsp;</span>
 
 This creates changes in the way the CLI works.
 
-# Changes with the new CLI
+## Changes with the new CLI
 
 <span>A workload now exists in the context of a project</span>. When using a command, you must add the project name with the flag -p &lt;project name&gt;. Examples:
 
@@ -40,7 +40,7 @@ You can also see the list of projects and view the current default project by ru
 
 <pre>runai list -A</pre>
 
-# Upgrade
+## Upgrade
 
 <span>After installing the new Run:AI CLI, workloads that have been submitted using the older version of the&nbsp;CLI may still be running.&nbsp;</span>
 
@@ -60,6 +60,6 @@ or by viewing&nbsp;__all&nbsp;__workloads using the -A flag:
 
 <pre>runai list -A</pre>
 
-# Next Steps
+## Next Steps
 
 For further information on how to authenticate users as well as providing user-access to Projects, please contact Run:AI customer support.

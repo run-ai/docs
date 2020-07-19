@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Show logs of training job
 
@@ -6,7 +6,7 @@ Show logs of training job
 
 <pre>runai logs &lt;job-name&gt;<br/>[--follow | -f]<br/>[--pod &lt;string&gt; | -p &lt;string&gt;]<br/>[--since &lt;duration&gt;]<br/>[--since-time &lt;date-time&gt;]<br/>[--tail &lt;int&gt; | -t&nbsp;&lt;int&gt;]<br/>[--timestamps]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
-# Options
+## Options
 
 --follow | -f&nbsp;
 
@@ -36,7 +36,7 @@ Show logs of training job
 
 >  Include timestamps on each line in the log output.
 
-## Global Flags
+### Global Flags
 
 --backward-compatibility | -b
 
@@ -54,11 +54,11 @@ Show logs of training job
 
 >  Show help text
 
-# Output
+## Output
 
 The jobs log will show
 
-# See Also
+## See Also
 
 *   Training Workloads: <https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;
 

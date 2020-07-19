@@ -1,4 +1,4 @@
-# <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Introduction</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Introduction</span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px;">Some researchers do data-science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.&nbsp;</span>
 
@@ -20,7 +20,7 @@
 
 <ul><li><font face="arial, sans-serif">Training data.</font></li><li><font face="arial, sans-serif">Machine Learning (ML) code and inputs.&nbsp;</font></li><li><font face="arial, sans-serif">Libraries: Code dependencies that must be installed before the ML code can be run.</font></li></ul>
 
-## <span style="font-family: arial, sans-serif;">Training data</span>
+### <span style="font-family: arial, sans-serif;">Training data</span>
 
 <font face="arial, sans-serif">Training data is usually significantly&nbsp;large (from several Gigabytes&nbsp;to Petabytes) and is read-only in nature.&nbsp;Thus, training data is typically left outside of the docker image.&nbsp;</font>
 
@@ -30,7 +30,7 @@
 
 <span style="font-family: arial, sans-serif;">Organizations without a shared file system typically write scripts to copy data from machine to machine.&nbsp;</span>
 
-## <span style="font-family: arial, sans-serif;">Machine Learning Code and Inputs</span>
+### <span style="font-family: arial, sans-serif;">Machine Learning Code and Inputs</span>
 
 <div><font face="arial, sans-serif">As a rule, code needs to be saved and versioned in a <strong>code repository</strong>.&nbsp;</font></div>
 
@@ -53,7 +53,7 @@
 
 <div><span style="font-family: arial, sans-serif;"></span></div>
 
-# <span style="font-family: arial, sans-serif;">ML Lifecycle: Build and Train</span>
+## <span style="font-family: arial, sans-serif;">ML Lifecycle: Build and Train</span>
 
 <div>
 <p>Deep learning workloads can be divided into two generic types:</p>
@@ -71,7 +71,7 @@
 
 <div></div>
 
-## Build Workloads
+### Build Workloads
 
 <div>With "build" you are actually coding and debugging small experiments. You are<span>&nbsp;</span><strong>interactive</strong>. In that mode, you can typically take a well known standard image (e.g.&nbsp;<a data-saferedirecturl="https://www.google.com/url?q=https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow&amp;source=gmail&amp;ust=1592498144070000&amp;usg=AFQjCNGTAief8-leIAVR4wSzfzvkGEphDA" href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow" rel="noopener" target="_blank">https://ngc.nvidia.com/<wbr/>catalog/containers/nvidia:<wbr/>tensorflow</a>) and use it directly.&nbsp;</div>
 
@@ -87,7 +87,7 @@
 
 <div></div>
 
-## Training Workloads
+### Training Workloads
 
 <div><font face="arial, sans-serif">For training workloads you can use a well-known image (e.g. nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a <strong>base image</strong> and add your own customizations <strong>on top</strong> of it. To achieve that, you create a<span>&nbsp;</span><em>Dockerfile. A&nbsp;</em>Dockerfile is a declarative&nbsp;way to build a docker image and is built in layers. e.g.:</font></div>
 

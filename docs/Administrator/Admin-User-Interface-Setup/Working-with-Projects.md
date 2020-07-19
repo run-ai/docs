@@ -1,10 +1,10 @@
-# Introduction
+## Introduction
 
 Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create prioritize, Run:AI introduced the concept of __Projects.&nbsp;__Projects are quota entities that associate a project name with GPU allocation and preferences.&nbsp;
 
 A researcher submitting a workload needs to associate a project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
-# Modeling Projects
+## Modeling Projects
 
 As an Admin, you need to determine how to model projects. You can:
 
@@ -12,7 +12,7 @@ As an Admin, you need to determine how to model projects. You can:
 *   Set a project per team of users
 *   Set a project per a real organizational project.
 
-# Project Quotas
+## Project Quotas
 
 Each project is associated with a quota of GPUs that can be allocated for this project at the same time. This is __guaranteed&nbsp;quota&nbsp;__in the sense that researchers using this project are guaranteed to get this number of GPUs, no matter what the status in the cluster is.&nbsp;
 
@@ -20,9 +20,9 @@ Beyond that, a user of this project can receive an&nbsp;__over-quota.&nbsp;__As 
 
 <strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Important best practice:&nbsp;</strong><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">As a rule, the sum of the project allocation should be equal to the number of GPUs in the cluster</span>
 
-# Working with Projects
+## Working with Projects
 
-## Create a new Project
+### Create a new Project
 
 Note: to be able to manipulate projects, you must have _Editor_ access. See the "Users" Area
 
@@ -32,18 +32,18 @@ Note: to be able to manipulate projects, you must have _Editor_ access. See the 
 *   Choose a project name and a project quota.&nbsp;
 *   Press "Save"
 
-## Update an existing Project
+### Update an existing Project
 
 *   Select an existing project.&nbsp;
 *   Right-click and press "Edit"
 *   Update the values and press "Save"
 
-## Delete an existing project
+### Delete an existing project
 
 *   Select an existing project.&nbsp;
 *   Right-click and press "Delete"
 
-# Limit Jobs to run on Specific Node Groups
+## Limit Jobs to run on Specific Node Groups
 
 A frequent use case is to assign specific projects to run only on specific nodes (machines). This can happen for various reasons. Examples:
 
@@ -53,7 +53,7 @@ A frequent use case is to assign specific projects to run only on specific nodes
 
 While such 'affinities' are sometimes needed, its worth mentioning that at the end of the day any affinity settings have a negative impact on the overall system utilization
 
-## Grouping Nodes&nbsp;
+### Grouping Nodes&nbsp;
 
 To set node affinities, you must first annotate nodes with labels. These labels will later be associated with projects. Each node can only be annotated with a&nbsp;__single&nbsp;__name.
 
@@ -65,7 +65,7 @@ To annotate a specific node with the label "dgx-2", run:
 
 <pre> kubectl label node &lt;node-name&gt; run.ai/type=dgx-2</pre>
 
-## Setting Affinity for a Specific Project
+### Setting Affinity for a Specific Project
 
 To mandate __training__ jobs to run on specific node groups:
 
@@ -79,11 +79,11 @@ To mandate __training__ jobs to run on specific node groups:
 
 To mandate __interactive__ jobs to run on specific node groups, perform the same steps under the "interactive" section in the project dialog.
 
-## Further Affinity Refinement by the Researcher
+### Further Affinity Refinement by the Researcher
 
 The researcher can limit the selection of node groups by using the CLI flag --node-type with a specific label. When setting specific project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.&nbsp; See CLI reference for further information&nbsp;<https://support.run.ai/hc/en-us/articles/360011436120-runai-submit>&nbsp;
 
-# Limit Duration of Interactive Jobs
+## Limit Duration of Interactive Jobs
 
 Researchers frequently forget to close Interactive jobs. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive jobs and close them automatically.
 

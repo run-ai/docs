@@ -1,10 +1,10 @@
 runai is the command line interface to RunAI
 
-# Usage:
+## Usage:
 
 runai \[command\]
 
-# Available Commands:&nbsp;
+## Available Commands:&nbsp;
 
 <table border="1" cellpadding="6" style="height: 592px;" width="973">
 <tbody>

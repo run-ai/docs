@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Deep learning workloads can be divided into two generic types:
 
@@ -13,16 +13,16 @@ With this Walkthrough you will learn how to:
 
 It is also possible to open ports to specific services within the container. See "Next Steps" at the end of this article.
 
-# Prerequisites&nbsp;
+## Prerequisites&nbsp;
 
 To complete this walkthrough you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
 *   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
 
-# Step by Step Walkthrough
+## Step by Step Walkthrough
 
-## Setup
+### Setup
 
 *   Open the Run:AI user interface at <https://app.run.ai>
 *   Login
@@ -30,7 +30,7 @@ To complete this walkthrough you must have:
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
 
-## Run Workload
+### Run Workload
 
 *   At the command line run:
 
@@ -64,7 +64,7 @@ To get additional status on your job run:
 &nbsp;
 &nbsp;
 
-## Get a Shell to the container
+### Get a Shell to the container
 
 Run:
 
@@ -72,7 +72,7 @@ Run:
 
 This should provide a direct shell into the computer
 
-## View status on the Run:AI User Interface
+### View status on the Run:AI User Interface
 
 *   Go to <https://app.run.ai>
 *   Under Dashboards | Overview you should see:
@@ -85,7 +85,7 @@ This should provide a direct shell into the computer
 
 &nbsp;
 
-## Stop Workload
+### Stop Workload
 
 Run the following:
 
@@ -93,7 +93,7 @@ Run the following:
 
 This would stop the training workload. You can verify this by running_&nbsp;runai list_ again.
 
-# Next Steps
+## Next Steps
 
 *   Expose internal ports to your interactive build workload:&nbsp;<https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports>&nbsp;
 *   Follow the Walkthrough: Launch unattended training workloads&nbsp;<https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;

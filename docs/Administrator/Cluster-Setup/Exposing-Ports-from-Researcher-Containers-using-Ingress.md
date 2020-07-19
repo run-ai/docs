@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Researchers who work with containers sometimes need to expose ports to access the container from remote. Some examples:
 
@@ -10,13 +10,13 @@ When using docker, the way researchers expose ports is by <a href="https://docs.
 
 Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative <span>ways to expose ports. With Run:AI you can use all of these options (see the&nbsp;_Alternatives_&nbsp;section below), however, Run:AI comes built-in with&nbsp;_ingress_</span>
 
-# <span>Ingress</span>
+## <span>Ingress</span>
 
 Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>
 
 To configure ingress see:&nbsp;<https://support.run.ai/hc/en-us/articles/360013847900-Exposing-Cluster-Services-via-Ingress>&nbsp;
 
-# Usage
+## Usage
 
 The researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
@@ -34,7 +34,7 @@ The URL will be composed of the ingress end-point, the job name and the port (e.
 
 For further details see CLI <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">reference</a> and <a href="https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports" target="_self">walkthrough</a>.
 
-# Alternatives
+## Alternatives
 
 &nbsp;Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative <span>ways to expose ports:</span>
 
@@ -47,6 +47,6 @@ For further details see CLI <a href="https://support.run.ai/hc/en-us/articles/36
 
 &nbsp;
 
-# See Also
+## See Also
 
 To learn how to use port forwarding see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports>

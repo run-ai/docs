@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Show list of nodes (machines) and their properties
 
@@ -6,13 +6,13 @@ Show list of nodes (machines) and their properties
 
 <pre>runai top node<br/>[--details | -d]<br/><br/>[--help | -h]</pre>
 
-# Options
+## Options
 
 --details | -d
 
 >  Show additional details for each node
 
-## Global Flags
+### Global Flags
 
 --loglevel (string)
 
@@ -22,7 +22,7 @@ Show list of nodes (machines) and their properties
 
 >  Show help text
 
-# Output
+## Output
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Shows a list of nodes and their properties</span>
 

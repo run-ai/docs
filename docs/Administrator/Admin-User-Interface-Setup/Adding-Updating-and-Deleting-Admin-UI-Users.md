@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 The Admin User Interface allows:
 
@@ -15,9 +15,9 @@ __Notes:__
 *   With Run:AI you need to differentiate between the users of the Admin UI and Researcher users which submit workloads on the GPU Kubernetes cluster. This document is about the former.
 *   It is possible to connect the Admin UI users module to the organization's LDAP directory. For further information please contact Run:AI customer support.
 
-# Working with Users
+## Working with Users
 
-## Create User
+### Create User
 
 Note: to be able to manipulate users, you must have _Administrator_&nbsp;access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
 
@@ -34,13 +34,13 @@ Note: to be able to manipulate users, you must have _Administrator_&nbsp;access.
 
 The user will receive a join mail and will be able to set a password.&nbsp;
 
-## Update a User
+### Update a User
 
 *   Select an existing User.&nbsp;
 *   Right-click and press "Edit"
 *   Update the values and press "Save"
 
-## Delete an existing User
+### Delete an existing User
 
 *   Select an existing User.&nbsp;
 *   Right-click and press "Delete"

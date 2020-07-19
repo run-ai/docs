@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Templates are a way to reduce the amount of&nbsp; flags required when running the command&nbsp;_runai submit_. A template is added by the administrator and is out of scope for this article.&nbsp; A researcher can:
 
@@ -8,25 +8,25 @@ Templates are a way to reduce the amount of&nbsp; flags required when running th
 
 The administrator can also set a default template which is always used on _runai submit_&nbsp; whenever a template is __not__ specified.&nbsp;
 
-# Synopsis
+## Synopsis
 
 <pre>runai template get &lt;template-name&gt;<br/>runai template list</pre>
 
 &nbsp;
 
-# Options
+## Options
 
 &lt;template-name&gt; the name of the template to run the command on
 
 runai template list will show the list of existing templates.&nbsp;
 
-## Global Flags
+### Global Flags
 
 --loglevel (string)
 
 >  Set the logging level. One of: debug|info|warn|error (default "info")
 
-# Output
+## Output
 
 _runai template list_ will show a list of templates. Example:
 

@@ -1,8 +1,8 @@
-# Description
+## Description
 
 Submit a Run:AI job for execution<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
 
-# Synopsis
+## Synopsis
 
 <pre>runai submit &lt;job-name&gt; <br/>[--always-pull-image]<br/>[--args &lt;stringArray&gt;]<br/>[--backoffLimit &lt;int&gt;]<br/>[--command &lt;stringArray&gt;]<br/>[--cpu &lt;double&gt;]<br/>[--cpu-limit &lt;double&gt;]<br/>[--elastic]<br/>[--environment &lt;stringArray&gt; | -e &lt;stringArray&gt;]<br/>[--gpu &lt;int&gt; | -g &lt;int&gt;]<br/>[--host-ipc]<br/>[--host-network]<br/>[--image &lt;string&gt; | -i &lt;string&gt;]<br/>[--interactive]<br/>[--jupyter]<br/>[--large-shm]<br/>[--local-image]<br/>[--memory &lt;string&gt;]<br/>[--memory-limit &lt;string&gt;]<br/>[--node-type &lt;string&gt;]<br/>[--port &lt;stringArray&gt;]<br/>[--preemptible]<br/>[--<span>run-as-user]</span><br/>[--service-type &lt;string&gt; | -s &lt;string&gt;]<br/>[--template &lt;string&gt;]<br/>[--ttl-after-finish &lt;duration&gt;]<br/>[--volume &lt;stringArray&gt; | -v stringArray]<br/>[<span>--working-dir]</span><br/><br/>[--loglevel &lt;string&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
 
@@ -10,7 +10,7 @@ Submit a Run:AI job for execution<span style="font-family: -apple-system, BlinkM
 
 *   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.&nbsp;
 
-# Options
+## Options
 
 &lt;job-name&gt; the name of the job to run the command in&nbsp;
 
@@ -148,7 +148,7 @@ Submit a Run:AI job for execution<span style="font-family: -apple-system, BlinkM
 
 >  Starts the container with the specified directory&nbsp;
 
-## Global Flags
+### Global Flags
 
 --loglevel (string)
 
@@ -162,7 +162,7 @@ Submit a Run:AI job for execution<span style="font-family: -apple-system, BlinkM
 
 >  Show help text
 
-# Examples
+## Examples
 
 start an unattended training job of name run1, based on project team-ny using a quickstart image:
 
@@ -174,13 +174,13 @@ start an interactive job of name run2, based on project team-ny using a jupyter 
 
 <pre>runai submit run2 -i jupyter/base-notebook -g 1 \ <br/>     -p team-ny --interactive --service-type=loadbalancer <br/>    --port 8888:8888</pre>
 
-# Output
+## Output
 
 The command will <span class="wysiwyg-color-black">attempt to submit a job. You can follow up on the job by running _runai list_ or _runai get &lt;job-name&gt; -e_</span>
 
 <span class="wysiwyg-color-black">Note that the submit call may use templates to provide defaults to any of the above flags.&nbsp;</span>
 
-# See Also
+## See Also
 
 *   See any of the Walkthrough documents here:&nbsp;<https://support.run.ai/hc/en-us/articles/360010773460-Run-AI-Walkthroughs>&nbsp;&nbsp;
 *   See _runai template&nbsp;_<https://support.run.ai/hc/en-us/articles/360011548039-runai-template>&nbsp;for a description on how templates work
