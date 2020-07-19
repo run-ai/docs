@@ -57,8 +57,8 @@ nav:
     - 'Admin User Interface Setup' :
       - 'Working with Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
       - 'Adding, Updating and Deleting Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
-    - 'Miscellaneous ' :
-      - 'Launch Workloads using Rancher User Interface' : 'Administrator/Miscellaneous-/Launch-Workloads-using-Rancher-User-Interface.md'  
+    - 'Miscellaneous' :
+      - 'Adding, Updating and Deleting Admin UI Users' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
     - 'Presentations' :
       - 'Researcher Onboarding Presentation' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
