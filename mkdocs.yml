@@ -3,6 +3,7 @@ copyright:  All rights reserved Run:AI 2020
 #google_analytics:
 repo_url: https://github.com/run-ai/docs/
 
+
 #docs_dir: 
 theme:
 #  name: mkdocs
@@ -13,7 +14,7 @@ theme:
 #  name: gitbook
 #  name: 'rtd-dropdown'
 
-  favicon: images/favicon.png
+  favicon: images/favicon.ico
   logo: images/runai-logo.svg
   features:
     - tabs
