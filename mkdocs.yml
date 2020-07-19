@@ -1,15 +1,27 @@
 site_name: Run:AI
+copyright:  All rights reserved Run:AI 2020
+#google_analytics:
 theme:
   name: material
+#  name: ivory
+#  name: bootstrap4
+#  name: gitbook
+#  name: 'rtd-dropdown'
+
+  favicon: images/favicon.png
+  logo: images/runai-logo.svg
   features:
     - tabs
 plugins:
   - search
   - minify:
       minify_html: true
-
 markdown_extensions:
   - codehilite
+  - admonition
+  - toc:
+      permalink: True
+
 
 nav:
     - Home: 'index.md'
@@ -18,7 +30,8 @@ nav:
         - 'Installing Run:AI on an on-premise Kubernetes Cluster': 'admin/cluster-setup/install.md'
         - 'Run:AI GPU Cluster Prerequisites': 'admin/cluster-setup/prereq.md'
     - Researcher:
-      - "Command Line Interface - API Reference":
+      - "API Reference":
         - "runai bash" : 'researcher/api-reference/bash.md'
+        - "runai submit" : 'researcher/api-reference/submit.md'
 
 
