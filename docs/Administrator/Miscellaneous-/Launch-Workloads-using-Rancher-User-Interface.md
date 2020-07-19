@@ -1,8 +1,8 @@
 ![mceclip0.png](https://support.run.ai/hc/article_attachments/360011852359/mceclip0.png)Rancher (<https://rancher.com/>) is a software that manages Kubernetes clusters. Some customers provide Rancher to data scientists in order to launch workloads. This guide provides step by step instructions on how to launch workloads via Rancher. It assumes the reader has some familiarity with Rancher itself.
 
-<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">There are other ways for data scientists to launch Workloads such as the Run:AI CLI or KubeFlow (<https://www.kubeflow.org/>).&nbsp; The advantage of Rancher is the usage of a user interface. The disadvantage is that it exposes the data scientist to Kubernetes/Docker terminology that would otherwise remain hidden</span>
+<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">There are other ways for data scientists to launch Workloads such as the Run:AI CLI or KubeFlow (<https://www.kubeflow.org/>).  The advantage of Rancher is the usage of a user interface. The disadvantage is that it exposes the data scientist to Kubernetes/Docker terminology that would otherwise remain hidden</span>
 
-## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Types of Workloads&nbsp;</span>
+## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Types of Workloads </span>
 
 <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">We differentiate between two types of Workloads:</span>
 
@@ -12,9 +12,9 @@
 ## <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Terminology</span>
 
 <ul><li>
-<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Kubernetes <strong>Job</strong> - equivalent to the above definition of a Train workload. A Job has a </font>distinctive<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&nbsp;"end" at which time the job is either "Completed" or "Failed"</font>
-</li><li>Kubernetes <strong>StatefulSet</strong> -&nbsp;&nbsp;<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">equivalent to the above definition of Build workload. Suited for interactive sessions in which state is important in the sense that data not stored on a shared volume is gone when the session ends. StatefulSets must be manually stopped</font>
-</li><li>Kubernetes <strong>Labels</strong> - a method to add key-value pairs to a workload</li><li>Kubernetes <strong>Node</strong> - a physical machine</li><li>Kubernetes <strong>Scheduler</strong> - the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named&nbsp;<strong>runai-scheduler</strong>
+<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Kubernetes <strong>Job</strong> - equivalent to the above definition of a Train workload. A Job has a </font>distinctive<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"> "end" at which time the job is either "Completed" or "Failed"</font>
+</li><li>Kubernetes <strong>StatefulSet</strong> -  <font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">equivalent to the above definition of Build workload. Suited for interactive sessions in which state is important in the sense that data not stored on a shared volume is gone when the session ends. StatefulSets must be manually stopped</font>
+</li><li>Kubernetes <strong>Labels</strong> - a method to add key-value pairs to a workload</li><li>Kubernetes <strong>Node</strong> - a physical machine</li><li>Kubernetes <strong>Scheduler</strong> - the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named <strong>runai-scheduler</strong>
 </li><li>
 <strong>Run:AI</strong> <strong>Project</strong>. The Run:AI scheduler schedules computing resources by associating Workloads with "Run:AI projects" (not to be confused with Rancher Projects).
 <ul>
@@ -22,13 +22,13 @@
 <li>Each workload must be annotated with a project name and will receive resources according to the defined quota for the project and the currently running Workloads</li>
 </ul>
 </li></ul>
-&nbsp;
+ 
 
-## Using Rancher to Launch Workloads&nbsp;
+## Using Rancher to Launch Workloads 
 
 *   
     
-    Using your browser, navigate to Rancher&nbsp;
+    Using your browser, navigate to Rancher 
     
     
 *   
@@ -65,11 +65,11 @@
 
 ![mceclip0.png](https://support.run.ai/hc/article_attachments/360011853579/mceclip0.png)
 
-*   Build workloads will typically require the assignment of TCP ports, for example, to externalize a jupyter notebook or a PyCharm editor.&nbsp;Select the ports that you want to expose. For each port select:
+*   Build workloads will typically require the assignment of TCP ports, for example, to externalize a jupyter notebook or a PyCharm editor. Select the ports that you want to expose. For each port select:
     
     *   (Optional) an informative name
     *   The internal port used by the software you want to connect to (e.g. Juypter notebook uses 8888 by default)
-    *   The type of load balancer you want to use.&nbsp; For cloud environments this would typically be&nbsp; a Layer-4 load balancer. On-premise environments depend on the how your cluster was installed.
+    *   The type of load balancer you want to use.  For cloud environments this would typically be  a Layer-4 load balancer. On-premise environments depend on the how your cluster was installed.
     
     
     
@@ -79,7 +79,7 @@
 
 ![mceclip1.png](https://support.run.ai/hc/article_attachments/360011852379/mceclip1.png)
 
-&nbsp;
+ 
 
 *   
     
@@ -88,7 +88,7 @@
     
 *   
     
-    On the bottom and select "show advanced options". Expand labels and labels and add 2 labels, adding the name of the user and the name of the project as follows:&nbsp;
+    On the bottom and select "show advanced options". Expand labels and labels and add 2 labels, adding the name of the user and the name of the project as follows: 
     
     
 
@@ -106,6 +106,6 @@
     
 *   Wait for the Workload to launch. When done, you will see the list of exposed ports and can click on them to launch them in http
 
-&nbsp;
+ 
 
 *   Click on the Workload name, on the right you have a menu (3 vertical dots) which allow you to ssh into the Workload or view logs
