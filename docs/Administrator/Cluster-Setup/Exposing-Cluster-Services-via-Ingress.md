@@ -2,10 +2,10 @@
 
 There are a number of cases where you want to expose services running on the cluster. A few of them are:
 
-*   Allow Researchers who work with containers to expose ports to access the container from remote using tools such as a Jupyter notebook or PyCharm
-*   Integrate a Researcher authentication mechanism such as an organizational user directory.&nbsp;
+*   Allow Researchers who work with containers to expose ports to access the container from remote using tools such as a _Jupyter notebook_ or _PyCharm_
+*   Integrate a Researcher authentication mechanism such as an organizational user directory. 
 
-The Kubernetes mechanism for exposing services is called&nbsp;_Ingress.&nbsp;_
+The Kubernetes mechanism for exposing services is called _Ingress._
 
 ## Ingress
 
@@ -17,7 +17,7 @@ Before installing ingress, you must obtain an IP Address or an IP address range 
 
 ## Ingress Configuration
 
-A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai(https://app.run.ai) downloading a yaml file runai-operator.yaml and then applying it to Kubernetes. You must edit the yaml file. Search for _localLoadBalancer_
+A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a yaml file runai-operator.yaml and then applying it to Kubernetes. You must edit the yaml file. Search for _localLoadBalancer_
 
     localLoadBalancer
         enabled: true

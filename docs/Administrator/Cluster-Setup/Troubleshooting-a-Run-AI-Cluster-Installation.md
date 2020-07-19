@@ -1,4 +1,4 @@
-&nbsp;
+ 
 
 ### Pods are not created
 
@@ -16,18 +16,18 @@ This typically means that there is a disconnect between the Kubernetes pods that
 
 This could happen if:
 
-*   Connecting GPU data requires a Kubernetes feature gate flag called&nbsp;KubeletPodResources. This feature gate is a default in Kubernetes 1.15, but must be added in older versions of Kubernetes.&nbsp; See&nbsp;<https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/>. Note that&nbsp;Run:AI has been tested on Kubernetes 1.15.
-*   <span>Nvidia perquisites&nbsp;are not installed. See&nbsp;<https://support.run.ai/hc/en-us/articles/360010227960-Run-AI-GPU-Cluster-Prerequisites>&nbsp;for NVIDIA related prerequisites.</span>
+*   Connecting GPU data requires a Kubernetes feature gate flag called KubeletPodResources. This feature gate is a default in Kubernetes 1.15, but must be added in older versions of Kubernetes.  See <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/>. Note that Run:AI has been tested on Kubernetes 1.15.
+*    [Run-AI-GPU-Cluster-Prerequisites> for NVIDIA related prerequisites.</span](Run-AI-GPU-Cluster-Prerequisites> for NVIDIA related prerequisites.</span.md)
 
-<span>To verify whether GPU metrics are exported run:&nbsp;</span>
+<span>To verify whether GPU metrics are exported run: </span>
 
 <pre><span>kubectl port-forward -n runai prometheus-runai-prometheus-operator-prometheus-0 9090</span></pre>
 
-<span>Then using your browser go to&nbsp;<http://localhost:9090/></span>. Verify that you see metrics for&nbsp;_dcgm\_gpu\_utilization_
+<span>Then using your browser go to <http://localhost:9090/></span>. Verify that you see metrics for _dcgm\_gpu\_utilization_
 
 ![mceclip0.png](https://support.run.ai/hc/article_attachments/360007123260/mceclip0.png)
 
-&nbsp;
+ 
 
 <span>If no metrics are shown, you can get to the root cause by running:</span>
 
@@ -37,8 +37,8 @@ This could happen if:
 
 <pre><span>kubectl logs -n runai &lt;name&gt; -c pod-nvidia-gpu-metrics-exporter</span></pre>
 
-&nbsp;Where &lt;name&gt; is the pod-gpu-metrics exporter names from above. The logs should contain further data about the issue
+ Where &lt;name&gt; is the pod-gpu-metrics exporter names from above. The logs should contain further data about the issue
 
-A typical issue may be skipping the prerequisite of installing the Nvidia driver plugin. See <a href="https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster" target="_self">here</a>.&nbsp;
+A typical issue may be skipping the prerequisite of installing the Nvidia driver plugin. See  [Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster" target="_self">here</a](Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster" target="_self">here</a.md). 
 
-&nbsp;
+ 

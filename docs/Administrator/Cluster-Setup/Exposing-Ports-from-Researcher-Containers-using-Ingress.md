@@ -15,7 +15,7 @@ Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container
 
 Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>
 
-To configure ingress see:&nbsp;<https://support.run.ai/hc/en-us/articles/360013847900-Exposing-Cluster-Services-via-Ingress>&nbsp;
+To configure ingress see:  [Exposing-Cluster-Services-via-Ingress](Exposing-Cluster-Services-via-Ingress.md) 
 
 ## Usage
 
@@ -31,7 +31,7 @@ After submitting a job through the Run:AI CLI, run:
 
 You will see the service URL with which to access the Jupyter notebook
 
-![mceclip0.png](https://support.run.ai/hc/article_attachments/360012894900/mceclip0.png)
+![mceclip0.png](img/mceclip0.png)
 
 The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>
 
@@ -39,17 +39,17 @@ For further details see CLI command [runai submit](../../Researcher/Command-Line
 
 ## Alternatives 
 
-&nbsp;Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative <span>ways to expose ports:</span>
+ Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative  ways to expose ports: 
 
-*   <span>NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort Service, from outside the cluster, by requesting &lt;NodeIP&gt;:&lt;NodePort&gt; regardless of which node the container actually resides.&nbsp;</span>
-*   LoadBalancer - Useful for cloud environments.&nbsp;Exposes the Service externally using a cloud provider’s load balancer.
-*   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>.&nbsp;
+*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort Service, from outside the cluster, by requesting &lt;NodeIP&gt;:&lt;NodePort&gt; regardless of which node the container actually resides.  
+*   LoadBalancer - Useful for cloud environments. Exposes the Service externally using a cloud provider’s load balancer.
+*   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>. 
 *   Port Forwarding - Simple port forwarding allows access to the container via localhost:&lt;Port&gt;
 
-<span>See <https://kubernetes.io/docs/concepts/services-networking/service/>&nbsp; for further details</span>
+ See <https://kubernetes.io/docs/concepts/services-networking/service/>  for further details 
 
-&nbsp;
+ 
 
 ## See Also
 
-To learn how to use port forwarding see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports>
+To learn how to use port forwarding see:  [Walkthrough Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md)
