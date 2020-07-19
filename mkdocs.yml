@@ -20,6 +20,7 @@ theme:
     - tabs
 plugins:
   - search
+  - git-revision-date-localized
   - minify:
       minify_html: true
 markdown_extensions:
