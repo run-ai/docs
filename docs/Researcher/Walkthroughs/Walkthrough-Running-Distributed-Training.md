@@ -10,7 +10,7 @@ Run:AI provides the ability to run, manage, and view Distributed Training worklo
 
 To complete this walkthrough you must have:
 
-*   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
+*   Run:AI software is installed on your Kubernetes cluster. See [Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster](../../Administrator/Cluster-Setup/Installing Run:AI on an on-premise Kubernetes Cluster.md)
 *   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
 
 ## Step by Step Walkthrough
@@ -27,10 +27,11 @@ To complete this walkthrough you must have:
 
 *   At the command line run:
 
-<pre>runai project set team-a<br/><br/>runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed </pre>
+        runai project set team-a 
+        runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed 
 
-*   We named the job&nbsp;_dist_
-*   The job is assigned to<span>&nbsp;</span>_team-a_
+*   We named the job _dist_
+*   The job is assigned to _team-a_
 *   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
 *   The job is based on a sample docker image<span>&nbsp;</span>_gcr.io/run-ai-demo/quickstart-distributed_&nbsp;the image contains a startup script that runs a deep learning Horovod-based workload. The script runs the following _Horovod_ command:
 

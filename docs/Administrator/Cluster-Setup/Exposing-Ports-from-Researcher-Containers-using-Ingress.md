@@ -8,9 +8,10 @@ Researchers who work with containers sometimes need to expose ports to access th
 
 When using docker, the way researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:AI has similar syntax
 
-Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative <span>ways to expose ports. With Run:AI you can use all of these options (see the&nbsp;_Alternatives_&nbsp;section below), however, Run:AI comes built-in with&nbsp;_ingress_</span>
+Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative ways to expose ports. With Run:AI you can use all of these options (see the [Alternatives](#alternatives) section below), however, Run:AI comes built-in with ingress
 
-## <span>Ingress</span>
+
+## Ingress
 
 Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>
 
@@ -20,11 +21,13 @@ To configure ingress see:&nbsp;<https://support.run.ai/hc/en-us/articles/3600138
 
 The researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
-<pre>runai submit <strong>test-ingress</strong> -i jupyter/base-notebook -g 1 -p team-ny \<br/> --interactive <strong>--service-type=ingress</strong> <strong>--port 8888:8888</strong> \<br/> --args="--NotebookApp.base_url=test-ingress" --command=start-notebook.sh</pre>
+    runai submit test-ingress -i jupyter/base-notebook -g 1 -p team-ny \
+      --interactive --service-type=ingress --port 8888:8888 \ 
+      --args="--NotebookApp.base_url=test-ingress" --command=start-notebook.sh
 
 After submitting a job through the Run:AI CLI, run:
 
-<pre>runai list</pre>
+    runai list
 
 You will see the service URL with which to access the Jupyter notebook
 
@@ -32,9 +35,9 @@ You will see the service URL with which to access the Jupyter notebook
 
 The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>
 
-For further details see CLI <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">reference</a> and <a href="https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports" target="_self">walkthrough</a>.
+For further details see CLI command [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) and [Launch an Interactive Workload Walkthrough ](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md)
 
-## Alternatives
+## Alternatives 
 
 &nbsp;Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative <span>ways to expose ports:</span>
 
