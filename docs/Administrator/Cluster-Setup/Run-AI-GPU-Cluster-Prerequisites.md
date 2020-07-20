@@ -1,6 +1,5 @@
-Run:AI helps organizations optimize the resources of a data science operation. Below are the prerequisites of the Run:AI solution. 
+Below are the prerequisites of a cluster installed with Run:AI. 
 
-__Important note__: This document relates to the cloud version of Run:AI and discusses the prerequisites for the GPU Cluster. 
 
 ## Kubernetes Software
 
