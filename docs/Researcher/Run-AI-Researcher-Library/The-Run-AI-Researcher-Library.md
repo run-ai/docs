@@ -10,11 +10,11 @@ When installed, the library provides:
 
 In your command line run:
 
-<pre>pip install runai</pre>
+    pip install runai
 
-## &nbsp;Run:AI Researcher Library Modules
+## Run:AI Researcher Library Modules
 
 To review details on the specific Run:AI Researcher Library modules see:
 
-*   Reporting:&nbsp;<https://support.run.ai/hc/en-us/articles/360011179379-Using-the-Run-AI-Reporter-Library->
-*   Elasticity:&nbsp;&nbsp;<https://support.run.ai/hc/en-us/articles/360011347560-Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability>&nbsp;
+*   [Reporting via the Run:AI Researcher Library](../Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md)
+*   [Elasticity, Dynamically Stretch/Compress Jobs According to GPU Availability](../Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md)
