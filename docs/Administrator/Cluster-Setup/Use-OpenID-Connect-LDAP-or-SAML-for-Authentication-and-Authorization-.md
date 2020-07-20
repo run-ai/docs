@@ -1,3 +1,5 @@
+# Use OpenID Connect, LDAP or SAML for Authentication and Authorization
+
 ## Introduction
 
 Run:AI uses its a mechanism for authentication and authorization which is based on a third-party (<a href="https://auth0.com/" target="_self">auth0</a>). This is good as a baseline, but for enterprises, such a scheme is not scalable. For an enterprise, keeping separate users and roles mechanisms requires manual work, is error-prone, and increases the attack vector.
