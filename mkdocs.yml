@@ -94,7 +94,6 @@ nav:
       - 'Converting your Workload to use Unattended "Training" Execution' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
       - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Command Line Interface' :
-      - 'Migrating to Permission-Aware CLI' : 'Researcher/Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md'
       - 'Automatically Delete Jobs After Job Finish' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Walkthroughs' :
       - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
