@@ -30,7 +30,7 @@ For further information on how to set up duration limits see: [Working with Proj
 
 Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a  Run:AI cluster. 
 
-For further information see: [Upgrading and Deleting a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Upgrading-and-Deleting-a-Run-AI-Cluster-Installation.md)
+For further information see: [Upgrading a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Upgrading-Cluster-Install.md) and [Deleting a a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Deleting-Cluster-Install.md)
 
 ## March 3rd, 2020
 
