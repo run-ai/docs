@@ -54,10 +54,10 @@ nav:
   - 'Administrator' :
     - 'Cluster Setup' :
       - 'Cluster Setup - Start Here' : 'Administrator/Cluster-Setup/Cluster-Setup-Start-Here.md'
-      - 'Run:AI GPU Cluster Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
-      - 'Installing Run:AI on an on-premise Kubernetes Cluster' : 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md'
-      - 'Troubleshooting a Run:AI Cluster Installation' : 'Administrator/Cluster-Setup/Troubleshooting-a-Run-AI-Cluster-Installation.md'
-      - 'Upgrading and Deleting a Run:AI Cluster Installation' : 'Administrator/Cluster-Setup/Upgrading-and-Deleting-a-Run-AI-Cluster-Installation.md'
+      - 'Cluster Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
+      - 'Cluster Installation' : 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md'
+      - 'Troubleshooting a Cluster Installation' : 'Administrator/Cluster-Setup/Troubleshooting-a-Run-AI-Cluster-Installation.md'
+      - 'Upgrading and Deleting a Cluster Installation' : 'Administrator/Cluster-Setup/Upgrading-and-Deleting-a-Run-AI-Cluster-Installation.md'
       - 'Exposing Cluster Services via Ingress' : 'Administrator/Cluster-Setup/Exposing-Cluster-Services-via-Ingress.md'
       - 'Exposing Ports from Researcher Containers using Ingress' : 'Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md'
       - 'Installing Run:AI with an Internet Proxy Server ' : 'Administrator/Cluster-Setup/Installing-Run-AI-with-an-Internet-Proxy-Server-.md'
