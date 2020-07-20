@@ -1,22 +1,21 @@
 ## Description
 
-Delete a training job and its associated pods
+Delete a training job and its associated pods.
 
-<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Note that once you delete a job, its entire data will be gone:</span>
+Note that once you delete a job, its entire data will be gone:
 
-*   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">You will no longer be able to enter it via bash&nbsp;&nbsp;</span>
-*   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">You will no longer be able access logs</span>
-*   <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Any data saved on the container and not stored on a shared repository will be lost</span>
+* You will no longer be able to enter it via bash.
+* You will no longer be able access logs.
+* Any data saved on the container and not stored on a shared repository will be lost.
 
 ## Synopsis
 
-<pre>runai delete &lt;job-name&gt;<br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
+    runai delete job-name 
+        [--loglevel value] 
+        [--project string | -p string] 
+        [--help | -h]
 
 ## Options
-
---backward-compatibility | -b
-
->  Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See <a href="https://support.run.ai/hc/en-us/articles/360013546920-Migrating-to-Permission-Aware-CLI" target="_self">here</a> for further information
 
 --loglevel (string)
 
@@ -24,7 +23,7 @@ Delete a training job and its associated pods
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use 'runai project set &lt;project name&gt;'.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
 
@@ -38,8 +37,6 @@ The job will __not__ be deleted from the Run:AI user interface Job list
 
 ## See Also
 
-*   Build Workloads:&nbsp;&nbsp;[https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads- ](https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads-)
-*   Training Workloads: <https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;
+*   Build Workloads: [Walkthrough Start and Use Interactive Build Workloads](../Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md).
+*   Training Workloads: [Walkthrough Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
 
-&nbsp;
-&nbsp;

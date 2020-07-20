@@ -1,6 +1,9 @@
 site_name: Run:AI
 copyright:  All rights reserved Run:AI 2020
-#google_analytics:
+google_analytics:
+  - UA-122651141-1
+  - auto
+
 #repo_url: https://github.com/run-ai/docs/
 
 
@@ -8,11 +11,22 @@ copyright:  All rights reserved Run:AI 2020
 theme:
 #  name: mkdocs
   name: material
+  custom_dir: custom_theme/
+
 #  name: readthedocs
 #  name: ivory
 #  name: bootstrap4
 #  name: gitbook
 #  name: 'rtd-dropdown'
+  language: en
+  # palette:
+  #  scheme: slate
+
+  #   primary: indigo
+  #   accent: indigo
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
 
   favicon: images/favicon.ico
   logo: images/runai-logo.svg
@@ -28,7 +42,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: True
-
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/runailabs
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/runailabs/
 
 nav:
   - Home: 'index.md'
@@ -61,42 +80,41 @@ nav:
     - 'Miscellaneous' :
       - 'Adding, Updating and Deleting Admin UI Users' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
+    - 'Walkthroughs' :
+      - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
+      - 'Walkthrough: Start and Use Interactive Build Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
+      - 'Walkthrough: Launch an Interactive Build Workload with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
+      - 'Walkthrough: Launch Unattended Training Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
+      - 'Walkthrough: Using GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
+      - 'Walkthrough: Running Distributed Training' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
+    - 'Command Line Interface - API Reference' :
+      - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
+      - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'
+      - 'runai exec' : 'Researcher/Command-Line-Interface-API-Reference/runai-exec.md'
+      - 'runai delete' : 'Researcher/Command-Line-Interface-API-Reference/runai-delete.md'
+      - 'runai get' : 'Researcher/Command-Line-Interface-API-Reference/runai-get.md'
+      - 'runai list' : 'Researcher/Command-Line-Interface-API-Reference/runai-list.md'
+      - 'runai logs' : 'Researcher/Command-Line-Interface-API-Reference/runai-logs.md'
+      - 'runai submit' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit.md'
+      - 'runai submit-mpi' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit-mpi.md'
+      - 'runai top node' : 'Researcher/Command-Line-Interface-API-Reference/runai-top-node.md'
+      - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
+      - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
+    - 'Command Line Interface' :
+      - 'Automatically Delete Jobs After Job Finish' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
+    - 'Image Creation Best Practices' :
+      - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
+      - 'Converting your Workload to use Unattended "Training" Execution' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
+      - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Presentations' :
       - 'Researcher Onboarding Presentation' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
-    - 'Run:AI Researcher  Library' :
+    - 'Run:AI Researcher Library' :
       - 'The Run:AI Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
       - 'Elasticity: Dynamically Stretch/Compress Jobs According to GPU Availability' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
       - 'Reporting via the Run:AI Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
-    - 'Image Creation Best Practices' :
-      - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
-      - 'Converting your Workload to use Unattended "Training" Execution' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
-      - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
-    - 'Command Line Interface' :
-      - 'Migrating to Permission-Aware CLI' : 'Researcher/Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md'
-      - 'Automatically Delete Jobs After Job Finish' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
-    - 'Walkthroughs' :
-      - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
-      - 'Walkthrough: Launch Unattended Training Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
-      - 'Walkthrough: Start and Use Interactive Build Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
-      - 'Walkthrough: Launch an Interactive Build Workload with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
-      - 'Walkthrough: Using GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
-      - 'Walkthrough: Running Distributed Training' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
-    - 'Command Line Interface - API Reference' :
-      - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
-      - 'runai delete' : 'Researcher/Command-Line-Interface-API-Reference/runai-delete.md'
-      - 'runai get' : 'Researcher/Command-Line-Interface-API-Reference/runai-get.md'
-      - 'runai list' : 'Researcher/Command-Line-Interface-API-Reference/runai-list.md'
-      - 'runai logs' : 'Researcher/Command-Line-Interface-API-Reference/runai-logs.md'
-      - 'runai top node' : 'Researcher/Command-Line-Interface-API-Reference/runai-top-node.md'
-      - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
-      - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
-      - 'runai submit' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit.md'
-      - 'runai submit-mpi' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit-mpi.md'
-      - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'
-      - 'runai exec' : 'Researcher/Command-Line-Interface-API-Reference/runai-exec.md'
+
   - 'Product' :
-    - 'Documents' :
-      - 'Whats New' : 'Product/Documents/What-s-New.md'
+    - 'Whats New' : 'Product/Whats-New.md'
