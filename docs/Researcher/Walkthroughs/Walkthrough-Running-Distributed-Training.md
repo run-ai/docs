@@ -77,7 +77,7 @@ This will provide shell access to the launcher process. From there, you can run 
 
 <pre>horovodrun -np 2 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \<br/> --model=resnet20 --num_batches=1000000 --data_name cifar10 \<br/> --data_dir /cifar10 --batch_size=64 --variable_update=horovod</pre>
 
-<span style="font-size: 2.1em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Next Steps</span>
+## Next Steps</span>
 
 *   For more information on how to convert an interactive session into a training job, see: <https://support.run.ai/hc/en-us/articles/360012065440-Converting-your-Workload-to-use-Unattended-Training-Execution>
 *   For a full list of the submit-mpi options see&nbsp;<https://support.run.ai/hc/en-us/articles/360015125180-runai-submit-mpi>&nbsp;
