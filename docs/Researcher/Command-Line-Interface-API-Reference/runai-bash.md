@@ -2,21 +2,18 @@
 
 Get a bash session inside a running job
 
-This command is a shortcut to runai exec (_runai exec -it &lt;job-name&gt; bash_). See <https://support.run.ai/hc/en-us/articles/360011544859-runai-exec>&nbsp;&nbsp;<span class="wysiwyg-color-red">&nbsp;</span><span class="wysiwyg-color-black">for full documentation of the exec command.&nbsp;</span>
-
-&nbsp;
+This command is a shortcut to runai exec (``runai exec -it job-name bash``). See [runai exec](runai-exec) for full documentation of the exec command.
 
 ## Synopsis
 
-<pre>runai bash &lt;job-name&gt;<br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
+    runai bash job-name 
+        [--loglevel value] 
+        [--project string | -p string] 
+        [--help | -h]
 
 ## Options
 
 ### Global Flags
-
---backward-compatibility | -b
-
->  Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See <a href="https://support.run.ai/hc/en-us/articles/360013546920-Migrating-to-Permission-Aware-CLI" target="_self">here</a> for further information
 
 --loglevel (string)
 
@@ -24,7 +21,7 @@ This command is a shortcut to runai exec (_runai exec -it &lt;job-name&gt; bash_
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use 'runai project set &lt;project name&gt;'.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
 
@@ -38,6 +35,5 @@ The command will return an error if the container does not exist or has not been
 
 ## See also
 
-Build Workloads: <https://support.run.ai/hc/en-us/articles/360010894959-Walkthrough-Start-and-Use-Interactive-Build-Workloads->
+Build Workloads: [Walkthrough Start and Use Interactive Build Workloads](../Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md).
 
-&nbsp;

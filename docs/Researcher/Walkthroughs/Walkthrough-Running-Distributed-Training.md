@@ -10,8 +10,8 @@ Run:AI provides the ability to run, manage, and view Distributed Training worklo
 
 To complete this walkthrough you must have:
 
-*   Run:AI software is installed on your Kubernetes cluster. See [Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster](../../Administrator/Cluster-Setup/Installing Run:AI on an on-premise Kubernetes Cluster.md)
-*   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
+*   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
+*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
 ## Step by Step Walkthrough
 
@@ -33,53 +33,59 @@ To complete this walkthrough you must have:
 *   We named the job _dist_
 *   The job is assigned to _team-a_
 *   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
-*   The job is based on a sample docker image<span>&nbsp;</span>_gcr.io/run-ai-demo/quickstart-distributed_&nbsp;the image contains a startup script that runs a deep learning Horovod-based workload. The script runs the following _Horovod_ command:
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed``. the image contains a startup script that runs a deep learning Horovod-based workload. The script runs the following _Horovod_ command:
 
-<pre class="c-mrkdwn__pre" data-stringify-type="pre">horovodrun -np %<span>RUNAI_MPI_NUM_WORKERS%</span> python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \<br/>   --model=resnet20 --num_batches=1000000 --data_name cifar10  \<br/>   --data_dir /cifar10 --batch_size=64 --variable_update=horovod</pre>
+        horovodrun -np %RUNAI_MPI_NUM_WORKERS% python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
+        --model=resnet20 --num_batches=1000000 --data_name cifar10  \
+        --data_dir /cifar10 --batch_size=64 --variable_update=horovod
 
-&nbsp;Where&nbsp;<span>RUNAI\_MPI\_NUM\_WORKERS is a Run:AI environment variable containing the number of worker processes provided to the runai submit-mpi command (in this example it's 2).</span>
+&nbsp;Where&nbsp;``RUNAI_MPI_NUM_WORKERS`` is a Run:AI environment variable containing the number of worker processes provided to the runai submit-mpi command (in this example it's 2).
 
 Follow up on the job's status by running:
 
-<pre>runai list</pre>
+        runai list
 
 The result:
 
-![mceclip1.png](https://support.run.ai/hc/article_attachments/360014298800/mceclip1.png)
+![mceclip11.png](img/mceclip11.png)
 
 The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
-<pre>runai get dist </pre>
+        runai get dist
 
 &nbsp;You will see two worker processes (pods) their status and on which node they run:
 
-![mceclip0.png](https://support.run.ai/hc/article_attachments/360014290699/mceclip0.png)
+![mceclip12.png](img/mceclip12.png)
 
 To see the merged logs of all pods run:
 
-<pre>runai logs dist</pre>
+        runai logs dist
 
 Finally, you can delete the distributed training workload by running:
 
-<pre>runai delete dist</pre>
+        runai delete dist
 
 ### Run an Interactive Distributed training Workload
 
 It is also possible to run a distributed training job as "interactive". This is useful if you want to test your distributed training job before committing on a long, unattended training session. To run such a session use:&nbsp;
 
-<pre class="c-mrkdwn__pre" data-stringify-type="pre">runai submit-mpi dist-int --processes=2 -g 1 \ <br/>   -i gcr.io/run-ai-demo/quickstart-distributed  \<br/>   --command="sh" --args="-c" --args="sleep infinity"  --interactive</pre>
+        runai submit-mpi dist-int --processes=2 -g 1 \ 
+          -i gcr.io/run-ai-demo/quickstart-distributed  \
+          --command="sh" --args="-c" --args="sleep infinity"  --interactive
 
-&nbsp;When the workers are running run:
+When the workers are running run:
 
-<pre>runai bash dist-int</pre>
+        runai bash dist-int
 
 This will provide shell access to the launcher process. From there, you can run your distributed session. For examples, with Horovod:
 
-<pre>horovodrun -np 2 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \<br/> --model=resnet20 --num_batches=1000000 --data_name cifar10 \<br/> --data_dir /cifar10 --batch_size=64 --variable_update=horovod</pre>
+        horovodrun -np 2 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
+        --model=resnet20 --num_batches=1000000 --data_name cifar10 \
+        --data_dir /cifar10 --batch_size=64 --variable_update=horovod
 
-<span style="font-size: 2.1em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Next Steps</span>
+## Next Steps</span>
 
-*   For more information on how to convert an interactive session into a training job, see: <https://support.run.ai/hc/en-us/articles/360012065440-Converting-your-Workload-to-use-Unattended-Training-Execution>
-*   For a full list of the submit-mpi options see&nbsp;<https://support.run.ai/hc/en-us/articles/360015125180-runai-submit-mpi>&nbsp;
+*   For more information on how to convert an interactive session into a training job, see: [Converting your Workload to use Unattended Training Execution](../Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md)
+*   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md)
 
 &nbsp;
