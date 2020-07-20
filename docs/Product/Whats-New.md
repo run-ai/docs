@@ -4,7 +4,7 @@
 
 It is now possible to set limits for CPU and memory as well as to establish defaults based on the ratio of GPU to CPU and GPU to memory. 
 
-For further information see: [Allocation of CPU and Memory](../../Researcher/Scheduling/Allocation-of-CPU-and-Memory.md)
+For further information see: [Allocation of CPU and Memory](../Researcher/Scheduling/Allocation-of-CPU-and-Memory.md)
 
 ## June 3rd, 2020
 
@@ -16,13 +16,13 @@ Projects now support _Node Affinity._ This feature allows the administrator to a
 *   The project team is the owner of specific hardware which was acquired with a specialized budget
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes
 
-For further information see: [Working-with-Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+For further information see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
 #### Limit Duration of Interactive Jobs
 
 Researchers frequently forget to close Interactive jobs. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive jobs and close them automatically. 
 
-For further information on how to set up duration limits see: [Working-with-Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+For further information on how to set up duration limits see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
 ## May 24th, 2020
 
@@ -30,7 +30,7 @@ For further information on how to set up duration limits see: [Working-with-Proj
 
 Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a  Run:AI cluster. 
 
-For further information see: [Upgrading-and-Deleting-a-Run-AI-Cluster-Installation](../../Administrator/Cluster-Setup/Upgrading-and-Deleting-a-Run-AI-Cluster-Installation.md)
+For further information see: [Upgrading and Deleting a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Upgrading-and-Deleting-a-Run-AI-Cluster-Installation.md)
 
 ## March 3rd, 2020
 
