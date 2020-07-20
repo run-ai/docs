@@ -34,7 +34,7 @@ For example,
 
 For the sake of uniformity with the Keras implementation (see below), we recommend sending the following metrics:
 
-<table border="1" cellpadding="1" cellspacing="1" style="width: 680px;">
+<table border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
 <tbody>
 <tr>
 <td style="padding: 6px; width: 160px;"><strong>Metric</strong></td>
