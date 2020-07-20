@@ -2,35 +2,46 @@
 
 Show logs of training job
 
-<span style="font-size: 2.1em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Synopsis</span>
+## Synopsis
 
-<pre>runai logs &lt;job-name&gt;<br/>[--follow | -f]<br/>[--pod &lt;string&gt; | -p &lt;string&gt;]<br/>[--since &lt;duration&gt;]<br/>[--since-time &lt;date-time&gt;]<br/>[--tail &lt;int&gt; | -t&nbsp;&lt;int&gt;]<br/>[--timestamps]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
+    runai logs job-name 
+        [--follow | -f] 
+        [--pod string | -p string] 
+        [--since duration] 
+        [--since-time date-time] 
+        [--tail int | -tint] 
+        [--timestamps]  
+
+        [--backward-compatibility | -b] 
+        [--loglevel value] 
+        [--project string | -p string] 
+        [--help | -h]
 
 ## Options
 
---follow | -f&nbsp;
+--follow | -f
 
 >  Specify if the logs should be streamed.
 
 --pod | -p
 
->  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running&nbsp;__runai get &lt;job-name&gt;__
+>  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running ``runai get job-name``
 
 --instance (string) | -i (string)
 
->  <span class="wysiwyg-color-black60">show logs for a specific instance in cases where a job contains multiple pods</span>
+>  Show logs for a specific instance in cases where a job contains multiple pods
 
---since (duration)&nbsp;
+--since (duration)
 
 >  Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. The flags since and since-time cannot be used together
 
---since-time (date-time)&nbsp;
+--since-time (date-time)
 
->  Return logs after specified date. Date format should be&nbsp;RFC3339, example:&nbsp;<span>2020-01-26T15:00:00Z</span>
+>  Return logs after specified date. Date format should beRFC3339, example:2020-01-26T15:00:00Z
 
 --tail (int) | -t (int)
 
->  \# of lines of recent log file to display.&nbsp;
+>  \# of lines of recent log file to display.
 
 --timestamps
 
@@ -40,7 +51,7 @@ Show logs of training job
 
 --backward-compatibility | -b
 
->  Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See <a href="https://support.run.ai/hc/en-us/articles/360013546920-Migrating-to-Permission-Aware-CLI" target="_self">here</a> for further information
+>   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 
@@ -48,7 +59,7 @@ Show logs of training job
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use 'runai project set &lt;project name&gt;'.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use``runai project set <project-name>``.
 
 --help | -h
 
@@ -60,6 +71,5 @@ The jobs log will show
 
 ## See Also
 
-*   Training Workloads: <https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;
+*   Training Workloads: [Walkthrough Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
 
-&nbsp;

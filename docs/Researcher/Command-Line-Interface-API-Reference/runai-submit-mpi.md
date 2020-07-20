@@ -1,73 +1,93 @@
 ## Description
 
-Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
+Submit a Distributed Training (MPI) Run:AI job for execution
 
 ## Synopsis
 
-<pre>runai submit-mpi &lt;job-name&gt; <br/>[--always-pull-image]<br/>[--args &lt;stringArray&gt;]<br/>[--backoffLimit &lt;int&gt;]<br/>[--command &lt;stringArray&gt;]<br/>[--cpu &lt;double&gt;]<br/>[--cpu-limit &lt;double&gt;]<br/>[--environment &lt;stringArray&gt; | -e &lt;stringArray&gt;]<br/>[--gpu &lt;int&gt; | -g &lt;int&gt;]<br/>[--host-ipc]<br/>[--host-network]<br/>[--image &lt;string&gt; | -i &lt;string&gt;]<br/>[--interactive]<br/>[--large-shm]<br/>[--local-image]<br/>[--memory &lt;string&gt;]<br/>[--memory-limit &lt;string&gt;]<br/>[--node-type &lt;string&gt;]<br/>[--processes &lt;int&gt;]<br/>[--<span>run-as-user]</span><br/>[--volume &lt;stringArray&gt; | -v stringArray]<br/>[<span>--working-dir]</span><br/><br/>[--loglevel &lt;string&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
+    runai submit-mpi job-name  
+        [--always-pull-image] 
+        [--args stringArray] 
+        [--backoffLimit int] 
+        [--command stringArray] 
+        [--cpu double] 
+        [--cpu-limit double] 
+        [--environment stringArray | -e stringArray] 
+        [--gpu int | -g int] 
+        [--host-ipc] 
+        [--host-network] 
+        [--image string | -i string] 
+        [--interactive] 
+        [--large-shm] 
+        [--local-image] 
+        [--memory string] 
+        [--memory-limit string] 
+        [--node-type string] 
+        [--processes int] 
+        [--run-as-user] 
+        [--volume stringArray | -v stringArray] 
+        [--working-dir]  
 
-&nbsp; Syntax notes:
+        [--loglevel string] 
+        [--project string | -p string] 
+        [--help | -h]
 
-*   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.&nbsp;
+ Syntax notes:
+
+*   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
 ## Options
 
-&lt;job-name&gt; the name of the job to run the command in&nbsp;
+<job-name\> the name of the job to run the command in
 
-&lt;command&gt; the command itself (e.g. _bash_)&nbsp;
+<command\> the command itself (e.g. ``bash``)
 
---always-pull-image &lt;stringArray&gt;
+--always-pull-image stringArray
 
 >  When starting a container, always pull the image from repository, even if cached on running node. This is useful when you are re-saving updates to the image using the same tag.
 
---args &lt;stringArray&gt;
+--args stringArray
 
->  Arguments to pass to the command run on container start. Use together with --command.   
-> Example: --command sleep --args 10000 <span class="wysiwyg-color-red"></span><span class="wysiwyg-color-blue"></span>
+>  Arguments to pass to the command run on container start. Use together with ``--command``.   
+>  Example: ``--command sleep --args 10000`` 
 
---<span>backoffLimit &lt;int&gt;</span>
+--backoffLimit int
+ 
+> The number of times the job will be retried before failing. Default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
 
->  
-> The number of times the job will be retried before failing. Default is 6. This flag will only work with training workloads (when the --interactive flag is not specified)
-> 
+--command stringArray
 
---command &lt;stringArray&gt;
+>  Command to run at container start. Use together with ``--args``.
 
->  <span class="wysiwyg-color-black60">Command to run at container start. Use together with --args</span><span class="wysiwyg-color-black40">.</span><span class="wysiwyg-color-red">&nbsp;</span>
+--cpu double
 
---cpu &lt;double&gt;
+> CPU units to allocate for the job (0.5, 1, .etc). The Job will receive at least this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.
 
->  
-> <span>CPU units to allocate for the job (0.5, 1, .etc). The Job will receive at least this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.&nbsp;</span><span></span>
-> 
+--cpu-limit double
 
---cpu-limit &lt;double&gt;
+> Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
-<blockquote>Limitations<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&nbsp;of the number of CPU consumed by the job (0.5, 1, .etc). The system </font>guarantees<font face="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&nbsp;that this Job will not be able to consume more than this amount of GPUs.&nbsp;</font></blockquote>
->  &nbsp;
+-e stringArray | --environment stringArray
 
--e &lt;stringArray&gt; | --environment &lt;stringArray&gt;
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH\_SIZE=50 -e LEARNING\_RATE=0.2``) or separate by a comma (``-e BATCH\_SIZE:50,LEARNING\_RATE:0.2``)
 
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (-e BATCH\_SIZE=50 -e LEARNING\_RATE=0.2) or separate by a comma (-e BATCH\_SIZE:50,LEARNING\_RATE:0.2)
-
---gpu &lt;int&gt; | -g &lt;int&gt;
+--gpu int | -g int
 
 >  Number of GPUs to allocate to the Job. Default is no GPUs.
 
 --host-ipc
 
->  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace.<span class="wysiwyg-color-red"></span>&nbsp;<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.</span>
+>  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack
 > 
-> For further information see docker <a href="https://docs.docker.com/engine/reference/run/" target="_self">documentation</a>&nbsp;
-> 
+> For further information see docker <a href="https://docs.docker.com/engine/reference/run/" target="_self">documentation</a>
+
 
 --host-network
 
->  Use the host's network&nbsp;<span>stack inside the container</span>
->  <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">For further information see docker </span><a href="https://docs.docker.com/engine/reference/run/" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" target="_self">documentation</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">&nbsp;</span>
+>  Use the host's networkstack inside the container
+>  For further information see docker <a href="https://docs.docker.com/engine/reference/run/" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" target="_self">documentation</a>
 
---image &lt;string&gt; | -i &lt;string&gt;
+--image string | -i string
 
 >  Image to use when creating the container for this Job
 
@@ -77,48 +97,40 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 --large-shm
 
->  
 > Mount a large /dev/shm device. shm is a shared file system mounted on RAM
-> 
 
 --local-image
 
 >  Use a local image for this job. A local image is an image which exists on all local servers of the Kubernetes Cluster.
 
---memory &lt;string&gt;
+--memory string
 
->  <span class="wysiwyg-color-black70">CPU</span> memory to allocate for this job (1G, 20M, .etc).&nbsp;<span>The Job will receive at least this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.&nbsp;</span>
+> CPU memory to allocate for this job (1G, 20M, .etc).The Job will receive at least this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
 
---memory-limit &lt;string&gt;
+--memory-limit string
 
->  <span class="wysiwyg-color-black70">CPU</span> memory to allocate for this job (1G, 20M, .etc).&nbsp;The system guarantees&nbsp;that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
+>  CPU memory to allocate for this job (1G, 20M, .etc).The system guaranteesthat this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
---name &lt;string&gt;
+--node-type string
 
->  <span class="wysiwyg-color-black60">(Deprecated)</span>&nbsp;Job Name. Add the name without the --name flag.
+>  Allows defining specific nodes (machines) or group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
+> This flag can be used in conjunctionwith Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
---node-type &lt;string&gt;
+--processes int
 
->  Allows defining specific nodes (machines) or group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here:&nbsp;<https://support.run.ai/hc/en-us/articles/360011591500-Limit-a-Workload-to-a-Specific-Node-Group>&nbsp;  
-> This flag can be used in conjunction&nbsp;with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011591300-Working-with-Projects&nbsp;>
-
---processes &lt;int&gt;&nbsp;
-
->  
 > Number of distributed training processes. Default is 1.
-> 
 
 --run-as-user
 
 >  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is root (same as in Docker), this command allows you to submit a job running under your linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
 
---volume &lt;stringArray&gt; | -v &lt;stringArray&gt;
+--volume stringArray | -v stringArray
 
->  Volume to mount into the container. Example&nbsp;-v /raid/public/john/data:/root/data:ro The flag may optionally be suffixed with :ro or :rw to mount the volumes in read-only or read-write mode, respectively.
+>  Volume to mount into the container. Example ``-v /raid/public/john/data:/root/data:ro`` The flag may optionally be suffixed with ``:ro`` or ``:rw`` to mount the volumes in read-only or read-write mode, respectively.
 
---working-dir &lt;string&gt;&nbsp;
+--working-dir string
 
->  Starts the container with the specified directory&nbsp;
+>  Starts the container with the specified directory
 
 ### Global Flags
 
@@ -128,7 +140,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 --project | -p (string)
 
->  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility.&nbsp; By default, commands apply to the default project. To change the default project use 'runai project set &lt;project name&gt;'.
+>  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use``runai project set <project-name>``.
 
 --help | -h
 
@@ -138,14 +150,13 @@ Submit a Distributed Training (MPI) Run:AI job for execution<span style="font-fa
 
 start an unattended mpi training job of name dist1, based on project _team-a_ using a _quickstart-distributed_ image:
 
-<pre>runai submit-mpi dist1 --num-processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed </pre>
+    runai submit-mpi dist1 --num-processes=2 -g 1 \
+        -i gcr.io/run-ai-demo/quickstart-distributed 
 
 ## Output
 
-The command will <span class="wysiwyg-color-black">attempt to submit an mpi job. You can follow up on the job by running _runai list_ or _runai get &lt;job-name&gt;&nbsp;_</span>
+The command will attempt to submit an mpi job. You can follow up on the job by running ``runai list`` or ``runai get job-name``
 
 ## See Also
 
-*   See Walkthrough documents here:&nbsp;<span class="wysiwyg-color-red">XXX</span>
-
-&nbsp;
+*   See Walkthrough document [Walkthrough: Running Distributed Training](../Walkthroughs/Walkthrough-Running-Distributed-Training.md).
