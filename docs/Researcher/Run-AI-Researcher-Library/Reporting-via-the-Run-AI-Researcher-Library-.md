@@ -121,4 +121,4 @@ The metrics show up in the Job list of the user interface. To add a metric to th
 *   Go to Jobs list: <https://app.run.ai/jobs>
 *   On the top right, use the settings wheel and select the metrics you have added
 
-![mceclip0.png](../img/mceclip0.png)
+![mceclip0.png](img/mceclip0.png)
