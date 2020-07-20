@@ -15,7 +15,7 @@ When submitting a job, you can request a guaranteed amount of CPUs and memory by
 
 The system guarantees that if the job is scheduled, you will be able to receive this amount of CPU and memory.
 
-For further details on these flags see:&nbsp;<https://support.run.ai/hc/en-us/articles/360011436120-runai-submit>
+For further details on these flags see: [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md)
 
 ### CPU over allocation
 
