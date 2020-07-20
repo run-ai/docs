@@ -1,6 +1,9 @@
 site_name: Run:AI
 copyright:  All rights reserved Run:AI 2020
-#google_analytics:
+google_analytics:
+  - UA-122651141-1
+  - auto
+
 #repo_url: https://github.com/run-ai/docs/
 
 
@@ -8,11 +11,22 @@ copyright:  All rights reserved Run:AI 2020
 theme:
 #  name: mkdocs
   name: material
+  custom_dir: custom_theme/
+
 #  name: readthedocs
 #  name: ivory
 #  name: bootstrap4
 #  name: gitbook
 #  name: 'rtd-dropdown'
+  language: en
+  # palette:
+  #  scheme: slate
+
+  #   primary: indigo
+  #   accent: indigo
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
 
   favicon: images/favicon.ico
   logo: images/runai-logo.svg
@@ -28,7 +42,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: True
-
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/runailabs
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/runailabs/
 
 nav:
   - Home: 'index.md'
