@@ -42,7 +42,7 @@ The limit behavior is different for CPUs and memory.
 *   Your job will never be allocated with more than the amount stated in the --cpu-limit flag
 *   If your job tries to allocate more than the amount stated in the --memory-limit flag it will receive an out of memory exception.
 
-For further details on these flags see:&nbsp;</span><a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">https://support.run.ai/hc/en-us/articles/360011436120-runai-submit</a>
+For further details on these flags see: [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md)
 
 ## Flag Defaults
 
@@ -54,7 +54,7 @@ Consider the default of 1:6. If your job has only specified --gpu 2 and has not 
 
 The system comes with a cluster-wide default of 1:1. To change this default please contact Run:AI customer support.
 
-### Default for the --memory flag</span>
+### Defaults for --memory flag
 
 If your job has not specified --memory, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
 
