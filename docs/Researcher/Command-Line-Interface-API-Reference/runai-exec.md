@@ -1,20 +1,27 @@
 ## Description
 
-Execute a command inside a running job<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"></span>
+Execute a command inside a running job
 
-Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;[https://support.run.ai/hc/en-us/articles/360011544859-runai-exec&nbsp;](https://support.run.ai/hc/en-us/articles/360011544099-runai-bash)_
+Note: to execute a bash command, you can also use the shorthand [runai bash](runai-bash)
 
 ## Synopsis
 
-<pre>runai exec &lt;job-name&gt; &lt;command&gt;<br/>[--stdin | -i]<br/>[--tty | -t]<br/><br/>[--backward-compatibility | -b]<br/>[--loglevel &lt;value&gt;]<br/>[--project &lt;string&gt; | -p &lt;string&gt;]<br/>[--help | -h]</pre>
+    runai exec job-name command 
+        [--stdin | -i] 
+        [--tty | -t]
 
-&nbsp;
+        [--backward-compatibility | -b] 
+        [--loglevel value] 
+        [--project string | -p string] 
+        [--help | -h]
+
+
 
 ## Options
 
-&lt;job-name&gt; the name of the job to run the command in&nbsp;
+<job-name\> the name of the job to run the command in
 
-&lt;command&gt; the command itself (e.g. _bash_)&nbsp;
+<command\> the command itself (e.g. _bash_)
 
 --stdin | -i
 
@@ -28,7 +35,7 @@ Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;
 
 --backward-compatibility | -b
 
->  Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See <a href="https://support.run.ai/hc/en-us/articles/360013546920-Migrating-to-Permission-Aware-CLI" target="_self">here</a> for further information
+>   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 
@@ -36,7 +43,7 @@ Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use 'runai project set &lt;project name&gt;'.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
 
@@ -44,8 +51,7 @@ Note: to execute a bash command, you can also use the shortcut _runai bash&nbsp;
 
 ## Output
 
-The command will run in the context of the container&nbsp;
+The command will run in the context of the container
 
 ## See Also
 
-&nbsp;
