@@ -66,20 +66,20 @@ nav:
       - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/Use-OpenID-Connect-LDAP-or-SAML-for-Authentication-and-Authorization-.md'
     - 'Researcher Setup' :
       - 'Researcher Setup - Start Here' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
-      - 'Installing the Run:AI Command Line Interface' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
-      - 'Troubleshooting a CLI installation' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
-      - 'Limit a Workload to a Specific Node Group' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
+      - 'Installing the Command Line Interface' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
+      - 'Troubleshooting a CLI Installation' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
+      - 'Limit Workloads to a Specific Node Group' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
       - 'Using a Docker Registry with Credentials' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
       - 'Switch from working with Docker to working with Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'
-      - 'Limit the Run:AI Scheduler to Specific GPUs in Specific Nodes' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
+      - 'Limit Workloads to Specific GPUs in Specific Nodes' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
       - 'Configure Command Line Interface Templates' : 'Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md'
     - 'Presentations' :
-      - 'Administrator Onboarding Presentation' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
+      - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Admin User Interface Setup' :
       - 'Working with Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
-      - 'Adding, Updating and Deleting Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
+      - 'Managing Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
     - 'Miscellaneous' :
-      - 'Adding, Updating and Deleting Admin UI Users' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
+      - 'Using Rancher to submit workloads' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
     - 'Walkthroughs' :
       - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
@@ -102,20 +102,20 @@ nav:
       - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
       - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
     - 'Command Line Interface' :
-      - 'Automatically Delete Jobs After Job Finish' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
+      - 'Automatically Delete Finished Workloads' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Image Creation Best Practices' :
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
-      - 'Converting your Workload to use Unattended "Training" Execution' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
+      - 'Converting your Workload to run Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
       - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Presentations' :
-      - 'Researcher Onboarding Presentation' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
+      - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
     - 'Run:AI Researcher Library' :
-      - 'The Run:AI Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
-      - 'Elasticity: Dynamically Stretch/Compress Jobs According to GPU Availability' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
-      - 'Reporting via the Run:AI Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
+      - 'The Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
+      - 'Elasticity: Dynamically Stretch/Compress Workloads GPU Quota' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
+      - 'Reporting via the Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
 
   - 'Product' :
     - 'Whats New' : 'Product/Whats-New.md'
