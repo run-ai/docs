@@ -83,11 +83,11 @@ nav:
   - 'Researcher' :
     - 'Walkthroughs' :
       - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
-      - 'Walkthrough: Start and Use Interactive Build Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
-      - 'Walkthrough: Launch an Interactive Build Workload with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
-      - 'Walkthrough: Launch Unattended Training Workloads ' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
-      - 'Walkthrough: Using GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
-      - 'Walkthrough: Running Distributed Training' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
+      - 'Launch Interactive Build Workloads' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
+      - 'Launch Interactive Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
+      - 'Launch Unattended Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
+      - 'Launch Workloads with GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
+      - 'Launch Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
     - 'Command Line Interface - API Reference' :
       - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
       - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'

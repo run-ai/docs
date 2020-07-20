@@ -1,3 +1,5 @@
+# Walkthrough: Launch Distributed Training Workloads
+
 ## Introduction
 
 Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a _worker node_.&nbsp;Worker nodes work in parallel to speed up model training.&nbsp; Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU&nbsp;to your workload which runs on a __single__ __container__.
