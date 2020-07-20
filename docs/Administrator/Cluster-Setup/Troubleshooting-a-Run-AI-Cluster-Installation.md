@@ -1,6 +1,4 @@
- 
-
-## Pods are not created
+ ## Pods are not created
 
 run:
 
