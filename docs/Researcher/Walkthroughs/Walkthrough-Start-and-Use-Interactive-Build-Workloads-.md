@@ -2,7 +2,7 @@
 
 Deep learning workloads can be divided into two generic types:
 
-*   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly.&nbsp;
+*   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly. 
 *   Unattended "training" sessions. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the customer can examine the results.
 
 With this Walkthrough you will learn how to:
@@ -13,12 +13,12 @@ With this Walkthrough you will learn how to:
 
 It is also possible to open ports to specific services within the container. See "Next Steps" at the end of this article.
 
-## Prerequisites&nbsp;
+## Prerequisites 
 
 To complete this walkthrough you must have:
 
-*   Run:AI software is installed on your Kubernetes cluster. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010280179-Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster>
-*   Run:AI CLI installed on your machine. See:&nbsp;<https://support.run.ai/hc/en-us/articles/360010706120-Installing-the-Run-AI-Command-Line-Interface>
+*   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
+*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
 ## Step by Step Walkthrough
 
@@ -34,22 +34,21 @@ To complete this walkthrough you must have:
 
 *   At the command line run:
 
-<div>
-<pre>runai project set team-a<br/><br/>runai submit build1 -i gcr.io/run-ai-lab/build-demo -g 1 --interactive</pre>
-</div>
+        runai project set team-a
+        runai submit build1 -i gcr.io/run-ai-lab/build-demo -g 1 --interactive
 
-*   The job is based on a sample docker image&nbsp;_gcr.io/run-ai-lab/build-demo_<span>&nbsp;</span>
-*   <span>We named the job _build1.&nbsp;_</span>
-*   Note the "interactive" flag which means the job will not have a start or end. It is the researcher's responsibility to close the job.&nbsp;
-*   The job is assigned to team-a with an allocation of a single GPU.&nbsp;
+*   The job is based on a sample docker image ``gcr.io/run-ai-lab/build-demo``
+*   We named the job _build1_.
+*   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job. 
+*   The job is assigned to team-a with an allocation of a single GPU. 
 
 Follow up on the job's status by running:
 
-<pre>runai list</pre>
+    runai list
 
 The result:
 
-![mceclip0.png](https://support.run.ai/hc/article_attachments/360014011199/mceclip0.png)
+![mceclip20.png](img/mceclip20.png)
 
 Typical statuses you may see:
 
@@ -59,16 +58,14 @@ Typical statuses you may see:
 
 To get additional status on your job run:
 
-<pre>runai get build1</pre>
+    runai get build1
 
-&nbsp;
-&nbsp;
 
 ### Get a Shell to the container
 
 Run:
 
-<pre>runai bash build1</pre>
+    runai bash build1
 
 This should provide a direct shell into the computer
 
@@ -77,23 +74,23 @@ This should provide a direct shell into the computer
 *   Go to <https://app.run.ai>
 *   Under Dashboards | Overview you should see:
 
-![mceclip3.png](https://support.run.ai/hc/article_attachments/360006988279/mceclip3.png)
+![mceclip23.png](img/mceclip23.png)
 
 *   Under "Jobs" you can view the new Workload:
 
-![mceclip4.png](https://support.run.ai/hc/article_attachments/360006983560/mceclip4.png)
+![mceclip24.png](img/mceclip24.png)
 
-&nbsp;
+ 
 
 ### Stop Workload
 
 Run the following:
 
-<pre>runai delete build1</pre>
+    runai delete build1
 
-This would stop the training workload. You can verify this by running_&nbsp;runai list_ again.
+This would stop the training workload. You can verify this by running ``runai list`` again.
 
 ## Next Steps
 
-*   Expose internal ports to your interactive build workload:&nbsp;<https://support.run.ai/hc/en-us/articles/360011131919-Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports>&nbsp;
-*   Follow the Walkthrough: Launch unattended training workloads&nbsp;<https://support.run.ai/hc/en-us/articles/360010706360-Walkthrough-Launch-Unattended-Training-Workloads->&nbsp;
+*   Expose internal ports to your interactive build workload: [Walkthrough Launch an Interactive Build Workload with Connected Ports](Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
+*   Follow the Walkthrough: [Walkthrough Launch Unattended Training Workloads](Walkthrough-Launch-Unattended-Training-Workloads-.md).
