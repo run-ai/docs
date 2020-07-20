@@ -11,16 +11,11 @@ Note that once you delete a job, its entire data will be gone:
 ## Synopsis
 
     runai delete job-name 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
 
 ## Options
-
---backward-compatibility | -b
-
->   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 

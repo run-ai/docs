@@ -10,7 +10,6 @@ Note: to execute a bash command, you can also use the shorthand [runai bash](run
         [--stdin | -i] 
         [--tty | -t]
 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -32,10 +31,6 @@ Note: to execute a bash command, you can also use the shorthand [runai bash](run
 >  Allocate a pseudo-TTY
 
 ### Global Flags
-
---backward-compatibility | -b
-
->   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 

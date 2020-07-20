@@ -7,7 +7,6 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 ## Synopsis
 
     runai bash job-name 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -15,10 +14,6 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 ## Options
 
 ### Global Flags
-
---backward-compatibility | -b
-
->  Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 

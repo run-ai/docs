@@ -7,7 +7,6 @@ Display details of a training job
     runai get job-name 
         [--output value | -o value]  
 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -22,10 +21,6 @@ Display details of a training job
 >  Output format. One of: json|yaml|wide
 
 ### Global Flags
-
---backward-compatibility | -b
-
->   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 

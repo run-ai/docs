@@ -7,7 +7,6 @@ Show list of jobs
     runai list job-name 
         [--all-projects | -A]  
 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -19,10 +18,6 @@ Show list of jobs
 >  Show jobs from all projects
 
 ### Global Flags
-
---backward-compatibility | -b
-
->   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 

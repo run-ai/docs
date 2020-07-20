@@ -12,7 +12,6 @@ Show logs of training job
         [--tail int | -tint] 
         [--timestamps]  
 
-        [--backward-compatibility | -b] 
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -48,10 +47,6 @@ Show logs of training job
 >  Include timestamps on each line in the log output.
 
 ### Global Flags
-
---backward-compatibility | -b
-
->   Backward compatibility mode to provide support for Jobs created with older versions of the CLI. See [Migrating to Permission Aware CLI](../Command-Line-Interface/Migrating-to-Permission-Aware-CLI.md) for further information
 
 --loglevel (string)
 
