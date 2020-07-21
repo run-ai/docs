@@ -91,7 +91,7 @@ nav:
       - 'Launch Unattended Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
       - 'Launch Workloads with GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
       - 'Launch Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
-    - 'Command Line Interface - API Reference' :
+    - 'CLI Reference' :
       - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
       - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'
       - 'runai exec' : 'Researcher/Command-Line-Interface-API-Reference/runai-exec.md'
