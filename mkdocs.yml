@@ -56,7 +56,7 @@ nav:
   - Home: 'index.md'
   - 'Administrator' :
     - 'Cluster Setup' :
-      - 'Cluster Setup - Start Here' : 'Administrator/Cluster-Setup/Cluster-Setup-Start-Here.md'
+      - 'Introduction' : 'Administrator/Cluster-Setup/Cluster-Setup-Start-Here.md'
       - 'Cluster Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
       - 'Cluster Installation' : 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md'
       - 'Troubleshooting a Cluster Installation' : 'Administrator/Cluster-Setup/Troubleshooting-a-Run-AI-Cluster-Installation.md'
@@ -68,7 +68,7 @@ nav:
       - 'Kubernetes Cluster Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
       - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/Use-OpenID-Connect-LDAP-or-SAML-for-Authentication-and-Authorization-.md'
     - 'Researcher Setup' :
-      - 'Researcher Setup - Start Here' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
+      - 'Introduction' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
       - 'Installing the Command Line Interface' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
       - 'Troubleshooting a CLI Installation' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
       - 'Limit Workloads to a Specific Node Group' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
