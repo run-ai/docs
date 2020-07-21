@@ -6,7 +6,7 @@ Display details of a training job
 
     runai get job-name 
         [--output value | -o value]  
-
+        .
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]

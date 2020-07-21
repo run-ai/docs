@@ -11,7 +11,7 @@ Show logs of training job
         [--since-time date-time] 
         [--tail int | -tint] 
         [--timestamps]  
-
+        .
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
