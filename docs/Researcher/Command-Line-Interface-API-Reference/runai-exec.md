@@ -9,7 +9,7 @@ Note: to execute a bash command, you can also use the shorthand [runai bash](run
     runai exec job-name command 
         [--stdin | -i] 
         [--tty | -t]
-
+        .
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]

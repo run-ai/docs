@@ -6,7 +6,7 @@ Show list of jobs
 
     runai list job-name 
         [--all-projects | -A]  
-
+        .
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
