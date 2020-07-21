@@ -1,6 +1,7 @@
 .md-header {
     background-color: rgb(24, 47, 69) !important;
 }
+
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
     background-color: #1f4e79 !important;
@@ -18,4 +19,28 @@
 }
 .md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
     width: 50px
+}
+
+/* for the mobile nav bar */
+@media only screen and (max-width: 76.1875em) {
+
+    html .md-nav--primary .md-nav__title--site {
+        background-color: rgb(24, 47, 69) !important;
+        border-bottom: 1px solid #1b2532 !important;
+    }
+
+    .md-nav__source {
+        background-color: #1f4e79 !important;
+    }
+
+    html .md-nav--primary .md-nav__title {
+        background-color: #232f3e !important;
+        border-bottom: 1px solid #1b2532 !important;
+        color: #ffffff;
+    }
+
+    html .md-nav--primary .md-nav__title::before {
+        color: #ffffff;
+    }
+
 }
