@@ -1,0 +1,18 @@
+.md-header {
+    background-color: rgb(24, 47, 69) !important;
+}
+.md-tabs {
+    /* background-image: url(../assets/images/second-nav-blue.png); */
+    background-color: #1f4e79 !important;
+}
+/* Footer */
+
+.md-footer-nav {
+    /* background-image: url(../assets/images/second-nav-blue.png); */
+    background-color: #1f4e79 !important;
+}
+
+.md-footer-meta {
+    background-color: rgb(24, 47, 69) !important;
+    border-top: 1px solid #1b2532 !important;
+}
