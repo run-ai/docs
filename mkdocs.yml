@@ -27,7 +27,7 @@ theme:
   #   text: Roboto
   #   code: Roboto Mono
   favicon: images/favicon.ico
-  logo: images/runai-logo.svg
+  logo: images/runai-logo2.svg
   features:
     - tabs
 
