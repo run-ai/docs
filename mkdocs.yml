@@ -11,7 +11,7 @@ docs_dir: docs
 theme:
 #  name: mkdocs
   name: material
-  custom_dir: custom_theme/
+  custom_dir: custom_theme
 
 #  name: readthedocs
 #  name: ivory
@@ -19,19 +19,22 @@ theme:
 #  name: gitbook
 #  name: 'rtd-dropdown'
   language: en
-  # palette:
+ # palette:
   #  scheme: slate
-
-  #   primary: indigo
-  #   accent: indigo
+#     primary: indigo
+#     accent: red
   # font:
   #   text: Roboto
   #   code: Roboto Mono
-
   favicon: images/favicon.ico
   logo: images/runai-logo.svg
   features:
     - tabs
+
+extra_css:
+  - stylesheets/extra.css
+
+
 plugins:
   - search
   - git-revision-date-localized
