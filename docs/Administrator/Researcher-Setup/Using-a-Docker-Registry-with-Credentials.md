@@ -1,14 +1,25 @@
-## <span>Why?</span>
+## Why?
 
-<span>Some Docker images are stored in private docker registries. In order for the researcher to access the images, we will need to provide credentials for the registry.</span>
+Some Docker images are stored in private docker registries. In order for the researcher to access the images, we will need to provide credentials for the registry.
 
-## <span>How?</span>
+## How?
 
-<span>For each private registry you must perform the following&nbsp;</span><span>(The example below uses Docker Hub):</span>
+For each private registry you must perform the following (The example below uses Docker Hub):
 
-<pre><span>kubectl create secret docker-registry &lt;secret_name&gt; -n runai \ <br/>--docker-server=https://index.docker.io/v1/ \<br/>--docker-username=&lt;user_name&gt; --docker-password=&lt;password&gt;<br/></span><span></span><br/>kubectl label secret &lt;secret_name&gt; runai/cluster-wide="true" -n runai<span></span><span></span></pre>
+    kubectl create secret docker-registry <secret_name> -n runai \ 
+    --docker-server=https://index.docker.io/v1/ \
+    --docker-username=<user_name> --docker-password=<password>
 
-*   <span class="c-mrkdwn__br" data-stringify-type="paragraph-break">_secret-name_&nbsp;may be any arbitrary string. </span>
-*   <span class="c-mrkdwn__br" data-stringify-type="paragraph-break">_user\_name_ and _password_ are the repository user and password.&nbsp;</span><span class="c-mrkdwn__br" data-stringify-type="paragraph-break"></span>
+    kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
+
+* secret_name may be any arbitrary string.
+* user_name and password are the repository user and password. 
 
 __Note__: the secret may take up to a minute to update in the system
+
+## Google Cloud Image Repository
+To access the Google Container Repository (GCR),  you need to obtain a key-file to a service account (config.json) which allows access to the repository. You then merge it into the cluster:
+
+    kubectl create secret generic <secret_name> -n runai \
+        --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
+        --type=kubernetes.io/dockerconfigjson
