@@ -11,6 +11,7 @@ For each private registry you must perform the following (The example below uses
     --docker-username=<user_name> --docker-password=<password>
 
 Then:
+
     kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
 
 * secret_name may be any arbitrary string.
