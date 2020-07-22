@@ -6,7 +6,7 @@ Templates are a way to reduce the number of flags required when using the Comman
 *   Review the contents of a specific template by running ``runai template get <template-name>``
 *   Use a template by running ``runai submit --template <template-name>``
 
-The purpose of this document is to provide the administrator with guidelines on how to create templates
+The purpose of this document is to provide the administrator with guidelines on how to create templates.
 
 ## The Template Implementation
 
@@ -30,7 +30,7 @@ Use the template when submitting a workload
 
     runai submit <my-job> --template <my-template>
 
-For further details, see the Run:AI command line reference <a href="https://support.run.ai/hc/en-us/articles/360011548039-runai-template" target="_self">template</a>&nbsp;&nbsp;and <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">submit</a> functions
+For further details, see the Run:AI command line reference <a href="https://support.run.ai/hc/en-us/articles/360011548039-runai-template" target="_self">template</a>&nbsp;&nbsp;and <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">submit</a> functions.
 
 ## Template Syntax
 
@@ -54,8 +54,8 @@ A template looks as follows:
 Notes:
 
 *   The template above set 3 defaults: a specific image, a default of 1 gpu and sets the "elastic" flag to true
-*   The label runai/template marks the ConfigMap as a Run:AI template.&nbsp;
-*   The name and description will show when using the_ runai template list_ command
+*   The label runai/template marks the ConfigMap as a Run:AI template.
+*   The name and description will show when using the _runai template list_ command
 
 To store this template run:
 

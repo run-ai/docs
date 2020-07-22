@@ -29,7 +29,7 @@ After installing dex, you will want to create a _client_ and perform the followi
 
 *   Enter a _redirect URL_ which has been provided to you by Run:AI
 *   Generate a unique _secret_. The secret should be sent to Run:AI
-*   If you are using LDAP or SAML, configure the relevant connector for dex.
+*   If you are using LDAP or SAML, configure the relevant connector for dex
 *   Locate the authentication _redirection URL_. The redirection URL should to be sent to Run:AI
 *   Create a _public key_ in order for Run:AI to be able validate oauth tokens. The public key should be sent to Run:AI
 

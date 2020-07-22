@@ -22,8 +22,8 @@ We differentiate between two types of Workloads:
 ## Using Rancher to Launch Workloads 
 
 *  Using your browser, navigate to Rancher       
-*  Login to Rancher with your user name and password. 
-*  Click on the top left menu, go to the company's assigned cluster and default Rancher project (not to be confused with a Run:AI project). 
+*  Login to Rancher with your user name and password
+*  Click on the top left menu, go to the company's assigned cluster and default Rancher project (not to be confused with a Run:AI project)
 ![mceclip1.png](img/mceclip1.png) 
 
 *  Press Deploy on the top right

@@ -45,4 +45,4 @@ To configure, edit the file _/etc/kubernetes/kubelet-config.yaml_ and add the fo
     evictionHard:
       memory.available: "500Mi"
 
- For further reading please refer to <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/>   
+ For further reading please refer to <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/>.

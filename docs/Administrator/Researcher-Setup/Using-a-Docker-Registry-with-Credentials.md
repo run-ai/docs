@@ -14,10 +14,10 @@ Then:
 
     kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
 
-* secret_name may be any arbitrary string.
-* user_name and password are the repository user and password. 
+* secret_name may be any arbitrary string
+* user_name and password are the repository user and password 
 
-__Note__: the secret may take up to a minute to update in the system
+__Note__: the secret may take up to a minute to update in the system.
 
 ## Google Cloud Image Repository
 To access the Google Container Repository (GCR),  you need to obtain a key-file to a service account (config.json) which allows access to the repository. You then merge it into the cluster:

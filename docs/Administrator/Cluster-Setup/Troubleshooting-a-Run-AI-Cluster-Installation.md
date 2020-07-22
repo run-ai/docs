@@ -8,7 +8,7 @@ You will get a list of running "pods". All pods should be with status _Running_ 
 
 ## GPU related metrics are not shown
 
-In the Admin portal (<a href="https://app.run.ai" target="_self">app.run.ai</a>) Metrics such as "number of GPUs" and "GPU utilization" do not show
+In the Admin portal (<a href="https://app.run.ai" target="_self">app.run.ai</a>) Metrics such as "number of GPUs" and "GPU utilization" do not show/
 
 This typically means that there is a disconnect between the Kubernetes pods that require access to GPUs and the NVIDIA software.
 
@@ -21,7 +21,7 @@ This could happen if:
 
     kubectl port-forward -n runai prometheus-runai-prometheus-operator-prometheus-0 9090
 
- Then using your browser go to <http://localhost:9090/> . Verify that you see metrics for _dcgm\_gpu\_utilization_
+ Then using your browser go to <http://localhost:9090/> . Verify that you see metrics for _dcgm\_gpu\_utilization_.
 
 ![mceclip1.png](img/mceclip1.png)
 

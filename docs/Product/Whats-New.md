@@ -28,7 +28,7 @@ For further information on how to set up duration limits see: [Working with Proj
 
 #### Kubernetes Operators
 
-Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a  Run:AI cluster. 
+Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a Run:AI cluster. 
 
 For further information see: [Upgrading a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Upgrading-Cluster-Install.md) and [Deleting a a Run:AI Cluster Installation](../Administrator/Cluster-Setup/Deleting-Cluster-Install.md)
 
@@ -36,4 +36,4 @@ For further information see: [Upgrading a Run:AI Cluster Installation](../Admini
 
 #### Admin Overview Dashboard
 
-A new admin overview dashboard which shows a more holistic view of multiple clusters. Applicable for customers with more than one cluster 
+A new admin overview dashboard which shows a more holistic view of multiple clusters. Applicable for customers with more than one cluster.
