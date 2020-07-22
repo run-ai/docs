@@ -6,7 +6,7 @@ As part of Run:AI, the organization is typically moving from Docker-based workfl
 
 ## Setup the Run:AI Command Line Interface
 
-Run:AI CLI needs to be installed on the researcher machine. This  [document](Installing-the-Run-AI-Command-Line-Interface.md) provides step by step instructions.
+Run:AI CLI needs to be installed on the researcher machine. This [document](Installing-the-Run-AI-Command-Line-Interface.md) provides step by step instructions.
 
 ## Provide the Researcher with a GPU Quota
 

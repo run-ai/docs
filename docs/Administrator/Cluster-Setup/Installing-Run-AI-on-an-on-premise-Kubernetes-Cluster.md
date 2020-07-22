@@ -1,10 +1,10 @@
-The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Prior to installation please review the installation prerequisites here:  [Run AI GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md)
+The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Prior to installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
 
 ## Step 1: Install Kubernetes
 
 Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend Kubespray [https://kubespray.io/\#/](https://kubespray.io/#/) . Download the latest __stable__ version from  : [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
 
-Some best practices on Kubernetes Configuration can be found here:  [Kubernetes Cluster Configuration Best Practices](Kubernetes-Cluster-Configuration-Best-Practices.md) 
+Some best practices on Kubernetes Configuration can be found here: [Kubernetes Cluster Configuration Best Practices](Kubernetes-Cluster-Configuration-Best-Practices.md).
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
 

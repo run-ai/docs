@@ -17,4 +17,4 @@ To configure restrictions on certain nodes:
         kubectl delete pod -n runai -l app=pod-gpu-metrics-exporter && \
         kubectl delete pod -n runai -l name=nvidia-device-plugin-ds
 
-__Note__: if names of nodes contain dashes/hyphens (‘-’), they should be replaced with underscores (‘\_’) inside the command from step 2 (e.g if a node is called node-2, we will write it as node\_2 in the command)
+__Note__: if names of nodes contain dashes/hyphens (‘-’), they should be replaced with underscores (‘\_’) inside the command from step 2 (e.g if a node is called node-2, we will write it as node\_2 in the command).

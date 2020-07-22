@@ -2,14 +2,14 @@
 
 There are a number of cases where you want to expose services running on the cluster. A few of them are:
 
-*   Allow Researchers who work with containers to expose ports to access the container from remote using tools such as a _Jupyter notebook_ or _PyCharm_
+*   Allow Researchers who work with containers to expose ports to access the container from remote using tools such as a _Jupyter_ _notebook_ or _PyCharm_
 *   Integrate a Researcher authentication mechanism such as an organizational user directory. 
 
-The Kubernetes mechanism for exposing services is called _Ingress._
+The Kubernetes mechanism for exposing services is called _Ingress_.
 
 ## Ingress
 
-Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" rel="noopener" target="_blank">here</a>
+Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" rel="noopener" target="_blank">here</a>.
 
 ## Requirements
 

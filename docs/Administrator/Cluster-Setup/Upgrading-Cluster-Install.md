@@ -8,4 +8,4 @@ To verify that the upgrade has succeeded run:
 
     kubectl get pods -n runai
 
-and make sure that all pods are running or completed
+and make sure that all pods are running or completed.

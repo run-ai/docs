@@ -1,11 +1,11 @@
 The Run:AI Command-line Interface (CLI) is __one__ of the ways for a researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
 
-The instructions below will guide you through the process of installing the CLI
+The instructions below will guide you through the process of installing the CLI.
 
 ## Prerequisites
 
 *   Kubectl (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_self">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a>
-*   Helm. See&nbsp;<https://helm.sh/docs/intro/install/>&nbsp;on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+*   Helm. See <https://helm.sh/docs/intro/install/> on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
 *   A Kubernetes configuration file obtained from a computer previously connected to the Kubernetes cluster
 
 ## Installation
@@ -26,7 +26,7 @@ The Run:AI CLI needs to be connected to the Kubernetes Cluster containing the GP
 ### Run:AI CLI Installation
 
 *   Download the latest release from the Run:AI releases page&nbsp;<https://github.com/run-ai/runai-cli/releases>
-*   Unarchive the downloaded file.
+*   Unarchive the downloaded file
 *   Install by running:
 
         sudo ./install-runai.sh

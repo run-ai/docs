@@ -5,7 +5,7 @@ Below are the prerequisites of a cluster installed with Run:AI.
 
 Run:AI requires Kubernetes 1.15 or above. Kubernetes 1.17 is recommended (as of June 2020).
 
-If you are using Red Hat OpenShift. The minimal version is  OpenShift 4.3 which runs on Kubernetes 1.16 
+If you are using Red Hat OpenShift. The minimal version is OpenShift 4.3 which runs on Kubernetes 1.16.
 
 ## NVIDIA Driver
 
@@ -82,9 +82,6 @@ Run:AI requires an installation over the Kubernetes cluster. The installation ac
 </td>
 </tr>
 </tbody>
-<caption>
-<p> </p>
-</caption>
 </table>
 
 ### Post Installation
@@ -133,7 +130,7 @@ In addition, once running, Run:AI will send metrics to two sources:
 
 ## User requirements
 
-__Usage of containers and images:__ The individual researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software 
+__Usage of containers and images:__ The individual researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software.
 
 ## Fractional GPU Requirements
 
