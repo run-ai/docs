@@ -22,8 +22,10 @@ __Note__: the secret may take up to a minute to update in the system
 ## Google Cloud Image Repository
 To access the Google Container Repository (GCR),  you need to obtain a key-file to a service account (config.json) which allows access to the repository. You then merge it into the cluster:
 
-    kubectl create secret generic <secret_name> -n runai \
-        --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
-        --type=kubernetes.io/dockerconfigjson
+    kubectl create secret docker-registry <secret_name> -n runai \
+    --docker-server=eu.gcr.io \
+    --docker-username=_json_key \
+    --docker-password="$(cat ~/json-key-file-from-gcp.json)" \
+    --docker-email=any@valid.email
 
 Then run the label command as described above.
