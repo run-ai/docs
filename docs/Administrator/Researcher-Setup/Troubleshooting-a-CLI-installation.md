@@ -2,7 +2,7 @@
 
 When running any CLI command you get:
 
-<pre><span>&nbsp;FATA[0000] invalid configuration: no configuration has been provided</span></pre>
+    FATA[0000] invalid configuration: no configuration has been provided
 
 #### Solution
 
