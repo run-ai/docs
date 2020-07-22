@@ -17,11 +17,11 @@ The Run:AI CLI needs to be connected to the Kubernetes Cluster containing the GP
 *   Create a directory _.kube_. Copy the Kubernetes configuration file into the directory
 *   Create a shell variable to point to the above configuration file. Example:
 
-<pre>export KUBECONFIG=~/.kube/config</pre>
+        export KUBECONFIG=~/.kube/config
 
 *   Test the connection by running:&nbsp;&nbsp;
 
-<pre>kubectl get nodes</pre>
+        kubectl get nodes
 
 ### Run:AI CLI Installation
 
@@ -29,17 +29,16 @@ The Run:AI CLI needs to be connected to the Kubernetes Cluster containing the GP
 *   Unarchive the downloaded file.
 *   Install by running:
 
-    sudo ./install-runai.sh
+        sudo ./install-runai.sh
 
-To verify the installation run:
+* To verify the installation run:
 
-    runai list
+        runai list
 
-&nbsp;
 
 ## Troubleshooting the CLI Installation
 
-See:&nbsp;<a href="https://support.run.ai/hc/en-us/articles/360013119279-Troubleshooting-a-CLI-installation" target="_self">Troubleshooting-a-CLI-installation</a>
+See [Troubleshooting a CLI installation](Troubleshooting-a-CLI-installation.md)
 
 ## Updating the Run:AI CLI
 

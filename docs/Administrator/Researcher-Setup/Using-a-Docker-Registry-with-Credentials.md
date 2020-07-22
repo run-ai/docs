@@ -23,3 +23,5 @@ To access the Google Container Repository (GCR),  you need to obtain a key-file 
     kubectl create secret generic <secret_name> -n runai \
         --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
         --type=kubernetes.io/dockerconfigjson
+
+Then run the label command as described above.
