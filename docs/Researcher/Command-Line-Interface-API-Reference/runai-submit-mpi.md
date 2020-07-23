@@ -66,7 +66,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 -e stringArray | --environment stringArray
 
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH\_SIZE=50 -e LEARNING\_RATE=0.2``) or separate by a comma (``-e BATCH\_SIZE:50,LEARNING\_RATE:0.2``)
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
 
 --gpu int | -g int
 
