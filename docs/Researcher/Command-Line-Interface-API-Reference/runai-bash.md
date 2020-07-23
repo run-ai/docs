@@ -13,6 +13,9 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 
 ## Options
 
+<job-name\> the name of the job to run the command in
+
+
 ### Global Flags
 
 --loglevel (string)
