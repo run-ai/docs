@@ -37,9 +37,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 ## Options
 
-<job-name\> the name of the job to run the command in
-
-<command\> the command itself (e.g. ``bash``)
+<job-name\> the name of the job.
 
 --always-pull-image stringArray
 

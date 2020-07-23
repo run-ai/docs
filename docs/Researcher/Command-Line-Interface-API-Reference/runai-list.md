@@ -13,6 +13,9 @@ Show list of jobs
 
 ## Options
 
+<job-name\> the name of the job to run the command in
+
+
 --all-projects | -A
 
 >  Show jobs from all projects

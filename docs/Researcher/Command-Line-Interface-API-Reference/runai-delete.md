@@ -17,6 +17,8 @@ Note that once you delete a job, its entire data will be gone:
 
 ## Options
 
+<job-name\> the name of the job to run the command in
+
 --loglevel (string)
 
 >  Set the logging level. One of: debug|info|warn|error (default "info")
