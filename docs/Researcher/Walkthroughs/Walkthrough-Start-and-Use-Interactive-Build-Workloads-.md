@@ -37,9 +37,9 @@ To complete this walkthrough you must have:
 *   At the command line run:
 
         runai project set team-a
-        runai submit build1 -i gcr.io/run-ai-lab/build-demo -g 1 --interactive
+        runai submit build1 -i gcr.io/run-ai-demo/build-demo -g 1 --interactive
 
-*   The job is based on a sample docker image ``gcr.io/run-ai-lab/build-demo``
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/build-demo``
 *   We named the job _build1_.
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job. 
 *   The job is assigned to team-a with an allocation of a single GPU. 

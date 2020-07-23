@@ -184,7 +184,7 @@ Submit a Run:AI job for execution
 
 start an unattended training job of name run1, based on project team-ny using a quickstart image:
 
-    runai submit run1 -i gcr.io/run-ai-lab/quickstart -g 1 -p team-ny
+    runai submit run1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-ny
 
 
 start an interactive job of name run2, based on project team-ny using a jupyter notebook image. The Notebook will be externalized via a load balancer on port 8888:

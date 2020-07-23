@@ -42,7 +42,7 @@ A template looks as follows:
     name: cli-template1
     description: "my first template"
     values: |
-        image: gcr.io/run-ai-lab/quickstart
+        image: gcr.io/run-ai-demo/quickstart
         gpu: 1
         elastic: true
     metadata:
