@@ -37,12 +37,13 @@ To complete this walkthrough you must have:
 *   At the command line run:
 
         runai project set team-a
-        runai submit build1 -i gcr.io/run-ai-demo/build-demo -g 1 --interactive
+        runai submit build1 -i python -g 1 --interactive --command sleep --args infinity
 
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/build-demo``
+*   The job is based on a sample docker image ``python``
 *   We named the job _build1_.
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job. 
 *   The job is assigned to team-a with an allocation of a single GPU. 
+*   The command provided is ``--command sleep --args infinity``. You must provide a command or the container will start and then exit immediately. 
 
 Follow up on the job's status by running:
 
