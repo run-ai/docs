@@ -64,6 +64,7 @@ nav:
       - 'Configuring an Internet Proxy Server ' : 'Administrator/Cluster-Setup/Installing-Run-AI-with-an-Internet-Proxy-Server-.md'
       - 'Kubernetes Cluster Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
       - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/Use-OpenID-Connect-LDAP-or-SAML-for-Authentication-and-Authorization-.md'
+      - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
       - 'Installing the Command Line Interface' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'

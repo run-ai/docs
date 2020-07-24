@@ -17,7 +17,7 @@ To configure a node group:
 
         kubectl label node <node-name> run.ai/type=<label>
 
-The same value can be set to a single node, or for multiple nodes.&nbsp;
+The same value can be set to a single node, or for multiple nodes.
 
 A node can only be set with a single value
 
