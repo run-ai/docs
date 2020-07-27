@@ -103,6 +103,7 @@ nav:
       - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
       - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
     - 'Command Line Interface' :
+      - 'Job Statuses' : 'Researcher/Command-Line-Interface/Job-Statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Image Creation Best Practices' :
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
