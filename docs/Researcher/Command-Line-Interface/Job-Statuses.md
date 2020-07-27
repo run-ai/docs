@@ -1,12 +1,12 @@
 ## Introduction
 
-The [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) function and its sybling the [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md) function Submit Run:AI jobs for execution. 
+The [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) function and its sibling the [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md) function Submit Run:AI jobs for execution. 
 
 A job has a __status__. Once a job is submitted it goes through a number of statuses. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI specific. 
 
 The purpose of this document is to explain each of these statuses. 
 
-## Happy flow
+## Happy Flow
 
 A regular, _training_ job which has no errors and executes without preemption would go through the following statuses:
 ![Job-Statuses-Success](img/Job-Statuses-Success.png)
