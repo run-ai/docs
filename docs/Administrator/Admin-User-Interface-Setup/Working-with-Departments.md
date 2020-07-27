@@ -48,7 +48,7 @@ You can add new Departments by pressing the __Add New Department__ at the top ri
 
 <img src="../img/new-department.png" alt="new-department" width="400"/>
 
-Add the department name and Quota allocation
+Add the department name and a quota allocation
 
 ### Assigning Projects to Departments
 
