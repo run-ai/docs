@@ -25,6 +25,7 @@ Submit a Run:AI job for execution
         [--node-type string] 
         [--port stringArray] 
         [--preemptible] 
+        [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
         [--run-as-user] 
         [--service-type string | -s string] 
         [--template string] 
@@ -139,6 +140,24 @@ Submit a Run:AI job for execution
 --preemptible
 
 >  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
+
+--pvc [StorageClassName]:Size:ContainerMountPath:[ro]
+
+> Mount a Persistent Volume into a container
+
+> __StorageClassName__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This paramter may be ommitted if there is a single storage class in the system, or you are using the default storage class. 
+
+>    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for how to specify volume sizes
+
+>    __ContainerMountPath__. A path internal to the container where the storage will be mounted
+> 
+> Examples:
+
+> ``--pvc :3Gi:/tmp/john:ro``  - Allocate 3GB from the default Storage class. Mount it to /tmp/john as read-only 
+
+> ``--pvc my-storage:3Gi:/tmp/john:ro``  - Allocate 3GB from the my-storage storage class. Mount it to /tmp/john as read-only 
+
+> ``--pvc :3Gi:/tmp/john:`` - Allocate 3GB from the default storage class. Mount it to /tmp/john as read-write 
 
 --run-as-user
 
