@@ -1,6 +1,6 @@
 ## Introduction
 
-The [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) function and its sibling the [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md) function Submit Run:AI jobs for execution. 
+The [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) function and its sibling the [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md) function submit Run:AI jobs for execution. 
 
 A job has a __status__. Once a job is submitted it goes through a number of statuses. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI specific. 
 
@@ -9,10 +9,11 @@ The purpose of this document is to explain each of these statuses.
 ## Happy Flow
 
 A regular, _training_ job which has no errors and executes without preemption would go through the following statuses:
+
 ![Job-Statuses-Success](img/Job-Statuses-Success.png)
 
 * Pending - the job is waiting to be scheduled
-* Container Creating - the job has been scheduled, the Job docker image is now downloading
+* ContainerCreating - the job has been scheduled, the Job docker image is now downloading
 * Running - the job is now executing
 * Succeeded - the job has finished with exit code 0 (success)
 
@@ -24,7 +25,7 @@ A _distributed_ (mpi) job, which has no errors will be slightly more complicated
 
 ![mpi-Job-Statuses-Success](img/mpi-Job-Statuses-Success.png)
 
-For an explanation of the additional statuses, see table below
+For an explanation of the additional statuses, see table below.
 
 
 ## Status Table
@@ -33,13 +34,13 @@ Below is a list of statuses. For each status the list shows:
 
 * Name
 
-* End State -- this status is the final status in the lifecycle of the Job
+* End State - this status is the final status in the lifecycle of the Job
 
-* Resource Allocation - when the Job is in this status, does the system allocate resources to it.
+* Resource Allocation - when the Job is in this status, does the system allocate resources to it
 
 * Description
 
-* Where to get more data - What command to run to get more information on the problem if such exists. 
+* Where to get more data - what command to run to get more information on the problem if such exists
 
 * Color - Status color as can be seen in the Administrator User Interface Job list
 
@@ -214,7 +215,7 @@ Below is a list of statuses. For each status the list shows:
       <td valign="middle" class="td16">
         <p class="p1"><span class="s1">Job is pending. Possible reasons:</span></p>
         <p class="p1"><span class="s1">- Not enough resources</span></p>
-        <p class="p1"><span class="s1">- Waiting in Queue (over quota etc)</span></p>
+        <p class="p1"><span class="s1">- Waiting in Queue (e.g. over-quota interactive job)</span></p>
       </td>
       <td valign="middle" class="td17">
         <p class="p1"><span class="s1">runai get &lt;job-name&gt;<span class="Apple-converted-space"> </span></span></p>

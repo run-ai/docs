@@ -16,7 +16,7 @@ As an Admin, you need to determine how to model projects. You can:
 
 Each project is associated with a quota of GPUs that can be allocated for this project at the same time. This is __guaranteed__ __quota__ in the sense that researchers using this project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
 
-Beyond that, a user of this project can receive an __over-quota__. As long as GPUs are unused, a researcher using this project can get more GPUs. However, these GPUs can be taken away at a moment's notice. 
+Beyond that, a user of this project can receive an __over-quota__. As long as GPUs are unused, a researcher using this project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on overquota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
 __Important__ __best__ __practice:__ As a rule, the sum of the project allocation should be equal to the number of GPUs in the cluster.
 
