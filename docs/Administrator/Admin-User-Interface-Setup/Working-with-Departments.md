@@ -39,7 +39,7 @@ Once departments are enabled, the menu will have a new item named "Departments"
 <img src="../img/department-menu.png" alt="department-menu" width="200"/>
 
 
-Under Departments there will be a single Department named __default__. All projects created before the Department feature was enabled will belong to the __default__ department
+Under __Departments__ there will be a single Department named __default__. All projects created before the Department feature was enabled will belong to the __default__ department
 
 
 ### Adding Departments
@@ -47,3 +47,10 @@ Under Departments there will be a single Department named __default__. All proje
 You can add new Departments by pressing the __Add New Department__ at the top right of the Department view.
 
 <img src="../img/new-department.png" alt="new-department" width="400"/>
+
+Add the department name and Quota allocation
+
+### Assigning Projects to Departments
+
+Under __Projects__ edit an existing project, you will see a new __Department__ drop down with which you can associate a project with a department
+
