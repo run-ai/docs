@@ -16,6 +16,10 @@ A regular, _training_ job which has no errors and executes without preemption wo
 * Running - the job is now executing
 * Succeeded - the job has finished with exit code 0 (success)
 
+The job can be preempted, in which case it can go through other statuses:
+
+* Terminating - the job is now being preempted
+* Pending - the job is waiting in queue again to receive resources 
 
 An _interactive_ job, by definition, needs to be closed by the Researcher and will thus never reach the _Succeeded_ status. Rather, it would be moved by the Researcher to status _Deleted_.
 
