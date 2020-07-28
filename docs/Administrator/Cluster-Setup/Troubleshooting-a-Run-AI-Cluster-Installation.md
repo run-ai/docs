@@ -1,10 +1,23 @@
+ ## Make sure only one default storage class is installed
+ 
+ Runai installation includes by default storage class named local path provisioner which is installed as default storage class. In case the k8s cluster already has default storage class installed prior to Runai, you should disable the local path provisioner.
+ To disable local path provisioner please follow those instructions:
+ *  `kubectl edit runaiconfig -n runai`
+ *  add the following lines under `spec:`:
+ 
+ `local-path-provisioner:`
+ 
+     `enabled: false`
+ 
+ If there is more than one default storage class installed, then it actually makes default storage class disabled. Runai has 2 pods that need default storage class: `runai-db-0`, `runai-prometheus-pushgateway-0`. So, in this case both of those pods will have error status. If you would have run `kubectl describe pod -n runai runai-db-0`, you would have seen storage class error.
+
  ## Pods are not created
 
 run:
 
     kubectl get pods -n runai
 
-You will get a list of running "pods". All pods should be with status _Running_ or _Completed_. There could be various reasons why pods are at a different status. Most notably, pods use Run:AI images that are downloaded from the web. If your company employs an outbound firewall, you may need to open the URLs and ports mentioned in [Network Requirements](Run-AI-GPU-Cluster-Prerequisites/#network-requirements)
+You will get a list of running "pods". All pods should be with status _Running_. There could be various reasons why pods are at a different status. Most notably, pods use Run:AI images that are downloaded from the web. If your company employs an outbound firewall, you may need to open the URLs and ports mentioned in [Network Requirements](Run-AI-GPU-Cluster-Prerequisites/#network-requirements)
 
 ## GPU related metrics are not shown
 
@@ -15,7 +28,7 @@ This typically means that there is a disconnect between the Kubernetes pods that
 This could happen if:
 
 *   Connecting GPU data requires a Kubernetes feature gate flag called KubeletPodResources. This feature gate is a default in Kubernetes 1.15, but must be added in older versions of Kubernetes.  See <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/>. Note that Run:AI has been tested on Kubernetes 1.15.
-*    Nvidia perquisites are not installed. See [Run AI GPU ClusterPrerequisites>](Run-AI-GPU-Cluster-Prerequisites/#nvidia-driver) for NVIDIA related prerequisites.
+*   Nvidia perquisites are not installed. See [Run AI GPU ClusterPrerequisites>](Run-AI-GPU-Cluster-Prerequisites/#nvidia-driver) for NVIDIA related prerequisites.
 
  To verify whether GPU metrics are exported run:  
 
