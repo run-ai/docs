@@ -361,6 +361,110 @@ Sometimes, useful information can be found by looking at  logs emitted from the 
 
 ## Distributed Training (mpi) jobs
 
-A _distributed_ (mpi) job, which has no errors will be slightly more complicated and has additional statuses associated with it. See picture below: 
+A _distributed_ (mpi) job, which has no errors will be slightly more complicated and has additional statuses associated with it. 
+
+* Distributed jobs start with an "init container" which sets the stage for a distributed run.
+
+* When the init container finishes, the main "launcher" container is created. The launcher is responsible for coordinating between the different workers
+
+* Workers run and do the actual work.
+
+A successful flow of distribute training would look as:
 
 ![mpi-Job-Statuses-Success](img/mpi-Job-Statuses-Success.png)
+
+Additional Statuses:
+
+  
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p1"><span class="s1"><b>Status</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p1"><span class="s1"><b>End State</b></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p1"><span class="s1"><b>Resource Allocation</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p1"><span class="s1"><b>Description</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p1"><span class="s1"><b>Color</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td6">
+        <p class="p1"><span class="s1">Init:&lt;number A&gt;/&lt;number B&gt;</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p1"><span class="s1">Yes</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p1"><span class="s1">The Pod has B Init Containers, and A have completed so far.</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td6">
+        <p class="p1"><span class="s1">PodInitializing</span></p>
+      </td>
+      <td valign="middle" class="td7">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="middle" class="td8">
+        <p class="p1"><span class="s1">Yes</span></p>
+      </td>
+      <td valign="middle" class="td9">
+        <p class="p1"><span class="s1">The pod has finished executing Init Containers. The system is creating the main 'launcher' container</span></p>
+      </td>
+      <td valign="middle" class="td10">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom" class="td6">
+        <p class="p1"><span class="s1">Init:Error</span></p>
+      </td>
+      <td valign="bottom" class="td7">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="bottom" class="td8">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="bottom" class="td9">
+        <p class="p1"><span class="s1">An Init Container has failed to execute.</span></p>
+      </td>
+      <td valign="middle" class="td18">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="bottom" class="td6">
+        <p class="p1"><span class="s1">Init:CrashLoopBackOff</span></p>
+      </td>
+      <td valign="bottom" class="td7">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="bottom" class="td8">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="bottom" class="td9">
+        <p class="p1"><span class="s1">An Init Container has failed repeatedly to execute</span></p>
+      </td>
+      <td valign="middle" class="td18">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
