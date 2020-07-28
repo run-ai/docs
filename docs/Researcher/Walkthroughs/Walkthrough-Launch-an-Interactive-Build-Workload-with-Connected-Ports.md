@@ -64,8 +64,8 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 
         runai project set team-a
         runai submit test-ingress -i jupyter/base-notebook -g 1 \
-        --interactive --service-type=ingress --port 8888 \
-        --args="--NotebookApp.base_url=test-ingress" --command=start-notebook.sh
+          --interactive --service-type=ingress --port 8888 \
+          --args="--NotebookApp.base_url=team-a-test-ingress" --command=start-notebook.sh
 
 *   An ingress service url   will be created, run:
 
@@ -74,3 +74,6 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 You will see the service URL with which to access the Jupyter notebook
 
 ![mceclip0.png](img/mceclip0.png)
+
+!!! Important note
+    With ingres, Run:AI creates an access URL whose domain is _uniform_ (and is IP which serves as the access point to the cluster). The rest of the path is _unique_ and is build as: __&lt;project-name&gt;-&lt;job-name&gt;__. Thus, with the example above, we must set the Jupyter notebook base URL to respond to the service at __team-a-test-ingress__
