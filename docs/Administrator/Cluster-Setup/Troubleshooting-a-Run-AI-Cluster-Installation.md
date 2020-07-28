@@ -1,4 +1,4 @@
- ## Make sure only one default storage class is installed
+## Make sure only one default storage class is installed
  
  Runai installation includes by default storage class named local path provisioner which is installed as default storage class. In case the k8s cluster already has default storage class installed prior to Runai, you should disable the local path provisioner.
  To disable local path provisioner please follow those instructions:
@@ -11,7 +11,7 @@
  
  If there is more than one default storage class installed, then it actually makes default storage class disabled. Runai has 2 pods that need default storage class: `runai-db-0`, `runai-prometheus-pushgateway-0`. So, in this case both of those pods will have error status. If you would have run `kubectl describe pod -n runai runai-db-0`, you would have seen storage class error.
 
- ## Pods are not created
+## Pods are not created
 
 run:
 
