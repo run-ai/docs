@@ -1,3 +1,12 @@
+## July 28th
+
+You can now enforce a cluster-wise setting which mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../Administrator/Cluster-Setup/enforce-run-as-user.md)
+
+## July 21th
+
+It is now possible to mount a Persistent Storage Claim using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) cli flag
+
+
 ## June 13th, 2020
 
 #### New Settings for the Allocation of CPU and Memory
