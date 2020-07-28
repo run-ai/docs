@@ -36,7 +36,7 @@ Contact your administrator to see which methods are available in your cluster
             --interactive --service-type=portforward --port 8888:8888 \
             --args="--NotebookApp.base_url=jupyter1" --command=start-notebook.sh
 
-*   The job is based on a generic Jupyter notebook docker image j upyter/base-notebook 
+*   The job is based on a generic Jupyter notebook docker image jupyter/base-notebook 
 *    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notbook base URL.   
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job.  
 *   The job is assigned to team-a with an allocation of a single GPU.
