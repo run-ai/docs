@@ -143,7 +143,7 @@ Submit a Run:AI job for execution
 
 --pvc [StorageClassName]:Size:ContainerMountPath:[ro]
 
-> Mount a Persistent Volume into a container
+> Mount a persistent volume claim into a container
 
 > __StorageClassName__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This paramter may be ommitted if there is a single storage class in the system, or you are using the default storage class. 
 
@@ -157,7 +157,7 @@ Submit a Run:AI job for execution
 
 > ``--pvc my-storage:3Gi:/tmp/john:ro``  - Allocate 3GB from the my-storage storage class. Mount it to /tmp/john as read-only 
 
-> ``--pvc :3Gi:/tmp/john:`` - Allocate 3GB from the default storage class. Mount it to /tmp/john as read-write 
+> ``--pvc :3Gi:/tmp/john`` - Allocate 3GB from the default storage class. Mount it to /tmp/john as read-write 
 
 --run-as-user
 
