@@ -85,4 +85,4 @@ For training workloads you can use a well-known image (e.g. nvidia-tensorflow im
 
 The script can be part of the image or can be provided as part of the command line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
 
-Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training job. For further information on how to set up and parameterize a training workload via docker or runai see [Converting your Workload to use Unattended Training Execution](../Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md).
+Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training job. For further information on how to set up and parameterize a training workload via docker or runai see [Converting your Workload to use Unattended Training Execution](Converting-your-Workload-to-use-Unattended-Training-Execution.md).
