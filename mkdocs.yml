@@ -75,11 +75,11 @@ nav:
       - 'Switch from working with Docker to working with Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'
       - 'Limit Workloads to Specific GPUs in Specific Nodes' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
       - 'Configure Command Line Interface Templates' : 'Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md'
-    - 'Presentations' :
-      - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
-    - 'Admin User Interface Setup' :
+    - 'Admin UI Setup' :
       - 'Working with Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
       - 'Managing Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
+    - 'Presentations' :
+      - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Miscellaneous' :
       - 'Using Rancher to submit workloads' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
@@ -103,9 +103,6 @@ nav:
       - 'runai top node' : 'Researcher/Command-Line-Interface-API-Reference/runai-top-node.md'
       - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
       - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
-    - 'Command Line Interface' :
-      - 'Job Statuses' : 'Researcher/Command-Line-Interface/Job-Statuses.md'
-      - 'Automatically Delete Finished Workloads' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Best Practices' :
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Converting your Workload to run as Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
@@ -115,6 +112,8 @@ nav:
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
+      - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
+      - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Run:AI Researcher Library' :
       - 'The Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
       - 'Elasticity: Dynamically Stretch/Compress Workloads GPU Quota' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'

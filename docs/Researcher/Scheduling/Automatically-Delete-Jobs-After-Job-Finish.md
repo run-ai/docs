@@ -14,7 +14,8 @@ But this may not be scalable for a production system.
 
 It is possible to flag a job for automatic deletion some period of time after its finish.
 
-__Important note__: Deleting a job, deletes the container behind it, and with it all related information such as job logs. Data that was saved by the researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
+!!! Important note 
+Deleting a job, deletes the container behind it, and with it all related information such as job logs. Data that was saved by the researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
 
 ## Enable Automatic Deletion in Cluster (Admin only)
 

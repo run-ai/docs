@@ -6,7 +6,7 @@ Welcome to the Run:AI documentation area. Run:AI documentation is targeting two 
 
 * Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](./Researcher/Walkthroughs/Run-AI-Walkthroughs.md).
 
-For production updates see the product area [here](./Product/Whats-New.md)
+For product updates see the product area [here](./Product/Whats-New.md)
 
 
 
