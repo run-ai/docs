@@ -106,9 +106,9 @@ nav:
     - 'Command Line Interface' :
       - 'Job Statuses' : 'Researcher/Command-Line-Interface/Job-Statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/Command-Line-Interface/Automatically-Delete-Jobs-After-Job-Finish.md'
-    - 'Image Creation Best Practices' :
+    - 'Best Practices' :
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
-      - 'Converting your Workload to run Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
+      - 'Converting your Workload to run as Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
       - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'

@@ -54,7 +54,7 @@ TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. <
 
 It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node
 
-For more information on best practices for saving checkpoints, see: [Saving Deep Learning Checkpoints](../Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md).
+For more information on best practices for saving checkpoints, see: [Saving Deep Learning Checkpoints](Saving-Deep-Learning-Checkpoints.md).
 
 ## Running the Job
 
