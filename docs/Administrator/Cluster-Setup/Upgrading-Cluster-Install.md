@@ -1,11 +1,23 @@
 
-To upgrade a Run:AI cluster installation you must get a version number from Run:AI customer support. Then, run:
+## Upgrade
+
+To upgrade a Run:AI cluster installation run the following
 
     kubectl set image -n runai deployment/runai-operator \
-      runai-operator=gcr.io/run-ai-prod operator:NEW_VERSION
+      runai-operator=gcr.io/run-ai-prod/operator:<NEW_VERSION>
+
+Replace ``NEW_VERSION`` with a version number you receive from Run:AI customer support
 
 To verify that the upgrade has succeeded run:
 
     kubectl get pods -n runai
 
 and make sure that all pods are running or completed.
+
+## Find the current Run:AI version
+
+To find the current version of the Run:AI cluster, run:
+
+    kubectl get deployments -n runai runai-operator -o yaml | grep run-ai-prod/operator
+
+
