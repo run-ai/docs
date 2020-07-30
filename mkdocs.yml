@@ -107,8 +107,6 @@ nav:
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Converting your Workload to run as Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
       - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
-    - 'Presentations' :
-      - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
@@ -118,6 +116,8 @@ nav:
       - 'The Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
       - 'Elasticity: Dynamically Stretch/Compress Workloads GPU Quota' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
       - 'Reporting via the Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
+    - 'Presentations' :
+      - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
 
   - 'Product' :
     - 'Whats New' : 'Product/Whats-New.md'
