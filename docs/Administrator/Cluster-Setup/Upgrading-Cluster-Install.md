@@ -18,6 +18,5 @@ and make sure that all pods are running or completed.
 
 To find the current version of the Run:AI cluster, run:
 
-    kubectl get deployments -n runai runai-operator -o yaml | grep run-ai-prod/operator
-
+    kubectl get deployment runai-operator -n runai -o jsonpath='{.spec.template.spec.containers[0].image}'
 
