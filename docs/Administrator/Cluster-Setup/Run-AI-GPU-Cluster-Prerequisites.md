@@ -13,14 +13,16 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
 
 ## Hardware Requirements
 
-*   __Kubernetes: Dedicated CPU-only machine:__ To save on expensive GPUs-based hardware, we recommend a dedicated, CPU-only machine, that is not running user workloads.  On the CPU-only machine, Run:AI requires the following resources on top of the Kubernetes hardware requirements:
+*   __Kubernetes: Dedicated CPU-only machine:__ To save on expensive GPUs-based hardware, we recommend (though not a must), a dedicated, CPU-only machine, that is not running user workloads.  On the CPU-only machine, Run:AI requires the following resources on top of the Kubernetes hardware requirements:
     
+    *   2 CPUs
     *   2GB of RAM
     *   20GB of Disk space 
     
     
-    
-*   __Shared data volume:__ Run:AI, via Kubernetes, abstracts away the machine on which a container is running. For containers to run anywhere, they need to be able to access data from any machine in a uniform way. Typically, this requires a NAS (Network-attached storage) which allows any node to connect to storage outside the box.
+*   __Shared data volume:__ Run:AI, via Kubernetes, abstracts away the machine on which a container is running. For containers to run anywhere, they need to be able to access data from any machine in a uniform way in order to access training data and code as well as save checkpoints, weights and other machine-learning related artifacts. Typically, this requires a NAS (Network-attached storage) which allows any node to connect to storage outside the box or some object storage to achieve a similar purpose.
+
+* __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/) or set up a local registry on-premise. Run:AI can assist with setting up the repository.
 
 ## Network Requirements
 
