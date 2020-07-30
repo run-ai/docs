@@ -4,7 +4,7 @@ Following is a step by step guide for setting up a new Run:AI cluster.
 
 ### Kubernetes Cluster Prerequisites
 
-Run:AI is running on top of Kubernetes. For a list of prerequisites, see [GPU Cluster Prerquisites].(Run-AI-GPU-Cluster-Prerequisites.md)
+Run:AI is running on top of Kubernetes. For a list of prerequisites, see [GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
 
 ## Installation
 
