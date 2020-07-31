@@ -78,6 +78,7 @@ nav:
     - 'Admin UI Setup' :
       - 'Working with Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
       - 'Managing Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
+      - 'Working with Departments' : 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md'
     - 'Presentations' :
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Miscellaneous' :
@@ -90,6 +91,7 @@ nav:
       - 'Launch Unattended Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
       - 'Launch Workloads with GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
       - 'Launch Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
+      - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
       - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'

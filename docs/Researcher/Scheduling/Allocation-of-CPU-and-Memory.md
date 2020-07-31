@@ -7,7 +7,7 @@ When we discuss the allocation of deep learning compute resources, the discussio
 
 GPU servers tend to come installed with a significant amount of memory and CPUs.
 
-## Requesting CPU &amp; Memory
+## Requesting CPU & Memory
 
 When submitting a job, you can request a guaranteed amount of CPUs and memory by using the __--cpu__ and __--memory__ flags in the _runai submit_ command. For example:
 
