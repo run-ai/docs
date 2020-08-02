@@ -1,5 +1,5 @@
 site_name: Run:AI Documentation Library
-site_url: https://run.ai
+site_url: https://docs.run.ai/
 copyright: Copyright © 2020 Run:AI
 google_analytics:
   - UA-122651141-1
@@ -11,7 +11,7 @@ google_analytics:
 docs_dir: docs
 theme:
   name: material
-#  custom_dir: custom_theme
+#  custom_dir: overrides
 #  name: mkdocs
 #  name: readthedocs
 #  name: ivory
