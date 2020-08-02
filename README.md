@@ -17,7 +17,7 @@
 * Edit .md files. If you add a new article, add a link to it to mkdocs.yaml
 * Run:
     
-    mkdocs serve 
+      mkdocs serve 
     
 * View your changes in [localhost:8000](http://localhost:8000)
 
@@ -26,7 +26,7 @@
 
 * Run:
 
-    mkdocs gh-deploy
+      mkdocs gh-deploy
      
 * view in [docs.run.ai](https://docs.run.ai)
 
