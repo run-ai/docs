@@ -14,7 +14,7 @@
 
 ## Write & Test
 
-* Edit .md files. If you add a new article, add it also to mkdocs.yaml
+* Edit .md files. If you add a new article, add a link to it to mkdocs.yaml
 * Run:
     
     mkdocs serve 
@@ -25,7 +25,8 @@
 # deploy
 
 Run:
-* mkdocs gh-deploy
+     mkdocs gh-deploy
+     
 * view at [docs.run.ai](https://docs.run.ai)
 
 Don't forget to also push the documents to this repository
