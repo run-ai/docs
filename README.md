@@ -2,7 +2,7 @@
 
 
 
-## One time installation:
+## One Time Installation:
 
 * Clone this repository
 * Run:
