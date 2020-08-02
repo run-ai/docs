@@ -80,4 +80,4 @@ The 3 relevant files mentioned in this document can be downloaded [here](files/C
 
 ## See Also
 
-See the unattended training walkthrough: [Launch Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md)
+See the unattended training walk-through: [Launch Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md)

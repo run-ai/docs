@@ -1,4 +1,4 @@
-# Walkthrough: Over-Quota and Bin Packing
+# Walk-through: Over-Quota and Bin Packing
 
 ## Goals
 

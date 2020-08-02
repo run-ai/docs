@@ -35,7 +35,7 @@ You will see the service URL with which to access the Jupyter notebook
 
 The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
 
-For further details see CLI command [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) and [Launch an Interactive Workload Walkthrough ](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
+For further details see CLI command [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) and [Launch an Interactive Workload walk-through ](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
 
 ## Alternatives 
 
@@ -46,10 +46,10 @@ For further details see CLI command [runai submit](../../Researcher/Command-Line
 *   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>. 
 *   Port Forwarding - Simple port forwarding allows access to the container via localhost:&lt;Port&gt;.
 
- See <https://kubernetes.io/docs/concepts/services-networking/service/> for further details .
+ See <https://kubernetes.io/docs/concepts/services-networking/service/> for further details.
 
  
 
 ## See Also
 
-To learn how to use port forwarding see:  [Walkthrough Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
+To learn how to use port forwarding see:  [Walk-through Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
