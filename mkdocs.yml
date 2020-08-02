@@ -11,7 +11,7 @@ google_analytics:
 docs_dir: docs
 theme:
   name: material
-#  custom_dir: overrides
+  custom_dir: overrides
 #  name: mkdocs
 #  name: readthedocs
 #  name: ivory
