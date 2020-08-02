@@ -24,9 +24,9 @@
 
 ## Deploy
 
-Run:
+* Run:
 
-     mkdocs gh-deploy
+    mkdocs gh-deploy
      
 * view in [docs.run.ai](https://docs.run.ai)
 
