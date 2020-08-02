@@ -1,10 +1,5 @@
 ## What are Templates?
 
-!!! Important node
-
-Templates are currently not supported
-
-
 Templates are a way to reduce the number of flags required when using the Command Line Interface to start workloads. Using Templates the researcher can:
 
 *   Review list of templates by running ``runai template list``
@@ -98,32 +93,40 @@ The following template sets all runai submit flags.
     name: "all-cli-flags"
     description: "A sample showing all possible flag overrides via a template"
     values: |
-        project: "team-ny"
-        image: ubuntu
-        gpu: 1
-        cpu: 0.5
-        memory: 1G
-        elastic: false
-        interactive: true
-        node_type: "dgx-1"              # --node-type
-        hostIPC: false                  # --host-ipc 
-        shm: false                      # --large-shm 
-        localImage: false               # --local-image
-        serviceType: "loadbalancer"     # -- service-type
-        ttlSecondsAfterFinished: 30     # --ttl-after-finish
-        environmentDefault:
+        alwaysPullImage: false  # X
+        args:                   
+        - 'infinity'
+        backoffLimit: 3         # X
+        command:                # X
+        - 'sleep'
+        cpu: 1.5                
+        cpuLimit: 3             
+        elastic: false          # X
+        environmentDefault:     
         - 'LEARNING_RATE=0.25'
         - 'TEMP=302'
-        portsDefault:
-        - '80:8888'
+        gpu: 1                  # X
+        hostIPC: false          # X           
+        hostNetwork: false      # X        
+        image: ubuntu           # X
+        interactive: true       # Yes, it created as an STS
+        largeShm: false         # X              
+        localImage: false       # X
+        memory: 1G              
+        memoryLimit: 2G         
+        nodeType: "dgx-1"       # X   
+        portsDefault:           
+        - '80:8888'             
         - 9090
-        command:
-        - 'sleep'
-        args:
-        - 'infinity'
-        volumeDefault:
-        - '/etc:/dest/container/path'
-        workingDir: "/etc".             # --working-dir
+        preemptible: false      # X
+        project: "team-ny"      
+        runAsUser: true         # ?
+        largeShm: false         # X
+        serviceType: "loadbalancer"    
+        ttlAfterFinish: 30              # X
+        volumeDefault:                  
+        - '/etc:/dest/container/path'   
+        workingDir: "/tmp"              
     metadata:
     name: cli-all-flags
     namespace: runai
