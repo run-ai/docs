@@ -52,6 +52,7 @@ extra:
 nav:
   - Home: 'index.md'
   - 'Administrator' :
+    - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
       - 'Introduction' : 'Administrator/Cluster-Setup/Cluster-Setup-Start-Here.md'
       - 'Cluster Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
@@ -84,6 +85,7 @@ nav:
     - 'Miscellaneous' :
       - 'Using Rancher to submit workloads' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
+    - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Walk-throughs' :
       - 'Run:AI Walk-throughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
       - 'Launch Interactive Build Workloads' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
@@ -115,7 +117,7 @@ nav:
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
       - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md'
-    - 'Run:AI Researcher Library' :
+    - 'Researcher Library' :
       - 'The Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
       - 'Elasticity: Dynamically Stretch/Compress Workloads GPU Quota' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
       - 'Reporting via the Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
