@@ -1,4 +1,4 @@
-# Setup
+# Run:AI Documentation Library
 
 
 
@@ -22,11 +22,11 @@
 * View your changes at [localhost:8000](http://localhost:8000)
 
 
-# deploy
+## deploy
 
 Run:
      mkdocs gh-deploy
      
-* view at [docs.run.ai](https://docs.run.ai)
+* view in [docs.run.ai](https://docs.run.ai)
 
 Don't forget to also push the documents to this repository
