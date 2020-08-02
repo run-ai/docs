@@ -70,13 +70,13 @@ Example with Command-line arguments:
 
 Please refer to [Command Line Interface, runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
 
-### Use CLI Templates
+<!-- ### Use CLI Templates
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command line. To make life easier, our CLI offers a way to template those configurations and use preconfigured configuration when submitting a job. Please refer to [Configure Command Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md).
+Different run configurations may vary significantly and can be tedious to be written each time on the command line. To make life easier, our CLI offers a way to template those configurations and use preconfigured configuration when submitting a job. Please refer to [Configure Command Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md). -->
 
 ## Attached Files
 
-The 3 relevant files are attached to this document for reference
+The 3 relevant files mentioned in this document can be downloaded [here](files/ConvertingToUnattendedFiles.zip)
 
 ## See Also
 

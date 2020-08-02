@@ -1,5 +1,10 @@
 ## What are Templates?
 
+!!! Important node
+
+Templates are currently not supported
+
+
 Templates are a way to reduce the number of flags required when using the Command Line Interface to start workloads. Using Templates the researcher can:
 
 *   Review list of templates by running ``runai template list``
