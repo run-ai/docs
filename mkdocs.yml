@@ -52,7 +52,7 @@ extra:
 nav:
   - Home: 
     - 'Overview': 'index.md'
-    - 'Whats New' : 'Product/Whats-New.md'
+    - 'Whats New' : 'whats-new.md'
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
