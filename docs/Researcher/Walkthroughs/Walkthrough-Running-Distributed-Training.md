@@ -1,4 +1,4 @@
-# Walkthrough: Launch Distributed Training Workloads
+# Walk-through: Launch Distributed Training Workloads
 
 ## Introduction
 
@@ -6,16 +6,16 @@ Distributed Training is the ability to split the training of a model among multi
 
 Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. There are a number of Deep Learning frameworks that support Distributed Training. Horovod (<https://eng.uber.com/horovod/>) is a good example.
 
-Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a walkthrough of such a scenario.
+Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a walk-through of such a scenario.
 
 ## Prerequisites&nbsp;
 
-To complete this walkthrough you must have:
+To complete this walk-through you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
-## Step by Step Walkthrough
+## Step by Step Walk-through
 
 ### Setup
 

@@ -39,6 +39,6 @@ The job will __not__ be deleted from the Run:AI user interface Job list
 
 ## See Also
 
-*   Build Workloads: [Walkthrough Start and Use Interactive Build Workloads](../Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md).
-*   Training Workloads: [Walkthrough Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
+*   Build Workloads: [Walk-through Start and Use Interactive Build Workloads](../Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md).
+*   Training Workloads: [Walk-through Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
 

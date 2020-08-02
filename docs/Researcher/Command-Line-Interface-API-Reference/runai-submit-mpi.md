@@ -176,4 +176,4 @@ The command will attempt to submit an mpi job. You can follow up on the job by r
 
 ## See Also
 
-*   See Walkthrough document [Walkthrough: Running Distributed Training](../Walkthroughs/Walkthrough-Running-Distributed-Training.md).
+*   See Walk-through document [Walk-through: Running Distributed Training](../Walkthroughs/Walkthrough-Running-Distributed-Training.md).

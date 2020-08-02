@@ -66,5 +66,5 @@ The jobs log will show
 
 ## See Also
 
-*   Training Workloads: [Walkthrough Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
+*   Training Workloads: [Walk-through Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
 

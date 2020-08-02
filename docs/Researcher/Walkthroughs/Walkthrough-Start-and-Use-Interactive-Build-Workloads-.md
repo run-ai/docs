@@ -1,4 +1,4 @@
-# Walkthrough: Launch Interactive Build Workloads
+# Walk-through: Launch Interactive Build Workloads
 
 ## Introduction
 
@@ -7,7 +7,7 @@ Deep learning workloads can be divided into two generic types:
 *   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly. 
 *   Unattended "training" sessions. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the customer can examine the results.
 
-With this Walkthrough you will learn how to:
+With this Walk-through you will learn how to:
 
 *   Use the Run:AI command-line interface (CLI) to start a deep learning __build__ workload
 *   Open an ssh session to the build workload
@@ -17,12 +17,12 @@ It is also possible to open ports to specific services within the container. See
 
 ## Prerequisites 
 
-To complete this walkthrough you must have:
+To complete this walk-through you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
-## Step by Step Walkthrough
+## Step by Step Walk-through
 
 ### Setup
 
@@ -95,5 +95,5 @@ This would stop the training workload. You can verify this by running ``runai li
 
 ## Next Steps
 
-*   Expose internal ports to your interactive build workload: [Walkthrough Launch an Interactive Build Workload with Connected Ports](Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
-*   Follow the Walkthrough: [Walkthrough Launch Unattended Training Workloads](Walkthrough-Launch-Unattended-Training-Workloads-.md).
+*   Expose internal ports to your interactive build workload: [Walk-through Launch an Interactive Build Workload with Connected Ports](Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
+*   Follow the Walk-through: [Walk-through Launch Unattended Training Workloads](Walkthrough-Launch-Unattended-Training-Workloads-.md).

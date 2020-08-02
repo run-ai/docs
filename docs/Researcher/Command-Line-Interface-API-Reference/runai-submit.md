@@ -219,6 +219,6 @@ Note that the submit call may use templates to provide defaults to any of the ab
 
 ## See Also
 
-*   See any of the Walkthrough documents here: [Run:AI Walkthroughs](../Walkthroughs/Run-AI-Walkthroughs.md)
+*   See any of the Walk-through documents here: [Run:AI Walk-throughs](../Walkthroughs/Run-AI-Walkthroughs.md)
 <!-- *   See [runai template](runai-template.md) for a description on how templates work -->
 

@@ -84,8 +84,8 @@ nav:
     - 'Miscellaneous' :
       - 'Using Rancher to submit workloads' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
-    - 'Walkthroughs' :
-      - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
+    - 'Walk-throughs' :
+      - 'Run:AI Walk-throughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
       - 'Launch Interactive Build Workloads' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
       - 'Launch Interactive Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
       - 'Launch Unattended Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
@@ -105,7 +105,7 @@ nav:
       - 'runai submit-mpi' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit-mpi.md'
       - 'runai top node' : 'Researcher/Command-Line-Interface-API-Reference/runai-top-node.md'
       - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
-#      - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
+#     - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
     - 'Best Practices' :
       - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Converting your Workload to run as Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'

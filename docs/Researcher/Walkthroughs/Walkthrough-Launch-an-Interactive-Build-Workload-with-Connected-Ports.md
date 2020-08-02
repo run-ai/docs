@@ -1,8 +1,8 @@
-# Walkthrough: Launch Interactive Build Workloads with Connected Ports
+# Walk-through: Launch Interactive Build Workloads with Connected Ports
 
 ## Introduction
 
- This walkthrough is an extension of [Walkthrough Start and Use Interactive Build Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md) 
+ This walk-through is an extension of [Walk-through Start and Use Interactive Build Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md) 
 
  When starting a container with the Run:AI Command Line Interface (CLI), it is possible to expose internal ports to the container user.   
 
@@ -17,7 +17,7 @@
 
 Contact your administrator to see which methods are available in your cluster
 
-## Port Forwarding, Step by Step Walkthrough
+## Port Forwarding, Step by Step Walk-through
 
 ### Setup
 
@@ -50,7 +50,7 @@ Open the following in the browser
 
 You should see a Jupyter notebook.
 
-## Ingress, Step by Step Walkthrough
+## Ingress, Step by Step Walk-through
 
 __Note:__ Ingress must be set up by your administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
 

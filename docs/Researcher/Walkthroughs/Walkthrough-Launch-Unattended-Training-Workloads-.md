@@ -1,4 +1,4 @@
-# Walkthrough: Launch Unattended Training Workloads
+# Walk-through: Launch Unattended Training Workloads
 
 ## Introduction
 
@@ -7,7 +7,7 @@ Deep learning workloads can be divided into two generic types:
 *   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly.
 *   Unattended "training" sessions. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the customer can examine the results.
 
-With this Walkthrough you will learn how to:
+With this Walk-through you will learn how to:
 
 *   Use the Run:AI command-line interface (CLI) to start a deep learning __training__ workload
 *   View training status and resource consumption using the Run:AI user interface and the Run:AI CLI
@@ -16,12 +16,12 @@ With this Walkthrough you will learn how to:
 
 ## Prerequisites 
 
-To complete this walkthrough you must have:
+To complete this walk-through you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
-## Step by Step Walkthrough
+## Step by Step Walk-through
 
 ### Setup
 
@@ -104,5 +104,5 @@ This would stop the training workload. You can verify this by running ``runai li
 
 ## Next Steps
 
-*   Follow the Walkthrough: [Launch Interactive Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md)
+*   Follow the Walk-through: [Launch Interactive Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md)
 *   Use your own containers to run an unattended training workload
