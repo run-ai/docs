@@ -19,12 +19,13 @@
     
     mkdocs serve 
     
-* View your changes at [localhost:8000](http://localhost:8000)
+* View your changes in [localhost:8000](http://localhost:8000)
 
 
-## deploy
+## Deploy
 
 Run:
+
      mkdocs gh-deploy
      
 * view in [docs.run.ai](https://docs.run.ai)
