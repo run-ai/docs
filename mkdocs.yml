@@ -50,7 +50,9 @@ extra:
       link: https://linkedin.com/company/runailabs/
 
 nav:
-  - Home: 'index.md'
+  - Home: 
+    - 'Overview': 'index.md'
+    - 'Whats New' : 'Product/Whats-New.md'
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
@@ -124,5 +126,3 @@ nav:
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
 
-  - 'Product' :
-    - 'Whats New' : 'Product/Whats-New.md'
