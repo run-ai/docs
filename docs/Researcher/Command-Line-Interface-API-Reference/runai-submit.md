@@ -106,7 +106,7 @@ Submit a Run:AI job for execution
 
 --jupyter
 
->  (Deprecated) Shortcut for running a jupyter notebook container. Uses a pre-created image and a default notebook configuration. Use the templates flag instead.
+>  (Deprecated) Shortcut for running a jupyter notebook container. Uses a pre-created image and a default notebook configuration. Use the s flag instead.
 
 --large-shm
  
@@ -170,7 +170,7 @@ Submit a Run:AI job for execution
 
 --template string
 
->  Use a specific template when running this job. Templates are set by the cluster administrator and provide predefined values to flags under the submit command. If a template is not set, a default template will be use if such exists
+>  Templates are currently not supported
 
 --ttl-after-finish duration
 
@@ -220,5 +220,5 @@ Note that the submit call may use templates to provide defaults to any of the ab
 ## See Also
 
 *   See any of the Walkthrough documents here: [Run:AI Walkthroughs](../Walkthroughs/Run-AI-Walkthroughs.md)
-*   See [runai template](runai-template.md) for a description on how templates work
+<!-- *   See [runai template](runai-template.md) for a description on how templates work -->
 

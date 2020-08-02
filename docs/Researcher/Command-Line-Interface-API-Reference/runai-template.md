@@ -1,3 +1,7 @@
+!!! Important node
+
+Templates are currently not supported
+
 ## Description
 
 Templates are a way to reduce the amount of flags required when running the command ``runai submit``. A template is added by the administrator and is out of scope for this article. A researcher can:

@@ -1,10 +1,9 @@
 # Walkthrough: Over-Quota and Bin Packing
 
-## Introduction
-
-The goal of this walkthrough is to explain the concepts of over-quota and bin-packing (consolidation) and how they help in maximizing cluster utilization
-
 ## Goals
+
+The goal of this walk-through is to explain the concepts of over-quota and bin-packing (consolidation) and how they help in maximizing cluster utilization: 
+
 * Show simplicity of resource provisioning, and how resources are abstracted from users.
 * Show how the system eliminates compute bottlenecks by allowing teams/users to go over their resource quota if there are free GPUs in the cluster.
 
@@ -19,8 +18,8 @@ The goal of this walkthrough is to explain the concepts of over-quota and bin-pa
 Run the following commands:
 
     runai submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
-    runai submit a1 -i gcr.io/run-ai-demo/quickstart -g 1 -p  team-a
-    runai submit b1 -i gcr.io/run-ai-demo/quickstart -g 1  -p team-b
+    runai submit a1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
+    runai submit b1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
 
 System status after run:
 ![overquota1](img/overquota1.png)
