@@ -51,7 +51,7 @@ extra:
 
 nav:
   - Home: 
-    - 'Overview': 'home/index.md'
+    - 'Overview': 'index.md'
     - 'Architecture' : 'home/architecture.md'
     - 'Whats New' : 'home/whats-new.md'
   - 'Administrator' :
