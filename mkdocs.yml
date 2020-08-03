@@ -90,11 +90,11 @@ nav:
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Walk-throughs' :
       - 'Run:AI Walk-throughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
-      - 'Launch Interactive Build Workloads' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
-      - 'Launch Interactive Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
-      - 'Launch Unattended Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
-      - 'Launch Workloads with GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
-      - 'Launch Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
+      - 'Build Workloads' : 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md'
+      - 'Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
+      - 'Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
+      - 'GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
+      - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'CLI Reference' :
@@ -111,18 +111,18 @@ nav:
       - 'runai update' : 'Researcher/Command-Line-Interface-API-Reference/runai-update.md'
 #     - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
     - 'Best Practices' :
-      - 'From Bare-Metal to using Docker Images' : 'Researcher/Image-Creation-Best-Practices/From-Bare-Metal-to-using-Docker-Images.md'
-      - 'Converting your Workload to run as Unattended' : 'Researcher/Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
-      - 'Saving Deep Learning Checkpoints' : 'Researcher/Image-Creation-Best-Practices/Saving-Deep-Learning-Checkpoints.md'
+      - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
+      - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
+      - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
       - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Researcher Library' :
-      - 'The Researcher Library' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
-      - 'Elasticity: Dynamically Stretch/Compress Workloads GPU Quota' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
-      - 'Reporting via the Researcher Library  ' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
+      - 'Overview' : 'Researcher/Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md'
+      - 'Elasticity' : 'Researcher/Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
+      - 'Reporting' : 'Researcher/Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md'
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
 

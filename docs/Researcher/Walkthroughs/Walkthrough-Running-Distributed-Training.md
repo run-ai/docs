@@ -87,7 +87,7 @@ This will provide shell access to the launcher process. From there, you can run 
 
 ## Next Steps</span>
 
-*   For more information on how to convert an interactive session into a training job, see: [Converting your Workload to use Unattended Training Execution](../Image-Creation-Best-Practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md)
+*   For more information on how to convert an interactive session into a training job, see: [Converting your Workload to use Unattended Training Execution](../best-practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md)
 *   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md)
 
 &nbsp;

@@ -1,3 +1,5 @@
+# Best Practice: Save Deep-Learning Checkpoints
+
 ## Introduction
 
 Run:AI can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:AI will give you back the resources and restore your workload. Thus, it is a good practice to save the state of your run at various checkpoints and start a workload from the latest checkpoint (typically between epochs).

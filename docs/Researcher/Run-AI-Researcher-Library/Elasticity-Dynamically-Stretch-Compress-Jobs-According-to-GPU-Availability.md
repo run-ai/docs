@@ -1,3 +1,5 @@
+# Researcher Library: Dynamically Stretch or Compress Workload's GPU Quota
+
 ## Introduction
 
 The Run:AI Researcher Library is a python library you can add to your deep learning python code. The library contains an _elasticity_ module which allows _train_ workloads to shrink or expand based on the cluster's availability
