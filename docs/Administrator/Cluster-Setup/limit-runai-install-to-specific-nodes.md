@@ -9,8 +9,6 @@ Set a label on the Nodes you want Run:AI to run on:
 
     kubectl label node <node-name> run.ai/enable.scheduling="true"
 
-Where ``<label>`` can be a Kubernetes label of your choosing.
-
 Then run the following:
 
     kubectl patch runaiconfig runai -n runai --type='json' \
@@ -21,5 +19,3 @@ Then run the following:
         -p='[{"op": "add", "path": "/spec/memory-manager/gpuLabel", "value": "run.ai/enable.scheduling"}]'
     kubectl patch runaiconfig runai -n runai --type='json' \
         -p='[{"op": "add", "path": "/spec/prometheus-operator/prometheus-node-exporter", "value": {"nodeSelector": {"run.ai/enable.scheduling": "true"}}}]'
-
-In the  command above, replace ``<label>`` with the label you have created.
