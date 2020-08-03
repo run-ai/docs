@@ -51,8 +51,9 @@ extra:
 
 nav:
   - Home: 
-    - 'Overview': 'index.md'
-    - 'Whats New' : 'whats-new.md'
+    - 'Overview': 'home/index.md'
+    - 'Architecture' : 'home/architecture.md'
+    - 'Whats New' : 'home/whats-new.md'
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
