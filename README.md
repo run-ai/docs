@@ -2,7 +2,7 @@
 
 
 
-## One time installation:
+## One Time Installation:
 
 * Clone this repository
 * Run:
@@ -30,4 +30,4 @@
      
 * view in [docs.run.ai](https://docs.run.ai)
 
-Don't forget to also push the documents to this repository
+Don't forget to also git push your changed/new documents to this repository
