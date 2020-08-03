@@ -1,3 +1,5 @@
+# Best Practice: From Bare Metal to Docker Images
+
 ## Introduction
 
 Some researchers do data-science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.
