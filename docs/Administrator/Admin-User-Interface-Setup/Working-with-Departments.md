@@ -18,11 +18,11 @@ __Departments__ are a second hierarchy of resource allocation:
 
 * A Project is associated with a single Department. Multiple Projects can be associated with the same Department.
 * A Department, like a Project is associated with a Quota. 
-* A Department quota supercedes a Project quota. 
+* A Department quota supersedes a Project quota. 
 
 ### Overquota behavior
 
-Consider an example from an academic use case: the Computer Science department and the GeoPhysics department have each purchased 10 DGXs with 80 GPUs, totalling a cluster of 160 GPUs. The two departmentes do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need it. As such, there could be many Projects in the GeoPhysics department, totalling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as overquota. For more details on overquota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
+Consider an example from an academic use case: the Computer Science department and the GeoPhysics department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need it. As such, there could be many Projects in the GeoPhysics department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
 __Important__ __best__ __practice:__ As a rule, the sum of the department allocation should be equal to the number of GPUs in the cluster.
 
@@ -50,7 +50,7 @@ You can add new Departments by pressing the __Add New Department__ at the top ri
 
 <img src="../img/new-department.png" alt="new-department" width="400"/>
 
-Add the department name and a quota allocation.
+Add department name and quota allocation.
 
 ### Assigning Projects to Departments
 

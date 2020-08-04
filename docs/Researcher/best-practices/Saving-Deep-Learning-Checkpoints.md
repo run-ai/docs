@@ -6,7 +6,7 @@ Run:AI can pause unattended executions, giving your GPU resources to another wor
 
 ## How to Save Checkpoints
 
-TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. <https://www.tensorflow.org/guide/checkpoint> for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving\_and\_loading\_a\_general\_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html) for Pytorch).
+TensorFlow, PyTorch, and others have mechanisms to help save checkpoints (e.g. <https://www.tensorflow.org/guide/checkpoint> for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving\_and\_loading\_a\_general\_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html) for PyTorch).
 
 ## Where to Save Checkpoints
 
@@ -22,7 +22,20 @@ It is a best practice to save checkpoints at intervals. For example, every epoch
 
 If periodic checkpoints are not enough, you can use a_ signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
 
-<pre><code>import signal<br/>import time<br/><br/>def graceful_exit_handler(signum, frame):<br/> # save your checkpoints to shared storage<br/><br/> # exit with status "1" is important for the job to return later.  <br/> exit(1)<br/><br/>if __name__ == "__main__":<br/> signal.signal(signal.SIGTERM, graceful_exit_handler)<br/><br/> # rest of code </code></pre>
+
+    import signal
+    import time
+
+    def graceful_exit_handler(signum, frame):
+    # save your checkpoints to shared storage
+
+    # exit with status "1" is important for the job to return later.  
+    exit(1)
+
+    if __name__ == "__main__":
+    signal.signal(signal.SIGTERM, graceful_exit_handler)
+
+    # rest of code 
 
 By default, you will have 30 seconds to save your checkpoints.
 

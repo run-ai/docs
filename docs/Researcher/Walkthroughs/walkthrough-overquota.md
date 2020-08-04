@@ -26,9 +26,9 @@ System status after run:
 
 
 !!! Discussion
-* team-a has 3 GPUs allocated. Which is over its quota by 1 GPU. 
-* The system allows this over-quota as long as there are available resources
-* The system is at full capacity with all GPUs utilized. 
+    * team-a has 3 GPUs allocated. Which is over its quota by 1 GPU. 
+    * The system allows this over-quota as long as there are available resources
+    * The system is at full capacity with all GPUs utilized. 
 
 ## Part 2: Basic Fairness via Preemption
 
@@ -40,10 +40,9 @@ System status after run:
 ![overquota2](img/overquota2.png)
 
 !!! Discussion
-
-* team-a can no longer remain in over-quota. Thus, one job, must be _preempted_: moved out to allow team-b to grow.
-* Run:AI scheduler chooses to preempt job _a1_.
-* It is important that unattended jobs will save [checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md). This will ensure that whenever job _a1_ resume, it will do so from where it left off.
+    * team-a can no longer remain in over-quota. Thus, one job, must be _preempted_: moved out to allow team-b to grow.
+    * Run:AI scheduler chooses to preempt job _a1_.
+    * It is important that unattended jobs will save [checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md). This will ensure that whenever job _a1_ resume, it will do so from where it left off.
 
 ## Part 3: Bin Packing
 
@@ -72,9 +71,8 @@ Now, run a 2 GPU job:
 The status now is:
 ![overquota4](img/overquota4.png)
 
-!!! Discussion
-
-Note that job _a1_ has been preempted and then restarted on the second node, in order to clear space fo the new _a2_ job. This is __bin-packing__ or __consolidation__
+!!! Discussion 
+    Note that job _a1_ has been preempted and then restarted on the second node, in order to clear space fo the new _a2_ job. This is __bin-packing__ or __consolidation__
 
 
 

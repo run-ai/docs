@@ -36,11 +36,11 @@ Contact your administrator to see which methods are available in your cluster
             --interactive --service-type=portforward --port 8888:8888 \
             --args="--NotebookApp.base_url=jupyter1" --command=start-notebook.sh
 
-*   The job is based on a generic Jupyter notebook docker image jupyter/base-notebook 
-*    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notbook base URL.   
+*   The job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
+*    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notebook base URL.   
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job.  
 *   The job is assigned to team-a with an allocation of a single GPU.
-*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the_ runai submit_ command is not stopped
+*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the ``runai submit`` command is not stopped
 
 ### Open the Jupyter notebook
 
@@ -67,7 +67,7 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
           --interactive --service-type=ingress --port 8888 \
           --args="--NotebookApp.base_url=team-a-test-ingress" --command=start-notebook.sh
 
-*   An ingress service url   will be created, run:
+*   An ingress service url will be created, run:
 
         runai list
 

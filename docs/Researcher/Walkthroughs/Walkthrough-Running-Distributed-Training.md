@@ -19,7 +19,7 @@ To complete this walk-through you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at<span>&nbsp;</span><https://app.run.ai>
+*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai)
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"

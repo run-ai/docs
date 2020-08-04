@@ -201,15 +201,15 @@ Submit a Run:AI job for execution
 
 ## Examples
 
-start an unattended training job of name run1, based on project team-ny using a quickstart image:
+start an unattended training job of name run1, based on project team-a using a quickstart image:
 
-    runai submit run1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-ny
+    runai submit run1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
 
 
-start an interactive job of name run2, based on project team-ny using a jupyter notebook image. The Notebook will be externalized via a load balancer on port 8888:
+start an interactive job of name run2, based on project team-a using a Jupyter notebook image. The Notebook will be externalized via a load balancer on port 8888:
 
     runai submit run2 -i jupyter/base-notebook -g 1 \
-       -p team-ny --interactive --service-type=loadbalancer --port 8888:8888
+       -p team-a --interactive --service-type=loadbalancer --port 8888:8888
 
 ## Output
 
@@ -219,6 +219,6 @@ Note that the submit call may use templates to provide defaults to any of the ab
 
 ## See Also
 
-*   See any of the Walk-through documents here: [Run:AI Walk-throughs](../Walkthroughs/Run-AI-Walkthroughs.md)
+*   See any of the Walk-through documents here: [Run:AI Walk-through](../Walkthroughs/Run-AI-Walkthroughs.md)
 <!-- *   See [runai template](runai-template.md) for a description on how templates work -->
 

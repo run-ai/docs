@@ -1,3 +1,8 @@
+!!! Note
+    Templates are currently not supported. 
+
+---
+
 ## What are Templates?
 
 Templates are a way to reduce the number of flags required when using the Command Line Interface to start workloads. Using Templates the researcher can:
@@ -8,7 +13,7 @@ Templates are a way to reduce the number of flags required when using the Comman
 
 The purpose of this document is to provide the administrator with guidelines on how to create templates.
 
-## The Template Implementation
+## Template Implementation
 
 CLI Templates are implemented as_ Kubernetes <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_self">ConfigMaps</a>. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
 
@@ -82,6 +87,13 @@ The administrator can also set a default template that is always used on runai s
         runai/default: "true"
     labels:
         runai/template: "true"
+
+## Flag Override Logic for Multi Values
+
+If your template specifies 1 GPU and the Researcher adds the --gpu flag for 2 GPUs, the system will use the Researcher's 2 GPU as an override. 
+Some flags, such as volume, ports, args accept __multiple__ values. Which bears the question XXX There are two override alternatives:
+
+1. The flag
 
 ## Syntax of all Values
 

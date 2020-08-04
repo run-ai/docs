@@ -34,7 +34,7 @@ The first line of this script is there to make sure that all required python lib
 
 ### Support Variance Between Different Runs
 
-Your training script must be flexible enough to support variance in execution without changing the code. For example, you will want to change the number of epochs to run, apply a different set of hyperparameters, etc. There are two ways to handle this in your script. You can use <ins>one</ins> or <ins>both</ins> methods:
+Your training script must be flexible enough to support variance in execution without changing the code. For example, you will want to change the number of epochs to run, apply a different set of hyper-parameters, etc. There are two ways to handle this in your script. You can use <ins>one</ins> or <ins>both</ins> methods:
 
 1. Your script can read arguments passed to the script:
 
@@ -74,7 +74,7 @@ Please refer to [Command Line Interface, runai submit](../Command-Line-Interface
 
 <!-- ### Use CLI Templates
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command line. To make life easier, our CLI offers a way to template those configurations and use preconfigured configuration when submitting a job. Please refer to [Configure Command Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md). -->
+Different run configurations may vary significantly and can be tedious to be written each time on the command line. To make life easier, our CLI offers a way to template those configurations and use pre-configured configuration when submitting a job. Please refer to [Configure Command Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md). -->
 
 ## Attached Files
 
