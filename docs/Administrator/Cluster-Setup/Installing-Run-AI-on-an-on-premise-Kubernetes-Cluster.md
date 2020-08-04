@@ -1,4 +1,4 @@
-The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Prior to installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
+The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Before installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
 
 ## Step 1: Install Kubernetes
 
@@ -60,5 +60,5 @@ __Note__: Run:AI is customizing the NVIDIA device plugin (<https://github.com/NV
 
 ## Next Steps
 
-*   Researchers work via a Command line interface (CLI). See  [Installing the Run AI Command Line Interface](../Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md) on how to install the CLI for users
+*   Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md) on how to install the CLI for users
 *   Set up Admin UI Users [Working with Admin UI Users](../Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md)

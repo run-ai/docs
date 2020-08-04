@@ -59,10 +59,10 @@ Deep learning workloads can be divided into two generic types:
 
 <li>Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter Notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads are typically meant for debug and development sessions.
 </li>
-<li>Unattended "training" sessions. <span>Training is characterized by a machine learning run that has a start and a finish. </span>With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the data scientist can examine the results<span>. A Train session can take from a few minutes to a couple of days. It can be interrupted in the middle and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU and at the end of the run automatically frees the resources.</span>
+<li>Unattended "training" sessions. <span>Training is characterized by a machine learning run that has a start and a finish. </span>With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the data scientist can examine the results<span>. A Training session can take from a few minutes to a couple of days. It can be interrupted in the middle and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU and at the end of the run automatically frees the resources.</span>
 </li>
 
-Getting your docker ready is also a matter of which type of workload you are </font>currently running.
+Getting your docker ready is also a matter of which type of workload you are currently running.
 
 ### Build Workloads
 
@@ -78,7 +78,7 @@ You can also access the container remotely from tools such as PyCharm, Jupyter N
 
 ### Training Workloads
 
-For training workloads you can use a well-known image (e.g. nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a <strong>base image</strong> and add your own customizations <strong>on top</strong> of it. To achieve that, you create a<span> </span><em>Dockerfile. A </em>Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
+For training workloads you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a <strong>base image</strong> and add your own customizations <strong>on top</strong> of it. To achieve that, you create a<span> </span><em>Dockerfile. A </em>Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
 
 <ol><li>Base image is nvidia-tensorflow</li>
 <li>Install popular software</li>
@@ -87,4 +87,4 @@ For training workloads you can use a well-known image (e.g. nvidia-tensorflow im
 
 The script can be part of the image or can be provided as part of the command line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
 
-Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training job. For further information on how to set up and parameterize a training workload via docker or runai see [Converting your Workload to use Unattended Training Execution](Converting-your-Workload-to-use-Unattended-Training-Execution.md).
+Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](Converting-your-Workload-to-use-Unattended-Training-Execution.md).

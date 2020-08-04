@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Run:AI uses its a mechanism for authentication and authorization which is based on a third-party (<a href="https://auth0.com/" target="_self">auth0</a>). This is good as a baseline, but for enterprises, such a scheme is not scalable. For an enterprise, keeping separate users and roles mechanisms requires manual work, is error-prone, and increases the attack vector.
+Run:AI uses its a mechanism for authentication and authorization which is based on a third-party (<a href="https://auth0.com/" target="_self">auth0</a>). This is good as a baseline, but for enterprises, such a scheme is not scalable. For an enterprise, keeping separate Users and Roles systems requires manual work, is error-prone, and increases the attack vector.
 
 As such, organizations typically use an organizational directory to store users and roles, allowing a single point of change for multiple systems
 
@@ -31,7 +31,7 @@ After installing dex, you will want to create a _client_ and perform the followi
 *   Generate a unique _secret_. The secret should be sent to Run:AI
 *   If you are using LDAP or SAML, configure the relevant connector for dex
 *   Locate the authentication _redirection URL_. The redirection URL should to be sent to Run:AI
-*   Create a _public key_ in order for Run:AI to be able validate oauth tokens. The public key should be sent to Run:AI
+*   Create a _public key_ in order for Run:AI to be able validate OAuth tokens. The public key should be sent to Run:AI
 
 ### Users and Roles
 

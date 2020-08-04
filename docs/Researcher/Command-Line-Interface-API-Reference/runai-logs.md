@@ -54,7 +54,7 @@ Show logs of training job
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
 
