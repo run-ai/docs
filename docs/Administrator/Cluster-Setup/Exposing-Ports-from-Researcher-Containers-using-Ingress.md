@@ -15,7 +15,18 @@ Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container
 
 Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>.
 
-To configure ingress see:  [Exposing-Cluster-Services-via-Ingress](Exposing-Cluster-Services-via-Ingress.md). 
+## Setup
+
+Before installing ingress, you must obtain an IP Address or an IP address range which is external to the cluster.
+
+A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a yaml file runai-operator.yaml and then applying it to Kubernetes. You must edit the yaml file. Search for _localLoadBalancer_
+
+    localLoadBalancer
+        enabled: true
+        ipRangeFrom: 10.0.2.1
+        ipRangeTo: 10.0.2.2
+
+Set _enabled_ to true and set the IP range appropriately.
 
 ## Usage
 

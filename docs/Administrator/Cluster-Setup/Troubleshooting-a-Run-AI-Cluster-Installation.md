@@ -113,7 +113,13 @@ Verify that there are no errors. If there are connectivity related errors you ma
  
  __Typical root cause:__ more than one default storage class is installed
  
- The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases your k8s cluster may already have a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
+ The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases, your k8s cluster may __already have__ a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
+
+ Run:
+
+      kubectl get storageclass
+
+And look for _default_ storage classes.
 
  Run:
 

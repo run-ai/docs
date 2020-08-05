@@ -8,6 +8,15 @@ Some best practices on Kubernetes Configuration can be found here: [Kubernetes C
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
 
+#### Step 1.1 Default Storage Class
+
+Find out if you have a _default_ storage class by running
+
+    kubectl get storageclass
+
+If the output list contains a __default__ storage class you must, in step 3.1 below, remove the Run:AI default storage class.
+
+
 ## Step 2: NVIDIA
 
 On __each machine__ with GPUs run the following steps 2.1 - 2.3:
@@ -55,9 +64,9 @@ __Note__: Run:AI is customizing the NVIDIA device plugin (<https://github.com/NV
 ### Step 3.1: Customized Installation
 The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
 
-* Add an ingress load-balancing point for running containers. See: [Exposing Ports from Researcher Containers](Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
-* Add a proxy for outbound internet connectivity. See: [Installing Run AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
-* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](../Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started)
+* For allowing access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers](Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
+* To allow outbound internet connectivity in a proxied environment. See: [Installing Run AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
+* To remove the Run:AI default Storage Class if a default storage class already exists. See: [remove default storage class](../Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started)
 
 ## Step 4: Verifying your Installation
 
