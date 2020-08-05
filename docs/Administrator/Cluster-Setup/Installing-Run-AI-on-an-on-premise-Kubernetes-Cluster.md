@@ -48,15 +48,24 @@ __Note__: Run:AI is customizing the NVIDIA device plugin (<https://github.com/NV
 
 ## Step 3: Install Run:AI
 
-*   Log in to Run:AI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system
+*   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system
 *   If this is the first time anyone from your company has logged in, you will receive a dialog with instructions on how to install Run:AI on your Kubernetes Cluster.
 *   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster
+
+### Step 3.1: Customized Installation
+The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
+
+* Add an ingress load-balancing point for running containers. See: [Exposing Ports from Researcher Containers](Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
+* Add a proxy for outbound internet connectivity. See: [Installing Run AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
+* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](../Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started)
 
 ## Step 4: Verifying your Installation
 
 *   Go to <https://app.run.ai>
 *   Go to the Overview Dashboard
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appear on the bottom line
+
+For a more extensive verification of cluster health, see [Determining the health of a cluster](../Troubleshooting-a-Run-AI-Cluster-Installation/#determining-the-health-of-a-runai-cluster).
 
 ## Next Steps
 
