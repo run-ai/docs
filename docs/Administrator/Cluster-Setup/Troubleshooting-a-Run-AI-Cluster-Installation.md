@@ -106,6 +106,7 @@ Verify that there are no errors. If there are connectivity related errors you ma
 
 * Check your firewall for outbound connections. See the required permitted url list in: [Network requirements](Run-AI-GPU-Cluster-Prerequisites.md#network-requirements.md).
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
+* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started)
 
 
 ### Internal Database has not started
