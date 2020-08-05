@@ -51,7 +51,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --backoffLimit int
  
-> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
+> The number of times the job will be retried before failing. Zero or larger. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
 
 --command stringArray
 

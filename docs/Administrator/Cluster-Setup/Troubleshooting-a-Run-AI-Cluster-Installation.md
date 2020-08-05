@@ -1,55 +1,131 @@
-## Make sure only one default storage class is installed
+# Troubleshooting
+
+## Determining the Health of a Run:AI Cluster
+
+To understand whether your Run:AI cluster is healthy you need perform the following verification tests:
+
+1. All Run:AI services are running.
+2. Data is sent to the cloud.
+3. A job dan be sumbitted.
+
+
+### 1. Run:AI services are running
+
+Run:
+
+      kubectl get pods -n runai
+
+Verify that all pods are in ``Running`` status. 
+
+Run:
+
+      kubectl get deployments -n runai
+      kubectl get sts -n runai
+
+Verify that all items (deployments and statefulsets alike) are in a ready state (1/1)
+
+Run:
+
+      kubectl get daemonset -n runai
+
+
+A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes which contain GPUs. Verify that for all daemon-sets the _desired_ number is equal to  _current_ and to _ready_. 
+
+
+### 2. Data is sent to the cloud
+
+Log in to [app.run.ai](https://app.run.ai)
+
+* Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
+* Go to __Projects__ and create a new project. Find the new project using the CLI command:
+
+         runai project list
+
+
+### 3. Submit a job
+
+Submitting a job will allow you to verify that Run:AI scheduling service are in order. 
+
+* Make sure that the project you have created has a quota of at least 1 GPU
+* Run:
+
+         runai project set <project-name>
+         runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
+
+* Verify that the job is a _Running_ state when running: 
+
+         runai list
+
+* Verify that the job is showing on the job area in [app.run.ai/Jobs](https://app.run.ai/Jobs)
+
+
+## Symptoms 
+
+### Metrics are not showing on Overview Dashboard
+
+__Symptom:__ Some or all metrics are not showing in [app.run.ai](https://app.run.ai)
+
+__Typical root causes:__
+
+* NVIDIA prerequisites have not been met.
+* Firewall related issues.
+
+#### NVIDIA related issues
+
+Run:
+
+      runai pods -n runai | grep nvidia
+
+Select one of the nvidia pods and run:
+
+      kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
+
+If the log contains an error, it means that NVIDIA related prerequisites have not been met. Review step 2 in [NVIDIA prerequisites](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-2-nvidia). Verify that:
+
+* Step 2.1: NVIDIA drivers are installed
+* Step 2.2: NVIDIA Docker is installed. A typical issue here is the installation of the _NVIDIA Container Toolkit_ instead of _NVIDIA Docker 2_. 
+* Step 2.3: Verify that NVIDIA Docker is the __default__ docker runtime
+* If the system has recently been installed, verify that docker has restarted by running the aforementioned  `pkill` command
+* Check the status of Docker by running:
+
+         sudo systemctl status docker
+
+
+
+#### Firewall issues
+
+Run:
+
+      runai pods -n runai | grep agent
+
+Select the agent's full name and run:
+
+      kubectl logs -n runai runai-agent-<id>
+
+Verify that there are no errors. If there are connectivity related errors you may need to:
+
+* Check your firewall for outbound connections. See the required permitted url list in: [Network requirements](Run-AI-GPU-Cluster-Prerequisites.md#network-requirements.md).
+* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
+
+
+### Internal Database has not started
  
- Runai installation includes by default storage class named local path provisioner which is installed as default storage class. In case the k8s cluster already has default storage class installed prior to Runai, you should disable the local path provisioner.
- To disable local path provisioner please follow those instructions:
- *  `kubectl edit runaiconfig -n runai`
- *  add the following lines under `spec:`:
+ __Typical root cause:__ more than one default storage class is installed
  
- `local-path-provisioner:`
+ The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases your k8s cluster may already have a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
+
+ Run:
+
+      kubectl describe pod -n runai runai-db-0
+
+ See that there is indeed a storage class error appearing
+
+ To disable local path provisioner please run:
+
+      kubectl edit runaiconfig -n runai
  
-     `enabled: false`
+ Add the following lines under `spec`:
  
- If there is more than one default storage class installed, then it actually makes default storage class disabled. Runai has 2 pods that need default storage class: `runai-db-0`, `runai-prometheus-pushgateway-0`. So, in this case both of those pods will have error status. If you would have run `kubectl describe pod -n runai runai-db-0`, you would have seen storage class error.
-
-## Pods are not created
-
-run:
-
-    kubectl get pods -n runai
-
-You will get a list of running "pods". All pods should be with status _Running_. There could be various reasons why pods are at a different status. Most notably, pods use Run:AI images that are downloaded from the web. If your company employs an outbound firewall, you may need to open the URLs and ports mentioned in [Network Requirements](Run-AI-GPU-Cluster-Prerequisites/#network-requirements)
-
-## GPU related metrics are not shown
-
-In the Admin portal (<a href="https://app.run.ai" target="_self">app.run.ai</a>) Metrics such as "number of GPUs" and "GPU utilization" do not show/
-
-This typically means that there is a disconnect between the Kubernetes pods that require access to GPUs and the NVIDIA software.
-
-This could happen if:
-
-*   Connecting GPU data requires a Kubernetes feature gate flag called KubeletPodResources. This feature gate is a default in Kubernetes 1.15, but must be added in older versions of Kubernetes.  See <https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/>. Note that Run:AI has been tested on Kubernetes 1.15.
-*   Nvidia perquisites are not installed. See [Run AI GPU ClusterPrerequisites>](Run-AI-GPU-Cluster-Prerequisites/#nvidia-driver) for NVIDIA related prerequisites.
-
- To verify whether GPU metrics are exported run:  
-
-    kubectl port-forward -n runai prometheus-runai-prometheus-operator-prometheus-0 9090
-
- Then using your browser go to <http://localhost:9090/> . Verify that you see metrics for _dcgm\_gpu\_utilization_.
-
-![mceclip1.png](img/mceclip1.png)
-
- 
-
- If no metrics are shown, you can get to the root cause by running: 
-
-    kubectl get pods -n runai --selector=app=pod-gpu-metrics-exporter
-
- There should be one GPU metrics exporter per node. For each pod run: 
-
-    kubectl logs -n runai &lt;name&gt; -c pod-nvidia-gpu-metrics-exporter
-
- Where &lt;name&gt; is the pod-gpu-metrics exporter names from above. The logs should contain further data about the issue
-
-A typical issue may be skipping the prerequisite of installing the Nvidia driver plugin. See  [Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster](Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-2-nvidia). 
-
- 
+      local-path-provisioner:
+         enabled: false
+      

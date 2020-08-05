@@ -6,7 +6,7 @@
 
 * Researchers submit Machine Learning workloads via the Run:AI Command Line Interface (CLI), or directly by sending YAML files to Kubernetes. 
 
-* Administrators monitor and set priorities via The Administrator User Interface
+* Administrators monitor and set priorities via the Administrator User Interface
 
 ![architecture](img/architecture.png)
 
