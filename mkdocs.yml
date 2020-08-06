@@ -52,7 +52,7 @@ extra:
 nav:
   - Home: 
     - 'Overview': 'index.md'
-    - 'Architecture' : 'home/architecture.md'
+    - 'System Components' : 'home/components.md'
     - 'Whats New' : 'home/whats-new.md'
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
