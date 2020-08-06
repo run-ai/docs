@@ -140,7 +140,7 @@ The Run:AI platform provides a unique technology that allows the sharing of a si
 
 This technology has more stringent software requirements than the rest of the Run:AI system. Specifically, virtualization has been tested on:
 
-*   NVIDIA device driver 418 or later
+*   NVIDIA device driver 410.104 or later
 *   CUDA 9.0 or later
 *   TensorFlow, Keras or PyTorch
 
