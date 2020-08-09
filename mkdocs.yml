@@ -101,11 +101,13 @@ nav:
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/Command-Line-Interface-API-Reference/Introduction.md'
       - 'runai bash' : 'Researcher/Command-Line-Interface-API-Reference/runai-bash.md'
+      - 'runai cluster' : 'Researcher/Command-Line-Interface-API-Reference/runai-cluster.md'
       - 'runai exec' : 'Researcher/Command-Line-Interface-API-Reference/runai-exec.md'
       - 'runai delete' : 'Researcher/Command-Line-Interface-API-Reference/runai-delete.md'
       - 'runai get' : 'Researcher/Command-Line-Interface-API-Reference/runai-get.md'
       - 'runai list' : 'Researcher/Command-Line-Interface-API-Reference/runai-list.md'
       - 'runai logs' : 'Researcher/Command-Line-Interface-API-Reference/runai-logs.md'
+      - 'runai project' : 'Researcher/Command-Line-Interface-API-Reference/runai-project.md'
       - 'runai submit' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/Command-Line-Interface-API-Reference/runai-submit-mpi.md'
       - 'runai top node' : 'Researcher/Command-Line-Interface-API-Reference/runai-top-node.md'
