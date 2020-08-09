@@ -18,7 +18,7 @@ Expanding a training job allows your GPUs to runs on more GPUs than the research
 
 ### Python Deep-Learning Code
 
-In your command line run:
+In your command-line run:
 
     pip install runai
 

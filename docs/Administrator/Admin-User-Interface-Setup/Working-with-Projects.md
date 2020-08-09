@@ -35,24 +35,24 @@ __Important__ __best__ __practice:__ As a rule, the sum of the project allocatio
 
 ### Update an existing Project
 
-*   Select an existing project 
-*   Right-click and press "Edit"
-*   Update the values and press "Save"
+*   Select an existing project.
+*   Right-click and press "Edit".
+*   Update the values and press "Save".
 
 ### Delete an existing project
 
 *   Select an existing project. 
-*   Right-click and press "Delete"
+*   Right-click and press "Delete".
 
 ## Limit Jobs to run on Specific Node Groups
 
 A frequent use case is to assign specific projects to run only on specific nodes (machines). This can happen for various reasons. Examples:
 
-*   The project team needs specialized hardware (e.g. with enough memory)
-*   The project team is the owner of specific hardware which was acquired with a specialized budget
-*   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes
+*   The project team needs specialized hardware (e.g. with enough memory).
+*   The project team is the owner of specific hardware which was acquired with a specialized budget.
+*   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes.
 
-While such 'affinities' are sometimes needed, its worth mentioning that at the end of the day any affinity settings have a negative impact on the overall system utilization
+While such 'affinities' are sometimes needed, its worth mentioning that at the end of the day any affinity settings have a negative impact on the overall system utilization.
 
 ### Grouping Nodes 
 
@@ -71,10 +71,10 @@ To annotate a specific node with the label "dgx-2", run:
 To mandate __training__ jobs to run on specific node groups:
 
 *   Create a Project or edit an existing Project.
-*   Select "Limit to specific node groups
+*   Select "Limit to specific node groups.
 *   If the label does not yet exist, press the + sign and add the label.
-*   Press Enter to save the label
-*   Select the label 
+*   Press Enter to save the label.
+*   Select the label.
 
 ![mceclip0.png](img/mceclip0.png)
 
@@ -93,6 +93,6 @@ __Warning__: This feature will cause containers to automatically stop. Any work 
 To set a duration limit for interactive jobs:
 
 *   Create a Project or edit an existing Project.
-*   At the bottom, set a limit (day, hour, minute)
+*   At the bottom, set a limit (day, hour, minute).
 
 ![mceclip1.png](img/mceclip1.png) The setting only takes effect for jobs that have started after the duration has been changed. 

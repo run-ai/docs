@@ -75,7 +75,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --host-ipc
 
->  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
+>  Use the host's _ipc_ namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack
 > 
 > For further information see docker <a href="https://docs.docker.com/engine/reference/run/" target="_self">documentation</a>
@@ -96,7 +96,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --large-shm
 
-> Mount a large /dev/shm device. shm is a shared file system mounted on RAM
+> Mount a large /dev/shm device. _shm_ is a shared file system mounted on RAM
 
 --local-image
 
@@ -112,7 +112,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --node-type string
 
->  Allows defining specific Nodes (machines) or group of Nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
 --processes int
@@ -139,7 +139,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --run-as-user
 
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is root (same as in Docker), this command allows you to submit a job running under your linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
 
 --volume stringArray | -v stringArray
 
@@ -157,7 +157,7 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 --project | -p (string)
 
->  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use``runai project set <project-name>``.
+>  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
 
@@ -172,7 +172,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ## Output
 
-The command will attempt to submit an mpi job. You can follow up on the job by running ``runai list`` or ``runai get job-name``
+The command will attempt to submit an _mpi_ job. You can follow up on the job by running ``runai list`` or ``runai get job-name``
 
 ## See Also
 

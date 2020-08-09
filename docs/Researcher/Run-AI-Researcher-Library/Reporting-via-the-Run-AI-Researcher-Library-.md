@@ -8,7 +8,7 @@ With the reporter module, you can externalize information such as progress, accu
 
 ### Python Deep-Learning Code
 
-In your command line run:
+In your command-line run:
 
     pip install runai
 

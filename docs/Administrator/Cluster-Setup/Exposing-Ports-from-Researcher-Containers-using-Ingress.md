@@ -19,7 +19,7 @@ Ingress allows access to Kubernetes services from outside the Kubernetes cluster
 
 Before installing ingress, you must obtain an IP Address or an IP address range which is external to the cluster.
 
-A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a yaml file runai-operator.yaml and then applying it to Kubernetes. You must edit the yaml file. Search for _localLoadBalancer_
+A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a YAML file runai-operator.yaml and then applying it to Kubernetes. You must edit the YAML file. Search for _localLoadBalancer_
 
     localLoadBalancer
         enabled: true

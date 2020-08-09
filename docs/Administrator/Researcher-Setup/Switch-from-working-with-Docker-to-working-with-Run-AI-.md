@@ -24,7 +24,7 @@ If your Kubernetes cluster contains more than a single node, then, to enable loc
 
 ## Working with Containers 
 
-Starting a container using docker usually involves a single command line with multiple flags. A typical example: 
+Starting a container using docker usually involves a single command-line with multiple flags. A typical example: 
 
     docker run --runtime=nvidia --shm-size 16G -it --rm -e HOSTNAME='hostname' \
         -v /raid/public/my_datasets:/root/dataset:ro   -i  nvcr.io/nvidia/pytorch:19.12-py3

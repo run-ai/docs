@@ -4,7 +4,7 @@ Following is a step by step guide for getting a new researcher up to speed with 
 
 As part of Run:AI, the organization is typically moving from Docker-based workflows to Kubernetes. This [document](Switch-from-working-with-Docker-to-working-with-Run-AI-.md) is an attempt to help the researcher with this paradigm shift. It explains the basic concepts and provides links for further information about the Run:AI CLI.
 
-## Setup the Run:AI Command Line Interface
+## Setup the Run:AI Command-Line Interface
 
 Run:AI CLI needs to be installed on the researcher machine. This [document](Installing-the-Run-AI-Command-Line-Interface.md) provides step by step instructions.
 

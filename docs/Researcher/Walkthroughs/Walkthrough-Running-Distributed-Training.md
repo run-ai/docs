@@ -13,7 +13,7 @@ Run:AI provides the ability to run, manage, and view Distributed Training worklo
 To complete this walk-through you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
+*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
 ## Step by Step Walk-through
 
@@ -27,7 +27,7 @@ To complete this walk-through you must have:
 
 ### Run Training Workload
 
-*   At the command line run:
+*   At the command-line run:
 
         runai project set team-a 
         runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed 

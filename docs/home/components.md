@@ -4,7 +4,7 @@
 
 * Run:AI is installed over a Kubernetes Cluster
 
-* Researchers submit Machine Learning workloads via the Run:AI Command Line Interface (CLI), or directly by sending YAML files to Kubernetes. 
+* Researchers submit Machine Learning workloads via the Run:AI Command-Line Interface (CLI), or directly by sending YAML files to Kubernetes. 
 
 * Administrators monitor and set priorities via the Administrator User Interface
 

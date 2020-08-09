@@ -1,6 +1,6 @@
 ## Description
 
-Show logs of training job
+Show the logs of a job
 
 ## Synopsis
 
@@ -62,7 +62,7 @@ Show logs of training job
 
 ## Output
 
-The jobs log will show
+The command will show the logs of the first process in the container. For training jobs, this would be the command run at startup. For interactive jobs, the command may not show anything
 
 ## See Also
 

@@ -1,6 +1,6 @@
 ## Description
 
-Find and install the latest version of the runai command line utility. On mac and linux the command must be run with sudo:
+Find and install the latest version of the runai command-line utility. On mac and Linux the command must be run with sudo:
 
     sudo runai update
 
@@ -24,6 +24,6 @@ Find and install the latest version of the runai command line utility. On mac an
 
 ## Output
 
-Update of the runai command line interface
+Update of the runai command-line interface
 
 ## See Also

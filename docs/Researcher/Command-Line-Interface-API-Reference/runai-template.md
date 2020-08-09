@@ -47,4 +47,4 @@ Use the template:
 
 ## See Also
 
-See: [Configure Command Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md) on how to configure templates.
+See: [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md) on how to configure templates.
