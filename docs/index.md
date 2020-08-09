@@ -13,11 +13,13 @@ The Run:AI documentation is targeting two personas:
 
 To get support use the following channels:
 
-* Write to [support@run.ai](mailto:support@run.ai)
+* Write to [support@run.ai](mailto:support@run.ai).
 
-* On our [website](https://run.ai), under _Support_ use the support form
+* On our [website](https://run.ai), under _Support_ use the support form.
 
-* On the bottom right of the [administrator user interface](https://app.run.ai), use the feedback widget 
+* On the bottom right of the [administrator user interface](https://app.run.ai), use the _Help_ widget.
+
+* On the bottom right of this page , use the _Help_ widget.
 
 
 
