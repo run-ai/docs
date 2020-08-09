@@ -10,7 +10,7 @@ When installed, the library provides:
 
 ## Installing the Run:AI Researcher Library
 
-In your command line run:
+In your command-line run:
 
     pip install runai
 

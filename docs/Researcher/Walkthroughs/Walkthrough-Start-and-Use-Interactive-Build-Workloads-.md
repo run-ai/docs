@@ -20,7 +20,7 @@ It is also possible to open ports to specific services within the container. See
 To complete this walk-through you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
+*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md)
 
 ## Step by Step Walk-through
 
@@ -34,7 +34,7 @@ To complete this walk-through you must have:
 
 ### Run Workload
 
-*   At the command line run:
+*   At the command-line run:
 
         runai project set team-a
         runai submit build1 -i python -g 1 --interactive --command sleep --args infinity

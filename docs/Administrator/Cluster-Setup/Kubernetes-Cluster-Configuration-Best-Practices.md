@@ -4,7 +4,7 @@ It is possible for researchers to over-allocate memory to the extent that, if no
 
 ### Symptoms
 
-1. The node enters the "NotReady" state, and won't be "Ready" again until the resource issues have been fixed. This issue enhances on certain versions of kubelet (1.17.4 for example), that have a bug which causes kubelet to not recover properly when encountering certain errors, and must be restarted manually.
+1. The node enters the "NotReady" state, and won't be "Ready" again until the resource issues have been fixed. This issue appears on certain versions of kubelet (1.17.4 for example), that have a bug which causes kubelet to not recover properly when encountering certain errors, and must be restarted manually.
 
 2. SSH to the node and overall node access can be very slow.
 

@@ -32,7 +32,7 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 
 ## Output
 
-The command will access the container that should be currently running in the current cluster and attempt to create a command line shell based on bash.
+The command will access the container that should be currently running in the current cluster and attempt to create a command-line shell based on bash.
 
 The command will return an error if the container does not exist or has not been in running state yet.
 

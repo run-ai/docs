@@ -47,7 +47,7 @@ Submit a Run:AI job for execution
 
 --always-pull-image stringArray
 
->  When starting a container, always pull the image from repository, even if cached on running node. This is useful when you are re-saving updates to the image using the same tag.
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag.
 
 --args stringArray
 
@@ -56,7 +56,7 @@ Submit a Run:AI job for execution
 
 --backoffLimit int
  
-> The number of times the job will be retried before failing. Default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
+> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
 
 --command stringArray
 
@@ -81,7 +81,7 @@ Submit a Run:AI job for execution
 
 --gpu int | -g int
 
->  Number of GPUs to allocation to the Job. Default is no GPUs.
+>  Number of GPUs to allocation to the Job. The default is no GPUs.
 
 --host-ipc
 
@@ -106,11 +106,11 @@ Submit a Run:AI job for execution
 
 --jupyter
 
->  (Deprecated) Shortcut for running a jupyter notebook container. Uses a pre-created image and a default notebook configuration. Use the s flag instead.
+>  (Deprecated) Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. Use the s flag instead.
 
 --large-shm
  
-> Mount a large /dev/shm device. shm is a shared file system mounted on RAM
+> Mount a large /dev/shm device. _shm_ is a shared file system mounted on RAM
 
 --local-image
 
@@ -122,12 +122,12 @@ Submit a Run:AI job for execution
 
 --memory-limit string
 
->  CPU memory to allocate for this job (1G, 20M, .etc).The system guaranteesthat this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
+>  CPU memory to allocate for this job (1G, 20M, .etc).The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
 --node-type string
 
->  Allows defining specific nodes (machines) or group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
-> This flag can be used in conjunctionwith Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+>  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
 --port stringArray
 
@@ -145,7 +145,7 @@ Submit a Run:AI job for execution
 
 > Mount a persistent volume claim into a container
 
-> __StorageClassName__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This paramter may be ommitted if there is a single storage class in the system, or you are using the default storage class. 
+> __StorageClassName__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 
 >    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for how to specify volume sizes
 
@@ -161,11 +161,11 @@ Submit a Run:AI job for execution
 
 --run-as-user
 
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is root (same as in Docker), this command allows you to submit a job running under your linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
 
 --service-type string | -s string
 
->  Service exposure method for interactive Job. Options are: portforward, loadbalancer, nodeport, ingress.
+>  Service exposure method for interactive Job. Options are: ``portforward``, ``loadbalancer``, ``nodeport``, ingress.
 >  Use the command runai list to obtain the endpoint to use the service when the job is running. Different service methods have different endpoint structure
 
 --template string
