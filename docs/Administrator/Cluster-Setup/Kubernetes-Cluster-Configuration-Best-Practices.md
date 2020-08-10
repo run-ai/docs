@@ -44,5 +44,10 @@ To configure, edit the file _/etc/kubernetes/kubelet-config.yaml_ and add the fo
 
     evictionHard:
       memory.available: "500Mi"
+      # Default value for evictionHard on kubelet
+      nodefs.available: "10%"
+      nodefs.inodesFree: "5%"
+      imagefs.available: "15%"
 
+ Please note that specifing values for evictionHard will override the default values on kubelet which are of very high importance.
  For further reading please refer to <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/>.
