@@ -57,7 +57,7 @@ nav:
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
-      - 'Introduction' : 'Administrator/Cluster-Setup/Cluster-Setup-Start-Here.md'
+      - 'Introduction' : 'Administrator/Cluster-Setup/cluster-setup-intro.md'
       - 'Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
       - 'Cluster Install' : 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md'
