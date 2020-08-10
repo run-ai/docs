@@ -28,4 +28,6 @@ To access the Google Container Repository (GCR),  you need to obtain a key-file 
     --docker-password="$(cat ~/json-key-file-from-gcp.json)" \
     --docker-email=any@valid.email
 
-Then run the label command as described above.
+Then run:
+
+    kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
