@@ -72,12 +72,12 @@ nav:
         - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
-      - 'Installing the Command-Line Interface' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
-      - 'Troubleshooting a CLI Installation' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
-      - 'Limit Workloads to a Specific Node Group' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
-      - 'Using a Docker Registry with Credentials' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
-      - 'Switch from working with Docker to working with Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'
-      - 'Limit Workloads to Specific GPUs in Specific Nodes' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
+      - 'Installing the CLI' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
+      - 'Troubleshooting the CLI' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
+      - 'Use a Protected Docker Registry' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
+      - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'
+      - 'Limit Run:AI to Specific Nodes' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
+      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
 #      - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md'
     - 'Admin UI Setup' :
       - 'Working with Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
