@@ -19,21 +19,42 @@ Then:
 
 __Note__: the secret may take up to a minute to update in the system.
 
-## Google Cloud Image Repository
-To access the Google Container Repository (GCR),  you need to:
+## Google Cloud Registry
+Follow the steps below to access private images in the Google Container Registry (GCR):
 
 * Create a service-account in GCP. Provide it ``Storage Object Viewer`` permissions and download a JSON key.
-* Under GCR, go to image and locate the domain name. Example GCR domains can be gcr.io, eu.gcr.io etc. 
-* Run the command below: 
+* Under GCR, go to image and locate the domain name. Example GCR domains can be ``gcr.io``, ``eu.gcr.io`` etc. 
+* On your local machine, login to docker with the new credentials:
 
-        kubectl create secret docker-registry <secret_name> -n runai \
-        --docker-server=<gcr-domain> \
-        --docker-username=_json_key \
-        --docker-password="$(cat <config.json>)" \
-        --docker-email=any@valid.email
+        docker login -u _json_key -p "$(cat <config.json>)" <gcr-domain>
 
-Where ``gcr-domain`` is the GCR domain we have located, ``<config.json>`` is the GCP configuration file, ``<secret-name>`` is an arbitrary name.
+ Where ``<gcr-domain>`` is the GCR domain we have located, ``<config.json>`` is the GCP configuration file. This will generate an entry for the GCR domain in your  ``~/.docker/config.json file``.
 
-Then run:
+ * Open the ``~/.docker/config.json`` file.  Copy the JSON structure under the GCR domain into a new file called ``~/docker-config.json``. When doing so, take care to __remove all newlines__. For example:
 
-    kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
+        {"https://eu.gcr.io": { "auth": "<key>"}}
+
+* Convert the file into base64:
+
+        cat ~/docker-config.json | base64
+
+* Create a new file called ``secret.yaml``:
+
+        apiVersion: v1
+        kind: Secret
+        metadata:
+            name: gcr-secret
+            namespace: runai
+            labels:
+                runai/cluster-wide: "true"
+        data:
+           .dockerconfigjson: << PASTE_HERE_THE_LONG_BASE64_ENCODED_STRING >>
+        type: kubernetes.io/dockerconfigjson
+
+
+* Apply to Kubernetes by running  the command:
+
+        kubectl create -f ~/secret.yaml
+
+* Test your settings by submitting a which references an image from the GCR repository
+
