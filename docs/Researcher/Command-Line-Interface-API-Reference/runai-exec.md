@@ -2,7 +2,7 @@
 
 Execute a command inside a running job
 
-Note: to execute a bash command, you can also use the shorthand [runai bash](runai-bash)
+Note: to execute a bash command, you can also use the shorthand [runai bash](runai-bash.md)
 
 ## Synopsis
 
