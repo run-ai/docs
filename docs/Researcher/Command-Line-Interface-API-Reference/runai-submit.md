@@ -141,23 +141,33 @@ Submit a Run:AI job for execution
 
 >  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
 
---pvc [StorageClassName]:Size:ContainerMountPath:[ro]
+--pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
+
+--pvc `Pvc_Name:Container_Mount_Path:[ro]`
 
 > Mount a persistent volume claim into a container
+>
+> The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 
-> __StorageClassName__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
+> __Storage_Class_Name__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 
 >    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for how to specify volume sizes
 
->    __ContainerMountPath__. A path internal to the container where the storage will be mounted
+>    __Container_Mount_Path__. A path internal to the container where the storage will be mounted
+
+>    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) to mount into the pod
 > 
 > Examples:
 
-> ``--pvc :3Gi:/tmp/john:ro``  - Allocate 3GB from the default Storage class. Mount it to /tmp/john as read-only 
+> ``--pvc :3Gi:/tmp/john:ro``  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
 
-> ``--pvc my-storage:3Gi:/tmp/john:ro``  - Allocate 3GB from the my-storage storage class. Mount it to /tmp/john as read-only 
+> ``--pvc my-storage:3Gi:/tmp/john:ro``  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
 
-> ``--pvc :3Gi:/tmp/john`` - Allocate 3GB from the default storage class. Mount it to /tmp/john as read-write 
+> ``--pvc :3Gi:/tmp/john`` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
+
+> ``--pvc my-pvc:/tmp/john`` - Use a Persistent Volume Claim named `my-pvc`. Mount it to `/tmp/john` as read-write 
+
+> ``--pvc my-pvc-2:/tmp/john:ro`` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
 --run-as-user
 
