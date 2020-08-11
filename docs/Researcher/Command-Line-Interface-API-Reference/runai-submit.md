@@ -155,7 +155,7 @@ Submit a Run:AI job for execution
 
 >    __Container_Mount_Path__. A path internal to the container where the storage will be mounted
 
->    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) to mount into the pod
+>    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) to mount into the container
 > 
 > Examples:
 
