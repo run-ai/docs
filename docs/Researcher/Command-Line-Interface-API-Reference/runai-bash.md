@@ -2,7 +2,7 @@
 
 Get a bash session inside a running job
 
-This command is a shortcut to runai exec (``runai exec -it job-name bash``). See [runai exec](runai-exec) for full documentation of the exec command.
+This command is a shortcut to runai exec (``runai exec -it job-name bash``). See [runai exec](runai-exec.md) for full documentation of the exec command.
 
 ## Synopsis
 
