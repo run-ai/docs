@@ -22,6 +22,13 @@ A researcher submitting a workload must associate a project with any workload re
 
 For further information on projects and how to configure them, see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
+### Departments
+
+A _Department_ is a second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Project quota.  
+
+For further information on departments and how to configure them, see: [Working with Departments](../../Administrator/Admin-User-Interface-Setup/Working-with-Departments.md)
+
+
 ## Basic Scheduling Concepts
 
 ### Interactive vs. Unattended
@@ -64,7 +71,9 @@ The Run:AI scheduler determines fairness between multiple over-quota projects ac
 <li>project B has been allocated with a quota of 1 GPU.</li>
 
 
-Then, if both projects go over quota, project A will receive 25% (=1/(1+3)) of the idle GPUs and project B will receive 75% (=3/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new job is submitted to the system or existing job ends.
+Then, if both projects go over quota, project A will receive 75% (=3/(1+3)) of the idle GPUs and project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new job is submitted to the system or existing job ends.
+
+This fairness equivalence will also be maintained amongst __running__ jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
 ### Bin-packing &amp; Consolidation
 
