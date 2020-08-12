@@ -89,3 +89,8 @@ Run:AI Elasticity is explained [here](../Run-AI-Researcher-Library/Elasticity-Dy
 *   Shrinking happens when the scheduler is unable to schedule an elastic unattended workload and no amount of _consolidation_ helps. The scheduler then divides the requested GPUs by half again and again and tries to reschedule.
 *   Shrink jobs will expand when enough GPUs will be available.
 *   Expanding happens when the scheduler finds spare GPU resources, enough to double the amount of GPUs for an elastic workload.
+
+## Distributed Training
+
+Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. 
+Distribute Training utilizes a practice sometimes known as __Gang Scheduling__. The scheduler must ensure that multiple containers are started on what is typically multiple nodes, before the job can actually start. 
