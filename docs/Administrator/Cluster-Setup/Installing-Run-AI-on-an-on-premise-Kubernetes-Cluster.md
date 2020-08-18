@@ -40,11 +40,12 @@ Then run the following again:
 
     sudo pkill -SIGHUP dockerd
 
-__Note__: Run:AI is customizing the NVIDIA device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
 
 ## Step 2: Install Kubernetes
 
-Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend Kubespray [https://kubespray.io/\#/](https://kubespray.io/#/) . Download the latest __stable__ version from  : [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
+Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend Kubespray [https://kubespray.io/](https://kubespray.io/#/) . Download the latest __stable__ version from  : [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
+
+__Note__: Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
 
 Some best practices on Kubernetes Configuration can be found here: [Kubernetes Cluster Configuration Best Practices](Kubernetes-Cluster-Configuration-Best-Practices.md).
 
@@ -58,6 +59,14 @@ Find out if you have a _default_ storage class by running
 
 If the output list contains a __default__ storage class you must, in step 3.1 below, remove the Run:AI default storage class.
 
+#### Step 2.2 Label CPU-Only Nodes
+
+If you have CPU-only nodes in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
+
+    kubectl label node <node-name> run.ai/cpu-node=true
+
+Where ``<node-name>`` is the name of the node. Node names can be obtained by running ``kubectl get nodes``
+
 
 ## Step 3: Install Run:AI
 
@@ -66,6 +75,7 @@ If the output list contains a __default__ storage class you must, in step 3.1 be
 *   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster.
 
 ### Step 3.1: Customized Installation
+
 The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
 
 * To allow access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers].(Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
