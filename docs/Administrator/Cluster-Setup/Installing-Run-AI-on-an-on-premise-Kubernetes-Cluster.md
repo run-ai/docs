@@ -67,6 +67,8 @@ If you have CPU-only nodes in your cluster (see [Hardware Requirements](../Run-A
 
 Where ``<node-name>`` is the name of the node. Node names can be obtained by running ``kubectl get nodes``
 
+!!! Note
+Typically Kubernetes master node(s) have a ["NoSchedule" taint](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to avoid non-system pods running on a master node. Pressuring master nodes may lead to the Kubernetes system not functioning properly. If your master node is not a GPU node, make sure that this taint exists so that Run:AI too, does not run on a master node.
 
 ## Step 3: Install Run:AI
 
