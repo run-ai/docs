@@ -12,3 +12,4 @@ Follow a Walk-through for each using the links below
 *   [Using GPU Fractions](Walkthrough-Using-GPU-Fractions.md)
 *   [Distributed Training](Walkthrough-Running-Distributed-Training.md)
 *   [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
+*   [Fairness](walkthrough-queue-fairness.md)
