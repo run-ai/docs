@@ -59,9 +59,9 @@ Find out if you have a _default_ storage class by running
 
 If the output list contains a __default__ storage class you must, in step 3.1 below, remove the Run:AI default storage class.
 
-#### Step 2.2 Label CPU-Only Nodes
+#### Step 2.2 Label CPU-Only Worker Nodes
 
-If you have CPU-only nodes in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
+If you have CPU-only worker nodes (non master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
 
     kubectl label node <node-name> run.ai/cpu-node=true
 
