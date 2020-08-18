@@ -13,10 +13,10 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
 
 ## Hardware Requirements
 
-*   __Kubernetes: Dedicated CPU-only machine:__ To save on expensive GPUs-based hardware, we recommend (though not a must), a dedicated, CPU-only machine, that is not running user workloads.  On the CPU-only machine, Run:AI requires the following resources on top of the Kubernetes hardware requirements:
+*   __Kubernetes: Dedicated CPU-only worker node:__ To save on expensive GPUs-based hardware, we recommend (though not a must), a dedicated, CPU-only worker machine.  On the CPU-only machine, Run:AI requires the following resources:
     
     *   2 CPUs
-    *   2GB of RAM
+    *   4GB of RAM
     *   20GB of Disk space 
     
     
