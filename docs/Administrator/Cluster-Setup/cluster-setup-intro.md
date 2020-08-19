@@ -8,8 +8,8 @@ For additional details see the [Run:AI system components](../../home/components.
 
 ## Documents
 
-* Review Run:AI cluster [prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
-* Step by step [installation instructions](Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md).
+* Review Run:AI cluster [prerequisites](cluster-prerequisites.md).
+* Step by step [installation instructions](cluster-install.md).
 * Look for [troubleshooting](Troubleshooting-a-Run-AI-Cluster-Installation.md) tips if required.
 * [Upgrade cluster](Upgrading-Cluster-Install.md) and [delete cluster](Deleting-Cluster-Install.md) instructions. 
 
