@@ -37,6 +37,12 @@ plugins:
   - git-revision-date-localized
   - minify:
       minify_html: true
+  - redirects:
+      redirect_maps:
+#            'old.md': 'new.md'
+        'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
+        'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
+#            'some_file.md': 'http://external.url.com/foobar'
 markdown_extensions:
   - codehilite
   - admonition
@@ -58,8 +64,8 @@ nav:
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
       - 'Introduction' : 'Administrator/Cluster-Setup/cluster-setup-intro.md'
-      - 'Prerequisites' : 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md'
-      - 'Cluster Install' : 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md'
+      - 'Prerequisites' : 'Administrator/Cluster-Setup/cluster-prerequisites.md'
+      - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/Deleting-Cluster-Install.md'
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/Troubleshooting-a-Run-AI-Cluster-Installation.md'

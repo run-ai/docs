@@ -1,6 +1,6 @@
 ## Introduction
 
-Run:AI is installed on GPU clusters. These clusters must have outbound internet connectivity to the Run:AI cloud. Details can be found here:  [Run-AI-GPU-Cluster-Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md) under "Network Requirements".
+Run:AI is installed on GPU clusters. These clusters must have outbound internet connectivity to the Run:AI cloud. Details can be found here:  [Run-AI-GPU-Cluster-Prerequisites](cluster-prerequisites.md) under "Network Requirements".
 
 In some organizations, outbound connectivity requires a proxy. Traffic originating from servers and browsers within the organizations flows through a gateway that inspects the traffic, calls the destination and returns the contents. 
 

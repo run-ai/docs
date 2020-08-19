@@ -1,4 +1,4 @@
-The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Before installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](Run-AI-GPU-Cluster-Prerequisites.md).
+The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Before installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 
 ## Step 1: NVIDIA
