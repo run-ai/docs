@@ -94,5 +94,5 @@ For a more extensive verification of cluster health, see [Determining the health
 
 ## Next Steps
 
-*   Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md) on how to install the CLI for users
+*   Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/cli-install.md) on how to install the CLI for users
 *   Set up Admin UI Users [Working with Admin UI Users](../Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md)

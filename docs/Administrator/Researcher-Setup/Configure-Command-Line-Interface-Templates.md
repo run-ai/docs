@@ -35,7 +35,7 @@ Use the template when submitting a workload
 
     runai submit <my-job> --template <my-template>
 
-For further details, see the Run:AI command-line reference <a href="https://support.run.ai/hc/en-us/articles/360011548039-runai-template" target="_self">template</a>&nbsp;&nbsp;and <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">submit</a> functions.
+For further details, see the Run:AI command-line reference <a href="https://support.run.ai/hc/en-us/articles/360011548039-runai-template" target="_self">template</a> and <a href="https://support.run.ai/hc/en-us/articles/360011436120-runai-submit" target="_self">submit</a> functions.
 
 ## Template Syntax
 

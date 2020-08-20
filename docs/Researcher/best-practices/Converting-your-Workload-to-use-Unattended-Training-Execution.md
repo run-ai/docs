@@ -30,7 +30,7 @@ An example of a very common startup script __start.sh__ will be:
     ...
     python training.py
 
-The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the researcher to add/remove libraries without needing changes to the image itself.&nbsp;
+The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the researcher to add/remove libraries without needing changes to the image itself.
 
 ### Support Variance Between Different Runs
 

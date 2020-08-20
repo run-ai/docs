@@ -19,13 +19,13 @@ The Run:AI CLI needs to be connected to the Kubernetes Cluster containing the GP
 
         export KUBECONFIG=~/.kube/config
 
-*   Test the connection by running:&nbsp;&nbsp;
+*   Test the connection by running:
 
         kubectl get nodes
 
 ### Run:AI CLI Installation
 
-*   Download the latest release from the Run:AI releases page&nbsp;<https://github.com/run-ai/runai-cli/releases>
+*   Download the latest release from the Run:AI releases page <https://github.com/run-ai/runai-cli/releases>
 *   Unarchive the downloaded file
 *   Install by running:
 

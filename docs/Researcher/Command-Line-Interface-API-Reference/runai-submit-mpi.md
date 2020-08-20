@@ -186,4 +186,4 @@ The command will attempt to submit an _mpi_ job. You can follow up on the job by
 
 ## See Also
 
-*   See Walk-through document [Walk-through: Running Distributed Training](../Walkthroughs/Walkthrough-Running-Distributed-Training.md).
+*   See Walk-through document [Walk-through: Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).

@@ -34,7 +34,7 @@ Organizations without a shared file system typically write scripts to copy data 
 
 ### Machine Learning Code and Inputs
 
-As a rule, code needs to be saved and versioned in a <strong>code repository</strong>.
+As a rule, code needs to be saved and versioned in a __code repository__.
 
 There are two alternative practices:
 
@@ -49,9 +49,9 @@ Inputs to machine learning models and artifacts of training sessions, like model
 
 Any code has code dependencies. These libraries must be installed for the code to run. As the code is changing, so do the dependencies.
 
-ML Code is typically python and python dependencies are typically declared together in a single <em>requirements.txt</em> file which is saved together with the code.
+ML Code is typically python and python dependencies are typically declared together in a single ``requirements.txt`` file which is saved together with the code.
 
-The best practice is to have your docker startup script (see below) run this file using <em>pip install -r requirements.txt</em>. This allows the flexibility of adding and removing code dependencies dynamically.
+The best practice is to have your docker startup script (see below) run this file using ``pip install -r requirements.txt``. This allows the flexibility of adding and removing code dependencies dynamically.
 
 ## ML Lifecycle: Build and Train
 
@@ -59,14 +59,14 @@ Deep learning workloads can be divided into two generic types:
 
 <li>Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter Notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads are typically meant for debug and development sessions.
 </li>
-<li>Unattended "training" sessions. <span>Training is characterized by a machine learning run that has a start and a finish. </span>With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the data scientist can examine the results<span>. A Training session can take from a few minutes to a couple of days. It can be interrupted in the middle and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU and at the end of the run automatically frees the resources.</span>
+<li>Unattended "training" sessions. Training is characterized by a machine learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the data scientist can examine the results. A Training session can take from a few minutes to a couple of days. It can be interrupted in the middle and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU and at the end of the run automatically frees the resources.
 </li>
 
 Getting your docker ready is also a matter of which type of workload you are currently running.
 
 ### Build Workloads
 
-With "build" you are actually coding and debugging small experiments. You are<span> </span><strong>interactive</strong>. In that mode, you can typically take a well known standard image (e.g. <a data-saferedirecturl="https://www.google.com/url?q=https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow&amp;source=gmail&amp;ust=1592498144070000&amp;usg=AFQjCNGTAief8-leIAVR4wSzfzvkGEphDA" href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow" rel="noopener" target="_blank">https://ngc.nvidia.com/<wbr/>catalog/containers/nvidia:<wbr/>tensorflow</a>) and use it directly.
+With "build" you are actually coding and debugging small experiments. You are __interactive__. In that mode, you can typically take a well known standard image (e.g. <a data-saferedirecturl="https://www.google.com/url?q=https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow&amp;source=gmail&amp;ust=1592498144070000&amp;usg=AFQjCNGTAief8-leIAVR4wSzfzvkGEphDA" href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow" rel="noopener" target="_blank">https://ngc.nvidia.com/<wbr/>catalog/containers/nvidia:<wbr/>tensorflow</a>) and use it directly.
 
 Start a docker container by running:
 
@@ -78,7 +78,7 @@ You can also access the container remotely from tools such as PyCharm, Jupyter N
 
 ### Training Workloads
 
-For training workloads you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a <strong>base image</strong> and add your own customizations <strong>on top</strong> of it. To achieve that, you create a<span> </span><em>Dockerfile. A </em>Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
+For training workloads you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a __base image__ and add your own customizations __on top__ of it. To achieve that, you create a __Dockerfile__. A Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
 
 <ol><li>Base image is nvidia-tensorflow</li>
 <li>Install popular software</li>
