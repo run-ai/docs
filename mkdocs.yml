@@ -42,6 +42,7 @@ plugins:
 #            'old.md': 'new.md'
         'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
         'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
+        'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md.md'
 #            'some_file.md': 'http://external.url.com/foobar'
 markdown_extensions:
   - codehilite
@@ -78,7 +79,7 @@ nav:
         - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
-      - 'Install the CLI' : 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md'
+      - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
       - 'Troubleshooting' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
       - 'Use a Private Docker Registry' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
       - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'

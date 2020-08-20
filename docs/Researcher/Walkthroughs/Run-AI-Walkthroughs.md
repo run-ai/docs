@@ -10,6 +10,6 @@ Follow a Walk-through for each using the links below
 *   [Interactive build sessions](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md)
 *   [Interactive build sessions with externalized services](Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md)
 *   [Using GPU Fractions](Walkthrough-Using-GPU-Fractions.md)
-*   [Distributed Training](Walkthrough-Running-Distributed-Training.md)
+*   [Distributed Training](walkthrough-distributed-training.md)
 *   [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
 *   [Fairness](walkthrough-queue-fairness.md)

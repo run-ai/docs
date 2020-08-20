@@ -24,5 +24,5 @@ For advanced scenarios such as [limiting the installation to specific cluster no
 
 ## Next Steps
 
-After setting up the cluster, you may want to start setting up researchers. See: [Researcher Setup](../Researcher-Setup/Researcher-Setup-Start-Here.md).
+After setting up the cluster, you may want to start setting up researchers. See: [Researcher Setup](../Researcher-Setup/researcher-setup-intro.md).
 
