@@ -42,7 +42,7 @@ plugins:
 #            'old.md': 'new.md'
         'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
         'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
-        'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md.md'
+        'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md'
 #            'some_file.md': 'http://external.url.com/foobar'
 markdown_extensions:
   - codehilite
@@ -78,7 +78,7 @@ nav:
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
         - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
     - 'Researcher Setup' :
-      - 'Introduction' : 'Administrator/Researcher-Setup/Researcher-Setup-Start-Here.md'
+      - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
       - 'Troubleshooting' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
       - 'Use a Private Docker Registry' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
@@ -102,7 +102,7 @@ nav:
       - 'Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md'
       - 'Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
       - 'GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
-      - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Running-Distributed-Training.md'
+      - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'CLI Reference' :
