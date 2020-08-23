@@ -2,9 +2,9 @@
 
 Researchers are typically proficient in working with Docker. Docker is an isolation level above the operating system which allows creating your own bundle of the operating system + deep learning environment and packaging it within a single file. The file is called __a _docker image_.__
 
-You create a ___container___ by starting a docker image on a machine.
+You create a __container__ by starting a docker image on a machine.
 
-Run:AI is based on ___Kubernetes___. At its core, Kubernetes is a an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the researcher's workflow as follows.
+Run:AI is based on __Kubernetes__. At its core, Kubernetes is a an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the researcher's workflow as follows.
 
 ## Image Repository
 
@@ -29,7 +29,7 @@ Starting a container using docker usually involves a single command-line with mu
     docker run --runtime=nvidia --shm-size 16G -it --rm -e HOSTNAME='hostname' \
         -v /raid/public/my_datasets:/root/dataset:ro   -i  nvcr.io/nvidia/pytorch:19.12-py3
 
-The docker command ___docker run___ should be replaced with a Run:AI command ___runai submit___. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md). 
+The docker command ``docker run`` should be replaced with a Run:AI command ``runai submit``. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md). 
 
 There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_) and more. For a complete list see the Run:AI CLI [reference](../../Researcher/Command-Line-Interface-API-Reference/Introduction.md). 
 

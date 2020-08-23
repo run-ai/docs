@@ -10,13 +10,13 @@ The purpose of this document is to describe the Run:AI scheduler and explain how
 
 Run:AI differentiates between two types of deep learning workloads:
 
-*   ___Interactive___ build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
-*   ___Unattended___ (or "non-interactive") training workloads.Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
+*   __Interactive__ build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
+*   __Unattended__ (or "non-interactive") training workloads.Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
 It follows that a good practice for the researcher is to save checkpoints and allow the code to restore from the last checkpoint.
 
 ### Projects
 
-Projects are quota entities that associate a project name with a ___deserved___ GPU quota as well as other preferences.
+Projects are quota entities that associate a project name with a __deserved__ GPU quota as well as other preferences.
 
 A researcher submitting a workload must associate a project with any workload request. The Run:AI scheduler will then compare the request against the current allocations and the project's deserved quota and determine whether the workload can be allocated with resources or whether it should remain in a pending state.
 
