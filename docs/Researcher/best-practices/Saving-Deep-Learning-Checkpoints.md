@@ -27,13 +27,13 @@ If periodic checkpoints are not enough, you can use a_ signal-hook_ provided by 
     import time
 
     def graceful_exit_handler(signum, frame):
-    # save your checkpoints to shared storage
+        # save your checkpoints to shared storage
 
-    # exit with status "1" is important for the job to return later.  
-    exit(1)
+        # exit with status "1" is important for the job to return later.  
+        exit(1)
 
     if __name__ == "__main__":
-    signal.signal(signal.SIGTERM, graceful_exit_handler)
+        signal.signal(signal.SIGTERM, graceful_exit_handler)
 
     # rest of code 
 
@@ -41,7 +41,7 @@ By default, you will have 30 seconds to save your checkpoints.
 
 ## Resuming using Saved Checkpoints
 
-A Run:AI unattended workload that is resumed, will run the __same startup script __as on the first run. It is the responsibility of the script developer to add code that:
+A Run:AI unattended workload that is resumed, will run the __same startup script__ as on the first run. It is the responsibility of the script developer to add code that:
 
 *   Checks if saved checkpoints exist
 *   If saved checkpoints exist, load them and start the run using these checkpoints
