@@ -35,8 +35,8 @@ To complete this walk-through you must have:
 
 *   At the command-line run:
 
-    runai project set team-a
-    runai submit hyper1 -i gcr.io/run-ai-demo/quickstart -g 1
+        runai project set team-a
+        runai submit hyper1 -i gcr.io/run-ai-demo/quickstart -g 1
 
 This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``hyper1``
 
