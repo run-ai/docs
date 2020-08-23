@@ -36,9 +36,9 @@ To complete this walk-through you must have:
 *   At the command-line run:
 
         runai project set team-a
-        runai submit hyper1 -i gcr.io/run-ai-demo/quickstart -g 1
+        runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
-This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``hyper1``
+This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
 
 *   Follow up on the job's progress by running:
 
@@ -59,13 +59,13 @@ Typical statuses you may see:
 
 To get additional status on your job run:
 
-    runai get hyper1
+    runai get train1
 
 ### View Logs
 
 Run the following:
 
-    runai logs hyper1
+    runai logs train1
 
 You should see a log of a running deep learning session:
 
@@ -74,12 +74,7 @@ You should see a log of a running deep learning session:
 ### View status on the Run:AI User Interface
 
 *   Go to <https://app.run.ai>
-*   Under Dashboards | Overview you should see:
-
-![mceclip3.png](img/mceclip3.png)
-
-
-Under "Jobs" you can view the new Workload:
+* Under "Jobs" you can view the new Workload:
 
 ![mceclip2.png](img/mceclip2.png)
 
@@ -88,7 +83,6 @@ The image we used for training includes the Run:AI Training library. Among other
 *   Progress can be seen in the status column above. 
 *   To see other metrics, press the settings wheel on the top right ![mceclip4.png](img/mceclip4.png) and select additional deep learning metrics from the list
 
- 
 
 Under Nodes you can see node utilization:
 
@@ -98,7 +92,7 @@ Under Nodes you can see node utilization:
 
 Run the following:
 
-    runai delete hyper1
+    runai delete train1
 
 This would stop the training workload. You can verify this by running ``runai list`` again.
 
