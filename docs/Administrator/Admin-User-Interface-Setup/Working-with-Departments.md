@@ -24,7 +24,7 @@ __Departments__ are a second hierarchy of resource allocation:
 
 Consider an example from an academic use case: the Computer Science department and the GeoPhysics department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need it. As such, there could be many Projects in the GeoPhysics department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
-__Important__ __best__ __practice:__ As a rule, the sum of the department allocation should be equal to the number of GPUs in the cluster.
+__Important best practice:__ As a rule, the sum of the department allocation should be equal to the number of GPUs in the cluster.
 
 
 ## Creating and Managing Departments 

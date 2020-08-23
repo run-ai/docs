@@ -14,11 +14,11 @@ As an Admin, you need to determine how to model projects. You can:
 
 ## Project Quotas
 
-Each project is associated with a quota of GPUs that can be allocated for this project at the same time. This is __guaranteed__ __quota__ in the sense that researchers using this project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
+Each project is associated with a quota of GPUs that can be allocated for this project at the same time. This is __guaranteed quota__ in the sense that researchers using this project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
 
 Beyond that, a user of this project can receive an __over-quota__. As long as GPUs are unused, a researcher using this project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
-__Important__ __best__ __practice:__ As a rule, the sum of the project allocation should be equal to the number of GPUs in the cluster.
+__Important best practice:__ As a rule, the sum of the project allocation should be equal to the number of GPUs in the cluster.
 
 ## Working with Projects
 
@@ -56,7 +56,7 @@ While such 'affinities' are sometimes needed, its worth mentioning that at the e
 
 ### Grouping Nodes 
 
-To set node affinities, you must first annotate nodes with labels. These labels will later be associated with projects. Each node can only be annotated with a __single __name.
+To set node affinities, you must first annotate nodes with labels. These labels will later be associated with projects. Each node can only be annotated with a __single__ name.
 
 To get the list of nodes, run:
 
