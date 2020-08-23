@@ -60,7 +60,7 @@ For more information on best practices for saving checkpoints, see: [Saving Deep
 
 ## Running the Job
 
-Using _runai submit_, drop the flag _--interactive_. For submitting a job using the script created above, please use ___--command___, and pass arguments and/or environment variables using the runai submit flags ___--args ___and___ --environment___.
+Using ``runai submit``, drop the flag ``--interactive``. For submitting a job using the script created above, please use ``--command``, and pass arguments and/or environment variables using the runai submit flags ``--args``  and  ``--environment``.
 
 Example with Environment variables:
 
