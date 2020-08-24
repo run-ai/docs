@@ -98,5 +98,5 @@ This would stop the training workload. You can verify this by running ``runai li
 
 ## Next Steps
 
-*   Follow the Walk-through: [Launch Interactive Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md)
+*   Follow the Walk-through: [Launch Interactive Workloads](walkthrough-build.md)
 *   Use your own containers to run an unattended training workload

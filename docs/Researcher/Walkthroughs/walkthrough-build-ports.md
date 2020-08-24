@@ -2,7 +2,7 @@
 
 ## Introduction
 
- This walk-through is an extension of [Walk-through Start and Use Interactive Build Workloads](Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md) 
+ This walk-through is an extension of [Walk-through Start and Use Interactive Build Workloads](walkthrough-build.md) 
 
  When starting a container with the Run:AI Command-Line Interface (CLI), it is possible to expose internal ports to the container user.   
 

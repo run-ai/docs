@@ -59,6 +59,8 @@ Typical statuses you may see:
 *   Pending - the job is waiting to be scheduled
 *   Running - the job is running
 
+A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
+
 To get additional status on your job run:
 
     runai get build1
@@ -75,9 +77,6 @@ This should provide a direct shell into the computer
 ### View status on the Run:AI User Interface
 
 *   Go to <https://app.run.ai>
-*   Under Dashboards | Overview you should see:
-
-![mceclip23.png](img/mceclip23.png)
 
 *   Under "Jobs" you can view the new Workload:
 
@@ -95,5 +94,5 @@ This would stop the training workload. You can verify this by running ``runai li
 
 ## Next Steps
 
-*   Expose internal ports to your interactive build workload: [Walk-through Launch an Interactive Build Workload with Connected Ports](Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md).
+*   Expose internal ports to your interactive build workload: [Walk-through Launch an Interactive Build Workload with Connected Ports](walkthrough-build-ports.md).
 *   Follow the Walk-through: [Walk-through Launch Unattended Training Workloads](Walkthrough-Launch-Unattended-Training-Workloads-.md).

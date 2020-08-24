@@ -26,6 +26,7 @@ To complete this walk-through you must have:
 *   Go to "Projects"
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
+*   On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
 
 ### Pods
 
@@ -35,21 +36,23 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 * Pods are independent
 * All Pods execute with the same parameters as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
 
+### HPO Sample Code
 
 ### Run an HPO Workload
 
 *   At the command-line run:
 
         runai project set team-a 
-        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart -g 1 --parallelism 3 --completions 10
+        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart -g 1 --parallelism 3 --completions 10 -v /nfs/john/hpo:/hpo
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
 *   The job will be complete when 10 pods will run (--completions 10), each allocated with a single GPU (-g 1)
 *   At most, there will be 3 pods running concurrently (--parallelism 3)
 *   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-xxx``. The image contains a startup script that runs selects a set of hyper parameters and then uses them. 
+*   The ``/nfs/john/hpo`` directory on shared storage is mapped to ``/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
-Where ``RUNAI_MPI_NUM_WORKERS`` is a Run:AI environment variable containing the number of worker processes provided to the runai submit-mpi command (in this example it's 2).
+XXXX
 
 Follow up on the job's status by running:
 
