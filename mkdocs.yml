@@ -97,7 +97,8 @@ nav:
     - 'Presentations' :
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Miscellaneous' :
-      - 'Use Rancher to submit workloads' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
+      - 'Submit workloads via YAML' : 'Administrator/Miscellaneous/launch-job-via-yaml'
+      - 'Submit workloads via Rancher' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Walk-throughs' :

@@ -25,7 +25,7 @@ To complete this walk-through you must have:
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*   Allocate _2_ GPUs to the project
 *   On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
 
 ### Pods
@@ -43,16 +43,16 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 *   At the command-line run:
 
         runai project set team-a 
-        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart -g 1 --parallelism 3 --completions 10 -v /nfs/john/hpo:/hpo
+        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
+                --parallelism 3 --completions 12 -v /nfs:/nfs/hpo
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
-*   The job will be complete when 10 pods will run (--completions 10), each allocated with a single GPU (-g 1)
+*   The job will be complete when 12 pods will run (--completions 12), each allocated with a single GPU (-g 1)
 *   At most, there will be 3 pods running concurrently (--parallelism 3)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-xxx``. The image contains a startup script that runs selects a set of hyper parameters and then uses them. 
-*   The ``/nfs/john/hpo`` directory on shared storage is mapped to ``/hpo``. The running pods will use the directory to sync hyperparameters and save results.
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that runs selects a set of hyper parameters and then uses them. See [link to file](link-here.md)
+*   The command maps a shared volume ``/nfs`` shared volume to a directory in the container ``/nfs/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
-XXXX
 
 Follow up on the job's status by running:
 
@@ -60,41 +60,44 @@ Follow up on the job's status by running:
 
 The result:
 
-![mceclip11.png](img/mceclip11.png)
+![mceclip11.png](img/hpo1.png)
 
-The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
+Follow up on the job's pods by running:
 
-        runai get dist
+        runai get hpo1 
 
-You will see two worker processes (pods) their status and on which node they run:
+You will see 3 running pods currently executing:
 
-![mceclip12.png](img/mceclip12.png)
+![mceclip12.png](img/hpo2.png)
 
-To see the merged logs of all pods run:
+Once one of the 3 pods are done, it will be replaced by a new one from the 12 _completions_ until all have run.
 
-        runai logs dist
+You can also submit jobs on another project until only 2 GPUs remain. This will preempt 1 pod and will hencdforth limit the hpo job to run on 2 pods only.
 
-Finally, you can delete the distributed training workload by running:
 
-        runai delete dist
+You can see logs of specific pods by running :
 
-### Run an Interactive Distributed training Workload
+        runai logs hpo1 --pod <POD-NAME>
 
-It is also possible to run a distributed training job as "interactive". This is useful if you want to test your distributed training job before committing on a long, unattended training session. To run such a session use:
+where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai get hpo1`` output 
 
-        runai submit-mpi dist-int --processes=2 -g 1 \ 
-          -i gcr.io/run-ai-demo/quickstart-distributed  \
-          --command="sh" --args="-c" --args="sleep infinity"  --interactive
+The logs will contain a couple of lines worth noting:
 
-When the workers are running run:
+> Picked HPO experiment #4
 
-        runai bash dist-int
+> ...
 
-This will provide shell access to the launcher process. From there, you can run your distributed session. For examples, with Horovod:
+> Using HPO directory /nfs
 
-        horovodrun -np 2 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
-        --model=resnet20 --num_batches=1000000 --data_name cifar10 \
-        --data_dir /cifar10 --batch_size=64 --variable_update=horovod
+> Using configuration: {'batch_size': 32, 'lr': 0.001}
+
+
+XXX
+
+Finally, you can delete the hpo job by running:
+
+        runai delete hpo1
+
 
 ## Next Steps
 
