@@ -6,10 +6,10 @@ Deep learning workloads can be divided into two generic types:
 
 Follow a Walk-through for each using the links below
 
-*   [Unattended training sessions](Walkthrough-Launch-Unattended-Training-Workloads-.md)
+*   [Unattended training sessions](walkthrough-train.md)
 *   [Interactive build sessions](walkthrough-build.md)
 *   [Interactive build sessions with externalized services](walkthrough-build-ports.md)
-*   [Using GPU Fractions](Walkthrough-Using-GPU-Fractions.md)
+*   [Using GPU Fractions](walkthrough-fractions.md)
 *   [Distributed Training](walkthrough-distributed-training.md)
 *   [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
 *   [Fairness](walkthrough-queue-fairness.md)

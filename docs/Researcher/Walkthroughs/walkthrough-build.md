@@ -95,4 +95,4 @@ This would stop the training workload. You can verify this by running ``runai li
 ## Next Steps
 
 *   Expose internal ports to your interactive build workload: [Walk-through Launch an Interactive Build Workload with Connected Ports](walkthrough-build-ports.md).
-*   Follow the Walk-through: [Walk-through Launch Unattended Training Workloads](Walkthrough-Launch-Unattended-Training-Workloads-.md).
+*   Follow the Walk-through: [Walk-through Launch Unattended Training Workloads](walkthrough-train.md).

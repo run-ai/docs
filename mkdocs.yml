@@ -45,6 +45,8 @@ plugins:
         'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md'
         'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-build.md'
         'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
+        'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-train.md'
+        'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
 #            'some_file.md': 'http://external.url.com/foobar'
 markdown_extensions:
   - codehilite
@@ -102,8 +104,8 @@ nav:
       - 'Run:AI Walk-throughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
       - 'Build Workloads' : 'Researcher/Walkthroughs/walkthrough-build.md'
       - 'Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
-      - 'Training Workloads' : 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md'
-      - 'GPU Fractions' : 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md'
+      - 'Training Workloads' : 'Researcher/Walkthroughs/walkthrough-train.md'
+      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
       - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
