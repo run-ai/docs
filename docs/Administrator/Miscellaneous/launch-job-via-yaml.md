@@ -28,7 +28,7 @@ The Run:AI scheduler schedules computing resources by associating Workloads with
 
 ### Train jobs
 
-Train job is equivalent to __not__ using the ``--interactive`` flag when calling ``runai submit``. Assuming you have the following parameters:
+A Train job is equivalent to __not__ using the ``--interactive`` flag when calling ``runai submit``. Assuming you have the following parameters:
 
 * ``<JOB-NAME>``. The name of the Job. 
 
@@ -77,4 +77,30 @@ The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-s
 
 
 ### Build jobs
-...
+
+A Bulld job is equivalent to using the ``--interactive`` flag when calling ``runai submit``
+
+    yaml here...
+
+
+### Using Fractional GPUs
+
+Jobs with Fractions has a slightly different YAML. Specifically the limits section
+
+  limits:
+    nvidia.com/gpu: <REQUESTED-GPUs>
+
+should be omitted and replaced with:
+
+  spec:
+    serviceName: hyper2
+    replicas: 1
+    selector:
+      matchLabels:
+        release: hyper2
+    template:
+      metadata:
+        annotations:
+          gpu-fraction: "0.5"
+
+where "0.5" is the requested GPU fraction.
