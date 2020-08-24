@@ -1,3 +1,4 @@
+import os
 import sys
 
 import keras
@@ -26,7 +27,7 @@ else:
     strategy = runai.hpo.Strategy.GridSearch
 
 # initialize the Run:AI HPO assistance library
-runai.hpo.init(hpo_dir)
+runai.hpo.init(hpo_dir, subdir='%s_%s' % (os.environ['workloadName'], os.environ['workloadUUID']))
 
 # pick a configuration for this HPO experiment
 # we pass the options of all hyperparameters we want to test
@@ -73,7 +74,7 @@ model.fit(
     x=x_train,
     y=y_train,
     batch_size=config['batch_size'],
-    epochs=10,
+    epochs=5,
     verbose=1,
     validation_data=(x_test, y_test),
     callbacks=[ReportCallback()],
