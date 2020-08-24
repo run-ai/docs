@@ -23,7 +23,7 @@ The Run:AI scheduler schedules computing resources by associating Workloads with
 * Each project contains a GPU quota.
 * Each workload must be annotated with a project name and will receive resources according to the defined quota for the project and the currently running Workloads
 
-## Using YAML to Launch Workloads 
+## Submit Workloads 
 
 
 ### Train jobs
@@ -87,20 +87,19 @@ A Bulld job is equivalent to using the ``--interactive`` flag when calling ``run
 
 Jobs with Fractions has a slightly different YAML. Specifically the limits section
 
-  limits:
-    nvidia.com/gpu: <REQUESTED-GPUs>
+    limits:
+      nvidia.com/gpu: <REQUESTED-GPUs>
 
 should be omitted and replaced with:
 
-  spec:
-    serviceName: hyper2
-    replicas: 1
-    selector:
-      matchLabels:
-        release: hyper2
-    template:
-      metadata:
-        annotations:
-          gpu-fraction: "0.5"
+    spec:
+      template:
+        metadata:
+          annotations:
+            gpu-fraction: "0.5"
 
 where "0.5" is the requested GPU fraction.
+
+## Delete Workloads
+
+... need to delete the Jobs/Sts and also the PodGroup

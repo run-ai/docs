@@ -66,5 +66,5 @@ The command will show the logs of the first process in the container. For traini
 
 ## See Also
 
-*   Training Workloads: [Walk-through Start and Use Unattended Training Workloads](../Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md).
+*   Training Workloads: [Walk-through Start and Use Unattended Training Workloads](../Walkthroughs/walkthrough-train.md).
 
