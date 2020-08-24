@@ -1,6 +1,6 @@
 # Launch a Run:AI Job via YAML
 
-The easiest way to submit jobs to Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). However, the CLI is not a must. The Run:AI CLI is only a wrapper for a more detailed Kubernetes API syntax using _YAML_. There are cases were you want to forgo the CLI and use direct YAML. 
+The easiest way to submit jobs to the Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). Still, the CLI is not a must. It is only a wrapper for a more detailed Kubernetes API syntax using _YAML_. There are cases were you want to forgo the CLI and use direct YAML. 
 
 A frequent scenario for using the Kubernetes YAML syntax to submit jobs is __integrations__. Researchers may already be working with an existing system which submits jobs and want to continue working with the same system. Though it is possible to call the Run:AI CLI from a customer integration, it is sometimes not enough.
 
@@ -49,28 +49,25 @@ Copy the following into a file and change the parameters:
     spec:
       template:
         metadata:
-          annotations:
-            scheduling.k8s.io/group-name: group-<JOB-NAME>
+          labels:
+            user: <USER-NAME>
         spec:
           containers:
-          - name: gpu-test
+          - name: <JOB-NAME>
             image: <IMAGE-NAME>
             resources:
               limits:
                 nvidia.com/gpu: <REQUESTED-GPUs>
           restartPolicy: Never
           schedulerName: runai-scheduler
-    ---
-    apiVersion: scheduling.incubator.k8s.io/v1alpha1
-    kind: PodGroup
-    metadata:
-      name: group-<JOB-NAME>
-    labels: 
-      user: <USER-NAME>
-    spec:
-      queue: <PROJECT-NAME>
 
-Run: ``kubectl apply -f <FILE-NAME>`` to submit the job.
+
+
+Run:
+
+    kubectl apply -f <FILE-NAME>
+
+to submit the job.
 
 !!! Note
 The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
@@ -78,14 +75,50 @@ The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-s
 
 ### Build jobs
 
-A Bulld job is equivalent to using the ``--interactive`` flag when calling ``runai submit``
+A Build job is equivalent to using the ``--interactive`` flag when calling ``runai submit``. Copy the following into a file and change the parameters:
 
-    yaml here...
+
+    apiVersion: apps/v1
+    kind: "StatefulSet"
+    metadata:
+      name:  <JOB-NAME>
+    spec:
+      serviceName:  <JOB-NAME>
+      replicas: 1
+      selector:
+        matchLabels:
+          release:  <JOB-NAME>
+      template:
+        metadata:
+          labels:
+            user:  <USER-NAME>
+            release:  <JOB-NAME>
+        spec:
+          schedulerName: runai-scheduler
+          containers:
+            - name:  <JOB-NAME>
+              command:
+              - "sleep"
+              args:
+              - "infinity"
+              image: <IMAGE-NAME>
+              resources:
+                limits:
+                  nvidia.com/gpu: <REQUESTED-GPUs>
+
+
+The YAML above contains a default command and arguments (``sleep --inifinty``) which you can replace.
+
+Run:
+
+    kubectl apply -f <FILE-NAME>
+
+to submit the job.
 
 
 ### Using Fractional GPUs
 
-Jobs with Fractions has a slightly different YAML. Specifically the limits section
+Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
 
     limits:
       nvidia.com/gpu: <REQUESTED-GPUs>
@@ -102,4 +135,10 @@ where "0.5" is the requested GPU fraction.
 
 ## Delete Workloads
 
-... need to delete the Jobs/Sts and also the PodGroup
+To delete a Run:AI workload you need to delete the Job or StatefulSet according to the workload type
+
+    kubectl delete job <JOB-NAME>
+
+or: 
+
+    kubectl delete sts <STS-NAME>
