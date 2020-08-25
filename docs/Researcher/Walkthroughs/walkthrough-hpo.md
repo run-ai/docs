@@ -4,7 +4,7 @@
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine the results of the runs to decide what works best.
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
 
 There are a number of strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the later does an exhaustive search from a list of pre-selected values.
 
@@ -38,7 +38,7 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Walk-through code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/XXXXX). The code uses the [Run:AI Researcher python library](../Run-AI-Researcher-Library/The-Run-AI-Researcher-Library.md). Here are highlights of the code: 
+The Walk-through code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/XXXXX). The code uses the [Run:AI Researcher python library](../Run-AI-Researcher-Library/researcher-library-overview.md). Below are some highlights of the code: 
 
 
         # import Run:AI HPO library
@@ -126,6 +126,6 @@ Finally, you can delete the HPO job by running:
 
 
 
-## Next Steps
+## See Also
 
 XXXX
