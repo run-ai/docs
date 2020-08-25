@@ -1,3 +1,4 @@
+import datetime
 import os
 import sys
 
@@ -27,7 +28,8 @@ else:
     strategy = runai.hpo.Strategy.GridSearch
 
 # initialize the Run:AI HPO assistance library
-runai.hpo.init(hpo_dir, subdir='%s_%s' % (os.environ['workloadName'], os.environ['workloadUUID']))
+subdir = '%s_%s' % (os.getenv('workloadName', 'hpo'), os.getenv('workloadUUID', datetime.datetime.now().strftime('%d_%m_%Y__%H_%M_%S')))
+runai.hpo.init(hpo_dir, subdir=subdir)
 
 # pick a configuration for this HPO experiment
 # we pass the options of all hyperparameters we want to test
