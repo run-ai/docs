@@ -32,6 +32,7 @@ theme:
     - tabs
 extra_css:
   - stylesheets/extra.css
+strict: true
 plugins:
   - search
   - git-revision-date-localized
