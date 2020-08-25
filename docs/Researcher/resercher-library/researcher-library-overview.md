@@ -19,6 +19,6 @@ In your command-line run:
 
 To review details on the specific Run:AI Researcher Library modules see:
 
-*   [Reporting via the Run:AI Researcher Library](../Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md)
-*   [Elasticity, Dynamically Stretch/Compress Jobs According to GPU Availability](../Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md)
+*   [Reporting via the Run:AI Researcher Library](Reporting-via-the-Run-AI-Researcher-Library-.md)
+*   [Elasticity, Dynamically Stretch/Compress Jobs According to GPU Availability](Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md)
 *   [Hyperparameter optimization support](rl-hpo-support.md) 
