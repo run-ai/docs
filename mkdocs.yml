@@ -136,8 +136,8 @@ nav:
       - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
-      - 'Elasticity' : 'Researcher/researcher-library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md'
-      - 'Reporting' : 'Researcher/researcher-library/Reporting-via-the-Run-AI-Researcher-Library-.md'
+      - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'
+      - 'Reporting' : 'Researcher/researcher-library/ rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
