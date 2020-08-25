@@ -72,7 +72,7 @@ Submit a Run:AI job for execution
 
 --elastic
 
-> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md)
+> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md)
 > 
 
 -e stringArray | --environment stringArray
