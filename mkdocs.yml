@@ -39,7 +39,6 @@ plugins:
       minify_html: true
   - redirects:
       redirect_maps:
-#            'old.md': 'new.md'
         'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
         'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
         'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md'
@@ -47,7 +46,6 @@ plugins:
         'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
         'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-train.md'
         'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
-#            'some_file.md': 'http://external.url.com/foobar'
 markdown_extensions:
   - codehilite
   - admonition

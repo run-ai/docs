@@ -48,7 +48,7 @@ The Walk-through code can be found in [github.com/run-ai/docs](https://github.co
         strategy = runai.hpo.Strategy.GridSearch
 
         # initialize the Run:AI HPO library. Send the NFS directory used for sync
-        runai.hpo.init(hpo_dir)
+        runai.hpo.init("/hpo")
 
         # pick a configuration for this HPO experiment
         # we pass the options of all hyperparameters we want to test
@@ -71,14 +71,14 @@ The Walk-through code can be found in [github.com/run-ai/docs](https://github.co
 
         runai project set team-a 
         runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
-                --parallelism 3 --completions 12 -v /nfs:/nfs/hpo
+                --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
 *   The job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
 *   At most, there will be 3 pods running concurrently (_--parallelism 3_)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them. See [XXXX link to file](link-here.md)
-*   The command maps a shared volume ``/nfs`` to a directory in the container ``/nfs/hpo``. The running pods will use the directory to sync hyperparameters and save results.
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
+*   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
 
 Follow up on the job's status by running:
@@ -114,11 +114,13 @@ The logs will contain a couple of lines worth noting:
 
 > ...
 
-> Using HPO directory /nfs
+> Using HPO directory /hpo
 
 > Using configuration: {'batch_size': 32, 'lr': 0.001}
 
-The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file exists within the shared NFS folder. Here is an example of two experiments with two epochs each:
+### Examine the Results
+
+The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is an snapshot of the file for two experiments with two epochs each:
 
 ```
 creationTime: 24/08/2020 08:50:06
@@ -176,7 +178,7 @@ Finally, you can delete the HPO job by running:
 For further information on the Run:AI HPO support library see:
 
 * [The Run:AI HPO Support Library](../researcher-library/rl-hpo-support.md)
-*  github XXXX
+* Sample code in [github](https://xxxx)
 
 
 
