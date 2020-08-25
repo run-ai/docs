@@ -7,6 +7,7 @@ When installed, the library provides:
 
 *   Additional progress reporting and metrics
 *   Ability to dynamically stretch and compress jobs according to GPU availability.
+*   Support for experiment management when performing hyperparameter optimization
 
 ## Installing the Run:AI Researcher Library
 
@@ -20,3 +21,4 @@ To review details on the specific Run:AI Researcher Library modules see:
 
 *   [Reporting via the Run:AI Researcher Library](../Run-AI-Researcher-Library/Reporting-via-the-Run-AI-Researcher-Library-.md)
 *   [Elasticity, Dynamically Stretch/Compress Jobs According to GPU Availability](../Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md)
+*   [Hyperparameter optimization support](rl-hpo-support.md) 
