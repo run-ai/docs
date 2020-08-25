@@ -4,7 +4,7 @@
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter can be a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine results to decide what works best.
 
 There are a number of strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the later does an exhaustive search from a list of pre-selected values.
 
@@ -75,9 +75,9 @@ The Walk-through code can be found in [github.com/run-ai/docs](https://github.co
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
-*   The job will be complete when 12 pods will run (--completions 12), each allocated with a single GPU (-g 1)
-*   At most, there will be 3 pods running concurrently (--parallelism 3)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyper parameters and then uses them. See [XXXX link to file](link-here.md)
+*   The job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
+*   At most, there will be 3 pods running concurrently (_--parallelism 3_)
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them. See [XXXX link to file](link-here.md)
 *   The command maps a shared volume ``/nfs`` to a directory in the container ``/nfs/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
 
@@ -118,7 +118,52 @@ The logs will contain a couple of lines worth noting:
 
 > Using configuration: {'batch_size': 32, 'lr': 0.001}
 
-The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file exists within the shared NFS folder. 
+The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file exists within the shared NFS folder. Here is an example of two experiments with two epochs each:
+
+```
+creationTime: 24/08/2020 08:50:06
+experiments:
+- config:
+    batch_size: 32
+    lr: 1
+  id: 1
+  modificationTime: 24/08/2020 08:50:06
+  reports:
+  - epoch: 0
+    metrics:
+      acc: 0.09814
+      loss: 2.310984723968506
+      val_acc: 0.1
+      val_loss: 2.3098626373291014
+    reportTime: 24/08/2020 08:52:11
+  - epoch: 1
+    metrics:
+      acc: 0.09914
+      loss: 2.30994320602417
+      val_acc: 0.1
+      val_loss: 2.3110838134765626
+    reportTime: 24/08/2020 08:54:10
+- config:
+    batch_size: 32
+    lr: 0.1
+  id: 2
+  modificationTime: 24/08/2020 08:50:36
+  reports:
+  - epoch: 0
+    metrics:
+      acc: 0.11012
+      loss: 2.2979678358459474
+      val_acc: 0.1667
+      val_loss: 2.268467852783203
+    reportTime: 24/08/2020 08:52:44
+  - epoch: 1
+    metrics:
+      acc: 0.2047
+      loss: 2.0894255745697023
+      val_acc: 0.2833
+      val_loss: 1.8615504817962647
+    reportTime: 24/08/2020 08:54:45
+```
 
 Finally, you can delete the HPO job by running:
 
@@ -129,6 +174,9 @@ Finally, you can delete the HPO job by running:
 ## See Also
 
 For further information on the Run:AI HPO support library see:
+
 * [The Run:AI HPO Support Library](../researcher-library/rl-hpo-support.md)
 *  github XXXX
+
+
 

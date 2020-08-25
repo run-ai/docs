@@ -137,7 +137,7 @@ nav:
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
       - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'
-      - 'Reporting' : 'Researcher/researcher-library/ rl-reporting.md'
+      - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
