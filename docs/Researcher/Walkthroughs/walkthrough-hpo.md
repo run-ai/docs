@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
+Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter can be a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
 
 To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
 
@@ -77,7 +77,7 @@ The Walk-through code can be found in [github.com/run-ai/docs](https://github.co
 *   The job is assigned to _team-a_
 *   The job will be complete when 12 pods will run (--completions 12), each allocated with a single GPU (-g 1)
 *   At most, there will be 3 pods running concurrently (--parallelism 3)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that runs selects a set of hyper parameters and then uses them. See [XXXX link to file](link-here.md)
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyper parameters and then uses them. See [XXXX link to file](link-here.md)
 *   The command maps a shared volume ``/nfs`` to a directory in the container ``/nfs/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
 
