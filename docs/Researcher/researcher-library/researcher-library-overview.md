@@ -9,6 +9,8 @@ When installed, the library provides:
 *   Ability to dynamically stretch and compress jobs according to GPU availability.
 *   Support for experiment management when performing hyperparameter optimization
 
+The library is open-source and can be reviewed [here](https://github.com/run-ai/runai).
+
 ## Installing the Run:AI Researcher Library
 
 In your command-line run:

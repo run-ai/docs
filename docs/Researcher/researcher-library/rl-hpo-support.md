@@ -47,7 +47,7 @@ runai.hpo.init('/path/to/nfs', 'model-abcd-hpo')
 ```
 
 * Decide on an HPO strategy:
-    *  Random search - randomlly pick a set of hyperparameter values
+    *  Random search - randomly pick a set of hyperparameter values
     *  Grid search - pick the next set of hyperparameter values, iterating through all sets across multiple experiments
 
 ```
@@ -76,3 +76,7 @@ You should pass the epoch number and a dictionary with metrics to be reported. F
 ```
 runai.hpo.report(epoch=5, metrics={ 'accuracy': 0.87 })
 ```
+
+## See Also
+
+See hyperparameter Optimization [Walk-through](../Walkthroughs/walkthrough-hpo.md)
