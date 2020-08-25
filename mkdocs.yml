@@ -107,6 +107,7 @@ nav:
       - 'Training Workloads' : 'Researcher/Walkthroughs/walkthrough-train.md'
       - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
       - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
+      - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'CLI Reference' :

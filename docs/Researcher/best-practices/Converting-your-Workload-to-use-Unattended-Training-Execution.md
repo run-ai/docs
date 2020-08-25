@@ -78,7 +78,7 @@ Different run configurations may vary significantly and can be tedious to be wri
 
 ## Attached Files
 
-The 3 relevant files mentioned in this document can be downloaded [here](files/ConvertingToUnattendedFiles.zip)
+The 3 relevant files mentioned in this document can be downloaded from [Github](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution)
 
 ## See Also
 
