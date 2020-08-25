@@ -84,7 +84,7 @@ Part of an efficient scheduler is the ability to eliminate defragmentation:
 
 ### Elasticity
 
-Run:AI Elasticity is explained [here](../Run-AI-Researcher-Library/Elasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md). In essence, it allows unattended workloads to shrink or expand based on the cluster's availability.
+Run:AI Elasticity is explained [here](../researcher-libraryElasticity-Dynamically-Stretch-Compress-Jobs-According-to-GPU-Availability.md). In essence, it allows unattended workloads to shrink or expand based on the cluster's availability.
 
 *   Shrinking happens when the scheduler is unable to schedule an elastic unattended workload and no amount of _consolidation_ helps. The scheduler then divides the requested GPUs by half again and again and tries to reschedule.
 *   Shrink jobs will expand when enough GPUs will be available.

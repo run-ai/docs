@@ -38,7 +38,7 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Walk-through code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/XXXXX). The code uses the [Run:AI Researcher python library](../Run-AI-Researcher-Library/researcher-library-overview.md). Below are some highlights of the code: 
+The Walk-through code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/XXXXX). The code uses the [Run:AI Researcher python library](../researcher-libraryresearcher-library-overview.md). Below are some highlights of the code: 
 
 
         # import Run:AI HPO library
@@ -128,4 +128,7 @@ Finally, you can delete the HPO job by running:
 
 ## See Also
 
-XXXX
+For further information on the Run:AI HPO support library see:
+* [The Run:AI HPO Support Library](../researcher-libraryrl-hpo-support.md)
+*  github XXXX
+
