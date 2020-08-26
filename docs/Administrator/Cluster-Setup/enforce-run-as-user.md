@@ -14,13 +14,13 @@ Save the following in a file (cluster-config.yaml)
 
     apiVersion: v1
     data:
-    config: |
+      config: |
         enforceRunAsUser: true
     kind: ConfigMap
     metadata:
-    name: cluster-config
-    namespace: runai
-    labels:
+      name: cluster-config
+      namespace: runai
+      labels:
         runai/cluster-config: "true"
 
 Run:

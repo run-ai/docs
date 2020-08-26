@@ -1,3 +1,7 @@
+## August 10th
+
+Run:AI Now supports Distributed Training and Gang Scheduling. For further information , see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) Walkthrough.
+
 ## August 4th
 
 There is now an optional second level of Project hierarchy called _Departments_. For further information on how to configure and use Departments, see [Working with Departments](../Administrator/Admin-User-Interface-Setup/Working-with-Departments.md) 

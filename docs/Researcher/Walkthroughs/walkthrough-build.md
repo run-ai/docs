@@ -9,9 +9,9 @@ Deep learning workloads can be divided into two generic types:
 
 With this Walk-through you will learn how to:
 
-*   Use the Run:AI command-line interface (CLI) to start a deep learning __build__ workload
-*   Open an ssh session to the build workload
-*   Stop the build workload
+*   Use the Run:AI command-line interface (CLI) to start a deep learning __Build__ workload
+*   Open an ssh session to the Build workload
+*   Stop the Build workload
 
 It is also possible to open ports to specific services within the container. See "Next Steps" at the end of this article.
 
