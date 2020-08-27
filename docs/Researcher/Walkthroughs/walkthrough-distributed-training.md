@@ -85,7 +85,7 @@ This will provide shell access to the launcher process. From there, you can run 
         --model=resnet20 --num_batches=1000000 --data_name cifar10 \
         --data_dir /cifar10 --batch_size=64 --variable_update=horovod
 
-## Next Steps
+## See Also
 
-*   For more information on how to convert an interactive session into a training job, see: [Converting your Workload to use Unattended Training Execution](../best-practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md)
+*   The source code of the image used in the walk-through in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed)
 *   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md)
