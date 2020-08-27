@@ -53,9 +53,9 @@ Run the training workload by using the "elastic" flag:
 
 ## Limitations
 
-*   Elasticity currently works with Keras-based deep learning code only
+*   Elasticity currently works with Keras-based or PyTorch-based deep learning code only
 *   Any training job with Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Save checkpoints in your code and allow it to resume from the latest checkpoint rather than start from the beginning
 
 ## See Also
 
-For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/blob/master/runai/elastic/README.md#examples)
+For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/tree/master/runai/elastic)

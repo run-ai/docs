@@ -59,3 +59,26 @@ The system comes with a cluster-wide default of 1:1. To change this default plea
 If your job has not specified --memory, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
 
 The system comes with a cluster-wide default of 100MiB per GPU. To change this default please contact Run:AI customer support.
+
+## Validating CPU & Memory Allocations
+
+To review a CPU & Memory allocations you need to look into Kubernetes. A Run:AI job creates a Kubernetes _pod_. The pod declares its resource requests and limits. To see the memory and CPU consumption in Kubernetes:
+
+*  Get the pod name for the job by running: 
+
+        runai get <JOB_NAME>
+
+ the pod will appear under ``PODS``. 
+
+*  Run:
+
+        kubectl describe pod <POD_NAME>
+        
+The information will appear under ``Requests`` and ``Limits``. For example:
+
+    Limits:
+        nvidia.com/gpu:  2
+    Requests:
+      cpu:             1
+      memory:          104857600
+      nvidia.com/gpu:  2
