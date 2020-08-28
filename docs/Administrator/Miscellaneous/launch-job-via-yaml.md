@@ -72,7 +72,7 @@ Run:
 to submit the job.
 
 !!! Note
-The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
+    The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
 
 
 ### Build jobs
