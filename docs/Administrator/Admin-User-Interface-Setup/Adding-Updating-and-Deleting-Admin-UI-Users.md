@@ -1,10 +1,12 @@
+# Adding, Updatingand Deleting Users
+
 ## Introduction
 
 The Admin User Interface allows:
 
 *   The setup of Kubernetes GPU Clusters.
 *   Create, Update and Delete of users
-*   Create, Update and Delete Projects.
+*   Create, Update and Delete Projects & Departments.
 *   Review short term and long term dashboards
 *   Review Node and Job-status
 
@@ -28,8 +30,13 @@ Note: to be able to manipulate users, you must have _Administrator_ access. if y
 ![mceclip2.png](img/mceclip2.png)
 
 *   Choose a user name and email. Leave password as blank, it will be set by the user
-*   Select Roles. Note -- more than one role can be selected
-*   Select a Cluster. This determines the Clusters accessible to this user
+*   Select Roles. Note -- more than one role can be selected. The available roles are:
+    *  __Administrator__: Can manage users and install clusters. 
+    *  __Editor__: Can manage projects and departments.
+    * __Viewer__: View-only access to Admin UI.
+    * __Researcher__: Can run ML workloads (subject to [adding](../Working-with-Projects/#create-a-new-project.md) the user in the specific project and an authentication integration)
+
+*   Select a Cluster. This determines what Clusters are accessible to this user
 *   Press "Save"
 
 The user will receive a join mail and will be able to set a password. 

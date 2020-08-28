@@ -24,7 +24,7 @@ Run the following:
 
 ### Step 1.3: Make NVIDIA Docker the default docker runtime
 
-You will need to enable the Nvidia runtime as your default docker runtime on your node. We will be editing the docker daemon config file which is usually present at ``/etc/docker/daemon.json ``:
+You will need to enable the Nvidia runtime as your default docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
 
     {
         "default-runtime": "nvidia",
@@ -78,7 +78,7 @@ Where ``<node-name>`` is the name of the node. Node names can be obtained by run
 
 *   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system.
 *   If this is the first time anyone from your company has logged in, you will receive a dialog with instructions on how to install Run:AI on your Kubernetes Cluster.
-*   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster.
+*   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster. Take care to read the next section (Customize Installation) before proceeding to apply the file you download during the process.
 
 ### Step 3.2: Customize Installation
 
