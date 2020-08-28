@@ -41,7 +41,9 @@ Then run the following again:
     sudo pkill -SIGHUP dockerd
 
 
-## Step 2: Install Kubernetes
+## Step 2: Install & Configure Kubernetes
+
+### Step 2.1 Install Kubernetes
 
 Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend Kubespray [https://kubespray.io/](https://kubespray.io/#/) . Download the latest __stable__ version from  : [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
 
@@ -51,15 +53,15 @@ Some best practices on Kubernetes Configuration can be found here: [Kubernetes C
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
 
-#### Step 2.1 Default Storage Class
+### Step 2.2 Default Storage Class
 
 Find out if you have a _default_ storage class by running
 
     kubectl get storageclass
 
-If the output list contains a __default__ storage class you must, in step 3.1 below, remove the Run:AI default storage class.
+If the output list contains a __default__ storage class you must, in step 3.2 below, remove the Run:AI default storage class.
 
-#### Step 2.2 Label CPU-Only Worker Nodes
+### Step 2.3 Label CPU-Only Worker Nodes
 
 If you have CPU-only worker nodes (non master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
 
@@ -68,15 +70,17 @@ If you have CPU-only worker nodes (non master) in your cluster (see [Hardware Re
 Where ``<node-name>`` is the name of the node. Node names can be obtained by running ``kubectl get nodes``
 
 !!! Note
-Typically Kubernetes master node(s) have a ["NoSchedule" taint](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to avoid non-system pods running on a master node. Pressuring master nodes may lead to the Kubernetes system not functioning properly. If your master node is not a GPU node, make sure that this taint exists so that Run:AI too, does not run on a master node.
+    Kubernetes master node(s) typically have a ["NoSchedule" taint](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) so as to avoid non-system pods running on a master node. Pressuring master nodes may lead to the Kubernetes system not functioning properly. If your master node is not a GPU node, make sure that this taint exists so that Run:AI too, does not run on a master node.
 
 ## Step 3: Install Run:AI
+
+### Step 3.1: Install Run:AI
 
 *   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system.
 *   If this is the first time anyone from your company has logged in, you will receive a dialog with instructions on how to install Run:AI on your Kubernetes Cluster.
 *   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster.
 
-### Step 3.1: Customized Installation
+### Step 3.2: Customize Installation
 
 The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
 
@@ -94,5 +98,6 @@ For a more extensive verification of cluster health, see [Determining the health
 
 ## Next Steps
 
-*   Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/cli-install.md) on how to install the CLI for users
-*   Set up Admin UI Users [Working with Admin UI Users](../Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md)
+* Set up Admin UI Users [Working with Admin UI Users](../Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md).
+* Set up Projects [Working with Projects](../Admin-User-Interface-Setup/Working-with-Projects.md).
+* Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/cli-install.md) on how to install the CLI for users.

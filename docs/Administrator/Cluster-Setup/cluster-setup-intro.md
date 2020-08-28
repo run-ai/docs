@@ -16,7 +16,7 @@ For additional details see the [Run:AI system components](../../home/components.
 
 ## Customization
 
-As part of the installation process, you will download a __Run:AI Operator YAML file__ and apply it to the cluster. Before applying the file, you will often need to customize the file. For a list of customization see [Cluster Install, section 3.1](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-31-customized-installation)
+As part of the installation process, you will download a __Run:AI Operator YAML file__ and apply it to the cluster. Before applying the file, you will often need to customize the file. For a list of customization see [Cluster Install, section 3.2](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-32-customized-installation)
 
 ## Advanced Setup
 

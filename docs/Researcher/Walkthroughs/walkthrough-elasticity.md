@@ -54,8 +54,8 @@ elastic1  Running  36s  worker-1  gcr.io/run-ai-demo/quickstart  Train  team-a  
 ```
 
 !!! Discussion
-* The Job has requested 2 GPUs, but has been allocated with 2. As 2 are available right now.
-* The Job needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the job effectively.
+    * The Job has requested 2 GPUs, but has been allocated with 2. As 2 are available right now.
+    * The Job needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the job effectively.
 
 Finally, delete the job:
 
