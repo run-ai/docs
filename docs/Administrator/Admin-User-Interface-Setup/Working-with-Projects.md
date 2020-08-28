@@ -71,7 +71,7 @@ To annotate a specific node with the label "dgx-2", run:
 To mandate __training__ jobs to run on specific node groups:
 
 *   Create a Project or edit an existing Project.
-*   Select "Limit to specific node groups.
+*   Go to the _Node Affinity_ tab and set a limit to specific node groups.
 *   If the label does not yet exist, press the + sign and add the label.
 *   Press Enter to save the label.
 *   Select the label.
@@ -93,6 +93,6 @@ __Warning__: This feature will cause containers to automatically stop. Any work 
 To set a duration limit for interactive jobs:
 
 *   Create a Project or edit an existing Project.
-*   At the bottom, set a limit (day, hour, minute).
+*   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
 
 ![mceclip1.png](img/mceclip1.png) The setting only takes effect for jobs that have started after the duration has been changed. 
