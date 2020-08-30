@@ -8,7 +8,7 @@ On __each machine__ with GPUs run the following steps 1.1 - 1.3:
 ### Step 1.1 Install NVIDIA Drivers
 
 If NVIDIA drivers are not already installed on your GPU machines, please install them now. Note that on original NVIDIA hardware, these drivers are already installed by default. 
-After installing NVIDIA drivers reoobt the machine. Then verify that the installation succeeded by running:
+After installing NVIDIA drivers, reboot the machine. Then verify that the installation succeeded by running:
 
     nvidia-smi
 
@@ -63,7 +63,7 @@ If the output list contains a __default__ storage class you must, in step 3.2 be
 
 ### Step 2.3 Label CPU-Only Worker Nodes
 
-If you have CPU-only worker nodes (non master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
+If you have CPU-only worker nodes (non-master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
 
     kubectl label node <node-name> run.ai/cpu-node=true
 

@@ -58,7 +58,7 @@ A template looks as follows:
 
 Notes:
 
-*   The template above set 3 defaults: a specific image, a default of 1 gpu and sets the "elastic" flag to true
+*   The template above set 3 defaults: a specific image, a default of 1 GPU and sets the "elastic" flag to true
 *   The label runai/template marks the ConfigMap as a Run:AI template.
 *   The name and description will show when using the _runai template list_ command
 
