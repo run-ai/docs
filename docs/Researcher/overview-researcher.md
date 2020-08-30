@@ -4,7 +4,7 @@ Researchers use Run:AI to submit jobs.
 
 As part of the Researcher documentation you will find:
 
-* __Walk-throughs__ which provide step-by-step guides to Run:AI technology.
+* __Walkthroughs__ which provide step-by-step guides to Run:AI technology.
 * __Command line interface__ reference documentation.
 * __Best Practices__ for Deep Learning with Run:AI.
 * Information about the Run:AI __Scheduler__.

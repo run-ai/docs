@@ -100,8 +100,8 @@ nav:
       - 'Submit workloads via Rancher' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
-    - 'Walk-throughs' :
-      - 'Run:AI Walk-throughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
+    - 'Walkthroughs' :
+      - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
       - 'Build Workloads' : 'Researcher/Walkthroughs/walkthrough-build.md'
       - 'Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'Training Workloads' : 'Researcher/Walkthroughs/walkthrough-train.md'
