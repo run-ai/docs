@@ -90,7 +90,7 @@ nav:
 #      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/limit-to-gpus-in-nodes.md'
 #      - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md'
     - 'Admin UI Setup' :
-      - 'Manage Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
+      - 'Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
       - 'Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
       - 'Departments' : 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md'
     - 'Presentations' :
