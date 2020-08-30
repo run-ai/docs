@@ -111,6 +111,7 @@ nav:
       - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
+      - 'Elasticity' : 'Researcher/Walkthroughs/walkthrough-elasticity.md
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'

@@ -16,35 +16,54 @@ Expanding a training job allows your GPUs to runs on more GPUs than the research
 
 ## Installation
 
-### Python Deep-Learning Code
-
-In your command-line run:
+Install the Run:AI Python library using the following command:
 
     pip install runai
 
-In your python code add:
+## Code
 
-    import runai.elastic
+In your python code add, if using Keras, add:
 
-Initialize Elasticity by calling:
+    import runai.elastic.keras
 
-    runai.elastic.init(global_batch_size, max_gpu_batch_size)
+If using PyTorch, add:
+
+    import runai.elastic.torch
+
+
+## Initizalization
+ 
+To initialize the module, you need two parameters:
+
+* __Maximum GPU batch size__ - The maximum batch size that your could can use on a single GPU in terms of memory. Running with batch sizes larger than this number (without Elasticity) will cause a memory overflow. This number will be used by the Run:AI elasticity module for determining whether to use _Gradient Accumulation_ or not, and how many steps to use.
+
+* __Global batch size__ - The desired batch size. Of course, if this number is larger than the _Maximum GPU batch size_ defined above, the model will not fit into a single GPU. The elasticity module will then use _Gradient Accumulation_ and _multiple GPUs_ to run your code.
+
+Call the init() method from the imported module and pass these two arguments. For example, if you are using PyTorch, use the following line:
+
+    runai.elastic.torch.init(256, 64)
+
+Where 256 is the _global batch size_ and 64 is the _maximum GPU batch size_.
+
+# Usage
+
+### Keras
 
 Create a Keras model:
 
     model = runai.elastic.keras.models.Model(model)
 
-Model Fitting:
+### PyTorch
 
-    model.fit(x_train, y_train, 
-      batch_size=runai.elastic.batch_size, 
-      epochs=100, 
-      validation_data=(x_test, y_test), 
-      shuffle=False, 
-      verbose=runai.elastic.master, 
-      callbacks=[StepTimeReporter()] if runai.elastic.master else [])
+For PyTorch models, you'll need to wrap your `Optimizer` with GA.
+Refer to the [documentation](../ga/README.md) for more information.
+Use `runai.elastic.steps` for the number of steps to be accumulated - the value for the `steps` argument of Run:AI GA optimizer. For example:
 
-### Running a Training Workload
+    optimizer = runai.ga.torch.optim.Optimizer(optimizer, runai.elastic.steps)
+
+
+
+## Running a Training Workload
 
 Run the training workload by using the "elastic" flag:
 
@@ -53,8 +72,8 @@ Run the training workload by using the "elastic" flag:
 
 ## Limitations
 
-*   Elasticity currently works with Keras-based or PyTorch-based deep learning code only
-*   Any training job with Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Save checkpoints in your code and allow it to resume from the latest checkpoint rather than start from the beginning
+*   Elasticity currently works with Keras-based or PyTorch-based deep learning code only.
+*   Any training job using Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
 
 ## See Also
 

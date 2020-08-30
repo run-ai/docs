@@ -92,9 +92,6 @@ Finally, delete the jobs:
     runai delete elastic2, filler1
 
 
-## Elasticity Sample Code
-
->>XXXX
 
 ## See Also
 
