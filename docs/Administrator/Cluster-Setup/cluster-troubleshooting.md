@@ -105,7 +105,7 @@ Select the agent's full name and run:
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](Installing-Run-AI-with-an-Internet-Proxy-Server-.md)
+* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
 * Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](../Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started)
 
 

@@ -74,8 +74,8 @@ nav:
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/Deleting-Cluster-Install.md'
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
       - 'Advanced' :
-        - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md'
-        - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/Installing-Run-AI-with-an-Internet-Proxy-Server-.md'
+        - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/ allow-external-access-to-containers.md'
+        - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
