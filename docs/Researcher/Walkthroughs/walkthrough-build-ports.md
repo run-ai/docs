@@ -52,7 +52,7 @@ You should see a Jupyter notebook.
 
 ## Ingress, Step by Step Walk-through
 
-__Note:__ Ingress must be set up by your administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md)
+__Note:__ Ingress must be set up by your administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../Administrator/Cluster-Setup/ allow-external-access-to-containers.md)
 
 ### Setup
 
