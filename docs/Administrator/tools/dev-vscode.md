@@ -7,7 +7,7 @@ This document is about accessing the remote container created by Run:AI, from [V
 
 ## Submit a Workload
 
-You will need your image to run an ssh server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/)). For the purposes of this document, we used a __Docker Hub__ repository which runs sshd:
+You will need your image to run an ssh server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/)). For the purposes of this document, we used a sample __Docker Hub__ repository which runs sshd with ``root`` user and password:
 
     runai submit build-remote -i rastasheep/ubuntu-sshd:14.04  -g 1 --interactive \
         --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
@@ -23,6 +23,6 @@ You will need your image to run an ssh server  (e.g [OpenSSH](https://www.ssh.co
 ## Visual Studio Code
 
 * Under Visual Studio code install the [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh#:~:text=Press%20F1%20and%20run%20the,setting%20up%20key%20based%20authentication) extension.
-* Create an ssh entry to the service by editing .ssh/config file or use the command __Remote-SSH: Connect to Host...__ from the Command Palette.  Enter the hostname and port from above (e.g. ssh root@35.34.212.12 -p 30022). User and password are ``root`` 
+* Create an ssh entry to the service by editing .ssh/config file or use the command __Remote-SSH: Connect to Host...__ from the Command Palette.  Enter the IP address and port from above (e.g. ssh root@35.34.212.12 -p 30022). User and password are ``root`` 
 * Using VS Code, install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) __on the remote machine__  
 * Write your first python code and run it remotely.
