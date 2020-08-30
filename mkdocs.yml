@@ -95,9 +95,10 @@ nav:
       - 'Departments' : 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md'
     - 'Presentations' :
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
-    - 'Miscellaneous' :
-      - 'Submit workloads via YAML' : 'Administrator/Miscellaneous/launch-job-via-yaml.md'
-      - 'Submit workloads via Rancher' : 'Administrator/Miscellaneous/Launch-Workloads-using-Rancher-User-Interface.md'      
+    - 'Tools' :
+      - 'Submit workloads via YAML' : 'Administrator/tools/launch-job-via-yaml.md'
+      - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
+      - 'Work with Visual Studio Code' : 'Administrator/tools/dev-vscode.md'    
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Walkthroughs' :
