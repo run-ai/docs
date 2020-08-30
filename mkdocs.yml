@@ -76,18 +76,18 @@ nav:
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md'
         - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/Installing-Run-AI-with-an-Internet-Proxy-Server-.md'
-        - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/Use-OpenID-Connect-LDAP-or-SAML-for-Authentication-and-Authorization-.md'
+        - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
         - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
-      - 'Troubleshooting' : 'Administrator/Researcher-Setup/Troubleshooting-a-CLI-installation.md'
+      - 'Troubleshooting' : 'Administrator/Researcher-Setup/cli-troubleshooting.md'
       - 'Use a Private Docker Registry' : 'Administrator/Researcher-Setup/Using-a-Docker-Registry-with-Credentials.md'
-      - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md'
+      - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/docker-to-runai.md'
       - 'Limit Run:AI to Specific Nodes' : 'Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md'
-      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/Limit-the-Run-AI-Scheduler-to-Specific-GPUs-in-Specific-Nodes.md'
+#      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/limit-to-gpus-in-nodes.md'
 #      - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/Configure-Command-Line-Interface-Templates.md'
     - 'Admin UI Setup' :
       - 'Manage Admin UI Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
@@ -127,13 +127,13 @@ nav:
 #     - 'runai template' : 'Researcher/Command-Line-Interface-API-Reference/runai-template.md'
     - 'Best Practices' :
       - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
-      - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/Converting-your-Workload-to-use-Unattended-Training-Execution.md'
+      - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/Saving-Deep-Learning-Checkpoints.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
       - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
-      - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md'
+      - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
       - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'

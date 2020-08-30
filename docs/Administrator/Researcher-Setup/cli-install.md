@@ -38,7 +38,7 @@ The Run:AI CLI needs to be connected to the Kubernetes Cluster containing the GP
 
 ## Troubleshooting the CLI Installation
 
-See [Troubleshooting a CLI installation](Troubleshooting-a-CLI-installation.md)
+See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
 ## Updating the Run:AI CLI
 

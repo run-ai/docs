@@ -185,7 +185,7 @@ Submit a Run:AI job for execution
 --ttl-after-finish duration
 
 >  Define the duration, post job finish, after which the job is automatically deleted (5s, 2m, 3h, etc).  
-> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/Automatically-Delete-Jobs-After-Job-Finish.md)
+> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md)
 
 --volume stringArray | -v stringArray
 
