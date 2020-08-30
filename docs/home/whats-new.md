@@ -12,7 +12,7 @@ You can now enforce a cluster-wise setting which mandates all containers running
 
 ## July 21th
 
-It is now possible to mount a Persistent Storage Claim using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) cli flag
+It is now possible to mount a Persistent Storage Claim using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) CLI flag
 
 
 ## June 13th, 2020

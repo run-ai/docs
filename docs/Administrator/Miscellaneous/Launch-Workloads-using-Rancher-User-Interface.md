@@ -36,12 +36,12 @@ We differentiate between two types of Workloads:
 *  Build workloads will typically require the assignment of TCP ports, for example, to externalize a jupyter notebook or a PyCharm editor. Select the ports that you want to expose. For each port select: 
     *   (Optional) an informative name
     *   The internal port used by the software you want to connect to (e.g. Juypter notebook uses 8888 by default)
-    *   The type of load balancer you want to use.  For cloud environments this would typically be  a Layer-4 load balancer. On-premise environments depend on the how your cluster was installed.   
+    *   The type of load balancer you want to use.  For cloud a environment this would typically be  a Layer-4 load balancer. On-premise environments depend on how your cluster was installed.   
 *   Select a listening port which would be the external port you access through. Some load balancing solutions allow a random port.  
       
 ![mceclip2.png](img/mceclip2.png)
 * Expand Node Scheduling and on the bottom right select "show advanced options". Under "Scheduler" write "runai-scheduler"
-* On the bottom and select "show advanced options". Expand labels and labels and add 2 labels, adding the name of the user and the name of the project as follows: 
+* On the bottom and select __show advanced options__. Expand labels and labels and add 2 labels, adding the name of the user and the name of the project as follows: 
 
 ![mceclip3.png](img/mceclip3.png)
 

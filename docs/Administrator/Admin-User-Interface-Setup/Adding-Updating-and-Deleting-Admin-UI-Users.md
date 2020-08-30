@@ -1,4 +1,4 @@
-# Adding, Updatingand Deleting Users
+# Adding, Updating and Deleting Users
 
 ## Introduction
 
@@ -21,7 +21,7 @@ __Notes:__
 
 ### Create User
 
-Note: to be able to manipulate users, you must have _Administrator_ access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
+Note: In order to be able to manipulate users, you must have _Administrator_ access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
 
 *   Log in to <https://app.run.ai>
 *   On the top left, open the menu and select "Users"
@@ -34,7 +34,7 @@ Note: to be able to manipulate users, you must have _Administrator_ access. if y
     *  __Administrator__: Can manage users and install clusters. 
     *  __Editor__: Can manage projects and departments.
     * __Viewer__: View-only access to Admin UI.
-    * __Researcher__: Can run ML workloads (subject to [adding](../Working-with-Projects/#create-a-new-project.md) the user in the specific project and an authentication integration)
+    * __Researcher__: Can run ML workloads (subject to the [adding](../Working-with-Projects/#create-a-new-project.md) of the user to a specific project and an existing authentication integration)
 
 *   Select a Cluster. This determines what Clusters are accessible to this user
 *   Press "Save"
