@@ -88,4 +88,4 @@ This will provide shell access to the launcher process. From there, you can run 
 ## See Also
 
 *   The source code of the image used in the walk-through in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed)
-*   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../Command-Line-Interface-API-Reference/runai-submit-mpi.md)
+*   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../cli-reference/runai-submit-mpi.md)

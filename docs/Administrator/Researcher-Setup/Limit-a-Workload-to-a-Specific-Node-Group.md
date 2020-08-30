@@ -27,7 +27,7 @@ Use the node type label with the --node-type flag, such as:
 
     runai submit job1 ... --node-type "my-nodes"
 
-See the [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) documentation for further information
+See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documentation for further information
 
 ## Assigning Node Groups to a Project
 

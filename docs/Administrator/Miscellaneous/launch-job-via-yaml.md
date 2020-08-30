@@ -30,7 +30,7 @@ Internally, Run:AI Projects are implemented as Kubernetes namespaces. The script
 
 ### Train jobs
 
-A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md). Assuming you have the following parameters:
+A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Assuming you have the following parameters:
 
 * ``<JOB-NAME>``. The name of the Job. 
 
@@ -72,12 +72,12 @@ Run:
 to submit the job.
 
 !!! Note
-    The [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
+    The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
 
 
 ### Build jobs
 
-A Build job is equivalent to using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md). Copy the following into a file and change the parameters:
+A Build job is equivalent to using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Copy the following into a file and change the parameters:
 
 
     apiVersion: apps/v1
