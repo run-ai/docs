@@ -15,7 +15,7 @@ When submitting a job, you can request a guaranteed amount of CPUs and memory by
 
 The system guarantees that if the job is scheduled, you will be able to receive this amount of CPU and memory.
 
-For further details on these flags see: [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md)
+For further details on these flags see: [runai submit](../cli-reference/runai-submit.md)
 
 ### CPU over allocation
 
@@ -42,7 +42,7 @@ The limit behavior is different for CPUs and memory.
 *   Your job will never be allocated with more than the amount stated in the --cpu-limit flag
 *   If your job tries to allocate more than the amount stated in the --memory-limit flag it will receive an out of memory exception.
 
-For further details on these flags see: [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md)
+For further details on these flags see: [runai submit](../cli-reference/runai-submit.md)
 
 ## Flag Defaults
 

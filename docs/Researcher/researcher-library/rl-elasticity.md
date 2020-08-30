@@ -48,7 +48,7 @@ Model Fitting:
 
 Run the training workload by using the "elastic" flag:
 
-*   When launching the job with the [runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) command use --elastic
+*   When launching the job with the [runai submit](../cli-reference/runai-submit.md) command use --elastic
 *   When launching a job via YAML code, use the label "elastic" with the value "true"
 
 ## Limitations

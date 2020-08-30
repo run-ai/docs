@@ -82,7 +82,7 @@ To mandate __interactive__ jobs to run on specific node groups, perform the same
 
 ### Further Affinity Refinement by the Researcher
 
-The researcher can limit the selection of node groups by using the CLI flag --node-type with a specific label. When setting specific project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md) 
+The researcher can limit the selection of node groups by using the CLI flag --node-type with a specific label. When setting specific project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/cli-reference/runai-submit.md) 
 
 ## Limit Duration of Interactive Jobs
 

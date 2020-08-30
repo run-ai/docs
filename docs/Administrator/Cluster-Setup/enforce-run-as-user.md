@@ -4,7 +4,7 @@ In docker, as well as in Kubernetes, the default for running containers is runni
 
 This gives a lot of power to containers, but does not sit well with modern security standards. Specifically enterprise security. 
 
-It is possible to start a container without root access. See the flag ``--run-as-user`` under [runai submit](../../Researcher/Command-Line-Interface-API-Reference/runai-submit.md). However, this flag is voluntary and is not enforced by the system
+It is possible to start a container without root access. See the flag ``--run-as-user`` under [runai submit](../../Researcher/cli-reference/runai-submit.md). However, this flag is voluntary and is not enforced by the system
 
 The purpose of this document is to set a cluster-wide default for the Run:AI CLI, such that all CLI users will be limited to non-root containers
 

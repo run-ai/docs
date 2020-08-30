@@ -70,7 +70,7 @@ Example with Command-line arguments:
 
 <pre><code>runai submit train1 -i nvcr.io/nvidia/tensorflow:20.03-tf1-py3 \<br/> --project my-project -v /nfs/john:/mydir -g 1 \<br/> --command ./startup.sh --working-dir /mydir/ \<br/>   --args='<strong>number-of-epochs=30'</strong> \<br/>   --args=<strong>'batch-size=64'</strong> </code></pre>
 
-Please refer to [Command-Line Interface, runai submit](../Command-Line-Interface-API-Reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
+Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
 
 <!-- ### Use CLI Templates
 
