@@ -10,7 +10,7 @@ For additional details see the [Run:AI system components](../../home/components.
 
 * Review Run:AI cluster [prerequisites](cluster-prerequisites.md).
 * Step by step [installation instructions](cluster-install.md).
-* Look for [troubleshooting](Troubleshooting-a-Run-AI-Cluster-Installation.md) tips if required.
+* Look for [troubleshooting](cluster-troubleshooting.md) tips if required.
 * [Upgrade cluster](Upgrading-Cluster-Install.md) and [delete cluster](Deleting-Cluster-Install.md) instructions. 
 
 

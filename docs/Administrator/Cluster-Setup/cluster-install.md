@@ -49,7 +49,7 @@ Installing Kubernetes is beyond the scope of this guide. There are plenty of goo
 
 __Note__: Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
 
-Some best practices on Kubernetes Configuration can be found here: [Kubernetes Cluster Configuration Best Practices](Kubernetes-Cluster-Configuration-Best-Practices.md).
+Some best practices on Kubernetes Configuration can be found here: [Kubernetes Cluster Configuration Best Practices](kubernetes-config-best-practices.md).
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
 

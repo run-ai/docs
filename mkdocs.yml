@@ -72,14 +72,14 @@ nav:
       - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/Deleting-Cluster-Install.md'
-      - 'Troubleshooting' : 'Administrator/Cluster-Setup/Troubleshooting-a-Run-AI-Cluster-Installation.md'
+      - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/Exposing-Ports-from-Researcher-Containers-using-Ingress.md'
         - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/Installing-Run-AI-with-an-Internet-Proxy-Server-.md'
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
-        - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/Kubernetes-Cluster-Configuration-Best-Practices.md'
+        - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
