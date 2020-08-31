@@ -11,10 +11,15 @@ experiment_id = os.getenv('EXP_ID')
 def evaluate_model(assignments):
   return franke_function(assignments['x'], assignments['y'])
 
-conn = Connection(client_token="<token>")
+# plug in your SigOpt client token here
+conn = Connection(client_token=<your-token>)
+
 time.sleep(60)
+
 suggestion = conn.experiments(experiment_id).suggestions().create()
+
 value = evaluate_model(suggestion.assignments)
+
 conn.experiments(experiment_id).observations().create(
   suggestion=suggestion.id,
   value=value,
