@@ -3,6 +3,8 @@
 
 ---
 
+# Configure Command-Line Interface Templates
+
 ## What are Templates?
 
 Templates are a way to reduce the number of flags required when using the Command-Line Interface to start workloads. Using Templates the researcher can:
