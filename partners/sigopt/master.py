@@ -23,7 +23,7 @@ observation_budget = args.observation_budget
 project = str(args.project)
 
 # plug in your SigOpt client token here
-conn = Connection(client_token="<token>")
+conn = Connection(client_token=<your-token>)
 
 # create a new SigOpt experiment 
 experiment = conn.experiments().create(
@@ -35,7 +35,6 @@ experiment = conn.experiments().create(
   ],
   metrics=[dict(name='function_value', objective='maximize')],
   parallel_bandwidth=parallel_bandwidth,
-  # define an Observation Budget for your experiment
   observation_budget=observation_budget,
   project="sigopt-examples",
 )
