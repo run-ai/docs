@@ -33,7 +33,6 @@ For further information on departments and how to configure them, see: [Working 
 _Pods_ are units of work within a Job. 
 
 * Typically, each Job has a single Pod. However, in some scenarios (see Hyperparamter Optimization and Distribute Training below) there will be multiple Pods per Job. 
-* Pods are independent.
 * All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
 
 
