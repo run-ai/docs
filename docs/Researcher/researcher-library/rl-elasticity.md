@@ -56,7 +56,7 @@ Create a Keras model:
 ### PyTorch
 
 For PyTorch models, you'll need to wrap your `Optimizer` with GA.
-Refer to the [documentation](../ga/README.md) for more information.
+Refer to the documentation for more information.
 Use `runai.elastic.steps` for the number of steps to be accumulated - the value for the `steps` argument of Run:AI GA optimizer. For example:
 
     optimizer = runai.ga.torch.optim.Optimizer(optimizer, runai.elastic.steps)
