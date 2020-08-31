@@ -17,4 +17,4 @@ Run in your local machine
 ```
 python master.py --job_name my-exp-name --parallel_jobs 4 --observation_budget 32 --project my-runai-project-name
 ``` 
-The script will tune a [simple model](https://github.com/sigopt/sigopt-python) with two hyperparameters. Run:AI will keep spinning up and orchestrating 4 parallel pods, each connecting to the SigOpt platform and training the model with a set of hyperparameters, until 32 pods are completed successfully. 
+The script will tune a [simple model](https://github.com/sigopt/sigopt-python) with two hyperparameters. Run:AI will keep spinning up and orchestrating 4 parallel pods, each connecting to the SigOpt platform and training the model with a different set of hyperparameters, until 32 pods are completed successfully. 
