@@ -9,6 +9,7 @@ Submit a Run:AI job for execution
         [--args stringArray] 
         [--backoffLimit int] 
         [--command stringArray] 
+        [--completions int]
         [--cpu double] 
         [--cpu-limit double] 
         [--elastic] 
@@ -23,6 +24,7 @@ Submit a Run:AI job for execution
         [--memory string] 
         [--memory-limit string] 
         [--node-type string] 
+        [--parallelism int]
         [--port stringArray] 
         [--preemptible] 
         [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
@@ -61,6 +63,10 @@ Submit a Run:AI job for execution
 --command stringArray
 
 >  Command to run at container start. Use together with ``--args``.
+
+--completions int
+
+>  The number of successful pods required for this job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
 
 --cpu double
 
@@ -128,6 +134,10 @@ Submit a Run:AI job for execution
 
 >  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/Limit-a-Workload-to-a-Specific-Node-Group.md)
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+
+--parallelism int
+
+> The number of pods this job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
 
 --port stringArray
 
