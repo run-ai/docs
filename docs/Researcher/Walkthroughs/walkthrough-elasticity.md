@@ -90,7 +90,7 @@ filler1   Running  1h   worker-1  ubuntu                         Interactive  te
 ```
 
 !!! Discussion
-    Since only a single GPU remains, under normal circumstances, the job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.
+    Since only a single GPU remains unallocated, under normal circumstances, the job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.
 
 
 Finally, delete the jobs:
