@@ -33,7 +33,7 @@ For further information on departments and how to configure them, see: [Working 
 _Pods_ are units of work within a Job. 
 
 * Typically, each Job has a single Pod. However, in some scenarios (see Hyperparamter Optimization and Distribute Training below) there will be multiple Pods per Job. 
-* Pods are independent
+* Pods are independent.
 * All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
 
 
@@ -73,11 +73,10 @@ During the above process, there may be a pending workload whose project is below
 
 ### Fairness
 
-The Run:AI scheduler determines fairness between multiple over-quota projects according to their GPU quota. Consider for example two projects, each spawning a significant amount of workloads (e.g. for Hyper-parameter tuning) all of which wait in the queue to be executed. The Run:AI Scheduler allocates resources while preserving fairness between the different projects regardless of the time they entered the system. The fairness works according to the __relative portion of GPU quota for each project.__ To further illustrate that, suppose that:
+The Run:AI scheduler determines fairness between multiple over-quota projects according to their GPU quota. Consider for example two projects, each spawning a significant amount of workloads (e.g. for Hyperparameter tuning) all of which wait in the queue to be executed. The Run:AI Scheduler allocates resources while preserving fairness between the different projects regardless of the time they entered the system. The fairness works according to the __relative portion of GPU quota for each project.__ To further illustrate that, suppose that:
 
-<li>project A has been allocated with a quota of 3 GPUs, and</li>
-<li>project B has been allocated with a quota of 1 GPU.</li>
-
+* Project A has been allocated with a quota of 3 GPUs.
+* Project B has been allocated with a quota of 1 GPU.
 
 Then, if both projects go over quota, project A will receive 75% (=3/(1+3)) of the idle GPUs and project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new job is submitted to the system or existing job ends.
 
@@ -102,27 +101,44 @@ Run:AI Elasticity is explained [here](../researcher-library/rl-elasticity.md). I
 
 ### GPU Fractions
 
-XXXX
+Run:AI provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU.
+
+Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
+
+One important thing to note is that fraction scheduling divides up __GPU memory__ and not __GPU compute cores__. As such the GPU memory is divided up between jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memorty exception.
+
+GPU Fractions are scheduled as regular GPUs in the sense that:
+
+* Allocation is made in fractions such that the total of the GPU allocation for a single GPU is smaller or equal to 1.
+* Preemption is available for non-interactive workloads.  
+* Bin-packing & Consolidation work the same for fractions.
+
+Support: 
+
+* Elasticity is not supported with fractions.
+* Hyperparameter Optimization supports fractions. 
+
 
 ### Distributed Training
 
-Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ processs which manages and coordinates the other worker pods.
+Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ processs which manages and coordinates the other worker pods.
 
 Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
 
 * The scheduler must ensure that multiple pods are started on what is typically multiple nodes, before the job can actually start. 
-* If one pod is preempted, the others are also preempted.
+* If one pod is preempted, the others are also immediately preempted.
 
 The Run:AI system provides:
-* inter-pod communication. 
+
+* Inter-pod communication. 
 * Command-line interface to access logs and an interactive shell. 
 
 For more information on Distributed Training in Run:AI see [here](../Walkthroughs/walkthrough-distributed-training.md)
 
 
-### Hyper-Parameter Optimization
+### Hyperparameter Optimization
 
-Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
+Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
 
 To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
 

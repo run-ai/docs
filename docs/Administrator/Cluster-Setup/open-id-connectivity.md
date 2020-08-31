@@ -6,7 +6,7 @@ Run:AI uses its a mechanism for authentication and authorization which is based 
 
 As such, organizations typically use an organizational directory to store users and roles, allowing a single point of change for multiple systems
 
-Run:AI uses the _OpenID Connect_ protocol to allow organizations to integrate their authentication &amp; authorization system with Run:AI. With such a connector, Run:AI no longer has a standalone login page. instead, it differs to the organization's directory for authenticating users and for retrieving their roles (authorization)
+Run:AI uses the _OpenID Connect_ protocol to allow organizations to integrate their authentication & authorization system with Run:AI. With such a connector, Run:AI no longer has a standalone login page. instead, it differs to the organization's directory for authenticating users and for retrieving their roles (authorization)
 
 OpenID provides simple wrappers for LDAP and SAML. LDAP and SAML are similar protocols. Most notably, LDAP which is the underlying protocol for Microsoft Active Directory as well as other directories.
 
