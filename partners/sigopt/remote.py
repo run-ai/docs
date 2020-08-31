@@ -11,7 +11,7 @@ experiment_id = os.getenv('EXP_ID')
 def evaluate_model(assignments):
   return franke_function(assignments['x'], assignments['y'])
 
-conn = Connection(client_token="YOHWYNKWGMWFFJVTBCOXBNMYQAYMCBUPINWIYVGLWHVXPPCB")
+conn = Connection(client_token="<token>")
 time.sleep(60)
 suggestion = conn.experiments(experiment_id).suggestions().create()
 value = evaluate_model(suggestion.assignments)
