@@ -1,3 +1,4 @@
+# Upgrading a Cluster Installation
 
 ## Upgrade
 
