@@ -47,6 +47,8 @@ plugins:
         'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
         'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-train.md'
         'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
+        'Administrator/Cluster-Setup/Deleting-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-delete.md'
+        'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
 markdown_extensions:
   - codehilite
   - admonition
@@ -70,8 +72,8 @@ nav:
       - 'Introduction' : 'Administrator/Cluster-Setup/cluster-setup-intro.md'
       - 'Prerequisites' : 'Administrator/Cluster-Setup/cluster-prerequisites.md'
       - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
-      - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md'
-      - 'Cluster Delete' : 'Administrator/Cluster-Setup/Deleting-Cluster-Install.md'
+      - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
+      - 'Cluster Delete' : 'Administrator/Cluster-Setup/cluster-delete.md'
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
