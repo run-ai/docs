@@ -84,7 +84,7 @@ Where ``<node-name>`` is the name of the node. Node names can be obtained by run
 
 The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
 
-* To allow access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers].(allow-external-access-to-containers.md)
+* To allow access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers](allow-external-access-to-containers.md).
 * To allow outbound internet connectivity in a proxied environment. See: [Installing Run AI with an Internet Proxy Server](proxy-server.md).
 * To remove the Run:AI default Storage Class if a default storage class already exists. See: [remove default storage class](../Troubleshooting-a-Run-AI-Cluster-Installation/#internal-database-has-not-started).
 

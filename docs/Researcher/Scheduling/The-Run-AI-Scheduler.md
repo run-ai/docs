@@ -28,6 +28,14 @@ A _Department_ is a second hierarchy of resource allocation above _Project_. A D
 
 For further information on departments and how to configure them, see: [Working with Departments](../../Administrator/Admin-User-Interface-Setup/Working-with-Departments.md)
 
+### Pods
+
+_Pods_ are units of work within a Job. 
+
+* Typically, each Job has a single Pod. However, in some scenarios (see Hyperparamter Optimization and Distribute Training below) there will be multiple Pods per Job. 
+* Pods are independent
+* All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
+
 
 ## Basic Scheduling Concepts
 
@@ -47,7 +55,7 @@ Every new workload is associated with a Project. The project contains a deserved
 
 ## Scheduler Details
 
-### Allocation &amp; Preemption
+### Allocation & Preemption
 
 The Run:AI scheduler wakes up periodically to perform allocation tasks on pending workloads:
 
@@ -75,7 +83,7 @@ Then, if both projects go over quota, project A will receive 75% (=3/(1+3)) of t
 
 This fairness equivalence will also be maintained amongst __running__ jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
-### Bin-packing &amp; Consolidation
+### Bin-packing & Consolidation
 
 Part of an efficient scheduler is the ability to eliminate defragmentation:
 
@@ -90,7 +98,35 @@ Run:AI Elasticity is explained [here](../researcher-library/rl-elasticity.md). I
 *   Shrink jobs will expand when enough GPUs will be available.
 *   Expanding happens when the scheduler finds spare GPU resources, enough to double the amount of GPUs for an elastic workload.
 
-## Distributed Training
+## Advanced
 
-Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. 
-Distribute Training utilizes a practice sometimes known as __Gang Scheduling__. The scheduler must ensure that multiple containers are started on what is typically multiple nodes, before the job can actually start. 
+### GPU Fractions
+
+XXXX
+
+### Distributed Training
+
+Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ processs which manages and coordinates the other worker pods.
+
+Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
+
+* The scheduler must ensure that multiple pods are started on what is typically multiple nodes, before the job can actually start. 
+* If one pod is preempted, the others are also preempted.
+
+The Run:AI system provides:
+* inter-pod communication. 
+* Command-line interface to access logs and an interactive shell. 
+
+For more information on Distributed Training in Run:AI see [here](../Walkthroughs/walkthrough-distributed-training.md)
+
+
+### Hyper-Parameter Optimization
+
+Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
+
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
+
+
+With HPO, the researcher provides a single script which is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods are exactly as described in the Scheduler Details section above for Jobs. 
+
+For more information on Hyperparameter Optimization in Run:AI see [here](../Walkthroughs/walkthrough-hpo.md)
