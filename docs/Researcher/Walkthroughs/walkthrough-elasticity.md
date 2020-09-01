@@ -36,9 +36,10 @@ To complete this walk-through you must have:
 ### Expansion 
 
 *   At the command-line run:
-
-<pre><code>runai project set team-a
-runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 <b>--elastic</b></code></pre>
+```
+runai project set team-a
+runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
+```
 
 * This would start an unattended training job for team-a. 
 * The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``elastic1``and have allocated 2 GPUs for the job
@@ -56,16 +57,31 @@ The result:
     * The Job has requested 1 GPU, but has been allocated with 2, as 2 are available right now.
     * The code needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the job effectively.
 
-Finally, delete the job:
+Add a filler class:
 
-    runai delete elastic1
+```
+runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
+runai list
+```
+
+The result: 
+
+![elasticity4.png](img/elasticity4.png)
+
+!!! Discussion
+    An interactive job (filler1) needs to be scheduled. The elastic job is now reduced to the originally requested single-GPU
+
+
+Finally, delete the jobs:
+
+    runai delete elastic1, filler1
 
 
 ### Shrinking
 
 *   At the command-line run:
 ```
-runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
+runai submit filler2 -i ubuntu --command sleep --args infinity -g 1 --interactive
 runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
 ```
 *   This would start a filler job on 1 GPU and attempt to start another unattended job with 2 GPUs. 
@@ -85,9 +101,21 @@ The result:
     Since only a single GPU remains unallocated, under normal circumstances, the job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.
 
 
+Delete the filler job and list the jobs again:
+
+    runai delete filler1
+    runai list
+
+The result:
+
+![elasticity3.png](img/elasticity3.png)
+
+!!! Discussion
+    With the filler job gone, the elastic job has more room to expand, which it does.
+
 Finally, delete the jobs:
 
-    runai delete elastic2, filler1
+    runai delete elastic2
 
 
 
