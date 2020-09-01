@@ -49,12 +49,8 @@ runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 <b>--elastic</b></co
 
 The result:
 
-```
-~> runai list
-Showing jobs for project team-a
-NAME      STATUS   AGE  NODE      IMAGE                          TYPE   PROJECT  USER   GPUs (Allocated/Requested)  PODs Running (Pending)
-elastic1  Running  36s  worker-1  gcr.io/run-ai-demo/quickstart  Train  team-a   yaron  2/1                         1 (0)
-```
+![elasticity1.png](img/elasticity1.png)
+
 
 !!! Discussion
     * The Job has requested 1 GPU, but has been allocated with 2, as 2 are available right now.
@@ -68,26 +64,22 @@ Finally, delete the job:
 ### Shrinking
 
 *   At the command-line run:
-
-        runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
-        runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
-
+```
+runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
+runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
+```
 *   This would start a filler job on 1 GPU and attempt to start another unattended job with 2 GPUs. 
 
 
 *   Follow up on the job's progress by running:
-
-        runai list
+```
+runai list
+```
 
 The result:
 
-```
-~> runai list
-Showing jobs for project team-a
-NAME      STATUS   AGE  NODE      IMAGE                          TYPE         PROJECT  USER   GPUs (Allocated/Requested)  PODs Running (Pending)  
-elastic2  Running  1h   worker-1  gcr.io/run-ai-demo/quickstart  Train        team-a   yaron  1/2                         1 (0)
-filler1   Running  1h   worker-1  ubuntu                         Interactive  team-a   yaron  1/1                         1 (0)
-```
+![elasticity2.png](img/elasticity2.png)
+
 
 !!! Discussion
     Since only a single GPU remains unallocated, under normal circumstances, the job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.

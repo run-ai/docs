@@ -55,12 +55,15 @@ Create a Keras model:
 
 ### PyTorch
 
-For PyTorch models, you'll need to wrap your `Optimizer` with GA.
-Refer to the documentation for more information.
-Use `runai.elastic.steps` for the number of steps to be accumulated - the value for the `steps` argument of Run:AI GA optimizer. For example:
+For PyTorch models, you'll need to wrap your `Optimizer` with Gradient Accumulation:
 
     optimizer = runai.ga.torch.optim.Optimizer(optimizer, runai.elastic.steps)
 
+Where `runai.elastic.steps` is the value of accumulated steps which is calculated when calling ``init`` above.
+
+In addition, you will need to data-parallelise your model. We recommend using the built-in nn.DataParallel() method:
+
+    model = torch.nn.DataParallel(model)
 
 
 ## Running a Training Workload
