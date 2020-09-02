@@ -36,10 +36,9 @@ To complete this walk-through you must have:
 ### Expansion 
 
 *   At the command-line run:
-```
-runai project set team-a
-runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
-```
+    
+        runai project set team-a
+        runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
 
 * This would start an unattended training job for team-a 
 * The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``elastic1``and have requested 1 GPU for the job
@@ -58,12 +57,10 @@ runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
         * The code needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the job effectively.
 
 * Add a filler class:
-
-    ```
-    runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
-    runai list
-    ```
-
+        
+        runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
+        runai list
+    
     The result: 
 
     ![elasticity4.png](img/elasticity4.png)
@@ -80,14 +77,15 @@ runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
 ### Shrinking
 
 *   At the command-line run:
-    ```
-    runai submit filler2 -i ubuntu --command sleep --args infinity -g 1 --interactive
-    runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
-    ```
+    
+        runai submit filler2 -i ubuntu --command sleep --args infinity -g 1 --interactive
+        runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
+
 *   This would start a filler job on 1 GPU and attempt to start another unattended job with 2 GPUs
 
 
 *   Follow up on the job's progress by running:
+    
     ```
     runai list
     ```
