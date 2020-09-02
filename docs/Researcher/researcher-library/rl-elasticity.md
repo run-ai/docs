@@ -1,4 +1,4 @@
-# Researcher Library: Dynamically Stretch or Compress Workload's GPU Quota
+# Researcher Library: Dynamically Stretch or Compress Workload's GPU Allocation
 
 ## Introduction
 
