@@ -104,7 +104,7 @@ Run:AI provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
 
-One important thing to note is that fraction scheduling divides up __GPU memory__ and not __GPU compute cores__. As such the GPU memory is divided up between jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memorty exception.
+One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memorty exception.
 
 GPU Fractions are scheduled as regular GPUs in the sense that:
 
@@ -127,6 +127,8 @@ Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
 * The scheduler must ensure that multiple pods are started on what is typically multiple nodes, before the job can actually start. 
 * If one pod is preempted, the others are also immediately preempted.
 
+Gang Scheduling essentially prevents scenarios where part of the pods are scheduled while other pods belonging to the same job are pending for resources to become available; scenarios that can cause  deadlock situations and major inefficiencies in cluster utilization. 
+
 The Run:AI system provides:
 
 * Inter-pod communication. 
@@ -137,7 +139,7 @@ For more information on Distributed Training in Run:AI see [here](../Walkthrough
 
 ### Hyperparameter Optimization
 
-Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
+Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
 
 To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
 
