@@ -86,9 +86,7 @@ To complete this walk-through you must have:
 
 *   Follow up on the job's progress by running:
     
-    ```
-    runai list
-    ```
+        runai list
 
     The result:
 
