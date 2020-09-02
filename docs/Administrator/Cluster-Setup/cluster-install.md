@@ -14,13 +14,21 @@ After installing NVIDIA drivers, reboot the machine. Then verify that the instal
 
 ### Step 1.2: Install NVIDIA Docker
 
-Run the following:
+On Debian-based distributions (such as Ubuntu), run the following:
 
     distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
     curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
     sudo apt-get update && sudo apt-get install -y nvidia-docker2
     sudo pkill -SIGHUP dockerd
+
+For RHEL-based distributions, see [nvidia-docker installation instructions](https://nvidia.github.io/nvidia-docker/), or run:
+
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
+    sudo yum install -y nvidia-docker2
+    sudo pkill -SIGHUP dockerd
+
 
 ### Step 1.3: Make NVIDIA Docker the default docker runtime
 
