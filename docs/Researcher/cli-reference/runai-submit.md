@@ -154,7 +154,7 @@ Submit a Run:AI job for execution
 
 --prevent-privilege-escalation
 
-> Prevent the job’s container from gaining additional privileges after the job starts. Default is ``false``
+> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).
 
 --pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
 
