@@ -1,3 +1,12 @@
+## September 6th
+
+We released a module that helps the Researcher perform Hyperparameter optimization (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Walk-through](../Researcher/Walkthroughs/walkthrough-hpo.md)
+
+## September 3rd 
+
+GPU Fractions now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
+
+
 ## August 10th
 
 Run:AI Now supports Distributed Training and Gang Scheduling. For further information , see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) Walkthrough.
