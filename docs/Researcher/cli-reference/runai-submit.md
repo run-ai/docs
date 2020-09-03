@@ -27,6 +27,7 @@ Submit a Run:AI job for execution
         [--parallelism int]
         [--port stringArray] 
         [--preemptible] 
+        [--prevent-privilege-escalation]
         [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
         [--run-as-user] 
         [--service-type string | -s string] 
@@ -150,6 +151,10 @@ Submit a Run:AI job for execution
 --preemptible
 
 >  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
+
+--prevent-privilege-escalation
+
+> Prevent the job’s container from gaining additional privileges after the job starts. Default is ``false``
 
 --pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
 
