@@ -1,25 +1,25 @@
-## September 6th
+## September 6th, 2020
 
 We released a module that helps the Researcher perform Hyperparameter optimization (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Walk-through](../Researcher/Walkthroughs/walkthrough-hpo.md)
 
-## September 3rd 
+## September 3rd, 2020
 
 GPU Fractions now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
 
 
-## August 10th
+## August 10th, 2020
 
 Run:AI Now supports Distributed Training and Gang Scheduling. For further information , see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) Walkthrough.
 
-## August 4th
+## August 4th, 2020
 
 There is now an optional second level of Project hierarchy called _Departments_. For further information on how to configure and use Departments, see [Working with Departments](../Administrator/Admin-User-Interface-Setup/Working-with-Departments.md) 
 
-## July 28th
+## July 28th, 2020
 
 You can now enforce a cluster-wise setting which mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../Administrator/Cluster-Setup/enforce-run-as-user.md)
 
-## July 21th
+## July 21th, 2020
 
 It is now possible to mount a Persistent Storage Claim using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../Researcher/cli-reference/runai-submit.md) CLI flag
 
