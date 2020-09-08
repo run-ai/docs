@@ -1,3 +1,24 @@
+## Safely Remove a Node
+
+Every now and again, you may need to take down a node. Typically for maintenance purposes. The node about to be taken down may be running Jobs. Without additional preparations, these Jobs will abruptly come to an end, and wait for the node to come up. To allow the Jobs to gracefully shut-down and be immediately re-allocated to other nodes, perform the following:
+
+To get the name of the node, run: 
+
+    kubectl get nodes 
+
+Then run:
+
+    kubectl drain <NODE-NAME>
+
+The command will tell Kubernetes to not schedule any __new__ jobs on the node and evict all __currently running__ Jobs. Kubernetes will attempt to immediately schedule evicted Jobs to other nodes. 
+
+You can then safely shutdown the node. When the node is up again, run:
+
+    kubectl uncordon <NODE-NAME>
+
+The command tells Kubernetes that the node is ready again to accept Jobs.
+
+
 ## Node Memory Management
 
 It is possible for researchers to over-allocate memory to the extent that, if not managed properly,  will destabilize the chosen node  (machine). 

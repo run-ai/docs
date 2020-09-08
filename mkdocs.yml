@@ -81,7 +81,7 @@ nav:
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
-        - 'Kubernetes Configuration Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
+        - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'

@@ -69,6 +69,7 @@ __Typical root causes:__
 
 * NVIDIA prerequisites have not been met.
 * Firewall related issues.
+* Internal clock is not synced.
 
 #### NVIDIA related issues
 
@@ -108,6 +109,10 @@ Verify that there are no errors. If there are connectivity related errors you ma
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
 * Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](../cluster-troubleshooting/#internal-database-has-not-started)
 
+#### Clock is not synced
+
+Run: `date` on cluster nodes and see that date is in sync.
+
 
 ### Internal Database has not started
  
@@ -136,3 +141,4 @@ And look for _default_ storage classes.
       local-path-provisioner:
          enabled: false
       
+
