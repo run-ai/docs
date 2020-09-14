@@ -36,7 +36,7 @@ To complete this walk-through you must have:
 
 *   The jobs are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
 *   We named the jobs _frac05_ and _frac03_ respectively. 
-*   Note that fractions may or may not use the "interactive" flag. Setting the flag means that the job will not have a start or end. It is the researcher's responsibility to delete the job. Jobs with the flags will usually not be preemptible. 
+*   Note that fractions may or may not use the ``--interactive`` flag. Setting the flag means that the job will not automatically finish. Rather, it is the researcher's responsibility to delete the job. Fractions support both Interactive and non-interactive jobs. 
 *   The jobs are assigned to _team-a_ with an allocation of a single GPU. 
 
 Follow up on the job's status by running:
