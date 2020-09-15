@@ -14,7 +14,9 @@ After installing NVIDIA drivers, reboot the machine. Then verify that the instal
 
 ### Step 1.2: Install NVIDIA Docker
 
-On Debian-based distributions (such as Ubuntu), run the following:
+This step assumes that Docker is already installed on the machine. If not, please install using [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+
+To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
 
     distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
