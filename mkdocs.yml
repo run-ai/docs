@@ -49,6 +49,7 @@ plugins:
         'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
         'Administrator/Cluster-Setup/Deleting-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-delete.md'
         'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
+        'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md' : 'Administrator/Researcher-Setup/docker-to-runai.md'
 markdown_extensions:
   - codehilite
   - admonition
