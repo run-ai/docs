@@ -73,7 +73,11 @@ If the output list contains a __default__ storage class you must, in step 3.2 be
 
 ### Step 2.3 Label CPU-Only Worker Nodes
 
-If you have CPU-only worker nodes (non-master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To label CPU-only nodes, run the following on each CPU-only node:
+If you have CPU-only worker nodes (non-master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To get the list of nodes, run:
+
+    kubectl get nodes
+
+To label CPU-only nodes, run the following on each CPU-only node:
 
     kubectl label node <node-name> run.ai/cpu-node=true
 
@@ -88,7 +92,7 @@ Where ``<node-name>`` is the name of the node. Node names can be obtained by run
 
 *   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system.
 *   If this is the first time anyone from your company has logged in, you will receive a dialog with instructions on how to install Run:AI on your Kubernetes Cluster.
-*   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to instructions to install Run:AI on your Kubernetes Cluster. Take care to read the next section (Customize Installation) before proceeding to apply the file you download during the process.
+*   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to UI instructions to install Run:AI on your Kubernetes Cluster. Take care to read the next section (Customize Installation) before proceeding to apply the file you download during the process.
 
 ### Step 3.2: Customize Installation
 
