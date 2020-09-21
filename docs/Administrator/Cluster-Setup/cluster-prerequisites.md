@@ -20,9 +20,9 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
     *   At least 20GB of Disk space 
     
     
-*   __Shared data volume:__ Run:AI, via Kubernetes, abstracts away the machine on which a container is running:
+*   __Shared data volume:__ Run:AI uses Kubernetes to abstract away the machine on which a container is running:
 
-    * For Researcher containers to run anywhere, they need to be able to access data from any machine in a uniform way in order to access training data and code as well as save checkpoints, weights and other machine-learning related artifacts. 
+    * Researcher containers: The Researcher's containers need to be able to access data from any machine in a uniform way, so as to access training data and code as well as save checkpoints, weights, and other machine-learning related artifacts. 
     * The Run:AI system needs to save data on a storage device that is not dependent on a specific node.  
 
     Typically, this is achieved via Network File Storage (NFS) or Network-attached storage (NAS). NFS is usually the preferred method for Researchers which may require multi-read/write capabilities.
