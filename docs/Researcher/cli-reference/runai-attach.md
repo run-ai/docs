@@ -4,9 +4,6 @@ Attach to a running Job.
 
 The command attaches to the standard input, output, and error streams of a running Job. If the job has multiple pods the job will attach to the first pod. 
 
-   The flag is equivalent to the command
-
-
 
 ## Synopsis
 
@@ -23,10 +20,10 @@ The command attaches to the standard input, output, and error streams of a runni
 > Do not attach STDIN
 
 --no-tty       
-> Not allocated a tty
+> Do Not allocate a tty
 
 --pod string   
-> Attach to a specific pod within the job. To find the list of pods run ``runai get <job-name>`` and then use the podname with the ``--pod`` flag.
+> Attach to a specific pod within the job. To find the list of pods run ``runai get <job-name>`` and then use the pod name with the ``--pod`` flag.
 
 ### Global Flags
 
