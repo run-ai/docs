@@ -117,6 +117,7 @@ nav:
       - 'Elasticity' : 'Researcher/Walkthroughs/walkthrough-elasticity.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
+      - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
       - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'
       - 'runai cluster' : 'Researcher/cli-reference/runai-cluster.md'
       - 'runai exec' : 'Researcher/cli-reference/runai-exec.md'
