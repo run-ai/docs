@@ -7,11 +7,13 @@ Submit a Run:AI job for execution
     runai submit job-name 
         [--always-pull-image] 
         [--args stringArray] 
+        [--attach]
         [--backoffLimit int] 
         [--command stringArray] 
         [--completions int]
         [--cpu double] 
         [--cpu-limit double] 
+        [--create-home-dir]
         [--elastic] 
         [--environment stringArray | -e stringArray] 
         [--gpu int | -g int] 
@@ -31,8 +33,10 @@ Submit a Run:AI job for execution
         [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
         [--run-as-user] 
         [--service-type string | -s string] 
+        [--stdin]
         [--template string] 
         [--ttl-after-finish duration] 
+        [--tty]
         [--volume stringArray | -v stringArray] 
         [--working-dir] 
         .
@@ -42,125 +46,95 @@ Submit a Run:AI job for execution
 
  Syntax notes:
 
-*   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
+* Flags of type _stringArray_ mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
 ## Options
 
-<job-name\> the name of the job.
+<job-name\> - the name of the job.
 
---always-pull-image stringArray
-
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag.
-
---args stringArray
-
->  Arguments to pass to the command run on container start. Use together with ``--command``.   
->  Example: ``--command sleep --args 10000`` 
-
---backoffLimit int
- 
-> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
-
---command stringArray
-
->  Command to run at container start. Use together with ``--args``.
-
---completions int
-
->  The number of successful pods required for this job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
-
---cpu double
-
-> CPU units to allocate for the job (0.5, 1, .etc). The Job will receive at least this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.
-
---cpu-limit double
-
-> Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
-
---elastic
-
-> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md)
-> 
-
--e stringArray | --environment stringArray
-
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
-
---gpu int | -g int
-
->  Number of GPUs to allocation to the Job. The default is no GPUs.
-
---host-ipc
-
->  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
-> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack
-> 
-> For further information see docker <a href="https://docs.docker.com/engine/reference/run/" target="_self">documentation</a>
-
-
---host-network
-
->  Use the host's network stack inside the container
->  For further information see docker <a href="https://docs.docker.com/engine/reference/run/" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" target="_self">documentation</a>
-
---image string | -i string
-
->  Image to use when creating the container for this Job
+### Shortcuts
 
 --interactive
-
 >  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system
 
 --jupyter
+>  Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. 
 
->  (Deprecated) Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. Use the s flag instead.
+> Example:
 
---large-shm
- 
-> Mount a large /dev/shm device. _shm_ is a shared file system mounted on RAM
+> ``runai submit jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
+
+--template string
+>  Templates are currently not supported
+
+### Container Related
+
+--always-pull-image stringArray
+
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start
+
+--args stringArray
+>  Arguments to pass to the command run on container start. Use together with ``--command``.  
+
+>  Example: ``--command script.py --args 10000`` 
+
+--attach                        
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
+
+> The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
+
+--command stringArray
+>  Command to run at container start. Use together with ``--args``.
+
+>  Example: ``--command script.py --args 10000`` 
+
+
+-e stringArray | --environment stringArray
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
+
+--image string | -i string
+>  Image to use when creating the container for this Job
 
 --local-image
+>  Use a local image for this job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
 
->  Use a local image for this job. A local image is an image which exists on all local servers of the Kubernetes Cluster.
+--stdin
+>  Keep stdin open for the container(s) in the pod, even if nothing is attached.
+
+-t, --tty
+>  Allocate a TTY for the container.
+
+--working-dir string
+>  Starts the container with the specified directory as the current directory.
+
+### Resource Allocation
+
+--cpu double
+> CPU units to allocate for the job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.
+
+--cpu-limit double
+> Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
+
+--gpu int | -g int
+> Number of GPUs to allocation to the Job. The default is no allocated GPUs.
+
+--large-shm
+> Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM
 
 --memory string
-
->  CPU memory to allocate for this job (1G, 20M, .etc).The Job will receive at least this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
+>  CPU memory to allocate for this job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
 
 --memory-limit string
+>  CPU memory to allocate for this job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
->  CPU memory to allocate for this job (1G, 20M, .etc).The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
---node-type string
-
->  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md)
-> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
-
---parallelism int
-
-> The number of pods this job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
-
---port stringArray
-
->  Expose ports from the Job container. Used together with ``--service-type``.  
->  Examples:  
->    ``--port 8080:80 --service-type loadbalancer``
-
->    ``--port 8080 --service-type ingress``
-
---preemptible
-
->  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
-
---prevent-privilege-escalation
-
-> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).
+### Storage
 
 --pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
 
 --pvc `Pvc_Name:Container_Mount_Path:[ro]`
 
-> Mount a persistent volume claim into a container
+> Mount a persistent volume claim of Network Attached Storage into a container
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 
@@ -184,31 +158,78 @@ Submit a Run:AI job for execution
 
 > ``--pvc my-pvc-2:/tmp/john:ro`` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
---run-as-user
 
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+--volume stringArray | -v stringArray
+>  Volume to mount into the container. Example ``-v /raid/public/john/data:/root/data:ro`` The flag may optionally be suffixed with ``:ro`` or ``:rw`` to mount the volumes in read-only or read-write mode, respectively.
+
+
+### Network
+
+--host-ipc
+>  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
+> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack
+> 
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/")
+
+
+--host-network
+>  Use the host's network stack inside the container
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/")
+
+
+--port stringArray
+>  Expose ports from the Job container. Used together with ``--service-type``.  
+>  Examples:  
+>    ``--port 8080:80 --service-type loadbalancer``
+
+>    ``--port 8080 --service-type ingress``
 
 --service-type string | -s string
-
 >  Service exposure method for interactive Job. Options are: ``portforward``, ``loadbalancer``, ``nodeport``, ingress.
 >  Use the command runai list to obtain the endpoint to use the service when the job is running. Different service methods have different endpoint structure
 
---template string
 
->  Templates are currently not supported
+### Job Lifecycle
+
+--backoffLimit int
+> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
+
+--completions int
+>  The number of successful pods required for this job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
+
+--parallelism int
+> The number of pods this job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
 
 --ttl-after-finish duration
-
 >  Define the duration, post job finish, after which the job is automatically deleted (5s, 2m, 3h, etc).  
 > Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md)
 
---volume stringArray | -v stringArray
 
->  Volume to mount into the container. Example ``-v /raid/public/john/data:/root/data:ro`` The flag may optionally be suffixed with ``:ro`` or ``:rw`` to mount the volumes in read-only or read-write mode, respectively.
+### Access Control
 
---working-dir string
+--create-home-dir
+> Create a temporary home directory for the user in the container.  Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
->  Starts the container with the specified directory
+--prevent-privilege-escalation
+> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).
+
+--run-as-user
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+
+
+### Scheduling
+
+--elastic
+> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md)
+
+--node-type string
+>  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md)
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+
+
+--preemptible
+>  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
+
 
 ### Global Flags
 
@@ -226,15 +247,48 @@ Submit a Run:AI job for execution
 
 ## Examples
 
-start an unattended training job of name run1, based on project team-a using a quickstart image:
+All examples assume a Run:AI project has been set using ``runai project set <project-name>``
 
-    runai submit run1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
+Start an interactive job:
+
+    runai submit build1 -i python -g 1 --interactive --command sleep --args infinity 
+
+(see: [build walkthrough](../Walkthroughs/walkthrough-build.md)).
+
+Externalize ports:
+
+    runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
+        --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
+
+(see: [build walkthrough with ports](../Walkthroughs/walkthrough-build-ports.md)).
 
 
-start an interactive job of name run2, based on project team-a using a Jupyter notebook image. The Notebook will be externalized via a load balancer on port 8888:
+Start a Training job
 
-    runai submit run2 -i jupyter/base-notebook -g 1 \
-       -p team-a --interactive --service-type=loadbalancer --port 8888:8888
+    runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1 
+    
+(see: [use training](../Walkthroughs/walkthrough-train.md)).
+
+Use GPU Fractions
+
+    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
+
+(see: [use GPU fractions](../Walkthroughs/walkthrough-fractions.md)).
+
+
+Hyperparameter Optimization
+
+    runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
+        --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
+
+(see: [hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md)).
+
+Distributed Training
+
+    runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed 
+
+(see: [distribute training](../Walkthroughs/walkthrough-distributed-training.md)).
+
 
 ## Output
 
