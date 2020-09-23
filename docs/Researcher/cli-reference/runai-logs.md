@@ -4,17 +4,19 @@ Show the logs of a job
 
 ## Synopsis
 
-    runai logs job-name 
-        [--follow | -f] 
-        [--pod string | -p string] 
-        [--since duration] 
-        [--since-time date-time] 
-        [--tail int | -t int] 
-        [--timestamps]  
-        .
-        [--loglevel value] 
-        [--project string | -p string] 
-        [--help | -h]
+``` shell
+runai logs <job-name> 
+    [--follow | -f] 
+    [--pod string | -p string] 
+    [--since duration] 
+    [--since-time date-time] 
+    [--tail int | -t int] 
+    [--timestamps]  
+    
+    [--loglevel value] 
+    [--project string | -p string] 
+    [--help | -h]
+```
 
 ## Options
 

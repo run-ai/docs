@@ -10,10 +10,12 @@ Note that once you delete a job, its entire data will be gone:
 
 ## Synopsis
 
-    runai delete job-name 
-        [--loglevel value] 
-        [--project string | -p string] 
-        [--help | -h]
+``` shell
+runai delete <job-name> 
+    [--loglevel value] 
+    [--project string | -p string] 
+    [--help | -h]
+```
 
 ## Options
 

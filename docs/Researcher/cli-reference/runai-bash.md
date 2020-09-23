@@ -6,12 +6,14 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 
 ## Synopsis
 
-    runai bash job-name 
-        [--pod string]
-        .
-        [--loglevel value] 
-        [--project string | -p string] 
-        [--help | -h]
+``` shell
+runai bash job-name 
+    [--pod string]
+    
+    [--loglevel value] 
+    [--project string | -p string] 
+    [--help | -h]
+```
 
 ## Options
 

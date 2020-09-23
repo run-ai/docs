@@ -5,15 +5,15 @@ Show a list of available clusters
 
 ## Synopsis
 
-    runai set <cluster-name>
-        [--loglevel value] 
-        [--help | -h]
+``` shell
+runai cluster set <cluster-name>
+    [--loglevel value] 
+    [--help | -h]
 
-    
-    runai cluster list
-        .
-        [--loglevel value] 
-        [--help | -h]
+runai cluster list
+    [--loglevel value] 
+    [--help | -h]
+```
 
 ## Options
 

@@ -5,16 +5,17 @@ Show a list of available projects
 
 ## Synopsis
 
-    runai project set <project-name>
-        [--loglevel value] 
-        [--help | -h]
+``` shell
 
-    
-    runai project list
-        .
-        [--loglevel value] 
-        [--help | -h]
+runai project set <project-name>
+    [--loglevel value] 
+    [--help | -h]
 
+runai project list
+    [--loglevel value] 
+    [--help | -h]
+
+```
 ## Options
 
 <project-name\> the name of the project you want to set as default

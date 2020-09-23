@@ -4,41 +4,44 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 ## Synopsis
 
-    runai submit-mpi job-name  
-        [--always-pull-image] 
-        [--args stringArray] 
-        [--attach]
-        [--backoffLimit int] 
-        [--command stringArray] 
-        [--cpu double] 
-        [--cpu-limit double] 
-        [--create-home-dir]
-        [--environment stringArray | -e stringArray] 
-        [--gpu int | -g int] 
-        [--host-ipc] 
-        [--host-network] 
-        [--image string | -i string] 
-        [--interactive] 
-        [--large-shm] 
-        [--local-image] 
-        [--memory string] 
-        [--memory-limit string] 
-        [--node-type string] 
-        [--port stringArray] 
-        [--prevent-privilege-escalation]
-        [--processes int] 
-        [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
-        [--run-as-user]
-        [--stdin]
-        [--template string] 
-        [--tty]
-        [--volume stringArray | -v stringArray] 
-        [--working-dir]  
-        .
-        [--loglevel string] 
-        [--project string | -p string] 
-        [--help | -h]
+``` shell
 
+runai submit-mpi <job-name>  
+    [--always-pull-image] 
+    [--args stringArray] 
+    [--attach]
+    [--backoffLimit int] 
+    [--command stringArray] 
+    [--cpu double] 
+    [--cpu-limit double] 
+    [--create-home-dir]
+    [--environment stringArray | -e stringArray] 
+    [--gpu int | -g int] 
+    [--host-ipc] 
+    [--host-network] 
+    [--image string | -i string] 
+    [--interactive] 
+    [--large-shm] 
+    [--local-image] 
+    [--memory string] 
+    [--memory-limit string] 
+    [--node-type string] 
+    [--port stringArray] 
+    [--prevent-privilege-escalation]
+    [--processes int] 
+    [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
+    [--run-as-user]
+    [--stdin]
+    [--template string] 
+    [--tty]
+    [--volume stringArray | -v stringArray] 
+    [--working-dir]  
+    
+    [--loglevel string] 
+    [--project string | -p string] 
+    [--help | -h]
+    
+```
  Syntax notes:
 
 *   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.

@@ -4,13 +4,14 @@ Display details of a training job
 
 ## Synopsis
 
-    runai get job-name 
-        [--output value | -o value]  
-        .
-        [--loglevel value] 
-        [--project string | -p string] 
-        [--help | -h]
-
+``` shell
+runai get <job-name> 
+    [--output value | -o value]  
+    
+    [--loglevel value] 
+    [--project string | -p string] 
+    [--help | -h]
+```
 
 ## Options
 
