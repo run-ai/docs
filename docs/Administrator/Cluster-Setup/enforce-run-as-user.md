@@ -17,17 +17,20 @@ It is possible to set these flags as a __cluster-wide default__ for the Run:AI C
 
 Save the following in a file (cluster-config.yaml)
 
-    apiVersion: v1
-    data:
-      config: |
-        enforceRunAsUser: true
-        enforcePreventPrivilegeEscalation: true
-    kind: ConfigMap
-    metadata:
-      name: cluster-config
-      namespace: runai
-      labels:
-        runai/cluster-config: "true"
+``` yaml
+
+apiVersion: v1
+data:
+  config: |
+    enforceRunAsUser: true
+    enforcePreventPrivilegeEscalation: true
+kind: ConfigMap
+metadata:
+  name: cluster-config
+  namespace: runai
+  labels:
+    runai/cluster-config: "true"
+```
 
 Run:
 

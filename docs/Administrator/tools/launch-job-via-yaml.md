@@ -44,25 +44,26 @@ A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when c
 
 Copy the following into a file and change the parameters:
 
-    apiVersion: batch/v1
-    kind: Job
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: <JOB-NAME>
+spec:
+  template:
     metadata:
-      name: <JOB-NAME>
+      labels:
+        user: <USER-NAME>
     spec:
-      template:
-        metadata:
-          labels:
-            user: <USER-NAME>
-        spec:
-          containers:
-          - name: <JOB-NAME>
-            image: <IMAGE-NAME>
-            resources:
-              limits:
-                nvidia.com/gpu: <REQUESTED-GPUs>
-          restartPolicy: Never
-          schedulerName: runai-scheduler
-
+      containers:
+      - name: <JOB-NAME>
+        image: <IMAGE-NAME>
+        resources:
+          limits:
+            nvidia.com/gpu: <REQUESTED-GPUs>
+      restartPolicy: Never
+      schedulerName: runai-scheduler
+```
 
 
 Run:
@@ -79,35 +80,35 @@ to submit the job.
 
 A Build job is equivalent to using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Copy the following into a file and change the parameters:
 
-
-    apiVersion: apps/v1
-    kind: "StatefulSet"
+``` yaml
+apiVersion: apps/v1
+kind: "StatefulSet"
+metadata:
+  name:  <JOB-NAME>
+spec:
+  serviceName:  <JOB-NAME>
+  replicas: 1
+  selector:
+    matchLabels:
+      release:  <JOB-NAME>
+  template:
     metadata:
-      name:  <JOB-NAME>
+      labels:
+        user:  <USER-NAME>
+        release:  <JOB-NAME>
     spec:
-      serviceName:  <JOB-NAME>
-      replicas: 1
-      selector:
-        matchLabels:
-          release:  <JOB-NAME>
-      template:
-        metadata:
-          labels:
-            user:  <USER-NAME>
-            release:  <JOB-NAME>
-        spec:
-          schedulerName: runai-scheduler
-          containers:
-            - name:  <JOB-NAME>
-              command:
-              - "sleep"
-              args:
-              - "infinity"
-              image: <IMAGE-NAME>
-              resources:
-                limits:
-                  nvidia.com/gpu: <REQUESTED-GPUs>
-
+      schedulerName: runai-scheduler
+      containers:
+        - name:  <JOB-NAME>
+          command:
+          - "sleep"
+          args:
+          - "infinity"
+          image: <IMAGE-NAME>
+          resources:
+            limits:
+              nvidia.com/gpu: <REQUESTED-GPUs>
+```
 
 The YAML above contains a default command and arguments (``sleep --inifinty``) which you can replace.
 
@@ -122,16 +123,20 @@ to submit the job.
 
 Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
 
-    limits:
-      nvidia.com/gpu: <REQUESTED-GPUs>
+``` yaml
+limits:
+  nvidia.com/gpu: <REQUESTED-GPUs>
+```
 
 should be omitted and replaced with:
 
-    spec:
-      template:
-        metadata:
-          annotations:
-            gpu-fraction: "0.5"
+``` yaml
+spec:
+  template:
+    metadata:
+      annotations:
+        gpu-fraction: "0.5"
+```
 
 where "0.5" is the requested GPU fraction.
 

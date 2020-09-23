@@ -21,10 +21,12 @@ Before installing ingress, you must obtain an IP Address or an IP address range 
 
 A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a YAML file runai-operator.yaml and then applying it to Kubernetes. You must edit the YAML file. Search for _localLoadBalancer_
 
-    localLoadBalancer
-        enabled: true
-        ipRangeFrom: 10.0.2.1
-        ipRangeTo: 10.0.2.2
+``` yaml
+localLoadBalancer
+    enabled: true
+    ipRangeFrom: 10.0.2.1
+    ipRangeTo: 10.0.2.2
+```
 
 Set _enabled_ to true and set the IP range appropriately.
 

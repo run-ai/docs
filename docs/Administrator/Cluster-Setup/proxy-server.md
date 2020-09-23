@@ -14,12 +14,14 @@ The instructions below receive as input a certificate file from the organization
 
  A Run:AI cluster is installed by accessing the Administrator User Interface at  <a href="https://app.run.ai/" rel="noopener" target="_blank">app.run.ai</a>  downloading a YAML file  _runai-operator.yaml_ and then  _applying_  it to Kubernetes. You must edit the YAML file. Search for _httpProxy_
 
-    global:
-    httpProxy:
-        enabled: false
-        tlsCert: |-
-        -----BEGIN CERTIFICATE-----
-        <CERTIFICATE_CONTENTS>
-        -----END CERTIFICATE-----
+``` yaml
+global:
+httpProxy:
+    enabled: false
+    tlsCert: |-
+    -----BEGIN CERTIFICATE-----
+    <CERTIFICATE_CONTENTS>
+    -----END CERTIFICATE-----
+```
 
 Set _enabled_ to true and paste the contents of the certificate under _tlsCert_.

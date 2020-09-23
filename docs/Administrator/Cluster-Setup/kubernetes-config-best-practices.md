@@ -48,12 +48,15 @@ When configuring these variables alongside a third argument that is configured b
 
 To configure, edit the file _/etc/kubernetes/kubelet-config.yaml_ and add the following:
 
-    kubeReserved:
-      cpu: 100m
-      memory: 1G
-    systemReserved:
-      cpu: 100m
-      memory: 1G
+``` yaml
+kubeReserved:
+  cpu: 100m
+  memory: 1G
+systemReserved:
+  cpu: 100m
+  memory: 1G
+```
+
 
 ###  Eviction 
 
@@ -63,12 +66,16 @@ To configure, edit the file _/etc/kubernetes/kubelet-config.yaml_ and add the fo
 
  This enforcement is made by kubelet itself, and therefore less reliable, but it lowers the chance for resource issues on the node, and therefore recommended for use. To configure, please update the file  _/etc/kubernetes/kubelet-config.yaml_ with the following: 
 
-    evictionHard:
-      memory.available: "500Mi"
-      # Default value for evictionHard on kubelet
-      nodefs.available: "10%"
-      nodefs.inodesFree: "5%"
-      imagefs.available: "15%"
+``` yaml
+
+evictionHard:
+  memory.available: "500Mi"
+  # Default value for evictionHard on kubelet
+  nodefs.available: "10%"
+  nodefs.inodesFree: "5%"
+  imagefs.available: "15%"
+
+```
 
  Please note that specifying values for evictionHard will override the default values on kubelet which are of very high importance.
  For further reading please refer to <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/>.
