@@ -7,6 +7,8 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 ## Synopsis
 
     runai bash job-name 
+        [--pod string]
+        .
         [--loglevel value] 
         [--project string | -p string] 
         [--help | -h]
@@ -15,6 +17,8 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 
 <job-name\> the name of the job to run the command in
 
+--pod string
+> Specify a pod of a running job. To get a list of the pods of a specific job, run "runai get <job-name>" command
 
 ### Global Flags
 

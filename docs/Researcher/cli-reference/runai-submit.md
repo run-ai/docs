@@ -52,7 +52,7 @@ Submit a Run:AI job for execution
 
 <job-name\> - the name of the job.
 
-### Shortcuts
+### Aliases and Shortcuts
 
 --interactive
 >  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system
@@ -102,7 +102,7 @@ Submit a Run:AI job for execution
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
 -t, --tty
->  Allocate a TTY for the container.
+>  Allocate a pseudo-TTY
 
 --working-dir string
 >  Starts the container with the specified directory as the current directory.
@@ -208,7 +208,7 @@ Submit a Run:AI job for execution
 ### Access Control
 
 --create-home-dir
-> Create a temporary home directory for the user in the container.  Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 --prevent-privilege-escalation
 > Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).

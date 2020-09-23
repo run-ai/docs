@@ -6,7 +6,7 @@ Note that once you delete a job, its entire data will be gone:
 
 * You will no longer be able to enter it via bash.
 * You will no longer be able access logs.
-* Any data saved on the container and not stored on a shared repository will be lost.
+* Any data saved on the container and not stored on a shared location will be lost.
 
 ## Synopsis
 
@@ -20,15 +20,12 @@ Note that once you delete a job, its entire data will be gone:
 <job-name\> the name of the job to run the command in
 
 --loglevel (string)
-
 >  Set the logging level. One of: debug|info|warn|error (default "info")
 
 --project | -p (string)
-
 >  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
-
 >  Show help text
 
 ## Output

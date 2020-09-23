@@ -7,10 +7,12 @@ Submit a Distributed Training (MPI) Run:AI job for execution
     runai submit-mpi job-name  
         [--always-pull-image] 
         [--args stringArray] 
+        [--attach]
         [--backoffLimit int] 
         [--command stringArray] 
         [--cpu double] 
         [--cpu-limit double] 
+        [--create-home-dir]
         [--environment stringArray | -e stringArray] 
         [--gpu int | -g int] 
         [--host-ipc] 
@@ -22,10 +24,14 @@ Submit a Distributed Training (MPI) Run:AI job for execution
         [--memory string] 
         [--memory-limit string] 
         [--node-type string] 
+        [--port stringArray] 
         [--prevent-privilege-escalation]
         [--processes int] 
         [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
-        [--run-as-user] 
+        [--run-as-user]
+        [--stdin]
+        [--template string] 
+        [--tty]
         [--volume stringArray | -v stringArray] 
         [--working-dir]  
         .
@@ -50,6 +56,11 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 >  Arguments to pass to the command run on container start. Use together with ``--command``.   
 >  Example: ``--command sleep --args 10000`` 
 
+--attach                        
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
+
+> The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
+
 --backoffLimit int
  
 > The number of times the job will be retried before failing. Zero or larger. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
@@ -65,6 +76,9 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 --cpu-limit double
 
 > Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
+
+--create-home-dir
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 -e stringArray | --environment stringArray
 
@@ -116,6 +130,13 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 >  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md)
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
+--port stringArray
+>  Expose ports from the Job container. Used together with ``--service-type``.  
+>  Examples:  
+>    ``--port 8080:80 --service-type loadbalancer``
+
+>    ``--port 8080 --service-type ingress``
+
 --prevent-privilege-escalation
 
 > Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).
@@ -155,6 +176,15 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 --run-as-user
 
 >  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+
+--stdin
+>  Keep stdin open for the container(s) in the pod, even if nothing is attached.
+
+--template string
+>  Templates are currently not supported
+
+-t, --tty
+>  Allocate a pseudo-TTY
 
 --volume stringArray | -v stringArray
 

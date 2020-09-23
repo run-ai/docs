@@ -33,5 +33,5 @@ Show a list of available clusters
 
 ## Output
 
-With these two commands you can show a __list__ of available clusters as well as to be able to set a __tcurren__ cluster. The command internally changes the default Kubernetes cluster
+With these two commands you can show a __list__ of available clusters as well as to be able to set a __current__ cluster. The ``set`` command internally changes the default Kubernetes cluster
 

@@ -23,11 +23,9 @@ Note: to execute a bash command, you can also use the shorthand [runai bash](run
 <command\> the command itself (e.g. _bash_)
 
 --stdin | -i
-
 >  Keep STDIN open even if not attached
 
 --tty | -t
-
 >  Allocate a pseudo-TTY
 
 ### Global Flags
