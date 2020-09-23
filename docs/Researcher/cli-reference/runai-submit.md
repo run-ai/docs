@@ -118,7 +118,7 @@ runai submit <job-name>
 > Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
 --gpu double | -g double
-> Number of GPUs to allocation to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
+> Number of GPUs to allocate to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 --large-shm
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM
