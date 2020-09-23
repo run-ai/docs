@@ -17,7 +17,7 @@ runai submit <job-name>
     [--create-home-dir]
     [--elastic] 
     [--environment stringArray | -e stringArray] 
-    [--gpu int | -g int] 
+    [--gpu double | -g double] 
     [--host-ipc] 
     [--host-network] 
     [--image string | -i string] 
@@ -117,8 +117,8 @@ runai submit <job-name>
 --cpu-limit double
 > Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
---gpu int | -g int
-> Number of GPUs to allocation to the Job. The default is no allocated GPUs.
+--gpu double | -g double
+> Number of GPUs to allocation to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 --large-shm
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM

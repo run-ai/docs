@@ -29,17 +29,23 @@ To complete this walk-through you must have:
 
 *   At the command-line run:
 
-        runai project set team-a 
-        runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed 
+``` shell
+runai project set team-a 
+runai submit-mpi dist --processes=2 -g 1 \
+        -i gcr.io/run-ai-demo/quickstart-distributed 
+```
 
 *   We named the job _dist_
 *   The job is assigned to _team-a_
 *   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
 *   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed``. the image contains a startup script that runs a deep learning Horovod-based workload. The script runs the following _Horovod_ command:
 
-        horovodrun -np %RUNAI_MPI_NUM_WORKERS% python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
+``` shell
+horovodrun -np %RUNAI_MPI_NUM_WORKERS% \
+        python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
         --model=resnet20 --num_batches=1000000 --data_name cifar10  \
         --data_dir /cifar10 --batch_size=64 --variable_update=horovod
+```
 
 Where ``RUNAI_MPI_NUM_WORKERS`` is a Run:AI environment variable containing the number of worker processes provided to the runai submit-mpi command (in this example it's 2).
 

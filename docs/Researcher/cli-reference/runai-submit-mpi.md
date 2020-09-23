@@ -16,7 +16,7 @@ runai submit-mpi <job-name>
     [--cpu-limit double] 
     [--create-home-dir]
     [--environment stringArray | -e stringArray] 
-    [--gpu int | -g int] 
+    [--gpu double | -g double] 
     [--host-ipc] 
     [--host-network] 
     [--image string | -i string] 
@@ -86,9 +86,8 @@ runai submit-mpi <job-name>
 
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
 
---gpu int | -g int
-
->  Number of GPUs to allocate to the Job. The default is no GPUs.
+--gpu double | -g double
+> Number of GPUs to allocation to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 --host-ipc
 
