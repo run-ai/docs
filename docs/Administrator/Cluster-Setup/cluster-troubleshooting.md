@@ -138,7 +138,8 @@ And look for _default_ storage classes.
  
  Add the following lines under `spec`:
  
-      local-path-provisioner:
-         enabled: false
-      
+``` yaml
+local-path-provisioner:
+      enabled: false
+```
 

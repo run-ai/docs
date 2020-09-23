@@ -18,34 +18,38 @@ This step assumes that Docker is already installed on the machine. If not, pleas
 
 To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
 
-    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-    sudo apt-get update && sudo apt-get install -y nvidia-docker2
-    sudo pkill -SIGHUP dockerd
+``` shell
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update && sudo apt-get install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+```
 
 For RHEL-based distributions, see [nvidia-docker installation instructions](https://nvidia.github.io/nvidia-docker/), or run:
 
-    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
-    sudo yum install -y nvidia-docker2
-    sudo pkill -SIGHUP dockerd
-
+``` shell
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
+sudo yum install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+```
 
 ### Step 1.3: Make NVIDIA Docker the default docker runtime
 
 You will need to enable the Nvidia runtime as your default docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
 
-    {
-        "default-runtime": "nvidia",
-        "runtimes": {
-            "nvidia": {
-                "path": "/usr/bin/nvidia-container-runtime",
-                "runtimeArgs": []
-            }
+``` json
+{
+    "default-runtime": "nvidia",
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
         }
     }
-
+}
+```
 Then run the following again:
 
     sudo pkill -SIGHUP dockerd
