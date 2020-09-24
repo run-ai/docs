@@ -69,11 +69,9 @@ The following next steps assume that you have the Kubernetes command-line _kubec
 
 ### Step 2.2 Storage
 
-Run:AI is storaging data on a filesystem. How this storage is managed differs according to the customer environment and usage.
-
-If this installation is:
-*  for testing/proof-of-concept purposes, then a local storage on one of the nodes is enough.
-*  for production purposes, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on shared storage
+Run:AI is storing data on a filesystem. How this storage is configured differs according to the customer environment and usage:
+*  If the purpose of this installation is testing/proof-of-concept, then a local storage on one of the nodes is enough.
+*  If the purpose of this installation is production, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on __shared storage__
 
 By default, Run:AI installs on local storage. To verify that this is indeed the default, run:
 
@@ -112,8 +110,8 @@ The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``r
 
 * To allow access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers](allow-external-access-to-containers.md).
 * To allow outbound internet connectivity in a proxied environment. See: [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
-* To remove the Run:AI default Storage Class if a default storage class already exists. See: [remove default storage class](../cluster-troubleshooting/#internal-database-has-not-started).
-* To install on NFS, see: [Installing Run:AI over network file storage](nfs-install.md)
+* (See step 2.2) To remove the Run:AI default Storage Class when a default storage class already exists. See: [remove default storage class](../cluster-troubleshooting/#internal-database-has-not-started).
+* (See step 2.2) To install Run:AI on NFS, see: [Installing Run:AI over network file storage](nfs-install.md)
 
 ## Step 4: Verify your Installation
 
