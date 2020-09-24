@@ -37,7 +37,7 @@ runai submit <job-name>
     [--stdin]
     [--template string] 
     [--ttl-after-finish duration] 
-    [--tty]
+    [--tty | -t]
     [--volume stringArray | -v stringArray] 
     [--working-dir] 
     
@@ -50,6 +50,44 @@ runai submit <job-name>
 
 * Flags of type _stringArray_ mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
+
+## Examples
+
+All examples assume a Run:AI project has been set using ``runai project set <project-name>``.
+
+Start an interactive job:
+
+    runai submit build1 -i python -g 1 --interactive --command sleep --args infinity 
+
+(see: [build walk-through](../Walkthroughs/walkthrough-build.md)).
+
+Externalize ports:
+
+    runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
+        --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
+
+(see: [build walk-through with ports](../Walkthroughs/walkthrough-build-ports.md)).
+
+Start a Training job
+
+    runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1 
+    
+(see: [training walk-through](../Walkthroughs/walkthrough-train.md)).
+
+Use GPU Fractions
+
+    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
+
+(see: [GPU fractions walk-through](../Walkthroughs/walkthrough-fractions.md)).
+
+Hyperparameter Optimization
+
+    runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
+        --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
+
+(see: [hyperparameter optimization walk-through](../Walkthroughs/walkthrough-hpo.md)).
+
+
 ## Options
 
 <job-name\> - the name of the job.
@@ -57,7 +95,7 @@ runai submit <job-name>
 ### Aliases and Shortcuts
 
 --interactive
->  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system
+>  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
 
 --jupyter
 >  Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. 
@@ -67,16 +105,15 @@ runai submit <job-name>
 > ``runai submit jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
 
 --template string
->  Templates are currently not supported
+>  Templates are currently not supported.
 
 ### Container Related
 
 --always-pull-image stringArray
-
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start.
 
 --args stringArray
->  Arguments to pass to the command run on container start. Use together with ``--command``.  
+>  Arguments to pass to the command running on container start. Use together with ``--command``.  
 
 >  Example: ``--command script.py --args 10000`` 
 
@@ -89,7 +126,6 @@ runai submit <job-name>
 >  Command to run at container start. Use together with ``--args``.
 
 >  Example: ``--command script.py --args 10000`` 
-
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
@@ -104,7 +140,7 @@ runai submit <job-name>
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
 -t, --tty
->  Allocate a pseudo-TTY
+>  Allocate a pseudo-TTY.
 
 --working-dir string
 >  Starts the container with the specified directory as the current directory.
@@ -121,7 +157,7 @@ runai submit <job-name>
 > Number of GPUs to allocate to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 --large-shm
-> Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM
+> Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM.
 
 --memory string
 >  CPU memory to allocate for this job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
@@ -129,14 +165,13 @@ runai submit <job-name>
 --memory-limit string
 >  CPU memory to allocate for this job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
-
 ### Storage
 
 --pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
 
 --pvc `Pvc_Name:Container_Mount_Path:[ro]`
 
-> Mount a persistent volume claim of Network Attached Storage into a container
+> Mount a persistent volume claim of Network Attached Storage into a container.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 
@@ -169,14 +204,14 @@ runai submit <job-name>
 
 --host-ipc
 >  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
-> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack
+> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack.
 > 
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/")
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/").
 
 
 --host-network
->  Use the host's network stack inside the container
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/")
+>  Use the host's network stack inside the container.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/").
 
 
 --port stringArray
@@ -188,13 +223,13 @@ runai submit <job-name>
 
 --service-type string | -s string
 >  Service exposure method for interactive Job. Options are: ``portforward``, ``loadbalancer``, ``nodeport``, ingress.
->  Use the command runai list to obtain the endpoint to use the service when the job is running. Different service methods have different endpoint structure
+>  Use the command runai list to obtain the endpoint to use the service when the job is running. Different service methods have different endpoint structure.
 
 
 ### Job Lifecycle
 
 --backoffLimit int
-> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified)
+> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified).
 
 --completions int
 >  The number of successful pods required for this job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
@@ -204,7 +239,7 @@ runai submit <job-name>
 
 --ttl-after-finish duration
 >  Define the duration, post job finish, after which the job is automatically deleted (5s, 2m, 3h, etc).  
-> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md)
+> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md).
 
 
 ### Access Control
@@ -222,12 +257,11 @@ runai submit <job-name>
 ### Scheduling
 
 --elastic
-> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md)
+> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md).
 
 --node-type string
->  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md)
-> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
-
+>  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
 
 --preemptible
 >  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
@@ -236,61 +270,13 @@ runai submit <job-name>
 ### Global Flags
 
 --loglevel (string)
-
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug|info|warn|error (default "info").
 
 --project | -p (string)
-
 >  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
 
 --help | -h
-
->  Show help text
-
-## Examples
-
-All examples assume a Run:AI project has been set using ``runai project set <project-name>``
-
-Start an interactive job:
-
-    runai submit build1 -i python -g 1 --interactive --command sleep --args infinity 
-
-(see: [build walkthrough](../Walkthroughs/walkthrough-build.md)).
-
-Externalize ports:
-
-    runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-        --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
-
-(see: [build walkthrough with ports](../Walkthroughs/walkthrough-build-ports.md)).
-
-
-Start a Training job
-
-    runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1 
-    
-(see: [use training](../Walkthroughs/walkthrough-train.md)).
-
-Use GPU Fractions
-
-    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
-
-(see: [use GPU fractions](../Walkthroughs/walkthrough-fractions.md)).
-
-
-Hyperparameter Optimization
-
-    runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-        --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
-
-(see: [hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md)).
-
-Distributed Training
-
-    runai submit-mpi dist --processes=2 -g 1 -i gcr.io/run-ai-demo/quickstart-distributed 
-
-(see: [distribute training](../Walkthroughs/walkthrough-distributed-training.md)).
-
+>  Show help text.
 
 ## Output
 
