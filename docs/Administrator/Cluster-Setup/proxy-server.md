@@ -12,16 +12,16 @@ In-case the certificate is not trusted (or is a self-signed certificate), this c
 
 The instructions below receive as input a certificate file from the organization and deploy it into the Run:AI cluster so that traffic originating in Run:AI will recognize the organizational proxy server.
 
- A Run:AI cluster is installed by accessing the Administrator User Interface at  <a href="https://app.run.ai/" rel="noopener" target="_blank">app.run.ai</a>  downloading a YAML file  _runai-operator.yaml_ and then  _applying_  it to Kubernetes. You must edit the YAML file. Search for _httpProxy_
+The Run:AI cluster installation is performed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai/) downloading a YAML file ``runai-operator.yaml`` and then applying it to Kubernetes. You must edit the YAML file. Search for _httpProxy_
 
 ``` yaml
 global:
-httpProxy:
-    enabled: false
-    tlsCert: |-
-    -----BEGIN CERTIFICATE-----
-    <CERTIFICATE_CONTENTS>
-    -----END CERTIFICATE-----
+    httpProxy:
+        enabled: false
+        tlsCert: |-
+        -----BEGIN CERTIFICATE-----
+        <CERTIFICATE_CONTENTS>
+        -----END CERTIFICATE-----
 ```
 
 Set _enabled_ to true and paste the contents of the certificate under _tlsCert_.
