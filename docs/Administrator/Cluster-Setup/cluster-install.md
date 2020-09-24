@@ -67,13 +67,21 @@ Some best practices on Kubernetes Configuration can be found here: [Kubernetes C
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
 
-### Step 2.2 Default Storage Class
+### Step 2.2 Storage
 
-Find out if you have a _default_ storage class by running
+Run:AI is storaging data on a filesystem. How this storage is managed differs according to the customer environment and usage.
+
+If this installation is:
+*  for testing/proof-of-concept purposes, then a local storage on one of the nodes is enough.
+*  for production purposes, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on shared storage
+
+By default, Run:AI installs on local storage. To verify that this is indeed the default, run:
 
     kubectl get storageclass
 
 If the output list contains a __default__ storage class you must, in step 3.2 below, remove the Run:AI default storage class.
+
+To install on shared storage, you must, in step 3.2 below, provide information about your NFS (Network File Storage).
 
 ### Step 2.3 Label CPU-Only Worker Nodes
 
@@ -103,8 +111,9 @@ Where ``<node-name>`` is the name of the node. Node names can be obtained by run
 The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
 
 * To allow access to containers (e.g. for Jupyter Notebooks, PyCharm etc) you will need to add an ingress load-balancing point. See: [Exposing Ports from Researcher Containers](allow-external-access-to-containers.md).
-* To allow outbound internet connectivity in a proxied environment. See: [Installing Run AI with an Internet Proxy Server](proxy-server.md).
+* To allow outbound internet connectivity in a proxied environment. See: [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
 * To remove the Run:AI default Storage Class if a default storage class already exists. See: [remove default storage class](../cluster-troubleshooting/#internal-database-has-not-started).
+* To install on NFS, see: [Installing Run:AI over network file storage](nfs-install.md)
 
 ## Step 4: Verify your Installation
 
