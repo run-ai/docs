@@ -17,4 +17,7 @@ nfs:
     path: /path/to/folder
 ``` 
 
-Set ``enabled`` to true and provide the NFS IP Address and an __existing__ folder that Run:AI can use. 
+
+* Set ``enabled`` to true 
+* Provide the  IP Address for the NFS server 
+* Provide a path to an __existing__ folder that Run:AI can use. 
