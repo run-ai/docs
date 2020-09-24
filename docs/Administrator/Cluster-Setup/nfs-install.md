@@ -2,11 +2,13 @@
 
 ## Introduction
 
-Run:AI is storaging data on a filesystem. How this storage is managed differs according to the customer environment and usage.
+Run:AI is storing data on a filesystem. How this storage is configured differs according to the customer environment and usage:
 
-When the installation is for production purposes, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on shared storage
+When the purpose of the installation is a production environment, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on shared storage
 
-The Run:AI cluster installation is performed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai/) downloading a YAML file ``runai-operator.yaml`` and then applying it to Kubernetes. You must edit the YAML file. Search for _nfs_
+The Run:AI cluster installation is performed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai/) downloading a YAML file ``runai-operator.yaml`` and then applying it to Kubernetes. You must edit the YAML file before applying it to Kubernetes. 
+
+Search for ``nfs``:
 
 ``` yaml
 nfs:
@@ -15,4 +17,4 @@ nfs:
     path: /path/to/folder
 ``` 
 
-Set _enabled_ to true and provide the NFS IP Address and an __existing__ folder that Run:AI can use. 
+Set ``enabled`` to true and provide the NFS IP Address and an __existing__ folder that Run:AI can use. 

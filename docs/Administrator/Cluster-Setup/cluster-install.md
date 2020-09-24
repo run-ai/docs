@@ -70,8 +70,9 @@ The following next steps assume that you have the Kubernetes command-line _kubec
 ### Step 2.2 Storage
 
 Run:AI is storing data on a filesystem. How this storage is configured differs according to the customer environment and usage:
+
 *  If the purpose of this installation is testing/proof-of-concept, then a local storage on one of the nodes is enough.
-*  If the purpose of this installation is production, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on __shared storage__
+*  If the purpose of this installation is a production environment, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on __shared storage__.
 
 By default, Run:AI installs on local storage. To verify that this is indeed the default, run:
 
