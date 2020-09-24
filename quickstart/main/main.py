@@ -48,13 +48,14 @@ print("Batch size: %d" % runai.elastic.batch_size)
 REPORTER = False
 
 try:
-    import runai.reporter
-    import runai.reporter.keras
+    if os.getenv("RUNAI_REPORT") == "1":
+        import runai.reporter
+        import runai.reporter.keras
 
-    if "reporterGatewayURL" in os.environ and "podUUID" in os.environ:
-        print("Using Run:AI k8s reporting mechanism")
-        runai.reporter.keras.autolog()
-        REPORTER = True
+        if "reporterGatewayURL" in os.environ and "podUUID" in os.environ:
+            print("Using Run:AI k8s reporting mechanism")
+            runai.reporter.keras.autolog()
+            REPORTER = True
 except ImportError: pass
 
 def resize_images(src, shape):
