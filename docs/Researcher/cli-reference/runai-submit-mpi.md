@@ -53,7 +53,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
         -i gcr.io/run-ai-demo/quickstart-distributed 
 
 
-(see: [distribute training walk-through](../Walkthroughs/walkthrough-distributed-training.md)).
+(see: [distributed training walk-through](../Walkthroughs/walkthrough-distributed-training.md)).
 
 
 ## Options
