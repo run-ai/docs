@@ -69,7 +69,7 @@ RUN mkdir /tmp/openmpi && \
 # Install Horovod, temporarily using CUDA stubs
 RUN ldconfig /usr/local/cuda/targets/x86_64-linux/lib/stubs && \
     HOROVOD_GPU_ALLREDUCE=NCCL HOROVOD_WITH_TENSORFLOW=1 \
-         pip install --no-cache-dir horovod && \
+         pip install --no-cache-dir horovod==0.19.5 && \
     ldconfig
 
 # Install OpenSSH for MPI to communicate between containers
@@ -82,9 +82,9 @@ RUN pip install runai prometheus_client==0.7.1
 # quick start demo
 RUN mkdir /workload
 
-COPY ./main.py /workload/
-COPY ./entrypoint.sh /workload/
 COPY ./cifar-10 /workload/cifar-10
+COPY ./entrypoint.sh /workload/
+COPY ./main.py /workload/
 
 WORKDIR /workload
 ENTRYPOINT ["./entrypoint.sh"]
