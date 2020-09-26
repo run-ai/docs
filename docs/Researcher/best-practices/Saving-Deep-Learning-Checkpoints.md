@@ -20,7 +20,7 @@ It is a best practice to save checkpoints at intervals. For example, every epoch
 
 ### Save on Exit Signal
 
-If periodic checkpoints are not enough, you can use a_ signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
+If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
 
 
     import signal

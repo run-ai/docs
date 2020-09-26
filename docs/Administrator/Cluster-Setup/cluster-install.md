@@ -1,20 +1,21 @@
-The following are instructions on how to install Run:AI on the customer's Kubernetes Cluster. Before installation please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md).
+Below are instructions on how to install Run:AI cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 
 ## Step 1: NVIDIA
 
-On __each machine__ with GPUs run the following steps 1.1 - 1.3:
+On __each machine__ with GPUs run the following steps 1.1 - 1.4:
 
 ### Step 1.1 Install NVIDIA Drivers
 
-If NVIDIA drivers are not already installed on your GPU machines, please install them now. Note that on original NVIDIA hardware, these drivers are already installed by default. 
-After installing NVIDIA drivers, reboot the machine. Then verify that the installation succeeded by running:
+If NVIDIA drivers are not already installed on your GPU machines, please install them now. After installing NVIDIA drivers, reboot the machine. Then verify that the installation succeeded by running:
 
     nvidia-smi
 
-### Step 1.2: Install NVIDIA Docker
+### Step 1.2: Install Docker
 
-This step assumes that Docker is already installed on the machine. If not, please install using [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+Install Docker by following the steps here: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+
+### Step 1.3: Install NVIDIA Docker
 
 To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
 
@@ -26,7 +27,7 @@ sudo apt-get update && sudo apt-get install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
 
-For RHEL-based distributions, see [nvidia-docker installation instructions](https://nvidia.github.io/nvidia-docker/), or run:
+For RHEL-based distributions, run:
 
 ``` shell
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -35,9 +36,11 @@ sudo yum install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
 
-### Step 1.3: Make NVIDIA Docker the default docker runtime
+For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/).
 
-You will need to enable the Nvidia runtime as your default docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
+### Step 1.4: Make NVIDIA Docker the default docker runtime
+
+Set the NVIDIA runtime as the default Docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
 
 ``` json
 {
@@ -59,36 +62,37 @@ Then run the following again:
 
 ### Step 2.1 Install Kubernetes
 
-Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend Kubespray [https://kubespray.io/](https://kubespray.io/#/) . Download the latest __stable__ version from  : [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
+Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/). Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
 
-__Note__: Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
+!!! Note
+    Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
 
-Some best practices on Kubernetes Configuration can be found here: [Kubernetes Cluster Configuration Best Practices](kubernetes-config-best-practices.md).
+Some best practices on Kubernetes configuration can be found here: [Kubernetes Cluster Configuration Best Practices](kubernetes-config-best-practices.md).
 
-The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to the Kubernetes cluster.
+The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to a functioning Kubernetes cluster.
 
 ### Step 2.2 Storage
 
-Run:AI is storing data on a filesystem. How this storage is configured differs according to the customer environment and usage:
+Run:AI requires some storage for functioning. How this storage is configured differs based on intended usage:
 
-*  If the purpose of this installation is testing/proof-of-concept, then a local storage on one of the nodes is enough.
-*  If the purpose of this installation is a production environment, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this, the storage has to reside on __shared storage__.
+*  If the purpose of this installation is testing/proof-of-concept, then local storage on one of the nodes is good enough.  
+*  If the purpose of this installation is a production environment, then it is a good practice to setup the system such that if one node is down, the Run:AI software will seamlessly migrate to another node. For this to happen, the storage has to reside on __shared storage__.
 
-By default, Run:AI installs on local storage. To verify that this is indeed the default, run:
+To install Run:AI on local storage, first run:
 
     kubectl get storageclass
 
-If the output list contains a __default__ storage class you must, in step 3.2 below, remove the Run:AI default storage class.
+If the output contains a __default__ storage class you must, in step 3.2 below, remove the Run:AI default storage class.
 
 To install on shared storage, you must, in step 3.2 below, provide information about your NFS (Network File Storage).
 
-### Step 2.3 Label CPU-Only Worker Nodes
+### Step 2.3 CPU-Only Worker Nodes
 
-If you have CPU-only worker nodes (non-master) in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To get the list of nodes, run:
+If you have CPU-only worker (non-master) nodes in your cluster (see [Hardware Requirements](../Run-AI-GPU-Cluster-Prerequisites/#hardware-requirements)), you will need to _label_ them. Labels help Run:AI to place its software correctly, by __avoiding__ placement of Run:AI containers on GPU nodes used for processing data science and by __placing__ monitoring software on the GPU nodes. To get the list of nodes, run:
 
     kubectl get nodes
 
-To label CPU-only nodes, run the following on each CPU-only node:
+To label CPU-only nodes, run the following on __each__ CPU-only node:
 
     kubectl label node <node-name> run.ai/cpu-node=true
 
@@ -102,8 +106,10 @@ Where ``<node-name>`` is the name of the node. Node names can be obtained by run
 ### Step 3.1: Install Run:AI
 
 *   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support to log in to the system.
-*   If this is the first time anyone from your company has logged in, you will receive a dialog with instructions on how to install Run:AI on your Kubernetes Cluster.
-*   If not, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". Continue according to UI instructions to install Run:AI on your Kubernetes Cluster. Take care to read the next section (Customize Installation) before proceeding to apply the file you download during the process.
+*   If no clusters are configured, you will receive a dialog with instructions on how to install a Run:AI cluster.
+*   If a cluster is already configured, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". 
+
+Take care to read the next section (Customize Installation) before proceeding.
 
 ### Step 3.2: Customize Installation
 
