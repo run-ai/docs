@@ -20,4 +20,4 @@ nfs:
 
 * Set ``enabled`` to true 
 * Provide the  IP Address for the NFS server 
-* Provide a path to an __existing__ folder that Run:AI can use. 
+* Provide a path to an __existing__ folder that Run:AI can use. The folder should have read, write and execute instructions for all (chmod 777 <folder-name>).
