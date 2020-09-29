@@ -77,9 +77,6 @@ sudo dpkg -i transfer/deb/kubelet/*
 sudo dpkg -i transfer/deb/kubeadm/*
 swapoff -a
 ```
-Disable swap for good:
-1. Edit the file /etc/fstab
-2. Comment any swap entry
 
 Replace the following command with the one saved from the init command above:
 
