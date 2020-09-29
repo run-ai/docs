@@ -88,21 +88,4 @@ sudo kubeadm join 10.0.0.3:6443 --token 7wo4nf.ojpxltg7wbf7pqgj \
     --discovery-token-ca-cert-hash sha256:f4f481eba0d6a094d092a956f9d0bbd4e316211212bd58f445665e3fced399e3
 ```
 
-### GPU Workers
 
-In __addition__ to the above section, do the following to install NVIDIA Docker __after__ installing Docker
-
-```
-sudo dpkg -i transfer/deb/nvidia-docker2/*
-sudo vi /etc/docker/daemon.json
-```
-
-Add the following configuration to the file:
-
-```
-"default-runtime": "nvidia",
-```
-Now restart docker:
-```
-sudo systemctl restart docker
-```
