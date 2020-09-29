@@ -5,7 +5,7 @@
 Run:AI allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
 To achieve this flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
 
-Unattended workloads are good for long-duration runs, or sets of smaller hyperparameter optmization runs.
+Unattended workloads are good for long-duration runs, or sets of smaller hyperparameter optimization runs.
 
 ## Best Practices
 
