@@ -49,6 +49,14 @@ sudo chown $(id -u):$(id -g) .kube/config
 kubectl apply -f transfer/kube-flannel.yml
 ```
 
+Test that Kubernetes is up and running:
+
+```
+kubectl get nodes
+```
+See that the master is ready
+
+
 ### Run on Kubernetes Workers 
 
 
