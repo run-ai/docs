@@ -11,7 +11,7 @@
 ### Run on Master Node (only)
 
 ```
-tar xvf transfer.tar
+tar xvf k8s.tar
 ```
 
 If docker is not installed:
