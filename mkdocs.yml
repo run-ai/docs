@@ -136,7 +136,7 @@ nav:
       - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/Saving-Deep-Learning-Checkpoints.md'
-      - 'Identifying a Job from Container' : 'Researcher/best-practices/env-variables.md'
+      - 'Identify a Job from within Container' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
