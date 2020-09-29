@@ -54,7 +54,7 @@ kubectl apply -f transfer/kube-flannel.yml
 
 
 ```
-tar xvf transfer.tar
+tar xvf k8s.tar
 ```
 
 If docker is not installed:
