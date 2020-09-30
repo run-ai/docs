@@ -102,7 +102,6 @@ nav:
     - 'Tools' :
       - 'Submit workloads via YAML' : 'Administrator/tools/launch-job-via-yaml.md'
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
-      - 'Work with Visual Studio Code' : 'Administrator/tools/dev-vscode.md'    
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Walkthroughs' :
@@ -149,4 +148,7 @@ nav:
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Presentations' :
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
+    - 'Tools' :
+      - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
+      
 

@@ -3,8 +3,8 @@
 ## Prerequisites:
 
 * All machines use Ubuntu 18.04
-* NVDIA Drivers are installed for machines with GPUs.
-* tar file containing Kubernetes artifcats
+* NVIDIA Drivers are installed for machines with GPUs.
+* tar file containing Kubernetes artifacts
 
 
 

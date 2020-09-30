@@ -1,6 +1,6 @@
 # Use Visual Studio Code to work with a Run:AI Job
 
-Once you launch a workload using Run:AI, you will want to connect to it. You can do so via command-line or via other tools such as a [Jupyter Notebook](../../Researcher/Walkthroughs/walkthrough-build-ports.md)
+Once you launch a workload using Run:AI, you will want to connect to it. You can do so via command-line or via other tools such as a [Jupyter Notebook](../Walkthroughs/walkthrough-build-ports.md)
 
 This document is about accessing the remote container created by Run:AI, from [Visual Studio Code](https://code.visualstudio.com/). 
 

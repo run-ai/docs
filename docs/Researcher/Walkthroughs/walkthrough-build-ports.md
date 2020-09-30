@@ -80,4 +80,4 @@ You will see the service URL with which to access the Jupyter notebook
 
 ## See Also
 
-Develop on Run:AI using [Visual Studio Code](../../Administrator/tools/dev-vscode.md)
+Develop on Run:AI using [Visual Studio Code](../tools/dev-vscode.md)
