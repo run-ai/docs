@@ -21,3 +21,25 @@ To find the current version of the Run:AI cluster, run:
 
     kubectl get deployment runai-operator -n runai -o jsonpath='{.spec.template.spec.containers[0].image}'
 
+
+## Upgrade from older versions
+
+If you are upgrading from version 1.0.56 or lower, you must first apply the following YAML:
+```
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+    name: runaijobs.run.ai
+spec:
+    group: run.ai
+    version: v1
+    scope: Namespaced
+    names:
+        plural:  runaijobs
+        singular: runaijob
+        kind: RunaiJob
+        shortNames:
+        - rj
+    subresources:
+        status: {}
+```

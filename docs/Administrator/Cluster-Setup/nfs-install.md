@@ -11,10 +11,13 @@ The Run:AI cluster installation is performed by accessing the Administrator User
 Search for ``nfs``:
 
 ``` yaml
-nfs:
-    enabled: true
-    server: <IP-address>
-    path: /path/to/folder
+  nfs-client-provisioner:
+    nfs:
+      server:  <IP-address>
+      path: /path/to/folder
+  global:
+    nfs:
+      enabled: true
 ``` 
 
 
