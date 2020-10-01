@@ -28,7 +28,7 @@ else:
     strategy = runai.hpo.Strategy.GridSearch
 
 # initialize the Run:AI HPO assistance library
-subdir = '%s_%s' % (os.getenv('workloadName', 'hpo'), os.getenv('jobUUID', datetime.datetime.now().strftime('%d_%m_%Y__%H_%M_%S')))
+subdir = '%s_%s' % (os.getenv('jobName', 'hpo'), os.getenv('jobUUID', datetime.datetime.now().strftime('%d_%m_%Y__%H_%M_%S')))
 runai.hpo.init(hpo_dir, subdir=subdir)
 
 # pick a configuration for this HPO experiment
