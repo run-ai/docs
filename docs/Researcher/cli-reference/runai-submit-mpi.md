@@ -49,7 +49,7 @@ runai submit-mpi <job-name>
 
 start an unattended mpi training job of name dist1, based on project _team-a_ using a _quickstart-distributed_ image:
 
-    runai submit-mpi dist1 --num-processes=2 -g 1 \
+    runai submit-mpi dist1 --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed 
 
 
