@@ -84,6 +84,7 @@ nav:
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
         - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
         - 'Configure NFS' : 'Administrator/Cluster-Setup/nfs-install.md'
+        - 'Node Downtime' : 'Administrator/Cluster-Setup/node-downtime.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
