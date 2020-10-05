@@ -5,7 +5,7 @@ google_analytics:
   - UA-122651141-1
   - auto
 
-#repo_url: https://github.com/run-ai/docs/
+repo_url: https://github.com/run-ai/docs/
 
 
 docs_dir: docs
