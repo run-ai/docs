@@ -6,7 +6,7 @@ Nodes (Machines) that are part of the cluster are susceptible to occasional down
 
 The purpose of this document is to provide a process for retaining the Run:AI service during and after the downtime. The document differentiates between CPU-Only Worker Nodes and  GPU Worker Nodes:
 
-* __CPU-Only Worker Nodes__ - In a production installation Run:AI software runs on one or more [CPU-only Worker Nodes](cluster-prerequisites.md/#hardware-requirements) on which the Run:AI software runs. 
+* __CPU-Only Worker Nodes__ - In a production installation Run:AI software runs on one or more [CPU-only Worker Nodes](../cluster-prerequisites.md/#hardware-requirements) on which the Run:AI software runs. 
 
 * __GPU Worker Nodes__ are where Machine Learning workloads run. Run:AI only runs monitoring services on these nodes. This monitoring services recover automatically. 
 
