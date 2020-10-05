@@ -1,4 +1,4 @@
-# Run:AI Product Documentation
+# Run:AI Documentation Library
 
 Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/) on the run.ai website
 
@@ -9,7 +9,7 @@ The Run:AI documentation is targeting two personas:
 
 * Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
 
-# Example Docker Images
+## Example Docker Images
 
 Code for the Docker images referred to in these docs is available [here](https://github.com/run-ai/docs/tree/master/quickstart).
 
