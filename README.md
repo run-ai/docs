@@ -2,7 +2,7 @@
 
 Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/) on the run.ai website
 
-This documentation is based on [mkdocs](https://www.mkdocs.org/). To view this library as a website go to [docs.run.ai][https://docs.run.ai]. 
+This documentation is based on [mkdocs](https://www.mkdocs.org/). To view the library as a website go to [docs.run.ai](https://docs.run.ai). 
 
 
 The Run:AI documentation is targeting two personas:
