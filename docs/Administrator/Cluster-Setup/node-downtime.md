@@ -19,7 +19,7 @@ Some of the Run:AI services use disk storage. A key to successful node recovery 
 
 Before stopping a node, perform the following: 
 
-* Stop the Kubernetes scheduler from staring __new__ workloads on the node:
+* Stop the Kubernetes scheduler from starting __new__ workloads on the node:
 
         kubectl cordon <node-name>
 
