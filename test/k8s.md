@@ -70,10 +70,7 @@ Restart the docker service:
 
 `sudo systemctl restart docker`
 
-Load all docker images:
-```
-ls -1 transfer/kube-images/*.tar | xargs --no-run-if-empty -L 1 sudo docker load -i
-```
+
 Install k8s:
 ```
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
