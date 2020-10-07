@@ -12,6 +12,9 @@
 
 Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
 
+Restart the docker service:
+
+`sudo systemctl restart docker`
 
 
 Install k8s:
@@ -65,6 +68,9 @@ tar xvf k8s.tar
 
 Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
 
+Restart the docker service:
+
+`sudo systemctl restart docker`
 
 Load all docker images:
 ```
