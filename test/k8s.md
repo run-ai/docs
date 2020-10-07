@@ -47,7 +47,8 @@ mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
 sudo chown $(id -u):$(id -g) .kube/config
 
-kubectl apply -f transfer/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
 ```
 
 Test that Kubernetes is up and running:
@@ -62,9 +63,6 @@ See that the master is ready
 
 
 
-```
-tar xvf k8s.tar
-```
 
 Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
 
