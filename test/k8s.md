@@ -62,10 +62,9 @@ See that the master is ready
 tar xvf k8s.tar
 ```
 
-If docker is not installed:
-```
-sudo dpkg -i transfer/deb/docker.io/*
-```
+Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
+
+
 Load all docker images:
 ```
 ls -1 transfer/kube-images/*.tar | xargs --no-run-if-empty -L 1 sudo docker load -i
