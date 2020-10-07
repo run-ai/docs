@@ -32,9 +32,9 @@ sudo dpkg -i transfer/deb/kubeadm/*
 swapoff -a
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 ```
-Disable swap for good:
+Permanently disable swap:
 1. Edit the file /etc/fstab
-2. Comment any swap entry
+2. Comment out any swap entry
 
 Save the output of the init command.
 
