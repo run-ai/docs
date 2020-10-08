@@ -2,24 +2,33 @@
 
 ## Motivation
 
-There may be use cases where your container may need to uniquely identify the job it is currently running in. A typical use case is for saving job artifacts under a unique name. 
+There may be use cases where your container may need to uniquely identify the Job it is currently running in. A typical use case is for saving job artifacts under a unique name. 
 
-Run:AI provides environment variables you can use. These variables are guaranteed to be unique even if the job is preempted or evicted and then runs again. 
+Run:AI provides environment variables you can use. These variables are guaranteed to be unique even if the Job is preempted or evicted and then runs again. 
 
-## Identifying your Job
+## Identifying a Job
 
 Run:AI provides the following environment variables:
 
-* ``jobName`` - the name of the job
-* ``jobUUID`` - a unique identifier for the job. 
+* ``JOB_NAME`` - the name of the Job.
+* ``JOB_UUID`` - a unique identifier for the Job. 
 
-Note that the job can be deleted and then recreated with the same name. A job UUID will be different even if the job names are the same.
+Note that the job can be deleted and then recreated with the same name. A job UUID will be different even if the Job names are the same.
+
+
+## Identifying a Pod 
+
+With [Hyperparameter Optimization](../Walkthroughs/walkthrough-hpo.md), experiments are run as _Pods_ within the Job. Run:AI provides the following environment variables to identify the Pod.
+
+* ``POD_INDEX`` -  An index number (1, 2, 3....) for a specific Pod within the Job. This is useful for Hyperparameter Optimization to allow easy mapping to individual experiments.  
+* ``POD_UUID`` - a unique identifier for the Pod
+
 
 ## Usage Example in Python
 
 ``` python
 import os
 
-jobUUID = os.environ['jobUUID']
-jobName = os.environ['jobName']
+jobName = os.environ['JOB_NAME']
+jobUUID = os.environ['JOB_UUID']
 ```
