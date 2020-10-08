@@ -1,4 +1,4 @@
-# Walk-through: Launch Distributed Training Workloads
+# Quickstart: Launch Distributed Training Workloads
 
 ## Introduction
 
@@ -6,16 +6,16 @@ Distributed Training is the ability to split the training of a model among multi
 
 Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. There are a number of Deep Learning frameworks that support Distributed Training. Horovod (<https://eng.uber.com/horovod/>) is a good example.
 
-Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a walk-through of such a scenario.
+Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart of such a scenario.
 
 ## Prerequisites
 
-To complete this walk-through you must have:
+To complete this Quickstart you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 
-## Step by Step Walk-through
+## Step by Step Quickstart
 
 ### Setup
 
@@ -93,5 +93,5 @@ This will provide shell access to the launcher process. From there, you can run 
 
 ## See Also
 
-*   The source code of the image used in the walk-through in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed)
+*   The source code of the image used in the Quickstart in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed)
 *   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../cli-reference/runai-submit-mpi.md)

@@ -1,10 +1,10 @@
-# Walk-through: Queue Fairness
+# Quickstart: Queue Fairness
 
 ## Goal
 
-The goal of this walk-through is to explain __fairness__. The [over-quota walk-through](walkthrough-overquota.md) shows basic fairness where allocated GPUs per project are adhered to such that if a project is in over-quota, its job will be preempted once another project requires its resources.
+The goal of this Quickstart is to explain __fairness__. The [over-quota Quickstart](walkthrough-overquota.md) shows basic fairness where allocated GPUs per project are adhered to such that if a project is in over-quota, its job will be preempted once another project requires its resources.
 
-This walk-through is about __queue fairness__. It shows that jobs will be scheduled fairly regardless of the time they have been submitted. As such, if a person in project A has submitted 50 jobs and soon after that, a person in project B has submitted 25 jobs, the jobs in the queue will be processed fairly.
+This Quickstart is about __queue fairness__. It shows that jobs will be scheduled fairly regardless of the time they have been submitted. As such, if a person in project A has submitted 50 jobs and soon after that, a person in project B has submitted 25 jobs, the jobs in the queue will be processed fairly.
 
 
 ## Setup and configuration:

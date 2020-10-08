@@ -79,4 +79,4 @@ runai.hpo.report(epoch=5, metrics={ 'accuracy': 0.87 })
 
 ## See Also
 
-See hyperparameter Optimization [Walk-through](../Walkthroughs/walkthrough-hpo.md)
+See hyperparameter Optimization [Quickstart](../Walkthroughs/walkthrough-hpo.md)

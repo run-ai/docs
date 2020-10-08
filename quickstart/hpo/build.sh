@@ -10,4 +10,4 @@ if [ ! -d "./cifar-10-batches-py" ]; then
     tar zxf cifar-10-batches-py.tar.gz
 fi
 
-docker build -f Dockerfile -t gcr.io/run-ai-demo/quickstart-hpo .
+docker build -f Dockerfile -t gcr.io/run-ai-demo/walkthrough-hpo .

@@ -5,7 +5,7 @@ This is an example of how to run hyperparameter tuning on a Run:AI cluster with 
 We use master.py to launch pods on the Run:AI cluster. Each pod downloads and runs remote.sh and remote.py, connecting to the SigOpt platform to extract a set of hyperparameters to evaluate through model training. When training ends, each pod reconnects to the SigOpt platform to report back the results. 
 
 ## Usage
-Follow the Run:AI walkthrough to [launch training workloads](https://docs.run.ai/Researcher/Walkthroughs/walkthrough-train/) on a Run:AI cluster.
+Follow the Run:AI quickstart to [launch training workloads](https://docs.run.ai/Researcher/Walkthroughs/walkthrough-train/) on a Run:AI cluster.
 
 Plug in your SigOpt client token to master.py and remote.py.
 

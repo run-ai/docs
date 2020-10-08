@@ -1,4 +1,4 @@
-# Walk-through: Hyperparameter Optimization
+# Quickstart: Hyperparameter Optimization
 
 ## Introduction
 
@@ -8,16 +8,16 @@ To search for good hyperparameters, Researchers typically start a series of smal
 
 There are a number of strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the later does an exhaustive search from a list of pre-selected values.
 
-Run:AI provides the ability to run, manage, and view HPO runs. The following is a walk-through of such a scenario.
+Run:AI provides the ability to run, manage, and view HPO runs. The following is a Quickstart of such a scenario.
 
 ## Prerequisites
 
-To complete this walk-through you must have:
+To complete this Quickstart you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 
-## Step by Step Walk-through
+## Step by Step Quickstart
 
 ### Setup
 
@@ -38,7 +38,7 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Walk-through code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo). The code uses the [Run:AI Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
+The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo). The code uses the [Run:AI Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
 
 
         # import Run:AI HPO library
@@ -70,14 +70,14 @@ The Walk-through code can be found in [github.com/run-ai/docs](https://github.co
 *   At the command-line run:
 
         runai project set team-a 
-        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
+        runai submit hpo1 -i gcr.io/run-ai-demo/walkthrough-hpo -g 1 \
                 --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
 *   The job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
 *   At most, there will be 3 pods running concurrently (_--parallelism 3_)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
+*   The job is based on a sample docker image ``gcr.io/run-ai-demo/walkthrough-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
 *   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/hpo``. The running pods will use the directory to sync hyperparameters and save results.
 
 

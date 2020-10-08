@@ -1,4 +1,4 @@
-# Walk-through: Launch Workloads with GPU Fractions
+# Quickstart: Launch Workloads with GPU Fractions
 
 ## Introduction
 
@@ -10,12 +10,12 @@ A typical use-case could see 2-8 jobs running on the same GPU, meaning you could
 
 ## Prerequisites
 
-To complete this walk-through you must have:
+To complete this Quickstart you must have:
 
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 
-## Step by Step Walk-through
+## Step by Step Quickstart
 
 ### Setup
 

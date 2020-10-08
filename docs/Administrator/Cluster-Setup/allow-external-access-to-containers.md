@@ -48,7 +48,7 @@ You will see the service URL with which to access the Jupyter notebook
 
 The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
 
-For further details see CLI command [runai submit](../../Researcher/cli-reference/runai-submit.md) and [Launch an Interactive Workload walk-through ](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+For further details see CLI command [runai submit](../../Researcher/cli-reference/runai-submit.md) and [Launch an Interactive Workload Quickstart ](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
 
 ## Alternatives 
 
@@ -65,4 +65,4 @@ For further details see CLI command [runai submit](../../Researcher/cli-referenc
 
 ## See Also
 
-To learn how to use port forwarding see:  [Walk-through Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+To learn how to use port forwarding see:  [Quickstart Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/walkthrough-build-ports.md).

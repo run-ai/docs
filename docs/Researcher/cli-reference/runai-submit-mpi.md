@@ -53,7 +53,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
         -i gcr.io/run-ai-demo/quickstart-distributed 
 
 
-(see: [distributed training walk-through](../Walkthroughs/walkthrough-distributed-training.md)).
+(see: [distributed training Quickstart](../Walkthroughs/walkthrough-distributed-training.md)).
 
 
 ## Options
@@ -217,4 +217,4 @@ The command will attempt to submit an _mpi_ job. You can follow up on the job by
 
 ## See Also
 
-*   See Walk-through document [Walk-through: Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
+*   See Quickstart document [Quickstart: Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).

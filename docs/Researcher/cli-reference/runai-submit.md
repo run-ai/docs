@@ -59,33 +59,33 @@ Start an interactive job:
 
     runai submit build1 -i python -g 1 --interactive --command sleep --args infinity 
 
-(see: [build walk-through](../Walkthroughs/walkthrough-build.md)).
+(see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 
 Externalize ports:
 
     runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
         --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
 
-(see: [build walk-through with ports](../Walkthroughs/walkthrough-build-ports.md)).
+(see: [build Quickstart with ports](../Walkthroughs/walkthrough-build-ports.md)).
 
 Start a Training job
 
     runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1 
     
-(see: [training walk-through](../Walkthroughs/walkthrough-train.md)).
+(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
 
 Use GPU Fractions
 
     runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
 
-(see: [GPU fractions walk-through](../Walkthroughs/walkthrough-fractions.md)).
+(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
 
 Hyperparameter Optimization
 
-    runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
+    runai submit hpo1 -i gcr.io/run-ai-demo/walkthrough-hpo -g 1  \
         --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
 
-(see: [hyperparameter optimization walk-through](../Walkthroughs/walkthrough-hpo.md)).
+(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
 
 ## Options
@@ -286,6 +286,6 @@ Note that the submit call may use templates to provide defaults to any of the ab
 
 ## See Also
 
-*   See any of the Walk-through documents here: [Run:AI Walk-through](../Walkthroughs/Run-AI-Walkthroughs.md)
+*   See any of the Quickstart documents here: [Run:AI Quickstart](../Walkthroughs/Run-AI-Walkthroughs.md)
 <!-- *   See [runai template](runai-template.md) for a description on how templates work -->
 

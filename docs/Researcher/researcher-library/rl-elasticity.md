@@ -73,7 +73,7 @@ Run the training workload by using the "elastic" flag:
 *   When launching the job with the [runai submit](../cli-reference/runai-submit.md) command use `--elastic`
 *   When launching a job via YAML code, use the label "elastic" with the value "true"
 
-For additional information on how to run elastic training workloads, see the following [walkthrough](../../Walkthroughs/walkthrough-elasticity/). 
+For additional information on how to run elastic training workloads, see the following [quickstart](../../Walkthroughs/walkthrough-elasticity/). 
 
 ## Limitationss
 

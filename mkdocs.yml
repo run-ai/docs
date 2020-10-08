@@ -105,11 +105,11 @@ nav:
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
-    - 'Walkthroughs' :
-      - 'Run:AI Walkthroughs' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
-      - 'Training Workloads' : 'Researcher/Walkthroughs/walkthrough-train.md'
-      - 'Build Workloads' : 'Researcher/Walkthroughs/walkthrough-build.md'
-      - 'Build Workloads with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
+    - 'Quickstart Guides' :
+      - 'Run:AI Quickstart Guides' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
+      - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
+      - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
+      - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
       - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'

@@ -1,8 +1,8 @@
-# Walk-through: Over-Quota and Bin Packing
+# Quickstart: Over-Quota and Bin Packing
 
 ## Goals
 
-The goal of this walk-through is to explain the concepts of over-quota and bin-packing (consolidation) and how they help in maximizing cluster utilization: 
+The goal of this Quickstart is to explain the concepts of over-quota and bin-packing (consolidation) and how they help in maximizing cluster utilization: 
 
 * Show the simplicity of resource provisioning, and how resources are abstracted from users.
 * Show how the system eliminates compute bottlenecks by allowing teams/users to go over their resource quota if there are free GPUs in the cluster.
