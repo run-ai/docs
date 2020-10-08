@@ -5,7 +5,7 @@
 The Admin User Interface allows:
 
 *   The setup of Kubernetes GPU Clusters.
-*   Create, Update and Delete of users
+*   Create, Update and Delete of users.
 *   Create, Update and Delete Projects & Departments.
 *   Review short term and long term dashboards
 *   Review Node and Job-status
