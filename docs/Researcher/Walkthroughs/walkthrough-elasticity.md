@@ -17,7 +17,7 @@ To complete this Quickstart you must have:
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 *   [Run:AI Python Researcher Library](../researcher-library/researcher-library-overview.md) installed on a docker image
 
-## Step by Step Quickstart
+## Step by Step Walkthrough
 
 ### Setup
 

@@ -15,7 +15,7 @@ To complete this Quickstart you must have:
 *   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 
-## Step by Step Quickstart
+## Step by Step Walkthrough
 
 ### Setup
 

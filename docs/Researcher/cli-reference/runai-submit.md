@@ -66,7 +66,7 @@ Externalize ports:
     runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
         --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
 
-(see: [build Quickstart with ports](../Walkthroughs/walkthrough-build-ports.md)).
+(see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
 Start a Training job
 
@@ -286,6 +286,6 @@ Note that the submit call may use templates to provide defaults to any of the ab
 
 ## See Also
 
-*   See any of the Quickstart documents here: [Run:AI Quickstart](../Walkthroughs/Run-AI-Walkthroughs.md)
+*   See any of the Quickstart documents [here:](../Walkthroughs/Run-AI-Walkthroughs.md)
 <!-- *   See [runai template](runai-template.md) for a description on how templates work -->
 

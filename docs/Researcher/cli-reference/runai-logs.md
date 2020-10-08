@@ -58,5 +58,5 @@ The command will show the logs of the first process in the container. For traini
 
 ## See Also
 
-*   Training Workloads: [Quickstart Start and Use Unattended Training Workloads](../Walkthroughs/walkthrough-train.md).
+*   Training Workloads. See Quickstart document:  [Launch Unattended Training Workloads](../Walkthroughs/walkthrough-train.md).
 

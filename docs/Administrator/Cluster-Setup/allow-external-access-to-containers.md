@@ -65,4 +65,4 @@ For further details see CLI command [runai submit](../../Researcher/cli-referenc
 
 ## See Also
 
-To learn how to use port forwarding see:  [Quickstart Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+To learn how to use port forwarding see Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../Researcher/Walkthroughs/walkthrough-build-ports.md).

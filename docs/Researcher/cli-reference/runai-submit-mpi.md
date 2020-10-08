@@ -217,4 +217,4 @@ The command will attempt to submit an _mpi_ job. You can follow up on the job by
 
 ## See Also
 
-*   See Quickstart document [Quickstart: Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
+*   See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
