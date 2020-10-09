@@ -41,7 +41,9 @@ swapoff -a
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 ```
 
-Save the output of the `kubeadm init` command.
+The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
+
+Copy the Kubernetes configuration files which provides access to the cluster: 
 
 ``` shell
 mkdir .kube
@@ -99,6 +101,9 @@ Replace the following `join` command with the one saved from the init command ab
 sudo kubeadm join 10.0.0.3:6443 --token <token> \
     --discovery-token-ca-cert-hash sha256:<hash>
 ```
+
+Return to the master node. Re-run `kubectl get nodes` and verify that the new node is ready.
+
 
 ## Permanently disable swap on all nodes
 
