@@ -49,9 +49,11 @@ Copy the Kubernetes configuration files which provides access to the cluster:
 mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
 sudo chown $(id -u):$(id -g) .kube/config
+```
 
+Add Kubernetes networking:
+``` 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-
 ```
 
 Test that Kubernetes is up and running:
