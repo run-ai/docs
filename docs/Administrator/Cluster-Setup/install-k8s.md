@@ -1,6 +1,6 @@
 # Native Kubeneretes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, please use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/).
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/), or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) to learn how to customize the native installation
 
 ## Prerequisites:
 
@@ -44,7 +44,6 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
 
 Copy the Kubernetes configuration files which provides access to the cluster: 
-
 ``` shell
 mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
@@ -57,7 +56,6 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 ```
 
 Test that Kubernetes is up and running:
-
 ```
 kubectl get nodes
 ```
