@@ -10,7 +10,7 @@ All machines have Ubuntu 18.04
 
 ## Run on Master Node
 
-Install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/). Specifically you can use a convenience script provided in the document:
+If not yet installed, install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/). Specifically, you can use a convenience script provided in the document:
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -65,7 +65,7 @@ Verify that the master node is ready
 
 ## Run on Kubernetes Workers
 
-Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convenience script provided in the document:
+If not yet installed, install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convenience script provided in the document:
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh

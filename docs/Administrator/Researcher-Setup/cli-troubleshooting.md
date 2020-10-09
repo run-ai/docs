@@ -23,3 +23,9 @@ By default, Python buffers stdout and stderr, which is not flushed in real-time.
 ### Solution
 
 Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. python -u main.py
+
+## Runai list command works but runai submit does not
+
+### Solution
+
+Helm utility is not installed. See Run:AI Installation documentation. 
