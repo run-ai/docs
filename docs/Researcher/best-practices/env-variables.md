@@ -20,8 +20,8 @@ Note that the job can be deleted and then recreated with the same name. A job UU
 
 With [Hyperparameter Optimization](../Walkthroughs/walkthrough-hpo.md), experiments are run as _Pods_ within the Job. Run:AI provides the following environment variables to identify the Pod.
 
-* ``POD_INDEX`` -  An index number (1, 2, 3....) for a specific Pod within the Job. This is useful for Hyperparameter Optimization to allow easy mapping to individual experiments.  
-* ``POD_UUID`` - a unique identifier for the Pod
+* ``POD_INDEX`` -  An index number (0, 1, 2, 3....) for a specific Pod within the Job. This is useful for Hyperparameter Optimization to allow easy mapping to individual experiments.  
+* ``POD_UUID`` - a unique identifier for the Pod.
 
 
 ## Usage Example in Python

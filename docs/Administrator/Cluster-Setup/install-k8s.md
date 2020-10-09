@@ -1,17 +1,17 @@
-# Install a bare-bones Kubeneretes
+# Native Kubeneretes Installation
+
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, please use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/).
 
 ## Prerequisites:
 
-* All machines use Ubuntu 18.04
-* NVIDIA Drivers are installed for machines with GPUs.
+All machines have Ubuntu 18.04
 
 
 
-### Run on Master Node (only)
+## Run on Master Node
 
-
-Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convinience script provided in the document:
-```
+Install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/). Specifically you can use a convenience script provided in the document:
+``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
@@ -22,7 +22,7 @@ Restart the docker service:
 
 
 Install Kubernetes master:
-```
+``` shell
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
@@ -43,7 +43,7 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 
 Save the output of the `kubeadm init` command.
 
-```
+``` shell
 mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
 sudo chown $(id -u):$(id -g) .kube/config
@@ -61,11 +61,10 @@ Verify that the master node is ready
 
 
 
-### Run on Kubernetes Workers
+## Run on Kubernetes Workers
 
-
-Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convinience script provided in the document:
-```
+Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convenience script provided in the document:
+``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
@@ -76,7 +75,7 @@ Restart the docker service:
 
 
 Install Kubernetes worker:
-```
+``` shell
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
@@ -96,14 +95,14 @@ swapoff -a
 
 Replace the following `join` command with the one saved from the init command above:
 
-```
-sudo kubeadm join 10.0.0.3:6443 --token 7wo4nf.ojpxltg7wbf7pqgj \
-    --discovery-token-ca-cert-hash sha256:f4f481eba0d6a094d092a956f9d0bbd4e316211212bd58f445665e3fced399e3
+``` shell
+sudo kubeadm join 10.0.0.3:6443 --token <token> \
+    --discovery-token-ca-cert-hash sha256:<hash>
 ```
 
-### Permanently disable swap on all nodes
+## Permanently disable swap on all nodes
 
 1. Edit the file /etc/fstab
-2. Comment out any swap entry
+2. Comment out any swap entry if such exists
 
 

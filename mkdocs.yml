@@ -76,6 +76,7 @@ nav:
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/cluster-delete.md'
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
+      - ' Kubernetes Install' : 'Administrator/Cluster-Setup/install-k8s.md'      
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
         - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'

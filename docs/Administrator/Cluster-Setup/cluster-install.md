@@ -62,7 +62,10 @@ Then run the following again:
 
 ### Step 2.1 Install Kubernetes
 
-Installing Kubernetes is beyond the scope of this guide. There are plenty of good ways to install Kubernetes (listed here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). We recommend __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/). Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
+There are several good ways to install Kubernetes. A full list can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). Two good alternatives:
+
+1. __Native__ installation. For simple Kubernetes installation, the easiest and fastest way to setup Kubernetes is through a [Native Kubernetes Installation](install-k8s.md).
+2. __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/). Kubespray uses Ansible scripts.  Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
 
 !!! Note
     Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
