@@ -10,14 +10,18 @@
 ### Run on Master Node (only)
 
 
-Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
+Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convinience script provided in the document:
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
 Restart the docker service:
 
 `sudo systemctl restart docker`
 
 
-Install k8s:
+Install Kubernetes master:
 ```
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -36,11 +40,8 @@ sudo apt-get install -y kubelet=1.18.4-01 kubeadm=1.18.4-01 kubectl=1.18.4-01
 swapoff -a
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 ```
-Permanently disable swap:
-1. Edit the file /etc/fstab
-2. Comment out any swap entry
 
-Save the output of the init command.
+Save the output of the `kubeadm init` command.
 
 ```
 mkdir .kube
@@ -56,22 +57,25 @@ Test that Kubernetes is up and running:
 ```
 kubectl get nodes
 ```
-See that the master is ready
-
-
-### Run on Kubernetes Workers 
+Verify that the master node is ready
 
 
 
+### Run on Kubernetes Workers
 
-Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/
+
+Install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convinience script provided in the document:
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
 Restart the docker service:
 
 `sudo systemctl restart docker`
 
 
-Install k8s:
+Install Kubernetes worker:
 ```
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -90,11 +94,16 @@ sudo apt-get install -y kubelet=1.18.4-01 kubeadm=1.18.4-01
 swapoff -a
 ```
 
-Replace the following command with the one saved from the init command above:
+Replace the following `join` command with the one saved from the init command above:
 
 ```
 sudo kubeadm join 10.0.0.3:6443 --token 7wo4nf.ojpxltg7wbf7pqgj \
     --discovery-token-ca-cert-hash sha256:f4f481eba0d6a094d092a956f9d0bbd4e316211212bd58f445665e3fced399e3
 ```
+
+### Permanently disable swap on all nodes
+
+1. Edit the file /etc/fstab
+2. Comment out any swap entry
 
 
