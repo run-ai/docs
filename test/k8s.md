@@ -1,4 +1,4 @@
-## Install a bare-bones Kubeneretes
+# Install a bare-bones Kubeneretes
 
 ## Prerequisites:
 
