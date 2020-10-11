@@ -45,8 +45,8 @@ A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when c
 Copy the following into a file and change the parameters:
 
 ```yaml
-apiVersion: batch/v1
-kind: Job
+apiVersion: run.ai/v1
+kind: RunaiJob
 metadata:
   name: <JOB-NAME>
 spec:
