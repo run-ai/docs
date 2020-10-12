@@ -95,9 +95,9 @@ The environment variable ``RUNAI_MPI_NUM_WORKERS`` is a passed by Run:AI and con
         Using ``horovodrun`` as above will only work on Horovod versions smaller or equal to 0.16.4. For later versions of Horovod you will need to use ``mpirun`` instead. For example:
 
         ```
-        mpirun --allow-run-as-root --tag-output -np $RUNAI_MPI_NUM_WORKERS -bind-to none -map-by slot -mca pml ob1 -mca btl ^openib -x CUDNN_VERSION -x LS_COLORS -x LD_LIBRARY_PATH -x MXNET_VERSION -x HOSTNAME -x OMPI_MCA_orte_default_hostfile -x NVIDIA_VISIBLE_DEVICES -x KUBERNETES_PORT_443_TCP_PROTO -x KUBERNETES_PORT_443_TCP_ADDR -x NCCL_VERSION -x OMPI_MCA_plm_rsh_agent -x KUBERNETES_PORT -x PWD -x HOME -x RUNAI_MPI_NUM_WORKERS -x TENSORFLOW_VERSION -x PYTORCH_VERSION -x KUBERNETES_SERVICE_PORT_HTTPS -x KUBERNETES_PORT_443_TCP_PORT -x LIBRARY_PATH -x KUBERNETES_PORT_443_TCP -x TORCHVISION_VERSION -x TERM -x CUDA_PKG_VERSION -x CUDA_VERSION -x NVIDIA_DRIVER_CAPABILITIES -x PYTHON_VERSION -x SHLVL -x podUUID -x NVIDIA_REQUIRE_CUDA -x reporterGatewayURL -x KUBERNETES_SERVICE_PORT -x jobUUID -x PATH -x KUBERNETES_SERVICE_HOST -x jobName -x _ \
-                python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
-                --model=resnet20 --num_batches=1000000 --data_name cifar10  \
+        mpirun --allow-run-as-root --tag-output -np $RUNAI_MPI_NUM_WORKERS -bind-to none -map-by slot -mca pml ob1 -mca btl ^openib -x CUDNN_VERSION -x LS_COLORS -x LD_LIBRARY_PATH -x MXNET_VERSION -x HOSTNAME -x OMPI_MCA_orte_default_hostfile -x NVIDIA_VISIBLE_DEVICES -x KUBERNETES_PORT_443_TCP_PROTO -x KUBERNETES_PORT_443_TCP_ADDR -x NCCL_VERSION -x OMPI_MCA_plm_rsh_agent -x KUBERNETES_PORT -x PWD -x HOME -x RUNAI_MPI_NUM_WORKERS -x TENSORFLOW_VERSION -x PYTORCH_VERSION -x KUBERNETES_SERVICE_PORT_HTTPS -x KUBERNETES_PORT_443_TCP_PORT -x LIBRARY_PATH -x KUBERNETES_PORT_443_TCP -x TORCHVISION_VERSION -x TERM -x CUDA_PKG_VERSION -x CUDA_VERSION -x NVIDIA_DRIVER_CAPABILITIES -x PYTHON_VERSION -x SHLVL -x podUUID -x NVIDIA_REQUIRE_CUDA -x reporterGatewayURL -x KUBERNETES_SERVICE_PORT -x jobUUID -x PATH -x KUBERNETES_SERVICE_HOST -x jobName -x _ 
+                python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py 
+                --model=resnet20 --num_batches=1000000 --data_name cifar10  
                 --data_dir /cifar10 --batch_size=64 --variable_update=horovod
         ```
 
