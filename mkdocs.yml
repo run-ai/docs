@@ -152,5 +152,6 @@ nav:
       - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
+      - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       
 

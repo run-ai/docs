@@ -1,0 +1,1 @@
+docker build -f Dockerfile -t gcr.io/run-ai-demo/pycharm-demo .
