@@ -100,7 +100,7 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS \
 ```
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is a passed by Run:AI and contains the number of worker processes provided to the ``runai submit-mpi`` command (in this example it's 2).
+The environment variable ``RUNAI_MPI_NUM_WORKERS`` is a passed by Run:AI and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
 
 
 ## See Also
