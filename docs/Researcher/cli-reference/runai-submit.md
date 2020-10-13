@@ -6,7 +6,6 @@ Submit a Run:AI job for execution
 
 ``` shell
 runai submit <job-name> 
-    [--imagePullPolicy]
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -21,7 +20,8 @@ runai submit <job-name>
     [--gpu double | -g double] 
     [--host-ipc] 
     [--host-network] 
-    [--image string | -i string] 
+    [--image string | -i string]
+    [--imagePullPolicy string]    
     [--interactive] [--jupyter] 
     [--large-shm] 
     [--local-image] 
@@ -109,11 +109,10 @@ Hyperparameter Optimization
 >  Templates are currently not supported.
 
 ### Container Related
---imagePullPolicy string
->  Pulling policy of the image When starting a container. Options are: ``always`` (default), ``ifNotPresent`` and  ``never``. 
 
---always-pull-image stringArray
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start.
+--always-pull-image (deprecated) stringArray
+>  Deprecated. Please use `image-pull-policy=always` instead.
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start. 
 
 --args stringArray
 >  Arguments to pass to the command running on container start. Use together with ``--command``.  
@@ -136,7 +135,14 @@ Hyperparameter Optimization
 --image string | -i string
 >  Image to use when creating the container for this Job
 
---local-image
+--image-pull-policy string
+>  Pulling policy of the image When starting a container. Options are: 
+ - ``always`` (default): force image pulling to check if local image already exists. If image already exists locally then no download data will be made. 
+ - ``ifNotPresent``: skip pulling an image if it already exists.
+ - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
+
+--local-image (deprecated)
+>  Deprecated. Please use `image-pull-policy=never` instead.
 >  Use a local image for this job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
 
 --stdin
