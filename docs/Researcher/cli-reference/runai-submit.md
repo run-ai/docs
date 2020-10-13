@@ -6,6 +6,7 @@ Submit a Run:AI job for execution
 
 ``` shell
 runai submit <job-name> 
+    [--imagePullPolicy]
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -108,6 +109,8 @@ Hyperparameter Optimization
 >  Templates are currently not supported.
 
 ### Container Related
+--imagePullPolicy string
+>  Pulling policy of the image When starting a container. Options are: ``always`` (default), ``ifNotPresent`` and  ``never``. 
 
 --always-pull-image stringArray
 >  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start.
