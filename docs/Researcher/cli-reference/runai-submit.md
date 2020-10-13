@@ -110,14 +110,14 @@ Hyperparameter Optimization
 
 ### Container Related
 
---always-pull-image (deprecated) stringArray
+--always-pull-image stringArray (deprecated)
 >  Deprecated. Please use `image-pull-policy=always` instead.
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start. 
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on job start. 
 
 --args stringArray
 >  Arguments to pass to the command running on container start. Use together with ``--command``.  
 
->  Example: ``--command script.py --args 10000`` 
+>  Example: `--command script.py --args 10000`
 
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
@@ -127,7 +127,7 @@ Hyperparameter Optimization
 --command stringArray
 >  Command to run at container start. Use together with ``--args``.
 
->  Example: ``--command script.py --args 10000`` 
+>  Example: `--command script.py --args 10000` 
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
@@ -137,9 +137,14 @@ Hyperparameter Optimization
 
 --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
- - ``always`` (default): force image pulling to check if local image already exists. If image already exists locally then no download data will be made. 
- - ``ifNotPresent``: skip pulling an image if it already exists.
- - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
+
+> - ``always`` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
+
+>  - ``ifNotPresent``: the image is pulled only if it is not already present locally.
+
+>  - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
+
+> For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images).
 
 --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
