@@ -70,8 +70,9 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ### Container Related
 
---always-pull-image stringArray
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a panelty of performance degradation on job start.
+--always-pull-image stringArray (deprecated)
+>  Deprecated. Please use `image-pull-policy=always` instead.
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on job start.
 
 --args stringArray
 >  Arguments to pass to the command running on container start. Use together with ``--command``.  
@@ -94,7 +95,19 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 --image string | -i string
 >  Image to use when creating the container for this Job
 
---local-image
+--image-pull-policy string
+>  Pulling policy of the image When starting a container. Options are: 
+
+> - ``always`` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
+
+>  - ``ifNotPresent``: the image is pulled only if it is not already present locally.
+
+>  - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
+
+> For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images).
+
+--local-image (deprecated)
+>  Deprecated. Please use `image-pull-policy=never` instead.
 >  Use a local image for this job. A local image is an image which exists on all local servers of the Kubernetes Cluster.
 
 --stdin
