@@ -1,3 +1,4 @@
+# adapted from https://docs.docker.com/engine/examples/running_ssh_service/
 FROM python
 
 RUN apt-get update && apt-get install -y openssh-server
