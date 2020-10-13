@@ -89,14 +89,13 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS \
         --data_dir /cifar10 --batch_size=64 --variable_update=horovod
 ```
 
-For Horovod version 0.17.0 or later run:
+For Horovod version 0.17.0 or later, add the `-hostfile` flag as follows:
 
 ``` shell
-horovodrun -np $RUNAI_MPI_NUM_WORKERS \
+horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
         python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
         --model=resnet20 --num_batches=1000000 --data_name cifar10 \
-        --data_dir /cifar10 --batch_size=64 --variable_update=horovod \
-        -hostfile /etc/mpi/hostfile
+        --data_dir /cifar10 --batch_size=64 --variable_update=horovod 
 ```
 
 
