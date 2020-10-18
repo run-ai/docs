@@ -13,7 +13,7 @@ Run the following command to connect to the container as if it were running loca
 
 ```
 runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo --interactive  \
-        --command sleep --args infinity --service-type=portforward --port 2222:22
+--service-type=portforward --port 2222:22
 ```
 
 The terminal will show the connection: 
@@ -39,7 +39,7 @@ Forwarding from [::1]:2222 -> 22
 
         ```
         runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo -g 1 --interactive \
-                --command sleep --args infinity --service-type=nodeport --port 30022:22
+        --service-type=nodeport --port 30022:22
         ```
 
         * The job starts an sshd server on port 22.
