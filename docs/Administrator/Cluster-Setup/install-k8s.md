@@ -37,7 +37,7 @@ EOF
 sudo apt-get update
 sudo apt-get install -y kubelet=1.18.4-01 kubeadm=1.18.4-01 kubectl=1.18.4-01
 
-swapoff -a
+sudo swapoff -a
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.18.4
 ```
 
@@ -92,7 +92,7 @@ EOF
 sudo apt-get update
 sudo apt-get install -y kubelet=1.18.4-01 kubeadm=1.18.4-01
 
-swapoff -a
+sudo swapoff -a
 ```
 
 Replace the following `join` command with the one saved from the init command above:
