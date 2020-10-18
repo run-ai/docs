@@ -13,7 +13,7 @@ Run the following command to connect to the container as if it were running loca
 
 ```
 runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo --interactive  \
---service-type=portforward --port 2222:22
+        --service-type=portforward --port 2222:22
 ```
 
 The terminal will show the connection: 
@@ -38,8 +38,7 @@ Forwarding from [::1]:2222 -> 22
         It is possible to connect to the container using a remote IP address. However, this would be less convinient as you will need to maintain port numbers manually and change them when remote accessing using the development tool. As an example, run:
 
         ```
-        runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo -g 1 --interactive \
-        --service-type=nodeport --port 30022:22
+        runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo -g 1 --interactive --service-type=nodeport --port 30022:22
         ```
 
         * The job starts an sshd server on port 22.
