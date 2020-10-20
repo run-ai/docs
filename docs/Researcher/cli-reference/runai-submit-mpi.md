@@ -36,6 +36,7 @@ runai submit-mpi <job-name>
     [--volume stringArray | -v stringArray] 
     [--working-dir]  
     
+    [--generate-name]
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
@@ -222,6 +223,10 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 --help | -h
 
 >  Show help text
+
+--generate-name
+
+> Generate auto increment suffix to the job name in case the requested name is already in use
 
 
 ## Output
