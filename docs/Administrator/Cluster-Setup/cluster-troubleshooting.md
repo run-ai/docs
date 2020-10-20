@@ -6,7 +6,7 @@ To understand whether your Run:AI cluster is healthy you need perform the follow
 
 1. All Run:AI services are running.
 2. Data is sent to the cloud.
-3. A job dan be sumbitted.
+3. A job can be submitted.
 
 
 ### 1. Run:AI services are running
@@ -59,11 +59,9 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 * Verify that the job is showing on the job area in [app.run.ai/Jobs](https://app.run.ai/Jobs)
 
 
-## Symptoms 
+## Symptom: Metrics are not showing on Overview Dashboard
 
-### Metrics are not showing on Overview Dashboard
-
-__Symptom:__ Some or all metrics are not showing in [app.run.ai](https://app.run.ai)
+Some or all metrics are not showing in [app.run.ai](https://app.run.ai)
 
 __Typical root causes:__
 
@@ -71,7 +69,7 @@ __Typical root causes:__
 * Firewall related issues.
 * Internal clock is not synced.
 
-#### NVIDIA related issues
+### NVIDIA prerequisites have not been met
 
 Run:
 
@@ -92,14 +90,42 @@ If the log contains an error, it means that NVIDIA related prerequisites have no
          sudo systemctl status docker
 
 
+### Firewall issues
 
-#### Firewall issues
+Run:
+```
+kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
+      -n runai -f --tail 100
+```
+
+Verify that there are no errors. If there are connectivity related errors you may need to:
+
+* Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
+* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
+* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](#symptom-internal-database-has-not-started)
+
+### Clock is not synced
+
+Run: `date` on cluster nodes and verify that date/time is correct.  If not,
+
+* Set the Linux time service (NTP).
+* Restart Run:AI services. Depending on the previous time gap between servers, you may need to reinstall the Run:AI cluster
+
+
+## Symptom: Projects are not syncing
+
+Create a project on the Admin UI, then run: `runai project list`. The new project does __not__ appear.
+
+ __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
+
+ * A dependency on the internal Run:AI database. See [separate](#symptom-internal-database-has-not-started) symptom below
+ * Firewall issues
 
 Run:
 
       runai pods -n runai | grep agent
 
-Select the agent's full name and run:
+See if the agent is in _Running_ state. Select the agent's full name and run:
 
       kubectl logs -n runai runai-agent-<id>
 
@@ -107,16 +133,20 @@ Verify that there are no errors. If there are connectivity related errors you ma
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
-* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](../cluster-troubleshooting/#internal-database-has-not-started)
-
-#### Clock is not synced
-
-Run: `date` on cluster nodes and see that date is in sync.
 
 
-### Internal Database has not started
+
+
+## Symptom: Internal Database has not started
+
+Run: 
+```
+runai pods -n runai | grep runai-db-0
+``` 
+The status of the Run:AI database is not _Running_
+
  
- __Typical root cause:__ more than one default storage class is installed
+__Typical root cause:__ more than one default storage class is installed
  
  The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases, your k8s cluster may __already have__ a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
 
@@ -132,7 +162,7 @@ And look for _default_ storage classes.
 
  See that there is indeed a storage class error appearing
 
- To disable local path provisioner please run:
+ To disable local path provisioner, run:
 
       kubectl edit runaiconfig -n runai
  
