@@ -42,6 +42,7 @@ runai submit <job-name>
     [--volume stringArray | -v stringArray] 
     [--working-dir] 
     
+    [--generate-name]
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
@@ -291,6 +292,9 @@ Hyperparameter Optimization
 
 --help | -h
 >  Show help text.
+
+--generate-name
+> Generate auto increment suffix to the job name in case the requested name is already in use
 
 ## Output
 
