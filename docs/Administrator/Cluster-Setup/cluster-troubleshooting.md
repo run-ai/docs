@@ -215,10 +215,17 @@ Run:
 kubectl edit runaiconfig runai -n runai
 ```
 
-Add `debug: true`:
+Under `spec`, add: 
 
 ``` YAML
-postgresql:
-  image
-    debug: true
+spec:
+  postgresql:
+    image:
+      debug: true
+```
+
+Then view the log by running:
+
+```
+kubectl logs -n runai runa-db-0 
 ```
