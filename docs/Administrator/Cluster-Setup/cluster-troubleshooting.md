@@ -146,8 +146,13 @@ runai pods -n runai | grep runai-db-0
 The status of the Run:AI database is not _Running_
 
  
-__Typical root cause:__ more than one default storage class is installed
- 
+__Typical root causes:__ 
+
+* More than one default storage class is installed
+* Incompatible NFS version
+
+
+### More than one default storage class is installed
  The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases, your k8s cluster may __already have__ a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
 
  Run:
@@ -173,3 +178,5 @@ local-path-provisioner:
       enabled: false
 ```
 
+### Incompatible NFS version
+<TBD>
