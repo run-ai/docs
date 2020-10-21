@@ -1,4 +1,4 @@
-# Use Pycharm with a Run:AI Job
+# Use PyCharm with a Run:AI Job
 
 Once you launch a workload using Run:AI, you will want to connect to it. You can do so via command-line or via other tools such as a [Jupyter Notebook](../Walkthroughs/walkthrough-build-ports.md)
 
