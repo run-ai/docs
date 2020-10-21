@@ -153,5 +153,6 @@ nav:
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
+      - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'    
       
 
