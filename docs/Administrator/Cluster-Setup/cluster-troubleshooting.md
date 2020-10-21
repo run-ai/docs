@@ -92,8 +92,22 @@ If the log contains an error, it means that NVIDIA related prerequisites have no
 
 ### Firewall issues
 
-Run:
+Add verbosity to Prometheus by editing RunaiConfig:
 ```
+kubectl edit runaiconfig runai -n runai
+```
+
+Add a `debug` log level:
+
+``` YAML
+prometheus-operator:
+  prometheus:
+    prometheusSpec:
+      logLevel: "debug"
+```
+
+Run:
+``` 
 kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
       -n runai -f --tail 100
 ```
@@ -102,7 +116,7 @@ Verify that there are no errors. If there are connectivity related errors you ma
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
-* Remove the Run:AI default Storage Class if a default already exists. See: [remove default storage class](#symptom-internal-database-has-not-started)
+
 
 ### Clock is not synced
 
@@ -179,4 +193,32 @@ local-path-provisioner:
 ```
 
 ### Incompatible NFS version
-<TBD>
+Default NFS Protocol [level](https://www.netapp.com/pdf.html?item=/media/19755-tr-3085.pdf) is currently 4. If your NFS requires an older version, you may need to add the option as follows. Run:
+
+```
+kubectl edit runaiconfig runai -n runai
+```
+
+Add `mountOptions` as follows:
+
+``` YAML
+nfs-client-provisioner:
+  nfs: 
+    mountOptions: ["nfsvers=3"]
+```
+
+### Adding Verbosity to Database container
+
+Run:
+
+```
+kubectl edit runaiconfig runai -n runai
+```
+
+Add `debug: true`:
+
+``` YAML
+postgresql:
+  image
+    debug: true
+```
