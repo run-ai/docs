@@ -100,8 +100,6 @@ Auto generating job name with defined prefix and incremental index suffix
 
 ## Options
 
-<job-name\> - the name of the job.
-
 ### Aliases and Shortcuts
 
 --name
