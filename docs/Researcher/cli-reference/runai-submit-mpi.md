@@ -6,7 +6,8 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 ``` shell
 
-runai submit-mpi <job-name>  
+runai submit-mpi
+    [--name]
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -36,7 +37,7 @@ runai submit-mpi <job-name>
     [--volume stringArray | -v stringArray] 
     [--working-dir]  
     
-    [--generate-name]
+    [--job-name-prefix]
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
@@ -50,7 +51,7 @@ runai submit-mpi <job-name>
 
 start an unattended mpi training job of name dist1, based on project _team-a_ using a _quickstart-distributed_ image:
 
-    runai submit-mpi dist1 --processes=2 -g 1 \
+    runai submit-mpi --name dist1 --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed 
 
 
@@ -59,15 +60,19 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ## Options
 
-<job-name\> the name of the job.
-
 ### Aliases and Shortcuts
+
+--name
+> The name of the job.
 
 --interactive
 >  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
 
 --template string
 >  Templates are currently not supported.
+
+--job-name-prefix
+> The prefix to use when auto generating names with incremental index.
 
 ### Container Related
 
@@ -223,11 +228,6 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 --help | -h
 
 >  Show help text
-
---generate-name
-
-> Generate auto increment suffix to the job name in case the requested name is already in use
-
 
 ## Output
 
