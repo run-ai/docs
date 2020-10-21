@@ -113,7 +113,7 @@ Auto generating job name with defined prefix and incremental index suffix
 
 > Example:
 
-> ``runai submit jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
+> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
 
 --template string
 >  Templates are currently not supported.
