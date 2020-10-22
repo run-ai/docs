@@ -72,6 +72,7 @@ nav:
     - 'Cluster Setup' :
       - 'Introduction' : 'Administrator/Cluster-Setup/cluster-setup-intro.md'
       - 'Prerequisites' : 'Administrator/Cluster-Setup/cluster-prerequisites.md'
+      - 'Quick Cluster Install' : 'Administrator/Cluster-Setup/single-node-install.md'
       - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/cluster-delete.md'

@@ -1,7 +1,6 @@
-# Install Run:AI on a Single Node
+# Quick Install of Run:AI on a Single Node
 
-Below are instructions on how to install Run:AI cluster on a single node. The installation script has been significantly simplified to include a built-in Kubernetes using [minikube](https://minikube.sigs.k8s.io/docs/)
-
+Below are instructions on how to install Run:AI cluster on a single node. The installation script has been significantly simplified to include a built-in Kubernetes using [minikube](https://minikube.sigs.k8s.io/docs/). 
 
 # Prerequisites 
 
@@ -9,7 +8,7 @@ The installation below assumes:
 
 * A single node, with at least one GPU.
 * Running Ubuntu 18.04 or similar.
-* sudo access to the node.
+* `sudo` access to the node.
 * An email and a password provided by Run:AI customer support.
 
 If NVIDIA Drivers are not installed, the script will install the latest NVIDIA Drivers.
