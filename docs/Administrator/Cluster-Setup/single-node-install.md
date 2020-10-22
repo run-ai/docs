@@ -9,9 +9,10 @@ The installation below assumes:
 
 * A single node, with at least one GPU.
 * Running Ubuntu 18.04 or similar.
-* An email and a password provided by Run:AI customer support
+* sudo access to the node.
+* An email and a password provided by Run:AI customer support.
 
-If NVIDIA Drivers are not installed, the script will install the latest NVIDIA Drivers
+If NVIDIA Drivers are not installed, the script will install the latest NVIDIA Drivers.
 
 
 # Installation steps
