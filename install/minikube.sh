@@ -95,6 +95,6 @@ sudo apt-get install -y conntrack
 
 echo 'Starting Kubernetes...'
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
-sudo chown -R $USER .kube .minikube
+sudo chown -R $USER ~/.kube ~/.minikube
 
 
