@@ -16,21 +16,28 @@ In your python code add:
 
     import runai.reporter
 
+Create a `Reporter` object as a Python context manager (i.e. with a `with` statement):
+
+    with runai.reporter.Reporter() as reporter:
+        pass
+
+Then use `reporter` to send metrics and parameters.
+
 To send a number-based metric report, write:
 
-    reportMetric(&lt;reporter_metric_name&gt;, &lt;reporter_metric_value&gt;)
+    reporter.reportMetric(&lt;reporter_metric_name&gt;, &lt;reporter_metric_value&gt;)
 
 For example,
 
-    reportMetric("accuracy", 0.34)
+    reporter.reportMetric("accuracy", 0.34)
 
 To send a text-based metric report, write:
 
-    reportParameter(&lt;reporter_param_name&gt;, &lt;reporter_param_value&gt;)
+    reporter.reportParameter(&lt;reporter_param_name&gt;, &lt;reporter_param_value&gt;)
 
 For example,
 
-    reportParameter("state", "Training Model")
+    reporter.reportParameter("state", "Training Model")
 
 ### Recommended Metrics to send
 
@@ -107,11 +114,24 @@ __epoch__ and __overall\_epochs__ are especially important since the job progres
 
 ## Automatic Sending of Metrics for Keras-Based Scripts
 
-For Keras based deep learning runs, there is a python code that automates the task of sending metrics. Install the library as above and reference runai.reporter from your code. Then write:
+For Keras based deep learning runs, there is support to automate the task of sending metrics.
 
-    runai.reporter.autolog()
+First, import `runai.reporter.keras` instead of `runai.reporter`.
+Second, use `runai.reporter.keras.Reporter` instead of `runai.reporter.Reporter`.
 
-The above metrics will automatically be sent going forward.
+The Keras reporter supports automatic logging.
+This could be done in two ways:
+1. Passing `autolog=True` upon creation
+2. Calling the method `autolog` after creation
+
+After enabling automatic logging, the above metrics will automatically be sent going forward.
+
+For example:
+
+```
+with runai.reporter.keras.Reporter(autolog=True) as reporter:
+    pass
+```
 
 ## Adding the Metrics to the User interface
 
