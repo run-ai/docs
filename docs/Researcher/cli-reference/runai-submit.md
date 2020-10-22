@@ -5,7 +5,7 @@ Submit a Run:AI job for execution
 ## Synopsis
 
 ``` shell
-runai submit <job-name> 
+runai submit 
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -23,10 +23,12 @@ runai submit <job-name>
     [--image string | -i string]
     [--imagePullPolicy string]    
     [--interactive] [--jupyter] 
+    [--job-name-prefix string]
     [--large-shm] 
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--name string]
     [--node-type string] 
     [--parallelism int]
     [--port stringArray] 
@@ -58,42 +60,50 @@ All examples assume a Run:AI project has been set using ``runai project set <pro
 
 Start an interactive job:
 
-    runai submit build1 -i python -g 1 --interactive --command sleep --args infinity 
+    runai submit --name build1 -i python -g 1 --interactive --command sleep --args infinity 
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 
 Externalize ports:
 
-    runai submit build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
+    runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
         --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
 
 (see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
 Start a Training job
 
-    runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1 
+    runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
     
 (see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
 
 Use GPU Fractions
 
-    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
+    runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
 
 (see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
 
 Hyperparameter Optimization
 
-    runai submit hpo1 -i gcr.io/run-ai-demo/walkthrough-hpo -g 1  \
+    runai submit --name hpo1 -i gcr.io/run-ai-demo/walkthrough-hpo -g 1  \
         --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
 
 (see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
+Auto generating job name
+
+    runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
+    
+Auto generating job name with defined prefix and incremental index suffix
+
+    runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
 
 ## Options
 
-<job-name\> - the name of the job.
-
 ### Aliases and Shortcuts
+
+--name
+> The name of the job.
 
 --interactive
 >  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
@@ -103,10 +113,13 @@ Hyperparameter Optimization
 
 > Example:
 
-> ``runai submit jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
+> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
 
 --template string
 >  Templates are currently not supported.
+
+--job-name-prefix
+> The prefix to use when auto generating names with incremental index.
 
 ### Container Related
 
