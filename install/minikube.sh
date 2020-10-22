@@ -7,7 +7,7 @@ if ! type nvidia-smi > /dev/null; then
 	sudo apt update
 	sudo apt install ubuntu-drivers-common -y
 	sudo ubuntu-drivers autoinstall
-	echo 'Reboot your machine and run this script again'
+	echo 'NVIDIA Drivers installed. Reboot your machine and run this script again to continue'
 	exit
 fi
 
@@ -31,6 +31,19 @@ if ! type nvidia-docker > /dev/null; then
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 	sudo apt-get update && sudo apt-get install -y nvidia-docker2
 
+	if [ ! -f /etc/docker/daemon.json ]; then
+		sudo mkdir -p /etc/docker
+		cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "/usr/bin/nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+EOF
+	fi
 	# Update the default configuration and restart
 	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
 	pushd $(mktemp -d)
