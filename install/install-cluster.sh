@@ -4,6 +4,9 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 RUNAI_USERNAME=$1
 RUNAI_PASSWORD=$2
 
@@ -58,6 +61,11 @@ sed 's/grafanaLab:/local-path-provisioner:\
 # **** Install runai (twice do to possible race condition bug)
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
+
+echo -e "${GREEN} A Run:AI is being installed."
+echo -e "Please allow for a couple of minutes while the cluster comes up. Then review the cluster under https://app.run.ai. Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to start running workloads. ${NC}"
+
+
 
 
 
