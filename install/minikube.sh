@@ -21,6 +21,8 @@ fi
 # **** remove sudo constraint
 sudo usermod -aG docker $USER
 
+sudo apt install jq -y
+
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
 	echo 'Installing NVIDIA-Docker'
@@ -58,6 +60,7 @@ fi
 if ! type runai > /dev/null; then
 	echo 'Installing Run:AI CLI'
 	#intentionally overriding other helm versions in case helm 2 exists. 
+	mkdir runai && cd runai
 	wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
 	tar xvf helm-v3.3.4-linux-amd64.tar.gz
 	sudo mv linux-amd64/helm /usr/local/bin/
@@ -66,6 +69,7 @@ if ! type runai > /dev/null; then
 	tar xvf runai-cli-v2.2.7-linux-amd64.tar.gz
 	sudo ./install-runai.sh
 	sudo runai update
+	cd ..
 fi
 
 # **** install minikube
@@ -77,8 +81,7 @@ echo 'Installing minikube'
 sudo apt-get install -y conntrack
 
 echo 'Starting Kubernetes...'
-minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
+sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
+sudo chown -R $USER .kube .minikube
 
-
-copy kubeconfig ....
 
