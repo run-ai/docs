@@ -8,10 +8,12 @@ if ! type nvidia-smi > /dev/null; then
 	sudo apt install ubuntu-drivers-common -y
 	sudo ubuntu-drivers autoinstall
 	echo 'Reboot your machine and run this script again'
+	exit
 fi
 
 # **** Docker ****
 if ! type docker > /dev/null; then
+	echo 'Installing Docker'
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 fi
@@ -21,6 +23,7 @@ sudo usermod -aG docker $USER
 
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
+	echo 'Installing NVIDIA-Docker'
 	distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
@@ -53,6 +56,7 @@ fi
 
 # **** install Run:AI CLI
 if ! type runai > /dev/null; then
+	echo 'Installing Run:AI CLI'
 	#intentionally overriding other helm versions in case helm 2 exists. 
 	wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
 	tar xvf helm-v3.3.4-linux-amd64.tar.gz
@@ -65,11 +69,14 @@ if ! type runai > /dev/null; then
 fi
 
 # **** install minikube
+echo 'Installing minikube'
  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
  sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 sudo apt-get install -y conntrack
+
+echo 'Starting Kubernetes...'
 minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
 
 
