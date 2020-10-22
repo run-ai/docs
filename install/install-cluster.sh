@@ -19,7 +19,6 @@ AUTH0_REALM=$(eval cat /tmp/auth0-data | jq -r '.authRealm')
 
 echo $AUTH0_CLIENT_ID
 echo $AUTH0_REALM
-# {"authClientID":"AKfgFQOsXoduQTyDipzzt...","authRealm":"runaid..."}%                     
 
 curl --request POST \
   --url 'https://runai-prod.auth0.com/oauth/token' \
@@ -36,8 +35,6 @@ BEARER=$(eval cat /tmp/token-data | jq -r '.access_token')
 
 echo $BEARER
 
-# {"access_token":"eyJhbG....","scope":"","expires_in":86400,"token_type":"Bearer"}%
-
 # Create a cluster
 curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
 --header 'Accept: application/json' \
@@ -47,7 +44,6 @@ curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
 
 CLUSTER_UUID=$(eval cat /tmp/cluster-data | jq -r '.uuid')
 
-# {"tenantId":3,"name":"ddd","createdAt":"2020-10-21T20:15:29.856Z","uuid":"f89405d5-8af7-4d29-9152-4d64..."
 
 # Download a cluster operator install file
 curl 'https://app.run.ai/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
@@ -62,8 +58,9 @@ sed 's/grafanaLab:/local-path-provisioner:\
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
-echo -e "${GREEN} A Run:AI is being installed."
-echo -e "Please allow for a couple of minutes while the cluster comes up. Then review the cluster under https://app.run.ai. Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to start running workloads. ${NC}"
+echo -e "${GREEN}Run:AI installation is now in progress."
+echo -e "Navigate to https://app.run.ai and wait for cluster metrics to show."
+echo -e "When the system is up, use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
 
