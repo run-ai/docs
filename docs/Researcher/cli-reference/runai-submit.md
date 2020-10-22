@@ -6,7 +6,6 @@ Submit a Run:AI job for execution
 
 ``` shell
 runai submit 
-    [--name]
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -24,10 +23,12 @@ runai submit
     [--image string | -i string]
     [--imagePullPolicy string]    
     [--interactive] [--jupyter] 
+    [--job-name-prefix string]
     [--large-shm] 
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--name string]
     [--node-type string] 
     [--parallelism int]
     [--port stringArray] 
@@ -43,7 +44,6 @@ runai submit
     [--volume stringArray | -v stringArray] 
     [--working-dir] 
     
-    [--job-name-prefix]
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
