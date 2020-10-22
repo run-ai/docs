@@ -1,19 +1,21 @@
-set -x 
+
+GREEN='\033[0;32m'
+NC='\033[0m'
 
 
 # **** NVIDIA-DRIVERS ****
 if ! type nvidia-smi > /dev/null; then
-	echo 'NVIDIA Drivers not installed, installing now'
+	echo -e "${GREEN} NVIDIA Drivers not installed, installing now ${NC}"
 	sudo apt update
 	sudo apt install ubuntu-drivers-common -y
 	sudo ubuntu-drivers autoinstall
-	echo 'NVIDIA Drivers installed. Reboot your machine and run this script again to continue'
+	echo -e "${GREEN} NVIDIA Drivers installed. Reboot your machine and run this script again to continue ${NC}"
 	exit
 fi
 
 # **** Docker ****
 if ! type docker > /dev/null; then
-	echo 'Installing Docker'
+	echo -e "${GREEN} Installing Docker ${NC}"
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 fi
@@ -25,7 +27,7 @@ sudo apt install jq -y
 
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
-	echo 'Installing NVIDIA-Docker'
+	echo -e "${GREEN} Installing NVIDIA-Docker ${NC}"
 	distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
@@ -62,6 +64,7 @@ fi
 
 #From: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 if ! type kubectl > /dev/null; then
+	echo -e "${GREEN} Installing Kubectl ${NC}"
 	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
@@ -71,7 +74,7 @@ fi
 
 # **** install Run:AI CLI
 if ! type runai > /dev/null; then
-	echo 'Installing Run:AI CLI'
+	echo -e "${GREEN} Installing Run:AI CLI ${NC}"
 	#intentionally overriding other helm versions in case helm 2 exists. 
 	mkdir runai && cd runai
 	wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
@@ -86,14 +89,14 @@ if ! type runai > /dev/null; then
 fi
 
 # **** install minikube
-echo 'Installing minikube'
+echo -e "${GREEN} Installing minikube ${NC}"
  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
  sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 sudo apt-get install -y conntrack
 
-echo 'Starting Kubernetes...'
+echo -e "${GREEN} Starting Kubernetes... ${NC}"
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
 sudo chown -R $USER ~/.kube ~/.minikube
 
