@@ -7,7 +7,6 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 ``` shell
 
 runai submit-mpi
-    [--name]
     [--always-pull-image] 
     [--args stringArray] 
     [--attach]
@@ -22,10 +21,12 @@ runai submit-mpi
     [--host-network] 
     [--image string | -i string] 
     [--interactive] 
+    [--job-name-prefix string]
     [--large-shm] 
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--name string]
     [--node-type string] 
     [--prevent-privilege-escalation]
     [--processes int] 
@@ -37,7 +38,6 @@ runai submit-mpi
     [--volume stringArray | -v stringArray] 
     [--working-dir]  
     
-    [--job-name-prefix]
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
