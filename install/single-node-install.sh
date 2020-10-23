@@ -163,13 +163,13 @@ kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 echo -e "${GREEN}Run:AI cluster installation is now in progress. ${NC}"
 
 sleep 15
-until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
+until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
     printf '.'
     sleep 5
 done
 
 printf "\n\n"
-echo -e "${GREEN} Congratulations, The single-node Run:AI cluster is now active ${NC}".
+echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
 printf "\n"
 echo -e "Next steps: "
 echo -e "- Navigate to the administration console at https://app.run.ai."

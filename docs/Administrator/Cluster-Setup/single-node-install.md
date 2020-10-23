@@ -30,7 +30,7 @@ Run the script:
 
 (note that the password may have special characters, hence the need for surrounding quotes)
 
-If the NVIDIA Drivers were not pre-installed, they will be installed now. The script will ask to reboot, after which, re-run the command above. 
+If the NVIDIA Drivers have not been pre-installed, they will be installed now. If that happens, the script will ask to reboot, after which, re-run the command above. 
 
 
 
