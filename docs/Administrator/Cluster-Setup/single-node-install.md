@@ -16,28 +16,22 @@ If NVIDIA Drivers are not installed, the script will install the latest NVIDIA D
 
 # Installation steps
 
-Get the scripts:
+Get the script:
 
 ``` shell
-wget https://raw.githubusercontent.com/run-ai/docs/master/install/minikube.sh
-wget https://raw.githubusercontent.com/run-ai/docs/master/install/install-cluster.sh
-chmod +x minikube.sh install-cluster.sh
+wget https://raw.githubusercontent.com/run-ai/docs/master/install/single-node-install.sh && chmod +x single-node-install.sh
 ```
 
-Install Kubernetes and all dependencies:
+Run the script: 
 
 ```
-./minikube.sh
-```
-
-If the NVIDIA Drivers were not pre-installed, they will be installed now. The script will ask to reboot, after which, re-run the command above. 
-
-Install Run:AI and create a Run:AI cluster
-```
-./install-cluster.sh <email> '<password>'
+./single-node-install.sh <email> '<password>'
 ```
 
 (note that the password may have special characters, hence the need for surrounding quotes)
+
+If the NVIDIA Drivers were not pre-installed, they will be installed now. The script will ask to reboot, after which, re-run the command above. 
+
 
 
 
