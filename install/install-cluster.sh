@@ -59,8 +59,16 @@ kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
 echo -e "${GREEN}Run:AI installation is now in progress."
-echo -e "Navigate to https://app.run.ai and wait for cluster metrics to show."
-echo -e "Once the system is up, use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
+
+until [ "$(kubectl get pods -n runai --field-selector=status.phase==Running)" = "" ]; do
+    printf '.'
+    sleep 5
+done
+
+echo -e "Run:AI is now active".
+echo -e "Next steps: "
+echo -e "- Navigate to Administration console at https://app.run.ai ."
+echo -e "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
 
