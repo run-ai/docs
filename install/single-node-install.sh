@@ -9,7 +9,6 @@ NC='\033[0m'
 
 RUNAI_USERNAME=$1
 RUNAI_PASSWORD=$2
-
 CLUSTER_NAME=cluster1
 
 
@@ -67,7 +66,6 @@ EOF
 	popd
 	sudo systemctl restart docker
 fi
-
 
 
 # **** Install Kubectl **** 
@@ -154,11 +152,11 @@ sed 's/grafanaLab:/local-path-provisioner:\
     enabled: false\
   &/' runai-operator-$CLUSTER_NAME.yaml > runai-operator-$CLUSTER_NAME-mod.yaml
 
-# **** Install runai (twice do to possible race condition bug)
+# **** Install runai (running twice overcome a possible race condition bug)
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
-echo -e "${GREEN}Run:AI installation is now in progress."
+echo -e "${GREEN}Run:AI cluster installation is now in progress."
 
 sleep 15
 until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = "" ]; do
@@ -166,9 +164,11 @@ until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = 
     sleep 5
 done
 
-echo -e "Run:AI is now active".
+printf "\n"
+echo -e "The Run:AI single-node cluster is now active".
+printf "\n"
 echo -e "Next steps: "
-echo -e "- Navigate to Administration console at https://app.run.ai ."
+echo -e "- Navigate to Administration console at https://app.run.ai."
 echo -e "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
