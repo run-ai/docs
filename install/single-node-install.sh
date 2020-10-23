@@ -30,7 +30,7 @@ if ! type docker > /dev/null; then
 	sudo sh get-docker.sh
 fi
 
-# **** remove sudo constraint
+# **** remove sudo constraint for docker
 sudo usermod -aG docker $USER
 
 sudo apt install jq -y
@@ -56,7 +56,7 @@ if ! type nvidia-docker > /dev/null; then
 }
 EOF
 	fi
-	# Update the default configuration and restart
+	# Update the default docker configuration and restart
 	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
 	pushd $(mktemp -d)
 	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
@@ -147,28 +147,32 @@ CLUSTER_UUID=$(eval cat /tmp/cluster-data | jq -r '.uuid')
 curl 'https://app.run.ai/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
 --header 'Authorization: Bearer '$BEARER'' > runai-operator-$CLUSTER_NAME.yaml
 
+
 # disable local-path-provisioner (not needed with minikube)
 sed 's/grafanaLab:/local-path-provisioner:\
     enabled: false\
   &/' runai-operator-$CLUSTER_NAME.yaml > runai-operator-$CLUSTER_NAME-mod.yaml
 
-# **** Install runai (running twice overcome a possible race condition bug)
+
+# **** Install Run:AI (running twice overcome a possible race condition bug)
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
-echo -e "${GREEN}Run:AI cluster installation is now in progress."
+
+# **** Wait on Run:AI cluster installation progress 
+echo -e "${GREEN}Run:AI cluster installation is now in progress. ${NC}"
 
 sleep 15
-until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = "" ]; do
+until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
     printf '.'
     sleep 5
 done
 
-printf "\n"
-echo -e "The Run:AI single-node cluster is now active".
+printf "\n\n"
+echo -e "${GREEN} Congratulations, The single-node Run:AI cluster is now active ${NC}".
 printf "\n"
 echo -e "Next steps: "
-echo -e "- Navigate to Administration console at https://app.run.ai."
+echo -e "- Navigate to the administration console at https://app.run.ai."
 echo -e "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
