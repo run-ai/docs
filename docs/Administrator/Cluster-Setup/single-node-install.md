@@ -25,7 +25,7 @@ wget https://raw.githubusercontent.com/run-ai/docs/master/install/single-node-in
 Run the script: 
 
 ```
-./single-node-install.sh <email> '<password>'
+sudo ./single-node-install.sh <email> '<password>'
 ```
 
 (note that the password may have special characters, hence the need for surrounding quotes)
