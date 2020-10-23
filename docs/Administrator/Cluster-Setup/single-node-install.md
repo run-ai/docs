@@ -33,9 +33,9 @@ sudo ./single-node-install.sh <email> '<password>'
 If the NVIDIA Drivers have not been pre-installed, they will be installed now. If that happens, the script will ask to reboot, after which, re-run the command above. 
 
 
-## Restart
+## Node Restart
 
-If you node is restarted, Kubernetes must be started using the following command:
+If you restart your node, Kubernetes must be restarted as well, using the following command:
 
 ```
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost

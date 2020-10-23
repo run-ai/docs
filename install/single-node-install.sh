@@ -1,6 +1,6 @@
 #Requires Auth0 grant type connection to be added 'password'. Try without this, not sure.
 if [ "$#" -ne 2 ]; then
-    echo "Usage: install-cluster.sh email password"
+    echo -e "Usage: install-cluster.sh email password"
     exit 1
 fi
 
@@ -15,17 +15,17 @@ CLUSTER_NAME=cluster1
 
 # **** NVIDIA-DRIVERS ****
 if ! type nvidia-smi > /dev/null; then
-	echo "${GREEN} NVIDIA Drivers not installed, installing now ${NC}"
+	echo -e "${GREEN} NVIDIA Drivers not installed, installing now ${NC}"
 	sudo apt update
 	sudo apt install ubuntu-drivers-common -y
 	sudo ubuntu-drivers autoinstall
-	echo "${GREEN} NVIDIA Drivers installed. Reboot your machine and run this script again to continue ${NC}"
+	echo -e  "${GREEN} NVIDIA Drivers installed. Reboot your machine and run this script again to continue ${NC}"
 	exit
 fi
 
 # **** Docker ****
 if ! type docker > /dev/null; then
-	echo "${GREEN} Installing Docker ${NC}"
+	echo -e "${GREEN} Installing Docker ${NC}"
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 fi
@@ -37,8 +37,8 @@ sudo apt install jq -y
 
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
-	echo "${GREEN} Installing NVIDIA-Docker ${NC}"
-	distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+	echo -e "${GREEN} Installing NVIDIA-Docker ${NC}"
+	distribution=$(. /etc/os-release;echo -e $ID$VERSION_ID)
 	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 	sudo apt-get update && sudo apt-get install -y nvidia-docker2
@@ -59,7 +59,7 @@ EOF
 	# Update the default docker configuration and restart
 	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
 	pushd $(mktemp -d)
-	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
+	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo -e '{}') | \
 		jq '. + {"default-runtime": "nvidia"}' | \
 		tee tmp.json
 	sudo mv tmp.json /etc/docker/daemon.json
@@ -73,17 +73,17 @@ fi
 
 #From: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 if ! type kubectl > /dev/null; then
-	echo "${GREEN} Installing Kubectl ${NC}"
+	echo -e "${GREEN} Installing Kubectl ${NC}"
 	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	echo -e "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 	sudo apt-get update
 	sudo apt-get install -y kubectl
 fi
 
 # **** install Run:AI CLI
 if ! type runai > /dev/null; then
-	echo "${GREEN} Installing Run:AI CLI ${NC}"
+	echo -e "${GREEN} Installing Run:AI CLI ${NC}"
 	#intentionally overriding other helm versions in case helm 2 exists. 
 	mkdir runai && cd runai
 	wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
@@ -98,14 +98,14 @@ if ! type runai > /dev/null; then
 fi
 
 # **** install minikube
-echo "${GREEN} Installing minikube ${NC}"
+echo -e "${GREEN} Installing minikube ${NC}"
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 sudo apt-get install -y conntrack
 
-echo "${GREEN} Starting Kubernetes... ${NC}"
+echo -e "${GREEN} Starting Kubernetes... ${NC}"
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
 sudo chown -R $SUDO_USER ~/.kube ~/.minikube
 
@@ -115,8 +115,8 @@ curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/auth0-data
 AUTH0_CLIENT_ID=$(eval cat /tmp/auth0-data | jq -r '.authClientID')
 AUTH0_REALM=$(eval cat /tmp/auth0-data | jq -r '.authRealm')
 
-echo $AUTH0_CLIENT_ID
-echo $AUTH0_REALM
+echo -e $AUTH0_CLIENT_ID
+echo -e $AUTH0_REALM
 
 curl --request POST \
   --url 'https://runai-prod.auth0.com/oauth/token' \
@@ -131,7 +131,7 @@ curl --request POST \
 
 BEARER=$(eval cat /tmp/token-data | jq -r '.access_token')
 
-echo $BEARER
+echo -e $BEARER
 
 # Create a cluster
 curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
@@ -160,7 +160,7 @@ kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
 
 # **** Wait on Run:AI cluster installation progress 
-echo "${GREEN}Run:AI cluster installation is now in progress. ${NC}"
+echo -e "${GREEN}Run:AI cluster installation is now in progress. ${NC}"
 
 sleep 15
 until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
@@ -169,11 +169,11 @@ until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> 
 done
 
 printf "\n\n"
-echo "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
+echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
 printf "\n"
-echo  "Next steps: "
-echo  "- Navigate to the administration console at https://app.run.ai."
-echo  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
+echo -e  "Next steps: "
+echo -e  "- Navigate to the administration console at https://app.run.ai."
+echo -e  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
 
