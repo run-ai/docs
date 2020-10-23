@@ -101,8 +101,8 @@ fi
 
 # **** install minikube
 echo -e "${GREEN} Installing minikube ${NC}"
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
- sudo install minikube-linux-amd64 /usr/local/bin/minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 sudo apt-get install -y conntrack
@@ -111,10 +111,6 @@ echo -e "${GREEN} Starting Kubernetes... ${NC}"
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
 sudo chown -R $USER ~/.kube ~/.minikube
 
-# until [ "$(kubectl get nodes --field-selector=status.phase==Running)" = "" ]; do
-#     printf '.'
-#     sleep 5
-# done
 
 # Log into Run:AI
 curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/auth0-data
@@ -164,7 +160,8 @@ kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
 echo -e "${GREEN}Run:AI installation is now in progress."
 
-until [ "$(kubectl get pods -n runai --field-selector=status.phase==Running)" = "" ]; do
+sleep 15
+until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running)" = "" ]; do
     printf '.'
     sleep 5
 done
