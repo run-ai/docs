@@ -1,6 +1,6 @@
 # Quick Install of Run:AI on a Single Node
 
-Below are instructions on how to install Run:AI cluster on a single node. The installation script has been significantly simplified to include a built-in Kubernetes using [minikube](https://minikube.sigs.k8s.io/docs/). 
+Below are instructions on how to install Run:AI cluster on a single node. The installation script has been significantly simplified to include a built-in Kubernetes using [minikube](https://minikube.sigs.k8s.io/docs/). This process is good for learning Run:AI or using a Run:AI cluster on a single node. 
 
 ## Prerequisites 
 
@@ -30,12 +30,12 @@ sudo ./single-node-install.sh <email> '<password>'
 
 (note that the password may have special characters, hence the need for surrounding quotes)
 
-If the NVIDIA Drivers have not been pre-installed, they will be installed now. If that happens, the script will ask to reboot, after which, re-run the command above. 
+If the NVIDIA Drivers have not been pre-installed, they will be installed by the script. The script will then ask for a reboot, after which, re-run the command above. 
 
 
-## Node Restart
+## Node Shutdown and Restart
 
-To shutdown your node, you must first perform an orderly shutdown of Kubernetes by running:
+To shut down your node, you must first perform an orderly shutdown of Kubernetes by running:
 
 ```
 sudo minikube stop
