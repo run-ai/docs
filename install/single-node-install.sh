@@ -1,7 +1,14 @@
 #Requires Auth0 grant type connection to be added 'password'. Try without this, not sure.
 if [ "$#" -ne 2 ]; then
-    echo -e "Usage: install-cluster.sh email password"
+    echo -e "Usage: sudo install-cluster.sh email password"
     exit 1
+fi
+
+if groups | grep "\<sudo\>" &> /dev/null; then
+   echo "sudo access exists"
+else
+   echo "Command requires sudo rights."
+   exit 1
 fi
 
 GREEN='\033[0;32m'
@@ -132,6 +139,21 @@ curl --request POST \
 BEARER=$(eval cat /tmp/token-data | jq -r '.access_token')
 
 echo -e $BEARER
+
+# verify first cluster
+
+curl -X GET 'https://app.run.ai/v1/k8s/clusters' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer '$BEARER'' > /tmp/clusters
+
+
+if [ $(eval cat /tmp/clusters | jq '. | length') -ne 0 ]; do
+	echo "A cluster already exists. Browse to https://app.run.ai, delete the cluster and re-run this script"
+	exit 1
+fi
+
+
 
 # Create a cluster
 curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
