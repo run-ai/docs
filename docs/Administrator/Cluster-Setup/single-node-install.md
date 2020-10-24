@@ -37,7 +37,9 @@ If the NVIDIA Drivers have not been pre-installed, they will be installed now. I
 
 To shutdown your node, you must first perform an orderly shutdown of Kubernetes by running:
 
-``sudo minikube stop
+```
+sudo minikube stop
+```
 
 When you restart your node, Kubernetes must be restarted as well, using the following command:
 
