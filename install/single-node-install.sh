@@ -118,9 +118,9 @@ sudo chown -R $SUDO_USER ~/.kube ~/.minikube
 
 
 # Log into Run:AI
-curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/auth0-data
-AUTH0_CLIENT_ID=$(eval cat /tmp/auth0-data | jq -r '.authClientID')
-AUTH0_REALM=$(eval cat /tmp/auth0-data | jq -r '.authRealm')
+curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > -/tmp/runai-auth0-data
+AUTH0_CLIENT_ID=$(eval cat -/tmp/runai-auth0-data | jq -r '.authClientID')
+AUTH0_REALM=$(eval cat -/tmp/runai-auth0-data | jq -r '.authRealm')
 
 echo -e $AUTH0_CLIENT_ID
 echo -e $AUTH0_REALM
@@ -134,9 +134,9 @@ curl --request POST \
   --data audience='https://api.run.ai' \
   --data scope=read:sample \
   --data 'client_id='$AUTH0_CLIENT_ID'' \
-  --data realm=runaidemo > /tmp/token-data
+  --data realm=runaidemo > -/tmp/runai-token-data
 
-BEARER=$(eval cat /tmp/token-data | jq -r '.access_token')
+BEARER=$(eval cat -/tmp/runai-token-data | jq -r '.access_token')
 
 echo -e $BEARER
 
@@ -145,10 +145,10 @@ echo -e $BEARER
 curl -X GET 'https://app.run.ai/v1/k8s/clusters' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer '$BEARER'' > /tmp/clusters
+--header 'Authorization: Bearer '$BEARER'' > -/tmp/runai-clusters
 
 
-if [ $(eval cat /tmp/clusters | jq '. | length') -ne 0 ]; do
+if [ $(eval cat -/tmp/runai-clusters | jq '. | length') -ne 0 ]; then
 	echo "A cluster already exists. Browse to https://app.run.ai, delete the cluster and re-run this script"
 	exit 1
 fi
@@ -160,9 +160,9 @@ curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer '$BEARER'' \
---data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/cluster-data
+--data '{ "name": "'$CLUSTER_NAME'"}' > -/tmp/runai-cluster-data
 
-CLUSTER_UUID=$(eval cat /tmp/cluster-data | jq -r '.uuid')
+CLUSTER_UUID=$(eval cat -/tmp/runai-cluster-data | jq -r '.uuid')
 
 
 # Download a cluster operator install file
