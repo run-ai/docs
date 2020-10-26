@@ -1,5 +1,5 @@
 !!! Note
-    Templates are currently not supported
+    Templates are currently not supported.
 
 ---
 
