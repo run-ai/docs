@@ -22,4 +22,4 @@ workflows:
           filters:
             branches:
               only:
-                - omer-deploy-test
+                - master
