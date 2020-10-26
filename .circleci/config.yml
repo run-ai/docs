@@ -1,0 +1,22 @@
+version: 2.1
+  
+jobs:
+  build-docs:
+    docker:
+      - image: runai/circleci-mkdocs:latest
+    steps:
+      - checkout
+      - run:
+          name: gh-pages-deploy
+          command: echo hello world
+
+workflows:
+  version: 2.1
+  deploy:
+    jobs:
+      - build-docs:
+          name: build
+          filters:
+            branches:
+              only:
+                - omer-deploy-test
