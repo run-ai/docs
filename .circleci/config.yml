@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: deploy-documentation
-          command: mkdocs gh-deploy
+          command: mkdocs gh-deploy -m "Auto commit [ci skip]"
 
 workflows:
   version: 2.1
