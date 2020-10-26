@@ -52,13 +52,27 @@ If your job has not specified --cpu, the system will use a default. The default 
 
 Consider the default of 1:6. If your job has only specified --gpu 2 and has not specified --cpu, then the implied --cpu flag value is 12 CPUs.
 
-The system comes with a cluster-wide default of 1:1. To change this default please contact Run:AI customer support.
+The system comes with a cluster-wide default of 1:1. To change the ratio see below.
+
 
 ### Defaults for --memory flag
 
 If your job has not specified --memory, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
 
-The system comes with a cluster-wide default of 100MiB per GPU. To change this default please contact Run:AI customer support.
+The system comes with a cluster-wide default of 100MiB per GPU. To change the ratio see below.
+
+### Changing the ratio
+
+To change the cluster wide-ratio use the following command. The command below sets a GPU:CPU ratio of 1:2 and a GPU:Memory ratio of 1 to 200MB.
+
+```
+kubectl patch runaiconfig runai -n runai --type='json' \
+    -p='[{"op": "add", "path": "/spec/limitRange", "value": 
+     {"cpuDefaultRequestGpuFactor": "2", 
+      "memoryDefaultRequestGpuFactor": "200Mi" }}]'
+```
+
+
 
 ## Validating CPU & Memory Allocations
 
