@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: gh-pages-deploy
-          command: echo hello world
+          name: deploy-documentation
+          command: mkdocs gh-deploy
 
 workflows:
   version: 2.1
