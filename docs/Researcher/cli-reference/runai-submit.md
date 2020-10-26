@@ -90,11 +90,11 @@ Hyperparameter Optimization
 
 (see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
-Auto generating job name
+Submit a job without a name (automatically generates a name)
 
     runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
     
-Auto generating job name with defined prefix and incremental index suffix
+Submit a job without a name with a pre-defined prefix and an incremental index suffix
 
     runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
 
@@ -119,7 +119,7 @@ Auto generating job name with defined prefix and incremental index suffix
 >  Templates are currently not supported.
 
 --job-name-prefix
-> The prefix to use when auto generating names with incremental index.
+> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix
 
 ### Container Related
 

@@ -71,8 +71,8 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 --template string
 >  Templates are currently not supported.
 
---job-name-prefix
-> The prefix to use when auto generating names with incremental index.
+> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix
+
 
 ### Container Related
 
