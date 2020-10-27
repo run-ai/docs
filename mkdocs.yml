@@ -29,7 +29,7 @@ theme:
   favicon: images/favicon.ico
   logo: images/runai-logo2.svg
   features:
-    - tabs
+    - navigation.tabs
 extra_css:
   - stylesheets/extra.css
 strict: true
