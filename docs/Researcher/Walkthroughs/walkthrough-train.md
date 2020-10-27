@@ -10,7 +10,7 @@ Deep learning workloads can be divided into two generic types:
 With this Quickstart you will learn how to:
 
 *   Use the Run:AI command-line interface (CLI) to start a deep learning __training__ workload.
-*   View training status and resource consumption using the Run:AI user interface and the Run:AI Command-line interface (CLI).
+*   View training status and resource consumption using the Run:AI user interface and the Run:AI CLI.
 *   View training logs.
 *   Stop the training.
 

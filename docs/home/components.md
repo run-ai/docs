@@ -26,12 +26,16 @@ The Run:AI Cluster contains:
 * Run:AI is installed in its own namesapce __runai__
 * Workloads are run in the context of __Projects__. Each project is a Kubernetes namespace with its own settings and access control. 
 
+
+
 ## The Run:AI Cloud
 
 The Run:AI Cloud is the basis of the Administrator User Interface. 
 
 * The Run:AI cloud aggregates monitoring information from __multiple__ tenants (customers).
-* Each customer may manage __multiple__ Run:AI clusters.
+* Each customer may manage __multiple__ Run:AI clusters. 
+
+![multi-cluster-architecture](img/multi-cluster-architecture.png)
 
 
 
