@@ -9,27 +9,27 @@ Deep learning workloads can be divided into two generic types:
 
 With this Quickstart you will learn how to:
 
-*   Use the Run:AI command-line interface (CLI) to start a deep learning __training__ workload
-*   View training status and resource consumption using the Run:AI user interface and the Run:AI CLI
-*   View training logs 
-*   Stop the training
+*   Use the Run:AI command-line interface (CLI) to start a deep learning __training__ workload.
+*   View training status and resource consumption using the Run:AI user interface and the Run:AI Command-line interface (CLI).
+*   View training logs.
+*   Stop the training.
 
 ## Prerequisites 
 
 To complete this Quickstart you must have:
 
-*   Run:AI software is installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
+*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*   Open the Run:AI user interface at <https://app.run.ai>
-*   Login
-*   Go to "Projects"
-*   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*   Open the Run:AI user interface at <https://app.run.ai>.
+*   Login.
+*   Go to "Projects".
+*   Add a project named "team-a".
+*   Allocate 2 GPUs to the project.
 
 ### Run Workload
 
@@ -38,7 +38,7 @@ To complete this Quickstart you must have:
         runai project set team-a
         runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
-This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
+This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main) docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
 
 *   Follow up on the job's progress by running:
 
