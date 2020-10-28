@@ -28,7 +28,7 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
     Typically, this is achieved via Network File Storage (NFS) or Network-attached storage (NAS). NFS is usually the preferred method for Researchers which may require multi-read/write capabilities.
 
 
-* __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/) or set up a local registry on-premise. Run:AI can assist with setting up the repository.
+* __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/) or set up a local registry on-premise (preferably on a dedicated machine). Run:AI can assist with setting up the repository.
 
 ## Network Requirements
 
