@@ -48,7 +48,7 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
         strategy = runai.hpo.Strategy.GridSearch
 
         # initialize the Run:AI HPO library. Send the NFS directory used for sync
-        runai.hpo.init("/hpo")
+        runai.hpo.init("/nfs")
 
         # pick a configuration for this HPO experiment
         # we pass the options of all hyperparameters we want to test
@@ -71,14 +71,14 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
         runai project set team-a 
         runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
-                --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo
+                --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
 
 *   We named the job _hpo1_
 *   The job is assigned to _team-a_
 *   The job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
 *   At most, there will be 3 pods running concurrently (_--parallelism 3_)
 *   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
-*   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/hpo``. The running pods will use the directory to sync hyperparameters and save results.
+*   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/nfs``. The running pods will use the directory to sync hyperparameters and save results.
 
 
 Follow up on the job's status by running:
