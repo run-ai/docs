@@ -64,7 +64,7 @@ To get the list of nodes, run:
 
 To annotate a specific node with the label "dgx-2", run:
 
-    kubectl label node &lt;node-name&gt; run.ai/type=dgx-2
+    kubectl label node <node-name> run.ai/type=dgx-2
 
 ### Setting Affinity for a Specific Project
 
