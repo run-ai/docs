@@ -76,12 +76,12 @@ Start a Training job
     runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
     
 (see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
-
+<!-- 
 Use GPU Fractions
 
     runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
 
-(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
+(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)). -->
 
 Hyperparameter Optimization
 

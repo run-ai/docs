@@ -119,7 +119,7 @@ Run:
 to submit the job.
 
 
-### Using Fractional GPUs
+<!-- ### Using Fractional GPUs
 
 Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
 
@@ -135,7 +135,7 @@ spec:
   template:
     metadata:
       annotations:
-        gpu-fraction: "0.5"
+        gpu-fraction: "0.5" -->
 ```
 
 where "0.5" is the requested GPU fraction.

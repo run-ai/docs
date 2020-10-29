@@ -2,9 +2,9 @@
 
 We released a module that helps the Researcher perform Hyperparameter optimization (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Quickstart](../Researcher/Walkthroughs/walkthrough-hpo.md)
 
-## September 3rd, 2020
+<!-- ## September 3rd, 2020
 
-GPU Fractions now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
+GPU Fractions now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more. -->
 
 
 ## August 10th, 2020

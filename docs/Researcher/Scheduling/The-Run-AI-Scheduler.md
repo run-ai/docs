@@ -98,7 +98,7 @@ Run:AI Elasticity is explained [here](../researcher-library/rl-elasticity.md). I
 
 ## Advanced
 
-### GPU Fractions
+<!-- ### GPU Fractions
 
 Run:AI provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU.
 
@@ -115,7 +115,7 @@ GPU Fractions are scheduled as regular GPUs in the sense that:
 Support: 
 
 * Elasticity is not supported with fractions.
-* Hyperparameter Optimization supports fractions. 
+* Hyperparameter Optimization supports fractions.  -->
 
 
 ### Distributed Training

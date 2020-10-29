@@ -140,7 +140,7 @@ In addition, once running, Run:AI will send metrics to two sources:
 
 __Usage of containers and images:__ The individual researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software.
 
-## Fractional GPU Requirements
+<!-- ## Fractional GPU Requirements
 
 The Run:AI platform provides a unique technology that allows the sharing of a single GPU between multiple containers. Each container receives an isolated subset of the GPU memory. For more details see Quickstart document: [Using GPU Fractions](../../../Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions).
 
@@ -150,4 +150,4 @@ This technology has more stringent software requirements than the rest of the Ru
 *   CUDA 9.0 or later
 *   TensorFlow, Keras or PyTorch
 
-We keep testing the technology on additional software.
+We keep testing the technology on additional software. -->

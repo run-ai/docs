@@ -16,7 +16,7 @@
 The Run:AI Cluster contains:
 
 * The Run:AI Scheduler which extends the Kubernetes scheduler. It uses business rules to schedule workloads sent by Researchers. 
-* Fractional GPU management. Responsible for the Run:AI Virtualization technology which allows Researchers to allocate parts of a GPU rather than a whole GPU 
+<!-- * Fractional GPU management. Responsible for the Run:AI Virtualization technology which allows Researchers to allocate parts of a GPU rather than a whole GPU  -->
 * The Run:AI agent. Responsible for sending Monitoring data to the Run:AI Cloud.
 * Clusters require outbound network connectivity to the Run:AI Cloud.  
 
