@@ -118,12 +118,14 @@ Run:
 
 to submit the job.
 
+<!-- comment
 
 ### Using Fractional GPUs
 
 Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
 
-<!-- ``` yaml
+
+``` yaml
 limits:
   nvidia.com/gpu: <REQUESTED-GPUs>
 ```
@@ -136,9 +138,10 @@ spec:
     metadata:
       annotations:
         gpu-fraction: "0.5"
-``` -->
+``` 
 
 where "0.5" is the requested GPU fraction.
+-->
 
 ## Delete Workloads
 
