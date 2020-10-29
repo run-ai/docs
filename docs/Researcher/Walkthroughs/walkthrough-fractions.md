@@ -1,4 +1,4 @@
-# Quickstart: Launch Workloads with GPU Fractions
+<!-- # Quickstart: Launch Workloads with GPU Fractions
 
 ## Introduction
 
@@ -64,4 +64,4 @@ The result:
 Notes:
 
 *   The total memory is circled in red. It should be 50% of the GPUs memory size. In the picture above we see 8GB which is half of the 16GB of Tesla V100 GPUs.
-*   The script running on the container is limited by 8GB. In this case, TensorFlow, which tends to allocate almost all of the GPU memory has allocated 7.7GB RAM (and not close to 16 GB). Overallocation beyond 8GB will lead to an out-of-memory exception
+*   The script running on the container is limited by 8GB. In this case, TensorFlow, which tends to allocate almost all of the GPU memory has allocated 7.7GB RAM (and not close to 16 GB). Overallocation beyond 8GB will lead to an out-of-memory exception -->
