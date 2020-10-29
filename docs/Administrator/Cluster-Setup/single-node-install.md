@@ -10,6 +10,7 @@ The installation below assumes:
 * Running Ubuntu 18.04 or similar.
 * `sudo` access to the node.
 * An email and a password provided by Run:AI customer support.
+* Outbound internet connectivity
 
 If NVIDIA Drivers are not installed, the script will install the latest NVIDIA Drivers.
 
