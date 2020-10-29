@@ -66,6 +66,8 @@ To annotate a specific node with the label "dgx-2", run:
 
     kubectl label node <node-name> run.ai/type=dgx-2
 
+You can annotate multiple nodes with the same label
+
 ### Setting Affinity for a Specific Project
 
 To mandate __training__ jobs to run on specific node groups:
