@@ -22,7 +22,7 @@ For further details on these flags see: [runai submit](../cli-reference/runai-su
 The number of CPUs your job will receive is guaranteed to be the number defined using the --cpu flag. In practice, however, you may receive <ins>more CPUs than you have asked</ins> for:
 
 *   If you are currently alone on a node, you will receive all the node CPUs until such time when another workload has joined.
-*   However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the --cpu flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 nodes, the workloads will receive 10 and 30 CPUs respectively.
+*   However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the --cpu flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 nodes, the workloads will receive 10 and 30 CPUs respectively. If the flag `--cpu` is not specified, it will be taken from the cluster default (see the section below)
 
 ### Memory over allocation
 
@@ -39,8 +39,10 @@ You can limit your job's allocation of CPU and memory by using the __--cpu-limit
 
 The limit behavior is different for CPUs and memory.
 
-*   Your job will never be allocated with more than the amount stated in the --cpu-limit flag
-*   If your job tries to allocate more than the amount stated in the --memory-limit flag it will receive an out of memory exception.
+*   Your job will never be allocated with more than the amount stated in the `--cpu-limit` flag
+*   If your job tries to allocate more than the amount stated in the `--memory-limit` flag it will receive an out of memory exception.
+
+The limit (for both CPU and memory) overrides the cluster default described in the section below
 
 For further details on these flags see: [runai submit](../cli-reference/runai-submit.md)
 
@@ -48,30 +50,50 @@ For further details on these flags see: [runai submit](../cli-reference/runai-su
 
 ### Defaults for --cpu flag
 
-If your job has not specified --cpu, the system will use a default. The default is cluster-wide and is defined as a __ratio__ of GPUs to CPUs.
+If your job has not specified `--cpu`, the system will use a default. The default is cluster-wide and is defined as a __ratio__ of GPUs to CPUs.
 
-Consider the default of 1:6. If your job has only specified --gpu 2 and has not specified --cpu, then the implied --cpu flag value is 12 CPUs.
+Consider the default of 1:6. If your job has only specified `--gpu 2` and has not specified `--cpu`, then the implied `--cpu` flag value is 12 CPUs.
 
 The system comes with a cluster-wide default of 1:1. To change the ratio see below.
 
 
 ### Defaults for --memory flag
 
-If your job has not specified --memory, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
+If your job has not specified `--memory`, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
 
 The system comes with a cluster-wide default of 100MiB per GPU. To change the ratio see below.
 
-### Changing the ratio
 
-To change the cluster wide-ratio use the following command. The command below sets a GPU:CPU ratio of 1:2 and a GPU:Memory ratio of 1 to 200MB.
+### Defaults for --cpu-limit flag
+
+If your job has not specified `--cpu-limit`, then by default, the system will not set a limit. You can set a cluster-wide limit as a __ratio__ of GPUs to CPUs. See below on how to change the ratio.
+
+
+
+### Defaults for --memory-limit flag
+
+If your job has not specified `--memory-limit`, then by default, the system will not set a limit. You can set a cluster-wide limit as a __ratio__ of GPUs to Memory. See below on how to change the ratio.
+
+
+### Changing the ratios
+
+To change the cluster wide-ratio use the following command. The command below sets:
+
+* a CPU request with a default ratio of 2:1 CPUs to GPUs.
+* a Memory request with a default ratio of 200MB per GPU.
+* a CPU limit with a default ratio of 4:1 CPU to GPU.
+* a Memory limit with a default ratio of 2GB per GPU. 
 
 ```
 kubectl patch runaiconfig runai -n runai --type='json' \
     -p='[{"op": "add", "path": "/spec/limitRange", "value": 
      {"cpuDefaultRequestGpuFactor": "2", 
-      "memoryDefaultRequestGpuFactor": "200Mi" }}]'
+      "memoryDefaultRequestGpuFactor": "200Mi",
+      "cpuDefaultLimitGpuFactor" : "4",
+      "memoryDefaultLimitGpuFactor" : "2Gi"
+    }}]'
 ```
-
+You must specify all 4 values. 
 
 
 ## Validating CPU & Memory Allocations
