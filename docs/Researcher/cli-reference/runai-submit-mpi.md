@@ -8,10 +8,9 @@ Submit a Distributed Training (MPI) Run:AI job for execution
 
 runai submit-mpi
     [--always-pull-image] 
-    [--args stringArray] 
     [--attach]
     [--backoffLimit int] 
-    [--command stringArray] 
+    [--command]
     [--cpu double] 
     [--cpu-limit double] 
     [--create-home-dir]
@@ -42,6 +41,7 @@ runai submit-mpi
     [--project string | -p string] 
     [--help | -h]
     
+    -- [COMMAND] [ARGS...] [options]
 ```
  Syntax notes:
 
@@ -80,18 +80,13 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 >  Deprecated. Please use `image-pull-policy=always` instead.
 >  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on job start.
 
---args stringArray
->  Arguments to pass to the command running on container start. Use together with ``--command``.  
-
->  Example: ``--command sleep --args 10000`` .
-
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
 
 > The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
 
---command stringArray
->  Command to run at container start. Use together with ``--args``.
+--command
+>  Override the image entrypoint with the commands supplied after '--'
 
 >  Example: ``--command script.py --args 10000`` 
 
