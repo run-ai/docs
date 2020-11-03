@@ -3,6 +3,7 @@ from __future__ import print_function
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
+from keras.callbacks import ModelCheckpoint
 
 import os
 
@@ -52,12 +53,19 @@ model.compile(
     metrics=['accuracy']
 )
 
+# checkpoint
+filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+callbacks_list = [checkpoint]
+
 model.fit(x_train, y_train,
         batch_size=BATCH_SIZE,
         epochs=EPOCHS,
-        validation_data=(x_test, y_test))
+        validation_data=(x_test, y_test),
+        callbacks=callbacks_list)
 
 score = model.evaluate(x_test, y_test)
 
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+
