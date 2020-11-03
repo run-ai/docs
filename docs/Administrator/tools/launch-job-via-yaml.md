@@ -46,7 +46,7 @@ Copy the following into a file and change the parameters:
 
 ```yaml
 apiVersion: run.ai/v1
-kind: RunaiJob
+kind: RunaiJob (* see note below)
 metadata:
   name: <JOB-NAME>
 spec:
@@ -73,7 +73,8 @@ Run:
 to submit the job.
 
 !!! Note
-    The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
+    * You can use either a regular `Job` or `RunaiJob`. The later is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
+    * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
 
 
 ### Build jobs

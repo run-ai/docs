@@ -43,7 +43,7 @@ To complete this Quickstart you must have:
 *   We named the job _build1_.
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job. 
 *   The job is assigned to team-a with an allocation of a single GPU. 
-*   The command provided is ``--command sleep --args infinity``. You must provide a command or the container will start and then exit immediately. 
+*   The command provided is ``--command sleep --args infinity``. You must provide a command or the container will start and then exit immediately. Alternatively, replace these flags with `--attach` to attach immediately to a session.
 
 Follow up on the job's status by running:
 
