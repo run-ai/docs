@@ -7,10 +7,8 @@ Submit a Run:AI job for execution
 ``` shell
 runai submit 
     [--always-pull-image] 
-    [--args stringArray] 
     [--attach]
     [--backoffLimit int] 
-    [--command stringArray] 
     [--completions int]
     [--cpu double] 
     [--cpu-limit double] 
@@ -47,6 +45,8 @@ runai submit
     [--loglevel string] 
     [--project string | -p string] 
     [--help | -h]
+    
+    -- [COMMAND] [ARGS...] [options]
 ```
 
  Syntax notes:
@@ -60,7 +60,7 @@ All examples assume a Run:AI project has been set using ``runai project set <pro
 
 Start an interactive job:
 
-    runai submit --name build1 -i python -g 1 --interactive --command sleep --args infinity 
+    runai submit --name build1 -i python -g 1 --interactive -- sleep infinity 
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 
