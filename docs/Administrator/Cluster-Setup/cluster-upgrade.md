@@ -11,7 +11,7 @@ kubectl set image -n runai deployment/runai-operator \
       runai-operator=gcr.io/run-ai-prod/operator:<NEW_VERSION>
 ```
 
-Replace ``NEW_VERSION`` with a version number you receive from Run:AI customer support.
+Replace ``<NEW_VERSION>`` with a version number you receive from Run:AI customer support.
 
 To verify that the upgrade has succeeded run:
 
@@ -26,7 +26,8 @@ and make sure that all pods are running or completed.
 To find the current version of the Run:AI cluster, run:
 
 ```
-kubectl get deployment runai-operator -n runai -o jsonpath='{.spec.template.spec.containers[0].image}'
+kubectl get deployment runai-operator -n runai \
+  -o jsonpath='{.spec.template.spec.containers[0].image}'
 ```
 
 ## Upgrade from older versions
