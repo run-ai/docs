@@ -107,7 +107,12 @@ metadata:
 !!! Notes
     * The template is denoted as the __default__ template with the annotation `runai/admin: "true"`
     * You can only have a single default template. If you set two, Run:AI will choose the first one. 
-    * With Single value flags, the default template always overrides any  XXXX
+
+
+# Override rules
+
+* The User, when running `runai submit` always overrides the default template and a template specified with `--template`
+* The default template overrides any specified template.
 
 
 
