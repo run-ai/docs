@@ -54,6 +54,6 @@ When starting the job, add the flag ``--ttl-after-finish duration``. duration is
 
     runai submit myjob1 --ttl-after-finish 2h
 
-<!-- ## Using Templates to set Automatic Deletion as Default
+## Using Templates to set Automatic Deletion as Default
 
-You can use Run:AI templates to set auto-delete to be the default. See [runai template](../cli-reference/runai-template.md) for more. -->
+You can use Run:AI templates to set auto-delete to be the default. See [runai template](../cli-reference/runai-template.md) for more.
