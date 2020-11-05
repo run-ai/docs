@@ -117,7 +117,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 > ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
 
 --template string
->  Templates are currently not supported.
+>  Provide the name of a template. A template can provide default and mandatory values. 
 
 --job-name-prefix
 > The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix
