@@ -69,10 +69,9 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 >  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
 
 --template string
->  Templates are currently not supported.
+>  Provide the name of a template. A template can provide default and mandatory values. 
 
-> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix
-
+> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix.
 
 ### Container Related
 
