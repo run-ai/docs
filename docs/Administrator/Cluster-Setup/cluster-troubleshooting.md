@@ -103,7 +103,7 @@ Add a `debug` log level:
 prometheus-operator:
   prometheus:
     prometheusSpec:
-      logLevel: "debug"
+      logLevel: debug
 ```
 
 Run:
