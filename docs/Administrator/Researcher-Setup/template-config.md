@@ -82,7 +82,7 @@ runai submit my-job1 ....  --template template-1
 
 ## The Default Template
 
-The administrator can also set a default template that is always used
+The administrator can also set a default template that is always active:
 
 ``` YAML
 apiVersion: v1
@@ -106,7 +106,7 @@ metadata:
 
 !!! Notes
     * The template is denoted as the __default__ template with the annotation `runai/admin: "true"`
-    * You can only have a single default template. If you set two, Run:AI will choose the first one. 
+    * You can only have a single default template. If you set more than one default template, Run:AI will choose one at random.
 
 
 # Override rules
