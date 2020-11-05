@@ -74,11 +74,23 @@ runai submit my-job1 ....  --template template-1
 
 
 
-## Flag Syntax
+## Syntax
 
-* When specifying a single-valued flag, use the full name of the flag. For example, for setting `--gpu` use `gpu`. For a list of flags, see the [runai-submit reference document](../../Researcher/cli-reference/runai-submit.md). 
-* When specifying a multi-valued flag, use the _plural_ of the flag name. For example: for setting the `--environment` flag use `environments`. For setting the `--volume` flag. Use `volumes` 
-
+* When specifying a single-value flag, use the full name of the flag. For example, for setting `--gpu` use `gpu`. For a list of flags, see the [runai-submit reference document](../../Researcher/cli-reference/runai-submit.md). 
+* When specifying a multi-value flag, use the _plural_ of the flag name. For example: for setting the `--environment` flag use `environments`. For setting the `--volume` flag. Use `volumes` 
+* When specifying a single value flag, use the syntax:
+``` YAML
+single-value-flag:
+    required: true/false
+    value: string
+```
+* When specifying a multi-value flag, use the syntax:
+``` YAML
+multi-value-flag:
+  - value1
+  - value2
+  - ...
+```
 
 ## The Default Template
 
