@@ -61,14 +61,15 @@ All examples assume a Run:AI project has been set using ``runai project set <pro
 
 Start an interactive job:
 
-    runai submit --name build1 -i python -g 1 --interactive -- sleep infinity 
+    runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 
 Externalize ports:
 
     runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-        --command "/usr/sbin/sshd" --args "-D" --service-type=nodeport --port 30022:22
+        --service-type=nodeport --port 30022:22
+        --command -- /usr/sbin/sshd -D 
 
 (see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
@@ -134,7 +135,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 > The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
 
 --command
->  Override the image entrypoint with the commands supplied after '--'
+>  If set, overrides the image's entrypoint with the command supplied after '--'
 
 >  Example: `--command -- python script.py 10000` 
 

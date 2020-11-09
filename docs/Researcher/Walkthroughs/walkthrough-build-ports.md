@@ -34,7 +34,7 @@ Contact your administrator to see which methods are available in your cluster
         runai project set team-a
         runai submit jupyter1 -i jupyter/base-notebook -g 1 \
             --interactive --service-type=portforward --port 8888:8888 \
-            --args="--NotebookApp.base_url=jupyter1" --command=start-notebook.sh
+            --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
 
 *   The job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
 *    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notebook base URL.   
@@ -65,7 +65,7 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
         runai project set team-a
         runai submit test-ingress -i jupyter/base-notebook -g 1 \
           --interactive --service-type=ingress --port 8888 \
-          --args="--NotebookApp.base_url=team-a-test-ingress" --command=start-notebook.sh
+          --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
 
 *   An ingress service URL will be created, run:
 
