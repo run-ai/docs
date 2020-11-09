@@ -18,8 +18,9 @@ sudo sh get-docker.sh
 
 Restart the docker service:
 
-`sudo systemctl restart docker`
-
+``` 
+sudo systemctl restart docker
+```
 
 Install Kubernetes master:
 ``` shell
@@ -73,7 +74,9 @@ sudo sh get-docker.sh
 
 Restart the docker service:
 
-`sudo systemctl restart docker`
+```
+sudo systemctl restart docker
+```
 
 On Worker Nodes with Kubernetes, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-install/#step-13-install-nvidia-docker): 
 
