@@ -34,6 +34,7 @@ data:
       - MYUSER=$USER
 metadata:
   name: template-1
+  namespace: runai
   labels:
     runai/template: "true"
 ```
@@ -41,7 +42,7 @@ metadata:
 To store this template run:
 
 ``` 
-kubectl apply -f my-template.yaml -n runai
+kubectl apply -f my-template.yaml 
 ```
 
 !!! Notes
@@ -109,6 +110,7 @@ data:
       - /mnt/nfs-share/john:/workspace/john
 metadata:
   name: template-default
+  namespace: runai
   labels:
     runai/template: "true"
   annotations: 
