@@ -93,15 +93,15 @@ multi-value-flag:
   - ...
 ```
 
-## The Default Template
+## The admin Template
 
-The administrator can also set a default template that is always active:
+The administrator can also set a template that is always active:
 
 ``` YAML
 apiVersion: v1
 kind: ConfigMap
 data:
-  name: template-default
+  name: template-admin
   description: "my first template"
   values: |
     job-name-prefix:
@@ -109,18 +109,15 @@ data:
     volumes:
       - /mnt/nfs-share/john:/workspace/john
 metadata:
-  name: template-default
+  name: template-admin
   namespace: runai
   labels:
     runai/template: "true"
-  annotations: 
-    runai/admin: "true"
 
 ```
 
 !!! Notes
-    * The template is denoted as the __default__ template with the annotation `runai/admin: "true"`
-    * You can only have a single default template. If you set more than one default template, Run:AI will choose one at random.
+    * The template is denoted as the __admin__ template with the name `template-admin`
 
 
 # Override rules

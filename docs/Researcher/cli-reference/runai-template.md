@@ -6,7 +6,7 @@ Templates are a way to reduce the amount of flags required when running the comm
 *   Review the contents of a specific template by running ``runai template get <template-name>``
 *   Use a template by running ``runai submit --template <template-name>``
 
-The administrator can also set a default template which is always used on ``runai submit`` whenever a template is __not__ specified.
+The administrator can also set a default template which is always used on ``runai submit``.
 
 ## Synopsis
 
