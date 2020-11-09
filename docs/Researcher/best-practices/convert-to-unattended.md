@@ -60,15 +60,26 @@ For more information on best practices for saving checkpoints, see: [Saving Deep
 
 ## Running the Job
 
-Using ``runai submit``, drop the flag ``--interactive``. For submitting a job using the script created above, please use ``--command``, and pass arguments and/or environment variables using the runai submit flags ``--args``  and  ``--environment``.
+Using ``runai submit``, drop the flag ``--interactive``. For submitting a job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass  environment variables using the  flag ``--environment``.
 
 Example with Environment variables:
 
-<pre><code>runai submit train1 -i nvcr.io/nvidia/tensorflow:20.03-tf1-py3 \<br/>  --project my-project -v /nfs/john:/mydir -g 1 \<br/>  --command ./startup.sh --working-dir /mydir/ \<br/><strong>  -e 'EPOCHS=30' \</strong><br/><strong>  -e 'LEARNING_RATE=0.02'</strong></code></pre>
+```
+runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
+    -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
+    -e 'EPOCHS=30'  -e 'LEARNING_RATE=0.02'  
+    --command  -- ./startup.sh  
+```
 
 Example with Command-line arguments:
 
-<pre><code>runai submit train1 -i nvcr.io/nvidia/tensorflow:20.03-tf1-py3 \<br/> --project my-project -v /nfs/john:/mydir -g 1 \<br/> --command ./startup.sh --working-dir /mydir/ \<br/>   --args='<strong>number-of-epochs=30'</strong> \<br/>   --args=<strong>'batch-size=64'</strong> </code></pre>
+
+```
+runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
+    -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
+    --command  -- ./startup.sh batch-size=64 number-of-epochs=3
+```
+
 
 Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
 

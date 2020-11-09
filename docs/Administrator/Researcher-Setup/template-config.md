@@ -28,7 +28,7 @@ data:
     gpu: 
       required: true
     image:
-      value: nvcr.io/nvidia/tensorflow:20.03-tf1-py3
+      value: tensorflow/tensorflow:1.14.0-gpu-py3
     environments:
       - LEARNING_RATE=0.2
       - MYUSER=$USER
@@ -48,7 +48,7 @@ kubectl apply -f my-template.yaml
 !!! Notes
     *   The template above sets the following:
         * That --gpu (or -g) is a required field when using this template
-        * The default image file will be `nvcr.io/nvidia/tensorflow:20.03-tf1-py3`. The user can override this value and use a different image by setting the --image (-i) flag. 
+        * The default image file will be `tensorflow/tensorflow:1.14.0-gpu-py3`. The user can override this value and use a different image by setting the --image (-i) flag. 
         * There are two environment variables set `LEARNING_RATE` and `MYUSER`. Note that `MYUSER` will be set at runtime according to the value of `$USER`. The user can __add__ environment variables, and __override__ existing ones.  
     *   The label `runai/template` marks the ConfigMap as a Run:AI template.
     *   The name and description will show when using the `runai template list` command.

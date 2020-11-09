@@ -58,7 +58,7 @@ To complete this Quickstart you must have:
 
 * Add a filler class:
         
-        runai submit filler1 -i ubuntu --command sleep --args infinity -g 1 --interactive
+        runai submit filler1 -i ubuntu -g 1 --interactive --command -- sleep infinity
         runai list
     
     The result: 
@@ -78,7 +78,7 @@ To complete this Quickstart you must have:
 
 *   At the command-line run:
     
-        runai submit filler2 -i ubuntu --command sleep --args infinity -g 1 --interactive
+        runai submit filler2 -i ubuntu  -g 1 --interactive --command -- sleep infinity
         runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
 
 *   This would start a filler job on 1 GPU and attempt to start another unattended job with 2 GPUs
