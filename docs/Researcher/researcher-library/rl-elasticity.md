@@ -75,7 +75,7 @@ Run the training workload by using the "elastic" flag:
 
 For additional information on how to run elastic training workloads, see the following [quickstart](../../Walkthroughs/walkthrough-elasticity/). 
 
-## Limitationss
+## Limitations
 
 *   Elasticity currently works with Keras-based or PyTorch-based deep learning code only.
 *   Any training job using Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
