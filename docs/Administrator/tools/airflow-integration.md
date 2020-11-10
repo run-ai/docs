@@ -47,5 +47,7 @@ The code:
 * Specifies a Run:AI __project__ . A project in Run:AI specifies guaranteed GPU & CPU quota.  
 
 
+Once you run the DAG, you can see Airflow tasks showing in the Run:AI UI. 
+
 
 
