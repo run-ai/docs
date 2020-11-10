@@ -19,10 +19,7 @@ DAGs are defined in Python. Airflow tasks based on Kubernetes are defined via th
 To run an Airflow task with Run:AI you must provide additional Run:AI related properties to 
 
 ``` python
-dag = DAG(
-    '<dag-name>',
-    default_args=default_args,
-    schedule_interval=None)
+dag = DAG(...)
 
 resources = {
   "limit_gpu": <number-of-GPUs>
