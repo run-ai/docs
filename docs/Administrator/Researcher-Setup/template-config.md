@@ -14,7 +14,7 @@ The purpose of this document is to provide the administrator with guidelines on 
 
 CLI Templates are implemented as_ Kubernetes <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_self">ConfigMaps</a>. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
 
-### Template Usage
+### Creating a Template 
 
 To create a template, create a file (e.g. `my-template.yaml`) with:
 
@@ -125,7 +125,12 @@ metadata:
 * The User, when running `runai submit` always overrides the admin template and a template specified with `--template`
 * The admin template overrides any specified template.
 
+## Deleting a Template
+to delete a template, run:
 
+```
+kubectl delete cm -n runai <template-name>
+```
 
 ## See Also
 
