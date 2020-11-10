@@ -105,6 +105,7 @@ nav:
     - 'Tools' :
       - 'Submit workloads via YAML' : 'Administrator/tools/launch-job-via-yaml.md'
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
+      - 'Airflow integration' : 'Administrator/tools/airflow-integration.md' 
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
