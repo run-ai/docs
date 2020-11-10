@@ -111,7 +111,7 @@ spec:
               nvidia.com/gpu: <REQUESTED-GPUs>
 ```
 
-The YAML above contains a default command and arguments (``sleep --inifinty``) which you can replace.
+The YAML above contains a default command and arguments (``sleep infinity``) which you can replace.
 
 Run:
 

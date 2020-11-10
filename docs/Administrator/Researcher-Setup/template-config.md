@@ -93,7 +93,7 @@ multi-value-flag:
   - ...
 ```
 
-## The admin Template
+## The Admin Template
 
 The administrator can also set a template that is always active:
 
@@ -122,8 +122,8 @@ metadata:
 
 # Override rules
 
-* The User, when running `runai submit` always overrides the default template and a template specified with `--template`
-* The default template overrides any specified template.
+* The User, when running `runai submit` always overrides the admin template and a template specified with `--template`
+* The admin template overrides any specified template.
 
 
 
