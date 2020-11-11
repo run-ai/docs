@@ -15,7 +15,8 @@ This document uses Keras as an example. The code itself can be found [here](http
 It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node. Example:
 
 ```
-runai submit train-with-checkpoints -i tensorflow/tensorflow:1.14.0-gpu-py3  -v /mnt/nfs_share/john:/mydir -g 1  --working-dir /mydir/ --command -- ./startup.sh
+runai submit train-with-checkpoints -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+  -v /mnt/nfs_share/john:/mydir -g 1  --working-dir /mydir --command -- ./startup.sh
 ```
 
 The command saves the checkpoints in an NFS checkpoints folder `/mnt/nfs_share/john`
@@ -28,7 +29,8 @@ It is a best practice to save checkpoints at intervals. For example, every epoch
 
 ``` python
 checkpoints_file = "weights.best.hdf5"
-checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, 
+    save_best_only=True, mode='max')
 ```
 
 ### Save on Exit Signal
@@ -42,7 +44,8 @@ import time
 def graceful_exit_handler(signum, frame):
     # save your checkpoints to shared storage
     checkpoints_file = "weights.best.hdf5"
-    checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+    checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, 
+        save_best_only=True, mode='max')
 
     # exit with status "1" is important for the job to return later.  
     exit(1)
@@ -57,7 +60,7 @@ By default, you will have 30 seconds to save your checkpoints.
 
 A Run:AI unattended workload that is resumed, will run the __same startup script__ as on the first run. It is the responsibility of the script developer to add code that:
 
-*   Checks if saved checkpoints exist
+*   Checks if saved checkpoints exist (see above)
 *   If saved checkpoints exist, load them and start the run using these checkpoints
 
 ``` python
