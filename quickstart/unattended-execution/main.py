@@ -62,8 +62,10 @@ model.compile(
 # save checkpoints
 checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
-#filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
-#checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+# The following alternative code saves ALL checkpoints, not just the best. 
+# filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+# checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+
 callbacks_list = [checkpoint]
 
 model.fit(x_train, y_train,
