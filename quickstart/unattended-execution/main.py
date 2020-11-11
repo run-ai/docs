@@ -47,15 +47,23 @@ model.add(Dense(512, activation='relu'))
 model.add(Dropout(0.2))
 model.add(Dense(NUM_CLASSES, activation='softmax'))
 
+# load weights
+checkpoints_file = "weights.best.hdf5"
+if os.path.isfile(checkpoints_file):
+    print("loading checkpoint file: " + checkpoints_file)
+    model.load_weights(checkpoints_file)
+
 model.compile(
     loss='categorical_crossentropy',
     optimizer=keras.optimizers.Adadelta(lr=LEARNING_RATE),
     metrics=['accuracy']
 )
 
-# checkpoint
-filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+# save checkpoints
+checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+
+#filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+#checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
 
 model.fit(x_train, y_train,
@@ -68,4 +76,3 @@ score = model.evaluate(x_test, y_test)
 
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
-
