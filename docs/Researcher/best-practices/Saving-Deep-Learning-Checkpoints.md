@@ -8,34 +8,48 @@ Run:AI can pause unattended executions, giving your GPU resources to another wor
 
 TensorFlow, PyTorch, and others have mechanisms to help save checkpoints (e.g. <https://www.tensorflow.org/guide/checkpoint> for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving\_and\_loading\_a\_general\_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html) for PyTorch).
 
+This document uses Keras as an example. The code itself can be found [here](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution)
+
 ## Where to Save Checkpoints
 
-It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node.
+It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node. Example:
+
+```
+runai submit train-with-checkpoints -i tensorflow/tensorflow:1.14.0-gpu-py3  -v /mnt/nfs_share/john:/mydir -g 1  --working-dir /mydir/ --command -- ./startup.sh
+```
+
+The command saves the checkpoints in an NFS checkpoints folder `/mnt/nfs_share/john`
 
 ## When to Save Checkpoints
 
 ### Save Periodically
 
-It is a best practice to save checkpoints at intervals. For example, every epoch.
+It is a best practice to save checkpoints at intervals. For example, every epoch as the Keras code below shows:
+
+``` python
+checkpoints_file = "weights.best.hdf5"
+checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+```
 
 ### Save on Exit Signal
 
 If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
 
+``` python
+import signal
+import time
 
-    import signal
-    import time
+def graceful_exit_handler(signum, frame):
+    # save your checkpoints to shared storage
+    checkpoints_file = "weights.best.hdf5"
+    checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
-    def graceful_exit_handler(signum, frame):
-        # save your checkpoints to shared storage
+    # exit with status "1" is important for the job to return later.  
+    exit(1)
 
-        # exit with status "1" is important for the job to return later.  
-        exit(1)
-
-    if __name__ == "__main__":
-        signal.signal(signal.SIGTERM, graceful_exit_handler)
-
-    # rest of code 
+if __name__ == "__main__":
+    signal.signal(signal.SIGTERM, graceful_exit_handler)
+```
 
 By default, you will have 30 seconds to save your checkpoints.
 
@@ -45,3 +59,12 @@ A Run:AI unattended workload that is resumed, will run the __same startup script
 
 *   Checks if saved checkpoints exist
 *   If saved checkpoints exist, load them and start the run using these checkpoints
+
+``` python
+import os
+
+checkpoints_file = "weights.best.hdf5"
+if os.path.isfile(checkpoints_file):
+    print("loading checkpoint file: " + checkpoints_file)
+    model.load_weights(checkpoints_file)
+```
