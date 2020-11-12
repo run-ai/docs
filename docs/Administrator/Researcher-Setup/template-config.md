@@ -32,6 +32,7 @@ data:
     environments:
       - LEARNING_RATE=0.2
       - MYUSER=$USER
+      - MYPASSWORD=SECRET:my-secret,cred-pass
 metadata:
   name: template-1
   namespace: runai
