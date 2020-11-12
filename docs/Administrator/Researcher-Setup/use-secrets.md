@@ -25,6 +25,11 @@ data:
   password: bXktcGFzc3dvcmQK
 ```
 
+Then run:
+```
+kubectl apply -f <file-name>
+```
+
 !!! Notes
     * Secrets are base64 encoded
     * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:AI project name above. Run:AI provides the ability to propagate secrets throughout all Run:AI projects. See below.
@@ -40,7 +45,7 @@ runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
 For example:
 
 ```
-runai submit -i ubuntu -MYUSERNAME=SECRET:my-secret,username
+runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 ```
 
 
@@ -55,4 +60,6 @@ As per the note above, secrets are namespace-specific. If your secret relates to
 kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
 ```
 
+## Secrets and Templates
 
+A Secret can be set at the template level. For additional information see [template configuration](template-config.md)
