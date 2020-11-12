@@ -43,15 +43,11 @@ import time
 
 def graceful_exit_handler(signum, frame):
     # save your checkpoints to shared storage
-    checkpoints_file = "weights.best.hdf5"
-    checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, 
-        save_best_only=True, mode='max')
 
     # exit with status "1" is important for the job to return later.  
     exit(1)
 
-if __name__ == "__main__":
-    signal.signal(signal.SIGTERM, graceful_exit_handler)
+signal.signal(signal.SIGTERM, graceful_exit_handler)
 ```
 
 By default, you will have 30 seconds to save your checkpoints.

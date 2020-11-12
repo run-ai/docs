@@ -4,8 +4,9 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.callbacks import ModelCheckpoint
-
 import os
+
+checkpoints_file = "weights.best.hdf5"
 
 NUM_CLASSES = 10
 BATCH_SIZE = 128
@@ -48,7 +49,6 @@ model.add(Dropout(0.2))
 model.add(Dense(NUM_CLASSES, activation='softmax'))
 
 # load weights
-checkpoints_file = "weights.best.hdf5"
 if os.path.isfile(checkpoints_file):
     print("loading checkpoint file: " + checkpoints_file)
     model.load_weights(checkpoints_file)
@@ -59,10 +59,10 @@ model.compile(
     metrics=['accuracy']
 )
 
-# save checkpoints
+# register a 'save checkpoints' callback. Default is every epoch
 checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
-# The following alternative code saves ALL checkpoints, not just the best. 
+# Alternatively, save ALL checkpoints.
 # filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
 # checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
