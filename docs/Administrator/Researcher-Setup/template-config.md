@@ -40,7 +40,7 @@ metadata:
     runai/template: "true"
 ```
 
-To store this template run:
+To store this template run: 
 
 ``` 
 kubectl apply -f my-template.yaml 
