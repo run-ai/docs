@@ -95,6 +95,7 @@ nav:
       - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/docker-to-runai.md'
       - 'Limit Run:AI to Specific Nodes' : 'Administrator/Researcher-Setup/limit-to-node-group.md'
 #      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/limit-to-gpus-in-nodes.md'
+      - 'Use Secrets in Jobs' : 'Administrator/Researcher-Setup/use-secrets.md'
       - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/template-config.md'
     - 'Admin UI Setup' :
       - 'Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
