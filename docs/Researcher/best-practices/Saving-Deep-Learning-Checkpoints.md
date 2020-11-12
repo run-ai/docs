@@ -52,6 +52,9 @@ signal.signal(signal.SIGTERM, graceful_exit_handler)
 
 By default, you will have 30 seconds to save your checkpoints.
 
+!!! Important Note
+    For the signal to be captured, it must be propagated from the startup script to the python child process. See code [here](https://github.com/run-ai/docs/blob/master/quickstart/unattended-execution/startup.sh)
+
 ## Resuming using Saved Checkpoints
 
 A Run:AI unattended workload that is resumed, will run the __same startup script__ as on the first run. It is the responsibility of the script developer to add code that:
