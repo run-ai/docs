@@ -141,7 +141,7 @@ curl --request POST \
   --data audience='https://api.run.ai' \
   --data scope=read:sample \
   --data 'client_id='$AUTH0_CLIENT_ID'' \
-  --data realm=runaidemo > /tmp/runai-token-data
+  --data realm=$AUTH0_REALM > /tmp/runai-token-data
 
 BEARER=$(eval cat /tmp/runai-token-data | jq -r '.access_token')
 
