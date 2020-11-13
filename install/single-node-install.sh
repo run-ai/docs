@@ -18,6 +18,11 @@ RUNAI_USERNAME=$1
 RUNAI_PASSWORD=$2
 CLUSTER_NAME=cluster1
 
+# install utils
+sudo apt update
+sudo apt-get install -y conntrack
+sudo apt-get install jq -y
+
 
 
 # **** NVIDIA-DRIVERS ****
@@ -36,16 +41,15 @@ if ! type docker > /dev/null; then
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 fi
+sudo systemctl restart docker
 
 # **** remove sudo constraint for docker
 sudo usermod -aG docker $USER
 
-sudo apt install jq -y
-
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
 	echo -e "${GREEN} Installing NVIDIA-Docker ${NC}"
-	distribution=$(. /etc/os-release;echo -e $ID$VERSION_ID)
+	distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 	sudo apt-get update && sudo apt-get install -y nvidia-docker2
@@ -66,7 +70,7 @@ EOF
 	# Update the default docker configuration and restart
 	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
 	pushd $(mktemp -d)
-	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo -e '{}') | \
+	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
 		jq '. + {"default-runtime": "nvidia"}' | \
 		tee tmp.json
 	sudo mv tmp.json /etc/docker/daemon.json
@@ -76,7 +80,7 @@ fi
 
 if ! type nvidia-docker > /dev/null; then
 	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
-	exit(1)
+	exit 1
 fi
 
 # **** Install Kubectl **** 
@@ -109,12 +113,9 @@ fi
 # **** install minikube
 echo -e "${GREEN} Installing minikube ${NC}"
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo apt install conntrack -y
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
-sudo apt-get install -y conntrack
-
 echo -e "${GREEN} Starting Kubernetes... ${NC}"
 sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --kubernetes-version=1.18.4
 sudo chown -R $SUDO_USER ~/.kube ~/.minikube
