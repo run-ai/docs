@@ -77,7 +77,7 @@ if [ ! -f /etc/docker/daemon.json ]; then
 EOF
 fi
 
-# Update the default docker configuration and restart
+# If daemon.json exists, but nvidia-docker is not the default, rectify this
 # Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
 (sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
 	jq '. + {"default-runtime": "nvidia"}' | \
@@ -129,8 +129,8 @@ curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/runai-auth
 AUTH0_CLIENT_ID=$(eval cat /tmp/runai-auth0-data | jq -r '.authClientID')
 AUTH0_REALM=$(eval cat /tmp/runai-auth0-data | jq -r '.authRealm')
 
-echo -e $AUTH0_CLIENT_ID
-echo -e $AUTH0_REALM
+echo  $AUTH0_CLIENT_ID
+echo  $AUTH0_REALM
 
 curl --request POST \
   --url 'https://runai-prod.auth0.com/oauth/token' \
@@ -200,8 +200,8 @@ done
 printf "\n\n"
 echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
 printf "\n"
-echo -e  "Next steps: "
-echo -e  "- Navigate to the administration console at https://app.run.ai."
+echo  "Next steps: "
+echo  "- Navigate to the administration console at https://app.run.ai."
 echo -e  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
 
 
