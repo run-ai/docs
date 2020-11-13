@@ -52,11 +52,21 @@ if ! type nvidia-docker > /dev/null; then
 	curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 	curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 	sudo apt-get update && sudo apt-get install -y nvidia-docker2
+	sudo systemctl restart docker
+fi
 
-	if [ ! -f /etc/docker/daemon.json ]; then
-		sudo mkdir -p /etc/docker
-		cat <<EOF | sudo tee /etc/docker/daemon.json
+# final check for NVIDIA-docer install
+if ! type nvidia-docker > /dev/null; then
+	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
+	exit 1
+fi
+
+# set daemon.json file if does not exist
+if [ ! -f /etc/docker/daemon.json ]; then
+	sudo mkdir -p /etc/docker
+	cat <<EOF | sudo tee /etc/docker/daemon.json
 {
+	"default-runtime": "nvidia",
     "runtimes": {
         "nvidia": {
             "path": "/usr/bin/nvidia-container-runtime",
@@ -65,20 +75,16 @@ if ! type nvidia-docker > /dev/null; then
     }
 }
 EOF
-	fi
-	# Update the default docker configuration and restart
-	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
-	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
-		jq '. + {"default-runtime": "nvidia"}' | \
-		tee tmp.json
-	sudo mv tmp.json /etc/docker/daemon.json
-	sudo systemctl restart docker
 fi
 
-if ! type nvidia-docker > /dev/null; then
-	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
-	exit 1
-fi
+# Update the default docker configuration and restart
+# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
+(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
+	jq '. + {"default-runtime": "nvidia"}' | \
+	tee tmp.json
+sudo mv tmp.json /etc/docker/daemon.json
+
+sudo systemctl restart docker
 
 # **** Install Kubectl **** 
 # TODO: +++ Look into codyfing a specific k8s version
