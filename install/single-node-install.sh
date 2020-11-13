@@ -1,6 +1,6 @@
 #Requires Auth0 grant type connection to be added 'password'. Try without this, not sure.
 if [ "$#" -ne 2 ]; then
-    echo -e "Usage: sudo install-cluster.sh email password"
+    echo "Usage: sudo install-cluster.sh email password"
     exit 1
 fi
 
@@ -74,6 +74,10 @@ EOF
 	sudo systemctl restart docker
 fi
 
+if ! type nvidia-docker > /dev/null; then
+	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
+	exit(1)
+fi
 
 # **** Install Kubectl **** 
 # TODO: +++ Look into codyfing a specific k8s version
@@ -105,13 +109,14 @@ fi
 # **** install minikube
 echo -e "${GREEN} Installing minikube ${NC}"
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo apt install conntrack -y
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 sudo apt-get install -y conntrack
 
 echo -e "${GREEN} Starting Kubernetes... ${NC}"
-sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
+sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --kubernetes-version=1.18.4
 sudo chown -R $SUDO_USER ~/.kube ~/.minikube
 
 
