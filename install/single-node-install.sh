@@ -28,7 +28,6 @@ sudo apt-get install jq -y
 # **** NVIDIA-DRIVERS ****
 if ! type nvidia-smi > /dev/null; then
 	echo -e "${GREEN} NVIDIA Drivers not installed, installing now ${NC}"
-	sudo apt update
 	sudo apt install ubuntu-drivers-common -y
 	sudo ubuntu-drivers autoinstall
 	echo -e  "${GREEN} NVIDIA Drivers installed. Reboot your machine and run this script again to continue ${NC}"
@@ -69,12 +68,10 @@ EOF
 	fi
 	# Update the default docker configuration and restart
 	# Taken from https://lukeyeager.github.io/2018/01/22/setting-the-default-docker-runtime-to-nvidia.html
-	pushd $(mktemp -d)
 	(sudo cat /etc/docker/daemon.json 2>/dev/null || echo '{}') | \
 		jq '. + {"default-runtime": "nvidia"}' | \
 		tee tmp.json
 	sudo mv tmp.json /etc/docker/daemon.json
-	popd
 	sudo systemctl restart docker
 fi
 
@@ -89,7 +86,7 @@ if ! type kubectl > /dev/null; then
 	echo -e "${GREEN} Installing Kubectl ${NC}"
 	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-	echo -e "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 	sudo apt-get update
 	sudo apt-get install -y kubectl
 fi
@@ -142,7 +139,7 @@ curl --request POST \
 
 BEARER=$(eval cat /tmp/runai-token-data | jq -r '.access_token')
 
-echo -e $BEARER
+echo $BEARER
 
 # **** Verify that there are no clusters
 
