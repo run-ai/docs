@@ -19,7 +19,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai)
+*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"

@@ -1,6 +1,6 @@
 # Run:AI Documentation Library
 
-Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/) on the run.ai website
+Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/){target=_blank} on the run.ai website
 
 
 The Run:AI documentation is targeting two personas:
@@ -11,7 +11,7 @@ The Run:AI documentation is targeting two personas:
 
 ## Example Docker Images
 
-Code for the Docker images referred to in these docs is available [here](https://github.com/run-ai/docs/tree/master/quickstart).
+Code for the Docker images referred to in these docs is available [here](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
 
 
 ## How to get Support
@@ -20,9 +20,9 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On our [website](https://run.ai), under _Support_ use the support form.
+* On our website at [https://run.ai](https://run.ai){target=_blank}, under 'Support' use the support form.
 
-* On the bottom right of the [administrator user interface](https://app.run.ai), use the _Help_ widget.
+* On the bottom right of the administrator user interface [https://app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
 
 * On the bottom right of this page , use the _Help_ widget.
 

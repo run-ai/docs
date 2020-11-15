@@ -13,7 +13,7 @@ If NVIDIA drivers are not already installed on your GPU machines, please install
 
 ### Step 1.2: Install Docker
 
-Install Docker by following the steps here: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/). Specifically, you can use a convenience script provided in the document:
+Install Docker by following the steps here: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){target=_blank}. Specifically, you can use a convenience script provided in the document:
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -40,7 +40,7 @@ sudo yum install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
 
-For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/).
+For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/){target=_blank}.
 
 ### Step 1.4: Make NVIDIA Docker the default docker runtime
 
@@ -66,13 +66,13 @@ Then run the following again:
 
 ### Step 2.1 Install Kubernetes
 
-There are several good ways to install Kubernetes. A full list can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/). Two good alternatives:
+There are several good ways to install Kubernetes. A full list can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Two good alternatives:
 
 1. __Native__ installation. For simple Kubernetes installation, the easiest and fastest way to setup Kubernetes is through a [Native Kubernetes Installation](install-k8s.md).
-2. __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/). Kubespray uses Ansible scripts.  Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray). 
+2. __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}. Kubespray uses Ansible scripts.  Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. 
 
 !!! Note
-    Run:AI is customizing the NVIDIA Kubernetes device plugin (<https://github.com/NVIDIA/k8s-device-plugin>). Do __not__ install this software as it is installed by Run:AI. 
+    Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI. 
 
 Some best practices on Kubernetes configuration can be found here: [Kubernetes Cluster Configuration Best Practices](kubernetes-config-best-practices.md).
 
@@ -104,13 +104,13 @@ To label CPU-only nodes, run the following on __each__ CPU-only node:
 Where ``<node-name>`` is the name of the node. Node names can be obtained by running ``kubectl get nodes``
 
 !!! Note
-    Kubernetes master node(s) typically already have a ["NoSchedule" taint](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to avoid non-system pods running on a master node. Pressuring master nodes may lead to the Kubernetes system not functioning properly. If your master node is not a GPU node, make sure that this taint exists so that Run:AI too, does not run on a master node.
+    Kubernetes master node(s) typically already have a ["NoSchedule" taint](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} to avoid non-system pods running on a master node. Pressuring master nodes may lead to the Kubernetes system not functioning properly. If your master node is not a GPU node, make sure that this taint exists so that Run:AI too, does not run on a master node.
 
 ## Step 3: Install Run:AI
 
 ### Step 3.1: Install Run:AI
 
-*   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai) Use credentials provided by Run:AI Customer Support.
+*   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support.
 *   If no clusters are configured, you will see a dialog with instructions on how to install a Run:AI cluster.
 *   If a cluster has already been configured, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". 
 
@@ -136,7 +136,7 @@ spec:
 
 ## Step 4: Verify your Installation
 
-*   Go to <https://app.run.ai>.
+*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}.
 *   Go to the _Overview_ Dashboard.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appear on the bottom line.
 

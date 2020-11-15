@@ -11,8 +11,8 @@ The instructions below will guide you through the process of installing the CLI.
      * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:AI commands
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
 
-*   Kubectl (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_self">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a>
-*   Helm. See <https://helm.sh/docs/intro/install/> on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+*   Kubectl (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}
+*   Helm. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
 *   A Kubernetes configuration file obtained from a computer previously connected to the Kubernetes cluster
 
 
@@ -29,7 +29,7 @@ The instructions below will guide you through the process of installing the CLI.
 
 ## Run:AI CLI Installation
 
-*   Download the latest release from the Run:AI releases page <https://github.com/run-ai/runai-cli/releases>
+*   Download the latest release from the Run:AI [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}
 *   Unarchive the downloaded file
 *   Install by running:
 

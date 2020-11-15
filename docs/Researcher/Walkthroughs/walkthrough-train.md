@@ -25,7 +25,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at <https://app.run.ai>.
+*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}.
 *   Login.
 *   Go to "Projects".
 *   Add a project named "team-a".
@@ -38,7 +38,7 @@ To complete this Quickstart you must have:
         runai project set team-a
         runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
-This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main) docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
+This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
 
 *   Follow up on the job's progress by running:
 
@@ -73,7 +73,7 @@ You should see a log of a running deep learning session:
 
 ### View status on the Run:AI User Interface
 
-*   Go to <https://app.run.ai>
+*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}
 * Under "Jobs" you can view the new Workload:
 
 ![mceclip2.png](img/mceclip2.png)

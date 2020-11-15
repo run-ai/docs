@@ -57,7 +57,7 @@ fi
 
 # final check for NVIDIA-docer install
 if ! type nvidia-docker > /dev/null; then
-	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
+	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker){target=_blank}"
 	exit 1
 fi
 
@@ -202,7 +202,7 @@ echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active $
 printf "\n"
 echo  "Next steps: "
 echo  "- Navigate to the administration console at https://app.run.ai."
-echo -e  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
+echo -e  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08){target=_blank} to learn how to run workloads. ${NC}"
 
 
 

@@ -34,7 +34,7 @@ A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all node
 
 ### 2. Data is sent to the cloud
 
-Log in to [app.run.ai](https://app.run.ai)
+Log in to [app.run.ai](https://app.run.ai){target=_blank}
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new project. Find the new project using the CLI command:
@@ -56,12 +56,12 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 
          runai list
 
-* Verify that the job is showing on the job area in [app.run.ai/Jobs](https://app.run.ai/Jobs)
+* Verify that the job is showing on the job area in [app.run.ai/Jobs](https://app.run.ai/Jobs){target=_blank}
 
 
 ## Symptom: Metrics are not showing on Overview Dashboard
 
-Some or all metrics are not showing in [app.run.ai](https://app.run.ai)
+Some or all metrics are not showing in [app.run.ai](https://app.run.ai){target=_blank}
 
 __Typical root causes:__
 
@@ -193,7 +193,7 @@ local-path-provisioner:
 ```
 
 ### Incompatible NFS version
-Default NFS Protocol [level](https://www.netapp.com/pdf.html?item=/media/19755-tr-3085.pdf) is currently 4. If your NFS requires an older version, you may need to add the option as follows. Run:
+Default NFS Protocol [level](https://www.netapp.com/pdf.html?item=/media/19755-tr-3085.pdf){target=_blank} is currently 4. If your NFS requires an older version, you may need to add the option as follows. Run:
 
 ```
 kubectl edit runaiconfig runai -n runai

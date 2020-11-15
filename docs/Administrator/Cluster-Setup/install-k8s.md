@@ -1,6 +1,6 @@
 # Native Kubeneretes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/), or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) to learn how to customize the native installation
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation
 
 ## Prerequisites:
 
@@ -10,7 +10,7 @@ All machines have Ubuntu 18.04
 
 ## Run on Master Node
 
-If not yet installed, install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/). Specifically, you can use a convenience script provided in the document:
+If not yet installed, install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/){target=_blank}. Specifically, you can use a convenience script provided in the document:
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh

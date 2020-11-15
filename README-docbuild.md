@@ -30,6 +30,6 @@
 
       mkdocs gh-deploy
      
-* view in [docs.run.ai](https://docs.run.ai)
+* view in [docs.run.ai](https://docs.run.ai){target=_blank}
 
 Don't forget to also git push your changed/new documents to this repository

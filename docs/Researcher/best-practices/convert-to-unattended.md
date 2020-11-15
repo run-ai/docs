@@ -11,7 +11,10 @@ Unattended workloads are good for long-duration runs, or sets of smaller hyperpa
 
 ### Docker Image
 
-A docker container is based on a docker image. Some researchers use generic images such as ones provided by Nvidia (e.g. <https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow>). Others, use generic images as the <ins>base</ins> image to a more customized image using _Dockerfiles_ <https://docs.docker.com/develop/develop-images/dockerfile_best-practices/>.
+
+
+A docker container is based on a docker image. Some researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}. 
+Others, use generic images as the __base__ image to a more customized image using [Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/){target=_blank}.
 
 Realizing that researchers are not always proficient with building docker files, as a best practice you will want to:
 
@@ -52,7 +55,7 @@ python training.py <strong>$@</strong></code></pre>
 
 Run:AI can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:AI will give you back the resources and restore your workload. Thus, it is a good practice to save your weights at various checkpoints and start a workload from the latest checkpoint (typically between epochs).
 
-TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. <https://www.tensorflow.org/guide/checkpoint> for TensorFlow and <https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html> for Pytorch).
+TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. [https://www.tensorflow.org/guide/checkpoint](https://www.tensorflow.org/guide/checkpoint){target=_blank} for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html){target=_blank} for Pytorch).
 
 It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node
 
@@ -89,7 +92,7 @@ Different run configurations may vary significantly and can be tedious to be wri
 
 ## Attached Files
 
-The 3 relevant files mentioned in this document can be downloaded from [Github](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution)
+The 3 relevant files mentioned in this document can be downloaded from [Github](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution){target=_blank}
 
 ## See Also
 

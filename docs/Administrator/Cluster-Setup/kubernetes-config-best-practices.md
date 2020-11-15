@@ -78,4 +78,4 @@ evictionHard:
 ```
 
  Please note that specifying values for evictionHard will override the default values on kubelet which are of very high importance.
- For further reading please refer to <https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/>.
+ For further reading please refer to [https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/){target=_blank}.

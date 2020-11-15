@@ -21,7 +21,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai)
+*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"
@@ -38,7 +38,7 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo). The code uses the [Run:AI Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
+The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. The code uses the [Run:AI Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
 
 
         # import Run:AI HPO library
@@ -178,7 +178,7 @@ Finally, you can delete the HPO job by running:
 For further information on the Run:AI HPO support library see:
 
 * [The Run:AI HPO Support Library](../researcher-library/rl-hpo-support.md)
-* Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/hpo)
+* Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}
 
 
 

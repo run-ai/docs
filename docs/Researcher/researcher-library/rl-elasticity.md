@@ -12,7 +12,7 @@ Expanding a training job allows your workload to run on more GPUs than the resea
 
 Shrinking a training job allows your workload to run on a smaller number of GPUs than the researcher code was originally written for. This is useful for maximizing utilization of the cluster as a whole as well as allowing a researcher to run a workload, albeit slower than intended, and let it automatically expand when GPUs become available at a later time.
 
-Shrinking a training job uses an algorithm called _Gradient_ _Accumulation_. For more information about the algorithm see: <https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa>
+Shrinking a training job uses an algorithm called _Gradient_ _Accumulation_. For more information about the algorithm see: [https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa](https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa){target=_blank}
 
 ## Installation
 
@@ -82,4 +82,4 @@ For additional information on how to run elastic training workloads, see the fol
 
 ## See Also
 
-For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/tree/master/runai/elastic)
+For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/tree/master/runai/elastic){target=_blank}

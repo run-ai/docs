@@ -26,7 +26,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at <https://app.run.ai>
+*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"
@@ -76,7 +76,7 @@ This should provide a direct shell into the computer
 
 ### View status on the Run:AI User Interface
 
-*   Go to <https://app.run.ai>
+*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}
 
 *   Under "Jobs" you can view the new Workload:
 

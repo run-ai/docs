@@ -36,7 +36,7 @@ Before stopping a node, perform the following:
 
         kubectl uncordon <node-name>
 
-For further information see [Kubernetes Documentation](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/).
+For further information see [Kubernetes Documentation](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){target=_blank}.
 
 ## Unplanned Downtime
 

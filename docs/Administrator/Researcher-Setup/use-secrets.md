@@ -12,7 +12,7 @@ Our goal is to provide Run:AI Jobs with secrets as an input in a secure way. Usi
 
 ## Creating a secret
 
-For details on how to create a Kubernetes secret see: [https://kubernetes.io/docs/concepts/configuration/secret/](https://kubernetes.io/docs/concepts/configuration/secret/). Here is an example:
+For details on how to create a Kubernetes secret see: [https://kubernetes.io/docs/concepts/configuration/secret/](https://kubernetes.io/docs/concepts/configuration/secret/){target=_blank}. Here is an example:
 
 ``` YAML
 apiVersion: v1

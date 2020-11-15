@@ -4,7 +4,7 @@
 
 Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a _worker node_. Worker nodes work in parallel to speed up model training. Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a __single container__.
 
-Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. There are a number of Deep Learning frameworks that support Distributed Training. Horovod (<https://eng.uber.com/horovod/>) is a good example.
+Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. There are a number of Deep Learning frameworks that support Distributed Training. [Horovod](https://eng.uber.com/horovod/){target=_blank} is a good example.
 
 Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
 
@@ -19,7 +19,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai)
+*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"
@@ -104,5 +104,5 @@ The environment variable ``RUNAI_MPI_NUM_WORKERS`` is a passed by Run:AI and con
 
 ## See Also
 
-*   The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed)
+*   The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank}
 *   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../cli-reference/runai-submit-mpi.md)

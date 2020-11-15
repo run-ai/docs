@@ -2,19 +2,19 @@
 
 __X11__ is a window system for the Unix operating systems. __X11 forwarding__ allows executing a program remotely through an SSH connection. Meaning, the executable file itself is hosted on a different machine than where the graphical interface is being displayed. The graphical windows are forwarded to your local machine through the SSH connection.
 
-This section is about setting up X11 forwarding from a Run:AI-based container to a [PyCharm](https://www.jetbrains.com/pycharm/) IDE on a remote machine.
+This section is about setting up X11 forwarding from a Run:AI-based container to a [PyCharm](https://www.jetbrains.com/pycharm/){target=_blank} IDE on a remote machine.
  
 
 
 ## Submit a Workload
 
-You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/)). For the purposes of this document, we have created an image named `gcr.io/run-ai-demo/quickstart-x-forwarding`. The image runs:
+You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `gcr.io/run-ai-demo/quickstart-x-forwarding`. The image runs:
 
 * Python
 * SSH Daemon configured for X11Forwarding 
 * OpenCV python library for image handling
 
-Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding). The image is configured to use the ``root`` user and password for SSH.
+Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding){target=_blank}. The image is configured to use the ``root`` user and password for SSH.
 
 Run the following command to connect to the container as if it were running locally:
 
@@ -74,4 +74,4 @@ Copy the value. It will be used as a PyCharm environment variable.
     1. `DISPLAY` - set environment variable you copied before
     3. `HOME` - In our case it's `/root`. This is required for the X11 authentication to work.
 
-Run your code. You can use our sample code [here](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding/project).
+Run your code. You can use our sample code [here](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding/project){target=_blank}.

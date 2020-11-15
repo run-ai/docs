@@ -104,7 +104,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 >  - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
 
-> For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images).
+> For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
 --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
@@ -151,11 +151,11 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 > __Storage_Class_Name__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 
->    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for how to specify volume sizes
+>    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
 
 >    __Container_Mount_Path__. A path internal to the container where the storage will be mounted
 
->    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) to mount into the container
+>    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic){target=_blank} to mount into the container
 > 
 > Examples:
 
@@ -196,7 +196,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 > Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 --prevent-privilege-escalation
-> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation).
+> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
 
 --run-as-user
 >  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.

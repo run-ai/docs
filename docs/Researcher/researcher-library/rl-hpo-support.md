@@ -14,7 +14,7 @@ With the reporter module, you can externalize information such as progress, accu
 
 ### Prerequisites
 
-Run:AI HPO library is dependent on [PyYAML](https://github.com/yaml/pyyaml).
+Run:AI HPO library is dependent on [PyYAML](https://github.com/yaml/pyyaml){target=_blank}.
 Install it using the command:
 
 ```

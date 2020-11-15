@@ -6,9 +6,9 @@ Run:AI can pause unattended executions, giving your GPU resources to another wor
 
 ## How to Save Checkpoints
 
-TensorFlow, PyTorch, and others have mechanisms to help save checkpoints (e.g. <https://www.tensorflow.org/guide/checkpoint> for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving\_and\_loading\_a\_general\_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html) for PyTorch).
+TensorFlow, PyTorch, and others have mechanisms to help save checkpoints (e.g. [https://www.tensorflow.org/guide/checkpoint](https://www.tensorflow.org/guide/checkpoint){target=_blank} for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html){target=_blank} for Pytorch).
 
-This document uses Keras as an example. The code itself can be found [here](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution)
+This document uses Keras as an example. The code itself can be found [here](https://github.com/run-ai/docs/tree/master/quickstart/unattended-execution){target=_blank}
 
 ## Where to Save Checkpoints
 
@@ -53,7 +53,7 @@ signal.signal(signal.SIGTERM, graceful_exit_handler)
 By default, you will have 30 seconds to save your checkpoints.
 
 !!! Important Note
-    For the signal to be captured, it must be propagated from the startup script to the python child process. See code [here](https://github.com/run-ai/docs/blob/master/quickstart/unattended-execution/startup.sh)
+    For the signal to be captured, it must be propagated from the startup script to the python child process. See code [here](https://github.com/run-ai/docs/blob/master/quickstart/unattended-execution/startup.sh){target=_blank}
 
 ## Resuming using Saved Checkpoints
 

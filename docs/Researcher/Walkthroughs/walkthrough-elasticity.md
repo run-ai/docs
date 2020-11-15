@@ -27,7 +27,7 @@ To complete this Quickstart you must have:
     *  If the cluster nodes contain more than 2 GPUs, you can create an interactive job on a different project to consume the remaining GPUs.    
 
 
-*   Open the Run:AI user interface at <https://app.run.ai>
+*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"

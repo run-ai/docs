@@ -2,12 +2,12 @@
 
 Once you launch a workload using Run:AI, you will want to connect to it. You can do so via command-line or via other tools such as a [Jupyter Notebook](../Walkthroughs/walkthrough-build-ports.md)
 
-This document is about accessing the remote container created by Run:AI, from JetBrain's [PyCharm](https://www.jetbrains.com/pycharm/). 
+This document is about accessing the remote container created by Run:AI, from JetBrain's [PyCharm](https://www.jetbrains.com/pycharm/){target=_blank}. 
 
 
 ## Submit a Workload
 
-You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/)). For the purposes of this document, we have created an image named `gcr.io/run-ai-demo/pycharm-demo`. The image runs both python and ssh. Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh). The image is configured to use the ``root`` user and password for SSH.
+You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `gcr.io/run-ai-demo/pycharm-demo`. The image runs both python and ssh. Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank}. The image is configured to use the ``root`` user and password for SSH.
 
 Run the following command to connect to the container as if it were running locally:
 
@@ -42,7 +42,7 @@ Forwarding from [::1]:2222 -> 22
         ```
 
         * The job starts an sshd server on port 22.
-        * The job redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) service type.
+        * The job redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} service type.
         * Run: `runai list`
 
         * Next to the job, under the "Service URL" column you will find the IP address and port. The port is 30222 

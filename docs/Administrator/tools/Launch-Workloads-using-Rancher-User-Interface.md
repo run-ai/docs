@@ -1,6 +1,6 @@
-Rancher (<https://rancher.com/>) is a software that manages Kubernetes clusters. Some customers provide Rancher to data scientists in order to launch workloads. This guide provides step by step instructions on how to launch workloads via Rancher. It assumes the reader has some familiarity with Rancher itself.
+[Rancher](https://rancher.com/){target=_blank} is a software that manages Kubernetes clusters. Some customers provide Rancher to data scientists in order to launch workloads. This guide provides step by step instructions on how to launch workloads via Rancher. It assumes the reader has some familiarity with Rancher itself.
 
-There are other ways for data scientists to launch Workloads such as the Run:AI CLI or Kubeflow (<https://www.kubeflow.org/>).  The advantage of Rancher is the usage of a user interface. The disadvantage is that it exposes the data scientist to Kubernetes/Docker terminology that would otherwise remain hidden
+There are other ways for data scientists to launch Workloads such as the Run:AI CLI or [Kubeflow](https://www.kubeflow.org){target=_blank}.  The advantage of Rancher is the usage of a user interface. The disadvantage is that it exposes the data scientist to Kubernetes/Docker terminology that would otherwise remain hidden
 
 ## Types of Workloads 
 

@@ -14,7 +14,7 @@ To submit workloads with Run:AI, the researcher must be provided with a "project
 
 ## Provide access to the Run:AI Administration UI
 
-Some organizations would want to provide researchers with a more holistic view of what is happening in the cluster. You can do that by providing the appropriate access to the Run:AI Administration UI (<a href="https://app.run.ai" target="_self">app.run.ai)</a>. See [this](https://support.run.ai/hc/en-us/articles/360011591340-Working-with-Admin-UI-Users) document for further information on how to provide access. 
+Some organizations would want to provide researchers with a more holistic view of what is happening in the cluster. You can do that by providing the appropriate access to the Run:AI Administration UI (<a href="https://app.run.ai" target="_self">app.run.ai)</a>. See [this](https://support.run.ai/hc/en-us/articles/360011591340-Working-with-Admin-UI-Users){target=_blank} document for further information on how to provide access. 
 
 ## Schedule an Onboarding Session
 

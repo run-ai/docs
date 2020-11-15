@@ -19,7 +19,11 @@ Ingress allows access to Kubernetes services from outside the Kubernetes cluster
 
 Before installing ingress, you must obtain an IP Address or an IP address range which is external to the cluster.
 
-A Run:AI cluster is installed by accessing the Administrator User Interface at [app.run.ai](https://app.run.ai) downloading a YAML file runai-operator.yaml and then applying it to Kubernetes. You must edit the YAML file. Search for _localLoadBalancer_
+A Run:AI cluster is installed by:
+
+* Accessing the Administrator User Interface at [app.run.ai](https://app.run.ai){target=_blank} 
+* Downloading a YAML file `runai-operator.yaml` and then 
+* Applying it to Kubernetes. You must edit the YAML file. Search for _localLoadBalancer_
 
 ``` yaml
 localLoadBalancer
@@ -56,10 +60,10 @@ For further details see CLI command [runai submit](../../Researcher/cli-referenc
 
 *    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort Service, from outside the cluster, by requesting &lt;NodeIP&gt;:&lt;NodePort&gt; regardless of which node the container actually resides.  
 *   LoadBalancer - Useful for cloud environments. Exposes the Service externally using a cloud provider’s load balancer.
-*   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_self">here</a>. 
+*   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found [here](https://kubernetes.io/docs/concepts/services-networking/ingress/){target=_blank}. 
 *   Port Forwarding - Simple port forwarding allows access to the container via localhost:&lt;Port&gt;.
 
- See <https://kubernetes.io/docs/concepts/services-networking/service/> for further details.
+ See [https://kubernetes.io/docs/concepts/services-networking/service](https://kubernetes.io/docs/concepts/services-networking/service/){target=_blank} for further details.
 
  
 

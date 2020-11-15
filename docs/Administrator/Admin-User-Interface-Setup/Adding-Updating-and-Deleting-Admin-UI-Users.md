@@ -23,7 +23,7 @@ __Notes:__
 
 Note: In order to be able to manipulate users, you must have _Administrator_ access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
 
-*   Log in to <https://app.run.ai>
+*   Log in to [https://app.run.ai](https://app.run.ai){target=_blank}
 *   On the top left, open the menu and select "Users"
 *   On the top right, select "Add New Users".
 

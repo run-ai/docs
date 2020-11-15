@@ -21,7 +21,7 @@ Contact your administrator to see which methods are available in your cluster
 
 ### Setup
 
-*   Open the Run:AI user interface at <https://app.run.ai>
+*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}
 *   Login
 *   Go to "Projects"
 *   Add a project named "team-a"
