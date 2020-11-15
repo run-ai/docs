@@ -1,4 +1,4 @@
-#Requires Auth0 grant type connection to be added 'password'. Try without this, not sure.
+# Requires Auth0 grant type connection to be added 'password' (automated). 
 if [ "$#" -ne 2 ]; then
     echo "Usage: sudo install-cluster.sh email password"
     exit 1
@@ -183,7 +183,7 @@ sed 's/grafanaLab:/local-path-provisioner:\
   &/' runai-operator-$CLUSTER_NAME.yaml > runai-operator-$CLUSTER_NAME-mod.yaml
 
 
-# **** Install Run:AI (running twice overcome a possible race condition bug)
+# **** Install Run:AI (running twice to overcome a possible race condition bug)
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
