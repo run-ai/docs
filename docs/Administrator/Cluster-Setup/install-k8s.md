@@ -106,6 +106,10 @@ sudo kubeadm join 10.0.0.3:6443 --token <token> \
     --discovery-token-ca-cert-hash sha256:<hash>
 ```
 
+!!! Note
+    The default token expires after 24 hours. If the token has expired, go to the master node and run `sudo kubeadm token create --print-join-command`. Then replace the old token with the new one
+
+
 Return to the master node. Re-run `kubectl get nodes` and verify that the new node is ready.
 
 
