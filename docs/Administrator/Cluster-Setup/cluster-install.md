@@ -136,8 +136,7 @@ spec:
 
 ## Step 4: Verify your Installation
 
-*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}.
-*   Go to the _Overview_ Dashboard.
+*   Go to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appear on the bottom line.
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).

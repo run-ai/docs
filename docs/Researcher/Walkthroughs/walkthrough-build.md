@@ -26,9 +26,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}
-*   Login
-*   Go to "Projects"
+*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
 *   Add a project named "team-a"
 *   Allocate 2 GPUs to the project
 
@@ -76,8 +74,7 @@ This should provide a direct shell into the computer
 
 ### View status on the Run:AI User Interface
 
-*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}
-
+*   Go to [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 *   Under "Jobs" you can view the new Workload:
 
 ![mceclip24.png](img/mceclip24.png)

@@ -27,8 +27,7 @@ __Important best practice:__ As a rule, the sum of the project allocation should
 !!! Note 
     In order to be able to manipulate projects, you must have _Editor_ access. See the "Users" Area
 
-*   Log in to [https://app.run.ai](https://app.run.ai){target=_blank}
-*   On the top left, open the menu and select "Projects"
+*   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
 *   On the top right, select "Add New Project"
 *   Choose a project name and a project quota 
 *   Press "Save"

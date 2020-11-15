@@ -21,11 +21,9 @@ Contact your administrator to see which methods are available in your cluster
 
 ### Setup
 
-*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}
-*   Login
-*   Go to "Projects"
-*   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
+*  Add a project named "team-a"
+*  Allocate 2 GPUs to the project
 
 ### Run Workload
 

@@ -25,11 +25,9 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [https://app.run.ai](https://app.run.ai){target=_blank}.
-*   Login.
-*   Go to "Projects".
-*   Add a project named "team-a".
-*   Allocate 2 GPUs to the project.
+*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
+*  Add a project named "team-a".
+*  Allocate 2 GPUs to the project.
 
 ### Run Workload
 
@@ -73,7 +71,7 @@ You should see a log of a running deep learning session:
 
 ### View status on the Run:AI User Interface
 
-*   Go to [https://app.run.ai](https://app.run.ai){target=_blank}
+*   Go to [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 * Under "Jobs" you can view the new Workload:
 
 ![mceclip2.png](img/mceclip2.png)

@@ -34,7 +34,7 @@ A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all node
 
 ### 2. Data is sent to the cloud
 
-Log in to [app.run.ai](https://app.run.ai){target=_blank}
+Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new project. Find the new project using the CLI command:
@@ -56,12 +56,12 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 
          runai list
 
-* Verify that the job is showing on the job area in [app.run.ai/Jobs](https://app.run.ai/Jobs){target=_blank}
+* Verify that the job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 
 
 ## Symptom: Metrics are not showing on Overview Dashboard
 
-Some or all metrics are not showing in [app.run.ai](https://app.run.ai){target=_blank}
+Some or all metrics are not showing in [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
 
 __Typical root causes:__
 

@@ -21,12 +21,10 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank}
-*   Login
-*   Go to "Projects"
-*   Add a project named "team-a"
-*   Allocate _2_ GPUs to the project
-*   On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
+*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
+*  Add a project named "team-a"
+*  Allocate _2_ GPUs to the project
+*  On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
 
 ### Pods
 

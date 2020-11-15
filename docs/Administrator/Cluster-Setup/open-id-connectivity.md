@@ -17,7 +17,7 @@ With Run:AI OpenID Connect you synchronize:
 *   Users
 *   Users' groups
 
-The Run:AI login page is app.run.ai and is the point of access to all Run:AI customers using the default login mechanism. When enabling the Run:AI OpenID connector, your company will be allocated a subdomain e.g. _company.app.run.ai._
+The Run:AI login page is [app.run.ai](https://app.run.ai){target=_blank} and is the point of access to all Run:AI customers using the default login mechanism. When enabling the Run:AI OpenID connector, your company will be allocated a subdomain e.g. _company.app.run.ai._
 
 When the user is not yet authenticated, company.app.run.ai will automatically redirect to your generic company's authentication page. Post authentication, the user will be redirected back to company.app.run.ai and can start working.
 

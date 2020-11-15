@@ -19,9 +19,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Open the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank}
-*   Login
-*   Go to "Projects"
+*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
 *   Add a project named "team-a"
 *   Allocate 1 GPU to the project
 
