@@ -53,6 +53,7 @@ plugins:
 markdown_extensions:
   - codehilite
   - admonition
+  - attr_list
   - toc:
       permalink: True
 extra:
