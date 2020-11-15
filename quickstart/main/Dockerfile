@@ -1,4 +1,4 @@
-# NOTE: This docker is highly inspired by Horovod's GPU dockerfile (https://github.com/horovod/horovod/blob/master/Dockerfile.gpu){target=_blank}
+# NOTE: This docker is highly inspired by Horovod's GPU dockerfile (https://github.com/horovod/horovod/blob/master/Dockerfile.gpu)
 
 FROM nvidia/cuda:10.0-devel-ubuntu18.04
 
