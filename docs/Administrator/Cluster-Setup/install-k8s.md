@@ -1,6 +1,6 @@
 # Native Kubeneretes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and a number of workers. For a more complex Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
 ## Prerequisites:
 
@@ -107,7 +107,7 @@ sudo kubeadm join 10.0.0.3:6443 --token <token> \
 ```
 
 !!! Note
-    The default token expires after 24 hours. If the token has expired, go to the master node and run `sudo kubeadm token create --print-join-command`. Then replace the old token with the new one
+    The default token expires after 24 hours. If the token has expired, go to the master node and run `sudo kubeadm token create --print-join-command`. This will produce an up to date join command.
 
 
 Return to the master node. Re-run `kubectl get nodes` and verify that the new node is ready.
