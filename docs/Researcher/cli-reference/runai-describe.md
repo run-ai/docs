@@ -44,7 +44,7 @@ runai describe node [node-name]
 
 ## Output
 
-The `runai describe job` command will show the job properties and status as well as lifecycle events and list of pods.
-The `runai describe node` command will show the node properties. 
+* The `runai describe job` command will show the job properties and status as well as lifecycle events and list of pods.
+* The `runai describe node` command will show the node properties. 
 
 ## See Also

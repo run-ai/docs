@@ -20,13 +20,12 @@ runai list clusters
     [--loglevel value] 
     [--help | -h]
 
-runai list nodes <node-name>
+runai list nodes [node-name]
     [--loglevel value] 
     [--help | -h]
 ```
 ## Options
-
-<node-name\> the name of the node to run the command in
+`node-name` - Name of a specific node to list (optional).
 
 
 --all-projects | -A

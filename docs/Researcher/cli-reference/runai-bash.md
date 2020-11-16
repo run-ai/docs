@@ -7,7 +7,7 @@ This command is a shortcut to runai exec (``runai exec -it job-name bash``). See
 ## Synopsis
 
 ``` shell
-runai bash job-name 
+runai bash <job-name> 
     [--pod string]
     
     [--loglevel value] 
