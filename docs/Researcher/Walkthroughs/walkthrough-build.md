@@ -45,7 +45,7 @@ To complete this Quickstart you must have:
 
 Follow up on the job's status by running:
 
-    runai list
+    runai list jobs
 
 The result:
 
@@ -61,7 +61,7 @@ A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
 
 To get additional status on your job run:
 
-    runai get build1
+    runai describe build1
 
 
 ### Get a Shell to the container
@@ -87,7 +87,7 @@ Run the following:
 
     runai delete build1
 
-This would stop the training workload. You can verify this by running ``runai list`` again.
+This would stop the training workload. You can verify this by running ``runai list jobs`` again.
 
 ## Next Steps
 

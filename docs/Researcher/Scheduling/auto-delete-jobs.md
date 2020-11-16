@@ -2,7 +2,7 @@
 
 Jobs can be started via Kubeflow, Run:AI CLI, Rancher or via direct Kubernetes API. When jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old jobs by running the command:
 
-    runai list
+    runai list jobs
 
 ![mceclip0.png](img/mceclip0.png)
 

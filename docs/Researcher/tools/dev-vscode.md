@@ -20,7 +20,7 @@ The terminal will show the connection:
 
 ``` shell
 The job 'build-remote' has been submitted successfully
-You can run `runai get build-remote -p team-a` to check the job status
+You can run `runai describe build-remote -p team-a` to check the job status
 INFO[0007] Waiting for job to start
 Waiting for job to start
 Waiting for job to start
@@ -43,7 +43,7 @@ Forwarding from [::1]:2222 -> 22
 
         * The job starts an sshd server on port 22.
         * The job redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} service type.
-        * Run: `runai list`
+        * Run: `runai list jobs`
 
         * Next to the job, under the "Service URL" column you will find the IP address and port. The port is 30222 
 

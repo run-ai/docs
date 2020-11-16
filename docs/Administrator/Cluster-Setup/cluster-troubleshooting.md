@@ -54,7 +54,7 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 
 * Verify that the job is a _Running_ state when running: 
 
-         runai list
+         runai list jobs
 
 * Verify that the job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 

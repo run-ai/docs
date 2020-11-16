@@ -24,7 +24,7 @@ By default, Python buffers stdout and stderr, which is not flushed in real-time.
 
 Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. python -u main.py
 
-## Runai list command works but runai submit does not
+## Runai list jobs command works but runai submit does not
 
 ### Solution
 

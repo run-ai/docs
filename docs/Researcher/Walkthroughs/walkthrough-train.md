@@ -40,7 +40,7 @@ This would start an unattended training job for team-a with an allocation of a s
 
 *   Follow up on the job's progress by running:
 
-        runai list
+        runai list jobs
 
 The result:
 
@@ -57,7 +57,7 @@ A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
 
 To get additional status on your job run:
 
-    runai get train1
+    runai describe train1
 
 ### View Logs
 
@@ -92,7 +92,7 @@ Run the following:
 
     runai delete train1
 
-This would stop the training workload. You can verify this by running ``runai list`` again.
+This would stop the training workload. You can verify this by running ``runai list jobs`` again.
 
 ## Next Steps
 

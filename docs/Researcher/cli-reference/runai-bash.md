@@ -20,7 +20,7 @@ runai bash job-name
 <job-name\> the name of the job to run the command in
 
 --pod string
-> Specify a pod of a running job. To get a list of the pods of a specific job, run "runai get <job-name>" command
+> Specify a pod of a running job. To get a list of the pods of a specific job, run "runai describe <job-name>" command
 
 ### Global Flags
 

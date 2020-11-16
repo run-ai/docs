@@ -225,7 +225,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ## Output
 
-The command will attempt to submit an _mpi_ job. You can follow up on the job by running ``runai list`` or ``runai get job-name``
+The command will attempt to submit an _mpi_ job. You can follow up on the job by running ``runai list jobs`` or ``runai describe job-name``
 
 ## See Also
 

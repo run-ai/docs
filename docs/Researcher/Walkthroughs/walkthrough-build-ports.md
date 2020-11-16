@@ -67,7 +67,7 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 
 *   An ingress service URL will be created, run:
 
-        runai list
+        runai list jobs
 
 You will see the service URL with which to access the Jupyter notebook
 

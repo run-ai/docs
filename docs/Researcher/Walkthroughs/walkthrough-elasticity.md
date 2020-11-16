@@ -43,7 +43,7 @@ To complete this Quickstart you must have:
 * The flag ``--elastic`` enables the Elasticity feature
 * Follow up on the job's progress by running:
 
-        runai list
+        runai list jobs
 
     The result:
 
@@ -57,7 +57,7 @@ To complete this Quickstart you must have:
 * Add a filler class:
         
         runai submit filler1 -i ubuntu -g 1 --interactive --command -- sleep infinity
-        runai list
+        runai list jobs
     
     The result: 
 
@@ -84,7 +84,7 @@ To complete this Quickstart you must have:
 
 *   Follow up on the job's progress by running:
     
-        runai list
+        runai list jobs
 
     The result:
 
@@ -98,7 +98,7 @@ To complete this Quickstart you must have:
 *   Delete the filler job and list the jobs again:
 
         runai delete filler2
-        runai list
+        runai list jobs
 
     The result:
 

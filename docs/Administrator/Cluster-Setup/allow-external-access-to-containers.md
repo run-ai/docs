@@ -44,7 +44,7 @@ The researcher uses the Run:AI CLI to set the method type and the ports when sub
 
 After submitting a job through the Run:AI CLI, run:
 
-    runai list
+    runai list jobs
 
 You will see the service URL with which to access the Jupyter notebook
 

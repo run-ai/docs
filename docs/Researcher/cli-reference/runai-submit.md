@@ -115,7 +115,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 
 > Example:
 
-> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
+> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list jobs`` to find the URL for the notebook.
 
 --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
@@ -304,7 +304,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 
 ## Output
 
-The command will attempt to submit a job. You can follow up on the job by running ``runai list`` or ``runai get job-name -e``
+The command will attempt to submit a job. You can follow up on the job by running ``runai list jobs`` or ``runai describe <job-name> -e``
 
 Note that the submit call may use templates to provide defaults to any of the above flags.
 

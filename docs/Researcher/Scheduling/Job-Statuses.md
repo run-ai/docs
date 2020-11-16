@@ -351,7 +351,7 @@ Below is a list of statuses. For each status the list shows:
 
 The system (Kubernetes and Run:AI) store various _events_ during the job's lifecycle. These events are helpful in diagnosing issues around job scheduling. To view these events run:
 
-    runai get <job-name>
+    runai describe <job-name>
 
 
 Sometimes, useful information can be found by looking at  logs emitted from the process running inside the container. For example, jobs that have exited with an exit code different than zero may write an exit reason in this log. To see job logs run:

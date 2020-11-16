@@ -32,7 +32,7 @@ runai delete <job-name>
 
 ## Output
 
-The job will be deleted and not available via the command _runai list_
+The job will be deleted and not available via the command _runai list jobs_
 
 The job will __not__ be deleted from the Run:AI user interface Job list
 

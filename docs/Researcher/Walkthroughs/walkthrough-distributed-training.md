@@ -42,7 +42,7 @@ runai submit-mpi dist --processes=2 -g 1 \
 
 Follow up on the job's status by running:
 
-        runai list
+        runai list jobs
 
 The result:
 
@@ -50,7 +50,7 @@ The result:
 
 The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
-        runai get dist
+        runai describe dist
 
 You will see two worker processes (pods) their status and on which node they run:
 
