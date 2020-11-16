@@ -16,7 +16,7 @@ Find and install the latest version of the runai command-line utility. On mac an
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --help | -h
 

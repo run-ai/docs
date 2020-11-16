@@ -26,7 +26,7 @@ runai bash job-name
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --project | -p (string)
 

@@ -11,10 +11,6 @@ runai project set <project-name>
     [--loglevel value] 
     [--help | -h]
 
-runai project list
-    [--loglevel value] 
-    [--help | -h]
-
 ```
 ## Options
 
@@ -25,7 +21,7 @@ runai project list
 
 --loglevel (string)
 
-> Set the logging level. One of: debug|info|warn|error (default "info")
+> Set the logging level. One of: debug | info | warn | error (default "info")
 
 
 --help | -h
@@ -34,5 +30,5 @@ runai project list
 
 ## Output
 
-With these two commands you can show a __list__ of available projects as well as to be able to set a __default__ project, thus, removing the need to use the ``--project`` flag on other CLI commands. 
+None
 

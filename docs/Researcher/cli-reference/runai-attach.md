@@ -32,7 +32,7 @@ The command attaches to the standard input, output, and error streams of a runni
 ### Global Flags
 
 --loglevel (string)
-> Set the logging level. One of: debug|info|warn|error (default "info").
+> Set the logging level. One of: debug | info | warn | error (default "info").
 
 --help | -h
 >  Show help text.

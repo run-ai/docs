@@ -44,7 +44,7 @@ runai logs <job-name>
 ### Global Flags
 
 --loglevel (string)
->  Set the logging level. One of: debug|info|warn|error (default "info").
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
 >  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.

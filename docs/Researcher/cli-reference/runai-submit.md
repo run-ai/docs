@@ -294,7 +294,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 ### Global Flags
 
 --loglevel (string)
->  Set the logging level. One of: debug|info|warn|error (default "info").
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
 >  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.

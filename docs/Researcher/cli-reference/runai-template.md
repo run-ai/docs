@@ -24,7 +24,7 @@ The administrator can also set a default template which is always used on ``runa
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 ## Output
 

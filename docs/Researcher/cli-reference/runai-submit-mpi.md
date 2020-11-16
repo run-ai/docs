@@ -213,7 +213,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --project | -p (string)
 

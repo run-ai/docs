@@ -1,11 +1,12 @@
 ## Description
 
-Show list of nodes (machines) and their properties
+Show list of nodes (machines), their capacity and utilization
 
 ## Synopsis
 
     runai top node 
         [--help | -h]
+        [--details | -d]
 
 ## Options
 
@@ -14,15 +15,19 @@ Show list of nodes (machines) and their properties
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --help | -h
 
 >  Show help text
 
+--details | -d
+
+>  Show additional details
+
 ## Output
 
-Shows a list of nodes and their properties
+Shows a list of nodes their capacity and utilization
 
 ## See Also
 
