@@ -39,7 +39,7 @@ Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now)
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new project. Find the new project using the CLI command:
 
-         runai project list
+         runai list projects
 
 
 ### 3. Submit a job
@@ -128,7 +128,7 @@ Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 
 ## Symptom: Projects are not syncing
 
-Create a project on the Admin UI, then run: `runai project list`. The new project does __not__ appear.
+Create a project on the Admin UI, then run: `runai list projects`. The new project does __not__ appear.
 
  __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
 
