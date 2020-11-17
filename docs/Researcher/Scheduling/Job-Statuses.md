@@ -2,7 +2,7 @@
 
 The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:AI jobs for execution. 
 
-A job has a __status__. Once a job is submitted it goes through a number of statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI specific. 
+A job has a __status__. Once a job is submitted it goes through a number of statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
 
 The purpose of this document is to explain these statuses as well as the lifecycle of a Job. 
 
@@ -25,7 +25,7 @@ The job can be preempted, in which case it can go through other statuses:
 An _interactive_ job, by definition, needs to be closed by the Researcher and will thus never reach the _Succeeded_ status. Rather, it would be moved by the Researcher to status _Deleted_.
 
 
-For a further explanation of the additional statuses, see table below.
+For a further explanation of the additional statuses, see the table below.
 
 ## Error flow
 
@@ -349,7 +349,7 @@ Below is a list of statuses. For each status the list shows:
 
 ## How to get more information
 
-The system (Kubernetes and Run:AI) store various _events_ during the job's lifecycle. These events are helpful in diagnosing issues around job scheduling. To view these events run:
+The system stores various _events_ during the Job's lifecycle. These events can be helpful in diagnosing issues around job scheduling. To view these events run:
 
     runai describe <job-name>
 

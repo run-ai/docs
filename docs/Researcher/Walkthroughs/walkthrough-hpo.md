@@ -118,7 +118,7 @@ The logs will contain a couple of lines worth noting:
 
 ### Examine the Results
 
-The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is an snapshot of the file for two experiments with two epochs each:
+The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is a snapshot of the file for two experiments with two epochs each:
 
 ```
 creationTime: 24/08/2020 08:50:06
