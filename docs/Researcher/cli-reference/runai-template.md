@@ -17,7 +17,7 @@ runai template list
 
 ## Options
 
-<template-name\> the name of the Template to run the command on
+<template-name\> - The name of the Template to run the command on.
 
 ``runai template list`` will show the list of existing Templates.
 

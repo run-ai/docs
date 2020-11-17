@@ -1,3 +1,6 @@
+!!! attention
+    `runai project list` has been replaced by `runai list projects`.
+
 ## Description
 
 Set a default Project.
@@ -13,7 +16,7 @@ runai project set <project-name>
 ```
 ## Options
 
-<project-name\> the name of the Project you want to set as default. Mandatory.
+<project-name\>  - The name of the Project you want to set as default. Mandatory.
 
 
 ### Global Flags

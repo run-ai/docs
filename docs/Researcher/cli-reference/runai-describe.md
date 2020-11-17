@@ -27,8 +27,8 @@ runai describe node [node-name]
 
 ## Options
 
-* <job-name\> the name of the Job to run the command with. Mandatory.
-* <node-name\> the name of the Node to run the command with. If a Node name is not specified, a description of all Nodes is shown.
+* <job-name\> - The name of the Job to run the command with. Mandatory.
+* <node-name\> - The name of the Node to run the command with. If a Node name is not specified, a description of all Nodes is shown.
 
 
 -o | --output

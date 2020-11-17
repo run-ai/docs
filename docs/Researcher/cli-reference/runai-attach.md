@@ -18,7 +18,7 @@ The command attaches to the standard input, output, and error streams of a runni
 
 ## Options
 
-<job-name\> the name of the Job to run the command with. Mandatory.
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
 --no-stdin    
 > Do not attach STDIN.

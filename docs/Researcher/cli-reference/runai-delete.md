@@ -19,7 +19,7 @@ runai delete <job-name>
 
 ## Options
 
-<job-name\> the name of the Job to run the command with, Mandatory.
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
 --loglevel (string)
 >  Set the logging level. One of: debug | info | warn | error (default "info").

@@ -1,3 +1,6 @@
+!!! attention
+    `runai cluster list` has been replaced by `runai list clusters`.
+
 ## Description
 
 Set the current Cluster.
@@ -13,7 +16,7 @@ runai cluster set <cluster-name>
 
 ## Options
 
-<cluster-name\> the name of the Cluster you want to set as the current Cluster. Mandatory.
+<cluster-name\> - The name of the Cluster you want to set as the current Cluster. Mandatory.
 
 
 ### Global Flags

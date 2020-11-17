@@ -19,7 +19,7 @@ runai exec <job-name> <command>
 
 ## Options
 
-<job-name\> the name of the Job to run the command with. Mandatory.
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
 <command\> the command itself (e.g. _bash_).
 

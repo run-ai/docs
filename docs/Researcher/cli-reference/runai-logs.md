@@ -20,6 +20,9 @@ runai logs <job-name>
 
 ## Options
 
+<job-name\> - The name of the Job to run the command with. Mandatory.
+
+
 --follow | -f
 >  Stream the logs.
 
