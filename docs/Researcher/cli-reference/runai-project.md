@@ -1,7 +1,6 @@
 ## Description
 
-Set a default project
-Show a list of available projects
+Set a default Project.
 
 ## Synopsis
 
@@ -14,19 +13,19 @@ runai project set <project-name>
 ```
 ## Options
 
-<project-name\> the name of the project you want to set as default
+<project-name\> the name of the Project you want to set as default. Mandatory.
 
 
 ### Global Flags
 
 --loglevel (string)
 
-> Set the logging level. One of: debug | info | warn | error (default "info")
+> Set the logging level. One of: debug | info | warn | error (default "info").
 
 
 --help | -h
 
->  Show help text
+>  Show help text.
 
 ## Output
 

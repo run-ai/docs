@@ -1,6 +1,6 @@
 ## Description
 
-Show list of nodes (machines), their capacity and utilization
+Show list of Nodes (machines), their capacity and utilization.
 
 ## Synopsis
 
@@ -15,19 +15,19 @@ Show list of nodes (machines), their capacity and utilization
 
 --loglevel (string)
 
->  Set the logging level. One of: debug | info | warn | error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --help | -h
 
->  Show help text
+>  Show help text.
 
 --details | -d
 
->  Show additional details
+>  Show additional details.
 
 ## Output
 
-Shows a list of nodes their capacity and utilization
+Shows a list of Nodes their capacity and utilization.
 
 ## See Also
 

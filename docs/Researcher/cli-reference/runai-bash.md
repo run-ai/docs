@@ -1,6 +1,6 @@
 ## Description
 
-Get a bash session inside a running job
+Get a bash session inside a running Job
 
 This command is a shortcut to runai exec (``runai exec -it job-name bash``). See [runai exec](runai-exec.md) for full documentation of the exec command.
 
@@ -17,10 +17,10 @@ runai bash <job-name>
 
 ## Options
 
-<job-name\> the name of the job to run the command in
+<job-name\> the name of the Job to run the command with. Mandatory.
 
 --pod string
-> Specify a pod of a running job. To get a list of the pods of a specific job, run "runai describe <job-name>" command
+> Specify a pod of a running Job. To get a list of the pods of a specific Job, run "runai describe <job-name>" command
 
 ### Global Flags
 

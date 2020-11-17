@@ -1,6 +1,12 @@
+!!! attention
+    * `runai list` has been replaced by `runai list jobs`.
+    * `runai clusters list` has been replaced by `runai list clusters`.
+    * `runai project list` has been replaced by `runai list projects`.
+
+
 ## Description
 
-Show list of jobs
+Show lists of Jobs, Projects, Clusters or Nodes.
 
 ## Synopsis
 
@@ -29,26 +35,26 @@ runai list nodes [node-name]
 
 
 --all-projects | -A
->  Show jobs from all projects
+>  Show Jobs from all Projects.
 
 ### Global Flags
 
 --loglevel (string)
->  Set the logging level. One of: debug | info | warn | error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default Project use``runai project set <project-name>``.
 
 --help | -h
 
->  Show help text
+>  Show help text.
 
 ## Output
 
 A list of Jobs, Nodes, Projects or Clusters. 
-To filter 'runai list nodes' for a specific node, add the Node name.
+To filter 'runai list nodes' for a specific Node, add the Node name.
 
 ## See Also
-To show details for a specific job see [runai describe](runai-describe.md)
+To show details for a specific Job see [runai describe](runai-describe.md).
 
 

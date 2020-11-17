@@ -1,7 +1,6 @@
 ## Description
 
-Set the current cluster
-Show a list of available clusters
+Set the current Cluster.
 
 ## Synopsis
 
@@ -14,19 +13,19 @@ runai cluster set <cluster-name>
 
 ## Options
 
-<cluster-name\> the name of the cluster you want to set as current
+<cluster-name\> the name of the Cluster you want to set as the current Cluster. Mandatory.
 
 
 ### Global Flags
 
 --loglevel (string)
 
-> Set the logging level. One of: debug | info | warn | error (default "info")
+> Set the logging level. One of: debug | info | warn | error (default "info").
 
 
 --help | -h
 
->  Show help text
+>  Show help text.
 
 ## Output
 

@@ -2,7 +2,7 @@
 
 Attach to a running Job.
 
-The command attaches to the standard input, output, and error streams of a running Job. If the job has multiple pods the job will attach to the first pod unless otherwise set.
+The command attaches to the standard input, output, and error streams of a running Job. If the Job has multiple pods the job will attach to the first pod unless otherwise set.
 
 
 ## Synopsis
@@ -18,7 +18,7 @@ The command attaches to the standard input, output, and error streams of a runni
 
 ## Options
 
-<job-name\> the name of the job to run the command in
+<job-name\> the name of the Job to run the command with. Mandatory.
 
 --no-stdin    
 > Do not attach STDIN.
@@ -27,7 +27,7 @@ The command attaches to the standard input, output, and error streams of a runni
 > Do not allocate a pseudo-TTY
 
 --pod string   
-> Attach to a specific pod within the job. To find the list of pods run ``runai describe <job-name>`` and then use the pod name with the ``--pod`` flag.
+> Attach to a specific pod within the Job. To find the list of pods run ``runai describe <job-name>`` and then use the pod name with the ``--pod`` flag.
 
 ### Global Flags
 

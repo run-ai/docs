@@ -1,6 +1,6 @@
 ## Description
 
-Show the logs of a job
+Show the logs of a Job.
 
 ## Synopsis
 
@@ -27,7 +27,7 @@ runai logs <job-name>
 >  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running ``runai describe job-name``.
 
 --instance (string) | -i (string)
->  Show logs for a specific instance in cases where a job contains multiple pods.
+>  Show logs for a specific instance in cases where a Job contains multiple pods.
 
 --since (duration)
 >  Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. The flags since and since-time cannot be used together.
@@ -54,7 +54,7 @@ runai logs <job-name>
 
 ## Output
 
-The command will show the logs of the first process in the container. For training jobs, this would be the command run at startup. For interactive jobs, the command may not show anything.
+The command will show the logs of the first process in the container. For training Jobs, this would be the command run at startup. For interactive Jobs, the command may not show anything.
 
 ## See Also
 
