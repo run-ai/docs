@@ -38,7 +38,7 @@ Forwarding from [::1]:8888 -> 8888
 * The connection is redirected to the local machine (127.0.0.1) on port 8888
 
 
-Browse to [http://localhost:8888](http://localhost:8888). Use the token in the output to log into the notebook. 
+Browse to [http://localhost:8888](http://localhost:8888){target=_blank}. Use the token in the output to log into the notebook. 
 
 ## Alternatives
 

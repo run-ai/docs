@@ -44,7 +44,9 @@ Contact your administrator to see which methods are available in your cluster
 
 Open the following in the browser
 
-        http://localhost:8888/jupyter1
+```
+http://localhost:8888/jupyter1
+```
 
 You should see a Jupyter notebook.
 
