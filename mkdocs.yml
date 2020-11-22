@@ -136,9 +136,10 @@ nav:
       - 'runai project' : 'Researcher/cli-reference/runai-project.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
+      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
-#      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
+      - 'runai version' : 'Researcher/cli-reference/runai-version.md'
     - 'Best Practices' :
       - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
