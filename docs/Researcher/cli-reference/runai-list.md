@@ -2,7 +2,7 @@
     * `runai list` has been replaced by `runai list jobs`.
     * `runai clusters list` has been replaced by `runai list clusters`.
     * `runai project list` has been replaced by `runai list projects`.
-
+    * `runai template list` has been replaced by `runai list templates`.
 
 ## Description
 
@@ -29,6 +29,10 @@ runai list clusters
 runai list nodes [node-name]
     [--loglevel value] 
     [--help | -h]
+
+runai list templates
+    [--loglevel value] 
+    [--help | -h]
 ```
 ## Options
 `node-name` - Name of a specific node to list (optional).
@@ -51,10 +55,10 @@ runai list nodes [node-name]
 
 ## Output
 
-A list of Jobs, Nodes, Projects or Clusters. 
-To filter 'runai list nodes' for a specific Node, add the Node name.
+* A list of Jobs, Nodes, Projects, Clusters, or Templates. 
+* To filter 'runai list nodes' for a specific Node, add the Node name.
 
 ## See Also
-To show details for a specific Job see [runai describe](runai-describe.md).
+To show details for a specific Job, Node or Template see [runai describe](runai-describe.md).
 
 

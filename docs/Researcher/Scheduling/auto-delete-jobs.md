@@ -56,4 +56,4 @@ When starting the Job, add the flag ``--ttl-after-finish duration``. duration is
 
 ## Using Templates to set Automatic Deletion as Default
 
-You can use Run:AI templates to set auto-delete to be the default. See [runai template](../cli-reference/runai-template.md) for more.
+You can use Run:AI templates to set auto-delete to be the default. See [template configuration](../../Administrator/Researcher-Setup/template-config.md) for more information on how to make this flag a part of the default template.
