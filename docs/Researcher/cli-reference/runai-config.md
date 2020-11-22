@@ -17,6 +17,7 @@ runai  config cluster <project-name>
 ## Options
 
 <project-name\>  - The name of the Project you want to set as default. Mandatory.
+
 <cluster-name\> - The name of the Cluster you want to set as the current Cluster. Mandatory.
 
 
