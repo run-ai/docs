@@ -43,7 +43,7 @@ runai list nodes [node-name]
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default Project use``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default Project use``runai config project <project-name>``.
 
 --help | -h
 

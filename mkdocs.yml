@@ -127,6 +127,7 @@ nav:
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
       - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'
       - 'runai cluster' : 'Researcher/cli-reference/runai-cluster.md'
+      - 'runai config' : 'Researcher/cli-reference/runai-config.md'
       - 'runai delete' : 'Researcher/cli-reference/runai-delete.md'
       - 'runai describe' : 'Researcher/cli-reference/runai-describe.md'
       - 'runai exec' : 'Researcher/cli-reference/runai-exec.md'

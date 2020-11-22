@@ -33,7 +33,7 @@ To complete this Quickstart you must have:
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
 This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``

@@ -35,7 +35,7 @@ To complete this Quickstart you must have:
 
 *   At the command-line run:
     
-        runai project set team-a
+        runai config project team-a
         runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
 
 * This would start an unattended training job for team-a 

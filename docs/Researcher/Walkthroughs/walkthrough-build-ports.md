@@ -29,7 +29,7 @@ Contact your administrator to see which methods are available in your cluster
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit jupyter1 -i jupyter/base-notebook -g 1 \
             --interactive --service-type=portforward --port 8888:8888 \
             --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
@@ -62,7 +62,7 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit test-ingress -i jupyter/base-notebook -g 1 \
           --interactive --service-type=ingress --port 8888 \
           --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress

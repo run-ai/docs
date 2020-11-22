@@ -67,7 +67,7 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
 *   At the command-line run:
 
-        runai project set team-a 
+        runai config project team-a 
         runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
                 --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
 

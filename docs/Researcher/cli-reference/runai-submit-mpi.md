@@ -220,7 +220,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 
 --project | -p (string)
 
->  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai project set <project-name>``.
+>  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
 --help | -h
 

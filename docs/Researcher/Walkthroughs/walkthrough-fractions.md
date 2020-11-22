@@ -27,7 +27,7 @@ To complete this Quickstart you must have:
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
 
         runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 --interactive
         runai submit frac03 -i gcr.io/run-ai-demo/quickstart -g 0.3 

@@ -28,7 +28,7 @@ To complete this Quickstart you must have:
 *   At the command-line run:
 
 ``` shell
-runai project set team-a
+runai config project team-a
 runai submit-mpi dist --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed
 ```

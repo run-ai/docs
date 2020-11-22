@@ -57,7 +57,7 @@ runai submit
 
 ## Examples
 
-All examples assume a Run:AI Project has been set using ``runai project set <project-name>``.
+All examples assume a Run:AI Project has been set using ``runai config project <project-name>``.
 
 Start an interactive Job:
 
@@ -297,7 +297,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai project set <project-name>``.
+>  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
 --help | -h
 >  Show help text.

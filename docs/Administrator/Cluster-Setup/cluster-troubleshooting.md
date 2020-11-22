@@ -49,7 +49,7 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 * Make sure that the project you have created has a quota of at least 1 GPU
 * Run:
 
-         runai project set <project-name>
+         runai config project <project-name>
          runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
 
 * Verify that the job is a _Running_ state when running: 
