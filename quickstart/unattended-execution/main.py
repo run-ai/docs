@@ -4,9 +4,14 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.callbacks import ModelCheckpoint
+from keras.callbacks import TensorBoard
+
 import os
+import datetime
 
 checkpoints_file = "weights.best.hdf5"
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+
 
 NUM_CLASSES = 10
 BATCH_SIZE = 128
@@ -60,19 +65,22 @@ model.compile(
 )
 
 # register a 'save checkpoints' callback. Default is every epoch
-checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+checkpoint_callback = ModelCheckpoint(
+    checkpoints_file, monitor='val_acc', 
+    verbose=1, save_best_only=True, mode='max')
 
 # Alternatively, save ALL checkpoints.
-# filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
-# checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+#   filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+#   checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
-callbacks_list = [checkpoint]
+# Allow logs to be read from TensorBoard
+tensorboard_callback = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 model.fit(x_train, y_train,
         batch_size=BATCH_SIZE,
         epochs=EPOCHS,
         validation_data=(x_test, y_test),
-        callbacks=callbacks_list)
+        callbacks=[checkpoint_callback, tensorboard_callback])
 
 score = model.evaluate(x_test, y_test)
 
