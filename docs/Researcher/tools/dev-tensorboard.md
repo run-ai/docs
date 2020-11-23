@@ -37,7 +37,7 @@ runai submit train-with-logs -i tensorflow/tensorflow:1.14.0-gpu-py3 \
 Note the volume flag (`-v`) and working directory flag (`--working-dir`). The logs directory will be created on `/mnt/nfs_share/john/logs/fit`.
 
 
-# Submit a TensorBoard Job. 
+## Submit a TensorBoard Job
 
 Run the following:
 
