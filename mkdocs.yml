@@ -159,5 +159,6 @@ nav:
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Noteook' :  'Researcher/tools/dev-jupyter.md'
+      - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'
       
 
