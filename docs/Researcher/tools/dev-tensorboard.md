@@ -59,3 +59,6 @@ Forwarding from [::1]:8888 -> 8888
 ```
 
 Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
+
+!!! Note
+  A single TensorBoard Jo b can be used to view multiple deep learning Jobs, provided it has access to the logs directory for these Jobs. 
