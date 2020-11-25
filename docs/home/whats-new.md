@@ -1,3 +1,17 @@
+## November 25th, 2020
+
+Syntax changes in CLI:
+
+* `runai <object> list`  has been replaced by `runai list <object>`.
+* `runai get` has been replaced by `runai describe`.
+* `runai <object> set` has been replaced by `runai config <object>`.
+
+The older style will still work with a deprecation notice.
+
+`runai top node` has been revamped.
+
+
+
 ## November 12th, 2020
 An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates that can be used with the --template flag. The new templates allow for mandatory values, defaults and run-time environment variable resolution.
 See [here](../Administrator/Researcher-Setup/template-config.md) for more.
