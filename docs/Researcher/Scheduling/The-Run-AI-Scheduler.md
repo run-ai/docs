@@ -120,7 +120,7 @@ Support:
 
 ### Distributed Training
 
-Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ processs which manages and coordinates the other worker pods.
+Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ process which manages and coordinates the other worker pods.
 
 Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
 

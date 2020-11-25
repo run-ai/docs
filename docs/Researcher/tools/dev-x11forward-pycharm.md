@@ -27,7 +27,7 @@ The terminal will show the connection:
 
 ``` shell
 The job 'xforward-remote' has been submitted successfully
-You can run `runai get xforward-remote -p team-a` to check the job status
+You can run `runai describe xforward-remote -p team-a` to check the job status
 INFO[0007] Waiting for job to start
 Waiting for job to start
 Waiting for job to start

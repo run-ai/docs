@@ -1,5 +1,5 @@
 
-Below are a set of Quickstart documents. The purpose of these documents is to get you acquinted with an aspect of Run:AI in the simplest possible form.
+Below are a set of Quickstart documents. The purpose of these documents is to get you acquainted with an aspect of Run:AI in the simplest possible form.
 Follow the Quickstart documents below to learn more:
 
 *   [Unattended training sessions](walkthrough-train.md)

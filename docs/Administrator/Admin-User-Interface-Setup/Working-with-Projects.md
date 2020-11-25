@@ -1,51 +1,51 @@
 ## Introduction
 
-Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create prioritize, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a project name with GPU allocation and preferences. 
+Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create prioritize, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
 
-A researcher submitting a workload needs to associate a project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
+A researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
 ## Modeling Projects
 
-As an Admin, you need to determine how to model projects. You can:
+As an Admin, you need to determine how to model Projects. You can:
 
-*   Set a project per user
-*   Set a project per team of users
-*   Set a project per a real organizational project.
+*   Set a Project per user.
+*   Set a Project per team of users.
+*   Set a Project per a real organizational project.
 
 ## Project Quotas
 
-Each project is associated with a quota of GPUs that can be allocated for this project at the same time. This is __guaranteed quota__ in the sense that researchers using this project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
+Each Project is associated with a quota of GPUs that can be allocated for this Project at the same time. This is __guaranteed quota__ in the sense that researchers using this Project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
 
-Beyond that, a user of this project can receive an __over-quota__. As long as GPUs are unused, a researcher using this project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
+Beyond that, a user of this Project can receive an __over-quota__. As long as GPUs are unused, a researcher using this Project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
-__Important best practice:__ As a rule, the sum of the project allocation should be equal to the number of GPUs in the cluster.
+__Important best practice:__ As a rule, the sum of the Project allocation should be equal to the number of GPUs in the cluster.
 
 ## Working with Projects
 
 ### Create a new Project
 
 !!! Note 
-    In order to be able to manipulate projects, you must have _Editor_ access. See the "Users" Area
+    In order to be able to manipulate Projects, you must have _Editor_ access. See the "Users" Area
 
 *   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
 *   On the top right, select "Add New Project"
-*   Choose a project name and a project quota 
+*   Choose a Project name and a Project quota 
 *   Press "Save"
 
 ### Update an existing Project
 
-*   Select an existing project.
+*   Select an existing Project.
 *   Right-click and press "Edit".
 *   Update the values and press "Save".
 
-### Delete an existing project
+### Delete an existing Project
 
-*   Select an existing project. 
+*   Select an existing Project. 
 *   Right-click and press "Delete".
 
 ## Limit Jobs to run on Specific Node Groups
 
-A frequent use case is to assign specific projects to run only on specific nodes (machines). This can happen for various reasons. Examples:
+A frequent use case is to assign specific Projects to run only on specific nodes (machines). This can happen for various reasons. Examples:
 
 *   The project team needs specialized hardware (e.g. with enough memory).
 *   The project team is the owner of specific hardware which was acquired with a specialized budget.
@@ -55,7 +55,7 @@ While such 'affinities' are sometimes needed, its worth mentioning that at the e
 
 ### Grouping Nodes 
 
-To set node affinities, you must first annotate nodes with labels. These labels will later be associated with projects. Each node can only be annotated with a __single__ name.
+To set node affinities, you must first annotate nodes with labels. These labels will later be associated with Projects. Each node can only be annotated with a __single__ name.
 
 To get the list of nodes, run:
 
@@ -79,11 +79,11 @@ To mandate __training__ jobs to run on specific node groups:
 
 ![mceclip0.png](img/mceclip0.png)
 
-To mandate __interactive__ jobs to run on specific node groups, perform the same steps under the "interactive" section in the project dialog.
+To mandate __interactive__ jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
 
 ### Further Affinity Refinement by the Researcher
 
-The researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/cli-reference/runai-submit.md) 
+The researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/cli-reference/runai-submit.md) 
 
 ## Limit Duration of Interactive Jobs
 

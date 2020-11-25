@@ -1,6 +1,6 @@
 ## Description
 
-Submit a Run:AI job for execution
+Submit a Run:AI Job for execution.
 
 ## Synopsis
 
@@ -57,9 +57,9 @@ runai submit
 
 ## Examples
 
-All examples assume a Run:AI project has been set using ``runai project set <project-name>``.
+All examples assume a Run:AI Project has been set using ``runai config project <project-name>``.
 
-Start an interactive job:
+Start an interactive Job:
 
     runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
 
@@ -73,7 +73,7 @@ Externalize ports:
 
 (see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
-Start a Training job
+Start a Training Job
 
     runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
     
@@ -92,11 +92,11 @@ Hyperparameter Optimization
 
 (see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
-Submit a job without a name (automatically generates a name)
+Submit a Job without a name (automatically generates a name)
 
     runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
     
-Submit a job without a name with a pre-defined prefix and an incremental index suffix
+Submit a Job without a name with a pre-defined prefix and an incremental index suffix
 
     runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
 
@@ -105,29 +105,29 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 ### Aliases and Shortcuts
 
 --name
-> The name of the job.
+> The name of the Job.
 
 --interactive
->  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
+>  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.
 
 --jupyter
 >  Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. 
 
 > Example:
 
-> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list`` to find the URL for the notebook.
+> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list jobs`` to find the URL for the notebook.
 
 --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
 
 --job-name-prefix
-> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix
+> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:AI will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
 
 ### Container Related
 
 --always-pull-image stringArray (deprecated)
 >  Deprecated. Please use `image-pull-policy=always` instead.
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on job start. 
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on Job start. 
 
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
@@ -158,7 +158,7 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 
 --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
->  Use a local image for this job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
+>  Use a local image for this Job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
 
 --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
@@ -172,10 +172,10 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 ### Resource Allocation
 
 --cpu double
-> CPU units to allocate for the job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.
+> CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
 --cpu-limit double
-> Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
+> Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
 --gpu double | -g double
 > Number of GPUs to allocate to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
@@ -184,10 +184,10 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM.
 
 --memory string
->  CPU memory to allocate for this job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
+>  CPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the Job.
 
 --memory-limit string
->  CPU memory to allocate for this job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
+>  CPU memory to allocate for this Job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
 ### Storage
 
@@ -247,22 +247,22 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 
 --service-type string | -s string
 >  Service exposure method for interactive Job. Options are: ``portforward``, ``loadbalancer``, ``nodeport``, ingress.
->  Use the command runai list to obtain the endpoint to use the service when the job is running. Different service methods have different endpoint structure.
+>  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structure.
 
 
 ### Job Lifecycle
 
 --backoffLimit int
-> The number of times the job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified).
+> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified).
 
 --completions int
->  The number of successful pods required for this job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
+>  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
 
 --parallelism int
-> The number of pods this job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
+> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
 
 --ttl-after-finish duration
->  Define the duration, post job finish, after which the job is automatically deleted (5s, 2m, 3h, etc).  
+>  Define the duration, post Job finish, after which the Job is automatically deleted (5s, 2m, 3h, etc).  
 > Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md).
 
 
@@ -272,44 +272,44 @@ Submit a job without a name with a pre-defined prefix and an incremental index s
 > Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 --prevent-privilege-escalation
-> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
+> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
 
 
 ### Scheduling
 
 --elastic
-> Mark the job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md).
+> Mark the Job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md).
 
 --node-type string
 >  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
-> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
 
 --preemptible
->  Mark an interactive job as preemptible. Preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
+>  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
 
 
 ### Global Flags
 
 --loglevel (string)
->  Set the logging level. One of: debug|info|warn|error (default "info").
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
+>  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
 --help | -h
 >  Show help text.
 
 ## Output
 
-The command will attempt to submit a job. You can follow up on the job by running ``runai list`` or ``runai get job-name -e``
+The command will attempt to submit a Job. You can follow up on the Job by running ``runai list jobs`` or ``runai describe <job-name> -e``.
 
 Note that the submit call may use templates to provide defaults to any of the above flags.
 
 ## See Also
 
-*   See any of the Quickstart documents [here:](../Walkthroughs/Run-AI-Walkthroughs.md)
-<!-- *   See [runai template](runai-template.md) for a description on how templates work -->
+*   See any of the Quickstart documents [here:](../Walkthroughs/Run-AI-Walkthroughs.md).
+*   See [template configuration](../../Administrator/Researcher-Setup/template-config.md) for a description on how templates work.
 

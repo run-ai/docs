@@ -1,6 +1,6 @@
 ## Description
 
-Execute a command inside a running job
+Execute a command inside a running Job
 
 Note: to execute a bash command, you can also use the shorthand [runai bash](runai-bash.md)
 
@@ -19,33 +19,33 @@ runai exec <job-name> <command>
 
 ## Options
 
-<job-name\> the name of the job to run the command in
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
-<command\> the command itself (e.g. _bash_)
+<command\> the command itself (e.g. _bash_).
 
 --stdin | -i
->  Keep STDIN open even if not attached
+>  Keep STDIN open even if not attached.
 
 --tty | -t
->  Allocate a pseudo-TTY
+>  Allocate a pseudo-TTY.
 
 ### Global Flags
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai config project <project-name>``.
 
 --help | -h
 
->  Show help text
+>  Show help text.
 
 ## Output
 
-The command will run in the context of the container
+The command will run in the context of the container.
 
 ## See Also
 

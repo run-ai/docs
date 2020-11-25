@@ -4,7 +4,7 @@
 
 Deep learning workloads can be divided into two generic types:
 
-*   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly.
+*   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm, or similar and accesses GPU resources directly.
 *   Unattended "training" sessions. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the customer can examine the results.
 
 With this Quickstart you will learn how to:
@@ -33,14 +33,14 @@ To complete this Quickstart you must have:
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
 This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
 
 *   Follow up on the job's progress by running:
 
-        runai list
+        runai list jobs
 
 The result:
 
@@ -57,7 +57,7 @@ A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
 
 To get additional status on your job run:
 
-    runai get train1
+    runai describe train1
 
 ### View Logs
 
@@ -92,7 +92,7 @@ Run the following:
 
     runai delete train1
 
-This would stop the training workload. You can verify this by running ``runai list`` again.
+This would stop the training workload. You can verify this by running ``runai list jobs`` again.
 
 ## Next Steps
 

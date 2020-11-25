@@ -28,7 +28,7 @@ To complete this Quickstart you must have:
 *   At the command-line run:
 
 ``` shell
-runai project set team-a
+runai config project team-a
 runai submit-mpi dist --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed
 ```
@@ -42,7 +42,7 @@ runai submit-mpi dist --processes=2 -g 1 \
 
 Follow up on the job's status by running:
 
-        runai list
+        runai list jobs
 
 The result:
 
@@ -50,7 +50,7 @@ The result:
 
 The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
-        runai get dist
+        runai describe dist
 
 You will see two worker processes (pods) their status and on which node they run:
 
@@ -97,7 +97,7 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 ```
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is a passed by Run:AI and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
+The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:AI and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
 
 
 ## See Also

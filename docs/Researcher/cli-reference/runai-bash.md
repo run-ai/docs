@@ -1,13 +1,13 @@
 ## Description
 
-Get a bash session inside a running job
+Get a bash session inside a running Job
 
 This command is a shortcut to runai exec (``runai exec -it job-name bash``). See [runai exec](runai-exec.md) for full documentation of the exec command.
 
 ## Synopsis
 
 ``` shell
-runai bash job-name 
+runai bash <job-name> 
     [--pod string]
     
     [--loglevel value] 
@@ -17,20 +17,20 @@ runai bash job-name
 
 ## Options
 
-<job-name\> the name of the job to run the command in
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
 --pod string
-> Specify a pod of a running job. To get a list of the pods of a specific job, run "runai get <job-name>" command
+> Specify a pod of a running Job. To get a list of the pods of a specific Job, run "runai describe <job-name>" command
 
 ### Global Flags
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai config project <project-name>``.
 
 --help | -h
 

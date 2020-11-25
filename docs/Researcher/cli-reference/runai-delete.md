@@ -1,8 +1,8 @@
 ## Description
 
-Delete a training job and its associated pods.
+Delete a Job and its associated Pods.
 
-Note that once you delete a job, its entire data will be gone:
+Note that once you delete a Job, its entire data will be gone:
 
 * You will no longer be able to enter it via bash.
 * You will no longer be able access logs.
@@ -19,22 +19,22 @@ runai delete <job-name>
 
 ## Options
 
-<job-name\> the name of the job to run the command in
+<job-name\> - The name of the Job to run the command with. Mandatory.
 
 --loglevel (string)
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
+>  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai config project <project-name>``.
 
 --help | -h
->  Show help text
+>  Show help text.
 
 ## Output
 
-The job will be deleted and not available via the command _runai list_
+* The Job will be deleted and not available via the command _runai list jobs_.
 
-The job will __not__ be deleted from the Run:AI user interface Job list
+* The Job will __not__ be deleted from the Run:AI user interface Job list.
 
 ## See Also
 

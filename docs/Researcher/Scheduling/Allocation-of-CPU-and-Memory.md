@@ -102,7 +102,7 @@ To review a CPU & Memory allocations you need to look into Kubernetes. A Run:AI 
 
 *  Get the pod name for the job by running: 
 
-        runai get <JOB_NAME>
+        runai describe <JOB_NAME>
 
  the pod will appear under ``PODS``. 
 

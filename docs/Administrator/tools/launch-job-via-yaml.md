@@ -36,7 +36,7 @@ A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when c
 
 * ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
 
-* ``<PROJECT-NAME>``. The name of the Project as created on the Administrator UI. Run: ``runai project list`` to see the list of currently available projects. 
+* ``<PROJECT-NAME>``. The name of the Project as created on the Administrator UI. Run: ``runai list projects`` to see the list of currently available projects. 
 
 * ``<USER-NAME>`` User name running the Job. The name is used for display purposes only (not for authentication purposes).
 

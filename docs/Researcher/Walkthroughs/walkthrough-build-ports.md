@@ -29,7 +29,7 @@ Contact your administrator to see which methods are available in your cluster
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit jupyter1 -i jupyter/base-notebook -g 1 \
             --interactive --service-type=portforward --port 8888:8888 \
             --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
@@ -44,7 +44,9 @@ Contact your administrator to see which methods are available in your cluster
 
 Open the following in the browser
 
-        http://localhost:8888/jupyter1
+```
+http://localhost:8888/jupyter1
+```
 
 You should see a Jupyter notebook.
 
@@ -60,14 +62,14 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 
 *   At the command-line run:
 
-        runai project set team-a
+        runai config project team-a
         runai submit test-ingress -i jupyter/base-notebook -g 1 \
           --interactive --service-type=ingress --port 8888 \
           --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
 
 *   An ingress service URL will be created, run:
 
-        runai list
+        runai list jobs
 
 You will see the service URL with which to access the Jupyter notebook
 

@@ -1,15 +1,11 @@
 ## Description
 
-Find and install the latest version of the runai command-line utility. The command must be run with _sudo_ permissions.
-
-```
-sudo runai update
-```
+Show the version of this utility.
 
 ## Synopsis
 
 ``` shell
-runai update 
+runai version 
     [--loglevel value] 
     [--help | -h]
 ```
@@ -27,6 +23,6 @@ runai update
 
 ## Output
 
-Update of the Run:AI command-line interface.
+Version of the Run:AI command-line interface.
 
 ## See Also

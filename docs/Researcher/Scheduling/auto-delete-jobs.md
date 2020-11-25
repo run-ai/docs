@@ -2,7 +2,7 @@
 
 Jobs can be started via Kubeflow, Run:AI CLI, Rancher or via direct Kubernetes API. When jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old jobs by running the command:
 
-    runai list
+    runai list jobs
 
 ![mceclip0.png](img/mceclip0.png)
 
@@ -50,10 +50,10 @@ __Note__: different Kubernetes distributions have different locations and method
 
 ## Automatic Deletion
 
-When starting the job, add the flag ``--ttl-after-finish duration``. duration is the duration, post job finish, after which the job is automatically deleted. Example durations are: 5s, 2m, 3h, 4d etc. For example, the following call will delete the job 2 hours after job finish:
+When starting the Job, add the flag ``--ttl-after-finish duration``. duration is the duration, post Job finish, after which the Job is automatically deleted. Example durations are: 5s, 2m, 3h, 4d etc. For example, the following call will delete the Job 2 hours after the Job finishes:
 
     runai submit myjob1 --ttl-after-finish 2h
 
 ## Using Templates to set Automatic Deletion as Default
 
-You can use Run:AI templates to set auto-delete to be the default. See [runai template](../cli-reference/runai-template.md) for more.
+You can use Run:AI templates to set auto-delete to be the default. See [template configuration](../../Administrator/Researcher-Setup/template-config.md) for more information on how to make this flag a part of the default template.

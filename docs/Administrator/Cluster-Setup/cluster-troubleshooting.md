@@ -39,7 +39,7 @@ Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now)
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new project. Find the new project using the CLI command:
 
-         runai project list
+         runai list projects
 
 
 ### 3. Submit a job
@@ -49,12 +49,12 @@ Submitting a job will allow you to verify that Run:AI scheduling service are in 
 * Make sure that the project you have created has a quota of at least 1 GPU
 * Run:
 
-         runai project set <project-name>
+         runai config project <project-name>
          runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
 
 * Verify that the job is a _Running_ state when running: 
 
-         runai list
+         runai list jobs
 
 * Verify that the job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 
@@ -128,7 +128,7 @@ Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 
 ## Symptom: Projects are not syncing
 
-Create a project on the Admin UI, then run: `runai project list`. The new project does __not__ appear.
+Create a project on the Admin UI, then run: `runai list projects`. The new project does __not__ appear.
 
  __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
 

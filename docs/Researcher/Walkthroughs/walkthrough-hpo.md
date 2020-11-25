@@ -67,7 +67,7 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
 *   At the command-line run:
 
-        runai project set team-a 
+        runai config project team-a 
         runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
                 --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
 
@@ -81,7 +81,7 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
 Follow up on the job's status by running:
 
-        runai list
+        runai list jobs
 
 The result:
 
@@ -89,7 +89,7 @@ The result:
 
 Follow up on the job's pods by running:
 
-        runai get hpo1 
+        runai describe hpo1 
 
 You will see 3 running pods currently executing:
 
@@ -104,7 +104,7 @@ You can see logs of specific pods by running :
 
         runai logs hpo1 --pod <POD-NAME>
 
-where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai get hpo1`` output 
+where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai describe hpo1`` output 
 
 The logs will contain a couple of lines worth noting:
 
@@ -118,7 +118,7 @@ The logs will contain a couple of lines worth noting:
 
 ### Examine the Results
 
-The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is an snapshot of the file for two experiments with two epochs each:
+The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is a snapshot of the file for two experiments with two epochs each:
 
 ```
 creationTime: 24/08/2020 08:50:06

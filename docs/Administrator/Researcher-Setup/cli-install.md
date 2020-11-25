@@ -37,7 +37,7 @@ The instructions below will guide you through the process of installing the CLI.
 
 * To verify the installation run:
 
-        runai list
+        runai list jobs
 
 
 ## Troubleshooting the CLI Installation

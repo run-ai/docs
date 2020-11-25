@@ -21,7 +21,7 @@ INFO[0001] Exposing default jupyter notebook port 8888
 INFO[0001] Using default jupyter notebook image "jupyter/scipy-notebook"
 INFO[0001] Using default jupyter notebook service type portforward
 The job 'build-jupyter' has been submitted successfully
-You can run `runai get build-jupyter -p team-a` to check the job status
+You can run `runai describe build-jupyter -p team-a` to check the job status
 INFO[0006] Waiting for job to start
 Waiting for job to start
 Waiting for job to start
@@ -38,7 +38,7 @@ Forwarding from [::1]:8888 -> 8888
 * The connection is redirected to the local machine (127.0.0.1) on port 8888
 
 
-Browse to [http://localhost:8888](http://localhost:8888). Use the token in the output to log into the notebook. 
+Browse to [http://localhost:8888](http://localhost:8888){target=_blank}. Use the token in the output to log into the notebook. 
 
 ## Alternatives
 

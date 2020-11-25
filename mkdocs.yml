@@ -50,6 +50,7 @@ plugins:
         'Administrator/Cluster-Setup/Deleting-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-delete.md'
         'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
         'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md' : 'Administrator/Researcher-Setup/docker-to-runai.md'
+        'Researcher/cli-reference/runai-get.md' : 'Researcher/cli-reference/runai-describe.md'
 markdown_extensions:
   - codehilite
   - admonition
@@ -126,17 +127,19 @@ nav:
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
       - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'
       - 'runai cluster' : 'Researcher/cli-reference/runai-cluster.md'
+      - 'runai config' : 'Researcher/cli-reference/runai-config.md'
       - 'runai delete' : 'Researcher/cli-reference/runai-delete.md'
+      - 'runai describe' : 'Researcher/cli-reference/runai-describe.md'
       - 'runai exec' : 'Researcher/cli-reference/runai-exec.md'
-      - 'runai get' : 'Researcher/cli-reference/runai-get.md'
       - 'runai list' : 'Researcher/cli-reference/runai-list.md'
       - 'runai logs' : 'Researcher/cli-reference/runai-logs.md'
       - 'runai project' : 'Researcher/cli-reference/runai-project.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
+      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
-      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
+      - 'runai version' : 'Researcher/cli-reference/runai-version.md'
     - 'Best Practices' :
       - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'

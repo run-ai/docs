@@ -1,6 +1,6 @@
 ## Description
 
-Submit a Distributed Training (MPI) Run:AI job for execution
+Submit a Distributed Training (MPI) Run:AI Job for execution.
 
 ## Synopsis
 
@@ -45,11 +45,11 @@ runai submit-mpi
 ```
  Syntax notes:
 
-*   Options with value type of stringArray mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
+*   Options with a value type of _stringArray_ mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
 ## Examples
 
-start an unattended mpi training job of name dist1, based on project _team-a_ using a _quickstart-distributed_ image:
+start an unattended mpi training Job of name dist1, based on Project _team-a_ using a _quickstart-distributed_ image:
 
     runai submit-mpi --name dist1 --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed 
@@ -63,21 +63,21 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 ### Aliases and Shortcuts
 
 --name
-> The name of the job.
+> The name of the Job.
 
 --interactive
->  Mark this Job as Interactive. Interactive jobs are not terminated automatically by the system.
+>  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.
 
 --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
 
-> The prefix to use to automatically generate a job name with an incremental index. When a job name is omitted Run:AI will generate a job name. The optional `--job-name-prefix flag` creates job names with the provided prefix.
+> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:AI will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix.
 
 ### Container Related
 
 --always-pull-image stringArray (deprecated)
 >  Deprecated. Please use `image-pull-policy=always` instead.
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on job start.
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on Job start.
 
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
@@ -108,7 +108,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
->  Use a local image for this job. A local image is an image which exists on all local servers of the Kubernetes Cluster.
+>  Use a local image for this Job. A local image is an image which exists on all local servers of the Kubernetes Cluster.
 
 --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
@@ -122,10 +122,10 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 ### Resource Allocation
 
 --cpu double
-> CPU units to allocate for the job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the job.
+> CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
 --cpu-limit double
-> Limitations on the number of CPU consumed by the job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
+> Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
 --gpu double | -g double
 > Number of GPUs to allocate to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
@@ -134,10 +134,10 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM.
 
 --memory string
->  CPU memory to allocate for this job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the job.
+>  CPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the Job.
 
 --memory-limit string
->  CPU memory to allocate for this job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
+>  CPU memory to allocate for this Job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
 ### Storage
 
@@ -186,6 +186,9 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ### Job Lifecycle
 
+--backoffLimit int
+> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified).
+
 --processes int
 > Number of distributed training processes. The default is 1.
 
@@ -196,28 +199,28 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 > Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 --prevent-privilege-escalation
-> Prevent the job’s container and all launched processes from gaining additional privileges after the job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
+> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
 
 
 ### Scheduling
 
 --node-type string
 >  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
-> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
 
 
 ### Global Flags
 
 --loglevel (string)
 
->  Set the logging level. One of: debug|info|warn|error (default "info")
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 --project | -p (string)
 
->  Specify the project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default project. To change the default project use ``runai project set <project-name>``.
+>  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
 --help | -h
 
@@ -225,7 +228,7 @@ start an unattended mpi training job of name dist1, based on project _team-a_ us
 
 ## Output
 
-The command will attempt to submit an _mpi_ job. You can follow up on the job by running ``runai list`` or ``runai get job-name``
+The command will attempt to submit an _mpi_ Job. You can follow up on the Job by running ``runai list jobs`` or ``runai describe job-name``
 
 ## See Also
 
