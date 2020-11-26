@@ -5,8 +5,8 @@
 Templates are a way to reduce the number of flags required when using the Command-Line Interface to start workloads. The researcher can:
 
 *   Use a template by running ``runai submit --template <template-name>``
-*   Review list of templates by running ``runai template list``
-*   Review the contents of a specific template by running ``runai template get <template-name>``
+*   Review list of templates by running ``runai list template``
+*   Review the contents of a specific template by running ``runai describe template <template-name>``
 
 The purpose of this document is to provide the administrator with guidelines on how to create & maintain templates.
 
@@ -60,13 +60,13 @@ kubectl apply -f my-template.yaml
 To see this template in the template list run:
 
 ```
-runai template list
+runai list template
 ```
 
 To show the properties of the created template run:
 
 ```
-runai template get template-1
+runai describe template template-1
 ```
 
 Use the template when submitting a workload
