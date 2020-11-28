@@ -58,7 +58,7 @@ The Run:AI cluster will automatically start following Kubernetes.
 Run:
 
 ```
-minikube delete --all
+sudo minikube delete --all
 ```
 
 ## Next Steps

@@ -57,7 +57,7 @@ fi
 
 # final check for NVIDIA-docer install
 if ! type nvidia-docker > /dev/null; then
-	echo "did not succeed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
+	echo "Failed installing nvidia-docker. Please install manually and restart (https://docs.run.ai/Administrator/Cluster-Setup/cluster-install/#step-13-install-nvidia-docker)"
 	exit 1
 fi
 
@@ -154,22 +154,28 @@ curl -X GET 'https://app.run.ai/v1/k8s/clusters' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer '$BEARER'' > /tmp/runai-clusters
 
+# **** Is there an existing cluster?
 
 if [ $(eval cat /tmp/runai-clusters | jq '. | length') -ne 0 ]; then
-	echo "One or more clusters already exist. Browse to https://app.run.ai, delete the cluster and re-run this script"
-	exit 1
+
+	# **** A cluster exists, perhaps is our cluster from a re-run of this script?
+	if [ $(eval cat /tmp/runai-clusters | jq '. | length') -eq 1 ] && [ $(eval cat /tmp/runai-clusters | jq '.[0]'.name) = \"$CLUSTER_NAME\" ]; then
+		CLUSTER_UUID=$(eval cat /tmp/runai-clusters | jq  -r  '.[0].uuid')	
+	else
+		echo "One or more Clusters already exist. Browse to https://app.run.ai/clusters, delete the Cluster(s) and re-run this script"
+		exit 1
+	fi
+
+else
+	# **** Create a cluster
+	curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
+	--header 'Accept: application/json' \
+	--header 'Content-Type: application/json' \
+	--header 'Authorization: Bearer '$BEARER'' \
+	--data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data
+
+	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data | jq -r '.uuid')
 fi
-
-
-
-# **** Create a cluster
-curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer '$BEARER'' \
---data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data
-
-CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data | jq -r '.uuid')
 
 
 # **** Download a cluster operator install file
