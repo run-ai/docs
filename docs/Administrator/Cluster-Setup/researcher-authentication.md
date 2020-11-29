@@ -16,7 +16,7 @@ Authentication setup works as follows:
 
 ## What you need
 
-.... add here...  HOW to get it....  
+.... add here...  HOW to get it...  
 
 Client ID
 
