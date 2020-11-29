@@ -8,7 +8,7 @@ Templates are a way to reduce the number of flags required when using the Comman
 *   Review list of templates by running ``runai list template``
 *   Review the contents of a specific template by running ``runai describe template <template-name>``
 
-The purpose of this document is to provide the administrator with guidelines on how to create & maintain templates.
+The purpose of this document is to provide the Administrator with guidelines on how to create & maintain templates.
 
 ## Template and Kubernetes
 
@@ -95,9 +95,9 @@ multi-value-flag:
   - ...
 ```
 
-## The Admin Template
+## The Default Template
 
-The administrator can also set a template that is always active:
+The Administrator can also set a template that is always active:
 
 ``` YAML
 apiVersion: v1
@@ -124,8 +124,8 @@ metadata:
 
 # Override rules
 
-* The User, when running `runai submit` always overrides the admin template and a template specified with `--template`
-* The admin template overrides any specified template.
+* The User, when running `runai submit` always overrides the default template and a template specified with `--template`
+* The default template overrides any specified template.
 
 ## Deleting a Template
 to delete a template, run:
