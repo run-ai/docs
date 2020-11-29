@@ -90,7 +90,7 @@ kubectl delete pod kube-apiserver-master -n kube-system
 
 auth0 setup:
 
-add localhost:8000 to callbacks
-Something about web application, but probably not interesting
-Style the Login page. 
+* add localhost:8000 to callbacks
+* Something about web application, but probably not interesting
+* Style the Login page. 
  
