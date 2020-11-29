@@ -16,11 +16,10 @@ Authentication setup works as follows:
 
 ## What you need
 
-.... add here...  HOW to get it...  
+You should receive the following data from Run:AI Customer support:
 
-Client ID
-
-Client Secret
+* Client ID
+* Client Secret
 
 
 ## Client-Side

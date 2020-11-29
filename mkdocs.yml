@@ -83,7 +83,7 @@ nav:
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
         - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'
-        - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
+#        - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/open-id-connectivity.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
         - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
         - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
