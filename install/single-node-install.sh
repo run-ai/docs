@@ -195,7 +195,7 @@ kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
 
 
 # **** Wait on Run:AI cluster installation progress 
-echo -e "${GREEN}Run:AI cluster installation is now in progress. ${NC}"
+echo -e "${GREEN}Run:AI cluster installation is now in progress. If this process continues beyond 5 minutes, stop it and send /tmp/runai* files to support@run.ai ${NC}"
 
 sleep 15
 until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
