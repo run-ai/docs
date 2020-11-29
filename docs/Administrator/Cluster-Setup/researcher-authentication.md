@@ -36,6 +36,7 @@ users:
       args:
       - oidc-login
       - get-token
+      - --oidc-extra-scope=email
       - --oidc-issuer-url=https://runai-prod.auth0.com/
       - --oidc-client-id=<CLIENT_ID>
       - --oidc-client-secret=<CLIENT_SECRET>
@@ -58,15 +59,18 @@ Add the following:
      ...
      ...
      - --oidc-client-id=<CLIENT_ID>
-     - --oidc-issuer-url=https://runai-test.auth0.com/
+     - --oidc-issuer-url=https://runai-prod.auth0.com/
      - --oidc-username-prefix=-
 ```
 
-Restart API Server (is this needed or does it happen automatically? )
+Verify that the `kube-apiserver-master` in the `kube-system` has been restarted and changes have been incorporated by running:
 
 ```
-kubectl delete pod kube-apiserver-master -n kube-system
+kubectl get pods -n kube-system kube-apiserver-master -o yaml
 ```
+
+And search for teh _oidc_ flags. 
+
 
 ## Assigning Users to Projects
 
