@@ -21,7 +21,7 @@ As part of the installation process, you will download a __Run:AI Operator YAML 
 
 ## Advanced Setup
 
-For advanced scenarios such as [limiting the installation to specific cluster nodes](limit-runai-install-to-specific-nodes.md) or [enforcing none-root containers](enforce-run-as-user.md) see the _Advanced_ section.
+For advanced scenarios such as [Researcher authentication & authorization](researcher-authentication.md), [limiting the installation to specific cluster nodes](limit-runai-install-to-specific-nodes.md) or [enforcing none-root containers](enforce-run-as-user.md) see the _Advanced_ section.
 
 ## Next Steps
 
