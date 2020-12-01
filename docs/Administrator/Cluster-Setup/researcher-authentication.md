@@ -88,12 +88,4 @@ And search for the above _oidc_ flags.
 * If the Job was submitted with a Project for which you have access, your access will be granted.
 * Existing Jobs in Projects you do __not__ have access to, will show when you run `runai job list -p <project-name>` but you will not be able to view logs, get further info, bash into or delete. 
 
-
-## INTERNAL STUFF, SHOULD BE DONE/AUtomated and REMOVED from here. 
-
-auth0 setup:
-
-* add localhost:8000 to callbacks
-* Something about web application, but probably not interesting
-* Style the Login page. 
  
