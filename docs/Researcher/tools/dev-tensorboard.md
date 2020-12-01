@@ -49,7 +49,7 @@ The terminal will show the following:
 
 ``` shell
 The job 'tb' has been submitted successfully
-You can run `runai describe tb -p team-a` to check the job status
+You can run `runai describe job tb -p team-a` to check the job status
 INFO[0006] Waiting for job to start
 Waiting for job to start
 INFO[0014] Job started

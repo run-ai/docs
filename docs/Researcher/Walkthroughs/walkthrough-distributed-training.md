@@ -50,7 +50,7 @@ The result:
 
 The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
-        runai describe dist
+        runai describe job dist
 
 You will see two worker processes (pods) their status and on which node they run:
 

@@ -21,7 +21,7 @@ INFO[0001] Exposing default jupyter notebook port 8888
 INFO[0001] Using default jupyter notebook image "jupyter/scipy-notebook"
 INFO[0001] Using default jupyter notebook service type portforward
 The job 'build-jupyter' has been submitted successfully
-You can run `runai describe build-jupyter -p team-a` to check the job status
+You can run `runai describe job build-jupyter -p team-a` to check the job status
 INFO[0006] Waiting for job to start
 Waiting for job to start
 Waiting for job to start

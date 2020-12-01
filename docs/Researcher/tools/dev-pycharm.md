@@ -20,7 +20,7 @@ The terminal will show the connection:
 
 ``` shell
 The job 'build-remote' has been submitted successfully
-You can run `runai describe build-remote -p team-a` to check the job status
+You can run `runai describe job build-remote -p team-a` to check the job status
 INFO[0007] Waiting for job to start
 Waiting for job to start
 Waiting for job to start

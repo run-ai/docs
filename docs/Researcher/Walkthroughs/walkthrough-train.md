@@ -57,7 +57,7 @@ A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
 
 To get additional status on your job run:
 
-    runai describe train1
+    runai describe job train1
 
 ### View Logs
 

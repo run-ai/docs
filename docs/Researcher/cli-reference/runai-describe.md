@@ -1,5 +1,5 @@
 !!! attention
-    `runai get` has been replaced by `runai describe`.
+    `runai get` has been replaced by `runai describe job`.
 
 ## Description
 

@@ -27,7 +27,7 @@ The command attaches to the standard input, output, and error streams of a runni
 > Do not allocate a pseudo-TTY
 
 --pod string   
-> Attach to a specific pod within the Job. To find the list of pods run ``runai describe <job-name>`` and then use the pod name with the ``--pod`` flag.
+> Attach to a specific pod within the Job. To find the list of pods run ``runai describe job <job-name>`` and then use the pod name with the ``--pod`` flag.
 
 ### Global Flags
 

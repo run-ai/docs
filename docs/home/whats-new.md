@@ -3,7 +3,7 @@
 Syntax changes in CLI:
 
 * `runai <object> list`  has been replaced by `runai list <object>`.
-* `runai get` has been replaced by `runai describe`.
+* `runai get` has been replaced by `runai describe job`.
 * `runai <object> set` has been replaced by `runai config <object>`.
 
 The older style will still work with a deprecation notice.
