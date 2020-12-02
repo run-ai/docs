@@ -24,7 +24,7 @@ You should receive the following data from Run:AI Customer support:
 
 ## Client-Side
 
-* Install [kubelogin](https://github.com/int128/kubelogin) 
+* Install [kubelogin](https://github.com/int128/kubelogin){target=_blank}
 * Under the `~/.kube` directory edit the `config` file, and add the following:
 
 ``` YAML

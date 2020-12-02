@@ -116,5 +116,6 @@ To complete this Quickstart you must have:
 ## See Also
 
 * For more information on the elasticity module of the Researcher python library, see [Researcher library : Elasticity](../researcher-library/rl-elasticity.md)
-* Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank}
+* Keras Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank}
+* Pytorch Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/elasticity-pytorch){target=_blank}
 
