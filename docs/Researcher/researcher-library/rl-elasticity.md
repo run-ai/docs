@@ -82,4 +82,5 @@ For additional information on how to run elastic training workloads, see the fol
 
 ## See Also
 
-For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/tree/master/runai/elastic){target=_blank}
+* For additional documentation as well as Python examples see our [GitHub repository](https://github.com/run-ai/runai/tree/master/runai/elastic){target=_blank}
+* Working code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank}
