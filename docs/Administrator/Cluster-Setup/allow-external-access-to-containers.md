@@ -43,7 +43,7 @@ kubectl edit runaiconfig runai -n runai
 Search for `localLoadBalancer` and edit the above. Then run:
 
 ```
-kubectl rollout restart deployment  runai-metallb-controller -n runai
+kubectl rollout restart deployment runai-metallb-controller -n runai
 ```
 
 To apply the changes
@@ -53,7 +53,8 @@ To apply the changes
 The researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
 ```
-runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive --service-type=ingress --port 8888:8888 --command -- start-notebook.sh --NotebookApp.base_url=test-ingress
+runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive --service-type=ingress \
+   --port 8888:8888 --command -- start-notebook.sh --NotebookApp.base_url=test-ingress
 ```
 
 After submitting a job through the Run:AI CLI, run:

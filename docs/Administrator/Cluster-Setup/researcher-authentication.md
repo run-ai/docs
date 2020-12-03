@@ -24,7 +24,7 @@ You should receive the following data from Run:AI Customer support:
 
 ## Client-Side
 
-* Install [kubelogin](https://github.com/int128/kubelogin){target=_blank}
+* Install [kubelogin](https://github.com/int128/kubelogin){target=_blank}. Depending on the installation method, you may need to add the kubelogin installation directory to your `PATH`.
 * Under the `~/.kube` directory edit the `config` file, and add the following:
 
 ``` YAML
@@ -40,6 +40,7 @@ users:
       - --oidc-issuer-url=https://runai-prod.auth0.com/
       - --oidc-client-id=<CLIENT_ID>
       - --oidc-client-secret=<CLIENT_SECRET>
+      - --grant-type=password
       command: kubectl
       env: null
 ```
