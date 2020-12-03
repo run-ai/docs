@@ -34,13 +34,27 @@ localLoadBalancer
 
 Set _enabled_ to true and set the IP range appropriately.
 
+To add or change a load balancer after the system has been installed run:
+
+```
+kubectl edit runaiconfig runai -n runai
+```
+
+Search for `localLoadBalancer` and edit the above. Then run:
+
+```
+kubectl rollout restart deployment  runai-metallb-controller -n runai
+```
+
+To apply the changes
+
 ## Usage
 
 The researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
-    runai submit test-ingress -i jupyter/base-notebook -g 1 -p team-ny \
-      --interactive --service-type=ingress --port 8888:8888 \ 
-      --command -- start-notebook.sh --NotebookApp.base_url=test-ingress
+```
+runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive --service-type=ingress --port 8888:8888 --command -- start-notebook.sh --NotebookApp.base_url=test-ingress
+```
 
 After submitting a job through the Run:AI CLI, run:
 
@@ -53,6 +67,8 @@ You will see the service URL with which to access the Jupyter notebook
 The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
 
 For further details see CLI command [runai submit](../../Researcher/cli-reference/runai-submit.md) and [Launch an Interactive Workload Quickstart ](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+
+
 
 ## Alternatives 
 
