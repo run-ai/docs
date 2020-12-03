@@ -8,14 +8,18 @@
 
 ## Exposing a Container Port
 
- There are a number of alternative ways to expose ports in Kubernetes: 
+ There are a number of ways to expose ports in Kubernetes: 
 
-*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service, from outside the cluster, by requesting ``<NodeIP>:<NodePort>`` regardless of which node the container actually resides.   
+*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service, from outside the cluster, by requesting ``<NodeIP>:<NodePort>`` regardless of which node the container actually resides in.   
 *   LoadBalancer - Useful for cloud environments. Exposes the Service externally using a cloud provider’s load balancer.
 *   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services.
-*   Port Forwarding - Simple port forwarding allows access to the container via localhost:&lt;Port&gt;
+*   Port Forwarding - Simple port forwarding allows access to the container via `localhost:<port>`
 
+The document below provides examples for _Port Forwarding_ and _Ingress_.
 Contact your administrator to see which methods are available in your cluster
+
+!!! Note
+    The step below use a Jupyter Notebook as an example for how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
 
 ## Port Forwarding, Step by Step Walkthrough
 

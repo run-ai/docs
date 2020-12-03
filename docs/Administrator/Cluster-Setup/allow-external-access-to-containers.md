@@ -23,7 +23,7 @@ A Run:AI cluster is installed by:
 
 * Accessing the Administrator User Interface Clusters area at [https://app.run.ai/clusters](https://app.run.ai/clusters){target=_blank} 
 * Downloading a YAML file `runai-operator.yaml` and then 
-* Applying it to Kubernetes. You must edit the YAML file. Search for _localLoadBalancer_
+* Applying it to Kubernetes. You must edit the YAML file. Search for `localLoadBalancer`:
 
 ``` yaml
 localLoadBalancer
@@ -34,7 +34,7 @@ localLoadBalancer
 
 Set _enabled_ to true and set the IP range appropriately.
 
-To add or change a load balancer after the system has been installed run:
+To add or change a load balancer __after__ the system has been installed run:
 
 ```
 kubectl edit runaiconfig runai -n runai
