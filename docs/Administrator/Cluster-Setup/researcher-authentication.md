@@ -40,7 +40,7 @@ users:
       - --oidc-issuer-url=https://runai-prod.auth0.com/
       - --oidc-client-id=<CLIENT_ID>
       - --oidc-client-secret=<CLIENT_SECRET>
-      - --grant-type=password
+ ###     - --grant-type=password
       command: kubectl
       env: null
 ```
