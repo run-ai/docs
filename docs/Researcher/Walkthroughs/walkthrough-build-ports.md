@@ -48,7 +48,11 @@ Open the following in the browser
 http://localhost:8888/jupyter1
 ```
 
-You should see a Jupyter notebook.
+You should see a Jupyter notebook. To get the notebook token, run in another shell:
+
+```
+runai logs jupyter1 -p team-a
+```
 
 ## Ingress, Step by Step Walkthrough
 

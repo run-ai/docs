@@ -5,7 +5,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 if groups | grep "\<sudo\>" &> /dev/null; then
-   echo "sudo access exists"
+   echo "sudo access provided."
 else
    echo "Command requires sudo rights."
    exit 1
