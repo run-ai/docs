@@ -8,4 +8,4 @@ kubectl delete ValidatingWebhookConfiguration runai-prometheus-operator-admissio
 kubectl delete pc build interactive-preemptible train runai-critical
 kubectl delete sc local-path nfs-client
 kubectl delete department default
-kubectl delete service -n kube-system runai-prometheus-operator-coredns runai-prometheus-operator-kube-controller-manager runai-prometheus-operator-kube-etcd runai-prometheus-operator-kube-proxy runai-prometheus-operator-kube-scheduler runai-prometheus-operator-kubelet
+kubectl delete service -n kube-system runai-prometheus-operator-coredns runai-prometheus-operator-kube-controller-manager runai-prometheus-operator-kube-etcd runai-prometheus-operator-kube-proxy runai-prometheus-operator-kube-scheduler runai-prometheus-operator-kubelet kube-prometheus-stack-kubelet prom-kube-prometheus-stack-kubelet runai-kube-prometheus-stac-kubelet
