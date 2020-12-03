@@ -29,10 +29,11 @@ Contact your administrator to see which methods are available in your cluster
 
 *   At the command-line run:
 
-        runai config project team-a
-        runai submit jupyter1 -i jupyter/base-notebook -g 1 \
-            --interactive --service-type=portforward --port 8888:8888 \
-            --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
+``` shell
+runai config project team-a
+runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \ --service-type=portforward 
+  --port 8888:8888  --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
+```
 
 *   The job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
 *    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notebook base URL.   
@@ -48,7 +49,7 @@ Open the following in the browser
 http://localhost:8888/jupyter1
 ```
 
-You should see a Jupyter notebook. To get the notebook token, run in another shell:
+You should see a Jupyter notebook. To get the full URL with the notebook token, run the following in another shell:
 
 ```
 runai logs jupyter1 -p team-a
@@ -66,10 +67,11 @@ __Note:__ Ingress must be set up by your administrator prior to usage. For more 
 
 *   At the command-line run:
 
-        runai config project team-a
-        runai submit test-ingress -i jupyter/base-notebook -g 1 \
-          --interactive --service-type=ingress --port 8888 \
-          --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
+``` shell
+runai config project team-a
+runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
+  --service-type=ingress --port 8888  --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
+```
 
 *   An ingress service URL will be created, run:
 
