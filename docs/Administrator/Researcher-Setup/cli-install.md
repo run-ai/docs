@@ -15,6 +15,12 @@ The instructions below will guide you through the process of installing the CLI.
 *   Helm. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
 *   A Kubernetes configuration file obtained from a computer previously connected to the Kubernetes cluster
 
+## Researcher Authentication
+
+Researcher authentication requires additional setup on the cluster-side as well as on the client-side. To configure authentication see [Setup Project-based Researcher Access Control](../Cluster-Setup/researcher-authentication.md). As it related to this document, you will need to:
+
+* Install the `kubelogin` utility.
+* Use a modified Kubernetes configuration file (one generic file fits all users).
 
 ## Kubernetes Configuration
 

@@ -24,8 +24,11 @@ You should receive the following data from Run:AI Customer support:
 
 ## Client-Side
 
-* Install [kubelogin](https://github.com/int128/kubelogin){target=_blank}. Depending on the installation method, you may need to add the kubelogin installation directory to your `PATH`.
-* Under the `~/.kube` directory edit the `config` file, and add the following:
+To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes certificate. The certificate is distributed to users as part of the [Comnand-line interface installation](../../Researcher-Setup/cli-install#kubernetes-configuration). 
+
+When making changes to the certificate, keep a copy of the original certificate to be used for cluster administration. After making the modifications, distribute the modified certificate to Researchers. 
+
+Under the `~/.kube` directory edit the `config` file, and add the following:
 
 ``` YAML
 users:
@@ -40,12 +43,16 @@ users:
       - --oidc-issuer-url=https://runai-prod.auth0.com/
       - --oidc-client-id=<CLIENT_ID>
       - --oidc-client-secret=<CLIENT_SECRET>
- ###     - --grant-type=password
       command: kubectl
       env: null
 ```
 
 Where `<USER_NAME>` is an arbitrary name which is also referred to under `contexts | context | user` in the same file.
+
+
+* Distribute modified certificate to Rsearechers. 
+* On Researchers machine, install [kubelogin](https://github.com/int128/kubelogin){target=_blank}. Depending on the installation method, you may need to add the kubelogin installation directory to your `PATH`.
+
 
 ## Server-Side
 

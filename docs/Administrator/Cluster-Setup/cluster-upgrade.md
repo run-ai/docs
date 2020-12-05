@@ -5,7 +5,7 @@
 To upgrade a Run:AI cluster, run the following:
 
 ``` shell 
-kubectl apply -f $(curl https://raw.githubusercontent.com/run-ai/docs/master/install/runai_new_crds.yaml)
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/runai_new_crds.yaml
 kubectl set image -n runai deployment/runai-operator \
       runai-operator=gcr.io/run-ai-prod/operator:<NEW_VERSION>
 ```
