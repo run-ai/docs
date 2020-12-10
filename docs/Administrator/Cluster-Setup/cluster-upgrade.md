@@ -2,7 +2,34 @@
 
 ## Upgrade
 
-To upgrade a Run:AI cluster, run the following:
+To upgrade a Run:AI cluster, find out your current cluster version (see command below)
+
+If the cluster version is 1.0.76 or earlier, run:
+
+``` shell
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/runai_new_crds.yaml
+kubectl scale --replicas=0 deployment/runai-operator -n runai
+kubectl delete sts -n runai prometheus-runai-prometheus-operator-prometheus \
+      runai-prometheus-pushgateway
+kubectl set image -n runai deployment/runai-operator \
+      runai-operator=gcr.io/run-ai-prod/operator:<NEW_VERSION>
+kubectl scale --replicas=1 deployment/runai-operator -n runai
+
+```
+
+If the cluster version is 1.0.77, run:
+
+``` shell
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/runai_new_crds.yaml
+kubectl scale --replicas=0 deployment/runai-operator -n runai
+kubectl delete sts -n runai runai-db
+kubectl set image -n runai deployment/runai-operator \
+      runai-operator=gcr.io/run-ai-prod/operator:<NEW_VERSION>
+kubectl scale --replicas=1 deployment/runai-operator -n runai
+
+```
+
+If cluster version is 1.0.78 or later, run the following:
 
 ``` shell 
 kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/runai_new_crds.yaml
