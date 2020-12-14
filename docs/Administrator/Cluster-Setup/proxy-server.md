@@ -17,12 +17,17 @@ The Run:AI cluster installation is performed by accessing the Administrator User
 Search for ``httpProxy``:
 
 ``` yaml
-httpProxy:
-    enabled: false
-    tlsCert: |-
-    -----BEGIN CERTIFICATE-----
-    <CERTIFICATE_CONTENTS>
-    -----END CERTIFICATE-----
+global:
+...
+    httpProxy:
+        enabled: false
+        proxyUrl: http://<proxy-url>:<proxy-port>
+        tlsCert: |-
+        -----BEGIN CERTIFICATE-----
+        <CERTIFICATE_CONTENTS>
+        -----END CERTIFICATE-----
 ```
 
-Set ``enabled`` to true and paste the contents of the certificate under ``tlsCert``.
+* Set ``enabled`` to true 
+* Set the proxy URL and Port.
+* Paste the contents of the certificate under ``tlsCert``.
