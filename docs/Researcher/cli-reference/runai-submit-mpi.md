@@ -87,7 +87,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
 
 --command
->  If set, overrides the image's entrypoint with the command supplied after '--'
+>  If set, overrides the image's entry point with the command supplied after '--'
 
 >  Example: ``--command script.py --args 10000`` 
 

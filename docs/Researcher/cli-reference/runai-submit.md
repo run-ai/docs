@@ -137,7 +137,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
 
 --command
->  If set, overrides the image's entrypoint with the command supplied after '--'
+>  If set, overrides the image's entry point with the command supplied after '--'
 
 >  Example: `--command -- python script.py 10000` 
 
