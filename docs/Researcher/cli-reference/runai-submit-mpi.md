@@ -134,10 +134,10 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
 
 --gpu double | -g double
-> Number of GPUs to allocate to the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
+> Number of GPUs to allocated for the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 --gpu-memory
-> GPU memory to allocate for this Job (1Gib, 20Mib, .etc). The Job will receive this ammount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of gpu memory to the Job.
+> GPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of GPU memory to the Job.
 
 --large-shm
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM.
