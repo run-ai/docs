@@ -25,9 +25,7 @@ Researcher authentication requires additional setup on the cluster-side as well 
 ## Kubernetes Configuration
 
 *   Create a directory _.kube_. Copy the Kubernetes configuration file into the directory. 
-
-        *   Each Researcher should have a __separate copy__ of the configuration file (as the file stores user defaults).
-        *   The researcher should have write access to the configuration file. 
+   *   Each Researcher should have a __separate copy__ of the configuration file (as the file stores user defaults).*   The researcher should have write access to the configuration file. 
 *   You can choose to locate the file at a different location. In this case you must create a shell variable to point to the configuration file. Example:
 
         export KUBECONFIG=~/.kube/config
