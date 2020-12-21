@@ -1,6 +1,6 @@
 # Researcher Library: Hyperparameter Optimization Support
 
-The Run:AI Researcher Library is a python library you can add to your deep learning python code. The hyperparameter optimization(HPO) support module of the library is helper library for hyperparameter optimization (HPO) experiments
+The Run:AI Researcher Library is a python library you can add to your deep learning python code. The hyperparameter optimization(HPO) support module of the library is a helper library for hyperparameter optimization (HPO) experiments
 
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
@@ -42,7 +42,7 @@ import runai.hpo
 * Initialize the Run:AI HPO library with a path to a directory shared between all cluster nodes (typically using an NFS server).
 We recommend specifying a unique name for the experiment, the name will be used to create a sub-directory on the shared folder. 
 
-```
+``` python
 runai.hpo.init('/path/to/nfs', 'model-abcd-hpo')
 ```
 
@@ -50,14 +50,14 @@ runai.hpo.init('/path/to/nfs', 'model-abcd-hpo')
     *  Random search - randomly pick a set of hyperparameter values
     *  Grid search - pick the next set of hyperparameter values, iterating through all sets across multiple experiments
 
-```
+``` python
 strategy = runai.hpo.Strategy.GridSearch
 ```
 
 
 * Call the Run:AI HPO library to specify a set of hyperparameters and pick a specific configuration for this experiment.
 
-```
+``` python
 config = runai.hpo.pick(
     grid=dict(
         batch_size=[32, 64, 128],
@@ -73,7 +73,8 @@ optimizer = keras.optimizers.SGD(lr=config['lr'])
 
 Metrics could be reported and saved in the experiment directory under the fule ``runai.yaml`` using `runai.hpo.report`.
 You should pass the epoch number and a dictionary with metrics to be reported. For example:
-```
+
+``` python
 runai.hpo.report(epoch=5, metrics={ 'accuracy': 0.87 })
 ```
 

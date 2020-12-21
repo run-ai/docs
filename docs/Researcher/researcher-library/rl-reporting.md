@@ -18,26 +18,36 @@ In your python code add:
 
 Create a `Reporter` object as a Python context manager (i.e. with a `with` statement):
 
-    with runai.reporter.Reporter() as reporter:
-        pass
+``` python
+with runai.reporter.Reporter() as reporter:
+    pass
+```
 
 Then use `reporter` to send metrics and parameters.
 
 To send a number-based metric report, write:
 
-    reporter.reportMetric(&lt;reporter_metric_name&gt;, &lt;reporter_metric_value&gt;)
+``` 
+reporter.reportMetric(<reporter_metric_name>, <reporter_metric_value>)
+```
 
 For example,
 
-    reporter.reportMetric("accuracy", 0.34)
+``` python
+reporter.reportMetric("accuracy", 0.34)
+```
 
 To send a text-based metric report, write:
 
-    reporter.reportParameter(&lt;reporter_param_name&gt;, &lt;reporter_param_value&gt;)
+``` 
+reporter.reportParameter(<reporter_param_name>, <reporter_param_value>)
+```
 
 For example,
 
-    reporter.reportParameter("state", "Training Model")
+``` python
+reporter.reportParameter("state", "Training Model")
+```
 
 ### Recommended Metrics to send
 
@@ -128,7 +138,7 @@ After enabling automatic logging, the above metrics will automatically be sent g
 
 For example:
 
-```
+``` python
 with runai.reporter.keras.Reporter(autolog=True) as reporter:
     pass
 ```
@@ -138,7 +148,7 @@ with runai.reporter.keras.Reporter(autolog=True) as reporter:
 The metrics show up in the Job list of the user interface. To add a metric to the UI
 
 *   Integrate the reporter library into your code
-*   Send a metrics via the reporter library
+*   Send metrics via the reporter library
 *   Run the workload once to send initial data.
 *   Go to Jobs list: [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 *   On the top right, use the settings wheel and select the metrics you have added

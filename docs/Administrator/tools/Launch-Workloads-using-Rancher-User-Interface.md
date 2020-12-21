@@ -33,7 +33,7 @@ We differentiate between two types of Workloads:
 *  Select a docker image 
 *  Select a Kubernetes Namespace (or remain with "default")
 ![mceclip0.png](img/mceclip0.png)
-*  Build workloads will typically require the assignment of TCP ports, for example, to externalize a jupyter notebook or a PyCharm editor. Select the ports that you want to expose. For each port select: 
+*  Build workloads will typically require the assignment of TCP ports, for example, to externalize a _jupyter_ notebook or a PyCharm editor. Select the ports that you want to expose. For each port select: 
     *   (Optional) an informative name
     *   The internal port used by the software you want to connect to (e.g. Juypter notebook uses 8888 by default)
     *   The type of load balancer you want to use.  For cloud a environment this would typically be  a Layer-4 load balancer. On-premise environments depend on how your cluster was installed.   

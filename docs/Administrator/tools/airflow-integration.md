@@ -16,7 +16,7 @@ Airflow tasks are sent for execution. Specifically, the [Airflow - Kubernetes in
 ## Run:AI - Airflow Integration
 
 DAGs are defined in Python. Airflow tasks based on Kubernetes are defined via the _KubernetesPodOperator_ class. 
-To run an Airflow task with Run:AI you must provide additional Run:AI related properties to 
+To run an Airflow task with Run:AI you must provide additional Run:AI-related properties to 
 
 ``` python
 dag = DAG(...)

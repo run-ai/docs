@@ -26,33 +26,37 @@ __Note__: different Kubernetes distributions have different locations and method
 *   Open a shell on the Kubernetes __master__
 *   cd to/etc/kubernetes/manifests
 *   vi kube-apiserver.yaml
-*   add ``--feature-gates=TTLAfterFinished=true`` to the following location:
+*   add `--feature-gates=TTLAfterFinished=true` to the following location:
 
-        spec:
-            containers:
-            - command:
-            - kube-apiserver
-                .....
-            - --feature-gates=TTLAfterFinished=true
-
+``` yaml
+spec:
+    containers:
+    - command:
+    - kube-apiserver
+        .....
+    - --feature-gates=TTLAfterFinished=true
+```
 
 *   vi kube-controller-manager.yaml
-*   add ``--feature-gates=TTLAfterFinished=true`` to the following location:
+*   add `--feature-gates=TTLAfterFinished=true` to the following location:
 
-        spec:
-            containers:
-            - command:
-            - kube-controller-manager
-                .....
-            - --feature-gates=TTLAfterFinished=true
-    
+``` yaml
+spec:
+    containers:
+    - command:
+    - kube-controller-manager
+        .....
+    - --feature-gates=TTLAfterFinished=true
+```    
 
 
 ## Automatic Deletion
 
-When starting the Job, add the flag ``--ttl-after-finish duration``. duration is the duration, post Job finish, after which the Job is automatically deleted. Example durations are: 5s, 2m, 3h, 4d etc. For example, the following call will delete the Job 2 hours after the Job finishes:
+When starting the Job, add the flag `--ttl-after-finish duration`. duration is the duration, post Job finish, after which the Job is automatically deleted. Example durations are: 5s, 2m, 3h, 4d etc. For example, the following call will delete the Job 2 hours after the Job finishes:
 
-    runai submit myjob1 --ttl-after-finish 2h
+```
+runai submit myjob1 --ttl-after-finish 2h
+```
 
 ## Using Templates to set Automatic Deletion as Default
 

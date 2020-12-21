@@ -72,12 +72,12 @@ During the above process, there may be a pending workload whose project is below
 
 ### Fairness
 
-The Run:AI scheduler determines fairness between multiple over-quota projects according to their GPU quota. Consider for example two projects, each spawning a significant amount of workloads (e.g. for Hyperparameter tuning) all of which wait in the queue to be executed. The Run:AI Scheduler allocates resources while preserving fairness between the different projects regardless of the time they entered the system. The fairness works according to the __relative portion of GPU quota for each project.__ To further illustrate that, suppose that:
+The Run:AI scheduler determines fairness between multiple over-quota projects according to their GPU quota. Consider for example two projects, each spawning a significant amount of workloads (e.g. for Hyperparameter tuning) all of which wait in the queue to be executed. The Run:AI Scheduler allocates resources while preserving fairness between the different projects regardless of the time they entered the system. The fairness works according to the __relative portion of the GPU quota for each project.__ To further illustrate that, suppose that:
 
 * Project A has been allocated with a quota of 3 GPUs.
 * Project B has been allocated with a quota of 1 GPU.
 
-Then, if both projects go over quota, project A will receive 75% (=3/(1+3)) of the idle GPUs and project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new job is submitted to the system or existing job ends.
+Then, if both projects go over quota, project A will receive 75% (=3/(1+3)) of the idle GPUs and project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new job is submitted to the system or an existing job ends.
 
 This fairness equivalence will also be maintained amongst __running__ jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
@@ -104,7 +104,7 @@ Run:AI provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
 
-One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memorty exception.
+One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memory exception.
 
 GPU Fractions are scheduled as regular GPUs in the sense that:
 

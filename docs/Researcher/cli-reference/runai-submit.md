@@ -59,7 +59,7 @@ runai submit
 
 ## Examples
 
-All examples assume a Run:AI Project has been set using ``runai config project <project-name>``.
+All examples assume a Run:AI Project has been set using `runai config project <project-name>`.
 
 Start an interactive Job:
 
@@ -117,7 +117,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 > Example:
 
-> ``runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress`` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run ``runai list jobs`` to find the URL for the notebook.
+> `runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
 
 --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
@@ -134,7 +134,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
 
-> The --attach flag also sets ``--tty`` and ``--stdin`` to true. 
+> The --attach flag also sets `--tty` and `--stdin` to true. 
 
 --command
 >  If set, overrides the image's entry point with the command supplied after '--'
@@ -142,7 +142,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Example: `--command -- python script.py 10000` 
 
 -e stringArray | --environment stringArray
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (``-e BATCH_SIZE=50 -e LEARNING_RATE=0.2``) or separate by a comma (``-e BATCH_SIZE:50,LEARNING_RATE:0.2``)
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`) or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`)
 
 --git-sync string
 > Clone a git repository into the container running the job. The parameter shoiuld follow the syntax: 'source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,taget=TARGET_DIRECTORY_TO_CLONE'. 
@@ -154,11 +154,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
 
-> - ``always`` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
+> - `always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
 
->  - ``ifNotPresent``: the image is pulled only if it is not already present locally.
+> - `ifNotPresent`: the image is pulled only if it is not already present locally.
 
->  - ``never``: the image is assumed to exist locally. No attempt is made to pull the image.
+> - `never`: the image is assumed to exist locally. No attempt is made to pull the image.
 
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
@@ -208,7 +208,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 
-> __Storage_Class_Name__ is a storage class name which can be obtained by running ``kubectl get storageclasses.storage.k8s.io``. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
+> __Storage_Class_Name__ is a storage class name which can be obtained by running `kubectl get storageclasses.storage.k8s.io`. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 
 >    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
 
@@ -218,19 +218,19 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > 
 > Examples:
 
-> ``--pvc :3Gi:/tmp/john:ro``  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
+> `--pvc :3Gi:/tmp/john:ro`  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
 
-> ``--pvc my-storage:3Gi:/tmp/john:ro``  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
+> `--pvc my-storage:3Gi:/tmp/john:ro`  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
 
-> ``--pvc :3Gi:/tmp/john`` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
+> `--pvc :3Gi:/tmp/john` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
 
-> ``--pvc my-pvc:/tmp/john`` - Use a Persistent Volume Claim named `my-pvc`. Mount it to `/tmp/john` as read-write 
+> `--pvc my-pvc:/tmp/john` - Use a Persistent Volume Claim named `my-pvc`. Mount it to `/tmp/john` as read-write 
 
-> ``--pvc my-pvc-2:/tmp/john:ro`` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
+> `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
 
 --volume stringArray | -v stringArray
->  Volume to mount into the container. Example ``-v /raid/public/john/data:/root/data:ro`` The flag may optionally be suffixed with ``:ro`` or ``:rw`` to mount the volumes in read-only or read-write mode, respectively.
+>  Volume to mount into the container. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
 
 
 ### Network
@@ -248,27 +248,27 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 
 --port stringArray
->  Expose ports from the Job container. Used together with ``--service-type``.  
+>  Expose ports from the Job container. Used together with `--service-type`.  
 >  Examples:  
->    ``--port 8080:80 --service-type loadbalancer``
+>    `--port 8080:80 --service-type loadbalancer`
 
->    ``--port 8080 --service-type ingress``
+>    `--port 8080 --service-type ingress`
 
 --service-type string | -s string
->  Service exposure method for interactive Job. Options are: ``portforward``, ``loadbalancer``, ``nodeport``, ingress.
+>  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`, ingress.
 >  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structure.
 
 
 ### Job Lifecycle
 
 --backoffLimit int
-> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the ``--interactive`` flag is not specified).
+> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
 --completions int
->  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--parallelism``.
+>  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--parallelism`.
 
 --parallelism int
-> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with ``--completions``.
+> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--completions`.
 
 --ttl-after-finish duration
 >  Define the duration, post Job finish, after which the Job is automatically deleted (5s, 2m, 3h, etc).  
@@ -281,7 +281,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
 
 --prevent-privilege-escalation
-> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is ``false``. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
+> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
 
 --run-as-user
 >  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
@@ -306,14 +306,14 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
 --project | -p (string)
->  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
+>  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
 
 --help | -h
 >  Show help text.
 
 ## Output
 
-The command will attempt to submit a Job. You can follow up on the Job by running ``runai list jobs`` or ``runai describe job <job-name>``.
+The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
 Note that the submit call may use templates to provide defaults to any of the above flags.
 

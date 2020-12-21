@@ -4,15 +4,15 @@
 
 Templates are a way to reduce the number of flags required when using the Command-Line Interface to start workloads. The researcher can:
 
-*   Use a template by running ``runai submit --template <template-name>``
-*   Review list of templates by running ``runai list template``
+*   Use a template by running `runai submit --template <template-name>`
+*   Review list of templates by running `runai list template`
 *   Review the contents of a specific template by running ``runai describe template <template-name>``
 
 The purpose of this document is to provide the Administrator with guidelines on how to create & maintain templates.
 
 ## Template and Kubernetes
 
-CLI Templates are implemented as_ Kubernetes <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/" target="_self">ConfigMaps</a>. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
+CLI Templates are implemented as Kubernetes [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){target=_blank}. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
 
 ### Creating a Template 
 

@@ -23,6 +23,6 @@ runai version
 
 ## Output
 
-Version of the Run:AI command-line interface.
+The version of the Run:AI command-line interface.
 
 ## See Also
