@@ -125,9 +125,9 @@ sudo chown -R $SUDO_USER ~/.kube ~/.minikube
 
 
 # *** Log into Run:AI
-curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/runai-auth0-data
-AUTH0_CLIENT_ID=$(eval cat /tmp/runai-auth0-data | jq -r '.authClientID')
-AUTH0_REALM=$(eval cat /tmp/runai-auth0-data | jq -r '.authRealm')
+curl https://app.run.ai/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/runai-auth0-data.txt
+AUTH0_CLIENT_ID=$(eval cat /tmp/runai-auth0-data.txt | jq -r '.authClientID')
+AUTH0_REALM=$(eval cat /tmp/runai-auth0-data.txt | jq -r '.authRealm')
 
 echo  $AUTH0_CLIENT_ID
 echo  $AUTH0_REALM
@@ -141,9 +141,9 @@ curl --request POST \
   --data audience='https://api.run.ai' \
   --data scope=read:sample \
   --data 'client_id='$AUTH0_CLIENT_ID'' \
-  --data realm=$AUTH0_REALM > /tmp/runai-token-data
+  --data realm=$AUTH0_REALM > /tmp/runai-token-data.txt
 
-BEARER=$(eval cat /tmp/runai-token-data | jq -r '.access_token')
+BEARER=$(eval cat /tmp/runai-token-data.txt | jq -r '.access_token')
 
 echo $BEARER
 
@@ -152,15 +152,15 @@ echo $BEARER
 curl -X GET 'https://app.run.ai/v1/k8s/clusters' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer '$BEARER'' > /tmp/runai-clusters
+--header 'Authorization: Bearer '$BEARER'' > /tmp/runai-clusters.txt
 
 # **** Is there an existing cluster?
 
-if [ $(eval cat /tmp/runai-clusters | jq '. | length') -ne 0 ]; then
+if [ $(eval cat /tmp/runai-clusters.txt | jq '. | length') -ne 0 ]; then
 
 	# **** A cluster exists, perhaps is our cluster from a re-run of this script?
-	if [ $(eval cat /tmp/runai-clusters | jq '. | length') -eq 1 ] && [ $(eval cat /tmp/runai-clusters | jq '.[0]'.name) = \"$CLUSTER_NAME\" ]; then
-		CLUSTER_UUID=$(eval cat /tmp/runai-clusters | jq  -r  '.[0].uuid')	
+	if [ $(eval cat /tmp/runai-clusters.txt | jq '. | length') -eq 1 ] && [ $(eval cat /tmp/runai-clusters.txt | jq '.[0]'.name) = \"$CLUSTER_NAME\" ]; then
+		CLUSTER_UUID=$(eval cat /tmp/runai-clusters.txt | jq  -r  '.[0].uuid')	
 	else
 		echo "One or more Clusters already exist. Browse to https://app.run.ai/clusters, delete the Cluster(s) and re-run this script"
 		exit 1
@@ -172,9 +172,9 @@ else
 	--header 'Accept: application/json' \
 	--header 'Content-Type: application/json' \
 	--header 'Authorization: Bearer '$BEARER'' \
-	--data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data
+	--data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data.txt
 
-	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data | jq -r '.uuid')
+	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data.txt | jq -r '.uuid')
 fi
 
 
