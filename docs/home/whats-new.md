@@ -47,7 +47,7 @@ There is now an optional second level of Project hierarchy called __Departments_
 
 ## July 28th, 2020
 
-You can now enforce a cluster-wise setting that mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../Administrator/Cluster-Setup/enforce-run-as-user.md)
+You can now enforce a cluster-wise setting that mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../Administrator/Cluster-Setup/non-root-containers.md)
 
 ## July 21th, 2020
 

@@ -95,7 +95,8 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`) or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`).
 
 --git-sync string
-> Clone a git repository into the container running the job. The parameter shoiuld follow the syntax: 'source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,taget=TARGET_DIRECTORY_TO_CLONE'. 
+> Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,taget=TARGET_DIRECTORY_TO_CLONE`.
+
 > Note that source=REPOSITORY is the only mandatory field
 
 --image string | -i string
@@ -205,13 +206,13 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 ### Access Control
 
 --create-home-dir
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not.
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 --prevent-privilege-escalation
-> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [Privilege Escalation](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privilege-escalation){target=_blank}.
+> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc.
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 
 ### Scheduling

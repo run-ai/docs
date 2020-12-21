@@ -85,7 +85,7 @@ nav:
         - 'Add an Internet Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/researcher-authentication.md'
         - 'Limit Install to Specific Nodes' : 'Administrator/Cluster-Setup/limit-runai-install-to-specific-nodes.md'
-        - 'Enforce non-root Containers' : 'Administrator/Cluster-Setup/enforce-run-as-user.md'
+        - 'Non-root Containers' : 'Administrator/Cluster-Setup/non-root-containers.md'
         - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
         - 'Configure NFS' : 'Administrator/Cluster-Setup/nfs-install.md'
         - 'Node Downtime' : 'Administrator/Cluster-Setup/node-downtime.md'
