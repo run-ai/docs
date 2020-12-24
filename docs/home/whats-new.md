@@ -1,3 +1,16 @@
+<!-- ## December 26th, 2020
+It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5GB`. -->
+
+## December 15th, 2020
+Project and Departments can now be set to not allocate resources beyond the assigned GPUs. This is useful for budget-conscious projects/departments. 
+
+## December 1st, 2020
+New integration documents:
+
+* [Apache Airflow](../Administrator/tools/airflow-integration.md)
+* [TensorBoard](../Researcher/tools/dev-tensorboard.md)
+
+
 ## November 25th, 2020
 
 Syntax changes in CLI:

@@ -1,0 +1,47 @@
+# Setting aside Nodes for Specific Roles
+
+When installing a production cluster you may want to:
+
+* Set one or more Run:AI system nodes. These are nodes dedicated to Run:AI software. 
+* Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
+* Limit Run:AI to specific nodes in the cluster. 
+
+To perform these tasks you will need the Run:AI Administrator CLI. See [Install the Run:AI Administrator Command-line Interface](cli-admin-install.md)
+
+## Dedicated Run:AI System Nodes
+
+Find out the names of the nodes designated for the Run:AI system by running `kubectl get nodes`. For each such node run:
+
+```
+runai-adm set node-role --runai-system-worker <node-name>
+```
+
+If you re-run `kubectl get nodes` you will see the node role of these nodes changed to `runai-system`
+
+## Dedicated GPU & CPU Nodes
+
+Separate nodes into those that:
+* Run GPU workloads
+* Run CPU workloads
+* Do not run Run:AI at all. these jobs will not be monitored using the Run:AI Administration User interface. 
+
+Review nodes names using `kubectl get nodes`. For each such node run:
+
+```
+runai-adm set node-role --gpu-worker <node-name>
+```
+
+or 
+
+```
+runai-adm set node-role --cpu-worker <node-name>
+```
+
+Nodes not marked as GPU worker or CPU worker will not run Run:AI at all.
+
+
+To set all workers not running runai-system as GPU workers run:
+
+```
+runai-adm set node-role --all <node-name>
+```

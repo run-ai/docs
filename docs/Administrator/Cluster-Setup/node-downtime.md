@@ -2,35 +2,72 @@
 
 ## Introduction
 
-Nodes (Machines) that are part of the cluster are susceptible to occasional downtime. This can be either as part of __planned maintenance__ where we bring down the node for a specified time in an orderly fashion or an __unplanned downtime__ where the machine stops due to a software or hardware issue.
+Nodes (Machines) that are part of the cluster are susceptible to occasional downtime. This can be either as part of __planned maintenance__ where we bring down the node for a specified time in an orderly fashion or an __unplanned downtime__ where the machine abruptly stops due to a software or hardware issue.
 
-The purpose of this document is to provide a process for retaining the Run:AI service during and after the downtime. The document differentiates between CPU-Only Worker Nodes and  GPU Worker Nodes:
+The purpose of this document is to provide a process for retaining the Run:AI service and Researcher workloads during and after the downtime. 
 
-* __CPU-Only Worker Nodes__ - In a production installation Run:AI software runs on one or more [CPU-only Worker Nodes](../cluster-prerequisites/#hardware-requirements) on which the Run:AI software runs. 
+## Node Types
+The document differentiates between __Run:AI System Worker Nodes__ and __GPU Worker Nodes__:
 
-* __GPU Worker Nodes__ are where Machine Learning workloads run. Run:AI only runs monitoring services on these nodes. This monitoring services recover automatically. 
+* Worker Nodes - are where Machine Learning workloads run. 
+* Run:AI System Nodes - In a production installation Run:AI software runs on one or more [Run:AI System Nodes](../cluster-prerequisites/#hardware-requirements) on which the Run:AI software runs. 
 
 
-## Preparations: Shared Storage
+## Worker Nodes
+Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance, or an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
-Some of the Run:AI services use disk storage. A key to successful node recovery is to __not__ rely on node-storage. Rather, during the installation, you must follow the protocol for installing the Run:AI cluster over __shared__ storage. For further details see [Installing Run:AI over network file storage](nfs-install.md)
+### Planned Maintenance
 
-## Planned Maintenance
-
-Before stopping a node, perform the following: 
+Before stopping a Worker node, perform the following: 
 
 * Stop the Kubernetes scheduler from starting __new__ workloads on the node:
 
-        kubectl cordon <node-name>
+```
+kubectl cordon <node-name>
+```
 
-* Force all services that _have a state_ to move to another node:
+* Force all Interactive Workloads to move to another node or wait in queue:
 
-        kubectl scale sts --all --replicas=0  -n runai
+``` 
+kubectl scale sts --all --replicas=0  -n runai
+kubectl scale sts --all --replicas=1  -n runai  
+```
+
+* Shutdown the node and perform the required maintenance. When done, start the node and then run:
+
+```
+kubectl uncordon <node-name>
+```
+
+### Unplanned Downtime
+
+
+* If a node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
+
+* If a node is to remain down for some time, then after a couple of minutes, Kubernetes will identify the Node is not working and will send previously running workloads back to the queue. To fasten the process you can temporarily remove the node from Kubernetes. This will require re-joining the node when it is up again. Run:
+
+        kubectl delete node <node-name>
+
+* When the node is up again, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster)
+
+
+
+## Run:AI System Nodes
+ 
+ In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to designate an arbitrary node on the cluster as a Run:AI system node as part of the process below.
+
+
+### Planned Maintenance
+
+Designate another node as a Run:AI system node. 
+
+
+Move Run:AI storage-dependant services to another node.  
+
+        kubectl delete pvc --all -n runai
         kubectl scale sts --all --replicas=1  -n runai  
+        kubectl apply -f  XXXX https://docs.run.io/ yaml migration
 
-> On GPU Workers this will move Interactive workloads to another node if possible. 
-
-> On CPU-only Workers this will move Run:AI storage-dependant services to another node.  
 
 * Shutdown the node and perform the required maintenance. When done, start the node and then run:
 
@@ -38,7 +75,8 @@ Before stopping a node, perform the following:
 
 For further information see [Kubernetes Documentation](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){target=_blank}.
 
-## Unplanned Downtime
+
+### Unplanned Downtime
 
 * If the node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
 
@@ -46,17 +84,23 @@ For further information see [Kubernetes Documentation](https://kubernetes.io/doc
 
         kubectl delete node <node-name>
 
-* When the node is up again, on the master node, run:
+* When the node is up again, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster)
+
+
+
+## Rejoin Node into Kubernetes Cluster
+
+To rejoin a node to the cluster follow the following steps:
+
+* On the __master__ node, run:
 
         kubeadm token create --print-join-command
 
-* This would output a ``kubeadm join`` command that you must run on the worker node in order for it to re-join the Kubernetes cluster. 
+* This would output a ``kubeadm join`` command. Run the command on the worker node in order for it to re-join the Kubernetes cluster. 
 
 * Verify that the node is joined by running:
 
         kubectl get nodes
 
 
-* After the node has joined, [re-run](../cluster-install/#step-23-cpu-only-worker-nodes) the following command to mark the node as a CPU node:
-
-        kubectl label node <node-name> run.ai/cpu-node=true
+* When the machine is up RELABEL  

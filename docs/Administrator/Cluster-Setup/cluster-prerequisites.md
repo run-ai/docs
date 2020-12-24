@@ -13,11 +13,11 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
 
 ## Hardware Requirements
 
-*   __Kubernetes: Dedicated CPU-only worker node:__ To save on expensive GPUs-based hardware, we recommend (though not a must), a dedicated, CPU-only worker machine. Run:AI requires the following resources:
+*   (Production only) Dedicated __Run:AI System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain at least one, dedicated worker machine, designated for Run:AI Software:
     
     *   4 CPUs
     *   8GB of RAM
-    *   At least 50GB of Disk space 
+    *   50GB of Disk space 
     
     
 *   __Shared data volume:__ Run:AI uses Kubernetes to abstract away the machine on which a container is running:
@@ -29,6 +29,8 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
 
 
 * __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/){target=_blank} or set up a local registry on-premise (preferably on a dedicated machine). Run:AI can assist with setting up the repository.
+
+*  __Kubernetes__: Though out of scope for this document, Production Kubernetes installation requires separate nodes for the Kubernetes master. 
 
 ## Network Requirements
 
