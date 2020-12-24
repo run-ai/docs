@@ -6,7 +6,7 @@ When installing a production cluster you may want to:
 * Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
 * Limit Run:AI to specific nodes in the cluster. 
 
-To perform these tasks you will need the Run:AI Administrator CLI. See [Install the Run:AI Administrator Command-line Interface](cli-admin-install.md)
+To perform these tasks you will need the Run:AI Administrator CLI. See [Installing the Run:AI Administrator Command-line Interface](cli-admin-install.md).
 
 ## Dedicated Run:AI System Nodes
 
@@ -17,6 +17,12 @@ runai-adm set node-role --runai-system-worker <node-name>
 ```
 
 If you re-run `kubectl get nodes` you will see the node role of these nodes changed to `runai-system`
+
+To remove the runai-system node role run:
+
+```
+runai-adm remove node-role --runai-system-worker <node-name>
+```
 
 ## Dedicated GPU & CPU Nodes
 
@@ -40,8 +46,18 @@ runai-adm set node-role --cpu-worker <node-name>
 Nodes not marked as GPU worker or CPU worker will not run Run:AI at all.
 
 
-To set all workers not running runai-system as GPU workers run:
+To set __all__ workers not running runai-system as GPU workers run:
 
 ```
 runai-adm set node-role --all <node-name>
+```
+
+To remove the CPU or GPU worker node role run:
+
+```
+runai-adm remove node-role --cpu-worker <node-name>
+
+or 
+
+runai-adm remove node-role --gpu-worker <node-name>
 ```
