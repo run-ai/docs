@@ -1,4 +1,4 @@
-# Setting aside Nodes for Specific Roles
+# Designating Specific Role Nodes
 
 When installing a production cluster you may want to:
 
