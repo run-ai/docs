@@ -75,10 +75,10 @@ nav:
       - 'Introduction' : 'Administrator/Cluster-Setup/cluster-setup-intro.md'
       - 'Prerequisites' : 'Administrator/Cluster-Setup/cluster-prerequisites.md'
       - 'Quick Single Node Install' : 'Administrator/Cluster-Setup/single-node-install.md'
-      - 'Kubernetes Install' : 'Administrator/Cluster-Setup/install-k8s.md'      
       - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/cluster-delete.md'
+      - 'Kubernetes Install' : 'Administrator/Cluster-Setup/install-k8s.md'      
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
       - 'Advanced' :
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'

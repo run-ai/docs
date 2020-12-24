@@ -119,4 +119,5 @@ To perform these tasks. See [Set Node Roles](node-roles.md).
 
 * Set up Admin UI Users [Working with Admin UI Users](../Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md).
 * Set up Projects [Working with Projects](../Admin-User-Interface-Setup/Working-with-Projects.md).
-* Researchers work via a Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/cli-install.md) on how to install the CLI for users.
+* Set up Researchers to work with the Run:AI Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../Researcher-Setup/cli-install.md) on how to install the CLI for users.
+* Set up [Project-based Researcher Access Control](researcher-authentication.md).
