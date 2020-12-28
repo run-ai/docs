@@ -62,9 +62,7 @@ Then run the following again:
     sudo pkill -SIGHUP dockerd
 
 
-## Step 2: Install & Configure Kubernetes
-
-### Step 2.1 Install Kubernetes
+## Step 2: Install Kubernetes
 
 There are several good ways to install Kubernetes. A full list can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Two good alternatives:
 

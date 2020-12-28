@@ -1,5 +1,5 @@
-<!-- ## December 26th, 2020
-It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5GB`. -->
+<!-- ## December 28th, 2020
+It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5G`. -->
 
 ## December 15th, 2020
 Project and Departments can now be set to not allocate resources beyond the assigned GPUs. This is useful for budget-conscious projects/departments. 
