@@ -19,7 +19,7 @@ Authentication setup works as follows:
 You should receive the following data from Run:AI Customer support:
 
 * Client ID
-* Auth0 Realm
+* Realm
 
 
 ## Client-Side
@@ -36,7 +36,7 @@ Under the `~/.kube` directory edit the `config` file, and add the following:
     auth-provider:
       config:
         auth-flow: cli
-        auth0-realm: <AUTH0_REALM>
+        auth0-realm: <REALM>
         client-id: <CLIENT_ID>
         idp-issuer-url: https://runai-prod.auth0.com/
       name: oidc
@@ -45,7 +45,7 @@ Under the `~/.kube` directory edit the `config` file, and add the following:
 Where `<USER_NAME>` is an arbitrary name which is also referred to under `contexts | context | user` in the same file.
 
 
-* Distribute modified certificate to Rsearechers. 
+* Distribute modified certificate to Researchers. 
 * On Researchers machine, install [kubelogin](https://github.com/int128/kubelogin){target=_blank}. Depending on the installation method, you may need to add the kubelogin installation directory to your `PATH`.
 
 
