@@ -19,7 +19,7 @@ Authentication setup works as follows:
 You should receive the following data from Run:AI Customer support:
 
 * Client ID
-* Client Secret
+* Auth0 Realm
 
 
 ## Client-Side
@@ -31,20 +31,15 @@ When making changes to the certificate, keep a copy of the original certificate 
 Under the `~/.kube` directory edit the `config` file, and add the following:
 
 ``` YAML
-users:
 - name: <USER_NAME>
   user:
-    exec:
-      apiVersion: client.authentication.k8s.io/v1beta1
-      args:
-      - oidc-login
-      - get-token
-      - --oidc-extra-scope=email
-      - --oidc-issuer-url=https://runai-prod.auth0.com/
-      - --oidc-client-id=<CLIENT_ID>
-      - --oidc-client-secret=<CLIENT_SECRET>
-      command: kubectl
-      env: null
+    auth-provider:
+      config:
+        auth-flow: cli
+        auth0-realm: <AUTH0_REALM>
+        client-id: <CLIENT_ID>
+        idp-issuer-url: https://runai-prod.auth0.com/
+      name: oidc
 ```
 
 Where `<USER_NAME>` is an arbitrary name which is also referred to under `contexts | context | user` in the same file.
