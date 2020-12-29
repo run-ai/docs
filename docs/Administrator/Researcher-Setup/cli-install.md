@@ -17,10 +17,7 @@ The instructions below will guide you through the process of installing the CLI.
 
 ## Researcher Authentication
 
-Researcher authentication requires additional setup on the cluster-side as well as on the client-side. To configure authentication see [Setup Project-based Researcher Access Control](../Cluster-Setup/researcher-authentication.md). As it related to this document, you will need to:
-
-* Install the `kubelogin` utility.
-* Use a modified Kubernetes configuration file (one generic file fits all users).
+Researcher authentication requires additional setup on the cluster-side as well as on the client-side. To configure authentication see [Setup Project-based Researcher Access Control](../Cluster-Setup/researcher-authentication.md). As it related to this document, you will need to use a modified Kubernetes configuration file (one generic file fits all users).
 
 ## Kubernetes Configuration
 
