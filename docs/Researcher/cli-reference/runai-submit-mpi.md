@@ -95,7 +95,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`) or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`).
 
 --git-sync string
-> Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,taget=TARGET_DIRECTORY_TO_CLONE`.
+> Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
 
 > Note that source=REPOSITORY is the only mandatory field
 
