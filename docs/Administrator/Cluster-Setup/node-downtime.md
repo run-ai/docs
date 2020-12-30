@@ -16,24 +16,23 @@ The document differentiates between __Run:AI System Worker Nodes__ and __GPU Wor
 ## Worker Nodes
 Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance, or an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
+### Training vs. Interactive
+Run:AI differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
+
 ### Planned Maintenance
 
 Before stopping a Worker node, perform the following: 
 
-* Stop the Kubernetes scheduler from starting __new__ workloads on the node:
+* Stop the Kubernetes scheduler from starting __new__ workloads on the node and drain node from all existing workloads. Workloads will move to other nodes or await on queue for renewed execution:
 
 ```
-kubectl cordon <node-name>
+kubectl drain <node_name> --delete-local-data --ignore-daemonsets
 ```
 
-* Force all Interactive Workloads to move to another node or wait in queue:
+* Shutdown the node and perform the required maintenance. 
 
-``` 
-kubectl scale sts --all --replicas=0  -n runai
-kubectl scale sts --all --replicas=1  -n runai  
-```
 
-* Shutdown the node and perform the required maintenance. When done, start the node and then run:
+* When done, start the node and then run:
 
 ```
 kubectl uncordon <node-name>
@@ -44,47 +43,33 @@ kubectl uncordon <node-name>
 
 * If a node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
 
-* If a node is to remain down for some time, then after a couple of minutes, Kubernetes will identify the Node is not working and will send previously running workloads back to the queue. To fasten the process you can temporarily remove the node from Kubernetes. This will require re-joining the node when it is up again. Run:
+* If a node is to remain down for some time, then after a couple of minutes, Kubernetes will identify the Node is not working and will send previously running workloads back to the queue. To fasten the process, drain the node:
 
-        kubectl delete node <node-name>
+```
+kubectl drain <node_name> --delete-local-data --ignore-daemonsets
+```
 
-* When the node is up again, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster)
+When the node is up again, run: 
+
+```
+kubectl uncordon <node-name>
+```
+
+* If the node is to be permanently shut down, you can remove it completely from Kubernetes. Run:
+
+```
+kubectl delete node <node-name>
+```
+
+However, if you plan to bring back the node, you will  need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster).
 
 
 
 ## Run:AI System Nodes
  
- In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to designate an arbitrary node on the cluster as a Run:AI system node as part of the process below.
+ In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](node-roles.md) on the cluster as a Run:AI system node to complete the process below.
 
-
-### Planned Maintenance
-
-Designate another node as a Run:AI system node. 
-
-
-Move Run:AI storage-dependant services to another node.  
-
-        kubectl delete pvc --all -n runai
-        kubectl scale sts --all --replicas=1  -n runai  
-        kubectl apply -f  XXXX https://docs.run.io/ yaml migration
-
-
-* Shutdown the node and perform the required maintenance. When done, start the node and then run:
-
-        kubectl uncordon <node-name>
-
-For further information see [Kubernetes Documentation](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){target=_blank}.
-
-
-### Unplanned Downtime
-
-* If the node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
-
-* If the node is to remain down for some time and you want Run:AI services to commence, you must temporarily remove the node from Kubernetes. Run:
-
-        kubectl delete node <node-name>
-
-* When the node is up again, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster)
+ Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See above section. 
 
 
 
@@ -103,4 +88,4 @@ To rejoin a node to the cluster follow the following steps:
         kubectl get nodes
 
 
-* When the machine is up RELABEL  
+* When the machine is up you will need to [re-label nodes according to their role](node-roles.md)
