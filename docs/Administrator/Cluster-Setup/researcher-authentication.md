@@ -63,6 +63,7 @@ Add the following:
      - --oidc-client-id=<CLIENT_ID>
      - --oidc-issuer-url=https://runai-prod.auth0.com/
      - --oidc-username-prefix=-
+     - --oidc-groups-claim=email
 ```
 
 Verify that the `kube-apiserver-master` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run:
