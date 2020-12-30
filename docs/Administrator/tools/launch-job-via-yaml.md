@@ -119,7 +119,7 @@ Run:
 
 to submit the job.
 
-<!-- comment
+
 
 ### Using Fractional GPUs
 
@@ -142,7 +142,7 @@ spec:
 ``` 
 
 where "0.5" is the requested GPU fraction.
--->
+
 
 ## Delete Workloads
 
