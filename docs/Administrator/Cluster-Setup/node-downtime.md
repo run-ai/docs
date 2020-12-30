@@ -43,7 +43,7 @@ kubectl uncordon <node-name>
 
 * If a node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
 
-* If a node is to remain down for some time, then after a couple of minutes, Kubernetes will identify the Node is not working and will send previously running workloads back to the queue. To fasten the process, drain the node:
+* If a node is to remain down for some time you will want to drain the node so that workloads will migrate to another node:
 
 ```
 kubectl drain <node_name> --delete-local-data --ignore-daemonsets
