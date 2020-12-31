@@ -11,12 +11,12 @@ We differentiate between two types of Workloads:
 *   __Train__ workloads. Training is characterized by a deep learning session that has a start and an end. A Training session can take anywhere from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored. Training workloads typically utilize large percentages of GPU computing power and memory.
 *   __Build__ workloads. Build workloads are interactive. They are used by data scientists to write machine learning code and test it against subsets of the data. Build workloads typically do not maximize usage of the GPU. 
 
-The internal Kubernetes implementation of Train and Build are Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/){target=_blank} and Kubernetes [StatesfulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){target=_blank} respectively:
+The internal Kubernetes implementation of Train is a _CRD_ (Customer Resource) named `RunaiJob` which is similar to a Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/){target=_blank}. The internal implementation of Buils is a  Kubernetes [StatesfulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){target=_blank}.
 
 * A Kubernetes _Job_ is used for _Train_ workloads. A Job has a distinctive "end" at which time the job is either "Completed" or "Failed"
-* A Kubernetes _StatefulSet_ is used for  _Build_ workloads. Build workloads are interactive sessions. StatefulSets do not end on their own. Instead they must be manually stopped
+* A Kubernetes _StatefulSet_ is used for  _Build_ workloads. Build workloads are interactive sessions. StatefulSets do not end on their own. Instead, they must be manually stopped
 
-Run:AI extends the Kubernetes _Scheduler_. A Kubernetes Scheduler is the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named ``runai-scheduler``
+Run:AI extends the Kubernetes _Scheduler_. A Kubernetes Scheduler is the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named `runai-scheduler`.
 
 The Run:AI scheduler schedules computing resources by associating Workloads with  Run:AI _Projects_:
 

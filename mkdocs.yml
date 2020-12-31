@@ -110,6 +110,7 @@ nav:
     - 'Integrations' :
       - 'Airflow integration' : 'Administrator/integrations/airflow-integration.md' 
       - 'Submit workloads via YAML' : 'Administrator/integrations/launch-job-via-yaml.md'
+      - 'Submit workloads via Kubernetes API' : 'Administrator/integrations/launch-job-via-kubernetes-api.md'
       - 'Researcher REST API reference' : 'Administrator/integrations/researcher-api-reference.md'
 
   - 'Researcher' :

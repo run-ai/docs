@@ -8,150 +8,47 @@ This article is a complementary article on [launching jobs via YAML](launch-job-
 
 The article will use Python, though the article above provides several others programming languages. 
 
-## Terminology
+## Submit a Run:AI Job 
 
-We differentiate between two types of Workloads:
+The following code builds the Job YAML from the article on [launching jobs via YAML](launch-job-via-yaml.md) and sends it via Kubernetes API.
 
-*   __Train__ workloads. Training is characterized by a deep learning session that has a start and an end. A Training session can take anywhere from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored. Training workloads typically utilize large percentages of GPU computing power and memory.
-*   __Build__ workloads. Build workloads are interactive. They are used by data scientists to write machine learning code and test it against subsets of the data. Build workloads typically do not maximize usage of the GPU. 
+``` python
+from __future__ import print_function
+import kubernetes
+from kubernetes import client, config
+from pprint import pprint
+import json
 
-The internal Kubernetes implementation of Train and Build are Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/){target=_blank} and Kubernetes [StatesfulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){target=_blank} respectively:
+config.load_kube_config()
 
-* A Kubernetes _Job_ is used for _Train_ workloads. A Job has a distinctive "end" at which time the job is either "Completed" or "Failed"
-* A Kubernetes _StatefulSet_ is used for  _Build_ workloads. Build workloads are interactive sessions. StatefulSets do not end on their own. Instead they must be manually stopped
+with client.ApiClient() as api_client:
 
-Run:AI extends the Kubernetes _Scheduler_. A Kubernetes Scheduler is the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named ``runai-scheduler``
+    namespace = 'runai-team-a'  # Run:AI project name is prefixed by runai-
+    jobname = 'my-job'
+    username = 'john'  # used in un-authenticated systems only
+    gpus = 1
 
-The Run:AI scheduler schedules computing resources by associating Workloads with  Run:AI _Projects_:
+    body = client.V1Job(api_version="run.ai/v1", kind="RunaiJob")
+    body.metadata = client.V1ObjectMeta(namespace=namespace, name=jobname)
 
-* A project is assigned with a GPU quota through the Run:AI Administrator user interface. 
-* Each workload must be associated with a project name and will receive resources according to the defined quota for the project and the currently running Workloads
+    template = client.V1PodTemplate()
+    template.template = client.V1PodTemplateSpec()
+    template.template.metadata = client.V1ObjectMeta(labels = {'user' : username})
 
-Internally, Run:AI Projects are implemented as Kubernetes namespaces. The scripts below assume that the code is being run after the relevant namespace has been set. 
+    resource = client.V1ResourceRequirements(limits= {'nvidia.com/gpu' : gpus})
+    container = client.V1Container(
+        name=jobname, image='gcr.io/run-ai-demo/quickstart', resources=resource)
+    template.template.spec = client.V1PodSpec(
+        containers=[container], restart_policy='Never', scheduler_name='runai-scheduler')
+    body.spec = client.V1JobSpec(template=template.template)
 
-## Submit Workloads 
-
-
-### Train jobs
-
-A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Assuming you have the following parameters:
-
-* ``<JOB-NAME>``. The name of the Job. 
-
-* ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
-
-* ``<USER-NAME>`` User name running the Job. The name is only used when user authentication is disabled for display purposes. When [authentication is enabled](../Cluster-Setup/researcher-authentication.md) the name is ignored. 
-
-* ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
-
-Copy the following into a file and change the parameters:
-
-```yaml
-apiVersion: run.ai/v1
-kind: RunaiJob (* see note below)
-metadata:
-  name: <JOB-NAME>
-spec:
-  template:
-    metadata:
-      labels:
-        user: <USER-NAME>
-    spec:
-      containers:
-      - name: <JOB-NAME>
-        image: <IMAGE-NAME>
-        resources:
-          limits:
-            nvidia.com/gpu: <REQUESTED-GPUs>
-      restartPolicy: Never
-      schedulerName: runai-scheduler
+    pprint(body)
+ 
+    try:
+        api_instance = client.CustomObjectsApi(api_client)
+        api_response = api_instance.create_namespaced_custom_object(
+            "run.ai", "v1", namespace, "runaijobs", body)
+        pprint(api_response)
+    except client.rest.ApiException as e:
+        print("Exception when calling AppsV1Api->create_namespaced_job: %s\n" % e)
 ```
-
-
-Run:
-
-    kubectl apply -f <FILE-NAME>
-
-to submit the job.
-
-!!! Note
-    * You can use either a regular `Job` or `RunaiJob`. The later is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
-    * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
-
-
-### Build jobs
-
-A Build job is equivalent to using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Copy the following into a file and change the parameters:
-
-``` yaml
-apiVersion: apps/v1
-kind: "StatefulSet"
-metadata:
-  name:  <JOB-NAME>
-spec:
-  serviceName:  <JOB-NAME>
-  replicas: 1
-  selector:
-    matchLabels:
-      release:  <JOB-NAME>
-  template:
-    metadata:
-      labels:
-        user:  <USER-NAME>
-        release:  <JOB-NAME>
-    spec:
-      schedulerName: runai-scheduler
-      containers:
-        - name:  <JOB-NAME>
-          command:
-          - "sleep"
-          args:
-          - "infinity"
-          image: <IMAGE-NAME>
-          resources:
-            limits:
-              nvidia.com/gpu: <REQUESTED-GPUs>
-```
-
-The YAML above contains a default command and arguments (``sleep infinity``) which you can replace.
-
-Run:
-
-    kubectl apply -f <FILE-NAME>
-
-to submit the job.
-
-
-
-### Using Fractional GPUs
-
-Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
-
-
-``` yaml
-limits:
-  nvidia.com/gpu: <REQUESTED-GPUs>
-```
-
-should be omitted and replaced with:
-
-``` yaml
-spec:
-  template:
-    metadata:
-      annotations:
-        gpu-fraction: "0.5"
-``` 
-
-where "0.5" is the requested GPU fraction.
-
-
-## Delete Workloads
-
-To delete a Run:AI workload you need to delete the Job or StatefulSet according to the workload type
-
-    kubectl delete job <JOB-NAME>
-
-or: 
-
-    kubectl delete sts <STS-NAME>
