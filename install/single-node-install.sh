@@ -183,15 +183,12 @@ curl 'https://app.run.ai/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
 --header 'Authorization: Bearer '$BEARER'' > runai-operator-$CLUSTER_NAME.yaml
 
 
-# **** disable local-path-provisioner (minikube already has a default)
-sed 's/grafanaLab:/local-path-provisioner:\
-    enabled: false\
-  &/' runai-operator-$CLUSTER_NAME.yaml > runai-operator-$CLUSTER_NAME-mod.yaml
+
 
 
 # **** Install Run:AI (running twice to overcome a possible race condition bug)
-kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
-kubectl apply -f runai-operator-$CLUSTER_NAME-mod.yaml
+kubectl apply -f runai-operator-$CLUSTER_NAME.yaml
+kubectl apply -f runai-operator-$CLUSTER_NAME.yaml
 
 
 # **** Wait on Run:AI cluster installation progress 
