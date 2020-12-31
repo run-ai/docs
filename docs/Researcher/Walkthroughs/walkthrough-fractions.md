@@ -1,4 +1,4 @@
-<!-- # Quickstart: Launch Workloads with GPU Fractions
+# Quickstart: Launch Workloads with GPU Fractions
 
 ## Introduction
 
@@ -74,5 +74,3 @@ runai submit  -i gcr.io/run-ai-demo/quickstart --gpu-memory 5G
 ```
 
 Which will provide 5GB of GPU memory. 
-
--->

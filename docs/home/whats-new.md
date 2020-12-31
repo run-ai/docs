@@ -1,5 +1,5 @@
-<!-- ## December 28th, 2020
-It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5G`. -->
+## December 28th, 2020
+It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5G`.
 
 ## December 15th, 2020
 Project and Departments can now be set to not allocate resources beyond the assigned GPUs. This is useful for budget-conscious projects/departments. 
@@ -45,9 +45,9 @@ For further information see [runai submit](../Researcher/cli-reference/runai-sub
 
 We released a module that helps the Researcher perform __Hyperparameter optimization__ (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Quickstart](../Researcher/Walkthroughs/walkthrough-hpo.md)
 
-<!-- ## September 3rd, 2020
+## September 3rd, 2020
 
-__GPU Fractions__ now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more. -->
+__GPU Fractions__ now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
 
 
 ## August 10th, 2020

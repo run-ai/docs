@@ -1,12 +1,14 @@
 
 # Submit Endpoint
 
-Create new Run:AI job. 
+Create a new Run:AI job. 
 
 ## General Details
 
 **URL**:  `http://<Run:AI Server URL>/api/job`
+
 **Method**: `POST`
+
 **Headers**
 
 - `RA-USER` : <Name of user>

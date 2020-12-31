@@ -5,7 +5,7 @@ Follow the Quickstart documents below to learn more:
 *   [Unattended training sessions](walkthrough-train.md)
 *   [Interactive build sessions](walkthrough-build.md)
 *   [Interactive build sessions with externalized services](walkthrough-build-ports.md)
-<!-- *   [Using GPU Fractions](walkthrough-fractions.md) -->
+*   [Using GPU Fractions](walkthrough-fractions.md)
 *   [Distributed Training](walkthrough-distributed-training.md)
 *   [Hyperparameter Optimization](walkthrough-hpo.md)
 *   [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)

@@ -96,7 +96,6 @@ nav:
       - 'Use a Private Docker Registry' : 'Administrator/Researcher-Setup/docker-registry-config.md'
       - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/docker-to-runai.md'
       - 'Limit Run:AI to Specific Nodes' : 'Administrator/Researcher-Setup/limit-to-node-group.md'
-#      - 'Limit Run:AI to Specific GPUs' : 'Administrator/Researcher-Setup/limit-to-gpus-in-nodes.md'
       - 'Use Secrets in Jobs' : 'Administrator/Researcher-Setup/use-secrets.md'
       - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/template-config.md'
     - 'Admin UI Setup' :
@@ -120,7 +119,7 @@ nav:
       - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
       - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
       - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
-#      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
+      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
       - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
