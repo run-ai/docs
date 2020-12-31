@@ -18,7 +18,7 @@ project=<project-name>
     "data": Array<Job>
 }
 ```
-If this parameter is ommitted, then __all__ jobs will be returned. 
+If this parameter is omitted, then __all__ jobs will be returned. 
 
 Job:
 

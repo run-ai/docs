@@ -1,4 +1,3 @@
-# Delete Endpoint
 
 Deletes a list of Run:AI jobs.
 
