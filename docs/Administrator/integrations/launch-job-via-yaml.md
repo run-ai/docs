@@ -151,3 +151,8 @@ To delete a Run:AI workload you need to delete the Job or StatefulSet according 
 or: 
 
     kubectl delete sts <STS-NAME>
+
+
+## See Also
+
+See how to use the above YAML syntax with [Kubernetes API](launch-job-via-kubernetes-api.md)
