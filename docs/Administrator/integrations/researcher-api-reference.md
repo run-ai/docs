@@ -232,11 +232,85 @@ Following JSON:
       }
     }
 
+# Jobs list Endpoint
+
+Gets the list of all Run:AI jobs of the given project
+
+## General Details
+
+**URL**:  `http://<Run:AI Server URL>/api/job`
+
+**Method**: `GET`
+
+## Request Definition
+
+```
+        "project"=<project-name>
+```
+
+## Response Definition
+```
+    {
+    "data": Array<Job info>
+    }
+```
+
+Job info:
+```
+        {
+            "id": <JOB ID>,
+            "project": <Job Project>,
+            "name": <Job Name>
+            "status": <Job status. Can be either: "Pending", "Running", "Succeeded", "Failed" or "Unknown"
+            "type": <Job type. Can be either "Train" or "Interactive">
+            "nodes": <the names of the nodes that are hosting the job>
+            "createdAt": <unix timestamp in ms of the job's creation>,
+            "images": <The job's image>,
+            "user": "<the user that started the job>,
+            "currentAllocatedGPUs": <number of GPUs allocated for the job>
+        }
+```
 
 
+## Jobs list Example
 
+request:
+```
+curl --location --request GET 'http://www.example.com/api/job?project=project-0'
+```
 
+response:
 
+```
+{
+    "data": [
+        {
+            "id": "b915c8ec-19b6-4135-b473-164971278fff",
+            "project": "project-0",
+            "name": "job-0",
+            "status": "Running",
+            "type": "Train",
+            "nodes": "node-0",
+            "createdAt": 1609340976000,
+            "images": "gcr.io/run-ai-demo/quickstart",
+            "user": "Jhon Smith",
+            "currentAllocatedGPUs": 1
+        },
+        {
+            "id": "b915c8ec-19b6-4135-b473-164971278fff",
+            "project": "project-0",
+            "name": "job-1",
+            "status": "Pending",
+            "type": "Train",
+            "nodes": "node-0",
+            "createdAt": 1609340976000,
+            "images": "gcr.io/run-ai-demo/quickstart",
+            "user": "Jhon Smith",
+            "currentAllocatedGPUs": 1
+        }
+    ]
+}
+```
 
 
     
