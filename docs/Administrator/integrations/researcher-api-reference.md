@@ -1,4 +1,3 @@
-# Run:AI API Documentation
 
 # Submit Endpoint
 
