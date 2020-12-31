@@ -12,13 +12,15 @@ __Method__: `GET`
 project=<project-name>
 ```
 
+If the `project` parameter is omitted, then __all__ jobs will be returned. 
+
+
 ## Response 
 ```
 {
     "data": Array<Job>
 }
 ```
-If this parameter is omitted, then __all__ jobs will be returned. 
 
 Job:
 
