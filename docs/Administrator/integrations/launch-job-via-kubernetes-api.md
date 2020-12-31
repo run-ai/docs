@@ -1,8 +1,12 @@
-# Launch a Run:AI Job via YAML
+# Submit a Run:AI Job via Kubernetes API
 
 The easiest way to submit jobs to the Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). Still, the CLI is not a must. It is only a wrapper for a more detailed Kubernetes API syntax using YAML. 
 
-There are cases were you want to forgo the CLI and use direct YAML calls. A frequent scenario for using the Kubernetes YAML syntax to submit jobs is __integrations__. Researchers may already be working with an existing system that submits jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
+There are cases where you want to forgo the CLI and use direct YAML calls. A frequent scenario for using the Kubernetes YAML syntax to submit jobs is __integrations__. Researchers may already be working with an existing system that submits jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
+
+This article is a complementary article on [launching jobs via YAML](launch-job-via-yaml.md). It shows how to use [Kubernetes API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#programmatic-access-to-the-api){target=_blank} to submit jobs. 
+
+The article will use Python, though the article above provides several others programming languages. 
 
 ## Terminology
 
@@ -36,7 +40,7 @@ A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when c
 
 * ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
 
-* ``<USER-NAME>`` User name running the Job. The name is used for display purposes only (not for authentication purposes).
+* ``<USER-NAME>`` User name running the Job. The name is only used when user authentication is disabled for display purposes. When [authentication is enabled](../Cluster-Setup/researcher-authentication.md) the name is ignored. 
 
 * ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
 
