@@ -1,7 +1,6 @@
-
 # Submit Endpoint
 
-Create a new Run:AI job. 
+Creates a new Run:AI job. 
 
 ## General Details
 
@@ -224,20 +223,49 @@ Following JSON:
 
 **Basic job with auto-generated name**
 
+```
+curl --location --request POST 'http://example.com/api/job' \
+--header 'RA-User: Jhon Smith' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "job": {
+    "project": "project-0",
+    "image": "gcr.io/run-ai-demo/quickstart",
+    "gpu": 1
+  }
+}   '
+```
+
+# Delete Endpoint
+
+Deletes a list of Run:AI jobs.
+
+## General Details
+
+**URL**:  `http://<Run:AI Server URL>/api/job`
+
+**Method**: `DELETE`
+
+## Request Definition
+
+Following JSON:
+
+```
+        [<Job Identifier 1>, .... ,<Job Identifier n>]
+```
+
+Job Identifier definition:
+```
     {
-      "job": {
-        "project": "RunAiProject",
-        "image": "gcr.io/run-ai-demo/quickstart",
-        "gpu": 1,
-      }
+        "name": <job-name>, 
+        "project": <job-project>
     }
+```
 
+## Delete Examples
 
-
-
-
-
-
-
-    
-
+```
+curl --location --request DELETE 'http://example.com/api/job' \
+--header 'Content-Type: application/json' \
+--data-raw '[{"name":"job-name-0","project":"project-0"}, {"name": "job-name-0","project":"project-1"}]'
+```
