@@ -155,4 +155,5 @@ or:
 
 ## See Also
 
-See how to use the above YAML syntax with [Kubernetes API](launch-job-via-kubernetes-api.md)
+* See how to use the above YAML syntax with [Kubernetes API](launch-job-via-kubernetes-api.md)
+* Use the [Researcher REST API](../../developer/researcher-rest-api/overview.md) to submit, list and delete Jobs.

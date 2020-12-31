@@ -106,11 +106,6 @@ nav:
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Tools' :
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
-    - 'Integrations' :
-      - 'Airflow integration' : 'Administrator/integrations/airflow-integration.md' 
-      - 'Submit workloads via YAML' : 'Administrator/integrations/launch-job-via-yaml.md'
-      - 'Submit workloads via Kubernetes API' : 'Administrator/integrations/launch-job-via-kubernetes-api.md'
-      - 'Researcher REST API reference' : 'Administrator/integrations/researcher-api-reference.md'
 
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
@@ -165,6 +160,15 @@ nav:
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Noteook' :  'Researcher/tools/dev-jupyter.md'
-      - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'
-      
-
+      - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
+  - 'Developer' :
+    - 'Researcher REST API' : 
+        - 'Overview' : 'developer/researcher-rest-api/overview.md'
+        - 'Submit a Job' :  'developer/researcher-rest-api/rest-submit.md'
+        - 'Delete a Job' :  'developer/researcher-rest-api/rest-delete.md'
+        - 'Get a list of Jobs' :  'developer/researcher-rest-api/rest-list.md'
+    - 'Kubernetes API' : 
+        - 'Submit a job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
+        - 'Submit a job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
+    - 'Integrations' :
+      - 'Airflow integration' : 'developer/integrations/airflow-integration.md' 

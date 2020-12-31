@@ -7,7 +7,7 @@ Project and Departments can now be set to not allocate resources beyond the assi
 ## December 1st, 2020
 New integration documents:
 
-* [Apache Airflow](../Administrator/integrations/airflow-integration.md)
+* [Apache Airflow](../developer/integrations/airflow-integration.md)
 * [TensorBoard](../Researcher/tools/dev-tensorboard.md)
 
 

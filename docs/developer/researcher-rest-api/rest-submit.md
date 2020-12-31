@@ -1,6 +1,4 @@
 
-# Submit Endpoint
-
 Create a new Run:AI Job. 
 
 ## General
@@ -11,25 +9,25 @@ Create a new Run:AI Job.
 
 **Headers**
 
-- `RA-USER` : `<user name>`
+- `RA-USER: <user-name>`
+- `Content-Type: application/json`
 
 
-## Request Definition
+## Request
 
-
-Following JSON:
+The Request body is a JSON object of a Run:AI Job as follows:
 
 ``` json
 {
-    "job": {
-        <Job Parameters. See below>
+    "job" : {
+        <Job Parameters>
     }
 }
 ```
 
 ## Job Parameters
 
-Below is a list of available parameters a full documentation of each parameter can be found in [runai-submit](../../Researcher/cli-reference/runai-submit.md)
+Below is a list of available parameters. Full documentation of each parameter can be found in [runai-submit](../../Researcher/cli-reference/runai-submit.md)
 
 **Basic Parameters**
 
@@ -51,7 +49,7 @@ Below is a list of available parameters a full documentation of each parameter c
 
 ``` json
 {
-    'arguments' :  ['-e', '-f']
+    "arguments" :  ["-e", "-f"]
 }
 
 ```
@@ -63,8 +61,8 @@ Below is a list of available parameters a full documentation of each parameter c
 ``` json
 {
     "environment": {
-    "BATCH_SIZE" : 50, 
-    "LEARNING_RAGE" : 0.2,
+        "BATCH_SIZE" : 50, 
+        "LEARNING_RAGE" : 0.2,
     }
 }
 ```   
@@ -102,10 +100,20 @@ Below is a list of available parameters a full documentation of each parameter c
 
 ``` json
 {
-    'storageClass' : 'my-storage',
-    'size' :  '3GB',
-    'path' :   '/tmp/john'
-    'readOnly' :  true
+    "pvc" : [
+        {
+            "storageClass" : "my-storage1",
+            "size" :  "3GB",
+            "path" :   "/tmp/john",
+            "readOnly" :  true
+        },
+        {
+            "storageClass" : "my-storage2",
+            "size" :  "4GB",
+            "path" :   "/tmp/jill",
+            "readOnly" :  false        
+        }
+    ]
 }
 ```
 
@@ -158,18 +166,19 @@ Below is a list of available parameters a full documentation of each parameter c
 
 Following JSON:
 
-    {
-      "name":<new job name>
-    }
-
+``` json
+{
+    "name": <new-job-name>
+}
+```
 
 ## Examples
 
-**Basic job with auto-generated name**
+**Basic job with an auto-generated name**
 
 
 ``` bash
-curl -X POST 'http://<IP>:<PORT>/api/job' \
+curl -X POST 'http://www.example.com/api/job' \
 --header 'RA-USER: john' \
 --header 'Content-Type: application/json' \
 --data-raw '    {
