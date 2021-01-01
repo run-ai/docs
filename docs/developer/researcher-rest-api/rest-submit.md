@@ -3,15 +3,16 @@ Create a new Run:AI Job.
 
 ## General
 
-**URL**:  `http://<Run:AI Server URL>/api/job`
+__URL__:  `http://<service-url>/api/job`
 
-**Method**: `POST`
+__Method__: `POST`
 
-**Headers**
+__Headers__
 
 - `RA-USER: <user-name>`
 - `Content-Type: application/json`
 
+The user name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
 
 ## Request
 
@@ -20,161 +21,82 @@ The Request body is a JSON object of a Run:AI Job as follows:
 ``` json
 {
     "job" : {
-        <Job Parameters>
+        "name" : "string", 
+        "project" : "string (*required)",
+        "interactive" : "boolean",
+        "image" : "string (*required)",
+        "command" : "string", 
+        "arguments"  : ["-e", "-f"],
+        "environment" : {
+                "BATCH_SIZE" : 50, 
+                "LEARNING_RATE" : 0.2,
+        },
+        "imagePullPolicy"  : "string", 
+        "stdin"  : "boolean",     
+        "tty"  : "boolean",     
+        "workingDir"  : "string", 
+        "createHomeDir"  : "boolean", 
+        "gpu"  : "double",  
+        "cpu"  : "double", 
+        "cpuLimit"  : "integer",     
+        "memory"  : "string", 
+        "memoryLimit"  : "string",     
+        "largeShm"  : "boolean", 
+            "pvc" : [
+                {
+                    "storageClass" : "my-storage1",
+                    "size" :  "3GB",
+                    "path" :   "/tmp/john",
+                    "readOnly" :  true
+                },
+                {
+                    "storageClass" : "my-storage2",
+                    "size" :  "4GB",
+                    "path" :   "/tmp/jill",
+                    "readOnly" :  false        
+                }
+            ],
+        "volume": {
+            "/raid/public/john/data": "/root/data",
+            "/raid/public/john/code": "/root/code"
+        },
+        "hostIpc"  : "boolean", 
+        "hostNetwork"  : "boolean", 
+        "ports" : 
+            [
+                { "container": 80, "external": 32188, "autoGenerate": false},
+                { "container": 443, "autoGenerate": true}
+            ],
+        "backoffLimit" : "integer", 
+        "completions"  : "integer", 
+        "parallelism"   : "integer", 
+        "elastic"  : "boolean", 
+        "preemptible"  : "boolean", 
+        "serviceType"  : "string", 
+        "ttlAfterFinish"  : "string", 
+        "preventPrivilegeEscalation"  : "boolean", 
+        "nodeType"  : "string",     
+        "jobNamePrefix"  : "string" 
     }
 }
 ```
 
 ## Job Parameters
 
-Below is a list of available parameters. Full documentation of each parameter can be found in [runai-submit](../../Researcher/cli-reference/runai-submit.md)
-
-**Basic Parameters**
-
-`name` *string*
-
-`project`  _string_ (*required)    
-
-`interactive` _boolean_
-
-**Container Definition**
-
-`image` *string* (*required) 
-
-`command` _string_
-
-`arguments` _Array<string\>_  
-
-> Example:
-
-``` json
-{
-    "arguments" :  ["-e", "-f"]
-}
-
-```
-
-`environment` _Map<string\>_
-
-> Environment variables to be set in the container. Example:
-
-``` json
-{
-    "environment": {
-        "BATCH_SIZE" : 50, 
-        "LEARNING_RAGE" : 0.2,
-    }
-}
-```   
-
-`imagePullPolicy` *string*
-
-`stdin` *boolean*    
-
-`tty` *boolean*    
-
-`workingDir` *string*
-    
-
-`createHomeDir` *boolean*
-
-**Resource Allocation Parameters**
-
-`gpu` *double* 
-
-`cpu` *double*
-
-`cpuLimit` *int*    
-
-`memory` *string*
-
-`memoryLimit` *string*    
-
-`largeShm` *boolean*
-
-**Storage**
-
-`pvc`  *Array of* `PVC` objects.
-
-> Mount a persistent volume claim of Network Attached Storage into the container. Example:
-
-``` json
-{
-    "pvc" : [
-        {
-            "storageClass" : "my-storage1",
-            "size" :  "3GB",
-            "path" :   "/tmp/john",
-            "readOnly" :  true
-        },
-        {
-            "storageClass" : "my-storage2",
-            "size" :  "4GB",
-            "path" :   "/tmp/jill",
-            "readOnly" :  false        
-        }
-    ]
-}
-```
-
-`volume` *Map<string\>*
-
-> Mount a volume into the container. Example:
-
-```
-{ 
-    "volume": {
-    "/raid/public/john/data": "/root/data",
-    "/raid/public/john/code": "/root/code"
-
-    }
-}
-```
-**Network**
-`hostIpc` *boolean*
-
-`hostNetwork` *boolean*
-
-`ports` *Array<PortMap> (see below)*
-
-**Job Lifecycle**
-
-`backoffLimit` *int*
-
-`completions` *int*
-
-`parallelism`  *int*
-
-`elastic` *boolean*
-
-`preemptible` *boolean*
-
-`serviceType` *string*
-
-`ttlAfterFinish` *string*
-
-**Miscellaneous**
-
-`preventPrivilegeEscalation` *boolean*
-
-`nodeType` *string*    
-
-`jobNamePrefix` *string*
-
+* Full documentation of the above parameters can be found in [runai-submit](../../Researcher/cli-reference/runai-submit.md). 
+* Mandatory parameters are marked as required.
 
 ## Response
 
-Following JSON:
-
 ``` json
 {
-    "name": <new-job-name>
+    "name": "<new-job-name>"
 }
 ```
 
 ## Examples
 
-**Basic job with an auto-generated name**
+__Basic job with an auto-generated name__
 
 
 ``` bash
@@ -189,14 +111,4 @@ curl -X POST 'http://www.example.com/api/job' \
       }
     }'
 ```
-
-
-
-
-
-
-
-
-
-    
 

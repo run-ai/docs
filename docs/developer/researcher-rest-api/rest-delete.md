@@ -1,11 +1,11 @@
 
-Deletes a list of Run:AI jobs.
+Delete one or more Run:AI Jobs.
 
 ## General
 
-**URL**:  `http://<Run:AI Server URL>/api/job`
+__URL__:  `http://<service-url>/api/job`
 
-**Method**: `DELETE`
+__Method__: `DELETE`
 
 ## Request 
 
@@ -15,7 +15,7 @@ Following JSON:
 [<Job Identifier 1>, .... ,<Job Identifier n>]
 ```
 
-Job Identifier definition:
+Job identifier definition:
 
 ``` json
 {
@@ -32,6 +32,6 @@ curl --location --request DELETE 'http://example.com/api/job' \
 --header 'Content-Type: application/json' \
 --data-raw '[
     {"name" : "job-name-0", "project" : "team-a"}, 
-    {"name" : "job-name-0", "project" : "team-b"}
+    {"name" : "job-name-1", "project" : "team-a"}
 ]'
 ```

@@ -36,7 +36,7 @@ A Train job is equivalent to __not__ using the CLI ``--interactive`` flag when c
 
 * ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
 
-* ``<USER-NAME>`` User name running the Job. The name is used for display purposes only (not for authentication purposes).
+* ``<USER-NAME>`` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
 
 * ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
 

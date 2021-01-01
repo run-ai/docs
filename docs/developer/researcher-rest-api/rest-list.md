@@ -1,8 +1,8 @@
-Gets a list of all Run:AI jobs for a given project
+Get a list of all Run:AI Jobs for a given project
 
 ## General
 
-__URL__: `http://<Run:AI Server URL>/api/job`
+__URL__:  `http://<service-url>/api/job`
 
 __Method__: `GET`
 
@@ -40,8 +40,8 @@ Job:
 
 ```
 
-* `status` may have the values: "Pending", "Running", "Succeeded", "Failed" or "Unknown".
-* `type` may have the values: "Train" or "Interactive".
+* `status` will have the values: "Pending", "Running", "Succeeded", "Failed" or "Unknown".
+* `type` will have the values: "Train" or "Interactive".
 * `'createdAt` shows the creation time is in a UNIX timestamp format (in milliseconds).
 * `nodes` shows the one or more nodes on which the job is running.
 
