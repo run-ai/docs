@@ -9,7 +9,7 @@ The Run:AI documentation is targeting three personas:
 
 * Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
 
-* Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./Administrator/overview-developer.md).
+* Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
 ## Example Docker Images
 

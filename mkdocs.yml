@@ -161,7 +161,8 @@ nav:
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Noteook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
-  - 'Developer' : 'Researcher/overview-developer.md'
+  - 'Developer' :
+    - 'Overview' : 'developer/overview-developer.md'
     - 'Researcher REST API' : 
         - 'Overview' : 'developer/researcher-rest-api/overview.md'
         - 'Submit a Job' :  'developer/researcher-rest-api/rest-submit.md'
