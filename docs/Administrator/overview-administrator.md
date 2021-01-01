@@ -1,6 +1,6 @@
 # Overview: Administrator Documentation
 
-Administrators setting up Run:AI and day to day monitoring and maintenance. 
+The role of Administrators is to set up Run:AI and perform day to day monitoring and maintenance. 
 
 As part of the Administrator documentation you will find:
 
