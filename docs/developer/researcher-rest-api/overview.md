@@ -1,6 +1,6 @@
 # Researcher REST API
 
-The purpose of the Researcher REST API is to provide an easy-to-use web interface for submitting, listing and deleting jobs. 
+The purpose of the Researcher REST API is to provide an easy-to-use web interface for submitting, listing and deleting Jobs. 
 
 There are other APIs that each the same functionality. Specifically:
 
@@ -19,4 +19,4 @@ Use the IP Address and the port in conjunction
 
 ## Limitations
 
-The Researcher REST API does not work when the [system is configured to authenticate Researchers](../../Administrator/Cluster-Setup/researcher-authentication.md). We are working to fix this.
+The Researcher REST API does not work when the [system is configured to authenticate Researchers](../../Administrator/Cluster-Setup/researcher-authentication.md). We are working to add this functionality.
