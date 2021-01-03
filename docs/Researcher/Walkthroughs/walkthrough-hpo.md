@@ -22,8 +22,8 @@ To complete this Quickstart you must have:
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*  Add a project named "team-a"
-*  Allocate _2_ GPUs to the project
+*  Add a Project named "team-a"
+*  Allocate _2_ GPUs to the Project
 *  On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
 
 ### Pods
@@ -71,15 +71,15 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
         runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
                 --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
 
-*   We named the job _hpo1_
-*   The job is assigned to _team-a_
-*   The job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
+*   We named the Job _hpo1_
+*   The Job is assigned to _team-a_
+*   The Job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
 *   At most, there will be 3 pods running concurrently (_--parallelism 3_)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
+*   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
 *   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/nfs``. The running pods will use the directory to sync hyperparameters and save results.
 
 
-Follow up on the job's status by running:
+Follow up on the Job's status by running:
 
         runai list jobs
 
@@ -87,7 +87,7 @@ The result:
 
 ![mceclip11.png](img/hpo1.png)
 
-Follow up on the job's pods by running:
+Follow up on the Job's pods by running:
 
         runai describe job hpo1 
 
@@ -97,7 +97,7 @@ You will see 3 running pods currently executing:
 
 Once the 3 pods are done, they will be replaced by new ones from the 12 _completions_. This process will continue until all 12 have run.
 
-You can also submit jobs on another project until only 2 GPUs remain. This will preempt 1 pod and will henceforth limit the HPO job to run on 2 pods only. Preempted pods will be picked up and ran later.
+You can also submit Jobs on another Project until only 2 GPUs remain. This will preempt 1 pod and will henceforth limit the HPO Job to run on 2 pods only. Preempted pods will be picked up and ran later.
 
 
 You can see logs of specific pods by running :
@@ -165,7 +165,7 @@ experiments:
     reportTime: 24/08/2020 08:54:45
 ```
 
-Finally, you can delete the HPO job by running:
+Finally, you can delete the HPO Job by running:
 
         runai delete hpo1
 

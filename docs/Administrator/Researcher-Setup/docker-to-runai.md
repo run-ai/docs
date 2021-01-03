@@ -4,11 +4,11 @@ Researchers are typically proficient in working with Docker. Docker is an isolat
 
 You create a __container__ by starting a docker image on a machine.
 
-Run:AI is based on __Kubernetes__. At its core, Kubernetes is a an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the researcher's workflow as follows.
+Run:AI is based on __Kubernetes__. At its core, Kubernetes is a an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the Researcher's workflow as follows.
 
 ## Image Repository
 
-If your Kubernetes cluster contains a single GPU node (machine), then your image can reside on the node itself (in which case, when [runai submit](../../Researcher/cli-reference/runai-submit.md) workloads, the researcher must use the flag ``--local-image``).
+If your Kubernetes cluster contains a single GPU node (machine), then your image can reside on the node itself (in which case, when [runai submit](../../Researcher/cli-reference/runai-submit.md) workloads, the Researcher must use the flag ``--local-image``).
 
 If your Kubernetes cluster contains more than a single node, then, to enable location abstraction, the image can no longer reside on the node itself.  It must be relocated to an image repository. There are quite a few repository-as-a-service, most notably <a href="https://hub.docker.com/" target="_self">Docker hub</a>. Alternatively, the organization can install a private repository on-premise.
 
@@ -35,7 +35,7 @@ There are similar commands to get a shell into the container (_runai bash_), get
 
 ## Schedule an Onboarding Session
 
-It is highly recommended to schedule an onboarding session for researchers with a Run:AI customer success professional. Run:AI can help with the above transition, but adding to that, we at Run:AI have also acquired a large body of knowledge on data science best practices which can help streamline  Researchers' work as well as save money for the organization.
+It is highly recommended to schedule an onboarding session for Researchers with a Run:AI customer success professional. Run:AI can help with the above transition, but adding to that, we at Run:AI have also acquired a large body of knowledge on data science best practices which can help streamline  Researchers' work as well as save money for the organization.
 
 Researcher onboarding material also appears in the [Researcher Onboarding Presentation](../../Researcher/Presentations/Researcher-Onboarding-Presentation.md)
 

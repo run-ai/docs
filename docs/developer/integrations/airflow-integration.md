@@ -41,7 +41,7 @@ job = KubernetesPodOperator(
 The code:
 
 * Specifies the __runai-scheduler__ which directs the task to be scheduled with the Run:AI scheduler
-* Specifies a Run:AI __project__ . A project in Run:AI specifies guaranteed GPU & CPU quota.  
+* Specifies a Run:AI __Project__ . A Project in Run:AI specifies guaranteed GPU & CPU quota.  
 
 
 Once you run the DAG, you can see Airflow tasks showing in the Run:AI UI. 

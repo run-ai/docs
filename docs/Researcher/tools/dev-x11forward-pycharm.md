@@ -42,7 +42,7 @@ Forwarding from [::1]:2222 -> 22
 
 ## Setup the X11 Forwarding Tunnel
 
-Connect to the new job by running:
+Connect to the new Job by running:
 
 ``` shell
 ssh -X root@127.0.0.1 -p 2222

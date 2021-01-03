@@ -1,45 +1,45 @@
 ## Introduction
 
-The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:AI jobs for execution. 
+The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:AI Jobs for execution. 
 
-A job has a __status__. Once a job is submitted it goes through a number of statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
+A Job has a __status__. Once a Job is submitted it goes through a number of statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
 
 The purpose of this document is to explain these statuses as well as the lifecycle of a Job. 
 
 ## Successful Flow
 
-A regular, _training_ job which has no errors and executes without preemption would go through the following statuses:
+A regular, _training_ Job which has no errors and executes without preemption would go through the following statuses:
 
 ![Job-Statuses-Success](img/Job-Statuses-Success.png)
 
-* _Pending_ - the job is waiting to be scheduled.
-* _ContainerCreating_ - the job has been scheduled, the Job docker image is now downloading.
-* _Running_ - the job is now executing.
-* _Succeeded_ - the job has finished with exit code 0 (success).
+* _Pending_ - the Job is waiting to be scheduled.
+* _ContainerCreating_ - the Job has been scheduled, the Job docker image is now downloading.
+* _Running_ - the Job is now executing.
+* _Succeeded_ - the Job has finished with exit code 0 (success).
 
-The job can be preempted, in which case it can go through other statuses:
+The Job can be preempted, in which case it can go through other statuses:
 
-* _Terminating_ - the job is now being preempted.
-* _Pending_ - the job is waiting in queue again to receive resources.
+* _Terminating_ - the Job is now being preempted.
+* _Pending_ - the Job is waiting in queue again to receive resources.
 
-An _interactive_ job, by definition, needs to be closed by the Researcher and will thus never reach the _Succeeded_ status. Rather, it would be moved by the Researcher to status _Deleted_.
+An _interactive_ Job, by definition, needs to be closed by the Researcher and will thus never reach the _Succeeded_ status. Rather, it would be moved by the Researcher to status _Deleted_.
 
 
 For a further explanation of the additional statuses, see the table below.
 
 ## Error flow
 
-A regular, _training_ job may encounter an error inside the running process (exit code is non-zero). In which case the following will happen:
+A regular, _training_ Job may encounter an error inside the running process (exit code is non-zero). In which case the following will happen:
 
 ![Job-Statuses Training Error](img/Job-Statuses-Training-Error.png)
 
-The job enters an _Error_ status and then immediately tries to reschedule itself for another attempted run. The reschedule can happen on another node in the system. After a specified number or retires the job will enter a final status of _Fail_
+The Job enters an _Error_ status and then immediately tries to reschedule itself for another attempted run. The reschedule can happen on another node in the system. After a specified number or retires the Job will enter a final status of _Fail_
 
-An _interactive_ job, enters an _Error_ status and then moves  immediately to _CrashLoopBackOff_ trying to reschedule itself. The reschedule attempt has no 'back-off' limit and will continue to retry indefinitely 
+An _interactive_ Job, enters an _Error_ status and then moves  immediately to _CrashLoopBackOff_ trying to reschedule itself. The reschedule attempt has no 'back-off' limit and will continue to retry indefinitely 
 
 ![Job-Statuses Interactive Error](img/Job-Statuses-Interactive-Error.png)
 
-Jobs may be submitted with an image which cannot be downloaded. There are special statuses for such jobs. See table below 
+Jobs may be submitted with an image which cannot be downloaded. There are special statuses for such Jobs. See table below 
 
 
 ## Status Table
@@ -219,7 +219,7 @@ Below is a list of statuses. For each status the list shows:
         <p class="p1"><span class="s1">-</span></p>
       </td>
       <td valign="middle" class="td9">
-        <p class="p1"><span class="s1">Interactive job has reached the defined timeout of the project.</span></p>
+        <p class="p1"><span class="s1">Interactive Job has reached the defined timeout of the project.</span></p>
       </td>
       <td valign="middle" class="td17">
         <p class="p2"><span class="s1"></span><br></p>
@@ -236,7 +236,7 @@ Below is a list of statuses. For each status the list shows:
         <p class="p1"><span class="s1">-</span></p>
       </td>
       <td valign="middle" class="td14">
-        <p class="p1"><span class="s1">Interactive preemptible job has been evicted.</span></p>
+        <p class="p1"><span class="s1">Interactive preemptible Job has been evicted.</span></p>
       </td>
       <td valign="middle" class="td17">
         <p class="p2"><span class="s1"></span><br></p>
@@ -270,7 +270,7 @@ Below is a list of statuses. For each status the list shows:
         <p class="p1"><span class="s1">Yes for interactive only<span class="Apple-converted-space"> </span></span></p>
       </td>
       <td valign="middle" class="td14">
-        <p class="p1"><span class="s1">The job has returned an exit code different than zero. It is now waiting for another run attempt (retry).</span></p>
+        <p class="p1"><span class="s1">The Job has returned an exit code different than zero. It is now waiting for another run attempt (retry).</span></p>
       </td>
       <td valign="middle" class="td18">
         <p class="p2"><span class="s1"></span><br></p>
@@ -338,7 +338,7 @@ Below is a list of statuses. For each status the list shows:
         <p class="p1"><span class="s1">-</span></p>
       </td>
       <td valign="middle" class="td22">
-        <p class="p1"><span class="s1">The Run:AI Scheduler wasn't running when the job has finished.</span></p>
+        <p class="p1"><span class="s1">The Run:AI Scheduler wasn't running when the Job has finished.</span></p>
       </td>
       <td valign="middle" class="td23">
         <p class="p2"><span class="s1"></span><br></p>
@@ -349,21 +349,21 @@ Below is a list of statuses. For each status the list shows:
 
 ## How to get more information
 
-The system stores various _events_ during the Job's lifecycle. These events can be helpful in diagnosing issues around job scheduling. To view these events run:
+The system stores various _events_ during the Job's lifecycle. These events can be helpful in diagnosing issues around Job scheduling. To view these events run:
 
-    runai describe job <job-name>
+    runai describe runaijob <job-name>
 
 
-Sometimes, useful information can be found by looking at  logs emitted from the process running inside the container. For example, jobs that have exited with an exit code different than zero may write an exit reason in this log. To see job logs run:
+Sometimes, useful information can be found by looking at  logs emitted from the process running inside the container. For example, Jobs that have exited with an exit code different than zero may write an exit reason in this log. To see Job logs run:
 
     runai logs <job-name>
 
 
-## Distributed Training (mpi) jobs
+## Distributed Training (mpi) Jobs
 
-A _distributed_ (mpi) job, which has no errors will be slightly more complicated and has additional statuses associated with it. 
+A _distributed_ (mpi) Job, which has no errors will be slightly more complicated and has additional statuses associated with it. 
 
-* Distributed jobs start with an "init container" which sets the stage for a distributed run.
+* Distributed Jobs start with an "init container" which sets the stage for a distributed run.
 
 * When the init container finishes, the main "launcher" container is created. The launcher is responsible for coordinating between the different workers
 

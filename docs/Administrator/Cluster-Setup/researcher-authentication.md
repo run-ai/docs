@@ -80,14 +80,14 @@ And search for the above _oidc_ flags.
 * Go to [app.run.ai/general-settings](https://app.run.ai/general-settings) and enable the flag __Allow assigning Users to Projects__.
 * Assign a Researcher to a Project:
     * Under [Users](https://app.run.ai/users) add the Researcher and assign it with a _Researcher_ role.
-    * Under [Projects](https://app.run.ai/projects) assign the Researcher to the right projects. 
+    * Under [Projects](https://app.run.ai/projects) assign the Researcher to the right Projects. 
 
 
 ## Testing
 
 * Submit a Job.
 * You will be redirected to a browser page that requires authentication. If you are using a machine without a browser, you will be prompted with a URL to run elsewhere and return a resulting token. 
-* If the job was submitted with a Project for which you have no access, your access will be denied. 
+* If the Job was submitted with a Project for which you have no access, your access will be denied. 
 * If the Job was submitted with a Project for which you have access, your access will be granted.
 * Existing Jobs in Projects you do __not__ have access to, will show when you run `runai job list -p <project-name>` but you will not be able to view logs, get further info, bash into or delete. 
 

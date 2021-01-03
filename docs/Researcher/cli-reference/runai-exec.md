@@ -37,7 +37,7 @@ runai exec <job-name> <command>
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use `runai config project <project-name>`.
+>  Specify the Project to which the command applies. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
 
 --help | -h
 

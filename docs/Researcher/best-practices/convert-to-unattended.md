@@ -3,7 +3,7 @@
 ## Motivation
 
 Run:AI allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
-To achieve this flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
+To achieve this flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires Researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
 
 Unattended workloads are good for long-duration runs, or sets of smaller hyperparameter optimization runs.
 
@@ -13,19 +13,19 @@ Unattended workloads are good for long-duration runs, or sets of smaller hyperpa
 
 
 
-A docker container is based on a docker image. Some researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}. 
+A docker container is based on a docker image. Some Researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}. 
 Others, use generic images as the __base__ image to a more customized image using [Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/){target=_blank}.
 
-Realizing that researchers are not always proficient with building docker files, as a best practice you will want to:
+Realizing that Researchers are not always proficient with building docker files, as a best practice you will want to:
 
 *   Use the same docker image both for interactive and unattended jobs. In this way, you can keep the difference between both methods of invocation to a minimum. This can be a stock image from Nvidia or a custom image.
-*   Leave some degree of flexibility which allows the researcher to add/remove python dependencies without re-creating images.
+*   Leave some degree of flexibility which allows the Researcher to add/remove python dependencies without re-creating images.
 
 As such we recommend the following best practice:
 
 ### Create a Startup Script
 
-All the commands you run inside the interactive job after it has been allocated should be gathered into a single script. The script will be provided with the command-line at the start of the unattended execution (see the section _running the job_ below). This script should be kept next to your code, on a shared network drive (e.g. _/nfs/john_).
+All the commands you run inside the interactive Job after it has been allocated should be gathered into a single script. The script will be provided with the command-line at the start of the unattended execution (see the section _running the job_ below). This script should be kept next to your code, on a shared network drive (e.g. _/nfs/john_).
 
 An example of a very common startup script __start.sh__ will be:
 
@@ -33,7 +33,7 @@ An example of a very common startup script __start.sh__ will be:
     ...
     python training.py
 
-The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the researcher to add/remove libraries without needing changes to the image itself.
+The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the Researcher to add/remove libraries without needing changes to the image itself.
 
 ### Support Variance Between Different Runs
 
@@ -63,7 +63,7 @@ For more information on best practices for saving checkpoints, see: [Saving Deep
 
 ## Running the Job
 
-Using ``runai submit``, drop the flag ``--interactive``. For submitting a job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass  environment variables using the  flag ``--environment``.
+Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass  environment variables using the  flag ``--environment``.
 
 Example with Environment variables:
 
@@ -86,9 +86,9 @@ runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3
 
 Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
 
-<!-- ### Use CLI Templates
+### Use CLI Templates
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template those configurations and use pre-configured configuration when submitting a job. Please refer to [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/template-config.md). -->
+Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template those configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/template-config.md). 
 
 ## Attached Files
 

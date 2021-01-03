@@ -6,13 +6,13 @@ The Run:AI Researcher Library is a python library you can add to your deep learn
 
 ### Expanding a Workload
 
-Expanding a training job allows your workload to run on more GPUs than the researcher code was originally written for. This is useful for maximizing the utilization of the cluster as a whole as well as allowing workloads to run faster if idle GPUs exist in the cluster. The extra GPUs will be automatically reclaimed if needed by other, prioritized jobs.
+Expanding a training Job allows your workload to run on more GPUs than the Researcher code was originally written for. This is useful for maximizing the utilization of the cluster as a whole as well as allowing workloads to run faster if idle GPUs exist in the cluster. The extra GPUs will be automatically reclaimed if needed by other, prioritized jobs.
 
 ### Shrinking a Workload
 
-Shrinking a training job allows your workload to run on a smaller number of GPUs than the researcher code was originally written for. This is useful for maximizing utilization of the cluster as a whole as well as allowing a researcher to run a workload, albeit slower than intended, and let it automatically expand when GPUs become available at a later time.
+Shrinking a training Job allows your workload to run on a smaller number of GPUs than the Researcher code was originally written for. This is useful for maximizing utilization of the cluster as a whole as well as allowing a Researcher to run a workload, albeit slower than intended, and let it automatically expand when GPUs become available at a later time.
 
-Shrinking a training job uses an algorithm called _Gradient_ _Accumulation_. For more information about the algorithm see: [https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa](https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa){target=_blank}
+Shrinking a training Job uses an algorithm called _Gradient_ _Accumulation_. For more information about the algorithm see: [https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa](https://towardsdatascience.com/what-is-gradient-accumulation-in-deep-learning-ec034122cfa){target=_blank}
 
 ## Installation
 
@@ -35,7 +35,7 @@ If using PyTorch, add:
  
 To initialize the module, you need two parameters:
 
-* __Maximum GPU batch size__ - The maximum batch size that your job can use on a single GPU (in terms of GPU memory). Without Elasticity, running with batch sizes larger than this number will cause a memory overflow. This number will be used by the Run:AI elasticity module for determining whether to use _Gradient Accumulation_ or not.
+* __Maximum GPU batch size__ - The maximum batch size that your Job can use on a single GPU (in terms of GPU memory). Without Elasticity, running with batch sizes larger than this number will cause a memory overflow. This number will be used by the Run:AI elasticity module for determining whether to use _Gradient Accumulation_ or not.
 
 * __Global batch size__ - The desired batch size. Of course, if this number is larger than the _Maximum GPU batch size_ defined above, the model will not fit into a single GPU. The elasticity module will then use _Gradient Accumulation_ and _multiple GPUs_ to run your code.
 
@@ -70,15 +70,15 @@ In addition, you will need to data-parallelise your model. We recommend using th
 
 Run the training workload by using the "elastic" flag:
 
-*   When launching the job with the [runai submit](../cli-reference/runai-submit.md) command use `--elastic`
-*   When launching a job via YAML code, use the label "elastic" with the value "true"
+*   When launching the Job with the [runai submit](../cli-reference/runai-submit.md) command use `--elastic`
+*   When launching a Job via YAML code, use the label "elastic" with the value "true"
 
 For additional information on how to run elastic training workloads, see the following [quickstart](../../Walkthroughs/walkthrough-elasticity/). 
 
 ## Limitations
 
 *   Elasticity currently works with Keras-based or PyTorch-based deep learning code only.
-*   Any training job using Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
+*   Any training Job using Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
 
 ## See Also
 

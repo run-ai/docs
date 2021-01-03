@@ -40,9 +40,9 @@ System status after run:
 ![overquota2](img/overquota2.png)
 
 !!! Discussion
-    * team-a can no longer remain in over-quota. Thus, one job, must be _preempted_: moved out to allow team-b to grow.
-    * Run:AI scheduler chooses to preempt job _a1_.
-    * It is important that unattended jobs will save [checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md). This will ensure that whenever job _a1_ resume, it will do so from where it left off.
+    * team-a can no longer remain in over-quota. Thus, one Job, must be _preempted_: moved out to allow team-b to grow.
+    * Run:AI scheduler chooses to preempt Job _a1_.
+    * It is important that unattended Jobs will save [checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md). This will ensure that whenever Job _a1_ resume, it will do so from where it left off.
 
 ## Part 3: Bin Packing
 
@@ -55,16 +55,16 @@ _a1_ is now going to start running again.
 Run: 
     runai list jobs -A
 
-You have __two__ jobs that are running on the first node and __one__ job that is running alone the second node. 
+You have __two__ Jobs that are running on the first node and __one__ Job that is running alone the second node. 
 
-Choose one of the two job from the full node and delete it:
+Choose one of the two Job from the full node and delete it:
 
     runai delete <job-name> -p <project>
 
 The status now is:
 ![overquota3](img/overquota3.png)
 
-Now, run a 2 GPU job:
+Now, run a 2 GPU Job:
 
     runai submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
 
@@ -72,7 +72,7 @@ The status now is:
 ![overquota4](img/overquota4.png)
 
 !!! Discussion 
-    Note that job _a1_ has been preempted and then restarted on the second node, in order to clear space fo the new _a2_ job. This is __bin-packing__ or __consolidation__
+    Note that Job _a1_ has been preempted and then restarted on the second node, in order to clear space fo the new _a2_ Job. This is __bin-packing__ or __consolidation__
 
 
 

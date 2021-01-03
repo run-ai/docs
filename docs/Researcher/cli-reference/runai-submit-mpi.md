@@ -95,7 +95,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`) or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`).
 
 --git-sync string
-> Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
+> Clone a git repository into the container running the Job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
 
 > Note that source=REPOSITORY is the only mandatory field
 
@@ -218,7 +218,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 ### Scheduling
 
 --node-type string
->  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
 
 

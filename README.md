@@ -24,7 +24,7 @@ To get support use the following channels:
 
 * On our [website](https://run.ai), under _Support_ use the support form.
 
-* On the bottom right of the [administrator user interface](https://app.run.ai), use the _Help_ widget.
+* On the bottom right of the [Administrator user interface](https://app.run.ai), use the _Help_ widget.
 
 * On the bottom right of this page , use the _Help_ widget.
 

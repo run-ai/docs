@@ -6,7 +6,7 @@ To understand whether your Run:AI cluster is healthy you need perform the follow
 
 1. All Run:AI services are running.
 2. Data is sent to the cloud.
-3. A job can be submitted.
+3. A Job can be submitted.
 
 
 ### 1. Run:AI services are running
@@ -37,26 +37,26 @@ A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all node
 Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
-* Go to __Projects__ and create a new project. Find the new project using the CLI command:
+* Go to __Projects__ and create a new Project. Find the new Project using the CLI command:
 
          runai list projects
 
 
-### 3. Submit a job
+### 3. Submit a Job
 
-Submitting a job will allow you to verify that Run:AI scheduling service are in order. 
+Submitting a Job will allow you to verify that the Run:AI scheduling service is in order. 
 
-* Make sure that the project you have created has a quota of at least 1 GPU
+* Make sure that the Project you have created has a quota of at least 1 GPU
 * Run:
 
          runai config project <project-name>
          runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
 
-* Verify that the job is a _Running_ state when running: 
+* Verify that the Job is a _Running_ state when running: 
 
          runai list jobs
 
-* Verify that the job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
+* Verify that the Job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 
 
 ## Symptom: Metrics are not showing on Overview Dashboard
@@ -128,7 +128,7 @@ Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 
 ## Symptom: Projects are not syncing
 
-Create a project on the Admin UI, then run: `runai list projects`. The new project does __not__ appear.
+Create a Project on the Admin UI, then run: `runai list projects`. The new Project does __not__ appear.
 
  __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
 

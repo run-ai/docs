@@ -16,7 +16,7 @@
 *   Port Forwarding - Simple port forwarding allows access to the container via `localhost:<port>`
 
 The document below provides examples for _Port Forwarding_ and _Ingress_.
-Contact your administrator to see which methods are available in your cluster
+Contact your Administrator to see which methods are available in your cluster
 
 !!! Note
     The step below use a Jupyter Notebook as an example for how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
@@ -26,23 +26,23 @@ Contact your administrator to see which methods are available in your cluster
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*  Add a project named "team-a"
-*  Allocate 2 GPUs to the project
+*  Add a Project named "team-a"
+*  Allocate 2 GPUs to the Project
 
 ### Run Workload
 
 *   At the command-line run:
 
-``` shell
+``` bash
 runai config project team-a
 runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \ --service-type=portforward 
   --port 8888:8888  --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
 ```
 
-*   The job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
-*    We named the job _jupyter1_.   Note that in this Jupyter implementation, the name of the job should also be copied to the Notebook base URL.   
-*   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job.  
-*   The job is assigned to team-a with an allocation of a single GPU.
+*   The Job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
+*    We named the Job _jupyter1_.   Note that in this Jupyter implementation, the name of the Job should also be copied to the Notebook base URL.   
+*   Note the _interactive_ flag which means the Job will not have a start or end. It is the Researcher's responsibility to close the Job.  
+*   The Job is assigned to team-a with an allocation of a single GPU.
 *   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the ``runai submit`` command is not stopped
 
 ### Open the Jupyter notebook
@@ -61,7 +61,7 @@ runai logs jupyter1 -p team-a
 
 ## Ingress, Step by Step Walkthrough
 
-__Note:__ Ingress must be set up by your administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../Administrator/Cluster-Setup/allow-external-access-to-containers.md)
+__Note:__ Ingress must be set up by your Administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../Administrator/Cluster-Setup/allow-external-access-to-containers.md).
 
 ### Setup
 

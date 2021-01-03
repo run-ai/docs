@@ -27,7 +27,7 @@ model.fit(x_train, y_train,
         callbacks=[..., tensorboard_callback])
 ```
 
-The `logs` directory must be saved on a Network File Server such that it can be accessed by the TensorBoard Job. For example, by running the job as follows:
+The `logs` directory must be saved on a Network File Server such that it can be accessed by the TensorBoard Job. For example, by running the Job as follows:
 
 ```
 runai submit train-with-logs -i tensorflow/tensorflow:1.14.0-gpu-py3 \

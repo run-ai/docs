@@ -6,7 +6,7 @@ Researchers who work with containers sometimes need to expose ports to access th
 *   Using _PyCharm_ to run python commands remotely.
 *   Using _TensorBoard_ to view machine learning visualizations
 
-When using docker, the way researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:AI has similar syntax.
+When using docker, the way Researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:AI has similar syntax.
 
 Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative ways to expose ports. With Run:AI you can use all of these options (see the [Alternatives](#alternatives) section below), however, Run:AI comes built-in with ingress.
 
@@ -50,22 +50,24 @@ To apply the changes
 
 ## Usage
 
-The researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
+The Researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
 ```
 runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive --service-type=ingress \
    --port 8888:8888 --command -- start-notebook.sh --NotebookApp.base_url=test-ingress
 ```
 
-After submitting a job through the Run:AI CLI, run:
+After submitting a Job through the Run:AI CLI, run:
 
-    runai list jobs
+```
+runai list jobs
+```
 
 You will see the service URL with which to access the Jupyter notebook
 
 ![mceclip0.png](img/mceclip0.png)
 
-The URL will be composed of the ingress end-point, the job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
+The URL will be composed of the ingress end-point, the Job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
 
 For further details see CLI command [runai submit](../../Researcher/cli-reference/runai-submit.md) and [Launch an Interactive Workload Quickstart ](../../Researcher/Walkthroughs/walkthrough-build-ports.md).
 

@@ -31,6 +31,6 @@ See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documenta
 
 ## Assigning Node Groups to a Project
 
-To assign specific node groups to a project see [working with projects](../Admin-User-Interface-Setup/Working-with-Projects.md).
+To assign specific node groups to a Project see [working with Projects](../Admin-User-Interface-Setup/Working-with-Projects.md).
 
-When the CLI flag is used in conjunction with Project-based affinity, the flag is used to refine the list of allowable node groups set in the project.
+When the CLI flag is used in conjunction with Project-based affinity, the flag is used to refine the list of allowable node groups set in the Project.

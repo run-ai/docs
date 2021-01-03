@@ -30,7 +30,7 @@ runai bash <job-name>
 
 --project | -p (string)
 
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai config project <project-name>``.
+>  Specify the Project to which the command applies. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
 --help | -h
 
@@ -40,7 +40,7 @@ runai bash <job-name>
 
 The command will access the container that should be currently running in the current cluster and attempt to create a command-line shell based on bash.
 
-The command will return an error if the container does not exist or has not been in running state yet.
+The command will return an error if the container does not exist or has not been in a running state yet.
 
 ## See also
 

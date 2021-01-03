@@ -23,8 +23,8 @@ The Run:AI Cluster contains:
 ### Kubernetes-Related Details
 
 * The Run:AI cluster is installed as a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){target=_blank}
-* Run:AI is installed in its own namesapce __runai__
-* Workloads are run in the context of __Projects__. Each project is a Kubernetes namespace with its own settings and access control. 
+* Run:AI is installed in its own Kubernetes _namespace_ named __runai__
+* Workloads are run in the context of __Projects__. Each Project is a Kubernetes namespace with its own settings and access control. 
 
 
 

@@ -22,7 +22,7 @@ __Notes:__
 ### Create User
 
 !!! Note
-    To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an administrator. The list of administrators is shown on the Users page (see below)
+    To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. The list of Administrators is shown on the Users page (see below)
 
 *  Login to the Users area of the Run:AI Administration User interface at [https://app.run.ai/users](https://app.run.ai/users){target=_blank}.
 *  On the top right, select "Add New Users".

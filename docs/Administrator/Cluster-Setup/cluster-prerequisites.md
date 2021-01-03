@@ -140,7 +140,7 @@ In addition, once running, Run:AI will send metrics to two sources:
 
 ## User requirements
 
-__Usage of containers and images:__ The individual researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software.
+__Usage of containers and images:__ The individual Researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software.
 
 <!-- ## Fractional GPU Requirements
 

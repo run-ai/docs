@@ -6,7 +6,7 @@ Run:AI provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. This enables several workloads to run in containers side-by-side on the same GPU without interfering with each other. The solution is transparent, simple, and portable; it requires no changes to the containers themselves.
 
-A typical use-case could see 2-8 jobs running on the same GPU, meaning you could do eight times the work with the same hardware. 
+A typical use-case could see 2-8 Jobs running on the same GPU, meaning you could do eight times the work with the same hardware. 
 
 ## Prerequisites
 
@@ -20,8 +20,8 @@ To complete this Quickstart you must have:
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a project named "team-a"
-*   Allocate 1 GPU to the project
+*   Add a Project named "team-a"
+*   Allocate 1 GPU to the Project
 
 ### Run Workload
 
@@ -32,12 +32,12 @@ To complete this Quickstart you must have:
         runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 --interactive
         runai submit frac03 -i gcr.io/run-ai-demo/quickstart -g 0.3 
 
-*   The jobs are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
-*   We named the jobs _frac05_ and _frac03_ respectively. 
-*   Note that fractions may or may not use the ``--interactive`` flag. Setting the flag means that the job will not automatically finish. Rather, it is the researcher's responsibility to delete the job. Fractions support both Interactive and non-interactive jobs. 
-*   The jobs are assigned to _team-a_ with an allocation of a single GPU. 
+*   The Jobs are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
+*   We named the Jobs _frac05_ and _frac03_ respectively. 
+*   Note that fractions may or may not use the ``--interactive`` flag. Setting the flag means that the Job will not automatically finish. Rather, it is the Researcher's responsibility to delete the Job. Fractions support both Interactive and non-interactive Jobs. 
+*   The Jobs are assigned to _team-a_ with an allocation of a single GPU. 
 
-Follow up on the job's status by running:
+Follow up on the Job's status by running:
 
     runai list jobs
 
@@ -45,9 +45,9 @@ The result:
 
 ![mceclip30.png](img/mceclip30.png)
 
-Note that both jobs were allocated to the __same__ node.
+Note that both Jobs were allocated to the __same__ node.
 
-When both jobs are running, bash into one of them:
+When both Jobs are running, bash into one of them:
 
     runai bash frac05
 

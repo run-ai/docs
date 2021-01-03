@@ -5,8 +5,8 @@
 
 _Elasticity_ allows unattended, train-based  workloads to __shrink__ or __expand__ based on the cluster's availability.
 
-* Shrinking a training job allows your workload to run on a smaller number of GPUs than the researcher code was originally written for.
-* Expanding a training job allows your workload to run on more GPUs than the researcher code was originally written for. 
+* Shrinking a training Job allows your workload to run on a smaller number of GPUs than the Researcher code was originally written for.
+* Expanding a training Job allows your workload to run on more GPUs than the Researcher code was originally written for. 
 
 
 ## Prerequisites 
@@ -23,13 +23,13 @@ To complete this Quickstart you must have:
 
 *   A GPU cluster with a __single__ node of __2__ GPUs. 
 
-    *  If the cluster contains more than one node,  use [Node affinity](../../../Administrator/Admin-User-Interface-Setup/Working-with-Projects/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler jobs as described below.
-    *  If the cluster nodes contain more than 2 GPUs, you can create an interactive job on a different project to consume the remaining GPUs.    
+    *  If the cluster contains more than one node,  use [Node affinity](../../../Administrator/Admin-User-Interface-Setup/Working-with-Projects/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler Jobs as described below.
+    *  If the cluster nodes contain more than 2 GPUs, you can create an interactive Job on a different project to consume the remaining GPUs.    
 
 
 *   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*   Add a Project named "team-a"
+*   Allocate 2 GPUs to the Project
 
 ### Expansion 
 
@@ -38,10 +38,10 @@ To complete this Quickstart you must have:
         runai config project team-a
         runai submit elastic1 -i gcr.io/run-ai-demo/quickstart -g 1 --elastic
 
-* This would start an unattended training job for team-a 
-* The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``elastic1``and have requested 1 GPU for the job
+* This would start an unattended training Job for team-a 
+* The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart``. We named the Job ``elastic1``and have requested 1 GPU for the Job
 * The flag ``--elastic`` enables the Elasticity feature
-* Follow up on the job's progress by running:
+* Follow up on the Job's progress by running:
 
         runai list jobs
 
@@ -52,7 +52,7 @@ To complete this Quickstart you must have:
 
     !!! Discussion
         * The Job has requested 1 GPU, but has been allocated with 2, as 2 are available right now.
-        * The code needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the job effectively.
+        * The code needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the Job effectively.
 
 * Add a filler class:
         
@@ -64,10 +64,10 @@ To complete this Quickstart you must have:
     ![elasticity4.png](img/elasticity4.png)
 
     !!! Discussion
-        An interactive job (filler1) needs to be scheduled. The elastic job is now reduced to the originally requested single-GPU.
+        An interactive Job (filler1) needs to be scheduled. The elastic Job is now reduced to the originally requested single-GPU.
 
 
-* Finally, delete the jobs:
+* Finally, delete the Jobs:
 
         runai delete elastic1 filler1
 
@@ -79,10 +79,10 @@ To complete this Quickstart you must have:
         runai submit filler2 -i ubuntu  -g 1 --interactive --command -- sleep infinity
         runai submit elastic2 -i gcr.io/run-ai-demo/quickstart -g 2 --elastic 
 
-*   This would start a filler job on 1 GPU and attempt to start another unattended job with 2 GPUs
+*   This would start a filler Job on 1 GPU and attempt to start another unattended Job with 2 GPUs
 
 
-*   Follow up on the job's progress by running:
+*   Follow up on the Job's progress by running:
     
         runai list jobs
 
@@ -92,10 +92,10 @@ To complete this Quickstart you must have:
 
 
     !!! Discussion
-        Since only a single GPU remains unallocated, under normal circumstances, the job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.
+        Since only a single GPU remains unallocated, under normal circumstances, the Job should not start. However, the ``--elastic`` flag tells the system to allocate a single GPU instead.
 
 
-*   Delete the filler job and list the jobs again:
+*   Delete the filler Job and list the Jobs again:
 
         runai delete filler2
         runai list jobs
@@ -105,9 +105,9 @@ To complete this Quickstart you must have:
     ![elasticity3.png](img/elasticity3.png)
 
     !!! Discussion
-        With the filler job gone, the elastic job has more room to expand, which it does.
+        With the filler Job gone, the elastic Job has more room to expand, which it does.
 
-*   Finally, delete the job:
+*   Finally, delete the Job:
 
         runai delete elastic2
 

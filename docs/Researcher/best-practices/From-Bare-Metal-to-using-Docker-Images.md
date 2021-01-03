@@ -2,17 +2,17 @@
 
 ## Introduction
 
-Some researchers do data-science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.
+Some Researchers do data-science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.
 
 This is the fastest way to start working, but it introduces problems when the data science organization scales:
 
-*   More researchers mean that the machine resources need to be efficiently shared
+*   More Researchers mean that the machine resources need to be efficiently shared
 *   Researchers need to collaborate and share data, code, and results
 
 To overcome that, people working on bare-metal typically write scripts to gather data, code and code dependencies. This soon becomes an overwhelming task.
 
 ## Why Use Docker Images?
-Docker images and 'containerization' in general provide a level of abstraction which, by large, frees developers and researchers from the mundane tasks of 'setting up an environment'. The image is an operating system by itself and thus the 'environment' is by large, a part of the image.
+Docker images and 'containerization' in general provide a level of abstraction which, by large, frees developers and Researchers from the mundane tasks of 'setting up an environment'. The image is an operating system by itself and thus the 'environment' is by large, a part of the image.
 
 When a docker image is instantiated, it creates a _container_. A container is the running manifestation of a docker image.
 
@@ -28,7 +28,7 @@ A data science environment typically includes:
 
 Training data is usually significantly large (from several Gigabytes to Petabytes) and is read-only in nature. Thus, training data is typically left outside of the docker image. Instead, the data is _mounted_ onto the image when it is instantiated. Mounting a volume allows the code within the container to access the data as though it was within a directory on the local file system.
 
-The best practice is to store the training data on a shared file system. This allows the data to be accessed uniformly on whichever machine the researcher is currently using, allowing the researcher to easily migrate between machines. 
+The best practice is to store the training data on a shared file system. This allows the data to be accessed uniformly on whichever machine the Researcher is currently using, allowing the Researcher to easily migrate between machines. 
 
 Organizations without a shared file system typically write scripts to copy data from machine to machine.
 
@@ -87,4 +87,4 @@ For training workloads you can use a well-known image (e.g. the nvidia-tensorflo
 
 The script can be part of the image or can be provided as part of the command-line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
 
-Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](convert-to-unattended.md).
+Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training Job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](convert-to-unattended.md).

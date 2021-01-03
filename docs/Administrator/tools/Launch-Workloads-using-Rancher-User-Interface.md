@@ -11,20 +11,20 @@ We differentiate between two types of Workloads:
 
 ## Terminology
 
-* Kubernetes __Job__ - equivalent to the above definition of a Train workload. A Job has a distinctive "end" at which time the job is either "Completed" or "Failed"
+* Kubernetes __Job__ - equivalent to the above definition of a Train workload. A Job has a distinctive "end" at which time the Job is either "Completed" or "Failed"
 * Kubernetes __StatefulSet__ -  equivalent to the above definition of Build workload. Suited for interactive sessions in which state is important in the sense that data not stored on a shared volume is gone when the session ends. StatefulSets must be manually stopped
 * Kubernetes __Labels__ - a method to add key-value pairs to a workload
 * Kubernetes __Node__ - a physical machine
 * Kubernetes __Scheduler__ - the software that determines which Workload to start on which node. Run:AI provides a custom scheduler named __runai-scheduler__
-* __Run:AI Project__. The Run:AI scheduler schedules computing resources by associating Workloads with "Run:AI projects" (not to be confused with Rancher Projects).
-    * Each project contains a GPU quota.
-    * Each workload must be annotated with a project name and will receive resources according to the defined quota for the project and the currently running Workloads
+* __Run:AI Project__. The Run:AI scheduler schedules computing resources by associating Workloads with "Run:AI Projects" (not to be confused with Rancher Projects).
+    * Each Project contains a GPU quota.
+    * Each workload must be annotated with a Project name and will receive resources according to the defined quota for the Project and the currently running Workloads
 
 ## Using Rancher to Launch Workloads 
 
 *  Using your browser, navigate to Rancher       
 *  Login to Rancher with your user name and password
-*  Click on the top left menu, go to the company's assigned cluster and default Rancher project (not to be confused with a Run:AI project)
+*  Click on the top left menu, go to the company's assigned cluster and default Rancher Project (not to be confused with a Run:AI Project)
 ![mceclip1.png](img/mceclip1.png) 
 
 *  Press Deploy on the top right
@@ -41,7 +41,7 @@ We differentiate between two types of Workloads:
       
 ![mceclip2.png](img/mceclip2.png)
 * Expand Node Scheduling and on the bottom right select "show advanced options". Under "Scheduler" write "runai-scheduler"
-* On the bottom and select __show advanced options__. Expand labels and labels and add 2 labels, adding the name of the user and the name of the project as follows: 
+* On the bottom and select __show advanced options__. Expand labels and labels and add 2 labels, adding the name of the user and the name of the Project as follows: 
 
 ![mceclip3.png](img/mceclip3.png)
 

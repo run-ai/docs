@@ -2,7 +2,7 @@
 
 Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create prioritize, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
 
-A researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
+A Researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a _Pending_ state.
 
 ## Modeling Projects
 
@@ -10,13 +10,13 @@ As an Admin, you need to determine how to model Projects. You can:
 
 *   Set a Project per user.
 *   Set a Project per team of users.
-*   Set a Project per a real organizational project.
+*   Set a Project per a real organizational Project.
 
 ## Project Quotas
 
-Each Project is associated with a quota of GPUs that can be allocated for this Project at the same time. This is __guaranteed quota__ in the sense that researchers using this Project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
+Each Project is associated with a quota of GPUs that can be allocated for this Project at the same time. This is __guaranteed quota__ in the sense that Researchers using this Project are guaranteed to get this number of GPUs, no matter what the status in the cluster is. 
 
-Beyond that, a user of this Project can receive an __over-quota__. As long as GPUs are unused, a researcher using this Project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
+Beyond that, a user of this Project can receive an __over-quota__. As long as GPUs are unused, a Researcher using this Project can get more GPUs. However, these GPUs can be taken away at a moment's notice. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/Scheduling/The-Run-AI-Scheduler.md).
 
 __Important best practice:__ As a rule, the sum of the Project allocation should be equal to the number of GPUs in the cluster.
 
@@ -69,7 +69,7 @@ You can annotate multiple nodes with the same label
 
 ### Setting Affinity for a Specific Project
 
-To mandate __training__ jobs to run on specific node groups:
+To mandate __training__ Jobs to run on specific node groups:
 
 *   Create a Project or edit an existing Project.
 *   Go to the _Node Affinity_ tab and set a limit to specific node groups.
@@ -79,21 +79,21 @@ To mandate __training__ jobs to run on specific node groups:
 
 ![mceclip0.png](img/mceclip0.png)
 
-To mandate __interactive__ jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
+To mandate __interactive__ Jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
 
 ### Further Affinity Refinement by the Researcher
 
-The researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/cli-reference/runai-submit.md) 
+The Researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used to with a node group out of the previously chosen list.  See CLI reference for further information  [runai submit](../../Researcher/cli-reference/runai-submit.md) 
 
 ## Limit Duration of Interactive Jobs
 
-Researchers frequently forget to close Interactive jobs. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive jobs and close them automatically.
+Researchers frequently forget to close Interactive Jobs. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive Jobs and close them automatically.
 
 __Warning__: This feature will cause containers to automatically stop. Any work not saved to a shared volume will be lost
 
-To set a duration limit for interactive jobs:
+To set a duration limit for interactive Jobs:
 
 *   Create a Project or edit an existing Project.
 *   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
 
-![mceclip1.png](img/mceclip1.png) The setting only takes effect for jobs that have started after the duration has been changed. 
+![mceclip1.png](img/mceclip1.png) The setting only takes effect for Jobs that have started after the duration has been changed. 

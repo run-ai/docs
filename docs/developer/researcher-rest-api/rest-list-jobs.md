@@ -12,7 +12,7 @@ __Method__: `GET`
 project=<project-name>
 ```
 
-If the `project` parameter is omitted, then __all__ jobs will be returned. 
+If the `project` parameter is omitted, then __all__ Jobs will be returned. 
 
 
 ## Response 
@@ -31,7 +31,7 @@ Job:
     "name": "<Job Name>",
     "status" : "<Job status>",
     "type" : "<Job type>",
-    "nodes" : "Array<Node name>",
+    "nodes" : "<Node name>",
     "createdAt": "<Job creation time>",
     "images": "<Job image>",
     "user": "<User name>",
@@ -43,7 +43,7 @@ Job:
 * `status` will have the values: "Pending", "Running", "Succeeded", "Failed" or "Unknown".
 * `type` will have the values: "Train" or "Interactive".
 * `'createdAt` Job Creation time in a UNIX timestamp format (in milliseconds).
-* `nodes` shows the one or more nodes on which the job is running.
+* `nodes` shows the one or more nodes on which the Job is running.
 
 ## Example
 

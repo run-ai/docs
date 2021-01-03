@@ -2,7 +2,7 @@
 
 ## What are Templates?
 
-Templates are a way to reduce the number of flags required when using the Command-Line Interface to start workloads. The researcher can:
+Templates are a way to reduce the number of flags required when using the Command-Line Interface to start workloads. The Researcher can:
 
 *   Use a template by running `runai submit --template <template-name>`
 *   Review list of templates by running `runai list template`

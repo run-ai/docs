@@ -2,7 +2,7 @@
 
 Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create priorities, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
 
-A researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
+A Researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
 Administrators manage Projects as detailed [here](Working-with-Projects.md).
 

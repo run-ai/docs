@@ -20,8 +20,8 @@ To complete this Quickstart you must have:
 ### Setup
 
 *   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*   Add a Project named "team-a"
+*   Allocate 2 GPUs to the Project
 
 ### Run Training Distributed Workload
 
@@ -33,14 +33,14 @@ runai submit-mpi dist --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed
 ```
 
-*   We named the job _dist_
-*   The job is assigned to _team-a_
+*   We named the Job _dist_
+*   The Job is assigned to _team-a_
 *   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
-*   The job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed``.
+*   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed``.
 *   The image contains a startup script that runs a deep learning Horovod-based workload.
 
 
-Follow up on the job's status by running:
+Follow up on the Job's status by running:
 
         runai list jobs
 
@@ -66,7 +66,7 @@ Finally, you can delete the distributed training workload by running:
 
 ### Run an Interactive Distributed Workload
 
-It is also possible to run a distributed training job as "interactive". This is useful if you want to test your distributed training job before committing on a long, unattended training session. To run such a session use:
+It is also possible to run a distributed training Job as "interactive". This is useful if you want to test your distributed training Job before committing on a long, unattended training session. To run such a session use:
 
 ``` shell
 runai submit-mpi dist-int --processes=2 -g 1 \

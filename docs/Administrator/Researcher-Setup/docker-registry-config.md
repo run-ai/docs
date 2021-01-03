@@ -2,7 +2,7 @@
 
 ## Why?
 
-Some Docker images are stored in private docker registries. In order for the researcher to access the images, we will need to provide credentials for the registry.
+Some Docker images are stored in private docker registries. In order for the Researcher to access the images, we will need to provide credentials for the registry.
 
 ## How?
 

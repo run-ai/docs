@@ -32,11 +32,11 @@ kubectl apply -f <file-name>
 
 !!! Notes
     * Secrets are base64 encoded
-    * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:AI project name above. Run:AI provides the ability to propagate secrets throughout all Run:AI projects. See below.
+    * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:AI Project name above. Run:AI provides the ability to propagate secrets throughout all Run:AI Projects. See below.
 
 ## Attaching a secret to a Job on Submit
 
-When you start a job, you want to connect the secret to the new Job. To do that, run:
+When you start a Job, you want to connect the secret to the new Job. To do that, run:
 
 ```
 runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
@@ -51,7 +51,7 @@ runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 
 ### Secrets and Projects
 
-As per the note above, secrets are namespace-specific. If your secret relates to all Run:AI projects, do the following to propagate the secret to all projects:
+As per the note above, secrets are namespace-specific. If your secret relates to all Run:AI Projects, do the following to propagate the secret to all Projects:
 
 * When creating a secret, set the namespace to be ``runai``
 * Run the following once to allow Run:AI to propagate the secret:

@@ -35,7 +35,7 @@ checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1,
 
 ### Save on Exit Signal
 
-If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
+If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your Job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
 
 ``` python
 import signal
@@ -44,7 +44,7 @@ import time
 def graceful_exit_handler(signum, frame):
     # save your checkpoints to shared storage
 
-    # exit with status "1" is important for the job to return later.  
+    # exit with status "1" is important for the Job to return later.  
     exit(1)
 
 signal.signal(signal.SIGTERM, graceful_exit_handler)

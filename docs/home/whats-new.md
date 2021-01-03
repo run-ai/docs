@@ -2,7 +2,7 @@
 It is now possible to allocate a specific amount of GPU memory rather than use the fraction syntax. Use `--gpu-memory=5G`.
 
 ## December 15th, 2020
-Project and Departments can now be set to not allocate resources beyond the assigned GPUs. This is useful for budget-conscious projects/departments. 
+Project and Departments can now be set to not allocate resources beyond the assigned GPUs. This is useful for budget-conscious Projects/Departments. 
 
 ## December 1st, 2020
 New integration documents:
@@ -29,14 +29,14 @@ The older style will still work with a deprecation notice.
 An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates that can be used with the --template flag. The new templates allow for mandatory values, defaults and run-time environment variable resolution.
 See [here](../Administrator/Researcher-Setup/template-config.md) for more.
 
-It is now also possible to pass __Secrets__ to jobs. see [here](../Administrator/Researcher-Setup/use-secrets.md)
+It is now also possible to pass __Secrets__ to Job. see [here](../Administrator/Researcher-Setup/use-secrets.md)
 
 ## November 2nd, 2020
 
 Several changes and additions to the Command-line interface:
 
 * __Passing a command__ and arguments is now done docker-style by adding `--` at the end of the command
-* You no longer need to __provide a job name__. If you don't, a job name will be generated automatically. You can also control the job-name prefix using an additional flag. 
+* You no longer need to __provide a Job name__. If you don't, a Job name will be generated automatically. You can also control the job-name prefix using an additional flag. 
 * New `--image-pull-policy` flag, allowing Researcher support for updating images without tagging.
 
 For further information see [runai submit](../Researcher/cli-reference/runai-submit/)
@@ -47,7 +47,7 @@ We released a module that helps the Researcher perform __Hyperparameter optimiza
 
 ## September 3rd, 2020
 
-__GPU Fractions__ now run in training and not only interactive. GPU Fractions training jobs can be preempted, bin-packed and consolidated like any integer jobs. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
+__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
 
 
 ## August 10th, 2020
@@ -79,17 +79,17 @@ For further information see: [Allocation of CPU and Memory](../Researcher/Schedu
 
 #### Node Group Affinity
 
-Projects now support _Node Affinity._ This feature allows the administrator to assign specific projects to run only on specific nodes (machines). Example use cases:
+Projects now support _Node Affinity._ This feature allows the Administrator to assign specific Projects to run only on specific nodes (machines). Example use cases:
 
-*   The project team needs specialized hardware (e.g. with enough memory)
-*   The project team is the owner of specific hardware which was acquired with a specialized budget
+*   The Project team needs specialized hardware (e.g. with enough memory)
+*   The Project team is the owner of specific hardware which was acquired with a specialized budget
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes
 
 For further information see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 
 #### Limit Duration of Interactive Jobs
 
-Researchers frequently forget to close Interactive jobs. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive jobs and close them automatically. 
+Researchers frequently forget to close Interactive Job. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive Job and close them automatically. 
 
 For further information on how to set up duration limits see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
 

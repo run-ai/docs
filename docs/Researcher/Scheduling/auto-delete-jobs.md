@@ -1,21 +1,21 @@
 ## Introduction
 
-Jobs can be started via Kubeflow, Run:AI CLI, Rancher or via direct Kubernetes API. When jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old jobs by running the command:
+Jobs can be started via Kubeflow, Run:AI CLI, Rancher or via direct Kubernetes API. When Jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old Jobs by running the command:
 
     runai list jobs
 
 ![mceclip0.png](img/mceclip0.png)
 
-You can delete the job manually by running:
+You can delete the Job manually by running:
 
     runai delete run3
 
 But this may not be scalable for a production system.
 
-It is possible to flag a job for automatic deletion some period of time after its finish.
+It is possible to flag a Job for automatic deletion some time after its finish.
 
 !!! Important note 
-    Deleting a job, deletes the container behind it, and with it all related information such as job logs. Data that was saved by the researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
+    Deleting a Job, deletes the container behind it, and with it all related information such as Job logs. Data that was saved by the Researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
 
 ## Enable Automatic Deletion in Cluster (Admin only)
 

@@ -26,8 +26,8 @@ To complete this Quickstart you must have:
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*  Add a project named "team-a".
-*  Allocate 2 GPUs to the project.
+*  Add a Project named "team-a".
+*  Allocate 2 GPUs to the Project.
 
 ### Run Workload
 
@@ -36,9 +36,9 @@ To complete this Quickstart you must have:
         runai config project team-a
         runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
 
-This would start an unattended training job for team-a with an allocation of a single GPU. The job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the job ``train1``
+This would start an unattended training Job for team-a with an allocation of a single GPU. The Job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Job ``train1``
 
-*   Follow up on the job's progress by running:
+*   Follow up on the Job's progress by running:
 
         runai list jobs
 
@@ -49,13 +49,13 @@ The result:
 Typical statuses you may see:
 
 *   ContainerCreating - The docker container is being downloaded from the cloud repository
-*   Pending - the job is waiting to be scheduled
-*   Running - the job is running
-*   Succeeded - the job has ended
+*   Pending - the Job is waiting to be scheduled
+*   Running - the Job is running
+*   Succeeded - the Job has ended
 
 A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md) 
 
-To get additional status on your job run:
+To get additional status on your Job run:
 
     runai describe job train1
 
@@ -76,7 +76,7 @@ You should see a log of a running deep learning session:
 
 ![mceclip2.png](img/mceclip2.png)
 
-The image we used for training includes the Run:AI Training library. Among other features, this library allows the reporting of metrics from within the deep learning job. Metrics such as progress, accuracy, loss, and epoch and step numbers.  
+The image we used for training includes the Run:AI Training library. Among other features, this library allows the reporting of metrics from within the deep learning Job. Metrics such as progress, accuracy, loss, and epoch and step numbers.  
 
 *   Progress can be seen in the status column above. 
 *   To see other metrics, press the settings wheel on the top right ![mceclip4.png](img/mceclip4.png) and select additional deep learning metrics from the list

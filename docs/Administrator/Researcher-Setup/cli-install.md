@@ -1,6 +1,6 @@
 # Install the Run:AI Command-line Interface
 
-The Run:AI Command-line Interface (CLI) is __one__ of the ways for a researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
+The Run:AI Command-line Interface (CLI) is __one__ of the ways for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
 
 The instructions below will guide you through the process of installing the CLI.
 
@@ -23,7 +23,7 @@ Researcher authentication requires additional setup on the cluster-side as well 
 
 *   Create a directory _.kube_. Copy the Kubernetes configuration file into the directory. 
     *   Each Researcher should have a __separate copy__ of the configuration file (as the file stores user defaults.
-    *   The researcher should have write access to the configuration file. 
+    *   The Researcher should have write access to the configuration file. 
 *   If you choose to locate the file at a different location, you must create a shell variable to point to the configuration file as follows:
 
         export KUBECONFIG=~/.kube/config

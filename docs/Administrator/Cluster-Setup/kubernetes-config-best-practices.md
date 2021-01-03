@@ -21,7 +21,7 @@ The command tells Kubernetes that the node is ready again to accept Jobs.
 
 ## Node Memory Management
 
-It is possible for researchers to over-allocate memory to the extent that, if not managed properly,  will destabilize the chosen node  (machine). 
+It is possible for Researchers to over-allocate memory to the extent that, if not managed properly,  will destabilize the chosen node  (machine). 
 
 ### Symptoms
 

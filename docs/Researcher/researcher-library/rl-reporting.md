@@ -120,7 +120,7 @@ For the sake of uniformity with the Keras implementation (see below), we recomme
 </tbody>
 </table>
 
-__epoch__ and __overall\_epochs__ are especially important since the job progress bar is computed by dividing these parameters.
+__epoch__ and __overall\_epochs__ are especially important since the Job progress bar is computed by dividing these parameters.
 
 ## Automatic Sending of Metrics for Keras-Based Scripts
 

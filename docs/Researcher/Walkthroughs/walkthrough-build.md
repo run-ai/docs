@@ -27,8 +27,8 @@ To complete this Quickstart you must have:
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a project named "team-a"
-*   Allocate 2 GPUs to the project
+*   Add a Project named "team-a"
+*   Allocate 2 GPUs to the Project
 
 ### Run Workload
 
@@ -39,7 +39,7 @@ To complete this Quickstart you must have:
 
 *   The job is based on a sample docker image ``python``
 *   We named the job _build1_.
-*   Note the _interactive_ flag which means the job will not have a start or end. It is the researcher's responsibility to close the job. 
+*   Note the _interactive_ flag which means the job will not have a start or end. It is the Researcher's responsibility to close the job. 
 *   The job is assigned to team-a with an allocation of a single GPU. 
 *   The command provided is ``sleep infinity``. You must provide a command or the container will start and then exit immediately. Alternatively, replace these flags with `--attach` to attach immediately to a session.
 
