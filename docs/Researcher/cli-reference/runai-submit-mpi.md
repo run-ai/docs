@@ -17,7 +17,7 @@ runai submit-mpi
     [--environment stringArray | -e stringArray] 
     [--git-sync string]
     [--gpu double | -g double] 
-    [--gpu-memory int]
+    [--gpu-memory string]
     [--host-ipc] 
     [--host-network] 
     [--image string | -i string] 
