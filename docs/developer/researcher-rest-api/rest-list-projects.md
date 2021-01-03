@@ -2,7 +2,7 @@ Get a list of all Run:AI Projects
 
 ## General
 
-__URL__:  `http://<service-url>/api/project`
+__URL__:  `http://<service-url>/api/v1/projects`
 
 __Method__: `GET`
 
