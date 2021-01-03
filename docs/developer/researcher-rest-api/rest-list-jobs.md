@@ -50,7 +50,7 @@ Job:
 Request:
 
 ``` bash
-curl --location --request GET 'http://www.example.com/api/job?project=project-0'
+curl --location --request GET 'http://www.example.com/api/v1/jobs?project=team-a'
 ```
 
 Response:
@@ -59,28 +59,44 @@ Response:
 {
     "data": [
         {
-            "id": "b915c8ec-19b6-4135-b473-164971278fff",
-            "project": "project-0",
-            "name": "job-0",
+            "id": "32201782-a525-4939-9dcb-df6654b0b340",
+            "project": "team-a",
+            "name": "test1",
             "status": "Running",
             "type": "Train",
-            "nodes": "node-0",
-            "createdAt": 1609340976000,
-            "images": "gcr.io/run-ai-demo/quickstart",
-            "user": "Jhon Smith",
+            "nodes": [
+                "dev1-worker-cpu"
+            ],
+            "createdAt": 1609494983000,
+            "images": "ubuntu",
+            "user": "john",
             "currentAllocatedGPUs": 1
         },
         {
-            "id": "b915c8ec-19b6-4135-b473-164971278fff",
-            "project": "project-0",
-            "name": "job-1",
-            "status": "Pending",
+            "id": "f4606bb5-10f6-4800-9590-933ff1606eba",
+            "project": "team-a",
+            "name": "job-0",
+            "status": "ImagePullBackOff",
             "type": "Train",
-            "nodes": "node-0",
-            "createdAt": 1609340976000,
+            "nodes": [
+                "dev1-worker-cpu"
+            ],
+            "createdAt": 1609672319000,
             "images": "gcr.io/run-ai-demo/quickstart",
-            "user": "Jhon Smith",
-            "currentAllocatedGPUs": 1
+            "user": "john",
+            "currentAllocatedGPUs": 0
+        },
+        {
+            "id": "1b577b66-4ee4-440d-be13-9b732789c453",
+            "project": "team-a",
+            "name": "job-10",
+            "status": "Succeeded",
+            "type": "Train",
+            "nodes": [],
+            "createdAt": 1609251299000,
+            "images": "ubuntu",
+            "user": "jill",
+            "currentAllocatedGPUs": 0
         }
     ]
 }

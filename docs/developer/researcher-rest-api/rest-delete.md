@@ -28,7 +28,7 @@ Job identifier definition:
 ## Examples
 
 ``` bash
-curl --location --request DELETE 'http://example.com/api/job' \
+curl --location --request DELETE 'http://example.com/api/v1/jobs' \
 --header 'Content-Type: application/json' \
 --data-raw '[
     {"name" : "job-name-0", "project" : "team-a"}, 

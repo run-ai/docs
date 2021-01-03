@@ -22,11 +22,9 @@ Project:
 
 
 {
-    "id": "<Project ID>",
     "name": "<Project Name>",
     "createdAt": "<Project creation time>",
     "deservedGpus": "<GPUs>",
-    "clusterUuid": "",
     "interactiveJobTimeLimitSecs": "<TTL for Interactive Jobs>",
     "trainNodeAffinity": "Array<Affinity Group>",
     "interactiveNodeAffinity": "Array<Affinity Group>",
@@ -48,7 +46,7 @@ For more information see [Working with Projects](../../Administrator/Admin-User-
 Request:
 
 ``` bash
-curl --location --request GET 'http://www.example.com/api/project' 
+curl --location --request GET 'http://www.example.com/api/v1/projects' 
 ```
 
 Response:
@@ -57,25 +55,24 @@ Response:
 {
     "data": [
         {
-            "id": "team-a",
             "name": "team-a",
             "createdAt": 1609183432000,
             "deservedGpus": 2,
-            "clusterUuid": "",
             "interactiveJobTimeLimitSecs": 0,
-            "trainNodeAffinity": "none",
-            "interactiveNodeAffinity": "none",
+            "trainNodeAffinity": null,
+            "interactiveNodeAffinity": null,
             "departmentName": "default"
         },
         {
-            "id": "team-b",
             "name": "team-b",
             "createdAt": 1609183432000,
             "deservedGpus": 2,
-            "clusterUuid": "",
             "interactiveJobTimeLimitSecs": 0,
-            "trainNodeAffinity": "gpu2,gpu1",
-            "interactiveNodeAffinity": "none",
+            "trainNodeAffinity": [
+                "gpu2",
+                "gpu1"
+            ],
+            "interactiveNodeAffinity": null,
             "departmentName": "default"
         }
     ]
