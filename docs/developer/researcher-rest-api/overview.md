@@ -9,32 +9,11 @@ There are other APIs that each the same functionality. Specifically:
 
 ## Finding the API Endpoint URL
 
-The URL is composed of an IP address part and a port part (`<IP-ADDRESS>:<PORT>`)
+The URL is composed of an IP address part and a port part (`<IP-ADDRESS>:<PORT>`). To find the endpoint, run:
 
-1. To find the IP address of the URL, run:
-
+``` bash
+echo $(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].address}'):$(kubectl get services -n runai -o=jsonpath='{.items[?(@.metadata.name == "researcher-service")].spec.ports[0].nodePort}')
 ```
-kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].address}'
-```
-
-2. To find the port of the URL, run:
-```
-kubectl get services -n runai -o=jsonpath='{.items[?(@.metadata.name == "researcher-service")].spec.ports[0].nodePort}'
-```
-
-for example,  if The IP of the URL is:
-```
-> kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].address}'
-> 192.168.1.60
-```
-
-and the port of the URL is:
-```
-> kubectl get services -n runai -o=jsonpath='{.items[?(@.metadata.name == "researcher-service")].spec.ports[0].nodePort}'
-> 32282
-```
-
-Then the URL is: `http://192.168.1.60:32282`
 
 ## Limitations
 
