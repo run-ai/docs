@@ -12,7 +12,7 @@ There are other APIs that each the same functionality. Specifically:
 The URL is composed of an IP address part and a port part (`<IP-ADDRESS>:<PORT>`). To find the endpoint, run:
 
 ``` bash
-echo $(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].address}'):$(kubectl get services -n runai -o=jsonpath='{.items[?(@.metadata.name == "researcher-service")].spec.ports[0].nodePort}')
+echo "http://$(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].address}'):$(kubectl get services -n runai -o=jsonpath='{.items[?(@.metadata.name == "researcher-service")].spec.ports[0].nodePort}')"
 ```
 
 ## Limitations
