@@ -14,7 +14,7 @@ The document differentiates between __Run:AI System Worker Nodes__ and __GPU Wor
 
 
 ## Worker Nodes
-Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance, or an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
+Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether, for planned maintenance, or an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
 ### Training vs. Interactive
 Run:AI differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
@@ -69,7 +69,7 @@ However, if you plan to bring back the node, you will  need to rejoin the node i
  
  In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](node-roles.md) on the cluster as a Run:AI system node to complete the process below.
 
- Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See above section. 
+ Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See the section above. 
 
 
 

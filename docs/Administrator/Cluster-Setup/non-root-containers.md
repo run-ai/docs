@@ -43,7 +43,7 @@ Run:
 
 ## Creating a Temporary Home Directory
 
-For containers to run as specific user, the user needs to have a pre-created home directory within the image. This can be a daunting IT task. 
+For containers to run as a specific user, the user needs to have a pre-created home directory within the image. This can be a daunting IT task. 
 
 To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
 

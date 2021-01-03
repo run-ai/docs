@@ -80,7 +80,7 @@ And search for the above _oidc_ flags.
 * Go to [app.run.ai/general-settings](https://app.run.ai/general-settings) and enable the flag __Allow assigning Users to Projects__.
 * Assign a Researcher to a Project:
     * Under [Users](https://app.run.ai/users) add the Researcher and assign it with a _Researcher_ role.
-    * Under [Projects](https://app.run.ai/projects) assign the Researcher to the right Projects. 
+    * Under [Projects](https://app.run.ai/projects) assign the Researcher to the correct Projects. 
 
 
 ## Testing

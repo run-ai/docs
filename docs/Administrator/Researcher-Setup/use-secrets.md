@@ -8,7 +8,7 @@ A Kubernetes secret may hold multiple __key - value pairs__.
 
 ## Using Secrets in Run:AI Jobs
 
-Our goal is to provide Run:AI Jobs with secrets as an input in a secure way. Using the Run:AI command-line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
+Our goal is to provide Run:AI Jobs with secrets as input in a secure way. Using the Run:AI command-line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
 
 ## Creating a secret
 
@@ -36,7 +36,7 @@ kubectl apply -f <file-name>
 
 ## Attaching a secret to a Job on Submit
 
-When you start a Job, you want to connect the secret to the new Job. To do that, run:
+When you submit a new Job, you will want to connect the secret to the new Job. To do that, run:
 
 ```
 runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
@@ -53,11 +53,19 @@ runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 
 As per the note above, secrets are namespace-specific. If your secret relates to all Run:AI Projects, do the following to propagate the secret to all Projects:
 
-* When creating a secret, set the namespace to be ``runai``
-* Run the following once to allow Run:AI to propagate the secret:
+* Create a secret within the `runai` namespace.
+* Run the following once to allow Run:AI to propagate the secret to all Run:AI Projects:
 
 ```
-kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
+runai-adm set secret <secret name> --cluster-wide
+```
+!!! Reminder
+    The Run:AI Administrator CLI can be obtained [here](../Cluster-Setup/cli-admin-install.md).
+
+To delete a secret from all Run:AI Projects, run:
+
+```
+runai-adm remove secret <secret name> --cluster-wide
 ```
 
 ## Secrets and Templates

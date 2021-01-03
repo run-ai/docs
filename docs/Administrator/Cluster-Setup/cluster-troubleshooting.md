@@ -22,7 +22,7 @@ Run:
       kubectl get deployments -n runai
       kubectl get sts -n runai
 
-Verify that all items (deployments and statefulsets alike) are in a ready state (1/1)
+Verify that all items (deployments and StatefulSets alike) are in a ready state (1/1)
 
 Run:
 
