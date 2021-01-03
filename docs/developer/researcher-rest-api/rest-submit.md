@@ -3,7 +3,7 @@ Create a new Run:AI Job.
 
 ## General
 
-__URL__:  `http://<service-url>/api/job`
+__URL__:  `http://<service-url>/api/v1/jobs`
 
 __Method__: `POST`
 
