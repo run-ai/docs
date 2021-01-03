@@ -2,7 +2,7 @@ Get a list of all Run:AI Jobs for a given project
 
 ## General
 
-__URL__:  `http://<service-url>/api/job`
+__URL__:  `http://<service-url>/api/v1/jobs`
 
 __Method__: `GET`
 
