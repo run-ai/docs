@@ -31,7 +31,7 @@ Job:
     "name": "<Job Name>",
     "status" : "<Job status>",
     "type" : "<Job type>",
-    "nodes" : "<Node name>",
+    "nodes" : "Array<Node name>",
     "createdAt": "<Job creation time>",
     "images": "<Job image>",
     "user": "<User name>",
