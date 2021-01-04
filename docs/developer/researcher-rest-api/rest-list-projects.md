@@ -34,7 +34,7 @@ Project:
 ```
 
 * `deservedGpus` GPU _deserved_ quota for this Project.
-* `'createdAt` Project Creation time in a UNIX timestamp format (in milliseconds).
+* `createdAt` Project Creation time in a UNIX timestamp format (in milliseconds).
 * `trainNodeAffinity` Scheduler training Jobs only on these node groups.
 * `interactiveNodeAffinity`  - Scheduler interactive Jobs only on these node groups.
 

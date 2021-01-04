@@ -42,20 +42,20 @@ The Request body is a JSON object of a Run:AI Job as follows:
         "memory"  : "string", 
         "memoryLimit"  : "string",     
         "largeShm"  : "boolean", 
-            "pvc" : [
-                {
-                    "storageClass" : "my-storage1",
-                    "size" :  "3GB",
-                    "path" :   "/tmp/john",
-                    "readOnly" :  true
-                },
-                {
-                    "storageClass" : "my-storage2",
-                    "size" :  "4GB",
-                    "path" :   "/tmp/jill",
-                    "readOnly" :  false        
-                }
-            ],
+        "pvc" : [
+            {
+                "storageClass" : "my-storage1",
+                "size" :  "3GB",
+                "path" :   "/tmp/john",
+                "readOnly" :  true
+            },
+            {
+                "storageClass" : "my-storage2",
+                "size" :  "4GB",
+                "path" :   "/tmp/jill",
+                "readOnly" :  false        
+            }
+        ],
         "volume": {
             "/raid/public/john/data": "/root/data",
             "/raid/public/john/code": "/root/code"
