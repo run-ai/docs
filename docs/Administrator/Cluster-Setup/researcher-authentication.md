@@ -75,15 +75,21 @@ kubectl get pods -n kube-system kube-apiserver-master -o yaml
 And search for the above _oidc_ flags. 
 
 
-## Assigning Users to Projects
+## Administration User Interface Setup
 
-* Go to [app.run.ai/general-settings](https://app.run.ai/general-settings) and enable the flag __Allow assigning Users to Projects__.
-* Assign a Researcher to a Project:
-    * Under [Users](https://app.run.ai/users) add the Researcher and assign it with a _Researcher_ role.
-    * Under [Projects](https://app.run.ai/projects) assign the Researcher to the correct Projects. 
+### Enable Researcher Authentication
+
+Under [app.run.ai](https://app.run.ai/general-settings) settings, enable the flag _Researcher Authentication_.
+
+### Assign Users to Projects
+
+Assign Researchers to Projects:
+
+* Under [Users](https://app.run.ai/users) add a Researcher and assign it with a _Researcher_ role.
+* Under [Projects](https://app.run.ai/projects), edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 
-## Testing
+## Test
 
 * Submit a Job.
 * You will be redirected to a browser page that requires authentication. If you are using a machine without a browser, you will be prompted with a URL to run elsewhere and return a resulting token. 

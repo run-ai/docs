@@ -6,7 +6,7 @@ When running any CLI command you get:
 
 ### Solution
 
-Your machine is not connected to the Kubernetes cluster. Make sure that you have a ~/.kube directory which contains a config file pointing to the Kubernetes cluster
+Your machine is not connected to the Kubernetes cluster. Make sure that you have a `~/.kube` directory that contains a configuration file pointing to the Kubernetes cluster.
 
 ## When running the CLI you get an error: open .../.kube/config.lock: permission denied
 
@@ -14,18 +14,18 @@ When running any CLI command you get a permission denied error.
 
 ### Solution
 
-The user running the CLI does not have read permissions to the .kube directory
+The user running the CLI does not have read permissions to the `.kube` directory.
 
 ## When running 'runai logs', the logs are delayed
 
-By default, Python buffers stdout and stderr, which is not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered
+By default, Python buffers stdout and stderr, which is not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
 
 ### Solution
 
-Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. python -u main.py
+Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
 
 ## Runai list jobs command works but runai submit does not
 
 ### Solution
 
-Helm utility is not installed. See Run:AI Installation documentation. 
+Helm utility is not installed. See Run:AI CLI Installation documentation. 

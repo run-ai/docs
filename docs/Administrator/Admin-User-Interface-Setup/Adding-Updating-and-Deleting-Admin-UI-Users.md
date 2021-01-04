@@ -1,12 +1,12 @@
-# Adding, Updating and Deleting Users
+# Adding, Updating, and Deleting Users
 
 ## Introduction
 
 The Admin User Interface allows:
 
 *   The setup of Kubernetes GPU Clusters.
-*   Create, Update and Delete Users.
-*   Create, Update and Delete Projects & Departments.
+*   Create, Update, and Delete Users.
+*   Create, Update, and Delete Projects & Departments.
 *   Review short term and long term dashboards.
 *   Review Node and Job status.
 
@@ -34,7 +34,7 @@ __Notes:__
     *  __Administrator__: Can manage Users and install Clusters. 
     *  __Editor__: Can manage Projects and Departments.
     * __Viewer__: View-only access to Admin UI.
-    * __Researcher__: Can run ML workloads (subject to the [adding](../Working-with-Projects/#create-a-new-project.md) of the User to a specific Project and an existing authentication integration)
+    * __Researcher__: Can run ML workloads using the Run:AI command-line interface, The Researcher user interface or similar. This setting is relevant only if [Researcher Authentication](../Cluster-Setup/researcher-authentication.md) is enabled (subject to the [adding](../Working-with-Projects/#create-a-new-project.md).
 
 *   Select a Cluster. This determines what Clusters are accessible to this User
 *   Press "Save"

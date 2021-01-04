@@ -97,3 +97,8 @@ To set a duration limit for interactive Jobs:
 *   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
 
 ![mceclip1.png](img/mceclip1.png) The setting only takes effect for Jobs that have started after the duration has been changed. 
+
+
+## Assign Users to Project
+
+When [Researcher Authentication](../Cluster-Setup/researcher-authentication.md) is enabled, the Project form will contain an additional _Users_ tab. The tab will allow you to assign Researchers to their Projects. 
