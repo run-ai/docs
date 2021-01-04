@@ -4,7 +4,7 @@ Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To
 
 A Researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
-Administrators manage Projects as detailed [here](Working-with-Projects.md).
+Administrators manage Projects as detailed [here](project-setup.md).
 
 At some organizations, Projects may not be enough, this is because:
 

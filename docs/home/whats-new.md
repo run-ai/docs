@@ -56,7 +56,7 @@ Run:AI Now supports __Distributed Training__ and __Gang Scheduling__. For furthe
 
 ## August 4th, 2020
 
-There is now an optional second level of Project hierarchy called __Departments__. For further information on how to configure and use Departments, see [Working with Departments](../Administrator/Admin-User-Interface-Setup/Working-with-Departments.md) 
+There is now an optional second level of Project hierarchy called __Departments__. For further information on how to configure and use Departments, see [Working with Departments](../Administrator/admin-ui-setup/department-setup.md) 
 
 ## July 28th, 2020
 
@@ -85,13 +85,13 @@ Projects now support _Node Affinity._ This feature allows the Administrator to a
 *   The Project team is the owner of specific hardware which was acquired with a specialized budget
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes
 
-For further information see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+For further information see: [Working with Projects](../Administrator/admin-ui-setup/project-setup.md)
 
 #### Limit Duration of Interactive Jobs
 
 Researchers frequently forget to close Interactive Job. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive Job and close them automatically. 
 
-For further information on how to set up duration limits see: [Working with Projects](../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md)
+For further information on how to set up duration limits see: [Working with Projects](../Administrator/admin-ui-setup/project-setup.md)
 
 ## May 24th, 2020
 

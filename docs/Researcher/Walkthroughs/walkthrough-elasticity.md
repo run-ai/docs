@@ -23,7 +23,7 @@ To complete this Quickstart you must have:
 
 *   A GPU cluster with a __single__ node of __2__ GPUs. 
 
-    *  If the cluster contains more than one node,  use [Node affinity](../../../Administrator/Admin-User-Interface-Setup/Working-with-Projects/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler Jobs as described below.
+    *  If the cluster contains more than one node,  use [Node affinity](../../../Administrator/admin-ui-setup/project-setup/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler Jobs as described below.
     *  If the cluster nodes contain more than 2 GPUs, you can create an interactive Job on a different project to consume the remaining GPUs.    
 
 

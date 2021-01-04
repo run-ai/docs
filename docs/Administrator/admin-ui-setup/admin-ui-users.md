@@ -34,7 +34,7 @@ __Notes:__
     *  __Administrator__: Can manage Users and install Clusters. 
     *  __Editor__: Can manage Projects and Departments.
     * __Viewer__: View-only access to Admin UI.
-    * __Researcher__: Can run ML workloads using the Run:AI command-line interface, The Researcher user interface or similar. This setting is relevant only if [Researcher Authentication](../Cluster-Setup/researcher-authentication.md) is enabled (subject to the [adding](../Working-with-Projects/#create-a-new-project.md).
+    * __Researcher__: Can run ML workloads using the Run:AI command-line interface, The Researcher user interface or similar. This setting is relevant only if [Researcher Authentication](../Cluster-Setup/researcher-authentication.md) is enabled (subject to the [adding](../project-setup/#create-a-new-project.md).
 
 *   Select a Cluster. This determines what Clusters are accessible to this User
 *   Press "Save"

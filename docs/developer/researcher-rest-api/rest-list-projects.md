@@ -39,7 +39,7 @@ Project:
 * `interactiveNodeAffinity`  - Scheduler interactive Jobs only on these node groups.
 
 
-For more information see [Working with Projects](../../Administrator/Admin-User-Interface-Setup/Working-with-Projects.md).
+For more information see [Working with Projects](../../Administrator/admin-ui-setup/project-setup.md).
 
 ## Example
 

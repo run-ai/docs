@@ -51,6 +51,9 @@ plugins:
         'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
         'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md' : 'Administrator/Researcher-Setup/docker-to-runai.md'
         'Researcher/cli-reference/runai-get.md' : 'Researcher/cli-reference/runai-describe.md'
+        'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md' : 'Administrator/admin-ui-setup/admin-ui-users.md'
+        'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
+        'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
 markdown_extensions:
   - codehilite
   - admonition
@@ -99,9 +102,9 @@ nav:
       - 'Use Secrets in Jobs' : 'Administrator/Researcher-Setup/use-secrets.md'
       - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/template-config.md'
     - 'Admin UI Setup' :
-      - 'Users' : 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md'
-      - 'Projects' : 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md'
-      - 'Departments' : 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md'
+      - 'Users' : 'Administrator/admin-ui-setup/admin-ui-users.md'
+      - 'Projects' : 'Administrator/admin-ui-setup/project-setup.md'
+      - 'Departments' : 'Administrator/admin-ui-setup/department-setup.md'
     - 'Presentations' :
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Tools' :
