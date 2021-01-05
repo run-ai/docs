@@ -19,7 +19,7 @@ Json object:
 
 General:
 
-* Do we use Cluster to identify the project or not? E.g. for deletion. 
+* Do we use Cluster to identify the project or not? E.g. for deletion.  List URL has cluster but others dont
 
 Get Project API 
 
@@ -52,11 +52,12 @@ Projects are represented as JSON objects with the following properties. All prop
 | Name                        | Type                     | Mandatory | Read Only| Description  |  
 | :-------------              |:------------------------ | :-------- | :------- | :----------- |
 | id                          | integer                  | false     | true     | Project Id  |
-| tenantId                    | integer                  | false     | true     | true      |
 | name                        | string                   | true      | false    | The name of the Project. |
+| tenantId                    | integer                  | false     | true     | true      |
+| clusterUuid                 | string, , object id      | true      | false    | An ID for a __Cluster__ object. |
+| createdAt                   | date-time                | false     | true     | Creation Date-Time. |
 | departmentId                | integer, object id       | true      | false    | Id of __Department__ object  |
 | deservedGpus                | double                   | true      | false    | GPU Quota for the Project |
-| clusterUuid                 | string, , object id      | true      | false    | An ID for a __Cluster__ object. |
 | nodeAffinity                | object                   | false     | false    | Node Affinity Object. Default is no affinity | 
 | permissions                 | array of User ID strings | true      | false    | An array of IDs of __User__ objects. Requires Researcher authentication to be enabled | 
 | interactiveJobTimeLimitSecs | integer                  | false     | false    | Timeout for interactive sessions. Default is none | 
@@ -83,10 +84,11 @@ __Example__
 
 ``` json
 {
-  "name": "team-c",
   "id": 386,
+  "name": "team-c",
   "tenantId": 3,
   "clusterUuid": "9e110487-6973-4058-7c95-e07f26b835a8",
+  "createdAt": "2020-09-04T07:48:05.269Z",
   "departmentId": 123,
   "deservedGpus": 1,
   "nodeAffinity": {
@@ -120,7 +122,7 @@ __Example__
 
 ## Create Project
 
-`POST  https://app.run.ai/v1/k8s/project/{project_id}`
+`POST  https://app.run.ai/v1/k8s/project/`
 
 Create a new Project in a Cluster.
 
@@ -212,7 +214,7 @@ __Example Response__
 Update an existing Project.
 
 !!! Important
-    The Update API expects all Project fields. Fields that are omitted will be removed from the object.
+    The Update API expects all editable Project fields. Fields that are omitted will be removed from the object.
 
 __Example__ 
 
