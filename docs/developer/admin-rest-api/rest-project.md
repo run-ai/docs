@@ -10,7 +10,7 @@ A Researcher submitting a Job needs to associate a Project name with the request
 
 
 ## ****  INTERNAL API ISSUES 
-
+``` 
 Json object: 
 
 * allowOverQuota default is false. Should be true.
@@ -22,7 +22,9 @@ General:
 * Do we use Cluster to identify the project or not? E.g. for deletion. 
 
 Get Project API 
-* API does not exist or is not working. 
+
+* interactiveJobTimeLimitSecs returns a null, not true/false?
+* what is maxAllowedGpus
 
 Project update
 
@@ -39,6 +41,7 @@ Project create
 
 
 Project delete 
+```
 
 * ...
 
@@ -121,7 +124,7 @@ __Example__
 
 Create a new Project in a Cluster.
 
-__Example__ (verified)
+__Example__ 
 
 ``` shell
 curl -X POST https://app.run.ai/v1/k8s/project/ \
@@ -155,17 +158,16 @@ __Example Response__
 
 
 
-## Get Project [NOT WORKING]
+## Get Project
 
 `GET https://app.run.ai/v1/k8s/project/{project_id}`
 
 Returns a Project object. 
 
-
-___Example___
+__Example__
 
 ``` shell
-curl 'https://app.run.ai/v1/k8s//project/383' \
+curl 'https://app.run.ai/v1/k8s/project/181' \
   -H 'authorization: Bearer <Bearer>' \
   -H 'content-type: application/json' 
 ```
@@ -174,21 +176,45 @@ __Example Response__
 
 ``` JSON
 {   
-
+  "clusterUuid": "3b44777b-1a40-42b5-841b-6c68de2b5ff1",
+  "createdAt": "2020-09-04T07:48:05.269Z",
+  "deservedGpus": 4,
+  "maxAllowedGpus": -1,  XXX
+  "id": 181,
+  "name": "team-x",
+  "tenantId": 1,
+  "departmentId": 123,
+  "interactiveJobTimeLimitSecs": null,
+  "nodeAffinity": {
+    "train": {
+      "affinityType": "no_limit",
+      "selectedTypes": []
+    },
+    "interactive": {
+      "affinityType": "no_limit",
+      "selectedTypes": []
+    }
+  },
+  "departmentName": "default1",
+  "permissions": {
+    "users": [
+      "auth0|5d5e553d4a43940c966d1b36"
+    ]
+  },
+  "allowOverQuota": true
 }
 ```
 
 ## Update Project
-
 
 `PUT https://app.run.ai/v1/k8s/project/{project_id}`
 
 Update an existing Project.
 
 !!! Important
-    The Update API expects all Project fields. Fields that are ommited will be removed from the object.
+    The Update API expects all Project fields. Fields that are omitted will be removed from the object.
 
-__Example__ (verified)
+__Example__ 
 
 ``` json
 curl -X PUT 'https://app.run.ai/v1/k8s/project/376' \
@@ -223,7 +249,6 @@ __Example Response__
 ```
 
 
-
 ## Delete Project
 
 
@@ -231,7 +256,7 @@ __Example Response__
 
 
 
-__Example__ (verified)
+__Example__ 
 
 ``` shell
 curl -X 'DELETE' 'https://app.run.ai/v1/k8s/project/389' \
@@ -252,12 +277,12 @@ Project with id 389 is deleted
 __Example__
 
 ``` shell
-curl 'https://app.run.ai/v1/k8s/clusters/9e110487-6973-4058-9c95-f07f26b835a8/projects' \
+curl 'https://app.run.ai/v1/k8s/clusters/9e110487-6973-4058-9c95-f07f26b845a8/projects' \
   -H 'authorization: Bearer <bearer>' \
   -H 'content-type: application/json' 
-  ```
+```
 
-  __Example Response__
+__Example Response__
 
 ``` json
 [
@@ -288,7 +313,7 @@ curl 'https://app.run.ai/v1/k8s/clusters/9e110487-6973-4058-9c95-f07f26b835a8/pr
     "allowOverQuota": true
   },
   {
-    "clusterUuid": "9e110487-6973-4058-9c95-f07f26b835a6",
+    "clusterUuid": "9e110487-6973-4058-9c95-f07f26b845a8",
     "createdAt": "2021-01-05T11:51:29.953Z",
     "deservedGpus": 1,
     "maxAllowedGpus": -1,
