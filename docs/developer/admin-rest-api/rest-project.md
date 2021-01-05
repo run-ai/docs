@@ -14,7 +14,7 @@ A Researcher submitting a Job needs to associate a Project name with the request
 Json object: 
 
 * allowOverQuota default is false. Should be true.
-* selectedTypes - Not conforming to standard array of IDs [20, 21] but rather [{id: 20}]
+* selectedTypes - Not conforming to standard array of IDs [20, 21] but rather [{id: 20}], through all the APIs
 * Low priority: departmentId is mandatory even if departments is off for the tenant. Its annoying as you have to get the id of the department
 
 General:
@@ -227,7 +227,7 @@ __Example Response__
 ## Delete Project
 
 
-How does it know which cluster?
+`DELETE https://app.run.ai/v1/k8s/project/{project_id}`
 
 
 
@@ -242,4 +242,85 @@ __Example Response__
 
 ```
 Project with id 389 is deleted
+```
+
+
+## Get List of Projects
+
+` GET https://app.run.ai/v1/k8s/clusters/{cluster_uuid}/projects`
+
+__Example__
+
+``` shell
+curl 'https://app.run.ai/v1/k8s/clusters/9e110487-6973-4058-9c95-f07f26b835a8/projects' \
+  -H 'authorization: Bearer <bearer>' \
+  -H 'content-type: application/json' 
+  ```
+
+  __Example Response__
+
+``` json
+[
+  {
+    "clusterUuid": "9e110487-6973-4058-9c95-f07f26b845a8",
+    "createdAt": "2021-01-05T12:00:25.550Z",
+    "deservedGpus": 1,
+    "maxAllowedGpus": -1,
+    "id": 383,
+    "name": "team-f",
+    "tenantId": 3,
+    "departmentId": 123,
+    "interactiveJobTimeLimitSecs": null,
+    "nodeAffinity": {
+      "train": {
+        "affinityType": "no_limit",
+        "selectedTypes": []
+      },
+      "interactive": {
+        "affinityType": "no_limit",
+        "selectedTypes": []
+      }
+    },
+    "departmentName": "default",
+    "permissions": {
+      "users": []
+    },
+    "allowOverQuota": true
+  },
+  {
+    "clusterUuid": "9e110487-6973-4058-9c95-f07f26b835a6",
+    "createdAt": "2021-01-05T11:51:29.953Z",
+    "deservedGpus": 1,
+    "maxAllowedGpus": -1,
+    "id": 377,
+    "name": "team-b",
+    "tenantId": 3,
+    "departmentId": 123,
+    "interactiveJobTimeLimitSecs": null,
+    "nodeAffinity": {
+      "train": {
+        "affinityType": "only_selected",
+        "selectedTypes": [
+          {
+            "id": 22,
+            "name": "gpu2"
+          },
+          {
+            "id": 21,
+            "name": "gpu1"
+          }
+        ]
+      },
+      "interactive": {
+        "affinityType": "no_limit",
+        "selectedTypes": []
+      }
+    },
+    "departmentName": "default",
+    "permissions": {
+      "users": []
+    },
+    "allowOverQuota": true
+  }
+]
 ```
