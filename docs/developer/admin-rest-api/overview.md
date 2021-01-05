@@ -44,4 +44,4 @@ Example Response
 }
 ```
 
-Future API calls would be made with the Header: `authorization: Bearer <token>`
+Subsequent API calls would be made with the Header: `authorization: Bearer <token>`

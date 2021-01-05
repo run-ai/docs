@@ -280,8 +280,7 @@ __Example__
 
 ``` shell
 curl 'https://app.run.ai/v1/k8s/clusters/9e110487-6973-4058-9c95-f07f26b845a8/projects' \
-  -H 'authorization: Bearer <bearer>' \
-  -H 'content-type: application/json' 
+  -H 'authorization: Bearer <bearer>' 
 ```
 
 __Example Response__
