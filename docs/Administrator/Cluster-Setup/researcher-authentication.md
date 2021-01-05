@@ -66,10 +66,10 @@ Add the following:
      - --oidc-groups-claim=email
 ```
 
-Verify that the `kube-apiserver-master` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run:
+Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run:
 
 ```
-kubectl get pods -n kube-system kube-apiserver-master -o yaml
+kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
 ```
 
 And search for the above _oidc_ flags. 
