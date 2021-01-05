@@ -19,12 +19,12 @@ Projects are represented as JSON objects with the following properties. All prop
 
 | Name                        | Type                     | Mandatory | Read Only| Description  |  
 | :-------------              |:------------------------ | :-------- | :------- | :----------- |
-| id                          | integer                  | false     | true     | Project Id  |
+| id                          | integer                  | false     | true     | Department ID. Automatically assigned when the Department is created   |
 | name                        | string                   | true      | false    | The name of the Project. |
-| tenantId                    | integer                  | false     | true     | true      |
+| tenantId                    | integer                  | false     | true     | ID of customer Tenant  |
 | clusterUuid                 | string, , object id      | true      | false    | An ID for a __Cluster__ object. |
 | createdAt                   | date-time                | false     | true     | Creation Date-Time. |
-| deservedGpus                | double                   | true      | false    | GPU Quota for the Project |
+| deservedGpus                | double                   | true      | false    | GPU Quota for the Depattment |
 | allowOverQuota   ???           | boolean                  | false     | false    | Allow the Project to go over-quota with Training Job. Default is false  | 
 | projects                    | array of Projects        | false      | true    | List of Projects in this Department and their quota. Used for display purposes only |
 | projectsDeservedGpus         | double                   | false      | true    | Sum of quota of all Projects in Department. Used for display purposes only |
@@ -72,7 +72,7 @@ __Example__
 
 Create a new Department in a Cluster.
 
-__Example__  (verified)
+__Example__  
 
 ``` shell
 curl -X POST https://app.run.ai/v1/k8s/department/ \
@@ -219,12 +219,12 @@ Department with id 118 deleted
 __Example__
 
 ``` shell
-curl 'https://staging.run.ai/v1/k8s/clusters/fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1/departments' \
+curl 'https://app.run.ai/v1/k8s/clusters/fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1/departments' \
   -H 'authorization: Bearer <bearer>' \
   -H 'content-type: application/json' 
 ```
 
-__Example Response__ (verified)
+__Example Response__ 
 
 ``` json
 [

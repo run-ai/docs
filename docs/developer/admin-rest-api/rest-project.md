@@ -51,16 +51,16 @@ Projects are represented as JSON objects with the following properties. All prop
 
 | Name                        | Type                     | Mandatory | Read Only| Description  |  
 | :-------------              |:------------------------ | :-------- | :------- | :----------- |
-| id                          | integer                  | false     | true     | Project Id  |
+| id                          | integer                  | false     | true     | Project Id. Automatically assigned when the Project is created |
 | name                        | string                   | true      | false    | The name of the Project. |
-| tenantId                    | integer                  | false     | true     | true      |
+| tenantId                    | integer                  | false     | true     | ID of customer Tenant  |
 | clusterUuid                 | string, , object id      | true      | false    | An ID for a __Cluster__ object. |
 | createdAt                   | date-time                | false     | true     | Creation Date-Time. |
 | departmentId                | integer, object id       | true      | false    | Id of __Department__ object  |
 | deservedGpus                | double                   | true      | false    | GPU Quota for the Project |
 | nodeAffinity                | object                   | false     | false    | Node Affinity Object. Default is no affinity | 
 | permissions                 | array of User ID strings | true      | false    | An array of IDs of __User__ objects. Requires Researcher authentication to be enabled | 
-| interactiveJobTimeLimitSecs | integer                  | false     | false    | Timeout for interactive sessions. Default is none | 
+| interactiveJobTimeLimitSecs | integer                  | false     | false    | Timeout for interactive sessions. Default is no limit | 
 | allowOverQuota              | boolean                  | false     | false    | Allow the Project to go over-quota with Training Job. Default is false  | 
 
 
