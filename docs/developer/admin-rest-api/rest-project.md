@@ -15,29 +15,33 @@ Json object:
 
 * allowOverQuota default is false. Should be true.
 * selectedTypes - Not conforming to standard array of IDs [20, 21] but rather [{id: 20}]
-* departmentId is mandatory even if departments is off for the tenant. Its annoying as you have to get the id of the department
+* Low priority: departmentId is mandatory even if departments is off for the tenant. Its annoying as you have to get the id of the department
+
+General:
+
+* Do we use Cluster to identify the project or not? E.g. for deletion. 
 
 Get Project API 
-
 * API does not exist or is not working. 
-* URL should be consistent. Does it contain a cluster or not?
 
 Project update
 
 * Project update request and response trainNodeAffinity in two separate formats. 
 * What is "maxAllowedGpus" ? Is it allowOverQuota
-* Department is referenced by ID but in one example I saw it referenced by name.
+* Cannot reconstruct, but its there...: Department is referenced by ID but in one example I saw it referenced by name.
 * Why is the name mandatory (the id already identifies it)
+* I think that read-only fields such as clusterUuid should not be mandatory unless they are used for verifying that the project is in the right cluster...
 
 Project create
 
 * maxAllowedGpus appears in response
-* Perhaps permissions can be optional when authentication not enabled. Low priority
+* Low priority: Perhaps permissions can be optional when authentication not enabled. 
+
 
 Project delete 
 
-* How does it know which cluster to use for deleting the project? I assume its because project ids are 
-unique, but there should be some verification on the cluster. No?
+* ...
+
 
 ## JSON Format
 Projects are represented as JSON objects with the following properties. All properties are mandatory.
@@ -71,7 +75,8 @@ Node Affinity Type:
 | affinityType                | string              | true      | "only_selected" \| "no_limit"  |
 | selectedTypes               | Array of ("id" : `Node Group Types object id` XXX ) pairs    | true | Node Group Types to use |
 
-### Example
+
+__Example__
 
 ``` json
 {
@@ -116,7 +121,7 @@ Node Affinity Type:
 
 Create a new Project in a Cluster.
 
-### Example (verified)
+__Example__ (verified)
 
 ``` shell
 curl -X POST https://app.run.ai/v1/k8s/project/ \
@@ -144,7 +149,7 @@ __Example Response__
   "permissions": {
     "users": []
   },
-  "maxAllowedGpus": 1
+  "maxAllowedGpus": 1 XXX
 }
 ```
 
@@ -152,15 +157,15 @@ __Example Response__
 
 ## Get Project [NOT WORKING]
 
-`GET https://app.run.ai/v1/k8s/cluster/{cluster_uuid}/project/{project_id}`
+`GET https://app.run.ai/v1/k8s/project/{project_id}`
 
 Returns a Project object. 
 
 
-### Example
+___Example___
 
 ``` shell
-curl 'https://app.run.ai/v1/k8s/9e110487-6973-4058-7c95-e07f26b835a8/project/383' \
+curl 'https://app.run.ai/v1/k8s//project/383' \
   -H 'authorization: Bearer <Bearer>' \
   -H 'content-type: application/json' 
 ```
@@ -178,8 +183,12 @@ __Example Response__
 
 `PUT https://app.run.ai/v1/k8s/project/{project_id}`
 
+Update an existing Project.
 
-### Example (verified)
+!!! Important
+    The Update API expects all Project fields. Fields that are ommited will be removed from the object.
+
+__Example__ (verified)
 
 ``` json
 curl -X PUT 'https://app.run.ai/v1/k8s/project/376' \
@@ -188,7 +197,7 @@ curl -X PUT 'https://app.run.ai/v1/k8s/project/376' \
  --data '{
   "name":"team-c",
   "clusterUuid":"9e110487-6973-4058-9c95-f07f26b835a8",
-  "deservedGpus": 10,
+  "deservedGpus": 2,
   "departmentId":123,
   "permissions":{"users":["auth0|5f0c50524085060013038db4"]}
 }' 
@@ -202,100 +211,17 @@ __Example Response__
   "id": "376",
   "name": "team-c",
   "clusterUuid": "9e110487-6973-4058-9c95-f07f26b835a8",
-  "deservedGpus": 10,
-  "departmentId": 123,
-  "permissions": {
-    "users": [
-      "auth0|5f0c50524085060013038db4"
-    ]
-  },
-  "maxAllowedGpus": 10
-}
-```
-
-
-A fuller example -- remove this later
-``` json
-{
-  "clusterUuid": "9e110487-6973-4058-9c95-f07f26b835a8",
   "deservedGpus": 2,
-  "id": 376,
-  "name": "team-c",
   "departmentId": 123,
-  "interactiveJobTimeLimitSecs": null,
-  "nodeAffinity": {
-    "train": {
-      "affinityType": "only_selected",
-      "selectedTypes": [
-        {
-          "id": 22
-        },
-        {
-          "id": 21
-        }
-      ]
-    },
-    "interactive": {
-      "affinityType": "no_limit",
-      "selectedTypes": []
-    }
-  },
-  "departmentName": "default",
   "permissions": {
     "users": [
       "auth0|5f0c50524085060013038db4"
     ]
   },
-  "allowOverQuota": true,
-  "interactiveNodeAffinity": "none",
-  "trainNodeAffinity": "gpu2, gpu1"
+  "maxAllowedGpus": 10 XXX
 }
 ```
-XXX end request payload
 
-
-__Example Response__
-
-``` json
-{
-  "tenantId": 3,
-  "id": 376,
-  "clusterUuid": "9e110487-6973-4058-9c95-f07f26b835a8",
-  "createdAt": "2021-01-05T11:34:56.881Z",
-  "deservedGpus": 2,
-  "maxAllowedGpus": -1,
-  "name": "team-c",
-  "departmentId": 123,
-  "interactiveJobTimeLimitSecs": null,
-  "nodeAffinity": {
-    "train": {
-      "affinityType": "only_selected",
-      "selectedTypes": [
-        {
-          "id": 22
-        },
-        {
-          "id": 21
-        }
-      ]
-    },
-    "interactive": {
-      "affinityType": "no_limit",
-      "selectedTypes": []
-    }
-  },
-  "departmentName": "default",
-  "permissions": {
-    "users": [
-      "auth0|5f0c50524085060013038db4"
-    ]
-  },
-  "allowOverQuota": true,
-  "interactiveNodeAffinity": "none",
-  "trainNodeAffinity": "gpu2, gpu1"
-}
-
-```
 
 
 ## Delete Project
@@ -305,7 +231,7 @@ How does it know which cluster?
 
 
 
-## Example
+__Example__ (verified)
 
 ``` shell
 curl -X 'DELETE' 'https://app.run.ai/v1/k8s/project/389' \
