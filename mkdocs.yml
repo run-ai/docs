@@ -37,7 +37,7 @@ extra:
 plugins:
   - search
   - git-revision-date-localized
-#  - render_swagger
+  - render_swagger
   - minify:
       minify_html: true
   - redirects:
