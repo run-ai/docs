@@ -1,4 +1,9 @@
 
+## Swagger file here
+just a text
+
+
+
 Get clusters
 curl 'https://app.run.ai/v1/k8s/clusters?' \
   -H 'authorization: Bearer eyJhbGciOiJSUzTwwpVM1cN5lLkNNDQ' \

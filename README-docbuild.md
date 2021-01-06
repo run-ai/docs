@@ -12,6 +12,7 @@
       pip3 install mkdocs-git-revision-date-localized-plugin
       pip3 install mkdocs-minify-plugin
       pip3 install mkdocs-redirects
+      pip3 install mkdocs-render-swagger-plugin
 
 
 ## Write & Test

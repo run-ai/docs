@@ -1,41 +1,41 @@
 site_name: Run:AI Documentation Library
 site_url: https://docs.run.ai/
-copyright: Copyright © 2020 Run:AI
+copyright: Copyright © 2020 - 2021 Run:AI
 google_analytics:
   - UA-122651141-1
   - auto
-
 repo_url: https://github.com/run-ai/docs/
-
-
 docs_dir: docs
 theme:
   name: material
   custom_dir: overrides
-#  name: mkdocs
-#  name: readthedocs
-#  name: ivory
-#  name: bootstrap4
-#  name: gitbook
-#  name: 'rtd-dropdown'
- # palette:
-  #  scheme: slate
-#     primary: indigo
-#     accent: red
-  # font:
-  #   text: Roboto
-  #   code: Roboto Mono
   language: en
   favicon: images/favicon.ico
   logo: images/runai-logo2.svg
   features:
     - navigation.tabs
+    - navigation.instant
+#    - toc.integrate
 extra_css:
   - stylesheets/extra.css
 strict: true
+markdown_extensions:
+  - codehilite
+  - admonition
+  - attr_list
+  - meta
+  - toc:
+      permalink: True
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/runailabs
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/runailabs/
 plugins:
   - search
   - git-revision-date-localized
+  - render_swagger
   - minify:
       minify_html: true
   - redirects:
@@ -54,19 +54,6 @@ plugins:
         'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md' : 'Administrator/admin-ui-setup/admin-ui-users.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
-markdown_extensions:
-  - codehilite
-  - admonition
-  - attr_list
-  - toc:
-      permalink: True
-extra:
-  social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/runailabs
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/company/runailabs/
-
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -173,9 +160,15 @@ nav:
         - 'Delete a Job' :  'developer/researcher-rest-api/rest-delete.md'
         - 'Get a list of Jobs' :  'developer/researcher-rest-api/rest-list-jobs.md'
         - 'Get a list of Projects' :  'developer/researcher-rest-api/rest-list-projects.md'
-#    - 'Administrator REST API' : 
-#        - 'Overview' : 'developer/admin-rest-api/overview.md'
-#        - 'Projects' :  'developer/admin-rest-api/rest-project.md'
+    # - 'Administrator REST API' : 
+    #     - 'Overview' : 'developer/admin-rest-api/overview.md'
+    #     - 'Projects old' :  'developer/admin-rest-api/rest-projects.md'
+    #     - 'Projects' :  'developer/admin-rest-api/rest-projects-swagger.md'
+    #     - 'Departments old' :  'developer/admin-rest-api/rest-departments.md'
+    #     - 'Departments' :  'developer/admin-rest-api/rest-departments-swagger.md'
+    #     - 'Users' :  'developer/admin-rest-api/rest-users.md'
+    #     - 'Node Types' :  'developer/admin-rest-api/rest-node-types.md'
+    #     - 'Clusters' :  'developer/admin-rest-api/rest-clusters.md'
     - 'Kubernetes API' : 
         - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'

@@ -18,7 +18,7 @@ The body of requests and responses for each resource is described in a JSON form
 
 ## Security and authentication
 
-You must be a verified user to make API requests. You can authorize against the API using a dedicated user and password provided by Run:AI Customer Support.
+You must be a verified user to make API requests. You can authorize against the API using a dedicated user and password provided by Run:AI Customer Support. Note that the regular user will not suffice for API access. 
 
 Once authenticated, you will receive a token which you should use in all further API calls. 
 
