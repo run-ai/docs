@@ -18,9 +18,9 @@ paths:
     post: 
       tags:
         - Login
-      summary: xx
+      summary: Login
       security: []
-      description: xx
+      description: Log in with User/Password to receive a "Bearer" token, which is used to authenticate other API calls.
       requestBody:
         required: true
         content:
@@ -47,7 +47,12 @@ paths:
                   token_type:
                     type: string
                   expires_in: 
-                    type: integer    
+                    type: integer  
+              example:
+                tenant_id: 1
+                access_token : "<bearer>"
+                token_type : "bearer"
+                expires_in: 86400
   '/project':
     post:
       tags:
