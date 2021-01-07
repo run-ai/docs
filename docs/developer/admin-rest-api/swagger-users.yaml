@@ -1,0 +1,212 @@
+openapi: 3.0.0
+info:
+  title: 'Users REST API'
+  description: >-
+    Create, Update Delete, Get and List Run:AI Users. <br> <br>
+    
+    A __User__ is a second hierarchy of resource allocation above _Project_. A User quota supersedes a Project quota in the sense that if the sum of Project quotas for a User exceeds the User quota -- the scheduler will use the User quota rather than the Project quota. <br> <br> 
+    The system comes with a default User. A Project is associated with a User ID.
+  version: '1.0'
+servers:
+  - url: 'https://app.run.ai/v1/k8s'
+  - url: 'https://staging.run.ai/v1/k8s'
+tags:
+  - name: Login
+  - name: User
+#    description: description of user
+paths:
+  '/auth/login':
+    post: 
+      tags:
+        - Login
+      summary: Login
+      security: []
+      description: Log in with User/Password to receive a "Bearer" token, which is used to authenticate other API calls.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string      
+      responses:
+        '200' : 
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tenant_id:
+                    type: integer
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                  expires_in: 
+                    type: integer  
+              example:
+                tenant_id: 1
+                access_token : "<bearer>"
+                token_type : "bearer"
+                expires_in: 86400
+  '/users':
+    post:
+      tags:
+        - User
+      summary: Create a new User.
+      description: Retrieve a User given a User ID.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      requestBody:
+#        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'  
+            example:
+              email: john@acme.com
+              password: password123!
+              roles: ['admin', 'editor'] 
+              permittedClusters: []
+              permitAllClusters: true
+              needToChangePassword: true  
+    get:
+      tags:
+        - User
+      summary: List Users in Cluster.
+      description: Get list of all Users for a given Cluster.
+      responses:
+        '200':
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  '/users/{user_id}':
+    get:
+      tags:
+        - User
+      summary: Returns a User by Id.
+      description: Retrieve a User given a User ID.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: User ID.
+          schema:
+            type: string
+            minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      tags:
+        - User
+      summary: Update a User.
+      description: Update a User by User ID. The Update API expects all editable User fields. Fields that are omitted will be removed from the object.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: User ID.
+          schema:
+            type: string
+            minimum: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/User'
+            example:
+              id: auth0|5d5e553d4a43912c966d1b36
+              email: john@acme.com
+              password: password123!
+              roles: ['admin', 'editor'] 
+              permittedClusters: []
+              permitAllClusters: true
+              needToChangePassword: true  
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      tags:
+        - User
+      summary: Delete a User.
+      description: Delete a User by User ID. 
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: User ID.
+          schema:
+            type: string
+            minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: User with id 389 is deleted
+components:
+  schemas:    
+    User:
+      properties:
+        userId:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        permittedClusters:
+          type: array
+          items:
+            type: string
+        permitAllClusters:
+          type: boolean
+        needToChangePassword:
+          type: boolean
+        lastLogin:
+          type: string
+        createdAt:
+          type: string
+      required:
+      - userId
+      - email
+      - password
+      - roles
+      - permittedClusters
+      - permitAllClusters
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
