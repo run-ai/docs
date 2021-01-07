@@ -2,19 +2,10 @@
 
 ## Introduction
 
-The Admin User Interface allows:
-
-*   The setup of Kubernetes GPU Clusters.
-*   Create, Update, and Delete Users.
-*   Create, Update, and Delete Projects & Departments.
-*   Review short term and long term dashboards.
-*   Review Node and Job status.
-
-This document is about the Creation, Update, and Deletion of Users.
+The Admin User Interface allows the creation of Run:AI Users. Run:AI Users can receive varying levels of access to the Administration UI and to submitting Jobs on the Cluster.
 
 __Notes:__
 
-*   With Run:AI you need to differentiate between the Users of the Admin UI and Researcher Users which submit workloads on the GPU Kubernetes Cluster. This document is about the former.
 *   It is possible to connect the Admin UI Users module to the organization's LDAP directory. For further information please contact Run:AI customer support.
 
 ## Working with Users

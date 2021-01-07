@@ -4,8 +4,7 @@ info:
   description: >-
     Create, Update Delete, Get and List Run:AI Users. <br> <br>
     
-    A __User__ is a second hierarchy of resource allocation above _Project_. A User quota supersedes a Project quota in the sense that if the sum of Project quotas for a User exceeds the User quota -- the scheduler will use the User quota rather than the Project quota. <br> <br> 
-    The system comes with a default User. A Project is associated with a User ID.
+    Run:AI Users can receive varying levels of access to the Administration UI and to submitting Jobs on the Cluster.
   version: '1.0'
 servers:
   - url: 'https://app.run.ai/v1/k8s'
@@ -184,6 +183,7 @@ components:
           type: array
           items:
             type: string
+            enum: [admin, editor, researcher, viewer]
         permittedClusters:
           type: array
           items:

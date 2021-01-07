@@ -219,6 +219,7 @@ components:
       properties:
         affinityType:
           type: string
+          enum: [only_selected, no_limit]
         selectedTypes:
           type: array
           items:
