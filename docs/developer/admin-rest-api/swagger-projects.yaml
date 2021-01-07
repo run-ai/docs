@@ -161,6 +161,7 @@ paths:
           description: Cluster Identifier.
           schema:
             type: string
+            format: uuid
       responses:
         '200':
           description: A JSON array of user names
@@ -174,12 +175,17 @@ components:
       properties:
         id:
           type: integer
+          example: 100
         name:
           type: string
+          example: team-a
         tenantId:
           type: integer
+          example: 1
         clusterUuid:
           type: string
+          format: uuid
+          example: fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1
         createdAt:
           type: string
         departmentId:
