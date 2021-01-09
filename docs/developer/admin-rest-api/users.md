@@ -4,5 +4,4 @@ hide:
 ---
 #
 
-!!swagger 
-users.yaml!!
+!!swagger users.yaml!!
