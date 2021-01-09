@@ -1,18 +1,19 @@
 openapi: 3.0.0
 info:
-  title: 'Projects REST API'
+  title: 'Node Types REST API'
   description: >-
-    Create, Update Delete, Get and List Run:AI Projects. <br> <br>
-    To streamline resource allocation and  prioritize work, Run:AI introduces the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and allocation preferences. <br> <br>
-    A Researcher submitting a Job needs to associate a Project name with the request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
+    Create, Update Delete, Get and List Run:AI Node Types. <br> <br>
+    
+    A __Node Type__ is a
+
   version: '1.0'
 servers:
   - url: 'https://app.run.ai/v1/k8s'
   - url: 'https://staging.run.ai/v1/k8s'
 tags:
   - name: Login
-  - name: Project
-#    description: description of project
+  - name: NodeType
+#    description: description of department
 paths:
   '/auth/login':
     post: 
@@ -53,43 +54,40 @@ paths:
                 access_token : "<bearer>"
                 token_type : "bearer"
                 expires_in: 86400
-  '/project':
+  '/nodeType':
     post:
       tags:
-        - Project
-      summary: Create a new Project.
-      description: Retrieve a Project given a Project ID.
+        - NodeType
+      summary: Create a new Node Type.
+      description: Retrieve a Node Type given a Node Type ID.
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/NodeType'
       requestBody:
 #        description: Optional description in *Markdown*
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Project'  
+              $ref: '#/components/schemas/NodeType'  
             example:
-              name: "team-a"
-              departmentId: 100
-              deservedGpus : 1
+              name: "v-100"
               clusterUuid : "fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1"
-              permissions: { "users": [] }
-  '/project/{project_id}':
+  '/nodeType/{nodeType_id}':
     get:
       tags:
-        - Project
-      summary: Returns a Project by Id.
-      description: Retrieve a Project given a Project ID.
+        - NodeType
+      summary: Returns a Node Type by Id.
+      description: Retrieve a Node Type given a Node Type ID.
       parameters:
-        - name: project_id
+        - name: nodeType_id
           in: path
           required: true
-          description: Project ID.
+          description: Node Type ID.
           schema:
             type: integer
             minimum: 1
@@ -99,44 +97,54 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/NodeType'
     put:
       tags:
-        - Project
-      summary: Update a Project.
-      description: Update a Project by Project ID. The Update API expects all editable Project fields. Fields that are omitted will be removed from the object.
+        - NodeType
+      summary: Update a Node Type.
+      description: Update a Node Type by Node Type ID. The Update API expects all editable Node Type fields. Fields that are omitted will be removed from the object.
       parameters:
-        - name: project_id
+        - name: nodeType_id
           in: path
           required: true
-          description: Project ID.
+          description: Node Type ID.
           schema:
             type: integer
             minimum: 1
       requestBody:
-#        description: Optional description in *Markdown*
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Project'                 
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 100
+                name:
+                  type: string
+                  example: a-100
+                clusterUuid: 
+                  type: string
+                  format: uuid
+                  example: fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1       
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/NodeType'
     delete:
       tags:
-        - Project
-      summary: Delete a Project.
-      description: Delete a Project by Project ID. 
+        - NodeType
+      summary: Delete a Node Type.
+      description: Delete a Node Type by Node Type ID. 
       parameters:
-        - name: project_id
+        - name: nodeType_id
           in: path
           required: true
-          description: Project ID.
+          description: Node Type ID.
           schema:
             type: integer
             minimum: 1
@@ -147,13 +155,13 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: Project with id 389 is deleted
-  /clusters/{cluster_uuid}/projects:
+                example: Node Type with id 389 is deleted
+  /clusters/{cluster_uuid}/nodeTypes:
     get:
       tags:
-        - Project
-      summary: List Projects in Cluster.
-      description: Get list of all Projects for a given Cluster.
+        - NodeType
+      summary: List Node Types in Cluster.
+      description: Get list of all Node Types for a given Cluster.
       parameters:
         - name: cluster_uuid
           in: path
@@ -164,74 +172,30 @@ paths:
             format: uuid
       responses:
         '200':
-          description: A JSON array of user names
+          description: A JSON array of Node Types
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/NodeType'
 components:
   schemas:    
-    Project:
+    NodeType:
       properties:
         id:
           type: integer
-          example: 100
         name:
           type: string
-          example: team-a
         tenantId:
           type: integer
-          example: 1
         clusterUuid:
           type: string
           format: uuid
-          example: fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1
         createdAt:
           type: string
-        departmentId:
-          type: integer
-        deservedGpus:
-          type: integer
-        nodeAffinity:
-          type: object
-          properties:
-            train:
-              $ref: '#/components/schemas/NodeAffinityType'
-            interactive:
-              $ref: '#/components/schemas/NodeAffinityType'
-        permissions:
-          type: object
-          properties:
-            users:
-              type: array
-              items:
-                type: string
-        interactiveJobTimeLimitSecs:
-          type: integer
-        maxAllowedGpus:
-          type: integer
       required:
+      - id
       - name
       - clusterUuid
-      - departmentId
-      - deservedGpus
-    NodeAffinityType:
-      properties:
-        affinityType:
-          type: string
-          enum: [only_selected, no_limit]
-        selectedTypes:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-            required:
-            - id
-      required:
-      - affinityType
-      - selectedTypes  
   securitySchemes:
     bearerAuth:
       type: http

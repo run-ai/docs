@@ -164,13 +164,11 @@ nav:
         - 'Get a list of Projects' :  'developer/researcher-rest-api/rest-list-projects.md'
     # - 'Administrator REST API' : 
     #    - 'Overview' : 'developer/admin-rest-api/overview.md'
-    #     - 'Projects old' :  'developer/admin-rest-api/rest-projects.md'
-    #    - 'Projects' :  'developer/admin-rest-api/rest-projects.md'
-    #     - 'Departments old' :  'developer/admin-rest-api/rest-departments.md'
-    #    - 'Departments' :  'developer/admin-rest-api/rest-departments.md'
-    #     - 'Users' :  'developer/admin-rest-api/rest-users.md'
-    #     - 'Node Types' :  'developer/admin-rest-api/rest-node-types.md'
-    #     - 'Clusters' :  'developer/admin-rest-api/rest-clusters.md'
+    #    - 'Projects' :  'developer/admin-rest-api/projects.md'
+    #    - 'Departments' :  'developer/admin-rest-api/departments.md'
+    #     - 'Users' :  'developer/admin-rest-api/users.md'
+    #     - 'Node Types' :  'developer/admin-rest-api/node-types.md'
+    #     - 'Clusters' :  'developer/admin-rest-api/clusters.md'
     - 'Kubernetes API' : 
         - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
