@@ -53,3 +53,9 @@
     }
 
 }
+
+/* override swagger code */
+.microlight > code {
+    background: transparent;
+    color: white;
+}
