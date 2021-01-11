@@ -4,7 +4,7 @@ info:
   description: >-
     Create, Update Delete, Get and List Run:AI Node Types. <br> <br>
     
-    A __Node Type__ is a
+    A __Node Type__ is an association of a label with a set of Nodes (machines). The label is then used to set scheduling affinity. 
 
   version: '1.0'
 servers:
