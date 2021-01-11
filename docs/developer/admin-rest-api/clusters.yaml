@@ -153,10 +153,10 @@ paths:
         '200':
           description: OK
           content:
-            text/plain:
-             schema: 
-               type: string
-               format: binary
+            application/yaml:
+              schema: 
+                type: string
+                format: text
 components:
   schemas:    
     Cluster:

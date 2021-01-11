@@ -53,7 +53,7 @@ paths:
                 access_token : "<bearer>"
                 token_type : "bearer"
                 expires_in: 86400
-  '/project':
+  '/projects':
     post:
       tags:
         - Project
@@ -79,7 +79,7 @@ paths:
               deservedGpus : 1
               clusterUuid : "fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1"
               permissions: { "users": [] }
-  '/project/{project_id}':
+  '/projects/{project_id}':
     get:
       tags:
         - Project
@@ -144,10 +144,9 @@ paths:
         '200':
           description: OK
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: Project with id 389 is deleted
+                $ref: '#/components/schemas/Project'
   /clusters/{cluster_uuid}/projects:
     get:
       tags:

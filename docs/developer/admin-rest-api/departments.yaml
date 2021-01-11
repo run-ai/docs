@@ -54,7 +54,7 @@ paths:
                 access_token : "<bearer>"
                 token_type : "bearer"
                 expires_in: 86400
-  '/department':
+  '/departments':
     post:
       tags:
         - Department
@@ -78,7 +78,7 @@ paths:
               name: "physics"
               deservedGpus : 6
               clusterUuid : "fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1"
-  '/department/{department_id}':
+  '/departments/{department_id}':
     get:
       tags:
         - Department

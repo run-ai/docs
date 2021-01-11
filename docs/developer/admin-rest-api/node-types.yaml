@@ -54,7 +54,7 @@ paths:
                 access_token : "<bearer>"
                 token_type : "bearer"
                 expires_in: 86400
-  '/nodeType':
+  '/nodetypes':
     post:
       tags:
         - NodeType
@@ -77,7 +77,7 @@ paths:
             example:
               name: "v-100"
               clusterUuid : "fa9b7d1c-2f08-42b8-b608-7b7c1fb40ea1"
-  '/nodeType/{nodeType_id}':
+  '/nodetypes/{nodeType_id}':
     get:
       tags:
         - NodeType
