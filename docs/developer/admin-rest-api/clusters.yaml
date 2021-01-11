@@ -3,8 +3,7 @@ info:
   title: 'Clusters REST API'
   description: >-
     Create, Update Delete, Get and List Run:AI Clusters. <br> <br>
-    To streamline resource allocation and  prioritize work, Run:AI introduces the concept of __Clusters__. Clusters are quota entities that associate a Cluster name with GPU allocation and allocation preferences. <br> <br>
-    A Researcher submitting a Job needs to associate a Cluster name with the request. The Run:AI scheduler will compare the request against the current allocations and the Cluster and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
+    A Cluster is a set of Nodes (machines) which are grouped together via a Kubernetes cluster and are monitored and scheduled via Run:AI.
   version: '1.0'
 servers:
   - url: 'https://app.run.ai/v1/k8s'
