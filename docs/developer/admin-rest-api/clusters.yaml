@@ -79,7 +79,7 @@ paths:
     get:
       tags:
         - Cluster
-      summary: List Clusters in Cluster.
+      summary: List Clusters in Tenant.
       description: Get list of all Clusters for a given Cluster.
       responses:
         '200':
@@ -125,10 +125,13 @@ paths:
         '200':
           description: OK
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: Cluster with id 389 is deleted
+                type: object
+                properties:
+                  uuid: 
+                    type: string
+                    format: uuid
   /clusters/{cluster_uuid}/installfile:
     get:
       tags:
