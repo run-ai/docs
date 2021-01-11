@@ -14,7 +14,7 @@ theme:
   logo: images/runai-logo2.svg
   features:
     - navigation.tabs
-    - navigation.instant
+#    - navigation.instant
 #    - toc.integrate
 extra_css:
   - stylesheets/extra.css
