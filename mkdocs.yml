@@ -15,7 +15,7 @@ theme:
   features:
     - navigation.tabs
 #    - navigation.instant
-#    - toc.integrate
+#    - toc.integrate 
 extra_css:
   - stylesheets/extra.css
 strict: true
