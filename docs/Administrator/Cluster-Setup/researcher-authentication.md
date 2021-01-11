@@ -19,8 +19,10 @@ Authentication setup works as follows:
 
 ### Enable Researcher Authentication
 
-Under [app.run.ai](https://app.run.ai/general-settings) settings, enable the flag _Researcher Authentication_.
-Copy the values for `Client ID` and `Realm` which appear on screen. 
+Under [app.run.ai](https://app.run.ai/general-settings) settings:
+
+* Enable the flag _Researcher Authentication_.
+* Copy the values for `Client ID` and `Realm` which appear on screen. 
 
 ### Assign Users to Projects
 
