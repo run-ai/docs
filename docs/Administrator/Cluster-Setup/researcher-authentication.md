@@ -14,12 +14,20 @@ Authentication setup works as follows:
 * __Server-side:__ Modify the Kubernetes cluster to validate credentials against the Run:AI Authentication authority. 
 * __Assign Users to Projects__ using the Run:AI Administration UI.
 
-## What you need
 
-You should receive the following data from Run:AI Customer support:
+## Administration User Interface Setup
 
-* Client ID
-* Realm
+### Enable Researcher Authentication
+
+Under [app.run.ai](https://app.run.ai/general-settings) settings, enable the flag _Researcher Authentication_.
+Copy the values for `Client ID` and `Realm` which appear on screen. 
+
+### Assign Users to Projects
+
+Assign Researchers to Projects:
+
+* Under [Users](https://app.run.ai/users) add a Researcher and assign it with a _Researcher_ role.
+* Under [Projects](https://app.run.ai/projects), edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 
 ## Client-Side
@@ -52,14 +60,13 @@ You must distribute the modified certificate to Researchers.
 
 Locate the Kubernetes API Server configuration file. The file's location may defer between different Kubernetes distributions. The default location is `/etc/kubernetes/manifests/kube-apiserver.yaml`
 
-Add the following: 
+Edit the document to add the following parameters at the end of the existing command list:
 
 ``` YAML
  spec:
    containers:
    - command:
-     ...
-     ...
+     ... 
      - --oidc-client-id=<CLIENT_ID>
      - --oidc-issuer-url=https://runai-prod.auth0.com/
      - --oidc-username-prefix=-
@@ -74,19 +81,6 @@ kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
 
 And search for the above _oidc_ flags. 
 
-
-## Administration User Interface Setup
-
-### Enable Researcher Authentication
-
-Under [app.run.ai](https://app.run.ai/general-settings) settings, enable the flag _Researcher Authentication_.
-
-### Assign Users to Projects
-
-Assign Researchers to Projects:
-
-* Under [Users](https://app.run.ai/users) add a Researcher and assign it with a _Researcher_ role.
-* Under [Projects](https://app.run.ai/projects), edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 
 ## Test
