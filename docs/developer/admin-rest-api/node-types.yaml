@@ -192,8 +192,6 @@ components:
         clusterUuid:
           type: string
           format: uuid
-        createdAt:
-          type: string
       required:
       - id
       - name
