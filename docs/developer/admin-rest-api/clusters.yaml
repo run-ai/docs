@@ -87,7 +87,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cluster'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cluster'
   '/clusters/{cluster_uuid}':
     get:
       tags:

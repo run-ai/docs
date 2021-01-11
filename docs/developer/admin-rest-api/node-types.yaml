@@ -176,7 +176,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NodeType'
+                type: array
+                items:
+                  $ref: '#/components/schemas/NodeType'
 components:
   schemas:    
     NodeType:

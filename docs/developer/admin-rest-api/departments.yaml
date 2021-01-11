@@ -98,7 +98,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Department'
+                $ref: '#/components/schemas/DepartmentView'
     put:
       tags:
         - Department
@@ -180,9 +180,42 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Department'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DepartmentView'
 components:
-  schemas:    
+  schemas:
+    DepartmentView:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        tenantId:
+          type: integer
+        clusterUuid:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+        deservedGpus:
+          type: integer
+        maxAllowedGpus:
+          type: integer
+        projectsDeservedGpus:
+          type: string
+        projects:
+          type: array
+          items: 
+            properties:
+              id: {type: integer}
+              name: {type: string}
+              deserved_gpus: {type: integer}
+      required:
+      - id
+      - name
+      - clusterUuid
+      - deservedGpus   
     Department:
       properties:
         id:
