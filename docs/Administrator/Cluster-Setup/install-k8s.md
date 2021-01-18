@@ -4,7 +4,7 @@ Kubernetes is composed of master(s) and workers. The instructions below are for 
 
 ## Prerequisites:
 
-All machines have Ubuntu 18.04
+All machines have Ubuntu 18.04 or Ubuntu 20.04
 
 
 
