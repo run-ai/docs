@@ -11,13 +11,15 @@ The installation below assumes:
 * A single node, with at least one GPU.
 * Running Ubuntu 18.04 or Ubuntu 20.04.
 * `sudo` access to the node.
-* An email and a password provided by Run:AI customer support.
+* An email and a password provided by Run:AI customer support. 
 * Outbound internet connectivity
 
 If NVIDIA Drivers are not installed, the script will install the latest NVIDIA Drivers.
 
 
 ## Installation steps
+
+Log in to [app.run.ai](https://app.run.ai) for the first time to change your password. Do __not__ create a new Cluster.
 
 Get the script:
 
