@@ -28,9 +28,7 @@ Internally, Run:AI Projects are implemented as Kubernetes namespaces. The script
 ## Submit Workloads 
 
 
-### Train Jobs
-
-A Train Job is equivalent to __not__ using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Assuming you have the following parameters:
+### Regular Jobs
 
 * ``<JOB-NAME>``. The name of the Job. 
 
@@ -47,6 +45,8 @@ apiVersion: run.ai/v1
 kind: RunaiJob (* see note below)
 metadata:
   name: <JOB-NAME>
+  labels:
+    priorityClassName: "build" (** see note below)
 spec:
   template:
     metadata:
@@ -72,50 +72,10 @@ to submit the Job.
 
 !!! Note
     * You can use either a regular `Job` or `RunaiJob`. The later is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
+    ** Using 'build' in this field is equivilant to run a job with '--interactive' flag. To run Train job, delete this line
     * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
 
 
-### Build Jobs
-
-A Build Job is equivalent to using the CLI ``--interactive`` flag when calling [runai submit](../../Researcher/cli-reference/runai-submit.md). Copy the following into a file and change the parameters:
-
-``` yaml
-apiVersion: apps/v1
-kind: "StatefulSet"
-metadata:
-  name:  <JOB-NAME>
-spec:
-  serviceName:  <JOB-NAME>
-  replicas: 1
-  selector:
-    matchLabels:
-      release:  <JOB-NAME>
-  template:
-    metadata:
-      labels:
-        user:  <USER-NAME>
-        release:  <JOB-NAME>
-    spec:
-      schedulerName: runai-scheduler
-      containers:
-        - name:  <JOB-NAME>
-          command:
-          - "sleep"
-          args:
-          - "infinity"
-          image: <IMAGE-NAME>
-          resources:
-            limits:
-              nvidia.com/gpu: <REQUESTED-GPUs>
-```
-
-The YAML above contains a default command and arguments (``sleep infinity``) which you can replace.
-
-Run:
-
-    kubectl apply -f <FILE-NAME>
-
-to submit the Job.
 
 
 
