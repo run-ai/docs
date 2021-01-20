@@ -1,46 +1,48 @@
 # Troubleshooting
 
-## Determining the Health of a Run:AI Cluster
+## Determining Cluster Health
 
-To understand whether your Run:AI cluster is healthy you need perform the following verification tests:
-
-1. All Run:AI services are running.
-2. Data is sent to the cloud.
-3. A Job can be submitted.
+Following are a set of tests to run in order to determine cluster health:
 
 
-### 1. Run:AI services are running
+### 1. Verify that the Run:AI services are running
 
 Run:
 
-      kubectl get pods -n runai
+```
+kubectl get pods -n runai
+```
 
 Verify that all pods are in ``Running`` status. 
 
 Run:
 
-      kubectl get deployments -n runai
-      kubectl get sts -n runai
+```
+kubectl get deployments -n runai
+kubectl get sts -n runai
+```
 
-Verify that all items (deployments and StatefulSets alike) are in a ready state (1/1)
+Check that all items (deployments and StatefulSets alike) are in a ready state (1/1)
 
 Run:
 
-      kubectl get daemonset -n runai
-
+```
+kubectl get daemonset -n runai
+```
 
 A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes which contain GPUs. Verify that for all daemon-sets the _desired_ number is equal to  _current_ and to _ready_. 
 
 
-### 2. Data is sent to the cloud
+### 2. Verify that data is sent to the cloud
 
 Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new Project. Find the new Project using the CLI command:
 
-         runai list projects
-
+```
+runai list projects
+```
 
 ### 3. Submit a Job
 
@@ -49,12 +51,16 @@ Submitting a Job will allow you to verify that the Run:AI scheduling service is 
 * Make sure that the Project you have created has a quota of at least 1 GPU
 * Run:
 
-         runai config project <project-name>
-         runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
+``` 
+runai config project <project-name>
+runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
+```
 
 * Verify that the Job is a _Running_ state when running: 
 
-         runai list jobs
+```
+runai list jobs
+```
 
 * Verify that the Job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 
@@ -69,7 +75,8 @@ __Typical root causes:__
 * Firewall related issues.
 * Internal clock is not synced.
 
-### NVIDIA prerequisites have not been met
+
+__NVIDIA prerequisites have not been met__
 
 Run:
 
@@ -90,7 +97,7 @@ If the log contains an error, it means that NVIDIA related prerequisites have no
          sudo systemctl status docker
 
 
-### Firewall issues
+__Firewall issues__
 
 Add verbosity to Prometheus by editing RunaiConfig:
 ```
@@ -118,7 +125,7 @@ Verify that there are no errors. If there are connectivity related errors you ma
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
 
 
-### Clock is not synced
+__Machine Clocks are not synced__
 
 Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 
@@ -166,7 +173,8 @@ __Typical root causes:__
 * Incompatible NFS version
 
 
-### More than one default storage class is installed
+__More than one default storage class is installed__
+
  The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases, your k8s cluster may __already have__ a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
 
  Run:
@@ -192,7 +200,8 @@ local-path-provisioner:
       enabled: false
 ```
 
-### Incompatible NFS version
+__Incompatible NFS version__
+
 Default NFS Protocol [level](https://www.netapp.com/pdf.html?item=/media/19755-tr-3085.pdf){target=_blank} is currently 4. If your NFS requires an older version, you may need to add the option as follows. Run:
 
 ```
@@ -206,6 +215,26 @@ nfs-client-provisioner:
   nfs: 
     mountOptions: ["nfsvers=3"]
 ```
+
+## Symptom: Cluster Installation failed on Rancher-based Kubernetes (RKE)
+
+Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started
+
+__Resolution__
+
+During initialization, Run:AI creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+
+``` yaml
+kube-controller:
+ extra_args:
+  cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
+  cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
+```
+
+For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
+
+
+## Diagnostic Tools
 
 ### Adding Verbosity to Database container
 
@@ -230,7 +259,8 @@ Then view the log by running:
 kubectl logs -n runai runa-db-0 
 ```
 
-## Internal Networking Issues
+
+### Internal Networking Issues
 
 Run:AI is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a Pod with networking utilities and use it for network resolution:
 
