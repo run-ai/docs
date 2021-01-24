@@ -3,35 +3,44 @@
 ## Motivation
 
 Run:AI allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
-To achieve this flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires Researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
+To achieve this kind of flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires Researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
 
-Unattended workloads are good for long-duration runs, or sets of smaller hyperparameter optimization runs.
+Unattended workloads are a good fit for long-duration runs, or sets of smaller hyperparameter optimization runs.
 
 ## Best Practices
 
 ### Docker Image
 
-
-
 A docker container is based on a docker image. Some Researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}. 
 Others, use generic images as the __base__ image to a more customized image using [Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/){target=_blank}.
 
-Realizing that Researchers are not always proficient with building docker files, as a best practice you will want to:
+Realizing that Researchers are not always proficient with building docker files, as a best practice, you will want to:
 
 *   Use the same docker image both for interactive and unattended jobs. In this way, you can keep the difference between both methods of invocation to a minimum. This can be a stock image from Nvidia or a custom image.
-*   Leave some degree of flexibility which allows the Researcher to add/remove python dependencies without re-creating images.
+*   Leave some degree of flexibility, which allows the Researcher to add/remove python dependencies without re-creating images.
 
-As such we recommend the following best practice:
+
+### Code Location
+
+You will want to minimize the cycle of code change-and-run. There are a couple of best practices which you can choose from:
+
+1. Code resides on the network file storage. This way you can change the code and immediately run the Job. The Job picks up the new files from the network.
+2. Use the `runai submit` flag `--git-sync`. The flag allows the Researcher to provide details of a Git repository. The repository will be automatically cloned into a specified directory when the container starts.
+3. The code can be embedded within the image. In this case, you will want to create automatic CI/CD code, which packages the code into a modified image. 
+
+The document below assumes option #1. 
 
 ### Create a Startup Script
 
-All the commands you run inside the interactive Job after it has been allocated should be gathered into a single script. The script will be provided with the command-line at the start of the unattended execution (see the section _running the job_ below). This script should be kept next to your code, on a shared network drive (e.g. _/nfs/john_).
+Gather the commands you ran inside the interactive Job into a single script. The script will be provided with the command-line at the start of the unattended execution (see the section _running the job_ below). This script should be kept next to your code, on a shared network drive (e.g. _/nfs/john_).
 
-An example of a very common startup script __start.sh__ will be:
+An example of a common startup script __start.sh__:
 
-    pip install -r requirements.txt
-    ...
-    python training.py
+``` 
+pip install -r requirements.txt
+...
+python training.py
+```
 
 The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the Researcher to add/remove libraries without needing changes to the image itself.
 
@@ -49,7 +58,7 @@ In which case, change your start.sh script to:
 ...
 python training.py <strong>$@</strong></code></pre>
 
-2. Your script can read from environment variables during script execution. In case you use environment variables, they will be passed to the training script automatically. No special action is required in this case.
+2. Your script can read from environment variables during script execution. In case you use environment variables, the variables will be passed to the training script automatically. No special action is required in this case.
 
 ### Checkpoints
 
@@ -88,7 +97,7 @@ Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-su
 
 ### Use CLI Templates
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template those configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/template-config.md). 
+Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template these configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/template-config.md). 
 
 ## Attached Files
 
