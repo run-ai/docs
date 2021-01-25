@@ -19,7 +19,7 @@ If NVIDIA Drivers are not installed, the script will install the latest NVIDIA D
 
 ## Installation steps
 
-Log in to [app.run.ai](https://app.run.ai) for the first time to change your password. Do __not__ create a new Cluster.
+Log in to [app.run.ai](https://app.run.ai) for the first time to change your password. Do __not__ create a new Cluster, or the script will fail.
 
 Get the script:
 

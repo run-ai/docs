@@ -64,22 +64,22 @@ spec:
 ```
 
 
-Run:
+To submit the job, run:
 
-    kubectl apply -f <FILE-NAME>
-
-to submit the Job.
+```
+kubectl apply -f <FILE-NAME>
+```
 
 !!! Note
     * You can use either a regular `Job` or `RunaiJob`. The later is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
     * Using `build` in the `priorityClassName` field is equivalent to running a job via the CLI with a '--interactive' flag. To run Train job, delete this line.
-    * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated to Kubernetes API functions and added to the YAML above. 
+    * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
 
 
 
 ### Using Fractional GPUs
 
-Jobs with Fractions requires a change in the above YAML. Specifically the limits section:
+Jobs with Fractions requires a change in the above YAML. Specifically, the limits section:
 
 
 ``` yaml
@@ -102,17 +102,13 @@ where "0.5" is the requested GPU fraction.
 
 ## Delete Workloads
 
-To delete a Run:AI workload you need to delete the Job or StatefulSet according to the workload type
+To delete a Run:AI workload, delete the Job:
 
 ```
-kubectl delete job <JOB-NAME>
+kubectl delete runaijob <JOB-NAME>
 ```
 
-or: 
 
-```
-kubectl delete sts <STS-NAME>
-```
 
 ## See Also
 
