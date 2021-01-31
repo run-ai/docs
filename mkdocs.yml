@@ -56,11 +56,13 @@ plugins:
         'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md' : 'Administrator/admin-ui-setup/admin-ui-users.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
+        'home/whats-new.md' : 'home/whats-new-2021.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
-    - 'Whats New' : 'home/whats-new.md'
+    - 'Whats New 2021' : 'home/whats-new-2021.md'
+    - 'Whats New 2020' : 'home/whats-new-2020.md'
   - 'Administrator' :
     - 'Overview' : 'Administrator/overview-administrator.md'
     - 'Cluster Setup' :
