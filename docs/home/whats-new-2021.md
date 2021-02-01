@@ -1,4 +1,4 @@
-## January 22nd, 2021
+## January 22<sup>nd</sup>, 2021
 
 New Analytics dashboard with emphasis on CPU, CPU Memory, GPU and GPU Memory. Allows better diagnostics of resource misuse. 
 

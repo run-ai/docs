@@ -182,10 +182,10 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
 --cpu-limit double
-> Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of GPUs.
+> Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
 
 --gpu double | -g double
-> Number of GPUs to allocated for the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
+> Number of GPUs to allocated for the Job. The default is no allocated GPUs. The GPU value can be an integer or a fraction between 0 and 1.
 
 --gpu-memory
 > GPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of GPU memory to the Job.
