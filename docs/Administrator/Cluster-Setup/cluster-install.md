@@ -3,7 +3,7 @@ Below are instructions on how to install Run:AI cluster. Before installing, plea
 
 ## Step 1: NVIDIA
 
-On __each machine__ with GPUs run the following steps 1.1 - 1.4:
+On __each machine__ with GPUs run the following steps 1.1 - 1.4. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} 4.0 or later, you may skip to step 1.4.
 
 ### Step 1.1 Install NVIDIA Drivers
 
