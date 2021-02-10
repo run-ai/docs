@@ -19,6 +19,9 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
+!!! Note
+    At this point in time, Kuberentes does not support the latest Docker version 20.
+
 ### Step 1.3: Install NVIDIA Docker
 
 To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
