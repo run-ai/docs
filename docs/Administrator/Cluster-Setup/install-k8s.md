@@ -4,7 +4,7 @@ Kubernetes is composed of master(s) and workers. The instructions below are for 
 
 ## Prerequisites:
 
-All machines have Ubuntu 18.04 or Ubuntu 20.04
+The script below assumes all machines have Ubuntu 18.04 or Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 
 
 
