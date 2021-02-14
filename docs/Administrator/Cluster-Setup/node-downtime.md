@@ -14,7 +14,7 @@ The document differentiates between __Run:AI System Worker Nodes__ and __GPU Wor
 
 
 ## Worker Nodes
-Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether, for planned maintenance, or an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
+Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for the purpose of planned maintenance or due to an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
 ### Training vs. Interactive
 Run:AI differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
@@ -40,10 +40,9 @@ kubectl uncordon <node-name>
 
 ### Unplanned Downtime
 
+* If a node has failed and has immediately restarted, all services will automatically start. 
 
-* If a node has failed and has immediately restarted then all services will automatically start and there is nothing that needs doing.
-
-* If a node is to remain down for some time you will want to drain the node so that workloads will migrate to another node:
+* If a node is to remain down for some time, you will want to drain the node so that workloads will migrate to another node:
 
 ```
 kubectl drain <node_name> --delete-local-data --ignore-daemonsets
@@ -61,7 +60,7 @@ kubectl uncordon <node-name>
 kubectl delete node <node-name>
 ```
 
-However, if you plan to bring back the node, you will  need to rejoin the node into the cluster. See [Rejoin](#Rejoin Node into Kubernetes Cluster).
+However, if you plan to bring back the node, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin-a-Node-into-the-Kubernetes-Cluster).
 
 
 
@@ -73,7 +72,7 @@ However, if you plan to bring back the node, you will  need to rejoin the node i
 
 
 
-## Rejoin Node into Kubernetes Cluster
+## Rejoin a Node into the Kubernetes Cluster
 
 To rejoin a node to the cluster follow the following steps:
 
