@@ -3,13 +3,13 @@ Below are the prerequisites of a cluster installed with Run:AI.
 
 ## Kubernetes Software
 
-Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.18 is recommended (as of October 2020).
+Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.19 is recommended (as of February 2021).
 
 If you are using Red Hat OpenShift. The minimal version is OpenShift 4.3 which runs on Kubernetes 1.16.
 
 ## NVIDIA Driver
 
-Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 or later due to this [dependency](https://github.com/NVIDIA/k8s-device-plugin#prerequisites){target=_blank}.
+Run:AI requires all GPU nodes to be installed with NVIDIA driver version 410.104 or later and CUDA 9.0 or later. 
 
 ## Hardware Requirements
 
@@ -31,6 +31,10 @@ Run:AI requires all GPU nodes to be installed with NVIDIA driver version 384.81 
 * __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/){target=_blank} or set up a local registry on-premise (preferably on a dedicated machine). Run:AI can assist with setting up the repository.
 
 *  __Kubernetes__: Though out of scope for this document, Production Kubernetes installation requires separate nodes for the Kubernetes master. 
+
+## User requirements
+
+__Usage of containers and images:__ The individual Researcher's work should be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
 
 ## Network Requirements
 
@@ -138,18 +142,4 @@ In addition, once running, Run:AI will send metrics to two sources:
 </tbody>
 </table>
 
-## User requirements
 
-__Usage of containers and images:__ The individual Researcher's work is based on container images. Containers allow IT to create standard software environments based on mix and match of various cutting-edge software.
-
-<!-- ## Fractional GPU Requirements
-
-The Run:AI platform provides a unique technology that allows the sharing of a single GPU between multiple containers. Each container receives an isolated subset of the GPU memory. For more details see Quickstart document: [Using GPU Fractions](../../../Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions).
-
-This technology has more stringent software requirements than the rest of the Run:AI system. Specifically, virtualization has been tested on:
-
-*   NVIDIA device driver 410.104 or later
-*   CUDA 9.0 or later
-*   TensorFlow, Keras or PyTorch
-
-We keep testing the technology on additional software. -->
