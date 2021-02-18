@@ -35,6 +35,7 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
+
 sudo apt-get update
 sudo apt-get install -y kubelet=1.19.6-00 kubeadm=1.19.6-00 kubectl=1.19.6-00
 
@@ -78,7 +79,7 @@ Restart the docker service:
 sudo systemctl restart docker
 ```
 
-On Worker Nodes with Kubernetes, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-install/#step-13-install-nvidia-docker): 
+On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-install/#step-13-install-nvidia-docker): 
 
 Install Kubernetes worker:
 ``` shell

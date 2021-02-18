@@ -38,7 +38,7 @@ Run:
     kubectl apply -f cluster-config.yaml
 
 !!! Limitation
-    This configuration limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). There are third party enterprise tools that can provide this level of security. 
+    This configuration limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). There are third-party enterprise tools that can provide this level of security. 
  
 
 ## Creating a Temporary Home Directory
