@@ -27,6 +27,7 @@ runai-adm remove node-role --runai-system-worker <node-name>
 ## Dedicated GPU & CPU Nodes
 
 Separate nodes into those that:
+
 * Run GPU workloads
 * Run CPU workloads
 * Do not run Run:AI at all. these jobs will not be monitored using the Run:AI Administration User interface. 
