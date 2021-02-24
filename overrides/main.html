@@ -16,8 +16,10 @@
 {% endblock %}
 
 {% block extrahead %}
-    <meta property="og:title" content={{page.title}} />
-    <meta property="og:description" content="{{ page.toc }}" />
+
+    <meta property="og:title" content="{{page.title}}" />
+    <meta property="og:description" content="{% for toc_item in page.toc %} {% for toc_item in toc_item.children %} {{ toc_item.title }} {% endfor %}  {% endfor %}" />
+
 {% endblock %}
 
 {% block footer %}
