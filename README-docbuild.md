@@ -5,14 +5,7 @@
 ## One Time Installation:
 
 * Clone this repository
-* Run:
-
-      pip3 install mkdocs
-      pip3 install mkdocs-material
-      pip3 install mkdocs-git-revision-date-localized-plugin
-      pip3 install mkdocs-minify-plugin
-      pip3 install mkdocs-redirects
-      pip3 install mkdocs-render-swagger-plugin
+* Run: `pip install -r requirements.txt`
 
 
 ## Write & Test
@@ -27,10 +20,5 @@
 
 ## Deploy
 
-* Run:
+Push changes to master.
 
-      mkdocs gh-deploy
-     
-* view in [docs.run.ai](https://docs.run.ai)
-
-Don't forget to also git push your changed/new documents to this repository

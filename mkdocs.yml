@@ -88,7 +88,7 @@ nav:
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'
       - 'Troubleshooting' : 'Administrator/Researcher-Setup/cli-troubleshooting.md'
       - 'Researcher UI' : 'Administrator/Researcher-Setup/researcher-ui-setup.md'
-      - 'Use a Private Docker Registry' : 'Administrator/Researcher-Setup/docker-registry-config.md'
+      - 'Use a Docker Registry with Credentials' : 'Administrator/Researcher-Setup/docker-registry-config.md'
       - 'Switch from Docker to Run:AI ' : 'Administrator/Researcher-Setup/docker-to-runai.md'
       - 'Group Nodes' : 'Administrator/Researcher-Setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'Administrator/Researcher-Setup/use-secrets.md'
