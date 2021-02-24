@@ -95,6 +95,16 @@ multi-value-flag:
   - ...
 ```
 
+* When specifying a command and arguments, use the syntax:
+``` YAML
+command: 
+  value: true
+extra-args:
+  - sleep
+  - infinity
+```
+
+
 ## The Default Template
 
 The Administrator can also set a template that is always active:

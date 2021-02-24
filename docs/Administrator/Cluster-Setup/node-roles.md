@@ -4,7 +4,7 @@ When installing a production cluster you may want to:
 
 * Set one or more Run:AI system nodes. These are nodes dedicated to Run:AI software. 
 * Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
-* Limit Run:AI to specific nodes in the cluster. 
+* Limit Run:AI monitoring and scheduling to specific nodes in the cluster. 
 
 To perform these tasks you will need the Run:AI Administrator CLI. See [Installing the Run:AI Administrator Command-line Interface](cli-admin-install.md).
 
@@ -57,8 +57,10 @@ To remove the CPU or GPU worker node role run:
 
 ```
 runai-adm remove node-role --cpu-worker <node-name>
+```
 
 or 
 
+```
 runai-adm remove node-role --gpu-worker <node-name>
 ```
