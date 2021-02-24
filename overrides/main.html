@@ -15,6 +15,11 @@
     <!-- End of  Swagger custom style -->
 {% endblock %}
 
+{% block extrahead %}
+    <meta property="og:title" content={{page.title}} />
+    <meta property="og:description" content="{{ page.toc }}" />
+{% endblock %}
+
 {% block footer %}
 
 {% endblock %}
