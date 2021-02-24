@@ -19,6 +19,7 @@
 
     <meta property="og:title" content="{{page.title}}" />
     <meta property="og:description" content="{% for toc_item in page.toc %} | {{ toc_item.title }} | {% for toc_item in toc_item.children %}  {{ toc_item.title }}.   {% endfor %}  {% endfor %}" />
+    <meta property="og:image" content="https://docs.run.ai/home/img/runai-logo-transparent.png"/> 
 
 {% endblock %}
 
