@@ -93,10 +93,11 @@ nav:
       - 'Group Nodes' : 'Administrator/Researcher-Setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'Administrator/Researcher-Setup/use-secrets.md'
       - 'Configure Command-Line Interface Templates' : 'Administrator/Researcher-Setup/template-config.md'
-    - 'Admin UI Setup' :
+    - 'Admin UI' :
       - 'Users' : 'Administrator/admin-ui-setup/admin-ui-users.md'
       - 'Projects' : 'Administrator/admin-ui-setup/project-setup.md'
       - 'Departments' : 'Administrator/admin-ui-setup/department-setup.md'
+      - 'Dashboard Analysis' : 'Administrator/admin-ui-setup/dashboard-analysis.md'
     - 'Presentations' :
       - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
     - 'Tools' :
