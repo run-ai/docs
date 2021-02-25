@@ -10,7 +10,7 @@ __Analysis and Suggested actions__:
 
 | Action   | Analysis |
 |----------|--------|
-| Interactive jobs are too frequently idle | *  Consider setting time limits for interactive jobs through the Projects tab. </br>  *  Consider also reducing GPU quotas for specific projects to encourage users to run more training jobs as opposed to interactive jobs (note that interactive jobs can not use more than the GPU quota assigned to their project). |
+| Interactive jobs are too frequently idle | *  Consider setting time limits for interactive jobs through the Projects tab. <br> *  Consider also reducing GPU quotas for specific projects to encourage users to run more training jobs as opposed to interactive jobs (note that interactive jobs can not use more than the GPU quota assigned to their project). |
 | Training jobs are too frequently idle | Identify and notify the right users and work with them to improve the utilization of their training scripts |
 
 
