@@ -115,7 +115,7 @@ __How to__: view the following panels.
 
 ![](img/gpu-allocation.png)
 
-The panel on the right-hand side shows the cluster-wide GPU allocation and utilization versus time, whereas the panels on the left-hand side show the cluster-wide GPU allocation and utilization averaged across the filtered time range. (for some reason Veoneer didn’t understand that these panels are cluster-wide metrics).
+The panel on the right-hand side shows the cluster-wide GPU allocation and utilization versus time, whereas the panels on the left-hand side show the cluster-wide GPU allocation and utilization averaged across the filtered time range.
 
 __Analysis and Suggested actions__:
 
