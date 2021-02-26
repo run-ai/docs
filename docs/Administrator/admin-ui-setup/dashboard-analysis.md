@@ -13,8 +13,8 @@ There are 3 dashboards:
 
 The Overview dashboard provides information about what is happening __right now__ in the cluster.  Administrators can view high-level information on the state of the cluster, including:
 
-* The number of available and allocated resources and their cluster-wide utilization.
-* The number of running and pending __Jobs__, their utilization, information on Jobs with errors or Jobs with idle GPUs,
+* The number of available and allocated resources and their cluster-wide utilization
+* The number of running and pending __Jobs__, their utilization, information on Jobs with errors or Jobs with idle GPUs
 * Active __Projects__, their assigned and allocated GPU, and number of running and pending Jobs
 
 Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
@@ -46,7 +46,7 @@ __How to__: view the following panel:
 
 __Analysis and Suggested actions__:
 
-Discuss with Job owner. Consider deleting these Jobs in order to free up the resources for other users. 
+Search for Jobs with an Error status on the Jobs view and discuss with Job owner. Consider deleting these Jobs in order to free up the resources for other users.
 
 ### Jobs with a Long Duration 
 
@@ -86,8 +86,8 @@ Also check the command that the user used to submit the job. The Reseracher may 
 
 The Analytics dashboard provides means for viewing historical data on cluster information such as:
 
-* and utilization across the cluster,
-* GPU usage by different __Projects__, including allocation and utilization broke down into interactive and training Jobs,
+* Utilization across the cluster
+* GPU usage by different __Projects__, including allocation and utilization, broken down into interactive and training Jobs
 * Breakdown of running __Jobs__ into interactive, training, and GPU versus CPU-only Jobs, including information on queueing (number of pending Jobs and requested GPUs),
 * Status of Nodes in terms of availability and allocated and utilized resources.
 
@@ -111,13 +111,15 @@ __Analysis and Suggested actions__:
 
 Track GPU allocation across time.
 
-__How to__: view the following panel:
+__How to__: view the following panels. 
 
 ![](img/gpu-allocation.png)
 
+The panel on the right-hand side shows the cluster-wide GPU allocation and utilization versus time, whereas the panels on the left-hand side show the cluster-wide GPU allocation and utilization averaged across the filtered time range. (for some reason Veoneer didn’t understand that these panels are cluster-wide metrics).
+
 __Analysis and Suggested actions__:
 
-If allocation is too low for a long period of time, work with users to run more workloads and to better utilize the Cluster.
+If the allocation is too low for a long period of time, work with users to run more workloads and to better utilize the Cluster.
 
 
 ### Track GPU utilization
@@ -148,18 +150,19 @@ __How to__: view the following panel:
 
 ![](img/training-interactive.png)
 
+
 __Analysis and Suggested actions__:
 
 We would want to encourage users to run more training Jobs than interactive Jobs, as it is the key for achieving high GPU utilization across the Cluster:
 
-* Training Jobs run to completion
-* Training Job free up their resources automatically when training ends, and they can be preempted, queued and resumed automatically by the Run:AI system according to predefined policies which increases fairness and Cluster utilization.
+* Training Jobs run to completion and free up their resources automatically when training ends
+* Training Jobs can be preempted, queued, and resumed automatically by the Run:AI system according to predefined policies which increases fairness and Cluster utilization.
 
 ### Pending Queue Size
 
 Track how long is the queue for pending Jobs
 
-__How to__: view the following panel:
+__How to__: view the following panels:
 
 ![](img/pending-jobs.png)
 
