@@ -7,7 +7,7 @@ This document is about accessing the remote container created by Run:AI via such
 
 ## Submit a Workload
 
-Run the following command to connect to the Jupyter Notebook container as if it were running local:
+Run the following command to connect to the Jupyter Notebook container as if it were running locally:
 
 ```
 runai submit build-jupyter --jupyter -g 1

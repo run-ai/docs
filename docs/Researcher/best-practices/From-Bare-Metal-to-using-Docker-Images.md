@@ -9,7 +9,7 @@ This is the fastest way to start working, but it introduces problems when the da
 *   More Researchers mean that the machine resources need to be efficiently shared
 *   Researchers need to collaborate and share data, code, and results
 
-To overcome that, people working on bare-metal typically write scripts to gather data, code and code dependencies. This soon becomes an overwhelming task.
+To overcome that, people working on bare-metal typically write scripts to gather data, code as well as code dependencies. This soon becomes an overwhelming task.
 
 ## Why Use Docker Images?
 Docker images and 'containerization' in general provide a level of abstraction which, by large, frees developers and Researchers from the mundane tasks of 'setting up an environment'. The image is an operating system by itself and thus the 'environment' is by large, a part of the image.
@@ -57,7 +57,7 @@ The best practice is to have your docker startup script (see below) run this fil
 
 Deep learning workloads can be divided into two generic types:
 
-<li>Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter Notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads are typically meant for debug and development sessions.
+<li>Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter Notebook, remote PyCharm, or similar and accesses GPU resources directly. Build workloads are typically meant for debugging and development sessions.
 </li>
 <li>Unattended "training" sessions. Training is characterized by a machine learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the data scientist can examine the results. A Training session can take from a few minutes to a couple of days. It can be interrupted in the middle and later restored (though the data scientist should save checkpoints for that purpose). Training workloads typically utilize large percentages of the GPU and at the end of the run automatically frees the resources.
 </li>
@@ -74,11 +74,11 @@ Start a docker container by running:
 
 You get a shell prompt to a container with a mounted volume of where your code is. You can then install your prerequisites and run your code via ssh.
 
-You can also access the container remotely from tools such as PyCharm, Jupyter Notebook and more. In this case, the docker image needs to be customized to install the "server software" (e.g. a Jupyter Notebook service).
+You can also access the container remotely from tools such as PyCharm, Jupyter Notebook, and more. In this case, the docker image needs to be customized to install the "server software" (e.g. a Jupyter Notebook service).
 
 ### Training Workloads
 
-For training workloads you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often then not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a __base image__ and add your own customizations __on top__ of it. To achieve that, you create a __Dockerfile__. A Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
+For training workloads, you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often than not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a __base image__ and add your own customizations __on top__ of it. To achieve that, you create a __Dockerfile__. A Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
 
 <ol><li>Base image is nvidia-tensorflow</li>
 <li>Install popular software</li>
@@ -87,4 +87,4 @@ For training workloads you can use a well-known image (e.g. the nvidia-tensorflo
 
 The script can be part of the image or can be provided as part of the command-line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
 
-Best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training Job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](convert-to-unattended.md).
+The best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training Job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](convert-to-unattended.md).

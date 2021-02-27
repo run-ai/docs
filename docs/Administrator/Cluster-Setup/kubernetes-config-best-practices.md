@@ -1,6 +1,6 @@
 ## Safely Remove a Node
 
-Every now and again, you may need to take down a node. Typically for maintenance purposes. The node about to be taken down may be running Jobs. Without additional preparations, these Jobs will abruptly come to an end, and wait for the node to come up. To allow the Jobs to gracefully shut-down and be immediately re-allocated to other nodes, perform the following:
+Now and again, you may need to take down a node. Typically for maintenance purposes. The node about to be taken down might be running Jobs. Without additional preparations, these Jobs will abruptly come to an end and wait for the node to come up. To allow the Jobs to gracefully shut-down and be immediately re-allocated to other nodes, perform the following:
 
 To get the name of the node, run: 
 
@@ -25,7 +25,7 @@ It is possible for Researchers to over-allocate memory to the extent that, if no
 
 ### Symptoms
 
-1. The node enters the "NotReady" state, and won't be "Ready" again until the resource issues have been fixed. This issue appears on certain versions of _kubelet_ (1.17.4 for example), that have a bug which causes kubelet to not recover properly when encountering certain errors, and must be restarted manually.
+1. The node enters the "NotReady" state, and won't be "Ready" again until the resource issues have been fixed. This issue appears on certain versions of _kubelet_ (1.17.4 for example), that have a bug that causes kubelet to not recover properly when encountering certain errors, and must be restarted manually.
 
 2. SSH to the node and overall node access can be very slow.
 

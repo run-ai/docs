@@ -10,7 +10,7 @@ The purpose of this document is to describe the Run:AI scheduler and explain how
 
 Run:AI differentiates between two types of deep learning workloads:
 
-*   __Interactive__ build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
+*   __Interactive__ build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm, or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
 *   __Unattended__ (or "non-interactive") training workloads.Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the Researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
 It follows that a good practice for the Researcher is to save checkpoints and allow the code to restore from the last checkpoint.
 
@@ -24,7 +24,7 @@ For further information on Projects and how to configure them, see: [Working wit
 
 ### Departments
 
-A _Department_ is a second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Project quota.  
+A _Department_ is the second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Project quota.  
 
 For further information on Departments and how to configure them, see: [Working with Departments](../../Administrator/admin-ui-setup/department-setup.md)
 
@@ -50,7 +50,7 @@ The Researcher uses the _--interactive_ flag to specify whether the workload is 
 Every new workload is associated with a Project. The Project contains a deserved GPU quota. During scheduling:
 
 *   If the newly required resources, together with currently used resources, end up within the Project's quota, then the workload is ready to be scheduled as part of the guaranteed quota.
-*   If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow which are meant to ensure that a Project does not end up with over-quota made fully of interactive workloads. For additional details see below
+*   If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below
 
 ## Scheduler Details
 
@@ -104,11 +104,11 @@ Run:AI provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
 
-One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between Jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB or memory, then the Job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memory exception.
+One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between Jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB of memory, then the Job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memory exception.
 
 GPU Fractions are scheduled as regular GPUs in the sense that:
 
-* Allocation is made in fractions such that the total of the GPU allocation for a single GPU is smaller or equal to 1.
+* Allocation is made using fractions such that the total of the GPU allocation for a single GPU is smaller or equal to 1.
 * Preemption is available for non-interactive workloads.  
 * Bin-packing & Consolidation work the same for fractions.
 
@@ -120,14 +120,14 @@ Support:
 
 ### Distributed Training
 
-Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ process which manages and coordinates the other worker pods.
+Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a _pod_ (see definition above). Run:AI spawns an additional _launcher_ process that manages and coordinates the other worker pods.
 
 Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
 
-* The scheduler must ensure that multiple pods are started on what is typically multiple nodes, before the Job can start. 
+* The scheduler must ensure that multiple pods are started on what are typically multiple Nodes before the Job can start. 
 * If one pod is preempted, the others are also immediately preempted.
 
-Gang Scheduling essentially prevents scenarios where part of the pods are scheduled while other pods belonging to the same Job are pending for resources to become available; scenarios that can cause  deadlock situations and major inefficiencies in cluster utilization. 
+Gang Scheduling essentially prevents scenarios where part of the pods are scheduled while other pods belonging to the same Job are pending for resources to become available; scenarios that can cause deadlock situations and major inefficiencies in cluster utilization. 
 
 The Run:AI system provides:
 
@@ -141,9 +141,9 @@ For more information on Distributed Training in Run:AI see [here](../Walkthrough
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine results to decide what works best.
 
 
-With HPO, the Researcher provides a single script which is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods are exactly as described in the Scheduler Details section above for Jobs. 
+With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs. 
 
 For more information on Hyperparameter Optimization in Run:AI see [here](../Walkthroughs/walkthrough-hpo.md)

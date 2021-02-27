@@ -15,7 +15,7 @@ The Overview dashboard provides information about what is happening __right now_
 
 * The number of available and allocated resources and their cluster-wide utilization
 * The number of running and pending __Jobs__, their utilization, information on Jobs with errors or Jobs with idle GPUs
-* Active __Projects__, their assigned and allocated GPU, and number of running and pending Jobs
+* Active __Projects__, their assigned and allocated GPUs and number of running and pending Jobs
 
 Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
 
@@ -46,7 +46,7 @@ __How to__: view the following panel:
 
 __Analysis and Suggested actions__:
 
-Search for Jobs with an Error status on the Jobs view and discuss with Job owner. Consider deleting these Jobs in order to free up the resources for other users.
+Search for Jobs with an Error status on the Jobs view and discuss with the Job owner. Consider deleting these Jobs to free up the resources for other users.
 
 ### Jobs with a Long Duration 
 
@@ -60,7 +60,7 @@ __Analysis and Suggested actions__:
 
 | Review  | Analysis & Actions |
 |---------|---------------------|
-| Training Jobs run for too long | Ask users to view Job and analyze whether useful work is being done. If needed, stop their Jobs. | 
+| Training Jobs run for too long | Ask users to view their Jobs and analyze whether useful work is being done. If needed, stop their Jobs. | 
 | Interactive Jobs run for too long | Consider setting time limits for interactive Jobs via the Project editor. |
 
 
@@ -79,7 +79,7 @@ __Analysis and Suggested actions__:
 | Cluster is fully loaded | Go over the table of active Projects and check that fairness between Projects was enforced, by reviewing the number of allocated GPUs for each Project, ensuring each Project was allocated with its fair-share portion of the cluster. |
 | Cluster is not fully loaded | Go to the Jobs view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
-Also check the command that the user used to submit the job. The Reseracher may have requested a specific Node for that Job.
+Also, check the command that the user used to submit the job. The Reseracher may have requested a specific Node for that Job.
 
 
 ## Analytics Dashboard
@@ -132,10 +132,10 @@ __How to__: view the following panel:
 
 __Analysis and Suggested actions__:
 
-If utilization is too low for a long period of time, you will want to identify the source of the problem:
+If utilization is too low for a long period, you will want to identify the source of the problem:
 
 * Go to “Average GPU Allocation & Utilization” 
-* Look for Projects with large GPU allocations for interactive Jobs or Projects that poorly utilize their training Jobs. Users tend to poorly utilize their GPUs in interactive sessions because of the dev & debug nature of their work which typically is an iterative process with long idle GPU time. In many occasions users also don’t shut down their interactive Jobs, holding their GPUs idle and preventing others from using them. 
+* Look for Projects with large GPU allocations for interactive Jobs or Projects that poorly utilize their training Jobs. Users tend to poorly utilize their GPUs in interactive sessions because of the dev & debug nature of their work which typically is an iterative process with long idle GPU time. On many occasions users also don’t shut down their interactive Jobs, holding their GPUs idle and preventing others from using them. 
 
 | Review  | Analysis & Actions  |
 |---------|---------------------|
@@ -144,7 +144,7 @@ If utilization is too low for a long period of time, you will want to identify t
 
 ### Training vs. Interactive -- Researcher maturity 
 
-Track number of running Jobs and the breakdown into interactive, training, and CPU-only Jobs. 
+Track the number of running Jobs and the breakdown into interactive, training, and CPU-only Jobs. 
 
 __How to__: view the following panel:
 
@@ -153,7 +153,7 @@ __How to__: view the following panel:
 
 __Analysis and Suggested actions__:
 
-We would want to encourage users to run more training Jobs than interactive Jobs, as it is the key for achieving high GPU utilization across the Cluster:
+We would want to encourage users to run more training Jobs than interactive Jobs, as it is the key to achieving high GPU utilization across the Cluster:
 
 * Training Jobs run to completion and free up their resources automatically when training ends
 * Training Jobs can be preempted, queued, and resumed automatically by the Run:AI system according to predefined policies which increases fairness and Cluster utilization.
@@ -177,7 +177,7 @@ Consider buying more GPUs if,
 
 ### CPU & Memory Utilization
  
-Track CPU and memory Node utilization and identify times where load on specific Nodes is high. 
+Track CPU and memory Node utilization and identify times where the load on specific Nodes is high. 
 
 __How to__: view the following panel:
 
@@ -192,6 +192,6 @@ Consider adding more CPUs, or adding additional CPU-only nodes for Jobs that do 
 
 ## Multi-Cluster Overview Dashboard
 
-Provides a holistic, aggregated view across Clusters, including information about Cluster and Node utilization, available resources and allocated resources. With this dashboard you can identify Clusters that are down or underutilized and go to the Overview of that Cluster to explore further. 
+Provides a holistic, aggregated view across Clusters, including information about Cluster and Node utilization, available resources, and allocated resources. With this dashboard, you can identify Clusters that are down or underutilized and go to the Overview of that Cluster to explore further. 
 
 ![](img/multi-cluster-overview.png)

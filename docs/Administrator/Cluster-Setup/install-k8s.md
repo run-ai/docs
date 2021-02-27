@@ -67,7 +67,7 @@ Verify that the master node is ready
 
 ## Run on Kubernetes Workers
 
-If not yet installed, install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically you can use a convenience script provided in the document:
+If not yet installed, install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically, you can use a convenience script provided in the document:
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -108,7 +108,7 @@ sudo kubeadm join 10.0.0.3:6443 --token <token> \
 ```
 
 !!! Note
-    The default token expires after 24 hours. If the token has expired, go to the master node and run `sudo kubeadm token create --print-join-command`. This will produce an up to date join command.
+    The default token expires after 24 hours. If the token has expired, go to the master node and run `sudo kubeadm token create --print-join-command`. This will produce an up-to-date join command.
 
 
 Return to the master node. Re-run `kubectl get nodes` and verify that the new node is ready.

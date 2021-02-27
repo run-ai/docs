@@ -1,6 +1,6 @@
 ## Introduction
 
-When we discuss the allocation of deep learning compute resources, the discussion tends to focus on GPUs as the most critical resource. But there are two additional resources that are no less important:
+When we discuss the allocation of deep learning compute resources, the discussion tends to focus on GPUs as the most critical resource. But two additional resources are no less important:
 
 *   CPUs. Mostly needed for preprocessing and postprocessing tasks during a deep learning training run.
 *   Memory. Has a direct influence on the quantities of data a training run can process in batches.
@@ -30,7 +30,7 @@ The number of CPUs your Job will receive is guaranteed to be the number defined 
 
 The amount of Memory your Job will receive is guaranteed to be the number defined using the --memory flag. In practice, however, you may receive <ins>more memory than you have asked</ins> for. This is along the same lines as described with CPU over allocation above.
 
-It is important to note, however, that if you have used this memory over-allocation, and new workloads have joined, your Job may receive an out of memory exception and terminate.
+It is important to note, however, that if you have used this memory over-allocation, and new workloads have joined, your Job may receive an out-of-memory exception and terminate.
 
 ## CPU and Memory limits
 

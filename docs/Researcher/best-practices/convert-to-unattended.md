@@ -26,7 +26,7 @@ You will want to minimize the cycle of code change-and-run. There are a couple o
 
 1. Code resides on the network file storage. This way you can change the code and immediately run the Job. The Job picks up the new files from the network.
 2. Use the `runai submit` flag `--git-sync`. The flag allows the Researcher to provide details of a Git repository. The repository will be automatically cloned into a specified directory when the container starts.
-3. The code can be embedded within the image. In this case, you will want to create automatic CI/CD code, which packages the code into a modified image. 
+3. The code can be embedded within the image. In this case, you will want to create an automatic CI/CD process, which packages the code into a modified image. 
 
 The document below assumes option #1. 
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 python training.py
 ```
 
-The first line of this script is there to make sure that all required python libraries are installed prior to the training script execution, it also allows the Researcher to add/remove libraries without needing changes to the image itself.
+The first line of this script is there to make sure that all required python libraries are installed before the training script executes, it also allows the Researcher to add/remove libraries without needing changes to the image itself.
 
 ### Support Variance Between Different Runs
 
@@ -68,11 +68,11 @@ TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. [
 
 It is important to __save the checkpoints to network storage__ and not the machine itself. When your workload resumes, it can, in all probability, be allocated to a different node (machine) than the original node
 
-For more information on best practices for saving checkpoints, see: [Saving Deep Learning Checkpoints](Saving-Deep-Learning-Checkpoints.md).
+For more information on best practices for saving checkpoints, see [Saving Deep Learning Checkpoints](Saving-Deep-Learning-Checkpoints.md).
 
 ## Running the Job
 
-Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass  environment variables using the  flag ``--environment``.
+Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
 
 Example with Environment variables:
 

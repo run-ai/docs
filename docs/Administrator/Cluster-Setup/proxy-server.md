@@ -2,7 +2,7 @@
 
 Run:AI is installed on GPU clusters. These clusters must have outbound internet connectivity to the Run:AI cloud. Details can be found here:  [Run-AI-GPU-Cluster-Prerequisites](cluster-prerequisites.md) under "Network Requirements".
 
-In some organizations, outbound connectivity requires a proxy. Traffic originating from servers and browsers within the organizations flows through a gateway that inspects the traffic, calls the destination and returns the contents. 
+In some organizations, outbound connectivity requires a proxy. Traffic originating from servers and browsers within the organizations flows through a gateway that inspects the traffic and forwards it to its destination.
 
 Organizations sometimes employ a further security measure by signing packets with an organizational certificate.  The software initiating the HTTP request must acknowledge this certificate, otherwise, it would interpret it as a man-in-the-middle attack. 
 
@@ -16,7 +16,7 @@ The Run:AI cluster installation is performed by accessing the Administrator User
 
 Search for ``httpProxy``:
 
-``` yaml
+``` YAML
 global:
 ...
     httpProxy:

@@ -2,13 +2,13 @@
 
 The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:AI Jobs for execution. 
 
-A Job has a __status__. Once a Job is submitted it goes through a number of statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
+A Job has a __status__. Once a Job is submitted it goes through several statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
 
 The purpose of this document is to explain these statuses as well as the lifecycle of a Job. 
 
 ## Successful Flow
 
-A regular, _training_ Job which has no errors and executes without preemption would go through the following statuses:
+A regular, _training_ Job that has no errors and executes without preemption would go through the following statuses:
 
 ![Job-Statuses-Success](img/Job-Statuses-Success.png)
 
@@ -33,13 +33,13 @@ A regular, _training_ Job may encounter an error inside the running process (exi
 
 ![Job-Statuses Training Error](img/Job-Statuses-Training-Error.png)
 
-The Job enters an _Error_ status and then immediately tries to reschedule itself for another attempted run. The reschedule can happen on another node in the system. After a specified number or retires the Job will enter a final status of _Fail_
+The Job enters an _Error_ status and then immediately tries to reschedule itself for another attempted run. The reschedule can happen on another node in the system. After a specified number of retries, the Job will enter a final status of _Fail_
 
-An _interactive_ Job, enters an _Error_ status and then moves  immediately to _CrashLoopBackOff_ trying to reschedule itself. The reschedule attempt has no 'back-off' limit and will continue to retry indefinitely 
+An _interactive_ Job, enters an _Error_ status and then moves immediately to _CrashLoopBackOff_ trying to reschedule itself. The reschedule attempt has no 'back-off' limit and will continue to retry indefinitely 
 
 ![Job-Statuses Interactive Error](img/Job-Statuses-Interactive-Error.png)
 
-Jobs may be submitted with an image which cannot be downloaded. There are special statuses for such Jobs. See table below 
+Jobs may be submitted with an image that cannot be downloaded. There are special statuses for such Jobs. See table below 
 
 
 ## Status Table

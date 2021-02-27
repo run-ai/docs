@@ -12,7 +12,7 @@ You can delete the Job manually by running:
 
 But this may not be scalable for a production system.
 
-It is possible to flag a Job for automatic deletion some time after its finish.
+It is possible to flag a Job for automatic deletion sometime after it finishes.
 
 !!! Important note 
     Deleting a Job, deletes the container behind it, and with it all related information such as Job logs. Data that was saved by the Researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
@@ -52,7 +52,7 @@ spec:
 
 ## Automatic Deletion
 
-When starting the Job, add the flag `--ttl-after-finish duration`. duration is the duration, post Job finish, after which the Job is automatically deleted. Example durations are: 5s, 2m, 3h, 4d etc. For example, the following call will delete the Job 2 hours after the Job finishes:
+When starting the Job, add the flag `--ttl-after-finish duration`. duration is the duration, post Job finish, after which the Job is automatically deleted. Example durations are 5s, 2m, 3h, 4d, etc. For example, the following call will delete the Job 2 hours after the Job finishes:
 
 ```
 runai submit myjob1 --ttl-after-finish 2h
