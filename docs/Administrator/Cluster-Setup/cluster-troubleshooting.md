@@ -1,10 +1,17 @@
 
 ## Determining Cluster Health
 
-Following are a set of tests to run in order to determine cluster health:
+Following are a set of tests to run to determine cluster health:
+
+### 2. Verify that data is sent to the cloud
+
+Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
+
+* Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
+* Go to __Projects__ and create a new Project. Find the new Project using the CLI command:
 
 
-### 1. Verify that the Run:AI services are running
+### 2. Verify that the Run:AI services are running
 
 Run:
 
@@ -18,10 +25,9 @@ Run:
 
 ```
 kubectl get deployments -n runai
-kubectl get sts -n runai
 ```
 
-Check that all items (deployments and StatefulSets alike) are in a ready state (1/1)
+Check that all deployments are in a ready state (1/1)
 
 Run:
 
@@ -31,13 +37,6 @@ kubectl get daemonset -n runai
 
 A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemon-sets the _desired_ number is equal to  _current_ and to _ready_. 
 
-
-### 2. Verify that data is sent to the cloud
-
-Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
-
-* Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
-* Go to __Projects__ and create a new Project. Find the new Project using the CLI command:
 
 ```
 runai list projects
@@ -71,7 +70,7 @@ Some or all metrics are not showing in [https://app.run.ai/dashboards/now](https
 __Typical root causes:__
 
 * NVIDIA prerequisites have not been met.
-* Firewall related issues.
+* Firewall-related issues.
 * Internal clock is not synced.
 
 
@@ -79,13 +78,17 @@ __NVIDIA prerequisites have not been met__
 
 Run:
 
-      runai pods -n runai | grep nvidia
+```
+runai pods -n runai | grep nvidia
+```
 
-Select one of the nvidia pods and run:
+Select one of the NVIDIA pods and run:
 
-      kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
+```
+kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
+```
 
-If the log contains an error, it means that NVIDIA related prerequisites have not been met. Review step 1 in [NVIDIA prerequisites](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-1-nvidia). Verify that:
+If the log contains an error, it means that NVIDIA-related prerequisites have not been met. Review step 1 in [NVIDIA prerequisites](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-1-nvidia). Verify that:
 
 * Step 1.1: NVIDIA drivers are installed
 * Step 1.2: NVIDIA Docker is installed. A typical issue here is the installation of the _NVIDIA Container Toolkit_ instead of _NVIDIA Docker 2_. 
@@ -93,12 +96,14 @@ If the log contains an error, it means that NVIDIA related prerequisites have no
 * If the system has recently been installed, verify that docker has restarted by running the aforementioned  `pkill` command
 * Check the status of Docker by running:
 
-         sudo systemctl status docker
-
+```
+sudo systemctl status docker
+```
 
 __Firewall issues__
 
 Add verbosity to Prometheus by editing RunaiConfig:
+
 ```
 kubectl edit runaiconfig runai -n runai
 ```
