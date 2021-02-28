@@ -48,7 +48,7 @@ sudo yum install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 ```
 
-For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/){target=_blank}.
+For a detailed review of the above instructions, see the [NVIDIA Container Toolkit  installation instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}.
 
 !!! Warning
     Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker/NVIDIA container toolkit.
