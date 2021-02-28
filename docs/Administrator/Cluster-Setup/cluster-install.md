@@ -51,7 +51,7 @@ sudo pkill -SIGHUP dockerd
 For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/){target=_blank}.
 
 !!! Warning
-    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank} __NVIDIA container runtime__ which is the successor of __NVIDIA Docker__.
+    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker.
 
 ### Step 1.4: Make NVIDIA Docker the default docker runtime
 
