@@ -13,7 +13,7 @@ Run:
 nvidia-smi
 ```
 
-If the command is not successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){_target=blank}. When the installation is finished you must reboot your computer. 
+If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){_target=blank} to install. When the installation is finished you must reboot your computer. 
 
 
 ### Step 1.2: Install Docker
