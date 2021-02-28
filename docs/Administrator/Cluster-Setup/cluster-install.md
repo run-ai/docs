@@ -80,10 +80,15 @@ There are several good ways to install Kubernetes. A full list can be found here
 1. __Native__ installation. For simple Kubernetes installation, the easiest and fastest way to setup Kubernetes is through a [Native Kubernetes Installation](install-k8s.md).
 2. __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}. Kubespray uses Ansible scripts.  Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. 
 
-!!! Note
+### Specific Kubernetes Variants
+
+* If you are installing Kubernetes using [Rancher](https://rancher.com/){target=_blank}, please review the extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). 
+* Run:AI Works with OpenShift. For specific installation instructions for OpenShift, please contact Run:AI customer support. 
+
+
+!!! Warning
     Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI. 
 
-Some best practices on Kubernetes configuration can be found here: [Kubernetes Cluster Configuration Best Practices](kubernetes-config-best-practices.md).
 
 The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to a functioning Kubernetes cluster.
 
@@ -108,7 +113,7 @@ The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``r
 ## Step 4: Verify your Installation
 
 *   Go to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}.
-*   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appear on the bottom line.
+*   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).
 
