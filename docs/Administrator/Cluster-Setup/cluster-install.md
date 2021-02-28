@@ -5,11 +5,16 @@ Below are instructions on how to install Run:AI cluster. Before installing, plea
 
 On __each machine__ with GPUs run the following steps 1.1 - 1.4. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} 4.0 or later, you may skip to step 2.
 
-### Step 1.1 Install NVIDIA Drivers
+### Step 1.1 Install the CUDA Toolkit 
 
-If NVIDIA drivers are not already installed on your GPU machines, please install them now. After installing NVIDIA drivers, reboot the machine. Then verify that the installation succeeded by running:
+Run: 
 
-    nvidia-smi
+``` 
+nvidia-smi
+```
+
+If the command is not successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){_target=blank}. When the installation is finished you must reboot your computer. 
+
 
 ### Step 1.2: Install Docker
 
