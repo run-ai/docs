@@ -13,7 +13,7 @@ Run:
 nvidia-smi
 ```
 
-If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){_target=blank} to install. When the installation is finished you must reboot your computer. 
+If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){target=_blank} to install. When the installation is finished you must reboot your computer. 
 
 
 ### Step 1.2: Install Docker
@@ -27,7 +27,7 @@ sudo sh get-docker.sh
 !!! Warning
     Kubernetes does not currently support the latest Docker version 20.
 
-### Step 1.3: Install NVIDIA Docker
+### Step 1.3: Install NVIDIA Container Toolkit (previously named NVIDIA Docker)
 
 To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
 
@@ -51,7 +51,7 @@ sudo pkill -SIGHUP dockerd
 For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/){target=_blank}.
 
 !!! Warning
-    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker.
+    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker/NVIDIA container toolkit.
 
 ### Step 1.4: Make NVIDIA Docker the default docker runtime
 
@@ -90,9 +90,9 @@ There are several good ways to install Kubernetes. A full list can be found here
     Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI. 
 
 
-The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to a functioning Kubernetes cluster.
-
 ## Step 3: Install Run:AI
+
+The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to a functioning Kubernetes cluster.
 
 ### Step 3.1: Install Run:AI
 

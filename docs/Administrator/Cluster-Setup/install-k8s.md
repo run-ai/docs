@@ -40,7 +40,7 @@ sudo apt-get update
 sudo apt-get install -y kubelet=1.19.6-00 kubeadm=1.19.6-00 kubectl=1.19.6-00
 
 sudo swapoff -a
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.19.6 --ttl 7d
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.19.6 --token-ttl 7d
 ```
 
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
