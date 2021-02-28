@@ -24,8 +24,8 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
-!!! Note
-    At this point in time, Kuberentes does not support the latest Docker version 20.
+!!! Warning
+    Kubernetes does not currently support the latest Docker version 20.
 
 ### Step 1.3: Install NVIDIA Docker
 
@@ -49,6 +49,9 @@ sudo pkill -SIGHUP dockerd
 ```
 
 For a detailed review of the above instructions, see the [NVIDIA Docker installation instructions](https://nvidia.github.io/nvidia-docker/){target=_blank}.
+
+!!! Warning
+    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){_target=blank} _NVIDIA container runtime_ which is the successor of _NVIDIA Docker_.
 
 ### Step 1.4: Make NVIDIA Docker the default docker runtime
 

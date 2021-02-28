@@ -90,7 +90,7 @@ kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
 
 If the log contains an error, it means that NVIDIA-related prerequisites have not been met. Review step 1 in [NVIDIA prerequisites](../Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster/#step-1-nvidia). Verify that:
 
-* Step 1.1: NVIDIA drivers are installed
+* Step 1.1: CUDA Toolkit is installed
 * Step 1.2: NVIDIA Docker is installed. A typical issue here is the installation of the _NVIDIA Container Toolkit_ instead of _NVIDIA Docker 2_. 
 * Step 1.3: Verify that NVIDIA Docker is the __default__ docker runtime
 * If the system has recently been installed, verify that docker has restarted by running the aforementioned  `pkill` command
