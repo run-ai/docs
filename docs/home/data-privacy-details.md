@@ -2,7 +2,7 @@
 
 The Run:AI privacy policy is [here](https://www.run.ai/privacy/){target=_blank}. It relates to both our website and the Run:AI Platform.
 
-Following is a list of data items and their flow :
+Following is a list of platform data items and their flow :
 
 | Asset   | Details  | Data Flow |
 |---------|----------|-----------|
