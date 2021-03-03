@@ -8,7 +8,7 @@ Following is a list of platform data items and their flow :
 |---------|----------|-----------|
 |  Researcher artifacts |  Code, images, container logs, training data, models, checkpoint and the like.   | Not collected. Stays behind the firewall |
 | Job Metrics | Job names, CPU, GPU, and Memory metrics, parameters sent using the runai submit command |  Managed via Run:AI Web application |
-| Node Metrics | Node names and ips, CPU, GPU, and Memory metrics |  Managed via Run:AI Web application |
+| Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |  Managed via Run:AI Web application |
 | Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |  Managed via Run:AI Web application |
 | Projects & Departments | Names, quota information | Managed via Run:AI Web application |
 | Users | User roles | Managed via Run:AI Web application |
