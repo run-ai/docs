@@ -12,5 +12,5 @@ Following is a list of platform data items and their flow :
 | Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |  Managed via Run:AI Web application |
 | Projects & Departments | Names, quota information | Managed via Run:AI Web application |
 | Users | User roles | Managed via Run:AI Web application |
-| Users | User emails | Managed by a third party auth0.com. See privacy policy and compliance [statements](https://auth0.com/security){target=_blank} |
+| Users | User emails and passwords | Managed by a third party auth0.com. See privacy policy and compliance [statements](https://auth0.com/security){target=_blank} |
 
