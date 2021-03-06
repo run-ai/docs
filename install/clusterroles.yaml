@@ -270,40 +270,6 @@ subjects:
     name: runai-admission-controller
     namespace: runai
 ---
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  namespace: runai
-  name: init-ca
-  annotations:
-    "helm.sh/hook": pre-install, pre-upgrade
-    "helm.sh/hook-weight": "-1"
-rules:
-  - apiGroups: [""] # "" indicates the core API group
-    resources: ["secrets"]
-    verbs: ["get", "patch", "create"]
-  - apiGroups: ['policy']
-    resources: ['podsecuritypolicies']
-    verbs: ["use"]
-    resourceNames:
-      - runai-init-ca
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  annotations:
-    "helm.sh/hook": pre-install, pre-upgrade
-    "helm.sh/hook-weight": "-1"
-  namespace: runai
-  name: init-ca
-roleRef:
-  kind: Role
-  apiGroup: rbac.authorization.k8s.io
-  name: init-ca
-subjects:
-  - kind: ServiceAccount
-    name: init-ca
----
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
