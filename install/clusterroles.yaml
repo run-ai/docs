@@ -251,11 +251,6 @@ rules:
   - apiGroups: [""]
     resources: ["configmaps"]
     verbs: ["create", "get", "update"]
-  - apiGroups: ['policy']
-    resources: ['podsecuritypolicies']
-    verbs: ["use"]
-    resourceNames:
-      - runai-admission-controller
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
