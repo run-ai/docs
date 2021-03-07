@@ -540,3 +540,105 @@ subjects:
   - kind: ServiceAccount
     name: runai-project-controller
     namespace: runai
+---
+
+# ------------- Project-based Researcher Access Control -------------------
+
+# This role encapsulates all current api *read* actions runai-cli performs
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-job-viewer
+rules:
+  - apiGroups: [ "" ]
+    resources: [ "endpoints", "events", "namespaces", "configmaps", "pods", "nodes", "services", "services/proxy" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "apps" ]
+    resources: [ "statefulsets", "replicasets" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "discovery.k8s.io" ]
+    resources: [ "endpointslices" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "batch" ]
+    resources: [ "jobs" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "run.ai" ]
+    resources: [ "runaijobs", "projects" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "extensions" ]
+    resources: [ "ingresses" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "schedueling" ]
+    resources: [ "priorityclasses" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "kubeflow.org" ]
+    resources: [ "mpijobs" ]
+    verbs: [ "get", "list" ]
+
+---
+
+# Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: runai-job-viewer
+roleRef:
+  kind: ClusterRole
+  name: runai-job-viewer
+  apiGroup: rbac.authorization.k8s.io
+
+---
+
+# This role encapsulates all current *write* api actions runai-cli performs
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-job-executor
+rules:
+  - apiGroups: [ "" ]
+    resources: [ "configmaps", "services", "pods/exec", "pods/attach" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+  - apiGroups: [ "" ]
+    resources: [ "pods/log", "pods/exec", "pods/attach" ]
+    verbs: [ "get", "list", "watch" ]
+  - apiGroups: [ "apps" ]
+    resources: [ "statefulsets", "replicasets" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+  - apiGroups: [ "extensions" ]
+    resources: [ "ingresses" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+  - apiGroups: [ "batch" ]
+    resources: [ "jobs" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+  - apiGroups: [ "run.ai" ]
+    resources: [ "runaijobs" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+  - apiGroups: [ "kubeflow.org" ]
+    resources: [ "mpijobs" ]
+    verbs: [ "create", "update", "patch", "delete" ]
+
+---
+
+# This role is separated since we bind it only to the runai namespace so its not really related to the executor role (but it is a must if the user is an executor)
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-cli-index-map-editor
+rules:
+  - apiGroups: [ "" ]
+    resources: [ "configmaps" ]
+    resourceNames: [ "runai-cli-index" ]
+    verbs: [ "update", "patch" ]
+
+---
+
+# Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: runai-cli-index-map-editor
+  namespace: runai
+roleRef:
+  kind: ClusterRole
+  name: runai-cli-index-map-editor
+  apiGroup: rbac.authorization.k8s.io 
