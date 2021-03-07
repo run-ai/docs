@@ -629,16 +629,3 @@ rules:
     resources: [ "configmaps" ]
     resourceNames: [ "runai-cli-index" ]
     verbs: [ "update", "patch" ]
-
----
-
-# Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: runai-cli-index-map-editor
-  namespace: runai
-roleRef:
-  kind: ClusterRole
-  name: runai-cli-index-map-editor
-  apiGroup: rbac.authorization.k8s.io 
