@@ -8,7 +8,10 @@ import numpy as np
 import scipy # scipy.misc.imresize() is was removed in scipy-1.3.0
 
 # the total GPU memory available
-TOTAL_MEMORY = int(subprocess.check_output('nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits --id=0', shell=True)) # in MiB
+if "RUNAI_GPU_MEMORY_MIB" in os.environ:
+    TOTAL_MEMORY = int(os.getenv("RUNAI_GPU_MEMORY_MIB"))
+else:
+    TOTAL_MEMORY = int(subprocess.check_output('nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits --id=0', shell=True)) # in MiB
 
 # the needed GPU memory in order to run this model with batch size 64
 # this is not precise and is the amount of GPU memory in the on-prem server
