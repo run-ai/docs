@@ -102,7 +102,7 @@ Run:AI Elasticity is explained [here](../researcher-library/rl-elasticity.md). I
 
 Run:AI provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU.
 
-Run:AI’s fractional GPU system effectively creates virtualized logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
+Run:AI’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. 
 
 One important thing to note is that fraction scheduling divides up __GPU memory__. As such the GPU memory is divided up between Jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB of memory, then the Job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memory exception.
 
