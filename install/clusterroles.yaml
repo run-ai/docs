@@ -424,7 +424,7 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - secrets
+  - secrets   # Must be removed before reaching a customer
   - configmaps
   - limitranges
   - serviceaccounts
