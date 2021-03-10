@@ -27,21 +27,30 @@ rules:
   - customresourcedefinitions
   verbs:
   - create
+- apiGroups:
+  - admissionregistration.k8s.io
+  resources:
+  - mutatingwebhookconfigurations
+  - validatingwebhookconfigurations
+  verbs:
+  - get
+  - create
+  - delete
 ---
-# kind: ClusterRoleBinding
-# apiVersion: rbac.authorization.k8s.io/v1
-# metadata:
-#   name: runai-operator
-#   namespace: runai
-# subjects:
-# - kind: ServiceAccount
-#   name: runai-operator
-#   namespace: runai
-# roleRef:
-#   kind: ClusterRole
-#   name: runai-operator
-#   apiGroup: rbac.authorization.k8s.io
-# ---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-operator
+  namespace: runai
+subjects:
+- kind: ServiceAccount
+  name: runai-operator
+  namespace: runai
+roleRef:
+  kind: ClusterRole
+  name: runai-operator
+  apiGroup: rbac.authorization.k8s.io
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
