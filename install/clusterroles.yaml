@@ -150,6 +150,13 @@ rules:
       - pods/binding
       - runaijobs
       - statefulsets
+      - statefulsets/finalizers
+      - jobs/finalizers
+      - deployments/finalizers
+      - runaijobs/finalizers
+      - mpijobs/finalizers
+      - replicasets/finalizers
+      - pods/finalizers
     verbs:
       - create
       - get
