@@ -87,8 +87,7 @@ spec:
         gpu-fraction: "0.5"
 ``` 
 
-Jobs with MPS enabled requires a change in the above YAML. Specifically, the limits section:
-should be omitted and replaced with:
+Jobs with MPS enabled requires a change in the above YAML. 
 
 ``` yaml
 spec:
@@ -97,8 +96,6 @@ spec:
       annotations:
         mps: "true"
 ``` 
-
-where "0.5" is the requested GPU fraction.
 
 
 ## Delete Workloads
