@@ -1,22 +1,14 @@
 # Submit an inference Job using YAML
 
 
+##  Submit Inference Jobs Allocating Full GPUs
 
-## Submit Workloads
-
-
-### Regular Inference Jobs
-
-* ``<JOB-NAME>``. The name of the Job.
-
-* ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
-
-* ``<USER-NAME>`` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
-
+* `<JOB-NAME>`. The name of the Job.
+* `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart`
+* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
 * ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
 
-Copy the following into a file and change the parameters:
-Notice that this example contains a service creation as well. It is not a must, but for most inference cases the service will be created as well.  
+Copy the following into a file while substituting the parameters:
 
 ```yaml
 apiVersion: apps/v1
@@ -61,6 +53,8 @@ spec:
     app: <JOB-NAME>
 ```
 
+!!! Note
+    This example contains the creation of a service as well. The service is used to connect to the inference server. It is not mandatory, but for most inference cases the service will be needed as well.   
 
 To submit the job, run:
 
@@ -69,7 +63,9 @@ kubectl apply -f <FILE-NAME>
 ```
 
 
-Jobs with Fractions requires a change in the above YAML. Specifically, the limits section:
+##  Submit Inference Jobs Allocating Fractions of a GPU
+
+Jobs with Fractions require a change in the above YAML. Specifically, the limits section:
 
 
 ``` yaml
@@ -87,7 +83,7 @@ spec:
         gpu-fraction: "0.5"
 ``` 
 
-Jobs with MPS enabled requires a change in the above YAML. 
+Jobs with NVIDIA MPS require a change in the above YAML. 
 
 ``` yaml
 spec:
@@ -97,10 +93,13 @@ spec:
         mps: "true"
 ``` 
 
+!!! Important Note
+    To use MPS, your administrator must first enable it. See the [setup](setup.md) document. 
+
 
 ## Delete Workloads
 
-To delete a Run:AI workload, delete the Job:
+To delete a Run:AI Inference workload, delete the Job:
 
 ```
 kubectl delete runaijob <JOB-NAME>
