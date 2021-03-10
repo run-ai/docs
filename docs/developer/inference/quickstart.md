@@ -19,16 +19,17 @@ To complete this Quickstart you must have:
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
-### Run Workload
+### Run an Inference Workload
 
 *   At the command-line run:
 
 ```
 runai config project team-a
-runai submit --name inference-job -i gcr.io/run-ai-demo/quickstart-inference-marian -g 1 --inference --service-type nodeport --port 8888
+runai submit --name inference1 --service-type nodeport --port 8888  --inference \
+    -i gcr.io/run-ai-demo/quickstart-inference-marian  -g 1
 ```
 
-This would start an inference Job for team-a with an allocation of a single GPU. The inference Job is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Job ``train1``
+This would start an inference Job for team-a with an allocation of a single GPU. The inference Job is based on a [sample](https://github.com/run-ai/models/tree/main/models/marian/server){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart-inference-marian``. The inference engine is using [Marian](https://marian-nmt.github.io/){target=_blank}
 
 *   Follow up on the Job's progress by running:
 
@@ -36,20 +37,18 @@ This would start an inference Job for team-a with an allocation of a single GPU.
 
 The result:
 
+__XXX MISSING PICTURE XXX __
+
 <!-- ![mceclip00.png](img/mceclip00.png) -->
 
-Typical statuses you may see:
 
-*   ContainerCreating - The docker container is being downloaded from the cloud repository
-*   Pending - the Job is waiting to be scheduled
-*   Running - the Job is running
-*   Succeeded - the Job has ended
+### Query the Inference Server
 
-<!-- A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)  -->
+The specific `marian` server is accepting queries over the _WebSockets_ protocol. You can use the sample client provided in XXXX..
 
-To get additional status on your Job run:
+....
 
-    runai describe job train1
+
 
 ### View Logs
 
