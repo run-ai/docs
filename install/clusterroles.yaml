@@ -290,7 +290,6 @@ roleRef:
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  namespace: runai
   name: runai-admission-controller
 rules:
   - apiGroups:
