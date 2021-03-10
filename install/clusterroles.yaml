@@ -293,15 +293,37 @@ metadata:
   namespace: runai
   name: runai-admission-controller
 rules:
-  - apiGroups: [""]
-    resources: ["namespaces"]
-    verbs: ["get"]
-  - apiGroups: ["scheduling.incubator.k8s.io"]
-    resources: ["queues"]
-    verbs: ["get"]
-  - apiGroups: [""]
-    resources: ["configmaps"]
-    verbs: ["create", "get", "update"]
+  - apiGroups:
+    - ""
+    resources:
+    - namespaces
+    verbs:
+    - get
+  - apiGroups:
+    - scheduling.incubator.k8s.io
+    resources:
+    - queues
+    verbs:
+    - get
+  - apiGroups:
+    - ""
+    - apps
+    - batch
+    - kubeflow.org
+    - run.ai
+    resources:
+    - configmaps
+    - statefulsets/finalizers
+    - jobs/finalizers
+    - deployments/finalizers
+    - runaijobs/finalizers
+    - mpijobs/finalizers
+    - replicasets/finalizers
+    - pods/finalizers
+    verbs:
+    - create
+    - get
+    - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
