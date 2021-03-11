@@ -101,6 +101,7 @@ rules:
       - scheduling.k8s.io
       - scheduling.incubator.k8s.io
       - storage.k8s.io
+      - apps
     resources:
       - departments
       - deployments
@@ -147,6 +148,7 @@ rules:
       - kubeflow.org
       - run.ai
       - scheduling.incubator.k8s.io
+      - apps
     resources:
       - configmaps
       - events

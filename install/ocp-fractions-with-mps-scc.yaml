@@ -1,0 +1,91 @@
+kind: SecurityContextConstraints
+apiVersion: security.openshift.io/v1
+metadata:
+  name: runai-mps-server
+allowHostIPC: true
+allowHostDirVolumePlugin: true
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+allowedCapabilities: null
+defaultAddCapabilities: null
+readOnlyRootFilesystem: false
+requiredDropCapabilities: null
+priority: 10
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: MustRunAs
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: runai-mps-server
+  namespace: runai
+rules:
+  - apiGroups:
+      - security.openshift.io
+    resourceNames:
+      - runai-mps-server
+    resources:
+      - securitycontextconstraints
+    verbs:
+      - use
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: runai-mps-server
+  namespace: runai
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: runai-mps-server
+subjects:
+  - kind: ServiceAccount
+    name: runai-mps
+    namespace: runai
+---
+kind: SecurityContextConstraints
+apiVersion: v1
+metadata:
+  name: runai-user-job
+allowHostDirVolumePlugin: true
+allowHostIPC: true
+priority: 10
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: MustRunAs
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: runai-user-job
+rules:
+  - apiGroups:
+      - security.openshift.io
+    resourceNames:
+      - runai-user-job
+    resources:
+      - securitycontextconstraints
+    verbs:
+      - use
+---
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: runai-container-toolkit
+allowHostDirVolumePlugin: true
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: true
+allowedCapabilities:
+  - '*'
+priority: 10
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+
