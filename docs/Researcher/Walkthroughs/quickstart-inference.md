@@ -81,5 +81,4 @@ Run the following:
 
     runai delete inference1
 
-This would stop the inference workload. You can verify this by running ``runai list jobs`` again.
-
+This would stop the inference workload. Verify this by running ``runai list jobs`` again.

@@ -1,4 +1,4 @@
-# Submit an inference Workload using YAML
+# Submit an inference Workload via YAML
 
 
 ##  Submit Inference Workloads Allocating Full GPUs

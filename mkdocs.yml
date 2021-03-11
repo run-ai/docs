@@ -181,4 +181,5 @@ nav:
     - 'Inference' :
       - 'Overview' : 'developer/inference/overview.md' 
       - 'Setup' : 'developer/inference/setup.md' 
+      - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
       - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
