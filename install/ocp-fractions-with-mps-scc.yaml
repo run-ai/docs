@@ -53,7 +53,7 @@ apiVersion: security.openshift.io/v1
 metadata:
   name: runai-user-job
 allowHostDirVolumePlugin: true
-allowHostIPC: false
+allowHostIPC: true
 allowHostNetwork: false
 allowHostPID: false
 allowHostPorts: false
