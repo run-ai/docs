@@ -170,6 +170,7 @@ rules:
       - pods/finalizers
     verbs:
       - create
+      - delete      
       - get
       - list
       - patch
