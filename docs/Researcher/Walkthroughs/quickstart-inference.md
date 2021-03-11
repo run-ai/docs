@@ -88,7 +88,7 @@ This would stop the inference workload. Verify this by running ``runai list jobs
 At the command-line run:
 
 ```
-runai submit --name inference2 --service-type nodeport --port 8888 --inference \
+runai submit inference2 --service-type nodeport --port 8888 --inference \
     -i gcr.io/run-ai-demo/quickstart-inference-marian  --replicas 4 -g 0.25 
 ```
 
