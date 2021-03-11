@@ -9,12 +9,12 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: runai-allow-hostpath
+  name: runai-user-job
   namespace: runai-PROJECT_NAME
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: runai-allow-hostpath
+  name: runai-user-job
 subjects:
 - kind: ServiceAccount
   name: default
