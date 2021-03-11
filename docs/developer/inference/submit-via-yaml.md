@@ -25,7 +25,6 @@ spec:
       labels:
         app: inference
       annotations:
-        gpu-fraction: 1
         user: <USER-NAME>
     spec:
       schedulerName: runai-scheduler
