@@ -92,4 +92,4 @@ runai submit --name inference2 --service-type nodeport --port 8888 --inference \
     -i gcr.io/run-ai-demo/quickstart-inference-marian  -g 0.25 —replicas 4
 ```
 
-This will create 4 replicas of the same service that will each run with 25% of the GPU Memory at the total of 1 GPU.
+This will create 4 replicas of the same service that will each run with 25% of the GPU Memory at a total of 1 GPU for all replicas.
