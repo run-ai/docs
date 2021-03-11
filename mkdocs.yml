@@ -116,6 +116,7 @@ nav:
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Elasticity' : 'Researcher/Walkthroughs/walkthrough-elasticity.md'
+      - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
@@ -177,3 +178,7 @@ nav:
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
     - 'Integrations' :
       - 'Airflow integration' : 'developer/integrations/airflow-integration.md' 
+    - 'Inference' :
+      - 'Overview' : 'developer/inference/overview.md' 
+      - 'Setup' : 'developer/inference/setup.md' 
+      - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
