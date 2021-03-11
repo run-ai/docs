@@ -29,7 +29,7 @@ To complete this Quickstart you must have:
 
 ```
 runai config project team-a
-runai submit --name inference1 --service-type nodeport --port 8000 --inference \
+runai submit --name inference1 --service-type nodeport --port 8888 --inference \
     -i gcr.io/run-ai-demo/quickstart-inference-marian  -g 1
 ```
 
