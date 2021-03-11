@@ -83,4 +83,3 @@ Run the following:
 
 This would stop the inference workload. You can verify this by running ``runai list jobs`` again.
 
-## Next Steps

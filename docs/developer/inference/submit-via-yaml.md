@@ -1,12 +1,12 @@
-# Submit an inference Job using YAML
+# Submit an inference Workload using YAML
 
 
-##  Submit Inference Jobs Allocating Full GPUs
+##  Submit Inference Workloads Allocating Full GPUs
 
-* `<JOB-NAME>`. The name of the Job.
+* `<WORKLOAD-NAME>`. The name of the Workload.
 * `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart`
-* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
-* ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
+* `<USER-NAME>` The name of the user submitting the Workload. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
+* ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Workload. Examples: 1, 2
 
 Copy the following into a file while substituting the parameters:
 
@@ -14,12 +14,12 @@ Copy the following into a file while substituting the parameters:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: <JOB-NAME>
+  name: <WORKLOAD-NAME>
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: <JOB-NAME>
+      app: <WORKLOAD-NAME>
   template:
     metadata:
       labels:
@@ -31,7 +31,7 @@ spec:
       schedulerName: runai-scheduler
       containers:
         - image: <IMAGE-NAME>
-          name: <JOB-NAME>
+          name: <WORKLOAD-NAME>
           ports:
             - containerPort: <TARGET-PORT>
           resources:
@@ -42,30 +42,30 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app:  <JOB-NAME>
-  name:  <JOB-NAME>
+    app:  <WORKLOAD-NAME>
+  name:  <WORKLOAD-NAME>
 spec:
   type: NodePort
   ports:
     - port: <PORT>
       targetPort: <TARGET-PORT>
   selector:
-    app: <JOB-NAME>
+    app: <WORKLOAD-NAME>
 ```
 
 !!! Note
-    This example contains the creation of a service as well. The service is used to connect to the inference server. It is not mandatory, but for most inference cases the service will be needed as well.   
+    This example also contains the creation of a service. The service is used to connect to the inference server. It is not mandatory, but for most inference cases the service will be needed as well.   
 
-To submit the job, run:
+To submit the Workload, run:
 
 ```
 kubectl apply -f <FILE-NAME>
 ```
 
 
-##  Submit Inference Jobs Allocating Fractions of a GPU
+##  Submit Inference Workloads Allocating Fractions of a GPU
 
-Jobs with Fractions require a change in the above YAML. Specifically, the limits section:
+Workloads with Fractions require a change in the above YAML. Specifically, the limits section:
 
 
 ``` yaml
@@ -83,7 +83,7 @@ spec:
         gpu-fraction: "0.5"
 ``` 
 
-Jobs with NVIDIA MPS require a change in the above YAML. 
+Workloads with NVIDIA MPS require a change in the above YAML. 
 
 ``` yaml
 spec:
@@ -99,8 +99,8 @@ spec:
 
 ## Delete Workloads
 
-To delete a Run:AI Inference workload, delete the Job:
+To delete a Run:AI Inference workload, delete the Workload:
 
 ```
-kubectl delete runaijob <JOB-NAME>
+kubectl delete runaijob <WORKLOAD-NAME>
 ```
