@@ -23,7 +23,7 @@ To complete this Quickstart you must have:
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
-### Run an Inference Workload
+### Run an Inference Workload - Single Replica
 
 *   At the command-line run:
 
@@ -74,7 +74,6 @@ You should see a log of the inference call:
 ![inference-job-list.png](img/inference-job-list.png) 
 
 
-
 ### Stop Workload
 
 Run the following:
@@ -82,3 +81,13 @@ Run the following:
     runai delete inference1
 
 This would stop the inference workload. Verify this by running ``runai list jobs`` again.
+
+
+### Run an Inference Workload - Multiple Replicas
+
+At the command-line run:
+
+```
+runai submit --name inference2 --service-type nodeport --port 8888 --inference \
+    -i gcr.io/run-ai-demo/quickstart-inference-marian  -g 0.25
+```
