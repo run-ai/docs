@@ -23,7 +23,7 @@ spec:
   template:
     metadata:
       labels:
-        app: inference
+        app: <WORKLOAD-NAME>
       annotations:
         user: <USER-NAME>
     spec:
