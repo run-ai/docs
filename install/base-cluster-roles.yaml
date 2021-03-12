@@ -517,6 +517,7 @@ rules:
       - ""
     resources:
       - limitranges
+      - limitranges/finalizers
     verbs:
       - update
       - create

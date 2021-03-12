@@ -19,34 +19,7 @@ rules:
       - ""
     resources:
       - namespaces
-    verbs:
-      - create
-      - update
-      - get
-      - list
-      - watch
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: runai-project-controller-administrator
-rules:
-  - apiGroups:
-      - rbac.authorization.k8s.io
-    resources:
-      - clusterroles
-    verbs:
-      - bind
-  - apiGroups:
-      - rbac.authorization.k8s.io
-    resources:
-      - rolebindings
-    verbs:
-      - '*'
-  - apiGroups:
-      - ""
-    resources:
-      - namespaces
+      - namespaces/finalizers
     verbs:
       - create
       - update
