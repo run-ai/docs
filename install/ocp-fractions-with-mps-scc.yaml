@@ -41,7 +41,7 @@ metadata:
   namespace: runai
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: runai-mps-server
 subjects:
   - kind: ServiceAccount
