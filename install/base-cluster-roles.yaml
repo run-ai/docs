@@ -554,9 +554,6 @@ rules:
   - apiGroups: [ "kubeflow.org" ]
     resources: [ "mpijobs" ]
     verbs: [ "get", "list" ]
-  - apiGroups: [ "route.openshift.io" ]
-    resources: [ "routes" ]
-    verbs: [ "get" ]
 
 ---
 
@@ -579,10 +576,10 @@ metadata:
   name: runai-job-executor
 rules:
   - apiGroups: [ "" ]
-    resources: [ "configmaps", "services", "pods/exec", "pods/attach" ]
+    resources: [ "configmaps", "services", "persistentvolumeclaims", "pods/exec", "pods/attach" ]
     verbs: [ "create", "update", "patch", "delete" ]
   - apiGroups: [ "" ]
-    resources: [ "pods/log", "pods/exec", "pods/attach" ]
+    resources: [ "persistentvolumeclaims", "pods/log", "pods/exec", "pods/attach" ]
     verbs: [ "get", "list", "watch" ]
   - apiGroups: [ "apps" ]
     resources: [ "statefulsets", "replicasets", "deployments" ]
