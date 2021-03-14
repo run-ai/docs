@@ -4,7 +4,7 @@
 ##  Submit Inference Workloads Allocating Full GPUs
 
 * `<WORKLOAD-NAME>`. The name of the Workload.
-* `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart`
+* `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart-inference-marian`
 * `<USER-NAME>` The name of the user submitting the Workload. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../Administrator/Cluster-Setup/researcher-authentication.md).
 * ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Workload. Examples: 1, 2
 
@@ -46,7 +46,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: <PORT>
+    - port: <TARGET-PORT>
       targetPort: <TARGET-PORT>
   selector:
     app: <WORKLOAD-NAME>
