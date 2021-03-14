@@ -163,6 +163,7 @@ rules:
       - statefulsets
       - statefulsets/finalizers
       - jobs/finalizers
+      - deployments
       - deployments/finalizers
       - runaijobs/finalizers
       - mpijobs/finalizers
