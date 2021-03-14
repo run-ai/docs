@@ -441,6 +441,8 @@ rules:
       - configmaps
     verbs:
       - create
+      - delete
+      - patch
       - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
