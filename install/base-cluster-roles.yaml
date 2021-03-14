@@ -554,6 +554,9 @@ rules:
   - apiGroups: [ "kubeflow.org" ]
     resources: [ "mpijobs" ]
     verbs: [ "get", "list" ]
+  - apiGroups: [ "route.openshift.io" ]
+    resources: [ "routes" ]
+    verbs: [ "get" ]
 
 ---
 
