@@ -556,7 +556,10 @@ rules:
   - apiGroups: [ "kubeflow.org" ]
     resources: [ "mpijobs" ]
     verbs: [ "get", "list" ]
-
+ - apiGroups: [ "route.openshift.io" ]
+    resources: [ "routes" ]
+    verbs: [ "get" ]
+    
 ---
 
 # Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
