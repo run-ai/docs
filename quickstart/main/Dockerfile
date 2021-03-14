@@ -86,5 +86,8 @@ COPY ./cifar-10 /workload/cifar-10
 COPY ./entrypoint.sh /workload/
 COPY ./main.py /workload/
 
+RUN mkdir /.horovod
+RUN chmod -R 777 /.horovod
+
 WORKDIR /workload
 ENTRYPOINT ["./entrypoint.sh"]

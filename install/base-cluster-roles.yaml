@@ -163,6 +163,7 @@ rules:
       - statefulsets
       - statefulsets/finalizers
       - jobs/finalizers
+      - deployments
       - deployments/finalizers
       - runaijobs/finalizers
       - mpijobs/finalizers
@@ -441,6 +442,8 @@ rules:
       - configmaps
     verbs:
       - create
+      - delete
+      - patch
       - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -517,6 +520,7 @@ rules:
       - ""
     resources:
       - limitranges
+      - limitranges/finalizers
     verbs:
       - update
       - create
@@ -553,7 +557,10 @@ rules:
   - apiGroups: [ "kubeflow.org" ]
     resources: [ "mpijobs" ]
     verbs: [ "get", "list" ]
-
+  - apiGroups: [ "route.openshift.io" ]
+    resources: [ "routes" ]
+    verbs: [ "get" ]
+    
 ---
 
 # Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
@@ -575,10 +582,10 @@ metadata:
   name: runai-job-executor
 rules:
   - apiGroups: [ "" ]
-    resources: [ "configmaps", "services", "pods/exec", "pods/attach" ]
+    resources: [ "configmaps", "services", "persistentvolumeclaims", "pods/exec", "pods/attach" ]
     verbs: [ "create", "update", "patch", "delete" ]
   - apiGroups: [ "" ]
-    resources: [ "pods/log", "pods/exec", "pods/attach" ]
+    resources: [ "persistentvolumeclaims", "pods/log", "pods/exec", "pods/attach" ]
     verbs: [ "get", "list", "watch" ]
   - apiGroups: [ "apps" ]
     resources: [ "statefulsets", "replicasets", "deployments" ]
