@@ -10,18 +10,10 @@ rules:
       - namespaces
     verbs:
       - get
-
-## Will be removed - Start
   - apiGroups:
       - scheduling.incubator.k8s.io
     resources:
       - departments
-    verbs:
-      - '*'
-  - apiGroups:
-      - scheduling.k8s.io
-    resources:
-      - priorityclasses
     verbs:
       - '*'
   - apiGroups:
@@ -30,16 +22,6 @@ rules:
       - customresourcedefinitions
     verbs:
       - create
-  - apiGroups:
-      - admissionregistration.k8s.io
-    resources:
-      - mutatingwebhookconfigurations
-      - validatingwebhookconfigurations
-    verbs:
-      - get
-      - create
-      - delete
-## WIll be removed - End.
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
