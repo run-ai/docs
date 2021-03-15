@@ -1,3 +1,4 @@
+# Installs and maintains Run:AI installation
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -9,6 +10,8 @@ rules:
       - namespaces
     verbs:
       - get
+
+## Will be removed - Start
   - apiGroups:
       - scheduling.incubator.k8s.io
     resources:
@@ -36,6 +39,7 @@ rules:
       - get
       - create
       - delete
+## WIll be removed - End.
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
@@ -51,42 +55,46 @@ roleRef:
   name: runai-operator
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: researcher-service
-rules:
-  - apiGroups:
-      - ""
-      - apps
-      - run.ai
-    resources:
-      - configmaps
-      - namespaces
-      - pods
-      - pods/log
-      - projects
-      - runaijobs
-      - statefulsets
-    verbs:
-      - create
-      - delete
-      - get
-      - list
+## Researcher User interface used to create Jobs and view Projects
+## Commented out until it is limited to reader access only 
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRole
+# metadata:
+#   name: researcher-service
+# rules:
+#   - apiGroups:
+#       - ""
+#       - apps
+#       - run.ai
+#     resources:
+#       - configmaps
+#       - namespaces
+#       - pods
+#       - pods/log
+#       - projects
+#       - runaijobs
+#       - statefulsets
+#     verbs:
+#       - create
+#       - delete
+#       - get
+#       - list
+# ---
+# kind: ClusterRoleBinding
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   name: researcher-service
+# subjects:
+#   - kind: ServiceAccount
+#     name: researcher-service
+#     namespace: runai
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: ClusterRole
+#   name: researcher-service
 ---
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: researcher-service
-subjects:
-  - kind: ServiceAccount
-    name: researcher-service
-    namespace: runai
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: researcher-service
----
+# Run:AI Scheduler reader
+# Allow the reading of the current state of the cluster (pods, nodes, pod-groups, jobs, StatefulSets, deployments) to make optimal scheduling decisions. 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -136,6 +144,10 @@ roleRef:
   kind: ClusterRole
   name: runai-scheduler-ro
 ---
+# Run:AI Scheduler writer
+# Allows the applying of scheduling decisions to the cluster, like updating pod, creating pod-group, etc. 
+# Write access is limited to runai-* namespaces (associated ClusterRoleBinding to be removed)
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -177,6 +189,8 @@ rules:
       - patch
       - update
 ---
+
+## WIll be removed and replaced with RoleBinding for specific projects. 
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -190,6 +204,8 @@ roleRef:
   kind: ClusterRole
   name: runai-scheduler-rw
 ---
+# A specialized version of the NVIDIA Plug-in. Supports Run:AI fraction features.
+# *** Node update verb will be deleted ***
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -225,6 +241,9 @@ roleRef:
   kind: ClusterRole
   name: runai-nvidia-device-plugin
 ---
+# Run:AI Agent
+# Connects between the Run:AI GPU cluster and the Run:AI Backend. Creates Project CRDs
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -300,6 +319,9 @@ roleRef:
   kind: ClusterRole
   name: runai-agent
 ---
+# A Kubernetes Admission Controller
+# Responsible for the management of Job submission policies and the validation of the input provided to submit the Job
+# *** Will be separated to reader and writer ClusterRoles. Writer role will be binded to the runai namespace only *** 
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -350,6 +372,7 @@ subjects:
     name: runai-admission-controller
     namespace: runai
 ---
+## Not relevant for Openshift installations.
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -394,6 +417,7 @@ subjects:
     namespace: runai
     name: init-ca
 ---
+# An extension of the Kubernetes Job
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -429,6 +453,9 @@ subjects:
     name: runai-job-controller
     namespace: runai
 ---
+# Job Controller Writer. 
+# This ClusterRole has no associated ClusterRoleBinding (only RoleBinding at the project level)
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -446,6 +473,8 @@ rules:
       - patch
       - update
 ---
+# Run:AI Projects
+# Alows the reading of project-related data and editing of Run:AI specific CRDs.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -495,6 +524,10 @@ subjects:
     name: runai-project-controller
     namespace: runai
 ---
+# Run:AI Projects
+# Alows the management of project-related data. 
+# This ClusterRole has no associated ClusterRoleBinding (only RoleBinding at the project level)
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -564,6 +597,7 @@ rules:
 ---
 
 # Currently, the runai-cli performs some read operations without a namespace scope so the reader permission has to be bound as a ClusterRoleBinding
+## *** TO BE REMOVED *** 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -576,6 +610,7 @@ roleRef:
 ---
 
 # This role encapsulates all current *write* api actions runai-cli performs
+# This ClusterRole has no associated ClusterRoleBinding (only RoleBinding at the project level)
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
