@@ -14,8 +14,6 @@ theme:
   logo: images/runai-logo2.svg
   features:
     - navigation.tabs
-#    - navigation.instant
-#    - toc.integrate 
 extra_css:
   - stylesheets/extra.css
 strict: true
@@ -28,6 +26,8 @@ markdown_extensions:
   - meta
   - toc:
       permalink: True
+#  - pymdownx.tasklist:
+ #     custom_checkbox: true
 extra:
   social:
     - icon: fontawesome/brands/twitter
