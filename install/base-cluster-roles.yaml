@@ -146,7 +146,7 @@ roleRef:
 ---
 # Run:AI Scheduler writer
 # Allows the applying of scheduling decisions to the cluster, like updating pod, creating pod-group, etc. 
-# Write access is limited to runai-* namespaces (associated ClusterRoleBinding to be removed)
+# Write access is limited to runai-* namespaces
 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -190,19 +190,37 @@ rules:
       - update
 ---
 
-## WIll be removed and replaced with RoleBinding for specific projects. 
-kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: runai
+  name: runai-scheduler-runai-ns-only
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - list
+      - update
+
+---
+
+kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: runai-scheduler-rw
+  namespace: runai
+  name: runai-scheduler-runai-ns-only
 subjects:
   - kind: ServiceAccount
     name: runai-scheduler
     namespace: runai
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: runai-scheduler-rw
+  kind: Role
+  name: runai-scheduler-runai-ns-only
+
 ---
 # A specialized version of the NVIDIA Plug-in. Supports Run:AI fraction features.
 # *** Node update verb will be deleted ***
