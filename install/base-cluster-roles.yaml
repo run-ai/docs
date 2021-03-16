@@ -547,8 +547,8 @@ rules:
       - update
       - create
 ---
-# ------------- Project-based Researcher Access Control -------------------
 
+# ------------- Project-based Researcher Access Control -------------------
 # This role encapsulates all current api *read* actions runai-cli performs
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
