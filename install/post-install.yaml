@@ -138,19 +138,6 @@ rules:
       - patch
       - update
 ---
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: runai-scheduler-rw
-subjects:
-  - kind: ServiceAccount
-    name: runai-scheduler
-    namespace: runai
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: runai-scheduler-rw
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -264,7 +251,7 @@ roleRef:
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 rules:
   - apiGroups:
       - ""
@@ -294,22 +281,44 @@ rules:
       - replicasets/finalizers
       - pods/finalizers
     verbs:
-      - create
       - get
-      - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 roleRef:
   kind: ClusterRole
   apiGroup: rbac.authorization.k8s.io
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 subjects:
   - kind: ServiceAccount
     name: runai-admission-controller
     namespace: runai
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-admission-controller-project
+rules:
+  - apiGroups:
+      - ""
+      - apps
+      - batch
+      - kubeflow.org
+      - run.ai
+    resources:
+      - configmaps
+      - statefulsets/finalizers
+      - jobs/finalizers
+      - deployments/finalizers
+      - runaijobs/finalizers
+      - mpijobs/finalizers
+      - replicasets/finalizers
+      - pods/finalizers
+    verbs:
+      - create
+      - update
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1

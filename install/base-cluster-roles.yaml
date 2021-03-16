@@ -128,7 +128,7 @@ roleRef:
 ---
 # Run:AI Scheduler writer
 # Allows the applying of scheduling decisions to the cluster, like updating pod, creating pod-group, etc. 
-# Write access is limited to runai-* namespaces (associated ClusterRoleBinding to be removed)
+# Write access is limited to runai-* namespaces
 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -172,20 +172,6 @@ rules:
       - update
 ---
 
-## WIll be removed and replaced with RoleBinding for specific projects. 
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: runai-scheduler-rw
-subjects:
-  - kind: ServiceAccount
-    name: runai-scheduler
-    namespace: runai
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: runai-scheduler-rw
----
 # A specialized version of the NVIDIA Plug-in. Supports Run:AI fraction features.
 # *** Node update verb will be deleted ***
 apiVersion: rbac.authorization.k8s.io/v1
@@ -303,11 +289,10 @@ roleRef:
 ---
 # A Kubernetes Admission Controller
 # Responsible for the management of Job submission policies and the validation of the input provided to submit the Job
-# *** Will be separated to reader and writer ClusterRoles. Writer role will be binded to the runai namespace only *** 
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 rules:
   - apiGroups:
       - ""
@@ -337,14 +322,12 @@ rules:
       - replicasets/finalizers
       - pods/finalizers
     verbs:
-      - create
       - get
-      - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 roleRef:
   kind: ClusterRole
   apiGroup: rbac.authorization.k8s.io
@@ -353,6 +336,36 @@ subjects:
   - kind: ServiceAccount
     name: runai-admission-controller
     namespace: runai
+---
+
+# A Kubernetes Admission Controller
+# Responsible for the management of Job submission policies and the validation of the input provided to submit the Job
+# Write access is limited to runai-* namespaces
+
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: runai-admission-controller-project
+rules:
+  - apiGroups:
+      - ""
+      - apps
+      - batch
+      - kubeflow.org
+      - run.ai
+    resources:
+      - configmaps
+      - statefulsets/finalizers
+      - jobs/finalizers
+      - deployments/finalizers
+      - runaijobs/finalizers
+      - mpijobs/finalizers
+      - replicasets/finalizers
+      - pods/finalizers
+    verbs:
+      - create
+      - update
+
 ---
 ## Not relevant for Openshift installations.
 kind: ClusterRole
