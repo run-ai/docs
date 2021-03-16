@@ -190,38 +190,6 @@ rules:
       - update
 ---
 
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: runai
-  name: runai-scheduler-runai-ns-only
-rules:
-  - apiGroups:
-      - ""
-    resources:
-      - configmaps
-    verbs:
-      - get
-      - list
-      - update
-
----
-
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  namespace: runai
-  name: runai-scheduler-runai-ns-only
-subjects:
-  - kind: ServiceAccount
-    name: runai-scheduler
-    namespace: runai
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: runai-scheduler-runai-ns-only
-
----
 # A specialized version of the NVIDIA Plug-in. Supports Run:AI fraction features.
 # *** Node update verb will be deleted ***
 apiVersion: rbac.authorization.k8s.io/v1
@@ -387,33 +355,35 @@ subjects:
     name: runai-admission-controller
     namespace: runai
 ---
-kind: Role
+
+# A Kubernetes Admission Controller
+# Responsible for the management of Job submission policies and the validation of the input provided to submit the Job
+# Write access is limited to runai-* namespaces
+
+kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  namespace: runai
-  name: runai-admission-controller-rw
+  name: runai-admission-controller-project
 rules:
   - apiGroups:
       - ""
+      - apps
+      - batch
+      - kubeflow.org
+      - run.ai
     resources:
       - configmaps
+      - statefulsets/finalizers
+      - jobs/finalizers
+      - deployments/finalizers
+      - runaijobs/finalizers
+      - mpijobs/finalizers
+      - replicasets/finalizers
+      - pods/finalizers
     verbs:
       - create
       - update
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  namespace: runai
-  name: runai-admission-controller-rw
-roleRef:
-  kind: Role
-  apiGroup: rbac.authorization.k8s.io
-  name: runai-admission-controller-rw
-subjects:
-  - kind: ServiceAccount
-    name: runai-admission-controller
-    namespace: runai
+
 ---
 ## Not relevant for Openshift installations.
 kind: ClusterRole
