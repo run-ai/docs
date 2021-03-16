@@ -1,3 +1,5 @@
+## We are working to remove "allowPrivilegeEscalation" and checking "allowHostDirVolumePlugin"
+
 kind: SecurityContextConstraints
 apiVersion: security.openshift.io/v1
 metadata:
@@ -31,6 +33,7 @@ rules:
   verbs:
   - use
 ---
+
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
