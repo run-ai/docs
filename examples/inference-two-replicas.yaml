@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: inference-2
+spec:
+ replicas: 2
+ selector:
+   matchLabels:
+     app: inference-2
+ template:
+   metadata:
+     labels:
+       app: inference-2
+     annotations:
+       gpu-fraction: "0.5"
+   spec:
+     containers:
+     - image: runai/example-marian-server
+       imagePullPolicy: Always
+       name: inference-2
+       ports:
+       - containerPort: 8888
+     schedulerName: runai-scheduler
+ 
+---
+apiVersion: v1
+kind: Service
+metadata:
+ labels:
+   app: inference-2
+ name: inference-2
+spec:
+ type: ClusterIP
+ ports:
+ - port: 8888
+   targetPort: 8888
+ selector:
+   app: inference-2
