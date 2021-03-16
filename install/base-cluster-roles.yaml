@@ -182,14 +182,6 @@ rules:
   - apiGroups:
       - ""
     resources:
-      - nodes
-    verbs:
-      - get
-      - list
-      - update
-  - apiGroups:
-      - ""
-    resources:
       - pods
     verbs:
       - get
