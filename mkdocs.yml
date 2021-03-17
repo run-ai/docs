@@ -106,7 +106,7 @@ nav:
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
-      - 'Run:AI Quickstart Guides' : 'Researcher/Walkthroughs/Run-AI-Walkthroughs.md'
+      - 'Run:AI Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
       - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
       - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
       - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'

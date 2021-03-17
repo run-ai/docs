@@ -14,6 +14,8 @@ Run:AI differentiates between two types of deep learning workloads:
 *   __Unattended__ (or "non-interactive") training workloads.Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the Researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
 It follows that a good practice for the Researcher is to save checkpoints and allow the code to restore from the last checkpoint.
 
+* __Inference__ workloads. These are production workloads that serve requests. The Run:AI scheduler treats these workloads as _Interactive_ workloads.
+
 ### Projects
 
 Projects are quota entities that associate a Project name with a __deserved__ GPU quota as well as other preferences.

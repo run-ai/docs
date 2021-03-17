@@ -11,3 +11,4 @@ Follow the Quickstart documents below to learn more:
 *   [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
 *   [Fairness](walkthrough-queue-fairness.md)
 *   [Elasticity](walkthrough-elasticity.md)
+*   [Inference](quickstart-inference.md)

@@ -66,4 +66,4 @@ sudo minikube delete --all
 ## Next Steps
 
 * Set up at least one Project [Working with Projects](../admin-ui-setup/project-setup.md).
-* Review [Quickstart Guides](../../Researcher/Walkthroughs/Run-AI-Walkthroughs.md) to run workloads. 
+* Review [Quickstart Guides](../../Researcher/Walkthroughs/quickstart-overview.md) to run workloads. 

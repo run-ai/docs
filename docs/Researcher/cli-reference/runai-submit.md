@@ -320,6 +320,6 @@ Note that the submit call may use templates to provide defaults to any of the ab
 
 ## See Also
 
-*   See any of the Quickstart documents [here:](../Walkthroughs/Run-AI-Walkthroughs.md).
+*   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
 *   See [template configuration](../../Administrator/Researcher-Setup/template-config.md) for a description on how templates work.
 

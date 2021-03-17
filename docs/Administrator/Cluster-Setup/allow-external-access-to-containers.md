@@ -77,7 +77,7 @@ For further details see CLI command [runai submit](../../Researcher/cli-referenc
 
  Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative  ways to expose ports: 
 
-*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service from outside the cluster by requesting `<NODE-IP>:<NODE-PORT>` regardless of which node the container actually resides in.  
+*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service from outside the cluster by requesting `<NODE-IP>:<NODE-PORT>` regardless of which node the container resides in.  
 *   LoadBalancer - Useful for cloud environments. Exposes the Service externally using a cloud provider’s load balancer.
 *   Ingress (see example in link below) -  Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found [here](https://kubernetes.io/docs/concepts/services-networking/ingress/){target=_blank}. 
 *   Port Forwarding (see example in link below) - Simple port forwarding allows access to the container via localhost:&lt;Port&gt;.
