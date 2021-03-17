@@ -12,6 +12,8 @@ spec:
       labels:
         app: fairseq-example
     spec:
+      nodeSelector:
+        run.ai/type: "v100"
       schedulerName: runai-scheduler
       containers:
         - image: runai/example-triton-fairseq-server
