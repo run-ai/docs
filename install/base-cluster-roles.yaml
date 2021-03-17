@@ -37,8 +37,42 @@ roleRef:
   name: runai-operator
   apiGroup: rbac.authorization.k8s.io
 ---
+# Researcher User interface used to create Jobs and view Projects.
+# Read-only cluster binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: researcher-service-ro
+rules:
+  - apiGroups:
+      - ""
+      - apps
+      - run.ai
+    resources:
+      - namespaces
+      - projects
+      - runaijobs
+      - statefulsets
+    verbs:
+      - get
+      - list
+---
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: researcher-service-ro
+subjects:
+  - kind: ServiceAccount
+    name: researcher-service
+    namespace: runai
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: researcher-service-ro
+---
+
 # Researcher User interface used to create Jobs and view Projects
-# Commented out until it is limited to reader access only
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
