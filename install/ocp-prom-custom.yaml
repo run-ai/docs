@@ -1,0 +1,187 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: prometheus-k8s
+  namespace: runai
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - services
+  - endpoints
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+ name: prometheus-k8s
+ namespace: runai
+roleRef:
+ apiGroup: rbac.authorization.k8s.io
+ kind: Role
+ name: prometheus-k8s
+subjects:
+- kind: ServiceAccount
+  name: prometheus-k8s
+  namespace: openshift-monitoring
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: cluster-monitoring-config
+ namespace: openshift-monitoring
+data:
+ config.yaml: |
+   prometheusK8s:
+     scrapeInterval: "10s"
+     evaluationInterval: "10s"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: k8s
+  name: runai-prometheus-rules
+  namespace: runai
+spec:
+  groups:
+  - name: runai-rules
+    rules:
+    - expr: (sum(runai_pod_group_info) by (pod_group_uuid, detailed_status, node_name,
+        queue_name, user, workload_name, workload_type)) * on (pod_group_uuid) group_right(detailed_status,
+        node_name, queue_name, user, workload_name, workload_type) (sum(runai_pod_group_phase)
+        by (pod_group_uuid, phase))
+      record: runai_pod_group_phase_with_info
+    - expr: runai_pod_info * on (pod_uuid) group_right(queue_name, pod_group_name,
+        workload_name, workload_type, node_name, gpu_index) (sum(runai_pod_phase)
+        by (pod_uuid, phase, pod_namespace, pod_name, pod_group_uuid))
+      record: runai_pod_phase_with_info
+    - expr: count by (instance, gpu) (DCGM_FI_DEV_GPU_UTIL{pod_name=~".+"} and on(pod_name,
+        pod_namespace) (runai_pod_phase{phase="Running"} == 1))
+      record: runai_gpus_running_with_pod
+    - expr: runai_gpus_running_with_pod or ((count by (instance,gpu) (DCGM_FI_DEV_GPU_UTIL)
+        unless runai_gpus_running_with_pod) - 1)
+      record: runai_gpus_is_running_with_pod
+    - expr: (label_replace(runai_gpus_is_running_with_pod, "pod_ip", "$1", "instance",
+        "(.*):(.*)")) * on(pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+      record: runai_gpus_is_running_with_pod2
+    - expr: (label_replace(DCGM_FI_DEV_GPU_UTIL, "pod_ip", "$1", "instance", "(.*):(.*)"))
+        * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+      record: runai_node_gpu_utilization
+    - expr: (label_replace(DCGM_FI_DEV_FB_TOTAL, "pod_ip", "$1", "instance", "(.*):(.*)"))
+        * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+      record: runai_node_gpu_total_memory
+    - expr: (label_replace(DCGM_FI_DEV_FB_USED, "pod_ip", "$1", "instance", "(.*):(.*)"))
+        * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+      record: runai_node_gpu_used_memory
+    - expr: (label_replace(DCGM_GPU_LAST_NOT_IDLE_TIME, "pod_ip", "$1", "instance",
+        "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+      record: runai_node_gpu_last_not_idle_time
+    - expr: ((sum by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu)) /
+        (count by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu))) * on
+        (pod_group_uuid) group_left(queue_name, workload_name) (runai_pod_group_phase_with_info{phase="Running"}==1)
+      record: runai_pod_group_gpu_utilization
+    - expr: docker_metrics_container_used_info * on(gpu, node) group_left() runai_node_gpu_utilization
+      record: runai_docker_gpu_utilization
+    - expr: kube_pod_container_info{namespace="runai"}
+      record: runai_pod_container_info
+    - expr: kube_pod_status_phase{namespace="runai"}==1
+      record: runai_pod_status_phase
+    - expr: count(label_replace(sum(runai_pod_phase_with_info{gpu_index=~"^[0-9]+$",
+        phase="Running"}==1) by(node_name, gpu_index), "node", "$1", "node_name",
+        "(.+)")) by (node, gpu_index) or sum (runai_gpus_is_running_with_pod2) by
+        (node) * 0
+      record: runai_used_shared_gpu_per_node
+    - expr: sum by (pod_group_uuid, gpu, node_name) (label_replace((runai_pod_phase_with_info{gpu_index=~"^[0-9]+$",
+        phase="Running"} ==1), "gpu", "$1", "gpu_index", "(.+)") * on(node_name, gpu)
+        group_left() label_replace(runai_node_gpu_utilization, "node_name", "$1",
+        "node", "(.+)"))
+      record: runai_utilization_shared_gpu_jobs
+    - expr: sum by(pod_group_uuid, gpu, node_name) (((runai_pod_phase_with_info{phase="Running"}
+        ==1)) * on (pod_name, pod_namespace) group_right(pod_uuid, pod_group_uuid,
+        workload_name, node_name) DCGM_FI_DEV_GPU_UTIL)
+      record: runai_utilization_full_gpu_jobs
+    - expr: (runai_utilization_full_gpu_jobs or runai_utilization_shared_gpu_jobs)
+      record: runai_pod_group_gpu_utilization_by_gpu
+    - expr: (sum without (job) (sum(runai_internal_interactive_pod_groups_finished)
+        by (job))) or vector(0)
+      record: runai_interactive_pod_groups_finished
+    - expr: (sum without (job) (sum(runai_internal_train_pod_groups_succeeded) by
+        (job))) or vector(0)
+      record: runai_train_pod_groups_succeeded
+    - expr: (sum without (job) (sum(runai_interanl_train_pod_groups_failed) by (job)))
+        or vector(0)
+      record: runai_train_pod_groups_failed
+    - expr: instance:node_cpu_utilisation:rate1m * on (pod, namespace) group_left(node)
+        (kube_pod_info *0+1)
+      record: runai_node_cpu_utilization
+    - expr: avg(1-  (rate(node_cpu_seconds_total{job="node-exporter",mode="idle"}[1m])))
+      record: runai_cpu_utilization
+    - expr: sum by (pod_group_name, pod_group_uuid, pod_namespace) (label_replace(label_replace(sum(rate(container_cpu_usage_seconds_total{
+        container!=""}[1m])) by (pod, namespace),"pod_name" , "$1", "pod", "(.*)"),
+        "pod_namespace" , "$1", "namespace", "(.*)") * on(pod_name, pod_namespace)
+        group_left(pod_group_name, pod_group_uuid) (runai_pod_phase_with_info{phase="Running"}
+        ==1))
+      record: runai_job_cpu_usage
+    - expr: instance:node_memory_utilisation:ratio * on (pod, namespace) group_left(node)
+        (kube_pod_info *0+1)
+      record: runai_node_memory_utilization
+    - expr: 1 - sum (node_memory_MemAvailable_bytes{job="node-exporter"})  / sum(node_memory_MemTotal_bytes{job="node-exporter"})
+      record: runai_memory_utilization
+    - expr: (node_memory_MemTotal_bytes{job="node-exporter"} - node_memory_MemAvailable_bytes{job="node-exporter"}
+        ) * on (pod, namespace) group_left(node) kube_pod_info
+      record: runai_node_memory_used_bytes
+    - expr: sum(runai_node_memory_used_bytes)
+      record: runai_memory_used_bytes
+    - expr: sum(label_replace(label_replace(sum(rate(container_memory_usage_bytes{
+        container!=""}[1m])) by (pod, namespace),"pod_name" , "$1", "pod", "(.*)"),
+        "pod_namespace" , "$1", "namespace", "(.*)") * on(pod_namespace, pod_name)
+        group_left(pod_group_name, pod_group_uuid) (runai_pod_info * 0 + 1)) by (pod_group_name,
+        pod_group_uuid)
+      record: runai_job_memory_used_bytes
+    - expr: max(max( label_replace(label_replace(kube_pod_container_info ,"pod_name"
+        , "$1", "pod", "(.*)"), "pod_namespace" , "$1", "namespace", "(.*)")) by (pod_name,
+        pod_namespace, image) * on(pod_name, pod_namespace) group_left(pod_group_name,
+        pod_group_uuid) (runai_pod_info * 0 + 1) ) by (image, pod_group_name, pod_group_uuid
+        )
+      record: runai_pod_group_image
+    - expr: sum(kube_pod_container_resource_requests_memory_bytes{node!=""} * on(pod,
+        namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1))
+        by (node)
+      record: runai_node_requested_memory_bytes
+    - expr: sum(sum(label_replace(label_replace(kube_pod_container_resource_requests_memory_bytes
+        * on(pod, namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1),
+        "pod_name" , "$1", "pod", "(.*)"), "pod_namespace" , "$1", "namespace", "(.*)"))
+        by (pod_name, pod_namespace) * on(pod_name, pod_namespace) group_left(pod_group_name,
+        pod_group_uuid) (runai_pod_info * 0 + 1) ) by (pod_group_name, pod_group_uuid)
+      record: runai_active_job_memory_requested_bytes
+    - expr: sum(kube_pod_container_resource_requests_cpu_cores{node!=""} * on(pod,
+        namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1))
+        by (node)
+      record: runai_node_cpu_requested
+    - expr: sum(sum(label_replace(label_replace(kube_pod_container_resource_requests_cpu_cores
+        * on(pod, namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1),"pod_name"
+        , "$1", "pod", "(.*)"), "pod_namespace" , "$1", "namespace", "(.*)")) by (pod_name,
+        pod_namespace) * on(pod_name, pod_namespace) group_left(pod_group_name, pod_group_uuid)
+        (runai_pod_info * 0 + 1) ) by (pod_group_name, pod_group_uuid)
+      record: runai_active_job_cpu_requested_cores
+    - expr: sum(sum(label_replace(label_replace(kube_pod_container_resource_limits{resource="memory"}
+        * on(pod, namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1),"pod_name"
+        , "$1", "pod", "(.*)"), "pod_namespace" , "$1", "namespace", "(.*)")) by (pod_name,
+        pod_namespace) * on(pod_name, pod_namespace) group_left(pod_group_name, pod_group_uuid)
+        (runai_pod_info * 0 + 1) ) by (pod_group_name, pod_group_uuid)
+      record: runai_active_job_cpu_limits
+    - expr: sum(sum(label_replace(label_replace(kube_pod_container_resource_limits{resource="memory"}
+        * on(pod, namespace) group_left() (kube_pod_status_phase{phase=~"Pending|Running|Unknown"}==1),"pod_name"
+        , "$1", "pod", "(.*)"), "pod_namespace" , "$1", "namespace", "(.*)")) by (pod_name,
+        pod_namespace) * on(pod_name, pod_namespace) group_left(pod_group_name, pod_group_uuid)
+        (runai_pod_info * 0 + 1) ) by (pod_group_name, pod_group_uuid)
+      record: runai_active_job_memory_limits
+    - expr: DCGM_FI_DEV_GPU_UTIL
+      record: dcgm_gpu_utilization
+    - expr: DCGM_GPU_LAST_NOT_IDLE_TIME
+      record: dcgm_gpu_last_not_idle_time
