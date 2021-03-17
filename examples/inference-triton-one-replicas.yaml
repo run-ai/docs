@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fairseq-example
+spec:
+  replicas: 1 # number of replicas
+  selector:
+    matchLabels:
+      app: fairseq-example
+  template:
+    metadata:
+      labels:
+        app: fairseq-example
+    spec:
+      schedulerName: runai-scheduler
+      containers:
+        - image: runai/example-triton-fairseq-server
+          imagePullPolicy: Always
+          name: fairseq-example
+          ports: # set ports
+            - containerPort: 8000
+            - containerPort: 8001
+            - containerPort: 8002
+          resources:
+            limits:
+              nvidia.com/gpu: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fairseq-example
+  name: fairseq-example
+  namespace: runai-team-a
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: port0
+    - port: 8001
+      targetPort: 8001
+      name: port1
+    - port: 8002
+      targetPort: 8002
+      name: port2
+  selector:
+    app: fairseq-example
+
