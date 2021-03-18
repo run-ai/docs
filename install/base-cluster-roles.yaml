@@ -345,7 +345,7 @@ metadata:
 roleRef:
   kind: ClusterRole
   apiGroup: rbac.authorization.k8s.io
-  name: runai-admission-controller
+  name: runai-admission-controller-ro
 subjects:
   - kind: ServiceAccount
     name: runai-admission-controller
