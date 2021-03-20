@@ -98,6 +98,12 @@ The following next steps assume that you have the Kubernetes command-line _kubec
 
 ### Step 3.1: Install Run:AI
 
+* Run:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/pre-install.yaml
+```
+
 *   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support.
 *   If no clusters are configured, you will see a dialog with instructions on how to install a Run:AI cluster.
 *   If a cluster has already been configured, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". 
