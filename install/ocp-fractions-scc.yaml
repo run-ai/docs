@@ -7,7 +7,7 @@ allowHostIPC: false
 allowHostNetwork: false
 allowHostPID: false
 allowHostPorts: false
-allowPrivilegeEscalation: true
+allowPrivilegeEscalation: false
 allowPrivilegedContainer: false
 allowedCapabilities: null
 priority: 10
@@ -50,3 +50,14 @@ runAsUser:
   type: RunAsAny
 seLinuxContext:
   type: RunAsAny
+---
+apiVersion: v1
+data:
+  config: |-
+    enforcePreventPrivilegeEscalation: true
+kind: ConfigMap
+metadata:
+  labels:
+    runai/cluster-config: "true"
+  name: cluster-config
+  namespace: runai
