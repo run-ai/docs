@@ -49,6 +49,7 @@ rules:
       - apps
       - run.ai
     resources:
+      - configmaps
       - namespaces
       - projects
       - runaijobs
