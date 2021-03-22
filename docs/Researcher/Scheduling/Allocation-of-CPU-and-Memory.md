@@ -24,7 +24,7 @@ For further details on these flags see: [runai submit](../cli-reference/runai-su
 The number of CPUs your Job will receive is guaranteed to be the number defined using the `--cpu` flag. In practice, however, you may receive <ins>more CPUs than you have asked</ins> for:
 
 *   If you are currently alone on a node, you will receive all the node CPUs until such time when another workload has joined.
-*   However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the `--cpu` flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 nodes, the workloads will receive 10 and 30 CPUs respectively. If the flag `--cpu` is not specified, it will be taken from the cluster default (see the section below)
+*   However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the `--cpu` flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 cpus, the workloads will receive 10 and 30 CPUs respectively. If the flag `--cpu` is not specified, it will be taken from the cluster default (see the section below)
 
 ### Memory over allocation
 
