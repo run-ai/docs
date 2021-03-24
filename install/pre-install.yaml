@@ -59,8 +59,10 @@ rules:
       - ""
       - apps
       - run.ai
+      - kubeflow.org
     resources:
       - configmaps
+      - mpijobs
       - namespaces
       - pods
       - pods/log
