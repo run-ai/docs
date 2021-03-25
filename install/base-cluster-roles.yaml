@@ -615,10 +615,10 @@ metadata:
   name: runai-job-executor
 rules:
   - apiGroups: [ "" ]
-    resources: [ "configmaps", "services", "persistentvolumeclaims", "pods/exec", "pods/attach" ]
+    resources: [ "configmaps", "services", "persistentvolumeclaims", "pods/exec", "pods/attach", "pods/portforward" ]
     verbs: [ "create", "update", "patch", "delete" ]
   - apiGroups: [ "" ]
-    resources: [ "persistentvolumeclaims", "pods/log", "pods/exec", "pods/attach" ]
+    resources: [ "persistentvolumeclaims", "pods/log", "pods/exec", "pods/attach", "pods/portforward" ]
     verbs: [ "get", "list", "watch" ]
   - apiGroups: [ "apps" ]
     resources: [ "statefulsets", "replicasets", "deployments" ]
