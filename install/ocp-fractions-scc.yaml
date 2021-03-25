@@ -33,7 +33,6 @@ rules:
   verbs:
   - use
 ---
-
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
@@ -53,3 +52,23 @@ runAsUser:
   type: RunAsAny
 seLinuxContext:
   type: RunAsAny
+---
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: runai-backend-keycloak
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+allowedCapabilities: null
+priority: 10
+readOnlyRootFilesystem: false
+runAsUser:
+  type: MustRunAs
+  uid: 1000
+seLinuxContext:
+  type: MustRunAs
