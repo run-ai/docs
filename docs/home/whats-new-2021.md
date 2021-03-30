@@ -5,8 +5,6 @@ The Job list now shows per-Job graphs for GPU utilization, GPU memory, CPU utili
 The Node list now shows per-Node graphs for GPU utilization, GPU memory, CPU utilization, and CPU memory. 
 
 
-GPU utilization
-
 ## January 22<sup>nd</sup>, 2021
 
 New Analytics dashboard with emphasis on CPU, CPU Memory, GPU and GPU Memory. Allows better diagnostics of resource misuse. 
