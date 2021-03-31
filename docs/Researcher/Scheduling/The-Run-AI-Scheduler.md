@@ -85,10 +85,10 @@ This fairness equivalence will also be maintained amongst __running__ Jobs. The 
 
 ### Bin-packing & Consolidation
 
-Part of an efficient scheduler is the ability to eliminate defragmentation:
+Part of an efficient scheduler is the ability to eliminate fragmentation:
 
-*   The first step in avoiding defragmentation is bin packing: try and fill nodes (machines) up before allocating workloads to new machines.
-*   The next step is to consolidate Jobs on demand. If a workload cannot be allocated due to defragmentation, the scheduler will try and move unattended workloads from node to node in order to get the required amount of GPUs to schedule the pending workload.
+*   The first step in avoiding fragmentation is bin packing: try and fill nodes (machines) up before allocating workloads to new machines.
+*   The next step is to consolidate Jobs on demand. If a workload cannot be allocated due to fragmentation, the scheduler will try and move unattended workloads from node to node in order to get the required amount of GPUs to schedule the pending workload.
 
 ### Elasticity
 
