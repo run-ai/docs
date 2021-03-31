@@ -20,7 +20,7 @@ Some organizations would want to provide Researchers with a more holistic view o
 
 It is highly recommended to schedule an onboarding session for Researchers with a Run:AI customer success professional. Run:AI can help with the above transition, but adding to that, we at Run:AI have also acquired a large body of knowledge on data science best practices which can help streamline the Researchers' work as well as save money for the organization. 
 
-Researcher onboarding material also appears in the [Researcher Onboarding Presentation](../../Researcher/Presentations/Researcher-Onboarding-Presentation.md).
+Researcher onboarding material also appears in the [Researcher Onboarding Presentation](../../Researcher/presentations/researcher-onboarding-presentation.md).
 
  
  

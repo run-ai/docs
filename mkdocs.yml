@@ -57,7 +57,9 @@ plugins:
         'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
         'home/whats-new.md' : 'home/whats-new-2021.md'
-        'Researcher/Presentations/Researcher-Onboarding-Presentation.md' : 'Researcher/Presentations/researcher-onboarding-presentation.md'
+#        'Researcher/Presentations/Researcher-Onboarding-Presentation.md' : 'Researcher/presentations/researcher-onboarding-presentation.md'
+#        'Administrator/Presentations/Administrator-Onboarding-Presentation.md' : 'Administrator/presentations/administrator-onboarding-presentation.md'
+
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -101,7 +103,7 @@ nav:
       - 'Departments' : 'Administrator/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'Administrator/admin-ui-setup/dashboard-analysis.md'
     - 'Presentations' :
-      - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
+      - 'Administrator Onboarding' : 'Administrator/presentations/administrator-onboarding-presentation.md'
     - 'Tools' :
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
 
@@ -153,7 +155,7 @@ nav:
       - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Presentations' :
-      - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
+      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
