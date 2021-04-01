@@ -59,7 +59,6 @@ plugins:
         'home/whats-new.md' : 'home/whats-new-2021.md'
 #        'Researcher/Presentations/Researcher-Onboarding-Presentation.md' : 'Researcher/presentations/researcher-onboarding-presentation.md'
 #        'Administrator/Presentations/Administrator-Onboarding-Presentation.md' : 'Administrator/presentations/administrator-onboarding-presentation.md'
-
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -140,15 +139,15 @@ nav:
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
       - 'runai version' : 'Researcher/cli-reference/runai-version.md'
     - 'Best Practices' :
-      - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
+      - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/bare-metal-to-docker-images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
-      - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/Saving-Deep-Learning-Checkpoints.md'
+      - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Identify a Job from within Container' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
-      - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
-      - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
-      - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
-      - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/auto-delete-jobs.md'
+      - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
+      - 'The Run:AI Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
+      - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
+      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
       - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'

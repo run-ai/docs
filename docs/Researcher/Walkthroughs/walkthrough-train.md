@@ -53,7 +53,7 @@ Typical statuses you may see:
 *   Running - the Job is running
 *   Succeeded - the Job has ended
 
-A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md) 
+A full list of Job statuses can be found [here](../scheduling/job-statuses.md) 
 
 To get additional status on your Job run:
 

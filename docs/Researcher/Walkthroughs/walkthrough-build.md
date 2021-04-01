@@ -57,7 +57,7 @@ Typical statuses you may see:
 *   Pending - the job is waiting to be scheduled
 *   Running - the job is running
 
-A full list of Job statuses can be found [here](../Scheduling/Job-Statuses.md)
+A full list of Job statuses can be found [here](../scheduling/job-statuses.md)
 
 To get additional status on your job run:
 

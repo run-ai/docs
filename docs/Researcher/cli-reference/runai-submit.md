@@ -273,7 +273,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --ttl-after-finish duration
 >  Define the duration, post Job finish, after which the Job is automatically deleted (5s, 2m, 3h, etc).  
-> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md).
+> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../scheduling/auto-delete-jobs.md).
 
 
 ### Access Control

@@ -47,7 +47,7 @@ We released a module that helps the Researcher perform __Hyperparameter optimiza
 
 ## September 3rd, 2020
 
-__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/Scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
+__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
 
 
 ## August 10th, 2020
@@ -73,7 +73,7 @@ It is now possible to mount a __Persistent Storage Claim__ using the Run:AI CLI.
 
 It is now possible to __set limits for CPU and memory__ as well as to establish defaults based on the ratio of GPU to CPU and GPU to memory. 
 
-For further information see: [Allocation of CPU and Memory](../Researcher/Scheduling/Allocation-of-CPU-and-Memory.md)
+For further information see: [Allocation of CPU and Memory](../Researcher/scheduling/allocation-of-cpu-and-memory.md)
 
 ## June 3rd, 2020
 
