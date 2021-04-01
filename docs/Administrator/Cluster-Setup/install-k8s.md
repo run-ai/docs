@@ -37,10 +37,10 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 sudo apt-get update
-sudo apt-get install -y kubelet=1.19.6-00 kubeadm=1.19.6-00 kubectl=1.19.6-00
+sudo apt-get install -y kubelet=1.20.5-00 kubeadm=1.20.5-00 kubectl=1.20.5-00
 
 sudo swapoff -a
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.19.6 --token-ttl 180h
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.20.5 --token-ttl 180h
 ```
 
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
@@ -95,7 +95,7 @@ cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update
-sudo apt-get install -y kubelet=1.19.6-00 kubeadm=1.19.6-00
+sudo apt-get install -y kubelet=1.20.5-00 kubeadm=1.20.5-00
 
 sudo swapoff -a
 ```
