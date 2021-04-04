@@ -63,7 +63,15 @@ All examples assume a Run:AI Project has been set using `runai config project <p
 
 Start an interactive Job:
 
-    runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
+```
+runai submit -i ubuntu --interactive --attach -g 1
+```
+
+Or
+
+```
+runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
+```
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 

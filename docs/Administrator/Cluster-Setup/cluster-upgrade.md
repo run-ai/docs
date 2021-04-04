@@ -1,6 +1,6 @@
 # Upgrading a Cluster Installation
 
-To perform the tasks below you will need the Run:AI Administrator CLI. See [Installing the Run:AI Administrator Command-line Interface](cli-admin-install.md).
+<!-- To perform the tasks below you will need the Run:AI Administrator CLI. See [Installing the Run:AI Administrator Command-line Interface](cli-admin-install.md). -->
 
 
 ## Find the current Run:AI cluster version
@@ -8,18 +8,34 @@ To perform the tasks below you will need the Run:AI Administrator CLI. See [Inst
 To find the current version of the Run:AI cluster, run:
 
 ```
-runai-adm get version
+kubectl get deployment -n runai runai-operator -o yaml \
+    -o jsonpath='{.spec.template.spec.containers[*].image}'
 ```
 
-## Upgrade
+If the Run:AI cluster version is __1.X__ you will need to uninstall Run:AI before installing version 2.X. Uninstalling Run:AI does not stop any existing Jobs. It only prevents the creation of new Jobs until Run:AI is installed again.
 
-To upgrade a Run:AI cluster, run:
+## Upgrade from version 1.X
+
+
+Uninstall Run:AI version 1.X by running:
 
 ```
- runai-adm upgrade -v <NEW_VERSION>
+runai-adm uninstall
 ```
 
-Replace ``<NEW_VERSION>`` with a version number you receive from Run:AI customer support.
+Install Run:AI by performing the install steps [here](../cluster-install/#step-3-install-runai)
+
+## Upgrade from version 2.X
+
+
+Run:
+
+```
+helm repo update
+helm install runai-cluster runai/runai-cluster -n runai --reuse-values
+```
+
+## Verify successful installation
 
 To verify that the upgrade has succeeded run:
 
