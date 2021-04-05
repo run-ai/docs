@@ -21,6 +21,7 @@ Uninstall Run:AI version 1.X by running:
 
 ```
 runai-adm uninstall -A
+helm repo remove runai
 ```
 
 Install Run:AI by performing the install steps [here](../cluster-install/#step-3-install-runai)
