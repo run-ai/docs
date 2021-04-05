@@ -20,7 +20,7 @@ If the Run:AI cluster version is __1.X__ you will need to uninstall Run:AI befor
 Uninstall Run:AI version 1.X by running:
 
 ```
-runai-adm uninstall
+runai-adm uninstall -A
 ```
 
 Install Run:AI by performing the install steps [here](../cluster-install/#step-3-install-runai)
