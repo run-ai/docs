@@ -32,7 +32,7 @@ Run:
 
 ```
 helm repo update
-helm install runai-cluster runai/runai-cluster -n runai --reuse-values
+helm upgrade runai-cluster runai/runai-cluster -n runai --reuse-values
 ```
 
 ## Verify successful installation
