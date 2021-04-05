@@ -42,7 +42,7 @@ System status after run:
 !!! Discussion
     * team-a can no longer remain in over-quota. Thus, one Job, must be _preempted_: moved out to allow team-b to grow.
     * Run:AI scheduler chooses to preempt Job _a1_.
-    * It is important that unattended Jobs will save [checkpoints](../best-practices/Saving-Deep-Learning-Checkpoints.md). This will ensure that whenever Job _a1_ resume, it will do so from where it left off.
+    * It is important that unattended Jobs will save [checkpoints](../best-practices/save-dl-checkpoints.md). This will ensure that whenever Job _a1_ resume, it will do so from where it left off.
 
 ## Part 3: Bin Packing
 

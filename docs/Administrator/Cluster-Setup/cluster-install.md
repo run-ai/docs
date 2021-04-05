@@ -77,16 +77,22 @@ Then run the following again:
 
 ## Step 2: Install Kubernetes
 
-There are several good ways to install Kubernetes. A full list can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Two good alternatives:
+A full list of Kubernetes set up methods can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Below are some: 
 
-1. __Native__ installation. For simple Kubernetes installation, the easiest and fastest way to setup Kubernetes is through a [Native Kubernetes Installation](install-k8s.md).
-2. __Kubespray__ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}. Kubespray uses Ansible scripts.  Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. 
+* Kubernetes is promoting [Kubespray](https://kubespray.io/#/){target=_blank}. Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. 
 
-### Specific Kubernetes Variants
+* Run:AI provides instructions for a simple Kubernetes installation. See [Native Kubernetes Installation](install-k8s.md).
 
-* If you are installing Kubernetes using [Rancher](https://rancher.com/){target=_blank}, please review the extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). 
-* Run:AI Works with OpenShift. For specific installation instructions for OpenShift, please contact Run:AI customer support. 
+* Run:AI has been tested with the following certified Kubernetes distributions: 
 
+| Target Platform | Description | Notes | 
+|-----------------|-------------|-------|
+| On Premise      |  Kubernetes is installed by customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| EKS | Amazon Elastic Kubernetes Service ||
+| AKS | Azure Kubernetes Services    ||
+| GKE | Google Kubernetes Engine ||
+| OCP | OpenShift Container Platform |  Please contact Run:AI customer support for full installation instructions | 
+| RKE | Rancher Kubernetes Engine | Perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). When installing Run:AI, select _On Premise_ |
 
 !!! Warning
     Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI. 
@@ -94,28 +100,26 @@ There are several good ways to install Kubernetes. A full list can be found here
 
 ## Step 3: Install Run:AI
 
-The following next steps assume that you have the Kubernetes command-line _kubectl_ on your laptop and that it is configured to point to a functioning Kubernetes cluster.
+Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support:
 
-### Step 3.1: Install Run:AI
+*   If no clusters are currently configured, you will see a Cluster installation wizard
+*   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster". 
 
-* Run:
+Using the Wizard:
 
+1. Choose a target Kubernetes platform (see table above)
+2. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
+3. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
+4. Install [Helm](https://helm.sh/docs/intro/install/)
+5. Run:
+
+``` bash
+helm repo add runai https://run-ai-charts.storage.googleapis.com
+helm repo update
+
+helm install runai-cluster runai/runai-cluster -n runai --create-namespace \
+    -f runai-<cluster-name>.yaml
 ```
-kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/pre-install.yaml
-```
-
-*   Log in to Run:AI Admin UI at [https://app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support.
-*   If no clusters are configured, you will see a dialog with instructions on how to install a Run:AI cluster.
-*   If a cluster has already been configured, open the menu on the top left and select "Clusters". On the top right-click "Add New Cluster". 
-
-Please read the next section __before__ proceeding.
-
-### Step 3.2: Customize Installation
-
-The Run:AI Admin UI cluster creation wizard asks you to download a YAML file ``runai-operator-<cluster-name>.yaml``. You must then _apply_ the file to Kubernetes. __Before__ applying to Kubernetes, you may need to edit this file. Examples:
-
-* Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Notebooks, PyCharm, VisualStudio Code). See: [Allow external access to Containers](allow-external-access-to-containers.md). Note that you can access containers via _port forwarding_ without requiring an ingress point. 
-* Allow outbound internet connectivity in a proxied environment. See: [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
 
 
 ## Step 4: Verify your Installation

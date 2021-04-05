@@ -63,7 +63,15 @@ All examples assume a Run:AI Project has been set using `runai config project <p
 
 Start an interactive Job:
 
-    runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
+```
+runai submit -i ubuntu --interactive --attach -g 1
+```
+
+Or
+
+```
+runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
+```
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
 
@@ -273,7 +281,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --ttl-after-finish duration
 >  Define the duration, post Job finish, after which the Job is automatically deleted (5s, 2m, 3h, etc).  
-> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../Scheduling/auto-delete-jobs.md).
+> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../scheduling/auto-delete-jobs.md).
 
 
 ### Access Control

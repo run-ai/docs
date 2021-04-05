@@ -3,9 +3,9 @@ Below are the prerequisites of a cluster installed with Run:AI.
 
 ## Kubernetes Software
 
-Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.19 is recommended (as of February 2021).
+Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.20 is recommended (as of April 2021).
 
-If you are using Red Hat OpenShift. The minimal version is OpenShift 4.3 which runs on Kubernetes 1.16.
+If you are using Red Hat OpenShift. The minimal version is OpenShift 4.3 which runs Kubernetes 1.16.
 
 ## NVIDIA Driver
 

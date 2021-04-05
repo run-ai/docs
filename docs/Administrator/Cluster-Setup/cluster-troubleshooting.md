@@ -19,7 +19,8 @@ Run:
 kubectl get pods -n runai
 ```
 
-Verify that all pods are in ``Running`` status. 
+* Verify that all pods are in ``Running`` status and re in ready state (1/1 or similar)
+* Identify the `runai-db-0` and `runai-agent-<id>` pods. Run: `kubectl logs -n runai <pod name>` and verify that there are no errors.
 
 Run:
 
@@ -38,9 +39,13 @@ kubectl get daemonset -n runai
 A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemon-sets the _desired_ number is equal to  _current_ and to _ready_. 
 
 
+Run:
+
 ```
 runai list projects
 ```
+
+Create a Project using the Administrator UI and verify that the Project is reflected in the above command. 
 
 ### 3. Submit a Job
 
@@ -159,66 +164,6 @@ Verify that there are no errors. If there are connectivity related errors you ma
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
 * If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
 
-
-
-
-## Symptom: Internal Database has not started
-
-Run: 
-```
-runai pods -n runai | grep runai-db-0
-``` 
-The status of the Run:AI database is not _Running_
-
- 
-__Typical root causes:__ 
-
-* More than one default storage class is installed
-* Incompatible NFS version
-
-
-__More than one default storage class is installed__
-
- The Run:AI Cluster installation includes, by default, a storage class named ``local path provisioner`` which is installed as a default storage class. In some cases, your k8s cluster may __already have__ a default storage class installed. In such cases you should disable the local path provisioner. Having two default storage classes will disable both the internal database and some of the metrics.
-
- Run:
-
-      kubectl get storageclass
-
-And look for _default_ storage classes.
-
- Run:
-
-      kubectl describe pod -n runai runai-db-0
-
- See that there is indeed a storage class error appearing
-
- To disable local path provisioner, run:
-
-      kubectl edit runaiconfig -n runai
- 
- Add the following lines under `spec`:
- 
-``` yaml
-local-path-provisioner:
-      enabled: false
-```
-
-__Incompatible NFS version__
-
-Default NFS Protocol [level](https://www.netapp.com/pdf.html?item=/media/19755-tr-3085.pdf){target=_blank} is currently 4. If your NFS requires an older version, you may need to add the option as follows. Run:
-
-```
-kubectl edit runaiconfig runai -n runai
-```
-
-Add `mountOptions` as follows:
-
-``` YAML
-nfs-client-provisioner:
-  nfs: 
-    mountOptions: ["nfsvers=3"]
-```
 
 ## Symptom: Cluster Installation failed on Rancher-based Kubernetes (RKE)
 

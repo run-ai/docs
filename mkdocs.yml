@@ -42,21 +42,23 @@ plugins:
       minify_html: true
   - redirects:
       redirect_maps:
-        'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
-        'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
-        'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md'
-        'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-build.md'
-        'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
-        'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-train.md'
-        'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
-        'Administrator/Cluster-Setup/Deleting-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-delete.md'
-        'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
-        'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md' : 'Administrator/Researcher-Setup/docker-to-runai.md'
-        'Researcher/cli-reference/runai-get.md' : 'Researcher/cli-reference/runai-describe.md'
-        'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md' : 'Administrator/admin-ui-setup/admin-ui-users.md'
+        # 'Administrator/Cluster-Setup/Run-AI-GPU-Cluster-Prerequisites.md': 'Administrator/Cluster-Setup/cluster-prerequisites.md'
+        # 'Administrator/Cluster-Setup/Installing-Run-AI-on-an-on-premise-Kubernetes-Cluster.md' : 'Administrator/Cluster-Setup/cluster-install.md'
+        # 'Administrator/Researcher-Setup/Installing-the-Run-AI-Command-Line-Interface.md' : 'Administrator/Researcher-Setup/cli-install.md'
+        # 'Researcher/Walkthroughs/Walkthrough-Start-and-Use-Interactive-Build-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-build.md'
+        # 'Researcher/Walkthroughs/Walkthrough-Launch-an-Interactive-Build-Workload-with-Connected-Ports.md' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
+        # 'Researcher/Walkthroughs/Walkthrough-Launch-Unattended-Training-Workloads-.md' : 'Researcher/Walkthroughs/walkthrough-train.md'
+        # 'Researcher/Walkthroughs/Walkthrough-Using-GPU-Fractions.md' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
+        # 'Administrator/Cluster-Setup/Deleting-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-delete.md'
+        # 'Administrator/Cluster-Setup/Upgrading-Cluster-Install.md' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
+        # 'Administrator/Researcher-Setup/Switch-from-working-with-Docker-to-working-with-Run-AI-.md' : 'Administrator/Researcher-Setup/docker-to-runai.md'
+        # 'Researcher/cli-reference/runai-get.md' : 'Researcher/cli-reference/runai-describe.md'
+        # 'Administrator/Admin-User-Interface-Setup/Adding-Updating-and-Deleting-Admin-UI-Users.md' : 'Administrator/admin-ui-setup/admin-ui-users.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
         'home/whats-new.md' : 'home/whats-new-2021.md'
+#        'Researcher/Presentations/Researcher-Onboarding-Presentation.md' : 'Researcher/presentations/researcher-onboarding-presentation.md'
+#        'Administrator/Presentations/Administrator-Onboarding-Presentation.md' : 'Administrator/presentations/administrator-onboarding-presentation.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -70,6 +72,7 @@ nav:
       - 'Prerequisites' : 'Administrator/Cluster-Setup/cluster-prerequisites.md'
 #      - 'Quick Single Node Install' : 'Administrator/Cluster-Setup/single-node-install.md'
       - 'Cluster Install' : 'Administrator/Cluster-Setup/cluster-install.md'
+      - 'Customize Installation' : 'Administrator/Cluster-Setup/customize-cluster-install.md'
       - 'Cluster Upgrade' : 'Administrator/Cluster-Setup/cluster-upgrade.md'
       - 'Cluster Delete' : 'Administrator/Cluster-Setup/cluster-delete.md'
       - 'Kubernetes Install' : 'Administrator/Cluster-Setup/install-k8s.md'      
@@ -99,7 +102,7 @@ nav:
       - 'Departments' : 'Administrator/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'Administrator/admin-ui-setup/dashboard-analysis.md'
     - 'Presentations' :
-      - 'Administrator Onboarding' : 'Administrator/Presentations/Administrator-Onboarding-Presentation.md'
+      - 'Administrator Onboarding' : 'Administrator/presentations/administrator-onboarding-presentation.md'
     - 'Tools' :
       - 'Submit workloads via Rancher' : 'Administrator/tools/Launch-Workloads-using-Rancher-User-Interface.md' 
 
@@ -136,22 +139,22 @@ nav:
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
       - 'runai version' : 'Researcher/cli-reference/runai-version.md'
     - 'Best Practices' :
-      - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/From-Bare-Metal-to-using-Docker-Images.md'
+      - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/bare-metal-to-docker-images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
-      - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/Saving-Deep-Learning-Checkpoints.md'
+      - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Identify a Job from within Container' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
-      - 'Allocation of CPU and Memory' : 'Researcher/Scheduling/Allocation-of-CPU-and-Memory.md'
-      - 'The Run:AI Scheduler' : 'Researcher/Scheduling/The-Run-AI-Scheduler.md'
-      - 'Job Statuses' : 'Researcher/Scheduling/Job-Statuses.md'
-      - 'Automatically Delete Finished Workloads' : 'Researcher/Scheduling/auto-delete-jobs.md'
+      - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
+      - 'The Run:AI Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
+      - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
+      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
       - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'
       - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Presentations' :
-      - 'Researcher Onboarding' : 'Researcher/Presentations/Researcher-Onboarding-Presentation.md'
+      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
