@@ -87,7 +87,7 @@ A full list of Kubernetes set up methods can be found here: [https://kubernetes.
 
 | Target Platform | Description | Notes | 
 |-----------------|-------------|-------|
-| On Premise      |  Kubernetes is installed by customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| On Premise      |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
 | EKS | Amazon Elastic Kubernetes Service ||
 | AKS | Azure Kubernetes Services    ||
 | GKE | Google Kubernetes Engine ||

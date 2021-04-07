@@ -25,7 +25,7 @@ Edit  `runai-<cluster-name>.yaml` and set `enabled` to `false` for the respectiv
 ### Review Access Roles
 
 
-The default Run:AI installation assumes administrative rights to create its own required access roles. You may want to want to provide your IT department with the ability to view and then pre-create these roles. 
+The default Run:AI installation assumes administrative rights to create its required access roles. You may want to want to provide your IT department with the ability to view and then pre-create these roles. 
 
 If you have not done so before, run:
 
@@ -55,7 +55,7 @@ The `ocp` folder contains OpenShift related access files.
 ### Pre-install Access Roles
 
 Your IT department can pre-apply the above YAML files after reviewing them.
-<!-- and then install Run:AI under reduced previlidges with access to designated namespaces only (`runai`, `node-feature-discovery` and `monitoring` for Prometheus). -->
+<!-- and then install Run:AI under reduced privileges with access to designated namespaces only (`runai`, `node-feature-discovery` and `monitoring` for Prometheus). -->
 
 In this case, in the values file, change `createRbac` to `false`.
  
@@ -68,4 +68,4 @@ Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Not
 
 ## Add a Proxy
 
-Allow outbound internet connectivity in a proxied network environment. See: [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
+Allow outbound internet connectivity in a proxied network environment. See [Installing Run:AI with an Internet Proxy Server](proxy-server.md).

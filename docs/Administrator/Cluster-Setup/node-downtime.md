@@ -14,7 +14,7 @@ The document differentiates between __Run:AI System Worker Nodes__ and __GPU Wor
 
 
 ## Worker Nodes
-Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for the purpose of planned maintenance or due to an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
+Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance or due to an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
 ### Training vs. Interactive
 Run:AI differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
@@ -29,7 +29,7 @@ Before stopping a Worker node, perform the following:
 kubectl drain <node_name> --delete-local-data --ignore-daemonsets
 ```
 
-* Shutdown the node and perform the required maintenance. 
+* Shut down the node and perform the required maintenance. 
 
 
 * When done, start the node and then run:
@@ -80,7 +80,7 @@ To rejoin a node to the cluster follow the following steps:
 
         kubeadm token create --print-join-command
 
-* This would output a ``kubeadm join`` command. Run the command on the worker node in order for it to re-join the Kubernetes cluster. 
+* This would output a ``kubeadm join`` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
 
 * Verify that the node is joined by running:
 
