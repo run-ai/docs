@@ -18,4 +18,4 @@ Subsequent API calls would be made with the Header: `authorization: Bearer <toke
 
 ## Example Usage (Python)
 
-See the [following](){target=_blank} code for an example of how to use the Run:AI Administrator REST API to create a User and a Project 
+See the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code for an example of how to use the Run:AI Administrator REST API to create a User and a Project 
