@@ -58,7 +58,7 @@ paths:
       tags:
         - Project
       summary: Create a new Project.
-      description: Retrieve a Project given a Project ID.
+      description: Create a new Project.
       responses:
         '200':
           description: OK
