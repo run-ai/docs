@@ -14,3 +14,8 @@ You must be a verified user to make API requests. You can authorize against the 
 Once authenticated, you will receive a token (_bearer_) which you should use in all further API calls. 
 
 Subsequent API calls would be made with the Header: `authorization: Bearer <token>`
+
+
+## Example Usage (Python)
+
+See the [following](){target=_blank} code for an example of how to use the Run:AI Administrator REST API to create a User and a Project 
