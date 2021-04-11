@@ -1,11 +1,11 @@
 ## Description
 
-Show the version of this utility.
+Show the user name currently logged in
 
 ## Synopsis
 
 ``` shell
-runai version 
+runai whoami 
     [--loglevel value] 
     [--help | -h]
 ```
@@ -23,6 +23,6 @@ runai version
 
 ## Output
 
-The version of the Run:AI command-line interface.
+The name of the User currently  Run:AI command-line interface.
 
 ## See Also
