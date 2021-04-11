@@ -26,7 +26,7 @@ The older style will still work with a deprecation notice.
 
 
 ## November 12th, 2020
-An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates that can be used with the --template flag. The new templates allow for mandatory values, defaults and run-time environment variable resolution.
+An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates, that can be used with the --template flag. The new templates allow for mandatory values, defaults, and run-time environment variable resolution.
 See [here](../Administrator/Researcher-Setup/template-config.md) for more.
 
 It is now also possible to pass __Secrets__ to Job. see [here](../Administrator/Researcher-Setup/use-secrets.md)
@@ -52,7 +52,7 @@ __GPU Fractions__ now run in training and not only interactive. GPU Fractions tr
 
 ## August 10th, 2020
 
-Run:AI Now supports __Distributed Training__ and __Gang Scheduling__. For further information , see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) quickstart.
+Run:AI Now supports __Distributed Training__ and __Gang Scheduling__. For further information, see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) quickstart.
 
 ## August 4th, 2020
 
@@ -105,4 +105,4 @@ For further information see: [Upgrading a Run:AI Cluster Installation](../Admini
 
 #### Admin Overview Dashboard
 
-A new admin overview dashboard which shows a more holistic view of multiple clusters. Applicable for customers with more than one cluster.
+A new admin overview dashboard that shows a more holistic view of multiple clusters. Applicable for customers with more than one cluster.

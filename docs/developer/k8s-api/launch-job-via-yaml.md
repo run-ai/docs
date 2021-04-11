@@ -2,7 +2,7 @@
 
 The easiest way to submit Jobs to the Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). Still, the CLI is not a must. It is only a wrapper for a more detailed Kubernetes API syntax using YAML. 
 
-There are cases where you want to forgo the CLI and use direct YAML calls. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system which submits Jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
+There are cases where you want to forgo the CLI and use direct YAML calls. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system that submits Jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
 
 ## Terminology
 
@@ -72,15 +72,15 @@ kubectl apply -f <FILE-NAME>
 ```
 
 !!! Note
-    * You can use either a regular `Job` or `RunaiJob`. The later is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
-    * Using `build` in the `priorityClassName` field is equivalent to running a job via the CLI with a '--interactive' flag. To run Train job, delete this line.
+    * You can use either a regular `Job` or `RunaiJob`. The latter is a Run:AI object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
+    * Using `build` in the `priorityClassName` field is equivalent to running a job via the CLI with a '--interactive' flag. To run a Train job, delete this line.
     * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
 
 
 
 ### Using Fractional GPUs
 
-Jobs with Fractions requires a change in the above YAML. Specifically, the limits section:
+Jobs with Fractions require a change in the above YAML. Specifically, the limits section:
 
 
 ``` yaml

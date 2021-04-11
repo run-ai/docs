@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Some Researchers do data-science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.
+Some Researchers do data science on _bare metal_. The term bare-metal relates to connecting to a server and working directly on its operating system and disks.
 
 This is the fastest way to start working, but it introduces problems when the data science organization scales:
 
@@ -12,7 +12,7 @@ This is the fastest way to start working, but it introduces problems when the da
 To overcome that, people working on bare-metal typically write scripts to gather data, code as well as code dependencies. This soon becomes an overwhelming task.
 
 ## Why Use Docker Images?
-Docker images and 'containerization' in general provide a level of abstraction which, by large, frees developers and Researchers from the mundane tasks of 'setting up an environment'. The image is an operating system by itself and thus the 'environment' is by large, a part of the image.
+Docker images and _containerization_ in general provide a level of abstraction which, by large, frees developers and Researchers from the mundane tasks of _setting up an environment_. The image is an operating system by itself and thus the 'environment' is by large, a part of the image.
 
 When a docker image is instantiated, it creates a _container_. A container is the running manifestation of a docker image.
 
@@ -85,6 +85,6 @@ For training workloads, you can use a well-known image (e.g. the nvidia-tensorfl
 <li>(Optional) Run a script</li>
 </ol>
 
-The script can be part of the image or can be provided as part of the command-line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
+The script can be part of the image or can be provided as part of the command line to run the docker. It will typically include additional dependencies to install as well as a reference to the ML code to be run. 
 
 The best practice for running training workloads is to test the container image in a "build" session and then send it for execution as a training Job. For further information on how to set up and parameterize a training workload via docker or Run:AI see [Converting your Workload to use Unattended Training Execution](convert-to-unattended.md).

@@ -1,6 +1,6 @@
 # Inference Setup
 
-Inference Jobs are an integral part of Run:AI and do not require setting up per-se. However, Running multiple production-grade processes on a single GPU is best performed with an NVIDIA technology called _Multi-Process Service_ or _MPS_
+Inference Jobs are an integral part of Run:AI and do not require setting up per se. However, Running multiple production-grade processes on a single GPU is best performed with an NVIDIA technology called _Multi-Process Service_ or _MPS_
 
 By default, MPS is not enabled on GPU nodes.
 
