@@ -78,7 +78,7 @@ You can also access the container remotely from tools such as PyCharm, Jupyter N
 
 ### Training Workloads
 
-For training workloads, you can use a well-known image (e.g. the nvidia-tensorflow image from the link above) but more often than not, you want to create your own docker image. The best practice is to use the well-known image (e.g. nvidia-tensorflow from above) as a __base image__ and add your own customizations __on top__ of it. To achieve that, you create a __Dockerfile__. A Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
+For training workloads, you can use a well-known image (e.g. the TensorFlow image from the link above) but more often than not, you want to create your own docker image. The best practice is to use the well-known image (e.g. TensorFlow from above) as a __base image__ and add your own customizations __on top__ of it. To achieve that, you create a __Dockerfile__. A Dockerfile is a declarative way to build a docker image and is built in layers. e.g.:
 
 <ol><li>Base image is nvidia-tensorflow</li>
 <li>Install popular software</li>
