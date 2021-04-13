@@ -39,6 +39,7 @@ kubectl get nodes
 ### Run:AI CLI Installation
 
 *   Download the latest release from the Run:AI [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}
+*   For MacOS - download the darwin-amd64 release, For Linux - download the linux-amd64 release.
 *   Unarchive the downloaded file
 *   Install by running:
 
