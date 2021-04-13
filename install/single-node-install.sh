@@ -1,15 +1,9 @@
 # Requires Auth0 grant type connection to be added 'password' (automated). 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: sudo install-cluster.sh email password"
+    echo "Usage: install-cluster.sh email password"
     exit 1
 fi
 
-if groups | grep "\<sudo\>" &> /dev/null; then
-   echo "sudo access provided."
-else
-   echo "Command requires sudo rights."
-   exit 1
-fi
 
 GREEN='\033[0;32m'
 NC='\033[0m'
@@ -17,22 +11,29 @@ NC='\033[0m'
 RUNAI_USERNAME=$1
 RUNAI_PASSWORD=$2
 CLUSTER_NAME=cluster1
-
-# install utils
-sudo apt update
-sudo apt-get install -y conntrack
-sudo apt-get install jq -y
+MY_USER=$SUDO_USER
 
 
 
 # **** NVIDIA-DRIVERS ****
 if ! type nvidia-smi > /dev/null; then
 	echo -e "${GREEN} NVIDIA Drivers not installed, installing now ${NC}"
-	sudo apt install ubuntu-drivers-common -y
-	sudo ubuntu-drivers autoinstall
+	wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+	sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+	sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+	sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+	sudo apt-get update
+	sudo apt-get -y install cuda
 	echo -e  "${GREEN} NVIDIA Drivers installed. Reboot your machine and run this script again to continue ${NC}"
 	exit
 fi
+
+# install utils
+echo -e "${GREEN} Installing Utilities ${NC}"
+sudo apt update
+sudo apt-get install -y conntrack
+sudo apt-get install jq -y
+
 
 # **** Docker ****
 if ! type docker > /dev/null; then
@@ -40,10 +41,19 @@ if ! type docker > /dev/null; then
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 fi
+
+# **** remove sudo constraint for docker 
+sudo usermod -aG docker $USER
+
+if groups | grep "docker" &> /dev/null; then
+   echo "user belongs to docker group."
+else
+   echo  -e "${GREEN} Logout and login again to have docker group changes take affect. Then re-run the single-node-install.sh script${NC}"
+   exit 0
+fi
+
 sudo systemctl restart docker
 
-# **** remove sudo constraint for docker
-sudo usermod -aG docker $USER
 
 # **** install NVIDIA docker ****
 if ! type nvidia-docker > /dev/null; then
@@ -120,8 +130,8 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
 echo -e "${GREEN} Starting Kubernetes... ${NC}"
-sudo minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --kubernetes-version=1.18.4
-sudo chown -R $SUDO_USER ~/.kube ~/.minikube
+minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --kubernetes-version=1.20.5
+sudo chown -R $MY_USER ~/.kube ~/.minikube
 
 
 # *** Log into Run:AI
@@ -178,21 +188,24 @@ else
 fi
 
 
-# **** Download a cluster operator install file
+# **** Download a cluster operator values file
 curl 'https://app.run.ai/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
---header 'Authorization: Bearer '$BEARER'' > runai-operator-$CLUSTER_NAME.yaml
+--header 'Authorization: Bearer '$BEARER'' > runai-values-$CLUSTER_NAME.yaml
 
 
 
+# **** Install Run:AI 
+echo -e "${GREEN} Installing Run:AI Cluster ${NC}"
 
+helm repo add runai https://run-ai-charts.storage.googleapis.com
+helm repo update
 
-# **** Install Run:AI (running twice to overcome a possible race condition bug)
-kubectl apply -f runai-operator-$CLUSTER_NAME.yaml
-kubectl apply -f runai-operator-$CLUSTER_NAME.yaml
+helm install runai-cluster runai/runai-cluster -n runai --create-namespace -f runai-values-$CLUSTER_NAME.yaml
+ 
 
 
 # **** Wait on Run:AI cluster installation progress 
-echo -e "${GREEN}Run:AI cluster installation is now in progress. If this process continues beyond 5 minutes, stop it and send /tmp/runai* files to support@run.ai ${NC}"
+echo -e "${GREEN}Run:AI cluster installation is now in progress. If this process continues beyond 10 minutes, stop it and send /tmp/runai* files to support@run.ai ${NC}"
 
 sleep 15
 until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
