@@ -28,11 +28,19 @@ Provide access roles:
 kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/jhubroles.yaml
 ```
 
-JupyterHub requires storage in the form of a PersistentVolume (PV). For __an example__ of a _local_ PV, download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} and replace <NODE-NAME> with one of your worker nodes. Then run:
+JupyterHub requires storage in the form of a PersistentVolume (PV). For __an example__ of a _local_ PV:
+
+* Download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} 
+* Replace <NODE-NAME> with one of your worker nodes. 
+* The Example PV refers to `/srv/jupyterhub`. Log on to the node and run `chmod 777 -R /srv/jupyterhub`
+
+Then run:
 
 ```
 kubectl apply -f pv-example.yaml 
 ```
+
+The JupyterHub installation creates a _PersistentVolumeClaim_ named `hub-db-dir` that should be refered to by the PV.
 
 Create a configuration file for JupyterHub. An example configuration file for Run:AI can be found in [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml){target=_blank}. It contains 3 JupyterHub configuration. 
 
@@ -55,11 +63,7 @@ Run:
 kubectl get service -n jhub proxy-public
 ```
 
-Use the `External IP` of the service to access the service
-
-XXX If there's no LoadBalancer in the cluster and the service was not given an external IP, edit the service and add the externalIPs of the machine manually.
+Use the `External IP` of the service to access the service.
 
 
-## Configure Profiles
-
-XXX For every jupyterhub user create a runai project with the user-name
+Login with Run:AI Project name as user name.

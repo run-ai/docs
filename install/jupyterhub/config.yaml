@@ -25,14 +25,7 @@ proxy:
   secretToken: <SECRET-TOKEN>
 singleuser:
   storage:
-    type: none
-    extraVolumes: # if needed
-    - name: jupyterhub-shared
-      hostPath: 
-        path: /home/gal/jupyterhub
-    extraVolumeMounts:
-    - name: jupyterhub-shared
-      mountPath: /home/shared    
+    type: none  
   profileList:
   - slug: "RA 0.5"
     description: "Run:AI Profile"
