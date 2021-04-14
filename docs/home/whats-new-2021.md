@@ -1,6 +1,12 @@
 
-Inference
-https://docs.run.ai/developer/inference/overview/
+
+
+<!-- Inference - show: https://docs.run.ai/developer/inference/overview/
+Jupyter Hub support
+MIG Support https://runai.atlassian.net/browse/RUN-1279
+RBAC Permissions???
+Show the original Run:AI Command line
+GPU Types on node and job -->
 
 
 ## April 1<sup>st</sup>, 2021
