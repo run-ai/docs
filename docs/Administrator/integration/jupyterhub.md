@@ -26,50 +26,22 @@ Provide access roles:
 kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/jhubroles.yaml
 ```
 
-JupyterHub requires storage in the form of a PersistentVolume (PV). The following is just __an example__ of a _local_ PV. Replace <NODE-NAME> with one of your worker nodes:
-
-``` YAML
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: hub-db-pv
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 5Gi
-  claimRef:
-    namespace: jhub
-    name: hub-db-dir
-  hostPath:
-    path: "/srv/jupyterhub"
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - <NODE-NAME>
-  persistentVolumeReclaimPolicy: Retain
-  volumeMode: Filesystem
-```
-
-Place the above into a file name pv-example.yaml and run:
+JupyterHub requires storage in the form of a PersistentVolume (PV). For __an example__ of a _local_ PV, download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} and replace <NODE-NAME> with one of your worker nodes. Then run:
 
 ```
 kubectl apply -f pv-example.yaml 
 ```
+
+Create a configuration file for JupyterHub. An example configuration file for Run:AI can be found in [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml){target=_blank}. It contains 3 JupyterHub configuration. 
+
+For documentation on JupyterHub configuration see XXX
 
 Run:
 
 ``` bash 
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
-helm install jhub jupyterhub/jupyterhub -n jhub --values config.yaml
+helm install jhub jupyterhub/jupyterhub -n jhub --values https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml
 ```
 
 ## Access JupyterHub
@@ -82,9 +54,9 @@ kubectl get service -n jhub proxy-public
 
 Use the `External IP` of the service to access the service
 
-xxx If there's no LoadBalancer in the cluster and the service was not given an external IP, edit the service and add the externalIPs of the machine manually.
+XXX If there's no LoadBalancer in the cluster and the service was not given an external IP, edit the service and add the externalIPs of the machine manually.
 
 
 ## Configure Profiles
 
-xxx For every jupyterhub user create a runai project with the user-name
+XXX For every jupyterhub user create a runai project with the user-name
