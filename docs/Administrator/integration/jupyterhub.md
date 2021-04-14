@@ -16,19 +16,21 @@ If you wish to connect to a __local__ Jupyter Notebook inside a container, see [
 
 This document follows the JupyterHub [installation documentation](https://zero-to-jupyterhub.readthedocs.io/en/stable/jupyterhub/installation.html){target=_blank}
 
-__Create a namespace__, by running:
+### Create a namespace
+
+Run:
 
 ```
 kubectl create namespace jhub
 ```
 
-__Provide access roles:__
+### Provide access roles
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/jhubroles.yaml
 ```
 
-__Create storage:__
+### Create storage
 
 JupyterHub requires storage in the form of a PersistentVolume (PV). For __an example__ of a _local_ PV:
 
@@ -45,12 +47,14 @@ kubectl apply -f pv-example.yaml
 !!!Note
     The JupyterHub installation will create a _PersistentVolumeClaim_ named `hub-db-dir` that should be referred to by any PV you create.
 
-__Create a configuration file:__
+### Create a configuration file
 
 Create a configuration file for JupyterHub. An example configuration file for Run:AI can be found in [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml){target=_blank}. It contains 3 sample Run:AI configurations. 
 
 * Download the file 
 * Replace `<SECRET-TOKEN>` with a random number generated, by running `openssl rand -hex 32`
+
+### Install
 
 Run:
 
