@@ -508,7 +508,6 @@ rules:
       - ""
     resources:
       - configmaps
-      - limitranges
     verbs:
       - get
       - list
@@ -560,14 +559,6 @@ rules:
       - clusterroles
     verbs:
       - bind
-  - apiGroups:
-      - ""
-    resources:
-      - limitranges
-      - limitranges/finalizers
-    verbs:
-      - update
-      - create
 ---
 
 # ------------- Project-based Researcher Access Control -------------------
