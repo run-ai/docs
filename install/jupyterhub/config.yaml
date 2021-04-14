@@ -22,7 +22,7 @@ hub:
           spawner.log.debug("pre_spawn_hook end")
       c.Spawner.pre_spawn_hook = pre_spawn_hook    
 proxy:
-  secretToken: <secret token>
+  secretToken: <SECRET-TOKEN>
 singleuser:
   storage:
     type: none
