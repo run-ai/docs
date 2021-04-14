@@ -1,0 +1,61 @@
+hub:
+  image:
+    tag: 0.11.1-n270.he08bb7f8
+  extraConfig:
+    runaiConfig: |
+      c.KubeSpawner.scheduler_name = u'runai-scheduler'
+      c.KubeSpawner.extra_labels = {
+          'project': '{username}',
+          'user': '{username}',
+          'priorityClassName': 'build'
+      }
+      c.KubeSpawner.environment = {
+          'JUPYTERHUB_API_URL': 'http://hub.jhub.svc.cluster.local:8081/hub/api'
+      }
+      c.KubeSpawner.enable_user_namespaces = True
+      c.KubeSpawner.user_namespace_template = u'runai-{username}'
+      def pre_spawn_hook(spawner):
+          spawner.log.debug("pre_spawn_hook start")
+          async def dummy_ensure_namespace():
+              spawner.log.debug("dummy ensure_namespace")
+          spawner._ensure_namespace = dummy_ensure_namespace              
+          spawner.log.debug("pre_spawn_hook end")
+      c.Spawner.pre_spawn_hook = pre_spawn_hook    
+proxy:
+  secretToken: <secret token>
+singleuser:
+  storage:
+    type: none
+    extraVolumes: # if needed
+    - name: jupyterhub-shared
+      hostPath: 
+        path: /home/gal/jupyterhub
+    extraVolumeMounts:
+    - name: jupyterhub-shared
+      mountPath: /home/shared    
+  profileList:
+  - slug: "RA 0.5"
+    description: "Run:AI Profile"
+    display_name: "Run:AI with 0.5 GPU"
+    kubespawner_override:
+      image: jupyter/tensorflow-notebook
+      tag: 3395de4db93a
+      extra_annotations:
+        gpu-fraction: "0.5"
+  - default: true
+    slug: "RA 1"
+    description: "Run:AI Profile"
+    display_name: "Run:AI with 1 GPU"
+    kubespawner_override:
+      image: jupyter/datascience-notebook
+      tag: 177037d09156
+      extra_resource_limits:
+        nvidia.com/gpu: "1"
+  - slug: "RA 2"
+    description: "Run:AI Profile"
+    display_name: "Run:AI with 2 GPU"
+    kubespawner_override:
+      image: jupyter/tensorflow-notebook
+      tag: 3395de4db93a
+      extra_resource_limits:
+        nvidia.com/gpu: "2"  
