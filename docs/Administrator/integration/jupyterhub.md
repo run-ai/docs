@@ -31,8 +31,8 @@ kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/ju
 JupyterHub requires storage in the form of a PersistentVolume (PV). For __an example__ of a _local_ PV:
 
 * Download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} 
-* Replace <NODE-NAME> with one of your worker nodes. 
-* The Example PV refers to `/srv/jupyterhub`. Log on to the node and run `chmod 777 -R /srv/jupyterhub`
+* Replace `<NODE-NAME>` with one of your worker nodes. 
+* The example PV refers to `/srv/jupyterhub`. Log on to the node and run `chmod 777 -R /srv/jupyterhub`
 
 Then run:
 
