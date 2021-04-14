@@ -1,8 +1,21 @@
+
+Inference
+https://docs.run.ai/developer/inference/overview/
+
+
+## April 1<sup>st</sup>, 2021
+
+Run:AI now supports Kubernetes 1.20
+
+## March 24th 2021.
+
+Job List and Node list now show CPU utilization and CPU memory utilization.
+
 ## February 14th, 2021
 
-The Job list now shows per-Job graphs for GPU utilization, GPU memory, CPU utilization, and CPU memory. 
+The Job list now shows per-Job graphs for GPU utilization, GPU memory. 
 
-The Node list now shows per-Node graphs for GPU utilization, GPU memory, CPU utilization, and CPU memory. 
+The Node list now shows per-Node graphs for GPU utilization, GPU memory. 
 
 
 ## January 22<sup>nd</sup>, 2021
