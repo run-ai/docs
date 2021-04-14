@@ -64,6 +64,16 @@ helm repo update
 helm install jhub jupyterhub/jupyterhub -n jhub --values config.yaml
 ```
 
+### Verify Installation
+
+Run: 
+
+```
+kubectl get pods -n jhub
+```
+
+Verify that all pods are running
+
 ## Access JupyterHub
 
 Run:
