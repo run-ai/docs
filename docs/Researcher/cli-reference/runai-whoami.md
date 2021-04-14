@@ -23,6 +23,6 @@ runai whoami
 
 ## Output
 
-The name of the User currently  Run:AI command-line interface.
+The name of the User currently logged in with the Run:AI command-line interface.
 
 ## See Also

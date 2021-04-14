@@ -5,8 +5,8 @@ Delete a Job and its associated Pods.
 Note that once you delete a Job, its entire data will be gone:
 
 * You will no longer be able to enter it via bash.
-* You will no longer be able access logs.
-* Any data saved on the container and not stored on a shared location will be lost.
+* You will no longer be able to access logs.
+* Any data saved on the container and not stored in a shared location will be lost.
 
 ## Synopsis
 

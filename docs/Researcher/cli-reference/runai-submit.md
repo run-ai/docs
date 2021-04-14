@@ -137,7 +137,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --always-pull-image stringArray (deprecated)
 >  Deprecated. Please use `image-pull-policy=always` instead.
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag, but may incur a penalty of performance degradation on Job start. 
+>  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag but may incur a penalty of performance degradation on Job start. 
 
 --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
@@ -190,7 +190,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
 --cpu-limit double
-> Limitations on the number of CPU consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
+> Limitations on the number of CPUs consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
 
 --gpu double | -g double
 > Number of GPUs to allocated for the Job. The default is no allocated GPUs. The GPU value can be an integer or a fraction between 0 and 1.
@@ -217,7 +217,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 
-> __Storage_Class_Name__ is a storage class name which can be obtained by running `kubectl get storageclasses.storage.k8s.io`. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
+> __Storage_Class_Name__ is a storage class name that can be obtained by running `kubectl get storageclasses.storage.k8s.io`. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 
 >    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
 
@@ -246,7 +246,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --host-ipc
 >  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
-> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or through the network stack.
+> Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
 
@@ -265,7 +265,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --service-type string | -s string
 >  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`, ingress.
->  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structure.
+>  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structures.
 
 
 ### Job Lifecycle
@@ -293,7 +293,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories etc. For more information see [non root containers(../../Administrator/Cluster-Setup/non-root-containers.md).
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. For more information see [non root containers(../../Administrator/Cluster-Setup/non-root-containers.md).
 
 
 ### Scheduling
@@ -306,7 +306,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../Administrator/admin-ui-setup/project-setup.md).
 
 --preemptible
->  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
+>  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above the guaranteed quota but may be reclaimed at any time.
 
 
 ### Global Flags
