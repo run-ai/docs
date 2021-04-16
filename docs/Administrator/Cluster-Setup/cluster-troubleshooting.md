@@ -174,10 +174,11 @@ __Resolution__
 During initialization, Run:AI creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
 
 ``` YAML
-kube-controller:
- extra_args:
-  cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
-  cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
+services:
+  kube-controller:
+    extra_args:
+      cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
+      cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
 ```
 
 For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
