@@ -1,12 +1,20 @@
 
+<!-- Show the original Run:AI Command line  -->
+April 20<sup>th</sup> 2021
+
+Job List and Node list now show the GPU type (e.g. v-100).
 
 
-<!-- Inference - show: https://docs.run.ai/developer/inference/overview/
-Jupyter Hub support
-MIG Support https://runai.atlassian.net/browse/RUN-1279
-RBAC Permissions???
-Show the original Run:AI Command line
-GPU Types on node and job -->
+April 18<sup>th</sup>, 2021
+
+Inference workloads are now supported. For further details see [Inference Overview](../developer/inference/overview.md).
+
+JupyterHub integration is now supported. For further details see [JupyterHub Integration](../Administrator/integration/jupyterhub.md)
+
+
+Now support NVIDIA [MIG](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/){target=_blank}. You can use the NVIDIA MIG technology to partition A-100 GPUs. Each partition will be considered as a single GPU by the Run:AI system.
+
+
 
 
 ## April 1<sup>st</sup>, 2021
