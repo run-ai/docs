@@ -64,25 +64,41 @@ Locate the Kubernetes API Server configuration file. The file's location may def
 
 Edit the document to add the following parameters at the end of the existing command list:
 
-``` YAML
- spec:
-   containers:
-   - command:
-     ... 
-     - --oidc-client-id=<CLIENT_ID>
-     - --oidc-issuer-url=https://runai-prod.auth0.com/
-     - --oidc-username-prefix=-
-     - --oidc-groups-claim=email
-```
 
-Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run:
+=== "Kubernetes"
+    ``` YAML
+    spec:
+      containers:
+      - command:
+        ... 
+        - --oidc-client-id=<CLIENT_ID>
+        - --oidc-issuer-url=https://runai-prod.auth0.com/
+        - --oidc-username-prefix=-
+        - --oidc-groups-claim=email
+    ```
 
-```
-kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
-```
+    Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run:
 
-And search for the above _oidc_ flags. 
+    ```
+    kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
+    ```
 
+    And search for the above _oidc_ flags. 
+
+=== "RKE"
+    Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
+
+    ``` YAML
+        kube-api:
+          always_pull_images: false
+          extra_args:
+            oidc-client-id: <CLIENT_ID>
+            oidc-groups-claim: email
+            oidc-issuer-url: 'https://runai-prod.auth0.com/'
+            oidc-username-prefix: '-'
+    ```
+
+    You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/){target=_blank} and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
 
 ## Test
