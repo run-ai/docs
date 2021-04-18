@@ -1,11 +1,11 @@
 
 <!-- Show the original Run:AI Command line  -->
-April 20<sup>th</sup> 2021
+## April 20<sup>th</sup> 2021
 
 Job List and Node list now show the GPU type (e.g. v-100).
 
 
-April 18<sup>th</sup>, 2021
+## April 18<sup>th</sup>, 2021
 
 Inference workloads are now supported. For further details see [Inference Overview](../developer/inference/overview.md).
 
@@ -16,12 +16,11 @@ Now support NVIDIA [MIG](https://www.nvidia.com/en-us/technologies/multi-instanc
 
 
 
-
 ## April 1<sup>st</sup>, 2021
 
 Run:AI now supports Kubernetes 1.20
 
-## March 24th 2021.
+## March 24th 2021
 
 Job List and Node list now show CPU utilization and CPU memory utilization.
 
