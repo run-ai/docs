@@ -12,7 +12,7 @@ Inference workloads are now supported. For further details see [Inference Overvi
 JupyterHub integration is now supported. For further details see [JupyterHub Integration](../Administrator/integration/jupyterhub.md)
 
 
-Now support NVIDIA [MIG](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/){target=_blank}. You can use the NVIDIA MIG technology to partition A-100 GPUs. Each partition will be considered as a single GPU by the Run:AI system.
+NVIDIA [MIG](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/){target=_blank} is now supported. You can use the NVIDIA MIG technology to partition A-100 GPUs. Each partition will be considered as a single GPU by the Run:AI system and all the Run:AI functionality is supported in the partition level, including GPU Fractions.
 
 
 
