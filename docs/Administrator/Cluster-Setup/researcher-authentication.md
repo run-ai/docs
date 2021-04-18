@@ -2,7 +2,7 @@
 
 ## Introduction
 
-By default, Run:AI is configured to allow all Researchers access to all Jobs and Projects.  This document provides step-by-step instructions on how to enable access-control. Run:AI access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
+By default, Run:AI is configured to allow all Researchers access to all Jobs and Projects.  This document provides step-by-step instructions on how to enable access control. Run:AI access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
 
 ## How it works
 
@@ -10,9 +10,10 @@ The Run:AI command-line interface uses a Kubernetes configuration file residing 
 
 Authentication setup works as follows:
 
+* __Administration User Interface Setup__. Enable the feature.
 * __Client-side:__ Modify the Kubernetes configuration file to prompt for credentials.
 * __Server-side:__ Modify the Kubernetes cluster to validate credentials against the Run:AI Authentication authority. 
-* __Assign Users to Projects__ using the Run:AI Administration UI.
+* __Assign Users to Projects__ using the Run:AI Administration UI. See [here](../../admin-ui-setup/project-setup/#assign-users-to-project)
 
 
 ## Administration User Interface Setup
@@ -22,7 +23,7 @@ Authentication setup works as follows:
 Under [app.run.ai](https://app.run.ai/general-settings) settings:
 
 * Enable the flag _Researcher Authentication_.
-* Copy the values for `Client ID` and `Realm` which appear on screen. 
+* Copy the values for `Client ID` and `Realm` which appear on the screen. 
 
 ### Assign Users to Projects
 
@@ -41,7 +42,7 @@ When making changes to the certificate, keep a copy of the original certificate 
 Under the `~/.kube` directory edit the `config` file, and add the following:
 
 ``` YAML
-- name: <USER_NAME>
+- name: runai-authenticated-user
   user:
     auth-provider:
       config:
@@ -52,7 +53,7 @@ Under the `~/.kube` directory edit the `config` file, and add the following:
       name: oidc
 ```
 
-Where `<USER_NAME>` is an arbitrary name which is also referred to under `contexts | context | user` in the same file.
+Under `contexts | context | user` change the user to `runai-authenticated-user`
 
 
 You must distribute the modified certificate to Researchers. 
@@ -98,7 +99,7 @@ Edit the document to add the following parameters at the end of the existing com
             oidc-username-prefix: '-'
     ```
 
-    You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/){target=_blank} and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
+    You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
 
 ## Test
