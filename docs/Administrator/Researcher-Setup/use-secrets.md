@@ -59,6 +59,7 @@ As per the note above, secrets are namespace-specific. If your secret relates to
 ```
 runai-adm set secret <secret name> --cluster-wide
 ```
+
 !!! Reminder
     The Run:AI Administrator CLI can be obtained [here](../Cluster-Setup/cli-admin-install.md).
 
