@@ -240,7 +240,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 
 --volume stringArray | -v stringArray
->  Volume to mount into the container. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+>  Volume to mount into the container.  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
 
 
 ### Network
