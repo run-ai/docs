@@ -51,6 +51,9 @@ runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 
 ### Secrets and Projects
 
+!!! Important
+    The feature described below is not enabled by default in Run:AI cluster installations
+
 As per the note above, secrets are namespace-specific. If your secret relates to all Run:AI Projects, do the following to propagate the secret to all Projects:
 
 * Create a secret within the `runai` namespace.
