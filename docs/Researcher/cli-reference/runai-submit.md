@@ -150,7 +150,8 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Example: `--command -- python script.py 10000` 
 
 -e stringArray | --environment stringArray
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`) or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`)
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
+<!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
 
 --git-sync string
 > Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
