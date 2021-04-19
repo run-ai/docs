@@ -63,7 +63,7 @@ allowedCapabilities: null
 priority: 10
 readOnlyRootFilesystem: false
 runAsUser:
-  type: RunAsAny
+  type: MustRunAsRange
 seLinuxContext:
   type: MustRunAs	
 ---
