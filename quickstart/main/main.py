@@ -22,6 +22,10 @@ FRACTION = TOTAL_MEMORY / NEEDED_MEMORY
 GLOBAL_BATCH_SIZE = 256
 MAX_GPU_BATCH_SIZE = 64
 IMAGE_SIZE = 224
+EPOCHS = 100
+
+if "EPOCHS" in os.environ:
+    EPOCHS = int(os.environ["EPOCHS"])
 
 MAX_GPU_BATCH_SIZE = int(min(FRACTION * MAX_GPU_BATCH_SIZE, MAX_GPU_BATCH_SIZE))
 IMAGE_SIZE = max(int(min(FRACTION * IMAGE_SIZE, IMAGE_SIZE)), 32) # image size must be at least 32
@@ -41,6 +45,7 @@ print("Total GPU memory: %d MiB (~%d%% of needed)" % (TOTAL_MEMORY, FRACTION * 1
 print("Global batch size: %d" % GLOBAL_BATCH_SIZE)
 print("Max GPU batch size: %d" % MAX_GPU_BATCH_SIZE)
 print("Image size: %d" % IMAGE_SIZE)
+print("Using " + str(EPOCHS) + " number of epochs")
 
 import runai.elastic.keras
 
@@ -162,7 +167,7 @@ def main():
     report("Training model")
     model.fit(x_train, y_train,
               batch_size=runai.elastic.batch_size,
-              epochs=100,
+              epochs=EPOCHS,
               validation_data=(x_test, y_test),
               shuffle=False,
               verbose=runai.elastic.master,

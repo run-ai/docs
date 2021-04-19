@@ -1,38 +1,3 @@
-## We are working to remove "allowPrivilegeEscalation" and checking "allowHostDirVolumePlugin"
-
-kind: SecurityContextConstraints
-apiVersion: security.openshift.io/v1
-metadata:
-  name: runai-user-job
-allowHostDirVolumePlugin: true
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: false
-allowPrivilegedContainer: false
-allowedCapabilities: null
-priority: 10
-readOnlyRootFilesystem: false
-runAsUser:
-  type: MustRunAsRange
-seLinuxContext:
-  type: MustRunAs	
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: runai-user-job
-rules:
-- apiGroups:
-  - security.openshift.io
-  resourceNames:
-  - runai-user-job
-  resources:
-  - securitycontextconstraints
-  verbs:
-  - use
----
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
