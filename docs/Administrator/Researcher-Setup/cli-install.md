@@ -36,7 +36,7 @@ export KUBECONFIG=<Kubernetes-config-file>
 kubectl get nodes
 ```
 
-### Run:AI CLI Installation
+### Install Run:AI CLI 
 
 *   Download the latest release from the Run:AI [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}
 *   For MacOS - download the darwin-amd64 release, For Linux - download the linux-amd64 release.
@@ -53,11 +53,40 @@ sudo ./install-runai.sh
 runai list jobs
 ```
 
+## Install Command Auto Completion 
+
+It is possible to configure your Linux/Mac shell to complete Run:AI CLI commands. This feature works on _bash_ and _zsh_ shells only.
+
+### Zsh
+
+Edit the file `~/.zshrc`. Add the lines:
+
+```
+autoload -U compinit; compinit -i
+source <(runai completion zsh)
+```
+
+### Bash
+
+Install the bash-completion package:
+
+* Mac: `brew install bash-completion`
+* Ubundu/Debian: `sudo apt-get install bash-completion`
+* Fedora/Centos: `sudo yum install bash-completion`
+
+Edit the file `~/.bashrc`. Add the lines:
+
+``` bash
+[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+source <(runai completion bash)
+```
+
+
 ## Troubleshooting the CLI Installation
 
 See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
-## Updating the Run:AI CLI
+## Update the Run:AI CLI
 
 To update the CLI to the latest version run:
 
