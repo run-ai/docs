@@ -57,7 +57,7 @@ Run:
 
 You have __two__ Jobs that are running on the first node and __one__ Job that is running alone the second node. 
 
-Choose one of the two Job from the full node and delete it:
+Choose one of the two Jobs from the full node and delete it:
 
     runai delete <job-name> -p <project>
 
@@ -72,7 +72,7 @@ The status now is:
 ![overquota4](img/overquota4.png)
 
 !!! Discussion 
-    Note that Job _a1_ has been preempted and then restarted on the second node, in order to clear space fo the new _a2_ Job. This is __bin-packing__ or __consolidation__
+    Note that Job _a1_ has been preempted and then restarted on the second node, in order to clear space for the new _a2_ Job. This is __bin-packing__ or __consolidation__
 
 
 
