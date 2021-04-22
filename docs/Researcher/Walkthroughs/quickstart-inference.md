@@ -49,11 +49,11 @@ The output shows the service URL with which to connect to the service.
 
 The specific `Marian` server is accepting queries over the _WebSockets_ protocol. You can use the Run:AI Marian [sample client](https://github.com/run-ai/models/tree/main/models/marian/client){target=_blank}.
 
-In the following command, replace  `<HOSTNAME>` with the service URL displayed in the previous `list` command:
+In the following command, replace  `<HOSTNAME>` and `<PORT>` with the service URL displayed in the previous `list` command:
 
 ```
 runai submit inference-client -i gcr.io/run-ai-demo/quickstart-inference-marian-client \
-    -- --hostname <HOSTNAME> --port 32717  --processes 1 
+    -- --hostname <HOSTNAME> --port <PORT> --processes 1 
 ```
 
 To see the result, run the following:
