@@ -1,13 +1,5 @@
 FROM ubuntu
 
-#install ssh
-RUN apt update
-RUN apt install openssh-server -y
-RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-RUN echo 'root:root' | chpasswd
-RUN service ssh start
-CMD ["/usr/sbin/sshd","-D"]
-
 #install helm
 RUN apt install man -y
 RUN apt install curl -y
