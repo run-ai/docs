@@ -10,7 +10,6 @@ allowHostPorts: false
 allowPrivilegeEscalation: false
 allowPrivilegedContainer: false
 allowedCapabilities: null
-priority: 10
 readOnlyRootFilesystem: false
 runAsUser:
   type: MustRunAs
@@ -30,7 +29,6 @@ allowHostPorts: false
 allowPrivilegeEscalation: false
 allowPrivilegedContainer: false
 allowedCapabilities: null
-priority: 10
 readOnlyRootFilesystem: false
 runAsUser:
   type: MustRunAs
