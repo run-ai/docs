@@ -4,9 +4,11 @@ The Run:AI Command-line Interface (CLI) is __one__ of the ways for a Researcher 
 
 The instructions below will guide you through the process of installing the CLI.
 
+!!! Note
+     The Run:AI CLI runs on Mac and Linux. You can run the CLI on Windows by using Docker for Windows. See the end of this document.
+
 ## Prerequisites
 
-*   Run:AI CLI runs on Mac and Linux. 
 *   When installing the command-line interface, its worth considering future upgrades:
      * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:AI commands
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
@@ -93,3 +95,24 @@ To update the CLI to the latest version run:
 ```
 sudo runai update
 ```
+
+
+## Use Run:AI on Windows
+
+Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
+
+Get the following folder from GitHub: [https://github.com/run-ai/docs/tree/master/cli/windows](https://github.com/run-ai/docs/tree/master/cli/windows){target=_blank}.
+
+Replace `config` with your Kubernetes Configuration file.
+
+Run: `build.sh` to create a docker image named `runai-cli`.
+
+Test the image by running:
+
+``` bash
+docker run -it runai-cli bash
+```
+
+Try and connect to your cluster from inside the docker by running a Run:AI CLI command. E.g. `runai list projects`.
+
+Distribute the image to Windows users.
