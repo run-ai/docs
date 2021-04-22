@@ -1,0 +1,34 @@
+FROM ubuntu
+
+#install ssh
+RUN apt update
+RUN apt install openssh-server -y
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+RUN echo 'root:root' | chpasswd
+RUN service ssh start
+CMD ["/usr/sbin/sshd","-D"]
+
+#install helm
+RUN apt install man -y
+RUN apt install curl -y
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+RUN chmod 700 get_helm.sh
+RUN ./get_helm.sh
+
+#install runai cli
+RUN curl -fsSL -o runai-cli-v2.2.40-linux-amd64.tar.gz https://github.com/run-ai/runai-cli/releases/download/v2.2.40/runai-cli-v2.2.40-linux-amd64.tar.gz
+RUN tar -zxvf runai-cli-v2.2.40-linux-amd64.tar.gz
+RUN ./install-runai.sh
+RUN runai update
+
+#install runai-adm cli
+RUN curl -fsSL -o runai-admin-cli-v0.0.20-linux-amd64.tar.gz https://github.com/run-ai/runai-admin-cli/releases/download/v0.0.20/runai-admin-cli-v0.0.20-linux-amd64.tar.gz
+RUN tar -zxvf runai-admin-cli-v0.0.20-linux-amd64.tar.gz
+RUN ./install-runai.sh
+RUN apt install tmux -y
+
+#inject credentials
+COPY config /root/.kube/config
+RUN chmod 400 /root/.kube/config
