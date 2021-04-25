@@ -24,7 +24,7 @@ runai delete <job-name>
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
 --all | -A
->  Delete all jobs.
+>  Delete all Jobs.
 
 ### Global Flags
 
