@@ -12,6 +12,8 @@ Note that once you delete a Job, its entire data will be gone:
 
 ``` shell
 runai delete <job-name> 
+    [--all | -A]
+
     [--loglevel value] 
     [--project string | -p string] 
     [--help | -h]
@@ -20,6 +22,11 @@ runai delete <job-name>
 ## Options
 
 <job-name\> - The name of the Job to run the command with. Mandatory.
+
+--all | -A
+>  Delete all jobs.
+
+### Global Flags
 
 --loglevel (string)
 >  Set the logging level. One of: debug | info | warn | error (default "info").
