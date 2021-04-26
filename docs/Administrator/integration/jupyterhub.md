@@ -36,7 +36,7 @@ JupyterHub requires storage in the form of a PersistentVolume (PV). For __an exa
 
 * Download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} 
 * Replace `<NODE-NAME>` with one of your worker nodes. 
-* The example PV refers to `/srv/jupyterhub`. Log on to the node and run `sudo chmod 777 -R /srv/jupyterhub`
+* The example PV refers to `/srv/jupyterhub`
 
 Then run:
 
@@ -64,6 +64,8 @@ helm repo update
 helm install jhub jupyterhub/jupyterhub -n jhub --values config.yaml
 ```
 
+### Log on to the node and run `sudo chmod 777 -R /srv/jupyterhub`
+
 ### Verify Installation
 
 Run: 
@@ -73,6 +75,7 @@ kubectl get pods -n jhub
 ```
 
 Verify that all pods are running
+
 
 ## Access JupyterHub
 
@@ -84,5 +87,124 @@ kubectl get service -n jhub proxy-public
 
 Use the `External IP` of the service to access the service.
 
-
 Login with Run:AI Project name as user name.
+
+## Troubleshooting the JupyterHub Installation
+
+If the `External IP` of the proxy-public service is stuck on `pending`, it might mean that this service isn't configured with an `External IP` by default.
+
+To check and fix this, lets see which pod is the proxy pod running on.
+
+Run: 
+
+```
+kubectl get pods -n jhub -l component=proxy -o=jsonpath='{.items[0].spec.nodeName}{"\n"}'
+```
+This will print the node that the proxy pod is running on.
+You will need to get both the internal and external IPs of this node for the next step. 
+
+Now lets check the proxy-public service definition.
+
+Run:
+
+```
+kubectl edit svc proxy-public -n jhub
+```
+
+You should see something like this:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: jhub
+    meta.helm.sh/release-namespace: jhub
+  creationTimestamp: "2021-04-25T09:15:26Z"
+  labels:
+    app: jupyterhub
+    app.kubernetes.io/managed-by: Helm
+    chart: jupyterhub-0.11.1
+    component: proxy-public
+    heritage: Helm
+    release: jhub
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:component: {}
+          f:heritage: {}
+          f:release: {}
+      f:spec:
+        f:externalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:component: {}
+          f:release: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2021-04-25T09:15:26Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:externalIPs: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2021-04-25T10:34:41Z"
+  name: proxy-public
+  namespace: jhub
+  resourceVersion: "17399"
+  uid: 985b6973-1abb-4a45-9406-b7b7cc4e5601
+spec:
+  clusterIP: 10.108.102.132
+  clusterIPs:
+  - 10.108.102.132
+  externalIPs:
+  - 35.224.44.230
+  - 10.8.0.9
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    nodePort: 32679
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    component: proxy
+    release: jhub
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
+```
+
+If you don't see an externalIPs block under spec, you will need to add it there.
+It should contain both the external and the internal IPs of the proxy pod:
+
+externalIPs:
+- <external ip>
+- <internal ip>
+
+Once you add this to the YAML, save it and then try to access the JupyterHub UI by using the external IP from the previous step in your browser.
+
