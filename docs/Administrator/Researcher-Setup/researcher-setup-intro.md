@@ -1,4 +1,4 @@
-Following is a step by step guide for getting a new Researcher up to speed with Run:AI and Kubernetes.
+Following is a step-by-step guide for getting a new Researcher up to speed with Run:AI and Kubernetes.
 
 ## Change of Paradigms: from Docker to Kubernetes 
 

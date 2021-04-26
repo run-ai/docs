@@ -26,7 +26,7 @@ Follow the steps below to access private images in the Google Container Registry
 
 * Create a service-account in GCP. Provide it `Viewer` permissions and download a JSON key.
 * Under GCR, go to image and locate the domain name. Example GCR domains can be `gcr.io`, `eu.gcr.io` etc. 
-* On your local machine, login to docker with the new credentials:
+* On your local machine, log in to docker with the new credentials:
 
         docker login -u _json_key -p "$(cat <config.json>)" <gcr-domain>
 

@@ -9,7 +9,7 @@ The instructions below will guide you through the process of installing the CLI.
 
 ## Prerequisites
 
-*   When installing the command-line interface, its worth considering future upgrades:
+*   When installing the command-line interface, it is worth considering future upgrades:
      * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:AI commands
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
 
@@ -26,7 +26,7 @@ When enabled, Researcher authentication requires additional setup when installin
 ### Kubernetes Configuration
 
 *   On the Researcher's root folder, create a directory _.kube_. Copy the Kubernetes configuration file into the directory. Each Researcher should have a __separate copy__ of the configuration file. The Researcher should have write access to the configuration file as it stores user defaults. 
-*   If you choose to locate the file at a different location than `~/.kube/config` , you must create a shell variable to point to the configuration file as follows:
+*   If you choose to locate the file at a different location than `~/.kube/config`, you must create a shell variable to point to the configuration file as follows:
 
 ```
 export KUBECONFIG=<Kubernetes-config-file>
@@ -41,7 +41,7 @@ kubectl get nodes
 ### Install Run:AI CLI 
 
 *   Download the latest release from the Run:AI [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}
-*   For MacOS - download the darwin-amd64 release, For Linux - download the linux-amd64 release.
+*   For MacOS - download the darwin-amd64 release, For Linux - download the `linux-amd64` release.
 *   Unarchive the downloaded file
 *   Install by running:
 
@@ -55,7 +55,7 @@ sudo ./install-runai.sh
 runai list jobs
 ```
 
-## Install Command Auto Completion 
+## Install Command Auto-Completion 
 
 It is possible to configure your Linux/Mac shell to complete Run:AI CLI commands. This feature works on _bash_ and _zsh_ shells only.
 

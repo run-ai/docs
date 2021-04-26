@@ -4,7 +4,7 @@ Researchers are typically proficient in working with Docker. Docker is an isolat
 
 You create a __container__ by starting a docker image on a machine.
 
-Run:AI is based on __Kubernetes__. At its core, Kubernetes is a an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the Researcher's workflow as follows.
+Run:AI is based on __Kubernetes__. At its core, Kubernetes is an orchestration software above Docker: Among other things, it allows location abstraction as to where the actual container is running. This calls for some adaptation to the Researcher's workflow as follows.
 
 ## Image Repository
 
