@@ -202,9 +202,11 @@ status:
 If you don't see an externalIPs block under spec, you will need to add it there.
 It should contain both the external and the internal IPs of the proxy pod, for example:
 
+```yaml
 externalIPs:
 - 35.224.44.230
 - 10.8.0.9
+```
 
 Once you add this to the YAML, save it and then try to access the JupyterHub UI by using the external IP from the previous step in your browser.
 
