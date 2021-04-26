@@ -36,7 +36,8 @@ JupyterHub requires storage in the form of a PersistentVolume (PV). For __an exa
 
 * Download [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/pv-example.yaml){target=_blank} 
 * Replace `<NODE-NAME>` with one of your worker nodes. 
-* The example PV refers to `/srv/jupyterhub`. Log on to the node and run `sudo chmod 777 -R /srv/jupyterhub`
+* The example PV refers to `/srv/jupyterhub`. Log on to `<NODE-NAME>` and create the folder and run `sudo chmod 777 -R /srv/jupyterhub`
+
 
 Then run:
 
@@ -64,6 +65,8 @@ helm repo update
 helm install jhub jupyterhub/jupyterhub -n jhub --values config.yaml
 ```
 
+
+
 ### Verify Installation
 
 Run: 
@@ -73,6 +76,7 @@ kubectl get pods -n jhub
 ```
 
 Verify that all pods are running
+
 
 ## Access JupyterHub
 
@@ -84,5 +88,38 @@ kubectl get service -n jhub proxy-public
 
 Use the `External IP` of the service to access the service.
 
-
 Login with Run:AI Project name as user name.
+
+## Troubleshooting the JupyterHub Installation
+
+If the `External IP` of the proxy-public service remains in the `Pending` status, it might mean that this service is not configured with an `External IP` by default.
+
+To fix, find out which pod is the proxy pod running on.
+
+Run: 
+
+```
+kubectl get pods -n jhub -l component=proxy -o=jsonpath='{.items[0].spec.nodeName}{"\n"}'
+```
+This will print the node that the proxy pod is running on.
+You will need to get both the internal and external IPs of this node for the next step. 
+
+Now lets check the proxy-public service definition.
+
+Run:
+
+```
+kubectl edit svc proxy-public -n jhub
+```
+
+Under `spec` You should see a section `externalIPs`. If it does not exist, you must add it there. The section must contain both the external and the internal IPs of the proxy pod, for example:
+
+```yaml
+spec:
+  externalIPs:
+  - 35.224.44.230
+  - 10.8.0.9
+```
+
+Save the file and then try to access JupyterHub by using the external IP from the previous step in your browser.
+
