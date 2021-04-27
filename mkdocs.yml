@@ -128,7 +128,7 @@ nav:
       - 'Bare-Metal to Docker Images' : 'Researcher/best-practices/bare-metal-to-docker-images.md'
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
-      - 'Identify a Job from within Container' : 'Researcher/best-practices/env-variables.md'
+      - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'

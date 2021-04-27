@@ -42,7 +42,7 @@ You can limit your Job's allocation of CPU and memory by using the __--cpu-limit
 The limit behavior is different for CPUs and memory.
 
 *   Your Job will never be allocated with more than the amount stated in the `--cpu-limit` flag
-*   If your Job tries to allocate more than the amount stated in the `--memory-limit` flag it will receive an out of memory exception.
+*   If your Job tries to allocate more than the amount stated in the `--memory-limit` flag it will receive an out-of-memory exception.
 
 The limit (for both CPU and memory) overrides the cluster default described in the section below
 
@@ -54,7 +54,7 @@ For further details on these flags see: [runai submit](../cli-reference/runai-su
 
 If your Job has not specified `--cpu`, the system will use a default. The default is cluster-wide and is defined as a __ratio__ of GPUs to CPUs.
 
-Consider the default of 1:6. If your Job has only specified `--gpu 2` and has not specified `--cpu`, then the implied `--cpu` flag value is 12 CPUs.
+If, for example, the default has been defined as 1:6 and your Job has specified `--gpu 2` and has not specified `--cpu`, then the implied `--cpu` flag value is 12 CPUs.
 
 The system comes with a cluster-wide default of 1:1. To change the ratio see below.
 

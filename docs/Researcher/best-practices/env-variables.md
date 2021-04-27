@@ -1,12 +1,9 @@
-# Best Practice: Identifying your Job from within the Container
+# Environment Variables inside a Run:AI Workload
 
-## Motivation
-
-There may be use cases where your container may need to uniquely identify the Job it is currently running in. A typical use case is for saving Job artifacts under a unique name. 
-
-Run:AI provides environment variables you can use. These variables are guaranteed to be unique even if the Job is preempted or evicted and then runs again. 
 
 ## Identifying a Job
+There may be use cases where your container may need to uniquely identify the Job it is currently running in. A typical use case is for saving Job artifacts under a unique name. 
+Run:AI provides environment variables you can use. These variables are guaranteed to be unique even if the Job is preempted or evicted and then runs again. 
 
 Run:AI provides the following environment variables:
 
@@ -22,6 +19,10 @@ With [Hyperparameter Optimization](../Walkthroughs/walkthrough-hpo.md), experime
 
 * ``POD_INDEX`` -  An index number (0, 1, 2, 3....) for a specific Pod within the Job. This is useful for Hyperparameter Optimization to allow easy mapping to individual experiments. The Pod index will remain the same if restarted (due to a failure or preemption). Therefore, it can be used by the Researcher to identify experiments. 
 * ``POD_UUID`` - a unique identifier for the Pod. if the Pod is restarted, the Pod UUID will change.
+
+## GPU Allocation
+
+Run:AI provides an environment variable, visible inside the container, to help identify the number of GPUs allocated for the container. Use `RUNAI_NUM_OF_GPUS`
 
 
 ## Usage Example in Python
