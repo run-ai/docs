@@ -2,18 +2,29 @@ Get a list of all Run:AI Jobs for a given project
 
 ## General
 
-__URL__:  `http://<service-url>/api/v1/jobs`
+__URL__:
+
+The following endpoints are supported:
+
+* `http://<service-url>/api/v1/jobs`
+* `http://<service-url>/api/v1/jobs/<project>`
+* `http://<service-url>/api/v1/jobs/<project>/<job-name>`
 
 __Method__: `GET`
 
-## Request
+## Path Parameters
 
-```
-project=<project-name>
-```
+### Project
 
-If the `project` parameter is omitted, then __all__ Jobs will be returned. 
+Retrieve all the jobs of the specified `project`.
+If the `project` parameter is omitted, then __all__ jobs of all projects are returned. 
 
+### Job-Name
+
+Retrieve a specific job, identified by `project` and `job-name`. 
+If `job-name` is omitted, all the jobs of the given project are
+returned. If both `project` and `job-name` are omitted, then
+__all__ jobs are returned.
 
 ## Response 
 ```
