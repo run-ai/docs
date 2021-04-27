@@ -10,18 +10,17 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 
 ## Configuration Flags
 
-|  Key     |  Change  | Description |
+|  Key     |  Default  | Description |
 |----------|----------|-------------| 
-| `runai-operator.config.global.openshift` | set to `true` with OpenShift | |
-| `runai-operator.config.init-ca.enabled` | set to `false` with OpenShift | |
-| `pspEnabled` | `<true/false>` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| `runai-operator.config.project-controller.createNamespacesAndRoleBindings` | Set to `false` when using PodSecurityPolicy or OpenShift | Will requires an additional manual step when creating new Run:AI Projects | 
-| `runai-operator.config.project-controller.clusterWideSecret` | Set to `false` when using PodSecurityPolicy or OpenShift | | 
-| `runai-operator.config.mps-server.enabled` | Default is `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
-| `runai-operator.config.runai-container-toolkit.enabled` | Default is `true` | Controls the usage of __Fractions__. Requires [extra permissions](../preparations/#cluster-installation) | 
-| `runai-operator.config.runaiBackend.password` | Default password already set  | admin@run.ai password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
-| `gpu-feature-discovery.enabled` | set to `false` | Do not install Node Feature Discovery (assumes a prior install outside Run:AI scope) |
-| `kube-prometheus-stack.enabled` | set to `false` | Do not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
+| `runai-operator.config.global.openshift` |  `false` |  Set to `true` with OpenShift  |
+| `runai-operator.config.init-ca.enabled` | `true` | Set to `false` with OpenShift | 
+| `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
+| `runai-operator.config.project-controller.createNamespacesAndRoleBindings` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift. Requires an additional manual step when creating new Run:AI Projects | 
+| `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
+| `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
+| `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
+| `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install Node Feature Discovery (assumes a prior install outside Run:AI scope) |
+| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
 
 
 
