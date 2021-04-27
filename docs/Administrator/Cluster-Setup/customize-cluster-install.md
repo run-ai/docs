@@ -8,17 +8,32 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 * Add an outbound internet proxy
 
 
-## Disable the installation of third-party dependencies
+## Configuration Flags
 
-The default Run:AI installation packages all of its third-party dependencies. If your Kubernetes environment already has some of these dependencies, you may disable their installation. 
+|  Key     |  Change  | Description |
+|----------|----------|-------------| 
+| `runai-operator.config.global.openshift` | set to `true` with OpenShift | |
+| `runai-operator.config.init-ca.enabled` | set to `false` with OpenShift | |
+| `pspEnabled` | `<true/false>` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
+| `runai-operator.config.project-controller.createNamespacesAndRoleBindings` | Set to `false` when using PodSecurityPolicy or OpenShift | Will requires an additional manual step when creating new Run:AI Projects | 
+| `runai-operator.config.project-controller.clusterWideSecret` | Set to `false` when using PodSecurityPolicy or OpenShift | | 
+| `runai-operator.config.mps-server.enabled` | Default is `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
+| `runai-operator.config.runai-container-toolkit.enabled` | Default is `true` | Controls the usage of __Fractions__. Requires [extra permissions](../preparations/#cluster-installation) | 
+| `runai-operator.config.runaiBackend.password` | Default password already set  | admin@run.ai password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
+| `gpu-feature-discovery.enabled` | set to `false` | Do not install Node Feature Discovery (assumes a prior install outside Run:AI scope) |
+| `kube-prometheus-stack.enabled` | set to `false` | Do not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
 
-These dependencies are:
 
-* [Node feature discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html){target=_blank} 
-* NVIDIA [GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} (also contains Node feature discovery)
-* [Prometheus](https://github.com/prometheus-operator/kube-prometheus){target=_blank}. To disable Prometheus please contact Run:AI customer support
 
-Edit  `runai-<cluster-name>.yaml` and set `enabled` to `false` for the respective third-party
+## Add an Ingress point
+
+Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Notebooks, PyCharm, VisualStudio Code). See: [Allow external access to Containers](allow-external-access-to-containers.md). Note that you can access containers via _port forwarding_ without requiring an ingress point. 
+
+
+## Add a Proxy
+
+Allow outbound internet connectivity in a proxied network environment. See [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
+
 
 ## Access roles
 
@@ -60,12 +75,3 @@ Your IT department can pre-apply the above YAML files after reviewing them.
 In this case, in the values file, change `createRbac` to `false`.
  
 
-
-## Add an Ingress point
-
-Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Notebooks, PyCharm, VisualStudio Code). See: [Allow external access to Containers](allow-external-access-to-containers.md). Note that you can access containers via _port forwarding_ without requiring an ingress point. 
-
-
-## Add a Proxy
-
-Allow outbound internet connectivity in a proxied network environment. See [Installing Run:AI with an Internet Proxy Server](proxy-server.md).
