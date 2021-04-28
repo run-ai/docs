@@ -36,7 +36,7 @@ kubectl get pods -n runai --selector=app=runai-mps-server -o wide
 
 * Verify that all mps-server pods are in `Running` state. 
 
-* Submit a workload with MPS enabled. Then run:
+* Submit a workload with MPS enabled using the [--mps](../../Researcher/cli-reference/runai-submit.md#mps) flag.  Then run:
 
 ```
 runai list

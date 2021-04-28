@@ -29,6 +29,7 @@ runai submit
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--mps] 
     [--name string]
     [--node-type string] 
     [--parallelism int]
@@ -176,6 +177,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Deprecated. Please use `image-pull-policy=never` instead.
 >  Use a local image for this Job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
 
+[](){:name='mps'}
+
+--mps
+> Use NVIDIA MPS. MPS is useful with _Inference_ workloads. The `--mps` flag only works in conjunction with GPU fractions (--gpu `<num>` where `<num>` is not an integer).
+
 --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
@@ -184,6 +190,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --working-dir string
 >  Starts the container with the specified directory as the current directory.
+
 
 ### Resource Allocation
 
@@ -250,6 +257,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
+
 
 
 --host-network
