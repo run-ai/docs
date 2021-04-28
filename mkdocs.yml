@@ -68,6 +68,7 @@ nav:
         - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
         - 'Configure an HTTP Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/researcher-authentication.md'
+        - 'Understanding Cluster Access Roles' : 'Administrator/Cluster-Setup/access-roles.md'
         - 'Non-root Containers' : 'Administrator/Cluster-Setup/non-root-containers.md'
         - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
         - 'Node Downtime' : 'Administrator/Cluster-Setup/node-downtime.md'
