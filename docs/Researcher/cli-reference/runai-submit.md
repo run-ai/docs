@@ -180,7 +180,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 [](){:name='mps'}
 
 --mps
-> Use NVIDIA MPS. MPS is useful with _Inference_ workloads. The `--mps` flag only works in conjunction with GPU fractions (--gpu `<num>` where `<num>` is not an integer).
+> Use NVIDIA MPS. NIVDIA MPS is useful with _Inference_ workloads for optimizing multiple processes running on a single GPU. The `--mps` flag only works in conjunction with GPU fractions (--gpu `<num>` where `<num>` is not an integer or using --gpu-memory).
 
 --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
