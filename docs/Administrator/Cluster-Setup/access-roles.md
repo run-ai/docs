@@ -7,9 +7,9 @@ Run:AI has the ability to work under restrictive Kubernetes environments. Namely
 
 You can enable these restricted environment by setting the `pspEnabled` or `openshift` configuration [flags](../customize-cluster-install/#configuration-flags) in the Helm values file before installing the Run:AI cluster. 
 
-There are other configuration flags controlling specific behavioral aspects of Run:AI. Specifically those which require additional permissions. Such as automatic namespace/project creation, secret propagation and more.
+Other configuration flags are controlling specific behavioral aspects of Run:AI. Specifically, those which require additional permissions. Such as automatic namespace/project creation, secret propagation, and more.
 
-The purpose of this document is to provide security officers with a ability to review what cluster-wide access Run:AI requires, and verify that it is in line with organizational policy, prior to installing the Run:AI cluster. 
+The purpose of this document is to provide security officers with the ability to review what cluster-wide access Run:AI requires, and verify that it is in line with organizational policy, before installing the Run:AI cluster. 
 
 
 ## Review Cluster Access Roles

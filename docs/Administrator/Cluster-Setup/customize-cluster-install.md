@@ -23,6 +23,9 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
 
 
+## Understanding Custom Access Roles
+
+To review the access roles provided by the Run:AI Cluster installation, see [Understanding Access Roles](access-roles.md)
 
 ## Add an Ingress point
 
