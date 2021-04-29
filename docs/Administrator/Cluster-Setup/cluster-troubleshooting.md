@@ -185,16 +185,17 @@ For further information see [here](https://github.com/rancher/rancher/issues/146
 
 ## Symptom: Jobs fail with ContainerCannotRun status 
 
-When running `runai list jobs` your job is stuck with a `ContainerCannotRun` status.
+When running `runai list jobs`, your Jobs has a status of `ContainerCannotRun`.
 
 __Resolution__
 
-The issue may be caused due to Nvidia driver unattended upgrade, which requires reboot.
-To verify that, run `runai describe jobs <your-job>`, and look for `driver/library version mismatch` error.
+The issue may be caused due to an unattended upgrade of the NVIDIA driver.
 
-In order to fix the issue, please reboot the node.
+To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
 
-We recommend blacklisting nvidia-driver from unattended upgrades.  
+To fix: reboot the node on which the Job attempted to run.
+
+Going forward, we recommend blacklisting NVIDIA driver from unattended upgrades.  
 You can do that by editing `/etc/apt/apt.conf.d/50unattended-upgrades`, and adding `nvidia-driver-` to the `Unattended-Upgrade::Package-Blacklist` section.  
 It should look something like that:
 
