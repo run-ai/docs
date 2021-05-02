@@ -22,8 +22,10 @@ runai submit
     [--host-ipc] 
     [--host-network] 
     [--image string | -i string]
-    [--imagePullPolicy string]    
-    [--interactive] [--jupyter] 
+    [--imagePullPolicy string] 
+    [--inference]   
+    [--interactive] 
+    [--jupyter] 
     [--job-name-prefix string]
     [--large-shm] 
     [--local-image] 
@@ -117,6 +119,9 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --name
 > The name of the Job.
+
+--inference
+>  Mark this workload as an Inference workload. This starts a deep learning inference _Deployment_ service. See [here](../../developer/inference/overview.md)
 
 --interactive
 >  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.

@@ -70,10 +70,10 @@ nav:
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/researcher-authentication.md'
         - 'Understanding Cluster Access Roles' : 'Administrator/Cluster-Setup/access-roles.md'
         - 'Non-root Containers' : 'Administrator/Cluster-Setup/non-root-containers.md'
-        - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
         - 'Node Downtime' : 'Administrator/Cluster-Setup/node-downtime.md'
         - 'Set Node Roles' : 'Administrator/Cluster-Setup/node-roles.md'
         - 'Install Administrator CLI' : 'Administrator/Cluster-Setup/cli-admin-install.md'
+        - 'Kubernetes Best Practices' : 'Administrator/Cluster-Setup/kubernetes-config-best-practices.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'Administrator/Researcher-Setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'Administrator/Researcher-Setup/cli-install.md'

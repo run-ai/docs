@@ -25,7 +25,7 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 
 ## Understanding Custom Access Roles
 
-To review the access roles provided by the Run:AI Cluster installation, see [Understanding Access Roles](access-roles.md)
+To review the access roles created by the Run:AI Cluster installation, see [Understanding Access Roles](access-roles.md)
 
 ## Add an Ingress point
 
