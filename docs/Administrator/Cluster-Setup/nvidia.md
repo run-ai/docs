@@ -21,8 +21,15 @@ If the machine is __DGX A100__, then apart from the CUDA Toolkit you must also i
 * Run: `nvidia-smi` and get the NVIDIA Driver version (it must be 450 or later).
 * Run: `sudo apt search fabricmanager` to find a Fabric Manager package with the same version and install it.
 
+### Step 2: Install Docker
 
-## Step 2:  NVIDIA Container Toolkit (previously named NVIDIA Docker)
+Install Docker by following the steps here: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){target=_blank}. Specifically, you can use a convenience script provided in the document:
+``` shell
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+## Step 3:  NVIDIA Container Toolkit (previously named NVIDIA Docker)
 
 To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
 
@@ -48,7 +55,7 @@ For a detailed review of the above instructions, see the [NVIDIA Container Toolk
 !!! Warning
     Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker/NVIDIA container toolkit.
 
-## Step 3: Make NVIDIA Docker the default docker runtime
+## Step 4: Make NVIDIA Docker the default docker runtime
 
 Set the NVIDIA runtime as the default Docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
 
