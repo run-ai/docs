@@ -1,102 +1,46 @@
 Below are instructions on how to install Run:AI cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 
-## Step 1: NVIDIA
+## Step 1: Kubernetes
 
-On __each machine__ with GPUs run the following steps 1.1 - 1.4. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} 4.0 or later, you may skip to step 2.
-
-### Step 1.1 Install the CUDA Toolkit 
-
-Run: 
-
-``` 
-nvidia-smi
-```
-
-If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){target=_blank} to install. When the installation is finished you must reboot your computer. 
-
-If the machine is __DGX A100__, then apart from the CUDA Toolkit you must also install the __NVIDIA Fabric Manager__:
-
-* Run: `nvidia-smi` and get the NVIDIA Driver version (it must be 450 or later).
-* Run: `sudo apt search fabricmanager` to find a Fabric Manager package with the same version and install it.
-
-
-### Step 1.2: Install Docker
-
-Install Docker by following the steps here: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){target=_blank}. Specifically, you can use a convenience script provided in the document:
-``` shell
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-### Step 1.3: Install NVIDIA Container Toolkit (previously named NVIDIA Docker)
-
-To install NVIDIA Docker on Debian-based distributions (such as Ubuntu), run the following:
-
-``` shell
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-sudo apt-get update && sudo apt-get install -y nvidia-docker2
-sudo pkill -SIGHUP dockerd
-```
-
-For RHEL-based distributions, run:
-
-``` shell
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
-sudo yum install -y nvidia-docker2
-sudo pkill -SIGHUP dockerd
-```
-
-For a detailed review of the above instructions, see the [NVIDIA Container Toolkit  installation instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}.
-
-!!! Warning
-    Kubernetes does [not currently support](https://github.com/NVIDIA/nvidia-docker/issues/1268){target=_blank}  the [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime){target=_blank}, which is the successor of NVIDIA Docker/NVIDIA container toolkit.
-
-### Step 1.4: Make NVIDIA Docker the default docker runtime
-
-Set the NVIDIA runtime as the default Docker runtime on your node. Edit the docker daemon config file at ``/etc/docker/daemon.json `` and add the ``default-runtime`` key as follows: 
-
-``` json
-{
-    "default-runtime": "nvidia",
-    "runtimes": {
-        "nvidia": {
-            "path": "/usr/bin/nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    }
-}
-```
-Then run the following again:
-
-    sudo pkill -SIGHUP dockerd
-
-
-## Step 2: Install Kubernetes
-
-A full list of Kubernetes set up methods can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Below are some: 
-
-* Kubernetes is promoting [Kubespray](https://kubespray.io/#/){target=_blank}. Download the latest __stable__ version of Kubespray from: [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. 
-
-* Run:AI provides instructions for a simple Kubernetes installation. See [Native Kubernetes Installation](install-k8s.md).
-
-* Run:AI has been tested with the following certified Kubernetes distributions: 
+Run:AI has been tested with the following certified Kubernetes distributions: 
 
 | Target Platform | Description | Notes | 
 |-----------------|-------------|-------|
-| On Premise      |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| On-Premise      |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
 | EKS | Amazon Elastic Kubernetes Service ||
 | AKS | Azure Kubernetes Services    ||
 | GKE | Google Kubernetes Engine ||
 | OCP | OpenShift Container Platform |  Please contact Run:AI customer support for full installation instructions | 
-| RKE | Rancher Kubernetes Engine | Perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). When installing Run:AI, select _On Premise_ |
+| RKE | Rancher Kubernetes Engine | When installing Run:AI, select _On Premise_ . You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
 
-!!! Warning
-    Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI. 
+A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 
+<!-- !!! Warning
+    Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI.  -->
+
+
+## Step 2: NVIDIA
+
+There are two alternatives for installing NVIDIA prerequisites 
+
+1. (Recommended) Use the NVIDIA GPU Operator on Kubernetes. To install the NVIDIA GPU Operator use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}. Follow the _Helm_ based Installation.
+2. Install the NVIDIA CUDA Toolkit and NVIDIA Docker on __each node with GPUs__. See [NVIDIA Drivers installation](nvidia.md) for details.
+
+!!! Important
+    The options are mutually exclusive. If the NVIDIA CUDA toolkit is installed, you will not be able to install the NVIDIA GPU Operator. 
+
+If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
+
+
+### NVIDIA Device Plugin
+
+Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. If you have installed the NVIDIA GPU Operator or have previously installed this plug-in, run the following to disable the existing plug-in:
+
+```
+kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+```
 
 ## Step 3: Install Run:AI
 

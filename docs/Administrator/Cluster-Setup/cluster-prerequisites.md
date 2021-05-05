@@ -1,21 +1,38 @@
 Below are the prerequisites of a cluster installed with Run:AI. 
 
 
-## Kubernetes Software
+## Software Requirements
+
+### Kubernetes
 
 Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.20 is recommended (as of April 2021).
 
-If you are using Red Hat OpenShift. The minimal version is OpenShift 4.3 which runs Kubernetes 1.16.
+If you are using RedHat OpenShift. The minimal version is OpenShift 4.3.
 
-## NVIDIA Driver
+Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} is used. 
 
-Run:AI requires all GPU nodes to be installed with NVIDIA driver version 410.104 or later and CUDA 9.0 or later. 
+### NVIDIA 
+
+Run:AI requires the installation of NVIDIA software. These can be one of the two:
+
+* NVIDIA GPU Operator installed on top of Kubernetes. 
+* or, all GPU nodes to be installed with NVIDIA driver version 410.104 or later and CUDA 9.0 or later. 
+
+For additional details see the [Cluster Installation](cluster-install.md) documentation.
+
+### Prometheus 
+
+Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI Cluster installation will, by default, install Prometheus, but it can also connect to an existing Prometheus installed by the organization. In the latter case, it's important to:
+
+* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
+* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:AI Cluster installation.
+
 
 ## Hardware Requirements
 
 (see picture below)
 
-*   (Production only) Dedicated __Run:AI System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain at least one, dedicated worker machine, designated for Run:AI Software:
+*   (Production only) Dedicated __Run:AI System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __at least one,__ dedicated worker machine, designated for Run:AI Software:
     
     *   4 CPUs
     *   8GB of RAM
