@@ -9,14 +9,15 @@ Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.20 is recommended (as of 
 
 If you are using RedHat OpenShift. The minimal version is OpenShift 4.3.
 
-Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} is used. 
+Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 
 ### NVIDIA 
 
-Run:AI requires the installation of NVIDIA software. These can be one of the two:
+Run:AI requires the installation of NVIDIA software. These can be done in one of two ways:
 
-* NVIDIA GPU Operator installed on top of Kubernetes. 
-* or, all GPU nodes to be installed with NVIDIA driver version 410.104 or later and CUDA 9.0 or later. 
+* (Recommended) Use the [NVIDIA GPU Operator on Kubernetes](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}. 
+* For each GPU node in the cluster, install NVIDIA CUDA Drivers, as well as the software stack, described [here](nvidia.md).
+
 
 For additional details see the [Cluster Installation](cluster-install.md) documentation.
 

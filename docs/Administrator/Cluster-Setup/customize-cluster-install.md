@@ -29,7 +29,7 @@ The Run:AI Cluster installation installs by default two pre-requisites:  Kuberne
 
 The Run:AI Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set `kube-prometheus-stack.enabled` to `false`. 
 
-Extra configuration will be required to add the Run:AI Prometheus rules and to push metrics to the Run:AI Administration User Interface. Please contact Run:AI Customer support. 
+An extra configuration step will be required to add the Run:AI Prometheus rules and to push metrics to the Run:AI Administration User Interface. Please contact Run:AI Customer support. 
 
 ## Understanding Custom Access Roles
 
