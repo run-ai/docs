@@ -10,7 +10,8 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.global.openshift` |  `false` |  Set to `true` with OpenShift  |
 | `runai-operator.config.init-ca.enabled` | `true` | Set to `false` with OpenShift | 
 | `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| `runai-operator.config.project-controller.createNamespacesAndRoleBindings` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift. Requires an additional manual step when creating new Run:AI Projects | 
+| `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift. Requires an additional manual step when creating new Run:AI Projects | 
+| `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift. Requires an additional manual step when creating new Run:AI Projects | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
