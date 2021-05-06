@@ -30,7 +30,7 @@ There are two alternatives for installing NVIDIA prerequisites:
 !!! Important
     The options are mutually exclusive. If the NVIDIA CUDA toolkit is installed, you will not be able to install the NVIDIA GPU Operator. 
 
-If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
+NVIDIA GPU Operator does not currently work with DGX. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
 
 
 ### NVIDIA Device Plugin
