@@ -24,13 +24,12 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 There are two alternatives for installing NVIDIA prerequisites:
 
-1. (Recommended) Use the _NVIDIA GPU Operator on Kubernetes_. To install the NVIDIA GPU Operator use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}. Follow the _Helm_ based Installation.
+1. (Recommended) Use the _NVIDIA GPU Operator on Kubernetes_. To install the NVIDIA GPU Operator use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}.
 2. Install the _NVIDIA CUDA Toolkit_ and _NVIDIA Docker_ on __each node with GPUs__. See [NVIDIA Drivers installation](nvidia.md) for details.
 
 !!! Important
-    The options are mutually exclusive. If the NVIDIA CUDA toolkit is installed, you will not be able to install the NVIDIA GPU Operator. 
-
-NVIDIA GPU Operator does not currently work with DGX. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
+    * The options are mutually exclusive. If the NVIDIA CUDA toolkit is installed, you will not be able to install the NVIDIA GPU Operator. 
+    * NVIDIA GPU Operator does not currently work with DGX. If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
 
 
 ### NVIDIA Device Plugin
