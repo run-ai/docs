@@ -15,11 +15,6 @@ RUN tar -zxvf runai-cli-v2.2.40-linux-amd64.tar.gz
 RUN ./install-runai.sh
 RUN runai update
 
-#install runai-adm cli
-RUN curl -fsSL -o runai-admin-cli-v0.0.20-linux-amd64.tar.gz https://github.com/run-ai/runai-admin-cli/releases/download/v0.0.20/runai-admin-cli-v0.0.20-linux-amd64.tar.gz
-RUN tar -zxvf runai-admin-cli-v0.0.20-linux-amd64.tar.gz
-RUN ./install-runai.sh
-RUN apt install tmux -y
 
 #inject credentials
 COPY config /root/.kube/config
