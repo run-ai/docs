@@ -32,6 +32,7 @@ Install Run:AI by performing the install steps [here](../cluster-install/#step-3
 Run:
 
 ```
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
 helm repo update
 helm upgrade runai-cluster runai/runai-cluster -n runai --reuse-values
 ```
