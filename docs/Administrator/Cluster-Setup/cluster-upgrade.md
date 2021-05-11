@@ -34,6 +34,7 @@ Run:
 ```
 helm repo update
 helm upgrade runai-cluster runai/runai-cluster -n runai --reuse-values
+kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
 ```
 
 ## Verify successful installation
