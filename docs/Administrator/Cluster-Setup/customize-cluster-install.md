@@ -16,7 +16,7 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
-| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
+| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus and Grafana (assumes a prior install of both, outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
 |<img width=500/>|||
 
 
