@@ -1,5 +1,14 @@
 
 <!-- Show the original Run:AI Command line  -->
+## May 10<sup>th</sup> 2021
+ 
+Usability improvements of runai cli. The cli now supports autocomplete for all options and parameters.
+ 
+Usability improvements of the Administration user interface navigation menu now allow for easier navigation.
+ 
+Run:AI can be installed  when Kubernetes has [Pod Security Policy (PSP)](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} enabled.
+
+
 ## April 20<sup>th</sup> 2021
 
 Job List and Node list now show the GPU type (e.g. v-100).
