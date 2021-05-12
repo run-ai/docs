@@ -33,9 +33,10 @@ Following is a description of some of the relevant files:
 |   Folder    | File  |  Purpose | 
 |-------------|-------|----------|
 | `clusterroles` | `base.yaml` | Mandatory Kubernetes _Cluster Roles_ and _Cluster Role Bindings_  | |
-| `clusterroles` |`project-controller-ns-creation-and-user-auth.yaml` | Automatic Project Creation and Maintenance. Provides Run:AI with the ability to create Kubernetes namespaces when the Run:AI administrator creates new Projects. Can be controlled via flag |  
+| `clusterroles` |`project-controller-ns-creation.yaml` | Automatic Project Creation and Maintenance. Provides Run:AI with the ability to create Kubernetes namespaces when the Run:AI administrator creates new Projects. Can be controlled via flag |  
+| `clusterroles` |`project-controller-rb-creation.yaml` | Automatically assign Users to Projects. Can be controlled via flag |  
 | `clusterroles` | `project-controller-cluster-wide-secrets.yaml` | Allow the propagation of Secrets. See [Secrets in Jobs](../Researcher-Setup/use-secrets.md). Can be controlled via flag. | 
-| `clusterroles` | `project-controller-limit-range` | Disables the usage of the Kubernetes [Limit Range](https://kubernetes.io/docs/concepts/policy/limit-range/#:~:text=A%20LimitRange%20is%20a%20policy,per%20PersistentVolumeClaim%20in%20a%20namespace){target=_blank} feature |
+| `clusterroles` | `project-controller-limit-range.yaml` | Disables the usage of the Kubernetes [Limit Range](https://kubernetes.io/docs/concepts/policy/limit-range/#:~:text=A%20LimitRange%20is%20a%20policy,per%20PersistentVolumeClaim%20in%20a%20namespace){target=_blank} feature |
 | `ocp` | `scc.yaml`| OpenShift-specific Security Contexts | 
 | `priorityclasses` | 4 files |  Folder contains a list of _Priority Classes_ used by Run:AI | 
 | `psp` | `baseline-psp.yaml`  | A subset of the Kubernetes __baseline__ PodSecurityPolicy ([here](https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/policy/baseline-psp.yaml){target=_blank})| 
