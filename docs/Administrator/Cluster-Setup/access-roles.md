@@ -43,7 +43,7 @@ Following is a description of some of the relevant files:
 | `psp` | `nvidia-psp.yaml` | Required for NVIDIA components |
 | `psp` | `runai-container-toolkit-psp.yaml` | Required for Run:AI GPU Fractions technology. Can be controlled via flag. | 
 | `psp` | `runai-user-psp.yaml` | Required for User Workloads. Extends the Kubernetes __baseline__ PodSecurityPolicy for Run:AI GPU Fractions technology. Can be controlled via flag.  | `psp` | `privileged.yaml` | __priviliged__ Kubernetes PodSecurityPolicy. Used only for installing _Node Feature Discovery_ and _NVIDIA GPU Feature Discovery_ third parties. Can be controlled via flag| 
-|<img width=400/>|||
+|<img width=400/>|<img width=600/>||
 
 
 
