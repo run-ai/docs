@@ -1,5 +1,5 @@
 
-The document refers to the installation of NVIDIA CUDA drivers and NVIDIA Docker on __each node__ containing GPUs. For using the (recommended) NVIDIA GPU Operator instead, see the [Cluster Installation](cluster-install.md) documentation. 
+The document refers to the installation of NVIDIA CUDA drivers and NVIDIA Docker on __each node__ containing GPUs. For using the NVIDIA GPU Operator instead, see the [Cluster Installation](cluster-install.md) documentation. 
 
 If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA preqrequisites are already installed and you may skip this document
 

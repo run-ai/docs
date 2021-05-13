@@ -10,13 +10,13 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.global.openshift` |  `false` |  Set to `true` with OpenShift  |
 | `runai-operator.config.init-ca.enabled` | `true` | Set to `false` with OpenShift | 
 | `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift. Requires an additional manual step when creating new Run:AI Projects | 
-| `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. Requires an additional manual step when setting users to Run:AI Projects | 
+| `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:AI the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:AI Projects | 
+| `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. Requires an additional manual step when assigning users to Run:AI Projects | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
-| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus and Grafana (assumes a prior install of both, outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related exporter rules |
+| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related _exporter rules_ |
 |<img width=500/>|||
 
 
@@ -31,7 +31,7 @@ The Run:AI Cluster installation installs by default two pre-requisites:  Kuberne
 
 The Run:AI Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set `kube-prometheus-stack.enabled` to `false`. 
 
-An extra configuration step will be required to add the Run:AI Prometheus rules and to push metrics to the Run:AI Administration User Interface. Please contact Run:AI Customer support. 
+When choosing `false`, an extra configuration step will be required to add the Run:AI Prometheus rules and to push metrics to the Run:AI Administration User Interface. Please contact Run:AI Customer support. 
 
 
 ## Understanding Custom Access Roles
