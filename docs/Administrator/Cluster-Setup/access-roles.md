@@ -14,21 +14,16 @@ The purpose of this document is to provide security officers with the ability to
 
 ## Review Cluster Access Roles
 
-If you have not done so before, run:
+Run:
 
 ```
 helm repo add runai https://run-ai-charts.storage.googleapis.com
 helm repo update
+helm install runai-cluster runai/runai-cluster -n runai -f runai-<cluster-name>.yaml \
+        --dry-run > cluster-all.yaml
 ```
 
-Then run:
-
-```
-helm pull runai/runai-cluster --untar
-cd runai-cluster/templates
-```
-
-Following is a description of some of the relevant files: 
+The file `cluster-all.yaml` can be then be reviewed. You can use the internal filenames (provided in comments within the file) to gain more understanding according to the table below:
 
 |   Folder    | File  |  Purpose | 
 |-------------|-------|----------|
