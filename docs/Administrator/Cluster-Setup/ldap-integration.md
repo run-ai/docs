@@ -6,11 +6,11 @@ The document below provides step-by-step instructions on how to perform this int
 
 ## Prerequisites 
 
-The instructions below assume that you have obtained an `<TICKET-URL>` from Run:AI Customer support
+The instructions below assume that you have obtained an `<TICKET-NUMBER>` from Run:AI Customer support
 
 ## Integration
 
-* Install the [Auth0 LDAP connector](https://auth0.com/docs/extensions/ad-ldap-connector/install-configure-ad-ldap-connector){target=_blank}, as part of the configuration you will need to provide it with the `<TICKET-URL>` and connect it to the organization's directory.
+* Install the [Auth0 LDAP connector](https://auth0.com/docs/extensions/ad-ldap-connector/install-configure-ad-ldap-connector){target=_blank}, as part of the configuration you will need to provide it with the `<TICKET-NUMBER>` and connect it to the organization's directory.
 
 * Browse to [https://app.run.ai/general-settings](https://app.run.ai/general-settings){target=)blank}. Enable _LDAP Integration_. 
 
