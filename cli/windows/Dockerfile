@@ -16,7 +16,10 @@ RUN tar -zxvf runai-cli-v2.2.40-linux-amd64.tar.gz
 RUN ./install-runai.sh
 RUN runai update
 
-
 #inject credentials
 COPY config /root/.kube/config
 RUN chmod 400 /root/.kube/config
+
+#add runai cli bash completion
+RUN apt install bash-completion -y
+COPY bashrc /root/.bashrc

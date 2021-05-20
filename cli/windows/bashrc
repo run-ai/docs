@@ -1,0 +1,3 @@
+[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+source <(runai completion bash)
+source /etc/bash_completion
