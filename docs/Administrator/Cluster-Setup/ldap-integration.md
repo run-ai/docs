@@ -27,7 +27,7 @@ The instructions below assume that you have obtained the following from Run:AI C
 
 ``` YAML
         auth-flow: remote-browser
-        idp-issuer-url: https://app.run.ai/auth
+        redirect-uri: https://app.run.ai/auth
 ```
 
 ## Test
