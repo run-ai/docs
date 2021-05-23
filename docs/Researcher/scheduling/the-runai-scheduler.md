@@ -68,6 +68,15 @@ The Run:AI scheduler wakes up periodically to perform allocation tasks on pendin
     
 *   The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
 
+### Node Affinity 
+
+Both the Administrator and the Researcher can provide limitations as to which nodes can be selected for the Job. Limits are managed via [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){target=_blank}:
+
+* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Setup](../../Administrator/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups) for more information.
+* The Researcher can set a limit at the Job level, by using the command-line interface flag `--node-type`. The flag acts as a subset to the Project setting. 
+
+Node affinity constraints are used during the _Allocation_ phase to filter out candidate nodes for running the Job. For more information on how nodes are filtered see the `Filtering` section under [Node selection in kube-scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/#kube-scheduler-implementation){target=_blank}. The Run:AI scheduler works similarly.
+
 ### Reclaim
 
 During the above process, there may be a pending workload whose Project is below the deserved capacity. Still, it cannot be allocated due to the lack of GPU resources. The scheduler will then look for alternative allocations at the expense of another Project which has gone over-quota while preserving fairness between Projects.
