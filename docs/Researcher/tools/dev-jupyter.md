@@ -1,8 +1,10 @@
 # Use a Jupyter Notebook with a Run:AI Job
 
-Once you launch a workload using Run:AI, you will want to connect to it. You can do so via command-line or via other tools such as a [Jupyter Notebook](../Walkthroughs/walkthrough-build-ports.md)
+A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook __runs inside the user container__. 
 
-This document is about accessing the remote container created by Run:AI via such a notebook.
+This document is about accessing the remote container created by Run:AI via such a notebook. Alternatively, Run:AI provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:AI](../../Administrator/integration/jupyterhub.md).
+
+
 
 
 ## Submit a Workload
