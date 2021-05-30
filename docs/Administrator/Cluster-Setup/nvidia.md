@@ -14,7 +14,7 @@ Run:
 nvidia-smi
 ```
 
-If the command is installed. Verify that the NVIDIA driver version 410.104 or later and CUDA 9.0 or later.
+If the command is installed. Verify that the NVIDIA driver version 410.104 or later and CUDA 10 or later.
 
 If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){target=_blank} to install. When the installation is finished you must reboot your computer. 
 
