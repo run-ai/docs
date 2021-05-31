@@ -26,7 +26,7 @@ Before stopping a Worker node, perform the following:
 * Stop the Kubernetes scheduler from starting __new__ workloads on the node and drain node from all existing workloads. Workloads will move to other nodes or await on queue for renewed execution:
 
 ```
-kubectl drain <node_name> --delete-local-data --ignore-daemonsets
+kubectl taint nodes <node-name> runai=drain:NoExecute
 ```
 
 * Shut down the node and perform the required maintenance. 
@@ -35,7 +35,7 @@ kubectl drain <node_name> --delete-local-data --ignore-daemonsets
 * When done, start the node and then run:
 
 ```
-kubectl uncordon <node-name>
+kubectl taint nodes <node-name> runai=drain:NoExecute-
 ```
 
 ### Unplanned Downtime
@@ -45,13 +45,13 @@ kubectl uncordon <node-name>
 * If a node is to remain down for some time, you will want to drain the node so that workloads will migrate to another node:
 
 ```
-kubectl drain <node_name> --delete-local-data --ignore-daemonsets
+kubectl taint nodes <node-name> runai=drain:NoExecute
 ```
 
 When the node is up again, run: 
 
 ```
-kubectl uncordon <node-name>
+kubectl taint nodes <node-name> runai=drain:NoExecute-
 ```
 
 * If the node is to be permanently shut down, you can remove it completely from Kubernetes. Run:
