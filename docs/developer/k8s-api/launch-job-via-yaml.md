@@ -100,6 +100,17 @@ spec:
 
 where "0.5" is the requested GPU fraction.
 
+### Mapping Additional Flags
+
+Run:AI Command-Line `runai submit` has a significant number of flags. The easiest way to find out the mapping from a flag to the correct YAML attribute is to use the `--dry-run` flag.
+
+For example, to find the location of the `--large-shm` flag, run:
+
+``` bash 
+> runai submit -i ubuntu --large-shm --dry-run
+Template YAML file can be found at:
+/var/folders/xb/rnf9b1bx2jg45c7jprv71d9m0000gn/T/job.yaml185826190
+```
 
 ## Delete Workloads
 
