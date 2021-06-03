@@ -39,7 +39,7 @@ Several changes and additions to the Command-line interface:
 * You no longer need to __provide a Job name__. If you don't, a Job name will be generated automatically. You can also control the job-name prefix using an additional flag. 
 * New `--image-pull-policy` flag, allowing Researcher support for updating images without tagging.
 
-For further information see [runai submit](../Researcher/cli-reference/runai-submit/)
+For further information see [runai submit](../../Researcher/cli-reference/runai-submit/)
 
 ## September 6th, 2020
 
@@ -64,7 +64,7 @@ You can now enforce a cluster-wise setting that mandates all containers running 
 
 ## July 21th, 2020
 
-It is now possible to mount a __Persistent Storage Claim__ using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../Researcher/cli-reference/runai-submit.md) CLI flag
+It is now possible to mount a __Persistent Storage Claim__ using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../../Researcher/cli-reference/runai-submit/) CLI flag
 
 
 ## June 13th, 2020
