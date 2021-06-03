@@ -47,6 +47,10 @@ kubectl get nodes
 ```
 sudo ./install-runai.sh
 ```
+* Or give and installation path:
+```
+./install-runai.sh <INSTALL_DIRECTORY>
+```
 
 * To verify the installation run:
 
