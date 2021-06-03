@@ -48,6 +48,15 @@ kubectl get nodes
 sudo ./install-runai.sh
 ```
 
+The command will install Run:AI CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
+
+```
+sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
+```
+
+You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
+
+
 * To verify the installation run:
 
 ```

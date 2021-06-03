@@ -19,7 +19,7 @@ Run:
 kubectl get pods -n runai
 ```
 
-* Verify that all pods are in ``Running`` status and re in ready state (1/1 or similar)
+* Verify that all pods are in ``Running`` status and in ready state (1/1 or similar)
 * Identify the `runai-db-0` and `runai-agent-<id>` pods. Run: `kubectl logs -n runai <pod name>` and verify that there are no errors.
 
 Run:
@@ -131,7 +131,7 @@ kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
+* If you need to set up an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
 
 
 __Machine Clocks are not synced__
