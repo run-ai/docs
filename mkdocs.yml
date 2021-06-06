@@ -124,6 +124,7 @@ nav:
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
       - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
+      - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
       - 'runai version' : 'Researcher/cli-reference/runai-version.md'
       - 'runai whoami' : 'Researcher/cli-reference/runai-whoami.md'
