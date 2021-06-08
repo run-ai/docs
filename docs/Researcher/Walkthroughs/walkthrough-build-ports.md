@@ -8,15 +8,9 @@
 
 ## Exposing a Container Port
 
- There are a number of ways to expose ports in Kubernetes: 
+ There are 4 ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_ and _Ingress_. The first 2 will always work. The others require a special setup by your administrator. The 4 methods are explained [here](../../Administrator/Cluster-Setup/allow-external-access-to-containers.md). 
 
-*    NodePort - Exposes the Service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service, from outside the cluster, by requesting ``<NodeIP>:<NodePort>`` regardless of which node the container actually resides in.   
-*   LoadBalancer - Useful for cloud environments. Exposes the Service externally using a cloud provider’s load balancer.
-*   Ingress - Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services.
-*   Port Forwarding - Simple port forwarding allows access to the container via `localhost:<port>`
-
-The document below provides examples for _Port Forwarding_ and _Ingress_.
-Contact your Administrator to see which methods are available in your cluster
+ The document below provides examples based on Port Forwarding and Ingress.
 
 !!! Note
     The step below use a Jupyter Notebook as an example for how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
@@ -35,8 +29,9 @@ Contact your Administrator to see which methods are available in your cluster
 
 ``` bash
 runai config project team-a
-runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \ --service-type=portforward 
-  --port 8888:8888  --command -- start-notebook.sh --NotebookApp.base_url=jupyter1
+runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \ 
+  --service-type=portforward --port 8888:8888  --command 
+  -- start-notebook.sh --NotebookApp.base_url=jupyter1
 ```
 
 *   The Job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
@@ -74,7 +69,8 @@ __Note:__ Ingress must be set up by your Administrator prior to usage. For more 
 ``` shell
 runai config project team-a
 runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
-  --service-type=ingress --port 8888  --command -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
+  --service-type=ingress --port 8888  --command  \ 
+  -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
 ```
 
 *   An ingress service URL will be created, run:

@@ -65,7 +65,7 @@ nav:
       - 'Quick Single Node Install' : 'Administrator/Cluster-Setup/single-node-install.md'    
       - 'Troubleshooting' : 'Administrator/Cluster-Setup/cluster-troubleshooting.md'
       - 'Advanced' :
-        # - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
+        - 'Allow external access to Containers' : 'Administrator/Cluster-Setup/allow-external-access-to-containers.md'
         # - 'Configure an HTTP Proxy Server ' : 'Administrator/Cluster-Setup/proxy-server.md'
         - 'Authentication and Authorization' : 'Administrator/Cluster-Setup/researcher-authentication.md'
         - 'LDAP Authentication' : 'Administrator/Cluster-Setup/ldap-integration.md'
