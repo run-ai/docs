@@ -47,7 +47,7 @@ We released a module that helps the Researcher perform __Hyperparameter optimiza
 
 ## September 3rd, 2020
 
-__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/scheduling/The-Run-AI-Scheduler/#gpu-fractions) for more.
+__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/scheduling/the-runai-scheduler/#gpu-fractions) for more.
 
 
 ## August 10th, 2020

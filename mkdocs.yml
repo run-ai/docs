@@ -45,6 +45,7 @@ plugins:
       redirect_maps:
         'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'Administrator/admin-ui-setup/project-setup.md'
         'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'Administrator/admin-ui-setup/department-setup.md'
+        'Researcher/scheduling/The-Run-AI-Scheduler.md' : 'Researcher/scheduling/the-runai-scheduler.md'
         'home/whats-new.md' : 'home/whats-new-2021.md'
 nav:
   - Home: 
