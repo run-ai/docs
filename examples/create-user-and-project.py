@@ -86,6 +86,7 @@ def create_project(projectname, internalUID, gpuquota, token):
         "departmentId": DEPARTMENT_ID,
         "deservedGpus": gpuquota,
         "clusterUuid": CLUSTER_UUID,
+        "swapEnabled": False,
         "permissions": {
             "users": [internalUID]
         }
