@@ -40,12 +40,12 @@ _Pods_ are units of work within a Job.
 
 ## Basic Scheduling Concepts
 
-### Interactive vs. Unattended
+### Interactive, Training and Inference
 
 The Researcher uses the _--interactive_ flag to specify whether the workload is an unattended "train" workload or an interactive "build" workload.
 
-*   Interactive workloads will get precedence over unattended workloads.
-*   Unattended workloads can be preempted when the scheduler determines a more urgent need for resources. Interactive workloads are never preempted.
+*   Interactive & Inference workloads will get precedence over training workloads.
+*   Training workloads can be preempted when the scheduler determines a more urgent need for resources. Interactive workloads are never preempted.
 
 ### Guaranteed Quota and Over-Quota
 
@@ -63,7 +63,7 @@ The Run:AI scheduler wakes up periodically to perform allocation tasks on pendin
 *   The scheduler looks at each Project separately and selects the most 'deprived' Project.
 *   For this deprived Project it chooses a single workload to work on:
     
-    *   Interactive workloads are tried first, but only up to the Project's guaranteed quota. If such a workload exists, it is scheduled even if it means __preempting__ a running unattended workload in this Project.
+    *   Interactive & Inference workloads are tried first, but only up to the Project's guaranteed quota. If such a workload exists, it is scheduled even if it means __preempting__ a running unattended workload in this Project.
     *   Else, it looks for an unattended workload and schedules it on guaranteed quota or over-quota.
     
 *   The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
