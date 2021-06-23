@@ -48,12 +48,14 @@ The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/
 
 ### Preparations
 
-* Edit `kubernetes_config.json`. Set "kube-context" to the name of the Kubernetes context. You can find the name by running `runai list clusters` or `kubectl config get-contexts`.
+* Edit `kubernetes_config.json`. 
+    * Set `kube-context` to the name of the Kubernetes context. You can find the name by running `runai list clusters` or `kubectl config get-contexts`.
+    * Set `repository-uri` to a repository and name of a docker image that will be used by MLflow. Your local machine needs permissions to be able to push this image to the docker registry.
 * Edit `kubernetes_job_template.yaml`. Set the value of `namespace` to `runai-<name of Run:AI project>`. Note the last line which adds the Run:AI scheduler to the configuration. 
 
 
 ### Running 
-* Perform `docker login` if required
+* Perform `docker login` if required.
 * Run:
 
 ```
@@ -64,3 +66,13 @@ mlflow run mlproject -P alpha=5.0  -P l1-ratio=0.1  \
 ## MLflow Tracking
 
 The sample training code above does __not__ contain references to an MLflow tracking server. This has been done in order to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architect set up, you can use MLflow tracking.
+
+## Using Interactive Workloads
+
+With Run:AI you can also run _interactive_ workloads. To run the Job as interactive, add the following to `kubernetes_job_template.yaml`: 
+
+``` YAML
+metadata:
+  labels:
+    priorityClassName: "build"
+```

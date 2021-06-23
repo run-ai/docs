@@ -1,5 +1,5 @@
 {
-  "kube-context": "dev-yaron",
-  "repository-uri": "set repository/image name here. You should have the required credentials for pushing this image",
+  "kube-context": "kubernetes-context-here",
+  "repository-uri": "repository/image to be used by mlflow",
   "kube-job-template-path": "kubernetes_job_template.yaml"
 }
