@@ -96,7 +96,8 @@ nav:
       - 'Administrator Onboarding' : 'Administrator/presentations/administrator-onboarding-presentation.md'
     - 'Integrations' :
       - 'JupyterHub' : 'Administrator/integration/jupyterhub.md'
-      - 'Airflow integration' : 'Administrator/integration/airflow.md' 
+      - 'Airflow' : 'Administrator/integration/airflow.md' 
+      - 'MLflow' : 'Administrator/integration/mlflow.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :

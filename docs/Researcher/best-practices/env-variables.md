@@ -3,7 +3,7 @@
 
 ## Identifying a Job
 There may be use cases where your container may need to uniquely identify the Job it is currently running in. A typical use case is for saving Job artifacts under a unique name. 
-Run:AI provides environment variables you can use. These variables are guaranteed to be unique even if the Job is preempted or evicted and then runs again. 
+Run:AI provides pre-defined environment variables you can use. These variables are guaranteed to be unique even if the Job is preempted or evicted and then runs again. 
 
 Run:AI provides the following environment variables:
 
