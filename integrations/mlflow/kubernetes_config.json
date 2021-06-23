@@ -1,0 +1,5 @@
+{
+  "kube-context": "dev-yaron",
+  "repository-uri": "set repository/image name here. You should have the required credentials for pushing this image",
+  "kube-job-template-path": "kubernetes_job_template.yaml"
+}
