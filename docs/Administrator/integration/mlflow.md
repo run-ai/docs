@@ -36,10 +36,10 @@ The essence of the Run:AI integration is the modification of the `kubernetes_job
 
 ### The Sample MLflow Project
 
-The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/integrations/mlflow){target=_blank}. The components are:
+The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/integrations/mlflow){target=_blank}. These contain:
 
-* `Dockerfile`. This file builds a base docker image containing python3 and the required mlflow dependencies. The Docker file is __already compiled and available__ at `gcr.io/run-ai-demo/mlflow-demo`.
-* An MLflow project file `MLproject`. The project file refers to the base image above and provides the python command line to run. 
+* A `Dockerfile`. This file builds a base docker image containing python3 and the required mlflow dependencies. The Docker file is __already compiled and available__ at `gcr.io/run-ai-demo/mlflow-demo`.
+* An MLflow project file `MLproject`. The project file contains the base image above as well as the python command-line to run. 
 * The training python code `train.py`
 * MLflow Kubernetes configuration files as in the [MLflow documentation](https://www.mlflow.org/docs/latest/projects.html#run-an-mlflow-project-on-kubernetes-experimental){target=_blank}.
     * Kubernetes configuration file `kubernetes_config.json`
@@ -49,7 +49,7 @@ The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/
 ### Preparations
 
 * Edit `kubernetes_config.json`. 
-    * Set `kube-context` to the name of the Kubernetes context. You can find the name by running `runai list clusters` or `kubectl config get-contexts`.
+    * Set `kube-context` to the name of the Kubernetes context. You can find the context name by running `runai list clusters` or `kubectl config get-contexts`.
     * Set `repository-uri` to a repository and name of a docker image that will be used by MLflow (this is a different image than the base docker image described above). Your local machine needs permissions to be able to push this image to the docker registry.
 * Edit `kubernetes_job_template.yaml`. Set the value of `namespace` to `runai-<name of Run:AI project>`. Note the last line which adds the Run:AI scheduler to the configuration. 
 
@@ -65,7 +65,7 @@ mlflow run mlproject -P alpha=5.0  -P l1-ratio=0.1  \
 
 ## MLflow Tracking
 
-The sample training code above does __not__ contain references to an MLflow tracking server. This has been done in order to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architect set up, you can use MLflow tracking.
+The sample training code above does __not__ contain references to an MLflow tracking server. This has been done in order to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architecture set up, you can use MLflow tracking in your code.
 
 ## Using Interactive Workloads
 
