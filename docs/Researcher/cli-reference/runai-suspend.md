@@ -27,7 +27,7 @@ runai suspend <job-name>
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
 --all | -A
->  Suspend all Jobs.
+>  Suspend all Jobs in the current Project.
 
 ### Global Flags
 

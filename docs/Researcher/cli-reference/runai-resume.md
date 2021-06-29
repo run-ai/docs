@@ -20,7 +20,7 @@ runai resume <job-name>
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
 --all | -A
->  Resume all suspended Jobs.
+>  Resume all suspended Jobs in the current Project.
 
 ### Global Flags
 
