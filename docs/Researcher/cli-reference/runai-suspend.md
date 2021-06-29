@@ -1,12 +1,15 @@
 ## Description
 
-Suspend a job
+Suspend a Job
 
-This will kill all of the pods associated with the job and stop creating new ones.
+Suspending a Job will stop a running Job and will return it back to the queue until it is resumed using `runai resume`. This means that,
 
-* You will no longer be able to enter it via bash.
-* You will no longer be able to access logs.
-* Any data saved on the container and not stored in a shared location will be lost.
+* You will no longer be able to enter it via `runai bash`.
+* The Job logs will be deleted.
+* Any data saved on the container and __not__ stored in a shared location will be lost.
+
+Technically, the command deletes the _Kubernetes pods_ associated with the Job and marks the Job is suspended until it is manually released. 
+
 
 ## Synopsis
 
@@ -24,7 +27,7 @@ runai suspend <job-name>
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
 --all | -A
->  Delete all Jobs.
+>  Suspend all Jobs.
 
 ### Global Flags
 
@@ -39,14 +42,8 @@ runai suspend <job-name>
 
 ## Output
 
-* The job will be suspended and its status changed in the command _runai list jobs_.
-
-* All of the jobs pods will be deleted.
+* The Job will be suspended. When running _runai list jobs_ the Job will be marked as _Suspended_.
 
 ## See Also
-
-*   Build Workloads. See Quickstart document: [Launch Interactive Build Workloads](../Walkthroughs/walkthrough-build.md).
-
-*   Training Workloads. See Quickstart document:  [Launch Unattended Training Workloads](../Walkthroughs/walkthrough-train.md).
 
 *   Resuming Jobs: [Resume](./runai-resume.md).

@@ -1,8 +1,8 @@
 ## Description
 
-Resume a suspended jobs
+Resume a suspended Job
 
-This will create the pods for the job which will enter the scheduling queues
+Resuming a previously suspended Job will return it back to the queue for scheduling. They Job may or may not restart immediatly, depending on available resources. 
 
 ## Synopsis
 
@@ -20,7 +20,7 @@ runai resume <job-name>
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
 --all | -A
->  Delete all Jobs.
+>  Resume all suspended Jobs.
 
 ### Global Flags
 
@@ -35,9 +35,7 @@ runai resume <job-name>
 
 ## Output
 
-* The job will be suspended and its status changed in the command _runai list jobs_.
-
-* New pods will be created for the job.
+* The Job will be resumed. When running _runai list jobs_ the Job status will no longer by _Suspended_.
 
 ## See Also
 
