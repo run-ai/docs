@@ -8,7 +8,7 @@ Submit a Run:AI Job for execution.
 runai submit 
     [--always-pull-image] 
     [--attach]
-    [--backoffLimit int] 
+    [--backoff-limit int] 
     [--command]
     [--completions int]
     [--cpu double] 
@@ -284,7 +284,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 ### Job Lifecycle
 
---backoffLimit int
+--backoff-limit int
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
 --completions int

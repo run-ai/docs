@@ -2,7 +2,7 @@
 
 Resume a suspended Job
 
-Resuming a previously suspended Job will return it back to the queue for scheduling. They Job may or may not restart immediatly, depending on available resources. 
+Resuming a previously suspended Job will return it back to the queue for scheduling. They Job may or may not start immediatly, depending on available resources. 
 
 ## Synopsis
 

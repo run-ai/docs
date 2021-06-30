@@ -2,7 +2,9 @@
 
 Suspend a Job
 
-Suspending a Job will stop a running Job and will return it back to the queue until it is resumed using `runai resume`. This means that,
+Suspending a pending Job will not allow it to be scheduled until it is resumed using `runai resume`. 
+
+Suspending a running Job will stop the Job and will not allow it to be scheduled until it is resumed using `runai resume`. This means that,
 
 * You will no longer be able to enter it via `runai bash`.
 * The Job logs will be deleted.
