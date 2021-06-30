@@ -9,7 +9,7 @@ Submit a Distributed Training (MPI) Run:AI Job for execution.
 runai submit-mpi
     [--always-pull-image] 
     [--attach]
-    [--backoffLimit int] 
+    [--backoff-limit int] 
     [--command]
     [--cpu double] 
     [--cpu-limit double] 
@@ -196,7 +196,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 
 ### Job Lifecycle
 
---backoffLimit int
+--backoff-limit int
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
 --processes int
