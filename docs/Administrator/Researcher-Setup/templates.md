@@ -188,7 +188,7 @@ Description:
 * `required`: is the parameter mandatory for submitting a Job. Default is false.
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `options`: list of strings. The list is a closed list. 
+* `options`: list of strings. The list is a closed list (no new values can be added by the Researcher). 
 
 
 Example: set a closed list of possible images.
@@ -197,7 +197,7 @@ Example: set a closed list of possible images.
 image: 
   required: true
   default:
-    editable: false
+    editable: true
     value: gcr.io/run-ai-demo/quickstart     
   options:
     - gcr.io/run-ai-demo/quickstart
@@ -215,8 +215,8 @@ Set a list of strings. The syntax is:
   default:
     editable: {true|false}
     value: 
-      {id1} : {string1},
-      {id2} : {string2},
+      {id1} : {string1}
+      {id2} : {string2}
       ...
 ```
 
@@ -235,9 +235,8 @@ arguments:
   default:
     editable: true
     value: 
-      'param1' : '-X',
-      'param2' : '-b 20',
-      ...
+      'param1' : '-X'
+      'param2' : '-b 20'
 ```
 
 
@@ -250,8 +249,8 @@ A set of mapping of string to a string. The syntax is:
   default:
     editable: {true|false}
     value: 
-      {key1}: {value1},
-      {key2}: {value2},
+      {key1}: {value1}
+      {key2}: {value2}
       ...
 ```
 
@@ -265,12 +264,11 @@ Example:
 
 ``` YAML
 environment:
+  editable: true
   default:
     value:
       LEARNING_RATE: 0.1
-      EPOCHS:
-        editable: false
-        value: 100
+      EPOCHS: 100
 ```
 
 Two environment variables are sent to the container: LEARNING_RATE
