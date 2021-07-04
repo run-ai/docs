@@ -300,6 +300,7 @@ pvc:
 ```
 
 Description: 
+
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
 * `default.value`: if provided, serves as the default key-value set for this parameter.
 
