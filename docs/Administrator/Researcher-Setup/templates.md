@@ -246,7 +246,7 @@ arguments:
 
 ###  String to String Mapping
 
-Example: environment variables. 
+A set of mapping of string to a string. The syntax is: 
 
 ``` YAML
 {name}:
@@ -286,7 +286,7 @@ HOME: with a default /home, which the user cannot override.
 
 ### Special: Array of PVCs
 
-An array of Persistent Volume Claims (PVC) provides a way to provide a default for attaching multiple PVCs to a container.  
+An array of Persistent Volume Claims (PVC) provides a way to provide a default for attaching multiple PVCs to a container. The syntax is: 
 
 ``` YAML
 pvc:
@@ -307,7 +307,7 @@ pvc:
 ```
 
 Description: 
-???? No required?
+???? XXX  No required?
 * `default.value`: if provided, serves as the default key-value set for this parameter.
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
 
@@ -330,6 +330,8 @@ pvc:
 
 ### Special: Array of Port Maps
 
+An array of port maps. The syntax is:
+
 ``` YAML
 ports:
   default:
@@ -343,6 +345,26 @@ ports:
         external: {hostPort}
         autoGenerate: {true|false}        
     editable: {true|false}
+```
+
+Description: 
+???? No required?
+* `default.value`: if provided, serves as the default key-value set for this parameter. XXX
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
+XXX
+
+Example: 
+
+``` YAML
+ports:
+  port1:
+    container: 8443
+    external: 443
+    autoGenerate: true
+  port2:
+    container: 4500
+    external: 4500
+    autoGenerate: false
 ```
 
 ## Override rules
