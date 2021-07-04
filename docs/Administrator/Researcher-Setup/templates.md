@@ -347,7 +347,7 @@ ports:
 
 ## Override rules
 
-....
+XXX 
 
 ## Deleting a Template
 to delete the template, run:
