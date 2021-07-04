@@ -59,7 +59,7 @@ To store this template run:
 kubectl apply -f my-template.yaml 
 ```
 
-Now open the Researcher user interface, under the _Resource Allocation_ category, find the _Requested GPU_ box. Verify that the default is set to 1, that it is possible to edit the value to any number between 1 and 4 at 0.2 increments. 
+Now open the Researcher user interface, find the _Requested GPU_ box. Verify that the default is set to 1, that it is possible to edit the value to any number between 1 and 4 at 0.2 increments. 
 
 ## Template parameters
 
@@ -112,7 +112,6 @@ An Integer parameter accepts whole numbers. The syntax is:
     editable: {true|false}
   min: {integer}
   max: {integer}
-  format: {port}   XXX REMOVE THIS??? There are no standalone ports. 
 ```
 
 Description:
@@ -121,9 +120,8 @@ Description:
 * `default.value`: if provided, serves as the default value for this parameter.
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
 * `min/max`: if provided,mandate a range for this parameter.
-* `format`: allows for special formats. Currently, the only format available is `port` which mandates a valid port number (between 1 and 65535).
 
-Example: Set a limit to hyperparameter optimization parallelism:
+Example: Set a limit to hyper-parameter optimization parallelism:
 
 ``` YAML
 parallelism:
