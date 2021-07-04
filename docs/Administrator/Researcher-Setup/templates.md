@@ -80,15 +80,15 @@ A Boolean parameter accepts two values: `true` and `false`. The syntax is:
 {parameter name}:
   required: {true|false}
   default:
-    value: {true|false}      
     editable: {true|false}
+    value: {true|false}      
 ```
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.  XXX is there a default? 
+* `required`: is the parameter mandatory for submitting a Job. Default is false. 
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.    XXXX the default is editable. Right?
 
 Example: Mandate the disabling of host network: 
 
@@ -96,8 +96,8 @@ Example: Mandate the disabling of host network:
 hostNetwork:
   required: true
   default:
-    value: false
     editable: false
+    value: false
 ```
 
 ### Integer
@@ -108,17 +108,17 @@ An Integer parameter accepts whole numbers. The syntax is:
 {name}: 
   required: {true|false}
   default:
-    value: {integer}      
     editable: {true|false}
+    value: {integer}      
   min: {integer}
   max: {integer}
 ```
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.
+* `required`: is the parameter mandatory for submitting a Job. Default is false. 
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
 * `min/max`: if provided,mandate a range for this parameter.
 
 Example: Set a limit to hyper-parameter optimization parallelism:
@@ -127,8 +127,8 @@ Example: Set a limit to hyper-parameter optimization parallelism:
 parallelism:
   required: false
   default:
-    value: 3
     editable: true
+    value: 3
   min: 1
   max: 50
 ```
@@ -141,8 +141,8 @@ A Number (or "Double") parameter accepts any number including non-integer number
 {name}: 
   required: {true|false}
   default:
-    value: {float}      
     editable: {true|false}
+    value: {float}      
   min: {float}
   max: {float}
   step: {float}
@@ -150,9 +150,9 @@ A Number (or "Double") parameter accepts any number including non-integer number
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.
+* `required`: is the parameter mandatory for submitting a Job. Default is false. 
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
 * `min/max`: if provided,mandate a range for this parameter.
 * `step`: mandates the values to fall within fixed steps between the minimum and maximum values. For example, the configuration min=1, max=2, steps=0.2 will yield valid values of 1.0, 1.2, 1.4, 1.6, 1.8, 2.0
 
@@ -175,8 +175,8 @@ A String parameter accepts any text. The syntax is:
 {name}: 
   required: {true|false}
   default:
-    value: {string}      
     editable: {true|false}
+    value: {string}      
   options:
     - {string1}
     - {string2}
@@ -185,10 +185,10 @@ A String parameter accepts any text. The syntax is:
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.
+* `required`: is the parameter mandatory for submitting a Job. Default is false.
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
-* `options`: list of strings. The list provides the XXXX editable works?
+* `options`: list of strings. The list is a closed list. 
 
 
 Example: set a closed list of possible images.
@@ -197,8 +197,8 @@ Example: set a closed list of possible images.
 image: 
   required: true
   default:
-    value: gcr.io/run-ai-demo/quickstart     
     editable: false
+    value: gcr.io/run-ai-demo/quickstart     
   options:
     - gcr.io/run-ai-demo/quickstart
     - gcr.io/run-ai-demo/quickstart-distributed
@@ -213,32 +213,31 @@ Set a list of strings. The syntax is:
 {name}:
   required: {true|false}
   default:
-    value: 
-      {string1},
-      {string2},
-      ...
     editable: {true|false}
+    value: 
+      {id1} : {string1},
+      {id2} : {string2},
+      ...
 ```
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.
 * `default.value`: if provided, serves as the default value for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
 * `options`: list of strings. All strings are part of the default value
+*  `id1`, `id2` etc are _unique_ arbitrary strings. 
 
 
 Example: arguments to a command
 
 ``` YAML
 arguments:
-  required: false
   default:
-    value: 
-      '-X',
-      '-b 20',
-      ...
     editable: true
+    value: 
+      'param1' : '-X',
+      'param2' : '-b 20',
+      ...
 ```
 
 
@@ -249,18 +248,17 @@ A set of mapping of string to a string. The syntax is:
 ``` YAML
 {name}:
   default:
+    editable: {true|false}
     value: 
       {key1}: {value1},
       {key2}: {value2},
       ...
-    editable: {true|false}
 ```
 
 Description:
 
-* `required`: is the parameter mandatory for submitting a Job.
 * `default.value`: if provided, serves as the default key-value set for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
 
 
 Example: 
@@ -277,9 +275,8 @@ environment:
 
 Two environment variables are sent to the container: LEARNING_RATE
 
-BIN: with a default value /usr/local/bin, which the researcher can override. 
-
-HOME: with a default /home, which the user cannot override. 
+* LEARNING_RATE: with a default value of 0.1, which the Researcher can override. 
+* EPOCHS: with a default of 100, which the Researcher __cannot__ override. 
 
 
 ### Special: Array of PVCs
@@ -305,9 +302,8 @@ pvc:
 ```
 
 Description: 
-???? XXX  No required?
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
 * `default.value`: if provided, serves as the default key-value set for this parameter.
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
 
 
 Example:
@@ -333,6 +329,7 @@ An array of port maps. The syntax is:
 ``` YAML
 ports:
   default:
+    editable: {true|false}
     value: 
       {port-map-id1}:
         container: {containerPort}
@@ -342,14 +339,13 @@ ports:
         container: {containerPort}
         external: {hostPort}
         autoGenerate: {true|false}        
-    editable: {true|false}
 ```
 
 Description: 
-???? No required?
-* `default.value`: if provided, serves as the default key-value set for this parameter. XXX
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter.
-XXX
+
+* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
+* `default.value`: if provided, serves as the default key-value set for this parameter.  
+
 
 Example: 
 
