@@ -343,12 +343,16 @@ ports:
 Description: 
 
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
-* `default.value`: if provided, serves as the default key-value set for this parameter.  
+* `default.value`: if provided, serves as the default key-value set for this parameter. 
+
+!!! Note
+    Ports will not be set without the settings the `serviceType`s flag as well. 
 
 
 Example: 
 
 ``` YAML
+serviceType: nodeport
 ports:
   port1:
     container: 8443
