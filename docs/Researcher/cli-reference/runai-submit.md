@@ -307,7 +307,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to LDAP, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
 
 
 ### Scheduling

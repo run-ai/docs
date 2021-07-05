@@ -1,6 +1,6 @@
 ## Introduction
 
-### Privilidged Access
+### Privileged Access
 
 In docker, as well as in Kubernetes, the default for running containers is running as 'root'. The implication of running as root is that processes running within the container have enough permissions to change anything on the machine itself. 
 
@@ -13,7 +13,7 @@ Run:AI supports both PSP and SCC. This support is at the [cluster installation](
 
 ### User Identity
 
-The identity of the user in the container determines its access to cluster resources. For example:  network file storage solutions typically use this identity to determine the container's access to network volumes. 
+The identity of the user in the container determines its access to cluster resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. 
 
 
 The Run:AI Command-line interface provides flags to control user identity within the container and to disable root access capabilities. 
