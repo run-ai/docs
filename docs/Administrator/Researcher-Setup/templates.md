@@ -21,13 +21,13 @@ The purpose of this document is to provide the Administrator with guidelines on 
 
 CLI Templates are implemented as Kubernetes [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){target=_blank}. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
 
-### Creating your First Administration Template 
+### Creating your First Administrative Template 
 
 There are two available administration templates: 
-* An administration template for interactive Jobs
-* An administration template for training Jobs
+* An administrative template for interactive Jobs
+* An administrative template for training Jobs
 
-To create an __interactive__, administration template, create a file (e.g. `my-template.yaml`) and try this sample template:
+To create an __interactive__, administrative template, create a file (e.g. `my-template.yaml`) and try this sample template:
 
 ``` YAML
 apiVersion: v1
@@ -50,7 +50,7 @@ data:
 ```
 The template places a default and limit on the available values for  _gpu_.  
 
-Similarly, you can create a __training__ administration template by using the name `job-settings-training` instead.
+Similarly, you can create a __training__ administrative template by using the name `job-settings-training` instead.
 
 
 To store this template run: 
@@ -211,7 +211,6 @@ Set a list of strings. The syntax is:
 
 ``` YAML
 {name}:
-  required: {true|false}
   default:
     editable: {true|false}
     value: 
@@ -364,7 +363,7 @@ ports:
     autoGenerate: false
 ```
 
-## Override rules
+## Override Rules
 
 XXX 
 
