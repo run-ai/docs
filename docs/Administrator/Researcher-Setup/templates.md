@@ -119,7 +119,7 @@ Description:
 * `required`: is the parameter mandatory for submitting a Job. Default is false. 
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `min/max`: if provided,mandate a range for this parameter.
+* `min/max`: if provided, mandates a range for this parameter.
 
 Example: Set a limit to hyper-parameter optimization parallelism:
 
@@ -153,7 +153,7 @@ Description:
 * `required`: is the parameter mandatory for submitting a Job. Default is false. 
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `min/max`: if provided,mandate a range for this parameter.
+* `min/max`: if provided, mandates a range for this parameter.
 * `step`: mandates the values to fall within fixed steps between the minimum and maximum values. For example, the configuration min=1, max=2, steps=0.2 will yield valid values of 1.0, 1.2, 1.4, 1.6, 1.8, 2.0
 
 Example: Set a limit to the number of GPUs being requested:
@@ -188,7 +188,7 @@ Description:
 * `required`: is the parameter mandatory for submitting a Job. Default is false.
 * `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter. Default is true
 * `default.value`: if provided, serves as the default value for this parameter.
-* `options`: list of strings. The list is a closed list (no new values can be added by the Researcher). 
+* `options`: list of strings. The list is closed (no new values can be added by the Researcher). 
 
 
 Example: set a closed list of possible images.
