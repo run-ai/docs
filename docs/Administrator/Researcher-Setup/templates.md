@@ -266,14 +266,11 @@ environment:
   editable: true
   default:
     value:
-      LEARNING_RATE: 0.1
-      EPOCHS: 100
+      LEARNING_RATE: "0.1"
+      EPOCHS: "100"
 ```
 
-Two environment variables are sent to the container: LEARNING_RATE
-
-* LEARNING_RATE: with a default value of 0.1, which the Researcher can override. 
-* EPOCHS: with a default of 100, which the Researcher __cannot__ override. 
+Note that environment variables are strings, so they must be surrounded by quotes. 
 
 
 ### Special: Array of PVCs
@@ -345,7 +342,7 @@ Description:
 * `default.value`: if provided, serves as the default key-value set for this parameter. 
 
 !!! Note
-    Ports will not be set without the settings the `serviceType`s flag as well. 
+    Ports will not be set without the settings of the `serviceType` flag as well. 
 
 
 Example: 
