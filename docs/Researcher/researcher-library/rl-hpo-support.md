@@ -5,9 +5,9 @@ The Run:AI Researcher Library is a python library you can add to your deep learn
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while and then examine results to decide what works best.
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine results to decide what works best.
 
-With the reporter module, you can externalize information such as progress, accuracy, and loss over time/epoch and more. In addition, you can externalize custom metrics of your choosing.
+With the reporter module, you can externalize information such as progress, accuracy, and loss over time/epoch, and more. In addition, you can externalize custom metrics of your choosing.
 
 
 ## Getting Started

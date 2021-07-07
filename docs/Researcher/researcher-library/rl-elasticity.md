@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Run:AI Researcher Library is a python library you can add to your deep learning python code. The library contains an _elasticity_ module which allows _train_ workloads to shrink or expand based on the cluster's availability.
+The Run:AI Researcher Library is a python library you can add to your deep learning python code. The library contains an _elasticity_ module that allows _train_ workloads to shrink or expand based on the cluster's availability.
 
 ### Expanding a Workload
 
