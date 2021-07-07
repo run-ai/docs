@@ -360,9 +360,35 @@ ports:
     autoGenerate: false
 ```
 
-## Override Rules
+## Fields and Defaults
 
-XXX 
+The following fields are possible. Also included are the field defaults if no administrative template is defined. For an explanation of the field, see the `runai submit` documentation. 
+
+
+|  Flag           |   Mandatory |    UI Default    |  Range/Options | 
+|-----------------|-------------|------------------|----------------|
+| arguments       | -           |                  |        |
+| backoffLimit    | -           |       6          |        |   
+| completions     | -           |       1          |        |   
+| cpu             | -           |       1          | min: 0, max: 100, step: 0.1       |
+| cpuLimit        | -           |                  | min: 0, max: 100, step: 0.1       |
+| environment     | -           |                  |        |
+| gpu             | -           |       1          | min: 0, max: 100, step: 0.1       |
+| image           | yes         |                  |        |
+| imagePullPolicy | yes         |    `Always`      |  `Always`, `IfNotPresent`, `Never`       |
+| jobNamePrefix   | -           |                  |        |
+| memory          | -           |                  |        |
+| memoryLimit     | -           |                  |        |
+| name            | yes         |                  |        |
+| parallelism     | -           |       1          |        | 
+| ports           | -           |                  |        |   
+| processes       | -           |                  | min: 1 |
+| project         | yes         |                  |        |
+| pvc             | -           |                  |        |   
+| serviceType     | -           |                  | `ingress`, `loadbalancer`, `nodeport` |  
+| ttlAfterFinish  | -           |                  |        |
+| volume          | -           |                  |        |   
+
 
 ## Deleting a Template
 to delete the template, run:
