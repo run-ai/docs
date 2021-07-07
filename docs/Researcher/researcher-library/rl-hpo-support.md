@@ -40,10 +40,14 @@ import runai.hpo
 ```
 
 * Initialize the Run:AI HPO library with a path to a directory shared between all cluster nodes (typically using an NFS server).
-We recommend specifying a unique name for the experiment, the name will be used to create a sub-directory on the shared folder. 
+We recommend specifying a unique name for the experiment, the name will be used to create a sub-directory on the shared folder.
+To do so, we recommend using the [environment variables](../../best-practices/env-variables/) `JOB_NAME` and `JOB_UUID` which are injected to the container by Run:AI.
 
 ``` python
-runai.hpo.init('/path/to/nfs', 'model-abcd-hpo')
+hpo_root = '/path/to/nfs'
+hpo_experiment = '%s_%s' % (os.getenv('JOB_NAME'), os.getenv('JOB_UUID'))
+
+runai.hpo.init(hpo_root, hpo_experiment)
 ```
 
 * Decide on an HPO strategy:
