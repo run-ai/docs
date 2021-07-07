@@ -6,7 +6,7 @@ google_analytics:
   - auto
 repo_url: https://github.com/run-ai/docs/
 docs_dir: docs
-theme:
+theme: 
   name: material
   custom_dir: overrides
   language: en
