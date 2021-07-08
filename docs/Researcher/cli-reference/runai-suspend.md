@@ -2,15 +2,13 @@
 
 Suspend a Job
 
-Suspending a pending Job will not allow it to be scheduled until it is resumed using `runai resume`. 
-
-Suspending a running Job will stop the Job and will not allow it to be scheduled until it is resumed using `runai resume`. This means that,
+Suspending a Running Job will stop the Job and will not allow it to be scheduled until it is resumed using `runai resume`. This means that,
 
 * You will no longer be able to enter it via `runai bash`.
 * The Job logs will be deleted.
 * Any data saved on the container and __not__ stored in a shared location will be lost.
 
-Technically, the command deletes the _Kubernetes pods_ associated with the Job and marks the Job is suspended until it is manually released. 
+Technically, the command deletes the _Kubernetes pods_ associated with the Job and marks the Job as suspended until it is manually released. 
 
 
 ## Synopsis
