@@ -376,9 +376,12 @@ The following fields are possible. Also included are the field defaults if no ad
 | createHomeDir   | -           |    `false`       |        | 
 | environment     | -           |                  |        |
 | gpu             | -           |       1          | min: 0, max: 100, step: 0.1       |
+| hostIpc         | -           |    `false`       |        | 
+| hostNetwork     | -           |    `false`       |        | 
 | image           | yes         |                  |        |
 | imagePullPolicy | yes         |    `Always`      |  `Always`, `IfNotPresent`, `Never`       |
 | jobNamePrefix   | -           |                  |        |
+| largeShm        | -           |    `false`       |        | 
 | memory          | -           |                  |        |
 | memoryLimit     | -           |                  |        |
 | name            | yes         |                  |        |
@@ -386,7 +389,8 @@ The following fields are possible. Also included are the field defaults if no ad
 | ports           | -           |                  |        |   
 | processes       | -           |                  | min: 1 |
 | project         | yes         |                  |        |
-| pvc             | -           |                  |        |   
+| pvc             | -           |                  |        |  
+| preventPrivilegeEscalation | no | `false`        |        |
 | serviceType     | -           |                  | `ingress`, `loadbalancer`, `nodeport` |  
 | stdin           | -           |    `false`       |        | 
 | ttlAfterFinish  | -           |                  |        |
