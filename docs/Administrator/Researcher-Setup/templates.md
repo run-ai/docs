@@ -385,6 +385,7 @@ The following fields are possible. Also included are the field defaults if no ad
 | memory          | -           |                  |        |
 | memoryLimit     | -           |                  |        |
 | name            | yes         |                  |        |
+| nodeType        | -           |                  |        |
 | parallelism     | -           |       1          |        | 
 | ports           | -           |                  |        |   
 | processes       | -           |                  | min: 1 |
