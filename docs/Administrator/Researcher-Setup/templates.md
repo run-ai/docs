@@ -368,10 +368,12 @@ The following fields are possible. Also included are the field defaults if no ad
 |  Flag           |   Mandatory |    UI Default    |  Range/Options | 
 |-----------------|-------------|------------------|----------------|
 | arguments       | -           |                  |        |
-| backoffLimit    | -           |       6          |        |   
+| backoffLimit    | -           |       6          |        |  
+| command         | -           |                  |        | 
 | completions     | -           |       1          |        |   
 | cpu             | -           |       1          | min: 0, max: 100, step: 0.1       |
 | cpuLimit        | -           |                  | min: 0, max: 100, step: 0.1       |
+| createHomeDir   | -           |    `false`       |        | 
 | environment     | -           |                  |        |
 | gpu             | -           |       1          | min: 0, max: 100, step: 0.1       |
 | image           | yes         |                  |        |
@@ -386,8 +388,12 @@ The following fields are possible. Also included are the field defaults if no ad
 | project         | yes         |                  |        |
 | pvc             | -           |                  |        |   
 | serviceType     | -           |                  | `ingress`, `loadbalancer`, `nodeport` |  
+| stdin           | -           |    `false`       |        | 
 | ttlAfterFinish  | -           |                  |        |
-| volume          | -           |                  |        |   
+| tty             | -           |    `false`       |        | 
+| volume          | -           |                  |        | 
+| workingDir      | -           |                  |        | 
+
 
 
 ## Deleting a Template
