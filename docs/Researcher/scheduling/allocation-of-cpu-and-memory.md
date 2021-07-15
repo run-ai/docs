@@ -63,7 +63,7 @@ The system comes with a cluster-wide default of 1:1. To change the ratio see bel
 
 If your Job has not specified `--memory`, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
 
-The system comes with a cluster-wide default of 100MiB per GPU. To change the ratio see below.
+The system comes with a cluster-wide default of 100MiB of allocated CPU memory per GPU. To change the ratio see below.
 
 
 ### Defaults for --cpu-limit flag
@@ -82,7 +82,7 @@ If your Job has not specified `--memory-limit`, then by default, the system will
 To change the cluster wide-ratio use the following command. The command below sets:
 
 * a CPU request with a default ratio of 2:1 CPUs to GPUs.
-* a Memory request with a default ratio of 200MB per GPU.
+* a CPU Memory request with a default ratio of 200MB per GPU.
 * a CPU limit with a default ratio of 4:1 CPU to GPU.
 * a Memory limit with a default ratio of 2GB per GPU. 
 
