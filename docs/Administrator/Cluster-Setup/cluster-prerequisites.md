@@ -11,6 +11,8 @@ If you are using RedHat OpenShift. The minimal version is OpenShift 4.3.
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 
+Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are created, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
+
 ### NVIDIA 
 
 Run:AI requires the installation of NVIDIA software. These can be done in one of two ways:
