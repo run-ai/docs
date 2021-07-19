@@ -1,16 +1,8 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: runai-PROJECT_NAME
-  labels:
-    runai/namespace-version: v2
-    runai/queue: PROJECT_NAME
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-user-job
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -18,13 +10,13 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: default
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-project-controller-project
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -38,7 +30,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-job-controller-project
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -52,7 +44,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: researcher-service-rw
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -66,7 +58,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-scheduler-rw
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -80,7 +72,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-admission-controller-project
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -94,7 +86,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: runai-job-executor-manual
-  namespace: runai-PROJECT_NAME
+  namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
