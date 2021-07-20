@@ -7,8 +7,6 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
-| `runai-operator.config.global.openshift` |  `false` |  Set to `true` with OpenShift  |
-| `runai-operator.config.init-ca.enabled` | `true` | Set to `false` with OpenShift | 
 | `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:AI the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:AI Projects | 
 | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:AI Projects | 
@@ -46,4 +44,27 @@ Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Not
 ## Add a Proxy
 
 Allow outbound internet connectivity in a proxied network environment. See [Installing Run:AI with an Internet Proxy Server](proxy-server.md). -->
+
+## Manual Creation of Namespaces
+
+Run:AI Projects are implemented as Kubernetes namespaces. By default, the administrator creates a new Project via the Administration user interface which then triggers the creation of a Kubernetes namespace named `runai-<PROJECT-NAME> `.
+There are a couple of use cases that customers will want to disable this feature:
+
+* Some organizations prefer to use their internal naming convention for Kubernetes namespaces, rather than Run:AI's default `runai-<PROJECT-NAME>` convention.
+* When PodSecurityPolicy is enabled, some organizations will not allow Run:AI to automatically create Kubernetes namespaces. 
+
+
+Follow the following process to achieve this
+
+1. Disable the namespace creation functionality. See the  `runai-operator.config.project-controller.createNamespaces` flag above.
+2. [Create a Project](https://docs.run.ai/Administrator/admin-ui-setup/project-setup/#create-a-new-project){target=blank} using the Administrator User Interface. 
+3. Create and Label a Namespace:
+
+Run:
+``` bash
+kubectl create ns <NAMESPACE> 
+kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
+```
+Where  `<PROJECT_NAME>` is the name of the project you have created in the Administrator UI above and `<NAMESPACE>` is the name you choose for your namespace (the suggested Run:AI default is `runai-<PROJECT-NAME>`).
+
 
