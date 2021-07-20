@@ -13,6 +13,7 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
+| `runai-operator.config.mpi-operator.enabled` | `true` | Set to `false` when using PodSecurityPolicy. __MPI__ is the distributed-training operator from KubeFlow. Currently must run with root access |
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
 | `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related _exporter rules_ |
 |<img width=500/>|||
@@ -58,13 +59,9 @@ Follow the following process to achieve this
 
 1. Disable the namespace creation functionality. See the  `runai-operator.config.project-controller.createNamespaces` flag above.
 2. [Create a Project](https://docs.run.ai/Administrator/admin-ui-setup/project-setup/#create-a-new-project){target=blank} using the Administrator User Interface. 
-3. Create and Label a Namespace:
+3. Create the namespace if needed by running: `kubectl create ns <NAMESPACE>`. The suggested Run:AI default is `runai-<PROJECT-NAME>`.
+4. Label the namespace to connect it to the Run:AI Project by running `kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>`
 
-Run:
-``` bash
-kubectl create ns <NAMESPACE> 
-kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
-```
-Where  `<PROJECT_NAME>` is the name of the project you have created in the Administrator UI above and `<NAMESPACE>` is the name you choose for your namespace (the suggested Run:AI default is `runai-<PROJECT-NAME>`).
+where  `<PROJECT_NAME>` is the name of the project you have created in the Administrator UI above and `<NAMESPACE>` is the name you chose for your namespace.
 
 
