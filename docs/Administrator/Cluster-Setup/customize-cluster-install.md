@@ -15,7 +15,7 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
 | `runai-operator.config.mpi-operator.enabled` | `true` | Set to `false` when using PodSecurityPolicy. __MPI__ is the distributed-training operator from KubeFlow. Currently must run with root access |
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
-| `kube-prometheus-stack.enabled` |  `true`  |  Set to `false` to not install Prometheus (assumes a prior install outside Run:AI scope). Requires additional configuration of Prometheus to add Run:AI related _exporter rules_ |
+| `kube-prometheus-stack.enabled` |  `true`  |  Run:AI installs Prometheus. Set to `false` not install and use an existing Prometheus installation. Requires additional configuration of Prometheus to add Run:AI related _exporter rules_. Please call Run:AI customer support. |
 |<img width=500/>|||
 
 

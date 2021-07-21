@@ -11,10 +11,10 @@ Run:AI has been tested with the following certified Kubernetes distributions:
 | EKS | Amazon Elastic Kubernetes Service ||
 | AKS | Azure Kubernetes Services    ||
 | GKE | Google Kubernetes Engine ||
-| OCP | OpenShift Container Platform |  Please contact Run:AI customer support for full installation instructions | 
+| OCP | OpenShift Container Platform |  | 
 | RKE | Rancher Kubernetes Engine | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
 
-A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
+A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 
 <!-- !!! Warning
     Run:AI is customizing the NVIDIA Kubernetes device [plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Do __not__ install this software as it is installed by Run:AI.  -->
