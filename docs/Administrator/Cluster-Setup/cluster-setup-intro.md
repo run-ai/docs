@@ -17,7 +17,7 @@ You can also use our [Quick installation guide](single-node-install.md) which in
 
 ## Customization
 
-As part of the installation process, you will download a __Run:AI Operator YAML file__ and apply it to the cluster. Before applying the file, you will often need to customize the file. For a list of customization see [Customize Installation](customize-cluster-install.md)
+As part of the installation process, you will download a __Helm values files__ and which you will use to install Run:AI on the cluster. Before applying the file, you will sometimes need to customize the file. For a list of customization see [Customize Installation](customize-cluster-install.md)
 
 ## Advanced Setup
 
