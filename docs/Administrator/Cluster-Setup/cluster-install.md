@@ -5,14 +5,15 @@ Below are instructions on how to install Run:AI cluster. Before installing, plea
 
 Run:AI has been tested with the following certified Kubernetes distributions: 
 
-| Target Platform | Description | Notes | 
-|-----------------|-------------|-------|
-| On-Premise      |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
-| EKS | Amazon Elastic Kubernetes Service ||
-| AKS | Azure Kubernetes Services    ||
-| GKE | Google Kubernetes Engine ||
-| OCP | OpenShift Container Platform | The Run:AI operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat.  | 
-| RKE | Rancher Kubernetes Engine | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
+| Target Platform                          | Description | Notes | 
+|------------------------------------------|-------------|-------|
+| On-Premise                               |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| EKS | Amazon Elastic Kubernetes Service  | |
+| AKS | Azure Kubernetes Services          | |
+| GKE | Google Kubernetes Engine           | |
+| OCP | OpenShift Container Platform       | The Run:AI operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat.  | 
+| RKE | Rancher Kubernetes Engine          | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
+| Ezmeral | HPE Ezmeral Container Platform | See Run:AI at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 
 A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 
