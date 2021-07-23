@@ -38,8 +38,7 @@ Kubeflow has a multi-user architecture. A user has a _KubeFlow profile_ which ma
 
 ## KubeFlow Notebooks
 
-When [starting a KubeFlow Notebook](https://www.kubeflow.org/docs/components/notebooks/setup/){target=_blank}, 
-you select a _configuration_. A KubeFlow configuration allows you to inject additional settings into the notebook, such as environment variables. To use KubeFlow with Run:AI you will use configurations to inject:
+When [starting a KubeFlow Notebook](https://www.kubeflow.org/docs/components/notebooks/setup/){target=_blank}, you select a `Kubeflow configuration`. A KubeFlow configuration allows you to inject additional settings into the notebook, such as environment variables. To use KubeFlow with Run:AI you will use configurations to inject:
 
 * The name of the Run:AI project
 * Allocation of a fraction of a GPU, if required
@@ -87,8 +86,9 @@ spec:
       value: "0.5"
   selector:
     matchLabels:
-      runai-half-gpu: "true"
+      runai-half-gpu: "true"  # must be identical to metadata.name
 ```
+Similar configurations can be created for fractional configurations, other than 0.5. 
 
 ## KubeFlow Pipelines
 
