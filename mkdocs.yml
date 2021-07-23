@@ -98,6 +98,7 @@ nav:
       - 'JupyterHub' : 'Administrator/integration/jupyterhub.md'
       - 'Airflow' : 'Administrator/integration/airflow.md' 
       - 'MLflow' : 'Administrator/integration/mlflow.md'
+      - 'Kubeflow' : 'Administrator/integration/kubeflow.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
