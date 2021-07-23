@@ -4,7 +4,6 @@ def training_op():
     return dsl.ContainerOp(
         name='runai-gpu1',
         image='gcr.io/run-ai-demo/quickstart',
-        ###command=["/usr/bin/nvidia-smi", "-l", 1],
         command=["./entrypoint.sh"],
         arguments=[],
         container_kwargs={'image_pull_policy': 'IfNotPresent'},
