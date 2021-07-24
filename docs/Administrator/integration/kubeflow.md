@@ -59,7 +59,7 @@ spec:
       value: "<PROJECT>"
   selector:
     matchLabels:
-      runai-non-fractional: "true"
+      runai-non-fractional: "true"  # key must be identical to metadata.name
 ```
 
 Where `<KUBEFLOW-NAMESPACE>` is the name of the namespace associated with the Kubeflow user and `<PROJECT>` is the name of the Run:AI project.
@@ -86,7 +86,7 @@ spec:
       value: "0.5"
   selector:
     matchLabels:
-      runai-half-gpu: "true"  # must be identical to metadata.name
+      runai-half-gpu: "true"  # key must be identical to metadata.name
 ```
 Similar configurations can be created for fractional configurations, other than 0.5. 
 
