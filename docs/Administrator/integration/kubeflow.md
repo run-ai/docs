@@ -1,28 +1,28 @@
-# Integrate Run:AI with KubeFlow
+# Integrate Run:AI with Kubeflow
 
-[KubeFlow](https://www.kubeflow.org/){target=_blank} is a platform for data scientists who want to build and experiment with ML pipelines. Kubeflow is also for ML engineers and operational teams who want to deploy ML systems to various environments for development, testing, and production-level serving.
+[Kubeflow](https://www.kubeflow.org/){target=_blank} is a platform for data scientists who want to build and experiment with ML pipelines. Kubeflow is also for ML engineers and operational teams who want to deploy ML systems to various environments for development, testing, and production-level serving.
 
-This document describes the process of using KubeFlow in conjunction with Run:AI. KubeFlow submits jobs that are scheduled via Run:AI.
+This document describes the process of using Kubeflow in conjunction with Run:AI. Kubeflow submits jobs that are scheduled via Run:AI.
 
-KubeFlow is a set of technologies. This document discusses [KubeFlow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and [KubeFlow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank}.
+Kubeflow is a set of technologies. This document discusses [Kubeflow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank}.
 
 
-## Install KubeFlow
+## Install Kubeflow
 
-Use the default installation to install KubeFlow.
+Use the default installation to install Kubeflow.
 
 
 ## Install Run:AI Cluster
 
 When installing Run:AI, [customize the cluster installation](../../Cluster-Setup/customize-cluster-install) as follows:
 
-* Set `mpi` to `false` as it conflicts with KubeFlow.
-* Set `createNamespaces` to `false`, as KubeFlow uses its on namespace convention.
+* Set `mpi` to `false` as it conflicts with Kubeflow.
+* Set `createNamespaces` to `false`, as Kubeflow uses its on namespace convention.
 
 
 ## Create Run:AI Projects 
 
-KubeFlow uses the namespace convension `kubeflow-<username>`. Use the 4 steps [here](../../Cluster-Setup/customize-cluster-install#manual-creation-of-namespaces) to set up Run:AI projects and link them with Kubeflow namespaces. 
+Kubeflow uses the namespace convension `kubeflow-<username>`. Use the 4 steps [here](../../Cluster-Setup/customize-cluster-install#manual-creation-of-namespaces) to set up Run:AI projects and link them with Kubeflow namespaces. 
 
 Verify that the association has worked by running:
 
@@ -32,13 +32,13 @@ kubectl get rolebindings -n <KUBEFLOW-NAMESPACE>
 
 See that role bindings starting with `runai-` were created.
 
-## KubeFlow, Users and Kubernetes Namespaces
+## Kubeflow, Users and Kubernetes Namespaces
 
-Kubeflow has a multi-user architecture. A user has a _KubeFlow profile_ which maps to a Kubernetes Namespace. This is similar to the Run:AI concept where a Run:AI Project is mapped to a Kubernetes namespace.
+Kubeflow has a multi-user architecture. A user has a _Kubeflow profile_ which maps to a Kubernetes Namespace. This is similar to the Run:AI concept where a Run:AI Project is mapped to a Kubernetes namespace.
 
-## KubeFlow Notebooks
+## Kubeflow Notebooks
 
-When [starting a KubeFlow Notebook](https://www.kubeflow.org/docs/components/notebooks/setup/){target=_blank}, you select a `Kubeflow configuration`. A KubeFlow configuration allows you to inject additional settings into the notebook, such as environment variables. To use KubeFlow with Run:AI you will use configurations to inject:
+When [starting a Kubeflow Notebook](https://www.kubeflow.org/docs/components/notebooks/setup/){target=_blank}, you select a `Kubeflow configuration`. A Kubeflow configuration allows you to inject additional settings into the notebook, such as environment variables. To use Kubeflow with Run:AI you will use configurations to inject:
 
 * The name of the Run:AI project
 * Allocation of a fraction of a GPU, if required
@@ -64,11 +64,11 @@ spec:
 
 Where `<KUBEFLOW-NAMESPACE>` is the name of the namespace associated with the Kubeflow user and `<PROJECT>` is the name of the Run:AI project.
 
-Within the KubeFlow Notebook creation form, select the new configuration as well as the number of GPUs required.
+Within the Kubeflow Notebook creation form, select the new configuration as well as the number of GPUs required.
 
 ### Fractions
 
-The KubeFlow Notebook creation form only allows the selection of 1, 2, 4, or 8 GPUs. It is not possible to select a portion of a GPU (e.g. 0.5).
+The Kubeflow Notebook creation form only allows the selection of 1, 2, 4, or 8 GPUs. It is not possible to select a portion of a GPU (e.g. 0.5).
 As such, within the form, select `None` in the GPU box together with the following configuration:
 
 ``` YAML
@@ -90,7 +90,7 @@ spec:
 ```
 Similar configurations can be created for fractional configurations, other than 0.5. 
 
-## KubeFlow Pipelines
+## Kubeflow Pipelines
 
 [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/overview/pipelines-overview/){target=_blank} is a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers.
 
