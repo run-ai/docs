@@ -17,7 +17,7 @@ Use the default installation to install Kubeflow.
 When installing Run:AI, [customize the cluster installation](../../Cluster-Setup/customize-cluster-install) as follows:
 
 * Set `mpi` to `false` as it conflicts with Kubeflow.
-* Set `createNamespaces` to `false`, as Kubeflow uses its on namespace convention.
+* Set `createNamespaces` to `false`, as Kubeflow uses its own namespace convention.
 
 
 ## Create Run:AI Projects 
@@ -122,7 +122,7 @@ Compile the code by running:
 ```
 dsl-compile --py kubeflow-runai-one-gpu.py --output kubeflow-runai-one-gpu.tar.gz
 ```
-(dsl-compile is part of the Kubeflow Pipeline python SDK).
+(dsl-compile is part of the Kubeflow Pipeline Python SDK).
 
 ### Fractions
 
