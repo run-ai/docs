@@ -80,23 +80,12 @@ kubectl apply -f <FILE-NAME>
 
 ### Using Fractional GPUs
 
-Jobs with Fractions require a change in the above YAML. Specifically, the limits section:
-
+TO submit a Job with fractions of a GPU, replace `<REQUESTED-GPUs>` with a fraction in quotes. e.g. 
 
 ``` yaml
 limits:
-  nvidia.com/gpu: <REQUESTED-GPUs>
+  nvidia.com/gpu: "0.5"
 ```
-
-should be omitted and replaced with:
-
-``` yaml
-spec:
-  template:
-    metadata:
-      annotations:
-        gpu-fraction: "0.5"
-``` 
 
 where "0.5" is the requested GPU fraction.
 

@@ -66,23 +66,16 @@ kubectl apply -f <FILE-NAME>
 
 ##  Submit Inference Workloads Allocating Fractions of a GPU
 
-Workloads with Fractions require a change in the above YAML. Specifically, the limits section:
 
+Replace `<REQUESTED-GPUs>` with a fraction in quotes. e.g. 
 
 ``` yaml
 limits:
-  nvidia.com/gpu: <REQUESTED-GPUs>
+  nvidia.com/gpu: "0.5"
 ```
 
-should be omitted and replaced with:
 
-``` yaml
-spec:
-  template: 
-    metadata:
-      annotations:
-        gpu-fraction: "0.5"
-``` 
+## NVIDIA MPS
 
 Workloads with NVIDIA MPS require a change in the above YAML. 
 
