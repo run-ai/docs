@@ -51,7 +51,11 @@ The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/
 * Edit `kubernetes_config.json`. 
     * Set `kube-context` to the name of the Kubernetes context. You can find the context name by running `runai list clusters` or `kubectl config get-contexts`.
     * Set `repository-uri` to a repository and name of a docker image that will be used by MLflow (this is a different image than the base docker image described above). Your local machine needs permissions to be able to push this image to the docker registry.
-* Edit `kubernetes_job_template.yaml`. Set the value of `namespace` to `runai-<name of Run:AI project>`. Note the last line which adds the Run:AI scheduler to the configuration. Do __not__ change the lines marked by `{replaced with...`.
+* Edit `kubernetes_job_template.yaml`. 
+    * Set the value of `namespace` to `runai-<name of Run:AI project>`. 
+    * Note the last line which adds the Run:AI scheduler to the configuration. 
+    * Do __not__ change the lines marked by `{replaced with...`.
+    * Set the requested resources including GPUs
 
 
 ### Running 

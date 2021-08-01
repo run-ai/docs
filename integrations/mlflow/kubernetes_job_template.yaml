@@ -13,10 +13,11 @@ spec:
         image: "{replaced with URI of Docker image created during Project execution}"
         command: ["{replaced with MLflow Project entry point command}"]
         #env: ["{appended with MLFLOW_TRACKING_URI, MLFLOW_RUN_ID and MLFLOW_EXPERIMENT_ID}"]
-      resources:
-        limits:
-          memory: 512Mi
-        requests:
-          memory: 256Mi
+        resources:
+          limits:
+            memory: 512Mi
+            nvidia.com/gpu: 1
+          requests:
+            memory: 256Mi
       restartPolicy: Never
       schedulerName: runai-scheduler
