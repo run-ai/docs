@@ -13,7 +13,7 @@ _Elasticity_ allows unattended, train-based  workloads to __shrink__ or __expand
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on an on-premise Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
+*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on an on-prem Kubernetes Cluster](../../Administrator/Cluster-Setup/cluster-install.md)
 *   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
 *   [Run:AI Python Researcher Library](../researcher-library/researcher-library-overview.md) installed on a docker image
 

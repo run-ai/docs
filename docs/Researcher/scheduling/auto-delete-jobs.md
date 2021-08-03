@@ -19,7 +19,7 @@ It is possible to flag a Job for automatic deletion sometime after it finishes.
 
 ## Enable Automatic Deletion in Cluster (Admin only)
 
-In order for automatic deletion to work, the On-premise Kubernetes cluster needs to be modified. The feature relies on a Kubernetes feature gate "<a href="https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/" target="_self">TTLAfterFinished</a>"
+In order for automatic deletion to work, the on-prem Kubernetes cluster needs to be modified. The feature relies on a Kubernetes feature gate "<a href="https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/" target="_self">TTLAfterFinished</a>"
 
 __Note__: different Kubernetes distributions have different locations and methods to add feature flags. The instructions below are an example based on [Kubespray](https://github.com/kubernetes-sigs/kubespray){target=_blank}. Refer to the documentation of your Kubernetes distribution.
 

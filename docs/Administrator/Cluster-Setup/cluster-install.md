@@ -7,7 +7,7 @@ Run:AI has been tested with the following certified Kubernetes distributions:
 
 | Target Platform                          | Description | Notes | 
 |------------------------------------------|-------------|-------|
-| On-Premise                               |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| on-prem                               |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
 | EKS | Amazon Elastic Kubernetes Service  | |
 | AKS | Azure Kubernetes Services          | |
 | GKE | Google Kubernetes Engine           | |

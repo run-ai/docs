@@ -10,7 +10,7 @@ Run:AI is based on __Kubernetes__. At its core, Kubernetes is an orchestration s
 
 If your Kubernetes cluster contains a single GPU node (machine), then your image can reside on the node itself (in which case, when [runai submit](../../Researcher/cli-reference/runai-submit.md) workloads, the Researcher must use the flag ``--local-image``).
 
-If your Kubernetes cluster contains more than a single node, then, to enable location abstraction, the image can no longer reside on the node itself.  It must be relocated to an image repository. There are quite a few repository-as-a-service, most notably <a href="https://hub.docker.com/" target="_self">Docker hub</a>. Alternatively, the organization can install a private repository on-premise.
+If your Kubernetes cluster contains more than a single node, then, to enable location abstraction, the image can no longer reside on the node itself.  It must be relocated to an image repository. There are quite a few repository-as-a-service, most notably <a href="https://hub.docker.com/" target="_self">Docker hub</a>. Alternatively, the organization can install a private repository on-prem.
 
 Day to day work with the image located remotely is almost identical to local work. The image name now contains its location. For example, ``nvcr.io/nvidia/pytorch:19.12-py_3`` is a PyTorch image that is located in __nvcr.io__. This is the Nvidia image repository as found on the web. 
 
