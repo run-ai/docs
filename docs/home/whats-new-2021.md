@@ -12,14 +12,14 @@ Researcher User Interface (UI) enhancements:
 
 Researcher Command Line Interface (CLI) enhancements:
 
-* Jobs can be manually suspended and resumed using the new commands: suspend & resume
-* A new command was added: top job
+* Jobs can be manually suspended and resumed using the new commands: `runai suspend` & `runai resume`
+* A new command was added: `runai top job`
 
-Kubeflow integration is now supported. The new integration allows building ML pipelines in [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank} as well as [Kubeflow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and run the workloads via the Run:AI platform. For further details see [Integrate Run:AI with Kubeflow](..Administrator/integration/kubeflow.md).
+Kubeflow integration is now supported. The new integration allows building ML pipelines in [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank} as well as [Kubeflow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and run the workloads via the Run:AI platform. For further details see [Integrate Run:AI with Kubeflow](../Administrator/integration/kubeflow.md).
 
-Mlflow integration is now supported. For further details see [Integrate Run:AI with MLflow](..Administrator/integration/mlflow.md).
+Mlflow integration is now supported. For further details see [Integrate Run:AI with MLflow](../Administrator/integration/mlflow.md).
 
-Run:AI Projects are implemented as Kubernetes namespaces. Run:AI now supports customizable namespace names. For further details see [Manual Creation of Namespaces](..Administrator/Cluster-Setup/customize-cluster-install.md).
+Run:AI Projects are implemented as Kubernetes namespaces. Run:AI now supports customizable namespace names. For further details see [Manual Creation of Namespaces](../Administrator/Cluster-Setup/customize-cluster-install.md).
 
 
 ## May 10<sup>th</sup> 2021
