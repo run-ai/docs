@@ -1,5 +1,27 @@
 
 <!-- Show the original Run:AI Command line  -->
+## August 4<sup>th</sup> 2021
+
+Researcher User Interface (UI) enhancements:
+
+* Revised user interface and user experience
+* Researchers can create templates for the ease of jobs submission. Templates can be saved and used in the project level
+* Researchers can be easily re-submit jobs from the Submit page or directly from the jobs list in the Jobs page
+* Administrators can create administrative templates which set cluster-wide defaults, constraints and defaults for the submission of Jobs. For further details see [Configure Command-Line Interface Templates](../Administrator/Researcher-Setup/templates.md).
+* Different teams can collaborate and share templates by exporting and importing templates in the Submit screen
+
+Researcher Command Line Interface (CLI) enhancements:
+
+* Jobs can be manually suspended and resumed using the new commands: suspend & resume
+* A new command was added: top job
+
+Kubeflow integration is now supported. The new integration allows building ML pipelines in [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank} as well as [Kubeflow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and run the workloads via the Run:AI platform. For further details see [Integrate Run:AI with Kubeflow](..Administrator/integration/kubeflow.md).
+
+Mlflow integration is now supported. For further details see [Integrate Run:AI with MLflow](..Administrator/integration/mlflow.md).
+
+Run:AI Projects are implemented as Kubernetes namespaces. Run:AI now supports customizable namespace names. For further details see [Manual Creation of Namespaces](..Administrator/Cluster-Setup/customize-cluster-install.md).
+
+
 ## May 10<sup>th</sup> 2021
  
 Usability improvements of runai cli. The cli now supports autocomplete for all options and parameters.
