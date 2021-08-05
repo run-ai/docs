@@ -26,7 +26,7 @@ Change the following properties in the values file.
 | `postgresql.persistence.nfs.path` |  Path to dedicated Run:AI installation folder on NFS | Folder should be pre-created and have full access rights |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend Administrator | 
 | `backend.initTenant.users` | Change password for test@run.ai | This user is the first cluster user | 
-| `runai.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
+| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
 |<img width=500/>|||
 
 
