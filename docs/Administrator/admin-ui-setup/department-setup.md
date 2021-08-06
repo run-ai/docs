@@ -22,7 +22,7 @@ __Departments__ create a second hierarchy of resource allocation:
 
 ### Overquota behavior
 
-Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need it. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
+Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need them. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 __Important best practice:__ As a rule, the sum of the Department allocation should be equal to the number of GPUs in the cluster.
 
