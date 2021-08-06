@@ -7,7 +7,7 @@ Project and Departments can now be set to not allocate resources beyond the assi
 ## December 1st, 2020
 New integration documents:
 
-* [Apache Airflow](../Administrator/integration/airflow.md)
+* [Apache Airflow](../admin/integration/airflow.md)
 * [TensorBoard](../Researcher/tools/dev-tensorboard.md)
 
 
@@ -27,9 +27,9 @@ The older style will still work with a deprecation notice.
 
 ## November 12th, 2020
 An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates, that can be used with the --template flag. The new templates allow for mandatory values, defaults, and run-time environment variable resolution.
-See [here](../Administrator/Researcher-Setup/template-config.md) for more.
+See [here](../admin/researcher-setup/template-config.md) for more.
 
-It is now also possible to pass __Secrets__ to Job. see [here](../Administrator/Researcher-Setup/use-secrets.md)
+It is now also possible to pass __Secrets__ to Job. see [here](../admin/researcher-setup/use-secrets.md)
 
 ## November 2nd, 2020
 
@@ -56,11 +56,11 @@ Run:AI Now supports __Distributed Training__ and __Gang Scheduling__. For furthe
 
 ## August 4th, 2020
 
-There is now an optional second level of Project hierarchy called __Departments__. For further information on how to configure and use Departments, see [Working with Departments](../Administrator/admin-ui-setup/department-setup.md) 
+There is now an optional second level of Project hierarchy called __Departments__. For further information on how to configure and use Departments, see [Working with Departments](../admin/admin-ui-setup/department-setup.md) 
 
 ## July 28th, 2020
 
-You can now enforce a cluster-wise setting that mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../Administrator/Cluster-Setup/non-root-containers.md)
+You can now enforce a cluster-wise setting that mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../admin/runai-setup/cluster-setup/non-root-containers.md)
 
 ## July 21th, 2020
 
@@ -85,13 +85,13 @@ Projects now support _Node Affinity._ This feature allows the Administrator to a
 *   The Project team is the owner of specific hardware which was acquired with a specialized budget
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes
 
-For further information see: [Working with Projects](../Administrator/admin-ui-setup/project-setup.md)
+For further information see: [Working with Projects](../admin/admin-ui-setup/project-setup.md)
 
 #### Limit Duration of Interactive Jobs
 
 Researchers frequently forget to close Interactive Job. This may lead to a waste of resources. Some organizations prefer to limit the duration of interactive Job and close them automatically. 
 
-For further information on how to set up duration limits see: [Working with Projects](../Administrator/admin-ui-setup/project-setup.md)
+For further information on how to set up duration limits see: [Working with Projects](../admin/admin-ui-setup/project-setup.md)
 
 ## May 24th, 2020
 
@@ -99,7 +99,7 @@ For further information on how to set up duration limits see: [Working with Proj
 
 Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a Run:AI cluster. 
 
-For further information see: [Upgrading a Run:AI Cluster Installation](../Administrator/Cluster-Setup/cluster-upgrade.md) and [Deleting a a Run:AI Cluster Installation](../Administrator/Cluster-Setup/cluster-delete.md)
+For further information see: [Upgrading a Run:AI Cluster Installation](../admin/runai-setup/cluster-setup/cluster-upgrade.md) and [Deleting a a Run:AI Cluster Installation](../admin/runai-setup/cluster-setup/cluster-delete.md)
 
 ## March 3rd, 2020
 

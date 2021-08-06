@@ -7,7 +7,7 @@ This documentation is based on [mkdocs](https://www.mkdocs.org/). To view the li
 
 The Run:AI documentation is targeting two personas:
 
-* Run:AI Administrator - Responsible for the setup and the day to day administration of the  product. Administrator documentation can be found [here](docs/Administrator/overview-administrator.md).
+* Run:AI Administrator - Responsible for the setup and the day to day administration of the  product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
 
 * Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](docs/Researcher/overview-researcher.md).
 

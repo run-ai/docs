@@ -22,13 +22,13 @@ Projects are quota entities that associate a Project name with a __deserved__ GP
 
 A Researcher submitting a workload must associate a Project with any workload request. The Run:AI scheduler will then compare the request against the current allocations and the Project's deserved quota and determine whether the workload can be allocated with resources or whether it should remain in a pending state.
 
-For further information on Projects and how to configure them, see: [Working with Projects](../../Administrator/admin-ui-setup/project-setup.md)
+For further information on Projects and how to configure them, see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md)
 
 ### Departments
 
 A _Department_ is the second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Project quota.  
 
-For further information on Departments and how to configure them, see: [Working with Departments](../../Administrator/admin-ui-setup/department-setup.md)
+For further information on Departments and how to configure them, see: [Working with Departments](../../admin/admin-ui-setup/department-setup.md)
 
 ### Pods
 
@@ -72,7 +72,7 @@ The Run:AI scheduler wakes up periodically to perform allocation tasks on pendin
 
 Both the Administrator and the Researcher can provide limitations as to which nodes can be selected for the Job. Limits are managed via [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){target=_blank}:
 
-* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Setup](../../Administrator/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups) for more information.
+* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups) for more information.
 * The Researcher can set a limit at the Job level, by using the command-line interface flag `--node-type`. The flag acts as a subset to the Project setting. 
 
 Node affinity constraints are used during the _Allocation_ phase to filter out candidate nodes for running the Job. For more information on how nodes are filtered see the `Filtering` section under [Node selection in kube-scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/#kube-scheduler-implementation){target=_blank}. The Run:AI scheduler works similarly.

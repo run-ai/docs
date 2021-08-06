@@ -13,8 +13,8 @@ _Elasticity_ allows unattended, train-based  workloads to __shrink__ or __expand
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../Administrator/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../Administrator/Researcher-Setup/cli-install.md)
+*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 *   [Run:AI Python Researcher Library](../researcher-library/researcher-library-overview.md) installed on a docker image
 
 ## Step by Step Walkthrough
@@ -23,7 +23,7 @@ To complete this Quickstart you must have:
 
 *   A GPU cluster with a __single__ node of __2__ GPUs. 
 
-    *  If the cluster contains more than one node,  use [Node affinity](../../../Administrator/admin-ui-setup/project-setup/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler Jobs as described below.
+    *  If the cluster contains more than one node,  use [Node affinity](../../../admin/admin-ui-setup/project-setup/#further-affinity-refinement-by-the-researcher) to simulate a single node or use more filler Jobs as described below.
     *  If the cluster nodes contain more than 2 GPUs, you can create an interactive Job on a different project to consume the remaining GPUs.    
 
 

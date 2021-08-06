@@ -301,13 +301,13 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 ### Access Control
 
 --create-home-dir
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not. For more information see [non root containers](../../admin/runai-setup/cluster-setup/non-root-containers.md).
 
 --prevent-privilege-escalation
-> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
+> Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../admin/runai-setup/cluster-setup/non-root-containers.md).
 
 --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to LDAP, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../Administrator/Cluster-Setup/non-root-containers.md).
+>  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to LDAP, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/cluster-setup/non-root-containers.md).
 
 
 ### Scheduling
@@ -316,8 +316,8 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Mark the Job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md).
 
 --node-type string
->  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../Administrator/Researcher-Setup/limit-to-node-group.md).
-> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../Administrator/admin-ui-setup/project-setup.md).
+>  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+> This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
 
 --preemptible
 >  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above the guaranteed quota but may be reclaimed at any time.
@@ -343,5 +343,5 @@ Note that the submit call may use templates to provide defaults to any of the ab
 ## See Also
 
 *   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [template configuration](../../Administrator/Researcher-Setup/template-config.md) for a description on how templates work.
+*   See [template configuration](../../admin/researcher-setup/template-config.md) for a description on how templates work.
 

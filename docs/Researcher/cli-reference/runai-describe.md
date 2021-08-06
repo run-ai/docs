@@ -59,4 +59,4 @@ runai describe template <template-name>
 
 ## See Also
 
-See: [Configure Command-Line Interface Templates](../../Administrator/Researcher-Setup/template-config.md) on how to configure Templates.
+See: [Configure Command-Line Interface Templates](../../admin/researcher-setup/template-config.md) on how to configure Templates.

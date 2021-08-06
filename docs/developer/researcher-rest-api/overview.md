@@ -17,4 +17,4 @@ echo "http://$(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].add
 
 ## Limitations
 
-The Researcher REST API does not work when the [system is configured to authenticate Researchers](../../Administrator/Cluster-Setup/researcher-authentication.md). We are working to add this functionality.
+The Researcher REST API does not work when the [system is configured to authenticate Researchers](../../admin/runai-setup/cluster-setup/researcher-authentication.md). We are working to add this functionality.
