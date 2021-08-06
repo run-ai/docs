@@ -12,3 +12,9 @@ Follow the Quickstart documents below to learn more:
 *   [Fairness](walkthrough-queue-fairness.md)
 *   [Elasticity](walkthrough-elasticity.md)
 *   [Inference](quickstart-inference.md)
+
+Most quickstarts rely on an image called `gcr.io/run-ai-demo/quickstart`. The image is based on  [TensorFlow Release 20-08](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_20-08.html). This TensorFlow image has minimal requirements for _CUDA_ and _NVIDIA Compute Capability_. 
+
+If your GPUs do not meet these requirements, use `gcr.io/run-ai-demo/quickstart:legacy` instead. 
+
+ 

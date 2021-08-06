@@ -36,7 +36,7 @@ Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI 
 
 (see picture below)
 
-*   (Production only) Dedicated __Run:AI System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __at least one,__ dedicated worker machine, designated for Run:AI Software:
+*   (Production only) __Run:AI System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:AI Software. The nodes do not have to be dedicated to Run:AI, but for Run:AI purposes we would need:
     
     *   4 CPUs
     *   8GB of RAM

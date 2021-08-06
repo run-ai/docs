@@ -34,7 +34,7 @@ The essence of the Run:AI integration is the modification of the `kubernetes_job
 * Make sure you are connected to Run:AI via the Run:AI Command-line interface.
 
 
-### The Sample MLflow Project
+### The sample MLflow Project
 
 The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/integrations/mlflow){target=_blank}. These contain:
 
