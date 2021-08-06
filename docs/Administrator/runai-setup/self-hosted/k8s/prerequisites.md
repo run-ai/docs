@@ -1,4 +1,4 @@
-Before proceeding with this document, please review the [installation types](../installation-types.md) documentation to understand the difference between _air-gapped_ and _fully on-prem_ installations. 
+Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 ## Hardware Requirements
 
 Follow the Hardware requirements [here](../../Cluster-Setup/cluster-prerequisites/#hardware-requirements).
@@ -8,7 +8,7 @@ Follow the Hardware requirements [here](../../Cluster-Setup/cluster-prerequisite
 === "Airgapped"
     You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
-=== "Fully on-prem"
+=== "Connected"
     You should receive the following files from Run:AI Customer Support:
 
 
@@ -21,7 +21,7 @@ Follow the Hardware requirements [here](../../Cluster-Setup/cluster-prerequisite
 
 Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.20 is recommended (as of April 2021).
 
-If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../ocp/overview.md). 
+If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../overview.md). 
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 

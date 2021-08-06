@@ -46,7 +46,7 @@ Obtain the Project creation template file:
     cp installation-files/cluster/ocp-project-create.yaml.template <NAMESPACE>.yaml
     ```
 
-=== "Fully on-prem" 
+=== "Connected" 
     ```
     wget https://raw.githubusercontent.com/run-ai/docs/master/install/cluster/ocp-project-create.yaml.template
     cp k8s-project-create.yaml.template <NAMESPACE>.yaml

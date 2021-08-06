@@ -1,8 +1,21 @@
+# Preparing for a Run:AI OpenShift Installation
+
+The following section provides IT with the information needed to prepare for a Run:AI installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:AI components. 
 
 
-## Prerequisites 
 
-See Prerequisites section [above](prerequisites.md).
+
+## Create OpenShift Projects
+
+Run:AI uses two projects. One for the backend (`runai-backend`) and one for the cluster itself (`runai`). 
+The project `gpu-operator-resources` is used by the _GPU Opeator_ dependency described above. 
+
+```
+oc new-project runai
+oc new-project runai-backend
+oc new-project gpu-operator-resources
+```
+
 
 
 ## Prepare Installation Artifacts
@@ -20,7 +33,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     cd deploy
     ```
 
-=== "Fully on-prem"
+=== "Connected"
     You should receive a tar file containing the following files from Run:AI Customer Support:
 
     | File | Description |
@@ -47,18 +60,15 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
-=== "Fully on-prem"
+=== "Connected"
 
     Run the following to enable image download from the Run:AI Container Registry on Google cloud:
 
     ```
-    kubectl create namespace runai-backend
     kubectl apply -f runai-gcr-secret.yaml
     kubectl patch serviceaccount default -n runai-backend \
         -p '{"imagePullSecrets": [{"name": "gcr-secret"}]}'
     ```
-
-
 
 ## Mark Run:AI System Workers
 
@@ -70,7 +80,6 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 Currently, this setting cannot be changed after the backend is installed.
 
-
 ## Install Helm
 
 If helm v3 does not yet exist on the machine, install it now:
@@ -81,7 +90,7 @@ If helm v3 does not yet exist on the machine, install it now:
     sudo mv linux-amd64/helm /usr/local/bin/
     ```  
 
-=== "Fully on-prem"
+=== "Connected"
     See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
 
 
@@ -90,7 +99,6 @@ If helm v3 does not yet exist on the machine, install it now:
 
 As part of the installation you will be required to install the [Backend](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
-
 ## Next Steps
 
-Continue with installing the [Run:AI backend](backend.md).
+Continue with installing the [Run:AI third-party dependencies](ocp-dependencies.md).

@@ -64,7 +64,7 @@ Run the helm command below (replace `<version>` with the version of the provided
         runai-backend -f runai-backend/runai-backend-helm-release.yaml 
     ```
 
-=== "Fully on-prem"
+=== "Connected"
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update

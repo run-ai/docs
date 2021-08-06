@@ -4,13 +4,13 @@
 
 By default, Run:AI is configured to allow all Researchers access to all Jobs and Projects.  This document provides step-by-step instructions on how to enable access control. Run:AI access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
 
-This document explains how to set up Researcher Authentication in an Air-gapped or fully on-prem environment where the Run:AI backend is installed on the customer's cluster. The process for the cloud-based Run:AI is detailed [here](../../Cluster-Setup/researcher-authentication/). 
+This document explains how to set up Researcher Authentication in an Air-gapped or connected environment where the Run:AI backend is installed on the customer's cluster. The process for the cloud-based Run:AI is detailed [here](../../Cluster-Setup/researcher-authentication/). 
 
 
 
 ## Terminology
 
-The Air-gapped/Fully on-prem version of Run:AI uses an [Identity Provider](https://en.wikipedia.org/wiki/Identity_provider){target=_blank} called [Keycloak](https://www.keycloak.org/). 
+The Air-gapped/Connected version of Run:AI uses an [Identity Provider](https://en.wikipedia.org/wiki/Identity_provider){target=_blank} called [Keycloak](https://www.keycloak.org/). 
 
 ## Prerequisites 
 

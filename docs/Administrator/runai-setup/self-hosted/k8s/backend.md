@@ -8,7 +8,7 @@ Customize the Run:AI backend configuration file.
 === "Airgapped"
     Edit `runai-backend/runai-backend-helm-release.yaml`
 
-=== "Fully on-prem"
+=== "Connected"
     Edit the values file received from Run:AI Support.  
 
 
@@ -40,7 +40,7 @@ Save the file and run the helm command below (replace `<version>` with the versi
         runai-backend -f runai-backend/runai-backend-helm-release.yaml 
     ```
 
-=== "Fully on-prem"
+=== "Connected"
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
