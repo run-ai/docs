@@ -88,6 +88,9 @@ plugins:
         'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
         'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
+
+# redirect root URL of internal-docs
+        'admin/runai-setup/self-hosted/' : 'admin/runai-setup/self-hosted/overview.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
