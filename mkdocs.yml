@@ -89,8 +89,6 @@ plugins:
         'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
 
-# redirect root URL of internal-docs
-        'admin/runai-setup/self-hosted/' : 'admin/runai-setup/self-hosted/overview.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -165,7 +163,7 @@ nav:
       - 'MLflow' : 'admin/integration/mlflow.md'
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
     - 'Presentations' :
-      - 'admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
+      - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
