@@ -44,7 +44,7 @@ kubectl label ns runai openshift.io/cluster-monitoring=true
     kubectl apply -f installation-files/backend/ocp-prom-custom.yaml
     ```
 
-=== "Fully on-prem"
+=== "Connected"
     ```
     kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/backend/ocp-prom-custom.yaml
     ```

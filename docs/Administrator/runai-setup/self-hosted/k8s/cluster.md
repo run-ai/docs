@@ -61,7 +61,7 @@ Run:
       runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml --create-namespace
     ```
 
-=== "Fully on-prem"
+=== "Connected"
     ```
     helm repo add runai https://run-ai-charts.storage.googleapis.com
     helm repo update

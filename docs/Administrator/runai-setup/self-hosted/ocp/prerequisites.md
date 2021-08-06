@@ -1,4 +1,4 @@
-Before proceeding with this document, please review the [installation types](../installation-types.md) documentation to understand the difference between _air-gapped_ and _fully on-prem_ installations. 
+Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 ## Hardware Requirements
 
 Follow the Hardware requirements [here](../../Cluster-Setup/cluster-prerequisites/#hardware-requirements).
@@ -8,7 +8,7 @@ Follow the Hardware requirements [here](../../Cluster-Setup/cluster-prerequisite
 === "Airgapped"
     You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
-=== "Fully on-prem"
+=== "Connected"
     You should receive the following files from Run:AI Customer Support:
 
 
@@ -34,7 +34,7 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
 === "Airgapped"
     Download the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. These instructions also include the download of the Kubernetes Node Feature Discovery Operator.
 
-=== "Fully on-prem"
+=== "Connected"
     No additional work needs to be performed. We will use the _Red Hat Certified Operator Catalog (Operator Hub)_ during the installation. 
 
 
