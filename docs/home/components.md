@@ -28,14 +28,16 @@ The Run:AI Cluster contains:
 
 
 
-## The Run:AI Cloud
+## The Run:AI Control Plane (Backend)
 
-The Run:AI Cloud is the basis of the Administrator User Interface. 
+The Run:AI Control Plane is the basis of the Administrator User Interface. 
 
 * The Run:AI cloud aggregates monitoring information from __multiple__ tenants (customers).
 * Each customer may manage __multiple__ Run:AI clusters. 
 
 ![multi-cluster-architecture](img/multi-cluster-architecture.png)
+
+The Run:AI control plane resides on the cloud but can also be locally installed. To understand the various installation options see the [installation types](../admin/runai-setup/installation-types.md) document.
 
 
 

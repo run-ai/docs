@@ -77,24 +77,10 @@ Run the helm command below (replace `<version>` with the version of the provided
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
 
-##  KeyCloak Configuration
-
-Open up Keycloak by browsing to: `http://admin.<DOMAIN>/auth`. Log in with credentials: User: `admin`, Password: `admin`:
-
-1. Change the Administrator Password.
-
-2. Under Clients, select `runai`. Change `valid redirect URLs` and `Web Origins` URLs to the new URLs. Take care to use HTTPS for Grafana and HTTP for admin.
-
-
 ## Connect to Administrator User Interface
 
-Go to: `http://admin.<DOMAIN>`:
-
-* For LDAP configuration log in with `<RUNAI-USER>` and `<RUNAI-PASSWORD>`.
-
-* For non-LDAP configuration log in using the default credentials: User: `test@run.ai`, Password: `password`
-
-Change the default password.
+* Go to: `http://admin.<DOMAIN>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+* Change the default password.
 
 
 ## Next Steps

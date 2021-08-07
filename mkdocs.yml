@@ -213,14 +213,14 @@ nav:
       - 'Elasticity' : 'Researcher/researcher-library/rl-elasticity.md'
       - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
-    - 'Presentations' :
-      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Noteook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
+    - 'Presentations' :
+      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'Researcher REST API' : 
