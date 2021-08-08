@@ -20,11 +20,12 @@ Follow the Hardware requirements [here](../../runai-setup/cluster-setup/cluster-
 
 ## OpenShift 
 
-Run:AI requires OpenShift 4.3 or later.
+Run:AI requires OpenShift 4.3 or later. 
 
 
 !!! Important
-    _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see: [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}. 
+    * _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see: [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}. 
+    * If you are planning to use NVIDIA A100, you cannot use the CoreOS operating system due to NVIDIA limitations (NVIDIA Fabric Manager will not work). We recommend using RHEL instead.
 
 
 ## Download Third-Party Dependencies

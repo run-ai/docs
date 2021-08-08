@@ -18,10 +18,15 @@ If the command is installed. Verify that the NVIDIA driver version 410.104 or la
 
 If the command is __not__ successful, you must install the CUDA Toolkit. Follow the instructions [here](https://developer.nvidia.com/cuda-downloads){target=_blank} to install. When the installation is finished you must reboot your computer. 
 
-If the machine is __DGX A100__, then apart from the CUDA Toolkit you must also install the __NVIDIA Fabric Manager__:
+If the machine is __DGX A100__, then, depending on your operating system, you may have to install the __NVIDIA Fabric Manager__. 
 
-* Run: `nvidia-smi` and get the NVIDIA Driver version (it must be 450 or later).
-* Run: `sudo apt search fabricmanager` to find a Fabric Manager package with the same version and install it.
+* If the operating system is DGX OS. No installation is required
+* For other operating systems:
+    * Run: `nvidia-smi` and get the NVIDIA Driver version (it must be 450 or later).
+    * Run: `sudo apt search fabricmanager` to find a Fabric Manager package with the same version and install it.
+
+!!! Important
+    NVIDIA Fabric manager does not work on CoreOS. If you are working with OpenShift, use RHEL instead.
 
 ## Step 2: Install Docker
 
