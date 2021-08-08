@@ -79,9 +79,7 @@ Run the helm command below (replace `<version>` with the version of the provided
 
 ## Connect to Administrator User Interface
 
-* Go to: `http://admin.<DOMAIN>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
-* Change the default password.
-
+Go to: `http://admin.<DOMAIN>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
 
 ## Next Steps
 

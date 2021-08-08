@@ -52,22 +52,13 @@ Save the file and run the helm command below (replace `<version>` with the versi
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
+### Connect to Administrator User Interface
 
+Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
 
 ### (Optional) LDAP Configuration
 
-If you chose to integrate with the organization's LDAP directory, follow the [LDAP Integration](ldap-integration.md) instructions now.
-
-### Connect to Administrator User Interface
-
-Go to: `runai.<company-name>`: 
-
-* For LDAP configuration log in with `<RUNAI-USER>` and `<RUNAI-PASSWORD>`.
-
-* For non-LDAP configuration log in using the default credentials: User: `test@run.ai`, Password: `password`
-
-Change the default password.
-
+Follow the [LDAP Integration](ldap-integration.md) instructions.
 
 ## Next Steps
 
