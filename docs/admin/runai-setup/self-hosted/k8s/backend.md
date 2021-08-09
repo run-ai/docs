@@ -9,7 +9,10 @@ Customize the Run:AI backend configuration file.
     Edit `runai-backend/runai-backend-helm-release.yaml`
 
 === "Connected"
-    Edit the values file received from Run:AI Support.  
+    Generate a values file by running:
+    ```
+    runai-adm generate-values --domain runai.<company-name>
+    ```
 
 
 Change the following properties in the values file. 

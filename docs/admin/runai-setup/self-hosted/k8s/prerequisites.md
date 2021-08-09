@@ -9,13 +9,7 @@ Follow the Hardware requirements [here](../../runai-setup/cluster-setup/cluster-
     You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
 === "Connected"
-    You should receive the following files from Run:AI Customer Support:
-
-
-    | File | Description |
-    |------|-------------|
-    | `runai-gcr-secret.yaml` |  Run:AI Container registry credentials |
-    | `values.yaml` | A default Helm values file  |
+    You should receive a file: `runai-gcr-secret.yaml` from Run:AI Customer Support. The file provides access to the Run:AI Container registry.
 
 ## Kubernetes
 
@@ -66,8 +60,8 @@ You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-n
 * All Kubernetes cluster nodes should be able to mount NFS folders. Usually, this requires the installation of the `nfs-common` package on all machines (`sudo apt install nfs-common` or similar)
 * __IP Address__. An available, internal IP Address that is accessible from Run:AI Users' machines (referenced below as `<RUNAI_IP_ADDRESS>`)
 * __DNS entries__ Create 2 DNS A records, all pointing to `<RUNAI_IP_ADDRESS>`:
-    * Run:AI Admininstration UI: `runai.<company-name>`
-    * Run:AI Researcher UI: `researcher.runai.<company-name>`
+    * Run:AI Admininstration UI: `runai.<company-name>` or similar
+    * Run:AI Researcher UI: `researcher.runai.<company-name>` or similar.
 * Create a __certificate__ for the 2 endpoints. The certificate(s) must be signed by the organization's root CA. 
 
 ## Installer Machine

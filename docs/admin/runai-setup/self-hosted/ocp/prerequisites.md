@@ -9,13 +9,7 @@ Follow the Hardware requirements [here](../../runai-setup/cluster-setup/cluster-
     You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
 === "Connected"
-    You should receive the following files from Run:AI Customer Support:
-
-
-    | File | Description |
-    |------|-------------|
-    | `runai-gcr-secret.yaml` |  Run:AI Container registry credentials |
-    | `values.yaml` | A default Helm values file  |
+    You should receive a file: `runai-gcr-secret.yaml` from Run:AI Customer Support. The file provides access to the Run:AI Container registry.
 
 
 ## OpenShift 

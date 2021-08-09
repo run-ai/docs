@@ -34,12 +34,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     ```
 
 === "Connected"
-    You should receive a tar file containing the following files from Run:AI Customer Support:
-
-    | File | Description |
-    |------|-------------|
-    | `runai-gcr-secret.yaml` |  Run:AI Container registry credentials |
-    | `values.yaml` | A default Helm values file  |
+    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../cluster-setup/cli-admin-install.md).
 
 
 ### Run:AI Images

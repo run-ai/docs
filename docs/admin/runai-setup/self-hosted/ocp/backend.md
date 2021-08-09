@@ -1,20 +1,21 @@
-
 # Install the Run:AI Backend 
 
-The following are instructions for deploying Run:AI in an air-gapped environment.
+### Set Backend Configuration
 
-## Prerequisites 
+Customize the Run:AI backend configuration file.
 
+=== "Airgapped"
+    Edit `runai-backend/runai-backend-helm-release.yaml`
 
-Before proceeding,
-
-* Provide the required access control as detailed in the [Preperations](preparations.md) section.
-* Install the third-party dependencies as detailed in the [Install Dependencies](ocp-dependencies.md) section.
-
+=== "Connected"
+    Generate a values file by running:
+    ```
+    runai-adm generate-values --openshift
+    ```
 
 ## Edit Backend Configuration File
 
-Change the following properties in the values file `runai-backend/runai-backend-helm-release.yaml`. 
+Change the following properties in the values file:
 
 ### Get Data
 
@@ -36,15 +37,11 @@ Use this as `<GRAFANA-TOKEN>` to replace multiple occurrences as described below
 
 |  Replace |   With   | Description | 
 |----------|----------|-------------| 
-| `openshift` | set to `true` | |
-| `backend.run.ai` | `admin.<DOMAIN>` <br> see above | URL to the Administration User Interface  | 
-|  `http://runai-cluster-kube-prometh-prometheus.monitoring.svc:9090` | `https://thanos-querier.openshift-monitoring.svc.cluster.local:9091` | Prometheus Data Source Proxy. Multiple occurances. | 
 | `postgresql.persistence.nfs.server` | Set IP address for network file storage ||
 | `postgresql.persistence.nfs.path` | Set path to dedicated Run:AI installation folder on NFS | path should be pre-created and have full access rights |
 | `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend Administrator | 
 | `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
 | `<GRAFANA-TOKEN>` | The Grafana token extracted above  |  multiple occurances | 
-| `nginx-ingress.enabled` | set to `false` | Disable ingress controller on OpenShift | 
 |<img width=500/>|| 
  
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
