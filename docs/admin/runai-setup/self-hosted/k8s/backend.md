@@ -20,7 +20,6 @@ Change the following properties in the values file.
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| Multiple keys | Replace`backend.run.ai` with  `runai.<company-name>` | URL to the Backend User Interface  | 
 | `backend.researcher-service.url` | Replace`researcher.run.ai` with  `researcher.runai.<company-name>` | URL to the Researcher User Interface  |  
 | `backend.initTenant.promProxy` and `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
