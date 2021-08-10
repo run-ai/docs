@@ -7,7 +7,7 @@ Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Ru
 * Provide access to the namespace for Run:AI services.
 * Associate users with the Project. 
 
-By default, these settings are automatically applied when a new Project is [created](../../admin-ui-setup/project-setup/#create-a-new-project) via the Run:AI Administrator user interface. However, 
+By default, these settings are automatically applied when a new Project is [created](../../../../admin-ui-setup/project-setup/#create-a-new-project) via the Run:AI Administrator user interface. However, 
 
 * Some organizations prefer to use their internal naming convention for Kubernetes namespaces, rather than Run:AI's default `runai-<PROJECT-NAME>` convention.
 * When _PodSecurityPolicy_ is enabled, some organizations will not allow Run:AI to automatically create Kubernetes namespaces. As such, there are Cluster installation flags to:
@@ -19,7 +19,7 @@ By default, these settings are automatically applied when a new Project is [crea
 
 ## Create a Project
 
-* Create a Project using the Administrator User Interface. See [Create New Project](../../admin-ui-setup/project-setup/#create-a-new-project). 
+* Create a Project using the Administrator User Interface. See [Create New Project](../../../../admin-ui-setup/project-setup/#create-a-new-project). 
 * When `createRoleBindings` has been set to `true`, assign users to your Project. 
 * If set to `false`, users will need to be manually associated with the Project as per the step _Associate Users with the Project_ below.
 
