@@ -46,6 +46,7 @@ runai submit
     [--ttl-after-finish duration] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
+    [--nfs-server string]
     [--working-dir] 
     
     [--loglevel string] 
@@ -252,8 +253,12 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 
 --volume stringArray | -v stringArray
->  Volume to mount into the container.  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+>  Volume to mount into the container.  If the volume is not mounted to the host, use in conjunction with --nfs-server.
+> 
+>  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
 
+--nfs-server string
+>  Mount volumes from this server. Use in conjunction with the -v flag.
 
 ### Network
 
