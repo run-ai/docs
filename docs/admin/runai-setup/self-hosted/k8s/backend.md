@@ -34,8 +34,9 @@ Change the following properties in the values file.
 
 
 
-Save the file and run the helm command below (replace `<version>` with the version of the provided file):
+## Install Backend
 
+Run the helm command below (replace `<version>` with the backend version):
 
 === "Airgapped"
     ```

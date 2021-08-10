@@ -18,25 +18,20 @@ Customize the Run:AI backend configuration file.
 Change the following properties in the values file:
 
 
-### Changes to Perform 
-
 |  Replace |   With   | Description | 
 |----------|----------|-------------| 
 | `postgresql.persistence.nfs.server` | Set IP address for network file storage ||
 | `postgresql.persistence.nfs.path` | Set path to dedicated Run:AI installation folder on NFS | path should be pre-created and have full access rights |
 | `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend Administrator | 
 | `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
-|<img width=500/>|| 
+    |<img width=500/>|| 
  
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
 
 
-Save the configuration file.
-
-
 ## Install Backend
 
-Run the helm command below (replace `<version>` with the version of the provided file):
+Run the helm command below (replace `<version>` with the backend version):
 
 
 === "Airgapped"
