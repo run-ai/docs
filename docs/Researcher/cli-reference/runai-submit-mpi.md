@@ -37,6 +37,7 @@ runai submit-mpi
     [--template string] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
+    [--nfs-server string]
     [--working-dir]  
     
     [--loglevel string] 
@@ -181,7 +182,12 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
 --volume stringArray | -v stringArray
->  Volume to mount into the container.  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+>  Volume to mount into the container.  If the volume is not mounted to the host, use in conjunction with --nfs-server.
+>
+>  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+
+--nfs-server string
+>  Mount volumes from this server. Use in conjunction with the -v flag.
 ### Network
 
 --host-ipc
