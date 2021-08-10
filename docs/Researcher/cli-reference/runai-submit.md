@@ -253,7 +253,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 
 --volume stringArray | -v stringArray
->  Volume to mount into the container.  If the volume is not mounted to the host, use in conjunction with --nfs-server.
+>  Volume to mount into the container.  If the volume is not mounted on the host, you must provide an NFS server using the flag --nfs-server.
 > 
 >  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
 
