@@ -19,7 +19,7 @@ Run:AI requires OpenShift 4.3 or later.
 
 !!! Important
     * _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see: [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}. 
-    * If you are planning to use NVIDIA A100, you cannot use the CoreOS operating system due to NVIDIA limitations (NVIDIA Fabric Manager will not work). We recommend using RHEL instead.
+    * If you are planning to use NVIDIA A100 with CoreOS, you will need the latest GPU Operator (version 1.8).
 
 
 ## Download Third-Party Dependencies

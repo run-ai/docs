@@ -19,18 +19,19 @@ Change the following properties in the values file.
 
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
-| `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| `backend.researcher-service.url` | Replace`researcher.run.ai` with  `researcher.runai.<company-name>` | URL to the Researcher User Interface  |  
-| `backend.initTenant.promProxy` and `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
-| `nginx-ingress.podSecurityPolicy` | <true/false> | If using both `PodSecurityPolicy` and `nginx`, set to true |
 | `postgresql.persistence.nfs.server` |  IP address for network file storage ||
 | `postgresql.persistence.nfs.path` |  Path to dedicated Run:AI installation folder on NFS | Folder should be pre-created and have full access rights |
+| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
+||||
+| __Optional:__ |
+| `backend.researcher-service.url` | Replace`researcher.run.ai` with  `researcher.runai.<company-name>` | URL to the Researcher User Interface  |  
+| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
+| `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
+| `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend Administrator | 
 | `backend.initTenant.users` | Change password for test@run.ai | This user is the first cluster user | 
-| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
-|<img width=500/>|||
-
+|<img width=1300/>|||
 
 
 ## Install Backend
@@ -50,7 +51,6 @@ Run the helm command below (replace `<version>` with the backend version):
     helm install runai-backend -n runai-backend \ 
         runai-backend/runai-backend -f <values-file> 
     ```
-
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
