@@ -22,7 +22,9 @@ Change the following properties in the values file:
 |----------|----------|-------------| 
 | `postgresql.persistence.nfs.server` | Set IP address for network file storage ||
 | `postgresql.persistence.nfs.path` | Set path to dedicated Run:AI installation folder on NFS | path should be pre-created and have full access rights |
-| `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend Administrator | 
+||||
+| __Optional:__ |
+| `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend administrator | 
 | `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
     |<img width=500/>|| 
  
@@ -55,7 +57,8 @@ Run the helm command below (replace `<version>` with the backend version):
 
 ## Connect to Administrator User Interface
 
-Go to: `http://admin.<DOMAIN>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+
+Run: `oc get routes -n runai-backend` to find the Run:AI Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`
 
 ## Next Steps
 

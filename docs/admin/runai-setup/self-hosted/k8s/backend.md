@@ -29,7 +29,7 @@ Change the following properties in the values file.
 | `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
-| `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend Administrator | 
+| `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend administrator | 
 | `backend.initTenant.users` | Change password for test@run.ai | This user is the first cluster user | 
 |<img width=1300/>|||
 
