@@ -17,21 +17,6 @@ Customize the Run:AI backend configuration file.
 
 Change the following properties in the values file:
 
-### Get Data
-
-Run:
-```
-kubectl get route -n openshift-console console --template '{{.spec.host}}{{"\n"}}'
-``` 
-
-The result will be in the form:  `console-openshift-console.<DOMAIN>`. Use the `<DOMAIN>` part, to replace multiple occurrences as described below.
-
-Run:
-```
-oc serviceaccounts get-token default -n runai-backend
-```
-
-Use this as `<GRAFANA-TOKEN>` to replace multiple occurrences as described below
 
 ### Changes to Perform 
 
@@ -41,7 +26,6 @@ Use this as `<GRAFANA-TOKEN>` to replace multiple occurrences as described below
 | `postgresql.persistence.nfs.path` | Set path to dedicated Run:AI installation folder on NFS | path should be pre-created and have full access rights |
 | `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend Administrator | 
 | `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
-| `<GRAFANA-TOKEN>` | The Grafana token extracted above  |  multiple occurances | 
 |<img width=500/>|| 
  
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
