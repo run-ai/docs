@@ -1,7 +1,7 @@
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 ## Hardware Requirements
 
-Follow the Hardware requirements [here](../../runai-setup/cluster-setup/cluster-prerequisites/#hardware-requirements).
+Follow the Hardware requirements [here](../../../cluster-setup/cluster-prerequisites/#hardware-requirements).
 
 ## Run:AI Software Prerequisites
 
@@ -24,7 +24,7 @@ Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/conc
 Run:AI requires the installation of NVIDIA software. These can be done in one of two ways:
 
 * (Recommended) Use the _NVIDIA GPU Operator on Kubernetes_. To install the NVIDIA GPU Operator use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}. Follow the _Helm_ based Installation.
-* For each GPU node in the cluster, install NVIDIA CUDA Drivers, as well as the software stack, described [here](../../runai-setup/cluster-setup/nvidia/)
+* For each GPU node in the cluster, install NVIDIA CUDA Drivers, as well as the software stack, described [here](../../../cluster-setup/nvidia/)
 
 ## Kubernetes Dependencies
 

@@ -143,7 +143,7 @@ sudo dpkg -i k8s/deb/nvidia-docker2/*
 sudo vi /etc/docker/daemon.json
 ```
 
-Add the following configuration to the file (see details [here](../../runai-setup/cluster-setup/cluster-install/#step-14-make-nvidia-docker-the-default-docker-runtime) ):
+Add the following configuration to the file (see details [here](../../../cluster-setup/cluster-install/#step-14-make-nvidia-docker-the-default-docker-runtime) ):
 
 ```
 "default-runtime": "nvidia",

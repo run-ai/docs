@@ -1,6 +1,6 @@
 ## Cluster Installation
 
-Perform the cluster installation instructions explained [here](../../runai-setup/cluster-setup/cluster-install/#step-3-install-runai). 
+Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
 
 * When creating a new cluster on step 3, select __OpenShift__ as the target platform.
 * Make the following changes to the YAML file:
@@ -42,7 +42,7 @@ Run:
 
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../runai-setup/cluster-setup/access-roles/).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../../cluster-setup/access-roles/).
 
 
 
