@@ -46,8 +46,8 @@ Run the helm command below (replace `<version>` with the backend version):
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm install runai-backend -n runai-backend \
-        runai-backend/runai-backend -f <values-file> 
+    helm install runai-backend -n runai-backend runai-backend/runai-backend \
+        -f <values-file> 
     ```
 
 
