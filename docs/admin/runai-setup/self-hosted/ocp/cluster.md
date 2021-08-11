@@ -1,9 +1,7 @@
 ## Cluster Installation
 
-Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
-
-* When creating a new cluster on step 3, select __OpenShift__ as the target platform.
-* Make the following changes to the YAML file:
+* Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster on step 3, select __OpenShift__ as the target platform.
+* (Optional) make the following changes to the configuration file you have downloaded:
 
 
 |  Key     |  Change  | Description |

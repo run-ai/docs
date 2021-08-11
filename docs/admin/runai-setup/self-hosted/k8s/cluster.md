@@ -1,9 +1,7 @@
 ## Customize Installation
 
-Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
-
-* When creating a new cluster on step 3, select __Air-Gapped__ as the target platform.
-* Make the following changes to the configuration file you have downloaded:
+* Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
+* (Optional) make the following changes to the configuration file you have downloaded:
 
 
 |  Key     |  Default  | Description |
