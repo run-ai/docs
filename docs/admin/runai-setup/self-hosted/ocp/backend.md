@@ -33,7 +33,7 @@ Change the following properties in the values file:
 
 ## Install Backend
 
-Run the helm command below (replace `<version>` with the backend version):
+Run the helm command below:
 
 
 === "Airgapped"
@@ -41,13 +41,14 @@ Run the helm command below (replace `<version>` with the backend version):
     helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend -f runai-backend/runai-backend-helm-release.yaml 
     ```
+    (replace `<version>` with the backend version)
 
 === "Connected"
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
     helm install runai-backend -n runai-backend runai-backend/runai-backend \
-        -f <values-file> 
+        -f runai-backend-values.yaml 
     ```
 
 
