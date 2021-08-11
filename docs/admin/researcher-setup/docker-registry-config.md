@@ -9,7 +9,7 @@ Some Docker images are stored in private docker registries. For the Researcher t
 There could be two business scenarios:
 
 1. All researchers use single credentials for the registry. 
-2. There exist separate credentials per Run:AI Project. 
+2. There exist separate registry credentials per Run:AI Project. 
 
 ### Single Credentials
 

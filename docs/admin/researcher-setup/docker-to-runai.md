@@ -12,7 +12,7 @@ If your Kubernetes cluster contains a single GPU node (machine), then your image
 
 If your Kubernetes cluster contains more than a single node, then, to enable location abstraction, the image can no longer reside on the node itself.  It must be relocated to an image repository. There are quite a few repository-as-a-service, most notably <a href="https://hub.docker.com/" target="_self">Docker hub</a>. Alternatively, the organization can install a private repository on-prem.
 
-Day to day work with the image located remotely is almost identical to local work. The image name now contains its location. For example, ``nvcr.io/nvidia/pytorch:19.12-py_3`` is a PyTorch image that is located in __nvcr.io__. This is the Nvidia image repository as found on the web. 
+Day-to-day work with the image located remotely is almost identical to local work. The image name now contains its location. For example, ``nvcr.io/nvidia/pytorch:19.12-py_3`` is a PyTorch image that is located in __nvcr.io__. This is the Nvidia image repository as found on the web. 
 
 ## Data
 
@@ -31,7 +31,7 @@ Starting a container using docker usually involves a single command-line with mu
 
 The docker command ``docker run`` should be replaced with a Run:AI command ``runai submit``. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../Researcher/cli-reference/runai-submit.md). 
 
-There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_) and more. For a complete list see the Run:AI CLI [reference](../../Researcher/cli-reference/Introduction.md). 
+There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_), and more. For a complete list see the Run:AI CLI [reference](../../Researcher/cli-reference/Introduction.md). 
 
 ## Schedule an Onboarding Session
 

@@ -28,13 +28,11 @@ Internally, Run:AI Projects are implemented as Kubernetes namespaces. The script
 
 ## Submit Workloads 
 
-* ``<JOB-NAME>``. The name of the Job. 
-
-* ``<IMAGE-NAME>``. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
-
-* ``<USER-NAME>`` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/cluster-setup/researcher-authentication.md).
-
-* ``<REQUESTED-GPUs>``. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
+* `<JOB-NAME>`. The name of the Job. 
+* `<IMAGE-NAME>`. The name of the docker image to use. Example: ``gcr.io/run-ai-demo/quickstart``
+* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/cluster-setup/researcher-authentication.md).
+* `<REQUESTED-GPUs>`. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
+* `<NAMESAPCE>` The name of the Project's namespace. This is usually `runai-<PROJECT-NAME>'
 
 
 ### Regular Jobs
@@ -46,6 +44,7 @@ apiVersion: run.ai/v1
 kind: RunaiJob (* see note below)
 metadata:
   name: <JOB-NAME>
+  namespace: <NAMESPACE>
   labels:
     priorityClassName: "build" (* see note below)
 spec:
