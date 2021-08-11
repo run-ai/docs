@@ -2,24 +2,56 @@
 
 ## Why?
 
-Some Docker images are stored in private docker registries. In order for the Researcher to access the images, we will need to provide credentials for the registry.
+Some Docker images are stored in private docker registries. For the Researcher to access the images, we will need to provide credentials for the registry.
 
 ## How?
 
+There could be two business scenarios:
+
+1. All researchers use single credentials for the registry. 
+2. There exist separate credentials per Run:AI Project. 
+
+### Single Credentials
+
 For each private registry you must perform the following (The example below uses Docker Hub):
 
-    kubectl create secret docker-registry <secret_name> -n runai \ 
+```
+kubectl create secret docker-registry <secret_name> -n runai \ 
     --docker-server=https://index.docker.io/v1/ \
     --docker-username=<user_name> --docker-password=<password>
+```
 
 Then:
 
-    kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
+```
+kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
+```
 
-* secret_name may be any arbitrary string
-* user_name and password are the repository user and password 
+* `<secret_name>` may be any arbitrary string
+* `<user_name>` and `<password>` are the repository user and password
 
-__Note__: the secret may take up to a minute to update in the system.
+!!! Notes
+         * The secret may take up to a minute to update in the system.
+         * The above scheme relies on the cluster setting `clusterWideSecret` to be set to `true`
+
+
+### Credentials per Project
+
+For each Run:AI Project create a secret:
+
+```
+kubectl create secret docker-registry <secret_name> -n <NAMESPACE> \ 
+    --docker-server=https://index.docker.io/v1/ \
+    --docker-username=<user_name> --docker-password=<password>
+```
+
+Where `<NAMESPACE>` is the namespace associated with the Project (typically its `runai-<PROJECT-NAME>`).
+
+Then apply the secret to Run:AI by running:
+
+```
+kubectl patch serviceaccount default -n <NAMESPACE> -p '{"imagePullSecrets": [{"name": "<secret_name>"}]}'
+```
 
 ## Google Cloud Registry
 Follow the steps below to access private images in the Google Container Registry (GCR):

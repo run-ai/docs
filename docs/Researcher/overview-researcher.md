@@ -9,5 +9,5 @@ As part of the Researcher documentation you will find:
 * __Best Practices__ for Deep Learning with Run:AI.
 * Information about the Run:AI __Scheduler__.
 * The Run:AI Python __Researcher Library__ which you can optionally use in your container to get additional reporting and further resource optimization.
-* Introductory __presentations__.
 * Using Run:AI with various __developer tools__. 
+* Introductory __presentations__.
