@@ -84,7 +84,6 @@ plugins:
         'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
         'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
         'Administrator/Researcher-Setup/researcher-ui-setup.md' : 'admin/researcher-setup/researcher-ui-setup.md'
-        'Administrator/Researcher-Setup/template-config.md' : 'admin/researcher-setup/template-config.md'
         'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
         'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
@@ -151,7 +150,7 @@ nav:
       - 'Switch from Docker to Run:AI ' : 'admin/researcher-setup/docker-to-runai.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
-      - 'UI Templates' : 'admin/researcher-setup/templates.md'
+      - 'Templates' : 'admin/researcher-setup/templates.md'
     - 'Admin UI' :
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
       - 'Projects' : 'admin/admin-ui-setup/project-setup.md'

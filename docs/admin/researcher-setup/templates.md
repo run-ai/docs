@@ -1,29 +1,33 @@
-# Configure Command-Line Interface Templates
+# Configure Templates
 
 ## What are Templates?
 
-Templates are a way to reduce the manual entry required when submitting Jobs and to limit the range of possible values. Templates can be used with the Command-line interface and with the [Researcher User Interface](researcher-ui-setup.md). 
+Templates are a way to reduce the manual entry required when 
+submitting jobs and to limit the range of possible values. 
+Templates can be used with the Command-line interface and with 
+the [Researcher User Interface](researcher-ui-setup.md).
 
-<!-- The Researcher can:
+There are two _levels_ of templates:
 
-*   Use a template by running `runai submit --template <template-name>`
-*   Review list of templates by running `runai list template`
-*   Review the contents of a specific template by running ``runai describe template <template-name>`` -->
+* Administrative templates: These templates are created and maintained by an administrator and are imposed on the researchers. Their purpose is to enforce organization standards on each job being submitted.
+* User templates: These templates can be created and maintained by the researchers. Their purpose is to reduce manual entry required when submitting jobs.
 
-There are two template _levels_:
+Administrative templates are manually created by the administrator as kubernetes resources. User templates, on the other hand, 
+are created and maintained in the [Researcher User Interface](researcher-ui-setup.md).
 
-* Using the Researcher user interface, __Researchers__ can create, modify and delete templates for personal use.
-* Administrators can create __administrative templates__ which set cluster-wide defaults and constraints and defaults for the submission of Jobs. 
-
-The purpose of this document is to provide the Administrator with guidelines on how to create & maintain __administrative__ templates.
+The purpose of this document is to provide the Administrator and the Researchers 
+with guidelines on how to create, maintain and use __administrative__ and __user__ templates.
 
 ## Templates and Kubernetes
 
-CLI Templates are implemented as Kubernetes [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){target=_blank}. A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
+All CLI Templates (administrative and user templates) are implemented as Kubernetes [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/){:target="_blank"}. 
+A Kubernetes ConfigMap is the standard way to save cluster-wide settings.
+
+## Administrative Templates
 
 ### Creating your First Administrative Template 
 
-There are two available administration templates: 
+There are two available administrative templates: 
 * An administrative template for interactive Jobs
 * An administrative template for training Jobs
 
@@ -52,7 +56,6 @@ The template places a default and limit on the available values for  _gpu_.
 
 Similarly, you can create a __training__ administrative template by using the name `job-settings-training` instead.
 
-
 To store this template run: 
 
 ``` bash
@@ -61,18 +64,17 @@ kubectl apply -f my-template.yaml
 
 Now open the Researcher user interface, find the _Requested GPU_ box. Verify that the default is set to 1, that it is possible to edit the value to any number between 1 and 4 at 0.2 increments. 
 
-## Template parameters
+### Administrative Template parameters
 
-Administrative template can be used to configure all Run:AI Job submittion parameters. You can find the full list of parameters under the Command-line documentation of [runai submit](../../Researcher/cli-reference/runai-submit.md) and [runai submit-mpi](../../Researcher/cli-reference/runai-submit-mpi.md).
+Administrative template can be used to configure all Run:AI Job submission parameters. You can find the full list of parameters under the Command-line documentation of [runai submit](../../Researcher/cli-reference/runai-submit.md) and [runai submit-mpi](../../Researcher/cli-reference/runai-submit-mpi.md).
 
+### Syntax
 
-## Syntax
-
-Template parameters are written in _Camel Case_ notation. For example, the Command-line flag `--host-network` is written as `hostNetwork`. For a full list of parameters and their correct spelling, type, and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/rest-submit.md).  
+Administrative Template parameters are written in _Camel Case_ notation. For example, the Command-line flag `--host-network` is written as `hostNetwork`. For a full list of parameters and their correct spelling, type, and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/rest-submit.md).  
 
 The following section describe the syntax of the various parameter types.
 
-### Boolean
+#### Boolean
 
 A Boolean parameter accepts two values: `true` and `false`. The syntax is: 
 
@@ -100,7 +102,7 @@ hostNetwork:
     value: false
 ```
 
-### Integer
+#### Integer
 
 An Integer parameter accepts whole numbers. The syntax is: 
 
@@ -133,7 +135,7 @@ parallelism:
   max: 50
 ```
 
-### Number 
+#### Number 
 
 A Number (or "Double") parameter accepts any number including non-integer numbers. The syntax is: 
 
@@ -167,7 +169,7 @@ gpu:
   step: 0.1
 ```
 
-### String
+#### String
 
 A String parameter accepts any text. The syntax is: 
 
@@ -205,7 +207,7 @@ image:
     - gcr.io/run-ai-demo/quickstart-hpo
 ```
 
-### Array of Strings
+#### Array of Strings
 
 Set a list of strings. The syntax is:
 
@@ -239,7 +241,7 @@ arguments:
 ```
 
 
-###  String to String Mapping
+####  String to String Mapping
 
 A set of mapping of string to a string. The syntax is: 
 
@@ -273,7 +275,7 @@ environment:
 Note that environment variables are strings, so they must be surrounded by quotes. 
 
 
-### Special: Array of PVCs
+#### Special: Array of PVCs
 
 An array of Persistent Volume Claims (PVC) provides a way to provide a default for attaching multiple PVCs to a container. The syntax is: 
 
@@ -317,7 +319,7 @@ pvc:
         ....
 ```
 
-### Special: Array of Port Maps
+#### Special: Array of Port Maps
 
 An array of port maps. The syntax is:
 
@@ -360,7 +362,7 @@ ports:
     autoGenerate: false
 ```
 
-## Fields and Defaults
+### Fields and Defaults
 
 The following fields are possible. Also included are the field defaults if no administrative template is defined. For an explanation of the field, see the `runai submit` documentation. 
 
@@ -399,14 +401,71 @@ The following fields are possible. Also included are the field defaults if no ad
 | volume          | -           |                  |        | 
 | workingDir      | -           |                  |        | 
 
-
-
-## Deleting a Template
+### Deleting an Administrative Template
 to delete the template, run:
 
 ```
 kubectl delete cm my-template.yaml
 ```
+
+## User Templates
+
+User template is a set of values, given to various submission parameters, for the purpose
+of reducing manual input when submitting jobs.
+
+Similarly to administrative templates, two distinct sets of templates co-exist. One for 
+interactive jobs, and the other for training jobs.
+
+User templates are stored per-project.   
+
+### Creating A User Template
+
+User templates are created and maintained in the
+[Researcher User Interface](researcher-ui-setup.md). Once created, user template can be used
+by a researcher for submitting job either in the Research User Interface or the Command-line
+Interface.
+
+To create a user template open the Submit form in the Researcher User Interface, fill in values
+for parameters which you would like to store in the template and choose "Save as Template"
+from the actions menu. Alternatively, the set of values can be loaded from a previous job or 
+from any other existing template.
+
+To copy a template from one project to another, select the template you wish to copy,
+change the selected project to the project you want to copy the template to, 
+and use "Save As Template" to save it to the selected project.
+
+### Using a User Template
+
+#### Researcher User Interface
+
+The set of available templates appears on the left side of the submission form in the
+Researcher User Interface. Select any template you want to use, and notice its values are
+applied on all the relevant parameters.
+
+#### Command-Line
+
+Use the following command to obtain a list of templates:
+```
+ runai list templates
+```
+Both interactive and training templates are listed.
+
+To view the values of a user template, use the following command:
+```
+runai describe template {name}
+```
+To use a template for submitting a job, use the __--template__ option of
+the submit command. For example:
+```
+runai submit --interactive --project proj1 --template temp1 
+```
+In this example the job is created based on interactive
+template named __temp1__, of project __proj1__.
+
+### Deleting a User Template
+
+To delete a user template, open the Submit form in the Researcher User
+Interface and click on the remove icon which appears right next to it.
 
 ## See Also
 
