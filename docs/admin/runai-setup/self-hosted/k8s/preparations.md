@@ -61,9 +61,6 @@ The Run:AI Backend should be installed on a set of dedicated Run:AI system worke
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
-Currently, this setting cannot be changed after the backend is installed.
-
-
 ## Install Helm
 
 If helm v3 does not yet exist on the machine, install it now:

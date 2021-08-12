@@ -1,6 +1,6 @@
 # Install the Run:AI Administrator Command-line Interface
 
-The Run:AI Administrator Command-line Interface (Administrator CLI) allows performing administrative tasks on the Run:AI Cluster. The tool is currently in beta. 
+The Run:AI Administrator Command-line Interface (Administrator CLI) allows performing administrative tasks on the Run:AI Cluster.  
 
 The instructions below will guide you through the process of installing the Administrator CLI.
 
