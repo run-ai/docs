@@ -60,4 +60,4 @@ runai submit myjob1 --ttl-after-finish 2h
 
 ## Using Templates to set Automatic Deletion as Default
 
-You can use Run:AI templates to set auto-delete to be the default. See [template configuration](../../admin/researcher-setup/template-config.md) for more information on how to make this flag a part of the default template.
+You can use Run:AI templates to set auto-delete to be the default. See [template configuration](../../admin/researcher-setup/templates.md) for more information on how to make this flag a part of the default template.

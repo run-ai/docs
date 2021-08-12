@@ -74,4 +74,4 @@ runai-adm remove secret <secret name> --cluster-wide
 
 ## Secrets and Templates
 
-A Secret can be set at the template level. For additional information see [template configuration](template-config.md)
+A Secret can be set at the template level. For additional information see [template configuration](templates.md)

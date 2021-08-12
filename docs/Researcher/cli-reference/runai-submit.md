@@ -348,5 +348,5 @@ Note that the submit call may use templates to provide defaults to any of the ab
 ## See Also
 
 *   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [template configuration](../../admin/researcher-setup/template-config.md) for a description on how templates work.
+*   See [template configuration](../../admin/researcher-setup/templates.md) for a description on how templates work.
 

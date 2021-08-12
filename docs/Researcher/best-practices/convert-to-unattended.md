@@ -97,7 +97,7 @@ Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-su
 
 ### Use CLI Templates
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template these configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../admin/researcher-setup/template-config.md). 
+Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template these configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../admin/researcher-setup/templates.md). 
 
 ## Attached Files
 
