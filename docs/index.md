@@ -5,9 +5,9 @@ Welcome to the Run:AI documentation area. For an introduction about what is the 
 
 The Run:AI documentation is targeting three personas:
 
-* Run:AI Administrator - Responsible for the setup and the day to day administration of the  product. Administrator documentation can be found [here](./admin/overview-administrator.md).
+* Run:AI Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](./admin/overview-administrator.md).
 
-* Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
+* Researcher - Using Run:AI to submit Jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
@@ -26,7 +26,7 @@ To get support use the following channels:
 
 * On the bottom right of the Administrator user interface [https://app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
 
-* On the bottom right of this page , use the _Help_ widget.
+* On the bottom right of this page, use the _Help_ widget.
 
 
 
