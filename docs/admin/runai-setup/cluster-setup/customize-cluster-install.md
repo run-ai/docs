@@ -15,7 +15,8 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
 | `runai-operator.config.mpi-operator.enabled` | `true` | Set to `false` when using PodSecurityPolicy. __MPI__ is the distributed-training operator from KubeFlow. Currently must run with root access |
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
-| `kube-prometheus-stack.enabled` |  `true`  |  Run:AI installs Prometheus. Set to `false` not install and use an existing Prometheus installation. Requires additional configuration of Prometheus to add Run:AI related _exporter rules_. Please call Run:AI customer support. |
+| `kube-prometheus-stack.enabled` |  `true`  | Set to `false` when the cluster has an existing Prometheus installation. that is __not based__ the Prometheus __operator__ . This setting requires Run:AI customer support. |
+| `kube-prometheus-stack.prometheusOperator.enabled` |  `true`  |  Set to `false` when the cluster has an existing Prometheus installation __based__ on the Prometheus __operator__ and Run:AI should use the existing one rather than install a new one | 
 |<img width=500/>|||
 
 
@@ -28,9 +29,13 @@ The Run:AI Cluster installation installs by default two pre-requisites:  Kuberne
 
 ### Prometheus
 
-The Run:AI Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set `kube-prometheus-stack.enabled` to `false`. 
+The Run:AI Cluster installation uses [Promethues](https://prometheus.io/){target=_blank}. There are 3 alternative configurations:
 
-When choosing `false`, an extra configuration step will be required to add the Run:AI Prometheus rules and to push metrics to the Run:AI Administration User Interface. Please contact Run:AI Customer support. 
+1. (The default) Run:AI installs Prometheus.
+2. Run:AI uses an existing Prometheus installation based on the Prometheus operator.
+3. Run:AI uses an existing Prometheus installation based on a regular Prometheus installation.
+
+For option 2, disable the flag `kube-prometheus-stack.prometheusOperator.enabled`. For option 3, please contact Run:AI Customer support. 
 
 
 ## Understanding Custom Access Roles
