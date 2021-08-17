@@ -14,7 +14,7 @@ kubectl get deployment -n runai runai-operator -o yaml \
 ## Delete Run:AI Software
 
 
-To delete a Run:AI Cluster installation while retaining existing running jobs, run the following command:
+To delete a Run:AI Cluster installation while retaining existing running jobs, run the following commands:
 
 ``` 
 kubectl delete RunaiConfig runai -n runai
