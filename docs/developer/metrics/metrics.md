@@ -6,7 +6,7 @@
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI so as to enable customers to create their own dashboards or integrate metric data into other monitoring systems. 
 
-Run:AI uses [Prometheus](target=_blank) for metrics. 
+Run:AI uses [Prometheus](target=_blank) for collecting and querying metrics.
 
 
 ##  Published Run:AI Metrics
@@ -22,7 +22,7 @@ Run:AI uses [Prometheus](target=_blank) for metrics.
 | runai_cluster_memory_utilization                   |  {clusterId}                                                                     | CPU Memory utilization of the entire cluster (0-1)                                                                                                                                               |
 | runai_gpu_is_allocated                             |  {gpu, clusterId, node}                                                      | Is a GPU hosting a pod (0/1)                                                                                                                                                                     |
 | runai_gpu_is_running_fractional_job              |  {gpu, clusterId, node}                                                      | Is GPU hosting Fractional GPU jobs? (0/1)                                                                                                                                                        |
-| runai_gpu_last_active_time                        |  {gpu, clusterId, node}                                                      | Last time GPU was idle                                                                                                                                                                           |
+| runai_gpu_last_active_time                        |  {gpu, clusterId, node}                                                      | Last time GPU was not idle                                                                                                                                                                           |
 | runai_gpu_total_memory_bytes                      |  {clusterId, node}                                                             | Total GPU memory per node (Bytes)                                                                                                                                                                |
 | runai_gpu_used_memory_bytes                       |  {clusterId, node}                                                             | Used CPU memory per node (Bytes)                                                                                                                                                                 |
 | runai_gpu_utilization_non_fractional_jobs        |  {job_uuid, job_name, clusterId, gpu, node}                            | GPU utilization of jobs running on a full GPU (0-100)                                                                                                                                            |
@@ -41,14 +41,15 @@ Run:AI uses [Prometheus](target=_blank) for metrics.
 | runai_node_gpu_utilization                         |  {pod_namespace, pod_name, clusterId, gpu, node}                       | GPU utilization per GPU (0-100)                                                                                                                                                                  |
 | runai_node_memory_utilization                      |  {clusterId, node}                                                             | CPU memory utilization per node (0-1)                                                                                                                                                            |
 | runai_node_requested_memory_bytes                 |  {clusterId, node}                                                             | Sum of the requested CPU Memory of all jobs running in a node (# of cores)                                                                                                                       |
-| runai_project_guaranteed_gpus                      |  {clusterId, project}                                                          | Guaranteed GPU quota per project (i,e,, queue_name)                                                                                                                                             |
-| runai_project_info                                  |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project} | Information on CPU, CPU Memory, GPU quota per project (i,e,, queue_name)                                                                                                                        |
+| runai_project_guaranteed_gpus                      |  {clusterId, project}                                                          | Guaranteed GPU quota per project                                                                                                                                             |
+| runai_project_info                                  |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project} | Information on CPU, CPU Memory, GPU quota per project                                                                                                                       |
 | runai_running_job_cpu_limit_cores,               | zzzz                                                                                               | xx                                                                                                                                                                                               |
 | runai_running_job_cpu_requested_cores            |  {clusterId, job_name, job_uuid}                                           | Jobs requested CPU (# of cores) - can add a comment to K8s docs on requested vs, limit                                                                                                          |
 | runai_running_job_cpu_used_cores                 |  {job_uuid, clusterId, job_name, project}                                | Jobs CPU utilization (# of cores)                                                                                                                                                               |
 | runai_running_job_memory_limit_bytes             |  {clusterId, job_name, job_uuid}                                           | Jobs CPU Memory limit (Bytes) - can add a comment to K8s docs on requested vs, limit                                                                                                            |
 | runai_running_job_memory_requested_bytes         |  {clusterId, job_name, job_uuid}                                           | Jobs requested CPU Memory (Bytes) - can add a comment to K8s docs on requested vs, limit                                                                                                        |
 | runai_running_job_memory_used_bytes              |  {job_uuid, clusterId, job_name, project}                                | Jobs used CPU Memory (Bytes)                                                                                                                                                                    |
+| dcgm_gpu_last_not_idle_time     | xxx | last time GPU was not idle           |
 
 
 
@@ -58,9 +59,8 @@ Run:AI exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 
 | Metric name                      | Description                          |
 | -------------------------------- | ------------------------------------ |
-| DCGM_GPU_MODEL                   | gpu model. example: Tesla V100-SXM2-32GB |
-| dcgm_gpu_last_not_idle_time      | last time gpu was not idle           |
-| dcgm_gpu_utilization             | gpu utilization                      |
+| DCGM_GPU_MODEL                   | GPU model. example: Tesla V100-SXM2-32GB |
+| dcgm_gpu_utilization             | GPU utilization                      |
 | kube_node_status_allocatable                      | The allocatable for different resources of a node that are available for scheduling |
 | kube_node_status_capacity                         | The capacity for different resources of a node                                      |
 | kube_node_status_condition                        | The condition of a cluster node                                                     |
@@ -68,7 +68,7 @@ Run:AI exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 | kube_pod_container_resource_requests_cpu_cores    | The number of CPU cores requested by container                                      |
 | kube_pod_container_resource_requests_memory_bytes | Bytes of memory requested by a container                                            |
 | kube_pod_info                                     | Information about pod                                                               |
-| kube_pod_status_phase                             | The pods current phase                                                              |
+| kube_pod_status_phase                             | The current phase of the pod                                                 |
 
 
 For additional information, see Kubernetes [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} and NVIDIA [dcgm exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}.
