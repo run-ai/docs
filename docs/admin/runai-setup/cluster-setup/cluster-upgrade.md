@@ -1,3 +1,5 @@
+# Upgrading a Cluster Installation
+
 ## Find the current Run:AI cluster version
 
 To find the current version of the Run:AI cluster, run:
@@ -6,11 +8,6 @@ To find the current version of the Run:AI cluster, run:
 kubectl get deployment -n runai runai-operator -o yaml \
     -o jsonpath='{.spec.template.spec.containers[*].image}'
 ```
-
-# Upgrading a Cluster Installation
-
-<!-- To perform the tasks below you will need the Run:AI Administrator CLI. See [Installing the Run:AI Administrator Command-line Interface](cli-admin-install.md). -->
-
 
 Run:
 
