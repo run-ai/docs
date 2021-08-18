@@ -49,7 +49,7 @@ Run:AI uses [Prometheus](target=_blank) for collecting and querying metrics.
 | runai_running_job_memory_limit_bytes             |  {clusterId, job_name, job_uuid}                                           | Jobs CPU Memory limit (Bytes) - can add a comment to K8s docs on requested vs, limit                                                                                                            |
 | runai_running_job_memory_requested_bytes         |  {clusterId, job_name, job_uuid}                                           | Jobs requested CPU Memory (Bytes) - can add a comment to K8s docs on requested vs, limit                                                                                                        |
 | runai_running_job_memory_used_bytes              |  {job_uuid, clusterId, job_name, project}                                | Jobs used CPU Memory (Bytes)                                                                                                                                                                    |
-| dcgm_gpu_last_not_idle_time     | xxx | last time GPU was not idle           |
+| dcgm_gpu_last_not_idle_time     | {device, exported_pod, UUID, pod, namespace, job, Hostname, pod_name, clusterId, service, gpu, modelName, instance, container_name, exported_namespace, pod_namespace, exported_container, endpoint, container} | last time GPU was not idle           |
 
 
 
