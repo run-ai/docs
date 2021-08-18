@@ -9,7 +9,7 @@ The purpose of this document is to detail the structure and purpose of metrics e
 Run:AI uses [Prometheus](target=_blank) for metrics. 
 
 
-##  Published RunL:AI Metrics
+##  Published Run:AI Metrics
 
  <!-- https://tabletomarkdown,com/convert-spreadsheet-to-markdown/ -->
 
