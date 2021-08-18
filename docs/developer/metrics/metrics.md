@@ -61,7 +61,7 @@ Run:AI exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 | -------------------------------- | ------------------------------------ |
 | DCGM_GPU_MODEL                   | GPU model. example: Tesla V100-SXM2-32GB |
 | dcgm_gpu_utilization             | GPU utilization                      |
-| kube_node_status_allocatable                      | The allocatable for different resources of a node that are available for scheduling |
+| kube_node_status_allocatable                      | Resources (cpu, memory, gpu etc) are allocatble (available for scheduling)  |
 | kube_node_status_capacity                         | The capacity for different resources of a node                                      |
 | kube_node_status_condition                        | The condition of a cluster node                                                     |
 | kube_pod_container_resource_requests              | The number of requested request resource by a container                             |
