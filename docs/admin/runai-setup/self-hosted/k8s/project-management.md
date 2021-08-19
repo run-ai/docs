@@ -1,4 +1,6 @@
-
+---
+title: Self Hosted installation over Kubernetes - Create Projects
+---
 ## Introduction
 
 Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Run:AI Project, Run:AI needs to be able to:

@@ -1,4 +1,6 @@
-
+---
+title: Self Hosted installation over Kubernetes - Preparations
+---
 
 ## Prerequisites 
 

@@ -1,3 +1,7 @@
+---
+title: Researcher Setup Overview
+---
+
 Following is a step-by-step guide for getting a new Researcher up to speed with Run:AI and Kubernetes.
 
 ## Change of Paradigms: from Docker to Kubernetes 
@@ -6,7 +10,7 @@ As part of Run:AI, the organization is typically moving from Docker-based workfl
 
 ## Setup the Run:AI Command-Line Interface
 
-Run:AI CLI needs to be installed on the Researcher machine. This [document](cli-install.md) provides step by step instructions.
+Run:AI CLI needs to be installed on the Researcher's machine. This [document](cli-install.md) provides step by step instructions.
 
 ## Provide the Researcher with a GPU Quota
 

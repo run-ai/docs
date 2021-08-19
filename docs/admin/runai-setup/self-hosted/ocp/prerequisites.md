@@ -1,3 +1,7 @@
+---
+title: Self Hosted installation over OpenShift - Prerequisites
+---
+
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 ## Hardware Requirements
 

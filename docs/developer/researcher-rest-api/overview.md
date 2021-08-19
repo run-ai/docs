@@ -1,3 +1,7 @@
+
+---
+title: Researcher REST API  Overview
+---
 # Researcher REST API
 
 The purpose of the Researcher REST API is to provide an easy-to-use programming interface for submitting, listing, and deleting Jobs. 

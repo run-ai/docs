@@ -1,5 +1,7 @@
 
-
+---
+title: Inference  Overview
+---
 ## What is Inference
 
 Machine learning (ML) inference is the process of running live data points into a machine-learning algorithm to calculate an output. 

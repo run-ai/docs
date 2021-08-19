@@ -1,3 +1,6 @@
+---
+title: Self Hosted installation over OpenShift - Preparations
+---
 # Preparing for a Run:AI OpenShift Installation
 
 The following section provides IT with the information needed to prepare for a Run:AI installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:AI components. 

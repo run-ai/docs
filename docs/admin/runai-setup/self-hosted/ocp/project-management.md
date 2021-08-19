@@ -1,3 +1,6 @@
+---
+title: Self Hosted installation over OpenShift - Create Projects
+---
 
 ## Introduction
 

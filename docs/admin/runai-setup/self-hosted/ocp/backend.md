@@ -30,7 +30,9 @@ Change the following properties in the values file:
  
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
 
-
+---
+title: Self Hosted installation over OpenShift - Backend Setup
+---
 ## Install Backend
 
 Run the helm command below:

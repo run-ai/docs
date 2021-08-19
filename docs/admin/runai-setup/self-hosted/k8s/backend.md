@@ -34,6 +34,10 @@ Change the following properties in the values file.
 |<img width=1300/>|||
 
 
+---
+title: Self Hosted installation over Kubernetes - Backend Setup
+---
+
 ## Install Backend
 
 Run the helm command below:
