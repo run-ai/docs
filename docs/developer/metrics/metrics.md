@@ -63,6 +63,8 @@ Following is a list of labels appearing in Run:AI metrics:
 | job_name               | Job name                                                   |
 | job_type               | Job type: training, interactive or inference               |
 | job_uuid               | Job identifier                     |
+| pod_name               | Pod name                           |
+| pod_namespace          | Pod namespace                      |
 | memory_quota           | CPU memory limit per project       |
 | node                   | Node name                          |
 | project                | Name of Run:AI Project                                      |
