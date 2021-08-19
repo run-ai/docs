@@ -7,7 +7,7 @@
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI to enable customers to create custom dashboards or integrate metric data into other monitoring systems. 
 
-Run:AI uses [Prometheus](https://prometheus.io)(target=_blank) for collecting and querying metrics.
+Run:AI uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
 
 
 ##  Published Run:AI Metrics
