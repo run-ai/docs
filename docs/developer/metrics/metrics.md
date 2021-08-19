@@ -1,4 +1,5 @@
 
+ <!-- Tables in this doc where generated using:  https://tabletomarkdown,com/convert-spreadsheet-to-markdown/ -->
 
 ## What are Metrics
 
@@ -43,7 +44,7 @@ Following is the list of published Run:AI Metrics
 | runai_node_requested_memory_bytes              |  {clusterId, node}                                                    | # of cores  | Sum of the requested CPU Memory of all jobs running in a node                                                                                                                      |
 | runai_project_guaranteed_gpus                  |  {clusterId, project}                                                 | # of GPUs   | Guaranteed GPU quota per project                                                                                                                                             |
 | runai_project_info                             |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project}  | N/A         | Information on CPU, CPU Memory, GPU quota per project                                                                                                                       |
-| runai_running_job_cpu_limit_cores,             |  __zzzz__                                                             | __xx__      |                                                                                                                                                                                      |
+| runai_running_job_cpu_limit_cores,             |  {clusterId, job_name , job_uuid}                                     | # of cores  | __xxx__                                                                                                                                                                                   |
 | runai_running_job_cpu_requested_cores          |  {clusterId, job_name, job_uuid}                                      | # of cores  | Jobs requested CPU  -  __XXX can add a comment to K8s docs on requested vs, limit__                                                                                                          |
 | runai_running_job_cpu_used_cores               |  {job_uuid, clusterId, job_name, project}                             | # of cores  | Jobs CPU utilization                                                                                                                                                                |
 | runai_running_job_memory_limit_bytes           |  {clusterId, job_name, job_uuid}                                      | Bytes       | Jobs CPU Memory limit  - __XXX can add a comment to K8s docs on requested vs, limit__                                                                                                            |
@@ -54,7 +55,6 @@ Following is the list of published Run:AI Metrics
 
 Following is a list of labels appearing in Run:I metrics:
 
- <!-- https://tabletomarkdown,com/convert-spreadsheet-to-markdown/ -->
 | Label                  | Description   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | clusterId              | Cluster Identifier                                                                                                                                               |
