@@ -17,16 +17,14 @@ Following is the list of published Run:AI Metrics
 
 | Metric name                                    | Labels                                                                | Measurement | Description                           |
 | ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| runai_cluster_allocated_gpus                   |  {job_type, job_uuid, job_name, clusterId, project}                   | Double      | GPUs allocated to Jobs                   |
 | runai_cluster_cpu_utilization                  |  {clusterId}                                                          |    0 to 1   | CPU utilization of the entire cluster                                                |
 | runai_cluster_memory_used_bytes                |  {clusterId}                                                          | Bytes       | Used CPU Memory of the entire cluster                                              |
 | runai_cluster_memory_utilization               |  {clusterId}                                                          |    0 to 1   | CPU Memory utilization of the entire cluster                                         |
 | runai_gpu_is_allocated                         |  {gpu, clusterId, node}                                               |    0/1      | Is a GPU hosting a pod         |
 | runai_gpu_is_running_fractional_job            |  {gpu, clusterId, node}                                               |    0/1      | Is GPU hosting Fractional GPU jobs                                                  |
 | runai_gpu_last_active_time                     |  {gpu, clusterId, node}                                               | Unix time   | Last time GPU was not idle            |
-| runai_gpu_total_memory_bytes                   |  {clusterId, node}                                                    | Bytes       | Total GPU memory per node    |
-| runai_gpu_used_memory_bytes                    |  {clusterId, node}                                                    | Bytes       | Used CPU memory per node     |
 | runai_gpu_utilization_non_<br>fractional_jobs  |  {job_uuid, job_name, clusterId, gpu, node}                           | 0 to 100    | Utilization per GPU for jobs running on a full GPU   |
+| runai_job_allocated_gpus                       |  {job_type, job_uuid, job_name, clusterId, project}                   | Double      | GPUs allocated to Jobs                   |
 | runai_job_gpu_utilization                      |  {job_uuid, clusterId, job_name, project}                             | 0 to 100    | Average GPU utilization per job   |
 | runai_job_image                                |  {image, job_uuid, job_name, clusterId}                               | N/A         | Image name per job                    |
 | runai_job_requested_gpu_memory                 |  {job_type, job_uuid, job_name, clusterId, project}                   | Bytes       | Requested GPU memory per job (0 if not specified by the user)                       |
@@ -42,6 +40,8 @@ Following is the list of published Run:AI Metrics
 | runai_node_gpu_utilization                     |  {pod_namespace, pod_name, clusterId, gpu, node}                      | 0 to 100    | GPU utilization per GPU        |
 | runai_node_memory_utilization                  |  {clusterId, node}                                                    | 0 to 1      | CPU memory utilization per node |
 | runai_node_requested_memory_bytes              |  {clusterId, node}                                                    | Bytes       | Sum of the requested CPU Memory of all jobs running in a node       |
+| runai_node_total_memory_bytes                  |  {clusterId, node}                                                    | Bytes       | Total GPU memory per node    |
+| runai_node_used_memory_bytes                   |  {clusterId, node}                                                    | Bytes       | Used CPU memory per node     |
 | runai_project_guaranteed_gpus                  |  {clusterId, project}                                                 | Double      | Guaranteed GPU quota per project                                       |
 | runai_project_info                             |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project}  | N/A         | Information on CPU, CPU Memory, GPU quota per project                  |
 | runai_running_job_cpu_limit_cores              |  {clusterId, job_name , job_uuid}                                     | Double      | Jobs CPU limit (in number of cores). See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
