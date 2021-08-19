@@ -7,7 +7,7 @@
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI to enable customers to create custom dashboards or integrate metric data into other monitoring systems. 
 
-Run:AI uses [Prometheus](target=_blank) for collecting and querying metrics.
+Run:AI uses [Prometheus](https://prometheus.io)(target=_blank) for collecting and querying metrics.
 
 
 ##  Published Run:AI Metrics
@@ -24,6 +24,7 @@ Following is the list of published Run:AI Metrics
 | runai_gpu_is_running_fractional_job            |  {gpu, clusterId, node}                                               |    0/1      | Is GPU hosting Fractional GPU jobs                                                  |
 | runai_gpu_last_active_time                     |  {gpu, clusterId, node}                                               | Unix time   | Last time GPU was not idle            |
 | runai_gpu_utilization_non_<br>fractional_jobs  |  {job_uuid, job_name, clusterId, gpu, node}                           | 0 to 100    | Utilization per GPU for jobs running on a full GPU   |
+| runai_gpu_utilization_with_pod_info            |  {pod_namespace, pod_name, clusterId, gpu, node}                      | 0 to 100    | GPU utilization per GPU        |
 | runai_job_allocated_gpus                       |  {job_type, job_uuid, job_name, clusterId, project}                   | Double      | GPUs allocated to Jobs                   |
 | runai_job_gpu_utilization                      |  {job_uuid, clusterId, job_name, project}                             | 0 to 100    | Average GPU utilization per job   |
 | runai_job_image                                |  {image, job_uuid, job_name, clusterId}                               | N/A         | Image name per job                    |
@@ -37,7 +38,6 @@ Following is the list of published Run:AI Metrics
 | runai_node_cpu_requested_cores                 |  {clusterId, node}                                                    | Double      | Sum of the requested CPU cores of all jobs running in a node         |
 | runai_node_cpu_utilization                     |  {clusterId, node}                                                    | 0 to 1      | CPU utilization per node      |
 | runai_node_gpu_used_memory_bytes               |  {clusterId, node}                                                    | Bytes       | Used GPU memory per node       |
-| runai_node_gpu_utilization                     |  {pod_namespace, pod_name, clusterId, gpu, node}                      | 0 to 100    | GPU utilization per GPU        |
 | runai_node_memory_utilization                  |  {clusterId, node}                                                    | 0 to 1      | CPU memory utilization per node |
 | runai_node_requested_memory_bytes              |  {clusterId, node}                                                    | Bytes       | Sum of the requested CPU Memory of all jobs running in a node       |
 | runai_node_total_memory_bytes                  |  {clusterId, node}                                                    | Bytes       | Total GPU memory per node    |
