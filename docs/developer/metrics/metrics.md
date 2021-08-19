@@ -59,16 +59,16 @@ Following is a list of labels appearing in Run:I metrics:
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | clusterId              | Cluster Identifier                                                                                                                                               |
 | cpu_quota              | ?                                                                                                                                                               |
-| gpu                    | 6                                                                                                                                                                |
-| gpu_guaranteed_quota   | 5                                                                                                                                                                |
+| gpu                    | ?                                                                                                                                                                |
+| gpu_guaranteed_quota   | ?                                                                                                                                                                |
 | image                  | Name of docker image                                                                                                                                             |
 | job_name               | Job name                                                                                                                                                         |
 | job_type               | Job type: training, interactive or inference                                                                                                                     |
 | job_uuid               | Job identifier                                                                                                                                                   |
-| memory_quota           | 1                                                                                                                                                                |
-| node                   | 2                                                                                                                                                                |
-| pod_name               | 3                                                                                                                                                                |
-| pod_namespace          | 4                                                                                                                                                                |
+| memory_quota           | ?                                                                                                                                                                |
+| node                   | ?                                                                                                                                                                |
+| pod_name               | ?                                                                                                                                                                |
+| pod_namespace          | ?                                                                                                                                                                |
 | project                | Name of Run:AI Project                                                                                                                                           |
 | status                 | Job status: Running, Pending etc. For more information on Job statuses see \[document\](https://docs.run.ai/Researcher/scheduling/job-statuses/){target=\_blank} |
 | user                   | User identifier                                                                                                                                                  |
