@@ -1,11 +1,11 @@
 
- <!-- Tables in this doc where generated using:  https://tabletomarkdown,com/convert-spreadsheet-to-markdown/ -->
+ <!-- Tables in this doc were generated using:  https://tabletomarkdown,com/convert-spreadsheet-to-markdown/ -->
 
 ## What are Metrics
 
-[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics){target=_blank} are numeric measurements recorded __over time__ that are emitted from the Run:AI cluster. Typical metrics involve utilization, allocation, time measurements and the like. Metrics are used in Run:AI dashboards as well as in the Run:AI administration user interface. 
+[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics){target=_blank} are numeric measurements recorded __over time__ that are emitted from the Run:AI cluster. Typical metrics involve utilization, allocation, time measurements, and the like. Metrics are used in Run:AI dashboards as well as in the Run:AI administration user interface. 
 
-The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI so as to enable customers to create their own dashboards or integrate metric data into other monitoring systems. 
+The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI to enable customers to create custom dashboards or integrate metric data into other monitoring systems. 
 
 Run:AI uses [Prometheus](target=_blank) for collecting and querying metrics.
 
@@ -53,7 +53,7 @@ Following is the list of published Run:AI Metrics
 | dcgm_gpu_last_not_idle_time                    |  {device, exported_pod, UUID, pod, namespace, job, Hostname, pod_name, clusterId, service, gpu, modelName, instance, container_name, exported_namespace, pod_namespace, exported_container, endpoint, container} | __xxx__ | last time GPU was not idle           |
 
 
-Following is a list of labels appearing in Run:I metrics:
+Following is a list of labels appearing in Run:AI metrics:
 
 | Label                  | Description   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
