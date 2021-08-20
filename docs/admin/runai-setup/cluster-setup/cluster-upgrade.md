@@ -1,14 +1,5 @@
 # Upgrading a Cluster Installation
 
-## Find the current Run:AI cluster version
-
-To find the current version of the Run:AI cluster, run:
-
-```
-kubectl get deployment -n runai runai-operator -o yaml \
-    -o jsonpath='{.spec.template.spec.containers[*].image}'
-```
-
 Run:
 
 ```
