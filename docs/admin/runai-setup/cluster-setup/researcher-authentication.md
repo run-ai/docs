@@ -25,6 +25,16 @@ Under [app.run.ai](https://app.run.ai/general-settings) settings:
 * Enable the flag _Researcher Authentication_.
 * Copy the values for `Client ID` and `Realm` which appear on the screen. 
 
+### Enable Researcher Authentication on Researcher Service
+
+The researcher service is used for the [Run:AI Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable run:
+
+```
+kubectl patch runaiconfig runai -n runai --type='json' \
+  -p='[{"op": "replace", "path" : "/spec/researcher-service/args", "value": {"authEnabled" : true}}]'
+kubectl rollout restart deployment -n runai researcher-service
+```
+
 ### Assign Users to Projects
 
 Assign Researchers to Projects:

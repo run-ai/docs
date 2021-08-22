@@ -186,6 +186,8 @@ nav:
       - 'runai describe' : 'Researcher/cli-reference/runai-describe.md'
       - 'runai exec' : 'Researcher/cli-reference/runai-exec.md'
       - 'runai list' : 'Researcher/cli-reference/runai-list.md'
+      - 'runai login' : 'Researcher/cli-reference/runai-login.md'
+      - 'runai logout' : 'Researcher/cli-reference/runai-logout.md'
       - 'runai logs' : 'Researcher/cli-reference/runai-logs.md'
       - 'runai resume' : 'Researcher/cli-reference/runai-resume.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
