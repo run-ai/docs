@@ -1,5 +1,17 @@
+
 # Upgrading a Cluster Installation
 
+## Find out Run:AI Cluster version 
+
+To find the Run:AI cluster version before and after upgrade run:
+
+```
+helm list -n runai -f runai-cluster
+```
+
+and record the chart version in the form of `runai-cluster-<version-number>`
+
+## Upgrade
 Run:
 
 ```
