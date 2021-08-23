@@ -304,7 +304,7 @@ pvc:
     editable: false
     value:
       pvc1:
-        storageClass: local_path
+        storageClass: local-path
         size: 3Gi
         path: /etc/path1
         readOnly: true
@@ -398,7 +398,7 @@ The following fields are possible. Also included are the field defaults if no ad
 to delete the template, run:
 
 ```
-kubectl delete cm my-template.yaml
+kubectl delete cm my-template.yaml -n runai
 ```
 
 ## User Templates
