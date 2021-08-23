@@ -21,4 +21,6 @@ echo "http://$(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].add
 
 ## Authentication
 
-By default, the Researcher REST API is not authenticated. When the system is configured [ to authenticate Researchers](../../admin/runai-setup/cluster-setup/researcher-authentication.md), you will need to add a token. To get the token, [login to Run:AI](../../../Researcher/cli-reference/runai-login) via the command-line, then retrieve the token from the Kubernetes configuration file. The token is time-based. 
+By default, the Researcher REST API is not authenticated. At this point in time, when the system is configured [ to authenticate Researchers](../../admin/runai-setup/cluster-setup/researcher-authentication.md), the researcher API will not work. We are working to fix that. 
+
+<!-- you will need to add a token. To get the token, [login to Run:AI](../../../Researcher/cli-reference/runai-login) via the command-line, then retrieve the token from the Kubernetes configuration file. The token is time-based.  -->
