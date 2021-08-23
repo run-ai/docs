@@ -56,7 +56,7 @@ You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-n
 ### Other
 
 * __Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-* (Optional) __LDAP Integration__. If relevant, gather the prerequisites from the [LDAP Integration](ldap-integration.md) document.
+* (Optional) __SAML Integration__. 
 
 ## Network
 

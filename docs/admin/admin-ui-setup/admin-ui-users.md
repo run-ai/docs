@@ -6,7 +6,7 @@ The Admin User Interface allows the creation of Run:AI Users. Run:AI Users can r
 
 __Notes:__
 
-*   It is possible to connect the Admin UI Users module to the organization's LDAP directory. For further information please contact Run:AI customer support.
+*   It is possible to connect the Admin UI Users module to the organization's SAML provider. For further information please contact Run:AI customer support.
 
 ## Working with Users
 

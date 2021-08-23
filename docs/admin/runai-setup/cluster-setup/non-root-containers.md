@@ -21,7 +21,7 @@ The Run:AI Command-line interface provides flags to control user identity within
 ## Command-Line Flags
 There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
-* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user or if connected via LDAP, it can be the Linux UID/GID which is stored in the organization's directory. 
+* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user or if connected via SAML provider, it can be the Linux UID/GID which is stored in the organization's directory. This requires to expose UID/GID as part of the SAML response. 
 * The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). This flag is not relevant when using PSP or SCC. 
 
 Note, that these flags are voluntary. They are not enforced by the system.

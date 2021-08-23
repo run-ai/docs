@@ -63,10 +63,10 @@ Run the helm command below:
 ### Connect to Administrator User Interface
 
 Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
-
+<!-- 
 ### (Optional) LDAP Configuration
 
-Follow the [LDAP Integration](ldap-integration.md) instructions.
+Follow the [LDAP Integration](ldap-integration.md) instructions. -->
 
 ## Next Steps
 
