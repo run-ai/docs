@@ -8,12 +8,12 @@
 
 ## Exposing a Container Port
 
- There are 4 ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_ and _Ingress_. The first 2 will always work. The others require a special setup by your administrator. The 4 methods are explained [here](../../admin/runai-setup/cluster-setup/allow-external-access-to-containers.md). 
+ There are 4 ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_ and _Ingress_. The first 2 will always work. The others require a special setup by your administrator. The 4 methods are explained [here](../../admin/runai-setup/advanced/allow-external-access-to-containers.md). 
 
  The document below provides examples based on Port Forwarding and Ingress.
 
 !!! Note
-    The step below use a Jupyter Notebook as an example for how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
+    The step below uses a Jupyter Notebook as an example of how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
 
 ## Port Forwarding, Step by Step Walkthrough
 
@@ -56,7 +56,7 @@ runai logs jupyter1 -p team-a
 
 ## Ingress, Step by Step Walkthrough
 
-__Note:__ Ingress must be set up by your Administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../admin/runai-setup/cluster-setup/allow-external-access-to-containers.md).
+__Note:__ Ingress must be set up by your Administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../admin/runai-setup/advanced/allow-external-access-to-containers.md).
 
 ### Setup
 

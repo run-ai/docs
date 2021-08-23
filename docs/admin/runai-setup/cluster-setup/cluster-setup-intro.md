@@ -25,7 +25,7 @@ As part of the installation process, you will download a __Helm values files__ a
 
 ## Advanced Setup
 
-For advanced scenarios such as [Researcher authentication & authorization](researcher-authentication.md), [limiting the installation to specific cluster nodes](node-roles.md) or [enforcing none-root containers](non-root-containers.md) see the _Advanced_ section.
+For advanced scenarios such as [Researcher authentication & authorization](researcher-authentication.md), [limiting the installation to specific cluster nodes](../advanced/node-roles.md) or [enforcing none-root containers](../advanced/non-root-containers.md) see the _Advanced_ section.
 
 ## Next Steps
 

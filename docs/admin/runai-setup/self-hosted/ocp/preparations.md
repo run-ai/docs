@@ -37,7 +37,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     ```
 
 === "Connected"
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../cluster-setup/cli-admin-install.md).
+    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../advanced/cli-admin-install.md).
 
 
 ### Run:AI Images

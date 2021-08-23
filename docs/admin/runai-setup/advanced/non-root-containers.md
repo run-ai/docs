@@ -9,7 +9,7 @@ This gives a lot of power to containers but does not sit well with modern securi
 * Kubernetes provides a mechanism called [PodSecurityPolicy (PSP)](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) to control container access.
 * OpenShift provides control over container access using [Security Context Constraints (SCC)](https://www.openshift.com/blog/understanding-service-accounts-sccs).
 
-Run:AI supports both PSP and SCC. This support is at the [cluster installation](customize-cluster-install.md) level. 
+Run:AI supports both PSP and SCC. This support is at the [cluster installation](../cluster-setup/customize-cluster-install.md) level. 
 
 ### User Identity
 
@@ -21,7 +21,7 @@ The Run:AI Command-line interface provides flags to control user identity within
 ## Command-Line Flags
 There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
-* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user or if connected via SAML provider, it can be the Linux UID/GID which is stored in the organization's directory. This requires to expose UID/GID as part of the SAML response. 
+* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user or if connected via SAML provider, it can be the Linux UID/GID which is stored in the organization's directory. This requires exposing UID/GID as part of the SAML response. 
 * The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). This flag is not relevant when using PSP or SCC. 
 
 Note, that these flags are voluntary. They are not enforced by the system.

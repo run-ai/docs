@@ -82,7 +82,7 @@ When installing a production cluster you may want to:
 * Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
 * Limit Run:AI to specific nodes in the cluster. 
 
-To perform these tasks. See [Set Node Roles](node-roles.md).
+To perform these tasks. See [Set Node Roles](../advanced/node-roles.md).
 
 
 

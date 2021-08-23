@@ -40,11 +40,7 @@ For option 2, disable the flag `kube-prometheus-stack.prometheusOperator.enabled
 
 ## Understanding Custom Access Roles
 
-To review the access roles created by the Run:AI Cluster installation, see [Understanding Access Roles](access-roles.md)
-
-<!-- ## Add an Ingress point
-
-Set aside an IP address for _ingress_ access to containers (e.g. for Jupyter Notebooks, PyCharm, VisualStudio Code). See: [Allow external access to Containers](allow-external-access-to-containers.md). Note that you can access containers via _port forwarding_ without requiring an ingress point.  -->
+To review the access roles created by the Run:AI Cluster installation, see [Understanding Access Roles](../advanced/access-roles.md)
 
 <!-- 
 ## Add a Proxy
