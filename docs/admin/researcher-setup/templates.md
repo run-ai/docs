@@ -270,7 +270,10 @@ Note that environment variables are strings, so they must be surrounded by quote
 
 #### Special: Array of PVCs
 
-An array of Persistent Volume Claims (PVC) provides a way to provide a default for attaching multiple PVCs to a container. The syntax is: 
+An array of Persistent Volume Claims (PVC) provides a way to specify a default set of PVCs 
+that will be attached to any container. 
+
+The syntax is: 
 
 ``` YAML
 pvc:
@@ -292,8 +295,9 @@ pvc:
 
 Description: 
 
-* `default.editable`: if `true`, the Researcher is allowed to modify the value of this parameter and add new values. Default is true
-* `default.value`: if provided, serves as the default key-value set for this parameter.
+* `default.value`: if provided, serves as the default set of claims.
+* `default.editable`: if `true`, the Researcher is allowed to extend the default
+  set with additional claims. Default is true.
 
 
 Example:
@@ -308,6 +312,51 @@ pvc:
         size: 3Gi
         path: /etc/path1
         readOnly: true
+      pvc2:
+        ....
+```
+
+#### Special: Array of Volumes
+
+An array of volumes provides a way to specify a default
+set of volumes that will be attached to any container
+
+The syntax is:
+
+``` YAML
+volumes:
+  default:
+    value: 
+      {volume-id1}:
+        sourcePath: {path}
+        targetPath: {path}
+        readOnly: {true|false}
+      {volume-id2}:
+        sourcePath: {path}
+        targetPath: {path}
+        readOnly: {true|false}
+    editable: {true|false}
+
+```
+
+Description:
+
+* `default.value`: if provided, serves as the default set of volumes.
+* `default.editable`: if `true`, the Researcher is allowed to extend the default set with additional volumes. 
+  Default is true.
+
+
+Example:
+
+``` YAML
+volumes:
+  default:
+    editable: false
+    value:
+      pvc1:
+        sourcePath: /home
+        targetPath: /usr/local/users
+        readOnly: {true|false}
       pvc2:
         ....
 ```
