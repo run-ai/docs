@@ -1,27 +1,36 @@
 
 # Upgrade Run:AI 
 
-## Prerequisites 
-
-A compressed tar file `runai-air-gapped<new-version>.tar` provided by Run:AI customer support containing the new version you want to upgrade to. `new-version` is the updated version of the Run:AI backend.
-
-
 ## Preparations
 
-Perform the preparation part [here](preparations.md). Specifically, unzip the tar file and use the `prepare_installation.sh` script to re-tag and load the images.
+=== "Airgapped" 
+    * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:AI customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:AI backend.
+    * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
+
+=== "Connected"
+    No additional work
 
 
 ## Upgrade Backend 
 
-Run:
+Run the helm command below. The purpose of the `--reuse-values` flag is to use the same values as the original installation:
 
-```
-helm upgrade runai-backend runai-backend/runai-backend-<new-version>.tgz -n \
-    runai-backend --reuse-values
-```
+=== "Airgapped"
+    ```
+    helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
+        runai-backend  --reuse-values
+    ```
+    (replace `<version>` with the backend version)
 
-The `--reuse-values` flag uses the same values as the original installation.
+=== "Connected"
+    ```
+    helm repo add runai-backend https://backend-charts.storage.googleapis.com
+    helm repo update
+    helm install runai-backend -n runai-backend runai-backend/runai-backend  \
+        --reuse-values
+    ```
+
 
 ## Upgrade Cluster 
 
-To upgrade the cluster follow the instructions [here](../../runai-setup/cluster-setup/cluster-upgrade/).
+To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
