@@ -16,13 +16,7 @@ Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/conc
 
 ### NVIDIA 
 
-Run:AI requires the installation of NVIDIA software. These can be done in one of two ways:
-
-* Use the [NVIDIA GPU Operator on Kubernetes](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=blank}. 
-* For each GPU node in the cluster, install NVIDIA CUDA Drivers, as well as the software stack, described [here](nvidia.md).
-
-
-For additional details see the [Cluster Installation](cluster-install.md) documentation.
+Run:AI requires the installation of NVIDIA software. These can be done in one of two ways. Installing the GPU Operator or installing NVIDIA software on each node. For more information, see the [Cluster Installation](../cluster-install/#step-2-nvidia) documentation.
 
 ### Prometheus 
 

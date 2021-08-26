@@ -1,7 +1,7 @@
 
 The document refers to the installation of NVIDIA CUDA drivers and NVIDIA Docker on __each node__ containing GPUs. For using the NVIDIA GPU Operator instead, see the [Cluster Installation](cluster-install.md) documentation. 
 
-If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA preqrequisites are already installed and you may skip this document
+If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip this document
 
 
 On __each machine__ with GPUs run the following steps.
@@ -26,7 +26,7 @@ If the machine is __DGX A100__, then, depending on your operating system, you ma
     * Run: `sudo apt search fabricmanager` to find a Fabric Manager package with the same version and install it.
 
 !!! Important
-    NVIDIA Fabric manager does not work on CoreOS. If you are working with OpenShift, use RHEL instead.
+    NVIDIA Fabric manager does not work on CoreOS. If you are working with OpenShift, use RHEL instead or use the NVIDIA GPU Operator rather than installing NVIDIA software on each machine. 
 
 ## Step 2: Install Docker
 
