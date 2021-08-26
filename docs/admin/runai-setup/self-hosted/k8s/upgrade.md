@@ -34,3 +34,17 @@ Run the helm command below. The purpose of the `--reuse-values` flag is to use t
 ## Upgrade Cluster 
 
 To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
+
+
+=== "Airgapped"
+    ```
+    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz --reuse-values
+    ```
+    (replace `<version>` with the cluster version)
+
+=== "Connected"
+    ```
+    kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
+    helm repo update
+    helm upgrade runai-cluster runai/runai-cluster -n runai --reuse-values
+    ```
