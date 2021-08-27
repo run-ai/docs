@@ -1,12 +1,12 @@
 
-# Uninstall Run:AI Backend 
+# Uninstall Run:AI 
 
 
-## Delete a Cluster
-To delete the cluster use: [../../runai-setup/cluster-setup/cluster-delete/](../../runai-setup/cluster-setup/cluster-delete/) 
+## Uninstall a Run:AI Cluster
+To uninstall the cluster see: [cluster delete](../../cluster-setup/cluster-delete.md) 
 
 
-## Uninstall Backend
+## Uninstall the Run:AI Backend
 
 To delete the backend, run:
 
@@ -15,11 +15,5 @@ helm delete runai-backend -n runai-backend
 
 ```
 
-For a full delete also delete namespace and images as follows:
-
-```
-kubectl delete ns runai-backend
-sudo docker rmi -f $(sudo docker images -a -q)
-```
 
 
