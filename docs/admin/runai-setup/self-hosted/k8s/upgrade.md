@@ -17,8 +17,9 @@ Run the helm command below. The purpose of the `--reuse-values` flag is to use t
 
 === "Airgapped"
     ```
-    helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
-        runai-backend  --reuse-values
+    helm get values runai-backend -n runai-backend > be-values.yaml
+    helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
+        runai-backend  -f be-values.yaml
     ```
     (replace `<version>` with the backend version)
 
@@ -26,8 +27,8 @@ Run the helm command below. The purpose of the `--reuse-values` flag is to use t
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm install runai-backend -n runai-backend runai-backend/runai-backend  \
-        --reuse-values
+    helm get values runai-backend -n runai-backend > be-values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f be-values.yaml 
     ```
 
 
@@ -38,7 +39,8 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
 
 === "Airgapped"
     ```
-    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz --reuse-values
+    helm get values runai-cluster -n runai > values.yaml
+    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
     ```
     (replace `<version>` with the cluster version)
 
@@ -46,5 +48,6 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
     ```
     kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
     helm repo update
-    helm upgrade runai-cluster runai/runai-cluster -n runai --reuse-values
+    helm get values runai-cluster -n runai > values.yaml
+    helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
     ```
