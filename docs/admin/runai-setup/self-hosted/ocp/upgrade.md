@@ -1,3 +1,3 @@
 # Upgrade Run:AI 
 
-See upgrade sectin [here](../k8s/upgrade.md)
+See upgrade section [here](../k8s/upgrade.md)
