@@ -13,7 +13,7 @@
 
 ## Upgrade Backend 
 
-Run the helm command below. The purpose of the `--reuse-values` flag is to use the same values as the original installation:
+Run the helm command below. 
 
 === "Airgapped"
     ```
