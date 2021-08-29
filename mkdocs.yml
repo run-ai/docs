@@ -249,3 +249,5 @@ nav:
       - 'Setup' : 'developer/inference/setup.md' 
       - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
       - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
+    - 'Metrics API' : 
+      - 'Metrics' : 'developer/metrics/metrics.md'
