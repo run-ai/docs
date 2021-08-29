@@ -20,8 +20,7 @@ Change the following properties in the values file:
 
 |  Replace |   With   | Description | 
 |----------|----------|-------------| 
-| `postgresql.persistence.nfs.server` | Set IP address for network file storage ||
-| `postgresql.persistence.nfs.path` | Set path to dedicated Run:AI installation folder on NFS | path should be pre-created and have full access rights |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
 ||||
 | __Optional:__ |
 | `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend administrator | 
@@ -30,9 +29,7 @@ Change the following properties in the values file:
  
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
 
----
-title: Self Hosted installation over OpenShift - Backend Setup
----
+
 ## Install Backend
 
 Run the helm command below:

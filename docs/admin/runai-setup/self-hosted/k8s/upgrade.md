@@ -1,4 +1,6 @@
-
+---
+title: Upgrade self-hosted Kubernetes installation
+---
 # Upgrade Run:AI 
 
 ## Preparations

@@ -63,10 +63,8 @@ You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-n
 * __Shared Storage__. Network address and a path to a folder in a Network File System
 * All Kubernetes cluster nodes should be able to mount NFS folders. Usually, this requires the installation of the `nfs-common` package on all machines (`sudo apt install nfs-common` or similar)
 * __IP Address__. An available, internal IP Address that is accessible from Run:AI Users' machines (referenced below as `<RUNAI_IP_ADDRESS>`)
-* __DNS entries__ Create 2 DNS A records, all pointing to `<RUNAI_IP_ADDRESS>`:
-    * Run:AI Admininstration UI: `runai.<company-name>` or similar
-    * Run:AI Researcher UI: `researcher.runai.<company-name>` or similar.
-* Create a __certificate__ for the 2 endpoints. The certificate(s) must be signed by the organization's root CA. 
+* __DNS entries__ Create a DNS A record such as `runai.<company-name>` or similar. The A record should point to `<RUNAI_IP_ADDRESS>` 
+* A __certificate__ for the endpoint. The certificate(s) must be signed by the organization's root CA. 
 
 ## Installer Machine
 

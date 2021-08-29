@@ -96,7 +96,21 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 ## How to Query Metrics
 
 === "SaaS" 
+
+Run:AI support will supply the customer with a base URL and an API Key. Then the customer can query the metrics you documented like this:
+
+curl "https://<<BASE_URL>>/api/datasources/proxy/<DATA-SOURCE>/api/v1/query?query=<<DESIRED QUERY>>" --header 'Accept: application/json' --header 'Authorization: Bearer <<API_KEY>>'
+
+For example, ,,,,,
+
     do this
 
 === "Self Hosted" 
     do that
+    browse to  runai.<COMPANY-NAME>/grafana
+    login as admin
+    Generate a key
+    get the data source number
+    .....
+    
+    runai.<COMPANY-NAME>/grafana ...... datasource=1  , .... API-KEY--- Instructions how to generate this

@@ -1,4 +1,6 @@
-
+---
+title: Uninstall self-hosted Kubernetes installation
+---
 # Uninstall Run:AI 
 
 

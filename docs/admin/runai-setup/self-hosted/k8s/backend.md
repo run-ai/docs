@@ -20,12 +20,10 @@ Change the following properties in the values file.
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
-| `postgresql.persistence.nfs.server` |  IP address for network file storage ||
-| `postgresql.persistence.nfs.path` |  Path to dedicated Run:AI installation folder on NFS | Folder should be pre-created and have full access rights |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
 | `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
 ||||
 | __Optional:__ |
-| `backend.researcher-service.url` | Replace`researcher.run.ai` with  `researcher.runai.<company-name>` | URL to the Researcher User Interface  |  
 | `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
@@ -34,9 +32,6 @@ Change the following properties in the values file.
 |<img width=1300/>|||
 
 
----
-title: Self Hosted installation over Kubernetes - Backend Setup
----
 
 ## Install Backend
 

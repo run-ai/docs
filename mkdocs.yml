@@ -132,6 +132,7 @@ nav:
           - 'Create Run:AI Projects' : 'admin/runai-setup/self-hosted/ocp/project-management.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
+        - 'Disaster Recovery' : 'admin/runai-setup/self-hosted/dr.md'
     #    - 'Airgapped Kubernetes' : 'k8s.md'
       - 'Advanced' : 
         # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
