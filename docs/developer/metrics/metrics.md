@@ -108,7 +108,7 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 Use the Run:AI metrics documentation above together with Prometheus API syntax to access data. Example: 
    
 ``` bash
-curl "https://<BASE-METRICS-URL>/api/datasources/proxy/<DATASOURCE-ID>/api/v1/query?query=runai_gpus_is_running_with_pod2" \
+curl "https://<BASE-METRICS-URL>/api/datasources/proxy/<DATASOURCE-ID>/api/v1/query?query=runai_job_total_runtime" \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <GRAFANA-API_KEY>'
 ```    
