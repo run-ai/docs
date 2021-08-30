@@ -28,5 +28,12 @@ To get support use the following channels:
 
 * On the bottom right of this page, use the _Help_ widget.
 
+## Collecting Logs to Send to Support
 
+As an IT Administrator, you can collect Run:AI logs to send to support:
 
+* Install the [Run:AI Administration command-line interface](admin/runai-setup/advanced/cli-admin-install.md).
+* Using a machine with access to the cluster run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:AI logs files.
+
+!!! Note
+    The file includes logs of Run:AI components. It does __not__ include logs of researcher containers that may contain private information. 
