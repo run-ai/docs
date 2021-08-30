@@ -4,7 +4,7 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 ## Customize Installation
 
 * Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
-* (Optional) make the following changes to the configuration file you have downloaded:
+* __(Optional)__ make the following changes to the configuration file you have downloaded:
 
 
 |  Key     |  Default  | Description |

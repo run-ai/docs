@@ -18,7 +18,7 @@ Alternatives:
 
 ### Metrics
 
-Run:AI stores metric history using _Promethues_, By default, the Run:AI installation today does not provide permanent storage solution for Prometheus. Until this is fixed, modify the Prometheus installation to store data on a persistent volume and back up the volume. For further information see [Prometheus storage](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md){target=_blank}.
+Run:AI stores metric history using _Promethues_, By default, the Run:AI installation today does not provide a permanent storage solution for Prometheus. Until this is fixed, modify the Prometheus installation to store data on a persistent volume and back up the volume. For further information see [Prometheus storage](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md){target=_blank}.
 
 
 ### Additional Configuration
@@ -35,7 +35,7 @@ To recover Run:AI
 * Recover the persistent volumes for metrics and database. 
 * Re-install the Run:AI backend. Use the stored values file. If needed, modify the values file to connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
 * Re-install the cluster. Use the stored values file or download a new file from the Administration UI. 
-* If cluster is configured such that Projects do not create namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [kubernetes](k8s/project-management.md) or [OpenShift](ocp/project-management.md).
+* If the cluster is configured such that Projects do not create namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [kubernetes](k8s/project-management.md) or [OpenShift](ocp/project-management.md).
 
 
 

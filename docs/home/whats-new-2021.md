@@ -1,5 +1,22 @@
 
-<!-- Show the original Run:AI Command line  -->
+
+
+## August 30<sup>th</sup> 2021
+
+Run:AI now supports a self-hosted installation. With the self-hosted installation the Run:AI control-plane (or _backend_) which typically resides on the cloud, is deployed at the customer's data center. For further details on  supported installation types see [Installation Types](../admin/runai-setup/installation-types.md).
+
+!!! Note
+    The Run:AI self-hosted installation requires a dedicated license, and has different pricing than the SaaS installation. For more details contact your Run:AI account manager.
+
+NFS volumes can now be mounted directly to containers run by Run:AI while submitting jobs via Run:AI. See the `--nfs-server` flag of [runai submit](../Researcher/cli-reference/runai-submit.md).
+
+To ease the manageability of user templates, Run:AI now supports _global user templates_. Global user templates are user templates that are managed by the Run:AI administrator and are available for all the projects within a specific cluster. The purpose of global user templates is to help define and enforce cross-organization resource policies.
+
+To simplify researchers' job submission via the Run:AI Researcher User Interface (UI), the UI now supports autocomplete, which is based on pre-defined values, as configured by the Administrator using the administrative templates.
+
+Run:AI extended the usage of Cluster name, as defined by the Administrator while configuring clusters at Run:AI. The Cluster name is now populated to the Run:AI dashboards as well as the Researcher UI.
+
+The original command line, which was used for running a Job, is now shown under the Job details under the _General_ tab.
 ## August 4<sup>th</sup> 2021
 
 Researcher User Interface (UI) enhancements:
