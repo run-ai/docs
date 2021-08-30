@@ -28,7 +28,7 @@ To get support use the following channels:
 
 * On the bottom right of this page, use the _Help_ widget.
 
-## Collecting Logs to Send to Support
+## Collect Logs to Send to Support
 
 As an IT Administrator, you can collect Run:AI logs to send to support:
 
