@@ -41,7 +41,7 @@ Run:AI Projects are implemented as Kubernetes namespaces. Run:AI now supports cu
 
 ## May 10<sup>th</sup> 2021
  
-Usability improvements of runai cli. The cli now supports autocomplete for all options and parameters.
+Usability improvements of Run:AI Command-line interface (CLI). The CLI now supports autocomplete for all options and parameters.
  
 Usability improvements of the Administration user interface navigation menu now allow for easier navigation.
  

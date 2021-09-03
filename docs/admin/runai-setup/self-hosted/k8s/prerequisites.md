@@ -17,7 +17,7 @@ Follow the Hardware requirements [here](../../../cluster-setup/cluster-prerequis
 
 ## Kubernetes
 
-Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.20 is recommended (as of April 2021).
+Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.21 is recommended (as of September 2021). Kubernetes 1.22 is not yet supported. 
 
 If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../ocp/prerequisites.md). 
 
@@ -63,7 +63,7 @@ You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-n
 * __Shared Storage__. Network address and a path to a folder in a Network File System
 * All Kubernetes cluster nodes should be able to mount NFS folders. Usually, this requires the installation of the `nfs-common` package on all machines (`sudo apt install nfs-common` or similar)
 * __IP Address__. An available, internal IP Address that is accessible from Run:AI Users' machines (referenced below as `<RUNAI_IP_ADDRESS>`)
-* __DNS entries__ Create a DNS A record such as `runai.<company-name>` or similar. The A record should point to `<RUNAI_IP_ADDRESS>` 
+* __DNS entry__ Create a DNS A record such as `runai.<company-name>` or similar. The A record should point to `<RUNAI_IP_ADDRESS>` 
 * A __certificate__ for the endpoint. The certificate(s) must be signed by the organization's root CA. 
 
 ## Installer Machine
