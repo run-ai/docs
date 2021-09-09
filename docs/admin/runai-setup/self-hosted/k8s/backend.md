@@ -28,7 +28,6 @@ Change the following properties in the values file.
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend administrator | 
-| `backend.initTenant.users` | Change password for test@run.ai | This user is the first cluster user | 
 |<img width=1300/>|||
 
 
