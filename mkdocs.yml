@@ -118,7 +118,7 @@ nav:
           - 'Preperations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
           - 'Install Backend' : 'admin/runai-setup/self-hosted/k8s/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/k8s/cluster.md'
-          - 'Open the UIs' : 'admin/runai-setup/self-hosted/k8s/ui.md'
+          - 'Configure Web Interfaces' : 'admin/runai-setup/self-hosted/k8s/ui.md'
           - 'Create Run:AI Projects' : 'admin/runai-setup/self-hosted/k8s/project-management.md'
           - 'Authentication' : 'admin/runai-setup/self-hosted/k8s/researcher-authentication.md'
 #          - 'LDAP Integration' : 'admin/runai-setup/self-hosted/k8s/ldap-integration.md'
