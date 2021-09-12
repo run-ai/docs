@@ -252,13 +252,21 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
 
---volume stringArray | -v stringArray
->  Volume to mount into the container.  If the volume is not mounted on the host, you must provide an NFS server using the flag --nfs-server.
+--volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
+>  Volumes to mount into the container.  
+>  
+> Examples:
 > 
->  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+> `-v /raid/public/john/data:/root/data:ro` 
+> Mount /root/data to local path /raid/public/john/data for read-only access.
+>
+> `-v /public/data:/root/data::rs_nfs`
+> Mount /root/data to NFS path /public/data on NFS server rs_nfs for read-write access.
 
 --nfs-server string
->  Mount volumes from this server. Use in conjunction with the -v flag.
+> Use this flag to specify defult NFS host for --volume flag.
+> Alternatively, you can specify NFS host for each volume 
+> individually (see --volume for details).
 
 ### Network
 
