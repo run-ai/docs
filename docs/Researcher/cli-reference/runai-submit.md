@@ -137,7 +137,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
 
---job-name-prefix
+--job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:AI will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
 
 ### Container Related
