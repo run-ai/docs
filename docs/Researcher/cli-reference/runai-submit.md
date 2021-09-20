@@ -147,36 +147,38 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag but may incur a penalty of performance degradation on Job start. 
 
 --attach                        
->  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
-
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
+> 
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
 --command
 >  If set, overrides the image's entry point with the command supplied after '--'
-
->  Example: `--command -- python script.py 10000` 
+>
+>  Example: 
+> > `--command -- python script.py 10000` 
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
 <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
 
 --git-sync string
-> Clone a git repository into the container running the job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
- 
+> Clone a git repository into the container running the job. The parameter should follow the syntax:
+> > `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
+>
 > Note that source=REPOSITORY is the only mandatory field
-
+ 
 --image string | -i string
 >  Image to use when creating the container for this Job
 
 --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
-
+>
 > - `always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
-
+>
 > - `ifNotPresent`: the image is pulled only if it is not already present locally.
-
+>
 > - `never`: the image is assumed to exist locally. No attempt is made to pull the image.
-
+>
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
 --local-image (deprecated)
@@ -230,35 +232,42 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Mount a persistent volume claim of Network Attached Storage into a container.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
-
+>
 > __Storage_Class_Name__ is a storage class name that can be obtained by running `kubectl get storageclasses.storage.k8s.io`. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
-
+>
 >    __Size__ is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
-
+>
 >    __Container_Mount_Path__. A path internal to the container where the storage will be mounted
-
+>
 >    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic){target=_blank} to mount into the container
 > 
 > Examples:
-
-> `--pvc :3Gi:/tmp/john:ro`  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
-
-> `--pvc my-storage:3Gi:/tmp/john:ro`  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
-
-> `--pvc :3Gi:/tmp/john` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
-
-> `--pvc my-pvc:/tmp/john` - Use a Persistent Volume Claim named `my-pvc`. Mount it to `/tmp/john` as read-write 
-
-> `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
-
-
---volume stringArray | -v stringArray
->  Volume to mount into the container.  If the volume is not mounted on the host, you must provide an NFS server using the flag --nfs-server.
 > 
->  Syntax: `-v /host/path:/local/path:<access>`. Example `-v /raid/public/john/data:/root/data:ro` The flag may optionally be suffixed with `:ro` or `:rw` to mount the volumes in read-only or read-write mode, respectively.
+> > `--pvc :3Gi:/tmp/john:ro`  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
+> 
+> > `--pvc my-storage:3Gi:/tmp/john:ro`  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
+>
+> > `--pvc :3Gi:/tmp/john` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
+>
+> > `--pvc my-pvc:/tmp/john` - Use a Persistent Volume Claim named `my-pvc`. Mount it to `/tmp/john` as read-write 
+>
+> > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
+
+--volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
+>  Volumes to mount into the container.  
+>  
+> Examples:
+> 
+> > `-v /raid/public/john/data:/root/data:ro` 
+> Mount /root/data to local path /raid/public/john/data for read-only access.
+>
+> > `-v /public/data:/root/data::rs_nfs`
+> Mount /root/data to NFS path /public/data on NFS server rs_nfs for read-write access.
 
 --nfs-server string
->  Mount volumes from this server. Use in conjunction with the -v flag.
+> Use this flag to specify defult NFS host for --volume flag.
+> Alternatively, you can specify NFS host for each volume 
+> individually (see --volume for details).
 
 ### Network
 
@@ -277,15 +286,25 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 --port stringArray
 >  Expose ports from the Job container. Used together with `--service-type`.  
+>
 >  Examples:  
->    `--port 8080:80 --service-type loadbalancer`
-
->    `--port 8080 --service-type ingress`
+>>    `--port 8080:80 --service-type loadbalancer`
+>>    `--port 8080 --service-type ingress`
 
 --service-type string | -s string
 >  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`, ingress.
 >  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structures.
 
+--address string              
+> Comma separated list of IP addresses to listen to when running interactive job 
+> with portforward service type (default is localhost).
+>
+> Example:
+> 
+> >   `--interactive --service-type portforward --address "localhost,192.168.1.2" --port 8888:5555`
+>
+> Any traffic on port 8888 of both localhost and 192.168.1.2 will be forwarded
+> to port 5555 of the running job.
 
 ### Job Lifecycle
 
