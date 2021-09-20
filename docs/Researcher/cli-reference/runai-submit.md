@@ -261,8 +261,8 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > > `-v /raid/public/john/data:/root/data:ro` 
 > Mount /root/data to local path /raid/public/john/data for read-only access.
 >
-> > `-v /public/data:/root/data::rs_nfs`
-> Mount /root/data to NFS path /public/data on NFS server rs_nfs for read-write access.
+> > `-v /public/data:/root/data::nfs.example.com`
+> Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
 --nfs-server string
 > Use this flag to specify defult NFS host for --volume flag.
