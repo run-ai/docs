@@ -79,7 +79,7 @@ __Analysis and Suggested actions__:
 | Cluster is fully loaded | Go over the table of active Projects and check that fairness between Projects was enforced, by reviewing the number of allocated GPUs for each Project, ensuring each Project was allocated with its fair-share portion of the cluster. |
 | Cluster is not fully loaded | Go to the Jobs view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
-Also, check the command that the user used to submit the job. The Reseracher may have requested a specific Node for that Job.
+Also, check the command that the user used to submit the job. The Researcher may have requested a specific Node for that Job.
 
 
 ## Analytics Dashboard
@@ -119,7 +119,7 @@ The panel on the right-hand side shows the cluster-wide GPU allocation and utili
 
 __Analysis and Suggested actions__:
 
-If the allocation is too low for a long period of time, work with users to run more workloads and to better utilize the Cluster.
+If the allocation is too low for a long period, work with users to run more workloads and to better utilize the Cluster.
 
 
 ### Track GPU utilization
