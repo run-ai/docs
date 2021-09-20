@@ -12,7 +12,7 @@ Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container
 
 | Method | Description | Prerequisites |
 |--------|-------------|---------------|
-| Port Forwarding | Simple port forwarding allows access to the container via localhost | None |
+| Port Forwarding | Simple port forwarding allows access to the container via local and/or remote port. | None |
 | NodePort | Exposes the service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service from outside the cluster by requesting `<NODE-IP>:<NODE-PORT>` regardless of which node the container actually resides in. | None |  
 | LoadBalancer | Exposes the service externally using a cloud provider’s load balancer. | Only available with cloud providers | 
 | Ingress |  Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. | Requires an Ingress controller to be installed. See below | 

@@ -39,6 +39,7 @@ runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \
 *   Note the _interactive_ flag which means the Job will not have a start or end. It is the Researcher's responsibility to close the Job.  
 *   The Job is assigned to team-a with an allocation of a single GPU.
 *   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the ``runai submit`` command is not stopped
+*   It is possible to forward traffic from multiple IP addresses by using the "--address" parameter. Check the CLI reference for further details. 
 
 ### Open the Jupyter notebook
 
