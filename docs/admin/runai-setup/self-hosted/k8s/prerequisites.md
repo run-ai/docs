@@ -17,7 +17,7 @@ Follow the Hardware requirements [here](../../../cluster-setup/cluster-prerequis
 
 ## Kubernetes
 
-Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.21 is recommended (as of September 2021). Kubernetes 1.22 is not yet supported. 
+Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of September 2021). Kubernetes 1.22 is __not__ supported. 
 
 If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../ocp/prerequisites.md). 
 

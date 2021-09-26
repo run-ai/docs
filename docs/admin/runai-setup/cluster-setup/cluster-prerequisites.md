@@ -5,9 +5,9 @@ Below are the prerequisites of a cluster installed with Run:AI.
 
 ### Kubernetes
 
-Run:AI requires Kubernetes 1.16 or above. Kubernetes 1.21 is recommended (as of July 2021).
+Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of July 2021). Kubernetes 1.22 is __not__ supported.
 
-If you are using RedHat OpenShift. The minimal version is OpenShift 4.3.
+If you are using RedHat OpenShift. The minimal version is OpenShift 4.6. OpenShift 4.9 is not supported.
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 

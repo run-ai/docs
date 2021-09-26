@@ -18,7 +18,7 @@ Follow the Hardware requirements [here](../../../cluster-setup/cluster-prerequis
 
 ## OpenShift 
 
-Run:AI requires OpenShift 4.3 or later. 
+Run:AI requires OpenShift 4.6 or later. OpenShift 4.9 is not yet supported 
 
 
 !!! Important
