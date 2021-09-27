@@ -153,6 +153,7 @@ The metrics show up in the Job list of the user interface. To add a metric to th
 *   Go to Jobs list: [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
 *   On the top right, use the settings wheel and select the metrics you have added
 
+![mceclip0.png](img/mceclip0.png)
 
 ## Trying it out with Quickstart
 
@@ -164,4 +165,4 @@ Specifically, run:
 runai submit -g 1 -i gcr.io/run-ai-demo/quickstart -e RUNAI_REPORT=1
 ```
 
-![mceclip0.png](img/mceclip0.png)
+
