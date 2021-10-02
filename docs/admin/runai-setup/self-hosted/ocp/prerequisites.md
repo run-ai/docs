@@ -40,9 +40,8 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
 
 ## Other
 
-* __Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-* __Shared Storage__. Network address and a path to a folder in a Network File System.
-* All Kubernetes cluster nodes should be able to mount NFS folders. Usually, this requires the installation of the `nfs-common` package on all machines (`sudo apt install nfs-common` or similar)
+* (Airgapped installation only) __Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+
 
 ## Installer Machine
 
