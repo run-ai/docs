@@ -405,7 +405,7 @@ ports:
     autoGenerate: false
 ```
 
-### Using Shell Variables
+### Using Shell Variables in Templates
 
 It is possible to add shell variables to administrative templates. The shell variable will be evaluated at Job creation time. For example:  
 
