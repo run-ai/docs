@@ -416,11 +416,11 @@ environment:
     value:
       MYUSER: $USER
 ```
-The container created will have an environment variable called `MYUSER` with the value of the linux `$USER` variable in the running host machine. 
+The container created will have an environment variable called `MYUSER` with the value of the linux `$USER` variable as defined in the running host machine. 
 
 ### Using Secrets in Templates
 
-It is possible to add values from Kuberenetes secret to administrative templates. The secret will be extracted when the Job is created. For example:  
+It is possible to add values from Kuberenetes secrets to administrative templates. The secret will be extracted from the secret object when the Job is created. For example:  
 
 
 ``` YAML
