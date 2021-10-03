@@ -21,6 +21,7 @@ All Templates (administrative and user templates) are implemented as Kubernetes 
 ### Creating your First Administrative Template 
 
 There are two available administrative templates: 
+
 * An administrative template for interactive Jobs
 * An administrative template for training Jobs
 
@@ -403,6 +404,37 @@ ports:
     external: 4500
     autoGenerate: false
 ```
+
+### Using Shell Variables
+
+It is possible to add shell variables to administrative templates. The shell variable will be evaluated at Job creation time. For example:  
+
+``` YAML
+environment:
+  editable: true
+  default:
+    value:
+      MYUSER: $USER
+```
+The container created will have an environment variable called `MYUSER` with the value of the linux `$USER` variable in the running host machine. 
+
+### Using Secrets in Templates
+
+It is possible to add values from Kuberenetes secret to administrative templates. The secret will be extracted when the Job is created. For example:  
+
+
+``` YAML
+environment:
+  editable: true
+  default:
+    value:
+      MYPASSWORD: "SECRET:my-secret,password"
+```
+
+When submitting the job under Project `team-a` the container created will have an environment variable called `MYPASSWORD` whose value is the key `password` residing in Kubernetes secret `my-secret` which has been pre-created in namespace `team-a`. 
+
+!!! Note
+    Run:AI provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../use-secrets/#secrets-and-projects)
 
 ### Fields and Defaults
 

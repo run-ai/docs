@@ -37,15 +37,13 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
     No additional work needs to be performed. We will use the _Red Hat Certified Operator Catalog (Operator Hub)_ during the installation. 
 
 
-
-## Other
-
-* (Airgapped installation only) __Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-
-
 ## Installer Machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
 
 * At least 50GB of free space.
 * Docker installed.
+
+## Other
+
+* (Airgapped installation only) __Private Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 

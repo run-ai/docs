@@ -53,11 +53,6 @@ The Run:AI Cluster installation installs Kubernetes [Node Feature Discovery (NFD
 You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=_blank}, as an alternative to the NVIDIA CUDA Toolkit. However, Run:AI uses its own version of one of the NVIDIA GPU Operator components called [NVIDIA device plug-in](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. There are special instructions on how to disable the default NVIDIA device plug-in. Please contact Run:AI Customer Support.  -->
 
 
-### Other
-
-* (Airgapped installation only) __Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-* (Optional) __SAML Integration__. 
-
 ## Network
 
 * __Shared Storage__. Network address and a path to a folder in a Network File System
@@ -72,3 +67,9 @@ The machine running the installation script (typically the Kubernetes master) mu
 
 * At least 50GB of free space.
 * Docker installed.
+
+
+## Other
+
+* (Airgapped installation only)  __Private Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+* (Optional) __SAML Integration__. 
