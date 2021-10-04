@@ -63,8 +63,8 @@ EOF
 # openssl req -new -key ssl/key.pem -out ssl/csr.pem -subj "/CN=kube-ca" -config ssl/req.cnf
 
 openssl genrsa -out ssl/ca-key.pem 2048
-openssl req -x509 -new -nodes -key ssl/ca-key.pem -days 10 -out ssl/ca.pem -subj "/CN=domain-name"
+openssl req -x509 -new -nodes -key ssl/ca-key.pem -days 365 -out ssl/ca.pem -subj "/CN=domain-name"
 
 openssl genrsa -out ssl/key.pem 2048
 openssl req -new -key ssl/key.pem -out ssl/csr.pem -subj "/CN=domain-name" -config ssl/req.cnf
-openssl x509 -req -in ssl/csr.pem -CA ssl/ca.pem -CAkey ssl/ca-key.pem -CAcreateserial -out ssl/cert.pem -days 10 -extensions req_ext -extfile ssl/req.cnf
+openssl x509 -req -in ssl/csr.pem -CA ssl/ca.pem -CAkey ssl/ca-key.pem -CAcreateserial -out ssl/cert.pem -days 365 -extensions req_ext -extfile ssl/req.cnf
