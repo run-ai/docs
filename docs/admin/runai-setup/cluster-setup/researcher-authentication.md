@@ -114,10 +114,10 @@ Edit the document to add the following parameters at the end of the existing com
 
 ## Test
 
-* Submit a Job.
+* Run: `runai login`
 * You will be prompted for a username and password. 
+* Once login is successful, submit a Job.
 * If the Job was submitted with a Project for which you have no access, your access will be denied. 
 * If the Job was submitted with a Project for which you have access, your access will be granted.
-* Existing Jobs in Projects you do __not__ have access to, will show when you run `runai job list -p <project-name>` but you will not be able to view logs, get further info, bash into or delete. 
 
  

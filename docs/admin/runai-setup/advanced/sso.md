@@ -18,3 +18,8 @@ Once you press `Save` all existing users will be rendered non-functional, and th
 
 
 ## OAuth
+
+## Special mapping: UID & GID, Supplementary Groups.
+
+
+## Mapping Roles to LDAP Groups
