@@ -1,24 +1,32 @@
 #!/bin/bash
 
-mkdir -p ssl
+echo "Generating TLS files for $1"
 
-# cat << EOF > ssl/req.cnf
+mkdir -p ssl
+ssl_folder_name="ssl/$1"
+mkdir -p $ssl_folder_name
+rm -rf $ssl_folder_name
+mkdir $ssl_folder_name
+
+echo "Generating TLS files in $ssl_folder_name"
+
+# cat << EOF > $ssl_folder_name/req.cnf
 # [req]
 # req_extensions = v3_req
 # distinguished_name = req_distinguished_name
 # [req_distinguished_name]
-#
+# 
 # [ v3_req ]
 # basicConstraints = CA:TRUE
 # keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 # subjectAltName = @alt_names
-#
+# 
 # [alt_names]
-# DNS.1 = domain-name
+# DNS.1 = $1
 # EOF
 
 
-cat << EOF > ssl/req.cnf
+cat << EOF > $ssl_folder_name/req.cnf
 [req]
 default_bits           = 2048
 default_md             = sha256
@@ -35,7 +43,7 @@ L                      = New York City
 O                      = Liberty Island
 OU                     = UNATCO Headquarters
 emailAddress           = user@example.com
-CN                     = domain-name
+CN                     = $1
 
 [ req_ext ]
 subjectKeyIdentifier   = hash
@@ -55,16 +63,16 @@ subjectAltName         = @alternate_names
 nsComment              = "Self-Signed SSL Certificate"
 
 [ alternate_names ]
-DNS.1                  = domain-name
+DNS.1                  = $1
 EOF
 
 # openssl req -config openssl.cnf -new -sha256 -newkey rsa:2048 -nodes -keyout private.key  -x509 -days 825 -out certificate.crt
-# openssl req -config ssl/req.cnf -new -key ssl/key.pem -out ssl/csr.pem
-# openssl req -new -key ssl/key.pem -out ssl/csr.pem -subj "/CN=kube-ca" -config ssl/req.cnf
+# openssl req -config $ssl_folder_name/req.cnf -new -key $ssl_folder_name/key.pem -out $ssl_folder_name/csr.pem 
+# openssl req -new -key $ssl_folder_name/key.pem -out $ssl_folder_name/csr.pem -subj "/CN=kube-ca" -config $ssl_folder_name/req.cnf
 
-openssl genrsa -out ssl/ca-key.pem 2048
-openssl req -x509 -new -nodes -key ssl/ca-key.pem -days 10 -out ssl/ca.pem -subj "/CN=domain-name"
+openssl genrsa -out $ssl_folder_name/ca-key.pem 2048
+openssl req -x509 -new -nodes -key $ssl_folder_name/ca-key.pem -days 365 -out $ssl_folder_name/ca.pem -subj "/CN=$1"
 
-openssl genrsa -out ssl/key.pem 2048
-openssl req -new -key ssl/key.pem -out ssl/csr.pem -subj "/CN=domain-name" -config ssl/req.cnf
-openssl x509 -req -in ssl/csr.pem -CA ssl/ca.pem -CAkey ssl/ca-key.pem -CAcreateserial -out ssl/cert.pem -days 10 -extensions req_ext -extfile ssl/req.cnf
+openssl genrsa -out $ssl_folder_name/key.pem 2048
+openssl req -new -key $ssl_folder_name/key.pem -out $ssl_folder_name/csr.pem -subj "/CN=$1" -config $ssl_folder_name/req.cnf
+openssl x509 -req -in $ssl_folder_name/csr.pem -CA $ssl_folder_name/ca.pem -CAkey $ssl_folder_name/ca-key.pem -CAcreateserial -out $ssl_folder_name/cert.pem -days 365 -extensions req_ext -extfile $ssl_folder_name/req.cnf
