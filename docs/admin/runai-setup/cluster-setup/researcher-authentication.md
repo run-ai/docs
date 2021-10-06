@@ -45,9 +45,9 @@ Assign Researchers to Projects:
 
 ## Client-Side
 
-To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes certificate. The certificate is distributed to users as part of the [Comnand-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
+To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
 
-When making changes to the certificate, keep a copy of the original certificate to be used for cluster administration. After making the modifications, distribute the modified certificate to Researchers. 
+When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
 Under the `~/.kube` directory edit the `config` file, and add the following:
 
