@@ -24,6 +24,10 @@ With [Hyperparameter Optimization](../Walkthroughs/walkthrough-hpo.md), experime
 
 Run:AI provides an environment variable, visible inside the container, to help identify the number of GPUs allocated for the container. Use `RUNAI_NUM_OF_GPUS`
 
+## Node Name
+
+There may be use cases where your container may need to identify the node it is currently running on. Run:AI provides an environment variable, visible inside the container, to help identify the name of the node on which the pod was scheduled. Use `NODE_NAME`
+
 
 ## Usage Example in Python
 
