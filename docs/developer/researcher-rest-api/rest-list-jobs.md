@@ -51,10 +51,10 @@ Job:
 
 ```
 
-* `status` will have the values: "Pending", "Running", "Succeeded", "Failed" or "Unknown".
+* `status` will have the values: "Pending", "Running", "Succeeded", "Failed", or "Unknown".
 * `type` will have the values: "Train" or "Interactive".
 * `createdAt` Job Creation time in a UNIX timestamp format (in milliseconds).
-* `nodes` shows the one or more nodes on which the Job is running.
+* `nodes` shows the one or more nodes on which the job is running.
 
 ## Example
 
