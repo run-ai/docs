@@ -11,7 +11,7 @@ The Run:AI documentation is targeting three personas:
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
-## Example Docker Images
+## Example Code
 
 Code for the Docker images referred to in these docs is available [here](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
 
@@ -22,8 +22,6 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On our website at [https://run.ai](https://run.ai){target=_blank}, under 'Support' use the support form.
-
 * On the bottom right of the Administrator user interface [https://app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
 
 * On the bottom right of this page, use the _Help_ widget.
@@ -32,8 +30,8 @@ To get support use the following channels:
 
 As an IT Administrator, you can collect Run:AI logs to send to support:
 
-* Install the [Run:AI Administration command-line interface](admin/runai-setup/advanced/cli-admin-install.md).
-* Using a machine with access to the cluster run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:AI logs files.
+* Install the [Run:AI Administrator command-line interface](admin/runai-setup/advanced/cli-admin-install.md).
+* Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:AI logs files.
 
 !!! Note
     The file includes logs of Run:AI components. It does __not__ include logs of researcher containers that may contain private information. 
