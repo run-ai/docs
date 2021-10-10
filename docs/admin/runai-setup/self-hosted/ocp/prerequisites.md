@@ -9,7 +9,7 @@ Before proceeding with this document, please review the [installation types](../
 
 * 4 CPUs
 * 8GB of RAM
-* 100GB of Disk space
+* 120GB of Disk space
 
 (Production only) Run:AI requires a Kubernetes Persistent Volume of 110GB. This is typically done via network file storage. 
 
