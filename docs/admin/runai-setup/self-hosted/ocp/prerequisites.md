@@ -5,7 +5,13 @@ title: Self Hosted installation over OpenShift - Prerequisites
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 ## Hardware Requirements
 
-Follow the Hardware requirements [here](../../../cluster-setup/cluster-prerequisites/#hardware-requirements).
+(Production only) Run:AI System Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain two or more worker machines, designated for Run:AI Software. The nodes do not have to be dedicated to Run:AI, but for Run:AI purposes we would need:
+
+* 4 CPUs
+* 8GB of RAM
+* 100GB of Disk space
+
+(Production only) Run:AI requires a Kubernetes Persistent Volume of 110GB. This is typically done via network file storage. 
 
 ## Run:AI Software Prerequisites
 
