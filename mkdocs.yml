@@ -11,7 +11,7 @@ theme:
   custom_dir: overrides
   language: en
   favicon: images/favicon.ico
-  logo: images/runai-logo2.svg
+  logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
     - navigation.tabs
 extra_css:
@@ -68,7 +68,7 @@ plugins:
         'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/advanced/node-roles.md'
         'Administrator/Cluster-Setup/non-root-containers.md' : 'admin/runai-setup/advanced/non-root-containers.md'
         'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/nvidia.md'
-        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
+#        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
         'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/cluster-setup/researcher-authentication.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
         'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
@@ -94,6 +94,7 @@ nav:
     - 'System Components' : 'home/components.md'
     - 'Whats New 2021' : 'home/whats-new-2021.md'
     - 'Whats New 2020' : 'home/whats-new-2020.md'
+    - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:AI Setup' : 
@@ -113,7 +114,6 @@ nav:
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
-#          - 'Overview' : 'admin/runai-setup/self-hosted/k8s/overview.md'
           - 'Prerequisites' : 'admin/runai-setup/self-hosted/k8s/prerequisites.md'
           - 'Preperations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
           - 'Install Backend' : 'admin/runai-setup/self-hosted/k8s/backend.md'

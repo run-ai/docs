@@ -131,7 +131,7 @@ kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to set up an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
+* If you need to set up an internet proxy or certificate, please contact Run:AI customer support. 
 
 
 __Machine Clocks are not synced__
@@ -162,7 +162,7 @@ See if the agent is in _Running_ state. Select the agent's full name and run:
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to setup an internet proxy or certificate, review: [Installing Run:AI with an Internet Proxy Server](proxy-server.md)
+* If you need to setup an internet proxy or certificate, please contact Run:AI customer support. 
 
 
 ## Symptom: Cluster Installation failed on Rancher-based Kubernetes (RKE)

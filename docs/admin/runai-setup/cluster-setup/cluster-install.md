@@ -25,11 +25,10 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 There are two alternatives for installing NVIDIA prerequisites:
 
-1. Use the _NVIDIA GPU Operator on Kubernetes_. To install the NVIDIA GPU Operator use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank}.
-2. Install the _NVIDIA CUDA Toolkit_ and _NVIDIA Docker_ on __each node with GPUs__. See [NVIDIA Drivers installation](nvidia.md) for details.
+1. Install the _NVIDIA CUDA Toolkit_ and _NVIDIA Docker_ on __each node with GPUs__. See [NVIDIA Drivers installation](nvidia.md) for details.
+2. Install the _NVIDIA GPU Operator on Kubernetes_ once. To install, use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank}. Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes. 
 
 !!! Important
-    * The options are mutually exclusive. If the NVIDIA CUDA toolkit is installed, you will not be able to install the NVIDIA GPU Operator. 
     * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
     * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with option 1: the GPU Operator version 1.8 or higher. 
 
