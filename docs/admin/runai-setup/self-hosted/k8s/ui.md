@@ -7,7 +7,7 @@ Run:AI has two (web-based) User Interfaces: The Administration user interface an
 Browse to `https://runai.<company-name>`, enter user `test@run.ai` and password `password`. Change the password under the __Permissions__ area. 
 
 
-## Resarcher User Interface
+## Researcher User Interface
 
 * Enable Researcher Authentication. The [server-side](../researcher-authentication/#server-side) configuration is mandatory in this context.
 * If you have set a self-signed certificate in the [backend](backend.md) installation, you must provide Kubernetes with the root-ca certificate. 
