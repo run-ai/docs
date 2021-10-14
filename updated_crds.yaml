@@ -54,6 +54,7 @@ spec:
       storage: true
       schema:
         openAPIV3Schema:
+          x-kubernetes-preserve-unknown-fields: true
           properties:
             apiVersion:
               type: string
@@ -74,6 +75,16 @@ spec:
                 maxAllowedGpus:
                   format: float
                   type: number
+                permissions:
+                  type: object
+                    users:
+                      items:
+                        type: string
+                      type: array
+                    groups:
+                      items:
+                        type: string
+                      type: array
                 interactiveJobTimeLimitSecs:
                   format: int64
                   type: integer
