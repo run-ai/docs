@@ -1,7 +1,7 @@
 
 # Planning for Disaster Recovery
 
-The SaaS version of Run:AI moves the bulk of the burden of disaster recovery to Run:AI. With the a __self-hosted__ version, it is the responsibility of IT to prepare for possible disasters. 
+The SaaS version of Run:AI moves the bulk of the burden of disaster recovery to Run:AI. With the __self-hosted__ version, it is the responsibility of IT to prepare for possible disasters. 
 
 The purpose of this document is to detail the required preparations to recover.
 
@@ -18,8 +18,7 @@ Alternatives:
 
 ### Metrics
 
-Run:AI stores metric history using _Promethues_, By default, the Run:AI installation today does not provide a permanent storage solution for Prometheus. Until this is fixed, modify the Prometheus installation to store data on a persistent volume and back up the volume. For further information see [Prometheus storage](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md){target=_blank}.
-
+Run:AI stores metric history using [Thanos](https://github.com/thanos-io/thanos){target=_blank}. Thanos is configured to store data on a persistent volume. The recommendation is to back up the PV.
 
 ### Additional Configuration
 
