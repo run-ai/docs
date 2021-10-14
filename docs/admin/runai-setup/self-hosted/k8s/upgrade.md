@@ -48,7 +48,7 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
 
 === "Connected"
     ```
-    kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
+    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/runai-crds.yaml
     helm repo update
     helm get values runai-cluster -n runai > values.yaml
     helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
