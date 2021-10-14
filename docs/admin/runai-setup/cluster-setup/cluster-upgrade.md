@@ -15,7 +15,7 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 Run:
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/updated_crds.yaml
+kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/runai-crds.yaml
 helm repo update
 helm get values runai-cluster -n runai > values.yaml
 helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
