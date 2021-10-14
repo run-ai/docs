@@ -208,6 +208,8 @@ spec:
               type: object
             spec:
               properties:
+                department:
+                  type: string
                 deservedGpus:
                   format: float
                   type: number
