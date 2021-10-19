@@ -22,9 +22,14 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On the bottom right of the Administrator user interface [https://app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
+* On the bottom right of the Administrator user interface [app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
 
 * On the bottom right of this page, use the _Help_ widget.
+
+
+## Run:AI Cloud Status Page
+
+Run:AI cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
 
 ## Collect Logs to Send to Support
 
