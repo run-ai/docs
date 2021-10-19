@@ -69,7 +69,7 @@ plugins:
         'Administrator/Cluster-Setup/non-root-containers.md' : 'admin/runai-setup/advanced/non-root-containers.md'
         'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/nvidia.md'
 #        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
-        'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/cluster-setup/researcher-authentication.md'
+        'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/advanced/researcher-authentication.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
         'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
@@ -138,12 +138,15 @@ nav:
       - 'Advanced' : 
         # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
 #          - 'LDAP Authentication' : 'admin/runai-setup/cluster-setup/ldap-integration.md'
-        - 'Allow external access to Containers' : 'admin/runai-setup/advanced/allow-external-access-to-containers.md'
-        - 'Understanding Cluster Access Roles' : 'admin/runai-setup/advanced/access-roles.md'
+        - 'Overview' : 'admin/runai-setup/advanced/overview.md'
+        - 'Install Administrator CLI' : 'admin/runai-setup/advanced/cli-admin-install.md'
+        - 'Set Node Roles' : 'admin/runai-setup/advanced/node-roles.md'
+        - 'Researcher Authentication' : 'admin/runai-setup/advanced/researcher-authentication.md'
+        - 'Single Sign-On' : 'admin/runai-setup/advanced/sso.md'
+        - 'Run:AI Kubernetes Cluster Access' : 'admin/runai-setup/advanced/access-roles.md'
+        - 'External access to Containers' : 'admin/runai-setup/advanced/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/advanced/non-root-containers.md'
         - 'Node Downtime' : 'admin/runai-setup/advanced/node-downtime.md'
-        - 'Set Node Roles' : 'admin/runai-setup/advanced/node-roles.md'
-        - 'Install Administrator CLI' : 'admin/runai-setup/advanced/cli-admin-install.md'
         - 'Kubernetes Best Practices' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
 
     - 'Researcher Setup' :

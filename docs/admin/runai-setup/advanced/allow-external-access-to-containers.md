@@ -1,6 +1,6 @@
 ## Introduction
 
-Researchers working with containers. many times need to access the container from remote. Some examples:
+Researchers working with containers. many times need to remotely access the container. Some examples:
 
 *   Using a _Jupyter_ _notebook_ that runs within the container
 *   Using _PyCharm_ to run python commands remotely.

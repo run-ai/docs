@@ -1,4 +1,4 @@
-# Understanding Cluster Access Roles
+# Control Run:AI Kubernetes Cluster Access
 
 Run:AI has the ability to work under restrictive Kubernetes environments. Namely:
 

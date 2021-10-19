@@ -1,36 +1,57 @@
-## Introduction
 
-### Privileged Access
+# User Identity in Container
 
-In docker, as well as in Kubernetes, the default for running containers is running as 'root'. The implication of running as root is that processes running within the container have enough permissions to change anything on the machine itself. 
+The identity of the user in the container determines its access to cluster resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. This document explains multiple way on how to propagate the user identity into the container.
 
-This gives a lot of power to containers but does not sit well with modern security standards. Specifically enterprise security. To overcome that: 
+## The Default: Root Access
 
-* Kubernetes provides a mechanism called [PodSecurityPolicy (PSP)](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) to control container access.
-* OpenShift provides control over container access using [Security Context Constraints (SCC)](https://www.openshift.com/blog/understanding-service-accounts-sccs).
+In docker, as well as in Kubernetes, the default for running containers is running as _root_. The implication of running as root is that processes running within the container have enough permissions to change anything in the container, and if propagated to network resources - can have permissions outside the container as well. 
 
-Run:AI supports both PSP and SCC. This support is at the [cluster installation](../cluster-setup/customize-cluster-install.md) level. 
+This gives a lot of power to the Researcher but does not sit well with modern security standards of enterprise security. 
 
-### User Identity
+By default, if you run:
 
-The identity of the user in the container determines its access to cluster resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. 
+```
+runai submit -i ubuntu --attach --interactive -- bash
+```
+then run `id`, you will see the __root__ user. 
 
+## Use Run:AI flags to limit root access
 
-The Run:AI Command-line interface provides flags to control user identity within the container and to disable root access capabilities. 
-
-## Command-Line Flags
 There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
-* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user or if connected via SAML provider, it can be the Linux UID/GID which is stored in the organization's directory. This requires exposing UID/GID as part of the SAML response. 
-* The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). This flag is not relevant when using PSP or SCC. 
+* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on). 
+* The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). 
 
-Note, that these flags are voluntary. They are not enforced by the system.
+### Run as Current User
 
-It is possible to set these flags as a __cluster-wide default__ for the Run:AI CLI, such that all CLI users will be limited to non-root containers.
+From a Linux/Mac box, run:
 
-## Setting a Cluster-Wide Default
+```
+runai submit -i ubuntu --attach --interactive --run-as-user -- bash
+```
 
-Save the following in a file (cluster-config.yaml)
+then run `id`, you will see the users and groups of the box you have been using to launch the Job.
+
+
+### Prevent Escalation
+
+From a Linux/Mac box, run:
+
+```
+runai submit -i ubuntu --attach --interactive --run-as-user \
+  --prevent-privilege-escalation  -- bash
+```
+
+then verify that you cannot run `su` to become root within the container. 
+
+
+### Setting a Cluster-Wide Default
+
+
+The two flags are voluntary. They are not enforced by the system. It is however possible to set these flags as a __cluster-wide default__ for the Run:AI CLI, such that all CLI users will be limited to non-root containers.
+
+Save the following in a file (e.g `cluster-config.yaml`)
 
 ``` YAML
 
@@ -49,18 +70,61 @@ metadata:
 
 Run:
 
-    kubectl apply -f cluster-config.yaml
+``` bash
+kubectl apply -f cluster-config.yaml
+``` 
 
 !!! Limitation
-    Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _PSP_ or work with _OpenShift SCC_.
- 
+    Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_.
+
+## Passing user identity 
+### Passing user identity from Identity Provider
+
+A best practice is to store the user identifier (UID) and the group identifier (GID) in the organization's directory. Run:AI allows you to pass these values to the container and use them as the container identity.
+
+To perform this, you must:
+
+* Set up [single sign-on](sso.md). 
+* Run: `runai login` and enter your credentials
+* Use the flag --run-as-user
+
+Running `id` should show the identifier from the directory.
+
+
+### Passing user identity explicitly via the Researcher UI 
+
+Via the Researcher User Interface, it is possible to explicitly provide the user id and group id:
+
+![](img/uid-explicit.png)
+
+
+##  Using OpenShift or Gatekeeper to provide Cluster Level Controls
+
+
+Run:AI supports OpenShift as a Kubernetes platform. In OpenShift the system will provide a __random__ UID to containers. The flags `--run-as-user` and `--prevent-privilege-escalation` are disabled on OpenShift.
+It is possible to achieve a similar effect on Kubernetes systems that are not OpenShift. A leading tool is [Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/){target=_blank}. Gatekeeper similarly enforces non-root on containers at the system level. 
+
 
 ## Creating a Temporary Home Directory
 
-For containers to run as a specific user, the user needs to have a pre-created home directory within the image. This can be a daunting IT task. 
+When containers run as a specific user, the user needs to have a pre-created home directory __within__ the image. Otherwise, when running a shell, you will not have a home directory:
 
-To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
+``` bash hl_lines="8"
+runai submit -i ubuntu --attach --interactive --run-as-user -- bash
+The job 'job-0' has been submitted successfully
+You can run `runai describe job job-0 -p team-a` to check the job status
+Waiting for pod to start running...
+INFO[0007] Job started
+Connecting to pod job-0-0-0
+If you don't see a command prompt, try pressing enter.
+I have no name!@job-0-0-0:/$ 
+```
+
+Adding home directories to an image per-user is not a viable solution. To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
 
 !!! Notes
     * Data saved in this directory will not be saved when the container exits. 
     * This flag is set by __default to true__ when the `--run-as-user` flag is used, and false if not.
+
+
+
