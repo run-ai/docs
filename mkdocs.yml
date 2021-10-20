@@ -109,7 +109,7 @@ nav:
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
         - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'    
         - 'Troubleshooting' : 'admin/runai-setup/cluster-setup/cluster-troubleshooting.md'
-        - 'Authentication and Authorization' : 'admin/runai-setup/cluster-setup/researcher-authentication.md'
+#        - 'Authentication and Authorization' : 'admin/runai-setup/cluster-setup/researcher-authentication.md'
         - 'NVIDIA Drivers' : 'admin/runai-setup/cluster-setup/nvidia.md'
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
@@ -120,7 +120,7 @@ nav:
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/k8s/cluster.md'
           - 'Configure Web Interfaces' : 'admin/runai-setup/self-hosted/k8s/ui.md'
           - 'Create Run:AI Projects' : 'admin/runai-setup/self-hosted/k8s/project-management.md'
-          - 'Authentication' : 'admin/runai-setup/self-hosted/k8s/researcher-authentication.md'
+#          - 'Authentication' : 'admin/runai-setup/self-hosted/k8s/researcher-authentication.md'
 #          - 'LDAP Integration' : 'admin/runai-setup/self-hosted/k8s/ldap-integration.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/k8s/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/k8s/uninstall.md'

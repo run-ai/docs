@@ -1,1 +1,0 @@
-See [Researcher Authentication](../../advanced/researcher-authentication.md).
