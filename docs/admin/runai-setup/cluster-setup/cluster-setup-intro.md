@@ -21,11 +21,11 @@ You can also use our [Quick installation guide](single-node-install.md) which in
 
 ## Customization
 
-As part of the installation process, you will download a __Helm values files__ and which you will use to install Run:AI on the cluster. Before applying the file, you will sometimes need to customize the file. For a list of customization see [Customize Installation](customize-cluster-install.md)
+For a list of optional setup customizations see [Customize Installation](customize-cluster-install.md)
 
 ## Advanced Setup
 
-For advanced scenarios such as [Researcher authentication & authorization](../advanced/researcher-authentication.md), [limiting the installation to specific cluster nodes](../advanced/node-roles.md) or [enforcing none-root containers](../advanced/non-root-containers.md) see the _Advanced_ section.
+For a list of advanced scenarios such as configuring researcher authentication, handling node downtime, limiting the installation to specific nodes, and more, see the [Advanced Setup Articles](../advanced/overview.md) section.
 
 ## Next Steps
 

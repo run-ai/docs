@@ -5,22 +5,38 @@ Below are the prerequisites of a cluster installed with Run:AI.
 
 ### Kubernetes
 
-Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of July 2021). Kubernetes 1.22 is __not__ supported.
+Run:AI has been tested with the following certified Kubernetes distributions: 
+
+| Target Platform                          | Description | Notes | 
+|------------------------------------------|-------------|-------|
+| on-prem                               |  Kubernetes is installed by the customer and not managed by a service  | Example: Native installation,  _Kubespray_ |
+| EKS | Amazon Elastic Kubernetes Service  | |
+| AKS | Azure Kubernetes Services          | |
+| GKE | Google Kubernetes Engine           | |
+| OCP | OpenShift Container Platform       | The Run:AI operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. Note: Run:AI can only be deployed on OpenShift using the __Self-Hosted__ installation  | 
+| RKE | Rancher Kubernetes Engine          | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
+| Ezmeral | HPE Ezmeral Container Platform | See Run:AI at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
+
+A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
+
+
+Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of July 2021). Kubernetes 1.22 is __not__ yet supported.
 
 If you are using RedHat OpenShift. The minimal version is OpenShift 4.6. 
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
-
-!!! Note
-    Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are made, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
-
 ### NVIDIA 
 
-Run:AI requires the installation of NVIDIA software. These can be done in one of two ways. Installing the GPU Operator or installing NVIDIA software on each node. For more information, see the [Cluster Installation](../cluster-install/#step-2-nvidia) documentation.
+Run:AI requires the installation of NVIDIA software. These can be done in one of two ways: 
+
+* Installing the GPU Operator
+* Installing NVIDIA software on each node. 
+
+For more information, see the [Cluster Installation](../cluster-install/#step-2-nvidia) documentation.
 
 ### Prometheus 
 
-Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI Cluster installation will, by default, install Prometheus, but it can also connect to an existing Prometheus installed by the organization. In the latter case, it's important to:
+Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI Cluster installation will, by default, install Prometheus, but it can also connect to an existing Prometheus instance installed by the organization. In the latter case, it's important to:
 
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:AI Cluster installation.
@@ -34,20 +50,18 @@ Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI 
     
     *   4 CPUs
     *   8GB of RAM
-    *   50GB of Disk space 
-    
+    *   50GB of Disk space  
     
 *   __Shared data volume:__ Run:AI uses Kubernetes to abstract away the machine on which a container is running:
 
     * Researcher containers: The Researcher's containers need to be able to access data from any machine in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts. 
     * The Run:AI system needs to save data on a storage device that is not dependent on a specific node.  
 
-    Typically, this is achieved via Network File Storage (NFS) or Network-attached storage (NAS). NFS is usually the preferred method for Researchers which may require multi-read/write capabilities.
+    Typically, this is achieved via Network File Storage (NFS) or Network-attached storage (NAS).
 
+* __Docker Registry:__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../../researcher-setup/docker-to-runai/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/){target=_blank} or set up a local registry on-prem (preferably on a dedicated machine). Run:AI can assist with setting up the repository.
 
-* __Docker Registry__ With Run:AI, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../../researcher-setup/docker-to-runai/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/){target=_blank} or set up a local registry on-prem (preferably on a dedicated machine). Run:AI can assist with setting up the repository.
-
-*  __Kubernetes__: Though out of scope for this document, Production Kubernetes installation requires separate nodes for the Kubernetes master. 
+*  __Kubernetes:__ Production Kubernetes installation requires separate nodes for the Kubernetes master. For more details see your specific Kubernetes distribution documentation. 
 
 ![img/prerequisites.png](img/prerequisites.jpg)
 
@@ -57,7 +71,9 @@ __Usage of containers and images:__ The individual Researcher's work should be b
 
 ## Network Requirements
 
-Run:AI user interface runs from the cloud. All container nodes must be able to connect to the Run:AI cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is proxied/limited, the following exceptions should be applied: 
+__Internal networking:__ Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are made, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
+
+__Outbound network:__ Run:AI user interface runs from the cloud. All container nodes must be able to connect to the Run:AI cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is proxied/limited, the following exceptions should be applied: 
 
 ### During Installation
 

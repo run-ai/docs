@@ -69,7 +69,7 @@ When a shell opens inside the container, run `id` and verify that UID, GID, and 
 
 ## Adding Users
 
-You can add additional users, by manually adding roles for each user, or by Mapping roles to IdP groups. 
+You can add additional users, by manually adding roles for each user, or by Mapping roles to IdP groups. The later option is easier to maintain. 
 
 ### Adding Roles for a User
 

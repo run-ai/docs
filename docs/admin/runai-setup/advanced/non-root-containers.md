@@ -1,7 +1,7 @@
 
 # User Identity in Container
 
-The identity of the user in the container determines its access to cluster resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. This document explains multiple way on how to propagate the user identity into the container.
+The identity of the user in the container determines its access to resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. This document explains multiple way on how to propagate the user identity into the container.
 
 ## The Default: Root Access
 
@@ -23,6 +23,7 @@ There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) 
 * The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on). 
 * The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). 
 
+Equivalent flags exist in the Researcher User Interface.
 ### Run as Current User
 
 From a Linux/Mac box, run:
@@ -76,6 +77,11 @@ kubectl apply -f cluster-config.yaml
 
 !!! Limitation
     Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_.
+
+### Using Templates
+
+Another way to enforce the above flags is using [Administrative templates](../../../researcher-setup/templates/#administrative-templates). Templates allow you to force compliance on both the User Inteface and Command-line interface. 
+
 
 ## Passing user identity 
 ### Passing user identity from Identity Provider
