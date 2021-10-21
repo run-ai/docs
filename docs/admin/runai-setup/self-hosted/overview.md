@@ -18,8 +18,8 @@ The self-hosted installation is priced differently. For further information plea
 
 Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/setup/#production-environment){target=_blank}. Run:AI has been installed with a number of those such as Rancher, Kubespray, OpenShift, HPE Ezmeral, and Native Kubernetes. The OpenShift installation is different from the rest. As such, the Run:AI self-hosted installation instructions are divided into two separate sections:
 
-* OpenShift-based installation. See [Run:AI OpenShift installation](ocp/preparations.md). The Run:AI operator for OpenShift is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} by Red Hat.
-* Kubernetes-based installation. See [Run:AI Kubernetes installation](k8s/preparations.md).
+* OpenShift-based installation. See [Run:AI OpenShift installation](ocp/prerequisites.md). The Run:AI operator for OpenShift is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} by Red Hat.
+* Kubernetes-based installation. See [Run:AI Kubernetes installation](k8s/prerequisites.md).
 
 
 
