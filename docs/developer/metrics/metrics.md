@@ -50,6 +50,7 @@ Following is the list of published Run:AI Metrics
 | runai_running_job_memory_limit_bytes           |  {clusterId, job_name, job_uuid}                                      | Bytes       | Jobs CPU Memory limit. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)       |
 | runai_running_job_memory_requested_bytes       |  {clusterId, job_name, job_uuid}                                      | Bytes       | Jobs requested CPU Memory. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
 | runai_running_job_memory_used_bytes            |  {job_uuid, clusterId, job_name, project}                             | Bytes       | Jobs used CPU Memory          |
+| runai_mig_mode_gpu_count                       |  {clusterId, node}                                                    | Double      | Number of GPUs on MIG nodes          |
 
 Following is a list of labels appearing in Run:AI metrics:
 
