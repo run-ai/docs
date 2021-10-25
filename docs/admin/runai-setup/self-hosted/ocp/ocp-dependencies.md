@@ -12,7 +12,7 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
 * Via [Helm chart](https://docs.nvidia.com/datacenter/kubernetes/openshift-on-gpu-install-guide/index.html#openshift-gpu-support-install-helm){target=_blank}. Use these in an air-gapped environment.
 
 
-## Disable the NVIDIA Device Plugin
+## Disable the NVIDIA Device Plugin and DCGM Exporter
 
 Verify that the GPU Operator is installed by running:
 
@@ -20,11 +20,13 @@ Verify that the GPU Operator is installed by running:
 kubectl get pods -n gpu-operator-resources
 ```
 
-__After successful verification__, disable the NVIDIA Device Plugin (The [Run:AI Cluster installation](cluster.md) installs a custom version) by running:
+__After successful verification__, disable the NVIDIA Device Plugin and NVIDIA DCGM exporter by running:
 
 ```
 kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
+   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
 ```
 
 ## Prometheus

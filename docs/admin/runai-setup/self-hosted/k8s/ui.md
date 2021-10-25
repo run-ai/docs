@@ -17,3 +17,6 @@ Browse to `https://runai.<company-name>`, enter user `test@run.ai` and password 
 
 Browse to `https://runai.<company-name>/researcher`.
 
+## Next Steps
+
+Continue to [create Run:AI Projects](project-management.md).

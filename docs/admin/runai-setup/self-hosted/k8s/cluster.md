@@ -78,5 +78,5 @@ Run:
 
 ## Next Steps
 
-Continue to [create Run:AI Projects](project-management.md).
+Continue to [configure web interfaces](ui.md).
 

@@ -16,6 +16,7 @@ Run:AI has been tested with the following certified Kubernetes distributions:
 | OCP | OpenShift Container Platform       | The Run:AI operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. Note: Run:AI can only be deployed on OpenShift using the __Self-Hosted__ installation  | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:AI at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
+| Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. To work with containerd, use the NVIDIA GPU Operator and change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-the-gpu-operator){target=_blank} accordingly. |
 
 A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 
@@ -27,12 +28,35 @@ If you are using RedHat OpenShift. The minimal version is OpenShift 4.6.
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
 
-Run:AI requires the installation of NVIDIA software. These can be done in one of two ways: 
 
-* Installing the GPU Operator
-* Installing NVIDIA software on each node. 
+There are two alternatives for installing NVIDIA prerequisites:
 
-For more information, see the [Cluster Installation](../cluster-install/#step-2-nvidia) documentation.
+1. Install the _NVIDIA CUDA Toolkit_ and _NVIDIA Docker_ on __each node with GPUs__. See [NVIDIA Drivers installation](nvidia.md) for details.
+2. (Recommended) Install the _NVIDIA GPU Operator on Kubernetes_ once. To install, use the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank}. Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes. 
+
+!!! Important
+    * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
+    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with option 1: the GPU Operator version 1.8 or higher. 
+    * Note the Tanzu-specific instructions in the table above.
+
+
+#### NVIDIA Device Plugin
+
+Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. Run the following to disable the existing plug-in:
+
+```
+kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+```
+
+#### DCGM Exporter
+
+Run:AI has customized the [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. If you have installed the __NVIDIA GPU Operator__ or have previously installed this plug-in, run the following to disable the existing plug-in:
+
+```
+kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
+   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+```
 
 ### Prometheus 
 
