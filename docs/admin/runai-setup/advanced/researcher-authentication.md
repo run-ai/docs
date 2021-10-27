@@ -225,7 +225,7 @@ You can verify that the flags have been incorporated into the RKE cluster by fol
 
 ## Test
 
-* Run: `runai login`
+* Run: `runai login` (in OpenShift enviroments use `oc login` rather than `runai login`)
 * You will be prompted for a username and password. In an SSO flow, you will be asked to copy a link to a browser, log in and return a code. 
 * Once login is successful, submit a Job.
 * If the Job was submitted with a Project for which you have no access, your access will be denied. 

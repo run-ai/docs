@@ -1,4 +1,4 @@
-# Control Run:AI Kubernetes Cluster Access
+# Understand the Kubernetes Cluster Access provided to Run:AI
 
 Run:AI has the ability to work under restrictive Kubernetes environments. Namely:
 
