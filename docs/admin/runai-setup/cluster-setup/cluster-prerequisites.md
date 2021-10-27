@@ -23,7 +23,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of July 2021). Kubernetes 1.22 is __not__ yet supported.
 
-If you are using RedHat OpenShift. The minimal version is OpenShift 4.6. 
+If you are using RedHat OpenShift. Run:AI requires OpenShift 4.6.  OpenShift 4.9 is not yet supported.
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 

@@ -24,7 +24,7 @@ The backend installation of Run:AI will require the configuration of  Kubernetes
 
 ## OpenShift 
 
-Run:AI requires OpenShift 4.6 or later. 
+Run:AI requires OpenShift 4.6 or above. OpenShift 4.9 is not yet supported. 
 
 
 !!! Important
