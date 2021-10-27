@@ -13,9 +13,6 @@ runai login
 
 ## Options
 
---all | -A
->  Resume all suspended Jobs in the current Project.
-
 ### Global Flags
 
 --loglevel (string)
