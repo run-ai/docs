@@ -60,7 +60,7 @@ kubectl label ns runai openshift.io/cluster-monitoring=true
 
 === "Connected"
     ```
-    kubectl apply -f https://raw.githubusercontent.com/run-ai/docs/master/install/backend/ocp-prom-custom.yaml
+    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/ocp-prometheus.yaml
     ```
 
 ## Next Steps
