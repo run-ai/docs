@@ -40,7 +40,7 @@ data:
      scrapeInterval: "10s"
      evaluationInterval: "10s"
      externalLabels:
-       clusterId: "runai"
+       clusterId: "CLUSTER_ID"
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
