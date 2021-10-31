@@ -40,7 +40,6 @@ kubectl create clusterrolebinding --clusterrole=admin \
 <!-- kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
 
-When installing the Run:AI [cluster](cluster.md), disable the NVIDIA Device Plug-in
 ## Prometheus
 
 Run:AI uses the __Prometheus Operator__ built into OpenShift 
