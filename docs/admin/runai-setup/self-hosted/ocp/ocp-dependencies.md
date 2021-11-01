@@ -33,9 +33,9 @@ kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
 
 ```
 kubectl patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
-   -p '{"spec":{"template":{"spec":{"containers":[{"name":"nvidia-device-plugin-ctr","image":"gcr.io/run-ai-prod/nvidia-device-plugin:latest"}]}}}}'
+   -p '{"spec":{"template":{"spec":{"containers":[{"name":"nvidia-device-plugin-ctr","image":"gcr.io/run-ai-prod/nvidia-device-plugin:1.0.11"}]}}}}'
 kubectl create clusterrolebinding --clusterrole=admin \
-  --serviceaccount=gpu-feature-discovery:nvidia-device-plugin nvidia-device-plugin-crb
+  --serviceaccount=gpu-operator-resources:nvidia-device-plugin nvidia-device-plugin-crb
 ```
 <!-- kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
