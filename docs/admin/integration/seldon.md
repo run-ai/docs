@@ -13,7 +13,7 @@ Install Seldon Core as described [here](https://github.com/SeldonIO/seldon-core)
 
 ## Create a Seldon deployment
 
-The instructions below follow a sample machine learning model that tests the Run:AI - Seldon Core integration.  Save the following in a file named `<FILE-NAME>.yaml`
+The instructions below follow a [sample machine learning model](https://github.com/SeldonIO/seldon-core/blob/master/examples/models/autoscaling/model_with_hpa.yaml){target=_blank} that tests the Run:AI - Seldon Core integration.  Save the following in a file named `<FILE-NAME>.yaml`
 
 ``` YAML
 apiVersion: machinelearning.seldon.io/v1
@@ -28,7 +28,7 @@ spec:
     - spec:
         containers:
         - name: classifier
-          image: seldonio/mock_classifier:1.0
+          image: seldonio/mock_classifier:1.5.0-dev
           resources:
             limits:
               nvidia.com/gpu: <GPUs>
