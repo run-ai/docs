@@ -28,10 +28,7 @@ spec:
     - spec:
         containers:
         - name: classifier
-          image: eugenefedorenko/samplemodel:1.0.0
-          ports: 
-          - containerPort: 8080
-            name: http
+          image: seldonio/mock_classifier:1.0
           resources:
             limits:
               nvidia.com/gpu: <GPUs>
@@ -45,6 +42,34 @@ spec:
     name: example
     replicas: 1
 ```
+
+
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: seldon-model
+  namespace: runai-<PROJECT-NAME>
+spec:
+  name: test-deployment
+  predictors:
+  - componentSpecs:
+    - spec:
+        containers:
+        - name: classifier
+          image: seldonio/mock_classifier:1.0
+          resources:
+            limits:
+              nvidia.com/gpu: <GPUs>
+        schedulerName: runai-scheduler
+    graph:
+      children: []
+      endpoint:
+        type: REST
+      name: classifier
+      type: MODEL
+    name: example
+    replicas: 1
+
 
 Replace `<PROJECT-NAME>` with the Run:AI projects and `<GPUs>` with the amount of GPUs you want to allocate (e.g. 0.5 GPUs).
 
