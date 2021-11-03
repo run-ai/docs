@@ -1,7 +1,8 @@
 Below are the prerequisites of a cluster installed with Run:AI. 
 
 
-## Kubernetes
+## Software Requirements
+### Kubernetes
 
 Run:AI has been tested with the following certified Kubernetes distributions: 
 
@@ -24,7 +25,7 @@ Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of 
 If you are using RedHat OpenShift. Run:AI requires OpenShift 4.6.  OpenShift 4.9 is not yet supported.
 
 Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
-## NVIDIA 
+### NVIDIA 
 
 NVIDIA pre-requisites are provided in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#step-4-setup-nvidia-software){target=_blank}. The following provides a walkthrough of the documentation steps:
 
@@ -64,7 +65,7 @@ There are two alternatives for installing NVIDIA prerequisites:
 
 
 
-## Prometheus 
+### Prometheus 
 
 Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI Cluster installation will, by default, install Prometheus, but it can also connect to an existing Prometheus instance installed by the organization. In the latter case, it's important to:
 

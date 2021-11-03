@@ -104,6 +104,15 @@ To update the CLI to the latest version run:
 sudo runai update
 ```
 
+## Delete the Run:AI CLI
+
+If you have installed using the default path, run:
+
+```
+sudo rm -rf /usr/local/bin/runai /usr/local/runai
+```
+
+If you have installed using a custom path, delete all Run:AI files in this path.
 
 ## Use Run:AI on Windows
 
