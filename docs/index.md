@@ -13,7 +13,7 @@ The Run:AI documentation is targeting three personas:
 
 ## Example Code
 
-Code for the Docker images referred to in these docs is available [here](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
+Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
 
 
 ## How to get Support

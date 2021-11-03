@@ -93,7 +93,7 @@ Select one of the NVIDIA pods and run:
 kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
 ```
 
-If the log contains an error, it means that NVIDIA-related prerequisites have not been met. Review [NVIDIA prerequisites](nvidia.md). Verify that:
+If the log contains an error, it means that NVIDIA-related prerequisites have not been met. Review [NVIDIA prerequisites](cluster-prerequisites.md). Verify that:
 
 * Step 1.1: CUDA Toolkit is installed
 * Step 1.2: NVIDIA Docker is installed. A typical issue here is the installation of the _NVIDIA Container Toolkit_ instead of _NVIDIA Docker 2_. 
