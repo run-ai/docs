@@ -63,7 +63,7 @@ There are two alternatives for installing NVIDIA prerequisites:
     * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
     * Do __not__ perform the section _Install NVIDIA Device Plugin_.
     * Note the differntiation between _containerd_ and _docker_. 
-    * The instructions related to Ubuntu and link to other Operating systems. 
+    * The instructions relate to Ubuntu and link to other Operating systems. 
 
 
 
