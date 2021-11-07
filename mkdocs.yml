@@ -148,7 +148,7 @@ nav:
         - 'External access to Containers' : 'admin/runai-setup/advanced/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/advanced/non-root-containers.md'
         - 'Node Downtime' : 'admin/runai-setup/advanced/node-downtime.md'
-        - 'Node Downtime' : 'admin/runai-setup/advanced/monitoring.md'
+        - 'Monitoring : 'admin/runai-setup/advanced/monitoring.md'
         - 'Kubernetes Best Practices' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
 
     - 'Researcher Setup' :
