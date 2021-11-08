@@ -79,23 +79,28 @@ If your Job has not specified `--memory-limit`, then by default, the system will
 
 ### Changing the ratios
 
-To change the cluster wide-ratio use the following command. The command below sets:
+To change the cluster wide-ratio use the following process. The example shows: 
 
 * a CPU request with a default ratio of 2:1 CPUs to GPUs.
 * a CPU Memory request with a default ratio of 200MB per GPU.
 * a CPU limit with a default ratio of 4:1 CPU to GPU.
 * a Memory limit with a default ratio of 2GB per GPU. 
+ 
+You must edit the cluster installation values file:
 
-``` bash
-kubectl patch runaiconfig runai -n runai --type='json' \
-    -p='[{"op": "add", "path": "/spec/limitRange", "value": 
-     {"cpuDefaultRequestGpuFactor": "2", 
-      "memoryDefaultRequestGpuFactor": "200Mi",
-      "cpuDefaultLimitGpuFactor" : "4",
-      "memoryDefaultLimitGpuFactor" : "2Gi"
-    }}]'
+* When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+* On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
+* You must specify all 4 values as follows: 
+
+```  yaml
+runai-operator:
+  config:
+    limitRange:
+      cpuDefaultRequestGpuFactor: 2
+      memoryDefaultRequestGpuFactor: 200Mi
+      cpuDefaultLimitGpuFactor: 4
+      memoryDefaultLimitGpuFactor: 2Gi
 ```
-You must specify all 4 values. 
 
 
 ## Validating CPU & Memory Allocations

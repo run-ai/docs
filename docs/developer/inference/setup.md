@@ -6,11 +6,20 @@ By default, MPS is not enabled on GPU nodes.
 
 ## Enable MPS 
 
-In order to enable the MPS server on all nodes, use the following command:
+To enable the MPS server on all nodes, you must edit the cluster installation values file:
 
-``` bash
- kubectl patch runaiconfig runai -n runai --type='json' -p='[{"op": "add", "path": "/spec/mps-server", "value": {"enabled": true }}]'
+* When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+* On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
+
+Use:
+
+```  yaml
+runai-operator:
+  config:
+    mps-server:
+      enabled: true
 ```
+
 
 Wait for the MPS server to start running:
 

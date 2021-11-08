@@ -6,7 +6,7 @@ By default, Run:AI is configured to allow all Researchers access to all Jobs and
 
 ## Configuration Options
 
-This document relates to a number of separate configuration flows: 
+This document relates to several separate configuration flows: 
 
 1. Classic (SaaS) installation of Run:AI 
 2. Self-hosted installation of Run:AI
@@ -44,12 +44,19 @@ Authentication setup works as follows:
 ### Enable Researcher Authentication on Researcher Service
 
 === "SaaS" 
-    The researcher service is used for the [Run:AI Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable run:
+    The researcher service is used for the [Run:AI Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable, you must edit the cluster installation values file:
 
-    ``` bash
-    kubectl patch runaiconfig runai -n runai --type='json' \
-    -p='[{"op": "replace", "path" : "/spec/researcher-service/args", "value": {"authEnabled" : true}}]'
-    kubectl rollout restart deployment -n runai researcher-service
+    * When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+    * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
+
+    Update:
+
+    ``` yaml
+    runai-operator:
+       config:
+          researcher-service:
+            args:
+              authEnabled : true
     ```
 
 === "Self-hosted"
