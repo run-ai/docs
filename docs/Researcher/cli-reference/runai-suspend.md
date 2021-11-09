@@ -10,6 +10,8 @@ Suspending a Running Job will stop the Job and will not allow it to be scheduled
 
 Technically, the command deletes the _Kubernetes pods_ associated with the Job and marks the Job as suspended until it is manually released. 
 
+Suspend and resume do not work with _MPI_ and _Inference_ 
+
 
 ## Synopsis
 

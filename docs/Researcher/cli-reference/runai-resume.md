@@ -2,7 +2,11 @@
 
 Resume a suspended Job
 
-Resuming a previously suspended Job will return it back to the queue for scheduling. The Job may or may not start immediately, depending on available resources. 
+Resuming a previously suspended Job will return it to the queue for scheduling. The Job may or may not start immediately, depending on available resources. 
+
+
+Suspend and resume do not work with _mpi_ Jobs. 
+
 
 ## Synopsis
 

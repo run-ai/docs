@@ -12,6 +12,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 ### Prerequisites 
 
  * You must have an XML Metadata file retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+ * You must have the `Organization Name`. This is the name that appears on the top right of the user interface.
  * Configure your IdP to map several IdP attributes: 
 
  | IdP attribute | Run:AI required name | Description       | 
@@ -49,6 +50,7 @@ Please contact Run:AI customer support
 
 * Using an incognito browser tab, go to [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
 * Select the `Login with SSO` button. 
+* Provide the `Organization name`. 
 * Use the previously entered _Administrator email_ to log in. 
 
 ### Test Commmand-line interface
