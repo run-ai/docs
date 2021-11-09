@@ -10,9 +10,9 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 
 ## Prerequisites 
 
- * You must have an XML Metadata file retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
- * You must have a Run:AI `Organization Name`. This is the name that appears on the top right of the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
- * Configure your IdP to map several IdP attributes: 
+ * __XML Metadata__: You must have an _XML Metadata file_ retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+ * __Organization Name__: You must have a Run:AI _Organization Name_. This is the name that appears on the top right of the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
+ * __Additional attribute mapping__: Configure your IdP to map several IdP attributes: 
 
  | IdP attribute | Run:AI required name | Description       | 
  |----------------|----------------------|--------------------|
