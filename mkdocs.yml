@@ -71,6 +71,7 @@ plugins:
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
 #        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
         'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/advanced/researcher-authentication.md'
+        'admin/runai-setup/cluster-setup/researcher-authentication/' : 'admin/runai-setup/advanced/researcher-authentication.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
         'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
