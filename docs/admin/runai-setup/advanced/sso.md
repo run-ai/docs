@@ -1,23 +1,22 @@
 # Single Sign-On
 
-Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID and password to other, independent, software systems. SSO solves security issues involving multiple user/passwords data entry, multiple compliance schemes, etc. 
+Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/passwords data entry, multiple compliance schemes, etc. 
 
-Run:AI supports SSO using one of two architectures: [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} or [OAuth](https://en.wikipedia.org/wiki/OAuth){target=_blank}.
+Run:AI supports SSO using the [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol.
 
 ## Terminology
 
 The term _Identity Provider_ (or IdP) below relates to the system which creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0. 
-## SAML
 
-### Prerequisites 
+## Prerequisites 
 
  * You must have an XML Metadata file retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
- * You must have the `Organization Name`. This is the name that appears on the top right of the user interface.
+ * You must have a Run:AI `Organization Name`. This is the name that appears on the top right of the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
  * Configure your IdP to map several IdP attributes: 
 
  | IdP attribute | Run:AI required name | Description       | 
  |----------------|----------------------|--------------------|
- | user email     | email                | `e-mail` is the user identifier with Run:AI. Mandatory (usually already pre-set in IdP) | 
+ | User email     | email                | `e-mail` is the user identifier with Run:AI. Mandatory (usually already pre-set in the IdP) | 
  | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. | 
@@ -25,13 +24,12 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  
  
 
-### Configuration
+## Step 1: UI Configuration
 
 * Open the Administration User interface (app.run.ai or similar in Self-Hosted installations)
 * Go to [Settings | General](https://app.run.ai/general-settings){target=_blank}
 * Turn on `Login with SSO`. 
-* Go to the `SAML` tab.
-* Under `Metadata XML Url` enter the URL to the XML Metadata file.
+* Under `Metadata XML Url` enter the URL to the XML Metadata file obtained above.
 * Under Administrator email, enter the first administrator user.
 * Press `Save`
 
@@ -40,38 +38,52 @@ Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both
 !!! Important Note
     Upon pressing `Save`, all existing users will be rendered non-functional, and the only valid user will be the _Administrator email_ entered above. You can always revert by disabling _Login via SSO_. 
 
-* Enable Researcher Authentication by following the instructions [here](researcher-authentication.md). Use the `SSO` flow within the document.
-## OAuth
 
-Please contact Run:AI customer support
-## Test 
+### Test 
 
-### Test Administration User Interface
+Test Connectivity to Administration User Interface:
 
 * Using an incognito browser tab, go to [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
 * Select the `Login with SSO` button. 
-* Provide the `Organization name`. 
-* Use the previously entered _Administrator email_ to log in. 
+* Provide the `Organization name` obtained above. 
+* You will be redirected to the IdP login page. Use the previously entered _Administrator email_ to log in. 
 
-### Test Commmand-line interface
+## Step 2: Cluster Authentication 
+
+Researchers should be authenticated when accessing the Run:AI GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). Use the `SSO` flow within the document.
+
+
+### Test 
+
+Test connectivity to Run:AI commmand-line interface:
 
 * In the command-line, run `runai login`:
 * You receive a link that you must copy and open in your browser. Post login you will receive a verification code which you must paste into the shell window.
 * Verify successful login.
 
-### Test UID/GID Mapping
+
+## Step 3: UID/GID Mapping
+
+Configure the IdP to add UID, GID and Supplementary groups
+### Test 
+
+Test the mapping of UID/GID to within the container:
 
 Submit a job, for example:
-
 ``` bash
 runai submit -i ubuntu --interactive  --attach -- bash
 ```
 When a shell opens inside the container, run `id` and verify that UID, GID, and the supplementary groups are the same as in the user's profile in the organization's directory.
 
 
-## Adding Users
+## Step 4: Adding Users
 
-You can add additional users, by manually adding roles for each user, or by Mapping roles to IdP groups. The later option is easier to maintain. 
+You can add additional users, by:
+
+1. Manually adding roles for each user, or by
+2. Mapping roles to IdP groups. 
+
+The latter option is easier to maintain. 
 
 ### Adding Roles for a User
 
