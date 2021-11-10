@@ -1,9 +1,9 @@
 
 # Planning for Disaster Recovery
 
-The SaaS version of Run:AI moves the bulk of the burden of disaster recovery to Run:AI. With the __self-hosted__ version, it is the responsibility of IT to prepare for possible disasters. 
+The SaaS version of Run:AI moves the bulk of the burden of disaster recovery to Run:AI. Backup of data is hence not an issue in such environments. 
 
-The purpose of this document is to detail the required preparations to recover.
+With the __self-hosted__ version, it is the responsibility of the IT organization to backup data for a possible disaster and to learn how to recover when needed.
 
 ## Backup 
 

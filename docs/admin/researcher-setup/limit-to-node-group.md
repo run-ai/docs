@@ -4,6 +4,9 @@ In some business scenarios, you may want to direct the Run:AI scheduler to sched
 
 Run:AI allows this "taint" by labeling a node, or a set of nodes and then during scheduling, using the flag `--node-type <label>` to force this allocation
 
+!!! Important
+    There is a tradeoff to be weighed in when allowing Researchers to designate specific nodes. Overuse of this feature limits the scheduler in finding an optimal resource and thus reduces overall cluster utilization.
+
 
 ## Configuring Node Groups
 

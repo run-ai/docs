@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Organizations typically want to automatically highlight crirical issues and escalate issues to IT/DevOps personnel. The standard practice is to install an alert management tool and connect it to critical systems. 
+Organizations typically want to automatically highlight critical issues and escalate issues to IT/DevOps personnel. The standard practice is to install an alert management tool and connect it to critical systems. 
 
 Run:AI is comprised of two parts:
 
