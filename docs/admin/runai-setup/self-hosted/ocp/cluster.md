@@ -40,7 +40,9 @@ Run:
     helm install runai-cluster runai/runai-cluster -n runai \
         -f runai-<cluster-name>.yaml
     ```
-
+    
+    !!! Info
+        To install a specific version, add `--version <version>` to the install command.
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../../advanced/access-roles/).

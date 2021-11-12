@@ -50,6 +50,8 @@ Run the helm command below:
         -f runai-backend-values.yaml 
     ```
 
+    !!! Info
+        To install a specific version, add `--version <version>` to the install command.
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 

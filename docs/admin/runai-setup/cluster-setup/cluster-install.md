@@ -36,6 +36,8 @@ helm install runai-cluster runai/runai-cluster -n runai --create-namespace \
     -f runai-<cluster-name>.yaml
 ```
 
+!!! Info
+    To install a specific version, add `--version <version>` to the install command.
 
 ## Step 4: Verify your Installation
 
