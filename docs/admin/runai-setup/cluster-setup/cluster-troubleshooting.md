@@ -8,7 +8,7 @@ Following are a set of tests to run to determine cluster health:
 Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
-* Go to __Projects__ and create a new Project. Find the new Project using the CLI command:
+* Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
 
 
 ### 2. Verify that the Run:AI services are running
@@ -19,7 +19,7 @@ Run:
 kubectl get pods -n runai
 ```
 
-* Verify that all pods are in ``Running`` status and in ready state (1/1 or similar)
+* Verify that all pods are in `Running` status and in a ready state (1/1 or similar)
 * Identify the `runai-db-0` and `runai-agent-<id>` pods. Run: `kubectl logs -n runai <pod name>` and verify that there are no errors.
 
 Run:
@@ -36,7 +36,7 @@ Run:
 kubectl get daemonset -n runai
 ```
 
-A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemon-sets the _desired_ number is equal to  _current_ and to _ready_. 
+A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the _desired_ number is equal to  _current_ and to _ready_. 
 
 
 Run:
@@ -56,7 +56,7 @@ Submitting a Job will allow you to verify that the Run:AI scheduling service is 
 
 ``` 
 runai config project <project-name>
-runai submit job1 -i gcr.io/run-ai-demo/quickstart -g 1
+runai submit -i gcr.io/run-ai-demo/quickstart -g 1
 ```
 
 * Verify that the Job is a _Running_ state when running: 
