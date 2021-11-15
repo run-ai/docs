@@ -73,6 +73,13 @@ Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI 
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:AI Cluster installation.
 
 
+
+### MPI Operator 
+
+Run:AI requires [MPI-Operator](https://github.com/kubeflow/mpi-operator){target=_blank} to handle MPI jobs.
+Please install the MPI operator using the [installation guide](https://github.com/kubeflow/mpi-operator#installation)
+
+
 ## Hardware Requirements
 
 (see picture below)
