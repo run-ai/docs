@@ -64,6 +64,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
     ```
     kubectl apply -f runai-gcr-secret.yaml
+    kubectl apply -f runai-gcr-secret.yaml -n gpu-operator-resources
     ```
 
 ## Mark Run:AI System Workers
