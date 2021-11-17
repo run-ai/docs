@@ -16,7 +16,7 @@ Use the default installation to install Kubeflow.
 
 When installing Run:AI, [customize the cluster installation](../../runai-setup/cluster-setup/customize-cluster-install) as follows:
 
-* Set `mpi` to `false` as it conflicts with Kubeflow.
+<!-- * Set `mpi` to `false` as it conflicts with Kubeflow. -->
 * Set `createNamespaces` to `false`, as Kubeflow uses its own namespace convention.
 
 
