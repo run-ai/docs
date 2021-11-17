@@ -15,13 +15,11 @@ Customize the Run:AI backend configuration file.
 
 ## Edit Backend Configuration File
 
-Change the following properties in the values file:
+__Optional__: Change the following properties in the values file:
 
 
 |  Replace |   With   | Description | 
 |----------|----------|-------------| 
-||||
-| __Optional:__ |
 | `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend administrator | 
 | `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
 |<img width=500/>|| 

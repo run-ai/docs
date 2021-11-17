@@ -49,8 +49,6 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     ```
     kubectl create namespace runai-backend
     kubectl apply -f runai-gcr-secret.yaml
-    kubectl patch serviceaccount default -n runai-backend \
-        -p '{"imagePullSecrets": [{"name": "gcr-secret"}]}'
     ```
 
 
