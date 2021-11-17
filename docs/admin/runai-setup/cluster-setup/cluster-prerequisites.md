@@ -74,10 +74,13 @@ Run:AI requires [Prometheus](https://prometheus.io/){target=_blank}. The Run:AI 
 
 
 
-### MPI Operator 
+### Distributed Training via Kubeflow MPI
 
-Run:AI requires [MPI-Operator](https://github.com/kubeflow/mpi-operator){target=_blank} to handle MPI jobs.
-Please install the MPI operator using the [installation guide](https://github.com/kubeflow/mpi-operator#installation)
+Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:AI provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation).
+
+!!! Notes
+    Kubeflow MPI requires containers to run as root, which will not work well when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes.
+    
 
 
 ## Hardware Requirements
