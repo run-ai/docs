@@ -50,17 +50,6 @@ Run:AI uses the __Prometheus Operator__ built into OpenShift
 kubectl label ns runai openshift.io/cluster-monitoring=true
 ```
 
-* Apply the Run:AI Prometheus customizations by running:
-
-=== "Airgapped"
-    ```
-    kubectl apply -f installation-files/backend/ocp-prom-custom.yaml
-    ```
-
-=== "Connected"
-    ```
-    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/ocp-prometheus.yaml
-    ```
 
 ## Next Steps
 
