@@ -35,7 +35,7 @@ Authentication setup works as follows:
     Go to [app.run.ai/general-settings](https://app.run.ai/general-settings){target=_blank}.
 
 === "Self-hosted"
-    Go to `admin.runai.<company-name>/general-settings`.
+    Go to `runai.<company-name>/general-settings`.
 
 
 * Enable the flag _Researcher Authentication_.
@@ -70,8 +70,8 @@ Assign Researchers to Projects:
     * Under [Projects](https://app.run.ai/projects), edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 === "Self-hosted"
-    * Under `admin.runai.<company-name>/users` add a Researcher and assign it with a _Researcher_ role.
-    * Under `admin.runai.<company-name>/projects`, edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
+    * Under `runai.<company-name>/users` add a Researcher and assign it with a _Researcher_ role.
+    * Under `runai.<company-name>/projects`, edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 ## Client-Side
 
@@ -117,7 +117,7 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
             airgapped: "true"
             auth-flow: remote-browser
             realm: <REALM>
-            client-id: runai-cli
+            client-id: runai-cli-sso
             idp-issuer-url: https://app.run.ai/auth/realms/<REALM>
             redirect-uri: https://app.run.ai/oauth-code
           name: oidc
@@ -132,7 +132,7 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
             airgapped: "true"
             auth-flow: remote-browser
             realm: <REALM>
-            client-id: runai-cli
+            client-id: runai-cli-sso
             idp-issuer-url: https://<COMPANY-URL>/auth/realms/runai
             redirect-uri: https://<COMPANY-URL>/oauth-code
           name: oidc
@@ -158,7 +158,6 @@ Edit the document to add the following parameters at the end of the existing com
         - --oidc-client-id=<CLIENT_ID>
         - --oidc-issuer-url=https://runai-prod.auth0.com/
         - --oidc-username-prefix=-
-        - --oidc-groups-claim=email
     ```
 
 
@@ -169,9 +168,8 @@ Edit the document to add the following parameters at the end of the existing com
         - command:
         ... 
         - --oidc-client-id=runai
-        - --oidc-issuer-url=https://auth.runai.<REALM>/auth/realms/runai
+        - --oidc-issuer-url=https://<COMPANY-URL>/auth/realms/runai
         - --oidc-username-prefix=-
-        - --oidc-groups-claim=email
     ```
  
     
@@ -181,10 +179,9 @@ Edit the document to add the following parameters at the end of the existing com
       containers:
       - command:
         ... 
-        - --oidc-client-id=runai-cli
+        - --oidc-client-id=runai-cli-sso
         - --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM>
         - --oidc-username-prefix=-
-        - --oidc-groups-claim=email
         - --oidc-username-claim=email
     ``` 
 
@@ -194,10 +191,9 @@ Edit the document to add the following parameters at the end of the existing com
       containers:
       - command:
         ... 
-        - --oidc-client-id=runai-cli
-        - --oidc-issuer-url=https://auth.runai.<REALM>/auth/realms/runai
+        - --oidc-client-id=runai-cli-sso
+        - --oidc-issuer-url=https://<COMPANY-URL>/auth/realms/runai
         - --oidc-username-prefix=-
-        - --oidc-groups-claim=email
         - --oidc-username-claim=email
     ``` 
 
