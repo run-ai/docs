@@ -1,4 +1,4 @@
-# Allocation of GPU Portions
+# Allocation of GPU Fractions
 
 ##  Introduction
 
