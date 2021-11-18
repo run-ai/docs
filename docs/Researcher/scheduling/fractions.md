@@ -6,7 +6,7 @@ GPUs have a significant amount of memory. Ranging from a couple of gigabytes in 
 
 This amount of memory is important for processing large amounts of data, such as in training deep learning models. However, there are quite a few applications that do not need this size of memory. Examples can be inference workloads and the model-creation phase. It would thus be convenient if we could __divide up a GPU__ between various workloads, thus achieving better GPU utilization. 
 
-This article describes two complimentary technologies that allow the division of GPU and how to use them with Run:AI:
+This article describes two complementary technologies that allow the division of GPU and how to use them with Run:AI:
 
 1. Run:AI Fractions. 
 2. Dynamic allocation using NVIDIA Multi-instance GPU (MIG)
@@ -30,7 +30,7 @@ NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A
 * When divided, the portion acts as a fully independent GPU.
 * The division is static, in the sense that you have to call NVIDIA API or the `nvidia-smi` command to create or remove the MIG partition.  
 * The division is both of compute and memory.
-* The division has fixed sizes. Up to 8 units of compute and 7 units of memory in fixed sizes. The various _MIG profiles_ can be found in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/){target=_blank}. A typical profile can be __MIG 2g.10gb__ which provides 2/8 of the compute power and 10GB of RAM
+* The division has fixed sizes. Up to 8 units of compute and 7 units of memory in fixed sizes. The various _MIG profiles_ can be found in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/){target=_blank}. A typical profile can be `MIG 2g.10gb` which provides 2/8 of the compute power and 10GB of RAM
 
 Run:AI provides a way to __dynamically__ create a MIG partition. Using the same experience as the Fractions technology above, if you know that your code needs 4GB of RAM. You can use the flags `--gpu-memory 4G` and `--gpu-compute xx` to specify the _portion_ of the GPU memory that you need. Run:AI will call the NVIDIA MIG API, generate the smallest possible MIG profile for your request and allocate it to your container.
 
