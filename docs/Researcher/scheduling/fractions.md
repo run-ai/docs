@@ -22,7 +22,7 @@ For more details on Run:AI fractions see the [fractions quickstart](../Walkthrou
 
 
 !!! limitation
-    With the fraction technology all running workloads share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU compute power.
+    With the fraction technology all running workloads, which utilize the GPU, share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU compute power.
 
 ## Dynamic MIG
 
