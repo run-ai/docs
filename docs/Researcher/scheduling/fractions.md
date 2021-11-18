@@ -14,7 +14,7 @@ This article describes two complementary technologies that allow the division of
 
 ## Run:AI Fractions
 
-Run:AI provides the capability to allocate a container with a specific amount of GPU RAM. As a researcher, if you know that your code needs 4GB of RAM. You can use the flag `--gpu-memory 4G` to specify the exact _portion_ of the GPU memory that you need. Run:AI will allocate your container that specific amount of GPU RAM. Attempting to reach beyond your allotted RAM will result in an out-of-memory exception. 
+Run:AI provides the capability to allocate a container with a specific amount of GPU RAM. As a researcher, if you know that your code needs 4GB of RAM. You can submit a job using the flag `--gpu-memory 4G` to specify the exact _portion_ of the GPU memory that you need. Run:AI will allocate your container that specific amount of GPU RAM. Attempting to reach beyond your allotted RAM will result in an out-of-memory exception. 
 
 For more details on Run:AI fractions see the [fractions quickstart](../Walkthroughs/walkthrough-fractions.md).
 
@@ -32,24 +32,29 @@ NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A
 * The division is both of compute and memory.
 * The division has fixed sizes. Up to 8 units of compute and 7 units of memory in fixed sizes. The various _MIG profiles_ can be found in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/){target=_blank}. A typical profile can be `MIG 2g.10gb` which provides 2/8 of the compute power and 10GB of RAM
 
-Run:AI provides a way to __dynamically__ create a MIG partition. Using the same experience as the Fractions technology above, if you know that your code needs 4GB of RAM. You can use the flags `--gpu-memory 4G` and `--gpu-compute xx` to specify the _portion_ of the GPU memory that you need. Run:AI will call the NVIDIA MIG API, generate the smallest possible MIG profile for your request and allocate it to your container.
+Run:AI provides a way to __dynamically__ create a MIG partition. Using the same experience as the Fractions technology above, if you know that your code needs 4GB of RAM. You can use the flag `--gpu-memory 4G` to specify the _portion_ of the GPU memory that you need. Run:AI will call the NVIDIA MIG API to generate the smallest possible MIG profile for your request, and allocate it to your container.
 
-Run:AI provides an additional flag to dynamically create the specific MIG partition in NVIDIA terminology. As such, you can specify `--mig 2g.10gb`.  
+Run:AI provides an additional flag to dynamically create the specific MIG partition in NVIDIA terminology. As such, you can specify `--mig-profile 2g.10gb`.  
 
 Run:AI will automatically deallocate the partition when the workload finishes. This happens in a _lazy_ fashion in the sense that the partition will not be removed until the scheduler decides that it is needed elsewhere. 
 
 For more details on Run:AI fractions see the [dynamic MIG quickstart] xx (../Walkthroughs/walkthrough-dynamic-mig.md).
+
 
 ### Setting up Dynamic MIG
 
 As described above, MIG is only available in the latest NVIDIA architecture. For such nodes, the administrator needs to specifically enable dynamic MIG on the node by running: 
 
 ```
-runai-adm set node-role --mig-enabled <node-name>
+runai-adm set node-role --dynamic-mig-enabled <node-name>
 ```
 
 (use `runai-adm remove` to unset)
 
+!!! Limitations
+    * Once a node has been marked as dynamic MIG enabled, it can only be used via the Run:AI scheduler.
+    * When it comes to Kubernete, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:AI you must set the MIG strategy to `mixed`.
+    * Run:AI currently supports only A100 nodes with 40GB RAM (if you need support for A30 or A100 with 80GB RAM, please contact Run:AI customer support).
 
 ## Fractions and Dynamic MIG together.
 
