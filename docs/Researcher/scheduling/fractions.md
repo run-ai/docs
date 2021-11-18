@@ -4,7 +4,7 @@
 
 A single GPU has a significant amount of memory. Ranging from a couple of gigabytes in older generations and up to 80GB per GPU in the later models of the latest NVIDIA GPU technology. A single GPU also has a vast amount of computing power. 
 
-This amount of memory and vast computing power is important for processing large amounts of data, such as in training deep learning models. However, there are quite a few applications that do not need this power. Examples can be inference workloads and the model-creation phase. It would thus be convenient if we could __divide up a GPU__ between various workloads, thus achieving better GPU utilization. 
+This amount of memory and computing power is important for processing large amounts of data, such as in training deep learning models. However, there are quite a few applications that do not need this power. Examples can be inference workloads and the model-creation phase. It would thus be convenient if we could __divide up a GPU__ between various workloads, thus achieving better GPU utilization. 
 
 This article describes two complementary technologies that allow the division of GPU and how to use them with Run:AI:
 
@@ -14,7 +14,9 @@ This article describes two complementary technologies that allow the division of
 
 ## Run:AI Fractions
 
-Run:AI provides the capability to allocate a container with a specific amount of GPU RAM. As a researcher, if you know that your code needs 4GB of RAM. You can submit a job using the flag `--gpu-memory 4G` to specify the exact _portion_ of the GPU memory that you need. Run:AI will allocate your container that specific amount of GPU RAM. Attempting to reach beyond your allotted RAM will result in an out-of-memory exception. You can also use the flag `--gpu 0.2` to get 20% of the GPU memory on the GPU assigned for you. 
+Run:AI provides the capability to allocate a container with a specific amount of GPU RAM. As a researcher, if you know that your code needs 4GB of RAM. You can submit a job using the flag `--gpu-memory 4G` to specify the exact _portion_ of the GPU memory that you need. Run:AI will allocate your container that specific amount of GPU RAM. Attempting to reach beyond your allotted RAM will result in an out-of-memory exception. 
+
+You can also use the flag `--gpu 0.2` to get 20% of the GPU memory on the GPU assigned for you. 
 
 For more details on Run:AI fractions see the [fractions quickstart](../Walkthroughs/walkthrough-fractions.md).
 
@@ -59,7 +61,7 @@ runai-adm set node-role --dynamic-mig-enabled <node-name>
     * When it comes to Kubernete, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:AI you must set the MIG strategy to `mixed`.
     * Run:AI currently supports only A100 nodes with 40GB RAM (if you need support for A30 or A100 with 80GB RAM, please contact Run:AI customer support).
 
-## Fractions and Dynamic MIG together.
+## Mixing Fractions and Dynamic MIG
 
 Given a specific node, the IT administrator can decide whether to use one technology or the other. When the Researcher asks for a specific amount of GPU memory, Run:AI will either provide it on an annotated node by dynamically allocating a MIG partition, or use a different node using the fractions technology.
 
