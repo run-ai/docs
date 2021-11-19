@@ -31,7 +31,7 @@ NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A
 * When divided, the portion acts as a fully independent GPU.
 * The division is static, in the sense that you have to call NVIDIA API or the `nvidia-smi` command to create or remove the MIG partition. 
 * The division is both of compute and memory.
-* The division has fixed sizes.  Up to 7 units of compute and memory in fixed sizes. The various _MIG profiles_ can be found in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/){target=_blank}. A typical profile can be `MIG 2g.10gb` which provides 2/8 of the compute power and 10GB of RAM
+* The division has fixed sizes.  Up to 7 units of compute and memory in fixed sizes. The various _MIG profiles_ can be found in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/){target=_blank}. A typical profile can be `MIG 2g.10gb` which provides 2/7 of the compute power and 10GB of RAM
 * Reconfiguration of MIG profiles on the GPU requires administrator permissions and the draining of all running workloads. 
 
 
