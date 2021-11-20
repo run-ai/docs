@@ -1,5 +1,21 @@
 
+## October 29<sup>th</sup> 2021
 
+The Run:AI CLI list jobs option now enforces the access definitions of the user and lists only jobs under permitted projects.
+
+The Run:AI CLI list projects option now displays the quota definitions of each project.
+
+The port forwarding option now supports any IP address.
+
+The Run:AI CLI installation is now signed with a checksum, to allow customers to validate the origin of the CLI and align with security best practices and standards.
+
+The Run:AI Researcher User Interface now supports setting GPU Memory as well as volumes in NFS servers.
+
+The Run:AI metrics used in the Dashboards are now officially documented and can be accessed via APIs as documented [here](../developer/metrics/metrics.md).
+
+Run:AI now officially supports integration with Seldon Core. For more details read [here](../admin/integration/seldon.md).
+
+Run:AI now support VMWare Tanzu Kubernetes.
 
 ## August 30<sup>th</sup> 2021
 
