@@ -1,13 +1,13 @@
 
 ## October 29<sup>th</sup> 2021
 
-The Run:AI CLI list jobs option now enforces the access definitions of the user and lists only jobs under permitted projects.
+The Run:AI CLI `runai list jobs` option now enforces the access definitions of the user and lists only jobs under permitted projects.
 
-The Run:AI CLI list projects option now displays the quota definitions of each project.
+The Run:AI CLI `runai list projects` option now displays the quota definitions of each project.
 
 The port forwarding option now supports any IP address.
 
-The Run:AI CLI installation is now signed with a checksum, to allow customers to validate the origin of the CLI and align with security best practices and standards.
+The Run:AI CLI binary download is now signed with a checksum, to allow customers to validate the origin of the CLI and align with security best practices and standards.
 
 The Run:AI Researcher User Interface now supports setting GPU Memory as well as volumes in NFS servers.
 
@@ -38,9 +38,9 @@ The original command line, which was used for running a Job, is now shown under 
 Researcher User Interface (UI) enhancements:
 
 * Revised user interface and user experience
-* Researchers can create templates for the ease of jobs submission. Templates can be saved and used in the project level
-* Researchers can be easily re-submit jobs from the Submit page or directly from the jobs list in the Jobs page
-* Administrators can create administrative templates which set cluster-wide defaults, constraints and defaults for the submission of Jobs. For further details see [Configure Command-Line Interface Templates](../admin/researcher-setup/templates.md).
+* Researchers can create templates for the ease of jobs submission. Templates can be saved and used at the project level
+* Researchers can be easily re-submit jobs from the Submit page or directly from the jobs list on the Jobs page
+* Administrators can create administrative templates which set cluster-wide defaults, constraints, and defaults for the submission of Jobs. For further details see [Configure Command-Line Interface Templates](../admin/researcher-setup/templates.md).
 * Different teams can collaborate and share templates by exporting and importing templates in the Submit screen
 
 Researcher Command Line Interface (CLI) enhancements:
@@ -97,7 +97,7 @@ The Node list now shows per-Node graphs for GPU utilization, GPU memory.
 
 ## January 22<sup>nd</sup>, 2021
 
-New Analytics dashboard with emphasis on CPU, CPU Memory, GPU and GPU Memory. Allows better diagnostics of resource misuse. 
+New Analytics dashboard with emphasis on CPU, CPU Memory, GPU, and GPU Memory. Allows better diagnostics of resource misuse. 
 
 ## January 15th, 2021
 
