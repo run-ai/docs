@@ -1,11 +1,11 @@
 
 ## October 29<sup>th</sup> 2021
 
-The Run:AI CLI `runai list jobs` option now enforces the access definitions of the user and lists only jobs under permitted projects.
+The Run:AI cluster now enforces the access definitions of the user and lists only jobs under permitted projects. For example, `runai list jobs`  will only show jobs from projects to which the researcher has access to.
 
 The Run:AI CLI `runai list projects` option now displays the quota definitions of each project.
 
-The port forwarding option now supports any IP address.
+The Run:AI CLI port forwarding option now supports any IP address.
 
 The Run:AI CLI binary download is now signed with a checksum, to allow customers to validate the origin of the CLI and align with security best practices and standards.
 
