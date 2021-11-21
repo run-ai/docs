@@ -65,5 +65,8 @@ runai-adm set node-role --dynamic-mig-enabled <node-name>
 
 Given a specific node, the IT administrator can decide whether to use one technology or the other. When the Researcher asks for a specific amount of GPU memory, Run:AI will either provide it on an annotated node by dynamically allocating a MIG partition, or use a different node using the fractions technology.
 
+## See Also
 
+* Fractions [quickstart](../Walkthroughs/walkthrough-fractions.md).
+* Dynamic MIG [quickstart](../Walkthroughs/quickstart-mig.md)
 
