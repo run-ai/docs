@@ -2,7 +2,7 @@
 
 Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/passwords data entry, multiple compliance schemes, etc. 
 
-Run:AI supports SSO using the [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol.
+Run:AI supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign on __only__.
 
 ## Terminology
 
@@ -96,4 +96,10 @@ The latter option is easier to maintain.
 * Go to [https://app.run.ai/permissions](https://app.run.ai/permissions){target=_blank}.
 * Select the `Groups` button. 
 * Assuming you have mapped IdP `Roles` attribute as described in the prerequisites section above, add a Role name and provide it Run:AI Roles. 
+
+
+## Implementation Notes
+
+Run:AI SSO does not support single logout. As such, logging out from Run:AI will not log you out from other systems.
+
 
