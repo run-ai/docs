@@ -118,6 +118,7 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
             auth-flow: remote-browser
             realm: <REALM>
             client-id: runai-cli-sso
+            subject-claim-field: email
             idp-issuer-url: https://app.run.ai/auth/realms/<REALM>
             redirect-uri: https://app.run.ai/oauth-code
           name: oidc
@@ -133,6 +134,7 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
             auth-flow: remote-browser
             realm: <REALM>
             client-id: runai-cli-sso
+            subject-claim-field: email
             idp-issuer-url: https://<COMPANY-URL>/auth/realms/runai
             redirect-uri: https://<COMPANY-URL>/oauth-code
           name: oidc
