@@ -4,6 +4,9 @@ Single sign-on (SSO) is an authentication scheme that allows a user to log in wi
 
 Run:AI supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign on __only__.
 
+!!! Important Note
+    Single Sign-on will only work for Self-hosted environments as well as SaaS tenants created post-November 2021. 
+
 ## Terminology
 
 The term _Identity Provider_ (or IdP) below relates to the system which creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0. 
