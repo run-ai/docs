@@ -21,6 +21,5 @@ echo "http://$(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].add
 
 ## Authentication
 
-By default, the Researcher REST API is not authenticated. At this point in time, when the system is configured [ to authenticate Researchers](../../admin/runai-setup/advanced/researcher-authentication.md), the researcher API will not work. We are working to fix that. 
+You must create a _Client Application_ to make API requests. Once you have an application, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. See more information under [calling REST APIs](../rest-auth.md)
 
-<!-- you will need to add a token. To get the token, [login to Run:AI](../../../Researcher/cli-reference/runai-login) via the command-line, then retrieve the token from the Kubernetes configuration file. The token is time-based.  -->

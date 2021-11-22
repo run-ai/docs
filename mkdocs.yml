@@ -236,6 +236,7 @@ nav:
       - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
+    - 'Calling REST APIs' : 'developer/rest-auth.md'
     - 'Researcher REST API' : 
         - 'Overview' : 'developer/researcher-rest-api/overview.md'
         - 'Submit a Job' :  'developer/researcher-rest-api/rest-submit.md'

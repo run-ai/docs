@@ -9,7 +9,7 @@ __Method__: `POST`
 
 __Headers__
 
-- `RA-USER: <user-name>`
+- `Authorization: Bearer <ACCESS-TOKEN>`
 - `Content-Type: application/json`
 
 The user name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/advanced/researcher-authentication.md).
@@ -100,9 +100,10 @@ __Basic job with an auto-generated name__
 
 
 ``` bash
-curl -X POST 'http://www.example.com/api/job' \
---header 'RA-USER: john' \
---header 'Content-Type: application/json' \
+curl -X POST 'http://www.example.com/api/v1/jobs' \
+    --header 'Accept: application/json' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <ACCESS-TOKEN>'
 --data-raw '    {
       "job": {
         "project": "team-a",

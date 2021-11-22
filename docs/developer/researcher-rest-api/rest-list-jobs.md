@@ -12,6 +12,10 @@ The following endpoints are supported:
 
 __Method__: `GET`
 
+__Headers__
+
+- `Authorization: Bearer <ACCESS-TOKEN>`
+
 ## Path Parameters
 
 ### Project
@@ -61,7 +65,9 @@ Job:
 Request:
 
 ``` bash
-curl --location --request GET 'http://www.example.com/api/v1/jobs?project=team-a'
+curl --location --request GET 'http://www.example.com/api/v1/jobs?project=team-a' \
+    --header 'Authorization: Bearer <ACCESS-TOKEN>'
+
 ```
 
 Response:

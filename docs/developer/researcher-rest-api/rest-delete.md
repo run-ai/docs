@@ -7,6 +7,9 @@ __URL__:  `http://<service-url>/api/v1/jobs`
 
 __Method__: `DELETE`
 
+__Headers__
+
+- `Authorization: Bearer <ACCESS-TOKEN>`
 ## Request 
 
 Following JSON:
@@ -29,7 +32,8 @@ Job identifier definition:
 
 ``` bash
 curl --location --request DELETE 'http://example.com/api/v1/jobs' \
---header 'Content-Type: application/json' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <ACCESS-TOKEN>'
 --data-raw '[
     {"name" : "job-name-0", "project" : "team-a"}, 
     {"name" : "job-name-1", "project" : "team-a"}

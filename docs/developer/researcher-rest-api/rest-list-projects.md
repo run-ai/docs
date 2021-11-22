@@ -6,6 +6,9 @@ __URL__:  `http://<service-url>/api/v1/projects`
 
 __Method__: `GET`
 
+__Headers__
+
+- `Authorization: Bearer <ACCESS-TOKEN>`
 ## Request
 
 
@@ -46,7 +49,8 @@ For more information see [Working with Projects](../../admin/admin-ui-setup/proj
 Request:
 
 ``` bash
-curl --location --request GET 'http://www.example.com/api/v1/projects' 
+curl --location --request GET 'http://www.example.com/api/v1/projects' \
+    --header 'Authorization: Bearer <ACCESS-TOKEN>'
 ```
 
 Response:

@@ -12,11 +12,7 @@ The rest of this documentation is using the [Open API specification](https://swa
 
 ## Security and authentication
 
-You must be a verified user to make API requests. You can authorize against the API using a dedicated user and password provided by Run:AI Customer Support. Note that the regular user will not suffice for API access. 
-
-Once authenticated, you will receive a token (_bearer_) which you should use in all further API calls. 
-
-Subsequent API calls would be made with the Header: `authorization: Bearer <token>`
+You must create a _Client Application_ to make API requests. Once you have an application, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. See more information under [calling REST APIs](../rest-auth.md)
 
 
 ## Example Usage (Python)
