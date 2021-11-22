@@ -26,15 +26,8 @@ Using the Wizard:
 3. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
 4. Install [Helm](https://helm.sh/docs/intro/install/)
 5. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
-6. Run:
+6. Run the `helm` commands as provided in the wizard. 
 
-``` bash
-helm repo add runai https://run-ai-charts.storage.googleapis.com
-helm repo update
-
-helm install runai-cluster runai/runai-cluster -n runai --create-namespace \
-    -f runai-<cluster-name>.yaml
-```
 
 !!! Info
     To install a specific version, add `--version <version>` to the install command.
