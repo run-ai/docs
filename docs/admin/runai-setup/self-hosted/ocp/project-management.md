@@ -69,15 +69,15 @@ kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 
 Obtain the Project creation template file:
 
-=== "Airgapped"
-    ```
-    cp installation-files/cluster/ocp-project-create.yaml.template <NAMESPACE>.yaml
-    ```
-
 === "Connected" 
     ```
     wget https://raw.githubusercontent.com/run-ai/docs/master/install/cluster/ocp-project-create.yaml.template
     cp k8s-project-create.yaml.template <NAMESPACE>.yaml
+    ```
+
+=== "Airgapped"
+    ```
+    cp installation-files/cluster/ocp-project-create.yaml.template <NAMESPACE>.yaml
     ```
 
 Edit `<NAMESPACE>.yaml`. Replace `<NAMESPACE>` with the name of the namespace you selected above. Then run:

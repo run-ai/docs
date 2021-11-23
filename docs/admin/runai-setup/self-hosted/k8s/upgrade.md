@@ -17,6 +17,13 @@ title: Upgrade self-hosted Kubernetes installation
 
 Run the helm command below. 
 
+=== "Connected"
+    ```
+    helm repo add runai-backend https://backend-charts.storage.googleapis.com
+    helm repo update
+    helm get values runai-backend -n runai-backend > be-values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f be-values.yaml 
+    ```
 === "Airgapped"
     ```
     helm get values runai-backend -n runai-backend > be-values.yaml
@@ -25,26 +32,11 @@ Run the helm command below.
     ```
     (replace `<version>` with the backend version)
 
-=== "Connected"
-    ```
-    helm repo add runai-backend https://backend-charts.storage.googleapis.com
-    helm repo update
-    helm get values runai-backend -n runai-backend > be-values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f be-values.yaml 
-    ```
-
 
 ## Upgrade Cluster 
 
 To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
 
-
-=== "Airgapped"
-    ```
-    helm get values runai-cluster -n runai > values.yaml
-    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
-    ```
-    (replace `<version>` with the cluster version)
 
 === "Connected"
     ```
@@ -53,3 +45,10 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
     helm get values runai-cluster -n runai > values.yaml
     helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
     ```
+
+=== "Airgapped"
+    ```
+    helm get values runai-cluster -n runai > values.yaml
+    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
+    ```
+    (replace `<version>` with the cluster version)

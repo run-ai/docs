@@ -26,18 +26,20 @@ admission-controller:
 
 Run:
 
-=== "Airgapped"
-    ```
-    helm install runai-cluster -n runai  \ 
-      runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml  
-    oc label ns runai openshift.io/cluster-monitoring=true
-    ```
 
 === "Connected"
     Follow the instructions on the Cluster Wizard
     
     !!! Info
         To install a specific version, add `--version <version>` to the install command.
+
+
+=== "Airgapped"
+    ```
+    helm install runai-cluster -n runai  \ 
+      runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml  
+    oc label ns runai openshift.io/cluster-monitoring=true
+    ```
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../../advanced/access-roles/).

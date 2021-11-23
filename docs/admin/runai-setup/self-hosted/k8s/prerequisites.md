@@ -16,11 +16,11 @@ The backend installation of Run:AI will require the configuration of  Kubernetes
 
 ## Run:AI Software Prerequisites
 
-=== "Airgapped"
-    You should receive a single file `runai-<version>.tar` from Run:AI customer support
-
 === "Connected"
     You should receive a file: `runai-gcr-secret.yaml` from Run:AI Customer Support. The file provides access to the Run:AI Container registry.
+
+=== "Airgapped"
+    You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
 ## Kubernetes
 

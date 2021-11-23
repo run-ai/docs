@@ -56,12 +56,6 @@ admission-controller:
 
 Run:
 
-=== "Airgapped"
-    ```
-    helm install runai-cluster -n runai  \ 
-      runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml --create-namespace
-    ```
-
 === "Connected"
     ```
     helm repo add runai https://run-ai-charts.storage.googleapis.com
@@ -74,6 +68,11 @@ Run:
     !!! Info
         To install a specific version, add `--version <version>` to the install command.
 
+=== "Airgapped"
+    ```
+    helm install runai-cluster -n runai  \ 
+      runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml --create-namespace
+    ```
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../../advanced/access-roles/).

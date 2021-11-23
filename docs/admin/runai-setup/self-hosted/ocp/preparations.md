@@ -27,6 +27,10 @@ oc new-project gpu-operator-resources
 
 SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
+
+=== "Connected"
+    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../advanced/cli-admin-install.md).
+
 === "Airgapped" 
 
     To extract Run:AI files, replace `<VERSION>` in the command below and run: 
@@ -35,12 +39,16 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     tar xvf runai-<version>.tar.gz
     cd deploy
     ```
+### Run:AI Images
 
 === "Connected"
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../advanced/cli-admin-install.md).
 
+    Run the following to enable image download from the Run:AI Container Registry on Google cloud:
 
-### Run:AI Images
+    ```
+    kubectl apply -f runai-gcr-secret.yaml
+    kubectl apply -f runai-gcr-secret.yaml -n gpu-operator-resources
+    ```
 
 === "Airgapped" 
 
@@ -58,15 +66,6 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
-=== "Connected"
-
-    Run the following to enable image download from the Run:AI Container Registry on Google cloud:
-
-    ```
-    kubectl apply -f runai-gcr-secret.yaml
-    kubectl apply -f runai-gcr-secret.yaml -n gpu-operator-resources
-    ```
-
 ## Mark Run:AI System Workers
 
 The Run:AI Backend should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
@@ -81,17 +80,15 @@ Currently, this setting cannot be changed after the backend is installed.
 
 If helm v3 does not yet exist on the machine, install it now:
 
+
+=== "Connected"
+    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+
 === "Airgapped"
     ```
     tar xvf helm-<version>-linux-amd64.tar.gz
     sudo mv linux-amd64/helm /usr/local/bin/
     ```  
-
-=== "Connected"
-    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
-
-
-
 ## Additional Permissions
 
 As part of the installation you will be required to install the [Backend](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 

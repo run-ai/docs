@@ -1,9 +1,6 @@
 site_name: Run:AI Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2022 Run:AI
-google_analytics:
-  - UA-122651141-1
-  - auto
 repo_url: https://github.com/run-ai/docs/
 docs_dir: docs 
 theme: 
@@ -14,6 +11,8 @@ theme:
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
     - navigation.tabs
+    - search.highlight
+
 extra_css:
   - stylesheets/extra.css
 strict: true
@@ -35,8 +34,12 @@ extra:
       link: https://twitter.com/runailabs
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/company/runailabs/
+  analytics:
+      provider: google
+      property: UA-122651141-1
 plugins:
-  - search
+  - search:
+      lang: en
   - git-revision-date-localized
   - render_swagger
   - minify:

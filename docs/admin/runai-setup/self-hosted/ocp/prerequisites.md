@@ -15,12 +15,11 @@ The backend installation of Run:AI will require the configuration of  Kubernetes
 
 ## Run:AI Software Prerequisites
 
-=== "Airgapped"
-    You should receive a single file `runai-<version>.tar` from Run:AI customer support
-
 === "Connected"
     You should receive a file: `runai-gcr-secret.yaml` from Run:AI Customer Support. The file provides access to the Run:AI Container registry.
 
+=== "Airgapped"
+    You should receive a single file `runai-<version>.tar` from Run:AI customer support
 
 ## OpenShift 
 
@@ -36,13 +35,12 @@ Run:AI requires OpenShift 4.6 or above. OpenShift 4.9 is not yet supported.
 
 An OpenShift installation of Run:AI has third-party dependencies that must be pre-downloaded to an Airgapped environment. These are the _NVIDIA GPU Operator_ and _Kubernetes Node Feature Discovery Operator_ 
 
-=== "Airgapped"
-    Download the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. These instructions also include the download of the Kubernetes Node Feature Discovery Operator.
 
 === "Connected"
     No additional work needs to be performed. We will use the _Red Hat Certified Operator Catalog (Operator Hub)_ during the installation. 
 
-
+=== "Airgapped"
+    Download the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. These instructions also include the download of the Kubernetes Node Feature Discovery Operator.
 ## Installer Machine
 
 The machine running the installation script (typically the Kubernetes master) must have:

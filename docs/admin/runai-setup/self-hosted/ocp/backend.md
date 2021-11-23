@@ -4,14 +4,14 @@
 
 Customize the Run:AI backend configuration file.
 
-=== "Airgapped"
-    Edit `runai-backend/runai-backend-helm-release.yaml`
-
 === "Connected"
     Generate a values file by running:
     ```
     runai-adm generate-values --openshift
     ```
+
+=== "Airgapped"
+    Edit `runai-backend/runai-backend-helm-release.yaml`
 
 ## Edit Backend Configuration File
 
@@ -31,14 +31,6 @@ __Optional__: Change the following properties in the values file:
 
 Run the helm command below:
 
-
-=== "Airgapped"
-    ```
-    helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
-        runai-backend -f runai-backend/runai-backend-helm-release.yaml 
-    ```
-    (replace `<version>` with the backend version)
-
 === "Connected"
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
@@ -49,6 +41,14 @@ Run the helm command below:
 
     !!! Info
         To install a specific version, add `--version <version>` to the install command.
+
+=== "Airgapped"
+    ```
+    helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
+        runai-backend -f runai-backend/runai-backend-helm-release.yaml 
+    ```
+    (replace `<version>` with the backend version)
+
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
