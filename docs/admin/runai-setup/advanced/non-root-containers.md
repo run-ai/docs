@@ -1,7 +1,7 @@
 
 # User Identity in Container
 
-The identity of the user in the container determines its access to resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. This document explains multiple way on how to propagate the user identity into the container.
+The identity of the user in the container determines its access to resources. For example, network file storage solutions typically use this identity to determine the container's access to network volumes. This document explains multiple ways for propagating the user identity into the container.
 
 ## The Default: Root Access
 
@@ -20,8 +20,8 @@ then run `id`, you will see the __root__ user.
 
 There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
-* The flag ``--run-as-user`` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on). 
-* The flag ``--prevent-privilege-escalation`` prevents the container from elevating its own privileges into root (e.g. running ``sudo`` or changing system files.). 
+* The flag `--run-as-user` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on). 
+* The flag `--prevent-privilege-escalation` prevents the container from elevating its own privileges into `root` (e.g. running `sudo` or changing system files.). 
 
 Equivalent flags exist in the Researcher User Interface.
 ### Run as Current User
@@ -76,7 +76,7 @@ kubectl apply -f cluster-config.yaml
 ``` 
 
 !!! Limitation
-    Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_.
+    Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_. See below for more information.
 
 ### Using Templates
 
@@ -90,7 +90,7 @@ A best practice is to store the user identifier (UID) and the group identifier (
 
 To perform this, you must:
 
-* Set up [single sign-on](sso.md). 
+* Set up [single sign-on](sso.md). Perform the steps for UID/GID integration.
 * Run: `runai login` and enter your credentials
 * Use the flag --run-as-user
 
