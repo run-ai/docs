@@ -242,23 +242,24 @@ nav:
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'Calling REST APIs' : 'developer/rest-auth.md'
-    - 'Researcher REST API' : 
+    - 'Researcher API' : 
+      - 'REST API' : 
         - 'Overview' : 'developer/researcher-rest-api/overview.md'
         - 'Submit a Job' :  'developer/researcher-rest-api/rest-submit.md'
         - 'Delete a Job' :  'developer/researcher-rest-api/rest-delete.md'
         - 'Get a list of Jobs' :  'developer/researcher-rest-api/rest-list-jobs.md'
         - 'Get a list of Projects' :  'developer/researcher-rest-api/rest-list-projects.md'
-    - 'Researcher Kubernetes API' : 
+      - 'Kubernetes API' : 
         - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
-    - 'Administrator REST API' : 
-        - 'Overview' : 'developer/admin-rest-api/overview.md'
-        - 'Projects' :  'developer/admin-rest-api/projects.md'
-        - 'Departments' :  'developer/admin-rest-api/departments.md'
-        - 'Users' :  'developer/admin-rest-api/users.md'
-        - 'Node Types' :  'developer/admin-rest-api/node-types.md'
-        - 'Clusters' :  'developer/admin-rest-api/clusters.md'
-    - 'Inference' :
+    - 'Administrator API' : 
+      - 'Overview' : 'developer/admin-rest-api/overview.md'
+      - 'Projects' :  'developer/admin-rest-api/projects.md'
+      - 'Departments' :  'developer/admin-rest-api/departments.md'
+      - 'Users' :  'developer/admin-rest-api/users.md'
+      - 'Node Types' :  'developer/admin-rest-api/node-types.md'
+      - 'Clusters' :  'developer/admin-rest-api/clusters.md'
+    - 'Inference API' :
       - 'Overview' : 'developer/inference/overview.md' 
       - 'Setup' : 'developer/inference/setup.md' 
       - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
