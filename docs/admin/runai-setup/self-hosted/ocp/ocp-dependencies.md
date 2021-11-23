@@ -36,16 +36,6 @@ kubectl create clusterrolebinding --clusterrole=admin \
 <!-- kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
 
-## Prometheus
-
-Run:AI uses the __Prometheus Operator__ built into OpenShift 
-
-* Add label to the runai namespace:
-
-```
-kubectl label ns runai openshift.io/cluster-monitoring=true
-```
-
 
 ## Next Steps
 

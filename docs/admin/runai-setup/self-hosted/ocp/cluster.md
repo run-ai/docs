@@ -30,16 +30,11 @@ Run:
     ```
     helm install runai-cluster -n runai  \ 
       runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml  
+    oc label ns runai openshift.io/cluster-monitoring=true
     ```
 
 === "Connected"
-    ```
-    helm repo add runai https://run-ai-charts.storage.googleapis.com
-    helm repo update
-
-    helm install runai-cluster runai/runai-cluster -n runai \
-        -f runai-<cluster-name>.yaml
-    ```
+    Follow the instructions on the Cluster Wizard
     
     !!! Info
         To install a specific version, add `--version <version>` to the install command.
