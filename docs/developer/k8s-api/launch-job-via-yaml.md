@@ -1,8 +1,7 @@
 # Submit a Run:AI Job via YAML
 
-The easiest way to submit Jobs to the Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). Still, the CLI is not a must. It is only a wrapper for a more detailed Kubernetes API syntax using YAML. 
 
-There are cases where you want to forgo the CLI and use direct YAML calls. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system that submits Jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
+You can use YAML files to submit jobs directly to Kubernetes. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system that submits Jobs, and want to continue working with the same system. 
 
 ## Terminology
 
@@ -12,10 +11,7 @@ We differentiate between three types of Workloads:
 *   __Build__ workloads. Build workloads are interactive. They are used by data scientists to write machine learning code and test it against subsets of the data. Build workloads typically do not maximize usage of the GPU. 
 * __Inference__ workloads. Inference workloads are used for serving models in production. For details on how to submit Inference workloads via YAML see [here](../../developer/inference/submit-via-yaml.md).
 
-The internal Kubernetes implementation of Train is a _CRD_ (Customer Resource) named `RunaiJob` which is similar to a Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/Job/){target=_blank}. The internal implementation of Builds is a  Kubernetes [StatesfulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){target=_blank}.
-
-* A Kubernetes _Job_ is used for _Train_ workloads. A Job has a distinctive "end" at which time the Job is either "Completed" or "Failed"
-* A Kubernetes _StatefulSet_ is used for  _Build_ workloads. Build workloads are interactive sessions. StatefulSets do not end on their own. Instead, they must be manually stopped
+The internal Kubernetes implementation of a Run:AI Job is a _CRD_ (Customer Resource) named `RunaiJob` which is similar to a Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/Job/){target=_blank}. 
 
 Run:AI extends the Kubernetes _Scheduler_. A Kubernetes Scheduler is the software that determines which workload to start on which node. Run:AI provides a custom scheduler named `runai-scheduler`.
 

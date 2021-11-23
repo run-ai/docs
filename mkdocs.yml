@@ -250,6 +250,7 @@ nav:
         - 'Get a list of Jobs' :  'developer/researcher-rest-api/rest-list-jobs.md'
         - 'Get a list of Projects' :  'developer/researcher-rest-api/rest-list-projects.md'
       - 'Kubernetes API' : 
+        - 'Overview' : 'developer/k8s-api/overview.md'
         - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
     - 'Administrator API' : 

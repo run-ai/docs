@@ -1,6 +1,6 @@
 
 ---
-title: Researcher REST API  Overview
+title: Researcher REST API Overview
 ---
 # Researcher REST API
 

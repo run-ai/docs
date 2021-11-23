@@ -1,20 +1,13 @@
 # Submit a Run:AI Job via Kubernetes API
 
-The easiest way to submit jobs to the Run:AI GPU cluster is via the Run:AI Command-line interface (CLI). Still, the CLI is not a must. It is only a wrapper for a more detailed Kubernetes API syntax using YAML. 
+* 
 
-There are cases where you want to forgo the CLI and use direct API calls. A frequent scenario for using the Kubernetes YAML syntax to submit jobs is __integrations__. Researchers may already be working with an existing system that submits jobs, and want to continue working with the same system. Though it is possible to call the Run:AI CLI from the customer's integration, it is sometimes not enough.
+This article is a complementary article to the article on [launching jobs via YAML](launch-job-via-yaml.md). It shows how to use a programming language and [Kubernetes API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#programmatic-access-to-the-api){target=_blank} to submit jobs. 
 
-There are a couple of alternatives to achieving this:
-
-* Use the [Researcher REST API](../../developer/researcher-rest-api/overview.md) to submit, list and delete Jobs.
-* Launch a Job [via YAML](launch-job-via-yaml.md)
-
-This article is a complementary article to the article on launching jobs via YAML. It shows how to use [Kubernetes API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#programmatic-access-to-the-api){target=_blank} to submit jobs. 
 The article uses Python, though Kubernetes API is available in several other programming languages. 
 
 ## Submit a Run:AI Job 
 
-The following code builds the Job YAML from the article on [launching jobs via YAML](launch-job-via-yaml.md) and sends it via Kubernetes API.
 
 ``` python
 from __future__ import print_function
