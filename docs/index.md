@@ -22,9 +22,12 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On the bottom right of the Administrator user interface [app.run.ai](https://app.run.ai){target=_blank}, use the 'Help' widget.
+* On the navigation bar of the Administrator user interface at [app.run.ai](https://app.run.ai){target=_blank}, use the 'Support' button.
 
-* On the bottom right of this page, use the _Help_ widget.
+* Or submit a ticket by clicking the button below:
+
+[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .md-button--primary }
+
 
 
 ## Run:AI Cloud Status Page
