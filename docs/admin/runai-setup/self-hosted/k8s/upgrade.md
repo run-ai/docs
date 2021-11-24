@@ -5,12 +5,12 @@ title: Upgrade self-hosted Kubernetes installation
 
 ## Preparations
 
+=== "Connected"
+    No preperation required.
+
 === "Airgapped" 
     * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:AI customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:AI backend.
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
-
-=== "Connected"
-    No additional work
 
 
 ## Upgrade Backend 

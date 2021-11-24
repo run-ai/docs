@@ -1,7 +1,7 @@
 
 # Calling REST API
 
-The following document explain how to get the credentials required to call the Run:AI REST API
+The following document explains how to get the credentials required to call the Run:AI REST API
 
 
 ## Create a Client Application
@@ -10,14 +10,14 @@ The following document explain how to get the credentials required to call the R
 * Go to `Application | Settings`
 * Create a new Application. 
 * Set the required roles:
-    * Select `Researcher` to manipulate _Jobs_ using the [Researcher REST API](researcher-rest-api/overview.md).
-    * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md).
+    * Select `Researcher` to manipulate _Jobs_ using the [Researcher REST API](researcher-rest-api/overview.md). To provide access to a specific project, you will need to go to `Application | Projects` and provide access to specific projects. 
+    * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md). 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
 * Copy the `<CLIENT-ID>` and `<CLIENT-SECRET>` to be used below
 * Copy the domain of the web page to be used as `<COMPANY-URL>` below. This can be [app.run.ai](https://app.run.ai){target=_blank} for SaaS installation or a custom URL for Self-hosted installations
 
 !!! Important Note
-    Creating Client Application tokens is only available in Self-hosted installation and in SaaS installations where the tenant has been created post November 2021. If you do not see the `Settings | Application` area, please contact Run:AI customer suspport.  
+    Creating Client Application tokens is only available in Self-hosted installation and in SaaS installations where the tenant has been created post-November 2021. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
 
 ## Request a Token
 
