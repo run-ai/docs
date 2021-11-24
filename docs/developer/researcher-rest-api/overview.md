@@ -21,5 +21,7 @@ echo "http://$(kubectl get nodes -o=jsonpath='{.items[0].status.addresses[0].add
 
 ## Authentication
 
-You must create a _Client Application_ to make API requests. Once you have an application, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. See more information under [calling REST APIs](../rest-auth.md)
+By default, researcher APIs are unauthenticated. To protect researcher API (and the researchers themselves), you must [configure researcher authentication](../../admin/runai-setup/advanced/researcher-authentication.md).
+
+Once configured, you must create a _Client Application_ to make API requests. Once you have an application, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. See more information under [calling REST APIs](../rest-auth.md)
 
