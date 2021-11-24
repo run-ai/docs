@@ -4,24 +4,21 @@
 
  This Quickstart is an extension of the Quickstart document: [Start and Use Interactive Build Workloads](walkthrough-build.md) 
 
- When starting a container with the Run:AI Command-Line Interface (CLI), it is possible to expose internal ports to the container user.   
+ When starting a container with the Run:AI Command-Line Interface (CLI), it is sometimes needed to expose internal ports to the user. Examples are: accessing a Jupyter notebook, using the container from a development environment such as PyCharm. 
 
 ## Exposing a Container Port
 
- There are 4 ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_ and _Ingress_. The first 2 will always work. The others require a special setup by your administrator. The 4 methods are explained [here](../../admin/runai-setup/advanced/allow-external-access-to-containers.md). 
+ There are four ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_, and _Ingress_. The first two will always work. The others require a special setup by your administrator. The four methods are explained [here](../../admin/runai-setup/advanced/allow-external-access-to-containers.md). 
 
- The document below provides examples based on Port Forwarding and Ingress.
+ The document below provides an example based on Port Forwarding.
 
-!!! Note
-    The step below uses a Jupyter Notebook as an example of how to expose Ports. There is also a special shortcut for starting a Jupyter Notebook detailed [here](../tools/dev-jupyter.md). 
 
 ## Port Forwarding, Step by Step Walkthrough
 
 ### Setup
 
 *  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*  Add a Project named "team-a"
-*  Allocate 2 GPUs to the Project
+*  Add a Project named `team-a`
 
 ### Run Workload
 
@@ -29,62 +26,36 @@
 
 ``` bash
 runai config project team-a
-runai submit jupyter1 -i jupyter/base-notebook -g 1 --interactive \ 
-  --service-type=portforward --port 8888:8888  --command 
-  -- start-notebook.sh --NotebookApp.base_url=jupyter1
+runai submit nginx-test -i zembutsu/docker-sample-nginx --interactive \
+  --service-type portforward --port 8080:80 
 ```
 
-*   The Job is based on a generic Jupyter notebook docker image ``jupyter/base-notebook`` 
-*    We named the Job _jupyter1_.   Note that in this Jupyter implementation, the name of the Job should also be copied to the Notebook base URL.   
+*   The Job is based on a sample _NGINX_ webserver docker image `zembutsu/docker-sample-nginx`. Once accessed via a browser, the page shows the container name. 
 *   Note the _interactive_ flag which means the Job will not have a start or end. It is the Researcher's responsibility to close the Job.  
-*   The Job is assigned to team-a with an allocation of a single GPU.
-*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8888 to localhost as long as the ``runai submit`` command is not stopped
+*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8080 to localhost as long as the `runai submit` command is not stopped
 *   It is possible to forward traffic from multiple IP addresses by using the "--address" parameter. Check the CLI reference for further details. 
 
-### Open the Jupyter notebook
+The result will be:
 
-Open the following in the browser
-
-```
-http://localhost:8888/jupyter1
-```
-
-You should see a Jupyter notebook. To get the full URL with the notebook token, run the following in another shell:
-
-```
-runai logs jupyter1 -p team-a
+``` bash
+The job 'nginx-test-0' has been submitted successfully
+You can run `runai describe job nginx-test-0 -p team-a` to check the job status
+Waiting for pod to start running...
+INFO[0023] Job started
+Open access point(s) to service from localhost:8080
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
 ```
 
-## Ingress, Step by Step Walkthrough
+### Access the Webserver 
 
-__Note:__ Ingress must be set up by your Administrator prior to usage. For more information see:  [Exposing Ports from Researcher Containers Using Ingress](../../admin/runai-setup/advanced/allow-external-access-to-containers.md).
+Open the following in the browser at [http://localhost:8080](http://localhost:8080){target=_blank}.
 
-### Setup
+You should see a web page with the name of the container.
 
-*   Perform the setup steps for port forwarding above.  
+### Stop Workload
 
-### Run Workload
-
-*   At the command-line run:
-
-``` shell
-runai config project team-a
-runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
-  --service-type=ingress --port 8888  --command  \ 
-  -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
-```
-
-*   An ingress service URL will be created, run:
-
-        runai list jobs
-
-You will see the service URL with which to access the Jupyter notebook
-
-![mceclip0.png](img/mceclip0.png)
-
-!!! Important note
-    With ingress, Run:AI creates an access URL whose domain is _uniform_ (and is IP which serves as the access point to the cluster). The rest of the path is _unique_ and is build as: __&lt;project-name&gt;-&lt;job-name&gt;__. Thus, with the example above, we must set the Jupyter notebook base URL to respond to the service at __team-a-test-ingress__
-
+Press _Ctrl-C_ in the shell to stop port forwarding. Then delete the Job by running `runai delete nginx-test`
 ## See Also
 
 * Develop on Run:AI using [Visual Studio Code](../tools/dev-vscode.md)
