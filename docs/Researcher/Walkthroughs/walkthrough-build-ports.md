@@ -60,3 +60,4 @@ Press _Ctrl-C_ in the shell to stop port forwarding. Then delete the Job by runn
 
 * Develop on Run:AI using [Visual Studio Code](../tools/dev-vscode.md)
 * Develop on Run:AI using [PyCharm](../tools/dev-pycharm.md)
+* Use a [Jupyter notbook](../tools/dev-jupyter.md) with Run:AI.
