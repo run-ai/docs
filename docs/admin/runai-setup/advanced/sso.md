@@ -70,7 +70,7 @@ Configure the IdP to add UID, GID, and Supplementary groups in the IdP.
 
 Test the mapping of UID/GID to within the container:
 
-Submit a job, for example:
+Submit a job with the flag `--run-as-user`, for example:
 
 ``` bash
 runai submit -i ubuntu --interactive --run-as-user  --attach -- bash
