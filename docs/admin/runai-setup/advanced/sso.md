@@ -21,7 +21,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. | 
- | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. | 
+ | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. Groups at the IdP should be separated by __##__. For example: __1234##212##654__ | 
  
  
 
