@@ -15,13 +15,13 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  * __Organization Name__: You must have a Run:AI _Organization Name_. This is the name that appears on the top right of the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
  * __Additional attribute mapping__: Configure your IdP to map several IdP attributes: 
 
- | IdP attribute | Run:AI required name | Description       | 
+ | IdP attribute  | Run:AI required name | Description       | 
  |----------------|----------------------|--------------------|
  | User email     | email                | `e-mail` is the user identifier with Run:AI. Mandatory (usually already pre-set in the IdP) | 
  | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. | 
- | Linux Supplementary Groups | SupplementaryGroups      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. | 
+ | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. | 
  
  
 
@@ -56,7 +56,7 @@ Researchers should be authenticated when accessing the Run:AI GPU Cluster. To pe
 
 ### Test 
 
-Test connectivity to Run:AI commmand-line interface:
+Test connectivity to Run:AI command-line interface:
 
 * In the command-line, run `runai login`:
 * You receive a link that you must copy and open in your browser. Post login you will receive a verification code which you must paste into the shell window.
@@ -65,14 +65,15 @@ Test connectivity to Run:AI commmand-line interface:
 
 ## Step 3: UID/GID Mapping
 
-Configure the IdP to add UID, GID and Supplementary groups
+Configure the IdP to add UID, GID, and Supplementary groups in the IdP.
 ### Test 
 
 Test the mapping of UID/GID to within the container:
 
 Submit a job, for example:
+
 ``` bash
-runai submit -i ubuntu --interactive  --attach -- bash
+runai submit -i ubuntu --interactive --run-as-user  --attach -- bash
 ```
 When a shell opens inside the container, run `id` and verify that UID, GID, and the supplementary groups are the same as in the user's profile in the organization's directory.
 
