@@ -80,12 +80,12 @@ runai submit --name mig2 -i gcr.io/run-ai-demo/quickstart-cuda  --mig-profile 2g
 runai submit --name mig3 -i gcr.io/run-ai-demo/quickstart-cuda  --mig-profile 2g.10gb 
 ```
 
-We used two different methods to create MIG partition, 
+We used two different methods to create MIG partitions: 
 
 1. Stating the amount of GPU memory we require 
 2. Requiring a partition of explicit size using NVIDIA terminology. 
 
-The result is three MIG partitions of 10GB each. You can verify that by running `nvidia-smi`, at the GPU node level:
+Both methods achieve the same effect. They result in three MIG partitions of 10GB each. You can verify that by running `nvidia-smi`, at the GPU node level:
 
 ``` hl_lines="14"
 +-----------------------------------------------------------------------------+
@@ -139,7 +139,7 @@ We now want to allocate an _interactive_ job with 20GB. Interactive jobs take pr
 runai submit --name mig1-int -i gcr.io/run-ai-demo/quickstart-cuda \
     --interactive --gpu-memory 20G 
 ```
-or
+or similarly,
 ```
 runai submit --name mig1-int -i gcr.io/run-ai-demo/quickstart-cuda \
     --interactive --mig-profile 3g.20gb  
