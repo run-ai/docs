@@ -194,6 +194,7 @@ nav:
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Elasticity' : 'Researcher/Walkthroughs/walkthrough-elasticity.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
+      - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
@@ -222,8 +223,9 @@ nav:
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
-      - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'The Run:AI Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
+      - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
+      - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
