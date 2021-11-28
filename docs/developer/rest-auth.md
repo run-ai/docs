@@ -56,7 +56,7 @@ If all goes well, you'll receive an HTTP 200 response with a payload containing 
 
 ``` JSON
 {
-  "access_token": "AyPrg....frgfg",
+  "access_token": "AyPrg....kjnG",
   "expires_in": 36000,
    ....
   "token_type": "bearer"
