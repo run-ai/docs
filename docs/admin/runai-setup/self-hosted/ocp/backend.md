@@ -11,8 +11,10 @@ Customize the Run:AI backend configuration file.
     ```
 
 === "Airgapped"
-    Edit `runai-backend/runai-backend-helm-release.yaml`
-
+    Generate a values file by running the following under the `deploy` folder:
+    ```
+    runai-adm generate-values --openshift --airgapped
+    ```
 ## Edit Backend Configuration File
 
 __Optional__: Change the following properties in the values file:
