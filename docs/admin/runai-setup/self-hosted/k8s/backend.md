@@ -10,9 +10,12 @@ Customize the Run:AI backend configuration file.
     ```
     runai-adm generate-values --domain runai.<company-name>
     ```
-
 === "Airgapped"
-    Edit `runai-backend/runai-backend-helm-release.yaml`
+    Generate a values file by running the following under the `deploy` folder:
+    ```
+    runai-adm generate-values  --domain runai.<company-name> --airgapped
+    ```
+
 
 
 Change the following properties in the values file. 
