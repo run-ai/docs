@@ -47,6 +47,8 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     Run the following script (you must have at least 20GB of free disk space to run): 
 
     ```  
+    kubectl create namespace runai-backend
+
     sudo -E ./prepare_installation.sh
     ```
 
