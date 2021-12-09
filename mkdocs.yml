@@ -67,7 +67,7 @@ plugins:
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         'Administrator/Cluster-Setup/install-k8s.md' : 'admin/runai-setup/cluster-setup/install-k8s.md'
-        'Administrator/Cluster-Setup/kubernetes-config-best-practices.md' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
+#        'Administrator/Cluster-Setup/kubernetes-config-best-practices.md' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
 #        'Administrator/Cluster-Setup/ldap-integration.md' : 'admin/runai-setup/cluster-setup/ldap-integration.md'
         'Administrator/Cluster-Setup/node-downtime.md' : 'admin/runai-setup/advanced/node-downtime.md'
         'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/advanced/node-roles.md'
@@ -140,23 +140,23 @@ nav:
           - 'Next Steps' : 'admin/runai-setup/self-hosted/ocp/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
-        - 'Disaster Recovery' : 'admin/runai-setup/self-hosted/dr.md'
     #    - 'Airgapped Kubernetes' : 'k8s.md'
-      - 'Advanced' : 
+      - 'Configuration' : 
         # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
 #          - 'LDAP Authentication' : 'admin/runai-setup/cluster-setup/ldap-integration.md'
         - 'Overview' : 'admin/runai-setup/advanced/overview.md'
-        - 'Install Administrator CLI' : 'admin/runai-setup/advanced/cli-admin-install.md'
         - 'Set Node Roles' : 'admin/runai-setup/advanced/node-roles.md'
         - 'Researcher Authentication' : 'admin/runai-setup/advanced/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/advanced/sso.md'
-        - 'Run:AI Kubernetes Cluster Access' : 'admin/runai-setup/advanced/access-roles.md'
+        - 'Review Kubernetes Access provided to Run:AI' : 'admin/runai-setup/advanced/access-roles.md'
         - 'External access to Containers' : 'admin/runai-setup/advanced/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/advanced/non-root-containers.md'
+        - 'Install Administrator CLI' : 'admin/runai-setup/advanced/cli-admin-install.md'
+        - 'Disaster Recovery' : 'admin/runai-setup/advanced/dr.md'
+#        - 'Kubernetes Best Practices' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
+      - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/advanced/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/advanced/monitoring.md'
-        - 'Kubernetes Best Practices' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
-
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
