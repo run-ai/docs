@@ -67,8 +67,6 @@ plugins:
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         'Administrator/Cluster-Setup/install-k8s.md' : 'admin/runai-setup/cluster-setup/install-k8s.md'
-#        'Administrator/Cluster-Setup/kubernetes-config-best-practices.md' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
-#        'Administrator/Cluster-Setup/ldap-integration.md' : 'admin/runai-setup/cluster-setup/ldap-integration.md'
         'Administrator/Cluster-Setup/node-downtime.md' : 'admin/runai-setup/advanced/node-downtime.md'
         'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/advanced/node-roles.md'
         'Administrator/Cluster-Setup/non-root-containers.md' : 'admin/runai-setup/advanced/non-root-containers.md'
@@ -116,8 +114,6 @@ nav:
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
         - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'    
         - 'Troubleshooting' : 'admin/runai-setup/cluster-setup/cluster-troubleshooting.md'
-#        - 'Authentication and Authorization' : 'admin/runai-setup/cluster-setup/researcher-authentication.md'
-#        - 'NVIDIA Drivers' : 'admin/runai-setup/cluster-setup/nvidia.md'
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
@@ -140,10 +136,8 @@ nav:
           - 'Next Steps' : 'admin/runai-setup/self-hosted/ocp/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
-    #    - 'Airgapped Kubernetes' : 'k8s.md'
       - 'Configuration' : 
         # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
-#          - 'LDAP Authentication' : 'admin/runai-setup/cluster-setup/ldap-integration.md'
         - 'Overview' : 'admin/runai-setup/advanced/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/advanced/node-roles.md'
         - 'Researcher Authentication' : 'admin/runai-setup/advanced/researcher-authentication.md'
@@ -153,7 +147,6 @@ nav:
         - 'User Identity in Container' : 'admin/runai-setup/advanced/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/advanced/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/advanced/dr.md'
-#        - 'Kubernetes Best Practices' : 'admin/runai-setup/advanced/kubernetes-config-best-practices.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/advanced/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/advanced/monitoring.md'

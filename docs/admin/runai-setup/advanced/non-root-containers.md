@@ -126,7 +126,7 @@ If you don't see a command prompt, try pressing enter.
 I have no name!@job-0-0-0:/$ 
 ```
 
-Adding home directories to an image per-user is not a viable solution. To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
+Adding home directories to an image per user is not a viable solution. To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
 
 !!! Notes
     * Data saved in this directory will not be saved when the container exits. 

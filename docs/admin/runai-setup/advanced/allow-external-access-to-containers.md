@@ -8,7 +8,7 @@ Researchers working with containers. many times need to remotely access the cont
 
 This requires _exposing container ports_. When using docker, the way Researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:AI has similar syntax.
 
-Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers a number of alternative  ways to go about it:
+Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers several options:
 
 | Method | Description | Prerequisites |
 |--------|-------------|---------------|

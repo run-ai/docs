@@ -9,14 +9,14 @@ In Airflow, a _DAG_ – or a Directed Acyclic Graph – is a collection of all t
 
 A DAG is defined in a Python script, which represents the DAGs structure (tasks and their dependencies) as code.
 
-For example, a simple DAG could consist of three tasks: A, B, and C. It could say that A has to run successfully before B can run, but C can run anytime. It could say that task A times out after 5 minutes, and B can be restarted up to 5 times in case it fails. It might also say that the workflow will run every night at 10pm, but shouldn’t start until a certain date.
+For example, a simple DAG could consist of three tasks: A, B, and C. It could say that A has to run successfully before B can run, but C can run anytime. It could say that task A times out after 5 minutes, and B can be restarted up to 5 times in case it fails. It might also say that the workflow will run every night at 10 pm, but shouldn’t start until a certain date.
 
 Airflow tasks are sent for execution. Specifically, the [Airflow - Kubernetes integration](https://airflow.apache.org/docs/stable/kubernetes.html){target=_blank} allows Airflow tasks to be scheduled on a Kubernetes cluster. 
 
 ## Run:AI - Airflow Integration
 
 DAGs are defined in Python. Airflow tasks based on Kubernetes are defined via the _KubernetesPodOperator_ class. 
-To run an Airflow task with Run:AI you must provide additional Run:AI-related properties to 
+To run an Airflow task with Run:AI you must provide additional, Run:AI-related, properties to 
 
 ``` python
 dag = DAG(...)
@@ -44,7 +44,7 @@ The code:
 * Specifies a Run:AI __Project__. A Project in Run:AI specifies guaranteed GPU & CPU quota.  
 
 
-Once you run the DAG, you can see Airflow tasks showing in the Run:AI UI. 
+Once you run the DAG, you can see Airflow tasks shown in the Run:AI UI. 
 
 
 

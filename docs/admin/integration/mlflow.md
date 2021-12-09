@@ -1,6 +1,6 @@
 # Integrate Run:AI with MLflow
 
-[MLflow](https://www.mlflow.org/){target=_blank} is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The purpose of this document is to explain how to run Jobs with MLflow using the Run:AI scheduler. 
+[MLflow](https://www.mlflow.org/){target=_blank} is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The purpose of this document is to explain how to run Jobs with MLflow using the Run:AI scheduler. 
 
 ## Overview 
 
@@ -11,7 +11,7 @@ The MLflow documentation describes the Kubernetes integration as such:
 !!! quote
     When you run an MLflow Project on Kubernetes, MLflow constructs a new Docker image containing the Project’s contents; this image inherits from the Project’s Docker environment. MLflow then pushes the new Project image to your specified Docker registry and starts a Kubernetes Job on your specified Kubernetes cluster. This Kubernetes Job downloads the Project image and starts a corresponding Docker container. Finally, the container invokes your Project’s entry point, logging parameters, tags, metrics, and artifacts to your MLflow tracking server.
 
-To run an MLflow job via Kubernetes, you specify an MLflow Kubernetes configuration file which contains a template. Here is an example from the MLflow documentation:
+To run an MLflow job via Kubernetes, you specify an MLflow Kubernetes configuration file that contains a template. Here is an example from the MLflow documentation:
 
 ``` JSON
 {
@@ -69,7 +69,7 @@ mlflow run mlproject -P alpha=5.0  -P l1-ratio=0.1  \
 
 ## MLflow Tracking
 
-The sample training code above does __not__ contain references to an MLflow tracking server. This has been done in order to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architecture set up, you can use MLflow tracking in your code.
+The sample training code above does __not__ contain references to an MLflow tracking server. This has been done to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architecture set up, you can use MLflow tracking in your code.
 
 ## Using Interactive Workloads
 
