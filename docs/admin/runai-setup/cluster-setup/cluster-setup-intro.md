@@ -17,15 +17,14 @@ For additional details see the [Run:AI system components](../../../home/componen
 * Look for [troubleshooting](cluster-troubleshooting.md) tips if required.
 * [Upgrade cluster](cluster-upgrade.md) and [delete cluster](cluster-delete.md) instructions. 
 
-You can also use our [Quick installation guide](single-node-install.md) which installs Kubernetes together with Run:AI on a single node.
 
 ## Customization
 
 For a list of optional setup customizations see [Customize Installation](customize-cluster-install.md)
 
-## Advanced Setup
+## Additional Configuration
 
-For a list of advanced scenarios such as configuring researcher authentication, handling node downtime, limiting the installation to specific nodes, and more, see the [Advanced Setup Articles](../advanced/overview.md) section.
+For a list of advanced configuration scenarios such as configuring researcher authentication, Single sign-on limiting the installation to specific nodes, and more, see the [Configuration Articles](../advanced/overview.md) section.
 
 ## Next Steps
 

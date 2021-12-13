@@ -22,12 +22,14 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  |----------------|----------------------|--------------------|
  | User email     | email                | `e-mail` is the user identifier with Run:AI. Mandatory (usually already pre-set in the IdP) | 
  | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
- | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users | 
- | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. | 
- | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. Groups at the IdP should be separated by __##__. For example: __1234##212##654__ | 
- 
- 
+ | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. | 
+ | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. | 
+ | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. | 
 
+ ### Example attribute mapping for Google Suite
+
+ If you are using Google Suite as your Identity provider, to map custom attributes follow [this](https://support.google.com/a/answer/6208725?hl=en&fl=1) Google support article. Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
+ 
 ## Step 1: UI Configuration
 
 * Open the Administration User interface (app.run.ai or similar in Self-Hosted installations)
