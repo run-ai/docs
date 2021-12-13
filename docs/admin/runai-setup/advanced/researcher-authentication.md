@@ -66,11 +66,11 @@ Authentication setup works as follows:
 Assign Researchers to Projects:
 
 === "SaaS" 
-    * Under [Users](https://app.run.ai/users) add a Researcher and assign it with a _Researcher_ role.
+    * Under [Users](https://app.run.ai/permissions) add a Researcher and assign it with a _Researcher_ role.
     * Under [Projects](https://app.run.ai/projects), edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 === "Self-hosted"
-    * Under `runai.<company-name>/users` add a Researcher and assign it with a _Researcher_ role.
+    * Under `runai.<company-name>/permissions` add a Researcher and assign it with a _Researcher_ role.
     * Under `runai.<company-name>/projects`, edit or create a Project. Use the _Users_ tab to assign the Researcher to the Project. 
 
 ## Client-Side
