@@ -26,7 +26,8 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. | 
  | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. | 
 
- ### Example attribute mapping for Google Suite
+
+### Example attribute mapping for Google Suite
 
  If you are using Google Suite as your Identity provider, to map custom attributes follow [this](https://support.google.com/a/answer/6208725?hl=en&fl=1) Google support article. Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
  
