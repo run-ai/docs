@@ -8,7 +8,7 @@ This article describes how to use Kubevirt to schedule VMs with GPUs.
 
 ## Limitations
 
-At this point, Run:AI requires that all GPUs in the cluster will be used for VMs and not containers. This limitation will be lifted soon. Check with Run:AI support for more information. 
+At this point, Run:AI requires that all GPUs in the cluster will be used for VMs and not containers. This limitation will be lifted soon. Check with Run:AI support for up to date information. 
 
 ## Preparations
 
@@ -20,12 +20,12 @@ Install KubeVirt using the following [guide](https://kubevirt.io/quickstart_clou
 
 ### Assign host devices to virtual machines
 
-For each node in the cluster that we want to use with VMs we must
+For each node in the cluster that we want to use with VMs we must:
 
 * Identify all GPU cards.
-* Map them for KubeVirt to pick up (called _assigning host devices to a virtual machine_).
+* Map GPU cards for KubeVirt to pick up (called _assigning host devices to a virtual machine_).
 
-Identifying GPU cards is operating-system specific. For Ubuntu 20.04 run:
+Instructions for identifying GPU cards are operating-system specific. For Ubuntu 20.04 run:
 
 ``` bash
 lspci -nnk -d 10de:
@@ -66,9 +66,7 @@ spec:
 
 You must create a CRD called _vm_ for each virtual machine. `vm` is a reference to a virtual machine and its capabilities.
 
-The Run:AI project is matched to a Kubernetes namespace. Unless manually configured, the namespace is `runai-<PROJECT-NAME>`
-
-Per Run:AI project, create a `vm` object. See KubeVirt [documentation](https://kubevirt.io/labs/kubernetes/lab1) example. Specifically, the created YAML should look like:
+The Run:AI project is matched to a Kubernetes namespace. Unless manually configured, the namespace is `runai-<PROJECT-NAME>`. __Per Run:AI Project__, create a `vm` object. See KubeVirt [documentation](https://kubevirt.io/labs/kubernetes/lab1) example. Specifically, the created YAML should look like:
 
 
 ``` YAML
@@ -93,7 +91,7 @@ spec:
 
 Where `<WORKLOAD-TYPE>` is `train` or `build`
 
-???? This SHOULD BE VM template? 
+????  SHOULD this BE VM template.  does it make sense to embed the workload-type in the vm
 
 
 ## Start a VM
