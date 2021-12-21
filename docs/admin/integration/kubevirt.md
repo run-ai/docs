@@ -1,14 +1,16 @@
 # Scheduling Virtual Machines using Run:AI
 
-Many organizations  use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at large scale are best managed by Kubernetes and Run:AI is based on Kubernetes. 
+Many organizations use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at a large scale are best managed by Kubernetes and Run:AI is based on Kubernetes. 
 
-It is possible to mix and match containers and VMs to some extent using a technology called [KubeVirt]( https://kubevirt.io){target=_blank}. Kubevirt allows running VMs inside containers on top of Kubernetes. 
+It is possible to mix and match containers and VMs to some extent using a technology called [KubeVirt]( https://kubevirt.io){target=_blank}. KubeVirt allows running VMs inside containers on top of Kubernetes. 
 
 This article describes how to use Kubevirt to schedule VMs with GPUs.
 
 ## Limitations
 
-At this point, Run:AI requires that all GPUs in the cluster will be used for VMs and not containers. This limitation will be lifted soon and you will be able to dedicate __specific__ GPUs and Nodes within the cluster. Check with Run:AI support for up to date information. 
+At this point, Run:AI requires that all GPUs in the cluster will be used for VMs and not containers. This limitation will be lifted soon and you will be able to dedicate __specific__ GPUs and Nodes within the cluster. Check with Run:AI support for up-to-date information. 
+
+GPU fractions are not supported. 
 
 ## Preparations
 
@@ -25,7 +27,7 @@ For each node in the cluster that we want to use with VMs we must:
 * Identify all GPU cards we want to dedicate to be used by VMs.
 * Map GPU cards for KubeVirt to pick up (called _assigning host devices to a virtual machine_).
 
-Instructions for identifying GPU cards are operating-system specific. For Ubuntu 20.04 run:
+Instructions for identifying GPU cards are operating-system-specific. For Ubuntu 20.04 run:
 
 ``` bash
 lspci -nnk -d 10de:
@@ -46,7 +48,7 @@ To expose the GPUs and map them to KubeVirt follow the instructions [here](https
 kubectl edit  kubevirt -n kubevirt -o yaml
 ```
 
-And add all of the PCI Addresses of all GPUs of all Nodes concetenated by commas:
+And add all of the PCI Addresses of all GPUs of all Nodes concatenated by commas:
 
 ``` YAML
 spec:
@@ -91,10 +93,6 @@ spec:
 
 Where `<WORKLOAD-TYPE>` is `train` or `build`
 
-????  SHOULD this BE VM template.  does it make sense to embed the workload-type in the vm
-Afaik we can use something called virtualMachineInstancePreset to generate different instances from same virtual machine but this needs a validation (and you created a jira for it)
-
-
 ## Start a VM
 
 Run:
@@ -112,6 +110,5 @@ testvm  Running  0s   master-node  quay.io/kubevirt/virt-launcher:v0.47.1       
 ```
 
 
-??? Does it show on UI?
 
 
