@@ -9,8 +9,9 @@ By default, Run:AI is configured to allow all Researchers access to all Jobs and
 This document relates to several separate configuration flows: 
 
 1. Classic (SaaS) installation of Run:AI 
-2. Self-hosted installation of Run:AI
-3. Single sign-on (or SSO). Both SaaS and Self-hosted are covered under this flow. To enable SSO you should start by following the [single-sign on](sso.md) instructions.
+2. Classic (SaaS) installation of Run:AI for new Run:AI tenants (which use `<company-name>.app.run.ai` as URL)
+3. Self-hosted installation of Run:AI
+4. Single sign-on (or SSO). Both SaaS and Self-hosted are covered under this flow. To enable SSO you should start by following the [single-sign on](sso.md) instructions.
 
 Additional notes are available below for  __Rancher Kubernetes Engine (RKE)__
 
@@ -94,6 +95,20 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
           name: oidc
     ```
 
+=== "SaaS New" 
+    ``` YAML
+    - name: runai-authenticated-user
+      user:
+        auth-provider:
+          config:
+            airgapped: "true"
+            auth-flow: cli
+            realm: <REALM>
+            client-id: runai-cli
+            idp-issuer-url: https://app.run.ai/auth/realms/<REALM>
+          name: oidc
+    ```
+
 === "Self-hosted"
     ``` YAML
     - name: runai-authenticated-user
@@ -162,6 +177,16 @@ Edit the document to add the following parameters at the end of the existing com
         - --oidc-username-prefix=-
     ```
 
+=== "SaaS New" 
+    ``` YAML
+    spec:
+      containers:
+      - command:
+        ... 
+        - --oidc-client-id=runai-cli
+        - --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM>
+        - --oidc-username-prefix=-
+    ```
 
 === "Self-hosted"
     ``` YAML
