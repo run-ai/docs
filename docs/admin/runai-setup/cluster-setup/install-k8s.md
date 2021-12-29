@@ -16,7 +16,14 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
-Restart the docker service:
+Change Docker to use `systemd` by editing `/etc/docker/daemon.json` and adding:
+
+``` json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"]
+}
+```
+For more information, see [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Restart the docker service:
 
 ``` 
 sudo systemctl restart docker
@@ -37,11 +44,12 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 sudo apt-get update
-sudo apt-get install -y kubelet=1.21.4-00 kubeadm=1.21.4-00 kubectl=1.21.4-00
+sudo apt-get install -y kubelet=1.22.5-00 kubeadm=1.22.5-00 kubectl=1.22.5-00
 
 sudo swapoff -a
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.21.4 --token-ttl 180h
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.22.5 --token-ttl 180h
 ```
+
 
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
 
@@ -68,6 +76,7 @@ Verify that the master node is ready
 ## Run on Kubernetes Workers
 
 If not yet installed, install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically, you can use a convenience script provided in the document:
+
 ``` shell
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -79,7 +88,20 @@ Restart the docker service:
 sudo systemctl restart docker
 ```
 
-On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-install/#step-13-install-nvidia-docker): 
+On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifcally, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
+
+``` json
+{
+     "exec-opts": ["native.cgroupdriver=systemd"],
+     "default-runtime": "nvidia",
+        "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+```
 
 Install Kubernetes worker:
 ``` shell
@@ -95,7 +117,7 @@ cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update
-sudo apt-get install -y kubelet=1.21.4-00 kubeadm=1.21.4-00
+sudo apt-get install -y kubelet=1.22.5-00 kubeadm=1.22.5-00
 
 sudo swapoff -a
 ```
