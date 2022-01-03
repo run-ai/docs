@@ -10,6 +10,7 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
 | `pspEnabled` |  `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
+| `ingress-nginx.podSecurityPolicy.enabled` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank}  | 
 | `runai-operator.config.project-controller.createNamespaces` |  `true` | Set to `false` if unwilling to provide Run:AI the ability to create namespaces, or would want to create namespaces manually rather than use the Run:AI convention of `runai-<PROJECT-NAME>`. When set to `false`, will require an additional [manual step](project-management.md) when creating new Run:AI Projects. | 
 | `runai-operator.config.project-controller.createRoleBindings` |  `true` | Automatically assign Users to Projects. Set to `false` if unwilling to provide Run:AI the ability to set _RoleBinding_. When set to `false`, will require an additional [manual step](project-management.md) when adding or removing users from Projects.  | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:AI the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../../researcher-setup/use-secrets/#secrets-and-projects) will not be available | 

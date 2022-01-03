@@ -8,6 +8,7 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
 | `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
+| `ingress-nginx.podSecurityPolicy.enabled` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank}  | 
 | `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:AI the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:AI Projects | 
 | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:AI Projects | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
