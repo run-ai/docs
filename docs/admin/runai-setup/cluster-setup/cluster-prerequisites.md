@@ -20,11 +20,11 @@ Run:AI has been tested with the following certified Kubernetes distributions:
 A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 
 
-Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of July 2021). Kubernetes 1.22 is __not__ yet supported.
-
-If you are using RedHat OpenShift. Run:AI requires OpenShift 4.6.  OpenShift 4.9 is not yet supported.
-
-Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
+!!! Notes
+    * Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended.
+    * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
+    * If you are using RedHat OpenShift. Run:AI requires OpenShift 4.6 or later. 
+    * Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
 
 NVIDIA pre-requisites are provided in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#step-4-setup-nvidia-software){target=_blank}. The following provides a walkthrough of the documentation steps:
@@ -81,7 +81,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
 As per instructions: 
 
 * Clone tag `v0.2.3` (and not master)
-* `vi mpi-operator/deploy/v1alpha/mpi-operator.yaml`, search for `image` and change it to `mpioperator/mpi-operator:v0.2.3`.
+* `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`, search for `image` and change it to `mpioperator/mpi-operator:v0.2.3`.
 
 
 !!! Notes
