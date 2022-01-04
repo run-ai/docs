@@ -55,7 +55,7 @@ Run the helm command below:
 === "Airgapped"
     ```
     helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
-        runai-backend -f runai-backend/runai-backend-helm-release.yaml 
+        runai-backend -f runai-backend-values.yaml 
     ```
     (replace `<version>` with the backend version)
 
