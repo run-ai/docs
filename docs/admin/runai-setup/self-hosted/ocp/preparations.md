@@ -25,7 +25,7 @@ oc new-project gpu-operator-resources
 
 ### Run:AI Software Files
 
-SSH into a node with `kubectl` access to the cluster and `Docker` installed.
+SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the cluster and `Docker` installed.
 
 
 === "Connected"
@@ -46,8 +46,8 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     Run the following to enable image download from the Run:AI Container Registry on Google cloud:
 
     ```
-    kubectl apply -f runai-gcr-secret.yaml
-    kubectl apply -f runai-gcr-secret.yaml -n gpu-operator-resources
+    oc apply -f runai-gcr-secret.yaml
+    oc apply -f runai-gcr-secret.yaml -n gpu-operator-resources
     ```
 
 === "Airgapped" 
@@ -71,7 +71,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 The Run:AI Backend should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
-kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
+oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
 Currently, this setting cannot be changed after the backend is installed.

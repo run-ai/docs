@@ -30,7 +30,7 @@ By default, creating a Project named `<PROJECT-NAME>` Run:AI will create a Kuber
 * Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:AI project by running:
 
 ```
-kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
+oc label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 ```
 
 
@@ -51,8 +51,8 @@ Some organizations prefer to limit the assigning of these roles to Run:AI, per a
 * Create a namespace `<NAMESPACE>` and associate with Run:AI by running:
 
 ```
-kubectl create ns <NAMESPACE> 
-kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
+oc create ns <NAMESPACE> 
+oc label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 ```
 
 ## 2. Do not allow Run:AI to assign roles 
@@ -83,7 +83,7 @@ Obtain the Project creation template file:
 Edit `<NAMESPACE>.yaml`. Replace `<NAMESPACE>` with the name of the namespace you selected above. Then run:
 
 ```
-kubectl apply -f <NAMESPACE>.yaml
+oc apply -f <NAMESPACE>.yaml
 ```
 
 ### Associate Users with the Project 
@@ -102,7 +102,7 @@ The following process requires a `<user-id>`. To map the User to its ID, you nee
 To add a User to a __all projects__ as a Viewer run: 
 
 ```
-kubectl edit clusterrolebinding runai-job-viewer-manual
+oc edit clusterrolebinding runai-job-viewer-manual
 ```
 
 Under `subjects` add the new User as follows:
@@ -119,7 +119,7 @@ subjects:
 To add a User to a Project as an Executor run: 
 
 ```
-kubectl edit rolebinding runai-job-executor-manual -n runai-<PROJECT_NAME>
+oc edit rolebinding runai-job-executor-manual -n runai-<PROJECT_NAME>
 ```
 
 Under `subjects` add the new User as follows:
@@ -135,7 +135,7 @@ subjects:
 Additionally, run:
 
 ```
-kubectl edit rolebinding runai-cli-index-map-editor -n runai
+oc edit rolebinding runai-cli-index-map-editor -n runai
 ```
 
 Under `subjects` add the new User as follows:
