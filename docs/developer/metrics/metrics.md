@@ -17,6 +17,8 @@ Following is the list of published Run:AI Metrics
 
 | Metric name                                    | Labels                                                                | Measurement | Description                           |
 | ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| runai_active_job_cpu_requested_cores           | {clusterId,  job_name, job_uuid}              | CPU Cores | Job's requested CPU cores |
+| runai_active_job_memory_requested_bytes        | {clusterId,  job_name, job_uuid}              | Bytes | Job's requested CPU Memory |
 | runai_cluster_cpu_utilization                  |  {clusterId}                                                          |    0 to 1   | CPU utilization of the entire cluster                                                |
 | runai_cluster_memory_used_bytes                |  {clusterId}                                                          | Bytes       | Used CPU Memory of the entire cluster                                              |
 | runai_cluster_memory_utilization               |  {clusterId}                                                          |    0 to 1   | CPU Memory utilization of the entire cluster                                         |
@@ -52,6 +54,7 @@ Following is the list of published Run:AI Metrics
 | runai_running_job_memory_used_bytes            |  {job_uuid, clusterId, job_name, project}                             | Bytes       | Jobs used CPU Memory          |
 | runai_mig_mode_gpu_count                       |  {clusterId, node}                                                    | Double      | Number of GPUs on MIG nodes          |
 | runai_job_swap_memory_used_bytes               |  {clusterId, job_uuid, job_name, project, node}                       | Bytes       | Used Swap CPU Memory for the job | 
+
 
 Following is a list of labels appearing in Run:AI metrics:
 
