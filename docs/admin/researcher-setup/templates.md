@@ -64,7 +64,7 @@ Administrative template can be used to configure all Run:AI Job submission param
 
 ### Syntax
 
-Administrative Template parameters are written in _Camel Case_ notation. For example, the Command-line flag `--host-network` is written as `hostNetwork`. For a full list of parameters and their correct spelling, type, and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/rest-submit.md).  
+Administrative Template parameters are written in _Camel Case_ notation. For example, the Command-line flag `--host-network` is written as `hostNetwork`. For a full list of parameters and their correct spelling, type, and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/overview.md#researcher-api-documentation).  
 
 The following section describes the syntax of the various parameter types.
 
@@ -535,8 +535,5 @@ Interface and click on the remove icon which appears right next to it.
 
 ## See Also
 
-* For a full list of parameters and their correct spelling, type and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/rest-submit.md).  
-
 * For a list of `runai submit` flags, see the Run:AI [runai submit reference](../../Researcher/cli-reference/runai-submit.md)
-
 * For a list of `runai submit-mpi` flags, see the Run:AI [runai submit-mpi reference](../../Researcher/cli-reference/runai-submit-mpi.md)

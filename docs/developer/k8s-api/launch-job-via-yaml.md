@@ -22,6 +22,10 @@ The Run:AI scheduler schedules computing resources by associating Workloads with
 
 Internally, Run:AI Projects are implemented as Kubernetes namespaces. The scripts below assume that the code is being run after the relevant namespace has been set. 
 
+## Authentication
+
+Authenticate by pre-running `runai login` before applying YAMLs.
+
 ## Submit Workloads 
 
 * `<JOB-NAME>`. The name of the Job. 

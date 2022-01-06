@@ -13,23 +13,28 @@ There are other APIs that provide the same functionality. Specifically:
 
 ## Endpoint URL for API
 
-The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clustesr, you will have a separate URL per cluster.
-To find the Base URL, go to the cluster command-line and run:
+The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
+To find this `<CLUSTER-ENDPOINT>`, do one of the following:
 
-```
-kubectl get ingress -n runai
-```
+* Go to the cluster command-line and run: `kubectl get ingress -n runai`.
+* In the Administrator user interface, go to `Clusters`. Each cluster will have a separate URL.
 
 ## Authentication
 
-* By default, researcher APIs are unauthenticated. To protect researcher API (and the researchers themselves), you must [configure researcher authentication](../../admin/runai-setup/advanced/researcher-authentication.md).
-* Once configured, you must create a _Client Application_ to make API requests. 
-* Using the client application and secret, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. 
+See [calling REST APIs](../rest-auth.md) on how to get an `access token`.
 
-See more information under [calling REST APIs](../rest-auth.md)
+## Example
+
+Get all the jobs for a project named `team-a`: 
+
+``` bash
+curl  'https://<CLUSTER-ENDPOINT>/researcher/api/v1/job/team-a' \
+  -H 'accept: application/json' \
+--header 'Authorization: Bearer <access-token>' 
+```
 
 
-## APIs
+## Researcher API Documentation
 
 The Researcher API provides the following functionality:
 
@@ -38,5 +43,9 @@ The Researcher API provides the following functionality:
 * Delete an existing Job
 * Get a list of Projects for which you have access to
 
-Detailed API documentation can be found under `<BASE-URL>/api`
 
+Detailed API documentation can be found under [https://app.run.ai/researcher/api/docs](https://app.run.ai/researcher/api/docs){target=_blank}. The document uses the [Open API specification](https://swagger.io/specification/) to describe the API. You can test the API within the document after creating a token.
+
+Different clusters can be of different versions, to see version-specific API documentation, go to `Settings | Clusters`, locate your cluster, and select `Show API Documentation`.
+
+[Researcher API Documentation](https://app.run.ai/researcher/api/docs){target=_blank .md-button .md-button--primary }

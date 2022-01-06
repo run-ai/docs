@@ -9,7 +9,9 @@ Developers can access Run:AI through programmatic interfaces.
 As part of the Developer documentation you will find:
 
 * How to [authenticate](rest-auth.md) against the Run:AI REST API 
-* __Researcher APIs__. You can use APIs to add, delete, and list Jobs. This can be done using the Run:AI [Researcher REST API](researcher-rest-api/overview.md) or by directly accessing [Kubernetes API](k8s-api/overview.md).
-* [Administrator REST API](admin-rest-api/overview.md). A set of REST services to add, delete, and list Projects, Departments, Users, etc. 
+* __Researcher APIs__. These APIs work at the cluster level and allow you to submit, delete, and list Jobs. There are several API options:
+    * Using [Researcher REST API](researcher-rest-api/overview.md).
+    * Directly accessing [Kubernetes API](k8s-api/overview.md).
+* [Administrator REST API](admin-rest-api/overview.md). A set of REST services to add, delete, modify and list Projects, Departments, Users, and other metadata. 
 * [Inference API](inference/overview.md) to deploy inference workloads.
-* Use [Metrics API](metrics/metrics.md) to retrieve metric data from Run:AI.
+* [Metrics API](metrics/metrics.md) to retrieve metric data from Run:AI.
