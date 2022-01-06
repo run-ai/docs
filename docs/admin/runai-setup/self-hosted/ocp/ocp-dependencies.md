@@ -13,7 +13,7 @@ NVIDIA provided [detailed documentation](https://docs.nvidia.com/datacenter/clou
 Verify that the GPU Operator is installed by running:
 
 ```
-kubectl get pods -n gpu-operator-resources
+oc get pods -n gpu-operator-resources
 ```
 
 __After successful verification__, 
@@ -21,19 +21,19 @@ __After successful verification__,
 (1) Disable the NVIDIA DCGM exporter by running:
 
 ```
-kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
+oc -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
 ```
 
 (2) Replace the NVIDIA Device Plug-in with the Run:AI version:
 
 ```
-kubectl patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
+oc patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
    -p '{"spec":{"template":{"spec":{"containers":[{"name":"nvidia-device-plugin-ctr","image":"gcr.io/run-ai-prod/nvidia-device-plugin:1.0.11"}]}}}}'
-kubectl create clusterrolebinding --clusterrole=admin \
+oc create clusterrolebinding --clusterrole=admin \
   --serviceaccount=gpu-operator-resources:nvidia-device-plugin nvidia-device-plugin-crb
 ```
-<!-- kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+<!-- oc -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
 
 
