@@ -19,6 +19,8 @@ Run the helm command below.
 
 === "Connected"
     ```
+    kubectl delete deployment -n runai-backend runai-backend-nginx-ingress-controller
+
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
     helm get values runai-backend -n runai-backend > be-values.yaml
@@ -26,6 +28,8 @@ Run the helm command below.
     ```
 === "Airgapped"
     ```
+    kubectl delete deployment -n runai-backend runai-backend-nginx-ingress-controller
+
     helm get values runai-backend -n runai-backend > be-values.yaml
     helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend  -f be-values.yaml
