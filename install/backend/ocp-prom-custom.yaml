@@ -71,7 +71,9 @@ spec:
       record: runai_node_gpu_total_memory
     - expr: (label_replace(DCGM_FI_DEV_FB_USED, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
       record: runai_node_gpu_used_memory
-    - expr: (label_replace(DCGM_GPU_LAST_NOT_IDLE_TIME, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
+    - expr: timestamp(DCGM_FI_DEV_GPU_UTIL > 2) or runai_gpu_last_active_time_info or DCGM_GPU_LAST_NOT_IDLE_TIME
+      record: runai_gpu_last_active_time_info
+    - expr: (label_replace(runai_gpu_last_active_time_info, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
       record: runai_node_gpu_last_not_idle_time
     - expr: ((sum by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu)) / (count by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu)))
             * on (pod_group_uuid) group_left(queue_name, workload_name) (runai_pod_group_phase_with_info{phase="Running"}==1)
@@ -155,6 +157,3 @@ spec:
     # Adapter for DCGM old metrics, please use DCGM_FI_DEV_GPU_UTIL rather than dcgm_gpu_utilization
     - expr: DCGM_FI_DEV_GPU_UTIL
       record: dcgm_gpu_utilization
-    # Adapter for DCGM old metrics, please use DCGM_GPU_LAST_NOT_IDLE_TIME rather than dcgm_gpu_last_not_idle_time
-    - expr: DCGM_GPU_LAST_NOT_IDLE_TIME
-      record: dcgm_gpu_last_not_idle_time
