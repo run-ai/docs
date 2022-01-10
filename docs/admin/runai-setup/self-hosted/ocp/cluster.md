@@ -14,6 +14,7 @@ title: Self Hosted installation over OpenShift - Cluster Setup
 | `runai-operator.config.mps-server.enabled` | Default is `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads. Requires [extra permissions](../preparations/#cluster-installation) | 
 | `runai-operator.config.runai-container-toolkit.enabled` | Default is `true` | Controls the usage of __Fractions__. Requires [extra permissions](../preparations/#cluster-installation) | 
 | `runai-operator.config.runaiBackend.password` | Default password already set  | admin@run.ai password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
+| `runai-operator.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, change to its' address |
 
 
 
