@@ -6,7 +6,7 @@ Run:AI supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 
 !!! Important Note
-    Single sign-on is only available with SaaS installations where the tenant has been created post-November 2021 or any Self-hosted installation.
+    Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation.
 
 ## Terminology
 

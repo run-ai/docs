@@ -17,7 +17,7 @@ The following document explains how to get the credentials required to call the 
 * Copy the domain of the web page to be used as `<COMPANY-URL>` below. This can be [app.run.ai](https://app.run.ai){target=_blank} for SaaS installation or a custom URL for Self-hosted installations
 
 !!! Important Note
-    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-November 2021 or any Self-hosted installation. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
+    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
 
 ## Request a Token
 
