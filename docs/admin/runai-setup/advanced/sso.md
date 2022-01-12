@@ -57,12 +57,12 @@ Test Connectivity to Administration User Interface:
 
 ### Troubleshooting
 
-If login is unsucessful, examine the SAML Response sent from the IdP:
+If login is unsuccessful, examine the SAML Response sent from the IdP:
 
 * When logging in, have the Chrome network inspector open (Open by `Right-Click | Inspect` on the page, then open the network tab).
 * Search for "endpoint". 
 * When found, go to the "Payload" tab and copy the value.
-* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like:
+* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like this:
 
 ``` XML
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -160,10 +160,12 @@ If login is unsucessful, examine the SAML Response sent from the IdP:
 
 Note in the above that:
 
-* The `<saml2:Audience>` audience attribute is the same as `Entity ID` defined above.
-* The `Destination` at the top is the same as the `Redirect URI`
-* The user email is the same as the logged in user. 
-* Under `<saml2:AttributeStatement>` there is an email (mandatory) and other properties as mentioned above (Optional)
+* The content of the `<saml2:Audience>` tag is the same as `Entity ID` defined above.
+* The `Destination` at the top is the same as the `Redirect URI`.
+* The user email under the `<saml2:Subject>` tag is the same as the logged-in user. 
+* Make sure that under the `<saml2:AttributeStatement>` tag, there is an Attribute named `email` (lowercase). This attribute is mandatory. 
+* If other, optional attributes (such as UID, GID) are mapped, make sure they exist under `<saml2:AttributeStatement>` as well along with their respective values.
+
 
 ## Step 2: Cluster Authentication 
 
