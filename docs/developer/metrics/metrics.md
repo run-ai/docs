@@ -87,7 +87,6 @@ Run:AI exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 
 | Metric name                                       | Description                          |
 | ------------------------------------------------- | ------------------------------------ |
-| DCGM_GPU_MODEL                                    | GPU model. example: Tesla V100-SXM2-32GB |
 | dcgm_gpu_utilization                              | GPU utilization                      |
 | kube_node_status_allocatable                      | Resources (cpu, memory, gpu etc) are allocatble (available for scheduling)  |
 | kube_node_status_capacity                         | The capacity for different resources of a node                              |
