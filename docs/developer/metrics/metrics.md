@@ -45,7 +45,7 @@ Following is the list of published Run:AI Metrics
 | runai_node_total_memory_bytes                  |  {clusterId, node}                                                    | Bytes       | Total GPU memory per node    |
 | runai_node_used_memory_bytes                   |  {clusterId, node}                                                    | Bytes       | Used CPU memory per node     |
 | runai_project_guaranteed_gpus                  |  {clusterId, project}                                                 | Double      | Guaranteed GPU quota per project                                       |
-| runai_project_info                             |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project}  | N/A         | Information on CPU, CPU Memory, GPU quota per project                  |
+| runai_project_info                             |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project, department_name}  | N/A         | Information on CPU, CPU Memory, GPU quota per project                  |
 | runai_running_job_cpu_limit_cores              |  {clusterId, job_name , job_uuid}                                     | Double      | Jobs CPU limit (in number of cores). See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
 | runai_running_job_cpu_requested_cores          |  {clusterId, job_name, job_uuid}                                      | Double      | Jobs requested CPU cores. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)                                                                 |
 | runai_running_job_cpu_used_cores               |  {job_uuid, clusterId, job_name, project}                             | Double      | Jobs CPU usage (in number of cores)     |
@@ -61,10 +61,11 @@ Following is a list of labels appearing in Run:AI metrics:
 | Label                  | Description   |
 | ---------------------- | -------------------------------------------------------------- |
 | clusterId              | Cluster Identifier                 |
+| department_name        | Name of Run:AI Department          |
 | cpu_quota              | CPU limit per project              |
 | gpu                    | GPU index                          |
 | gpu_guaranteed_quota   | Guaranteed GPU quota per project   |
-| image                  | Name of docker image                                        |
+| image                  | Name of docker image                                       |
 | job_name               | Job name                                                   |
 | job_type               | Job type: training, interactive or inference               |
 | job_uuid               | Job identifier                     |
