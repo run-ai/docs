@@ -29,8 +29,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 
 ### Example attribute mapping for Google Suite
 
- If you are using Google Suite as your Identity provider, to map custom attributes follow [this](https://support.google.com/a/answer/6208725?hl=en&fl=1){target=_blank} Google support article. 
- Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
+ If you are using Google Suite as your Identity provider, to map custom attributes follow the [Google support article](https://support.google.com/a/answer/6208725?hl=en&fl=1). Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
  
 ## Step 1: UI Configuration
 
