@@ -62,7 +62,7 @@ If login is unsucessful, examine the SAML Response sent from the IdP:
 * When logging in, have the Chrome network inspector open (Open by `Right-Click | Inspect` on the page, then open the network tab).
 * Search for "endpoint". 
 * When found, go to the "Payload" tab and copy the value.
-* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php)(target=_blank). A typical response should look like:
+* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like:
 
 ``` XML
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
