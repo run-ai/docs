@@ -6,7 +6,7 @@ Run:AI supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 
 !!! Important Note
-    Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation.
+    Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or upwards.
 
 ## Terminology
 
@@ -20,7 +20,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 
  | IdP attribute  | Run:AI required name | Description       | 
  |----------------|----------------------|--------------------|
- | User email     | email                | `e-mail` is the user identifier with Run:AI. Mandatory (usually already pre-set in the IdP) | 
+ | User email     | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:AI. | 
  | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. | 
@@ -29,7 +29,8 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 
 ### Example attribute mapping for Google Suite
 
- If you are using Google Suite as your Identity provider, to map custom attributes follow [this](https://support.google.com/a/answer/6208725?hl=en&fl=1) Google support article. Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
+ If you are using Google Suite as your Identity provider, to map custom attributes follow [this](https://support.google.com/a/answer/6208725?hl=en&fl=1){target=_blank} Google support article. 
+ Use the __Whole Number__ attribute type. For _Supplementary Groups_ use the _Multi-value_ designation. 
  
 ## Step 1: UI Configuration
 
