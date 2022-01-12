@@ -163,7 +163,7 @@ Note in the above that:
 * The `<saml2:Audience>` audience attribute is the same as `Entity ID` defined above.
 * The `Destination` at the top is the same as the `Redirect URI`
 * The user email is the same as the logged in user. 
-* Under `<saml2:AttributeStatement>` there is an email (mandatory) and other properties mentioend above (Optional)
+* Under `<saml2:AttributeStatement>` there is an email (mandatory) and other properties as mentioned above (Optional)
 
 ## Step 2: Cluster Authentication 
 
