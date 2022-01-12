@@ -56,6 +56,116 @@ Test Connectivity to Administration User Interface:
 * Provide the `Organization name` obtained above. 
 * You will be redirected to the IdP login page. Use the previously entered _Administrator email_ to log in. 
 
+### Troubleshooting
+
+If login is unsucessful, examine the SAML Response sent from the IdP:
+
+* When logging in, have the Chrome network inspector open (Open by `Right-Click | Inspect` on the page, then open the network tab).
+* Search for "endpoint". 
+* When found, go to the "Payload" tab and copy the value.
+* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php)(target=_blank). A typical response should look like:
+
+``` XML
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<saml2p:Response
+	xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" Destination="https://.../auth/realms/runai/broker/saml/endpoint" ID="_2d085ed4f45a7ab221a49e6c02e30cac" InResponseTo="ID_295f2723-79f5-4410-99b2-5f4acb2d4f8e" IssueInstant="2022-01-12T12:06:31.175Z" Version="2.0">
+	<saml2:Issuer
+		xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://accounts.google.com/o/saml2?idpid=....
+	</saml2:Issuer>
+	<saml2p:Status>
+		<saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+	</saml2p:Status>
+	<saml2:Assertion
+		xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" ID="_befe8441fa06594b365c516558dc5636" IssueInstant="2022-01-12T12:06:31.175Z" Version="2.0">
+		<saml2:Issuer>https://accounts.google.com/o/saml2?idpid=...</saml2:Issuer>
+		<ds:Signature
+			xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+			<ds:SignedInfo>
+				<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+				<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+				<ds:Reference URI="#_befe8441fa06594b365c516558dc5636">
+					<ds:Transforms>
+						<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+					</ds:Transforms>
+					<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+					<ds:DigestValue>QxNCjtz9Gomv2qaz8Rb4X8cQJOSGkK+87CrHDkBPidM=</ds:DigestValue>
+				</ds:Reference>
+			</ds:SignedInfo>
+			<ds:SignatureValue>...</ds:SignatureValue>
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509SubjectName>ST=California,C=US,OU=Google For Work,CN=Google,L=Mountain View,O=Google Inc.</ds:X509SubjectName>
+					<ds:X509Certificate>...</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</ds:Signature>
+		<saml2:Subject>
+			<saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">john@example.com</saml2:NameID>
+			<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+				<saml2:SubjectConfirmationData InResponseTo="ID_295f2723-79f5-4410-99b2-5f4acb2d4f8e" NotOnOrAfter="2022-01-12T12:11:31.175Z" Recipient="https://.../auth/realms/runai/broker/saml/endpoint"/>
+			</saml2:SubjectConfirmation>
+		</saml2:Subject>
+		<saml2:Conditions NotBefore="2022-01-12T12:01:31.175Z" NotOnOrAfter="2022-01-12T12:11:31.175Z">
+			<saml2:AudienceRestriction>
+				<saml2:Audience>runai-jtqee5v8ob</saml2:Audience>
+			</saml2:AudienceRestriction>
+		</saml2:Conditions>
+		<saml2:AttributeStatement>
+			<saml2:Attribute Name="email">
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">john@example.com
+				</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="GID">
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">8765
+				</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="SUPPLEMENTARYGROUPS">
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">200
+				</saml2:AttributeValue>
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">300
+				</saml2:AttributeValue>
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">400
+				</saml2:AttributeValue>
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">100
+				</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="UID">
+				<saml2:AttributeValue
+					xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:anyType">4321
+				</saml2:AttributeValue>
+			</saml2:Attribute>
+		</saml2:AttributeStatement>
+		<saml2:AuthnStatement AuthnInstant="2022-01-12T12:06:30.000Z" SessionIndex="_befe8441fa06594b365c516558dc5636">
+			<saml2:AuthnContext>
+				<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml2:AuthnContextClassRef>
+			</saml2:AuthnContext>
+		</saml2:AuthnStatement>
+	</saml2:Assertion>
+</saml2p:Response>		
+
+```
+
+Note in the above that:
+
+* The `<saml2:Audience>` audience attribute is the same as `Entity ID` defined above.
+* The `Destination` at the top is the same as the `Redirect URI`
+* The user email is the same as the logged in user. 
+* Under `<saml2:AttributeStatement>` there is an email (mandatory) and other properties mentioend above (Optional)
+
 ## Step 2: Cluster Authentication 
 
 Researchers should be authenticated when accessing the Run:AI GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). Use the `SSO` flow within the document.
