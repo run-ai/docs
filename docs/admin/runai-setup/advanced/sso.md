@@ -74,7 +74,7 @@ You can follow that by following the URL changes from [app.run.ai](https://app.r
 * When found, go to the "Payload" tab and copy the value of the SAML Request. 
 * Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like this:
 
-``` XML
+``` XML hl_lines="5 10"
 <?xml version="1.0"?>
 <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
 	xmlns="urn:oasis:names:tc:SAML:2.0:assertion" 
@@ -102,7 +102,7 @@ Check in the above that:
 * When found, go to the "Payload" tab and copy the value of the SAML Response.
 * Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like this:
 
-``` XML
+``` XML hl_lines="3 36 46 50"
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <saml2p:Response
 	xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" Destination="https://.../auth/realms/runai/broker/saml/endpoint" ID="_2d085ed4f45a7ab221a49e6c02e30cac" InResponseTo="ID_295f2723-79f5-4410-99b2-5f4acb2d4f8e" IssueInstant="2022-01-12T12:06:31.175Z" Version="2.0">
@@ -140,7 +140,10 @@ Check in the above that:
 		<saml2:Subject>
 			<saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">john@example.com</saml2:NameID>
 			<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-				<saml2:SubjectConfirmationData InResponseTo="ID_295f2723-79f5-4410-99b2-5f4acb2d4f8e" NotOnOrAfter="2022-01-12T12:11:31.175Z" Recipient="https://.../auth/realms/runai/broker/saml/endpoint"/>
+				<saml2:SubjectConfirmationData 
+					InResponseTo="ID_295f2723-79f5-4410-99b2-5f4acb2d4f8e" 
+					NotOnOrAfter="2022-01-12T12:11:31.175Z" 
+					Recipient="https://.../auth/realms/runai/broker/saml/endpoint"/>
 			</saml2:SubjectConfirmation>
 		</saml2:Subject>
 		<saml2:Conditions NotBefore="2022-01-12T12:01:31.175Z" NotOnOrAfter="2022-01-12T12:11:31.175Z">
