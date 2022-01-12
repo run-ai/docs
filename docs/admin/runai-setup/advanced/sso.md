@@ -55,13 +55,51 @@ Test Connectivity to Administration User Interface:
 * Provide the `Organization name` obtained above. 
 * You will be redirected to the IdP login page. Use the previously entered _Administrator email_ to log in. 
 
-### Troubleshooting
+### Troubleshoot
 
-If login is unsuccessful, examine the SAML Response sent from the IdP:
+The Login process of single sign-on can be separated into two parts:
+
+1. Run:AI redirects to the IdP (e.g. Google) for login using a _SAML Request_.
+2. Upon successful login, IdP redirects back to Run:AI with a _SAML Response_.
+
+You can follow that by following the URL changes from [app.run.ai](https://app.run.ai) to the IdP provider (e.g. [accounts.google.com](https://accounts.google.com)) and back to [app.run.ai](https://app.run.ai):
+
+* If there is an issue on the IdP site (e.g. `app_is_not_configred` error in Google), the problem is likely to be in the SAML Request.
+* If the user is redirected back to Run:AI and something goes wrong, The problem is most likely in the SAML Response.
+
+#### Troubleshooting SAML Request
+
+* When logging in, have the Chrome network inspector open (Open by `Right-Click | Inspect` on the page, then open the network tab).
+* After the IdP login screen shows, search in the network tab for an HTTP request showing the SAML Request. Depending on the IdP this would be a request to the IdP domain name. E.g. accounts.google.com/idp?1234.
+* When found, go to the "Payload" tab and copy the value of the SAML Request. 
+* Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like this:
+
+``` XML
+<?xml version="1.0"?>
+<samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
+	xmlns="urn:oasis:names:tc:SAML:2.0:assertion" 
+	xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
+		AssertionConsumerServiceURL="https://.../auth/realms/runai/broker/saml/endpoint" 
+		Destination="https://accounts.google.com/o/saml2/idp?idpid=...." 
+		ForceAuthn="false" ID="ID_66da617d-b862-4cca-9ei5-b727a920f3cb" 
+		IssueInstant="2022-01-12T12:54:22.907Z" 
+		ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Version="2.0">
+  <saml:Issuer>runai-jtqee5v8ob</saml:Issuer>
+  <samlp:NameIDPolicy AllowCreate="true" Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
+</samlp:AuthnRequest>
+```
+
+Check in the above that:
+
+* The content of the `<saml:Issuer` tag is the same as `Entity ID` defined above.
+* `AssertionConsumerServiceURL` is the same as the `Redirect URI`. 
+
+
+#### Troubleshooting SAML Response
 
 * When logging in, have the Chrome network inspector open (Open by `Right-Click | Inspect` on the page, then open the network tab).
 * Search for "endpoint". 
-* When found, go to the "Payload" tab and copy the value.
+* When found, go to the "Payload" tab and copy the value of the SAML Response.
 * Paste the value into a [SAML decoder](https://www.samltool.com/decode.php){target=_blank}. A typical response should look like this:
 
 ``` XML
@@ -158,13 +196,13 @@ If login is unsuccessful, examine the SAML Response sent from the IdP:
 
 ```
 
-Note in the above that:
+Check in the above that:
 
 * The content of the `<saml2:Audience>` tag is the same as `Entity ID` defined above.
 * The `Destination` at the top is the same as the `Redirect URI`.
 * The user email under the `<saml2:Subject>` tag is the same as the logged-in user. 
 * Make sure that under the `<saml2:AttributeStatement>` tag, there is an Attribute named `email` (lowercase). This attribute is mandatory. 
-* If other, optional attributes (such as UID, GID) are mapped, make sure they exist under `<saml2:AttributeStatement>` as well along with their respective values.
+* If other, optional attributes (such as UID, GID) are mapped, make sure they exist under `<saml2:AttributeStatement>` along with their respective values.
 
 
 ## Step 2: Cluster Authentication 
