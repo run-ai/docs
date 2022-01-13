@@ -7,7 +7,7 @@ The following document explains how to get the credentials required to call the 
 ## Create a Client Application
 
 * Open the Run:AI Administrator User interface.
-* Go to `Application | Settings`
+* Go to `Settings | Application`
 * Create a new Application. 
 * Set the required roles:
     * Select `Researcher` to manipulate _Jobs_ using the [Researcher REST API](researcher-rest-api/overview.md). To provide access to a specific project, you will need to go to `Application | Projects` and provide access to specific projects. 
@@ -15,6 +15,7 @@ The following document explains how to get the credentials required to call the 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
 * Copy the `<CLIENT-ID>` and `<CLIENT-SECRET>` to be used below
 * Copy the domain of the web page to be used as `<COMPANY-URL>` below. This can be [app.run.ai](https://app.run.ai){target=_blank} for SaaS installation or a custom URL for Self-hosted installations
+* Go to `Settings | General`, under `Researcher Authentication` copy `<REALM>`.
 
 !!! Important Note
     Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
@@ -27,7 +28,7 @@ Use the above parameters to get a temporary token to access Run:AI.
 
 === "cURL"
     ```
-    curl --request POST 'https://<COMPANY-URL>/auth/realms/runai/protocol/openid-connect/token' \
+    curl --request POST 'https://<COMPANY-URL>/auth/realms/<REALM>/protocol/openid-connect/token' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=client_credentials' \
     --data-urlencode 'scope=openid' \
