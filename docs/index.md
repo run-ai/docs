@@ -38,7 +38,7 @@ Run:AI cloud availabilty is monitored at [status.run.ai](https://status.run.ai){
 
 As an IT Administrator, you can collect Run:AI logs to send to support:
 
-* Install the [Run:AI Administrator command-line interface](admin/runai-setup/advanced/cli-admin-install.md).
+* Install the [Run:AI Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
 * Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:AI logs files.
 
 !!! Note

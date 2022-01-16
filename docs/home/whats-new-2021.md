@@ -1,6 +1,6 @@
 ## December 8<sup>th</sup> 2021
 
-To comply with organizational policies and enhance the Run:AI platform security, Run:AI now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/advanced/sso.md).
+To comply with organizational policies and enhance the Run:AI platform security, Run:AI now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/config/sso.md).
 
 To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:AI now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on dynamic allocation of MIG partitions see [Dynamic MIG](../../Researcher/scheduling/fractions/#dynamic-mig).
 
@@ -9,7 +9,7 @@ Run:AI now supports AI workloads running in containerized clusters based on the 
 Supportability enhancements:
 
 * A new "Status History" tab has been added to the job details view. The new tab shows the details of each status change of each job and allows researchers to analyze how to improve experiments as well as equip administrators with a tool to analyze running and historical jobs. In addition, the details of the _reason_ a job is in the current status are available when hovering over the job status on the jobs table.
-* To improve the ability to monitor the Run:AI environment, Run:AI components now expose alerts indicating whether the component is running. For further details on cluster monitoring see [Cluster Monitoring](../admin/runai-setup/advanced/monitoring.md)
+* To improve the ability to monitor the Run:AI environment, Run:AI components now expose alerts indicating whether the component is running. For further details on cluster monitoring see [Cluster Monitoring](../admin/runai-setup/maintenance/monitoring.md)
 
 User Experience (UX) enhancements:
 

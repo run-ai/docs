@@ -66,7 +66,7 @@ However, if you plan to bring back the node, you will need to rejoin the node in
 
 ## Run:AI System Nodes
  
- In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](node-roles.md) on the cluster as a Run:AI system node to complete the process below.
+ In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](../config/node-roles.md) on the cluster as a Run:AI system node to complete the process below.
 
  Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See the section above. 
 
@@ -87,4 +87,4 @@ To rejoin a node to the cluster follow the following steps:
         kubectl get nodes
 
 
-* When the machine is up you will need to [re-label nodes according to their role](node-roles.md)
+* When the machine is up you will need to [re-label nodes according to their role](../config/node-roles.md)

@@ -40,7 +40,7 @@ For option 2, disable the flag `kube-prometheus-stack.prometheusOperator.enabled
 
 ## Understanding Custom Access Roles
 
-To review the access roles created by the Run:AI Cluster installation, see [Understanding Access Roles](../advanced/access-roles.md)
+To review the access roles created by the Run:AI Cluster installation, see [Understanding Access Roles](../config/access-roles.md)
 
 <!-- 
 ## Add a Proxy

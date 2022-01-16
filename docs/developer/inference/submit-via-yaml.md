@@ -4,7 +4,7 @@ Parameters:
 
 * `<WORKLOAD-NAME>`. The name of the Workload. The name must comply with Kubernetes naming conventions for [DNS Label names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names){target=_blank}. With fractional workloads, the name is limited to 18 characters. 
 * `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart-inference-marian`
-* `<USER-NAME>` The name of the user submitting the Workload. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/advanced/researcher-authentication.md).
+* `<USER-NAME>` The name of the user submitting the Workload. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/config/researcher-authentication.md).
 * `<REQUESTED-GPUs>`. An integer number of GPUs you request to be allocated for the Workload. Examples: 1, 2
 * `<NAMESAPCE>` The name of the Project's namespace. This is usually `runai-<PROJECT-NAME>`
 

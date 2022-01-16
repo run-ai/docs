@@ -49,10 +49,10 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 ### Run:AI Administration CLI
 
 === "Connected"
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../advanced/cli-admin-install.md).
+    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
 
 === "Airgapped" 
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../advanced/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
+    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
 
 
 ## Install Helm

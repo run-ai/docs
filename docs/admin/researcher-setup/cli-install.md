@@ -16,7 +16,7 @@ The instructions below will guide you through the process of installing the CLI.
 
 ## Researcher Authentication
 
-When enabled, Researcher authentication requires additional setup when installing the CLI. To configure authentication see [Setup Project-based Researcher Access Control](../runai-setup/advanced/researcher-authentication.md). Use the modified Kubernetes configuration file described in the article.
+When enabled, Researcher authentication requires additional setup when installing the CLI. To configure authentication see [Setup Project-based Researcher Access Control](../runai-setup/config/researcher-authentication.md). Use the modified Kubernetes configuration file described in the article.
 
 ## Setup
 

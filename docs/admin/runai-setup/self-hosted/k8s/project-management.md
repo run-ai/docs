@@ -3,7 +3,7 @@ title: Self Hosted installation over Kubernetes - Create Projects
 ---
 ## Introduction
 
-The Administrator creates Run:AI Projects using via the [Administrator user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../advanced/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:AI Projects using via the [Administrator user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../config/researcher-authentication.md) you also assign users to Projects.
 
 Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Run:AI Project, Run:AI does the following automatically:
 
@@ -35,7 +35,7 @@ kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 
 ## Limiting Run:AI Access Roles 
 
-When installing Run:AI, you are providing Run:AI with various privileges within the Kubernetes cluster. For a detailed explanation of the Kubernetes roles provided to Run:AI, see the article [Understand the Kubernetes Cluster Access provided to Run:AI](../../advanced/access-roles.md).
+When installing Run:AI, you are providing Run:AI with various privileges within the Kubernetes cluster. For a detailed explanation of the Kubernetes roles provided to Run:AI, see the article [Understand the Kubernetes Cluster Access provided to Run:AI](../../config/access-roles.md).
 
 Some organizations prefer to limit the assigning of these roles to Run:AI, per an organizational policy. The two roles related to Project creation and maintenance are:
 

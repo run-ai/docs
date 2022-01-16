@@ -12,7 +12,7 @@ __Headers__
 - `Authorization: Bearer <ACCESS-TOKEN>`
 - `Content-Type: application/json`
 
-The user name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/advanced/researcher-authentication.md).
+The user name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/config/researcher-authentication.md).
 
 ## Request
 

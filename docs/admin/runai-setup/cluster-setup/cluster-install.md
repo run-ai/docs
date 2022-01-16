@@ -47,7 +47,7 @@ When installing a production cluster you may want to:
 * Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
 * Limit Run:AI to specific nodes in the cluster. 
 
-To perform these tasks. See [Set Node Roles](../advanced/node-roles.md).
+To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
 
 
@@ -56,5 +56,5 @@ To perform these tasks. See [Set Node Roles](../advanced/node-roles.md).
 * Set up Admin UI Users [Working with Admin UI Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 * Set up Researchers to work with the Run:AI Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
-* Set up [Project-based Researcher Access Control](../advanced/researcher-authentication.md).
-* Review [advanced setup and maintenace](../advanced/overview.md) scenarios.
+* Set up [Project-based Researcher Access Control](../config/researcher-authentication.md).
+* Review [advanced setup and maintenace](../config/overview.md) scenarios.

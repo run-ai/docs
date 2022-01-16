@@ -8,7 +8,7 @@
 
 ## Exposing a Container Port
 
- There are four ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_, and _Ingress_. The first two will always work. The others require a special setup by your administrator. The four methods are explained [here](../../admin/runai-setup/advanced/allow-external-access-to-containers.md). 
+ There are four ways to expose ports in Kubernetes: _Port Forwarding_, _NodePort_, _LoadBalancer_, and _Ingress_. The first two will always work. The others require a special setup by your administrator. The four methods are explained [here](../../admin/runai-setup/config/allow-external-access-to-containers.md). 
 
  The document below provides an example based on Port Forwarding.
 

@@ -22,7 +22,7 @@ kubectl get ingress -n runai
 
 ## Authentication
 
-* By default, researcher APIs are unauthenticated. To protect researcher API (and the researchers themselves), you must [configure researcher authentication](../../admin/runai-setup/advanced/researcher-authentication.md).
+* By default, researcher APIs are unauthenticated. To protect researcher API (and the researchers themselves), you must [configure researcher authentication](../../admin/runai-setup/config/researcher-authentication.md).
 * Once configured, you must create a _Client Application_ to make API requests. 
 * Using the client application and secret, you can call an API to get a time-bound bearer token. You can use the token for subsequent API calls. 
 
