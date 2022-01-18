@@ -23,17 +23,17 @@ The following document explains how to get the credentials required to call Run:
 * Copy the `<CLIENT-ID>` and `<CLIENT-SECRET>` to be used below
 * Copy the domain of the web page to be used as `<COMPANY-URL>` below. This can be: 
     * [app.run.ai](https://app.run.ai){target=_blank} for SaaS installations. 
-    * `<company-name>.app.run.ai` for SaaS installations.
+    * `<company-name>.run.ai` for SaaS installations.
     * A custom URL for Self-hosted installations.
 
 !!! Important Note
     Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-December 2021 or any Self-hosted installation. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
 
-## Request a Token
+## Request an API Token
 
 Use the above parameters to get a temporary token to access Run:AI as follows. 
 
-### Example POST to get token URL
+### Example command to get an API token 
 
 === "cURL"
     ```
