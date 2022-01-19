@@ -51,3 +51,23 @@ The machine running the installation script (typically the Kubernetes master) mu
 ## Other
 
 * (Airgapped installation only) __Private Docker Registry__. Run:AI assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+
+
+## Pre-install Script
+
+Once you believe that the Run:AI prerequisites are met, we highly recommend installing and running the Run:AI  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+
+* Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
+* Looks at additional components installed and analyzes their relevancy to a successful Run:AI installation. 
+
+To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
+
+```
+chmod +x preinstall-diagnostics-<platform>
+./preinstall-diagnostics-<platform> 
+```
+
+If the script fails, or if the script succeeds but the Kubernetes system contains components other than Run:AI, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:AI technical support. 
+
+For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
+
