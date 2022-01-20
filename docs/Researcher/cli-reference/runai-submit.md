@@ -31,6 +31,7 @@ runai submit
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--mount-propagation]
     [--mps] 
     [--name string]
     [--node-type string] 
@@ -265,10 +266,13 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
 --nfs-server string
-> Use this flag to specify default NFS host for --volume flag.
+> Use this flag to specify the default NFS host for --volume flag.
 > Alternatively, you can specify NFS host for each volume 
 > individually (see --volume for details).
 
+--mount-propagation
+> The flag allows for sharing volumes mounted by a container to other containers in the same pod, or even to other pods on the same node.
+> When the flag is set, Run:AI will set mount propagation to the value of `HostToContainer` as documented [here](https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation){target=_blank}. With `HostToContainer` the volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.
 ### Network
 
 --host-ipc
