@@ -8,7 +8,8 @@ This article describes how to use Kubevirt to schedule VMs with GPUs.
 
 ## Limitations
 
-At this point, Run:AI requires that all GPUs in the cluster will be used for VMs and not containers. This limitation will be lifted soon and you will be able to dedicate __specific__ GPUs and Nodes within the cluster. Check with Run:AI support for up-to-date information. 
+Dedicate specific Nodes within the cluster to be used for VMs and not containers - following the [guide](https://kubevirt.io/user-guide/operations/installation/#restricting-kubevirt-components-node-placement){target=_blank}.
+Specifically, restrict both `virt-controller` and `virt-handler` pods to only run on the nodes you want to be used for VMs.
 
 GPU fractions are not supported. 
 
