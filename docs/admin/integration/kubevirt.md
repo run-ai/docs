@@ -8,8 +8,7 @@ This article describes how to use Kubevirt to schedule VMs with GPUs.
 
 ## Limitations
 
-Dedicate specific Nodes within the cluster to be used for VMs and not containers - following the [guide](https://kubevirt.io/user-guide/operations/installation/#restricting-kubevirt-components-node-placement){target=_blank}.
-Specifically, restrict both `virt-controller` and `virt-handler` pods to only run on the nodes you want to be used for VMs.
+Each node in the cluster will be able to support either VMs or containers - not combined.
 
 GPU fractions are not supported. 
 
@@ -20,6 +19,12 @@ Making GPUs visible to VMs is not trivial. It requires either a license for NVID
 ### Install KubeVirt
 
 Install KubeVirt using the following [guide](https://kubevirt.io/quickstart_cloud/){target=_blank}.
+
+### Dedicate specific nodes for VMs
+
+Dedicate specific nodes within the cluster to be used for VMs and not containers - following the [guide](https://kubevirt.io/user-guide/operations/installation/#restricting-kubevirt-components-node-placement){target=_blank}.
+
+Specifically, restrict `virt-controller`, `virt-api ` and `virt-handler` pods to only run on the nodes you want to be used for VMs.
 
 ### Assign host devices to virtual machines
 
@@ -46,7 +51,7 @@ To expose the GPUs and map them to KubeVirt follow the instructions [here](https
 
 
 ```
-kubectl edit  kubevirt -n kubevirt -o yaml
+kubectl edit kubevirt -n kubevirt -o yaml
 ```
 
 And add all of the PCI Addresses of all GPUs of all Nodes concatenated by commas:
@@ -65,7 +70,7 @@ spec:
         resourceName: nvidia.com/gpu
 ```
 
-## Assign GPUs to VMs
+### Assign GPUs to VMs
 
 You must create a CRD called _vm_ for each virtual machine. `vm` is a reference to a virtual machine and its capabilities.
 
@@ -89,10 +94,35 @@ spec:
           gpus:
           - deviceName: nvidia.com/gpu # identical name to resourceName above
             name: gpu1  # name here is arbitrary and is not used. 
-
 ```
 
 Where `<WORKLOAD-TYPE>` is `train` or `build`
+
+### Turn on Kubevirt feature in Runai
+
+* If you want to upgrade the runai cluster, use the [instructions](https://docs.run.ai/admin/runai-setup/cluster-setup/cluster-upgrade/){target=_blank}. 
+  
+    * During the upgrade, customize the cluster installation by adding the following to the values.yaml file:
+
+    ``` YAML
+    global:
+      kubevirtCluster:
+        enabled: true
+    ```
+
+* If you don't want to upgrade the whole cluster, you can add those values to your existing values.yaml file.
+
+    * Then, run the command:
+
+    ```
+    helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
+    ```
+
+* Make sure the `kubevirtCluster: enabled` flag is still turned on in `runaiconfig`:
+
+    ```
+    kubectl edit runaiconfig runai -n runai
+    ```
 
 ## Start a VM
 
