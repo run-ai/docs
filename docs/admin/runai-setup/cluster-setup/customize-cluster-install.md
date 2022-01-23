@@ -17,7 +17,6 @@ The Run:AI Admin UI cluster creation wizard requires the download of a _Helm val
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:AI scope) |
 | `kube-prometheus-stack.enabled` |  `true`  | Set to `false` when the cluster has an existing Prometheus installation. that is __not based__ the Prometheus __operator__ . This setting requires Run:AI customer support. |
 | `kube-prometheus-stack.prometheusOperator.enabled` |  `true`  |  Set to `false` when the cluster has an existing Prometheus installation __based__ on the Prometheus __operator__ and Run:AI should use the existing one rather than install a new one | 
-|<img width=500/>|||
 
 
 ### Feature Discovery
