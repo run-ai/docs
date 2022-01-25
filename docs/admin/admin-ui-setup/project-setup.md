@@ -20,12 +20,22 @@ Beyond that, a user of this Project can receive an __over-quota__. As long as GP
 
 __Important best practice:__ As a rule, the sum of the Project allocation should be equal to the number of GPUs in the cluster.
 
+### Controlling Over-Quota Behavior
+
+By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:AI scheduler document](../../Researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects. 
+
+As an administrator, you may want to disconnect the two parameters. So that, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
+
+* Under `General | Settings` turn on the `Enable Over-quota Priority` feature
+* When creating a new Project, you can now see a slider for over-quota priority ranging from `None` to `High` 
+
+
 ## Working with Projects
 
 ### Create a new Project
 
 !!! Note 
-    In order to be able to manipulate Projects, you must have _Editor_ access. See the "Users" Area
+    To be able to manipulate Projects, you must have _Editor_ access. See the "Users" Area
 
 *   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
 *   On the top right, select "Add New Project"
@@ -51,7 +61,7 @@ A frequent use case is to assign specific Projects to run only on specific nodes
 *   The project team is the owner of specific hardware which was acquired with a specialized budget.
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes.
 
-While such 'affinities' are sometimes needed, its worth mentioning that at the end of the day any affinity settings have a negative impact on the overall system utilization.
+While such 'affinities' are sometimes needed, it's worth mentioning that at the end of the day any affinity settings have a negative impact on the overall system utilization.
 
 ### Grouping Nodes 
 
