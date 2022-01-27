@@ -60,7 +60,7 @@ Run:
 ``` bash 
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
-helm install jhub jupyterhub/jupyterhub -n jhub --values config.yaml
+helm install jhub jupyterhub/jupyterhub -n jhub  --version=0.11.1 --values config.yaml
 ```
 
 
@@ -120,3 +120,6 @@ spec:
 
 Save the file and then try to access JupyterHub by using the external IP from the previous step in your browser.
 
+
+!!! Caution
+    Jupyter hub integration does not currently work properly when the Run:AI Project name includes a hyphen ('-'). We are working to fix that. 
