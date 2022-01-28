@@ -4,12 +4,55 @@ title: Developer Documentation Overview
 
 # Overview: Developer Documentation
 
-Developers can access Run:AI through programmatic interfaces. 
+Developers can access Run:AI through various programmatic interfaces. 
 
-As part of the Developer documentation you will find:
 
-* How to [authenticate](rest-auth.md) against the Run:AI REST API 
-* __Researcher APIs__. You can use APIs to add, delete, and list Jobs. This can be done using the Run:AI [Researcher REST API](researcher-rest-api/overview.md) or by directly accessing [Kubernetes API](k8s-api/overview.md).
-* [Administrator REST API](admin-rest-api/overview.md). A set of REST services to add, delete, and list Projects, Departments, Users, etc. 
-* [Inference API](inference/overview.md) to deploy inference workloads.
-* Use [Metrics API](metrics/metrics.md) to retrieve metric data from Run:AI.
+## API Architecture
+
+Run:AI is composed of a single, multi-tenant backend (control-plane). Each tenant can be connected to one or more GPU clusters. See [Run:AI system components](../home/components.md) for detailed information.
+
+Below is a diagram of the Run:AI API Architecture. A developer may:
+
+* Access the backend via the _Administrator API_.
+* Access any one of the GPU clusters via _Researcher API_.
+* Access cluster metrics via the _Metrics API_.  
+
+![api architecture image](img/api-architecture.png)
+
+
+## Administrator API
+
+Add, delete, modify and list Run:AI meta-data objects such as Projects, Departments, Users and more. 
+
+The API is provided as REST and is accessible via the control-plan (backend) end point.  
+
+For more information see [Administrator REST API](admin-rest-api/overview.md). 
+
+## Researcher API
+
+Submit, delete, and list Jobs. 
+
+The API is provided as:
+
+* [REST API](researcher-rest-api/overview.md) or 
+* [Kubernetes API](k8s-api/overview.md) by using YAML-based files. 
+
+Researcher API is accessible via the GPU cluster itself. As such, __multiple clusters may have multiple endpoints__.
+
+!!! Note
+    The same functionality is also available via the [Run:AI Command-line interface](../../Researcher/cli-reference/introduction). The CLI provides an alternative for automating with shell scripts. 
+## Metrics API
+
+Retrieve metrics from multiple GPU clusters. 
+
+See the [Metrics API](metrics/metrics.md) document.
+
+## Inference API
+
+Deploying inference workloads is currently provided via a special [inference API](inference/overview.md).
+
+
+## API Authentication
+
+See [REST API Authentication](rest-auth.md) for information on how to authenticate REST API.
+
