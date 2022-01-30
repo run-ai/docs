@@ -53,7 +53,7 @@ The Run:AI Cluster installation installs Kubernetes [Node Feature Discovery (NFD
 * __Operating System__. Run:AI can be installed on any modern Linux. 
 * __NVIDIA CUDA Toolkit__ is installed for machines with GPUs (verify by running the command `nvidia-smi`). 
 
-You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=_blank}, as an alternative to the NVIDIA CUDA Toolkit. However, Run:AI uses its own version of one of the NVIDIA GPU Operator components called [NVIDIA device plug-in](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. There are special instructions on how to disable the default NVIDIA device plug-in. Please contact Run:AI Customer Support.  -->
+You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=_blank}, as an alternative to the NVIDIA CUDA Toolkit.  -->
 
 
 ## Network

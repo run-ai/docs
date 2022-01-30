@@ -29,39 +29,17 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 NVIDIA pre-requisites are provided in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#step-4-setup-nvidia-software){target=_blank}. The following provides a walkthrough of the documentation steps:
 
 
-There are two alternatives for installing NVIDIA prerequisites:
-
-1. __(Recommended)__ Install the _NVIDIA GPU Operator on Kubernetes_. This single installation contains therequired NVIDIA drivers and software for __all__ nodes within the Kubernetes cluster containing NVIDIA GPUs.
-2. Install NVIDIA software on each node separately. 
+Install the _NVIDIA GPU Operator on Kubernetes_. This single installation contains the required NVIDIA drivers and software for __all__ nodes within the Kubernetes cluster containing NVIDIA GPUs.
 
 !!! Important
     * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
-    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with option 1 and using the GPU Operator version 1.8 or higher. 
+    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work using the GPU Operator version 1.8 or higher. 
 
-=== "NVIDIA GPU Operator"
 
-    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank}.
+Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank}.
 
-    * Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
-    * To work with containerd (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly. 
-    * Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
-
-    ```
-    kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    ```
-
-=== "NVIDIA software on each node"
-
-    Install the NVIDIA Dependencies in [this](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank} guide. 
-
-    * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
-    * Do __not__ perform the section _Install NVIDIA Device Plugin_.
-    * Note the differntiation between _containerd_ and _docker_. 
-    * The instructions relate to Ubuntu and link to other Operating systems. 
-
+* Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
+* To work with containerd (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
 
 
 ### Prometheus 

@@ -36,16 +36,6 @@ The Run:AI Cluster installation installs Prometheus by default. If your Kubernet
 
 When using an existing Prometheus installation, you will need to add additional rules to your Prometheus configuration. The rules can be found under `deploy/runai-prometheus-rules.yaml`.
 
- 
-
-### NVIDIA Device Plugin
-
-Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. If you have installed the NVIDIA GPU Operator or have previously installed this plug-in, run the following to disable the existing plug-in:
-
-```
-kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
-   -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-```
 
 <!-- 
 admission-controller:
