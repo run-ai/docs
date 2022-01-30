@@ -84,13 +84,13 @@ __NVIDIA prerequisites have not been met__
 Run:
 
 ```
-runai pods -n runai | grep nvidia
+kubectl get pods -n gpu-operator | grep nvidia
 ```
 
 Select one of the NVIDIA pods and run:
 
 ```
-kubectl logs -n runai nvidia-device-plugin-daemonset-<id>
+kubectl logs -n gpu-operator nvidia-device-plugin-daemonset-<id>
 ```
 
 If the log contains an error, it means that NVIDIA-related prerequisites have not been met. Review [NVIDIA prerequisites](cluster-prerequisites.md). Verify that:
