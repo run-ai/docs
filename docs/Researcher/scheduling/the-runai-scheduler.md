@@ -92,6 +92,17 @@ Then, if both Projects go over quota, Project A will receive 75% (=3/(1+3)) of t
 
 This fairness equivalence will also be maintained amongst __running__ Jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
+### Over-Quota Priority
+When Over-Quota Priority feature is enabled, Run:AI scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. Remaining over-quota GPUs are allocated based on relative portion of GPU Over Quota Priority for each Project. 
+GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
+
+Let's examine previous example with Over-Quota Weights:
+
+* Project A has been allocated with a quota of 3 GPUs and GPU over quota weight is set to Low.
+* Project B has been allocated with a quota of 1 GPU and GPU over quota weight is set to High.
+
+Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. if both Projects go over quota, Project A will receive additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive additional 75% (=3/(1+3)) of the idle GPUs.
+
 ### Bin-packing & Consolidation
 
 Part of an efficient scheduler is the ability to eliminate fragmentation:
