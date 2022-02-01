@@ -6,7 +6,7 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
 
 ## Install Operators 
 
-NVIDIA provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/openshift/introduction.html){target=_blank} on how to install the required Operators so as to suppport GPUs on OpenShift. 
+NVIDIA provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank} on how to install the required Operators so as to suppport GPUs on OpenShift. 
 
 ## Disable the NVIDIA Device Plugin and DCGM Exporter
 
