@@ -34,9 +34,10 @@ To submit jobs via ingress, You must install an _Ingress controller_ in your Kub
 The Researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
 
 ```
+runai config project team-a
 runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
    --service-type=ingress --port 8888:8888 --command  \
-   -- start-notebook.sh --NotebookApp.base_url=test-ingress
+   -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
 ```
 
 Then run:
@@ -49,9 +50,15 @@ You will see the service URL with which to access the Jupyter notebook
 
 ![mceclip0.png](img/mceclip0.png)
 
-The URL will be composed of the ingress end-point, the Job name and the port (e.g. <a href="https://10.255.174.13/test-ingress-8888" target="_self">https://10.255.174.13/test-ingress-8888</a>.
+The URL will be composed of the ingress end-point, the Project name and the Job name (e.g. <a href="https://10.255.174.13/team-a-test-ingress" target="_self">https://10.255.174.13/team-a-test-ingress</a>.
 
+Alternatively run:
 
+```
+kubectl get ingress -n runai-team-a test-ingress -o yaml
+```
+
+And find the IP, port and full path from there. 
 
 ## See Also
 
