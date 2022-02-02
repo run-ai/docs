@@ -71,7 +71,9 @@ spec:
       record: runai_node_gpu_total_memory
     - expr: (label_replace(DCGM_FI_DEV_FB_USED, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
       record: runai_node_gpu_used_memory
-    - expr: max by (UUID, container, device, endpoint, gpu, instance, modelName, service) (timestamp(DCGM_FI_DEV_GPU_UTIL > 2) or runai_gpu_last_active_time_info or DCGM_GPU_LAST_NOT_IDLE_TIME or timestamp(DCGM_FI_DEV_GPU_UTIL))
+    - expr: timestamp(DCGM_FI_DEV_GPU_UTIL > 2) or runai_gpu_last_active_time_info_duplicated or DCGM_GPU_LAST_NOT_IDLE_TIME or timestamp(DCGM_FI_DEV_GPU_UTIL)
+      record: runai_gpu_last_active_time_info_duplicated
+    - expr: max by (UUID, container, device, endpoint, gpu, instance, modelName, service) (runai_gpu_last_active_time_info_duplicated)
       record: runai_gpu_last_active_time_info
     - expr: (label_replace(runai_gpu_last_active_time_info, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"runai-dcgm-exporter"}
       record: runai_node_gpu_last_not_idle_time
