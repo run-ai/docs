@@ -50,7 +50,7 @@ To review API documentation:
 
 * Open the Run:AI user interface
 * Go to `Clusters`
-* Locate your cluster and browse to `https://<cluster-url>/researcher/api/docs'.
+* Locate your cluster and browse to `https://<cluster-url>/researcher/api/docs`.
 
 API documentation is still work-in-progress and will be updated soon. 
 
