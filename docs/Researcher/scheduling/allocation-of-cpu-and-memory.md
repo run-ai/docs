@@ -58,6 +58,12 @@ If, for example, the default has been defined as 1:6 and your Job has specified 
 
 The system comes with a cluster-wide default of 1:1. To change the ratio see below.
 
+If you didn't request any GPUs for your job and has not specified `--cpu`, the default is defined as a ratio of CPU limit to CPUs.
+
+If, for example, the default has been defined as 1:0.2 and your Job has specified `--cpu-limit 10` and has not specified `--cpu`, then the implied `--cpu` flag value is 2 CPUs.
+
+The system comes with a cluster-wide default of 1:0.1. To change the ratio see below.
+
 
 ### Defaults for --memory flag
 
@@ -84,13 +90,14 @@ To change the cluster wide-ratio use the following process. The example shows:
 * a CPU request with a default ratio of 2:1 CPUs to GPUs.
 * a CPU Memory request with a default ratio of 200MB per GPU.
 * a CPU limit with a default ratio of 4:1 CPU to GPU.
-* a Memory limit with a default ratio of 2GB per GPU. 
+* a Memory limit with a default ratio of 2GB per GPU.
+* a CPU request with a default ratio of 0.1 CPUs per 1 CPU limit.
  
 You must edit the cluster installation values file:
 
 * When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
 * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
-* You must specify all 4 values as follows: 
+* You must specify all 5 values as follows: 
 
 ```  yaml
 runai-operator:
@@ -100,6 +107,7 @@ runai-operator:
       memoryDefaultRequestGpuFactor: 200Mi
       cpuDefaultLimitGpuFactor: 4
       memoryDefaultLimitGpuFactor: 2Gi
+      cpuDefaultRequestCpuLimitFactorNoGpu: 0.1
 ```
 
 
