@@ -83,31 +83,7 @@ When making changes to the file, keep a copy of the original file to be used for
 Under the `~/.kube` directory edit the `config` file, remove the administrative user and replace with the following:
 
 === "SaaS" 
-    ``` YAML
-    - name: runai-authenticated-user
-      user:
-        auth-provider:
-          config:
-            auth-flow: cli
-            realm: <REALM>
-            client-id: <CLIENT_ID>
-            idp-issuer-url: https://runai-prod.auth0.com/
-          name: oidc
-    ```
-
-=== "SaaS New" 
-    ``` YAML
-    - name: runai-authenticated-user
-      user:
-        auth-provider:
-          config:
-            airgapped: "true"
-            auth-flow: cli
-            realm: <REALM>
-            client-id: runai-cli
-            idp-issuer-url: https://app.run.ai/auth/realms/<REALM>
-          name: oidc
-    ```
+    Copy text from [app.run.ai/general-settings](https://app.run.ai/general-settings){target=_blank} under `Client Configuration`.
 
 === "Self-hosted"
     ``` YAML
@@ -120,22 +96,6 @@ Under the `~/.kube` directory edit the `config` file, remove the administrative 
             realm: runai
             client-id: runai
             idp-issuer-url: https://<COMPANY-URL>/auth/realms/runai
-          name: oidc
-    ```
-
-=== "SSO SaaS" 
-    ``` YAML
-    - name: runai-authenticated-user
-      user:
-        auth-provider:
-          config:
-            airgapped: "true"
-            auth-flow: remote-browser
-            realm: <REALM>
-            client-id: runai-cli-sso
-            subject-claim-field: email
-            idp-issuer-url: https://app.run.ai/auth/realms/<REALM>
-            redirect-uri: https://app.run.ai/oauth-code
           name: oidc
     ```
 
@@ -167,26 +127,8 @@ Edit the document to add the following parameters at the end of the existing com
 
 
 === "SaaS" 
-    ``` YAML
-    spec:
-      containers:
-      - command:
-        ... 
-        - --oidc-client-id=<CLIENT_ID>
-        - --oidc-issuer-url=https://runai-prod.auth0.com/
-        - --oidc-username-prefix=-
-    ```
+    Copy text from [app.run.ai/general-settings](https://app.run.ai/general-settings){target=_blank} under `Server Configuration`.
 
-=== "SaaS New" 
-    ``` YAML
-    spec:
-      containers:
-      - command:
-        ... 
-        - --oidc-client-id=runai-cli
-        - --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM>
-        - --oidc-username-prefix=-
-    ```
 
 === "Self-hosted"
     ``` YAML
@@ -198,19 +140,6 @@ Edit the document to add the following parameters at the end of the existing com
         - --oidc-issuer-url=https://<COMPANY-URL>/auth/realms/runai
         - --oidc-username-prefix=-
     ```
- 
-    
-=== "SSO SaaS" 
-    ``` YAML
-    spec:
-      containers:
-      - command:
-        ... 
-        - --oidc-client-id=runai-cli-sso
-        - --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM>
-        - --oidc-username-prefix=-
-        - --oidc-username-claim=email
-    ``` 
 
 === "SSO Self-hosted" 
     ``` YAML
