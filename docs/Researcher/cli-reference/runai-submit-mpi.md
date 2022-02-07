@@ -68,30 +68,30 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 
 ### Aliases and Shortcuts
 
---name
+#### --name
 > The name of the Job.
 
---interactive
+#### --interactive
 >  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.
 
---template string
+#### --template string
 >  Provide the name of a template. A template can provide default and mandatory values. 
 
---job-name-prefix string
+#### --job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:AI will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix.
 
 ### Container Related
 
---always-pull-image stringArray (deprecated)
+#### --always-pull-image stringArray (deprecated)
 >  Deprecated. Please use `image-pull-policy=always` instead.
 >  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag but may incur a penalty of performance degradation on Job start.
 
---attach                        
+#### --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
 >
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
---command
+#### --command
 >  If set, overrides the image's entry point with the command supplied after '--'
 >
 >  Example: 
@@ -101,15 +101,15 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
  <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`). -->
 
---git-sync string
+#### --git-sync string
 > Clone a git repository into the container running the Job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
 >
 > Note that source=REPOSITORY is the only mandatory field
 
---image string | -i string
+#### --image string | -i string
 >  Image to use when creating the container for this Job
 
---image-pull-policy string
+#### --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
 >
 > - `always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded.
@@ -118,47 +118,47 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
---local-image (deprecated)
+#### --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
 >  Use a local image for this Job. A local image is an image that exists on all local servers of the Kubernetes Cluster.
 
---stdin
+#### --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
 -t, --tty
 >  Allocate a pseudo-TTY
 
---working-dir string
+#### --working-dir string
 >  Starts the container with the specified directory as the current directory.
 
 ### Resource Allocation
 
---cpu double
+#### --cpu double
 > CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive __at least__ this amount of CPU. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
---cpu-limit double
+#### --cpu-limit double
 > Limitations on the number of CPUs consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
 
---gpu double | -g double
+#### --gpu double | -g double
 > Number of GPUs to allocate for the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
---gpu-memory
+#### --gpu-memory
 > GPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of GPU memory to the Job.
 
---large-shm
+#### --large-shm
 > Mount a large /dev/shm device. An _shm_ is a shared file system mounted on RAM.
 
---memory string
+#### --memory string
 >  CPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive __at least__ this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of memory to the Job.
 
---memory-limit string
+#### --memory-limit string
 >  CPU memory to allocate for this Job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
 ### Storage
 
---pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
+#### --pvc `[Storage_Class_Name]:Size:Container_Mount_Path:[ro]`
 
---pvc `Pvc_Name:Container_Mount_Path:[ro]`
+#### --pvc `Pvc_Name:Container_Mount_Path:[ro]`
 
 > Mount a persistent volume claim into a container.
 >
@@ -184,7 +184,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >
 > > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
---volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
+#### --volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
 >  Volumes to mount into the container.
 >
 > Examples:
@@ -195,62 +195,62 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > > `-v /public/data:/root/data::nfs.example.com`
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
---nfs-server string
+#### --nfs-server string
 > Use this flag to specify a default NFS host for --volume flag.
 > Alternatively, you can specify NFS host for each volume
 > individually (see --volume for details).
 
 ### Network
 
---host-ipc
+#### --host-ipc
 >  Use the host's _ipc_ namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores, and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
 > For further information see [docker run reference]("https://docs.docker.com/engine/reference/run/") documentation.
 
---host-network
+#### --host-network
 > Use the host's network stack inside the container.
 > For further information see [docker run reference]("https://docs.docker.com/engine/reference/run/")documentation.
 
 ### Job Lifecycle
 
---backoff-limit int
+#### --backoff-limit int
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
---processes int
+#### --processes int
 > Number of distributed training processes. The default is 1.
 
 
 ### Access Control
 
---create-home-dir
+#### --create-home-dir
 > Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
---prevent-privilege-escalation
+#### --prevent-privilege-escalation
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
---run-as-user
+#### --run-as-user
 >  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:AI via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 
 ### Scheduling
 
---node-type string
+#### --node-type string
 >  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
 
 
 ### Global Flags
 
---loglevel (string)
+#### --loglevel (string)
 
 >  Set the logging level. One of: debug | info | warn | error (default "info")
 
---project | -p (string)
+#### --project | -p (string)
 
 >  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
 
---help | -h
+#### --help | -h
 
 >  Show help text.
 

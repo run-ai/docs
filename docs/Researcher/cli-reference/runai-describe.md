@@ -41,13 +41,13 @@ runai describe template <template-name>
 
 ### Global Flags
 
---loglevel (string)
+#### --loglevel (string)
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
---project | -p (string)
+#### --project | -p (string)
 >  Specify the Project to which the command applies. By default, commands apply to the default Project. To change the default Project, use: ``runai config project <project-name>``.
 
---help | -h
+#### --help | -h
 >  Show help text
 
 ## Output

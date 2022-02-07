@@ -13,11 +13,11 @@ runai version
 
 ## Options
 
---loglevel (string)
+#### --loglevel (string)
 
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
---help | -h
+#### --help | -h
 
 >  Show help text.
 

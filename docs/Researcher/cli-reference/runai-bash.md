@@ -19,20 +19,20 @@ runai bash <job-name>
 
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
---pod string
+#### --pod string
 > Specify a pod of a running Job. To get a list of the pods of a specific Job, run `runai describe job <job-name>` command
 
 ### Global Flags
 
---loglevel (string)
+#### --loglevel (string)
 
 >  Set the logging level. One of: debug | info | warn | error (default "info")
 
---project | -p (string)
+#### --project | -p (string)
 
 >  Specify the Project to which the command applies. By default, commands apply to the default Project. To change the default Project use ``runai config project <project-name>``.
 
---help | -h
+#### --help | -h
 
 >  Show help text
 
