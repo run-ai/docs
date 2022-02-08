@@ -183,6 +183,7 @@ nav:
       - 'MLflow' : 'admin/integration/mlflow.md'
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
       - 'Seldon Core' : 'admin/integration/seldon.md'
+      - 'ClearML' : 'admin/integration/clearml.md'
     - 'Presentations' :
       - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
