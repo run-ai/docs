@@ -26,7 +26,8 @@ See that all pods are up.
 ### Preparations
 
 * Run:AI uses _Projects_. A Project is assigned to users and contains information such as quota, affinity, and more. A Run:AI Project is implemented as a Kubernetes namespace. 
-* ClearML runs _Experiments_. Experiments run in _Queues_. Queues are associated with Kubernetes namespaces. 
+* ClearML runs _Experiments_. An Experiment is sent to a _Queue_ for execution. 
+* ClearML runs _Agents_. An agent runs on a Kubernetes namespace. An Agent can be associated with Queues. The Agent listens to queues and pulls experiements for execution in that namespace. 
 
 To prepare a Run:AI Project and a ClearML Queue do the following:
 
