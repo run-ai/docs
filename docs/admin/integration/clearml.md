@@ -22,12 +22,13 @@ kubectl get pod -n clearml
 See that all pods are up. 
 
 
-
-### Preparations
+### Terminology
 
 * Run:AI uses _Projects_. A Project is assigned to users and contains information such as quota, affinity, and more. A Run:AI Project is implemented as a Kubernetes namespace. 
 * ClearML allows the Reesearcher to run _Experiments_. Experiment is equivalent to a Run:AI Job. A ClearML Experiment is sent to a ClearML _Queue_ for execution. 
 * ClearML execute _Agents_. An agent runs on a Kubernetes namespace. An Agent is configured to watch a Queue. The Agent fetches an experiment from the queue for execution within the Kubernetes namespace.
+
+### Preparations
 
 To prepare a Run:AI Project and a ClearML Queue do the following:
 
