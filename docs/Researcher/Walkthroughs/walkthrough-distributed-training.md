@@ -72,7 +72,7 @@ It is also possible to run a distributed training Job as "interactive". This is 
 ``` shell
 runai submit-mpi dist-int --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed --interactive \
-        --command -- sh -c sleep infinity 
+        --command -- sh -c "sleep infinity" 
 ```
 
 When the workers are running run:
