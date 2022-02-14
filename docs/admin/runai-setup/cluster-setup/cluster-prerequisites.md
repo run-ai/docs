@@ -81,7 +81,7 @@ As per instructions:
 
 * Clone tag `v0.2.3` (and not master)
 * `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`: 
-  * search for `image` and change it to `mpioperator/mpi-operator:v0.2.3`.
+  * search for `mpioperator/mpi-operator:latest` and change it to `mpioperator/mpi-operator:v0.2.3`.
   * search for `mpioperator/kubectl-delivery:latest` and change it to `mpioperator/kubectl-delivery:v0.2.3`.
 
 
