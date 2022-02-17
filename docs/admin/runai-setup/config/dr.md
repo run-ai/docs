@@ -22,7 +22,12 @@ Run:AI stores metric history using [Thanos](https://github.com/thanos-io/thanos)
 
 ### Additional Configuration
 
-During the installation of Run:AI you have created two value files, one for the backend (see [kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md)) and one for the cluster (see [kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). You will want to save these file, or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
+During the installation of Run:AI you have created two value files, 
+
+* one for the Run:AI control plane (also called 'backend'). See [kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md),
+*  and one for the cluster (see [kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). 
+
+You will want to save these files, or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
 
 Administrators may also create templates. Templates are stored as ConfigMaps in the `runai` namespace. 
 
@@ -32,7 +37,7 @@ To recover Run:AI
 
 * Re-create the Kubernetes/OpenShift cluster.
 * Recover the persistent volumes for metrics and database. 
-* Re-install the Run:AI backend. Use the stored values file. If needed, modify the values file to connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
+* Re-install the Run:AI control plane. Use the stored values file. If needed, modify the values file to connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
 * Re-install the cluster. Use the stored values file or download a new file from the Administration UI. 
 * If the cluster is configured such that Projects do not create namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [kubernetes](../self-hosted/k8s/project-management.md) or [OpenShift](../self-hosted/ocp/project-management.md).
 

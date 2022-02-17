@@ -10,7 +10,7 @@ The following section provides IT with the information needed to prepare for a R
 
 ## Create OpenShift Projects
 
-Run:AI uses two projects. One for the backend (`runai-backend`) and one for the cluster itself (`runai`). 
+Run:AI uses two projects. One for the control plane (`runai-backend`) and one for the cluster itself (`runai`). 
 The project `gpu-operator-resources` is used by the _GPU Opeator_ dependency described above. 
 
 ```
@@ -80,17 +80,17 @@ If helm v3 does not yet exist on the machine, install it now:
 
 ## Mark Run:AI System Workers
 
-The Run:AI Backend should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+The Run:AI Control plane should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
 oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
-Currently, this setting cannot be changed after the backend is installed.
+Currently, this setting cannot be changed after the control plane is installed.
 
 ## Additional Permissions
 
-As part of the installation you will be required to install the [Backend](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
+As part of the installation you will be required to install the [Control plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
 ## Next Steps
 

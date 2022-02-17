@@ -30,7 +30,7 @@ The Run:AI Cluster contains:
 
 ## The Run:AI Control Plane (Backend)
 
-The Run:AI Control Plane is the basis of the Administrator User Interface. 
+The Run:AI control plane is the basis of the Administrator User Interface. 
 
 * The Run:AI cloud aggregates monitoring information from __multiple__ tenants (customers).
 * Each customer may manage __multiple__ Run:AI clusters. 

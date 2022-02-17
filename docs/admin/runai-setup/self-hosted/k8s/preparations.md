@@ -73,7 +73,7 @@ If helm v3 does not yet exist on the machine, install it now:
 
 ## Mark Run:AI System Workers
 
-The Run:AI Backend should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+The Run:AI control plane (backend) should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
@@ -81,9 +81,9 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 ## Additional Permissions
 
-As part of the installation you will be required to install the [Backend](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
+As part of the installation you will be required to install the [Run:AI Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
 
 ## Next Steps
 
-Continue with installing the [Run:AI backend](backend.md).
+Continue with installing the [Run:AI Control Plane](backend.md).

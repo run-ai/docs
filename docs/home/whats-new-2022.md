@@ -2,12 +2,12 @@
 
 We have now stabilized on a single version numbering system for all Run:AI artifacts: 
 
-* Run:AI Backend (control-plane).
+* Run:AI Control plane (also called Backend).
 * Run:AI Cluster.
 * Run:AI Command-line interface.
 * Run:AI Administrator Command-line interface.
 
-Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the backend can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
+Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the control plane can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
 
 ### Release Contents
 

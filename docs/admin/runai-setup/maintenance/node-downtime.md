@@ -82,13 +82,14 @@ To rejoin a node to the cluster follow the following steps:
 
 * On the __master__ node, run:
 
-        kubeadm token create --print-join-command
-
-* This would output a ``kubeadm join`` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
-
+```
+kubeadm token create --print-join-command
+```
+* This would output a `kubeadm join` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
 * Verify that the node is joined by running:
 
-        kubectl get nodes
-
+```
+kubectl get nodes
+```
 
 * When the machine is up you will need to [re-label nodes according to their role](../config/node-roles.md)
