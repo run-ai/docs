@@ -19,7 +19,7 @@ The following document explains how to get the credentials required to call Run:
     * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md). 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
 * Copy the `<CLIENT-ID>` and `<CLIENT-SECRET>` to be used below
-* Copy the domain of the web page to be used as `<COMPANY-URL>` below. This can be [app.run.ai](https://app.run.ai){target=_blank} for SaaS installation or a custom URL for Self-hosted installations
+* `<COMPANY-URL>` is `app.run.ai` for SaaS installations (not `<company>.run.ai`) or the admin user interface URL for Self-hosted installations.
 * Go to `Settings | General`, under `Researcher Authentication` copy `<REALM>`.
 
 !!! Important Note
