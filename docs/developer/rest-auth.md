@@ -18,12 +18,12 @@ The following document explains how to get the credentials required to call Run:
     * Select `Researcher` to manipulate _Jobs_ using the [Researcher REST API](researcher-rest-api/overview.md). To provide access to a specific project, you will also need to go to `Application | Projects` and provide the Application with access to specific projects. 
     * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md). 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
-* Copy the `<CLIENT-ID>` and `<CLIENT-SECRET>` to be used below
+* Copy the `<APPLICATION-NAME>` and `<CLIENT-SECRET>` to be used below
 * `<COMPANY-URL>` is `app.run.ai` for SaaS installations (not `<company>.run.ai`) or the admin user interface URL for Self-hosted installations.
 * Go to `Settings | General`, under `Researcher Authentication` copy `<REALM>`.
 
 !!! Important Note
-    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you do not see the `Settings | Application` area, please contact Run:AI customer support.  
+    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you are an administrator but do not see the `Settings | Application` area, please contact Run:AI customer support.  
 
 ## Request an API Token
 
@@ -38,7 +38,7 @@ Use the above parameters to get a temporary token to access Run:AI as follows.
     --data-urlencode 'grant_type=client_credentials' \
     --data-urlencode 'scope=openid' \
     --data-urlencode 'response_type=id_token' \
-    --data-urlencode 'client_id=<CLIENT-ID>' \
+    --data-urlencode 'client_id=<APPLICATION-NAME>' \
     --data-urlencode 'client_secret=<CLIENT-SECRET>'
     ```
 
@@ -47,7 +47,7 @@ Use the above parameters to get a temporary token to access Run:AI as follows.
     import http.client
 
     conn = http.client.HTTPSConnection("")
-    payload = "grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>"
+    payload = "grant_type=client_credentials&client_id=<APPLICATION-NAME>&client_secret=<CLIENT_SECRET>"
     headers = { 'content-type': "application/x-www-form-urlencoded" }
     conn.request("POST", "/<COMPANY-URL>/realms/<REALM>/protocol/openid-connect/token", payload, headers)
 
@@ -58,7 +58,7 @@ Use the above parameters to get a temporary token to access Run:AI as follows.
 
 ### Response 
 
-If all goes well, you'll receive an HTTP 200 response with a payload containing access_token, token_type, and expires_in values:
+The API response will look as follows: 
 
 ``` JSON
 {
