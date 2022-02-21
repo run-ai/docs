@@ -1,9 +1,9 @@
 
-# Install the Run:AI Backend 
+# Install the Run:AI Control Plane (Backend) 
 
-### Set Backend Configuration
+## Create a Control Plane Configuration
 
-Customize the Run:AI backend configuration file.
+Customize the Run:AI control plane configuration file.
 
 === "Connected"
     Generate a values file by running:
@@ -17,6 +17,7 @@ Customize the Run:AI backend configuration file.
     ```
 
 
+## Edit Configuration File
 
 Change the following properties in the values file. 
 
@@ -25,18 +26,18 @@ Change the following properties in the values file.
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
 | `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
 | `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
-| `thanos.receive.persistence` | Permanent storage for Run:AI metrics | See Postresql persistence above. Can use the same location |
+| `thanos.receive.persistence` | Permanent storage for Run:AI metrics | See Postgresql persistence above. Can use the same location |
 ||||
 | __Optional:__ |
 | `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
-| `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Backend administrator | 
+| `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Control Plane administrator | 
 |<img width=1300/>|||
 
 
 
-## Install Backend
+## Install the Control Plane (Backend)
 
 Run the helm command below:
 
@@ -57,7 +58,7 @@ Run the helm command below:
     helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend -f runai-backend-values.yaml 
     ```
-    (replace `<version>` with the backend version)
+    (replace `<version>` with the Run:AI control plane version)
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 

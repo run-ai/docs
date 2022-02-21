@@ -5,8 +5,8 @@ title: SaaS Cluster Setup Introduction
 This section is a step-by-step guide for setting up a Run:AI cluster. 
 
 * A Run:AI cluster is installed on top of a Kubernetes cluster.
-* A Run:AI cluster connects to the Run:AI backend on the cloud. The backend provides a control point as well as a monitoring and control user interface for Administrators.
-* A customer may have multiple Run:AI Clusters, all connecting to a single backend.
+* A Run:AI cluster connects to the Run:AI control plane (or 'backend') on the cloud. The control plane provides a control point as well as a monitoring and control user interface for Administrators.
+* A customer may have multiple Run:AI Clusters, all connecting to a single control plane.
 
 For additional details see the [Run:AI system components](../../../home/components.md)
 

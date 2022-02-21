@@ -4,7 +4,7 @@
 Run:AI consists of two components:
 
 * The Run:AI [Cluster](../../../home/components/#the-runai-cluster). One or more data-science GPU clusters hosted by the customer (on-prem or cloud).
-* The Run:AI [Backend](../../../home/components/#the-runai-cloud) or _Control Plane_. A single entity that monitors clusters, sets priorities, and business policies. 
+* The Run:AI [Control plane](../../../home/components/#the-runai-cloud) or _Backend_. A single entity that monitors clusters, sets priorities, and business policies. 
 
 <!-- ![img/architecture.png](img/architecture.png) -->
 
@@ -12,8 +12,8 @@ There are two main installation options:
 
 | Installation Type | Description | 
 |-------------------|-------------|
-| [Classic (SaaS)](cluster-setup/cluster-setup-intro.md)  | Run:AI is installed on the customer's data science GPU clusters. The cluster connects to the Run:AI backend on the cloud (https://app.run/ai). <br> With this installation, the cluster requires an __outbound__ connection to the Run:AI cloud. |
-| [Self-hosted](self-hosted/overview.md)       | The Run:AI backend is also installed in the customer's data center |
+| [Classic (SaaS)](cluster-setup/cluster-setup-intro.md)  | Run:AI is installed on the customer's data science GPU clusters. The cluster connects to the Run:AI control plane on the cloud (https://app.run/ai). <br> With this installation, the cluster requires an __outbound__ connection to the Run:AI cloud. |
+| [Self-hosted](self-hosted/overview.md)       | The Run:AI control plane is also installed in the customer's data center |
 
 
 The self-hosted option is for organizations that cannot use a SaaS solution due to data leakage concerns. The self-hosted installation is priced differently. For further information please talk to Run:AI sales. 

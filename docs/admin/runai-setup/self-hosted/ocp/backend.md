@@ -1,6 +1,6 @@
-# Install the Run:AI Backend 
+# Install the Run:AI Control Plane (Backend) 
 
-### Set Backend Configuration
+## Create a Control Plane Configuration
 
 Customize the Run:AI backend configuration file.
 
@@ -15,7 +15,7 @@ Customize the Run:AI backend configuration file.
     ```
     runai-adm generate-values --openshift --airgapped
     ```
-## Edit Backend Configuration File
+## Edit Configuration File
 
 __Optional__: Change the following properties in the values file:
 
@@ -29,7 +29,7 @@ __Optional__: Change the following properties in the values file:
 <!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
 
 
-## Install Backend
+## Install the Control Plane (Backend)
 
 Run the helm command below:
 
@@ -49,7 +49,7 @@ Run the helm command below:
     helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend -f runai-backend-values.yaml 
     ```
-    (replace `<version>` with the backend version)
+    (replace `<version>` with the control plane version)
 
 
 !!! Tip

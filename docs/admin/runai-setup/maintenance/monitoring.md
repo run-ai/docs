@@ -6,14 +6,14 @@ Organizations typically want to automatically highlight critical issues and esca
 
 Run:AI is comprised of two parts:
 
-* A control plane part, The control-plane (or "backend"):
+* A control plane part, The control-plane (or 'backend'):
   * Typically resides on the cloud. The health of the cloud portion of Run:AI can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. 
   * In _Self-hosted_ installations of Run:AI is installed on-prem.
 * One or more _GPU Clusters_. 
 
 The purpose of this document is to configure the Run:AI to emit health alerts and to connect these alerts to alert-management systems within the organization. 
 
-Alerts are emitted for Run:AI Clusters as well as the Run:AI backend on Self-hosted installation where the backend resides on the same Kubernetes cluster as one of the Run:AI clusters. 
+Alerts are emitted for Run:AI Clusters as well as the Run:AI control plane on Self-hosted installation where the control plane resides on the same Kubernetes cluster as one of the Run:AI clusters. 
 
 
 ## Alert Infrastructure

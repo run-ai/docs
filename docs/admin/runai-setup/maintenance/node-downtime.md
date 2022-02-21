@@ -6,6 +6,10 @@ Nodes (Machines) that are part of the cluster are susceptible to occasional down
 
 The purpose of this document is to provide a process for retaining the Run:AI service and Researcher workloads during and after the downtime. 
 
+## Self-hosted installation
+
+The Self-hosted installation differs from the Classic (SaaS) installation of Run:AI in that it includes the Run:AI control-plane (backend). The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
+
 ## Node Types
 The document differentiates between __Run:AI System Worker Nodes__ and __GPU Worker Nodes__:
 
@@ -78,13 +82,14 @@ To rejoin a node to the cluster follow the following steps:
 
 * On the __master__ node, run:
 
-        kubeadm token create --print-join-command
-
-* This would output a ``kubeadm join`` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
-
+```
+kubeadm token create --print-join-command
+```
+* This would output a `kubeadm join` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
 * Verify that the node is joined by running:
 
-        kubectl get nodes
-
+```
+kubectl get nodes
+```
 
 * When the machine is up you will need to [re-label nodes according to their role](../config/node-roles.md)

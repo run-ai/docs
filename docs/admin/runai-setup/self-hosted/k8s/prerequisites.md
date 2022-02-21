@@ -11,7 +11,7 @@ Before proceeding with this document, please review the [installation types](../
 * 8GB of RAM
 * 120GB of Disk space
 
-The backend installation of Run:AI will require the configuration of  Kubernetes Persistent Volumes of a total size of 110GB. 
+The control plane (backend) installation of Run:AI will require the configuration of  Kubernetes Persistent Volumes of a total size of 110GB. 
 
 
 ## Run:AI Software Prerequisites

@@ -8,17 +8,17 @@ The purpose of the Administrator REST API is to provide an easy-to-use programmi
 
 ## Endpoint URL for API
 
-The endpoint URL for APIs is `<COMPANY-URL>` as described in [calling REST APIs](../rest-auth.md#create-a-client-application).
+
+The domain used for Administrator REST APIs is the same domain used to browse for the Administrator user interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
+
 
 ## Authentication
 
-See [calling REST APIs](../rest-auth.md) on how to get an `access token`.
+* Create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../rest-auth.md).
+* Use the token for subsequent API calls. 
 
 
-
-## Example Usage (Python)
-
-
+## Example Usage 
 
 For example, if you have an Administrator role, you can get a list of clusters by running:
 
@@ -54,7 +54,7 @@ For an additional example, see the [following](https://github.com/run-ai/docs/bl
 
 ## Administrator API Documentation
 
-The Researcher API provides the developer interfaces for getting and manipulating the Run:AI metadata objects such as Projects, Departments, Clusters, and Users.
+The Administrator API provides the developer interfaces for getting and manipulating the Run:AI metadata objects such as Projects, Departments, Clusters, and Users.
 
 
 Detailed API documentation can be found under [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. The document uses the [Open API specification](https://swagger.io/specification/) to describe the API. You can test the API within the document after creating a token.

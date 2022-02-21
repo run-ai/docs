@@ -13,15 +13,15 @@ Show list of Nodes (machines), their capacity and utilization.
 
 ### Global Flags
 
---loglevel (string)
+#### --loglevel (string)
 
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
---help | -h
+#### --help | -h
 
 >  Show help text.
 
---details | -d
+#### --details | -d
 
 >  Show additional details.
 

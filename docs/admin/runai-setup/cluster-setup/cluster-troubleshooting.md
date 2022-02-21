@@ -77,6 +77,7 @@ __Typical root causes:__
 * NVIDIA prerequisites have not been met.
 * Firewall-related issues.
 * Internal clock is not synced.
+* Prometheus pods are not running
 
 
 __NVIDIA prerequisites have not been met__
@@ -141,6 +142,13 @@ Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 * Set the Linux time service (NTP).
 * Restart Run:AI services. Depending on the previous time gap between servers, you may need to reinstall the Run:AI cluster
 
+
+__Prometheus pods are not running__
+
+Run: `kubectl get pods -n monitoring -o wide`
+
+* Verify that all pods are running.
+* The default Prometheus installation is not built for high availability. If a node is down, the Prometheus pod will not recover by itself unless manually deleted. Delete the pod to see it start on a different node and consider adding a second replica to Prometheus.
 
 ## Symptom: Projects are not syncing
 

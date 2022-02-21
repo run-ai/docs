@@ -69,7 +69,7 @@ mlflow run mlproject -P alpha=5.0  -P l1-ratio=0.1  \
 
 ## MLflow Tracking
 
-The sample training code above does __not__ contain references to an MLflow tracking server. This has been done to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architecture set up, you can use MLflow tracking in your code.
+The sample training code above does __not__ contain references to an MLflow tracking server. This has been done to simplify the required setup. With MLflow-Kubernetes you will need a [remote server architecture](https://www.mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores){target=_blank}. Once you have such an architecture set up, you can use MLflow Tracking in your code.
 
 ## Using Interactive Workloads
 

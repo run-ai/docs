@@ -20,21 +20,21 @@ The command attaches to the standard input, output, and error streams of a runni
 
 <job-name\> - The name of the Job to run the command with. Mandatory.
 
---no-stdin    
+#### --no-stdin    
 > Do not attach STDIN.
 
---no-tty       
+#### --no-tty       
 > Do not allocate a pseudo-TTY
 
---pod string   
+#### --pod string   
 > Attach to a specific pod within the Job. To find the list of pods run ``runai describe job <job-name>`` and then use the pod name with the ``--pod`` flag.
 
 ### Global Flags
 
---loglevel (string)
+#### --loglevel (string)
 > Set the logging level. One of: debug | info | warn | error (default "info").
 
---help | -h
+#### --help | -h
 >  Show help text.
 
 ## Output

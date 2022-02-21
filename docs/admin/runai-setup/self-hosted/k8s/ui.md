@@ -10,7 +10,7 @@ Browse to `https://runai.<company-name>`, enter user `test@run.ai` and password 
 ## Researcher User Interface
 
 * Enable Researcher Authentication. The [server-side](../../../config/researcher-authentication/#server-side) configuration is mandatory in this context.
-* If you have set a self-signed certificate in the [backend](backend.md) installation, you must provide Kubernetes with the root-ca certificate. 
+* If you have set a self-signed certificate in the Run:AI [Control Plane](backend.md) installation, you must provide Kubernetes with the root-ca certificate. 
     * Copy the certificate authority file (e.g. `ca.pem`) to `/etc/ssl/certs`
     * Edit the Kubernetes API Server configuration file as mentioned in the last bullet and add `--oidc-ca-file=/etc/ssl/certs/<name of CA file>`
 

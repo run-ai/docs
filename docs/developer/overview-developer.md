@@ -9,22 +9,22 @@ Developers can access Run:AI through various programmatic interfaces.
 
 ## API Architecture
 
-Run:AI is composed of a single, multi-tenant backend (control-plane). Each tenant can be connected to one or more GPU clusters. See [Run:AI system components](../home/components.md) for detailed information.
+Run:AI is composed of a single, multi-tenant control plane (also called 'backend'). Each tenant can be connected to one or more GPU clusters. See [Run:AI system components](../home/components.md) for detailed information.
 
 Below is a diagram of the Run:AI API Architecture. A developer may:
 
-* Access the backend via the _Administrator API_.
-* Access any one of the GPU clusters via _Researcher API_.
-* Access cluster metrics via the _Metrics API_.  
+1. Access the control plane via the _Administrator API_.
+2. Access any one of the GPU clusters via _Researcher API_.
+3. Access cluster metrics via the _Metrics API_.  
 
 ![api architecture image](img/api-architecture.png)
 
 
 ## Administrator API
 
-Add, delete, modify and list Run:AI meta-data objects such as Projects, Departments, Users and more. 
+Add, delete, modify and list Run:AI meta-data objects such as Projects, Departments, Users, and more. 
 
-The API is provided as REST and is accessible via the control-plan (backend) end point.  
+The API is provided as REST and is accessible via the control plane (backend) endpoint.  
 
 For more information see [Administrator REST API](admin-rest-api/overview.md). 
 
