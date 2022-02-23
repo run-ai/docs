@@ -54,7 +54,7 @@ To expose the GPUs and map them to KubeVirt follow the instructions [here](https
 kubectl edit kubevirt -n kubevirt -o yaml
 ```
 
-And add all of the PCI Addresses of all GPUs of all Nodes concatenated by commas:
+And add all of the PCI Addresses of all GPUs of all Nodes concatenated by commas, with the resource name _kubevirt/vmgpu_:
 
 ``` YAML
 spec:
@@ -67,7 +67,7 @@ spec:
     permittedHostDevices:
       pciHostDevices:
       - pciVendorSelector: <PCI-ADDRESS>,<PCI-ADDRESS>,
-        resourceName: nvidia.com/gpu
+        resourceName: kubevirt/vmgpu
 ```
 
 ### Assign GPUs to VMs
@@ -92,7 +92,7 @@ spec:
       domain:
         devices:
           gpus:
-          - deviceName: nvidia.com/gpu # identical name to resourceName above
+          - deviceName: kubevirt/vmgpu # identical name to resourceName above
             name: gpu1  # name here is arbitrary and is not used. 
 ```
 
