@@ -5,21 +5,28 @@ import random
 import string
 
 
-# Unique user and Key should be provided by Run:AI Support
-USER = '<from support>
-KEY = '<from support>'
+# Application Name and Secret must be created in the Administrator user interface. See https://docs.run.ai/developer/rest-auth/
+APPNAME = '<key-name>'
+APPSECRET = '<secret>'
+
+
+# the URL is the URL to the administrator user interface
+APPURL = 'https://app.run.ai'
+COMPANYURL = 'https://<company-name>.run.ai'
+
+# REALM is obtained by going to the administrator User interface, and getting the REALM and "Researcher Authentication"
+REALM = '<realm>'
 
 # The department feature is advanced and is mostly disabled. 
-# Find out the default department ID by listing departments via https://docs.run.ai/developer/admin-rest-api/departments/
-DEPARTMENT_ID = 6   
+# Find out the default department ID by listing departments via https://app.run.ai/api/docs/#/Departments/get_v1_k8s_departments
+DEPARTMENT_ID = 1234  
 
 # A tenant (customer) may define multiple clusters. 
-# Find out the Cluster UUID by logging into https://app.run.ai/clusters
+# Find out the Cluster UUID by logging into the Administraor user interface and go to "Clusters"
 CLUSTER_UUID = '000000-0000-0000-0000-0000000000'
 
 
-
-# Generate a random string of fixed length 
+#Generate a random string of fixed length 
 def randomString(stringLength=10):
     letters = string.ascii_letters
     digits = string.digits
@@ -28,15 +35,11 @@ def randomString(stringLength=10):
 
 
 def login():
-    payload = {
-        "email": USER,
-        "password": KEY
-    }
-    headers = {
-        'content-type': 'application/json', 
-        'Accept': 'application/json'
-    }
-    r = requests.post('https://app.run.ai/v1/k8s/auth/login', headers=headers, json=payload)
+    payload = "grant_type=client_credentials&client_id=" + APPNAME + "&client_secret=" + APPSECRET
+    headers = { 'content-type': 'application/x-www-form-urlencoded'    }
+    url = APPURL + '/auth/realms/' + REALM + '/protocol/openid-connect/token'
+
+    r = requests.post(url, headers=headers, data=payload)
 
     if r.status_code //100 == 2:
  #       print (r.text)
@@ -51,22 +54,24 @@ def login():
 
 
 def create_researcher_user(uid, pwd, token):
-    payload = {
-        "email": uid,
+
+    payload =  {
+        "roles": ["admin","editor"],
+        "permittedClusters" : [],
+        "name":"",
         "password": pwd,
-        "roles": [
-            "researcher",
-            "viewer"
-        ],
-        "permittedClusters": [],
-        "permitAllClusters": True,
-        "needToChangePassword": True
-        }
+        "email" : uid,
+        "permitAllClusters":True,
+        "username" : uid,
+        "needToChangePassword" : True
+    }
+
+
     headers = \
         {'content-type': 'application/json', 
         'Accept': 'application/json',
         'Authorization' : 'Bearer {}'.format(token)}
-    r = requests.post('https://app.run.ai/v1/k8s/users', json=payload, headers=headers)
+    r = requests.post(COMPANYURL + '/v1/k8s/users', json=payload, headers=headers)
  
     if r.status_code //100 == 2:
  #       print (r.text)
@@ -95,7 +100,7 @@ def create_project(projectname, internalUID, gpuquota, token):
         'Accept': 'application/json',
         'Authorization' : 'Bearer {}'.format(token)
         }
-    r = requests.post('https://app.run.ai/v1/k8s/projects', json=payload, headers=headers)
+    r = requests.post(COMPANYURL + '/v1/k8s/clusters/' + CLUSTER_UUID + '/projects', json=payload, headers=headers)
  
     if r.status_code //100 == 2:
 #        print (r.text)
