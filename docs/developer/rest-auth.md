@@ -49,7 +49,7 @@ Use the above parameters to get a temporary token to access Run:AI as follows.
     conn = http.client.HTTPSConnection("")
     payload = "grant_type=client_credentials&client_id=<APPLICATION-NAME>&client_secret=<CLIENT_SECRET>"
     headers = { 'content-type': "application/x-www-form-urlencoded" }
-    conn.request("POST", "/<COMPANY-URL>/realms/<REALM>/protocol/openid-connect/token", payload, headers)
+    conn.request("POST", "/<COMPANY-URL>/auth/realms/<REALM>/protocol/openid-connect/token", payload, headers)
 
     res = conn.getresponse()
     data = res.read()
