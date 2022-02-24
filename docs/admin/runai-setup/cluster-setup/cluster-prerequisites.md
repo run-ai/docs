@@ -15,6 +15,7 @@ Run:AI has been tested with the following certified Kubernetes distributions:
 | RKE | Rancher Kubernetes Engine          | When installing Run:AI, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:AI at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. The NVIDIA prerequisites need to take this into account. See more below |
+| Canonical Kubernetes | a.k.a Charmed Kubernetes | | 
 
 A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:AI provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
 

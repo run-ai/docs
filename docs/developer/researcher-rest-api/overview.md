@@ -51,5 +51,6 @@ To review API documentation:
 * Open the Run:AI user interface
 * Go to `Clusters`
 * Locate your cluster and browse to `https://<cluster-url>/researcher/api/docs`.
+* When using the `Authenticate` button, add `Bearer <ACCESS TOKEN>` (simply adding the access token will not work).
 
 The document uses the [Open API specification](https://swagger.io/specification/) to describe the API. You can test the API within the document after creating and saving a token.

@@ -8,13 +8,19 @@ Customize the Run:AI control plane configuration file.
 === "Connected"
     Generate a values file by running:
     ```
-    runai-adm generate-values --domain runai.<company-name>
+    runai-adm generate-values --domain runai.<company-name> --tls-cert <file-name> --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  
     ```
 === "Airgapped"
     Generate a values file by running the following under the `deploy` folder:
     ```
-    runai-adm generate-values  --domain runai.<company-name> --airgapped
+    runai-adm generate-values  --domain runai.<company-name> --airgapped --tls-cert <file-name> --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  
     ```
+
+Where:
+
+* --tls flags relate to public and private keys for `runai.<company-name>`
+* --nfs flags relate to NFS server location where Run:AI can create files. For using alternative storage mechanisms see optional values below 
+
 
 
 ## Edit Configuration File
@@ -25,10 +31,10 @@ Change the following properties in the values file.
 |----------|----------|-------------| 
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
 | `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
-| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
 | `thanos.receive.persistence` | Permanent storage for Run:AI metrics | See Postgresql persistence above. Can use the same location |
 ||||
 | __Optional:__ |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
 | `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
