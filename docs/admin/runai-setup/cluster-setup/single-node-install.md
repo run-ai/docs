@@ -2,7 +2,7 @@
 
 Below are instructions on how to install the Run:AI cluster on a single node. This process is good for __learning__ Run:AI or using a Run:AI cluster __on a single node__.  Multiple nodes are __not supported__ with this installation. To install a cluster with multiple nodes or for running a formal pilot with Run:AI, use [Cluster Installation](cluster-install.md).
 
-The installation process below is comprised of a single script and includes the installation of a built-in Kubernetes using [minikube](https://minikube.sigs.k8s.io/docs/){target=_blank}.
+The installation process below is comprised of a single script and includes the installation of a built-in Kubernetes using [microk8s](https://microk8s.io/docs/getting-started){target=_blank}.
 
 ## Prerequisites 
 
