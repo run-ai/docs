@@ -27,7 +27,7 @@ wget https://raw.githubusercontent.com/run-ai/docs/master/install/single-node-in
 Run the script: 
 
 ```
-./single-node-install.sh <client-id>> '<secret>'
+./single-node-install.sh <client-id>> <secret>
 ```
 
 !!! Notes
