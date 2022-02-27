@@ -82,6 +82,11 @@ function runai-login {
 	--data-urlencode 'client_secret='$RUNAI_SECRET'' > /tmp/runai-auth-data.txt
 
 	BEARER=$(eval cat /tmp/runai-auth-data.txt | jq -r '.access_token')
+
+	if [ -z $BEARER]; then
+	echo "Error on Run:AI login"
+	exit 1
+	fi
 	echo $BEARER
 }
 
@@ -115,6 +120,11 @@ function cluster-create {
 	--data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data.txt
 
 	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data.txt | jq -r '.uuid')
+
+	if [ -z $CLUSTER_UUID]; then
+		echo "Error on cluster creation"
+		exit 1
+	fi
 } 
 
 # **** Download YAML File used to install cluster
@@ -155,7 +165,6 @@ microk8s-install
 runai-cli-install
 
 runai-login
-echo $BEARER
 
 cluster-create
 echo $CLUSTER_UUID

@@ -184,7 +184,7 @@ nav:
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
-      - 'Scheduling VM via KubeVirt' : 'admin/integration/kubevirt.md'
+      - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
     - 'Presentations' :
       - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
