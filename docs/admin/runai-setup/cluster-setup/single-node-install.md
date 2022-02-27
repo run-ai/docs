@@ -11,15 +11,12 @@ The installation below assumes:
 * A single node, with at least one GPU.
 * Running Ubuntu 20.04.
 * `sudo` access to the node (you may be prompted for sudo password during the installation).
-* An email and a password provided by Run:AI customer support. 
+* A client id and a secret provided by Run:AI customer support. 
 * Outbound internet connectivity
-
-If NVIDIA drivers are not installed, the script will install the latest NVIDIA Drivers. However, the script is wired with the Ubuntu 20.04 script for NVIDIA drivers and will fail on other Ubuntu versions. 
 
 
 ## Installation steps
 
-Log in to [app.run.ai](https://app.run.ai) for the first time to change your password. Do __not__ create a new Cluster, or the script will fail.
 
 Get the script:
 
@@ -30,39 +27,14 @@ wget https://raw.githubusercontent.com/run-ai/docs/master/install/single-node-in
 Run the script: 
 
 ```
-./single-node-install.sh <email> '<password>'
+./single-node-install.sh <client-id>> '<secret>'
 ```
 
 !!! Notes
-    * The password may have special characters, hence the need for surrounding quotes
-    * If the NVIDIA Drivers have not been pre-installed, they will be installed by the script. The script will then ask for a reboot, after which, re-run the command above. 
+    * The script will stop at one point, require that you log out and log in again
     * You may be prompted for a sudo password during the installation
 
 
-## Node Shutdown and Restart
-
-To shut down your node, you must first perform an orderly shutdown of Kubernetes by running:
-
-```
-minikube stop
-```
-
-When you restart your node, Kubernetes must be restarted as well, using the following command:
-
-```
-minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost
-```
-
-The Run:AI cluster will automatically start following the Kubernetes restart.
-
-
-## Deleting Run:AI
-
-Run:
-
-```
-minikube delete --all
-```
 
 ## Next Steps
 
