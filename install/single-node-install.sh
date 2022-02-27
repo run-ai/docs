@@ -1,168 +1,171 @@
-# Requires Auth0 grant type connection to be added 'password' (automated). 
-if [ "$#" -ne 3 ]; then
-    echo "Usage: install-cluster.sh tenant email password"
-    exit 1
-fi
-
-
+#!/bin/bash
+# set -x  #debug script
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-RUNAI_TENANT=$1
-RUNAI_USERNAME=$2
-RUNAI_PASSWORD=$3
-RUNAI_URL=$RUNAI_TENANT.run.ai
-CLUSTER_NAME=cluster1
-MY_USER=$SUDO_USER
-
-
-
 # install utils
-echo -e "${GREEN} Installing Utilities ${NC}"
-sudo apt update
-#sudo apt-get install -y conntrack
-sudo apt-get install jq -y
+function utils-install {
+	echo -e "${GREEN} Installing Utilities ${NC}"
+	sudo apt update
+	sudo apt-get install jq -y
+	#sudo apt-get install -y conntrack
 
+	# **** Install Kubectl **** 	
+	# Microk8s has its own kubectl, but we prefer a normal one
 
-# # **** Docker ****
-# if ! type docker > /dev/null; then
-# 	echo -e "${GREEN} Installing Docker ${NC}"
-# 	curl -fsSL https://get.docker.com -o get-docker.sh
-# 	sudo sh get-docker.sh
-# fi
-
-# # **** remove sudo constraint for docker 
-# sudo usermod -aG docker $USER
-
-# if groups | grep "docker" &> /dev/null; then
-#    echo "user belongs to docker group."
-# else
-#    echo  -e "${GREEN} Logout and login again to have docker group changes take affect. Then re-run the single-node-install.sh script${NC}"
-#    exit 0
-# fi
-
-# sudo systemctl restart docker
-
-
-
-
-# **** Install Kubectl **** 
-# TODO: +++ Look into codyfing a specific k8s version
-# if ! type kubectl > /dev/null; then
-# 	echo -e "${GREEN} Installing Kubectl ${NC}"
-# 	sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
-# 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-# 	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-# 	sudo apt-get update
-# 	sudo apt-get install -y kubectl
-# fi
-
-
-sudo snap install microk8s --classic --channel=1.23/stable
-sudo usermod -a -G microk8s $USER
-sudo chown -f -R $USER ~/.kube
-su - $USER
-microk8s enable gpu
-alias kubectl='microk8s kubectl'
-
-
-# **** install Run:AI CLI
-if ! type runai > /dev/null; then
-	echo -e "${GREEN} Installing Run:AI CLI ${NC}"
-	#intentionally overriding other helm versions in case helm 2 exists. 
-	mkdir runai && cd runai
-	wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
-	tar xvf helm-v3.3.4-linux-amd64.tar.gz
-	sudo mv linux-amd64/helm /usr/local/bin/
-	wget https://github.com/run-ai/runai-cli/releases/download/v2.2.77/runai-cli-v2.2.77-linux-amd64.tar.gz
-	tar xvf runai-cli-v2.2.77-linux-amd64.tar.gz
-	sudo ./install-runai.sh
-	sudo runai update
-	cd ..
-fi
-
-# # **** install minikube
-# echo -e "${GREEN} Installing minikube ${NC}"
-# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-# sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-# # **** GPU minikube startup. Using https://minikube.sigs.k8s.io/docs/tutorials/nvidia_gpu/#using-the-none-driver
-# echo -e "${GREEN} Starting Kubernetes... ${NC}"
-# minikube start --driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost --kubernetes-version=1.20.5
-# sudo chown -R $MY_USER ~/.kube ~/.minikube
-
-
-# *** Install NVIDIA GPU Operator
-#helm install --wait --generate-name -n gpu-operator --create-namespace nvidia/gpu-operator
-
-# *** Log into Run:AI
-curl https://$RUNAI_URL/v1/k8s/tenantFromEmail/$RUNAI_USERNAME > /tmp/runai-auth-data.txt
-CLIENT_ID=$(eval cat /tmp/runai-auth-data.txt | jq -r '.authClientID')
-REALM=$(eval cat /tmp/runai-auth-data.txt | jq -r '.authRealm')
-
-echo  $AUTH0_CLIENT_ID
-echo  $AUTH0_REALM
-
-curl --request POST \
-  --url 'https://runai-prod.auth0.com/oauth/token' \
-  --header 'content-type: application/x-www-form-urlencoded' \
-  --data grant_type='http://auth0.com/oauth/grant-type/password-realm' \
-  --data username=$RUNAI_USERNAME \
-  --data password=$RUNAI_PASSWORD \
-  --data audience='https://api.run.ai' \
-  --data scope=read:sample \
-  --data 'client_id='$CLIENT_ID'' \
-  --data realm=$REALM > /tmp/runai-token-data.txt
-
-BEARER=$(eval cat /tmp/runai-token-data.txt | jq -r '.access_token')
-
-echo $BEARER
-
-# **** Verify that there are no clusters
-
-curl -X GET 'https://app.run.ai/v1/k8s/clusters' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer '$BEARER'' > /tmp/runai-clusters.txt
-
-# **** Is there an existing cluster?
-
-if [ $(eval cat /tmp/runai-clusters.txt | jq '. | length') -ne 0 ]; then
-
-	# **** A cluster exists, perhaps is our cluster from a re-run of this script?
-	if [ $(eval cat /tmp/runai-clusters.txt | jq '. | length') -eq 1 ] && [ $(eval cat /tmp/runai-clusters.txt | jq '.[0]'.name) = \"$CLUSTER_NAME\" ]; then
-		CLUSTER_UUID=$(eval cat /tmp/runai-clusters.txt | jq  -r  '.[0].uuid')	
-	else
-		echo "One or more Clusters already exist. Browse to https://app.run.ai/clusters, delete the Cluster(s) and re-run this script"
-		exit 1
+	if ! type kubectl > /dev/null; then
+		echo -e "${GREEN} Installing Kubectl ${NC}"
+		sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+		curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+		echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+		sudo apt-get update
+		sudo apt-get install -y kubectl
 	fi
 
-else
-	# **** Create a cluster
-	curl -X POST 'https://app.run.ai/v1/k8s/clusters' \
+	# **** Install Helm ****
+	# Microk8s has its own helm, but we prefer a normal one
+
+	if ! type helm > /dev/null; then
+		echo -e "${GREEN} Installing Helm ${NC}"
+
+		curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+ 		chmod 700 get_helm.sh
+ 		./get_helm.sh
+	fi
+}
+
+
+
+# *** Install MicroK8s
+function microk8s-install {
+# https://microk8s.io/docs/getting-started
+	if ! type microk8s > /dev/null; then
+		sudo snap install microk8s --classic --channel=1.23/stable
+		microk8s status --wait-ready
+
+		mkdir .kube
+		sudo usermod -a -G microk8s $USER
+		sudo chown -f -R $USER ~/.kube
+
+		echo  -e "${GREEN} Logout and login again to have docker group changes take affect. Then re-run the single-node-install.sh script${NC}"
+		exit 0
+	fi
+
+	microk8s config > .kube/config
+	microk8s enable gpu
+	
+}
+
+# **** install Run:AI CLI
+function runai-cli-install {
+	if ! type runai > /dev/null; then
+		echo -e "${GREEN} Installing Run:AI CLI ${NC}"
+		mkdir runai && cd runai		
+		wget https://github.com/run-ai/runai-cli/releases/download/v2.2.77/runai-cli-v2.2.77-linux-amd64.tar.gz
+		tar xvf runai-cli-v2.2.77-linux-amd64.tar.gz
+		sudo ./install-runai.sh
+		sudo runai update
+		cd ..
+	fi
+}
+
+
+# *** Log into Run:AI
+function runai-login {
+
+	curl -X POST https://$COMPANY_URL/auth/realms/$RUNAI_TENANT/protocol/openid-connect/token \
+	--header 'Content-Type: application/x-www-form-urlencoded' \
+	--data-urlencode 'grant_type=client_credentials' \
+	--data-urlencode 'scope=openid' \
+	--data-urlencode 'response_type=id_token' \
+	--data-urlencode 'client_id='$RUNAI_CLIENTID'' \
+	--data-urlencode 'client_secret='$RUNAI_SECRET'' > /tmp/runai-auth-data.txt
+
+	BEARER=$(eval cat /tmp/runai-auth-data.txt | jq -r '.access_token')
+	echo $BEARER
+}
+
+
+
+function cluster-create {
+
+	# **** Get cluster list
+	curl -X GET 'https://'$COMPANY_URL'/v1/k8s/clusters' \
+	--header 'Accept: application/json' \
+	--header 'Content-Type: application/json' \
+	--header 'Authorization: Bearer '$BEARER'' > /tmp/runai-clusters.txt
+
+	# **** Are there  existing clusters?
+	if [ $(eval cat /tmp/runai-clusters.txt | jq '. | length') -ne 0 ]; then
+
+		# Clusters already exist. Find our cluster by its name
+		cat /tmp/runai-clusters.txt | jq '.[] | select(.name | contains("'$CLUSTER_NAME'"))' > /tmp/runai-our-cluster.txt
+		if [ -s /tmp/runai-our-cluster.txt ]; then
+        	# Cluster found, get UUID.
+			CLUSTER_UUID=$(eval cat /tmp/runai-our-cluster.txt | jq  -r  '.uuid')
+			return
+		fi
+	fi
+
+	# Our cluster does not exist. Need to create it
+	curl -X POST 'https://'$COMPANY_URL'/v1/k8s/clusters' \
 	--header 'Accept: application/json' \
 	--header 'Content-Type: application/json' \
 	--header 'Authorization: Bearer '$BEARER'' \
 	--data '{ "name": "'$CLUSTER_NAME'"}' > /tmp/runai-cluster-data.txt
 
 	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data.txt | jq -r '.uuid')
-fi
+} 
 
-
-# **** Download a cluster operator values file
-curl 'https://app.run.ai/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
---header 'Authorization: Bearer '$BEARER'' > runai-values-$CLUSTER_NAME.yaml
-
+# **** Download YAML File used to install cluster
+function cluster-download {
+		# **** Download a cluster operator values file
+	curl 'https://'$COMPANY_URL'/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
+	--header 'Authorization: Bearer '$BEARER'' > runai-values-$CLUSTER_NAME.yaml
+}
 
 
 # **** Install Run:AI 
-echo -e "${GREEN} Installing Run:AI Cluster ${NC}"
+function cluster-install {
+	echo -e "${GREEN} Installing Run:AI Cluster ${NC}"
 
-helm repo add runai https://run-ai-charts.storage.googleapis.com
-helm repo update
+	helm repo add runai https://run-ai-charts.storage.googleapis.com
+	helm repo update
 
-helm install runai-cluster runai/runai-cluster -n runai --create-namespace -f runai-values-$CLUSTER_NAME.yaml
- 
+	helm upgrade -i runai-cluster runai/runai-cluster -n runai -f runai-values-$CLUSTER_NAME.yaml --create-namespace
+}
+
+## START HERE
+
+
+if [ "$#" -ne 3 ]; then
+    echo "Usage: install-cluster.sh tenant-name clientid secret"
+    exit 1
+fi
+
+RUNAI_TENANT=$1
+RUNAI_CLIENTID=$2
+RUNAI_SECRET=$3
+COMPANY_URL=$RUNAI_TENANT.run.ai
+CLUSTER_NAME=cluster1
+MY_USER=$SUDO_USER
+
+utils-install
+microk8s-install
+runai-cli-install
+
+runai-login
+echo $BEARER
+
+cluster-create
+echo $CLUSTER_UUID
+
+cluster-download
+cluster-install
+
+## temporary until April 2022
+kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset  -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
 
 
 # **** Wait on Run:AI cluster installation progress 
@@ -178,9 +181,8 @@ printf "\n\n"
 echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
 printf "\n"
 echo  "Next steps: "
-echo  "- Navigate to the administration console at https://app.run.ai."
+echo  "- Navigate to the administration console at https://'$COMPANY_URL'.run.ai."
 echo -e  "- Use the Run:AI Quickstart Guides (https://bit.ly/2Hmby08) to learn how to run workloads. ${NC}"
-
 
 
 
