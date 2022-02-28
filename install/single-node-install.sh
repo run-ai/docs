@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -x  #debug script
+set -x  #debug script
 GREEN='\033[0;32m'
 NC='\033[0m'
 
@@ -73,7 +73,7 @@ function runai-cli-install {
 # *** Log into Run:AI
 function runai-login {
 
-	curl -X POST https://$COMPANY_URL/auth/realms/$RUNAI_TENANT/protocol/openid-connect/token \
+	curl -X POST https://app.run.ai/auth/realms/$RUNAI_TENANT/protocol/openid-connect/token \
 	--header 'Content-Type: application/x-www-form-urlencoded' \
 	--data-urlencode 'grant_type=client_credentials' \
 	--data-urlencode 'scope=openid' \
@@ -83,7 +83,7 @@ function runai-login {
 
 	BEARER=$(eval cat /tmp/runai-auth-data.txt | jq -r '.access_token')
 
-	if [ -z $BEARER]; then
+	if [ -z $BEARER ]; then
 	echo "Error on Run:AI login"
 	exit 1
 	fi
@@ -121,7 +121,7 @@ function cluster-create {
 
 	CLUSTER_UUID=$(eval cat /tmp/runai-cluster-data.txt | jq -r '.uuid')
 
-	if [ -z $CLUSTER_UUID]; then
+	if [ -z $CLUSTER_UUID ]; then
 		echo "Error on cluster creation"
 		exit 1
 	fi
