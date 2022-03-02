@@ -16,7 +16,7 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:AI the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../../researcher-setup/use-secrets/#secrets-and-projects) will not be available | 
 | `runai-operator.config.mps-server.enabled` |  `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads. Requires extra cluster permissions <!-- (../preparations/#cluster-installation) --> | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__. Requires extra cluster permissions <!-- >](../preparations/#cluster-installation) --> | 
-| `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`)  | 
+| `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`) (Set to containerd when using Tanzu) | 
 | `runai-operator.config.runaiBackend.password` | Default password already set  | [admin@run.ai](mailto:admin.run.ai) password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
 | `runai-operator.config.global.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, add this field with the address |
 | `gpu-feature-discovery.enabled` | `true` | Install __Node Feature Discovery__. Set to `false` if already installed in cluster |
