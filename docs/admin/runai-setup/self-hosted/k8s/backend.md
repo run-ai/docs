@@ -8,36 +8,43 @@ Customize the Run:AI control plane configuration file.
 === "Connected"
     Generate a values file by running:
     ```
-    runai-adm generate-values --domain runai.<company-name> --tls-cert <file-name> --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  
+    runai-adm generate-values --domain runai.<company-name> --tls-cert <file-name> \
+        --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
+        --external-ips <ip> 
     ```
 === "Airgapped"
     Generate a values file by running the following under the `deploy` folder:
     ```
-    runai-adm generate-values  --domain runai.<company-name> --airgapped --tls-cert <file-name> --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  
+    runai-adm generate-values --domain runai.<company-name>  --tls-cert <file-name> \
+        --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
+        --external-ips <ip> --airgapped
     ```
 
 Where:
 
-* --tls flags relate to public and private keys for `runai.<company-name>`
-* --nfs flags relate to NFS server location where Run:AI can create files. For using alternative storage mechanisms see optional values below 
+* `--tls-` flags relate to public and private keys for `runai.<company-name>`
+* `--nfs` flags relate to NFS server location where Run:AI can create files. For using alternative storage mechanisms see optional values below 
+* `--external-ips` relates to the IP address(es) allocated for Run:AI. Typically (but not always) the IP of one of the nodes. 
+
+!!! Note
+    In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)
 
 
 
-## Edit Configuration File
+## (Optional) Edit Configuration File
 
-Change the following properties in the values file. 
+There may be cases where you need to change properties in the values file as follows:
 
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
-| `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI.  |
-| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>` |
-| `thanos.receive.persistence` | Permanent storage for Run:AI metrics | See Postgresql persistence above. Can use the same location |
 ||||
-| __Optional:__ |
-| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights |
 | `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
 | `pspEnabled` | `<true/false>` | Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `nginx-ingress.podSecurityPolicy` |  Set to `true` if using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
+| `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:AI. This key is now covered under the runai-adm flags above  |
+| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
+| `thanos.receive.persistence` | Permanent storage for Run:AI metrics | See Postgresql persistence above. Can use the same location. This key is now covered under the runai-adm flags above |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Control Plane administrator | 
 |<img width=1300/>|||
 
