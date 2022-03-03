@@ -151,6 +151,7 @@ Edit the document to add the following parameters at the end of the existing com
         - --oidc-issuer-url=https://<COMPANY-URL>/auth/realms/runai
         - --oidc-username-prefix=-
         - --oidc-username-claim=email
+        - --oidc-groups-claim=groups
     ``` 
 
 

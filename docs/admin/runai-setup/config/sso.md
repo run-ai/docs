@@ -21,7 +21,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  | IdP attribute  | Run:AI required name | Description       | 
  |----------------|----------------------|--------------------|
  | User email     | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:AI. | 
- | User roles     | Roles                | (Optional) If exists, allows assigning Run:AI roles via the IdP. See more below | 
+ | User role groups    | GROUPS               | (Optional) If exists, allows assigning Run:AI role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. | 
  | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. | 
@@ -225,6 +225,7 @@ Test connectivity to Run:AI command-line interface:
 ## Step 3: UID/GID Mapping
 
 Configure the IdP to add UID, GID, and Supplementary groups in the IdP.
+
 ### Test 
 
 Test the mapping of UID/GID to within the container:
@@ -252,11 +253,15 @@ The latter option is easier to maintain.
 * Select the `Users` button. 
 * Map users as explained [here](../../admin-ui-setup/admin-ui-users.md).
 
-### Mapping Roles
+### Mapping Role Groups
 
 * Go to [https://app.run.ai/permissions](https://app.run.ai/permissions){target=_blank}.
 * Select the `Groups` button. 
-* Assuming you have mapped IdP `Roles` attribute as described in the prerequisites section above, add a Role name and provide it Run:AI Roles. 
+* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group set in the directory for and create an equivalent Run:AI Group. 
+* If the role group contains the `Researcher` role, you can assign this group to a Run:AP Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:AI version 2.3).
+
+
+### Using 
 
 
 ## Implementation Notes
