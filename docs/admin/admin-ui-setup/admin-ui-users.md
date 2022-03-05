@@ -18,7 +18,7 @@ __Notes:__
 *  Login to the Users area of the Run:AI Administration User interface at [https://app.run.ai/users](https://app.run.ai/users){target=_blank}.
 *  On the top right, select "Add New Users".
 
-![mceclip2.png](img/add-user.png)
+![mceclip2.png](img/add-user.jpg)
 
 *   Choose a User name and email. Leave password as blank, it will be set by the User
 *   Select Roles. Note -- more than one role can be selected. The available roles are:
