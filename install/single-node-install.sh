@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x  #debug script
+# set -x  #debug script
 GREEN='\033[0;32m'
 NC='\033[0m'
 

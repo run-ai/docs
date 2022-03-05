@@ -18,7 +18,7 @@ __Notes:__
 *  Login to the Users area of the Run:AI Administration User interface at [https://app.run.ai/users](https://app.run.ai/users){target=_blank}.
 *  On the top right, select "Add New Users".
 
-![mceclip2.png](img/mceclip2.png)
+![mceclip2.png](img/add-user.png)
 
 *   Choose a User name and email. Leave password as blank, it will be set by the User
 *   Select Roles. Note -- more than one role can be selected. The available roles are:
@@ -26,6 +26,7 @@ __Notes:__
     *  __Editor__: Can manage Projects and Departments.
     * __Viewer__: View-only access to Admin UI.
     * __Researcher__: Can run ML workloads using the Run:AI command-line interface, The Researcher user interface or similar. This setting is relevant only if [Researcher Authentication](../runai-setup/config/researcher-authentication.md) is enabled and requires the [assigning of users to projects](../project-setup/#create-a-new-project.md).
+    * __Research Manager__: Can act as _Researcher_ in all projects, including new ones to be created in the future. 
 *   Select a Cluster. This determines what Clusters are accessible to this User
 *   Press "Save"
 
