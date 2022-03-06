@@ -47,13 +47,18 @@ function microk8s-install {
 		sudo usermod -a -G microk8s $USER
 		sudo chown -f -R $USER ~/.kube
 
-		echo  -e "${GREEN} Logout and login again to have docker group changes take affect. Then re-run the single-node-install.sh script${NC}"
+		echo  -e "${GREEN} Logout and login again to have docker group changes take effect. Then re-run the single-node-install.sh script${NC}"
 		exit 0
 	fi
 
 	microk8s config > .kube/config
 	microk8s enable gpu
-	
+
+	echo  -e "${GREEN} Waiting for NVIDIA device drivers to be installed. Setting a 20 minutes timeout. This may take awhile ${NC}"
+	sleep 120 # wait for resources to start getting created. 
+ 	kubectl wait --for=condition=ready  --timeout=1200s pod -n gpu-operator-resources -l app=nvidia-operator-validator
+ 	echo  -e "${GREEN} NVIDIA device drivers installed ${NC}"
+
 }
 
 # **** install Run:AI CLI
@@ -178,13 +183,14 @@ kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter -p '{"spe
 
 
 # **** Wait on Run:AI cluster installation progress 
-echo -e "${GREEN}Run:AI cluster installation is now in progress. If this process continues beyond 10 minutes, stop it and send /tmp/runai* files to support@run.ai ${NC}"
+echo -e "${GREEN}Run:AI cluster installation is now in progress. Waiting for sucessful finish for 10 minutes. If not successful, send /tmp/runai* files to support@run.ai ${NC}"
 
-sleep 15
-until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
-    printf '.'
-    sleep 5
-done
+kubectl wait --for=condition=available deploy -n runai --all  --timeout=600s
+# sleep 15
+# until [ "$(kubectl get pods -n runai --field-selector=status.phase!=Running  2> /dev/null)" = "" ] && [ $(kubectl get pods -n runai | wc -l) -gt 10 ]; do
+#     printf '.'
+#     sleep 5
+# done
 
 printf "\n\n"
 echo -e "${GREEN}Congratulations, The single-node Run:AI cluster is now active ${NC}".
