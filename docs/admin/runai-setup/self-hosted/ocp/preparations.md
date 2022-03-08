@@ -30,7 +30,7 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
     Run the following to enable image download from the Run:AI Container Registry on Google cloud:
 
     ```
-    oc apply -f runai-gcr-secret.yaml
+    oc apply -f runai-gcr-secret.yaml -n runai-backend
     oc apply -f runai-gcr-secret.yaml -n gpu-operator-resources
     ```
 

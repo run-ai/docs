@@ -21,7 +21,7 @@ __After successful verification__,
 (1) Disabled the GPU Operator by running:
 
 ```
-kubectl scale --replicas=0 -n openshift-operators deployment gpu-operator
+oc scale --replicas=0 -n openshift-operators deployment gpu-operator
 ```
 
 (1) Disable the NVIDIA DCGM exporter by running:
