@@ -48,9 +48,9 @@ There are two alternatives for installing NVIDIA prerequisites:
     * Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
 
     ```
-    kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+    kubectl -n gpu-operator patch daemonset nvidia-device-plugin-daemonset \
     -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
+    kubectl -n gpu-operator patch daemonset nvidia-dcgm-exporter \
     -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
     ```
 
