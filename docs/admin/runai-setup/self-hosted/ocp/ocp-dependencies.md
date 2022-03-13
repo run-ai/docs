@@ -13,7 +13,7 @@ NVIDIA provided [detailed documentation](https://docs.nvidia.com/datacenter/clou
 Verify that the GPU Operator is installed by running:
 
 ```
-oc get pods -n gpu-operator-resources
+oc get pods -n gpu-operator
 ```
 
 __After successful verification__, 

@@ -44,7 +44,7 @@ When using an existing Prometheus installation, you will need to add additional 
 Run:AI has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. If you have installed the NVIDIA GPU Operator or have previously installed this plug-in, run the following to disable the existing plug-in:
 
 ```
-kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+kubectl -n gpu-operator patch daemonset nvidia-device-plugin-daemonset \
    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
 ```
 
