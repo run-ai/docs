@@ -16,7 +16,7 @@ The project `gpu-operator` is used by the _GPU Opeator_ dependency described abo
 ```
 oc new-project runai
 oc new-project runai-backend
-oc new-project gpu-operator
+oc new-project gpu-operator-resources
 ```
 
 ## Prepare Run:AI Installation Artifacts
@@ -31,7 +31,7 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
 
     ```
     oc apply -f runai-gcr-secret.yaml -n runai-backend
-    oc apply -f runai-gcr-secret.yaml -n gpu-operator
+    oc apply -f runai-gcr-secret.yaml -n gpu-operator-resources
     ```
 
 === "Airgapped" 
