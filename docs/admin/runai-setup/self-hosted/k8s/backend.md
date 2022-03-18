@@ -3,7 +3,7 @@
 
 ## Create a Control Plane Configuration
 
-Customize the Run:AI control plane configuration file.
+Create a configuration file to install the Run:AI control plane:
 
 === "Connected"
     Generate a values file by running:
@@ -13,7 +13,7 @@ Customize the Run:AI control plane configuration file.
         --external-ips <ip> 
     ```
 === "Airgapped"
-    Generate a values file by running the following under the `deploy` folder:
+    Generate a values file by running the following __under the `deploy` folder__:
     ```
     runai-adm generate-values --domain runai.<company-name>  --tls-cert <file-name> \
         --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
@@ -30,6 +30,7 @@ Where:
     In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)
 
 
+A file called `runai-backend-values.yaml` will be created.
 
 ## (Optional) Edit Configuration File
 
