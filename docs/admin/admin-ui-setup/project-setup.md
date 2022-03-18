@@ -87,7 +87,7 @@ To mandate __training__ Jobs to run on specific node groups:
 *   Press Enter to save the label.
 *   Select the label.
 
-![mceclip0.png](img/mceclip0.png)
+![project-affinity.png](img/project-affinity.png)
 
 To mandate __interactive__ Jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
 
@@ -106,7 +106,7 @@ To set a duration limit for interactive Jobs:
 *   Create a Project or edit an existing Project.
 *   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
 
-![mceclip1.png](img/mceclip1.png) The setting only takes effect for Jobs that have started after the duration has been changed. 
+![project-time-limit.png](img/project-time-limit.png) The setting only takes effect for Jobs that have started after the duration has been changed. 
 
 
 ## Assign Users to Project
