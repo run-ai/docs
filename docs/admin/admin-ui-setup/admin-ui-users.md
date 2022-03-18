@@ -2,20 +2,20 @@
 
 ## Introduction
 
-The Admin User Interface allows the creation of Run:AI Users. Run:AI Users can receive varying levels of access to the Administration UI and to submitting Jobs on the Cluster.
+The Run:AI User Interface allows the creation of Run:AI Users. Run:AI Users can receive varying levels of access to the Administration UI and submit Jobs on the Cluster.
 
 __Notes:__
 
-*   It is possible to connect the Admin UI Users module to the organization's SAML or OAuth provider. For further information please contact Run:AI customer support.
+*   It is possible to connect the RunL:AI user interface to the organization's SAML or OAuth provider. For further information see [configuration single sign-on](../runai-setup/config/sso.md).
 
 ## Working with Users
 
 ### Create User
 
 !!! Note
-    To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. The list of Administrators is shown on the Users page (see below)
+    To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. 
 
-*  Login to the Users area of the Run:AI Administration User interface at [https://app.run.ai/users](https://app.run.ai/users){target=_blank}.
+* Login to the Users area of the Run:AI User interface at `company-name.run.ai`.
 *  On the top right, select "Add New Users".
 
 ![mceclip2.png](img/add-user.jpg)

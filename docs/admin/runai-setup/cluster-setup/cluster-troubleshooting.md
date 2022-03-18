@@ -5,7 +5,7 @@ Following are a set of tests to run to determine cluster health:
 
 ### 1. Verify that data is sent to the cloud
 
-Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
+Log in to `<company-name>.run.ai/dashboards/now`.
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
@@ -65,12 +65,11 @@ runai submit -i gcr.io/run-ai-demo/quickstart -g 1
 runai list jobs
 ```
 
-* Verify that the Job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
-
+* Verify that the Job is showing in the Jobs area at `<company-name>.run.ai/jobs`.
 
 ## Symptom: Metrics are not showing on Overview Dashboard
 
-Some or all metrics are not showing in [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
+Some or all metrics are not showing in `<company-name>.run.ai/dashboards/now`
 
 __Typical root causes:__
 

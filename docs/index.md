@@ -22,7 +22,7 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On the navigation bar of the Administrator user interface at [app.run.ai](https://app.run.ai){target=_blank}, use the 'Support' button.
+* On the navigation bar of the Run:AI user interface at `<company-name>.run.ai`, use the 'Support' button.
 
 * Or submit a ticket by clicking the button below:
 

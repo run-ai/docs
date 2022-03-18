@@ -7,7 +7,7 @@ This documentation is based on [mkdocs](https://www.mkdocs.org/). To view the li
 
 The Run:AI documentation is targeting two personas:
 
-* Run:AI Administrator - Responsible for the setup and the day to day administration of the  product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
+* Run:AI Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
 
 * Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](docs/Researcher/overview-researcher.md).
 
@@ -24,9 +24,9 @@ To get support use the following channels:
 
 * On our [website](https://run.ai), under _Support_ use the support form.
 
-* On the bottom right of the [Administrator user interface](https://app.run.ai), use the _Help_ widget.
+* On the bottom right of the Run:AI user interface, use the _Help_ widget.
 
-* On the bottom right of this page , use the _Help_ widget.
+* On the bottom right of this page, use the _Help_ widget.
 
 
 

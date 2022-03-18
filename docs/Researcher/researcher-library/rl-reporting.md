@@ -1,6 +1,6 @@
 # Researcher Library: Extended Reporting on Workload Progress
 
-The Run:AI Researcher Library is a python library you can add to your deep learning python code. The reporting module in the library will externalize information about the run which can then be available for users of the Run:AI user interface ([https://app.run.ai](https://app.run.ai){target=_blank})
+The Run:AI Researcher Library is a python library you can add to your deep learning python code. The reporting module in the library will externalize information about the run which can then be available for users of the Run:AI user interface.
 
 With the reporter module, you can externalize information such as progress, accuracy, and loss over time/epoch, and more. In addition, you can externalize custom metrics of your choosing.
 
@@ -150,7 +150,7 @@ The metrics show up in the Job list of the user interface. To add a metric to th
 *   Integrate the reporter library into your code
 *   Send metrics via the reporter library
 *   Run the workload once to send initial data.
-*   Go to Jobs list: [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
+*   Open the Run:AI user interface. Go to `Jobs`.
 *   On the top right, use the settings wheel and select the metrics you have added
 
 ![mceclip0.png](img/mceclip0.png)

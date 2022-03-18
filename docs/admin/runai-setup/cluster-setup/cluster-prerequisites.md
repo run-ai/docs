@@ -21,7 +21,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 
 !!! Notes
-    * Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of September 2021). Kubernetes 1.22 is not supported.
+    * Run:AI requires Kubernetes. Supported versions are 1.19 through 1.23. 
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
     * If you are using RedHat OpenShift. Run:AI requires OpenShift 4.6 or later. 
     * Run:AI Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
@@ -32,7 +32,7 @@ NVIDIA pre-requisites are provided in detail in the [NVIDIA documentation](https
 
 There are two alternatives for installing NVIDIA prerequisites:
 
-1. __(Recommended)__ Install the _NVIDIA GPU Operator on Kubernetes_. This single installation contains therequired NVIDIA drivers and software for __all__ nodes within the Kubernetes cluster containing NVIDIA GPUs.
+1. __(Recommended)__ Install the _NVIDIA GPU Operator on Kubernetes_. This single installation contains the required NVIDIA drivers and software for __all__ nodes within the Kubernetes cluster containing NVIDIA GPUs.
 2. Install NVIDIA software on each node separately. 
 
 !!! Important
@@ -60,7 +60,7 @@ There are two alternatives for installing NVIDIA prerequisites:
 
     * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
     * Do __not__ perform the section _Install NVIDIA Device Plugin_.
-    * Note the differntiation between _containerd_ and _docker_. 
+    * Note the differentiation between _containerd_ and _docker_. 
     * The instructions relate to Ubuntu and link to other Operating systems. 
 
 
@@ -227,7 +227,7 @@ In addition, once running, Run:AI will send metrics to two sources:
 <p> Auth0 </p>
 </td>
 <td style="padding: 6px; width: 304px;">
-<p> Authentication Provider </p>
+<p> Authentication Provider (older tenants only) </p>
 </td>
 <td style="padding: 6px; width: 205px;">
 <p> <a href="https://runai-prod.auth0.com/">runai-prod.auth0.com</a> </p>

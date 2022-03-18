@@ -4,7 +4,7 @@
 
 Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a _worker node_. Worker nodes work in parallel to speed up model training. Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a __single container__.
 
-Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. There are several Deep Learning frameworks that support Distributed Training. [Horovod](https://eng.uber.com/horovod/){target=_blank} is a good example.
+Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support Distributed Training. [Horovod](https://eng.uber.com/horovod/){target=_blank} is a good example.
 
 Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
 
@@ -20,9 +20,9 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a Project named "team-a"
-*   Allocate 2 GPUs to the Project
+*   Login to the Projects area of the Run:AI user interface.
+*   Add a Project named "team-a".
+*   Allocate 2 GPUs to the Project.
 
 ### Run Training Distributed Workload
 

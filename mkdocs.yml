@@ -172,7 +172,8 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
       - 'Templates' : 'admin/researcher-setup/templates.md'
-    - 'Admin UI' :
+    - 'User Interface' :
+      - 'Users' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
       - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
       - 'Departments' : 'admin/admin-ui-setup/department-setup.md'

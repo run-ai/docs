@@ -18,7 +18,7 @@ See [prerequisites](cluster-prerequisites.md).
 
 ## Step 3: Install Run:AI
 
-Log in to Run:AI Admin UI at [app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support:
+Log in to Run:AI user interface at `<company-name>.run.ai`. Use credentials provided by Run:AI Customer Support:
 
 *   If no clusters are currently configured, you will see a Cluster installation wizard
 *   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster". 
@@ -38,7 +38,7 @@ Using the Wizard:
 
 ## Step 4: Verify your Installation
 
-*   Go to [app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}.
+*   Go to `<company-name>.run.ai/dashboards/now`.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).

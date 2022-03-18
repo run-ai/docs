@@ -19,7 +19,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
+*  Login to the Projects area of the Run:AI user interface.
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
@@ -68,7 +68,7 @@ You should see a log of the inference call:
 
 ### View status on the Run:AI User Interface
 
-*   Go to [https://app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
+* Open the Run:AI user interface.
 * Under "Jobs" you can view the new Workload:
 
 ![inference-job-list.png](img/inference-job-list.png) 

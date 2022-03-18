@@ -6,7 +6,7 @@ Hyperparameter optimization (HPO) is the process of choosing a set of optimal hy
 
 To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine results to decide what works best.
 
-There are a number of strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the later does an exhaustive search from a list of pre-selected values.
+There are several strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the latter does an exhaustive search from a list of pre-selected values.
 
 Run:AI provides the ability to run, manage, and view HPO runs. The following is a Quickstart of such a scenario.
 
@@ -21,10 +21,10 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*  Add a Project named "team-a"
-*  Allocate _2_ GPUs to the Project
-*  On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``
+*  Login to the Projects area of the Run:AI user interface.
+*  Add a Project named "team-a".
+*  Allocate _2_ GPUs to the Project.
+*  On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``.
 
 ### Pods
 

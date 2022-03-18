@@ -3,7 +3,7 @@
 
 ## Introduction
 
-_Elasticity_ allows unattended, train-based  workloads to __shrink__ or __expand__ based on the cluster's availability.
+_Elasticity_ allows unattended, train-based workloads to __shrink__ or __expand__ based on the cluster's availability.
 
 * Shrinking a training Job allows your workload to run on a smaller number of GPUs than the Researcher code was originally written for.
 * Expanding a training Job allows your workload to run on more GPUs than the Researcher code was originally written for. 
@@ -27,9 +27,9 @@ To complete this Quickstart you must have:
     *  If the cluster nodes contain more than 2 GPUs, you can create an interactive Job on a different project to consume the remaining GPUs.    
 
 
-*   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-*   Add a Project named "team-a"
-*   Allocate 2 GPUs to the Project
+*   Login to the Projects area of the Run:AI user interface.
+*   Add a Project named "team-a".
+*   Allocate 2 GPUs to the Project.
 
 ### Expansion 
 
@@ -51,8 +51,8 @@ To complete this Quickstart you must have:
 
 
     !!! Discussion
-        * The Job has requested 1 GPU, but has been allocated with 2, as 2 are available right now.
-        * The code needs to be ready to accept more GPUs than it requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the Job effectively.
+        * The Job has requested 1 GPU but has been allocated with 2, as 2 are available right now.
+        * The code needs to be ready to accept more GPUs than requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the Job effectively.
 
 * Add a filler class:
         
