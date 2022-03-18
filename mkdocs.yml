@@ -173,7 +173,7 @@ nav:
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
       - 'Templates' : 'admin/researcher-setup/templates.md'
     - 'User Interface' :
-      - 'Users' : 'admin/admin-ui-setup/overview.md'
+      - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
       - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
       - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
