@@ -103,7 +103,7 @@ kubectl get pods -n jhub -l component=proxy -o=jsonpath='{.items[0].spec.nodeNam
 This will print the node that the proxy pod is running on.
 You will need to get both the internal and external IPs of this node for the next step. 
 
-Now, lets check the proxy-public service definition. Run:
+Now, let's check the proxy-public service definition. Run:
 
 ``` bash
 kubectl edit svc proxy-public -n jhub

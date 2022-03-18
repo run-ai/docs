@@ -6,7 +6,7 @@ The Run:AI User Interface allows the creation of Run:AI Users. Run:AI Users can 
 
 __Notes:__
 
-*   It is possible to connect the RunL:AI user interface to the organization's SAML or OAuth provider. For further information see [configuration single sign-on](../runai-setup/config/sso.md).
+*   It is possible to connect the Run:AI user interface to the organization's SAML or OAuth provider. For further information see [configuration single sign-on](../runai-setup/config/sso.md).
 
 ## Working with Users
 

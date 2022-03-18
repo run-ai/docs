@@ -38,7 +38,7 @@ The essence of the Run:AI integration is the modification of the `kubernetes_job
 
 The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/integrations/mlflow){target=_blank}. These contain:
 
-* A `Dockerfile`. This file builds a base docker image containing python3 and the required mlflow dependencies. The Docker file is __already compiled and available__ at `gcr.io/run-ai-demo/mlflow-demo`.
+* A `Dockerfile`. This file builds a base docker image containing python3 and the required MLflow dependencies. The Docker file is __already compiled and available__ at `gcr.io/run-ai-demo/mlflow-demo`.
 * An MLflow project file `MLproject`. The project file contains the base image above as well as the python command-line to run. 
 * The training python code `train.py`
 * MLflow Kubernetes configuration files as in the [MLflow documentation](https://www.mlflow.org/docs/latest/projects.html#run-an-mlflow-project-on-kubernetes-experimental){target=_blank}.

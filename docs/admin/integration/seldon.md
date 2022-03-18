@@ -8,7 +8,7 @@ Of special importance, is the usage of Seldon together with the Run:AI [fraction
 
 ## Prerequisites
 
-Install Seldon Core as described [here](https://github.com/SeldonIO/seldon-core){target=_blank}. We recommend using the helm based installation of both Seldon Core and Istio.
+Install Seldon Core as described [here](https://github.com/SeldonIO/seldon-core){target=_blank}. We recommend using the helm-based installation of both Seldon Core and Istio.
 
 
 ## Create a Seldon deployment
