@@ -95,7 +95,7 @@ plugins:
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
         'admin/runai-setup/advanced/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
-        'admin/runai-setup/advanced/sso.md' : 'admin/runai-setup/config/sso.md'
+        'admin/runai-setup/advanced/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/advanced/access-roles.md' : 'admin/runai-setup/config/access-roles.md'
         'admin/runai-setup/advanced/allow-external-access-to-containers.md' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         'admin/runai-setup/advanced/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
@@ -161,7 +161,7 @@ nav:
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
       - 'Authentication' :
-        - 'Overview' : 'admin/runai-setup/authentication/overview.md'
+        - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 
