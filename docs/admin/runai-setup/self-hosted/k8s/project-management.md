@@ -3,7 +3,7 @@ title: Self Hosted installation over Kubernetes - Create Projects
 ---
 ## Introduction
 
-The Administrator creates Run:AI Projects using via the [Administrator user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../config/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:AI Projects using via the [Run:AI user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../config/researcher-authentication.md) you also assign users to Projects.
 
 Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Run:AI Project, Run:AI does the following automatically:
 
@@ -25,7 +25,7 @@ The purpose of this document is to explain how to handle these scenarios.
 By default, creating a Project named `<PROJECT-NAME>` Run:AI will create a Kubernetes namespace named `runai-<PROJECT-NAME>`.  However, organizations with an existing Kubernetes practice may already have existing Kubernetes namespaces where they wish to run machine-learning workloads or their Kubernetes namespace naming convention does not allow the `runai-` prefix. As such, Run:AI allows the __association__ of a Run:AI Project with any existing Kubernetes namespace:
 
 * When [setting up](cluster.md) a Run:AI cluster, Disable namespace creation by setting the flag `createNamespaces` to `false`.
-* Using the Administrator User Interface, create a new Project `<PROJECT-NAME>`
+* Using the Run:AI User Interface, create a new Project `<PROJECT-NAME>`
 * Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:AI project by running:
 
 ```
@@ -46,7 +46,7 @@ Some organizations prefer to limit the assigning of these roles to Run:AI, per a
 ## 1. Do not allow Run:AI to create namespaces
 
 * When [setting up Run:AI cluster](cluster.md), Disable namespace creation by setting the flag `createNamespaces` to false.
-* Using the Administrator User Interface, create a new Project `<PROJECT-NAME>`
+* Using the Run:AI User Interface, create a new Project `<PROJECT-NAME>`
 * Create a namespace `<NAMESPACE>` and associate with Run:AI by running:
 
 ```

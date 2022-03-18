@@ -5,16 +5,16 @@ import random
 import string
 
 
-# Application Name and Secret must be created in the Administrator user interface. See https://docs.run.ai/developer/rest-auth/
+# Application Name and Secret must be created in the Run:AI User Interface. See https://docs.run.ai/developer/rest-auth/
 APPNAME = '<key-name>'
 APPSECRET = '<secret>'
 
 
-# the URL is the URL to the administrator user interface
+# the URL is the URL to the Run:AI User Interface
 APPURL = 'https://app.run.ai'
 COMPANYURL = 'https://<company-name>.run.ai'
 
-# REALM is obtained by going to the administrator User interface, and getting the REALM and "Researcher Authentication"
+# REALM is obtained by going to the Run:AI User Interface, and getting the REALM and "Researcher Authentication"
 REALM = '<realm>'
 
 # The department feature is advanced and is mostly disabled. 

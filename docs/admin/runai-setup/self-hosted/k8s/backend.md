@@ -76,7 +76,7 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
-### Connect to Administrator User Interface
+### Connect to Run:AI User Interface
 
 Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
 <!-- 

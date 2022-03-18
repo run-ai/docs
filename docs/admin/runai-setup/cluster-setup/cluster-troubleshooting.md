@@ -45,7 +45,7 @@ Run:
 runai list projects
 ```
 
-Create a Project using the Administrator UI and verify that the Project is reflected in the above command. 
+Create a Project using the Run:AI user interface and verify that the Project is reflected in the above command. 
 
 ### 3. Submit a Job
 
@@ -151,7 +151,7 @@ Run: `kubectl get pods -n monitoring -o wide`
 
 ## Symptom: Projects are not syncing
 
-Create a Project on the Admin UI, then run: `runai list projects`. The new Project does __not__ appear.
+Create a Project on the Run:AI user interface, then run: `runai list projects`. The new Project does __not__ appear.
 
  __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
 

@@ -14,7 +14,7 @@ There are other APIs that provide the same functionality. Specifically:
 ## Endpoint URL for API
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
-This `<CLUSTER-ENDPOINT>` can be found in the Administrator user interface, under `Clusters`. Each cluster will have a separate URL.
+This `<CLUSTER-ENDPOINT>` can be found in the Run:AI User Interface, under `Clusters`. Each cluster will have a separate URL.
 
 
 ## Authentication

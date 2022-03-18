@@ -15,7 +15,7 @@ On the top right, you can choose to Submit a new Job. A Job form will open:
 ![submit-job](img/submit-job.png)
 
 !!! Note
-    If the _Submit Job_ button is disabled on does not exist, then your cluster is not installed or configured to connect to the cluster see [here](overview.md) for more information.
+    If the _Submit Job_ button is disabled or does not exist, then your cluster is not installed or configured to connect to the cluster see [here](overview.md) for more information.
 
 ## Job Properties
 

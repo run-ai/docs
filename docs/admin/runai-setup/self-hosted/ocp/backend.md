@@ -56,7 +56,7 @@ Run the helm command below:
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
 
-## Connect to Administrator User Interface
+## Connect to Run:AI User Interface
 
 
 Run: `oc get routes -n runai-backend` to find the Run:AI Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`

@@ -32,7 +32,7 @@ The instructions below assume that you have obtained the following from Run:AI C
 
 ## Test
 
-### Administrator User Interface
+### Run:AI User Interface
 
 * On an incognito browser, go to [https://app.run.ai/login](https://app.run.ai/login){target=_blank}.
 * Log in using the LDAP user. Use the format `<TENANT-NAME>/<LDAP-USER-NAME>`.

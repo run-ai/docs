@@ -9,7 +9,7 @@ The purpose of the Administrator REST API is to provide an easy-to-use programmi
 ## Endpoint URL for API
 
 
-The domain used for Administrator REST APIs is the same domain used to browse for the Administrator user interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
+The domain used for Administrator REST APIs is the same domain used to browse for the Run:AI User Interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
 
 
 ## Authentication
