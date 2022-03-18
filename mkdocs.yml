@@ -178,6 +178,7 @@ nav:
       - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
       - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
+      - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
     - 'Integrations' :
       - 'JupyterHub' : 'admin/integration/jupyterhub.md'
       - 'Airflow' : 'admin/integration/airflow.md' 
