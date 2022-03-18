@@ -4,7 +4,7 @@ title: Self Hosted installation over OpenShift - Create Projects
 
 ## Introduction
 
-The Administrator creates Run:AI Projects using via the [Run:AI User Interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../config/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:AI Projects using via the [Run:AI User Interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
 
 Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Run:AI Project, Run:AI automatically does the following:
 

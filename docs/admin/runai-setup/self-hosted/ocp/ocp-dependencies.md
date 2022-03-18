@@ -8,13 +8,15 @@ An OpenShift installation of Run:AI has third-party dependencies that must be pr
 
 NVIDIA provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank} on how to install the required Operators so as to suppport GPUs on OpenShift. 
 
-## Disable the NVIDIA Device Plugin and DCGM Exporter
-
 Verify that the GPU Operator is installed by running:
 
 ```
 oc get pods -n gpu-operator
 ```
+## Disable the NVIDIA Device Plugin and DCGM Exporter
+
+!!! Note
+    The following is a temporary measure to be removed in the next release of Run:AI. 
 
 __After successful verification__, 
 

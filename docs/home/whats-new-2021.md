@@ -1,6 +1,6 @@
 ## December 8<sup>th</sup> 2021
 
-To comply with organizational policies and enhance the Run:AI platform security, Run:AI now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/config/sso.md).
+To comply with organizational policies and enhance the Run:AI platform security, Run:AI now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/authentication/sso.md).
 
 To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:AI now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on dynamic allocation of MIG partitions see [Dynamic MIG](../../Researcher/scheduling/fractions/#dynamic-mig).
 
