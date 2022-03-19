@@ -1,14 +1,15 @@
-# Setup Project-based Researcher Access Control
+# Setup Researcher Access Control
 
 ## Introduction
 
 The following instructions explain how to complete the configuration of access control for Researchers. Run:AI access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
 
-This requires a number of steps:
+This requires several steps:
 
-* Assigning users to their Projects
-* (Command-line Interface access only) Modify the Kubernetes profile so as to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
-* Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:AI Authentication authority.
+* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:AI Authentication authority.
+* Assign users to their Projects
+* (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
+
 
 ## Administration User Interface Setup
 
@@ -24,7 +25,7 @@ This requires a number of steps:
 Assign Researchers to Projects:
 
 * Open the Run:AI user interface and navigate to `Users`. Add a Researcher and assign it with a _Researcher_ role.
-* Navigate to `Projects`, edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
+* Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
 * If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
 
 ## Command-line Interface Access
@@ -40,7 +41,7 @@ When making changes to the file, keep a copy of the original file to be used for
 ## (Mandatory) Kubernetes Configuration
 
 * Locate the Kubernetes API Server configuration file. The file's location may defer between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
-* Edit the document, under the `command` tag, add the __server__ configration text from `General | Settings | Researcher Authentication` described above.   
+* Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication` described above.   
 * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
 ```
@@ -69,7 +70,7 @@ Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/d
 You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
 
-## Test
+## Test via Command-line interface
 
 * Run: `runai login` (in OpenShift enviroments use `oc login` rather than `runai login`)
 * You will be prompted for a username and password. In a single sign-on flow, you will be asked to copy a link to a browser, log in and return a code. 
@@ -78,6 +79,14 @@ You can verify that the flags have been incorporated into the RKE cluster by fol
 * If the Job was submitted with a Project for which you have access, your access will be granted.
 
 You can also submit a Job from the Run:AI User interface and verify that the new job shows on the job list with your user name. 
+
+## Test via User Interface
+
+* Open the Run:AI user interface. Go to `Jobs`
+* On the top-right, select `Submit Job`. 
+
+!!! Tip
+    If you do not see the button or it is disabled, then you either do not have `Researcher` access or the cluster has not been set up correctly. For more information, refer to [user interface overview](../../admin-ui-setup/overview.md).
 
  
 <!-- ### Enable Researcher Authentication on Researcher Service

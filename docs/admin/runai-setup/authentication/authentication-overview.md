@@ -14,7 +14,7 @@ Both endpoints are accessible via APIs as well as a user interface.
 
 ## Identity Service
 
-Run:AI holds an internal identity service. The identity service ensures users are who they claim to be and gives them the right kinds of access to Run:AI.
+Run:AI holds an includes and internal identity service. The identity service ensures users are who they claim to be and gives them the right kinds of access to Run:AI.
  
 ## Users
 
