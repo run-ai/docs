@@ -21,7 +21,6 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 | `runai-operator.config.global.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, add this field with the address |
 | `gpu-feature-discovery.enabled` | `true` | Install __Node Feature Discovery__. Set to `false` if already installed in cluster |
 | `kube-prometheus-stack.enabled` | `true` | Install Prometheus. Set to `false` if __Prometheus__ is already installed in cluster |
-| `mpi-operator.enabled` | `true` | Set to `false` when using PodSecurityPolicy. __MPI__ is the distributed-training operator from KubeFlow. Currently must run with root access |
 
 
 ### Feature Discovery

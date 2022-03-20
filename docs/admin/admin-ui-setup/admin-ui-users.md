@@ -15,7 +15,7 @@ __Notes:__
 !!! Note
     To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. 
 
-* Login to the Users area of the Run:AI User interface at `company-name.run.ai`.
+* Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
 *  On the top right, select "Add New Users".
 
 ![mceclip2.png](img/add-user.jpg)

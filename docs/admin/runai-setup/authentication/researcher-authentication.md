@@ -34,40 +34,44 @@ To control access to Run:AI (and Kubernetes) resources, you must modify the Kube
 
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
-* Under the `~/.kube` directory edit the `config` file, remove the administrative user and replace with the __client__ configration text from `General | Settings | Researcher Authentication` described above. 
+* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
 * Under `contexts | context | user` change the user to `runai-authenticated-user`
 
 
 ## (Mandatory) Kubernetes Configuration
 
-* Locate the Kubernetes API Server configuration file. The file's location may defer between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
-* Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication` described above.   
-* Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
-
-```
-kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
-```
+As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:AI. This requires adding flags to the Kubernetes API Server. Modfiying the API Server configuration differs between Kubernetes distributions:
 
 
-### Special Instructions for other Kubernetes Distributions 
+=== "Native Kubernetes"
+    * Locate the Kubernetes API Server configuration file. The file's location may defer between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
+    * Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication` described above.   
+    * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
-The method for adding API server flags differs between different Kubernetes distributions. Descriptions for Rancher and OpenShift can be found below. Other distributions and specifically managed Kubernetes (e.g. GKE, AKS, EKS) have specialized instructions. 
+    ```
+    kubectl get pods -n kube-system kube-apiserver-<master-node-name> -o yaml
+    ```
 
-### OpenShift
+=== "OpenShift"
+    No configuration is needed. Instead, Run:AI assumes that an Identity Provider has been defined at the OpenShift level and that the Run:AI Cluster installation has set the `OpenshiftIdp` flag to true. For more information see the Run:AI OpenShift control-plane setup.
 
-With OpenShift, the above configuration is not needed. Instead, Run:AI assumes that an Identity Provider has been defined at the OpenShift level and that the Run:AI Cluster installation has set the `OpenshiftIdp` flag to true. For more information see the Run:AI OpenShift control-plane setup.
-### Rancher
+=== "Rancher"
+    Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
 
-Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
+    ``` YAML
+        kube-api:
+            always_pull_images: false
+            extra_args:
+              <parameters copied from server configuration section>
+    ```
 
-``` YAML
-    kube-api:
-        always_pull_images: false
-        extra_args:
-          <parameters copied from server configuration section>
-```
+    You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
-You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
+=== "GKE"
+    See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Use the parameters provided in the server configuration section as described above. 
+
+=== "Other"
+    See specific instructions in the documenation of the Kubernetes distribution.  
 
 
 ## Test via Command-line interface
