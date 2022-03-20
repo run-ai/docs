@@ -57,7 +57,8 @@ There are two alternatives for installing NVIDIA prerequisites:
 === "NVIDIA software on each node"
 
     Install the NVIDIA Dependencies in [this](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank} guide. 
-
+    
+    * Run:AI does __not__ currently support NVIDIA Driver version 510 or later.
     * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
     * Do __not__ perform the section _Install NVIDIA Device Plugin_.
     * Note the differntiation between _containerd_ and _docker_. 
