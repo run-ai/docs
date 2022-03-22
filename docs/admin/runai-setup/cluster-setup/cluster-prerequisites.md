@@ -80,6 +80,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
 
 As per instructions: 
 
+* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
 * Clone tag `v0.2.3` (and not master)
 * `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`: 
   * search for `mpioperator/mpi-operator:latest` and change it to `mpioperator/mpi-operator:v0.2.3`.
