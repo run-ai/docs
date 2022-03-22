@@ -26,11 +26,12 @@ Log in to Run:AI user interface at `<company-name>.run.ai`. Use credentials prov
 Using the Wizard:
 
 1. Choose a target Kubernetes platform (see table above)
-2. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
-3. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
-4. Install [Helm](https://helm.sh/docs/intro/install/)
-5. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
-6. Run the `helm` commands as provided in the wizard. 
+2. (SaaS only) provide an IP address for your cluster.
+3. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
+4. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
+5. Install [Helm](https://helm.sh/docs/intro/install/)
+6. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
+7. Run the `helm` commands as provided in the wizard. 
 
 
 !!! Info

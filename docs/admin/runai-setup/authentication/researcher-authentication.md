@@ -6,8 +6,8 @@ The following instructions explain how to complete the configuration of access c
 
 This requires several steps:
 
-* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:AI Authentication authority.
 * Assign users to their Projects
+* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:AI Authentication authority.
 * (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
 
 
@@ -27,16 +27,6 @@ Assign Researchers to Projects:
 * Open the Run:AI user interface and navigate to `Users`. Add a Researcher and assign it with a _Researcher_ role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
 * If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
-
-## Command-line Interface Access
-
-To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
-
-When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
-
-* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
-* Under `contexts | context | user` change the user to `runai-authenticated-user`
-
 
 ## (Mandatory) Kubernetes Configuration
 
@@ -72,6 +62,16 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 === "Other"
     See specific instructions in the documenation of the Kubernetes distribution.  
+
+
+## Command-line Interface Access
+
+To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
+
+When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
+
+* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
+* Under `contexts | context | user` change the user to `runai-authenticated-user`
 
 
 ## Test via Command-line interface
