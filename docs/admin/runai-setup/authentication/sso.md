@@ -15,7 +15,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 ## Prerequisites 
 
  * __XML Metadata__: You must have an _XML Metadata file_ retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
- * __Organization Name__: You must have a Run:AI _Organization Name_. This is the name that appears on the top right of the Run:AI user interface at [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
+ * __Organization Name__: You must have a Run:AI _Organization Name_. This is the name that appears on the top right of the Run:AI user interface.
  * __Additional attribute mapping__: Configure your IdP to map several IdP attributes: 
 
  | IdP attribute  | Run:AI required name | Description       | 
@@ -33,8 +33,8 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  
 ## Step 1: UI Configuration
 
-* Open the Administration User interface (app.run.ai or similar in Self-Hosted installations)
-* Go to [Settings | General](https://app.run.ai/general-settings){target=_blank}
+* Open the Administration User interface.
+* Go to `Settings | General`.
 * Turn on `Login with SSO`. 
 * Under `Metadata XML Url` enter the URL to the XML Metadata file obtained above.
 * Under Administrator email, enter the first administrator user.
@@ -50,14 +50,14 @@ Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both
 
 Test Connectivity to Administration User Interface:
 
-* Using an incognito browser tab, go to [app.run.ai](https://app.run.ai){target=_blank} (or the equivalent URL for self-hosted installation).
+* Using an incognito browser tab and open the Run:AI user interface.
 * Select the `Login with SSO` button. 
 * Provide the `Organization name` obtained above. 
 * You will be redirected to the IdP login page. Use the previously entered _Administrator email_ to log in. 
 
-### Troubleshoot
+### Troubleshooting
 
-The Login process of single sign-on can be separated into two parts:
+Single sign-on log in can be separated into two parts:
 
 1. Run:AI redirects to the IdP (e.g. Google) for login using a _SAML Request_.
 2. Upon successful login, IdP redirects back to Run:AI with a _SAML Response_.
@@ -210,7 +210,7 @@ Check in the above that:
 
 ## Step 2: Cluster Authentication 
 
-Researchers should be authenticated when accessing the Run:AI GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). Use the `SSO` flow within the document.
+Researchers should be authenticated when accessing the Run:AI GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must __do so again__ and replace the client-side and server-side configuration values with the new values as provided by on `General | Settings | Researcher Authentication`.
 
 
 ### Test 
@@ -249,19 +249,16 @@ The latter option is easier to maintain.
 
 ### Adding Roles for a User
 
-* Go to [https://app.run.ai/permissions](https://app.run.ai/permissions){target=_blank}.
-* Select the `Users` button. 
+* Go to `Settings | Users`.
+* Select the `Users` button at the top. 
 * Map users as explained [here](../../admin-ui-setup/admin-ui-users.md).
 
 ### Mapping Role Groups
 
-* Go to [https://app.run.ai/permissions](https://app.run.ai/permissions){target=_blank}.
+* Go to `Settings | Users`.
 * Select the `Groups` button. 
-* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group set in the directory for and create an equivalent Run:AI Group. 
+* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:AI Group. 
 * If the role group contains the `Researcher` role, you can assign this group to a Run:AP Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:AI version 2.3).
-
-
-### Using 
 
 
 ## Implementation Notes

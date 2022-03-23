@@ -16,9 +16,9 @@ Run:AI CLI needs to be installed on the Researcher's machine. This [document](cl
 
 To submit workloads with Run:AI, the Researcher must be provided with a _Project_ that contains a GPU quota. Please see [Working with Projects](../admin-ui-setup/project-setup.md) document on how to create Projects and set a quota.
 
-## Provide access to the Run:AI Administration UI
+## Provide access to the Run:AI User Interface
 
-Some organizations would want to provide Researchers with a more holistic view of what is happening in the cluster. You can do that by providing the appropriate access to the [Run:AI Administration UI](https://app.run.ai){target=_blank}. See [this](../admin-ui-setup/admin-ui-users.md) document for further information on how to provide access. 
+See [Setting up users](../admin-ui-setup/admin-ui-users.md) for further information on how to provide access to users.  
 
 ## Schedule an Onboarding Session
 

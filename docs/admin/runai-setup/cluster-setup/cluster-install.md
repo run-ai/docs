@@ -1,4 +1,4 @@
-Below are instructions on how to install Run:AI cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md). 
+Below are instructions on how to install a Run:AI cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md). 
 
 
 !!! Important
@@ -18,7 +18,7 @@ See [prerequisites](cluster-prerequisites.md).
 
 ## Step 3: Install Run:AI
 
-Log in to Run:AI Admin UI at [app.run.ai.](https://app.run.ai){target=_blank} Use credentials provided by Run:AI Customer Support:
+Log in to Run:AI user interface at `<company-name>.run.ai`. Use credentials provided by Run:AI Customer Support:
 
 *   If no clusters are currently configured, you will see a Cluster installation wizard
 *   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster". 
@@ -26,11 +26,12 @@ Log in to Run:AI Admin UI at [app.run.ai.](https://app.run.ai){target=_blank} Us
 Using the Wizard:
 
 1. Choose a target Kubernetes platform (see table above)
-2. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
-3. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
-4. Install [Helm](https://helm.sh/docs/intro/install/)
-5. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
-6. Run the `helm` commands as provided in the wizard. 
+2. (SaaS only) provide an IP address for your cluster.
+3. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
+4. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
+5. Install [Helm](https://helm.sh/docs/intro/install/)
+6. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
+7. Run the `helm` commands as provided in the wizard. 
 
 
 !!! Info
@@ -38,7 +39,7 @@ Using the Wizard:
 
 ## Step 4: Verify your Installation
 
-*   Go to [app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}.
+*   Go to `<company-name>.run.ai/dashboards/now`.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).
@@ -57,8 +58,8 @@ To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
 ## Next Steps
 
-* Set up Admin UI Users [Working with Admin UI Users](../../admin-ui-setup/admin-ui-users.md).
+* Set up Run:AI Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 * Set up Researchers to work with the Run:AI Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
-* Set up [Project-based Researcher Access Control](../config/researcher-authentication.md).
+* Set up [Project-based Researcher Access Control](../authentication/researcher-authentication.md).
 * Review [advanced setup and maintenace](../config/overview.md) scenarios.

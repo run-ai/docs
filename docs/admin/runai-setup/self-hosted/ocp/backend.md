@@ -2,7 +2,7 @@
 
 ## Create a Control Plane Configuration
 
-Customize the Run:AI backend configuration file.
+Create a configuration file to install the Run:AI control plane:
 
 === "Connected"
     Generate a values file by running:
@@ -11,22 +11,19 @@ Customize the Run:AI backend configuration file.
     ```
 
 === "Airgapped"
-    Generate a values file by running the following under the `deploy` folder:
+    Generate a values file by running the following __under the `deploy` folder__:
     ```
     runai-adm generate-values --openshift --airgapped
     ```
+
+A file called `runai-backend-values.yaml` will be created.
+
 ## Edit Configuration File
 
-__Optional__: Change the following properties in the values file:
+If you are using OpenShift as your identity provider, you must edit the above file to configure Run:AI to use it:
 
-
-|  Replace |   With   | Description | 
-|----------|----------|-------------| 
-| `backend.initTenant.admin` | Change password for [admin@run.ai](mailto:admin.run.ai) | This user is the master Backend administrator | 
-| `backend.initTenant.users` | Change password for [test@run.ai](mailto:test@run.ai) | This user is the first cluster user | 
-|<img width=500/>|| 
- 
-<!-- | `tls.secretName` | name of Kubernetes secret under the runai-backend namespace | Secret contains certificate for `auth.runai.<company-name>` | -->
+* Change `backend.openshiftIdp.enabled` to true
+* Under `backend.openshiftIdpfirstAdmin`, provide the first administrator user of Run:AI. 
 
 
 ## Install the Control Plane (Backend)
@@ -56,7 +53,7 @@ Run the helm command below:
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
 
-## Connect to Administrator User Interface
+## Connect to Run:AI User Interface
 
 
 Run: `oc get routes -n runai-backend` to find the Run:AI Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`

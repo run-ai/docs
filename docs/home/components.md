@@ -6,7 +6,7 @@
 
 * Researchers submit Machine Learning workloads via the Run:AI Command-Line Interface (CLI), or directly by sending YAML files to Kubernetes. 
 
-* Administrators monitor and set priorities via the Administrator User Interface
+* Administrators monitor and set priorities via the Run:AI User Interface
 
 ![architecture](img/architecture.png)
 
@@ -30,7 +30,7 @@ The Run:AI Cluster contains:
 
 ## The Run:AI Control Plane (Backend)
 
-The Run:AI control plane is the basis of the Administrator User Interface. 
+The Run:AI control plane is the basis of the Run:AI User Interface. 
 
 * The Run:AI cloud aggregates monitoring information from __multiple__ tenants (customers).
 * Each customer may manage __multiple__ Run:AI clusters. 

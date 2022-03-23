@@ -22,8 +22,7 @@ To complete this Quickstart you must have:
 
 ### Setup
 
-* Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
-* Add a Project named "team-a".
+* Login to the Projects area of the Run:AI user interface.
 * Allocate 2 GPUs to the Project.
 * Mark the node as a dynamic MIG node as described [here](../scheduling/fractions.md).
 

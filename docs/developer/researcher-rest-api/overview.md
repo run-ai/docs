@@ -14,12 +14,12 @@ There are other APIs that provide the same functionality. Specifically:
 ## Endpoint URL for API
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
-This `<CLUSTER-ENDPOINT>` can be found in the Administrator user interface, under `Clusters`. Each cluster will have a separate URL.
+This `<CLUSTER-ENDPOINT>` can be found in the Run:AI User Interface, under `Clusters`. Each cluster will have a separate URL.
 
 
 ## Authentication
 
-* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../admin/runai-setup/config/researcher-authentication.md).
+* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../admin/runai-setup/authentication/researcher-authentication.md).
 * Once configured, you must create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../rest-auth.md).
 * Use the token for subsequent API calls. 
 

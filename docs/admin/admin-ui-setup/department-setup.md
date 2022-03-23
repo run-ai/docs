@@ -1,6 +1,6 @@
 ## Introduction
 
-Researchers are submitting workloads via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and create priorities, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
+Researchers are submitting workloads via The Run:AI CLI, Kubeflow, or similar. To streamline resource allocation and create priorities, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
 
 A Researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
@@ -14,7 +14,7 @@ At some organizations, Projects may not be enough, this is because:
 
 ## Departments
 
-__Departments__ create a second hierarchy of resource allocation:
+__Departments__ create a secondary hierarchy of resource allocation:
 
 * A Project is associated with a single Department. Multiple Projects can be associated with the same Department.
 * A Department, like a Project is associated with a Quota. 

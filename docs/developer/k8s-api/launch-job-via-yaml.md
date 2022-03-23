@@ -17,7 +17,7 @@ Run:AI extends the Kubernetes _Scheduler_. A Kubernetes Scheduler is the softwar
 
 The Run:AI scheduler schedules computing resources by associating Workloads with  Run:AI _Projects_:
 
-* A Project is assigned with a GPU quota through the Run:AI Administrator user interface. 
+* A Project is assigned with a GPU quota through the Run:AI Run:AI User Interface. 
 * A workload must be associated with a Project name and will receive resources according to the defined quota for the Project and the currently running Workloads
 
 Internally, Run:AI Projects are implemented as Kubernetes namespaces. The scripts below assume that the code is being run after the relevant namespace has been set. 
@@ -26,7 +26,7 @@ Internally, Run:AI Projects are implemented as Kubernetes namespaces. The script
 
 * `<JOB-NAME>`. The name of the Job. 
 * `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart`
-* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/config/researcher-authentication.md).
+* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:AI is installed in an [unauthenticated mode](../../admin/runai-setup/config/).
 * `<REQUESTED-GPUs>`. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
 * `<NAMESAPCE>` The name of the Project's namespace. This is usually `runai-<PROJECT-NAME>`
 

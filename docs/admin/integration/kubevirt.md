@@ -14,7 +14,7 @@ GPU fractions are not supported.
 
 ## Preparations
 
-Making GPUs visible to VMs is not trivial. It requires either a license for NVIDIA software called [NVIDIA vGPU](https://www.nvidia.com/en-us/data-center/virtual-solutions/){target=_blank} or creating a GPU passthrough by the explicit mapping of GPU devices to virtual machines. This guide relates to the later option. 
+Making GPUs visible to VMs is not trivial. It requires either a license for NVIDIA software called [NVIDIA vGPU](https://www.nvidia.com/en-us/data-center/virtual-solutions/){target=_blank} or creating a GPU passthrough by the explicit mapping of GPU devices to virtual machines. This guide relates to the latter option. 
 
 ### Install KubeVirt
 

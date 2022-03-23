@@ -1,6 +1,6 @@
 ## February 2022 Run:AI Version 2.2
 
-* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:AI Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/config/sso.md).
+* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:AI Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/authentication/sso.md).
 * REST API has changed. The new API relies on `Applications`. See [Calling REST APIs](../developer/rest-auth.md) for more information. 
 * Added a new user role `Research Manager`. The role automatically assigns the user as a Researcher to all projects, including future projects. 
 

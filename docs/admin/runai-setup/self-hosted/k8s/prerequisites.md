@@ -24,7 +24,7 @@ The control plane (backend) installation of Run:AI will require the configuratio
 
 ## Kubernetes
 
-Run:AI requires Kubernetes 1.19 or above. Kubernetes 1.21 is recommended (as of September 2021). Kubernetes 1.22 is __not__ supported. 
+Run:AI requires Kubernetes. Supported versions are 1.19 through 1.23. 
 
 If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../ocp/prerequisites.md). 
 

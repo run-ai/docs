@@ -54,7 +54,7 @@ Below is a list of statuses. For each status the list shows:
 
 * Description
 
-* Color - Status color as can be seen in the Administrator User Interface Job list
+* Color - Status color as can be seen in the Run:AI User Interface Job list
 
 <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.3px Arial; color: #000000; -webkit-text-stroke: #000000}

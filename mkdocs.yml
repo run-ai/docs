@@ -73,8 +73,8 @@ plugins:
         'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
 #        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
-        'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/config/researcher-authentication.md'
-        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/config/researcher-authentication.md'
+        'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
+        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
         'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
@@ -94,8 +94,8 @@ plugins:
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
-        'admin/runai-setup/advanced/researcher-authentication.md' : 'admin/runai-setup/config/researcher-authentication.md'
-        'admin/runai-setup/advanced/sso.md' : 'admin/runai-setup/config/sso.md'
+        'admin/runai-setup/advanced/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
+        'admin/runai-setup/advanced/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/advanced/access-roles.md' : 'admin/runai-setup/config/access-roles.md'
         'admin/runai-setup/advanced/allow-external-access-to-containers.md' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         'admin/runai-setup/advanced/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
@@ -103,6 +103,8 @@ plugins:
         'admin/runai-setup/advanced/dr.md' : 'admin/runai-setup/config/dr.md'
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
         'admin/runai-setup/advanced/monitoring.md' : 'admin/runai-setup/maintenance/monitoring.md'
+        'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
+        'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
 
 nav:
   - Home: 
@@ -152,13 +154,16 @@ nav:
         # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
-        - 'Researcher Authentication' : 'admin/runai-setup/config/researcher-authentication.md'
-        - 'Single Sign-On' : 'admin/runai-setup/config/sso.md'
+
         - 'Review Kubernetes Access provided to Run:AI' : 'admin/runai-setup/config/access-roles.md'
         - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
+      - 'Authentication' :
+        - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
+        - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
+        - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'
@@ -172,11 +177,13 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
       - 'Templates' : 'admin/researcher-setup/templates.md'
-    - 'Admin UI' :
+    - 'User Interface' :
+      - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
       - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
       - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
+      - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
     - 'Integrations' :
       - 'JupyterHub' : 'admin/integration/jupyterhub.md'
       - 'Airflow' : 'admin/integration/airflow.md' 

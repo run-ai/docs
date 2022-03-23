@@ -1,6 +1,6 @@
 ## Introduction
 
-Researchers are submitting Jobs via The Run:AI CLI, Kubeflow or similar. To streamline resource allocation and  prioritize work, Run:AI introduces the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and allocation preferences. 
+Researchers are submitting Jobs via The Run:AI CLI, Kubeflow, or similar. To streamline resource allocation and prioritize work, Run:AI introduces the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and allocation preferences. 
 
 A Researcher submitting a Job needs to associate a Project name with the request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
 
@@ -37,7 +37,7 @@ As an administrator, you may want to disconnect the two parameters. So that, for
 !!! Note 
     To be able to manipulate Projects, you must have _Editor_ access. See the "Users" Area
 
-*   Login to the Projects area of the Run:AI Administration user interface at [https://app.run.ai/projects](https://app.run.ai/projects){target=_blank}
+*   Login to the Projects area of the Run:AI user interface at `<company-name>.run.ai`.
 *   On the top right, select "Add New Project"
 *   Choose a Project name and a Project quota 
 *   Press "Save"
@@ -87,7 +87,7 @@ To mandate __training__ Jobs to run on specific node groups:
 *   Press Enter to save the label.
 *   Select the label.
 
-![mceclip0.png](img/mceclip0.png)
+![project-affinity.png](img/project-affinity.png)
 
 To mandate __interactive__ Jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
 
@@ -106,9 +106,11 @@ To set a duration limit for interactive Jobs:
 *   Create a Project or edit an existing Project.
 *   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
 
-![mceclip1.png](img/mceclip1.png) The setting only takes effect for Jobs that have started after the duration has been changed. 
+![project-time-limit.png](img/project-time-limit.png) The setting only takes effect for Jobs that have started after the duration has been changed. 
 
 
 ## Assign Users to Project
 
-When [Researcher Authentication](../runai-setup/config/researcher-authentication.md) is enabled, the Project form will contain an additional _Users_ tab. The tab will allow you to assign Researchers to their Projects. 
+When [Researcher Authentication](../runai-setup/config/) is enabled, the Project form will contain an additional _Access Control_ tab. The tab will allow you to assign Researchers to their Projects. 
+
+If you are using Single-sign on, you can also assign Groups  

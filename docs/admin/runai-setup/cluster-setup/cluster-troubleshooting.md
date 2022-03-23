@@ -5,7 +5,7 @@ Following are a set of tests to run to determine cluster health:
 
 ### 1. Verify that data is sent to the cloud
 
-Log in to [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
+Log in to `<company-name>.run.ai/dashboards/now`.
 
 * Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
 * Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
@@ -45,7 +45,7 @@ Run:
 runai list projects
 ```
 
-Create a Project using the Administrator UI and verify that the Project is reflected in the above command. 
+Create a Project using the Run:AI user interface and verify that the Project is reflected in the above command. 
 
 ### 3. Submit a Job
 
@@ -65,12 +65,11 @@ runai submit -i gcr.io/run-ai-demo/quickstart -g 1
 runai list jobs
 ```
 
-* Verify that the Job is showing in the Jobs area in [app.run.ai/jobs](https://app.run.ai/jobs){target=_blank}
-
+* Verify that the Job is showing in the Jobs area at `<company-name>.run.ai/jobs`.
 
 ## Symptom: Metrics are not showing on Overview Dashboard
 
-Some or all metrics are not showing in [https://app.run.ai/dashboards/now](https://app.run.ai/dashboards/now){target=_blank}
+Some or all metrics are not showing in `<company-name>.run.ai/dashboards/now`
 
 __Typical root causes:__
 
@@ -152,7 +151,7 @@ Run: `kubectl get pods -n monitoring -o wide`
 
 ## Symptom: Projects are not syncing
 
-Create a Project on the Admin UI, then run: `runai list projects`. The new Project does __not__ appear.
+Create a Project on the Run:AI user interface, then run: `runai list projects`. The new Project does __not__ appear.
 
  __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
 

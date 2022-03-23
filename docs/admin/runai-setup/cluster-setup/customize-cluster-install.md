@@ -1,6 +1,6 @@
 # (Optional) Customize Cluster Installation
 
-The Run:AI Admin UI cluster creation wizard requires the download of a _Helm values file_ `runai-<cluster-name>.yaml`. The file may be edited to customize the cluster installation.
+The Run:AI cluster creation wizard requires the download of a _Helm values file_ `runai-<cluster-name>.yaml`. The file may be edited to customize the cluster installation.
 
 
 ## Configuration Flags
@@ -59,10 +59,10 @@ There are a couple of use cases that customers will want to disable this feature
 Follow the following process to achieve this
 
 1. Disable the namespace creation functionality. See the  `runai-operator.config.project-controller.createNamespaces` flag above.
-2. [Create a Project](../../../admin-ui-setup/project-setup/#create-a-new-project) using the Administrator User Interface. 
+2. [Create a Project](../../../admin-ui-setup/project-setup/#create-a-new-project) using the Run:AI User Interface. 
 3. Create the namespace if needed by running: `kubectl create ns <NAMESPACE>`. The suggested Run:AI default is `runai-<PROJECT-NAME>`.
 4. Label the namespace to connect it to the Run:AI Project by running `kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>`
 
-where  `<PROJECT_NAME>` is the name of the project you have created in the Administrator UI above and `<NAMESPACE>` is the name you chose for your namespace.
+where  `<PROJECT_NAME>` is the name of the project you have created in the Run:AI user interface above and `<NAMESPACE>` is the name you chose for your namespace.
 
 
