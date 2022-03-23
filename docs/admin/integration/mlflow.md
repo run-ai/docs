@@ -1,10 +1,10 @@
-# Integrate Run:AI with MLflow
+# Integrate Run:ai with MLflow
 
-[MLflow](https://www.mlflow.org/){target=_blank} is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The purpose of this document is to explain how to run Jobs with MLflow using the Run:AI scheduler. 
+[MLflow](https://www.mlflow.org/){target=_blank} is an open-source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. The purpose of this document is to explain how to run Jobs with MLflow using the Run:ai scheduler. 
 
 ## Overview 
 
-MLflow concepts and alternative architectures are discussed [here](https://www.mlflow.org/docs/latest/concepts.html){target=_blank}. MLflow can run on various platforms. To work with Run:AI we would use the MLflow [Kubernetes integration](https://www.mlflow.org/docs/latest/projects.html#kubernetes-execution){target=_blank}.
+MLflow concepts and alternative architectures are discussed [here](https://www.mlflow.org/docs/latest/concepts.html){target=_blank}. MLflow can run on various platforms. To work with Run:ai we would use the MLflow [Kubernetes integration](https://www.mlflow.org/docs/latest/projects.html#kubernetes-execution){target=_blank}.
 
 The MLflow documentation describes the Kubernetes integration as such:
 
@@ -21,7 +21,7 @@ To run an MLflow job via Kubernetes, you specify an MLflow Kubernetes configurat
 }
 ```
 
-The essence of the Run:AI integration is the modification of the `kubernetes_job_template.yaml` file. Specifically adding the Run:AI scheduler name and the Run:AI Project (Kubernetes namespace).
+The essence of the Run:ai integration is the modification of the `kubernetes_job_template.yaml` file. Specifically adding the Run:ai scheduler name and the Run:ai Project (Kubernetes namespace).
 
 
 ## Step by Step Instructions
@@ -31,7 +31,7 @@ The essence of the Run:AI integration is the modification of the `kubernetes_job
 
 * [Install MLflow](https://www.mlflow.org/docs/latest/quickstart.html#installing-mlflow){target=_blank}.
 * Make sure you have __push__ access to a Docker repository from your local machine.
-* Make sure you are connected to Run:AI via the Run:AI Command-line interface.
+* Make sure you are connected to Run:ai via the Run:ai Command-line interface.
 
 
 ### The sample MLflow Project
@@ -52,8 +52,8 @@ The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/
     * Set `kube-context` to the name of the Kubernetes context. You can find the context name by running `runai list clusters` or `kubectl config get-contexts`.
     * Set `repository-uri` to a repository and name of a docker image that will be used by MLflow (this is a different image than the base docker image described above). Your local machine needs permissions to be able to push this image to the docker registry.
 * Edit `kubernetes_job_template.yaml`. 
-    * Set the value of `namespace` to `runai-<name of Run:AI project>`. 
-    * Note the last line which adds the Run:AI scheduler to the configuration. 
+    * Set the value of `namespace` to `runai-<name of Run:ai project>`. 
+    * Note the last line which adds the Run:ai scheduler to the configuration. 
     * Do __not__ change the lines marked by `{replaced with...`.
     * Set the requested resources including GPUs. You can use the `--dry-run` flag of the [runai submit](../../Researcher/cli-reference/runai-submit.md) command to gain insight on additional configurations
 
@@ -73,7 +73,7 @@ The sample training code above does __not__ contain references to an MLflow trac
 
 ## Using Interactive Workloads
 
-With Run:AI you can also run _interactive_ workloads. To run the Job as interactive, add the following to `kubernetes_job_template.yaml`: 
+With Run:ai you can also run _interactive_ workloads. To run the Job as interactive, add the following to `kubernetes_job_template.yaml`: 
 
 ``` YAML
 metadata:
@@ -85,5 +85,5 @@ metadata:
 ## See Also
 
 * You can use MLflow together with Fractional GPUs. For more information see [Launch Job via YAML](../../../developer/k8s-api/launch-job-via-yaml/#using-fractional-gpus).
-* To map additional Run:AI options to the YAML, see [Launch Job via YAML](../../../developer/k8s-api/launch-job-via-yaml/#mapping-additional-flags).
+* To map additional Run:ai options to the YAML, see [Launch Job via YAML](../../../developer/k8s-api/launch-job-via-yaml/#mapping-additional-flags).
 

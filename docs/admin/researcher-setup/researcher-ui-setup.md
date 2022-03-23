@@ -1,6 +1,6 @@
 # Researcher User Interface
 
-The Run:AI Researcher User Interface allows Researchers which are less experienced with a command-line interface to view Projects, as well as submit and view Jobs. 
+The Run:ai Researcher User Interface allows Researchers which are less experienced with a command-line interface to view Projects, as well as submit and view Jobs. 
 
 ![researcher.png](img/researcher.png)
 

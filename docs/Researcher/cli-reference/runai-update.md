@@ -27,6 +27,6 @@ runai update
 
 ## Output
 
-Update of the Run:AI command-line interface.
+Update of the Run:ai command-line interface.
 
 ## See Also

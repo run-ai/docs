@@ -1,6 +1,6 @@
 # Inference Setup
 
-Inference Jobs are an integral part of Run:AI and do not require setting up per se. However, Running multiple production-grade processes on a single GPU is best performed with an NVIDIA technology called _Multi-Process Service_ or _MPS_
+Inference Jobs are an integral part of Run:ai and do not require setting up per se. However, Running multiple production-grade processes on a single GPU is best performed with an NVIDIA technology called _Multi-Process Service_ or _MPS_
 
 By default, MPS is not enabled on GPU nodes.
 
@@ -8,7 +8,7 @@ By default, MPS is not enabled on GPU nodes.
 
 To enable the MPS server on all nodes, you must edit the cluster installation values file:
 
-* When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+* When installing the Run:ai cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
 * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
 
 Use:
@@ -33,7 +33,7 @@ When the MPS server pod has started to run, restart the `nvidia-device-plugin` p
 kubectl delete pods -n runai --selector=name=nvidia-device-plugin-ds
 ```
 
-To enable the MPS server on selected nodes, please contact Run:AI customer support.
+To enable the MPS server on selected nodes, please contact Run:ai customer support.
 
 ## Verify MPS is Enabled
 

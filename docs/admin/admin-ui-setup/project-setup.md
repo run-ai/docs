@@ -1,8 +1,8 @@
 ## Introduction
 
-Researchers are submitting Jobs via The Run:AI CLI, Kubeflow, or similar. To streamline resource allocation and prioritize work, Run:AI introduces the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and allocation preferences. 
+Researchers are submitting Jobs via The Run:ai CLI, Kubeflow, or similar. To streamline resource allocation and prioritize work, Run:ai introduces the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and allocation preferences. 
 
-A Researcher submitting a Job needs to associate a Project name with the request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
+A Researcher submitting a Job needs to associate a Project name with the request. The Run:ai scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
 
 ## Modeling Projects
 
@@ -22,7 +22,7 @@ __Important best practice:__ As a rule, the sum of the Project allocation should
 
 ### Controlling Over-Quota Behavior
 
-By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:AI scheduler document](../../Researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects. 
+By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:ai scheduler document](../../Researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects. 
 
 As an administrator, you may want to disconnect the two parameters. So that, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
 
@@ -37,7 +37,7 @@ As an administrator, you may want to disconnect the two parameters. So that, for
 !!! Note 
     To be able to manipulate Projects, you must have _Editor_ access. See the "Users" Area
 
-*   Login to the Projects area of the Run:AI user interface at `<company-name>.run.ai`.
+*   Login to the Projects area of the Run:ai user interface at `<company-name>.run.ai`.
 *   On the top right, select "Add New Project"
 *   Choose a Project name and a Project quota 
 *   Press "Save"

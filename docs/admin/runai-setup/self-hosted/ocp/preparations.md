@@ -1,16 +1,16 @@
 ---
 title: Self Hosted installation over OpenShift - Preparations
 ---
-# Preparing for a Run:AI OpenShift Installation
+# Preparing for a Run:ai OpenShift Installation
 
-The following section provides IT with the information needed to prepare for a Run:AI installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:AI components. 
+The following section provides IT with the information needed to prepare for a Run:ai installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
 
 
 
 
 ## Create OpenShift Projects
 
-Run:AI uses two projects. One for the control plane (`runai-backend`) and one for the cluster itself (`runai`). 
+Run:ai uses two projects. One for the control plane (`runai-backend`) and one for the cluster itself (`runai`). 
 The project `gpu-operator` is used by the _GPU Opeator_ dependency described above. 
 
 ```
@@ -19,15 +19,15 @@ oc new-project runai-backend
 oc new-project gpu-operator-resources
 ```
 
-## Prepare Run:AI Installation Artifacts
+## Prepare Run:ai Installation Artifacts
 
-### Run:AI Software Files
+### Run:ai Software Files
 
 SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the cluster and `Docker` installed.
 
 
 === "Connected"
-    Run the following to enable image download from the Run:AI Container Registry on Google cloud:
+    Run the following to enable image download from the Run:ai Container Registry on Google cloud:
 
     ```
     oc apply -f runai-gcr-secret.yaml -n runai-backend
@@ -36,7 +36,7 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
 
 === "Airgapped" 
 
-    To extract Run:AI files, replace `<VERSION>` in the command below and run: 
+    To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ```
     tar xvf runai-<version>.tar.gz
@@ -57,20 +57,20 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
-### Run:AI Administration CLI
+### Run:ai Administration CLI
 
 === "Connected"
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
+    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
 
 === "Airgapped" 
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
+    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
 
 ## Install Helm
 
 If helm v3 does not yet exist on the machine, install it now:
 
 === "Connected"
-    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
 
 === "Airgapped"
     ```
@@ -78,9 +78,9 @@ If helm v3 does not yet exist on the machine, install it now:
     sudo mv linux-amd64/helm /usr/local/bin/
     ```  
 
-## Mark Run:AI System Workers
+## Mark Run:ai System Workers
 
-The Run:AI Control plane should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+The Run:ai Control plane should be installed on a set of dedicated Run:ai system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
 oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
@@ -94,4 +94,4 @@ As part of the installation you will be required to install the [Control plane](
 
 ## Next Steps
 
-Continue with installing the [Run:AI third-party dependencies](ocp-dependencies.md).
+Continue with installing the [Run:ai third-party dependencies](ocp-dependencies.md).

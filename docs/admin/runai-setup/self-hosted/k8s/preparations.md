@@ -9,13 +9,13 @@ See Prerequisites section [above](prerequisites.md).
 
 ## Prepare Installation Artifacts
 
-### Run:AI Software Files
+### Run:ai Software Files
 
 SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
 
 === "Connected"
-    Run the following to enable image download from the Run:AI Container Registry on Google cloud:
+    Run the following to enable image download from the Run:ai Container Registry on Google cloud:
 
     ```
     kubectl create namespace runai-backend
@@ -23,7 +23,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     ```
 
 === "Airgapped" 
-    To extract Run:AI files, replace `<VERSION>` in the command below and run: 
+    To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ```
     tar xvf runai-<version>.tar.gz
@@ -46,13 +46,13 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
 
-### Run:AI Administration CLI
+### Run:ai Administration CLI
 
 === "Connected"
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
+    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
 
 === "Airgapped" 
-    Install the Run:AI Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
+    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
 
 
 ## Install Helm
@@ -61,7 +61,7 @@ If helm v3 does not yet exist on the machine, install it now:
 
 
 === "Connected"
-    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
 
 
 === "Airgapped"
@@ -71,9 +71,9 @@ If helm v3 does not yet exist on the machine, install it now:
     ```  
 
 
-## Mark Run:AI System Workers
+## Mark Run:ai System Workers
 
-The Run:AI control plane (backend) should be installed on a set of dedicated Run:AI system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+The Run:ai control plane (backend) should be installed on a set of dedicated Run:ai system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
@@ -81,9 +81,9 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 ## Additional Permissions
 
-As part of the installation you will be required to install the [Run:AI Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
+As part of the installation you will be required to install the [Run:ai Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
 
 ## Next Steps
 
-Continue with installing the [Run:AI Control Plane](backend.md).
+Continue with installing the [Run:ai Control Plane](backend.md).

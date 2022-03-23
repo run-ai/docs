@@ -2,11 +2,11 @@
 
 Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/passwords data entry, multiple compliance schemes, etc. 
 
-Run:AI supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign on __only__.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign on __only__.
 
 
 !!! Caution
-    Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or upwards. If you are using single sign-on with older versions of Run:AI, please contact Run:AI customer support
+    Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or upwards. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
 
 ## Terminology
 
@@ -15,13 +15,13 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 ## Prerequisites 
 
  * __XML Metadata__: You must have an _XML Metadata file_ retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the _XML_ file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
- * __Organization Name__: You must have a Run:AI _Organization Name_. This is the name that appears on the top right of the Run:AI user interface.
+ * __Organization Name__: You must have a Run:ai _Organization Name_. This is the name that appears on the top right of the Run:ai user interface.
  * __Additional attribute mapping__: Configure your IdP to map several IdP attributes: 
 
- | IdP attribute  | Run:AI required name | Description       | 
+ | IdP attribute  | Run:ai required name | Description       | 
  |----------------|----------------------|--------------------|
- | User email     | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:AI. | 
- | User role groups    | GROUPS               | (Optional) If exists, allows assigning Run:AI role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below | 
+ | User email     | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:ai. | 
+ | User role groups    | GROUPS               | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below | 
  | Linux User ID  | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. | 
  | Linux Group ID | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. | 
  | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. | 
@@ -50,7 +50,7 @@ Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both
 
 Test Connectivity to Administration User Interface:
 
-* Using an incognito browser tab and open the Run:AI user interface.
+* Using an incognito browser tab and open the Run:ai user interface.
 * Select the `Login with SSO` button. 
 * Provide the `Organization name` obtained above. 
 * You will be redirected to the IdP login page. Use the previously entered _Administrator email_ to log in. 
@@ -59,13 +59,13 @@ Test Connectivity to Administration User Interface:
 
 Single sign-on log in can be separated into two parts:
 
-1. Run:AI redirects to the IdP (e.g. Google) for login using a _SAML Request_.
-2. Upon successful login, IdP redirects back to Run:AI with a _SAML Response_.
+1. Run:ai redirects to the IdP (e.g. Google) for login using a _SAML Request_.
+2. Upon successful login, IdP redirects back to Run:ai with a _SAML Response_.
 
 You can follow that by following the URL changes from [app.run.ai](https://app.run.ai) to the IdP provider (e.g. [accounts.google.com](https://accounts.google.com)) and back to [app.run.ai](https://app.run.ai):
 
 * If there is an issue on the IdP site (e.g. `app_is_not_configred` error in Google), the problem is likely to be in the SAML Request.
-* If the user is redirected back to Run:AI and something goes wrong, The problem is most likely in the SAML Response.
+* If the user is redirected back to Run:ai and something goes wrong, The problem is most likely in the SAML Response.
 
 #### Troubleshooting SAML Request
 
@@ -210,12 +210,12 @@ Check in the above that:
 
 ## Step 2: Cluster Authentication 
 
-Researchers should be authenticated when accessing the Run:AI GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must __do so again__ and replace the client-side and server-side configuration values with the new values as provided by on `General | Settings | Researcher Authentication`.
+Researchers should be authenticated when accessing the Run:ai GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must __do so again__ and replace the client-side and server-side configuration values with the new values as provided by on `General | Settings | Researcher Authentication`.
 
 
 ### Test 
 
-Test connectivity to Run:AI command-line interface:
+Test connectivity to Run:ai command-line interface:
 
 * In the command-line, run `runai login`:
 * You receive a link that you must copy and open in your browser. Post login you will receive a verification code which you must paste into the shell window.
@@ -257,12 +257,12 @@ The latter option is easier to maintain.
 
 * Go to `Settings | Users`.
 * Select the `Groups` button. 
-* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:AI Group. 
-* If the role group contains the `Researcher` role, you can assign this group to a Run:AP Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:AI version 2.3).
+* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group. 
+* If the role group contains the `Researcher` role, you can assign this group to a Run:AP Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:ai version 2.3).
 
 
 ## Implementation Notes
 
-Run:AI SSO does not support single logout. As such, logging out from Run:AI will not log you out from other systems.
+Run:ai SSO does not support single logout. As such, logging out from Run:ai will not log you out from other systems.
 
 

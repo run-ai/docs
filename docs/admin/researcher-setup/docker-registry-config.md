@@ -9,7 +9,7 @@ Some Docker images are stored in private docker registries. For the Researcher t
 There could be two business scenarios:
 
 1. All researchers use single credentials for the registry. 
-2. There exist separate registry credentials per Run:AI Project. 
+2. There exist separate registry credentials per Run:ai Project. 
 
 ### Single Credentials
 
@@ -37,7 +37,7 @@ kubectl label secret <secret_name> runai/cluster-wide="true" -n runai
 
 ### Credentials per Project
 
-For each Run:AI Project create a secret:
+For each Run:ai Project create a secret:
 
 ```
 kubectl create secret docker-registry <secret_name> -n <NAMESPACE> \ 
@@ -47,7 +47,7 @@ kubectl create secret docker-registry <secret_name> -n <NAMESPACE> \
 
 Where `<NAMESPACE>` is the namespace associated with the Project (typically its `runai-<PROJECT-NAME>`).
 
-Then apply the secret to Run:AI by running:
+Then apply the secret to Run:ai by running:
 
 ```
 kubectl patch serviceaccount default -n <NAMESPACE> -p '{"imagePullSecrets": [{"name": "<secret_name>"}]}'

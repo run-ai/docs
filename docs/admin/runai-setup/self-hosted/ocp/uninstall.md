@@ -1,6 +1,6 @@
 ---
 title: Uninstall self-hosted OpenShift installation
 ---
-# Uninstall Run:AI 
+# Uninstall Run:ai 
 
 See uninstall section [here](../k8s/uninstall.md)

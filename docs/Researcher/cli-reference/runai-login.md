@@ -1,8 +1,8 @@
 ## Description
 
-Login to Run:AI
+Login to Run:ai
 
-When Researcher Authentication is enabled, you will need to login to Run:AI using your username and password before accessing resources 
+When Researcher Authentication is enabled, you will need to login to Run:ai using your username and password before accessing resources 
 ## Synopsis
 
 ``` shell

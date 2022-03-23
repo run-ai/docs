@@ -16,7 +16,7 @@ runai submit -i ubuntu --attach --interactive -- bash
 ```
 then run `id`, you will see the __root__ user. 
 
-## Use Run:AI flags to limit root access
+## Use Run:ai flags to limit root access
 
 There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
@@ -50,7 +50,7 @@ then verify that you cannot run `su` to become root within the container.
 ### Setting a Cluster-Wide Default
 
 
-The two flags are voluntary. They are not enforced by the system. It is however possible to set these flags as a __cluster-wide default__ for the Run:AI CLI, such that all CLI users will be limited to non-root containers.
+The two flags are voluntary. They are not enforced by the system. It is however possible to set these flags as a __cluster-wide default__ for the Run:ai CLI, such that all CLI users will be limited to non-root containers.
 
 Save the following in a file (e.g `cluster-config.yaml`)
 
@@ -76,7 +76,7 @@ kubectl apply -f cluster-config.yaml
 ``` 
 
 !!! Limitation
-    Preventing privilege escalation at the cluster level limits non-root for all Run:AI __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_. See below for more information.
+    Preventing privilege escalation at the cluster level limits non-root for all Run:ai __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_. See below for more information.
 
 ### Using Templates
 
@@ -86,7 +86,7 @@ Another way to enforce the above flags is using [Administrative templates](../..
 ## Passing user identity 
 ### Passing user identity from Identity Provider
 
-A best practice is to store the user identifier (UID) and the group identifier (GID) in the organization's directory. Run:AI allows you to pass these values to the container and use them as the container identity.
+A best practice is to store the user identifier (UID) and the group identifier (GID) in the organization's directory. Run:ai allows you to pass these values to the container and use them as the container identity.
 
 To perform this, you must:
 
@@ -107,7 +107,7 @@ Via the Researcher User Interface, it is possible to explicitly provide the user
 ##  Using OpenShift or Gatekeeper to provide Cluster Level Controls
 
 
-Run:AI supports OpenShift as a Kubernetes platform. In OpenShift the system will provide a __random__ UID to containers. The flags `--run-as-user` and `--prevent-privilege-escalation` are disabled on OpenShift.
+Run:ai supports OpenShift as a Kubernetes platform. In OpenShift the system will provide a __random__ UID to containers. The flags `--run-as-user` and `--prevent-privilege-escalation` are disabled on OpenShift.
 It is possible to achieve a similar effect on Kubernetes systems that are not OpenShift. A leading tool is [Gatekeeper](https://open-policy-agent.github.io/gatekeeper/website/docs/){target=_blank}. Gatekeeper similarly enforces non-root on containers at the system level. 
 
 
@@ -126,7 +126,7 @@ If you don't see a command prompt, try pressing enter.
 I have no name!@job-0-0-0:/$ 
 ```
 
-Adding home directories to an image per user is not a viable solution. To overcome this, Run:AI provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
+Adding home directories to an image per user is not a viable solution. To overcome this, Run:ai provides an additional flag `--create-home-dir`. Adding this flag creates a temporary home directory for the user within the container.  
 
 !!! Notes
     * Data saved in this directory will not be saved when the container exits. 

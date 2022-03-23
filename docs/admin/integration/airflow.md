@@ -1,4 +1,4 @@
-# Integrate Run:AI with Apache Airflow
+# Integrate Run:ai with Apache Airflow
 
 Airflow is a platform to programmatically author, schedule, and monitor workflows. Specifically, it is used in Machine Learning to create pipelines.  
 
@@ -13,10 +13,10 @@ For example, a simple DAG could consist of three tasks: A, B, and C. It could sa
 
 Airflow tasks are sent for execution. Specifically, the [Airflow - Kubernetes integration](https://airflow.apache.org/docs/stable/kubernetes.html){target=_blank} allows Airflow tasks to be scheduled on a Kubernetes cluster. 
 
-## Run:AI - Airflow Integration
+## Run:ai - Airflow Integration
 
 DAGs are defined in Python. Airflow tasks based on Kubernetes are defined via the _KubernetesPodOperator_ class. 
-To run an Airflow task with Run:AI you must provide additional, Run:AI-related, properties to 
+To run an Airflow task with Run:ai you must provide additional, Run:ai-related, properties to 
 
 ``` python
 dag = DAG(...)
@@ -40,11 +40,11 @@ job = KubernetesPodOperator(
 ```
 The code:
 
-* Specifies the __runai-scheduler__ which directs the task to be scheduled with the Run:AI scheduler
-* Specifies a Run:AI __Project__. A Project in Run:AI specifies guaranteed GPU & CPU quota.  
+* Specifies the __runai-scheduler__ which directs the task to be scheduled with the Run:ai scheduler
+* Specifies a Run:ai __Project__. A Project in Run:ai specifies guaranteed GPU & CPU quota.  
 
 
-Once you run the DAG, you can see Airflow tasks shown in the Run:AI UI. 
+Once you run the DAG, you can see Airflow tasks shown in the Run:ai UI. 
 
 
 

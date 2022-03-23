@@ -4,14 +4,14 @@ title: Developer Documentation Overview
 
 # Overview: Developer Documentation
 
-Developers can access Run:AI through various programmatic interfaces. 
+Developers can access Run:ai through various programmatic interfaces. 
 
 
 ## API Architecture
 
-Run:AI is composed of a single, multi-tenant control plane (also called 'backend'). Each tenant can be connected to one or more GPU clusters. See [Run:AI system components](../home/components.md) for detailed information.
+Run:ai is composed of a single, multi-tenant control plane (also called 'backend'). Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/components.md) for detailed information.
 
-Below is a diagram of the Run:AI API Architecture. A developer may:
+Below is a diagram of the Run:ai API Architecture. A developer may:
 
 1. Access the control plane via the _Administrator API_.
 2. Access any one of the GPU clusters via _Researcher API_.
@@ -22,7 +22,7 @@ Below is a diagram of the Run:AI API Architecture. A developer may:
 
 ## Administrator API
 
-Add, delete, modify and list Run:AI meta-data objects such as Projects, Departments, Users, and more. 
+Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more. 
 
 The API is provided as REST and is accessible via the control plane (backend) endpoint.  
 
@@ -40,7 +40,7 @@ The API is provided as:
 Researcher API is accessible via the GPU cluster itself. As such, __multiple clusters may have multiple endpoints__.
 
 !!! Note
-    The same functionality is also available via the [Run:AI Command-line interface](../../Researcher/cli-reference/introduction). The CLI provides an alternative for automating with shell scripts. 
+    The same functionality is also available via the [Run:ai Command-line interface](../../Researcher/cli-reference/introduction). The CLI provides an alternative for automating with shell scripts. 
 ## Metrics API
 
 Retrieve metrics from multiple GPU clusters. 

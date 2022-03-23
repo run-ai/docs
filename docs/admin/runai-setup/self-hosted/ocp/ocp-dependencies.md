@@ -1,5 +1,5 @@
 
-An OpenShift installation of Run:AI has third-party dependencies that must be pre-installed before installing Run:AI itself. The following document provides instructions for installing and configuring these dependencies.
+An OpenShift installation of Run:ai has third-party dependencies that must be pre-installed before installing Run:ai itself. The following document provides instructions for installing and configuring these dependencies.
 
 !!! Note
     You must have Cluster Administrator rights to install these dependencies. 
@@ -16,7 +16,7 @@ oc get pods -n gpu-operator
 ## Disable the NVIDIA Device Plugin and DCGM Exporter
 
 !!! Note
-    The following is a temporary measure to be removed in the next release of Run:AI. 
+    The following is a temporary measure to be removed in the next release of Run:ai. 
 
 __After successful verification__, 
 
@@ -33,7 +33,7 @@ oc -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
 ```
 
-(2) Replace the NVIDIA Device Plug-in with the Run:AI version:
+(2) Replace the NVIDIA Device Plug-in with the Run:ai version:
 
 ```
 oc patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
@@ -47,4 +47,4 @@ oc create clusterrolebinding --clusterrole=admin \
 
 ## Next Steps
 
-Continue with installing the [Run:AI Backend](backend.md).
+Continue with installing the [Run:ai Backend](backend.md).

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Run:AI provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU, enabling companies to run more workloads such as computer vision, voice recognition and natural language processing on the same hardware, lowering costs.
+Run:ai provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU, enabling companies to run more workloads such as computer vision, voice recognition and natural language processing on the same hardware, lowering costs.
 
-Run:AI’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. This enables several workloads to run in containers side-by-side on the same GPU without interfering with each other. The solution is transparent, simple, and portable; it requires no changes to the containers themselves.
+Run:ai’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. This enables several workloads to run in containers side-by-side on the same GPU without interfering with each other. The solution is transparent, simple, and portable; it requires no changes to the containers themselves.
 
 A typical use-case could see 2-8 Jobs running on the same GPU, meaning you could do eight times the work with the same hardware. 
 
@@ -12,14 +12,14 @@ A typical use-case could see 2-8 Jobs running on the same GPU, meaning you could
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI user interface.
+*  Login to the Projects area of the Run:ai user interface.
 *   Add a Project named "team-a".
 *   Allocate 1 GPU to the Project.
 

@@ -3,63 +3,63 @@ title: Self Hosted installation over Kubernetes - Create Projects
 ---
 ## Introduction
 
-The Administrator creates Run:AI Projects using via the [Run:AI user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:ai Projects using via the [Run:ai user interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
 
-Run:AI Projects are implemented as Kubernetes namespaces. When creating a new Run:AI Project, Run:AI does the following automatically:
+Run:ai Projects are implemented as Kubernetes namespaces. When creating a new Run:ai Project, Run:ai does the following automatically:
 
 * Creates the namespace.
-* Labels the namespace as _managed by Run:AI_.
-* Provides access to the namespace for Run:AI services.
+* Labels the namespace as _managed by Run:ai_.
+* Provides access to the namespace for Run:ai services.
 * Associates users with the namespace. 
 
 This process may __need to be altered__ if:
 
 * The organization has an internal naming convention for namespaces. 
-* The organization does not allow Run:AI certain privileges which allow the above automation.
+* The organization does not allow Run:ai certain privileges which allow the above automation.
 
 The purpose of this document is to explain how to handle these scenarios.
 
 
 ## Using Existing Namespaces
 
-By default, creating a Project named `<PROJECT-NAME>` Run:AI will create a Kubernetes namespace named `runai-<PROJECT-NAME>`.  However, organizations with an existing Kubernetes practice may already have existing Kubernetes namespaces where they wish to run machine-learning workloads or their Kubernetes namespace naming convention does not allow the `runai-` prefix. As such, Run:AI allows the __association__ of a Run:AI Project with any existing Kubernetes namespace:
+By default, creating a Project named `<PROJECT-NAME>` Run:ai will create a Kubernetes namespace named `runai-<PROJECT-NAME>`.  However, organizations with an existing Kubernetes practice may already have existing Kubernetes namespaces where they wish to run machine-learning workloads or their Kubernetes namespace naming convention does not allow the `runai-` prefix. As such, Run:ai allows the __association__ of a Run:ai Project with any existing Kubernetes namespace:
 
-* When [setting up](cluster.md) a Run:AI cluster, Disable namespace creation by setting the flag `createNamespaces` to `false`.
-* Using the Run:AI User Interface, create a new Project `<PROJECT-NAME>`
-* Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:AI project by running:
+* When [setting up](cluster.md) a Run:ai cluster, Disable namespace creation by setting the flag `createNamespaces` to `false`.
+* Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`
+* Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:ai project by running:
 
 ```
 kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 ```
 
 
-## Limiting Run:AI Access Roles 
+## Limiting Run:ai Access Roles 
 
-When installing Run:AI, you are providing Run:AI with various privileges within the Kubernetes cluster. For a detailed explanation of the Kubernetes roles provided to Run:AI, see the article [Understand the Kubernetes Cluster Access provided to Run:AI](../../config/access-roles.md).
+When installing Run:ai, you are providing Run:ai with various privileges within the Kubernetes cluster. For a detailed explanation of the Kubernetes roles provided to Run:ai, see the article [Understand the Kubernetes Cluster Access provided to Run:ai](../../config/access-roles.md).
 
-Some organizations prefer to limit the assigning of these roles to Run:AI, per an organizational policy. The two roles related to Project creation and maintenance are:
+Some organizations prefer to limit the assigning of these roles to Run:ai, per an organizational policy. The two roles related to Project creation and maintenance are:
 
-1. The ability of Run:AI to automatically create Kubernetes namespaces.
+1. The ability of Run:ai to automatically create Kubernetes namespaces.
 
-2. The ability of Run:AI to assign access to Run:AI Services and set the allowed users. 
+2. The ability of Run:ai to assign access to Run:ai Services and set the allowed users. 
 
-## 1. Do not allow Run:AI to create namespaces
+## 1. Do not allow Run:ai to create namespaces
 
-* When [setting up Run:AI cluster](cluster.md), Disable namespace creation by setting the flag `createNamespaces` to false.
-* Using the Run:AI User Interface, create a new Project `<PROJECT-NAME>`
-* Create a namespace `<NAMESPACE>` and associate with Run:AI by running:
+* When [setting up Run:ai cluster](cluster.md), Disable namespace creation by setting the flag `createNamespaces` to false.
+* Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`
+* Create a namespace `<NAMESPACE>` and associate with Run:ai by running:
 
 ```
 kubectl create ns <NAMESPACE> 
 kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 ```
 
-## 2. Do not allow Run:AI to assign roles 
+## 2. Do not allow Run:ai to assign roles 
 
 !!! Important Note
     This option is less recommended due to the resulting high maintenance overhead, as described below. 
 
-* When [setting up Run:AI cluster](cluster.md), Disable assigning of access to Run:AI services by setting the flag  `createRoleBindings` to `false`.
+* When [setting up Run:ai cluster](cluster.md), Disable assigning of access to Run:ai services by setting the flag  `createRoleBindings` to `false`.
 
 
  When these settings are applied, the administrator must perform additional manual steps as follows:
@@ -148,4 +148,4 @@ subjects:
 
 ### Project Update
 
-You can update all Project properties via the Run:AI administration user interface, except for Project Users.
+You can update all Project properties via the Run:ai administration user interface, except for Project Users.

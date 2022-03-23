@@ -11,7 +11,7 @@ Log in to `<company-name>.run.ai/dashboards/now`.
 * Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
 
 
-### 2. Verify that the Run:AI services are running
+### 2. Verify that the Run:ai services are running
 
 Run:
 
@@ -36,7 +36,7 @@ Run:
 kubectl get daemonset -n runai
 ```
 
-A _Daemonset_ runs on every node. Some of the Run:AI daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the _desired_ number is equal to  _current_ and to _ready_. 
+A _Daemonset_ runs on every node. Some of the Run:ai daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the _desired_ number is equal to  _current_ and to _ready_. 
 
 
 Run:
@@ -45,11 +45,11 @@ Run:
 runai list projects
 ```
 
-Create a Project using the Run:AI user interface and verify that the Project is reflected in the above command. 
+Create a Project using the Run:ai user interface and verify that the Project is reflected in the above command. 
 
 ### 3. Submit a Job
 
-Submitting a Job will allow you to verify that the Run:AI scheduling service is in order. 
+Submitting a Job will allow you to verify that the Run:ai scheduling service is in order. 
 
 * Make sure that the Project you have created has a quota of at least 1 GPU
 * Run:
@@ -131,7 +131,7 @@ kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to set up an internet proxy or certificate, please contact Run:AI customer support. 
+* If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
 __Machine Clocks are not synced__
@@ -139,7 +139,7 @@ __Machine Clocks are not synced__
 Run: `date` on cluster nodes and verify that date/time is correct.  If not,
 
 * Set the Linux time service (NTP).
-* Restart Run:AI services. Depending on the previous time gap between servers, you may need to reinstall the Run:AI cluster
+* Restart Run:ai services. Depending on the previous time gap between servers, you may need to reinstall the Run:ai cluster
 
 
 __Prometheus pods are not running__
@@ -151,11 +151,11 @@ Run: `kubectl get pods -n monitoring -o wide`
 
 ## Symptom: Projects are not syncing
 
-Create a Project on the Run:AI user interface, then run: `runai list projects`. The new Project does __not__ appear.
+Create a Project on the Run:ai user interface, then run: `runai list projects`. The new Project does __not__ appear.
 
- __Typical root cause:__ The Run:AI _agent_ is not syncing properly. This may be due to:
+ __Typical root cause:__ The Run:ai _agent_ is not syncing properly. This may be due to:
 
- * A dependency on the internal Run:AI database. See [separate](#symptom-internal-database-has-not-started) symptom below
+ * A dependency on the internal Run:ai database. See [separate](#symptom-internal-database-has-not-started) symptom below
  * Firewall issues
 
 Run:
@@ -169,7 +169,7 @@ See if the agent is in _Running_ state. Select the agent's full name and run:
 Verify that there are no errors. If there are connectivity related errors you may need to:
 
 * Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
-* If you need to setup an internet proxy or certificate, please contact Run:AI customer support. 
+* If you need to setup an internet proxy or certificate, please contact Run:ai customer support. 
 
 
 ## Symptom: Cluster Installation failed on Rancher-based Kubernetes (RKE)
@@ -178,7 +178,7 @@ Cluster is not installed. When running `kubectl get pods -n runai` you see that 
 
 __Resolution__
 
-During initialization, Run:AI creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
 
 ``` YAML
 services:
@@ -241,7 +241,7 @@ kubectl logs -n runai runa-db-0
 
 ### Internal Networking Issues
 
-Run:AI is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a Pod with networking utilities and use it for network resolution:
+Run:ai is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a Pod with networking utilities and use it for network resolution:
 
 ```
 kubectl run -i --tty netutils --image=dersimn/netutils -- bash

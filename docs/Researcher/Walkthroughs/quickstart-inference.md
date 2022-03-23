@@ -6,20 +6,20 @@ Machine learning (ML) inference is the process of running live data points into 
 
 With Inference, you are taking a trained _Model_ and deploying it into a production environment. The deployment must align with the organization's production standards such as average and 95% response time as well as up-time. 
 
-For further information on Inference at Run:AI, see [Inference overview](../../developer/inference/overview.md).
+For further information on Inference at Run:ai, see [Inference overview](../../developer/inference/overview.md).
 
 ## Prerequisites 
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI user interface.
+*  Login to the Projects area of the Run:ai user interface.
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
@@ -47,7 +47,7 @@ The output shows the service URL with which to connect to the service.
 
 ### Query the Inference Server
 
-The specific `Marian` server is accepting queries over the _WebSockets_ protocol. You can use the Run:AI Marian [sample client](https://github.com/run-ai/models/tree/main/models/marian/client){target=_blank}.
+The specific `Marian` server is accepting queries over the _WebSockets_ protocol. You can use the Run:ai Marian [sample client](https://github.com/run-ai/models/tree/main/models/marian/client){target=_blank}.
 
 In the following command, replace  `<HOSTNAME>` and `<PORT>` with the service URL displayed in the previous `list` command:
 
@@ -66,9 +66,9 @@ You should see a log of the inference call:
 
 ![inference-client-output.png](img/inference-client-output.png)
 
-### View status on the Run:AI User Interface
+### View status on the Run:ai User Interface
 
-* Open the Run:AI user interface.
+* Open the Run:ai user interface.
 * Under "Jobs" you can view the new Workload:
 
 ![inference-job-list.png](img/inference-job-list.png) 

@@ -1,4 +1,4 @@
-# Submit a Run:AI Job via Kubernetes API
+# Submit a Run:ai Job via Kubernetes API
 
 * 
 
@@ -6,7 +6,7 @@ This article is a complementary article to the article on [launching jobs via YA
 
 The article uses Python, though Kubernetes API is available in several other programming languages. 
 
-## Submit a Run:AI Job 
+## Submit a Run:ai Job 
 
 
 ``` python
@@ -20,7 +20,7 @@ config.load_kube_config()
 
 with client.ApiClient() as api_client:
 
-    namespace = 'runai-team-a'  # Run:AI project name is prefixed by runai-
+    namespace = 'runai-team-a'  # Run:ai project name is prefixed by runai-
     jobname = 'my-job'
     username = 'john'  # used in un-authenticated systems only
     gpus = 1

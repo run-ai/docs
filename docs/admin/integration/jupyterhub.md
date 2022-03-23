@@ -1,13 +1,13 @@
-# Connect JupyterHub with Run:AI
+# Connect JupyterHub with Run:ai
 
 
 ## Overview
 
-A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook __runs inside the user container__. For more information, see [Using a Jupyter Notebook within a Run:AI Job](../../Researcher/tools/dev-jupyter.md).
+A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook __runs inside the user container__. For more information, see [Using a Jupyter Notebook within a Run:ai Job](../../Researcher/tools/dev-jupyter.md).
 
 [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. 
 
-This document explains how to set up JupyterHub to integrate with Run:AI such that Notebooks spawned via JuptyerHub will use resources scheduled by Run:AI.
+This document explains how to set up JupyterHub to integrate with Run:ai such that Notebooks spawned via JuptyerHub will use resources scheduled by Run:ai.
 
 
 ## Installing JupyterHub
@@ -48,7 +48,7 @@ kubectl apply -f pv-example.yaml
 
 ### Create a configuration file
 
-Create a configuration file for JupyterHub. An example configuration file for Run:AI can be found in [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml){target=_blank}. It contains 3 sample Run:AI configurations. 
+Create a configuration file for JupyterHub. An example configuration file for Run:ai can be found in [https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml](https://raw.githubusercontent.com/run-ai/docs/master/install/jupyterhub/config.yaml){target=_blank}. It contains 3 sample Run:ai configurations. 
 
 * Download the file 
 * Replace `<SECRET-TOKEN>` with a random number generated, by running `openssl rand -hex 32`
@@ -86,7 +86,7 @@ kubectl get service -n jhub proxy-public
 
 Use the `External IP` of the service to access the service.
 
-Login with Run:AI Project name as user name.
+Login with Run:ai Project name as user name.
 
 ## Troubleshooting the JupyterHub Installation
 
@@ -122,4 +122,4 @@ Save the file and then try to access JupyterHub by using the external IP from th
 
 
 !!! Caution
-    Jupyter hub integration does not currently work properly when the Run:AI Project name includes a hyphen ('-'). We are working to fix that. 
+    Jupyter hub integration does not currently work properly when the Run:ai Project name includes a hyphen ('-'). We are working to fix that. 

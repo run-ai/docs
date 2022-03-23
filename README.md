@@ -1,15 +1,15 @@
-# Run:AI Documentation Library
+# Run:ai Documentation Library
 
-Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/) on the run.ai website
+Welcome to the Run:ai documentation area. For an introduction about what is the Run:ai Platform see [Run:ai platform](https://www.run.ai/platform/) on the run.ai website
 
 This documentation is based on [mkdocs](https://www.mkdocs.org/). To view the library as a website go to [docs.run.ai](https://docs.run.ai). 
 
 
-The Run:AI documentation is targeting two personas:
+The Run:ai documentation is targeting two personas:
 
-* Run:AI Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
+* Run:ai Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
 
-* Researcher - Using Run:AI to submit jobs. Researcher documentation can be found [here](docs/Researcher/overview-researcher.md).
+* Researcher - Using Run:ai to submit jobs. Researcher documentation can be found [here](docs/Researcher/overview-researcher.md).
 
 ## Example Docker Images
 
@@ -24,7 +24,7 @@ To get support use the following channels:
 
 * On our [website](https://run.ai), under _Support_ use the support form.
 
-* On the bottom right of the Run:AI user interface, use the _Help_ widget.
+* On the bottom right of the Run:ai user interface, use the _Help_ widget.
 
 * On the bottom right of this page, use the _Help_ widget.
 

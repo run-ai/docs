@@ -1,8 +1,8 @@
 ## Why?
 
-In some business scenarios, you may want to direct the Run:AI scheduler to schedule a Workload to a specific node or a node group. For example, in some academic institutions, Hardware is bought using a specific grant and thus "belongs" to a specific research group.
+In some business scenarios, you may want to direct the Run:ai scheduler to schedule a Workload to a specific node or a node group. For example, in some academic institutions, Hardware is bought using a specific grant and thus "belongs" to a specific research group.
 
-Run:AI allows this "taint" by labeling a node, or a set of nodes and then during scheduling, using the flag `--node-type <label>` to force this allocation
+Run:ai allows this "taint" by labeling a node, or a set of nodes and then during scheduling, using the flag `--node-type <label>` to force this allocation
 
 !!! Important
     There is a tradeoff to be weighed in when allowing Researchers to designate specific nodes. Overuse of this feature limits the scheduler in finding an optimal resource and thus reduces overall cluster utilization.
@@ -12,7 +12,7 @@ Run:AI allows this "taint" by labeling a node, or a set of nodes and then during
 
 To configure a node group:
 
-*   Get the names of the nodes where you want to limit Run:AI. To get a list of nodes, run:
+*   Get the names of the nodes where you want to limit Run:ai. To get a list of nodes, run:
 
         kubectl get nodes
 

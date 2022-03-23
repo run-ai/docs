@@ -9,7 +9,7 @@ The purpose of the Administrator REST API is to provide an easy-to-use programmi
 ## Endpoint URL for API
 
 
-The domain used for Administrator REST APIs is the same domain used to browse for the Run:AI User Interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
+The domain used for Administrator REST APIs is the same domain used to browse for the Run:ai User Interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
 
 
 ## Authentication
@@ -49,12 +49,12 @@ For example, if you have an Administrator role, you can get a list of clusters b
 (replace `<ACCESS-TOKEN>` with the bearer token from above).
 
 
-For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:AI Administrator REST API to create a User and a Project and set the User to the Project.  
+For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai Administrator REST API to create a User and a Project and set the User to the Project.  
 
 
 ## Administrator API Documentation
 
-The Administrator API provides the developer interfaces for getting and manipulating the Run:AI metadata objects such as Projects, Departments, Clusters, and Users.
+The Administrator API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
 
 
 Detailed API documentation can be found under [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. The document uses the [Open API specification](https://swagger.io/specification/) to describe the API. You can test the API within the document after creating a token.

@@ -6,9 +6,9 @@ Sometimes you want to use sensitive information within your code. Examples are: 
 
 A Kubernetes secret may hold multiple __key - value pairs__.
 
-## Using Secrets in Run:AI Jobs
+## Using Secrets in Run:ai Jobs
 
-Our goal is to provide Run:AI Jobs with secrets as input in a secure way. Using the Run:AI command-line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
+Our goal is to provide Run:ai Jobs with secrets as input in a secure way. Using the Run:ai command-line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
 
 ## Creating a secret
 
@@ -32,7 +32,7 @@ kubectl apply -f <file-name>
 
 !!! Notes
     * Secrets are base64 encoded
-    * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:AI Project name above. Run:AI provides the ability to propagate secrets throughout all Run:AI Projects. See below.
+    * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:ai Project name above. Run:ai provides the ability to propagate secrets throughout all Run:ai Projects. See below.
 
 ## Attaching a secret to a Job on Submit
 
@@ -52,21 +52,21 @@ runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 ### Secrets and Projects
 
 <!-- !!! Important
-    The feature described below is not enabled by default in Run:AI cluster installations -->
+    The feature described below is not enabled by default in Run:ai cluster installations -->
 
-As per the note above, secrets are namespace-specific. If your secret relates to all Run:AI Projects, do the following to propagate the secret to all Projects:
+As per the note above, secrets are namespace-specific. If your secret relates to all Run:ai Projects, do the following to propagate the secret to all Projects:
 
 * Create a secret within the `runai` namespace.
-* Run the following once to allow Run:AI to propagate the secret to all Run:AI Projects:
+* Run the following once to allow Run:ai to propagate the secret to all Run:ai Projects:
 
 ```
 runai-adm set secret <secret name> --cluster-wide
 ```
 
 !!! Reminder
-    The Run:AI Administrator CLI can be obtained [here](../runai-setup/config/cli-admin-install.md).
+    The Run:ai Administrator CLI can be obtained [here](../runai-setup/config/cli-admin-install.md).
 
-To delete a secret from all Run:AI Projects, run:
+To delete a secret from all Run:ai Projects, run:
 
 ```
 runai-adm remove secret <secret name> --cluster-wide

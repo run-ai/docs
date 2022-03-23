@@ -1,17 +1,17 @@
-# Install the Run:AI Command-line Interface
+# Install the Run:ai Command-line Interface
 
-The Run:AI Command-line Interface (CLI) is __one__ of the ways for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
+The Run:ai Command-line Interface (CLI) is __one__ of the ways for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
 
-The instructions below will guide you through the process of installing the CLI. The Run:AI CLI runs on Mac and Linux. You can run the CLI on Windows by using Docker for Windows. See the end of this document.
+The instructions below will guide you through the process of installing the CLI. The Run:ai CLI runs on Mac and Linux. You can run the CLI on Windows by using Docker for Windows. See the end of this document.
 
 ## Prerequisites
 
 *   When installing the command-line interface, it is worth considering future upgrades:
-     * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:AI commands
+     * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:ai commands
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
 
 *   (CLI version v2.2.76 or earlier) __Kubectl__ (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}.
-*    (CLI version v2.2.76 or earlier) __Helm__. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:AI works with Helm version 3 only (not helm 2).
+*    (CLI version v2.2.76 or earlier) __Helm__. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
 *   A __Kubernetes configuration file__ obtained from the Kubernetes cluster installation.
 
 ## Researcher Authentication
@@ -35,9 +35,9 @@ export KUBECONFIG=<Kubernetes-config-file>
 kubectl get nodes
 ```
 
-### Install Run:AI CLI 
+### Install Run:ai CLI 
 
-*   Download the latest release from the Run:AI [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
+*   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
 *   Unarchive the downloaded file
 *   Install by running:
 
@@ -45,7 +45,7 @@ kubectl get nodes
 sudo ./install-runai.sh
 ```
 
-The command will install Run:AI CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
+The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
 
 ```
 sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
@@ -62,7 +62,7 @@ runai list jobs
 
 ## Install Command Auto-Completion 
 
-It is possible to configure your Linux/Mac shell to complete Run:AI CLI commands. This feature works on _bash_ and _zsh_ shells only.
+It is possible to configure your Linux/Mac shell to complete Run:ai CLI commands. This feature works on _bash_ and _zsh_ shells only.
 
 ### Zsh
 
@@ -93,7 +93,7 @@ source <(runai completion bash)
 
 See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
-## Update the Run:AI CLI
+## Update the Run:ai CLI
 
 To update the CLI to the latest version run:
 
@@ -101,7 +101,7 @@ To update the CLI to the latest version run:
 sudo runai update
 ```
 
-## Delete the Run:AI CLI
+## Delete the Run:ai CLI
 
 If you have installed using the default path, run:
 
@@ -109,9 +109,9 @@ If you have installed using the default path, run:
 sudo rm -rf /usr/local/bin/runai /usr/local/runai
 ```
 
-If you have installed using a custom path, delete all Run:AI files in this path.
+If you have installed using a custom path, delete all Run:ai files in this path.
 
-## Use Run:AI on Windows
+## Use Run:ai on Windows
 
 Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
 
@@ -127,6 +127,6 @@ Test the image by running:
 docker run -it runai-cli bash
 ```
 
-Try and connect to your cluster from inside the docker by running a Run:AI CLI command. E.g. `runai list projects`.
+Try and connect to your cluster from inside the docker by running a Run:ai CLI command. E.g. `runai list projects`.
 
 Distribute the image to Windows users.

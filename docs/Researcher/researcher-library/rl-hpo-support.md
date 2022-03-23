@@ -1,6 +1,6 @@
 # Researcher Library: Hyperparameter Optimization Support
 
-The Run:AI Researcher Library is a python library you can add to your deep learning python code. The hyperparameter optimization(HPO) support module of the library is a helper library for hyperparameter optimization (HPO) experiments
+The Run:ai Researcher Library is a python library you can add to your deep learning python code. The hyperparameter optimization(HPO) support module of the library is a helper library for hyperparameter optimization (HPO) experiments
 
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process. Example hyperparameters: Learning rate, Batch size, Different optimizers, number of layers.
@@ -14,7 +14,7 @@ With the reporter module, you can externalize information such as progress, accu
 
 ### Prerequisites
 
-Run:AI HPO library is dependent on [PyYAML](https://github.com/yaml/pyyaml){target=_blank}.
+Run:ai HPO library is dependent on [PyYAML](https://github.com/yaml/pyyaml){target=_blank}.
 Install it using the command:
 
 ```
@@ -39,9 +39,9 @@ pip install runai
 import runai.hpo
 ```
 
-* Initialize the Run:AI HPO library with a path to a directory shared between all cluster nodes (typically using an NFS server).
+* Initialize the Run:ai HPO library with a path to a directory shared between all cluster nodes (typically using an NFS server).
 We recommend specifying a unique name for the experiment, the name will be used to create a sub-directory on the shared folder.
-To do so, we recommend using the [environment variables](../../best-practices/env-variables/) `JOB_NAME` and `JOB_UUID` which are injected to the container by Run:AI.
+To do so, we recommend using the [environment variables](../../best-practices/env-variables/) `JOB_NAME` and `JOB_UUID` which are injected to the container by Run:ai.
 
 ``` python
 hpo_root = '/path/to/nfs'
@@ -59,7 +59,7 @@ strategy = runai.hpo.Strategy.GridSearch
 ```
 
 
-* Call the Run:AI HPO library to specify a set of hyperparameters and pick a specific configuration for this experiment.
+* Call the Run:ai HPO library to specify a set of hyperparameters and pick a specific configuration for this experiment.
 
 ``` python
 config = runai.hpo.pick(

@@ -1,6 +1,6 @@
-# Scheduling Virtual Machines using Run:AI
+# Scheduling Virtual Machines using Run:ai
 
-Many organizations use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at a large scale are best managed by Kubernetes and Run:AI is based on Kubernetes. 
+Many organizations use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at a large scale are best managed by Kubernetes and Run:ai is based on Kubernetes. 
 
 It is possible to mix and match containers and VMs to some extent using a technology called [KubeVirt]( https://kubevirt.io){target=_blank}. KubeVirt allows running VMs inside containers on top of Kubernetes. 
 
@@ -74,7 +74,7 @@ spec:
 
 You must create a CRD called _vm_ for each virtual machine. `vm` is a reference to a virtual machine and its capabilities.
 
-The Run:AI project is matched to a Kubernetes namespace. Unless manually configured, the namespace is `runai-<PROJECT-NAME>`. __Per Run:AI Project__, create a `vm` object. See KubeVirt [documentation](https://kubevirt.io/labs/kubernetes/lab1) example. Specifically, the created YAML should look like:
+The Run:ai project is matched to a Kubernetes namespace. Unless manually configured, the namespace is `runai-<PROJECT-NAME>`. __Per Run:ai Project__, create a `vm` object. See KubeVirt [documentation](https://kubevirt.io/labs/kubernetes/lab1) example. Specifically, the created YAML should look like:
 
 
 ``` YAML
@@ -132,7 +132,7 @@ Run:
 virtctl start testvm -n runai-test
 ```
 
-You can now see the VMs pod in Run:AI:
+You can now see the VMs pod in Run:ai:
 
 ```
 runai list -A

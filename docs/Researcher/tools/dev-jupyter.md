@@ -1,8 +1,8 @@
-# Use a Jupyter Notebook with a Run:AI Job
+# Use a Jupyter Notebook with a Run:ai Job
 
 A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook __runs inside the user container__. 
 
-This document is about accessing the remote container created by Run:AI via such a notebook. Alternatively, Run:AI provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:AI](../../admin/integration/jupyterhub.md).
+This document is about accessing the remote container created by Run:ai via such a notebook. Alternatively, Run:ai provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:ai](../../admin/integration/jupyterhub.md).
 
 
 

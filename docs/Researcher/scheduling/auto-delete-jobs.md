@@ -1,6 +1,6 @@
 ## Introduction
 
-Jobs can be started via Kubeflow, Run:AI CLI, Rancher or via direct Kubernetes API. When Jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old Jobs by running the command:
+Jobs can be started via Kubeflow, Run:ai CLI, Rancher or via direct Kubernetes API. When Jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old Jobs by running the command:
 
     runai list jobs
 
@@ -15,7 +15,7 @@ But this may not be scalable for a production system.
 It is possible to flag a Job for automatic deletion sometime after it finishes.
 
 !!! Important note 
-    Deleting a Job, deletes the container behind it, and with it all related information such as Job logs. Data that was saved by the Researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:AI user interface
+    Deleting a Job, deletes the container behind it, and with it all related information such as Job logs. Data that was saved by the Researcher on a shared drive is not affected. The Job is also __not__ deleted from the Run:ai user interface
 
 ## Enable Automatic Deletion in Cluster (Admin only)
 
@@ -60,4 +60,4 @@ runai submit myjob1 --ttl-after-finish 2h
 
 ## Using Templates to set Automatic Deletion as Default
 
-You can use Run:AI templates to set auto-delete to be the default. See [template configuration](../../admin/researcher-setup/templates.md) for more information on how to make this flag a part of the default template.
+You can use Run:ai templates to set auto-delete to be the default. See [template configuration](../../admin/researcher-setup/templates.md) for more information on how to make this flag a part of the default template.

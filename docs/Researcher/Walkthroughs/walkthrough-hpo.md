@@ -8,20 +8,20 @@ To search for good hyperparameters, Researchers typically start a series of smal
 
 There are several strategies for searching the hyperparameter space. Most notable are __Random search__ and __Grid search__. The former, as its name implies, selects parameters at random while the latter does an exhaustive search from a list of pre-selected values.
 
-Run:AI provides the ability to run, manage, and view HPO runs. The following is a Quickstart of such a scenario.
+Run:ai provides the ability to run, manage, and view HPO runs. The following is a Quickstart of such a scenario.
 
 ## Prerequisites
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI user interface.
+*  Login to the Projects area of the Run:ai user interface.
 *  Add a Project named "team-a".
 *  Allocate _2_ GPUs to the Project.
 *  On shared storage create a library to store HPO results. E.g. ``/nfs/john/hpo``.
@@ -36,16 +36,16 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. The code uses the [Run:AI Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
+The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. The code uses the [Run:ai Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
 
 
-        # import Run:AI HPO library
+        # import Run:ai HPO library
         import runai.hpo
 
         # select Random search or grid search
         strategy = runai.hpo.Strategy.GridSearch
 
-        # initialize the Run:AI HPO library. Send the NFS directory used for sync
+        # initialize the Run:ai HPO library. Send the NFS directory used for sync
         runai.hpo.init("/nfs")
 
         # pick a configuration for this HPO experiment
@@ -118,7 +118,7 @@ The logs will contain a couple of lines worth noting:
 
 ### Examine the Results
 
-The Run:AI HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is a snapshot of the file for two experiments with two epochs each:
+The Run:ai HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is a snapshot of the file for two experiments with two epochs each:
 
 ```
 creationTime: 24/08/2020 08:50:06
@@ -173,9 +173,9 @@ Finally, you can delete the HPO Job by running:
 
 ## See Also
 
-For further information on the Run:AI HPO support library see:
+For further information on the Run:ai HPO support library see:
 
-* [The Run:AI HPO Support Library](../researcher-library/rl-hpo-support.md)
+* [The Run:ai HPO Support Library](../researcher-library/rl-hpo-support.md)
 * Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}
 
 

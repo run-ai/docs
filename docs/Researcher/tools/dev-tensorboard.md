@@ -1,13 +1,13 @@
 # Connecting to TensorBoard
 
-Once you launch a Deep Learning workload using Run:AI, you may want to view its progress. A popular tool for viewing progress is [TensorBoard](https://www.tensorflow.org/tensorboard){target=_blank}.
+Once you launch a Deep Learning workload using Run:ai, you may want to view its progress. A popular tool for viewing progress is [TensorBoard](https://www.tensorflow.org/tensorboard){target=_blank}.
 
-The document below explains how to use TensorBoard to view the progress or a Run:AI Job.
+The document below explains how to use TensorBoard to view the progress or a Run:ai Job.
 
 
 ## Submit a Workload
 
-When you submit a workload, your workload must save TensorBoard logs which can later be viewed. Follow [this](https://www.tensorflow.org/tensorboard/get_started){target=_blank} document on how to do this. You can also view the Run:AI sample code [here](https://github.com/run-ai/docs/blob/master/quickstart/unattended-execution/main.py){target=_blank}.
+When you submit a workload, your workload must save TensorBoard logs which can later be viewed. Follow [this](https://www.tensorflow.org/tensorboard/get_started){target=_blank} document on how to do this. You can also view the Run:ai sample code [here](https://github.com/run-ai/docs/blob/master/quickstart/unattended-execution/main.py){target=_blank}.
 
 The code shows:
 

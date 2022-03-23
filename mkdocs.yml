@@ -1,6 +1,6 @@
-site_name: Run:AI Documentation Library
+site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
-copyright: Copyright © 2020 - 2022 Run:AI
+copyright: Copyright © 2020 - 2022 Run:ai
 repo_url: https://github.com/run-ai/docs/
 docs_dir: docs 
 theme: 
@@ -116,7 +116,7 @@ nav:
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
-    - 'Run:AI Setup' : 
+    - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
@@ -155,7 +155,7 @@ nav:
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
 
-        - 'Review Kubernetes Access provided to Run:AI' : 'admin/runai-setup/config/access-roles.md'
+        - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
         - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
@@ -173,7 +173,7 @@ nav:
       - 'Troubleshooting' : 'admin/researcher-setup/cli-troubleshooting.md'
       - 'Researcher UI' : 'admin/researcher-setup/researcher-ui-setup.md'
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
-      - 'Switch from Docker to Run:AI ' : 'admin/researcher-setup/docker-to-runai.md'
+      - 'Switch from Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
       - 'Templates' : 'admin/researcher-setup/templates.md'
@@ -197,7 +197,7 @@ nav:
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
-      - 'Run:AI Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
+      - 'Run:ai Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
       - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
       - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
       - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
@@ -237,7 +237,7 @@ nav:
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
-      - 'The Run:AI Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
+      - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
 #      - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'

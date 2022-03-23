@@ -1,6 +1,6 @@
 ## Description
 
-Submit a Run:AI Job for execution.
+Submit a Run:ai Job for execution.
 
 ## Synopsis
 
@@ -64,7 +64,7 @@ runai submit
 
 ## Examples
 
-All examples assume a Run:AI Project has been set using `runai config project <project-name>`.
+All examples assume a Run:ai Project has been set using `runai config project <project-name>`.
 
 Start an interactive Job:
 
@@ -139,7 +139,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Provide the name of a template. A template can provide default and mandatory values. 
 
 #### --job-name-prefix string
-> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:AI will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
+> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
 
 ### Container Related
 
@@ -272,7 +272,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### --mount-propagation
 > The flag allows for sharing volumes mounted by a container to other containers in the same pod, or even to other pods on the same node.
-> When the flag is set, Run:AI will set mount propagation to the value of `HostToContainer` as documented [here](https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation){target=_blank}. With `HostToContainer` the volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.
+> When the flag is set, Run:ai will set mount propagation to the value of `HostToContainer` as documented [here](https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation){target=_blank}. With `HostToContainer` the volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.
 ### Network
 
 #### --host-ipc
@@ -335,7 +335,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 #### --run-as-user
->  Run in the context of the current user running the Run:AI command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:AI via SAML , you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+>  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML , you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 
 ### Scheduling
@@ -357,7 +357,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Set the logging level. One of: debug | info | warn | error (default "info").
 
 #### --project | -p (string)
->  Specify the Project to which the command applies. Run:AI Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
+>  Specify the Project to which the command applies. Run:ai Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
 
 #### --help | -h
 >  Show help text.

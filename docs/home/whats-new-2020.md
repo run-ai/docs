@@ -47,12 +47,12 @@ We released a module that helps the Researcher perform __Hyperparameter optimiza
 
 ## September 3rd, 2020
 
-__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:AI Scheduler Fraction](../../Researcher/scheduling/the-runai-scheduler/#gpu-fractions) for more.
+__GPU Fractions__ now run in training and not only interactive. GPU Fractions training Job can be preempted, bin-packed and consolidated like any integer Job. See [Run:ai Scheduler Fraction](../../Researcher/scheduling/the-runai-scheduler/#gpu-fractions) for more.
 
 
 ## August 10th, 2020
 
-Run:AI Now supports __Distributed Training__ and __Gang Scheduling__. For further information, see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) quickstart.
+Run:ai Now supports __Distributed Training__ and __Gang Scheduling__. For further information, see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) quickstart.
 
 ## August 4th, 2020
 
@@ -60,11 +60,11 @@ There is now an optional second level of Project hierarchy called __Departments_
 
 ## July 28th, 2020
 
-You can now enforce a cluster-wise setting that mandates all containers running using the Run:AI CLI to run as __non root__. For further information, see [Enforce non-root Containers](../admin/runai-setup/config/non-root-containers.md)
+You can now enforce a cluster-wise setting that mandates all containers running using the Run:ai CLI to run as __non root__. For further information, see [Enforce non-root Containers](../admin/runai-setup/config/non-root-containers.md)
 
 ## July 21th, 2020
 
-It is now possible to mount a __Persistent Storage Claim__ using the Run:AI CLI. See the ``--pvc`` flag in the [runai submit](../../Researcher/cli-reference/runai-submit/) CLI flag
+It is now possible to mount a __Persistent Storage Claim__ using the Run:ai CLI. See the ``--pvc`` flag in the [runai submit](../../Researcher/cli-reference/runai-submit/) CLI flag
 
 
 ## June 13th, 2020
@@ -97,9 +97,9 @@ For further information on how to set up duration limits see: [Working with Proj
 
 #### Kubernetes Operators
 
-Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a Run:AI cluster. 
+Cluster installation now works with Kubernetes _Operators_. Operators make it easy to install, update, and delete a Run:ai cluster. 
 
-For further information see: [Upgrading a Run:AI Cluster Installation](../admin/runai-setup/cluster-setup/cluster-upgrade.md) and [Deleting a a Run:AI Cluster Installation](../admin/runai-setup/cluster-setup/cluster-delete.md)
+For further information see: [Upgrading a Run:ai Cluster Installation](../admin/runai-setup/cluster-setup/cluster-upgrade.md) and [Deleting a a Run:ai Cluster Installation](../admin/runai-setup/cluster-setup/cluster-delete.md)
 
 ## March 3rd, 2020
 

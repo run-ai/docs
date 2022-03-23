@@ -3,17 +3,17 @@
 
 ## What are Metrics
 
-[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics){target=_blank} are numeric measurements recorded __over time__ that are emitted from the Run:AI cluster. Typical metrics involve utilization, allocation, time measurements, and the like. Metrics are used in Run:AI dashboards as well as in the Run:AI administration user interface. 
+[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics){target=_blank} are numeric measurements recorded __over time__ that are emitted from the Run:ai cluster. Typical metrics involve utilization, allocation, time measurements, and the like. Metrics are used in Run:ai dashboards as well as in the Run:ai administration user interface. 
 
-The purpose of this document is to detail the structure and purpose of metrics emitted by Run:AI to enable customers to create custom dashboards or integrate metric data into other monitoring systems. 
+The purpose of this document is to detail the structure and purpose of metrics emitted by Run:ai to enable customers to create custom dashboards or integrate metric data into other monitoring systems. 
 
-Run:AI uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
-
-
-##  Published Run:AI Metrics
+Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
 
 
-Following is the list of published Run:AI Metrics
+##  Published Run:ai Metrics
+
+
+Following is the list of published Run:ai Metrics
 
 | Metric name                                    | Labels                                                                | Measurement | Description                           |
 | ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,12 +56,12 @@ Following is the list of published Run:AI Metrics
 | runai_job_swap_memory_used_bytes               |  {clusterId, job_uuid, job_name, project, node}                       | Bytes       | Used Swap CPU Memory for the job | 
 
 
-Following is a list of labels appearing in Run:AI metrics:
+Following is a list of labels appearing in Run:ai metrics:
 
 | Label                  | Description   |
 | ---------------------- | -------------------------------------------------------------- |
 | clusterId              | Cluster Identifier                 |
-| department_name        | Name of Run:AI Department          |
+| department_name        | Name of Run:ai Department          |
 | cpu_quota              | CPU limit per project              |
 | gpu                    | GPU index                          |
 | gpu_guaranteed_quota   | Guaranteed GPU quota per project   |
@@ -73,18 +73,18 @@ Following is a list of labels appearing in Run:AI metrics:
 | pod_namespace          | Pod namespace                      |
 | memory_quota           | CPU memory limit per project       |
 | node                   | Node name                          |
-| project                | Name of Run:AI Project                                      |
+| project                | Name of Run:ai Project                                      |
 | status                 | Job status: Running, Pending, etc. For more information on Job statuses see [document](https://docs.run.ai/Researcher/scheduling/job-statuses/) |
 | user                   | User identifier                                            |
 
 
-## Custom Run:AI Metrics
+## Custom Run:ai Metrics
 
-The Run:AI [reporting module](../../Researcher/researcher-library/rl-reporting.md) is a python library that allows users to externalize custom metrics from inside the container. When the python code sends a metric named `<reporter_metric_name>`, you will be able to query Prometheus for a metric named `reporter_push_gateway_parameter_<reporter_metric_name>`.
+The Run:ai [reporting module](../../Researcher/researcher-library/rl-reporting.md) is a python library that allows users to externalize custom metrics from inside the container. When the python code sends a metric named `<reporter_metric_name>`, you will be able to query Prometheus for a metric named `reporter_push_gateway_parameter_<reporter_metric_name>`.
 
 ## Other Metrics
 
-Run:AI exports other metrics emitted by NVIDIA and Kubernetes packages, as follows:
+Run:ai exports other metrics emitted by NVIDIA and Kubernetes packages, as follows:
 
 | Metric name                                       | Description                          |
 | ------------------------------------------------- | ------------------------------------ |
@@ -104,7 +104,7 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 ## How to Query Metrics
 
 === "SaaS" 
-    Run:AI customer support should provide a `<BASE-METRICS-URL>`, `<DATASOURCE-ID>` and an `<GRAFANA-API-KEY>`. 
+    Run:ai customer support should provide a `<BASE-METRICS-URL>`, `<DATASOURCE-ID>` and an `<GRAFANA-API-KEY>`. 
 
 === "Self Hosted" 
     
@@ -113,7 +113,7 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
     * Under _Data sources_, locate a numeric data source ID ( `<DATASOURCE-ID>`)
 
 
-Use the Run:AI metrics documentation above together with Prometheus API syntax to access data. Example: 
+Use the Run:ai metrics documentation above together with Prometheus API syntax to access data. Example: 
    
 ``` bash
 curl "https://<BASE-METRICS-URL>/api/datasources/proxy/<DATASOURCE-ID>/api/v1/query?query=runai_job_total_runtime" \

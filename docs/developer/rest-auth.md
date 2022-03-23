@@ -1,17 +1,17 @@
 
 # API Authentication
 
-There are two equivalent methods for call Run:AI APIs:
+There are two equivalent methods for call Run:ai APIs:
 
 * REST APIs
 * Kubernetes APIs. Using `kubectl apply` on YAML files, or calling Kubernetes directly via code.
 
-The following document explains how to get the credentials required to call Run:AI __REST APIs__. By contrast, Run:AI Kubernetes APIs, use the Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift).
+The following document explains how to get the credentials required to call Run:ai __REST APIs__. By contrast, Run:ai Kubernetes APIs, use the Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift).
 
 
 ## Create a Client Application
 
-* Open the Run:AI Run:AI User Interface.
+* Open the Run:ai Run:ai User Interface.
 * Go to `Settings | Application`
 * Create a new Application. 
 * Set the required roles:
@@ -19,15 +19,15 @@ The following document explains how to get the credentials required to call Run:
     * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md). 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
 * Copy the `<APPLICATION-NAME>` and `<CLIENT-SECRET>` to be used below
-* `<COMPANY-URL>` is `app.run.ai` for SaaS installations (not `<company>.run.ai`) or the Run:AI user interface URL for Self-hosted installations.
+* `<COMPANY-URL>` is `app.run.ai` for SaaS installations (not `<company>.run.ai`) or the Run:ai user interface URL for Self-hosted installations.
 * Go to `Settings | General`, under `Researcher Authentication` copy `<REALM>`.
 
 !!! Important Note
-    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you are an administrator but do not see the `Settings | Application` area, please contact Run:AI customer support.  
+    Creating Client Application tokens is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation. If you are an administrator but do not see the `Settings | Application` area, please contact Run:ai customer support.  
 
 ## Request an API Token
 
-Use the above parameters to get a temporary token to access Run:AI as follows. 
+Use the above parameters to get a temporary token to access Run:ai as follows. 
 
 ### Example command to get an API token 
 

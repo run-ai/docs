@@ -6,10 +6,10 @@ The following are instructions on how to install vanilla Kubernetes in an air-ga
 
 ## Prerequisites 
 
-* These instructions assume Ubuntu 18.04. For instructions for other Operating Systems please contact Run:AI customer support. 
+* These instructions assume Ubuntu 18.04. For instructions for other Operating Systems please contact Run:ai customer support. 
 * At least one node for a Kubernetes master and one node for a Kubernetes worker.
 * NVIDIA Drivers are installed for machines with GPUs.
-* A compressed tar file `k8s.tar` from Run:AI customer support containing a version of Kubernetes
+* A compressed tar file `k8s.tar` from Run:ai customer support containing a version of Kubernetes
 * __Docker Registry__ Network address and port for a Docker registry (referenced below as `<REGISTRY_URL>`). 
 
 

@@ -1,8 +1,8 @@
-# Integrate Run:AI with Seldon Core
+# Integrate Run:ai with Seldon Core
 
-[Seldon Core](https://github.com/SeldonIO/seldon-core){target=_blank} is software that deploys machine learning models to production over Kubernetes. The purpose of this document is to explain how to use Seldon Core together with Run:AI.  
+[Seldon Core](https://github.com/SeldonIO/seldon-core){target=_blank} is software that deploys machine learning models to production over Kubernetes. The purpose of this document is to explain how to use Seldon Core together with Run:ai.  
 
-Of special importance, is the usage of Seldon together with the Run:AI [fractions](../../Researcher/Walkthroughs/walkthrough-fractions.md) technology: Machine learning production tends to take less GPU Memory. As such, allocating fraction of the GPU per job allows for better GPU Utilization. 
+Of special importance, is the usage of Seldon together with the Run:ai [fractions](../../Researcher/Walkthroughs/walkthrough-fractions.md) technology: Machine learning production tends to take less GPU Memory. As such, allocating fraction of the GPU per job allows for better GPU Utilization. 
 
 
 
@@ -13,7 +13,7 @@ Install Seldon Core as described [here](https://github.com/SeldonIO/seldon-core)
 
 ## Create a Seldon deployment
 
-The instructions below follow a [sample machine learning model](https://github.com/SeldonIO/seldon-core/blob/master/examples/models/autoscaling/model_with_hpa.yaml){target=_blank} that tests the Run:AI - Seldon Core integration.  Save the following in a file named `<FILE-NAME>.yaml`
+The instructions below follow a [sample machine learning model](https://github.com/SeldonIO/seldon-core/blob/master/examples/models/autoscaling/model_with_hpa.yaml){target=_blank} that tests the Run:ai - Seldon Core integration.  Save the following in a file named `<FILE-NAME>.yaml`
 
 ``` YAML
 apiVersion: machinelearning.seldon.io/v1
@@ -71,7 +71,7 @@ spec:
     replicas: 1
 
 
-Replace `<PROJECT-NAME>` with the Run:AI projects and `<GPUs>` with the amount of GPUs you want to allocate (e.g. 0.5 GPUs).
+Replace `<PROJECT-NAME>` with the Run:ai projects and `<GPUs>` with the amount of GPUs you want to allocate (e.g. 0.5 GPUs).
 
 ```
 kubectl apply -f <FILE-NAME>.yaml

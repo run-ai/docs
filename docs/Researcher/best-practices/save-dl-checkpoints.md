@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Run:AI can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:AI will give you back the resources and restore your workload. Thus, it is a good practice to save the state of your run at various checkpoints and start a workload from the latest checkpoint (typically between epochs).
+Run:ai can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:ai will give you back the resources and restore your workload. Thus, it is a good practice to save the state of your run at various checkpoints and start a workload from the latest checkpoint (typically between epochs).
 
 ## How to Save Checkpoints
 
@@ -35,7 +35,7 @@ checkpoint = ModelCheckpoint(checkpoints_file, monitor='val_acc', verbose=1,
 
 ### Save on Exit Signal
 
-If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:AI (via Kubernetes). The hook is python code that is called before your Job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
+If periodic checkpoints are not enough, you can use a _signal-hook_ provided by Run:ai (via Kubernetes). The hook is python code that is called before your Job is suspended and allows you to save your checkpoints as well as other state data you may wish to store.
 
 ``` python
 import signal
@@ -57,7 +57,7 @@ By default, you will have 30 seconds to save your checkpoints.
 
 ## Resuming using Saved Checkpoints
 
-A Run:AI unattended workload that is resumed, will run the __same startup script__ as on the first run. It is the responsibility of the script developer to add code that:
+A Run:ai unattended workload that is resumed, will run the __same startup script__ as on the first run. It is the responsibility of the script developer to add code that:
 
 *   Checks if saved checkpoints exist (see above)
 *   If saved checkpoints exist, load them and start the run using these checkpoints

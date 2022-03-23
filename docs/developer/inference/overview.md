@@ -12,19 +12,19 @@ With Inference, you are taking a trained _Model_ and deploying it into a product
 
 The Inference process is a subset of the original Training algorithm on a single datum (e.g. one sentence or one image), or a small batch. As such, GPU memory requirements are typically smaller than a full-blown Training process. 
 
-Given that, Inference lends itself nicely to the usage of Run:AI Fractions. You can, for example, run 4 instances of an Inference server on a single GPU, each employing a fourth of the memory. 
+Given that, Inference lends itself nicely to the usage of Run:ai Fractions. You can, for example, run 4 instances of an Inference server on a single GPU, each employing a fourth of the memory. 
 
-## Inference @Run:AI
+## Inference @Run:ai
 
-Run:AI provides Inference services as an equal part together with the other two Workload types: _Train_ and _Build_.
+Run:ai provides Inference services as an equal part together with the other two Workload types: _Train_ and _Build_.
 
-* Inference is considered a high-priority workload as it is customer-facing. Running an Inference workload (within the Project's quota) will preempt any Run:AI Workload marked as _Training_.
+* Inference is considered a high-priority workload as it is customer-facing. Running an Inference workload (within the Project's quota) will preempt any Run:ai Workload marked as _Training_.
 
 * Inference is implemented as a Kubernetes _Deployment_ with a defined number of replicas. The replicas are load-balanced by Kubernetes so that adding more replicas will improve the overall throughput of the system.
 
-* Multiple replicas will appear in Run:AI as a single Inference workload. The workload will appear in all Run:AI dashboards and views as well as the Command-line interface.
+* Multiple replicas will appear in Run:ai as a single Inference workload. The workload will appear in all Run:ai dashboards and views as well as the Command-line interface.
 
-* Inference workloads can be submitted via Run:AI Command-line interface as well as Kubernetes API/YAML. Internally, spawning an Inference workload also creates a Kubernetes _Service_. The service is an end-point to which clients can connect. 
+* Inference workloads can be submitted via Run:ai Command-line interface as well as Kubernetes API/YAML. Internally, spawning an Inference workload also creates a Kubernetes _Service_. The service is an end-point to which clients can connect. 
 
 
 ## See Also

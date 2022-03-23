@@ -1,12 +1,12 @@
 # User Interface Overview
 
-Run:AI provides a single user interface that, depending on your role, serves both as a control-plane management tool and a researcher workbench. 
+Run:ai provides a single user interface that, depending on your role, serves both as a control-plane management tool and a researcher workbench. 
 
 ## Architecture
 
-* Run:AI saves metadata such as users, projects, departments, clusters, and tenant settings, in the control plane residing on the Run:AI cloud.
+* Run:ai saves metadata such as users, projects, departments, clusters, and tenant settings, in the control plane residing on the Run:ai cloud.
 * Workload information resides on (sometimes multiple) GPU clusters. 
-* The Run:AI user interface needs to work with both sources of information. 
+* The Run:ai user interface needs to work with both sources of information. 
 
 As such, the chosen architecture of the user interface is:
 
@@ -29,4 +29,4 @@ On SaaS-based installations, the cluster creation wizard requires the cluster's 
 
 ## Control-plane Features
 
-The following documents describe how to create users, departments, and projects as well as effectively utilize the Run:AI dashboards.
+The following documents describe how to create users, departments, and projects as well as effectively utilize the Run:ai dashboards.

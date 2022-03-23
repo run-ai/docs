@@ -4,7 +4,7 @@
 
  This Quickstart is an extension of the Quickstart document: [Start and Use Interactive Build Workloads](walkthrough-build.md) 
 
- When starting a container with the Run:AI Command-Line Interface (CLI), it is sometimes needed to expose internal ports to the user. Examples are: accessing a Jupyter notebook, using the container from a development environment such as PyCharm. 
+ When starting a container with the Run:ai Command-Line Interface (CLI), it is sometimes needed to expose internal ports to the user. Examples are: accessing a Jupyter notebook, using the container from a development environment such as PyCharm. 
 
 ## Exposing a Container Port
 
@@ -17,7 +17,7 @@
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI user interface.
+*  Login to the Projects area of the Run:ai user interface.
 *  Add a Project named `team-a`.
 
 ### Run Workload
@@ -58,6 +58,6 @@ You should see a web page with the name of the container.
 Press _Ctrl-C_ in the shell to stop port forwarding. Then delete the Job by running `runai delete nginx-test`
 ## See Also
 
-* Develop on Run:AI using [Visual Studio Code](../tools/dev-vscode.md)
-* Develop on Run:AI using [PyCharm](../tools/dev-pycharm.md)
-* Use a [Jupyter notbook](../tools/dev-jupyter.md) with Run:AI.
+* Develop on Run:ai using [Visual Studio Code](../tools/dev-vscode.md)
+* Develop on Run:ai using [PyCharm](../tools/dev-pycharm.md)
+* Use a [Jupyter notbook](../tools/dev-jupyter.md) with Run:ai.

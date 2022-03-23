@@ -1,6 +1,6 @@
-# Integrate Run:AI with the Organization's Directory. 
+# Integrate Run:ai with the Organization's Directory. 
 
-By default Run:AI uses an internal user directory based on an open-source called [Keycloak](https://www.keycloak.org/){target=_blanks}. Assuming your organization uses a directory to manage users, it is possible to integrate the directory with Run:AI such that a subset of the organization's users will become Run:AI users.
+By default Run:ai uses an internal user directory based on an open-source called [Keycloak](https://www.keycloak.org/){target=_blanks}. Assuming your organization uses a directory to manage users, it is possible to integrate the directory with Run:ai such that a subset of the organization's users will become Run:ai users.
 
 The document below provides step-by-step instructions on how to perform this integration. The integration assumes a protocol called __LDAP__.
 
@@ -8,8 +8,8 @@ The document below provides step-by-step instructions on how to perform this int
 
 * Go to your directory and create a user. The user will be used for:
 
-1. The integration between your directory and Run:AI
-2. Serves as the first Run:AI Administrator user.
+1. The integration between your directory and Run:ai
+2. Serves as the first Run:ai Administrator user.
 
  The user should have read access to the LDAP server. Save the user-name (henceforth `<RUNAI-USER>`) and password (`<RUNAI-PASSWORD>`).
 
@@ -26,7 +26,7 @@ The document below provides step-by-step instructions on how to perform this int
 
 ## Post Backend LDAP Configuration
 
-After installing the Run:AI Backend], Log into Keycloak by browsing to: `https://auth.runai.<company-name>`.
+After installing the Run:ai Backend], Log into Keycloak by browsing to: `https://auth.runai.<company-name>`.
 
 
 In the Keycloak administration panel, perform the following:
@@ -49,7 +49,7 @@ Go to the Mappers tab:
 * Select _email_. Change the _LDAP Attribute_ to `<USER-PRINCIPAL-NAME>`
 
 
-Reset the Run:AI Backend:
+Reset the Run:ai Backend:
 
 ```
 kubectl rollout restart deployment/runai-backend-deployment -n runai-backend

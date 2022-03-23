@@ -9,8 +9,8 @@ Deep learning workloads can be divided into two generic types:
 
 With this Quickstart you will learn how to:
 
-*   Use the Run:AI command-line interface (CLI) to start a deep learning __training__ workload.
-*   View training status and resource consumption using the Run:AI user interface and the Run:AI CLI.
+*   Use the Run:ai command-line interface (CLI) to start a deep learning __training__ workload.
+*   View training status and resource consumption using the Run:ai user interface and the Run:ai CLI.
 *   View training logs.
 *   Stop the training.
 
@@ -18,14 +18,14 @@ With this Quickstart you will learn how to:
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-* Login to the Projects area of the Run:AI user interface.
+* Login to the Projects area of the Run:ai user interface.
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
@@ -69,14 +69,14 @@ You should see a log of a running deep learning session:
 
 ![mceclip1.png](img/mceclip1.png)
 
-### View status on the Run:AI User Interface
+### View status on the Run:ai User Interface
 
-* Open the Run:AI user interface.
+* Open the Run:ai user interface.
 * Under "Jobs" you can view the new Workload:
 
 ![mceclip2.png](img/mceclip2.png)
 
-The image we used for training includes the Run:AI Training library. Among other features, this library allows the reporting of metrics from within the deep learning Job. Metrics such as progress, accuracy, loss, and epoch and step numbers.  
+The image we used for training includes the Run:ai Training library. Among other features, this library allows the reporting of metrics from within the deep learning Job. Metrics such as progress, accuracy, loss, and epoch and step numbers.  
 
 *   Progress can be seen in the status column above. 
 *   To see other metrics, press the settings wheel on the top right ![mceclip4.png](img/mceclip4.png) and select additional deep learning metrics from the list

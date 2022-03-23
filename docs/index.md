@@ -1,13 +1,13 @@
-# Run:AI Documentation Library
+# Run:ai Documentation Library
 
-Welcome to the Run:AI documentation area. For an introduction about what is the Run:AI Platform see [Run:AI platform](https://www.run.ai/platform/){target=_blank} on the run.ai website
+Welcome to the Run:ai documentation area. For an introduction about what is the Run:ai Platform see [Run:ai platform](https://www.run.ai/platform/){target=_blank} on the run.ai website
 
 
-The Run:AI documentation is targeting three personas:
+The Run:ai documentation is targeting three personas:
 
-* Run:AI Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](./admin/overview-administrator.md).
+* Run:ai Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](./admin/overview-administrator.md).
 
-* Researcher - Using Run:AI to submit Jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
+* Researcher - Using Run:ai to submit Jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
@@ -22,7 +22,7 @@ To get support use the following channels:
 
 * Write to [support@run.ai](mailto:support@run.ai).
 
-* On the navigation bar of the Run:AI user interface at `<company-name>.run.ai`, use the 'Support' button.
+* On the navigation bar of the Run:ai user interface at `<company-name>.run.ai`, use the 'Support' button.
 
 * Or submit a ticket by clicking the button below:
 
@@ -30,16 +30,16 @@ To get support use the following channels:
 
 
 
-## Run:AI Cloud Status Page
+## Run:ai Cloud Status Page
 
-Run:AI cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
+Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
 
 ## Collect Logs to Send to Support
 
-As an IT Administrator, you can collect Run:AI logs to send to support:
+As an IT Administrator, you can collect Run:ai logs to send to support:
 
-* Install the [Run:AI Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
-* Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:AI logs files.
+* Install the [Run:ai Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
+* Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:ai logs files.
 
 !!! Note
-    The file includes logs of Run:AI components. It does __not__ include logs of researcher containers that may contain private information. 
+    The file includes logs of Run:ai components. It does __not__ include logs of researcher containers that may contain private information. 

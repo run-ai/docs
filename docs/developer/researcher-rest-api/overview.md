@@ -8,13 +8,13 @@ The purpose of the Researcher REST API is to provide an easy-to-use programming 
 
 There are other APIs that provide the same functionality. Specifically:
 
-* If your code is script-based, you may consider using the [Run:AI command-line interface](../../Researcher/cli-reference/Introduction.md).
-* You can communicate directly with the underlying Kubernetes infrastructure by [sending YAML files](../k8s-api/launch-job-via-yaml.md) or by using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:AI Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md).
+* If your code is script-based, you may consider using the [Run:ai command-line interface](../../Researcher/cli-reference/Introduction.md).
+* You can communicate directly with the underlying Kubernetes infrastructure by [sending YAML files](../k8s-api/launch-job-via-yaml.md) or by using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:ai Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md).
 
 ## Endpoint URL for API
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
-This `<CLUSTER-ENDPOINT>` can be found in the Run:AI User Interface, under `Clusters`. Each cluster will have a separate URL.
+This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clusters`. Each cluster will have a separate URL.
 
 
 ## Authentication
@@ -48,7 +48,7 @@ The Researcher API provides the following functionality:
 
 To review API documentation:
 
-* Open the Run:AI user interface
+* Open the Run:ai user interface
 * Go to `Clusters`
 * Locate your cluster and browse to `https://<cluster-url>/researcher/api/docs`.
 * When using the `Authenticate` button, add `Bearer <ACCESS TOKEN>` (simply adding the access token will not work).

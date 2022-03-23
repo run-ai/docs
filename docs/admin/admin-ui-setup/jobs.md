@@ -1,6 +1,6 @@
 # Viewing and Submitting Jobs
 
-The Run:AI User interface Job area allows the viewing of Jobs and Job details. It also allows the Reseracher to submit Jobs, suspend and resume Jobs and delete Jobs.
+The Run:ai User interface Job area allows the viewing of Jobs and Job details. It also allows the Reseracher to submit Jobs, suspend and resume Jobs and delete Jobs.
 
 ## Job list
 

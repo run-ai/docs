@@ -1,6 +1,6 @@
 ## Description
 
-Log out from Run:AI
+Log out from Run:ai
 
 ## Synopsis
 
@@ -22,7 +22,7 @@ runai logout
 
 ## Output
 
-You will be logged out from Run:AI
+You will be logged out from Run:ai
 
 ## See Also
 

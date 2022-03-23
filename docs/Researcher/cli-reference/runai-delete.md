@@ -41,7 +41,7 @@ runai delete <job-name>
 
 * The Job will be deleted and not available via the command _runai list jobs_.
 
-* The Job will __not__ be deleted from the Run:AI user interface Job list.
+* The Job will __not__ be deleted from the Run:ai user interface Job list.
 
 ## See Also
 

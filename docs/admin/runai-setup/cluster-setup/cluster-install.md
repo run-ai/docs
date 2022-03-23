@@ -1,8 +1,8 @@
-Below are instructions on how to install a Run:AI cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md). 
+Below are instructions on how to install a Run:ai cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md). 
 
 
 !!! Important
-    We strongly recommend running the Run:AI [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
+    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
 
 
 ## Step 1: Kubernetes
@@ -16,9 +16,9 @@ See [prerequisites](cluster-prerequisites.md).
 
 
 
-## Step 3: Install Run:AI
+## Step 3: Install Run:ai
 
-Log in to Run:AI user interface at `<company-name>.run.ai`. Use credentials provided by Run:AI Customer Support:
+Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
 *   If no clusters are currently configured, you will see a Cluster installation wizard
 *   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster". 
@@ -48,9 +48,9 @@ For a more extensive verification of cluster health, see [Determining the health
 
 When installing a production cluster you may want to:
 
-* Set one or more Run:AI system nodes. These are nodes dedicated to Run:AI software. 
+* Set one or more Run:ai system nodes. These are nodes dedicated to Run:ai software. 
 * Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
-* Limit Run:AI to specific nodes in the cluster. 
+* Limit Run:ai to specific nodes in the cluster. 
 
 To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
@@ -58,8 +58,8 @@ To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
 ## Next Steps
 
-* Set up Run:AI Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
+* Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
-* Set up Researchers to work with the Run:AI Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
+* Set up Researchers to work with the Run:ai Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
 * Set up [Project-based Researcher Access Control](../authentication/researcher-authentication.md).
 * Review [advanced setup and maintenace](../config/overview.md) scenarios.

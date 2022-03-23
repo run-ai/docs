@@ -1,8 +1,8 @@
 ## Introduction
 
-The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:AI Jobs for execution. 
+The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:ai Jobs for execution. 
 
-A Job has a __status__. Once a Job is submitted it goes through several statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:AI-specific. 
+A Job has a __status__. Once a Job is submitted it goes through several statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:ai-specific. 
 
 The purpose of this document is to explain these statuses as well as the lifecycle of a Job. 
 
@@ -54,7 +54,7 @@ Below is a list of statuses. For each status the list shows:
 
 * Description
 
-* Color - Status color as can be seen in the Run:AI User Interface Job list
+* Color - Status color as can be seen in the Run:ai User Interface Job list
 
 <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.3px Arial; color: #000000; -webkit-text-stroke: #000000}
@@ -338,7 +338,7 @@ Below is a list of statuses. For each status the list shows:
         <p class="p1"><span class="s1">-</span></p>
       </td>
       <td valign="middle" class="td22">
-        <p class="p1"><span class="s1">The Run:AI Scheduler wasn't running when the Job has finished.</span></p>
+        <p class="p1"><span class="s1">The Run:ai Scheduler wasn't running when the Job has finished.</span></p>
       </td>
       <td valign="middle" class="td23">
         <p class="p2"><span class="s1"></span><br></p>

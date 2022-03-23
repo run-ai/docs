@@ -4,24 +4,24 @@
 
 Nodes (Machines) that are part of the cluster are susceptible to occasional downtime. This can be either as part of __planned maintenance__ where we bring down the node for a specified time in an orderly fashion or an __unplanned downtime__ where the machine abruptly stops due to a software or hardware issue.
 
-The purpose of this document is to provide a process for retaining the Run:AI service and Researcher workloads during and after the downtime. 
+The purpose of this document is to provide a process for retaining the Run:ai service and Researcher workloads during and after the downtime. 
 
 ## Self-hosted installation
 
-The Self-hosted installation differs from the Classic (SaaS) installation of Run:AI in that it includes the Run:AI control-plane (backend). The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
+The Self-hosted installation differs from the Classic (SaaS) installation of Run:ai in that it includes the Run:ai control-plane (backend). The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
 
 ## Node Types
-The document differentiates between __Run:AI System Worker Nodes__ and __GPU Worker Nodes__:
+The document differentiates between __Run:ai System Worker Nodes__ and __GPU Worker Nodes__:
 
 * Worker Nodes - are where Machine Learning workloads run. 
-* Run:AI System Nodes - In a production installation Run:AI software runs on one or more [Run:AI System Nodes](../cluster-prerequisites/#hardware-requirements) on which the Run:AI software runs. 
+* Run:ai System Nodes - In a production installation Run:ai software runs on one or more [Run:ai System Nodes](../cluster-prerequisites/#hardware-requirements) on which the Run:ai software runs. 
 
 
 ## Worker Nodes
 Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance or due to an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
 
 ### Training vs. Interactive
-Run:AI differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
+Run:ai differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
 
 ### Planned Maintenance
 
@@ -68,9 +68,9 @@ However, if you plan to bring back the node, you will need to rejoin the node in
 
 
 
-## Run:AI System Nodes
+## Run:ai System Nodes
  
- In a production installation, Run:AI software runs on one or more Run:AI system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](../config/node-roles.md) on the cluster as a Run:AI system node to complete the process below.
+ In a production installation, Run:ai software runs on one or more Run:ai system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](../config/node-roles.md) on the cluster as a Run:ai system node to complete the process below.
 
  Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See the section above. 
 

@@ -11,7 +11,7 @@ The goal of this Quickstart is to explain the concepts of over-quota and bin-pac
 
 * 4 GPUs on 2 machines with 2 GPUs each
 * 2 Projects: team-a and team-b with 2 allocated GPUs each
-* Run:AI canonical image gcr.io/run-ai-demo/quickstart
+* Run:ai canonical image gcr.io/run-ai-demo/quickstart
 
 ## Part I: Over-quota
 
@@ -41,7 +41,7 @@ System status after run:
 
 !!! Discussion
     * team-a can no longer remain in over-quota. Thus, one Job, must be _preempted_: moved out to allow team-b to grow.
-    * Run:AI scheduler chooses to preempt Job _a1_.
+    * Run:ai scheduler chooses to preempt Job _a1_.
     * It is important that unattended Jobs will save [checkpoints](../best-practices/save-dl-checkpoints.md). This will ensure that whenever Job _a1_ resume, it will do so from where it left off.
 
 ## Part 3: Bin Packing

@@ -100,7 +100,7 @@ To change the cluster wide-ratio use the following process. The example shows:
  
 You must edit the cluster installation values file:
 
-* When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+* When installing the Run:ai cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
 * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
 * You must specify at least the first 4 values as follows: 
 
@@ -119,7 +119,7 @@ runai-operator:
 
 ## Validating CPU & Memory Allocations
 
-To review CPU & Memory allocations you need to look into Kubernetes. A Run:AI Job creates a Kubernetes _pod_. The pod declares its resource requests and limits. To see the memory and CPU consumption in Kubernetes:
+To review CPU & Memory allocations you need to look into Kubernetes. A Run:ai Job creates a Kubernetes _pod_. The pod declares its resource requests and limits. To see the memory and CPU consumption in Kubernetes:
 
 *  Get the pod name for the Job by running: 
 

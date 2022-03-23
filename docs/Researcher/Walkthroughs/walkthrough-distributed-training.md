@@ -6,21 +6,21 @@ Distributed Training is the ability to split the training of a model among multi
 
 Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support Distributed Training. [Horovod](https://eng.uber.com/horovod/){target=_blank} is a good example.
 
-Run:AI provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
+Run:ai provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
 
 ## Prerequisites
 
 To complete this Quickstart you must have:
 
-* Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
 * During the installation, you have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
-* Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+* Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*   Login to the Projects area of the Run:AI user interface.
+*   Login to the Projects area of the Run:ai user interface.
 *   Add a Project named "team-a".
 *   Allocate 2 GPUs to the Project.
 
@@ -49,7 +49,7 @@ The result:
 
 ![mceclip11.png](img/mceclip11.png)
 
-The Run:AI scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
+The Run:ai scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
         runai describe job dist
 
@@ -98,7 +98,7 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 ```
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:AI and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
+The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
 
 
 ## See Also

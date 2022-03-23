@@ -1,8 +1,8 @@
-# Install the Run:AI Control Plane (Backend) 
+# Install the Run:ai Control Plane (Backend) 
 
 ## Create a Control Plane Configuration
 
-Create a configuration file to install the Run:AI control plane:
+Create a configuration file to install the Run:ai control plane:
 
 === "Connected"
     Generate a values file by running:
@@ -20,10 +20,10 @@ A file called `runai-backend-values.yaml` will be created.
 
 ## Edit Configuration File
 
-If you are using OpenShift as your identity provider, you must edit the above file to configure Run:AI to use it:
+If you are using OpenShift as your identity provider, you must edit the above file to configure Run:ai to use it:
 
 * Change `backend.openshiftIdp.enabled` to true
-* Under `backend.openshiftIdpfirstAdmin`, provide the first administrator user of Run:AI. 
+* Under `backend.openshiftIdpfirstAdmin`, provide the first administrator user of Run:ai. 
 
 
 ## Install the Control Plane (Backend)
@@ -53,11 +53,11 @@ Run the helm command below:
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
 
-## Connect to Run:AI User Interface
+## Connect to Run:ai User Interface
 
 
-Run: `oc get routes -n runai-backend` to find the Run:AI Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`
 
 ## Next Steps
 
-Continue with installing a [Run:AI Cluster](cluster.md).
+Continue with installing a [Run:ai Cluster](cluster.md).

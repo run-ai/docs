@@ -9,7 +9,7 @@ Deep learning workloads can be divided into two generic types:
 
 With this Quickstart you will learn how to:
 
-*   Use the Run:AI command-line interface (CLI) to start a deep learning __Build__ workload
+*   Use the Run:ai command-line interface (CLI) to start a deep learning __Build__ workload
 *   Open an ssh session to the Build workload
 *   Stop the Build workload
 
@@ -19,14 +19,14 @@ It is also possible to open ports to specific services within the container. See
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Quickstart
 
 ### Setup
 
-*  Login to the Projects area of the Run:AI user interface.
+*  Login to the Projects area of the Run:ai user interface.
 *   Add a Project named "team-a".
 *   Allocate 2 GPUs to the Project.
 
@@ -72,9 +72,9 @@ Run:
 
 This should provide a direct shell into the computer
 
-### View status on the Run:AI User Interface
+### View status on the Run:ai User Interface
 
-* Open the Run:AI user interface.
+* Open the Run:ai user interface.
 * Under "Jobs" you can view the new Workload:
 
 ![mceclip24.png](img/mceclip24.png)

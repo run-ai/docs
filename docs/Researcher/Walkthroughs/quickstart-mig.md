@@ -7,22 +7,22 @@ A single GPU has a significant amount of memory. Ranging from a couple of gigaby
 
 This amount of memory and computing power is important for processing large amounts of data, such as in training deep learning models. However, there are quite a few applications that do not need this power. Examples can be inference workloads and the model-creation phase. It would thus be convenient if we could __divide up a GPU__ between various workloads, thus achieving better GPU utilization. 
 
-Run:AI provides two alternatives for splitting GPUs: [Fractions](walkthrough-fractions.md) and _Dynamic MIG allocation_. The focus of this article is Dynamic MIG allocation.  A detailed explanation of the two Run:AI offerings can be found [here](../scheduling/fractions.md).
+Run:ai provides two alternatives for splitting GPUs: [Fractions](walkthrough-fractions.md) and _Dynamic MIG allocation_. The focus of this article is Dynamic MIG allocation.  A detailed explanation of the two Run:ai offerings can be found [here](../scheduling/fractions.md).
 
 
 ## Prerequisites 
 
 To complete this Quickstart you must have:
 
-* Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-* Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+* Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 * A machine with a __single__ available NVIDIA A100 GPU. This can be achieved by allocating _filler_ workloads to the other GPUs on the node, or by using Google Cloud which allows for the creation of a virtual node with a single A100 GPU. 
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-* Login to the Projects area of the Run:AI user interface.
+* Login to the Projects area of the Run:ai user interface.
 * Allocate 2 GPUs to the Project.
 * Mark the node as a dynamic MIG node as described [here](../scheduling/fractions.md).
 

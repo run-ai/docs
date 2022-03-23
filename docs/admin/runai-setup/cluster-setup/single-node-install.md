@@ -1,6 +1,6 @@
-# Quick Install of Run:AI on a Single Node
+# Quick Install of Run:ai on a Single Node
 
-Below are instructions on how to install the Run:AI cluster on a single node. This process is good for __learning__ Run:AI or using a Run:AI cluster __on a single node__.  Multiple nodes are __not supported__ with this installation. To install a cluster with multiple nodes or for running a formal pilot with Run:AI, use [Cluster Installation](cluster-install.md).
+Below are instructions on how to install the Run:ai cluster on a single node. This process is good for __learning__ Run:ai or using a Run:ai cluster __on a single node__.  Multiple nodes are __not supported__ with this installation. To install a cluster with multiple nodes or for running a formal pilot with Run:ai, use [Cluster Installation](cluster-install.md).
 
 The installation process below is comprised of a single script and includes the installation of a built-in Kubernetes using [microk8s](https://microk8s.io/docs/getting-started){target=_blank}.
 
@@ -11,7 +11,7 @@ The installation below assumes:
 * A single node, with at least one GPU.
 * Running Ubuntu 20.04.
 * `sudo` access to the node (you may be prompted for sudo password during the installation).
-* A client id and a secret provided by Run:AI customer support. 
+* A client id and a secret provided by Run:ai customer support. 
 * Outbound internet connectivity
 
 

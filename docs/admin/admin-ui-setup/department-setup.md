@@ -1,8 +1,8 @@
 ## Introduction
 
-Researchers are submitting workloads via The Run:AI CLI, Kubeflow, or similar. To streamline resource allocation and create priorities, Run:AI introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
+Researchers are submitting workloads via The Run:ai CLI, Kubeflow, or similar. To streamline resource allocation and create priorities, Run:ai introduced the concept of __Projects__. Projects are quota entities that associate a Project name with GPU allocation and preferences. 
 
-A Researcher submitting a workload needs to associate a Project with a workload request. The Run:AI scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
+A Researcher submitting a workload needs to associate a Project with a workload request. The Run:ai scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in a pending state.
 
 Administrators manage Projects as detailed [here](project-setup.md).
 
@@ -22,7 +22,7 @@ __Departments__ create a secondary hierarchy of resource allocation:
 
 ### Overquota behavior
 
-Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need them. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:AI scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
+Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need them. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:ai scheduler as over-quota. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 __Important best practice:__ As a rule, the sum of the Department allocation should be equal to the number of GPUs in the cluster.
 

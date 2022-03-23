@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Run:AI Researcher Library is a python library you can add to your deep learning python code. The library contains an _elasticity_ module that allows _train_ workloads to shrink or expand based on the cluster's availability.
+The Run:ai Researcher Library is a python library you can add to your deep learning python code. The library contains an _elasticity_ module that allows _train_ workloads to shrink or expand based on the cluster's availability.
 
 ### Expanding a Workload
 
@@ -16,7 +16,7 @@ Shrinking a training Job uses an algorithm called _Gradient_ _Accumulation_. For
 
 ## Installation
 
-Install the Run:AI Python library using the following command:
+Install the Run:ai Python library using the following command:
 
     pip install runai
 
@@ -35,7 +35,7 @@ If using PyTorch, add:
  
 To initialize the module, you need two parameters:
 
-* __Maximum GPU batch size__ - The maximum batch size that your Job can use on a single GPU (in terms of GPU memory). Without Elasticity, running with batch sizes larger than this number will cause a memory overflow. This number will be used by the Run:AI elasticity module for determining whether to use _Gradient Accumulation_ or not.
+* __Maximum GPU batch size__ - The maximum batch size that your Job can use on a single GPU (in terms of GPU memory). Without Elasticity, running with batch sizes larger than this number will cause a memory overflow. This number will be used by the Run:ai elasticity module for determining whether to use _Gradient Accumulation_ or not.
 
 * __Global batch size__ - The desired batch size. Of course, if this number is larger than the _Maximum GPU batch size_ defined above, the model will not fit into a single GPU. The elasticity module will then use _Gradient Accumulation_ and _multiple GPUs_ to run your code.
 
@@ -78,7 +78,7 @@ For additional information on how to run elastic training workloads, see the fol
 ## Limitations
 
 *   Elasticity currently works with Keras-based or PyTorch-based deep learning code only.
-*   Any training Job using Run:AI is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/save-dl-checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
+*   Any training Job using Run:ai is subject to pause/resume episodes. Elasticity may increase these episodes, making it even more important to make your code resilient. Take care to [save checkpoints](../best-practices/save-dl-checkpoints.md) in your code and have your code resume from the latest checkpoint rather than start from the beginning.
 
 ## See Also
 

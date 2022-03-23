@@ -2,8 +2,8 @@
 
 ## Motivation
 
-Run:AI allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
-To achieve this kind of flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires Researchers to switch workloads from running interactively, to running unattended, thus allowing Run:AI to pause/resume the run.
+Run:ai allows non-interactive training workloads to extend beyond guaranteed quotas and into over-quota as long as computing resources are available.  
+To achieve this kind of flexibility, the system needs to be able to safely stop a workload and restart it again later. This requires Researchers to switch workloads from running interactively, to running unattended, thus allowing Run:ai to pause/resume the run.
 
 Unattended workloads are a good fit for long-duration runs, or sets of smaller hyperparameter optimization runs.
 
@@ -62,7 +62,7 @@ python training.py <strong>$@</strong></code></pre>
 
 ### Checkpoints
 
-Run:AI can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:AI will give you back the resources and restore your workload. Thus, it is a good practice to save your weights at various checkpoints and start a workload from the latest checkpoint (typically between epochs).
+Run:ai can pause unattended executions, giving your GPU resources to another workload. When the time comes, Run:ai will give you back the resources and restore your workload. Thus, it is a good practice to save your weights at various checkpoints and start a workload from the latest checkpoint (typically between epochs).
 
 TensorFlow, Pytorch, and others have mechanisms to help save checkpoints (e.g. [https://www.tensorflow.org/guide/checkpoint](https://www.tensorflow.org/guide/checkpoint){target=_blank} for TensorFlow and [https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html){target=_blank} for Pytorch).
 
@@ -93,7 +93,7 @@ runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3
 ```
 
 
-Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:AI CLI.
+Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:ai CLI.
 
 ### Use CLI Templates
 

@@ -2,12 +2,12 @@
 
 ## Introduction
 
-The following instructions explain how to complete the configuration of access control for Researchers. Run:AI access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
+The following instructions explain how to complete the configuration of access control for Researchers. Run:ai access control is at the __Project__ level. When you assign Users to Projects - only these users are allowed to submit Jobs and access Jobs details. 
 
 This requires several steps:
 
 * Assign users to their Projects
-* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:AI Authentication authority.
+* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:ai Authentication authority.
 * (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
 
 
@@ -15,7 +15,7 @@ This requires several steps:
 
 ### Enable Researcher Authentication
 
-* Open the Run:AI user interface and navigate to `General | Settings`. 
+* Open the Run:ai user interface and navigate to `General | Settings`. 
 * Enable the flag _Researcher Authentication_ (should be enabled by default for new tenants).
 * There are values for `Realm`, `client configuration`, and `server configuration` which appear on the screen. Use them as below. 
 
@@ -24,13 +24,13 @@ This requires several steps:
 
 Assign Researchers to Projects:
 
-* Open the Run:AI user interface and navigate to `Users`. Add a Researcher and assign it with a _Researcher_ role.
+* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it with a _Researcher_ role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
 * If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
 
 ## (Mandatory) Kubernetes Configuration
 
-As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:AI. This requires adding flags to the Kubernetes API Server. Modfiying the API Server configuration differs between Kubernetes distributions:
+As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. Modfiying the API Server configuration differs between Kubernetes distributions:
 
 
 === "Native Kubernetes"
@@ -43,7 +43,7 @@ As described in [authentication overview](authentication-overview.md), you must 
     ```
 
 === "OpenShift"
-    No configuration is needed. Instead, Run:AI assumes that an Identity Provider has been defined at the OpenShift level and that the Run:AI Cluster installation has set the `OpenshiftIdp` flag to true. For more information see the Run:AI OpenShift control-plane setup.
+    No configuration is needed. Instead, Run:ai assumes that an Identity Provider has been defined at the OpenShift level and that the Run:ai Cluster installation has set the `OpenshiftIdp` flag to true. For more information see the Run:ai OpenShift control-plane setup.
 
 === "Rancher"
     Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
@@ -66,7 +66,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 ## Command-line Interface Access
 
-To control access to Run:AI (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
+To control access to Run:ai (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../../researcher-setup/cli-install#kubernetes-configuration). 
 
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
@@ -82,11 +82,11 @@ When making changes to the file, keep a copy of the original file to be used for
 * If the Job was submitted with a Project for which you have no access, your access will be denied. 
 * If the Job was submitted with a Project for which you have access, your access will be granted.
 
-You can also submit a Job from the Run:AI User interface and verify that the new job shows on the job list with your user name. 
+You can also submit a Job from the Run:ai User interface and verify that the new job shows on the job list with your user name. 
 
 ## Test via User Interface
 
-* Open the Run:AI user interface. Go to `Jobs`
+* Open the Run:ai user interface. Go to `Jobs`
 * On the top-right, select `Submit Job`. 
 
 !!! Tip
@@ -96,9 +96,9 @@ You can also submit a Job from the Run:AI User interface and verify that the new
 <!-- ### Enable Researcher Authentication on Researcher Service
 
 === "SaaS" 
-    The researcher service is used for the [Run:AI Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable, you must edit the cluster installation values file:
+    The researcher service is used for the [Run:ai Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable, you must edit the cluster installation values file:
 
-    * When installing the Run:AI cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
+    * When installing the Run:ai cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
     * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
 
     Update:

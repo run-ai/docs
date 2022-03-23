@@ -28,8 +28,8 @@ singleuser:
     type: none  
   profileList:
   - slug: "RA 0.5"
-    description: "Run:AI Profile"
-    display_name: "Run:AI with 0.5 GPU"
+    description: "Run:ai Profile"
+    display_name: "Run:ai with 0.5 GPU"
     kubespawner_override:
       image: jupyter/tensorflow-notebook
       tag: 3395de4db93a
@@ -37,16 +37,16 @@ singleuser:
         gpu-fraction: "0.5"
   - default: true
     slug: "RA 1"
-    description: "Run:AI Profile"
-    display_name: "Run:AI with 1 GPU"
+    description: "Run:ai Profile"
+    display_name: "Run:I with 1 GPU"
     kubespawner_override:
       image: jupyter/datascience-notebook
       tag: 177037d09156
       extra_resource_limits:
         nvidia.com/gpu: "1"
   - slug: "RA 2"
-    description: "Run:AI Profile"
-    display_name: "Run:AI with 2 GPU"
+    description: "Run:ai Profile"
+    display_name: "Run:ai with 2 GPU"
     kubespawner_override:
       image: jupyter/tensorflow-notebook
       tag: 3395de4db93a

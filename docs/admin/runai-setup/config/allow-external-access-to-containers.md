@@ -6,9 +6,9 @@ Researchers working with containers. many times need to remotely access the cont
 *   Using _PyCharm_ to run python commands remotely.
 *   Using _TensorBoard_ to view machine learning visualizations
 
-This requires _exposing container ports_. When using docker, the way Researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:AI has similar syntax.
+This requires _exposing container ports_. When using docker, the way Researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:ai has similar syntax.
 
-Run:AI is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers several options:
+Run:ai is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers several options:
 
 | Method | Description | Prerequisites |
 |--------|-------------|---------------|
@@ -31,7 +31,7 @@ To submit jobs via ingress, You must install an _Ingress controller_ in your Kub
 
 ### Usage
 
-The Researcher uses the Run:AI CLI to set the method type and the ports when submitting the Workload. Example:
+The Researcher uses the Run:ai CLI to set the method type and the ports when submitting the Workload. Example:
 
 ```
 runai config project team-a

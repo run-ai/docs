@@ -1,6 +1,6 @@
 
 
-The Run:AI Administration User Interface provides a set of dashboards that help you monitor Clusters, Cluster Nodes, Projects, and Jobs. This document provides the key metrics to monitor, how to assess them as well as suggested actions. 
+The Run:ai Administration User Interface provides a set of dashboards that help you monitor Clusters, Cluster Nodes, Projects, and Jobs. This document provides the key metrics to monitor, how to assess them as well as suggested actions. 
 
 There are 3 dashboards:
 
@@ -156,7 +156,7 @@ __Analysis and Suggested actions__:
 We would want to encourage users to run more training Jobs than interactive Jobs, as it is the key to achieving high GPU utilization across the Cluster:
 
 * Training Jobs run to completion and free up their resources automatically when training ends
-* Training Jobs can be preempted, queued, and resumed automatically by the Run:AI system according to predefined policies which increases fairness and Cluster utilization.
+* Training Jobs can be preempted, queued, and resumed automatically by the Run:ai system according to predefined policies which increases fairness and Cluster utilization.
 
 ### Pending Queue Size
 

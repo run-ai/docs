@@ -13,9 +13,9 @@ _Elasticity_ allows unattended, train-based workloads to __shrink__ or __expand_
 
 To complete this Quickstart you must have:
 
-*   Run:AI software installed on your Kubernetes cluster. See: [Installing Run:AI on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:AI CLI installed on your machine. See: [Installing the Run:AI Command-Line Interface](../../admin/researcher-setup/cli-install.md)
-*   [Run:AI Python Researcher Library](../researcher-library/researcher-library-overview.md) installed on a docker image
+*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
+*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+*   [Run:ai Python Researcher Library](../researcher-library/researcher-library-overview.md) installed on a docker image
 
 ## Step by Step Walkthrough
 
@@ -27,7 +27,7 @@ To complete this Quickstart you must have:
     *  If the cluster nodes contain more than 2 GPUs, you can create an interactive Job on a different project to consume the remaining GPUs.    
 
 
-*   Login to the Projects area of the Run:AI user interface.
+*   Login to the Projects area of the Run:ai user interface.
 *   Add a Project named "team-a".
 *   Allocate 2 GPUs to the Project.
 
@@ -52,7 +52,7 @@ To complete this Quickstart you must have:
 
     !!! Discussion
         * The Job has requested 1 GPU but has been allocated with 2, as 2 are available right now.
-        * The code needs to be ready to accept more GPUs than requested, otherwise, the GPUs will not be utilized. The Run:AI Elasticity library helps with expanding the Job effectively.
+        * The code needs to be ready to accept more GPUs than requested, otherwise, the GPUs will not be utilized. The Run:ai Elasticity library helps with expanding the Job effectively.
 
 * Add a filler class:
         

@@ -60,7 +60,7 @@ Now open the Researcher user interface, find the _Requested GPU_ box. Verify tha
 
 ### Administrative Template parameters
 
-Administrative template can be used to configure all Run:AI Job submission parameters. You can find the full list of parameters under the Command-line documentation of [runai submit](../../Researcher/cli-reference/runai-submit.md) and [runai submit-mpi](../../Researcher/cli-reference/runai-submit-mpi.md).
+Administrative template can be used to configure all Run:ai Job submission parameters. You can find the full list of parameters under the Command-line documentation of [runai submit](../../Researcher/cli-reference/runai-submit.md) and [runai submit-mpi](../../Researcher/cli-reference/runai-submit-mpi.md).
 
 ### Syntax
 
@@ -419,7 +419,7 @@ environment:
 The container created will have an environment variable called `MYUSER` with the value of the Linux `$USER` variable as defined in the running host machine. 
 
 !!! Note
-    Shell variables are only active with the Run:AI Command-line interface. They are not available via the Researcher user interface.
+    Shell variables are only active with the Run:ai Command-line interface. They are not available via the Researcher user interface.
 
 ### Using Secrets in Templates
 
@@ -437,8 +437,8 @@ environment:
 When submitting the job under Project `team-a` the container created will have an environment variable called `MYPASSWORD` whose value is the key `password` residing in Kubernetes secret `my-secret` which has been pre-created in namespace `team-a`. 
 
 !!! Note
-    * Run:AI provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../use-secrets/#secrets-and-projects)
-    * Secrets are only active with the Run:AI Command-line interface. They are not available via the Researcher user interface.
+    * Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../use-secrets/#secrets-and-projects)
+    * Secrets are only active with the Run:ai Command-line interface. They are not available via the Researcher user interface.
 
 ### Fields and Defaults
 
@@ -491,7 +491,7 @@ kubectl delete cm my-template.yaml -n runai
 A user template is a set of values, given to various submission parameters, to reduce manual input when submitting jobs.Similar to administrative templates, two sets of templates exist. One for 
 interactive jobs, and the other for training jobs.
 
-User templates are defined per Run:AI Project.   
+User templates are defined per Run:ai Project.   
 
 ### Creating A User Template
 
@@ -535,8 +535,8 @@ Interface and click on the remove icon which appears right next to it.
 
 ## See Also
 
-<!-- * For a full list of parameters and their correct spelling, type and syntax, see the [Run:AI Submit REST API](../../developer/researcher-rest-api/rest-submit.md).   -->
+<!-- * For a full list of parameters and their correct spelling, type and syntax, see the [Run:ai Submit REST API](../../developer/researcher-rest-api/rest-submit.md).   -->
 
-* For a list of `runai submit` flags, see the Run:AI [runai submit reference](../../Researcher/cli-reference/runai-submit.md)
+* For a list of `runai submit` flags, see the Run:ai [runai submit reference](../../Researcher/cli-reference/runai-submit.md)
 
-* For a list of `runai submit-mpi` flags, see the Run:AI [runai submit-mpi reference](../../Researcher/cli-reference/runai-submit-mpi.md)
+* For a list of `runai submit-mpi` flags, see the Run:ai [runai submit-mpi reference](../../Researcher/cli-reference/runai-submit-mpi.md)

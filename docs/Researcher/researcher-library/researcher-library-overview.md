@@ -1,11 +1,11 @@
 ---
-title: The Run:AI Researcher Library Overview
+title: The Run:ai Researcher Library Overview
 ---
-# Overview: The Run:AI Researcher Library
+# Overview: The Run:ai Researcher Library
 
 ## Introduction
 
-Run:AI provides a python library that can optionally be installed within your docker image and activated during the deep learning session.   
+Run:ai provides a python library that can optionally be installed within your docker image and activated during the deep learning session.   
 When installed, the library provides:
 
 *   Additional progress reporting and metrics
@@ -14,16 +14,16 @@ When installed, the library provides:
 
 The library is open-source and can be reviewed [here](https://github.com/run-ai/runai){target=_blank}.
 
-## Installing the Run:AI Researcher Library
+## Installing the Run:ai Researcher Library
 
 In your command-line run:
 
     pip install runai
 
-## Run:AI Researcher Library Modules
+## Run:ai Researcher Library Modules
 
-To review details on the specific Run:AI Researcher Library modules see:
+To review details on the specific Run:ai Researcher Library modules see:
 
-*   [Reporting via the Run:AI Researcher Library](rl-reporting.md)
+*   [Reporting via the Run:ai Researcher Library](rl-reporting.md)
 *   [Elasticity, Dynamically Stretch/Compress Jobs According to GPU Availability](rl-elasticity.md)
 *   [Hyperparameter optimization support](rl-hpo-support.md) 

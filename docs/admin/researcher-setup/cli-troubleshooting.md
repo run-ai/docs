@@ -28,4 +28,4 @@ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e
 
 ### Solution
 
-Helm utility is not installed. See Run:AI CLI Installation documentation. 
+Helm utility is not installed. See Run:ai CLI Installation documentation. 

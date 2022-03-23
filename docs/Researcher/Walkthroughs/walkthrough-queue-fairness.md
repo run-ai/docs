@@ -11,7 +11,7 @@ This Quickstart is about __queue fairness__. It shows that Jobs will be schedule
 
 * 4 GPUs on 2 machines with 2 GPUs each.
 * 2 Projects: team-a and team-b with __1__ allocated GPU each.
-* Run:AI canonical image gcr.io/run-ai-demo/quickstart
+* Run:ai canonical image gcr.io/run-ai-demo/quickstart
 
 
 ## Part I: Immediate Displacement of Over-Quota

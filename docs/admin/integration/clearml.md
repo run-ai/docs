@@ -1,6 +1,6 @@
-# Integrate Run:AI with ClearML
+# Integrate Run:ai with ClearML
 
-[ClearML](https://clear.ml/){target=_blank} is an open-source and commercial platform to manage the ML lifecycle. The purpose of this document is to explain how to run Jobs with MLflow using the Run:AI scheduler. 
+[ClearML](https://clear.ml/){target=_blank} is an open-source and commercial platform to manage the ML lifecycle. The purpose of this document is to explain how to run Jobs with MLflow using the Run:ai scheduler. 
 
 ## Overview 
 
@@ -9,8 +9,8 @@ ClearML concepts are discussed [here](https://clear.ml/docs/latest/docs/){target
 
 ## Terminology
 
-* Run:AI uses _Projects_. A Project is assigned to users and contains information such as quota, affinity, and more. A Run:AI Project is implemented as a Kubernetes namespace. 
-* ClearML allows the Reesearcher to run _Experiments_. Experiment is equivalent to a Run:AI Job. A ClearML Experiment is sent to a ClearML _Queue_ for execution. 
+* Run:ai uses _Projects_. A Project is assigned to users and contains information such as quota, affinity, and more. A Run:ai Project is implemented as a Kubernetes namespace. 
+* ClearML allows the Reesearcher to run _Experiments_. Experiment is equivalent to a Run:ai Job. A ClearML Experiment is sent to a ClearML _Queue_ for execution. 
 * ClearML execute _Agents_. An agent runs on a Kubernetes namespace. An Agent is configured to watch a Queue. The Agent fetches an experiment from the queue for execution within the Kubernetes namespace.
 
 ## Step by Step Instructions
@@ -18,7 +18,7 @@ ClearML concepts are discussed [here](https://clear.ml/docs/latest/docs/){target
 
 ### Prerequisites
 
-* A working Run:AI cluster.
+* A working Run:ai cluster.
 * Install ClearML via [ClearML helm charts](https://github.com/allegroai/clearml-helm-charts){target=_blank}. Once ClearML is installed, verify that the installation is working by running:
 
 ```
@@ -31,10 +31,10 @@ See that all pods are up.
 
 ### Preparations
 
-To prepare a Run:AI Project and a ClearML Queue do the following:
+To prepare a Run:ai Project and a ClearML Queue do the following:
 
 * In ClearML, create a queue named `runai-clearml`.
-* In Run:AI, create a project named `clearml`. This will create a namespace called `runai-clearml`
+* In Run:ai, create a project named `clearml`. This will create a namespace called `runai-clearml`
 * Associate the queue and the project by running:
 
 ``` bash
@@ -46,7 +46,7 @@ kubectl get deployment -n clearml clearml-k8sagent -ojson | sed 's/clearml-apise
 ```
 
 !!! Note
-    The script is hardcoded for the above queue name and Run:AI Project name. You can change the script accordingly.
+    The script is hardcoded for the above queue name and Run:ai Project name. You can change the script accordingly.
 
 Validate that the Queue and thew Project are connected by running:
 
@@ -54,11 +54,11 @@ Validate that the Queue and thew Project are connected by running:
 kubectl get pod -n runai-clearml
 ```
 
-You should see a ClearML agent running inside the Run:AI namespace. 
+You should see a ClearML agent running inside the Run:ai namespace. 
 
 
 ### Running an Experiment
 
 * Using the ClearML interface create an experiment and enqueue it to the `runai-clearml` queue.
-* Go to the Run:AI user interface. Under `Jobs` see that the job was created. 
+* Go to the Run:ai user interface. Under `Jobs` see that the job was created. 
 

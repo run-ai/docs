@@ -1,8 +1,8 @@
-# Use PyCharm with X11 Forwarding and Run:AI
+# Use PyCharm with X11 Forwarding and Run:ai
 
 __X11__ is a window system for the Unix operating systems. __X11 forwarding__ allows executing a program remotely through an SSH connection. Meaning, the executable file itself is hosted on a different machine than where the graphical interface is being displayed. The graphical windows are forwarded to your local machine through the SSH connection.
 
-This section is about setting up X11 forwarding from a Run:AI-based container to a [PyCharm](https://www.jetbrains.com/pycharm/){target=_blank} IDE on a remote machine.
+This section is about setting up X11 forwarding from a Run:ai-based container to a [PyCharm](https://www.jetbrains.com/pycharm/){target=_blank} IDE on a remote machine.
  
 
 
