@@ -11,7 +11,7 @@ helm list -n runai -f runai-cluster
 
 and record the chart version in the form of `runai-cluster-<version-number>`
 
-## Upgrade
+## Upgrade to version 2.2
 Run:
 
 ```
@@ -21,6 +21,9 @@ helm get values runai-cluster -n runai > values.yaml
 helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
 ```
 
+# Upgrade from version 2.2 or older to version 2.3 or higher
+
+Delete the cluster as describe [here](cluster-delete.md) and perform cluster installation again.
 ## Verify successful installation
 
 To verify that the upgrade has succeeded run:
