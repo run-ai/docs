@@ -1,22 +1,22 @@
 ## March 2022 Run:ai Version 2.3
 
-### Important installation note
+### Important Upgrade Note
 
-To upgrade version 2.3 cluster from earlier versions, you must uninstall version 2.2 or earlier and then install version 2.3. For detailed information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
+To upgrade to version 2.3 cluster from earlier versions, you must uninstall version 2.2 or earlier and only then install version 2.3. For detailed information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
 
-### Unified user interface
+### Unified User Interface
 
-The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `<company-name>.run.ai`
+The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `https://<company-name>.run.ai`. The user interface capabilities are subject to the role of the individual user. 
 
 * See [instructions](../admin/admin-ui-setup/overview.md) on how to set up the unified user interface. 
-* See [User interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description on how to submit, view and delete Jobs from the unified user interface. 
+* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description on how to submit, view and delete Jobs from the unified user interface. 
 
 
 Other features:
  
 * Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
-* Run:ai now supports [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
+* Run:ai now supports orchastraction of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
 
 ## February 2022 Run:ai Version 2.2
 
