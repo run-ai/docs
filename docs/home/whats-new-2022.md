@@ -17,6 +17,7 @@ Other features:
 * Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
 * Run:ai now supports orchastraction of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
+* Run:ai now supports Openshift 4.9, Kubernetes 1.22 and 1.23.
 
 ## February 2022 Run:ai Version 2.2
 
