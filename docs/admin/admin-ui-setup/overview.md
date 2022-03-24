@@ -27,6 +27,8 @@ On SaaS-based installations, the cluster creation wizard requires the cluster's 
 
 ![cluster-wizard.png](img/cluster-wizard.png)
 
+To be able to submit jobs, go to `General | Settings` and enable the `Unified UI` flag. 
+
 ## Control-plane Features
 
 The following documents describe how to create users, departments, and projects as well as effectively utilize the Run:ai dashboards.

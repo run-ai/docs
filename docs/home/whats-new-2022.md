@@ -1,3 +1,23 @@
+## March 2022 Run:ai Version 2.3
+
+### Important installation note
+
+To upgrade version 2.3 cluster from earlier versions, you must uninstall version 2.2 or earlier and then install version 2.3. For detailed information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
+
+### Unified user interface
+
+The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `<company-name>.run.ai`
+
+* See [instructions](../admin/admin-ui-setup/overview.md) on how to set up the unified user interface. 
+* See [User interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description on how to submit, view and delete Jobs from the unified user interface. 
+
+
+Other features:
+ 
+* Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
+* Run:ai now support _Charmed Kubernetes_. 
+* Run:ai now supports [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
+
 ## February 2022 Run:ai Version 2.2
 
 * When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/authentication/sso.md).
