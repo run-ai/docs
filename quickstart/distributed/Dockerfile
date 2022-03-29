@@ -1,4 +1,4 @@
-FROM mpioperator/tensorflow-benchmarks
+FROM mpioperator/tensorflow-benchmarks:0.3.0
 
 RUN mkdir /cifar10
 COPY ./cifar-10 /cifar10
