@@ -4,43 +4,28 @@
 
 The Run:ai User Interface allows the creation of Run:ai Users. Run:ai Users can receive varying levels of access to the Administration UI and submit Jobs on the Cluster.
 
-__Notes:__
 
-*   It is possible to connect the Run:ai user interface to the organization's SAML. For further information see [configuration single sign-on](../runai-setup/authentication/sso.md).
+!!! Tip
+    It is possible to connect the Run:ai user interface to the organization's directory and use single sign-on. This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [configuration single sign-on](../runai-setup/authentication/sso.md).
 
 ## Working with Users
 
-### Create User
+You can create users, as well as update and delete users. 
+### Create a User
 
 !!! Note
-    To be able to manipulate Users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. 
+    To be able to review, add, update and delete users, you must have _Administrator_ access. if you do not have such access, please contact an Administrator. 
 
-* Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
-*  On the top right, select "Add New Users".
-
-![mceclip2.png](img/add-user.jpg)
-
-*   Choose a User name and email. Leave password as blank, it will be set by the User
-*   Select Roles. Note -- more than one role can be selected. The available roles are:
+1. Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
+2. On the top right, select "Add New Users".
+3. Choose a User name and email. 
+4. Select Roles. More than one role can be selected. The available roles are:
     *  __Administrator__: Can manage Users and install Clusters. 
     *  __Editor__: Can manage Projects and Departments.
     * __Viewer__: View-only access to the Run:ai User Interface.
-    * __Researcher__: Can run ML workloads using the Run:ai command-line interface, The Researcher user interface or similar. This setting is relevant only if [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled and requires the [assigning of users to projects](../project-setup/#create-a-new-project.md).
+    * __Researcher__: Can submit ML workloads. Setting a user as a _Researcher_ also requires the [assigning the user to projects](../project-setup/#create-a-new-project.md).
     * __Research Manager__: Can act as _Researcher_ in all projects, including new ones to be created in the future. 
-*   Select a Cluster. This determines what Clusters are accessible to this User
-*   Press "Save"
+5. (Optional) Select Cluster(s). This determines what Clusters are accessible to this User
+6. Press "Save"
 
-The User will receive a join mail and will be able to set a password. 
-
-### Update a User
-
-*   Select an existing User. 
-*   Right-click and press "Edit".
-*   Update the values and press "Save".
-
-### Delete an existing User
-
-*   Select an existing User. 
-*   Right-click and press "Delete".
-
- 
+You will get the new user credentials and have the option to send the credentials by email. 

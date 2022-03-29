@@ -10,7 +10,6 @@ Follow the Quickstart documents below to learn more:
 * [Hyperparameter Optimization](walkthrough-hpo.md)
 * [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
 * [Fairness](walkthrough-queue-fairness.md)
-* [Elasticity](walkthrough-elasticity.md)
 * [Inference](quickstart-inference.md)
 * [Dynamic MIG](quickstart-mig.md)
 

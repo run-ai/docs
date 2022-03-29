@@ -14,7 +14,6 @@ runai submit
     [--cpu double] 
     [--cpu-limit double] 
     [--create-home-dir]
-    [--elastic] 
     [--environment stringArray | -e stringArray] 
     [--git-sync string]
     [--gpu double | -g double] 
@@ -339,9 +338,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 
 ### Scheduling
-
-#### --elastic
-> Mark the Job as elastic. For further information on Elasticity see [Elasticity Dynamically Stretch Compress Jobs According to GPU Availability](../researcher-library/rl-elasticity.md).
 
 #### --node-type string
 >  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).

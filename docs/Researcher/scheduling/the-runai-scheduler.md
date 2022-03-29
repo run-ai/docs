@@ -110,14 +110,6 @@ Part of an efficient scheduler is the ability to eliminate fragmentation:
 *   The first step in avoiding fragmentation is bin packing: try and fill nodes (machines) up before allocating workloads to new machines.
 *   The next step is to consolidate Jobs on demand. If a workload cannot be allocated due to fragmentation, the scheduler will try and move unattended workloads from node to node in order to get the required amount of GPUs to schedule the pending workload.
 
-### Elasticity
-
-Run:ai Elasticity is explained [here](../researcher-library/rl-elasticity.md). In essence, it allows unattended workloads to shrink or expand based on the cluster's availability.
-
-*   Shrinking happens when the scheduler is unable to schedule an elastic unattended workload and no amount of _consolidation_ helps. The scheduler then divides the requested GPUs by half again and again and tries to reschedule.
-*   Shrink Jobs will expand when enough GPUs will be available.
-*   Expanding happens when the scheduler finds spare GPU resources, enough to double the amount of GPUs for an elastic workload.
-
 ## Advanced
 
 ### GPU Fractions
@@ -136,7 +128,6 @@ GPU Fractions are scheduled as regular GPUs in the sense that:
 
 Support: 
 
-* Elasticity is not supported with fractions.
 * Hyperparameter Optimization supports fractions. 
 
 
