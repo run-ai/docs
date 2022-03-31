@@ -88,10 +88,58 @@ oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 Currently, this setting cannot be changed after the control plane is installed.
 
+## Install NVIDIA Dependencies
+
+
+!!! Note
+    You must have Cluster Administrator rights to install these dependencies. 
+
+Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs.
+NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank}. 
+
+When done, verify that the GPU Operator is installed by running:
+
+```
+oc get pods -n gpu-operator
+```
+
+
+??? "Run:ai 2.3 or earlier"
+
+    __Disable the NVIDIA Device Plugin and DCGM Exporter__
+
+    After successful verification, 
+
+    (1) Disable the GPU Operator by running:
+
+    ```
+    oc scale --replicas=0 -n openshift-operators deployment gpu-operator
+    ```
+
+    (1) Disable the NVIDIA DCGM exporter by running:
+
+    ```
+    oc -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
+      -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+    ```
+
+    (2) Replace the NVIDIA Device Plug-in with the Run:ai version:
+
+    ```
+    oc patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
+      -p '{"spec":{"template":{"spec":{"containers":[{"name":"nvidia-device-plugin-ctr","image":"gcr.io/run-ai-prod/nvidia-device-plugin:1.0.11"}]}}}}'
+    oc create clusterrolebinding --clusterrole=admin \
+      --serviceaccount=gpu-operator-resources:nvidia-device-plugin nvidia-device-plugin-crb
+    ```
+    <!-- oc -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
+      -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
+
+
+
 ## Additional Permissions
 
 As part of the installation you will be required to install the [Control plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
 ## Next Steps
 
-Continue with installing the [Run:ai third-party dependencies](ocp-dependencies.md).
+Continue with installing the [Run:ai Control Plane](backend.md).

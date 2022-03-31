@@ -74,6 +74,7 @@ plugins:
         'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
 #        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
+        'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
         'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
@@ -144,7 +145,6 @@ nav:
         - 'OpenShift-based' :
           - 'Prerequisites' : 'admin/runai-setup/self-hosted/ocp/prerequisites.md'
           - 'Preperations' : 'admin/runai-setup/self-hosted/ocp/preparations.md'
-          - 'Install Dependencies' : 'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/ocp/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/ocp/cluster.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/ocp/project-management.md'
