@@ -81,7 +81,7 @@ Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
     No additional work
 
 === "NVIDIA software on each node"
-    On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifcally, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
+    On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifically, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
 
     ``` json
     {
