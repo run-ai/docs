@@ -88,20 +88,26 @@ Restart the docker service:
 sudo systemctl restart docker
 ```
 
-On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifcally, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
+Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
 
-``` json
-{
-     "exec-opts": ["native.cgroupdriver=systemd"],
-     "default-runtime": "nvidia",
-        "runtimes": {
-        "nvidia": {
-            "path": "nvidia-container-runtime",
-            "runtimeArgs": []
+=== "NVIDIA GPU Operator"
+    No additional work
+
+=== "NVIDIA software on each node"
+    On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifcally, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
+
+    ``` json
+    {
+        "exec-opts": ["native.cgroupdriver=systemd"],
+        "default-runtime": "nvidia",
+            "runtimes": {
+            "nvidia": {
+                "path": "nvidia-container-runtime",
+                "runtimeArgs": []
+            }
         }
     }
-}
-```
+    ```
 
 Install Kubernetes worker:
 ``` shell
