@@ -2,14 +2,15 @@
 !!! Note
     You must have Cluster Administrator rights to install these dependencies. 
 
-An OpenShift installation of Run:ai has third-party dependencies that must be pre-installed before installing Run:ai itself. 
-NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank} on how to install the required Operators so as to suppport GPUs on OpenShift. 
+Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs.
+NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank}. 
 
-Verify that the GPU Operator is installed by running:
+When done, verify that the GPU Operator is installed by running:
 
 ```
 oc get pods -n gpu-operator
 ```
+
 
 ??? "Run:ai 2.3 or earlier"
 
