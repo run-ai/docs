@@ -7,8 +7,7 @@ Kubernetes is composed of master(s) and workers. The instructions below are for 
 The script below assumes all machines have Ubuntu 18.04 or Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 
 
-
-## Run on Master Node
+## Run on All Nodes
 
 If not yet installed, install docker by performing the instructions [here](https://docs.docker.com/engine/install/ubuntu/){target=_blank}. Specifically, you can use a convenience script provided in the document:
 ``` shell
@@ -28,6 +27,7 @@ For more information, see [container runtimes](https://kubernetes.io/docs/setup/
 ``` 
 sudo systemctl restart docker
 ```
+## Run on Master Node
 
 Install Kubernetes master:
 ``` shell
