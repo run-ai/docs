@@ -75,19 +75,6 @@ Verify that the master node is ready
 
 ## Run on Kubernetes Workers
 
-If not yet installed, install docker by performing the instructions here: https://docs.docker.com/engine/install/ubuntu/. Specifically, you can use a convenience script provided in the document:
-
-``` shell
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-Restart the docker service:
-
-```
-sudo systemctl restart docker
-```
-
 Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
 
 === "NVIDIA GPU Operator"
