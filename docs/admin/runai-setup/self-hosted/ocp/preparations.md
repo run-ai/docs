@@ -15,6 +15,7 @@ The project `gpu-operator` is used by the _GPU Opeator_ dependency described abo
 
 ```
 oc new-project runai
+oc new-project runai-reservation
 oc new-project runai-backend
 oc new-project gpu-operator-resources
 ```

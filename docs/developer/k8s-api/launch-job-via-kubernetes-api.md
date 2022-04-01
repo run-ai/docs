@@ -1,10 +1,13 @@
 # Submit a Run:ai Job via Kubernetes API
 
-* 
-
 This article is a complementary article to the article on [launching jobs via YAML](launch-job-via-yaml.md). It shows how to use a programming language and [Kubernetes API](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#programmatic-access-to-the-api){target=_blank} to submit jobs. 
 
 The article uses Python, though Kubernetes API is available in several other programming languages. 
+
+
+!!! Warning
+    Researcher Kubernetes API will soon be deprecated. If you are using or considering using it, please contact Run:ai customer support.
+
 
 ## Submit a Run:ai Job 
 
