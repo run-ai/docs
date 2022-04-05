@@ -18,7 +18,7 @@ runai submit build-jupyter --jupyter -g 1
 The terminal will show the following: 
 
 ``` shell
-~> runai submit build-jupyter --jupyter -g 1
+~> runai submit build-jupyter --jupyter -g 1 --attach
 INFO[0001] Exposing default jupyter notebook port 8888
 INFO[0001] Using default jupyter notebook image "jupyter/scipy-notebook"
 INFO[0001] Using default jupyter notebook service type portforward
