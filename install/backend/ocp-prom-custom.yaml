@@ -65,13 +65,13 @@ spec:
     - expr: runai_gpus_running_with_pod or ((count by (instance,gpu) (dcgm_gpu_utilization)
             unless runai_gpus_running_with_pod) - 1)
       record: runai_gpus_is_running_with_pod
-    - expr: (label_replace(runai_gpus_is_running_with_pod, "pod_ip", "$1", "instance", "(.*):(.*)")) * on(pod_ip) group_left(node) kube_pod_info{created_by_name=~"dcgm-exporter"}
+    - expr: (label_replace(runai_gpus_is_running_with_pod, "pod_ip", "$1", "instance", "(.*):(.*)")) * on(pod_ip) group_left(node) kube_pod_info{created_by_name=~".*dcgm-exporter"}
       record: runai_gpus_is_running_with_pod2
-    - expr: (label_replace(dcgm_gpu_utilization, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"dcgm-exporter"}
+    - expr: (label_replace(dcgm_gpu_utilization, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~".*dcgm-exporter"}
       record: runai_node_gpu_utilization
-    - expr: (label_replace(DCGM_FI_DEV_FB_FREE, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"dcgm-exporter"}
+    - expr: (label_replace(DCGM_FI_DEV_FB_FREE, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~".*dcgm-exporter"}
       record: runai_node_gpu_free_memory
-    - expr: (label_replace(DCGM_FI_DEV_FB_USED, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"dcgm-exporter"}
+    - expr: (label_replace(DCGM_FI_DEV_FB_USED, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~".*dcgm-exporter"}
       record: runai_node_gpu_used_memory
     - expr: runai_node_gpu_free_memory + runai_node_gpu_used_memory
       record: runai_node_gpu_total_memory
@@ -79,7 +79,7 @@ spec:
       record: runai_gpu_last_active_time_info_per_pod
     - expr: max by (UUID, container, device, endpoint, gpu, instance, modelName, service) (runai_gpu_last_active_time_info_per_pod)
       record: runai_gpu_last_active_time_info
-    - expr: (label_replace(runai_gpu_last_active_time_info, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~"dcgm-exporter"}
+    - expr: (label_replace(runai_gpu_last_active_time_info, "pod_ip", "$1", "instance", "(.*):(.*)")) * on (pod_ip) group_left(node) kube_pod_info{created_by_name=~".*dcgm-exporter"}
       record: runai_node_gpu_last_not_idle_time
     - expr: ((sum by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu)) / (count by (pod_group_uuid) (runai_pod_group_gpu_utilization_by_gpu)))
             * on (pod_group_uuid) group_left(queue_name, workload_name) (runai_pod_group_phase_with_info{phase="Running"}==1)
