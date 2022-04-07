@@ -45,6 +45,23 @@ Run:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access roles](../../../config/access-roles/).
 
+### Prometheus Adapter 
+If you chose to install Prometheus Adapter as part of our installation, the following steps are required for it to work:
+1. Copy `prometheus-adapter-prometheus-config` and `serving-certs-ca-bundle` ConfigMaps from `openshift-monitoring` namespace to the `monitoring` namespace
+```
+kubectl get cm prometheus-adapter-prometheus-config --namespace=openshift-monitoring -o yaml \
+  | sed 's/namespace: openshift-monitoring/namespace: monitoring/' \
+  | kubectl create -f -
+kubectl get cm serving-certs-ca-bundle --namespace=openshift-monitoring -o yaml \
+  | sed 's/namespace: openshift-monitoring/namespace: monitoring/' \
+  | kubectl create -f -
+```
+2. Allow Prometheus Adapter serviceaccount to create SecurityContext with RunAsUser 10001:
+```
+oc adm policy add-scc-to-user anyuid system:serviceaccount:monitoring:runai-cluster-prometheus-adapter
+```
+
+
 
 
 
