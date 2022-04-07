@@ -74,7 +74,16 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
+### Knative
+Inferece workloads require knative serving installed.
+You can follow the instructions [here](https://knative.dev/docs/install/).
 
+### Prometheus adapter
+
+In order to enable autoscaling based on custom metrics, prometheus-adapter should be installed.
+You can install it as part of the [Run:ai installation](./customize-cluster-install.md).
+
+If you wish to use existing prometheus-adapter, you will need to configure it manually with our rules, specified in our chart's values under `prometheus-adapter.rules` field.
 
 ### Distributed Training via Kubeflow MPI
 
