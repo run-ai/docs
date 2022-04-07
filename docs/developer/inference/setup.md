@@ -30,7 +30,7 @@ Wait for the MPS server to start running:
 When the MPS server pod has started to run, restart the `nvidia-device-plugin` pods:
 
 ``` bash
-kubectl delete pods -n runai --selector=name=nvidia-device-plugin-ds
+kubectl rollout restart ds/nvidia-device-plugin-daemonset -n gpu-operator
 ```
 
 To enable the MPS server on selected nodes, please contact Run:ai customer support.
