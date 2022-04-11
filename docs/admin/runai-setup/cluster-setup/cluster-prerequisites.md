@@ -61,6 +61,7 @@ An alternative method is to Install NVIDIA software on each node separately. Thi
 
 === "Run:ai 2.4 or later"
     Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
+    Make sure to update the value of `installedFromGpuOperator` to `false` in the [customized cluster installation](customize-cluster-install.md).
 
 === "Run:ai 2.3 or earlier"
     Do not perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
