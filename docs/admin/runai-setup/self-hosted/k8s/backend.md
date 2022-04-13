@@ -22,7 +22,7 @@ Create a configuration file to install the Run:ai control plane:
 
 Where:
 
-* `--tls-` flags relate to public and private keys for `runai.<company-name>`
+* `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
 * `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 * `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes. 
 
