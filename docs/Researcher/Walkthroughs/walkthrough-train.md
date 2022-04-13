@@ -90,7 +90,7 @@ Under Nodes you can see node utilization:
 
 Run the following:
 
-    runai delete train1
+    runai delete job train1
 
 This would stop the training workload. You can verify this by running ``runai list jobs`` again.
 

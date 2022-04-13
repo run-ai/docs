@@ -78,7 +78,7 @@ You should see a log of the inference call:
 
 Run the following:
 
-    runai delete inference1
+    runai delete job inference1
 
 This would stop the inference workload. Verify this by running ``runai list jobs`` again.
 

@@ -8,7 +8,7 @@ Jobs can be started via Kubeflow, Run:ai CLI, Rancher or via direct Kubernetes A
 
 You can delete the Job manually by running:
 
-    runai delete run3
+    runai delete job run3
 
 But this may not be scalable for a production system.
 

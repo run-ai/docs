@@ -11,7 +11,7 @@ Note that once you delete a Job, its entire data will be gone:
 ## Synopsis
 
 ``` shell
-runai delete <job-name> 
+runai delete job <job-name> [<job-name> ...]
     [--all | -A]
 
     [--loglevel value] 

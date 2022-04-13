@@ -63,7 +63,7 @@ To see the merged logs of all pods run:
 
 Finally, you can delete the distributed training workload by running:
 
-        runai delete dist
+        runai delete job dist
 
 ### Run an Interactive Distributed Workload
 

@@ -69,7 +69,7 @@ To complete this Quickstart you must have:
 
 * Finally, delete the Jobs:
 
-        runai delete elastic1 filler1
+        runai delete job elastic1 filler1
 
 
 ### Shrinking
@@ -97,7 +97,7 @@ To complete this Quickstart you must have:
 
 *   Delete the filler Job and list the Jobs again:
 
-        runai delete filler2
+        runai delete job filler2
         runai list jobs
 
     The result:
@@ -109,7 +109,7 @@ To complete this Quickstart you must have:
 
 *   Finally, delete the Job:
 
-        runai delete elastic2
+        runai delete job elastic2
 
 
 
