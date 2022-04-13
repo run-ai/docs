@@ -8,14 +8,14 @@ Create a configuration file to install the Run:ai control plane:
 === "Connected"
     Generate a values file by running:
     ```
-    runai-adm generate-values --domain runai.<company-name> --tls-cert <file-name> \
+    runai-adm generate-values --domain <DNS_RECORD> --tls-cert <file-name> \
         --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
         --external-ips <ip> 
     ```
 === "Airgapped"
     Generate a values file by running the following __under the `deploy` folder__:
     ```
-    runai-adm generate-values --domain runai.<company-name>  --tls-cert <file-name> \
+    runai-adm generate-values --domain <DNS_RECORD>  --tls-cert <file-name> \
         --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
         --external-ips <ip> --airgapped
     ```
