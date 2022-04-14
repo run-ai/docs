@@ -23,9 +23,13 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 !!! Notes
     * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.23. 
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
-    * If you are using RedHat OpenShift. Run:ai requires OpenShift 4.6 or later. 
+    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.9. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
+
+!!! Important
+    * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
+    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with GPU Operator version 1.8 or higher. 
 
 Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
 
@@ -42,25 +46,19 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
     ```
 
-!!! Important
-    * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
-    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with option 1 and using the GPU Operator version 1.8 or higher. 
 
 
 #### Alternative Installation Method: Install on Each Node
 
-An alternative method is to Install NVIDIA software on each node separately. This method is less recommended but is documented in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank}. Some notes:
+An alternative method is to Install NVIDIA software on each node separately. This method is __less recommended__ but is documented in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank}. Some notes:
 
 * Run:ai does __not__ currently support NVIDIA Driver version 510 or later.
 * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
 * Note the differentiation between _containerd_ and _docker_. 
 * The instructions relate to Ubuntu and link to other Operating systems. 
+* Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
 
-
-=== "Run:ai 2.4 or later"
-    Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
-
-=== "Run:ai 2.3 or earlier"
+??? "Run:ai 2.3 or earlier"
     Do not perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
 
 

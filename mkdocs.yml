@@ -208,7 +208,7 @@ nav:
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
-#      - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+      - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
@@ -238,7 +238,7 @@ nav:
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
-#      - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
+      - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
@@ -259,22 +259,11 @@ nav:
     - 'Calling REST APIs' : 'developer/rest-auth.md'
     - 'Researcher API' : 
       - 'REST API' : 'developer/researcher-rest-api/overview.md'
-        # - 'Overview' : 'developer/researcher-rest-api/overview.md'
-        # - 'Submit a Job' :  'developer/researcher-rest-api/rest-submit.md'
-        # - 'Delete a Job' :  'developer/researcher-rest-api/rest-delete.md'
-        # - 'Get a list of Jobs' :  'developer/researcher-rest-api/rest-list-jobs.md'
-        # - 'Get a list of Projects' :  'developer/researcher-rest-api/rest-list-projects.md'
       - 'Kubernetes API' : 
         - 'Overview' : 'developer/k8s-api/overview.md'
         - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
         - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
-      # - 'Overview' : 'developer/admin-rest-api/overview.md'
-      # - 'Projects' :  'developer/admin-rest-api/projects.md'
-      # - 'Departments' :  'developer/admin-rest-api/departments.md'
-      # - 'Users' :  'developer/admin-rest-api/users.md'
-      # - 'Node Types' :  'developer/admin-rest-api/node-types.md'
-      # - 'Clusters' :  'developer/admin-rest-api/clusters.md'
     - 'Inference API' :
       - 'Overview' : 'developer/inference/overview.md' 
       - 'Setup' : 'developer/inference/setup.md' 
