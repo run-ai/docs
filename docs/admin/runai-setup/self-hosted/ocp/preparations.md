@@ -10,7 +10,7 @@ The following section provides IT with the information needed to prepare for a R
 
 ## Create OpenShift Projects
 
-Run:ai uses two projects. One for the control plane (`runai-backend`) and one for the cluster itself (`runai`). 
+Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
 The project `gpu-operator` is used by the _GPU Opeator_ dependency described above. 
 
 ```
