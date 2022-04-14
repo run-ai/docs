@@ -35,6 +35,8 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 
 * Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
 * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
+* Make sure you install the GPU Operator in the namespace 'gpu-operator' (`-n gpu-operator`). If not, you will have to specify the namespace in the [customized cluster installation](customize-cluster-install.md).
+    
 
 ??? "Run:ai 2.3 or earlier"
     * Run:ai has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
@@ -56,7 +58,8 @@ An alternative method is to Install NVIDIA software on each node separately. Thi
 * Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
 * Note the differentiation between _containerd_ and _docker_. 
 * The instructions relate to Ubuntu and link to other Operating systems. 
-* Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
+* Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.  
+<!-- Make sure to update the value of `installedFromGpuOperator` to `false` in the [customized cluster installation](customize-cluster-install.md). -->
 
 ??? "Run:ai 2.3 or earlier"
     Do not perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.

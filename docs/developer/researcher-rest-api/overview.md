@@ -30,7 +30,7 @@ This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clus
 Get all the jobs for a project named `team-a`: 
 
 ``` bash
-curl  'https://<CLUSTER-ENDPOINT>/researcher/api/v1/job/team-a' \
+curl  'https://<CLUSTER-ENDPOINT>/researcher/api/v1/jobs/team-a' \
   -H 'accept: application/json' \
 --header 'Authorization: Bearer <ACCESS-TOKEN>' 
 ```

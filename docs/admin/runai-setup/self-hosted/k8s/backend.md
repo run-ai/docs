@@ -8,21 +8,21 @@ Create a configuration file to install the Run:ai control plane:
 === "Connected"
     Generate a values file by running:
     ```
-    runai-adm generate-values --domain runai.<company-name> --tls-cert <file-name> \
+    runai-adm generate-values --domain <DNS_RECORD> --tls-cert <file-name> \
         --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
         --external-ips <ip> 
     ```
 === "Airgapped"
     Generate a values file by running the following __under the `deploy` folder__:
     ```
-    runai-adm generate-values --domain runai.<company-name>  --tls-cert <file-name> \
+    runai-adm generate-values --domain <DNS_RECORD>  --tls-cert <file-name> \
         --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
         --external-ips <ip> --airgapped
     ```
 
 Where:
 
-* `--tls-` flags relate to public and private keys for `runai.<company-name>`
+* `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
 * `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 * `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes. 
 
@@ -69,7 +69,7 @@ Run the helm command below:
 
 === "Airgapped"
     ```
-    helm install runai-backend runai-backend/runai-backend-<version>.tgz -n \
+    helm install runai-backend runai-backend-<version>.tgz -n \
         runai-backend -f runai-backend-values.yaml 
     ```
     (replace `<version>` with the Run:ai control plane version)

@@ -1,3 +1,17 @@
+<!-- ## April 2022 Run:ai Version 2.4
+
+### Important Upgrade Note
+
+This version contains a significant change in the way that Run:ai uses and installs NVIDIA pre-requisites. Before version 2.4, Run:ai has installed its own variant of two NVIDIA components: [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. This required changes to the default NVIDIA installation.
+
+With this release, These two Run:ai variants are no longer needed, which makes the installation experience simpler. It does however require non-trivial changes when upgrading from older versions of Run:ai
+
+### Dynamic MIG Support
+xxxx
+http://localhost:8000/Researcher/scheduling/fractions/
+walkthrough of dynamic mig  -->
+
+
 ## March 2022 Run:ai Version 2.3
 
 ### Important Upgrade Note
