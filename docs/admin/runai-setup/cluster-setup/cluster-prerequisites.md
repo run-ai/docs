@@ -31,11 +31,11 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
     * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
     * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with GPU Operator version 1.8 or higher. 
 
-Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
+Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
 
+* We recommend to use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
 * Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
 * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
-* Make sure you install the GPU Operator in the namespace 'gpu-operator' (`-n gpu-operator`). If not, you will have to specify the namespace in the [customized cluster installation](customize-cluster-install.md).
     
 
 ??? "Run:ai 2.3 or earlier"
@@ -50,7 +50,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 
 
 
-#### Alternative Installation Method: Install on Each Node
+<!-- #### Alternative Installation Method: Install on Each Node
 
 An alternative method is to Install NVIDIA software on each node separately. This method is __less recommended__ but is documented in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank}. Some notes:
 
@@ -59,11 +59,11 @@ An alternative method is to Install NVIDIA software on each node separately. Thi
 * Note the differentiation between _containerd_ and _docker_. 
 * The instructions relate to Ubuntu and link to other Operating systems. 
 * Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.  
-<!-- Make sure to update the value of `installedFromGpuOperator` to `false` in the [customized cluster installation](customize-cluster-install.md). -->
+ Make sure to update the value of `installedFromGpuOperator` to `false` in the [customized cluster installation](customize-cluster-install.md). 
 
 ??? "Run:ai 2.3 or earlier"
     Do not perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
-
+ -->
 
 
 ### Prometheus 
