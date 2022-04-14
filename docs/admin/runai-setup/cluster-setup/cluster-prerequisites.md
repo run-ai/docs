@@ -34,7 +34,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
 
 * We recommend to use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
-* Note that the document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
+* Note that the NVIDIA document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
 * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
     
 
@@ -48,6 +48,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
     ```
 
+    (use the namespace `gpu-operator-resources` if the NVIDIA GPU Operator is of version 1.8 or earlier )
 
 
 <!-- #### Alternative Installation Method: Install on Each Node
