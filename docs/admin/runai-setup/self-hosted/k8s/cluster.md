@@ -73,7 +73,7 @@ Run:
     ```
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access foles](../../../config/access-roles/).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access roles](../../../config/access-roles/).
 
 
 ## Next Steps
