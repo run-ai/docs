@@ -22,7 +22,7 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
 
 
 !!! limitation
-    With the fraction technology all running workloads, which utilize the GPU, share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU compute power.
+    With the fraction technology all running workloads, which utilize the GPU, share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU's compute power.
 
 ## Dynamic MIG
 
@@ -41,7 +41,7 @@ Run:ai provides a way to __dynamically__ create a MIG partition:
 * MIG is configured on the fly according to workload demand, without needing to drain workloads or to involve an IT administrator.
 * Run:ai will automatically deallocate the partition when the workload finishes. This happens in a _lazy_ fashion in the sense that the partition will not be removed until the scheduler decides that it is needed elsewhere. 
 * Run:ai provides an additional flag to dynamically create the __specific__ MIG partition in NVIDIA terminology. As such, you can specify `--mig-profile 2g.10gb`.  
-* In a single GPU cluster you have have some MIG nodes that are dynamically allocated and some that are not.
+* In a single GPU cluster you have some MIG nodes that are dynamically allocated and some that are not.
 
 For more details on Run:ai fractions see the [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md).
 
@@ -58,7 +58,7 @@ runai-adm set node-role --dynamic-mig-enabled <node-name>
 
 !!! Limitations
     * Once a node has been marked as dynamic MIG enabled, it can only be used via the Run:ai scheduler.
-    * When it comes to Kubernete, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`.
+    * When it comes to Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`.
     * Run:ai currently supports only A100 nodes with 40GB RAM (if you need support for A30 or A100 with 80GB RAM, please contact Run:ai customer support).
 
 ## Mixing Fractions and Dynamic MIG
