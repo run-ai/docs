@@ -24,6 +24,8 @@ If your Run:ai tenant has been created before April 2022, Go to `General | Setti
 
 ## Architecture
 
+:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
+
 * Run:ai saves metadata such as users, projects, departments, clusters, and tenant settings, in the control plane residing on the Run:ai cloud.
 * Workload information resides on (sometimes multiple) GPU clusters. 
 * The Run:ai user interface needs to work with both sources of information. 

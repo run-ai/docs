@@ -1,5 +1,8 @@
 # Viewing and Submitting Jobs
 
+:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
+
+
 The Run:ai User interface Job area allows the viewing of Jobs and Job details. It also allows the Reseracher to submit Jobs, suspend and resume Jobs and delete Jobs.
 
 ## Job list
