@@ -13,6 +13,8 @@ The researcher workbench part of the tool allows Researchers to submit, delete a
 
 ## Setup
 
+:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
+
 While the control-plane part is immediately accessible, the researcher workbench part requires a cluster of version 2.3 or later. 
 
 The cluster installation process requires [configuring a new cluster](../runai-setup/cluster-setup/cluster-install.md) and downloading a YAML file. 
@@ -23,8 +25,6 @@ On SaaS-based installations, the cluster creation wizard requires the cluster's 
 If your Run:ai tenant has been created before April 2022, Go to `General | Settings` and enable the `Unified UI` flag. 
 
 ## Architecture
-
-:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
 
 * Run:ai saves metadata such as users, projects, departments, clusters, and tenant settings, in the control plane residing on the Run:ai cloud.
 * Workload information resides on (sometimes multiple) GPU clusters. 
