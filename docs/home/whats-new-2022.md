@@ -14,6 +14,11 @@ For further information see the [Run:ai NVIDIA prerequisies](../admin/runai-setu
 
 Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../Researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../Researcher/Walkthroughs/quickstart-mig.md).
 
+Other features:
+
+* Run:ai now support fractions on GKE.
+
+
 
 ## March 2022 Run:ai Version 2.3
 
