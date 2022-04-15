@@ -6,7 +6,7 @@ A single GPU has a significant amount of memory. Ranging from a couple of gigaby
 
 This amount of memory and computing power is important for processing large amounts of data, such as in training deep learning models. However, there are quite a few applications that do not need this power. Examples can be inference workloads and the model-creation phase. It would thus be convenient if we could __divide up a GPU__ between various workloads, thus achieving better GPU utilization. 
 
-This article describes two complementary technologies that allow the division of GPUs and how to use them with Run:ai:
+This article describes two complementary technologies that allow the division of GPUs and how to use them with Run:ai.
 
 1. Run:ai Fractions. 
 2. Dynamic allocation using NVIDIA Multi-instance GPU (MIG)
@@ -25,6 +25,8 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
     With the fraction technology all running workloads, which utilize the GPU, share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU's compute power.
 
 ## Dynamic MIG
+
+:octicons-versions-24: [Version 2.4](../../home/whats-new-2022.md#april-2022-runai-version-24-controlled-release-only)
 
 NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A100) to be partitioned into separate GPU Instances:
 

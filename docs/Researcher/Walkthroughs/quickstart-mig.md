@@ -1,5 +1,7 @@
 # Quickstart: Launch Workloads with NVIDIA Dynamic MIG
 
+:octicons-versions-24: [Version 2.4](../../home/whats-new-2022.md#april-2022-runai-version-24-controlled-release-only)
+
 ## Introduction
 
 

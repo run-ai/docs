@@ -1,15 +1,18 @@
-<!-- ## April 2022 Run:ai Version 2.4
+## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
 ### Important Upgrade Note
 
-This version contains a significant change in the way that Run:ai uses and installs NVIDIA pre-requisites. Before version 2.4, Run:ai has installed its own variant of two NVIDIA components: [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. This required changes to the default NVIDIA installation.
+This version contains a significant change in the way that Run:ai uses and installs NVIDIA pre-requisites. Prior to this version, Run:ai has installed its own variants of two NVIDIA components: [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. 
 
-With this release, These two Run:ai variants are no longer needed, which makes the installation experience simpler. It does however require non-trivial changes when upgrading from older versions of Run:ai
+As these two variants are no longer needed, Run:ai now uses the standard NVIDIA installation which makes the Run:ai installation experience simpler. It does however require non-trivial changes when __upgrading__ from older versions of Run:ai. 
+
+Going forward, we also mandate the usage of the NVIDIA GPU Operator version 1.9. The Operator easies the installation of all NVIDIA software. Drivers and Kubernetes components alike. 
+
+For further information see the [Run:ai NVIDIA prerequisies](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
 
 ### Dynamic MIG Support
-xxxx
-http://localhost:8000/Researcher/scheduling/fractions/
-walkthrough of dynamic mig  -->
+
+Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../Researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../Researcher/Walkthroughs/quickstart-mig.md).
 
 
 ## March 2022 Run:ai Version 2.3
