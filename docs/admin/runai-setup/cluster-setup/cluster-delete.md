@@ -6,7 +6,7 @@ To delete a Run:ai Cluster installation while retaining existing running jobs, r
 ``` 
 kubectl patch RunaiConfig runai -n runai -p '{"metadata":{"finalizers":[]}}' --type="merge"
 kubectl delete RunaiConfig runai -n runai
-helm delete runai-cluster -n runai --no-hooks
+helm delete runai runai-cluster -n runai
 ```
 
 The commands will __not__ delete existing Jobs submitted by users. 
