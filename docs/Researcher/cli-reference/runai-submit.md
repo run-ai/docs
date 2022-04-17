@@ -40,6 +40,7 @@ runai submit
     [--prevent-privilege-escalation]
     [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
     [--run-as-user] 
+    [--s3 string]
     [--service-type string | -s string] 
     [--stdin]
     [--template string] 
@@ -161,12 +162,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
 <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
 
-#### --git-sync string
-> Clone a git repository into the container running the job. The parameter should follow the syntax:
-> > `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
->
-> Note that source=REPOSITORY is the only mandatory field
- 
 #### --image string | -i string
 >  Image to use when creating the container for this Job
 
@@ -272,6 +267,20 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 #### --mount-propagation
 > The flag allows for sharing volumes mounted by a container to other containers in the same pod, or even to other pods on the same node.
 > When the flag is set, Run:ai will set mount propagation to the value of `HostToContainer` as documented [here](https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation){target=_blank}. With `HostToContainer` the volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.
+
+#### --git-sync string
+> Clone a git repository into the container running the job. The parameter should follow the syntax:
+> > `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`
+>
+> Note that source=REPOSITORY is the only mandatory field
+
+#### --s3 string
+> Mount an S3 compatible storage into the container running the job. The parameter should follow the syntax:
+> > `bucket=BUCKET,key=KEY,secret=SECRET,url=URL,target=TARGET_PATH`
+>
+> All the fields, except url=URL, are mandatory. Default for url is
+> > `url=https://s3.amazon.com`
+
 ### Network
 
 #### --host-ipc
@@ -280,12 +289,9 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > 
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
 
-
-
 #### --host-network
 >  Use the host's network stack inside the container.
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
-
 
 #### --port stringArray
 >  Expose ports from the Job container. Used together with `--service-type`.  
