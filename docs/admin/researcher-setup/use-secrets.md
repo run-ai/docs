@@ -72,6 +72,6 @@ To delete a secret from all Run:ai Projects, run:
 runai-adm remove secret <secret name> --cluster-wide
 ```
 
-## Secrets and Templates
+## Secrets and Policies
 
-A Secret can be set at the template level. For additional information see [template configuration](templates.md)
+A Secret can be set at the policy level. For additional information see [policies guide](policies.md)

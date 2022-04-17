@@ -95,9 +95,15 @@ runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3
 
 Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:ai CLI.
 
-### Use CLI Templates
+### Use Templates and Policies
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to template these configurations and use pre-configured configuration when submitting a Job. Please refer to [Configure Command-Line Interface Templates](../../admin/researcher-setup/templates.md). 
+Different run configurations may vary significantly and can be tedious to 
+be written each time on the command-line. To make life easier, our CLI offers 
+ways to reduce manual entry of parameters by setting up policies and templates. 
+Refer to [Configure Policies](../../admin/researcher-setup/policies.md) for 
+information about policies and to
+[Configure Templates](../../admin/researcher-setup/templates.md) for information
+about templates.
 
 ## Attached Files
 

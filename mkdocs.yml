@@ -95,6 +95,7 @@ plugins:
         'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
         'Administrator/Researcher-Setup/researcher-ui-setup.md' : 'admin/researcher-setup/researcher-ui-setup.md'
         'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
+        'Administrator/Researcher-Setup/policies.md': 'admin/researcher-setup/policies.md'
         'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
@@ -181,6 +182,7 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
       - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
       - 'Templates' : 'admin/researcher-setup/templates.md'
+      - 'Policies': 'admin/researcher-setup/policies.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
@@ -228,7 +230,6 @@ nav:
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
       - 'runai suspend' : 'Researcher/cli-reference/runai-suspend.md'
-      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
@@ -249,6 +250,8 @@ nav:
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
       - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
+    - 'Submitting':
+      - 'Workloads' : 'Researcher/submitting/workloads.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
