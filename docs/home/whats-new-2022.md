@@ -16,7 +16,7 @@ Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further inf
 
 Other features:
 
-* Run:ai now support fractions on GKE.
+* Run:ai now support fractions on GKE. GKE has a different software stack for NVIDIA. To install Run:ai on GKE please contact Run:ai customer support. 
 
 
 
