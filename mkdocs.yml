@@ -86,7 +86,7 @@ plugins:
         'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
         'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
-        'Administrator/presentations/administrator-onboarding-presentation.md' : 'admin/presentations/administrator-onboarding-presentation.md'
+#        'Administrator/presentations/administrator-onboarding-presentation.md' : 'admin/presentations/administrator-onboarding-presentation.md'
         'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
         'Administrator/Researcher-Setup/cli-troubleshooting.md' : 'admin/researcher-setup/cli-troubleshooting.md'
         'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
@@ -196,8 +196,8 @@ nav:
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
-    - 'Presentations' :
-      - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
+#    - 'Presentations' :
+#      - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
@@ -255,8 +255,8 @@ nav:
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Notebook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
-    - 'Presentations' :
-      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
+#    - 'Presentations' :
+#      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'Calling REST APIs' : 'developer/rest-auth.md'
