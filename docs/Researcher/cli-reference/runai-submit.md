@@ -6,7 +6,6 @@ Submit a Run:ai Job for execution.
 
 ``` shell
 runai submit 
-    [--always-pull-image] 
     [--attach]
     [--backoff-limit int] 
     [--command]
@@ -142,10 +141,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
 
 ### Container Related
-
-#### --always-pull-image stringArray (deprecated)
->  Deprecated. Please use `image-pull-policy=always` instead.
->  When starting a container, always pull the image from the registry, even if the image is cached on the running node. This is useful when you are re-saving updates to the image using the same tag but may incur a penalty of performance degradation on Job start. 
 
 #### --attach                        
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
