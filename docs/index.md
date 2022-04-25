@@ -40,7 +40,7 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 
 * Install the [Run:ai Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
 * _Option 1:_ Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:ai logs files.
-* _Option 2:_ Run `runai-adm -d <HOURS_DURATION>`. The command will export Run:ai logs for the duration stated. The logs will be exported to Run:ai's elasticsearch server.
+* _Option 2 - included in Run:ai version 2.5 or higher:_ Run `runai-adm -d <HOURS_DURATION>`. The command will export Run:ai logs for the duration stated. The logs will be exported to Run:ai's elasticsearch server.
 
 !!! Note
     Both options include logs of Run:ai components. They do __not__ include logs of researcher containers that may contain private information. 
