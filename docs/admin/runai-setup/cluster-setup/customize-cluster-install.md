@@ -20,7 +20,7 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 | `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:ai scope). Flag is only relevant to Run:ai version 2.4 or lower |
 | `kube-prometheus-stack.enabled` |  `true`  | Set to `false` when the cluster has an existing Prometheus installation. that is __not based__ the Prometheus __operator__ . This setting requires Run:ai customer support. |
 | `kube-prometheus-stack.prometheusOperator.enabled` |  `true`  |  Set to `false` when the cluster has an existing Prometheus installation __based__ on the Prometheus __operator__ and Run:ai should use the existing one rather than install a new one | 
-| `prometheus-adapter.enabled` | `false` | Install Prometheus Adapter (for custom metric based autoscaling). Set to `true` if __Prometheus Adapter__ isn't already installed in the cluster |
+| `prometheus-adapter.enabled` | `false` | Install Prometheus Adapter. Used for Inference workloads using a custom metric for autoscaling). Set to `true` if __Prometheus Adapter__ is not already installed in the cluster |
 | `prometheus-adapter.prometheus` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, set this field accordingly with `url` and `port` |
 
 
