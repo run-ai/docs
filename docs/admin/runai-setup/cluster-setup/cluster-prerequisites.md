@@ -79,7 +79,11 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 To use the Run:ai inference module you must pre-install the following
 
 #### Knative
-Inference workloads require knative serving installed. Follow the instructions [here](https://knative.dev/docs/install/).
+Inference workloads require knative serving installed. Follow the instructions [here](https://knative.dev/docs/install/).  
+Then, [configure it](./prerequisites/knative-configuration.md) to enable integration with Run:ai.
+
+#### HPA Autoscaler
+In order to enable autoscaling based on metrics that aren't `throughput` or `concurrency`, you'll need to install HPA autoscaler, as [described here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions).
 
 #### Prometheus adapter
 
