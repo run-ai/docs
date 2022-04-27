@@ -39,8 +39,9 @@ Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){
 As an IT Administrator, you can collect Run:ai logs to send to support:
 
 * Install the [Run:ai Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
-* _Option 1:_ Run `runai-adm collect-logs`. The command will generate a compressed file containing all of the existing Run:ai logs files.
-* _Option 2 - included in Run:ai version 2.5 or higher:_ Run `runai-adm -d <HOURS_DURATION>`. The command will export Run:ai logs for the duration stated. The logs will be exported to Run:ai's elasticsearch server, and they will include only newly written logs from the moment of activation.
+* Use one of the two options:
+    1. __One time collection:__  Run `runai-adm collect-logs`. The command will generate a compressed file containing all of the existing Run:ai logs files.
+    2. __Continuous send__ (Run:ai version 2.5 or higher): Run `runai-adm -d <HOURS_DURATION>`. The command will send Run:ai logs directly to Run:ai support for the duration stated. Data sent will not include current logs. Only logs created going forward will be sent.
 
 !!! Note
     Both options include logs of Run:ai components. They do __not__ include logs of researcher containers that may contain private information. 
