@@ -82,13 +82,18 @@ To use the Run:ai inference module you must pre-install the following
 Inference workloads require knative serving installed. Follow the instructions [here](https://knative.dev/docs/install/).  
 Then, [configure it](./prerequisites/knative-configuration.md) to enable integration with Run:ai.
 
-#### HPA Autoscaler
-In order to enable autoscaling based on metrics that aren't `throughput` or `concurrency`, you'll need to install HPA autoscaler, as [described here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions).
+### Autoscaling
+Run:ai allows to autoscale a deploymeny according to a number of metrics:
+1. GPU Utilization (%)
+2. CPU Utilization (%)
+3. Latency (miliseconds)
+4. Throughput (MB/second)
+5. Concurrency (requests/second)
+6. Any custom metric
 
-#### Prometheus adapter
-
-If you are using inference together with _autoscaling based on custom metrics_, you will need to set the `prometheus-adapter.enabled` flag to `true`.
-See [Run:ai installation](./customize-cluster-install.md).
+* Using _Throughput_ or _Concurrency_ does not require any addiitional installation. Other metrics will require additional installation
+* Any other metric will require installing [HPA Autoscaler](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}.
+* Using _GPU Utilization_, _Latency_ or _Custom metric_ will __also__ require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md).
 
 If you wish to use an _existing_ prometheus-adapter installation, you will need to configure it manually with the Run:ai prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support. 
 
