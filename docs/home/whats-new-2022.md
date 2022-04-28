@@ -1,3 +1,17 @@
+## May 2022 Run:ai Version 2.5
+
+Revamp of the Run:ai researcher API, workloads etc.
+Distributed training now supports MPI 3.0 (only)
+runai delete vs runai delete job
+Openshift default is now Openshift IdP support.
+Inference
+CPU scheduling (2.6?)
+Automate sending of logs
+CLI installed from backend
+Database has been removed from cluster (probably not interesting)
+Something on SSO with users and groups
+S3 (both ui and cli)
+
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
 ### Important Upgrade Note
