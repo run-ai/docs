@@ -93,9 +93,8 @@ apiVersion: v1
 data:
   kubernetes.podspec-schedulername: enabled
   _example: |-
+  ...
 ```
-
-Then, [configure it](./prerequisites/knative-configuration.md) to enable integration with Run:ai.
 
 ### Autoscaling
 Run:ai allows to autoscale a deployment according to various metrics:
