@@ -76,17 +76,14 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 
 ### Inference Workloads
 
-To use the Run:ai inference module you must pre-install the following
-
-#### Knative
-Inference workloads require knative serving installed. Follow the instructions [here](https://knative.dev/docs/install/) to install.
-Post install, you must configure Knative to use the Run:ai scheduler by running 
+To use the Run:ai inference module you must pre-install [Knative](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
+Post-install, you must configure Knative to use the Run:ai scheduler by running: 
 
 ```
 kubectl edit cm -n knative-serving config-features
 ```
 
-Add kubernetes.podspec-schedulername: enabled to the data section as follows:
+Add `kubernetes.podspec-schedulername: enabled` to the `data` section as follows:
 
 ``` YAML
 apiVersion: v1
@@ -96,8 +93,9 @@ data:
   ...
 ```
 
-### Autoscaling
+### Inference Autoscaling
 Run:ai allows to autoscale a deployment according to various metrics:
+
 1. GPU Utilization (%)
 2. CPU Utilization (%)
 3. Latency (milliseconds)
@@ -105,11 +103,13 @@ Run:ai allows to autoscale a deployment according to various metrics:
 5. Concurrency (requests/second)
 6. Any custom metric
 
-* Using _Throughput_ or _Concurrency_ does not require any additional installation. Other metrics will require additional installation
-* Any other metric will require installing [HPA Autoscaler](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}.
-* Using _GPU Utilization_, _Latency_ or _Custom metric_ will __also__ require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md).
+Additional installation may be needed for some of the metrics as follows:
 
-If you wish to use an _existing_ prometheus-adapter installation, you will need to configure it manually with the Run:ai prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support. 
+* Using _Throughput_ or _Concurrency_ does not require any additional installation.
+* Any other metric will require installing the [HPA Autoscaler](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}.
+* Using _GPU Utilization_, _Latency_ or _Custom metric_ will __also__ require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md) for further information.
+
+If you wish to use an _existing_ Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support. 
 
 ### Distributed Training via Kubeflow MPI
 
