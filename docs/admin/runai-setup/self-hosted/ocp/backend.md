@@ -7,23 +7,16 @@ Create a configuration file to install the Run:ai control plane:
 === "Connected"
     Generate a values file by running:
     ```
-    runai-adm generate-values --openshift
+    runai-adm generate-values --openshift --first-admin <FIRST_ADMIN_USER_OF_RUNAI>
     ```
 
 === "Airgapped"
     Generate a values file by running the following __under the `deploy` folder__:
     ```
-    runai-adm generate-values --openshift --airgapped
+    runai-adm generate-values --openshift --airgapped --first-admin <FIRST_ADMIN_USER_OF_RUNAI>
     ```
 
 A file called `runai-backend-values.yaml` will be created.
-
-## Edit Configuration File
-
-If you are using OpenShift as your identity provider, you must edit the above file to configure Run:ai to use it:
-
-* Change `backend.openshiftIdp.enabled` to true
-* Under `backend.openshiftIdpfirstAdmin`, provide the first administrator user of Run:ai. 
 
 
 ## Install the Control Plane (Backend)
