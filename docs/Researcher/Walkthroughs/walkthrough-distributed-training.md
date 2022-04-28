@@ -100,9 +100,6 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 
 The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
 
-### Using MPI-Operator v0.2.3
-
-    To run these example with the latest mpi-operator release use the tag `v0.3.0` of the quick start image: `gcr.io/run-ai-demo/quickstart-distributed:v0.2.3`
 
 ## See Also
 
