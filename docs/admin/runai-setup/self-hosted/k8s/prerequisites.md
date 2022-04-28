@@ -43,19 +43,6 @@ The Run:ai Cluster installation installs [Prometheus](https://prometheus.io/){ta
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or using the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction will become important during the Run:ai Cluster installation.
 
 
-### Feature Discovery
-
-The Run:ai Cluster installation installs Kubernetes [Node Feature Discovery (NFD)](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank} and NVIDIA [GPU Feature Discovery (GFD)](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank}. If your cluster has these dependencies already installed, you can use installation flags to prevent Run:ai from installing these dependencies.
-
-<!-- 
-## Nodes
-
-* __Operating System__. Run:ai can be installed on any modern Linux. 
-* __NVIDIA CUDA Toolkit__ is installed for machines with GPUs (verify by running the command `nvidia-smi`). 
-
-You can use the [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){target=_blank}, as an alternative to the NVIDIA CUDA Toolkit. However, Run:ai uses its own version of one of the NVIDIA GPU Operator components called [NVIDIA device plug-in](https://github.com/NVIDIA/k8s-device-plugin){target=_blank}. There are special instructions on how to disable the default NVIDIA device plug-in. Please contact Run:ai Customer Support.  -->
-
-
 ## Network
 
 * __Shared Storage__. Network address and a path to a folder in a Network File System

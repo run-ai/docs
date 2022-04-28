@@ -19,16 +19,8 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 | `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu  | 
 | `runai-operator.config.runaiBackend.password` | Default password already set  | [admin@run.ai](mailto:admin.run.ai) password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
 | `runai-operator.config.global.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, add this field with the address |
-| `gpu-feature-discovery.enabled` | `true` | Install __Node Feature Discovery__. Set to `false` if already installed in cluster |
 | `kube-prometheus-stack.enabled` | `true` | Install Prometheus. Set to `false` if __Prometheus__ is already installed in cluster |
 
-
-### Feature Discovery
-
-The Run:ai Cluster installation installs by default two pre-requisites:  Kubernetes [Node Feature Discovery (NFD)](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank} and [NVIDIA GPU Feature Discovery (GFD)](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank}. 
-
-* If your Kubernetes cluster already has GFD installed, you will want to set `gpu-feature-discovery.enabled` to `false`. 
-* NFD is a prerequisite of GFD. If GFD is not installed, but NFD is already installed, you can disable NFD installation by setting `gpu-feature-discovery.nfd.deploy` to `false`. 
 
 ### Prometheus 
 
