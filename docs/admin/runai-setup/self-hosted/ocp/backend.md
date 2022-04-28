@@ -18,12 +18,6 @@ Create a configuration file to install the Run:ai control plane:
 
 A file called `runai-backend-values.yaml` will be created.
 
-## Edit Configuration File
-
-If you are using OpenShift as your identity provider, you must edit the above file to configure Run:ai to use it:
-
-* Change `backend.openshiftIdp.enabled` to true 
-
 
 ## Install the Control Plane (Backend)
 
