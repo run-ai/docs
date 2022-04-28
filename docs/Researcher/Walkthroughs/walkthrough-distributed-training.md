@@ -31,13 +31,13 @@ To complete this Quickstart you must have:
 ``` shell
 runai config project team-a
 runai submit-mpi dist --processes=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0
 ```
 
 *   We named the Job _dist_
 *   The Job is assigned to _team-a_
 *   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
-*   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed``.
+*   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed:v0.3.0``.
 *   The image contains a startup script that runs a deep learning Horovod-based workload.
 
 
@@ -71,7 +71,7 @@ It is also possible to run a distributed training Job as "interactive". This is 
 
 ``` shell
 runai submit-mpi dist-int --processes=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed --interactive \
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 --interactive \
         --command -- sh -c "sleep infinity" 
 ```
 
@@ -100,9 +100,9 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 
 The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
 
-### Using MPI-Operator v0.3.0
+### Using MPI-Operator v0.2.3
 
-To run these example with the latest mpi-operator release use the tag `v0.3.0` of the quick start image: `gcr.io/run-ai-demo/quickstart-distributed:v0.3.0`
+    To run these example with the latest mpi-operator release use the tag `v0.3.0` of the quick start image: `gcr.io/run-ai-demo/quickstart-distributed:v0.2.3`
 
 ## See Also
 
