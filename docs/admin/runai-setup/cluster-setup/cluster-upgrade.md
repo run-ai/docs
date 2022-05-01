@@ -62,6 +62,8 @@ If used, to upgrade Run:ai, you must now install the [NVIDIA GPU Operator](https
 <!-- 
 (alternatively, and less recommended, is to forgo the GPU Operator alltogether and install the _NVIDIA Device Plugin_ and _NVIDIA GPU Telemetry_ as described in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank}). -->
 
+After the installation/upgrade of both gpu-operator and runai-cluster, run:
+`kubectl rollout restart ds nvidia-device-plugin-daemonset -n gpu-operator`
 
 ## Verify successful installation
 
