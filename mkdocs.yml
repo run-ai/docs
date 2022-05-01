@@ -12,23 +12,26 @@ theme:
   features:
     - navigation.tabs
     - search.highlight
+    - content.code.annotate
 
 extra_css:
   - stylesheets/extra.css
 strict: true
+
 markdown_extensions:
-  - codehilite
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.details
+#  - codehilite
   - admonition
   - attr_list
   - meta
   - toc:
       permalink: True 
-#  - pymdownx.tasklist:
- #     custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

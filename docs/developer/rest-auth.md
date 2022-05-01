@@ -32,7 +32,7 @@ Use the above parameters to get a temporary token to access Run:ai as follows.
 ### Example command to get an API token 
 
 === "cURL"
-    ```
+    ``` bash
     curl -X POST 'https://<COMPANY-URL>/auth/realms/<REALM>/protocol/openid-connect/token' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=client_credentials' \
@@ -60,14 +60,16 @@ Use the above parameters to get a temporary token to access Run:ai as follows.
 
 The API response will look as follows: 
 
-``` JSON
+``` JSON title="API Response"
 {
-  "access_token": "...",
+  "access_token": "...", 
   "expires_in": 36000,
    ....
   "token_type": "bearer"
 }
 ```
+
+
 
 ## Call an API
 
