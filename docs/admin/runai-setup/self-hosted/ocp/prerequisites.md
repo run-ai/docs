@@ -23,7 +23,7 @@ The control plane (backend) installation of Run:ai will require the configuratio
 
 ## OpenShift 
 
-Run:ai requires OpenShift. Supported versions are 4.6 through 4.9. 
+Run:ai supports OpenShift. Supported versions are 4.6 through 4.9. 
 OpenShift must be configured with a trusted certificate.
 
 
