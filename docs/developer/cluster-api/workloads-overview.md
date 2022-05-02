@@ -2,22 +2,24 @@
 
 ## Workloads
 
-Run:ai schedules __Workloads__. Workloads is a relatively new terminology in Run:ai which encompasses:
+Run:ai schedules __Workloads__. Run:ai workloads contain:
 
-* The "Kubernetes object" that eventually create a container that runs.
-* Any other resources required to run the Job. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more. 
+* The _Kubernetes object_ (Job, Deployment, etc) is used to launch the container inside which the data science code runs. 
+* A set of additional resources required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more. 
 
-Run:AI currently supports the following Workloads types:
+Run:ai currently supports the following Workloads types:
 
-* `InteractiveWorkload`: For submission of interactive workloads.
-* `TrainingWorkload`: For submission of training workloads.
-* `InferenceWorkload`: For submission of inference workloads.
-* `DeploymentWorkload`: For submission of inference workloads. For backward compatibility XXXXXX
+|  Workload Type | Kubernetes Name | Description |
+|----------------|-----------------|-------------|
+| Interactive    | `InteractiveWorkload` | Submit an interactive workload |
+| Training       | `TrainingWorkload`| Submit a training workload |
+| Inference      | `InferenceWorkload` | Submit an inference workload |
+| Old Inference |  `DeploymentWorkload`| Supports the older Inference implementation of Run:ai |
 
 
 ## Values
 
-A Workload will typically have a list of _values_, such as name, image and resources. A full list of values is available XXXXX
+A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.
 
 ## How to Submit
 
@@ -25,9 +27,9 @@ A Workload can be submitted via various channels:
 
 * The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md)
 * The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command
-* The Run:ai researcher API
+* The Run:ai Cluster API
 
-The focus of this section is the Researcher API
+The focus of this section is the Cluster API
 
 ## Policies
 
@@ -38,14 +40,14 @@ Policies serve two purposes:
 1) To impose guidelines on the values a researcher can specify for each parameter.
 2) To provide default values to various parameters.
 
-For example, and administrator can,
+For example, an administrator can,
 
 * Impose a maximum of 5 GPUs per Workload. 
 * Provide a default value of 1 GPU for each container. 
 
 Each workload type has a matching kind of workload policy. For example, an `InteractiveWorkload` has a matching `InteractivePolicy`
 
-Policy of each type can be defined _per-project_. There is also a _global_ policy which applies to any project that does not have a per-project policy.
+A Policy of each type can be defined _per-project_. There is also a _global_ policy that applies to any project that does not have a per-project policy.
 
 
  XXXXX Further details about policies can be found in the [policies guide]    XXX (../../admin/researcher-setup/policies.md).
