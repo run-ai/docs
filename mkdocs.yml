@@ -16,7 +16,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
-strict: true
+strict: true   
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -24,9 +24,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.details
-#  - codehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details 
   - admonition
   - attr_list
   - meta
@@ -34,8 +34,7 @@ markdown_extensions:
       permalink: True 
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
+      emoji_generator: !!python/name:materialx.emoji.to_svg 
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -263,17 +262,21 @@ nav:
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'Calling REST APIs' : 'developer/rest-auth.md'
-    - 'Researcher API' : 
-      - 'REST API' : 'developer/researcher-rest-api/overview.md'
-      - 'Kubernetes API' : 
-        - 'Overview' : 'developer/k8s-api/overview.md'
-        - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
-        - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
+    - 'Cluster API' :
+      - 'Workloads Overview' : 'developer/cluster-api/workloads-overview.md'
+      - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
-    - 'Inference API' :
-      - 'Overview' : 'developer/inference/overview.md' 
-      - 'Setup' : 'developer/inference/setup.md' 
-      - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
-      - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
+    - 'Deprecated APIs' :
+      - 'Researcher API' : 
+        - 'REST API' : 'developer/researcher-rest-api/overview.md'
+        - 'Kubernetes API' : 
+          - 'Overview' : 'developer/k8s-api/overview.md'
+          - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
+          - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
+      - 'Inference API' :
+        - 'Overview' : 'developer/inference/overview.md' 
+        - 'Setup' : 'developer/inference/setup.md' 
+        - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
+        - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
