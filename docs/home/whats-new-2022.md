@@ -12,6 +12,7 @@ Database has been removed from cluster (probably not interesting)
 Something on SSO with users and groups
 S3 (both ui and cli)
 CLI backward compatibilty -- On new clusters, need to immediately install 2.5 CLI
+Move MIG Support to 2.5
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 

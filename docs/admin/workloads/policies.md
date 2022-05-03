@@ -4,67 +4,61 @@
 
 Policies allow administrators to _impose restrictions_ and set _default values_ for Researcher Workloads. For example:
 
-1) Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
-2) Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
+1. Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
+2. Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
    
 Policies are stored as kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
 
-Different policies are set for  can be set by the administrator for each kind of workload, by
-creating different kinds of policy resources. 
-Supported kinds are:
-* InteractivePolicy: affecting any interactive run:ai job. 
-* TrainingPolicy: affecting any training run:ai job. 
-* DeploymentPolicy: affecting any deployment workload. 
+Policies are specific to Workload type as such there are several kinds of Policies:
 
-An instance of a policy resource can be created in the namespace of each project.
-Additionally, a policy resource can be created in `runai` namespace, to 
-take over whenever there is no project specific policy for the relevant
-workload kind.
+|  Workload Type | Kubernetes Workload Name | Kubernetes Policy Name |
+|----------------|-----------------|-------------|
+| Interactive    | `InteractiveWorkload` | `InteractivePolicy` |
+| Training       | `TrainingWorkload`| `TrainingPolicy` |
+| Inference      | `InferenceWorkload` | ??? |
+| Old Inference |  `DeploymentWorkload`| `DeploymentPolicy` |
+
+A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when take over whene there is no project-specific Policy for the relevant workload kind.
 
 ## Creating a Policy
 
 ### Creating your First Policy 
 
-To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) 
-containing the following yaml:
+To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following yaml:
 
-``` YAML
+``` YAML title="policy.yaml"
 apiVersion: run.ai/v1alpha1
 kind: InteractivePolicy
 metadata:
   name: interactive-policy
-  namespace: runai
+  namespace: runai-team-a # (1)
 spec:
   gpu:
     rules:
       required: true
-      min: "1"
+      min: "1"  # (2)
       max: "4"  
     value: 
       value: "1"
 ```
-The policy places a default and limit on the available values for GPU allocation.
-The numbers are quoted as they represent non-integer values. 
-Integer values should be specified without quotes. 
 
-Note that the policy above is created in `runai` namespace, thus apply whenever
-the containing project does not have a project specific InteractivePolicy resource. 
+1. Set the Project namespace here
+2. GPU values are quoted as they can contain non-integer values. 
 
-To apply this policy, run: 
+The policy places a default and limit on the available values for GPU allocation. To apply this policy, run: 
 
 ``` bash
 kubectl apply -f policy.yaml 
 ```
-Now try the following command:
+Now, try the following command:
 ``` bash
-runai submit --gpu 5 --interactive
+runai submit --gpu 5 --interactive -p team-a
 ```
-The following message should appear:
+The following message will appear:
 ```
 gpu: must be no greater than 4
 ```
-A similar message should appear in the _New Job_ form of the run:ai user interface, when
-attempting to enter number of GPUs which is out of range in the Interactive tab.  
+A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter number of GPUs which is out of range for an Interactive tab.  
 
 ### Itemized Values
 
