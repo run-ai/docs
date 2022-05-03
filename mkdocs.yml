@@ -97,7 +97,8 @@ plugins:
         'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
         'Administrator/Researcher-Setup/researcher-ui-setup.md' : 'admin/researcher-setup/researcher-ui-setup.md'
         'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
-        'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
+        'Administrator/Researcher-Setup/use-secrets.md' :  'admin/workloads/secrets.md'
+        'admin/researcher-setup/use-secrets.md' : 'admin/workloads/secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
@@ -184,7 +185,7 @@ nav:
     - 'Workloads' : 
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'
-      - 'Secrets' : 'admin/researcher-setup/use-secrets.md'
+      - 'Secrets' : 'admin/workloads/secrets.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'User Interface' :
