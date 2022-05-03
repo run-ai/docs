@@ -1,8 +1,8 @@
 ## Description
 
-Delete a Job and its associated Pods.
+Delete a Workload and its associated Pods.
 
-Note that once you delete a Job, its entire data will be gone:
+Note that once you delete a Workload, its entire data will be gone:
 
 * You will no longer be able to enter it via bash.
 * You will no longer be able to access logs.
@@ -11,7 +11,7 @@ Note that once you delete a Job, its entire data will be gone:
 ## Synopsis
 
 ``` shell
-runai delete <job-name> 
+runai delete workload <workload-name> 
     [--all | -A]
 
     [--loglevel value] 
@@ -19,12 +19,13 @@ runai delete <job-name>
     [--help | -h]
 ```
 
+`runai delete job` is a synonym for `runai delete workload` and is provided for backward compatibility.
 ## Options
 
-<job-name\> - The name of the Job to run the command with. Mandatory.
+<workload-name\> - The name of the Workload to run the command with. Mandatory.
 
 #### --all | -A
->  Delete all Jobs.
+>  Delete all Workloads.
 
 ### Global Flags
 
@@ -39,9 +40,9 @@ runai delete <job-name>
 
 ## Output
 
-* The Job will be deleted and not available via the command _runai list jobs_.
+* The Workload will be deleted and not available via the command _runai list workloads_.
 
-* The Job will __not__ be deleted from the Run:ai user interface Job list.
+* The Workloads will show as `deleted` from the Run:ai user interface Job list.
 
 ## See Also
 

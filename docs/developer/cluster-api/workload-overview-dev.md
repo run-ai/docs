@@ -47,5 +47,4 @@ Each workload type has a matching kind of workload policy. For example, an `Inte
 
 A Policy of each type can be defined _per-project_. There is also a _global_ policy that applies to any project that does not have a per-project policy.
 
-
- XXXXX Further details about policies can be found in the [policies guide]    XXX (../../admin/researcher-setup/policies.md).
+For further details on policies, see [Policies](../../admin/workloads/policies.md).

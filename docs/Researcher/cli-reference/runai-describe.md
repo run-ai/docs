@@ -1,14 +1,11 @@
-!!! attention
-    `runai get` has been replaced by `runai describe job`.
-
 ## Description
 
-Display details of a Job or Node.
+Display details of a Workload or Node.
 
 ## Synopsis
 
 ``` shell
-runai describe job <job-name> 
+runai describe workload <workload-name> 
     [--output value | -o value]  
     
     [--loglevel value] 
@@ -22,17 +19,14 @@ runai describe node [node-name]
     [--loglevel value] 
     [--help | -h]
 
-runai describe template <template-name>
-    
-    [--loglevel value] 
-    [--help | -h]
 ```
+
+`runai describe job` is a synonym for `runai describe workload` and is provided for backward compatibility.
 
 ## Options
 
-* <job-name\> - The name of the Job to run the command with. Mandatory.
+* <workload-name\> - The name of the Workload to run the command with. Mandatory.
 * <node-name\> - The name of the Node to run the command with. If a Node name is not specified, a description of all Nodes is shown.
-* <template-name\> - The name of the Template to run the command on. Mandatory. Templates are a way to reduce the number of flags required when running the command ``runai submit`` and set various defaults. Templates are added by the Administrator.
 
 
 
@@ -52,11 +46,7 @@ runai describe template <template-name>
 
 ## Output
 
-* The `runai describe job` command will show Job properties and status as well as lifecycle events and the list of related pods.
+* The `runai describe workload` command will show Workload properties and status as well as lifecycle events and the list of related resources and pods.
 * The `runai describe node` command will show Node properties. 
-* The `runai describe template` command will show Template properties. 
 
 
-## See Also
-
-See: [Configure Command-Line Interface Templates](../../admin/researcher-setup/templates.md) on how to configure Templates.
