@@ -60,17 +60,13 @@ gpu: must be no greater than 4
 ```
 A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter number of GPUs which is out of range for an Interactive tab.  
 
-### Itemized Values
+### Complex Values
 
-The example above illustrated rules for parameters of "primitive" types, such as 
-GPU allocation, CPU memory, working directory, etc. All these parameters contain a single
-"flat" value. 
+The example above illustrated rules for parameters of "primitive" types, such as _GPU allocation_, _CPU memory_, _working directory_, etc. These parameters contain a single value. 
 
-Some other workload parameters, such as ports or volumes, are "itemized", in the sense
-that they may contain multiple values: a workload may contain multiple
-ports and multiple volumes. 
+Other workload parameters, such as _ports_ or _volumes_, are "complext", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
 
-Following is an example for a policy containing itemized parameter:
+Following is an example for a policy containing the value `ports` which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
 ``` YAML
 apiVersion: run.ai/v1alpha1
@@ -101,36 +97,18 @@ spec:
           container: 30101
           external: 8081
 ```
-A policy for itemized field is composed of three parts:
 
-* Rules: These rules apply to the `ports` parameter as a whole. In this
-example, the administrator specifies `canAdd` rule with _true_ value, indicating
-  that a researcher submitting an interactive job can add additional
-  ports to the ports listed by the policy. _true_ is actually the default 
-  for `canAdd`, so it actually could have been omitted from the policy above.
-  Administrators would normally specify `canAdd` when its desired value is false,
-  indicating that a researcher cannot add any port except those specified
-  by the policy.<p><br>
-  
-* itemRules: These rules impose restrictions on the data members of 
-each item, in this case - `container` and `external`. In the above examlpe, 
-  administrator limited the value of `container` to 30000-32767, and the value of
-  `external` to a maximum of 32767. <p><br>
-  
-* Items: In this section the administrator  specifies a list of default
-ports. Each port is outlined as one item in the list, and must be labeled.
-  In this example there are two ports, labeled admin-port-a and admin-port-b.
-  Their default value is 30100:8080 and 30101:8081, respectively. The administrator 
-  can also specify if a researcher can change/delete ports from the submitted workload. In this
-  case, `admin-port-a` is hardwired, while `admin-port-b` can be changed or deleted
-  by the researcher when submitting a workload.
+
+A policy for complext field is composed of three parts:
+
+* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `false` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is actually the default for `canAdd`, so it actually could have been omitted from the policy above). when `canAdd` is set to `false`
+  the a researcher will not be able to  add any additional port except those already specified by the policy.
+* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of  `external` to a maximum of 32767. 
+* __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload.
   
 ### Syntax
 
-The complete syntax of the policy yaml can be obtained using the explain
-command of kubectl. 
-
-For example:
+The complete syntax of the policy yaml can be obtained using the `explain`command of kubectl. For example:
 
 ```bash
 kubectl explain trainingpolicy.spec
@@ -160,7 +138,7 @@ If set, overrides the image's entry point with the supplied command.
 ...
 ```
 
-The following commands can be used to drill further down the spec:
+You can further drill down to get the syntax for `ports` by running:
 
 ```bash
 kubectl explain trainingpolicy.spec.ports
@@ -185,6 +163,9 @@ FIELDS:
      these rules apply to a value of type map (=non primitive) as a whole
      additionally there are rules which apply for specific items of the map
 ```
+
+And further drill down into the `ports.rules` object by running:
+
 ```bash
 kubectl explain trainingpolicy.spec.ports.rules
 ```
@@ -207,9 +188,7 @@ FIELDS:
      if the map as a whole is required
 ```
 
-Note that each kind of policy has slightly different set of parameters. For example, an InteractivePolicy should
-have a `jupyter` parameter, not available under TrainingPolicy. Always use the relevant policy kind in your explain 
-queries to get the correct set of parameters for the policy you're creating.
+Note that each kind of policy has slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`. 
 
 ### Using Secrets for Environment Variables
 
@@ -228,19 +207,17 @@ When submitting a workload which is affected by this policy, the created contain
 `MYPASSWORD` whose value is the key `password` residing in Kubernetes secret `my-secret` which has been pre-created in
 the namespace where the workload runs.
 
-#### Note
-
-* Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further
-  information see [secret propagation](use-secrets.md/#secrets-and-projects)
+!!! Note
+    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md/#secrets-and-projects)
   
 ## Modifying/Deleting Policies
 
 Use the standard kubectl get/apply/delete commands to modify and delete policies.
 
-For example:
+For example, to view the _global_ interactive policy:
 
 ```bash
-k get interactivepolicies -n runai
+kubectl get interactivepolicies -n runai
 ```
 Should return the following:
 ```bash
@@ -251,8 +228,7 @@ In order to delete this policy:
 ```bash
 kubectl delete InteractivePolicy interactive-policy -n runai
 ```
-In order to access project-specific policies, replace the `-n runai`
-parameter with the namespace of the relevant project.
+In order to access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
 
 ## See Also
 
