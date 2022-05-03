@@ -33,16 +33,14 @@ The focus of this section is the Cluster API
 
 ## Policies
 
-An Administrator can set _Policies_ for Workload submission. 
-
-Policies serve two purposes:
+An Administrator can set _Policies_ for Workload submission. Policies serve two purposes:
 
 1) To impose guidelines on the values a researcher can specify for each parameter.
 2) To provide default values to various parameters.
 
 For example, an administrator can,
 
-* Impose a maximum of 5 GPUs per Workload. 
+* Set a maximum of 5 GPUs per Workload. 
 * Provide a default value of 1 GPU for each container. 
 
 Each workload type has a matching kind of workload policy. For example, an `InteractiveWorkload` has a matching `InteractivePolicy`

@@ -2,18 +2,14 @@
 
 ## What are Policies?
 
-Policies are a way for administrators to perform the following actions:
+Policies allow administrators to _impose restrictions_ and set _default values_ for Researcher Workloads. For example:
 
-1) Impose restrictions on researchers workloads. For example, 
-an administrator can restrict researchers from requesting more than 
-2 GPUs, or less than 1gb of memory for each interactive job.
+1) Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
+2) Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
    
-2) Apply default values for workload parameters. For example, an 
-administrator can set the default memory of each training job to 1gb, or 
-mount a default volume to be used by any submitted workload.
-   
-Policies are stored as kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources) (CRs).
-Different policy can be set by the administrator for each kind of workload, by
+Policies are stored as kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
+
+Different policies are set for  can be set by the administrator for each kind of workload, by
 creating different kinds of policy resources. 
 Supported kinds are:
 * InteractivePolicy: affecting any interactive run:ai job. 
