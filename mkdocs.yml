@@ -182,7 +182,7 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
 #      - 'Templates' : 'admin/researcher-setup/templates.md'
     - 'Workloads' : 
-      - 'Overview' : 'admin/workloads/policies.md'
+      - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'
       - 'Secrets' : 'admin/researcher-setup/use-secrets.md'
     - 'Best Practices' :
@@ -267,7 +267,7 @@ nav:
     - 'Overview' : 'developer/overview-developer.md'
     - 'Calling REST APIs' : 'developer/rest-auth.md'
     - 'Cluster API' :
-      - 'Workloads Overview' : 'developer/cluster-api/workloads-overview.md'
+      - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
