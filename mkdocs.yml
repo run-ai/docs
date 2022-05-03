@@ -177,12 +177,16 @@ nav:
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
       - 'Troubleshooting' : 'admin/researcher-setup/cli-troubleshooting.md'
-      - 'Researcher UI' : 'admin/researcher-setup/researcher-ui-setup.md'
+#      - 'Researcher UI' : 'admin/researcher-setup/researcher-ui-setup.md'
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
-      - 'Switch from Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
-      - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
-      - 'Templates' : 'admin/researcher-setup/templates.md'
+#      - 'Templates' : 'admin/researcher-setup/templates.md'
+    - 'Workloads' : 
+      - 'Overview' : 'admin/workloads/policies.md'
+      - 'Policies' : 'admin/workloads/policies.md'
+      - 'Secrets' : 'admin/researcher-setup/use-secrets.md'
+    - 'Best Practices' :
+      - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
