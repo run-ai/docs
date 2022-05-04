@@ -20,10 +20,16 @@ The command-line interface utility is no longer a separate install. Instead is n
 * Self-hosted installation: The default Openshift installation is now set to support Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. There is a new method, to automatically send all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
 
+XXXX
+
 Inference
+
 CPU scheduling (2.6?)
+
 Database has been removed from cluster (probably not interesting)
+
 Something on SSO with users and groups
+
 S3 (both ui and cli)
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
