@@ -59,37 +59,38 @@ Follow the steps below to access private images in the Google Container Registry
 * Create a service-account in GCP. Provide it `Viewer` permissions and download a JSON key.
 * Under GCR, go to image and locate the domain name. Example GCR domains can be `gcr.io`, `eu.gcr.io` etc. 
 * On your local machine, log in to docker with the new credentials:
-
-        docker login -u _json_key -p "$(cat <config.json>)" <gcr-domain>
-
+```
+docker login -u _json_key -p "$(cat <config.json>)" <gcr-domain>
+```
  Where `<gcr-domain>` is the GCR domain we have located, `<config.json>` is the GCP configuration file. This will generate an entry for the GCR domain in your  `~/.docker/config.json file`.
 
  * Open the `~/.docker/config.json` file.  Copy the JSON structure under the GCR domain into a new file called `~/docker-config.json`. When doing so, take care to __remove all newlines__. For example:
-
-        {"https://eu.gcr.io": { "auth": "<key>"}}
+```
+{"https://eu.gcr.io": { "auth": "<key>"}}
+```
 
 * Convert the file into base64:
-
-        cat ~/docker-config.json | base64
-
+```
+cat ~/docker-config.json | base64
+```
 * Create a new file called `secret.yaml`:
 
 ``` yaml
-        apiVersion: v1
-        kind: Secret
-        metadata:
-            name: gcr-secret
-            namespace: runai
-            labels:
-                runai/cluster-wide: "true"
-        data:
-           .dockerconfigjson: << PASTE_HERE_THE_LONG_BASE64_ENCODED_STRING >>
-        type: kubernetes.io/dockerconfigjson
+apiVersion: v1
+kind: Secret
+metadata:
+        name: gcr-secret
+        namespace: runai
+        labels:
+        runai/cluster-wide: "true"
+data:
+        .dockerconfigjson: << PASTE_HERE_THE_LONG_BASE64_ENCODED_STRING >>
+type: kubernetes.io/dockerconfigjson
 ```
 
 * Apply to Kubernetes by running  the command:
-
-        kubectl create -f ~/secret.yaml
-
+```
+kubectl create -f ~/secret.yaml
+```
 * Test your settings by submitting a which references an image from the GCR repository
 

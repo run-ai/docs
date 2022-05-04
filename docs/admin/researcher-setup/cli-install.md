@@ -41,30 +41,31 @@ kubectl get nodes
 ### Install Run:ai CLI 
 
 === "Run:ai version 2.5"
-     *   Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
-     *   Select Mac or Linux.
-     *   Download directly using the button or copy the command and run on a remote machine
+     * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
+     * Select Mac or Linux.
+     * Download directly using the button or copy the command and run on a remote machine
+     * Copy the binary to a directory which is part of the PATH. Typically `/usr/local/bin`.
   
 === "Run:ai version 2.4 or earlier"
      *   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
 
-*   Unarchive the downloaded file
-*   Install by running:
+     *   Unarchive the downloaded file
+     *   Install by running:
 
-```
-sudo ./install-runai.sh
-```
+     ```
+     sudo ./install-runai.sh
+     ```
 
-The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
+     The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
 
-```
-sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
-```
+     ```
+     sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
+     ```
 
-You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
+     You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
 
 
-* To verify the installation run:
+To verify the installation run:
 
 ```
 runai list workloads

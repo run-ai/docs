@@ -26,6 +26,6 @@ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e
 
 ## Runai list jobs command works but runai submit does not
 
-### Solution
+### Solution 
 
-Helm utility is not installed. See Run:ai CLI Installation documentation. 
+(Version 2.4 or earlier) Helm utility is not installed. See Run:ai CLI Installation documentation. 
