@@ -92,23 +92,3 @@ You can also submit a Job from the Run:ai User interface and verify that the new
 !!! Tip
     If you do not see the button or it is disabled, then you either do not have `Researcher` access or the cluster has not been set up correctly. For more information, refer to [user interface overview](../../admin-ui-setup/overview.md).
 
- 
-<!-- ### Enable Researcher Authentication on Researcher Service
-
-=== "SaaS" 
-    The researcher service is used for the [Run:ai Researcher User interface](../../../researcher-setup/researcher-ui-setup/) and [Researcher REST API](../../../../developer/researcher-rest-api/overview/). To enable, you must edit the cluster installation values file:
-
-    * When installing the Run:ai cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
-    * On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
-
-    Update:
-
-    ``` yaml
-    runai-operator:
-       config:
-          researcher-service:
-            args:
-              authEnabled : true
-    ```
-
-=== "Self-hosted" -->
