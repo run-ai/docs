@@ -43,7 +43,7 @@ runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \
 Then run:
 
 ```
-runai list jobs
+runai list workloads
 ```
 
 You will see the service URL with which to access the Jupyter notebook

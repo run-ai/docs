@@ -67,7 +67,7 @@ You can omit `sudo` if you have _write_ access to the directory. The directory m
 * To verify the installation run:
 
 ```
-runai list jobs
+runai list workloads
 ```
 
 ## Install Command Auto-Completion 

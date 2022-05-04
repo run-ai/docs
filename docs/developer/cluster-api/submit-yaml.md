@@ -29,7 +29,7 @@ spec:
 
 Change the namespace and run: `kubectl apply -f job1.yaml`
 
-Run: `runai list workloads` (or using the older syntax: `runai list jobs`) to see the new Workload.
+Run: `runai list workloads` (or using the older syntax: `runai list workloads`) to see the new Workload.
 
 Run: `kubectl delete -f job1.yaml` to delete the Workload. 
 

@@ -55,7 +55,7 @@ You should see a web page with the name of the container.
 
 ### Stop Workload
 
-Press _Ctrl-C_ in the shell to stop port forwarding. Then delete the Job by running `runai delete nginx-test`
+Press _Ctrl-C_ in the shell to stop port forwarding. Then delete the Job by running `runai delete workload nginx-test`
 ## See Also
 
 * Develop on Run:ai using [Visual Studio Code](../tools/dev-vscode.md)

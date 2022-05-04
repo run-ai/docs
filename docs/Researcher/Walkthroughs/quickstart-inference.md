@@ -37,7 +37,7 @@ This would start an inference workload for team-a with an allocation of a single
 
 *   Follow up on the Job's progress by running:
 
-        runai list jobs
+        runai list workloads
 
 The result:
 
@@ -78,9 +78,9 @@ You should see a log of the inference call:
 
 Run the following:
 
-    runai delete inference1
+    runai delete workload inference1
 
-This would stop the inference workload. Verify this by running ``runai list jobs`` again.
+This would stop the inference workload. Verify this by running ``runai list workloads`` again.
 
 
 ### Run an Inference Workload - Multiple Replicas

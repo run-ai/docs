@@ -50,7 +50,7 @@ System status after run:
 
 Now lets start deleting Jobs. Alternatively, you can wait for Jobs to complete.
 
-    runai delete b2 -p team-b
+    runai delete workload b2 -p team-b
 
 !!! Discussion
     As the quotas are equal (1 for each Project, the remaining pending Jobs will get scheduled one by one alternating between Projects, regardless of the time in which they were submitted. 

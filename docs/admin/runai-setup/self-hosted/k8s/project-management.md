@@ -88,7 +88,7 @@ kubectl apply -f <NAMESPACE>.yaml
 
 Users may have 2 roles:
 
-* Viewer - Able to see the Jobs when running `runai list jobs`.
+* Viewer - Able to see the Jobs when running `runai list workloads`.
 * Executor - Able to submit Jobs, view logs, etc. 
 
 #### User IDs

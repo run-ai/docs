@@ -4,7 +4,7 @@
 We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
 * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
-* The term _Job_ has been replaced with _Workload_ throughout the command-line interface. See commands such as [runai list workloads](../Researcher/cli-reference/runai-list.md), [runai delete workloads](../Researcher/cli-reference/runai-delete.md) and more. The Job-related commands have stayed for backward compatibility
+* The term _Job_ has been replaced with _Workload_ throughout the command-line interface. See commands such as [runai list workloads](../Researcher/cli-reference/runai-list.md), [runai delete workloads](../Researcher/cli-reference/runai-delete.md) and more. The Job-related commands have stayed for backward compatibility.
 * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API and user interface. 
 
 ### Command-line interface installation and compatibility
@@ -70,7 +70,7 @@ The Researcher user interface and the Administrator user interface have been uni
 
 Other features:
  
-* Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
+* Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe workload](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
 * Run:ai now supports orchastraction of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
 * Run:ai now supports Openshift 4.9, Kubernetes 1.22 and 1.23.
