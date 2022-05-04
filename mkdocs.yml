@@ -96,7 +96,6 @@ plugins:
         'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
         'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
         'Administrator/Researcher-Setup/researcher-ui-setup.md' : 'admin/researcher-setup/researcher-ui-setup.md'
-        'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
         'Administrator/Researcher-Setup/use-secrets.md' :  'admin/workloads/secrets.md'
         'admin/researcher-setup/use-secrets.md' : 'admin/workloads/secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
@@ -181,7 +180,6 @@ nav:
 #      - 'Researcher UI' : 'admin/researcher-setup/researcher-ui-setup.md'
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
-#      - 'Templates' : 'admin/researcher-setup/templates.md'
     - 'Workloads' : 
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'
@@ -235,7 +233,6 @@ nav:
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
       - 'runai suspend' : 'Researcher/cli-reference/runai-suspend.md'
-      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'

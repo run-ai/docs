@@ -36,7 +36,6 @@ runai submit-mpi
     [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
     [--run-as-user]
     [--stdin]
-    [--template string] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
     [--nfs-server string]
@@ -72,9 +71,6 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 
 #### --interactive
 >  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.
-
-#### --template string
->  Provide the name of a template. A template can provide default and mandatory values. 
 
 #### --job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix.
