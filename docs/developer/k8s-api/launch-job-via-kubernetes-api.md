@@ -6,8 +6,7 @@ The article uses Python, though Kubernetes API is available in several other pro
 
 
 !!! Warning
-    Researcher Kubernetes API will soon be deprecated. If you are using or considering using it, please contact Run:ai customer support.
-
+    Researcher Kubernetes API is deprecated. See [Cluster API](../cluster-api/workload-overview-dev.md) for its replacement.
 
 ## Submit a Run:ai Job 
 

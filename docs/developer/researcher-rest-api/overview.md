@@ -12,8 +12,7 @@ There are other APIs that provide the same functionality. Specifically:
 * You can communicate directly with the underlying Kubernetes infrastructure by [sending YAML files](../k8s-api/launch-job-via-yaml.md) or by using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:ai Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md).
 
 !!! Warning
-    Researcher REST API will soon be deprecated. If you are using or considering using it, please contact Run:ai customer support.
-## Endpoint URL for API
+    Researcher Kubernetes API is deprecated. See [Cluster API](../cluster-api/workload-overview-dev.md) for its replacement.## Endpoint URL for API
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
 This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clusters`. Each cluster will have a separate URL.
