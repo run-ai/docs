@@ -1,8 +1,7 @@
 
 # Submitting Workloads via YAML
 
-overview text xxx
-
+You can use YAML to submit Workloads directly to Run:ai. 
 
 ## Submit Workload Example
 
