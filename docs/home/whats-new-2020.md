@@ -27,7 +27,6 @@ The older style will still work with a deprecation notice.
 
 ## November 12th, 2020
 An Admin can now create __templates__ for the Command-line interface. Both a default template and specific templates, that can be used with the --template flag. The new templates allow for mandatory values, defaults, and run-time environment variable resolution.
-See [here](../admin/researcher-setup/templates.md) for more.
 
 It is now also possible to pass __Secrets__ to Job. see [here](../admin/workloads/secrets.md)
 
