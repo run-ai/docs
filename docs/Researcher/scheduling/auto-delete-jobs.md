@@ -58,6 +58,6 @@ When starting the Job, add the flag `--ttl-after-finish duration`. duration is t
 runai submit myjob1 --ttl-after-finish 2h
 ```
 
-## Using Templates to set Automatic Deletion as Default
+## Using Policies to set Automatic Deletion as Default
 
-You can use Run:ai templates to set auto-delete to be the default. See [template configuration](../../admin/researcher-setup/templates.md) for more information on how to make this flag a part of the default template.
+You can use Run:ai policies to set auto-delete to be the default. See [template configuration](../../admin/workloads/policies.md) for more information on how to make this flag a part of the default template.

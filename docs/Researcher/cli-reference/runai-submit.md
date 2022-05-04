@@ -42,7 +42,6 @@ runai submit
     [--s3 string]
     [--service-type string | -s string] 
     [--stdin]
-    [--template string] 
     [--ttl-after-finish duration] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
@@ -133,9 +132,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Example:
 
 > `runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
-
-#### --template string
->  Provide the name of a template. A template can provide default and mandatory values. 
 
 #### --job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
@@ -363,10 +359,10 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
-Note that the submit call may use templates to provide defaults to any of the above flags.
+Note that the submit call may use a _policy_ to provide defaults to any of the above flags.
 
 ## See Also
 
 *   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [template configuration](../../admin/researcher-setup/templates.md) for a description on how templates work.
+*   See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
 
