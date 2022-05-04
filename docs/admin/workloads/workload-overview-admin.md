@@ -1,5 +1,7 @@
 # Workloads Overview
 
+:octicons-versions-24: [Version 2.5](../../home/whats-new-2022.md#may-2022-runai-version-25)
+
 ## Workloads
 
 Run:ai schedules __Workloads__. Run:ai workloads are comprised of:

@@ -1,5 +1,7 @@
 # Configure Policies
 
+:octicons-versions-24: [Version 2.5](../../home/whats-new-2022.md#may-2022-runai-version-25)
+
 ## What are Policies?
 
 Policies allow administrators to _impose restrictions_ and set _default values_ for Researcher Workloads. For example:
