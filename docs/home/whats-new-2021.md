@@ -57,7 +57,7 @@ Researcher User Interface (UI) enhancements:
 * Revised user interface and user experience
 * Researchers can create templates for the ease of jobs submission. Templates can be saved and used at the project level
 * Researchers can be easily re-submit jobs from the Submit page or directly from the jobs list on the Jobs page
-* Administrators can create administrative templates which set cluster-wide defaults, constraints, and defaults for the submission of Jobs. For further details see [Configure Command-Line Interface Templates](../admin/researcher-setup/templates.md).
+* Administrators can create administrative templates which set cluster-wide defaults, constraints, and defaults for the submission of Jobs. 
 * Different teams can collaborate and share templates by exporting and importing templates in the Submit screen
 
 Researcher Command Line Interface (CLI) enhancements:
@@ -126,7 +126,7 @@ New developer documentation area has been [created](../developer/overview-develo
 
 ## January 9th 2021
 
-A new Researcher user interface is now available. See [researcher UI setup](../admin/researcher-setup/researcher-ui-setup.md).
+A new Researcher user interface is now available.
 
 ## January 2nd, 2021
 
