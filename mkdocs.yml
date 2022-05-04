@@ -198,8 +198,6 @@ nav:
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
-#    - 'Presentations' :
-#      - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
@@ -256,8 +254,6 @@ nav:
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Notebook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
-#    - 'Presentations' :
-#      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'Calling REST APIs' : 'developer/rest-auth.md'

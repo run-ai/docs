@@ -1,18 +1,30 @@
 ## May 2022 Run:ai Version 2.5
 
-Revamp of the Run:ai researcher API, workloads etc.
-Distributed training now supports MPI 3.0 (only)
-runai delete vs runai delete job
-Openshift default is now Openshift IdP support.
+### Workloads
+We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
+
+* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
+* The term _Job_ has been replaced with _Workload_ throughout the command-line interface. See commands such as [runai list workloads](../Researcher/cli-reference/runai-list.md), [runai delete workloads](../Researcher/cli-reference/runai-delete.md) and more. The Job-related commands have stayed for backward compatibility
+* Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API and user interface. 
+
+### Command-line interface installation and compatibility
+
+The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
+
+!!! Warning
+    The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you uprade the cluster, you must also upgrade the command-line interface. 
+### Other Features
+
+* Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
+* `runai delete` has been changed in favor of `runai delete workload` 
+* Self-hosted installation: The default Openshift installation is now set to support Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
+* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. There is a new method, to automatically send all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+
 Inference
 CPU scheduling (2.6?)
-Automate sending of logs
-CLI installed from backend
 Database has been removed from cluster (probably not interesting)
 Something on SSO with users and groups
 S3 (both ui and cli)
-CLI backward compatibilty -- On new clusters, need to immediately install 2.5 CLI
-Move MIG Support to 2.5
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
