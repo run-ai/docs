@@ -50,18 +50,26 @@ For more details on Run:ai fractions see the [dynamic MIG quickstart](../Walkthr
 
 ### Setting up Dynamic MIG
 
-As described above, MIG is only available in the latest NVIDIA architecture. For such nodes, the administrator needs to specifically enable dynamic MIG on the node by running: 
+As described above, MIG is only available in the latest NVIDIA architecture. 
+* For such nodes, the administrator needs to specifically enable dynamic MIG on the node by running: 
+    
+    ```
+    runai-adm set node-role --dynamic-mig-enabled <node-name>
+    ```
+    (use `runai-adm remove` to unset)
 
-```
-runai-adm set node-role --dynamic-mig-enabled <node-name>
-```
 
-(use `runai-adm remove` to unset)
+* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md) for details.) and set:
+    ```
+    kubectl label node <node-name> node-role.kubernetes.io/runai-mig-enabled=true
+    ```
+   (use `kubectl` to unset)
 
 !!! Limitations
     * Once a node has been marked as dynamic MIG enabled, it can only be used via the Run:ai scheduler.
     * When it comes to Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`.
-    * Run:ai currently supports only A100 nodes with 40GB RAM (if you need support for A30 or A100 with 80GB RAM, please contact Run:ai customer support).
+    * Run:ai currently supports only A100 nodes with 40GB/80GB RAM (if you need support for A30, please contact Run:ai customer support).
+    * The utilization on the dashboard won't be accurate while MIG jobs are running
 
 ## Mixing Fractions and Dynamic MIG
 
