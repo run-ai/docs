@@ -7,24 +7,40 @@ Create a configuration file to install the Run:ai control plane:
 
 === "Connected"
     Generate a values file by running:
-    ```
-    runai-adm generate-values --domain <DNS_RECORD> --tls-cert <file-name> \
-        --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
-        --external-ips <ip> 
-    ```
-=== "Airgapped"
-    Generate a values file by running the following __under the `deploy` folder__:
-    ```
-    runai-adm generate-values --domain <DNS_RECORD>  --tls-cert <file-name> \
-        --tls-key <file-name> --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \
-        --external-ips <ip> --airgapped
+    ``` bash 
+    runai-adm generate-values 
+        --external-ips <ip> \ # (1)
+        --domain <dns-record> \ # (2) 
+        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
+        --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  # (4)
     ```
 
-Where:
+    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP adddress above. 
+    3. TLS certificate and private key for the above domain.
+    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
+
+=== "Airgapped"
+    Generate a values file by running the following __under the `deploy` folder__:
+    ``` bash
+    runai-adm generate-values 
+        --external-ips <ip> \ # (1)
+        --domain <dns-record> \ # (2) 
+        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
+        --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \ # (4)
+        --airgapped
+    ```
+
+    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP adddress above. 
+    3. TLS certificate and private key for the above domain.
+    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
+
+<!-- Where:
 
 * `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
 * `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-* `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes. 
+* `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes.  -->
 
 !!! Note
     In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)

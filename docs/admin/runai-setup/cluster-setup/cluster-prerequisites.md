@@ -5,8 +5,8 @@ Below are the prerequisites of a cluster installed with Run:ai.
 
 Run:ai has been tested with the following certified Kubernetes distributions: 
 
-| Target Platform                          | Description | Notes | 
-|------------------------------------------|-------------|-------|
+| Target Platform                          | Description | Installation Notes | 
+|------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
 | EKS | Amazon Elastic Kubernetes Service  | |
 | AKS | Azure Kubernetes Services          | |
@@ -71,7 +71,7 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
-### Inference Workloads
+### Setting up Inference
 
 To use the Run:ai inference module you must pre-install [Knative](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
@@ -90,7 +90,7 @@ data:
   ...
 ```
 
-### Inference Autoscaling
+#### Inference Autoscaling
 Run:ai allows to autoscale a deployment according to various metrics:
 
 1. GPU Utilization (%)

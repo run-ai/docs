@@ -65,6 +65,7 @@ If helm v3 does not yet exist on the machine, install it now:
 
 
 === "Airgapped"
+    The Helm installation image is under the `deploy` directory. Run:
     ```
     tar xvf helm-<version>-linux-amd64.tar.gz
     sudo mv linux-amd64/helm /usr/local/bin/

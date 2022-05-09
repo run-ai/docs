@@ -4,19 +4,7 @@ Below are instructions on how to install a Run:ai cluster. Before installing, pl
 !!! Important
     We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
 
-
-## Step 1: Kubernetes
-
-See [prerequisites](cluster-prerequisites.md).
-
-
-## Step 2: NVIDIA
-
-See [prerequisites](cluster-prerequisites.md).
-
-
-
-## Step 3: Install Run:ai
+## Install Run:ai
 
 Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
@@ -33,18 +21,17 @@ Using the Wizard:
 6. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
 7. Run the `helm` commands as provided in the wizard. 
 
-
 !!! Info
     To install a specific version, add `--version <version>` to the install command.
 
-## Step 4: Verify your Installation
+## Verify your Installation
 
 *   Go to `<company-name>.run.ai/dashboards/now`.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).
 
-## Step 5: (Optional) Set Node Roles
+## (Optional) Set Node Roles
 
 When installing a production cluster you may want to:
 
@@ -54,12 +41,10 @@ When installing a production cluster you may want to:
 
 To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
-
-
 ## Next Steps
 
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
+* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md).
 * Set up Researchers to work with the Run:ai Command-line interface (CLI). See  [Installing the Run AI Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
-* Set up [Project-based Researcher Access Control](../authentication/researcher-authentication.md).
 * Review [advanced setup and maintenace](../config/overview.md) scenarios.

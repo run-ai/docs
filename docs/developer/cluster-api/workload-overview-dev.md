@@ -21,7 +21,22 @@ Run:ai currently supports the following Workloads types:
 
 ## Values
 
-A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.
+A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.  
+
+You can also find the exact YAML syntax run:
+
+```
+ kubectl explain TrainingWorkload.spec
+```
+
+(and similarly for other Workload types).
+
+To get information on a specific value (e.g. `node type`), you can also run:
+
+```
+kubectl explain TrainingWorkload.spec.nodeType
+```
+
 
 ## How to Submit
 

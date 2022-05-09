@@ -1,26 +1,31 @@
 
-# Submitting Workloads via YAML
+# Submitting Workloads via REST
 
-You can use YAML to submit Workloads directly to Run:ai. 
+You can submit Workloads via HTTP calls, using the Kubernetes REST API.
 
 ## Submit Workload Example
 
-Create a file named `job1.yaml` with the following text:
 
-``` YAML title="job1.yaml"
-apiVersion: run.ai/v1alpha1
-kind: TrainingWorkload # (1)
+``` bash 
+curl --location --request POST 'https://<KUBERNETES-API-SERVER>:6443/apis/run.ai/v1alpha1/namespaces/runai-team-a/trainingworkloads' \ # (1) 
+--header 'Content-Type: application/yaml' \
+--header 'Authorization: Bearer <BEARER>' \  # (2) 
+--data-raw 'apiVersion: run.ai/v1alpha1
+kind: TrainingWorkload 
 metadata:
-  name: job-1  # (2) 
-  namespace: runai-team-a # (3)
+  name: job-1    
 spec:
   gpu:
     value: "1"
   image:
     value: gcr.io/run-ai-demo/quickstart
   name:
-    value: job-1 # (4)
+    value: job-1  
 ```
+(1) Replace `<KUBERNETES-API-SERVER>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). Replace `runai-team-a` with namespace name.
+(2) Add Bearer token here 
+
+
 
 1. This is a _Training_ workload.
 2. Kubernetes object name. Mandatory, but has no functional significance.

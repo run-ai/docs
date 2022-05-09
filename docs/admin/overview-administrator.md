@@ -8,4 +8,3 @@ As part of the Administrator documentation you will find:
 * __Researcher Setup__ How to set up Researchers to work with Run:ai.
 * Setting and maintaining the cluster via the  __Run:ai User Interface__.
 * __Integrations__ of Run:ai with a variety of other systems
-* Introductory __Presentations__.
