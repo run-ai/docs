@@ -257,7 +257,7 @@ nav:
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
-    - 'Calling REST APIs' : 'developer/rest-auth.md'
+    - 'API Authentication' : 'developer/rest-auth.md'
     - 'Cluster API' :
       - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'

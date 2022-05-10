@@ -28,21 +28,13 @@ To complete this Quickstart you must have:
 
 *   In the Run:ai user interface go to `Deployments`. If you do not see the `Deployments` sections you may not have the required access control, or the inference module is disabled at the settings. 
 * Select `New Deployment` on the top right
-* Select `team-a` as a project and add an arbitrary name. Use the image `runai/example-triton-server`
+* Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`
 * Under `Resources` add 0.5 GPUs
 * Under `Auto Scaling` select a minimum of 1, a maximum of 2. Use the `concurrency`
 * Add a `Container port` of `8000`.
 
 
-This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress by running:
-
-        runai list jobs
-
-The result:
-
-![inference-list.png](img/inference-list.png)
-
-The output shows the service URL with which to connect to the service.
+This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress using the Deployment list in the user interface or by running `runai list jobs`
 
 ### Query the Inference Server
 
@@ -50,11 +42,11 @@ The specific inference server we just created is accepting queries over port 800
 
 Find the host name by running `kubectl get svc -n runai-team-a`. Use the `inference1-00001-private` Cluster IP.
 
-
 Replace `<HOSTNAME>` below and run: 
 
 ```
- runai submit inference-clien2  -i runai/example-triton-client -- perf_analyzer -m inception_graphdef --request-rate-range 50 -p 3600000 -u  <HOSTNAME>
+ runai submit --name inference-client  -i gcr.io/run-ai-demo/example-triton-client --command \
+    -- perf_analyzer -m inception_graphdef --request-rate-range 50 -p 3600000 -u  <HOSTNAME>
 ```
 
 To see the result, run the following:
@@ -63,23 +55,17 @@ To see the result, run the following:
 runai logs inference-client -f
 ```
 
-You should see a log of the inference call:
-
-![inference-client-output.png](img/inference-client-output.png)
 
 ### View status on the Run:ai User Interface
 
 * Open the Run:ai user interface.
-* Under "Jobs" you can view the new Workload:
-
-![inference-job-list.png](img/inference-job-list.png) 
-
+* Under "Deployments" you can view the new Workload. When clicking the workload, note the utilization graphs go up. 
 
 ### Stop Workload
 
-Run the following:
+Use the user interface to delete the workload.
 
-    runai delete job inference1
+## See also
 
-This would stop the inference workload. Verify this by running ``runai list jobs`` again.
+You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
 

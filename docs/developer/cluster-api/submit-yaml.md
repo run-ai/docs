@@ -1,7 +1,7 @@
 
 # Submitting Workloads via YAML
 
-You can use YAML to submit Workloads directly to Run:ai. 
+You can use YAML to submit Workloads directly to Run:ai. Below are examples of how to create training, interactive and inference workloads via YAML.
 
 ## Submit Workload Example
 
@@ -85,7 +85,7 @@ spec:
   gpu:
     value: "0.5"
   image:
-    value: "runai/example-triton-server"
+    value: "gcr.io/run-ai-demo/example-triton-server"
   minScale:
     value: 1
   maxScale:
@@ -104,5 +104,4 @@ spec:
 1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level. 
 2. Inference requires a port to receive requests.
 
-
-    d
+To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).

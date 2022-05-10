@@ -1,21 +1,22 @@
 
 # API Authentication
 
-There are two equivalent methods for call Run:ai APIs:
 
-* REST APIs
-* Kubernetes APIs. Using `kubectl apply` on YAML files, or calling Kubernetes directly via code.
+The following document explains how to authenticate in order to access Run:ai APIs. 
 
-The following document explains how to get the credentials required to call Run:ai __REST APIs__. By contrast, Run:ai Kubernetes APIs, use the Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift).
+Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in a number of ways:
+
+* When logging into the Run:ai user interface, you enter an email and password (or authenticated via single sign-on) which are used to obtain a token.
+* When using the Run:ai command-line, you use a Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift). The command attachs a token to the profile and allows you access to Run:ai functionality.
+* When using Run:ai APIs, you need to create an __Application__ through the Run:ai user interface. The Application is created with specific roles and contains a _secret_. Using the secret you can obtain a token and use it within subsequent API calls.
 
 
 ## Create a Client Application
 
 * Open the Run:ai Run:ai User Interface.
-* Go to `Settings | Application`
-* Create a new Application. 
+* Go to `Settings | Application` and create a new Application. 
 * Set the required roles:
-    * Select `Researcher` to manipulate _Jobs_ using the [Researcher REST API](researcher-rest-api/overview.md). To provide access to a specific project, you will also need to go to `Application | Projects` and provide the Application with access to specific projects. 
+    * Select `Researcher` to manipulate _Jobs_ using the [Cluster API](cluster-api/submit-rest.md). To provide access to a specific project, you will also need to go to `Application | Projects` and provide the Application with access to specific projects. 
     * Select `Editor` to manipulate _Projects_ and _Departments_ using the [Administrator REST API](admin-rest-api/overview.md). 
     * Select `Administrator` to manipulate _Users_, _Tenant Settings_ and _Clusters_ using the [Administrator REST API](admin-rest-api/overview.md).
 * Copy the `<APPLICATION-NAME>` and `<CLIENT-SECRET>` to be used below
@@ -74,6 +75,6 @@ The API response will look as follows:
 
 To call APIs, the application must pass the retrieved `access_token` as a Bearer token in the Authorization header of your HTTP request.
 
-* To retrieve and manipulate jobs, use the [Researcher REST API](researcher-rest-api/overview.md). Researcher API works at the cluster level and you will have different endpoints for different clusters. 
+* To retrieve and manipulate Workloads, use the [Cluster API](cluster-api/workload-overview-dev.md). Researcher API works at the cluster level and you will have different endpoints for different clusters. 
 * To retrieve and manipulate other metadata objects, use the [Administrator REST API](admin-rest-api/overview.md). Administrator API works at the control-plane (backend) level and you have a single endpoint for all clusters. 
 

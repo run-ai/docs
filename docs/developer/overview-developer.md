@@ -44,12 +44,7 @@ Retrieve metrics from multiple GPU clusters.
 
 See the [Metrics API](metrics/metrics.md) document.
 
-## Inference API
-
-Deploying inference workloads is currently provided via a special [inference API](inference/overview.md).
-
-
 ## API Authentication
 
-See [REST API Authentication](rest-auth.md) for information on how to authenticate REST API.
+See [API Authentication](rest-auth.md) for information on how to gain authenticated access to Run:ai APIs.
 
