@@ -6,7 +6,7 @@ Show lists of Workloads, Projects, Clusters or Nodes.
 ## Synopsis
 
 ``` shell
-runai list workloads 
+runai list jobs 
     [--all-projects | -A]  
 
     [--loglevel value] 
@@ -25,8 +25,6 @@ runai list nodes [node-name]
     [--loglevel value] 
     [--help | -h]
 ```
-
-`runai list jobs` is a synonym for `runai list workloads` and is provided for backward compatibility.
 
 ## Options
 `node-name` - Name of a specific node to list (optional).

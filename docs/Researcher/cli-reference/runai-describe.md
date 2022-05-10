@@ -5,7 +5,7 @@ Display details of a Workload or Node.
 ## Synopsis
 
 ``` shell
-runai describe workload <workload-name> 
+runai describe job <job-name> 
     [--output value | -o value]  
     
     [--loglevel value] 
@@ -21,11 +21,11 @@ runai describe node [node-name]
 
 ```
 
-`runai describe job` is a synonym for `runai describe workload` and is provided for backward compatibility.
+`runai describe job` is a synonym for `runai describe job` and is provided for backward compatibility.
 
 ## Options
 
-* <workload-name\> - The name of the Workload to run the command with. Mandatory.
+* <job-name\> - The name of the Workload to run the command with. Mandatory.
 * <node-name\> - The name of the Node to run the command with. If a Node name is not specified, a description of all Nodes is shown.
 
 
@@ -46,7 +46,7 @@ runai describe node [node-name]
 
 ## Output
 
-* The `runai describe workload` command will show Workload properties and status as well as lifecycle events and the list of related resources and pods.
+* The `runai describe job` command will show Workload properties and status as well as lifecycle events and the list of related resources and pods.
 * The `runai describe node` command will show Node properties. 
 
 

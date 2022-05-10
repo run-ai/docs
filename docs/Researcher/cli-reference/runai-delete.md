@@ -11,18 +11,16 @@ Note that once you delete a Workload, its entire data will be gone:
 ## Synopsis
 
 ``` shell
-runai delete workload <workload-name> 
+runai delete job <job-name> 
     [--all | -A]
 
     [--loglevel value] 
     [--project string | -p string] 
     [--help | -h]
 ```
-
-`runai delete job` is a synonym for `runai delete workload` and is provided for backward compatibility.
 ## Options
 
-<workload-name\> - The name of the Workload to run the command with. Mandatory.
+<job-name\> - The name of the Workload to run the command with. Mandatory.
 
 #### --all | -A
 >  Delete all Workloads.
@@ -40,7 +38,7 @@ runai delete workload <workload-name>
 
 ## Output
 
-* The Workload will be deleted and not available via the command _runai list workloads_.
+* The Workload will be deleted and not available via the command _runai list jobs_.
 
 * The Workloads will show as `deleted` from the Run:ai user interface Job list.
 

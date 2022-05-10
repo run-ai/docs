@@ -44,7 +44,7 @@ runai suspend <job-name>
 
 ## Output
 
-* The Job will be suspended. When running _runai list workloads_ the Job will be marked as _Suspended_.
+* The Job will be suspended. When running _runai list jobs_ the Job will be marked as _Suspended_.
 
 ## See Also
 

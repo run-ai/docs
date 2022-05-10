@@ -39,7 +39,7 @@ runai resume <job-name>
 
 ## Output
 
-* The Job will be resumed. When running _runai list workloads_ the Job status will no longer by _Suspended_.
+* The Job will be resumed. When running _runai list jobs_ the Job status will no longer by _Suspended_.
 
 ## See Also
 

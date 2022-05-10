@@ -357,7 +357,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 ## Output
 
-The command will attempt to submit a Job. You can follow up on the Job by running `runai list workloads` or `runai describe workload <workload-name>`.
+The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
 Note that the submit call may use a _policy_ to provide defaults to any of the above flags.
 

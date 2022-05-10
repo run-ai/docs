@@ -27,7 +27,7 @@ runai logs <job-name>
 >  Stream the logs.
 
 #### --pod | -p
->  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running `runai describe workload <workload-name>`.
+>  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running `runai describe job <job-name>`.
 
 #### --instance (string) | -i (string)
 >  Show logs for a specific instance in cases where a Job contains multiple pods.
