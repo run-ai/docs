@@ -43,7 +43,7 @@ Forwarding from [::1]:2222 -> 22
 
         * The Job starts an sshd server on port 22.
         * The Job redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} service type.
-        * Run: `runai list workloads`
+        * Run: `runai list jobs`
 
         * Next to the Job, under the "Service URL" column you will find the IP address and port. The port is 30222 
 

@@ -79,7 +79,7 @@ kubectl apply -f <FILE-NAME>.yaml
 
 ## Verification 
 
-Run: `runai list workloads` and verify that the job is running
+Run: `runai list jobs` and verify that the job is running
 
 ## Delete a deployment
 

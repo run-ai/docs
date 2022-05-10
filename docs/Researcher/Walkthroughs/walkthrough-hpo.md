@@ -81,7 +81,7 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
 Follow up on the Job's status by running:
 
-        runai list workloads
+        runai list jobs
 
 The result:
 
@@ -89,7 +89,7 @@ The result:
 
 Follow up on the Job's pods by running:
 
-        runai describe workload hpo1 
+        runai describe job hpo1 
 
 You will see 3 running pods currently executing:
 
@@ -104,7 +104,7 @@ You can see logs of specific pods by running :
 
         runai logs hpo1 --pod <POD-NAME>
 
-where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai describe workload hpo1`` output 
+where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai describe job hpo1`` output 
 
 The logs will contain a couple of lines worth noting:
 
@@ -167,7 +167,7 @@ experiments:
 
 Finally, you can delete the HPO Job by running:
 
-        runai delete workload hpo1
+        runai delete job hpo1
 
 
 

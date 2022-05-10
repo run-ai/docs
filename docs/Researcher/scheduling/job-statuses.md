@@ -351,7 +351,7 @@ Below is a list of statuses. For each status the list shows:
 
 The system stores various _events_ during the Job's lifecycle. These events can be helpful in diagnosing issues around Job scheduling. To view these events run:
 
-    runai describe workload <workload-name>
+    runai describe job <workload-name>
 
 
 Sometimes, useful information can be found by looking at  logs emitted from the process running inside the container. For example, Jobs that have exited with an exit code different than zero may write an exit reason in this log. To see Job logs run:

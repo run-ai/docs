@@ -29,7 +29,7 @@ spec:
 
 Change the namespace and run: `kubectl apply -f training1.yaml`
 
-Run: `runai list workloads` to see the new Workload.
+Run: `runai list jobs` to see the new Workload.
 
 Run: `kubectl delete -f training1.yaml` to delete the Workload. 
 
@@ -85,13 +85,24 @@ spec:
   gpu:
     value: "0.5"
   image:
-    value: "nvcr.io/nvidia/tritonserver:20.12-py3"
+    value: "runai/example-triton-server"
   minScale:
     value: 1
   maxScale:
     value: 2
   metric:
-    value: gpu-utilization
+    value: concurrency # (1)
   target:
-    value: 80
+    value: 80  # (2)
+  ports:
+      items:
+        port-8080:
+          value:
+            container: 8000
 ```
+
+1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level. 
+2. Inference requires a port to receive requests.
+
+
+    d

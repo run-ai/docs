@@ -30,7 +30,7 @@ spec:
 3. See [Submitting a Workload via YAML](submit-yaml.md) for explanation about the YAML-based workload
 
 
-Run: `runai list workloads` to see the new Workload.
+Run: `runai list jobs` to see the new Workload.
 
 Run: `kubectl delete -f job1.yaml` to delete the Workload. 
 

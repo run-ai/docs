@@ -2,13 +2,13 @@
 
 Jobs can be started via Kubeflow, Run:ai CLI, Rancher or via direct Kubernetes API. When Jobs are finished (successfully or failing), their resource allocation is taken away, but they remain in the system. You can see old Jobs by running the command:
 
-    runai list workloads
+    runai list jobs
 
 ![mceclip0.png](img/mceclip0.png)
 
 You can delete the Job manually by running:
 
-    runai delete workload run3
+    runai delete job run3
 
 But this may not be scalable for a production system.
 

@@ -68,7 +68,7 @@ kubectl get nodes
 To verify the installation run:
 
 ```
-runai list workloads
+runai list jobs
 ```
 
 ## Install Command Auto-Completion 

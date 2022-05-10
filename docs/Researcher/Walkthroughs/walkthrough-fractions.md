@@ -39,7 +39,7 @@ To complete this Quickstart you must have:
 
 Follow up on the Job's status by running:
 
-    runai list workloads
+    runai list jobs
 
 The result:
 

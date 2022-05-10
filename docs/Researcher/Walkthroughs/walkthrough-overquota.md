@@ -48,18 +48,18 @@ System status after run:
 
 Run the following command:
 
-    runai delete workload a2 -p team-a
+    runai delete job a2 -p team-a
 
 _a1_ is now going to start running again.
 
 Run: 
-    runai list workloads -A
+    runai list jobs -A
 
 You have __two__ Jobs that are running on the first node and __one__ Job that is running alone the second node. 
 
 Choose one of the two Jobs from the full node and delete it:
 
-    runai delete workload <job-name> -p <project>
+    runai delete job <job-name> -p <project>
 
 The status now is:
 ![overquota3](img/overquota3.png)

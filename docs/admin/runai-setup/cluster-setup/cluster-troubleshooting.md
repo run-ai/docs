@@ -62,7 +62,7 @@ runai submit -i gcr.io/run-ai-demo/quickstart -g 1
 * Verify that the Job is a _Running_ state when running: 
 
 ```
-runai list workloads
+runai list jobs
 ```
 
 * Verify that the Job is showing in the Jobs area at `<company-name>.run.ai/jobs`.
@@ -192,13 +192,13 @@ For further information see [here](https://github.com/rancher/rancher/issues/146
 
 ## Symptom: Jobs fail with ContainerCannotRun status 
 
-When running `runai list workloads`, your Workload has a status of `ContainerCannotRun`.
+When running `runai list jobs`, your Workload has a status of `ContainerCannotRun`.
 
 __Resolution__
 
 The issue may be caused due to an unattended upgrade of the NVIDIA driver.
 
-To verify, run `runai describe workload <job-name>`, and search for an error `driver/library version mismatch`.
+To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
 
 To fix: reboot the node on which the Job attempted to run.
 

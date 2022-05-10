@@ -43,7 +43,7 @@ runai submit-mpi dist --processes=2 -g 1 \
 
 Follow up on the Job's status by running:
 
-        runai list workloads
+        runai list jobs
 
 The result:
 
@@ -51,7 +51,7 @@ The result:
 
 The Run:ai scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
 
-        runai describe workload dist
+        runai describe job dist
 
 You will see two worker processes (pods) their status and on which node they run:
 
@@ -63,7 +63,7 @@ To see the merged logs of all pods run:
 
 Finally, you can delete the distributed training workload by running:
 
-        runai delete workload dist
+        runai delete job dist
 
 ### Run an Interactive Distributed Workload
 

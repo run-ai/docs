@@ -71,7 +71,7 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
-### Setting up Inference
+### Inference
 
 To use the Run:ai inference module you must pre-install [Knative](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
@@ -96,8 +96,8 @@ Run:ai allows to autoscale a deployment according to various metrics:
 1. GPU Utilization (%)
 2. CPU Utilization (%)
 3. Latency (milliseconds)
-4. Throughput (MB/second)
-5. Concurrency (requests/second)
+4. Throughput (requests/second)
+5. Concurrency 
 6. Any custom metric
 
 Additional installation may be needed for some of the metrics as follows:
