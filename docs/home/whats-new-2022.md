@@ -4,7 +4,6 @@
 We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
 * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
-* The term _Job_ has been replaced with _Workload_ throughout the command-line interface. See commands such as [runai list jobs](../Researcher/cli-reference/runai-list.md), [runai delete jobs](../Researcher/cli-reference/runai-delete.md) and more. The Job-related commands have stayed for backward compatibility.
 * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API and user interface. 
 
 ### Command-line interface installation and compatibility
@@ -19,10 +18,9 @@ The command-line interface utility is no longer a separate install. Instead is n
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to support Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. There is a new method, to automatically send all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+* Run:ai inference offering has been overhauled with the ability to submit deployments via user interface and a new and consistent API. For more information see [inference overview](../admin/workloads/inference-overview.md).
 
 XXXX
-
-Inference
 
 CPU scheduling (2.6?)
 
