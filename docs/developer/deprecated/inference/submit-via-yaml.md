@@ -1,5 +1,9 @@
 # Submit an inference Workload via YAML
 
+!!! Warning
+    Inference API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
+
+
 Parameters:
 
 * `<WORKLOAD-NAME>`. The name of the Workload. The name must comply with Kubernetes naming conventions for [DNS Label names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names){target=_blank}. With fractional workloads, the name is limited to 18 characters. 

@@ -1,10 +1,9 @@
 # Submit a Run:ai Job via YAML
 
-
-You can use YAML files to submit jobs directly to Kubernetes. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system that submits Jobs, and want to continue working with the same system. 
-
 !!! Warning
     Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
+
+You can use YAML files to submit jobs directly to Kubernetes. A frequent scenario for using the Kubernetes YAML syntax to submit Jobs is __integrations__. Researchers may already be working with an existing system that submits Jobs, and want to continue working with the same system. 
 
 ## Terminology
 

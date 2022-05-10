@@ -181,6 +181,7 @@ nav:
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
+      - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'User Interface' :

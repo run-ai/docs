@@ -1,5 +1,10 @@
 # Inference Setup
 
+
+!!! Warning
+    Inference API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
+
+
 Inference Jobs are an integral part of Run:ai and do not require setting up per se. However, Running multiple production-grade processes on a single GPU is best performed with an NVIDIA technology called _Multi-Process Service_ or _MPS_
 
 By default, MPS is not enabled on GPU nodes.
