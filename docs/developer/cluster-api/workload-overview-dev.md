@@ -16,7 +16,6 @@ Run:ai currently supports the following Workloads types:
 | Interactive    | `InteractiveWorkload` | Submit an interactive workload |
 | Training       | `TrainingWorkload`| Submit a training workload |
 | Inference      | `InferenceWorkload` | Submit an inference workload |
-| Old Inference |  `DeploymentWorkload`| Supports the older Inference implementation of Run:ai |
 
 
 ## Values

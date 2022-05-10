@@ -5,9 +5,9 @@ You can use YAML to submit Workloads directly to Run:ai.
 
 ## Submit Workload Example
 
-Create a file named `job1.yaml` with the following text:
+Create a file named `training1.yaml` with the following text:
 
-``` YAML title="job1.yaml"
+``` YAML title="training1.yaml"
 apiVersion: run.ai/v1alpha1
 kind: TrainingWorkload # (1)
 metadata:
@@ -27,11 +27,11 @@ spec:
 3. Namespace: Replace `runai-team-a` with the name of the Run:ai namespace for the specific Project (typically `runai-<Project-Name>`).
 4. Job name as appears in Run:ai. Can provide name, or create automatically if name prefix is configured. 
 
-Change the namespace and run: `kubectl apply -f job1.yaml`
+Change the namespace and run: `kubectl apply -f training1.yaml`
 
-Run: `runai list workloads` (or using the older syntax: `runai list workloads`) to see the new Workload.
+Run: `runai list workloads` to see the new Workload.
 
-Run: `kubectl delete -f job1.yaml` to delete the Workload. 
+Run: `kubectl delete -f training1.yaml` to delete the Workload. 
 
 
 ## Creating a YAML syntax from a CLI command
@@ -69,9 +69,29 @@ spec:
 ... Additional internal and status properties...
 ```
 
-## Using other Programming Languages
+## Inference Workload Example
 
-You can use any Kubernetes client library together with the YAML documentation above to submit workloads via another programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/){target=_blank}.
+Creating an inference workload is similar to the above two examples.
 
-
-
+``` YAML
+apiVersion: run.ai/v1alpha1
+kind: InferenceWorkload
+metadata:
+  name: inference1
+  namespace: runai-team-a
+spec:
+  name:
+    value: inference1
+  gpu:
+    value: "0.5"
+  image:
+    value: "nvcr.io/nvidia/tritonserver:20.12-py3"
+  minScale:
+    value: 1
+  maxScale:
+    value: 2
+  metric:
+    value: gpu-utilization
+  target:
+    value: 80
+```

@@ -260,6 +260,7 @@ nav:
     - 'Cluster API' :
       - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
+      - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
