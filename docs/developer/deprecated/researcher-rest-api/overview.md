@@ -20,8 +20,8 @@ This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clus
 
 ## Authentication
 
-* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../admin/runai-setup/authentication/researcher-authentication.md).
-* Once configured, you must create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../rest-auth.md).
+* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../../admin/runai-setup/authentication/researcher-authentication.md).
+* Once configured, you must create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../../rest-auth.md).
 * Use the token for subsequent API calls. 
 
 ## Example

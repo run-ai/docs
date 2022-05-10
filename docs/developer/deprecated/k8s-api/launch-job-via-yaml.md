@@ -29,7 +29,7 @@ Internally, Run:ai Projects are implemented as Kubernetes namespaces. The script
 
 * `<JOB-NAME>`. The name of the Job. 
 * `<IMAGE-NAME>`. The name of the docker image to use. Example: `gcr.io/run-ai-demo/quickstart`
-* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:ai is installed in an [unauthenticated mode](../../admin/runai-setup/config/).
+* `<USER-NAME>` The name of the user submitting the Job. The name is used for display purposes only when Run:ai is installed in an [unauthenticated mode](../../../admin/runai-setup/config/).
 * `<REQUESTED-GPUs>`. An integer number of GPUs you request to be allocated for the Job. Examples: 1, 2
 * `<NAMESAPCE>` The name of the Project's namespace. This is usually `runai-<PROJECT-NAME>`
 
@@ -72,7 +72,7 @@ kubectl apply -f <FILE-NAME>
 !!! Note
     * You can use either a regular `Job` or `RunaiJob`. The latter is a Run:ai object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
     * Using `build` in the `priorityClassName` field is equivalent to running a job via the CLI with a '--interactive' flag. To run a Train job, delete this line.
-    * The [runai submit](../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
+    * The [runai submit](../../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
 
 
 
@@ -113,4 +113,4 @@ kubectl delete runaijob <JOB-NAME>
 ## See Also
 
 * See how to use the above YAML syntax with [Kubernetes API](launch-job-via-kubernetes-api.md)
-* Use the [Researcher REST API](../../developer/deprecated/researcher-rest-api/overview.md) to submit, list and delete Jobs.
+* Use the [Researcher REST API](../../../developer/deprecated/researcher-rest-api/overview.md) to submit, list and delete Jobs.

@@ -122,7 +122,7 @@ New developer documentation area has been [created](../developer/overview-develo
 
 * New documentation for [Researcher REST API](../developer/deprecated/researcher-rest-api/overview.md).
 * New documentation for [Administration Rest API](../developer/admin-rest-api/overview.md).
-* Kubernetes-based API for [job creation](../developer/k8s-api/launch-job-via-kubernetes-api.md).
+* Kubernetes-based API for [job creation](../developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md).
 
 ## January 9th 2021
 

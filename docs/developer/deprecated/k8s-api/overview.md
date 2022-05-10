@@ -14,4 +14,4 @@ You can also communicate directly with the underlying Kubernetes infrastructure 
 * By using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:ai Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md) for a python sample.
 
 !!! Warning
-    Researcher Kubernetes API is deprecated. See [Cluster API](../cluster-api/workload-overview-dev.md) for its replacement.
+    Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
