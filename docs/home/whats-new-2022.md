@@ -3,7 +3,7 @@
 ### Workloads
 We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
-* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
+* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
 * The term _Job_ has been replaced with _Workload_ throughout the command-line interface. See commands such as [runai list jobs](../Researcher/cli-reference/runai-list.md), [runai delete jobs](../Researcher/cli-reference/runai-delete.md) and more. The Job-related commands have stayed for backward compatibility.
 * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API and user interface. 
 

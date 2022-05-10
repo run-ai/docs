@@ -6,8 +6,6 @@ Machine learning (ML) inference is the process of running live data points into 
 
 With Inference, you are taking a trained _Model_ and deploying it into a production environment. The deployment must align with the organization's production standards such as average and 95% response time as well as up-time. 
 
-For further information on Inference at Run:ai, see [Inference overview](../../developer/inference/overview.md).
-
 ## Prerequisites 
 
 To complete this Quickstart you must have:
@@ -67,5 +65,6 @@ Use the user interface to delete the workload.
 
 ## See also
 
-You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
+* You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
+* See [Deployment](../../admin/admin-ui-setup/deployments.md) user interface.
 

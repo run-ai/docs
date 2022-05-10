@@ -6,7 +6,7 @@ The article uses Python, though Kubernetes API is available in several other pro
 
 
 !!! Warning
-    Researcher Kubernetes API is deprecated. See [Cluster API](../cluster-api/workload-overview-dev.md) for its replacement.
+    Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
 
 ## Submit a Run:ai Job 
 

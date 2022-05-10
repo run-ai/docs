@@ -267,13 +267,13 @@ nav:
       - 'Metrics' : 'developer/metrics/metrics.md'
     - 'Deprecated APIs' :
       - 'Researcher API' : 
-        - 'REST API' : 'developer/researcher-rest-api/overview.md'
+        - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
         - 'Kubernetes API' : 
-          - 'Overview' : 'developer/k8s-api/overview.md'
-          - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
-          - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
+          - 'Overview' : 'developer/deprecated/k8s-api/overview.md'
+          - 'Submit a Job via YAML' : 'developer/deprecated/k8s-api/launch-job-via-yaml.md'
+          - 'Submit a Job via Kubernetes API' : 'developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md'
       - 'Inference API' :
-        - 'Overview' : 'developer/inference/overview.md' 
-        - 'Setup' : 'developer/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
-        - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
+        - 'Overview' : 'developer/deprecated/inference/overview.md' 
+        - 'Setup' : 'developer/deprecated/inference/setup.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 

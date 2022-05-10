@@ -7,5 +7,5 @@ The Run:ai Researcher User Interface allows Researchers which are less experienc
 
 ## Connecting to the Researcher UI
 
-To find the URL for the Researcher UI, use the method [here](../../developer/researcher-rest-api/overview.md#Finding-the-API-Endpoint-URL). 
+To find the URL for the Researcher UI, use the method [here](../../developer/deprecated/researcher-rest-api/overview.md#Finding-the-API-Endpoint-URL). 
 
