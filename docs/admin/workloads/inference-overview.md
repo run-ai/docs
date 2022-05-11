@@ -20,14 +20,33 @@ Run:ai provides Inference services as an equal part together with the other two 
 
 * Inference is considered a high-priority workload as it is customer-facing. Running an Inference workload (within the Project's quota) will preempt any Run:ai Workload marked as _Training_.
 
-* Inference is implemented as a Kubernetes _Deployment_ object with a defined number of replicas. The replicas are load-balanced by Kubernetes so that adding more replicas will improve the overall throughput of the system.
+* Inference is implemented as a Kubernetes _Deployment_ object with a defined number of replicas. The replicas are load-balanced by Kubernetes so adding more replicas will improve the overall throughput of the system.
 
 * Multiple replicas will appear in Run:ai as a single Inference workload. The workload will appear in all Run:ai dashboards and views as well as the Command-line interface.
 
 * Inference workloads can be submitted via Run:ai [user interface](../admin-ui-setup/deployments.md) as well as [Run:ai API](../../developer/cluster-api/workload-overview-dev.md). Internally, spawning an Inference workload also creates a Kubernetes _Service_. The service is an end-point to which clients can connect. 
 
+## Auto Scaling
+
+To withstand SLA, Inference workloads are typically set with _auto scaling_. Auto-scaling is the ability to add more computing power (Kubernetes pods) when the load increases and shrink allocated resources when the system is idle.
+
+There are a number of ways to trigger auto-scaling. Run:ai supports the following:
+
+| Metric          | Units |   Run:ai name   |
+|-----------------|-------|-----------------|
+| GPU Utilization |   %   | gpu-utilization |
+| CPU Utilization |   %   | cpu-utilization |
+| Latency         | milliseconds | latency  |
+| Throughput      | requests/second) | throughput |
+| Concurrency     |       |    concurrency  | 
+| Custom metric   |       |    custom       |
+
+
+
 
 ## See Also
 
-* To setup Inference, see [Cluster installation prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#inference)
-* For running Inference see [Inference quick-start](../../Researcher/Walkthroughs/quickstart-inference.md)
+* To set up Inference, see [Cluster installation prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#inference).
+* For running Inference see [Inference quick-start](../../Researcher/Walkthroughs/quickstart-inference.md).
+* To run Inference from the user interface see [Deployments](../admin-ui-setup/deployments.md).
+* To run Inference using API see [Workload overview](../../developer/cluster-api/workload-overview-dev.md).

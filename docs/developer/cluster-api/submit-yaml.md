@@ -43,11 +43,11 @@ runai submit build1 -i ubuntu -g 1 --interactive --command --dry-run \
      -- sleep infinity 
 ```
 
-The result will be an `InteractiveWorkload` Kuberntes object:
+The result will be the following Kubernetes object declaration:
 
 ``` YAML
 apiVersion: run.ai/v1alpha1
-kind: InteractiveWorkload
+kind: InteractiveWorkload  # (1)
 metadata:
   creationTimestamp: null
   labels:
@@ -68,6 +68,9 @@ spec:
 
 ... Additional internal and status properties...
 ```
+
+1. This is an _Interactive_ workload.
+
 
 ## Inference Workload Example
 
@@ -104,4 +107,6 @@ spec:
 1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level. 
 2. Inference requires a port to receive requests.
 
-To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).
+## See Also
+* To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).
+* To learn more about Inference and Run:ai see [Inference overview](../../admin/workloads/inference-overview.md).

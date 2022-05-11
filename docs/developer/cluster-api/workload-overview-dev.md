@@ -6,10 +6,10 @@
 
 Run:ai schedules __Workloads__. Run:ai workloads contain:
 
-* The _Kubernetes object_ (Job, Deployment, etc) is used to launch the container inside which the data science code runs. 
+* The _Kubernetes object_ (Job, Deployment, etc) that is used to launch the container inside which the data science code runs. 
 * A set of additional resources required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more. 
 
-Run:ai currently supports the following Workloads types:
+Run:ai supports the following Workloads types:
 
 |  Workload Type | Kubernetes Name | Description |
 |----------------|-----------------|-------------|
@@ -27,6 +27,27 @@ You can also find the exact YAML syntax run:
 ```
  kubectl explain TrainingWorkload.spec
 ```
+Result:
+
+```
+KIND:     TrainingWorkload
+VERSION:  run.ai/v1alpha1
+
+RESOURCE: nodeType <Object>
+
+DESCRIPTION:
+     Specifies nodes (machines) or a group of nodes on which the workload will
+     run. To use this feature, your Administrator will need to label nodes as
+     explained in the Group Nodes guide at
+     https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag
+     can be used in conjunction with Project-based affinity. In this case, the
+     flag is used to refine the list of allowable node groups set in the
+     Project. For more information consult the Projects guide at
+     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+
+FIELDS:
+   value	<string>
+```
 
 (and similarly for other Workload types).
 
@@ -41,18 +62,18 @@ kubectl explain TrainingWorkload.spec.nodeType
 
 A Workload can be submitted via various channels:
 
-* The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md)
-* The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command
-* The Run:ai Cluster API
+* The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
+* The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
+* The Run:ai Cluster API.
 
-The focus of this section is the Cluster API
+The focus of this section is the Cluster API.
 
 ## Policies
 
 An Administrator can set _Policies_ for Workload submission. Policies serve two purposes:
 
-1) To impose guidelines on the values a researcher can specify for each parameter.
-2) To provide default values to various parameters.
+1. To constrain the values a researcher can specify each parameter.
+2. To provide default values to various parameters.
 
 For example, an administrator can,
 
