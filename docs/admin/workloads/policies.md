@@ -9,7 +9,7 @@ Policies allow administrators to _impose restrictions_ and set _default values_ 
 1. Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
 2. Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
    
-Policies are stored as kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
+Policies are stored as Kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
 
 Policies are specific to Workload type as such there are several kinds of Policies:
 
@@ -19,13 +19,13 @@ Policies are specific to Workload type as such there are several kinds of Polici
 | Training       | `TrainingWorkload`| `TrainingPolicy` |
 | Inference      | `InferenceWorkload` | `InferencePolicy` |
 
-A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when take over whene there is no project-specific Policy for the relevant workload kind.
+A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
 
 ## Creating a Policy
 
 ### Creating your First Policy 
 
-To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following yaml:
+To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
 
 ``` YAML title="policy.yaml"
 apiVersion: run.ai/v1alpha1
@@ -59,7 +59,7 @@ The following message will appear:
 ```
 gpu: must be no greater than 4
 ```
-A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter number of GPUs which is out of range for an Interactive tab.  
+A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for an Interactive tab.  
 
 ### Complex Values
 
@@ -67,7 +67,7 @@ The example above illustrated rules for parameters of "primitive" types, such as
 
 Other workload parameters, such as _ports_ or _volumes_, are "complext", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
 
-Following is an example for a policy containing the value `ports` which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
+Following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
 ``` YAML
 apiVersion: run.ai/v1alpha1
@@ -102,14 +102,13 @@ spec:
 
 A policy for complext field is composed of three parts:
 
-* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `false` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is actually the default for `canAdd`, so it actually could have been omitted from the policy above). when `canAdd` is set to `false`
-  the a researcher will not be able to  add any additional port except those already specified by the policy.
-* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of  `external` to a maximum of 32767. 
+* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `false` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is the default for `canAdd`, so it actually could have been omitted from the policy above). When `canAdd` is set to `false`, the researcher will not be able to add any additional port except those already specified by the policy.
+* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of `external` to a maximum of 32767. 
 * __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload.
   
 ### Syntax
 
-The complete syntax of the policy yaml can be obtained using the `explain`command of kubectl. For example:
+The complete syntax of the policy YAML can be obtained using the `explain` command of kubectl. For example:
 
 ```bash
 kubectl explain trainingpolicy.spec
@@ -165,7 +164,7 @@ FIELDS:
      additionally there are rules which apply for specific items of the map
 ```
 
-And further drill down into the `ports.rules` object by running:
+Drill down into the `ports.rules` object by running:
 
 ```bash
 kubectl explain trainingpolicy.spec.ports.rules
@@ -189,7 +188,7 @@ FIELDS:
      if the map as a whole is required
 ```
 
-Note that each kind of policy has slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`. 
+Note that each kind of policy has a slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`. 
 
 ### Using Secrets for Environment Variables
 
@@ -204,7 +203,7 @@ The secret will be extracted from the secret object when the Job is created. For
         value: "SECRET:my-secret,password"
 ```
 
-When submitting a workload which is affected by this policy, the created container will have an environment variable called
+When submitting a workload that is affected by this policy, the created container will have an environment variable called
 `MYPASSWORD` whose value is the key `password` residing in Kubernetes secret `my-secret` which has been pre-created in
 the namespace where the workload runs.
 
@@ -225,15 +224,15 @@ Should return the following:
 NAME                 AGE
 interactive-policy   2d3h
 ````
-In order to delete this policy:
+To delete this policy:
 ```bash
 kubectl delete InteractivePolicy interactive-policy -n runai
 ```
-In order to access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
+To access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
 
 ## See Also
 
-<!-- * For creating workloads based on policies, see the Run:ai [submitting workloads guide](../../Researcher/submitting/workloads.md) -->
+* For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)
 
 
 

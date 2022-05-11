@@ -2,9 +2,9 @@
 # API Authentication
 
 
-The following document explains how to authenticate in order to access Run:ai APIs. 
+The following document explains how to authenticate with Run:ai APIs. 
 
-Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in a number of ways:
+Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in several ways:
 
 * When logging into the Run:ai user interface, you enter an email and password (or authenticated via single sign-on) which are used to obtain a token.
 * When using the Run:ai command-line, you use a Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift). The command attachs a token to the profile and allows you access to Run:ai functionality.

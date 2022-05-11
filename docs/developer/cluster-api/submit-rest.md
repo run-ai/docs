@@ -27,17 +27,16 @@ spec:
 
 1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with namespace name. <br> Replace `trainingworkloads` with `interactiveworkloads` or `inferenceworkloads` according to type.
 2. Add Bearer token. To obtain a Bearer token see [API authentication](../rest-auth.md).
-3. See [Submitting a Workload via YAML](submit-yaml.md) for explanation about the YAML-based workload
+3. See [Submitting a Workload via YAML](submit-yaml.md) for an explanation about the YAML-based workload
 
 
 Run: `runai list jobs` to see the new Workload.
 
-Run: `kubectl delete -f job1.yaml` to delete the Workload. 
 
 
 ## Using other Programming Languages
 
-You can use any Kubernetes client library together with the YAML documentation above to submit workloads via another programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/){target=_blank}.
+You can use any Kubernetes client library together with the YAML documentation above to submit workloads via other programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/){target=_blank}.
 
 
 
