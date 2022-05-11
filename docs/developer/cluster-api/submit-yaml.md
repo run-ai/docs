@@ -99,7 +99,7 @@ spec:
     value: 80  # (2)
   ports:
       items:
-        port-8080:
+        port1:
           value:
             container: 8000
 ```
