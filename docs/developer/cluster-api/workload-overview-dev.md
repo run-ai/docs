@@ -40,7 +40,7 @@ Result:
 
 ```
 KIND:     TrainingWorkload
-VERSION:  run.ai/v1alpha1
+VERSION:  run.ai/v2alpha1
 
 RESOURCE: nodeType <Object>
 

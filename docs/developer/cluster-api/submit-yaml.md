@@ -8,7 +8,7 @@ You can use YAML to submit Workloads directly to Run:ai. Below are examples of h
 Create a file named `training1.yaml` with the following text:
 
 ``` YAML title="training1.yaml"
-apiVersion: run.ai/v1alpha1
+apiVersion: run.ai/
 kind: TrainingWorkload # (1)
 metadata:
   name: job-1  # (2) 
@@ -46,7 +46,7 @@ runai submit build1 -i ubuntu -g 1 --interactive --command --dry-run \
 The result will be the following Kubernetes object declaration:
 
 ``` YAML
-apiVersion: run.ai/v1alpha1
+apiVersion: run.ai/v2alpha1
 kind: InteractiveWorkload  # (1)
 metadata:
   creationTimestamp: null
@@ -77,7 +77,7 @@ spec:
 Creating an inference workload is similar to the above two examples.
 
 ``` YAML
-apiVersion: run.ai/v1alpha1
+apiVersion: run.ai/v2alpha1
 kind: InferenceWorkload
 metadata:
   name: inference1

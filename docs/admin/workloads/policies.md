@@ -28,7 +28,7 @@ A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally,
 To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
 
 ``` YAML title="policy.yaml"
-apiVersion: run.ai/v1alpha1
+apiVersion: run.ai/v2alpha1
 kind: InteractivePolicy
 metadata:
   name: interactive-policy
@@ -117,7 +117,7 @@ Should provide the list of all possible fields in the spec of training policies:
 
 ```yaml
 KIND:     TrainingPolicy
-VERSION:  run.ai/v1alpha1
+VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
@@ -172,7 +172,7 @@ kubectl explain trainingpolicy.spec.ports.rules
 
 ```yaml
 KIND:     TrainingPolicy
-VERSION:  run.ai/v1alpha1
+VERSION:  run.ai/
 
 RESOURCE: rules <Object>
 

@@ -9,7 +9,7 @@ To submit a workload via HTTP, run the following:
 
 ``` bash 
 curl -X POST \ # (1) 
-'https://<IP>:6443/apis/run.ai/v1alpha1/namespaces/<PROJECT>/trainingworkloads' \ 
+'https://<IP>:6443/apis/run.ai/v2alpha1/namespaces/<PROJECT>/trainingworkloads' \ 
     --header 'Content-Type: application/yaml' \
     --header 'Authorization: Bearer <BEARER>' \  # (2) 
     --data-raw 'apiVersion: run.ai/v1alpha1
