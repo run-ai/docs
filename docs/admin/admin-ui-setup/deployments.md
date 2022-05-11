@@ -15,7 +15,7 @@ The main view shows a list of Deployments.:
 ## Submit a Deployment
 On the top right, you can choose to Submit a new Deployment. 
 !!! Note
-    If knative is not installed in your cluster the button will be grayed out.
+    If [knative is not installed in your cluster](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) the button will be grayed out.
 
 A Deployment form will open: 
 
