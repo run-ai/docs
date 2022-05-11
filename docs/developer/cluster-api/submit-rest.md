@@ -25,10 +25,9 @@ spec:
     value: job-1  
 ```
 
-1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with namespace name. <br> Replace `trainingworkloads` with `interactiveworkloads` or `inferenceworkloads` according to type.
+1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with the name of the Run:ai namespace for the specific Project (typically `runai-<Project-Name>`). <br> Replace `trainingworkloads` with `interactiveworkloads` or `inferenceworkloads` according to type.
 2. Add Bearer token. To obtain a Bearer token see [API authentication](../rest-auth.md).
 3. See [Submitting a Workload via YAML](submit-yaml.md) for an explanation about the YAML-based workload
-
 
 Run: `runai list jobs` to see the new Workload.
 

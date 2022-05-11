@@ -65,7 +65,7 @@ A similar message will appear in the _New Job_ form of the Run:ai user interface
 
 The example above illustrated rules for parameters of "primitive" types, such as _GPU allocation_, _CPU memory_, _working directory_, etc. These parameters contain a single value. 
 
-Other workload parameters, such as _ports_ or _volumes_, are "complext", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
+Other workload parameters, such as _ports_ or _volumes_, are "complex", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
 
 Following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
@@ -100,9 +100,9 @@ spec:
 ```
 
 
-A policy for ש complex field is composed of three parts:
+A policy for a complex field is composed of three parts:
 
-* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `false` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is the default for `canAdd`, so it actually could have been omitted from the policy above). When `canAdd` is set to `false`, the researcher will not be able to add any additional port except those already specified by the policy.
+* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `true` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is the default for `canAdd`, so it actually could have been omitted from the policy above). When `canAdd` is set to `false`, the researcher will not be able to add any additional port except those already specified by the policy.
 * __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of `external` to a maximum of 32767. 
 * __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload.
   
