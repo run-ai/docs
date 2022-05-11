@@ -20,7 +20,7 @@ Run:ai provides Inference services as an equal part together with the other two 
 
 * Inference is considered a high-priority workload as it is customer-facing. Running an Inference workload (within the Project's quota) will preempt any Run:ai Workload marked as _Training_.
 
-* Inference is workload will receive priority over _Train_ and _Build_ workloads during scheduling.
+* Inference workloads will receive priority over _Train_ and _Build_ workloads during scheduling.
 
 * Inference is implemented as a Kubernetes _Deployment_ object with a defined number of replicas. The replicas are load-balanced by Kubernetes so adding more replicas will improve the overall throughput of the system.
 
@@ -46,7 +46,7 @@ There are a number of ways to trigger auto-scaling. Run:ai supports the followin
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 
 Auto Scaling also supports a scale to 0 policy with _Throughput_ and _Concurrency_ metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
-This has the benefit of conserving resources at the risk delay from "cold start" of the model when traffic resumes. 
+This has the benefit of conserving resources at the risk of delay from "cold starting" the model when traffic resumes. 
 
 
 ## See Also
