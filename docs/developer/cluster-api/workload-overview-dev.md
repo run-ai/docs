@@ -25,8 +25,17 @@ A Workload will typically have a list of _values_, such as name, image, and reso
 You can also find the exact YAML syntax run:
 
 ```
- kubectl explain TrainingWorkload.spec
+kubectl explain TrainingWorkload.spec
 ```
+
+(and similarly for other Workload types).
+
+To get information on a specific value (e.g. `node type`), you can also run:
+
+```
+kubectl explain TrainingWorkload.spec.nodeType
+```
+
 Result:
 
 ```
@@ -49,14 +58,6 @@ FIELDS:
    value	<string>
 ```
 
-(and similarly for other Workload types).
-
-To get information on a specific value (e.g. `node type`), you can also run:
-
-```
-kubectl explain TrainingWorkload.spec.nodeType
-```
-
 
 ## How to Submit
 
@@ -64,16 +65,14 @@ A Workload can be submitted via various channels:
 
 * The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
 * The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
-* The Run:ai Cluster API.
-
-The focus of this section is the Cluster API.
+* The Run:ai [Cluster API](submit-yaml.md).
 
 ## Policies
 
 An Administrator can set _Policies_ for Workload submission. Policies serve two purposes:
 
-1. To constrain the values a researcher can specify each parameter.
-2. To provide default values to various parameters.
+1. To constrain the values a researcher can specify.
+2. To provide default values.
 
 For example, an administrator can,
 

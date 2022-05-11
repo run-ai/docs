@@ -17,7 +17,7 @@ Run:ai has been tested with the following certified Kubernetes distributions:
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 | Canonical Kubernetes | a.k.a Charmed Kubernetes | | 
 
-A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:ai provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
+A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:ai provides instructions for a simple (non-production-ready) Kubernetes Installation](install-k8s.md).
 
 
 !!! Notes
@@ -73,7 +73,7 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 
 ### Inference
 
-To use the Run:ai inference module you must pre-install [Knative](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
 
 ```

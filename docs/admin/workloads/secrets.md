@@ -4,7 +4,7 @@
 
 Sometimes you want to use sensitive information within your code. For example passwords, OAuth tokens, or ssh keys. The best practice for saving such information in Kubernetes is via __Kubernetes Secrets__. Kubernetes Secrets let you store and manage sensitive information. Access to secrets is limited via configuration.
 
-A Kubernetes secret may hold multiple __key - value pairs__.
+A Kubernetes secret may hold multiple __key - value__ pairs.
 
 ## Using Secrets in Run:ai Workloads
 
