@@ -45,8 +45,8 @@ There are a number of ways to trigger auto-scaling. Run:ai supports the followin
 
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 
-Auto Scaling also supports a scale to 0 policy with _Throughput_ and _Concurrency_ metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
-This has the benefit of conserving resources at the risk of delay from "cold starting" the model when traffic resumes. 
+Auto Scaling also supports a scale to zero policy with _Throughput_ and _Concurrency_ metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
+This has the benefit of conserving resources at the risk of a delay from "cold starting" the model when traffic resumes. 
 
 
 ## See Also
