@@ -96,7 +96,7 @@ Currently, this setting cannot be changed after the control plane is installed.
     You must have Cluster Administrator rights to install these dependencies. 
 
 Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs.
-NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html){target=_blank}. 
+NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/install-gpu-ocp.html#installing-the-nvidia-gpu-operator-by-using-the-web-console){target=_blank}. The OpenShift web console installation is typically easier. 
 
 When done, verify that the GPU Operator is installed by running:
 

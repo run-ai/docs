@@ -11,14 +11,15 @@ We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../
 The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
 
 !!! Warning
-    The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you uprade the cluster, you must also upgrade the command-line interface. 
+    The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you upgrade the cluster, you must also upgrade the command-line interface. 
 ### Other Features
 
 * Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to support Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. There is a new method, to automatically send all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
-* Run:ai inference offering has been overhauled with the ability to submit deployments via user interface and a new and consistent API. For more information see [inference overview](../admin/workloads/inference-overview.md).
+* Run:ai inference offering has been overhauled with the ability to submit deployments via user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md).
+* Run:ai now supports Kubernetes 1.24
 
 XXXX
 
@@ -30,6 +31,8 @@ Something on SSO with users and groups
 
 S3 (both ui and cli)
 
+
+
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
 ### Important Upgrade Note
@@ -40,7 +43,7 @@ As these two variants are no longer needed, Run:ai now uses the standard NVIDIA 
 
 Going forward, we also mandate the usage of the NVIDIA GPU Operator version 1.9. The Operator easies the installation of all NVIDIA software. Drivers and Kubernetes components alike. 
 
-For further information see the [Run:ai NVIDIA prerequisies](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
+For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
 
 ### Dynamic MIG Support
 
@@ -63,15 +66,15 @@ To upgrade to version 2.3 cluster from earlier versions, you must uninstall vers
 The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `https://<company-name>.run.ai`. The user interface capabilities are subject to the role of the individual user. 
 
 * See [instructions](../admin/admin-ui-setup/overview.md) on how to set up the unified user interface. 
-* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description on how to submit, view and delete Jobs from the unified user interface. 
+* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description of how to submit, view and delete Jobs from the unified user interface. 
 
 
 Other features:
  
 * Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
-* Run:ai now supports orchastraction of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
-* Run:ai now supports Openshift 4.9, Kubernetes 1.22 and 1.23.
+* Run:ai now supports orchestration of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
+* Run:ai now supports Openshift 4.9, Kubernetes 1.22, and 1.23.
 
 ## February 2022 Run:ai Version 2.2
 

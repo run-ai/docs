@@ -70,7 +70,7 @@ Other workload parameters, such as _ports_ or _volumes_, are "complext", in the 
 Following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
 ``` YAML
-apiVersion: run.ai/v1alpha1
+apiVersion: run.ai/v2alpha1
 kind: InteractivePolicy
 metadata:
   name: interactive-policy
@@ -146,7 +146,7 @@ kubectl explain trainingpolicy.spec.ports
 
 ```yaml
 KIND:     TrainingPolicy
-VERSION:  run.ai/v1alpha1
+VERSION:  run.ai/v2alpha1
 
 RESOURCE: ports <Object>
 

@@ -12,7 +12,7 @@ curl -X POST \ # (1)
 'https://<IP>:6443/apis/run.ai/v2alpha1/namespaces/<PROJECT>/trainingworkloads' \ 
     --header 'Content-Type: application/yaml' \
     --header 'Authorization: Bearer <BEARER>' \  # (2) 
-    --data-raw 'apiVersion: run.ai/v1alpha1
+    --data-raw 'apiVersion: run.ai/v2alpha1
 kind: TrainingWorkload  # (3)
 metadata:
   name: job-1    

@@ -21,7 +21,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 
 !!! Notes
-    * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.23. 
+    * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.24. 
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
     * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.9. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
