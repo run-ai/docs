@@ -3,8 +3,8 @@
 ### Workloads
 We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
-* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibillty.
-* Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API and user interface. 
+* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility.
+* Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
 
 ### Command-line interface installation and compatibility
 
@@ -91,7 +91,7 @@ We have now stabilized on a single version numbering system for all Run:ai artif
 * Run:ai Command-line interface.
 * Run:ai Administrator Command-line interface.
 
-Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the control plane can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
+Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the control plane can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
 
 ### Release Contents
 
@@ -101,4 +101,4 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering
 Supportability enhancements:
 
 * A new tool was added, to allow IT administrators to validate cluster and control-plane installation pre-requisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
-* To better analyze scheduling issues, node name was added to multiple scheduler log events.
+* To better analyze scheduling issues, the node name was added to multiple scheduler log events.

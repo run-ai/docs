@@ -34,14 +34,14 @@ To withstand SLA, Inference workloads are typically set with _auto scaling_. Aut
 
 There are a number of ways to trigger auto-scaling. Run:ai supports the following:
 
-| Metric          | Units |   Run:ai name   |
-|-----------------|-------|-----------------|
-| GPU Utilization |   %   | gpu-utilization |
-| CPU Utilization |   %   | cpu-utilization |
-| Latency         | milliseconds | latency  |
-| Throughput      | requests/second) | throughput |
-| Concurrency     |       |    concurrency  | 
-| Custom metric   |       |    custom       |
+| Metric          | Units        |   Run:ai name   |
+|-----------------|--------------|-----------------|
+| GPU Utilization |   %          | gpu-utilization |
+| CPU Utilization |   %          | cpu-utilization |
+| Latency         | milliseconds | latency         |
+| Throughput      | requests/second | throughput |
+| Concurrency     |              |    concurrency  | 
+| Custom metric   |              |    custom       |
 
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 

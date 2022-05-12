@@ -28,7 +28,7 @@ To complete this Quickstart you must have:
 * Select `New Deployment` on the top right.
 * Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`.
 * Under `Resources` add 0.5 GPUs.
-* Under `Auto Scaling` select a minimum of 1, a maximum of 2. Use the `concurrency` Autoscaling threshold method.
+* Under `Auto Scaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
 * Add a `Container port` of `8000`.
 
 

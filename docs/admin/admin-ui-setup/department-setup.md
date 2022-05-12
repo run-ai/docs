@@ -46,5 +46,5 @@ You can add new Departments by pressing the __Add New Department__ at the top ri
 
 ### Assigning Projects to Departments
 
-Under __Projects__ edit an existing Project, you will see a new __Department__ drop down with which you can associate a Project with a Department.
+Under __Projects__ edit an existing Project. You will see a new **Department** drop-down with which you can associate a Project with a Department.
 
