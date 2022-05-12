@@ -63,7 +63,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 === "EKS"
     * In the AWS Console, under EKS, find your cluster.
     * Go to `Configuration` and then to `Authentication`.
-    * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. 
+    * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. The process can take up to 30 minutes. 
 
 === "Other"
     See specific instructions in the documentation of the Kubernetes distribution.  
