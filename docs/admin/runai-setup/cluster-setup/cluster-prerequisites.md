@@ -26,8 +26,15 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
     * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.9. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
-    
-Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
+
+=== "On Prem"    
+    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
+
+=== "EKS"
+    * The [eksctl](https://eksctl.io/){target=_blank} tool is one of the options to create an AWS EKS cluster, By default, it installs the NVIDIA device plugin, Use the flag `--install-nvidia-plugin=false` to disable this install (as we want the NVIDIA GPU Operator to install it instead)
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. EKS installs NVIDIA drivers on the GPU nodes. As such, you must use the flags: `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
+
+Additional Notes:
 
 * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
 * Note that the NVIDIA document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
@@ -73,7 +80,8 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 
 ### Inference
 
-To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install.
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai has been certified on Knative version that only supports Kubernetes 1.22 or later. 
+
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
 
 ```

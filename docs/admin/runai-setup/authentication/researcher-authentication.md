@@ -60,8 +60,13 @@ As described in [authentication overview](authentication-overview.md), you must 
 === "GKE"
     See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Use the parameters provided in the server configuration section as described above. 
 
+=== "EKS"
+    * In the AWS Console, under EKS, find your cluster.
+    * Go to `Configuration` and then to `Authentication`.
+    * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. 
+
 === "Other"
-    See specific instructions in the documenation of the Kubernetes distribution.  
+    See specific instructions in the documentation of the Kubernetes distribution.  
 
 
 ## Command-line Interface Access
