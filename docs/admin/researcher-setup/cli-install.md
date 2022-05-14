@@ -130,3 +130,15 @@ docker run -it runai-cli bash
 Try and connect to your cluster from inside the docker by running a Run:ai CLI command. E.g. `runai list projects`.
 
 Distribute the image to Windows users.
+
+
+* In case you want to use port-forward feature please use the following command
+
+``` bash
+docker run -it -p <PORT>:<PORT> runai-cli bash
+```
+
+And when using `runai submit` command add the following flag:
+```
+--address 0.0.0.0
+```
