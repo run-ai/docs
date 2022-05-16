@@ -25,8 +25,6 @@ XXXX
 
 CPU scheduling (2.6?)
 
-Database has been removed from cluster (probably not interesting)
-
 Something on SSO with users and groups
 
 S3 (both ui and cli)
