@@ -16,20 +16,20 @@ The command-line interface utility is no longer a separate install. Instead is n
 
 * Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
 * `runai delete` has been changed in favor of `runai delete job` 
-* Self-hosted installation: The default Openshift installation is now set to support Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
-* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. There is a new method, to automatically send all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
-* Run:ai inference offering has been overhauled with the ability to submit deployments via user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md).
+* Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
+* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that automatically sends all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+* Run:ai inference offering has been overhauled with the ability to submit deployments via the user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md).
 * Run:ai now supports Kubernetes 1.24
 
-XXXX
+----
 
 CPU scheduling (2.6?)
 
-Database has been removed from cluster (probably not interesting)
+Spread scheduling
 
 Something on SSO with users and groups
 
-S3 (both ui and cli)
+S3 support using CLI
 
 
 

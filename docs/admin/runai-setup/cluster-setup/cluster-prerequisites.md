@@ -39,6 +39,8 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
     
     Using the GPU Operator is not an option. You will need to manually install the [Kubernetes Node feature discovery](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank}, [NVIDIA GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} and [NVIDIA DCGM exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. The installation is not trivial and we recommend contacting Run:ai customer support. 
 
+=== "RKE"
+    Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
