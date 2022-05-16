@@ -32,7 +32,7 @@ Create a configuration file to install the Run:ai control plane:
     ```
 
     1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
-    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP adddress above. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
     3. TLS certificate and private key for the above domain.
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 

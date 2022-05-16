@@ -30,5 +30,5 @@ When selecting a single Deployment, a right-pane appears:
 
 ![job-properties](img/deployment-properties.png)
 
-This multi-tab view provides information about Deployment details, related Pods, Deployment status history and various utilization graphs. 
+This multi-tab view provides information about Deployment details, related Pods, Deployment status history, and various utilization graphs. 
 

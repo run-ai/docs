@@ -1,8 +1,8 @@
 # Single Sign-On
 
-Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/passwords data entry, multiple compliance schemes, etc. 
+Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc. 
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign on __only__.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign-on **only**.
 
 
 !!! Caution
@@ -257,8 +257,8 @@ The latter option is easier to maintain.
 
 * Go to `Settings | Users`.
 * Select the `Groups` button. 
-* Assuming you have mapped IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group. 
-* If the role group contains the `Researcher` role, you can assign this group to a Run:AP Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:ai version 2.3).
+* Assuming you have mapped the IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group. 
+* If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:ai version 2.3).
 
 
 ## Implementation Notes

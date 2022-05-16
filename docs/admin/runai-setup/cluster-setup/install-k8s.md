@@ -17,14 +17,14 @@ sudo sh get-docker.sh
 
 Change Docker to use `systemd` by editing `/etc/docker/daemon.json` and adding:
 
-``` json
+``` JSON title="/etc/docker/daemon.json"
 {
   "exec-opts": ["native.cgroupdriver=systemd"]
 }
 ```
 For more information, see [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Restart the docker service:
 
-``` 
+``` bash
 sudo systemctl restart docker
 ```
 ## Run on Master Node
@@ -53,8 +53,8 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.23.5 
 
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
 
-Copy the Kubernetes configuration files which provides access to the cluster: 
-``` shell
+Copy the Kubernetes configuration file which provides access to the cluster: 
+``` bash
 mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
 sudo chown $(id -u):$(id -g) .kube/config
@@ -83,7 +83,7 @@ Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
 === "NVIDIA software on each node"
     On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifically, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
 
-    ``` json
+    ``` JSON title="/etc/docker/daemon.json"
     {
         "exec-opts": ["native.cgroupdriver=systemd"],
         "default-runtime": "nvidia",
@@ -133,5 +133,14 @@ Return to the master node. Re-run `kubectl get nodes` and verify that the new no
 
 1. Edit the file /etc/fstab
 2. Comment out any swap entry if such exists
+
+## Avoiding Accidental Upgrades
+
+To avoid accidental upgrade of Kubernetes binaries, it is recommended to _hold_ the version. Run the following on all nodes:
+
+```
+sudo apt-mark hold kubeadm kubelet kubectl
+```
+
 
 
