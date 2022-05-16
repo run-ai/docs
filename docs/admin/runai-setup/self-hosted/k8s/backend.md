@@ -12,11 +12,11 @@ Create a configuration file to install the Run:ai control plane:
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
-        --nfs-server <nfs-server-address> -nfs-path <path-in-nfs>  # (4)
+        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs>  # (4)
     ```
 
     1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
-    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP adddress above. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
     3. TLS certificate and private key for the above domain.
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 
@@ -27,7 +27,7 @@ Create a configuration file to install the Run:ai control plane:
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
-        --nfs-server <nfs-server-address> -nfs-path <path-in-nfs> \ # (4)
+        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs> \ # (4)
         --airgapped
     ```
 
