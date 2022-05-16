@@ -21,7 +21,7 @@ The command-line interface utility is no longer a separate install. Instead is n
 * Run:ai inference offering has been overhauled with the ability to submit deployments via user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md).
 * Run:ai now supports Kubernetes 1.24
 
-XXXX
+XXX
 
 CPU scheduling (2.6?)
 
