@@ -35,9 +35,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
     * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. EKS installs NVIDIA drivers on the GPU nodes. As such, you must use the flags: `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
 
 === "GKE"
-    Google provides a different method for installing NVIDIA Device drivers and the NVIDIA device plug-in. Detailed [here](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus#installing_drivers){target=_blank}. 
-    
-    Using the GPU Operator is not an option. You will need to manually install the [Kubernetes Node feature discovery](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank}, [NVIDIA GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} and [NVIDIA DCGM exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. The installation is not trivial and we recommend contacting Run:ai customer support. 
+    Google provides a different method for installing NVIDIA Device drivers and the NVIDIA device plug-in. Detailed [here](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus#installing_drivers){target=_blank}. As such, using the GPU Operator is not an option. You will need to manually install the [Kubernetes Node feature discovery](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank}, [NVIDIA GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} and [NVIDIA DCGM exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. The installation is not trivial and we recommend contacting Run:ai customer support. 
 
 === "RKE"
     Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.

@@ -3,7 +3,7 @@
 ### Workloads
 We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
-* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility.
+* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
 * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
 
 ### Command-line interface installation and compatibility
@@ -23,7 +23,7 @@ Currently, the new inference module can only be enabled by Run:ai customer suppo
 
 * Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
 * `runai delete` has been changed in favor of `runai delete job` 
-* Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information.
+* Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that automatically sends all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
 * Run:ai now supports Kubernetes 1.24
 
