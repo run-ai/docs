@@ -21,21 +21,21 @@ Currently, the new inference module can only be enabled by Run:ai customer suppo
 
 ### Other Features
 
-* Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that automatically sends all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+
+### New Supported Versions
 * Run:ai now supports Kubernetes 1.24
+* Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
 
 ----
 
-CPU scheduling (2.6?)
-
-Spread scheduling
-
-Something on SSO with users and groups
-
-S3 support using CLI
+Spread scheduling (2778)
+CPU improvements (3310 & 1169) -
+UI changes: navigation and header layout (3401, 3400, 3181) 
+change in the groups and users configuration (3278) 
+S3 CLI (3616)
 
 
 
