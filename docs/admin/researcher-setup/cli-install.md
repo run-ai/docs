@@ -118,10 +118,8 @@ To update the CLI to the latest version perform the same install process again.
 If you have installed using the default path, run:
 
 ```
-sudo rm -rf /usr/local/bin/runai /usr/local/runai
+sudo rm /usr/local/bin/runai
 ```
-
-If you have installed using a custom path, delete all Run:ai files in this path.
 
 ## Use Run:ai on Windows
 
