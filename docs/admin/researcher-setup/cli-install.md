@@ -45,7 +45,7 @@ kubectl get nodes
      * Select Mac or Linux.
      * Download directly using the button or copy the command and run on a remote machine
      * Run:
-     
+
      ``` bash 
      chmod +x runai
      sudo mv runai /usr/local/bin
@@ -111,11 +111,7 @@ See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
 ## Update the Run:ai CLI
 
-To update the CLI to the latest version run:
-
-```
-sudo runai update
-```
+To update the CLI to the latest version perform the same install process again.
 
 ## Delete the Run:ai CLI
 

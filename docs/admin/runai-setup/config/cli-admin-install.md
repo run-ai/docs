@@ -48,6 +48,4 @@ runai-adm version
 
 ## Updating the Run:ai Administrator CLI
 
-To update the CLI to the latest version run:
-
-    sudo runai-adm update
+To update the CLI to the latest version perform the same install process again.
