@@ -227,6 +227,22 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>  443   </p>
 </td>
 </tr>
+
+<tr>
+<td style="padding: 6px; width: 106px;">
+<p> Cert Manager </p>
+</td>
+<td style="padding: 6px; width: 304px;">
+<p> Creates a letsencrypt-based certificate for the cluster </p>
+</td>
+<td style="padding: 6px; width: 205px;">
+<p> 8.8.8.8, 1.1.1.1 </p>
+<p> </p>
+</td>
+<td style="padding: 6px; width: 32px;">
+<p>53</p>
+</td>
+
 </tbody>
 </table>
 
@@ -283,6 +299,21 @@ In addition, once running, Run:ai will send metrics to two sources:
 </td>
 <td style="padding: 6px; width: 32px;">
 <p>443</p>
+</td>
+
+<tr>
+<td style="padding: 6px; width: 106px;">
+<p> Cert Manager </p>
+</td>
+<td style="padding: 6px; width: 304px;">
+<p> Creates a letsencrypt-based certificate for the cluster </p>
+</td>
+<td style="padding: 6px; width: 205px;">
+<p> 8.8.8.8, 1.1.1.1 </p>
+<p> </p>
+</td>
+<td style="padding: 6px; width: 32px;">
+<p>53</p>
 </td>
 
 </tbody>
