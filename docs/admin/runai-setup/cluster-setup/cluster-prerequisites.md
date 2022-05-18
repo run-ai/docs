@@ -23,7 +23,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 !!! Notes
     * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.24. 
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
-    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.9. 
+    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.10. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
 
@@ -84,6 +84,8 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
 ### Inference
+
+:octicons-versions-24: [Version 2.5](../../../home/whats-new-2022.md#may-2022-runai-version-25)
 
 To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai has been certified on Knative version that only supports Kubernetes 1.22 or later. 
 

@@ -14,7 +14,7 @@ Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials prov
 Using the Wizard:
 
 1. Choose a target Kubernetes platform (see table above)
-2. (SaaS only) provide an IP address for your cluster.
+2. (SaaS only) provide an IP address for your cluster. The IP address __must be accessible__ from Researcher machines at port 443.
 3. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
 4. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
 5. Install [Helm](https://helm.sh/docs/intro/install/)
