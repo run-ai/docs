@@ -24,14 +24,14 @@ Download the Run:ai Administrator Command-line Interface by running:
     ``` bash
     wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/darwin
     chmod +x runai-adm
-    sudo cp runai-adm /usr/local/bin
+    sudo mv runai-adm /usr/local/bin
     ```
 
 === "Linux (Version 2.5 or higher)"
     ``` bash
     wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/linux
     chmod +x runai-adm
-    sudo cp runai-adm /usr/local/bin
+    sudo mv runai-adm /usr/local/bin
     ```
 
 === "Version 2.4 or lower"
