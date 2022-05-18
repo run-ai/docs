@@ -44,7 +44,7 @@ kubectl get nodes
      * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
      * Select Mac or Linux.
      * Download directly using the button or copy the command and run on a remote machine
-     * Copy the binary to a directory which is part of the PATH. Typically `/usr/local/bin`.
+     * Move the binary to a directory that is part of the PATH. For example: `sudo mv runai /usr/local/bin`
   
 === "Run:ai version 2.4 or earlier"
      *   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
