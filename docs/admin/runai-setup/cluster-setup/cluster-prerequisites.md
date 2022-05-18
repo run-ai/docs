@@ -248,7 +248,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 
 ### Post Installation
 
-In addition, once running, Run:ai will send metrics to two sources:
+In addition, once running, Run:ai requires outbound network connection to the following targets:
 
 <table border="1" style="margin-left: 0px; margin-right: auto; width: 650px;">
 <tbody>
