@@ -36,7 +36,11 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 * We recommend to use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
 * Note that the NVIDIA document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
 * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
-    
+* To work with Dynamic MIG, gpu-operator must be installed with `mig.strategy=mixed`.
+  if the gpu-operator is already installed, edit the clusterPolicy:
+    ``` 
+    kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}
+    ```
 
 ??? "Run:ai 2.3 or earlier"
     * Run:ai has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
