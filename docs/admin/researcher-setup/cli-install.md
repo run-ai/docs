@@ -105,7 +105,7 @@ source <(runai completion bash)
 ```
 
 
-## Troubleshooting the CLI Installation
+## Troubleshoot the CLI Installation
 
 See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
