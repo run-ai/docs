@@ -11,7 +11,7 @@ The installation below assumes:
 * A single node, with at least one GPU.
 * Running Ubuntu 20.04.
 * `sudo` access to the node (you may be prompted for sudo password during the installation).
-* A client id and a secret provided by Run:ai customer support. 
+* A `client-id` and a `secret` provided by Run:ai customer support. 
 * Outbound internet connectivity
 
 
@@ -31,8 +31,8 @@ Run the script:
 ```
 
 !!! Notes
-    * The script will stop at one point, require that you log out and log in again
-    * You may be prompted for a sudo password during the installation
+    * The script will stop at one point and require that you log out and log in again.
+    * You may be prompted for a sudo password during the installation.
 
 
 
