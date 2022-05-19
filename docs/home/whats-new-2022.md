@@ -25,24 +25,14 @@ Currently, the new inference module can only be enabled by Run:ai customer suppo
 * Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that automatically sends all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
 * It is now possible to mount an S3 bucket into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit/?h=s3#-s3-string).
+* User interface improvements: The header of the Run:ai user interface has been improved and now allows users to easily access everything related to their account, as well as multiple helpful links to the product documentation, CLI and APIs. 
+* CPU and CPU memory quotas can now be configured for projects and departments. These are hard quotas which means that the total amount of the requested resource for all workloads associated with a project/department cannot exceed the set limit. To enable this feature please call Run:ai customer support.
+
 
 ### Newly Supported Versions
 * Run:ai now supports Kubernetes 1.24
 * Run:ai now supports Openshift 4.10
 * Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
-
-----
-
-Spread scheduling (2778)
-
-CPU improvements (3310 & 1169) -
-
-UI changes: navigation and header layout (3401, 3400, 3181) 
-
-change in the groups and users configuration (3278) 
-
-
-
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 

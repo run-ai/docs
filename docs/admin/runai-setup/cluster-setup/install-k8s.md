@@ -1,10 +1,10 @@
 # Native Kubernetes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, Rancher Kubernetes Engine or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
 ## Prerequisites:
 
-The script below assumes all machines have Ubuntu 18.04 or Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
+The script below assumes all machines have Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 
 
 ## Run on All Nodes
@@ -75,10 +75,11 @@ Verify that the master node is ready
 
 ## Run on Kubernetes Workers
 
-Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
+For Kubernetes workers with GPU, you must install the NVIDIA prerequisites. We recommend using the NVIDIA GPU Operator __on top__ of Kubernetes. For further details see [NVIDIA prerequisites](cluster-install.md#step-2-nvidia)
 
-=== "NVIDIA GPU Operator"
-    No additional work
+
+=== "NVIDIA GPU Operator (recommended)"
+    No additional work. Install the operator after Kubernetes is installed. 
 
 === "NVIDIA software on each node"
     On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifically, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
@@ -96,7 +97,7 @@ Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
     }
     ```
 
-Install Kubernetes worker:
+Install Kubernetes worker (any machine):
 ``` shell
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
