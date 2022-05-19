@@ -11,11 +11,6 @@ The Run:ai documentation is targeting three personas:
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
-## Example Code
-
-Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
-
-
 ## How to get Support
 
 To get support use the following channels:
@@ -45,3 +40,7 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 
 !!! Note
     Both options include logs of Run:ai components. They do __not__ include logs of researcher containers that may contain private information. 
+
+## Example Code
+
+Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.

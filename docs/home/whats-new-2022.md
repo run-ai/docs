@@ -34,9 +34,13 @@ Currently, the new inference module can only be enabled by Run:ai customer suppo
 ----
 
 Spread scheduling (2778)
+
 CPU improvements (3310 & 1169) -
+
 UI changes: navigation and header layout (3401, 3400, 3181) 
+
 change in the groups and users configuration (3278) 
+
 
 
 

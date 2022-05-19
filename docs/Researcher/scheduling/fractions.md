@@ -51,7 +51,9 @@ For more details on Run:ai fractions see the [dynamic MIG quickstart](../Walkthr
 ### Setting up Dynamic MIG
 
 As described above, MIG is only available in the latest NVIDIA architecture. 
-* For such nodes, the administrator needs to specifically enable dynamic MIG on the node by running: 
+
+* When working with Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`. See [NVIDIA prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) on how to set this flag. 
+* The administrator needs to specifically enable dynamic MIG on the node by running: 
     
     ```
     runai-adm set node-role --dynamic-mig-enabled <node-name>
@@ -59,7 +61,7 @@ As described above, MIG is only available in the latest NVIDIA architecture.
     (use `runai-adm remove` to unset)
 
 
-* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md) for details.) and set:
+* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md) for details) and set:
     ```
     kubectl label node <node-name> node-role.kubernetes.io/runai-mig-enabled=true
     ```
@@ -67,9 +69,8 @@ As described above, MIG is only available in the latest NVIDIA architecture.
 
 !!! Limitations
     * Once a node has been marked as dynamic MIG enabled, it can only be used via the Run:ai scheduler.
-    * When it comes to Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`.
-    * Run:ai currently supports only A100 nodes with 40GB/80GB RAM (if you need support for A30, please contact Run:ai customer support).
-    * The utilization on the dashboard won't be accurate while MIG jobs are running
+    * Run:ai currently supports only A100 nodes with 40GB/80GB RAM.
+    * GPU utilization, shown on the Run:ai dashboards, may not be accurate while MIG jobs are running.
 
 ## Mixing Fractions and Dynamic MIG
 
