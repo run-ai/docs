@@ -39,7 +39,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 * To work with Dynamic MIG, gpu-operator must be installed with `mig.strategy=mixed`.
   if the gpu-operator is already installed, edit the clusterPolicy:
     ``` 
-    kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}
+    kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}'
     ```
 
 ??? "Run:ai 2.3 or earlier"
