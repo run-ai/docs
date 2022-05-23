@@ -1,32 +1,20 @@
 ## May 2022 Run:ai Version 2.5
 
-### Workloads
-We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
 
-* New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
-* Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
-
-### Command-line interface installation and compatibility
-
-The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
-
+* __Command-line interface installation__ The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
 !!! Warning
     The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you upgrade the cluster, you must also upgrade the command-line interface. 
-
-### Inference
-
-Run:ai inference offering has been overhauled with the ability to submit deployments via the user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md).
-
-Currently, the new inference module can only be enabled by Run:ai customer support.
-
-### Other Features
-
+* __Inference__. Run:ai inference offering has been overhauled with the ability to submit deployments via the user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md). To enable the new inference module call by Run:ai customer support.
+* __CPU and CPU memory quotas__ can now be configured for projects and departments. These are hard quotas which means that the total amount of the requested resource for all workloads associated with a project/department cannot exceed the set limit. To enable this feature please call Run:ai customer support.
+* __Workloads__. We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
+    * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
+    * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
-* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that automatically sends all new logs to Run:ai support servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
-* It is now possible to mount an S3 bucket into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit/?h=s3#-s3-string).
-* User interface improvements: The header of the Run:ai user interface has been improved and now allows users to easily access everything related to their account, as well as multiple helpful links to the product documentation, CLI and APIs. 
-* CPU and CPU memory quotas can now be configured for projects and departments. These are hard quotas which means that the total amount of the requested resource for all workloads associated with a project/department cannot exceed the set limit. To enable this feature please call Run:ai customer support.
+* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit/?h=s3#-s3-string).
+* User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
+* [Researcher Authentication](../admin/runai-setup/authentication/researcher-authentication.md) configuration is now mandatory. 
 
 
 ### Newly Supported Versions
