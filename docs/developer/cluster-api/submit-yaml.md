@@ -8,7 +8,7 @@ You can use YAML to submit Workloads directly to Run:ai. Below are examples of h
 Create a file named `training1.yaml` with the following text:
 
 ``` YAML title="training1.yaml"
-apiVersion: run.ai/
+apiVersion: run.ai/v2alpha1
 kind: TrainingWorkload # (1)
 metadata:
   name: job-1  # (2) 
@@ -39,7 +39,7 @@ Run: `kubectl delete -f training1.yaml` to delete the Workload.
 An easy way to create a YAML for a workload is to generate it from the `runai submit` command by using the `--dry-run` flag. For example, run:
 
 ```
-runai submit build1 -i ubuntu -g 1 --interactive --command --dry-run \
+runai submit build1 -i ubuntu -g 1 --interactive --dry-run \
      -- sleep infinity 
 ```
 
