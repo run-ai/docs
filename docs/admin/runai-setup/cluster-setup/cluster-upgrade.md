@@ -28,7 +28,7 @@ Delete the cluster as described [here](cluster-delete.md) and perform cluster in
 ### Upgrade from version 2.3 or older to version 2.4 or higher
 
 !!! Note
-    We recommend working with Run:ai support to perform this upgrade during a planned downtime.
+    We recommend working with Run:ai support to perform this upgrade during planned downtime.
 
 1. Make sure you have no fractional jobs running. These are Jobs that have been assigned a _part_ of a GPU as described [here](../../../Researcher/scheduling/fractions.md).
 2. Upgrade the cluster as described above.
