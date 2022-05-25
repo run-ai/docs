@@ -1,12 +1,7 @@
-!!! attention
-    * `runai list` has been replaced by `runai list jobs`.
-    * `runai clusters list` has been replaced by `runai list clusters`.
-    * `runai project list` has been replaced by `runai list projects`.
-    * `runai template list` has been replaced by `runai list templates`.
 
 ## Description
 
-Show lists of Jobs, Projects, Clusters or Nodes.
+Show lists of Workloads, Projects, Clusters or Nodes.
 
 ## Synopsis
 
@@ -29,17 +24,14 @@ runai list clusters
 runai list nodes [node-name]
     [--loglevel value] 
     [--help | -h]
-
-runai list templates
-    [--loglevel value] 
-    [--help | -h]
 ```
+
 ## Options
 `node-name` - Name of a specific node to list (optional).
 
 
 #### --all-projects | -A
->  Show Jobs from all Projects.
+>  Show Workloads from all Projects.
 
 ### Global Flags
 
@@ -55,10 +47,10 @@ runai list templates
 
 ## Output
 
-* A list of Jobs, Nodes, Projects, Clusters, or Templates. 
+* A list of Workloads, Nodes, Projects, or Clusters. 
 * To filter 'runai list nodes' for a specific Node, add the Node name.
 
 ## See Also
-To show details for a specific Job, Node or Template see [runai describe](runai-describe.md).
+To show details for a specific Workload or Node see [runai describe](runai-describe.md).
 
 

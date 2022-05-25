@@ -3,7 +3,7 @@
 :octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
 
 
-The Run:ai User interface Job area allows the viewing of Jobs and Job details. It also allows the Reseracher to submit Jobs, suspend and resume Jobs and delete Jobs.
+The Run:ai User interface Job area allows the viewing of Jobs and Job details. It also allows the Researcher to submit Jobs, suspend and resume Jobs and delete Jobs.
 
 ## Job list
 
@@ -26,7 +26,7 @@ When selecting a single Job, a right-pane appears:
 
 ![job-properties](img/specific-job.png)
 
-This multi-tab view provides information about Job details, related Pods, Job status history and various utilization graphs. You can also view internal Job logs as shown here:
+This multi-tab view provides information about Job details, related Pods, Job status history, and various utilization graphs. You can also view internal Job logs as shown here:
 
 ![job-logs](img/job-logs.png)
 

@@ -85,9 +85,9 @@ This should provide a direct shell into the computer
 
 Run the following:
 
-    runai delete build1
+    runai delete job build1
 
-This would stop the training workload. You can verify this by running ``runai list jobs`` again.
+This would stop the training workload. You can verify this by running `runai list jobs` again.
 
 ## Next Steps
 

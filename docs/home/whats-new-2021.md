@@ -57,7 +57,7 @@ Researcher User Interface (UI) enhancements:
 * Revised user interface and user experience
 * Researchers can create templates for the ease of jobs submission. Templates can be saved and used at the project level
 * Researchers can be easily re-submit jobs from the Submit page or directly from the jobs list on the Jobs page
-* Administrators can create administrative templates which set cluster-wide defaults, constraints, and defaults for the submission of Jobs. For further details see [Configure Command-Line Interface Templates](../admin/researcher-setup/templates.md).
+* Administrators can create administrative templates which set cluster-wide defaults, constraints, and defaults for the submission of Jobs. 
 * Different teams can collaborate and share templates by exporting and importing templates in the Submit screen
 
 Researcher Command Line Interface (CLI) enhancements:
@@ -88,7 +88,7 @@ Job List and Node list now show the GPU type (e.g. v-100).
 
 ## April 18<sup>th</sup>, 2021
 
-Inference workloads are now supported. For further details see [Inference Overview](../developer/inference/overview.md).
+Inference workloads are now supported. For further details see [Inference Overview](../developer/deprecated/inference/overview.md).
 
 JupyterHub integration is now supported. For further details see [JupyterHub Integration](../admin/integration/jupyterhub.md)
 
@@ -120,13 +120,13 @@ New Analytics dashboard with emphasis on CPU, CPU Memory, GPU, and GPU Memory. A
 
 New developer documentation area has been [created](../developer/overview-developer.md). In it:
 
-* New documentation for [Researcher REST API](../developer/researcher-rest-api/overview.md).
+* New documentation for [Researcher REST API](../developer/deprecated/researcher-rest-api/overview.md).
 * New documentation for [Administration Rest API](../developer/admin-rest-api/overview.md).
-* Kubernetes-based API for [job creation](../developer/k8s-api/launch-job-via-kubernetes-api.md).
+* Kubernetes-based API for [job creation](../developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md).
 
 ## January 9th 2021
 
-A new Researcher user interface is now available. See [researcher UI setup](../admin/researcher-setup/researcher-ui-setup.md).
+A new Researcher user interface is now available.
 
 ## January 2nd, 2021
 

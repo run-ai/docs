@@ -4,16 +4,17 @@ title: Researcher REST API Overview
 ---
 # Researcher REST API
 
+
+!!! Warning
+    Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.## Endpoint URL for API
+
+
 The purpose of the Researcher REST API is to provide an easy-to-use programming interface for submitting, listing, and deleting Jobs. 
 
 There are other APIs that provide the same functionality. Specifically:
 
-* If your code is script-based, you may consider using the [Run:ai command-line interface](../../Researcher/cli-reference/Introduction.md).
+* If your code is script-based, you may consider using the [Run:ai command-line interface](../../../Researcher/cli-reference/Introduction.md).
 * You can communicate directly with the underlying Kubernetes infrastructure by [sending YAML files](../k8s-api/launch-job-via-yaml.md) or by using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:ai Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md).
-
-!!! Warning
-    Researcher REST API will soon be deprecated. If you are using or considering using it, please contact Run:ai customer support.
-## Endpoint URL for API
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.
 This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clusters`. Each cluster will have a separate URL.
@@ -21,8 +22,8 @@ This `<CLUSTER-ENDPOINT>` can be found in the Run:ai User Interface, under `Clus
 
 ## Authentication
 
-* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../admin/runai-setup/authentication/researcher-authentication.md).
-* Once configured, you must create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../rest-auth.md).
+* By default, researcher APIs are unauthenticated. To protect researcher API, you must [configure researcher authentication](../../../admin/runai-setup/authentication/researcher-authentication.md).
+* Once configured, you must create a _Client Application_ to make API requests. Use the client application and secret, to obtain a time-bound bearer token (`<ACCESS-TOKEN>`). For details, see [Calling REST APIs](../../rest-auth.md).
 * Use the token for subsequent API calls. 
 
 ## Example

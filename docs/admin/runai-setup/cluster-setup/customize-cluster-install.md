@@ -17,9 +17,11 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 | `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu | 
 | `runai-operator.config.nvidiaDcgmExporter.namespace` | `gpu-operator` | The namespace where dcgm-exporter (or gpu-operator) was installed. |
 | `runai-operator.config.nvidiaDcgmExporter.installedFromGpuOperator` | `true` | Indicated whether the dcgm-exporter was installed via gpu-operator or not. |
-| `gpu-feature-discovery.enabled` | `true`  |  Set to `false` to not install GPU Feature Discovery (assumes a prior install outside Run:ai scope). Flag is only relevant to Run:ai version 2.4 or lower |
 | `kube-prometheus-stack.enabled` |  `true`  | Set to `false` when the cluster has an existing Prometheus installation. that is __not based__ the Prometheus __operator__ . This setting requires Run:ai customer support. |
 | `kube-prometheus-stack.prometheusOperator.enabled` |  `true`  |  Set to `false` when the cluster has an existing Prometheus installation __based__ on the Prometheus __operator__ and Run:ai should use the existing one rather than install a new one | 
+| `prometheus-adapter.enabled` | `false` | Install Prometheus Adapter. Used for Inference workloads using a custom metric for autoscaling). Set to `true` if __Prometheus Adapter__ is not already installed in the cluster |
+| `prometheus-adapter.prometheus` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, set this field accordingly with `url` and `port` |
+
 
 
 ### Feature Discovery
@@ -42,6 +44,8 @@ The Run:ai Cluster installation uses [Promethues](https://prometheus.io/){target
 3. Run:ai uses an existing Prometheus installation based on a regular Prometheus installation.
 
 For option 2, disable the flag `kube-prometheus-stack.prometheusOperator.enabled`. For option 3, please contact Run:ai Customer support. 
+
+For options 2 and 3, if you enabled `prometheus-adapter`, please configure it as described in Prometheus Adapter [documentation](https://github.com/prometheus-community/helm-charts/blob/97f23f1ff7ca62f33ab4dd339cc62addec7eccde/charts/prometheus-adapter/values.yaml#L34)
 
 
 ## Understanding Custom Access Roles

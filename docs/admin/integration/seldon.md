@@ -2,7 +2,7 @@
 
 [Seldon Core](https://github.com/SeldonIO/seldon-core){target=_blank} is software that deploys machine learning models to production over Kubernetes. The purpose of this document is to explain how to use Seldon Core together with Run:ai.  
 
-Of special importance, is the usage of Seldon together with the Run:ai [fractions](../../Researcher/Walkthroughs/walkthrough-fractions.md) technology: Machine learning production tends to take less GPU Memory. As such, allocating fraction of the GPU per job allows for better GPU Utilization. 
+Of special importance, is the usage of Seldon together with the Run:ai [fractions](../../Researcher/Walkthroughs/walkthrough-fractions.md) technology: Machine learning production tends to take less GPU Memory. As such, allocating a fraction of the GPU per job allows for better GPU Utilization. 
 
 
 

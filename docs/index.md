@@ -11,11 +11,6 @@ The Run:ai documentation is targeting three personas:
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
-## Example Code
-
-Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
-
-
 ## How to get Support
 
 To get support use the following channels:
@@ -39,7 +34,13 @@ Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){
 As an IT Administrator, you can collect Run:ai logs to send to support:
 
 * Install the [Run:ai Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
-* Run `runai-adm collect-logs`. The command will generate a compressed file containing all of Run:ai logs files.
+* Use one of the two options:
+    1. __One time collection:__  Run `runai-adm collect-logs`. The command will generate a compressed file containing all of the existing Run:ai log files.
+    2. __Continuous send__ (Run:ai version 2.5 or higher): Run `runai-adm -d <HOURS_DURATION>`. The command will send Run:ai logs directly to Run:ai support for the duration stated. Data sent will not include current logs. Only logs created going forward will be sent.
 
 !!! Note
-    The file includes logs of Run:ai components. It does __not__ include logs of researcher containers that may contain private information. 
+    Both options include logs of Run:ai components. They do __not__ include logs of researcher containers that may contain private information. 
+
+## Example Code
+
+Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.

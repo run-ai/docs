@@ -192,7 +192,7 @@ For further information see [here](https://github.com/rancher/rancher/issues/146
 
 ## Symptom: Jobs fail with ContainerCannotRun status 
 
-When running `runai list jobs`, your Jobs has a status of `ContainerCannotRun`.
+When running `runai list jobs`, your Workload has a status of `ContainerCannotRun`.
 
 __Resolution__
 

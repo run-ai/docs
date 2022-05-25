@@ -48,7 +48,7 @@ System status after run:
 
 Run the following command:
 
-    runai delete a2 -p team-a
+    runai delete job a2 -p team-a
 
 _a1_ is now going to start running again.
 
@@ -59,7 +59,7 @@ You have __two__ Jobs that are running on the first node and __one__ Job that is
 
 Choose one of the two Jobs from the full node and delete it:
 
-    runai delete <job-name> -p <project>
+    runai delete job <job-name> -p <project>
 
 The status now is:
 ![overquota3](img/overquota3.png)

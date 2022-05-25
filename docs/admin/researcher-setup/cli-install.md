@@ -4,19 +4,22 @@ The Run:ai Command-line Interface (CLI) is __one__ of the ways for a Researcher 
 
 The instructions below will guide you through the process of installing the CLI. The Run:ai CLI runs on Mac and Linux. You can run the CLI on Windows by using Docker for Windows. See the end of this document.
 
-## Prerequisites
-
-*   When installing the command-line interface, it is worth considering future upgrades:
-     * Install the CLI on a dedicated _Jumpbox_ machine. Researches will connect to the Jumpbox from which they can submit Run:ai commands
-     * Install the CLI on a shared directory that is mounted on Researchers' machines.  
-
-*   (CLI version v2.2.76 or earlier) __Kubectl__ (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}.
-*    (CLI version v2.2.76 or earlier) __Helm__. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
-*   A __Kubernetes configuration file__ obtained from the Kubernetes cluster installation.
 
 ## Researcher Authentication
 
 When enabled, Researcher authentication requires additional setup when installing the CLI. To configure authentication see [Setup Project-based Researcher Access Control](../runai-setup/authentication/researcher-authentication.md). Use the modified Kubernetes configuration file described in the article.
+
+## Prerequisites
+
+*   When installing the command-line interface, it is worth considering future upgrades:
+     * Install the CLI on a dedicated _Jumpbox_ machine. Researchers will connect to the Jumpbox from which they can submit Run:ai commands
+     * Install the CLI on a shared directory that is mounted on Researchers' machines.  
+*   A __Kubernetes configuration file__ obtained from the Kubernetes cluster installation.
+
+??? "Run:ai version 2.4 or earlier"
+     * __Kubectl__ (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}.
+     * __Helm__. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
+
 
 ## Setup
 
@@ -37,24 +40,37 @@ kubectl get nodes
 
 ### Install Run:ai CLI 
 
-*   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
-*   Unarchive the downloaded file
-*   Install by running:
+=== "Run:ai version 2.5"
+     * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
+     * Select Mac or Linux.
+     * Download directly using the button or copy the command and run on a remote machine
+     * Run:
 
-```
-sudo ./install-runai.sh
-```
+     ``` bash 
+     chmod +x runai
+     sudo mv runai /usr/local/bin
+     ```
+  
+=== "Run:ai version 2.4 or earlier"
+     *   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
 
-The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
+     *   Unarchive the downloaded file
+     *   Install by running:
 
-```
-sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
-```
+     ```
+     sudo ./install-runai.sh
+     ```
 
-You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
+     The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
+
+     ```
+     sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
+     ```
+
+     You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
 
 
-* To verify the installation run:
+To verify the installation run:
 
 ```
 runai list jobs
@@ -89,27 +105,21 @@ source <(runai completion bash)
 ```
 
 
-## Troubleshooting the CLI Installation
+## Troubleshoot the CLI Installation
 
 See [Troubleshooting a CLI installation](cli-troubleshooting.md)
 
 ## Update the Run:ai CLI
 
-To update the CLI to the latest version run:
-
-```
-sudo runai update
-```
+To update the CLI to the latest version perform the same install process again.
 
 ## Delete the Run:ai CLI
 
 If you have installed using the default path, run:
 
 ```
-sudo rm -rf /usr/local/bin/runai /usr/local/runai
+sudo rm /usr/local/bin/runai
 ```
-
-If you have installed using a custom path, delete all Run:ai files in this path.
 
 ## Use Run:ai on Windows
 

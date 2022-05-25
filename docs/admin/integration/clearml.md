@@ -48,7 +48,7 @@ kubectl get deployment -n clearml clearml-k8sagent -ojson | sed 's/clearml-apise
 !!! Note
     The script is hardcoded for the above queue name and Run:ai Project name. You can change the script accordingly.
 
-Validate that the Queue and thew Project are connected by running:
+Validate that the Queue and the Project are connected by running:
 
 ```
 kubectl get pod -n runai-clearml

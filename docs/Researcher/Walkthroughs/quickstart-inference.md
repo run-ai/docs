@@ -6,14 +6,13 @@ Machine learning (ML) inference is the process of running live data points into 
 
 With Inference, you are taking a trained _Model_ and deploying it into a production environment. The deployment must align with the organization's production standards such as average and 95% response time as well as up-time. 
 
-For further information on Inference at Run:ai, see [Inference overview](../../developer/inference/overview.md).
-
 ## Prerequisites 
 
 To complete this Quickstart you must have:
 
-*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md). There are additional pre-requisites for running inference. See [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) for more information. 
+* Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+* You must have _ML Engineer_ access rights. See [Adding, Updating, and Deleting Users](../../admin/admin-ui-setup/admin-ui-users.md) for more information. 
 
 ## Step by Step Walkthrough
 
@@ -23,73 +22,49 @@ To complete this Quickstart you must have:
 *  Add a Project named "team-a".
 *  Allocate 2 GPUs to the Project.
 
-### Run an Inference Workload - Single Replica
+### Run an Inference Workload 
 
-*   At the command-line run:
+*   In the Run:ai user interface go to `Deployments`. If you do not see the `Deployments` section you may not have the required access control, or the inference module is disabled. 
+* Select `New Deployment` on the top right.
+* Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`.
+* Under `Resources` add 0.5 GPUs.
+* Under `Auto Scaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
+* Add a `Container port` of `8000`.
 
-```
-runai config project team-a
-runai submit --name inference1 --service-type nodeport --port 8888 --inference \
-    -i gcr.io/run-ai-demo/quickstart-inference-marian  -g 1
-```
 
-This would start an inference workload for team-a with an allocation of a single GPU. The inference workload is based on a [sample](https://github.com/run-ai/models/tree/main/models/marian/server){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart-inference-marian``. The inference engine used in this quickstart is [Marian](https://marian-nmt.github.io/){target=_blank}
-
-*   Follow up on the Job's progress by running:
-
-        runai list jobs
-
-The result:
-
-![inference-list.png](img/inference-list.png)
-
-The output shows the service URL with which to connect to the service.
+This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress using the [Deployment list](../../admin/admin-ui-setup/deployments.md) in the user interface or by running `runai list jobs`
 
 ### Query the Inference Server
 
-The specific `Marian` server is accepting queries over the _WebSockets_ protocol. You can use the Run:ai Marian [sample client](https://github.com/run-ai/models/tree/main/models/marian/client){target=_blank}.
+The specific inference server we just created is accepting queries over port 8000. You can use the Run:ai Triton demo client to send requests to the server:
 
-In the following command, replace  `<HOSTNAME>` and `<PORT>` with the service URL displayed in the previous `list` command:
-
-```
-runai submit inference-client -i gcr.io/run-ai-demo/quickstart-inference-marian-client \
-    -- --hostname <HOSTNAME> --port <PORT> --processes 1 
-```
-
-To see the result, run the following:
+* Find the hostname by running `kubectl get svc -n runai-team-a`. Use the `inference1-00001-private` Cluster IP.
+* Replace `<HOSTNAME>` below and run: 
 
 ```
-runai logs inference-client -f
+ runai submit inference-client  -i gcr.io/run-ai-demo/example-triton-client \
+    --command -- perf_analyzer -m inception_graphdef --request-rate-range 50 \
+    -p 3600000 -u  <HOSTNAME>
 ```
 
-You should see a log of the inference call:
+* To see the result, run the following:
 
-![inference-client-output.png](img/inference-client-output.png)
+```
+runai logs inference-client
+```
+
 
 ### View status on the Run:ai User Interface
 
 * Open the Run:ai user interface.
-* Under "Jobs" you can view the new Workload:
-
-![inference-job-list.png](img/inference-job-list.png) 
-
+* Under _Deployments_ you can view the new Workload. When clicking the workload, note the utilization graphs go up. 
 
 ### Stop Workload
 
-Run the following:
+Use the user interface to delete the workload.
 
-    runai delete inference1
+## See also
 
-This would stop the inference workload. Verify this by running ``runai list jobs`` again.
+* You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
+* See [Deployment](../../admin/admin-ui-setup/deployments.md) user interface.
 
-
-### Run an Inference Workload - Multiple Replicas
-
-At the command-line run:
-
-```
-runai submit inference2 --service-type nodeport --port 8888 --inference \
-    -i gcr.io/run-ai-demo/quickstart-inference-marian  --replicas 4 -g 0.25 
-```
-
-This will create 4 replicas of the same service that will each run with 25% of the GPU Memory at a total of 1 GPU for all replicas.

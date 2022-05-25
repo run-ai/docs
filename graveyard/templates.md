@@ -535,7 +535,7 @@ Interface and click on the remove icon which appears right next to it.
 
 ## See Also
 
-<!-- * For a full list of parameters and their correct spelling, type and syntax, see the [Run:ai Submit REST API](../../developer/researcher-rest-api/rest-submit.md).   -->
+<!-- * For a full list of parameters and their correct spelling, type and syntax, see the [Run:ai Submit REST API](../../developer/deprecated/researcher-rest-api/rest-submit.md).   -->
 
 * For a list of `runai submit` flags, see the Run:ai [runai submit reference](../../Researcher/cli-reference/runai-submit.md)
 

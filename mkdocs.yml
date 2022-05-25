@@ -12,27 +12,29 @@ theme:
   features:
     - navigation.tabs
     - search.highlight
+    - content.code.annotate
 
 extra_css:
   - stylesheets/extra.css
-strict: true
+strict: true   
+
 markdown_extensions:
-  - codehilite
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details 
   - admonition
   - attr_list
   - meta
   - toc:
       permalink: True 
-#  - pymdownx.tasklist:
- #     custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
+      emoji_generator: !!python/name:materialx.emoji.to_svg 
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -86,16 +88,14 @@ plugins:
         'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
         'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
-#        'Administrator/presentations/administrator-onboarding-presentation.md' : 'admin/presentations/administrator-onboarding-presentation.md'
         'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
         'Administrator/Researcher-Setup/cli-troubleshooting.md' : 'admin/researcher-setup/cli-troubleshooting.md'
         'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
         'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
         'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
         'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
-        'Administrator/Researcher-Setup/researcher-ui-setup.md' : 'admin/researcher-setup/researcher-ui-setup.md'
-        'Administrator/Researcher-Setup/templates.md' : 'admin/researcher-setup/templates.md'
-        'Administrator/Researcher-Setup/use-secrets.md' : 'admin/researcher-setup/use-secrets.md'
+        'Administrator/Researcher-Setup/use-secrets.md' :  'admin/workloads/secrets.md'
+        'admin/researcher-setup/use-secrets.md' : 'admin/workloads/secrets.md'
         'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
@@ -175,12 +175,15 @@ nav:
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
       - 'Troubleshooting' : 'admin/researcher-setup/cli-troubleshooting.md'
-      - 'Researcher UI' : 'admin/researcher-setup/researcher-ui-setup.md'
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
-      - 'Switch from Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
-      - 'Use Secrets in Jobs' : 'admin/researcher-setup/use-secrets.md'
-      - 'Templates' : 'admin/researcher-setup/templates.md'
+    - 'Workloads' : 
+      - 'Overview' : 'admin/workloads/workload-overview-admin.md'
+      - 'Policies' : 'admin/workloads/policies.md'
+      - 'Secrets' : 'admin/workloads/secrets.md'
+      - 'Inference' : 'admin/workloads/inference-overview.md'
+    - 'Best Practices' :
+      - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
@@ -188,6 +191,7 @@ nav:
       - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
+      - 'Deployments' : 'admin/admin-ui-setup/deployments.md'
     - 'Integrations' :
       - 'JupyterHub' : 'admin/integration/jupyterhub.md'
       - 'Airflow' : 'admin/integration/airflow.md' 
@@ -196,8 +200,6 @@ nav:
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
-#    - 'Presentations' :
-#      - 'Admin Onboarding' : 'admin/presentations/administrator-onboarding-presentation.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
@@ -228,7 +230,6 @@ nav:
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
       - 'runai suspend' : 'Researcher/cli-reference/runai-suspend.md'
-      - 'runai template' : 'Researcher/cli-reference/runai-template.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
@@ -255,22 +256,25 @@ nav:
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Notebook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
-#    - 'Presentations' :
-#      - 'Researcher Onboarding' : 'Researcher/presentations/researcher-onboarding-presentation.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
-    - 'Calling REST APIs' : 'developer/rest-auth.md'
-    - 'Researcher API' : 
-      - 'REST API' : 'developer/researcher-rest-api/overview.md'
-      - 'Kubernetes API' : 
-        - 'Overview' : 'developer/k8s-api/overview.md'
-        - 'Submit a Job via YAML' : 'developer/k8s-api/launch-job-via-yaml.md'
-        - 'Submit a Job via Kubernetes API' : 'developer/k8s-api/launch-job-via-kubernetes-api.md'
+    - 'API Authentication' : 'developer/rest-auth.md'
+    - 'Cluster API' :
+      - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
+      - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
+      - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
-    - 'Inference API' :
-      - 'Overview' : 'developer/inference/overview.md' 
-      - 'Setup' : 'developer/inference/setup.md' 
-      - 'Submit via CLI' : 'developer/inference/submit-via-cli.md' 
-      - 'Submit via YAML' : 'developer/inference/submit-via-yaml.md' 
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
+    - 'Deprecated APIs' :
+      - 'Researcher API' : 
+        - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
+        - 'Kubernetes API' : 
+          - 'Overview' : 'developer/deprecated/k8s-api/overview.md'
+          - 'Submit a Job via YAML' : 'developer/deprecated/k8s-api/launch-job-via-yaml.md'
+          - 'Submit a Job via Kubernetes API' : 'developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md'
+      - 'Inference API' :
+        - 'Overview' : 'developer/deprecated/inference/overview.md' 
+        - 'Setup' : 'developer/deprecated/inference/setup.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 

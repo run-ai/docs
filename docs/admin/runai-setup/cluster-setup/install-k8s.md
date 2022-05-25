@@ -1,10 +1,10 @@
 # Native Kubernetes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, Rancher Kubernetes Engine or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
 ## Prerequisites:
 
-The script below assumes all machines have Ubuntu 18.04 or Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
+The script below assumes all machines have Ubuntu 20.04. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 
 
 ## Run on All Nodes
@@ -17,14 +17,14 @@ sudo sh get-docker.sh
 
 Change Docker to use `systemd` by editing `/etc/docker/daemon.json` and adding:
 
-``` json
+``` JSON title="/etc/docker/daemon.json"
 {
   "exec-opts": ["native.cgroupdriver=systemd"]
 }
 ```
 For more information, see [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Restart the docker service:
 
-``` 
+``` bash
 sudo systemctl restart docker
 ```
 ## Run on Master Node
@@ -53,8 +53,8 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.23.5 
 
 The `kubeadm init` command above has emitted as output a `kubeadm join` command. Save it for joining the workers below. 
 
-Copy the Kubernetes configuration files which provides access to the cluster: 
-``` shell
+Copy the Kubernetes configuration file which provides access to the cluster: 
+``` bash
 mkdir .kube
 sudo cp -i /etc/kubernetes/admin.conf .kube/config
 sudo chown $(id -u):$(id -g) .kube/config
@@ -75,15 +75,16 @@ Verify that the master node is ready
 
 ## Run on Kubernetes Workers
 
-Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
+For Kubernetes workers with GPU, you must install the NVIDIA prerequisites. We recommend using the NVIDIA GPU Operator __on top__ of Kubernetes. For further details see [NVIDIA prerequisites](cluster-install.md#step-2-nvidia)
 
-=== "NVIDIA GPU Operator"
-    No additional work
+
+=== "NVIDIA GPU Operator (recommended)"
+    No additional work. Install the operator after Kubernetes is installed. 
 
 === "NVIDIA software on each node"
     On Worker Nodes with GPUs, install NVIDIA Docker and make it the default docker runtime as described [here](../cluster-prerequisites/#nvidia). Specifically, also add `systemd` by editing `/etc/docker/daemon.json` as follows:
 
-    ``` json
+    ``` JSON title="/etc/docker/daemon.json"
     {
         "exec-opts": ["native.cgroupdriver=systemd"],
         "default-runtime": "nvidia",
@@ -96,7 +97,7 @@ Review NVIDIA prerequisites [here](cluster-install.md#step-2-nvidia)
     }
     ```
 
-Install Kubernetes worker:
+Install Kubernetes worker (any machine):
 ``` shell
 sudo sh -c 'cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -133,5 +134,14 @@ Return to the master node. Re-run `kubectl get nodes` and verify that the new no
 
 1. Edit the file /etc/fstab
 2. Comment out any swap entry if such exists
+
+## Avoiding Accidental Upgrades
+
+To avoid accidental upgrade of Kubernetes binaries, it is recommended to _hold_ the version. Run the following on all nodes:
+
+```
+sudo apt-mark hold kubeadm kubelet kubectl
+```
+
 
 

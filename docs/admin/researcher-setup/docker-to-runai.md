@@ -37,6 +37,4 @@ There are similar commands to get a shell into the container (_runai bash_), get
 
 It is highly recommended to schedule an onboarding session for Researchers with a Run:ai customer success professional. Run:ai can help with the above transition, but adding to that, we at Run:ai have also acquired a large body of knowledge on data science best practices which can help streamline  Researchers' work as well as save money for the organization.
 
-Researcher onboarding material also appears in the [Researcher Onboarding Presentation](../../Researcher/presentations/researcher-onboarding-presentation.md)
-
  

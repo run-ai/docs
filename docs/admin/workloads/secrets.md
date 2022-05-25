@@ -1,14 +1,14 @@
-# Secrets in Jobs
+# Secrets in Workloads
 
 ## Kubernetes Secrets
 
-Sometimes you want to use sensitive information within your code. Examples are: passwords, OAuth tokens, or ssh keys. The best practice for saving such information in Kubernetes is via __Kubernetes Secrets__. Kubernetes Secrets let you store and manage sensitive information. Access to secrets is limited via configuration.
+Sometimes you want to use sensitive information within your code. For example passwords, OAuth tokens, or ssh keys. The best practice for saving such information in Kubernetes is via __Kubernetes Secrets__. Kubernetes Secrets let you store and manage sensitive information. Access to secrets is limited via configuration.
 
-A Kubernetes secret may hold multiple __key - value pairs__.
+A Kubernetes secret may hold multiple __key - value__ pairs.
 
-## Using Secrets in Run:ai Jobs
+## Using Secrets in Run:ai Workloads
 
-Our goal is to provide Run:ai Jobs with secrets as input in a secure way. Using the Run:ai command-line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
+Our goal is to provide Run:ai Workloads with secrets as input in a secure way. Using the Run:ai command line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
 
 ## Creating a secret
 
@@ -34,9 +34,9 @@ kubectl apply -f <file-name>
     * Secrets are base64 encoded
     * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:ai Project name above. Run:ai provides the ability to propagate secrets throughout all Run:ai Projects. See below.
 
-## Attaching a secret to a Job on Submit
+## Attaching a secret to a Workload on Submit
 
-When you submit a new Job, you will want to connect the secret to the new Job. To do that, run:
+When you submit a new Workload, you will want to connect the secret to the new Workload. To do that, run:
 
 ```
 runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
@@ -72,6 +72,6 @@ To delete a secret from all Run:ai Projects, run:
 runai-adm remove secret <secret name> --cluster-wide
 ```
 
-## Secrets and Templates
+## Secrets and Policies
 
-A Secret can be set at the template level. For additional information see [template configuration](templates.md)
+A Secret can be set at the policy level. For additional information see [policies guide](policies.md)

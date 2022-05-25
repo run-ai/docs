@@ -23,12 +23,14 @@ The control plane (backend) installation of Run:ai will require the configuratio
 
 ## OpenShift 
 
-Run:ai supports OpenShift. Supported versions are 4.6 through 4.9. 
-OpenShift must be configured with a trusted certificate.
+Run:ai supports OpenShift. Supported versions are 4.6 through 4.10. 
+
+* OpenShift must be configured with a trusted certificate.
+* OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 
 
 
 !!! Important
-    * _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see: [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}. 
+    * _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see: [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}. or the equivalent [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/archive/1.8/openshift/cluster-entitlement.html){target=_blank}. Entitlement is [not required anymore](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/steps-overview.html#entitlement-free-supported-versions){target=_blank} if you are using OpenShift 4.9.9 or above
     * If you are planning to use NVIDIA A100 with CoreOS, you will need the latest GPU Operator (version 1.8).
 
 

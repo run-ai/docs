@@ -1,6 +1,6 @@
 
 ---
-title: Inference  Overview
+title: Inference  Overview (Deprecated)
 ---
 ## What is Inference
 
@@ -30,4 +30,4 @@ Run:ai provides Inference services as an equal part together with the other two 
 ## See Also
 
 * To setup Inference, see [Inference Setup](setup.md)
-* For running Inference see [Inference quick-start](../../Researcher/Walkthroughs/quickstart-inference.md)
+* For running Inference see [Inference quick-start](../../../Researcher/Walkthroughs/quickstart-inference.md)

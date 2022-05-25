@@ -167,7 +167,7 @@ experiments:
 
 Finally, you can delete the HPO Job by running:
 
-        runai delete hpo1
+        runai delete job hpo1
 
 
 

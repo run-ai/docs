@@ -1,3 +1,27 @@
+## May 2022 Run:ai Version 2.5
+
+
+* __Command-line interface installation__ The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
+!!! Warning
+    The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you upgrade the cluster, you must also upgrade the command-line interface. 
+* __Inference__. Run:ai inference offering has been overhauled with the ability to submit deployments via the user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md). To enable the new inference module call by Run:ai customer support.
+* __CPU and CPU memory quotas__ can now be configured for projects and departments. These are hard quotas which means that the total amount of the requested resource for all workloads associated with a project/department cannot exceed the set limit. To enable this feature please call Run:ai customer support.
+* __Workloads__. We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
+    * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
+    * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
+* `runai delete` has been changed in favor of `runai delete job` 
+* Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
+* To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
+* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit/?h=s3#-s3-string).
+* User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
+* [Researcher Authentication](../admin/runai-setup/authentication/researcher-authentication.md) configuration is now mandatory. 
+
+
+### Newly Supported Versions
+* Run:ai now supports Kubernetes 1.24
+* Run:ai now supports Openshift 4.10
+* Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
+
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
 ### Important Upgrade Note
@@ -8,7 +32,7 @@ As these two variants are no longer needed, Run:ai now uses the standard NVIDIA 
 
 Going forward, we also mandate the usage of the NVIDIA GPU Operator version 1.9. The Operator easies the installation of all NVIDIA software. Drivers and Kubernetes components alike. 
 
-For further information see the [Run:ai NVIDIA prerequisies](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
+For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
 
 ### Dynamic MIG Support
 
@@ -31,15 +55,15 @@ To upgrade to version 2.3 cluster from earlier versions, you must uninstall vers
 The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `https://<company-name>.run.ai`. The user interface capabilities are subject to the role of the individual user. 
 
 * See [instructions](../admin/admin-ui-setup/overview.md) on how to set up the unified user interface. 
-* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description on how to submit, view and delete Jobs from the unified user interface. 
+* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description of how to submit, view and delete Jobs from the unified user interface. 
 
 
 Other features:
  
 * Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
-* Run:ai now supports orchastraction of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
-* Run:ai now supports Openshift 4.9, Kubernetes 1.22 and 1.23.
+* Run:ai now supports orchestration of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
+* Run:ai now supports Openshift 4.9, Kubernetes 1.22, and 1.23.
 
 ## February 2022 Run:ai Version 2.2
 
@@ -56,7 +80,7 @@ We have now stabilized on a single version numbering system for all Run:ai artif
 * Run:ai Command-line interface.
 * Run:ai Administrator Command-line interface.
 
-Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the control plane can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
+Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbering for the different artifacts will vary at the third digit as we provide patches to customers. As such, in the future, the control plane can be tagged as 2.1.0 while the cluster tagged as 2.1.1.
 
 ### Release Contents
 
@@ -66,4 +90,4 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). Numbering
 Supportability enhancements:
 
 * A new tool was added, to allow IT administrators to validate cluster and control-plane installation pre-requisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
-* To better analyze scheduling issues, node name was added to multiple scheduler log events.
+* To better analyze scheduling issues, the node name was added to multiple scheduler log events.

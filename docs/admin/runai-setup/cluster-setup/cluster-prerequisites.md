@@ -5,8 +5,8 @@ Below are the prerequisites of a cluster installed with Run:ai.
 
 Run:ai has been tested with the following certified Kubernetes distributions: 
 
-| Target Platform                          | Description | Notes | 
-|------------------------------------------|-------------|-------|
+| Target Platform                          | Description | Installation Notes | 
+|------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
 | EKS | Amazon Elastic Kubernetes Service  | |
 | AKS | Azure Kubernetes Services          | |
@@ -17,26 +17,35 @@ Run:ai has been tested with the following certified Kubernetes distributions:
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 | Canonical Kubernetes | a.k.a Charmed Kubernetes | | 
 
-A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:ai provides instructions for a simple (non production-ready) [Kubernetes Installation](install-k8s.md).
+A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md).
 
 
 !!! Notes
-    * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.23. 
+    * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.24. 
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
-    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.9. 
+    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.10. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
 
-!!! Important
+=== "On Prem"    
+    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
+
+=== "EKS"
+    * The [eksctl](https://eksctl.io/){target=_blank} tool is one of the options to create an AWS EKS cluster, By default, it installs the NVIDIA device plugin, Use the flag `--install-nvidia-plugin=false` to disable this install (as we want the NVIDIA GPU Operator to install it instead)
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. EKS installs NVIDIA drivers on the GPU nodes. As such, you must use the flags: `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
+
+=== "GKE"
+    Google provides a different method for installing NVIDIA Device drivers and the NVIDIA device plug-in. Detailed [here](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus#installing_drivers){target=_blank}. As such, using the GPU Operator is not an option. You will need to manually install the [Kubernetes Node feature discovery](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank}, [NVIDIA GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} and [NVIDIA DCGM exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. The installation is not trivial and we recommend contacting Run:ai customer support. 
+
+=== "RKE"
+    Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
+
+!!! Notes
+    * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
+    * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`.
+    * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
     * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
-    * The combination of _NVIDIA A100 hardware_ and the _CoreOS operating system_ (which is popular when using OpenShift) will only work with GPU Operator version 1.8 or higher. 
-
-Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
-
-* We recommend to use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
-* Note that the NVIDIA document contains a separate section in the case where the NVIDIA CUDA Toolkit is already installed on the nodes.
-* To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
-    
+    * To use [Dynamic MIG](../../../Researcher/scheduling/fractions/#dynamic-mig), the GPU Operator must be installed with `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}``        
 
 ??? "Run:ai 2.3 or earlier"
     * Run:ai has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
@@ -74,19 +83,65 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
+### Inference
 
+:octicons-versions-24: [Version 2.5](../../../home/whats-new-2022.md#may-2022-runai-version-25)
+
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai has been certified on Knative version that only supports Kubernetes 1.22 or later. 
+
+Post-install, you must configure Knative to use the Run:ai scheduler by running: 
+
+```
+kubectl edit cm -n knative-serving config-features
+```
+
+Add `kubernetes.podspec-schedulername: enabled` to the `data` section as follows:
+
+``` YAML
+apiVersion: v1
+data:
+  kubernetes.podspec-schedulername: enabled
+  _example: |-
+  ...
+```
+
+#### Inference Autoscaling
+Run:ai allows to autoscale a deployment according to various metrics:
+
+1. GPU Utilization (%)
+2. CPU Utilization (%)
+3. Latency (milliseconds)
+4. Throughput (requests/second)
+5. Concurrency 
+6. Any custom metric
+
+Additional installation may be needed for some of the metrics as follows:
+
+* Using _Throughput_ or _Concurrency_ does not require any additional installation.
+* Any other metric will require installing the [HPA Autoscaler](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}.
+* Using _GPU Utilization_, _Latency_ or _Custom metric_ will __also__ require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md) for further information.
+
+If you wish to use an _existing_ Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support. 
 
 ### Distributed Training via Kubeflow MPI
 
-Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Use the following [installation guide](https://github.com/kubeflow/mpi-operator/tree/v0.2.3#installation){target=_blank}. Note that Run:ai does not currently support the latest MPI version. but only version `v0.2.3`.
+Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. 
 
-As per instructions: 
 
-* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-* Clone tag `v0.2.3` (and not master)
-* `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`: 
-  * search for `mpioperator/mpi-operator:latest` and change it to `mpioperator/mpi-operator:v0.2.3`.
-  * search for `mpioperator/kubectl-delivery:latest` and change it to `mpioperator/kubectl-delivery:v0.2.3`.
+=== "Version 2.5 or later"
+    Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction:
+
+    * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
+    * Clone the repository
+    * run `kubectl apply -f deploy/v2beta1/mpi-operator.yaml`
+
+=== "Version 2.4 or earlier"
+    Use the following [installation guide](https://github.com/kubeflow/mpi-operator/tree/v0.2.3#installation){target=_blank}. As per instruction:
+
+    * Clone tag `v0.2.3` (and not master)
+    * `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`
+    * search for `mpioperator/mpi-operator:latest` and change it to `mpioperator/mpi-operator:v0.2.3`.
+    * search for `mpioperator/kubectl-delivery:latest` and change it to `mpioperator/kubectl-delivery:v0.2.3`.
 
 
 !!! Notes
@@ -182,12 +237,28 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>  443   </p>
 </td>
 </tr>
+
+<tr>
+<td style="padding: 6px; width: 106px;">
+<p> Cert Manager </p>
+</td>
+<td style="padding: 6px; width: 304px;">
+<p> Creates a letsencrypt-based certificate for the cluster </p>
+</td>
+<td style="padding: 6px; width: 205px;">
+<p> 8.8.8.8, 1.1.1.1 </p>
+<p> </p>
+</td>
+<td style="padding: 6px; width: 32px;">
+<p>53</p>
+</td>
+
 </tbody>
 </table>
 
 ### Post Installation
 
-In addition, once running, Run:ai will send metrics to two sources:
+In addition, once running, Run:ai requires outbound network connection to the following targets:
 
 <table border="1" style="margin-left: 0px; margin-right: auto; width: 650px;">
 <tbody>
@@ -238,6 +309,21 @@ In addition, once running, Run:ai will send metrics to two sources:
 </td>
 <td style="padding: 6px; width: 32px;">
 <p>443</p>
+</td>
+
+<tr>
+<td style="padding: 6px; width: 106px;">
+<p> Cert Manager </p>
+</td>
+<td style="padding: 6px; width: 304px;">
+<p> Creates a letsencrypt-based certificate for the cluster </p>
+</td>
+<td style="padding: 6px; width: 205px;">
+<p> 8.8.8.8, 1.1.1.1 </p>
+<p> </p>
+</td>
+<td style="padding: 6px; width: 32px;">
+<p>53</p>
 </td>
 
 </tbody>
