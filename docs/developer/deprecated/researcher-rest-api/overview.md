@@ -6,9 +6,9 @@ title: Researcher REST API Overview
 
 
 !!! Warning
-    Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.## Endpoint URL for API
-
-
+    Researcher Kubernetes API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
+    
+    
 The purpose of the Researcher REST API is to provide an easy-to-use programming interface for submitting, listing, and deleting Jobs. 
 
 There are other APIs that provide the same functionality. Specifically:

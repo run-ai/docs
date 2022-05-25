@@ -2,6 +2,11 @@
 ---
 title: Inference  Overview (Deprecated)
 ---
+
+!!! Warning
+    Inference API is deprecated. See [Cluster API](../../cluster-api/workload-overview-dev.md) for its replacement.
+    To read more about Inference see the new [Inference Overview](../../../admin/workloads/inference-overview.md).
+
 ## What is Inference
 
 Machine learning (ML) inference is the process of running live data points into a machine-learning algorithm to calculate an output. 
