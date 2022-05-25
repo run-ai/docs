@@ -1,3 +1,15 @@
+## Unable to install CLI due to certificate errors
+
+
+### Solution
+
+An alternative method for downloading the CLI:
+
+``` bash
+kubectl port-forward -n runai svc/researcher-service 4180:4180
+wget --content-disposition http://localhost:4180/cli/linux
+```
+
 ## When running the CLI you get an error an invalid configuration error
 
 When running any CLI command you get:
