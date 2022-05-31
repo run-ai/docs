@@ -66,8 +66,8 @@ function runai-cli-install {
 	if ! type runai > /dev/null; then
 		echo -e "${GREEN} Installing Run:AI CLI ${NC}"
 		mkdir runai && cd runai		
-		wget https://github.com/run-ai/runai-cli/releases/download/v2.2.77/runai-cli-v2.2.77-linux-amd64.tar.gz
-		tar xvf runai-cli-v2.2.77-linux-amd64.tar.gz
+		wget https://github.com/run-ai/runai-cli/releases/download/v2.3.4/runai-cli-v2.3.4-linux-amd64.tar.gz
+		tar xvf runai-cli-v2.3.4-linux-amd64.tar.gz
 		sudo ./install-runai.sh
 		sudo runai update
 		cd ..
@@ -134,9 +134,12 @@ function cluster-create {
 
 # **** Download YAML File used to install cluster
 function cluster-download {
-		# **** Download a cluster operator values file
-	curl 'https://'$COMPANY_URL'/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op' \
-	--header 'Authorization: Bearer '$BEARER'' > runai-values-$CLUSTER_NAME.yaml
+    CLUSTER_IPS=$(curl ifconfig.me)%2C$(hostname -i)
+    echo $CLUSTER_IPS
+    
+	 # **** Download a cluster operator values file
+    curl 'https://'$COMPANY_URL'/v1/k8s/clusters/'$CLUSTER_UUID'/installfile?cloud=op&clusterip='$CLUSTER_IPS'' \
+		--header 'Authorization: Bearer '$BEARER'' > runai-values-$CLUSTER_NAME.yaml
 }
 
 
