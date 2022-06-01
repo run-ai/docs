@@ -10,7 +10,7 @@ Run:ai has been tested with the following certified Kubernetes distributions:
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
 | EKS | Amazon Elastic Kubernetes Service  | |
 | AKS | Azure Kubernetes Services          | |
-| GKE | Google Kubernetes Engine           | GKE has a different software stack for NVIDIA.To install Run:ai on GKE please contact customer support. | 
+| GKE | Google Kubernetes Engine           | GKE has a different software stack for NVIDIA. To install Run:ai on GKE please contact customer support. | 
 | OCP | OpenShift Container Platform       | The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke). |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
@@ -329,7 +329,11 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 </tbody>
 </table>
 
+### Cluster IP
 
+The Run:ai user interface requires an IP address to the Kubernetes cluster. The IP should be available to Researchers running within the organization (but not outside the organization).
+
+The above is relevant to the SaaS installation only. Not to self-hosted installation.
 ## Pre-install Script
 
 Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
