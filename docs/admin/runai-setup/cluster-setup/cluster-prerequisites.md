@@ -337,6 +337,9 @@ The Run:ai user interface requires an IP address to the Kubernetes cluster. The 
 === "Unmanaged Kubernetes" 
     Use the node IP of any of the Kubernetes nodes. Setup the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
 
+=== "Unmanaged Kubernetes on the cloud" 
+    Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. Setup the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
+
 
 === "Managed Kubernetes (EKS, AKS, GKE)"
 
