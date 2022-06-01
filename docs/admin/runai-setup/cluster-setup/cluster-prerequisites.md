@@ -331,9 +331,30 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 
 ### Cluster IP
 
-The Run:ai user interface requires an IP address to the Kubernetes cluster. The IP should be available to Researchers running within the organization (but not outside the organization).
+The Run:ai user interface requires an IP address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. Following are instructions on how to get the IP and set firewall settings. 
 
-The above is relevant to the SaaS installation only. Not to self-hosted installation.
+
+=== "Unmanaged Kubernetes" 
+    Use the node IP of any of the Kubernetes nodes. Setup the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
+
+
+=== "Managed Kubernetes (EKS, AKS, GKE)"
+
+    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx
+    ```
+
+    Find the Cluster IP by running:
+
+    ``` bash
+    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    ```
+
+
 ## Pre-install Script
 
 Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
