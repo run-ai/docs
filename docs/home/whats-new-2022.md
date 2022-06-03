@@ -20,7 +20,7 @@
 ### Newly Supported Versions
 * Run:ai now supports Kubernetes 1.24
 * Run:ai now supports Openshift 4.10
-* Distributed training now supports MPI version 3.0. Support for older versions of MPI has been removed. 
+* Distributed training now supports MPI version 0.3. Support for older versions of MPI has been removed. 
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
 
