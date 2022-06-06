@@ -43,7 +43,7 @@ The specific inference server we just created is accepting queries over port 800
 
 ```
  runai submit inference-client  -i gcr.io/run-ai-demo/example-triton-client \
-    --command -- perf_analyzer -m inception_graphdef --request-rate-range 50 \
+    -- perf_analyzer -m inception_graphdef --request-rate-range 50 \
     -p 3600000 -u  <HOSTNAME>
 ```
 

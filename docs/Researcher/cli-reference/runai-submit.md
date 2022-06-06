@@ -8,7 +8,6 @@ Submit a Run:ai Job for execution.
 runai submit 
     [--attach]
     [--backoff-limit int] 
-    [--command]
     [--completions int]
     [--cpu double] 
     [--cpu-limit double] 
@@ -72,7 +71,7 @@ runai submit -i ubuntu --interactive --attach -g 1
 Or
 
 ```
-runai submit --name build1 -i ubuntu -g 1 --interactive --command -- sleep infinity 
+runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
 ```
 
 (see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
@@ -81,7 +80,7 @@ Externalize ports:
 
     runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
         --service-type=nodeport --port 30022:22
-        --command -- /usr/sbin/sshd -D 
+        -- /usr/sbin/sshd -D 
 
 (see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
@@ -142,11 +141,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > 
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
-#### --command
->  If set, overrides the image's entry point with the command supplied after '--'
+#### -- [COMMAND]
+>  Overrides the image's entry point with the command supplied after '--'
 >
 >  Example: 
-> > `--command -- python script.py 10000` 
+> > `-- python script.py 10000` 
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
