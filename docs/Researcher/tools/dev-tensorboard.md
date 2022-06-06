@@ -42,7 +42,7 @@ Note the volume flag (`-v`) and working directory flag (`--working-dir`). The lo
 Run the following:
 
 ```
-runai submit tb -i tensorflow/tensorflow:latest --interactive --service-type=portforward --port 8888:8888  --working-dir /mydir  -v /mnt/nfs_share/john:/mydir   --command -- tensorboard --logdir logs/fit --port 8888 --host 0.0.0.0
+runai submit tb -i tensorflow/tensorflow:latest --interactive --service-type=portforward --port 8888:8888  --working-dir /mydir  -v /mnt/nfs_share/john:/mydir  -- tensorboard --logdir logs/fit --port 8888 --host 0.0.0.0
 ```
 
 The terminal will show the following: 

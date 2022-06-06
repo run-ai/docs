@@ -35,7 +35,7 @@ To complete this Quickstart you must have:
 *   At the command-line run:
 
         runai config project team-a
-        runai submit build1 -i ubuntu -g 1 --interactive --command -- sleep infinity
+        runai submit build1 -i ubuntu -g 1 --interactive -- sleep infinity
 
 *   The job is based on a sample docker image ``python``
 *   We named the job _build1_.

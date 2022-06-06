@@ -12,7 +12,6 @@ Submit a Distributed Training (MPI) Run:ai Job for execution.
 runai submit-mpi
     [--attach]
     [--backoff-limit int] 
-    [--command]
     [--cpu double] 
     [--cpu-limit double] 
     [--create-home-dir]
@@ -81,12 +80,6 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
 >
 > The --attach flag also sets `--tty` and `--stdin` to true. 
-
-#### --command
->  If set, overrides the image's entry point with the command supplied after '--'
->
->  Example: 
->> `--command script.py --args 10000` 
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
