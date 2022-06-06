@@ -141,15 +141,15 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > 
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
--e stringArray | --environment stringArray
->  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
-<!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
-
 #### -- [COMMAND]
 >  Overrides the image's entry point with the command supplied after '--'
 >
 >  Example: 
 > > `-- python script.py 10000` 
+
+-e stringArray | --environment stringArray
+>  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
+<!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
 
 #### --image string | -i string
 >  Image to use when creating the container for this Job
