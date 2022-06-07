@@ -36,7 +36,7 @@ The Researcher uses the Run:ai CLI to set the method type and the ports when sub
 ```
 runai config project team-a
 runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
-   --service-type=ingress --port 8888:8888 --command  \
+   --service-type=ingress --port 8888:8888  \
    -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
 ```
 

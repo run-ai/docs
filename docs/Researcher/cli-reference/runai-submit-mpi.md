@@ -12,7 +12,6 @@ Submit a Distributed Training (MPI) Run:ai Job for execution.
 runai submit-mpi
     [--attach]
     [--backoff-limit int] 
-    [--command]
     [--cpu double] 
     [--cpu-limit double] 
     [--create-home-dir]
@@ -82,11 +81,11 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
-#### --command
->  If set, overrides the image's entry point with the command supplied after '--'
+#### -- [COMMAND]
+>  Overrides the image's entry point with the command supplied after '--'
 >
->  Example: 
->> `--command script.py --args 10000` 
+>  Example:
+> > `-- python script.py 10000`
 
 -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).

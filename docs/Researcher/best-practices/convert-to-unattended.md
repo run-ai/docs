@@ -72,7 +72,7 @@ For more information on best practices for saving checkpoints, see [Saving Deep 
 
 ## Running the Job
 
-Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``--command`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
+Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``-- [COMMAND]`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
 
 Example with Environment variables:
 
@@ -80,7 +80,7 @@ Example with Environment variables:
 runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
     -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
     -e 'EPOCHS=30'  -e 'LEARNING_RATE=0.02'  
-    --command  -- ./startup.sh  
+    -- ./startup.sh  
 ```
 
 Example with Command-line arguments:
@@ -89,7 +89,7 @@ Example with Command-line arguments:
 ```
 runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
     -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
-    --command  -- ./startup.sh batch-size=64 number-of-epochs=3
+    -- ./startup.sh batch-size=64 number-of-epochs=3
 ```
 
 
