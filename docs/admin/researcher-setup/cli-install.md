@@ -48,7 +48,7 @@ kubectl get nodes
 
      ``` bash 
      chmod +x runai
-     sudo mv runai /usr/local/bin
+     sudo mv runai /usr/local/bin/runai
      ```
   
 === "Run:ai version 2.4 or earlier"
