@@ -31,6 +31,19 @@ spec:
 
 Run: `runai list jobs` to see the new Workload.
 
+## Delete Workload Example
+
+To delete a workload run:
+
+``` bash
+curl -X DELETE \ # (1) 
+'https://<IP>:6443/apis/run.ai/v2alpha1/namespaces/<PROJECT>/trainingworkloads/<JOB-NAME>' \ 
+    --header 'Content-Type: application/yaml' \
+    --header 'Authorization: Bearer <BEARER>'   # (2)
+```
+
+1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with the name of the Run:ai namespace for the specific Project (typically `runai-<Project-Name>`). <br> Replace `trainingworkloads` with `interactiveworkloads` or `inferenceworkloads` according to type. <br> Replace `<JOB-NAME>` with the name of the Job. 
+2. Add Bearer token. To obtain a Bearer token see [API authentication](../rest-auth.md).
 
 ## Using other Programming Languages
 
