@@ -31,6 +31,8 @@ Change the namespace and run: `kubectl apply -f training1.yaml`
 
 Run: `runai list jobs` to see the new Workload.
 
+## Delete Workload Example
+
 Run: `kubectl delete -f training1.yaml` to delete the Workload. 
 
 
