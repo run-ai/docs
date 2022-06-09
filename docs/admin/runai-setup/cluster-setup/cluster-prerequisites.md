@@ -246,7 +246,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p> Creates a letsencrypt-based certificate for the cluster </p>
 </td>
 <td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1 </p>
+<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
 <p> </p>
 </td>
 <td style="padding: 6px; width: 32px;">
@@ -319,7 +319,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 <p> Creates a letsencrypt-based certificate for the cluster </p>
 </td>
 <td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1 </p>
+<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
 <p> </p>
 </td>
 <td style="padding: 6px; width: 32px;">
