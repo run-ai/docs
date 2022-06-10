@@ -6,7 +6,7 @@
 An alternative method for downloading the CLI:
 
 ``` bash
-kubectl port-forward -n runai svc/researcher-service 4180:4180
+kubectl port-forward -n runai svc/researcher-service 4180
 wget --content-disposition http://localhost:4180/cli/linux
 ```
 
