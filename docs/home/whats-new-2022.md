@@ -5,7 +5,7 @@
 * With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/runai-setup/authentication/sso.md#prerequisites)
 * A new user role of __ML Engineer__. The role allows the user to view and manage inference deployments and cluster resources. 
 * [Clearer documentation](../admin/researcher-setup/cli-install#use-runai-on-windows) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
-* Clone Action to job form?
+* Using the Run:ai user interface it is now possible to clone an existing Job. The clone operation will open a Job form and allow you to change parameters before re-submitting. 
 * https://runai.atlassian.net/browse/RUN-3803 ? BNY multiple ports
 
 ## May 2022 Run:ai Version 2.5
