@@ -3,10 +3,14 @@
 
 ### Solution
 
-An alternative method for downloading the CLI:
+An alternative method for downloading the CLI. Use a Linux shell to run:
 
 ``` bash
 kubectl port-forward -n runai svc/researcher-service 4180:4180
+```
+
+And in another shell run
+```
 wget --content-disposition http://localhost:4180/cli/linux
 ```
 
