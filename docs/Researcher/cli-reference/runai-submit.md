@@ -40,6 +40,7 @@ runai submit
     [--s3 string]
     [--service-type string | -s string] 
     [--stdin]
+    [--toleration string]
     [--ttl-after-finish duration] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
@@ -269,6 +270,16 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >
 > All the fields, except url=URL, are mandatory. Default for url is
 > > `url=https://s3.amazon.com`
+
+#### --toleration string
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
+> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
+> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
+> 
+> The format of the string:
+> ```
+> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
+> ```
 
 ### Network
 
