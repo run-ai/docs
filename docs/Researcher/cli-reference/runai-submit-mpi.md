@@ -28,13 +28,16 @@ runai submit-mpi
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
+    [--mount-propagation]
     [--name string]
     [--node-type string] 
     [--prevent-privilege-escalation]
     [--processes int] 
     [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
     [--run-as-user]
+    [--s3]
     [--stdin]
+    [ --toleration]
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
     [--nfs-server string]
@@ -208,9 +211,8 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > > `url=https://s3.amazon.com`
 
 #### --toleration string
-> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto
-> inappropriate node. This is done by matching the workload tolerations to the taints defined
-> for each node. Further details can be found in Kubernetes
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
+> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
 > [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
 >
 > The format of the string:
