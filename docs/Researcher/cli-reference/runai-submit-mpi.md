@@ -190,6 +190,34 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 > Alternatively, you can specify NFS host for each volume
 > individually (see --volume for details).
 
+#### --mount-propagation
+> The flag allows for sharing volumes mounted by a container to other containers in the same pod, or even to other pods on the same node.
+> When the flag is set, Run:ai will set mount propagation to the value of `HostToContainer` as documented [here](https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation){target=_blank}. With `HostToContainer` the volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.
+
+#### --git-sync string
+> Clone a git repository into the container running the job. The parameter should follow the syntax:
+> > `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`
+>
+> Note that source=REPOSITORY is the only mandatory field
+
+#### --s3 string
+> Mount an S3 compatible storage into the container running the job. The parameter should follow the syntax:
+> > `bucket=BUCKET,key=KEY,secret=SECRET,url=URL,target=TARGET_PATH`
+>
+> All the fields, except url=URL, are mandatory. Default for url is
+> > `url=https://s3.amazon.com`
+
+#### --toleration string
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto
+> inappropriate node. This is done by matching the workload tolerations to the taints defined
+> for each node. Further details can be found in Kubernetes
+> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
+>
+> The format of the string:
+> ```
+> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
+> ```
+
 ### Network
 
 #### --host-ipc

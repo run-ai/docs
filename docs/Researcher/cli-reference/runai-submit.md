@@ -270,6 +270,17 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > All the fields, except url=URL, are mandatory. Default for url is
 > > `url=https://s3.amazon.com`
 
+#### --toleration string
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto 
+> inappropriate node. This is done by matching the workload tolerations to the taints defined
+> for each node. Further details can be found in Kubernetes
+> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
+> 
+> The format of the string:
+> ```
+> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
+> ```
+
 ### Network
 
 #### --host-ipc
