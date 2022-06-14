@@ -1,6 +1,38 @@
 ---
 title: Self Hosted installation over OpenShift - Cluster Setup
 ---
+
+## Monitoring Pre-check 
+
+Run:ai uses the OpenShift monitoring stack. As such, it requires creating or changing the OpenShift monitoring configuration. Check if a `configmap` already exists: 
+
+```
+oc get configmap cluster-monitoring-config -n openshift-monitoring
+```
+
+If it does,
+
+1. To the cluster values file, add the flag `createOpenshiftMonitoringConfig` as described under `Cluster Installation` below. 
+2. Post-installation, edit the `configmap` by running: `oc edit configmap cluster-monitoring-config -n openshift-monitoring`. Add the following:
+
+``` YAML 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |
+    prometheusK8s:
+      scrapeInterval: "10s"
+      evaluationInterval: "10s"
+      externalLabels:
+        clusterId: <CLUSTER_ID>
+        prometheus: ""
+        prometheus_replica: ""
+```
+For `<CLUSTER_ID>` use the `Cluster UUID` field as shows in the Run:ai user interface under the `Clusters` area.  
+
 ## Cluster Installation
 
 * Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster on step 3, select __OpenShift__ as the target platform.
@@ -9,6 +41,7 @@ title: Self Hosted installation over OpenShift - Cluster Setup
 
 |  Key     |  Change  | Description |
 |----------|----------|-------------| 
+| `createOpenshiftMonitoringConfig` | false | see Monitoring Pre-check above. | 
 | `runai-operator.config.project-controller.createNamespaces` |  `true` | Set to `false` if unwilling to provide Run:ai the ability to create namespaces, or would want to create namespaces manually rather than use the Run:ai convention of `runai-<PROJECT-NAME>`. When set to `false`, will require an additional [manual step](project-management.md) when creating new Run:ai Projects. | 
 | `runai-operator.config.project-controller.createRoleBindings` |  `true` | Automatically assign Users to Projects. Set to `false` if unwilling to provide Run:ai the ability to set _RoleBinding_. When set to `false`, will require an additional [manual step](project-management.md) when adding or removing users from Projects.  | 
 | `runai-operator.config.mps-server.enabled` | Default is `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads. Requires [extra permissions](../preparations/#cluster-installation) | 
