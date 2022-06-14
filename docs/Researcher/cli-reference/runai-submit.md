@@ -41,7 +41,6 @@ runai submit
     [--service-type string | -s string] 
     [--stdin]
     [--toleration string]
-    [--ttl-after-finish duration] 
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
     [--nfs-server string]
@@ -325,10 +324,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### --parallelism int
 > The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--completions`.
-
-#### --ttl-after-finish duration
->  Define the duration, post Job finish, after which the Job is automatically deleted (5s, 2m, 3h, etc).  
-> Note: This setting must first be enabled at the cluster level. See [Automatically Delete Jobs After Job Finish](../scheduling/auto-delete-jobs.md).
 
 
 ### Access Control
