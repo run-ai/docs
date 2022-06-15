@@ -10,7 +10,7 @@ With Inference, you are taking a trained _Model_ and deploying it into a product
 
 To complete this Quickstart you must have:
 
-* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md). There are additional pre-requisites for running inference. See [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) for more information. 
+* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md). There are additional prerequisites for running inference. See [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) for more information. 
 * Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 * You must have _ML Engineer_ access rights. See [Adding, Updating, and Deleting Users](../../admin/admin-ui-setup/admin-ui-users.md) for more information. 
 
@@ -38,13 +38,12 @@ This would start an inference workload for team-a with an allocation of a single
 
 The specific inference server we just created is accepting queries over port 8000. You can use the Run:ai Triton demo client to send requests to the server:
 
-* Find the hostname by running `kubectl get svc -n runai-team-a`. Use the `inference1-00001-private` Cluster IP.
-* Replace `<HOSTNAME>` below and run: 
+* Find an IP address by running `kubectl get svc -n runai-team-a`. Use the `inference1-00001-private` Cluster IP.
+* Replace `<IP>` below and run: 
 
 ```
  runai submit inference-client  -i gcr.io/run-ai-demo/example-triton-client \
-    -- perf_analyzer -m inception_graphdef --request-rate-range 50 \
-    -p 3600000 -u  <HOSTNAME>
+    -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <IP>
 ```
 
 * To see the result, run the following:
