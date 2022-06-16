@@ -3,7 +3,9 @@ Below are the prerequisites of a cluster installed with Run:ai.
 ## Software Requirements
 ### Kubernetes
 
-Run:ai has been tested with the following certified Kubernetes distributions: 
+Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.19 through 1.24. For RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.10.
+
+Run:ai has been tested with the following Kubernetes distributions: 
 
 | Target Platform                          | Description | Installation Notes | 
 |------------------------------------------|-------------|--------------------|
@@ -21,9 +23,7 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 
 
 !!! Notes
-    * Run:ai requires Kubernetes. Supported versions are 1.19 through 1.24. 
-    * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`.
-    * If you are using RedHat OpenShift. Run:ai supports OpenShift 4.6 to 4.10. 
+    * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
 ### NVIDIA 
 
@@ -43,9 +43,10 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
     * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`.
-    * To work with _containerd_ (e.g. for Tanzu), change the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} accordingly.
+    * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
+    * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md/#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
     * If you are using [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} then NVIDIA prerequisites are already installed and you may skip to the next step.
-    * To use [Dynamic MIG](../../../Researcher/scheduling/fractions/#dynamic-mig), the GPU Operator must be installed with `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}``        
+        
 
 ??? "Run:ai 2.3 or earlier"
     * Run:ai has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:

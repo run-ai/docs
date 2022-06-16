@@ -1,5 +1,13 @@
-## May 2022 Run:ai Version 2.5
 
+## June 2022 Run:ai Version 2.6 (Cloud update only)
+
+* The login screen now provides the capability to recover a password. 
+* With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/runai-setup/authentication/sso.md#prerequisites)
+* A new user role of __ML Engineer__. The role allows the user to view and manage inference deployments and cluster resources. 
+* [Clearer documentation](../admin/researcher-setup/cli-install#use-runai-on-windows) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
+* Using the Run:ai user interface it is now possible to clone an existing Job. The clone operation will open a Job form and allow you to change parameters before re-submitting. 
+
+## May 2022 Run:ai Version 2.5
 
 * __Command-line interface installation__ The command-line interface utility is no longer a separate install. Instead is now installed by logging into the control plane and downloading the utility which matches the cluster's version. 
 !!! Warning
@@ -65,7 +73,7 @@ Other features:
 * Run:ai now supports orchestration of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
 * Run:ai now supports Openshift 4.9, Kubernetes 1.22, and 1.23.
 
-## February 2022 Run:ai Version 2.2
+## February 2022 Run:ai Version 2.2 (Cloud update only)
 
 * When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/authentication/sso.md).
 * REST API has changed. The new API relies on `Applications`. See [Calling REST APIs](../developer/rest-auth.md) for more information. 
