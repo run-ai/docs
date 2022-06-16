@@ -12,7 +12,7 @@ There are two main installation options:
 
 | Installation Type | Description | 
 |-------------------|-------------|
-| [Classic (SaaS)](cluster-setup/cluster-setup-intro.md)  | Run:ai is installed on the customer's data science GPU clusters. The cluster connects to the Run:ai control plane on the cloud (https://app.run/ai). <br> With this installation, the cluster requires an __outbound__ connection to the Run:ai cloud. |
+| [Classic (SaaS)](cluster-setup/cluster-setup-intro.md)  | Run:ai is installed on the customer's data science GPU clusters. The cluster connects to the Run:ai control plane on the cloud (https://app.run.ai). <br> With this installation, the cluster requires an __outbound__ connection to the Run:ai cloud. |
 | [Self-hosted](self-hosted/overview.md)       | The Run:ai control plane is also installed in the customer's data center |
 
 
