@@ -80,7 +80,7 @@ kubectl apply -f cluster-config.yaml
 
 ### Using Templates
 
-Another way to enforce the above flags is using [Administrative templates](../../../researcher-setup/templates/#administrative-templates). Templates allow you to force compliance on both the User Inteface and Command-line interface. 
+Another way to enforce the above flags is using [Policies](../../workloads/policies.md). Polices allow an Administrator to force compliance on both the User Interface and Command-line interface. 
 
 
 ## Passing user identity 
