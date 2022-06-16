@@ -29,8 +29,6 @@ During the installation of Run:ai you have created two value files,
 
 You will want to save these files, or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
 
-Administrators may also create templates. Templates are stored as ConfigMaps in the `runai` namespace. 
-
 ## Recovery
 
 To recover Run:ai
