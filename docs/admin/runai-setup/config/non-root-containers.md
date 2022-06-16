@@ -78,7 +78,7 @@ kubectl apply -f cluster-config.yaml
 !!! Limitation
     Preventing privilege escalation at the cluster level limits non-root for all Run:ai __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_. See below for more information.
 
-### Using Templates
+### Using Policies
 
 Another way to enforce the above flags is using [Policies](../../workloads/policies.md). Polices allow an Administrator to force compliance on both the User Interface and Command-line interface. 
 
