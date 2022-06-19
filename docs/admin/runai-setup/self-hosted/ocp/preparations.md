@@ -87,7 +87,8 @@ The Run:ai Control plane should be installed on a set of dedicated Run:ai system
 oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
-Currently, this setting cannot be changed after the control plane is installed.
+To avoid single-point-of-failure issues, we recommend assigning more than one node in production environments. 
+
 
 ## Install NVIDIA Dependencies
 
@@ -139,7 +140,7 @@ oc get pods -n gpu-operator
 
 ## Additional Permissions
 
-As part of the installation you will be required to install the [Control plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
+As part of the installation, you will be required to install the [Control plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
 
 ## Next Steps
 

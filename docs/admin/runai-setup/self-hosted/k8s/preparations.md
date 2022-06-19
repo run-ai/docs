@@ -80,6 +80,8 @@ The Run:ai control plane (backend) should be installed on a set of dedicated Run
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
+To avoid single-point-of-failure issues, we recommend assigning more than one node in production environments. 
+
 ## Additional Permissions
 
 As part of the installation you will be required to install the [Run:ai Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
