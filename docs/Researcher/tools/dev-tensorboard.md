@@ -62,3 +62,5 @@ Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to vie
 
 !!! Note
   A single TensorBoard Job can be used to view multiple deep learning Jobs, provided it has access to the logs directory for these Jobs. 
+
+You can also submit a TensorBoard Job via the user interface. In which case, instead of `portforward` you will need to select a different service type. If the URL to the TensorBoard job includes a path, you may need to use the TensorBoard flag `--path_prefix`. For example, if your access point is [acme.com/tensorboard1](http://localhost) add  `--path_prefix tensorboard1`.
