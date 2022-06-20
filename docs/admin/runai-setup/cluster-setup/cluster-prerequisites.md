@@ -77,7 +77,7 @@ An alternative method is to Install NVIDIA software on each node separately. Thi
  -->
 
 
-## Operating System
+### Operating System
 
 Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift).
 
