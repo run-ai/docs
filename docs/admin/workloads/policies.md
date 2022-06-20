@@ -39,8 +39,7 @@ spec:
       required: true
       min: "1"  # (2)
       max: "4"  
-    value: 
-      value: "1"
+    value: "1"
 ```
 
 1. Set the Project namespace here
