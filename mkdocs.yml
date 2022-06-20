@@ -199,6 +199,7 @@ nav:
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
+      - 'Argo Workflows'  : 'admin/integration/argo-workflows.md'
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
