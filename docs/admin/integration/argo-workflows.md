@@ -10,7 +10,7 @@ This document describes the process of using Argo Workflows in conjunction with 
 Use the [default installation](https://argoproj.github.io/argo-workflows/quick-start/){target=_blank} to install Argo Workflows. As described in the documentation, open the Argo Workflows UI by running: 
 
 ```
-kubectl -n argo port-forward deployment/argo-server 2746:2746
+kubectl -n argo port-forward deployment/argo-workflows-server 2746:2746
 ```
 
 Then browse to [localhost:2746](http://localhost:2746/){target=_blank}
