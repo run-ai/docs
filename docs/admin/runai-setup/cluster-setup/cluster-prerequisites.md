@@ -97,17 +97,10 @@ To use the Run:ai inference module you must pre-install [Knative Serving](https:
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
 
 ```
-kubectl edit cm -n knative-serving config-features
-```
-
-Add `kubernetes.podspec-schedulername: enabled` to the `data` section as follows:
-
-``` YAML
-apiVersion: v1
-data:
-  kubernetes.podspec-schedulername: enabled
-  _example: |-
-  ...
+kubectl patch configmap/config-features \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled"}}'
 ```
 
 #### Inference Autoscaling
