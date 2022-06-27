@@ -46,14 +46,16 @@ Following is the list of published Run:ai Metrics
 | runai_node_used_memory_bytes                   |  {clusterId, node}                                                    | Bytes       | Used CPU memory per node     |
 | runai_project_guaranteed_gpus                  |  {clusterId, project}                                                 | Double      | Guaranteed GPU quota per project                                       |
 | runai_project_info                             |  {memory_quota, cpu_quota, gpu_guaranteed_quota, clusterId, project, department_name}  | N/A         | Information on CPU, CPU Memory, GPU quota per project                  |
-| runai_running_job_cpu_limit_cores              |  {clusterId, job_name , job_uuid}                                     | Double      | Jobs CPU limit (in number of cores). See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
+| runai_running_job_cpu_limit_cores              |  {clusterId, job_name , job_uuid}                                        | Double      | Jobs CPU limit (in number of cores). See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
 | runai_running_job_cpu_requested_cores          |  {clusterId, job_name, job_uuid}                                      | Double      | Jobs requested CPU cores. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)                                                                 |
 | runai_running_job_cpu_used_cores               |  {job_uuid, clusterId, job_name, project}                             | Double      | Jobs CPU usage (in number of cores)     |
 | runai_running_job_memory_limit_bytes           |  {clusterId, job_name, job_uuid}                                      | Bytes       | Jobs CPU Memory limit. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)       |
 | runai_running_job_memory_requested_bytes       |  {clusterId, job_name, job_uuid}                                      | Bytes       | Jobs requested CPU Memory. See [link](https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory)    |
 | runai_running_job_memory_used_bytes            |  {job_uuid, clusterId, job_name, project}                             | Bytes       | Jobs used CPU Memory          |
 | runai_mig_mode_gpu_count                       |  {clusterId, node}                                                    | Double      | Number of GPUs on MIG nodes          |
-| runai_job_swap_memory_used_bytes               |  {clusterId, job_uuid, job_name, project, node}                       | Bytes       | Used Swap CPU Memory for the job | 
+| runai_job_swap_memory_used_bytes               |  {clusterId, job_uuid, job_name, project, node}                          | Bytes       | Used Swap CPU Memory for the job | 
+| runai_deployment_rps                           |  {clusterId, namespace_name, deployment_name}                            | Number      | Deployment received HTTP requests per-second  | 
+| runai_deployment_request_latencies_bucket      |  {clusterId, namespace_name, deployment_name, le}                        | Number      | Deployment request latencies buckets | 
 
 
 Following is a list of labels appearing in Run:ai metrics:
@@ -65,17 +67,19 @@ Following is a list of labels appearing in Run:ai metrics:
 | cpu_quota              | CPU limit per project              |
 | gpu                    | GPU index                          |
 | gpu_guaranteed_quota   | Guaranteed GPU quota per project   |
-| image                  | Name of docker image                                       |
-| job_name               | Job name                                                   |
+| image                  | Name of docker image               |
+| namespace_name         | Namespace                          |
+| deployment_name        | Deployment name                    |
+| job_name               | Job name                           |
 | job_type               | Job type: training, interactive or inference               |
 | job_uuid               | Job identifier                     |
 | pod_name               | Pod name. A Job can contain many pods. |
 | pod_namespace          | Pod namespace                      |
 | memory_quota           | CPU memory limit per project       |
 | node                   | Node name                          |
-| project                | Name of Run:ai Project                                      |
+| project                | Name of Run:ai Project             |
 | status                 | Job status: Running, Pending, etc. For more information on Job statuses see [document](https://docs.run.ai/Researcher/scheduling/job-statuses/) |
-| user                   | User identifier                                            |
+| user                   | User identifier                    |
 
 
 ## Custom Run:ai Metrics
