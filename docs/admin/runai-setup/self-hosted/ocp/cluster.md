@@ -70,9 +70,11 @@ Run:
 
 === "Airgapped"
     ```
+    oc label ns runai openshift.io/cluster-monitoring=true
+    oc -n openshift-ingress-operator patch ingresscontroller/default --patch '{"spec":{"routeAdmission":{"namespaceOwnership":"InterNamespaceAllowed"}}}' --type=merge
+
     helm install runai-cluster -n runai  \ 
       runai-cluster-<version>.tgz -f runai-<cluster-name>.yaml  
-    oc label ns runai openshift.io/cluster-monitoring=true
     ```
 
 !!! Tip
