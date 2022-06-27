@@ -18,9 +18,9 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  * __Organization Name__: You must have a Run:ai _Organization Name_. This is the name that appears on the top right of the Run:ai user interface.
  * __Additional attribute mapping__: Configure your IdP to map several IdP attributes: 
 
- | IdP attribute              | Run:ai required name | Description       | 
-----------------------------|----------------|----------------------|--------------------|
- | User email                 | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:ai. |
+| IdP attribute              | Run:ai required name | Description          |  
+|----------------------------|----------------------|----------------------|
+| User email                 | email                | __(Mandatory)__  `e-mail` is the user identifier with Run:ai. |
  | User role groups    | GROUPS               | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
  | Linux User ID              | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. | 
  | Linux Group ID             | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
