@@ -113,7 +113,7 @@ Then, define the smtp server, in the “Email” tab, as described here:
 ![setup-smtp](img/setup-smtp.png)
 
 * An email account should be provided in order to send the “reset password” email.
-  If you have a two-factor authentication, then providing the password for the account won’t work, so you will need to create a new “App password”, as described here and use the generated token as the account password.
+  If you have a two-factor authentication, then providing the password for the account won’t work, so you will need to create a new “App password”, as described [here](https://support.google.com/mail/answer/185833?hl=en) and use the generated token as the account password.
 
 ## Next Steps
 
