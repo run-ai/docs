@@ -54,9 +54,8 @@ Following is the list of published Run:ai Metrics
 | runai_running_job_memory_used_bytes            |  {job_uuid, clusterId, job_name, project}                             | Bytes       | Jobs used CPU Memory          |
 | runai_mig_mode_gpu_count                       |  {clusterId, node}                                                    | Double      | Number of GPUs on MIG nodes          |
 | runai_job_swap_memory_used_bytes               |  {clusterId, job_uuid, job_name, project, node}                          | Bytes       | Used Swap CPU Memory for the job | 
-| runai_deployment_rps                           |  {clusterId, namespace_name, deployment_name}                            | Number      | Deployment received HTTP requests per-second  | 
-| runai_deployment_request_latencies_bucket      |  {clusterId, namespace_name, deployment_name, le}                        | Number      | Deployment request latencies buckets | 
-
+| runai_deployment_request_rate                  | {clusterId, namespace_name, deployment_name}                             | Number      | Rate of received HTTP requests per second
+| runai_deployment_request_latencies             | {clusterId, namespace_name, deployment_name, le}                         | Number      | Histogram of response time (bins are in milliseconds)
 
 Following is a list of labels appearing in Run:ai metrics:
 
