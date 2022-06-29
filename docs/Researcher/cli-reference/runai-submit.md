@@ -98,7 +98,7 @@ Use GPU Fractions
 
 Hyperparameter Optimization
 
-    runai submit --name hpo1 -i gcr.io/run-ai-demo/walkthrough-hpo -g 1  \
+    runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
         --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
 
 (see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
