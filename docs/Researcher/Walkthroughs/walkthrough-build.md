@@ -37,7 +37,7 @@ To complete this Quickstart you must have:
         runai config project team-a
         runai submit build1 -i ubuntu -g 1 --interactive -- sleep infinity
 
-*   The job is based on a sample docker image ``python``
+*   The job is based on a sample docker image ``ubuntu``
 *   We named the job _build1_.
 *   Note the _interactive_ flag which means the job will not have a start or end. It is the Researcher's responsibility to close the job. 
 *   The job is assigned to team-a with an allocation of a single GPU. 
