@@ -101,6 +101,20 @@ Go to: `runai.<company-name>`. Log in using the default credentials: User: `test
 
 Follow the [LDAP Integration](ldap-integration.md) instructions. -->
 
+## (Optional) Enable "Forgot password" feature
+
+In order to support the “Forgot password” functionality, follow the steps below.
+
+In your keycloak environment:
+Go to the “Realm settings” -> “Login” and enable the “Forgot password” feature
+![enable-forgot-password](img/enable-forgot-password.png)
+
+Then, define the smtp server, in the “Email” tab, as described here:
+![setup-smtp](img/setup-smtp.png)
+
+* An email account should be provided in order to send the “reset password” email.
+  If you have a two-factor authentication, then providing the password for the account won’t work, so you will need to create a new “App password”, as described here and use the generated token as the account password.
+
 ## Next Steps
 
 Continue with installing a [Run:ai Cluster](cluster.md).
