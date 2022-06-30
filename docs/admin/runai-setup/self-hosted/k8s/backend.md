@@ -104,7 +104,7 @@ In order to support the “Forgot password” functionality, follow the steps be
 
 * Go to `runai.<company-name>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
-* Under the `Email` tab, define an SMTP server, as shown [here](https://www.keycloak.org/docs/latest/server_admin/#_email)
+* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
 ## Next Steps
 
