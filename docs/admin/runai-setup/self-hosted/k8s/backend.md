@@ -104,11 +104,7 @@ In order to support the “Forgot password” functionality, follow the steps be
 
 * Go to `runai.<company-name>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
-![enable-forgot-password](img/enable-forgot-password.png)
-
-* Under the `Email` tab, define an SMTP server, as shown here:
-![setup-smtp](img/setup-smtp.png)
-* An email account should be provided in order to send the “reset password” email. If you have a two-factor authentication, then providing the password for the account would not work. This, you will need to create a new `App password`, as described [here](https://support.google.com/mail/answer/185833?hl=en) and use the generated token as the account password.
+* Under the `Email` tab, define an SMTP server, as shown [here](https://www.keycloak.org/docs/latest/server_admin/#_email)
 
 ## Next Steps
 
