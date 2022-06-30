@@ -96,10 +96,15 @@ Run the helm command below:
 ### Connect to Run:ai User Interface
 
 Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
-<!-- 
-### (Optional) LDAP Configuration
 
-Follow the [LDAP Integration](ldap-integration.md) instructions. -->
+
+## (Optional) Enable "Forgot password"
+
+In order to support the “Forgot password” functionality, follow the steps below.
+
+* Go to `runai.<company-name>/auth` and Log in. 
+* Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
+* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
 ## Next Steps
 
