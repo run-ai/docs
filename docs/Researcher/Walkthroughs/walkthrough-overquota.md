@@ -52,7 +52,8 @@ Run the following command:
 
 _a1_ is now going to start running again.
 
-Run: 
+Run:
+
     runai list jobs -A
 
 You have __two__ Jobs that are running on the first node and __one__ Job that is running alone the second node. 
