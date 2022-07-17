@@ -83,6 +83,7 @@ Run:
 
 ### Prometheus Adapter 
 The Prometheus adapter is required if you are using Inference workloads and require a custom metric for autoscaling. The following additional steps are required for it to work:
+
 1. Copy `prometheus-adapter-prometheus-config` and `serving-certs-ca-bundle` ConfigMaps from `openshift-monitoring` namespace to the `monitoring` namespace
 ```
 kubectl get cm prometheus-adapter-prometheus-config --namespace=openshift-monitoring -o yaml \
@@ -92,7 +93,7 @@ kubectl get cm serving-certs-ca-bundle --namespace=openshift-monitoring -o yaml 
   | sed 's/namespace: openshift-monitoring/namespace: monitoring/' \
   | kubectl create -f -
 ```
-2. Allow Prometheus Adapter serviceaccount to create SecurityContext with RunAsUser 10001:
+2. Allow Prometheus Adapter `serviceaccount` to create a `SecurityContext` with RunAsUser 10001:
 ```
 oc adm policy add-scc-to-user anyuid system:serviceaccount:monitoring:runai-cluster-prometheus-adapter
 ```
