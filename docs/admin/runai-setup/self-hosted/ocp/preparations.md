@@ -11,7 +11,7 @@ The following section provides IT with the information needed to prepare for a R
 ## Create OpenShift Projects
 
 Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
-The project `gpu-operator` is used by the _GPU Opeator_ dependency described above. 
+The project `gpu-operator` is used by the _GPU Operator_ dependency described above. 
 
 ```
 oc new-project runai
@@ -98,7 +98,7 @@ To avoid single-point-of-failure issues, we recommend assigning more than one no
 
 Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs. 
 NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/introduction.html){target=_blank}. 
-Follow the instructions to install the two operators _Node Feature Discovery_ and _NVIDIA GPU Operator_ from the OpenShift web console. 
+Follow the instructions to install the two operators `Node Feature Discovery` and `NVIDIA GPU Operator` from the OpenShift web console. 
 
 When done, verify that the GPU Operator is installed by running:
 

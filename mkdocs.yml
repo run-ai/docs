@@ -137,7 +137,7 @@ nav:
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
           - 'Prerequisites' : 'admin/runai-setup/self-hosted/k8s/prerequisites.md'
-          - 'Preperations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
+          - 'Preparations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/k8s/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/k8s/cluster.md'
           - 'Configure Web Interfaces' : 'admin/runai-setup/self-hosted/k8s/ui.md'
@@ -147,7 +147,7 @@ nav:
           - 'Uninstall' : 'admin/runai-setup/self-hosted/k8s/uninstall.md'
         - 'OpenShift-based' :
           - 'Prerequisites' : 'admin/runai-setup/self-hosted/ocp/prerequisites.md'
-          - 'Preperations' : 'admin/runai-setup/self-hosted/ocp/preparations.md'
+          - 'Preparations' : 'admin/runai-setup/self-hosted/ocp/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/ocp/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/ocp/cluster.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/ocp/project-management.md'
