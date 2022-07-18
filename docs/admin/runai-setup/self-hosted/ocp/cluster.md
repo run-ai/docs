@@ -81,6 +81,14 @@ Run:
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster](../../../config/access-roles/) access roles](../../../config/access-roles/).
 
 
+### Connect Run:ai to GPU Operator
+
+Locate the name of the GPU operator namespace and run:
+
+```
+kubectl patch RunaiConfig runai -n runai -p '{"spec": {"global": {"nvidiaDcgmExporter": {"namespace": "INSERT_NAMESPACE_HERE"}}}}' --type="merge"
+```
+
 ### (Optional) Prometheus Adapter 
 The Prometheus adapter is required if you are using Inference workloads and require a custom metric for autoscaling. The following additional steps are required for it to work:
 
