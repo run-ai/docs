@@ -11,13 +11,11 @@ The following section provides IT with the information needed to prepare for a R
 ## Create OpenShift Projects
 
 Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
-The project `gpu-operator` is used by the _GPU Operator_ dependency described above. 
 
 ```
 oc new-project runai
 oc new-project runai-reservation
 oc new-project runai-backend
-oc new-project gpu-operator-resources
 ```
 
 ## Prepare Run:ai Installation Artifacts
@@ -32,7 +30,6 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
 
     ```
     oc apply -f runai-gcr-secret.yaml -n runai-backend
-    oc apply -f runai-gcr-secret.yaml -n gpu-operator-resources
     ```
 
 === "Airgapped" 
@@ -103,9 +100,10 @@ Follow the instructions to install the two operators `Node Feature Discovery` an
 When done, verify that the GPU Operator is installed by running:
 
 ```
-oc get pods -n gpu-operator
+oc get pods -n nvidia-gpu-operator
 ```
 
+(the GPU Operator namespace may differ in different operator versions).
 
 ??? "Run:ai 2.3 or earlier"
 
