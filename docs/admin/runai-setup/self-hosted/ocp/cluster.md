@@ -31,7 +31,7 @@ data:
         prometheus: ""
         prometheus_replica: ""
 ```
-For `<CLUSTER_ID>` use the `Cluster UUID` field as shows in the Run:ai user interface under the `Clusters` area.  
+For `<CLUSTER_ID>` use the `Cluster UUID` field as shown in the Run:ai user interface under the `Clusters` area.  
 
 ## Cluster Installation
 
@@ -78,10 +78,10 @@ Run:
     ```
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see: [Understanding cluster access roles](../../../config/access-roles/).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster](../../../config/access-roles/) access roles](../../../config/access-roles/).
 
 
-### Prometheus Adapter 
+### (Optional) Prometheus Adapter 
 The Prometheus adapter is required if you are using Inference workloads and require a custom metric for autoscaling. The following additional steps are required for it to work:
 
 1. Copy `prometheus-adapter-prometheus-config` and `serving-certs-ca-bundle` ConfigMaps from `openshift-monitoring` namespace to the `monitoring` namespace

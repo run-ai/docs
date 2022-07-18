@@ -60,7 +60,7 @@ oc label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
 !!! Important Note
     This option is less recommended due to the resulting high maintenance overhead, as described below. 
 
-* When [setting up Run:ai cluster](cluster.md), Disable assigning of access to Run:ai services by setting the flag  `createRoleBindings` to `false`.
+* When [setting up Run:ai cluster](cluster.md), Disable assigning of access to Run:ai services by setting the flag `createRoleBindings` to `false`.
 
 
  When these settings are applied, the administrator must perform additional manual steps as follows:
@@ -99,7 +99,7 @@ The following process requires a `<user-id>`. To map the User to its ID, you nee
 
 #### Viewer Role
 
-To add a User to a __all projects__ as a Viewer run: 
+To add a User to __all projects__ as a Viewer run: 
 
 ```
 oc edit clusterrolebinding runai-job-viewer-manual

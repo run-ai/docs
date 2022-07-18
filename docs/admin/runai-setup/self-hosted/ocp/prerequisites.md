@@ -58,7 +58,7 @@ The machine running the installation script (typically the Kubernetes master) mu
 
 ## Pre-install Script
 
-Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
 
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
 * Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation. 
