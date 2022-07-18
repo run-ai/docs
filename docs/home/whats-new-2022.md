@@ -1,8 +1,8 @@
-# July 2022 Run:ai Version 2.7 (Cloud update only)
+<!-- # July 2022 Run:ai Version 2.7 (Cloud update only)
 
 * New Audit Log API
 * Last login indication now showing at the bottom left of the screen for single-sign-on users as well. 
-* Tensorboard support
+* Tensorboard support -->
 
 ** grafana-self-hosted in the backend values file ZZZZZ
 
