@@ -2,6 +2,8 @@
 
 * New [Audit Log API](../admin/runai-setup/maintenance/audit-log.md) is now available. The _last login_ indication is now showing at the bottom left of the screen for single-sign-on users as well as regular users. 
 * Built-in [Tensorboard support](../Researcher/tools/dev-tensorboard.md) in the Run:ai user interface.
+* You can now submit a Job and allocate [Extended Kubernetes Resources](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#extended-resources){target=_blank}. Extended resources relate to third-party devices that you want to allocate to your Job. The third-party has extended Kubernetes using a [Device Plugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){target=_blank}. Run:ai now allows the allocation of these resources via the Run:ai user interface Job form as well as the Run:ai Workload API. 
+* You can now submit a job with additional [Linux Capabilities](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-capabilities-for-a-container){target=_blank}. Linux capabilities allow the researcher to give the Job additional permissions without actually giving the Job root access to the node. Run:ai allows adding such capabilities to the Job via the Run:ai user interface Job form as well as the Run:ai Workload API.  
 
 
 ## June 2022 Run:ai Version 2.6 (Cloud update only)
