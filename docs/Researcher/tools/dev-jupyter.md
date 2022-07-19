@@ -5,6 +5,19 @@ A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web a
 This document is about accessing the remote container created by Run:ai via such a notebook. Alternatively, Run:ai provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:ai](../../admin/integration/jupyterhub.md).
 
 
+## Submit a Jupyter Notebook Workload
+
+There are two ways to submit a Jupyter Notebook Job: via the Command-line interface or the user interface
+
+## Submit via the User interface
+
+* Within the user interface go to the Job list.
+* Select `New Job` on the top right.
+* Select `Interactive` at the top. 
+* Add an image that supports Jupyter Notebook. For example `jupyter/scipy-notebook`.
+* Select the `Jupyter Notebook` button.
+
+Submit the Job. When running, select the job and press `Connect` on the top right.
 
 
 ## Submit a Workload

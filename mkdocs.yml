@@ -171,6 +171,7 @@ nav:
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'
+        - 'Audit Log' : 'admin/runai-setup/maintenance/audit-log.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'

@@ -1,5 +1,5 @@
 # Connecting to TensorBoard
-
+ 
 Once you launch a Deep Learning workload using Run:ai, you may want to view its progress. A popular tool for viewing progress is [TensorBoard](https://www.tensorflow.org/tensorboard){target=_blank}.
 
 The document below explains how to use TensorBoard to view the progress or a Run:ai Job.
@@ -37,7 +37,23 @@ runai submit train-with-logs -i tensorflow/tensorflow:1.14.0-gpu-py3 \
 Note the volume flag (`-v`) and working directory flag (`--working-dir`). The logs directory will be created on `/mnt/nfs_share/john/logs/fit`.
 
 
-## Submit a TensorBoard Job
+## Submit a TensorBoard Workload
+
+There are two ways to submit a TensorBoard Workload: via the Command-line interface or the user interface
+
+## Submit via the User interface
+
+* Within the user interface go to the Job list.
+* Select `New Job` on the top right.
+* Select `Interactive` at the top. 
+* Add an image that supports TensorBoard. For example: `tensorflow/tensorflow:latest`.
+* Select the `TensorBoard` button.
+* Add a mounted volume on which TensorBoard logs exist. The example above uses `/mnt/nfs_share/john`. Map to `/mydir`
+* Add `/mydir` to the `TensorBoard Logs Directory`. 
+
+Submit the Job. When running, select the job and press `Connect` on the top right.
+
+## Submit via the Command-line interface
 
 Run the following:
 
