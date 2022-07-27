@@ -7,7 +7,8 @@ Following are a set of tests to run to determine cluster health:
 
 Log in to `<company-name>.run.ai/dashboards/now`.
 
-* Verify that all metrics in the overview dashboard are showing. Specifically the list of nodes and the numeric indicators
+* Verify that all metrics in the overview dashboard are showing. 
+* Verify that all metrics are showing in the Nodes view. 
 * Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
 
 
@@ -17,10 +18,10 @@ Run:
 
 ```
 kubectl get pods -n runai
+kubectl get pods -n monitoring
+kibectl get pods -n cert-manager
 ```
-
-* Verify that all pods are in `Running` status and in a ready state (1/1 or similar)
-* Identify the `runai-db-0` and `runai-agent-<id>` pods. Run: `kubectl logs -n runai <pod name>` and verify that there are no errors.
+Verify that all pods are in `Running` status and in a ready state (1/1 or similar)
 
 Run:
 
@@ -39,14 +40,6 @@ kubectl get daemonset -n runai
 A _Daemonset_ runs on every node. Some of the Run:ai daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the _desired_ number is equal to  _current_ and to _ready_. 
 
 
-Run:
-
-```
-runai list projects
-```
-
-Create a Project using the Run:ai user interface and verify that the Project is reflected in the above command. 
-
 ### 3. Submit a Job
 
 Submitting a Job will allow you to verify that the Run:ai scheduling service is in order. 
@@ -59,7 +52,7 @@ runai config project <project-name>
 runai submit -i gcr.io/run-ai-demo/quickstart -g 1
 ```
 
-* Verify that the Job is a _Running_ state when running: 
+* Verify that the Job is in a _Running_ state by running: 
 
 ```
 runai list jobs
@@ -128,9 +121,9 @@ kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
       -n runai -f --tail 100
 ```
 
-Verify that there are no errors. If there are connectivity related errors you may need to:
+Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-* Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
+* Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](cluster-prerequisites.md#network-requirements.md).
 * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
@@ -166,9 +159,9 @@ See if the agent is in _Running_ state. Select the agent's full name and run:
 
       kubectl logs -n runai runai-agent-<id>
 
-Verify that there are no errors. If there are connectivity related errors you may need to:
+Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-* Check your firewall for outbound connections. See the required permitted URL list in: [Network requirements](cluster-prerequisites.md#network-requirements.md).
+* Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](cluster-prerequisites.md#network-requirements.md).
 * If you need to setup an internet proxy or certificate, please contact Run:ai customer support. 
 
 
