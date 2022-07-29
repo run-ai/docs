@@ -6,8 +6,8 @@ Organizations typically want to automatically highlight critical issues and esca
 
 Run:ai is comprised of two parts:
 
-* A control plane part, The control-plane (or 'backend'):
-  * Typically resides on the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. 
+* A control plane part:
+  * Typically resides in the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. 
   * In _Self-hosted_ installations of Run:ai is installed on-prem.
 * One or more _GPU Clusters_. 
 

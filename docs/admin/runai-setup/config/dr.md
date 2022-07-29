@@ -22,12 +22,12 @@ Run:ai stores metric history using [Thanos](https://github.com/thanos-io/thanos)
 
 ### Additional Configuration
 
-During the installation of Run:ai you have created two value files, 
+During the installation of Run:ai you have created two value files:
 
-* one for the Run:ai control plane (also called 'backend'). See [kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md),
-*  and one for the cluster (see [kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). 
+* One for the Run:ai control plane. See [kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md),
+* One for the cluster (see [kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). 
 
-You will want to save these files, or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
+You will want to save these files or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
 
 ## Recovery
 
