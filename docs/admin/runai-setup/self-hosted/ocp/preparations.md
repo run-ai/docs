@@ -6,8 +6,6 @@ title: Self Hosted installation over OpenShift - Preparations
 The following section provides IT with the information needed to prepare for a Run:ai installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
 
 
-
-
 ## Create OpenShift Projects
 
 Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
@@ -40,21 +38,6 @@ SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the clu
     tar xvf runai-<version>.tar.gz
     cd deploy
     ```
-
-    Upload images to Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
-
-    ```
-    export REGISTRY_URL=<Docker Registry address>
-    ```
-    
-    Run the following script (you must have at least 20GB of free disk space to run): 
-
-    ```  
-    sudo -E ./prepare_installation.sh
-    ```
-
-    (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
-
 ### Run:ai Administration CLI
 
 === "Connected"

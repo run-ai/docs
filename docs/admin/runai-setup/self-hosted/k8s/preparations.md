@@ -17,7 +17,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 === "Connected"
     Run the following to enable image download from the Run:ai Container Registry on Google cloud:
 
-    ```
+    ``` bash
     kubectl create namespace runai-backend
     kubectl apply -f runai-gcr-secret.yaml
     ```
@@ -25,26 +25,13 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 === "Airgapped" 
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
-    ```
+    ``` bash
     tar xvf runai-<version>.tar.gz
     cd deploy
-    ```
-    Upload images to Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
 
-    ```
-    export REGISTRY_URL=<Docker Registry address>
-    ```
-    
-    Run the following script (you must have at least 20GB of free disk space to run): 
-
-    ```  
     kubectl create namespace runai-backend
-
-    sudo -E ./prepare_installation.sh
     ```
-
-    (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
-
+ 
 
 ### Run:ai Administration CLI
 
@@ -52,7 +39,12 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
 
 === "Airgapped" 
-    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
+    Use the Run:ai Administrator Command-line Interface located in the `deploy` folder. To allow running the binary, run: 
+    
+    ```
+    chmod +x runai-adm
+    ``` 
+    
 
 
 ## Install Helm

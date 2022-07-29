@@ -25,7 +25,23 @@ Run: `oc login`. Then create a configuration file to install the Run:ai control 
 A file called `runai-backend-values.yaml` will be created.
 
 
-## Install the Control Plane (Backend)
+## Upload images (Airgapped only)
+
+Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+
+```
+export REGISTRY_URL=<Docker Registry address>
+```
+
+Run the following script (you must have at least 20GB of free disk space to run): 
+
+```  
+sudo -E ./prepare_installation.sh
+```
+
+(If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
+
+## Install the Control Plane
 
 Run the helm command below:
 
