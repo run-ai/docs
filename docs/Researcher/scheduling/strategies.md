@@ -25,12 +25,12 @@ For example, if we have 2 GPUs in a single node on the cluster, and 2 tasks requ
 
 There are disadvantages to bin-packing: 
 
-* Within a single GPU, two fractional Jobs compete for the same onboard CPUs. 
-* Within a single node, two Jobs compete for networking resources. 
+* Within a single GPU, two fractional Jobs compete for the same onboard compute power. 
+* Within a single node, two Jobs (even on separate GPUs) compete for networking resources, compute power and memory. 
 
-When there are more resources available than requested, it sometimes makes sense to spread Jobs amongst nodes and GPUs, to allow higher utilization of CPU and network resources. 
+When there are more resources available than requested, it sometimes makes sense to spread Jobs amongst nodes and GPUs, to allow higher utilization of computing resources and network resources. 
 
-Returning to the example above, if we have 2 GPUs in a single node on the cluster, and 2 Jobs requiring 0.5 GPUs each, using spread scheduling we would place each Job on a separate GPU, allowing both to benefit from CPU computing power of a full GPU.
+Returning to the example above, if we have 2 GPUs in a single node on the cluster, and 2 Jobs requiring 0.5 GPUs each, using spread scheduling we would place each Job on a separate GPU, allowing both to benefit from the computing power of a full GPU.
 
 ## Changing Scheduler Strategy
 
