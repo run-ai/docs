@@ -2,11 +2,11 @@
 
 ## Introduction
 
-When the Run:ai scheduler schedules Jobs, it has to alternate _placement strategies_:
+When the Run:ai scheduler schedules Jobs, it can use two alternate _placement strategies_:
 
 | Strategy    | Description | 
 |-------------|-------------|
-| Bin Packing | Fill up a GPUs and fill up a node before moving on to the next one | 
+| Bin Packing | Fill up a GPU and/or a node before moving on to the next one | 
 | Spreading   | Equally spread Jobs amongst GPUs and nodes | 
 
 
@@ -17,7 +17,7 @@ Bin packing is the default strategy. With bin packing, the scheduler tries to:
 * Fill up a node with Jobs before allocating Jobs to second and third nodes.
 * In a multi GPU node, when using [fractions](fractions.md), fill up a GPU before allocating Jobs to a second GPU. 
 
-The advantage of this strategy is that it provides an optimum in the sense that the scheduler can package more Jobs into a cluster. The strategy minimizes fragmentation. 
+The advantage of this strategy is that the scheduler, over time, can package more Jobs into the cluster. As the strategy minimizes fragmentation. 
 
 For example, if we have 2 GPUs in a single node on the cluster, and 2 tasks requiring 0.5 GPUs each, using bin-packing, we would place both Jobs on the same GPU and remain with a full GPU ready for the next Job. 
 
