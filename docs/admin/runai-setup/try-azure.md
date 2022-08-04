@@ -1,6 +1,6 @@
-## Try Run:ai on Azure Cloud
+# Try Run:ai on Azure Cloud
 
-You can try Run:ai by starting a virtual machine on Azure. This option is currently limited to a single GPU node. To install a cluster with multiple nodes or for running a formal pilot with Run:ai, use [Cluster Installation](cluster-setup/cluster-install.md)
+You can try Run:ai by starting a virtual machine on Azure. This option is currently limited to a single GPU node. To install a cluster with multiple nodes or for running a formal pilot with Run:ai, use [Cluster Installation](cluster-setup/cluster-install.md).
 
 
 ## Prerequisites
@@ -23,6 +23,9 @@ export RUNAI_CLIENTID=<client-id>
 export RUNAI_SECRET=<secret>
 ```
 * Create the machine.
-* Go to `https://<tenant-name>.run.ai`. Use credentials provided by Run:ai support.
 
-After ~10 minutes you should have a full working Run:ai cluster
+## Use Run:ai
+
+Go to `https://<tenant-name>.run.ai`. Use credentials provided by Run:ai support.
+
+After ~10 minutes you should have a full working Run:ai cluster.
