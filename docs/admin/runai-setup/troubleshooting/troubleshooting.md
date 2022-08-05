@@ -13,34 +13,11 @@
     * Internal clock is not synced.
     * Prometheus pods are not running
 
-
-
     __Firewall issues__
 
-    Add verbosity to Prometheus by editing RunaiConfig:
+    Add verbosity to Prometheus as describe [here](diagnostics.md).Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-    ```
-    kubectl edit runaiconfig runai -n runai
-    ```
-
-    Add a `debug` log level:
-
-    ``` YAML
-    prometheus-operator:
-      prometheus:
-        prometheusSpec:
-          logLevel: debug
-    ```
-
-    Run:
-    ``` 
-    kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
-          -n monitoring -f --tail 100
-    ```
-
-    Verify that there are no errors. If there are connectivity-related errors you may need to:
-
-    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](cluster-prerequisites.md#network-requirements.md).
+    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements.md).
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
@@ -80,7 +57,7 @@
     * Use the default operator values to install 1 through 6.
     * If the NVIDIA Drivers (#1 above) are already installed on each node, use the operator with a flag that disables drivers install. 
     
-    For more information see [Cluster prerequisites](cluster-prerequisites.md#nvidia).
+    For more information see [Cluster prerequisites](../cluster-setup/cluster-prerequisites.md#nvidia).
 
     __NVIDIA GPU Operator__
 
@@ -102,7 +79,7 @@
 
     __NVIDIA DCGM Exporter__
 
-    View the logs of the DCGM exporter and verify that there are no errors porhibiting the sending of metrics. 
+    View the logs of the DCGM exporter and verify that there are no errors prohibiting the sending of metrics. 
 
 
 
@@ -131,7 +108,7 @@
 ??? "Single-sign-on issues"
     For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../authentication/sso.md#troubleshooting) configuration document. 
 
-## Submit Jobs from User Interface
+## Issues when Submitting Jobs from User Interface
 
 ??? "New Job button is greyed out"
     __Symptom:__ The `New Job` button on the top right of the Job list is grayed out.
@@ -161,111 +138,114 @@
 
 
 ??? "Submit form is distorted"
-    __Symptom:__ xxx
+    __Symptom:__ Submit form is showing vertical lines.
+
+    __Root Cause:__ The control plane does not know the cluster URL.
+
+    Using the Run:ai user interface, go to the Clusters list. See that there is no cluster URL next to your cluster.
+
+    __Resolution:__ Cluster must be re-installed. 
+
 
 ??? "Submit form is not showing after pressing Create Job button"
-    __Symptom:__ xxx
+    __Symptom:__ (SaaS only) Submit form now showing and under Chrome developer tools you see that all network calls with `/workload` return an error. 
+
+    __Root Cause:__ Multiple network-related issues.
+
+    __Resolution:__ 
+
+    * Incorrect cluster IP
+    * Cluster certificate has not been created. 
+        * Run: `kubectl get certificate -n runai`. Verify that all 3 entries are of status `Ready`.
+        * Run: `kubectl get pods -n cert-manager and verify that all pods are Running.
+
 
 ??? "Submit form does not show the list of Projects"
-    __Symptom:__ xxx
+    __Symptom:__ When connected with Single-sign-on, in the Submit form, the list of Projects is empty.
 
-## Symptom: Projects are not syncing
+    __Root Cause:__  SSO is on and researcher authentication is not properly configured as such.
 
-Create a Project on the Run:ai user interface, then run: `runai list projects`. The new Project does __not__ appear.
-
- __Typical root cause:__ The Run:ai _agent_ is not syncing properly. This may be due to:
-
- * A dependency on the internal Run:ai database. See [separate](#symptom-internal-database-has-not-started) symptom below
- * Firewall issues
-
-Run:
-
-      runai pods -n runai | grep agent
-
-See if the agent is in _Running_ state. Select the agent's full name and run:
-
-      kubectl logs -n runai runai-agent-<id>
-
-Verify that there are no errors. If there are connectivity-related errors you may need to:
-
-* Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements.md).
-* If you need to setup an internet proxy or certificate, please contact Run:ai customer support. 
+    __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../authentication/researcher-authentication.md).
 
 
 
+## Networking Issues
 
-## Symptom: Cluster Installation failed on Rancher-based Kubernetes (RKE)
+??? "'admission controller' connectivity issue"
+    __Symptoms:__
 
-Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started
+    * Pods are failing with 'admission controller' connectivity issues
+    * The command-line `runai submit` fails with an 'admission controller' connectivity issue.
+    * Agent or cluster sync pods are crashing in self-hosted installation.
 
-__Resolution__
+    __Root cause:__ Connectivity issues between different nodes in the cluster
 
-During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+    __Resolution:__
 
-``` YAML
-services:
-  kube-controller:
-    extra_args:
-      cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
-      cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
-```
-
-For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
-
-## Symptom: Jobs fail with ContainerCannotRun status 
-
-When running `runai list jobs`, your Workload has a status of `ContainerCannotRun`.
-
-__Resolution__
-
-The issue may be caused due to an unattended upgrade of the NVIDIA driver.
-
-To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
-
-To fix: reboot the node on which the Job attempted to run.
-
-Going forward, we recommend blacklisting NVIDIA driver from unattended upgrades.  
-You can do that by editing `/etc/apt/apt.conf.d/50unattended-upgrades`, and adding `nvidia-driver-` to the `Unattended-Upgrade::Package-Blacklist` section.  
-It should look something like that:
-
-``` CONF
-Unattended-Upgrade::Package-Blacklist {
-    // The following matches all packages starting with linux-
-//  "linux-";
-    "nvidia-driver-";
-```
-
-## Diagnostic Tools
-
-### Adding Verbosity to Database container
-
-Run:
-
-```
-kubectl edit runaiconfig runai -n runai
-```
-
-Under `spec`, add: 
-
-``` YAML
-spec:
-  postgresql:
-    image:
-      debug: true
-```
-
-Then view the log by running:
-
-```
-kubectl logs -n runai runa-db-0 
-```
+    * Run the [preinstall script](../cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
+    * Run `kubectl get nodes`. Check that all nodes are ready and connected
+    * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
+    * See if pods from different nodes have trouble communicating with each other
+    * Advanced: Run `kubectl exec <>` from a pod in one node and ping a pod from another. 
 
 
-### Internal Networking Issues
+??? "Projects are not syncing"
+    __Symptom:__ Create a Project on the Run:ai user interface, then run: `runai list projects`. The new Project does __not__ appear.
 
-Run:ai is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a Pod with networking utilities and use it for network resolution:
+    __Root cause:__ The Run:ai _agent_ is not syncing properly. This may be due to firewall issues. 
+    
+    __Resolution__
+    Run:
 
-```
-kubectl run -i --tty netutils --image=dersimn/netutils -- bash
-```
+    `runai pods -n runai | grep agent`
 
+    See if the agent is in _Running_ state. Select the agent's full name and run:
+
+        kubectl logs -n runai runai-agent-<id>
+
+    Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements.md).
+    
+    * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
+
+
+
+## Job-related Issues
+
+??? "Jobs fail with ContainerCannotRun status "
+    __Symptom:__ When running `runai list jobs`, your Job has a status of `ContainerCannotRun`.
+
+    __Root Cause:__ The issue may be caused due to an unattended upgrade of the NVIDIA driver.
+
+    To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
+
+    __Resolution:__ Reboot the node on which the Job attempted to run.
+
+    Going forward, we recommend blacklisting NVIDIA driver from unattended-upgrades.  
+    You can do that by editing `/etc/apt/apt.conf.d/50unattended-upgrades`, and adding `nvidia-driver-` to the `Unattended-Upgrade::Package-Blacklist` section.  
+    It should look something like that:
+
+    ``` CONF
+    Unattended-Upgrade::Package-Blacklist {
+        // The following matches all packages starting with linux-
+        //  "linux-";
+        "nvidia-driver-";
+    ```
+
+## Kubernetes-specific Issues
+
+??? "Cluster Installation failed on Rancher-based Kubernetes (RKE)"
+    __Symptom:__ Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started.
+
+    __Resolution:__
+
+    During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+
+    ``` YAML
+    services:
+    kube-controller:
+        extra_args:
+        cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
+        cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
+    ```
+
+    For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.

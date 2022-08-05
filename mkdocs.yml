@@ -69,7 +69,6 @@ plugins:
         'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         'Administrator/Cluster-Setup/cluster-prerequisites.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'Administrator/Cluster-Setup/cluster-setup-intro.md' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
-        'Administrator/Cluster-Setup/cluster-troubleshooting.md' : 'admin/runai-setup/cluster-setup/cluster-troubleshooting.md'
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         'Administrator/Cluster-Setup/install-k8s.md' : 'admin/runai-setup/cluster-setup/install-k8s.md'
@@ -77,11 +76,7 @@ plugins:
         'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
         'Administrator/Cluster-Setup/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
         'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
-        'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
-#        'Administrator/Cluster-Setup/proxy-server.md' : 'admin/runai-setup/cluster-setup/proxy-server.md'
-        'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
         'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
-        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
         'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
@@ -110,6 +105,10 @@ plugins:
         'admin/runai-setup/advanced/monitoring.md' : 'admin/runai-setup/maintenance/monitoring.md'
         'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
         'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
+        'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/runai-setup/troubleshooting/troubleshooting.md'
+        'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
+        'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
+        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
 
 nav:
   - Home: 
@@ -123,6 +122,7 @@ nav:
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
+#      - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
@@ -132,7 +132,6 @@ nav:
         - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
         - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'    
-        - 'Troubleshooting' : 'admin/runai-setup/cluster-setup/cluster-troubleshooting.md'
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
@@ -168,6 +167,10 @@ nav:
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
+      - 'Troubleshooting' : 
+        - 'Cluster Health' : 'admin/runai-setup/troubleshooting/cluster-health-check.md'
+        - 'Troubleshooting' : 'admin/runai-setup/troubleshooting/troubleshooting.md'
+        - 'Diagnostics' : 'admin/runai-setup/troubleshooting/diagnostics.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'

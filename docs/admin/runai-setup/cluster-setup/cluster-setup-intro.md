@@ -13,14 +13,14 @@ For additional details see the [Run:ai system components](../../../home/componen
 ## Documents
 
 * Review Run:ai cluster [prerequisites](cluster-prerequisites.md).
-* Step by step [installation instructions](cluster-install.md).
-* Look for [troubleshooting](cluster-troubleshooting.md) tips if required.
+* Step-by-step [installation instructions](cluster-install.md).
+* Look for [troubleshooting](../troubleshooting/troubleshooting.md) tips if required.
 * [Upgrade cluster](cluster-upgrade.md) and [delete cluster](cluster-delete.md) instructions. 
 
 
 ## Customization
 
-For a list of optional setup customizations see [Customize Installation](customize-cluster-install.md)
+For a list of optional customizations see [Customize Installation](customize-cluster-install.md)
 
 ## Additional Configuration
 
