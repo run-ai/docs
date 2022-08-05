@@ -5,13 +5,13 @@
 
 ??? "No Metrics are showing on Dashboard"
 
-    __Symptom__: No metrics are not showing in `<company-name>.run.ai/dashboards/now`
+    __Symptom__: No metrics are not showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
 
     __Typical root causes:__
 
     * Firewall-related issues.
     * Internal clock is not synced.
-    * Prometheus pods are not running
+    * Prometheus pods are not running.
 
     __Firewall issues__
 
@@ -39,7 +39,7 @@
 ??? "GPU Relates metrics not showing"
     __Symptom:__ GPU-related metrics such as `GPU Nodes` and `Total GPUs` are showing zero but other metrics, such as `Cluster load` are shown.
 
-    __Root cause:__ An installation issue relating to the NVIDIA stack.
+    __Root cause:__ An installation issue related to the NVIDIA stack.
 
     __Resolution:__ 
 
@@ -52,10 +52,10 @@
     5. NVIDIA Device plug-in (Exposes GPUs to Kubernetes)
     6. NVIDIA DCGM Exporter (Exposes metrics from GPUs in Kubernetes)
 
-    Run:ai requires the NVIDIA GPU Operator which installs the entire stack. However, there are two alternative methods to use the operator:
+    Run:ai requires the installation of the NVIDIA GPU Operator which installs the entire stack above. However, there are two alternative methods for using the operator:
 
     * Use the default operator values to install 1 through 6.
-    * If the NVIDIA Drivers (#1 above) are already installed on each node, use the operator with a flag that disables drivers install. 
+    * If  NVIDIA Drivers (#1 above) are already installed on __all__ nodes, use the operator with a flag that disables drivers install. 
     
     For more information see [Cluster prerequisites](../cluster-setup/cluster-prerequisites.md#nvidia).
 
@@ -65,7 +65,7 @@
 
     __Node and GPU feature discovery__
     
-    _Kubernetes Node feature discovery_ identifies and annotates nodes. _NVIDIA GPU Feature Discovery_ identifies and annotates GPU properties. See that: 
+    _Kubernetes Node feature discovery_ identifies and annotates nodes. _NVIDIA GPU Feature Discovery_ identifies and annotates nodes with GPU properties. See that: 
     
     * All such pods are up, 
     * The GPU feature discovery pod is available for every node with a GPU.
@@ -73,7 +73,7 @@
 
     __NVIDIA Drivers__
     
-    * If NVIDIA drivers are installed on the nodes themselves, ssh into each node and run `nvidia-smi`. Run `sudo systemctl status docker` and verify that docker is running. Run `nvidia-docker` and verify that it is installed and working.  Linux software upgrades may require a node restart.
+    * If NVIDIA drivers have been installed on the nodes themselves, ssh into each node and run `nvidia-smi`. Run `sudo systemctl status docker` and verify that docker is running. Run `nvidia-docker` and verify that it is installed and working.  Linux software upgrades may require a node restart.
     * If NVIDIA drivers are installed by the Operator, verify that the NVIDIA driver daemonset has created a pod for each node and that all nodes are running. Review the logs of all such pods. A typical problem may be the driver version which is too advanced for the GPU hardware. You can set the driver version via operator flags. 
 
 
@@ -174,8 +174,8 @@
 ??? "'admission controller' connectivity issue"
     __Symptoms:__
 
-    * Pods are failing with 'admission controller' connectivity issues
-    * The command-line `runai submit` fails with an 'admission controller' connectivity issue.
+    * Pods are failing with 'admission controller' connectivity errors.
+    * The command-line `runai submit` fails with an 'admission controller' connectivity error.
     * Agent or cluster sync pods are crashing in self-hosted installation.
 
     __Root cause:__ Connectivity issues between different nodes in the cluster
@@ -185,8 +185,8 @@
     * Run the [preinstall script](../cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
     * Run `kubectl get nodes`. Check that all nodes are ready and connected
     * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
-    * See if pods from different nodes have trouble communicating with each other
-    * Advanced: Run `kubectl exec <>` from a pod in one node and ping a pod from another. 
+    * See if pods from different nodes have trouble communicating with each other.
+    * Advanced: Run `kubectl exec <pod-name> -it /bin/sh` from a pod in one node and ping a pod from another. 
 
 
 ??? "Projects are not syncing"
@@ -195,18 +195,10 @@
     __Root cause:__ The Run:ai _agent_ is not syncing properly. This may be due to firewall issues. 
     
     __Resolution__
-    Run:
-
-    `runai pods -n runai | grep agent`
-
-    See if the agent is in _Running_ state. Select the agent's full name and run:
-
-        kubectl logs -n runai runai-agent-<id>
-
-    Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements.md).
     
+    * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`
+    * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
-
 
 
 ## Job-related Issues

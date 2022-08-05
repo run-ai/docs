@@ -1,6 +1,6 @@
 # Verifying Cluster Health
 
-Following is a set of tests to run to determine cluster health:
+Following is a set of tests which determine the Run:ai cluster health:
 
 ## Verify that data is sent to the cloud
 

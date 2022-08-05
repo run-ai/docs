@@ -27,7 +27,7 @@ Run:ai is based on Kubernetes. Kubernetes runs its own internal subnet with a se
 kubectl run -i --tty netutils --image=dersimn/netutils -- bash
 ```
 
-## Add verbosity to Prometheus
+## Add Verbosity to Prometheus
 
 Add verbosity to Prometheus by editing RunaiConfig:
 
@@ -44,7 +44,7 @@ prometheus-operator:
       logLevel: debug
 ```
 
-Run:
+To view logs, run:
 ``` 
 kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
       -n monitoring -f --tail 100
