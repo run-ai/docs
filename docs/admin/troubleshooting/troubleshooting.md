@@ -200,7 +200,13 @@
     * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
+??? "Jobs are not syncing"
+     __Symptom:__ A Job on the cluster (`runai list jobs`) does not show in the Run:ai user interface Job list 
 
+    __Root cause:__ The Run:ai __cluster-sync__ pod is not syncing properly.  
+    
+    __Resolution__: Search the cluster-sync pod for errors
+    
 ## Job-related Issues
 
 ??? "Jobs fail with ContainerCannotRun status "
