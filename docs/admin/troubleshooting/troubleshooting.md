@@ -108,7 +108,7 @@
 ??? "Single-sign-on issues"
     For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../runai-setup/authentication/sso.md#troubleshooting) configuration document. 
 
-## Issues when Submitting Jobs from User Interface
+## User Interface Submit Job Issues
 
 ??? "New Job button is grayed out"
     __Symptom:__ The `New Job` button on the top right of the Job list is grayed out.
