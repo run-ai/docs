@@ -100,7 +100,7 @@
 
     __Resolution:__ Please contact Run:ai customer support.
 
-## Log in and Authentication Issues
+##  Authentication Issues
 
 ??? "After a successful login, you are redirected to the same login page"
     For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
