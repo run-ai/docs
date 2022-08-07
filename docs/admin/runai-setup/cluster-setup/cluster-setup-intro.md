@@ -14,7 +14,7 @@ For additional details see the [Run:ai system components](../../../home/componen
 
 * Review Run:ai cluster [prerequisites](cluster-prerequisites.md).
 * Step-by-step [installation instructions](cluster-install.md).
-* Look for [troubleshooting](../troubleshooting/troubleshooting.md) tips if required.
+* Look for [troubleshooting](../../troubleshooting/troubleshooting.md) tips if required.
 * [Upgrade cluster](cluster-upgrade.md) and [delete cluster](cluster-delete.md) instructions. 
 
 

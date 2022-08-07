@@ -107,7 +107,7 @@ source <(runai completion bash)
 
 ## Troubleshoot the CLI Installation
 
-See [Troubleshooting a CLI installation](cli-troubleshooting.md)
+See [Troubleshooting a CLI installation](../troubleshooting/troubleshooting.md#command-line-interface-issues)
 
 ## Update the Run:ai CLI
 

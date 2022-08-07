@@ -7,7 +7,7 @@ You can try Run:ai by starting a virtual machine on Azure. This option is curren
 
 You will need:
 
-* An account in Azure with a quota for GPUs.
+* An account in Azure with a quota for GPUs. Run:ai will work with any modern GPU.
 * Tenant credentials and data, provided by Run:ai customer support. 
 
 

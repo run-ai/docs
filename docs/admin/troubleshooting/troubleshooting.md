@@ -17,7 +17,7 @@
 
     Add verbosity to Prometheus as describe [here](diagnostics.md).Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements.md).
+    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements.md).
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
@@ -57,7 +57,7 @@
     * Use the default operator values to install 1 through 6.
     * If  NVIDIA Drivers (#1 above) are already installed on __all__ nodes, use the operator with a flag that disables drivers install. 
     
-    For more information see [Cluster prerequisites](../cluster-setup/cluster-prerequisites.md#nvidia).
+    For more information see [Cluster prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#nvidia).
 
     __NVIDIA GPU Operator__
 
@@ -79,7 +79,7 @@
 
     __NVIDIA DCGM Exporter__
 
-    View the logs of the DCGM exporter and verify that there are no errors prohibiting the sending of metrics. 
+    View the logs of the DCGM exporter and verify that no errors are prohibiting the sending of metrics. 
 
 
 
@@ -103,10 +103,10 @@
 ## Log in and Authentication Issues
 
 ??? "After a successful login, you are redirected to the same login page"
-    For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
+    For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
 
 ??? "Single-sign-on issues"
-    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../authentication/sso.md#troubleshooting) configuration document. 
+    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../runai-setup/authentication/sso.md#troubleshooting) configuration document. 
 
 ## Issues when Submitting Jobs from User Interface
 
@@ -121,7 +121,7 @@
     __Resolution for 401 HTTP Error__
 
     * The Cluster certificate provided as part of the installation is valid and trusted (not self-signed).
-    * [Researcher Authentication](../authentication/researcher-authentication.md) has not been properly configured. Try running `runai login` from the Command-line interface. Alternatively, run: `kubectl get pods -n kube-system`, identify the api-server pod and review its logs. 
+    * [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) has not been properly configured. Try running `runai login` from the Command-line interface. Alternatively, run: `kubectl get pods -n kube-system`, identify the api-server pod and review its logs. 
 
     __Resolution for 403 HTTP Error__
 
@@ -165,7 +165,7 @@
 
     __Root Cause:__  SSO is on and researcher authentication is not properly configured as such.
 
-    __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../authentication/researcher-authentication.md).
+    __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../runai-setup/authentication/researcher-authentication.md).
 
 
 
@@ -182,7 +182,7 @@
 
     __Resolution:__
 
-    * Run the [preinstall script](../cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
+    * Run the [preinstall script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
     * Run `kubectl get nodes`. Check that all nodes are ready and connected
     * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
     * See if pods from different nodes have trouble communicating with each other.
@@ -197,7 +197,7 @@
     __Resolution__
     
     * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`
-    * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../cluster-setup/cluster-prerequisites.md#network-requirements). 
+    * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
@@ -241,3 +241,46 @@
     ```
 
     For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
+
+
+## Command-line interface Issues
+
+??? "Unable to install CLI due to certificate errors"
+    __Symmptom:__ The curl command and download button to download the CLI is not working.
+
+    __Root Cause:__ The cluster is not accessible from the download location
+
+    __Resolution:__ 
+    
+    Use alternate method for downloading the CLI. Run:
+
+    ``` bash
+    kubectl port-forward -n runai svc/researcher-service 4180:4180
+    ```
+
+    In another shell run
+    ```
+    wget --content-disposition http://localhost:4180/cli/linux
+    ```
+
+
+??? "When running the CLI you get an error: open .../.kube/config.lock: permission denied"
+
+    __Symptom:__ When running any CLI command you get a permission denied error.
+
+    __Root Cause:__ The user running the CLI does not have read permissions to the `.kube` directory.
+
+    __Resolution:__ Run: Change permissions for the directory.
+
+
+??? "When running 'runai logs', the logs are delayed"
+
+    __Symptom:__ Printouts from the container are not immediately shown in the log. 
+
+    __Root Cause:__ By default, Python buffers stdout and stderr, which is not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
+
+    __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
+
+??? "Version 2.4 or lower: Runai list jobs command works but runai submit does not"
+
+    __Resolution:__ Helm utility is not installed. See Run:ai CLI Installation documentation. 

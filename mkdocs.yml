@@ -84,7 +84,6 @@ plugins:
         'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
         'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
-        'Administrator/Researcher-Setup/cli-troubleshooting.md' : 'admin/researcher-setup/cli-troubleshooting.md'
         'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
         'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
         'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
@@ -105,10 +104,11 @@ plugins:
         'admin/runai-setup/advanced/monitoring.md' : 'admin/runai-setup/maintenance/monitoring.md'
         'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
         'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
-        'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/runai-setup/troubleshooting/troubleshooting.md'
+        'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
         'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
+        'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
 
 nav:
   - Home: 
@@ -167,10 +167,6 @@ nav:
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
-      - 'Troubleshooting' : 
-        - 'Cluster Health' : 'admin/runai-setup/troubleshooting/cluster-health-check.md'
-        - 'Troubleshooting' : 'admin/runai-setup/troubleshooting/troubleshooting.md'
-        - 'Diagnostics' : 'admin/runai-setup/troubleshooting/diagnostics.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'
@@ -178,7 +174,6 @@ nav:
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
-      - 'Troubleshooting' : 'admin/researcher-setup/cli-troubleshooting.md'
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
     - 'Workloads' : 
@@ -186,6 +181,10 @@ nav:
       - 'Policies' : 'admin/workloads/policies.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
+    - 'Troubleshooting' : 
+      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
+      - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
+      - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'User Interface' :
