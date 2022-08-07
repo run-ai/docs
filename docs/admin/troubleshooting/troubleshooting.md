@@ -110,10 +110,10 @@
 
 ## Issues when Submitting Jobs from User Interface
 
-??? "New Job button is greyed out"
+??? "New Job button is grayed out"
     __Symptom:__ The `New Job` button on the top right of the Job list is grayed out.
     
-    __Root Cause:__ This can happen due to multiple configuration issues. 
+    __Root Cause:__ This can happen due to multiple configuration issues: 
     
     * Open Chrome developer tools and refresh the screen.
     * Under `Network` locate a network call error. Search for the HTTP error code.
@@ -248,17 +248,64 @@
 
     For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
 
+## Inference Issues
+
+??? "New Deployment button is grayed out"
+
+    __Symptoms:__ 
+    
+    * The `New Deployment` button on the top right of the Deployment list is grayed out.
+    * Cannot create a deployment via [Inference API](../../developer/cluster-api/submit-yaml.md#inference-workload-example).
+
+    __Root Cause:__ Run:ai Inference prerequisites have not been met.
+
+    __Resolution:__ Review [inference prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) and install accordingly.
+
+
+??? "New Deployment button is not showing"
+     __Symptom:__ The `New Deployment` button on the top right of the Deployments list does not show.
+
+    __Root Cause:__ You do not have `ML Engineer` permissions.
+
+??? "Submitted Deployment remains in Pending state"
+    __Symptom:__ A submitted deployment is not running.
+
+    __Root Cause:__ The [patch](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) statement to add the runai-scheduler has not been performed.
+
+??? "Autoscaling metrics requests-per-second and concurrency are not working"
+    __Symptom:__ Deployments do not autoscale when using the metrics `requests-per-second` or `concurrency`.
+
+    __Root Cause:__ The [horizontal pod autoscaler](../runai-setup/cluster-setup/cluster-prerequisites.md#inference-autoscaling) prerequisite has not been installed. 
+
+??? "Deployment status is "Failed""
+    __Symptom:__ Deployment status is always `Failed`.
+
+    __Root Cause:__ (multiple)
+    
+    * Not enough resources in the cluster.
+    * Server model command is misconfigured (i.e sleep infinity).
+    * Server port is misconfigured. 
+
+??? "Deployment does not scale up from zero"
+
+    __Symptom:__ In the Deployment form, when "Auto-scaling" is enabled, and "Minimum Replicas" is set to zero, the deployment cannot scale up from zero.
+
+    __Root Cause:__ 
+
+    * Clients are not sending requests.
+    * Clients are not using the same port/protocol as the server model.
+    * Server model command is misconfigured (i.e sleep infinity).
 
 ## Command-line interface Issues
 
 ??? "Unable to install CLI due to certificate errors"
-    __Symmptom:__ The curl command and download button to download the CLI is not working.
+    __Symptom:__ The curl command and download button to download the CLI is not working.
 
     __Root Cause:__ The cluster is not accessible from the download location
 
     __Resolution:__ 
     
-    Use alternate method for downloading the CLI. Run:
+    Use an alternate method for downloading the CLI. Run:
 
     ``` bash
     kubectl port-forward -n runai svc/researcher-service 4180:4180
