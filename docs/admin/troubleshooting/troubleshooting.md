@@ -272,8 +272,8 @@
 
     __Root Cause:__ The [patch](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) statement to add the runai-scheduler has not been performed.
 
-??? "Autoscaling metrics requests-per-second and concurrency are not working"
-    __Symptom:__ Deployments do not autoscale when using the metrics `requests-per-second` or `concurrency`.
+??? "Some Autoscaling metrics are not working"
+    __Symptom:__ Deployments do not autoscale when using metrics other than `requests-per-second` or `concurrency`.
 
     __Root Cause:__ The [horizontal pod autoscaler](../runai-setup/cluster-setup/cluster-prerequisites.md#inference-autoscaling) prerequisite has not been installed. 
 
