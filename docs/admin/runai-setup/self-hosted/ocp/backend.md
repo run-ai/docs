@@ -71,7 +71,7 @@ Run the helm command below:
 ## Connect to Run:ai User Interface
 
 
-Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`
 
 ## Next Steps
 
