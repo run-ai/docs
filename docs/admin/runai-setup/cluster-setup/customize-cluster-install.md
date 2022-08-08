@@ -59,7 +59,7 @@ Allow outbound internet connectivity in a proxied network environment. See [Inst
 
 ## Manual Creation of Namespaces
 
-Run:ai Projects are implemented as Kubernetes namespaces. By default, the administrator creates a new Project via the Administration user interface which then triggers the creation of a Kubernetes namespace named `runai-<PROJECT-NAME> `.
+Run:ai Projects are implemented as Kubernetes namespaces. By default, the administrator creates a new Project via the Administration user interface which then triggers the creation of a Kubernetes namespace named `runai-<PROJECT-NAME>`.
 There are a couple of use cases that customers will want to disable this feature:
 
 * Some organizations prefer to use their internal naming convention for Kubernetes namespaces, rather than Run:ai's default `runai-<PROJECT-NAME>` convention.

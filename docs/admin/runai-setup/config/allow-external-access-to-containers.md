@@ -52,15 +52,15 @@ You will see the service URL with which to access the Jupyter notebook
 
 The URL will be composed of the ingress end-point, the Project name and the Job name (e.g. <a href="https://10.255.174.13/team-a-test-ingress" target="_self">https://10.255.174.13/team-a-test-ingress</a>.
 
-Alternatively run:
+Alternatively, run:
 
 ```
 kubectl get ingress -n runai-team-a test-ingress -o yaml
 ```
 
-And find the IP, port and full path from there. 
+And find the IP, port, and full path from there. 
 
 ## See Also
 
-* To learn how to use port forwarding see Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+* To learn how to use port forwarding see the Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../Researcher/Walkthroughs/walkthrough-build-ports.md).
 * See CLI command [runai submit](../../../Researcher/cli-reference/runai-submit.md).

@@ -79,8 +79,24 @@
 
     __NVIDIA DCGM Exporter__
 
-    View the logs of the DCGM exporter and verify that no errors are prohibiting the sending of metrics. 
+    * View the logs of the DCGM exporter pod and verify that no errors are prohibiting the sending of metrics. 
+    * To validate that the dcgm-exporter exposes metrics, find one of the DCGM Exporter pods and run:
+    
+    ```
+    kubectl port-forward <dcgm-exporter-pod-name> 9400:9400
+    ```
 
+    Then browse to [http://localhost:9400/metrics](http://localhost:9400/metrics){target=_blank} and verify that the metrics have reached the DCGM exporter.
+
+    * The next step after the DCGM Exporter is `Prometheus`. To validate that metrics from the DCGM Exporter reach Prometheus, run:
+ 
+    ```
+    kubectl port-forward svc/runai-cluster-kube-prometh-prometheus -n monitoring 9090:9090
+    ```
+ 
+    Then browse to [localhost:9090](localhost:9090){target=_blank}. In the UI, type `DCGM_FI_DEV_GPU_UTIL` as the metric name, and verify that the metric has reached Prometheus. 
+    
+    If the DCGM Exporter is running correctly and exposing metrics, but this metric does not appear in Prometheus, there may be a connectivity issue between these components.
 
 
 ??? "Allocation-related metrics not showing"

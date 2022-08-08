@@ -47,21 +47,7 @@ Delete the cluster as described [here](cluster-delete.md) and perform cluster in
     After the installation/upgrade of both gpu-operator and runai-cluster, run:
     `kubectl rollout restart ds nvidia-device-plugin-daemonset -n gpu-operator`
 
-<!-- previous instructions required a patch to the GPU Operator. You must patch the NDIVIA components back to the original state as follows:
 
-=== "Kubernetes"
-    ```
-    kubectl -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "false"}}}}}'
-    kubectl -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "false"}}}}}'
-    ```
-    
-=== "OpenShift"
-    ```
-    oc scale --replicas=1 -n openshift-operators deployment gpu-operator
-    ``` 
- oc -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \ -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "false"}}}}}' -->
 ## Verify successful installation
 
 To verify that the upgrade has succeeded run:
