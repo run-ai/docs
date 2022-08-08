@@ -24,13 +24,13 @@ This requires several steps:
 
 Assign Researchers to Projects:
 
-* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a _Researcher__ role.
+* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a `Researcher` role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
 * If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
 
 ## (Mandatory) Kubernetes Configuration
 
-As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. Modfiying the API Server configuration differs between Kubernetes distributions:
+As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. Modifying the API Server configuration differs between Kubernetes distributions:
 
 
 === "Native Kubernetes"
