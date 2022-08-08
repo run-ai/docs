@@ -57,7 +57,7 @@ As described in [authentication overview](authentication-overview.md), you must 
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
 === "RKE2"
-    Edit `/etc/rancher/rke2/config.yaml`. Add the parameters provided in the server configuration section as described above in the following fashion:
+    If working via the [RKE2 Quickstart](https://docs.rke2.io/install/quickstart/){target=_blank}, edit `/etc/rancher/rke2/config.yaml`. Add the parameters provided in the server configuration section as described above in the following fashion:
 
     ``` YAML title="/etc/rancher/rke2/config.yaml"
     kube-apiserver-arg:
@@ -65,6 +65,9 @@ As described in [authentication overview](authentication-overview.md), you must 
     - "oidc-issuer-url=<URL>"
     - "oidc-username-prefix=-"
     ```
+
+    If working via Rancher UI, need to add the flag as part of the cluster provisioning. The flags cannot be changed afterward. Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
+
 
 === "GKE"
     See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Use the parameters provided in the server configuration section as described above. 
