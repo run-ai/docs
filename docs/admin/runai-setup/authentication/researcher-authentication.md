@@ -24,7 +24,7 @@ This requires several steps:
 
 Assign Researchers to Projects:
 
-* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it with a _Researcher_ role.
+* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a _Researcher__ role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
 * If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
 
@@ -48,11 +48,11 @@ As described in [authentication overview](authentication-overview.md), you must 
 === "RKE"
     Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
 
-    ``` YAML
-        kube-api:
-            always_pull_images: false
-            extra_args:
-              <parameters copied from server configuration section>
+    ``` YAML title="cluster.yml"
+    kube-api:
+        always_pull_images: false
+        extra_args:
+            <parameters copied from server configuration section>
     ```
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
@@ -90,11 +90,11 @@ When making changes to the file, keep a copy of the original file to be used for
 
 ## Test via Command-line interface
 
-* Run: `runai login` (in OpenShift enviroments use `oc login` rather than `runai login`)
+* Run: `runai login` (in OpenShift environments use `oc` login` rather than `runai login`)
 * You will be prompted for a username and password. In a single sign-on flow, you will be asked to copy a link to a browser, log in and return a code. 
 * Once login is successful, submit a Job.
-* If the Job was submitted with a Project for which you have no access, your access will be denied. 
-* If the Job was submitted with a Project for which you have access, your access will be granted.
+* If the Job was submitted with a Project to which you have no access, your access will be denied. 
+* If the Job was submitted with a Project to which you have access, your access will be granted.
 
 You can also submit a Job from the Run:ai User interface and verify that the new job shows on the job list with your user name. 
 

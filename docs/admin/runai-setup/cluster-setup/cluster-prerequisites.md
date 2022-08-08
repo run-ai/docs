@@ -61,21 +61,6 @@ A full list of Kubernetes partners can be found here: [https://kubernetes.io/doc
     (use the namespace `gpu-operator-resources` if the NVIDIA GPU Operator is of version 1.8 or earlier )
 
 
-<!-- #### Alternative Installation Method: Install on Each Node
-
-An alternative method is to Install NVIDIA software on each node separately. This method is __less recommended__ but is documented in detail in the [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html#install-nvidia-dependencies){target=_blank}. Some notes:
-
-* Run:ai does __not__ currently support NVIDIA Driver version 510 or later.
-* Perform the sections _Install NVIDIA Drivers_ and _Install NVIDIA Container Toolkit (nvidia-docker2)_. 
-* Note the differentiation between _containerd_ and _docker_. 
-* The instructions relate to Ubuntu and link to other Operating systems. 
-* Perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.  
- Make sure to update the value of `installedFromGpuOperator` to `false` in the [customized cluster installation](customize-cluster-install.md). 
-
-??? "Run:ai 2.3 or earlier"
-    Do not perform the section _Install NVIDIA Device Plugin_ and _GPU Telemetry_.
- -->
-
 
 ### Operating System
 
