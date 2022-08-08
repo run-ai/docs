@@ -45,7 +45,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 === "OpenShift"
     No configuration is needed. Instead, Run:ai assumes that an Identity Provider has been defined at the OpenShift level and that the Run:ai Cluster installation has set the `OpenshiftIdp` flag to true. For more information see the Run:ai OpenShift control-plane setup.
 
-=== "Rancher"
+=== "RKE"
     Edit Rancher `cluster.yml` (with Rancher UI, follow [this](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/editing-clusters/#editing-clusters-in-the-rancher-ui){target=_blank}). Add the following:
 
     ``` YAML
@@ -54,8 +54,17 @@ As described in [authentication overview](authentication-overview.md), you must 
             extra_args:
               <parameters copied from server configuration section>
     ```
-
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
+
+=== "RKE2"
+    Edit `/etc/rancher/rke2/config.yaml`. Add the parameters provided in the server configuration section as described above in the following fashion:
+
+    ``` YAML title="/etc/rancher/rke2/config.yaml"
+    kube-apiserver-arg:
+    - "oidc-client-id=<CLIENT-ID>"
+    - "oidc-issuer-url=<URL>"
+    - "oidc-username-prefix=-"
+    ```
 
 === "GKE"
     See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Use the parameters provided in the server configuration section as described above. 
