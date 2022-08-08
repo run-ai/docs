@@ -324,7 +324,7 @@
     Use an alternate method for downloading the CLI. Run:
 
     ``` bash
-    kubectl port-forward -n runai svc/researcher-service 4180:4180
+    kubectl port-forward -n runai svc/researcher-service 4180
     ```
 
     In another shell run
