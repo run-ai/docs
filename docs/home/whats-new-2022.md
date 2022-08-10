@@ -33,7 +33,7 @@
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
-* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit/?h=s3#-s3-string).
+* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
 * User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
 * [Researcher Authentication](../admin/runai-setup/authentication/researcher-authentication.md) configuration is now mandatory. 
 
