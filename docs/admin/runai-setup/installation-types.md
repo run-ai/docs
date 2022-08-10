@@ -31,7 +31,7 @@ Run:ai self-hosting comes with two variants:
 
 ### Self-hosting with Kubernetes vs OpenShift
 
-Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/setup/#production-environment){target=_blank}. Run:ai has been installed with a number of those such as Rancher, Kubespray, OpenShift, HPE Ezmeral, and Native Kubernetes. The OpenShift installation is different from the rest. As such, the Run:ai self-hosted installation instructions are divided into two separate sections:
+Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/setup/#production-environment){target=_blank}. Run:ai has been installed with a number of those such as Rancher, OpenShift, HPE Ezmeral, and Native Kubernetes. The OpenShift installation is different from the rest. As such, the Run:ai self-hosted installation instructions are divided into two separate sections:
 
 * OpenShift-based installation. See [Run:ai OpenShift installation](self-hosted/ocp/prerequisites.md).
 * Kubernetes-based installation. See [Run:ai Kubernetes installation](self-hosted/k8s/prerequisites.md).
