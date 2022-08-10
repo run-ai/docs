@@ -54,6 +54,8 @@ plugins:
       minify_html: true
   - redirects:
       redirect_maps:
+        'Administrator/Cluster-Setup/cluster-prerequisites.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
+        'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
         # 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'admin/admin-ui-setup/project-setup.md'
         # 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'admin/admin-ui-setup/department-setup.md'
         # 'Researcher/scheduling/The-Run-AI-Scheduler.md' : 'Researcher/scheduling/the-runai-scheduler.md'
@@ -66,7 +68,6 @@ plugins:
         # 'Administrator/Cluster-Setup/cli-admin-install.md' : 'admin/runai-setup/config/cli-admin-install.md'
         # 'Administrator/Cluster-Setup/cluster-delete.md' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         # 'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
-        # 'Administrator/Cluster-Setup/cluster-prerequisites.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         # 'Administrator/Cluster-Setup/cluster-setup-intro.md' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         # 'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         # 'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
@@ -82,7 +83,6 @@ plugins:
         # 'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
         # 'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         # 'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
-        # 'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
         # 'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
         # 'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
         # 'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
