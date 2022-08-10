@@ -171,9 +171,23 @@
     __Resolution:__ 
 
     * Incorrect cluster IP
-    * Cluster certificate has not been created. 
+    * Cluster certificate has not been created
+
         * Run: `kubectl get certificate -n runai`. Verify that all 3 entries are of status `Ready`.
         * Run: `kubectl get pods -n cert-manager` and verify that all pods are Running.
+        * Run: `kubectl get crd | grep cert` Verify that there are at least the following 6 entries:
+        ```
+        certificaterequests.cert-manager.io                   
+        certificates.cert-manager.io                          
+        challenges.acme.cert-manager.io                       
+        clusterissuers.cert-manager.io                        
+        issuers.cert-manager.io                               
+        orders.acme.cert-manager.io
+        ```
+
+        * Run: `kubectl get challenges -A` verify that all challenges are in running state. If not, run: `kubectl describe challenge <challlenge-name> -n runai`. Possible issues are:
+            * Networking issues: most likely a firewall problem.
+            * `Waiting for dns propagation`: This is normal. Need to wait.  
 
 
 ??? "Submit form does not show the list of Projects"
