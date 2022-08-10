@@ -23,7 +23,7 @@ The control plane (backend) installation of Run:ai will require the configuratio
 
 ## OpenShift 
 
-Run:ai supports OpenShift. Supported versions are 4.6 through 4.10. 
+Run:ai supports OpenShift. Supported versions are 4.8 through 4.10. 
 
 * OpenShift must be configured with a trusted certificate.
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 
