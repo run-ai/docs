@@ -173,7 +173,7 @@
     * Incorrect cluster IP
     * Cluster certificate has not been created. 
         * Run: `kubectl get certificate -n runai`. Verify that all 3 entries are of status `Ready`.
-        * Run: `kubectl get pods -n cert-manager and verify that all pods are Running.
+        * Run: `kubectl get pods -n cert-manager` and verify that all pods are Running.
 
 
 ??? "Submit form does not show the list of Projects"
