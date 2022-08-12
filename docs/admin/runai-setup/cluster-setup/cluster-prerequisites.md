@@ -133,7 +133,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
 
 ### Reporting on Workload Progress
 
-The Run:ai [Researcher Library](../../../Researcher/researcher-library/rl-reporting.md) includes a _reporting_ module. The reporting module in the library externalizes information about the run which is then available as a graph in the Job list. 
+The Run:ai [Researcher Library](../../../Researcher/researcher-library/rl-reporting.md) includes a _reporting_ module. The reporting module externalizes progress information about the run which is then available as a graph in the Job list. 
 
 To enable externalizing the information you must install the __Prometheus Push Gateway__ as follows: 
 
