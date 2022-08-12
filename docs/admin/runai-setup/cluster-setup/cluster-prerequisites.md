@@ -131,6 +131,18 @@ Distributed training is the ability to run workloads on multiple nodes (not just
     Kubeflow MPI requires containers to run as root, which will not work well when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes.
     
 
+### Reporting on Workload Progress
+
+The Run:ai [Researcher Library](../../../Researcher/researcher-library/rl-reporting.md) includes a _reporting_ module. The reporting module in the library externalizes information about the run which is then available as a graph in the Job list. 
+
+To enable externalizing the information you must install the __Prometheus Push Gateway__ as follows: 
+
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install runai-prometheus-pushgateway prometheus-community/prometheus-pushgateway \
+    -n runai --set serviceMonitor.enabled=true serviceMonitor.namespace=runai
+```
 
 ## Hardware Requirements
 

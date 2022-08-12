@@ -2,9 +2,13 @@
 
 The Run:ai Researcher Library is a python library you can add to your deep learning python code. The reporting module in the library will externalize information about the run which can then be available for users of the Run:ai user interface.
 
-With the reporter module, you can externalize information such as progress, accuracy, and loss over time/epoch, and more. In addition, you can externalize custom metrics of your choosing.
+With the reporter module, you can externalize information such as progress, accuracy, loss over time/epoch, and more. In addition, you can externalize custom metrics of your choosing.
 
 ## Sending Metrics
+
+### Prerequisites
+
+To use this module you must install the Prometheus Push Gateway as described in the [cluster prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md) section.
 
 ### Python Deep-Learning Code
 
