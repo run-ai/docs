@@ -115,8 +115,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
     Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction:
 
     * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-    * Clone the repository
-    * run `kubectl apply -f deploy/v2beta1/mpi-operator.yaml`
+    * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
 
 === "Version 2.4 or earlier"
     Use the following [installation guide](https://github.com/kubeflow/mpi-operator/tree/v0.2.3#installation){target=_blank}. As per instruction:
