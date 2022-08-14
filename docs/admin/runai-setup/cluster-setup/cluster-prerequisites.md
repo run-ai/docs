@@ -141,7 +141,7 @@ To enable externalizing the information you must install the __Prometheus Push G
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm install runai-prometheus-pushgateway prometheus-community/prometheus-pushgateway \
-    -n runai --set serviceMonitor.enabled=true serviceMonitor.namespace=runai
+    -n runai --set serviceMonitor.enabled=true --set serviceMonitor.namespace=runai
 ```
 
 ## Hardware Requirements
