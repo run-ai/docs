@@ -121,7 +121,7 @@ nav:
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
-#      - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
+      - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
