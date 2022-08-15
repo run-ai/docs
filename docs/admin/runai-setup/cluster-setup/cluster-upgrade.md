@@ -47,8 +47,11 @@ Delete the cluster as described [here](cluster-delete.md) and perform cluster in
     After the installation/upgrade of both gpu-operator and runai-cluster, run:
     `kubectl rollout restart ds nvidia-device-plugin-daemonset -n gpu-operator`
 
+## Upgrade to a Specific Verison
 
-## Verify successful installation
+To upgrade to a specific version, add `--version <version-number>` to the `helm upgrade` command. 
+
+## Verify Successful Installation
 
 To verify that the upgrade has succeeded run:
 

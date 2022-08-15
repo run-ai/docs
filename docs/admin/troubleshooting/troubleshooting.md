@@ -1,11 +1,38 @@
 
 # Troubleshooting Run:ai 
 
+
+## Installation 
+
+??? "init-ca pod crashing"
+    __Symptom:__  After installing, when running `kubectl get pods -n runai` you see a pod named `init-ca` which has crashed. 
+
+    __Root cause:__ Run:ai installs `Cert Manager`, but there is an existing cert-manager on the cluster. 
+
+    Review the logs for `init-ca`. If the logs say: 
+
+    `Failed to sign certificate: Operation cannot be fulfilled on certificatesigningrequests.certificates.k8s.io “runai-admission-controller.runai”: the object has been modified; please apply your changes to the latest version and try again`    
+    
+    __Resolution:__ Call Run:ai customer support to understand how to modify the Run:ai installation not to install cert-manager. 
+
+??? "Upgrade fails with "Ingress already exists""
+    __Symptom:__  The installation fails with error: `Error: rendered manifests contain a resource that already exists. Unable to continue with install: IngressClass "nginx" in namespace "" exists`
+
+    __Root cause:__ Run:ai installs `NGINX`, but there is an existing NGINX on the cluster. 
+
+    __Resolution:__ In the Run:ai cluster YAML file, disable the installation of NGINX by setting:
+
+    ```
+    ingress-nginx:
+        enabled: false
+    ```
+ 
+
 ## Dashboard Issues
 
 ??? "No Metrics are showing on Dashboard"
 
-    __Symptom__: No metrics are not showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
+    __Symptom:__ No metrics are not showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
 
     __Typical root causes:__
 
@@ -213,6 +240,7 @@
     __Resolution:__
 
     * Run the [preinstall script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
+    * Run `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
     * Run `kubectl get nodes`. Check that all nodes are ready and connected
     * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
     * See if pods from different nodes have trouble communicating with each other.
@@ -346,6 +374,11 @@
     wget --content-disposition http://localhost:4180/cli/linux
     ```
 
+<!-- ??? ""access denied" when using CLI"
+    __Symptom:__ Running `runai login` shows `access denied`
+
+    __Root Cause:__  ???  -->
+
 
 ??? "When running the CLI you get an error: open .../.kube/config.lock: permission denied"
 
@@ -358,9 +391,9 @@
 
 ??? "When running 'runai logs', the logs are delayed"
 
-    __Symptom:__ Printouts from the container are not immediately shown in the log. 
+    __Symptom:__ Printout from the container is not immediately shown in the log. 
 
-    __Root Cause:__ By default, Python buffers stdout and stderr, which is not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
+    __Root Cause:__ By default, Python buffers stdout, and stderr, which are not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
 
     __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
 

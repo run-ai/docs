@@ -49,3 +49,22 @@ To view logs, run:
 kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
       -n monitoring -f --tail 100
 ```
+
+## Add Verbosity to Scheduler
+
+To view extended logs run:
+
+```
+kubectl edit ruaiconfig runai -n runai
+```
+
+Then under the `scheduler` section add:
+
+```
+runai-scheduler:
+   args:
+     verbosity: 6
+```
+
+!!! Warning
+    Verbose scheduler logs consume a significant amount of disk space.
