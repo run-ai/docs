@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Kubernetes has several built-in resources that encapsulate running _Pods_. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/){target=_blank} and __should not be confused__ with Run:ai Workloads. 
+Kubernetes has several built-in resources that encapsulate running _Pods_. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/){target=_blank} and __should not be confused__ with [Run:ai Workloads](workload-overview-dev.md). 
 
 Examples of such resources are a _Deployment_ that manages a stateless application, or a _Job_ that runs tasks to completion. 
 

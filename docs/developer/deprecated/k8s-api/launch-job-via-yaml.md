@@ -11,7 +11,7 @@ We differentiate between three types of Workloads:
 
 *   __Train__ workloads. _Train_ workloads are characterized by a deep learning session that has a start and an end. A Training session can take anywhere from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored. Training workloads typically utilize large percentages of GPU computing power and memory.
 *   __Build__ workloads. Build workloads are interactive. They are used by data scientists to write machine learning code and test it against subsets of the data. Build workloads typically do not maximize usage of the GPU. 
-* __Inference__ workloads. Inference workloads are used for serving models in production. For details on how to submit Inference workloads via YAML see [here](../inference/submit-via-yaml.md).
+* __Inference__ workloads. Inference workloads are used for serving models in production. For details on how to submit Inference workloads via YAML see [here](../../cluster-api/other-resources.md).
 
 The internal Kubernetes implementation of a Run:ai Job is a _CRD_ (Customer Resource) named `RunaiJob` which is similar to a Kubernetes [Job](https://kubernetes.io/docs/concepts/workloads/controllers/Job/){target=_blank}. 
 
