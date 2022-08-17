@@ -6,8 +6,8 @@
 
 Run:ai schedules __Workloads__. Run:ai workloads contain:
 
-* The _Kubernetes object_ (Job, Deployment, etc) that is used to launch the container inside which the data science code runs. 
-* A set of additional resources required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more. 
+* The _Kubernetes resource_ (Job, Deployment, etc) that is used to launch the container inside which the data science code runs. 
+* A set of additional resources that is required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more. 
 
 Run:ai supports the following Workloads types:
 
