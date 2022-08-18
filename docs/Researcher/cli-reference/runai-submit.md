@@ -286,11 +286,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/){target=_blank}.
 
 #### --host-network
 >  Use the host's network stack inside the container.
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/"){target=_blank}.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/){target=_blank}.
 
 #### --port stringArray
 >  Expose ports from the Job container. Used together with `--service-type`.  

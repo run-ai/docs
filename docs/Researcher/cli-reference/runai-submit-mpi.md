@@ -226,11 +226,11 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 >  Use the host's _ipc_ namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores, and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
-> For further information see [docker run reference]("https://docs.docker.com/engine/reference/run/") documentation.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/) documentation.
 
 #### --host-network
 > Use the host's network stack inside the container.
-> For further information see [docker run reference]("https://docs.docker.com/engine/reference/run/")documentation.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/)documentation.
 
 ### Job Lifecycle
 

@@ -62,7 +62,7 @@ A similar message will appear in the _New Job_ form of the Run:ai user interface
 
 ## Read-only values
 
-When you do not want to the user to be able to change a value, you can make it read-only in the user interface. For example, 
+When you do not want the user to be able to change a value, you can force the corresponding user interface control to become read-only by using the `canEdit` key. For example, 
 
 ``` YAML title="runasuserpolicy.yaml"
 apiVersion: run.ai/v2alpha1
