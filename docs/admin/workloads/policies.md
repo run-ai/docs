@@ -27,11 +27,11 @@ A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally,
 
 To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
 
-``` YAML title="policy.yaml"
+``` YAML title="gpupolicy.yaml"
 apiVersion: run.ai/v2alpha1
 kind: InteractivePolicy
 metadata:
-  name: interactive-policy
+  name: interactive-policy1
   namespace: runai-team-a # (1)
 spec:
   gpu:
@@ -42,13 +42,13 @@ spec:
     value: "1"
 ```
 
-1. Set the Project namespace here
+1. Set the Project namespace here.
 2. GPU values are quoted as they can contain non-integer values. 
 
 The policy places a default and limit on the available values for GPU allocation. To apply this policy, run: 
 
 ``` bash
-kubectl apply -f policy.yaml 
+kubectl apply -f gpupolicy.yaml 
 ```
 Now, try the following command:
 ``` bash
@@ -59,6 +59,31 @@ The following message will appear:
 gpu: must be no greater than 4
 ```
 A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for an Interactive tab.  
+
+## Read-only values
+
+When you do not want to the user to be able to change a value, you can make it read-only in the user interface. For example, 
+
+``` YAML title="runasuserpolicy.yaml"
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: train-policy1
+  namespace: runai-team-a # (1) 
+
+spec:
+  runAsUser:
+    rules:
+      required: true  # (2)
+      canEdit: false  # (3)
+    value: true # (4)
+
+```
+
+1. Set the Project namespace here.
+2. The field is required. 
+3. The field will be shown as read-only in the user interface. 
+4. The field value is true.  
 
 ### Complex Values
 
