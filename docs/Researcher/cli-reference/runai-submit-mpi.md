@@ -105,9 +105,9 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 #### --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
 >
-> - `always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded.
-> - `ifNotPresent`: the image is pulled only if it is not already present locally.
-> - `never`: the image is assumed to exist locally. No attempt is made to pull the image.
+> - `Always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded.
+> - `IfNotPresent`: the image is pulled only if it is not already present locally.
+> - `Never`: the image is assumed to exist locally. No attempt is made to pull the image.
 >
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 

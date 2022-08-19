@@ -1,15 +1,15 @@
-# Training Workload Parameters
+# Interactive Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingpolicy.spec`. You can also run `kubectl explain trainingpolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain interactivepolicy.spec`. You can also run `kubectl explain interactivepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
-KIND:     TrainingWorkload
+KIND:     InteractivePolicy
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this TrainingWorkload
+     The specifications of this InteractivePolicy
 
 FIELDS:
    allowPrivilegeEscalation	<Object>
@@ -26,10 +26,6 @@ FIELDS:
      When set,contains the arguments sent along with the command. These override
      the entry point of the image in the created workload.
 
-   backoffLimit	<Object>
-     Specifies the number of retries before marking a workload as failed.
-     Defaults to 6
-
    baseWorkload	<string>
      Reference to an another workload. When set, this workload inherits its
      values from the base workload. Base workload can either reside on the same
@@ -45,14 +41,6 @@ FIELDS:
 
    command	<Object>
      If set, overrides the image's entry point with the supplied command.
-
-   completions	<Object>
-     Used with Hyperparameter Optimization. Specifies the number of successful
-     pods the job should reach to be completed. The Job will be marked as
-     successful once the specified amount of pods has succeeded. The default
-     value for 'completions' is 1. The 'parallelism' flag should be smaller or
-     equal to 'completions' For more information see:
-     https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 
    cpu	<Object>
      Specifies CPU units to allocate for the created workload (0.5, 1, .etc).
@@ -125,6 +113,9 @@ FIELDS:
    ingressUrl	<Object>
      This field is for internal use only.
 
+   jupyter	<Object>
+     Indication if an interactive workload should run jupyter notebook
+
    labels	<Object>
      Specifies labels to be set in the container running the created workload.
 
@@ -175,17 +166,16 @@ FIELDS:
      Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
-   parallelism	<Object>
-     Specifies the maximum desired number of pods the workload should run at any
-     given time. The actual number of pods running in a steady state will be
-     less than this number when ((.spec.completions - .status.successful) <
-     .spec.parallelism), i.e. when the work left to do is less than max
-     parallelism. For more information, see:
-     https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+   notebookToken	<Object>
 
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
+
+   preemptible	<Object>
+     Specifies that the created workload will be preemptible. Interactive
+     preemptible workloads can be scheduled above the guaranteed quota but may
+     be reclaimed at any time.
 
    processes	<Object>
      Number of distributed training processes that will be allocated for the
@@ -234,20 +224,18 @@ FIELDS:
      ';' separated list of supplemental group IDs. Will be added to the security
      context of the container running the created workload.
 
+   tensorboard	<Object>
+     Indicates that this interactive workload should also run a TensorBoard
+     dashboard
+
+   tensorboardLogdir	<Object>
+     The TensorBoard Logs directory
+
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration
      rules guide (but do not require) the system to which node each pod can be
      scheduled to or evicted from, based on matching between those rules and the
      set of taints defined for each Kubernetes node.
-
-   ttlAfterFinish	<Object>
-     Specifies the duration after which it is possible for a finished workload
-     to be automatically deleted. When the workload is being deleted, its
-     lifecycle guarantees (e.g. finalizers) will be honored. If this field is
-     unset, the workload won't be automatically deleted. If this field is set to
-     zero, the workload becomes eligible to be deleted immediately after it
-     finishes. This field is alpha-level and is only honored by servers that
-     enable the TTLAfterFinished feature.
 
    tty	<Object>
      Instructs the system to allocate a pseudo-TTY for the created workload.

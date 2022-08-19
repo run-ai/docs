@@ -157,11 +157,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 #### --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
 >
-> - `always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
+> - `Always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
 >
-> - `ifNotPresent`: the image is pulled only if it is not already present locally.
+> - `IfNotPresent`: the image is pulled only if it is not already present locally.
 >
-> - `never`: the image is assumed to exist locally. No attempt is made to pull the image.
+> - `Never`: the image is assumed to exist locally. No attempt is made to pull the image.
 >
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 

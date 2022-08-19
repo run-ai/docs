@@ -1,23 +1,17 @@
-# Training Workload Parameters
+# Inference Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingpolicy.spec`. You can also run `kubectl explain trainingpolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain inferencepolicy.spec`. You can also run `kubectl explain inferencepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
-KIND:     TrainingWorkload
+KIND:     InferencePolicy
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this TrainingWorkload
+     The specifications of this InferencePolicy
 
 FIELDS:
-   allowPrivilegeEscalation	<Object>
-     Allow the container running the workload and all launched processes to gain
-     additional privileges after the workload starts. For more information see
-     the "User Identity in Container" guide at
-     https://docs.run.ai/admin/runai-setup/config/non-root-containers/
-
    annotations	<Object>
      Specifies annotations to be set in the container that is running the
      created workload.
@@ -25,10 +19,6 @@ FIELDS:
    arguments	<Object>
      When set,contains the arguments sent along with the command. These override
      the entry point of the image in the created workload.
-
-   backoffLimit	<Object>
-     Specifies the number of retries before marking a workload as failed.
-     Defaults to 6
 
    baseWorkload	<string>
      Reference to an another workload. When set, this workload inherits its
@@ -43,16 +33,11 @@ FIELDS:
      and disabled. For more information see
      https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-capabilities-for-a-container
 
+   class	<Object>
+     The autoscaler class for knative to use
+
    command	<Object>
      If set, overrides the image's entry point with the supplied command.
-
-   completions	<Object>
-     Used with Hyperparameter Optimization. Specifies the number of successful
-     pods the job should reach to be completed. The Job will be marked as
-     successful once the specified amount of pods has succeeded. The default
-     value for 'completions' is 1. The 'parallelism' flag should be smaller or
-     equal to 'completions' For more information see:
-     https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 
    cpu	<Object>
      Specifies CPU units to allocate for the created workload (0.5, 1, .etc).
@@ -125,12 +110,19 @@ FIELDS:
    ingressUrl	<Object>
      This field is for internal use only.
 
+   isPrivateServiceUrl	<Object>
+     Configure the inference service to be available only on the cluster-local
+     network, and not on the public internet
+
    labels	<Object>
      Specifies labels to be set in the container running the created workload.
 
    largeShm	<Object>
      Specifies a large /dev/shm device to mount into a container running the
      created workload. An shm is a shared file system mounted on RAM.
+
+   maxScale	<Object>
+     The maximum number of replicas to run
 
    memory	<Object>
      Specifies the amount of CPU memory to allocate for this workload (1G, 20M,
@@ -144,18 +136,25 @@ FIELDS:
      more than this amount of memory. The workload will receive an error when
      trying to allocate more memory than this limit.
 
+   metric	<Object>
+     The predefined metric to use for autoscaling. Possible values are:
+     cpu-utilization, latency, throughput, concurrency, gpu-utilization, custom.
+
+   metricName	<Object>
+     The exact metric name to use for autoscaling (overrides Metric field)
+
    migProfile	<Object>
      Specifies the memory profile to be used for workload running on NVIDIA
      Multi-Instance GPU (MIG) technology.
+
+   minScale	<Object>
+     The minimum number of replicas to run
 
    mountPropagation	<Object>
      Allows for sharing volumes mounted by a container to other containers in
      the same pod, or even to other pods on the same node. The volume mount will
      receive all subsequent mounts that are mounted to this volume or any of its
      subdirectories.
-
-   mpi	<Object>
-     This workload produces mpijob
 
    name	<Object>
      The specific name of the created resource. Either name of namePrefix should
@@ -175,21 +174,9 @@ FIELDS:
      Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
-   parallelism	<Object>
-     Specifies the maximum desired number of pods the workload should run at any
-     given time. The actual number of pods running in a steady state will be
-     less than this number when ((.spec.completions - .status.successful) <
-     .spec.parallelism), i.e. when the work left to do is less than max
-     parallelism. For more information, see:
-     https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
-
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
-
-   processes	<Object>
-     Number of distributed training processes that will be allocated for the
-     created mpijob.
 
    pvcs	<Object>
      Specifies persistent volume claims to mount into a container running the
@@ -223,9 +210,6 @@ FIELDS:
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
 
-   slotsPerWorker	<Object>
-     Number of slots to allocate per worker in the created mpijob.
-
    stdin	<Object>
      Instructs the system to keep stdin open for the container(s) running the
      created workload, even if nothing is attached.
@@ -234,20 +218,14 @@ FIELDS:
      ';' separated list of supplemental group IDs. Will be added to the security
      context of the container running the created workload.
 
+   target	<Object>
+     The target value for the autoscaling metric
+
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration
      rules guide (but do not require) the system to which node each pod can be
      scheduled to or evicted from, based on matching between those rules and the
      set of taints defined for each Kubernetes node.
-
-   ttlAfterFinish	<Object>
-     Specifies the duration after which it is possible for a finished workload
-     to be automatically deleted. When the workload is being deleted, its
-     lifecycle guarantees (e.g. finalizers) will be honored. If this field is
-     unset, the workload won't be automatically deleted. If this field is set to
-     zero, the workload becomes eligible to be deleted immediately after it
-     finishes. This field is alpha-level and is only honored by servers that
-     enable the TTLAfterFinished feature.
 
    tty	<Object>
      Instructs the system to allocate a pseudo-TTY for the created workload.
