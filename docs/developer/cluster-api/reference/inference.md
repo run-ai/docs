@@ -1,6 +1,6 @@
 # Inference Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain inferencepolicy.spec`. You can also run `kubectl explain inferencepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferencepolicy.spec`. You can also run `kubectl explain inferencepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
 KIND:     InferencePolicy
