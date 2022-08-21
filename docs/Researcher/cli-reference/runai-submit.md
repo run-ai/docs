@@ -147,7 +147,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >  Example: 
 > > `-- python script.py 10000` 
 
--e stringArray | --environment stringArray
+#### -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
 <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
 
