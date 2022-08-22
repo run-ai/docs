@@ -17,7 +17,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
 strict: true   
-
+ 
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
