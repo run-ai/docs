@@ -49,8 +49,11 @@ extra:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized
-  - render_swagger
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+#  - render_swagger
   - minify:
       minify_html: true
   - redirects:
