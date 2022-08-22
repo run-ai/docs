@@ -115,4 +115,4 @@ The Run:ai command line interface provides limited support for Kubernetes Worklo
 
 
 ## See Also
-The Run:ai has specific integration with additional third-party tools such as [KubeFlow](../../admin/integration/kubeflow.md), [MLFlow](../../admin/integration/mlflow.md) and more. These integration use the same instructions as described above. 
+Run:ai has specific integrations with additional third-party tools such as [KubeFlow](../../admin/integration/kubeflow.md), [MLFlow](../../admin/integration/mlflow.md), and more. These integrations use the same instructions as described above. 
