@@ -76,3 +76,31 @@ Follow the following process to achieve this
 where  `<PROJECT_NAME>` is the name of the project you have created in the Run:ai user interface above and `<NAMESPACE>` is the name you chose for your namespace.
 
 
+## RKE-Specific Setup
+
+Rancher Kubernetes Engine (RKE) requires a number additional steps:
+
+### Certificate Signing Request (RKE1 only)
+
+During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+
+``` YAML
+services:
+kube-controller:
+    extra_args:
+    cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
+    cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
+```
+
+For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
+
+### NGINX (both RKE1 and RKE2)
+
+RKE comes pre-installed with NGINX. To install Run:ai you must first disable NGINX installation by Run:ai. 
+
+* For Run:ai SaaS installations, open the generated YAML file, search for `ingress-nginx`, and set `enabled: false`. 
+* For Run:ai self-hosted installation,  open the generated backend YAML file, search for `ingress-nginx`, and set `enabled: false`. 
+
+### Researcher Authentication
+
+See the RKE and RKE2 tabs in the [Reseracher Authentication](../authentication/researcher-authentication.md#mandatory-kubernetes-configuration) on how to set up researcher authentication.  
