@@ -10,7 +10,7 @@ Run:ai natively runs [Run:ai Workloads](workload-overview-dev.md). A Run:ai work
 
 ## How To
 
-To run Kubernetes Workflows with Run:ai you must add the following to the YAML:
+To run Kubernetes Workloads with Run:ai you must add the following to the YAML:
 
 * A namespace that is associated with a Run:ai Project.
 * A scheduler name: `runai-scheduler`.
