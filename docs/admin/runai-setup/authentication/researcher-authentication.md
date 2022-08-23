@@ -66,7 +66,7 @@ As described in [authentication overview](authentication-overview.md), you must 
     - "oidc-username-prefix=-"
     ```
 
-    If working via Rancher UI, need to add the flag as part of the cluster provisioning. The flags cannot be changed afterward. Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
+    If working via Rancher UI, need to add the flag as part of the cluster provisioning. At the time of writing, the flags cannot be changed after the cluster has been provisioned due to a Rancher bug. Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
 
 
 === "GKE"

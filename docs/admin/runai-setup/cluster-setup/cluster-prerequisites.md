@@ -14,7 +14,7 @@ Run:ai has been tested with the following Kubernetes distributions:
 | AKS | Azure Kubernetes Services          | |
 | GKE | Google Kubernetes Engine           | GKE has a different software stack for NVIDIA. To install Run:ai on GKE please contact customer support. | 
 | OCP | OpenShift Container Platform       | The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). |
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). RKE2 has a defect which requires a specific installation. Please contact Run:ai customer support for additional details. |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 | Canonical Kubernetes | a.k.a Charmed Kubernetes | | 
