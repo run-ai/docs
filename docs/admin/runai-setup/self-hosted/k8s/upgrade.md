@@ -48,6 +48,7 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
 
 === "Airgapped"
     ```
+    kubectl apply -f runai-crds.yaml
     helm get values runai-cluster -n runai > values.yaml
     helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
     ```
