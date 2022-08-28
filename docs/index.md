@@ -11,7 +11,7 @@ The Run:ai documentation is targeting three personas:
 
 * Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](./developer/overview-developer.md).
 
-## How to get Support
+## How to get support
 
 To get support use the following channels:
 

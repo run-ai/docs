@@ -1,6 +1,6 @@
 # Scheduling Virtual Machines using Run:ai
 
-:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
+:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23) and up.
 
 
 Many organizations use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at a large scale are best managed by Kubernetes and Run:ai is based on Kubernetes. 

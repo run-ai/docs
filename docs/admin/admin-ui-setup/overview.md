@@ -13,7 +13,7 @@ The researcher workbench part of the tool allows Researchers to submit, delete a
 
 ## Setup
 
-:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23)
+:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23).
 
 While the control-plane part is immediately accessible, the researcher workbench part requires a cluster of version 2.3 or later. 
 

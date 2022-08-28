@@ -75,7 +75,7 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 
 ### Inference
 
-:octicons-versions-24: [Version 2.5](../../../home/whats-new-2022.md#may-2022-runai-version-25)
+:octicons-versions-24: [Version 2.5](../../../home/whats-new-2022.md#may-2022-runai-version-25) and up.
 
 To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 and 1.5 with Kubernetes 1.22 and Knative 1.3 for Kubernetes 1.21.  
 

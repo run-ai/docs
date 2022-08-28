@@ -26,7 +26,7 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
 
 ## Dynamic MIG
 
-:octicons-versions-24: [Version 2.4](../../home/whats-new-2022.md#april-2022-runai-version-24-controlled-release-only)
+:octicons-versions-24: [Version 2.4](../../home/whats-new-2022.md#april-2022-runai-version-24-controlled-release-only) and up.
 
 NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A100) to be partitioned into separate GPU Instances:
 

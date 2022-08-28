@@ -1,6 +1,6 @@
 # Viewing and Submitting Deployments
 
-:octicons-versions-24: [Version 2.5](../../home/whats-new-2022.md#may-2022-runai-version-25)
+:octicons-versions-24: [Version 2.5](../../home/whats-new-2022.md#may-2022-runai-version-25) and up.
 
 
 The Run:ai User interface Deployment area allows the viewing and submitting of Deployments for serving inference workloads. Submitting inference workloads can only be done if your user has `ML Engineer` access.
