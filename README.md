@@ -26,7 +26,7 @@ To get support use the following channels:
 
 * On the bottom right of the Run:ai user interface, use the _Help_ widget.
 
-* On the bottom right of this page, use the _Help_ widget.
+* On the bottom right of this page, use the _Help_ widget. 
 
 
 
