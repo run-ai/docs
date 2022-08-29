@@ -43,12 +43,26 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: researcher-service-rw
+  name: researcher-service-rw-legacy
   namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: researcher-service
+subjects:
+- kind: ServiceAccount
+  name: researcher-service
+  namespace: runai
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: researcher-service-rw
+  namespace: <NAMESPACE>
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: researcher-service-rw
 subjects:
 - kind: ServiceAccount
   name: researcher-service
@@ -85,10 +99,49 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: runai-job-executor-manual
+  name: runai-job-executor-manual-legacy
   namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: runai-job-executor
 subjects: []
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: runai-researcher
+  namespace: <NAMESPACE>
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: runai-researcher
+subjects: []
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: workload-controller-rw
+  namespace: <NAMESPACE>
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: workload-controller-rw
+subjects:
+- kind: ServiceAccount
+  name: workload-controller
+  namespace: runai
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: runai-project-controller-cluster-secret-per-project
+  namespace: <NAMESPACE>
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: runai-project-controller-cluster-secret-per-project
+subjects:
+- kind: ServiceAccount
+  name: runai-project-controller
+  namespace: runai
