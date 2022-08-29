@@ -127,7 +127,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
 
 
 !!! Notes
-    Kubeflow MPI requires containers to run as root, which will not work well when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes.
+    Kubeflow MPI requires containers to run as root. This needs special adjustments when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes. Redhat provides an [article](https://cloud.redhat.com/blog/how-to-use-kubeflow-and-the-mpi-operator-on-openshift){target=_blank} on how to configure MPI jobs to run as root on OpenShift. 
     
 
 ### Reporting on Workload Progress
