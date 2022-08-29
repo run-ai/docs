@@ -58,7 +58,7 @@ runai submit-mpi
 start an unattended mpi training Job of name dist1, based on Project _team-a_ using a _quickstart-distributed_ image:
 
     runai submit-mpi --name dist1 --processes=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed 
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 
 
 
 (see: [distributed training Quickstart](../Walkthroughs/walkthrough-distributed-training.md)).

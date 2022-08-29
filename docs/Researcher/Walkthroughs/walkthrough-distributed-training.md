@@ -31,7 +31,7 @@ To complete this Quickstart you must have:
 ``` shell
 runai config project team-a
 runai submit-mpi dist --processes=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60
 ```
 
 *   We named the Job _dist_
