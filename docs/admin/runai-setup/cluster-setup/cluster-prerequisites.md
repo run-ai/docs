@@ -323,17 +323,17 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 </tbody>
 </table>
 
-## Cluster URL
+### Cluster URL
 
-The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. You can use either a domain-name URL (https only) or use the cluster IP directly. 
+The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. You can use either a domain name (https only) or use the cluster IP directly. 
 
-### Domain-name URL
+#### Domain Name 
 
-If you use an https domain-name URL (e.g. https://my-cluster.com) as the cluster URL make sure the the URL is DNS configured with the cluster IP and that there's an ingress-controller (for example, Nginx) that's handling requests sent to this domain on the cluster. 
+If you use an https-based domain (e.g. https://my-cluster.com) as the cluster URL make sure that the DNS is configured with the cluster IP and that there is an associated ingress-controller (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
 In order to configure HTTPS for your URL, please configure a TLS secret named `RUNAI_CLUSTER_DOMAIN_TLS_SECRET` in the `runai` namespace (instructions on how to set A TLS secret can be found here: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
-### Cluster IP
+#### Cluster IP
 
 Following are instructions on how to get the IP and set firewall settings. 
 
