@@ -31,7 +31,7 @@ Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in sever
 Use the above parameters to get a temporary token to access Run:ai as follows. 
 
 ### Example command to get an API token 
-
+#### in case of SaaS - use app.run.ai as <COMPANY-URL>
 === "cURL"
     ``` bash
     curl -X POST 'https://<COMPANY-URL>/auth/realms/<REALM>/protocol/openid-connect/token' \
