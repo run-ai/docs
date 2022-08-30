@@ -325,7 +325,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 
 ## Cluster URL
 
-The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. You can use either an domain-name URL (https only) or use the cluster IP directly. 
+The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. You can use either a domain-name URL (https only) or use the cluster IP directly. 
 
 ### Domain-name URL
 
