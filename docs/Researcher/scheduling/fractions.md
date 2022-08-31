@@ -76,6 +76,10 @@ As described above, MIG is only available in the latest NVIDIA architecture.
 
 Given a specific node, the IT administrator can decide whether to use one technology or the other. When the Researcher asks for a specific amount of GPU memory, Run:ai will either provide it on an annotated node by dynamically allocating a MIG partition, or use a different node using the fractions technology.
 
+## Limitations
+
+Run:ai certified dynamic MIG on NVIDIA A100 40GB only. If you are using A100 80GB of A30, please contact Run:ai customer support.
+
 ## See Also
 
 * Fractions [quickstart](../Walkthroughs/walkthrough-fractions.md).
