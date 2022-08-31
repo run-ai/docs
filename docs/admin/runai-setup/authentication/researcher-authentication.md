@@ -93,7 +93,7 @@ When making changes to the file, keep a copy of the original file to be used for
 
 ## Test via Command-line interface
 
-* Run: `runai login` (in OpenShift environments use `oc` login` rather than `runai login`)
+* Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`)
 * You will be prompted for a username and password. In a single sign-on flow, you will be asked to copy a link to a browser, log in and return a code. 
 * Once login is successful, submit a Job.
 * If the Job was submitted with a Project to which you have no access, your access will be denied. 
