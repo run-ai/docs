@@ -325,26 +325,48 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 
 ### Cluster URL
 
-The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. You can use either a domain name (https only) or use the cluster IP directly. 
+The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. 
+
+<!-- 
+You can use either a domain name (https only) or use the cluster IP directly. 
 
 #### Domain Name 
 
-If you use an https-based domain (e.g. https://my-cluster.com) as the cluster URL make sure that the DNS is configured with the cluster IP and that there is an associated ingress-controller (for example, NGINX) that is handling requests sent to this domain on the cluster. 
+If you use an HTTPS-based domain (e.g. https://my-cluster.com) as the cluster URL make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
-In order to configure HTTPS for your URL, please configure a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace (instructions on how to set A TLS secret can be found here: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
+In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain. The secret format should be:
 
-#### Cluster IP
+``` YAML title="tls-secret.yaml"
+apiVersion: v1
+data:
+  tls.crt: <BASE64 OF CERT> # (1)
+  tls.key: <BASE64 of KEY>  # (2)
+kind: Secret
+metadata:
+  name: runai-cluster-domain-tls-secret
+  namespace: runai
+type: kubernetes.io/tls
+```
+
+1. The domain's cert (public key). The cert should be formatted as base 64.
+2. The domain's private key. The key should be formatted as base 64.
+
+Run: `kubectl apply -f tls-secret.yaml`
+
+For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
+
+#### Cluster IP -->
 
 Following are instructions on how to get the IP and set firewall settings. 
 
 
 === "Unmanaged Kubernetes" 
     * Use the node IP of any of the Kubernetes nodes. 
-    * Setup the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
+    * Set up the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
 
 === "Unmanaged Kubernetes on the cloud" 
     * Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. 
-    * Setup the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
+    * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
 
 
 === "Managed Kubernetes (EKS, AKS, GKE)"
