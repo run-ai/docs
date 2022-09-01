@@ -19,12 +19,12 @@ Run:ai has been tested with the following Kubernetes distributions:
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 | Canonical Kubernetes | a.k.a Charmed Kubernetes | | 
 
-A full list of Kubernetes partners can be found here: [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/){target=_blank}. In addition, Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md).
+Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md).
 
 
 !!! Notes
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
+    * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25.
 ### NVIDIA 
 
 === "On Prem"    
@@ -336,17 +336,9 @@ If you use an HTTPS-based domain (e.g. https://my-cluster.com) as the cluster UR
 
 In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain. The secret format should be:
 
-``` YAML title="tls-secret.yaml"
-apiVersion: v1
-data:
-  tls.crt: <BASE64 OF CERT> # (1)
-  tls.key: <BASE64 of KEY>  # (2)
-kind: Secret
-metadata:
-  name: runai-cluster-domain-tls-secret
-  namespace: runai
-type: kubernetes.io/tls
-```
+
+kubectl create ns runai
+kubectl create secret tls runai-cluster-domain-tls-secret -n runai --cert fullchain.pem --key private.pem
 
 1. The domain's cert (public key). The cert should be formatted as base 64.
 2. The domain's private key. The key should be formatted as base 64.

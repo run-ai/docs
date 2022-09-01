@@ -52,8 +52,14 @@ As described in [authentication overview](authentication-overview.md), you must 
     kube-api:
         always_pull_images: false
         extra_args:
-            <parameters copied from server configuration section>
+            oidc-client-id: runai  # (1)
+            oidc-issuer-url: https://example.com/auth
+            oidc-username-prefix: "-"
+            
     ```
+
+    1. These are example parameters. Copy the actual parameters from from `General | Settings | Researcher Authentication` as described above.
+
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
 === "RKE2"
