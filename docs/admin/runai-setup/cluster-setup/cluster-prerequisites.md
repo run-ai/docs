@@ -331,7 +331,7 @@ The Run:ai user interface requires a URL address to the Kubernetes cluster. The 
 
 If you use an https-based domain (e.g. https://my-cluster.com) as the cluster URL make sure that the DNS is configured with the cluster IP and that there is an associated ingress-controller (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
-In order to configure HTTPS for your URL, please configure a TLS secret named `RUNAI_CLUSTER_DOMAIN_TLS_SECRET` in the `runai` namespace (instructions on how to set A TLS secret can be found here: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
+In order to configure HTTPS for your URL, please configure a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace (instructions on how to set A TLS secret can be found here: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
 #### Cluster IP
 
