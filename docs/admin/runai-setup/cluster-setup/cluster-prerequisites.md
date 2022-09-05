@@ -35,7 +35,36 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
 
 === "GKE"
-    Google provides a different method for installing NVIDIA Device drivers and the NVIDIA device plug-in. Detailed [here](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus#installing_drivers){target=_blank}. As such, using the GPU Operator is not an option. You will need to manually install the [Kubernetes Node feature discovery](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank}, [NVIDIA GPU feature discovery](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank} and [NVIDIA DCGM exporter](https://github.com/NVIDIA/dcgm-exporter){target=_blank}. The installation is not trivial and we recommend contacting Run:ai customer support. 
+
+    Create the `gpu-operator` namespace by running
+
+    ```
+    kubectl create ns gpu-operator
+    ```
+
+    Before installing the GPU Operator you must create the following file:
+
+    ``` YAML title="resourcequota.yaml"
+    apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: gcp-critical-pods
+      namespace: gpu-operator
+    spec:
+      scopeSelector:
+        matchExpressions:
+        - operator: In
+          scopeName: PriorityClass
+          values:
+          - system-node-critical
+          - system-cluster-critical
+
+    ```
+
+    Then run: `kubectl apply -f resourcequota.yaml`
+
+    !!! Important
+        GKE has only been tested with GPU Operator version 1.11.1 and up
 
 === "RKE"
     Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
@@ -361,7 +390,23 @@ Following are instructions on how to get the IP and set firewall settings.
     * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
 
 
-=== "Managed Kubernetes (EKS, AKS, GKE)"
+=== "EKS"
+
+    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx
+    ```
+
+    Find the Cluster IP by running:
+
+    ``` bash
+    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+    ```
+
+=== "GKE"
 
     You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
 
@@ -376,7 +421,6 @@ Following are instructions on how to get the IP and set firewall settings.
     ``` bash
     echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
     ```
-
 
 ## Pre-install Script
 

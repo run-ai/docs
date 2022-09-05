@@ -76,7 +76,34 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 
 === "GKE"
-    See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Use the parameters provided in the server configuration section as described above. 
+    See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Specifically:
+
+    Install Anthos identity service by running:
+
+    ```
+    gcloud container clusters update <gke-cluster-name> \
+        --enable-identity-service --project=<gcp-project-name> --zone=<gcp-zone-name>
+    ```
+
+    Install the [yq](https://github.com/mikefarah/yq){target=_blank} utility and run:
+
+    ```
+    kubectl get clientconfig default -n kube-public -o yaml > login-config.yaml
+    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"$OIDC_CLIENT_ID\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"sub\",\"userPrefix\":\"$OIDC_USERNAME_PREFIX\"}}]}" login-config.yaml
+    kubectl apply -f login-config.yaml
+    ```
+
+    Where the `OIDC` flags are provided in the Run:ai server configuration section as described above. 
+
+
+    To create a kubeconfig profile for Researchers run:
+
+    ```
+    kubectl oidc login --cluster=CLUSTER_NAME --login-config=login-config.yaml \
+        --kubeconfig=developer-kubeconfig
+    ```
+
+    Then modify the `developer-kubeconfig` file as described in the [Command-line Inteface Access](researcher-authentication.md#command-line-interface-access) section below.
 
 === "EKS"
     * In the AWS Console, under EKS, find your cluster.
