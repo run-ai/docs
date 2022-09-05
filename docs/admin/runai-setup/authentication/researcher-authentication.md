@@ -76,9 +76,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 
 === "GKE"
-    See [Enable Identity Service for GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank}. Specifically:
-
-    Install Anthos identity service by running:
+    Install [Anthos identity service](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank} by running:
 
     ```
     gcloud container clusters update <gke-cluster-name> \
