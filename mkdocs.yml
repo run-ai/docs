@@ -291,4 +291,6 @@ nav:
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+  - 'Use-cases' :
+    - 'Overview' : 'use-cases/overview-use-cases.md'
 #        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 
