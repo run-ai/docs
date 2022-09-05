@@ -10,7 +10,6 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 | `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
 | `ingress-nginx.podSecurityPolicy.enabled` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank}  | 
 | `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects | 
-| `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__.  | 
@@ -22,6 +21,8 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 | `prometheus-adapter.enabled` | `false` | Install Prometheus Adapter. Used for Inference workloads using a custom metric for autoscaling). Set to `true` if __Prometheus Adapter__ is not already installed in the cluster |
 | `prometheus-adapter.prometheus` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, set this field accordingly with `url` and `port` |
 
+
+<!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
 
 
 ### Feature Discovery
