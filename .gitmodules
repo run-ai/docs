@@ -3,4 +3,4 @@
 	url = https://github.com/jonathancosme/runai_docker_intro.git
 [submodule "docs/use-cases/docs/use-cases/runai_mlflow_demo"]
 	path = docs/use-cases/docs/use-cases/runai_mlflow_demo
-	url = https://github.com/jonathancosme/runai_tensorboard_demo_with_resnet.git
+	url = https://github.com/jonathancosme/runai_mlflow_demo.git
