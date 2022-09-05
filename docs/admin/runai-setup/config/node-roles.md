@@ -24,6 +24,9 @@ To remove the runai-system node role run:
 runai-adm remove node-role --runai-system-worker <node-name>
 ```
 
+!!! Warning
+    Do not select the Kubernetes master as a runai-system node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
+
 ## Dedicated GPU & CPU Nodes
 
 Separate nodes into those that:
