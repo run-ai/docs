@@ -1,6 +1,6 @@
 # Native Kubernetes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as _Kubespray_ [https://kubespray.io/](https://kubespray.io/#/){target=_blank}, Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
+Kubernetes is composed of master(s) and workers. The instructions below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
 ## Prerequisites:
 
