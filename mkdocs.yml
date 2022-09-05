@@ -36,6 +36,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg 
+  - sane_lists
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -293,4 +294,6 @@ nav:
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
   - 'Use-cases' :
     - 'Overview' : 'use-cases/overview-use-cases.md'
+    - 'Run:ai with mlflow' : 'use-cases/runai_mlflow_demo/README.md'
+    - 'Docker intro' : 'use-cases/runai_docker_intro/README.md'
 #        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 
