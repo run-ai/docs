@@ -141,11 +141,14 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > 
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
-#### -- [COMMAND]
->  Overrides the image's entry point with the command supplied after '--'
+#### --command
+>  Overrides the image's entry point with the command supplied after '--'. When __not__ using the `--command` flag, the entry point will __not__ be overrided and the string after `--` will be appended as arguments to the entry point command.
 >
 >  Example: 
-> > `-- python script.py 10000` 
+
+>  `--command -- run.sh 1 54` will start the docker and run `run.sh 1 54`
+
+>  `-- script.py 10000` will augment `script.py 10000` to the entry point command (e.g. `python`)
 
 #### -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
