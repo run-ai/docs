@@ -48,4 +48,4 @@ runai-adm version
 
 ## Updating the Run:ai Administrator CLI
 
-To update the CLI to the latest version perform the same install process again.
+To update the CLI to the latest version perform the same install process again. The command `runai-adm update` is no longer supported.
