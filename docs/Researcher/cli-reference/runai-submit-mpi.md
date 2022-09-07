@@ -244,7 +244,7 @@ start an unattended mpi training Job of name dist1, based on Project _team-a_ us
 ### Access Control
 
 #### --create-home-dir
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. The flag is set by default to true when the --run-as-user flag is used, and false if not. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 #### --prevent-privilege-escalation
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
