@@ -13,7 +13,7 @@ To delete a Run:ai Cluster installation while retaining existing running jobs, r
 === "Version 2.8 or later"
     ```
     kubectl delete RunaiConfig runai -n runai
-    helm delete runai-cluster runai -n runai
+    helm delete runai-cluster -n runai
     ```
 
 
