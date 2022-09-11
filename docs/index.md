@@ -25,6 +25,15 @@ To get support use the following channels:
 
 
 
+## Community 
+
+Run:AI provides its customers with access to the _Run:AI Customer Community portal_ in order to submit tickets, track ticket progress and update support cases.
+
+[Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
+
+Reach out to [support@run.ai](mailto:support@run.ai) for credentials.
+
+
 ## Run:ai Cloud Status Page
 
 Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
@@ -44,3 +53,5 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 ## Example Code
 
 Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
+
+
