@@ -38,12 +38,12 @@ Each user can create an image with the software they need installed on it....
   
 ### What do I need to use Docker?
   
-1. An image repository
++ An image repository
     + I use Docker Hub. It's free and you can register [here](https://hub.docker.com/)
   
 ![](images/image_4.png)  
   
-2. Docker software
++ Docker software
     + I use Docker Desktop
         + Here are the instructions for a [Linux installation](https://docs.docker.com/desktop/install/linux-install/)
         + Here are the instructions for a [Windows installation](https://docs.docker.com/desktop/install/windows-install/)
