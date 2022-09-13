@@ -1,0 +1,9 @@
+runai submit \
+	--project testproj \
+	--gpu 0 \
+	--job-name-prefix persist-env \
+	--image jonathancosme/base-notebook-root \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	--volume /home/jonathan_cosme/jcosme/envs:/opt/conda/envs \
+	--volume /home/jonathan_cosme/jcosme/kernels:/home/jovyan/.local/share/jupyter/kernels \
+	-- conda run -n pandas-env python work/projects/persist_env_demo/persist_env_demo.py

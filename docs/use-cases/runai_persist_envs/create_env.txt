@@ -1,0 +1,4 @@
+mamba create -n pandas-env -c conda-forge ipykernel pandas tabulate -y
+conda activate pandas-env
+python -m ipykernel install --user --name=pandas-env
+exit
