@@ -1,0 +1,7 @@
+FROM jonathancosme/root-jpy-prox
+
+RUN mamba install -c conda-forge tensorboard -y && \
+    mamba clean --all -f -y
+
+COPY jupyter_server_config.py /etc/jupyter/
+

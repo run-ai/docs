@@ -1,0 +1,20 @@
+FROM jonathancosme/base-notebook-root-py38
+
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
+    sudo DEBIAN_FRONTEND=noninteractive dpkg -i cuda-keyring_1.0-1_all.deb && \
+    sudo apt-get update && \
+    sudo DEBIAN_FRONTEND=noninteractive apt-get -y install cuda && \
+    sudo apt-get autoclean
+
+RUN conda config --set remote_read_timeout_secs 300 && \
+    conda config --set remote_connect_timeout_secs 300 && \
+    CONDA_OVERRIDE_CUDA="11.7" mamba install -c conda-forge -c nvidia numpy matplotlib pillow tensorflow-gpu=2.8 cudatoolkit=11.7 cudnn -y && \
+    pip install tensorflow==2.9 tensorboard==2.9 tensorflow-hub tensorflow-text keras-nlp && \
+    mamba clean --all -f -y 
+
+RUN export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/ && \
+    export TF_FORCE_GPU_ALLOW_GROWTH=true
+
+RUN sudo apt-get -y install libcudnn8-dev && \
+    sudo apt-get autoclean && \
+    sudo rm cuda-keyring_1.0-1_all.deb

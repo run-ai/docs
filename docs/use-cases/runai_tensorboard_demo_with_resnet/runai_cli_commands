@@ -1,0 +1,15 @@
+runai submit \
+	--project testproj \
+	--gpu 1 \
+	--job-name-prefix tb-renset-demo \
+	--image jonathancosme/keras-nb \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	-- python work/projects/tensorboard_resnet_demo/train_resnet50.py
+
+runai submit \
+	--project testproj \
+	--gpu 1 \
+	--job-name-prefix tb-renset-demo \
+	--image jonathancosme/keras-nb \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	-- python work/projects/tensorboard_resnet_demo/train_resnet101.py

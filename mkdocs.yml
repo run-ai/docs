@@ -296,3 +296,4 @@ nav:
     - 'Overview' : 'use-cases/overview-use-cases.md'
     - 'Run:ai with mlflow' : 'use-cases/runai_mlflow_demo/README.md'
     - 'Docker intro' : 'use-cases/runai_docker_intro/README.md'
+    - 'Tensorboard (with ResNet demo)' : 'use-cases/runai_tensorboard_demo_with_resnet/README.md'
