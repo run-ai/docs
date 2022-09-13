@@ -295,3 +295,4 @@ nav:
   - 'Use Cases' :
     - 'Overview' : 'use-cases/overview-use-cases.md'
     - 'Run:ai with mlflow' : 'use-cases/runai_mlflow_demo/README.md'
+    - 'Docker intro' : 'use-cases/runai_docker_intro/README.md'
