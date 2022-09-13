@@ -292,5 +292,6 @@ nav:
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
 #        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 
-  - 'Use-cases' :
+  - 'Use Cases' :
     - 'Overview' : 'use-cases/overview-use-cases.md'
+    - 'Run:ai with mlflow' : 'use-cases/runai_mlflow_demo/README.md'

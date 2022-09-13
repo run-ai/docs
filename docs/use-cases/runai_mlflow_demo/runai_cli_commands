@@ -1,0 +1,23 @@
+runai submit \
+	--project testproj \
+	--gpu 0 \
+	--job-name-prefix mlflow-demo \
+	--image jonathancosme/mlflow-ui \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	-- python work/projects/mlflow_demo/mlflow_demo_1.py
+
+runai submit \
+	--project testproj \
+	--gpu 0 \
+	--job-name-prefix mlflow-demo \
+	--image jonathancosme/mlflow-ui \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	-- python work/projects/mlflow_demo/mlflow_demo_2.py
+
+runai submit \
+	--project testproj \
+	--gpu 0 \
+	--job-name-prefix mlflow-demo \
+	--image jonathancosme/mlflow-ui \
+	--volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
+	-- python work/projects/mlflow_demo/mlflow_demo_3.py
