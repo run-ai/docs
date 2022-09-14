@@ -54,4 +54,16 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 
 Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
 
+The following images are used throughout the documentation:
+
+|  Image | Description | Source |
+|--------|-------------|--------|
+| [gcr.io/run-ai-demo/quickstart](gcr.io/run-ai-demo/quickstart){target=_blank} | Basic training image. Multi-GPU support | [https://github.com/run-ai/docs/tree/master/quickstart/main](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} | 
+| [gcr.io/run-ai-demo/quickstart-distributed](gcr.io/run-ai-demo/quickstart-distributed){target=_blank} | Distributed training using MPI and Horovod | [https://github.com/run-ai/docs/tree/master/quickstart/distributed](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank} | 
+| [zembutsu/docker-sample-nginx](https://hub.docker.com/r/zembutsu/docker-sample-nginx) | Build (interactive) with Connected Ports | [https://github.com/zembutsu/docker-sample-nginx](https://github.com/zembutsu/docker-sample-nginx){target=_blank} | 
+| [gcr.io/run-ai-demo/quickstart-hpo](gcr.io/run-ai-demo/quickstart-hpo) |  Hyperparameter Optimization  |[https://github.com/run-ai/docs/tree/master/quickstart/hpo](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank} | 
+| [gcr.io/run-ai-demo/quickstart-x-forwarding](gcr.io/run-ai-demo/quickstart-x-forwarding){target=_blank} | Use X11 forwarding from Docker image | [https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding){target=_blank} | 
+| [gcr.io/run-ai-demo/pycharm-demo](gcr.io/run-ai-demo/pycharm-demo){target=_blank} | Image used for tool integration (PyCharm and VSCode) | [https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank} |
+| [gcr.io/run-ai-demo/example-triton-client](gcr.io/run-ai-demo/example-triton-client){target=_blank} and  [gcr.io/run-ai-demo/example-triton-server](gcr.io/run-ai-demo/example-triton-server){target=_blank} |  Basic Inference | [https://github.com/run-ai/models/tree/main/models/triton](https://github.com/run-ai/models/tree/main/models/triton){target=_blank} |
+
 
