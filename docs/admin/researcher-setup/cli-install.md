@@ -50,7 +50,10 @@ kubectl get nodes
      chmod +x runai
      sudo mv runai /usr/local/bin/runai
      ```
-  
+
+    !!! Note
+        An alternative way of downloading the CLI is provided under the [CLI Troubleshooting](../troubleshooting/troubleshooting.md#command-line-interface-issues) section.
+ 
 === "Run:ai version 2.4 or earlier"
      *   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
 
