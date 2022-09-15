@@ -20,6 +20,13 @@ Create a configuration file to install the Run:ai control plane:
     3. TLS certificate and private key for the above domain.
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 
+
+    !!! Note
+        In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)
+
+    A file called `runai-backend-values.yaml` will be created.
+
+
 === "Airgapped"
     Generate a values file by running the following __under the `deploy` folder__:
     ``` bash
@@ -36,17 +43,13 @@ Create a configuration file to install the Run:ai control plane:
     3. TLS certificate and private key for the above domain.
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 
+    Ignore the message about a downloaded file.
 <!-- Where:
 
 * `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
 * `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 * `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes.  -->
 
-!!! Note
-    In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)
-
-
-A file called `runai-backend-values.yaml` will be created.
 
 ## (Optional) Edit Configuration File
 
