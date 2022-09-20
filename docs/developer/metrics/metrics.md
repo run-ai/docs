@@ -81,10 +81,6 @@ Following is a list of labels appearing in Run:ai metrics:
 | user                   | User identifier                    |
 
 
-## Custom Run:ai Metrics
-
-The Run:ai [reporting module](../../Researcher/researcher-library/rl-reporting.md) is a python library that allows users to externalize custom metrics from inside the container. When the python code sends a metric named `<reporter_metric_name>`, you will be able to query Prometheus for a metric named `reporter_push_gateway_parameter_<reporter_metric_name>`.
-
 ## Other Metrics
 
 Run:ai exports other metrics emitted by NVIDIA and Kubernetes packages, as follows:
