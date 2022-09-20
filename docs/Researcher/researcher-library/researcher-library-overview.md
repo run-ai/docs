@@ -23,5 +23,4 @@ In your command-line run:
 
 To review details on the specific Run:ai Researcher Library modules see:
 
-*   [Reporting via the Run:ai Researcher Library](rl-reporting.md)
 *   [Hyperparameter optimization support](rl-hpo-support.md) 

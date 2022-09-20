@@ -160,21 +160,7 @@ Distributed training is the ability to run workloads on multiple nodes (not just
 
 
 !!! Notes
-    Kubeflow MPI requires containers to run as root. This needs special adjustments when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes. Redhat provides an [article](https://cloud.redhat.com/blog/how-to-use-kubeflow-and-the-mpi-operator-on-openshift){target=_blank} on how to configure MPI jobs to run as root on OpenShift. 
-    
-
-### Reporting on Workload Progress
-
-The Run:ai [Researcher Library](../../../Researcher/researcher-library/rl-reporting.md) includes a _reporting_ module. The reporting module externalizes progress information about the run which is then available as a graph in the Job list. 
-
-To enable externalizing the information you must install the __Prometheus Push Gateway__ as follows: 
-
-```
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-helm install runai-prometheus-pushgateway prometheus-community/prometheus-pushgateway \
-    -n runai --set serviceMonitor.enabled=true --set serviceMonitor.namespace=runai
-```
+    Kubeflow MPI requires containers to run as root. This needs special adjustments when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes. Redhat provides an [article](https://cloud.redhat.com/blog/how-to-use-kubeflow-and-the-mpi-operator-on-openshift){target=_blank} on how to configure MPI jobs to run as root on OpenShift.
 
 ## Hardware Requirements
 

@@ -257,7 +257,6 @@ nav:
 #      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
-      - 'Reporting' : 'Researcher/researcher-library/rl-reporting.md'
       - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
