@@ -74,10 +74,10 @@ history = model.fit(train_ds,
     + Tensorflow\*\*
     + Keras\*\*  
   
-\*needed in order to access the MLflow UI
-\*\* needed in order train Tensorflow models (ResNet in our example)  
+\*Needed to access the MLflow UI
+\*\* needed to train Tensorflow models (ResNet in our example)  
 
-### Creating a persisten directory
+### Creating a persistent directory
 #### We need to create a 'tensorboard_logs' folder on our NFS.  
   
 ![](images/image_2.png)  

@@ -2,7 +2,7 @@
   
 __A 10-minute video of a live demo can be found [here](https://youtu.be/EwOW-OBosuY){target=_blank}__  
   
-Full content can be found at the GitHub repository [here](https://github.com/run-ai/docs/tree/master/docs/use-cases/runai_MLflow_demo){target=_blank}.  
+Full content can be found at the GitHub repository [here](https://github.com/run-ai/docs/tree/master/docs/use-cases/runai_mlflow_demo){target=_blank}.  
   
 ## Description  
 
@@ -46,7 +46,7 @@ We can also choose to specify the location of the database, and artifact folder,
 
 ~~~bash
 MLflow server \
-    --backend-store-uri=sqlite:///abs/path/to/db/MLflow.db \
+    --backend-store-uri=sqlite:///abs/path/to/db/mlflow.db \
      --default-artifact-root=/abs/path/to/artifacts \
      --host=0.0.0.0 \
      --port=5000 
@@ -61,14 +61,14 @@ Then you’ll want to start your run, and at the end, you’ll want to end the r
 ~~~python
 import MLflow
 
-MLflow.set_tracking_uri('0.0.0.0:5000')
-MLflow.start_run()
+mlflow.set_tracking_uri('0.0.0.0:5000')
+mlflow.start_run()
 
 """
 your code here
 """
 
-MLflow.end_run()
+mlflow.end_run()
 ~~~  
   
 ## MLflow with run:ai  
@@ -109,7 +109,7 @@ To access the MLflow UI, we need to add this entry to the `jupyter_server_config
 Create a jupyter interactive job with:  
   
 + Image [jonathancosme/mlflow-ui](https://hub.docker.com/repository/docker/jonathancosme/mlflow-ui){target=_blank}.
-+ Mounted NFS folder (with ‘MLflow’ folder) in default jupyter work directory
++ Mounted NFS folder (with ‘mlflow’ folder) in default jupyter work directory
   
 ![](images/image_7.png)  
   
@@ -135,10 +135,10 @@ Thus, our CLI command would look like this:
 runai submit \
     --project testproj \
     --gpu 0 \
-    --job-name-prefix MLflow-demo \
-    --image jonathancosme/MLflow-ui \
+    --job-name-prefix mlflow-demo \
+    --image jonathancosme/mlflow-ui \
     --volume /home/jonathan_cosme/jcosme:/home/jovyan/work \
-    -- python work/projects/MLflow_demo/MLflow_demo_1.py
+    -- python work/projects/mlflow_demo/mlflow_demo_1.py
 ~~~  
   
 ![](images/image_12.png) 
