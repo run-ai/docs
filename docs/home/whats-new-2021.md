@@ -67,7 +67,7 @@ Researcher Command Line Interface (CLI) enhancements:
 
 Kubeflow integration is now supported. The new integration allows building ML pipelines in [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/){target=_blank} as well as [Kubeflow Notebooks](https://www.kubeflow.org/docs/components/notebooks/){target=_blank} and run the workloads via the Run:ai platform. For further details see [Integrate Run:ai with Kubeflow](../admin/integration/kubeflow.md).
 
-Mlflow integration is now supported. For further details see [Integrate Run:ai with MLflow](../admin/integration/mlflow.md).
+MLflow integration is now supported. For further details see [Integrate Run:ai with MLflow](../admin/integration/mlflow.md).
 
 Run:ai Projects are implemented as Kubernetes namespaces. Run:ai now supports customizable namespace names. For further details see [Manual Creation of Namespaces](../admin/runai-setup/cluster-setup/customize-cluster-install.md).
 

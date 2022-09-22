@@ -62,7 +62,7 @@ history = model.fit(train_ds,
 ~~~  
   
 ## Tensorboard with run:ai
-### what is needed to run mlflow on run:ai?  
+### what is needed to run MLflow on run:ai?  
 
 1. A persistent directory to keep
     + Tensorboard logs folder
@@ -74,7 +74,7 @@ history = model.fit(train_ds,
     + Tensorflow\*\*
     + Keras\*\*  
   
-\*needed in order to access the mlflow UI
+\*needed in order to access the MLflow UI
 \*\* needed in order train Tensorflow models (ResNet in our example)  
 
 ### Creating a persisten directory
