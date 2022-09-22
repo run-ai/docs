@@ -264,7 +264,13 @@ nav:
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Notebook' :  'Researcher/tools/dev-jupyter.md'
-      - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
+      - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md' 
+    - 'Use Cases' :
+      - 'Overview' : 'Researcher/use-cases/overview-use-cases.md'
+      - 'Run:ai with mlflow' : 'Researcher/use-cases/runai_mlflow_demo/README.md'
+      - 'Docker intro' : 'Researcher/use-cases/runai_docker_intro/README.md'
+      - 'Tensorboard (with ResNet demo)' : 'Researcher/use-cases/runai_tensorboard_demo_with_resnet/README.md'
+      - 'Persistent environments' : 'Researcher/use-cases/runai_persist_envs/README.md' 
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'API Authentication' : 'developer/rest-auth.md'
@@ -292,9 +298,3 @@ nav:
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
 #        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 
-  - 'Use Cases' :
-    - 'Overview' : 'use-cases/overview-use-cases.md'
-    - 'Run:ai with mlflow' : 'use-cases/runai_mlflow_demo/README.md'
-    - 'Docker intro' : 'use-cases/runai_docker_intro/README.md'
-    - 'Tensorboard (with ResNet demo)' : 'use-cases/runai_tensorboard_demo_with_resnet/README.md'
-    - 'Persistent environments' : 'use-cases/runai_persist_envs/README.md'
