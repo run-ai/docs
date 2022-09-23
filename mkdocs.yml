@@ -74,7 +74,7 @@ plugins:
         # 'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         # 'Administrator/Cluster-Setup/cluster-setup-intro.md' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         # 'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
-        # 'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
+        'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         # 'Administrator/Cluster-Setup/install-k8s.md' : 'admin/runai-setup/cluster-setup/install-k8s.md'
         # 'Administrator/Cluster-Setup/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
         # 'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
