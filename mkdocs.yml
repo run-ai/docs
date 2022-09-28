@@ -264,6 +264,7 @@ nav:
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  
       - 'Jupyter Notebook' :  'Researcher/tools/dev-jupyter.md'
       - 'TensorBoard' :  'Researcher/tools/dev-tensorboard.md'  
+    - 'Use Cases' : 'Researcher/use-cases/overview-use-cases.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
     - 'API Authentication' : 'developer/rest-auth.md'
