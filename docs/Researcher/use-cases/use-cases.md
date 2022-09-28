@@ -1,7 +1,7 @@
 ---
-title: User-case Documentation Overview
+title: User Cases
 ---
-# Overview: Use-cases Documentation
+# User Cases
 
 This is a collection of various client-requested use-cases. Each use-case is accompanied by a short live-demo video, along with all the files used. As we learn more about our clients' specific needs, this page will be updated with new content. 
   
