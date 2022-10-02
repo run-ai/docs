@@ -20,7 +20,7 @@ helm list -A
 ```bash
 helm get values -n <RELEASE_NAMESPACE> <RELEASE_NAME> -oyaml > current_prom_adapter_values.yaml
 ```
-4. Merge patch the rules from step 1 with the values from step 3, and upgrade the release with the new values.
+4. Merge the rules from step 1 with the values from step 3, and upgrade the release with the new values.
 ```bash
 helm upgrade -n <RELEASE_NAMESPACE> <RELEASE_NAME> <CHART_NAME> -f <MERGED_VALUES_FILE>
 ```
