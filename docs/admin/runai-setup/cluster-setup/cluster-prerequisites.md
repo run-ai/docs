@@ -345,18 +345,25 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 
 The Run:ai user interface requires a URL address to the Kubernetes cluster. The requirement is relevant for SaaS installation only. 
 
-<!-- 
-You can use either a domain name (https only) or use the cluster IP directly. 
+=== "Version 2.8"
+    You can use either a domain name (https only) or use the cluster IP directly. The recommended default is a domain-name.
+
+=== "Version 2.7 or lower"
+    Use a cluster IP only. 
+
 
 #### Domain Name 
 
-If you use an HTTPS-based domain (e.g. https://my-cluster.com) as the cluster URL make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
+Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
-In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain. The secret format should be:
+In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
 
-
+``` bash
 kubectl create ns runai
-kubectl create secret tls runai-cluster-domain-tls-secret -n runai --cert fullchain.pem --key private.pem
+kubectl create secret tls runai-cluster-domain-tls-secret -n runai 
+    --cert /path/to/fullchain.pem # (1)
+    --key /path/to/private.pem # (2)
+```
 
 1. The domain's cert (public key). The cert should be formatted as base 64.
 2. The domain's private key. The key should be formatted as base 64.
@@ -365,7 +372,7 @@ Run: `kubectl apply -f tls-secret.yaml`
 
 For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
-#### Cluster IP -->
+#### Cluster IP
 
 Following are instructions on how to get the IP and set firewall settings. 
 
