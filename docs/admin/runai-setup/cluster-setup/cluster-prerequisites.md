@@ -367,10 +367,8 @@ kubectl create secret tls runai-cluster-domain-tls-secret -n runai
     --key /path/to/private.pem # (2)
 ```
 
-1. The domain's cert (public key). The cert should be formatted as base 64.
-2. The domain's private key. The key should be formatted as base 64.
-
-Run: `kubectl apply -f tls-secret.yaml`
+1. The domain's cert (public key).
+2. The domain's private key. 
 
 For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
