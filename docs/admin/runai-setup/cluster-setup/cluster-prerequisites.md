@@ -354,6 +354,8 @@ The Run:ai user interface requires a URL address to the Kubernetes cluster. The 
 
 #### Domain Name 
 
+:octicons-versions-24: Version 2.8 and up.
+
 Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
 In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
