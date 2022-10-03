@@ -358,12 +358,24 @@ The Run:ai user interface requires a URL address to the Kubernetes cluster. The 
 
 Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
 
+!!! Example
+    There are many ways to install and configure an ingress controller and configuration is environment-dependent. A simple solution for on-prem clusters is to install NGINX and configure it to an external IP:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx \
+         --set controller.service.externalIPs=<EXTERNAL-IP> # (1)
+    ```
+
+    1. Replace `<EXTERNAL-IP>` with the IP of one of the cluster nodes.
+
 In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
 
 ``` bash
 kubectl create ns runai
-kubectl create secret tls runai-cluster-domain-tls-secret -n runai 
-    --cert /path/to/fullchain.pem # (1)
+kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
+    --cert /path/to/fullchain.pem  \ # (1)
     --key /path/to/private.pem # (2)
 ```
 
