@@ -35,7 +35,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 
 === "EKS"
     * Do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
-    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
 
 === "GKE"
 
@@ -75,8 +75,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
-    * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false --set toolkit.enabled=false --set migManager.enabled=false`. 
-    * [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} comes bundled with NVIDIA Drivers. use the NVIDIA GPU Operator flag `--set driver.enabled=false` (leave `toolkit.enabled` as true which is the default).
+    * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} is one such example as it comes bundled with NVIDIA Drivers. 
     * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md/#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
         
