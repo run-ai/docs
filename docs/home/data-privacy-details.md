@@ -11,14 +11,13 @@ Run:ai [SaaS Cluster installation](../admin/runai-setup/installation-types.md) u
 
 Following is a list of platform data items that are sent to the Run:ai cloud.
 
-| Asset   | Data Details  | Comments |
-|---------|---------------|-----------|
-| Job Metrics | Job names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |  |
-| Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |  |
-| Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |  |
-| Projects & Departments | Names, quota information |  |
-| Users | User roles |  |
-| Users | User emails and passwords | Managed by a third party auth0.com. See privacy policy and compliance [statements](https://auth0.com/security){target=_blank} |
+| Asset   | Data Details  | 
+|---------|---------------|
+| Job Metrics | Job names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |
+| Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |
+| Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |
+| Projects & Departments | Names, quota information |
+| Users | User Run:ai roles, emails and passwords (when single-sign on not used) |
 
 Run:ai does __not send__ deep-learning artifacts to the cloud. As such any Code, images, container logs, training data, models, checkpoints and the like, stay behind corporate firewalls. 
 
