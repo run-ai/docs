@@ -356,7 +356,7 @@ The Run:ai user interface requires a URL address to the Kubernetes cluster. The 
 
 :octicons-versions-24: Version 2.8 and up.
 
-Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ (for example, NGINX) that is handling requests sent to this domain on the cluster. 
+Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ that is handling requests sent to this domain on the cluster.
 
 !!! Example
     There are many ways to install and configure an ingress controller and configuration is environment-dependent. A simple solution for on-prem clusters is to install NGINX and configure it to an external IP:
