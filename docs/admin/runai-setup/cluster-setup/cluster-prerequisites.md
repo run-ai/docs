@@ -368,7 +368,7 @@ Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)
          --set controller.service.externalIPs={<EXTERNAL-IP>} # (1)
     ```
 
-    1. Replace `<EXTERNAL-IP>` with the IP of one of the cluster nodes (keep the curly braces).
+    1. Replace `<EXTERNAL-IP>` with the IP of one of the cluster nodes (keep the curly braces). In cloud environments, add the internal IP as well (comma delimited).
 
 In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
 
