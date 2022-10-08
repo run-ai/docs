@@ -275,7 +275,7 @@ nav:
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
       - 'Reference' :
         - 'Training Workloads' : 'developer/cluster-api/reference/training.md'
-        - 'Interfactive Workloads' : 'developer/cluster-api/reference/interactive.md'
+        - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
         - 'Inference Workloads' : 'developer/cluster-api/reference/inference.md'
     - 'Administrator API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
