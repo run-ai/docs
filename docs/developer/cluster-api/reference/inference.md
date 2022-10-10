@@ -1,15 +1,15 @@
 # Inference Workload Parameters
 
-Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferencepolicy.spec`. You can also run `kubectl explain inferencepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
-KIND:     InferencePolicy
+KIND:     InferenceWorkload
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this InferencePolicy
+     The specifications of this InferenceWorkload
 
 FIELDS:
    annotations	<Object>
