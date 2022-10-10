@@ -1,15 +1,15 @@
 # Interactive Workload Parameters
 
-Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactivepolicy.spec`. You can also run `kubectl explain interactivepolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
-KIND:     InteractivePolicy
+KIND:     InteractiveWorkload
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this InteractivePolicy
+     The specifications of this InteractiveWorkload
 
 FIELDS:
    allowPrivilegeEscalation	<Object>
