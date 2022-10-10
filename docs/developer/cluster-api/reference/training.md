@@ -1,6 +1,6 @@
 # Training Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingpolicy.spec`. You can also run `kubectl explain trainingpolicy.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ```
 KIND:     TrainingWorkload
