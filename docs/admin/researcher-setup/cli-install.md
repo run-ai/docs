@@ -126,13 +126,11 @@ sudo rm /usr/local/bin/runai
 
 ## Use Run:ai on Windows
 
-Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
-
-Get the following folder from GitHub: [https://github.com/run-ai/docs/tree/master/cli/windows](https://github.com/run-ai/docs/tree/master/cli/windows){target=_blank}.
-
-Replace `config` with your Kubernetes Configuration file.
-
-Run: `build.sh` to create a docker image named `runai-cli`.
+* Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
+* Get the following folder from GitHub: [https://github.com/run-ai/docs/tree/master/cli/windows](https://github.com/run-ai/docs/tree/master/cli/windows){target=_blank}.
+* Replace `config` with your Kubernetes Configuration file.
+* Replace `<CLUSTER-URL>` in the Dockerfile with the URL of the cluster. The URL can be found in the `Clusters` view of the Run:ai user interface. 
+* Run: `build.sh` to create a docker image named `runai-cli`.
 
 Test the image by running:
 

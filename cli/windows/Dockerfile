@@ -1,20 +1,12 @@
 FROM ubuntu
 
 RUN apt update
-
-#install helm
-RUN apt install curl -y
-RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-RUN chmod 700 get_helm.sh
-RUN ./get_helm.sh
-
+RUN apt install wget -y
 #install runai cli
-RUN curl -fsSL -o runai-cli-v2.2.40-linux-amd64.tar.gz https://github.com/run-ai/runai-cli/releases/download/v2.2.40/runai-cli-v2.2.40-linux-amd64.tar.gz
-RUN tar -zxvf runai-cli-v2.2.40-linux-amd64.tar.gz
-RUN ./install-runai.sh
-RUN runai update
+RUN wget --content-disposition https://<CLUSTER-URL>/cli/linux
+# RUN wget --content-disposition https://epfllab-10-90-36-20.webredirect.org/cli/linux
+RUN chmod +x runai
+RUN sudo mv runai /usr/local/bin
 
 #inject credentials
 COPY config /root/.kube/config
