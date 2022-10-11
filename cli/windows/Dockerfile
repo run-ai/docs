@@ -4,7 +4,6 @@ RUN apt update
 RUN apt install wget -y
 #install runai cli
 RUN wget --content-disposition https://<CLUSTER-URL>/cli/linux
-# RUN wget --content-disposition https://epfllab-10-90-36-20.webredirect.org/cli/linux
 RUN chmod +x runai
 RUN sudo mv runai /usr/local/bin
 
