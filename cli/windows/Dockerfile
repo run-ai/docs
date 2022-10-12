@@ -5,7 +5,7 @@ RUN apt install wget -y
 #install runai cli
 RUN wget --content-disposition https://<CLUSTER-URL>/cli/linux
 RUN chmod +x runai
-RUN sudo mv runai /usr/local/bin
+RUN mv runai /usr/local/bin
 
 #inject credentials
 COPY config /root/.kube/config
