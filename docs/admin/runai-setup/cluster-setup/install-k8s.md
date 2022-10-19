@@ -9,7 +9,7 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 * The script must be run with ROOT privileges.
 * Inbound ports 6443,443,8080 must be allowed. 
 
-## Run on Designated Master Node
+## Run on Master Node
 
 * Get the script by running: 
 ```
@@ -34,7 +34,7 @@ kubectl get nodes
 Verify that the master node is ready
 
 
-## Run on all designated Worker nodes
+## Run on all Worker nodes
 
 * Get the script by running: 
 ```
@@ -62,7 +62,19 @@ To avoid accidental upgrade of Kubernetes binaries, it is recommended to _hold_ 
 sudo apt-mark hold kubeadm kubelet kubectl
 ```
 
-
 ## Next steps
 
 The administrative Kubernetes profile can be found in the master node under the `.kube` folder. 
+
+## Reset nodes
+
+The same script also contains an option to completely remove Kubernetes from nodes (master or workers). To use, run: 
+
+* Get the script by running: 
+```
+wget https://raw.githubusercontent.com/run-ai/docs/master/install/kube-install.sh
+```
+* Run the script with ROOT privileges: `sudo ./kube-install.sh`
+* When prompted, select the option to _reset/delete kubernetes_.
+* Select yes to reset the cluster and to remove Kubernetes packages.
+
