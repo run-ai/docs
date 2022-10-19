@@ -7,8 +7,6 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
-| `pspEnabled` | `false` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} | 
-| `ingress-nginx.podSecurityPolicy.enabled` | Set to `true` when using [PodSecurityPolicy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank}  | 
 | `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects | 
 | `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
 | `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
@@ -64,7 +62,7 @@ Run:ai Projects are implemented as Kubernetes namespaces. By default, the admini
 There are a couple of use cases that customers will want to disable this feature:
 
 * Some organizations prefer to use their internal naming convention for Kubernetes namespaces, rather than Run:ai's default `runai-<PROJECT-NAME>` convention.
-* When PodSecurityPolicy is enabled, some organizations will not allow Run:ai to automatically create Kubernetes namespaces. 
+* Some organizations will not allow Run:ai to automatically create Kubernetes namespaces. 
 
 
 Follow the following process to achieve this
