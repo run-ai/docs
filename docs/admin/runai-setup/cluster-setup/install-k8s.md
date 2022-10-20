@@ -8,6 +8,7 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 * The script below assumes all machines have Ubuntu 18.04 or later. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 * The script must be run with ROOT privileges.
 * Inbound ports 6443,443,8080 must be allowed. 
+* The script support Kubernetes 1.24 or later.
 
 ## Run on Master Node
 
