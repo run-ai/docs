@@ -138,6 +138,24 @@ Additional installation may be needed for some of the metrics as follows:
 
 If you wish to use an _existing_ Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support. 
 
+
+####  Accessing Inference from outside the Cluster
+
+Inference workloads will typically be accessed by consumers residing outside the cluster. You will hence want to provide consumers with a URL to access the workload. The URL can be found in the Run:ai user interface under the deployment screen (alternatively, run `kubectl get ksvc -n <project-namespace>`). 
+
+However, in order for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
+
+??? "Altenative Configuration"
+    When the above DNS configuration is not possible, you can manually add the `Host` header to the REST request as follows:
+
+    * Get an `<external-ip>` by running `kubectl get service -n kourier-system kourier`. If you have been using _istio_ during Run:ai installation, run:  `kubectl -n istio-system get service istio-ingressgateway` instead. 
+    * Send a request to your workload by using the external ip, and place the workload url as a `Host` header. For example
+
+    ```
+    curl http://<external-ip>/<container-specific-path>
+        -H 'Host: <host-name>'
+    ```
+
 ### Distributed Training via Kubeflow MPI
 
 Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. 
