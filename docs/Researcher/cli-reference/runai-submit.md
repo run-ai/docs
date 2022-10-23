@@ -264,7 +264,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Clone a git repository into the container running the job. The parameter should follow the syntax:
 > > `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`
 >
-> Note that source=REPOSITORY is the only mandatory field
+> Note that source and target fields are mandatory.
 
 #### --s3 string
 > Mount an S3 compatible storage into the container running the job. The parameter should follow the syntax:
