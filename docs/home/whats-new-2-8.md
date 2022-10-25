@@ -43,15 +43,15 @@ The older option still exists but is being deprecated due to complexity.
 The Deployment details page now contains the URL for the Inference service 
 
 
-## Hyperparameter Optimization
+### Hyperparameter Optimization
 metrics improvements 
 
 __NEED DETAILS__
 
 
 
-* Zal
- to review Zal improvement and write a customer facing item per improvement>
+### Zal
+ H to review Zal improvement and write a customer facing item per improvement>
 
 __NEED DETAILS__
 
