@@ -9,23 +9,23 @@
 
 ### Node Pools
 
-Node Pools is a new method to manage your GPU and CPU resources by __grouping resources__ into distinct pools. With node pools:
+Node Pools is a new method for managing GPU and CPU resources by __grouping the resources__ into distinct pools. With node pools:
 
-* You will be allocating Projects and Departments resources from those pools to be used by Workloads. 
+* You allocate Project and Department resources from these pools to be used by Workloads. 
 * The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to more accurate customer needs. 
 
 __NEED NEW LINK TO DOCS__
 
-### Audit Logs
+<!-- ### Audit Logs
 
 Audit Log (named: Events History) is a log of all administrative events that occurred in the system. This allows administrators to trace back system configuration changes with full details per event.
 
-__NEED NEW LINK TO DOCS__
+__NEED NEW LINK TO DOCS__ -->
 
 ### User Interface Enhancements
 
 * The _Departments_ screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
-* To ease the usage of a growing list of Jobs, the jobs under the _Jobs_ screen are now split into 2 tabs: 
+* The _Jobs_ screen has been split into 2 tabs for ease of use:: 
     * _Current_:  (the default tab) consists of all the jobs that currently exist in the cluster. 
     * _History_:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
 
@@ -35,7 +35,7 @@ The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-
 
 In previous versions of Run:ai the administrator should [provide an IP address](../admin/runai-setup/cluster-setup/cluster-prerequisites/#cluster-ip) and Run:ai would automatically create a DNS entry for it and a matching trusted certificate. 
 
-In version 2.8,  the default is for the Run:ai administrator to provide its [own DNS and a trusted certificate](https://docs.run.ai/admin/runai-setup/cluster-setup/cluster-prerequisites/#domain-name). 
+In version 2.8,  the default is for the Run:ai administrator to provide a [DNS and a trusted certificate](https://docs.run.ai/admin/runai-setup/cluster-setup/cluster-prerequisites/#domain-name). 
 
 The older option still exists but is being deprecated due to complexity.
 
@@ -43,7 +43,7 @@ The older option still exists but is being deprecated due to complexity.
 The Deployment details page now contains the URL for the Inference service 
 
 
-* HPO Jobs 
+## Hyperparameter Optimization
 metrics improvements 
 
 __NEED DETAILS__
@@ -69,7 +69,7 @@ __NEED DETAILS__
 |Internal ID | Description   |
 |---------|-------|
 |RUN-5676 |When Interactive Jupyter notebook workloads that contain passwords are cloned, the password is exposed in the displayed CLI command.                                             |
-|RUN-5457 |When using the Home environment variable in conjunction with the ran-as-user option in the CLI, the Home environment variable is overwritten with the user‚Äôs home directory.   |
+|RUN-5457 |When using the Home environment variable in conjunction with the ran-as-user option in the CLI, the Home environment variable is overwritten with the user's home directory.   |
 |RUN-5370 |It is possible to submit two jobs with the same node-port.                                                                                                                       |
 |RUN-5314 |When you apply an inference deployment via a file, the allocated GPUs are displayed as 0 in the deployments list.                                                                |
 |RUN-5284 |When workloads are deleted while the cluster synchronization is down, there might be a non-existent Job shown in the user interface. The Job cannot be deleted.                  |
