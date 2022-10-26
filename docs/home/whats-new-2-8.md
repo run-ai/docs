@@ -43,11 +43,9 @@ The older option still exists but is being deprecated due to complexity.
 The Deployment details page now contains the URL for the Inference service 
 
 
-### Hyperparameter Optimization
-metrics improvements 
+### Hyperparameter Optimization (HPO)
 
-__NEED DETAILS__
-
+HPO Jobs are not presented as a single row in the Job List. 
 
 
 ### Zal
@@ -57,29 +55,29 @@ __NEED DETAILS__
 
 ## Known Bugs
 
-|Internal ID|Description                                                                                                                                                                                        |Workaround                                           |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-|RUN-5855   |In SAAS 2.8 Control plane, it is not possible to create a new deployment on a cluster which its version is lower than 2.8.                                                                         |Use 2.8 cluster.                                     |      
-|RUN-5780   |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.                                                            |None.                                                |      
+|Internal ID| Description  | Workaround   |
+|-----------|--------------|--------------|
+|RUN-5855   |In SAAS 2.8 Control plane, it is not possible to create a new deployment on a cluster which its version is lower than 2.8.     | Use 2.8 cluster.   |      
+|RUN-5780   |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.    |None.      |      
 |RUN-5519   |The GPU memory utilization is not displayed in the job's side-bar. This is an NVIDIA DCGM known bug (see:  https://github.com/NVIDIA/dcgm-exporter/issues/103 ) which was fixed in a later version.|Install the suggested version as described by NVIDIA.|     
 
 
 ## Fixed Bugs
 
 |Internal ID | Description   |
-|---------|-------|
-|RUN-5676 |When Interactive Jupyter notebook workloads that contain passwords are cloned, the password is exposed in the displayed CLI command.                                             |
+|------------|---------------|
+|RUN-5676 |When Interactive Jupyter notebook workloads that contain passwords are cloned, the password is exposed in the displayed CLI command.       |
 |RUN-5457 |When using the Home environment variable in conjunction with the ran-as-user option in the CLI, the Home environment variable is overwritten with the user's home directory.   |
-|RUN-5370 |It is possible to submit two jobs with the same node-port.                                                                                                                       |
+|RUN-5370 |It is possible to submit two jobs with the same node-port.       |
 |RUN-5314 |When you apply an inference deployment via a file, the allocated GPUs are displayed as 0 in the deployments list.                                                                |
-|RUN-5284 |When workloads are deleted while the cluster synchronization is down, there might be a non-existent Job shown in the user interface. The Job cannot be deleted.                  |
-|RUN-5160 |In some situations, when a Job is deleted, there may be leftover Kubernetes configMaps in the system                                                                             |
-|RUN-5154 |In some cases, an error "failed to load data" can be seen in the graphs showing on the Job sidebar.                                                                              |
-|RUN-5145 |The default Kubernetes "priority Class" for deployments is the same as the priority class for interactive jobs.                                                                  |
-|RUN-5039 |In some scenarios, Dashboards may show "found duplicate series for the match group" error                                                                                        |
+|RUN-5284 |When workloads are deleted while the cluster synchronization is down, there might be a non-existent Job shown in the user interface. The Job cannot be deleted.   |
+|RUN-5160 |In some situations, when a Job is deleted, there may be leftover Kubernetes configMaps in the system         |
+|RUN-5154 |In some cases, an error "failed to load data" can be seen in the graphs showing on the Job sidebar.             |
+|RUN-5145 |The default Kubernetes "priority Class" for deployments is the same as the priority class for interactive jobs.      |
+|RUN-5039 |In some scenarios, Dashboards may show "found duplicate series for the match group" error    |
 |RUN-4941 |The scheduler is wrongly trying to schedule jobs on a node, where there are allocated GPU jobs at an "ImagePullBackoff" state. This causes an error of "UnexpectedAdmissionError"|
-|RUN-4574 |The role "Researcher Manager" is not displayed in the access control list of projects.                                                                                           |
-|RUN-4554 |Users are trying to login with single-sign-on get a "review profile" page.                                                                                                       |
+|RUN-4574 |The role "Researcher Manager" is not displayed in the access control list of projects.  |
+|RUN-4554 |Users are trying to login with single-sign-on get a "review profile" page.      |
 |RUN-4464 |Single HPO (hyperparameter optimization) workload is displayed in the Job list user interfgace as multiple jobs (one for every pod).                                             |
 
 
