@@ -71,3 +71,8 @@ Post installation, you will want to:
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 
+## Troubleshooting
+
+The cluster installer is a pod in Kubernetes. The pod is responsible for the installation preparation and prerequisite gathering phase. In case of an error during this pre-installation, you need to gather the pod's log. 
+
+Once the Run:ai cluster installation has started, the behavior is identical to any Run:ai cluster installation flavor. See the [troubleshooting page](../../troubleshooting/troubleshooting.md).
