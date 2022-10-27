@@ -404,6 +404,8 @@ For more information on how to create a TLS secret see: [https://kubernetes.io/d
 
 #### Cluster IP
 
+(Deprecated)
+
 Following are instructions on how to get the IP and set firewall settings. 
 
 

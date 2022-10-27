@@ -15,50 +15,11 @@ Run:ai is based on Kubernetes. Kubernetes offers an abstraction of the container
 | Port Forwarding | Simple port forwarding allows access to the container via local and/or remote port. | None |
 | NodePort | Exposes the service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service from outside the cluster by requesting `<NODE-IP>:<NODE-PORT>` regardless of which node the container actually resides in. | None |  
 | LoadBalancer | Exposes the service externally using a cloud provider’s load balancer. | Only available with cloud providers | 
-| Ingress |  Allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. | Requires an Ingress controller to be installed. See below | 
+
 
 See [https://kubernetes.io/docs/concepts/services-networking/service](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} for further details on these four options.
 
 
-## Ingress
-
-Ingress allows access to Kubernetes services from outside the Kubernetes cluster. You configure access by creating a collection of rules that define which inbound connections reach which services. More information about ingress can be found [here](https://kubernetes.io/docs/concepts/services-networking/ingress/){target=_blank}.
-
-### Setup
-
-To submit jobs via ingress, You must install an _Ingress controller_ in your Kubernetes cluster. The prevalent Ingress controller is [ingress-nginx](https://kubernetes.github.io/ingress-nginx/deploy/){target=_blank}. 
-
-
-### Usage
-
-The Researcher uses the Run:ai CLI to set the method type and the ports when submitting the Workload. Example:
-
-```
-runai config project team-a
-runai submit test-ingress -i jupyter/base-notebook -g 1  --interactive \ 
-   --service-type=ingress --port 8888:8888  \
-   -- start-notebook.sh --NotebookApp.base_url=team-a-test-ingress
-```
-
-Then run:
-
-```
-runai list jobs
-```
-
-You will see the service URL with which to access the Jupyter notebook
-
-![mceclip0.png](img/mceclip0.png)
-
-The URL will be composed of the ingress end-point, the Project name and the Job name (e.g. <a href="https://10.255.174.13/team-a-test-ingress" target="_self">https://10.255.174.13/team-a-test-ingress</a>.
-
-Alternatively, run:
-
-```
-kubectl get ingress -n runai-team-a test-ingress -o yaml
-```
-
-And find the IP, port, and full path from there. 
 
 ## See Also
 

@@ -1,6 +1,6 @@
 # Run:ai Version 2.8
 
-## Release date
+## Release Date
  October 2022 
 
 ## Release Content
