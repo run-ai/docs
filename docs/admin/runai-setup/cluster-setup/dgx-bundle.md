@@ -1,5 +1,5 @@
 <!-- DGX Bundle -->
-# Run:ai MLOps Compute Platform powered by DGX
+# Run:ai & NVIDIA DGX Bundle
 
 
 NVIDIA [DGX](https://www.nvidia.com/en-us/data-center/dgx-systems/){target=_blank} is a line of NVIDIA-produced servers and workstations which specialize in using GPUs to accelerate deep learning applications.
@@ -11,8 +11,7 @@ NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this documen
 
 [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Bright installer.
 
-
-## Prerequisities 
+## Prerequisites 
 
 ### Software Prerequisites
 
@@ -31,18 +30,23 @@ The Run:ai cluster installer will require the following:
 * `Run:ai install secret` - provided by Run:ai customer support.
 * `Cluster URL` - your organization should provide you with a domain name.
 * `Private and public keys` -your organization should provide a __trusted__ certificate for the above domain name. The Run:ai installer will require both private key and full-chain in PEM format. 
-* Post installation - credentials for the Run:ai user interface. Provided by Run:ai customer support.
+* Post-installation - credentials for the Run:ai user interface. Provided by Run:ai customer support.
 ## Installing Run:ai installer
 
-Select Run:ai via the bright installer. Remember to select all of the above prerequisites as well. 
+Select Run:ai via the bright installer. Remember to select all of the above software prerequisites as well. 
 
 ## Using the Run:ai installer
 
-Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>/runai-installer` (note `http` rather than `https`).
+Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>/runai-installer` 
 
-A wizard would open up containing 3 pages.
+!!! Note
+    * Use `http` rather than `https`.
+    * Use the IP and not a domain name.
 
-### Prerequsites Page
+A wizard would open up containing 3 pages: Prerequisites, setup, and installation. 
+
+
+### Prerequisites Page
 
 The first, verification page, verifies that all of the above software prerequisites are met. Press the "Verify" button. You will not be able to continue unless all prerequisites are met. When all are met, press the `Continue` button. 
 
@@ -59,7 +63,7 @@ The Run:ai installation will start. Depending on your download network speed the
 Save the URL for future use. 
 
 
-## Post installation. 
+## Post-installation. 
 
 Post installation, you will want to:
 
