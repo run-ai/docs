@@ -1,6 +1,7 @@
 ## Why?
 
-In some business scenarios, you may want to direct the Run:ai scheduler to schedule a Workload to a specific node or a node group. For example, in some academic institutions, Hardware is bought using a specific grant and thus "belongs" to a specific research group.
+In some business scenarios, you may want to direct the Run:ai scheduler to schedule a Workload to a specific node or a node group. For example, in some academic institutions, Hardware is bought using a specific grant and thus "belongs" to a specific research group. Another example is an inference workload that is optimized to a specific GPU type and must have dedicated resources reserved to ensure enough capacity.
+
 
 Run:ai allows this "taint" by labeling a node, or a set of nodes and then during scheduling, using the flag `--node-type <label>` to force this allocation
 
