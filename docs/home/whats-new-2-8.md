@@ -45,7 +45,7 @@ The Deployment details page now contains the URL for the Inference service
 
 ### Hyperparameter Optimization (HPO)
 
-HPO Jobs are not presented as a single row in the Job List. 
+HPO Jobs are now presented as a single line in the Job List rather than a separate line per experiment. 
 
 ## Known Bugs
 
