@@ -118,10 +118,11 @@ nav:
   - Home: 
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
-#    - 'Version 2.8' : 'home/whats-new-2-8.md'
-    - 'Whats New 2022' : 'home/whats-new-2022.md'
-    - 'Whats New 2021' : 'home/whats-new-2021.md'
-    - 'Whats New 2020' : 'home/whats-new-2020.md'
+    - 'Whats New' :
+#     - 'Version 2.8' : 'home/whats-new-2-8.md'
+      - 'Whats New 2022' : 'home/whats-new-2022.md'
+      - 'Whats New 2021' : 'home/whats-new-2021.md'
+      - 'Whats New 2020' : 'home/whats-new-2020.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
