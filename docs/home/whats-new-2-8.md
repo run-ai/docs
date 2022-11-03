@@ -66,7 +66,7 @@ HPO Jobs are not presented as a single row in the Job List.
 |RUN-5478 |Dashboard panels of GPU Allocation/project and Allocated jobs per project metrics:  In rare cases, some metrics reflect the wrong number of GPUs     |  None                  |
 |RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
 |RUN-5424 |When a workload is selected in the job list, the GPU tab in the right panel, shows the details of the whole GPUs in the node, instead of the details of the GPUs used by the workload.                 |None              |
-|RUN-5226 |x        |x                   |
+|RUN-5226 |In rare occasions, when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.        | None                   |
 
 
 
