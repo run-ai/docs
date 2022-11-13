@@ -14,7 +14,7 @@ Run:ai has been tested with the following Kubernetes distributions:
 | AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
 | GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
 | OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). RKE2 has a defect which requires a specific installation. Please contact Run:ai customer support for additional details. |
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
@@ -27,7 +27,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 ### NVIDIA 
 
 !!! Important
-    NVIDIA GPU Operator has a bug which effects metrics and scheduling. The bug effects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. We recommend using version 1.9 only. For more details see [bug details](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
+    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. We recommend using version 1.9 only. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
 
 === "On Prem"    
     Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
