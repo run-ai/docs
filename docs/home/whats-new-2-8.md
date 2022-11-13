@@ -67,6 +67,8 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 |RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
 |RUN-5424 |When a workload is selected in the job list, the GPU tab in the right panel, shows the details of the whole GPUs in the node, instead of the details of the GPUs used by the workload.                 |None              |
 |RUN-5226 |In rare occasions, when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.        | None                   |
+| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. |    
+
 
 
 
