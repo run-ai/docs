@@ -6,7 +6,7 @@ The purpose of this document is to describe the Run:ai scheduler and explain how
 
 ## Terminology
 
-### Workload Types1
+### Workload Types
 
 Run:ai differentiates between three types of deep learning workloads:
 
@@ -69,12 +69,12 @@ The Run:ai scheduler wakes up periodically to perform allocation tasks on pendin
 *   The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
 
 ### Node Pools
-Node-Pools are a set of nodes grouped by Administrators into a distinct pool of resources from which resources can be allocated to Projects and Departments.
-By default, any node pool defined in the system is automatically associated with all Projects and Departments with zero resources (GPUs, CPUs, Memory) allocation, which means any Project/Department can use any node pool for Over-Quota (for Preemptible workloads).
+A node-pool is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
+By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node-pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
-*   The Administrator can allocate resources from specific node pools to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
-*   The Researcher can use node pools in two ways. The first one is when the Project has guaranteed resources on a certain node pool - Researcher can then submit a workload and specify a node-pool to use and get guaranteed resources. The second is by using node-pool with no guaranteed resource for that Project, and in practice using Over-Quota resources of a certain node-pool. This means the Workload must be Preemptible as it uses resources out of the Project's quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quata.
-*   By default, if a Researcher doesn't specify the node-pool to use by a workload,  the workload will use 'Default' node-pool.
+*   An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
+*   The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on a certain node pool - Researcher can then submit a workload and specify a node-pool to use and recieve guaranteed resources. The second is by using node-pool with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of a certain node-pool. This means a Workload must be Preemptible as it uses resources out of the Project's quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quota.
+*   By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using 'Default' node-pool.
 
 ### Node Affinity 
 
