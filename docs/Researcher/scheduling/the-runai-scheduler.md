@@ -11,7 +11,7 @@ The purpose of this document is to describe the Run:ai scheduler and explain how
 Run:ai differentiates between three types of deep learning workloads:
 
 *   __Interactive__ build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm, or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
-*   __Unattended__ (or "non-interactive") training workloads.Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the Researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
+*   __Unattended__ (or "non-interactive") training workloads. Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the Researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.   
 It follows that a good practice for the Researcher is to save checkpoints and allow the code to restore from the last checkpoint.
 
 * __Inference__ workloads. These are production workloads that serve requests. The Run:ai scheduler treats these workloads as _Interactive_ workloads.
@@ -69,12 +69,12 @@ The Run:ai scheduler wakes up periodically to perform allocation tasks on pendin
 *   The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
 
 ### Node Pools
-A node-pool is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
-By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node-pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
+A _Node Pool_ is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
+By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
 *   An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
-*   The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on a certain node pool - Researcher can then submit a workload and specify a node-pool to use and recieve guaranteed resources. The second is by using node-pool with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of a certain node-pool. This means a Workload must be Preemptible as it uses resources out of the Project's quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quota.
-*   By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using 'Default' node-pool.
+*   The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on a certain node pool - The Researcher can then submit a workload and specify a node pool to use and receive guaranteed resources. The second is by using a node pool with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of a certain node pool. This means a Workload must be preemptible as it uses resources out of the Project's quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node pool and goes Over-Quota.
+*   By default, if a Researcher does not specify a node pool to use by a workload, the scheduler assigns the workload to run using the _Default_ node pool.
 
 ### Node Affinity 
 
@@ -101,17 +101,17 @@ Then, if both Projects go over quota, Project A will receive 75% (=3/(1+3)) of t
 This fairness equivalence will also be maintained amongst __running__ Jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
 ### Over-Quota Priority
-When Over-Quota Priority feature is enabled, Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. Remaining over-quota GPUs are allocated based on relative portion of GPU Over Quota Priority for each Project. 
+When Over-Quota Priority feature is enabled, Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over Quota Priority for each Project. 
 GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
 
-Let's examine previous example with Over-Quota Weights:
+Let's examine the previous example with Over-Quota Weights:
 
 * Project A has been allocated with a quota of 3 GPUs and GPU over quota weight is set to Low.
 * Project B has been allocated with a quota of 1 GPU and GPU over quota weight is set to High.
 
-Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. if both Projects go over quota, Project A will receive additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive additional 75% (=3/(1+3)) of the idle GPUs.
+Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. if both Projects go over quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
 
-With the addition of node-pools, the principles of Over-Quota and Over-Quata priority are kept unchanged, however, the amount of resources that are allocated with Over-Quota and Over-Quota Priority are calculated against node-pool resources instead of the whole Project resources.
+With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
 
 * Note: Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
 
@@ -166,7 +166,7 @@ For more information on Distributed Training in Run:ai see [here](../Walkthrough
 
 Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine results to decide what works best.
+To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine the results to decide what works best.
 
 
 With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs. 
