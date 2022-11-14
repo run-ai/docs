@@ -14,8 +14,6 @@ Node Pools is a new method for managing GPU and CPU resources by __grouping the 
 * You allocate Project and Department resources from these pools to be used by Workloads. 
 * The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to more accurate customer needs. 
 
-__NEED NEW LINK TO DOCS__
-
 <!-- ### Audit Logs
 
 Audit Log (named: Events History) is a log of all administrative events that occurred in the system. This allows administrators to trace back system configuration changes with full details per event.
@@ -47,11 +45,6 @@ The Deployment details page now contains the URL for the Inference service
 
 HPO Jobs are not presented as a single row in the Job List. 
 
-
-### Zal
- H to review Zal improvement and write a customer facing item per improvement>
-
-__NEED DETAILS__
 
 ## Known Bugs
 
