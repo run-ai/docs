@@ -14,11 +14,6 @@ Node Pools is a new method for managing GPU and CPU resources by __grouping the 
 * You allocate Project and Department resources from these pools to be used by Workloads. 
 * The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to more accurate customer needs. 
 
-<!-- ### Audit Logs
-
-Audit Log (named: Events History) is a log of all administrative events that occurred in the system. This allows administrators to trace back system configuration changes with full details per event.
-
-__NEED NEW LINK TO DOCS__ -->
 
 ### User Interface Enhancements
 
@@ -53,16 +48,17 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 |RUN-6218 |When installing Run:ai on openshift a second time, oauth client secret is incorrect/not updated. As a result, login is not possible                  | Can be performed via manual configuration. Please contact Run:ai support.|
 |RUN-6216 |In the multi cluster overview, the allocated GPU in the table of each cluster is wrong. The correct number is in the overview dashboard.             | None                            |
 |RUN-6190 |When deleting a cluster, there are leftover pods that are not deleted. No side effects on functionality.                                             | Delete the pods manually.                                                |
-|RUN-5855 |(SaaS version only) The new control plane, versioned 2.8 does not allow the creation of a new deployment on a cluster whose version is lower than 2.8.                |Upgrade your cluster to 2.8                                              |
+|RUN-5855 |(SaaS version only) The new control plane, versioned 2.8 does not allow the creation of a new deployment on a cluster whose version is lower than 2.8.                |Upgrade your cluster to 2.8  |
 |RUN-5780 |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.              |None.               |
-|RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in openshift.                      | None                 |
+|RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in openshift.    | None                 |
 |RUN-5519 |When selecting a Job, the GPU memory utilization metrics is not displayed on the right-hand side. This is an NVIDIA DCGM known bug (see:  https://github.com/NVIDIA/dcgm-exporter/issues/103 ) which has been fixed in a later version but was not yet included in the latest NVIDIA GPU Operator|Install the suggested version as described by NVIDIA.                    |
 |RUN-5478 |Dashboard panels of GPU Allocation/project and Allocated jobs per project metrics:  In rare cases, some metrics reflect the wrong number of GPUs     |  None                  |
 |RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
 |RUN-5424 |When a workload is selected in the job list, the GPU tab in the right panel, shows the details of the whole GPUs in the node, instead of the details of the GPUs used by the workload.                 |None              |
 |RUN-5226 |In rare occasions, when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.        | None                   |
-| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. |    
-
+| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. | 
+| RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |    
+| RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. | 
 
 
 
