@@ -260,7 +260,7 @@ The latter option is easier to maintain.
 * Go to `Settings | Users`.
 * Select the `Groups` button. 
 * Assuming you have mapped the IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group. 
-* If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:ai version 2.3).
+* If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster. 
 
 
 ## Implementation Notes

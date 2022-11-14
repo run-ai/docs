@@ -90,37 +90,6 @@ oc get pods -n nvidia-gpu-operator
 
 (the GPU Operator namespace may differ in different operator versions).
 
-??? "Run:ai 2.3 or earlier"
-
-    __Disable the NVIDIA Device Plugin and DCGM Exporter__
-
-    After successful verification, 
-
-    (1) Disable the GPU Operator by running:
-
-    ```
-    oc scale --replicas=0 -n openshift-operators deployment gpu-operator
-    ```
-
-    (1) Disable the NVIDIA DCGM exporter by running:
-
-    ```
-    oc -n gpu-operator-resources patch daemonset nvidia-dcgm-exporter \
-      -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    ```
-
-    (2) Replace the NVIDIA Device Plug-in with the Run:ai version:
-
-    ```
-    oc patch daemonsets.apps -n gpu-operator-resources nvidia-device-plugin-daemonset \
-      -p '{"spec":{"template":{"spec":{"containers":[{"name":"nvidia-device-plugin-ctr","image":"gcr.io/run-ai-prod/nvidia-device-plugin:1.0.11"}]}}}}'
-    oc create clusterrolebinding --clusterrole=admin \
-      --serviceaccount=gpu-operator-resources:nvidia-device-plugin nvidia-device-plugin-crb
-    ```
-    <!-- oc -n gpu-operator-resources patch daemonset nvidia-device-plugin-daemonset \
-      -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}' -->
-
-
 
 ## Additional Permissions
 

@@ -80,21 +80,6 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
     * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md/#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
         
-
-??? "Run:ai 2.3 or earlier"
-    * Run:ai has customized the [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin){target=_blank} and [NVIDIA DCGM Exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}. Run the following to disable the existing plug-ins:
-
-    ```
-    kubectl -n gpu-operator patch daemonset nvidia-device-plugin-daemonset \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    kubectl -n gpu-operator patch daemonset nvidia-dcgm-exporter \
-    -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
-    ```
-
-    (use the namespace `gpu-operator-resources` if the NVIDIA GPU Operator is of version 1.8 or earlier )
-
-
-
 ### Operating System
 
 Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine). At this point, Run:ai will only work with Ubuntu.
