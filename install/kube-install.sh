@@ -1,6 +1,6 @@
 #!/bin/bash
 #description : This script will help to install k8s cluster (master / worker) and gpu operator
-#author		 : Moran Guy
+#author	     : Moran Guy
 #date        : 19/10/2022
 #version     : 1.0
 #usage       : Please make sure to run this script as ROOT or with ROOT permissions
