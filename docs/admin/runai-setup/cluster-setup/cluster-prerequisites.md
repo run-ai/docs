@@ -26,8 +26,10 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25.
 ### NVIDIA 
 
+Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+
 !!! Important
-    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. We recommend using version 1.9 only. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
+    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
 
 === "On Prem"    
     Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
