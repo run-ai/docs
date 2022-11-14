@@ -166,6 +166,19 @@ FIELDS:
      Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
+   nodePool <Object>
+     Specifies a group of nodes (machines) on which the workload will run. 
+     To use this feature, your Administrator will need to label nodes and 
+     create a node-pool, as explained in the Group Nodes guide at 
+     https://docs.run.ai/admin/researcher-setup/limit-to-node-group.
+     Administrator can assign quota for each node-pool in any of the 
+     Projects and Departments that the system contains. This flag
+     can optionally be used in conjunction with NodeType and Project-based
+     affinity. In this case, the combination of both flags is used to refine
+     the list of allowable nodes from a node-pool which the workload can 
+     use to run. For more information see the Projects setup guide at
+     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+   
    notebookToken	<Object>
 
    ports	<Object>
