@@ -199,13 +199,21 @@ then
     if [ "${answer}" == "y" ]
     then 
         echo -e "${YELLOW}Removing kubeadm kubectl kubelet kubernetes-cni...${NC}"
-        sudo apt-get purge -y kubeadm kubectl kubelet kubernetes-cni kube*
+        sudo apt-get purge -y kubeadm kubectl kubelet kubernetes-cni
         if [ $? == 0 ]
         then 
             echo -e "${GREEN} OK! ${NC}"
         else
             echo -e "${RED}Something went wrong!${NC}"
         fi
+	echo -e "${YELLOW}Removing containerd docker...${NC}"
+	sudo apt-get purge -y docker* containerd*
+	if [ $? == 0 ]
+	then
+		echo -e "${GREEN} OK! ${NC}"
+	else
+		echo -e "${RED}Something went wrong!${NC}"
+	fi
     else
         echo -e "${YELLOW}Operation aborted${NC}"
     fi
