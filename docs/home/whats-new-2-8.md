@@ -1,7 +1,7 @@
 # Run:ai Version 2.8
 
 ## Release Date
- October 2022 
+ November 2022 
 
 ## Release Content
 <!-- 
@@ -49,14 +49,12 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 
 |Internal ID| Description  | Workaround   |
 |-----------|--------------|--------------|
-|RUN-6237 |Administrator role can see the option to edit / delete department, which is not allowed for this role. |No need. The action will fail.    |
 |RUN-6236 |The Run:ai access control system prevents setting a role of researcher together with ML engineer or researcher manager at the same time. However, using the UI you can select these two roles by clicking the text near the check   |     None  |
 |RUN-6235 |When you have admin role only, there is an error on the deployments  |Add viewer or ML engineer role to the user.   |
 |RUN-6224 |Cpu utilization under nodes list is always zero.               |No workaround. To be fixed in a future hotfix of 2.8                     |
 |RUN-6218 |When installing Run:ai on openshift a second time, oauth client secret is incorrect/not updated. As a result, login is not possible                  | Can be performed via manual configuration. Please contact Run:ai support.|
 |RUN-6216 |In the multi cluster overview, the allocated GPU in the table of each cluster is wrong. The correct number is in the overview dashboard.             | None                            |
 |RUN-6190 |When deleting a cluster, there are leftover pods that are not deleted. No side effects on functionality.                                             | Delete the pods manually.                                                |
-|RUN-6187 |"New Department" button is visible to users with 'Administrator' role.  No functional issue as the create new department action will fail with an error.              |None                |
 |RUN-5855 |(SaaS version only) The new control plane, versioned 2.8 does not allow the creation of a new deployment on a cluster whose version is lower than 2.8.                |Upgrade your cluster to 2.8                                              |
 |RUN-5780 |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.              |None.               |
 |RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in openshift.                      | None                 |
