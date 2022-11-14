@@ -45,7 +45,7 @@ The Deployment details page now contains the URL for the Inference service
 
 HPO Jobs are now presented as a single line in the Job List rather than a separate line per experiment. 
 
-## Known Bugs
+## Known Issues
 
 |Internal ID| Description  | Workaround   |
 |-----------|--------------|--------------|
@@ -68,7 +68,7 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 
 
 
-## Fixed Bugs
+## Fixed Issues
 
 |Internal ID | Description   |
 |------------|---------------|
