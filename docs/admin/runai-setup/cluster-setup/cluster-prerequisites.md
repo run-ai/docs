@@ -10,11 +10,11 @@ Run:ai has been tested with the following Kubernetes distributions:
 | Target Platform                          | Description | Installation Notes | 
 |------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
-| EKS | Amazon Elastic Kubernetes Service  | |
-| AKS | Azure Kubernetes Services          | |
-| GKE | Google Kubernetes Engine           | GKE has a different software stack for NVIDIA. To install Run:ai on GKE please contact customer support. | 
-| OCP | OpenShift Container Platform       | The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). RKE2 has a defect which requires a specific installation. Please contact Run:ai customer support for additional details. |
+| EKS | Amazon Elastic Kubernetes Service  | Run:ai SaaS only (no self-hosted support) |
+| AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
+| GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
+| OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](../../troubleshooting/troubleshooting.md#kubernetes-specific-issues). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
@@ -26,15 +26,17 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25.
 ### NVIDIA 
 
+Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+
 !!! Important
-    NVIDIA GPU Operator has a bug which effects metrics and scheduling. The bug effects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. We recommend using version 1.9 only. For more details see [bug details](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
+    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
 
 === "On Prem"    
-    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. 
+    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
 
 === "EKS"
     * Do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
-    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__ version 1.9 or higher. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
 
 === "GKE"
 

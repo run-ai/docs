@@ -50,37 +50,7 @@ then verify that you cannot run `su` to become root within the container.
 ### Setting a Cluster-Wide Default
 
 
-The two flags are voluntary. They are not enforced by the system. It is however possible to set these flags as a __cluster-wide default__ for the Run:ai CLI, such that all CLI users will be limited to non-root containers.
-
-Save the following in a file (e.g `cluster-config.yaml`)
-
-``` YAML
-
-apiVersion: v1
-data:
-  config: |
-    enforceRunAsUser: true
-    enforcePreventPrivilegeEscalation: true
-kind: ConfigMap
-metadata:
-  name: cluster-config
-  namespace: runai
-  labels:
-    runai/cluster-config: "true"
-```
-
-Run:
-
-``` bash
-kubectl apply -f cluster-config.yaml
-``` 
-
-!!! Limitation
-    Preventing privilege escalation at the cluster level limits non-root for all Run:ai __CLI__ users. However, it does not prevent users or malicious actors from starting containers directly via Kubernetes API (e.g. via YAML files). To fully secure the system use _Gatekeeper_ or work with _OpenShift_. See below for more information.
-
-### Using Policies
-
-Another way to enforce the above flags is using [Policies](../../workloads/policies.md). Polices allow an Administrator to force compliance on both the User Interface and Command-line interface. 
+The two flags are voluntary. They are not enforced by the system. It is however possible to enforce them using [Policies](../../workloads/policies.md). Polices allow an Administrator to force compliance on both the User Interface and Command-line interface. 
 
 
 ## Passing user identity 

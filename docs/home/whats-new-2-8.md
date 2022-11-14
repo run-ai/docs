@@ -43,16 +43,31 @@ The Deployment details page now contains the URL for the Inference service
 
 ### Hyperparameter Optimization (HPO)
 
-HPO Jobs are not presented as a single row in the Job List. 
-
+HPO Jobs are now presented as a single line in the Job List rather than a separate line per experiment. 
 
 ## Known Bugs
 
 |Internal ID| Description  | Workaround   |
 |-----------|--------------|--------------|
-|RUN-5855   |In SAAS 2.8 Control plane, it is not possible to create a new deployment on a cluster which its version is lower than 2.8.     | Use 2.8 cluster.   |      
-|RUN-5780   |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.    |None.      |      
-|RUN-5519   |The GPU memory utilization is not displayed in the job's side-bar. This is an NVIDIA DCGM known bug (see:  https://github.com/NVIDIA/dcgm-exporter/issues/103 ) which was fixed in a later version.|Install the suggested version as described by NVIDIA.|     
+|RUN-6237 |Administrator role can see the option to edit / delete department, which is not allowed for this role. |No need. The action will fail.    |
+|RUN-6236 |The Run:ai access control system prevents setting a role of researcher together with ML engineer or researcher manager at the same time. However, using the UI you can select these two roles by clicking the text near the check   |     None  |
+|RUN-6235 |When you have admin role only, there is an error on the deployments  |Add viewer or ML engineer role to the user.   |
+|RUN-6224 |Cpu utilization under nodes list is always zero.               |No workaround. To be fixed in a future hotfix of 2.8                     |
+|RUN-6218 |When installing Run:ai on openshift a second time, oauth client secret is incorrect/not updated. As a result, login is not possible                  | Can be performed via manual configuration. Please contact Run:ai support.|
+|RUN-6216 |In the multi cluster overview, the allocated GPU in the table of each cluster is wrong. The correct number is in the overview dashboard.             | None                            |
+|RUN-6190 |When deleting a cluster, there are leftover pods that are not deleted. No side effects on functionality.                                             | Delete the pods manually.                                                |
+|RUN-6187 |"New Department" button is visible to users with 'Administrator' role.  No functional issue as the create new department action will fail with an error.              |None                |
+|RUN-5855 |(SaaS version only) The new control plane, versioned 2.8 does not allow the creation of a new deployment on a cluster whose version is lower than 2.8.                |Upgrade your cluster to 2.8                                              |
+|RUN-5780 |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.              |None.               |
+|RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in openshift.                      | None                 |
+|RUN-5519 |When selecting a Job, the GPU memory utilization metrics is not displayed on the right-hand side. This is an NVIDIA DCGM known bug (see:  https://github.com/NVIDIA/dcgm-exporter/issues/103 ) which has been fixed in a later version but was not yet included in the latest NVIDIA GPU Operator|Install the suggested version as described by NVIDIA.                    |
+|RUN-5478 |Dashboard panels of GPU Allocation/project and Allocated jobs per project metrics:  In rare cases, some metrics reflect the wrong number of GPUs     |  None                  |
+|RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
+|RUN-5424 |When a workload is selected in the job list, the GPU tab in the right panel, shows the details of the whole GPUs in the node, instead of the details of the GPUs used by the workload.                 |None              |
+|RUN-5226 |In rare occasions, when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.        | None                   |
+| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. |    
+
+
 
 
 ## Fixed Bugs
@@ -62,7 +77,7 @@ HPO Jobs are not presented as a single row in the Job List.
 |RUN-5676 |When Interactive Jupyter notebook workloads that contain passwords are cloned, the password is exposed in the displayed CLI command.       |
 |RUN-5457 |When using the Home environment variable in conjunction with the ran-as-user option in the CLI, the Home environment variable is overwritten with the user's home directory.   |
 |RUN-5370 |It is possible to submit two jobs with the same node-port.       |
-|RUN-5314 |When you apply an inference deployment via a file, the allocated GPUs are displayed as 0 in the deployments list.                                                                |
+|RUN-5314 |When you apply an inference deployment via a file, the allocated GPUs are displayed as 0 in the deployments list.           |
 |RUN-5284 |When workloads are deleted while the cluster synchronization is down, there might be a non-existent Job shown in the user interface. The Job cannot be deleted.   |
 |RUN-5160 |In some situations, when a Job is deleted, there may be leftover Kubernetes configMaps in the system         |
 |RUN-5154 |In some cases, an error "failed to load data" can be seen in the graphs showing on the Job sidebar.             |
