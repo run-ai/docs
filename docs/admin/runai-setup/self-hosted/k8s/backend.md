@@ -8,7 +8,7 @@ Create a configuration file to install the Run:ai control plane:
 === "Connected"
     Generate a values file by running:
     ``` bash 
-    runai-adm generate-values 
+    runai-adm generate-values \
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
@@ -30,7 +30,7 @@ Create a configuration file to install the Run:ai control plane:
 === "Airgapped"
     Generate a values file by running the following __under the `deploy` folder__:
     ``` bash
-    runai-adm generate-values 
+    runai-adm generate-values \
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
