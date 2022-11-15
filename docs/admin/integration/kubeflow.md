@@ -64,7 +64,8 @@ spec:
 
 Where `<KUBEFLOW-USER-NAMESPACE>` is the name of the namespace associated with the Kubeflow user and `<PROJECT>` is the name of the Run:ai project.
 
-Important: Jobs should not be submitted within the same namespace where Kubeflow Operator is installed.
+!!! important
+    Jobs should not be submitted within the same namespace where Kubeflow Operator is installed.
 
 Within the Kubeflow Notebook creation form, select the new configuration as well as the number of GPUs required.
 
