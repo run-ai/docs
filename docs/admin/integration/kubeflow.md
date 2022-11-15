@@ -27,7 +27,7 @@ Kubeflow uses the namespace convension `kubeflow-<username>`. Use the 4 steps [h
 Verify that the association has worked by running:
 
 ```
-kubectl get rolebindings -n <KUBEFLOW-NAMESPACE>
+kubectl get rolebindings -n <KUBEFLOW-USER-NAMESPACE>
 ```
 
 See that role bindings starting with `runai-` were created.
@@ -51,7 +51,7 @@ apiVersion: kubeflow.org/v1alpha1
 kind: PodDefault
 metadata:
   name: runai-non-fractional
-  namespace: <KUBEFLOW-NAMESPACE>
+  namespace: <KUBEFLOW-USER-NAMESPACE>
 spec:
   desc: "Use Run:ai scheduler (whole GPUs)"
   env:
@@ -62,7 +62,10 @@ spec:
       runai-non-fractional: "true"  # key must be identical to metadata.name
 ```
 
-Where `<KUBEFLOW-NAMESPACE>` is the name of the namespace associated with the Kubeflow user and `<PROJECT>` is the name of the Run:ai project.
+Where `<KUBEFLOW-USER-NAMESPACE>` is the name of the namespace associated with the Kubeflow user and `<PROJECT>` is the name of the Run:ai project.
+
+!!! important
+    Jobs should not be submitted within the same namespace where Kubeflow Operator is installed.
 
 Within the Kubeflow Notebook creation form, select the new configuration as well as the number of GPUs required.
 
@@ -76,7 +79,7 @@ apiVersion: kubeflow.org/v1alpha1
 kind: PodDefault
 metadata:
   name: runai-half-gpu
-  namespace: <KUBEFLOW-NAMESPACE>
+  namespace: <KUBEFLOW-USER-NAMESPACE>
 spec:
   desc: "Allocate 0.5 GPUs via Run:ai scheduler"
   env:
