@@ -1,6 +1,26 @@
 Below are the prerequisites of a cluster installed with Run:ai. 
 
+## Prerequisites in a Nutshell
+
+The following is a checklist of the Run:ai 2.8 prerequisites:
+
+| Prerequisite | Details |
+|--------------|---------|
+| [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
+| [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
+| [Ingress Controller](#domain-name) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed) | 
+| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
+| (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
+
+
+There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
+
 ## Software Requirements
+
+### Operating System
+
+Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine). At this point, Run:ai will only work with Ubuntu.
+
 ### Kubernetes
 
 Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.24. Kubernetes 1.25 is not yet supported. For RedHat OpenShift. Run:ai supports OpenShift 4.8 to 4.10.
@@ -80,10 +100,6 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
     * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md/#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
         
-### Operating System
-
-Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine). At this point, Run:ai will only work with Ubuntu.
-
 ### Prometheus 
 
 The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. In the latter case, it's important to:
