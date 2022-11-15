@@ -22,18 +22,6 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
 
-
-### Feature Discovery
-
-=== "Run:ai version 2.5 or higher"
-    Not relevant
-
-=== "Run:ai version 2.4 or lower"
-    The Run:ai Cluster installation installs by default two pre-requisites:  Kubernetes [Node Feature Discovery (NFD)](https://github.com/kubernetes-sigs/node-feature-discovery){target=_blank} and [NVIDIA GPU Feature Discovery (GFD)](https://github.com/NVIDIA/gpu-feature-discovery){target=_blank}. 
-
-    * If your Kubernetes cluster already has GFD installed, you will want to set `gpu-feature-discovery.enabled` to `false`. 
-    * NFD is a prerequisite of GFD. If GFD is not installed, but NFD is already installed, you can disable NFD installation by setting `gpu-feature-discovery.nfd.deploy` to `false`. 
-
 ### Prometheus
 
 The Run:ai Cluster installation uses [Promethues](https://prometheus.io/){target=_blank}. There are 3 alternative configurations:

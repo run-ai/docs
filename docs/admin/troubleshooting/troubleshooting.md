@@ -396,7 +396,3 @@
     __Root Cause:__ By default, Python buffers stdout, and stderr, which are not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
 
     __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
-
-??? "Version 2.4 or lower: Runai list jobs command works but runai submit does not"
-
-    __Resolution:__ Helm utility is not installed. See Run:ai CLI Installation documentation. 

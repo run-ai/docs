@@ -109,8 +109,6 @@ The Run:ai Cluster installation will, by default, install [Prometheus](https://p
 
 ### Inference
 
-:octicons-versions-24: [Version 2.5](../../../home/whats-new-2022.md#may-2022-runai-version-25) and up.
-
 To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 and 1.5 with Kubernetes 1.22 or later.  
 
 Post-install, you must configure Knative to use the Run:ai scheduler by running: 
@@ -163,19 +161,11 @@ However, in order for the URL to be accessible outside the cluster you must conf
 Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. 
 
 
-=== "Version 2.5 or later"
-    Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction:
+Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction:
 
-    * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-    * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
+* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
+* run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
 
-=== "Version 2.4 or earlier"
-    Use the following [installation guide](https://github.com/kubeflow/mpi-operator/tree/v0.2.3#installation){target=_blank}. As per instruction:
-
-    * Clone tag `v0.2.3` (and not master)
-    * `vi mpi-operator/deploy/v1alpha2/mpi-operator.yaml`
-    * search for `mpioperator/mpi-operator:latest` and change it to `mpioperator/mpi-operator:v0.2.3`.
-    * search for `mpioperator/kubectl-delivery:latest` and change it to `mpioperator/kubectl-delivery:v0.2.3`.
 
 
 !!! Notes

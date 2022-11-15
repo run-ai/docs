@@ -45,7 +45,7 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 * Install the [Run:ai Administrator command-line interface](admin/runai-setup/config/cli-admin-install.md).
 * Use one of the two options:
     1. __One time collection:__  Run `runai-adm collect-logs`. The command will generate a compressed file containing all of the existing Run:ai log files.
-    2. __Continuous send__ (Run:ai version 2.5 or higher): Run `runai-adm -d <HOURS_DURATION>`. The command will send Run:ai logs directly to Run:ai support for the duration stated. Data sent will not include current logs. Only logs created going forward will be sent.
+    2. __Continuous send__  Run `runai-adm -d <HOURS_DURATION>`. The command will send Run:ai logs directly to Run:ai support for the duration stated. Data sent will not include current logs. Only logs created going forward will be sent.
 
 !!! Note
     Both options include logs of Run:ai components. They do __not__ include logs of researcher containers that may contain private information. 

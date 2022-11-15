@@ -16,10 +16,6 @@ When enabled, Researcher authentication requires additional setup when installin
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
 *   A __Kubernetes configuration file__ obtained from the Kubernetes cluster installation.
 
-??? "Run:ai version 2.4 or earlier"
-     * __Kubectl__ (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}.
-     * __Helm__. See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
-
 
 ## Setup
 
@@ -40,37 +36,20 @@ kubectl get nodes
 
 ### Install Run:ai CLI 
 
-=== "Run:ai version 2.5"
-     * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
-     * Select Mac or Linux.
-     * Download directly using the button or copy the command and run on a remote machine
-     * Run:
+* Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
+* Select Mac or Linux.
+* Download directly using the button or copy the command and run it on a remote machine
+* Run:
 
-     ``` bash 
-     chmod +x runai
-     sudo mv runai /usr/local/bin/runai
-     ```
+``` bash 
+chmod +x runai
+sudo mv runai /usr/local/bin/runai
+```
 
-    !!! Note
-        An alternative way of downloading the CLI is provided under the [CLI Troubleshooting](../troubleshooting/troubleshooting.md#command-line-interface-issues) section.
- 
-=== "Run:ai version 2.4 or earlier"
-     *   Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-cli/releases){target=_blank}. For MacOS, download the `darwin-amd64` release.For Linux, download the `linux-amd64` release.
+!!! Note
+An alternative way of downloading the CLI is provided under the [CLI Troubleshooting](../troubleshooting/troubleshooting.md#command-line-interface-issues) section.
 
-     *   Unarchive the downloaded file
-     *   Install by running:
 
-     ```
-     sudo ./install-runai.sh
-     ```
-
-     The command will install Run:ai CLI into `/usr/local`. Alternatively, you can provide a directory of your choosing: 
-
-     ```
-     sudo ./install-runai.sh <INSTALLATION-DIRECTORY>
-     ```
-
-     You can omit `sudo` if you have _write_ access to the directory. The directory must be added to the users' `PATH`.
 
 
 To verify the installation run:
