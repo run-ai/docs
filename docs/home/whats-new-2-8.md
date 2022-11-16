@@ -18,7 +18,7 @@ Node Pools is a new method for managing GPU and CPU resources by __grouping the 
 ### User Interface Enhancements
 
 * The _Departments_ screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
-* The _Jobs_ screen has been split into 2 tabs for ease of use:: 
+* The _Jobs_ screen has been split into 2 tabs for ease of use:
     * _Current_:  (the default tab) consists of all the jobs that currently exist in the cluster. 
     * _History_:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
 
