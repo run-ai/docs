@@ -37,7 +37,7 @@ Select Run:ai via the bright installer. Remember to select all of the above soft
 
 ## Using the Run:ai installer
 
-Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>/runai-installer` 
+Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>:30080/runai-installer`. Alternatively use the Bright landing page at `http://<CLUSTER-IP>/#runai`.  
 
 !!! Note
     * Use `http` rather than `https`.
