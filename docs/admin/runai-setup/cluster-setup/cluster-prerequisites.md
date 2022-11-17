@@ -448,7 +448,7 @@ Following are instructions on how to get the IP and set firewall settings.
 Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
 
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
-* Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation. 
+* Looks at additional components installed and analyze their relevance to a successful Run:ai installation. 
 
 To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
 
