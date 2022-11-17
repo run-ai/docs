@@ -375,7 +375,8 @@ Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
     helm install nginx-ingress ingress-nginx/ingress-nginx \
-         --set controller.service.externalIPs="{<EXTERNAL-IP>}" # (1)
+        --namespace nginx-ingress --create-namespace \
+        --set controller.service.externalIPs="{<EXTERNAL-IP>}" # (1)
     ```
 
     1. Replace `<EXTERNAL-IP>` with the IP of one of the cluster nodes (keep the curly braces). In cloud environments, add the internal IP as well (comma delimited).
