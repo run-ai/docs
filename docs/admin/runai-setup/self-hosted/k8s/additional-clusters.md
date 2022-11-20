@@ -7,7 +7,7 @@ The instructions are for Run:ai version 2.8 and up.
 
 ## Installation
 
-Follow the Run:ai SaaS installation network instructions as describe [here](../../runai-setup/cluster-setup/cluster-prerequisites.md#domain-name).  Specifically:
+Follow the Run:ai SaaS installation network instructions as describe [here](../../cluster-setup/cluster-prerequisites.md#domain-name).  Specifically:
 
 1. The Cluster should have a dedicated URL with a trusted certificate.
 2. Install NGINX.
