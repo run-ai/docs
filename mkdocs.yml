@@ -146,6 +146,7 @@ nav:
           - 'Preparations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/k8s/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/k8s/cluster.md'
+          - 'Install additional Clusters' : 'admin/runai-setup/self-hosted/k8s/additional-clusters.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/k8s/project-management.md'
           - 'Next Steps' : 'admin/runai-setup/self-hosted/k8s/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/k8s/upgrade.md'
