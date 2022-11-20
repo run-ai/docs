@@ -110,7 +110,7 @@ Run the helm command below:
 
 ### Connect to Run:ai User Interface
 
-Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`
 
 
 ## (Optional) Enable "Forgot password"
