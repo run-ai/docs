@@ -8,7 +8,7 @@ The purpose of this document is to provide a process for retaining the Run:ai se
 
 ## Self-hosted installation
 
-The Self-hosted installation differs from the Classic (SaaS) installation of Run:ai in that it includes the Run:ai control-plane (backend). The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
+The self-hosted installation differs from the Classic (SaaS) installation of Run:ai in that it includes the Run:ai control-plane (backend). The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
 
 ## Node Types
 The document differentiates between __Run:ai System Worker Nodes__ and __GPU Worker Nodes__:

@@ -44,11 +44,6 @@ Create a configuration file to install the Run:ai control plane:
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 
     Ignore the message about a downloaded file.
-<!-- Where:
-
-* `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
-* `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-* `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes.  -->
 
 
 ## (Optional) Edit Configuration File
@@ -115,7 +110,7 @@ Go to: `runai.<company-name>`. Log in using the default credentials: User: `test
 
 ## (Optional) Enable "Forgot password"
 
-In order to support the “Forgot password” functionality, follow the steps below.
+To support the “Forgot password” functionality, follow the steps below.
 
 * Go to `runai.<company-name>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.

@@ -3,7 +3,7 @@
 
 The SaaS version of Run:ai moves the bulk of the burden of disaster recovery to Run:ai. Backup of data is hence not an issue in such environments. 
 
-With the __self-hosted__ version, it is the responsibility of the IT organization to backup data for a possible disaster and to learn how to recover when needed.
+With the __self-hosted__ version, it is the responsibility of the IT organization to back up data for a possible disaster and to learn how to recover when needed.
 
 ## Backup 
 
@@ -24,8 +24,8 @@ Run:ai stores metric history using [Thanos](https://github.com/thanos-io/thanos)
 
 During the installation of Run:ai you have created two value files:
 
-* One for the Run:ai control plane. See [kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md),
-* One for the cluster (see [kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). 
+* One for the Run:ai control plane. See [Kubernetes](../self-hosted/k8s/backend.md) or [OpenShift](../self-hosted/ocp/backend.md),
+* One for the cluster (see [Kubernetes](../self-hosted/k8s/cluster.md) or [OpenShift](../self-hosted/ocp/cluster.md)). 
 
 You will want to save these files or extract a current version of the file by using the [upgrade](../self-hosted/k8s/upgrade.md) script. 
 
@@ -37,7 +37,7 @@ To recover Run:ai
 * Recover the persistent volumes for metrics and database. 
 * Re-install the Run:ai control plane. Use the stored values file. If needed, modify the values file to connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
 * Re-install the cluster. Use the stored values file or download a new file from the Administration UI. 
-* If the cluster is configured such that Projects do not create namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [kubernetes](../self-hosted/k8s/project-management.md) or [OpenShift](../self-hosted/ocp/project-management.md).
+* If the cluster is configured such that Projects do not create a namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [Kubernetes](../self-hosted/k8s/project-management.md) or [OpenShift](../self-hosted/ocp/project-management.md).
 
 
 

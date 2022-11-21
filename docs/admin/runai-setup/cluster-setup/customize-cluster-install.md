@@ -86,8 +86,8 @@ For further information see [here](https://github.com/rancher/rancher/issues/146
 RKE comes pre-installed with NGINX. To install Run:ai you must first disable NGINX installation by Run:ai. 
 
 * For Run:ai SaaS installations, open the generated YAML file, search for `ingress-nginx`, and set `enabled: false`. 
-* For Run:ai self-hosted installation,  open the generated backend YAML file, search for `ingress-nginx`, and set `enabled: false`. 
+* For Run:ai self-hosted installation,  open the generated control-plane (backend) YAML file, search for `ingress-nginx`, and set `enabled: false`. 
 
 ### Researcher Authentication
 
-See the RKE and RKE2 tabs in the [Reseracher Authentication](../authentication/researcher-authentication.md#mandatory-kubernetes-configuration) on how to set up researcher authentication.  
+See the RKE and RKE2 tabs in the Researcher Authentication](../authentication/researcher-authentication.md#mandatory-kubernetes-configuration) on how to set up researcher authentication.  
