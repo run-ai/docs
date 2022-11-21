@@ -160,8 +160,8 @@ As described in [authentication overview](authentication-overview.md), you must 
     --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM-NAME>
     --oidc-username-prefix=-
     ```
-    
-    All nodes with the Kube api server role will automatically restart with the new flag.
+
+    All nodes with the `kube api server` role will automatically restart with the new flag.
 
 === "Other"
     See specific instructions in the documentation of the Kubernetes distribution.  
