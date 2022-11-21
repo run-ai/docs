@@ -1,9 +1,3 @@
-<!-- ## August 2022 Run:ai Version 2.8 (Cloud update only)
-
-* Now supporting _spread_ scheduling strategy as well. For more information see [scheduling strategies](../Researcher/scheduling/strategies.md).
-
-* Job list is now divided into an active Jobs tab and a separate history tab. -->
-
 ## July 2022 Run:ai Version 2.7 
 
 * New [Audit Log API](../admin/runai-setup/maintenance/audit-log.md) is now available. The _last login_ indication is now showing at the bottom left of the screen for single-sign-on users as well as regular users. 
@@ -110,5 +104,5 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbe
 
 Supportability enhancements:
 
-* A new tool was added, to allow IT administrators to validate cluster and control-plane installation pre-requisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
+* A new tool was added, to allow IT administrators to validate cluster and control-plane installation prerequisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
 * To better analyze scheduling issues, the node name was added to multiple scheduler log events.
