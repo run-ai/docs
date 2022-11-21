@@ -67,7 +67,7 @@ Save the URL for future use.
 
 Post installation, you will want to:
 
-* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. 
+* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. Note the _Bright_ section in that document.
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 

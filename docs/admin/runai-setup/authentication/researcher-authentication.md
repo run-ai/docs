@@ -108,6 +108,61 @@ As described in [authentication overview](authentication-overview.md), you must 
     * Go to `Configuration` and then to `Authentication`.
     * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. The process can take up to 30 minutes. 
 
+=== "Bright"
+
+    Run the following. Replace `<TENANT-NAME>` and `<REALM-NAME>` with the appropriate values:
+
+    ``` bash
+    # start cmsh
+    [root@headnode ~]# cmsh
+
+    # go to the configurationoverlay submode
+    [headnode]% configurationoverlay
+
+    [headnode->configurationoverlay]% list  # use list here to list overlays
+    ...
+
+    # go to the overlay for kube master nodes
+    [headnode->configurationoverlay]% use kube-default-master
+
+    [headnode->configurationoverlay[kube-default-master]]% show  # use show here to show the selected overlay
+    ...
+
+    # go to the kube apiserver role
+    [headnode->configurationoverlay[kube-default-master]]% roles
+    [headnode->configurationoverlay[kube-default-master]->roles]% list   # ... 
+    [headnode->configurationoverlay[kube-default-master]->roles]% use kubernetes::apiserver
+
+    # we can check the current value of "options"
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% show  # ...
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% get options
+    --anonymous-auth=false
+    --service-account-issuer=https://kubernetes.default.svc.cluster.local
+    --service-account-signing-key-file=/cm/local/apps/kubernetes/var/etc/sa-default.key
+    --feature-gates=LegacyServiceAccountTokenNoAutoGeneration=false
+
+    # we can append our flags like this
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% append options "--oidc-client-id=runai"
+    [headnode->configurationoverlay*[kube-default-master*]->roles*[Kubernetes::ApiServer*]]% append options "--oidc-issuer-url=https://app.run.ai/auth/realms/<REALM-NAME>"
+    [headnode->configurationoverlay*[kube-default-master*]->roles*[Kubernetes::ApiServer*]]% append options "--oidc-username-prefix=-"
+
+    # commit the changes
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% ]]% commit
+
+    # view updated list of options
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% get options
+    --anonymous-auth=false
+    --service-account-issuer=https://kubernetes.default.svc.cluster.local
+    --service-account-signing-key-file=/cm/local/apps/kubernetes/var/etc/sa-default.key
+    --feature-gates=LegacyServiceAccountTokenNoAutoGeneration=false
+    --cors-allowed-origins=[\"https://<TENANT-NAME>.run.ai\"]
+    --oidc-client-id=runai
+    --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM-NAME>
+    --oidc-username-prefix=-
+    ```
+    
+    All nodes with the Kube api server role will automatically restart with the new flag.
+
 === "Other"
     See specific instructions in the documentation of the Kubernetes distribution.  
 

@@ -138,7 +138,8 @@ nav:
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
-        - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'    
+        - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'  
+        - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
