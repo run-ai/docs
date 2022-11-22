@@ -130,7 +130,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 > Example:
 
-> `runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
+> `runai submit --name jup1 --jupyter -g 0.5 --service-type=nodeport` will start an interactive session named jup1 and use an nodeport load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
 
 #### --job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
@@ -299,12 +299,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 #### --port stringArray
 >  Expose ports from the Job container. Used together with `--service-type`.  
 >
->  Examples:  
->>    `--port 8080:80 --service-type loadbalancer`
->>    `--port 8080 --service-type ingress`
+>  Example:  
+>>    `--port 8080:80 --service-type portforward`
 
 #### --service-type string | -s string
->  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`, ingress.
+>  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`.
 >  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structures.
 
 #### --address string              

@@ -43,7 +43,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 
 !!! Notes
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25.
+    * Run:ai Supports Kubernetes [Pos Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25. As such, Run:ai will be removing support for PSP in versions higher than 2.8. 
 ### NVIDIA 
 
 Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 

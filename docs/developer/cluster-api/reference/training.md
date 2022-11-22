@@ -231,7 +231,7 @@ FIELDS:
 
    serviceType	<Object>
      Specifies the service exposure method for created workloads. Options are:
-     portforward, loadbalancer, nodeport, ingress. Different service methods
+     portforward, loadbalancer, nodeport. Different service methods
      have different endpoint structures. For more information see the External
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
