@@ -175,7 +175,7 @@ Finally, you can delete the HPO Job by running:
 
 For further information on the Run:ai HPO support library see:
 
-* [The Run:ai HPO Support Library](../researcher-library/rl-hpo-support.md)
+* [The Run:ai HPO Support Library](../scheduling/hpo.md)
 * Sample code in [Github](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}
 
 
