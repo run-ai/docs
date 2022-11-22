@@ -114,6 +114,8 @@ plugins:
         'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'Researcher/researcher-library/rl-hpo-support.md' : 'Researcher/scheduling/hpo.md'
+        'Researcher/researcher-library/researcher-library-overview.md' : 'Researcher/scheduling/hpo.md'
 
 nav:
   - Home: 
@@ -258,10 +260,8 @@ nav:
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
+      - 'Hyperparameter optimization' : 'Researcher/scheduling/hpo.md'
 #      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
-    - 'Researcher Library' :
-      - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'
-      - 'HPO' : 'Researcher/researcher-library/rl-hpo-support.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
