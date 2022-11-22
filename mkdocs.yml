@@ -164,7 +164,6 @@ nav:
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
       - 'Configuration' : 
-        # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
 
@@ -261,7 +260,6 @@ nav:
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
       - 'Hyperparameter optimization' : 'Researcher/scheduling/hpo.md'
-#      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
@@ -295,4 +293,3 @@ nav:
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
-#        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 

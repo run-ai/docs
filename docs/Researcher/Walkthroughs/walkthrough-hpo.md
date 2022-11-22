@@ -32,44 +32,47 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 * Typically, each Job has a single Pod. However, with HPO as well as with [Distributed Training](walkthrough-distributed-training.md) there are multiple Pods per Job. 
 * Pods are independent
-* All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
+* All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, and memory.
 
 ### HPO Sample Code
 
-The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. The code uses the [Run:ai Researcher python library](../researcher-library/researcher-library-overview.md). Below are some highlights of the code: 
+The Quickstart code uses the Run:ai HPO pythong library [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. And needs to be installed within the image. Below are some highlights of the code: 
 
+``` python
 
-        # import Run:ai HPO library
-        import runai.hpo
+# import Run:ai HPO library
+import runai.hpo
 
-        # select Random search or grid search
-        strategy = runai.hpo.Strategy.GridSearch
+# select Random search or grid search
+strategy = runai.hpo.Strategy.GridSearch
 
-        # initialize the Run:ai HPO library. Send the NFS directory used for sync
-        runai.hpo.init("/nfs")
+# initialize the Run:ai HPO library. Send the NFS directory used for sync
+runai.hpo.init("/nfs")
 
-        # pick a configuration for this HPO experiment
-        # we pass the options of all hyperparameters we want to test
-        # `config` will hold a single value for each parameter
-        config = runai.hpo.pick(
-        grid=dict(
-                batch_size=[32, 64, 128],
-                lr=[1, 0.1, 0.01, 0.001]),
-        strategy=strategy)
+# pick a configuration for this HPO experiment
+# we pass the options of all hyperparameters we want to test
+# `config` will hold a single value for each parameter
+config = runai.hpo.pick(
+grid=dict(
+        batch_size=[32, 64, 128],
+        lr=[1, 0.1, 0.01, 0.001]),
+strategy=strategy)
 
-        ....
+....
 
-        # Use the selected configuration within your code
-        optimizer = keras.optimizers.SGD(lr=config['lr'])
-
+# Use the selected configuration within your code
+optimizer = keras.optimizers.SGD(lr=config['lr'])
+```
 
 ### Run an HPO Workload
 
 *   At the command-line run:
 
-        runai config project team-a 
-        runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
-                --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
+```
+runai config project team-a 
+runai submit hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1 \
+    --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
+```
 
 *   We named the Job _hpo1_
 *   The Job is assigned to _team-a_
@@ -81,7 +84,9 @@ The Quickstart code can be found in [github.com/run-ai/docs](https://github.com/
 
 Follow up on the Job's status by running:
 
-        runai list jobs
+```
+runai list jobs
+```
 
 The result:
 
@@ -89,7 +94,9 @@ The result:
 
 Follow up on the Job's pods by running:
 
-        runai describe job hpo1 
+```
+runai describe job hpo1 
+```
 
 You will see 3 running pods currently executing:
 
@@ -102,7 +109,9 @@ You can also submit Jobs on another Project until only 2 GPUs remain. This will 
 
 You can see logs of specific pods by running :
 
-        runai logs hpo1 --pod <POD-NAME>
+```
+runai logs hpo1 --pod <POD-NAME>
+```
 
 where ``<<POD-NAME>>`` is a pod name as appears above in the ``runai describe job hpo1`` output 
 
@@ -120,7 +129,7 @@ The logs will contain a couple of lines worth noting:
 
 The Run:ai HPO library saves the experiment variations and the experiment results to a single file, making it easier to pick the best HPO run. The file can be found in the shared folder. Below is a snapshot of the file for two experiments with two epochs each:
 
-```
+``` YAML
 creationTime: 24/08/2020 08:50:06
 experiments:
 - config:
