@@ -12,10 +12,17 @@ helm list -n runai -f runai-cluster
 and record the chart version in the form of `runai-cluster-<version-number>`
 
 ## Upgrade Run:ai cluster 
-Run:
+
+Replace `<version>` with the new version number in the command below. Then run: 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/runai-crds.yaml
+kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
+```
+The number should have 3 digits (for example `2.7.14`)
+
+Then run:
+
+```
 helm repo update
 helm get values runai-cluster -n runai > values.yaml
 helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
