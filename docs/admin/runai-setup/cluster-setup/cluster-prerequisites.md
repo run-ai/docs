@@ -19,7 +19,7 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 
 ### Operating System
 
-Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine). At this point, Run:ai will only work with Ubuntu.
+Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine) where Run:ai has only been certified on an Ubuntu image.
 
 ### Kubernetes
 
@@ -102,7 +102,7 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
         
 ### Prometheus 
 
-The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. In the latter case, it's important to:
+The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
 
 * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
 * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
