@@ -12,16 +12,33 @@ Run: `oc login`. Then create a configuration file to install the Run:ai control 
     Generate a values file by running:
     ``` bash
     runai-adm generate-values --openshift \
-        --first-admin <FIRST_ADMIN_USER_OF_RUNAI> 
+        --first-admin <FIRST_ADMIN_USER_OF_RUNAI> # (1)
     ```
 
-=== "Airgapped"
+    1. Name of the administrator user in the company directory
+
+=== "Airgapped 2.7"
     Generate a values file by running the following __under the `deploy` folder__:
     ``` bash
-    runai-adm generate-values --openshift --airgapped  \
-        --first-admin <FIRST_ADMIN_USER_OF_RUNAI>
+    runai-adm generate-values --openshift  \
+        --first-admin <FIRST_ADMIN_USER_OF_RUNAI> \ # (1)
+        --airgapped
     ```
 
+    1. Name of the administrator user in the company directory
+
+=== "Airgapped 2.8 and above"
+    Generate a values file by running the following __under the `deploy` folder__:
+    ``` bash
+    runai-adm generate-values --openshift  \
+        --first-admin <FIRST_ADMIN_USER_OF_RUNAI> \ # (1)
+        --registry <docker-registry-address> # (2)
+    ```
+    
+    1. Name of the administrator user in the company directory
+    2. Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+
+   
 A file called `runai-backend-values.yaml` will be created.
 
 

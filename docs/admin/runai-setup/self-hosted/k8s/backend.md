@@ -27,7 +27,7 @@ Create a configuration file to install the Run:ai control plane:
     A file called `runai-backend-values.yaml` will be created.
 
 
-=== "Airgapped"
+=== "Airgapped Run:ai 2.7"
     Generate a values file by running the following __under the `deploy` folder__:
     ``` bash
     runai-adm generate-values \
@@ -45,6 +45,26 @@ Create a configuration file to install the Run:ai control plane:
 
     Ignore the message about a downloaded file.
 
+
+=== "Airgapped Run:ai 2.8 and above"
+    Generate a values file by running the following __under the `deploy` folder__:
+    ``` bash
+    runai-adm generate-values \
+        --external-ips <ip> \ # (1)
+        --domain <dns-record> \ # (2) 
+        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
+        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs> \ # (4)
+        --registry <docker-registry-address> #(5)
+    ```
+
+    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
+    3. TLS certificate and private key for the above domain.
+    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
+    5. Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+
+
+    Ignore the message about a downloaded file.
 
 ## (Optional) Edit Configuration File
 
