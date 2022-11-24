@@ -21,8 +21,6 @@ runai describe node [node-name]
 
 ```
 
-`runai describe job` is a synonym for `runai describe job` and is provided for backward compatibility.
-
 ## Options
 
 * <job-name\> - The name of the Workload to run the command with. Mandatory.
