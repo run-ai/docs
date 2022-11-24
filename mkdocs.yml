@@ -85,7 +85,7 @@ plugins:
         # 'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         # 'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
         # 'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
-        # 'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
+        'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         # 'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
         # 'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
         # 'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
