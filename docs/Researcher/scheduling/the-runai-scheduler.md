@@ -54,6 +54,10 @@ Every new workload is associated with a Project. The Project contains a deserved
 *   If the newly required resources, together with currently used resources, end up within the Project's quota, then the workload is ready to be scheduled as part of the guaranteed quota.
 *   If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below
 
+### Quota with Multiple Resources
+
+A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project then to be "Over Quota" it will have to have at _least one_ resource over its quota. For a project to be under quota it needs to have _all of its_ resoruces under quota.
+
 ## Scheduler Details
 
 ### Allocation & Preemption
