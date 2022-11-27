@@ -274,15 +274,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > All the fields, except url=URL, are mandatory. Default for url is
 > > `url=https://s3.amazon.com`
 
-#### --toleration string
-> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
-> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
-> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
-> 
-> The format of the string:
-> ```
-> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
-> ```
 
 ### Network
 
@@ -354,6 +345,16 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### --preemptible
 >  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above the guaranteed quota but may be reclaimed at any time.
+
+#### --toleration string
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
+> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
+> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
+> 
+> The format of the string:
+> ```
+> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
+> ```
 
 
 ### Global Flags
