@@ -143,7 +143,7 @@ If you wish to use an _existing_ Prometheus adapter installation, you will need 
 
 Inference workloads will typically be accessed by consumers residing outside the cluster. You will hence want to provide consumers with a URL to access the workload. The URL can be found in the Run:ai user interface under the deployment screen (alternatively, run `kubectl get ksvc -n <project-namespace>`). 
 
-However, in order for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
+However, for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
 
 ??? "Altenative Configuration"
     When the above DNS configuration is not possible, you can manually add the `Host` header to the REST request as follows:
@@ -158,18 +158,14 @@ However, in order for the URL to be accessible outside the cluster you must conf
 
 ### Distributed Training via Kubeflow MPI
 
-Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. 
+Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai support MPI version 0.3.0 (latest version at the time of writing). 
 
 
-Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction:
+Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
 
 * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
 * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
 
-
-
-!!! Notes
-    Kubeflow MPI requires containers to run as root. This needs special adjustments when running on OpenShift or when PodSecurityPolicy is enabled in Kubernetes. Redhat provides an [article](https://cloud.redhat.com/blog/how-to-use-kubeflow-and-the-mpi-operator-on-openshift){target=_blank} on how to configure MPI jobs to run as root on OpenShift.
 
 ## Hardware Requirements
 
