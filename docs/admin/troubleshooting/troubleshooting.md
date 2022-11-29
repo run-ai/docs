@@ -298,10 +298,10 @@
 
     ``` YAML
     services:
-    kube-controller:
+      kube-controller:
         extra_args:
-        cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
-        cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
+          cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
+          cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
     ```
 
     For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
