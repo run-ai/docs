@@ -19,7 +19,7 @@ Using the Wizard:
 4. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
 5. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
 6. Install [Helm](https://helm.sh/docs/intro/install/)
-7. For RKE only, perform the steps [here](../cluster-troubleshooting/#symptom-cluster-installation-failed-on-rancher-based-kubernetes-rke)
+7. For RKE only, perform the steps [here](./customize-cluster-install.md#rke-specific-setup)
 8. Run the `helm` commands as provided in the wizard. 
 
 !!! Info

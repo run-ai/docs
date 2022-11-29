@@ -64,11 +64,21 @@ where  `<PROJECT_NAME>` is the name of the project you have created in the Run:a
 
 ## RKE-Specific Setup
 
-Rancher Kubernetes Engine (RKE) requires a number additional steps:
+Rancher Kubernetes Engine (RKE) requires additional steps:
 
 ### Certificate Signing Request (RKE1 only)
 
-During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
+When creating a cluster on the Run:ai user interface:
+
+* Download the "On Premise" Kubernetes type. 
+* Edit the cluster values file and change `useCertManager` to `true` 
+
+``` yaml  hl_lines="3"
+init-ca:
+    enabled: true
+    useCertManager: true
+```
+<!-- During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
 
 ``` YAML
 services:
@@ -78,15 +88,22 @@ kube-controller:
     cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
 ```
 
-For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
+For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}. -->
+
+On the cluster, install _Cert manager_ as follows:
+
+``` bash
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --set installCRDs=true
+```
 
 ### NGINX (both RKE1 and RKE2)
 
-RKE comes pre-installed with NGINX. To install Run:ai you must first disable NGINX installation by Run:ai. 
-
-* For Run:ai SaaS installations, open the generated YAML file, search for `ingress-nginx`, and set `enabled: false`. 
-* For Run:ai self-hosted installation,  open the generated control-plane (backend) YAML file, search for `ingress-nginx`, and set `enabled: false`. 
+RKE comes pre-installed with NGINX. Thus, the Run:ai prerequisite for ingress controller is not needed. 
 
 ### Researcher Authentication
 
-See the RKE and RKE2 tabs in the Researcher Authentication](../authentication/researcher-authentication.md#mandatory-kubernetes-configuration) on how to set up researcher authentication.  
+See the RKE and RKE2 tabs in the [Researcher Authentication](../authentication/researcher-authentication.md#mandatory-kubernetes-configuration) document, on how to set up researcher authentication.  

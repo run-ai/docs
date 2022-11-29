@@ -207,7 +207,7 @@ nav:
     - 'Integrations' :
       - 'JupyterHub' : 'admin/integration/jupyterhub.md'
       - 'Airflow' : 'admin/integration/airflow.md' 
-      - 'MLflow' : 'admin/integration/mlflow.md'
+      - 'MLflow' :   'admin/integration/mlflow.md'
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
