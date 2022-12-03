@@ -132,7 +132,7 @@ Run:
 virtctl start testvm -n runai-test
 ```
 
-You can now see the VMs pod in Run:ai:
+You can now see the VMs pod in Run:ai.
 
 ```
 runai list -A

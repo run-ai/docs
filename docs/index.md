@@ -27,7 +27,7 @@ To get support use the following channels:
 
 ## Community 
 
-Run:AI provides its customers with access to the _Run:AI Customer Community portal_ in order to submit tickets, track ticket progress and update support cases.
+Run:ai provides its customers with access to the _Run:ai Customer Community portal_ in order to submit tickets, track ticket progress and update support cases.
 
 [Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
 
