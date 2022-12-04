@@ -22,8 +22,6 @@ Code for the Docker images referred to in these docs is available [here](https:/
 
 To get support use the following channels:
 
-* Write to [support@run.ai](mailto:support@run.ai).
-
 * On our [website](https://run.ai), under _Support_ use the support form.
 
 * On the bottom right of the Run:ai user interface, use the _Help_ widget.
