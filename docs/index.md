@@ -29,7 +29,7 @@ Run:ai provides its customers with access to the _Run:ai Customer Community port
 
 [Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
 
-Reach out to [support@run.ai](mailto:support@run.ai) for credentials.
+Reach out to customer support for credentials.
 
 
 ## Run:ai Cloud Status Page
