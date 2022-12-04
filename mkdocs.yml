@@ -198,6 +198,7 @@ nav:
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Deployments' : 'admin/admin-ui-setup/deployments.md'
+      - 'Workspaces' :  'admin/admin-ui-setup/workspaces.md'
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
