@@ -1,5 +1,6 @@
 # Run:ai Version 2.8
 
+Workspace is great. [Here](../admin/admin-ui-setup/workspaces.md) it is
 ## Release Date
  November 2022 
 
