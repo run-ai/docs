@@ -6,9 +6,7 @@ Organizations typically want to automatically highlight critical issues and esca
 
 Run:ai is comprised of two parts:
 
-* A control plane part:
-  * Typically resides in the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. 
-  * In _Self-hosted_ installations of Run:ai is installed on-prem.
+* A control plane part, typically resides in the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. In _Self-hosted_ installations of Run:ai is installed on-prem.
 * One or more _GPU Clusters_. 
 
 The purpose of this document is to configure the Run:ai to emit health alerts and to connect these alerts to alert-management systems within the organization. 
@@ -30,7 +28,7 @@ This document explains, how to:
 
 ## Configure Alert Destinations
 
-Prometheus Alert Manager provides a structured way to connect to alert-management systems. Configuration details are [here](https://prometheus.io/docs/alerting/latest/configuration/){target=_blank}. There are built-in plug-ins for popular systems such as PagerDuty and OpsGenie, including a generic webhook. 
+Prometheus Alert Manager provides a structured way to connect to alert-management systems. Configuration details are [here](https://prometheus.io/docs/alerting/latest/configuration/){target=_blank}. There are built-in plugins for popular systems such as PagerDuty and OpsGenie, including a generic webhook. 
 
 Following is an __example__ showing how to integrate Run:ai to a webhook:
 
@@ -62,7 +60,7 @@ kube-prometheus-stack:
         - receiver: webhook-notifications
 ```
 
-(replace `<WEB-HOOK-URL>` with the above).
+(Replace `<WEB-HOOK-URL>` with the URL above).
 
 * On an existing installation, use the [upgrade](../cluster-setup/cluster-upgrade.md) cluster instructions to modify the values file.
 * Verify that you have received alerts at [https://webhook.site/](https://webhook.site/){target=_blank}.
@@ -70,7 +68,7 @@ kube-prometheus-stack:
 
 ## Out-of-the-box Alerts
 
-A Run:ai cluster comes with several built-in alerts. Each alert tests a specific aspect of the Run:ai functionality. In addition, there is a single, inclusive alert, which aggregates all component-based alerts into a single _cluster health test_
+A Run:ai cluster comes with several built-in alerts. Each alert tests a specific aspect of the Run:ai functionality. In addition, there is a single, inclusive alert, which aggregates all component-based alerts into a single _cluster health test_.
 
 The aggregated alert is named `RunaiCriticalProblem`. It is categorized as "critical".
 
@@ -80,7 +78,7 @@ You can add additional alerts from Run:ai. Alerts are triggered by using the [Pr
 
 * When installing the Run:ai cluster, edit the [values file](../cluster-setup/cluster-install.md/#step-3-install-runai).
 * On an existing installation, use the [upgrade](../cluster-setup/cluster-upgrade.md) cluster instructions to modify the values file.
-* Add an alert according to the following structure:
+* Add an alert according to the structure specified below.
 
 
 Add more alerts with the following structure:
@@ -97,7 +95,7 @@ kube-prometheus-stack:
           annotations:
             summary: <ALERT-SUMMARY-TEXT>
           expr:  <PROMQL-EXPRESSION>
-          for: <optional: duration s/m/h>>
+          for: <optional: duration s/m/h>
           labels:
             severity: <critical/warning>
 ```
