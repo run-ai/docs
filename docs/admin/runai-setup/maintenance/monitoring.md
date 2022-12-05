@@ -6,7 +6,7 @@ Organizations typically want to automatically highlight critical issues and esca
 
 Run:ai is comprised of two parts:
 
-* A control plane part, typically resides in the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. In _Self-hosted_ installations of Run:ai is installed on-prem.
+* A control plane part, typically resides in the cloud. The health of the cloud portion of Run:ai can be viewed at [status.run.ai](https://status.run.ai){target=_blank}. In Self-hosted installations of Run:ai is installed on-prem.
 * One or more _GPU Clusters_. 
 
 The purpose of this document is to configure the Run:ai to emit health alerts and to connect these alerts to alert-management systems within the organization. 
