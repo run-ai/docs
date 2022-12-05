@@ -72,14 +72,12 @@ There may be cases where you need to change properties in the values file as fol
 
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
-| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
-| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
+| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Prometheus service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Prometheus server |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:ai. This key is now covered under the runai-adm flags above  |
-| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
-| `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See Postgresql persistence above. Can use the same location. This key is now covered under the runai-adm flags above |
+| `backend.https` | Replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
+| `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See `postgresql.persistence` above. Can use the same location. This key is now covered under the runai-adm flags above |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Control Plane administrator | 
-|<img width=1300/>|||
-
 
 ## Upload images (Airgapped only)
 
@@ -95,7 +93,7 @@ Run the following script (you must have at least 20GB of free disk space to run)
 sudo -E ./prepare_installation.sh
 ```
 
-(If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
+If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
 
 ## Install the Control Plane
 
@@ -125,7 +123,7 @@ Run the helm command below:
 
 ### Connect to Run:ai User Interface
 
-Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`
+Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`.
 
 
 ## (Optional) Enable "Forgot password"
