@@ -21,7 +21,7 @@ kubectl logs -n runai-backend runai-postgresql-0
 
 ## Internal Networking Issues
 
-Run:ai is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a Pod with networking utilities and use it for network resolution:
+Run:ai is based on Kubernetes. Kubernetes runs its own internal subnet with a separate DNS service. If you see in the logs that services have trouble connecting, the problem may reside there.  You can find further information on how to debug Kubernetes DNS [here](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/){target=_blank}. Specifically, it is useful to start a pod with networking utilities and use it for network resolution:
 
 ```
 kubectl run -i --tty netutils --image=dersimn/netutils -- bash
@@ -46,7 +46,7 @@ prometheus-operator:
 
 To view logs, run:
 ``` 
-kubectl logs  prometheus-runai-prometheus-operator-prometheus-0 prometheus \
+kubectl logs prometheus-runai-prometheus-operator-prometheus-0 prometheus \
       -n monitoring -f --tail 100
 ```
 
