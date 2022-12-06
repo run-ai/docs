@@ -373,6 +373,7 @@ Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)
         helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
         helm repo update
         helm upgrade -i nginx-ingress ingress-nginx/ingress-nginx   \
+            --namespace nginx-ingress --create-namespace \
             --set controller.kind=DaemonSet \
             --set controller.daemonset.useHostPort=true
         ```
