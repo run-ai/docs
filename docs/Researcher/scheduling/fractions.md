@@ -76,7 +76,7 @@ Given a specific node, the IT administrator can decide whether to use one techno
 
 ## Limitations
 
-Run:ai certified dynamic MIG on NVIDIA A100 40GB only. If you are using A100 80GB of A30, please contact Run:ai customer support.
+Run:ai certified dynamic MIG on NVIDIA A100 40GB only. If you are using A100 80GB or A30, please contact Run:ai customer support.
 
 ## See Also
 
