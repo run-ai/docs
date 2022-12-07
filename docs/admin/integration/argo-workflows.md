@@ -18,7 +18,7 @@ Then browse to [localhost:2746](http://localhost:2746/){target=_blank}
 
 ## Create a Run:ai Project
 
-Using the Run:ai user interface, create a Run:ai Project. A Project named `team-a` will create a Kubernetes namespace named `runai-team-a`
+Using the Run:ai user interface, create a Run:ai Project. A Project named `team-a` will create a Kubernetes namespace named `runai-team-a`.
 
 ## Run an Argo Workflow with Run:ai
 
@@ -46,7 +46,7 @@ Create an Argo Workflow from the template and run it. Open the Run:ai user inter
 
 ## Using GPU Fractions with Argo Workflows
 
-To run an Argo Workflow using [GPU Fractions](../../Researcher/scheduling/fractions.md), you will need to add an `anotation`:
+To run an Argo Workflow using [GPU Fractions](../../Researcher/scheduling/fractions.md), you will need to add an `annotation`:
 
 ``` YAML
 spec:
