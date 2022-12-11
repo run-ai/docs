@@ -4,7 +4,7 @@ The Run:ai User interface Deployment area allows the viewing and submitting of D
 
 ## Deployment list
 
-The main view shows a list of Deployments.:
+The main view shows a list of Deployments:
 
 ![job-list](img/deployment-list.png)
 

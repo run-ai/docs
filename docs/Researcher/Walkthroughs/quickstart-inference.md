@@ -12,7 +12,7 @@ To complete this Quickstart you must have:
 
 * Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md). There are additional prerequisites for running inference. See [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) for more information. 
 * Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
-* You must have _ML Engineer_ access rights. See [Adding, Updating, and Deleting Users](../../admin/admin-ui-setup/admin-ui-users.md) for more information. 
+* You must have _ML Engineer_ access rights. See [Adding, Updating and Deleting Users](../../admin/admin-ui-setup/admin-ui-users.md) for more information. 
 
 ## Step by Step Walkthrough
 
