@@ -25,7 +25,7 @@ You can create users, as well as update and delete users.
     * __Viewer__: View-only access to the Run:ai User Interface.
     * __Researcher__: Can submit ML workloads. Setting a user as a _Researcher_ also requires [assigning the user to projects](../project-setup/#create-a-new-project.md).
     * __Research Manager__: Can act as _Researcher_ in all projects, including new ones to be created in the future. 
-    * __ML Engineer__: Can view and manage deployments and cluster resources. 
+    * __ML Engineer__: Can view and manage deployments and cluster resources. Available only when [Inference module is installed](../../workloads/inference-overview.md).
 5. (Optional) Select Cluster(s). This determines what Clusters are accessible to this User.
 6. Press "Save".
 
