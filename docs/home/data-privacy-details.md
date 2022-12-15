@@ -4,7 +4,7 @@ Run:ai [SaaS Cluster installation](../admin/runai-setup/installation-types.md) u
 
 
 !!! Note
-    If the data detailed below is not in line with your organization's policy, you can choose to install the Run:ai self-hosted version. The self-hosted installation includes the Run:ai control-plane (also called "backend") and will not communicate with the cloud. The self-hosted installation has different pricing. 
+    If the data detailed below is not in line with your organization's policy, you can choose to install the Run:ai self-hosted version. The self-hosted installation includes the Run:ai control-plane and will not communicate with the cloud. The self-hosted installation has different pricing. 
 
 
 ## Data

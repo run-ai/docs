@@ -82,7 +82,7 @@ Other features:
 
 ## February 2022 Run:ai Version 2.2 (Cloud update only)
 
-* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/authentication/sso.md).
+* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign-on](../admin/runai-setup/authentication/sso.md).
 * REST API has changed. The new API relies on `Applications`. See [Calling REST APIs](../developer/rest-auth.md) for more information. 
 * Added a new user role `Research Manager`. The role automatically assigns the user as a Researcher to all projects, including future projects. 
 
@@ -90,7 +90,7 @@ Other features:
 
 We have now stabilized on a single version numbering system for all Run:ai artifacts: 
 
-* Run:ai Control plane (also called Backend).
+* Run:ai Control plane.
 * Run:ai Cluster.
 * Run:ai Command-line interface.
 * Run:ai Administrator Command-line interface.
