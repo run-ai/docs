@@ -9,11 +9,20 @@ The following is a checklist of the Run:ai 2.8 prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#domain-name) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed) | 
-| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
+| :octicons-versions-24: Version 2.9 and up. <br> [Prometheus](#prometheus) | Install Prometheus for metrics aggregation | 
 | (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
+| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
 
 There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
+
+
+!!! Important
+    :octicons-versions-24: Version 2.9 and up.
+
+    * If mandatory requirements are not met, the Run:ai cluster installation will indicate the missing requirement and will remain in an incomplete state. There is no need to uninstall Run:ai. Simply install the prerequisite and wait 2 minutes for the Run:ai cluster state to re-check mandatory requirements. 
+    * If an optional requirement is not met, the Run:ai cluster installation will indicate the missing requirement and will continue functioning normally while disabling the missing functionality. 
+
 
 ## Software Requirements
 
@@ -30,10 +39,10 @@ Run:ai has been tested with the following Kubernetes distributions:
 | Target Platform                          | Description | Installation Notes | 
 |------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
+| OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | EKS | Amazon Elastic Kubernetes Service  | Run:ai SaaS only (no self-hosted support) |
 | AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
 | GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
-| OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](./customize-cluster-install.md#rke-specific-setup). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
@@ -102,10 +111,38 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
         
 ### Prometheus 
 
-The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
+=== "2.9" 
+    If not already installed, you must install the Prometheus operator which aggregates metrics from the Kubernetes cluster and sends to the Run:ai control-plane. 
 
-* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+    To install Prometheus, run:
+
+    ``` bash
+    helm repo add prometheus-community \
+        https://prometheus-community.github.io/helm-charts
+    helm repo update
+    helm install prometheus-community/kube-prometheus-stack -n monitoring \             
+        --create-namespace
+    ```
+
+    For more information see [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}.
+
+=== "2.8 or earlier"
+    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
+
+    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
+    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+
+
+### Distributed Training
+
+Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai supports MPI version 0.3.0 (the latest version at the time of writing). 
+
+
+Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
+
+* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
+* run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
+
 
 ### Inference
 
@@ -155,17 +192,6 @@ However, for the URL to be accessible outside the cluster you must configure you
     curl http://<external-ip>/<container-specific-path>
         -H 'Host: <host-name>'
     ```
-
-### Distributed Training via Kubeflow MPI
-
-Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai support MPI version 0.3.0 (latest version at the time of writing). 
-
-
-Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
-
-* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-* run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
-
 
 ## Hardware Requirements
 
