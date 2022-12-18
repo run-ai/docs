@@ -36,7 +36,7 @@ Run:ai now support VMWare Tanzu Kubernetes.
 
 ## August 30<sup>th</sup> 2021
 
-Run:ai now supports a self-hosted installation. With the self-hosted installation the Run:ai control-plane (or _backend_) which typically resides on the cloud, is deployed at the customer's data center. For further details on  supported installation types see [Installation Types](../admin/runai-setup/installation-types.md).
+Run:ai now supports a self-hosted installation. With the self-hosted installation the Run:ai control-plane which typically resides on the cloud, is deployed at the customer's data center. For further details on  supported installation types see [Installation Types](../admin/runai-setup/installation-types.md).
 
 !!! Note
     The Run:ai self-hosted installation requires a dedicated license, and has different pricing than the SaaS installation. For more details contact your Run:ai account manager.
