@@ -4,7 +4,7 @@
 Run:ai consists of two components:
 
 * The Run:ai [Cluster](../../../home/components/#the-runai-cluster). One or more data-science GPU clusters hosted by the customer (on-prem or cloud).
-* The Run:ai [Control plane](../../../home/components/#the-runai-cloud) or _Backend_. A single entity that monitors clusters, sets priorities, and business policies. 
+* The Run:ai [Control plane](../../../home/components/#the-runai-cloud). A single entity that monitors clusters, sets priorities, and business policies. 
 
 <!-- ![img/architecture.png](img/architecture.png) -->
 
