@@ -12,7 +12,7 @@ postgresql:
     debug: true
 ```
 
-Re-install the Run:ai backend and then review the database logs by running: 
+Re-install the Run:ai control-plane and then review the database logs by running: 
 
 ```
 kubectl logs -n runai-backend runai-postgresql-0
