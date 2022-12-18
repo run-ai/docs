@@ -24,7 +24,7 @@ Below is a diagram of the Run:ai API Architecture. A developer may:
 
 Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more. 
 
-The API is provided as REST and is accessible via the control plane (backend) endpoint.  
+The API is provided as REST and is accessible via the control plane endpoint.  
 
 For more information see [Administrator REST API](admin-rest-api/overview.md). 
 
