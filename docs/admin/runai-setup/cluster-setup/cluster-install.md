@@ -1,4 +1,4 @@
-Below are instructions on how to install a Run:ai cluster. Before installing, please review the installation prerequisites here: [Run AI GPU Cluster Prerequisites](cluster-prerequisites.md). 
+Below are instructions on how to install a Run:ai cluster. Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md). 
 
 
 !!! Important
