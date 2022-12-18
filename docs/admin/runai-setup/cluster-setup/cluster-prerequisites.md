@@ -31,10 +31,10 @@ Run:ai has been tested with the following Kubernetes distributions:
 | Target Platform                          | Description | Installation Notes | 
 |------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
-| OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
-| EKS | Amazon Elastic Kubernetes Service  | Run:ai SaaS only (no self-hosted support) |
-| AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
-| GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
+| OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
+| EKS | Amazon Elastic Kubernetes Service  |  |
+| AKS | Azure Kubernetes Services          |   |
+| GKE | Google Kubernetes Engine           |  | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](./customize-cluster-install.md#rke-specific-setup). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     |  |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
