@@ -1,4 +1,4 @@
-# Install the Run:ai Control Plane (Backend) 
+# Install the Run:ai Control Plane
 
 ## Create a Control Plane Configuration
 

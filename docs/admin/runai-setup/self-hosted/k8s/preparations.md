@@ -66,7 +66,7 @@ If helm v3 does not yet exist on the machine, install it now:
 
 ## Mark Run:ai System Workers
 
-The Run:ai control plane (backend) should be installed on a set of dedicated Run:ai system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+The Run:ai control plane should be installed on a set of dedicated Run:ai system worker nodes rather than GPU worker nodes. To set system worker nodes run:
 
 ```
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
