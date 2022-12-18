@@ -13,7 +13,7 @@ title: Upgrade self-hosted Kubernetes installation
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
 
 
-## Upgrade Control Plane (Backend) 
+## Upgrade Control Plane
 
 Run the helm command below. 
 
@@ -30,7 +30,7 @@ Run the helm command below.
     helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend  -f be-values.yaml
     ```
-    (replace `<version>` with the control plane (backend) version)
+    (replace `<version>` with the control plane version)
 
 
 ## Upgrade Cluster 
