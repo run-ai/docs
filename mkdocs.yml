@@ -122,7 +122,7 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
-      - 'Version 2.9' : 'home/whats-new-2-9.md'
+      - 'Version 3.0' : 'home/whats-new-3-0.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
       - 'Whats New 2022' : 'home/whats-new-2022.md'
       - 'Whats New 2021' : 'home/whats-new-2021.md'

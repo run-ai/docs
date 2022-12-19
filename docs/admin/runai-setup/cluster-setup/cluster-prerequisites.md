@@ -9,7 +9,7 @@ The following is a checklist of the Run:ai 2.8 prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#domain-name) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed) | 
-| :octicons-versions-24: Version 2.9 and up. <br> [Prometheus](#prometheus) | Install Prometheus for metrics aggregation | 
+| :octicons-versions-24: Version 3.0 and up. <br> [Prometheus](#prometheus) | Install Prometheus for metrics aggregation | 
 | (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
@@ -18,7 +18,7 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 
 
 !!! Important
-    :octicons-versions-24: Version 2.9 and up.
+    :octicons-versions-24: Version 3.0 and up.
 
     * If mandatory requirements are not met, the Run:ai cluster installation will indicate the missing requirement and will remain in an incomplete state. There is no need to uninstall Run:ai. Simply install the prerequisite and wait 2 minutes for the Run:ai cluster state to re-check mandatory requirements. 
     * If an optional requirement is not met, the Run:ai cluster installation will indicate the missing requirement and will continue functioning normally while disabling the missing functionality. 
@@ -111,7 +111,7 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
         
 ### Prometheus 
 
-=== "2.9" 
+=== "3.0" 
     If not already installed, you must install the Prometheus operator which aggregates metrics from the Kubernetes cluster and sends to the Run:ai control-plane. 
 
     To install Prometheus, run:
