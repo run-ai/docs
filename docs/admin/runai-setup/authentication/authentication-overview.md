@@ -38,7 +38,7 @@ There are two ways of getting a token:
 
 You can use the Run:ai user interface to provide user/password. These are validated against the identity service. Run:ai will return a token with the right access rights for continued operation. 
 
-YOu can also use a client application to get a token and then connect directly to the [administration API endpoint](../../../developer/admin-rest-api/overview.md). 
+You can also use a client application to get a token and then connect directly to the [administration API endpoint](../../../developer/admin-rest-api/overview.md). 
 ### Run:ai GPU Clusters
 
 The Run:ai GPU cluster is a _Kubernetes_ cluster. All communication into Kubernetes flows through the [Kubernetes API server](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/){target=_blank}.
