@@ -75,7 +75,7 @@ Run:
     ```
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster](../../../config/access-roles/) access roles](../../../config/access-roles/).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [understanding cluster access roles](../../../config/access-roles/).
 
 
 ### Connect Run:ai to GPU Operator
