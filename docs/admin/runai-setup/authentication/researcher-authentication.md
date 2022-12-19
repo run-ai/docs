@@ -6,7 +6,7 @@ The following instructions explain how to complete the configuration of access c
 
 This requires several steps:
 
-* Assign users to their Projects
+* Assign users to their Projects.
 * (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:ai Authentication authority.
 * (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
 
@@ -26,7 +26,7 @@ Assign Researchers to Projects:
 
 * Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a `Researcher` role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
-* If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
+* If you are using Single Sign-On, you can also assign _Groups_. For more information see the [Single Sign-On](sso.md) documentation.
 
 ## (Mandatory) Kubernetes Configuration
 
@@ -174,12 +174,12 @@ To control access to Run:ai (and Kubernetes) resources, you must modify the Kube
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
 * Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
-* Under `contexts | context | user` change the user to `runai-authenticated-user`
+* Under `contexts | context | user` change the user to `runai-authenticated-user`.
 
 
 ## Test via Command-line interface
 
-* Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`)
+* Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`).
 * You will be prompted for a username and password. In a single sign-on flow, you will be asked to copy a link to a browser, log in and return a code. 
 * Once login is successful, submit a Job.
 * If the Job was submitted with a Project to which you have no access, your access will be denied. 
@@ -189,7 +189,7 @@ You can also submit a Job from the Run:ai User interface and verify that the new
 
 ## Test via User Interface
 
-* Open the Run:ai user interface. Go to `Jobs`
+* Open the Run:ai user interface, go to `Jobs`.
 * On the top-right, select `Submit Job`. 
 
 !!! Tip
