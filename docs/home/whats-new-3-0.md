@@ -1,4 +1,4 @@
-# Run:ai Version 2.9
+# Run:ai Version 3.0
 
 ## Release Date
  January 2023 
@@ -27,7 +27,7 @@ Audit Log
 No Prometheus 
 Multi-cluster support
 
-To upgrade to 2.9 you need to uninstall and install
+To upgrade to 3.0 you need to uninstall and install
 
 ### Cloud
 Prevent interactive pods from being preempted due to scale-down
@@ -47,8 +47,8 @@ Idle Jobs?
 SSO?
 MPI changes (v1beta something). Non root?
 
-Kubernetes 1.25 
-Certification matrix of Kuberntes
+Kubernetes 1.25 and 1.26
+Certification matrix of Kubernetes
 - Self hosted on managed
 - OCP SaaS
 
