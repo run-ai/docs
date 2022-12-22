@@ -2,18 +2,17 @@ Below are the prerequisites of a cluster installed with Run:ai.
 
 ## Prerequisites in a Nutshell
 
-The following is a checklist of the Run:ai 2.8 prerequisites:
+The following is a checklist of the Run:ai prerequisites:
 
 | Prerequisite | Details |
 |--------------|---------|
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
-| [Ingress Controller](#domain-name) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed) | 
+| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 | (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
 
-
-There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
+There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-access-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
 
 ## Software Requirements
 
@@ -46,7 +45,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Run:ai Supports Kubernetes [Pos Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25. As such, Run:ai will be removing support for PSP in versions higher than 2.8. 
 ### NVIDIA 
 
-Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+Run:ai requires NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
 
 !!! Important
     NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9 and is resolved in 22.9.0. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
@@ -99,7 +98,117 @@ Run:ai supports NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
     * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} is one such example as it comes bundled with NVIDIA Drivers. 
     * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md/#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
-        
+
+
+### Ingress Controller
+
+:octicons-versions-24: Version 2.8 and up.
+
+Run:ai requires an ingress controller as a prerequisite. The Run:ai cluster installation configures one or more ingress objects on top of the controller. 
+
+There are many ways to install and configure an ingress controller and configuration is environment-dependent. A simple solution is to install & configure _NGINX_:
+
+=== "On Prem" 
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm upgrade -i nginx-ingress ingress-nginx/ingress-nginx   \
+        --namespace nginx-ingress --create-namespace \
+        --set controller.kind=DaemonSet \
+        --set controller.daemonset.useHostPort=true
+    ```
+
+=== "Managed Kubernetes"
+    For managed Kubernetes such as EKS: 
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx \
+        --namespace nginx-ingress --create-namespace 
+    ```
+
+For support of ingress controllers different than NGINX please contact Run:ai customer support. 
+
+!!! Note
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control-plane. In this case, there is no need to install an ingress controller as it is pre-installed by the control-plane.
+### Cluster URL
+
+The Run:ai user interface requires a URL to the Kubernetes cluster. You can use a domain name (FQDN) or an IP Address (deprecated).
+
+!!! Note
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control-plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
+#### Domain Name 
+
+:octicons-versions-24: Version 2.8 and up.
+
+You must supply a domain name as well as a __trusted__ certificate for that domain. 
+
+Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP.
+
+In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
+
+``` bash
+kubectl create ns runai
+kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
+    --cert /path/to/fullchain.pem  \ # (1)
+    --key /path/to/private.pem # (2)
+```
+
+1. The domain's cert (public key).
+2. The domain's private key. 
+
+For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
+
+#### Cluster IP
+
+(Deprecated)
+
+Following are instructions on how to get the IP and set firewall settings. 
+
+
+=== "Unmanaged Kubernetes" 
+    * Use the node IP of any of the Kubernetes nodes. 
+    * Set up the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
+
+=== "Unmanaged Kubernetes on the cloud" 
+    * Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. 
+    * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
+
+
+=== "EKS"
+
+    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx
+    ```
+
+    Find the Cluster IP by running:
+
+    ``` bash
+    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+    ```
+
+=== "GKE"
+
+    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx
+    ```
+
+    Find the Cluster IP by running:
+
+    ``` bash
+    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    ```
+
 ### Prometheus 
 
 The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
@@ -194,7 +303,7 @@ Use the following [installation guide](https://github.com/kubeflow/mpi-operator#
 
 __Usage of containers and images:__ The individual Researcher's work should be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
 
-## Network Requirements
+## Network Access Requirements
 
 __Internal networking:__ Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are made, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
 
@@ -347,103 +456,6 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 </tbody>
 </table>
 
-### Cluster URL
-
-The Run:ai user interface requires a URL to the Kubernetes cluster. You can use a domain name (FQDN) or an IP Address (deprecated).
-
-#### Domain Name 
-
-:octicons-versions-24: Version 2.8 and up.
-
-You must supply a domain name as well as __trusted__ certificate to that domain. 
-
-Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP and that there is an associated _ingress controller_ that is handling requests sent to this domain on the cluster.
-
-!!! Example
-    There are many ways to install and configure an ingress controller and configuration is environment-dependent. A simple solution is to install & configure _NGINX_:
-
-    === "On Prem" 
-
-        ``` bash
-        helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-        helm repo update
-        helm upgrade -i nginx-ingress ingress-nginx/ingress-nginx   \
-            --namespace nginx-ingress --create-namespace \
-            --set controller.kind=DaemonSet \
-            --set controller.daemonset.useHostPort=true
-        ```
-
-    === "Managed Kubernetes"
-        For managed Kubernetes such as EKS: 
-
-        ``` bash
-        helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-        helm repo update
-        helm install nginx-ingress ingress-nginx/ingress-nginx \
-            --namespace nginx-ingress --create-namespace 
-        ```
-
-In addition, to configure HTTPS for your URL, you must create a TLS secret named `runai-cluster-domain-tls-secret` in the `runai` namespace. The secret should contain a trusted certificate for the domain:
-
-``` bash
-kubectl create ns runai
-kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
-    --cert /path/to/fullchain.pem  \ # (1)
-    --key /path/to/private.pem # (2)
-```
-
-1. The domain's cert (public key).
-2. The domain's private key. 
-
-For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
-
-#### Cluster IP
-
-(Deprecated)
-
-Following are instructions on how to get the IP and set firewall settings. 
-
-
-=== "Unmanaged Kubernetes" 
-    * Use the node IP of any of the Kubernetes nodes. 
-    * Set up the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
-
-=== "Unmanaged Kubernetes on the cloud" 
-    * Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. 
-    * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
-
-
-=== "EKS"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-    ```
-
-=== "GKE"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    ```
 
 ## Pre-install Script
 

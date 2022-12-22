@@ -15,7 +15,7 @@ The researcher workbench part of the tool allows Researchers to submit, delete a
  
 
 The cluster installation process requires [configuring a new cluster](../runai-setup/cluster-setup/cluster-install.md) and downloading a YAML file. 
-On SaaS-based installations, the cluster creation wizard requires a URL to the cluster as explained [here](../runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url).
+On SaaS-based installations, the cluster creation wizard requires a URL to the cluster as explained [here](../runai-setup/cluster-setup/cluster-prerequisites.md#).
 
 
 ## Architecture

@@ -24,7 +24,7 @@ Node Pools is a new method for managing GPU and CPU resources by __grouping the 
 
 ### Installation improvements 
 
-The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements) to the Kubernetes cluster. The requirement is relevant for SaaS installation only. 
+The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url) to the Kubernetes cluster. The requirement is relevant for SaaS installation only. 
 
 In previous versions of Run:ai the administrator should [provide an IP address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) and Run:ai would automatically create a DNS entry for it and a matching trusted certificate. 
 

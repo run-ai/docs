@@ -44,7 +44,7 @@
 
     Add verbosity to Prometheus as describe [here](diagnostics.md).Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements.md).
+    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-access-requirements.md).
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
