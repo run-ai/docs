@@ -429,25 +429,10 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 </td>
 <tr>
 <td style="padding: 6px; width: 106px;">
-<p> Auth0 </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> Authentication Provider (older tenants only) </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> <a href="https://runai-prod.auth0.com/">runai-prod.auth0.com</a> </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>443</p>
-</td>
-
-<tr>
-<td style="padding: 6px; width: 106px;">
 <p> Cert Manager </p>
 </td>
 <td style="padding: 6px; width: 304px;">
-<p> Creates a letsencrypt-based certificate for the cluster </p>
+<p> Creates a letsencrypt-based certificate for the cluster (Run:ai version 2.7 or lower only) </p>
 </td>
 <td style="padding: 6px; width: 205px;">
 <p> 8.8.8.8, 1.1.1.1, dynu.com </p>
