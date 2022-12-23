@@ -8,20 +8,17 @@ The following is a checklist of the Run:ai prerequisites:
 |--------------|---------|
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
-| [Ingress Controller](#domain-name) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed) | 
+| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | :octicons-versions-24: Version 3.0 and up. <br> [Prometheus](#prometheus) | Install Prometheus for metrics aggregation |  
-| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 | (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
 There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-access-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
 
-
 !!! Important
     :octicons-versions-24: Version 3.0 and up.
     * If mandatory requirements are not met, the Run:ai cluster installation will indicate the missing requirement and will remain in an incomplete state. There is no need to uninstall Run:ai. Simply install the prerequisite and wait 2 minutes for the Run:ai cluster state to re-check mandatory requirements. 
     * If an optional requirement is not met, the Run:ai cluster installation will indicate the missing requirement and will continue functioning normally while disabling the missing functionality. 
-
 
 ## Software Requirements
 
