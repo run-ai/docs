@@ -30,7 +30,11 @@ Using the Wizard:
 *   Go to `<company-name>.run.ai/dashboards/now`.
 *   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
-For a more extensive verification of cluster health, see [Determining the health of a cluster](../cluster-troubleshooting/#determining-the-health-of-a-runai-cluster).
+For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
+
+## Researcher Authentication
+
+You must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
 
 ## (Optional) Set Node Roles
 
@@ -46,6 +50,5 @@ To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
-* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md).
 * Set up Researchers to work with the Run:ai Command-line interface (CLI). See  [Installing the Run:ai Command-line Interface](../../researcher-setup/cli-install.md) on how to install the CLI for users.
 * Review [advanced setup and maintenance](../config/overview.md) scenarios.
