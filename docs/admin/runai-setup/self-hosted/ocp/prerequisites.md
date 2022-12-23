@@ -3,17 +3,25 @@ title: Self Hosted installation over OpenShift - Prerequisites
 ---
 
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
+
+## Control-plane and clusters
+
+As part of the installation process you will install:
+
+* A control-plane managing cluster
+* One or more clusters
+
+Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
+
+!!! Important
+    In Openshift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
+
 ## Hardware Requirements
 
-(Production only) Run:ai System Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain two or more worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
+See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
 
-* 4 CPUs
-* 8GB of RAM
-* 120GB of Disk space
 
-The control plane installation of Run:ai will require the configuration of  Kubernetes Persistent Volumes of a total size of 110GB.  
-
-## Run:ai Software Prerequisites
+## Run:ai Software
 
 === "Connected"
     You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
@@ -21,29 +29,38 @@ The control plane installation of Run:ai will require the configuration of  Kube
 === "Airgapped"
     You should receive a single file `runai-<version>.tar` from Run:ai customer support
 
-## OpenShift 
+
+## Run:ai Software Prerequisites
+
+### Operating System
+
+OpenShift has specific operating system requirements that can be found in the RedHat documentation. 
+
+### OpenShift 
 
 Run:ai supports OpenShift. Supported versions are 4.8 through 4.10. 
 
 * OpenShift must be configured with a trusted certificate.
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 
+* OpenShift must have _Entitlement_. Entitlement is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}, or the equivalent [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/archive/1.9.0/openshift/cluster-entitlement.html){target=_blank}. Entitlement is [not required anymore](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/steps-overview.html#entitlement-free-supported-versions){target=_blank} if you are using OpenShift 4.9.9 or above
 
 
-!!! Important
-    * _Entitlement_ is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}, or the equivalent [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/archive/1.9.0/openshift/cluster-entitlement.html){target=_blank}. Entitlement is [not required anymore](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/steps-overview.html#entitlement-free-supported-versions){target=_blank} if you are using OpenShift 4.9.9 or above
-    * If you are planning to use NVIDIA A100 with CoreOS, you will need GPU Operator version 1.9 or above.
+### NVIDIA Prerequisites
+
+See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
+
+The Run:ai control plane, when installed standalone, does not require the NVIDIA prerequisites.
+
+Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. 
 
 
-## Download Third-Party Dependencies
+### (Optional) Inference Prerequisites 
 
-An OpenShift installation of Run:ai has third-party dependencies that must be pre-downloaded to an Airgapped environment. These are the _NVIDIA GPU Operator_ and _Kubernetes Node Feature Discovery Operator_ 
+See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
+
+The Run:ai control plane, when installed standalone, does not require the Inference prerequisites. 
 
 
-=== "Connected"
-    No additional work needs to be performed. We will use the _Red Hat Certified Operator Catalog (Operator Hub)_ during the installation. 
-
-=== "Airgapped"
-    Download the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. These instructions also include the download of the Kubernetes Node Feature Discovery Operator.
 ## Installer Machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
