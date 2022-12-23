@@ -18,12 +18,7 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 
 
 !!! Important
-<<<<<<< HEAD
     :octicons-versions-24: Version 3.0 and up.
-=======
-    :octicons-versions-24: Version 2.9 and up.
->>>>>>> f5e1bd39e (whats-new)
-
     * If mandatory requirements are not met, the Run:ai cluster installation will indicate the missing requirement and will remain in an incomplete state. There is no need to uninstall Run:ai. Simply install the prerequisite and wait 2 minutes for the Run:ai cluster state to re-check mandatory requirements. 
     * If an optional requirement is not met, the Run:ai cluster installation will indicate the missing requirement and will continue functioning normally while disabling the missing functionality. 
 
@@ -225,11 +220,7 @@ Following are instructions on how to get the IP and set firewall settings.
 
 ### Prometheus 
 
-<<<<<<< HEAD
 === "3.0" 
-=======
-=== "2.9" 
->>>>>>> f5e1bd39e (whats-new)
     If not already installed, you must install the Prometheus operator which aggregates metrics from the Kubernetes cluster and sends to the Run:ai control-plane. 
 
     To install Prometheus, run:
