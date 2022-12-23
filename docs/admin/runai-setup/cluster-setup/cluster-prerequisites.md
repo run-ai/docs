@@ -9,16 +9,11 @@ The following is a checklist of the Run:ai prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
-| :octicons-versions-24: Version 3.0 and up. <br> [Prometheus](#prometheus) | Install Prometheus for metrics aggregation |  
 | (Optional) [Distributed Training](#distributed-training-via-kubeflow-mpi) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
 There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-access-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
 
-!!! Important
-    :octicons-versions-24: Version 3.0 and up.
-    * If mandatory requirements are not met, the Run:ai cluster installation will indicate the missing requirement and will remain in an incomplete state. There is no need to uninstall Run:ai. Simply install the prerequisite and wait 2 minutes for the Run:ai cluster state to re-check mandatory requirements. 
-    * If an optional requirement is not met, the Run:ai cluster installation will indicate the missing requirement and will continue functioning normally while disabling the missing functionality. 
 
 ## Software Requirements
 
@@ -217,26 +212,12 @@ Following are instructions on how to get the IP and set firewall settings.
 
 ### Prometheus 
 
-=== "3.0" 
-    If not already installed, you must install the Prometheus operator which aggregates metrics from the Kubernetes cluster and sends to the Run:ai control-plane. 
 
-    To install Prometheus, run:
 
-    ``` bash
-    helm repo add prometheus-community \
-        https://prometheus-community.github.io/helm-charts
-    helm repo update
-    helm install prometheus-community/kube-prometheus-stack -n monitoring \             
-        --create-namespace
-    ```
+The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
 
-    For more information see [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}.
-
-=== "2.8 or earlier"
-    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
-
-    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
+* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
 
 ### Distributed Training
