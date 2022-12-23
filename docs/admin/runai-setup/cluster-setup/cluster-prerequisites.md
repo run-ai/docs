@@ -374,7 +374,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p> Cert Manager </p>
 </td>
 <td style="padding: 6px; width: 304px;">
-<p> Creates a letsencrypt-based certificate for the cluster </p>
+<p> Creates a letsencrypt-based certificate for the cluster (Run:ai version 2.7 or lower only) </p>
 </td>
 <td style="padding: 6px; width: 205px;">
 <p> 8.8.8.8, 1.1.1.1, dynu.com </p>
