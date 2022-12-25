@@ -326,6 +326,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <th scope="row" style="width: 227.102px;">URLs</th>
 <th scope="row" style="width: 43.4659px;">Ports</th>
 </tr>
+
 <tr>
 <td style="padding: 6px; width: 104.375px;">
 <p>Run:ai  Repository</p>
@@ -340,6 +341,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>443</p>
 </td>
 </tr>
+
 <tr>
 <td style="padding: 6px; width: 104.375px;">
 <p>Docker Images Repository</p>
@@ -355,6 +357,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>443</p>
 </td>
 </tr>
+
 <tr>
 <td style="padding: 6px; width: 104.375px;">
 <p> Docker Images Repository </p>
@@ -400,6 +403,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 <th scope="row" style="width: 215px; height: 22px;">URLs</th>
 <th scope="row" style="width: 42px; height: 22px;">Ports</th>
 </tr>
+
 <tr>
 <td style="padding: 6px; width: 106px;">
 <p>Grafana</p>
@@ -414,6 +418,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 <p>443 </p>
 </td>
 </tr>
+
 <tr>
 <td style="padding: 6px; width: 106px;">
 <p> Run:ai </p>
@@ -428,6 +433,8 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 <td style="padding: 6px; width: 32px;">
 <p>443</p>
 </td>
+</tr>
+
 <tr>
 <td style="padding: 6px; width: 106px;">
 <p> Cert Manager </p>
