@@ -13,7 +13,7 @@ Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting an
 ##  Published Run:ai Metrics
 
 
-Following is the list of published Run:ai Metrics
+Following is the list of published Run:ai metrics:
 
 | Metric name                                    | Labels                                                                | Measurement | Description                           |
 | ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -66,7 +66,7 @@ Following is a list of labels appearing in Run:ai metrics:
 | cpu_quota              | CPU limit per project              |
 | gpu                    | GPU index                          |
 | gpu_guaranteed_quota   | Guaranteed GPU quota per project   |
-| image                  | Name of docker image               |
+| image                  | Name of Docker image               |
 | namespace_name         | Namespace                          |
 | deployment_name        | Deployment name                    |
 | job_name               | Job name                           |
