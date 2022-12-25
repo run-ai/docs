@@ -32,7 +32,7 @@
 
 ??? "No Metrics are showing on Dashboard"
 
-    __Symptom:__ No metrics are not showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
+    __Symptom:__ No metrics are showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
 
     __Typical root causes:__
 
@@ -50,7 +50,7 @@
 
     __Machine Clocks are not synced__
 
-    Run: `date` on cluster nodes and verify that date/time is correct.  If not,
+    Run: `date` on cluster nodes and verify that date/time is correct.  If not:
 
     * Set the Linux time service (NTP).
     * Restart Run:ai services. Depending on the previous time gap between servers, you may need to reinstall the Run:ai cluster
@@ -94,7 +94,7 @@
     
     _Kubernetes Node feature discovery_ identifies and annotates nodes. _NVIDIA GPU Feature Discovery_ identifies and annotates nodes with GPU properties. See that: 
     
-    * All such pods are up, 
+    * All such pods are up.
     * The GPU feature discovery pod is available for every node with a GPU.
     * And finally, when describing nodes, they show an active `gpu/nvidia` resource.
 
@@ -136,8 +136,8 @@
     * Run: `kubectl get pods -n runai | grep scheduler`. Verify that the pod is running.
     * Review the scheduler logs and look for errors. If such errors exist, contact Run:ai customer support. 
 
-??? "All metrics are showing ""No Data"""
-    __Symptom:__ all data on all dashboards is showing the text "No Data".
+??? "All metrics are showing "No Data""
+    __Symptom:__ All data on all dashboards is showing the text "No Data".
 
     __Root cause:__ Internal issue with metrics infrastructure.
 
@@ -168,7 +168,7 @@
 
     __Resolution for 403 HTTP Error__
 
-    Run `kubectl get pods -n runai` identify the `agent` pod, see that it's running, and review its logs.
+    Run: `kubectl get pods -n runai`, identify the `agent` pod, see that it's running, and review its logs.
 
 ??? "New Job button is not showing"
     __Symptom:__ The `New Job` button on the top right of the Job list does not show.
@@ -235,16 +235,16 @@
     * The command-line `runai submit` fails with an 'admission controller' connectivity error.
     * Agent or cluster sync pods are crashing in self-hosted installation.
 
-    __Root cause:__ Connectivity issues between different nodes in the cluster
+    __Root cause:__ Connectivity issues between different nodes in the cluster.
 
     __Resolution:__
 
     * Run the [preinstall script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
-    * Run `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
-    * Run `kubectl get nodes`. Check that all nodes are ready and connected
-    * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
+    * Run: `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
+    * Run: `kubectl get nodes`. Check that all nodes are ready and connected.
+    * Run: `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
     * See if pods from different nodes have trouble communicating with each other.
-    * Advanced: Run `kubectl exec <pod-name> -it /bin/sh` from a pod in one node and ping a pod from another. 
+    * Advanced, run: `kubectl exec <pod-name> -it /bin/sh` from a pod in one node and ping a pod from another. 
 
 
 ??? "Projects are not syncing"
@@ -254,16 +254,16 @@
     
     __Resolution__
     
-    * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`
+    * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`.
     * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 ??? "Jobs are not syncing"
-     __Symptom:__ A Job on the cluster (`runai list jobs`) does not show in the Run:ai user interface Job list 
+     __Symptom:__ A Job on the cluster (`runai list jobs`) does not show in the Run:ai user interface Job list. 
 
     __Root cause:__ The Run:ai __cluster-sync__ pod is not syncing properly.  
     
-    __Resolution__: Search the cluster-sync pod for errors
+    __Resolution__: Search the cluster-sync pod for errors.
     
 ## Job-related Issues
 
@@ -272,7 +272,7 @@
 
     __Root Cause:__ The issue may be caused due to an unattended upgrade of the NVIDIA driver.
 
-    To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
+    To verify, run: `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
 
     __Resolution:__ Reboot the node on which the Job attempted to run.
 
@@ -359,7 +359,7 @@
     kubectl port-forward -n runai svc/researcher-service 4180
     ```
 
-    In another shell run
+    In another shell, run:
     ```
     wget --content-disposition http://localhost:4180/cli/linux
     ```
@@ -376,7 +376,7 @@
 
     __Root Cause:__ The user running the CLI does not have read permissions to the `.kube` directory.
 
-    __Resolution:__ Run: Change permissions for the directory.
+    __Resolution:__ Change permissions for the directory.
 
 
 ??? "When running 'runai logs', the logs are delayed"
