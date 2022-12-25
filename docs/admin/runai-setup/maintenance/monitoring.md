@@ -33,7 +33,7 @@ Prometheus Alert Manager provides a structured way to connect to alert-managemen
 Following is an __example__ showing how to integrate Run:ai to a webhook:
 
 * Use [https://webhook.site/](https://webhook.site/){target=_blank}. Get the `Unique URL`.
-* When installing the Run:ai cluster, edit the [values file](../cluster-setup/cluster-install.md/#step-3-install-runai) to add the following.
+* When installing the Run:ai cluster, edit the [values file](../cluster-setup/cluster-install.md/#install-runai) to add the following.
 
 ``` YAML
 kube-prometheus-stack:
@@ -76,7 +76,7 @@ The aggregated alert is named `RunaiCriticalProblem`. It is categorized as "crit
 
 You can add additional alerts from Run:ai. Alerts are triggered by using the [Promtheus query language](https://prometheus.io/docs/prometheus/latest/querying/basics/){default=_blank} with any Run:ai [metric](../../../developer/metrics/metrics.md). To add new alert:
 
-* When installing the Run:ai cluster, edit the [values file](../cluster-setup/cluster-install.md/#step-3-install-runai).
+* When installing the Run:ai cluster, edit the [values file](../cluster-setup/cluster-install.md/#install-runai).
 * On an existing installation, use the [upgrade](../cluster-setup/cluster-upgrade.md) cluster instructions to modify the values file.
 * Add an alert according to the structure specified below.
 
