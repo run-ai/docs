@@ -49,7 +49,7 @@ Run:ai supports OpenShift. Supported versions are 4.8 through 4.10.
 
 See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
 
-The Run:ai control plane, when installed standalone, does not require the NVIDIA prerequisites.
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
 Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. 
 
@@ -58,7 +58,7 @@ Information on how to download the GPU Operator for air-gapped installation can 
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
-The Run:ai control plane, when installed standalone, does not require the Inference prerequisites. 
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
 
 ## Installer Machine
