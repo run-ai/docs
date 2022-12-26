@@ -45,19 +45,19 @@ The Run:ai control plane operating system prerequisites are identical.
 
 See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
 
-The Run:ai control plane, when installed standalone, does not require the NVIDIA prerequisites.
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
 ### Prometheus Prerequisites
 
 See Run:ai Cluster prerequisites [Prometheus](../../cluster-setup/cluster-prerequisites.md#prometheus) requirements.
 
-The Run:ai control plane, when installed standalone, does not require the Prometheus prerequisites. 
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
 
 ### (Optional) Inference Prerequisites 
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
-The Run:ai control plane, when installed standalone, does not require the Inference prerequisites. 
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
 ## Network Requirements
 
@@ -71,7 +71,7 @@ If the Run:ai cluster is installed on a separate Kubernetes cluster, follow the 
 
 The Run:ai control plane requires a domain name (FQDN). You must supply a domain name as well as a trusted certificate for that domain. 
 
-* When installing the first Run:ai cluster on the same Kubernetes cluster as the control plane. The Run:ai cluster URL will be the same as the control-plane URL.
+* When installing the first Run:ai cluster on the same Kubernetes cluster as the control plane, the Run:ai cluster URL will be the same as the control-plane URL.
 * When installing the Run:ai cluster on a separate Kubernetes cluster, follow the Run:ai [domain name](../../cluster-setup/cluster-prerequisites.md#domain-name) requirements. 
 
 ## Installer Machine

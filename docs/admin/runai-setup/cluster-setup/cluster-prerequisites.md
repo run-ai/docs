@@ -63,7 +63,7 @@ Run:ai requires NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions
 
     Create the `gpu-operator` namespace by running
 
-    ```
+    ``` bash
     kubectl create ns gpu-operator
     ```
 
@@ -134,13 +134,13 @@ There are many ways to install and configure an ingress controller and configura
 For support of ingress controllers different than NGINX please contact Run:ai customer support. 
 
 !!! Note
-    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control-plane. In this case, there is no need to install an ingress controller as it is pre-installed by the control-plane.
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, there is no need to install an ingress controller as it is pre-installed by the control plane.
 ### Cluster URL
 
 The Run:ai user interface requires a URL to the Kubernetes cluster. You can use a domain name (FQDN) or an IP Address (deprecated).
 
 !!! Note
-    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control-plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
 #### Domain Name 
 
 :octicons-versions-24: Version 2.8 and up.
@@ -332,7 +332,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>Run:ai  Repository</p>
 </td>
 <td style="padding: 6px; width: 298.92px;">
-<p> The Run:ai Package Repository is hosted on Run:ai’s account on Google Cloud </p>
+<p> Run:ai Helm Package Repository </p>
 </td>
 <td style="padding: 6px; width: 217.102px;">
 <p> <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> </p>
@@ -347,11 +347,10 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p>Docker Images Repository</p>
 </td>
 <td style="padding: 6px; width: 298.92px;">
-<p>Various Run:ai images</p>
+<p>Run:ai images</p>
 </td>
 <td style="padding: 6px; width: 217.102px;">
-<p><a href="http://hub.docker.com/">hub.docker.com </a></p>
-<p>gcr.io/run-ai-prod </p>
+gcr.io/run-ai-prod
 </td>
 <td style="padding: 6px; width: 33.4659px;">
 <p>443</p>
@@ -363,9 +362,10 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p> Docker Images Repository </p>
 </td>
 <td style="padding: 6px; width: 298.92px;">
-<p> Various third party Images</p>
+<p> Third party Images</p>
 </td>
 <td style="padding: 6px; width: 217.102px;">
+<p><a href="http://hub.docker.com/">hub.docker.com </a></p>
 <p><a href="http://quay.io/">quay.io</a>  </p>
 </td>
 <td style="padding: 6px; width: 33.4659px;">
@@ -378,7 +378,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 <p> Cert Manager </p>
 </td>
 <td style="padding: 6px; width: 304px;">
-<p> Creates a letsencrypt-based certificate for the cluster (Run:ai version 2.7 or lower only) </p>
+<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
 </td>
 <td style="padding: 6px; width: 205px;">
 <p> 8.8.8.8, 1.1.1.1, dynu.com </p>
@@ -393,7 +393,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 
 ### Post Installation
 
-In addition, once running, Run:ai requires outbound network connection to the following targets:
+In addition, once running, Run:ai requires an outbound network connection to the following targets:
 
 <table border="1" style="margin-left: 0px; margin-right: auto; width: 650px;">
 <tbody>
@@ -440,7 +440,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 <p> Cert Manager </p>
 </td>
 <td style="padding: 6px; width: 304px;">
-<p> Creates a letsencrypt-based certificate for the cluster (Run:ai version 2.7 or lower only) </p>
+<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
 </td>
 <td style="padding: 6px; width: 205px;">
 <p> 8.8.8.8, 1.1.1.1, dynu.com </p>
@@ -456,7 +456,7 @@ In addition, once running, Run:ai requires outbound network connection to the fo
 
 ## Pre-install Script
 
-Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
 
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
 * Looks at additional components installed and analyze their relevance to a successful Run:ai installation. 
