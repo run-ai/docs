@@ -18,7 +18,7 @@ Replace `<version>` with the new version number in the command below. Then run:
 ```
 kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
 ```
-The number should have 3 digits (for example `2.7.14`)
+The number should have 3 digits (for example `2.7.14`). You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
 
 Then run:
 
