@@ -236,13 +236,13 @@ Use the following [installation guide](https://github.com/kubeflow/mpi-operator#
 
 To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 and 1.5 with Kubernetes 1.22 or later.  
 
-Post-install, you must configure Knative to use the Run:ai scheduler by running: 
+Post-install, you must configure Knative to use the Run:ai scheduler and allow pod affinity, by running: 
 
 ```
 kubectl patch configmap/config-features \
   --namespace knative-serving \
   --type merge \
-  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled"}}'
+  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled"}}'
 ```
 
 #### Inference Autoscaling
