@@ -91,6 +91,8 @@ For further information see [here](https://github.com/rancher/rancher/issues/146
 On the cluster, install _Cert manager_ as follows:
 
 ``` bash
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
