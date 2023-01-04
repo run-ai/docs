@@ -36,6 +36,7 @@ Run:ai has been tested with the following Kubernetes distributions:
 | AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
 | GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](./customize-cluster-install.md#rke-specific-setup). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
+| Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     |  |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
