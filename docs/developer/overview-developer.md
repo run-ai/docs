@@ -37,7 +37,7 @@ The API is provided as [Kubernetes API](./cluster-api/submit-yaml.md).
 Cluster API is accessible via the GPU cluster itself. As such, __multiple clusters may have multiple endpoints__.
 
 !!! Note
-    The same functionality is also available via the [Run:ai Command-line interface](../../Researcher/cli-reference/introduction). The CLI provides an alternative for automating with shell scripts. 
+    The same functionality is also available via the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md). The CLI provides an alternative for automating with shell scripts. 
 ## Metrics API
 
 Retrieve metrics from multiple GPU clusters. 
