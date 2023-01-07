@@ -286,7 +286,7 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 (see picture below)
 
-*   (Production only) __Run:ai System__ Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
+*   (Production only) __Run:ai System Nodes__: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
     
     *   4 CPUs
     *   8GB of RAM
