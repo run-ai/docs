@@ -14,7 +14,7 @@ The self-hosted installation differs from the Classic (SaaS) installation of Run
 The document differentiates between __Run:ai System Worker Nodes__ and __GPU Worker Nodes__:
 
 * Worker Nodes - are where Machine Learning workloads run. 
-* Run:ai System Nodes - In a production installation Run:ai software runs on one or more [Run:ai System Nodes](../cluster-prerequisites/#hardware-requirements) on which the Run:ai software runs. 
+* Run:ai System Nodes - In a production installation Run:ai software runs on one or more [Run:ai System Nodes](../cluster-setup/cluster-prerequisites.md#hardware-requirements) on which the Run:ai software runs. 
 
 
 ## Worker Nodes
