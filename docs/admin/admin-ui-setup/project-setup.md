@@ -50,7 +50,7 @@ As an administrator, you may want to disconnect the two parameters. So that, for
 
 ## Assign Users to Project
 
-When [Researcher Authentication](../runai-setup/config/) is enabled, the Project form will contain an additional _Access Control_ tab. The tab will allow you to assign Researchers to their Projects. 
+When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional _Access Control_ tab. The tab will allow you to assign Researchers to their Projects. 
 
 If you are using Single-sign-on, you can also assign Groups 
 
