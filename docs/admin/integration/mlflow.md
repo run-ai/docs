@@ -84,6 +84,6 @@ metadata:
 
 ## See Also
 
-* You can use MLflow together with Fractional GPUs. For more information see [Launch Job via YAML](../../../developer/k8s-api/launch-job-via-yaml/#using-fractional-gpus).
-* To map additional Run:ai options to the YAML, see [Launch Job via YAML](../../../developer/k8s-api/launch-job-via-yaml/#mapping-additional-flags).
+* You can use MLflow together with Fractional GPUs. For more information see [Launch Job via YAML](../../developer/deprecated/k8s-api/launch-job-via-yaml.md#using-fractional-gpus).
+* To map additional Run:ai options to the YAML, see [Launch Job via YAML](../../developer/deprecated/k8s-api/launch-job-via-yaml.md#mapping-additional-flags).
 
