@@ -176,7 +176,6 @@
     __Root Causes:__ (multiple)
 
     * You do not have `Researcher` or `Research Manager` permissions.
-    * Cluster version is 2.3 or lower.
     * Under `Settings | General`, verify that `Unified UI` is on.
 
 
