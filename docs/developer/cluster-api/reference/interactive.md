@@ -156,16 +156,6 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
-   nodeType	<Object>
-     Specifies nodes (machines) or a group of nodes on which the workload will
-     run. To use this feature, your Administrator will need to label nodes as
-     explained in the Group Nodes guide at
-     https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag
-     can be used in conjunction with Project-based affinity. In this case, the
-     flag is used to refine the list of allowable node groups set in the
-     Project. For more information see the Projects setup guide at
-     https://docs.run.ai/admin/admin-ui-setup/project-setup.
-
    nodePool <Object>
      Specifies a group of nodes (machines) on which the workload will run. 
      To use this feature, your Administrator will need to label nodes and 
@@ -179,6 +169,16 @@ FIELDS:
      use to run. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
    
+   nodeType	<Object>
+     Specifies nodes (machines) or a group of nodes on which the workload will
+     run. To use this feature, your Administrator will need to label nodes as
+     explained in the Group Nodes guide at
+     https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag
+     can be used in conjunction with Project-based affinity. In this case, the
+     flag is used to refine the list of allowable node groups set in the
+     Project. For more information see the Projects setup guide at
+     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+
    notebookToken	<Object>
 
    ports	<Object>
