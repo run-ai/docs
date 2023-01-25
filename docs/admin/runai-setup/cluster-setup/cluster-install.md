@@ -2,7 +2,9 @@ Below are instructions on how to install a Run:ai cluster. Before installing, pl
 
 
 !!! Important
-    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
+    * We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
+    * Starting version 2.9 you must pre-install  [NGINX ingress controller](cluster-prerequisites#ingress-controller)
+    * Starting version 2.9 you must pre-install the [Prometheus stack](cluster-prerequisites#prometheus).
 
 ## Install Run:ai
 
@@ -27,8 +29,15 @@ Using the Wizard:
 
 ## Verify your Installation
 
-*   Go to `<company-name>.run.ai/dashboards/now`.
-*   Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
+:octicons-versions-24: Version 2.9 and up 
+
+Run: `kubectl get cm -n runai  XXXXX
+
+All Run:ai versions:
+
+* Go to `<company-name>.run.ai/dashboards/now`.
+* Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
+
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
 

@@ -9,6 +9,7 @@ The following is a checklist of the Run:ai prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
+| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
@@ -24,7 +25,7 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.24. Kubernetes 1.25 is not yet supported. For RedHat OpenShift. Run:ai supports OpenShift 4.8 to 4.10.
+Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.26 and OpenShift 4.8 to 4.11. Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
 Run:ai has been tested with the following Kubernetes distributions: 
 
@@ -215,11 +216,14 @@ Following are instructions on how to get the IP and set firewall settings.
 ### Prometheus 
 
 
+=== "Version 2.9 or later" 
+    If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}
 
-The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
+=== "Version 2.8 or below" 
+    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
 
-* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
+    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
 
 ### Distributed Training
