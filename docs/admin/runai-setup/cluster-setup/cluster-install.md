@@ -29,14 +29,59 @@ Using the Wizard:
 
 ## Verify your Installation
 
-:octicons-versions-24: Version 2.9 and up 
-
-Run: `kubectl get cm -n runai  XXXXX
-
-All Run:ai versions:
-
 * Go to `<company-name>.run.ai/dashboards/now`.
 * Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
+
+
+:octicons-versions-24: Version 2.9 and up 
+
+Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
+
+(assumes the [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
+
+Example output:
+
+``` YAML
+cluster-version: 2.9.0
+runai-public: 
+  version: 2.9.0
+  runaiConfigStatus: # (1)
+    conditions:
+    - type: DependenciesFulfilled
+      status: "True"
+      reason: dependencies_fulfilled
+      message: Dependencies are fulfilled
+    - type: Deployed
+      status: "True"
+      reason: deployed
+      message: Resources Deployed
+    - type: Available
+      status: "True"
+      reason: available
+      message: System Available
+    - type: Reconciled
+      status: "True"
+      reason: reconciled
+      message: Reconciliation completed successfully
+  optional:  # (2)
+    knative:    # (3)  
+      components:
+        hpa:
+          available: true
+        knative:
+          available: true
+        kourier:
+          available: true
+    mpi:        # (4) 
+      available: true
+```
+
+1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
+2. Checks whether optional product dependencies have been met.
+3. See [Inference prerequisites](cluster-prerequisites.md#inference).
+4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
+
+
 
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
