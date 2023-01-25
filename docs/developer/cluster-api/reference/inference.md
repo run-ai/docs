@@ -1,15 +1,10 @@
-# Inference Workload Parameters
-
-Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter. 
-
-```
 KIND:     InferenceWorkload
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this InferenceWorkload
+     The specifications of this workload
 
 FIELDS:
    annotations	<Object>
@@ -164,6 +159,14 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
+   nodePool	<Object>
+     Specifies the NodePool name to be used to schedule this job on - DEPRECATED
+     use NodePools instead
+
+   nodePools	<Object>
+     Specifies the list of node pools to use for scheduling the job, ordered by
+     preference.
+
    nodeType	<Object>
      Specifies nodes (machines) or a group of nodes on which the workload will
      run. To use this feature, your Administrator will need to label nodes as
@@ -174,19 +177,6 @@ FIELDS:
      Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
-   nodePool <Object>
-     Specifies a group of nodes (machines) on which the workload will run. 
-     To use this feature, your Administrator will need to label nodes and 
-     create a node-pool, as explained in the Group Nodes guide at 
-     https://docs.run.ai/admin/researcher-setup/limit-to-node-group.
-     Administrator can assign quota for each node-pool in any of the 
-     Projects and Departments that the system contains. This flag
-     can optionally be used in conjunction with NodeType and Project-based
-     affinity. In this case, the combination of both flags is used to refine
-     the list of allowable nodes from a node-pool which the workload can 
-     use to run. For more information see the Projects setup guide at
-     https://docs.run.ai/admin/admin-ui-setup/project-setup.
-   
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
@@ -217,9 +207,9 @@ FIELDS:
      Specifies S3 buckets to mount into the container running the workload
 
    serviceType	<Object>
-     Specifies the service exposure method for created workloads. Options are:
-     portforward, loadbalancer, nodeport, ingress. Different service methods
-     have different endpoint structures. For more information see the External
+     Specifies the default service exposure method for ports. The default shall
+     be used for ports which do not specify service type. Options are:
+     LoadBalancer, NodePort or ClusterIP. For more information see the External
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
 
@@ -258,5 +248,3 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
-```
-
