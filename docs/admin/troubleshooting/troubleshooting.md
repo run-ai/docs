@@ -288,12 +288,12 @@
 
 ## Kubernetes-specific Issues
 
-??? "Cluster Installation failed on Rancher-based Kubernetes (RKE)"
+??? "Cluster Installation failed on RKE or EKS"
     __Symptom:__ Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started.
 
     __Resolution:__
 
-    Perform the required RKE steps [here](../runai-setup/cluster-setup/customize-cluster-install.md#rke-specific-setup).
+    Perform the required cert-manager steps [here](../runai-setup/cluster-setup/cluster-prerequisites.md#cert-manager).
 
 ## Inference Issues
 

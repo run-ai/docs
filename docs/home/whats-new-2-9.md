@@ -70,6 +70,7 @@ Integrations and external tools support (WS)
 * Run:ai now supports Kubernetes 1.25 and 1.26. 
 * Run:ai now supports Openshift 4.11
 * Run:ai now supports Dynamic MIG with NVIDIA H100 hardware
+* The Run:ai command-line interface now supports Microsoft Windows. See [here](../admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
 
 
 

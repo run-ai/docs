@@ -38,7 +38,7 @@ OpenShift has specific operating system requirements that can be found in the Re
 
 ### OpenShift 
 
-Run:ai supports OpenShift. Supported versions are 4.8 through 4.10. 
+Run:ai supports OpenShift. Supported versions are 4.8 through 4.11. 
 
 * OpenShift must be configured with a trusted certificate.
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 

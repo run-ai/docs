@@ -11,6 +11,7 @@ The following is a checklist of the Run:ai prerequisites:
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
+| [Cert manager](#cert-manager) | For RKE and EKS, you must install cert management if not already installed and configure Run:ai to use it | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
@@ -36,7 +37,7 @@ Run:ai has been tested with the following Kubernetes distributions:
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  | 
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](./customize-cluster-install.md#rke-specific-setup). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     |  |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
@@ -225,6 +226,21 @@ Following are instructions on how to get the IP and set firewall settings.
     * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
     * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
+
+### Cert Manager
+
+Rancher Kubernetes Engine (RKE) and Amazon Elastic Kubernetes Engine (EKS) require a certificate manager as described [here](https://cert-manager.io/docs/installation/helm/){target=_blank}.
+
+You must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
+
+* Download the "On Premise" Kubernetes type. 
+* Edit the cluster values file and change `useCertManager` to `true` 
+
+``` yaml  hl_lines="3"
+init-ca:
+    enabled: true
+    useCertManager: true
+```
 
 ### Distributed Training
 
