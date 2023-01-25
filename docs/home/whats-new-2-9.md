@@ -34,6 +34,15 @@
 The cluster wizard, in a self-hosted configuration, now provides an option to select cluster location: `Same as Control Plane` or `Remote to control plane`. This allows for multiple clusters to be more easily configured. 
 
 ---
+
+### Authentication
+Openshift groups
+SSO Logout
+GID/UID for SSO users
+SSO: block access to Run:ai
+SSO: timeout
+
+
 DRF incl nodepools + drf
 Workspaces
 RedHat Marketplace
@@ -44,17 +53,12 @@ Audit Log (ui)
 
 Idle jobs timeout
 New nodes (and nodepools) screen Y (for nodepools addition to nodes acreen)
-Openshift groups
-Installation changes
-SSO Logout
-GID/UID for SSO users
 Dashboard: new nodes metrics
 Per node GPU metrics
 Matlab support
 API deprecation?
 Integrations and external tools support (WS)
-SSO: block access to Run:ai
-SSO: timeout
+
 
 113 stories (without epic)
 137 bugs (without epic)
