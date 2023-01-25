@@ -7,10 +7,6 @@
 <!-- 
 * Now supporting _spread_ scheduling strategy as well. For more information see [scheduling strategies](../Researcher/scheduling/strategies.md). -->
 
-### xxx
-
-### User Interface Enhancements
-
 ### Cluster Installation Enhancements
 
 #### Cluster Prerequisites 
@@ -27,7 +23,6 @@
 
 * Run:ai control plane installation no longer installs NGINX. Instead, the customer must pre-install an ingress controller. 
 * The default persistent storage is now a default storage class preconfigured in Kubernetes rather than the older NFS assumptions. NFS flags in `runai-adm generate-values` still exist for backward compatibility. 
-
 
 #### Other
 
@@ -58,12 +53,6 @@ Per node GPU metrics
 Matlab support
 API deprecation?
 Integrations and external tools support (WS)
-
-
-113 stories (without epic)
-137 bugs (without epic)
----
-
 
 
 ### Newly Supported Software
