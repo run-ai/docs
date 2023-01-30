@@ -1,7 +1,7 @@
 # Run:ai Version 2.9
 
 ## Release Date
- February 2023 
+February 2023 
 
 ## Release Content
 <!-- 
@@ -13,7 +13,7 @@
 * Prometheus is no longer installed together with Run:ai. You must install the [Prometheus stack](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prometheus) before installing Run:ai. This helps install Run:ai for organizations that already have Prometheus installed as the monitoring tool of choice in the cluster. The Run:ai installation configures the existing Prometheus with a custom set of rules designed to extract metrics from the cluster. 
 * NGINX is no longer installed together with Run:ai. You must install an [Ingress controller](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#ingress-controller) before installing Run:ai. This helps install Run:ai for organizations that already have an ingress controller installed. The Run:ai installation creates NGINX rules to work with the controller. 
 * A full list of Prerequisites can be found [here](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell).
-* The Run:ai installation now performs a series of checks to verify the installation validity. Post-installation you should [verify](../admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by reviewing the log file. List of checks: 
+* The Run:ai installation now performs a series of checks to verify the validity of the installation. Post-installation you can review this [verififcation](../admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by describing a `configMap` file. List of checks: 
     * Are all mandatory prerequisites met? 
     * Are optional prerequisites met?
     * Does the cluster have connectivity to the Run:ai control plane?
@@ -44,6 +44,10 @@ SSO: block access to Run:ai
 
 SSO: timeout
 
+* SSO Logout URL. It is possible to configure the redirect URL when the [user session ends](../admin/runai-setup/authentication/sso.md#logout-url). This can be done via Customer support. 
+
+-----
+
 
 DRF incl nodepools + drf
 
@@ -61,7 +65,7 @@ Audit Log (ui)
 
 Idle jobs timeout
 
-New nodes (and nodepools) screen Y (for nodepools addition to nodes acreen)
+New nodes (and nodepools) screen Y (for nodepools addition to nodes screen)
 
 Dashboard: new nodes metrics
 

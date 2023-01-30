@@ -263,6 +263,9 @@ The latter option is easier to maintain.
 * If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster. 
 
 
+## Logout URL
+
+It is possible to configure the redirect URL when the session ends. To perform this configuration please contact Run:ai customer support. 
 ## Implementation Notes
 
 Run:ai SSO does not support single logout. As such, logging out from Run:ai will not log you out from other systems.
