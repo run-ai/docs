@@ -16,7 +16,7 @@ These “building blocks'' consist of everything needed for a workspace to be cr
 
 
 
-![alt_text](img/bbs.png "A scheme representing how workspaces are created from various building blocks of a project")
+![](img/bbs.png)
 
 
 
@@ -30,7 +30,7 @@ For example, their workspace can be composed of:
 
 
 
-![alt_text](img/workspace-form.png "Workspaces’ creation form with selected building blocks per building block")
+![](img/workspace-form.png)
 
 
 
@@ -41,7 +41,8 @@ The scope of relevancy can be set to be of a specific single project (e.g. “Pr
 
 
 
-![alt_text](img/prj.png "Project selection when creating an environment")
+![](img/prj.png)
 
-From reasons of context, efficiency, and controlling access, data scientists can view & use only building blocks that are created under projects they are assigned to.
+For reasons of context, efficiency, and controlling access, data scientists can view & use only building blocks that are created under projects they are assigned to.
 
+For the creation of building blocks, one option would be that an administrator builds them for data science teams to consume or empower data scientists with the ability to also build. Unless defined otherwise, all data scientists can build building blocks but these are limited to the project they are assigned to.

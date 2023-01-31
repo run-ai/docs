@@ -16,8 +16,7 @@ A workspace is associated with a single project (Reminder- a project is a namesp
 Data scientists can view & use only workspaces that are created under projects they are assigned to.
 
 
-![alt_text](img/grid.png "Workspaces grid")
-
+![](img/grid.png)
 
 Workspaces can be easily created with just a few clicks of a button. See [Workspace creation](#xxx).  
  
@@ -27,11 +26,13 @@ Only when a workspace is in status active (see also [Workspace Statuses](#xxxx))
 
 
 
-![alt_text](img/activews.png "An active workspace “test-itay” & its connectable tools")
+![](img/activews.png)
 
 
 
 When a workspace is active, it creates in its background an interactive workload that can be viewed in the jobs grid. In that sense, a workspace can be referred to many interactive workloads in the job screen but only 1 can of them could be in status running. 
+
+When a workspace is running there is also an interactive session running under the same name has the workspace’s. When the workspace’s is stopped so is the interactive session.
 
 A workspace in its essence is to improve and simplify the user experience of both data science teams & administrators. It is only supported via UI & API, but not via CLI. 
 Running an interactive session via CLI is still supported.
