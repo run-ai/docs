@@ -22,7 +22,7 @@ When installing Run:ai, [customize the cluster installation](../../runai-setup/c
 
 ## Create Run:ai Projects 
 
-Kubeflow uses the namespace convension `kubeflow-<username>`. Use the 4 steps [here](../../runai-setup/cluster-setup/customize-cluster-install#manual-creation-of-namespaces) to set up Run:ai projects and link them with Kubeflow namespaces. 
+Kubeflow uses the namespace convention `kubeflow-<username>`. Use the 4 steps [here](../../runai-setup/cluster-setup/customize-cluster-install#manual-creation-of-namespaces) to set up Run:ai projects and link them with Kubeflow namespaces. 
 
 Verify that the association has worked by running:
 
