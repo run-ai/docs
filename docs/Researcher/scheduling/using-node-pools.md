@@ -42,6 +42,7 @@ For the development of new AI models, the organization has purchased 5 nodes of 
 ![node-pools-table1-pic](img/table2-pic.png)
 ![node-pools-pic3](img/node-pools-pic2.png)
 
+Once the new nodes are added and discovered by Run:ai, they become part of the 'Default' node-pool.
 
 
 

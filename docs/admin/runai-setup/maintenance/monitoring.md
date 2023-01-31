@@ -15,7 +15,7 @@ The purpose of this document is to configure the Run:ai to emit health alerts an
 
 Alerts are emitted for Run:ai Clusters as well as the Run:ai control plane on Self-hosted installation where the control plane resides on the same Kubernetes cluster as one of the Run:ai clusters. 
 
-
+ 
 ## Alert Infrastructure
 
 Run:ai uses Prometheus for externalizing metrics. The Run:ai cluster installation installs Prometheus or can connect to an existing Prometheus instance used in the organization. 

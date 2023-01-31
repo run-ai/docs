@@ -254,6 +254,7 @@ nav:
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
+      - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
 #      - 'Automatically Delete Finished Workloads' : 'Researcher/scheduling/auto-delete-jobs.md'
     - 'Researcher Library' :
       - 'Overview' : 'Researcher/researcher-library/researcher-library-overview.md'

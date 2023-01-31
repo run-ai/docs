@@ -21,14 +21,14 @@ __Departments__ create a secondary hierarchy of resource allocation:
 ### Node Pools and Quota settings
 By default, the Run:ai system associates all nodes to 'Default' node-pool. 
 If 'Enable Node Pools' flag is disabled, all GPU and CPU resources are directly associated to the Department's Quotas. Once an Administrator enables 'Enable Node Pools' flag, all GPU and CPU resources will be included in 'Default' node-pool and summed up to the Department's overall Quotas.
-An administrator can create new node-pool and associate nodes into this pool. Any new pool is automatically associated with all Departments and Projects within a cluster, with a GPU and CPU resource Quota of zero. The Administrator can then change the Quota of any node-pool resource per Department and Project. The Quota of node-pool X within Department Y should be at least the sum of the same node-pool X Quota across all associated Projects.
+An administrator can create new node-pool and associate nodes into this pool. Any new pool is automatically associated with all Departments and Projects within a cluster, with a GPU and CPU resource Quota of zero. The Administrator can then change the Quota of any node-pool resource per Department and Project. The Quota of node-pool X within Department Y should be at least the sum of the same node-pool X Quota across all associated Projects. This means an administrator should carefully plan the resource Quota allocation from the Department to its descendent Projects.
 The overall Quota of the Department is the sum of all its associated node-pools. 
 
 ### Over-quota behavior
 
 Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 DGXs with 80 GPUs, totaling a cluster of 160 GPUs. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need them. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:ai scheduler as over-quota. For more details on over-quota scheduling see [the Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md). In case node-pools are enabled, the same rule applies per node-pool, i.e. if a job tries to use resources that supersede a node-pool Department's quota - it will be considered as Over-Quota.
 
-__Important best practice:__ As a rule, the sum of the Department allocation should be equal to the number of GPUs in the cluster.
+__Important best practice:__ As a rule, the sum of the Departments' Qouta allocations should be equal to the number of GPUs in the cluster.
 
 
 ## Creating and Managing Departments 

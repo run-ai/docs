@@ -61,7 +61,11 @@ A node can only be set with a single value
 ## Using Node Groups via the CLI
 
 To use Run:ai node pool with a workload, use Run:ai CLI command ‘node-pool’: 
-    runai submit job1 ... --node-pool "my-pool"
+    runai submit job1 ... --node-pools "my-pool" ...
+
+To use Run:ai multi node pools with a workload, use Run:ai CLI command :
+    runai submit job1 ... --node-pools "my-pool my-pool2 my-pool3" ...
+With Multi node pools the researcher creates a list of prioritized node-pools and let the scheduler to try and chose from any of the node pools in the list, according to the given priority. 
 
 To use node affinity, use the node type label with the --node-type flag, such as:
 

@@ -26,7 +26,7 @@ For further information on Projects and how to configure them, see: [Working wit
 
 ### Departments
 
-A _Department_ is the second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Project quota.  
+A _Department_ is the second hierarchy of resource allocation above _Project_. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Projects' quota.  
 
 For further information on Departments and how to configure them, see: [Working with Departments](../../admin/admin-ui-setup/department-setup.md)
 
@@ -49,10 +49,22 @@ The Researcher uses the _--interactive_ flag to specify whether the workload is 
 
 ### Guaranteed Quota and Over-Quota
 
+There are two use cases for Quota and Over-Quota:
+
+__Node pools are disabled__
+
 Every new workload is associated with a Project. The Project contains a deserved GPU quota. During scheduling:
 
 *   If the newly required resources, together with currently used resources, end up within the Project's quota, then the workload is ready to be scheduled as part of the guaranteed quota.
-*   If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below
+*   If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below.
+
+__Node pools are enabled__
+
+Every new workload is associated with a Project. The Project contains a deserved GPU quota that is the sum off all node pools GPU quotas. During scheduling:
+
+*   If the newly required resources, together with currently used resources, end up within the overall Project's quota and within the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
+*   If the newly required resources together with currently used resources end up above the Project's quota or above the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below.
+
 
 ## Scheduler Details
 
@@ -73,8 +85,9 @@ A node-pool is a set of nodes grouped by an Administrator into a distinct group 
 By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node-pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
 *   An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
-*   The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on a certain node pool - Researcher can then submit a workload and specify a node-pool to use and recieve guaranteed resources. The second is by using node-pool with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of a certain node-pool. This means a Workload must be Preemptible as it uses resources out of the Project's quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quota.
-*   By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using 'Default' node-pool.
+*   The Researcher can use node-pools in two ways. The first one is where a Project has guaranteed resources on node-pools - Researcher can then submit a workload and specify a single node-pool or a prioritized list of node-pools to use and recieve guaranteed resources. 
+The second is by using node-pool(s) with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of node-pools. This means a Workload must be Preemptible as it uses resources out of the Project's or node pool quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quota.
+*   By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using the Project's 'Default node-pool list'.
 
 ### Node Affinity 
 
@@ -151,6 +164,7 @@ Distribute Training utilizes a practice sometimes known as __Gang Scheduling__:
 
 * The scheduler must ensure that multiple pods are started on what are typically multiple Nodes before the Job can start. 
 * If one pod is preempted, the others are also immediately preempted.
+* When node pools are enabled, all pods must be scheduled to the same node pool.
 
 Gang Scheduling essentially prevents scenarios where part of the pods are scheduled while other pods belonging to the same Job are pending for resources to become available; scenarios that can cause deadlock situations and major inefficiencies in cluster utilization. 
 
@@ -170,5 +184,6 @@ To search for good hyperparameters, Researchers typically start a series of smal
 
 
 With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs. 
+In case node pools are enabled, if the HPO workload designated more than one node pool, the different pods might end up running on different node pools. 
 
 For more information on Hyperparameter Optimization in Run:ai see [here](../Walkthroughs/walkthrough-hpo.md)
