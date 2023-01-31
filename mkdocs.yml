@@ -229,6 +229,14 @@ nav:
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
       - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+    - 'User Interface' :
+      - 'Workspaces' :
+        - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
+        - 'Building Blocks' : 
+          - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
+          - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
+          - 'Compute Resources' : 'Researcher/user-interface/workspaces/blocks/compute.md'
+          - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
