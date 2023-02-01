@@ -11,7 +11,7 @@
 * The login screen now provides the capability to recover a password. 
 * With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/runai-setup/authentication/sso.md#prerequisites)
 * A new user role of __ML Engineer__. The role allows the user to view and manage inference deployments and cluster resources. 
-* [Clearer documentation](../admin/researcher-setup/cli-install.md#use-runai-on-windows) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
+* [Clearer documentation](../admin/researcher-setup/cli-install.md#install-runai-cli) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
 * Using the Run:ai user interface it is now possible to clone an existing Job. The clone operation will open a Job form and allow you to change parameters before re-submitting. 
 
 ## May 2022 Run:ai Version 2.5

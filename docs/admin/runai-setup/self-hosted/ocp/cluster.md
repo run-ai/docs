@@ -4,39 +4,48 @@ title: Self-Hosted installation over OpenShift - Cluster Setup
 
 ## Monitoring Pre-check 
 
-Run:ai uses the OpenShift monitoring stack. As such, it requires creating or changing the OpenShift monitoring configuration. Check if a `configmap` already exists: 
 
-```
-oc get configmap cluster-monitoring-config -n openshift-monitoring
-```
+=== "Version 2.9" 
+    Not required
 
-If it does,
+=== "Version 2.8 or lower"
+    Run:ai uses the OpenShift monitoring stack. As such, it requires creating or changing the OpenShift monitoring configuration. Check if a `configmap` already exists: 
 
-1. To the cluster values file, add the flag `createOpenshiftMonitoringConfig` as described under `Cluster Installation` below. 
-2. Post-installation, edit the `configmap` by running: `oc edit configmap cluster-monitoring-config -n openshift-monitoring`. Add the following:
+    ```
+    oc get configmap cluster-monitoring-config -n openshift-monitoring
+    ```
 
-``` YAML 
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cluster-monitoring-config
-  namespace: openshift-monitoring
-data:
-  config.yaml: |
-    prometheusK8s:
-      scrapeInterval: "10s"
-      evaluationInterval: "10s"
-      externalLabels:
-        clusterId: <CLUSTER_ID>
-        prometheus: ""
-        prometheus_replica: ""
-```
-For `<CLUSTER_ID>` use the `Cluster UUID` field as shown in the Run:ai user interface under the `Clusters` area.  
+    If it does,
+
+    1. To the cluster values file, add the flag `createOpenshiftMonitoringConfig` as described under `Cluster Installation` below. 
+    2. Post-installation, edit the `configmap` by running: `oc edit configmap cluster-monitoring-config -n openshift-monitoring`. Add the following:
+
+    ``` YAML 
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: cluster-monitoring-config
+      namespace: openshift-monitoring
+    data:
+      config.yaml: |
+        prometheusK8s:
+          scrapeInterval: "10s"
+          evaluationInterval: "10s"
+          externalLabels:
+            clusterId: <CLUSTER_ID>
+            prometheus: ""
+            prometheus_replica: ""
+    ```
+    For `<CLUSTER_ID>` use the `Cluster UUID` field as shown in the Run:ai user interface under the `Clusters` area.  
 
 ## Cluster Installation
 
-* Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster on step 3, select __OpenShift__ as the target platform.
-* __(Optional)__ make the following changes to the configuration file you have downloaded:
+Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster, select the __OpenShift__  target platform.
+
+
+### Optional configuration
+
+Make the following changes to the configuration file you have downloaded:
 
 
 |  Key     |  Change  | Description |
@@ -80,13 +89,17 @@ Run:
 
 ### Connect Run:ai to GPU Operator
 
-Locate the name of the GPU operator namespace and run:
+=== "Version 2.9" 
+    Not required
 
-```
-kubectl patch RunaiConfig runai -n runai -p '{"spec": {"global": {"nvidiaDcgmExporter": {"namespace": "INSERT_NAMESPACE_HERE"}}}}' --type="merge"
-```
+=== "Version 2.8 or lower"
+    Locate the name of the GPU operator namespace and run:
 
-### (Optional) Prometheus Adapter 
+    ```
+    kubectl patch RunaiConfig runai -n runai -p '{"spec": {"global": {"nvidiaDcgmExporter": {"namespace": "INSERT_NAMESPACE_HERE"}}}}' --type="merge"
+    ```
+
+### (Optional) Prometheus Adapter for Inference
 The Prometheus adapter is required if you are using Inference workloads and require a custom metric for autoscaling. The following additional steps are required for it to work:
 
 1. Copy `prometheus-adapter-prometheus-config` and `serving-certs-ca-bundle` ConfigMaps from `openshift-monitoring` namespace to the `monitoring` namespace

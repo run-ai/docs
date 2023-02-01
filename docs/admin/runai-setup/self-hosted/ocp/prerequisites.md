@@ -47,7 +47,7 @@ Run:ai supports OpenShift. Supported versions are 4.8 through 4.11.
 
 ### NVIDIA Prerequisites
 
-See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
+See Run:ai Cluster prerequisites [installing NVIDIA dependencies in OpenShift](./preparations.md#install-nvidia-dependencies).
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 

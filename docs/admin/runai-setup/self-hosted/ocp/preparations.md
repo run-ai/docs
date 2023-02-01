@@ -3,7 +3,7 @@ title: Self Hosted installation over OpenShift - Preparations
 ---
 # Preparing for a Run:ai OpenShift Installation
 
-The following section provides IT with the information needed to prepare for a Run:ai installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
+The following section provides IT with the information needed to prepare for a Run:ai installation. This includes third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
 
 
 ## Create OpenShift Projects
@@ -14,13 +14,16 @@ Run:ai uses three projects. One for the control plane (`runai-backend`) and two 
 oc new-project runai
 oc new-project runai-reservation
 oc new-project runai-backend
+oc new-project runai-scale-adjust
 ```
+
+The last namespace (`runai-scale-adjust`) is only required if the cluster is a cloud cluster and is configured for auto-scaling. 
 
 ## Prepare Run:ai Installation Artifacts
 
 ### Run:ai Software Files
 
-SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the cluster and `Docker` installed.
+SSH into a node with `oc` access (`oc` is the OpenShift command line) to the cluster and `Docker` installed.
 
 
 === "Connected"
