@@ -42,6 +42,9 @@ title: Self-Hosted installation over OpenShift - Cluster Setup
 
 Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster, select the __OpenShift__  target platform.
 
+!!! Attention
+    The cluster wizard shows extra commands which are unique to OpenShift. Remember to run them all.
+
 
 ### Optional configuration
 

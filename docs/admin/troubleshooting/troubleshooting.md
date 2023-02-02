@@ -224,6 +224,12 @@
     __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../runai-setup/authentication/researcher-authentication.md).
 
 
+??? "Job form is not opening on OpenShift"
+    __Symptom:__ When clicking on "New Job" the Job forms does not load. Network shows 405
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 
 
 ## Networking Issues
 
@@ -385,3 +391,11 @@
     __Root Cause:__ By default, Python buffers stdout, and stderr, which are not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
 
     __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
+
+
+??? "CLI does not download properly on OpenShift"
+    __Symptom:__ When trying to download the CLI on OpenShift, the `wget` statement downloads a text file named `darwin` or `linux` rather than the binary `runai`.
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 
