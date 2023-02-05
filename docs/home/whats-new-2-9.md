@@ -79,6 +79,7 @@ Matlab support
 
 Integrations and external tools support (WS)
 
+OIDC
 
 ### Newly Supported Software
 * Run:ai now supports Kubernetes 1.25 and 1.26. 
