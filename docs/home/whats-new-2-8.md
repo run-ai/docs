@@ -11,8 +11,8 @@
 
 Node Pools is a new method for managing GPU and CPU resources by __grouping the resources__ into distinct pools. With node pools:
 
-* You allocate Project and Department resources from these pools to be used by Workloads. 
-* The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to more accurate customer needs. 
+* The administrator allocates Project and Department resources from these pools to be used by Workloads. 
+* The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to customer's specific mode of operation. 
 
 
 ### User Interface Enhancements
