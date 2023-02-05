@@ -19,6 +19,7 @@ __Departments__ create a secondary hierarchy of resource allocation:
 * It is recommended that a Department's quota supersedes the sum of all its associated Projects' quota.
 
 ### Node Pools and Quota settings
+The Run:ai system associates each node with a single node pool.
 By default, the Run:ai system associates all nodes to 'Default' node-pool. 
 If 'Enable Node Pools' flag is disabled, all GPU and CPU resources are directly associated to the Department's Quotas. Once an Administrator enables 'Enable Node Pools' flag, all GPU and CPU resources will be included in 'Default' node-pool and summed up to the Department's overall Quotas.
 An administrator can create new node-pool and associate nodes into this pool. Any new pool is automatically associated with all Departments and Projects within a cluster, with a GPU and CPU resource Quota of zero. The Administrator can then change the Quota of any node-pool resource per Department and Project. The Quota of node-pool X within Department Y should be at least the sum of the same node-pool X Quota across all associated Projects. This means an administrator should carefully plan the resource Quota allocation from the Department to its descendent Projects.
