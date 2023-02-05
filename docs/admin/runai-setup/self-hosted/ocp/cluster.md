@@ -2,6 +2,39 @@
 title: Self-Hosted installation over OpenShift - Cluster Setup
 ---
 
+
+## Install NVIDIA Dependencies
+
+
+!!! Note
+    You must have Cluster Administrator rights to install these dependencies. 
+
+Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs. 
+NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/introduction.html){target=_blank}. 
+Follow the instructions to install the two operators `Node Feature Discovery` and `NVIDIA GPU Operator` from the OpenShift web console. 
+
+When done, verify that the GPU Operator is installed by running:
+
+```
+oc get pods -n nvidia-gpu-operator
+```
+
+(the GPU Operator namespace may differ in different operator versions).
+
+
+## Create OpenShift Projects
+
+Run:ai cluster installation uses several namespaces (or _projects_ in OpenShift terminology). The installation will automatically create the namespaces, but if your organization requires manual creation of namespaces, you must create them before installing:
+
+```
+oc new-project runai
+oc new-project runai-reservation
+oc new-project runai-scale-adjust
+```
+
+The last namespace (`runai-scale-adjust`) is only required if the cluster is a cloud cluster and is configured for auto-scaling. 
+
+
 ## Monitoring Pre-check 
 
 

@@ -8,16 +8,12 @@ The following section provides IT with the information needed to prepare for a R
 
 ## Create OpenShift Projects
 
-Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
+Run:ai control plane uses a namespace `runai-backend` (or _project_ in OpenShift terminology). The installation will automatically create the namespace, but if your organization requires manual creation of namespaces, you must create it before installing:
 
 ```
-oc new-project runai
-oc new-project runai-reservation
 oc new-project runai-backend
-oc new-project runai-scale-adjust
 ```
 
-The last namespace (`runai-scale-adjust`) is only required if the cluster is a cloud cluster and is configured for auto-scaling. 
 
 ## Prepare Run:ai Installation Artifacts
 
@@ -74,25 +70,6 @@ To avoid single-point-of-failure issues, we recommend assigning more than one no
 
 !!! Warning
     Do not select the Kubernetes master as a runai-system node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
-
-## Install NVIDIA Dependencies
-
-
-!!! Note
-    You must have Cluster Administrator rights to install these dependencies. 
-
-Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs. 
-NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/introduction.html){target=_blank}. 
-Follow the instructions to install the two operators `Node Feature Discovery` and `NVIDIA GPU Operator` from the OpenShift web console. 
-
-When done, verify that the GPU Operator is installed by running:
-
-```
-oc get pods -n nvidia-gpu-operator
-```
-
-(the GPU Operator namespace may differ in different operator versions).
-
 
 ## Additional Permissions
 

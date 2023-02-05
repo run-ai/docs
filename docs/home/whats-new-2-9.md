@@ -9,6 +9,10 @@ February 2023
 
 ### Cluster Installation Enhancements
 
+
+#### Cluster Upgrade
+
+Cluster upgrade to 2.9 requires uninstalling and then installing. No data is lost during the process. For more information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
 #### Cluster Prerequisites 
 * Prometheus is no longer installed together with Run:ai. You must install the [Prometheus stack](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prometheus) before installing Run:ai. This helps install Run:ai for organizations that already have Prometheus installed as the monitoring tool of choice in the cluster. The Run:ai installation configures the existing Prometheus with a custom set of rules designed to extract metrics from the cluster. 
 * NGINX is no longer installed together with Run:ai. You must install an [Ingress controller](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#ingress-controller) before installing Run:ai. This helps install Run:ai for organizations that already have an ingress controller installed. The Run:ai installation creates NGINX rules to work with the controller. 
