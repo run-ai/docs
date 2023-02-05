@@ -24,9 +24,10 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
 !!! limitation
     With the fraction technology all running workloads, which utilize the GPU, share the compute in parallel and on average get an even share of the compute. For example, assuming two containers, one with 0.25 GPU workload and the other with 0.75 GPU workload - both will get (on average) an __equal__ part of the computation power. If one of the workloads does not utilize the GPU, the other workload will get the entire GPU's compute power.
 
-## Dynamic MIG
+!!! Info
+    For interoperability with other Kubernetes schedulers, Run:ai creates special _reservation_ pods. Once a workload has been allocated a fraction of a GPU, Run:ai will create a pod in a dedicated `runai-reservation` namespace with the full GPU as a resource. This would cause other schedulers to understand that the GPU is reserved.    
 
-:octicons-versions-24: [Version 2.4](../../home/whats-new-2022.md#april-2022-runai-version-24-controlled-release-only) and up.
+## Dynamic MIG
 
 NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A100) to be partitioned into separate GPU Instances:
 
@@ -69,16 +70,14 @@ As described above, MIG is only available in the latest NVIDIA architecture.
 
 !!! Limitations
     * Once a node has been marked as dynamic MIG enabled, it can only be used via the Run:ai scheduler.
-    * Run:ai currently supports only A100 nodes with 40GB/80GB RAM.
+    * Run:ai currently supports H100 or A100 nodes with 40GB/80GB RAM.
     * GPU utilization, shown on the Run:ai dashboards, may not be accurate while MIG jobs are running.
 
 ## Mixing Fractions and Dynamic MIG
 
 Given a specific node, the IT administrator can decide whether to use one technology or the other. When the Researcher asks for a specific amount of GPU memory, Run:ai will either provide it on an annotated node by dynamically allocating a MIG partition, or use a different node using the fractions technology.
 
-## Limitations
 
-Run:ai certified dynamic MIG on NVIDIA A100 40GB only. If you are using A100 80GB or A30, please contact Run:ai customer support.
 
 ## See Also
 

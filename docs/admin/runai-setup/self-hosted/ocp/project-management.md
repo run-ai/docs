@@ -1,26 +1,38 @@
 ---
 title: Self Hosted installation over OpenShift - Create Projects
 ---
-
 ## Introduction
 
-The Administrator creates Run:ai Projects using via the [Run:ai User Interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:ai Projects via the [Run:ai User Interface](../../../../admin-ui-setup/project-setup/#create-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
 
-Run:ai Projects are implemented as Kubernetes namespaces. When creating a new Run:ai Project, Run:ai automatically does the following:
+Run:ai Projects are implemented as Kubernetes namespaces. When creating a new Run:ai Project, Run:ai does the following automatically:
 
-* Creates the namespace.
-* Labels the namespace as _managed by Run:ai_.
-* Provides access to the namespace for Run:ai services.
-* Associates users with the namespace. 
+1. Creates a namespace by the name of `runai-<PROJECT-NAME>`.
+2. Labels the namespace as _managed by Run:ai_.
+3. Provides access to the namespace for Run:ai services.
+4. Associates users with the namespace. 
 
-This process may __need to be altered__ if:
+This process may __need to be altered__ if, 
 
-* The organization has an internal naming convention for namespaces. 
-* The organization does not allow Run:ai certain privileges which allow the above automation.
+* Researchers already have existing Kubernetes namespaces
+* The organization's Kubernetes namespace naming convention does not allow the `runai-` prefix. 
+* The organization's policy does not allow the automatic creation of namespaces
 
-The purpose of this document is to explain how to handle these scenarios.
+## Process
 
+Run:ai allows the __association__ of a Run:ai Project with any existing Kubernetes namespace:
 
+* When [setting up](cluster.md) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
+* Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`
+* Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:ai project by running:
+
+```
+oc label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>
+```
+
+!!! Caution
+    Setting the `createNamespaces` flag to `false` moves the responsibility of creating namespaces to match Run:ai Projects to the administrator. 
+<!-- 
 ## Using Existing Namespaces
 
 By default, creating a Project named `<PROJECT-NAME>` Run:ai will create a Kubernetes namespace named `runai-<PROJECT-NAME>`.  However, organizations with an existing Kubernetes practice may already have existing Kubernetes namespaces where they wish to run machine-learning workloads or their Kubernetes namespace naming convention does not allow the `runai-` prefix. As such, Run:ai allows the __association__ of a Run:ai Project with any existing Kubernetes namespace:
@@ -154,4 +166,4 @@ subjects:
 
 You can update all Project properties via the Run:ai administration user interface, except for Project Users.
 
-
+ -->

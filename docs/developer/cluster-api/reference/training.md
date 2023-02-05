@@ -2,7 +2,7 @@
 
 Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
-```
+``` YAML
 KIND:     TrainingWorkload
 VERSION:  run.ai/v2alpha1
 
@@ -230,9 +230,9 @@ FIELDS:
      Specifies S3 buckets to mount into the container running the workload
 
    serviceType	<Object>
-     Specifies the service exposure method for created workloads. Options are:
-     portforward, loadbalancer, nodeport, ingress. Different service methods
-     have different endpoint structures. For more information see the External
+     Specifies the default service exposure method for ports. The default shall
+     be used for ports which do not specify service type. Options are:
+     LoadBalancer, NodePort or ClusterIP. For more information see the External
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
 
@@ -281,4 +281,3 @@ FIELDS:
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
 ```
-

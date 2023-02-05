@@ -30,6 +30,7 @@ runai submit
     [--mount-propagation]
     [--mps] 
     [--name string]
+    [--node-pool string]
     [--node-type string] 
     [--parallelism int]
     [--port stringArray] 
@@ -129,7 +130,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 > Example:
 
-> `runai submit --name jup1 --jupyter -g 0.5 --service-type=ingress` will start an interactive session named jup1 and use an ingress load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
+> `runai submit --name jup1 --jupyter -g 0.5 --service-type=nodeport` will start an interactive session named jup1 and use an nodeport load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
 
 #### --job-name-prefix string
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
@@ -273,15 +274,6 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > All the fields, except url=URL, are mandatory. Default for url is
 > > `url=https://s3.amazon.com`
 
-#### --toleration string
-> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
-> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
-> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
-> 
-> The format of the string:
-> ```
-> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
-> ```
 
 ### Network
 
@@ -298,12 +290,11 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 #### --port stringArray
 >  Expose ports from the Job container. Used together with `--service-type`.  
 >
->  Examples:  
->>    `--port 8080:80 --service-type loadbalancer`
->>    `--port 8080 --service-type ingress`
+>  Example:  
+>>    `--port 8080:80 --service-type portforward`
 
 #### --service-type string | -s string
->  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`, ingress.
+>  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`.
 >  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structures.
 
 #### --address string              
@@ -348,11 +339,22 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
 
 #### --node-pools string
->  Instructs the scheduler to run this workload using specific set of nodes which are part of a node-pool. You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
+>  Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../scheduling/the-runai-scheduler.md#node-pools). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
+
 > This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
 
 #### --preemptible
 >  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above the guaranteed quota but may be reclaimed at any time.
+
+#### --toleration string
+> Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
+> This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
+> [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
+> 
+> The format of the string:
+> ```
+> operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
+> ```
 
 
 ### Global Flags

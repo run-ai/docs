@@ -1,6 +1,23 @@
 ---
 title: Self Hosted installation over Kubernetes - Cluster Setup
 ---
+
+
+
+## Prerequisites
+
+Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster-prerequisites.md) document.  
+
+
+??? "Version 2.8 or lower"
+    The Run:ai Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set the flag `kube-prometheus-stack.enabled` to `false`.
+
+    When using an existing Prometheus installation, you will need to add additional rules to your Prometheus configuration. The rules can be found under `deploy/runai-prometheus-rules.yaml`.
+
+ 
+
+
+
 ## Customize Installation
 
 * Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
@@ -10,29 +27,16 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
 | `runai-operator.config.project-controller.createNamespaces` |  `true` | Set to `false` if unwilling to provide Run:ai the ability to create namespaces, or would want to create namespaces manually rather than use the Run:ai convention of `runai-<PROJECT-NAME>`. When set to `false`, will require an additional [manual step](project-management.md) when creating new Run:ai Projects. | 
-| `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../../researcher-setup/use-secrets/#secrets-and-projects) will not be available | 
+| `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../workloads/secrets.md#secrets-and-projects) will not be available | 
 | `runai-operator.config.mps-server.enabled` |  `false` | Allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads. Requires extra cluster permissions <!-- (../preparations/#cluster-installation) --> | 
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__. Requires extra cluster permissions <!-- >](../preparations/#cluster-installation) --> | 
 | `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu  | 
 | `runai-operator.config.runaiBackend.password` | Default password already set  | [admin@run.ai](mailto:admin.run.ai) password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
 | `runai-operator.config.global.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, add this field with the address |
-| `kube-prometheus-stack.enabled` | `true` | Install Prometheus. Set to `false` if __Prometheus__ is already installed in cluster |
+| `kube-prometheus-stack.enabled` | `true` | (Version 2.8 or lower) Install Prometheus. Set to `false` if __Prometheus__ is already installed in cluster |
 
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` |  `true` | Automatically assign Users to Projects. Set to `false` if unwilling to provide Run:ai the ability to set _RoleBinding_. When set to `false`, will require an additional [manual step](project-management.md) when adding or removing users from Projects.  |  -->
-
-### Prometheus 
-
-The Run:ai Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set the flag `kube-prometheus-stack.enabled` to `false`.
-
-When using an existing Prometheus installation, you will need to add additional rules to your Prometheus configuration. The rules can be found under `deploy/runai-prometheus-rules.yaml`.
-
- 
-
-### NVIDIA Prerequisutes
-
-See the [NVIDIA Prerequisutes](../../cluster-setup/cluster-prerequisites.md#nvidia) section. 
-
 
 <!-- 
 admission-controller:
@@ -67,7 +71,5 @@ Run:
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../../config/access-roles/).
 
 
-## Next Steps
 
-Continue to [configure web interfaces](ui.md).
 

@@ -8,7 +8,7 @@ Create a configuration file to install the Run:ai control plane:
 === "Connected"
     Generate a values file by running:
     ``` bash 
-    runai-adm generate-values 
+    runai-adm generate-values \
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
@@ -27,10 +27,10 @@ Create a configuration file to install the Run:ai control plane:
     A file called `runai-backend-values.yaml` will be created.
 
 
-=== "Airgapped"
+=== "Airgapped Run:ai 2.7"
     Generate a values file by running the following __under the `deploy` folder__:
     ``` bash
-    runai-adm generate-values 
+    runai-adm generate-values \
         --external-ips <ip> \ # (1)
         --domain <dns-record> \ # (2) 
         --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
@@ -44,12 +44,27 @@ Create a configuration file to install the Run:ai control plane:
     4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
 
     Ignore the message about a downloaded file.
-<!-- Where:
 
-* `--tls-` flags relate to the TLS certificate and private key for `<DNS_RECORD>`
-* `--nfs` flags relate to NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-* `--external-ips` relates to the IP address(es) allocated for Run:ai. Typically (but not always) the IP of one of the nodes.  -->
 
+=== "Airgapped Run:ai 2.8 and above"
+    Generate a values file by running the following __under the `deploy` folder__:
+    ``` bash
+    runai-adm generate-values \
+        --external-ips <ip> \ # (1)
+        --domain <dns-record> \ # (2) 
+        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
+        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs> \ # (4)
+        --registry <docker-registry-address> #(5)
+    ```
+
+    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
+    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
+    3. TLS certificate and private key for the above domain.
+    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
+    5. Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+
+
+    Ignore the message about a downloaded file.
 
 ## (Optional) Edit Configuration File
 
@@ -57,14 +72,12 @@ There may be cases where you need to change properties in the values file as fol
 
 |  Key     |   Change   | Description |
 |----------|----------|-------------| 
-| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Promethues service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Promethues server |
-| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume.  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
+| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | When using an existing Prometheus service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Prometheus server |
+| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:ai. This key is now covered under the runai-adm flags above  |
-| `backend.https` | replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
-| `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See Postgresql persistence above. Can use the same location. This key is now covered under the runai-adm flags above |
+| `backend.https` | Replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
+| `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See `postgresql.persistence` above. Can use the same location. This key is now covered under the runai-adm flags above |
 | `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Control Plane administrator | 
-|<img width=1300/>|||
-
 
 ## Upload images (Airgapped only)
 
@@ -80,7 +93,7 @@ Run the following script (you must have at least 20GB of free disk space to run)
 sudo -E ./prepare_installation.sh
 ```
 
-(If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
+If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
 
 ## Install the Control Plane
 
@@ -110,12 +123,12 @@ Run the helm command below:
 
 ### Connect to Run:ai User Interface
 
-Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `password`
+Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`.
 
 
 ## (Optional) Enable "Forgot password"
 
-In order to support the “Forgot password” functionality, follow the steps below.
+To support the “Forgot password” functionality, follow the steps below.
 
 * Go to `runai.<company-name>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.

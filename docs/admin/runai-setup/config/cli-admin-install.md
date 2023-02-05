@@ -20,24 +20,19 @@ The Run:ai Administrator CLI requires a Kubernetes profile with cluster administ
 
 Download the Run:ai Administrator Command-line Interface by running:
  
-=== "Mac (Version 2.5 or higher)"
+=== "Mac"
     ``` bash
     wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/darwin
     chmod +x runai-adm
     sudo mv runai-adm /usr/local/bin/runai-adm
     ```
 
-=== "Linux (Version 2.5 or higher)"
+=== "Linux"
     ``` bash
     wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/linux
     chmod +x runai-adm
     sudo mv runai-adm /usr/local/bin/runai-adm
     ```
-
-=== "Version 2.4 or lower"
-    * Download the latest release from the Run:ai [releases page](https://github.com/run-ai/runai-admin-cli/releases){target=_blank}
-    * Unarchive the downloaded file
-    * Install by running: `sudo ./install-runai.sh`
 
 To verify the installation run:
 

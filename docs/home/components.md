@@ -28,7 +28,7 @@ The Run:ai Cluster contains:
 
 
 
-## The Run:ai Control Plane (Backend)
+## The Run:ai Control Plane
 
 The Run:ai control plane is the basis of the Run:ai User Interface. 
 

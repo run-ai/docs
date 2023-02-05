@@ -1,9 +1,3 @@
-<!-- ## August 2022 Run:ai Version 2.8 (Cloud update only)
-
-* Now supporting _spread_ scheduling strategy as well. For more information see [scheduling strategies](../Researcher/scheduling/strategies.md).
-
-* Job list is now divided into an active Jobs tab and a separate history tab. -->
-
 ## July 2022 Run:ai Version 2.7 
 
 * New [Audit Log API](../admin/runai-setup/maintenance/audit-log.md) is now available. The _last login_ indication is now showing at the bottom left of the screen for single-sign-on users as well as regular users. 
@@ -17,7 +11,7 @@
 * The login screen now provides the capability to recover a password. 
 * With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/runai-setup/authentication/sso.md#prerequisites)
 * A new user role of __ML Engineer__. The role allows the user to view and manage inference deployments and cluster resources. 
-* [Clearer documentation](../admin/researcher-setup/cli-install.md#use-runai-on-windows) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
+* [Clearer documentation](../admin/researcher-setup/cli-install.md#install-runai-cli) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
 * Using the Run:ai user interface it is now possible to clone an existing Job. The clone operation will open a Job form and allow you to change parameters before re-submitting. 
 
 ## May 2022 Run:ai Version 2.5
@@ -88,7 +82,7 @@ Other features:
 
 ## February 2022 Run:ai Version 2.2 (Cloud update only)
 
-* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign on](../admin/runai-setup/authentication/sso.md).
+* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign-on](../admin/runai-setup/authentication/sso.md).
 * REST API has changed. The new API relies on `Applications`. See [Calling REST APIs](../developer/rest-auth.md) for more information. 
 * Added a new user role `Research Manager`. The role automatically assigns the user as a Researcher to all projects, including future projects. 
 
@@ -96,7 +90,7 @@ Other features:
 
 We have now stabilized on a single version numbering system for all Run:ai artifacts: 
 
-* Run:ai Control plane (also called Backend).
+* Run:ai Control plane.
 * Run:ai Cluster.
 * Run:ai Command-line interface.
 * Run:ai Administrator Command-line interface.
@@ -110,5 +104,5 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbe
 
 Supportability enhancements:
 
-* A new tool was added, to allow IT administrators to validate cluster and control-plane installation pre-requisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
+* A new tool was added, to allow IT administrators to validate cluster and control-plane installation prerequisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
 * To better analyze scheduling issues, the node name was added to multiple scheduler log events.

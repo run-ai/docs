@@ -1,6 +1,6 @@
 #!/bin/bash
 #description : This script will help to install k8s cluster (master / worker) and gpu operator
-#author		 : Moran Guy
+#author	     : Moran Guy
 #date        : 19/10/2022
 #version     : 1.0
 #usage       : Please make sure to run this script as ROOT or with ROOT permissions
@@ -199,13 +199,21 @@ then
     if [ "${answer}" == "y" ]
     then 
         echo -e "${YELLOW}Removing kubeadm kubectl kubelet kubernetes-cni...${NC}"
-        sudo apt-get purge -y kubeadm kubectl kubelet kubernetes-cni kube*
+        sudo apt-get purge -y kubeadm kubectl kubelet kubernetes-cni
         if [ $? == 0 ]
         then 
             echo -e "${GREEN} OK! ${NC}"
         else
             echo -e "${RED}Something went wrong!${NC}"
         fi
+	echo -e "${YELLOW}Removing containerd docker...${NC}"
+	sudo apt-get purge -y docker* containerd*
+	if [ $? == 0 ]
+	then
+		echo -e "${GREEN} OK! ${NC}"
+	else
+		echo -e "${RED}Something went wrong!${NC}"
+	fi
     else
         echo -e "${YELLOW}Operation aborted${NC}"
     fi

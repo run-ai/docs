@@ -32,7 +32,7 @@
 
 ??? "No Metrics are showing on Dashboard"
 
-    __Symptom:__ No metrics are not showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
+    __Symptom:__ No metrics are showing on dashboards at `https://<company-name>.run.ai/dashboards/now`
 
     __Typical root causes:__
 
@@ -44,13 +44,13 @@
 
     Add verbosity to Prometheus as describe [here](diagnostics.md).Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements.md).
+    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-access-requirements.md).
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
     __Machine Clocks are not synced__
 
-    Run: `date` on cluster nodes and verify that date/time is correct.  If not,
+    Run: `date` on cluster nodes and verify that date/time is correct.  If not:
 
     * Set the Linux time service (NTP).
     * Restart Run:ai services. Depending on the previous time gap between servers, you may need to reinstall the Run:ai cluster
@@ -94,7 +94,7 @@
     
     _Kubernetes Node feature discovery_ identifies and annotates nodes. _NVIDIA GPU Feature Discovery_ identifies and annotates nodes with GPU properties. See that: 
     
-    * All such pods are up, 
+    * All such pods are up.
     * The GPU feature discovery pod is available for every node with a GPU.
     * And finally, when describing nodes, they show an active `gpu/nvidia` resource.
 
@@ -136,8 +136,8 @@
     * Run: `kubectl get pods -n runai | grep scheduler`. Verify that the pod is running.
     * Review the scheduler logs and look for errors. If such errors exist, contact Run:ai customer support. 
 
-??? "All metrics are showing ""No Data"""
-    __Symptom:__ all data on all dashboards is showing the text "No Data".
+??? "All metrics are showing "No Data""
+    __Symptom:__ All data on all dashboards is showing the text "No Data".
 
     __Root cause:__ Internal issue with metrics infrastructure.
 
@@ -168,7 +168,7 @@
 
     __Resolution for 403 HTTP Error__
 
-    Run `kubectl get pods -n runai` identify the `agent` pod, see that it's running, and review its logs.
+    Run: `kubectl get pods -n runai`, identify the `agent` pod, see that it's running, and review its logs.
 
 ??? "New Job button is not showing"
     __Symptom:__ The `New Job` button on the top right of the Job list does not show.
@@ -176,7 +176,6 @@
     __Root Causes:__ (multiple)
 
     * You do not have `Researcher` or `Research Manager` permissions.
-    * Cluster version is 2.3 or lower.
     * Under `Settings | General`, verify that `Unified UI` is on.
 
 
@@ -225,6 +224,12 @@
     __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../runai-setup/authentication/researcher-authentication.md).
 
 
+??? "Job form is not opening on OpenShift"
+    __Symptom:__ When clicking on "New Job" the Job forms does not load. Network shows 405
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 
 
 ## Networking Issues
 
@@ -235,16 +240,16 @@
     * The command-line `runai submit` fails with an 'admission controller' connectivity error.
     * Agent or cluster sync pods are crashing in self-hosted installation.
 
-    __Root cause:__ Connectivity issues between different nodes in the cluster
+    __Root cause:__ Connectivity issues between different nodes in the cluster.
 
     __Resolution:__
 
     * Run the [preinstall script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
-    * Run `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
-    * Run `kubectl get nodes`. Check that all nodes are ready and connected
-    * Run `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
+    * Run: `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
+    * Run: `kubectl get nodes`. Check that all nodes are ready and connected.
+    * Run: `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
     * See if pods from different nodes have trouble communicating with each other.
-    * Advanced: Run `kubectl exec <pod-name> -it /bin/sh` from a pod in one node and ping a pod from another. 
+    * Advanced, run: `kubectl exec <pod-name> -it /bin/sh` from a pod in one node and ping a pod from another. 
 
 
 ??? "Projects are not syncing"
@@ -254,16 +259,16 @@
     
     __Resolution__
     
-    * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`
+    * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`.
     * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-requirements). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 ??? "Jobs are not syncing"
-     __Symptom:__ A Job on the cluster (`runai list jobs`) does not show in the Run:ai user interface Job list 
+     __Symptom:__ A Job on the cluster (`runai list jobs`) does not show in the Run:ai user interface Job list. 
 
     __Root cause:__ The Run:ai __cluster-sync__ pod is not syncing properly.  
     
-    __Resolution__: Search the cluster-sync pod for errors
+    __Resolution__: Search the cluster-sync pod for errors.
     
 ## Job-related Issues
 
@@ -272,7 +277,7 @@
 
     __Root Cause:__ The issue may be caused due to an unattended upgrade of the NVIDIA driver.
 
-    To verify, run `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
+    To verify, run: `runai describe job <job-name>`, and search for an error `driver/library version mismatch`.
 
     __Resolution:__ Reboot the node on which the Job attempted to run.
 
@@ -289,22 +294,12 @@
 
 ## Kubernetes-specific Issues
 
-??? "Cluster Installation failed on Rancher-based Kubernetes (RKE)"
+??? "Cluster Installation failed on RKE or EKS"
     __Symptom:__ Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started.
 
     __Resolution:__
 
-    During initialization, Run:ai creates a Certificate Signing Request (CSR) which needs to be approved by the cluster's Certificate Authority (CA). In RKE, this is not enabled by default, and the paths to your Certificate Authority's keypair must be referenced manually by adding the following parameters inside your cluster.yml file, under kube-controller:
-
-    ``` YAML
-    services:
-    kube-controller:
-        extra_args:
-        cluster-signing-cert-file: /etc/kubernetes/ssl/kube-ca.pem
-        cluster-signing-key-file: /etc/kubernetes/ssl/kube-ca-key.pem
-    ```
-
-    For further information see [here](https://github.com/rancher/rancher/issues/14674){target=_blank}.
+    Perform the required cert-manager steps [here](../runai-setup/cluster-setup/cluster-prerequisites.md#cert-manager).
 
 ## Inference Issues
 
@@ -369,7 +364,7 @@
     kubectl port-forward -n runai svc/researcher-service 4180
     ```
 
-    In another shell run
+    In another shell, run:
     ```
     wget --content-disposition http://localhost:4180/cli/linux
     ```
@@ -386,7 +381,7 @@
 
     __Root Cause:__ The user running the CLI does not have read permissions to the `.kube` directory.
 
-    __Resolution:__ Run: Change permissions for the directory.
+    __Resolution:__ Change permissions for the directory.
 
 
 ??? "When running 'runai logs', the logs are delayed"
@@ -397,6 +392,10 @@
 
     __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
 
-??? "Version 2.4 or lower: Runai list jobs command works but runai submit does not"
 
-    __Resolution:__ Helm utility is not installed. See Run:ai CLI Installation documentation. 
+??? "CLI does not download properly on OpenShift"
+    __Symptom:__ When trying to download the CLI on OpenShift, the `wget` statement downloads a text file named `darwin` or `linux` rather than the binary `runai`.
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 

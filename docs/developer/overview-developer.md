@@ -9,7 +9,7 @@ Developers can access Run:ai through various programmatic interfaces.
 
 ## API Architecture
 
-Run:ai is composed of a single, multi-tenant control plane (also called 'backend'). Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/components.md) for detailed information.
+Run:ai is composed of a single, multi-tenant control plane. Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/components.md) for detailed information.
 
 Below is a diagram of the Run:ai API Architecture. A developer may:
 
@@ -24,7 +24,7 @@ Below is a diagram of the Run:ai API Architecture. A developer may:
 
 Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more. 
 
-The API is provided as REST and is accessible via the control plane (backend) endpoint.  
+The API is provided as REST and is accessible via the control plane endpoint.  
 
 For more information see [Administrator REST API](admin-rest-api/overview.md). 
 
@@ -37,7 +37,7 @@ The API is provided as [Kubernetes API](./cluster-api/submit-yaml.md).
 Cluster API is accessible via the GPU cluster itself. As such, __multiple clusters may have multiple endpoints__.
 
 !!! Note
-    The same functionality is also available via the [Run:ai Command-line interface](../../Researcher/cli-reference/introduction). The CLI provides an alternative for automating with shell scripts. 
+    The same functionality is also available via the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md). The CLI provides an alternative for automating with shell scripts. 
 ## Metrics API
 
 Retrieve metrics from multiple GPU clusters. 

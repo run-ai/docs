@@ -6,7 +6,7 @@ The following instructions explain how to complete the configuration of access c
 
 This requires several steps:
 
-* Assign users to their Projects
+* Assign users to their Projects.
 * (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:ai Authentication authority.
 * (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift). 
 
@@ -26,7 +26,7 @@ Assign Researchers to Projects:
 
 * Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a `Researcher` role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project. 
-* If you are using Single Sign-on, you can also assign _Groups_. For more information see the [Single Sign-on](sso.md) documentation.
+* If you are using Single Sign-On, you can also assign _Groups_. For more information see the [Single Sign-On](sso.md) documentation.
 
 ## (Mandatory) Kubernetes Configuration
 
@@ -108,6 +108,61 @@ As described in [authentication overview](authentication-overview.md), you must 
     * Go to `Configuration` and then to `Authentication`.
     * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. The process can take up to 30 minutes. 
 
+=== "Bright"
+
+    Run the following. Replace `<TENANT-NAME>` and `<REALM-NAME>` with the appropriate values:
+
+    ``` bash
+    # start cmsh
+    [root@headnode ~]# cmsh
+
+    # go to the configurationoverlay submode
+    [headnode]% configurationoverlay
+
+    [headnode->configurationoverlay]% list  # use list here to list overlays
+    ...
+
+    # go to the overlay for kube master nodes
+    [headnode->configurationoverlay]% use kube-default-master
+
+    [headnode->configurationoverlay[kube-default-master]]% show  # use show here to show the selected overlay
+    ...
+
+    # go to the kube apiserver role
+    [headnode->configurationoverlay[kube-default-master]]% roles
+    [headnode->configurationoverlay[kube-default-master]->roles]% list   # ... 
+    [headnode->configurationoverlay[kube-default-master]->roles]% use kubernetes::apiserver
+
+    # we can check the current value of "options"
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% show  # ...
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% get options
+    --anonymous-auth=false
+    --service-account-issuer=https://kubernetes.default.svc.cluster.local
+    --service-account-signing-key-file=/cm/local/apps/kubernetes/var/etc/sa-default.key
+    --feature-gates=LegacyServiceAccountTokenNoAutoGeneration=false
+
+    # we can append our flags like this
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% append options "--oidc-client-id=runai"
+    [headnode->configurationoverlay*[kube-default-master*]->roles*[Kubernetes::ApiServer*]]% append options "--oidc-issuer-url=https://app.run.ai/auth/realms/<REALM-NAME>"
+    [headnode->configurationoverlay*[kube-default-master*]->roles*[Kubernetes::ApiServer*]]% append options "--oidc-username-prefix=-"
+
+    # commit the changes
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% ]]% commit
+
+    # view updated list of options
+    [headnode->configurationoverlay[kube-default-master]->roles[Kubernetes::ApiServer]]% get options
+    --anonymous-auth=false
+    --service-account-issuer=https://kubernetes.default.svc.cluster.local
+    --service-account-signing-key-file=/cm/local/apps/kubernetes/var/etc/sa-default.key
+    --feature-gates=LegacyServiceAccountTokenNoAutoGeneration=false
+    --cors-allowed-origins=[\"https://<TENANT-NAME>.run.ai\"]
+    --oidc-client-id=runai
+    --oidc-issuer-url=https://app.run.ai/auth/realms/<REALM-NAME>
+    --oidc-username-prefix=-
+    ```
+
+    All nodes with the `kube api server` role will automatically restart with the new flag.
+
 === "Other"
     See specific instructions in the documentation of the Kubernetes distribution.  
 
@@ -119,12 +174,12 @@ To control access to Run:ai (and Kubernetes) resources, you must modify the Kube
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
 * Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
-* Under `contexts | context | user` change the user to `runai-authenticated-user`
+* Under `contexts | context | user` change the user to `runai-authenticated-user`.
 
 
 ## Test via Command-line interface
 
-* Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`)
+* Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`).
 * You will be prompted for a username and password. In a single sign-on flow, you will be asked to copy a link to a browser, log in and return a code. 
 * Once login is successful, submit a Job.
 * If the Job was submitted with a Project to which you have no access, your access will be denied. 
@@ -134,7 +189,7 @@ You can also submit a Job from the Run:ai User interface and verify that the new
 
 ## Test via User Interface
 
-* Open the Run:ai user interface. Go to `Jobs`
+* Open the Run:ai user interface, go to `Jobs`.
 * On the top-right, select `Submit Job`. 
 
 !!! Tip

@@ -1,7 +1,5 @@
 # Configure Policies
 
-:octicons-versions-24: [Version 2.5](../../home/whats-new-2022.md#may-2022-runai-version-25) and up.
-
 ## What are Policies?
 
 Policies allow administrators to _impose restrictions_ and set _default values_ for Researcher Workloads. For example:
@@ -232,7 +230,7 @@ When submitting a workload that is affected by this policy, the created containe
 the namespace where the workload runs.
 
 !!! Note
-    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md/#secrets-and-projects)
+    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
   
 ## Modifying/Deleting Policies
 

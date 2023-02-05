@@ -6,14 +6,14 @@ title: Upgrade self-hosted Kubernetes installation
 ## Preparations
 
 === "Connected"
-    No preperation required.
+    No preparation required.
 
 === "Airgapped" 
-    * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai backend.
+    * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
 
 
-## Upgrade Control Plane (Backend) 
+## Upgrade Control Plane
 
 Run the helm command below. 
 
@@ -30,7 +30,7 @@ Run the helm command below.
     helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend  -f be-values.yaml
     ```
-    (replace `<version>` with the control plane (backend) version)
+    (replace `<version>` with the control plane version)
 
 
 ## Upgrade Cluster 
@@ -40,7 +40,7 @@ To upgrade the cluster follow the instructions [here](../../cluster-setup/cluste
 
 === "Connected"
     ```
-    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/runai-crds.yaml
+    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
     helm repo update
     helm get values runai-cluster -n runai > values.yaml
     helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml

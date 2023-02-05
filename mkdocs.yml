@@ -1,6 +1,6 @@
 site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
-copyright: Copyright © 2020 - 2022 Run:ai
+copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
 docs_dir: docs 
 theme: 
@@ -17,7 +17,7 @@ theme:
     - search.suggest
 extra_css:
   - stylesheets/extra.css
-strict: true   
+#strict: true   
  
 markdown_extensions:
   - pymdownx.highlight:
@@ -85,7 +85,7 @@ plugins:
         # 'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
         # 'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
         # 'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
-        # 'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
+        'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         # 'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
         # 'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
         # 'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
@@ -94,6 +94,7 @@ plugins:
         # 'Administrator/Researcher-Setup/use-secrets.md' :  'admin/workloads/secrets.md'
         # 'admin/researcher-setup/use-secrets.md' : 'admin/workloads/secrets.md'
         # 'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
+        'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
         'admin/runai-setup/advanced/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
@@ -113,14 +114,19 @@ plugins:
         'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'Researcher/researcher-library/rl-hpo-support.md' : 'Researcher/scheduling/hpo.md'
+        'Researcher/researcher-library/researcher-library-overview.md' : 'Researcher/scheduling/hpo.md'
 
 nav:
   - Home: 
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
-    - 'Whats New 2022' : 'home/whats-new-2022.md'
-    - 'Whats New 2021' : 'home/whats-new-2021.md'
-    - 'Whats New 2020' : 'home/whats-new-2020.md'
+    - 'Whats New' :
+      - 'Version 2.9' : 'home/whats-new-2-9.md'
+      - 'Version 2.8' : 'home/whats-new-2-8.md'
+      - 'Whats New 2022' : 'home/whats-new-2022.md'
+      - 'Whats New 2021' : 'home/whats-new-2021.md'
+      - 'Whats New 2020' : 'home/whats-new-2020.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
@@ -135,7 +141,8 @@ nav:
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
-        - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'    
+       # - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'  
+        - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
@@ -143,7 +150,7 @@ nav:
           - 'Preparations' : 'admin/runai-setup/self-hosted/k8s/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/k8s/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/k8s/cluster.md'
-          - 'Configure Web Interfaces' : 'admin/runai-setup/self-hosted/k8s/ui.md'
+          - 'Install additional Clusters' : 'admin/runai-setup/self-hosted/k8s/additional-clusters.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/k8s/project-management.md'
           - 'Next Steps' : 'admin/runai-setup/self-hosted/k8s/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/k8s/upgrade.md'
@@ -158,7 +165,6 @@ nav:
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
       - 'Configuration' : 
-        # - 'Configure an HTTP Proxy Server ' : 'admin/runai-setup/cluster-setup/proxy-server.md'
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
 
@@ -167,6 +173,7 @@ nav:
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
+        - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
       - 'Authentication' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
@@ -202,7 +209,7 @@ nav:
     - 'Integrations' :
       - 'JupyterHub' : 'admin/integration/jupyterhub.md'
       - 'Airflow' : 'admin/integration/airflow.md' 
-      - 'MLflow' : 'admin/integration/mlflow.md'
+      - 'MLflow' :   'admin/integration/mlflow.md'
       - 'Kubeflow' : 'admin/integration/kubeflow.md'
       - 'Seldon Core' : 'admin/integration/seldon.md'
       - 'ClearML' : 'admin/integration/clearml.md'
@@ -222,6 +229,14 @@ nav:
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
       - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+    - 'User Interface' :
+      - 'Workspaces' :
+        - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
+        - 'Building Blocks' : 
+          - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
+          - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
+          - 'Compute Resources' : 'Researcher/user-interface/workspaces/blocks/compute.md'
+          - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
@@ -292,4 +307,3 @@ nav:
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
-#        - 'Submit via YAML' : 'developer/deprecated/inference/submit-via-yaml.md' 

@@ -37,7 +37,7 @@ Select Run:ai via the bright installer. Remember to select all of the above soft
 
 ## Using the Run:ai installer
 
-Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>/runai-installer` 
+Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>:30080/runai-installer`. Alternatively use the Bright landing page at `http://<CLUSTER-IP>/#runai`.  
 
 !!! Note
     * Use `http` rather than `https`.
@@ -67,7 +67,7 @@ Save the URL for future use.
 
 Post installation, you will want to:
 
-* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. 
+* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. Note the _Bright_ section in that document.
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 

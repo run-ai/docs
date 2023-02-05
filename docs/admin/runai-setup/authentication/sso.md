@@ -1,6 +1,6 @@
 # Single Sign-On
 
-Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc. 
+Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc. 
 
 Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign-on **only**.
 
@@ -26,7 +26,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
  | Linux Group ID             | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
  | Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
  | User first name            | firstName            | (Optional) Used as the first name showing in the Run:ai user interface. | 
- | User last name             | lastName             | (Optional) Used as the first name showing in the Run:ai user interface | 
+ | User last name             | lastName             | (Optional) Used as the last name showing in the Run:ai user interface | 
 
 
 ### Example attribute mapping for Google Suite
@@ -40,7 +40,7 @@ The term _Identity Provider_ (or IdP) below relates to the system which creates,
 * Turn on `Login with SSO`. 
 * Under `Metadata XML Url` enter the URL to the XML Metadata file obtained above.
 * Under Administrator email, enter the first administrator user.
-* Press `Save`
+* Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
 
@@ -67,7 +67,7 @@ Single sign-on log in can be separated into two parts:
 You can follow that by following the URL changes from [app.run.ai](https://app.run.ai) to the IdP provider (e.g. [accounts.google.com](https://accounts.google.com)) and back to [app.run.ai](https://app.run.ai):
 
 * If there is an issue on the IdP site (e.g. `app_is_not_configred` error in Google), the problem is likely to be in the SAML Request.
-* If the user is redirected back to Run:ai and something goes wrong, The problem is most likely in the SAML Response.
+* If the user is redirected back to Run:ai and something goes wrong, the problem is most likely in the SAML Response.
 
 #### Troubleshooting SAML Request
 
@@ -93,7 +93,7 @@ You can follow that by following the URL changes from [app.run.ai](https://app.r
 
 Check in the above that:
 
-* The content of the `<saml:Issuer` tag is the same as `Entity ID` defined above.
+* The content of the `<saml:Issuer>` tag is the same as `Entity ID` defined above.
 * `AssertionConsumerServiceURL` is the same as the `Redirect URI`. 
 
 
@@ -219,8 +219,8 @@ Researchers should be authenticated when accessing the Run:ai GPU Cluster. To pe
 
 Test connectivity to Run:ai command-line interface:
 
-* In the command-line, run `runai login`:
-* You receive a link that you must copy and open in your browser. Post login you will receive a verification code which you must paste into the shell window.
+* In the command-line, run `runai login`.
+* You will receive a link that you must copy and open in your browser. Post login you will receive a verification code which you must paste into the shell window.
 * Verify successful login.
 
 
@@ -235,16 +235,16 @@ Test the mapping of UID/GID to within the container:
 Submit a job with the flag `--run-as-user`, for example:
 
 ``` bash
-runai submit -i ubuntu --interactive --run-as-user  --attach -- bash
+runai submit -i ubuntu --interactive --run-as-user --attach -- bash
 ```
 When a shell opens inside the container, run `id` and verify that UID, GID, and the supplementary groups are the same as in the user's profile in the organization's directory.
 
 
 ## Step 4: Adding Users
 
-You can add additional users, by:
+You can add additional users, by either:
 
-1. Manually adding roles for each user, or by
+1. Manually adding roles for each user.
 2. Mapping roles to IdP groups. 
 
 The latter option is easier to maintain. 
@@ -260,9 +260,15 @@ The latter option is easier to maintain.
 * Go to `Settings | Users`.
 * Select the `Groups` button. 
 * Assuming you have mapped the IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group. 
-* If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster (Note: this feature is only available from Run:ai version 2.3).
+* If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster. 
 
 
+!!! Note
+	This feature also works in OpenShift. If you create a group in Run:ai with the same name as an OpenShift Group, the associated permissions will be applied to all users in the group.
+
+## Logout URL
+
+It is possible to configure the redirect URL when the session ends. To perform this configuration please contact Run:ai customer support. 
 ## Implementation Notes
 
 Run:ai SSO does not support single logout. As such, logging out from Run:ai will not log you out from other systems.

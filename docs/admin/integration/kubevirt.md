@@ -1,8 +1,5 @@
 # Scheduling Virtual Machines using Run:ai
 
-:octicons-versions-24: [Version 2.3](../../home/whats-new-2022.md#march-2022-runai-version-23) and up.
-
-
 Many organizations use virtual machines (VMs) to provide operating system abstraction to users. Containers are different than VMs but serve a similar purpose. Containers at a large scale are best managed by Kubernetes and Run:ai is based on Kubernetes. 
 
 It is possible to mix and match containers and VMs to some extent using a technology called [KubeVirt]( https://kubevirt.io){target=_blank}. KubeVirt allows running VMs inside containers on top of Kubernetes. 
@@ -135,7 +132,7 @@ Run:
 virtctl start testvm -n runai-test
 ```
 
-You can now see the VMs pod in Run:ai:
+You can now see the VMs pod in Run:ai.
 
 ```
 runai list -A

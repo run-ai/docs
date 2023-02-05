@@ -1,20 +1,25 @@
----
-title: Self Hosted installation over Kubernetes - Prerequisites
+-title: Self-Hosted installation over Kubernetes - Prerequisites
 ---
 
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
+
+
+## Control-plane and clusters
+
+As part of the installation process you will install:
+
+* A control-plane managing cluster
+* One or more clusters
+
+Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
+
 ## Hardware Requirements
 
-(Production only) Run:ai System Nodes: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain two or more worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
+See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
 
-* 4 CPUs
-* 8GB of RAM
-* 120GB of Disk space
+In addition, the control plane installation of Run:ai requires the configuration of Kubernetes Persistent Volumes of a total size of 110GB. 
 
-The control plane (backend) installation of Run:ai will require the configuration of  Kubernetes Persistent Volumes of a total size of 110GB. 
-
-
-## Run:ai Software Prerequisites
+## Run:ai Software
 
 === "Connected"
     You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
@@ -22,34 +27,56 @@ The control plane (backend) installation of Run:ai will require the configuratio
 === "Airgapped"
     You should receive a single file `runai-<version>.tar` from Run:ai customer support
 
-## Kubernetes
+## Run:ai Software Prerequisites
 
-Run:ai requires Kubernetes. Supported versions are 1.21 through 1.24. Kubernetes 1.25 is not yet supported.
+### Operating System
 
-If you are using __OpenShift__, please refer to our [OpenShift installation instructions](../ocp/prerequisites.md). 
+See Run:ai Cluster prerequisites [operating system](../../cluster-setup/cluster-prerequisites.md#operating-system) requirements.
 
-Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. 
+The Run:ai control plane operating system prerequisites are identical.
 
-## NVIDIA Prerequisites
+### Kubernetes
 
-Run:ai requires the installation of NVIDIA software. See installation details [here](../../../cluster-setup/cluster-prerequisites#nvidia)
-## Kubernetes Dependencies
+See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prerequisites.md#kubernetes) requirements.
 
-### Prometheus 
+The Run:ai control plane operating system prerequisites are identical.
 
-The Run:ai Cluster installation installs [Prometheus](https://prometheus.io/){target=_blank}. However, it can also connect to an existing Prometheus installed by the organization. In the latter case, it's important to:
+### NVIDIA Prerequisites
 
-* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation.
-* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or using the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction will become important during the Run:ai Cluster installation.
+See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
 
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
-## Network
+### Prometheus Prerequisites
 
-* __Shared Storage__. Network address and a path to a folder in a Network File System
-* All Kubernetes cluster nodes should be able to mount NFS folders. Usually, this requires the installation of the `nfs-common` package on all machines (`sudo apt install nfs-common` or similar)
-* __IP Address__. An available, internal IP Address that is accessible from Run:ai Users' machines (referenced below as `<RUNAI_IP_ADDRESS>`)
-* __DNS entry__ Create a DNS A record such as `runai.<company-name>` or similar. The A record should point to `<RUNAI_IP_ADDRESS>` 
-* A __certificate__ for the endpoint. The certificate(s) must be signed by the organization's root CA. 
+See Run:ai Cluster prerequisites [Prometheus](../../cluster-setup/cluster-prerequisites.md#prometheus) requirements.
+
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
+
+### (Optional) Inference Prerequisites 
+
+See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
+
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
+
+## Network Requirements
+
+### Ingress Controller
+
+=== "Version 2.9"
+    The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) installation.
+
+=== "Version 2.8 or lower"
+    The Run:ai controller installs NGINX. Thus, in the typical scenario where the Run:ai control plane is installed together with the first cluster, NGINX need not be installed.
+
+    If the Run:ai cluster is installed on a separate Kubernetes cluster, follow the Run:ai Cluster prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) requirements.
+
+### Domain name
+
+The Run:ai control plane requires a domain name (FQDN). You must supply a domain name as well as a trusted certificate for that domain. 
+
+* When installing the first Run:ai cluster on the same Kubernetes cluster as the control plane, the Run:ai cluster URL will be the same as the control-plane URL.
+* When installing the Run:ai cluster on a separate Kubernetes cluster, follow the Run:ai [domain name](../../cluster-setup/cluster-prerequisites.md#domain-name) requirements. 
 
 ## Installer Machine
 
@@ -58,20 +85,18 @@ The machine running the installation script (typically the Kubernetes master) mu
 * At least 50GB of free space.
 * Docker installed.
 
-
 ## Other
 
 * (Airgapped installation only)  __Private Docker Registry__. Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-* (Optional) __SAML Integration__. 
-
+* (Optional) __SAML Integration__ as described under [single sign-on](../../authentication/sso.md). 
 
 
 ## Pre-install Script
 
-Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai  [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
 
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
-* Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation. 
+* Looks at additional components installed and analyze their relevance to a successful Run:ai installation. 
 
 To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
 
