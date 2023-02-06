@@ -1,12 +1,12 @@
 # Creating a new Compute Resource
 
-Compute resource, by definition, is assigned to a single project or all projects (current and future ones). The later option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
+Compute resource, is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
-To create a compute resource
+To create a compute resource:
 
 * Select the `create compute resource` button
 * Select the project the resource will reside in
-* Give the environment a meaningful name.
+* Give the resource a meaningful name.
 
 ![](img/env-proj-select.png)
 

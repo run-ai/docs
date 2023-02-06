@@ -10,18 +10,22 @@ The data can be set as read-write or limited to read-only permission regardless 
 
 
 ## Creating an S3 data source
-To create an S3 data source (either by AWS or not) you need to point out the relevant S3 service URL server as well as the bucket name of the data. Then to point out the data target location as a container path.
+S3 storage saves data in _buckets_. S3 is typically attributed to AWS cloud service but can also be used as a separate service unrelated to Amazon. 
 
-Note that S3 data source can be public or private. For the latter option, please select the relevant credential associated with the project in order to allow access to the data.
+To create an S3 data source, you must point out the relevant S3 service URL server as well as the bucket name of the data. Then, select the path within the container where the data will be mounted.
 
-## Creating a git data source
-In order to create a git data source you need to point out the relevant repository URL. Then to point out the data target location as a container path.
+Note that an S3 data source can be public or private. For the latter option, please select the relevant credentials associated with the project to allow access to the data.
 
-Note that git data source can be public or private. For the latter option, please select the relevant credential associated with the project in order to allow access to the data.
+## Creating a Git data source
+
+To create a Git data source select the relevant repository URL. Then, select the path within the container where the data will be mounted.
+
+The Git data source can be public or private. To allow access a private Git data source, you must select the relevant credentials associated with the project. 
 
 ## Creating a host path data source
-In order to create a host path data source you need to point out the relevant path. Then to point out the data target location as a container path.
 
-Note that the data can be limited to read-only permission regardless to any other user privileges. 
+To create a host path data source you must select the relevant path on the host. Then, select the path within the container where the data will be mounted.
+
+Note that the data can be limited to read-only permission regardless of any other user privileges. 
 
 

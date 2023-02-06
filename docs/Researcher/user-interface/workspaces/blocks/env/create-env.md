@@ -1,47 +1,50 @@
 # Creating a new environment
 
-Environment, by definition, is associated with a single project or all projects (current and future ones). Associating an environment to all projects requires administrator or researcher manger role.
+An Environment is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
-The first step of creating an environment would be to press the create environment button and to select under which project it resides and to give the environment a meaningful name.
+To create an environment:
+
+* Select the `create environment` button.
+* Select the project the environment will reside in.
+* Give the environment a meaningful name.
 
 ![](img/env-proj-select.png)
 
 ## Setting the container image
-The creating user needs to state the image URL path as well as when the image is pulled.
+
+State the image URL path as well as a policy for pulling the image from the image repository.
 
 ![](img/env-image-pull.png)
 
 ## Selecting the relevant tools
-In a single environment it is possible to add none or as many tools as needed.
-Tools vary from:
+In a single environment, it is possible to add as many tools as needed (or none at all).
 
-* Different applications concept such as Code editor IDEs (e.g VS Code), Experiment tracking (e.g. Weight and Biases), visualization tools (e.g. Tensor Board), etc.
-* Open source tool (e.g Jupyter notebook) or commercial 3rd party tools (e.g. MATLAB)
+Tools can be:
+* Different applications such as Code editor IDEs (e.g VS Code), Experiment tracking (e.g. Weight and Biases), visualization tools (e.g. Tensor Board), etc.
+* Open source tools (e.g Jupyter notebook) or commercial 3rd party tools (e.g. MATLAB)
 
 It is also possible to select a custom tool if ones are used in the organization.
 
 ![](img/env-tools.png)
 
 
-Per selected tool the type of connection interface and port need to be inserted. However, defaitl values are added atuoamticly.
+For each tool, you must set the type of connection interface and port. If not set, default values are provided.
 
 The supported connection types are:
 
-* External URL - This connection type allows you to connect to your tool either by inserting a custom URL or having one automated for you. Either way the URL should be unique per workspace because many workspaces may use the same environment. If the the URL type was set to custom, the URL will be requested from the datascientisr upon creating the workspace.
-
-
-* External node port - A NodePort (see also Kubernetes NodePort) exposes your application externally on every host of the cluster, by accessing http://<HOST_IP>:<NODEPORT> (e.g http://203.0.113.20:30556).
+* External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one automated for you. Either way, the URL should be unique per workspace because many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
+* External node port - A NodePort (see also Kubernetes NodePort) exposes your application externally on every host of the cluster, by accessing `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
 
 
 ![](img/env-tool-connect-type.png)
 
 !!! Note
-    Selecting the tools is not sufficient to have them up and running. The container image still needs to support them as well as having a DNS record and certificate for safe connection.
+    Selecting the tools is not sufficient to have them up and running. The container image still needs to support them as well as have a DNS record and certificate for safe connection.
 
 
 ## Configuring the runtime settings
 
-Per environment, the creating user (either data scientist or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it won't be editable (e.g. command python). In addition the data scientist can add arguments which can be edited upon creating a workspace using this environment. Same goes for environment variables, which can be added to the environments, but those can be edited in the workspace creation form.
+Per environment, the creating user (either Researcher or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it won't be editable (e.g. command python). In addition, the researcher can add arguments that can be edited upon creating a workspace using this environment. Same goes for environment variables, which can be added to the environments, but those can be edited in the workspace creation form.
 
 
 Note: the value of an environment variable can be left empty for the data scientist to fill in upon workplace creation.
