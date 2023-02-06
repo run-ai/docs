@@ -34,7 +34,7 @@ Reach out to customer support for credentials.
 
 ## Run:ai Cloud Status Page
 
-Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
+Run:ai cloud availability is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
 
 ## Collect Logs to Send to Support
 
