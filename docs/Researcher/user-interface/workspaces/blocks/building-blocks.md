@@ -8,6 +8,7 @@ Workspace building blocks are a layer that abstract complex containers and Kuber
 These “building blocks'' consist of everything needed for a workspace to be created and used (See also [Environment introduction](./environments.md), [Compute resource introduction](./compute.md), [Data source introduction](./datasources.md)). 
 
 Workspaces are built from the following building blocks:
+
 1. Environment
 2. Data source
 3. Compute resource
@@ -20,6 +21,7 @@ Workspaces are built from the following building blocks:
 When a workspace is created, the data scientist can choose from preconfigured building blocks.
 
 For example, aworkspace can be composed of the following:
+
 * Environment: _Jupyter, Tensor Board and Cude 11.2_
 * Compute resource: _0.5 GPU, 8 cores and 200 [Mb] of CPU memory_
 * Data source: _A Git branch with the relevant dataset needed_
