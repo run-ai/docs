@@ -168,7 +168,7 @@ For more information on how to create a TLS secret see: [https://kubernetes.io/d
 
 #### Cluster IP
 
-(Deprecated)
+(Deprecated in version 2.8, no longer available in version 2.9)
 
 Following are instructions on how to get the IP and set firewall settings. 
 
