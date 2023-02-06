@@ -60,8 +60,12 @@ If you are using Single-sign-on, you can also assign Groups
 ### Limit Jobs to run on Specific Node Groups
 
 You can assign a Project to run on specific nodes (machines).This is achieved by two different mechnisms:
-*   Node Pools: All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources (CPU Compute & CPU Memory) to a Project. By associating a quota on specific node pools for a Project, you can control which nodes a Project can utilize and which default priority order the scheduler will use (in case the workload did chose so by itself). Each workload should choose the node pool(s) to use, if no choice is made, it will use the Project's default 'node pool priority list'. Note that node pools with zero resources associated to a Project or node pools with exhausted resources, can still be used by a Project when Over-Quota flag is enabled.
-*   __Node Affinities__ (a.k.a. Node Type). The administrator can associate specific node sets characterized by a shared run-ai/node-type label value to a Project. This means that descendant workloads can only use nodes from one of those node affinity groups. A workload can specify which node affinity to use, out of the list bound to its parent Project.
+
+*   Node Pools: 
+        All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources (CPU Compute & CPU Memory) to a Project. By associating a quota on specific node pools for a Project, you can control which nodes a Project can utilize and which default priority order the scheduler will use (in case the workload did chose so by itself). Each workload should choose the node pool(s) to use, if no choice is made, it will use the Project's default 'node pool priority list'. Note that node pools with zero resources associated to a Project or node pools with exhausted resources, can still be used by a Project when Over-Quota flag is enabled.
+
+*   Node Affinities (aka Node Type)
+        Administrator can assosciate specific node sets characterized by a shared run-ai/node-type label value to a Project. This means descendant workloads can only use nodes from one of those node affinity groups. A workload can specify which node affinity to use, out of the list bounded to its parent Project.
 
 There are many use cases and reasons to use specific nodes for a Project and its descendant workloads, here are some examples:
  
