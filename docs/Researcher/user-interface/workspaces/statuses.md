@@ -26,7 +26,7 @@ The _Initializing_ status indicates that the workspace has been scheduled and is
 
 
 ## Active workspace
-The _Active_ status indicates that the workspace is ready to be used and allows the data scientist to connect to its tools. At this status, the workspace is consuming resources and affecting the project’s quota. The workspace will turn to active status once the `Active` button is pressed (see also [Activating a workspace](#xxxx)), the activation process ends up successfully and relevant resources are available and vacant.
+The _Active_ status indicates that the workspace is ready to be used and allows the researcher to connect to its tools. At this status, the workspace is consuming resources and affecting the project’s quota. The workspace will turn to active status once the `Active` button is pressed (see also [Activating a workspace](#xxxx)), the activation process ends up successfully and relevant resources are available and vacant.
 
 ## Stopped workspace
 The _Stopped_ status indicates that the workspace is currently unused and does not consume any resources. A workspace can be stopped either manually (see [Stopping a workspace](#xxx)) or automatically if triggered by idleness criteria set by the admin (see [Setting a time limit](#ddd)).

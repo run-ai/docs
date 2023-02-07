@@ -8,7 +8,7 @@ The environment block consists of the URL path for the container image and the i
 
 ![](images/env-tools.png)
 
-You can also include  commands, arguments, and environment variables, as well as the user identity with permission to run the commands in the container.
+You can also include commands, arguments, and environment variables, as well as the user identity with permission to run the commands in the container.
 
 !!! Note
     Additional arguments and environment variables can be added to workspaces even if they were not defined in the environment used by the workspace. This ensures that the same environment can still serve many workspaces, even if they differ by their arguments and environment variables.

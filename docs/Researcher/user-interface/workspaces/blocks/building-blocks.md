@@ -3,7 +3,7 @@
 # Workspace Building Blocks
 
 
-Workspace building blocks are a layer that abstract complex containers and Kubernetes concepts and provide simple tools to allocate resources to the workspace. This way data scientists need to interact only with the building blocks, and do not need to be aware of technical setups and configurations.
+Workspace building blocks are a layer that abstract complex containers and Kubernetes concepts and provide simple tools to quickly allocate resources to the workspace. This way researchers need to interact only with the building blocks, and do not need to be aware of technical setups and configurations.
 
 These “building blocks'' consist of everything needed for a workspace to be created and used (See also [Environment introduction](./environments.md), [Compute resource introduction](./compute.md), [Data source introduction](./datasources.md)). 
 
@@ -18,7 +18,7 @@ Workspaces are built from the following building blocks:
 ![](img/bbs.png)
 
 
-When a workspace is created, the data scientist can choose from preconfigured building blocks.
+When a workspace is created, the researcher can choose from preconfigured building blocks.
 
 For example, aworkspace can be composed of the following:
 
@@ -43,4 +43,4 @@ The scope of relevancy can be set to be of a specific single project (e.g. “Pr
 
 Data scientists can view and use only building blocks that are created under projects they are assigned to.
 
-Typically, building blocks are created by the administrator and then assigned to a project. You can grant permissions to the data scientists to create their own building blocks. These building blocks will only be available to the projects that are assigned to the data scientist that created them.
+Typically, building blocks are created by the administrator and then assigned to a project. You can grant permissions to the researchers to create their own building blocks. These building blocks will only be available to the projects that are assigned to the researcher that created them.

@@ -237,7 +237,7 @@ nav:
           - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
           - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
           - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
-        - 'Create' :
+        - 'Creation' :
             - 'Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
             - 'Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
             - 'Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
