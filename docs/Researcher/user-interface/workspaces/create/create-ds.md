@@ -6,8 +6,9 @@ To create an NFS data source you need to point out the relevant NFS server as we
 
 The data can be set as read-write or limited to read-only permission regardless of any other user privileges. 
 
-## Create a pvc (?) data source
+## Create a PVC data source
 
+XXX MISSING DATA XXX
 
 ## Create an S3 data source
 S3 storage saves data in _buckets_. S3 is typically attributed to AWS cloud service but can also be used as a separate service unrelated to Amazon. 

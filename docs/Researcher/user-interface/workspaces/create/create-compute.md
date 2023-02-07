@@ -42,7 +42,8 @@ GPU resources can be expressed in various ways:
 
 ### Set CPU resources
 
-A CPU resource consists of cores and memory. When GPU resources are requested a faire share of cores and meoert, relative to GPU request is granted.
+A CPU resource consists of cores and memory. When GPU resources are requested the user interface will automatically present a proportional amount of CPU cores and memory (as set on the cluster side). 
 
 !!! Note
-    If no resources are defined at all, the request is of an oppurtunistce nature, maeannign that it will look for any unallocated cpu node and tries to run the workload. But it could be preemted at any time without priorio notice (this could be very much relevant for testing and debugging).
+    If no GPU, CPU and memory resources are defined, the request will not be allocated any GPUs. The scheduler will create a container with no minimal CPU and memory. Such a job will run but is likely to be preempted at any time by other jobs. The scheme is relevant for testing and debugging purposes.  
+    
