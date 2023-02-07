@@ -47,7 +47,7 @@ The supported connection types are:
 Per environment, the creating user (either Researcher or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it won't be editable (e.g. command python). In addition, the researcher can add arguments that can be edited upon creating a workspace using this environment. Same goes for environment variables, which can be added to the environments, but those can be edited in the workspace creation form.
 
 
-Note: the value of an environment variable can be left empty for the data scientist to fill in upon workplace creation.
+Note: the value of an environment variable can be left empty for the researcher to fill in upon workplace creation.
 
 Few example:
 
@@ -59,6 +59,6 @@ Also, in the environment, it is possible to set the path to the working director
 
 ![](img/env-runtime-settings.png)
 
-It is possible to either use the exact UID and GID defined in the image. However, in many cases it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged datascientist that creates the workspace, otherwise the data scientist creating the workspace will be guided to provide it upon workspace creation form.
+It is possible to either use the exact UID and GID defined in the image. However, in many cases it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged datascientist that creates the workspace, otherwise the researcher creating the workspace will be guided to provide it upon workspace creation form.
 
 ![](img/env-uid-override.png)
