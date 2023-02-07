@@ -13,15 +13,15 @@ This setup is set to facilitate the research needs and yet to ensure infrastruct
 
 A workspace is associated with a specific Run:ai project (internally: a Kubernetes namespace). A researcher can create multiple workspaces under a specific project.
 
-Researchers can view and use only workspaces that are created under projects they are assigned to.
+Researchers can only view and use workspaces that are created under projects they are assigned to.
 
 ![](img/grid.png)
 
-Workspaces can be created with just a few clicks of a button. See [Workspace creation](#xxx).  
+Workspaces can be created with just a few clicks of a button. See [Workspace creation](create/workspace.md).  
 
 Workspaces can be stopped and started to save expensive resources without losing complex environment configurations.
 
-Only when a workspace is in status active (see also [Workspace Statuses](./statuses.md)) does is consume resources. 
+Only when a workspace is in status active (see also [Workspace Statuses](./statuses.md)) does it consume resources. 
 
 When the workspace is active it exposes the connections to the tools (for example, A Jupyter notebook) within the workspace (See also [Connect to a tool](#xxx)).
 
@@ -29,8 +29,9 @@ When the workspace is active it exposes the connections to the tools (for exampl
 ![](img/activews.png)
 
 
-An active workspace is an [interactive workload](../../../admin/workloads/workload-overview-admin.md). The interactive workload starts when the workspace is started and stopped when the workspace is stopped. 
+An active workspace is a Run:ai [interactive workload](../../../admin/workloads/workload-overview-admin.md). The interactive workload starts when the workspace is started and stopped when the workspace is stopped. 
 
+XXX UNCLEAR XXX 
 Workspaces can be viewed in the Jobs grid. In that sense, a workspace can be referred to many interactive workloads in the job screen but only 1 can of them could be in status running.
 
 Workspaces can be used via the user interface or programmatically via the Run:ai [Admin API](../../../developer/admin-rest-api/overview.md). Workspaces are not supported via the command line interface. You can still run an interactive workload via the command line. 

@@ -1,16 +1,17 @@
-# Creating a new Compute Resource
+# Create a new Compute Resource
 
-Compute resource, is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
 To create a compute resource:
 
-* Select the `create compute resource` button
+* Select the `Create compute resource` button
 * Select the project the resource will reside in
 * Give the resource a meaningful name.
 
 ![](img/env-proj-select.png)
 
-## Setting the resources request
+A Compute resource, is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
+
+## Set the resources request
 
 A resources request is composed of 3 types of resources:
 
@@ -26,7 +27,7 @@ The user can select one or more resources. For example, one compute resource may
 ![](img/compute-resource-create.png)
 
 
-### Setting GPU resources
+### Set GPU resources
 
 GPU resources can be expressed in various ways:
 
@@ -39,7 +40,7 @@ GPU resources can be expressed in various ways:
     * When selecting partial memory of a single GPU device, if NVIDIA MIG is enabled on a node, then the memory can be provided as a MIG profile. For more information see [Dynamic MIG](../../../../scheduling/fractions.md#dynamic-mig). 
     * If GPUs are not requested, they will not be allocated even if resources are available. In that case, the project's GPU quota will not be affected.
 
-### Setting CPU resources
+### Set CPU resources
 
 A CPU resource consists of cores and memory. When GPU resources are requested a faire share of cores and meoert, relative to GPU request is granted.
 

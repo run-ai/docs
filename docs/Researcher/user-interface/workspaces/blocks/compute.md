@@ -1,11 +1,12 @@
 
 # Compute resource introduction
 
-A compute resource is a mandatory building block for the creation of a workspace (See also [Create Compute resource](create-compute.md)). 
 
-The computer resource building block represents a resource request to be used by the workspace (for example 0.5 GPU, 8 cores and 200 [Mb] of CPU memory). When a workspace is activated, the scheduler looks for a node that answers that request.
+A _compute_ resource building block represents a resource request to be used by the workspace (for example 0.5 GPU, 8 cores and 200 [Mb] of CPU memory). When a workspace is activated, the scheduler looks for a node that answers that request. 
+
+The compute resource is a __mandatory__ building block for Workspace.
  
- A request is composed of the following resources: 
+A request is composed of the following resources: 
 
 * GPU resources
 * CPU memory resources
@@ -17,3 +18,7 @@ The computer resource building block represents a resource request to be used by
 
 ![](images/compute-form.png)
 
+
+## See Also
+
+* Create a [Compute resource](../create/create-compute.md)). 

@@ -1,7 +1,5 @@
 # Creating a new environment
 
-An Environment is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
-
 To create an environment:
 
 * Select the `create environment` button.
@@ -9,6 +7,8 @@ To create an environment:
 * Give the environment a meaningful name.
 
 ![](img/env-proj-select.png)
+
+An Environment is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
 ## Setting the container image
 
