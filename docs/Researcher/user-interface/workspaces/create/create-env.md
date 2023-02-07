@@ -2,7 +2,7 @@
 
 To create an environment:
 
-* Select the `create environment` button.
+* Select the `New Environment` button.
 * Select the project the environment will reside in.
 * Give the environment a meaningful name.
 
@@ -45,8 +45,6 @@ The supported connection types are:
     * The container image needs to support the tool. 
     *  The administrator must configure a DNS record and certificate as described [here](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
     
-
-
 ## Configure runtime settings
 
 Per environment, the creating user (either Researcher or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it will not be editable (e.g. a python command). In addition, the researcher can add arguments that can be edited upon creating a workspace using this environment. Similarly, environment variables can be added to the environments, but these can be edited in the workspace creation form.

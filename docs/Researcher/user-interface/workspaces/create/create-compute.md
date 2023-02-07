@@ -3,7 +3,7 @@
 
 To create a compute resource:
 
-* Select the `Create compute resource` button
+* Select the `New Compute Resource` button
 * Select the project the resource will reside in
 * Give the resource a meaningful name.
 
