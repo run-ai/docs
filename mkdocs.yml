@@ -234,17 +234,15 @@ nav:
         - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
         - 'Building Blocks' : 
           - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
-          - 'Environments' : 
-            - 'Overview' : 'Researcher/user-interface/workspaces/blocks/env/environments.md'
-            - 'Create' : 'Researcher/user-interface/workspaces/blocks/env/create-env.md'
-          - 'Compute Resources' : 
-            - 'Overview' : 'Researcher/user-interface/workspaces/blocks/compute/compute.md'
-            - 'Create' : 'Researcher/user-interface/workspaces/blocks/compute/create-compute.md'
-          - 'Data Sources' : 
-            - 'Overview' : 'Researcher/user-interface/workspaces/blocks/ds/datasources.md'
-            - 'Create' :  'Researcher/user-interface/workspaces/blocks/ds/create-ds.md'
+          - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
+          - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
+          - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
+        - 'Create' :
+            - 'Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
+            - 'Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+            - 'Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+            - 'Workspaces' :  'Researcher/user-interface/workspaces/create/workspace.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
-        - 'Actions' :  'Researcher/user-interface/workspaces/actions.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
