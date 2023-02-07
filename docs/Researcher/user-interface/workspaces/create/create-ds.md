@@ -21,7 +21,7 @@ Note that an S3 data source can be public or private. For the latter option, ple
 
 To create a Git data source select the relevant repository URL. Then, select the path within the container where the data will be mounted.
 
-The Git data source can be public or private. To allow access a private Git data source, you must select the relevant credentials associated with the project. 
+The Git data source can be public or private. To allow access to a private Git data source, you must select the relevant credentials associated with the project. 
 
 ## Create a host path data source
 

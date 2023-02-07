@@ -10,16 +10,17 @@ To create an environment:
 
 An Environment is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
-## Setting the container image
+## Set the container image
 
-State the image URL path as well as a policy for pulling the image from the image repository.
+Enter the image URL path as well as a policy for pulling the image from the image repository.
 
 ![](img/env-image-pull.png)
 
-## Selecting the relevant tools
+## Select the relevant tools
 In a single environment, it is possible to add as many tools as needed (or none at all).
 
 Tools can be:
+
 * Different applications such as Code editor IDEs (e.g VS Code), Experiment tracking (e.g. Weight and Biases), visualization tools (e.g. Tensor Board), etc.
 * Open source tools (e.g Jupyter notebook) or commercial 3rd party tools (e.g. MATLAB)
 
@@ -32,33 +33,36 @@ For each tool, you must set the type of connection interface and port. If not se
 
 The supported connection types are:
 
-* External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one automated for you. Either way, the URL should be unique per workspace because many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
-* External node port - A NodePort (see also Kubernetes NodePort) exposes your application externally on every host of the cluster, by accessing `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
+* External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one automated for you. Either way, the URL should be unique per workspace as many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
+* External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, by accessing `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
 
 
 ![](img/env-tool-connect-type.png)
 
 !!! Note
-    Selecting the tools is not sufficient to have them up and running. The container image still needs to support them as well as have a DNS record and certificate for safe connection.
+    Selecting tools is not sufficient to have them up and running. To run a tool you need additional steps:
+
+    * The container image needs to support the tool. 
+    *  The administrator must configure a DNS record and certificate as described [here](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
+    
 
 
-## Configuring the runtime settings
+## Configure runtime settings
 
-Per environment, the creating user (either Researcher or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it won't be editable (e.g. command python). In addition, the researcher can add arguments that can be edited upon creating a workspace using this environment. Same goes for environment variables, which can be added to the environments, but those can be edited in the workspace creation form.
+Per environment, the creating user (either Researcher or administrator) is allowed to set the command running in the container. This command will be visible in the workspace creation form, although it will not be editable (e.g. a python command). In addition, the researcher can add arguments that can be edited upon creating a workspace using this environment. Similarly, environment variables can be added to the environments, but these can be edited in the workspace creation form.
 
+!!! Note 
+    The value of an environment variable can be left empty for the researcher to fill in upon workplace creation.
 
-Note: the value of an environment variable can be left empty for the researcher to fill in upon workplace creation.
-
-Few example:
+Examples:
 
 1. WANDB
-2. UID and GID of jupyter
-3. Etc.
+2. UID and GID of the user when launching a Jupyter notebook. 
 
-Also, in the environment, it is possible to set the path to the working directory that will be used as the current directory when the container running the created workload starts.
+In addition, in the environment, it is possible to set the path to the working directory that will be used as the current directory when the container running the created workload starts.
 
 ![](img/env-runtime-settings.png)
 
-It is possible to either use the exact UID and GID defined in the image. However, in many cases it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged datascientist that creates the workspace, otherwise the researcher creating the workspace will be guided to provide it upon workspace creation form.
+It is possible to either use the exact UID and GID defined in the image. However, in many cases, it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged researcher that creates the workspace, otherwise, the researcher creating the workspace will be guided to provide it upon workspace creation form.
 
 ![](img/env-uid-override.png)
