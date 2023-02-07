@@ -2,7 +2,7 @@
 # Workspaces actions and use cases
 
 ## Creating a new workspace
-A Workspace is assigned to a project and is affected by the project’s quota just like any other workload is. A workspace is shared with all project members for collabration.
+A Workspace is assigned to a project and is affected by the project’s quota just like any other workload is. A workspace is shared with all project members for collaboration.
 To create a workspace, you must have:
 
 * At least one project 
