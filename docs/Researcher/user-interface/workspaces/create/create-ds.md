@@ -40,6 +40,7 @@ Note that an S3 data source can be public or private. For the latter option, ple
 ## Create a Git data source
 
 To create a Git data source, provide:
+
 * A data source name
 * A Run:ai project scope
 * The relevant repository URL. 
