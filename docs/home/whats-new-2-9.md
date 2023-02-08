@@ -39,7 +39,7 @@ Added additional support to multi-node pools. This new capability allows the res
 
 **New nodes and node pools Screens**
 
-Run:AI has revised the nodes table, adding new information fields and graphs. It is now easier to assess how resources are allocated and utilized. Run:AI has also added a new ‘node pools’ table where Administrators can add a new node pool, update, and delete an existing node pool. In addition, the node pools table presents a large number of metrics and details about each of the node pools. A set of graphs reflect the node pools’ resource status over time according to different criteria.
+Run:ai has revised the nodes table, adding new information fields and graphs. It is now easier to assess how resources are allocated and utilized. Run:ai has also added a new ‘node pools’ table where Administrators can add a new node pool, update, and delete an existing node pool. In addition, the node pools table presents a large number of metrics and details about each of the node pools. A set of graphs reflect the node pools’ resource status over time according to different criteria.
 
 **Consumption Dashboard**
 
