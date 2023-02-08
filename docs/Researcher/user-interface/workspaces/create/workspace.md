@@ -68,7 +68,9 @@ Few examples:
 * A template can have the value of an environment variable empty for the researcher to edit later during the workspace creation.
 * A template can consist of an environment with a tool that requests a custom URL. This URL field stays empty until the researcher fills it upon creating the workspace
 
-For collaboration purposes, templates are assigned to a specific project and are shared with all project members by design (see also [Creating a new template](xxx)).
+For collaboration purposes, templates are assigned to a specific project and are shared with all project members by design.
+
+ <!-- (see also [Creating a new template](xxx)). -->
 
 ## Create a preemptible workspace
 
