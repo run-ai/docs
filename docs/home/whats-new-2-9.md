@@ -35,7 +35,7 @@ As part of the introduction of Run:ai workspaces  a few new development and rese
 
 **Node pools enhancements**
 
-Added** additional support to multi node pools. This new capability allows the researcher to specify a prioritized list of node pools for the Run:ai scheduler to use. Researchers now gain flexibility to use multiple resource types and maximize the utilization of the system’s GPU and CPU resources. Administrators now have the option to set a default Project (namespace) level with a prioritized list of node pools that a workload will use if the researcher did not set its own priorities.
+Added additional support to multi node pools. This new capability allows the researcher to specify a prioritized list of node pools for the Run:ai scheduler to use. Researchers now gain flexibility to use multiple resource types and maximize the utilization of the system’s GPU and CPU resources. Administrators now have the option to set a default Project (namespace) level with a prioritized list of node pools that a workload will use if the researcher did not set its own priorities.
 
 **New nodes and node pools Screens**
 
@@ -84,7 +84,7 @@ Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/clust
 
 #### Other
 
-- Cluster Wizard has been simplified for environments with **multiple** clusters**
+- Cluster Wizard has been simplified for environments with **multiple** clusters
   in a self-hosted configuration. Clusters are now more easy to configure. Choose a cluster location: 
   
   - Same as Control Plane 
@@ -95,7 +95,7 @@ Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/clust
 - Run:ai now supports Kubernetes 1.25 and 1.26.
 - Run:ai now supports Openshift 4.11
 - Run:ai now supports all run:ai features including Dynamic MIG with NVIDIA H100 hardware
-- The Run:ai command-line interface now supports Microsoft Windows. See [here](https://github.com/run-ai/docs/blob/2.9/docs/admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
+- The Run:ai command-line interface now supports Microsoft Windows. See [Install the Run:ai Command-line Interface](https://github.com/run-ai/docs/blob/2.9/docs/admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
 
 ## Known Issues
 
