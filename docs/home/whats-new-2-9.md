@@ -23,7 +23,7 @@ When configuring SSO in the Run:ai platform all users are assigned a new default
 
 Added support for CPU workloads to support over-quota - CPU resources fairness was added to the Run:ai scheduler in addition to the GPU fairness that is already supported. The updated fairness algorithm takes into account all resource types (GPU, CPU compute and CPU memory) and is supported regardless of node pool configuration. 
 
-## Run:ai Workspaces
+### Run:ai Workspaces
 
 A Run:ai workspace is a simplified, efficient tool for researchers to conduct their experiments, build AI models, access standard MLOps tools, and collaborate with their peers.
 
