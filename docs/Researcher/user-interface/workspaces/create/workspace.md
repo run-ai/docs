@@ -20,13 +20,13 @@ To create a workspace:
 * Press `New Workspace` 
 * Select a project for the new workspace. The project visualization contains information about the project such as how much of the quota is being allocated and indicates the likelihood of the workspace being scheduled or left in the queue
 
-![](img/proj-select.png)
+![](img/11-prj-select.png)
 
 ## Create a new workspace from scratch
 
 See picture:
 
-![](img/proj-create.png)
+![](img/12-prj-create.png)
 
 !!! Note
     The building block can also be created (and then selected) directly from within the workspace creation form.
@@ -35,7 +35,7 @@ See picture:
 
 An environment is a mandatory element of a workspace. All environments created for the project will be shown to researchers in the form of a gallery view (see also [Creating a new environment](#xxx)). Each tile shows the tools as well as the image. When selecting an environment, the command, arguments and environment variables defined in the environment are visible for review. The researcher can edit (delete or add new) arguments and environment variables that are very specific to his/hers use and that are not part of the common shared environment. In some cases, it would even be expected that the researcher will provide additional information (for example, values for environment variables) to successfully create the workspace (see also [Create new environment](#xxx)).
 
-![](img/env-var.png)
+![](img/13-env-vars.png)
 
 
 In the environment you can also decide whether the workspace is preemptable or not (see also create a preemtable worksapce). By default, interactive sessions are limited to use the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
@@ -45,18 +45,20 @@ In the environment you can also decide whether the workspace is preemptable or n
 Selecting compute resources for the workspace is a mandatory step. If compute resources are created for the project (see also [creating a new compute resource](#xxx)), those will be offered to researchers in the form of a gallery view. Each tile shows the amount of GPU, CPU and Memory in the request.
 
 
-![](img/select-cr.png)
+![](img/14-select-cr.png)
 
 ### Select a data source for a new workspace
 
 Selecting a data source for the workspace is a non-mandatory step. If data sources are created for the project (see also [creating a new compute resource](#xxx)), those will be offered to researchers in the form of a gallery view. Each tile shows the unique name of the building block and the type of data source.
+
+![](img/15-select-ds.png)
 
 
 ## Create a new workspace from a template
 
 Templates ease the way of creating a new workspace in a few clicks. In contrast to creating a workspace from scratch (selecting manually which building blocks to use in your workspace), a template aggregates all building blocks under a single entity for researchers to use for the creation of workspaces.
 
-![](img/proj-create.png)
+![](img/16-create-from-template.png)
 
 
 A Template consists of the building blocks and other parameters that are exposed in a workspace creation form. Templates can be fully defined to a point researcher can select and create the workspace without providing any additional information or partially defined, hence, leaving some degree of freedom in the creation of the workspace via the template. This can help in cases where only part of the configuration is selected in the template and the rest is expected to be provided by the user creating a workspace from the template. 
@@ -72,5 +74,5 @@ For collaboration purposes, templates are assigned to a specific project and are
 
 For a better experience, workspaces, as they are built for interactive research, are designed to not be preempted (because the researchers actively interact with GPU resources). Thus, non-preemptable workspaces can be only scheduled if the project has a sufficient vacant quota. However, if that’s not the case (the project does not have a sufficient vacant quota) and the researcher still needs to create and activate a workspace (if cluster resources are available) he/she can allow the workspace to go over quota, thus be scheduled, but with the cost of preemption without prior notice.
 
-![](img/preempt-toggle.png)
+![](img/17-preempt.png)
 

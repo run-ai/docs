@@ -13,7 +13,7 @@ Workspaces are built from the following building blocks:
 
 
 
-![](img/bbs.png)
+![](img/3-bbs.png)
 
 When a workspace is created, the researcher chooses from preconfigured building blocks (or can create a new one on the fly). For example, a workspace can be composed of the following blocks:
 
@@ -22,7 +22,7 @@ When a workspace is created, the researcher chooses from preconfigured building 
 * Data source: _A Git branch with the relevant dataset needed_
 
 
-![](img/workspace-form.png)
+![](img/4-workspace-form.png)
 
 
 Every building block has a _scope_. The scope links a building block to a specific Run:ai project or to all projects.   
@@ -31,7 +31,7 @@ Every building block has a _scope_. The scope links a building block to a specif
 * A building block scope can also be set to _all projects_ (current projects and also any future ones).
 
 
-![](img/prj.png)
+![](img/5-prj.png)
 
 
 Typically, building blocks are created by the administrator and then assigned to a project. You can grant permission to the researchers to create their own building blocks. These building blocks will only be available to the projects that are assigned to the researcher that created them.

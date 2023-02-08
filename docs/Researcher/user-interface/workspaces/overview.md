@@ -15,7 +15,7 @@ A workspace is associated with a specific Run:ai project (internally: a Kubernet
 
 Researchers can only view and use workspaces that are created under projects they are assigned to.
 
-![](img/grid.png)
+![](img/1-Workspaces-grid.png)
 
 Workspaces can be created with just a few clicks of a button. See [Workspace creation](create/workspace.md).  
 
@@ -26,12 +26,10 @@ Only when a workspace is in status active (see also [Workspace Statuses](./statu
 When the workspace is active it exposes the connections to the tools (for example, A Jupyter notebook) within the workspace (See also [Connect to a tool](#xxx)).
 
 
-![](img/activews.png)
+![](img/2-connecting-to-tools.png)
 
 
 An active workspace is a Run:ai [interactive workload](../../../admin/workloads/workload-overview-admin.md). The interactive workload starts when the workspace is started and stopped when the workspace is stopped. 
 
-XXX UNCLEAR XXX 
-Workspaces can be viewed in the Jobs grid. In that sense, a workspace can be referred to many interactive workloads in the job screen but only 1 can of them could be in status running.
 
 Workspaces can be used via the user interface or programmatically via the Run:ai [Admin API](../../../developer/admin-rest-api/overview.md). Workspaces are not supported via the command line interface. You can still run an interactive workload via the command line. 

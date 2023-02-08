@@ -16,7 +16,7 @@ A request is composed of the following resources:
     GPU resources can be requested as either a memory request, a full GPU request or a [fraction of a GPU](../../../../scheduling/fractions.md#runai-fractions). A fraction of a GPU also supports the selection of a dynamic [MIG profile](../../../../scheduling/fractions.md#dynamic-mig) if configured
 
 
-![](images/compute-form.png)
+![](img/7-compute-form.png)
 
 
 ## See Also

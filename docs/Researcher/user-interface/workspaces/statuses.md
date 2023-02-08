@@ -14,7 +14,7 @@ The Workspace’s status mechanism displays the state of the workspace by aggreg
 This allows the researcher to quickly understand whether the workspace is ready to use and if resources are allocated to it. You can hover over the status column to see additional details about the workspace status.
 
 
-![](img/extra.png)
+![](img/9-hover-status.png)
 
 
 ## Pending workspace
@@ -40,4 +40,4 @@ The _Failed_ status indicates that something went wrong and the workspace is not
 When the user attempts to delete, stop, or activate a workspace, the status column indicates a transition state which will either be successful or will fail. If the action fails, the workspace will stay in its original status. For example, if the user tries to delete an active workspace and fails, the workspace is left in active status. Transitioning states are only visible in the browser of the user who performed the action.
 
 
-![](img/transitioning.png)
+![](img/10-transitioning-state.png)

@@ -7,7 +7,7 @@ To create a compute resource:
 * Select the project the resource will reside in
 * Give the resource a meaningful name.
 
-![](img/env-proj-select.png)
+![](img/24-env-proj-select.png)
 
 A Compute resource, is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
@@ -24,7 +24,7 @@ The user can select one or more resources. For example, one compute resource may
 !!! Note 
     Selecting resources more than the cluster can supply will result in a permanently failed workspace.
 
-![](img/compute-resource-create.png)
+![](img/25-cr-create.png)
 
 
 ### Set GPU resources

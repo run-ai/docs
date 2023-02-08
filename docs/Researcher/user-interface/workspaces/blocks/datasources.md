@@ -7,7 +7,7 @@ A _data source_ is a location where data sets relevant to the research are store
 The data source is an __optional__ building block for the creation of a workspace (See also [Create Data source](create-ds.md)).
 
 
-![](images/ds-types.png "Data source types")
+![](img/8-ds-types.png "Data source types")
  
 ## See Also
 

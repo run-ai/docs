@@ -6,7 +6,7 @@ The _environment_ block consists of the URL path for the container image and the
 
 An environment is a __mandatory__ building block for the creation of a workspace. 
 
-![](images/env-tools.png)
+![](img/6-tools.png)
 
 You can also include commands, arguments, and environment variables, as well as the user identity with permission to run the commands in the container.
 

@@ -6,7 +6,7 @@ To create an environment:
 * Select the project the environment will reside in.
 * Give the environment a meaningful name.
 
-![](img/env-proj-select.png)
+![](img/18-select-env.png)
 
 An Environment is assigned to a single project or all projects (current and future ones). The latter option can only be created by a Run:ai administrator. A compute resource, by design, is shared with all project members.
 
@@ -14,7 +14,7 @@ An Environment is assigned to a single project or all projects (current and futu
 
 Enter the image URL path as well as a policy for pulling the image from the image repository.
 
-![](img/env-image-pull.png)
+![](img/19-image-pull.png)
 
 ## Select the relevant tools
 In a single environment, it is possible to add as many tools as needed (or none at all).
@@ -26,7 +26,7 @@ Tools can be:
 
 It is also possible to select a custom tool if ones are used in the organization.
 
-![](img/env-tools.png)
+![](img/20-env-tools.png)
 
 
 For each tool, you must set the type of connection interface and port. If not set, default values are provided.
@@ -37,7 +37,7 @@ The supported connection types are:
 * External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, by accessing `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
 
 
-![](img/env-tool-connect-type.png)
+![](img/21-connection-types.png)
 
 !!! Note
     Selecting tools is not sufficient to have them up and running. To run a tool you need additional steps:
@@ -59,8 +59,8 @@ Examples:
 
 In addition, in the environment, it is possible to set the path to the working directory that will be used as the current directory when the container running the created workload starts.
 
-![](img/env-runtime-settings.png)
+![](img/22-env-runtime.png)
 
 It is possible to either use the exact UID and GID defined in the image. However, in many cases, it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged researcher that creates the workspace, otherwise, the researcher creating the workspace will be guided to provide it upon workspace creation form.
 
-![](img/env-uid-override.png)
+![](img/23-overide-uid.png)

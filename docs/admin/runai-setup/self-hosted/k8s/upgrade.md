@@ -13,7 +13,17 @@ title: Upgrade self-hosted Kubernetes installation
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
 
 
+## Version 2.9 Note
+
+Before upgrading the control plane, run: 
+
+```
+kubectl delete  secret  -n runai-backend runai-backend-postgresql
+kubectl delete sts keycloak -n runai-backend
+```
+
 ## Upgrade Control Plane
+
 
 Run the helm command below. 
 
