@@ -17,7 +17,7 @@ theme:
     - search.suggest
 extra_css:
   - stylesheets/extra.css
-strict: false   
+strict: true   
  
 markdown_extensions:
   - pymdownx.highlight:
