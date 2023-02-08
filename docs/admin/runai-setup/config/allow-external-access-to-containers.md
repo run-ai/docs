@@ -38,7 +38,7 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 To enabled host-based routing you must perform the following steps:
 
 1. Create a second DNS entry  `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#domain-name) DNS.
-2. Obtain a __star__ SSL certificate  for this DNS.
+2. Obtain a __star__ SSL certificate for this DNS.
 3. Add as secret XXX
 4. Create an ingress rule to direct traffic XXX 
 5. Edit Runaiconfig to generate the URLs correctly. XXX
