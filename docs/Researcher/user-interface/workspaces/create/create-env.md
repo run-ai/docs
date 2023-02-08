@@ -3,8 +3,8 @@
 To create an environment:
 
 * Select the `New Environment` button.
-* Select the project the environment will reside in.
 * Give the environment a meaningful name.
+* Select the project the environment will reside in.
 
 ![](img/18-select-env.png)
 
@@ -21,26 +21,23 @@ In a single environment, it is possible to add as many tools as needed (or none 
 
 Tools can be:
 
-* Different applications such as Code editor IDEs (e.g VS Code), Experiment tracking (e.g. Weight and Biases), visualization tools (e.g. Tensor Board), etc.
+* Different applications such as Code editor IDEs (e.g VS Code), Experiment tracking (e.g. Weight and Biases), visualization tools (e.g. Tensor Board), and more.
 * Open source tools (e.g Jupyter notebook) or commercial 3rd party tools (e.g. MATLAB)
-
-It is also possible to select a custom tool if ones are used in the organization.
 
 ![](img/20-env-tools.png)
 
+It is also possible to set up a custom tool used by the organization.
 
-For each tool, you must set the type of connection interface and port. If not set, default values are provided.
+For each tool, you must set the type of connection interface and port. If not set, default values are provided. The supported connection types are:
 
-The supported connection types are:
-
-* External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one automated for you. Either way, the URL should be unique per workspace as many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
-* External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, by accessing `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
+* External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one generated for you. Either way, the URL should be unique per workspace as many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
+* External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, access the tool using `http://<HOST_IP>:<NODEPORT>` (e.g http://203.0.113.20:30556).
 
 
 ![](img/21-connection-types.png)
 
 !!! Note
-    Selecting tools is not sufficient to have them up and running. To run a tool you need additional steps:
+    Selecting a tool is not sufficient to have it up and running. To actually configure a tool you need additional steps:
 
     * The container image needs to support the tool. 
     *  The administrator must configure a DNS record and certificate as described [here](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
@@ -61,6 +58,6 @@ In addition, in the environment, it is possible to set the path to the working d
 
 ![](img/22-env-runtime.png)
 
-It is possible to either use the exact UID and GID defined in the image. However, in many cases, it can be with root privileges so it is possible to override it. If SSO exists, the UID and GID to be used will be the ones of the logged researcher that creates the workspace, otherwise, the researcher creating the workspace will be guided to provide it upon workspace creation form.
+It is possible to either use the exact UID and GID defined in the image. However, in many cases, it can be with root privileges so it is possible to override it. If [single sign on](../../../../admin/runai-setup/authentication/sso.md) is configured, the UID and GID to be used will be the ones of the logged researcher that creates the workspace, otherwise, the researcher creating the workspace will be guided to provide it upon workspace creation form.
 
 ![](img/23-overide-uid.png)

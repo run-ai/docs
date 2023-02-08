@@ -33,12 +33,12 @@ See picture:
 
 ### Select an Environment for a new workspace
 
-An environment is a mandatory element of a workspace. All environments created for the project will be shown to researchers in the form of a gallery view (see also [Creating a new environment](../create/create-env.md)). Each tile shows the tools as well as the image. When selecting an environment, the command, arguments and environment variables defined in the environment are visible for review. The researcher can edit (delete or add new) arguments and environment variables that are very specific to his/hers use and that are not part of the common shared environment. In some cases, it would even be expected that the researcher will provide additional information (for example, values for environment variables) to successfully create the workspace (see also [Create new environment](../create/create-env.md)).
+An environment is a mandatory element of a workspace. All environments created for the project will be shown to researchers in the form of a gallery view (see also [Creating a new environment](../create/create-env.md)). Each tile shows the tools as well as the image. When selecting an environment, the command, arguments and environment variables defined in the environment are visible for review. The researcher can edit arguments and environment variables that are specific to the current workspace and that are not part of the common shared environment. In some cases, it would even be expected that the researcher will provide additional information (for example, values for environment variables) to successfully create the workspace (see also [Create new environment](../create/create-env.md)).
 
 ![](img/13-env-vars.png)
 
 
-In the environment, you can also decide whether the workspace is preemptable or not (see also [create a preemptable worksapce](../create/workspace.md#create-a-preemptible-workspace)). By default, interactive sessions are limited to the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter, the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
+You can also decide whether the workspace is preemptable or not (see also [create a preemptable worksapce](../create/workspace.md#create-a-preemptible-workspace)). By default, interactive sessions are limited to the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter, the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
 
 ### Select a compute resource for a new workspace
 
