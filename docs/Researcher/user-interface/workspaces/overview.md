@@ -23,7 +23,7 @@ Workspaces can be stopped and started to save expensive resources without losing
 
 Only when a workspace is in status active (see also [Workspace Statuses](./statuses.md)) does it consume resources. 
 
-When the workspace is active it exposes the connections to the tools (for example, A Jupyter notebook) within the workspace (See also [Connect to a tool](#xxx)).
+When the workspace is active it exposes the connections to the tools (for example, A Jupyter notebook) within the workspace (See also [Connect to a tool](xxx)).
 
 
 ![](img/2-connecting-to-tools.png)

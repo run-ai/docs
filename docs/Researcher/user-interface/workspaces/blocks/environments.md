@@ -2,7 +2,7 @@
 # Environment introduction
 
 
-The _environment_ block consists of the URL path for the container image and the image pull policy. It exposes all the necessary tools (open source, 3rd party, or custom tools) along with their connection interfaces  (See also [External URL](#xxx), [External node port](#xxx) and the container ports.
+The _environment_ block consists of the URL path for the container image and the image pull policy. It exposes all the necessary tools (open source, 3rd party, or custom tools) along with their connection interfaces  (See also [External URL](xxx), [External node port](xxx) and the container ports.
 
 An environment is a __mandatory__ building block for the creation of a workspace. 
 

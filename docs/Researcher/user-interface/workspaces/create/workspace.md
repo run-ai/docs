@@ -33,23 +33,23 @@ See picture:
 
 ### Select an Environment for a new workspace
 
-An environment is a mandatory element of a workspace. All environments created for the project will be shown to researchers in the form of a gallery view (see also [Creating a new environment](#xxx)). Each tile shows the tools as well as the image. When selecting an environment, the command, arguments and environment variables defined in the environment are visible for review. The researcher can edit (delete or add new) arguments and environment variables that are very specific to his/hers use and that are not part of the common shared environment. In some cases, it would even be expected that the researcher will provide additional information (for example, values for environment variables) to successfully create the workspace (see also [Create new environment](#xxx)).
+An environment is a mandatory element of a workspace. All environments created for the project will be shown to researchers in the form of a gallery view (see also [Creating a new environment](../create/create-env.md)). Each tile shows the tools as well as the image. When selecting an environment, the command, arguments and environment variables defined in the environment are visible for review. The researcher can edit (delete or add new) arguments and environment variables that are very specific to his/hers use and that are not part of the common shared environment. In some cases, it would even be expected that the researcher will provide additional information (for example, values for environment variables) to successfully create the workspace (see also [Create new environment](xxx)).
 
 ![](img/13-env-vars.png)
 
 
-In the environment you can also decide whether the workspace is preemptable or not (see also create a preemtable worksapce). By default, interactive sessions are limited to use the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
+In the environment, you can also decide whether the workspace is preemptable or not (see also create a preemtable worksapce). By default, interactive sessions are limited to the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter, the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
 
 ### Select a compute resource for a new workspace
 
-Selecting compute resources for the workspace is a mandatory step. If compute resources are created for the project (see also [creating a new compute resource](#xxx)), those will be offered to researchers in the form of a gallery view. Each tile shows the amount of GPU, CPU and Memory in the request.
+Selecting compute resources for the workspace is a mandatory step. If compute resources are created for the project (see also [creating a new compute resource](xxx)), those will be offered to researchers in the form of a gallery view. Each tile shows the amount of GPU, CPU and Memory in the request.
 
 
 ![](img/14-select-cr.png)
 
 ### Select a data source for a new workspace
 
-Selecting a data source for the workspace is a non-mandatory step. If data sources are created for the project (see also [creating a new compute resource](#xxx)), those will be offered to researchers in the form of a gallery view. Each tile shows the unique name of the building block and the type of data source.
+Selecting a data source for the workspace is a non-mandatory step. If data sources are created for the project (see also [creating a new compute resource](../create/create-compute.md)), those will be offered to researchers in the form of a gallery view. Each tile shows the unique name of the building block and the type of data source.
 
 ![](img/15-select-ds.png)
 
@@ -68,7 +68,7 @@ Few examples:
 * A template can have the value of an environment variable empty for the researcher to edit later during the workspace creation.
 * A template can consist of an environment with a tool that requests a custom URL. This URL field stays empty until the researcher fills it upon creating the workspace
 
-For collaboration purposes, templates are assigned to a specific project and are shared with all project members by design (see also [Creating a new template](#xxx)).
+For collaboration purposes, templates are assigned to a specific project and are shared with all project members by design (see also [Creating a new template](xxx)).
 
 ## Create a preemptible workspace
 

@@ -107,7 +107,7 @@ Run:
     Follow the instructions on the Cluster Wizard
     
     !!! Info
-        To install a specific version, add `--version <version>` to the install command.
+        To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.
 
 
 === "Airgapped"

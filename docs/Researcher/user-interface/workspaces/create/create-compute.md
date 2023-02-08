@@ -37,7 +37,7 @@ GPU resources can be expressed in various ways:
 
 !!! Note  
     * Selecting a GPU fraction (e.g. 0.5 GPU) in a heterogeneous cluster may provide a different GPU memory allocation (e.g. half of a V100 16GB GPU memory is different than A100 40GB) per workspace. In such scenarios. Requesting specific GPU memory is a better strategy.
-    * When selecting partial memory of a single GPU device, if NVIDIA MIG is enabled on a node, then the memory can be provided as a MIG profile. For more information see [Dynamic MIG](../../../../scheduling/fractions.md#dynamic-mig). 
+    * When selecting partial memory of a single GPU device, if NVIDIA MIG is enabled on a node, then the memory can be provided as a MIG profile. For more information see [Dynamic MIG](../../../scheduling/fractions.md#dynamic-mig). 
     * If GPUs are not requested, they will not be allocated even if resources are available. In that case, the project's GPU quota will not be affected.
 
 ### Set CPU resources
