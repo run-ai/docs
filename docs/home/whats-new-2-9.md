@@ -25,11 +25,11 @@ Added support for CPU workloads to support over-quota - CPU resources fairness w
 
 ## Run:ai Workspaces
 
-A Run:ai workspace is a simplified, efficient tool for data scientists to conduct their experiments, build AI models, access standard MLOps tools, and collaborate with their peers.
+A Run:ai workspace is a simplified, efficient tool for researchers to conduct their experiments, build AI models, access standard MLOps tools, and collaborate with their peers.
 
 Run:ai workspaces abstract complex concepts related to running containerized workloads in a Kubernetes environment, such as networking, storage, and secrets, and are built from predefined abstracted setups, that ease and streamline the researcher AI models development. A workspace consists of container images, data sets, resource requests, and all the required tools for the research. They are quickly created with the workspace wizard. For more information see [Workspaces](../Researcher/user-interface/workspaces/overview.md).
 
-### New supported tools for data scientists
+### New supported tools for researchers
 
 As part of the introduction of Run:ai workspaces a few new development and research tools were added. The new supported tools are: RStudio, CSCode, Matlab and Weights and Biases (see full details). This is an addition to adding already supported tools, such as JupyterNotebook and TensorBoard to Run:ai workspaces.
 
