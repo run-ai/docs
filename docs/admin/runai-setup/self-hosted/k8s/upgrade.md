@@ -18,13 +18,17 @@ title: Upgrade self-hosted Kubernetes installation
 Before upgrading the control plane, run: 
 
 ``` YAML
-kubectl delete --namespace runai-backend --all deployments,statefulset,svc,ing,ServiceAccount,secrets
-kubectl delete ValidatingWebhookConfiguration \ 
-    runai-backend-nginx-ingress-admission # (1) 
-kubectl delete ingressclass nginx 
+kubectl delete --namespace runai-backend --all \
+    deployments,statefulset,svc,ing,ServiceAccount,secrets
 ```
 
-1. Prior to version 2.9 Run:ai installation, by default, has also installed NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+Prior to version 2.9 Run:ai installation, by default, has also installed NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+
+```
+kubectl delete ValidatingWebhookConfiguration \ 
+    runai-backend-nginx-ingress-admission
+kubectl delete ingressclass nginx 
+```
 
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
