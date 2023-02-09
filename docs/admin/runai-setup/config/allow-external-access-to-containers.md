@@ -25,23 +25,56 @@ See [https://kubernetes.io/docs/concepts/services-networking/service](https://ku
 
 :octicons-versions-24: Version 2.9 and up 
 
-Version 2.9 introduces [Workspaces](../../../Researcher/user-interface/workspaces/overview.md) which allow the Researcher to  build AI models interactively. 
+Version 2.9 introduces [Workspaces](../../../Researcher/user-interface/workspaces/overview.md) which allow the Researcher to build AI models interactively. 
 
 Workspaces allow the Researcher to launch tools such as Visual Studio code, TensorFlow, TensorBoard etc. These tools require access to the container. Access is provided via URLs. 
 
-Run:ai uses the [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) provided to dynamically create SSL-secured URLs for researchers’ workspaces in the format of https://<CLUSTER_URL>/project-name/workspace-name.
+Run:ai uses the [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) provided to dynamically create SSL-secured URLs for researchers’ workspaces in the format of `https://<CLUSTER_URL>/project-name/workspace-name`.
 
-While this form of path-based routing conveniently works with applications like JupyterLab, it may often not be compatible with other applications. These applications assume running at the root file system, so hardcoded file paths and settings within the container may become invalid when running at a path other than the root. For instance, if the container is expecting to find a file at /etc/config.json but is running at /project-name/workspace-name, the file will not be found. This can cause the container to fail or not function as intended.
+While this form of path-based routing conveniently works with applications like Jupyter Notebooks, it may often not be compatible with other applications. These applications assume running at the root file system, so hardcoded file paths and settings within the container may become invalid when running at a path other than the root. For instance, if the container is expecting to find a file at `/etc/config.json` but is running at `/project-name/workspace-name`, the file will not be found. This can cause the container to fail or not function as intended.
 
-To address this issue, Run:ai provides support for __host-based routing__. When enabled, Run:ai creates workspace URLs in a subdomain format (https://project-name-workspace-name.<CLUSTER_URL>/), which allows all workspaces to run at the root path and function properly. 
+To address this issue, Run:ai provides support for __host-based routing__. When enabled, Run:ai creates workspace URLs in a subdomain format (`https://project-name-workspace-name.<CLUSTER_URL>/`), which allows all workspaces to run at the root path and function properly. 
 
-To enabled host-based routing you must perform the following steps:
+To enable host-based routing you must perform the following steps:
 
 1. Create a second DNS entry  `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#domain-name) DNS.
 2. Obtain a __star__ SSL certificate for this DNS.
-3. Add as secret XXX
-4. Create an ingress rule to direct traffic XXX 
-5. Edit Runaiconfig to generate the URLs correctly. XXX
+
+
+Add the certificate as a secret:
+
+=== "SaaS" 
+    ```
+    kubectl create secret tls runai-cluster-domain-star-tls-secret -n runai \ 
+        --cert /path/to/fullchain.pem --key /path/to/private.pem
+    ```
+
+=== "Self hosted"
+    ```
+    kubectl create secret tls runai-cluster-domain-star-tls-secret -n runai-backend \
+        --cert /path/to/fullchain.pem --key /path/to/private.pem
+    ```
+
+Create an ingress rule to direct traffic:
+
+=== "SaaS" 
+    ```    
+    kubectl patch ingress researcher-service-ingress -n runai --type json \
+        --patch '[{ "op": "add", "path": "/spec/tls/-", "value": { "hosts": [ "*.<CLUSTER_URL>" ], "secretName": "runai-cluster-domain-star-tls-secret" } }]'
+    ```
+
+=== "Self hosted"
+    ```
+    kubectl patch ingress runai-backend-ingress -n runai-backend --type json \
+        --patch '[{ "op": "add", "path": "/spec/tls/-", "value": { "hosts": [ "*.<CLUSTER_URL>" ], "secretName": "runai-cluster-domain-star-tls-secret" } }]'
+    ```
+
+Edit Runaiconfig to generate the URLs correctly
+
+```
+kubectl patch RunaiConfig runai -n runai --type="merge" \
+    -p '{"spec":{"global":{"subdomainSupport": true}}}' 
+```
 
 Once these requirements have been met, all workspaces will automatically be assigned a secured URL with a subdomain, ensuring full functionality for all researcher applications.
 
