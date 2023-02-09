@@ -97,7 +97,7 @@ A [special process](../admin/runai-setup/self-hosted/k8s/upgrade.md#upgrading-to
 
 - Run:ai now supports Kubernetes 1.25 and 1.26.
 - Run:ai now supports Openshift 4.11
-- Run:ai now supports all run:ai features including Dynamic MIG with NVIDIA H100 hardware
+- Run:ai now supports Dynamic MIG with NVIDIA H100 hardware
 - The Run:ai command-line interface now supports Microsoft Windows. See [Install the Run:ai Command-line Interface](https://github.com/run-ai/docs/blob/2.9/docs/admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
 
 ## Known Issues
