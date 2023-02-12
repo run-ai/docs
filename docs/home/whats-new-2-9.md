@@ -33,6 +33,10 @@ Run:ai workspaces abstract complex concepts related to running containerized wor
 
 As part of the introduction of Run:ai workspaces a few new development and research tools were added. The new supported tools are: RStudio, CSCode, Matlab and Weights and Biases (see full details). This is an addition to adding already supported tools, such as JupyterNotebook and TensorBoard to Run:ai workspaces.
 
+**Weight and Biases**
+
+Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models in order to make informed decisions. This integration provides data researchers with connectivity between the running Workspace in Run:ai and the relevant project for experiment tracking. For more information, see [Weights and Biases](../Researcher/user-interface/workspaces/)
+
 **Node pools enhancements**
 
 Added additional support to multi-node pools. This new capability allows the researcher to specify a prioritized list of node pools for the Run:ai scheduler to use. Researchers now gain the flexibility to use multiple resource types and maximize the utilization of the system’s GPU and CPU resources. Administrators now have the option to set a default Project (namespace) level with a prioritized list of node pools that a workload will use if the researcher did not set its own priorities.
