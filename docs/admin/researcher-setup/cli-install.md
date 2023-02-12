@@ -14,14 +14,14 @@ When enabled, Researcher authentication requires additional setup when installin
 *   When installing the command-line interface, it is worth considering future upgrades:
      * Install the CLI on a dedicated _Jumpbox_ machine. Researchers will connect to the Jumpbox from which they can submit Run:ai commands
      * Install the CLI on a shared directory that is mounted on Researchers' machines.  
-*   A __Kubernetes configuration file__ obtained from the Kubernetes cluster installation.
+*   A __Kubernetes configuration file__. 
 
 
 ## Setup
 
 ### Kubernetes Configuration
 
-*   On the Researcher's root folder, create a directory _.kube_. Copy the Kubernetes configuration file into the directory. Each Researcher should have a __separate copy__ of the configuration file. The Researcher should have write access to the configuration file as it stores user defaults. 
+*   On the Researcher's root folder, create a directory _.kube_. Copy the Kubernetes configuration file into the directory. Each Researcher should have a __separate copy__ of the configuration file. The Researcher should have _write_ access to the configuration file as it stores user defaults. 
 *   If you choose to locate the file at a different location than `~/.kube/config`, you must create a shell variable to point to the configuration file as follows:
 
 ```
@@ -36,18 +36,59 @@ kubectl get nodes
 
 ### Install Run:ai CLI 
 
-* Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
-* Select Mac or Linux.
-* Download directly using the button or copy the command and run it on a remote machine
-* Run:
 
-``` bash 
-chmod +x runai
-sudo mv runai /usr/local/bin/runai
-```
+=== "Mac or Linux"
+     * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
+     * Select `Mac` or `Linux`. 
+     * Download directly using the button or copy the command and run it on a remote machine
+     * Run:
+
+     ``` bash 
+     chmod +x runai
+     sudo mv runai /usr/local/bin/runai
+     ```
+
+=== "Windows (Run:ai Version 2.9)" 
+     * Go to the Run:ai user interface. On the top right select `Researcher Command Line Interface`.
+     * Select `Windows`
+     * Download directly using the button or copy the command and run it on a remote machine
+     * Rename the downloaded file to have a `.exe` extension and move the file to a folder that is a part of the `PATH`.
+
+
+=== "Windows (Run:ai Version 2.8 or lower)" 
+     * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
+     * Get the following folder from GitHub: [https://github.com/run-ai/docs/tree/master/cli/windows](https://github.com/run-ai/docs/tree/master/cli/windows){target=_blank}.
+     * Replace `config` with your Kubernetes Configuration file.
+     * Replace `<CLUSTER-URL>` in the Dockerfile with the URL of the cluster. The URL can be found in the `Clusters` view of the Run:ai user interface. 
+     * Run: `build.sh` to create a docker image named `runai-cli`.
+
+     Test the image by running:
+
+     ``` bash
+     docker run -it runai-cli bash
+     ```
+
+     Try and connect to your cluster from inside the docker by running a Run:ai CLI command. E.g. `runai list projects`.
+
+     Distribute the image to Windows users.
+
+
+     * In case you want to use port-forward feature please use the following command
+
+     ``` bash
+     docker run -it -p <PORT>:<PORT> runai-cli bash
+     ```
+
+     And when using `runai submit` command add the following flag:
+     ```
+     --address 0.0.0.0
+     ```
+
+
+
 
 !!! Note
-An alternative way of downloading the CLI is provided under the [CLI Troubleshooting](../troubleshooting/troubleshooting.md#command-line-interface-issues) section.
+     An alternative way of downloading the CLI is provided under the [CLI Troubleshooting](../troubleshooting/troubleshooting.md#command-line-interface-issues) section.
 
 
 
@@ -76,7 +117,7 @@ source <(runai completion zsh)
 Install the bash-completion package:
 
 * Mac: `brew install bash-completion`
-* Ubundu/Debian: `sudo apt-get install bash-completion`
+* Ubuntu/Debian: `sudo apt-get install bash-completion`
 * Fedora/Centos: `sudo yum install bash-completion`
 
 Edit the file `~/.bashrc`. Add the lines:
@@ -101,34 +142,4 @@ If you have installed using the default path, run:
 
 ```
 sudo rm /usr/local/bin/runai
-```
-
-## Use Run:ai on Windows
-
-* Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/){target=_blank}.
-* Get the following folder from GitHub: [https://github.com/run-ai/docs/tree/master/cli/windows](https://github.com/run-ai/docs/tree/master/cli/windows){target=_blank}.
-* Replace `config` with your Kubernetes Configuration file.
-* Replace `<CLUSTER-URL>` in the Dockerfile with the URL of the cluster. The URL can be found in the `Clusters` view of the Run:ai user interface. 
-* Run: `build.sh` to create a docker image named `runai-cli`.
-
-Test the image by running:
-
-``` bash
-docker run -it runai-cli bash
-```
-
-Try and connect to your cluster from inside the docker by running a Run:ai CLI command. E.g. `runai list projects`.
-
-Distribute the image to Windows users.
-
-
-* In case you want to use port-forward feature please use the following command
-
-``` bash
-docker run -it -p <PORT>:<PORT> runai-cli bash
-```
-
-And when using `runai submit` command add the following flag:
-```
---address 0.0.0.0
 ```

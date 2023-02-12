@@ -2,7 +2,7 @@
 
 Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
-```
+``` YAML
 KIND:     TrainingWorkload
 VERSION:  run.ai/v2alpha1
 
@@ -165,16 +165,6 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
-   nodeType	<Object>
-     Specifies nodes (machines) or a group of nodes on which the workload will
-     run. To use this feature, your Administrator will need to label nodes as
-     explained in the Group Nodes guide at
-     https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag
-     can be used in conjunction with Project-based affinity. In this case, the
-     flag is used to refine the list of allowable node groups set in the
-     Project. For more information see the Projects setup guide at
-     https://docs.run.ai/admin/admin-ui-setup/project-setup.
-
    nodePool <Object>
      Specifies a group of nodes (machines) on which the workload will run. 
      To use this feature, your Administrator will need to label nodes and 
@@ -186,6 +176,16 @@ FIELDS:
      affinity. In this case, the combination of both flags is used to refine
      the list of allowable nodes from a node-pool which the workload can 
      use to run. For more information see the Projects setup guide at
+     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+
+   nodeType	<Object>
+     Specifies nodes (machines) or a group of nodes on which the workload will
+     run. To use this feature, your Administrator will need to label nodes as
+     explained in the Group Nodes guide at
+     https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag
+     can be used in conjunction with Project-based affinity. In this case, the
+     flag is used to refine the list of allowable node groups set in the
+     Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
    parallelism	<Object>
@@ -230,9 +230,9 @@ FIELDS:
      Specifies S3 buckets to mount into the container running the workload
 
    serviceType	<Object>
-     Specifies the service exposure method for created workloads. Options are:
-     portforward, loadbalancer, nodeport. Different service methods
-     have different endpoint structures. For more information see the External
+     Specifies the default service exposure method for ports. The default shall
+     be used for ports which do not specify service type. Options are:
+     LoadBalancer, NodePort or ClusterIP. For more information see the External
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
 
@@ -281,4 +281,3 @@ FIELDS:
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
 ```
-

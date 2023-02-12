@@ -17,7 +17,7 @@ theme:
     - search.suggest
 extra_css:
   - stylesheets/extra.css
-strict: true   
+#strict: true   
  
 markdown_extensions:
   - pymdownx.highlight:
@@ -122,6 +122,7 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
       - 'Whats New 2022' : 'home/whats-new-2022.md'
       - 'Whats New 2021' : 'home/whats-new-2021.md'
@@ -172,6 +173,7 @@ nav:
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
+        - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
       - 'Authentication' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
@@ -227,6 +229,20 @@ nav:
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
       - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+    - 'User Interface' :
+      - 'Workspaces' :
+        - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
+        - 'Building Blocks' : 
+          - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
+          - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
+          - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
+          - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
+        - 'Creation' :
+            - 'Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
+            - 'Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+            - 'Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+            - 'Workspaces' :  'Researcher/user-interface/workspaces/create/workspace.md'
+        - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
@@ -259,7 +275,8 @@ nav:
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
-      - 'Hyperparameter optimization' : 'Researcher/scheduling/hpo.md'
+      - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
+      - 'Hyperparameter Optimization' : 'Researcher/scheduling/hpo.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    

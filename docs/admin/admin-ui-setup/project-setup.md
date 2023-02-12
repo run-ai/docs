@@ -15,16 +15,18 @@ As an Admin, you need to determine how to model Projects. You can:
 *   Set a Project per a real organizational Project.
 
 ## Node Pools 
-By default, the Run:ai system associates all nodes with a _Default_ node pool. The administrator can choose to create new node pools and include a set of nodes with a specific node pool by associating the node pool with a label that is shared by all those nodes.
-Each node pool is automatically associated with all Projects and Departments with zero resource allocation (Quotas). 
+
+By default all nodes on a cluster are part of 'Default' node pool. Administrator can choose to create new node pools and include a set of nodes to a node pool by associating a label that is shared by all those nodes.
+Each node pool is automatically associated with all Projects and Departments with zero resources allocation (Quotas). 
+When submitting a Job (or Deployment), the Researcher (or ML Engineer) can chose a single node pool to use, or multiple node pools to use. When chosing more than one node pool, the researcher sets the order of priority between the chosen node pools, the scheduler will try to schedule the Job to the first node pool, then if not successful, to the second node pool in the list, and so on, until it finds a node pool that can provide the Job's specification.
+Administrator can set a 'Project's default priority list' of node pools, so incase the Researcher did not specify any node pool (or node pool list), the scheduler will use the Project's default node pool priority list to determine the order that the scheduler will use when scheduling the Job.
 
 ## Project Quotas
 
-Each Project is associated with a total quota of GPU and CPU resources that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is the __guaranteed quota__ in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status of the cluster is.
+Each Project is associated with a total quota of GPU and CPU resources (CPU Compute & CPU Memory) that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is __guaranteed quota__ in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status in the cluster is.
 
-Beyond the guaranteed resources, a user of this Project can receive an __over-quota__ (the administrator needs to enable over-quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. However, these GPUs can be taken away at a moment's notice. 
+Beyond that, a user of this Project can receive an __over-quota__ (Administrator needs to enable over-quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When node-pools flag is enabled, over-quota is effective and calculated per node-pool, this means that a workload requesting resources from a certain node pool, can get its resources from a quota that belongs to another Project for the same node pool, if the resources are exhaused for this Project and avaialble on another Project. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
-When node pools are enabled, over-quota is effective and calculated __per node pool__, this means that a workload requesting resources from a specific node pool, will get its resources from a quota that belongs to another Project - if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [The Run: ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 __Important best practice:__ As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
 
@@ -57,11 +59,13 @@ If you are using Single-sign-on, you can also assign Groups
 ## Other Project Properties
 ### Limit Jobs to run on Specific Node Groups
 
-You can assign a Project to run on specific nodes (machines). This is achieved using two different mechanisms:
+You can assign a Project to run on specific nodes (machines).This is achieved by two different mechnisms:
 
-*   __Node Pools__: All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources to this Project. By associating quota on specific node pools for this Project, you can control which nodes this Project can utilize. In addition, each workload should choose the node pool to use (if no choice is made, it will use the  `Default` node pool). Note that node pools with zero resources associated with this Project or with exhausted resources can still be used by this Project when the Over-Quota flag is enabled.
+*   Node Pools: 
+        All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources (CPU Compute & CPU Memory) to a Project. By associating a quota on specific node pools for a Project, you can control which nodes a Project can utilize and which default priority order the scheduler will use (in case the workload did chose so by itself). Each workload should choose the node pool(s) to use, if no choice is made, it will use the Project's default 'node pool priority list'. Note that node pools with zero resources associated to a Project or node pools with exhausted resources, can still be used by a Project when Over-Quota flag is enabled.
 
-*   __Node Affinities__ (a.k.a. Node Type). The administrator can associate specific node sets characterized by a shared run-ai/node-type label value to a Project. This means that descendant workloads can only use nodes from one of those node affinity groups. A workload can specify which node affinity to use, out of the list bound to its parent Project.
+*   Node Affinities (aka Node Type)
+        Administrator can assosciate specific node sets characterized by a shared run-ai/node-type label value to a Project. This means descendant workloads can only use nodes from one of those node affinity groups. A workload can specify which node affinity to use, out of the list bounded to its parent Project.
 
 There are many use cases and reasons to use specific nodes for a Project and its descendant workloads, here are some examples:
  
@@ -69,8 +73,8 @@ There are many use cases and reasons to use specific nodes for a Project and its
 *   The project team is the owner of specific hardware which was acquired with a specialized budget.
 *   We want to direct build/interactive workloads to work on weaker hardware and direct longer training/unattended workloads to faster nodes.
 
-#### The difference between Node Pools and Affinities
-Node pools represent an independent scheduling domain per Project, they are therefore completely segregated from each other. To use a specific node pool, any workload must specify the node pool it would like to use. For affinities, workloads that ask for a specific affinity will only be scheduled to nodes marked with that affinity, while workloads that did not specify any affinity might be scheduled as well to those nodes with an affinity. Thus the scheduler cannot guarantee quota for node affinities, only to node pools.
+#### The difference between `node pools` and `affinities`
+Node pools represent an independent schduling domain per Project, therefore are completly segragated from each other. To use a specific node pool (or node pools), any workload must specify the node pool(s) it would like to use. While for affinites, workloads that ask for a specific affinity will only be scheduled to nodes marked with that affinity, while workloads that did not specify any affinity might be schduled as well to those nodes with an affinity. Therefore the schduler cannot guarantee quota for node affinities, only to node pools.
 
 
 Note that using node pools and affinities narrows down the scope of nodes a specific project is eligible to use. It, therefore, reduces the odds of a specific workload under that Project getting scheduled. In some cases, this may reduce the overall system utilization.
@@ -95,13 +99,16 @@ To create a node pool with the chosen common label use the [create node pool](ht
 
 #### Setting Node Pools for a Specific Project
 
-By default, all node pools are associated with every Project and Department using zero resource allocation. This means that by default any Project can use any node-pool if Over-Quota is set for that Project and only for preemptible workloads (i.e. Training workloads or Interactive using Preemptible flag).
+By default all node-pools are associated with every Project and Department using zero resource allocation. This means that by default any Project can use any node-pool if Over-Quota is set for that Project, but only for preemptible workloads (i.e. Training workloads or Interactive using Preemptible flag).
 
-* To guarantee resources for all workloads including non-preemptible workloads, the administrator should allocate resources in node pools.
-*   Go to the `Node Pools` tab under Project and set a quota to specific node pools (GPU resources, CPU resources).
-*   To mandate a Workload to run on a specific node pool, the Researcher should specify the node pool to use for a workload. 
-*   If no node pool is specified, the `Default` node pool is used. 
-*   Press `Save` to save your changes.
+*   To gaurantee resources for all workloads including non-preemptible workloads, administrator should allocate resources in node-pools.
+*   Go to the _Node Pools_ tab under Project and set a quota to any of the node pools (GPU resources, CPU resources) you want to use.
+*   To set the Project's default node pools order of priority, you should set the precednece of each node pool, this is done in the Project's node pool tab.
+*   The node pool default priority order is used if the workload did not specify its own preffered node pool(s) list of priority.
+*   To mandate a Workload to run on a specific node pools, Researcher should specify the node-pool to use for a workload. 
+*   If no node-pool is specified - the Project's 'Default' node-pool priority list is used. 
+*   Press 'Save' to save your changes.
+
 
 #### Grouping Nodes using Node Affinities  
 
@@ -138,7 +145,7 @@ To mandate __interactive__ Jobs to run on specific node groups, perform the same
 
 The Researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used with a node group out of the previously chosen list.  See CLI reference for further information [runai submit](../../Researcher/cli-reference/runai-submit.md) 
 
-### Limit Duration of Interactive Jobs
+### Limit Duration of Interactive and Training Jobs
 
 As interactive sessions involve human interaction, Run:ai provides an additional tool to enforce a policy that sets the time limit for such sessions. This policy is often used to handle situations like researchers leaving sessions open even when they do not need to access the resources.
 
@@ -148,8 +155,22 @@ As interactive sessions involve human interaction, Run:ai provides an additional
 To set a duration limit for interactive Jobs:
 
 *   Create a Project or edit an existing Project.
-*   Go to the _Time Limit_ tab and set a limit (day, hour, minute).
+*   Go to the _Time Limit_ tab
+*   You can limit interactive Jobs using two criteria:
+    * Set a hard time limit (day, hour, minute) to an Interactive Job, regardless of the activity of this Job, e.g. stop the Job after 1 day of work.
+    * Set a time limit for Idle Interactive Jobs, i.e. an Interactive Job idle for X time is stopped. Idle means no GPU activity.
+    * You can set if this idle time limit is effective for Interactive Jobs that are Preemptible, non-Preemptible, or both. 
 
+The setting only takes effect for Jobs that have started after the duration has been changed. 
+
+On some use cases you would like to stop Training Jobs if X time elapsed since they have started to run. This can be to clean up stale Training Jobs or Jobs that are running for too long probbaly because of wrong parameters set or other errors of the model.
+
+To set a duration limit for Training Jobs:
+
+*   Create a Project or edit an existing Project.
+*   Go to the _Time Limit_ tab:
+    *   Set a time limit for Idle Training Jobs, i.e. a Training Job idle for X time is stopped. Idle means no GPU activity.
+    
 The setting only takes effect for Jobs that have started after the duration has been changed. 
 
 

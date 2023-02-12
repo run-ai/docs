@@ -40,7 +40,13 @@ To verify the installation run:
 runai-adm version
 ```
 
+### Download a specific version
 
+To download a specific version of `runai-adm` add the version number to URL. For example:
+
+```
+wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/v2.7.22/darwin
+```
 ## Updating the Run:ai Administrator CLI
 
 To update the CLI to the latest version perform the same install process again. The command `runai-adm update` is no longer supported.

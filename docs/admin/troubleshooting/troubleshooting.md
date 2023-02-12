@@ -176,7 +176,6 @@
     __Root Causes:__ (multiple)
 
     * You do not have `Researcher` or `Research Manager` permissions.
-    * Cluster version is 2.3 or lower.
     * Under `Settings | General`, verify that `Unified UI` is on.
 
 
@@ -225,6 +224,12 @@
     __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../runai-setup/authentication/researcher-authentication.md).
 
 
+??? "Job form is not opening on OpenShift"
+    __Symptom:__ When clicking on "New Job" the Job forms does not load. Network shows 405
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 
 
 ## Networking Issues
 
@@ -289,12 +294,12 @@
 
 ## Kubernetes-specific Issues
 
-??? "Cluster Installation failed on Rancher-based Kubernetes (RKE)"
+??? "Cluster Installation failed on RKE or EKS"
     __Symptom:__ Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started.
 
     __Resolution:__
 
-    Perform the required RKE steps [here](../runai-setup/cluster-setup/customize-cluster-install.md#rke-specific-setup).
+    Perform the required cert-manager steps [here](../runai-setup/cluster-setup/cluster-prerequisites.md#cert-manager).
 
 ## Inference Issues
 
@@ -386,3 +391,11 @@
     __Root Cause:__ By default, Python buffers stdout, and stderr, which are not flushed in real-time. This may cause logs to appear sometimes minutes after being buffered.
 
     __Resolution:__ Set the env var PYTHONUNBUFFERED to any non-empty string or pass -u to Python. e.g. `python -u main.py`.
+
+
+??? "CLI does not download properly on OpenShift"
+    __Symptom:__ When trying to download the CLI on OpenShift, the `wget` statement downloads a text file named `darwin` or `linux` rather than the binary `runai`.
+
+    __Root Cause:__ An installation step has been missed. 
+
+    __Resolution:__ Open the Cluster list and open the cluster installation wizard again. After selecting OpenShift, you will see a `patch` command at the end of the instruction set. Run it. 

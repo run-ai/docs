@@ -71,7 +71,7 @@ Run the helm command below:
     ```
 
     !!! Info
-        To install a specific version, add `--version <version>` to the install command.
+        To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
 
 === "Airgapped"
     ```
@@ -88,7 +88,7 @@ Run the helm command below:
 ## Connect to Run:ai User Interface
 
 
-Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`
+Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
 
 ## Next Steps
 

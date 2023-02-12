@@ -9,7 +9,9 @@ The following is a checklist of the Run:ai prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
+| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
+| [Cert manager](#cert-manager) | For RKE and EKS, you must install cert management if not already installed and configure Run:ai to use it | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow MPI if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
 
@@ -24,18 +26,19 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.24. Kubernetes 1.25 is not yet supported. For RedHat OpenShift. Run:ai supports OpenShift 4.8 to 4.10.
+Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.26 and OpenShift 4.8 to 4.11. Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
 Run:ai has been tested with the following Kubernetes distributions: 
 
 | Target Platform                          | Description | Installation Notes | 
 |------------------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
-| OCP | OpenShift Container Platform       | Run:ai Self-hosted only (Run:ai SaaS is not supported). <br> The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
-| EKS | Amazon Elastic Kubernetes Service  | Run:ai SaaS only (no self-hosted support) |
-| AKS | Azure Kubernetes Services          | Run:ai SaaS only (no self-hosted support)  |
-| GKE | Google Kubernetes Engine           | Run:ai SaaS only (no self-hosted support) | 
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. You must perform the mandatory extra step [here](./customize-cluster-install.md#rke-specific-setup). RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
+| OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
+| EKS | Amazon Elastic Kubernetes Service  |  |
+| AKS | Azure Kubernetes Services          |   |
+| GKE | Google Kubernetes Engine           |  | 
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
+| Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     |  |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
@@ -44,7 +47,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 
 !!! Notes
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai Supports Kubernetes [Pos Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes (and Run:ai) with the introduction of Kubernetes 1.25. As such, Run:ai will be removing support for PSP in versions higher than 2.8. 
+    * Run:ai Supports Kubernetes [Pos Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
 ### NVIDIA 
 
 Run:ai requires NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
@@ -165,7 +168,7 @@ For more information on how to create a TLS secret see: [https://kubernetes.io/d
 
 #### Cluster IP
 
-(Deprecated)
+(Deprecated in version 2.8, no longer available in version 2.9)
 
 Following are instructions on how to get the IP and set firewall settings. 
 
@@ -214,12 +217,30 @@ Following are instructions on how to get the IP and set firewall settings.
 ### Prometheus 
 
 
+=== "Version 2.9 or later" 
+    If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}
 
-The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
+=== "Version 2.8 or below" 
+    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
 
-* Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-* Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
+    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
+
+### Cert Manager
+
+Rancher Kubernetes Engine (RKE) and Amazon Elastic Kubernetes Engine (EKS) require a certificate manager as described [here](https://cert-manager.io/docs/installation/helm/){target=_blank}.
+
+You must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
+
+* Download the "On Premise" Kubernetes type. 
+* Edit the cluster values file and change `useCertManager` to `true` 
+
+``` yaml  hl_lines="3"
+init-ca:
+    enabled: true
+    useCertManager: true
+```
 
 ### Distributed Training
 

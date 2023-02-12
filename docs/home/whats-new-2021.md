@@ -2,7 +2,7 @@
 
 To comply with organizational policies and enhance the Run:ai platform security, Run:ai now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/authentication/sso.md).
 
-To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:ai now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on dynamic allocation of MIG partitions see [Dynamic MIG](../../Researcher/scheduling/fractions/#dynamic-mig).
+To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:ai now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on the dynamic allocation of MIG partitions see [Dynamic MIG](../../Researcher/scheduling/fractions/#dynamic-mig).
 
 Run:ai now supports AI workloads running in containerized clusters based on the VMWare Tanzu orchestrator. For further details on supported orchestrators see the [prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md) document.
 
@@ -78,7 +78,7 @@ Usability improvements of Run:ai Command-line interface (CLI). The CLI now suppo
  
 Usability improvements of the Administration user interface navigation menu now allow for easier navigation.
  
-Run:ai can be installed  when Kubernetes has [Pod Security Policy (PSP)](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} enabled.
+Run:ai can be installed when Kubernetes has [Pod Security Policy (PSP)](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} enabled.
 
 
 ## April 20<sup>th</sup> 2021
@@ -118,7 +118,7 @@ New Analytics dashboard with emphasis on CPU, CPU Memory, GPU, and GPU Memory. A
 
 ## January 15th, 2021
 
-New developer documentation area has been [created](../developer/overview-developer.md). In it:
+A new developer documentation area has been [created](../developer/overview-developer.md). In it:
 
 * New documentation for [Researcher REST API](../developer/deprecated/researcher-rest-api/overview.md).
 * New documentation for [Administration Rest API](../developer/admin-rest-api/overview.md).

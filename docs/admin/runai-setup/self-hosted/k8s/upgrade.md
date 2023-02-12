@@ -13,7 +13,28 @@ title: Upgrade self-hosted Kubernetes installation
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
 
 
+## Upgrading to Version 2.9
+
+Before upgrading the control plane, run: 
+
+``` bash
+kubectl delete --namespace runai-backend --all \
+    deployments,statefulset,svc,ing,ServiceAccount,secrets
+```
+
+Prior to version 2.9, the Run:ai installation, by default, has also installed NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+
+``` bash
+kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
+kubectl delete ingressclass nginx 
+```
+
+Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
+
+Then upgrade the control plane as described in the next section. 
+
 ## Upgrade Control Plane
+
 
 Run the helm command below. 
 
@@ -35,16 +56,10 @@ Run the helm command below.
 
 ## Upgrade Cluster 
 
-To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
 
 
 === "Connected"
-    ```
-    kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
-    helm repo update
-    helm get values runai-cluster -n runai > values.yaml
-    helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
-    ```
+    To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
 
 === "Airgapped"
     ```

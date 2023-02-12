@@ -3,24 +3,23 @@ title: Self Hosted installation over OpenShift - Preparations
 ---
 # Preparing for a Run:ai OpenShift Installation
 
-The following section provides IT with the information needed to prepare for a Run:ai installation. This includes Third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
+The following section provides IT with the information needed to prepare for a Run:ai installation. This includes third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
 
 
 ## Create OpenShift Projects
 
-Run:ai uses three projects. One for the control plane (`runai-backend`) and two for the cluster itself (`runai`, `runai-reservation`). 
+Run:ai control plane uses a namespace `runai-backend` (or _project_ in OpenShift terminology). The installation will automatically create the namespace, but if your organization requires manual creation of namespaces, you must create it before installing:
 
 ```
-oc new-project runai
-oc new-project runai-reservation
 oc new-project runai-backend
 ```
+
 
 ## Prepare Run:ai Installation Artifacts
 
 ### Run:ai Software Files
 
-SSH into a node with `oc` access (`oc` is the OpenShift command-line) to the cluster and `Docker` installed.
+SSH into a node with `oc` access (`oc` is the OpenShift command line) to the cluster and `Docker` installed.
 
 
 === "Connected"
@@ -71,25 +70,6 @@ To avoid single-point-of-failure issues, we recommend assigning more than one no
 
 !!! Warning
     Do not select the Kubernetes master as a runai-system node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
-
-## Install NVIDIA Dependencies
-
-
-!!! Note
-    You must have Cluster Administrator rights to install these dependencies. 
-
-Before installing Run:ai, you must install NVIDIA software on your OpenShift cluster to enable GPUs. 
-NVIDIA has provided [detailed documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/introduction.html){target=_blank}. 
-Follow the instructions to install the two operators `Node Feature Discovery` and `NVIDIA GPU Operator` from the OpenShift web console. 
-
-When done, verify that the GPU Operator is installed by running:
-
-```
-oc get pods -n nvidia-gpu-operator
-```
-
-(the GPU Operator namespace may differ in different operator versions).
-
 
 ## Additional Permissions
 
