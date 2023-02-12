@@ -5,7 +5,7 @@ Welcome to the Run:ai documentation area. For an introduction about what is the 
 
 The Run:ai documentation is targeting three personas:
 
-* Run:ai Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](./admin/overview-administrator.md).
+* Run:ai Administrator - Is responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](./admin/overview-administrator.md).
 
 * Researcher - Using Run:ai to submit Jobs. Researcher documentation can be found [here](./Researcher/overview-researcher.md).
 
@@ -34,7 +34,7 @@ Reach out to customer support for credentials.
 
 ## Run:ai Cloud Status Page
 
-Run:ai cloud availabilty is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
+Run:ai cloud availability is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
 
 ## Collect Logs to Send to Support
 
