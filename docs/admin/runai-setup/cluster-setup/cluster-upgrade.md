@@ -14,10 +14,16 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 ## Upgrade Run:ai cluster 
 
 
-!!! Important
-    The process of upgrading to 2.9 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
+### Upgrade to version 2.9
 
-    The reason for this process is that Run:ai 2.9 cluster installation no longer installs pre-requisites. As such ownership of dependencies such as Prometheus will be undefined if a `helm upgrade` is ran. 
+The process of upgrading to 2.9 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
+
+!!! Note
+    The reason for this process is that Run:ai 2.9 cluster installation no longer installs pre-requisites. As such ownership of dependencies such as Prometheus will be undefined if a `helm upgrade` is ran.
+
+After deleting the cluster, install the prerequisites. Specifically [Ingress Controller](cluster-prerequisites.md#ingress-controller) and [Prometheus](cluster-prerequisites.md#prometheus).
+ 
+### Upgrade
 
 Replace `<version>` with the new version number in the command below. Then run: 
 
