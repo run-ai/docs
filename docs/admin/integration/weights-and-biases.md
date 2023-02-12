@@ -1,8 +1,8 @@
 # Workspace Weights and Biases
 
-Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models in order to make informed decisions.
+Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models to make informed decisions.
 
-When Wights and Biases are integrated into Run:ai Workspaces, researchers can easily create their custom work environments and have access to a toolbox of many research relevant tools in a single place. Reseachers can now create useful connectivity between the running Workspace and the relevant project using Weights Biases for experiment tracking.
+When Wights and Biases are integrated into Run:ai Workspaces, researchers can easily create their custom work environments and have access to a toolbox of many researcher-relevant tools in a single place. Researchers can now create useful connectivity between the running Workspace and the relevant project using Weights Biases for experiment tracking.
 
 To configure Weights and Biases:
 
@@ -14,8 +14,8 @@ To configure Weights and Biases:
    
         ```Key = WANDB_PROJECT```
 
-        ```Value =``` leave empty for data scientist to fill it in when creating a Workspace in the next step.
+        ```Value =``` leave empty for researcher to fill it in when creating a Workspace in the next step.
 4. Create a [Workspace](/docs/Researcher/user-interface/workspaces/create/workspace.md) using the Environment you just created.
-5. In the Workspace, add the URL for your project in your Weights and Biases account to the ```value``` envirnonment variablre. 
+5. In the Workspace, add the URL for your project in your Weights and Biases account to the `value` environment variable. 
 
-This will create a link, that will autoacticaly open a new tab directly from your Worksapce to your exact Weights and Biases project.
+This will create a link, that will automatically open a new tab directly from your Workspace to your exact Weights and Biases project.

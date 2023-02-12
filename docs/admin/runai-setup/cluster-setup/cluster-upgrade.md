@@ -22,7 +22,7 @@ The process of upgrading to 2.9 requires [uninstalling](./cluster-delete.md) and
     The reason for this process is that Run:ai 2.9 cluster installation no longer installs pre-requisites. As such ownership of dependencies such as Prometheus will be undefined if a `helm upgrade` is ran.
 
 After deleting the cluster, install the prerequisites. Specifically [Ingress Controller](cluster-prerequisites.md#ingress-controller) and [Prometheus](cluster-prerequisites.md#prometheus).
- 
+
 ### Upgrade
 
 Replace `<version>` with the new version number in the command below. Then run: 
@@ -30,7 +30,7 @@ Replace `<version>` with the new version number in the command below. Then run:
 ```
 kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
 ```
-The number should have 3 digits (for example `2.7.14`). You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
+The number should have 3 digits (for example `1.2.34`). You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
 
 Then run:
 
