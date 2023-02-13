@@ -3,7 +3,7 @@
 
 ## Find out Run:ai Cluster version 
 
-To find the Run:ai cluster version before and after upgrade run:
+To find the Run:ai cluster version, run:
 
 ```
 helm list -n runai -f runai-cluster
@@ -53,18 +53,12 @@ helm get values runai-cluster -n runai > values.yaml
 helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
 ```
 
-## Upgrade to a Specific Verison
-
-To upgrade to a specific version, add `--version <version-number>` to the `helm upgrade` command. 
+!!! Note
+    To upgrade to a __specific__ version of the Run:ai cluster, add `--version <version-number>` to the `helm upgrade` command. You can find the relevant version with `helm search repo` as described above. 
 
 ## Verify Successful Installation
 
-To verify that the upgrade has succeeded run:
+See [Verify your installation](cluster-install.md#verify-your-installation) on how to verify a Run:ai cluster installation
 
-```
-kubectl get pods -n runai
-```
-
-Verify that all pods are running or completed.
 
 
