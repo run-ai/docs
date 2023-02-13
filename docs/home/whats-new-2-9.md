@@ -67,13 +67,13 @@ Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/clust
 
 #### Cluster Prerequisites
 
-- Prometheus is no longer installed together with Run:ai. You must install the [Prometheus stack](https://github.com/run-ai/docs/blob/2.9/docs/admin/runai-setup/cluster-setup/cluster-prerequisites.md#prometheus) before installing Run:ai. This is designed for organizations that already have Prometheus installed in the cluster. The Run:ai installation configures the existing Prometheus with a custom set of rules designed to extract metrics from the cluster.
+- Prometheus is no longer installed together with Run:ai. You must install the [Prometheus stack](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prometheus) before installing Run:ai. This is designed for organizations that already have Prometheus installed in the cluster. The Run:ai installation configures the existing Prometheus with a custom set of rules designed to extract metrics from the cluster.
 
-- NGINX is no longer installed together with Run:ai. You must install an [Ingress controller](https://github.com/run-ai/docs/blob/2.9/docs/admin/runai-setup/cluster-setup/cluster-prerequisites.md#ingress-controller) before installing Run:ai. This is designed for organizations that already have an ingress controller installed. The Run:ai installation creates NGINX rules to work with the controller.
+- NGINX is no longer installed together with Run:ai. You must install an [Ingress controller](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#ingress-controller) before installing Run:ai. This is designed for organizations that already have an ingress controller installed. The Run:ai installation creates NGINX rules to work with the controller.
 
-- List of Run:ai installation Prerequisites can be found [here](https://github.com/run-ai/docs/blob/2.9/docs/admin/runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell).
+- List of Run:ai installation Prerequisites can be found [here](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell).
 
-- The Run:ai installation now performs a series of checks to verify the installation's validity. When the installation is complete, [verify](https://github.com/run-ai/docs/blob/2.9/docs/admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by reviewing the following in the log file:
+- The Run:ai installation now performs a series of checks to verify the installation's validity. When the installation is complete, [verify](../admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by reviewing the following in the log file:
 
   - Are all mandatory prerequisites met?
   - Are optional prerequisites met?
@@ -102,7 +102,7 @@ A [special process](../admin/runai-setup/self-hosted/k8s/upgrade.md#upgrading-to
 - Run:ai now supports Kubernetes 1.25 and 1.26.
 - Run:ai now supports Openshift 4.11
 - Run:ai now supports Dynamic MIG with NVIDIA H100 hardware
-- The Run:ai command-line interface now supports Microsoft Windows. See [Install the Run:ai Command-line Interface](https://github.com/run-ai/docs/blob/2.9/docs/admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
+- The Run:ai command-line interface now supports Microsoft Windows. See [Install the Run:ai Command-line Interface](../admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
 
 ## Known Issues
 
@@ -117,7 +117,7 @@ A [special process](../admin/runai-setup/self-hosted/k8s/upgrade.md#upgrading-to
 |-----------|--------------|
 | RUN-7776|	user does not exist in the UI due to pagination limitation |
 | RUN-6995|	Group Mapping from SSO Group to Researcher Manager Role no working |
-| RUN-6460|	S3 Fail read/write in Jupyter notebook) |
+| RUN-6460|	S3 Fail (read/write in Jupyter notebook) |
 | RUN-6445|	Project can be created with deleted node pool |
 | RUN-6400|	EKS - Every command response in runai CLI starts with an error. No functionality harm |
 | RUN-6399|	Requested GPU is always 0 for MPI jobs, making also other metrics wrong |
