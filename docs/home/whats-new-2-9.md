@@ -74,11 +74,10 @@ Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/clust
 - List of Run:ai installation Prerequisites can be found [here](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell).
 
 - The Run:ai installation now performs a series of checks to verify the installation's validity. When the installation is complete, [verify](../admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by reviewing the following in the log file:
-
-  - Are all mandatory prerequisites met?
-  - Are optional prerequisites met?
-  - Does the cluster have connectivity to the Run:ai control plane?
-  - Does Run:ai support the underlying Kubernetes version?
+    - Are all mandatory prerequisites met?
+    - Are optional prerequisites met?
+    - Does the cluster have connectivity to the Run:ai control plane?
+    - Does Run:ai support the underlying Kubernetes version?
 
 #### Control Plane Upgrade
 
@@ -91,11 +90,11 @@ A [special process](../admin/runai-setup/self-hosted/k8s/upgrade.md#upgrading-to
 
 #### Other
 
-- Cluster Wizard has been simplified for environments with **multiple** clusters
+Cluster Wizard has been simplified for environments with **multiple** clusters
   in a self-hosted configuration. Clusters are now easier to configure. Choose a cluster location: 
-  
-  - Same as Control Plane 
-  - Remote to Control Plane. 
+
+- Same as Control Plane. 
+- Remote to Control Plane. 
 
 ### New Supported Software
 
