@@ -35,6 +35,13 @@ Then upgrade the control plane as described in the next section.
 
 ## Upgrade Control Plane
 
+If you have customized the backend values file in the older version, save it now by running
+
+```
+helm get values runai-backend -n runai-backend > old-be-values.yaml
+```
+
+Generate a new backend values file as described [here](backend.md#create-a-control-plane-configuration). Change the file with the above customization if relevant.
 
 Run the helm command below. 
 
@@ -42,14 +49,12 @@ Run the helm command below.
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm get values runai-backend -n runai-backend > be-values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f be-values.yaml 
+    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f runai-backend-values.yaml
     ```
 === "Airgapped"
     ```
-    helm get values runai-backend -n runai-backend > be-values.yaml
     helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
-        runai-backend  -f be-values.yaml
+        runai-backend  -f runai-backend-values.yaml
     ```
     (replace `<version>` with the control plane version)
 

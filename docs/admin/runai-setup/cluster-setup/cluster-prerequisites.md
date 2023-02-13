@@ -226,6 +226,11 @@ Following are instructions on how to get the IP and set firewall settings.
     ```
     git clone https://github.com/prometheus-community/helm-charts.git
     kubectl apply --server-side -f helm-charts/charts/kube-prometheus-stack/crds/ --force-conflicts
+    ```
+
+    Then install the Prometheus stack by running:
+    
+    ```
     helm install prometheus  prometheus-community/kube-prometheus-stack  -n monitoring --create-namespace
     ```
 
