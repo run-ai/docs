@@ -220,6 +220,15 @@ Following are instructions on how to get the IP and set firewall settings.
 === "Version 2.9 or later" 
     If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}
 
+
+    Due to a Prometheus bug describe [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank} you may need to apply the Prometheus CRDs as follows:
+
+    ```
+    git clone https://github.com/prometheus-community/helm-charts.git
+    kubectl apply --server-side -f helm-charts/charts/kube-prometheus-stack/crds/ --force-conflicts
+    helm install prometheus  prometheus-community/kube-prometheus-stack  -n monitoring --create-namespace
+    ```
+
 === "Version 2.8 or below" 
     The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
 

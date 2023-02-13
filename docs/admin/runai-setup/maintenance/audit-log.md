@@ -1,24 +1,25 @@
 
 ## Introduction
 
-The Run:ai control plane provides audit-log API and audit-log user interface table. Both reflect the same information:
+The Run:ai control plane provides audit log API and audit log user interface table. Both reflect the same information:
+
 * All changes to business objects
 * All logins to the control plane.
 
 ## Event History - Audit Log User Interface
 
-The Administrators of the system can view the audit-log using the user interface. The audit-log screen is under the 'Event History' section:
+The Administrators of the system can view the audit log using the user interface. The audit log screen is under the 'Event History' section:
 
 ![Event History full screen](img/event-history-full-screen.png)
 
-### Event History (audit log) infromation fields
-The Administrator can choose what information fields to view within the audit log table, this is done by clikcing the 'Columns' button and checking the required fields to be presented:
+### Event History (audit log) information fields
+The Administrator can choose what information fields to view within the audit log table, this is done by clicking the 'Columns' button and checking the required fields to be presented:
  
 ![Event History options](img/event-history-options-large.png)
 
 ![Event History columns](img/event-history-columns.png)
 
-Here's the list of avaialble informaiton fields in Event History (audit log) table:
+Here's the list of available information fields in the Event History (audit log) table:
 
 | Field       | Type         | Description  | 
 |-------------|--------------|--------------|
@@ -34,7 +35,7 @@ Here's the list of avaialble informaiton fields in Event History (audit log) tab
 | Cluster ID     | string    | The system internal identifier of the cluster that the loged operation relates to. If the operation is not cluster specific - cluster id remains empty. |
 
 ### Event History - Date Selector
-Event History table saves logged operations for the last 90 days. However, the table itself presents up to last 30 days of information due to the potentially very high number of operations that might be logged during this period. To view older logged operations, or if you wish to refine your search and get more specific results or less results, you should use the time selector and change the period of time or dates you search for. You can also refine your search by using filters as expalain here below.  
+The Event History table saves logged operations for the last 90 days. However, the table itself presents up to the last 30 days of information due to the potentially very high number of operations that might be logged during this period. To view older logged operations, or if you wish to refine your search and get more specific results or fewer results, you should use the time selector and change the period you search for. You can also refine your search by using filters as explained below.  
 
 
 ![Event History date selector](img/event-history-date-selector.png)
@@ -47,8 +48,8 @@ Multiple filters can be set in parallel.
 
 ![Event History filters](img/event-history-filters.png)
 
-### Event History - Download Audit Log file
-Event History table allows you to download the logged information in text form formatted as CSV or JSON files. The scope of the downloded information is set by the scope of the table filters, i.e. if no filters or date selectors are used, the downloded file includes the full scope of the information that the table holds - i.e. up to 30 days of logged information. To view older logged information (up to 90 days older, but no more than 30 days at a time), shorter time periods, or narrower (filtered) scopes - use the date selector and filters.
+### Event History - Download the Audit Log file
+The event history table allows you to download the logged information in text form formatted as CSV or JSON files. The scope of the downloaded information is set by the scope of the table filters, i.e. if no filters or date selectors are used, the downloaded file includes the full scope of the information that the table holds - i.e. up to 30 days of logged information. To view older logged information (up to 90 days older, but no more than 30 days at a time), shorter periods, or narrower (filtered) scopes - use the date selector and filters.
 
 ![Event History more sub-menu](img/event-history-more-sub-menu.png)
 
@@ -58,7 +59,7 @@ Since the amount of data is not trivial, the API is based on _paging_ in the sen
 
 ### Retrieve Audit Log data via API
 
-To retrieve the Audit log you need to call an API. You can do this via code or by using the Audit function via a [user interface for calling APIs](https://yaron.runailabs.net/api/docs/#/Audit/get_v1_k8s_audit){target=_blank}.
+To retrieve the Audit log you need to call an API. You can do this via code or by using the Audit function via a [user interface for calling APIs](https://app.run.ai/api/docs/#/Audit/get_v1_k8s_audit){target=_blank}.
 
 ### Retrieve via Code
 
@@ -145,9 +146,4 @@ You can add additional filters to the query as follows:
 | download | string | enter true to download the logs into a file |
 
 
-
-
-
-
-
-[../img/Event-History-full-screen.png]: /img/Event-History-full-screen.png
+![](img/event-history-full-screen.png)
