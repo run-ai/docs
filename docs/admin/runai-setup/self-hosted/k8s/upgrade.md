@@ -20,6 +20,7 @@ Before upgrading the control plane, run:
 ``` bash
 kubectl delete --namespace runai-backend --all \
     deployments,statefulset,svc,ing,ServiceAccount,secrets
+kubectl delete svc-n kube-system runai-cluster-kube-prometh-kubelet
 ```
 
 Prior to version 2.9, the Run:ai installation, by default, has also installed NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
