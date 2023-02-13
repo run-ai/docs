@@ -31,7 +31,8 @@ The process:
 ```
 kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
 ```
-    Where `version` is `2.9.X`
+    Where `version` is `2.9.X`. You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
+
 
 * Install Run:ai cluster as described [here](cluster-install.md)
 

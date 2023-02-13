@@ -13,7 +13,7 @@ title: Upgrade self-hosted Kubernetes installation
     * Prepare the installation artifact as described [here](../preparations/#prepare-installation-artifacts) (untar the file and run the script to upload it to the local container registry). 
 
 
-## Upgrading to Version 2.9
+## Upgrade to Version 2.9
 
 Before upgrading the control plane, run: 
 
@@ -34,7 +34,7 @@ Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisite
 
 Then upgrade the control plane as described in the next section. 
 
-## Upgrade Control Plane
+## Upgrade the Control Plane
 
 If you have customized the backend values file in the older version, save it now by running
 
@@ -61,8 +61,6 @@ Run the helm command below.
 
 
 ## Upgrade Cluster 
-
-
 
 === "Connected"
     To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
