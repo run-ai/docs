@@ -2,7 +2,7 @@ Below are instructions on how to install a Run:ai cluster. Before installing, pl
 
 
 !!! Important
-    * We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md) to verify that all prerequisites are met. 
+    * We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
     * Starting version 2.9 you must pre-install  [NGINX ingress controller](cluster-prerequisites.md#ingress-controller)
     * Starting version 2.9 you must pre-install the [Prometheus stack](cluster-prerequisites.md#prometheus).
 
