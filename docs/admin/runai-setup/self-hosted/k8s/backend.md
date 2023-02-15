@@ -77,7 +77,9 @@ There may be cases where you need to change properties in the values file as fol
 | `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:ai. This key is now covered under the runai-adm flags above  |
 | `backend.https` | Replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
 | `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See `postgresql.persistence` above. Can use the same location. This key is now covered under the runai-adm flags above |
-| `backend.initTenant.admin` | Change password for admin@run.ai | This user is the master Control Plane administrator | 
+| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
+| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
+
 
 ## Upload images (Airgapped only)
 
