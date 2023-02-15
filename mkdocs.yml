@@ -245,7 +245,7 @@ nav:
             - 'Workspaces' :  'Researcher/user-interface/workspaces/create/workspace.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
     - 'CLI Reference' :
-      - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
+      - 'Introduction' : 'Researcher/cli-reference/introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
       - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'
       - 'runai config' : 'Researcher/cli-reference/runai-config.md'

@@ -31,7 +31,7 @@ Starting a container using docker usually involves a single command-line with mu
 
 The docker command ``docker run`` should be replaced with a Run:ai command ``runai submit``. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../Researcher/cli-reference/runai-submit.md). 
 
-There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_), and more. For a complete list see the Run:ai CLI [reference](../../Researcher/cli-reference/Introduction.md). 
+There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_), and more. For a complete list see the Run:ai CLI [reference](../../Researcher/cli-reference/introduction.md). 
 
 ## Schedule an Onboarding Session
 
