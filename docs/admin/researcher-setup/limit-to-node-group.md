@@ -19,7 +19,7 @@ To configure a node pool:
 
 *   Find the label key & value you want to use for Run:ai to create the node pool.
 *   Check that the nodes you want to group as a pool have a unique label to use, otherwise you should mark those nodes with your own uniquely identifiable label.
-*   Get the names of the nodes you want Run:ai to group. To get a list of nodes, run:
+*   Get the names of the nodes you want Run:ai to group together. To get a list of nodes, run:
 
 ```
 kubectl get nodes
@@ -32,7 +32,7 @@ Kubectl get nodes --show-labels
 kubectl label node <node-name> <label-key>=<label-value>
 ```
 
-The same value can be set to a single node, or multiple nodes. Node Pool can only use one label (key & value) at a time.
+The same value can be set to a single node or multiple nodes. Node Pool can only use one label (key & value) at a time.
 *   To create a node pool use the [create node pool](https://app.run.ai/api/docs/#/NodePools/createNodePool){target=_blank} Run:ai API.
 
 To configure a node affinity:
@@ -54,11 +54,18 @@ The same value can be set to a single node, or for multiple nodes. A node can on
 ## Using Node Groups via the CLI
 
 To use Run:ai node pool with a workload, use Run:ai CLI command ‘node-pool’: 
-    runai submit job1 ... --node-pools "my-pool" ...
 
-To use Run:ai multi node pools with a workload, use Run:ai CLI command :
-    runai submit job1 ... --node-pools "my-pool my-pool2 my-pool3" ...
-With Multi node pools the researcher creates a list of prioritized node-pools and let the scheduler to try and chose from any of the node pools in the list, according to the given priority. 
+```
+runai submit job1 ... --node-pools "my-pool" ...
+```
+
+To use multiple node pools with a workload, use the Run:ai CLI command:
+
+```
+runai submit job1 ... --node-pools "my-pool my-pool2 my-pool3" ...
+```
+
+With multiple node pools, the researcher creates a list of prioritized node pools and lets the scheduler try and choose from any of the node pools in the list, according to the given priority. 
 
 
 To use node affinity, use the node type label with the `--node-type` flag:
@@ -74,7 +81,7 @@ runai submit job1 ... --node-pool-name “my pool” --node-type "my-nodes"
 ```
 
 !!! Note
-    When submitting a workload, if you chose a node pool label and a node affinity (node type) label which do not intersect, the Run:ai scheduler will not be able to schedule that workload as it represents an empty nodes group.
+    When submitting a workload, if you choose a node pool label and a node affinity (node type) label which does not intersect, the Run:ai scheduler will not be able to schedule that workload as it represents an empty nodes group.
 
 See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documentation for further information.
 

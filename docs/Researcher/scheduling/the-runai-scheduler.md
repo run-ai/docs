@@ -62,13 +62,13 @@ __Node pools are enabled__
 
 Every new workload is associated with a Project. The Project contains a deserved GPU quota that is the sum off all node pools GPU quotas. During scheduling:
 
-*   If the newly required resources, together with currently used resources, end up within the overall Project's quota and within the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
-*   If the newly required resources together with currently used resources end up above the Project's quota or above the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below.
+*   If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
+*   If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
 
 
 ### Quota with Multiple Resources
 
-A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project then to be "Over Quota" it will have to have at _least one_ resource over its quota. For a project to be under quota it needs to have _all of its_ resoruces under quota.
+A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over Quota" it will have to have at _least one_ resource over its quota. For a project to be under quota it needs to have _all of its_ resources under quota.
 
 ## Scheduler Details
 
@@ -89,8 +89,8 @@ A _Node Pool_ is a set of nodes grouped by an Administrator into a distinct grou
 By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
 *   An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
-*   The Researcher can use node-pools in two ways. The first one is where a Project has guaranteed resources on node-pools - Researcher can then submit a workload and specify a single node-pool or a prioritized list of node-pools to use and recieve guaranteed resources. 
-The second is by using node-pool(s) with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of node-pools. This means a Workload must be Preemptible as it uses resources out of the Project's or node pool quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node-pool and goes Over-Quota.
+*   The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on node pools - The Researcher can then submit a workload and specify a single node pool or a prioritized list of node pools to use and receive guaranteed resources. 
+The second is by using node-pool(s) with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of node-pools. This means a Workload must be Preemptible as it uses resources out of the Project or node pool quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node pool and goes Over-Quota.
 *   By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using the Project's 'Default node-pool list'.
 
 
@@ -111,15 +111,15 @@ During the above process, there may be a pending workload whose Project is below
 
 The Run:ai scheduler determines fairness between multiple over-quota Projects according to their GPU quota. Consider for example two Projects, each spawning a significant amount of workloads (e.g. for Hyperparameter tuning) all of which wait in the queue to be executed. The Run:ai Scheduler allocates resources while preserving fairness between the different Projects regardless of the time they entered the system. The fairness works according to the __relative portion of the GPU quota for each Project.__ To further illustrate that, suppose that:
 
-* Project A has been allocated with a quota of 3 GPUs.
-* Project B has been allocated with a quota of 1 GPU.
+* Project A has been allocated a quota of 3 GPUs.
+* Project B has been allocated a quota of 1 GPU.
 
 Then, if both Projects go over quota, Project A will receive 75% (=3/(1+3)) of the idle GPUs and Project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new Job is submitted to the system or an existing Job ends.
 
 This fairness equivalence will also be maintained amongst __running__ Jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
 ### Over-Quota Priority
-When Over-Quota Priority feature is enabled, Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over Quota Priority for each Project. 
+When the Over Quota Priority feature is enabled, The Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over Quota Priority for each Project. 
 GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
 
 Let's examine the previous example with Over-Quota Weights:
@@ -183,12 +183,12 @@ For more information on Distributed Training in Run:ai see [here](../Walkthrough
 
 ### Hyperparameter Optimization
 
-Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, number of layers.
+Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, and the number of layers.
 
 To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine the results to decide what works best.
 
 
 With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs. 
-In case node pools are enabled, if the HPO workload designated more than one node pool, the different pods might end up running on different node pools. 
+In case node pools are enabled, if the HPO workload has been assigned with more than one node pool, the different pods might end up running on different node pools. 
 
 For more information on Hyperparameter Optimization in Run:ai see [here](../Walkthroughs/walkthrough-hpo.md)
