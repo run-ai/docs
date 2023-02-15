@@ -105,4 +105,4 @@ The 3 relevant files mentioned in this document can be downloaded from [Github](
 
 ## See Also
 
-See the unattended training Quickstart: [Launch Unattended Training Workloads](../Walkthroughs/walkthrough-train.md)
+See the unattended training Quickstart: [Launch Unattended Training Workloads](../walkthroughs/walkthrough-train.md)

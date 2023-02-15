@@ -42,7 +42,7 @@ For further information see [runai submit](../../Researcher/cli-reference/runai-
 
 ## September 6th, 2020
 
-We released a module that helps the Researcher perform __Hyperparameter optimization__ (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Quickstart](../Researcher/Walkthroughs/walkthrough-hpo.md)
+We released a module that helps the Researcher perform __Hyperparameter optimization__ (HPO). HPO is about running many smaller experiments with varying parameters to help determine the optimal parameter set [Hyperparameter Optimization Quickstart](../Researcher/walkthroughs/walkthrough-hpo.md)
 
 ## September 3rd, 2020
 
@@ -51,7 +51,7 @@ __GPU Fractions__ now run in training and not only interactive. GPU Fractions tr
 
 ## August 10th, 2020
 
-Run:ai Now supports __Distributed Training__ and __Gang Scheduling__. For further information, see the [Launch Distributed Training Workloads](../Researcher/Walkthroughs/walkthrough-distributed-training.md) quickstart.
+Run:ai Now supports __Distributed Training__ and __Gang Scheduling__. For further information, see the [Launch Distributed Training Workloads](../Researcher/walkthroughs/walkthrough-distributed-training.md) quickstart.
 
 ## August 4th, 2020
 

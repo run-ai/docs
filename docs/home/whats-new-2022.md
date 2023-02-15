@@ -51,7 +51,7 @@ For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-set
 
 ### Dynamic MIG Support
 
-Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../Researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../Researcher/Walkthroughs/quickstart-mig.md).
+Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../Researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../Researcher/walkthroughs/quickstart-mig.md).
 
 Other features:
 

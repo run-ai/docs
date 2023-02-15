@@ -219,17 +219,17 @@ nav:
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
-      - 'Run:ai Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
-      - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
-      - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
-      - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
-      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
-      - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
-      - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'
-      - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
-      - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
-      - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
-      - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+      - 'Run:ai Quickstart Guides' : 'Researcher/walkthroughs/quickstart-overview.md'
+      - 'Training' : 'Researcher/walkthroughs/walkthrough-train.md'
+      - 'Build' : 'Researcher/walkthroughs/walkthrough-build.md'
+      - 'Build with Connected Ports' : 'Researcher/walkthroughs/walkthrough-build-ports.md'
+      - 'GPU Fractions' : 'Researcher/walkthroughs/walkthrough-fractions.md'
+      - 'Distributed Training Workloads' : 'Researcher/walkthroughs/walkthrough-distributed-training.md'
+      - 'Hyperparameter Optimization' : 'Researcher/walkthroughs/walkthrough-hpo.md'
+      - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/walkthroughs/walkthrough-overquota.md'
+      - 'Queue Fairness' : 'Researcher/walkthroughs/walkthrough-queue-fairness.md'
+      - 'Inference' : 'Researcher/walkthroughs/quickstart-inference.md'
+      - 'Dynamic MIG' : 'Researcher/walkthroughs/quickstart-mig.md'
     - 'User Interface' :
       - 'Workspaces' :
         - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'

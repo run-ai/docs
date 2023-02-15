@@ -80,5 +80,5 @@ Once these requirements have been met, all workspaces will automatically be assi
 
 ## See Also
 
-* To learn how to use port forwarding see the Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../Researcher/Walkthroughs/walkthrough-build-ports.md).
+* To learn how to use port forwarding see the Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../Researcher/walkthroughs/walkthrough-build-ports.md).
 * See CLI command [runai submit](../../../Researcher/cli-reference/runai-submit.md).

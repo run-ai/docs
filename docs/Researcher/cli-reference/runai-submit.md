@@ -75,7 +75,7 @@ Or
 runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
 ```
 
-(see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
+(see: [build Quickstart](../walkthroughs/walkthrough-build.md)).
 
 Externalize ports:
 
@@ -83,26 +83,26 @@ Externalize ports:
         --service-type=nodeport --port 30022:22
         -- /usr/sbin/sshd -D 
 
-(see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
+(see: [build with ports Quickstart](../walkthroughs/walkthrough-build-ports.md)).
 
 Start a Training Job
 
     runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
     
-(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
+(see: [training Quickstart](../walkthroughs/walkthrough-train.md)).
 
 Use GPU Fractions
 
     runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
 
-(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
+(see: [GPU fractions Quickstart](../walkthroughs/walkthrough-fractions.md)).
 
 Hyperparameter Optimization
 
     runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
         --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
 
-(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
+(see: [hyperparameter optimization Quickstart](../walkthroughs/walkthrough-hpo.md)).
 
 Submit a Job without a name (automatically generates a name)
 
@@ -314,10 +314,10 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
 #### --completions int
->  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--parallelism`.
+>  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../walkthroughs/walkthrough-hpo.md). Use together with `--parallelism`.
 
 #### --parallelism int
-> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--completions`.
+> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../walkthroughs/walkthrough-hpo.md). Use together with `--completions`.
 
 
 ### Access Control
@@ -376,6 +376,6 @@ Note that the submit call may use a _policy_ to provide defaults to any of the a
 
 ## See Also
 
-*   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
+*   See any of the Quickstart documents [here:](../walkthroughs/quickstart-overview.md).
 *   See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
 
