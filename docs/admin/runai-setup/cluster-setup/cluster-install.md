@@ -16,8 +16,8 @@ Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials prov
 Using the Wizard:
 
 1. Choose a target Kubernetes platform (see table above)
-2. (SaaS only) Provide a domain name for your cluster as described [here](cluster-prerequisites.md#cluster-url).
-3. (SaaS only) Install a trusted certificate to the domain within Kubernetes. 
+2. (SaaS and remote self-hosted cluster only) Provide a domain name for your cluster as described [here](cluster-prerequisites.md#cluster-url).
+3. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes. 
 4. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
 5. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
 6. Install [Helm](https://helm.sh/docs/intro/install/)

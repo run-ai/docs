@@ -9,11 +9,11 @@ The following is a checklist of the Run:ai prerequisites:
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
-| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
+| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
-| [Cert manager](#cert-manager) | For RKE and EKS, you must install cert management if not already installed and configure Run:ai to use it | 
+| [Cert manager](#cert-manager) | For RKE and EKS, you must install a certificate manager  and configure Run:ai to use it | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow MPI if required. | 
-| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Inference module. | 
+| (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
 There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-access-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
 
@@ -38,7 +38,7 @@ Run:ai has been tested with the following Kubernetes distributions:
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
-| Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     |  |
+| Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
@@ -47,7 +47,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 
 !!! Notes
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
+    * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
 ### NVIDIA 
 
 Run:ai requires NVIDIA GPU Operator version 1.9 and 22.9.0. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
