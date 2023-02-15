@@ -14,7 +14,7 @@ As part of the installation process you will install:
 Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
 
 !!! Important
-    In Openshift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
+    In OpenShift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
 
 ## Hardware Requirements
 

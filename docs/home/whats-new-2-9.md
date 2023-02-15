@@ -7,9 +7,9 @@ February 2023
 
 ### Authentication
 
-**Openshift groups**
+**OpenShift groups**
 
-Ability to manage access control through IDP groups declaration - groups are managed from the Openshift platform and integrated into Run:ai platform, as opposed to group management in vanilla k8s with SSO. Openshift doesn’t need any additional configuration as this comes built-in with regular installation or the upgrade option.
+Ability to manage access control through IDP groups declaration - groups are managed from the OpenShift platform and integrated into Run:ai platform, as opposed to group management in vanilla k8s with SSO. OpenShift doesn’t need any additional configuration as this comes built-in with regular installation or the upgrade option.
 
 **UID/GID for SSO users**
 
@@ -99,7 +99,7 @@ Cluster Wizard has been simplified for environments with **multiple** clusters
 ### New Supported Software
 
 - Run:ai now supports Kubernetes 1.25 and 1.26.
-- Run:ai now supports Openshift 4.11
+- Run:ai now supports OpenShift 4.11
 - Run:ai now supports Dynamic MIG with NVIDIA H100 hardware
 - The Run:ai command-line interface now supports Microsoft Windows. See [Install the Run:ai Command-line Interface](../admin/researcher-setup/cli-install.md#use-runai-cli-on-windows).
 
@@ -122,7 +122,7 @@ Cluster Wizard has been simplified for environments with **multiple** clusters
 | RUN-6399|	Requested GPU is always 0 for MPI jobs, making also other metrics wrong |
 | RUN-6359|	Job gets UnexpectedAdmissionError race condition with Kubelet |
 | RUN-6272|	runai pod which owner is not RunaiJob - Do not allow deletion, suspension, cloning |
-| RUN-6218|	When installing Run:ai on openshift a second time, oauth client secret is incorrect/not updated |
+| RUN-6218|	When installing Run:ai on OpenShift a second time, oauth client secret is incorrect/not updated |
 | RUN-6216|	Multi cluster: allocated GPU is wrong as a result of metric not counting jobs in error |
 | RUN-6029|	CLI Submit git sync severe bug |
 | RUN-6027|	[Security Issue] Job submitted with github sync -- Password is displayed in the UI |

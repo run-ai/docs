@@ -45,12 +45,12 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 |Internal ID| Description  | Workaround   |
 |-----------|--------------|--------------|
 |RUN-6236 |The Run:ai access control system prevents setting a role of researcher together with ML engineer or researcher manager at the same time. However, using the UI you can select these two roles by clicking the text near the check   |     None  |
-|RUN-6218 |When installing Run:ai on openshift a second time, oauth client secret is incorrect/not updated. As a result, login is not possible                  | Can be performed via manual configuration. Please contact Run:ai support.|
+|RUN-6218 |When installing Run:ai on OpenShift a second time, oauth client secret is incorrect/not updated. As a result, login is not possible                  | Can be performed via manual configuration. Please contact Run:ai support.|
 |RUN-6216 |In the multi cluster overview, the allocated GPU in the table of each cluster is wrong. The correct number is in the overview dashboard.             | None                            |
 |RUN-6190 |When deleting a cluster, there are leftover pods that are not deleted. No side effects on functionality.                                             | Delete the pods manually.                                                |
 |RUN-5855 |(SaaS version only) The new control plane, versioned 2.8 does not allow the creation of a new deployment on a cluster whose version is lower than 2.8.                |Upgrade your cluster to 2.8  |
 |RUN-5780 |It is possible to change runai/node-pool label of a running pod. This is a wrong usage of the system and may cause unexpected behavior.              |None.               |
-|RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in openshift.    | None                 |
+|RUN-5527 |Idle allocated GPU metric is not displayed for MIG workloads in OpenShift.    | None                 |
 |RUN-5519 |When selecting a Job, the GPU memory utilization metrics is not displayed on the right-hand side. This is an NVIDIA DCGM known bug (see:  https://github.com/NVIDIA/dcgm-exporter/issues/103 ) which has been fixed in a later version but was not yet included in the latest NVIDIA GPU Operator|Install the suggested version as described by NVIDIA.                    |
 |RUN-5478 |Dashboard panels of GPU Allocation/project and Allocated jobs per project metrics:  In rare cases, some metrics reflect the wrong number of GPUs     |  None                  |
 |RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
