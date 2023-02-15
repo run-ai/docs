@@ -18,7 +18,7 @@ Run:ai supports the following Workloads types:
 
 ## Values
 
-A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.  
+A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../researcher/cli-reference/runai-submit.md) Command-line reference.  
 
 You can also find the exact YAML syntax run:
 
@@ -62,7 +62,7 @@ FIELDS:
 A Workload can be submitted via various channels:
 
 * The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
-* The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
+* The Run:ai command-line interface, via the [runai submit](../../researcher/cli-reference/runai-submit.md) command.
 * The Run:ai [Cluster API](submit-yaml.md).
 
 ## Policies

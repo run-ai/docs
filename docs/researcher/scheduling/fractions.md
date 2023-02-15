@@ -18,7 +18,7 @@ Run:ai provides the capability to allocate a container with a specific amount of
 
 You can also use the flag `--gpu 0.2` to get 20% of the GPU memory on the GPU assigned for you. 
 
-For more details on Run:ai fractions see the [fractions quickstart](../Walkthroughs/walkthrough-fractions.md).
+For more details on Run:ai fractions see the [fractions quickstart](../walkthroughs/walkthrough-fractions.md).
 
 
 !!! limitation
@@ -46,7 +46,7 @@ Run:ai provides a way to __dynamically__ create a MIG partition:
 * Run:ai provides an additional flag to dynamically create the __specific__ MIG partition in NVIDIA terminology. As such, you can specify `--mig-profile 2g.10gb`.  
 * In a single GPU cluster you have some MIG nodes that are dynamically allocated and some that are not.
 
-For more details on Run:ai fractions see the [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md).
+For more details on Run:ai fractions see the [dynamic MIG quickstart](../walkthroughs/quickstart-mig.md).
 
 
 ### Setting up Dynamic MIG
@@ -62,7 +62,7 @@ As described above, MIG is only available in the latest NVIDIA architecture.
     (use `runai-adm remove` to unset)
 
 
-* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md) for details) and set:
+* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../walkthroughs/quickstart-mig.md) for details) and set:
     ```
     kubectl label node <node-name> node-role.kubernetes.io/runai-mig-enabled=true
     ```
@@ -81,6 +81,6 @@ Given a specific node, the IT administrator can decide whether to use one techno
 
 ## See Also
 
-* Fractions [quickstart](../Walkthroughs/walkthrough-fractions.md).
-* Dynamic MIG [quickstart](../Walkthroughs/quickstart-mig.md)
+* Fractions [quickstart](../walkthroughs/walkthrough-fractions.md).
+* Dynamic MIG [quickstart](../walkthroughs/quickstart-mig.md)
 

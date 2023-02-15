@@ -76,7 +76,7 @@ runai submit job1 ... --node-pool-name “my pool” --node-type "my-nodes"
 !!! Note
     When submitting a workload, if you chose a node pool label and a node affinity (node type) label which do not intersect, the Run:ai scheduler will not be able to schedule that workload as it represents an empty nodes group.
 
-See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documentation for further information.
+See the [runai submit](../../researcher/cli-reference/runai-submit.md) documentation for further information.
 
 ## Assigning Node Groups to a Project
 

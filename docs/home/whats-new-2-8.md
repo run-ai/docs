@@ -5,7 +5,7 @@
 
 ## Release Content
 <!-- 
-* Now supporting _spread_ scheduling strategy as well. For more information see [scheduling strategies](../Researcher/scheduling/strategies.md). -->
+* Now supporting _spread_ scheduling strategy as well. For more information see [scheduling strategies](../researcher/scheduling/strategies.md). -->
 
 ### Node Pools
 

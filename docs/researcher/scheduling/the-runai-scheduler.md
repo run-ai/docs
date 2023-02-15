@@ -178,7 +178,7 @@ The Run:ai system provides:
 * Inter-pod communication. 
 * Command-line interface to access logs and an interactive shell. 
 
-For more information on Distributed Training in Run:ai see [here](../Walkthroughs/walkthrough-distributed-training.md)
+For more information on Distributed Training in Run:ai see [here](../walkthroughs/walkthrough-distributed-training.md)
 
 
 ### Hyperparameter Optimization
@@ -191,4 +191,4 @@ To search for good hyperparameters, Researchers typically start a series of smal
 With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a _pod_ (see definition above). Unlike Gang Scheduling, with HPO, pods are __independent__. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs. 
 In case node pools are enabled, if the HPO workload designated more than one node pool, the different pods might end up running on different node pools. 
 
-For more information on Hyperparameter Optimization in Run:ai see [here](../Walkthroughs/walkthrough-hpo.md)
+For more information on Hyperparameter Optimization in Run:ai see [here](../walkthroughs/walkthrough-hpo.md)

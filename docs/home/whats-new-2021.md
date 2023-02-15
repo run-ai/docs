@@ -2,7 +2,7 @@
 
 To comply with organizational policies and enhance the Run:ai platform security, Run:ai now supports Single Sign-On (SSO). This functionality is currently in beta and is available for new customer tenants only. For further details on SSO see [Single Sign-On](../admin/runai-setup/authentication/sso.md).
 
-To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:ai now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on the dynamic allocation of MIG partitions see [Dynamic MIG](../../Researcher/scheduling/fractions/#dynamic-mig).
+To optimize resource management and utilization of Nvidia GPUs based on Ampere architecture, such as A100, Run:ai now supports dynamic creation and allocation of MIG partitions. This functionality is currently in beta. For further details on the dynamic allocation of MIG partitions see [Dynamic MIG](../../researcher/scheduling/fractions/#dynamic-mig).
 
 Run:ai now supports AI workloads running in containerized clusters based on the VMWare Tanzu orchestrator. For further details on supported orchestrators see the [prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md) document.
 
@@ -41,7 +41,7 @@ Run:ai now supports a self-hosted installation. With the self-hosted installatio
 !!! Note
     The Run:ai self-hosted installation requires a dedicated license, and has different pricing than the SaaS installation. For more details contact your Run:ai account manager.
 
-NFS volumes can now be mounted directly to containers run by Run:ai while submitting jobs via Run:ai. See the `--nfs-server` flag of [runai submit](../Researcher/cli-reference/runai-submit.md).
+NFS volumes can now be mounted directly to containers run by Run:ai while submitting jobs via Run:ai. See the `--nfs-server` flag of [runai submit](../researcher/cli-reference/runai-submit.md).
 
 To ease the manageability of user templates, Run:ai now supports _global user templates_. Global user templates are user templates that are managed by the Run:ai administrator and are available for all the projects within a specific cluster. The purpose of global user templates is to help define and enforce cross-organization resource policies.
 

@@ -57,5 +57,5 @@ Browse to [http://localhost:8888](http://localhost:8888){target=_blank}. Use the
 
 ## Alternatives
 
-The above flag `--jupyter` is a shortcut with a predefined image. If you want to run your own notebook, use the quickstart on [running a build workload with connected ports](../Walkthroughs/walkthrough-build-ports.md). 
+The above flag `--jupyter` is a shortcut with a predefined image. If you want to run your own notebook, use the quickstart on [running a build workload with connected ports](../walkthroughs/walkthrough-build-ports.md). 
 

@@ -18,7 +18,7 @@ then run `id`, you will see the __root__ user.
 
 ## Use Run:ai flags to limit root access
 
-There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
+There are two [runai submit](../../../researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
 
 * The flag `--run-as-user` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on). 
 * The flag `--prevent-privilege-escalation` prevents the container from elevating its own privileges into `root` (e.g. running `sudo` or changing system files.). 

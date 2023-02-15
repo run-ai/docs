@@ -55,7 +55,7 @@ The relevant sample files are [here](https://github.com/run-ai/docs/tree/master/
     * Set the value of `namespace` to `runai-<name of Run:ai project>`. 
     * Note the last line which adds the Run:ai scheduler to the configuration. 
     * Do __not__ change the lines marked by `{replaced with...`.
-    * Set the requested resources including GPUs. You can use the `--dry-run` flag of the [runai submit](../../Researcher/cli-reference/runai-submit.md) command to gain insight on additional configurations
+    * Set the requested resources including GPUs. You can use the `--dry-run` flag of the [runai submit](../../researcher/cli-reference/runai-submit.md) command to gain insight on additional configurations
 
 
 ### Running 

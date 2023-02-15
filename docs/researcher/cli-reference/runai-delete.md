@@ -44,7 +44,7 @@ runai delete job <job-name>
 
 ## See Also
 
-*   Build Workloads. See Quickstart document: [Launch Interactive Build Workloads](../Walkthroughs/walkthrough-build.md).
+*   Build Workloads. See Quickstart document: [Launch Interactive Build Workloads](../walkthroughs/walkthrough-build.md).
 
-*   Training Workloads. See Quickstart document:  [Launch Unattended Training Workloads](../Walkthroughs/walkthrough-train.md).
+*   Training Workloads. See Quickstart document:  [Launch Unattended Training Workloads](../walkthroughs/walkthrough-train.md).
 

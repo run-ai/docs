@@ -1,14 +1,18 @@
 ## Description
 
-Submit a Run:ai Job for execution.
+Submit a Distributed Training (MPI) Run:ai Job for execution.
+
+!!! Note
+    To use distributed training you need to have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
 
 ## Synopsis
 
 ``` shell
-runai submit 
+
+runai submit-mpi
     [--attach]
     [--backoff-limit int] 
-    [--completions int]
+    [--command]
     [--cpu double] 
     [--cpu-limit double] 
     [--create-home-dir]
@@ -18,34 +22,28 @@ runai submit
     [--gpu-memory string]
     [--host-ipc] 
     [--host-network] 
-    [--image string | -i string]
-    [--imagePullPolicy string] 
+    [--image string | -i string] 
     [--interactive] 
-    [--jupyter] 
     [--job-name-prefix string]
     [--large-shm] 
     [--local-image] 
     [--memory string] 
     [--memory-limit string] 
     [--mount-propagation]
-    [--mps] 
     [--name string]
     [--node-pool string]
     [--node-type string] 
-    [--parallelism int]
-    [--port stringArray] 
-    [--preemptible] 
     [--prevent-privilege-escalation]
+    [--processes int] 
     [--pvc [StorageClassName]:Size:ContainerMountPath:[ro]]
-    [--run-as-user] 
+    [--run-as-user]
     [--s3 string]
-    [--service-type string | -s string] 
     [--stdin]
     [--toleration string]
     [--tty | -t]
     [--volume stringArray | -v stringArray] 
     [--nfs-server string]
-    [--working-dir] 
+    [--working-dir]  
     
     [--loglevel string] 
     [--project string | -p string] 
@@ -53,64 +51,20 @@ runai submit
     
     -- [COMMAND] [ARGS...] [options]
 ```
-
  Syntax notes:
 
-* Flags of type _stringArray_ mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
-
+*   Options with a value type of _stringArray_ mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
 ## Examples
 
-All examples assume a Run:ai Project has been set using `runai config project <project-name>`.
+start an unattended mpi training Job of name dist1, based on Project _team-a_ using a _quickstart-distributed_ image:
 
-Start an interactive Job:
+    runai submit-mpi --name dist1 --processes=2 -g 1 \
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 
 
-```
-runai submit -i ubuntu --interactive --attach -g 1
-```
 
-Or
+(see: [distributed training Quickstart](../walkthroughs/walkthrough-distributed-training.md)).
 
-```
-runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
-```
-
-(see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
-
-Externalize ports:
-
-    runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-        --service-type=nodeport --port 30022:22
-        -- /usr/sbin/sshd -D 
-
-(see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
-
-Start a Training Job
-
-    runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
-    
-(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
-
-Use GPU Fractions
-
-    runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
-
-(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
-
-Hyperparameter Optimization
-
-    runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-        --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
-
-(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
-
-Submit a Job without a name (automatically generates a name)
-
-    runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
-    
-Submit a Job without a name with a pre-defined prefix and an incremental index suffix
-
-    runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
 
 ## Options
 
@@ -118,28 +72,18 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### --name
 > The name of the Job.
-<!-- 
-#### --inference
->  Mark this workload as an Inference workload. This starts a deep learning inference _Deployment_ service. See [here](../../developer/inference/overview.md) -->
 
 #### --interactive
 >  Mark this Job as Interactive. Interactive Jobs are not terminated automatically by the system.
 
-#### --jupyter
->  Shortcut for running a Jupyter notebook container. Uses a pre-created image and a default notebook configuration. 
-
-> Example:
-
-> `runai submit --name jup1 --jupyter -g 0.5 --service-type=nodeport` will start an interactive session named jup1 and use an nodeport load balancer to connect to it. The output of the command is an access token for the notebook. Run `runai list jobs` to find the URL for the notebook.
-
 #### --job-name-prefix string
-> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix
+> The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix.
 
 ### Container Related
 
 #### --attach                        
->  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
-> 
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
+>
 > The --attach flag also sets `--tty` and `--stdin` to true. 
 
 #### --command
@@ -153,7 +97,12 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### -e stringArray | --environment stringArray
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
-<!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`) -->
+ <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`). -->
+
+#### --git-sync string
+> Clone a git repository into the container running the Job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
+>
+> Note that source and target fields are mandatory.
 
 #### --image string | -i string
 >  Image to use when creating the container for this Job
@@ -161,32 +110,24 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 #### --image-pull-policy string
 >  Pulling policy of the image When starting a container. Options are: 
 >
-> - `Always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded. 
->
+> - `Always` (default): force image pulling to check whether local image already exists. If the image already exists locally and has the same digest, then the image will not be downloaded.
 > - `IfNotPresent`: the image is pulled only if it is not already present locally.
->
 > - `Never`: the image is assumed to exist locally. No attempt is made to pull the image.
 >
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
 #### --local-image (deprecated)
 >  Deprecated. Please use `image-pull-policy=never` instead.
->  Use a local image for this Job. A local image is an image that exists on all local servers of the Kubernetes Cluster. 
-
-[](){:name='mps'}
-
-#### --mps
-> Use NVIDIA MPS. NIVDIA MPS is useful with _Inference_ workloads for optimizing multiple processes running on a single GPU. The `--mps` flag only works in conjunction with GPU fractions (--gpu `<num>` where `<num>` is not an integer or using --gpu-memory).
+>  Use a local image for this Job. A local image is an image that exists on all local servers of the Kubernetes Cluster.
 
 #### --stdin
 >  Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
 -t, --tty
->  Allocate a pseudo-TTY.
+>  Allocate a pseudo-TTY
 
 #### --working-dir string
 >  Starts the container with the specified directory as the current directory.
-
 
 ### Resource Allocation
 
@@ -197,7 +138,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Limitations on the number of CPUs consumed by the Job (0.5, 1, .etc). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
 
 #### --gpu double | -g double
-> Number of GPUs to allocate for the Job. The default is no allocated GPUs. The GPU value can be an integer or a fraction between 0 and 1.
+> Number of GPUs to allocate for the Job. The default is no allocated GPUs. the GPU value can be an integer or a fraction between 0 and 1.
 
 #### --gpu-memory
 > GPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive this amount of memory. Note that the Job will __not__ be scheduled unless the system can guarantee this amount of GPU memory to the Job.
@@ -217,7 +158,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 #### --pvc `Pvc_Name:Container_Mount_Path:[ro]`
 
-> Mount a persistent volume claim of Network Attached Storage into a container.
+> Mount a persistent volume claim into a container.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 >
@@ -230,9 +171,9 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 >    __Pvc_Name__. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic){target=_blank} to mount into the container
 > 
 > Examples:
-> 
+>
 > > `--pvc :3Gi:/tmp/john:ro`  - Allocate `3GB` from the default Storage class. Mount it to `/tmp/john` as read-only 
-> 
+>
 > > `--pvc my-storage:3Gi:/tmp/john:ro`  - Allocate `3GB` from the `my-storage` storage class. Mount it to /tmp/john as read-only 
 >
 > > `--pvc :3Gi:/tmp/john` - Allocate `3GB` from the default storage class. Mount it to `/tmp/john` as read-write 
@@ -242,19 +183,19 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
 #### --volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
->  Volumes to mount into the container.  
->  
+>  Volumes to mount into the container.
+>
 > Examples:
-> 
-> > `-v /raid/public/john/data:/root/data:ro` 
+>
+> > `-v /raid/public/john/data:/root/data:ro`
 > Mount /root/data to local path /raid/public/john/data for read-only access.
 >
 > > `-v /public/data:/root/data::nfs.example.com`
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
 #### --nfs-server string
-> Use this flag to specify the default NFS host for --volume flag.
-> Alternatively, you can specify NFS host for each volume 
+> Use this flag to specify a default NFS host for --volume flag.
+> Alternatively, you can specify NFS host for each volume
 > individually (see --volume for details).
 
 #### --mount-propagation
@@ -274,50 +215,25 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > All the fields, except url=URL, are mandatory. Default for url is
 > > `url=https://s3.amazon.com`
 
-
 ### Network
 
 #### --host-ipc
->  Use the host's ipc namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores and message queues.
+>  Use the host's _ipc_ namespace. Controls whether the pod containers can share the host IPC namespace. IPC (POSIX/SysV IPC) namespace provides separation of named shared memory segments, semaphores, and message queues.
 > Shared memory segments are used to accelerate inter-process communication at memory speed, rather than through pipes or the network stack.
 > 
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/){target=_blank}.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/) documentation.
 
 #### --host-network
->  Use the host's network stack inside the container.
-> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/){target=_blank}.
-
-#### --port stringArray
->  Expose ports from the Job container. Used together with `--service-type`.  
->
->  Example:  
->>    `--port 8080:80 --service-type portforward`
-
-#### --service-type string | -s string
->  Service exposure method for interactive Job. Options are: `portforward`, `loadbalancer`, `nodeport`.
->  Use the command runai list to obtain the endpoint to use the service when the Job is running. Different service methods have different endpoint structures.
-
-#### --address string              
-> Comma separated list of IP addresses to listen to when running interactive job 
-> with portforward service type (default is localhost).
->
-> Example:
-> 
-> >   `--interactive --service-type portforward --address "localhost,192.168.1.2" --port 8888:5555`
->
-> Any traffic on port 8888 of both localhost and 192.168.1.2 will be forwarded
-> to port 5555 of the running job.
+> Use the host's network stack inside the container.
+> For further information see [docker run reference](https://docs.docker.com/engine/reference/run/)documentation.
 
 ### Job Lifecycle
 
 #### --backoff-limit int
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
 
-#### --completions int
->  The number of successful pods required for this Job to be completed. Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--parallelism`.
-
-#### --parallelism int
-> The number of pods this Job tries to run in parallel at any time.  Used for [Hyperparameter optimization](../Walkthroughs/walkthrough-hpo.md). Use together with `--completions`.
+#### --processes int
+> Number of distributed training processes. The default is 1.
 
 
 ### Access Control
@@ -329,53 +245,48 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 > Prevent the Job’s container and all launched processes from gaining additional privileges after the Job starts. Default is `false`. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 #### --run-as-user
->  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML , you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+>  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 
 ### Scheduling
 
 #### --node-type string
->  Allows defining specific nodes (machines) or a group of nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+
 > This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
 
 #### --node-pools string
->  Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../scheduling/the-runai-scheduler.md#node-pools). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
-
+> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../scheduling/the-runai-scheduler.md#node-pools). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
 > This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
-
-#### --preemptible
->  Mark an interactive Job as preemptible. Preemptible Jobs can be scheduled above the guaranteed quota but may be reclaimed at any time.
 
 #### --toleration string
 > Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
 > This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes
 > [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){target=_blank} Guide.
-> 
+>
 > The format of the string:
 > ```
 > operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
 > ```
 
-
 ### Global Flags
 
 #### --loglevel (string)
->  Set the logging level. One of: debug | info | warn | error (default "info").
+
+>  Set the logging level. One of: debug | info | warn | error (default "info")
 
 #### --project | -p (string)
+
 >  Specify the Project to which the command applies. Run:ai Projects are used by the scheduler to calculate resource eligibility. By default, commands apply to the default Project. To change the default Project use `runai config project <project-name>`.
 
 #### --help | -h
+
 >  Show help text.
 
 ## Output
 
-The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
-
-Note that the submit call may use a _policy_ to provide defaults to any of the above flags.
+The command will attempt to submit an _mpi_ Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
 ## See Also
 
-*   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
-
+*   See Quickstart document [Running Distributed Training](../walkthroughs/walkthrough-distributed-training.md).
