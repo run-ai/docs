@@ -25,7 +25,7 @@
     * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
     * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
 * `runai delete` has been changed in favor of `runai delete job` 
-* Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
+* Self-hosted installation: The default OpenShift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
 * It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
 * User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
@@ -34,7 +34,7 @@
 
 ### Newly Supported Versions
 * Run:ai now supports Kubernetes 1.24
-* Run:ai now supports Openshift 4.10
+* Run:ai now supports OpenShift 4.10
 * Distributed training now supports MPI version 0.3. Support for older versions of MPI has been removed. 
 
 ## April 2022 Run:ai Version 2.4 (Controlled Release only)
@@ -78,7 +78,7 @@ Other features:
 * Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
 * Run:ai now supports orchestration of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
-* Run:ai now supports Openshift 4.9, Kubernetes 1.22, and 1.23.
+* Run:ai now supports OpenShift 4.9, Kubernetes 1.22, and 1.23.
 
 ## February 2022 Run:ai Version 2.2 (Cloud update only)
 
@@ -104,5 +104,5 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbe
 
 Supportability enhancements:
 
-* A new tool was added, to allow IT administrators to validate cluster and control-plane installation prerequisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or Openshift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
+* A new tool was added, to allow IT administrators to validate cluster and control-plane installation prerequisites. For full details see [cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script), Kubernetes [self-hosted prerequisites](../../admin/runai-setup/self-hosted/k8s/prerequisites/#pre-install-script) or OpenShift [self-hosted prerequisites](../../admin/runai-setup/self-hosted/ocp/prerequisites/#pre-install-script).
 * To better analyze scheduling issues, the node name was added to multiple scheduler log events.

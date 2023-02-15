@@ -4,7 +4,7 @@
 
 
 !!! Note
-    The control-plane installation on Openshift assumes that an identity provider has been configured in OpenShift.
+    The control-plane installation on OpenShift assumes that an identity provider has been configured in OpenShift.
 
 Run: `oc login`. Then create a configuration file to install the Run:ai control plane:
 
