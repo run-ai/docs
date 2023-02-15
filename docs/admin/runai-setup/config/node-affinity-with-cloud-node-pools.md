@@ -1,6 +1,5 @@
 # Node affinity with cloud node pools
 
-
 Run:Ai allows for [node affinity](../../admin-ui-setup/project-setup.md#other-project-properties). Node affinity is the ability to assign a Project to run on specific nodes.
 To use the node affinity feature, You will need to label the target nodes with the label  `run.ai/node-type`. Most cloud clusters allow configuring node labels for the node pools in the cluster. This guide shows how to apply this configuration to different cloud providers.
 
