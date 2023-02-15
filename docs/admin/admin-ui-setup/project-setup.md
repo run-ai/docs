@@ -16,10 +16,14 @@ As an Admin, you need to determine how to model Projects. You can:
 
 ## Node Pools 
 
-By default, all nodes on a cluster are part of `Default` node pool. The administrator can choose to create new node pools and include a set of nodes in a node pool by associating a label that is shared by all those nodes.
+For detailed information on node pools, see [Using node pools](../../Researcher/scheduling/using-node-pools.md).
+
+By default, all nodes in a cluster are part of the `Default` node pool. The administrator can choose to create new node pools and include a set of nodes in a node pool by associating the nodes with a label.
+
 Each node pool is automatically associated with all Projects and Departments with zero resource allocation (Quotas). 
-When submitting a Job (or Deployment), the Researcher (or ML Engineer) can choose a single node pool to use, or multiple node pools to use. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools, the scheduler will try to schedule the Job to the first node pool, then if not successful, to the second node pool in the list, and so on, until it finds a node pool that can provide the Job's specification.
-An administrator can set a 'Project's default priority list' of node pools, so in case the Researcher did not specify any node pool (or node pool list), the scheduler will use the Project's default node pool priority list to determine the order that the scheduler will use when scheduling the Job.
+When submitting a Job (or Deployment), the Researcher can choose one or more node pools. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools. The scheduler will try to schedule the Job to the first node pool. If not successful the scheduler will try the second node pool in the list, and so forth until it finds a node pool that can provide the Job's specification.
+
+An administrator can set a Project's `default priority list` of node pools. In case the Researcher did not specify any node pool (or node pool list), the scheduler will use the Project's default node pool priority list to determine the order that the scheduler will use when scheduling the Job.
 
 ## Project Quotas
 
@@ -28,7 +32,8 @@ Each Project is associated with a total quota of GPU and CPU resources (CPU Comp
 Beyond that, a user of this Project can receive an __over-quota__ (The administrator needs to enable over quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 
-__Important best practice:__ As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
+!!! Important 
+    Best practice: As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
 
 ### Controlling Over-Quota Behavior
 
