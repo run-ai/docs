@@ -1,7 +1,7 @@
 ## Introduction
 
 Run:ai version 2.8 introduced a new building block to assist in managing resources effectively - node-pools.
-A node-pool is a set of nodes grouped into a bucket of resources using a predefined (e.g. GPU-Type) or administrator-defined label (key & value). Typically, those nodes share a common feature or property, such as GPU type or other HW capability (such as Infiniband connectivity) or represent a proximity group (i.e. nodes interconnected via a local ultra-fast switch). Those nodes would typically be used by researchers to run specific workloads on specific resource types, or by MLops engineers to run specific Inference workloads that require specific node types. 
+A node pool is a set of nodes grouped into a bucket of resources using a predefined (e.g. GPU-Type) or administrator-defined label (key & value). Typically, those nodes share a common feature or property, such as GPU type or other HW capability (such as Infiniband connectivity) or represent a proximity group (i.e. nodes interconnected via a local ultra-fast switch). Those nodes would typically be used by researchers to run specific workloads on specific resource types, or by MLops engineers to run specific Inference workloads that require specific node types. 
 
 ### Enabling Node-Pools
 After upgrading from version 2.7 or older to version 2.8 or newer, the ‘Node Pools’ feature is disabled by default. Once the feature is enabled by the administrator, all nodes in each of your upgraded clusters are associated with the ‘Default’ node pool.
