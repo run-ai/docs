@@ -5,6 +5,7 @@ A node pool is a set of nodes grouped into a bucket of resources using a predefi
 
 ### Enabling Node-Pools
 After upgrading from version 2.7 or older to version 2.8 or newer, the ‘Node Pools’ feature is disabled by default. Once the feature is enabled by the administrator, all nodes in each of your upgraded clusters are associated with the ‘Default’ node pool.
+
 * To use node pools - enable this feature under `Settings` | `General`. Turn on `Enable Node Pools`.
 * To manage CPU resources - enable this feature under  `Settings` | `General`. Turn on `Enable CPU Resources Quota`.
 
@@ -22,7 +23,7 @@ Creating a new node pool and assigning resources from a node pool to Projects an
 Starting version 2.9, Run:ai system supports scheduling workloads to a node pool using a list of prioritized node pools. The scheduler will try to schedule the workload to the most prioritized node pool first, if it fails, it will try the second one and so forth. If the scheduler tried the entire list and failed to schedule the workload, it will start from the most prioritized node pool again. This pattern allows for maximizing the odds that a workload will be scheduled. 
 
 ### Defining Project level 'default node pool priority list'
-If the Researcher did not specify any node pool within the workload specification, the system will use the 'default node pool priority list' as defined by the administrator. If the administrator did not define the 'default node pool priority list', the system will use the `Default` node pool.
+If the Researcher did not specify any node pool within the workload specification, the system will use the _default node pool priority list_ as defined by the administrator. If the administrator did not define the _default node pool priority list_, the system will use the `Default` node pool.
 
 ### Node-Pools Best Practices
 Node pools give administrators the ability to manage quotas in a more granular manner than the Project level, allowing them to specify which Projects are assigned guaranteed resources on specific sets of nodes to be then used by Workloads that need specific node characteristics. Any Project can use any Node-Pool, even if a quota was not assigned to the Node-Pool, it can still be used in Over-Quota manner.
