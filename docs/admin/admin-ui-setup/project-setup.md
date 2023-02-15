@@ -25,14 +25,14 @@ Administrator can set a 'Project's default priority list' of node pools, so inca
 
 Each Project is associated with a total quota of GPU and CPU resources (CPU Compute & CPU Memory) that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is __guaranteed quota__ in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status in the cluster is.
 
-Beyond that, a user of this Project can receive an __over-quota__ (Administrator needs to enable over-quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When node-pools flag is enabled, over-quota is effective and calculated per node-pool, this means that a workload requesting resources from a certain node pool, can get its resources from a quota that belongs to another Project for the same node pool, if the resources are exhaused for this Project and avaialble on another Project. For more details on over-quota scheduling see: [The Run AI Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
+Beyond that, a user of this Project can receive an __over-quota__ (Administrator needs to enable over-quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When node-pools flag is enabled, over-quota is effective and calculated per node-pool, this means that a workload requesting resources from a certain node pool, can get its resources from a quota that belongs to another Project for the same node pool, if the resources are exhaused for this Project and avaialble on another Project. For more details on over-quota scheduling see: [The Run AI Scheduler](../../researcher/scheduling/the-runai-scheduler.md).
 
 
 __Important best practice:__ As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
 
 ### Controlling Over-Quota Behavior
 
-By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:ai scheduler document](../../Researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects. 
+By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:ai scheduler document](../../researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects. 
 
 As an administrator, you may want to disconnect the two parameters. So that, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
 
@@ -143,7 +143,7 @@ To mandate __interactive__ Jobs to run on specific node groups, perform the same
 
 #### Further Affinity Refinement by the Researcher
 
-The Researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used with a node group out of the previously chosen list.  See CLI reference for further information [runai submit](../../Researcher/cli-reference/runai-submit.md) 
+The Researcher can limit the selection of node groups by using the CLI flag ``--node-type`` with a specific label. When setting specific Project affinity, the CLI flag can only be used with a node group out of the previously chosen list.  See CLI reference for further information [runai submit](../../researcher/cli-reference/runai-submit.md) 
 
 ### Limit Duration of Interactive and Training Jobs
 

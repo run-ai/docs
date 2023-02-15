@@ -1,7 +1,7 @@
 ## July 2022 Run:ai Version 2.7 
 
 * New [Audit Log API](../admin/runai-setup/maintenance/audit-log.md) is now available. The _last login_ indication is now showing at the bottom left of the screen for single-sign-on users as well as regular users. 
-* Built-in [Tensorboard support](../Researcher/tools/dev-tensorboard.md) in the Run:ai user interface.
+* Built-in [Tensorboard support](../researcher/tools/dev-tensorboard.md) in the Run:ai user interface.
 * You can now submit a Job and allocate [Extended Kubernetes Resources](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#extended-resources){target=_blank}. Extended resources are third-party devices (such as high-performance NICs, FPGAs, or InfiniBand adapters) that you want to allocate to your Job. The third-party vendor has extended Kubernetes using a [Device Plugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){target=_blank}. Run:ai now allows the allocation of these resources via the Run:ai user interface Job form as well as the Run:ai Workload API. 
 * You can now submit a job with additional [Linux Capabilities](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-capabilities-for-a-container){target=_blank}. Linux capabilities allow the researcher to give the Job additional permissions without actually giving the Job root access to the node. Run:ai allows adding such capabilities to the Job via the Run:ai user interface Job form as well as the Run:ai Workload API.  
 
@@ -27,7 +27,7 @@
 * `runai delete` has been changed in favor of `runai delete job` 
 * Self-hosted installation: The default Openshift installation is now set to work with a __configured__ Openshift IdP. See [creation of backend values](../admin/runai-setup/self-hosted/ocp/backend.md) for more information. In addition, the default for OpenShift is now HTTPS.
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
-* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
+* It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../researcher/cli-reference/runai-submit.md).
 * User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
 * [Researcher Authentication](../admin/runai-setup/authentication/researcher-authentication.md) configuration is now mandatory. 
 
@@ -51,7 +51,7 @@ For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-set
 
 ### Dynamic MIG Support
 
-Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../Researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../Researcher/walkthroughs/quickstart-mig.md).
+Run:ai now supports the dynamic allocation of NVIDIA MIG slices. For further information see the document on [fractions](../researcher/scheduling/fractions.md) as well as the [dynamic MIG quickstart](../researcher/walkthroughs/quickstart-mig.md).
 
 Other features:
 
@@ -75,7 +75,7 @@ The Researcher user interface and the Administrator user interface have been uni
 
 Other features:
  
-* Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../Researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
+* Additional information about scheduler decisions can now be found as part of the Job's status. View the Job status by running [runai describe job](../researcher/cli-reference/runai-describe.md) or selecting a Job in the user interface and clicking `Status History`.
 * Run:ai now support _Charmed Kubernetes_. 
 * Run:ai now supports orchestration of containerized virtual machines via [Kubevirt](https://kubevirt.io/){target=_blank}. For more information see [kubevirt support](../admin/integration/kubevirt.md).
 * Run:ai now supports Openshift 4.9, Kubernetes 1.22, and 1.23.

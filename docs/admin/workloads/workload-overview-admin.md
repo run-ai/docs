@@ -19,14 +19,14 @@ Run:ai currently supports the following Workloads types:
 
 ## Values
 
-A Workload will typically have a list of _values_ (sometimes called _flags_), such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.
+A Workload will typically have a list of _values_ (sometimes called _flags_), such as name, image, and resources. A full list of values is available in the [runai-submit](../../researcher/cli-reference/runai-submit.md) Command-line reference.
 
 ## How to Submit
 
 A Workload can be submitted via various channels:
 
 * The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
-* The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
+* The Run:ai command-line interface, via the [runai submit](../../researcher/cli-reference/runai-submit.md) command.
 * The Run:ai [Cluster API](../../developer/cluster-api/workload-overview-dev.md).
 
 ## Workload Policies

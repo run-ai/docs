@@ -8,7 +8,7 @@ Run:ai is based on __Kubernetes__. At its core, Kubernetes is an orchestration s
 
 ## Image Repository
 
-If your Kubernetes cluster contains a single GPU node (machine), then your image can reside on the node itself (in which case, when [runai submit](../../Researcher/cli-reference/runai-submit.md) workloads, the Researcher must use the flag ``--local-image``).
+If your Kubernetes cluster contains a single GPU node (machine), then your image can reside on the node itself (in which case, when [runai submit](../../researcher/cli-reference/runai-submit.md) workloads, the Researcher must use the flag ``--local-image``).
 
 If your Kubernetes cluster contains more than a single node, then, to enable location abstraction, the image can no longer reside on the node itself.  It must be relocated to an image repository. There are quite a few repository-as-a-service, most notably <a href="https://hub.docker.com/" target="_self">Docker hub</a>. Alternatively, the organization can install a private repository on-prem.
 
@@ -29,9 +29,9 @@ Starting a container using docker usually involves a single command-line with mu
     docker run --runtime=nvidia --shm-size 16G -it --rm -e HOSTNAME='hostname' \
         -v /raid/public/my_datasets:/root/dataset:ro   -i  nvcr.io/nvidia/pytorch:19.12-py3
 
-The docker command ``docker run`` should be replaced with a Run:ai command ``runai submit``. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../Researcher/cli-reference/runai-submit.md). 
+The docker command ``docker run`` should be replaced with a Run:ai command ``runai submit``. The flags are usually the same but some adaptation is required. A complete list of flags can be found here: [runai submit](../../researcher/cli-reference/runai-submit.md). 
 
-There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_), and more. For a complete list see the Run:ai CLI [reference](../../Researcher/cli-reference/introduction.md). 
+There are similar commands to get a shell into the container (_runai bash_), get the container logs (_runai logs_), and more. For a complete list see the Run:ai CLI [reference](../../researcher/cli-reference/introduction.md). 
 
 ## Schedule an Onboarding Session
 

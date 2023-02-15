@@ -13,7 +13,7 @@ The purpose of the Researcher REST API is to provide an easy-to-use programming 
 
 There are other APIs that provide the same functionality. Specifically:
 
-* If your code is script-based, you may consider using the [Run:ai command-line interface](../../../Researcher/cli-reference/introduction.md).
+* If your code is script-based, you may consider using the [Run:ai command-line interface](../../../researcher/cli-reference/introduction.md).
 * You can communicate directly with the underlying Kubernetes infrastructure by [sending YAML files](../k8s-api/launch-job-via-yaml.md) or by using a variety of programming languages to send requests to Kubernetes. See [Submit a Run:ai Job via Kubernetes API](../k8s-api/launch-job-via-kubernetes-api.md).
 
 The Researcher REST API is cluster-specific in the sense that if you have multiple GPU clusters, you will have a separate URL per cluster.

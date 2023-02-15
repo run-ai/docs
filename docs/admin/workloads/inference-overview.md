@@ -52,6 +52,6 @@ This has the benefit of conserving resources at the risk of a delay from "cold s
 ## See Also
 
 * To set up Inference, see [Cluster installation prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#inference).
-* For running Inference see [Inference quick-start](../../Researcher/walkthroughs/quickstart-inference.md).
+* For running Inference see [Inference quick-start](../../researcher/walkthroughs/quickstart-inference.md).
 * To run Inference from the user interface see [Deployments](../admin-ui-setup/deployments.md).
 * To run Inference using API see [Workload overview](../../developer/cluster-api/workload-overview-dev.md).

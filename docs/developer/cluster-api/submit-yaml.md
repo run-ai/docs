@@ -110,5 +110,5 @@ spec:
 2. Inference requires a port to receive requests.
 
 ## See Also
-* To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/walkthroughs/quickstart-inference.md).
+* To understand how to connect to the inference workload, see [Inference Quickstart](../../researcher/walkthroughs/quickstart-inference.md).
 * To learn more about Inference and Run:ai see [Inference overview](../../admin/workloads/inference-overview.md).

@@ -71,7 +71,7 @@ kubectl apply -f <FILE-NAME>
 !!! Note
     * You can use either a regular `Job` or `RunaiJob`. The latter is a Run:ai object which solves various Kubernetes Bugs and provides a better naming for multiple pods in Hyper-Parameter Optimization scenarios
     * Using `build` in the `priorityClassName` field is equivalent to running a job via the CLI with a '--interactive' flag. To run a Train job, delete this line.
-    * The [runai submit](../../../Researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
+    * The [runai submit](../../../researcher/cli-reference/runai-submit.md) CLI command includes many more flags. These flags can be correlated with Kubernetes API functions and added to the YAML above. 
 
 
 

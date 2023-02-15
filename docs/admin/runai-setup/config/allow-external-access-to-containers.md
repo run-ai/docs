@@ -25,7 +25,7 @@ See [https://kubernetes.io/docs/concepts/services-networking/service](https://ku
 
 :octicons-versions-24: Version 2.9 and up 
 
-Version 2.9 introduces [Workspaces](../../../Researcher/user-interface/workspaces/overview.md) which allow the Researcher to build AI models interactively. 
+Version 2.9 introduces [Workspaces](../../../researcher/user-interface/workspaces/overview.md) which allow the Researcher to build AI models interactively. 
 
 Workspaces allow the Researcher to launch tools such as Visual Studio code, TensorFlow, TensorBoard etc. These tools require access to the container. Access is provided via URLs. 
 
@@ -80,5 +80,5 @@ Once these requirements have been met, all workspaces will automatically be assi
 
 ## See Also
 
-* To learn how to use port forwarding see the Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../Researcher/walkthroughs/walkthrough-build-ports.md).
-* See CLI command [runai submit](../../../Researcher/cli-reference/runai-submit.md).
+* To learn how to use port forwarding see the Quickstart document:  [Launch an Interactive Build Workload with Connected Ports](../../../researcher/walkthroughs/walkthrough-build-ports.md).
+* See CLI command [runai submit](../../../researcher/cli-reference/runai-submit.md).

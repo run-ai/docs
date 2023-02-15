@@ -27,7 +27,7 @@ Added support for CPU workloads to support over-quota - CPU resources fairness w
 
 A Run:ai workspace is a simplified, efficient tool for researchers to conduct their experiments, build AI models, access standard MLOps tools, and collaborate with their peers.
 
-Run:ai workspaces abstract complex concepts related to running containerized workloads in a Kubernetes environment, such as networking, storage, and secrets, and are built from predefined abstracted setups, that ease and streamline the researcher AI models development. A workspace consists of container images, data sets, resource requests, and all the required tools for the research. They are quickly created with the workspace wizard. For more information see [Workspaces](../Researcher/user-interface/workspaces/overview.md).
+Run:ai workspaces abstract complex concepts related to running containerized workloads in a Kubernetes environment, such as networking, storage, and secrets, and are built from predefined abstracted setups, that ease and streamline the researcher AI models development. A workspace consists of container images, data sets, resource requests, and all the required tools for the research. They are quickly created with the workspace wizard. For more information see [Workspaces](../researcher/user-interface/workspaces/overview.md).
 
 ### New supported tools for researchers
 

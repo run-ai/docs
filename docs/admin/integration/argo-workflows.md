@@ -46,7 +46,7 @@ Create an Argo Workflow from the template and run it. Open the Run:ai user inter
 
 ## Using GPU Fractions with Argo Workflows
 
-To run an Argo Workflow using [GPU Fractions](../../Researcher/scheduling/fractions.md), you will need to add an `annotation`:
+To run an Argo Workflow using [GPU Fractions](../../researcher/scheduling/fractions.md), you will need to add an `annotation`:
 
 ``` YAML
 spec:
