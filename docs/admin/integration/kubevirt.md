@@ -4,7 +4,7 @@ Many organizations use virtual machines (VMs) to provide operating system abstra
 
 It is possible to mix and match containers and VMs to some extent using a technology called [KubeVirt]( https://kubevirt.io){target=_blank}. KubeVirt allows running VMs inside containers on top of Kubernetes. 
 
-This article describes how to use Kubevirt to schedule VMs with GPUs.
+This article describes how to use KubeVirt to schedule VMs with GPUs.
 
 ## Limitations
 
@@ -98,9 +98,9 @@ spec:
 
 Where `<WORKLOAD-TYPE>` is `train` or `build`
 
-### Turn on Kubevirt feature in Runai
+### Turn on KubeVirt feature in Run:ai
 
-* If you want to upgrade the runai cluster, use the [instructions](https://docs.run.ai/admin/runai-setup/cluster-setup/cluster-upgrade/){target=_blank}. 
+* If you want to upgrade the runai cluster, use the [instructions](../../runai-setup/cluster-setup/cluster-upgrade/){target=_blank}. 
   
     * During the upgrade, customize the cluster installation by adding the following to the values.yaml file:
 
