@@ -64,4 +64,6 @@ The following images are used throughout the documentation:
 | [gcr.io/run-ai-demo/pycharm-demo](https://gcr.io/run-ai-demo/pycharm-demo){target=_blank} | Image used for tool integration (PyCharm and VSCode) | [https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank} |
 | [gcr.io/run-ai-demo/example-triton-client](https://gcr.io/run-ai-demo/example-triton-client){target=_blank} and  [gcr.io/run-ai-demo/example-triton-server](https://gcr.io/run-ai-demo/example-triton-server){target=_blank} |  Basic Inference | [https://github.com/run-ai/models/tree/main/models/triton](https://github.com/run-ai/models/tree/main/models/triton){target=_blank} |
 
+## Contributing to the documentation
 
+This documentation is made better by a number of individuals from our customer and partner community. If you see something worth fixing, please comment at the bottom of the page or create a pull request via GitHub. The public GitHub repository can be found on the top-right of this page. 
