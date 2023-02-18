@@ -26,7 +26,9 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.26 and OpenShift 4.8 to 4.11. Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
+Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.26 and OpenShift 4.8 to 4.11. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
+ 
+Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
 Run:ai has been tested with the following Kubernetes distributions: 
 
