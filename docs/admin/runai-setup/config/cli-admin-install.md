@@ -7,7 +7,7 @@ The instructions below will guide you through the process of installing the Admi
 ## Prerequisites
 
 *   Run:ai Administrator CLI runs on Mac and Linux.   
-*   Kubectl (Kubernetes command-line interface) installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}
+*   Kubectl (Kubernetes command-line interface) is installed and configured to access your cluster. Please refer to [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){target=_blank}
 *   A Kubernetes configuration file obtained from a computer previously connected to the Kubernetes cluster
 
 

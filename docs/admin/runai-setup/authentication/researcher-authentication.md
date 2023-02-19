@@ -163,6 +163,9 @@ As described in [authentication overview](authentication-overview.md), you must 
 
     All nodes with the `kube api server` role will automatically restart with the new flag.
 
+=== "AKS"
+    Please contact Run:ai customer support.
+    
 === "Other"
     See specific instructions in the documentation of the Kubernetes distribution.  
 
