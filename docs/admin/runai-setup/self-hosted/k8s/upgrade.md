@@ -3,6 +3,11 @@ title: Upgrade self-hosted Kubernetes installation
 ---
 # Upgrade Run:ai 
 
+
+!!! Warning
+    The Run:ai data is stored in a Kubernetes persistent volume, depending on how you installed the Run:ai control plane, uninstalling the `runai-backend` helm chart may delete all your data. 
+
+    The upgrade process described below does not require uninstalling. 
 ## Preparations
 
 === "Connected"
