@@ -6,7 +6,7 @@ Researchers working with containers. many times need to remotely access the cont
 *   Using _PyCharm_ to run python commands remotely.
 *   Using _TensorBoard_ to view machine learning visualizations
 
-This requires _exposing container ports_. When using docker, the way Researchers expose ports is by <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_self">declaring</a> them when starting the container. Run:ai has similar syntax.
+This requires _exposing container ports_. When using docker, the way Researchers expose ports is by [declaring](https://docs.docker.com/engine/reference/commandline/run/){target=_blank} them when starting the container. Run:ai has similar syntax.
 
 Run:ai is based on Kubernetes. Kubernetes offers an abstraction of the container's location. This complicates the exposure of ports. Kubernetes offers several options:
 
@@ -41,7 +41,7 @@ To enable host-based routing you must perform the following steps:
 2. Obtain a __star__ SSL certificate for this DNS.
 
 
-Add the certificate as a secret:
+3. Add the certificate as a secret:
 
 === "SaaS" 
     ```
@@ -55,7 +55,7 @@ Add the certificate as a secret:
         --cert /path/to/fullchain.pem --key /path/to/private.pem
     ```
 
-Create an ingress rule to direct traffic:
+4. Create an ingress rule to direct traffic:
 
 === "SaaS" 
     ```    
@@ -69,7 +69,7 @@ Create an ingress rule to direct traffic:
         --patch '[{ "op": "add", "path": "/spec/tls/-", "value": { "hosts": [ "*.<CLUSTER_URL>" ], "secretName": "runai-cluster-domain-star-tls-secret" } }]'
     ```
 
-Edit Runaiconfig to generate the URLs correctly
+5. Edit Runaiconfig to generate the URLs correctly:
 
 ```
 kubectl patch RunaiConfig runai -n runai --type="merge" \
