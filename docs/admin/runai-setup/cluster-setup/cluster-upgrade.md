@@ -23,7 +23,7 @@ The process of upgrading to 2.9 requires [uninstalling](./cluster-delete.md) and
 
 The process:
 
-* [Delete](cluster-delete.md) the Run:ai cluster installation (do not delete the Run:ai cluster __object__ from the user interface).
+* Delete the Run:ai cluster installation according to these [instructions](cluster-delete.md) (do not delete the Run:ai cluster __object__ from the user interface).
 * Install the mandatory Run:ai [prerequisites](cluster-prerequisites.md):
     * If you have previously installed the SaaS version of Run:ai version 2.7 or below, you will need to install both [Ingress Controller](cluster-prerequisites.md#ingress-controller) and [Prometheus](cluster-prerequisites.md#prometheus).
     * If you have previously installed the SaaS version of Run:ai version 2.8 or any Self-hosted version of Run:ai, you will need to install [Prometheus](cluster-prerequisites.md#prometheus) only.
