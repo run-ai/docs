@@ -123,8 +123,10 @@ There are many ways to install and configure an ingress controller and configura
     helm upgrade -i nginx-ingress ingress-nginx/ingress-nginx   \
         --namespace nginx-ingress --create-namespace \
         --set controller.kind=DaemonSet \
-        --set controller.daemonset.useHostPort=true
+        --set controller.service.externalIPs="{<INTERNAL-IP>,<EXTERNAL-IP>}" # (1)
     ```
+
+    1. External and internal IP of one of the nodes
 
 === "Managed Kubernetes"
     For managed Kubernetes such as EKS: 
