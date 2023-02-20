@@ -2,6 +2,8 @@
 
 # Getting familiar with workspaces 
 
+:octicons-versions-24: Version 2.9
+
 Workspace is a simplified tool for researchers to conduct experiments, build AI models, access standard MLOps tools, and collaborate with their peers.
 
 Run:ai workspaces abstract complex concepts related to running containerized workloads in a Kubernetes environment. Aspects such as networking, storage, and secrets, are built from predefined abstracted setups, that ease and streamline the researcher's AI model development.
