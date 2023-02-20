@@ -28,7 +28,7 @@ Creating a new node pool and assigning resources from a node pool to Projects an
 
 :octicons-versions-24: Version 2.9 and up
 
-Starting version 2.9, Run:ai system supports scheduling workloads to a node pool using a list of prioritized node pools. The scheduler will try to schedule the workload to the most prioritized node pool first, if it fails, it will try the second one and so forth. If the scheduler tried the entire list and failed to schedule the workload, it will start from the most prioritized node pool again. This pattern allows for maximizing the odds that a workload will be scheduled. 
+Starting version 2.9, Run:ai system supports scheduling workloads to a node pool using a __list of prioritized node pools__. The scheduler will try to schedule the workload to the most prioritized node pool first, if it fails, it will try the second one and so forth. If the scheduler tried the entire list and failed to schedule the workload, it will start from the most prioritized node pool again. This pattern allows for maximizing the odds that a workload will be scheduled. 
 
 ### Defining Project level 'default node pool priority list'
 If the Researcher did not specify any node pool within the workload specification, the system will use the _default node pool priority list_ as defined by the administrator. If the administrator did not define the _default node pool priority list_, the system will use the `Default` node pool.
