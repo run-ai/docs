@@ -67,9 +67,9 @@ If helm v3 does not yet exist on the machine, install it now:
 ## Mark Run:ai System Workers
 
 === "Version 2.9"
-    In previous versions, you set nodes that ran Run:ai software:
+    In previous versions, you set nodes that were dedicated to Run:ai software:
 
-    * The Setting was mandatory.
+    * Setting the nodes was mandatory.
     * Run:ai was confined to these nodes. If the selected nodes failed or lacked resources, Run:ai would stop working.  
 
     In version 2.9, 
