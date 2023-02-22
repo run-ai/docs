@@ -247,9 +247,19 @@ Following are instructions on how to get the IP and set firewall settings.
 
 ### Cert Manager
 
-Rancher Kubernetes Engine (RKE) and Amazon Elastic Kubernetes Engine (EKS) require a certificate manager as described [here](https://cert-manager.io/docs/installation/helm/){target=_blank}.
+Rancher Kubernetes Engine (RKE) and Amazon Elastic Kubernetes Engine (EKS) require a certificate manager as described [here](https://cert-manager.io/docs/installation/helm/){target=_blank}. Example:
 
-You must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
+```
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --set installCRDs=true
+```
+
+For RKE, you must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
 
 * Download the "On Premise" Kubernetes type. 
 * Edit the cluster values file and change `useCertManager` to `true` 
