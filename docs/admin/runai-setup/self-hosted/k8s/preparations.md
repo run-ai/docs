@@ -76,7 +76,7 @@ If helm v3 does not yet exist on the machine, install it now:
     
     * There is no need to set nodes for Run:ai.
     * You can __optionally__ set the Run:ai control plane to run on specific nodes. 
-    * Run:ai is no longer confined to these notes. Instead, Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labelled node.  
+    * Run:ai is no longer confined to these notes. Instead, Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
 
     To set system worker nodes run:
 
@@ -85,6 +85,9 @@ If helm v3 does not yet exist on the machine, install it now:
     ```
 
     If you want to preserve the previous functionality, please contact Run:ai customer support.
+
+    !!! Note
+        The new functionality is limited to the Run:ai control plane and has not yet been implemented in the Run:ai cluster. 
     
     
 === "Version 2.8 or below"
