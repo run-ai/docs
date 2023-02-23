@@ -259,7 +259,7 @@ helm install \
   --set installCRDs=true
 ```
 
-For RKE, you must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
+For RKE only, you must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
 
 * Download the "On Premise" Kubernetes type. 
 * Edit the cluster values file and change `useCertManager` to `true` 
