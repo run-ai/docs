@@ -44,7 +44,7 @@ As an IT Administrator, you can collect Run:ai logs to send to support:
 * Run `runai-adm collect-logs`. The command will generate a compressed file containing all of the existing Run:ai log files.
 
 !!! Note
-    The tar file packages logs Run:ai components only. It does __not__ include logs of researcher containers that may contain private information. 
+    The tar file packages the logs of Run:ai components only. It does __not__ include logs of researcher containers that may contain private information. 
 
 ## Example Code
 
