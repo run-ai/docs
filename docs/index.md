@@ -15,7 +15,7 @@ The Run:ai documentation is targeting three personas:
 
 To get support use the following channels:
 
-* On the navigation bar of the Run:ai user interface at `<company-name>.run.ai`, use the 'Support' button.
+* On the Run:ai user interface at `<company-name>.run.ai`, use the 'Contact Support' link on the top right.
 
 * Or submit a ticket by clicking the button below:
 
