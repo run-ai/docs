@@ -45,12 +45,21 @@ kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/
 ```
 The number should have 3 digits (for example `1.2.34`). You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
 
+Save the old helm values by running:
+
+```
+helm get values runai-cluster -n runai > old-cluster-values.yaml
+```
+
+Download a new values file as described [here](cluster-install.md#install-runai)
+
+If you have customized the previous installation, you must now copy the changes from the old cluster values to the new ones.
+
 Then run:
 
 ```
 helm repo update
-helm get values runai-cluster -n runai > values.yaml
-helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
+helm upgrade runai-cluster runai/runai-cluster -n runai -f new-values-values.yaml
 ```
 
 !!! Note
