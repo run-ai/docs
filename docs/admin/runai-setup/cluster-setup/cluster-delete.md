@@ -23,6 +23,5 @@ To delete a Run:ai Cluster installation while retaining existing running jobs, r
     helm delete runai-cluster runai -n runai
     ```
 
-
 The commands will __not__ delete existing Jobs submitted by users. 
 
