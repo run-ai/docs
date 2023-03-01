@@ -53,7 +53,8 @@ helm get values runai-cluster -n runai > old-cluster-values.yaml
 
 Download a new values file as described [here](cluster-install.md#install-runai)
 
-If you have customized the previous installation, you must now copy the changes from the old cluster values to the new ones.
+* If you have customized the previous installation, you must now copy the changes from the old cluster values to the new ones.
+* If you want to add new customization please change the new value file according to [this](customize-cluster-install.md#configuration-flags) document.
 
 Then run:
 
