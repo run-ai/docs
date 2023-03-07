@@ -12,7 +12,7 @@ In some organizations, Projects may not be enough, this is because:
 
 ## Departments
 
-__Departments__ create a secondary hierarchy of resource allocation:
+**Departments** create a secondary hierarchy of resource allocation:
 
 * A Project is associated with a single Department. Multiple Projects can be associated with the same Department.
 * A Department, like a Project is associated with a Quota. 
@@ -47,19 +47,27 @@ Consider an example from an academic use case: the Computer Science Department a
 Departments are disabled by default. To start working with Departments:
 
 * Go to Settings | General
-* Enable Departments 
+* Enable Departments
 
 Once Departments are enabled, the left-side menu will have a new item named "Departments".
 
 
-Under __Departments__ there will be a single Department named __default__. All Projects created before the Department feature was enabled will belong to the __default__ Department.
-
+Under **Departments** there will be a single Department named **default**. All Projects created before the Department feature was enabled will belong to the **default** Department.
 
 ### Adding Departments
 
-You can add new Departments by pressing the __Add New Department__ at the top right of the Department view. Add Department name and quota allocation.
+You can add new Departments by pressing the **Add New Department** at the top right of the Department view. Add Department name and quota allocation.
+
+### Assign Department Administrator role
+
+You can create a new user with the *Department Administrator* role, or add the role to exisintg users.
+To create a new users with this role, see [Create a user](admin-ui-users.md#create-a-user).
+To add this role to an existing user:
+
+1. Go to `Settings | Users`.
+2. Select a user from the list and then press `Edit User`.
+3. Select the `Department Admin` role from the list. (Deselect to remove the role from the user).
 
 ### Assigning Projects to Departments
 
-Under __Projects__ edit an existing Project. You will see a new **Department** drop-down with which you can associate a Project with a Department.
-
+Under **Projects** edit an existing Project. You will see a new **Department** drop-down with which you can associate a Project with a Department.

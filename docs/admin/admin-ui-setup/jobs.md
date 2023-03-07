@@ -9,15 +9,16 @@ The main view shows a list of Jobs. The list can be filtered and sorted:
 
 ![job-list](img/job-list.png)
 
-
-## Submit Job
-On the top right, you can choose to Submit a new Job. A Job form will open: 
+## Submit a Job
+On the top right, you can choose to Submit a new Job. A Job form will open:
 
 ![submit-job](img/submit-job.png)
 
 !!! Note
-    If the _Submit Job_ button is disabled or does not exist, then your cluster is not installed or configured to connect to the cluster see [here](overview.md) for more information.
+    If the *Submit Job* button is disabled or does not exist, then your cluster is not installed or configured to connect to the cluster see [here](overview.md) for more information.
 
+!!! Note
+    If you have the `Registry integration` feature enabled, you will only be able to select an image from the configured repository. To select an image, enter any three consecutive letters from the name of the image. Select the image from the list, then select a tag from the displayed drop down.
 ## Job Properties
 
 When selecting a single Job, a right-pane appears:
@@ -30,4 +31,4 @@ This multi-tab view provides information about Job details, related Pods, Job st
 
 ## Other operations
 
-You can also delete a selected Job or suspend/resume a selected Job. 
+You can also delete a selected Job or suspend/resume a selected Job.
