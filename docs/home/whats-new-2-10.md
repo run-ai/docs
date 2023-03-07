@@ -1,4 +1,4 @@
-# run:ai version 2.10
+# run:ai version 2.10 - test the change manually
 
 ## Release date
 
