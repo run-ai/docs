@@ -19,7 +19,7 @@ You can create users, as well as update and delete users.
 1. Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
 2. On the top right, select "Add New Users".
 3. Choose a User name and email.
-4. Select Roles. More than one role can be selected. The available roles are:
+4. Select Roles. More than one role can be selected. The available roles are (see [Roles and permissions](#roles-and-permissions)):
     * **Administrator**: Can manage Users and install Clusters.
     * **Editor**: Can manage Projects and Departments.
     * **Viewer**: View-only access to the Run:ai User Interface.
@@ -31,3 +31,31 @@ You can create users, as well as update and delete users.
 6. Press "Save".
 
 You will get the new user credentials and have the option to send the credentials by email.
+
+### Roles and permissions
+
+Roles provide a way to group permissions and assign them to either users or user groups. The role identifies the collection of permissions that administrators assign to users or user groups. Permissions define the actions that users can perform on the managed entities. The following table shows the default roles and permissions.
+
+| Managed Entity   /  Roles | Admin | Dep. Admin | Editor | Research Manager | Researcher | ML Eng. | Viewer |
+|:--|:--|:--|:--|:--|:--|:--|:--|
+| Settings.Users/Groups/Apps to Roles | CRUD (all roles) | CRUD (Proj. Researchers only) | N/A | N/A | N/A | N/A | N/A |
+| Bind Users/Groups/Apps to Scopes | R (Projects, Departments) | CRUD (Projects only) | CRUD (Projects, Departments) | N/A | N/A | N/A | N/A |
+| Departments | R | R | CRUD | N/A | N/A | R | R |
+| Projects | R | CRUD | CRUD | R | R | R | R |
+| Jobs | R | R | R | R | CRUD | N/A | R |
+| Deployments | R | R | R | N/A | N/A | CRUD | R |
+| Workspaces | R | R | R | R | CRUD | N/A | N/A |
+| Environments | CRUD | CRUD | CRUD | CRUD | CRUD | N/A | N/A |
+| Data Sources | CRUD | CRUD | CRUD | CRUD | CRUD | N/A | N/A |
+| Compute Resources | CRUD | CRUD | CRUD | CRUD | CRUD | N/A | N/A |
+| Templates | CRUD | CRUD | CRUD | CRUD | CRUD | N/A | N/A |
+| Clusters | CRUD | N/A | R | N/A | N/A | R | R |
+| Node Pools | CRUD | N/A | R | N/A | N/A | R | R |
+| Nodes | R | N/A | R | N/A | N/A | R | R |
+| Settings (General, Apps) | CRUD | N/A | N/A | N/A | N/A | N/A | N/A |
+| Events History | R | N/A | N/A | N/A | N/A | N/A | N/A |
+| Dashboard.Overview | R | R | R | R | R | R | R |
+| Dashboards.Analytics | R | R | R | R | R | R | R |
+| Dashboards.Consumption | R | N/A | N/A | N/A | N/A | N/A | N/A |
+
+Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete, **P** = Protected

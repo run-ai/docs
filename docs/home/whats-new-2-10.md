@@ -1,5 +1,4 @@
-# run:ai version 2.10 - test the change manually
-
+# Run:ai version 2.10
 ## Release date
 
 March 2023
@@ -20,41 +19,45 @@ The new role of *Department Administrator* adds a layer of delegation in the adm
 
 Added an additional SSO configuration option using OIDC as the identity provider. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#ui-configuration).
 
-### Registry integration (alpha feature)
+**Idle logout**
 
-**Container registry integration**
-
-A new feature added that integrates container registry images into the list of images in a job or workspace. Images are limited to one registry that's configured by the system administrator Image names are filled in using autocomplete from the names of the images in the configured registry. For configuration information, see [Registry integration](registry-integration-alpha-feature). To select an image for a job, see [Submit a job](../admin/admin-ui-setup/jobs.md#submit-a-job).
-
-**Registry images container with feature flag**
-
-This feature added a configuration option for an admin to add a registry images container to the environment as a feature flag. For configuration information, see [Using a Docker Registry with Credentials](##../admin/researcher-setup/docker-registry-config.md).
+Added idle timeout for automated logout. The idle timeout is configured in minutes. For configuration information, see [Idle timeout](../admin/runai-setup/authentication/authentication-overview.md#idle-timeout)
 
 ### Researcher tools
 
 **Pytorch**
 
-Added CLI support for submitting Pytorch jobs. For more information, see [Submit run:ai Pytorch job](../Researcher/cli-reference/runai-submit-pytorch.md).
+Added CLI support for submitting Pytorch jobs. For more information, see [Submit Run:ai Pytorch job](../Researcher/cli-reference/runai-submit-pytorch.md).
 
 **TensorFlow**
 
-Added CLI support for submitting TensorFlow jobs. For more information, see [Submit run:ai TensorFlow job](../Researcher/cli-reference/runai-submit-TF.md)
+Added CLI support for submitting TensorFlow jobs. For more information, see [Submit Run:ai TensorFlow job](../Researcher/cli-reference/runai-submit-TF.md)
 
-**CRON jobs support**
+**Cron jobs support**
 
-Fill in about cron jobs here.
+Added support for cron command-line job scheduler. For more information, see [Submit CRON job via YAML](../developer/cluster-api/submit-cron-yaml.md)
 
-### Dashboards
+**Previous jobs menu**
 
-**Consumption dashboard**
+Removed `Previous job` from the new job form.
 
-Added a new dashboard to enable users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines. For more information,  see [Consumption dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
+**Annotations ans labels**
+
+Added to UI the capability to add k8s annotations and labels to job submission form.
+
+**Scheduling workloads to AWS placement groups**
+
+Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html){targe=_blank} within AWS to maximize throughput and performance of distributed training workloads. For more information, see [Scheduling workloads to AWS placement groups](../Researcher/scheduling/schedule-to-aws-groups.md).
 
 ### Storage
 
 **Cluster wide PVC**
 
 Added the ability to use cluster wide PVCs. A PersistentVolumeClaim (PVC) is a request for storage by a user and is similar to a Pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Claims can request specific size and access modes. For more information about PVCs, see [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/){targe=_blank}. For PVC configuration, see [Setting up cluster wide PVCs](../admin/researcher-setup/cluster-wide-pvc.md).
+
+**Ephemeral PVC**
+
+Added support Ephemeral PVC in CLI and in the job submission form. For more information, see CLI reference [runai submit](../Researcher/cli-reference/runai-submit.md#-pvc-exist-string).
 
 ## Known issues
 
@@ -65,4 +68,3 @@ Added the ability to use cluster wide PVCs. A PersistentVolumeClaim (PVC) is a r
 
 |Internal ID|Description|
 |-----------|--------------|
-

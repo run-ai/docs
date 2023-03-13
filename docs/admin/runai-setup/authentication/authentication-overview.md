@@ -44,6 +44,14 @@ You can also use a client application to get a token and then connect directly t
 The Run:ai GPU cluster is a _Kubernetes_ cluster. All communication into Kubernetes flows through the [Kubernetes API server](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/){target=_blank}.
 
 To facilitate authentication via Run:ai the Kubernetes API server must be configured to use the Run:ai identity service to validate authentication tokens. For more information on how to configure the Kubernetes API server see _Kubernetes configuration_ under [researcher authentication](researcher-authentication.md#mandatory-kubernetes-configuration).
+
+## Idle timeout
+
+Run:ai session should timeout after 1 hour of inactivity.
+
+!!! Note
+    Timeout settings are configured in minutes.
+
 ## See also
 
 * To configure authentication for researchers [researcher authentication](researcher-authentication.md).

@@ -1,6 +1,6 @@
 ## Description
 
-Submit a Distributed Training (MPI) Run:ai Job for execution.
+Submit a Distributed Training (MPI) Run:ai Job to run.
 
 !!! Note
     To use distributed training you need to have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
@@ -24,7 +24,11 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 
 #### --clean-pod-policy < string >
 
-> Set clean pod policy. Options are `all`, `running`, or `none`
+> The CleanPodPolicy controls deletion of pods when a job terminates. The policy can be one of the following values:
+>
+>* **Running**&mdash;only pods still running when a job completes (for example, parameter servers) will be deleted immediately. Completed pods will not be deleted so that the logs will be preserved. (Default)
+>* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
+>* **None**&mdsh;no pods will be deleted when the job completes.
 
 #### --non-preemptible
 

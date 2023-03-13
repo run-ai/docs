@@ -19,7 +19,7 @@ runai submit -i ubuntu --interactive --attach -g 1
 
 Or
 
-```
+```console
 runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
 ```
 
@@ -27,38 +27,50 @@ runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity
 
 Externalize ports:
 
-    runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-        --service-type=nodeport --port 30022:22
-        -- /usr/sbin/sshd -D 
+```console
+runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
+   --service-type=nodeport --port 30022:22
+   -- /usr/sbin/sshd -D
+```
 
 (see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
 
 Start a Training Job
 
-    runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
+```console
+runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
+```
     
 (see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
 
 Use GPU Fractions
 
-    runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 
+```console
+runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
+```
 
 (see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
 
 Hyperparameter Optimization
 
-    runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-        --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
+```console
+runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
+   --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
+```
 
 (see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
 Submit a Job without a name (automatically generates a name)
 
-    runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
-    
+```console
+runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
+```
+
 Submit a Job without a name with a pre-defined prefix and an incremental index suffix
 
-    runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
+```console
+runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
+```
 
 ## Options
 
@@ -92,7 +104,7 @@ Submit a Job without a name with a pre-defined prefix and an incremental index s
 
 The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
-Note that the submit call may use a _policy_ to provide defaults to any of the above flags.
+Note that the submit call may use a *policy* to provide defaults to any of the above flags.
 
 ## See Also
 

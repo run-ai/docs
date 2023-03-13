@@ -199,3 +199,46 @@ Provides a holistic, aggregated view across Clusters, including information abou
 ## Consumption dashboard
 
 This dashboard enables users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines.
+
+![!copnsumption dasboard](img/consumption-dashboard.png)
+
+The dashboard has 4 dashlets for:
+
+* Cumulative GPU allocation per Project or Department
+* Cumulative CPU allocation per Project or Department
+* Cumulative memory allocation per Project or Department
+* Consumption types
+
+Use the drop down menus at the top of the dashboard to apply filters for:
+
+* Project or department
+* Per project (single, multiple, or all)
+* Per department (single, multiple or all)
+
+Use the time picker dropdown to select relative time range options and set custom absolute time ranges.
+You can change the Timezone and fiscal year settings from the time range controls by clicking the Change time settings button.
+
+!!! Note
+     Dashboard data updates once an hour.
+
+![](img/consumption-dashboard-time-picker.png)
+
+You can change the refresh interval using the refresh interval drop down.
+
+The dashboard has a Total consumption table that displays the total consumption of resources based on:
+
+* Project
+* Department
+* GPU hours
+* CPU hours
+* Memory hours
+
+Hover over an entry in the table to filter it in or out of the table.
+
+The dashboard has a graph of the GPU allocation over time.
+
+!![](img/consumption-dashboard-gpu-over-time.png)
+
+The dashboard has a graph of the Project over-quota GPU consumtion.
+
+!![](img/consumtion-dashboard-project-over-quota-graph.png)

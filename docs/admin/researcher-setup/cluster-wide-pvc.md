@@ -11,10 +11,22 @@ kubectl label persistentvolumeclaims -n runai <PVC_NAME> runai/cluster-wide=true
 ```
 
 !!! Reminder
-    To install the run:ai Administrator CLI, see [Install the Run:ai Administrator Command-line Interface](../runai-setup/config/cli-admin-install.md).
+    To install the Run:ai Administrator CLI, see [Install the Run:ai Administrator Command-line Interface](../runai-setup/config/cli-admin-install.md).
 
 To delete a PVC from all run:ai Projects, run:
 
 ```
 kubectl label persistentvolumeclaims -n runai <PVC_NAME> runai/cluster-wide-
 ```
+
+You can add a PVC to a job using the `New job` form.
+
+To add a PVC to a new job:
+
+1. On the `New job` form, press `Storage`.
+2. In `Persistent Volume Claims` press `Add`.
+3. Enable `Existing PVC`.
+4. Enter the name (claim name) of the PVC.
+5. Enter the storage class. (Optional)
+6. Enter the size.
+7. Enable / disable access modes.

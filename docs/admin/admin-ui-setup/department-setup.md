@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Researchers submit Jobs. To streamline resource allocation and prioritize work, Run:ai introduces the concept of [Projects](project-setup.md). Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
 
@@ -7,8 +7,7 @@ A Researcher submitting a Job needs to associate a Project name with the request
 In some organizations, Projects may not be enough, this is because:
 
 * There are simply too many individual entities that are attached to a quota.
-* There are organizational quotas at a higher level. 
-
+* There are organizational quotas at a higher level.
 
 ## Departments
 
@@ -31,16 +30,14 @@ Once an Administrator enables node pools, all GPU and CPU resources will be incl
 An administrator can create a new node pool and associate nodes into this pool. Any new pool is automatically associated with all Departments and Projects within a cluster, with a GPU and CPU resource Quota of zero. The Administrator can then change the Quota of any node-pool resource per Department and Project. The Quota of node-pool X within Department Y should be at least the sum of the same node-pool X Quota across all associated Projects. This means an administrator should carefully plan the resource Quota allocation from the Department to its descendent Projects.
 The overall Quota of the Department is the sum of all its associated node pools. 
 
-
 ### Over-quota behavior
 
 Consider an example from an academic use case: the Computer Science Department and the GeoPhysics Department have each purchased 10 nodes with 8 GPUs for each node, totaling a cluster of 160 GPUs for both departments. The two Departments do not mind sharing GPUs as long as they always get their 80 GPUs when they truly need them. As such, there could be many Projects in the GeoPhysics Department, totaling an allocation of 100 GPUs, but anything above 80 GPUs will be considered by the Run:ai scheduler as over-quota. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md). In case node pools are enabled, the same rule applies per node pool, i.e. if a job tries to use resources that supersede a node pool Department's quota - it will be considered as Over-Quota.
 
-!!! Important 
+!!! Important
     Best practice: As a rule, the sum of the Departments' Quota allocations should be equal to the number of GPUs in the cluster.
 
-
-## Creating and Managing Departments 
+## Creating and Managing Departments
 
 ### Enable Departments
 
@@ -50,7 +47,6 @@ Departments are disabled by default. To start working with Departments:
 * Enable Departments
 
 Once Departments are enabled, the left-side menu will have a new item named "Departments".
-
 
 Under **Departments** there will be a single Department named **default**. All Projects created before the Department feature was enabled will belong to the **default** Department.
 

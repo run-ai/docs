@@ -17,8 +17,6 @@ On the top right, you can choose to Submit a new Job. A Job form will open:
 !!! Note
     If the *Submit Job* button is disabled or does not exist, then your cluster is not installed or configured to connect to the cluster see [here](overview.md) for more information.
 
-!!! Note
-    If you have the `Registry integration` feature enabled, you will only be able to select an image from the configured repository. To select an image, enter any three consecutive letters from the name of the image. Select the image from the list, then select a tag from the displayed drop down.
 ## Job Properties
 
 When selecting a single Job, a right-pane appears:

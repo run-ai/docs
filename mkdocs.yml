@@ -17,13 +17,15 @@ theme:
     - search.suggest
 extra_css:
   - stylesheets/extra.css
+  
 #strict: true   
  
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: $relative
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -31,6 +33,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - meta
+  - tables
   - toc:
       permalink: True 
   - pymdownx.emoji:
@@ -52,6 +55,11 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+  - glightbox:
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - skip-lightbox
 
 #  - render_swagger
   - minify:
@@ -262,8 +270,8 @@ nav:
       - 'runai resume' : 'Researcher/cli-reference/runai-resume.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
-      - 'runai submit-Pytorch' : 'Researcher/cli-reference/runai-submit-pytorch.md'
-      - 'runai submit-TensorFlow' : 'Researcher/cli-reference/runai-submit-TF.md'
+      - 'runai submit-pytorch' : 'Researcher/cli-reference/runai-submit-pytorch.md'
+      - 'runai submit-tf' : 'Researcher/cli-reference/runai-submit-TF.md'
       - 'runai suspend' : 'Researcher/cli-reference/runai-suspend.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
       - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
@@ -281,6 +289,7 @@ nav:
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
+      - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
       - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
       - 'Hyperparameter Optimization' : 'Researcher/scheduling/hpo.md'
     - 'Tools' :
@@ -297,6 +306,7 @@ nav:
       - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
+      - 'Submit CRON job via YAML'  : 'developer/cluster-api/submit-cron-yaml.md'
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
       - 'Reference' :
         - 'Training Workloads' : 'developer/cluster-api/reference/training.md'

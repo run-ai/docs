@@ -1,27 +1,27 @@
 ### Naming and Shortcuts
 
-#### --job-name-prefix < string >
+#### --job-name-prefix `<string>`
 > The prefix to use to automatically generate a Job name with an incremental index. When a Job name is omitted Run:ai will generate a Job name. The optional `--job-name-prefix flag` creates Job names with the provided prefix.
 
-#### --name < string >
+#### --name `<string>`
 > The name of the Job.
 
-#### --template < string >
+#### --template `<string>`
 > Load default values from a workload.
 
 ### Container Definition
 
-#### --add-capability < stringArray >
+#### --add-capability `<stringArray>`
 
 > Add linux capabilities to the container.
 
-#### -a | --annotation < stringArray >
+#### -a | --annotation `<stringArray>`
 
 > Set annotations variables in the container.
 
 #### --attach
 
->  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md). 
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
 >
 > The --attach flag also sets `--tty` and `--stdin` to true.
 
@@ -37,18 +37,18 @@
 
 #### --create-home-dir
 
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](./admin/runai-setup/config/non-root-containers.md).
 
-#### -e < stringArray>  | --environment < stringArray >
+#### -e `<stringArray>  | --environment `<stringArray>`
 
 >  Define environment variables to be set in the container. To set multiple values add the flag multiple times (`-e BATCH_SIZE=50 -e LEARNING_RATE=0.2`).
  <!-- or separate by a comma (`-e BATCH_SIZE:50,LEARNING_RATE:0.2`). -->
   
-#### --image < string > | -i < string >
+#### --image `<string>` | -i `<string>`
 
 >  Image to use when creating the container for this Job
 
-#### --image-pull-policy < string >
+#### --image-pull-policy `<string>`
 
 >  Pulling policy of the image when starting a container. Options are:
 >
@@ -58,15 +58,15 @@
 >
 > For more information see Kubernetes [documentation](https://kubernetes.io/docs/concepts/configuration/overview/#container-images){target=_blank}.
 
-####  -l | --label < stringArray >
+####  -l | --label `<stringArray>`
 
 > Set labels variables in the container.
 
-#### --preferred-pod-topology-key < string >
+#### --preferred-pod-topology-key `<string>`
 
 > If possible, all pods of this job will be scheduled onto nodes that have a label with this key and identical values.
 
-#### --required-pod-topology-key < string >
+#### --required-pod-topology-key `<string>`
 
 > Enforce scheduling pods of this job onto nodes that have a label with this key and identical values.
 
@@ -78,25 +78,25 @@
 
 >  Allocate a pseudo-TTY.
 
-#### --working-dir < string >
+#### --working-dir `<string>`
 
 >  Starts the container with the specified directory as the current directory.
 
 ### Resource Allocation
 
-#### --cpu < double >
+#### --cpu `<double>`
 
 > CPU units to allocate for the Job (0.5, 1, .etc). The Job will receive **at least** this amount of CPU. Note that the Job will **not** be scheduled unless the system can guarantee this amount of CPUs to the Job.
 
-#### --cpu-limit < double >
+#### --cpu-limit `<double>`
 
 > Limitations on the number of CPUs consumed by the Job (for example 0.5, 1). The system guarantees that this Job will not be able to consume more than this amount of CPUs.
 
-#### --extended-resource < stringArray>
+#### --extended-resource `<stringArray>
 
-> Request access to extended resource, syntax < resource-name > = < resource_quantity >
+> Request access to extended resource, syntax `<resource-name> = < resource_quantity >`
 
-#### -g | --gpu < float >
+#### -g | --gpu `<float>`
 
 > GPU units to allocate for the Job (0.5, 1).
 
@@ -104,27 +104,27 @@
 
 > GPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive this amount of memory. Note that the Job will **not** be scheduled unless the system can guarantee this amount of GPU memory to the Job.
 
-#### --memory < string >
+#### --memory `<string>`
 
 >  CPU memory to allocate for this Job (1G, 20M, .etc). The Job will receive **at least** this amount of memory. Note that the Job will **not** be scheduled unless the system can guarantee this amount of memory to the Job.
 
-#### --memory-limit < string>
+#### --memory-limit `<string>
 
 >  CPU memory to allocate for this Job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
-#### --mig-profile < string >
+#### --mig-profile `<string>`
 
 > MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
 
 ### Job Lifecycle
 
-#### --backoff-limit < int >
+#### --backoff-limit `<int>`
 
 > The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
       
 ### Storage
 
-#### --git-sync < stringArray >
+#### --git-sync `<stringArray>`
 
 > Clone a git repository into the container running the Job. The parameter should follow the syntax: `source=REPOSITORY,branch=BRANCH_NAME,rev=REVISION,username=USERNAME,password=PASSWORD,target=TARGET_DIRECTORY_TO_CLONE`.
 
@@ -136,7 +136,7 @@
 
 > Enable HostToContainer mount propagation for all container volumes
 
-#### --nfs-server < string >
+#### --nfs-server `<string>`
 
 > Use this flag to specify a default NFS host for --volume flag.
 > Alternatively, you can specify NFS host for each volume
@@ -148,15 +148,18 @@
 
 > Mount a persistent volume claim into a container.
 >
+>!!!Note
+    This option is being deprecated. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exist` and `--pvc-new`.
+>
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 >
 > **Storage_Class_Name** is a storage class name that can be obtained by running `kubectl get storageclasses.storage.k8s.io`. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. 
 >
->    **Size** is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
+> **Size** is the volume size you want to allocate. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} for how to specify volume sizes
 >
->    **Container_Mount_Path**. A path internal to the container where the storage will be mounted
+> **Container_Mount_Path**. A path internal to the container where the storage will be mounted
 >
->    **Pvc_Name**. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic){target=_blank} to mount into the container
+> **Pvc_Name**. The name of a pre-existing [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic){target=_blank} to mount into the container
 > 
 > Examples:
 >
@@ -170,21 +173,49 @@
 >
 > > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
-#### --pvc-exist < stringArray >
+#### --pvc-exist `<string>`
 
-> Mount a persistent volume. Use the format: claimname=CLAIM_NAME,path=PATH
+> Mount a persistent volume. You must include a `claimname` and `path`.
+>
+> - **claim name**&mdash;The name of the persistent colume claim. Can be obtained by running 
+>
+> `kubectl get storageclasses.storage.k8s.io`
+>
+> - **path**&mdash;the path internal to the container where the storage will be mounted
+>
+> Use the format:
+>
+> `claimname=<CLAIM_NAME>,path=<PATH>`
 
-#### --pvc-new < stringArray>
+#### --pvc-new  `<string>`
 
-> Mount a persistent volume. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
+> Mount a persistent volume claim (PVC). If the PVC does not exist, it will be created based on the parameters entered. If a PVC exists, it will be used with its defined attributes and the parameters in the command will be ignored.
+>
+> - **claim name**&mdash;The name of the persistent colume claim.
+> - **storage class**&mdash;A storage class name that can be obtained by running 
+>
+> > `kubectl get storageclasses.storage.k8s.io.`
+>
+> > `storageclass` may be omitted if there is a single storage class in the system, or you are using the default storage class.
+>
+> - **size**&mdash;The volume size you want to allocate for the PVC when creating it. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} to specify volume sizes.
+> - **accessmode**&mdash;The description of thr desired volume capabilities for the PVC.
+> - **ro**&mdash;Mount the PVC with read-only access.
+> - **ephemeral**&mdash;The PVC will be created as volatile temporary storage which is only present during the running lifetime of the job.
+>
+> Use the format:
+>
+>`storageclass=  <storageclass>,size= <size>, path= <path>, ro, accessmode-rwm`
 
-#### --s3 < string >
+#### --s3 `<string>`
 
 > Mount an S3 compatible storage into the container running the job. The parameter should follow the syntax:
-> > `bucket=BUCKET,key=KEY,secret=SECRET,url=URL,target=TARGET_PATH`
+> 
+> `bucket=BUCKET,key=KEY,secret=SECRET,url=URL,target=TARGET_PATH`
 >
 > All the fields, except url=URL, are mandatory. Default for url is
-> > `url=https://s3.amazon.com`
+> 
+> `url=https://s3.amazon.com`
 
 #### -v | --volume 'Source:Container_Mount_Path:[ro]:[nfs-host]'
 
@@ -192,15 +223,17 @@
 >
 > Examples:
 >
-> > `-v /raid/public/john/data:/root/data:ro`
+>  `-v /raid/public/john/data:/root/data:ro`
+> 
 > Mount /root/data to local path /raid/public/john/data for read-only access.
 >
-> > `-v /public/data:/root/data::nfs.example.com`
+>  `-v /public/data:/root/data::nfs.example.com`
+> 
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
 ### Network
 
-#### --address < string >
+#### --address `<string>`
 
 > Comma separated list of IP addresses to listen to when running with --service-type portforward (default: localhost)
 
@@ -216,11 +249,11 @@
 > Use the host's network stack inside the container.
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/)documentation.
 
-#### --port < stringArray >
+#### --port `<stringArray>`
 
 > Expose ports from the Job container.
 
-#### -s | --service-type < string >
+#### -s | --service-type `<string>`
 
 > External access type to interactive jobs. Options are: portforward, loadbalancer, nodeport, ingress.
   
@@ -232,20 +265,20 @@
 
 #### --run-as-user
 
->  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+>  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../admin/runai-setup/config/non-root-containers.md).
 
 ### Scheduling
 
-#### --node-pools < string >
+#### --node-pools `<string>`
 
-> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../scheduling/the-runai-scheduler.md#node-pools). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
-> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
+> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
+> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../admin/admin-ui-setup/project-setup.md).
 
-#### --node-type < string >
+#### --node-type `<string>`
 
->  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../admin/researcher-setup/limit-to-node-group.md).
 
-#### --toleration < string >
+#### --toleration `<string>`
 
 > Specify one or more toleration criteria, to ensure that the workload is not scheduled onto an inappropriate node. 
 > This is done by matching the workload tolerations to the taints defined for each node. For further details see Kubernetes

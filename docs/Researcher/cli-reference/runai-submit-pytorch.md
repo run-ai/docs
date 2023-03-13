@@ -1,6 +1,6 @@
 ## Description
 
-Submit a distributed Pytorch training run:ai job of execution.
+Submit a distributed Pytorch training run:ai job to run.
 
 !!! Note
     To use distributed training you need to have installed the < insert pytorch operator here > as specified < insert pre-requisites link here >.
@@ -11,7 +11,10 @@ Syntax notes:
 
 ## Examples
 
-< add examples here>
+```console
+runai submit-pytorch --name distributed-job --replicas=2 -g 1 \
+	-i gcr.io/run-ai-demo/quickstart-distributed
+```
 
 ## Options
 
@@ -19,7 +22,11 @@ Syntax notes:
 
 #### --clean-pod-policy < string >
 
->Set clean pod policy: all, running or none
+> The CleanPodPolicy controls deletion of pods when a job terminates. The policy can be one of the following values:
+>
+>* **Running**&mdash;only pods still running when a job completes (for example, parameter servers) will be deleted immediately. Completed pods will not be deleted so that the logs will be preserved. (Default)
+>* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
+>* **None**&mdsh;no pods will be deleted when the job completes.
 
 #### --max-replicas < int >
 
