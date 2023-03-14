@@ -44,16 +44,30 @@ function install-containerd {
                 echo -e "${GREEN}containerd already installed${NC}"
         else
                 echo  -e "${GREEN} installing containerd...${NC}"
-                apt install -y curl gpgv gpgsm gnupg-l10n gnupg dirmngr software-properties-common apt-transport-https ca-certificates
-                # apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
-                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
-                add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+                sudo apt-get update
+                sudo apt install -y ca-certificates curl gnupg lsb-release dirmngr software-properties-common apt-transport-https gpgv gpgsm gnupg-l10n
+                sudo mkdir -m 0755 -p /etc/apt/keyrings
+                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+                echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+                $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
                 sudo apt update
                 sudo apt install -y containerd.io
                 containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
                 sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
                 systemctl restart containerd
                 systemctl enable containerd
+                ##THIS IS OLD##
+                # echo  -e "${GREEN} installing containerd...${NC}"
+                # apt install -y curl gpgv gpgsm gnupg-l10n gnupg dirmngr software-properties-common apt-transport-https ca-certificates
+                # # apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+                # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+                # add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+                # sudo apt update
+                # sudo apt install -y containerd.io
+                # containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+                # sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+                # systemctl restart containerd
+                # systemctl enable containerd
 
         fi
 }
