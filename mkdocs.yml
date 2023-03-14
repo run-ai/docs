@@ -18,14 +18,15 @@ theme:
 extra_css:
   - stylesheets/extra.css
   
-#strict: true   
+# strict: true   
  
 markdown_extensions:
+  - markdown_include.include
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: $relative
+      base_path: docs
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -60,7 +61,6 @@ plugins:
       draggable: true
       skip_classes:
         - skip-lightbox
-
 #  - render_swagger
   - minify:
       minify_html: true
@@ -274,7 +274,7 @@ nav:
       - 'runai submit-tf' : 'Researcher/cli-reference/runai-submit-TF.md'
       - 'runai suspend' : 'Researcher/cli-reference/runai-suspend.md'
       - 'runai top node' : 'Researcher/cli-reference/runai-top-node.md'
-      - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
+      # - 'runai top job' : 'Researcher/cli-reference/runai-top-job.md'
       - 'runai update' : 'Researcher/cli-reference/runai-update.md'
       - 'runai version' : 'Researcher/cli-reference/runai-version.md'
       - 'runai whoami' : 'Researcher/cli-reference/runai-whoami.md'

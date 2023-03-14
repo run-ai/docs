@@ -37,7 +37,7 @@
 
 #### --create-home-dir
 
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](./admin/runai-setup/config/non-root-containers.md).
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](../admin/runai-setup/config/non-root-containers.md).
 
 #### -e `<stringArray>  | --environment `<stringArray>`
 
@@ -149,7 +149,7 @@
 > Mount a persistent volume claim into a container.
 >
 >!!!Note
-    This option is being deprecated. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exist` and `--pvc-new`.
+    This option is being deprecated from version 2.10 and above. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exist` and `--pvc-new`.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 >
@@ -192,7 +192,7 @@
 > Mount a persistent volume claim (PVC). If the PVC does not exist, it will be created based on the parameters entered. If a PVC exists, it will be used with its defined attributes and the parameters in the command will be ignored.
 >
 > - **claim name**&mdash;The name of the persistent colume claim.
-> - **storage class**&mdash;A storage class name that can be obtained by running 
+> - **storage class**&mdash;A storage class name that can be obtained by running
 >
 > > `kubectl get storageclasses.storage.k8s.io.`
 >
