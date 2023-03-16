@@ -1,5 +1,7 @@
 # Submit a Cron job via YAML
 
+:octicons-versions-24: Version 2.10 and later.
+
 The cron command-line utility is a job scheduler typically used to set up and maintain software environments at scheduled intervals. Run:ai now supports submitting jobs with cron using a YAML file. 
 
 To submit a job using cron, go to the Run:ai cli and enter the following command:

@@ -21,12 +21,12 @@ extra_css:
 # strict: true   
  
 markdown_extensions:
-  - markdown_include.include
+#  - markdown_include.include
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs
+      base_path: docs/docs
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true

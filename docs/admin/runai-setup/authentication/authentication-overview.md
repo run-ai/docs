@@ -45,12 +45,18 @@ The Run:ai GPU cluster is a _Kubernetes_ cluster. All communication into Kuberne
 
 To facilitate authentication via Run:ai the Kubernetes API server must be configured to use the Run:ai identity service to validate authentication tokens. For more information on how to configure the Kubernetes API server see _Kubernetes configuration_ under [researcher authentication](researcher-authentication.md#mandatory-kubernetes-configuration).
 
-## Idle timeout
+## Inactivity timeout
+
+:octicons-versions-24: Version 2.10 and later.
 
 Run:ai session should timeout after 1 hour of inactivity.
 
 !!! Note
     Timeout settings are configured in minutes.
+
+To configure the inactivity timeout:
+1. Open `Settings | General`.
+2. Set the inactivity timeout in minutes. (Default is 60)
 
 ## See also
 

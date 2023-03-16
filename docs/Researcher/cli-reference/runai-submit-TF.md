@@ -1,5 +1,7 @@
 ## Description
 
+:octicons-versions-24: Version 2.10 and later.ß
+
 Submit a distributed TensorFlow training run:ai job to run.
 
 !!! Note
@@ -13,7 +15,8 @@ Syntax notes:
 
 ```console
 runai submit-tf --name distributed-job --replicas=2 -g 1 \
-	-i gcr.io/run-ai-demo/quickstart-distributed
+	-i <image_name
+>
 ```
 
 ## Options

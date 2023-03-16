@@ -1,5 +1,7 @@
 # Cluster wide PVCs
 
+:octicons-versions-24: Version 2.10 and later.
+
 A PersistentVolumeClaim (PVC) is a request for storage by a user. It is similar to a Pod. Pods consume node resources and PVCs consume PV resources. Pods can request specific levels of resources (CPU and Memory). Claims can request specific size and access modes. For more information about PVCs, see [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/){targe=_blank}.
 
 Pvcs are namespace-specific. If your PVC relates to all run:ai Projects, do the following to propagate the PVC to all Projects:

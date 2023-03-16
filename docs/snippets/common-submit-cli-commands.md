@@ -21,7 +21,7 @@
 
 #### --attach
 
->  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](../Researcher/cli-reference/runai-attach.md).
 >
 > The --attach flag also sets `--tty` and `--stdin` to true.
 

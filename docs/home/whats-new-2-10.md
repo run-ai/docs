@@ -17,11 +17,11 @@ The new role of *Department Administrator* adds a layer of delegation in the adm
 
 **Enable SSO Using OIDC**
 
-Added an additional SSO configuration option using OIDC as the identity provider. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#ui-configuration).
+Added an additional SSO configuration option using OIDC as the identity provider. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
 
-**Idle logout**
+**Inactivity timeout**
 
-Added idle timeout for automated logout. The idle timeout is configured in minutes. For configuration information, see [Idle timeout](../admin/runai-setup/authentication/authentication-overview.md#idle-timeout)
+Added inactivity timeout for automated logout. The inactivity timeout is configured in minutes. For configuration information, see [Inactivity timeout](../admin/runai-setup/authentication/authentication-overview.md#inactivity-timeout)
 
 ### Researcher tools
 
@@ -41,13 +41,13 @@ Added support for cron command-line job scheduler. For more information, see [Su
 
 Removed `Previous job` from the new job form.
 
-**Annotations ans labels**
+**Annotations and labels**
 
 Added to UI the capability to add k8s annotations and labels to job submission form.
 
 **Scheduling workloads to AWS placement groups**
 
-Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html){targe=_blank} within AWS to maximize throughput and performance of distributed training workloads. For more information, see [Scheduling workloads to AWS placement groups](../Researcher/scheduling/schedule-to-aws-groups.md).
+Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html){target=_blank} within AWS to maximize throughput and performance of distributed training workloads. For more information, see [Scheduling workloads to AWS placement groups](../Researcher/scheduling/schedule-to-aws-groups.md).
 
 ### Storage
 

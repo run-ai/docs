@@ -16,17 +16,22 @@ You can create users, as well as update and delete users.
 !!! Note
     To be able to review, add, update and delete users, you must have an *Administrator* access. If you do not have such access, please contact an Administrator.
 
+:octicons-versions-24: Department Admin is available in version 2.10 and later.
+
 1. Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
 2. On the top right, select "Add New Users".
 3. Choose a User name and email.
-4. Select Roles. More than one role can be selected. The available roles are (see [Roles and permissions](#roles-and-permissions)):
-    * **Administrator**: Can manage Users and install Clusters.
-    * **Editor**: Can manage Projects and Departments.
-    * **Viewer**: View-only access to the Run:ai User Interface.
-    * **Researcher**: Can submit ML workloads. Setting a user as a *Researcher* also requires [assigning the user to projects](../project-setup/#create-a-new-project.md).
-    * **Research Manager**: Can act as *Researcher* in all projects, including new ones to be created in the future.
-    * **ML Engineer**: Can view and manage deployments and cluster resources. Available only when [Inference module is installed](../workloads/inference-overview.md).
-    * **Department Administrator**: Can manage Departments, descendent Projects and Workloads.
+4. Select Roles. More than one role can be selected. Available roles are:
+    * **Administrator**&mdash;Can manage Users and install Clusters.
+    * **Editor**&mdash;Can manage Projects and Departments.
+    * **Viewer**&mdash;View-only access to the Run:ai User Interface.
+    * **Researcher**&mdash;Can submit ML workloads. Setting a user as a *Researcher* also requires [assigning the user to projects](../project-setup/#create-a-new-project.md).
+    * **Research Manager**&mdash;Can act as *Researcher* in all projects, including new ones to be created in the future.
+    * **ML Engineer**&mdash;Can view and manage deployments and cluster resources. Available only when [Inference module is installed](../workloads/inference-overview.md).
+    * **Department Administrator**&mdash;Can manage Departments, descendent Projects and Workloads.
+
+    For more information, [Roles and permissions](#roles-and-permissions).
+
 5. (Optional) Select Cluster(s). This determines what Clusters are accessible to this User.
 6. Press "Save".
 

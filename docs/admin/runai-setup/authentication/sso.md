@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol. When SSO is configured, the system is accessible via single-sign-on **only**.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC). When SSO is configured, the system is accessible via single-sign-on **only**.
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
@@ -36,10 +36,32 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 1. Open the Administration User interface.
 2. Go to `Settings | General`.
 3. Turn on `Login with SSO`.
-4. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
-5. In the `Administrator email` field, enter the first administrator user.
-6. In the `Logout URL` field, enter the desired URL logout page.
-7. Press `Save`.
+4. Enter the administrator email.
+5. Select the SSO protocol. Choose `Saml 2` or `Open ID Connect`.
+
+For `Saml 2`:
+
+   1. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
+   2. In the `GID` field, enter the GID.
+   3. In the `GROUPS` field, enter the groups.
+   4. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
+   5. In the `UID` field, enter the UID.
+   6. In the `Logout URI` field, enter the desired URL logout page.
+   7.  Press `Save`.
+
+For `Open ID Connect`:
+
+:octicons-versions-24: Version 2.10 and later.
+
+   1. In the `Discovery Document URL` field, enter the URL to the discovery document.
+   2. In the `Client ID` field, enter the client ID.
+   3. In the `Client Secret` field, enter the client secret.
+   4. In the `GID` field, enter the GID.
+   5. In the `GROUPS` field, enter the groups.
+   6. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
+   7. In the `UID` field, enter the UID.
+   8. In the `Logout URI` field, enter the desired URL logout page.
+   9.  Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
 
