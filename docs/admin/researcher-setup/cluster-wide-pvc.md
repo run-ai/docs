@@ -12,9 +12,6 @@ Create a PVC within the run:ai namespace, then run the following once to propaga
 kubectl label persistentvolumeclaims -n runai <PVC_NAME> runai/cluster-wide=true
 ```
 
-!!! Reminder
-    To install the Run:ai Administrator CLI, see [Install the Run:ai Administrator Command-line Interface](../runai-setup/config/cli-admin-install.md).
-
 To delete a PVC from all run:ai Projects, run:
 
 ```
