@@ -57,7 +57,7 @@ Following is the list of published Run:ai metrics:
 | runai_deployment_request_rate                  | {clusterId, namespace_name, deployment_name}                             | Number      | Rate of received HTTP requests per second
 | runai_deployment_request_latencies             | {clusterId, namespace_name, deployment_name, le}                         | Number      | Histogram of response time (bins are in milliseconds)
 
-Extra metrics for version 2.9+
+Additional metrics for version 2.9 and above
 
 | Metric name                                    | Labels                                                                | Measurement | Description                           |
 | ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
