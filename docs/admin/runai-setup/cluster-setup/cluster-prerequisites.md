@@ -461,7 +461,7 @@ In addition, once running, Run:ai requires an outbound network connection to the
 <p>Grafana Metrics Server</p>
 </td>
 <td style="padding: 6px; width: 205px;">
-<p>prometheus-us-central1.grafana.net</p>
+<p> <a href="https://prometheus-us-central1.grafana.net">prometheus-us-central1.grafana.net</a> and <a href="https://runailabs.com">runailabs.com</a> </p>
 </td>
 <td style="padding: 6px; width: 32px;">
 <p>443 </p>
