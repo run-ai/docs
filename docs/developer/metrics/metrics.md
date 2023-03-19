@@ -57,6 +57,32 @@ Following is the list of published Run:ai metrics:
 | runai_deployment_request_rate                  | {clusterId, namespace_name, deployment_name}                             | Number      | Rate of received HTTP requests per second
 | runai_deployment_request_latencies             | {clusterId, namespace_name, deployment_name, le}                         | Number      | Histogram of response time (bins are in milliseconds)
 
+Additional metrics for version 2.9 and above
+
+| Metric name                                    | Labels                                                                | Measurement | Description                           |
+| ---------------------------------------------- | --------------------------------------------------------------------- |------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| runai_gpu_utilization_per_gpu           | {clusterId, gpu, node}              | % | GPU Utilization per GPU |
+| runai_gpu_utilization_per_node        | {clusterId, node}              | % | GPU Utilization per Node |
+| runai_gpu_memory_used_mebibytes_per_gpu           | {clusterId, gpu, node}              | MiB | Used GPU memory per GPU |
+| runai_gpu_memory_used_mebibytes_per_node        | {clusterId, node}              | MiB | Used GPU memory per Node |
+| runai_gpu_memory_total_mebibytes_per_gpu           | {clusterId, gpu, node}              | MiB | Total GPU memory per GPU |
+| runai_gpu_memory_total_mebibytes_per_node        | {clusterId, node}              | MiB | Toal GPU memory per Node |
+| runai_gpu_count_per_node           | {clusterId, node}              | Number | Number of GPUs per Node |
+| runai_allocated_gpu_count_per_workload        | {clusterId, job_name, job_uuid, job_type, user}              | Double | Number of allocated GPUs per Workload |
+| runai_allocated_gpu_count_per_project           | {clusterId, project}              | Double | Number of allocated GPUs per Project |
+| runai_gpu_memory_used_mebibytes_per_pod_per_gpu        | {clusterId, pod_name, pod_uuid, pod_namespace, node, gpu}              | MiB | Used GPU Memory per Pod per Gpu |
+| runai_gpu_memory_used_mebibytes_per_workload        | {clusterId, job_name, job_uuid, job_type, user}              | MiB | Used GPU Memory Per Workload |
+| runai_gpu_utilization_per_pod_per_gpu        | {clusterId, pod_name, pod_uuid, pod_namespace, node, gpu}              | % | GPU Utilization per Pod per GPU |
+| runai_gpu_utilization_per_workload        | {clusterId, job_name, job_uuid, job_type, user}              | % | GPU Utilization per Workload |
+| runai_gpu_utilization_per_project        | {clusterId, project}              | % | GPU Utilization per Project |
+| runai_last_gpu_utilization_time_per_workload        | {clusterId, job_name, job_uuid, job_type, user}              | Seconds (Unix Timestamp) | Job's requested CPU memory |
+| runai_gpu_idle_time_per_workload        | {clusterId, job_name, job_uuid, job_type, user}              | Seconds | Job's requested CPU memory |
+| runai_allocated_gpu_count_per_pod        | {clusterId, pod_name, pod_uuid, pod_namespace, node}              | Bytes | Job's requested CPU memory |
+| runai_allocated_gpu_count_per_node        | {clusterId, node}              | Bytes | Job's requested CPU memory |
+| runai_allocated_millicpus_per_pod        | {clusterId, pod_name, pod_uuid, pod_namespace, node}              | Bytes | Job's requested CPU memory |
+| runai_allocated_memory_per_pod        | {clusterId, pod_name, pod_uuid, pod_namespace, node}              | Bytes | Job's requested CPU memory |
+
+
 Following is a list of labels appearing in Run:ai metrics:
 
 | Label                  | Description   |
