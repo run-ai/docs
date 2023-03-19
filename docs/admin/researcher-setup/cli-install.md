@@ -68,6 +68,8 @@ kubectl get nodes
      docker run -it runai-cli bash
      ```
 
+     If you get an error `x509: certificate signed by unknown authority` please contact Run:ai customer support 
+
      Try and connect to your cluster from inside the docker by running a Run:ai CLI command. E.g. `runai list projects`.
 
      Distribute the image to Windows users.
