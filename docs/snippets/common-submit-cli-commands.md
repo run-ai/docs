@@ -149,7 +149,7 @@
 > Mount a persistent volume claim into a container.
 >
 >!!!Note
-    This option is being deprecated from version 2.10 and above. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exist` and `--pvc-new`.
+    This option is being deprecated from version 2.10 and above. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exists` and `--pvc-new`.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 >
@@ -173,7 +173,7 @@
 >
 > > `--pvc my-pvc-2:/tmp/john:ro` - Use a Persistent Volume Claim named `my-pvc-2`. Mount it to `/tmp/john` as read-only
 
-#### --pvc-exist `<string>`
+#### --pvc-exists `<string>`
 
 > Mount a persistent volume. You must include a `claimname` and `path`.
 >
