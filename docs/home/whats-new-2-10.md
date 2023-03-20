@@ -49,6 +49,10 @@ Added to UI the capability to add k8s annotations and labels to job submission f
 
 Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html){target=_blank} within AWS to maximize throughput and performance of distributed training workloads. For more information, see [Scheduling workloads to AWS placement groups](../Researcher/scheduling/schedule-to-aws-groups.md).
 
+**Job Status Notifications**
+
+Added the capability to send job statuses notifications to Slack. For configuration information, see [Messaging](../admin/integration/messaging.md).
+
 ### Storage
 
 **Cluster wide PVC**
@@ -63,6 +67,12 @@ Added support Ephemeral PVC in CLI and in the job submission form. For more info
 
 |Internal ID|Description|Workaround|
 |-----------|--------------|--------------|
+| RUN-8695 | SSO users that logged in via SAML can't login again after disabling and reenabling SSO. |     |
+| RUN-8680 | A user in an OCP group with roles that belong to that group should be able to submit a job from the UI. |     |
+| RUN-8601 | Warning when the CLI command `runai suspend` is used.  |     |
+| RUN-8422 | Remove Knative unnecessary requests when inference is not enabled. |     |
+| RUN-7874 | A new job returns `malformed URL` when a project is not connected to a namespace. |     |
+| RUN-6301 | A job in the job list side panel shows both `pending` and `running` at the same time.  |     |
 
 ## Fixed issues
 

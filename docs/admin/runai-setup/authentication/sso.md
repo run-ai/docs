@@ -11,21 +11,30 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 *Identity Provider (Idp)*&mdash; a system that creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0.
 
-## Prerequisites
+## SAML Prerequisites
 
-* **XML Metadata**: You must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
-* **Organization Name**: You must have a Run:ai *Organization Name*. This is the name that appears on the top right of the Run:ai user interface.
-* **Additional attribute mapping**: Configure your IdP to map several IdP attributes:
+* **XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+* **Organization Name**&mdash;you must have a Run:ai *Organization Name*. This is the name that appears on the top right of the Run:ai user interface.
 
-| IdP attribute              | Run:ai required name | Description          |  
-|----------------------------|----------------------|----------------------|
-| User email                 | email                | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
-| User role groups    | GROUPS               | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
-| Linux User ID              | UID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
-| Linux Group ID             | GID                  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
-| Linux Supplementary Groups | SUPPLEMENTARYGROUPS      | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
-| User first name            | firstName            | (Optional) Used as the first name showing in the Run:ai user interface. |
-| User last name             | lastName             | (Optional) Used as the last name showing in the Run:ai user interface |
+## OIDC Prerequisites
+
+* **Discovery URL**&mdash;the OpenID server where the content discovery information is published.
+* **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
+* **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
+
+### Additional attribute mappings
+
+You can configure your IdP to map several IdP attributes:
+
+| IdP attribute | Run:ai required name | Description |
+|--|--|--|
+| User email | email | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
+| User role groups | GROUPS | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
+| Linux User ID | UID (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
+| Linux Group ID | GID (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
+| Linux Supplementary Groups | SUPPLEMENTARYGROUPS (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
+| User first name | firstName (configurable)| (Optional) Used as the first name showing in the Run:ai user interface. |
+| User last name | lastName (configurable)| (Optional) Used as the last name showing in the Run:ai user interface |
 
 ### Example attribute mapping for Google Suite
 
@@ -39,6 +48,9 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 4. Enter the administrator email.
 5. Select the SSO protocol. Choose `Saml 2` or `Open ID Connect`.
 
+!!! Note
+    Use your SAML response file to fill in the fields below.
+
 For `Saml 2`:
 
    1. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
@@ -46,7 +58,7 @@ For `Saml 2`:
    3. In the `GROUPS` field, enter the groups.
    4. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    5. In the `UID` field, enter the UID.
-   6. In the `Logout URI` field, enter the desired URL logout page.
+   6. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    7.  Press `Save`.
 
 For `Open ID Connect`:
@@ -60,7 +72,7 @@ For `Open ID Connect`:
    5. In the `GROUPS` field, enter the groups.
    6. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    7. In the `UID` field, enter the UID.
-   8. In the `Logout URI` field, enter the desired URL logout page.
+   8. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    9.  Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
@@ -75,7 +87,7 @@ Test Connectivity to Administration User Interface:
 * Using an incognito browser tab and open the Run:ai user interface.
 * Select the `Login with SSO` button.
 * Provide the `Organization name` obtained above.
-* You will be redirected to the IdP login page. Use the previously entered _Administrator email* to log in.
+* You will be redirected to the IdP login page. Use the previously entered *Administrator* email* to log in.
 
 ### Troubleshooting
 
@@ -283,7 +295,7 @@ The latter option is easier to maintain.
 
 ## Logout URL
 
-It is possible to configure the redirect URL when the session ends. To perform this configuration please contact Run:ai customer support.
+It is possible to configure the redirect URL when the session ends. If left empty, you will be redirected to the Run:ai portal. To perform this configuration please contact Run:ai customer support.
 
 ## Implementation Notes
 

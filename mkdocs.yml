@@ -227,6 +227,7 @@ nav:
       - 'Argo Workflows'  : 'admin/integration/argo-workflows.md'
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
       - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
+      - 'Event Messaging': 'admin/integration/messaging.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
