@@ -31,14 +31,14 @@ FIELDS:
      Defaults to 6
 
    baseWorkload	<string>
-     Reference to an another workload. When set, this workload inherits its
-     values from the base workload. Base workload can either reside on the same
+     Reference to another workload. When set, this workload inherits its values
+     from the base workload. Base workload can either reside on the same
      namespace of this workload (referred to as "user" template) or can reside
      in the runai namespace (referred to as a "global" template)
 
    capabilities	<Object>
      The capabilities field allows adding a set of unix capabilities to the
-     container running the workload. Linux capabilities are distinct privileges
+     container running the workload. Capabilities are Linux distinct privileges
      traditionally associated with superuser which can be independently enabled
      and disabled. For more information see
      https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-capabilities-for-a-container
@@ -130,7 +130,7 @@ FIELDS:
 
    largeShm	<Object>
      Specifies a large /dev/shm device to mount into a container running the
-     created workload. An shm is a shared file system mounted on RAM.
+     created workload. SHM is a shared file system mounted on RAM.
 
    memory	<Object>
      Specifies the amount of CPU memory to allocate for this workload (1G, 20M,
@@ -165,18 +165,13 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
-   nodePool <Object>
-     Specifies a group of nodes (machines) on which the workload will run. 
-     To use this feature, your Administrator will need to label nodes and 
-     create a node-pool, as explained in the Group Nodes guide at 
-     https://docs.run.ai/admin/researcher-setup/limit-to-node-group.
-     Administrator can assign quota for each node-pool in any of the 
-     Projects and Departments that the system contains. This flag
-     can optionally be used in conjunction with NodeType and Project-based
-     affinity. In this case, the combination of both flags is used to refine
-     the list of allowable nodes from a node-pool which the workload can 
-     use to run. For more information see the Projects setup guide at
-     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+   nodePool	<Object>
+     Specifies the NodePool name to be used to schedule this job on - DEPRECATED
+     use NodePools instead
+
+   nodePools	<Object>
+     Specifies the list of node pools to use for scheduling the job, ordered by
+     preference.
 
    nodeType	<Object>
      Specifies nodes (machines) or a group of nodes on which the workload will
@@ -195,6 +190,18 @@ FIELDS:
      .spec.parallelism), i.e. when the work left to do is less than max
      parallelism. For more information, see:
      https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+
+   podAffinity	<Object>
+     Indicates whether pod affinity scheduling rules applies.
+
+   podAffinitySchedulingRule	<Object>
+     Indicates if we want to use the Pod affinity rule as : the "hard"
+     (required) or the "soft" (preferred) This field can be specified only if
+     PodAffinity is set to true
+
+   podAffinityTopology	<Object>
+     Specifies the Pod Affinity Topology to be used for scheduling the job This
+     field can be specified only if PodAffinity is set to true
 
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
@@ -269,6 +276,11 @@ FIELDS:
      The intended usage of this workload. possible values are "Template": this
      workload is used as the base for other workloads. "Submit": this workload
      is used for submitting a job and/or other Kubernetes resources.
+
+   userId	<Object>
+     The user ID ("Subject" in the jwt-token) of the authenticated user who owns
+     the workload. The data might be used for authentication or authorization
+     purposes.
 
    username	<Object>
      Display-only field describing the user who owns the workload. The data is

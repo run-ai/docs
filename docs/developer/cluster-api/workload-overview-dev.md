@@ -13,6 +13,7 @@ Run:ai supports the following Workloads types:
 |----------------|-----------------|-------------|
 | Interactive    | `InteractiveWorkload` | Submit an interactive workload |
 | Training       | `TrainingWorkload`| Submit a training workload |
+| Distributed Training | `DistributedWorkload` | Submit a distributed training workload using TensorFlow, PyTorch or MPI | 
 | Inference      | `InferenceWorkload` | Submit an inference workload |
 
 
