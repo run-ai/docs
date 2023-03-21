@@ -68,10 +68,11 @@ The API response will look as follows:
   "expires_in": 36000,
    ....
   "token_type": "bearer"
+  "id_token": "..."
 }
 ```
 
-1. Use the `access_token` as the Bearer token below.
+1. Use the `id_token` as the Bearer token below.
 
 
 To call APIs, the application must pass the retrieved `access_token` as a Bearer token in the Authorization header of your HTTP request.
