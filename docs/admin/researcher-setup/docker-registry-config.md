@@ -93,4 +93,3 @@ type: kubernetes.io/dockerconfigjson
 kubectl create -f ~/secret.yaml
 ```
 * Test your settings by submitting a which references an image from the GCR repository
-

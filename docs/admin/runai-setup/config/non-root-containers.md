@@ -14,7 +14,7 @@ By default, if you run:
 ```
 runai submit -i ubuntu --attach --interactive -- bash
 ```
-then run `id`, you will see the __root__ user. 
+then run `id`, you will see the **root** user. 
 
 ## Use Run:ai flags to limit root access
 

@@ -1,105 +1,3 @@
-## Description
-
-Submit a Run:ai Job for execution.
-
- Syntax notes:
-
-* Flags of type *stringArray* mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
-
-
-## Examples
-
-All examples assume a Run:ai Project has been set using `runai config project <project-name>`.
-
-Start an interactive Job:
-
-```
-runai submit -i ubuntu --interactive --attach -g 1
-```
-
-Or
-
-```console
-runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
-```
-
-(see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
-
-Externalize ports:
-
-```console
-runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-   --service-type=nodeport --port 30022:22
-   -- /usr/sbin/sshd -D
-```
-
-(see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
-
-Start a Training Job
-
-```console
-runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
-```
-    
-(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
-
-Use GPU Fractions
-
-```console
-runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
-```
-
-(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
-
-Hyperparameter Optimization
-
-```console
-runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-   --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
-```
-
-(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
-
-Submit a Job without a name (automatically generates a name)
-
-```console
-runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
-```
-
-Submit a Job without a name with a pre-defined prefix and an incremental index suffix
-
-```console
-runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
-```
-
-## Options
-
-### Job Type
-#### --interactive
-
-> Mark this Job as interactive.
-
-#### --jupyter
-
-> Run a Jupyter notebook using a default image and notebook configuration.
-
-### Job Lifecycle
-
-#### --completions < int >
-
-> Number of successful pods required for this job to be completed. Used with HPO.
-      
-#### --parallelism < int >
-> Number of pods to run in parallel at any given time.  Used with HPO.
-      
-#### --preemptible
-> Interactive preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
-
-#### --ttl-after-finish < duration >
-
-> The duration, after which a finished job is automatically deleted (e.g. 5s, 2m, 3h).
-
-<!-- Start of common content from snippets/common-submit-cli-commands.md -->
 ### Naming and Shortcuts
 
 #### --job-name-prefix `<string>`
@@ -123,7 +21,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --attach
 
->  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](runai-attach.md).
+>  Default is false. If set to true, wait for the Pod to start running. When the pod starts running, attach to the Pod. The flag is equivalent to the command [runai attach](../Researcher/cli-reference/runai-attach.md).
 >
 > The --attach flag also sets `--tty` and `--stdin` to true.
 
@@ -139,7 +37,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --create-home-dir
 
-> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+> Create a temporary home directory for the user in the container. Data saved in this directory will not be saved when the container exits. For more information see [non root containers](../admin/runai-setup/config/non-root-containers.md).
 
 #### -e `<stringArray>  | --environment `<stringArray>`
 
@@ -367,18 +265,18 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --run-as-user
 
->  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is *root* (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+>  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../admin/runai-setup/config/non-root-containers.md).
 
 ### Scheduling
 
 #### --node-pools `<string>`
 
-> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
-> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md).
+> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
+> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../admin/admin-ui-setup/project-setup.md).
 
 #### --node-type `<string>`
 
->  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../admin/researcher-setup/limit-to-node-group.md).
 
 #### --toleration `<string>`
 
@@ -405,16 +303,3 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 #### --help | -h
 
 > Show help text.
-
-<!-- END of common content from snippets/common-submit-cli-commands.md -->
-## Output
-
-The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
-
-Note that the submit call may use a *policy* to provide defaults to any of the above flags.
-
-## See Also
-
-*   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
-
