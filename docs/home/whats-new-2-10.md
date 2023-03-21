@@ -9,7 +9,7 @@ March 2023
 
 **SSO custom URL logout**
 
-This feature configures a custom logout URL in your tenant. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#ui-configuration).
+This feature configures a custom logout URL in your tenant. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#logout-url).
 
 **Department Administrator**
 

@@ -150,7 +150,6 @@ Track the number of running Jobs and the breakdown into interactive, training, a
 
 ![](img/training-interactive.png)
 
-
 **Analysis and Suggested actions**:
 
 We would want to encourage users to run more training Jobs than interactive Jobs, as it is the key to achieving high GPU utilization across the Cluster:
@@ -168,15 +167,14 @@ Track how long is the queue for pending Jobs
 
 **Analysis and Suggested actions**:
 
-Consider buying more GPUs if, 
+Consider buying more GPUs:
 
-* Too many Jobs are waiting in queue for too long 
-* With a large number of requested GPUs 
-* While the Cluster is fully loaded and well utilized. 
-
+* When there are too many Jobs are waiting in queue for too long.
+* With a large number of requested GPUs.
+* While the Cluster is fully loaded and well utilized.
 
 ### CPU & Memory Utilization
- 
+
 Track CPU and memory Node utilization and identify times where the load on specific Nodes is high. 
 
 **How to**: view the following panel:
@@ -185,10 +183,9 @@ Track CPU and memory Node utilization and identify times where the load on speci
 
 **Analysis and Suggested actions**:
 
-If the load on specific Nodes is too high, it may cause problems with the proper operation of the Cluster and the way jobs are running. 
+If the load on specific Nodes is too high, it may cause problems with the proper operation of the Cluster and the way jobs are running.
 
-Consider adding more CPUs, or adding additional CPU-only nodes for Jobs that do only CPU processing. 
-
+Consider adding more CPUs, or adding additional CPU-only nodes for Jobs that do only CPU processing.
 
 ## Multi-Cluster overview dashboard
 
