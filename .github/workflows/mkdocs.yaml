@@ -39,12 +39,13 @@ jobs:
             git config user.email "circleci-runai@run.ai"
             git fetch origin gh-pages --depth=1
         
-        - name: deploy mkdocs
+        - name: deploy mkdocs latest
 #          echo "deploy new version with mike..."
           if: ${{ inputs.version == 'v2.9' }}
           run: | 
             mike deploy --push ${{ inputs.version }} latest
             mike set-default ${{ inputs.version }}
+        - name: deploy mkdocs version
           if: ${{ inputs.version != 'v2.9' }}
           run: mike deploy --push ${{ inputs.version}} ${{ inputs.version}}
 
