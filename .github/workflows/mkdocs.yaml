@@ -40,14 +40,15 @@ jobs:
 #            git fetch origin gh-pages --depth=1
         
         - name: deploy mkdocs latest
+          run: mkdocs gh-deply --force
 #          echo "deploy new version with mike..."
-          if: ${{ inputs.version == 'v2.9' }}
-          run: | 
-            mike deploy --push --force ${{ inputs.version }} 2.9
-            mike set-default 2.9
-        - name: deploy mkdocs version
-          if: ${{ inputs.version != 'v2.9' }}
-          run: mike deploy --push --force ${{ inputs.version }} 2.9a
+#          if: ${{ inputs.version == 'v2.9' }}
+#          run: | 
+#            mike deploy --push --force ${{ inputs.version }} 2.9
+#            mike set-default 2.9
+#        - name: deploy mkdocs version
+#          if: ${{ inputs.version != 'v2.9' }}
+#          run: mike deploy --push --force ${{ inputs.version }} 2.9a
 
 
 
