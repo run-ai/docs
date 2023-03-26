@@ -40,7 +40,7 @@ jobs:
 #            git fetch origin gh-pages --depth=1
         
         - name: deploy mkdocs latest
-          run: mkdocs gh-deply --force
+          run: mkdocs gh-deploy --force
 #          echo "deploy new version with mike..."
 #          if: ${{ inputs.version == 'v2.9' }}
 #          run: | 
