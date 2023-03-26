@@ -38,10 +38,10 @@ jobs:
           run: | 
             # mkdocs gh-deploy --force
             echo "deploy new version with mike..."
-            if [[ "${GITHUB_REF_NAME}" == 'master' ]]; then
+            if [[ "${{ inputs.version }}" == 'master' ]]; then
               version=latest
             else
-              version=${GITHUB_REF_NAME}
+              version=${{ inputs.version }}
             fi
             echo "${version}"
 
