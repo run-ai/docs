@@ -37,6 +37,7 @@ jobs:
           run: |
             git config user.name "circleci-runai"
             git config user.email "circleci-runai@run.ai"
+            git fetch origin gh-pages --depth=1
         
         - name: deploy mkdocs
           run: | 
