@@ -40,4 +40,4 @@ jobs:
               version=latest
             else
               version=${{ inputs.version }}
-            mike deploy --force ${{ inputs.version }}     
+            mike deploy ${{ inputs.version }}     
