@@ -18,7 +18,7 @@ on:
 
 
 jobs:
-  install_dependencies:
+  install_dependencies_and_deploy:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
@@ -34,14 +34,7 @@ jobs:
         - name: install dependencies
           run: |
            pip3 install -r requirements.txt
-  
-  deployment:
-    name: Deploy
-    needs: install_dependencies
-    runs-on: ubuntu-latest
-    steps:
-        - name: checkout latest
-          uses: actions/checkout@v3
+        
         - name: deploy mkdocs
           run: | 
             pip3 list 
