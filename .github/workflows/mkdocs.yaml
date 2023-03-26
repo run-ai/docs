@@ -35,10 +35,9 @@ jobs:
         
         - name: deploy mkdocs
           run: | 
-            # mkdocs gh-deploy --force
             echo "deploy new version with mike..."
             if [[ "${{ inputs.version }}" == 'master' ]]; then
               version=latest
             else
               version=${{ inputs.version }}
-              mike deploy --force ${version}      
+            mike deploy --force ${version}      
