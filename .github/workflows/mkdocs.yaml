@@ -33,10 +33,10 @@ jobs:
           run: |
            pip3 install -r requirements.txt
         
-#        - name: Configure Git User
-#          run: |
-#            git config user.name "circleci-runai"
-#            git config user.email "circleci-runai@run.ai"
+        - name: Configure Git User
+          run: |
+            git config user.name "circleci-runai"
+            git config user.email "circleci-runai@run.ai"
 #            git fetch origin gh-pages --depth=1
         
         - name: deploy mkdocs latest
