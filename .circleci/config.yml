@@ -5,13 +5,13 @@ jobs:
     docker:
       - image: runai/circleci-mkdocs:latest
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "e6:d0:9e:2e:b1:3c:16:48:11:1a:83:56:e4:b1:3f:8f"
-      - checkout
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - "e6:d0:9e:2e:b1:3c:16:48:11:1a:83:56:e4:b1:3f:8f"
+      # - checkout
       - run:
           name: deploy-documentation
-          command: mkdocs gh-deploy -m "Auto commit [ci skip]"
+          command: echo "we moved to github actions..."
 
 workflows:
   version: 2.1
