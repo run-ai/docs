@@ -13,6 +13,9 @@ on:
   #   branches:
   #     - "master"
 
+env:
+  GIT_COMMITTER_NAME: circleci-runai
+  GIT_COMMITTER_EMAIL: circleci@run.ai
 
 jobs:
   install_dependencies_and_deploy:
