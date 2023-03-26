@@ -44,7 +44,7 @@ jobs:
             # fi
             # echo "${version}"
             # export GIT_COMMITTER_NAME=circleci-runai && export GIT_COMMITTER_EMAIL=circleci@run.ai && mike deploy --push ${version}
-            mike deploy --force ${version}
+            mike deploy --force ${{version}}
 
 
 
