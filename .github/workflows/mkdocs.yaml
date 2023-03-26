@@ -18,8 +18,8 @@ on:
 
 
 jobs:
-  install_dependencies:
-    name: install dependencies
+  install_dependencies_and_deploy:
+    name: install dependencies and deploy latest changes to prod
     runs-on: ubuntu-latest
     steps:
         - name: checkout latest
@@ -34,17 +34,18 @@ jobs:
         - name: install dependencies
           run: |
            pip3 install -r requirements.txt
-  
-  deployment:
-    name: Deploy
-    needs: install_dependencies
-    runs-on: ubuntu-latest
-    steps:
-        - name: checkout latest
-          uses: actions/checkout@v3
+        
         - name: deploy mkdocs
           run: | 
-            pip3 list 
+            # mkdocs gh-deploy --force
+            echo "deploy new version with mike..."
+            if [[ "${GITHUB_HEAD_REF}" == 'master' ]]; then
+              version=latest
+            else
+              version=${GITHUB_REF_NAME}
+            fi
+            echo "${version}"
+            
 
 
 
