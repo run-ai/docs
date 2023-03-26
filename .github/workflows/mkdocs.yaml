@@ -40,10 +40,11 @@ jobs:
             git fetch origin gh-pages --depth=1
         
         - name: deploy mkdocs
-          run: | 
-            echo "deploy new version with mike..."
-            if [[ "${{ inputs.version }}" == 'master' ]]; then
-              version=latest
-            else
-              version=${{ inputs.version }}
-            mike deploy ${{ inputs.version }} --push
+          run: mike deploy --push ${{ inputs.version }}
+#          | 
+#            echo "deploy new version with mike..."
+#            if [[ "${{ inputs.version }}" == 'master' ]]; then
+#              version=latest
+#            else
+#              version=${{ inputs.version }}
+#            mike deploy --push ${{ inputs.version }}
