@@ -1,0 +1,52 @@
+name: docs CI 
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: false
+        description: 'version name'
+        default: "latest"
+        type: string
+
+  push:
+    branches:
+      - "master"
+  # pull_request:
+  #   branches:
+  #     - "master"
+
+
+jobs:
+  install_dependencies:
+    name: install dependencies
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout latest
+          uses: actions/checkout@v3
+
+        - name: setup python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'
+            cache: 'pip' # caching pip dependencies
+
+        - name: install dependencies
+          run: |
+           pip3 install -r requirements.txt
+  
+  deployment:
+    name: Deploy
+    needs: install_dependencies
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout latest
+          uses: actions/checkout@v3
+        - name: deploy mkdocs
+          run: | 
+            pip list 
+
+
+
+
+        
