@@ -8,10 +8,7 @@ on:
         description: 'version name'
         default: "latest"
         type: string
-
-  push:
-    branches:
-      - "master"
+        
   # pull_request:
   #   branches:
   #     - "master"
