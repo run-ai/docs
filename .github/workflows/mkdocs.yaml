@@ -13,10 +13,6 @@ on:
   #   branches:
   #     - "master"
 
-env:
-  GIT_COMMITTER_NAME: circleci-runai
-  GIT_COMMITTER_EMAIL: circleci@run.ai
-
 jobs:
   install_dependencies_and_deploy:
     name: install dependencies and deploy latest changes to prod
@@ -47,7 +43,7 @@ jobs:
               version=${{ inputs.version }}
             fi
             echo "${version}"
-            mike deploy --push ${version}
+            export GIT_COMMITTER_NAME=circleci-runai && export GIT_COMMITTER_EMAIL=circleci@run.ai && mike deploy --push ${version}
 
 
 
