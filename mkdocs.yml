@@ -47,6 +47,8 @@ extra:
     property: UA-122651141-1
 
 plugins:
+  - mike:
+    version_selector: true
   - search:
       lang: en
   - git-revision-date-localized:
