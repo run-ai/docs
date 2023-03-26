@@ -41,7 +41,7 @@ jobs:
         
         - name: deploy mkdocs
 #          echo "deploy new version with mike..."
-          if: ${{ inputs.version }} == "v2.9"
+          if: ${{ inputs.version == 'v2.9' }}
           run: | 
               mike deploy --push ${{ inpputs.version }} latest
               mike set-default latest
