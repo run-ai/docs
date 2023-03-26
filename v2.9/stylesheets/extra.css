@@ -1,0 +1,61 @@
+/* :root {
+    --md-code-bg-color: rgb(120, 150, 85);
+    --md-code-fg-color: #ECB7B7;
+} */
+
+.md-header {
+    background-color: rgb(0, 76, 117) !important;
+}
+
+.md-tabs {
+    /* background-image: url(../assets/images/second-nav-blue.png); */
+    background-color: rgb(0, 155, 223) !important;
+    font-weight: bold;
+}
+/* Footer */
+
+.md-footer-nav {
+    /* background-image: url(../assets/images/second-nav-blue.png); */
+    background-color: rgb(0, 76, 117) !important;
+
+    /* max-height: 90px; */
+}
+
+
+.md-footer-meta {
+    background-color: rgb(0, 76, 117) !important;
+    border-top: 1px solid #1b2532 !important;
+}
+.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
+    width: 50px
+}
+
+/* for the mobile nav bar */
+@media only screen and (max-width: 76.1875em) {
+
+    html .md-nav--primary .md-nav__title--site {
+        background-color: rgb(0, 76, 117) !important;
+        border-bottom: 1px solid #1b2532 !important;
+    }
+
+    .md-nav__source {
+        background-color: #1f4e79 !important;
+    }
+
+    html .md-nav--primary .md-nav__title {
+        background-color: rgb(0, 76, 117) !important;
+        border-bottom: 1px solid #1b2532 !important;
+        color: #ffffff;
+    }
+
+    html .md-nav--primary .md-nav__title::before {
+        color: #ffffff;
+    }
+
+}
+
+/* override swagger code */
+.microlight > code {
+    background: transparent;
+    color: white;
+}
