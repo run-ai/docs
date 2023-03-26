@@ -1,4 +1,4 @@
-# RUN:AI Version 2.9
+# Run:ai Version 2.9
 
 ## Release Date
 February 2023
