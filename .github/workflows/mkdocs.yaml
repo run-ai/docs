@@ -19,7 +19,7 @@ on:
 
 jobs:
   install_dependencies_and_deploy:
-    name: install dependencies
+    name: install dependencies and deploy latest changes to prod
     runs-on: ubuntu-latest
     steps:
         - name: checkout latest
