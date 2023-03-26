@@ -8,7 +8,7 @@ on:
         description: 'version name'
         default: "latest"
         type: string
-        
+
   # pull_request:
   #   branches:
   #     - "master"
@@ -21,6 +21,8 @@ jobs:
     steps:
         - name: checkout latest
           uses: actions/checkout@v3
+          with:
+            ref: ${{ inputs.version }}
 
         - name: setup python
           uses: actions/setup-python@v4
