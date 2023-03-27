@@ -53,7 +53,7 @@ jobs:
         - name: deploy mkdocs latest
 #          run: mkdocs gh-deploy --force
 #          echo "deploy new version with mike..."
-          if: ${{ inputs.version == 'master' && inputs.alias == 'latest' }}
+          if: ${{ inputs.version == 'master' && inputs.alias == 'latest' }} --title=${{ inputs.title }}
           run: | 
             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }}
             mike set-default ${{ inputs.alias }} --ignore
