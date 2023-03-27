@@ -5,17 +5,17 @@ on:
     inputs:
       version:
         required: false
-        description: 'version name'
+        description: 'Version number from branch / master for latest'
         default: "master"
         type: string
       alias:
         required: false
-        description: 'menu alias'
+        description: 'Version alias / latest for latest'
         default: "latest"
         type: string
       title:
         required: false
-        description: 'menu title'
+        description: 'Doc site dropdown menu title'
         default: "latest"
         type: string
 
