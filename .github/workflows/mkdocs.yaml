@@ -68,6 +68,7 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
+
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
@@ -75,6 +76,7 @@ jobs:
               latest="-latest"
             else
               version=${{ inputs.version }}
+              latest="-latest"
             fi
             echo "${version}"
             echo "mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.alias }}${latest}"
