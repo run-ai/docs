@@ -53,14 +53,14 @@ jobs:
         - name: deploy mkdocs latest
 #          run: mkdocs gh-deploy --force
 #          echo "deploy new version with mike..."
-          if: ${{ inputs.version == 'master' && inputs.alias == 'latest' }}
+          if: ${{ inputs.version == 'master'}}
           run: | 
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
             mike set-default ${{ inputs.alias }} --ignore
         - name: deploy mkdocs version
           if: ${{ inputs.version != 'master' }}
           run: |
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
 #            mike set-default ${{ inputs.alias }} --ignore
 
 #          run: mike delete --push 2.9a 
