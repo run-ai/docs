@@ -76,4 +76,4 @@ jobs:
         - name: list mkdocs
           run: | 
             mike list
-            
+            mike alias master latest
