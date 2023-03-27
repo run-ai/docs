@@ -69,13 +69,12 @@ jobs:
 #   if [[ "${{ inputs.delete_latest }}" == 'true' ]]; then
 #                mike delete --push latest
 #              fi
-
+# --title=${{ inputs.alias }}${latest}
 #          run: mike delete --push 2.9a 
            
              
         - name: deploy mkdocs
           run: | 
-            mike delete --push 2.9a
             mike list
             echo "deploy new version with mike..."
             latest=""
@@ -86,10 +85,10 @@ jobs:
               version=${{ inputs.version }}
             fi
             echo "${version}"
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.alias }}${latest}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }}
             if [[ "${{ inputs.version }}" == 'master' ]]; then
               echo "setting this version as a latest..."
-              mike set-default ${{ inputs.title }} --ignore
+              mike set-default ${{ inputs.alias }} --ignore
             fi
 
 
