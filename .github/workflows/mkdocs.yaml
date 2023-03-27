@@ -15,7 +15,7 @@ on:
         type: string
       title:
         required: false
-        description: 'Doc site dropdown menu title'
+        description: 'Doc site dropdown menu title (version +/- latest)'
         default: "latest"
         type: string
       delete_latest:
@@ -86,7 +86,7 @@ jobs:
               version=${{ inputs.version }}
             fi
             echo "${version}"
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
             if [[ "${{ inputs.version }}" == 'master' ]]; then
               echo "setting this version as a latest..."
               mike set-default ${{ inputs.alias }} --ignore
