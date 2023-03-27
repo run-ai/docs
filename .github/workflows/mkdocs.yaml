@@ -66,6 +66,9 @@ jobs:
 #           run: |
 #             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
 #            mike set-default ${{ inputs.alias }} --ignore
+#   if [[ "${{ inputs.delete_latest }}" == 'true' ]]; then
+#                mike delete --push latest
+#              fi
 
 #          run: mike delete --push 2.9a 
            
@@ -75,11 +78,9 @@ jobs:
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
+              mike delete --push latest
               version=latest
               latest="-latest"
-              if [[ "${{ inputs.delete_latest }}" == 'true' ]]; then
-                mike delete --push latest
-              fi
             else
               version=${{ inputs.version }}
             fi
