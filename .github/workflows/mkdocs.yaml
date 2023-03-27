@@ -77,19 +77,19 @@ jobs:
           run: | 
             mike list
             mike delete --push 2.9b
-            echo "deploy new version with mike..."
-            latest=""
-            if [[ "${{ inputs.version }}" == 'master' ]]; then
-              version=latest
-              latest="-latest"
-            else
-              version=${{ inputs.version }}
-            fi
-            echo "${version}"
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
-            if [[ "${{ inputs.version }}" == 'master' ]]; then
-              echo "setting this version as a latest..."
-              mike set-default ${{ inputs.alias }} --ignore
-            fi
+#            echo "deploy new version with mike..."
+#            latest=""
+#            if [[ "${{ inputs.version }}" == 'master' ]]; then
+#              version=latest
+#              latest="-latest"
+#            else
+#              version=${{ inputs.version }}
+#            fi
+#            echo "${version}"
+#            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+#            if [[ "${{ inputs.version }}" == 'master' ]]; then
+#              echo "setting this version as a latest..."
+#              mike set-default ${{ inputs.alias }} --ignore
+#            fi
 
 
