@@ -5,12 +5,12 @@ on:
     inputs:
       version:
         required: false
-        description: 'Version number from branch / master for latest'
+        description: 'Version number from branch / "master" for latest'
         default: "master"
         type: string
       alias:
         required: false
-        description: 'Version alias / latest for latest'
+        description: 'Version alias / "latest" for latest'
         default: "latest"
         type: string
       title:
