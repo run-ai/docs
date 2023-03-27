@@ -79,7 +79,7 @@ jobs:
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
-              mike delete --push master
+              mike delete --push 2.9-latest
               version=latest
               latest="-latest"
             else
