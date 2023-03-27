@@ -75,6 +75,7 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
+            mike delete --push 2.9a
             mike list
             echo "deploy new version with mike..."
             latest=""
