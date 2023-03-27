@@ -18,6 +18,10 @@ on:
         description: 'Doc site dropdown menu title'
         default: "latest"
         type: string
+      delete_latest:
+        required: false
+        description: 'Delete latest version'
+        type: boolean
 
   # pull_request:
   #   branches:
@@ -68,7 +72,6 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
-            mike delete --push latest
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
