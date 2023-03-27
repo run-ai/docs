@@ -1,0 +1,32 @@
+name: Publish to staging
+on:
+  workflow_dispatch:
+    branches:
+      - 'v2.10'
+    inputs:
+      releaseType:
+        description: 'Publish to staging site'
+        required: True
+        default: 'staging'
+
+jobs:
+  staging:
+    name: Deploy to staging
+    environment:
+      name: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - name: build
+        run: pip3 install -r requirements.txt
+      - name: deploy
+        run: mkdocs gh-deploy --force
