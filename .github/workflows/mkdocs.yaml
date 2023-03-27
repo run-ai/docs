@@ -68,21 +68,21 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
-            mike delete --push 2.9.0
-#            echo "deploy new version with mike..."
-#            latest=""
-#            if [[ "${{ inputs.version }}" == 'master' ]]; then
-#              version=latest
-#              latest="-latest"
-#            else
-#              version=${{ inputs.version }}
-#            fi
-#            echo "${version}"
-#            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.alias }}${latest}
-            
-#            if [[ "${{ inputs.version }}" == 'master' ]]; then
-#              echo "setting this version as a latest..."
-#              mike set-default ${{ inputs.version }} --ignore
-#            fi
+#            mike delete --push 2.9.0
+            echo "deploy new version with mike..."
+            latest=""
+            if [[ "${{ inputs.version }}" == 'master' ]]; then
+              version=latest
+              latest="-latest"
+            else
+              version=${{ inputs.version }}
+            fi
+            echo "${version}"
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.alias }}${latest}
+          
+            if [[ "${{ inputs.version }}" == 'master' ]]; then
+              echo "setting this version as a latest..."
+              mike set-default ${{ inputs.version }} --ignore
+            fi
 
 
