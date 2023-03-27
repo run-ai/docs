@@ -73,7 +73,7 @@ jobs:
 #          run: mike delete --push 2.9a 
            
              
-        - name: deploy mkdocs
+        - name: list mkdocs
           run: | 
             mike list
             
