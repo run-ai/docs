@@ -51,7 +51,6 @@ extra:
 plugins:
   - mike:
       version_selector: true
-      default: latest
   - search:
       lang: en
   - git-revision-date-localized:
