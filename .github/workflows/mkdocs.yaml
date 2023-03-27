@@ -8,6 +8,11 @@ on:
         description: 'version name'
         default: "master"
         type: string
+      alias:
+        required: false
+        description: 'menu alias'
+        default: "latest"
+        type: string
 
   # pull_request:
   #   branches:
