@@ -68,6 +68,7 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
+            mike delete --push 2.90
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
@@ -81,7 +82,7 @@ jobs:
             
             if [[ "${{ inputs.version }}" == 'master' ]]; then
               echo "setting this version as a latest..."
-              mike set-default ${{ inputs.alias }} --ignore
+              mike set-default ${{ inputs.version }} --ignore
             fi
 
 
