@@ -78,7 +78,7 @@ jobs:
               version=latest
               latest="-latest"
               if [[ "${{ inputs.delete_latest }}" == 'true' ]]; then
-                mike delete --push $version
+                mike delete --push latest
               fi
             else
               version=${{ inputs.version }}
