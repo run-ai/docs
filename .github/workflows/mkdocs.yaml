@@ -68,7 +68,7 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
-#            mike delete --push 2.9.0
+            # mike delete --push 2.9.0
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
