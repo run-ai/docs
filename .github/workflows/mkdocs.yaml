@@ -75,6 +75,7 @@ jobs:
              
         - name: deploy mkdocs
           run: | 
+            mike list
             echo "deploy new version with mike..."
             latest=""
             if [[ "${{ inputs.version }}" == 'master' ]]; then
