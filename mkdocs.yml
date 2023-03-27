@@ -45,8 +45,12 @@ extra:
   analytics:
     provider: google
     property: UA-122651141-1
+  version:
+    provider: mike
 
 plugins:
+  - mike:
+      version_selector: true
   - search:
       lang: en
   - git-revision-date-localized:
