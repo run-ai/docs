@@ -13,6 +13,11 @@ on:
         description: 'menu alias'
         default: "latest"
         type: string
+      title:
+        required: false
+        description: 'menu title'
+        default: "latest"
+        type: string
 
   # pull_request:
   #   branches:
@@ -55,7 +60,7 @@ jobs:
         - name: deploy mkdocs version
           if: ${{ inputs.version != 'master' }}
           run: |
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} -t ${{ inputs.alias }}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
 #            mike set-default ${{ inputs.alias }} --ignore
 
 #          run: mike delete --push 2.9a 
