@@ -55,7 +55,7 @@ jobs:
         - name: deploy mkdocs version
           if: ${{ inputs.version != 'master' }}
           run: |
-            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }}
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} -t ${{ inputs.alias }}
 #            mike set-default ${{ inputs.alias }} --ignore
 
 #          run: mike delete --push 2.9a 
