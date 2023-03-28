@@ -76,4 +76,4 @@ jobs:
         - name: list mkdocs
           run: | 
             mike list
-            mike delete master
+            mike delete --push master
