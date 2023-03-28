@@ -2,6 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
+edit_uri: edit/master/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -15,6 +16,10 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - search.suggest
+    - content.action.edit
+  icon:
+    edit: material/pencil 
+    view: material/eye
 extra_css:
   - stylesheets/extra.css
   
