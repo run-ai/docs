@@ -47,7 +47,7 @@ Removed `Previous job` from the new job form.
 
 **Annotations and labels**
 
-Added to the UI the capability to add k8s annotations and labels to job submission form.
+Added to the UI the capability to add Kubernetes annotations and labels to the new job form.
 
 **Scheduling workloads to AWS placement groups**
 
@@ -55,7 +55,7 @@ Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/
 
 **Job Status Notifications**
 
-Added the capability to send job statuses notifications to Slack. For configuration information, see [Messaging](../admin/integration/messaging.md).
+Added the capability to send job statuses notifications to Slack. For configuration information, see [Event Router](../admin/integration/messaging.md).
 
 ### Storage
 
@@ -82,3 +82,13 @@ Added support Ephemeral PVC in CLI and in the job submission form. For more info
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-8223 | Missed foreign key to tenants table. |
+| RUN-5187 | S3 can now be configured to work in airgapped environments. |
+| RUN-8276 | 503 error when creating a workload (request timeout for validation webhook). |
+| RUN-7266 | Allocation bug - a researcher asked for 2 GPU for Interactive Job and other jobs received the allocated GPU within the same node |
+| RUN-8418 | different user when submitting via runai cli and vi ui submit form |
+| RUN-6838 | When submitting a job with port out of range, the job is submitted successfully however the submission actually fails. |
+| RUN-8196 | Nodepools aren't visible in 2.9 UI. |
+| RUN-7435 | Run:ai CLI submit doesn't parse correctly environment variables that end with a '='. |
+| RUN-8192 | The UI shows a deleted job in the Current Jobs tab. |
+| RUN-7776 | User does not exist in the UI due to pagination limitation. |

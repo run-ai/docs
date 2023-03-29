@@ -70,7 +70,7 @@ To configure Slack notifications:
 
       If the value of `channel` is set to pod-project, the event router will try to send the notification by tagging '**@project**' where project is taken from the 'project' label attached to your pod by runai.
 
-4. After configuring the `values.yaml` file run the following commands to deploy the chart:
+4. After configuring the `values.yaml` file, run the following commands to deploy the chart:
 
     ```sh
     chmod +x post-process.sh
