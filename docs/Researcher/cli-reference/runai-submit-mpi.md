@@ -28,7 +28,7 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 >
 >* **Running**&mdash;only pods still running when a job completes (for example, parameter servers) will be deleted immediately. Completed pods will not be deleted so that the logs will be preserved. (Default)
 >* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
->* **None**&mdsh;no pods will be deleted when the job completes.
+>* **None**&mdash;no pods will be deleted when the job completes.
 
 #### --non-preemptible
 

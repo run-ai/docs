@@ -56,8 +56,8 @@ You can add new Departments by pressing the **Add New Department** at the top ri
 
 ### Assign Department Administrator role
 
-You can create a new user with the *Department Administrator* role, or add the role to exisintg users.
-To create a new users with this role, see [Create a user](admin-ui-users.md#create-a-user).
+You can create a new user with the *Department Administrator* role, or add the role to existing users.
+To create a new user with this role, see [Create a user](admin-ui-users.md#create-a-user).
 To add this role to an existing user:
 
 1. Go to `Settings | Users`.

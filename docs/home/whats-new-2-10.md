@@ -7,6 +7,10 @@ March 2023
 
 ### Authentication and access control
 
+**Credential Manager**
+
+This feature provides configuration for credentials that are used to unlock protected resources such as applications, containers, and other assets. For configuration information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
+
 **SSO custom URL logout**
 
 This feature configures a custom logout URL in your tenant. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#logout-url).
@@ -21,7 +25,7 @@ Added an additional SSO configuration option using OIDC as the identity provider
 
 **Inactivity timeout**
 
-Added inactivity timeout for automated logout. The inactivity timeout is configured in minutes. For configuration information, see [Inactivity timeout](../admin/runai-setup/authentication/authentication-overview.md#inactivity-timeout)
+Added inactivity timeout for automated logout. The inactivity timeout is configured in minutes. For configuration information, see [Inactivity timeout](../admin/runai-setup/authentication/authentication-overview.md#inactivity-timeout).
 
 ### Researcher tools
 
@@ -31,11 +35,11 @@ Added CLI support for submitting Pytorch jobs. For more information, see [Submit
 
 **TensorFlow**
 
-Added CLI support for submitting TensorFlow jobs. For more information, see [Submit Run:ai TensorFlow job](../Researcher/cli-reference/runai-submit-TF.md)
+Added CLI support for submitting TensorFlow jobs. For more information, see [Submit Run:ai TensorFlow job](../Researcher/cli-reference/runai-submit-TF.md).
 
 **Cron jobs support**
 
-Added support for cron command-line job scheduler. For more information, see [Submit CRON job via YAML](../developer/cluster-api/submit-cron-yaml.md)
+Added support for cron command-line job scheduler. For more information, see [Submit CRON job via YAML](../developer/cluster-api/submit-cron-yaml.md).
 
 **Previous jobs menu**
 
@@ -43,7 +47,7 @@ Removed `Previous job` from the new job form.
 
 **Annotations and labels**
 
-Added to UI the capability to add k8s annotations and labels to job submission form.
+Added to the UI the capability to add k8s annotations and labels to job submission form.
 
 **Scheduling workloads to AWS placement groups**
 
