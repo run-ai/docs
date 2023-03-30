@@ -43,11 +43,17 @@ Added support for cron command-line job scheduler. For more information, see [Su
 
 **Previous jobs menu**
 
-Removed `Previous job` from the new job form.
+The option to re-run a job is supported via the `Clone Job` action in the `Jobs` screen. The option to select a previous job in the "New Job" form is no longer supported
 
 **Annotations and labels**
 
 Added to the UI the capability to add Kubernetes annotations and labels to the new job form.
+
+### Scheduling
+
+**Bin-Packing or Spread CPU scheduling strategy**
+
+The administrator can set a cluster-wide scheduling parameter to determine if the scheduler should spread or bin-pack workloads. Added a new distinct parameter for pure CPU workloads so administrators can use different strategies for different workloads. For more information, see [Scheduling Strategies](../Researcher/scheduling/strategies.md)
 
 **Scheduling workloads to AWS placement groups**
 
