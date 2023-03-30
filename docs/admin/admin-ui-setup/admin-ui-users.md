@@ -63,4 +63,4 @@ Roles provide a way to group permissions and assign them to either users or user
 | Dashboards.Analytics | R | R | R | R | R | R | R |
 | Dashboards.Consumption | R | N/A | N/A | N/A | N/A | N/A | N/A |
 
-Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete, **P** = Protected
+Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete

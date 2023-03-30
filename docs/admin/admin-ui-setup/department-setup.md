@@ -64,6 +64,17 @@ To add this role to an existing user:
 2. Select a user from the list and then press `Edit User`.
 3. Select the `Department Admin` role from the list. (Deselect to remove the role from the user).
 
+After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
+
+To assign the Department Administrator user to the correct department:
+
+1. Go to `Settings | Departments`.
+2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [creating a new depart,emt](#adding-departments).
+3. Select `Department Administrator`, then select `Users` or `Applications`.
+4. If you selected `Users`, select one or more users from the drop down menu.
+5. Press save when complete.
+
+
 ### Assigning Projects to Departments
 
 Under **Projects** edit an existing Project. You will see a new **Department** drop-down with which you can associate a Project with a Department.
