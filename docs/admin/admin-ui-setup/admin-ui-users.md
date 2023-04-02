@@ -43,8 +43,8 @@ Roles provide a way to group permissions and assign them to either users or user
 
 | Managed Entity   /  Roles | Admin | Dep. Admin | Editor | Research Manager | Researcher | ML Eng. | Viewer |
 |:--|:--|:--|:--|:--|:--|:--|:--|
-| Settings.Users/Groups/Apps to Roles | CRUD (all roles) | CRUD (Proj. Researchers and ML Engineers only) | N/A | N/A | N/A | N/A | N/A |
-| Bind Users/Groups/Apps to Scopes | R (Projects, Departments) | CRUD (Projects only) | CRUD (Projects, Departments) | N/A | N/A | N/A | N/A |
+| Assign (Settings) Users/Groups/Apps to Roles | CRUD (all roles) | CRUD (Proj. Researchers and ML Engineers only) | N/A | N/A | N/A | N/A | N/A |
+| Assign Users/Groups/Apps to Organizations | R (Projects, Departments) | CRUD (Projects only) | CRUD (Projects, Departments) | N/A | N/A | N/A | N/A |
 | Departments | R | R | CRUD | N/A | N/A | R | R |
 | Projects | R | CRUD | CRUD | R | R | R | R |
 | Jobs | R | R | R | R | CRUD | N/A | R |
