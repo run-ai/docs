@@ -32,8 +32,22 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     kubectl create namespace runai-backend
     ```
  
+### Upload images (Airgapped only)
 
-### Run:ai Administration CLI
+Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+
+```
+export REGISTRY_URL=<Docker Registry address>
+```
+
+Run the following script (you must have at least 20GB of free disk space to run): 
+
+```  
+sudo -E ./prepare_installation.sh
+```
+
+If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
+<!-- ### Run:ai Administration CLI
 
 === "Connected"
     Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
@@ -43,25 +57,8 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     
     ```
     chmod +x runai-adm
-    ``` 
+    ```  -->
     
-
-
-## Install Helm
-
-If helm v3 does not yet exist on the machine, install it now:
-
-
-=== "Connected"
-    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
-
-
-=== "Airgapped"
-    The Helm installation image is under the `deploy` directory. Run:
-    ```
-    tar xvf helm-<version>-linux-amd64.tar.gz
-    sudo mv linux-amd64/helm /usr/local/bin/
-    ```  
 
 
 ## Mark Run:ai System Workers

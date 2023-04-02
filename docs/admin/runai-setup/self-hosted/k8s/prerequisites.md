@@ -9,7 +9,7 @@ Before proceeding with this document, please review the [installation types](../
 As part of the installation process you will install:
 
 * A control-plane managing cluster
-* One or more clusters
+* One or more Run:ai clusters
 
 Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
 
@@ -41,6 +41,8 @@ See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prereq
 
 The Run:ai control plane operating system prerequisites are identical.
 
+The Run:ai control-plane requires a default storage class to create persistent volume claims for Run:ai storage. 
+
 ### NVIDIA Prerequisites
 
 See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
@@ -58,6 +60,11 @@ The Run:ai control plane, when installed without a Run:ai cluster, does not requ
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
+
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
 
 ## Network Requirements
 
