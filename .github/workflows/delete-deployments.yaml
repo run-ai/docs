@@ -1,4 +1,4 @@
-name: list docs CI 
+name: delete docs CI 
 
 on:
   workflow_dispatch:
