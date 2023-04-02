@@ -26,7 +26,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ``` bash
-    tar xvf runai-<version>.tar.gz
+    tar xvf runai-air-gapped-<version>.tar.gz
     cd deploy
 
     kubectl create namespace runai-backend
