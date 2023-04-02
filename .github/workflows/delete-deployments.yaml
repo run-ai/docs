@@ -2,10 +2,12 @@ name: list docs CI
 
 on:
   workflow_dispatch:
-      list_version:
+    inputs:
+      delete_version:
         required: false
-        description: 'List versions'
-        type: boolean
+        description: 'Delete a version from the site. Use version (vX.Y) from list deployments workflow.'
+        default: "latest"
+        type: string
 
   # pull_request:
   #   branches:
@@ -57,8 +59,6 @@ jobs:
 #          run: mike delete --push 2.9a 
            
              
-        - name: list mkdocs
+        - name: delete deployed version
           run: | 
-            if: [[ "${{ inputs.list_version }}" == 'true' ]]; then
-                  mike list
-            fi
+            mike delete --push ${{ inputs.delete_version }}
