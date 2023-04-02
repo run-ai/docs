@@ -1,103 +1,43 @@
 ## Description
 
-Submit a Run:ai Job for execution.
+:octicons-versions-24: Version 2.10 and later.
 
- Syntax notes:
+Submit a distributed TensorFlow training run:ai job to run.
 
-* Flags of type *stringArray* mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
+!!! Note
+    To use distributed training you need to have installed the < insert  TensorFlow operator here > as specified < insert pre-requisites link here >.
 
+Syntax notes:
+
+* Options with a value type of *stringArray* mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
 ## Examples
 
-All examples assume a Run:ai Project has been set using `runai config project <project-name>`.
-
-Start an interactive Job:
-
-```
-runai submit -i ubuntu --interactive --attach -g 1
-```
-
-Or
-
 ```console
-runai submit --name build1 -i ubuntu -g 1 --interactive -- sleep infinity 
-```
-
-(see: [build Quickstart](../Walkthroughs/walkthrough-build.md)).
-
-Externalize ports:
-
-```console
-runai submit --name build-remote -i rastasheep/ubuntu-sshd:14.04 --interactive \
-   --service-type=nodeport --port 30022:22
-   -- /usr/sbin/sshd -D
-```
-
-(see: [build with ports Quickstart](../Walkthroughs/walkthrough-build-ports.md)).
-
-Start a Training Job
-
-```console
-runai submit --name train1 -i gcr.io/run-ai-demo/quickstart -g 1 
-```
-    
-(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
-
-Use GPU Fractions
-
-```console
-runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
-```
-
-(see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
-
-Hyperparameter Optimization
-
-```console
-runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-   --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
-```
-
-(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
-
-Submit a Job without a name (automatically generates a name)
-
-```console
-runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
-```
-
-Submit a Job without a name with a pre-defined prefix and an incremental index suffix
-
-```console
-runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
+runai submit-tf --name distributed-job --replicas=2 -g 1 \
+	-i <image_name
+>
 ```
 
 ## Options
 
-### Job Type
-#### --interactive
+### Distributed
 
-> Mark this Job as interactive.
+#### --clean-pod-policy < string >
 
-#### --jupyter
+> The CleanPodPolicy controls deletion of pods when a job terminates. The policy can be one of the following values:
+>
+>* **Running**&mdash;only pods still running when a job completes (for example, parameter servers) will be deleted immediately. Completed pods will not be deleted so that the logs will be preserved. (Default)
+>* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
+>* **None**&mdash;no pods will be deleted when the job completes.
 
-> Run a Jupyter notebook using a default image and notebook configuration.
+#### --non-preemptible
 
-### Job Lifecycle
+> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
 
-#### --completions < int >
+#### --replicas < int>
 
-> Number of successful pods required for this job to be completed. Used with HPO.
-      
-#### --parallelism < int >
-> Number of pods to run in parallel at any given time.  Used with HPO.
-      
-#### --preemptible
-> Interactive preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
-
-#### --ttl-after-finish < duration >
-
-> The duration, after which a finished job is automatically deleted (e.g. 5s, 2m, 3h).
+> Number of replicas for Inference jobs
 
 <!-- Start of common content from snippets/common-submit-cli-commands.md -->
 ### Naming and Shortcuts
@@ -367,7 +307,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --run-as-user
 
->  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is *root* (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
+>  Run in the context of the current user running the Run:ai command rather than the root user. While the default container user is _root_ (same as in Docker), this command allows you to submit a Job running under your Linux user. This would manifest itself in access to operating system resources, in the owner of new folders created under shared directories, etc. Alternatively, if your cluster is connected to Run:ai via SAML, you can map the container to use the Linux UID/GID which is stored in the organization's directory. For more information see [non root containers](../../admin/runai-setup/config/non-root-containers.md).
 
 ### Scheduling
 
@@ -407,14 +347,11 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > Show help text.
 
 <!-- END of common content from snippets/common-submit-cli-commands.md -->
+
 ## Output
 
-The command will attempt to submit a Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
-
-Note that the submit call may use a *policy* to provide defaults to any of the above flags.
+The command will attempt to submit an *mpi* Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
 ## See Also
 
-*   See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-*   See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
-
+* See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).

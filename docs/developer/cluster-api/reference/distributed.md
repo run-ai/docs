@@ -1,15 +1,15 @@
-# Interactive Workload Parameters
+# Distributed Training Workload Parameters
 
-Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all distributed workload parameters. The text below is equivalent to running `kubectl explain distributedworkload.spec`. You can also run `kubectl explain distributedworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ``` YAML
-KIND:     InteractiveWorkload
+KIND:     DistributedWorkload
 VERSION:  run.ai/v2alpha1
 
 RESOURCE: spec <Object>
 
 DESCRIPTION:
-     The specifications of this InteractiveWorkload
+     The specifications of this DistributedWorkload
 
 FIELDS:
    allowPrivilegeEscalation	<Object>
@@ -113,8 +113,8 @@ FIELDS:
    ingressUrl	<Object>
      This field is for internal use only.
 
-   jupyter	<Object>
-     Indication if an interactive workload should run jupyter notebook
+   jobType	<string>
+     The type of distributed job
 
    labels	<Object>
      Specifies labels to be set in the container running the created workload.
@@ -145,8 +145,8 @@ FIELDS:
      receive all subsequent mounts that are mounted to this volume or any of its
      subdirectories.
 
-   mpi	<Object>
-     This workload produces mpijob
+   mpiJob	<Object>
+     Specific fields for distributed MPI Job
 
    name	<Object>
      The specific name of the created resource. Either name of namePrefix should
@@ -174,7 +174,8 @@ FIELDS:
      Project. For more information see the Projects setup guide at
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
-   notebookToken	<Object>
+   nonPreemptible	<Object>
+     Request the job to be non-preemptible
 
    podAffinity	<Object>
      Indicates whether pod affinity scheduling rules applies.
@@ -192,18 +193,15 @@ FIELDS:
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
 
-   preemptible	<Object>
-     Specifies that the created workload will be preemptible. Interactive
-     preemptible workloads can be scheduled above the guaranteed quota but may
-     be reclaimed at any time.
-
-   processes	<Object>
-     Number of distributed training processes that will be allocated for the
-     created mpijob.
-
    pvcs	<Object>
      Specifies persistent volume claims to mount into a container running the
      created workload.
+
+   pyTorchJob	<Object>
+     Specific fields for distributed PyTorch Job
+
+   replicas	<Object>
+     The desired number of worker pods.
 
    runAsGid	<Object>
      Specifies the Unix group id with which the container should run. Will be
@@ -223,6 +221,9 @@ FIELDS:
      organization's directory. For more information see the User Identity guide
      at https://docs.run.ai/admin/runai-setup/config/non-root-containers/
 
+   runPolicy	<Object>
+     RunPolicy is shared between all distributed jobs
+
    s3	<Object>
      Specifies S3 buckets to mount into the container running the workload
 
@@ -233,9 +234,6 @@ FIELDS:
      Access to Containers guide on
      https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
 
-   slotsPerWorker	<Object>
-     Number of slots to allocate per worker in the created mpijob.
-
    stdin	<Object>
      Instructs the system to keep stdin open for the container(s) running the
      created workload, even if nothing is attached.
@@ -243,13 +241,6 @@ FIELDS:
    supplementalGroups	<Object>
      ';' separated list of supplemental group IDs. Will be added to the security
      context of the container running the created workload.
-
-   tensorboard	<Object>
-     Indicates that this interactive workload should also run a TensorBoard
-     dashboard
-
-   tensorboardLogdir	<Object>
-     The TensorBoard Logs directory
 
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration

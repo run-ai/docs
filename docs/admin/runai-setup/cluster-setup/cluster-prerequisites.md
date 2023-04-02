@@ -12,7 +12,7 @@ The following is a checklist of the Run:ai prerequisites:
 | [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
 | [Cert manager](#cert-manager) | For RKE and EKS, you must install a certificate manager  and configure Run:ai to use it | 
-| (Optional) [Distributed Training](#distributed-training) | Install Kubeflow MPI if required. | 
+| (Optional) [Distributed Training](#distributed-training) | Install Kubeflow Training Operator if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
 There are also specific [hardware](#hardware-requirements), [operating system](#operating-system) and [network access](#network-access-requirements) requirements. A [pre-install](#pre-install-script) script is available to test if the prerequisites are met before installation. 
@@ -272,13 +272,27 @@ init-ca:
 
 ### Distributed Training
 
-Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai supports MPI version 0.3.0 (the latest version at the time of writing). 
+=== "Version 2.10 or later" 
+    Run:ai supports three different methods to ditribute training jobs across multiple nodes"
+
+    * MPI
+    * TensorFlow
+    * PyTorch
+
+    To install all 3 prerequisites run the following:
+
+    ```
+    kubectl "apply -k github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+    ```
+
+=== "Version 2.9 or earlier"
+    Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai supports MPI version 0.3.0 (the latest version at the time of writing). 
 
 
-Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
+    Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
 
-* Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-* run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
+    * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
+    * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
 
 
 ### Inference

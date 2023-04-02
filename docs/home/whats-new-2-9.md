@@ -47,7 +47,7 @@ Run:ai has revised the nodes table, adding new information fields and graphs. It
 
 **Consumption Dashboard**
 
-Added a “Consumption” dashboard. When enabled by the “Show Consumption Dashboard” alpha flag under “Settings”, this dashboard allows the admin to review consumption patterns for GPUs, CPUs and RAM over time. You can segregate consumption by over or in-quota allocation in the project or department level.
+Added a “Consumption” dashboard. When enabled by the “Show Consumption Dashboard” alpha flag under “Settings”, this dashboard allows the admin to review consumption patterns for GPUs, CPUs and RAM over time. You can segregate consumption by over or in-quota allocation in the project or department level. For more information, see [Consumption dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
 
 **Event History (Audit Log UI)**
 

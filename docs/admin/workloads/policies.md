@@ -15,6 +15,7 @@ Policies are specific to Workload type as such there are several kinds of Polici
 |----------------|-----------------|-------------|
 | Interactive    | `InteractiveWorkload` | `InteractivePolicy` |
 | Training       | `TrainingWorkload`| `TrainingPolicy` |
+| Distributed Training | `DistributedWorkload` | `DistributedPolicy` | 
 | Inference      | `InferenceWorkload` | `InferencePolicy` |
 
 A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
