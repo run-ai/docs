@@ -6,3 +6,4 @@ mkdocs-redirects
 mkdocs-render-swagger-plugin
 mkdocs-glightbox
 MarkupSafe==2.0.1
+mike

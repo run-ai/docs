@@ -1,0 +1,64 @@
+name: delete docs CI 
+
+on:
+  workflow_dispatch:
+    inputs:
+      delete_version:
+        required: false
+        description: 'Delete a version from the site. Use version (vX.Y) from list deployments workflow.'
+        default: "latest"
+        type: string
+
+  # pull_request:
+  #   branches:
+  #     - "master"
+
+jobs:
+  install_dependencies_and_deploy:
+    name: install dependencies and deploy latest changes to prod
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout latest
+          uses: actions/checkout@v3
+          with:
+            ref: ${{ inputs.version }}
+            fetch-depth: 0
+
+        - name: setup python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'
+            cache: 'pip' # caching pip dependencies
+
+        - name: install dependencies
+          run: |
+           pip3 install -r requirements.txt
+        
+        - name: Configure Git User
+          run: |
+            git config user.name "circleci-runai"
+            git config user.email "circleci-runai@run.ai"
+#            git fetch origin gh-pages --depth=1
+        
+#         - name: deploy mkdocs latest
+# #          run: mkdocs gh-deploy --force
+# #          echo "deploy new version with mike..."
+#           if: ${{ inputs.version == 'master'}}
+#           run: | 
+#             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
+#             mike set-default ${{ inputs.alias }} --ignore
+#         - name: deploy mkdocs version
+#           if: ${{ inputs.version != 'master' }}
+#           run: |
+#             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
+#            mike set-default ${{ inputs.alias }} --ignore
+#   if [[ "${{ inputs.delete_latest }}" == 'true' ]]; then
+#                mike delete --push latest
+#              fi
+# --title=${{ inputs.alias }}${latest}
+#          run: mike delete --push 2.9a 
+           
+             
+        - name: delete deployed version
+          run: | 
+            mike delete --push ${{ inputs.delete_version }}
