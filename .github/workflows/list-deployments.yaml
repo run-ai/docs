@@ -76,3 +76,4 @@ jobs:
         - name: list mkdocs
           run: | 
             mike list
+            mike delete --push 2.9a 
