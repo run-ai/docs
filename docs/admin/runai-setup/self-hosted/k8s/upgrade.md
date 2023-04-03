@@ -4,10 +4,10 @@ title: Upgrade self-hosted Kubernetes installation
 # Upgrade Run:ai 
 
 
-!!! Warning
-    The Run:ai data is stored in a Kubernetes persistent volume, depending on how you installed the Run:ai control plane, uninstalling the `runai-backend` helm chart may delete all your data. 
+!!! Important
+    Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.11, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
 
-    The upgrade process described below does not require uninstalling the helm chart. 
+    From version 2.11 forward, PVs are owned the customer and are independent of the Run:ai installation. 
 ## Preparations
 
 === "Connected"
@@ -18,7 +18,8 @@ title: Upgrade self-hosted Kubernetes installation
     * Upload the images as described [here](backend.md#upload-images-airgapped-only).
 
 
-## Upgrade to Version 2.9
+## Specific version instructions
+### Upgrade from Version 2.8 or lower
 
 Before upgrading the control plane, run: 
 
@@ -38,6 +39,26 @@ kubectl delete ingressclass nginx
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
 Then upgrade the control plane as described in the next section. 
+
+### Upgrade from version 2.9 or 2.10
+
+With version 2.11, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
+
+To remove the ownership, run:
+
+```
+kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+```
+
+Also, delete the ingress object which will be recreated by the control plane upgrade
+
+```
+kubectl delete ing -n runai-backend runai-backend-ingress
+```
+
+Then upgrade the control plane as described in the next section. 
+
 
 ## Upgrade the Control Plane
 

@@ -18,7 +18,6 @@ Run:
 ```
 kubectl get pods -n runai
 kubectl get pods -n monitoring
-kibectl get pods -n cert-manager
 ```
 Verify that all pods are in `Running` status and a ready state (1/1 or similar)
 
