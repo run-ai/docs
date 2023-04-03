@@ -19,7 +19,7 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade from Version 2.8 or lower
+### Upgrade from Version 2.7 or 2.8
 
 Before upgrading the control plane, run: 
 
@@ -29,16 +29,19 @@ kubectl delete --namespace runai-backend --all \
 kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
 ```
 
-Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+Delete all secrets in the runai-backend namespace except the helm secret (the secret of type `helm.sh/release.v1`).
+
+Run the following to remove NGINX:
 
 ``` bash
 kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
 kubectl delete ingressclass nginx 
 ```
+(If Run:ai configuration has previously disabled NGINX installation then these lines should not be run).
 
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
-Then upgrade the control plane as described in the next section. 
+Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). 
 
 ### Upgrade from version 2.9 or 2.10
 
@@ -57,18 +60,12 @@ Also, delete the ingress object which will be recreated by the control plane upg
 kubectl delete ing -n runai-backend runai-backend-ingress
 ```
 
-Then upgrade the control plane as described in the next section. 
+Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). 
 
 
-## Upgrade the Control Plane
+<!-- ## Upgrade the Control Plane
 
-If you have customized the backend values file in the older version, save it now by running
-
-```
-helm get values runai-backend -n runai-backend > old-be-values.yaml
-```
-
-Generate a new backend values file as described [here](backend.md#create-a-control-plane-configuration). Change the new file with the above customization if relevant.
+XXXX Copy or refer to install... Add Secret XXXXX
 
 Run the helm command below. 
 
@@ -76,14 +73,15 @@ Run the helm command below.
     ```
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm upgrade runai-backend -n runai-backend runai-backend/runai-backend -f runai-backend-values.yaml
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --create-namespace \
+        --set global.domain=<< customer's domain >>
     ```
 === "Airgapped"
     ```
     helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
         runai-backend  -f runai-backend-values.yaml
     ```
-    (replace `<version>` with the control plane version)
+    (replace `<version>` with the control plane version) -->
 
 
 ## Upgrade Cluster 

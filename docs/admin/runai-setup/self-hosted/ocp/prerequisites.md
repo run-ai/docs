@@ -60,6 +60,9 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ## Installer Machine
 

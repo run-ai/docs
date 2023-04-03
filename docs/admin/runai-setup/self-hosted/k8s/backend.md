@@ -4,7 +4,7 @@
 
 ## Domain certificate
 
-You must provide the [domain](prerequisites.md#domain-name) private key and crt as a Kubernetes secret in the `runai-backend` namespace. Run: 
+You must provide the [domain's](prerequisites.md#domain-name) private key and crt as a Kubernetes secret in the `runai-backend` namespace. Run: 
 
 ```
 kubectl create secret tls runai-backend-tls -n runai-backend \
@@ -19,7 +19,8 @@ Run the helm command below:
     ``` bash
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm install runai-backend -n runai-backend runai-backend/runai-backend \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/runai-backend \
+        --create-namespace \
         --set global.domain=<DOMAIN>  # (1)
     ```
 
@@ -30,7 +31,8 @@ Run the helm command below:
 
 === "Airgapped"
     ``` bash
-    helm install runai-backend runai-backend-<VERSION>.tgz -n  \ # (2)
+    helm upgrade -i runai-backend runai-backend-<VERSION>.tgz -n  \ # (2)
+        --create-namespace \
         runai-backend --set global.domain=<DOMAIN>  # (1)
     ```
 

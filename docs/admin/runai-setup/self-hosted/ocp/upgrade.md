@@ -3,4 +3,61 @@ title: Upgrade self-hosted OpenShift installation
 ---
 # Upgrade Run:ai 
 
-See the upgrade section [here](../k8s/upgrade.md)
+## Upgrade from Version 2.7 or 2.8.
+
+Before upgrading the control plane, run: 
+
+``` bash
+kubectl delete --namespace runai-backend --all \
+    deployments,statefulset,svc,ing,ServiceAccount,secrets
+kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
+```
+Delete all secrets in the `runai-backend` namespace except the helm secret (the secret of type `helm.sh/release.v1`).
+
+Then upgrade the control plane as described in the [control plane installation](backend.md). 
+
+
+## Upgrade from Version 2.9 or 2.10.
+
+With version 2.11, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volume is now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled.
+
+To remove the ownership, run:
+
+```
+kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+```
+
+Then upgrade the control plane as follows:
+
+=== "Connected"
+    ``` bash
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
+    --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
+    --set global.config.kubernetesDistribution=openshift \
+    --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> # (2)
+    --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
+    --set postgresql.primary.persistence.existingClaim=pvc-postgresql
+    ```
+
+    1. The subdomain configured for the OpenShift cluster.
+    2. Name of the administrator user in the company directory.
+
+=== "Airgapped"
+    ``` bash
+
+        XXX add here. 
+    ```
+
+
+## Upgrade Cluster 
+
+=== "Connected"
+    To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
+
+=== "Airgapped"
+    ```
+    kubectl apply -f runai-crds.yaml
+    helm get values runai-cluster -n runai > values.yaml
+    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
+    ```
+    (replace `<version>` with the cluster version)
