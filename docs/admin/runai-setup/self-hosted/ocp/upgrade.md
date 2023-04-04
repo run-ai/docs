@@ -14,7 +14,7 @@ kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
 for secret in `kubectl get secret -n runai-backend | grep -v helm.sh/release.v1 | grep -v NAME | awk '{print $1}'`; do kubectl delete secrets -n runai-backend $secret; done
 ```
 
-Then upgrade the control plane as described in the [control plane installation](backend.md). 
+Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
 
 
 ## Upgrade from Version 2.9 or 2.10.
@@ -27,7 +27,9 @@ To remove the ownership, run:
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
-Then upgrade the control plane as follows:
+Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
+
+## Upgrade the Control Plane
 
 === "Connected"
     ``` bash
