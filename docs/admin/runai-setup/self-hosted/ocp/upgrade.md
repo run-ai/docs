@@ -12,6 +12,7 @@ kubectl delete --namespace runai-backend --all \
     deployments,statefulset,svc,routes,ServiceAccount
 kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
 for secret in `kubectl get secret -n runai-backend | grep -v helm.sh/release.v1 | grep -v NAME | awk '{print $1}'`; do kubectl delete secrets -n runai-backend $secret; done
+kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
