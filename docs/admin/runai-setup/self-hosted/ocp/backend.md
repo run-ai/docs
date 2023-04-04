@@ -28,7 +28,7 @@ Run the helm command below:
         --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI>  # (2)
     ```
 
-    1. The subdomain configured for the OpenShift cluster.
+    1. The domain configured for the OpenShift cluster. To find out the OpenShift cluster domain, run `oc get routes -A`
     2. Name of the administrator user in the company directory.
 
     (replace `<version>` with the control plane version)
