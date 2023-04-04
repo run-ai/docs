@@ -36,7 +36,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
-    --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> # (2)
+    --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> \ # (2)
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql
     ```
