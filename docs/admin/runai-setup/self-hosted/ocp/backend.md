@@ -51,8 +51,9 @@ Use the `--set` syntax in the helm command above.
 
 ## Connect to Run:ai User Interface
 
-
-Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
+* Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. 
+* Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. 
+* Go to the Users area and change the password. 
 
 ## Next Steps
 

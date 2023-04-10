@@ -32,21 +32,21 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     kubectl create namespace runai-backend
     ```
  
-### Upload images (Airgapped only)
+    __Upload images__
 
-Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+    Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
 
-```
-export REGISTRY_URL=<Docker Registry address>
-```
+    ```
+    export REGISTRY_URL=<Docker Registry address>
+    ```
 
-Run the following script (you must have at least 20GB of free disk space to run): 
+    Run the following script (you must have at least 20GB of free disk space to run): 
 
-```  
-sudo -E ./prepare_installation.sh
-```
+    ```  
+    sudo -E ./prepare_installation.sh
+    ```
 
-If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
+    If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
 
 
 ## (Optional) Mark Run:ai System Workers
