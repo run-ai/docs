@@ -63,25 +63,7 @@ kubectl delete ing -n runai-backend runai-backend-ingress
 Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). 
 
 
-<!-- ## Upgrade the Control Plane
 
-XXXX Copy or refer to install... Add Secret XXXXX
-
-Run the helm command below. 
-
-=== "Connected"
-    ```
-    helm repo add runai-backend https://backend-charts.storage.googleapis.com
-    helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --create-namespace \
-        --set global.domain=<< customer's domain >>
-    ```
-=== "Airgapped"
-    ```
-    helm upgrade runai-backend runai-backend/runai-backend-<version>.tgz -n \
-        runai-backend  -f runai-backend-values.yaml
-    ```
-    (replace `<version>` with the control plane version) -->
 
 
 ## Upgrade Cluster 
