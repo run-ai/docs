@@ -9,15 +9,6 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster-prerequisites.md) document.  
 
 
-??? "Version 2.8 or lower"
-    The Run:ai Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set the flag `kube-prometheus-stack.enabled` to `false`.
-
-    When using an existing Prometheus installation, you will need to add additional rules to your Prometheus configuration. The rules can be found under `deploy/runai-prometheus-rules.yaml`.
-
- 
-
-
-
 ## Customize Installation
 
 * Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 

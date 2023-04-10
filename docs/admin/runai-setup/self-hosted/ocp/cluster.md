@@ -3,8 +3,7 @@ title: Self-Hosted installation over OpenShift - Cluster Setup
 ---
 
 
-## Install NVIDIA Dependencies
-
+## Prerequisites
 
 !!! Note
     You must have Cluster Administrator rights to install these dependencies. 
