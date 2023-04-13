@@ -9,7 +9,7 @@ Usage:
 To use port forwarding:
 
 1. Open a local terminal session.
-2. Find the target server using `<insert command here>`.
+2. Find the target server using `<runai list -p <name of project>>`.
 3. Run the following command:
      `runai port-forward <JOB_NAME> [flags]`
 
