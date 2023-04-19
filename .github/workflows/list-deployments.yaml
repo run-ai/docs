@@ -2,6 +2,7 @@ name: list docs CI
 
 on:
   workflow_dispatch:
+    inputs:
       list_version:
         required: false
         description: 'List versions'
@@ -36,7 +37,7 @@ jobs:
           run: |
             git config user.name "circleci-runai"
             git config user.email "circleci-runai@run.ai"
-#            git fetch origin gh-pages --depth=1
+            git fetch origin gh-pages --depth=1
         
 #         - name: deploy mkdocs latest
 # #          run: mkdocs gh-deploy --force
@@ -58,7 +59,6 @@ jobs:
            
              
         - name: list mkdocs
-          run: | 
-            if: [[ "${{ inputs.list_version }}" == 'true' ]]; then
-                  mike list
-            fi
+          run: |
+            mike list
+            
