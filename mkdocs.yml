@@ -56,12 +56,10 @@ extra:
     property: UA-122651141-1
   version:
     provider: mike
-    default: latest
 
 plugins:
   - mike:
-      version_selector: true
-      canonical_version: latest
+      version_selector: false
   - search:
       lang: en
   - git-revision-date-localized:
