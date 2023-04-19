@@ -62,7 +62,25 @@ As described above, MIG is only available in the latest NVIDIA architecture.
     (use `runai-adm remove` to unset)
 
 
-* Make sure that MIG is enabled on the node level (see [dynamic MIG quickstart](../Walkthroughs/quickstart-mig.md) for details) and set:
+* Make sure that MIG is enabled on the node level by running `nvidia-smi` on the node and verifying that MIG Mode is enabled (see highlight below):
+
+``` hl_lines="10"
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  A100-SXM4-40GB      Off  | 00000000:00:04.0 Off |                   On |
+| N/A   32C    P0    42W / 400W |      0MiB / 40536MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+```
+
+* To enable MIG Mode see [NVIDIA documentation](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#enable-mig-mode){target=_blank}.
+
+* Set:
     ```
     kubectl label node <node-name> node-role.kubernetes.io/runai-mig-enabled=true
     ```
