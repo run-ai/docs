@@ -18,6 +18,10 @@ on:
         description: 'Doc site dropdown menu title (version +/- latest)'
 #        default: "latest"
         type: string
+      latest:
+        required: false
+        description: 'Mark version version as latest'
+        type: string  
 
   # pull_request:
   #   branches:
@@ -86,6 +90,21 @@ jobs:
 #            fi
            
              
-        - name: deploy mkdocs
-          run: | 
-            mike deploy --push ${{ inputs.version }}
+        - name: deploy latest mkdocs
+          if: ${{ inputs.latest == 'latest'}}
+          run: |
+            git fetch origin gh-pages --depth=1
+            mike deploy --push ${{ inputs.version }} ${{ inputs.latest }} --title=${{ inputs.title }}
+            mike list
+
+        - name: deploy a version of mkdocs  
+          if: ${{ inputs.latest != 'latest'}}
+          run: |
+            git fetch origin gh-pages --depth=1
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+            mike list
+#        - name: latest version
+#          if: ${{ inputs.latest == 'latest' }}
+#          run: |
+#            mike deploy --push --update-aliases ${{ inputs.alias }} latest
+#            mike list
