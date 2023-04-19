@@ -60,6 +60,7 @@ extra:
 plugins:
   - mike:
       version_selector: false
+      canonical_version: null
   - search:
       lang: en
   - git-revision-date-localized:
