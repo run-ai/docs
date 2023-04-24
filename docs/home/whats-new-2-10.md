@@ -1,11 +1,12 @@
 # Run:ai version 2.10
+
+## Version 2.10.6
+
 ## Release date
 
 April 2023
 
 ## Release content
-
-### Version 2.10.6
 
 **runai port-forward**
 
@@ -43,12 +44,13 @@ Cluster wide PVC is now replicated to namespaces that do not have an existing PV
 | RUN-8794 | Newer dashboards are now deployed for tenants using grafanlabs.|
 | RUN-9212 | Fixed filter jobs by type. As a workaround, you can also you can sort by type.|
 
-## Version 2.10
+## Version 2.10.5
 
-### Release date
+## Release date
 
 April 2023
 
+## Release content
 ### Authentication and access control
 
 **Credential Manager**
