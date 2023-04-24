@@ -4,7 +4,7 @@
 
 Forward one or more local ports to the selected job. The forwarding session ends when the selected job terminates.
 
-To use `runai port-forward`, install and configure the [runai cli](docs/admin/researcher-setup/cli-install.md).
+To use `runai port-forward`, install and configure the [Install the Run:ai Command-line Interface](../../admin/researcher-setup/cli-install.md)
 
 !!!Note
 
