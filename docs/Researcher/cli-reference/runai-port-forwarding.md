@@ -20,7 +20,7 @@ To use `runai port-forward`, install and configure the [Install the Run:ai Comma
 
 1. Port forward connections from localhost:8080 to <job-name> on port 8090.
 
-    `runai port-forward <job-name> --port 8080:8090 --address localhost`
+    `runai port-forward <job-name> --port 8080:8090`
 
 2. Port forward connections from 0.0.0.0:8080 to <job-name> on port 8080.
 
