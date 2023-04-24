@@ -4,14 +4,7 @@
 
 Forward one or more local ports to the selected job. The forwarding session ends when the selected job terminates.
 
-Usage:
-
-To use port forwarding:
-
-1. Open a local terminal session.
-2. Find the target server using `<runai list -p <name of project>>`.
-3. Run the following command:
-     `runai port-forward <JOB_NAME> [flags]`
+To use `runai port-forward`, install and configure the [runai cli](docs/admin/researcher-setup/cli-install.md).
 
 !!!Note
 
