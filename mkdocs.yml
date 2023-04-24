@@ -180,6 +180,7 @@ nav:
           - 'Preparations' : 'admin/runai-setup/self-hosted/ocp/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/ocp/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/ocp/cluster.md'
+          - 'Install additional Clusters' : 'admin/runai-setup/self-hosted/ocp/additional-clusters.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/ocp/project-management.md'
           - 'Next Steps' : 'admin/runai-setup/self-hosted/ocp/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
