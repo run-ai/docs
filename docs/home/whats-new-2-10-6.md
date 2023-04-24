@@ -25,6 +25,24 @@ Fixed the output of `runai describe job` for jobs without pods.
 
 Cluster wide PVC is now replicated to namespaces that do not have an existing PVC with the same name.
 
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9196 | Fixed dashboard overview displaying `running_workloads:cpu_only` rule.|
+| RUN-9256 | Now supports the global configuration of memory request of memory-sensitive pods in the cluster.|
+| RUN-9219 | Fixed `runai describe` on pytorch outputs "Is Distributed Workload: false".|
+| RUN-9221 | Fixed CLI `runai describe` job nil pointer exception.|
+| RUN-9220 | Fixed PVC duplication errors so that it does not duplicate for namespaces with the same PVC name and bound PVCs.|
+| RUN-9224 | Fixed Scheduler not reporting the correct event on EFA (status history).|
+| RUN-9189 | Improved Scheduler performance to reclaim action slowness in really big clusters.|
+| RUN-450 | Change "edit boxes" to labels. |
+| RUN-9218 | Added support for `pod-running-timeout` when using `runai port-forward`.|
+| RUN-9252 | Fixed `runai port-forward` to be consistent with `runai bash` (`--target` is now `--pod`).|
+| RUN-9071 | Fixed registries api call crashing the ui when returning an error.|
+| RUN-8794 | Newer dashboards are now deployed for tenants using grafanlabs.|
+| RUN-9212 | Fixed filter jobs by type. As a workaround, you can also you can sort by type.|
+
 ## Version 2.10
 
 ### Release date
