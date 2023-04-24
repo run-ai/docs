@@ -7,7 +7,7 @@ The purpose of this document is to provide security officers with the ability to
 
 ## Review Cluster Access Roles
 
-Run:
+Run the folloinwg:
 
 ```
 helm repo add runai https://run-ai-charts.storage.googleapis.com
