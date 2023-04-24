@@ -28,7 +28,7 @@ To use `runai port-forward`, install and configure the [Install the Run:ai Comma
 
 3. Port forward multiple connections from localhost:8080 to <job-name> on port 8090 and localhost:6443 to <job-name> on port 443.
 
-    `runai port-forward <job-name> --port 8080:8090  --port 6443:443--address localhost`
+    `runai port-forward <job-name> --port 8080:8090  --port 6443:443`
 
 ### Global flags
 
