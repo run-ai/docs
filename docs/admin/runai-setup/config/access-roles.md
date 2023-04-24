@@ -4,10 +4,9 @@ Run:ai has configuration flags that control specific behavioral aspects of Run:a
 
 The purpose of this document is to provide security officers with the ability to review what cluster-wide access Run:ai requires, and verify that it is in line with organizational policy, before installing the Run:ai cluster. 
 
-
 ## Review Cluster Access Roles
 
-Run:
+To review the access roles run:
 
 ```
 helm repo add runai https://run-ai-charts.storage.googleapis.com
