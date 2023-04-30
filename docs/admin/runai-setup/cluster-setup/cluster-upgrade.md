@@ -29,31 +29,11 @@ The process:
     * If you have previously installed the SaaS version of Run:ai version 2.7 or below, you will need to install both [Ingress Controller](cluster-prerequisites.md#ingress-controller) and [Prometheus](cluster-prerequisites.md#prometheus).
     * If you have previously installed the SaaS version of Run:ai version 2.8 or any Self-hosted version of Run:ai, you will need to install [Prometheus](cluster-prerequisites.md#prometheus) only.
 
-XXXX --- GUY
-
-* Install The Run:ai CRDs:
-```
-kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
-```
-    Where `version` is `2.9.X`. You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
-
-XXXX - End
 
 * Install Run:ai cluster as described [here](cluster-install.md)
 
 ### Upgrade from version 2.9 or later
 
-
-XXXX  - GUY ---- 
-
-Replace `<version>` with the new version number in the command below. Then run: 
-
-```
-kubectl apply -f https://raw.githubusercontent.com/run-ai/public/main/<version>/runai-crds.yaml
-```
-The number should have 3 digits (for example `1.2.34`). You can find Run:ai version numbers by running `helm search repo -l runai-cluster`.
-
-XXX --- END ----- 
 
 Run:
 

@@ -73,7 +73,6 @@ Then create a tls secret and upgrade the control plane as described in the [cont
 
 === "Airgapped"
     ```
-    kubectl apply -f runai-crds.yaml
     helm get values runai-cluster -n runai > values.yaml
     helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
     ```
