@@ -17,7 +17,7 @@ Workspaces are built from the following building blocks:
 
 When a workspace is created, the researcher chooses from preconfigured building blocks or can create a new one on the fly. For example, a workspace can be composed of the following blocks:
 
-* Environment: _Jupyter, Tensor Board and Cude 11.2_
+* Environment: _Jupyter, Tensor Board and Cuda 11.2_
 * Compute resource: _0.5 GPU, 8 cores and 200 Megabytes of CPU memory_
 * Data source: _A Git branch with the relevant dataset needed_
 

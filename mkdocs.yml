@@ -280,7 +280,7 @@ nav:
       - 'runai login' : 'Researcher/cli-reference/runai-login.md'
       - 'runai logout' : 'Researcher/cli-reference/runai-logout.md'
       - 'runai logs' : 'Researcher/cli-reference/runai-logs.md'
-      - 'runai port-forward : 'Researcher/cli-reference/runai-port-forwarding.md'
+      - 'runai port-forward' : 'Researcher/cli-reference/runai-port-forwarding.md'
       - 'runai resume' : 'Researcher/cli-reference/runai-resume.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'

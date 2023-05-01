@@ -34,7 +34,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 
 === "Native Kubernetes"
-    * Locate the Kubernetes API Server configuration file. The file's location may defer between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
+    * Locate the Kubernetes API Server configuration file. The file's location may differ between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
     * Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication` described above.   
     * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
