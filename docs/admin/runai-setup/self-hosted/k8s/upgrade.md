@@ -30,8 +30,9 @@ kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
 for secret in `kubectl get secret -n runai-backend | grep -v helm.sh/release.v1 | grep -v NAME | awk '{print $1}'`; do kubectl delete secrets -n runai-backend $secret; done
 ```
 
+Delete all secrets in the `runai-backend` namespace except the `helm` secret (the secret of type `helm.sh/release.v1`).
 
-Run the following to remove NGINX:
+Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
 
 ``` bash
 kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
