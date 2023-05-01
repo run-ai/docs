@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC). When SSO is configured, the system is accessible via single-sign-on **only**.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC). W
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
