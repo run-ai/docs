@@ -39,5 +39,5 @@ Workspaces can be used via the user interface or programmatically via the Run:ai
 
 ## Next Steps
 
-* Workspaces are made from _building blocks_. Read about the various [building block](blocks/building-blocks.md)
+* Workspaces are made from _building blocks_. Read about the various [building blocks](blocks/building-blocks.md)
 * See how to [create a Workspace](create/workspace.md).  
