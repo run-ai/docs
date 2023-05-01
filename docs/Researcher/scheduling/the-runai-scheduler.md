@@ -127,7 +127,7 @@ Let's examine the previous example with Over-Quota Weights:
 * Project A has been allocated with a quota of 3 GPUs and GPU over quota weight is set to Low.
 * Project B has been allocated with a quota of 1 GPU and GPU over quota weight is set to High.
 
-Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. if both Projects go over quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
+Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
 
 With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
 

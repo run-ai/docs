@@ -22,9 +22,9 @@ This process may __need to be altered__ if,
 
 Run:ai allows the __association__ of a Run:ai Project with any existing Kubernetes namespace:
 
-* When [setting up](cluster.md) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
-* Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`
-* Assuming an existing namespace `<NAMESPACE>`, associate it with the Run:ai project by running:
+* When [setting up](cluster.md#optional-configuration) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
+* Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`. A namespace will __not__ be created. 
+* Associate and existing namepace `<NAMESPACE>` with the Run:ai project by running:
 
 ```
 oc label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>

@@ -36,7 +36,7 @@ With HPO, we introduce the concept of __Pods__. Pods are units of work within a 
 
 ### HPO Sample Code
 
-The Quickstart code uses the Run:ai HPO pythong library [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. And needs to be installed within the image. Below are some highlights of the code: 
+The Quickstart code uses the Run:ai HPO python library [github.com/run-ai/docs](https://github.com/run-ai/docs/tree/master/quickstart/hpo){target=_blank}. And needs to be installed within the image. Below are some highlights of the code: 
 
 ``` python
 

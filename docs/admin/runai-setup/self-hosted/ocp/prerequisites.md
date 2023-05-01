@@ -38,7 +38,7 @@ OpenShift has specific operating system requirements that can be found in the Re
 
 ### OpenShift 
 
-Run:ai supports OpenShift. Supported versions are 4.8 through 4.11. 
+Run:ai supports OpenShift. Supported versions are 4.10 through 4.11. 
 
 * OpenShift must be configured with a trusted certificate. Run:ai installation relies on OpenShift to create certificates for subdomains. 
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 
@@ -60,6 +60,9 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ## Installer Machine
 

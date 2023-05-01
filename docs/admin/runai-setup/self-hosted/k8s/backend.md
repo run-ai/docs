@@ -1,127 +1,60 @@
 
 # Install the Run:ai Control Plane 
 
-## Create a Control Plane Configuration
 
-Create a configuration file to install the Run:ai control plane:
+## Domain certificate
 
-=== "Connected"
-    Generate a values file by running:
-    ``` bash 
-    runai-adm generate-values \
-        --external-ips <ip> \ # (1)
-        --domain <dns-record> \ # (2) 
-        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
-        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs>  # (4)
-    ```
-
-    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
-    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
-    3. TLS certificate and private key for the above domain.
-    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-
-
-    !!! Note
-        In cloud environments, the flag `--external-ips` should contain both the internal and external IPs (comma separated)
-
-    A file called `runai-backend-values.yaml` will be created.
-
-
-=== "Airgapped Run:ai 2.7"
-    Generate a values file by running the following __under the `deploy` folder__:
-    ``` bash
-    runai-adm generate-values \
-        --external-ips <ip> \ # (1)
-        --domain <dns-record> \ # (2) 
-        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
-        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs> \ # (4)
-        --airgapped
-    ```
-
-    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
-    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
-    3. TLS certificate and private key for the above domain.
-    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-
-    Ignore the message about a downloaded file.
-
-
-=== "Airgapped Run:ai 2.8 and above"
-    Generate a values file by running the following __under the `deploy` folder__:
-    ``` bash
-    runai-adm generate-values \
-        --external-ips <ip> \ # (1)
-        --domain <dns-record> \ # (2) 
-        --tls-cert <file-name>  --tls-key <file-name> \ # (3)  
-        --nfs-server <nfs-server-address> --nfs-path <path-in-nfs> \ # (4)
-        --registry <docker-registry-address> #(5)
-    ```
-
-    1. An available, IP Address that is accessible from Run:ai Users' machines. Typically (but not always) the IP of one of the nodes. 
-    2. DNS A record such as `runai.<company-name>` or similar. The A record should point to the IP address above. 
-    3. TLS certificate and private key for the above domain.
-    4. NFS server location where Run:ai can create files. For using alternative storage mechanisms see optional values below 
-    5. Docker Registry address in the form of `NAME:PORT` (do not add `https`):
-
-
-    Ignore the message about a downloaded file.
-
-## (Optional) Edit Configuration File
-
-There may be cases where you need to change properties in the values file as follows:
-
-|  Key     |   Change   | Description |
-|----------|----------|-------------| 
-| `backend.initTenant.promProxy` <br> and <br> `grafana.datasources.datasources.yaml.datasources.url` | (Run:ai version 2.8 or lower) When using an existing Prometheus service, replace this URL with the URL of the existing Prometheus service (obtain by running `kubectl get svc` on the Prometheus namespace) | Internal URL to Prometheus server |
-| `postgresql.persistence` | PostgreSQL permanent storage via a Persistent Volume  | You can either use `storageClassName` to create a PV automatically or set `nfs.server` and `nfs.path` to provide the network file storage for the PV. The folder in the path should be pre-created and have full access rights. This key is now covered under the runai-adm flags above |
-| `nginx-ingress.controller.externalIPs` | `<RUNAI_IP_ADDRESS>` | IP address allocated for Run:ai. This key is now covered under the runai-adm flags above  |
-| `backend.https` | Replace `key` and `crt` with public and private keys for `runai.<company-name>`. This key is now covered under the runai-adm flags above|
-| `thanos.receive.persistence` | Permanent storage for Run:ai metrics | See `postgresql.persistence` above. Can use the same location. This key is now covered under the runai-adm flags above |
-| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
-| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
-
-
-## Upload images (Airgapped only)
-
-Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
+You must provide the [domain's](prerequisites.md#domain-name) private key and crt as a Kubernetes secret in the `runai-backend` namespace. Run: 
 
 ```
-export REGISTRY_URL=<Docker Registry address>
+kubectl create secret tls runai-backend-tls -n runai-backend \
+    --cert /path/to/fullchain.pem --key /path/to/private.pem
 ```
-
-Run the following script (you must have at least 20GB of free disk space to run): 
-
-```  
-sudo -E ./prepare_installation.sh
-```
-
-If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
-
 ## Install the Control Plane
 
 Run the helm command below:
 
 
 === "Connected"
-    ```
+    ``` bash
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm install runai-backend -n runai-backend runai-backend/runai-backend  \
-        -f runai-backend-values.yaml
+    helm upgrade -i runai-backend -n runai-backend runai-backend/runai-backend \
+        --create-namespace \
+        --set global.domain=<DOMAIN>  # (1)
     ```
+
+    1. Domain name described [here](prerequisites.md#domain-name). 
 
     !!! Info
         To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
 
 === "Airgapped"
+    ``` bash
+    helm upgrade -i runai-backend runai-backend-<VERSION>.tgz -n  \ # (2)
+        --create-namespace \
+        runai-backend --set global.domain=<DOMAIN>  # (1)
     ```
-    helm install runai-backend runai-backend-<version>.tgz -n \
-        runai-backend -f runai-backend-values.yaml 
-    ```
-    (replace `<version>` with the Run:ai control plane version)
+
+
+    1. Replace `<DOMAIN>` with the domain name described [here](prerequisites.md#domain-name). 
+    2. Replace `<VERSION>` with the Run:ai control plane version
+
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
+
+
+## (Optional) Additional Configurations
+
+There may be cases where you need to set additional properties as follows:
+
+|  Key     | Change   | Description |
+|----------|----------|-------------| 
+| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
+| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
+
+Use the `--set` syntax in the helm command above.  
 
 ### Connect to Run:ai User Interface
 

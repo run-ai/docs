@@ -37,39 +37,34 @@ SSH into a node with `oc` access (`oc` is the OpenShift command line) to the clu
     tar xvf runai-<version>.tar.gz
     cd deploy
     ```
-### Run:ai Administration CLI
+    __Upload images__
 
-=== "Connected"
-    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md).
+    Upload images to a local Docker Registry. Set the Docker Registry address in the form of `NAME:PORT` (do not add `https`):
 
-=== "Airgapped" 
-    Install the Run:ai Administrator Command-line Interface by following the steps [here](../../config/cli-admin-install.md). Use the image under `deploy/runai-admin-cli-<version>-linux-amd64.tar.gz`
-
-## Install Helm
-
-If helm v3 does not yet exist on the machine, install it now:
-
-=== "Connected"
-    See [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank} on how to install Helm. Run:ai works with Helm version 3 only (not helm 2).
-
-=== "Airgapped"
     ```
-    tar xvf helm-<version>-linux-amd64.tar.gz
-    sudo mv linux-amd64/helm /usr/local/bin/
+    export REGISTRY_URL=<Docker Registry address>
+    ```
+
+    Run the following script (you must have at least 20GB of free disk space to run): 
+
     ```  
+    sudo -E ./prepare_installation.sh
+    ```
 
-## Mark Run:ai System Workers
+    (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
-The Run:ai Control plane should be installed on a set of dedicated Run:ai system worker nodes rather than GPU worker nodes. To set system worker nodes run:
+## (Optional) Mark Run:ai System Workers
+
+You can __optionally__ set the Run:ai control plane to run on specific nodes. Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
+
+To set system worker nodes run:
 
 ```
-oc label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
+kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
-
-To avoid single-point-of-failure issues, we recommend assigning more than one node in production environments. 
-
+ 
 !!! Warning
-    Do not select the Kubernetes master as a runai-system node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
+    Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
 
 ## Additional Permissions
 

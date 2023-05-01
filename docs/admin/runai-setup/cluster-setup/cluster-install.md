@@ -21,8 +21,7 @@ Using the Wizard:
 4. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
 5. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
 6. Install [Helm](https://helm.sh/docs/intro/install/)
-7. For RKE and EKS, perform the steps [here](cluster-prerequisites.md#cert-manager)
-8. Run the `helm` commands as provided in the wizard. 
+7. Run the `helm` commands as provided in the wizard. 
 
 !!! Info
     To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.

@@ -33,6 +33,7 @@ kubectl label node <node-name> <label-key>=<label-value>
 ```
 
 The same value can be set to a single node or multiple nodes. Node Pool can only use one label (key & value) at a time.
+
 *   To create a node pool use the [create node pool](https://app.run.ai/api/docs/#/NodePools/createNodePool){target=_blank} Run:ai API.
 
 To configure a node affinity:
