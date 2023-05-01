@@ -4,7 +4,6 @@
 
 Forward one or more local ports to the selected job or a pod within the job. The forwarding session ends when the selected job terminates or the terminal is interrupted.
 
-
 ### Examples
 
 1. Port forward connections from localhost:8080 (localhost is the default) to <job-name> on port 8090.
