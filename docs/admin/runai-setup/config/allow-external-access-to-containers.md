@@ -1,6 +1,6 @@
 ## Introduction
 
-Researchers working with containers. many times need to remotely access the container. Some examples:
+Researchers working with containers may at times need to remotely access the container. Some examples:
 
 *   Using a _Jupyter_ _notebook_ that runs within the container
 *   Using _PyCharm_ to run python commands remotely.
@@ -17,7 +17,7 @@ Run:ai is based on Kubernetes. Kubernetes offers an abstraction of the container
 | LoadBalancer | Exposes the service externally using a cloud provider’s load balancer. | Only available with cloud providers | 
 
 
-See [https://kubernetes.io/docs/concepts/services-networking/service](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} for further details on these four options.
+See [https://kubernetes.io/docs/concepts/services-networking/service](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} for further details on these options.
 
 
 
