@@ -1,7 +1,7 @@
 # Run:ai version 2.11
 ## Release date
 
-April 2023
+May 2023
 
 ## Release content
 
