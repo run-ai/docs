@@ -1,5 +1,20 @@
 # Run:ai version 2.10
 
+## Version 2.10.7
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN_9226 | Fixed implementation of MIG utilization metrics in graphs. |
+| RUN-9309 | Changed the `backoffLimit` default for distributed workloads from 0 to 6 * (the number of workers).|
+| RUN-9324 | Fixed volume capacity check on PVC when its not immediately bound. |
+
+--------------------
 ## Version 2.10.6
 
 ## Release date
@@ -44,6 +59,7 @@ Cluster wide PVC is now replicated to namespaces that do not have an existing PV
 | RUN-8794 | Newer dashboards are now deployed for tenants using grafanlabs.|
 | RUN-9212 | Fixed filter jobs by type. As a workaround, you can also you can sort by type.|
 
+---------------------
 ## Version 2.10.5
 
 ## Release date
