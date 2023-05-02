@@ -4,6 +4,9 @@ The first Run:ai cluster is typically installed on the same OpenShift cluster as
 
 The instructions are for Run:ai version __2.11__ and up.
 
+## Prerequisites
+
+As described [here](./prerequisites.md#openshift), the OpenShift cluster that is hosting the new Run:ai cluster must be configured to the same IdP as the OpenShift cluster hosting the control-plane. 
 
 ## Installation
 
