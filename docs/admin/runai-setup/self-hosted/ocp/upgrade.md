@@ -34,7 +34,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 === "Connected"
     ``` bash
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/runai-backend  \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
     --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> \ # (2)
