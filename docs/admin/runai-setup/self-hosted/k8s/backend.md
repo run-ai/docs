@@ -20,7 +20,6 @@ Run the helm command below:
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
     helm upgrade -i runai-backend -n runai-backend runai-backend/runai-backend \
-        --create-namespace \
         --set global.domain=<DOMAIN>  # (1)
     ```
 
@@ -32,7 +31,6 @@ Run the helm command below:
 === "Airgapped"
     ``` bash
     helm upgrade -i runai-backend runai-backend-<VERSION>.tgz -n  \ # (2)
-        --create-namespace \
         runai-backend --set global.domain=<DOMAIN>  # (1)
     ```
 
