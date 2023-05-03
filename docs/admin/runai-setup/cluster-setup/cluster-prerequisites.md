@@ -353,7 +353,7 @@ __Usage of containers and images:__ The individual Researcher's work should be b
 
 __Internal networking:__ Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are made, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
 
-__Outbound network:__ Run:ai user interface runs from the cloud. All container nodes must be able to connect to the Run:ai cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is proxied/limited, the following exceptions should be applied: 
+__Outbound network:__ Run:ai user interface runs from the cloud. All container nodes must be able to connect to the Run:ai cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is limited, the following exceptions should be applied: 
 
 ### During Installation
 
@@ -494,6 +494,9 @@ In addition, once running, Run:ai requires an outbound network connection to the
 </tbody>
 </table>
 
+### Network Proxy
+
+If you are using a Proxy for outbound communication please contact Run:ai customer support
 
 ## Pre-install Script
 
