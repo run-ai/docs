@@ -5,19 +5,17 @@ May 2023
 
 ## Release content
 
-
-***** Add here new support for OpenShift 4.12 and possibly Kubernetes 1.27
-
-***** Add here support for multiple OpenShift clusters 
 ### Compatibility
 
-OpenShift 4.8 and 4.9 and Kubernetes 1.21 and 1.22 are no longer supported.
+Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
+Added support for OpenShift 4.12 and Kubernetes 1.27 are now supported.
+Added support for multiple OpenShift clusters.
 
 ### Researcher tools enhancements
 
 **OpenShift Dev Spaces**
 
-Openshift Dev Spaces custom resource definitions are now supported using the RunAI scheduler.
+Added support fort Openshift Dev Spaces custom resource definitions using the RunAI scheduler.
 
 **Cluster API**
 
