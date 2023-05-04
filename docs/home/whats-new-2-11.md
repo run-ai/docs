@@ -8,7 +8,7 @@ May 2023
 ### Compatibility
 
 Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
-Added support for OpenShift 4.12 and Kubernetes 1.27 are now supported.
+Added support for OpenShift 4.12 and Kubernetes 1.27.
 Added support for multiple OpenShift clusters.
 
 ### Researcher tools enhancements
