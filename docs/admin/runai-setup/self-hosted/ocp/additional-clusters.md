@@ -15,5 +15,5 @@ Create a new cluster, then:
 * Select a target platform `OpenShift` 
 * Select a Cluster location `Remote to Control Plane`.
 * You must enter a very specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
-* Ignore the instructions on creating a secret.
+* Ignore the instructions for creating a secret.
 
