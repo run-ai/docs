@@ -13,11 +13,11 @@ This requires several steps:
 
 ## Administration User Interface Setup
 
-### Enable Researcher Authentication
+<!-- ### Enable Researcher Authentication
 
 * Open the Run:ai user interface and navigate to `General | Settings`. 
 * Enable the flag _Researcher Authentication_ (should be enabled by default for new tenants).
-* There are values for `Realm`, `client configuration`, and `server configuration` which appear on the screen. Use them as below. 
+* There are values for `Realm`, `client configuration`, and `server configuration` which appear on the screen. Use them as below.  -->
 
 
 ### Assign Users to Projects
@@ -30,12 +30,14 @@ Assign Researchers to Projects:
 
 ## (Mandatory) Kubernetes Configuration
 
-As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. Modifying the API Server configuration differs between Kubernetes distributions:
+As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. The flags show in the Run:ai user interface under `Settings` | `General` | `server configuration`.
+ 
+Modifying the API Server configuration differs between Kubernetes distributions:
 
 
 === "Native Kubernetes"
     * Locate the Kubernetes API Server configuration file. The file's location may differ between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
-    * Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication` described above.   
+    * Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication`.   
     * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
     ```
@@ -176,7 +178,7 @@ To control access to Run:ai (and Kubernetes) resources, you must modify the Kube
 
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
-* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with the __client__ configuration text from `General | Settings | Researcher Authentication` described above. 
+* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with text from `General | Settings | Researcher Authentication` | `Client Configuration`. 
 * Under `contexts | context | user` change the user to `runai-authenticated-user`.
 
 

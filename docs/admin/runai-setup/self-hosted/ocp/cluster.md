@@ -23,7 +23,7 @@ oc get pods -n nvidia-gpu-operator
 
 ## Create OpenShift Projects
 
-Run:ai cluster installation uses several namespaces (or _projects_ in OpenShift terminology). The installation will automatically create the namespaces, but if your organization requires manual creation of namespaces, you must create them before installing:
+Run:ai cluster installation uses several namespaces (or _projects_ in OpenShift terminology). Run the following:
 
 ```
 oc new-project runai
@@ -50,7 +50,7 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
     ```
 
 
-### Optional configuration
+### Optional Configuration
 
 Make the following changes to the configuration file you have downloaded:
 

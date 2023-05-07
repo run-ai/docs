@@ -3,12 +3,12 @@ title: Self Hosted installation over OpenShift - Preparations
 ---
 # Preparing for a Run:ai OpenShift Installation
 
-The following section provides IT with the information needed to prepare for a Run:ai installation. This includes third-party dependencies which must be met as well as access control that must be granted for Run:ai components. 
+The following section provides IT with the information needed to prepare for a Run:ai installation. 
 
 
 ## Create OpenShift Projects
 
-Run:ai control plane uses a namespace `runai-backend` (or _project_ in OpenShift terminology). The installation will automatically create the namespace, but if your organization requires manual creation of namespaces, you must create it before installing:
+The Run:ai control plane uses a namespace (or _project_ in OpenShift terminology) name `runai-backend`. You must create it before installing:
 
 ```
 oc new-project runai-backend

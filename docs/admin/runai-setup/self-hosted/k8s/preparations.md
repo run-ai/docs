@@ -1,10 +1,10 @@
 ---
-title: Self Hosted installation over Kubernetes - Preparations
+title: Self-Hosted Installation over Kubernetes - Preparations
 ---
 
 ## Prerequisites 
 
-See Prerequisites section [above](prerequisites.md).
+See the Prerequisites section [above](prerequisites.md).
 
 
 ## Prepare Installation Artifacts
