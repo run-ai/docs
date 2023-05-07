@@ -9,7 +9,7 @@ May 2023
 
 Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
 Added support for OpenShift 4.12 and Kubernetes 1.27.
-Added support for multiple OpenShift clusters.
+Added support for multiple OpenShift clusters. For configuration information, see [Install additional Clusters]([Installing additional Clusters](../admin/runai-setup/self-hosted/k8s/additional-clusters.md))
 
 ### Researcher tools enhancements
 
