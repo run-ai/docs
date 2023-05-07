@@ -74,9 +74,12 @@ Modifying the API Server configuration differs between Kubernetes distributions:
     - "oidc-username-prefix=-"
     ```
 
-    If working via Rancher UI, need to add the flag as part of the cluster provisioning. At the time of writing, the flags cannot be changed after the cluster has been provisioned due to a Rancher bug. Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
+    If working via Rancher UI, need to add the flag as part of the cluster provisioning. 
+    
+    Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
 
-
+    At the time of writing, the flags cannot be changed after the cluster has been provisioned due to a Rancher bug.
+    
 === "GKE"
     Install [Anthos identity service](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank} by running:
 
