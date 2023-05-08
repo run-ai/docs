@@ -1,5 +1,18 @@
 # Run:ai version 2.10
 
+## Version 2.10.8
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9590 | Fixed PVC propagation not working due to improper handling of shared PVCs' annotations. |
+
+
 ## Version 2.10.7
 
 ## Release date
@@ -10,7 +23,7 @@ May 2023
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN_9226 | Fixed implementation of MIG utilization metrics in graphs. |
+| RUN-9226 | Fixed implementation of MIG utilization metrics in graphs. |
 | RUN-9309 | Changed the `backoffLimit` default for distributed workloads from 0 to 6 * (the number of workers).|
 | RUN-9324 | Fixed volume capacity check on PVC when its not immediately bound. |
 
