@@ -51,16 +51,14 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
 ### NVIDIA 
 
-Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
 
-!!! Important
-    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9 and is resolved in 22.9.0. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
 
 === "On Prem"    
     Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
 
 === "EKS"
-    * Do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
+    * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
     * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
 
 === "GKE"
@@ -328,8 +326,8 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 *   (Production only) __Run:ai System Nodes__: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
     
-    *   4 CPUs
-    *   8GB of RAM
+    *   8 CPUs
+    *   16GB of RAM
     *   50GB of Disk space  
     
 *   __Shared data volume:__ Run:ai uses Kubernetes to abstract away the machine on which a container is running:
