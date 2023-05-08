@@ -31,8 +31,8 @@ Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/conc
 
 Run:ai has been tested with the following Kubernetes distributions: 
 
-| Target Platform                          | Description | Installation Notes | 
-|------------------------------------------|-------------|--------------------|
+| Kubernetes Distribution           | Description | Installation Notes | 
+|-----------------------------------|-------------|--------------------|
 | Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
 | OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | EKS | Amazon Elastic Kubernetes Service  |  |
