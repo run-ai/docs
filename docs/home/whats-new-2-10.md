@@ -10,8 +10,10 @@ May 2023
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-9250 | Fixed trimming of wrong characters from API server URL in the CLI command `runai portfoward`. |
+| RUN-9579 | Fixed nodepool priority assignment and persistance in API and UI.|
 | RUN-9590 | Fixed PVC propagation not working due to improper handling of shared PVCs' annotations. |
-
+| RUB-9631 | Added flag `--pod-running-timeout` to CLI commands `runai attach` and `runai bash`. |
 
 ## Version 2.10.7
 
