@@ -15,7 +15,6 @@ May 2023
 | RUN-9590 | Fixed PVC propagation not working due to improper handling of shared PVCs' annotations. |
 | RUB-9631 | Added flag `--pod-running-timeout` to CLI commands `runai attach` and `runai bash`. |
 
->>>>>>> 8d6a2a43 (Merge pull request #255 from jasonnovichRunAI:v2.10)
 ## Version 2.10.7
 
 ## Release date
