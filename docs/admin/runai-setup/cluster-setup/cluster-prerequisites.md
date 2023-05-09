@@ -26,14 +26,12 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 ### Kubernetes
 
 Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.23 through 1.26 and OpenShift 4.10 to 4.12. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
- 
-Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
 Run:ai is been certified with the following Kubernetes distributions: 
 
 | Kubernetes Distribution           | Description | Installation Notes | 
 |-----------------------------------|-------------|--------------------|
-| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
+| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  |  See instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md) script. |
 | OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
@@ -48,23 +46,15 @@ Run:ai has been tested with the following Kubernetes distributions. Please conta
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
-Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md).
+Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
-
-!!! Notes
-    * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
 ### NVIDIA 
 
-Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
-
-
-=== "On Prem"    
-    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
+Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
 === "EKS"
     * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
-    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
 
 === "GKE"
 
@@ -100,7 +90,7 @@ Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9 and above. The interim v
         * The above only works for Run:ai 2.7.16 and above. 
 
 === "RKE"
-    Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
+    Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
