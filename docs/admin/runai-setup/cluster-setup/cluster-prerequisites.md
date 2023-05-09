@@ -29,7 +29,7 @@ Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versio
  
 Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
-Run:ai has been tested with the following Kubernetes distributions: 
+Run:ai is been certified with the following Kubernetes distributions: 
 
 | Kubernetes Distribution           | Description | Installation Notes | 
 |-----------------------------------|-------------|--------------------|
@@ -40,6 +40,11 @@ Run:ai has been tested with the following Kubernetes distributions:
 | GKE | Google Kubernetes Engine           |  | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+
+Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for more details: 
+
+| Kubernetes Distribution           | Description | Installation Notes | 
+|-----------------------------------|-------------|--------------------|
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
