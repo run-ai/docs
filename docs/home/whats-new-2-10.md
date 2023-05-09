@@ -1,7 +1,5 @@
 # Run:ai version 2.10
 
-<<<<<<< HEAD
-=======
 ## Version 2.10.8
 
 ## Release date
