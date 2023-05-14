@@ -19,7 +19,7 @@ Run the helm command below:
     ``` bash
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/runai-backend \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
         --set global.domain=<DOMAIN>  # (1)
     ```
 
