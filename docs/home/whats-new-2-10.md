@@ -13,7 +13,6 @@ May 2023
 | RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
 | RUN-9462 | Fixed scenarios where `supplementary groups` were not passed from the identity provider to the container. |
 | RUN-9278 | Fixed issue in openshift environments where projects deleted from the UI are still listed in the CLI. |
-| RUN-9229 | Investigate jobs UI issues in adobe. |
 
 ## Version 2.10.8
 
