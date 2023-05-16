@@ -1,5 +1,19 @@
 # Run:ai Version 2.9
 
+
+## Version 2.9.7
+
+## Release date
+
+May 2023
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-8989 | Added support for getting external tokens using additonal methods (for example, username, etc). |
+| RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
+
 ## Release Date
 February 2023
 

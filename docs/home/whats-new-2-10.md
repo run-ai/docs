@@ -1,5 +1,22 @@
 # Run:ai version 2.10
 
+## Version 2.10.9
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+| |Internal ID|Description|
+|-----------|--------------|
+| RUN-9619 | Can't schedule job in RunAI v2.10.7 on Kubernetes < 1.24. |
+| RUN-9536 | [BNY] In V1, support the old configuration that sets the UID/GID/Supp from Image. |
+| RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
+| RUN-9462 | SUPPLEMENTARYGROUPS missing. |
+| RUN-9278 | Fixed issue in openshift environments where projects deleted from the UI are still listed in the CLI. |
+| RUN-9229 | Investigate jobs UI issues in adobe. |
+
 ## Version 2.10.8
 
 ## Release date
