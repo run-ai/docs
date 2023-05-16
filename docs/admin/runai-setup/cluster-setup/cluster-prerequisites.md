@@ -25,7 +25,7 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.23 through 1.26 and OpenShift 4.10 to 4.12. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
+Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.23 through 1.27 and OpenShift 4.10 to 4.12. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
 Run:ai is been certified with the following Kubernetes distributions: 
 
