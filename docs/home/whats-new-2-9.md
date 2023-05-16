@@ -11,7 +11,7 @@ May 2023
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8989 | Added support for getting external tokens using additonal methods (for example, username, etc). |
+| RUN-8989 | Fixed openshift authentication for users lacking email so that they can submit jobs using the UI. |
 | RUN-9488 | Fixed certificate error when retrieving dashboards in environments that are using a self-signed certificate.|
 
 ## Release Date
