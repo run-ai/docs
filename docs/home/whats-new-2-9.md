@@ -1,5 +1,7 @@
 # Run:ai Version 2.9
 
+## Version 2.9.7
+
 ## Release date
 
 May 2023
@@ -8,8 +10,10 @@ May 2023
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8989 | Added support for getting external tokens using additonal methods (for example, username, etc). |
+| RUN-8989 | Ffixed openshift authentication for users lacking email so that they can submit jobs using the UI. |
 | RUN-9488 | Fixed certificate error when retrieving dashboards using a self-signed certificate.|
+
+## Version 2.9.0
 
 ## Release Date
 
