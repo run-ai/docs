@@ -8,7 +8,7 @@ May 2023
 
 ## Fixed issues
 
-| |Internal ID|Description|
+|Internal ID|Description|
 |-----------|--------------|
 | RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
 | RUN-9462 | Fixed scenarios where `supplementary groups` were not passed from the identity provider to the container. |
