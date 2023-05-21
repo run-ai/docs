@@ -23,10 +23,10 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 Added the following new capabilities for Cluster API capabilities for Researchers:
 
-1. Check the status of the job using the API Researcher API
-2. Get container logs using the API - to investigate in case something failed
-3. Submit a job using the backend
-4. Stop and Suspend / Resume jobs
+1. Check the status of the job using the API Researcher API.
+2. Get container logs using the API - to investigate in case something failed.
+3. Submit a job using the backend.
+4. Stop, Suspend and Resume jobs.
 
 ## Known issues
 
@@ -37,12 +37,11 @@ Added the following new capabilities for Cluster API capabilities for Researcher
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6827 | [VGR] Research - Dashboard in Firefox stays with the 3 dots after some idle time      |
-| RUN-8621 | Change Logo response to 204                                                           |
-| RUN-8662  | [Adobe, VGR] - Grayed out submit button when using template with pvc                 |
-| RUN-8890 | scheduler panic when both project and department with the same name exist             |
-| RUN-9015 | Pods of Distibuted Workloads are missing the "user" annotation                        |
-| RUN-9035 | reservation pods are deleted by schedulers from different node pools                  |
-| RUN-9089 | Add port forward to cli in 2.10                                                       |
-| RUN-9166 | wrong numbers in node fitting message for "other resources"                           |
-| RUN-9259 | CLONE - control-plane - [scale] Cluster sync - sync requests are not working at scale |
+| RUN-6827 | Fixed an issue where the elipsis remains in the Dashboard when using Firefox after a long idle time. |
+| RUN-8621 | Fixed the error response to 204 when changing to a custom logo. |
+| RUN-8662 | Fixed grayed out submit button when using a template with pvc. |
+| RUN-8890 | Fixed a scheduler panic when both a project and a department use the same name. |
+| RUN-9035 | Fixed an issue that allowed a scheduler from any node pool to delete reservation pods created on a different node pool which may have caused a failure to schedule jobs with fractional GPU allocations. |
+| RUN-9089 | Added the `port forward` CLI command. |
+| RUN-9166 | Fixed incorrect response about resource availability in messages indicating why a specific job failed to schedule. |
+| RUN-9259 | Fixed an issue where cluster sync requests are not working at scale due to a large number of requests. |
