@@ -1,16 +1,27 @@
-name: list docs CI 
+name: delete published docs CI 
 
 on:
   workflow_dispatch:
     inputs:
-      list_version:
+      version:
         required: false
-        description: 'List versions'
-        type: boolean
+        description: 'Version number from branch to delete'
+        default: "main"
+        type: string
+      alias:
+        required: false
+        description: 'Version or alias. Use a branch version for all docs use the alias to hide docs.'
+        default: "latest"
+        type: string
+#      title:
+#        required: false
+#        description: 'Doc site dropdown menu title (version +/- latest)'
+#        default: "latest"
+#        type: string
 
-  # pull_request:
-  #   branches:
-  #     - "master"
+# pull_request:
+#   branches:
+#     - "master"
 
 jobs:
   install_dependencies_and_deploy:
@@ -35,9 +46,9 @@ jobs:
         
         - name: Configure Git User
           run: |
-            git config user.name "circleci-runai"
-            git config user.email "circleci-runai@run.ai"
-            git fetch origin gh-pages --depth=1
+            git config user.name "jasonnovichrunai"
+            git config user.email "jason.novich@run.ai"
+#            git fetch origin gh-pages --depth=0
         
 #         - name: deploy mkdocs latest
 # #          run: mkdocs gh-deploy --force
@@ -55,10 +66,11 @@ jobs:
 #                mike delete --push latest
 #              fi
 # --title=${{ inputs.alias }}${latest}
-#          run: mike delete --push 2.9a 
+#          run: mike delete --push 2.9a
            
+#            mike delete --push ${{ inputs.version }}
              
-        - name: list mkdocs
+        - name: deploy mkdocs
           run: |
-            mike list
-            
+               mike delete --push ${{ inputs.alias }}
+               mike list
