@@ -126,23 +126,6 @@ Run:ai exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 
 For additional information, see Kubernetes [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} and NVIDIA [dcgm exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}.
 
-## How to Query Metrics
+## Create custom dasbhoards
 
-=== "SaaS" 
-    Run:ai customer support should provide `<BASE-METRICS-URL>`, `<DATASOURCE-ID>` and `<GRAFANA-API-KEY>`. 
-
-=== "Self Hosted" 
-    
-    * Browse to  `<RUNAI-URL>/grafana` (`<BASE-METRICS-URL>`) and log in as administrator
-    * Under _Keys_, generate a viewer key (`<GRAFANA-API-KEY>`)
-    * Under _Data sources_, locate a numeric data source ID ( `<DATASOURCE-ID>`)
-
-
-Use the Run:ai metrics documentation above together with Prometheus API syntax to access data. Example: 
-   
-``` bash
-curl "https://<BASE-METRICS-URL>/api/datasources/proxy/<DATASOURCE-ID>/api/v1/query?query=runai_job_total_runtime" \
-    --header 'Accept: application/json' \
-    --header 'Authorization: Bearer <GRAFANA-API_KEY>'
-```    
-
+To create custom dashboards based on the above metrics, please contact Run:ai customer support.
