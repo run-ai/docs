@@ -25,7 +25,7 @@ In addition, the control plane installation of Run:ai requires the configuration
     You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
 
 === "Airgapped"
-    You should receive a single file `runai-<version>.tar` from Run:ai customer support
+    You should receive a single file `runai-air-gapped-<version>.tar.gz` from Run:ai customer support
 
 ## Run:ai Software Prerequisites
 

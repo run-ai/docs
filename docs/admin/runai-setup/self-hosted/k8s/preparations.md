@@ -40,13 +40,15 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     export REGISTRY_URL=<Docker Registry address>
     ```
 
-    Run the following script (you must have at least 20GB of free disk space to run): 
+    Run the following script (you must dockerd installed and at least 20GB of free disk space to run): 
 
     ```  
     sudo -E ./prepare_installation.sh
     ```
 
     If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
+
+    The script should create a file named `custom-env.yaml` which will be used by the control-plane installation.
 
 
 ## (Optional) Mark Run:ai System Workers
