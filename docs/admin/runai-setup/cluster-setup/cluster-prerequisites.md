@@ -47,9 +47,8 @@ Run:ai has been tested with the following Kubernetes distributions. Please conta
 Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
 
-The Run:ai version 2.11 supports Kubernetes versions 1.24 through 1.27 and OpenShift 4.10 to 4.12. 
 
-Following is a support matrix for the latest Run:ai releases:
+Following is a Kubernetes support matrix for the latest Run:ai releases:
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
 |----------------|-------------------------------|--------|
