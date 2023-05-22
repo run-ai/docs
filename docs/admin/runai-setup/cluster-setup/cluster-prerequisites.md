@@ -25,9 +25,7 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.23 through 1.27 and OpenShift 4.10 to 4.12. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
-
-Run:ai is been certified with the following Kubernetes distributions: 
+Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernetes distributions: 
 
 | Kubernetes Distribution           | Description | Installation Notes | 
 |-----------------------------------|-------------|--------------------|
@@ -45,6 +43,16 @@ Run:ai has been tested with the following Kubernetes distributions. Please conta
 |-----------------------------------|-------------|--------------------|
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
+
+Following is a Kubernetes support matrix for the latest Run:ai releases:
+
+| Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
+|----------------|-------------------------------|--------|
+| Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
+| Run:ai 2.10    | 1.21 through 1.26 | 4.8 through 4.11 |
+| Run:ai 2.11    | 1.24 through 1.27 | 4.10 through 4.12 |
+
+For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
 Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
