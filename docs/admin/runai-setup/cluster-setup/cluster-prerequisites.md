@@ -44,10 +44,6 @@ Run:ai has been tested with the following Kubernetes distributions. Please conta
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
-Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
-
-
-
 Following is a Kubernetes support matrix for the latest Run:ai releases:
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
@@ -57,6 +53,8 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.11    | 1.24 through 1.27 | 4.10 through 4.12 |
 
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
+
+Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
 ### NVIDIA 
 
