@@ -14,6 +14,7 @@ Added support for OpenShift 4.12 and Kubernetes 1.27.
 Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md)
 
 The `runai top job` command was deprecated.
+
 ### Researcher tools enhancements
 
 **OpenShift Dev Spaces**
