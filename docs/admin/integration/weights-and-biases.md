@@ -1,4 +1,4 @@
-# Workspace Weights and Biases
+# Weights and Biases
 
 Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models to make informed decisions.
 
