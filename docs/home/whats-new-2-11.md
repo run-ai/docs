@@ -15,6 +15,8 @@ Added support for multiple OpenShift clusters. For configuration information, se
 
 The `runai top job` command was deprecated.
 
+When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see [Create a new user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user).
+
 ### Researcher tools enhancements
 
 **OpenShift Dev Spaces**
@@ -23,7 +25,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 **Cluster API**
 
-Added the following new capabilities for Cluster API capabilities for Researchers:
+Added the following new capabilities for Researchers in the Cluster API:
 
 1. Check the status of the job using the API Researcher API.
 2. Get container logs using the API - to investigate in case something failed.
@@ -32,7 +34,7 @@ Added the following new capabilities for Cluster API capabilities for Researcher
 
 **Comet Integration**
 
-Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md).
+Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
 ## Known issues
 
 |Internal ID|Description|Workaround|
