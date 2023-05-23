@@ -30,6 +30,9 @@ Added the following new capabilities for Cluster API capabilities for Researcher
 3. Submit a job using the backend.
 4. Stop, Suspend and Resume jobs.
 
+**Comet Integration**
+
+Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. Organizations of every size can use this platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}.
 ## Known issues
 
 |Internal ID|Description|Workaround|
