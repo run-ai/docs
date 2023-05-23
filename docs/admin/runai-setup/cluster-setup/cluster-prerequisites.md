@@ -50,7 +50,7 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 |----------------|-------------------------------|--------|
 | Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
 | Run:ai 2.10    | 1.21 through 1.26 | 4.8 through 4.11 |
-| Run:ai 2.11    | 1.24 through 1.27 | 4.10 through 4.12 |
+| Run:ai 2.11    | 1.23 through 1.27 | 4.10 through 4.12 |
 
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
