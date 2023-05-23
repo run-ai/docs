@@ -9,13 +9,15 @@ To configure Comet integration:
 1. Login to your account in [Comet](https://www.comet.com/site/){target=_blank}. If you do not have a valid account, you will need to create one.
 2. Setup your Comet account [here](https://www.comet.com/docs/v2/guides/getting-started/quickstart/){target=_blank}.
 3. In your Run:ai account, create an [environment](../../Researcher/user-interface/workspaces/create/create-env.md){target=_blank} and set Comet as a tool then:
-   1. Link it to https://www.comet.com/`user_name`/`project_name`/
+   1. Enter the following `<COMET_results_URL>`
    2. Add an environment variable:
    
-        ```Key = COMET_PROJECT```
+        ```Key = COMET_results_URL```
 
-        ```Value =``` leave empty for researcher to fill it in when creating a Workspace in the next step.
-4. Create a [Workspace](../../Researcher/user-interface/workspaces/create/workspace.md) using the Environment you just created.
-5. In the Workspace, add the URL for your project in your Comet account to the `value` environment variable.
+        ```Value = enter the URL destination for the results```
+
+The researcher must then create a [Workspace](../../Researcher/user-interface/workspaces/create/workspace.md) and select the Comet tool.
+
+To configure the Comet tool, for the environemnt variable name `COMET_results_URL` value, enter the ULR of the destination where the results are to be delivered.
 
 This will create a link, that will automatically open a new tab directly from your Workspace to your exact Comet project.
