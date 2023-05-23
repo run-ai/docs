@@ -32,7 +32,7 @@ Added the following new capabilities for Cluster API capabilities for Researcher
 
 **Comet Integration**
 
-Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}.
+Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md).
 ## Known issues
 
 |Internal ID|Description|Workaround|
