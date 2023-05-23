@@ -35,6 +35,9 @@ May 2023
 
 May 2023
 
+# Release content
+
+The `runai top job` command was deprecated.
 ## Fixed issues
 
 |Internal ID|Description|
