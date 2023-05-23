@@ -21,7 +21,7 @@ You can create users, as well as update and delete users.
 1. Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
 2. Select the `Users` tab for local users, or the `SSO Users` tab for SSO users.
 3. On the top right, select "NEW USER".
-4. Choose a User name and email.
+4. Enter the user's email.
 5. Select Roles. More than one role can be selected. Available roles are:
     * **Administrator**&mdash;Can manage Users and install Clusters.
     * **Editor**&mdash;Can manage Projects and Departments.
