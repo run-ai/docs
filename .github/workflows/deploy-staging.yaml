@@ -33,21 +33,15 @@ jobs:
             key: ${{ github.ref }}
             path: .cache
 
-        - name: setup node version to 16
-          if: steps.service-metadata.outputs.service_langauge == 'javascript'
-          uses: actions/setup-node@v3
-          with:
-            node-version: 16
-
         - name: build
           run: pip3 install -r requirements.txt
 
-        - name: Build
+        - name: mkdocs build
           run: | 
             mkdocs build
 
         - name: Configure AWS credentials
-          uses: aws-actions/configure-aws-credentials@v1-node16
+          uses: aws-actions/configure-aws-credentials@v2
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
