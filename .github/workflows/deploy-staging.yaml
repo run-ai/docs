@@ -22,14 +22,23 @@ jobs:
           with:
             ref: ${{ inputs.version }}
             fetch-depth: 0
+            
         - name: python setup
           uses: actions/setup-python@v4
           with:
             python-version: 3.x
+
         - uses: actions/cache@v2
           with:
             key: ${{ github.ref }}
             path: .cache
+
+        - name: setup node version to 16
+          if: steps.service-metadata.outputs.service_langauge == 'javascript'
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+
         - name: build
           run: pip3 install -r requirements.txt
 
