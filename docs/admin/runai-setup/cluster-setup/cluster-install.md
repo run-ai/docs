@@ -10,18 +10,19 @@ Below are instructions on how to install a Run:ai cluster. Before installing, pl
 
 Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
-*   If no clusters are currently configured, you will see a Cluster installation wizard
-*   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster". 
+*   If no clusters are currently configured, you will see a Cluster installation wizard.
+*   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster".
 
 Using the Wizard:
 
-1. Choose a target Kubernetes platform (see table above)
-2. (SaaS and remote self-hosted cluster only) Provide a domain name for your cluster as described [here](cluster-prerequisites.md#cluster-url).
-3. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes. 
-4. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``
-5. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md)
-6. Install [Helm](https://helm.sh/docs/intro/install/)
-7. Run the `helm` commands as provided in the wizard. 
+1. Choose a target Kubernetes platform (see table above).
+2. Use the combo box to select your cluster version.
+3. (SaaS and remote self-hosted cluster only) Provide a domain name for your cluster as described [here](cluster-prerequisites.md#cluster-url).
+4. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes.
+5. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``.
+6. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md).
+7. Install [Helm](https://helm.sh/docs/intro/install/).
+8. Run the `helm` commands as provided in the wizard.
 
 !!! Info
     To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.
@@ -79,9 +80,6 @@ runai-public:
 2. Checks whether optional product dependencies have been met.
 3. See [Inference prerequisites](cluster-prerequisites.md#inference).
 4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
-
-
-
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
 

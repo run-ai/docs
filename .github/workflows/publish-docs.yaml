@@ -5,23 +5,27 @@ on:
     inputs:
       version:
         required: false
-        description: 'Version number from branch / "master" for latest'
-        default: "master"
+        description: 'Version number from branch / "main" for latest'
+#        default: "main"
         type: string
       alias:
         required: false
         description: 'Version alias / "latest" for latest'
-        default: "latest"
+#        default: "latest"
         type: string
       title:
         required: false
         description: 'Doc site dropdown menu title (version +/- latest)'
-        default: "latest"
+#        default: "latest"
         type: string
+      latest:
+        required: false
+        description: 'Mark version version as latest'
+        type: string  
 
   # pull_request:
   #   branches:
-  #     - "master"
+  #     - "main"
 
 jobs:
   install_dependencies_and_deploy:
@@ -51,14 +55,14 @@ jobs:
 #            git fetch origin gh-pages --depth=1
         
 #         - name: deploy mkdocs latest
-# #          run: mkdocs gh-deploy --force
-# #          echo "deploy new version with mike..."
-#           if: ${{ inputs.version == 'master'}}
+#           run: mkdocs gh-deploy --force
+#           echo "deploy new version with mike..."
+#           if: ${{ inputs.version == 'main'}}
 #           run: | 
 #             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
 #             mike set-default ${{ inputs.alias }} --ignore
 #         - name: deploy mkdocs version
-#           if: ${{ inputs.version != 'master' }}
+#           if: ${{ inputs.version != 'main' }}
 #           run: |
 #             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}-latest
 #            mike set-default ${{ inputs.alias }} --ignore
@@ -67,24 +71,40 @@ jobs:
 #              fi
 # --title=${{ inputs.alias }}${latest}
 #          run: mike delete --push 2.9a
+
+# THIS IS GOOD CODE!!!
+#            mike list
+#            echo "deploy new version with mike..."
+#            latest=""
+#            if [[ "${{ inputs.version }}" == 'main' ]]; then
+#              version=latest
+#              latest="-latest"
+#            else
+#              version=${{ inputs.version }}
+#            fi
+#            echo "${version}"
+#            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+#            if [[ "${{ inputs.version }}" == 'main' ]]; then
+#              echo "setting this version as a latest..."
+#              mike set-default ${{ inputs.alias }} --ignore
+#            fi
            
              
-        - name: deploy mkdocs
-          run: | 
+        - name: deploy latest mkdocs
+          if: ${{ inputs.latest == 'latest'}}
+          run: |
+            git fetch origin gh-pages --depth=1
+            mike deploy --push ${{ inputs.version }} ${{ inputs.latest }} --title=${{ inputs.title }}
             mike list
-            echo "deploy new version with mike..."
-            latest=""
-            if [[ "${{ inputs.version }}" == 'master' ]]; then
-              version=latest
-              latest="-latest"
-            else
-              version=${{ inputs.version }}
-            fi
-            echo "${version}"
+
+        - name: deploy a version of mkdocs  
+          if: ${{ inputs.latest != 'latest'}}
+          run: |
+            git fetch origin gh-pages --depth=1
             mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
-            if [[ "${{ inputs.version }}" == 'master' ]]; then
-              echo "setting this version as a latest..."
-              mike set-default ${{ inputs.alias }} --ignore
-            fi
-
-
+            mike list
+#        - name: latest version
+#          if: ${{ inputs.latest == 'latest' }}
+#          run: |
+#            mike deploy --push --update-aliases ${{ inputs.alias }} latest
+#            mike list

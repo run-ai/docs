@@ -19,9 +19,10 @@ You can create users, as well as update and delete users.
 :octicons-versions-24: Department Admin is available in version 2.10 and later.
 
 1. Login to the Users area of the Run:ai User interface at `company-name.run.ai`.
-2. On the top right, select "Add New Users".
-3. Choose a User name and email.
-4. Select Roles. More than one role can be selected. Available roles are:
+2. Select the `Users` tab for local users, or the `SSO Users` tab for SSO users.
+3. On the top right, select "NEW USER".
+4. Enter the user's email.
+5. Select Roles. More than one role can be selected. Available roles are:
     * **Administrator**&mdash;Can manage Users and install Clusters.
     * **Editor**&mdash;Can manage Projects and Departments.
     * **Viewer**&mdash;View-only access to the Run:ai User Interface.
@@ -32,8 +33,8 @@ You can create users, as well as update and delete users.
 
     For more information, [Roles and permissions](#roles-and-permissions).
 
-5. (Optional) Select Cluster(s). This determines what Clusters are accessible to this User.
-6. Press "Save".
+6. (Optional) Select Cluster(s). This determines what Clusters are accessible to this User.
+7. Press "Save".
 
 You will get the new user credentials and have the option to send the credentials by email.
 

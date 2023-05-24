@@ -1,12 +1,23 @@
-name: list docs CI 
+name: publish docs CI 
 
 on:
   workflow_dispatch:
     inputs:
-      list_version:
+      version:
         required: false
-        description: 'List versions'
-        type: boolean
+        description: 'Version number from branch / "main" for latest'
+        default: "main"
+        type: string
+      alias:
+        required: false
+        description: 'Version alias / "latest" for latest'
+        default: "latest"
+        type: string
+      title:
+        required: false
+        description: 'Doc site dropdown menu title (version +/- latest)'
+        default: "latest"
+        type: string
 
   # pull_request:
   #   branches:
@@ -32,12 +43,14 @@ jobs:
         - name: install dependencies
           run: |
            pip3 install -r requirements.txt
-        
+      
+
+
         - name: Configure Git User
           run: |
-            git config user.name "circleci-runai"
-            git config user.email "circleci-runai@run.ai"
-            git fetch origin gh-pages --depth=1
+            git config user.name "jasonnovichrunai"
+            git config user.email "jason.novich@run.ai"
+#            git fetch origin gh-pages
         
 #         - name: deploy mkdocs latest
 # #          run: mkdocs gh-deploy --force
@@ -55,10 +68,24 @@ jobs:
 #                mike delete --push latest
 #              fi
 # --title=${{ inputs.alias }}${latest}
-#          run: mike delete --push 2.9a 
+#          run: mike delete --push 2.9a
            
              
-        - name: list mkdocs
-          run: |
+        - name: deploy mkdocs
+          run: | 
             mike list
-            
+            echo "deploy new version with mike..."
+            latest=""
+            if [[ "${{ inputs.version }}" == 'main' ]]; then
+              version=latest
+              latest="-latest"
+            else
+              version=${{ inputs.version }}
+            fi
+            echo "${version}"
+            mike deploy --push ${{ inputs.version }} ${{ inputs.alias }} --title=${{ inputs.title }}
+            if [[ "${{ inputs.version }}" == 'main' ]]; then
+              echo "setting this version as a latest..."
+              mike set-default ${{ inputs.alias }} --ignore
+            fi
+

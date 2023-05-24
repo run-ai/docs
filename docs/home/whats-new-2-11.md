@@ -13,6 +13,10 @@ Added support for OpenShift 4.12 and Kubernetes 1.27.
 
 Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md)
 
+The `runai top job` command was deprecated.
+
+When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see [Create a new user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user).
+
 ### Researcher tools enhancements
 
 **OpenShift Dev Spaces**
@@ -21,13 +25,16 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 **Cluster API**
 
-Added the following new capabilities for Cluster API capabilities for Researchers:
+Added the following new capabilities for Researchers in the Cluster API:
 
-1. Check the status of the job using the API Researcher API
-2. Get container logs using the API - to investigate in case something failed
-3. Submit a job using the backend
-4. Stop and Suspend / Resume jobs
+1. Check the status of the job using the API Researcher API.
+2. Get container logs using the API - to investigate in case something failed.
+3. Submit a job using the backend.
+4. Stop, Suspend and Resume jobs.
 
+**Comet Integration**
+
+Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
 ## Known issues
 
 |Internal ID|Description|Workaround|
@@ -37,21 +44,11 @@ Added the following new capabilities for Cluster API capabilities for Researcher
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8662  | [Adobe, VGR] - Grayed out submit button when using template with pvc |
-| RUN-9212 | [adobe] [2.10] Cant filter jobs by type                                               |
-| RUN-9220 | [adobe] PVC does not duplicate                                                        |
-| RUN-9221 | [Adobe] runai CLI describe job - nil pointer exception                                |
-| RUN-9224 | [Adobe] Scheduler does not report correct event on EFA (status history)               |
-| RUN-8276 | [Sony] 503 when creating a workload (request timeout for validation webhook)          |
-| RUN-6827 | [VGR] Research - Dashboard in Firefox stays with the 3 dots after some idle time      |
-| RUN-9089 | Add port forward to cli in 2.10                                                       |
-| RUN-8621 | Change Logo response to 204                                                           |
-| RUN-9259 | CLONE - control-plane - [scale] Cluster sync - sync requests are not working at scale |
-| RUN-8418 | different user when submitting via runai cli and vi ui submit form                    |
-| RUN-9196 | fix runai_dashboard:overview:running_workloads:cpu_only rule                          |
-| RUN-9015 | Pods of Distibuted Workloads are missing the "user" annotation                        |
-| RUN-9035 | reservation pods are deleted by schedulers from different node pools                  |
-| RUN-9252 | runai port-forward should be consistent with runai bash (--target should be --pod)    |
-| RUN-8890 | scheduler panic when both project and department with the same name exist             |
-| RUN-8192 | UI shows deleted job in the Jobs Current Tab                                          |
-| RUN-9166 | wrong numbers in node fitting message for "other resources"                           |
+| RUN-6827 | Fixed an issue where the elipsis remains in the Dashboard when using Firefox after a long idle time. |
+| RUN-8621 | Fixed the error response to 204 when changing to a custom logo. |
+| RUN-8662 | Fixed grayed out submit button when using a template with pvc. |
+| RUN-8890 | Fixed a scheduler panic when both a project and a department use the same name. |
+| RUN-9035 | Fixed an issue that allowed a scheduler from any node pool to delete reservation pods created on a different node pool which may have caused a failure to schedule jobs with fractional GPU allocations. |
+| RUN-9089 | Added the `port forward` CLI command. |
+| RUN-9166 | Fixed incorrect response about resource availability in messages indicating why a specific job failed to schedule. |
+| RUN-9259 | Fixed an issue where cluster sync requests are not working at scale due to a large number of requests. |
