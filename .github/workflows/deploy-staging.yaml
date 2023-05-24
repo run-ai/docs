@@ -33,9 +33,12 @@ jobs:
         - name: build
           run: pip3 install -r requirements.txt
 
-        - name: Build
+        - name: mkdocs-build-action
+          uses: jnanadarshan/mkdocs-build-action@v0.24
+
+      #  - name: Build
         #  uses: jnanadarshan/mkdocs-build-action@v1
-          uses: gameclosure/mkdocs-publish-s3-action@master
+        #  uses: gameclosure/mkdocs-publish-s3-action@master
 
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
