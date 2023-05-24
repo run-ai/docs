@@ -1,4 +1,4 @@
-# Run:ai Documentation Library - Liran test 
+# Run:ai Documentation Library 
 
 
 Welcome to the Run:ai documentation area. For an introduction about what is the Run:ai Platform see [Run:ai platform](https://www.run.ai/platform/){target=_blank} on the run.ai website.
