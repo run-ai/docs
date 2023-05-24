@@ -1,4 +1,4 @@
-name: Publish to staging
+name: Not Good Publish to staging
 on:
   workflow_dispatch:
     branches:

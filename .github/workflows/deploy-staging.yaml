@@ -28,15 +28,11 @@ jobs:
           with:
             python-version: 3.x
 
-        - uses: actions/cache@v2
-          with:
-            key: ${{ github.ref }}
-            path: .cache
-
         - name: build
           run: pip3 install -r requirements.txt
 
-        - name: mkdocs build
+
+        - name: mkdocs-build-action
           run: | 
             mkdocs build
 
