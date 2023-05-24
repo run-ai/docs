@@ -22,27 +22,22 @@ jobs:
           with:
             ref: ${{ inputs.version }}
             fetch-depth: 0
+
         - name: python setup
           uses: actions/setup-python@v4
           with:
             python-version: 3.x
-        - uses: actions/cache@v2
-          with:
-            key: ${{ github.ref }}
-            path: .cache
+
         - name: build
           run: pip3 install -r requirements.txt
+
 
         - name: mkdocs-build-action
           run: | 
             mkdocs build
 
-      #  - name: Build
-        #  uses: jnanadarshan/mkdocs-build-action@v1
-        #  uses: gameclosure/mkdocs-publish-s3-action@master
-        #  uses: jnanadarshan/mkdocs-build-action@v0.24
         - name: Configure AWS credentials
-          uses: aws-actions/configure-aws-credentials@v1
+          uses: aws-actions/configure-aws-credentials@v2
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
