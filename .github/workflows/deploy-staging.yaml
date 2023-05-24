@@ -12,10 +12,6 @@ on:
         description: 'bucket name you want to upload the content'
         default: runai-docs-staging
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   install_dependencies_and_deploy:
     name: install dependencies and deploy latest changes to staging
