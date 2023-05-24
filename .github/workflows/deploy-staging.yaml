@@ -34,7 +34,8 @@ jobs:
           run: pip3 install -r requirements.txt
 
         - name: Build
-          uses: jnanadarshan/mkdocs-build-action@v0.24
+          run: | 
+            mkdocs build
 
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
