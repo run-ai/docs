@@ -1,0 +1,48 @@
+name: publish docs CI to staging 
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: false
+        description: 'Version number from branch / "main" for latest'
+        default: master
+      bucket_name:
+        required: false
+        description: 'bucket name you want to upload the content'
+        default: runai-docs-staging
+
+jobs:
+  install_dependencies_and_deploy:
+    name: install dependencies and deploy latest changes to staging
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout latest
+          uses: actions/checkout@v3
+          with:
+            ref: ${{ inputs.version }}
+            fetch-depth: 0
+        - name: python setup
+          uses: actions/setup-python@v4
+          with:
+            python-version: 3.x
+        - uses: actions/cache@v2
+          with:
+            key: ${{ github.ref }}
+            path: .cache
+        - name: build
+          run: pip3 install -r requirements.txt
+
+        - name: Build
+          uses: jnanadarshan/mkdocs-build-action@v1
+
+        - name: Configure AWS credentials
+          uses: aws-actions/configure-aws-credentials@v1
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: us-east-1
+
+        - name: Sync output to S3
+          run: |
+            aws s3 sync ./site/ s3://${{ inputs.bucket_name }} --delete
