@@ -58,7 +58,7 @@ For `Saml 2`:
    3. In the `GROUPS` field, enter the groups.
    4. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    5. In the `UID` field, enter the UID.
-   6. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   6. In the `Logout URL` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    7.  Press `Save`.
 
 For `Open ID Connect`:
@@ -72,7 +72,7 @@ For `Open ID Connect`:
    5. In the `GROUPS` field, enter the groups.
    6. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    7. In the `UID` field, enter the UID.
-   8. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   8. In the `Logout URL` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    9.  Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
@@ -295,7 +295,7 @@ The latter option is easier to maintain.
 
 ## Logout URL
 
-It is possible to configure the redirect URL when the session ends. If left empty, you will be redirected to the Run:ai portal. To perform this configuration please contact Run:ai customer support.
+It is possible to configure the redirect URL when the session ends. This can be done in the "Logout URL" field under the SSO configuraiton. If left empty, you will be redirected to the Run:ai portal.
 
 ## Implementation Notes
 
