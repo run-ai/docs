@@ -1,6 +1,6 @@
 # Inference Workload Parameters
 
-Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     InferenceWorkload
@@ -270,4 +270,5 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
+
 ```

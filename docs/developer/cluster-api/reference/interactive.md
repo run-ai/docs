@@ -1,6 +1,6 @@
 # Interactive Workload Parameters
 
-Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     InteractiveWorkload
@@ -175,6 +175,10 @@ FIELDS:
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
    notebookToken	<Object>
+     A token for connecting to a Jupyter Notebook created for workloads of type
+     Jupyter. When token authentication is enabled, the notebook uses this token
+     to authenticate requests. For more information see:
+     https://jupyter-notebook.readthedocs.io/en/stable/security.html
 
    podAffinity	<Object>
      Indicates whether pod affinity scheduling rules applies.
@@ -280,4 +284,6 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
+
+
 ```

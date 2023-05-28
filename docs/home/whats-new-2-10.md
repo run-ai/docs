@@ -1,5 +1,12 @@
 # Run:ai version 2.10
 
+## Version 2.10.10
+
+| Internal ID Description   |
+| ------- | --------------------------------------------------------------------------------------------------- |
+| RUN-9894 | Fixed an issue where you cannot delete project in cluster if its not attached to a namespace. |
+| RUN-9039 | Fixed and issue where in the job screen, after selecting a project, the preemptible flag is toggled from on to off and submit a job, the screen still shows the job as interactive-preemptible. |
+
 ## Version 2.10.9
 
 ## Release date

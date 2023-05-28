@@ -25,26 +25,20 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 **Cluster API**
 
-Added the following new capabilities for Researchers in the Cluster API:
-
-1. Check the status of the job using the API Researcher API.
-2. Get container logs using the API - to investigate in case something failed.
-3. Submit a job using the backend.
-4. Stop, Suspend and Resume jobs.
+<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
 
 **Comet Integration**
 
 Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
 ## Known issues
 
-|Internal ID|Description|Workaround|
-|-----------|--------------|--------------|
+None
 
 ## Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6827 | Fixed an issue where the elipsis remains in the Dashboard when using Firefox after a long idle time. |
+| RUN-6827 | Fixed an issue where the ellipsis remains in the Dashboard when using Firefox after a long idle time. |
 | RUN-8621 | Fixed the error response to 204 when changing to a custom logo. |
 | RUN-8662 | Fixed grayed out submit button when using a template with pvc. |
 | RUN-8890 | Fixed a scheduler panic when both a project and a department use the same name. |
