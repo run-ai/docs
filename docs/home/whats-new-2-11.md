@@ -25,12 +25,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 **Cluster API**
 
-Added the following new capabilities for Researchers in the Cluster API:
-
-1. Check the status of the job using the API Researcher API.
-2. Get container logs using the API - to investigate in case something failed.
-3. Submit a job using the backend.
-4. Stop, Suspend and Resume jobs.
+<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
 
 **Comet Integration**
 
