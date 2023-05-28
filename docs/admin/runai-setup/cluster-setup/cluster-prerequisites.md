@@ -350,9 +350,9 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 *   (Production only) __Run:ai System Nodes__: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
     
-    *   4 CPUs
-    *   8GB of RAM
-    *   50GB of Disk space  
+    *   8 CPUs
+    *   16GB of RAM
+    *   50GB of Disk space   
     
 *   __Shared data volume:__ Run:ai uses Kubernetes to abstract away the machine on which a container is running:
 

@@ -1,5 +1,19 @@
 # Run:ai version 2.10
 
+## Version 2.10.9
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
+| RUN-9462 | Fixed scenarios where `supplementary groups` were not passed from the identity provider to the container. |
+| RUN-9278 | Fixed issue in openshift environments where projects deleted from the UI are still listed in the CLI. |
+
 ## Version 2.10.8
 
 ## Release date
@@ -21,6 +35,9 @@ May 2023
 
 May 2023
 
+# Release content
+
+The `runai top job` command was deprecated.
 ## Fixed issues
 
 |Internal ID|Description|
