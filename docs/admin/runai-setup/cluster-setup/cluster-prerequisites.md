@@ -265,7 +265,7 @@ Following are instructions on how to get the IP and set firewall settings.
     To install all 3 prerequisites run the following:
 
     ```
-    kubectl "apply -k github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+    kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
     ```
 
 === "Version 2.9 or earlier"
