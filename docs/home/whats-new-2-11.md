@@ -38,7 +38,7 @@ None
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6827 | Fixed an issue where the elipsis remains in the Dashboard when using Firefox after a long idle time. |
+| RUN-6827 | Fixed an issue where the ellipsis remains in the Dashboard when using Firefox after a long idle time. |
 | RUN-8621 | Fixed the error response to 204 when changing to a custom logo. |
 | RUN-8662 | Fixed grayed out submit button when using a template with pvc. |
 | RUN-8890 | Fixed a scheduler panic when both a project and a department use the same name. |
