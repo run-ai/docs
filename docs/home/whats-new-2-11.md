@@ -7,13 +7,15 @@ May 2023
 
 ### Compatibility
 
-Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
+* Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
 
-Added support for OpenShift 4.12 and Kubernetes 1.27.
+* Added support for OpenShift 4.12 and Kubernetes 1.27.
 
-Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md)
+* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md)
 
-The `runai top job` command was deprecated.
+* The `runai top job` command was deprecated.
+
+**Single sign on**
 
 When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see [Create a new user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user).
 
