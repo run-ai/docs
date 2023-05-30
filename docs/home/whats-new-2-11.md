@@ -28,7 +28,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 <!-- RUN-9352 / RUN-8824 --> **Training Experience**
 
-Added a new feature that allows the reasercher to provision a training job in a project.
+Added a new feature that allows the reasercher to provision a training job in a project using a wizard like flow.
 
 <!-- RUN-8789 -->
 **DeepSpeed Integration**
