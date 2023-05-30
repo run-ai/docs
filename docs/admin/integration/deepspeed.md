@@ -1,54 +1,31 @@
 # Working with DeepSpeed on top of RunAI
 
-RunAI is a platform for running workloads on Kubernetes clusters. RunAI
-is installed on a Kubernetes cluster as add-on and does not replace any
-existing component of Kubernetes. Running workloads in RunAI is done
-through multiple ways:
+DeepSpeed is a deep learning optimization library for PyTorch designed to reduce computing power and memory use, and to train large distributed models with better parallelism on existing computer hardware. DeepSpeed is optimized for low latency, high throughput training and it includes the Zero Redundancy Optimizer (ZeRO) for training models with 1 trillion or more parameters. Features include mixed precision training, single-GPU, multi-GPU, and multi-node training as well as custom model parallelism.
 
-* Web UI Interface - RunAI has a dedicated UI for submitting workloads
-
-* CLI - A tool for submitting workload into the cluster
-
-* Kubernetes API - Creating workloads through Kubernetes YAMLs
-
-When dedicated operator exists in the cluster, the RunAI platform can
-integrate with them. For example, if the MPI Operator is installed in
-the cluster, RunAI can create MPIJob. In such case, RunAI automatically
-inject the parameters for running as RunAI workload (Project + Scheduler
-fields in the YAML).
-
-DeepSpeed is a tool for helping optimize Deep Learning workloads.
-
-In the following article we are going to demonstrate how to run
-distributed workload on Kubernetes using MPIJob that runs using
+This article will show you how to run
+ a distributed workload on Kubernetes using an MPIJob with
 DeepSpeed.
 
 ## Prerequisites
 
-In order to run DeepSpeed workload on RunAI cluster one needs the
-following:
+The following prerequisites are needed to run DeepSpeed on a RunAI cluster:
 
-* Kubernetes Cluster version `1.21` or above
+* Kubernetes Cluster version `1.21` or later
 
-* RunAI Cluster version `2.9` or above
+* RunAI Cluster version `2.9` or later
 
-* Kubeflow MPIOperator version `v0.4.0` or above
+* Kubeflow MPIOperator version `v0.4.0` or later
 
-Running with other version might work, however not tested in RunAI
+!!! Note
+    Earlier versions may work but have not tested.
 
 ## AI Workload - Cifar10
 
-In this article we are going to train a `Cifar 10`, which is a dataset of
-thousands of images, with image recognition model.
+This article will use `Cifar 10`, which is a dataset that contains thousands of images and an image recognition model. For more information about the `Cifar 10` model go to: [CIFAR-10 and
+CIFAR-100 datasets(toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)
 
-For more information about the `Cifar 10` model go to: [CIFAR-10 and
-CIFAR-100 datasets
-(toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)
-
-Microsoft has released an examples of DeepSpeed training models which
-can be found in the following repository: [microsoft/DeepSpeedExamples:
-Example models using DeepSpeed
-(github.com)](https://github.com/microsoft/DeepSpeedExamples)
+Microsoft has released an examples of DeepSpeed training models in the following repository: [microsoft/DeepSpeedExamples:
+Example models using DeepSpeed(github.com)](https://github.com/microsoft/DeepSpeedExamples)
 
 We will use the `Cifar 10` model which can be found in `training/cifar`
 directory. In this directory we can find the following relevant files:
@@ -70,7 +47,7 @@ OpenMPI. In order to do that we need to make sure that the image have
 SSH server for the workers, SSH Client for the launcher, and the model
 files themself for the remote commands.
 
-```cli
+```console
 
 FROM deepspeed/deepspeed
 
@@ -105,7 +82,7 @@ As we can see:
 1. We inherit from deepspeed/deepspeed as base image, for having the
     DeepSpeed tools available
 
-2. We clone the https://github.com/microsoft/DeepSpeedExamples.git in
+2. We clone the [DeepSpeed examples repository](https://github.com/microsoft/DeepSpeedExamples.git) in
     order to have the model files in the image
 
 3. We install the dependencies
