@@ -30,7 +30,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 Added a new feature that allows the reasercher to provision a training job in a project.
 
 <!-- RUN-8789 -->
-**DeepSeed Integration**
+**DeepSpeed Integration**
 
 Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
