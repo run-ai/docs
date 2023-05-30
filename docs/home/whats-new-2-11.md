@@ -1,4 +1,5 @@
 # Run:ai version 2.11
+
 ## Release date
 
 May 2023
@@ -41,6 +42,7 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 **Comet Integration**
 
 Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
+
 ## Known issues
 
 None
