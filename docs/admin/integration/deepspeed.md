@@ -1,4 +1,4 @@
-# Working with DeepSpeed on top of RunAI
+# Working with DeepSpeed on top of Run:ai
 
 DeepSpeed is a deep learning optimization library for PyTorch designed to reduce computing power and memory use, and to train large distributed models with better parallelism on existing computer hardware. DeepSpeed is optimized for low latency, high throughput training. It also includes the Zero Redundancy Optimizer (ZeRO) for training models with 1 trillion or more parameters. Other features include mixed precision training, single-GPU, multi-GPU, multi-node training, and custom model parallelism.
 
@@ -7,11 +7,11 @@ DeepSpeed.
 
 ## Prerequisites
 
-The following prerequisites are needed to run DeepSpeed on a RunAI cluster:
+Prerequisites to run DeepSpeed on a Run:ai cluster:
 
 * Kubernetes Cluster version `1.21` or later
 
-* RunAI Cluster version `2.9` or later
+* Run:ai Cluster version `2.9` or later
 
 * Kubeflow MPIOperator version `v0.4.0` or later
 
@@ -20,7 +20,7 @@ The following prerequisites are needed to run DeepSpeed on a RunAI cluster:
 
 ## AI Workload - Cifar10
 
-This article will use `Cifar 10`, which is a dataset that contains thousands of images and an image recognition model. For more information about the `Cifar 10` model go to: [CIFAR-10 and
+This article uses the  `Cifar 10` dataset to demonstrate how to work with DeepSpeed on Run:ai. This dataset contains thousands of images and an image recognition model. For more information about the `Cifar 10` model go to: [CIFAR-10 and
 CIFAR-100 datasets(toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 Microsoft has released an examples of DeepSpeed training models in the following repository: [microsoft/DeepSpeedExamples:
