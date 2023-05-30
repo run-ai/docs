@@ -2,8 +2,7 @@
 
 DeepSpeed is a deep learning optimization library for PyTorch designed to reduce computing power and memory use, and to train large distributed models with better parallelism on existing computer hardware. DeepSpeed is optimized for low latency, high throughput training. It also includes the Zero Redundancy Optimizer (ZeRO) for training models with 1 trillion or more parameters. Other features include mixed precision training, single-GPU, multi-GPU, multi-node training, and custom model parallelism.
 
-This article will show you how to run
- a distributed workload on Kubernetes using an MPIJob with
+This article describes how to run a distributed workload on Kubernetes using an MPIJob with
 DeepSpeed.
 
 ## Prerequisites
@@ -80,11 +79,11 @@ docker build . -t gcr.io/run-ai-lab/omer/deepspeed
 
 ## Interactive Workflow
 
-Use the UI, CLI, or the API to run the workload.
+Use the *UI*, *CLI*, or the *API* to run the workload.
 
-Using the CLI:
+Using the *CLI*:
 
-```cli
+```
 runai submit-mpi \--processes 2 -i
 gcr.io/run-ai-lab/omer/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
@@ -94,7 +93,7 @@ This command runs an MPI job with 2 processes (workers), each with 1 GPU.
 The entry point for the launcher is `sleep infinity` and provides
 access to the container.
 
-Run the DeepSpeed command as follows:
+In the *CLI*, run the DeepSpeed command as follows:
 
 ```
 deepspeed --hostfile /etc/mpi/hostfile cifar10_deepspeed.py --deepspeed --deepspeed_config ds_config.json
