@@ -1,6 +1,6 @@
 # Working with DeepSpeed on top of RunAI
 
-DeepSpeed is a deep learning optimization library for PyTorch designed to reduce computing power and memory use, and to train large distributed models with better parallelism on existing computer hardware. DeepSpeed is optimized for low latency, high throughput training and it includes the Zero Redundancy Optimizer (ZeRO) for training models with 1 trillion or more parameters. Features include mixed precision training, single-GPU, multi-GPU, and multi-node training as well as custom model parallelism.
+DeepSpeed is a deep learning optimization library for PyTorch designed to reduce computing power and memory use, and to train large distributed models with better parallelism on existing computer hardware. DeepSpeed is optimized for low latency, high throughput training. It also includes the Zero Redundancy Optimizer (ZeRO) for training models with 1 trillion or more parameters. Other features include mixed precision training, single-GPU, multi-GPU, multi-node training, and custom model parallelism.
 
 This article will show you how to run
  a distributed workload on Kubernetes using an MPIJob with
@@ -30,18 +30,17 @@ Example models using DeepSpeed(github.com)](https://github.com/microsoft/DeepSpe
 We will use the `Cifar 10` model which can be found in `training/cifar`
 directory. In this directory we can find the following relevant files:
 
-* `cifar10_tutorial.py`&mdash;For running the train without DeepSpeed
+* `cifar10_tutorial.py`&mdash;run the training without DeepSpeed.
 
-* `cifar10_deepspeed.py`&mdash;For running the train with DeepSpeed
+* `cifar10_deepspeed.py`&mdash;run the training with DeepSpeed.
 
-* `run_ds.sh`&mdash;Entrypoint for running the train
+* `run_ds.sh`&mdash;Entrypoint for running the training.
 
-* `ds_config.json`&mdash;DeepSpeed configuration file
+* `ds_config.json`&mdash;DeepSpeed configuration file.
 
 ## Docker Image
 
-A Docker image needs to be prepared so that the workload can be submitted. It will run a an MPIJob and needs to support distributed workloads using OpenMPI.
-The image needs to have SSH serveer for the workers, SSH client for the launcher, and the model files for the remote commands.
+A Docker image needs to be prepared so that the workload can be submitted. It will run a an MPIJob that supports distributed workloads using OpenMPI. The image also needs to have an SSH server for the workers, an SSH client for the launcher, and the model files for the remote commands.
 
 To create the Docker image:
 
@@ -73,7 +72,7 @@ RUN sudo mkdir /tmp
 RUN sudo chmod 777 /tmp
 ```
 
-After completing the configuration, the following command will build the image:
+After completing the configuration, use the following command to build the image:
 
 ```cli
 docker build . -t gcr.io/run-ai-lab/omer/deepspeed
@@ -81,8 +80,9 @@ docker build . -t gcr.io/run-ai-lab/omer/deepspeed
 
 ## Interactive Workflow
 
-Running this workload can be done through the UI / CLI / API. In this
-example we will run the image with the CLI:
+Use the UI, CLI, or the API to run the workload.
+
+Using the CLI:
 
 ```cli
 runai submit-mpi \--processes 2 -i
@@ -90,16 +90,16 @@ gcr.io/run-ai-lab/omer/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
 ```
 
-This command run an MPI job with 2 processes (workers), each with 1 GPU.
-The entry point for the launcher is `sleep infinity` providing
+This command runs an MPI job with 2 processes (workers), each with 1 GPU.
+The entry point for the launcher is `sleep infinity` and provides
 access to the container.
 
 Run the DeepSpeed command as follows:
 
-```dotnetcli
+```
 deepspeed --hostfile /etc/mpi/hostfile cifar10_deepspeed.py --deepspeed --deepspeed_config ds_config.json
 ```
 
 !!!Note
     Typically DeepSpeed looks for the `hostfile` in `/job/hostfile`. However, MPIOperator is
-injecting this file to `/etc/mpi/hostfile`.
+puts the file in `/etc/mpi/hostfile`.
