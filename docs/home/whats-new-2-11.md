@@ -12,7 +12,7 @@ May 2023
 
 * Added support for OpenShift 4.12 and Kubernetes 1.27.
 
-* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md)
+* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md).
 
 * The `runai top job` command was deprecated.
 
@@ -33,7 +33,7 @@ Added a new feature that allows the reasercher to provision a training job in a 
 <!-- RUN-8789 -->
 **DeepSpeed Integration**
 
-Added integration and certification with DeepSpeed for multi pod using open-mpi. See [DeepSpeed Integration](../admin/integration/deepspeed.md)
+Added integration and certification with DeepSpeed for multi pod using open-mpi. See [DeepSpeed Integration](../admin/integration/deepspeed.md).
 
 **Cluster API**
 
@@ -41,7 +41,7 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
 **Comet Integration**
 
-Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
+Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md).
 
 ## Known issues
 
