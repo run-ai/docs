@@ -16,12 +16,11 @@ Prerequisites to run DeepSpeed on a Run:ai cluster:
 * Kubeflow MPIOperator version `v0.4.0` or later
 
 !!! Note
-    Earlier versions may work but have not tested.
+    Earlier versions may work but weren't tested.
 
 ## AI Workload - Cifar10
 
-This article uses the  `Cifar 10` dataset to demonstrate how to work with DeepSpeed on Run:ai. This dataset contains thousands of images and an image recognition model. For more information about the `Cifar 10` model go to: [CIFAR-10 and
-CIFAR-100 datasets(toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)
+This article uses the  `Cifar 10` dataset to show how to work with DeepSpeed on Run:ai. This dataset contains thousands of images and an image recognition model. For more information about the `Cifar 10` model go to: [CIFAR-10 and CIFAR-100 datasets(toronto.edu)](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 Microsoft has released an examples of DeepSpeed training models in the following repository: [microsoft/DeepSpeedExamples:
 Example models using DeepSpeed(github.com)](https://github.com/microsoft/DeepSpeedExamples)
