@@ -95,7 +95,7 @@ The entry point for the launcher is `sleep infinity` providing
 access to the container.
 
 Run the DeepSpeed command as follows:
-
+deepspeed --hostfile /etc/mpi/hostfile cifar10_deepspeed.py --deepspeed --deepspeed_config ds_config.json
 !!!Note
     Typically DeepSpeed looks for the `hostfile` in `/job/hostfile`. However, MPIOperator is
 injecting this file to `/etc/mpi/hostfile`.
