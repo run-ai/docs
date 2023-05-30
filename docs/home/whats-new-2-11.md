@@ -25,6 +25,15 @@ When SSO is enabled, you can still create and authenticate with Local users. For
 
 Added support fort Openshift Dev Spaces custom resource definitions using the RunAI scheduler.
 
+<!-- RUN-9352 / RUN-8824 --> **Training Experience**
+
+Added a new feature that allows the reasercher to provision a training job in a project.
+
+<!-- RUN-8789 -->
+**DeepSeed Integration**
+
+Added integration and certification with DeepSpeed for multi pod using open-mpi.
+
 **Cluster API**
 
 <!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
