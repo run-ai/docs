@@ -32,7 +32,7 @@ Added a new feature that allows the reasercher to provision a training job in a 
 <!-- RUN-8789 -->
 **DeepSpeed Integration**
 
-Added integration and certification with DeepSpeed for multi pod using open-mpi.
+Added integration and certification with DeepSpeed for multi pod using open-mpi. See [DeepSpeed Integration](../admin/integration/deepspeed.md)
 
 **Cluster API**
 
