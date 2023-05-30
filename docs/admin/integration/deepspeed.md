@@ -40,26 +40,24 @@ directory. In this directory we can find the following relevant files:
 
 ## Docker Image
 
-In order to prepare our workload we need to create a docker image that
-will be used as the image for the submittion command. We are running the
-workload as MPIJob so the image should support distribute workload using
-OpenMPI. In order to do that we need to make sure that the image have
-SSH server for the workers, SSH Client for the launcher, and the model
-files themself for the remote commands.
+A Docker image needs to be prepared so that the workload can be submitted. It will run a an MPIJob and needs to support distributed workloads using OpenMPI.
+The image needs to have SSH serveer for the workers, SSH client for the launcher, and the model files for the remote commands.
+
+To create the Docker image:
 
 ```console
 
 FROM deepspeed/deepspeed
 
-WORKDIR /home/deepspeed
+WORKDIR /home/deepspeed        #inherit from deepspeed/deepspeed as base image, for having the DeepSpeed tools available
 
-RUN git clone https://github.com/microsoft/DeepSpeedExamples.git
+RUN git clone https://github.com/microsoft/DeepSpeedExamples.git #imports the model files to the image
 
 WORKDIR /home/deepspeed/DeepSpeedExamples/training/cifar
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt #install dependencies
 
-RUN ssh-keygen -t rsa -N \"\" -f /home/deepspeed/.ssh/id_rsa
+RUN ssh-keygen -t rsa -N \"\" -f /home/deepspeed/.ssh/id_rsa #generate SSH keys
 
 RUN cp /home/deepspeed/.ssh/id_rsa.pub
 /home/deepspeed/.ssh/authorized_keys
@@ -75,22 +73,7 @@ RUN sudo mkdir /tmp
 RUN sudo chmod 777 /tmp
 ```
 
-This is the `Dockerfile` we will use.
-
-As we can see:
-
-1. We inherit from deepspeed/deepspeed as base image, for having the
-    DeepSpeed tools available
-
-2. We clone the [DeepSpeed examples repository](https://github.com/microsoft/DeepSpeedExamples.git) in
-    order to have the model files in the image
-
-3. We install the dependencies
-
-4. We generate SSH Keys and set the appropriate permissions to the SSH
-    keys
-
-Building this image can be done with the following command:
+After completing the configuration, the following command will build the image:
 
 ```cli
 docker build . -t gcr.io/run-ai-lab/omer/deepspeed
@@ -107,11 +90,12 @@ gcr.io/run-ai-lab/omer/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
 ```
 
-This command run an MPI job with 2 processes (workers), each with 1 GPU,
-and the entry point for the launcher is `sleep infinity` so we could
-interactively get into the container and run the DeepSpeed command, as
-can be shown in the following example.
+This command run an MPI job with 2 processes (workers), each with 1 GPU.
+The entry point for the launcher is `sleep infinity` providing
+access to the container.
 
-One thing to notice regarding this demo is that usually DeepSpeed is
-searching for the `hostfile` in `/job/hostfile` however MPIOperator is
+Run the DeepSpeed command as follows:
+
+!!!Note
+    Typically DeepSpeed looks for the `hostfile` in `/job/hostfile`. However, MPIOperator is
 injecting this file to `/etc/mpi/hostfile`.
