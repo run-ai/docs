@@ -1,4 +1,5 @@
 # Run:ai version 2.11
+
 ## Release date
 
 May 2023
@@ -25,6 +26,15 @@ When SSO is enabled, you can still create and authenticate with Local users. For
 
 Added support fort Openshift Dev Spaces custom resource definitions using the RunAI scheduler.
 
+<!-- RUN-9352 / RUN-8824 --> **Training Experience**
+
+Added a new feature that allows the reasercher to provision a training job in a project using a wizard like flow.
+
+<!-- RUN-8789 -->
+**DeepSpeed Integration**
+
+Added integration and certification with DeepSpeed for multi pod using open-mpi. See [DeepSpeed Integration](../admin/integration/deepspeed.md)
+
 **Cluster API**
 
 <!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
@@ -32,6 +42,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 **Comet Integration**
 
 Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md)
+
 ## Known issues
 
 None
