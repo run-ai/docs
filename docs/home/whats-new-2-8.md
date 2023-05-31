@@ -1,7 +1,166 @@
 # Run:ai Version 2.8
 
+## Version 2.8.21
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.20
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.19
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.18
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.17
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.16
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.15
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.14
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
+## Version 2.8.13
+
+## Release date
+
+<!-- RUN-6732 -->
+Added support for kubeflow PyTorch jobs.
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-7240 | Fixed inability to submit fractional jobs on a non-default nodepools. |
+| RUN-7222 | Fixed an issue where a single alpha flag feature cannot be enabled when `SHOW_ALPHA_FLAGS=false`.
+| RUN-7205 | Fixed an issue where `Config maps` are continuously stored for deployments. |
+| RUN-6832 | Fixed prometheus deployment does not discover `servicemonitors` within projects. |
+| RUN-6800 | Fixed jobs graph showing no data metrics. |
+| RUN-6766 | Fixed s3 mount sharing between containers. |
+| RUN-6538 | [2.8] Scheduler OOMKilled |
+| RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
+| RUN-5527 | Fixed an issue where GPUs which are no longer available are never removed causing MIG metrics to show no data. |
+| RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
+| RUN-5488 | Fixed an issue where Keycloak `initContainer` runs as root. |
+
+## Version 2.8.12
+
+## Release date
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-6216 | Fixed dashboard reporting wrong number of allocated GPUs due to an error in metrics not counting jobs correctly.
+## Version 2.8.11
+
+## Release date
+
+<!--RUN-6392 --> 
+Added `--jupyter` flag to the `submit` command. This supersedes the existing implementation where jupyter args are generated with `startNotebook` command.
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-6718 | Fixed issue where graphs are showing the wrong date. |
+| RUN-6667 | Fixed Run:ai scheduler crashing in `getPodGroupProjectAndDepartment`. |
+| RUN-6604 | Fixed issue where jobs with the profiles 3g.20gb or 7g.40gb are not running. `check_availability` is called and the result is  true, but there is no request for creating the device. |
+| RUN-6536 | Fixed nil pointer exception when checking the policy for escalation rule causing the `cli` to crash. |
+| RUN-6519 | Pods with PVC cannot be scheduled |
+| RUN-6460 | Fixed an issue moutning an S3 bucket not permitting read/write in AWS using a Jupyter notebook.|
+| RUN-6400 | EKS - Every command response in runai CLI starts with an error. No functionality harm|
+| RUN-6399 | Fixed `requested GPU` is always 0 for MPI jobs in the *CLI* and *UI* leading to other wrong metrics. |
+| RUN-6359 | Job gets UnexpectedAdmissionError race condition with Kubelet |
+| RUN-6356 | MIG Allocation fails |
+| RUN-6309 | MIG Manager does not connected to cluster role |
+| RUN-5492 | Fixed issue where `runai-container-toolkit` runs as root. |
+| RUN-5444 | Fixed MIG doesn't work on A100 - 80GB. |
+| RUN-5226 | Fixed Multi-instance GPU (MIG) job being deleted after submitting a different MIG job. |
+
+## Version 2.8.9
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+|RUN-6519 | Pods with PVC can't be scheduled.
+
+## Version 2.8.8
+
+## Release date
+
+
+## Fixed Issues
+
+|Internal ID|Description|
+|-----------|--------------|
+
 ## Release Date
- November 2022 
+ November 2022
 
 ## Release Content
 <!-- 
