@@ -57,7 +57,7 @@ For an additional example, see the [following](https://github.com/run-ai/docs/bl
 The Administrator API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
 
 
-Detailed API documentation can be found under [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. The document uses the [Open API specification](https://swagger.io/specification/) to describe the API. You can test the API within the document after creating a token.
+Detailed API documentation can be found at [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. This represents the latest control-plane documentation. If you are running a self-hosted version, see `https://<runai-company-url>/api/docs`.
 
 
 [Administrator API Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }
