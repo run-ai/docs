@@ -223,9 +223,11 @@ Following are instructions on how to get the IP and set firewall settings.
 
 === "Version 2.9 or later" 
     If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
+
     
     !!! Note
-        Due to a Prometheus bug described [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank} you may need to apply Prometheus CRDs before installing Prometheus.
+        * Due to a Prometheus bug described [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank} you may need to apply Prometheus CRDs before installing Prometheus.
+        * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. 
 
     Then install the Prometheus stack by running:
     
