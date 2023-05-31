@@ -225,8 +225,8 @@ Following are instructions on how to get the IP and set firewall settings.
     If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
     
     !!! Note
-        * Due to a Prometheus bug described [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank} you may need to apply Prometheus CRDs before installing Prometheus.
-        * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. 
+        * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
+        * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
 
     Then install the Prometheus stack by running:
     
