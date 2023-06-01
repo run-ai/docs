@@ -9,7 +9,8 @@
 
 |Internal ID|Description|
 |-----------|--------------|
-
+| RUN-9832 | [Fixed an issue where the node pool controller removes unschedulable jobs from nodes. |
+| RUN-5645 | update v2.8 operator linter compare version |
 ## Version 2.8.20
 
 ## Release date
@@ -19,7 +20,7 @@
 
 |Internal ID|Description|
 |-----------|--------------|
-
+| RUN-9485 | Fixed an issue where jobs that have failed appear as if they are running. |
 ## Version 2.8.19
 
 ## Release date
@@ -29,6 +30,7 @@
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-9354 | Admission controller ignores pod memory limit configuration |
 
 ## Version 2.8.18
 
@@ -39,16 +41,19 @@
 
 |Internal ID|Description|
 |-----------|--------------|
-
+| RUN-9113 | Scheduled pods get OutOfCPU |
 ## Version 2.8.17
 
 ## Release date
 
-
+<!-- RUN-6345 -->
+Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables in the UI.
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-8709 | Fixed an issue to make S3 storage work in an airgapped environment. |
+| RUN-8276 | Fixed a 503 error when creating a workload due to short timeout. |
 
 ## Version 2.8.16
 
@@ -59,26 +64,33 @@
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-8246 | Fixed an issue with large Jupyter notebook uploads. |
+| RUN-8366 | Fixed an issue where the scheduler is slow when many podgroups are configured. |
 
 ## Version 2.8.15
 
 ## Release date
 
-
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-8246 | Large upload for Jupyter - fix for 2.8 |
+| RUN-7686 | OCP env - Cluster-sync pod had an error while trying add nodepool |
+
 
 ## Version 2.8.14
 
 ## Release date
 
-
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
+| RUN-7776 | Fixed user limit of 100 users. |
+| RUN-7726 | researcher service request throttling when cluster has a lot of crds |
+| RUN-7106 | Fixed UI showing workloads in the cluster even if they are stopped. This marks the podgroup as `not in cluster` and it doesn't appear in *UI*.  |
+| RUN-6995 | Fixed an issue where Group Mapping from an SSO Group to the Researcher Manager Role was not working. |
 
 ## Version 2.8.13
 
@@ -159,6 +171,8 @@ Added `--jupyter` flag to the `submit` command. This supersedes the existing imp
 |Internal ID|Description|
 |-----------|--------------|
 
+## Version 2.8.0
+
 ## Release Date
  November 2022
 
@@ -168,7 +182,7 @@ Added `--jupyter` flag to the `submit` command. This supersedes the existing imp
 
 ### Node Pools
 
-Node Pools is a new method for managing GPU and CPU resources by __grouping the resources__ into distinct pools. With node pools:
+Node Pools is a new method for managing GPU and CPU resources by **grouping the resources** into distinct pools. With node pools:
 
 * The administrator allocates Project and Department resources from these pools to be used by Workloads. 
 * The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to customer's specific mode of operation. 
@@ -176,10 +190,10 @@ Node Pools is a new method for managing GPU and CPU resources by __grouping the 
 
 ### User Interface Enhancements
 
-* The _Departments_ screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
-* The _Jobs_ screen has been split into 2 tabs for ease of use:
-    * _Current_:  (the default tab) consists of all the jobs that currently exist in the cluster. 
-    * _History_:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
+* The *Departments* screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
+* The *Jobs* screen has been split into 2 tabs for ease of use:
+    * *Current*:  (the default tab) consists of all the jobs that currently exist in the cluster. 
+    * *History*:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
 
 ### Installation improvements 
 
