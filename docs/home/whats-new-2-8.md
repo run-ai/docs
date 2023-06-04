@@ -143,7 +143,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-6718 | Fixed issue where graphs are showing the wrong date. |
-| RUN-6667 | Fixed Run:ai scheduler crashing in `getPodGroupProjectAndDepartment`. |
+| RUN-6667 | Fixed Run:ai scheduler from crashing in reclaim action. |
 | RUN-6604 | Fixed issue where jobs with the profiles 3g.20gb or 7g.40gb are not running. `check_availability` is called and the result is  true, but there is no request for creating the device. |
 | RUN-6536 | Fixed `cli` crash related to policy for `allow-privilige-escalation`. |
 | RUN-6519 | Pods with PVC cannot be scheduled |
