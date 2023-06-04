@@ -31,7 +31,9 @@ May 2022
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-9354 | Admission controller ignores pod memory limit configuration |
+| RUN-9354 | Fixed issue where the `RUNAI_GPU_MEMORY_LIMIT` environment variable is set and not applied. |
+
+So this hotfix allows a user to set the actual runtime GPU memory limit of a container and override the default behaviour (which set the limit to be equal to the fraction). This is done be setting an environment variable called "RUNAI_GPU_MEMORY_LIMIT" on the container in the deployment yaml.
 
 ## Version 2.8.18
 
