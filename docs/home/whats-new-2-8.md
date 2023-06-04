@@ -50,7 +50,7 @@ May 2022
 May 2022
 
 <!-- RUN-6345 -->
-Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables in the UI.
+Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables in the *UI*. This feature is only available when using Control Plane 2.9 or later.
 ## Fixed Issues
 
 |Internal ID|Description|
@@ -78,7 +78,7 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-7686 | OCP env - Cluster-sync pod had an error while trying add nodepool |
+| RUN-7686 | Fixed issues with syncing node pools from the cluster in OpenShift environments. |
 
 
 ## Version 2.8.14
@@ -89,9 +89,9 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-7776 | Fixed user limit of 100 users. |
+| RUN-7776 | Fixed a UI issue not displaying more than 100 users. |
 | RUN-7726 | researcher service request throttling when cluster has a lot of crds |
-| RUN-7106 | Fixed UI showing workloads in the cluster even if they are stopped. This marks the podgroup as `not in cluster` and it doesn't appear in *UI*.  |
+| RUN-7106 | Fixed the *UI* not showing workloads in the cluster when stopped due to marking podgroup as `not in cluster`. |
 | RUN-6995 | Fixed an issue where Group Mapping from an SSO Group to the Researcher Manager Role was not working. |
 
 ## Version 2.8.13
