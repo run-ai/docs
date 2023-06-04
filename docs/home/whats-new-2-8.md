@@ -5,11 +5,13 @@
 ## Release date
 
 May 2022
+
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9832 | Fixed an issue where the node pool controller removes unschedulable jobs from nodes. |
+
 ## Version 2.8.20
 
 ## Release date
@@ -21,6 +23,7 @@ May 2022
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9485 | Fixed an issue where jobs that have failed appear as if they are running. |
+
 ## Version 2.8.19
 
 ## Release date
@@ -44,13 +47,16 @@ May 2022
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9113 | Fixed an issue in the Scheduler where pods were schedules to nodes without enough CPU resources. |
+
 ## Version 2.8.17
 
 ## Release date
+
 May 2022
 
 <!-- RUN-6345 -->
 Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables in the *UI*. This feature is only available when using Control Plane 2.9 or later.
+
 ## Fixed Issues
 
 |Internal ID|Description|
@@ -124,12 +130,13 @@ Added support for Kubeflow PyTorch jobs.
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-6216 | Fixed multi cluster overview so that the allocated GPU in the table of each cluster is correct.
+
 ## Version 2.8.11
 
 ## Release date
 
 <!--RUN-6392 --> 
-Changed the option to generate Jupyter arguments from only using `startNotebook` to any command.
+Changed the option to generate Jupyter arguments from using `startNotebook` to any command.
 
 ## Fixed Issues
 
@@ -174,6 +181,7 @@ Changed the option to generate Jupyter arguments from only using `startNotebook`
 ## Version 2.8.0
 
 ## Release Date
+
  November 2022
 
 ## Release Content
@@ -187,13 +195,12 @@ Node Pools is a new method for managing GPU and CPU resources by **grouping the 
 * The administrator allocates Project and Department resources from these pools to be used by Workloads. 
 * The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to customer's specific mode of operation. 
 
-
 ### User Interface Enhancements
 
 * The *Departments* screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
 * The *Jobs* screen has been split into 2 tabs for ease of use:
-    * *Current*:  (the default tab) consists of all the jobs that currently exist in the cluster. 
-    * *History*:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
+  * *Current*:  (the default tab) consists of all the jobs that currently exist in the cluster. 
+  * *History*:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
 
 ### Installation improvements 
 
@@ -206,6 +213,7 @@ In version 2.8,  the default is for the Run:ai administrator to provide a [DNS a
 The older option still exists but is being deprecated due to complexity.
 
 ### Inference 
+
 The Deployment details page now contains the URL for the Inference service 
 
 
