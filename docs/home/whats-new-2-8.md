@@ -55,8 +55,8 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8709 | Fixed an issue to make S3 storage work in an airgapped environment. |
-| RUN-8276 | Fixed a 503 error when creating a workload due to short timeout. |
+| RUN-8709 | Fixed an issue to make S3 storage work in an airgapped environments. |
+| RUN-8276 | Increaed timeout to fix a 503 error when creating a workload. |
 
 ## Version 2.8.16
 
@@ -67,7 +67,7 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8246 | Fixed an issue with large Jupyter notebook uploads. |
+| RUN-8246 | Fixed an issue with large files uploading via Jupyter notebook. |
 | RUN-8366 | Fixed an issue where the scheduler is slow when many podgroups are configured. |
 
 ## Version 2.8.15
@@ -110,7 +110,7 @@ Added support for kubeflow PyTorch jobs.
 | RUN-7205 | Fixed an issue where `Config maps` are continuously stored for deployments. |
 | RUN-6832 | Fixed prometheus deployment does not discover `servicemonitors` within projects. |
 | RUN-6800 | Fixed jobs graph showing no data metrics. |
-| RUN-6766 | Fixed s3 mount sharing between containers. |
+| RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` issue. |
 | RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
 | RUN-5527 | Fixed an issue where GPUs which are no longer available are never removed causing MIG metrics to show no data. |
@@ -131,7 +131,7 @@ Added support for kubeflow PyTorch jobs.
 ## Release date
 
 <!--RUN-6392 --> 
-Added `--jupyter` flag to the `submit` command. This supersedes the existing implementation where jupyter args are generated with `startNotebook` command.
+Changed the option to generate Jupyter arguments from only using `startNotebook` to any command.
 
 ## Fixed Issues
 
@@ -140,7 +140,7 @@ Added `--jupyter` flag to the `submit` command. This supersedes the existing imp
 | RUN-6718 | Fixed issue where graphs are showing the wrong date. |
 | RUN-6667 | Fixed Run:ai scheduler crashing in `getPodGroupProjectAndDepartment`. |
 | RUN-6604 | Fixed issue where jobs with the profiles 3g.20gb or 7g.40gb are not running. `check_availability` is called and the result is  true, but there is no request for creating the device. |
-| RUN-6536 | Fixed nil pointer exception when checking the policy for escalation rule causing the `cli` to crash. |
+| RUN-6536 | Fixed `cli` crash related to policy for `allow-privilige-escalation`. |
 | RUN-6519 | Pods with PVC cannot be scheduled |
 | RUN-6460 | Fixed an issue moutning an S3 bucket not permitting read/write in AWS using a Jupyter notebook.|
 | RUN-6400 | EKS - Every command response in runai CLI starts with an error. No functionality harm|
