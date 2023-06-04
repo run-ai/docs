@@ -33,8 +33,6 @@ May 2022
 |-----------|--------------|
 | RUN-9354 | Fixed issue where the `RUNAI_GPU_MEMORY_LIMIT` environment variable is set and not applied. |
 
-So this hotfix allows a user to set the actual runtime GPU memory limit of a container and override the default behaviour (which set the limit to be equal to the fraction). This is done be setting an environment variable called "RUNAI_GPU_MEMORY_LIMIT" on the container in the deployment yaml.
-
 ## Version 2.8.18
 
 ## Release date
@@ -58,7 +56,7 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-8709 | Fixed an issue to make S3 storage work in an airgapped environments. |
-| RUN-8276 | Increaed timeout to fix a 503 error when creating a workload. |
+| RUN-8276 | Increased timeout to fix a 503 error when creating a workload. |
 
 ## Version 2.8.16
 
@@ -82,7 +80,6 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 |-----------|--------------|
 | RUN-7686 | Fixed issues with syncing node pools from the cluster in OpenShift environments. |
 
-
 ## Version 2.8.14
 
 ## Release date
@@ -101,7 +98,7 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 ## Release date
 
 <!-- RUN-6732 -->
-Added support for kubeflow PyTorch jobs.
+Added support for Kubeflow PyTorch jobs.
 
 ## Fixed Issues
 
