@@ -148,11 +148,10 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 | RUN-6536 | Fixed `cli` crash related to policy for `allow-privilige-escalation`. |
 | RUN-6519 | Pods with PVC cannot be scheduled |
 | RUN-6460 | Fixed an issue moutning an S3 bucket not permitting read/write in AWS using a Jupyter notebook.|
-| RUN-6400 | EKS - Every command response in runai CLI starts with an error. No functionality harm|
+| RUN-6400 | Fixed issue on EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. |
 | RUN-6399 | Fixed `requested GPU` is always 0 for MPI jobs in the *CLI* and *UI* leading to other wrong metrics. |
 | RUN-6359 | Fixed `UnexpectedAdmissionError` on Job using fractional GPU.  |
-| RUN-6356 | MIG Allocation fails |
-| RUN-6309 | MIG Manager does not connected to cluster role |
+| RUN-6309 | Fixed dynamic MIG Manager not connecting to cluster role in OpenShift environments. |
 | RUN-5492 | Fixed issue so that `runai-container-toolkit` doesn't need root permissions. |
 | RUN-5444 | Fixed MIG doesn't work on A100 - 80GB. |
 | RUN-5226 | Fixed Multi-instance GPU (MIG) job being deleted after submitting a different MIG job. |
