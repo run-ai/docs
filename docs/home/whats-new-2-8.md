@@ -4,17 +4,17 @@
 
 ## Release date
 
-
+May 2022
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-9832 | [Fixed an issue where the node pool controller removes unschedulable jobs from nodes. |
-| RUN-5645 | update v2.8 operator linter compare version |
+| RUN-9832 | Fixed an issue where the node pool controller removes unschedulable jobs from nodes. |
 ## Version 2.8.20
 
 ## Release date
 
+May 2022
 
 ## Fixed Issues
 
@@ -25,6 +25,7 @@
 
 ## Release date
 
+May 2022
 
 ## Fixed Issues
 
@@ -36,15 +37,17 @@
 
 ## Release date
 
+May 2022
 
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-9113 | Scheduled pods get OutOfCPU |
+| RUN-9113 | Fixed an issue in the Scheduler where pods were schedules to nodes without enough CPU resources. |
 ## Version 2.8.17
 
 ## Release date
+May 2022
 
 <!-- RUN-6345 -->
 Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables in the UI.
@@ -75,7 +78,6 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8246 | Large upload for Jupyter - fix for 2.8 |
 | RUN-7686 | OCP env - Cluster-sync pod had an error while trying add nodepool |
 
 
@@ -109,7 +111,7 @@ Added support for kubeflow PyTorch jobs.
 | RUN-6832 | Fixed prometheus deployment does not discover `servicemonitors` within projects. |
 | RUN-6800 | Fixed jobs graph showing no data metrics. |
 | RUN-6766 | Fixed s3 mount sharing between containers. |
-| RUN-6538 | [2.8] Scheduler OOMKilled |
+| RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` issue. |
 | RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
 | RUN-5527 | Fixed an issue where GPUs which are no longer available are never removed causing MIG metrics to show no data. |
 | RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
@@ -143,7 +145,7 @@ Added `--jupyter` flag to the `submit` command. This supersedes the existing imp
 | RUN-6460 | Fixed an issue moutning an S3 bucket not permitting read/write in AWS using a Jupyter notebook.|
 | RUN-6400 | EKS - Every command response in runai CLI starts with an error. No functionality harm|
 | RUN-6399 | Fixed `requested GPU` is always 0 for MPI jobs in the *CLI* and *UI* leading to other wrong metrics. |
-| RUN-6359 | Job gets UnexpectedAdmissionError race condition with Kubelet |
+| RUN-6359 | Fixed `UnexpectedAdmissionError` on Job using fractional GPU.  |
 | RUN-6356 | MIG Allocation fails |
 | RUN-6309 | MIG Manager does not connected to cluster role |
 | RUN-5492 | Fixed issue where `runai-container-toolkit` runs as root. |
