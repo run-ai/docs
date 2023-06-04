@@ -89,7 +89,7 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-7776 | Fixed a UI issue not displaying more than 100 users. |
-| RUN-7726 | researcher service request throttling when cluster has a lot of crds |
+| RUN-7726 | Increased the number of allowed API requests to the API server from the researcher service to prevent performance throttling. |
 | RUN-7106 | Fixed the *UI* not showing workloads in the cluster when stopped due to marking podgroup as `not in cluster`. |
 | RUN-6995 | Fixed an issue where Group Mapping from an SSO Group to the Researcher Manager Role was not working. |
 
@@ -108,7 +108,7 @@ Added support for Kubeflow PyTorch jobs.
 | RUN-7222 | Fixed an issue where a single alpha flag feature cannot be enabled when `SHOW_ALPHA_FLAGS=false`.
 | RUN-7205 | Fixed an issue where `Config maps` are continuously stored for deployments. |
 | RUN-6832 | Fixed prometheus deployment does not discover `servicemonitors` within projects. |
-| RUN-6800 | Fixed jobs graph showing no data metrics. |
+| RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` issue. |
 | RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
@@ -124,7 +124,7 @@ Added support for Kubeflow PyTorch jobs.
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6216 | Fixed dashboard reporting wrong number of allocated GPUs due to an error in metrics not counting jobs correctly.
+| RUN-6216 | Fixed multi cluster overview so that the allocated GPU in the table of each cluster is correct.
 ## Version 2.8.11
 
 ## Release date
@@ -233,8 +233,6 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 | RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. | 
 | RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |    
 | RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. | 
-
-
 
 ## Fixed Issues
 
