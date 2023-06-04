@@ -105,9 +105,8 @@ Added support for Kubeflow PyTorch jobs.
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-7240 | Fixed inability to submit fractional jobs on a non-default nodepools. |
-| RUN-7222 | Fixed an issue where a single alpha flag feature cannot be enabled when `SHOW_ALPHA_FLAGS=false`.
 | RUN-7205 | Fixed an issue where `Config maps` are continuously stored for deployments. |
-| RUN-6832 | Fixed prometheus deployment does not discover `servicemonitors` within projects. |
+| RUN-6832 | Fixed prometheus deployment not discovering the `servicemonitors` within projects. |
 | RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` issue. |
@@ -147,7 +146,7 @@ Changed the option to generate Jupyter arguments from only using `startNotebook`
 | RUN-6359 | Fixed `UnexpectedAdmissionError` on Job using fractional GPU.  |
 | RUN-6356 | MIG Allocation fails |
 | RUN-6309 | MIG Manager does not connected to cluster role |
-| RUN-5492 | Fixed issue where `runai-container-toolkit` runs as root. |
+| RUN-5492 | Fixed issue so that `runai-container-toolkit` doesn't need root permissions. |
 | RUN-5444 | Fixed MIG doesn't work on A100 - 80GB. |
 | RUN-5226 | Fixed Multi-instance GPU (MIG) job being deleted after submitting a different MIG job. |
 
