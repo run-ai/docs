@@ -70,7 +70,6 @@ Few examples:
 
 For collaboration purposes, templates are assigned to a specific project and are shared with all project members by design.
 
- <!-- (see also [Creating a new template](xxx)). -->
 
 ## Create a preemptible workspace
 

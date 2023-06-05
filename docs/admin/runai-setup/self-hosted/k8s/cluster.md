@@ -9,15 +9,6 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster-prerequisites.md) document.  
 
 
-??? "Version 2.8 or lower"
-    The Run:ai Cluster installation installs Prometheus by default. If your Kubernetes cluster already has Prometheus installed, set the flag `kube-prometheus-stack.enabled` to `false`.
-
-    When using an existing Prometheus installation, you will need to add additional rules to your Prometheus configuration. The rules can be found under `deploy/runai-prometheus-rules.yaml`.
-
- 
-
-
-
 ## Customize Installation
 
 * Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). 
@@ -32,9 +23,6 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
 | `runai-operator.config.runai-container-toolkit.enabled` | `true` | Controls the usage of __Fractions__. Requires extra cluster permissions <!-- >](../preparations/#cluster-installation) --> | 
 | `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu  | 
 | `runai-operator.config.runaiBackend.password` | Default password already set  | [admin@run.ai](mailto:admin.run.ai) password. Need to change only if you have changed the password [here](../backend/#other-changes-to-perform) | 
-| `runai-operator.config.global.prometheusService.address` | The address of the default Prometheus Service | If you installed your own custom Prometheus Service, add this field with the address |
-| `kube-prometheus-stack.enabled` | `true` | (Version 2.8 or lower) Install Prometheus. Set to `false` if __Prometheus__ is already installed in cluster |
-
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` |  `true` | Automatically assign Users to Projects. Set to `false` if unwilling to provide Run:ai the ability to set _RoleBinding_. When set to `false`, will require an additional [manual step](project-management.md) when adding or removing users from Projects.  |  -->
 

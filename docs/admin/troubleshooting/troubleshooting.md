@@ -4,17 +4,6 @@
 
 ## Installation 
 
-??? "init-ca pod crashing"
-    __Symptom:__  After installing, when running `kubectl get pods -n runai` you see a pod named `init-ca` which has crashed. 
-
-    __Root cause:__ Run:ai installs `Cert Manager`, but there is an existing cert-manager on the cluster. 
-
-    Review the logs for `init-ca`. If the logs say: 
-
-    `Failed to sign certificate: Operation cannot be fulfilled on certificatesigningrequests.certificates.k8s.io “runai-admission-controller.runai”: the object has been modified; please apply your changes to the latest version and try again`    
-    
-    __Resolution:__ Call Run:ai customer support to understand how to modify the Run:ai installation not to install cert-manager. 
-
 ??? "Upgrade fails with "Ingress already exists""
     __Symptom:__  The installation fails with error: `Error: rendered manifests contain a resource that already exists. Unable to continue with install: IngressClass "nginx" in namespace "" exists`
 
@@ -188,34 +177,7 @@
 
     __Resolution:__ Cluster must be re-installed. 
 
-
-??? "Submit form is not showing after pressing Create Job button"
-    __Symptom:__ (SaaS only) Submit form now showing and under Chrome developer tools you see that all network calls with `/workload` return an error. 
-
-    __Root Cause:__ Multiple network-related issues.
-
-    __Resolution:__ 
-
-    * Incorrect cluster IP
-    * Cluster certificate has not been created
-
-        * Run: `kubectl get certificate -n runai`. Verify that all 3 entries are of status `Ready`.
-        * Run: `kubectl get pods -n cert-manager` and verify that all pods are Running.
-        * Run: `kubectl get crd | grep cert` Verify that there are at least the following 6 entries:
-        ```
-        certificaterequests.cert-manager.io                   
-        certificates.cert-manager.io                          
-        challenges.acme.cert-manager.io                       
-        clusterissuers.cert-manager.io                        
-        issuers.cert-manager.io                               
-        orders.acme.cert-manager.io
-        ```
-
-        * Run: `kubectl get challenges -A` verify that all challenges are in running state. If not, run: `kubectl describe challenge <challlenge-name> -n runai`. Possible issues are:
-            * Networking issues: most likely a firewall problem.
-            * `Waiting for dns propagation`: This is normal. Need to wait.  
-
-
+ 
 ??? "Submit form does not show the list of Projects"
     __Symptom:__ When connected with Single-sign-on, in the Submit form, the list of Projects is empty.
 
@@ -291,15 +253,6 @@
         //  "linux-";
         "nvidia-driver-";
     ```
-
-## Kubernetes-specific Issues
-
-??? "Cluster Installation failed on RKE or EKS"
-    __Symptom:__ Cluster is not installed. When running `kubectl get pods -n runai` you see that pod `init-ca` has not started.
-
-    __Resolution:__
-
-    Perform the required cert-manager steps [here](../runai-setup/cluster-setup/cluster-prerequisites.md#cert-manager).
 
 ## Inference Issues
 

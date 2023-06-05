@@ -9,7 +9,7 @@ Before proceeding with this document, please review the [installation types](../
 As part of the installation process you will install:
 
 * A control-plane managing cluster
-* One or more clusters
+* One or more Run:ai clusters
 
 Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
 
@@ -25,7 +25,7 @@ In addition, the control plane installation of Run:ai requires the configuration
     You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
 
 === "Airgapped"
-    You should receive a single file `runai-<version>.tar` from Run:ai customer support
+    You should receive a single file `runai-air-gapped-<version>.tar.gz` from Run:ai customer support
 
 ## Run:ai Software Prerequisites
 
@@ -40,6 +40,8 @@ The Run:ai control plane operating system prerequisites are identical.
 See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prerequisites.md#kubernetes) requirements.
 
 The Run:ai control plane operating system prerequisites are identical.
+
+The Run:ai control-plane requires a default storage class to create persistent volume claims for Run:ai storage. 
 
 ### NVIDIA Prerequisites
 
@@ -59,17 +61,16 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
+
 ## Network Requirements
 
 ### Ingress Controller
 
-=== "Version 2.9"
-    The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) installation.
-
-=== "Version 2.8 or lower"
-    The Run:ai controller installs NGINX. Thus, in the typical scenario where the Run:ai control plane is installed together with the first cluster, NGINX need not be installed.
-
-    If the Run:ai cluster is installed on a separate Kubernetes cluster, follow the Run:ai Cluster prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) requirements.
+The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) installation.
 
 ### Domain name
 

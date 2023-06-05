@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC). When SSO is configured, the system is accessible via single-sign-on **only**.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC).
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
@@ -58,7 +58,7 @@ For `Saml 2`:
    3. In the `GROUPS` field, enter the groups.
    4. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    5. In the `UID` field, enter the UID.
-   6. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   6. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    7.  Press `Save`.
 
 For `Open ID Connect`:
@@ -72,7 +72,7 @@ For `Open ID Connect`:
    5. In the `GROUPS` field, enter the groups.
    6. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
    7. In the `UID` field, enter the UID.
-   8. In the `Logout URI` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   8. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
    9.  Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
@@ -292,10 +292,6 @@ The latter option is easier to maintain.
 
 !!! Note
     This feature also works in OpenShift. If you create a group in Run:ai with the same name as an OpenShift Group, the associated permissions will be applied to all users in the group.
-
-## Logout URL
-
-It is possible to configure the redirect URL when the session ends. If left empty, you will be redirected to the Run:ai portal. To perform this configuration please contact Run:ai customer support.
 
 ## Implementation Notes
 

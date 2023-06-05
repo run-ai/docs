@@ -1,6 +1,6 @@
 # Distributed Training Workload Parameters
 
-Following is a full list of all distributed workload parameters. The text below is equivalent to running `kubectl explain distributedworkload.spec`. You can also run `kubectl explain distributedworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+Following is a full list of all distributed workload parameters. The text below is equivalent to running `kubectl explain distributedworkload.spec`. You can also run `kubectl explain distributedworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     DistributedWorkload
@@ -200,9 +200,6 @@ FIELDS:
    pyTorchJob	<Object>
      Specific fields for distributed PyTorch Job
 
-   replicas	<Object>
-     The desired number of worker pods.
-
    runAsGid	<Object>
      Specifies the Unix group id with which the container should run. Will be
      used only if runAsUser is set to true.
@@ -267,6 +264,9 @@ FIELDS:
 
    volumes	<Object>
      Specifies volumes to mount into a container running the created workload.
+
+   workers	<Object>
+     The desired number of worker pods.
 
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the

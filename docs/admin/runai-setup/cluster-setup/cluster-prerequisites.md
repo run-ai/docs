@@ -11,7 +11,6 @@ The following is a checklist of the Run:ai prerequisites:
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
 | [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
-| [Cert manager](#cert-manager) | For RKE and EKS, you must install a certificate manager  and configure Run:ai to use it | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow Training Operator if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
@@ -26,43 +25,48 @@ Run:ai will work on any __Linux__ operating system that is supported by both Kub
 
 ### Kubernetes
 
-Run:ai requires Kubernetes. The latest Run:ai version supports Kubernetes versions 1.21 through 1.26 and OpenShift 4.8 to 4.11. For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
- 
-Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
+Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernetes distributions: 
 
-Run:ai has been tested with the following Kubernetes distributions: 
-
-| Target Platform                          | Description | Installation Notes | 
-|------------------------------------------|-------------|--------------------|
-| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  | |
+| Kubernetes Distribution           | Description | Installation Notes | 
+|-----------------------------------|-------------|--------------------|
+| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  |  See instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md) script. |
 | OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. | 
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  | 
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
 | Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+
+Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details: 
+
+| Kubernetes Distribution           | Description | Installation Notes | 
+|-----------------------------------|-------------|--------------------|
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports _containerd_ rather than _docker_. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
-Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md).
+Following is a Kubernetes support matrix for the latest Run:ai releases:
+
+| Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
+|----------------|-------------------------------|--------|
+| Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
+| Run:ai 2.10    | 1.21 through 1.26 (see note below) | 4.8 through 4.11 |
+| Run:ai 2.11    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
+
+!!! Note
+    Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit/#-pvc-new-string). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
 
 
-!!! Notes
-    * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
-    * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
+For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
+
+Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
+
 ### NVIDIA 
 
-Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
-
-!!! Important
-    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9 and is resolved in 22.9.0. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
-
-=== "On Prem"    
-    Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
+Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
 === "EKS"
-    * Do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
-    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
+    * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator. For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`. 
 
 === "GKE"
 
@@ -98,7 +102,7 @@ Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9. The interim versions (1
         * The above only works for Run:ai 2.7.16 and above. 
 
 === "RKE"
-    Install the __NVIDIA GPU Operator__ as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
+    Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
@@ -127,6 +131,10 @@ There are many ways to install and configure an ingress controller and configura
     ```
 
     1. External and internal IP of one of the nodes
+
+=== "RKE"
+    RKE comes pre-installed with NGINX. No further action needs to be taken. 
+
 
 === "Managed Kubernetes"
     For managed Kubernetes such as EKS: 
@@ -225,7 +233,7 @@ Following are instructions on how to get the IP and set firewall settings.
     If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
     
     !!! Note
-        Due to a Prometheus bug described [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank} you may need to apply Prometheus CRDs before installing Prometheus.
+        If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
 
     Then install the Prometheus stack by running:
     
@@ -245,31 +253,6 @@ Following are instructions on how to get the IP and set firewall settings.
     * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
 
 
-### Cert Manager
-
-Rancher Kubernetes Engine (RKE) and Amazon Elastic Kubernetes Engine (EKS) require a certificate manager as described [here](https://cert-manager.io/docs/installation/helm/){target=_blank}. Example:
-
-```
-helm repo add jetstack https://charts.jetstack.io
-helm repo update
-helm install \
-  cert-manager jetstack/cert-manager \
-  --namespace cert-manager \
-  --create-namespace \
-  --set installCRDs=true
-```
-
-For RKE only, you must then configure Run:ai to use the cert-manager. When creating a cluster on the Run:ai user interface:
-
-* Download the "On Premise" Kubernetes type. 
-* Edit the cluster values file and change `useCertManager` to `true` 
-
-``` yaml  hl_lines="3"
-init-ca:
-    enabled: true
-    useCertManager: true
-```
-
 ### Distributed Training
 
 === "Version 2.10 or later" 
@@ -282,7 +265,7 @@ init-ca:
     To install all 3 prerequisites run the following:
 
     ```
-    kubectl "apply -k github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+    kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
     ```
 
 === "Version 2.9 or earlier"
@@ -350,8 +333,8 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 *   (Production only) __Run:ai System Nodes__: To reduce downtime and save CPU cycles on expensive GPU Machines, we recommend that production deployments will contain __two or more__ worker machines, designated for Run:ai Software. The nodes do not have to be dedicated to Run:ai, but for Run:ai purposes we would need:
     
-    *   4 CPUs
-    *   8GB of RAM
+    *   8 CPUs
+    *   16GB of RAM
     *   50GB of Disk space  
     
 *   __Shared data volume:__ Run:ai uses Kubernetes to abstract away the machine on which a container is running:
@@ -375,7 +358,7 @@ __Usage of containers and images:__ The individual Researcher's work should be b
 
 __Internal networking:__ Kubernetes networking is an add-on rather than a core part of Kubernetes. Different add-ons have different network requirements. You should consult the documentation of the specific add-on on which ports to open. It is however important to note that unless special provisions are made, Kubernetes assumes __all__ cluster nodes can interconnect using __all__ ports. 
 
-__Outbound network:__ Run:ai user interface runs from the cloud. All container nodes must be able to connect to the Run:ai cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is proxied/limited, the following exceptions should be applied: 
+__Outbound network:__ Run:ai user interface runs from the cloud. All container nodes must be able to connect to the Run:ai cloud. Inbound connectivity (connecting from the cloud into nodes) is not required. If outbound connectivity is limited, the following exceptions should be applied: 
 
 ### During Installation
 
@@ -516,6 +499,9 @@ In addition, once running, Run:ai requires an outbound network connection to the
 </tbody>
 </table>
 
+### Network Proxy
+
+If you are using a Proxy for outbound communication please contact Run:ai customer support
 
 ## Pre-install Script
 

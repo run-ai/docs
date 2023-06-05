@@ -38,16 +38,16 @@ OpenShift has specific operating system requirements that can be found in the Re
 
 ### OpenShift 
 
-Run:ai supports OpenShift. Supported versions are 4.8 through 4.11. 
+Run:ai supports OpenShift. Supported versions are 4.10 through 4.11. 
 
 * OpenShift must be configured with a trusted certificate. Run:ai installation relies on OpenShift to create certificates for subdomains. 
-* OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank}. 
+* OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank} (Idp). If you are planning to connect multiple Run:ai clusters (on multiple OpenShift clusters), then all OpenShift clusters must be configured with the __same__ IdP. 
 * OpenShift must have _Entitlement_. Entitlement is the RedHat OpenShift licensing mechanism. Without entitlement, __you will not be able to install the NVIDIA drivers__ used by the GPU Operator. For further information see [here](https://www.openshift.com/blog/how-to-use-entitled-image-builds-to-build-drivercontainers-with-ubi-on-openshift){target=_blank}, or the equivalent [NVIDIA documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/archive/1.9.0/openshift/cluster-entitlement.html){target=_blank}. Entitlement is [not required anymore](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/steps-overview.html#entitlement-free-supported-versions){target=_blank} if you are using OpenShift 4.9.9 or above
 
 
 ### NVIDIA Prerequisites
 
-See Run:ai Cluster prerequisites [installing NVIDIA dependencies in OpenShift](cluster.md#install-nvidia-dependencies).
+See Run:ai Cluster prerequisites [installing NVIDIA dependencies in OpenShift](cluster.md#prerequisites).
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
@@ -60,6 +60,9 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ## Installer Machine
 

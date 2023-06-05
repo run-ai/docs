@@ -1,10 +1,108 @@
 # Run:ai version 2.10
+
+## Version 2.10.10
+
+| Internal ID Description   |
+| ------- | --------------------------------------------------------------------------------------------------- |
+| RUN-9894 | Fixed an issue where you cannot delete project in cluster if its not attached to a namespace. |
+| RUN-9039 | Fixed and issue where in the job screen, after selecting a project, the preemptible flag is toggled from on to off and submit a job, the screen still shows the job as interactive-preemptible. |
+
+## Version 2.10.9
+
 ## Release date
 
-March 2023
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9488 | Fixed certificate error when retrieving dashboards from an external URL in self-hosted environment using a self-signed certificate. |
+| RUN-9462 | Fixed scenarios where `supplementary groups` were not passed from the identity provider to the container. |
+| RUN-9278 | Fixed issue in openshift environments where projects deleted from the UI are still listed in the CLI. |
+
+## Version 2.10.8
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9250 | Fixed trimming of wrong characters from API server URL in the CLI command `runai portfoward`. |
+| RUN-9579 | Fixed nodepool priority assignment and persistance in API and UI.|
+| RUN-9590 | Fixed PVC propagation not working due to improper handling of shared PVCs' annotations. |
+| RUB-9631 | Added flag `--pod-running-timeout` to CLI commands `runai attach` and `runai bash`. |
+
+## Version 2.10.7
+
+## Release date
+
+May 2023
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN_9226 | Fixed implementation of MIG utilization metrics in graphs. |
+| RUN-9309 | Changed the `backoffLimit` default for distributed workloads from 0 to 6 * (the number of workers).|
+| RUN-9324 | Fixed volume capacity check on PVC when its not immediately bound. |
+
+--------------------
+## Version 2.10.6
+
+## Release date
+
+April 2023
 
 ## Release content
 
+**runai port-forward**
+
+The `port forward` CLI command can forward ports to any of the pods in a job.
+
+The `port forward` CLI command now includes the `pod-running-timeout` flag. This determines how long the command will wait for the pod to run before it times out.  The default is 10 minutes.
+
+**Scheduler**
+
+Corrected scheduler message about availability of "other resources".
+
+**Jobs**
+
+Fixed the output of `runai describe job` for jobs without pods.
+
+**Cluster wide PVC**
+
+Cluster wide PVC is now replicated to namespaces that do not have an existing PVC with the same name.
+
+## Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9196 | Fixed dashboard overview displaying `running_workloads:cpu_only` rule.|
+| RUN-9256 | Now supports the global configuration of memory request of memory-sensitive pods in the cluster.|
+| RUN-9219 | Fixed `runai describe` on pytorch outputs "Is Distributed Workload: false".|
+| RUN-9221 | Fixed CLI `runai describe` job nil pointer exception.|
+| RUN-9220 | Fixed PVC duplication errors so that it does not duplicate for namespaces with the same PVC name and bound PVCs.|
+| RUN-9224 | Fixed Scheduler not reporting the correct event on EFA (status history).|
+| RUN-9189 | Improved Scheduler performance to reclaim action slowness in really big clusters.|
+| RUN-450 | Change "edit boxes" to labels. |
+| RUN-9218 | Added support for `pod-running-timeout` when using `runai port-forward`.|
+| RUN-9252 | Fixed `runai port-forward` to be consistent with `runai bash` (`--target` is now `--pod`).|
+| RUN-9071 | Fixed registries api call crashing the ui when returning an error.|
+| RUN-8794 | Newer dashboards are now deployed for tenants using grafanlabs.|
+| RUN-9212 | Fixed filter jobs by type. As a workaround, you can also you can sort by type.|
+
+---------------------
+## Version 2.10.5
+
+## Release date
+
+April 2023
+
+## Release content
 ### Authentication and access control
 
 **Credential Manager**

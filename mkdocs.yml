@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.10/docs/
+edit_uri: edit/v2.11/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -56,12 +56,11 @@ extra:
     property: UA-122651141-1
   version:
     provider: mike
-    default: latest
 
 plugins:
   - mike:
-      version_selector: true
-      canonical_version: latest
+      version_selector: false
+      canonical_version: null
   - search:
       lang: en
   - git-revision-date-localized:
@@ -141,6 +140,7 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'Version 2.11' : 'home/whats-new-2-11.md'
       - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
@@ -180,6 +180,7 @@ nav:
           - 'Preparations' : 'admin/runai-setup/self-hosted/ocp/preparations.md'
           - 'Install Control Plane' : 'admin/runai-setup/self-hosted/ocp/backend.md'
           - 'Install a Cluster' : 'admin/runai-setup/self-hosted/ocp/cluster.md'
+          - 'Install additional Clusters' : 'admin/runai-setup/self-hosted/ocp/additional-clusters.md'
           - 'Manually Create Projects' : 'admin/runai-setup/self-hosted/ocp/project-management.md'
           - 'Next Steps' : 'admin/runai-setup/self-hosted/ocp/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
@@ -240,6 +241,7 @@ nav:
       - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
       - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
       - 'Event Messaging': 'admin/integration/messaging.md'
+      - 'DeepSpeed': 'admin/integration/deepspeed.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
@@ -280,6 +282,7 @@ nav:
       - 'runai login' : 'Researcher/cli-reference/runai-login.md'
       - 'runai logout' : 'Researcher/cli-reference/runai-logout.md'
       - 'runai logs' : 'Researcher/cli-reference/runai-logs.md'
+      - 'runai port-forward' : 'Researcher/cli-reference/runai-port-forwarding.md'
       - 'runai resume' : 'Researcher/cli-reference/runai-resume.md'
       - 'runai submit' : 'Researcher/cli-reference/runai-submit.md'
       - 'runai submit-mpi' : 'Researcher/cli-reference/runai-submit-mpi.md'
