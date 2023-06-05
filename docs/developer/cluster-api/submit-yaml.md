@@ -109,6 +109,29 @@ spec:
 1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level. 
 2. Inference requires a port to receive requests.
 
+## Suspend/Resume Interactive/Training Workload
+
+to suspend trainig
+```YAML
+apiVersion: run.ai/v2alpha1
+kind: TrainingWorkload # 
+metadata:
+  name: job-1  #  
+  namespace: runai-team-a # 
+spec:
+  gpu:
+    value: "1"
+  active:
+    value: false
+  image:
+    value: gcr.io/run-ai-demo/quickstart
+  name:
+    value: job-1 # 
+```
+In order to suspend workload set `active` value to `false`
+To reume it back either set `active` value to `true` or remove it entirly. 
+
+
 ## See Also
 * To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).
 * To learn more about Inference and Run:ai see [Inference overview](../../admin/workloads/inference-overview.md).
