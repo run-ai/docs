@@ -104,20 +104,20 @@ Added the `Node Pool` column to the `Jobs` `Inference` and `Workspaces` tables i
 ## Release date
 
 <!-- RUN-6732 -->
-Added support for Kubeflow PyTorch jobs.
+Added support for scheduling of Kubeflow PyTorch jobs.
 
 ## Fixed Issues
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-7240 | Fixed inability to submit fractional jobs on a non-default nodepools. |
-| RUN-7205 | Fixed an issue where `Config maps` are continuously stored for deployments. |
+| RUN-7240 | Fixed inability to submit fractional jobs on non-default node pools. |
+| RUN-7205 | Fixed an issue where `configmaps` are continuously stored for deployments even after the relevant pods are removed. |
 | RUN-6832 | Fixed prometheus deployment not discovering the `servicemonitors` within projects. |
 | RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` issue. |
 | RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
-| RUN-5527 | Fixed an issue where GPUs which are no longer available are never removed causing MIG metrics to show no data. |
+| RUN-5527 | Fixed an issue where Idle allocated GPU metrics are not displayed for MIG workloads in OpenShift. |
 | RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
 | RUN-5488 | Fixed an issue where Keycloak `initContainer` runs as root. |
 
@@ -146,15 +146,14 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 | RUN-6667 | Fixed Run:ai scheduler from crashing in reclaim action. |
 | RUN-6604 | Fixed issue where jobs with the profiles 3g.20gb or 7g.40gb are not running. `check_availability` is called and the result is  true, but there is no request for creating the device. |
 | RUN-6536 | Fixed `cli` crash related to policy for `allow-privilige-escalation`. |
-| RUN-6519 | Pods with PVC cannot be scheduled |
 | RUN-6460 | Fixed an issue moutning an S3 bucket not permitting read/write in AWS using a Jupyter notebook.|
 | RUN-6400 | Fixed issue on EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. |
-| RUN-6399 | Fixed `requested GPU` is always 0 for MPI jobs in the *CLI* and *UI* leading to other wrong metrics. |
+| RUN-6399 | Fixed `requested GPU` is always 0 for MPI jobs displayed in the distributed workloads Job list.|
 | RUN-6359 | Fixed `UnexpectedAdmissionError` on Job using fractional GPU.  |
 | RUN-6309 | Fixed dynamic MIG Manager not connecting to cluster role in OpenShift environments. |
 | RUN-5492 | Fixed issue so that `runai-container-toolkit` doesn't need root permissions. |
-| RUN-5444 | Fixed MIG doesn't work on A100 - 80GB. |
-| RUN-5226 | Fixed Multi-instance GPU (MIG) job being deleted after submitting a different MIG job. |
+| RUN-5444 | Fixed Dynamic MIG feature not working with A-100 and 80GB of memory. |
+| RUN-5226 | Fixed an issue when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.|
 
 ## Version 2.8.9
 
@@ -165,7 +164,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 |Internal ID|Description|
 |-----------|--------------|
-|RUN-6519 | Pods with PVC can't be scheduled.
+|RUN-6519 | Fixed issue with the scheduler not able to detect PV and PVCs. |
 
 ## Version 2.8.8
 
