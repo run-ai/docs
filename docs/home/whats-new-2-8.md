@@ -6,7 +6,7 @@
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -18,7 +18,7 @@ May 2022
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -30,7 +30,7 @@ May 2022
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -42,7 +42,7 @@ May 2022
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -57,7 +57,7 @@ May 2022
 <!-- RUN-6345 -->
 Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables in the *UI*. This feature is only available when using Control Plane 2.9 or later.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -69,7 +69,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 ### Release date
 
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -80,7 +80,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -90,7 +90,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -106,7 +106,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 <!-- RUN-6732 -->
 Added support for the scheduling of Kubeflow PyTorch jobs.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -125,7 +125,7 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 ### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -138,7 +138,7 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 <!--RUN-6392 -->
 Changed the option to generate Jupyter arguments from using `startNotebook` to any command.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -159,7 +159,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 ### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -228,7 +228,7 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 | RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |    
 | RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. | 
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID | Description   |
 |------------|---------------|
