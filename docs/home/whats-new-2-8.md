@@ -35,7 +35,7 @@ May 2022
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-9354 | Fixed issue where the `RUNAI_GPU_MEMORY_LIMIT` environment variable is set and not applied. |
+| RUN-9354 | Fixed an issue where the `RUNAI_GPU_MEMORY_LIMIT` environment variable is set and not applied. |
 
 ## Version 2.8.18
 
@@ -47,7 +47,7 @@ May 2022
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-9113 | Fixed an issue in the Scheduler where pods were schedules to nodes without enough CPU resources. |
+| RUN-9113 | Fixed an issue in the Scheduler where pods were scheduled to nodes without enough CPU resources. |
 
 ## Version 2.8.17
 
@@ -62,7 +62,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-8709 | Fixed an issue to make S3 storage work in an airgapped environments. |
+| RUN-8709 | Fixed an issue to make S3 storage work in airgapped environments. |
 | RUN-8276 | Increased the timeout when creating a workload to fix a 503 error. |
 
 ## Version 2.8.16
@@ -112,14 +112,14 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-7240 | Fixed inability to submit fractional jobs on non-default node pools. |
-| RUN-7205 | Fixed an issue where `configmaps` are continuously stored for deployments even after the relevant pods are removed. |
+| RUN-7205 | Fixed an issue where `configmaps` aren't deleted for deployments even after the relevant pods are removed. |
 | RUN-6832 | Fixed prometheus deployment not discovering the `servicemonitors` within projects. |
 | RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` error. |
 | RUN-6109 | Fixed an issue in the *UI* that prevents the quick creation of sequential jobs. |
 | RUN-5527 | Fixed an issue where idle allocated GPU metrics are not displayed for MIG workloads in OpenShift. |
-| RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
+| RUN-5489 | Fixed an issue when installing Run:ai cluster components that require root access. |
 
 ## Version 2.8.12
 
@@ -129,7 +129,7 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6216 | Fixed an issue with the multi cluster overview so that the allocated GPU in the table of each cluster is correct. |
+| RUN-6216 | Fixed an issue with the multi cluster overview dashboard so that the allocated GPU in the table of each cluster is correct. |
 
 ## Version 2.8.11
 
@@ -142,12 +142,12 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 |Internal ID|Description|
 |-----------|--------------|
-| RUN-6718 | Fixed an issue where graphs are showing the wrong date. |
+| RUN-6718 | Fixed an issue where some graphs were showing the wrong date. |
 | RUN-6667 | Fixed an issue where the Run:ai scheduler was crashing in a reclaim action. |
 | RUN-6604 | Fixed an issue where a new MIG request is issued without the device size. |
 | RUN-6536 | Fixed a crash in the *cli* related to the policy for `allow-privilege-escalation`. |
 | RUN-6460 | Fixed an issue using a Jupyter notebook to mount an S3 bucket and not permitting read/write access.|
-| RUN-6400 | Fixed issue on EKS (Amazon Kubernetes Server), where every *CLI* command response starts with an error. |
+| RUN-6400 | Fixed an issue on EKS (Amazon Kubernetes Server), where every *CLI* command response starts with an error. |
 | RUN-6399 | Fixed an issue where `requestedGPU` is always 0 for MPI jobs displayed in the distributed workloads Job list.|
 | RUN-6359 | Fixed an issue with `UnexpectedAdmissionError` on a job using a fractional GPU.  |
 | RUN-6309 | Fixed an issue where the dynamic MIG Manager didn't connect to a cluster role in OpenShift environments. |
@@ -163,7 +163,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 |Internal ID|Description|
 |-----------|--------------|
-|RUN-6519 | Fixed issue with the scheduler where it was not able to detect PV and PVCs. |
+|RUN-6519 | Fixed an issue with the scheduler where it was not able to detect PV and PVCs. |
 
 ## Version 2.8.0
 
