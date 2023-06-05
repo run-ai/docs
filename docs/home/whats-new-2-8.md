@@ -2,11 +2,11 @@
 
 ## Version 2.8.21
 
-## Release date
+### Release date
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -14,11 +14,11 @@ May 2022
 
 ## Version 2.8.20
 
-## Release date
+### Release date
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -26,11 +26,11 @@ May 2022
 
 ## Version 2.8.19
 
-## Release date
+### Release date
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -38,11 +38,11 @@ May 2022
 
 ## Version 2.8.18
 
-## Release date
+### Release date
 
 May 2022
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -50,14 +50,14 @@ May 2022
 
 ## Version 2.8.17
 
-## Release date
+### Release date
 
 May 2022
 
 <!-- RUN-6345 -->
 Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables in the *UI*. This feature is only available when using Control Plane 2.9 or later.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -66,10 +66,10 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.16
 
-## Release date
+### Release date
 
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -78,9 +78,9 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.15
 
-## Release date
+### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -88,9 +88,9 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.14
 
-## Release date
+### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -101,12 +101,12 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.13
 
-## Release date
+### Release date
 
 <!-- RUN-6732 -->
 Added support for the scheduling of Kubeflow PyTorch jobs.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -123,9 +123,9 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 ## Version 2.8.12
 
-## Release date
+### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -133,12 +133,12 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 ## Version 2.8.11
 
-## Release date
+### Release date
 
 <!--RUN-6392 -->
 Changed the option to generate Jupyter arguments from using `startNotebook` to any command.
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -157,9 +157,9 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 ## Version 2.8.9
 
-## Release date
+### Release date
 
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
@@ -167,7 +167,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 ## Version 2.8.0
 
-## Release Date
+### Release date
  November 2022 
 
 ## Release Content
@@ -227,9 +227,7 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 | RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |    
 | RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. | 
 
-
-
-## Fixed Issues
+#### Fixed issues
 
 |Internal ID | Description   |
 |------------|---------------|
