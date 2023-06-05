@@ -116,10 +116,9 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 | RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` error. |
-| RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
+| RUN-6109 | Fixed an issue in the *UI* that prevents the quick creation of sequential jobs. |
 | RUN-5527 | Fixed an issue where idle allocated GPU metrics are not displayed for MIG workloads in OpenShift. |
 | RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
-| RUN-5488 | Fixed an issue where Keycloak `initContainer` runs as root. |
 
 ## Version 2.8.12
 
@@ -144,7 +143,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 |-----------|--------------|
 | RUN-6718 | Fixed an issue where graphs are showing the wrong date. |
 | RUN-6667 | Fixed an issue where the Run:ai scheduler was crashing in a reclaim action. |
-| RUN-6604 | Fixed issue where a new MIG request is issued without the device size. |
+| RUN-6604 | Fixed an issue where a new MIG request is issued without the device size. |
 | RUN-6536 | Fixed a crash in the *cli* related to the policy for `allow-privilege-escalation`. |
 | RUN-6460 | Fixed an issue using a Jupyter notebook to mount an S3 bucket and not permitting read/write access.|
 | RUN-6400 | Fixed issue on EKS (Amazon Kubernetes Server), where every *CLI* command response starts with an error. |
