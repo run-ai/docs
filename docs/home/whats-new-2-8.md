@@ -144,7 +144,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 |-----------|--------------|
 | RUN-6718 | Fixed an issue where graphs are showing the wrong date. |
 | RUN-6667 | Fixed an issue where the Run:ai scheduler was crashing in a reclaim action. |
-| RUN-6604 | Fixed issue where a new MIG request is issued without the device size. |
+| RUN-6604 | Fixed an issue where a new MIG request is issued without the device size. |
 | RUN-6536 | Fixed a crash in the *cli* related to the policy for `allow-privilege-escalation`. |
 | RUN-6460 | Fixed an issue using a Jupyter notebook to mount an S3 bucket and not permitting read/write access.|
 | RUN-6400 | Fixed issue on EKS (Amazon Kubernetes Server), where every *CLI* command response starts with an error. |
