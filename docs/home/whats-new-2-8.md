@@ -2,7 +2,7 @@
 
 ## Version 2.8.21
 
-## Release date
+### Release date
 
 May 2022
 
@@ -14,7 +14,7 @@ May 2022
 
 ## Version 2.8.20
 
-## Release date
+### Release date
 
 May 2022
 
@@ -26,7 +26,7 @@ May 2022
 
 ## Version 2.8.19
 
-## Release date
+### Release date
 
 May 2022
 
@@ -38,7 +38,7 @@ May 2022
 
 ## Version 2.8.18
 
-## Release date
+### Release date
 
 May 2022
 
@@ -50,7 +50,7 @@ May 2022
 
 ## Version 2.8.17
 
-## Release date
+### Release date
 
 May 2022
 
@@ -66,7 +66,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.16
 
-## Release date
+### Release date
 
 
 ## Fixed Issues
@@ -78,7 +78,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.15
 
-## Release date
+### Release date
 
 ## Fixed Issues
 
@@ -88,7 +88,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.14
 
-## Release date
+### Release date
 
 ## Fixed Issues
 
@@ -101,7 +101,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 
 ## Version 2.8.13
 
-## Release date
+### Release date
 
 <!-- RUN-6732 -->
 Added support for the scheduling of Kubeflow PyTorch jobs.
@@ -123,7 +123,7 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 ## Version 2.8.12
 
-## Release date
+### Release date
 
 ## Fixed Issues
 
@@ -133,7 +133,7 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 
 ## Version 2.8.11
 
-## Release date
+### Release date
 
 <!--RUN-6392 -->
 Changed the option to generate Jupyter arguments from using `startNotebook` to any command.
@@ -157,7 +157,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 ## Version 2.8.9
 
-## Release date
+### Release date
 
 ## Fixed Issues
 
@@ -167,7 +167,7 @@ Changed the option to generate Jupyter arguments from using `startNotebook` to a
 
 ## Version 2.8.0
 
-## Release Date
+### Release date
  November 2022 
 
 ## Release Content
