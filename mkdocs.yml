@@ -16,6 +16,9 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - search.suggest
+  icon:
+    edit: material/pencil 
+    view: material/eye
 extra_css:
   - stylesheets/extra.css
 #strict: true   
