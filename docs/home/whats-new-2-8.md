@@ -116,10 +116,9 @@ Added support for the scheduling of Kubeflow PyTorch jobs.
 | RUN-6800 | Fixed incorrect Prometheus permissions for querying job metrics. |
 | RUN-6766 | Fixed an issue mounting s3 file systems. |
 | RUN-6538 | Fixed an issue in the Scheduler where the pod was restarted due to an `out of memory` error. |
-| RUN-6109 | Fixed an issue in the *UI* that prevents the creation of sequential jobs. |
+| RUN-6109 | Fixed an issue in the *UI* that prevents the quick creation of sequential jobs. |
 | RUN-5527 | Fixed an issue where idle allocated GPU metrics are not displayed for MIG workloads in OpenShift. |
 | RUN-5489 | Fixed issue when installing Run:ai cluster components that require root access. |
-| RUN-5488 | Fixed an issue where Keycloak `initContainer` runs as root. |
 
 ## Version 2.8.12
 
