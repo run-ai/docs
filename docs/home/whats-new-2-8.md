@@ -11,6 +11,7 @@ May 2022
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9832 | Fixed an issue where the node pool controller removes unschedulable jobs from nodes. |
+| RUN-10047| Fixed an issue where the node pool column is missing in the control-plane. |
 
 ## Version 2.8.20
 
