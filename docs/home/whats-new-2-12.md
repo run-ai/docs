@@ -11,7 +11,6 @@ June 2023
 | Internal ID | Description |
 |-----------|--------------|
 | RUN-10129 | Fixed an issue where logs of completed trainings were not displayed in the *UI*. |
-| RUN-9397  | control plane upgrade from 2.9.X for X > 5 to 2.10.Y, 2.11.Y for any Y |
 
 ## Version 2.12.3
 
