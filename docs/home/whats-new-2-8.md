@@ -63,7 +63,7 @@ Added the `Node Pool` column to the `Jobs`, `Inference`, and `Workspaces` tables
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-8709 | Fixed an issue to make S3 storage work in airgapped environments. |
-| RUN-8276 | Increased the timeout when creating a workload to fix a 503 error. |
+| RUN-8276 | Fixed an issue when creating a workload leads to a 503 error by increasing the timeout. |
 
 ## Version 2.8.16
 
