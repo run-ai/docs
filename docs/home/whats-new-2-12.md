@@ -1,12 +1,61 @@
 # Run:ai version 2.12
 
-## Release date
+## Version 2.12.4
+
+### Release date
+
+June 2023
+
+#### Fixed issues
+
+| Internal ID | Description |
+|-----------|--------------|
+| RUN-10129 | Fixed an issue where logs of completed trainings were not displayed in the *UI*. |
+| RUN-9397  | control plane upgrade from 2.9.X for X > 5 to 2.10.Y, 2.11.Y for any Y |
+
+## Version 2.12.3
+
+### Release date
 
 May 2023
 
-## Release content
+<!-- RUN-9922 -->
 
-### Compatibility
+* Added a *Login with SSO* button to the *UI* to support OpenShift environments.
+
+#### Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-10052 | Fixed an issue where a *UI* change is needed to submit a workload after a template was used to create a job. |
+| RUN-10000 | Fixed a *UI* issue that affected some users, where the job submission form wasn't working due to a missing value in a JWT token. |
+| RUN-9576 | Added a missing endpoint (`projectDepartment`) to the API documentation site. |
+
+## Version 2.12.1
+
+### Release date
+
+May 2023
+
+<!-- RUN-9323 -->
+Improved the readability of unsuccessful node scheduling in the message log.
+
+#### Fixed issues
+
+|Internal ID|Description|
+|-----------|--------------|
+| RUN-9326 | Fixed an issue that affected the dashboard where projects created with fractional GPUs, display the number of GPUs rounded down to nearest whole number. |
+| RUN-9039 | Fixed an issue that displays jobs as interactive-preemptible after cycling the `preemptable` flag from on to off. |
+
+## Version 2.12.0
+
+### Release date
+
+May 2023
+
+#### Release content
+
+##### Compatibility
 
 * Removed support for OpenShift 4.8 and 4.9, and Kubernetes 1.21 and 1.22.
 
@@ -20,7 +69,7 @@ May 2023
 
 When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see [Create a new user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user).
 
-### Researcher tools enhancements
+##### Researcher tools enhancements
 
 **OpenShift Dev Spaces**
 
@@ -43,11 +92,11 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
 Comet builds tools that help data scientists, engineers, and team leaders accelerate and optimize machine learning and deep learning models. This integration with Run:ai provides organizations of every size a platform to build better ML models faster. For more information, see [Comet](https://www.comet.com/site/){target=_blank}. For configuration information, see [Comet integration](../admin/integration/comet.md).
 
-## Known issues
+#### Known issues
 
 None
 
-## Fixed issues
+#### Fixed issues
 
 |Internal ID|Description|
 |-----------|--------------|
