@@ -4,8 +4,8 @@
 
 Added
 
-<!-- RUN-9833 -->
-* remote write advanced gpu metrics
+<!-- RUN-9833 
+* remote write advanced gpu metrics - seems to be under the hood and part of the GPU metrics section.-->
 
 <!-- RUN-9548 
 * Export new GPU metrics to Prometheus -->
@@ -14,7 +14,7 @@ Added
 
 | Internal ID | Description                                                         |
 | --------- | ------------------------------------------------------------------ |
-| RUN-9920   | Fixed an issue with policies where an itemized field is not validated properly. |
+| RUN-9920   | Fixed an issue with policies where the `canEdit` rule is not validated properly for itemized fields. |
 | RUN-9912   | Fixed an issue where `runai bash` does not wait for pods to be ready. |
 | RUN-8982   | Fixed an issue with missing images for airgapped installations. |
 
