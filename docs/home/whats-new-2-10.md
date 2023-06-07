@@ -10,8 +10,6 @@ Added
 <!-- RUN-9548 
 * Export new GPU metrics to Prometheus -->
 
-## Version 2.10.11
-
 | Internal ID | Description                                                         |
 | --------- | ------------------------------------------------------------------ |
 | RUN-9920   | Fixed an issue with policies where the `canEdit` rule is not validated properly for itemized fields. |
