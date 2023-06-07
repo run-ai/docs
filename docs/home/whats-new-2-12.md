@@ -20,7 +20,7 @@ May 2023
 
 <!-- RUN-9922 -->
 
-* Added a *Login with SSO* button to the *UI* to support OpenShift environments.
+* Added an option in the *UI* to login as a local user in OpenShift environments.
 
 #### Fixed issues
 
