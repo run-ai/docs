@@ -2,21 +2,25 @@
 
 ## Version 2.10.11
 
+Added
+
+<!-- RUN-9833 -->
+* remote write advanced gpu metrics
+
+<!-- RUN-9548 -->
+* Export new GPU metrics to Prometheus
+
+<!-- RUN-8423 -->
+* Added to the queue controller the ability reconcile queues and update their status in an eventually-consistent manner, but stay consistent across each udpate
 ## Version 2.10.11
 
 | Internal ID | Description                                                         |
 | --------- | ------------------------------------------------------------------ |
-| RUN-9984   | fix identity manager deployment template                            |
-| RUN-9920   | canEdit is not validated properly for itemized fields               |
-| RUN-9915   | fix hard coded image in helm chary backend-deployment               |
-| RUN-9912   | runai bash does not wait for pods                                   |
-| RUN-9833   | remote write advanced gpu metrics                                   |
-| RUN-9548   | Export new GPU metrics to Prometheus                                |
-| RUN-9278   | [master] ocp - cant delete project                                  |
-| RUN-9233   | Kubeflow generic role type                                          |
-| RUN-8982   | container toolkit init container alpine image is missing in air gap |
+| RUN-9920   | Fixed an issue with policies where an itemized field is not validated properly. |
+| RUN-9912   | Fixed an issue where `runai bash` does not wait for pods to be ready. |
+| RUN-8982   | Fixed an issue with missing images for airgapped installations. |
 | RUN-8665   | add DeadlineExceeded, Timeout, Preempted statuses for workspace     |
-| RUN-8423   | Update queue status                                                 |
+
 ## Version 2.10.10
 
 | Internal ID Description   |
