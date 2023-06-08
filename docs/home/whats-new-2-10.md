@@ -2,12 +2,12 @@
 
 ## Version 2.10.11
 
-Added
+<!-- Added
 
-<!-- RUN-9833 
-* remote write advanced gpu metrics - seems to be under the hood and part of the GPU metrics section.-->
+ RUN-9833 
+* remote write advanced gpu metrics - seems to be under the hood and part of the GPU metrics section.
 
-<!-- RUN-9548 
+RUN-9548 
 * Export new GPU metrics to Prometheus -->
 
 | Internal ID | Description                                                         |
