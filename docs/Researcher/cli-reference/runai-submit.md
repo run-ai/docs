@@ -9,7 +9,7 @@ Submit a Run:ai Job for execution.
 
 ## Examples
 
-All examples assume a Run:ai Project has been set using `runai config project <project-name>`.
+All examples assume a Run:ai Project has been setup using `runai config project <project-name>`.
 
 Start an interactive Job:
 
@@ -66,12 +66,25 @@ Submit a Job without a name (automatically generates a name)
 runai submit -i gcr.io/run-ai-demo/quickstart -g 1 
 ```
 
+Submit a job without a name to an external URL:
+
+```console
+runai submit -i ubuntu --interactive --attach -g 1 service-type=external-url --port 3745 --custom-url=<destination_url>
+```
+
+Submit a job without a name to a system generated a URL :
+
+```console
+runai submit -i ubuntu --interactive --attach -g 1 service-type=external-url --port 3745
+```
+
 Submit a Job without a name with a pre-defined prefix and an incremental index suffix
 
 ```console
 runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1 
 ```
 
+ 
 ## Options
 
 ### Job Type
@@ -357,8 +370,17 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### -s | --service-type `<string>`
 
-> External access type to interactive jobs. Options are: portforward (deprecated), loadbalancer, nodeport, ingress.
-  
+> External access type to interactive jobs. Options are:
+    > * `portforward` (deprecated)
+    > * `loadbalancer`
+    > * `nodeport`
+    > * `ingress`
+    > * `external-url`
+
+#### --custom-url `<string>`
+
+> An optional argument that specifies a custom URL when using the `external URL` service type. If not provided, the system will generate a URL automatically.
+
 ### Access Control
 
 #### --allow-privilege-escalation
