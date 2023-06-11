@@ -11,7 +11,7 @@ The **Trainings** interface provides a wizard like experience to submit training
 
 ## Prerequisites
 
-* *Workspaces* must be enabled. 
+* *Workspaces* must be enabled.
 * At least one *Project* must be configured.
 
 !!! Note
@@ -27,5 +27,5 @@ To add a training:
 4. In the *Training name* pane, enter a name for the *Traninng*, then press continue.
 5. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed.
 6. In the *Compute resource* pane, select resources for your tranings or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
-7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Souce*.
+7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 8. When complete, press *Create training*.
