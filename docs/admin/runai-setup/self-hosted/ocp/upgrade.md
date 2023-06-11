@@ -29,7 +29,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 ## Upgrade from Version 2.9 or 2.10.
 
-With version 2.11, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volume is now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled.
+With version 2.12, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volume is now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled.
 
 To remove the ownership, run:
 
