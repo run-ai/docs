@@ -7,16 +7,17 @@ date: 2022-May-30
 ---
 # Trainings
 
-The **Trainings** interface provides a wizard like experience to submit training jobs.
+The **Trainings** interface provides a wizard to make submitting jobs easy.
 
 ## Prerequisites
 
-* *Workspaces* must be enabled.
-* At least one *Project* must be configured.
+You must have:
 
-!!! Note
-    See you system administrator if the prerequisites are not enabled.
+* ***Workspaces*** enabled.
+* At least one ***Project*** configured.
 
+!!! note
+    See your system administrator to ensure the prerequisites are enabled and configured.
 ## Adding Trainings
 
 To add a training:
@@ -29,3 +30,35 @@ To add a training:
 6. In the *Compute resource* pane, select resources for your tranings or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 8. When complete, press *Create training*.
+
+## Managing Trainings
+
+The *Trainings* list contains a list of training jobs that you have created or have access to.
+
+To manage your trainings:
+
+1. Press the 1. Press **Tranings** in the menu.
+2. Select a *Training* from the list.
+3. Choose from the following actions:
+    * **Activate**&mdash;activates the selected training job.
+    * **Stop**&mdash;stops the selected training job.
+    * **Connect**&mdash;connects to the training job's configured environment.
+    * **Copy & edit**&mdash;copies the details of the selected training job to a new training job.
+    * **Delete**&mdash;deletes the current training session.
+    * **Show details**&mdash;displays details about the training job.
+
+### Training details
+
+Training details are displayed using the *Show details* action. The details available per training job include;
+
+* **Event hostory**&mdash;a graph of the job's status over time along with a list of events found in the log.
+* **Metrics**&mdash;a graph of available metrics for the job. Use the drop down select a date and a time slice. Metrics include:
+
+    * GPU utilization
+    * GPU memory useage
+    * CPU useage
+    * CPU memory useage
+
+* **Logs**&mdash;a log file of the current status. Use the download button to save the logs.
+
+To hide the training details, press *Hide details*.

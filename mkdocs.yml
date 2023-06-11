@@ -270,6 +270,7 @@ nav:
             - 'Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
             - 'Workspaces' :  'Researcher/user-interface/workspaces/create/workspace.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
+      - 'Trainings' : 'Researcher/user-interface/trainings.md'
     - 'CLI Reference' :
       - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
       - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
