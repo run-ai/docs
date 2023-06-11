@@ -11,8 +11,11 @@ The **Trainings** interface provides a wizard like experience to submit training
 
 ## Prerequisites
 
-* *Workspaces* must be enabled. If *Workspaces* are not enabled, see your system administrator.
-* At least one *Project* must be configured. If *Projects* are not configured, see your administrator.
+* *Workspaces* must be enabled. 
+* At least one *Project* must be configured.
+
+!!! Note
+    See you system administrator if the prerequisites are not enabled.
 
 ## Adding a Trainings
 
