@@ -17,9 +17,9 @@ The **Trainings** interface provides a wizard like experience to submit training
 !!! Note
     See you system administrator if the prerequisites are not enabled.
 
-## Adding a Trainings
+## Adding Trainings
 
-To add a trainigs:
+To add a training:
 
 1. Press **Tranings** in the menu.
 2. In the *Projects* pane, select the destination project. Use the search box to find projects that are not listed. If you can't find the project, see your system administrator.
