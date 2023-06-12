@@ -73,7 +73,7 @@ RUN sudo chmod 777 /tmp
 After completing the configuration, use the following command to build the image:
 
 ```cli
-docker build . -t gcr.io/run-ai-lab/omer/deepspeed
+docker build . -t gcr.io/run-ai-lab/user/deepspeed
 ```
 
 ## Interactive Workflow
@@ -84,7 +84,7 @@ Using the *CLI*:
 
 ```
 runai submit-mpi \--processes 2 -i
-gcr.io/run-ai-lab/omer/deepspeed-example -g 1 \--command -p team-a \--
+gcr.io/run-ai-lab/user/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
 ```
 
