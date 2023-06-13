@@ -1,5 +1,14 @@
 # Run:ai Version 2.9
 
+## Version 2.9.9
+
+| Internal ID       | Description        |
+| -------- | ----------------------------------------------------------------- |
+| RUN-10333 | Fixed an issue with allowing a fractional GPU value of 0 when submitting jobs via YAML. |
+| RUN-9920   | Fixed an issue with policies where the `canEdit` rule is not validated properly for itemized fields. |
+| RUN-9912   | Fixed an issue where `runai bash` does not wait for pods to be ready. |
+| RUN-9902  | Fixed an issue with Prometheus permissions in OpenShift environments. |
+| RUN-9326 | Fixed an issue that affected the dashboard where projects created with fractional GPUs, display the number of GPUs rounded down to nearest whole number. |
 
 ## Version 2.9.7
 
