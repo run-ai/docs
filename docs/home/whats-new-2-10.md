@@ -4,7 +4,7 @@
 
 | Internal ID | Description   |
 | --------- | -------- |
-| RUN-9383   | [Zalando] nginx login 502 Bad Gateway requires clear browser cookies fixed in 2.9.10 |
+| RUN-9383   | Fixed an issue with a Bad Gateway login due to a browser cookie issue. |
 
 ## Version 2.10.11
 
