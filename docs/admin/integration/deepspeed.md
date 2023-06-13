@@ -84,8 +84,7 @@ Using the *CLI*:
 
 ```
 runai submit-mpi \--processes 2 -i
-gcr.io/run-ai-lab/user
-/deepspeed-example -g 1 \--command -p team-a \--
+gcr.io/run-ai-lab/user/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
 ```
 
