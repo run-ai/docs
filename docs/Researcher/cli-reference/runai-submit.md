@@ -374,7 +374,6 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
     > * `portforward` (deprecated)
     > * `loadbalancer`
     > * `nodeport`
-    > * `ingress`
     > * `external-url`
 
 #### --custom-url `<string>`
