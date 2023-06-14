@@ -128,4 +128,4 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 
 ## Create custom dasbhoards
 
-To create custom dashboards based on the above metrics, please contact Run:ai customer support. 
+To create custom dashboards based on the above metrics, please contact Run:ai customer support.

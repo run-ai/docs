@@ -100,21 +100,21 @@ Cluster wide PVC is now replicated to namespaces that do not have an existing PV
 
 ## Fixed issues
 
-|Internal ID|Description|
-|-----------|--------------|
-| RUN-9196 | Fixed dashboard overview displaying `running_workloads:cpu_only` rule.|
-| RUN-9256 | Now supports the global configuration of memory request of memory-sensitive pods in the cluster.|
-| RUN-9219 | Fixed `runai describe` on pytorch outputs "Is Distributed Workload: false".|
-| RUN-9221 | Fixed CLI `runai describe` job nil pointer exception.|
-| RUN-9220 | Fixed PVC duplication errors so that it does not duplicate for namespaces with the same PVC name and bound PVCs.|
-| RUN-9224 | Fixed Scheduler not reporting the correct event on EFA (status history).|
-| RUN-9189 | Improved Scheduler performance to reclaim action slowness in really big clusters.|
-| RUN-450 | Change "edit boxes" to labels. |
-| RUN-9218 | Added support for `pod-running-timeout` when using `runai port-forward`.|
-| RUN-9252 | Fixed `runai port-forward` to be consistent with `runai bash` (`--target` is now `--pod`).|
-| RUN-9071 | Fixed registries api call crashing the ui when returning an error.|
-| RUN-8794 | Newer dashboards are now deployed for tenants using grafanlabs.|
-| RUN-9212 | Fixed filter jobs by type. As a workaround, you can also you can sort by type.|
+| Internal ID | Description                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------- |
+| RUN-9196    | Fixed dashboard overview displaying `running_workloads:cpu_only` rule.                                           |
+| RUN-9256    | Now supports the global configuration of memory request of memory-sensitive pods in the cluster.                 |
+| RUN-9219    | Fixed `runai describe` on pytorch outputs "Is Distributed Workload: false".                                      |
+| RUN-9221    | Fixed CLI `runai describe` job nil pointer exception.                                                            |
+| RUN-9220    | Fixed PVC duplication errors so that it does not duplicate for namespaces with the same PVC name and bound PVCs. |
+| RUN-9224    | Fixed Scheduler not reporting the correct event on EFA (status history).                                         |
+| RUN-9189    | Improved Scheduler performance to reclaim action slowness in really big clusters.                                |
+| RUN-450     | Change "edit boxes" to labels.                                                                                   |
+| RUN-9218    | Added support for `pod-running-timeout` when using `runai port-forward`.                                         |
+| RUN-9252    | Fixed `runai port-forward` to be consistent with `runai bash` (`--target` is now `--pod`).                       |
+| RUN-9071    | Fixed registries api call crashing the ui when returning an error.                                               |
+| RUN-8794    | Newer dashboards are now deployed for tenants using grafanlabs.                                                  |
+| RUN-9212    | Fixed filter jobs by type. As a workaround, you can also you can sort by type.                                   |
 
 ---------------------
 ## Version 2.10.5
@@ -194,26 +194,26 @@ Added support Ephemeral PVC in CLI and in the job submission form. For more info
 
 ## Known issues
 
-|Internal ID|Description|Workaround|
-|-----------|--------------|--------------|
-| RUN-8695 | SSO users that logged in via SAML can't login again after disabling and reenabling SSO. |     |
-| RUN-8680 | A user in an OCP group with roles that belong to that group should be able to submit a job from the UI. |     |
-| RUN-8601 | Warning when the CLI command `runai suspend` is used.  |     |
-| RUN-8422 | Remove Knative unnecessary requests when inference is not enabled. |     |
-| RUN-7874 | A new job returns `malformed URL` when a project is not connected to a namespace. |     |
-| RUN-6301 | A job in the job list side panel shows both `pending` and `running` at the same time.  |     |
+| Internal ID | Description                                                                                             | Workaround |
+| ----------- | ------------------------------------------------------------------------------------------------------- | ---------- |
+| RUN-8695    | SSO users that logged in via SAML can't login again after disabling and reenabling SSO.                 |            |
+| RUN-8680    | A user in an OCP group with roles that belong to that group should be able to submit a job from the UI. |            |
+| RUN-8601    | Warning when the CLI command `runai suspend` is used.                                                   |            |
+| RUN-8422    | Remove Knative unnecessary requests when inference is not enabled.                                      |            |
+| RUN-7874    | A new job returns `malformed URL` when a project is not connected to a namespace.                       |            |
+| RUN-6301    | A job in the job list side panel shows both `pending` and `running` at the same time.                   |            |
 
 ## Fixed issues
 
-|Internal ID|Description|
-|-----------|--------------|
-| RUN-8223 | Missed foreign key to tenants table. |
-| RUN-5187 | S3 can now be configured to work in airgapped environments. |
-| RUN-8276 | 503 error when creating a workload (request timeout for validation webhook). |
-| RUN-7266 | Allocation bug - a researcher asked for 2 GPU for Interactive Job and other jobs received the allocated GPU within the same node |
-| RUN-8418 | different user when submitting via runai cli and vi ui submit form |
-| RUN-6838 | When submitting a job with port out of range, the job is submitted successfully however the submission actually fails. |
-| RUN-8196 | Nodepools aren't visible in 2.9 UI. |
-| RUN-7435 | Run:ai CLI submit doesn't parse correctly environment variables that end with a '='. |
-| RUN-8192 | The UI shows a deleted job in the Current Jobs tab. |
-| RUN-7776 | User does not exist in the UI due to pagination limitation. |
+| Internal ID | Description                                                                                                                      |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| RUN-8223    | Missed foreign key to tenants table.                                                                                             |
+| RUN-5187    | S3 can now be configured to work in airgapped environments.                                                                      |
+| RUN-8276    | 503 error when creating a workload (request timeout for validation webhook).                                                     |
+| RUN-7266    | Allocation bug - a researcher asked for 2 GPU for Interactive Job and other jobs received the allocated GPU within the same node |
+| RUN-8418    | different user when submitting via runai cli and vi ui submit form                                                               |
+| RUN-6838    | When submitting a job with port out of range, the job is submitted successfully however the submission actually fails.           |
+| RUN-8196    | Nodepools aren't visible in 2.9 UI.                                                                                              |
+| RUN-7435    | Run:ai CLI submit doesn't parse correctly environment variables that end with a '='.                                             |
+| RUN-8192    | The UI shows a deleted job in the Current Jobs tab.                                                                              |
+| RUN-7776    | User does not exist in the UI due to pagination limitation.                                                                      |
