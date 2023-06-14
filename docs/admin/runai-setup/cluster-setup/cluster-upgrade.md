@@ -16,7 +16,7 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 ### Upgrade from version 2.8 or earlier
 
-The process of upgrading from 2.7 or 2.8 to 2.11 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
+The process of upgrading from 2.7 or 2.8 to 2.12 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
 
 !!! Note
     The reason for this process is that Run:ai 2.9 cluster installation no longer installs pre-requisites. As such ownership of dependencies such as Prometheus will be undefined if a `helm upgrade` is run.

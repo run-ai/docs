@@ -29,13 +29,25 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 ## Upgrade from Version 2.9 or 2.10.
 
-With version 2.11, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volume is now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled.
+Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
+#### PVC Ownership
 
-To remove the ownership, run:
+Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control-plane is uninstalled. 
+
+To remove the ownership in an older installation, run:
 
 ```
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
+
+#### Installation Customization
+
+The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
+
+* Find older customizations (Run:ai provides a utility for that).
+* Find the customization in the [optional configurations](./backend.md#optional-additional-configurations) table and add it in the new format. 
+
+
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
 
