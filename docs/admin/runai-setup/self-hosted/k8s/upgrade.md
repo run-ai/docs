@@ -46,9 +46,13 @@ Then create a tls secret and upgrade the control plane as described in the [cont
 
 ### Upgrade from version 2.9 or 2.10
 
-With version 2.12, Run:ai transfers control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
+Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
-To remove the ownership, run:
+#### PVC Ownership
+
+Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control-plane is uninstalled. 
+
+To remove the ownership in an older installation, run:
 
 ```
 kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
@@ -60,10 +64,15 @@ Also, delete the ingress object which will be recreated by the control plane upg
 ```
 kubectl delete ing -n runai-backend runai-backend-ingress
 ```
+#### Installation Customization
 
-Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). 
+The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
+
+* Find older customizations (Run:ai provides a utility for that).
+* Find the customization in the [optional configurations](./backend.md#optional-additional-configurations) table and add it in the new format. 
 
 
+Then create a `tls secret` and upgrade the control plane as described in the [control plane installation](backend.md). 
 
 
 
