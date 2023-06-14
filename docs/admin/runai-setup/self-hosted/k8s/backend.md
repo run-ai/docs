@@ -51,6 +51,18 @@ There may be cases where you need to set additional properties as follows:
 |----------|----------|-------------| 
 | `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
 | `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
+| `global.ingress.ingressClass` |  Ingress class  |  Run:ai default is using NGINX. If your cluster has a different ingress controller, you can configure the ingress class to be created by Run:ai |
+| `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with domain certificate. See [above](#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
+| `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for the Run:ai database  |
+| `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for the Run:ai database  |
+| `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
+| `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
+| `global.imagePullSecrets:` <br> &ensp; `- name: << secret name >>`  | Docker secret | Provide credentials for accessing the organization's docker registry. This is required for air-gapped environments  |
+| `<<component>>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<<component>>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |   
+|<div style="width:200px"></div>| | |
+
+
+
 
 Use the `--set` syntax in the helm command above.  
 
