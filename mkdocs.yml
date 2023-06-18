@@ -242,6 +242,7 @@ nav:
       - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
       - 'Event Messaging': 'admin/integration/messaging.md'
       - 'DeepSpeed': 'admin/integration/deepspeed.md'
+      - 'Comet' : 'admin/integration/comet.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
