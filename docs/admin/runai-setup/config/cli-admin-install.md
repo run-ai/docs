@@ -22,17 +22,21 @@ Download the Run:ai Administrator Command-line Interface by running:
  
 === "Mac"
     ``` bash
-    wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/darwin
+    wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/darwin  # (1) 
+    chmod +x runai-adm
+    sudo mv runai-adm /usr/local/bin/runai-adm
+    ```
+    
+    1. In self-hosted environment, use the control-plane URL instead of `app.run.ai` 
+
+=== "Linux"
+    ``` bash
+    wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/linux  # (1)
     chmod +x runai-adm
     sudo mv runai-adm /usr/local/bin/runai-adm
     ```
 
-=== "Linux"
-    ``` bash
-    wget --content-disposition https://app.run.ai/v1/k8s/admin-cli/linux
-    chmod +x runai-adm
-    sudo mv runai-adm /usr/local/bin/runai-adm
-    ```
+    1. In self-hosted environment, use the control-plane URL instead of `app.run.ai` 
 
 To verify the installation run:
 
