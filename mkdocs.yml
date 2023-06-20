@@ -188,7 +188,6 @@ nav:
       - 'Configuration' : 
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
-
         - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
         - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
@@ -243,6 +242,7 @@ nav:
       - 'Event Messaging': 'admin/integration/messaging.md'
       - 'DeepSpeed': 'admin/integration/deepspeed.md'
       - 'Comet' : 'admin/integration/comet.md'
+      - 'Spark' : 'admin/integration/spark.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
