@@ -27,12 +27,11 @@ Before upgrading the control plane, run:
 kubectl delete --namespace runai-backend --all \
     deployments,statefulset,svc,ing,ServiceAccount
 kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
-for secret in `kubectl get secret -n runai-backend | grep -v helm.sh/release.v1 | grep -v NAME | awk '{print $1}'`; do kubectl delete secrets -n runai-backend $secret; done
 ```
 
 Delete all secrets in the `runai-backend` namespace except the `helm` secret (the secret of type `helm.sh/release.v1`).
 
-Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. if NGINX is enabled in your current installation,as per the default, run the following 2 lines:
 
 ``` bash
 kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
@@ -42,7 +41,7 @@ kubectl delete ingressclass nginx
 
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
-Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). 
+Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
 ### Upgrade from version 2.9 or 2.10
 
@@ -68,8 +67,8 @@ kubectl delete ing -n runai-backend runai-backend-ingress
 
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
 
-* Find older customizations (Run:ai provides a utility for that).
-* Find the customization in the [optional configurations](./backend.md#optional-additional-configurations) table and add it in the new format. 
+* Find previous customizations to the control-plane if such exist. Run:ai provides a utility for that here `wget https://raw.githubusercontent.com/run-ai/docs/v2.12/install/backend/create-self-signed.sh`. For information on how to use this utility please contact Run:ai customer support. 
+* Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
 
 Then create a `tls secret` and upgrade the control plane as described in the [control plane installation](backend.md). 
