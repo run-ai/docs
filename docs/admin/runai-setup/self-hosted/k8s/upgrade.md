@@ -51,6 +51,11 @@ helm get values runai-backend -n runai-backend > old-be-values.yaml
 
 Generate a new backend values file as described [here](backend.md#create-a-control-plane-configuration). Change the new file with the above customization if relevant.
 
+!!! New
+    It is now possible to use a utility to compare old and new control-plane values.     For information on how to use the utility please contact customer support.  To download the utility run:
+    
+    `wget https://raw.githubusercontent.com/run-ai/docs/v2.9/install/backend/cp-helm-vals-diff.sh`. 
+    
 Run the helm command below. 
 
 === "Connected"
