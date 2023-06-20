@@ -20,12 +20,10 @@ Before upgrading the control plane, run:
 kubectl delete --namespace runai-backend --all \
     deployments,statefulset,svc,routes,ServiceAccount
 kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
-for secret in `kubectl get secret -n runai-backend | grep -v helm.sh/release.v1 | grep -v NAME | awk '{print $1}'`; do kubectl delete secrets -n runai-backend $secret; done
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
-Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
-
+Then upgrade the control plane as described [below](#upgrade-the-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
 ## Upgrade from Version 2.9 or 2.10.
 
@@ -44,8 +42,8 @@ kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotation
 
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
 
-* Find older customizations (Run:ai provides a utility for that).
-* Find the customization in the [optional configurations](./backend.md#optional-additional-configurations) table and add it in the new format. 
+* Find previous customizations to the control-plane if such exist. Run:ai provides a utility for that here `wget https://raw.githubusercontent.com/run-ai/docs/v2.12/install/backend/create-self-signed.sh`. For information on how to use this utility please contact Run:ai customer support. 
+* Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format.  
 
 
 
