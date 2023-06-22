@@ -81,50 +81,6 @@ To schedule the executors on GPUs, add the following flags:
 --conf spark.executor.resource.gpu.discoveryScript=/opt/spark/examples/src/main/scripts/getGpusResources.sh \
 ```
 
-### Spark Pods
-
-The created pods have several labels that unite them into pod groups. Ensure that the `driver` pod is the owner of the others.
-
-example executor pod metadata:
-
-labels:
-
-```
-runai/queue: team-a
-
-spark-app-name: spark-pi
-
-spark-app-selector: spark-77204fbefcd04f1bb63816fcf9528cf1
-
-spark-exec-id: "1"
-
-spark-exec-resourceprofile-id: "0"
-
-spark-role: executor
-
-spark-version: 3.4.0
-
-name: spark-pi-e86f4788619be7a1-exec-1
-
-namespace: runai-team-a
-
-ownerReferences:
-
-- apiVersion: v1
-
-controller: true
-
-kind: Pod
-
-name: spark-pi-f4445788619bd784-driver
-
-uid: 951d5bdb-cea8-41e8-998b-9c6fb6dff846
-
-![Shape1](RackMultipart20230620-1-fcrkwu_html_932f45e5bf08d98e.gif)
-```
-
-The driver has a set amount of jobs to distribute, and will use any available executors to finish them. So, if only two executors are running and 6 jobs are available each one will execute 3 jobs.
-
 ## See also
 
 [1] [Demo: Running Spark Examples on minikube](https://jaceklaskowski.github.io/spark-kubernetes-book/demo/running-spark-examples-on-minikube/)
