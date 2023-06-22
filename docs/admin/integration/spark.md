@@ -24,7 +24,7 @@ k create serviceaccount spark -n spark-demo
 k create clusterrolebinding spark-role --clusterrole edit --serviceaccount spark-demo:spark -n spark-demo
 ```
 
-Change the namespace to `<your_K8s_Namespace>`.
+Change the namespace to `runai-<your_runai-project-name>`.
 
 ### Docker Images
 
@@ -33,16 +33,10 @@ We need to build docker images and push them to either a public repository or lo
 To build the images run:
 
 ```
-./bin/docker-image-tool.sh -t <image_name> build
-```
+./bin/docker-image-tool.sh -t <image_tag> build
 
-An image named `<image_name` will be created.
+Then push the docker image to your repository:
 
-Then load it into your kind cluster:
-
-```
-kind load docker-image spark:<image_name> --name \<CLUSTER\_NAME\>
-```
 
 ### Submitting jobs
 
