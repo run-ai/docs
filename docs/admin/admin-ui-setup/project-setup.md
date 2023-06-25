@@ -41,7 +41,7 @@ By default, the amount of over-quota available for Project members is proportion
 
 As an administrator, you may want to disconnect the two parameters. So, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
 
-* Under `General | Settings` turn on the `Enable Over-quota Priority` feature
+* Under `Settings | General` turn on the `Enable Over-quota Priority` feature
 * When creating a new Project, you can now see a slider for over-quota priority ranging from `None` to `High` 
 
 

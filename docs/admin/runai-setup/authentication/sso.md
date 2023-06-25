@@ -242,7 +242,7 @@ Check in the above that:
 
 ## Step 2: Cluster Authentication
 
-Researchers should be authenticated when accessing the Run:ai GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must **do so again** and replace the client-side and server-side configuration values with the new values as provided by on `General | Settings | Researcher Authentication`.
+Researchers should be authenticated when accessing the Run:ai GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must **do so again** and replace the client-side and server-side configuration values with the new values as provided by on `Settings | General | Researcher Authentication`.
 
 ### Connectivity test
 
