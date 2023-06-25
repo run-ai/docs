@@ -15,7 +15,7 @@ This requires several steps:
 
 <!-- ### Enable Researcher Authentication
 
-* Open the Run:ai user interface and navigate to `General | Settings`. 
+* Open the Run:ai user interface and navigate to `Settings | General`. 
 * Enable the flag _Researcher Authentication_ (should be enabled by default for new tenants).
 * There are values for `Realm`, `client configuration`, and `server configuration` which appear on the screen. Use them as below.  -->
 
@@ -37,7 +37,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
 === "Native Kubernetes"
     * Locate the Kubernetes API Server configuration file. The file's location may differ between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
-    * Edit the document, under the `command` tag, add the __server__ configuration text from `General | Settings | Researcher Authentication`.   
+    * Edit the document, under the `command` tag, add the __server__ configuration text from `Settings | General | Researcher Authentication`.   
     * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
     ```
@@ -60,7 +60,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
             
     ```
 
-    1. These are example parameters. Copy the actual parameters from from `General | Settings | Researcher Authentication` as described above.
+    1. These are example parameters. Copy the actual parameters from from `Settings | General | Researcher Authentication` as described above.
 
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
@@ -181,7 +181,7 @@ To control access to Run:ai (and Kubernetes) resources, you must modify the Kube
 
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers. 
 
-* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with text from `General | Settings | Researcher Authentication` | `Client Configuration`. 
+* Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with text from `Settings | General | Researcher Authentication` | `Client Configuration`. 
 * Under `contexts | context | user` change the user to `runai-authenticated-user`.
 
 
