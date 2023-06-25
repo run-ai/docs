@@ -31,8 +31,7 @@ Each Project is associated with a total quota of GPU and CPU resources (CPU Comp
 
 Beyond that, a user of this Project can receive an __over-quota__ (The administrator needs to enable over quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
-
-!!! Important 
+!!! Important
     Best practice: As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
 
 ### Controlling Over-Quota Behavior
@@ -41,9 +40,8 @@ By default, the amount of over-quota available for Project members is proportion
 
 As an administrator, you may want to disconnect the two parameters. So, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
 
-* Under `General | Settings` turn on the `Enable Over-quota Priority` feature
+* Under `Settings | General` turn on the `Enable Over-quota Priority` feature
 * When creating a new Project, you can now see a slider for over-quota priority ranging from `None` to `High` 
-
 
 ## Create a Project
 
