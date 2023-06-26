@@ -17,9 +17,8 @@ title: Upgrade self-hosted OpenShift installation
 Before upgrading the control plane, run: 
 
 ``` bash
-kubectl delete --namespace runai-backend --all \
-    deployments,statefulset,svc,routes,ServiceAccount
-kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
+kubectl delete secret -n runai-backend runai-backend-postgresql
+kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
