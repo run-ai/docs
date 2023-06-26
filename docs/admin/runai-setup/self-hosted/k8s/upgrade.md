@@ -23,14 +23,11 @@ title: Upgrade self-hosted Kubernetes installation
 Before upgrading the control plane, run: 
 
 ``` bash
-kubectl delete --namespace runai-backend --all \
-    deployments,statefulset,svc,ing,ServiceAccount
-kubectl delete svc -n kube-system runai-cluster-kube-prometh-kubelet
+kubectl delete secret -n runai-backend runai-backend-postgresql
+kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
 
-Delete all secrets in the `runai-backend` namespace except the `helm` secret (the secret of type `helm.sh/release.v1`).
-
-Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. if NGINX is disabled in your current installation then __do not__ run the following 2 lines. 
+Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
 
 ``` bash
 kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
