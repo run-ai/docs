@@ -1,0 +1,58 @@
+name: publish mkdocs docs CI 
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: false
+        description: 'Version number from branch / "main" for latest'
+#        default: "main"
+        type: string
+      alias:
+        required: false
+        description: 'Version alias / "latest" for latest'
+#        default: "latest"
+        type: string
+      title:
+        required: false
+        description: 'Doc site dropdown menu title (version +/- latest)'
+#        default: "latest"
+        type: string
+      latest:
+        required: false
+        description: 'Mark version version as latest'
+        type: string  
+
+  # pull_request:
+  #   branches:
+  #     - "main"
+
+jobs:
+  install_dependencies_and_deploy:
+    name: install dependencies and deploy latest changes to prod
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout latest
+          uses: actions/checkout@v3
+          with:
+            ref: ${{ inputs.version }}
+            submodules: true
+            fetch-depth: 0
+
+        - name: setup python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'
+            cache: 'pip' # caching pip dependencies
+
+        - name: install dependencies
+          run: |
+           pip3 install -r requirements.txt
+        
+        - name: Configure Git User
+          run: |
+            git config user.name "circleci-runai"
+            git config user.email "circleci-runai@run.ai"
+        
+        - name : MKDocs deploy
+          run: mkdocs gh-deploy --force
