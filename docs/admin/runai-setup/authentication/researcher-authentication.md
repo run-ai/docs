@@ -106,6 +106,8 @@ Modifying the API Server configuration differs between Kubernetes distributions:
         --kubeconfig=developer-kubeconfig
     ```
 
+    (this will require installing the kubectl oidc plug-in as described in the Anthos document above `gcloud components install kubectl-oidc`)
+    
     Then modify the `developer-kubeconfig` file as described in the [Command-line Inteface Access](researcher-authentication.md#command-line-interface-access) section below.
 
 === "EKS"
