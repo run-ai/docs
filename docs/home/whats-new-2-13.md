@@ -12,6 +12,8 @@
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
 
+Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../docs/admin/integration/spark.md)
+
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
