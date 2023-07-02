@@ -49,6 +49,7 @@ Added SWEEP to Weights and Biases job submission. Sweep combines a strategy for 
 <!-- RUN-8891/8959 Comet integration in workspace  - released in 2.12 -->
 
 <!-- RUN-9530/9577 Added node pools and Departments to Dashboard -->
+Added to the main dashboard, a dropdown filter for node pools and Departments.
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 
