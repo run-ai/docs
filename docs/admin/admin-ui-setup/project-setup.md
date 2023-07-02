@@ -1,6 +1,6 @@
 ## Introduction
 
-Researchers submit Jobs. To streamline resource allocation and prioritize work, Run:ai introduces the concept of __Projects__. Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
+Researchers submit Jobs. To streamline resource allocation and prioritize work, Run:ai introduces the concept of **Projects**. Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
 
 A Researcher submitting a Job needs to associate a Project name with the request. The Run:ai scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
 
@@ -25,9 +25,9 @@ An administrator can set a Project's `default priority list` of node pools. In c
 
 ## Project Quotas
 
-Each Project is associated with a total quota of GPU and CPU resources (CPU Compute & CPU Memory) that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is __guaranteed quota__ in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status in the cluster is.
+Each Project is associated with a total quota of GPU and CPU resources (CPU Compute & CPU Memory) that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is **guaranteed quota** in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status in the cluster is.
 
-Beyond that, a user of this Project can receive an __over-quota__ (The administrator needs to enable over quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. __However, these GPUs can be taken away at a moment's notice__. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
+Beyond that, a user of this Project can receive an **over-quota** (The administrator needs to enable over quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. **However, these GPUs can be taken away at a moment's notice**. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 !!! Important
     Best practice: As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
@@ -36,7 +36,7 @@ Beyond that, a user of this Project can receive an __over-quota__ (The administr
 
 By default, the amount of over-quota available for Project members is proportional to the original quota provided above. The [Run:ai scheduler document](../../Researcher/scheduling/the-runai-scheduler.md) provides further examples which show how over-quota is distributed amongst competing Projects.
 
-As an administrator, you may want to disconnect the two parameters. So, for example, a Project with a high __quota__ will receive little or no __over__-quota. To perform this:
+As an administrator, you may want to disconnect the two parameters. So, for example, a Project with a high **quota** will receive little or no **over**-quota. To perform this:
 
 * Under `Settings | General` turn on the `Enable Over-quota Priority` feature
 * When creating a new Project, you can now see a slider for over-quota priority ranging from `None` to `High`
@@ -44,7 +44,7 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 ## Create a Project
 
 !!! Note
-    To be able to create or edit Projects, you must have _Editor_ access. See the [Users](admin-ui-users.md) documentation.
+    To be able to create or edit Projects, you must have *Editor* access. See the [Users](admin-ui-users.md) documentation.
 
 * Login to the Projects area of the Run:ai user interface at `<company-name>.run.ai`.
 * On the top right, select "Add New Project"
@@ -53,7 +53,7 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 
 ## Assign Users to Project
 
-When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional _Access Control_ tab. The tab will allow you to assign Researchers to their Projects.
+When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.
 
 If you are using Single-sign-on, you can also assign Groups
 
@@ -103,7 +103,7 @@ To create a node pool with the chosen common label use the [create node pool](ht
 By default, all node pools are associated with every Project and Department using zero resource allocation. This means that by default any Project can use any node-pool if Over-Quota is set for that Project, but only for preemptible workloads (i.e. Training workloads or Interactive using Preemptible flag).
 
 * To guarantee resources for all workloads including non-preemptible workloads, the administrator should allocate resources in node pools.
-* Go to the _Node Pools_ tab under Project and set a quota to any of the node pools (GPU resources, CPU resources) you want to use.
+* Go to the *Node Pools* tab under Project and set a quota to any of the node pools (GPU resources, CPU resources) you want to use.
 * To set the Project's default node pool's order of priority, you should set the precedence of each node pool, this is done in the Project's node pool tab.
 * The node pool default priority order is used if the workload did not specify its preferred node pool(s) list of priority.
 * To mandate a Workload to run on a specific node pool, the Researcher should specify the node pool to use for a workload.
@@ -126,20 +126,20 @@ To annotate a specific node with the label "dgx-2", run:
 kubectl label node <node-name> run.ai/type=dgx-2
 ```
 
-* Each node can only be annotated with a __single__ label.
+* Each node can only be annotated with a **single** label.
 * You can annotate multiple nodes with the same label.
 
 #### Setting Affinity for a Specific Project
 
-To mandate __training__ Jobs to run on specific node groups:
+To mandate **training** Jobs to run on specific node groups:
 
 * Create a Project or edit an existing Project.
-* Go to the _Node Affinity_ tab and set a limit to specific node groups.
+* Go to the *Node Affinity* tab and set a limit to specific node groups.
 * If the label does not yet exist, press the + sign and add the label.
 * Press Enter to save the label.
 * Select the label.
 
-To mandate __interactive__ Jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
+To mandate **interactive** Jobs to run on specific node groups, perform the same steps under the "interactive" section in the Project dialog.
 
 #### Further Affinity Refinement by the Researcher
 
@@ -150,12 +150,12 @@ The Researcher can limit the selection of node groups by using the CLI flag ``--
 As interactive sessions involve human interaction, Run:ai provides an additional tool to enforce a policy that sets the time limit for such sessions. This policy is often used to handle situations like researchers leaving sessions open even when they do not need to access the resources.
 
 !!! Warning
-    This feature will cause containers to automatically stop. Any work not saved to a shared volume will be lost
+    This feature will cause containers to automatically stop. Any work not saved to a shared volume will be lost.
 
 To set a duration limit for interactive Jobs:
 
 * Create a Project or edit an existing Project.
-* Go to the _Time Limit_ tab
+* Go to the *Time Limit* tab
 * You can limit interactive Jobs using two criteria:
     * Set a hard time limit (day, hour, minute) to an Interactive Job, regardless of the activity of this Job, e.g. stop the Job after 1 day of work.
     * Set a time limit for Idle Interactive Jobs, i.e. an Interactive Job idle for X time is stopped. Idle means no GPU activity.
@@ -168,7 +168,7 @@ In some use cases, you would like to stop Training Jobs if X time elapsed since 
 To set a duration limit for Training Jobs:
 
 * Create a Project or edit an existing Project.
-* Go to the _Time Limit_ tab:
+* Go to the *Time Limit* tab:
     * Set a time limit for Idle Training Jobs, i.e. a Training Job idle for X time is stopped. Idle means no GPU activity.
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
