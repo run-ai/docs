@@ -42,5 +42,4 @@ To submit a sweep configuration for your Run:ai job:
 After you have completed the job setup, press submit.
 
 If successful, you should see in the logs that the job is running and a connection to wandb's.
-
-1. Go to your wandb web app, open the sweeps page, then open the last sweep created, you should see data there.
+Then, go to your wandb web app, open the sweeps page, then open the last sweep created, you should see data there.
