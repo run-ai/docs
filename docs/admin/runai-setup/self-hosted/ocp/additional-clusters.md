@@ -15,7 +15,7 @@ As described [here](./prerequisites.md#openshift), the OpenShift cluster that is
 ## Configuration
 The exact configuration details must be worked together with Run:ai customer support. 
 
-## Cluster Installation
+## Additional Cluster Installation
 
 Create a new cluster, then:
 
