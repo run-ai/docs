@@ -27,13 +27,16 @@ To configure a project, see [Projects]().
 <!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
 **Nodes**
 
-A node is a worker machine that runs workloads, and a node pool is group of nodes within a cluster that all have the same configuration. Node pools use node labels as its identification. Run:ai has added a table for viewing nodes and for configuring node pools. To configure a node pool, see [Configuring node pools]().
+A node is a worker machine that runs workloads, and a node pool is group of nodes within a cluster that all have the same configuration. Node pools use node labels as its identification. Run:ai has added a table for viewing nodes and for configuring node pools. To configure a node pool, see [Configuring node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
 
 Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#)
 
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
+Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide). 
+
+Added to the node pool grid columns to indicate the current placement Strategy per node pool (Bin Pack or Spread).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
