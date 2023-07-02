@@ -1,21 +1,26 @@
 # Installing additional Clusters
 
-The first Run:ai cluster is typically installed on the same OpenShift cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on __different OpenShift clusters__.
+The first Run:ai cluster is typically installed on the same OpenShift cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on different OpenShift clusters.
 
-The instructions are for Run:ai version __2.12__ and up.
+The instructions are for Run:ai version __2.13__ and up.
+
+!!! Limitation
+    The current implementation of multiple OpenShift clusters allows __reading__ the content of multiple clusters but does not allow __writing__ into more than one cluster at a time. When you log in, you do so in the context of a specific cluster. If you try to (for example) submit a Job to the second cluster, you will be prompted to log in to that cluster. 
 
 ## Prerequisites
 
-As described [here](./prerequisites.md#openshift), the OpenShift cluster that is hosting the new Run:ai cluster must be configured to the same IdP as the OpenShift cluster hosting the control-plane. 
+As described [here](./prerequisites.md#openshift), the OpenShift cluster that is hosting the new Run:ai cluster must be configured to the same IdP as the OpenShift cluster hosting the control plane. 
 
+
+## Configuration
 The exact configuration details must be worked together with Run:ai customer support. 
 
-## Installation
+## Cluster Installation
 
 Create a new cluster, then:
 
 * Select a target platform `OpenShift` 
 * Select a Cluster location `Remote to Control Plane`.
-* You must enter a very specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
+* You must enter a specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
 * Ignore the instructions for creating a secret.
 
