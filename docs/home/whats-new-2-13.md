@@ -62,6 +62,10 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
+## Installation
+
+In older versions of Run:ai, when upgrading a cluster, the process required the "upgrading of Kubernetes CRDs". See for example [here](https://docs.run.ai/v2.9/admin/runai-setup/cluster-setup/cluster-upgrade/#upgrade-to-version-29-from-an-earlier-version){target=_blank}. This step now happens automatically.
+ 
 ### Known issues
 
 ### Fixed issues
