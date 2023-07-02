@@ -44,14 +44,15 @@ Added to the node pool grid columns to show the current placement Strategy per n
 
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 
-Added SWEEP to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). Ton configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
+Added SWEEP to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
 <!-- RUN-8891/8959 Comet integration in workspace  - released in 2.12 -->
 
 <!-- RUN-9530/9577 Added node pools and Departments to Dashboard -->
-Added to the main dashboard, a dropdown filter for node pools and Departments.
+Added to the Overview and the Analytics dashboards, a dropdown filter for node pools.
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
+
 
 <!-- RUN-8631/8880 Researcher API for train jobs -->
 
