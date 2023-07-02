@@ -5,7 +5,7 @@ The first Run:ai cluster is typically installed on the same OpenShift cluster as
 The instructions are for Run:ai version __2.13__ and up.
 
 !!! Limitation
-    The current implementation of multiple OpenShift clusters allows __reading__ the content of multiple clusters but does not allow __writing__ into more than one cluster at a time. When you log in, you do so in the context of a specific cluster. If you try to (for example) submit a Job to the second cluster, you will be prompted to log in to that cluster. 
+    When you log in, you do so in the context of a specific cluster. When you switch to a different cluster, you will be prompted to log in to that cluster. 
 
 ## Prerequisites
 
