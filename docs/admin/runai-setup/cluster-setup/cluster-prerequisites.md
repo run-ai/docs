@@ -199,7 +199,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 
 ### Distributed Training
 
-Run:ai supports three different methods to ditribute training jobs across multiple nodes"
+(Optional) Run:ai supports three different methods to distributed training jobs across multiple nodes:
 
 * MPI
 * TensorFlow
@@ -213,7 +213,7 @@ kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/stand
 
 ### Inference
 
-To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
+(Optional) To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
 
 Post-install, you must configure Knative to use the Run:ai scheduler and allow pod affinity, by running: 
 
