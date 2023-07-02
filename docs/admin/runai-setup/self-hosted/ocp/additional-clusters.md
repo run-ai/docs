@@ -1,22 +1,26 @@
 # Installing additional Clusters
 
-The first Run:ai cluster is typically installed on the same OpenShift cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on __different OpenShift clusters__.
+The first Run:ai cluster is typically installed on the same OpenShift cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on different OpenShift clusters.
 
-The instructions are for Run:ai version __2.12__ and up.
+The instructions are for Run:ai version __2.13__ and up.
 
-## Prerequisites
+!!! Limitation
+    When you log in, you do so in the context of a specific cluster. When you switch to a different cluster, you will be prompted to log in to that cluster. 
 
-As described [here](./prerequisites.md#openshift), the OpenShift cluster that is hosting the new Run:ai cluster must be configured to the same IdP as the OpenShift cluster hosting the control-plane. 
-
+## Configuration
 The exact configuration details must be worked together with Run:ai customer support. 
 
-## Installation
+## Additional Cluster Installation
 
 Create a new cluster, then:
 
 * Select a target platform `OpenShift` 
 * Select a Cluster location `Remote to Control Plane`.
-* You must enter a very specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
+* You must enter a specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
 * Ignore the instructions for creating a secret.
 
-<!-- TODO - add here note for selecting a cluster where you would like to work. -->
+## Login
+
+When configured, you will see an option to choose a cluster at the bottom of the login screen:
+
+![](img/ocp-multi-cluster-login.png)
