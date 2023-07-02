@@ -22,7 +22,7 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 ### Operating System
 
 * Run:ai will work on any __Linux__ operating system that is supported by __both__ Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. 
-* An important highlight is that GKE (Google Kubernetes Engine) will only work with Ubuntu, as NVIDIA [do not support](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/google-gke.html#about-using-the-operator-with-google-gke) the default _Container-Optimized OS with Containerd_ image.
+* An important highlight is that GKE (Google Kubernetes Engine) will only work with Ubuntu, as NVIDIA [does not support](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/google-gke.html#about-using-the-operator-with-google-gke) the default _Container-Optimized OS with Containerd_ image.
 * Run:ai performs its internal tests on Ubuntu 20.04 and CoreOS for OpenShift. 
 
 ### Kubernetes
