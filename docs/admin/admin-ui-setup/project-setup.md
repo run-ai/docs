@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Researchers submit Jobs. To streamline resource allocation and prioritize work, Run:ai introduces the concept of **Projects**. Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
 
@@ -81,6 +81,7 @@ Node pools represent an independent scheduling domain per Project, therefore are
 Note that using node pools and affinities narrows down the scope of nodes a specific project is eligible to use. It, therefore, reduces the odds of a specific workload under that Project getting scheduled. In some cases, this may reduce the overall system utilization.
 
 #### Grouping Nodes using Node Pools  
+
 To create a node pool you must first annotate nodes with a label or use an existing node label, as the key for grouping nodes into pools. You can use any unique label (in the format `key:value`) to form a node pool. a node pool is characterized by a label but also has its own unique node pool name.
 
 To get the list of nodes and their current labels, run:
@@ -94,6 +95,7 @@ To annotate a specific node with the label `dgx-2`, run:
 ```
 kubectl label node <node-name> node-model=dgx-2
 ```
+
 You can annotate multiple nodes with the same label.
 
 To create a node pool with the chosen common label use the [create node pool](https://app.run.ai/api/docs/#/NodePools/createNodePool){target=_blank} Run:ai API.
