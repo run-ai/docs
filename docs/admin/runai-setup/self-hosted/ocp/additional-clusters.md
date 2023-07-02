@@ -7,11 +7,6 @@ The instructions are for Run:ai version __2.13__ and up.
 !!! Limitation
     When you log in, you do so in the context of a specific cluster. When you switch to a different cluster, you will be prompted to log in to that cluster. 
 
-## Prerequisites
-
-As described [here](./prerequisites.md#openshift), the OpenShift cluster that is hosting the new Run:ai cluster must be configured to the same IdP as the OpenShift cluster hosting the control plane. 
-
-
 ## Configuration
 The exact configuration details must be worked together with Run:ai customer support. 
 
