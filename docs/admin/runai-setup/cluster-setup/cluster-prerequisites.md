@@ -199,7 +199,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 
 ### Distributed Training
 
-(Optional) Run:ai supports three different methods to distributed training jobs across multiple nodes:
+(Optional) Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
 * MPI
 * TensorFlow
