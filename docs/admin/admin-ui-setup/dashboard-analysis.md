@@ -13,12 +13,13 @@ There are 4 dashboards:
 
 The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster, including:
 
-* The number of available and allocated resources and their cluster-wide utilization
-* The number of running and pending **Jobs**, their utilization, information on Jobs with errors or Jobs with idle GPUs
-* Active **Projects**, their assigned and allocated GPUs and number of running and pending Jobs
+* The number of available and allocated resources and their cluster-wide utilization.
+* The number of running and pending **Jobs**, their utilization, information on Jobs with errors or Jobs with idle GPUs.
+* Active **Projects**, their assigned and allocated GPUs and number of running and pending Jobs.
+
+The dashboard has a dropdown filter for node pools and Departments. From the dropdown, select one or more node pools. The default setting is `all`.
 
 Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
-
 
 ### Jobs with idle GPUs
 

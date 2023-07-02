@@ -21,3 +21,25 @@ The researcher must then create a [Workspace](../../Researcher/user-interface/wo
 To configure the Weights and Biases tool, for the environemnt variable name `WANDB_results_URL` value, enter the ULR of the destination where the results are to be delivered.
 
 This will create a link, that will automatically open a new tab directly from your Workspace to your exact Weights and Biases project.
+
+## Sweep COnfiguration
+
+To enable the WANDB sweep feature:
+
+1. Open the settings page.
+2. Toggle on the wandb sweep feature and enter the base URL, then press save.
+
+To submit a sweep configuration for your Run:ai job:
+
+1. Open the submit job page, ans select *training*.
+2. Open the *WANDB sweep*** section, and toggle the *Sweep configuration* switch.
+3. Enter your YAML configuration file.
+4. Enter the Weight & Biases entity name.
+5. Enter the Weights & Biases project name (optional).
+6. Enter the Weights & Biases API Key.
+7. Enter a count (optional).
+
+After you have completed the job setup, press submit.
+
+If successful, you should see in the logs that the job is running and a connection to wandb's.
+Then, go to your wandb web app, open the sweeps page, then open the last sweep created, you should see data there.
