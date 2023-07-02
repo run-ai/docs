@@ -24,6 +24,35 @@ An administrator should assign resources from a node pool to a project for which
 
 Creating a new node pool and assigning resources from a node pool to Projects and Departments is an operation limited to Administrators only. Researchers can use node pools when submitting a new workload. By specifying the node pool from which a workload allocates resources, the scheduler shell launch that workload on a node that is part of the specified node pool. If no node-pool is selected by a workload, the ‘Default’ node-pool is used.
 
+### Creating new node pools
+
+To create a node pool:
+
+1. From the left menu select *Nodes* then *Node Pools*.
+2. Press *New Nodepool*
+3. Enter a name, label, and value for the node pool.
+4. Select a *GPU* or *CPU* placement strategy. Press *Save* when complete.
+
+To assign nodes to a node pool:
+
+1. Get the list of nodes and their current labels using the following command:
+
+```
+kubectl get nodes --show-labels
+```
+
+2. Annotate a specific node with a new label using the following command:
+
+```
+kubectl label node <node-name> <key>=<value>
+```
+
+!!! Note
+    * You can annotate multiple nodes with the same label.
+
+To create a node pool with the chosen common label use the [create node pool](https://app.run.ai/api/docs/#/NodePools/createNodePool){target=_blank} Run:ai API.
+
+
 ## Multiple Node Pools Selection
 
 :octicons-versions-24: Version 2.9 and up

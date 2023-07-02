@@ -19,3 +19,4 @@ Create a new cluster, then:
 * You must enter a very specific cluster URL with the format `https://runai.apps.<BASE_DOMAIN>`. To get the base Domain run `oc get dns cluster -oyaml | grep baseDomain`
 * Ignore the instructions for creating a secret.
 
+<!-- TODO - add here note for selecting a cluster where you would like to work. -->
