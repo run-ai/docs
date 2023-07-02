@@ -249,7 +249,7 @@ Inference workloads will typically be accessed by consumers residing outside the
 
 However, for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
 
-??? "Altenative Configuration"
+??? "Alternative Configuration"
     When the above DNS configuration is not possible, you can manually add the `Host` header to the REST request as follows:
 
     * Get an `<external-ip>` by running `kubectl get service -n kourier-system kourier`. If you have been using _istio_ during Run:ai installation, run:  `kubectl -n istio-system get service istio-ingressgateway` instead. 
