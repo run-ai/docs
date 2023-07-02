@@ -8,9 +8,9 @@ The following is a checklist of the Run:ai prerequisites:
 |--------------|---------|
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
-| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
-| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
-| [Trusted domain name](#cluster-url) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
+| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). | 
+| [Prometheus](#prometheus) | Install Prometheus. | 
+| [Trusted domain name](#cluster-url) | You must provide a trusted domain name. Accessible only inside the organization | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow Training Operator if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
@@ -352,21 +352,6 @@ gcr.io/run-ai-prod
 </td>
 </tr>
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Cert Manager </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>53</p>
-</td>
-
 </tbody>
 </table>
 
@@ -414,20 +399,6 @@ In addition, once running, Run:ai requires an outbound network connection to the
 </td>
 </tr>
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Cert Manager </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>53</p>
-</td>
 
 </tbody>
 </table>
