@@ -10,7 +10,7 @@ The following is a checklist of the Run:ai prerequisites:
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
 | [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
 | [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
-| [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
+| [Trusted domain name](#cluster-url) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow Training Operator if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
@@ -154,16 +154,11 @@ For support of ingress controllers different than NGINX please contact Run:ai cu
 !!! Note
     In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, there is no need to install an ingress controller as it is pre-installed by the control plane.
 ### Cluster URL
+<!-- the following anchors are added for backward compatibility for what's new of 2.8  -->
+<h3 id="cluster-ip"></h3>
+<h3 id="domain-name"></h3>
 
-The Run:ai user interface requires a URL to the Kubernetes cluster. You can use a domain name (FQDN) or an IP Address (deprecated).
-
-!!! Note
-    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
-#### Domain Name 
-
-:octicons-versions-24: Version 2.8 and up.
-
-You must supply a domain name as well as a __trusted__ certificate for that domain. 
+The Run:ai cluster creation wizard requires a domain name (FQDN) to the Kubernetes cluster as well as a __trusted__ certificate for that domain. The domain name needs to be accessible inside the organization only.
 
 Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP.
 
@@ -181,53 +176,9 @@ kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
 
 For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
-#### Cluster IP
+!!! Note
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
 
-(Deprecated in version 2.8, no longer available in version 2.9)
-
-Following are instructions on how to get the IP and set firewall settings. 
-
-
-=== "Unmanaged Kubernetes" 
-    * Use the node IP of any of the Kubernetes nodes. 
-    * Set up the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
-
-=== "Unmanaged Kubernetes on the cloud" 
-    * Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. 
-    * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
-
-
-=== "EKS"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-    ```
-
-=== "GKE"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    ```
 
 ### Prometheus 
 
