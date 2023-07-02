@@ -36,7 +36,7 @@ Added support for SPARK and Elastic jobs. For more information, see [Running SPA
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide).
 
-Added to the node pool grid columns to indicate the current placement Strategy per node pool (Bin Pack or Spread).
+Added to the node pool grid columns to show the current placement Strategy per node pool (Bin Pack or Spread).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
