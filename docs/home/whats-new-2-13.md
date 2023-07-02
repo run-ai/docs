@@ -64,7 +64,7 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 ## Installation
 
-The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version of Run:ai.
+The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
 ### Known issues
 
 ### Fixed issues
