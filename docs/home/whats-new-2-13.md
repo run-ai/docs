@@ -36,7 +36,7 @@ Added support for SPARK and Elastic jobs. For more information, see [Running SPA
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide).
 
-Added to the node pool grid columns to show the current placement Strategy per node pool (Bin Pack or Spread).
+Added to the node pool grid, columns to show the current placement Strategy per node pool (Bin Pack or Spread).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
@@ -44,7 +44,7 @@ Added to the node pool grid columns to show the current placement Strategy per n
 
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 
-Added SWEEP to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
+Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
 <!-- RUN-8891/8959 Comet integration in workspace  - released in 2.12 -->
 
