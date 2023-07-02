@@ -116,8 +116,6 @@ Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The inter
 
 ### Ingress Controller
 
-:octicons-versions-24: Version 2.8 and up.
-
 Run:ai requires an ingress controller as a prerequisite. The Run:ai cluster installation configures one or more ingress objects on top of the controller. 
 
 There are many ways to install and configure an ingress controller and configuration is environment-dependent. A simple solution is to install & configure _NGINX_:
@@ -182,56 +180,36 @@ For more information on how to create a TLS secret see: [https://kubernetes.io/d
 
 ### Prometheus 
 
+If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
 
-=== "Version 2.9 or later" 
-    If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
-    
-    !!! Note
-        * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
-        * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
+!!! Note
+    * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
+    * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
 
-    Then install the Prometheus stack by running:
-    
-    ``` bash
-    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-    helm repo update
-    helm install prometheus prometheus-community/kube-prometheus-stack \
-        -n monitoring --create-namespace --set grafana.enabled=false # (1)
-    ```
+Then install the Prometheus stack by running:
 
-    1. The Grafana component is not required for Run:ai. 
+``` bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack \
+    -n monitoring --create-namespace --set grafana.enabled=false # (1)
+```
 
-=== "Version 2.8 or below" 
-    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
-
-    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
-
+1. The Grafana component is not required for Run:ai. 
 
 ### Distributed Training
 
-=== "Version 2.10 or later" 
-    Run:ai supports three different methods to ditribute training jobs across multiple nodes"
+Run:ai supports three different methods to ditribute training jobs across multiple nodes"
 
-    * MPI
-    * TensorFlow
-    * PyTorch
+* MPI
+* TensorFlow
+* PyTorch
 
-    To install all 3 prerequisites run the following:
+To install all 3 prerequisites run the following:
 
-    ```
-    kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
-    ```
-
-=== "Version 2.9 or earlier"
-    Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai supports MPI version 0.3.0 (the latest version at the time of writing). 
-
-
-    Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
-
-    * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-    * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
-
+```
+kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+```
 
 ### Inference
 
