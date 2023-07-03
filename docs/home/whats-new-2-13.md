@@ -40,7 +40,13 @@ Added to the node pool grid, columns to show the current placement Strategy per 
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
 
-Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloas. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
+Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
+
+<!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
+Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
+
+<!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
+Added support for new data sources to made available to all projects.
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
