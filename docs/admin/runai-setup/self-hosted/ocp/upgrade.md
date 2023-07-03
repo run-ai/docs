@@ -19,12 +19,14 @@ Before upgrading the control plane, run:
 ``` bash
 kubectl delete secret -n runai-backend runai-backend-postgresql
 kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
-kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
-## Upgrade from Version 2.9 or 2.10.
+## Upgrade from Version 2.9, 2.10 or 2.11
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 #### PVC Ownership

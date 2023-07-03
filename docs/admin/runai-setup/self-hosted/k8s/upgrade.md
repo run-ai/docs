@@ -26,6 +26,10 @@ Before upgrading the control plane, run:
 ``` bash
 kubectl delete secret -n runai-backend runai-backend-postgresql
 kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
+
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
 
 Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
@@ -38,15 +42,15 @@ kubectl delete ingressclass nginx
 
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
-Then create a tls secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
+Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from version 2.9 or 2.10
+### Upgrade from version 2.9, 2.10 or 2.11
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
 #### PVC Ownership
 
-Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control-plane is uninstalled. 
+Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
 
 To remove the ownership in an older installation, run:
 
