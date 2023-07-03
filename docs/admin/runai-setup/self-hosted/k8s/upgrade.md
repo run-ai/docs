@@ -23,6 +23,10 @@ title: Upgrade self-hosted Kubernetes installation
 Before upgrading the control plane, run: 
 
 ``` bash
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+
 kubectl delete secret -n runai-backend runai-backend-postgresql
 kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
