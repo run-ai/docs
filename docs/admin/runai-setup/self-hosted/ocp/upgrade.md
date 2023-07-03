@@ -17,11 +17,11 @@ title: Upgrade self-hosted OpenShift installation
 Before upgrading the control plane, run: 
 
 ``` bash
-kubectl delete secret -n runai-backend runai-backend-postgresql
-kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
-
 POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
 kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+
+kubectl delete secret -n runai-backend runai-backend-postgresql
+kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). Before upgrading, find customizations and merge them as discussed below. 
@@ -31,7 +31,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 #### PVC Ownership
 
-Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control-plane is uninstalled. 
+Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
 
 To remove the ownership in an older installation, run:
 
