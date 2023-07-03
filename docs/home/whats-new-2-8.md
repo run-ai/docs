@@ -27,7 +27,7 @@ The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-
 
 In previous versions of Run:ai the administrator should [provide an IP address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) and Run:ai would automatically create a DNS entry for it and a matching trusted certificate. 
 
-In version 2.8,  the default is for the Run:ai administrator to provide a [DNS and a trusted certificate](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#domain-name). 
+In version 2.8,  the default is for the Run:ai administrator to provide a [DNS and a trusted certificate](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url). 
 
 The older option still exists but is being deprecated due to complexity.
 
