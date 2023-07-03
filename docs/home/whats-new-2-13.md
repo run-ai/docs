@@ -72,6 +72,9 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
+<!-- RUN-10287/10317 Show Node pools priority list according to workspace policy -->
+Changed the node pools priority to reflect the list when used in the workspace policy API. The workspace priority list will be displayed when the list is non-editable or when the a workspace is built from scratch.
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
