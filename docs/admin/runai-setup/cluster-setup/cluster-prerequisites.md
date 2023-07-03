@@ -197,9 +197,12 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 
 1. The Grafana component is not required for Run:ai. 
 
+## Optional Software Requirements
+
+The following software enables specific features of Run:ai
 ### Distributed Training
 
-(Optional) Run:ai supports three different methods to distributed-training jobs across multiple nodes:
+Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
 * MPI
 * TensorFlow
@@ -213,7 +216,7 @@ kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/stand
 
 ### Inference
 
-(Optional) To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
 
 Post-install, you must configure Knative to use the Run:ai scheduler and allow pod affinity, by running: 
 
@@ -285,7 +288,7 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 ## User requirements
 
-__Usage of containers and images:__ The individual Researcher's work should be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
+__Usage of containers and images:__ The individual Researcher's work must be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
 
 ## Network Access Requirements
 
