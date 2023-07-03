@@ -38,6 +38,10 @@ Added support for node-pool GPU and CPU placement scheduling strategy in additio
 
 Added to the node pool grid, columns to show the current placement Strategy per node pool (Bin Pack or Spread).
 
+<!-- RUN-9270/9274 - Interactive Time limit Fixes -->
+
+Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloas. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
+
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
 <!-- RUN-8789/8926 Integrate and certify DeepSpeed to be used with Run:ai (multi pod using open-mpi) - released in 2.12 -->
@@ -54,7 +58,7 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 
 
-<!-- RUN-8631/8880 Researcher API for train jobs -->
+<!-- RUN-8631/8880 Researcher API for train jobs - maybe this is in 2.12?  -->
 
 <!-- RUN-7757/9296 Custom logo in UI -->
 
