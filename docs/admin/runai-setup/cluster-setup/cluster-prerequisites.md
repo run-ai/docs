@@ -65,7 +65,7 @@ Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/conc
 
 ### NVIDIA 
 
-Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
+Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
 === "EKS"
     * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
@@ -101,7 +101,7 @@ Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The inter
     Then run: `kubectl apply -f resourcequota.yaml`
 
     !!! Important
-        * Run:ai on GKE has only been tested with GPU Operator version 1.11.1 and up.
+        * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
 
 === "RKE"
