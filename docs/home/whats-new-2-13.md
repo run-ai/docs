@@ -48,6 +48,9 @@ Added a tree selection function to the scope field when creating a new environme
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 Added support for new data sources to made available to all projects.
 
+<!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
+Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
+
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
 <!-- RUN-8789/8926 Integrate and certify DeepSpeed to be used with Run:ai (multi pod using open-mpi) - released in 2.12 -->
