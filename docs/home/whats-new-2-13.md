@@ -74,7 +74,7 @@ Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/clus
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
 <!-- RUN-9826/10186 Support PVC from block storage -->
-In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+Added support for PVC block storage in the *New data source* form. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
 
 ## Installation
 
