@@ -46,7 +46,7 @@ Fixed interactive time limits so that workloads that reach the timeout are now s
 Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
-Added support for new data sources to made available to all projects.
+Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
@@ -64,7 +64,8 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 
 
-<!-- RUN-8631/8880 Researcher API for train jobs - maybe this is in 2.12?  -->
+<!-- RUN-8631/8880 Researcher API for train jobs -->
+Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/cluster-api/submit-rest.md).
 
 <!-- RUN-7757/9296 Custom logo in UI -->
 
@@ -72,8 +73,13 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
+
 <!-- RUN-10287/10317 Show Node pools priority list according to workspace policy -->
 Changed the node pools priority to reflect the list when used in the workspace policy API. The workspace priority list will be displayed when the list is non-editable or when the a workspace is built from scratch.
+
+<!-- RUN-9826/10186 Support PVC from block storage -->
+In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
 
 ## Installation
 
