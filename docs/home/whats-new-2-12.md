@@ -85,7 +85,7 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
 **Cluster API**
 
-<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
+<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](../developer/cluster-api/submit-yaml.md).
 
 **Comet Integration**
 
