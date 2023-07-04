@@ -64,7 +64,8 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 
 
-<!-- RUN-8631/8880 Researcher API for train jobs - maybe this is in 2.12?  -->
+<!-- RUN-8631/8880 Researcher API for train jobs -->
+Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/cluster-api/submit-rest.md).
 
 <!-- RUN-7757/9296 Custom logo in UI -->
 

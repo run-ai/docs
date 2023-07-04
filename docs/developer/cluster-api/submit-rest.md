@@ -45,6 +45,21 @@ curl -X DELETE \ # (1)
 1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with the name of the Run:ai namespace for the specific Project (typically `runai-<Project-Name>`). <br> Replace `trainingworkloads` with `interactiveworkloads`, `distributedworkloads` or `inferenceworkloads` according to type. <br> Replace `<JOB-NAME>` with the name of the Job. 
 2. Add Bearer token. To obtain a Bearer token see [API authentication](../rest-auth.md).
 
+## Suspend/Stop workload example
+
+To suspend or stop a workload run:
+
+```bash
+curl -X PATCH \ # (1) 
+'https://<IP>:6443/apis/run.ai/v2alpha1/namespaces/<PROJECT>/interactiveworkload/<JOB-NAME>' \
+    --header 'Content-Type: application/json' 
+    --header 'Authorization: Bearer <TOKEN>'# (2) 
+    --data '{"spec":{"active": {"value": "false"}}}'
+```
+
+1. Replace `<IP>` with the Kubernetes control-plane endpoint (can be found in kubeconfig profile). <br> Replace `<PROJECT>` with the name of the Run:ai namespace for the specific Project (typically `runai-<Project-Name>`). <br> Replace `trainingworkloads` with `interactiveworkloads`, `distributedworkloads` or `inferenceworkloads` according to type. <br> Replace `<JOB-NAME>` with the name of the Job. 
+2. Add Bearer token. To obtain a Bearer token see [API authentication](../rest-auth.md).
+
 ## Using other Programming Languages
 
 You can use any Kubernetes client library together with the YAML documentation above to submit workloads via other programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/){target=_blank}.
