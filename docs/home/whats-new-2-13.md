@@ -72,6 +72,9 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
+<!-- RUN-9826/10186 Support PVC from block storage -->
+In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
