@@ -46,7 +46,7 @@ Fixed interactive time limits so that workloads that reach the timeout are now s
 Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
-Added support for new data sources to made available to all projects.
+Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
