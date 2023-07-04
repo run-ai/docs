@@ -36,7 +36,17 @@ Added support for SPARK and Elastic jobs. For more information, see [Running SPA
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide).
 
-Added to the node pool grid columns to show the current placement Strategy per node pool (Bin Pack or Spread).
+Added to the node pool grid, columns to show the current placement Strategy per node pool (Bin Pack or Spread).
+
+<!-- RUN-9270/9274 - Interactive Time limit Fixes -->
+
+Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
+
+<!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
+Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
+
+<!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
+Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
@@ -44,7 +54,7 @@ Added to the node pool grid columns to show the current placement Strategy per n
 
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 
-Added SWEEP to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
+Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
 <!-- RUN-8891/8959 Comet integration in workspace  - released in 2.12 -->
 
@@ -54,7 +64,7 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 
 
-<!-- RUN-8631/8880 Researcher API for train jobs -->
+<!-- RUN-8631/8880 Researcher API for train jobs - maybe this is in 2.12?  -->
 
 <!-- RUN-7757/9296 Custom logo in UI -->
 
@@ -62,10 +72,12 @@ Added to the Overview and the Analytics dashboards, a dropdown filter for node p
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
+<!-- RUN-9826/10186 Support PVC from block storage -->
+In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
 ## Installation
 
-In older versions of Run:ai, when upgrading a cluster, the process required the "upgrading of Kubernetes CRDs". See for example [here](https://docs.run.ai/v2.9/admin/runai-setup/cluster-setup/cluster-upgrade/#upgrade-to-version-29-from-an-earlier-version){target=_blank}. This step now happens automatically.
- 
+The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
 ### Known issues
 
 ### Fixed issues
