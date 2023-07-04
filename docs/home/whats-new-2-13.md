@@ -74,8 +74,8 @@ Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/clus
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
 
-<!-- RUN-10287/10317 Show Node pools priority list according to workspace policy -->
-Changed the node pools priority to reflect the list when used in the workspace policy API. The workspace priority list will be displayed when the list is non-editable or when the a workspace is built from scratch.
+<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
+When there is a workspace policy in place, the node pool priority list in *Workspaces* is the same as the policy, and is editable when the workspace is built from scratch. The list will not be editable if the policy dictates that the list is locked. If a policy has not been enabled, then the priority list will come from either a template, or the project. 
 
 <!-- RUN-9826/10186 Support PVC from block storage -->
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
