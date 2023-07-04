@@ -15,12 +15,13 @@ To create a workspace, the researcher must select building blocks  in one of two
 * Create a workspace __from scratch__:  this allows you to either select an existing building block or create them on the fly (pending the right permissions).
 * Create a workspace __from a template__: a template contains a set of predefined building blocks as well as additional configurations which allow the user to immediately create a templated-based workspace.
 
+!!! Note
+    Where there is a card gallery, use the search bar to find specific cards based on title or field values.
+
 To create a workspace:
 
 * Press `New Workspace` 
 * Select a project for the new workspace. The project visualization contains information about the project such as how much of the quota is being allocated and indicates the likelihood of the workspace being scheduled or left in the queue
-
-![](img/11-prj-select.png)
 
 ## Create a new workspace from scratch
 

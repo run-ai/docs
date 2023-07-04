@@ -76,6 +76,9 @@ Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/clus
 <!-- RUN-9826/10186 Support PVC from block storage -->
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
 
+<!-- RUN-9364/10850 Search box for cards in V2 assets -->
+Added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
