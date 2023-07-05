@@ -34,9 +34,9 @@ A node is a worker machine that runs workloads, and a node pool is group of node
 Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#)
 
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
-Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide).
+Added support for per node pool GPU and CPU scheduling strategy. Choose from `Bin Pack` or `Spread`. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
-Added to the node pool grid, columns to show the current placement Strategy per node pool (Bin Pack or Spread).
+Added columns to the node pool grid to show the current placement Strategy per node pool (`Bin Pack` or `Spread`).
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
 
