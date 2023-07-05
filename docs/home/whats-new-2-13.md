@@ -69,7 +69,7 @@ Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/clus
 
 <!-- RUN-7757/9296 Custom logo in UI -->
 
-<!-- RUN-8824/9352  Quick updates so workspace will support training workloads -->
+<!-- RUN-8824/9352  Quick updates so workspace will support training workloads - done in 2.12 -->
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
