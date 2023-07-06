@@ -34,9 +34,9 @@ A node is a worker machine that runs workloads, and a node pool is group of node
 Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#)
 
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
-Added support for node-pool GPU and CPU placement scheduling strategy in addition to the current scheduling strategy (cluster-wide).
+Added support for per node pool GPU and CPU scheduling strategy. Choose from `Bin Pack` or `Spread`. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
-Added to the node pool grid, columns to show the current placement Strategy per node pool (Bin Pack or Spread).
+Added columns to the node pool grid to show the current placement Strategy per node pool (`Bin Pack` or `Spread`).
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
 
@@ -79,6 +79,9 @@ In the *New data source* form for a new PVC data source, in the *Volume mode* fi
 
 <!-- RUN9530/9577 New Dashboard for Quota management -->
 Added a new dashboard for Quota management. The dashboard filters the display of resource quotas based on *Departments* and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
+
+<!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
+Added support for default item fields. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
 
 ## Installation
 
