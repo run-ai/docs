@@ -77,6 +77,10 @@ Added support for uploading a custom company logo to be displayed in the UI for 
 <!-- RUN-9826/10186 Support PVC from block storage -->
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
 
+<!-- RUN9530/9577 New Dashboard for Quota management -->
+Added a new dashboard for Quota management. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
+
+Added to the Overview dashboard a dropdown filter for node pools. From the dropdown, select one or more node pools.
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
 Added support for default item fields. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
 
