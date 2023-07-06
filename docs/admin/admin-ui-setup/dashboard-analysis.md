@@ -18,7 +18,7 @@ The Overview dashboard provides information about what is happening **right now*
 * The number of running and pending **Jobs**, their utilization, information on Jobs with errors or Jobs with idle GPUs.
 * Active **Projects**, their assigned and allocated GPUs and number of running and pending Jobs.
 
-The dashboard has a dropdown filter for node pools and Departments. From the dropdown, select one or more node pools. The default setting is `all`.
+The dashboard has a dropdown filter for node pools. From the dropdown, select one or more node pools. The default setting is `all`.
 
 Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
 
