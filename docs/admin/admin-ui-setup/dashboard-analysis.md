@@ -1,12 +1,14 @@
+# Introduction
 
 The Run:ai Administration User Interface provides a set of dashboards that help you monitor Clusters, Cluster Nodes, Projects, and Jobs. This document provides the key metrics to monitor, how to assess them as well as suggested actions.
 
-There are 4 dashboards:
+There are 5 dashboards:
 
-* **Overview** dashboard - Provides information about what is happening right now in the cluster
-* **Analytics** dashboard - Provides long term analysis of cluster behavior
-* **Multi-Cluster Overview** dashboard - Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
-* **Consumption** dashboard&mdash;Provides information about resource consumption.
+* [**Overview**](#overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
+* [**Quota Management**](#quota-management-dashboard) dashboard&mdash;Provides information about quota utilization.
+* [**Analytics**](#analytics-dashboard) dashboard&mdash;Provides long term analysis of cluster behavior.
+* [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
+* [**Consumption**](#consumption-dashboard) dashboard&mdash;Provides information about resource consumption.
 
 ## Overview Dashboard
 
@@ -78,6 +80,70 @@ Identify queueing bottlenecks.
 | Cluster is not fully loaded | Go to the Jobs view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
 Also, check the command that the user used to submit the job. The Researcher may have requested a specific Node for that Job.
+
+## Quota management dashboard
+
+The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the IT infrastructure. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
+
+* **Add Filter**
+* **Quota / Total**
+* **Allocated / Quota**
+* **Pending workloads**
+* **Quota by node pool**
+* **Allocation by node pool**
+* **Pending workloads by node pool**
+* **Departments with lowest allocation by node pool**
+* **Projects with lowest allocation ratio by node pool**
+* **Over time allocation / quota**
+
+### Add Filter
+
+Use the *Add Filter* dropdown to select filters for the dashboard. The filters will change the data shown on the dashboard. Available filters are:
+
+* Departments
+* Projects
+* Nodes
+
+Select a filter from the dropdown, then select a item from the list, and press apply.
+
+!!! Note
+    You can create a filter with multiple categories, but you can use each category and item only once.
+
+### Quota / Total
+
+This section shows the number of GPUs that are in the quota based on the filter selection. The quota of GPUs is the number of GPUs that are reserved for use.
+
+### Allocated / Quota
+
+This section shows the number of GPUs that are allocated based on the filter selection. Allocated GPUs are the number of GPUs that are being used.
+
+### Pending workloads
+
+This section shows the number workloads that are pending based on the filter selection. Pending workloads are workloads that have not started.
+
+### Quota by node pool
+
+This section shows the quota of GPUs by node pool based on the filter. The quota is the number of GPUs that are reserved for use. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Allocation by node pool
+
+This section shows the allocation of GPUs by node pool based on the filter. The allocation is the number of GPUs that are being used. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Pending workloads by node pool
+
+This section shows the number of pending workloads by node pool. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Departments with lowest allocation by node pool
+
+This section shows the departments with the lowest allocation of GPUs by percentage relative to the total number of GPUs.
+
+### Projects with lowest allocation ratio by node pool
+
+This section shows the projects with the lowest allocation of GPUS by percentage relative to the total number of GPUs.
+
+### Over time allocation / quota
+
+This section shows the allocation of GPUs from the quota over a period of time.
 
 ## Analytics Dashboard
 

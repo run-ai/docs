@@ -77,6 +77,9 @@ Added support for uploading a custom company logo to be displayed in the UI for 
 <!-- RUN-9826/10186 Support PVC from block storage -->
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
 
+<!-- RUN9530/9577 New Dashboard for Quota management -->
+Added a new dashboard for Quota management. The dashboard filters the display of resource quotas based on *Departments* and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
