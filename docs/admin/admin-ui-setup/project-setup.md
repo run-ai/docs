@@ -46,10 +46,12 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 !!! Note
     To be able to create or edit Projects, you must have *Editor* access. See the [Users](admin-ui-users.md) documentation.
 
-* Login to the Projects area of the Run:ai user interface at `<company-name>.run.ai`.
-* On the top right, select "Add New Project"
-* Choose a Project name and a Project quota
-* Press "Save"
+1. In the left-menu, press **Projects**.
+2. Choose a *Department* from the drop-down. The default project is `default`.
+3. Enter a *Project name*. Press *Namespace* to set the namespace associated with the project. You can either create the namespace from the project name (default) or enter an existing namespace.
+4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users).
+5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over quota priority settings.
+6. In scheduling rules, add a scheduling rule. (optional)
 
 ## Assign Users to Project
 

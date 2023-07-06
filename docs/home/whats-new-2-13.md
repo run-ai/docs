@@ -22,7 +22,7 @@ For researchers:
 * Control over workload resource allocation and prioritization.
 * Control over workload node assignment and node pool priority.
 
-To configure a project, see [Projects](). <!-- TODO - need to merge this with the current projects file. -->
+To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
 
 <!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
 **Nodes**
