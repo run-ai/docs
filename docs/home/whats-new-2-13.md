@@ -62,6 +62,7 @@ Added sweep to Weights and Biases job submission. Sweep combines a strategy for 
 Added to the Overview and the Analytics dashboards, a dropdown filter for node pools.
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
+Added support for node pools to *Departments*, including new columns in the *Departments* grid.
 
 
 <!-- RUN-8631/8880 Researcher API for train jobs -->
