@@ -47,11 +47,23 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
     To be able to create or edit Projects, you must have *Editor* access. See the [Users](admin-ui-users.md) documentation.
 
 1. In the left-menu, press **Projects**.
-2. Choose a *Department* from the drop-down. The default project is `default`.
+2. Choose a *Department* from the drop-down. The default is `default`.
 3. Enter a *Project name*. Press *Namespace* to set the namespace associated with the project. You can either create the namespace from the project name (default) or enter an existing namespace.
 4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users).
-5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over quota priority settings.
-6. In scheduling rules, add a scheduling rule. (optional)
+5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over quota priority settings. Configure the following:
+
+       * *Order of priority*&mdash;the priority the node pool will receive when trying to schedule workloads. For more information, see [Node pool priority](../../Researcher/scheduling/using-node-pools.md#multiple-node-pools-selection).
+       * *GPUs*&mdash;the number of GPUs in the node pool. Press *GPUs* and enter the number of GPUs, then press *Apply* to save.
+       * *CPUs(Cores)*&mdash;the number of CPU cores in the node pool. Press *CPUs* and enter the number of GPUs, then press *Apply* to save.
+       * *CPU Memory*&mdash;the amount of memory the CPUs will be allocated. Press *CPU Memory*, enter an amount of memory, then press *Apply* to save.
+       * Over quota priority&mdash;the priority for the specific node pool to receive over quota allocations.
+  
+6. (Optional) In the *Scheduling rules* pane, use the dropdown arrow to open the pane. Press on the *+ Rule* button to add a new rule to the project. Add one (or more) of the following rule types:
+
+    * *Idle GPU timeout*&mdash;controls the amount of time that specific workload GPUs which are idle will be remain assigned to the project before getting reassigned.
+    * *Workspace duration*&mdash;limit the length of time a workspace will before being terminated.
+    * *Training duration*&mdash;limit the length of time training workloads will run.
+    * *Node type (Affinity)*&mdash;limits specific workloads to run on specific node types.
 
 ## Assign Users to Project
 
@@ -60,6 +72,7 @@ When [Researcher Authentication](../runai-setup/authentication/researcher-authen
 If you are using Single-sign-on, you can also assign Groups
 
 ## Other Project Properties
+
 ### Limit Jobs to run on Specific Node Groups
 
 You can assign a Project to run on specific nodes (machines). This is achieved by two different mechanisms:
