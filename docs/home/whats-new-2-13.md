@@ -70,7 +70,7 @@ Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/clus
 <!-- RUN-7757/9296 Custom logo in UI -->
 Added support for uploading a custom company logo to be displayed in the UI for both SaaS and self-hosted environments. Use the  [Upload tenant logo](https://app.run.ai/api/docs#tag/Tenant/operation/upload_tenant_logo){target=_blank} endpoint in the Admin API.
 
-<!-- RUN-8824/9352  Quick updates so workspace will support training workloads -->
+<!-- RUN-8824/9352  Quick updates so workspace will support training workloads - done in 2.12 -->
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails -->
 
