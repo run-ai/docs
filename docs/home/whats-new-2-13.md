@@ -77,6 +77,9 @@ Added support for uploading a custom company logo to be displayed in the UI for 
 <!-- RUN-9826/10186 Support PVC from block storage -->
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
 
+<!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
+Added support for default item fields. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
