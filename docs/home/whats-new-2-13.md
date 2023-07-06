@@ -78,7 +78,7 @@ Added support for uploading a custom company logo to be displayed in the UI for 
 In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
 
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
-Added support for workload policy to prevent the use of a new PVC. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
+Added support for default item fields. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
 
 ## Installation
 
