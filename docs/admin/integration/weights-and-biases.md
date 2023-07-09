@@ -24,6 +24,8 @@ This will create a link, that will automatically open a new tab directly from yo
 
 ## Sweep configuration
 
+Sweep is Weight & Biases' tool for performing hyperparameters search & optimization. see more in https://docs.wandb.ai/guides/sweeps
+
 To enable the WANDB sweep feature:
 
 1. Open the settings page.
@@ -33,7 +35,7 @@ To submit a sweep configuration for your Run:ai job:
 
 1. Open the submit job page, ans select *training*.
 2. Open the *WANDB sweep*** section, and toggle the *Sweep configuration* switch.
-3. Enter your YAML configuration file.
+3. Enter your YAML configuration file or paste it into the editor.
 4. Enter the Weight & Biases entity name.
 5. Enter the Weights & Biases project name (optional).
 6. Enter the Weights & Biases API Key.
