@@ -52,10 +52,10 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 **Workspaces**
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
-Fixed time limits so that any workload that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
+* Fixed time limits so that any workload that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
 
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
-Added a tree selection function to the scope field when creating a new asset.  Included assets are *Environment*, *Compute resource*,  and some types of *Data source*.
+* Added a tree selection function to the scope field when creating a new asset.  Included assets are *Environment*, *Compute resource*,  and some types of *Data source*.
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
