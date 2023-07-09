@@ -17,7 +17,7 @@ helm install kuberay-operator kuberay/kuberay-operator -n kuberay-operator --ver
 For more information, see [Deploying RayKube operator](https://docs.ray.io/en/latest/cluster/kubernetes/getting-started.html#deploying-the-kuberay-operator){target=_blank}.
 
 ## Submit Ray jobs
-
+Run:AI integrates with ray by interacting with the kuberay CRDs (RayJob, RayServe and RayCluster). The following is an example of RayJob scheduled by Run:AI. 
 Use the following command to submit your Ray job:
 
 `kubectl apply -f <path/example-file-name.yaml>`
