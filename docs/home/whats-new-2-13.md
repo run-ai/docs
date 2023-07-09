@@ -22,7 +22,7 @@ For researchers:
 * Control over workload resource allocation and prioritization.
 * Control over workload node assignment and node pool priority.
 
-To configure a project, see [Projects](). <!-- TODO - need to merge this with the current projects file. -->
+To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
 
 **Dashboards**
 <!-- RUN9530/9577 New Dashboard for Quota management -->
@@ -51,6 +51,13 @@ To configure a project, see [Projects](). <!-- TODO - need to merge this with th
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
 * Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
 
+Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
+
+<!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
+Added a tree selection function to the scope field when creating a new asset.  Included assets are *Environment*, *Compute resource*,  and some types of *Data source*.
+
+
+Fixed time limits so that any workload that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
@@ -58,9 +65,13 @@ To configure a project, see [Projects](). <!-- TODO - need to merge this with th
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
 * Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
+<!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
+Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
+
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
+Added support for node pools to *Departments*, including new columns in the *Departments* grid.
 
 **Researcher tools**
 <!-- RUN-8631/8880 Researcher API for train jobs -->
@@ -75,8 +86,19 @@ To configure a project, see [Projects](). <!-- TODO - need to merge this with th
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails no need to document-->
 
+
+<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
+Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
 <!-- RUN-9826/10186 Support PVC from block storage -->
+Added support for PVC block storage in the *New data source* form. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
+
+<!-- RUN-9364/10850 Search box for cards in V2 assets -->
+Added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
+
 * In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.

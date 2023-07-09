@@ -3,8 +3,8 @@
 
 To create a compute resource:
 
-* Select the `New Compute Resource` button
-* Select the project the resource will reside in
+* Select the `New Compute Resource` button.
+* In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 * Give the resource a meaningful name.
 
 ![](img/24-env-proj-select.png)

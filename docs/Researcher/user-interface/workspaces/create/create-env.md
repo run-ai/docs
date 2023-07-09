@@ -3,7 +3,7 @@
 To create an environment:
 
 1. In the left menu, press *New Environment*.
-2. In the *Scope* pane, choose one or more items from the tree. The environment is assigned to one or more projects in the scope.
+2. In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 3. Enter an *Environment name*.
 4. Enter the image URL path and an image pull policy.
 5. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.

@@ -22,7 +22,7 @@ To configure the Weights and Biases tool, for the environemnt variable name `WAN
 
 This will create a link, that will automatically open a new tab directly from your Workspace to your exact Weights and Biases project.
 
-## Sweep COnfiguration
+## Sweep configuration
 
 To enable the WANDB sweep feature:
 

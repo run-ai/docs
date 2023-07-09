@@ -20,9 +20,11 @@ Policies are specific to Workload type as such there are several kinds of Polici
 
 A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
 
+ When researchers create a new interactive workload or workspace, they see list of available node pools and their priority. Priority is set by dragging and dropping the node pools in the desired order of priority. When the node pool priority list is **locked** by an administrator **policy**, the node pool list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
 ## Creating a Policy
 
-### Creating your First Policy 
+### Creating your First Policy
 
 To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
 
@@ -42,9 +44,9 @@ spec:
 ```
 
 1. Set the Project namespace here.
-2. GPU values are quoted as they can contain non-integer values. 
+2. GPU values are quoted as they can contain non-integer values.
 
-The policy places a default and limit on the available values for GPU allocation. To apply this policy, run: 
+The policy places a default and limit on the available values for GPU allocation. To apply this policy, run:
 
 ``` bash
 kubectl apply -f gpupolicy.yaml 
