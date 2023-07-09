@@ -6,13 +6,13 @@ When you select `New Compute Resource` you will be presented with various data s
 
 To create an NFS data source, provide:
 
-* A data source name
-* A Run:ai project scope
-* An NFS server 
-* The path to the data within the server. 
+* A data source name.
+* In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
+* An NFS server.
+* The path to the data within the server.
 * The path within the container where the data will be mounted.
 
-The data can be set as read-write or limited to read-only permission regardless of any other user privileges. 
+The data can be set as read-write or limited to read-only permission regardless of any other user privileges.
 
 ## Create a PVC data source
 
@@ -41,9 +41,9 @@ Note that an S3 data source can be public or private. For the latter option, ple
 
 To create a Git data source, provide:
 
-* A data source name
-* A Run:ai project scope
-* The relevant repository URL. 
+* A data source name.
+* A Run:ai project scope.
+* The relevant repository URL.
 * The path within the container where the data will be mounted.
 
 The Git data source can be public or private. To allow access to a private Git data source, you must select the relevant credentials associated with the project. 
@@ -52,11 +52,9 @@ The Git data source can be public or private. To allow access to a private Git d
 
 To create a host path data source, provide:
 
-* A data source name
-* A Run:ai project scope
-* The relevant path on the host. 
+* A data source name.
+* In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
+* The relevant path on the host.
 * The path within the container where the data will be mounted.
 
-Note that the data can be limited to read-only permission regardless of any other user privileges. 
-
-
+Note that the data can be limited to read-only permission regardless of any other user privileges.
