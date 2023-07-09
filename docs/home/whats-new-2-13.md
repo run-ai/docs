@@ -51,6 +51,8 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
 * Fixed interactive time limits so that workloads that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. Workloads do not reach a state of failure so that they can be resumed later.
 
+
+Fixed time limits so that any workload that reach the timeout are now suspended/stopped. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
