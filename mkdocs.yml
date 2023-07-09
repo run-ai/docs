@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.12/docs/
+edit_uri: edit/v2.13/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -244,6 +244,7 @@ nav:
       - 'DeepSpeed': 'admin/integration/deepspeed.md'
       - 'Comet' : 'admin/integration/comet.md'
       - 'Spark' : 'admin/integration/spark.md'
+      - 'Ray' : 'admin/integration/ray.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
