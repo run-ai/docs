@@ -7,7 +7,7 @@ When you select `New Compute Resource` you will be presented with various data s
 To create an NFS data source, provide:
 
 * A data source name.
-* A Run:ai project scope. Choose one or more items from the tree. The NFS data source is assigned to one or more projects in the scope.
+* In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 * An NFS server.
 * The path to the data within the server.
 * The path within the container where the data will be mounted.
@@ -53,7 +53,7 @@ The Git data source can be public or private. To allow access to a private Git d
 To create a host path data source, provide:
 
 * A data source name.
-* A Run:ai project scope. Choose one or more items from the tree. The host path data source is assigned to one or more projects in the scope.
+* In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 * The relevant path on the host.
 * The path within the container where the data will be mounted.
 
