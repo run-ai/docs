@@ -84,7 +84,7 @@ Added support for node pools to *Departments*, including new columns in the *Dep
 <!-- RUN-9521/9522  Provide a description in CLI when command fails no need to document-->
 
 <!-- RUN-9826/10186 Support PVC from block storage -->
-In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+Added support for PVC block storage in the *New data source* form. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
 
 <!-- RUN-9364/10850 Search box for cards in V2 assets -->
 Added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.

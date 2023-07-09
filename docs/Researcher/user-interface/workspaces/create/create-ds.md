@@ -20,7 +20,14 @@ To create an PVC data source, provide:
 
 * A data source name
 * A Run:ai project scope
-* Select an existing PVC or create a new one by providing a claim name, a storage class, access mode, and a required storage size. 
+* Select an existing PVC or create a new one by providing:
+
+    * a claim name
+    * a storage class
+    * access mode
+    * required storage size
+    * volume system mode
+
 * The path within the container where the data will be mounted.
 
 ## Create an S3 data source
