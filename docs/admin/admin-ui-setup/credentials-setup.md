@@ -40,7 +40,7 @@ The Credential manager in the Run:ai environment supports 4 types of credentials
 
 7. Enter a URL for the docker registry, then press `Create credential` to create the credential.
 
-## Access key
+### Access key
 
 1. Go to `Settings | Credentials`.
 2. Press `New Credentials`.
