@@ -65,6 +65,9 @@ Fixed time limits so that any workload that reach the timeout are now suspended/
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
 * Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
+<!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
+Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
+
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
