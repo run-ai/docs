@@ -83,7 +83,7 @@ Also, check the command that the user used to submit the job. The Researcher may
 
 ## Quota management dashboard
 
-The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the IT infrastructure. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
+The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
 
 * **Add Filter**
 * **Quota / Total**
