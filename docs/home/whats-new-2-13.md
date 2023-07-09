@@ -61,6 +61,7 @@ To configure a project, see [Projects](). <!-- TODO - need to merge this with th
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
+Added support for node pools to *Departments*, including new columns in the *Departments* grid.
 
 **Researcher tools**
 <!-- RUN-8631/8880 Researcher API for train jobs -->
