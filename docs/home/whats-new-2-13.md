@@ -109,24 +109,23 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 
 | Internal ID | Description                                                                                                                                |
 | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| RUN-10500   | Fixed an issue where jobs are shown as running even though they don't exist in the cluster.                                                |
-| RUN-10406   | Fixed an issue where cluster sync takes a long time after a restart to update new jobs.                                                    |
+| RUN-9039    | Fixed an issue where in the new job screen, after toggling off the pre-emptible flag, and a job is submitted, the job still shows as pre-emptible. |
+| RUN-9323    | Fixed an issue with a non-scaleable error message when scheduling hundreds of nodes is not successful.                                     |
 | RUN-9324    | Fixed an issue where the scheduler did not take into consideration the amount of storage so there is no explanation that pvc is not ready. |
-| RUN-10729   | Fixed an issue where the runaijob-contoller reports an incorrect status.                                                                   |
-| RUN-9039    | Fixed an issue where you cannot edit the `preemptible` field in interactive policies.                                                      |
-| RUN-10155   | Fixed an issue where during an upgrade the, `runai-adm` fails without a Grafana token on Openshift (2.9/2.10).                             |
+| RUN-9902    | Fixed an issue where Prometheus doesn't have sufficient permissions in 2.9 on openshift                                                    |
+| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields.                                                     |
+| RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template.                                                |
+| RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
+| RUN-10102   | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.                         |
 | RUN-10337   | Calculating ray min replicas                                                                                                               |
-| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields .                                                     |
+<!-- | RUN-10357   | projects v2 UI bugs                                                                                                                        | -->
+| RUN-10366   | Fixed an issue in Elastic fair share calculations.                                                                                         |
+| RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods.                                                                                 |
 | RUN-10379   | Fixed an issue where projects with an over quota weight greater 0 cannot be saved.                                                         |
-| RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template.                                                                  |
-<!-- | RUN-10539   | CLONE - 2.11.2hotfix - [Adobe] cluster sync takes long time after restart to update new jobs             | -->
-| RUN-10366 | Fixed an issue in Elastic fair share calculations.                                                 |
-| RUN-10102 | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.            |
-<!-- | RUN-10422 | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc)        | -->
-| RUN-10053 | Fixed an issue where the Node pool column is unsearchable in the job list.                         |
-| RUN-10813 | Fixed an issue adding a data source.                                                               |
-| RUN-10380 | Fixed an issue in the new Projects UI. The project is stuck `Updating` without changing any field. |
-<!-- | RUN-10357   | projects v2 UI bugs                                                                                      |-->
-| RUN-9902  | Fixed an issue where Prometheus doesn't have sufficient permissions in 2.9 on openshift                |
-| RUN-10367 | Fixed an issue in correctly sorting ray and kubeflow pods.                                             |
-| RUN-9323  | Fixed an issue with a non-scaleable error message when scheduling hundreds of nodes is not successful. |
+| RUN-10380   | Fixed an issue in the new Projects UI. The project is stuck `Updating` without changing any field.                                         |
+| RUN-10406   | Fixed an issue where cluster sync takes a long time after a restart to update new jobs.                                                    |
+| RUN-10422   | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc)                           |
+| RUN-10500   | Fixed an issue where jobs are shown as running even though they don't exist in the cluster.                                                |
+| RUN-10539   | CLONE - 2.11.2hotfix - [Adobe] cluster sync takes long time after restart to update new jobs                                               |
+| RUN-10729   | Fixed an issue where the runaijob-contoller reports an incorrect status.                                                                   |
+| RUN-10813   | Fixed an issue adding a data source.                                                                                                       |
