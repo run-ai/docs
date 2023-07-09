@@ -86,6 +86,10 @@ Added support for node pools to *Departments*, including new columns in the *Dep
 
 <!-- RUN-9521/9522  Provide a description in CLI when command fails no need to document-->
 
+
+<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
+Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
 <!-- RUN-9826/10186 Support PVC from block storage -->
 Added support for PVC block storage in the *New data source* form. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
 
@@ -93,6 +97,7 @@ Added support for PVC block storage in the *New data source* form. For more info
 Added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
 
 * In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
 
 ## Installation
 
