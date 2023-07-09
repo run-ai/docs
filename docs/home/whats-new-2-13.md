@@ -84,7 +84,13 @@ Added support for node pools to *Departments*, including new columns in the *Dep
 <!-- RUN-9521/9522  Provide a description in CLI when command fails no need to document-->
 
 <!-- RUN-9826/10186 Support PVC from block storage -->
+In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
+<!-- RUN-9364/10850 Search box for cards in V2 assets -->
+Added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
+
 * In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
+
 ## Installation
 
 The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.

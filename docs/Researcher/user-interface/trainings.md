@@ -20,6 +20,9 @@ You must have:
     See your system administrator to ensure the prerequisites are enabled and configured.
 ## Adding Trainings
 
+!!! Note
+    Where there is a card gallery, use the search bar to find specific cards based on title or field values.
+
 To add a training:
 
 1. Press **Tranings** in the menu.
