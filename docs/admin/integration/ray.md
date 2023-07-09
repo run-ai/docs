@@ -1,6 +1,6 @@
 # Integrate Run:ai with Ray
 
-Ray is a .....
+Ray is an open-source unified framework for scaling AI and Python applications like machine learning. It provides the compute layer for parallel processing so that you don’t need to be a distributed systems expert.
 
 ## Sumitting Ray jobs
 
@@ -17,12 +17,12 @@ helm install kuberay-operator kuberay/kuberay-operator -n kuberay-operator --ver
 For more information, see [Deploying RayKube operator](https://docs.ray.io/en/latest/cluster/kubernetes/getting-started.html#deploying-the-kuberay-operator){target=_blank}.
 
 ## Submit Ray jobs
-Run:AI integrates with ray by interacting with the kuberay CRDs (RayJob, RayServe and RayCluster). The following is an example of RayJob scheduled by Run:AI. 
+Run:AI integrates with ray by interacting with the kuberay CRDs (RayJob, RayServe and RayCluster). The following is an example of RayJob scheduled by Run:AI.
 Use the following command to submit your Ray job:
 
 `kubectl apply -f <path/example-file-name.yaml>`
 
-For more information, see [Run an exmaple job](https://ray-project.github.io/kuberay/guidance/rayjob/#run-an-example-job){target=_blank}.
+For more information, see [Run an example job](https://ray-project.github.io/kuberay/guidance/rayjob/#run-an-example-job){target=_blank}.
 
 Example:
 
