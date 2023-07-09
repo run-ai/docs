@@ -24,7 +24,7 @@ This will create a link, that will automatically open a new tab directly from yo
 
 ## Sweep configuration
 
-Sweep is Weight & Biases' tool for performing hyperparameters search & optimization. see more in https://docs.wandb.ai/guides/sweeps
+Sweep is Weight & Biases tool for performing hyperparameters search and optimization. For more infomrmation, see [Tune Hyperparameters](https://docs.wandb.ai/guides/sweeps).
 
 To enable the WANDB sweep feature:
 
