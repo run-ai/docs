@@ -244,6 +244,7 @@ nav:
       - 'DeepSpeed': 'admin/integration/deepspeed.md'
       - 'Comet' : 'admin/integration/comet.md'
       - 'Spark' : 'admin/integration/spark.md'
+      - 'Ray' : 'docs/admin/integration/ray.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
