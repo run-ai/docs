@@ -118,7 +118,6 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 | RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
 | RUN-10102   | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.                         |
 | RUN-10337   | Calculating ray min replicas                                                                                                               |
-<!-- | RUN-10357   | projects v2 UI bugs                                                                                                                        | -->
 | RUN-10366   | Fixed an issue in Elastic fair share calculations.                                                                                         |
 | RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods.                                                                                 |
 | RUN-10379   | Fixed an issue where projects with an over quota weight greater 0 cannot be saved.                                                         |
