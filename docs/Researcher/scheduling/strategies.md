@@ -1,6 +1,4 @@
-
-
-## Introduction
+# Introduction
 
 When the Run:ai scheduler schedules Jobs, it can use two alternate *placement strategies*:
 
@@ -33,6 +31,8 @@ When there are more resources available than requested, it sometimes makes sense
 
 Returning to the example above, if we have 2 GPUs in a single node on the cluster, and 2 Jobs requiring 0.5 GPUs each, using spread scheduling we would place each Job on a separate GPU, allowing both to benefit from the computing power of a full GPU.
 
+<!-- Deprecated section not in 2.13
+
 ## Changing Scheduler Strategy
 
 The strategy affects the entire cluster. To change the strategy run:
@@ -60,3 +60,4 @@ runai-scheduler:
 
 !!! Note
     It is not recommended to combine `placementStrategy` with `gpuPlacementStrategy` and `cpuPlacementStrategy`.
+-->

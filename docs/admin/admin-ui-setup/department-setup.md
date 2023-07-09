@@ -43,18 +43,23 @@ Consider an example from an academic use case: the Computer Science Department a
 
 Departments are disabled by default. To start working with Departments:
 
-* Go to Settings | General
-* Enable Departments
+* Go to `Settings` | `General`.
+* Enable `Departments`.
 
-Once Departments are enabled, the left-side menu will have a new item named "Departments".
+Once Departments are enabled, the left-side menu will have a new item named **Departments**.
 
-Under **Departments** there will be a single Department named **default**. All Projects created before the Department feature was enabled will belong to the **default** Department.
+Under **Departments** there will be a single department named **default**. All Projects created before the Department feature was enabled will belong to the **default** department.
 
 ### Adding Departments
 
-You can add new Departments by pressing the **Add New Department** at the top right of the Department view. Add Department name and quota allocation.
+To add a new department:
 
-### Assign Department Administrator role
+1. In the **Departments** grid, press **New Department**.
+2. Enter a name.
+3. In *Quota management* configure the number GPUs, CPUs, and CPU memory.
+4. In *Access control* select a user or application to be department administrator. If there are no users assigned the role of department administrator, see [Assigning Department Administrator role](#assigning-department-administrator-role).
+
+### Assigning Department Administrator role
 
 You can create a new user with the *Department Administrator* role, or add the role to existing users.
 To create a new user with this role, see [Create a user](admin-ui-users.md#create-a-user).
@@ -63,13 +68,14 @@ To add this role to an existing user:
 1. Go to `Settings | Users`.
 2. Select a user from the list and then press `Edit User`.
 3. Select the `Department Admin` role from the list. (Deselect to remove the role from the user).
+4. Press save when complete.
 
 After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
 
 To assign the Department Administrator user to the correct department:
 
 1. Go to `Settings | Departments`.
-2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [creating a new depart,emt](#adding-departments).
+2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [Adding a new department](#adding-departments).
 3. Select `Department Administrator`, then select `Users` or `Applications`.
 4. If you selected `Users`, select one or more users from the drop down menu.
 5. Press save when complete.
