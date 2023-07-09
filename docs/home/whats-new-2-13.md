@@ -44,7 +44,7 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 **Integrations**
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
-* Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#)
+* Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#).
 
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 * Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
@@ -65,7 +65,7 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 * Added a tree selection function to the scope field when creating a new environment. For more information see, [Creating a new environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
-* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
+* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
 
@@ -117,14 +117,12 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 | RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template.                                                |
 | RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
 | RUN-10102   | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.                         |
-| RUN-10337   | Calculating ray min replicas                                                                                                               |
-| RUN-10366   | Fixed an issue in Elastic fair share calculations.                                                                                         |
-| RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods.                                                                                 |
+| RUN-10366   | Fixed an issue in Elastic fair share calculations.                                                                                       |
+| RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods.                                                                               |
 | RUN-10379   | Fixed an issue where projects with an over quota weight greater 0 cannot be saved.                                                         |
 | RUN-10380   | Fixed an issue in the new Projects UI. The project is stuck `Updating` without changing any field.                                         |
 | RUN-10406   | Fixed an issue where cluster sync takes a long time after a restart to update new jobs.                                                    |
-| RUN-10422   | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc)                           |
+| RUN-10422   | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc.).                         |
 | RUN-10500   | Fixed an issue where jobs are shown as running even though they don't exist in the cluster.                                                |
-| RUN-10539   | CLONE - 2.11.2hotfix - [Adobe] cluster sync takes long time after restart to update new jobs                                               |
 | RUN-10729   | Fixed an issue where the runaijob-contoller reports an incorrect status.                                                                   |
 | RUN-10813   | Fixed an issue adding a data source.                                                                                                       |
