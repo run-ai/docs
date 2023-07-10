@@ -11,6 +11,7 @@ This version contains features and fixes from previous versions starting with 2.
 * [What's new 2.9](whats-new-2-9.md)
 
 **Projects**
+<!-- Hagay: Jason, so the new features we added Projects are described in the links you added ? -->
 <!-- RUN-9312/9313 Projects V2 -->
 * Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
 
@@ -23,17 +24,21 @@ This version contains features and fixes from previous versions starting with 2.
 
 <!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
 **Nodes**
+<!-- Hagay: not sure I understand why did we had this intro paragraph, and anyway the changes are in node-pools not in nodes (other than the DCGM metrics of 2.10/2.11 but we don't mention it here). 
+Also the headeline is 'Nodes' but the content is 'Node-Pools' -->
 
 * A node is a worker machine that runs workloads, and a node pool is group of nodes within a cluster that all have the same configuration. Node pools use node labels as its identification. Run:ai has added a table for viewing nodes and for configuring node pools. To configure a node pool, see [Configuring node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 * Run:ai scheduler supports 2 scheduling strategies: Bin Packing (default) and Spread. For more information, see [Scheduling strategies](../Researcher/scheduling/strategies.md). You can configure the scheduling strategy in the node pool level to improve the support of clusters with mixed types of resources and workloads. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
+<!-- Hagay: MISSING feature - Per node-pool Over-Quota Priority 
+ Run:ai Project allows and Admin to configure if the Project should support Over-Quota/Over-Quota-Priority, this capability is now enhanced to allow the Administrator to configure Over-Quota/Over-Quota-Priority per node-pool per project, to read more about Over-Quota/Over-Quota-Priority go <here> -->
 
+<!-- Hagay: Jason, the node pools priority is new to Workspaces but was already existing on Workloads(Interactive Jobs, Training) -->
 <!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
 * Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
 
-* GPU device level DCGM Metrics are collected per GPU and presented by Run:ai in the Nodes table. Each node contains a list of its embedded GPUs with their respective DCGM metrics.
-See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#metrics){target=_blank} for the list of metrics which are provided by NVidia DCGM and collected by Run:ai. Contact your Run:ai customer representative to enable this feature.
+<!-- Hagay: Node-pools support is supported by Departments since 2.8. I don't think we had any change in Departments in 2.13, and Projects V2 is an internal name for the new UI/UX of Projects, I'm not sure why this paragraph is here -->
 
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 * Added support for node pools to *Departments*, including new columns in the *Departments* grid.
@@ -46,8 +51,11 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 * Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
+<!-- Hagay: Support for Ray Jobs and Elastic Workloads. --> 
 <!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
 * Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
+
+<!-- Hagay: what about DeepSpeed? OCP DevSpaces? did we mention it in any of the previous versions? -->
 
 **Workload assets**
 
@@ -87,8 +95,6 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
-  
-* Added support for terminating Run:ai training Jobs after preemption. Administrators can set a `termination after preemption` policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted. It then typically goes back to the pending queue; however, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace. For configuration information, see [Terminating Run:ai training jobs after preemption](../admin/workloads/policies.md#terminate-runai-training-jobs-after-preemption-policy).
 
 ## Installation
 
@@ -103,9 +109,16 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 | RUN-9323    | Fixed an issue with a non-scaleable error message when scheduling hundreds of nodes is not successful.                                     |
 | RUN-9324    | Fixed an issue where the scheduler did not take into consideration the amount of storage so there is no explanation that pvc is not ready. |
 | RUN-9902    | Fixed an issue in OpenShift environments, where there are no metrics in the dashboard because Prometheus doesn’t have permissions to monitor the `runai` namespace after an installation or upgrade to 2.9. |
-| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields when configuring an interactive policy.   |
-| RUN-10052   | Fixed an issue when loading a new job from a template gives an error until there are changes made on the form.   |
+| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields.   <!-- what? this is not customer facing -->                                                  |
+| RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template. <!-- what is this functionality? you means job template? I do not understand what previous version means in this context -->                                                |
 | RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
-| RUN-10422   | Fixed an issue where node details show running workloads that were actually finished (successfully/failed/etc.).                         |
+| RUN-10102   | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.   <!-- the issue is not clear / customer facing -->                      |
+| RUN-10366   | Fixed an issue in Elastic fair share calculations.         <!-- is this relevant? Please check with Hagay  - Elastic workloads is new functionality -->                                                                              |
+| RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods. <!-- where? -->                                                                              |
+| RUN-10379   | Fixed an issue where projects with an over quota weight greater 0 cannot be saved.  <!-- I am not aware of exposing to customers overquota weight. We need to make it customer facing and speak in terms customers are aware of -->                                                       |
+| RUN-10380   | Fixed an issue in the new Projects UI. The project is stuck `Updating` without changing any field. <!-- we just wrote that the projects is a new page. Why is it relvant? -->                                       |
+| RUN-10406   | Fixed an issue where cluster sync takes a long time after a restart to update new jobs.    <!-- what's the customer impact? Customers should not be aware of our services and the details behind them -->                                                |
+| RUN-10422   | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc.).                         |
 | RUN-10500   | Fixed an issue where jobs are shown as running even though they don't exist in the cluster.                                                |
-| RUN-10813   | Fixed an issue in adding a `data source` where the path is case sensitive and didn't allow uppercase. |
+| RUN-10729   | Fixed an issue where the runaijob-contoller reports an incorrect status.                                                                   |
+| RUN-10813   | Fixed an issue adding a data source.                                                                                                       |
