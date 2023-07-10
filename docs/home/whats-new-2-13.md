@@ -67,10 +67,10 @@ This version contains features and fixes from previous versions starting with 2.
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more added to projects v2-->
 
-**Researcher tools**
+**Researcher API**
 
 <!-- RUN-8631/8880 Researcher API for train jobs -->
-* Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/cluster-api/submit-rest.md).
+* Extending researcher's API to allow stopping & starting workloads via API (see [Submitting Workloads via HTTP/REST](../developer/cluster-api/submit-rest.md)).
 
 **Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
