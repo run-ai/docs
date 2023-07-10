@@ -98,16 +98,9 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 | RUN-9323    | Fixed an issue with a non-scaleable error message when scheduling hundreds of nodes is not successful.                                     |
 | RUN-9324    | Fixed an issue where the scheduler did not take into consideration the amount of storage so there is no explanation that pvc is not ready. |
 | RUN-9902    | Fixed an issue in OpenShift environments, where there are no metrics in the dashboard because Prometheus doesn’t have permissions to monitor the `runai` namespace after an installation or upgrade to 2.9. |
-| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields.   <!-- what? this is not customer facing -->                                                  |
-| RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template. <!-- what is this functionality? you means job template? I do not understand what previous version means in this context -->                                                |
+| RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields when configuring an interactive policy.   |
+| RUN-10052   | Fixed an issue when loading a new job from a template gives an error until there are changes made on the form.   |
 | RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
-| RUN-10102   | Fixed an issue where duplicate series for the match group error were found in some tables in the analytics screen.   <!-- the issue is not clear / customer facing -->                      |
-| RUN-10366   | Fixed an issue in Elastic fair share calculations.         <!-- is this relevant? Please check with Hagay  - Elastic workloads is new functionality -->                                                                              |
-| RUN-10367   | Fixed an issue when correctly sorting ray and kubeflow pods. <!-- where? -->                                                                              |
-| RUN-10379   | Fixed an issue where projects with an over quota weight greater 0 cannot be saved.  <!-- I am not aware of exposing to customers overquota weight. We need to make it customer facing and speak in terms customers are aware of -->                                                       |
-| RUN-10380   | Fixed an issue in the new Projects UI. The project is stuck `Updating` without changing any field. <!-- we just wrote that the projects is a new page. Why is it relvant? -->                                       |
-| RUN-10406   | Fixed an issue where cluster sync takes a long time after a restart to update new jobs.    <!-- what's the customer impact? Customers should not be aware of our services and the details behind them -->                                                |
-| RUN-10422   | Fixed an issue where node details show associated workloads that are actually finished (successfully/failed/etc.).                         |
+| RUN-10422   | Fixed an issue where node details show running workloads that were actually finished (successfully/failed/etc.).                         |
 | RUN-10500   | Fixed an issue where jobs are shown as running even though they don't exist in the cluster.                                                |
-| RUN-10729   | Fixed an issue where the runaijob-contoller reports an incorrect status.                                                                   |
-| RUN-10813   | Fixed an issue adding a data source.                                                                                                       |
+| RUN-10813   | Fixed an issue in adding a `data source` where the path is case sensitive and didn't allow uppercase. |
