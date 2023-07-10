@@ -32,6 +32,9 @@ This version contains features and fixes from previous versions starting with 2.
 <!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
 * Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
 
+* GPU device level DCGM Metrics are collected per GPU and presented by Run:ai in the Nodes table. Each node contains a list of its embedded GPUs with their respective DCGM metrics.
+See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#metrics){target=_blank} for the list of metrics which are provided by NVidia DCGM and collected by Run:ai. Contact your Run:ai customer representative to enable this feature.
+
 <!-- RUN-10105/10106 Align Departments with Projects V2 -->
 * Added support for node pools to *Departments*, including new columns in the *Departments* grid.
 
@@ -84,6 +87,8 @@ This version contains features and fixes from previous versions starting with 2.
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
+  
+* Added support for terminating Run:ai training Jobs after preemption. Administrators can set a `termination after preemption` policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted. It then typically goes back to the pending queue; however, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace. For configuration information, see [Terminating Run:ai training jobs after preemption](../admin/workloads/policies.md#terminate-runai-training-jobs-after-preemption-policy).
 
 ## Installation
 
