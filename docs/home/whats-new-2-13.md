@@ -40,11 +40,11 @@ This version contains features and fixes from previous versions starting with 2.
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
 * Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#).
 
-<!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
-* Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
-
 <!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
 * Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
+
+<!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
+* Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
 **Workload assets**
 
