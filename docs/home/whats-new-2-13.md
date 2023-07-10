@@ -4,33 +4,22 @@
 
 ### Release content
 
-<!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
+This version contains features and fixes from previous versions starting with 2.9. Refer to the prior versions for specific features and fixes. For information about features, functionality, and fixed issues in previous versions see:
 
-<!-- RUN-9312/9313 Projects V2 -->
+* [What's new 2.12](whats-new-2-12.md)
+* [What's new 2.10](whats-new-2-10.md)
+* [What's new 2.9](whats-new-2-9.md)
+
 **Projects**
-<!-- Omer: we are missing the what is new in Projects in 2.13 and talking about what projects are. The split to admins and researchers is not accurate. I suggest to remove it altogether and replace it with the change in 2.13 -->
-**Projects** is a tool for administrators and researchers to control resource allocation, create efficient organizational structures, and help prioritize workloads.
-In this release we introduce a new Projects page that eases resource management.
-
-For administrators:
-
-* Monitor resource allocation and performance for multiple workloads.
-* Organize, isolate, and allocate resources for multiple workloads and groups of researchers.
-* Granular control over resource allocation for multiple groups of researchers.
-
-For researchers:
-
-* Control over workload resource allocation and prioritization.
-* Control over workload node assignment and node pool priority.
-
-To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
+<!-- RUN-9312/9313 Projects V2 -->
+* Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
 
 **Dashboards**
 
 <!-- RUN9530/9577 New Dashboard for Quota management -->
-* Added a new dashboard for Quota management, which provides an efficient means to monitor and manage resource utilization within the AI cluster The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
+* Added a new dashboard for Quota management, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
 
-* Added to the Overview dashboard the ability to filter down the cluster by one or more node pools. For more information on node pools see <node pools link...>
+* Added to the Overview dashboard, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md) 
 
 <!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
 **Nodes**
@@ -38,10 +27,13 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 * A node is a worker machine that runs workloads, and a node pool is group of nodes within a cluster that all have the same configuration. Node pools use node labels as its identification. Run:ai has added a table for viewing nodes and for configuring node pools. To configure a node pool, see [Configuring node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
-* Run:ai scheduler supprots 2 scheduling strategies: Bin Packing (default) and Spread. For more information read...
-  In order to improve the supprot of clusters with mixed type of resources and workloads, we added support in this release for configuring the scheduling strategy in the node pool level. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
+* Run:ai scheduler supports 2 scheduling strategies: Bin Packing (default) and Spread. For more information, see [Scheduling strategies](../Researcher/scheduling/strategies.md). You can configure the scheduling strategy in the node pool level to improve the support of clusters with mixed types of resources and workloads. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
 
-* Added columns to the node pool grid to show the current placement Strategy per node pool (`Bin Pack` or `Spread`). <!--I think that this line is not needed, as well as we referred to it in the previous item as "scheduling strategy" and we are not consistent -->
+<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
+* Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
+<!-- RUN-10105/10106 Align Departments with Projects V2 -->
+* Added support for node pools to *Departments*, including new columns in the *Departments* grid.
 
 **Integrations**
 
@@ -51,16 +43,20 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 <!-- RUN-8748/8958 RUN-9627/10483 WANDB-SWEEP & Run.ai integration / WANDB SWEEP Integration - phase 2 -->
 * Added sweep to Weights and Biases job submission. Sweep combines a strategy for exploring hyperparameter values with the code that evaluates them. The strategy can be as simple as trying every option or as complex as Bayesian Optimization and Hyperband (BOHB). To configure WANDB sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
-**Workspaces**
+<!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
+* Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
+
+**Workload assets**
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes -->
-* Improved timout policy behaviour. A workload that reaches the time limit is now suspended, and a workspace is stopped <!-- this is inaccurate. Lior will talk with you. This is for any type of workload and shopuld be under timpeout policy title and not workspace -->. The admin can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings. <!-- rephrase? does the update mean in this sentense? -->
+* Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
 
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
-* Added a tree selection function <!-- The tree is not the essence here, it is what the tree enables - selection based on the organizational structure and everywhere in the hierearchy. Needs validation with Lior --> to the scope field when creating a new asset.  Included assets are *Environment*, *Compute resource*,  and some types of *Data source*.
 
-<!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
-* Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
+* Added a selection function <!-- The tree is not the essence here, it is what the tree enables - selection based on the organizational structure and everywhere in the hierarchy. Needs validation with Lior --> to the scope field when creating a new asset. You can select assets tht are available from anywhere in the organization from the tree.  Included assets are *Environment*, *Compute resource*, and some types of *Data source*.
+
+<!-- RUN-9364/10850 Search box for cards in V2 assets -->
+* Added a search box for cards in *Workspaces*, *Trainings*, and *Templates* to provide an easy way to search for assets and resources. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
 
 **Environments**
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
@@ -69,38 +65,25 @@ To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md)
 <!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
 * Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/admin-ui-setup/credentials-setup.md#configuring-credentials).
 
-<!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more  -->
-
-<!-- RUN-10105/10106 Align Departments with Projects V2 -->
-<!-- Not related to the "environment topic... Should be moved to a different topic --> * Added support for node pools to *Departments*, including new columns in the *Departments* grid.
+<!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more added to projects v2-->
 
 **Researcher tools**
 
 <!-- RUN-8631/8880 Researcher API for train jobs -->
 * Added `suspend`/`stop` to [Submitting Workloads via HTTP/REST](../developer/cluster-api/submit-rest.md).
 
-**Administrative**
-
-<!-- Please remove this feature. We do not want to make it too piblic --><!-- RUN-7757/9296 Custom logo in UI -->
-* Added support for uploading a custom company logo to be displayed in the UI for both SaaS and self-hosted environments. Use the  [Upload tenant logo](https://app.run.ai/api/docs#tag/Tenant/operation/upload_tenant_logo){target=_blank} endpoint in the Admin API.
-
+**Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
-<!-- Really not clear - no context. Needs to mention that this is policy imporvement, link to policies and expalin the improvment. This is not clear at all and needs re-write with PM --> * Added support for default item fields. For more information, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
+* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For more information and an example of a PVC default, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
 
-<!-- RUN-9521/9522  Provide a description in CLI when command fails no need to document-->
+<!-- RUN-9270/9274 - Interactive Time limit Fixes -->
+* Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.
 
+<!-- RUN-9826/10186 Support PVC from block storage -->
+* Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
 
-<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy --> <!-- excellent, but not related to adminitrative at all and should move to a different section -->
-* Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
-
-<!-- RUN-9826/10186 Support PVC from block storage --><!-- why didn't you put it next to the cluster wide PVC? Should be one next to the other -->
-* Added support for PVC block storage in the *New data source* form. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
-
-<!-- RUN-9364/10850 Search box for cards in V2 assets --> <!-- does not belong here and should move to workspaces -->
-* In order to ease...added a search box for cards in *Workspaces*, *Trainings*, and *Templates*. The search box is available in any section where there is a card gallery and will filter based on titles or field values.
-
-* <!-- what? not clear at all. and shouldbe next to the other PVC items -->In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*.
-
+<!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
+* Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
 
 ## Installation
 
@@ -111,10 +94,10 @@ The manual process of upgrading Kubernets CRDs is no longer needed when upgradin
 
 | Internal ID | Description                                                                                                                                |
 | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| RUN-9039    | Fixed an issue where in the new job screen, after toggling off the <!-- we do not write preemptible like that anywhere else --> pre-emptible flag, and a job is submitted, the job still shows as pre-emptible. |
+| RUN-9039    | Fixed an issue where in the new job screen, after toggling off the preemptible flag, and a job is submitted, the job still shows as preemptible. |
 | RUN-9323    | Fixed an issue with a non-scaleable error message when scheduling hundreds of nodes is not successful.                                     |
 | RUN-9324    | Fixed an issue where the scheduler did not take into consideration the amount of storage so there is no explanation that pvc is not ready. |
-| RUN-9902    | Fixed an issue where Prometheus doesn't have sufficient permissions in 2.9 <!-- but this is not 2.9, this is 2.13 - what is this 2.9 stand for and why is it relevant? -->on openshift                                                    |
+| RUN-9902    | Fixed an issue in OpenShift environments, where there are no metrics in the dashboard because Prometheus doesn’t have permissions to monitor the `runai` namespace after an installation or upgrade to 2.9. |
 | RUN-9920    | Fixed an issue where the `canEdit` key is not validated properly for itemized fields.   <!-- what? this is not customer facing -->                                                  |
 | RUN-10052   | Fixed an issue where a job can't be submitted using the previous version job from template. <!-- what is this functionality? you means job template? I do not understand what previous version means in this context -->                                                |
 | RUN-10053   | Fixed an issue where the Node pool column is unsearchable in the job list.                                                                 |
