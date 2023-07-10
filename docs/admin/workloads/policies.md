@@ -302,7 +302,7 @@ Should return the following:
 ```bash
 NAME                 AGE
 interactive-policy   2d3h
-````
+```
 
 To delete this policy:
 
@@ -315,6 +315,3 @@ To access _project-specific_ policies, replace the `-n runai` parameter with the
 ## See Also
 
 * For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)
-
-
-
