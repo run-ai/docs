@@ -275,7 +275,7 @@ spec:
     value: true
 ```
 
-Per namespace (project) YAML based policy:
+For per namespace (project) use this YAML based policy:
 
 ```YAML
 apiVersion: run.ai/v2alpha1
