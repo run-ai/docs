@@ -242,7 +242,6 @@ Note that each kind of policy has a slightly different set of parameters. For ex
 It is possible to add values from Kubernetes secrets as the value of environment variables included in the policy.
 The secret will be extracted from the secret object when the Job is created. For example:
 
-
 ``` YAML
   environment:
     items:
@@ -257,6 +256,37 @@ the namespace where the workload runs.
 !!! Note
     Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
   
+## Terminate Run:ai training Jobs after preemption policy
+
+Administrators can set a ‘termination after preemption’ policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (e.g. GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted and typically goes back to the pending queue. However, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace.
+
+To use this feature the administrator should configure either a cluster wide or namespace policy.
+
+For cluster wide (all namespaces/projects) use this YAML based policy:
+
+```YAML
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: training-policy
+  namespace: runai
+spec:
+  terminateAfterPreemption:
+    value: true
+```
+
+For per namespace (project) use this YAML based policy:
+
+```YAML
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: training-policy
+  namespace: runai-<PROJECT_NAME>
+spec:
+  terminateAfterPreemption:
+    value: false
+```
 ## Modifying/Deleting Policies
 
 Use the standard kubectl get/apply/delete commands to modify and delete policies.
@@ -266,15 +296,20 @@ For example, to view the _global_ interactive policy:
 ```bash
 kubectl get interactivepolicies -n runai
 ```
+
 Should return the following:
+
 ```bash
 NAME                 AGE
 interactive-policy   2d3h
 ````
+
 To delete this policy:
+
 ```bash
 kubectl delete InteractivePolicy interactive-policy -n runai
 ```
+
 To access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
 
 ## See Also
