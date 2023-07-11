@@ -44,7 +44,7 @@ Improved the readability of unsuccessful node scheduling in the message log.
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9326 | Fixed an issue that affected the dashboard where projects created with fractional GPUs, display the number of GPUs rounded down to nearest whole number. |
-| RUN-9039 | Fixed an issue that displays jobs as interactive-preemptible after cycling the `preemptable` flag from on to off. |
+| RUN-9039 | Fixed an issue that displays jobs as interactive-preemptible after cycling the `preemptible` flag from on to off. |
 
 ## Version 2.12.0
 
@@ -76,7 +76,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 <!-- RUN-9352 / RUN-8824 --> **Training Experience**
 
-Added a new feature that allows the reasercher to provision a training job in a project using a wizard like flow.
+Added a new feature that allows the researcher to provision a training job in a project using a wizard like flow.
 
 <!-- RUN-8789 -->
 **DeepSpeed Integration**
