@@ -46,7 +46,7 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 **Integrations**
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
-* Added support for Spark and Elastic jobs. For more information, see [Running SPARK jobs with Run:ai](../admin/integration/spark.md#).
+* Added support for Spark and Elastic jobs. For more information, see [Running Spark jobs with Run:ai](../admin/integration/spark.md#).
 <!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
 * Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
 
