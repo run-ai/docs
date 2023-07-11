@@ -168,7 +168,7 @@ Below is a list of statuses. For each status the list shows:
       <td valign="middle" class="td14">
         <p class="p1"><span class="s1">Job is pending. Possible reasons:</span></p>
         <p class="p1"><span class="s1">- Not enough resources</span></p>
-        <p class="p1"><span class="s1">- Waiting in Queue (over quota etc).</span></p>
+        <p class="p1"><span class="s1">- Waiting in Queue (over-quota etc).</span></p>
       </td>
       <td valign="middle" class="td15">
         <p class="p2"><span class="s1"></span><br></p>
