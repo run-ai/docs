@@ -112,7 +112,9 @@ The association between workspaces and node pools is done via *Compute resources
 
 ## Installation
 
-The manual process of upgrading Kubernets CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
+* The manual process of upgrading Kubernetes CRDs is no longer needed when upgrading to the most recent version (2.13) of Run:ai.
+* (Since Run:ai 2.12) The control-plane installation has been simplified and no longer requires the creation of a _backend values file_. Instead, install directly via `helm` as described [here](../admin/runai-setup/self-hosted/k8s/backend.md#install-the-control-plane).  
+* (Since Run:ai 2.12) The air-gapped, control-plane installation now generates a values file `custom-env.yaml` during the [preparation](../admin/runai-setup/self-hosted/k8s/preparations.md#prepare-installation-artifacts) stage which is then used when installing the [control-plane](../admin/runai-setup/self-hosted/k8s/backend.md#install-the-control-plane).
 ### Known issues
 
 ### Fixed issues
