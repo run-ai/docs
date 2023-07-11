@@ -36,7 +36,7 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 The association between workspaces and node pools is done using *Compute resources* section. In order to associate a compute resource to a node pool, in the *Compute resource* section, press *More settings*. Press *Add new* to add more node pools to the configuration. Drag and drop the node pools to set their priority.
 
 <!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
-* Added Node pool selection as part of the workload () submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by a policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+* Added Node pool selection as part of the workload submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by a policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
 
 **Time limit duration**
 
