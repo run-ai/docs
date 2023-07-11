@@ -94,10 +94,6 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
 * Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
 
-<!-- RUN-9270/9274 - Interactive Time limit Fixes 
-* Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.-->
-* Added support for terminating Run:ai training Jobs after preemption. Administrators can set a `termination after preemption` policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For configuration information, see [Terminating Run:ai training jobs after preemption](../admin/workloads/policies.md#terminate-runai-training-jobs-after-preemption-policy).
-
 **PVC data sources**
 <!-- RUN-9826/10186 Support PVC from block storage -->
 * Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
