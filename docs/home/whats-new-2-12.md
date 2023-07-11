@@ -60,7 +60,8 @@ May 2023
 
 * Added support for OpenShift 4.12 and Kubernetes 1.27.
 
-* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md).
+<!--Removed from this version 
+* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md). -->
 
 * The `runai top job` command was deprecated.
 
@@ -85,7 +86,8 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
 **Cluster API**
 
-<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
+<!-- RUN-8880 -->
+Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](../developer/cluster-api/submit-yaml.md).
 
 **Comet Integration**
 
