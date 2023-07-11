@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.12/docs/
+edit_uri: edit/v2.13/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -140,6 +140,7 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'Version 2.13' : 'home/whats-new-2-13.md'
       - 'Version 2.12' : 'home/whats-new-2-12.md'
       - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
@@ -188,7 +189,6 @@ nav:
       - 'Configuration' : 
         - 'Overview' : 'admin/runai-setup/config/overview.md'
         - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
-
         - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
         - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
@@ -242,6 +242,9 @@ nav:
       - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
       - 'Event Messaging': 'admin/integration/messaging.md'
       - 'DeepSpeed': 'admin/integration/deepspeed.md'
+      - 'Comet' : 'admin/integration/comet.md'
+      - 'Spark' : 'admin/integration/spark.md'
+      - 'Ray' : 'admin/integration/ray.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :

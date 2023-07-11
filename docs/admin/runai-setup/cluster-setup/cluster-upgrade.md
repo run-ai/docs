@@ -13,10 +13,23 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 ## Upgrade Run:ai cluster 
 
+### Upgrade from version 2.9 or later
+
+
+Run:
+
+```
+helm repo update
+helm get values runai-cluster -n runai > values.yaml
+helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
+```
+
+!!! Note
+    To upgrade to a __specific__ version of the Run:ai cluster, add `--version <version-number>` to the `helm upgrade` command. You can find the relevant version with `helm search repo` as described above. 
 
 ### Upgrade from version 2.8 or earlier
 
-The process of upgrading from 2.7 or 2.8 to 2.12 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
+The process of upgrading from 2.7 or 2.8 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
 
 !!! Note
     The reason for this process is that Run:ai 2.9 cluster installation no longer installs pre-requisites. As such ownership of dependencies such as Prometheus will be undefined if a `helm upgrade` is run.
@@ -31,20 +44,6 @@ The process:
 
 
 * Install Run:ai cluster as described [here](cluster-install.md)
-
-### Upgrade from version 2.9 or later
-
-
-Run:
-
-```
-helm repo update
-helm get values runai-cluster -n runai > values.yaml
-helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
-```
-
-!!! Note
-    To upgrade to a __specific__ version of the Run:ai cluster, add `--version <version-number>` to the `helm upgrade` command. You can find the relevant version with `helm search repo` as described above. 
 
 ## Verify Successful Installation
 

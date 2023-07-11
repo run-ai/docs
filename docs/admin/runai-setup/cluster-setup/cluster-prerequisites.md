@@ -8,9 +8,9 @@ The following is a checklist of the Run:ai prerequisites:
 |--------------|---------|
 | [Kubernetes](#kubernetes)          | Verify certified vendor and correct version. | 
 | [NVIDIA GPU Operator](#nvidia)     | Different Kubernetes flavors have slightly different setup instructions.  <br> Verify correct version. |
-| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). Version 2.7 or earlier of Run:ai already installs NGINX as part of the Run:ai cluster installation. | 
-| [Prometheus](#prometheus) | Install Prometheus. Version 2.8 or earlier of Run:ai already installs Prometheus as part of the Run:ai cluster installation. | 
-| [Trusted domain name](#domain-name) | You must provide a trusted domain name (Version 2.7: a cluster IP). Accessible only inside the organization | 
+| [Ingress Controller](#ingress-controller) | Install and configure NGINX (some Kubernetes flavors have NGINX pre-installed). | 
+| [Prometheus](#prometheus) | Install Prometheus. | 
+| [Trusted domain name](#cluster-url) | You must provide a trusted domain name. Accessible only inside the organization | 
 | (Optional) [Distributed Training](#distributed-training) | Install Kubeflow Training Operator if required. | 
 | (Optional) [Inference](#inference) | Some third party software needs to be installed to use the Run:ai inference module. | 
 
@@ -21,7 +21,9 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 
 ### Operating System
 
-Run:ai will work on any __Linux__ operating system that is supported by both Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. Having said that, Run:ai performs its internal tests on Ubuntu 20.04 (and CoreOS for OpenShift). The exception is GKE (Google Kubernetes Engine) where Run:ai has only been certified on an Ubuntu image.
+* Run:ai will work on any __Linux__ operating system that is supported by __both__ Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}. 
+* An important highlight is that GKE (Google Kubernetes Engine) will only work with Ubuntu, as NVIDIA [does not support](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/google-gke.html#about-using-the-operator-with-google-gke) the default _Container-Optimized OS with Containerd_ image.
+* Run:ai performs its internal tests on Ubuntu 20.04 and CoreOS for OpenShift. 
 
 ### Kubernetes
 
@@ -51,6 +53,7 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
 | Run:ai 2.10    | 1.21 through 1.26 (see note below) | 4.8 through 4.11 |
 | Run:ai 2.12    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
+| Run:ai 2.13    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
 
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit/#-pvc-new-string). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
@@ -62,7 +65,7 @@ Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/conc
 
 ### NVIDIA 
 
-Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The interim versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
+Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
 === "EKS"
     * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
@@ -98,7 +101,7 @@ Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The inter
     Then run: `kubectl apply -f resourcequota.yaml`
 
     !!! Important
-        * Run:ai on GKE has only been tested with GPU Operator version 1.11.1 and up.
+        * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
 
 === "RKE"
@@ -112,8 +115,6 @@ Run:ai requires __NVIDIA GPU Operator__ version 1.9 or 22.9 and above. The inter
 
 
 ### Ingress Controller
-
-:octicons-versions-24: Version 2.8 and up.
 
 Run:ai requires an ingress controller as a prerequisite. The Run:ai cluster installation configures one or more ingress objects on top of the controller. 
 
@@ -151,16 +152,11 @@ For support of ingress controllers different than NGINX please contact Run:ai cu
 !!! Note
     In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, there is no need to install an ingress controller as it is pre-installed by the control plane.
 ### Cluster URL
+<!-- the following anchors are added for backward compatibility for what's new of 2.8  -->
+<h3 id="cluster-ip"></h3>
+<h3 id="domain-name"></h3>
 
-The Run:ai user interface requires a URL to the Kubernetes cluster. You can use a domain name (FQDN) or an IP Address (deprecated).
-
-!!! Note
-    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
-#### Domain Name 
-
-:octicons-versions-24: Version 2.8 and up.
-
-You must supply a domain name as well as a __trusted__ certificate for that domain. 
+The Run:ai cluster creation wizard requires a domain name (FQDN) to the Kubernetes cluster as well as a __trusted__ certificate for that domain. The domain name needs to be accessible inside the organization only.
 
 Use an HTTPS-based domain (e.g. [https://my-cluster.com](https://my-cluster.com)) as the cluster URL. Make sure that the DNS is configured with the cluster IP.
 
@@ -178,106 +174,45 @@ kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
 
 For more information on how to create a TLS secret see: [https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets){target=_blank}.
 
-#### Cluster IP
+!!! Note
+    In a self-hosted installation, the typical scenario is to install the first Run:ai cluster on the same Kubernetes cluster as the control plane. In this case, the cluster URL need not be provided as it will be the same as the control-plane URL. 
 
-(Deprecated in version 2.8, no longer available in version 2.9)
-
-Following are instructions on how to get the IP and set firewall settings. 
-
-
-=== "Unmanaged Kubernetes" 
-    * Use the node IP of any of the Kubernetes nodes. 
-    * Set up the firewall such that the IP is available to Researchers running within the organization (but not outside the organization).
-
-=== "Unmanaged Kubernetes on the cloud" 
-    * Use the node IPs of any of the Kubernetes nodes. Both internal and external IP in the format __external-IP,internal-IP__. 
-    * Set up the firewall such that the external IP is available to Researchers running within the organization (but not outside the organization).
-
-
-=== "EKS"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-    ```
-
-=== "GKE"
-
-    You will need to externalize an IP address via a load balancer. If you do not have an existing load balancer already, install __NGINX__ as follows:
-
-    ``` bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-    Find the Cluster IP by running:
-
-    ``` bash
-    echo $(kubectl get svc nginx-ingress-ingress-nginx-controller  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    ```
 
 ### Prometheus 
 
+If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
 
-=== "Version 2.9 or later" 
-    If not already installed on your cluster, install the full `kube-prometheus-stack` through the [Prometheus community Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack){target=_blank}. 
-    
-    !!! Note
-        * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
-        * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
+!!! Note
+    * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
+    * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
 
-    Then install the Prometheus stack by running:
-    
-    ``` bash
-    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-    helm repo update
-    helm install prometheus prometheus-community/kube-prometheus-stack \
-        -n monitoring --create-namespace --set grafana.enabled=false # (1)
-    ```
+Then install the Prometheus stack by running:
 
-    1. The Grafana component is not required for Run:ai. 
+``` bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack \
+    -n monitoring --create-namespace --set grafana.enabled=false # (1)
+```
 
-=== "Version 2.8 or below" 
-    The Run:ai Cluster installation will, by default, install [Prometheus](https://prometheus.io/){target=_blank}, but it can also connect to an existing Prometheus instance installed by the organization. Such a configuration can only be performed together with Run:ai support. In the latter case, it's important to:
+1. The Grafana component is not required for Run:ai. 
 
-    * Verify that both [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/){target=_blank} and [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} are installed. Both are part of the default Prometheus installation
-    * Understand how Prometheus has been installed. Whether [directly](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus) or with the [Prometheus Operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack). The distinction is important during the Run:ai Cluster installation.
+## Optional Software Requirements
 
-
+The following software enables specific features of Run:ai
 ### Distributed Training
 
-=== "Version 2.10 or later" 
-    Run:ai supports three different methods to ditribute training jobs across multiple nodes"
+Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
-    * MPI
-    * TensorFlow
-    * PyTorch
+* MPI
+* TensorFlow
+* PyTorch
 
-    To install all 3 prerequisites run the following:
+To install all 3 prerequisites run the following:
 
-    ```
-    kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
-    ```
-
-=== "Version 2.9 or earlier"
-    Distributed training is the ability to run workloads on multiple nodes (not just multiple GPUs on the same node). Run:ai provides this capability via Kubeflow MPI. If you need this functionality, you will need to install the [Kubeflow MPI Operator](https://github.com/kubeflow/mpi-operator){target=_blank}. Run:ai supports MPI version 0.3.0 (the latest version at the time of writing). 
-
-
-    Use the following [installation guide](https://github.com/kubeflow/mpi-operator#installation){target=_blank}. As per instruction, run:
-
-    * Verify that the `mpijob` custom resource does not currently exist in the cluster by running `kubectl get crds | grep mpijobs`. If it does, delete it by running `kubectl delete crd mpijobs.kubeflow.org`
-    * run `kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml`
-
+```
+kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+```
 
 ### Inference
 
@@ -317,7 +252,7 @@ Inference workloads will typically be accessed by consumers residing outside the
 
 However, for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
 
-??? "Altenative Configuration"
+??? "Alternative Configuration"
     When the above DNS configuration is not possible, you can manually add the `Host` header to the REST request as follows:
 
     * Get an `<external-ip>` by running `kubectl get service -n kourier-system kourier`. If you have been using _istio_ during Run:ai installation, run:  `kubectl -n istio-system get service istio-ingressgateway` instead. 
@@ -353,7 +288,7 @@ However, for the URL to be accessible outside the cluster you must configure you
 
 ## User requirements
 
-__Usage of containers and images:__ The individual Researcher's work should be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
+__Usage of containers and images:__ The individual Researcher's work must be based on [container](https://www.docker.com/resources/what-container){target=_blank} images. 
 
 ## Network Access Requirements
 
@@ -420,21 +355,6 @@ gcr.io/run-ai-prod
 </td>
 </tr>
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Cert Manager </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>53</p>
-</td>
-
 </tbody>
 </table>
 
@@ -482,20 +402,6 @@ In addition, once running, Run:ai requires an outbound network connection to the
 </td>
 </tr>
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Cert Manager </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> (Run:ai version 2.7 or lower only) Creates a letsencrypt-based certificate for the cluster  </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> 8.8.8.8, 1.1.1.1, dynu.com </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>53</p>
-</td>
 
 </tbody>
 </table>

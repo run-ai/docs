@@ -20,9 +20,11 @@ Policies are specific to Workload type as such there are several kinds of Polici
 
 A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
 
+ When researchers create a new interactive workload or workspace, they see list of available node pools and their priority. Priority is set by dragging and dropping the node pools in the desired order of priority. When the node pool priority list is **locked** by an administrator **policy**, the node pool list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
 ## Creating a Policy
 
-### Creating your First Policy 
+### Creating your First Policy
 
 To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
 
@@ -42,9 +44,9 @@ spec:
 ```
 
 1. Set the Project namespace here.
-2. GPU values are quoted as they can contain non-integer values. 
+2. GPU values are quoted as they can contain non-integer values.
 
-The policy places a default and limit on the available values for GPU allocation. To apply this policy, run: 
+The policy places a default and limit on the available values for GPU allocation. To apply this policy, run:
 
 ``` bash
 kubectl apply -f gpupolicy.yaml 
@@ -90,7 +92,7 @@ The example above illustrated rules for parameters of "primitive" types, such as
 
 Other workload parameters, such as _ports_ or _volumes_, are "complex", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
 
-Following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
+The following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
 ``` YAML
 apiVersion: run.ai/v2alpha1
@@ -122,13 +124,35 @@ spec:
           external: 8081
 ```
 
-
 A policy for a complex field is composed of three parts:
 
 * __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `true` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is the default for `canAdd`, so it actually could have been omitted from the policy above). When `canAdd` is set to `false`, the researcher will not be able to add any additional port except those already specified by the policy.
-* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of `external` to a maximum of 32767. 
-* __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload.
-  
+* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of `external` to a maximum of 32767.
+* __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload. It is possible to specify a label using the reserved name of `DEFAULTS`. This item provides the defaults for all other items.
+
+The following is an example of a complex policy for PVCs which contains `DEFAULTS`.
+
+```yml
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: tp # use your name.
+  namespace: runai-team-a # use your namespace
+spec:
+  pvcs:
+    itemRules:
+      existingPvc:
+        canEdit: false
+      claimName:
+        required: true
+    items:
+      DEFAULTS:
+        value:
+          existingPvc: true
+          path: nil
+```
+
+
 ### Syntax
 
 The complete syntax of the policy YAML can be obtained using the `explain` command of kubectl. For example:
@@ -218,7 +242,6 @@ Note that each kind of policy has a slightly different set of parameters. For ex
 It is possible to add values from Kubernetes secrets as the value of environment variables included in the policy.
 The secret will be extracted from the secret object when the Job is created. For example:
 
-
 ``` YAML
   environment:
     items:
@@ -233,6 +256,37 @@ the namespace where the workload runs.
 !!! Note
     Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
   
+## Terminate Run:ai training Jobs after preemption policy
+
+Administrators can set a ‘termination after preemption’ policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (e.g. GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted and typically goes back to the pending queue. However, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace.
+
+To use this feature the administrator should configure either a cluster wide or namespace policy.
+
+For cluster wide (all namespaces/projects) use this YAML based policy:
+
+```YAML
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: training-policy
+  namespace: runai
+spec:
+  terminateAfterPreemption:
+    value: true
+```
+
+For per namespace (project) use this YAML based policy:
+
+```YAML
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: training-policy
+  namespace: runai-<PROJECT_NAME>
+spec:
+  terminateAfterPreemption:
+    value: false
+```
 ## Modifying/Deleting Policies
 
 Use the standard kubectl get/apply/delete commands to modify and delete policies.
@@ -242,20 +296,22 @@ For example, to view the _global_ interactive policy:
 ```bash
 kubectl get interactivepolicies -n runai
 ```
+
 Should return the following:
+
 ```bash
 NAME                 AGE
 interactive-policy   2d3h
-````
+```
+
 To delete this policy:
+
 ```bash
 kubectl delete InteractivePolicy interactive-policy -n runai
 ```
+
 To access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
 
 ## See Also
 
 * For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)
-
-
-

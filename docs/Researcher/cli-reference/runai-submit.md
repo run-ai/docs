@@ -371,10 +371,11 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 #### -s | --service-type `<string>`
 
 > External access type to interactive jobs. Options are:
-    > * `portforward` (deprecated)
-    > * `loadbalancer`
-    > * `nodeport`
-    > * `external-url`
+>
+>  * `portforward` (deprecated)
+>  * `loadbalancer`
+>  * `nodeport`
+>  * `external-url`
 
 #### --custom-url `<string>`
 

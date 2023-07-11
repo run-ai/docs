@@ -68,7 +68,7 @@ Every new workload is associated with a Project. The Project contains a deserved
 
 ### Quota with Multiple Resources
 
-A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over Quota" it will have to have at _least one_ resource over its quota. For a project to be under quota it needs to have _all of its_ resources under quota.
+A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over-quota" it will have to have at _least one_ resource over its quota. For a project to be under-quota it needs to have _all of its_ resources under-quota.
 
 ## Scheduler Details
 
@@ -114,20 +114,20 @@ The Run:ai scheduler determines fairness between multiple over-quota Projects ac
 * Project A has been allocated a quota of 3 GPUs.
 * Project B has been allocated a quota of 1 GPU.
 
-Then, if both Projects go over quota, Project A will receive 75% (=3/(1+3)) of the idle GPUs and Project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new Job is submitted to the system or an existing Job ends.
+Then, if both Projects go over-quota, Project A will receive 75% (=3/(1+3)) of the idle GPUs and Project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new Job is submitted to the system or an existing Job ends.
 
 This fairness equivalence will also be maintained amongst __running__ Jobs. The scheduler will preempt training sessions to maintain this equivalence 
 
 ### Over-Quota Priority
-When the Over Quota Priority feature is enabled, The Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over Quota Priority for each Project. 
+When the Over-quota Priority feature is enabled, The Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over-quota Priority for each Project. 
 GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
 
 Let's examine the previous example with Over-Quota Weights:
 
-* Project A has been allocated with a quota of 3 GPUs and GPU over quota weight is set to Low.
-* Project B has been allocated with a quota of 1 GPU and GPU over quota weight is set to High.
+* Project A has been allocated with a quota of 3 GPUs and GPU over-quota weight is set to Low.
+* Project B has been allocated with a quota of 1 GPU and GPU over-quota weight is set to High.
 
-Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
+Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over-quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
 
 With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
 

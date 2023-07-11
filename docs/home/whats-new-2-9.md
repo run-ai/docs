@@ -87,7 +87,7 @@ Added an option ‘Editor’ so that Administrators can terminate idle workloads
 
 Cluster upgrade to 2.9 requires uninstalling and then installing. No data is lost during the process. For more information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
 
-Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) is no longer available in this version. You must use a [domain name](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#domain-name).
+Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) is no longer available in this version. You must use a [domain name](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url).
 
 #### Cluster Prerequisites
 

@@ -44,7 +44,7 @@ Improved the readability of unsuccessful node scheduling in the message log.
 |Internal ID|Description|
 |-----------|--------------|
 | RUN-9326 | Fixed an issue that affected the dashboard where projects created with fractional GPUs, display the number of GPUs rounded down to nearest whole number. |
-| RUN-9039 | Fixed an issue that displays jobs as interactive-preemptible after cycling the `preemptable` flag from on to off. |
+| RUN-9039 | Fixed an issue that displays jobs as interactive-preemptible after cycling the `preemptible` flag from on to off. |
 
 ## Version 2.12.0
 
@@ -60,8 +60,6 @@ May 2023
 
 * Added support for OpenShift 4.12 and Kubernetes 1.27.
 
-* Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md).
-
 * The `runai top job` command was deprecated.
 
 **Single sign on**
@@ -76,7 +74,7 @@ Added support fort Openshift Dev Spaces custom resource definitions using the Ru
 
 <!-- RUN-9352 / RUN-8824 --> **Training Experience**
 
-Added a new feature that allows the reasercher to provision a training job in a project using a wizard like flow.
+Added a new feature that allows the researcher to provision a training job in a project using a wizard like flow.
 
 <!-- RUN-8789 -->
 **DeepSpeed Integration**
@@ -85,7 +83,8 @@ Added integration and certification with DeepSpeed for multi pod using open-mpi.
 
 **Cluster API**
 
-<!-- RUN-8880 -->Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](/docs/developer/cluster-api/submit-yaml.md).
+<!-- RUN-8880 -->
+Added `Stop`, `Suspend`, and `Resume` jobs options to [Submitting Workloads via YAML](../developer/cluster-api/submit-yaml.md).
 
 **Comet Integration**
 
