@@ -36,8 +36,11 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 * Added support for node pools to *Departments*, including new columns in the *Departments* grid. -->
 **Workspaces**
 <!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
-* Added node pools to workspace configuration in the *Compute resources* section. Press *More settings*, then press *Add new* to add more node pools to the configuration. Drag and drop the node pools to set their priority.
+<!-- this one belongs under node pools, as the leading feature from the customer POV is node pool -->
+* Added support of associating workspaces to node pool.
+The association between workspaces and node pools is done via *Compute resources*. In order to associate a Copute Resource to a node pool press *More settings* under the compute resource, then press *Add new* to add more node pools to the configuration. Drag and drop the node pools to set their priority.
 
+<!-- this is super not clear and not consistent. What is it about workload? workspace? what is the workload submission form? what is asset based workload and how is it related? This need to be completely re-written with PM -->
 **Asset based workloads**
 
 <!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
@@ -60,6 +63,7 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 
 **Time limits**
 
+<!-- A link to the page should be added  http://runai-docs-staging.s3-website-us-east-1.amazonaws.com/admin/admin-ui-setup/project-setup/#limit-duration-of-interactive-and-training-jobs. I would also share a general statement. Something like time limit is an OPTIONAL porjects configuration which allows.... And lastly, the title in the time limit section is limit duration  - very confusing that we are referring to the same feature with different names -->
 * Improved the behavior of any workload time limit (for example, *Idle time limit*) so that the time limit will affect existing workloads that were created before the time limit was configured.
 
 * Improved workspaces time limits. Workspaces that reach a time limit will now transition to a state of `stopped` so that they can be reactivated later.
@@ -69,6 +73,7 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 <!-- RUN-9270/9274 - Interactive Time limit Fixes 
 * Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.  -->
 
+<!-- Logically this part shopuld go above the integration. The flow of information is broken. Then we should have PVC Data Sources, Crenetials and Policies-->
 **Workload assets**
 
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
@@ -93,6 +98,10 @@ See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/fea
 **Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
 * Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
+
+<!-- RUN-9270/9274 - Interactive Time limit Fixes 
+* Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.-->
+* Added support for terminating Run:ai training Jobs after preemption. Administrators can set a `termination after preemption` policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For configuration information, see [Terminating Run:ai training jobs after preemption](../admin/workloads/policies.md#terminate-runai-training-jobs-after-preemption-policy).
 
 **PVC data sources**
 <!-- RUN-9826/10186 Support PVC from block storage -->
