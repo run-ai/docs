@@ -27,7 +27,7 @@ An administrator can set a Project's `default priority list` of node pools. In c
 
 Each Project is associated with a total quota of GPU and CPU resources (CPU Compute & CPU Memory) that can be allocated for the Project at the same time. This total is the sum of all node pools' quotas associated with this Project. This is **guaranteed quota** in the sense that Researchers using this Project are guaranteed to get this amount of GPU and CPU resources, no matter what the status in the cluster is.
 
-Beyond that, a user of this Project can receive an **over-quota** (The administrator needs to enable over quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. **However, these GPUs can be taken away at a moment's notice**. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
+Beyond that, a user of this Project can receive an **over-quota** (The administrator needs to enable over-quota per project). As long as GPUs are unused, a Researcher using this Project can get more GPUs. **However, these GPUs can be taken away at a moment's notice**. When the node pools flag is enabled, over-quota is effective and calculated per node pool, this means that a workload requesting resources from a certain node pool can get its resources from a quota that belongs to another Project for the same node pool if the resources are exhausted for this Project and available on another Project. For more details on over-quota scheduling see [the Run:ai Scheduler](../../Researcher/scheduling/the-runai-scheduler.md).
 
 !!! Important
     Best practice: As a rule, the sum of the Projects' allocations should be equal to the number of GPUs in the cluster.
@@ -51,13 +51,13 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 2. Choose a *Department* from the drop-down. The default is `default`.
 3. Enter a *Project name*. Press *Namespace* to set the namespace associated with the project. You can either create the namespace from the project name (default) or enter an existing namespace.
 4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users).
-5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over quota priority settings. Configure the following:
+5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over-quota priority settings. Configure the following:
 
        * *Order of priority*&mdash;the priority the node pool will receive when trying to schedule workloads. For more information, see [Node pool priority](../../Researcher/scheduling/using-node-pools.md#multiple-node-pools-selection).
        * *GPUs*&mdash;the number of GPUs in the node pool. Press *GPUs* and enter the number of GPUs, then press *Apply* to save.
        * *CPUs(Cores)*&mdash;the number of CPU cores in the node pool. Press *CPUs* and enter the number of GPUs, then press *Apply* to save.
        * *CPU Memory*&mdash;the amount of memory the CPUs will be allocated. Press *CPU Memory*, enter an amount of memory, then press *Apply* to save.
-       * Over quota priority&mdash;the priority for the specific node pool to receive over quota allocations.
+       * Over-quota priority&mdash;the priority for the specific node pool to receive over-quota allocations.
   
 6. (Optional) In the *Scheduling rules* pane, use the dropdown arrow to open the pane. Press on the *+ Rule* button to add a new rule to the project. Add one (or more) of the following rule types:
 
@@ -79,7 +79,7 @@ If you are using Single-sign-on, you can also assign Groups
 You can assign a Project to run on specific nodes (machines). This is achieved by two different mechanisms:
 
 * Node Pools:
-        All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources (CPU Compute & CPU Memory) to a Project. By associating a quota on specific node pools for a Project, you can control which nodes a Project can utilize and which default priority order the scheduler will use (in case the workload did choose so by itself). Each workload should choose the node pool(s) to use, if no choice is made, it will use the Project's default 'node pool priority list'. Note that node pools with zero resources associated with a Project or node pools with exhausted resources can still be used by a Project when the Over Quota flag is enabled.
+        All node pools in the system are associated with each Project. Each node pool can allocate GPU and CPU resources (CPU Compute & CPU Memory) to a Project. By associating a quota on specific node pools for a Project, you can control which nodes a Project can utilize and which default priority order the scheduler will use (in case the workload did choose so by itself). Each workload should choose the node pool(s) to use, if no choice is made, it will use the Project's default 'node pool priority list'. Note that node pools with zero resources associated with a Project or node pools with exhausted resources can still be used by a Project when the Over-quota flag is enabled.
 
 * Node Affinities (aka Node Type)
         Administrator can associate specific node sets characterized by a shared run-ai/node-type label value to a Project. This means descendant workloads can only use nodes from one of those node affinity groups. A workload can specify which node affinity to use, out of the list is bounded to its parent Project.

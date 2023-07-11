@@ -39,7 +39,7 @@ An environment is a mandatory element of a workspace. All environments created f
 ![](img/13-env-vars.png)
 
 
-You can also decide whether the workspace is preemptable or not (see also [create a preemptable worksapce](../create/workspace.md#create-a-preemptible-workspace)). By default, interactive sessions are limited to the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter, the researcher can determine whether the workspace is allowed to go over quota with the understanding that it can be preempted if other projects would demand back their quota.
+You can also decide whether the workspace is preemptable or not (see also [create a preemptable worksapce](../create/workspace.md#create-a-preemptible-workspace)). By default, interactive sessions are limited to the project’s GPU, meaning that they can only be scheduled (and activated) when there is an available and sufficient GPU quota.  With the following parameter, the researcher can determine whether the workspace is allowed to go over-quota with the understanding that it can be preempted if other projects would demand back their quota.
 
 ### Select a compute resource for a new workspace
 
@@ -74,7 +74,7 @@ For collaboration purposes, templates are assigned to a specific project and are
 
 ## Create a preemptible workspace
 
-For a better experience, workspaces, as they are built for interactive research, are designed to not be preempted (because the researchers actively interact with GPU resources). Thus, non-preemptable workspaces can be only scheduled if the project has a sufficient vacant quota. However, if that’s not the case (the project does not have a sufficient vacant quota) and the researcher still needs to create and activate a workspace (if cluster resources are available) he/she can allow the workspace to go over quota, thus be scheduled, but with the cost of preemption without prior notice.
+For a better experience, workspaces, as they are built for interactive research, are designed to not be preempted (because the researchers actively interact with GPU resources). Thus, non-preemptable workspaces can be only scheduled if the project has a sufficient vacant quota. However, if that’s not the case (the project does not have a sufficient vacant quota) and the researcher still needs to create and activate a workspace (if cluster resources are available) he/she can allow the workspace to go over-quota, thus be scheduled, but with the cost of preemption without prior notice.
 
 ![](img/17-preempt.png)
 

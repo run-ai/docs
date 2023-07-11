@@ -17,57 +17,66 @@ This version contains features and fixes from previous versions starting with 2.
 **Dashboards**
 
 <!-- RUN9530/9577 New Dashboard for Quota management -->
-* Added a new dashboard for Quota management, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
+* Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/admin-ui-setup/dashboard-analysis.md#quota-management-dashboard).
 
-* Added to the Overview dashboard, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md) 
+* Added to the **Overview dashboard**, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md).
 
-<!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
-**Nodes**
-
-* A node is a worker machine that runs workloads, and a node pool is group of nodes within a cluster that all have the same configuration. Node pools use node labels as its identification. Run:ai has added a table for viewing nodes and for configuring node pools. To configure a node pool, see [Configuring node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
-
+**Nodes and Node pools**
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
 * Run:ai scheduler supports 2 scheduling strategies: Bin Packing (default) and Spread. For more information, see [Scheduling strategies](../Researcher/scheduling/strategies.md). You can configure the scheduling strategy in the node pool level to improve the support of clusters with mixed types of resources and workloads. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
-
-<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
-* Added Node pool selection as part of the workload and workspace submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
 
 * GPU device level DCGM Metrics are collected per GPU and presented by Run:ai in the Nodes table. Each node contains a list of its embedded GPUs with their respective DCGM metrics.
 See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#metrics){target=_blank} for the list of metrics which are provided by NVidia DCGM and collected by Run:ai. Contact your Run:ai customer representative to enable this feature.
 
-<!-- RUN-10105/10106 Align Departments with Projects V2 -->
-* Added support for node pools to *Departments*, including new columns in the *Departments* grid.
+<!-- Hagay says no ticket number for this -->
+* Added per node pool over-quota priority. Over-quota priority sets the relative amount of additional unused resources that an asset can get above its current quota. For more information, see [Over-quota priority](../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority).
+
+<!-- RUN-10105/10106 Align Departments with Projects V2 - removed as per Hagay request. No special update here.
+
+* Added support for node pools to *Departments*, including new columns in the *Departments* grid. -->
+**Workspaces**
+<!-- RUN-9359/9360 Incorporating Node Pools in Workspaces -->
+* Added node pools to workspace configuration in the *Compute resources* section. Press *More settings*, then press *Add new* to add more node pools to the configuration. Drag and drop the node pools to set their priority.
+
+**Asset based workloads**
+
+<!-- RUN-10287/10317/10313-10851 Show Node pools priority list according to workspace policy -->
+* Added Node pool selection as part of the workload submission form. This allows researchers to quickly determine the list of node pools available and their priority. Priority is set by dragging and dropping them in the desired order of priority. In addition, when the node pool priority list is locked by an administrator policy, the list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
 
 **Integrations**
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
-* Added support for SPARK and Elastic jobs. For more information, see [Running SPARK jobs with Run:AI](../admin/integration/spark.md#).
-
+* Added support for Spark and Elastic jobs. For more information, see [Running SPARK jobs with Run:ai](../admin/integration/spark.md#).
 <!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
 * Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
 
 * Added integration with Weights & Biases Sweep to allow data scientists to submit hyperparameter optimization workloads directly from the Run:ai UI. To configure sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
+<!-- RUN-8789 was added in 2.12 - as per Hagay request republished here if agreed I can release the comments.
+
+* Added integration and certification with DeepSpeed for multi pod using open-mpi. See [DeepSpeed Integration](../admin/integration/deepspeed.md).
+
+* Added support fort Openshift Dev Spaces custom resource definitions using the RunAI scheduler. -->
+
 **Time limits**
 
-* Improved the behavior of any time limits in the platform (for example, *Idle time limit*) of any workload to affect existing workloads that were created before the time limit was configured.
+* Improved the behavior of any workload time limit (for example, *Idle time limit*) so that the time limit will affect existing workloads that were created before the time limit was configured.
 
-* Added workspaces that reached a time limit will now transition to a state of `stopped` so that they can be reactivated later. <!-- TODO fix this sentence. -->
+* Improved workspaces time limits. Workspaces that reach a time limit will now transition to a state of `stopped` so that they can be reactivated later.
 
-* Administrators (Departement Admin, Editor) can limit the duration of Run:ai Training jobs per Project using a specified time limit value. This capability can assist administrators to limit the duration and resources consumed over time by training jobs in specific Projects. Each training job that reaches this duration will be terminated. <!-- TODO fix this -->
-
-
-**Workload assets**
+* Added time limits for training jobs per project. Administrators (Department Admin, Editor) can limit the duration of Run:ai Training jobs per Project using a specified time limit value. This capability can assist administrators to limit the duration and resources consumed over time by training jobs in specific projects. Each training job that reaches this duration will be terminated. 
 
 <!-- RUN-9270/9274 - Interactive Time limit Fixes 
 * Improved timeout policy behavior. Any workload that reaches the time limit is now suspended or stopped. The administrator can change the time limit and the timeout for new and already running workloads. Already running workloads will update and stop based on the new settings.  -->
 
+**Workload assets**
+
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
 
-* Extended the collaboration functionality for any workload asset such as *environment*, *computer resource*, and some *data source types*. They are now shared with departments in the organization in addition to the being able to share it with specific projects or the entire cluster.
+* Extended the collaboration functionality for any workload asset such as *Environment*, *Compute resource*, and some *Data source types*. These assets are now shared with **Departments** in the organization in addition to being shared with specific projects, or the entire cluster.
 
 <!-- RUN-9364/10850 Search box for cards in V2 assets -->
-* Added a search box for card galleries in any asset based workload creation form to provide an easy way to search for assets and resources. The search filter is based on asset name and field values of the card.
+* Added a search box for card galleries in any asset based workload creation form to provide an easy way to search for assets and resources. To filter use the asset name or one of the field values of the card.
 
 **Credentials**
 

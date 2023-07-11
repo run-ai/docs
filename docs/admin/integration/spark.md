@@ -1,4 +1,4 @@
-# Running SPARK jobs with Run:AI
+# Running Spark jobs with Run:AI
 
 Spark has two modes for running jobs on kubernetes:
 
