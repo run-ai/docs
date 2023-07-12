@@ -355,6 +355,19 @@ gcr.io/run-ai-prod
 </td>
 </tr>
 
+<tr>
+<td style="padding: 6px; width: 106px;">
+<p> Run:ai </p>
+</td>
+<td style="padding: 6px; width: 304px;">
+<p> Run:ai   Cloud instance </p>
+</td>
+<td style="padding: 6px; width: 205px;">
+<p> <a href="https://app.run.ai">app.run.ai</a> </p>
+<p> </p>
+</td>
+<td style="padding: 6px; width: 32px;">
+<p>443, 53</p>
 </tbody>
 </table>
 
@@ -398,7 +411,7 @@ In addition, once running, Run:ai requires an outbound network connection to the
 <p> </p>
 </td>
 <td style="padding: 6px; width: 32px;">
-<p>443</p>
+<p>443, 53</p>
 </td>
 </tr>
 
