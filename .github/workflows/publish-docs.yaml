@@ -95,6 +95,7 @@ jobs:
           run: |
             git fetch origin gh-pages --depth=1
             mike deploy --push ${{ inputs.version }} ${{ inputs.latest }} --title=${{ inputs.title }}
+            mike set-default --push latest
             mike list
 
         - name: deploy a version of mkdocs  
