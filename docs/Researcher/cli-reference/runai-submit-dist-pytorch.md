@@ -2,7 +2,7 @@
 
 :octicons-versions-24: Version 2.10 and later.
 
-Submit a distributed Pytorch training run:ai job to run.
+Submit a distributed PyTorch training run:ai job to run.
 
 !!! Note
     To use distributed training you need to have installed the < insert pytorch operator here > as specified < insert pre-requisites link here >.

@@ -148,9 +148,9 @@ Added inactivity timeout for automated logout. The inactivity timeout is configu
 
 ### Researcher tools
 
-**Pytorch**
+**PyTorch**
 
-Added CLI support for submitting Pytorch jobs. For more information, see [Submit Run:ai Pytorch job](../Researcher/cli-reference/runai-submit-dist-pytorch.md).
+Added CLI support for submitting PyTorch jobs. For more information, see [Submit Run:ai PyTorch job](../Researcher/cli-reference/runai-submit-dist-pytorch.md).
 
 **TensorFlow**
 
