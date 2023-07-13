@@ -59,7 +59,9 @@ kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annota
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
-Also, delete the ingress object which will be recreated by the control plane upgrade
+#### Ingress
+
+Delete the ingress object which will be recreated by the control plane upgrade
 
 ```
 kubectl delete ing -n runai-backend runai-backend-ingress
