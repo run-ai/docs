@@ -34,7 +34,7 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 
 > Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time.
 
-#### --replicas < int >
+#### --workers < int >
 
 > Number of replicas for Inference jobs.
 

@@ -14,7 +14,7 @@ Syntax notes:
 ## Examples
 
 ```console
-runai submit-dist pytorch --name distributed-job --replicas=2 -g 1 \
+runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
 	-i <image_name>
 ```
 
@@ -42,7 +42,7 @@ runai submit-dist pytorch --name distributed-job --replicas=2 -g 1 \
 
 > Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
 
-#### --replicas < int>
+#### --workers < int>
 
 > Number of replicas for Inference jobs
 
