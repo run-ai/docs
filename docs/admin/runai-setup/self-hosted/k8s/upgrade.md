@@ -68,7 +68,7 @@ kubectl delete ing -n runai-backend runai-backend-ingress
 
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
 
-* Find previous customizations to the control-plane if such exist. Run:ai provides a utility for that here `wget https://raw.githubusercontent.com/run-ai/docs/v2.12/install/backend/create-self-signed.sh`. For information on how to use this utility please contact Run:ai customer support. 
+* Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
 
