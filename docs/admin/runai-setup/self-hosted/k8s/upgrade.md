@@ -44,7 +44,7 @@ Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisite
 
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from version 2.9, 2.10 or 2.11
+### Upgrade from version 2.9, 2.10, 2.11 or 2.13
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
@@ -73,8 +73,17 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
+#### Upgrade Control Plane
 
-Then create a `tls secret` and upgrade the control plane as described in the [control plane installation](backend.md). 
+* Create a `tls secret` as described in the [control plane installation](backend.md). 
+* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade you must tell the installation __not__ to create a PVC:
+
+```
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+    --set global.domain=<DOMAIN> \
+    --set=postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
+    --set=thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+```
 
 
 
