@@ -76,7 +76,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 #### Upgrade Control Plane
 
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
-* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade you must tell the installation __not__ to create a PVC:
+* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
 ```
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
