@@ -44,7 +44,7 @@ Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisite
 
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from version 2.9, 2.10, 2.11 or 2.13
+### Upgrade from version 2.9, 2.10, 2.11 
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
