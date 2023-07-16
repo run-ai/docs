@@ -30,10 +30,6 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 >* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
 >* **None**&mdash;no pods will be deleted when the job completes.
 
-#### --non-preemptible
-
-> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time.
-
 #### --workers < int >
 
 > Number of replicas for Inference jobs.

@@ -26,10 +26,6 @@ runai submit-dist xgboost --name distributed-job --workers=2 -g 1 \
 >* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
 >* **None**&mdash;no pods will be deleted when the job completes.
 
-#### --non-preemptible
-
-> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
-
 #### --workers < int>
 
 > Number of replicas for Inference jobs

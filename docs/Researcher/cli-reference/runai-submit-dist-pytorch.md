@@ -38,10 +38,6 @@ runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
 
 > Minimum number of replicas for elastic PyTorch job.
 
-#### --non-preemptible
-
-> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
-
 #### --workers < int>
 
 > Number of replicas for Inference jobs
