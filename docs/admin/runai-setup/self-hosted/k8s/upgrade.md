@@ -7,7 +7,7 @@ title: Upgrade self-hosted Kubernetes installation
 !!! Important
     Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.12, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
 
-    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. 
+    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. As such, they are subject to storage class [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} policy.
 ## Preparations
 
 === "Connected"
