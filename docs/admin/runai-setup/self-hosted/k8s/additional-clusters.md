@@ -9,8 +9,8 @@ The instructions are for Run:ai version 2.8 and up.
 
 Follow the Run:ai SaaS installation network instructions as described [here](../../cluster-setup/cluster-prerequisites.md#cluster-url).  Specifically:
 
-1. The Cluster should have a dedicated URL with a trusted certificate.
-2. Install NGINX.
+1. Install Run:ai [prerequisites](../../cluster-setup/cluster-prerequisites.md).
+2. The Cluster should have a dedicated URL with a trusted certificate.
 3. Create a secret in the Run:ai namespace containing the details of a trusted certificate.  
 
 Create a new cluster and download a values file. Perform the following changes in the file:
