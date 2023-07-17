@@ -53,6 +53,8 @@ SSH into a node with `oc` access (`oc` is the OpenShift command line) to the clu
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
 
+    The script should create a file named custom-env.yaml which will be used by the control-plane installation.
+
 ## (Optional) Mark Run:ai System Workers
 
 You can __optionally__ set the Run:ai control plane to run on specific nodes. Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
