@@ -1,6 +1,6 @@
 ## Introduction
 
-The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-mpi](../cli-reference/runai-submit-mpi.md) function submit Run:ai Jobs for execution. 
+The [runai submit](../cli-reference/runai-submit.md) function and its sibling the [runai submit-dist mpi](../cli-reference/runai-submit-dist-mpi.md) function submit Run:ai Jobs for execution.
 
 A Job has a __status__. Once a Job is submitted it goes through several statuses before ending in an __End State__. Most of these statuses originate in the underlying _Kubernetes_ infrastructure, but some are Run:ai-specific. 
 

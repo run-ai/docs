@@ -1,11 +1,9 @@
 ## Description
 
-:octicons-versions-24: Version 2.10 and later.
-
-Submit a distributed Pytorch training run:ai job to run.
+Submit a Distributed Training (MPI) Run:ai Job to run.
 
 !!! Note
-    To use distributed training you need to have installed the < insert pytorch operator here > as specified < insert pre-requisites link here >.
+    To use distributed training you need to have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
 
 Syntax notes:
 
@@ -13,10 +11,12 @@ Syntax notes:
 
 ## Examples
 
-```console
-runai submit-pytorch --name distributed-job --replicas=2 -g 1 \
-	-i <image_name>
-```
+You can start an unattended mpi training Job of name dist1, based on Project *team-a* using a *quickstart-distributed* image:
+
+    runai submit-dist mpi --name dist1 --workers=2 -g 1 \
+        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 
+
+(see: [distributed training Quickstart](../Walkthroughs/walkthrough-distributed-training.md)).
 
 ## Options
 
@@ -30,21 +30,13 @@ runai submit-pytorch --name distributed-job --replicas=2 -g 1 \
 >* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
 >* **None**&mdash;no pods will be deleted when the job completes.
 
-#### --max-replicas < int >
+#### --workers < int >
 
-> Maximum number of replicas for elastic PyTorch job.
+> Number of replicas for Inference jobs.
 
-#### --min-replicas < int >
+#### --slots-per-worker < int >
 
-> Minimum number of replicas for elastic PyTorch job.
-
-#### --non-preemptible
-
-> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
-
-#### --replicas < int>
-
-> Number of replicas for Inference jobs
+> Number of slots to allocate for each worker.
 
 <!-- Start of common content from snippets/common-submit-cli-commands.md -->
 ### Naming and Shortcuts
@@ -354,12 +346,10 @@ runai submit-pytorch --name distributed-job --replicas=2 -g 1 \
 > Show help text.
 
 <!-- END of common content from snippets/common-submit-cli-commands.md -->
-
 ## Output
 
 The command will attempt to submit an _mpi_ Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
 
 ## See Also
 
-< please let me know if this is needed, or if additional documentation is needed in the link >
 *   See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).

@@ -85,7 +85,7 @@ Use the *UI*, *CLI*, or the *API* to run the workload.
 Using the *CLI*:
 
 ```
-runai submit-mpi \--processes 2 -i
+runai submit-dist mpi \--workers 2 -i
 gcr.io/run-ai-lab/user/deepspeed-example -g 1 \--command -p team-a \--
 sleep infinity
 ```
