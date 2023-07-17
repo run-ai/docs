@@ -156,17 +156,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-TF/</loc>
+         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-TF/</loc>
          <lastmod>2023-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-mpi/</loc>
+         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-mpi/</loc>
          <lastmod>2023-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-pytorch/</loc>
+         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-pytorch/</loc>
+         <lastmod>2023-07-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-xgboost/</loc>
          <lastmod>2023-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
