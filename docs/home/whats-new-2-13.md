@@ -88,6 +88,9 @@ The association between workspaces and node pools is done using *Compute resourc
 
 * Added integration with Weights & Biases Sweep to allow data scientists to submit hyperparameter optimization workloads directly from the Run:ai UI. To configure sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
 
+<!-- RUN-9510 -->
+* Added support for XGBoost. XGBoost, which stands for Extreme Gradient Boosting, is a scalable, distributed gradient-boosted decision tree (GBDT) machine learning library. It provides parallel tree boosting and is the leading machine learning library for regression, classification, and ranking problems. For more information, see [runai submit-dist xgboost](../Researcher/cli-reference/runai-submit-dist-xgboost.md)
+
 **Compatability**
 
 * Added support for multiple OpenShift clusters. For configuration information, see [Installing additional Clusters](../admin/runai-setup/self-hosted/ocp/additional-clusters.md).

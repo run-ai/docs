@@ -30,7 +30,7 @@ To complete this Quickstart you must have:
 
 ``` shell
 runai config project team-a
-runai submit-mpi dist --processes=2 -g 1 \
+runai submit-dist mpi --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60
 ```
 
@@ -70,7 +70,7 @@ Finally, you can delete the distributed training workload by running:
 It is also possible to run a distributed training Job as "interactive". This is useful if you want to test your distributed training Job before committing on a long, unattended training session. To run such a session use:
 
 ``` shell
-runai submit-mpi dist-int --processes=2 -g 1 \
+runai submit-dist mpi dist-int --processes=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 --interactive \
         -- sh -c "sleep infinity" 
 ```
@@ -98,10 +98,9 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 ```
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-mpi`` command (in the above example the value is 2).
-
+The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-dist mpi`` command (in the above example the value is 2).
 
 ## See Also
 
 *   The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank}
-*   For a full list of the ``submit-mpi`` options see [runai submit-mpi](../cli-reference/runai-submit-mpi.md)
+*   For a full list of the ``submit-dist mpi`` options see [runai submit-dist mpi](../cli-reference/runai-submit-dist-mpi.md)

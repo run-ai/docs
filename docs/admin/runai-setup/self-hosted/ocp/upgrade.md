@@ -31,7 +31,12 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 #### PVC Ownership
 
-Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
+Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
+
+* Run:ai requires a Kubernetes storage class to be installed.
+* The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
+
+The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/concepts/storage/storage-classes/#introduction){target=_blank}, controls the [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} behavior: whether the data is saved or deleted when the Run:ai control plane is deleted.  
 
 To remove the ownership in an older installation, run:
 

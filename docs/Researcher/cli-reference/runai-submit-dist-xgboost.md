@@ -1,11 +1,6 @@
 ## Description
 
-:octicons-versions-24: Version 2.10 and later.
-
-Submit a distributed TensorFlow training run:ai job to run.
-
-!!! Note
-    To use distributed training you need to have installed the < insert  TensorFlow operator here > as specified < insert pre-requisites link here >.
+Submit a distributed XGBoost training run:ai job to run.
 
 Syntax notes:
 
@@ -14,7 +9,7 @@ Syntax notes:
 ## Examples
 
 ```console
-runai submit-tf --name distributed-job --replicas=2 -g 1 \
+runai submit-dist xgboost --name distributed-job --workers=2 -g 1 \
 	-i <image_name
 >
 ```
@@ -31,11 +26,7 @@ runai submit-tf --name distributed-job --replicas=2 -g 1 \
 >* **All**&mdash;all (including completed) pods will be deleted immediately when the job finishes.
 >* **None**&mdash;no pods will be deleted when the job completes.
 
-#### --non-preemptible
-
-> Resources for non-preemptible jobs are guaranteed and will not be reclaimed at any time
-
-#### --replicas < int>
+#### --workers < int>
 
 > Number of replicas for Inference jobs
 

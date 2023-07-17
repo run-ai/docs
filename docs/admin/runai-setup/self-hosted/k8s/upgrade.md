@@ -7,7 +7,7 @@ title: Upgrade self-hosted Kubernetes installation
 !!! Important
     Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.12, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
 
-    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. 
+    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. As such, they are subject to storage class [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} policy.
 ## Preparations
 
 === "Connected"
@@ -44,13 +44,18 @@ Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisite
 
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from version 2.9, 2.10 or 2.11
+### Upgrade from version 2.9, 2.10, 2.11 
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
 #### PVC Ownership
 
-Run:ai has transferred control of storage to the customer. Specifically, the Kubernetes Persistent Volumes are now owned by the customer and will not be deleted when the Run:ai control plane is uninstalled. 
+Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
+
+* Run:ai [requires](prerequisites.md#kubernetes) a Kubernetes storage class to be installed.
+* The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
+
+The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/concepts/storage/storage-classes/#introduction){target=_blank}, controls the [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} behavior: whether the data is saved or deleted when the Run:ai control plane is deleted.  
 
 To remove the ownership in an older installation, run:
 
@@ -59,7 +64,9 @@ kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annota
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
-Also, delete the ingress object which will be recreated by the control plane upgrade
+#### Ingress
+
+Delete the ingress object which will be recreated by the control plane upgrade
 
 ```
 kubectl delete ing -n runai-backend runai-backend-ingress
@@ -71,8 +78,17 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
+#### Upgrade Control Plane
 
-Then create a `tls secret` and upgrade the control plane as described in the [control plane installation](backend.md). 
+* Create a `tls secret` as described in the [control plane installation](backend.md). 
+* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
+
+```
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+    --set global.domain=<DOMAIN> \
+    --set=postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
+    --set=thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+```
 
 
 
