@@ -1,5 +1,55 @@
 # Run:ai version 2.13
 
+## Version 2.13.7
+
+### Release date
+
+July 2023
+
+#### Release content
+
+<!-- RUN-10803 -->
+* Added dashboard filters to apply on historic quota ratio widget.
+
+#### Fixed issues
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-10785 | [Backend][RBAC] auth svc cant get tenant name after  migration. |
+| RUN-11080 | Fixed an issue in OpenShift environments where log in via SSO with the kubeadmin user, gets blank pages for every page. |
+| RUN-11119 | wrong value in nodepools modal in projects UI. - Natasha |
+| RUN-11120 | Fixed an issue where the *Projects* table does not show correct metrics when Run:a version 2.13 is paired with a Run:ai 2.8 cluster. |
+| RUN-11121 | Fixed an issue where the wrong over quota memory alert is shown in the *Quota management* pane in project edit form. |
+| RUN-11272 | ocp multi cluster - fix cluster drop down. - Noa F.|
+## Version 2.13.4
+
+### Release date
+
+July 2023
+
+#### Fixed issues
+
+| Internal ID | Description |
+|-----------|--------------|
+| RUN-11089 | Fixed an issue when creating an environment, commands in the *Runtime settings* pane and are not available in other assets (for example in a new *Training*). |
+
+## Version 2.13.1
+
+### Release date
+
+July 2023
+
+#### Release content
+<!-- RUN-10477 -->
+* Added a feature in the controller that deletes completed or failed jobs after a defined period of time. This allows the reusing of workload names that were used before, and helps to clean up the database from jobs that are no longer relevant so they do not show in the UI or CLI.
+
+<!-- RUN-11024 -->
+* Made an improvement so that occurrences of labels that are not in use anymore are deleted.
+
+#### Fixed issues
+
+N/A
+
 ## Version 2.13.0
 
 ### Release content
