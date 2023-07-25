@@ -104,7 +104,7 @@ Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versio
         * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
 
-=== "RKE"
+=== "RKE2"
     Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 
 !!! Notes
