@@ -9,18 +9,17 @@ July 2023
 #### Release content
 
 <!-- RUN-10803 -->
-* Added dashboard filters to apply on historic quota ratio widget.
+* Added filters to the historic quota ratio widget on the *Quota management* dashboard.
 
 #### Fixed issues
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
-| RUN-10785 | [Backend][RBAC] auth svc cant get tenant name after  migration. |
-| RUN-11080 | Fixed an issue in OpenShift environments where log in via SSO with the kubeadmin user, gets blank pages for every page. |
-| RUN-11119 | wrong value in nodepools modal in projects UI. - Natasha |
+| RUN-11080 | Fixed an issue in OpenShift environments where log in via SSO with the `kubeadmin` user, gets blank pages for every page. |
+| RUN-11119 | Fixed an issue where values that should be the *Order of priority* column are in the wrong column. |
 | RUN-11120 | Fixed an issue where the *Projects* table does not show correct metrics when Run:a version 2.13 is paired with a Run:ai 2.8 cluster. |
 | RUN-11121 | Fixed an issue where the wrong over quota memory alert is shown in the *Quota management* pane in project edit form. |
-| RUN-11272 | ocp multi cluster - fix cluster drop down. - Noa F.|
+| RUN-11272 | Fixed an issue in OpenShift environments where the cluster drop down in the main UI does not match the cluster used on the login page. |
 ## Version 2.13.4
 
 ### Release date
@@ -31,7 +30,7 @@ July 2023
 
 | Internal ID | Description |
 |-----------|--------------|
-| RUN-11089 | Fixed an issue when creating an environment, commands in the *Runtime settings* pane and are not available in other assets (for example in a new *Training*). |
+| RUN-11089 | Fixed an issue when creating an environment, commands in the *Runtime settings* pane and are not persistent and cannot be found in other assets (for example in a new *Training*). |
 
 ## Version 2.13.1
 
@@ -96,7 +95,6 @@ The association between workspaces and node pools is done using *Compute resourc
 
 * Added time limits for training jobs per project. Administrators (Department Admin, Editor) can limit the duration of Run:ai Training jobs per Project using a specified time limit value. This capability can assist administrators to limit the duration and resources consumed over time by training jobs in specific projects. Each training job that reaches this duration will be terminated. 
 
-<!-- Logically this part shopuld go above the integration. The flow of information is broken. Then we should have PVC Data Sources, Crenetials and Policies-->
 **Workload assets**
 
 <!-- RUN-8862/9292 - Department as a workspace asset creation scope - phase 1 -->
@@ -152,6 +150,7 @@ The association between workspaces and node pools is done using *Compute resourc
 * From Run:ai 2.12 and above, the air-gapped, control-plane installation now generates a `custom-env.yaml` values file during the [preparation](../admin/runai-setup/self-hosted/k8s/preparations.md#prepare-installation-artifacts) stage. This is used when installing the [control-plane](../admin/runai-setup/self-hosted/k8s/backend.md#install-the-control-plane).
 
 ### Known issues
+
 | Internal ID | Description            |
 | :---------- | :---------------------------------- |
 | RUN-11005 | Incorrect error messages when trying to run `runai` CLI commands in an OpenShift environment. |
