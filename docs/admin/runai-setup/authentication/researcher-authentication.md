@@ -60,7 +60,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
             
     ```
 
-    1. These are example parameters. Copy the actual parameters from from `Settings | General | Researcher Authentication` as described above.
+    1. These are example parameters. Copy the actual parameters from `Settings | General | Researcher Authentication` as described above.
 
     You can verify that the flags have been incorporated into the RKE cluster by following the instructions [here](https://rancher.com/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/) and running `docker inspect <kube-api-server-container-id>`, where `<kube-api-server-container-id>` is the container ID of _api-server_ via obtained in the Rancher document. 
 
