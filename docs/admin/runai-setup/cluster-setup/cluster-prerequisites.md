@@ -134,7 +134,7 @@ There are many ways to install and configure an ingress controller and configura
     1. External and internal IP of one of the nodes
 
 === "RKE"
-    RKE comes pre-installed with NGINX. No further action needs to be taken. 
+    RKE and RKE2 come pre-installed with NGINX. No further action needs to be taken. 
 
 
 === "Managed Kubernetes"
