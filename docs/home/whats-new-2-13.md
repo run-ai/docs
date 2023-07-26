@@ -39,8 +39,6 @@ July 2023
 July 2023
 
 #### Release content
-<!-- RUN-10477 -->
-* Added a feature in the controller that deletes completed or failed jobs after a defined period of time. This allows the reusing of workload names that were used before, and helps to clean up the database from jobs that are no longer relevant so they do not show in the UI or CLI.
 
 <!-- RUN-11024 -->
 * Made an improvement so that occurrences of labels that are not in use anymore are deleted.
