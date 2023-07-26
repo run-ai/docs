@@ -235,7 +235,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --backoff-limit `<int>`
 
-> The number of times the Job will be retried before failing. The default is 6.
+> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
       
 ### Storage
 
