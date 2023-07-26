@@ -158,7 +158,7 @@ runai submit-dist tf --name distributed-job --workers=2 -g 1 \
 
 #### --backoff-limit `<int>`
 
-> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
+> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (In other words, when the `--interactive` flag is not specified).
       
 ### Storage
 
