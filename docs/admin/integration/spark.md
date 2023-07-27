@@ -83,7 +83,7 @@ To schedule the executors on GPUs, add the following flags:
 --conf spark.executor.resource.gpu.discoveryScript=/opt/spark/examples/src/main/scripts/getGpusResources.sh \
 ```
 
-With GPU fractions we will add the annotaiton to the executor pods:
+With GPU fractions add the annotaiton to the executor pods:
 
 ```
 --conf spark.kubernetes.executor.annotation.gpu-fraction=0.5 \
