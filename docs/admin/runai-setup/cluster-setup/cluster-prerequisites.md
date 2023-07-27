@@ -300,124 +300,26 @@ __Outbound network:__ Run:ai user interface runs from the cloud. All container n
 
 Run:ai requires an installation over the Kubernetes cluster. The installation access the web to download various images and registries. Some organizations place limitations on what you can pull from the internet. The following list shows the various solution components and their origin: 
 
-<table border="1" style="width: 650px; margin-left: 0px; margin-right: auto;">
-<tbody>
-<tr>
-<th scope="row" style="width: 114.375px;">Name</th>
-<th scope="row" style="width: 308.92px;">Description</th>
-<th scope="row" style="width: 227.102px;">URLs</th>
-<th scope="row" style="width: 43.4659px;">Ports</th>
-</tr>
 
-<tr>
-<td style="padding: 6px; width: 104.375px;">
-<p>Run:ai  Repository</p>
-</td>
-<td style="padding: 6px; width: 298.92px;">
-<p> Run:ai Helm Package Repository </p>
-</td>
-<td style="padding: 6px; width: 217.102px;">
-<p> <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> </p>
-</td>
-<td style="padding: 6px; width: 33.4659px;">
-<p>443</p>
-</td>
-</tr>
+| Name | Description | URLs | Ports |
+|------|-------------|------|-------|
+|Run:ai  Repository| Run:ai Helm Package Repository| <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> |443 | 
+| Docker Images Repository | Run:ai images | gcr.io/run-ai-prod |443 | 
+| Docker Images Repository | Third party Images |<a href="http://hub.docker.com/">hub.docker.com </a> and <a href="http://quay.io/">quay.io</a>  |  443  |
+| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | |443, 53 |
 
-<tr>
-<td style="padding: 6px; width: 104.375px;">
-<p>Docker Images Repository</p>
-</td>
-<td style="padding: 6px; width: 298.92px;">
-<p>Run:ai images</p>
-</td>
-<td style="padding: 6px; width: 217.102px;">
-gcr.io/run-ai-prod
-</td>
-<td style="padding: 6px; width: 33.4659px;">
-<p>443</p>
-</td>
-</tr>
 
-<tr>
-<td style="padding: 6px; width: 104.375px;">
-<p> Docker Images Repository </p>
-</td>
-<td style="padding: 6px; width: 298.92px;">
-<p> Third party Images</p>
-</td>
-<td style="padding: 6px; width: 217.102px;">
-<p><a href="http://hub.docker.com/">hub.docker.com </a></p>
-<p><a href="http://quay.io/">quay.io</a>  </p>
-</td>
-<td style="padding: 6px; width: 33.4659px;">
-<p>  443   </p>
-</td>
-</tr>
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Run:ai </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> Run:ai   Cloud instance </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> <a href="https://app.run.ai">app.run.ai</a> </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>443, 53</p>
-</tbody>
-</table>
 
 ### Post Installation
 
 In addition, once running, Run:ai requires an outbound network connection to the following targets:
 
-<table border="1" style="margin-left: 0px; margin-right: auto; width: 650px;">
-<tbody>
-<tr style="height: 22px;">
-<th scope="row" style="width: 116px; height: 22px;">Name</th>
-<th scope="row" style="width: 314px; height: 22px;">Description</th>
-<th scope="row" style="width: 215px; height: 22px;">URLs</th>
-<th scope="row" style="width: 42px; height: 22px;">Ports</th>
-</tr>
+| Name | Description | URLs | Ports | 
+|------|-------------|------|-------|
+| Grafana |Grafana Metrics Server | <a href="https://prometheus-us-central1.grafana.net">prometheus-us-central1.grafana.net</a> and <a href="https://runailabs.com">runailabs.com</a> |443 |
+| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> |443, 53 | 
 
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p>Grafana</p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p>Grafana Metrics Server</p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> <a href="https://prometheus-us-central1.grafana.net">prometheus-us-central1.grafana.net</a> and <a href="https://runailabs.com">runailabs.com</a> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>443 </p>
-</td>
-</tr>
-
-<tr>
-<td style="padding: 6px; width: 106px;">
-<p> Run:ai </p>
-</td>
-<td style="padding: 6px; width: 304px;">
-<p> Run:ai   Cloud instance </p>
-</td>
-<td style="padding: 6px; width: 205px;">
-<p> <a href="https://app.run.ai">app.run.ai</a> </p>
-<p> </p>
-</td>
-<td style="padding: 6px; width: 32px;">
-<p>443, 53</p>
-</td>
-</tr>
-
-
-</tbody>
-</table>
 
 ### Network Proxy
 
