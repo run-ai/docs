@@ -83,6 +83,15 @@ To schedule the executors on GPUs, add the following flags:
 --conf spark.executor.resource.gpu.discoveryScript=/opt/spark/examples/src/main/scripts/getGpusResources.sh \
 ```
 
+With GPU fractions we will add the annotaiton to the executor pods:
+
+```
+--conf spark.kubernetes.executor.annotation.gpu-fraction=0.5 \
+--conf spark.executor.resource.gpu.amount=1 \
+--conf spark.executor.resource.gpu.vendor=nvidia.com \
+--conf spark.executor.resource.gpu.discoveryScript=/opt/spark/examples/src/main/scripts/getGpusResources.sh \
+```
+
 ## See also
 
 [1] [Demo: Running Spark Examples on minikube](https://jaceklaskowski.github.io/spark-kubernetes-book/demo/running-spark-examples-on-minikube/)
