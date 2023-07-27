@@ -91,7 +91,7 @@ The association between workspaces and node pools is done using *Compute resourc
 
 * Improved workspaces time limits. Workspaces that reach a time limit will now transition to a state of `stopped` so that they can be reactivated later.
 
-* Added time limits for training jobs per project. Administrators (Department Admin, Editor) can limit the duration of Run:ai Training jobs per Project using a specified time limit value. This capability can assist administrators to limit the duration and resources consumed over time by training jobs in specific projects. Each training job that reaches this duration will be terminated. 
+* Added time limits for training jobs per project. Administrators (Department Admin, Editor) can limit the duration of Run:ai Training jobs per Project using a specified time limit value. This capability can assist administrators to limit the duration and resources consumed over time by training jobs in specific projects. Each training job that reaches this duration will be terminated.
 
 **Workload assets**
 
