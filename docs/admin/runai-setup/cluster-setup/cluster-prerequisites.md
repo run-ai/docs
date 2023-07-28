@@ -65,7 +65,9 @@ Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/conc
 
 ### NVIDIA 
 
-Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
+Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
+
+Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
 === "EKS"
     * When setting up EKS, do not install the NVIDIA device plug-in  (as we want the NVIDIA GPU Operator to install it instead). When using the [eksctl](https://eksctl.io/){target=_blank} tool to create an AWS EKS cluster, use the flag `--install-nvidia-plugin=false` to disable this install.
@@ -110,7 +112,7 @@ Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versio
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
     * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} is one such example as it comes bundled with NVIDIA Drivers. 
-    * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly.
+    <!-- * To work with _containerd_ (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly. -->
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
 
 
@@ -184,7 +186,7 @@ If not already installed on your cluster, install the full `kube-prometheus-stac
 
 !!! Note
     * If Prometheus has been installed on the cluster in the past, even if it was uninstalled (such as when upgrading from Run:ai 2.8 or lower), you will need to update Prometheus CRDs as described [here](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#upgrading-chart){target=_blank}. For more information on the  Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/2753){target=_blank}.
-    * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
+    * If you are running Kubernetes 1.21, you must install a Prometheus stack version of 45.23.0 or lower. Use the `--version` flag below. Alternatively, use Helm version 3.12 or later. For more information on the related Prometheus bug see [here](https://github.com/prometheus-community/helm-charts/issues/3436){target=_blank}
 
 Then install the Prometheus stack by running:
 
@@ -208,7 +210,7 @@ Run:ai supports three different methods to distributed-training jobs across mult
 * TensorFlow
 * PyTorch
 
-To install all 3 prerequisites run the following:
+To install all three, run the following:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
@@ -278,7 +280,7 @@ However, for the URL to be accessible outside the cluster you must configure you
     * Researcher containers: The Researcher's containers need to be able to access data from any machine in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts. 
     * The Run:ai system needs to save data on a storage device that is not dependent on a specific node.  
 
-    Typically, this is achieved via Network File Storage (NFS) or Network-attached storage (NAS).
+    Typically, this is achieved via Kubernetes Storage class  based on Network File Storage (NFS) or Network-attached storage (NAS). 
 
 * __Docker Registry:__ With Run:ai, Workloads are based on Docker images. For container images to run on any machine, these images must be downloaded from a docker registry rather than reside on the local machine (though this also is [possible](../../../researcher-setup/docker-to-runai/#image-repository)). You can use a public registry such as [docker hub](https://hub.docker.com/){target=_blank} or set up a local registry on-prem (preferably on a dedicated machine). Run:ai can assist with setting up the repository.
 
@@ -339,7 +341,7 @@ chmod +x preinstall-diagnostics-<platform>
 ./preinstall-diagnostics-<platform>
 ```
 
-If the script fails, or if the script succeeds but the Kubernetes system contains components other than Run:ai, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:ai technical support. 
+If the script shows warnings or errors, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:ai technical support. 
 
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
