@@ -8,7 +8,6 @@ August 2023
 
 #### Release content
 
-
 #### Fixed issues
 
 | Internal ID | Description  |
