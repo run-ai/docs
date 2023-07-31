@@ -108,10 +108,6 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 #### --preemptible
 > Interactive preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
 
-#### --ttl-after-finish < duration >
-
-> The duration, after which a finished job is automatically deleted (e.g. 5s, 2m, 3h).
-
 <!-- Start of common content from snippets/common-submit-cli-commands.md -->
 ### Naming and Shortcuts
 

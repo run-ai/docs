@@ -161,8 +161,12 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 
 #### --backoff-limit `<int>`
 
-> The number of times the Job will be retried before failing. The default is 6. This flag will only work with training workloads (when the `--interactive` flag is not specified).
-      
+> The number of times the Job will be retried before failing. The default is 6.
+
+#### --ttl-after-finish < duration >
+
+> The duration, after which a finished job is automatically deleted (e.g. 5s, 2m, 3h).
+
 ### Storage
 
 #### --git-sync `<stringArray>`
