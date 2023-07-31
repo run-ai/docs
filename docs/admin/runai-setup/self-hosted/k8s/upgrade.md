@@ -86,10 +86,12 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 ```
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
-    --set=postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
-    --set=thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
+    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
 ```
 
+!!! Note
+    The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
 
 
 ## Upgrade Cluster 
