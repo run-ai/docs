@@ -90,6 +90,8 @@ helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
 ```
 
+!!! Note
+    The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
 
 
 ## Upgrade Cluster 
