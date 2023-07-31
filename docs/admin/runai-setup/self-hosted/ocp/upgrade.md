@@ -70,6 +70,11 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
     1. The subdomain configured for the OpenShift cluster.
     2. Name of the administrator user in the company directory.
 
+
+    !!! Note
+        The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
+
+
 === "Airgapped"
     ``` bash
 
