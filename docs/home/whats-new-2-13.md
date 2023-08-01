@@ -20,6 +20,7 @@ July 2023
 | RUN-11120 | Fixed an issue where the *Projects* table does not show correct metrics when Run:ai version 2.13 is paired with a Run:ai 2.8 cluster. |
 | RUN-11121 | Fixed an issue where the wrong over quota memory alert is shown in the *Quota management* pane in project edit form. |
 | RUN-11272 | Fixed an issue in OpenShift environments where the selection in the cluster drop down in the main UI does not match the cluster selected on the login page. |
+
 ## Version 2.13.4
 
 ### Release date
