@@ -3,7 +3,7 @@
 Submit a Distributed Training (MPI) Run:ai Job to run.
 
 !!! Note
-    To use distributed training you need to have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
+    To use distributed training you need to have installed the Kubeflow MPI Operator as specified in [Distributed training](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training).
 
 Syntax notes:
 
