@@ -37,37 +37,36 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 
 To enable host-based routing you must perform the following steps:
 
-1. Create a second DNS entry  `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) DNS.
+1. Create a second DNS entry `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) DNS.
 2. Obtain a __star__ SSL certificate for this DNS.
 
 
 3. Add the certificate as a secret:
 
-=== "SaaS" 
-    ```
-    kubectl create secret tls runai-cluster-domain-star-tls-secret -n runai \ 
-        --cert /path/to/fullchain.pem --key /path/to/private.pem
-    ```
+```
+kubectl create secret tls runai-cluster-domain-star-tls-secret -n runai \ 
+    --cert /path/to/fullchain.pem --key /path/to/private.pem
+```
 
-=== "Self hosted"
-    ```
-    kubectl create secret tls runai-cluster-domain-star-tls-secret -n runai-backend \
-        --cert /path/to/fullchain.pem --key /path/to/private.pem
-    ```
+4. Create the following ingress rule:
 
-4. Create an ingress rule to direct traffic:
+``` YAML
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: runai-cluster-domain-star-ingress
+  namespace: runai
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: '*.<CLUSTER_URL>'
+  tls:
+  - hosts:
+    - '*.<CLUSTER_URL>'
+    secretName: runai-cluster-domain-star-tls-secret
+```
 
-=== "SaaS" 
-    ```    
-    kubectl patch ingress researcher-service-ingress -n runai --type json \
-        --patch '[{ "op": "add", "path": "/spec/tls/-", "value": { "hosts": [ "*.<CLUSTER_URL>" ], "secretName": "runai-cluster-domain-star-tls-secret" } }]'
-    ```
-
-=== "Self hosted"
-    ```
-    kubectl patch ingress runai-backend-ingress -n runai-backend --type json \
-        --patch '[{ "op": "add", "path": "/spec/tls/-", "value": { "hosts": [ "*.<CLUSTER_URL>" ], "secretName": "runai-cluster-domain-star-tls-secret" } }]'
-    ```
+Replace `<CLUSTER_URL>` as described above.
 
 5. Edit Runaiconfig to generate the URLs correctly:
 
