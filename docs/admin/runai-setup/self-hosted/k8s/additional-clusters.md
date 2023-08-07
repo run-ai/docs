@@ -2,8 +2,6 @@
 
 The first Run:ai cluster is typically installed on the same Kubernetes cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on __different Kubernetes clusters__.
 
-The instructions are for Run:ai version 2.8 and up.
-
 
 ## Installation
 
