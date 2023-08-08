@@ -2,7 +2,7 @@
 
 Ray is an open-source unified framework for scaling AI and Python applications like machine learning. It provides the compute layer for parallel processing so that you don’t need to be a distributed systems expert.
 
-## Submitting Ray jobs
+## Install Ray operator
 
 You must install KubeRay version 0.5.0 or greater in order to work with the different types of Ray workloads.
 
@@ -16,7 +16,8 @@ helm install kuberay-operator kuberay/kuberay-operator -n kuberay-operator --ver
 
 For more information, see [Deploying RayKube operator](https://docs.ray.io/en/latest/cluster/kubernetes/getting-started.html#deploying-the-kuberay-operator){target=_blank}.
 
-## Submit Ray jobs
+## Submit a Ray job
+
 Run:AI integrates with ray by interacting with the kuberay CRDs (RayJob, RayServe and RayCluster). The following is an example of RayJob scheduled by Run:AI.
 Use the following command to submit your Ray job:
 
