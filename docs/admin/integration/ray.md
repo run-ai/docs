@@ -2,7 +2,7 @@
 
 Ray is an open-source unified framework for scaling AI and Python applications like machine learning. It provides the compute layer for parallel processing so that you don’t need to be a distributed systems expert.
 
-## Sumitting Ray jobs
+## Submitting Ray jobs
 
 You must install KubeRay version 0.5.0 or greater in order to work with the different types of Ray workloads.
 
