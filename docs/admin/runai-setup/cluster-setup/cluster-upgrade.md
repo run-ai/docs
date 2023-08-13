@@ -23,8 +23,8 @@ helm get values runai-cluster -n runai > old-values.yaml
 ```
 
 1. Review the file `old-values.yaml` and see if there are any changes performed during the last installation.
-2. Follow the instructions for [installing Run:ai](cluster-install.md#install-runai) to download a new values file. 
-3. Merge the changes from Step 1 into the new values file 
+2. Follow the instructions for [Installing Run:ai](cluster-install.md#install-runai) to download a new values file. 
+3. Merge the changes from Step 1 into the new values file.
 4. Run `helm upgrade` as per the instructions in the link above. 
 
 
