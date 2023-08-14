@@ -36,7 +36,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_. RKE2 has a defect which requires a specific installation flow. Please contact Run:ai customer support for additional details. |
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_  |
 | Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
