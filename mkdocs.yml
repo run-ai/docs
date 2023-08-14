@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.13/docs/
+edit_uri: edit/v2.14/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -26,6 +26,7 @@ extra_css:
 # strict: true   
  
 markdown_extensions:
+  - footnotes
 #  - markdown_include.include
   - pymdownx.highlight:
       anchor_linenums: true
@@ -200,8 +201,9 @@ nav:
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
         - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
-      - 'Authentication' :
+      - 'Authentication and Access Control' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
+        - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 

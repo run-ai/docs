@@ -56,21 +56,39 @@ To add a new department:
 
 1. In the **Departments** grid, press **New Department**.
 2. Enter a name.
-3. In *Quota management* configure the number GPUs, CPUs, and CPU memory.
-4. In *Access control* select a user or application to be department administrator. If there are no users assigned the role of department administrator, see [Assigning Department Administrator role](#assigning-department-administrator-role).
+3. In *Quota management* configure the number GPUs, CPUs, and CPU memory, then press *Save*.
+
+<!-- 4. In *Access control* select a user or application to be department administrator. If there are no users assigned the role of department administrator, see [Assigning Department Administrator role](#assigning-department-administrator-role). -->
 
 ### Assigning Department Administrator role
+
+There are two ways to add *Department Administrator* roles to a department.
+
+The first is through the *Users* UI, and the second is through the *Access rules* that you can assign to a department.
+
+#### Users UI
 
 You can create a new user with the *Department Administrator* role, or add the role to existing users.
 To create a new user with this role, see [Create a user](admin-ui-users.md#create-a-user).
 To add this role to an existing user:
 
-1. Go to `Settings | Users`.
-2. Select a user from the list and then press `Edit User`.
-3. Select the `Department Admin` role from the list. (Deselect to remove the role from the user).
-4. Press save when complete.
+1. Press the ![Tools and Settings](img/tools-and-settings.svg) icon, then select *Users*..
+2. Select a user, then press *Access rules*, then press *+Access rule*.
+3. Select the `Department Administrator` role from the list.
+4. Press on the ![Scope](../../images/scope-icon.svg) and select one or more departments.
+5. Press *Save rule* and then *Close*.
 
-After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
+#### Assigning the access rule to the department
+
+To assign the *Access rule* to the department:
+
+1. Select a department from the list, then press *Access rules*, then press then press *+Access rule*.
+2. From the *Subject type* dropdown choose *User* or *Application*, then enter the user name or the application name.
+3. From the *Role* dropdown, select *Department administrator*, then press *Save rule*.
+4. If you want to add another rule, use the *+Access rule*.
+5. When all the rules are configured, press *Close*.
+
+<!-- After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
 
 To assign the Department Administrator user to the correct department:
 
@@ -78,8 +96,7 @@ To assign the Department Administrator user to the correct department:
 2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [Adding a new department](#adding-departments).
 3. Select `Department Administrator`, then select `Users` or `Applications`.
 4. If you selected `Users`, select one or more users from the drop down menu.
-5. Press save when complete.
-
+5. Press save when complete. -->
 
 ### Assigning Projects to Departments
 
