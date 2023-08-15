@@ -370,6 +370,24 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 >  * `nodeport`
 >  * `external-url`
+>
+> This flag can be used both in the standard format of flag and options and as a CSV file. See the following examples:
+>
+> ```
+OLD FORMAT: (still works)
+
+runai submit test-jup -p team-a -i gcr.io/run-ai-demo/jupyter-tensorboard --service-type external-url --port 8888
+
+runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070
+
+---
+
+NEW FORMAT:
+
+runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=8888
+
+runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url,port=8888
+``````
 
 #### --custom-url `<string>`
 
