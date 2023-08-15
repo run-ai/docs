@@ -1,0 +1,21 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: warning
+ignorecase: false
+action:
+  name: replace
+swap:
+  (?i)Run:ai: Run:ai
+  (?i)run.ai: Run:ai
+  (?i)runai: Run:ai
+  (?i)openshift: OpenShift
+  (?i)Hyperparameter: Hyperparameter
+  (?i)OAuth: OAuth
+  (?i)ConfigMaps: ConfigMaps
+  (?i)Namespace: Namespace
+  (?i)Knative: Knative
+  (?i)MLflow: MLflow
+  (?i)JupyterHub: JupyterHub
+  (?i)Kubeflow: Kubeflow
+  (?i)KubeVirt: KubeVirt
+  (?i)Seldon: Seldon

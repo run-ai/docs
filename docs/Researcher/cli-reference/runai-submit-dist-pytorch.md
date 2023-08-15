@@ -5,7 +5,7 @@
 Submit a distributed PyTorch training run:ai job to run.
 
 !!! Note
-    To use distributed training you need to have installed the < insert pytorch operator here > as specified < insert pre-requisites link here >.
+    To use distributed training you need to have installed the Pytorch operator as specified in [Distributed training](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training).
 
 Syntax notes:
 
