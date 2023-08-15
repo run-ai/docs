@@ -106,12 +106,13 @@ spec:
             container: 8000
 ```
 
-1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level. 
+1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level.
 2. Inference requires a port to receive requests.
 
 ## Suspend/Resume Interactive/Training Workload
 
-to suspend trainig
+To suspend training:
+
 ```YAML
 apiVersion: run.ai/v2alpha1
 kind: TrainingWorkload # 
@@ -128,9 +129,8 @@ spec:
   name:
     value: job-1 # 
 ```
-In order to suspend workload set `active` value to `false`
-To reume it back either set `active` value to `true` or remove it entirly. 
-
+In order to suspend the workload, set `active` to `false`.
+To resume the workload, either set `active` to `true` or remove it entirely.
 
 ## See Also
 * To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).

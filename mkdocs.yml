@@ -12,11 +12,15 @@ theme:
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - search.highlight
     - content.code.annotate
     - content.tabs.link
     - search.suggest
     - content.action.edit
+    - navigation.top
+    - toc.follow
+  #  - toc.integrate 
   icon:
     edit: material/pencil 
     view: material/eye
