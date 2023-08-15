@@ -20,7 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           # github-pr-check, github-pr-review, github-check
-          reporter: github-pr-check
+          reporter: github-pr-review
   
   markdownlint:
     name: runner / markdownlint
