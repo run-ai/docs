@@ -371,7 +371,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >  * `nodeport`
 >  * `external-url`
 >
-> This flag can be used both in the standard format of flag and options and as a CSV file. See the following examples:
+> This flag can be used both in the old format and the new format. You cannot mix the formats. See the following examples:
 >
 >OLD FORMAT: (still works)
 >
