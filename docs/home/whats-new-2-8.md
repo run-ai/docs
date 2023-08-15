@@ -1,8 +1,7 @@
 # Run:ai Version 2.8
 
 ## Release Date
-
- November 2022
+ November 2022 
 
 ## Release Content
 <!-- 
@@ -12,34 +11,34 @@
 
 Node Pools is a new method for managing GPU and CPU resources by **grouping the resources** into distinct pools. With node pools:
 
-* The administrator allocates Project and Department resources from these pools to be used by Workloads.
-* The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to customer's specific mode of operation.
+* The administrator allocates Project and Department resources from these pools to be used by Workloads. 
+* The administrator controls which workloads can use which resources, allowing an optimized utilization of resources according to customer's specific mode of operation. 
 
 ### User Interface Enhancements
 
 * The *Departments* screen has been revamped and new functionality added, including a new and clean look and feel, and improved search and filtering capabilities.
 * The *Jobs* screen has been split into 2 tabs for ease of use:
-  * *Current*:  (the default tab) consists of all the jobs that currently exist in the cluster.
+  * *Current*:  (the default tab) consists of all the jobs that currently exist in the cluster. 
   * *History*:  consists of all the jobs that have been deleted from the cluster. Deleting Jobs also deletes their Log (no change).
 
-### Installation improvements
+### Installation improvements 
 
-The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url) to the Kubernetes cluster. The requirement is relevant for SaaS installation only.
+The Run:ai user interface [requires a URL address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url) to the Kubernetes cluster. The requirement is relevant for SaaS installation only. 
 
-In previous versions of Run:ai the administrator should [provide an IP address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) and Run:ai would automatically create a DNS entry for it and a matching trusted certificate.
+In previous versions of Run:ai the administrator should [provide an IP address](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) and Run:ai would automatically create a DNS entry for it and a matching trusted certificate. 
 
-In version 2.8,  the default is for the Run:ai administrator to provide a [DNS and a trusted certificate](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url).
+In version 2.8,  the default is for the Run:ai administrator to provide a [DNS and a trusted certificate](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url). 
 
 The older option still exists but is being deprecated due to complexity.
 
-### Inference
+### Inference 
 
-The Deployment details page now contains the URL for the Inference service
+The Deployment details page now contains the URL for the Inference service 
 
 
 ### Hyperparameter Optimization (HPO)
 
-HPO Jobs are now presented as a single line in the Job List rather than a separate line per experiment.
+HPO Jobs are now presented as a single line in the Job List rather than a separate line per experiment. 
 
 ## Known Issues
 
@@ -57,9 +56,9 @@ HPO Jobs are now presented as a single line in the Job List rather than a separa
 |RUN-5444 |Dynamic MIG feature does not work with A-100 with 80GB of memory.        |     None               |
 |RUN-5424 |When a workload is selected in the job list, the GPU tab in the right panel, shows the details of the whole GPUs in the node, instead of the details of the GPUs used by the workload.                 |None              |
 |RUN-5226 |In rare occasions, when there is more than 1 NVIDIA MIG workload, nvidia-smi command to one of the workloads will result with no devices.        | None                   |
-| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. |
-| RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |
-| RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. |
+| RUN-6359 | In rare cases, when using fractions and the kubelet service on the scheduled node is down (Kubernetes not running on node)the pending workload will never run, even when the IT problem is solved. | Delete the job and re-submit the workload. | 
+| RUN-6399 | Requested GPUs are sometimes displayed in the Job list as 0 for distributed workloads. | None. This is a display-only issue |    
+| RUN-6400 | On EKS (Amazon Kubernetes Server), when using runai CLI, every command response starts with an error. No functionality harm. | None. The CLI functions as expected. | 
 
 #### Fixed issues
 
