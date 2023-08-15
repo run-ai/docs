@@ -1,0 +1,28 @@
+name: reviewdog
+on: 
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [ master, 'v[0-9].[0-9]' ]
+
+jobs:
+  vale:
+    name: runner / vale
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: errata-ai/vale-action@reviewdog
+        env:
+          # Required, set by GitHub actions automatically:
+          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  
+  markdownlint:
+    name: runner / markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: markdownlint
+        uses: reviewdog/action-markdownlint@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
