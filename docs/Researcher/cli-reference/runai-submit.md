@@ -373,7 +373,6 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > This flag can be used both in the standard format of flag and options and as a CSV file. See the following examples:
 >
-> 
 >OLD FORMAT: (still works)
 >
 >`runai submit test-jup -p team-a -i gcr.io/run-ai-demo/jupyter-tensorboard --service-type external-url --port 8888`
