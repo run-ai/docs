@@ -21,7 +21,7 @@ Using the Wizard:
 4. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes.
 5. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``.
 6. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md).
-7. Install [Helm](https://helm.sh/docs/intro/install/).
+7. Install [Helm](https://helm.sh/docs/intro/install/). Run:ai requires helm 3.10 or later. 
 8. Run the `helm` commands as provided in the wizard.
 
 !!! Info
