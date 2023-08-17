@@ -375,7 +375,15 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >  * `nodeport`
 >  * `external-url`
 >
-> This flag can be used both in the standard format which uses command flag for all the options.
+> This flag now supports more than one `service-type`. Multiple service types are supported in CSV style using multiple instances of the same option and commas to separate the values for them.
+>
+> For example:
+>
+>`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=88880`
+>
+>`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url,port=8888`>
+>
+> This flag can also be used in the standard format, which uses a command flag for all the options and can only support one service type.
 >
 > For example:
 >
@@ -383,14 +391,6 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > `runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070`
 >
-> However, you can also use the newer format, where the options are listed in CSV style using multiple instances of the same option and commas to seperate the values for them.
->
-> For example:
->
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=88880`
->
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url,port=8888`
->```
 
 #### --custom-url `<string>`
 
