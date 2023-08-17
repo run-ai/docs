@@ -6,7 +6,6 @@ Submit a Run:ai Job for execution.
 
 * Flags of type *stringArray* mean that you can add multiple values. You can either separate values with a comma or add the flag twice.
 
-
 ## Examples
 
 All examples assume a Run:ai Project has been setup using `runai config project <project-name>`.
@@ -88,13 +87,16 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 ## Options
 
 ### Job Type
+
 #### --interactive
 
 > Mark this Job as interactive.
 
+<!--
 #### --jupyter
 
 > Run a Jupyter notebook using a default image and notebook configuration.
+-->
 
 ### Job Lifecycle
 
@@ -344,9 +346,11 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 ### Network
 
+<!-- 
 #### --address `<string>`
 
 > Comma separated list of IP addresses to listen to when running with --service-type portforward (default: localhost)
+-->
 
 #### --host-ipc
 
@@ -371,17 +375,17 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >  * `nodeport`
 >  * `external-url`
 >
-> This flag can be used both in the old format and the new format. You cannot mix the formats. See the following examples:
+> This flag can be used both in the standard format which uses command flag for all the options.
 >
->OLD FORMAT: (still works)
+> For example:
 >
->`runai submit test-jup -p team-a -i gcr.io/run-ai-demo/jupyter-tensorboard --service-type external-url --port 8888`
+> `runai submit test-jup -p team-a -i gcr.io/run-ai-demo/jupyter-tensorboard --service-type external-url --port 8888`
 >
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070`
+> `runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070`
 >
->---
+> However, you can also use the newer format, where the options are listed in CSV style using multiple instances of the same option and commas to seperate the values for them.
 >
->NEW FORMAT:
+> For example:
 >
 >`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=88880`
 >
