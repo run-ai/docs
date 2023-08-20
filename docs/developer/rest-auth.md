@@ -46,16 +46,20 @@ Replace `<COMPANY-URL>` below with  `app.run.ai` for SaaS installations (not `<c
 
 === "Python"
     ``` python
-    import http.client
+    url = <COMPANY-URL> + "/auth/realms/" + <REALM> + "/protocol/openid-connect/token"
 
-    conn = http.client.HTTPSConnection("")
-    payload = "grant_type=client_credentials&client_id=<APPLICATION-NAME>&client_secret=<CLIENT_SECRET>"
-    headers = { 'content-type': "application/x-www-form-urlencoded" }
-    conn.request("POST", "/<COMPANY-URL>/auth/realms/<REALM>/protocol/openid-connect/token", payload, headers)
-
-    res = conn.getresponse()
-    data = res.read()
-    print(data.decode("utf-8"))
+    payload = 'grant_type=client_credentials&scope=openid&response_type=id_token&client_id=' + <APPLICATION-NAME> + '&client_secret=' + <CLIENT-SECRET>
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    
+    response = requests.request("POST", url, headers=headers, data=payload)
+    if response.status_code //100 == 2:
+        j = json.loads(response.text)
+        return j["access_token"]
+    else:
+        print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+        return
     ```
 
 ### Response 
