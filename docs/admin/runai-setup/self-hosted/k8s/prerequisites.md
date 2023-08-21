@@ -41,7 +41,7 @@ See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prereq
 
 The Run:ai control plane operating system prerequisites are identical.
 
-The Run:ai control-plane requires a default storage class to create persistent volume claims for Run:ai storage. The storage class, as per Kubernetes standards, controls the reclaim behavior: whether the Run:ai persistent data is saved or deleted when the Run:ai control plane is deleted.
+The Run:ai control-plane requires a __default storage class__ to create persistent volume claims for Run:ai storage. The storage class, as per Kubernetes standards, controls the reclaim behavior: whether the Run:ai persistent data is saved or deleted when the Run:ai control plane is deleted. For a simple (nonproduction) storage class example see [Kubernetes Local Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/#local)(target=_blank).
 
 ### NVIDIA Prerequisites
 
