@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect (OIDC).
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect or [OIDC](https://openid.net/developers/how-connect-works/){target=_blank}.
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
@@ -13,8 +13,7 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 ## SAML Prerequisites
 
-* **XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
-* **Organization Name**&mdash;you must have a Run:ai *Organization Name*. This is the name that appears on the top right of the Run:ai user interface.
+**XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
 
 ## OIDC Prerequisites
 
@@ -26,15 +25,15 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 You can configure your IdP to map several IdP attributes:
 
-| IdP attribute | Run:ai required name | Description |
+| IdP attribute | Default Run:ai name | Description |
 |--|--|--|
-| User email | email | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
-| User role groups | GROUPS | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
-| Linux User ID | UID (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
-| Linux Group ID | GID (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
-| Linux Supplementary Groups | SUPPLEMENTARYGROUPS (configurable) | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
-| User first name | firstName (configurable)| (Optional) Used as the first name showing in the Run:ai user interface. |
-| User last name | lastName (configurable)| (Optional) Used as the last name showing in the Run:ai user interface |
+| User email | email (cannot be changed) | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
+| User role groups | GROUPS  | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
+| Linux User ID | UID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
+| Linux Group ID | GID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
+| Linux Supplementary Groups | SUPPLEMENTARYGROUPS  | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
+| User first name | firstName | (Optional) Used as the first name showing in the Run:ai user interface. |
+| User last name | lastName | (Optional) Used as the last name showing in the Run:ai user interface |
 
 ### Example attribute mapping for Google Suite
 
@@ -54,12 +53,9 @@ You can configure your IdP to map several IdP attributes:
 For `Saml 2`:
 
    1. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
-   2. In the `GID` field, enter the GID.
-   3. In the `GROUPS` field, enter the groups.
-   4. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
-   5. In the `UID` field, enter the UID.
-   6. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   7.  Press `Save`.
+   2. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
+   3. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   4.  Press `Save`.
 
 For `Open ID Connect`:
 
@@ -68,12 +64,9 @@ For `Open ID Connect`:
    1. In the `Discovery Document URL` field, enter the URL to the discovery document.
    2. In the `Client ID` field, enter the client ID.
    3. In the `Client Secret` field, enter the client secret.
-   4. In the `GID` field, enter the GID.
-   5. In the `GROUPS` field, enter the groups.
-   6. In the `SUPPLEMENTARYGROUPS` field, enter the supplementary groups.
-   7. In the `UID` field, enter the UID.
-   8. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   9.  Press `Save`.
+   4. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
+   5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+   6.  Press `Save`.
 
 Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
 
@@ -86,12 +79,10 @@ Test Connectivity to Administration User Interface:
 
 * Using an incognito browser tab and open the Run:ai user interface.
 * Select the `Login with SSO` button.
-* Provide the `Organization name` obtained above.
 * You will be redirected to the IdP login page. Use the previously entered *Administrator* email* to log in.
 
 ### Troubleshooting
-
-The SSO log in can be separated into two parts:
+The SSO login can be separated into two parts:
 
 1. Run:ai redirects to the IdP (for example, Google) for login using a *SAML Request*.
 2. Upon successful login, IdP redirects back to Run:ai with a *SAML Response*.
