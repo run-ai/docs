@@ -373,15 +373,15 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > * `nodeport`
 > * `external-url`
 >
-> This flag now supports more than one `service-type`. Multiple service types are supported in CSV style using multiple instances of the same option and commas to separate the values for them.
+> This flag now supports more than one `service-type`. Multiple service types are supported in CSV style using multiple instances of the same option and commas to separate the values for them. You can also add the optional parameter `custom-url` to the command.
 >
 > For example:
 >
 >`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=30001`
 >
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url,port=8888`
+>`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url, --service-type external-url,port=8080,custom-url=https://my.domain.com/url`
 >
-> This flag can also be used in the standard format, which uses a command flag for all the options and can only support one service type.
+> This flag can also be used in the standard format, which uses a command flag for all the options and can only support one service type. Each time `--service-type` is used, you need to use a service name (for example `external url`).
 >
 > For example:
 >
