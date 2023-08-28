@@ -46,12 +46,10 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 !!! Note
     To be able to create or edit Projects, you must have *Editor* access. See the [Users](admin-ui-users.md) documentation.
 
-1. In the left-menu, press **Projects**.
-1.5 On the top right, select "Add New Project"
+1. In the left-menu, press **Projects**, then press *+Add New Project*.
 2. Choose a *Department* from the drop-down. The default is `default`.
 3. Enter a *Project name*. Press *Namespace* to set the namespace associated with the project. You can either create the namespace from the project name (default) or enter an existing namespace.
-4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users).
-5. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over-quota priority settings. Configure the following:
+4. In *Quota management*, configure the node pool priority (if editable), the GPUs, CPUs, CPU memory, and Over-quota priority settings. Configure the following:
 
        * *Order of priority*&mdash;the priority the node pool will receive when trying to schedule workloads. For more information, see [Node pool priority](../../Researcher/scheduling/using-node-pools.md#multiple-node-pools-selection).
        * *GPUs*&mdash;the number of GPUs in the node pool. Press *GPUs* and enter the number of GPUs, then press *Apply* to save.
@@ -59,16 +57,27 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
        * *CPU Memory*&mdash;the amount of memory the CPUs will be allocated. Press *CPU Memory*, enter an amount of memory, then press *Apply* to save.
        * Over-quota priority&mdash;the priority for the specific node pool to receive over-quota allocations.
   
-6. (Optional) In the *Scheduling rules* pane, use the dropdown arrow to open the pane. Press on the *+ Rule* button to add a new rule to the project. Add one (or more) of the following rule types:
+5. (Optional) In the *Scheduling rules* pane, use the dropdown arrow to open the pane. Press on the *+ Rule* button to add a new rule to the project. Add one (or more) of the following rule types:
 
     * *Idle GPU timeout*&mdash;controls the amount of time that specific workload GPUs which are idle will be remain assigned to the project before getting reassigned.
     * *Workspace duration*&mdash;limit the length of time a workspace will before being terminated.
     * *Training duration*&mdash;limit the length of time training workloads will run.
     * *Node type (Affinity)*&mdash;limits specific workloads to run on specific node types.
+  
+<!-- 4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users). -->
 
-## Assign Users to Project
+## Assign users to a Project
 
-When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.
+<!-- This is no longer available even when it is set to enabled!!
+When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.  -->
+
+To assign *Access rules* to the project:
+
+1. Select a project from the list, then press *Access rules*, then press then press *+Access rule*.
+2. From the *Subject type* dropdown choose *User* or *Application*, then enter the user name or the application name.
+3. From the *Role* dropdown, select the desired role, then press *Save rule*.
+4. If you want to add another rule, use the *+Access rule*.
+5. When all the rules are configured, press *Close*.
 
 If you are using Single-sign-on, you can also assign Groups
 
@@ -175,9 +184,9 @@ To set a duration limit for interactive Jobs:
 * Create a Project or edit an existing Project.
 * Go to the *Time Limit* tab
 * You can limit interactive Jobs using two criteria:
-    * Set a hard time limit (day, hour, minute) to an Interactive Job, regardless of the activity of this Job, e.g. stop the Job after 1 day of work.
-    * Set a time limit for Idle Interactive Jobs, i.e. an Interactive Job idle for X time is stopped. Idle means no GPU activity.
-    * You can set if this idle time limit is effective for Interactive Jobs that are Preemptible, non-Preemptible, or both.
+  * Set a hard time limit (day, hour, minute) to an Interactive Job, regardless of the activity of this Job, e.g. stop the Job after 1 day of work.
+  * Set a time limit for Idle Interactive Jobs, i.e. an Interactive Job idle for X time is stopped. Idle means no GPU activity.
+  * You can set if this idle time limit is effective for Interactive Jobs that are Preemptible, non-Preemptible, or both.
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
 
@@ -187,7 +196,7 @@ To set a duration limit for Training Jobs:
 
 * Create a Project or edit an existing Project.
 * Go to the *Time Limit* tab:
-    * Set a time limit for Idle Training Jobs, i.e. a Training Job idle for X time is stopped. Idle means no GPU activity.
+  * Set a time limit for Idle Training Jobs, i.e. a Training Job idle for X time is stopped. Idle means no GPU activity.
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
 
