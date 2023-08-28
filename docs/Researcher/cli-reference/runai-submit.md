@@ -362,26 +362,12 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > Use the host's network stack inside the container.
 > For further information see [docker run reference](https://docs.docker.com/engine/reference/run/)documentation.
 
-#### --port `<stringArray>`
-
-> Expose ports from the Job container.
-
 #### -s | --service-type `<string>`
 
-> External access type to interactive jobs. Options are:
+> External access type to jobs. Options are:
 >
-> * `nodeport`
-> * `external-url`
->
-> This flag now supports more than one `service-type`. Multiple service types are supported in CSV style using multiple instances of the same option and commas to separate the values for them. You can also add the optional parameter `custom-url` to the command.
->
-> For example:
->
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=30001`
->
->`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url, --service-type external-url,port=8080,custom-url=https://my.domain.com/url`
->
-> This flag can also be used in the standard format, which uses a command flag for all the options and can only support one service type. Each time `--service-type` is used, you need to use a service name (for example `external url`).
+> * `nodeport` - add one or more ports using `--port`.
+> * `external-url` - add one port and an optional custom URL using `--custom-url`.
 >
 > For example:
 >
@@ -389,10 +375,22 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > `runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070`
 >
+> This flag supports more than one `service-type`. Multiple service types are supported in CSV style using multiple instances of the same option and commas to separate the values for them.
+>
+> For example:
+>
+>`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070 --service-type external-url,port=30001`
+>
+>`runai submit test-np -p team-a -i ubuntu --service-type nodeport,port=30000:7070,port=9090 --service-type external-url,port=8080,custom-url=https://my.domain.com/url`
+>
+
+#### --port `<stringArray>`
+
+> Expose ports from the Job container. You can use a port number (for example 9090) or use the numbers of `hostport:containerport` (for example, 30000:7070).
 
 #### --custom-url `<string>`
 
-> An optional argument that specifies a custom URL when using the `external URL` service type. If not provided, the system will generate a URL automatically.
+> An optional argument that specifies a custom URL when using the `external-url` service type. If not provided, the system will generate a URL automatically.
 
 ### Access Control
 
