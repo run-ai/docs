@@ -52,11 +52,13 @@ N/A
 
 ### Release content
 
-This version contains features and fixes from previous versions starting with 2.9. Refer to the prior versions for specific features and fixes. For information about features, functionality, and fixed issues in previous versions see:
+This version contains features and fixes from previous versions starting with 2.9. Refer to the prior versions for specific features and fixes. 
+<!-- For information about features, functionality, and fixed issues in previous versions see:
 
 * [What's new 2.12](whats-new-2-12.md)
 * [What's new 2.10](whats-new-2-10.md)
 * [What's new 2.9](whats-new-2-9.md)
+-->
 
 **Projects**
 <!-- RUN-9312/9313 Projects V2 -->
