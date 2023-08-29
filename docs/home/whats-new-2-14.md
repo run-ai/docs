@@ -43,6 +43,7 @@ When upgrading the system, previous access and authorizations that were configur
 <!-- RUN-10335/RUN-10510 Node port command line -->
 
 <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->
+* We are pleased to announce that we have increased the flexibility when creating policies. The improved flexibility includes the abililty to allocate a `min` and a `max` value for CPU and GPU memory.
 
 <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->
 * We are pleased to announce that we have added an additional table to the Consumption dashboard. This table contains the consumption per department and the cost per department. For more information, see [Consumption dashboard]()
