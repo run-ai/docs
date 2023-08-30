@@ -119,11 +119,13 @@ The following file is an example of a configmap file for the notification servic
         - Scheduled
   enrich:
     kubeMetadata:
-    # <Both labels and annotations are maps of kube metadata keys to event property keys that can be used in notification templates>
       labels:
-        ...
+        "release": "workloadDisplayName"
+        "training.kubeflow.org/job-name": "workloadDisplayName"
+        "serving.knative.dev/service": "workloadDisplayName"
+        "project": "project"
       annotations:
-        ...
+        "user": "user"
   notify:
     email:
       template_path: path/email.html
