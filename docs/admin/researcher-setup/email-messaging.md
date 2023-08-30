@@ -13,7 +13,6 @@ The service can also be configured using a regular expression to send notificati
 
 ## Available notifications
 
-
 The following Run:ai notifications are available for email notifications:
 
 |Event|Kind (for config)|Reason (for config)|Description|Run:ai version|Additional info|
@@ -50,7 +49,7 @@ helm install runai-notifications-service/notifications-service --version 0.0.0
 
 Note:
 
-You can change the service configuration values with the -f flag or edit them after installation.
+You can change the service configuration values after deployment. Edit the config map and then rerun the `helm install` command above with the -f flag.
 
 ## Configuration
 
@@ -71,12 +70,15 @@ This section defines the objects and events that the service will listen to and 
 
 | Component | Field | description | default |
 | --- |  --- |  --- |  --- |
-| `kubelistener` | `listener.relevant_objects` | white list of Kubernetes components for notifications | relevant_objects: <br> `kind:` <br>    `Podreasons:UnschedulableScheduled` <br><br> `kind:` <br>`PodGroupreasons: -Evict` |
+| `kubelistener` | `listener.relevant_objects` | white list of Kubernetes components for notifications | relevant_objects: <br> `kind:` <br>    `Podreasons:UnschedulableScheduled` <br><br> `kind:` <br>`PodGroupreasons: - Evict` |
 | `kubelistener` | `listener.relevant_namespaces` | white list of namespaces that the service should listen to for events (regex) | `runai-.*` |
 
 ### `enrich` configuration
 
 Use the following table to configure options in the `enrich` section of the `configmap` file.
+
+!!! Note
+    This component and related fields are for internal use only.
 
 | Component | Field | description | default |
 | --- |  --- |  --- |  --- |
@@ -117,6 +119,9 @@ The following file is an example of a configmap file for the notification servic
       reasons:
         - Unschedulable
         - Scheduled
+    - kind: PodGroup
+      reasons:
+        - Evict
   enrich:
     kubeMetadata:
       labels:
