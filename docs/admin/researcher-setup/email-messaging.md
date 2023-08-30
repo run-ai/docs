@@ -115,7 +115,7 @@ The following file is an example of a configmap file for the notification servic
     relevant_objects:
     - kind: Pod
       reasons:
-        - Evict
+        - Unschedulable
         - Scheduled
   enrich:
     kubeMetadata:
