@@ -23,6 +23,9 @@ The following Run:ai notifications are available:
 |Pod unschedulable|`Pod`|`Unschedulable`|a pod was determined as unschedulable and couldn't be scheduled on any node in the cluster| Pod, Job, Project, Namespace, User|
 |Failed scheduling pod|`Pod`|`FailedScheduling`|binding a pod to a node failed| Pod, Job, Project, Namespace, User|
 
+!!! Tip
+    You can configure the notifications service to send additional Kubernetes events using the relevant `kind` and event `reason`.
+
 The following table shows the expected messages for each event:
 
 |Event| Message |
@@ -32,8 +35,7 @@ The following table shows the expected messages for each event:
 | Pod unschedulable |Message explaining different reasons for scheduler not being able to schedule on different nodes. <br /> (for example "All nodes are unavailable: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: test}. 2 node(s) didn't have enough resource: GPUs. 2 node(s) didn't have enough resource: MilliCPUs.")|
 | Failed scheduling pod | The error returned from Kubernetes API server, which usually indicates an error in the scheduler or in the cluster. |
 
-!!! Tip
-    You can configure the notifications service to send additional Kubernetes events using the relevant `kind` and event `reason`.
+
 
 ## Installation
 
