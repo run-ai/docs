@@ -13,15 +13,28 @@ The service can also be configured using a regular expression to send notificati
 
 ## Available notifications
 
-The following Run:ai notifications are available for email notifications:
+Configure the notifications service to send events using the relevant `kind` and event `reason`.
+The following Run:ai notifications are available:
 
-|Event|Kind (for config)|Reason (for config)|Description|Run:ai version|Additional info|
-|:----|:----|:----|:----|:----|:----|
-|Pod Scheduled|`Pod`|`Scheduled`|a pod was scheduled on a node|2.9 and above|Pod, Job, Project, Namespace, User|
-|Pod Evicted|`PodGroup`|`Evict`|a pod was evicted to make room for another pod with higher priority, or to reclaim resources that belong to other project or department|2.9 and above|Pod, Job, Project, Namespace, User|
-|Pod unschedulable|`Pod`|`Unschedulable`|a pod was determined as unschedulable and couldn't be scheduled on any node in the cluster|2.9 and above|Pod, Job, Project, Namespace, User|
-|Failed scheduling pod|`Pod`|`FailedScheduling`|binding a pod to a node failed|2.9 and above|Pod, Job, Project, Namespace, User|
-You can configure the notifications service to listen to other Kubernetes events and send it via email by using the relevant `Kind` and event `Reason`.
+|Event|Kind|Reason|Description|Additional info|
+|:----|:----|:----|:----|:----|
+|Pod scheduled|`Pod`|`Scheduled`|a pod was scheduled on a node|Pod, Job, Project, Namespace, User|
+|Pod evicted|`PodGroup`|`Evict`|a pod was evicted to make room for another pod with higher priority, or to reclaim resources that belong to other project or department|Pod, Job, Project, Namespace, User|
+|Pod unschedulable|`Pod`|`Unschedulable`|a pod was determined as unschedulable and couldn't be scheduled on any node in the cluster| Pod, Job, Project, Namespace, User|
+|Failed scheduling pod|`Pod`|`FailedScheduling`|binding a pod to a node failed| Pod, Job, Project, Namespace, User|
+
+The following table shows the expected messages for each event:
+
+|Event| Message |
+|--|--|
+| Pod scheduled | Successfully assigned `namespace`/`pod` to `node`.|
+| Pod evicted | Examples of messages explaining why the pod was evicted: <br /><br />Eviction due to priority within same namespace:<br /> Job `namespace`/`pod` was preempted by a job `namespace`/`pod` which has higher priority.<br /><br />Eviction due to reclaim from queue which is over-quota:<br />Job `namespace`/`pod` was reclaimed by job `namespace`/`podGroup`. The reclaimed project uses `x` GPUs with a quota of `y` GPUs. <br /><br />Eviction for consolidation:<br /> Pod `namespace`/`pod` was removed for bin packing. |
+| Pod unschedulable |Message explaining different reasons for scheduler not being able to schedule on different nodes. <br /> (for example "All nodes are unavailable: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: test}. 2 node(s) didn't have enough resource: GPUs. 2 node(s) didn't have enough resource: MilliCPUs.")|
+| Failed scheduling pod | The error returned from Kubernetes API server, which usually indicates an error in the scheduler or in the cluster. |
+
+!!! Tip
+    You can configure the notifications service to send additional Kubernetes events using the relevant `kind` and event `reason`.
+
 ## Installation
 
 Install the notification service using the following commands:
@@ -47,19 +60,20 @@ helm repo search runai-notifications-service
 helm install runai-notifications-service/notifications-service --version 0.0.0
 ```
 
-Note:
-
-You can change the service configuration values after deployment. Edit the config map and then rerun the `helm install` command above with the -f flag.
-
 ## Configuration
 
 The notification service is configured using a `configmap` file. The following is an example of a `configmap` file. Each of the tables below references a section in the `configmap` file.
+
+<!-- Need to better understand this.
+!!! Note:
+    You can change the service configuration values after deployment. Edit the config map and then rerun the `helm install` command above with the `-f` flag.
+-->
 
 ### `service` configuration
 
 This section defines the number of events that will be sent by the service. Use the following table to configure options in the `service` section of the `configmap` file.
 
-|Component|Field|description|default|
+|Component|Field|Description|Default|
 |:----|:----|:----|:----|
 |`service`|`service.concurrent_limit`|maximum number of events the service will handle in parallel|50|
 |`service`|`service.cached_events`|queue size for events before blocking the listener|1000|
@@ -68,29 +82,27 @@ This section defines the number of events that will be sent by the service. Use 
 
 This section defines the objects and events that the service will listen to and send as notifications. Use the following table to configure options in the `listener` section of the `configmap` file.
 
-| Component | Field | description | default |
+| Component | Field | Description | Default |
 | --- |  --- |  --- |  --- |
 | `kubelistener` | `listener.relevant_objects` | white list of Kubernetes components for notifications | relevant_objects: <br> `kind:` <br>    `Podreasons:UnschedulableScheduled` <br><br> `kind:` <br>`PodGroupreasons: - Evict` |
 | `kubelistener` | `listener.relevant_namespaces` | white list of namespaces that the service should listen to for events (regex) | `runai-.*` |
 
 ### `enrich` configuration
 
-Use the following table to configure options in the `enrich` section of the `configmap` file.
-
 !!! Note
-    This component and related fields are for internal use only.
+    This section of the `configmap` is for internal use only. Keep the default values.
 
-| Component | Field | description | default |
-| --- |  --- |  --- |  --- |
-|`KubeMetadata`|`enricher.kubeMetadata.lables`|maps the event related object labels to specific properties in the output event | `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
-|`KubeMetadata`|`enricher.kubeMetadata.annotations`|maps the related object annotations to event properties|`"user": "user"`|
+| Component | Field | Default |
+| --- | --- | --- |
+|`KubeMetadata`|`enricher.kubeMetadata.lables`| `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
+|`KubeMetadata`|`enricher.kubeMetadata.annotations`|`"user": "user"`|
 
 ### `notify` configuration
 
 This section defines the notification configuration of the service and contains the details for the SMTP server and the recipients list.
 Use the following table to configure options in the `notify` section of the `configmap` file.
 
-|Component|Field|description|default|
+|Component|Field|Description|Default|
 |--- |--- |--- |--- |
 |`Email`|`notify.email.smtp_host` (M)|SMTP server host address|Empty|
 |`Email`|`notify.email.smtp_port` (M)|SMTP server port|587|
@@ -133,7 +145,7 @@ The following file is an example of a configmap file for the notification servic
         "user": "user"
   notify:
     email:
-      template_path: path/email.html
+      template_path: path/email.html  # Internal use only.
       from: my@mail.com
       user: smtp_user
       password: smtp_password
