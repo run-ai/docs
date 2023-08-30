@@ -24,8 +24,8 @@ The following Run:ai notifications are available:
 |Failed scheduling pod|`Pod`|`FailedScheduling`|binding a pod to a node failed| Pod, Job, Project, Namespace, User|
 
 !!! Tip
-    You can configure the notifications service to send additional Kubernetes events using the relevant `kind` and event `reason`.
-
+    You can configure the notifications service to send event messages about additional Kubernetes events using the relevant `kind` and event `reason`.
+<!--
 The following table shows the expected messages for each event:
 
 |Event| Message |
@@ -34,8 +34,7 @@ The following table shows the expected messages for each event:
 | Pod evicted | Examples of messages explaining why the pod was evicted: <br /><br />Eviction due to priority within same namespace:<br /> Job `namespace`/`pod` was preempted by a job `namespace`/`pod` which has higher priority.<br /><br />Eviction due to reclaim from queue which is over-quota:<br />Job `namespace`/`pod` was reclaimed by job `namespace`/`podGroup`. The reclaimed project uses `x` GPUs with a quota of `y` GPUs. <br /><br />Eviction for consolidation:<br /> Pod `namespace`/`pod` was removed for bin packing. |
 | Pod unschedulable |Message explaining different reasons for scheduler not being able to schedule on different nodes. <br /> (for example "All nodes are unavailable: 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: test}. 2 node(s) didn't have enough resource: GPUs. 2 node(s) didn't have enough resource: MilliCPUs.")|
 | Failed scheduling pod | The error returned from Kubernetes API server, which usually indicates an error in the scheduler or in the cluster. |
-
-
+-->
 
 ## Installation
 
