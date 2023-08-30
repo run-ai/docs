@@ -108,7 +108,7 @@ Use the following table to configure options in the `notify` section of the `con
 |`Email`|`notify.email.smtp_host` (M)|SMTP server host address|Empty|
 |`Email`|`notify.email.smtp_port` (M)|SMTP server port|587|
 |`Email`|`notify.email.from_display_name` (M)|email's "From" display name|Run:ai|
-|`Email`|`notify.email.from` (M)|a valid domain source email address|test@run.ai|
+|`Email`|`notify.email.from` (M)|a valid domain source email address|<test@run.ai>|
 |`Email`|`notify.email.user` (M)|SMTP server user login|user|
 |`Email`|`notify.email.password` (M)|SMTP server user's password |password|
 |`Email`|`notify.email.direct_notifications` (together with Recipients)|when set to true, email notifications will be sent dynamically to the user who submitted the workload|false|
