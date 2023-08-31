@@ -486,11 +486,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/admin/runai-setup/try-azure/</loc>
-         <lastmod>2023-08-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/authentication/authentication-overview/</loc>
          <lastmod>2023-08-31</lastmod>
          <changefreq>daily</changefreq>
