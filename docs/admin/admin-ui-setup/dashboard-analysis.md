@@ -273,6 +273,13 @@ Use the drop down menus at the top of the dashboard to apply filters for:
 * Project or department
 * Per project (single, multiple, or all)
 * Per department (single, multiple or all)
+* Per cluster (single, multiple, all)
+
+Use cost fields at the top of the dashboard to provides calculated costs for:
+
+* GPU
+* CPU
+* CPU memory (in GB)
 
 Use the time picker dropdown to select relative time range options and set custom absolute time ranges.
 You can change the Timezone and fiscal year settings from the time range controls by clicking the Change time settings button.
@@ -284,20 +291,34 @@ You can change the Timezone and fiscal year settings from the time range control
 
 You can change the refresh interval using the refresh interval drop down.
 
-The dashboard has a Total consumption table that displays the total consumption of resources based on:
+The dashboard has a 2 consumption tables that display the total consumption of resources.
+Hover over an entry in the table to filter it in or out of the table.
+
+The *Total consumption* table includes consumption details based on the filters selected. Fields include:
 
 * Project
 * Department
 * GPU hours
 * CPU hours
 * Memory hours
+* GPU cost (only when configured)
+* CPU cost (only when configured)
+* CPU memory (only when configured)
 
-Hover over an entry in the table to filter it in or out of the table.
+The *Total department consumption* table includes consumption details for each department, or details for departments selected in the filters. Fields include:
+
+* Department
+* GPU hours
+* CPU hours
+* Memory hours
+* GPU cost (only when configured)
+* CPU cost (only when configured)
+* CPU memory (only when configured)
 
 The dashboard has a graph of the GPU allocation over time.
 
 !![](img/consumption-dashboard-gpu-over-time.png)
 
-The dashboard has a graph of the Project over-quota GPU consumtion.
+The dashboard has a graph of the Project over-quota GPU consumption.
 
-!![](img/consumtion-dashboard-project-over-quota-graph.png)
+!![](img/consumption-dashboard-project-over-quota-graph.png)
