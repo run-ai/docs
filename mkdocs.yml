@@ -141,8 +141,8 @@ nav:
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
       - 'Version 2.13' : 'home/whats-new-2-13.md'
-      - 'Version 2.12' : 'home/whats-new-2-12.md'
-      - 'Version 2.10' : 'home/whats-new-2-10.md'
+    #  - 'Version 2.12' : 'home/whats-new-2-12.md'
+    #  - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
       - 'Whats New 2022' : 'home/whats-new-2022.md'
@@ -153,7 +153,7 @@ nav:
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
-      - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
+     # - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
