@@ -105,6 +105,10 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > Interactive preemptible jobs can be scheduled above guaranteed quota but may be reclaimed at any time.
 
+#### --auto-deletion-time-after-completion
+>
+> The length of time after which a completed or failed job is automatically deleted. Configured in seconds, minutes, or hours (for example 5s, 2m, or 3h). If set to 0, the job will be deleted immediately after completing or failing.
+
 <!-- Start of common content from snippets/common-submit-cli-commands.md -->
 ### Naming and Shortcuts
 
