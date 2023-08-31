@@ -31,4 +31,4 @@ To create a new workspace:
    1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the time in days, hours, minuets, and seconds.
    2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
    3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
-10.  Press *Create workspace*
+10. Press *Create workspace*
