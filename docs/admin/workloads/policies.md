@@ -79,7 +79,7 @@ spec:
     rules:
       min: 100M
       max: 2G
-  cpuMemory:
+memory:
     rules:
       min: 100M
       max: 2G
