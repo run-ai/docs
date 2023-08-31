@@ -28,7 +28,7 @@ To create a new workspace:
    6. Select a *Volume persistency.
 8. Select a data source from the tiles. If your data source is not listed, use the *Search compute resources* box to find it. Press *New data source* to create a new data source if needed.
 9. In the *General* pane, add special settings for your workspace:
-   1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the time in days, hours, minuets, and seconds.
+   1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds.
    2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
    3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
 10. Press *Create workspace*

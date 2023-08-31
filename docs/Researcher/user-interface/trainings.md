@@ -41,7 +41,7 @@ To add a training:
    6. Select a *Volume persistency.
 8. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 9. In the *General* pane, add special settings for your training (optional):
-   1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the time in days, hours, minuets, and seconds.
+   1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds.
    2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
    3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 10. When complete, press *Create training*.
