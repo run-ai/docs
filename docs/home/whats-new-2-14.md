@@ -53,6 +53,23 @@ TODO Add RBAC old--new conversion table here. -->
 <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->
 * We are pleased to announce that we have added an additional table to the Consumption dashboard. This table contains the consumption per department and the cost per department. For more information, see [Consumption dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
 
+##### Deployment improvements
+<!-- RUN-11563/RUN-11564 MPS and tolerance -->
+* We are pleased to announce improvements to the deployment form which now include support for tolerations and Multi-Process Service (MPS). 
+* *Tolerations* are <!-- TODO explain tolerations -->.
+* Multi-Process Service (MPS) is <!--TODO explain MPS here -->
+<!-- Configuration procedure added here because the deployments page has no procedure on it. -->  
+    To configure *Tolerations* and *MPS*:
+        1. In the left pane menu, press *Deployments*, then press *New deployment*.
+        2. Complete the required fields in the form, then press *Container definition*.
+        3. To enable *MPS* support, move the selector switch.
+        4. To configure *Tolerations*:
+              1. In the *Tolerations* pane, press *Add*.
+              2. Enter the *Key* and *Operator*.
+              3. Select an *Effect* from the drop down menu.
+              4. Enter a *Value* and *Toleration seconds* (optional).
+        5. When your form is complete press *Deploy*.
+
 #### Fixed issues
 
 | Internal ID | Description  |
