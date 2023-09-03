@@ -25,11 +25,11 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Auto delete jobs
 <!-- RUN-8586/RUN-11777 -->
-* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see Auto deletion (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/.workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#auto-deletion-time-after-completion).
+* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see Auto deletion (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
 
 ##### Multiple service types
 <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->
-* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit ](../Researcher/cli-reference/runai-submit.md#s----service-type-string).
+* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit ](../Researcher/cli-reference/runai-submit.md).
 
 <!-- RUN-9808/RUN-9810 Show effective project policy from the UI 
 * We are pleased to announce an enhancement to the Projects table where users now have the ability to view policies from within a project. For more information, see [Projects](). -->
