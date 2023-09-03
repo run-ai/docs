@@ -257,7 +257,7 @@ Provides a holistic, aggregated view across Clusters, including information abou
 
 ## Consumption dashboard
 
-This dashboard enables users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines.
+This dashboard enables users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines. The dashboard also provides costing analysis for GPU, CPU, and memory costs for the system.
 
 ![!copnsumption dasboard](img/consumption-dashboard.png)
 
