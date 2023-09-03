@@ -66,6 +66,8 @@ gpu: must be no greater than 4
 
 A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for a training job.
 
+#### GPU and CPU memory limits
+
 The following policy places a default and limit on the available values for CPU and GPU memory allocation.
 
 ```YAML title="gpumemorypolicy.yaml"

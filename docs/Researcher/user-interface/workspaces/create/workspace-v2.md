@@ -16,19 +16,25 @@ To create a new workspace:
 
 4. Enter a name for your workspace and press *Continue*.
 5. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it. Press *New environment* to create an environment if needed.
-   1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
-   2. Press *Environment variable* to add an environment variable. Press again if you need more environments variables.
+
+      1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
+      2. Press *Environment variable* to add an environment variable. Press again if you need more environments variables.
+
 6. Select a compute resource from the tiles. If your compute resource is not listed, use the *Search compute resources* box to find it. Press *New compute resource* to create a compute resource if needed.
 7. Open the *Volume* pane, and press *Volume* to add a volume to your workspace.
-   1. Select the *Storage class* from the dropdown.
-   2. Select the *Access mode* from the dropdown.
-   3. Enter a claim size, and select the units.
-   4. Select a *Volume system*, mode from the dropdown.
-   5. Enter the *Container path* for volume target location.
-   6. Select a *Volume persistency.
+
+      1. Select the *Storage class* from the dropdown.
+      2. Select the *Access mode* from the dropdown.
+      3. Enter a claim size, and select the units.
+      4. Select a *Volume system*, mode from the dropdown.
+      5. Enter the *Container path* for volume target location.
+      6. Select a *Volume persistency*. Choose from *Persistent* or *Ephemeral*.
+
 8. Select a data source from the tiles. If your data source is not listed, use the *Search compute resources* box to find it. Press *New data source* to create a new data source if needed.
 9. In the *General* pane, add special settings for your workspace:
-   1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
-   2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
-   3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
+
+      1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
+      2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
+      3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
+
 10. Press *Create workspace*
