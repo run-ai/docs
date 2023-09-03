@@ -29,7 +29,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Multiple service types
 <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->
-* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit ](../Researcher/cli-reference/runai-submit.md).
+* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
 
 <!-- RUN-9808/RUN-9810 Show effective project policy from the UI 
 * We are pleased to announce an enhancement to the Projects table where users now have the ability to view policies from within a project. For more information, see [Projects](). -->
