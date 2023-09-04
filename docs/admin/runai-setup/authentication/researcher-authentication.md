@@ -100,7 +100,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
     ```
     kubectl get clientconfig default -n kube-public -o yaml > login-config.yaml
-    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"runai\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"groupClaim\":\"groups\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"email\",\"userPrefix\":\"-\"}}]}" login-config.yaml
+    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"runai\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"groupsClaim\":\"groups\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"email\",\"userPrefix\":\"-\"}}]}" login-config.yaml
     kubectl apply -f login-config.yaml
     ```
 
