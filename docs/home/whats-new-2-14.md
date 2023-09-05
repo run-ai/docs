@@ -55,20 +55,24 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Deployment improvements
 <!-- RUN-11563/RUN-11564 MPS and tolerance -->
-* We are pleased to announce improvements to the deployment form which now include support for tolerations and Multi-Process Service (MPS). 
-* *Tolerations* are <!-- TODO explain tolerations -->.
-* Multi-Process Service (MPS) is <!--TODO explain MPS here -->
+* We are pleased to announce improvements to the deployment form which now include support for and *Multi-Process Service (MPS)*. *MPS* is a service which allows the running of parallel processes on the same GPU, which are all run by the same userid. To enable *MPS* support, move the selector switch on the *Deployments* form.
+
+!!! Note
+    If you do not use the same userid, the processes will run in serial and could possibly degrade performance.
+
+* We are pleased to announce improvements to the deployment form which now include support for *Tolerations*. *Tolerations* guide the system to which node each pod can be
+     scheduled to or evicted by matching between rules and taints defined for each Kubernetes node.
+
 <!-- Configuration procedure added here because the deployments page has no procedure on it. -->  
-    To configure *Tolerations* and *MPS*:
-        1. In the left pane menu, press *Deployments*, then press *New deployment*.
-        2. Complete the required fields in the form, then press *Container definition*.
-        3. To enable *MPS* support, move the selector switch.
-        4. To configure *Tolerations*:
-              1. In the *Tolerations* pane, press *Add*.
-              2. Enter the *Key* and *Operator*.
-              3. Select an *Effect* from the drop down menu.
-              4. Enter a *Value* and *Toleration seconds* (optional).
-        5. When your form is complete press *Deploy*.
+To configure *Tolerations*:
+    1. In the left pane menu, press *Deployments*, then press *New deployment*.
+    2. Complete the required fields in the form, then press *Container definition*.
+    3. To configure *Tolerations*:
+            1. In the *Tolerations* pane, press *Add*.
+            2. Enter the *Key* and select and option from the *Operator* drop down.
+            3. Select an *Effect* from the drop down.
+            4. Enter a *Value* and *Toleration seconds* (optional).
+    4. When your form is complete press *Deploy*.
 
 #### Fixed issues
 
