@@ -8,15 +8,14 @@ August 2023
 
 #### Release content
 
-This version contains features and fixes from previous versions starting with 2.9. Refer to the prior versions for specific features and fixes. For information about features, functionality, and fixed issues in previous versions see:
+This version contains features and fixes from previous versions. Refer to the prior versions for specific features and fixes. For information about features, functionality, and fixed issues in previous versions see:
 
 * [What's new 2.13](whats-new-2-13.md)
 * [What's new 2.12](whats-new-2-12.md)
 * [What's new 2.10](whats-new-2-10.md)
-<!-- RUN-7510/9002 and lots of others -->
 
 ##### Role based access control
-
+<!-- RUN-7510/9002 and lots of others -->
 Stating in this version, Run:ai had updated the authorization system to Role Based Access Control (RBAC). RBAC is a policy-neutral access control mechanism defined around roles and privileges. For more information, see [Role based access control](../admin/runai-setup/access-control/rbac.md#role-based-access-control).
 
 <!-- When upgrading the system, previous access and authorizations that were configured will be migrated to the new RBAC roles. See the table below for role conversions:
@@ -25,11 +24,11 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Auto delete jobs
 <!-- RUN-8586/RUN-11777 -->
-* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see Auto deletion (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/.workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#auto-deletion-time-after-completion).
+* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see Auto deletion (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
 
 ##### Multiple service types
 <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->
-* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit ](../Researcher/cli-reference/runai-submit.md#s----service-type-string).
+* We are pleased to announce new functionality in our CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now provide the same functionality. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
 
 <!-- RUN-9808/RUN-9810 Show effective project policy from the UI 
 * We are pleased to announce an enhancement to the Projects table where users now have the ability to view policies from within a project. For more information, see [Projects](). -->
@@ -53,6 +52,27 @@ TODO Add RBAC old--new conversion table here. -->
 ##### Resource costing
 <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->
 * We are pleased to announce that we have added an additional table to the Consumption dashboard. This table contains the consumption per department and the cost per department. For more information, see [Consumption dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
+
+##### Deployment improvements
+<!-- RUN-11563/RUN-11564 MPS and tolerance -->
+* We are pleased to announce improvements to the deployment form which now include support for and *Multi-Process Service (MPS)*. *MPS* is a service which allows the running of parallel processes on the same GPU, which are all run by the same userid. To enable *MPS* support, move the selector switch on the *Deployments* form.
+
+!!! Note
+    If you do not use the same userid, the processes will run in serial and could possibly degrade performance.
+
+* We are pleased to announce improvements to the deployment form which now include support for *Tolerations*. *Tolerations* guide the system to which node each pod can be
+     scheduled to or evicted by matching between rules and taints defined for each Kubernetes node.
+
+<!-- Configuration procedure added here because the deployments page has no procedure on it. -->  
+To configure *Tolerations*:
+    1. In the left pane menu, press *Deployments*, then press *New deployment*.
+    2. Complete the required fields in the form, then press *Container definition*.
+    3. To configure *Tolerations*:
+            1. In the *Tolerations* pane, press *Add*.
+            2. Enter the *Key* and select and option from the *Operator* drop down.
+            3. Select an *Effect* from the drop down.
+            4. Enter a *Value* and *Toleration seconds* (optional).
+    4. When your form is complete press *Deploy*.
 
 #### Fixed issues
 
