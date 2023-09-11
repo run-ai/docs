@@ -21,7 +21,7 @@ When enabled, Researcher authentication requires additional setup when installin
 
 ### Kubernetes Configuration
 
-*   On the Researcher's root folder, create a directory _.kube_. Copy the Kubernetes configuration file into the directory. Each Researcher should have a __separate copy__ of the configuration file. The Researcher should have _write_ access to the configuration file as it stores user defaults. 
+*   In the Researcher's root folder, create a directory _.kube_. Copy the Kubernetes configuration file into the directory. Each Researcher should have a __separate copy__ of the configuration file. The Researcher should have _write_ access to the configuration file as it stores user defaults. 
 *   If you choose to locate the file at a different location than `~/.kube/config`, you must create a shell variable to point to the configuration file as follows:
 
 ```
