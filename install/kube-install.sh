@@ -62,11 +62,12 @@ function install-containerd {
 function k8s-install {
 	    sudo apt-get update
         sudo apt-get install -y apt-transport-https ca-certificates curl
-        sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-        echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-	    sudo apt-get update
+        curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${package_version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+        echo "package version set to ${package_version}"
+        sudo apt-get update
 	    echo -e "${GREEN} installing kubectl kubeadm kubelet...${NC}"
-        sudo apt-get install -y kubelet="${k8s_version}-00" kubeadm="${k8s_version}-00" kubectl="${k8s_version}-00"
+        sudo apt-get install -y kubelet="${k8s_version}-1.1" kubeadm="${k8s_version}-1.1" kubectl="${k8s_version}-1.1"
 }
 
 # *** init K8s
@@ -134,6 +135,7 @@ then
     sleep 5
     read -p "$(echo -e "${YELLOW}Please enter kubernetes version, or press enter for default (1.24.7) :${NC}")" k8s_version
     k8s_version=${k8s_version:-"1.24.7"}
+    package_version=${k8s_version%.*}
     read -p "$(echo -e "${YELLOW}Please select CNI plugin or press enter for default ([1] Flannel(default) , [2] Calico) :${NC}")" cni_plugin
     cni_plugin=${cni_plugin:-"1"}
     disable-swap
