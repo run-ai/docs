@@ -8,7 +8,7 @@ August 2023
 
 #### Release content
 
-This version contains features and fixes from previous versions. Refer to the prior versions for specific features and fixes. For information about features, functionality, and fixed issues in previous versions see:
+This version contains new features and fixes in addition to the features and fixes from previous versions. For information about features, functionality, and fixed issues in previous versions see:
 
 * [What's new 2.13](whats-new-2-13.md)
 * [What's new 2.12](whats-new-2-12.md)
@@ -24,7 +24,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Auto delete jobs
 <!-- RUN-8586/RUN-11777 -->
-* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see Auto deletion (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
+* We are pleased to announce new functionality in our UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
 
 ##### Multiple service types
 <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->
@@ -47,7 +47,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ##### Policy improvements
 <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->
-* We are pleased to announce increased flexibility when creating policies. The improved flexibility includes the abililty to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../admin/workloads/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
+* We are pleased to announce increased flexibility when creating policies. The improved flexibility includes the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../admin/workloads/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
 
 ##### Resource costing
 <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->
