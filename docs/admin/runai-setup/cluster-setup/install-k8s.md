@@ -41,7 +41,7 @@ On each designated worker node:
 
 * Get the script by running: 
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/master/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes worker_.
@@ -74,7 +74,7 @@ The same script also contains an option to completely remove Kubernetes from nod
 
 * Get the script by running: 
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/master/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _reset/delete kubernetes_.
