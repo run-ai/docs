@@ -195,6 +195,7 @@ nav:
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
         - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
+        - 'Large Clusters' : 'admin/runai-setup/config/large-clusters.md'
       - 'Authentication' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
