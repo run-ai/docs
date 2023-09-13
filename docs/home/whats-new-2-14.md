@@ -53,14 +53,17 @@ TODO Add RBAC old--new conversion table here. -->
 
 <!-- Configuration procedure added here because the deployments page has no procedure on it. -->  
 To configure *Tolerations*:
-    1. In the left pane menu, press *Deployments*, then press *New deployment*.
-    2. Complete the required fields in the form, then press *Container definition*.
-    3. To configure *Tolerations*:
-            1. In the *Tolerations* pane, press *Add*.
-            2. Enter the *Key* and select and option from the *Operator* drop down.
-            3. Select an *Effect* from the drop down.
-            4. Enter a *Value* and *Toleration seconds* (optional).
-    4. When your form is complete press *Deploy*.
+
+1. In the left pane menu, press *Deployments*, then press *New deployment*.
+2. Complete the required fields in the form, then press *Container definition*.
+3. To configure *Tolerations*:
+
+    1. In the *Tolerations* pane, press *Add*.
+    2. Enter the *Key* and select and option from the *Operator* drop down.
+    3. Select an *Effect* from the drop down.
+    4. Enter a *Value* and *Toleration seconds* (optional).
+
+4. When your form is complete press *Deploy*.
 
 ### Fixed issues
 
