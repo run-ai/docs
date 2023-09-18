@@ -63,7 +63,7 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
-Run:ai does not currently support working with the `Restricted` mode of [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
+Run:ai does not currently support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. When PSA is installed, all Run:ai namespaces as well as project namespaces must be marked as `Privilidged`.
 
 ### NVIDIA
 
