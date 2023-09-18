@@ -2,9 +2,10 @@
 
 The notifications service listens to events on the Kubernetes cluster and passes notifications of those events via email. The service can be configured to send the notifications to one or more pre configured email addresses, or to the email address of the user that submitted the workload.
 
-Note: In order to send notifications dynamically to the user who submitted the workload, the user should be logged in to the Run:ai UI or CLI.
+???+ Note
+    In order to send notifications dynamically to the user who submitted the workload, the user should be logged in to the Run:ai UI or CLI.
 
-The service can also be configured using a regular expression to send notifications only for specific namespaces on the cluster. This enables notification only for specific Run:ai projects. The default configuration sends notifications for all the namespaces starting with `runai-`.
+The service can also be configured using a regular expression to send notifications only for specific namespaces on the cluster. This enables notifications only for specific Run:ai projects. The default configuration sends notifications for all the namespaces starting with `runai-`.
 
 ## Prerequisites
 
