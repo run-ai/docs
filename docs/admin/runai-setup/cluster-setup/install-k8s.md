@@ -41,7 +41,7 @@ On each designated worker node:
 
 * Get the script by running: 
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.10install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.10/install/kube-install.sh
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes worker_.
