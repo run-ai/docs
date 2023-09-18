@@ -43,13 +43,12 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Deployment improvements
 <!-- RUN-11563/RUN-11564 MPS and tolerance -->
-* Improvements in the *Deployment* form include:
-  
-  * Support for *Tolerations*. *Tolerations* guide the system to which node each pod can be scheduled to or evicted by matching between rules and taints defined for each Kubernetes node.
-  * Support for *Multi-Process Service (MPS)*. *MPS* is a service which allows the running of parallel processes on the same GPU, which are all run by the same userid. To enable *MPS* support, move the selector switch on the *Deployments* form.
+* Improvements in the *Deployment* form include:  
+    * Support for *Tolerations*. *Tolerations* guide the system to which node each pod can be scheduled to or evicted by matching between rules and taints defined for each Kubernetes node.
+    * Support for *Multi-Process Service (MPS)*. *MPS* is a service which allows the running of parallel processes on the same GPU, which are all run by the same userid. To enable *MPS* support, move the selector switch on the *Deployments* form.
 
-  !!! Note
-      If you do not use the same userid, the processes will run in serial and could possibly degrade performance.
+    !!! Note
+        If you do not use the same userid, the processes will run in serial and could possibly degrade performance.
 
 <!-- Configuration procedure added here because the deployments page has no procedure on it.
 To configure *Tolerations*:
