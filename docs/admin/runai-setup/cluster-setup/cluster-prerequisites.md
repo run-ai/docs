@@ -61,7 +61,9 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
-Run:ai does not support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
+Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
+
+Run:ai does not currently support working with the `Restricted` mode of [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. 
 
 ### NVIDIA
 
