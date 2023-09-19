@@ -25,11 +25,13 @@ Run the helm command below:
     helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend \ 
         --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ # (1)
         --set global.config.kubernetesDistribution=openshift \
-        --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI>  # (2)
+        --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> \ # (2)
+        -f custom-env.yaml  # (3)
     ```
 
     1. The domain configured for the OpenShift cluster. To find out the OpenShift cluster domain, run `oc get routes -A`
     2. Name of the administrator user in the company directory.
+    3. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
     (replace `<version>` with the control plane version)
 
