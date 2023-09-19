@@ -55,8 +55,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
         always_pull_images: false
         extra_args:
             oidc-client-id: runai  # (1)
-            oidc-issuer-url: https://example.com/auth
-            oidc-username-prefix: "-"
+            ...
             
     ```
 
@@ -69,16 +68,15 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
     ``` YAML title="/etc/rancher/rke2/config.yaml"
     kube-apiserver-arg:
-    - "oidc-client-id=<CLIENT-ID>"
-    - "oidc-issuer-url=<URL>"
-    - "oidc-username-prefix=-"
+    - "oidc-client-id=runai" # (1)
+    ...
     ```
+    
+    1. These are example parameters. Copy the actual parameters from `Settings | General | Researcher Authentication` as described above.
 
     If working via Rancher UI, need to add the flag as part of the cluster provisioning. 
     
     Under `Cluster Management | Create`, turn on RKE2 and select a platform. Under `Cluster Configuration | Advanced | Additional API Server Args`. Add the Run:ai flags as `<key>=<value>` (e.g. `oidc-username-prefix=-`).
-
-    At the time of writing, the flags cannot be changed after the cluster has been provisioned due to a Rancher bug.
     
 === "GKE"
     Install [Anthos identity service](https://cloud.google.com/kubernetes-engine/docs/how-to/oidc#enable-oidc){target=_blank} by running:
@@ -90,9 +88,19 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
     Install the [yq](https://github.com/mikefarah/yq){target=_blank} utility and run:
 
+    For username-password authentication, run:
+
     ```
     kubectl get clientconfig default -n kube-public -o yaml > login-config.yaml
-    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"$OIDC_CLIENT_ID\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"sub\",\"userPrefix\":\"$OIDC_USERNAME_PREFIX\"}}]}" login-config.yaml
+    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"runai\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"sub\",\"userPrefix\":\"-\"}}]}" login-config.yaml
+    kubectl apply -f login-config.yaml
+    ```
+
+    For single-sign-on, run:
+
+    ```
+    kubectl get clientconfig default -n kube-public -o yaml > login-config.yaml
+    yq -i e ".spec +={\"authentication\":[{\"name\":\"oidc\",\"oidc\":{\"clientID\":\"runai\",\"issuerURI\":\"$OIDC_ISSUER_URL\",\"groupsClaim\":\"groups\",\"kubectlRedirectURI\":\"http://localhost:8000/callback\",\"userClaim\":\"email\",\"userPrefix\":\"-\"}}]}" login-config.yaml
     kubectl apply -f login-config.yaml
     ```
 

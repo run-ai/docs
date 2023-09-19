@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.13/docs/
+edit_uri: edit/v2.14/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -12,11 +12,15 @@ theme:
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - search.highlight
     - content.code.annotate
     - content.tabs.link
     - search.suggest
     - content.action.edit
+    - navigation.top
+    - toc.follow
+  #  - toc.integrate 
   icon:
     edit: material/pencil 
     view: material/eye
@@ -26,13 +30,18 @@ extra_css:
 # strict: true   
  
 markdown_extensions:
+  - footnotes
 #  - markdown_include.include
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: docs/docs
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details 
@@ -140,20 +149,18 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'Version 2.14' : 'home/whats-new-2-14.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
       - 'Version 2.12' : 'home/whats-new-2-12.md'
       - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
-      - 'Whats New 2022' : 'home/whats-new-2022.md'
-      - 'Whats New 2021' : 'home/whats-new-2021.md'
-      - 'Whats New 2020' : 'home/whats-new-2020.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
-      - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
+    #  - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
@@ -195,8 +202,9 @@ nav:
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
         - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
-      - 'Authentication' :
+      - 'Authentication and Access Control' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
+        - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 
@@ -210,6 +218,7 @@ nav:
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
+      - 'Email notifications' : 'admin/researcher-setup/email-messaging.md'
     - 'Workloads' : 
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'
@@ -268,10 +277,10 @@ nav:
           - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
           - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
         - 'Creation' :
-            - 'Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
-            - 'Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
-            - 'Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
-            - 'Workspaces' :  'Researcher/user-interface/workspaces/create/workspace.md'
+            - 'Create an Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
+            - 'Create a Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+            - 'Create a Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+            - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
     - 'CLI Reference' :

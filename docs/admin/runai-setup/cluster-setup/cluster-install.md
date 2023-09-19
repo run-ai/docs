@@ -21,7 +21,7 @@ Using the Wizard:
 4. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes.
 5. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``.
 6. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md).
-7. Install [Helm](https://helm.sh/docs/intro/install/).
+7. Install [Helm](https://helm.sh/docs/intro/install/). Run:ai requires helm 3.10 or later. 
 8. Run the `helm` commands as provided in the wizard.
 
 !!! Info
@@ -31,11 +31,7 @@ Using the Wizard:
 
 * Go to `<company-name>.run.ai/dashboards/now`.
 * Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
-
-
-:octicons-versions-24: Version 2.9 and up 
-
-Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
+* Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
 
 (assumes the [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
 

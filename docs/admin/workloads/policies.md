@@ -6,7 +6,7 @@ Policies allow administrators to _impose restrictions_ and set _default values_ 
 
 1. Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
 2. Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
-   
+
 Policies are stored as Kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
 
 Policies are specific to Workload type as such there are several kinds of Policies:
@@ -15,7 +15,7 @@ Policies are specific to Workload type as such there are several kinds of Polici
 |----------------|-----------------|-------------|
 | Interactive    | `InteractiveWorkload` | `InteractivePolicy` |
 | Training       | `TrainingWorkload`| `TrainingPolicy` |
-| Distributed Training | `DistributedWorkload` | `DistributedPolicy` | 
+| Distributed Training | `DistributedWorkload` | `DistributedPolicy` |
 | Inference      | `InferenceWorkload` | `InferencePolicy` |
 
 A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
@@ -51,19 +51,45 @@ The policy places a default and limit on the available values for GPU allocation
 ``` bash
 kubectl apply -f gpupolicy.yaml 
 ```
+
 Now, try the following command:
+
 ``` bash
 runai submit --gpu 5 --interactive -p team-a
 ```
+
 The following message will appear:
+
 ```
 gpu: must be no greater than 4
 ```
-A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for an Interactive tab.  
+
+A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for a training job.
+
+#### GPU and CPU memory limits
+
+The following policy places a default and limit on the available values for CPU and GPU memory allocation.
+
+```YAML title="gpumemorypolicy.yaml"
+apiVersion: run.ai/v2alpha1
+kind: TrainingPolicy
+metadata:
+  name: training-policy
+  namespace: runai
+spec:
+  gpuMemory:
+    rules:
+      min: 100M
+      max: 2G
+memory:
+    rules:
+      min: 100M
+      max: 2G
+```
 
 ## Read-only values
 
-When you do not want the user to be able to change a value, you can force the corresponding user interface control to become read-only by using the `canEdit` key. For example, 
+When you do not want the user to be able to change a value, you can force the corresponding user interface control to become read-only by using the `canEdit` key. For example,
 
 ``` YAML title="runasuserpolicy.yaml"
 apiVersion: run.ai/v2alpha1
@@ -82,15 +108,15 @@ spec:
 ```
 
 1. Set the Project namespace here.
-2. The field is required. 
-3. The field will be shown as read-only in the user interface. 
+2. The field is required.
+3. The field will be shown as read-only in the user interface.
 4. The field value is true.  
 
 ### Complex Values
 
-The example above illustrated rules for parameters of "primitive" types, such as _GPU allocation_, _CPU memory_, _working directory_, etc. These parameters contain a single value. 
+The example above illustrated rules for parameters of "primitive" types, such as _GPU allocation_, _CPU memory_, _working directory_, etc. These parameters contain a single value.
 
-Other workload parameters, such as _ports_ or _volumes_, are "complex", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes. 
+Other workload parameters, such as _ports_ or _volumes_, are "complex", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes.
 
 The following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
 
@@ -235,7 +261,7 @@ FIELDS:
      if the map as a whole is required
 ```
 
-Note that each kind of policy has a slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`. 
+Note that each kind of policy has a slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`.
 
 ### Using Secrets for Environment Variables
 

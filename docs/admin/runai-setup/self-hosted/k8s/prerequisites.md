@@ -41,7 +41,17 @@ See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prereq
 
 The Run:ai control plane operating system prerequisites are identical.
 
-The Run:ai control-plane requires a default storage class to create persistent volume claims for Run:ai storage. The storage class, as per Kubernetes standards, controls the reclaim behavior: whether the Run:ai persistent data is saved or deleted when the Run:ai control plane is deleted.
+The Run:ai control-plane requires a __default storage class__ to create persistent volume claims for Run:ai storage. The storage class, as per Kubernetes standards, controls the reclaim behavior: whether the Run:ai persistent data is saved or deleted when the Run:ai control plane is deleted. 
+
+
+!!! Note
+    For a simple (nonproduction) storage class example see [Kubernetes Local Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/#local){target=_blank}. The storage class will set the directory `/opt/local-path-provisioner` to be used across all nodes as the path for provisioning persistent volumes.
+
+    Then set the new storage class as default:
+
+    ```
+    kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+    ```
 
 ### NVIDIA Prerequisites
 
@@ -63,7 +73,7 @@ The Run:ai control plane, when installed without a Run:ai cluster, does not requ
 
 ### Helm
 
-Run:ai requires [Helm](https://helm.sh/){target=_blank}. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 
 ## Network Requirements
