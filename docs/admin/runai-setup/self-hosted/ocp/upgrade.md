@@ -62,13 +62,11 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
-    --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> \ # (2)
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql
     ```
 
     1. The subdomain configured for the OpenShift cluster.
-    2. Name of the administrator user in the company directory.
 
 
     !!! Note
@@ -81,13 +79,11 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
     helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
-    --set backend.config.openshiftIdpFirstAdmin=<FIRST_ADMIN_USER_OF_RUNAI> \ # (2)
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql
     ```
 
     1. The subdomain configured for the OpenShift cluster.
-    2. Name of the administrator user in the company directory.
 
 ## Upgrade Cluster 
 
