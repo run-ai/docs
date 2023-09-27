@@ -55,7 +55,8 @@ This documentation outlines the steps required to set up Alertmanager within the
       
       EOF
       ```
-   > :information_source: Different receivers can be configured using Alertmanager [here](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings).
+!!! Note
+     Different receivers can be configured using Alertmanager [here](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings).
 
 2. Create the Alertmanager CustomResource to enable Alertmanager:
       ```shell
