@@ -1,6 +1,24 @@
 # Run:ai version 2.15 - September 28, 2023
 
-## Release content
+## New Features
+
+<!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report - NEW FEATURE -->
+* Added new functionality to download a report all the data in the table for the following:
+    * Projects
+    * Departments
+    * Nodes
+    * Node pools
+    * Consumption report
+
+Use the *More* menu to download the CSV file. Select from the *Columns* menu to add more columns to the CSV file.
+
+## Improvements
+
+<!-- TODO RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
+* Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
+
+<!-- RUN-11421 Consumption report - Cost and bugs-->
+* Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
 <!-- RUN-5928 Node Scheduler - MS1 -->
 
@@ -8,19 +26,13 @@
 
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 
-<!-- RUN-9041 Skipped Automation Tests-->
-
 <!-- RUN-9386 Metrics API: Expose predefined metrics-->
-
+§
 <!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 
-<!-- RUN-9943/RUN-12176 Nodes - reflect the correct status of the node-->
+<!-- RUN-9949 Container RUNtime Interface - No TW story as per ticket -->
 
-<!-- RUN-9949 Container <!-- RUNtime Interface-->
-
-<!-- RUN-9950 Support JFrog Artifactory private repository -->
-
-<!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report-->
+<!-- RUN-9950 Support JFrog Artifactory private repository - No TW story as per ticket -->
 
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 
@@ -64,7 +76,6 @@
 
 <!-- RUN-11325 R&D Support time Q3-->
 
-<!-- RUN-11421 Consumption report - Cost and bugs-->
 
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
 
@@ -74,12 +85,10 @@
 
 <!-- RUN-11974 Use Secure images only \(UBI\)-->
 
-<!-- RUN-12036 2.15.0 Stabilization-->
-
 <!-- RUN-12166 Cost fixes-->
 
 <!-- Include from 2.14 -->
 
-Old content here
-
+<!-- TODO Adjust the whats new for 2.14 to add in the sections for New features and Improvements. Then include those in the appropriate sections for 2.15 after the primary ones are written up.
 --8<-- "home/whats-new-2-14.md:4:69"
+-->
