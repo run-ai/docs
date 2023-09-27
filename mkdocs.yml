@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2023 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.14/docs/
+edit_uri: edit/v2.15/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -36,7 +36,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs/docs
+      base_path: docs
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -149,10 +149,11 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
-      - 'Version 2.14' : 'home/whats-new-2-14.md'
+      - 'Version 2.15' : 'home/whats-new-2-15.md'
+    #  - 'Version 2.14' : 'home/whats-new-2-14.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
-      - 'Version 2.12' : 'home/whats-new-2-12.md'
-      - 'Version 2.10' : 'home/whats-new-2-10.md'
+    #  - 'Version 2.12' : 'home/whats-new-2-12.md'
+    #  - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
