@@ -24,6 +24,7 @@ TODO Add RBAC old--new conversion table here. -->
 ### Scheduler
 
 * Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one *Department* may preempt in-quota smaller workloads from another *Department*. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota/over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md#fairness).
+
 ### Ephemeral volumes
 <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->
 * Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is tied to the lifecycle of the *Workspace*, which is temporary storage that gets wiped out and lost when the workspace is deleted. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/user-interface/workspaces/create/.workspace-v2.md#create-a-new-workspace).
