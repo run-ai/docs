@@ -132,7 +132,7 @@ plugins:
         'admin/runai-setup/advanced/cli-admin-install.md' : 'admin/runai-setup/config/cli-admin-install.md'
         'admin/runai-setup/advanced/dr.md' : 'admin/runai-setup/config/dr.md'
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
-        'admin/runai-setup/advanced/monitoring.md' : 'admin/runai-setup/maintenance/monitoring.md'
+        'admin/runai-setup/advanced/alert-monitoring.md' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
         'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
@@ -209,7 +209,7 @@ nav:
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
-        - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'
+        - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         - 'Audit Log' : 'admin/runai-setup/maintenance/audit-log.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
