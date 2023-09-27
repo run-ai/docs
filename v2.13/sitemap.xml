@@ -586,12 +586,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/audit-log/</loc>
+         <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/alert-monitoring/</loc>
          <lastmod>2023-09-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/monitoring/</loc>
+         <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/audit-log/</loc>
          <lastmod>2023-09-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
