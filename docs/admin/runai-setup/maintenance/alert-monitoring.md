@@ -122,8 +122,8 @@ This documentation outlines the steps required to set up Alertmanager within the
               name: smtp-password
               key: password
 
-     !!! Note
-            Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
+    !!! Note
+        Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
 
 4. Add to the `spec` section, a new route that forwards Run.ai alerts to the mail receiver:
 
@@ -142,4 +142,4 @@ This documentation outlines the steps required to set up Alertmanager within the
         
            receiver: email
 
-5. Save and exit the editor. The configuration will be automatically reloaded.
+2. Save and exit the editor. The configuration will be automatically reloaded.
