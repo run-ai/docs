@@ -19,10 +19,14 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 Run:
 
 ```
-helm repo update
-helm get values runai-cluster -n runai > values.yaml
-helm upgrade runai-cluster runai/runai-cluster -n runai -f values.yaml
+helm get values runai-cluster -n runai > old-values.yaml
 ```
+
+1. Review the file `old-values.yaml` and see if there are any changes performed during the last installation.
+2. Follow the instructions for [Installing Run:ai](cluster-install.md#install-runai) to download a new values file. 
+3. Merge the changes from Step 1 into the new values file.
+4. Run `helm upgrade` as per the instructions in the link above. 
+
 
 !!! Note
     To upgrade to a __specific__ version of the Run:ai cluster, add `--version <version-number>` to the `helm upgrade` command. You can find the relevant version with `helm search repo` as described above. 

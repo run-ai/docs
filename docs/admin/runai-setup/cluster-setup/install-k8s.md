@@ -15,7 +15,11 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 
 * Get the script by running: 
 ```
+<<<<<<< HEAD
 wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+=======
+wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+>>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes master_.
@@ -41,7 +45,11 @@ On each designated worker node:
 
 * Get the script by running: 
 ```
+<<<<<<< HEAD
 wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+=======
+wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+>>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes worker_.
@@ -74,7 +82,11 @@ The same script also contains an option to completely remove Kubernetes from nod
 
 * Get the script by running: 
 ```
+<<<<<<< HEAD
 wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+=======
+wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+>>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 ```
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _reset/delete kubernetes_.
