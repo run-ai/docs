@@ -264,7 +264,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > Mount a persistent volume claim into a container.
 >
 >!!!Note
-    This option is being deprecated from version 2.10 and above. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exists` and `--pvc-new`.
+    This option is being deprecated from version 2.10 and above. To mount existing or newly created Persistent Volume Claim (PVC), use the parameters `--pvc-exists` and `--new-pvc`.
 >
 > The 2 syntax types of this command are mutually exclusive. You can either use the first or second form, but not a mixture of both.
 >
@@ -302,7 +302,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > `claimname=<CLAIM_NAME>,path=<PATH>`
 
-#### --pvc-new  `<string>`
+#### --new-pvc  `<stringArray>`
 
 > Mount a persistent volume claim (PVC). If the PVC does not exist, it will be created based on the parameters entered. If a PVC exists, it will be used with its defined attributes and the parameters in the command will be ignored.
 >
