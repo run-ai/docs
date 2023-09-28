@@ -30,13 +30,13 @@ To complete this Quickstart you must have:
 
 ``` shell
 runai config project team-a
-runai submit-dist mpi --processes=2 -g 1 \
+runai submit-dist mpi --workers=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60
 ```
 
 *   We named the Job _dist_
 *   The Job is assigned to _team-a_
-*   There will be two worker processes (--processes=2), each allocated with a single GPU (-g 1)
+*   There will be two worker pods (--workers=2), each allocated with a single GPU (-g 1)
 *   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed:v0.3.0``.
 *   The image contains a startup script that runs a deep learning Horovod-based workload.
 
@@ -49,11 +49,11 @@ The result:
 
 ![mceclip11.png](img/mceclip11.png)
 
-The Run:ai scheduler ensures that all processes can run together. You can see the list of workers as well as the main "launcher" process by running:
+The Run:ai scheduler ensures that all pods can run together. You can see the list of workers as well as the main "launcher" pod by running:
 
         runai describe job dist
 
-You will see two worker processes (pods) their status and on which node they run:
+You will see two worker pods, their status, and on which node they run:
 
 ![mceclip12.png](img/mceclip12.png)
 
@@ -70,7 +70,7 @@ Finally, you can delete the distributed training workload by running:
 It is also possible to run a distributed training Job as "interactive". This is useful if you want to test your distributed training Job before committing on a long, unattended training session. To run such a session use:
 
 ``` shell
-runai submit-dist mpi dist-int --processes=2 -g 1 \
+runai submit-dist mpi dist-int --workers=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 --interactive \
         -- sh -c "sleep infinity" 
 ```
@@ -98,7 +98,7 @@ horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
 ```
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of worker processes provided to the ``runai submit-dist mpi`` command (in the above example the value is 2).
+The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of workers provided to the ``runai submit-dist mpi`` command (in the above example the value is 2).
 
 ## See Also
 
