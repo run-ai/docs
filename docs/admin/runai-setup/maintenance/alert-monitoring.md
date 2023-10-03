@@ -84,19 +84,19 @@ In each step copy the content to a file and apply it to the cluster using `kubec
          apiVersion: monitoring.coreos.com/v1alpha1
          kind: AlertmanagerConfig
          metadata:
-         name: runai
-         namespace: runai
+           name: runai
+           namespace: runai
          labels:
             alertmanagerConfig: runai
          spec:
-         route:
-            continue: true
-            groupBy: 
-            - alertname
+            route:
+               continue: true
+               groupBy: 
+               - alertname
             
-            groupWait: 30s
-            groupInterval: 5m
-            repeatInterval: 1h
+               groupWait: 30s
+               groupInterval: 5m
+               repeatInterval: 1h
 
             matchers:
             - matchType: =~
