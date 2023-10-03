@@ -79,7 +79,7 @@ In each step, copy the contents of the code snippets to a new file and apply it 
         stringData:
            password: "your_smtp_password"
 
-2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply` command. Check for indentation issues before applying.
+2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply`. Check for indentation issues before applying.
 
          apiVersion: monitoring.coreos.com/v1alpha1
          kind: AlertmanagerConfig
