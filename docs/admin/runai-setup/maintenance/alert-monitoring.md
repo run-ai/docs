@@ -119,4 +119,4 @@ In each step, copy the contents to a file and apply it to the cluster using `kub
     !!! Note
         Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
 
-3. Save and exit the editor. The configuration will be automatically reloaded.
+3. Save and exit the editor. The configuration will automatically be reloaded.
