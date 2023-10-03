@@ -27,7 +27,7 @@ This documentation outlines the steps required to set up Alertmanager within the
        You should see the Prometheus instance(s) listed along with their status.
 
 ## Enabling Alertmanager
-In each step copy the content to a file and apply it to the cluster using `kubectl apply -f`
+In each step, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f` command
 
 1. Create the Alertmanager CustomResource to enable Alertmanager:
 
@@ -67,7 +67,7 @@ In each step copy the content to a file and apply it to the cluster using `kubec
 3. Save and exit the editor. The configuration will be automatically reloaded.
 
 ## Configuring Alertmanager for Custom Email Alerts
-In each step, copy the contents to a file and apply it to the cluster using `kubectl apply -f`
+In each step, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f` command
 
 1. Add your smtp password as a secret:
 
@@ -79,7 +79,7 @@ In each step, copy the contents to a file and apply it to the cluster using `kub
         stringData:
            password: "your_smtp_password"
 
-2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig`. Check for indentaion issues before applying.
+2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply` command. Check for indentation issues before applying.
 
          apiVersion: monitoring.coreos.com/v1alpha1
          kind: AlertmanagerConfig
