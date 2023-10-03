@@ -46,7 +46,7 @@ In each step copy the content to a file and apply it to the cluster using `kubec
 
         kubectl get alertmanager -n runai
 
-3. Validate that prometheus operator has created a service for alertmanager:
+3. Validate that the prometheus operator has created a service for alertmanager:
 
          kubectl get svc alertmanager-operated -n runai
 
