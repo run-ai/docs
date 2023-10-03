@@ -91,12 +91,13 @@ This section defines the objects and events that the service will listen to and 
 ### `enrich` configuration
 
 !!! Note
-    This section of the `configmap` is for internal use only. Keep the default values.
+    In this section of the `configmap`, only the "Static" component can be edited. All the other properties are for internal use only and should remain with the default values.
 
-| Component | Field | Default |
-| --- | --- | --- |
-|`KubeMetadata`|`enricher.kubeMetadata.lables`| `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
-|`KubeMetadata`|`enricher.kubeMetadata.annotations`|`"user": "user"`|
+| Component | Field | Description | Default |
+| --- | --- | --- | --- |
+|`KubeMetadata`|`enricher.kubeMetadata.lables`|-| `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
+|`KubeMetadata`|`enricher.kubeMetadata.annotations`|-|`"user": "user"`|
+|`Static`|`enricher.static`|a static map of key value pairs to add to the event|empty map|
 
 ### `notify` configuration
 
@@ -107,6 +108,7 @@ Use the following table to configure options in the `notify` section of the `con
 |--- |--- |--- |--- |
 |`Email`|`notify.email.smtp_host` (M)|SMTP server host address|Empty|
 |`Email`|`notify.email.smtp_port` (M)|SMTP server port|587|
+|`Email`|`notify.email.subject` (M)|the subject of the mail, templated with event fields|Run:ai notification [{{ .fromDisplayName }}] - {{ .regarding.kind }} {{ .reason }}|
 |`Email`|`notify.email.from_display_name` (M)|email's "From" display name|Run:ai|
 |`Email`|`notify.email.from` (M)|a valid domain source email address|<test@run.ai>|
 |`Email`|`notify.email.user` (M)|SMTP server user login|user|
@@ -144,6 +146,8 @@ The following file is an example of a configmap file for the notification servic
         "project": "project"
       annotations:
         "user": "user"
+      static: 
+        cluster: prod
   notify:
     email:
       template_path: path/email.html  # Internal use only.
@@ -152,6 +156,7 @@ The following file is an example of a configmap file for the notification servic
       password: smtp_password
       smtp_host: smtp.mail.com
       smtp_port: 587
+      subject: Run:ai notification [{{ .fromDisplayName }}] - {{ .regarding.kind }} {{ .reason }}
       from_display_name: Company Name
       direct_notifications: true
       recipients:
