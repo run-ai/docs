@@ -79,7 +79,7 @@ In each step copy the content to a file and apply it to the cluster using `kubec
         stringData:
            password: "your_smtp_password"
 
-2. Apply the `alertmanagerconfig`, replace the relevant smtp details with your own:
+2. Apply the `alertmanagerconfig`, replace the relevant smtp details with your own (check for indentation problems before applying):
 
          apiVersion: monitoring.coreos.com/v1alpha1
          kind: AlertmanagerConfig
@@ -107,14 +107,14 @@ In each step copy the content to a file and apply it to the cluster using `kubec
          
          receivers:
          - name: 'email'
-            emailConfigs:
-            - to: '<destination_email_address>'
-              from: '<from_email_address>'
-              smarthost: 'smtp.gmail.com:587'
-              authUsername: '<smtp_server_user_name>'
-              authPassword:
-                name: alertmanager-smtp-password
-                key: password
+           emailConfigs:
+           - to: '<destination_email_address>'
+             from: '<from_email_address>'
+             smarthost: 'smtp.gmail.com:587'
+             authUsername: '<smtp_server_user_name>'
+             authPassword:
+               name: alertmanager-smtp-password
+               key: password
 
     !!! Note
         Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
