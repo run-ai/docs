@@ -79,7 +79,7 @@ In each step, copy the contents to a file and apply it to the cluster using `kub
         stringData:
            password: "your_smtp_password"
 
-2. Apply the `alertmanagerconfig`, replace the relevant smtp details with your own (check for indentation problems before applying):
+2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig`. Check for indentaion issues before applying.
 
          apiVersion: monitoring.coreos.com/v1alpha1
          kind: AlertmanagerConfig
