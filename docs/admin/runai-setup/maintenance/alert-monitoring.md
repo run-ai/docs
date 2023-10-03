@@ -27,7 +27,7 @@ This documentation outlines the steps required to set up Alertmanager within the
        You should see the Prometheus instance(s) listed along with their status.
 
 ## Enabling Alertmanager
-In each step, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f` command
+In each of the steps in this section, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f`.
 
 1. Create the Alertmanager CustomResource to enable Alertmanager:
 
