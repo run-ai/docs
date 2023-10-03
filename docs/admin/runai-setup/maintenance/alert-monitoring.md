@@ -67,7 +67,7 @@ In each step copy the content to a file and apply it to the cluster using `kubec
 3. Save and exit the editor. The configuration will be automatically reloaded.
 
 ## Configuring Alertmanager for Custom Email Alerts
-In each step copy the content to a file and apply it to the cluster using `kubectl apply -f`
+In each step, copy the contents to a file and apply it to the cluster using `kubectl apply -f`
 
 1. Add your smtp password as a secret:
 
