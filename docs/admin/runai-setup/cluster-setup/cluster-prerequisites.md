@@ -63,15 +63,11 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
 
-<<<<<<< HEAD
-### NVIDIA
 
-=======
 Run:ai does not currently support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. When PSA is installed, all Run:ai namespaces as well as project namespaces must be marked as `Privilidged`.
 
 ### NVIDIA
 
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 Run:ai has been certified on __NVIDIA GPU Operator__  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
 
 Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
