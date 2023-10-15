@@ -161,11 +161,7 @@ nav:
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
-<<<<<<< HEAD
     #  - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
-=======
-     # - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
@@ -207,12 +203,8 @@ nav:
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
         - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
         - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
-<<<<<<< HEAD
-      - 'Authentication and Access Control' :
-=======
         - 'Large Clusters' : 'admin/runai-setup/config/large-clusters.md'
       - 'Authentication' :
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
@@ -228,11 +220,7 @@ nav:
       - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
-<<<<<<< HEAD
-      - 'Email notifications' : 'admin/researcher-setup/email-messaging.md'
-=======
       - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
     - 'Workloads' : 
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' : 'admin/workloads/policies.md'

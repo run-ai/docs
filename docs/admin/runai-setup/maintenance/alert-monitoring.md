@@ -40,12 +40,6 @@ This documentation outlines the steps required to set up Alertmanager within the
               alertmanagerConfig: runai
         EOF
 
-<<<<<<< HEAD
-    !!! Note
-        Different receivers can be configured using Alertmanager [here](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings).
-
-=======
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 2. Create the Alertmanager CustomResource to enable Alertmanager:
 
         cat <<EOF | kubectl apply -f - 
@@ -128,12 +122,9 @@ This documentation outlines the steps required to set up Alertmanager within the
               name: smtp-password
               key: password
 
-<<<<<<< HEAD
-=======
     !!! Note
         Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
 
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
 4. Add to the `spec` section, a new route that forwards Run.ai alerts to the mail receiver:
 
         route:
@@ -151,8 +142,4 @@ This documentation outlines the steps required to set up Alertmanager within the
         
            receiver: email
 
-<<<<<<< HEAD
 5. Save and exit the editor. The configuration will be automatically reloaded.
-=======
-2. Save and exit the editor. The configuration will be automatically reloaded.
->>>>>>> 64a94a3edf1926efe2e69dbfecc7ae991f181d92
