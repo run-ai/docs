@@ -5,7 +5,7 @@ Before installing, please review the installation prerequisites here: [Run:ai GP
 
 
 !!! Important
-    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are 
+    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
 
 ## Install Run:ai
 
