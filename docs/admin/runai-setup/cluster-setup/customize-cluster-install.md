@@ -4,13 +4,13 @@ This document explain how to customize the Run:ai cluster installation
 
 ## How to customize
 
-__After__ the cluster is installed, you can edit the `runaiconfig` object to add/change configuration. Use the command 
+__After__ the cluster is installed, you can edit the `runaiconfig` object to add/change configuration. Use the command:
 
 ```
 kubectl edit runaconfig runai -n runai
 ```
 
-All customizations will be saved on upgrade of the cluster to a future version. 
+All customizations will be saved when upgrading the cluster to a future version. 
 
 ## Configurations
 
@@ -22,7 +22,7 @@ All customizations will be saved on upgrade of the cluster to a future version.
 | `spec.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu |
 | `spec.global.subdomainSupport` | `false` | Set to true to allow researcher tools with a sub domain to be spawned from the Run:ai user interface. For more information see [External access to containers](../config//allow-external-access-to-containers.md#workspaces-configuration) |  
 | `spec.global.schedulingservices` <br>  `spec.global.syncServices`<br>  `spec.global.workloadServices` |  | Set requests and limit configurations for CPU and memory for Run:ai containers. For more information see [Large cluster configuration](../config/large-clusters.md) |
-| `spec.runai-container-toolkit.enabled` | `true` | Controls the usage of Fractions. | 
+| `spec.runai-container-toolkit.enabled` | `true` | Controls the usage of [GPU fractions](../../../Researcher/scheduling/fractions.md). | 
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
 

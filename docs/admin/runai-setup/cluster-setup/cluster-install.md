@@ -12,14 +12,14 @@ Before installing, please review the installation prerequisites here: [Run:ai GP
 Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
 *   If no clusters are currently configured, you will see a Cluster installation wizard.
-*   If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top right, click `New Cluster`.
+*   If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top left, click `New Cluster`.
 
 Using the cluster wizard:
 
 * Choose a name for your cluster.
 * Choose the Run:ai version for the cluster. 
 * Choose a target Kubernetes distribution (see [table](cluster-prerequisites.md#kubernetes) for supported distributions).
-* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
+* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
 * Press `Continue`.
 
 On the next page:
@@ -34,7 +34,7 @@ On the next page:
 * Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 * Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
 
-(assumes the [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
+(assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
 
 Example output:
 
