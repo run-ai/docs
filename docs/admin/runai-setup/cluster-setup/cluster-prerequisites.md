@@ -60,10 +60,19 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
-Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
+#### Pod Security Admission
 
+Run:ai version 2.15 supports `Restricted` mode for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are not currently supported. 
 
-Run:ai does not currently support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. When PSA is installed, all Run:ai namespaces as well as project namespaces must be marked as `Privilidged`.
+PSA for Run:ai on OpenShift:
+
+* The `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+```
+pod-security.kubernetes.io/audit=privileged
+pod-security.kubernetes.io/enforce=privileged
+pod-security.kubernetes.io/warn=privileged
+```
+* All Jobs must be marked as `runAsNonRoot` set to `true`. The best practice is to create a Run:ai [policy](../../workloads/policies.md) which adds this property to the Job. 
 
 ### NVIDIA
 
