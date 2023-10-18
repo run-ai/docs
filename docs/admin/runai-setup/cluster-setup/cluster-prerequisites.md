@@ -64,9 +64,9 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 #### Pod Security Admission
 
-Run:ai version 2.15 supports `Restricted` mode for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are not currently supported. 
+Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy. 
 
-PSA for Run:ai on OpenShift:
+PSA `restricted` policy for Run:ai on OpenShift:
 
 * The `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
 ```
