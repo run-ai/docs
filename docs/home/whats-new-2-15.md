@@ -25,6 +25,7 @@
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training-->
+* Added support for distributed training in the *Trainings* form. In the trainings form, you can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings).
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 
