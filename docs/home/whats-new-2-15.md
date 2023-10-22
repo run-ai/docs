@@ -35,9 +35,7 @@
 <!-- RUN-10602/RUN-10603 GPU Memory Request & Limit-->
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
-* Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost.
-
-<!-- RUN-10802 Quota management dashboard post-release -->
+* Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 <!-- RUN-10862/RUN-10863 Department as a workspace asset creation scope - phase 2-->
 
