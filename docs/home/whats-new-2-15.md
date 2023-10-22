@@ -1,4 +1,4 @@
-# Run:ai version 2.15 - September 28, 2023
+# Run:ai version 2.15 - October 28, 2023
 
 ## New Features
 
@@ -11,6 +11,16 @@
 --8<-- "home/whats-new-2-14.md:6:8"
 
 --8<-- "home/whats-new-2-14.md:15:16"
+
+--8<-- "home/whats-new-2-14.md:18:20"
+
+--8<-- "home/whats-new-2-14.md:26:27"
+
+--8<-- "home/whats-new-2-14.md:29:31"
+
+--8<-- "home/whats-new-2-14.md:33:35"
+
+--8<-- "home/whats-new-2-14.md:45:47"
 
 ## Improvements
 
@@ -50,11 +60,13 @@
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
+--8<-- "home/whats-new-2-14.md:41:43"
+
 <!-- RUN-11282/RUN-11283 Nodepools enabled by default-->
 * Improvement in node pools which are now enabled by default. There is no need to enable the feature in the settings.
 
 <!-- RUN-11292/RUN-11592 General changes in favor of any asset based workload \(WS, training, DT\)-->
-* Improvement in the *Trainings* and *Workspaces* forms. Now the runtime field for *Commands* and *Arguments* can be edited even after it has inherited it from the environment.
+* Improved the *Trainings* and *Workspaces* forms. Now the runtime field for *Commands* and *Arguments* can be edited even after it has inherited it from the environment.
 
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
 * Added support for non-privileged PSA on project namespaces for OpenShift environments.
@@ -62,3 +74,4 @@
 <!-- RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
 
+--8<-- "home/whats-new-2-14.md:49:56"
