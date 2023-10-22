@@ -56,7 +56,6 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.13    | 1.23 through 1.27 (see note below) | 4.10 through 4.13 |
 | Run:ai 2.15    | 1.25 through 1.27 (see note below) | 4.11 through 4.13 |
 
-
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit/#-pvc-new-string). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
 
@@ -64,17 +63,19 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 #### Pod Security Admission
 
-Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy. 
+Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
 
 PSA `restricted` policy for Run:ai on OpenShift:
 
 * The `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+  
 ```
 pod-security.kubernetes.io/audit=privileged
 pod-security.kubernetes.io/enforce=privileged
 pod-security.kubernetes.io/warn=privileged
 ```
-* All Jobs must be marked as `runAsNonRoot` set to `true`. The best practice is to create a Run:ai [policy](../../workloads/policies.md) which adds this property to the Job. 
+
+* All Jobs must be marked as `runAsNonRoot` set to `true`. The best practice is to create a Run:ai [policy](../../workloads/policies.md) which adds this property to the Job.
 
 ### NVIDIA
 

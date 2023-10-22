@@ -14,7 +14,7 @@
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
 <!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
-* Improved the *Cluster Wizard* form for adding new clusters to your system. For configuration information, see [link here]().
+* Improved the *Cluster Wizard* form for adding new clusters to your system.
 
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
@@ -48,14 +48,12 @@
 
 <!-- RUN-11292/RUN-11592 General changes in favor of any asset based workload \(WS, training, DT\)-->
 * Improvement in the *Trainings* and *Workspaces* forms. Now the runtime field for *Commands* and *Arguments* can be edited even after it has inherited it from the environment.
-<!-- RUN-11325 R&D Support time Q3-->
-
 
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
-
-<!-- RUN-11610 Sunset of old submit form-->
+* Added support for non-privileged PSA on project namespaces for OpenShift environments.
 
 <!-- RUN-11692/RUN-11694 Scoping for template-->
+* Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
 
 <!-- RUN-11974 Use Secure images only \(UBI\)-->
 
