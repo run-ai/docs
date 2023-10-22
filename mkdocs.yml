@@ -235,6 +235,7 @@ nav:
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'
       - 'Deployments' : 'admin/admin-ui-setup/deployments.md'
+      - 'Templates': 'admin/admin-ui-setup/templates.md'
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
