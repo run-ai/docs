@@ -178,7 +178,6 @@ spec:
           path: nil
 ```
 
-
 ### Syntax
 
 The complete syntax of the policy YAML can be obtained using the `explain` command of kubectl. For example:
@@ -281,7 +280,37 @@ the namespace where the workload runs.
 
 !!! Note
     Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
-  
+
+### Prevent Data Storage on the Node
+
+For best practices, you may want to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost.
+
+Example for PVC: 
+```yml
+  spec:
+    usage: Submit
+    volumes:
+      itemRules:
+        nfsServer:
+          canEdit: false
+      items:
+        DEFAULTS:
+          value:
+            nfsServer: nil
+            targetPath: nil
+```
+
+Example for NFS:
+
+```yml
+  spec:
+    usage: Submit
+    volumes:
+      itemRules:
+        nfsServer:
+          required: true
+```
+
 ## Terminate Run:ai training Jobs after preemption policy
 
 Administrators can set a ‘termination after preemption’ policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (e.g. GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted and typically goes back to the pending queue. However, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace.
