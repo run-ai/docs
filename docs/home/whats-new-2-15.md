@@ -29,7 +29,7 @@
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
 <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
-* Improved configuration for Kubernetes API server authentication. Configuring individual clusters' API server for authentication is no longer needed. This applies to environments where end users are using UI and not the CLI.
+* Improved configuration for authentication in the cluster. Configuring the Kubernetes cluster API server for authentication is no longer needed. This applies to environments where end users are using the UI only and not the CLI.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
