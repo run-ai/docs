@@ -25,23 +25,17 @@
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training-->
-* Added support for distributed training in the *Trainings* form. In the trainings form, you can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings).
+* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings).
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
-
-<!-- RUN-10446/RUN-10447 RUN:ai Hyper-Scale - Scheduler - Phase 1: Adobe scenario-->
+* Added support for self signed certificates in air gapped environments.
 
 <!-- RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
 
-<!-- RUN-10486 Project selection is persistent in the  \(V2\)-->
-
-<!-- RUN-10493 Stabilize scheduler post Elastic Workloads changes-->
-
 <!-- RUN-10602/RUN-10603 GPU Memory Request & Limit-->
 
-<!-- RUN-10619 Email mechanism -->
-
-<!-- RUN-10622 Policy blocks workloads that attempt to store data on the node-->
+<!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
+* Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost.
 
 <!-- RUN-10802 Quota management dashboard post-release -->
 
