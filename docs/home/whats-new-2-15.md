@@ -13,21 +13,16 @@
 <!-- RUN-11421 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
-<!-- RUN-5928 Node Scheduler - MS1 -->
-
 <!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
+* Improved the *Cluster Wizard* form for adding new clusters to your system. For configuration information, see [link here]().
 
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
+* Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
-<!-- RUN-9386 Metrics API: Expose predefined metrics-->
-§
 <!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 
-<!-- RUN-9949 Container RUNtime Interface - No TW story as per ticket -->
-
-<!-- RUN-9950 Support JFrog Artifactory private repository - No TW story as per ticket -->
-
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
+* Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training-->
 
@@ -46,8 +41,6 @@
 <!-- RUN-10619 Email mechanism -->
 
 <!-- RUN-10622 Policy blocks workloads that attempt to store data on the node-->
-
-<!-- RUN-10639/RUN-11389 Researcher Service Refactoring - Step 1 \(UI only\)-->
 
 <!-- RUN-10802 Quota management dashboard post-release -->
 
