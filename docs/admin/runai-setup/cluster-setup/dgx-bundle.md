@@ -9,7 +9,7 @@ NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this documen
 
 [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Bright installer.
 
-## Prerequisites 
+## Prerequisites
 
 ### Software Prerequisites
 
