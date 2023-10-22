@@ -3,14 +3,7 @@
 ## New Features
 
 <!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report - NEW FEATURE -->
-* Added new functionality to download a report all the data in the table for the following:
-    * Projects
-    * Departments
-    * Nodes
-    * Node pools
-    * Consumption report
-
-Use the *More* menu to download the CSV file. Select from the *Columns* menu to add more columns to the CSV file.
+* Added the ability to download a CSV file from all features that contain a table. Downloading a CSV can provide a snapshot of the feature history over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 ## Improvements
 
