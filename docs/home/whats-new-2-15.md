@@ -5,6 +5,13 @@
 <!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report - NEW FEATURE -->
 * Added the ability to download a CSV file from all features that contain a table. Downloading a CSV can provide a snapshot of the feature history over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
+<!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
+* Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
+
+--8<-- "home/whats-new-2-14.md:6:8"
+
+--8<-- "home/whats-new-2-14.md:15:16"
+
 ## Improvements
 
 <!-- TODO RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
@@ -16,13 +23,13 @@
 <!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
 * Improved the *Cluster Wizard* form for adding new clusters to your system.
 
-<!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
-* Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
-
 <!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
+
+<!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
+* Improved configuration for Kubernetes API server authentication. Configuring individual clusters' API server for authentication is no longer needed. This applies to environments where end users are using UI and not the CLI.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
@@ -55,12 +62,3 @@
 <!-- RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
 
-<!-- RUN-11974 Use Secure images only \(UBI\)-->
-
-<!-- RUN-12166 Cost fixes-->
-
-<!-- Include from 2.14 -->
-
-<!-- TODO Adjust the whats new for 2.14 to add in the sections for New features and Improvements. Then include those in the appropriate sections for 2.15 after the primary ones are written up.
---8<-- "home/whats-new-2-14.md:4:69"
--->
