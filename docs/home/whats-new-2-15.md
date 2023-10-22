@@ -24,8 +24,14 @@
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
-<!-- RUN-10404/RUN-11747 Submit distributed training-->
-* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings).
+<!-- RUN-10404/RUN-11747 Submit distributed training
+* RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
+* RUN-11231/RUN-11240 Environment for distributed training
+* RUN-11186/RUN-11241 Submitting an MPI/PT/TF/XGBoost distributed training from UI - 1st form page 
+* RUN-11206/RUN-11242 Submitting distributed training from UI - 2nd form page
+* RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page
+-->
+* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative for more information.
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 * Added support for self signed certificates in air gapped environments.
@@ -37,22 +43,11 @@
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
-<!-- RUN-10862/RUN-10863 Department as a workspace asset creation scope - phase 2-->
-
-<!-- RUN-11186/RUN-11241 Submitting an MPI/PT/TF/XGBoost distributed training from UI - 1st form page -->
-
-<!-- RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag -->
-
-<!-- RUN-11206/RUN-11242 Submitting distributed training from UI - 2nd form page-->
-
-<!-- RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page-->
-
-<!-- RUN-11231/RUN-11240 Environment for distributed training-->
-
 <!-- RUN-11282/RUN-11283 Nodepools enabled by default-->
+* Improvement in node pools which are now enabled by default. There is no need to enable the feature in the settings.
 
 <!-- RUN-11292/RUN-11592 General changes in favor of any asset based workload \(WS, training, DT\)-->
-
+* Improvement in the *Trainings* and *Workspaces* forms. Now the runtime field for *Commands* and *Arguments* can be edited even after it has inherited it from the environment.
 <!-- RUN-11325 R&D Support time Q3-->
 
 
