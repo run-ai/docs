@@ -279,9 +279,9 @@ nav:
           - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
           - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
         - 'Creation' :
-            - 'Create an Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
-            - 'Create a Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
-            - 'Create a Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+            - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
+            - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+            - 'Create a Data Source' :  'Researcher/user-interface/workspaces/create/create-ds.md'
             - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
