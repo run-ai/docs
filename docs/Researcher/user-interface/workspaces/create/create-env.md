@@ -6,7 +6,17 @@ To create an environment:
 2. In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 3. Enter an *Environment name*.
 4. Enter the image URL path and an image pull policy.
-5. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
+5. Choose a supported workload type. Configure this section based on the type of workload you expect to run in this environment. Choose from:
+
+      * `Single node`&mdash;use for running workloads on a single node.
+      * `Mult-node`&mdash;use for running distributed workloads on multiple nodes.
+
+    Then choose the workload that can use the environment:
+
+      * `Workspace`
+      * `Training`
+
+6. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
 
     Tools can be:
 
@@ -26,7 +36,7 @@ To create an environment:
     * The container image needs to support the tool. 
     * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
 
-6. Configure runtime settings with:
+7. Configure runtime settings with:
 
        1. Commands and arguments&mdash;visible, but not editable in the workspace creation form.
        2. Environment variables&mdash;visible and editable in the workspace creation form.
@@ -35,7 +45,7 @@ To create an environment:
     !!! Note
         The value of an environment variable can remain empty for the researcher to fill in when creating a workspace.
 
-7. Configure the security settings from:
+8. Configure the security settings from:
 
        1. Settings in the image&mdash;security settings that come with the image file. 
        2. Custom settings:
