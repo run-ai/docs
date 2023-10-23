@@ -30,7 +30,7 @@ To enable the *Workloads* view, go to the *Jobs* table and toggle the switch fro
 
 !!! Note
     To submit a workload, use either the *Jobs* view or the CLI.
-    
+
     <!-- remove this when the feature is added -->
 
 Use the search feature to find a specific workload in the list.
