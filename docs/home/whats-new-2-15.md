@@ -9,7 +9,13 @@
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
 <!-- TODO RUN-10241/RUN-12872 - New Workloads view -->
-* Added a new button to the *Jobs* feature to switch the view to *Workloads*. *Workloads* is a new view for jobs that are running in the platform. For more information see [Workloads]().
+* Added a new button to the *Jobs* feature to switch the view to *Workloads*. *Workloads* is a new view for jobs that are running in the platform. The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
+
+* Improved views of the data
+* Improved filters and search
+* More information
+
+For more information see [Workloads](##workloads-view).
 
 --8<-- "home/whats-new-2-14.md:6:8"
 
