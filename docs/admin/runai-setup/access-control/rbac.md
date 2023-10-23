@@ -16,7 +16,7 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 ### Roles
 
-A role is a combination of entities and actions. The role defines which set of actions (CRUD) is permitted on the platform entities. Run:ai supports several predefined roles.
+A role is a combination of entities and actions. The role defines which set of actions (Create, Read, Update, Delete - CRUD) are permitted on the platform entities. Run:ai supports several predefined roles.
 
 
 | Managed Entity                                                        | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
@@ -47,7 +47,7 @@ A role is a combination of entities and actions. The role defines which set of a
 
 Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
 
-Entities: Entities are granular parts of the pltform that can be controled seperatly. 
+Entities&mdash;granular parts of the pltform that can be controled separately. 
 
 
 !!!Note
