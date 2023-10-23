@@ -209,6 +209,17 @@ To set a duration limit for Training Jobs:
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
 
+### View Applied Policies
+
+Policies that are applied to a project are now visible using the *View policy* button. The following types of policies are available for viewing:
+
+* Interactive policies
+* Training policies
+* Inference policies
+
+!!! Note
+    Polices are **Read only** when using the *View policies* button. See your Administrator to change the policy.
+
 ## See Also
 
 Run:ai supports an additional (optional) level of resource allocation called [Departments](department-setup.md).
