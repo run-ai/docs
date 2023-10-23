@@ -8,9 +8,9 @@
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
-<!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
+<!-- TODO RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
 
-<!-- RUN-10241/RUN-12872 - New Workloads view -->
+<!-- TODO RUN-10241/RUN-12872 - New Workloads view -->
 
 
 --8<-- "home/whats-new-2-14.md:6:8"
@@ -41,7 +41,7 @@
 <!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
 * Improved the *Cluster Wizard* form for adding new clusters to your system.
 
-<!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
+<!-- TODO RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
@@ -61,16 +61,16 @@
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 * Added support for self signed certificates in air gapped environments.
 
-<!-- RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
+<!-- TODO RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
 
-<!-- RUN-10602/RUN-10603 GPU Memory Request & Limit-->
+<!-- TODO RUN-10602/RUN-10603 GPU Memory Request & Limit-->
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 --8<-- "home/whats-new-2-14.md:41:43"
 
-<!-- RUN-10663/RUN-10664 - GPU Time Slicing - flexible time slicing with L > R -->
+<!-- TODO RUN-10663/RUN-10664 - GPU Time Slicing - flexible time slicing with L > R -->
 
 <!-- RUN-11282/RUN-11283 Nodepools enabled by default-->
 * Improvement in node pools which are now enabled by default. There is no need to enable the feature in the settings.
