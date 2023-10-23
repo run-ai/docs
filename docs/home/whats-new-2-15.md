@@ -8,10 +8,8 @@
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
-<!-- TODO RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
-
 <!-- TODO RUN-10241/RUN-12872 - New Workloads view -->
-
+* Added a new button to the *Jobs* feature to switch the view to *Workloads*. *Workloads* is a new view for jobs that are running in the platform. For more information see [Workloads]().
 
 --8<-- "home/whats-new-2-14.md:6:8"
 
@@ -49,6 +47,9 @@
 <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
 * Improved configuration for authentication in the cluster. Configuring the Kubernetes cluster API server for authentication is no longer needed. This applies to environments where end users are using the UI only and not the CLI.
 
+<!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
+* Improved support for KubeFlow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
+
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
 * RUN-11231/RUN-11240 Environment for distributed training
@@ -56,7 +57,7 @@
 * RUN-11206/RUN-11242 Submitting distributed training from UI - 2nd form page
 * RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page
 -->
-* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative for more information.
+* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature.
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 * Added support for self signed certificates in air gapped environments.
