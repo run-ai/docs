@@ -64,6 +64,23 @@ Every new workload is associated with a Project. The Project contains a deserved
 * If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
 * If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
 
+### Blocking Over Quota
+
+Run:ai provides the ability to block over subscription of quotas by *Projects* or *Departments*.
+
+Over quota will be blocked under the following circumstances:
+
+* If a project’s quota request (with or without nodepools) increases the sum of all the projects quotas to more the department quota (for GPU and CPU, compute and memory).
+* If a department’s quota decrease request (with or without nodepools) causes the sum of all projects quotas to surpass the department quota (for GPU and CPU, compute and memory).
+* If a project’s quota decrease request (with or without nodepools) causes the sum of all non-preemptible workloads to surpass that of the Project (for GPU and CPU, compute and memory).
+
+To configure blocking of over quota subscriptions:
+
+1. Press the *Tools and settings* icon, then go to *General*.
+2. Enable the *Limit quota over/under subscription* toggle.
+
+To disable the blocking of over quota subscription, disable the toggle.
+
 ### Quota with Multiple Resources
 
 A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over-quota" it will have to have at *least one* resource over its quota. For a project to be under-quota it needs to have *all of its* resources under-quota.
