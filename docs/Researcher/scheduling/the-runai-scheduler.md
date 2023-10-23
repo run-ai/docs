@@ -70,9 +70,9 @@ Run:ai provides the ability to block over subscription of quotas by *Projects* o
 
 Over quota will be blocked under the following circumstances:
 
-* If a project’s quota request (with or without nodepools) increases the sum of all the projects quotas to more the department quota (for GPU and CPU, compute and memory).
+* If a project’s quota request (with or without nodepools) increases the sum of all the department projects quotas to more than the department quota (for GPU and CPU, compute and memory).
 * If a department’s quota decrease request (with or without nodepools) causes the sum of all projects quotas to surpass the department quota (for GPU and CPU, compute and memory).
-* If a project’s quota decrease request (with or without nodepools) causes the sum of all non-preemptible workloads to surpass that of the Project (for GPU and CPU, compute and memory).
+* If a project’s quota decrease request (with or without nodepools) causes the sum of all allocated non-preemptible workloads in that project to surpass it (for GPU and CPU, compute and memory).
 
 To configure blocking of over quota subscriptions:
 
