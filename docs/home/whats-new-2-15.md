@@ -33,8 +33,8 @@ For more information see [Workloads](##workloads-view).
 
 ## Improvements
 
-<!-- RUN-9808/RUN-9810 - Show effective project policy from the UI -->
-* Improved the *Projects* table by adding a button to show applied policies. The button is enabled only when the selected project has a policy applied to it. A new page opens where the policy can be viewed. For more information, see [Viewing projecy policies](##View Applied Policies).
+<!-- TODO RUN-9808/RUN-9810 - Show effective project policy from the UI -->
+* Improved the *Projects* table by adding a button to show applied policies. The button is enabled only when the selected project has a policy applied to it. A new page opens where the policy can be viewed. For more information, see [Viewing project policies](##View Applied Policies).
 
 <!-- TODO RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
 * Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
@@ -68,8 +68,8 @@ For more information see [Workloads](##workloads-view).
 -->
 * Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature.
 
-<!-- RUN-10411/RUN-11390 Support self-signed certificates-->
-* Added support for self signed certificates in air gapped environments.
+<!-- TODO RUN-10411/RUN-11390 Support self-signed certificates-->
+* Added support for self signed certificates in air gapped environments. For more information, see [link here]().
 
 <!-- TODO RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
 
@@ -91,7 +91,7 @@ For more information see [Workloads](##workloads-view).
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
 * Added support for non-privileged PSA on project namespaces for OpenShift environments.
 
-<!-- RUN-11692/RUN-11694 Scoping for template-->
+<!-- TODO RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
 
 --8<-- "home/whats-new-2-14.md:49:56"
