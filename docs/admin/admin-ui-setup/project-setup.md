@@ -79,9 +79,18 @@ To assign *Access rules* to the project:
 4. If you want to add another rule, use the *+Access rule*.
 5. When all the rules are configured, press *Close*.
 
-If you are using Single-sign-on, you can also assign Groups
+If you are using Single-sign-on, you can also assign Groups.
 
 ## Other Project Properties
+
+### Download Project Table
+
+You can download the Projects table to a CSV file. Downloading a CSV can provide a snapshot history of your projects over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Projects table to a CSV:
+1. Open *Projects*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
 
 ### Limit Jobs to run on Specific Node Groups
 

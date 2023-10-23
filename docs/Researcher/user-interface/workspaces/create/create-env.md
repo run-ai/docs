@@ -46,3 +46,12 @@ To create an environment:
             4. Values modification settings.
     
        3. Add linux capabilities.
+
+### Download Environments Table
+
+You can download the Environments table to a CSV file. Downloading a CSV can provide a snapshot history of your environments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Environments table to a CSV:
+1. Open *Environments*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.

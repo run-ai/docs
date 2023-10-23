@@ -7,9 +7,8 @@ A node pool is a set of nodes grouped into a bucket of resources using a predefi
 
 ## Enabling Node-Pools
 
-The ‘Node Pools’ feature is disabled by default:
+The *Node Pools* feature is enabled by default:
 
-* To use node pools - enable this feature under `Settings` | `General`. Turn on `Enable Node Pools`.
 * To manage CPU resources - enable this feature under  `Settings` | `General`. Turn on `Enable CPU Resources Quota`.
 
 Once the feature is enabled by the administrator, all nodes in each of your upgraded clusters are associated with the `Default` node pool.
@@ -49,6 +48,20 @@ To assign nodes to a node pool:
 
 !!! Note
     * You can annotate multiple nodes with the same label.
+
+### Download Node and Node-pools Table
+
+You can download the Node and Node-Pools tables to a CSV file. Downloading a CSV can provide a snapshot history of your node and node-pools over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Nodes table to a CSV:
+1. Open *Nodes*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
+
+To download the Node-Pools table to a CSV:
+1. In the *Nodes*, table select *Node Pools*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
 
 ## Multiple Node Pools Selection
 

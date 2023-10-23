@@ -70,10 +70,19 @@ Training details are displayed using the *Show details* action. The details avai
 * **Metrics**&mdash;a graph of available metrics for the job. Use the drop down select a date and a time slice. Metrics include:
 
     * GPU utilization
-    * GPU memory useage
-    * CPU useage
-    * CPU memory useage
+    * GPU memory usage
+    * CPU usage
+    * CPU memory usage
 
 * **Logs**&mdash;a log file of the current status. Use the download button to save the logs.
 
 To hide the training details, press *Hide details*.
+
+## Download Trainings Table
+
+You can download the Trainings table to a CSV file. Downloading a CSV can provide a snapshot history of your Trainings over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Trainings table to a CSV:
+1. Open *Trainings*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
