@@ -20,7 +20,11 @@ Run:ai currently supports the following Workloads types:
 
 ## Workloads View
 
-The *Workloads* view provides a more advanced UI than the previous *Jobs* UI.
+The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
+
+* Improved views of the data
+* Improved filters and search
+* More information
 
 To enable the *Workloads* view, go to the *Jobs* table and toggle the switch from `Jobs` to `Workloads`. To return, switch the toggle from `Workloads` to `Jobs`.
 
