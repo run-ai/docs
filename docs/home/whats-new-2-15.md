@@ -24,6 +24,9 @@
 
 ## Improvements
 
+<!-- RUN-9808/RUN-9810 - Show effective project policy from the UI -->
+* Improved the *Projects* table by adding a button to show applied policies. The button is enabled only when the selected project has a policy applied to it. A new page opens where the policy can be viewed. For more information, see [Viewing projecy policies]().
+
 <!-- TODO RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
 * Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
 
