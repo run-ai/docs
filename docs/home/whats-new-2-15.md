@@ -8,6 +8,11 @@
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
+<!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
+
+<!-- RUN-10241/RUN-12872 - New Workloads view -->
+
+
 --8<-- "home/whats-new-2-14.md:6:8"
 
 --8<-- "home/whats-new-2-14.md:15:16"
@@ -64,6 +69,8 @@
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 --8<-- "home/whats-new-2-14.md:41:43"
+
+<!-- RUN-10663/RUN-10664 - GPU Time Slicing - flexible time slicing with L > R -->
 
 <!-- RUN-11282/RUN-11283 Nodepools enabled by default-->
 * Improvement in node pools which are now enabled by default. There is no need to enable the feature in the settings.
