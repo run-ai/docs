@@ -8,7 +8,7 @@
 <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->
 * Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
-<!-- TODO RUN-10241/RUN-12872 - New Workloads view -->
+<!-- ADDLINK RUN-10241/RUN-12872 - New Workloads view -->
 * Added a new button to the *Jobs* feature to switch the view to *Workloads*. *Workloads* is a new view for jobs that are running in the platform. The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
 
 * Improved views of the data
@@ -33,10 +33,10 @@ For more information see [Workloads](##workloads-view).
 
 ## Improvements
 
-<!-- TODO RUN-9808/RUN-9810 - Show effective project policy from the UI -->
+<!-- ADDLINK RUN-9808/RUN-9810 - Show effective project policy from the UI -->
 * Improved the *Projects* table by adding a button to show applied policies. The button is enabled only when the selected project has a policy applied to it. A new page opens where the policy can be viewed. For more information, see [Viewing project policies](##View Applied Policies).
 
-<!-- TODO RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
+<!-- ADDLINK RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
 * Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
 
 <!-- RUN-11421 Consumption report - Cost and bugs-->
@@ -68,7 +68,7 @@ For more information see [Workloads](##workloads-view).
 -->
 * Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature.
 
-<!-- TODO RUN-10411/RUN-11390 Support self-signed certificates-->
+<!-- ADDLINK RUN-10411/RUN-11390 Support self-signed certificates-->
 * Added support for self signed certificates in air gapped environments. For more information, see [link here]().
 
 <!-- TODO RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
@@ -91,7 +91,7 @@ For more information see [Workloads](##workloads-view).
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
 * Added support for non-privileged PSA on project namespaces for OpenShift environments.
 
-<!-- TODO RUN-11692/RUN-11694 Scoping for template-->
+<!-- ADDLINK RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
 
 --8<-- "home/whats-new-2-14.md:49:56"
