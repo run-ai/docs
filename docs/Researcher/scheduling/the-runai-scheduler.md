@@ -66,7 +66,7 @@ Every new workload is associated with a Project. The Project contains a deserved
 
 ### Quota Over or Under Subscription
 
-Run:ai provides the ability to block over subscription of quotas by *Projects* or *Departments*.
+Run:ai provides the ability to limit over subscription of quotas by *Projects* or *Departments*.
 
 Over quota will be limited under the following circumstances:
 
