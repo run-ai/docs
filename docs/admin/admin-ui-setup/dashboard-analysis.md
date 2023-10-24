@@ -18,7 +18,7 @@ The Overview dashboard provides information about what is happening **right now*
 * The number of running and pending **Jobs**, their utilization, information on Jobs with errors or Jobs with idle GPUs.
 * Active **Projects**, their assigned and allocated GPUs and number of running and pending Jobs.
 
-The dashboard has two tabs that change the display to provide a focused view for **GPU Dashboards** and **CPU Dashboards**.
+The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
 
 The dashboard has a dropdown filter for node pools. From the dropdown, select one or more node pools. The default setting is `all`.
 
@@ -87,7 +87,14 @@ Also, check the command that the user used to submit the job. The Researcher may
 
 ### CPU Dashboard
 
-The CPU dashboard
+The CPU dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments.
+
+To enable CPU Dashboards:
+
+1. Press the `Settings` icon, then press `General`
+2. Toggle the *Show CPU dashboard* switch to enable the feature.
+
+Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
 ## Quota management dashboard
 
