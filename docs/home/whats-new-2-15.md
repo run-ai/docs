@@ -18,7 +18,7 @@
 For more information see [Workloads](##workloads-view).
 
 <!-- MISSING-INFO RUN-12313/12314 - CPU focused dashboards - Add to the page dashboard components -->
-* Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboards](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
+* Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
