@@ -64,7 +64,7 @@ Every new workload is associated with a Project. The Project contains a deserved
 * If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
 * If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
 
-### Blocking Over Quota
+### Quota Over or Under Subscription
 
 Run:ai provides the ability to block over subscription of quotas by *Projects* or *Departments*.
 
