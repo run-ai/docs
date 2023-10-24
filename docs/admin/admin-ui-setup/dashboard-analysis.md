@@ -18,9 +18,13 @@ The Overview dashboard provides information about what is happening **right now*
 * The number of running and pending **Jobs**, their utilization, information on Jobs with errors or Jobs with idle GPUs.
 * Active **Projects**, their assigned and allocated GPUs and number of running and pending Jobs.
 
+The dashboard has two tabs that change the display to provide a focused view for **GPU Dashboards** and **CPU Dashboards**.
+
 The dashboard has a dropdown filter for node pools. From the dropdown, select one or more node pools. The default setting is `all`.
 
 Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
+
+### GPU Dashboard
 
 ### Jobs with idle GPUs
 
@@ -80,6 +84,10 @@ Identify queueing bottlenecks.
 | Cluster is not fully loaded | Go to the Jobs view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
 Also, check the command that the user used to submit the job. The Researcher may have requested a specific Node for that Job.
+
+### CPU Dashboard
+
+The CPU dashboard
 
 ## Quota management dashboard
 
