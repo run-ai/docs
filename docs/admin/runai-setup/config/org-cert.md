@@ -10,8 +10,8 @@ You will need to have the public key of the local certificate authority.
 
 ## Control-Plane Installation
 
-* Create the runai-backend namespace if it does not exist. 
-* Add the public key to the `runai-backend` namespace
+* Create the `runai-backend` namespace if it does not exist. 
+* Add the public key to the `runai-backend` namespace:
 ```
 kubectl -n runai-backend create secret generic runai-ca-cert \ 
     --from-file=runai-ca.pem=<ca_bundle_path>
@@ -22,8 +22,8 @@ kubectl -n runai-backend create secret generic runai-ca-cert \
 
 ## Cluster Installation
 
-* Create the runai namespace if it does not exist. 
-* Add the public key to the `runai` namespace
+* Create the `runai` namespace if it does not exist. 
+* Add the public key to the `runai` namespace:
 ```
 kubectl -n runai create secret generic runai-ca-cert \
     --from-file=runai-ca.pem=<ca_bundle_path>
