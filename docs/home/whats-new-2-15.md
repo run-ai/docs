@@ -63,7 +63,7 @@ For more information see [Workloads](##workloads-view).
 * Improved support for KubeFlow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
 
 <!-- RUN-10251/RUN-10252 - Block over-subscription of quota by Projects/Departments- -->
-* Improved quota settings by providing the ability to block over-subscription of quota by *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#quota-over-or-under-subscription).
+* Improved quota settings by providing the ability to block over-subscription of quota by *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
