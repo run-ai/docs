@@ -15,8 +15,8 @@ There are 5 dashboards:
 The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster, including:
 
 * The number of available and allocated resources and their cluster-wide utilization.
-* The number of running and pending **Workloads**, their utilization, information on Workloads with errors or Workloads with idle GPUs.
-* Active **Projects**, their assigned and allocated GPUs and number of running and pending Workloads.
+* The number of running and pending **Workloads**, their utilization, information on Workloads with errors or Workloads with idle GPUs or CPUs.
+* Active **Projects**, their assigned and allocated GPUs or CPUs and number of running and pending Workloads.
 
 The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
 
@@ -44,11 +44,11 @@ The following analysis can apply to both GPU and CPU dashboards.
 ### Workloads with idle GPUs or CPUs
 
 Locate workloads with idle GPUs or CPUs, defined as GPUs/CPUs with 0% utilization for more than 5 minutes.
-
+<!--
 **How to**: view the following panel:
 
 ![](img/idle-gpus.png)
-
+-->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis  & Actions |
@@ -58,12 +58,12 @@ Locate workloads with idle GPUs or CPUs, defined as GPUs/CPUs with 0% utilizatio
 
 ### Workloads with an Error
 
-Search for Workloads with an error status. These Workloads may be holding GPUs without actually using them.
-
+Search for Workloads with an error status. These Workloads may be holding GPUs/CPUs without actually using them.
+<!--
 **How to**: view the following panel:
 
 ![](img/jobs-with-errors.png)
-
+-->
 **Analysis and Suggested actions**:
 
 Search for workloads with an Error status on the Workloads view and discuss with the Job owner. Consider deleting these Workloads to free up the resources for other users.
@@ -71,11 +71,11 @@ Search for workloads with an Error status on the Workloads view and discuss with
 ### Workloads with a Long Duration
 
 View list of 5 longest Workloads.
-
+<!-- 
 **How to**: view the following panel:
 
 ![](img/long-jobs.png)
-
+-->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions |
@@ -86,16 +86,16 @@ View list of 5 longest Workloads.
 ### Job Queue
 
 Identify queueing bottlenecks.
-
+<!-- 
 **How to**: view the following panel:
 
 ![](img/queue.png)
-
+-->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions  |
 |---------|---------------------|
-| Cluster is fully loaded | Go over the table of active Projects and check that fairness between Projects was enforced, by reviewing the number of allocated GPUs for each Project, ensuring each Project was allocated with its fair-share portion of the cluster. |
+| Cluster is fully loaded | Go over the table of active Projects and check that fairness between Projects was enforced, by reviewing the number of allocated GPUs/CPUs for each Project, ensuring each Project was allocated with its fair-share portion of the cluster. |
 | Cluster is not fully loaded | Go to the Workloads view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
 Also, check the command that the user used to submit the job. The Researcher may have requested a specific Node for that Job.
