@@ -79,7 +79,7 @@ To configure over or under quota subscriptions:
 1. Press the *Tools and settings* icon, then go to *General*.
 2. Enable the *Limit quota over/under subscription* toggle.
 
-To disable the blocking of over quota subscription, disable the toggle.
+To disable the limiting of over quota subscription, disable the toggle.
 
 ### Quota with Multiple Resources
 
