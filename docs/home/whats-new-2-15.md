@@ -45,13 +45,16 @@ For more information see [Workloads](##workloads-view).
 <!-- ADDLINK RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
 * Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
 
-<!-- RUN-11421 Consumption report - Cost and bugs-->
+<!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
-<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
+<!-- TODO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements  - need to review where to put the costing.-->
 * Improved the *Cluster Wizard* form for adding new clusters to your system.
 
 <!-- TODO RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
+
+<!-- RUN-10862/RUN-12235 Department as a workspace phase 2 - scope in credentials -->
+* Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md#credentials).
 
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
