@@ -28,11 +28,6 @@ The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. Th
 
 To enable the *Workloads* view, go to the *Jobs* table and toggle the switch from `Jobs` to `Workloads`. To return, switch the toggle from `Workloads` to `Jobs`.
 
-!!! Note
-    To submit a workload, use either the *Jobs* view or the CLI.
-
-    <!-- remove this when the feature is added -->
-
 Use the search feature to find a specific workload in the list.
 
 Use the columns button to change the columns that are displayed in the table.
@@ -41,10 +36,11 @@ Use the More button to download the table and the displayed columns to a CSV fil
 
 Manage *Workloads* by selecting a workload from the table. Once selected, you can:
 
-* Delete
+* Submit a new workload
+* Delete a workload
 * Connect
-* Stop
-* Activate (not enabled)
+* Stop a workload
+* Activate a workload
 * Show details
 
 The *Show details* button provides in-depth information about the selected workload including:
