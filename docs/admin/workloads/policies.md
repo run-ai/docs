@@ -283,32 +283,16 @@ the namespace where the workload runs.
 
 ### Prevent Data Storage on the Node
 
-For best practices, you may want to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost.
+You can configure policies to prevent the submission of workloads that use data sources that consist of a host path. This setting prevents data from being stored on the node so that in the event when a node is deleted, all data stored on that node is lost.
 
-Example for PVC: 
-```yml
-  spec:
-    usage: Submit
-    volumes:
-      itemRules:
-        nfsServer:
-          canEdit: false
-      items:
-        DEFAULTS:
-          value:
-            nfsServer: nil
-            targetPath: nil
-```
-
-Example for NFS:
+Example for rejecting workloads requesting host path:
 
 ```yml
-  spec:
-    usage: Submit
-    volumes:
-      itemRules:
-        nfsServer:
-          required: true
+spec:
+  volumes:
+    itemRules:
+      nfsServer:
+        required: true
 ```
 
 ## Terminate Run:ai training Jobs after preemption policy
