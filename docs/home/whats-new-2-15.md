@@ -17,6 +17,9 @@
 
 For more information see [Workloads](##workloads-view).
 
+<!-- TODO RUN-12313/12314 - CPU focused dashboards -->
+* Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboards]().
+
 --8<-- "home/whats-new-2-14.md:6:8"
 
 --8<-- "home/whats-new-2-14.md:15:16"
