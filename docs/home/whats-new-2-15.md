@@ -17,8 +17,11 @@
 
 For more information see [Workloads](##workloads-view).
 
-<!-- TODO RUN-12313/12314 - CPU focused dashboards -->
+<!-- MISSING-INFO RUN-12313/12314 - CPU focused dashboards - Add to the page dashboard components -->
 * Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboards](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
+
+<!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
+* Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 --8<-- "home/whats-new-2-14.md:6:8"
 
@@ -74,12 +77,10 @@ For more information see [Workloads](##workloads-view).
 <!-- ADDLINK RUN-10411/RUN-11390 Support self-signed certificates-->
 * Added support for self signed certificates in air gapped environments. For more information, see [link here]().
 
-<!-- TODO RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
+<!-- RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
+* Updated the compatibility matrix to include supported versions for Kubernetes and OpenShift. For more information, see [Cluster prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes)
 
 <!-- TODO RUN-10602/RUN-10603 GPU Memory Request & Limit-->
-
-<!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
-* Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 --8<-- "home/whats-new-2-14.md:41:43"
 
