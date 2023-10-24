@@ -53,8 +53,8 @@ For more information see [Workloads](##workloads-view).
 
 <!-- TODO RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 
-<!-- RUN-10862/RUN-12235 Department as a workspace phase 2 - scope in credentials -->
-* Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md#credentials).
+<!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->
+* Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
 
 <!-- RUN-10271/RUN-10321 Mark environment for workload type-->
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
