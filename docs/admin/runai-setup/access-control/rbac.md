@@ -16,7 +16,8 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 ### Roles
 
-A role is a combination of entities and actions. Run:ai supports the following roles and actions within the user's granted scope:
+A role is a combination of entities and actions. The role defines which set of actions (Create, Read, Update, Delete - CRUD) are permitted on the platform entities. Run:ai supports several predefined roles.
+
 
 | Managed Entity                                                        | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
 |-----------------------------------------------------------------------|------------------|----------------------|------------|------------------|------------|---------|--------|---------------|---------------|--------------------|--------------------|-------------------------|-----------------|-------------------|
@@ -46,6 +47,9 @@ A role is a combination of entities and actions. Run:ai supports the following r
 
 Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
 
+Entities&mdash;granular parts of the pltform that can be controled separately. 
+
+
 !!!Note
 
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
@@ -65,17 +69,7 @@ A *Scope* is an organizational component which accessible based on assigned role
 * Clusters
 * Tenant (all clusters)
 
-### Asset
 
-RBAC uses [rules](#access-rules) to ensure that only authorized users or applications can gain access to system assets. Assets that can have RBAC rules applied are:
-
-* Departments
-* Projects
-* Deployments
-* Workspaces
-* Environments
-* Quota management dashboard
-* Training
 
 ### RBAC enforcement
 
