@@ -287,6 +287,7 @@ nav:
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
+      - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
