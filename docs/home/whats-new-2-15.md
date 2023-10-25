@@ -75,7 +75,7 @@ For more information see [Workloads](##workloads-view).
 * Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature.
 
 <!-- ADDLINK RUN-10411/RUN-11390 Support self-signed certificates-->
-* Added support for self signed certificates in air gapped environments. For more information, see [link here]().
+* Run:ai can be installed in an isolated network. In this air-gapped configuration, the organization will not be using an established root certificate authority{target=_blank}. Instead, the organization creates a local certificate which serves as the root certificate for the organization. The certificate is installed in all browsers within the organization. For more information, see [link here](##org-cert.md).
 
 <!-- RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
 * Updated the compatibility matrix to include supported versions for Kubernetes and OpenShift. For more information, see [Cluster prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes)
