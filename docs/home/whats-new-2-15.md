@@ -11,9 +11,9 @@
 <!-- ADDLINK RUN-10241/RUN-12872 - New Workloads view -->
 * Added a new button to the *Jobs* feature to switch the view to *Workloads*. *Workloads* is a new view for jobs that are running in the platform. The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
 
-* Improved views of the data
-* Improved filters and search
-* More information
+      * Improved views of the data
+      * Improved filters and search
+      * More information
 
 For more information see [Workloads](##workloads-view).
 
@@ -67,12 +67,17 @@ For more information see [Workloads](##workloads-view).
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
-* RUN-11231/RUN-11240 Environment for distributed training
 * RUN-11186/RUN-11241 Submitting an MPI/PT/TF/XGBoost distributed training from UI - 1st form page 
 * RUN-11206/RUN-11242 Submitting distributed training from UI - 2nd form page
 * RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page
+* RUN-11231/RUN-11240 Environment for distributed training
 -->
-* Added support for distributed training in the *Trainings* form. You can select `single` or `multi-node (distributed)` training. For configuration information, see [Adding tainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature.
+* Added support for distributed training in the following:
+
+      * Trainings form
+      * Environments form
+  
+    You can select `single` or `multi-node (distributed)` training. When configuring distributed training, you will need to select a framework from the list. For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- ADDLINK RUN-10411/RUN-11390 Support self-signed certificates-->
 * Run:ai can be installed in an isolated network. In this air-gapped configuration, the organization will not be using an established root certificate authority{target=_blank}. Instead, the organization creates a local certificate which serves as the root certificate for the organization. The certificate is installed in all browsers within the organization. For more information, see [link here](##org-cert.md).
