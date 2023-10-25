@@ -45,8 +45,8 @@
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
-<!-- MISSING-INFO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
-* Improved the *Cluster Wizard* form for adding new clusters to your system.
+<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
+* Improved the *Cluster Wizard* form for adding new clusters to your system. We have eliminated the need for a values file and converted it to a helm command. Cluster configurations are preserved during upgrade and are done using the `runaiconfig` file and create a separation between installation-related flags and cluster customization flags. For more information, see [Customize cluster installation.](##customize-cluster-install.md)
 
 <!-- ADDLINK RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 * Added the ability to configure strict GPU compute time slicing. This gives workloads the exact GPU compute portion based on the requested GPU fraction (GPU Memory Fraction). This creates complete transparency and predictability of the amount of resources (Compute, Memory, etc.) a workload will get from a GPU. For more information, see [GPU Time Slicing](##gpu-time-slicing).
