@@ -69,7 +69,8 @@ The `Status` column in the *Node* and *Node pools* table enable you to quickly v
 You can download the Node and Node-Pools tables to a CSV file. Downloading a CSV can provide a snapshot history of your node and node-pools over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 To download the Nodes table to a CSV:
-1. Open *Nodes*.
+
+1. From the left menu, press *Nodes*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
 
