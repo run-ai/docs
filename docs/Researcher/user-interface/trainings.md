@@ -56,7 +56,29 @@ To add a training:
        2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
        3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
-11. When complete, press *Create training*.
+11. If you if selected  `Workers & master` Press *Continue* to `Configure the master` and go to the next step. If not, then press *Create training*.
+
+12. If you do not want a different setup for the master, press *Create training*. If you would like to have a different setup for the master, toggle the switch to enable to enable a different setup.
+
+       1. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+       2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       3. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
+
+          1. Select the *Storage class* from the dropdown.
+          2. Select the *Access mode* from the dropdown.
+          3. Enter a claim size, and select the units.
+          4. Select a *Volume system*, mode from the dropdown.
+          5. Enter the *Container path* for volume target location.
+          6. Select a *Volume persistency.
+
+       4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+       5. (Optional) In the *General* pane, add special settings for your training (optional):
+
+          1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+          2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+          3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+
+13. When your training configuration is complete. press *Create training*.
 
 ## Managing Trainings
 
