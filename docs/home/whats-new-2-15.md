@@ -17,7 +17,7 @@
 
     For more information see [Workloads](##workloads-view).
 
-<!-- RUN-12313/12314 - CPU focused dashboards - Add to the page dashboard components -->
+<!-- RUN-12313/12314 - CPU focused dashboards -->
 * Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
@@ -45,7 +45,7 @@
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
-<!-- MISSING-INFO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements  - need to review where to put the costing.-->
+<!-- MISSING-INFO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
 * Improved the *Cluster Wizard* form for adding new clusters to your system.
 
 <!-- ADDLINK RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
