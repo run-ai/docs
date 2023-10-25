@@ -35,7 +35,10 @@ To add a training:
 7. In the *Compute resource* pane:
 
        1. Select the number of workers for your training.
-       2. Select computer resources for your training or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       2. Select *Compute resources* for your training or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+
+    !!! Note
+        The number of compute resources for the workers is based on the number of workers selected.
 
 8. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
@@ -46,7 +49,7 @@ To add a training:
        5. Enter the *Container path* for volume target location.
        6. Select a *Volume persistency.
 
-9. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+9.  (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 10. (Optional) In the *General* pane, add special settings for your training (optional):
 
        1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
