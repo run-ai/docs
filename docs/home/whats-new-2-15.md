@@ -40,7 +40,7 @@
 ## Improvements
 
 <!-- ADDLINK RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
-* Improved the readability of the node table to include a more detailed status and its description. For more information, see [Page here](page here)
+* Improved the readability of the node table to include a more detailed status and its description. For more information, see [Node and Node Pool Status](##node-and-node-pool-status)
 
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
