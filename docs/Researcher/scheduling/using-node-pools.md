@@ -75,6 +75,7 @@ To download the Nodes table to a CSV:
 3. Click on the ellipsis labeled *More*, and download the CSV.
 
 To download the Node-Pools table to a CSV:
+
 1. In the *Nodes*, table select *Node Pools*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
