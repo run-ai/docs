@@ -8,9 +8,9 @@ date: 2023-oct-22
 
 # Templates
 
-A template is a pre-set configuration that is used help quickly configure assets in the system.
+A template is a pre-set configuration that is used help quickly configure assets in the system. Using a template allow you to submit a workload based on template which has aggregated all relevant building blocks for your workload.
 
-## Creating Tempplates
+## Creating Templates
 
 To create a template:
 
