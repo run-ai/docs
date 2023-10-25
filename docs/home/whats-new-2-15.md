@@ -17,7 +17,7 @@
 
     For more information see [Workloads](##workloads-view).
 
-<!-- MISSING-INFO RUN-12313/12314 - CPU focused dashboards - Add to the page dashboard components -->
+<!-- RUN-12313/12314 - CPU focused dashboards - Add to the page dashboard components -->
 * Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
@@ -45,10 +45,11 @@
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 
-<!-- TODO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements  - need to review where to put the costing.-->
+<!-- MISSING-INFO RUN-7085/RUN-9480 Installation - Cluster wizard Improvements  - need to review where to put the costing.-->
 * Improved the *Cluster Wizard* form for adding new clusters to your system.
 
-<!-- TODO RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
+<!-- ADDLINK RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
+* Added the ability to configure strict GPU compute time slicing. This gives workloads the exact GPU compute portion based on the requested GPU fraction (GPU Memory Fraction). This creates complete transparency and predictability of the amount of resources (Compute, Memory, etc.) a workload will get from a GPU. For more information, see [GPU Time Slicing](##gpu-time-slicing).
 
 <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->
 * Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
@@ -85,11 +86,7 @@
 <!-- RUN-10451/RUN-10452 Support new Kubernetes and OpenShift releases - Q3/2023-->
 * Updated the compatibility matrix to include supported versions for Kubernetes and OpenShift. For more information, see [Cluster prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes)
 
-<!-- TODO RUN-10602/RUN-10603 GPU Memory Request & Limit-->
-
 --8<-- "home/whats-new-2-14.md:41:43"
-
-<!-- TODO RUN-10663/RUN-10664 - GPU Time Slicing - flexible time slicing with L > R -->
 
 <!-- RUN-11282/RUN-11283 Nodepools enabled by default-->
 * Improvement in node pools which are now enabled by default. There is no need to enable the feature in the settings.
