@@ -33,9 +33,9 @@ gpu-compute-request = gpu-(memory-)fraction
 gpu-compute-limit = 1.0
 ```
 
-The figure below illustrates how **strict** time-slicing mode is using the GPU from Lease (slice) and Plan (cycle) perspective:
+The figure below illustrates how **Strict** time-slicing mode is using the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Strict time-slicing mode](img/fair-time-slicing-mode.png)
+![Strict time-slicing mode](img/strict-time-slicing-mode.png)
 
 The figure below illustrates how **Fair** time-slicing mode is using the GPU from Lease (slice) and Plan (cycle) perspective:
 
