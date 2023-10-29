@@ -60,6 +60,15 @@ To add a new department:
 
 <!-- 4. In *Access control* select a user or application to be department administrator. If there are no users assigned the role of department administrator, see [Assigning Department Administrator role](#assigning-department-administrator-role). -->
 
+### Download Departments Table
+
+You can download the Departments table to a CSV file. Downloading a CSV can provide a snapshot history of your departments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Departments table to a CSV:
+1. Open *Departments*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
+
 ### Assigning Department Administrator role
 
 There are two ways to add *Department Administrator* roles to a department.

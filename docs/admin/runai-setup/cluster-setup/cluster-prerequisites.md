@@ -53,8 +53,8 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
 | Run:ai 2.10    | 1.21 through 1.26 (see note below) | 4.8 through 4.11 |
 | Run:ai 2.12    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
-| Run:ai 2.13    | 1.23 through 1.27 (see note below) | 4.10 through 4.13 |
-| Run:ai 2.15    | 1.25 through 1.27 (see note below) | 4.11 through 4.13 |
+| Run:ai 2.13    | 1.23 through 1.28 (see note below) | 4.10 through 4.13 |
+| Run:ai 2.15    | 1.25 through 1.28 (see note below) | 4.11 through 4.13 |
 
 
 !!! Note
@@ -66,15 +66,12 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy. 
 
-PSA `restricted` policy for Run:ai on OpenShift:
-
-* The `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+For Run:ai on OpenShift to run with PSA `restricted` policy, the `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
 ```
 pod-security.kubernetes.io/audit=privileged
 pod-security.kubernetes.io/enforce=privileged
 pod-security.kubernetes.io/warn=privileged
 ```
-* All Jobs must be marked as `runAsNonRoot` set to `true`. The best practice is to create a Run:ai [policy](../../workloads/policies.md) which adds this property to the Job. 
 
 ### NVIDIA
 
@@ -221,19 +218,27 @@ The following software enables specific features of Run:ai
 
 Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
-* MPI
 * TensorFlow
 * PyTorch
+* XGBoost
+* MPI
 
-To install all three, run the following:
+
+To install the first three, run:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
 ```
 
+To install MPI run:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/deploy/v2beta1/mpi-operator.yaml
+```
+
 ### Inference
 
-To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.12.
 
 Post-install, you must configure Knative to use the Run:ai scheduler and allow pod affinity, by running:
 

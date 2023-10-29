@@ -7,14 +7,13 @@ A node pool is a set of nodes grouped into a bucket of resources using a predefi
 
 ## Enabling Node-Pools
 
-The ‘Node Pools’ feature is disabled by default:
+The *Node Pools* feature is enabled by default:
 
-* To use node pools - enable this feature under `Settings` | `General`. Turn on `Enable Node Pools`.
 * To manage CPU resources - enable this feature under  `Settings` | `General`. Turn on `Enable CPU Resources Quota`.
 
 Once the feature is enabled by the administrator, all nodes in each of your upgraded clusters are associated with the `Default` node pool.
 
-## Creating and using Node-Pools
+## Creating and Using Node-Pools
 
 An administrator creates logical groups of nodes by specifying a unique label (key & value) and associating it with a node pool. Run:ai allows an administrator to use any label key and value as the designated node-pool label (e.g. `gpu-type = A100` or `faculty = computer-science`). Each node pool has a unique name and label used to identify and group nodes into a node pool.
 Once a new node pool is created, it is automatically assigned to all Projects and Departments with a quota of zero GPU resources and CPU resources. This allows any Project and Department to use any node pool when over-quota is enabled, even if the administrator has not assigned a quota for a specific node pool in a Project or Department.
@@ -24,7 +23,7 @@ An administrator should assign resources from a node pool to a project for which
 
 Creating a new node pool and assigning resources from a node pool to Projects and Departments is an operation limited to Administrators only. Researchers can use node pools when submitting a new workload. By specifying the node pool from which a workload allocates resources, the scheduler shell launch that workload on a node that is part of the specified node pool. If no node-pool is selected by a workload, the ‘Default’ node-pool is used.
 
-### Creating new node pools
+### Creating New Node Pools
 
 To create a node pool:
 
@@ -50,6 +49,37 @@ To assign nodes to a node pool:
 !!! Note
     * You can annotate multiple nodes with the same label.
 
+### Node and Node Pool Status
+
+The `Status` column in the *Node* and *Node pools* table enable you to quickly view and diagnose potential issues that you may run into. The following table describes the possible issues you may have with a node or node-pools.
+
+| Status | Description |
+|:-- |:--|
+| Not ready (Disk pressure) | Disk capacity is low. |
+| Not ready (Memory pressure) | Node memory is low. |
+| Not ready (PID pressure) | Too many processes on the node. |
+| Not ready (Network unavailable) | Network is not configured correctly for the node. |
+| Not ready (Scheduling disabled) | Node might be cordoned and marked as unavailable to the scheduler. Remove the cordon to make it available. |
+| Not ready (Undrained migrated node) | Evict all pod to make the node ready. |
+| Not ready (Missing Nvidia Container Toolkit ) | The *NVIDIA Container Toolkit* enables users to build and run GPU-accelerated containers. |
+| Not ready ( Missing Nvidia DCGM Exporter) | DCGM-Exporter allows users to gather GPU metrics and understand workload behavior or monitor GPUs in clusters. |
+
+### Download Node and Node-pools Table
+
+You can download the Node and Node-Pools tables to a CSV file. Downloading a CSV can provide a snapshot history of your node and node-pools over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Nodes table to a CSV:
+
+1. From the left menu, press *Nodes*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
+
+To download the Node-Pools table to a CSV:
+
+1. In the *Nodes*, table select *Node Pools*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
+
 ## Multiple Node Pools Selection
 
 :octicons-versions-24: Version 2.9 and up
@@ -70,7 +100,7 @@ It is a good practice for researchers to use multiple node pools where applicabl
 
 Administrators should set Projects' default node pool priority list' to make sure that in case a workload was scheduled with no node pool selection, it is scheduled to the preferences of the Administrator, and to increase the workload's odds to get scheduled and promptly.
 
-### Common use-cases
+### Common Use Cases
 
 * Training workloads that require specific GPU-type nodes, either because of the scale of parameters (computation time) or for other specific GPU capabilities
 * Inference workloads that require specific GPU-type nodes to comply with constraints such as execution time

@@ -15,6 +15,10 @@ To create an environment:
 
       * `Workspace`
       * `Training`
+5. In the *Supported workload types* pane select either `Single node` or `Multi-node (Distributed)`.
+
+      1. If you selected `Single node`, select `Workspace`, or `Training` or both.
+      2. If you selected `Multi-node (Distributed)`, select a framework from the dropdown, then select `Workspace`, or `Training` or both.
 
 6. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
 
@@ -56,3 +60,13 @@ To create an environment:
             4. Values modification settings.
     
        3. Add linux capabilities.
+
+### Download Environments Table
+
+You can download the Environments table to a CSV file. Downloading a CSV can provide a snapshot history of your environments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Environments table to a CSV:
+
+1. In the left menu, press *Environments*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
