@@ -13,12 +13,7 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 ## Upgrade Run:ai cluster 
 
-
-### Upgrade to version 2.15
-
-The cluster installation has changed in version 2.15 such that no _values file_ ia needed and old customizations do not have to be copied. Hence, simply follow the instructions for [Installing Run:ai](cluster-install.md#install-runai) to install Run:ai.
-
-### Upgrade from version 2.9, 2.10, 2.11 or 2.12 to version 2.13
+### Upgrade from version 2.9 or later
 
 
 Run:

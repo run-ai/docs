@@ -8,12 +8,13 @@ The main view shows a list of Deployments:
 
 ![job-list](img/deployment-list.png)
 
+
 ## Submit a Deployment
-On the top right, you can choose to Submit a new Deployment.
+On the top right, you can choose to Submit a new Deployment. 
 !!! Note
     If [knative is not installed in your cluster](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) the button will be grayed out.
 
-A Deployment form will open:
+A Deployment form will open: 
 
 ![submit-job](img/submit-deployment.png)
 
@@ -26,4 +27,5 @@ When selecting a single Deployment, a right-pane appears:
 
 ![job-properties](img/deployment-properties.png)
 
-This multi-tab view provides information about Deployment details, related Pods, Deployment status history, and various utilization graphs.
+This multi-tab view provides information about Deployment details, related Pods, Deployment status history, and various utilization graphs. 
+

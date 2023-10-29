@@ -20,7 +20,7 @@ Run the helm command below:
 
 === "Airgapped"
     ``` bash
-    helm upgrade -i runai-backend  ./control-plane-<version>.tgz -n runai-backend \ 
+    helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend \ 
         --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ # (1)
         --set global.config.kubernetesDistribution=openshift \
         -f custom-env.yaml  # (2)

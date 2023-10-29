@@ -142,4 +142,4 @@ This documentation outlines the steps required to set up Alertmanager within the
         
            receiver: email
 
-5. Save and exit the editor. The configuration will be automatically reloaded.
+2. Save and exit the editor. The configuration will be automatically reloaded.

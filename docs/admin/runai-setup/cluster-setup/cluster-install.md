@@ -1,32 +1,31 @@
-Below are instructions on how to install a Run:ai cluster. 
-
-## Prerequisites
-Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md). 
+Below are instructions on how to install a Run:ai cluster. Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md). 
 
 
 !!! Important
-    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
+    * We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
+    * Starting version 2.9 you must pre-install  [NGINX ingress controller](cluster-prerequisites.md#ingress-controller)
+    * Starting version 2.9 you must pre-install the [Prometheus stack](cluster-prerequisites.md#prometheus).
 
 ## Install Run:ai
 
 Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
 *   If no clusters are currently configured, you will see a Cluster installation wizard.
-*   If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top left, click `New Cluster`.
+*   If a cluster has already been configured, use the menu on the top left and select "Clusters". On the top right, click "Add New Cluster".
 
-Using the cluster wizard:
+Using the Wizard:
 
-* Choose a name for your cluster.
-* Choose the Run:ai version for the cluster. 
-* Choose a target Kubernetes distribution (see [table](cluster-prerequisites.md#kubernetes) for supported distributions).
-* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
-* Press `Continue`.
+1. Choose a target Kubernetes platform (see table above).
+2. Use the combo box to select your cluster version.
+3. (SaaS and remote self-hosted cluster only) Provide a domain name for your cluster as described [here](cluster-prerequisites.md#cluster-url).
+4. (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain within Kubernetes.
+5. Download a _Helm_ values YAML file ``runai-<cluster-name>.yaml``.
+6. (Optional) customize the values file. See [Customize Cluster Installation](customize-cluster-install.md).
+7. Install [Helm](https://helm.sh/docs/intro/install/). Run:ai requires helm 3.10 or later. 
+8. Run the `helm` commands as provided in the wizard.
 
-On the next page:
-
-* (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
-*  Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
-
+!!! Info
+    To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.
 
 ## Verify your Installation
 
@@ -34,7 +33,7 @@ On the next page:
 * Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 * Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
 
-(assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
+(assumes the [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
 
 Example output:
 
@@ -82,11 +81,7 @@ For a more extensive verification of cluster health, see [Determining the health
 
 ## Researcher Authentication
 
-If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
-
-## Customize your installation
-
-To customize specific aspects of the cluster installation see [customize cluster installation](customize-cluster-install.md).
+You must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
 
 ## (Optional) Set Node Roles
 

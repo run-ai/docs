@@ -9,13 +9,9 @@ Follow the Run:ai SaaS installation network instructions as described [here](../
 
 1. Install Run:ai [prerequisites](../../cluster-setup/cluster-prerequisites.md). Including ingress controller and Prometheus. 
 2. The Cluster should have a dedicated URL with a trusted certificate.
-3. Create a secret in the Run:ai namespace containing the details of a trusted certificate. 
-4. Run the `helm` command as instructed.  
+3. Create a secret in the Run:ai namespace containing the details of a trusted certificate.  
 
-<!---
 Create a new cluster and download a values file. Perform the following changes in the file:
 
-* Under: `spec.global` set `clusterDomain` to the domain name of the new cluster.
-* Under `spec.researcher-service` set `ingress` to `true`.
-
--->
+* Under: `runai-operator.config.global` set `clusterDomain` to the domain name of the new cluster.
+* Under `runai-operator.config.researcher-service` set `ingress` to `true`.

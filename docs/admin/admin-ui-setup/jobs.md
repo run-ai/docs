@@ -1,8 +1,9 @@
 # Viewing and Submitting Jobs
 
+
 The Run:ai User interface Job area allows the viewing of Jobs and Job details. It also allows the Researcher to submit Jobs, suspend and resume Jobs and delete Jobs.
 
-## Job List
+## Job list
 
 The main view shows a list of Jobs. The list can be filtered and sorted:
 
@@ -26,10 +27,6 @@ This multi-tab view provides information about Job details, related Pods, Job st
 
 ![job-logs](img/job-logs.png)
 
-## Other Operations
+## Other operations
 
 You can also delete a selected Job or suspend/resume a selected Job.
-
-## Workloads Toggle
-
-The workloads toggle changes the current *Jobs* view to *Workloads*. For more information, see the [Workloads]() page.
