@@ -94,7 +94,6 @@
 * Improved the *Trainings* and *Workspaces* forms. Now the runtime field for *Commands* and *Arguments* can be edited even after it has inherited it from the environment.
 
 <!-- RUN-11525/RUN-11538 Support Kubernetes non-privileged PSA on project namespaces for Openshift-->
-* Added support for non-privileged PSA on project namespaces for OpenShift environments.
 
 <!-- ADDLINK RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates]().
