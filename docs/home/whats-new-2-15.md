@@ -58,7 +58,6 @@
 * Added support for workload types when creating a new or editing and existing environment. Select from `single-node` or `multi-node (distributed)` workloads. The environment is available only on feature forms which are relevant to the workload type selected.
 
 <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
-* Improved configuration for authentication in the cluster. Configuring the Kubernetes cluster API server for authentication is no longer needed. This applies to environments where end users are using the UI only and not the CLI.
 
 <!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
 * Improved support for KubeFlow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
