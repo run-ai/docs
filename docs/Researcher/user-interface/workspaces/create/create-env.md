@@ -6,7 +6,12 @@ To create an environment:
 2. In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
 3. Enter an *Environment name*.
 4. Enter the image URL path and an image pull policy.
-5. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
+5. In the *Supported workload types* pane select either `Single node` or `Multi-node (Distributed)`.
+
+      1. If you selected `Single node`, select `Workspace`, or `Training` or both.
+      2. If you selected `Multi-node (Distributed)`, select a framework from the dropdown, then select `Workspace`, or `Training` or both.
+
+6. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
 
     Tools can be:
 
@@ -26,7 +31,7 @@ To create an environment:
     * The container image needs to support the tool. 
     * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
 
-6. Configure runtime settings with:
+7. Configure runtime settings with:
 
        1. Commands and arguments&mdash;visible, but not editable in the workspace creation form.
        2. Environment variables&mdash;visible and editable in the workspace creation form.
@@ -35,7 +40,7 @@ To create an environment:
     !!! Note
         The value of an environment variable can remain empty for the researcher to fill in when creating a workspace.
 
-7. Configure the security settings from:
+8. Configure the security settings from:
 
        1. Settings in the image&mdash;security settings that come with the image file. 
        2. Custom settings:
@@ -52,6 +57,7 @@ To create an environment:
 You can download the Environments table to a CSV file. Downloading a CSV can provide a snapshot history of your environments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 To download the Environments table to a CSV:
-1. Open *Environments*.
+
+1. In the left menu, press *Environments*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
