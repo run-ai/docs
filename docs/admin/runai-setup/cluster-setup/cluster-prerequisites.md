@@ -218,14 +218,22 @@ The following software enables specific features of Run:ai
 
 Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
-* MPI
 * TensorFlow
 * PyTorch
+* XGBoost
+* MPI
 
-To install all three, run the following:
+
+To install the first three, run:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+```
+
+To install MPI run:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/deploy/v2beta1/mpi-operator.yaml
 ```
 
 ### Inference
