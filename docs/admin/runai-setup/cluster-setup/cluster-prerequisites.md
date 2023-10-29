@@ -21,7 +21,7 @@ There are also specific [hardware](#hardware-requirements), [operating system](#
 
 ### Operating System
 
-* Run:ai will work on any __Linux__ operating system that is supported by __both__ Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html){target=_blank}.
+* Run:ai will work on any __Linux__ operating system that is supported by __both__ Kubernetes and [NVIDIA](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html#supported-operating-systems-and-kubernetes-platforms){target=_blank}.
 * An important highlight is that GKE (Google Kubernetes Engine) will only work with Ubuntu, as NVIDIA [does not support](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/google-gke.html#about-using-the-operator-with-google-gke) the default _Container-Optimized OS with Containerd_ image.
 * Run:ai performs its internal tests on Ubuntu 20.04 and CoreOS for OpenShift.
 
@@ -53,17 +53,25 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
 | Run:ai 2.10    | 1.21 through 1.26 (see note below) | 4.8 through 4.11 |
 | Run:ai 2.12    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
-| Run:ai 2.13    | 1.23 through 1.27 (see note below) | 4.10 through 4.12 |
+| Run:ai 2.13    | 1.23 through 1.28 (see note below) | 4.10 through 4.13 |
+| Run:ai 2.15    | 1.25 through 1.28 (see note below) | 4.11 through 4.13 |
+
 
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit/#-pvc-new-string). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
 
-
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
-Support for [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} has been removed with Run:ai 2.9.
+#### Pod Security Admission
 
-Run:ai does not currently support [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. When PSA is installed, all Run:ai namespaces as well as project namespaces must be marked as `Privilidged`.
+Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy. 
+
+For Run:ai on OpenShift to run with PSA `restricted` policy, the `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+```
+pod-security.kubernetes.io/audit=privileged
+pod-security.kubernetes.io/enforce=privileged
+pod-security.kubernetes.io/warn=privileged
+```
 
 ### NVIDIA
 
@@ -210,19 +218,27 @@ The following software enables specific features of Run:ai
 
 Run:ai supports three different methods to distributed-training jobs across multiple nodes:
 
-* MPI
 * TensorFlow
 * PyTorch
+* XGBoost
+* MPI
 
-To install all three, run the following:
+
+To install the first three, run:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
 ```
 
+To install MPI run:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/deploy/v2beta1/mpi-operator.yaml
+```
+
 ### Inference
 
-To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.8 with Kubernetes 1.22 or later.  
+To use the Run:ai inference module you must pre-install [Knative Serving](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/){target=_blank}. Follow the instructions [here](https://knative.dev/docs/install/){target=_blank} to install. Run:ai is certified on Knative 1.4 to 1.12.
 
 Post-install, you must configure Knative to use the Run:ai scheduler and allow pod affinity, by running:
 

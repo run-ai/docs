@@ -1,19 +1,30 @@
 # (Optional) Customize Cluster Installation
 
-The Run:ai cluster creation wizard requires the download of a _Helm values file_ `runai-<cluster-name>.yaml`. The file may be edited to customize the cluster installation.
+This document explain how to customize the Run:ai cluster installation
 
+## How to customize
 
-## Configuration Flags
+__After__ the cluster is installed, you can edit the `runaiconfig` object to add/change configuration. Use the command:
+
+```
+kubectl edit runaconfig runai -n runai
+```
+
+All customizations will be saved when upgrading the cluster to a future version. 
+
+## Configurations
 
 |  Key     |  Default  | Description |
 |----------|----------|-------------| 
-| `runai-operator.config.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects | 
-| `runai-operator.config.project-controller.clusterWideSecret` | `true` | Set to `false` when using PodSecurityPolicy or OpenShift | 
-| `runai-operator.config.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
-| `runai-operator.config.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu | 
-| `runai-operator.config.global.nvidiaDcgmExporter.namespace` | `gpu-operator` | The namespace where dcgm-exporter (or gpu-operator) was installed |
-| `runai-operator.config.global.nvidiaDcgmExporter.installedFromGpuOperator` | `true` | Indicated whether the dcgm-exporter was installed via gpu-operator or not |
-
+| `spec.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects as described [below](#manual-creation-of-namespaces) | 
+| `spec.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../workloads/secrets.md#secrets-and-projects) will not be available | 
+| `spec.mps-server.enabled` | `false` | Set to `true` to allow the use of __NVIDIA MPS__. MPS is useful with _Inference_ workloads  | 
+| `spec.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu |
+| `spec.global.subdomainSupport` | `false` | Set to true to allow researcher tools with a sub domain to be spawned from the Run:ai user interface. For more information see [External access to containers](../config//allow-external-access-to-containers.md#workspaces-configuration) |  
+| `spec.global.schedulingservices` <br>  `spec.global.syncServices`<br>  `spec.global.workloadServices` |  | Set requests and limit configurations for CPU and memory for Run:ai containers. For more information see [Large cluster configuration](../config/large-clusters.md) |
+| `spec.runai-container-toolkit.enabled` | `true` | Controls the usage of [GPU fractions](../../../Researcher/scheduling/fractions.md). | 
+| `spec.researcherService.ingress.tlsSecret` |  | On Kubernetes distributions other than OpenShift, set a dedicated certificate for the researcher service ingress in the cluster. When not set, the certificate inserted when installing the cluster will be used. The value should be a Kubernetes secret  in the runai namespace |
+| `spec.researcherService.route.tlsSecret` |  | On OpenShift, set a dedicated certificate for the researcher service route. When not set, the OpenShift certificate will be used.  The value should be a Kubernetes secret  in the runai namespace |
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
 

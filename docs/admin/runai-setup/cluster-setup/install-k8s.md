@@ -2,8 +2,7 @@
 
 Kubernetes is composed of master(s) and workers. The instructions and script below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
-
-## Prerequisites:
+## Prerequisites
 
 * The script below assumes all machines have Ubuntu 18.04 or later. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 * The script must be run with ROOT privileges.
@@ -11,12 +10,15 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 * The script support Kubernetes 1.24 or later.
 
 ## Install Kubernetes
+
 ### Install Kubernetes Master
 
-* Get the script by running: 
+* Get the script by running:
+  
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
 ```
+
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes master_.
 * Select the Kubernetes version you want or press `Enter` for the default script version. 
@@ -39,10 +41,12 @@ Verify that the master node is ready
 
 On each designated worker node:
 
-* Get the script by running: 
+* Get the script by running:
+  
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
 ```
+
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _install Kubernetes worker_.
 * Select the Kubernetes version you want or press `Enter` for the default script version. The version should be the same as the one selected for the Kubernetes master. 
@@ -72,10 +76,12 @@ The administrative Kubernetes profile can be found in the master node under the 
 
 The same script also contains an option to completely remove Kubernetes from nodes (master or workers). To use, run: 
 
-* Get the script by running: 
+* Get the script by running:
+
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.13/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
 ```
+
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
 * When prompted, select the option to _reset/delete kubernetes_.
 * Select yes when prompted to reset the cluster and remove Kubernetes packages.

@@ -128,7 +128,6 @@ spec:
   name:
     value: job-1 # 
 ```
-
 In order to suspend the workload, set `active` to `false`.
 To resume the workload, either set `active` to `true` or remove it entirely.
 
