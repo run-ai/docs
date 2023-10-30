@@ -74,14 +74,17 @@ A *Scope* is an organizational component which accessible based on assigned role
 
 ### RBAC enforcement
 
-RBAC ensures that user have access to system assets based on the access rules that are applied to those assets. <!-- Not sure I understand the sentense that start after this comment and the reason it was added. What is the point we are trying to make or action that we expect the user to take? --> Should an asset be part of a larger scope of assets to which the user does not have access. The scope shown to the user will appear to be incomplete because the user is able to access **only** the assets to which they are authorized.
+RBAC ensures that user have access to system assets based on the access rules that are applied to those assets. 
 <!-- we should add (around here) how to create users ang groups - local user & sso user. As local users need to be created and all the rest just need access rules. In addition we need an explanation of which users are shown in the user grid and under which conndition -->
+For more information on adding access rules to users (local SSO) and groups (SSO), see [](admin/admin-ui-setup/admin-ui-users/#assigning-access-rules-to-users).
 ## Access rules
 
 An *Access rule* is the assignment of a *Role* to a *Subject* in a *Scope*. *Access rules* are expressed as follows:
 
 `<subject> is a <role> in a <scope>`.
-<!-- it is important to state that a single subject can have multiple access rules and that the overall permissions of this subject are derived from the sum of all its access rules. A little stating the obvious, but important -->
+
+!!! Note
+    A single subject can have multiple access rules. The overall permissions of the subject are derived from the sum of all its access rules.
 
 **For example**:  
 User **user@domain.com** is a **department admin** in **Department A**.
