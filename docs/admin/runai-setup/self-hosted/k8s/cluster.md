@@ -23,7 +23,7 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
     * Instead, edit the `helm upgrade` command. Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`. The command should look like the following:
 
     ```
-    helm upgrade -i runai-cluster-<version>.tgz -n runai \
+    helm upgrade -i runai-cluster runai-cluster-<version>.tgz -n runai \
       --set controlPlane.url...
     ```
 
