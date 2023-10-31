@@ -23,6 +23,9 @@
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
+<!-- ADDLINK RUN-10602/RUN-10603 - GPU Memory Request & Limit -->
+* Added the ability to use Dynamic GPU fractions. This allows a workload to request a certain amount of guaranteed GPU memory fraction, and at the same time also request to grow beyond that guaranteed memory fraction more is available. This allows a workload to request a certain amount of guaranteed GPU fraction processing, and at the same time also request to grow beyond that guaranteed fraction if more is available. For more information, see [Dynamic GPU fractions](#dynamic-gpu-fractions).
+
 --8<-- "home/whats-new-2-14.md:6:8"
 <!-- TODO change RBAC table based on ticket RUN-12576>
 
