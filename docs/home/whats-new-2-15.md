@@ -24,6 +24,7 @@
 * Added the ability to prevent the submission of workloads that use data sources that consists of a host path using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](##prevent-data-storage-on-the-node).
 
 --8<-- "home/whats-new-2-14.md:6:8"
+<!-- TODO change RBAC table based on ticket RUN-12576>
 
 --8<-- "home/whats-new-2-14.md:15:16"
 
