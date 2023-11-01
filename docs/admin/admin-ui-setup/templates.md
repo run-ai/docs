@@ -6,7 +6,8 @@ authors:
 date: 2023-oct-22
 ---
 
-A template is a pre-set configuration that is used help quickly configure assets in the system. Using a template allow you to submit a workload based on template which has aggregated all relevant building blocks for your workload.
+A template is a pre-set configuration that is used to quickly configure and submit workloads using existing assets.
+A template consists of all the assets a workload needs, allowing researchers to submit a workload in a single click, or make subtle adjustments to differentiate them from each other.
 
 ## Creating Templates
 
@@ -14,7 +15,7 @@ To create a template:
 
 1. In the left menu, press *Templates*, then press *New Template*.
 2. In the *Scope* pane, select a *Scope*.
-3. In the *Template name* pane, enter a name.
+4. In the *Environment* pane, select an environment from the list. Use the *Search environments* if you do not see your environment listed. Press *New environment* to add a new environment to the system. Press *More settings* to edit or add an `Environment variable`, or to edit the *Command* and *Arguments* field for the environment you selected.
 4. In the *Environment* pane, select an environment from the list. Use the *Search environments* if you do not see your environment listed. Press *New environment* to add a new environment to the system. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
 5. In the *Compute resource* pane, select a compute resource. Use the *Search compute resources* if you do not see your resource listed. Press *New compute resource* to add a new compute resource to the system. Press *More settings* to add a node type (node affinity) to the compute resource selected.
 6. (Optional) In the *Volume* pane, press *+volume* to add a new volume to the template.
