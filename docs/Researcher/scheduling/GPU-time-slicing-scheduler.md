@@ -28,8 +28,6 @@ gpu-compute-request = gpu-compute-limit = gpu-(memory-)fraction
 ```
 gpu-compute-request = gpu-(memory-)fraction
 
- or
-
 gpu-compute-limit = 1.0
 ```
 
