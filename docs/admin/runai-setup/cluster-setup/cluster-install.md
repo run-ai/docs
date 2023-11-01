@@ -82,7 +82,7 @@ For a more extensive verification of cluster health, see [Determining the health
 
 ## Researcher Authentication
 
-You must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
+If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
 
 ## Customize your installation
 
