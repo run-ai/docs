@@ -4,15 +4,15 @@ Credentials are used to unlock protected resources such as applications, contain
 
 The *Credentials* manager in the Run:ai environment supports 4 types of credentials:
 
-1. Docker registry.
-2. Access key.
-3. User name and password.
+1. [Docker registry](#docker-registry)
+2. [Access key](#access-key)
+3. [User name and password](#username-and-password)
 <!-- 4. [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret){target=_blank}.
 -->
 
 ## Secrets
 
-Credentials are built using `Secrets`. A `Secret` is an object that contains a small amount of sensitive data so that you don't need to include confidential data in your application code. When creating a credential you can either **create a new secret** or use an [existing secret](#existing-secrets).
+Credentials are built using `Secrets`. A `Secret` is an object that contains a small amount of sensitive data so that you don't need to include confidential data in your application code. When creating a credential you can either [create a new secret](#configuring-credentials) or use an [existing secret](#existing-secrets).
 
 ### Existing secrets
 
@@ -24,6 +24,14 @@ The following command makes the secret available to all projects in the cluster.
 ```console
 kubectl label secret -n runai <SECRET_NAME> run.ai/cluster-wide-credentials=true
 ```
+
+The following command makes the secret available to the entire scope of a department.
+
+```console
+kubectl label secret -n runai <SECRET_NAME> run.ai/resource=<credential_type> run.ai/department=<department-id>
+```
+
+`credential_type` is one of the following: `password` / `access-key` / `docker-image`
 
 The following command makes the secret available to a specific project in the cluster.
 
@@ -47,7 +55,7 @@ To configure *Credentials*:
 1. Press `Credentials` in the left menu.
 2. Press `New Credential` and select one from the list.
 
-If you select the `Docker registry` credential:
+### `Docker registry`
 
 1. Select a `Scope` for the credential.
 2. In the `Credential name` field, enter a name for the credential.
@@ -62,7 +70,7 @@ If you select the `Docker registry` credential:
 
 4. Enter a URL for the docker registry, then press `Create credential` to create the credential.
 
-If you select the `Access key` credential:
+### `Access key`
 
 1. Select a `Scope` for the credential.
 2. In the `Credential name` field, enter a name for the credential.
@@ -77,7 +85,7 @@ If you select the `Access key` credential:
 
 4. Press `Create credential` to create the credential.
 
-If you select the `Username and password` credential:
+### `Username and password`
 
 1. Select a `Scope` for the credential.
 2. In the `Credential name` field, enter a name for the credential.
