@@ -1,4 +1,11 @@
-# Working with a Local Certificate Authority
+---
+title: # Working with a Local Certificate Authority
+summary: This article describes how to use a certificate in an air gapped system.
+authors:
+    - Jason Novich
+    - Yaron Goldberg
+date: 2023-1-Nov
+---
 
 Run:ai can be installed in an isolated network. In this [air-gapped](../installation-types.md#self-hosted-installation) configuration, the organization will not be using an established [root certificate authority](https://csrc.nist.gov/glossary/term/root_certificate_authority){target=_blank}. Instead, the organization creates a local certificate which serves as the root certificate for the organization. The certificate is installed in all browsers within the organization. 
 
