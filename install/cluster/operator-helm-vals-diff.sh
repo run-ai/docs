@@ -111,7 +111,12 @@ cross_platform_sed(){
 }
 
 grab_current_values_file(){
-    helm get values runai-operator -n runai > "$1"
+    local helm_name=runai-cluster
+    if helm list -n runai | grep -cq runai-operator; then
+        helm_name=runai-operator
+    fi
+
+    helm get values ${helm_name} -n runai > "$1"
     # verify file was grabbed successfully
     if ! grep -c -q 'USER-SUPPLIED VALUES:' $tmp_current_values_file ; then
         echo "failed grabbing values from the cluster"
