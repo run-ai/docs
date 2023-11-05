@@ -51,7 +51,8 @@ Entities&mdash;granular parts of the pltform that can be controled separately.
 
 
 !!!Note
-
+<!-- These notes refer to behavior changes, which is good, but they do not give the context. The context should be general enough so it is valid also if a customer upgrades from a version earlier than 2.14 to any future version. Something like: When upgrading Run:ai control plane from version 2.13 or earlier to version 2.14 or later. Currently the context is missing -->
+Keep in mind the following when upgrading from versionn 2.13 or earlier:
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
     3. To preserve backward compatibility, users with the role of *Research Manager* are assigned to all current projects, but not to new projects.
@@ -73,13 +74,17 @@ A *Scope* is an organizational component which accessible based on assigned role
 
 ### RBAC enforcement
 
-RBAC ensures that user have access to system assets based on the rules that are applied to those assets. Should an asset be part of a larger scope of assets to which the user does not have access. The scope shown to the user will appear to be incomplete because the user is able to access **only** the assets to which they are authorized.
-
+RBAC ensures that user have access to system assets based on the access rules that are applied to those assets. 
+<!-- we should add (around here) how to create users ang groups - local user & sso user. As local users need to be created and all the rest just need access rules. In addition we need an explanation of which users are shown in the user grid and under which conndition -->
+For more information on adding access rules to users (local SSO) and groups (SSO), see [](admin/admin-ui-setup/admin-ui-users/#assigning-access-rules-to-users).
 ## Access rules
 
 An *Access rule* is the assignment of a *Role* to a *Subject* in a *Scope*. *Access rules* are expressed as follows:
 
 `<subject> is a <role> in a <scope>`.
+
+!!! Note
+    A single subject can have multiple access rules. The overall permissions of the subject are derived from the sum of all its access rules.
 
 **For example**:  
 User **user@domain.com** is a **department admin** in **Department A**.
