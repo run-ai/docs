@@ -1,6 +1,6 @@
 # Role based access control
 
-User authorization to system resources and assets is managed using [Role-based access control(RBAC)](https://en.wikipedia.org/wiki/Role-based_access_control){target=_blank}. RBAC is a policy-neutral access control mechanism defined around roles and privileges. The components of RBAC make it simple to manage access to system resources and assets.
+User authorization to system resources and assets is managed using [Role-based access control (RBAC)](https://en.wikipedia.org/wiki/Role-based_access_control){target=_blank}. RBAC is a policy-neutral access control mechanism defined around roles and privileges. The components of RBAC make it simple to manage access to system resources and assets.
 
 ## RBAC components
 
@@ -46,7 +46,8 @@ A role is a combination of entities and actions. Run:ai supports the following r
 
 Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
 
-!!!Note
+!!! Note
+    Keep the following in mind when upgrading from versions 2.13 or earlier:
 
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
@@ -101,7 +102,7 @@ To create a new access rule:
 5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *Save rule* when done.
 
 !!! Note
-    You cannot edit *Access rules*. To change an *Access rule*, you need to delete the rule, create a new rule to replace it. You can also add multiple rules for the same user.
+    You cannot edit *Access rules*. To change an *Access rule*, you need to delete the rule, then create a new rule to replace it. You can also add multiple rules for the same user.
 
 To delete a rule:
 
