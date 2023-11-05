@@ -18,7 +18,8 @@ title: Upgrade self-hosted Kubernetes installation
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 
-## Specific version instructions
+## Upgrade Control Plane
+
 ### Upgrade from Version 2.7 or 2.8
 
 Before upgrading the control plane, run: 
@@ -78,7 +79,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
-#### Upgrade Control Plane
+### Upgrade Control Plane
 
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
