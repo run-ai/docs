@@ -87,12 +87,4 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 ## Upgrade Cluster 
 
-=== "Connected"
-    To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
-
-=== "Airgapped"
-    ```
-    helm get values runai-cluster -n runai > values.yaml
-    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
-    ```
-    (replace `<version>` with the cluster version)
+To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
