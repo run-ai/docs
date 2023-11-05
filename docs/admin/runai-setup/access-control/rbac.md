@@ -52,7 +52,7 @@ Entities&mdash;granular parts of the pltform that can be controled separately.
 
 !!!Note
 <!-- These notes refer to behavior changes, which is good, but they do not give the context. The context should be general enough so it is valid also if a customer upgrades from a version earlier than 2.14 to any future version. Something like: When upgrading Run:ai control plane from version 2.13 or earlier to version 2.14 or later. Currently the context is missing -->
-
+Keep in mind the following when upgrading from versionn 2.13 or earlier:
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
     3. To preserve backward compatibility, users with the role of *Research Manager* are assigned to all current projects, but not to new projects.
