@@ -1,6 +1,6 @@
 # Training Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+The following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
 
 ``` YAML
 KIND:     TrainingWorkload
@@ -12,6 +12,10 @@ DESCRIPTION:
      The specifications of this TrainingWorkload
 
 FIELDS:
+   active	<Object>
+     kubebuilder:default:={value: true} Specifies whether the workload should be
+     active or suspended.
+
    allowPrivilegeEscalation	<Object>
      Allow the container running the workload and all launched processes to gain
      additional privileges after the workload starts. For more information see
@@ -192,7 +196,7 @@ FIELDS:
      https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -206,6 +210,9 @@ FIELDS:
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
+
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
 
    processes	<Object>
      Number of distributed training processes that will be allocated for the
@@ -253,6 +260,10 @@ FIELDS:
    supplementalGroups	<Object>
      ';' separated list of supplemental group IDs. Will be added to the security
      context of the container running the created workload.
+
+   terminateAfterPreemption	<Object>
+     Indicates whether the job should be terminated, by the system, after it has
+     been preempted. Default to false.
 
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration

@@ -1,6 +1,6 @@
 # Distributed Training Workload Parameters
 
-Following is a full list of all distributed workload parameters. The text below is equivalent to running `kubectl explain distributedworkload.spec`. You can also run `kubectl explain distributedworkload.spec.<parameter-name>` to see the description of a specific parameter.
+The following is a full list of all distributed workload parameters. The text below is equivalent to running `kubectl explain distributedworkload.spec`. You can also run `kubectl explain distributedworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     DistributedWorkload
@@ -114,7 +114,7 @@ FIELDS:
      This field is for internal use only.
 
    jobType	<string>
-     The type of distributed job
+     The type of distributed job.
 
    labels	<Object>
      Specifies labels to be set in the container running the created workload.
@@ -146,7 +146,7 @@ FIELDS:
      subdirectories.
 
    mpiJob	<Object>
-     Specific fields for distributed MPI Job
+     Specific fields for distributed MPI Job.
 
    name	<Object>
      The specific name of the created resource. Either name of namePrefix should
@@ -155,6 +155,9 @@ FIELDS:
    namePrefix	<Object>
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
+
+   noMaster	<Object>
+     Request the job not to have a master pod.
 
    nodePool	<Object>
      Specifies the NodePool name to be used to schedule this job on - DEPRECATED
@@ -175,10 +178,10 @@ FIELDS:
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
    nonPreemptible	<Object>
-     Request the job to be non-preemptible
+     Request the job to be non-preemptible.
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -193,12 +196,15 @@ FIELDS:
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
 
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
+
    pvcs	<Object>
      Specifies persistent volume claims to mount into a container running the
      created workload.
 
    pyTorchJob	<Object>
-     Specific fields for distributed PyTorch Job
+     Specific fields for distributed PyTorch Job.
 
    runAsGid	<Object>
      Specifies the Unix group id with which the container should run. Will be
@@ -219,7 +225,7 @@ FIELDS:
      at https://docs.run.ai/admin/runai-setup/config/non-root-containers/
 
    runPolicy	<Object>
-     RunPolicy is shared between all distributed jobs
+     RunPolicy is shared between all distributed jobs.
 
    s3	<Object>
      Specifies S3 buckets to mount into the container running the workload

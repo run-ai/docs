@@ -1,8 +1,8 @@
 # Inference Workload Parameters
 
-Following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter.
+The following is a full list of all inference workload parameters. The text below is equivalent to running `kubectl explain inferenceworkload.spec`. You can also run `kubectl explain inferenceworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
-``` YAML
+```yml
 KIND:     InferenceWorkload
 VERSION:  run.ai/v2alpha1
 
@@ -156,6 +156,8 @@ FIELDS:
      receive all subsequent mounts that are mounted to this volume or any of its
      subdirectories.
 
+   mps	<Object>
+
    name	<Object>
      The specific name of the created resource. Either name of namePrefix should
      be provided, but not both.
@@ -183,7 +185,7 @@ FIELDS:
      https://docs.run.ai/admin/admin-ui-setup/project-setup.
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -197,6 +199,9 @@ FIELDS:
    ports	<Object>
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
+
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
 
    pvcs	<Object>
      Specifies persistent volume claims to mount into a container running the
@@ -270,5 +275,4 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
-
 ```
