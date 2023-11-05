@@ -1,6 +1,6 @@
 # Training Workload Parameters
 
-Following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter. 
+The following is a full list of all training workload parameters. The text below is equivalent to running `kubectl explain trainingworkload.spec`. You can also run `kubectl explain trainingworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     TrainingWorkload
@@ -12,6 +12,10 @@ DESCRIPTION:
      The specifications of this TrainingWorkload
 
 FIELDS:
+   active	<Object>
+     kubebuilder:default:={value: true} Specifies whether the workload should be
+     active or suspended.
+
    allowPrivilegeEscalation	<Object>
      Allow the container running the workload and all launched processes to gain
      additional privileges after the workload starts. For more information see
@@ -25,6 +29,14 @@ FIELDS:
    arguments	<Object>
      When set,contains the arguments sent along with the command. These override
      the entry point of the image in the created workload.
+
+   autoDeletionTimeAfterCompletionSeconds	<Object>
+     Specifies the duration after which it is possible for a finished workload
+     to be automatically deleted. When the workload is being deleted, its
+     lifecycle guarantees (e.g. finalizers) will be honored. If this field is
+     unset, the workload won't be automatically deleted. If this field is set to
+     zero, the workload becomes eligible to be deleted immediately after it
+     finishes.
 
    backoffLimit	<Object>
      Specifies the number of retries before marking a workload as failed.
@@ -165,6 +177,10 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
+   nfs	<Object>
+     Specifies nfs volumes to mount into a container running the created
+     workload.
+
    nodePool	<Object>
      Specifies the NodePool name to be used to schedule this job on - DEPRECATED
      use NodePools instead
@@ -192,7 +208,7 @@ FIELDS:
      https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -207,6 +223,9 @@ FIELDS:
      Specifies a set of ports exposed from the container running the created
      workload. Used together with --service-type.
 
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
+
    processes	<Object>
      Number of distributed training processes that will be allocated for the
      created mpijob.
@@ -218,6 +237,12 @@ FIELDS:
    runAsGid	<Object>
      Specifies the Unix group id with which the container should run. Will be
      used only if runAsUser is set to true.
+
+   runAsNonRoot	<Object>
+     Indicates that the container must run as a non-root user. If true, the
+     Kubelet will validate the image at runtime to ensure that it does not run
+     as UID 0 (root) and fail to start the container if it does. If unset or
+     false, no such validation will be performed.
 
    runAsUid	<Object>
      Specifies the Unix user id with which the container running the created
@@ -235,6 +260,12 @@ FIELDS:
 
    s3	<Object>
      Specifies S3 buckets to mount into the container running the workload
+
+   seccompProfileType	<Object>
+     Indicates which kind of seccomp profile will be applied to the container.
+     Valid options are: RuntimeDefault - the container runtime default profile
+     should be used. Unconfined - no profile should be applied. Localhost is not
+     yet supported by Run:ai.
 
    serviceType	<Object>
      Specifies the default service exposure method for ports. The default shall
@@ -254,20 +285,15 @@ FIELDS:
      ';' separated list of supplemental group IDs. Will be added to the security
      context of the container running the created workload.
 
+   terminateAfterPreemption	<Object>
+     Indicates whether the job should be terminated, by the system, after it has
+     been preempted. Default to false.
+
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration
      rules guide (but do not require) the system to which node each pod can be
      scheduled to or evicted from, based on matching between those rules and the
      set of taints defined for each Kubernetes node.
-
-   ttlAfterFinish	<Object>
-     Specifies the duration after which it is possible for a finished workload
-     to be automatically deleted. When the workload is being deleted, its
-     lifecycle guarantees (e.g. finalizers) will be honored. If this field is
-     unset, the workload won't be automatically deleted. If this field is set to
-     zero, the workload becomes eligible to be deleted immediately after it
-     finishes. This field is alpha-level and is only honored by servers that
-     enable the TTLAfterFinished feature.
 
    tty	<Object>
      Instructs the system to allocate a pseudo-TTY for the created workload.
