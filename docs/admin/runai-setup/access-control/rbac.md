@@ -47,7 +47,7 @@ A role is a combination of entities and actions. Run:ai supports the following r
 Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
 
 !!! Note
-    Keep in mind the following when upgrading from versions 2.13 or earlier:
+    Keep the following in mind when upgrading from versions 2.13 or earlier:
 
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
