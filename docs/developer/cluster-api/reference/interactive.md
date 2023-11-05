@@ -1,6 +1,6 @@
 # Interactive Workload Parameters
 
-Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter.
+The following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     InteractiveWorkload
@@ -12,6 +12,10 @@ DESCRIPTION:
      The specifications of this InteractiveWorkload
 
 FIELDS:
+   active	<Object>
+     kubebuilder:default:={value: true} Specifies whether the workload should be
+     active or suspended.
+
    allowPrivilegeEscalation	<Object>
      Allow the container running the workload and all launched processes to gain
      additional privileges after the workload starts. For more information see
@@ -181,7 +185,7 @@ FIELDS:
      https://jupyter-notebook.readthedocs.io/en/stable/security.html
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -200,6 +204,9 @@ FIELDS:
      Specifies that the created workload will be preemptible. Interactive
      preemptible workloads can be scheduled above the guaranteed quota but may
      be reclaimed at any time.
+
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
 
    processes	<Object>
      Number of distributed training processes that will be allocated for the
@@ -255,6 +262,10 @@ FIELDS:
    tensorboardLogdir	<Object>
      The TensorBoard Logs directory
 
+   terminateAfterPreemption	<Object>
+     Indicates whether the job should be terminated, by the system, after it has
+     been preempted. Default to false.
+
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration
      rules guide (but do not require) the system to which node each pod can be
@@ -284,6 +295,4 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
-
-
 ```
