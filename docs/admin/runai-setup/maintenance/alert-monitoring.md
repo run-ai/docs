@@ -16,7 +16,7 @@ This documentation outlines the steps required to set up Alertmanager within the
 
 1. Verify that the Prometheus Operator deployment is running:
 
-       `kubectl get deployment prometheus-operator -n runai`
+       `kubectl get deployment kube-prometheus-stack-operator -n monitoring`
     
        You should see output indicating the deployment's status, including the number of replicas and their current state.
 
@@ -27,22 +27,10 @@ This documentation outlines the steps required to set up Alertmanager within the
        You should see the Prometheus instance(s) listed along with their status.
 
 ## Enabling Alertmanager
+In each of the steps in this section, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f`.
 
-1. Create an `AlertmanagerConfig` file that triggers alerts on Run.ai events:
+1. Create the Alertmanager CustomResource to enable Alertmanager:
 
-        cat <<EOF | kubectl apply -f 
-        apiVersion: monitoring.coreos.com/v1alpha1
-        kind: AlertmanagerConfig
-        metadata:
-           name: runai
-           namespace: runai
-           labels:
-              alertmanagerConfig: runai
-        EOF
-
-2. Create the Alertmanager CustomResource to enable Alertmanager:
-
-        cat <<EOF | kubectl apply -f - 
         apiVersion: monitoring.coreos.com/v1
         kind: Alertmanager
         metadata:
@@ -53,27 +41,14 @@ This documentation outlines the steps required to set up Alertmanager within the
            alertmanagerConfigSelector:
               matchLabels:
                  alertmanagerConfig: runai
-        EOF
 
-3. Exposing the Alertmanager Service
+2. Validate that your alertmanager instance has started:
 
-        cat <<EOF | kubectl apply -f - 
-        apiVersion: v1
-        kind: Service
-        metadata:
-           name: alertmanager-runai
-           namespace: runai
-        spec:
-           type: NodePort
-           ports:
-           - name: web
-              nodePort: 30903
-              port: 9093
-              protocol: TCP
-              targetPort: web
-           selector:
-              alertmanager: runai
-        EOF
+        kubectl get alertmanager -n runai
+
+3. Validate that the prometheus operator has created a service for alertmanager:
+
+         kubectl get svc alertmanager-operated -n runai
 
 ## Configuring Prometheus to Send Alerts
 
@@ -81,65 +56,67 @@ This documentation outlines the steps required to set up Alertmanager within the
 
       `kubectl edit prometheus runai -n runai`
 
-2. Add the following to the `alerting` section:
+2. Add the following to the `spec.alerting` section:
 
         alerting:
            alertmanagers:
               - namespace: runai
-                name: alertmanager-runai
+                name: alertmanager-operated
                 port: web
 
 3. Save and exit the editor. The configuration will be automatically reloaded.
 
 ## Configuring Alertmanager for Custom Email Alerts
+In each step, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f`.
 
 1. Add your smtp password as a secret:
 
-        cat <<EOF | kubectl apply -f 
         apiVersion: v1
         kind: Secret
         metadata:
-           name: smtp-password
+           name: alertmanager-smtp-password
            namespace: runai
         stringData:
            password: "your_smtp_password"
-        EOF
 
-2. Edit the Alertmanager configuration:
+2.   Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply`. Check for indentation issues before applying.
 
-       `kubectl edit alertmanagerconfig -n runai`
+         apiVersion: monitoring.coreos.com/v1alpha1
+         kind: AlertmanagerConfig
+         metadata:
+           name: runai
+           namespace: runai
+         labels:
+            alertmanagerConfig: runai
+         spec:
+            route:
+               continue: true
+               groupBy: 
+               - alertname
+            
+               groupWait: 30s
+               groupInterval: 5m
+               repeatInterval: 1h
 
-3. Add to the `spec` section, a new receiver configuration to send alerts via email:
+            matchers:
+            - matchType: =~
+              name: alertname
+              value: Runai.*
 
-        receivers:
-        - name: 'email'
+            receiver: email
+         
+         receivers:
+         - name: 'email'
            emailConfigs:
-           - to: 'your_email@example.com'
-              from: 'alertmanager@example.com'
-              smarthost: 'smtp.yourmailprovider.com:587'
-              authUsername: 'your_username'
-              authPassword:
-              name: smtp-password
-              key: password
+           - to: '<destination_email_address>'
+             from: '<from_email_address>'
+             smarthost: 'smtp.gmail.com:587'
+             authUsername: '<smtp_server_user_name>'
+             authPassword:
+               name: alertmanager-smtp-password
+               key: password
 
     !!! Note
         Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
 
-4. Add to the `spec` section, a new route that forwards Run.ai alerts to the mail receiver:
-
-        route:
-           continue: true
-           groupBy: 
-           - alertname
-             groupWait: 30s
-             groupInterval: 5m
-             repeatInterval: 1h
-           
-           matchers:
-           - matchType: =~
-             name: alertname
-             value: Runai.*
-        
-           receiver: email
-
-2. Save and exit the editor. The configuration will be automatically reloaded.
+3. Save and exit the editor. The configuration will automatically be reloaded.
