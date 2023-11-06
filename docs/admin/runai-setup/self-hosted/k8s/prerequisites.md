@@ -88,6 +88,7 @@ The Run:ai control plane requires a domain name (FQDN). You must supply a domain
 
 * When installing the first Run:ai cluster on the same Kubernetes cluster as the control plane, the Run:ai cluster URL will be the same as the control-plane URL.
 * When installing the Run:ai cluster on a separate Kubernetes cluster, follow the Run:ai [domain name](../../cluster-setup/cluster-prerequisites.md#cluster-url) requirements. 
+* If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../config/org-cert.md).
 
 ## Installer Machine
 
