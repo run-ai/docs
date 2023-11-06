@@ -214,6 +214,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 ## Optional Software Requirements
 
 The following software enables specific features of Run:ai
+
 ### Distributed Training
 
 Run:ai supports three different methods to distributed-training jobs across multiple nodes:
@@ -224,13 +225,12 @@ Run:ai supports three different methods to distributed-training jobs across mult
 * MPI
 
 
-To install the first three, run:
+To install the first three, install the _Kubeflow Training Operator_. Run:ai support version 1.5 and up:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
 ```
-
-To install MPI run:
+The training operator includes MPI 1.0 which is __not__ supported by Run:ai. Run:ai supports MPI v2beta1 and up. To install MPI v2beta1 run:
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/deploy/v2beta1/mpi-operator.yaml
