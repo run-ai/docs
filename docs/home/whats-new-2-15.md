@@ -29,6 +29,12 @@
 <!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 * Added the ability to configure strict GPU compute time slicing. This gives workloads the exact GPU compute portion based on the requested GPU fraction (GPU Memory Fraction). This creates complete transparency and predictability of the amount of resources (Compute, Memory, etc.) a workload will get from a GPU. For more information, see [GPU Time Slicing](../Researcher/scheduling/GPU-time-slicing-scheduler.md).
 
+<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
+* New cluster wizard for adding and installing new clusters to your system.
+  
+* New cluster installation. The new installation no longer requires downloading and customizing a *values file*. Cluster configurations are preserved during upgrade and are performed using the `runaiconfig` file which creates a separation between installation related flags and cluster customization flags. For more information, see [Customize cluster installation.](../admin/runai-setup/cluster-setup/customize-cluster-install.md).
+
+
 --8<-- "home/whats-new-2-14.md:6:8"
 
 --8<-- "home/whats-new-2-14.md:15:16"
@@ -50,9 +56,6 @@
 
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
-
-<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
-* Improved the *Cluster Wizard* form for adding new clusters to your system. There is no need for a values file and converted to be used with a helm command. Cluster configurations are preserved during upgrade and are performed using the `runaiconfig` file which create a separation between installation related flags and cluster customization flags. For more information, see [Customize cluster installation.](../admin/runai-setup/cluster-setup/customize-cluster-install.md)
 
 <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->
 * Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
