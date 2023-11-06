@@ -217,24 +217,38 @@ The following software enables specific features of Run:ai
 
 ### Distributed Training
 
-Run:ai supports three different methods to distributed-training jobs across multiple nodes:
+
+Distributed training allows the Researcher to train models over multiple nodes. Run:ai supports the following distributed training frameworks:
 
 * TensorFlow
 * PyTorch
 * XGBoost
 * MPI
 
-
-To install the first three, install the _Kubeflow Training Operator_. Run:ai support version 1.5 and up:
+All are part of the _Kubeflow Training Operator_. Run:ai supports Training Operator version 1.5 and up. To install run:
 
 ```
 kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
 ```
-The training operator includes MPI 1.0 which is __not__ supported by Run:ai. Run:ai supports MPI v2beta1 and up. To install MPI v2beta1 run:
+
+The Kuberflow Training Operator is packaged with MPI version 1.0 which is __not__ supported by Run:ai. You need to separately install MPI v2beta1:
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/deploy/v2beta1/mpi-operator.yaml
 ```
+
+!!! Important
+
+    If you need both MPI and one of the other frameworks, follow the following process:
+
+    * Install the training operator as above.
+    * Run: `kubectl delete crd mpijobs.kubeflow.org`.
+    * Install MPI v2beta1 as above.
+
+
+
+
+
 
 ### Inference
 
