@@ -5,58 +5,67 @@ authors:
     - Jason Novich
 date: 2023-10-31
 ---
+## Introduction
 
-Many AI workloads as researchers' notebooks, are using GPU resources intermittently which means that these resources are not used all the time, but only when needed for running AI applications, or debugging a model in development. Other workloads such as Inference, might be using GPU resources at lower utilization rate than requested, and suddenly ask for higher guaranteed resources at peak utilization times.
+Many AI workloads as researchers' notebooks are using GPU resources intermittently. This means that these resources are not used all the time, but only when needed for running AI applications, or debugging a model in development. Other workloads such as Inference, might be using GPU resources at lower utilization rate than requested, and may suddenly ask for higher guaranteed resources at peak utilization times.
 
-This pattern of resource request vs. actual resource utilization causes lower utilization of GPUs, especially if there are many workloads requesting resources to match their peak demand, even thought the majority of the time they operate far below that peak.
+This pattern of resource request vs. actual resource utilization causes lower utilization of GPUs. This mainly happens if there are many workloads requesting resources to match their peak demand, even though the majority of the time they operate far below that peak.
 
-Run:ai has introduced *Dynamic GPU fractions* in v2.15 in order to cope with this fluctuation and to enable users to optimize GPU resources.
+Run:ai has introduced *Dynamic GPU fractions* in v2.15 in order to cope with resource request vs. actual resource utilization to enable users to optimize GPU resources.
 
-This is a suite of new core capabilities enabling workloads to optimize the use of GPU resources. This workks by providing the ability to specify and consume GPU memory and compute resources dynamically by leveraging Kubernetes *Request and Limit notations*.
+*Dynamic GPU fractions* is part of Run:ai's core capabilities to enable workloads to optimize the use of GPU resources. This works by providing the ability to specify and consume GPU memory and compute resources dynamically by leveraging Kubernetes *Request and Limit notations*.
 
-*Dynamic GPU fractions* allows a workload to request a certain amount of guaranteed fraction of GPU memory or GPU compute resource (similar to a Kubernetes request), and at the same time also request the ability to grow beyond that guaranteed GPU memory and/or GPU fraction if the resources  available up to a specified limit (similar to a Kubernetes limit).
+*Dynamic GPU fractions* allows a workload to request a guaranteed fraction of GPU memory or GPU compute resource (similar to a Kubernetes request), and at the same time also request the ability to grow beyond that guaranteed request up to a specific limit (similar to a Kubernetes limit), if the resources are available.
 
-For example, with *Dynamic GPU Fractions*, a user can specify a workload with a GPU fraction Request of 0.25 GPU, and add a new notation of `gpu-fraction-limit` of up to 0.80 GPU. The cluster/node-pool scheduler schedules the workload to a node that can provide the GPU fraction request (0.25), and the local node scheduler assigns the workload a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory, where only 0.25 of the GPU memory is actually guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as the rightful owners of that memory do not need to use it.
+For example, with *Dynamic GPU Fractions*, a user can specify a workload with a GPU fraction Request of 0.25 GPU, and add the parameter `gpu-fraction-limit` of up to 0.80 GPU. The cluster/node-pool scheduler schedules the workload to a node that can provide the GPU fraction request (0.25), and then assigns the workload to a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory (based on the parameter `gpu-fraction-limit`), where only 0.25 of the GPU memory is actually guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as it is not needed by other workloads.
 
-Run:ai automatically manages the state changes between `request` to `Limit` as well as the reverse (when the balance need to be "returned"), updating the metrics and workloads states and graphs.
+Run:ai automatically manages the state changes between `request` and `Limit` as well as the reverse (when the balance need to be "returned"), updating the metrics and workloads' states and graphs.
 
 ## Setting Fractional GPU Memory Limits
 
 With the fractional GPU memory limit, users can submit workloads using GPU fraction `Request` and `Limit`.
 
-There are two ways to use this capability:
+You can either:
 
-1. Using a GPU Fraction parameter (i.e. use the `gpu-fraction` annotation)
-2. Using an absolute GPU Memory parameter (`gpu-memory` annotation)
+1. Use a GPU Fraction parameter (use the `gpu-fraction` annotation)
 
-Then set a GPU memory limit, either as GPU fraction or GPU memory size, the Limit must be equal or greater than the GPU fraction/memory request.
+or
 
-Eventually, both GPU fraction and GPU memory are translated into the actual requested memory size of the Request (guaranteed) and Limit (best effort).
+2. Use an absolute GPU Memory parameter (`gpu-memory` annotation)
 
-To guarantee a fair quality of service between the different workloads using the same GPU, Run:ai developed an extendable GPU OOMKiller component that guarantees the quality of service using the known K8S semantics for resources Request and Limit.
+When set a GPU memory limit either as GPU fraction, or GPU memory size, the `Limit` must be equal or greater than the GPU fraction memory request.
 
-The `OOMKiller` capability requires adding `CAP_KILL` capabilities - enabling ‘Dynamic GPU fraction’ will automatically add this capability to the Run:ai core scheduling module (aka toolkit daemon). This capability is disabled by default.
+Both GPU fraction, and GPU memory are translated into the actual requested memory size of the Request (guaranteed) and the Limit (best effort).
 
-To enable ‘Dynamic GPU Fraction’ it, edit the `runaiconfig` CRD and set:
+To guarantee fair quality of service between different workloads using the same GPU, Run:ai developed an extendable GPU `OOMKiller` (Out Of Memory Killer) component that guarantees the quality of service using Kubernetes semantics for resources Request and Limit.
 
-`spec: global: core: dynamicFraction: enabled: true`
+The `OOMKiller` capability requires adding `CAP_KILL` capabilities to the *Dynamic GPU fraction* and to the Run:ai core scheduling module (toolkit daemon). This capability is disabled by default.
 
-To set per workload a gpu memory limit is done by adding the `RUNAI_GPU_MEMORY_LIMIT` environment variable to the first container in the pod which is the GPU consuming container.
+To enable *Dynamic GPU Fraction* it, edit the `runaiconfig` file and set:
 
-(TODO: add example yaml).
+```YAML
+spec: 
+  global: 
+    core: 
+      dynamicFraction: 
+        enabled: true
+```
 
-In v2.15 this can be done by:
+To set the gpu memory limit per workload, add the `RUNAI_GPU_MEMORY_LIMIT` environment variable to the first container in the pod. This is the GPU consuming container.
 
-1. Submitting a workload yaml directly and set the `RUNAI_GPU_MEMORY_LIMIT` environment variable.
+<!-- TODO: add example yaml). -->
 
-2. Creating a policy, per Project or global, e.g. set all Interactive workloads of Project=research\_vision1 to always set the environment variable of `RUNAI_GPU_MEMORY_LIMIT` to 1
+To use `RUNAI_GPU_MEMORY_LIMIT` environment variable:
 
-3. Passing the environment variable through the CLI\\GUI.
+1. Submit a workload yaml directly, and set the `RUNAI_GPU_MEMORY_LIMIT` environment variable.
 
+2. Create a policy, per Project or globally. For example, set all Interactive workloads of `Project=research_vision1` to always set the environment variable of `RUNAI_GPU_MEMORY_LIMIT` to 1.
 
-The supported values depends on the label used, in the following way, and can not be mixed:
+3. Pass the environment variable through the CLI or the UI.
 
-| **Annotation(UI Compute Resource Param / CLI Param)** | `RUNAI_GPU_MEMORY_LIMIT` format |
+The supported values depend on the label used. You can use them in either the UI or the CLI. Use **only** one of the variables in the following table (they cannot be mixed):
+
+| Variable | Input format |
 | --- |  --- |
-| `gpu-fraction` ('GPU Fraction of Device' /\--gpu) | 2-fixed point fraction value where `gpu-fraction` <= value <= `1.0`for example: 0.25, 0.75 |
-| `gpu-memory` ('GPU Memory of 1 device' /\--gpu-memory) | k8s resources quantity like any other resource, which has to be larger the the `gpu-memory` , for example:500000000, 2500M, 4G,**note:** The `gpu-memory` annotation label values are always in MB, unlike the env var. |
+| `gpu-fraction`  | A fraction value (for example: 0.25, 0.75). |
+| `gpu-memory`  | Kubernetes resources quantity which **must** be larger than `gpu-memory`. For example, 500000000, 2500M, 4G. **NOTE**: The `gpu-memory` label values are always in MB, unlike the env variable. |
