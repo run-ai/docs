@@ -12,7 +12,7 @@ Technology-wise, both are installed over a [Kubernetes](https://kubernetes.io){t
 
 Run:ai users:
 
-* Researchers submit Machine Learning workloads via the Run:ai Console, the Run:ai Command-Line Interface (CLI), or directly by sending YAML files to Kubernetes. 
+* Researchers submit Machine Learning workloads via the Run:ai Console, the Run:ai Command-Line Interface (CLI), or directly by sending YAML files to Kubernetes.
 * Administrators monitor and set priorities via the Run:ai User Interface
 
 ![multi-cluster-architecture](img/multi-cluster-architecture.png)
