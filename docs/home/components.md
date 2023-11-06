@@ -2,7 +2,6 @@
 
 ## Components
 
-
 Run:ai is made up of two components:
 
 * The __Run:ai cluster__ provides scheduling services and workload management. 
