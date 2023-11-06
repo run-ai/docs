@@ -41,7 +41,6 @@ Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/
 In many organizations, Kubernetes is governed by IT compliance rules. In this scenario, there are strict access control rules during the installation and running of workloads:
 
 * OpenShift is secured using _Security Context Constraints_ (SCC). The Run:ai installation supports SCC.
-* Kubernetes _Pod Security Policy_ (PSP) has been deprecated by Kubernetes. Support for PSP will be removed on Run:ai versions higher than 2.8.
-
+* Run:ai provides limited support for Kubernetes _Pod Security Admission (PSA)_. For more information see [Kubernetes prerequisites](cluster-setup/cluster-prerequisites.md#pod-security-admission).
 
 
