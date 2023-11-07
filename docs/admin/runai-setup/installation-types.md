@@ -6,7 +6,6 @@ Run:ai consists of two components:
 * The Run:ai [Cluster](../../../home/components/#the-runai-cluster). One or more data-science GPU clusters hosted by the customer (on-prem or cloud).
 * The Run:ai [Control plane](../../../home/components/#the-runai-cloud). A single entity that monitors clusters, sets priorities, and business policies. 
 
-<!-- ![img/architecture.png](img/architecture.png) -->
 
 There are two main installation options:
 
@@ -17,6 +16,9 @@ There are two main installation options:
 
 
 The self-hosted option is for organizations that cannot use a SaaS solution due to data leakage concerns. The self-hosted installation is priced differently. For further information please talk to Run:ai sales. 
+
+
+![installation-types](img/installation-types.png)
 
 
 ## Self-hosted Installation
