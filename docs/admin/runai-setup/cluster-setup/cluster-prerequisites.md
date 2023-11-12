@@ -242,6 +242,10 @@ kubectl apply -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.4.0/
     If you need both MPI and one of the other frameworks, follow the following process:
 
     * Install the training operator as above.
+    * Disable MPI in the Training operator by running:
+    ```
+    kubectl patch deployment training-operator -n kubeflow --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args", "value": ["--enable-scheme=tfjob", "--enable-scheme=pytorchjob", "--enable-scheme=xgboostjob"]}]'
+    ```
     * Run: `kubectl delete crd mpijobs.kubeflow.org`.
     * Install MPI v2beta1 as above.
 
