@@ -45,7 +45,7 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
 === "Airgapped"
     Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai). When creating a new cluster, select the __OpenShift__  target platform.
 
-    When copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
+    On the second tab of the cluster wizard, when copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
 
     * Do not add the helm repository and do not run `helm repo update`.
     * Instead, edit the `helm upgrade` command. 
@@ -55,8 +55,12 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
     The command should look like the following:
     ```
     helm upgrade -i runai-cluster runai-cluster-<version>.tgz \
+        --set controlPlane.url=... \
+        --set controlPlane.clientSecret=... \
+        --set cluster.uid=... \
+        --set cluster.url=... --create-namespace \
         --set global.image.registry=registry.mycompany.local \
-        -n runai --set controlPlane.url...
+
     ```
 
 
