@@ -20,11 +20,15 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
     When copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
 
     * Do not add the helm repository and do not run `helm repo update`.
-    * Instead, edit the `helm upgrade` command. Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`. The command should look like the following:
-
+    * Instead, edit the `helm upgrade` command. 
+        * Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`. 
+        * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#runai-software-files)
+    
+    The command should look like the following:
     ```
-    helm upgrade -i runai-cluster runai-cluster-<version>.tgz -n runai \
-      --set controlPlane.url...
+    helm upgrade -i runai-cluster runai-cluster-<version>.tgz \
+        --set global.image.registry=registry.mycompany.local \
+        -n runai --set controlPlane.url...
     ```
 
 !!! Tip
