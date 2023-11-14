@@ -55,8 +55,12 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
     The command should look like the following:
     ```
     helm upgrade -i runai-cluster runai-cluster-<version>.tgz \
+        --set controlPlane.url=... \
+        --set controlPlane.clientSecret=... \
+        --set cluster.uid=... \
+        --set cluster.url=... --create-namespace \
         --set global.image.registry=registry.mycompany.local \
-        -n runai --set controlPlane.url...
+
     ```
 
 

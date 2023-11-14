@@ -25,10 +25,15 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
         * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#runai-software-files)
     
     The command should look like the following:
+    
     ```
     helm upgrade -i runai-cluster runai-cluster-<version>.tgz \
+        --set controlPlane.url=... \
+        --set controlPlane.clientSecret=... \
+        --set cluster.uid=... \
+        --set cluster.url=... --create-namespace \
         --set global.image.registry=registry.mycompany.local \
-        -n runai --set controlPlane.url...
+
     ```
 
 !!! Tip
