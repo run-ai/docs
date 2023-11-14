@@ -17,7 +17,7 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
 === "Airgapped"
     Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai).
 
-    When copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
+    On the second tab of the cluster wizard, when copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
 
     * Do not add the helm repository and do not run `helm repo update`.
     * Instead, edit the `helm upgrade` command. 
