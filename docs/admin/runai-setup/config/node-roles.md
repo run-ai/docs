@@ -29,6 +29,10 @@ runai-adm remove node-role --runai-system-worker <node-name>
 
 ## Dedicated GPU & CPU Nodes
 
+
+!!! Important
+    To enable this feature, you must set a cluster configuration flag. For more information see [customize cluster](../cluster-setup/customize-cluster-install.md#configurations).
+    
 Separate nodes into those that:
 
 * Run GPU workloads
