@@ -36,6 +36,7 @@ All customizations will be saved when upgrading the cluster to a future version.
 | `spec.researcherService.ingress.tlsSecret` |  | On Kubernetes distributions other than OpenShift, set a dedicated certificate for the researcher service ingress in the cluster. When not set, the certificate inserted when installing the cluster will be used. The value should be a Kubernetes secret  in the runai namespace |
 | `spec.researcherService.route.tlsSecret` |  | On OpenShift, set a dedicated certificate for the researcher service route. When not set, the OpenShift certificate will be used.  The value should be a Kubernetes secret  in the runai namespace |
 | `global.image.registry` | | In air-gapped environment, allow cluster images to be pulled from local docker registry. For more information see [self-hosted cluster installation](../self-hosted/k8s/cluster.md#install-cluster) | 
+| `global.nodeAffinity.restrictScheduling` | false | Restrict scheduling of workloads to specific nodes, based on node labels. For more information see [node roles](../config/node-roles.md#dedicated-gpu--cpu-nodes) |
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
 
