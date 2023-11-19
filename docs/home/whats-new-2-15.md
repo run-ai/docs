@@ -29,6 +29,12 @@
 <!-- RUN-9924/RUN-9925  Granular GPU compute time-slicing / Strict GPU compute time-slicing -->
 * Added the ability to configure strict GPU compute time slicing. This gives workloads the exact GPU compute portion based on the requested GPU fraction (GPU Memory Fraction). This creates complete transparency and predictability of the amount of resources (Compute, Memory, etc.) a workload will get from a GPU. For more information, see [GPU Time Slicing](../Researcher/scheduling/GPU-time-slicing-scheduler.md).
 
+<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
+* New cluster wizard for adding and installing new clusters to your system.
+  
+* New cluster installation. The new installation no longer requires downloading and customizing a *values file*. Cluster configurations are preserved during upgrade and are performed using the `runaiconfig` file which creates a separation between installation related flags and cluster customization flags. For more information, see [Customize cluster installation.](../admin/runai-setup/cluster-setup/customize-cluster-install.md).
+
+
 --8<-- "home/whats-new-2-14.md:6:8"
 
 --8<-- "home/whats-new-2-14.md:15:16"
@@ -50,9 +56,6 @@
 
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
-
-<!-- RUN-7085/RUN-9480 Installation - Cluster wizard Improvements -->
-* Improved the *Cluster Wizard* form for adding new clusters to your system. There is no need for a values file and converted to be used with a helm command. Cluster configurations are preserved during upgrade and are performed using the `runaiconfig` file which create a separation between installation related flags and cluster customization flags. For more information, see [Customize cluster installation.](../admin/runai-setup/cluster-setup/customize-cluster-install.md)
 
 <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->
 * Improved *Credentials* creation. Now, a Run:ai scope can be added to credentials. For more information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
@@ -80,7 +83,14 @@
       * Trainings form
       * Environments form
   
-    You can select `single` or `multi-node (distributed)` training. When configuring distributed training, you will need to select a framework from the list. For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
+    You can select `single` or `multi-node (distributed)` training. When configuring distributed training, you will need to select a framework from the list. Supported frameworks now include:
+
+       * PyTorch
+       * Tensorflow
+       * XGBoost
+       * MPI
+  
+    For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 * Run:ai can be installed in an isolated network. In this air-gapped configuration, the organization will not be using an established root certificate authority but a local certificate authority. This allows inserting the local certificate authority (CA) as a part of the Run:ai installation so it is reconized by all Run:ai services. For more information, see [Working with a Local Certificate Authority](../admin/runai-setup/config/org-cert.md).
@@ -103,5 +113,8 @@
 
 <!-- RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates](../admin/admin-ui-setup/templates.md#creating-templates).
+
+<!-- RUN-12698/RUN-12699 -->
+* Improved support for assets that appear unusable. Assets that are greyed out now have a button on the cards when the item does not comply with a configured policy. The button displays information about which policies are non-compliant and will require a correction to enable the asset.
 
 --8<-- "home/whats-new-2-14.md:49:56"
