@@ -35,7 +35,7 @@ or
 
 When set a GPU memory limit either as GPU fraction, or GPU memory size, the `Limit` must be equal or greater than the GPU fraction memory request.
 
-Both GPU fraction, and GPU memory are translated into the actual requested memory size of the Request (guaranteed) and the Limit (best effort).
+Both GPU fraction, and GPU memory are translated into the actual requested memory size of the Request (guaranteed) and the Limit (burstable).
 
 To guarantee fair quality of service between different workloads using the same GPU, Run:ai developed an extendable GPU `OOMKiller` (Out Of Memory Killer) component that guarantees the quality of service using Kubernetes semantics for resources Request and Limit.
 
