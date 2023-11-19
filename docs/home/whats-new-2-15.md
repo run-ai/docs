@@ -83,7 +83,14 @@
       * Trainings form
       * Environments form
   
-    You can select `single` or `multi-node (distributed)` training. When configuring distributed training, you will need to select a framework from the list. For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
+    You can select `single` or `multi-node (distributed)` training. When configuring distributed training, you will need to select a framework from the list. Supported frameworks now include:
+
+       * PyTorch
+       * Tensorflow
+       * XGBoost
+       * MPI
+  
+    For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 <!-- RUN-10411/RUN-11390 Support self-signed certificates-->
 * Run:ai can be installed in an isolated network. In this air-gapped configuration, the organization will not be using an established root certificate authority but a local certificate authority. This allows inserting the local certificate authority (CA) as a part of the Run:ai installation so it is reconized by all Run:ai services. For more information, see [Working with a Local Certificate Authority](../admin/runai-setup/config/org-cert.md).
@@ -106,5 +113,8 @@
 
 <!-- RUN-11692/RUN-11694 Scoping for template-->
 * Added support for *Scope* in the template form. For configuration information, see [Creating templates](../admin/admin-ui-setup/templates.md#creating-templates).
+
+<!-- RUN-12698/RUN-12699 -->
+* Improved support for assets that appear unusable. Assets that are greyed out now have a button on the cards when the item does not comply with a configured policy. The button displays information about which policies are non-compliant and will require a correction to enable the asset.
 
 --8<-- "home/whats-new-2-14.md:49:56"
