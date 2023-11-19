@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a _worker node_. Worker nodes work in parallel to speed up model training. Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a __single container__.
+Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a *worker node*. Worker nodes work in parallel to speed up model training. Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a **single container**.
 
-Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support Distributed Training. [Horovod](https://eng.uber.com/horovod/){target=_blank} is a good example.
+Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support Distributed Training. [Horovod](https://www.uber.com/en-JO/blog/horovod/){target=_blank} is a good example.
 
 Run:ai provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
 
@@ -13,20 +13,20 @@ Run:ai provides the ability to run, manage, and view Distributed Training worklo
 To complete this Quickstart you must have:
 
 * Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-* During the installation, you have installed the Kubeflow MPI Operator as specified [here](../../../admin/runai-setup/cluster-setup/cluster-prerequisites/#distributed-training-via-kubeflow-mpi)
+* During the installation, you have installed the Kubeflow MPI Operator as specified [here](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training)
 * Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
 
 ## Step by Step Walkthrough
 
 ### Setup
 
-*   Login to the Projects area of the Run:ai user interface.
-*   Add a Project named "team-a".
-*   Allocate 2 GPUs to the Project.
+* Login to the Projects area of the Run:ai user interface.
+* Add a Project named "team-a".
+* Allocate 2 GPUs to the Project.
 
 ### Run Training Distributed Workload
 
-*   At the command-line run:
+* At the command-line run:
 
 ``` shell
 runai config project team-a
@@ -34,11 +34,11 @@ runai submit-dist mpi --workers=2 -g 1 \
         -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60
 ```
 
-*   We named the Job _dist_
-*   The Job is assigned to _team-a_
-*   There will be two worker pods (--workers=2), each allocated with a single GPU (-g 1)
-*   The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed:v0.3.0``.
-*   The image contains a startup script that runs a deep learning Horovod-based workload.
+* We named the Job _dist_
+* The Job is assigned to _team-a_
+* There will be two worker pods (--workers=2), each allocated with a single GPU (-g 1)
+* The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed:v0.3.0``.
+* The image contains a startup script that runs a deep learning Horovod-based workload.
 
 
 Follow up on the Job's status by running:
@@ -102,5 +102,5 @@ The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and conta
 
 ## See Also
 
-*   The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank}
-*   For a full list of the ``submit-dist mpi`` options see [runai submit-dist mpi](../cli-reference/runai-submit-dist-mpi.md)
+* The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank}
+* For a full list of the ``submit-dist mpi`` options see [runai submit-dist mpi](../cli-reference/runai-submit-dist-mpi.md)
