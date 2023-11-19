@@ -76,8 +76,8 @@ To submit a workload using the UI:
 1. In the *Projects* pane, select a project. Use the search box to find projects that are not listed. If you can't find the project, see your system administrator.
 2. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, create a new one, or see your system administrator.
 3. Enter a `Workspace` name, and press continue.
-4. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed.
-5. In the *Compute resource* pane, select resources for your tranings or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+4. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed.
+5. In the *Compute resource* pane, select resources for your tranings or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 6. Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
       1. Select the *Storage class* from the dropdown.
@@ -87,7 +87,7 @@ To submit a workload using the UI:
       5. Enter the *Container path* for volume target location.
       6. Select a *Volume persistency.
 
-7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 8. In the *General* pane, add special settings for your training (optional):
 
       1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
@@ -102,11 +102,11 @@ To submit a workload using the UI:
 2. In the *Multi-node* pane, choose `Single node` for a single node training, or `Multi-node (distributed)` for distributed training. When you choose `Multi-node`, select a framework that is listed, then select the `multi-node` training configuration by selecting either `Workers & master` or `Workers only`.
 3. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, see your system administrator.
 4. In the *Training name* pane, enter a name for the *Traninng*, then press continue.
-5. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+5. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
 6. In the *Compute resource* pane:
 
        1. Select the number of workers for your training.
-       2. Select *Compute resources* for your training or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       2. Select *Compute resources* for your training or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 
     !!! Note
         The number of compute resources for the workers is based on the number of workers selected.
@@ -120,7 +120,7 @@ To submit a workload using the UI:
        5. Enter the *Container path* for volume target location.
        6. Select a *Volume persistency.
 
-8. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+8. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 9. (Optional) In the *General* pane, add special settings for your training (optional):
 
        1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
@@ -131,8 +131,8 @@ To submit a workload using the UI:
 
 11. If you do not want a different setup for the master, press *Create training*. If you would like to have a different setup for the master, toggle the switch to enable to enable a different setup.
 
-       1. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
-       2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       1. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+       2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
        3. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
           1. Select the *Storage class* from the dropdown.
@@ -142,7 +142,7 @@ To submit a workload using the UI:
           5. Enter the *Container path* for volume target location.
           6. Select a *Volume persistency.
 
-       4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+       4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
        5. (Optional) In the *General* pane, add special settings for your training (optional):
 
           1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.

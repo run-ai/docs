@@ -1,17 +1,17 @@
-## Introduction
+# Introduction
 
 When we discuss the allocation of deep learning compute resources, the discussion tends to focus on GPUs as the most critical resource. But two additional resources are no less important:
 
-*   CPUs. Mostly needed for preprocessing and postprocessing tasks during a deep learning training run.
-*   Memory. Has a direct influence on the quantities of data a training run can process in batches.
+* CPUs. Mostly needed for preprocessing and postprocessing tasks during a deep learning training run.
+* Memory. Has a direct influence on the quantities of data a training run can process in batches.
 
 GPU servers tend to come installed with a significant amount of memory and CPUs.
 
 ## Requesting CPU & Memory
 
-When submitting a Job, you can request a guaranteed amount of CPUs and memory by using the __--cpu__ and __--memory__ flags in the _runai submit_ command. For example:
+When submitting a Job, you can request a guaranteed amount of CPUs and memory by using the **--cpu** and **--memory** flags in the *runai submit* command. For example:
 
-``` 
+```
 runai submit job1 -i ubuntu --gpu 2 --cpu 12 --memory 1G
 ```
 
@@ -23,8 +23,8 @@ For further details on these flags see: [runai submit](../cli-reference/runai-su
 
 The number of CPUs your Job will receive is guaranteed to be the number defined using the `--cpu` flag. In practice, however, you may receive <ins>more CPUs than you have asked</ins> for:
 
-*   If you are currently alone on a node, you will receive all the node CPUs until such time when another workload has joined.
-*   However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the `--cpu` flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 cpus, the workloads will receive 10 and 30 CPUs respectively. If the flag `--cpu` is not specified, it will be taken from the cluster default (see the section below)
+* If you are currently alone on a node, you will receive all the node CPUs until such time when another workload has joined.
+* However, when a second workload joins, each workload will receive a number of CPUs <ins>proportional</ins> to the number requested via the `--cpu` flag. For example, if the first workload asked for 1 CPU and the second for 3 CPUs, then on a node with 40 cpus, the workloads will receive 10 and 30 CPUs respectively. If the flag `--cpu` is not specified, it will be taken from the cluster default (see the section below)
 
 ### Memory over allocation
 
@@ -41,8 +41,8 @@ You can limit your Job's allocation of CPU and memory by using the __--cpu-limit
 
 The limit behavior is different for CPUs and memory.
 
-*   Your Job will never be allocated with more than the amount stated in the `--cpu-limit` flag
-*   If your Job tries to allocate more than the amount stated in the `--memory-limit` flag it will receive an out-of-memory exception.
+* Your Job will never be allocated with more than the amount stated in the `--cpu-limit` flag
+* If your Job tries to allocate more than the amount stated in the `--memory-limit` flag it will receive an out-of-memory exception.
 
 The limit (for both CPU and memory) overrides the cluster default described in the section below
 
@@ -64,7 +64,6 @@ If, for example, the default has been defined as 1:0.2 and your Job has specifie
 
 The system comes with a cluster-wide default of 1:0.1. To change the ratio see below.
 
-
 ### Defaults for --memory flag
 
 If your Job has not specified `--memory`, the system will use a default. The default is cluster-wide and is proportional to the number of requested GPUs.
@@ -75,21 +74,17 @@ If you didn't request any GPUs for your job and has not specified `--memory`, th
 
 The system comes with a cluster-wide default of 1:0.1. To change the ratio see below.
 
-
 ### Defaults for --cpu-limit flag
 
 If your Job has not specified `--cpu-limit`, then by default, the system will not set a limit. You can set a cluster-wide limit as a __ratio__ of GPUs to CPUs. See below on how to change the ratio.
-
-
 
 ### Defaults for --memory-limit flag
 
 If your Job has not specified `--memory-limit`, then by default, the system will not set a limit. You can set a cluster-wide limit as a __ratio__ of GPUs to Memory. See below on how to change the ratio.
 
-
 ### Changing the ratios
 
-To change the cluster wide-ratio use the following process. The example shows: 
+To change the cluster wide-ratio use the following process. The example shows:
 
 * a CPU request with a default ratio of 2:1 CPUs to GPUs.
 * a CPU Memory request with a default ratio of 200MB per GPU.
@@ -97,12 +92,12 @@ To change the cluster wide-ratio use the following process. The example shows:
 * a Memory limit with a default ratio of 2GB per GPU.
 * a CPU request with a default ratio of 0.1 CPUs per 1 CPU limit.
 * a CPU Memory request with a default ratio of 0.1:1 request per CPU Memory limit.
- 
+
 You must edit the cluster installation values file:
 
-* When installing the Run:ai cluster, edit the [values file](/admin/runai-setup/cluster-setup/cluster-install/#step-3-install-runai).
-* On an existing installation, use the [upgrade](/admin/runai-setup/cluster-setup/cluster-upgrade) cluster instructions to modify the values file.
-* You must specify at least the first 4 values as follows: 
+* When installing the Run:ai cluster, edit the [values file](../../admin/runai-setup/cluster-setup/cluster-install.md#install-runai).
+* On an existing installation, use the [upgrade](../../admin/runai-setup/cluster-setup/cluster-upgrade.md) cluster instructions to modify the values file.
+* You must specify at least the first 4 values as follows:
 
 ```  yaml
 runai-operator:
@@ -116,21 +111,20 @@ runai-operator:
       memoryDefaultRequestMemoryLimitFactorNoGpu: 0.1
 ```
 
-
 ## Validating CPU & Memory Allocations
 
 To review CPU & Memory allocations you need to look into Kubernetes. A Run:ai Job creates a Kubernetes _pod_. The pod declares its resource requests and limits. To see the memory and CPU consumption in Kubernetes:
 
-*  Get the pod name for the Job by running: 
+* Get the pod name for the Job by running:
 
-        runai describe job <JOB_NAME>
+  `runai describe job <JOB_NAME>`
 
- the pod will appear under the `PODS` category. 
+ the pod will appear under the `PODS` category.
 
-*  Run:
+* Run:
 
-        kubectl describe pod <POD_NAME>
-        
+  `kubectl describe pod <POD_NAME>`
+
 The information will appear under `Requests` and `Limits`. For example:
 
 ``` yaml

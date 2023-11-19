@@ -12,10 +12,10 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
 ## Install Cluster
 
 === "Connected"
-    Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai).
+    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md#install-runai).
 
 === "Airgapped"
-    Perform the cluster installation instructions explained [here](../../../cluster-setup/cluster-install/#step-3-install-runai).
+    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md#install-runai).
 
     On the second tab of the cluster wizard, when copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
 
@@ -37,7 +37,7 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
     ```
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../../config/access-roles/).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../config/access-roles.md).
 
 ## (Optional) Customize Installation
 
