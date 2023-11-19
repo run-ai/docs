@@ -288,6 +288,7 @@ nav:
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
+      - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
       - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
