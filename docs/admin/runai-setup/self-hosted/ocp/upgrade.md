@@ -12,7 +12,9 @@ title: Upgrade self-hosted OpenShift installation
     * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
-## Upgrade from Version 2.7 or 2.8.
+## Upgrade Control Plane
+
+### Upgrade from Version 2.7 or 2.8.
 
 Before upgrading the control plane, run: 
 
@@ -26,7 +28,7 @@ kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
-## Upgrade from Version 2.9, 2.10 or 2.11
+### Upgrade from Version 2.9, 2.10 or 2.11
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 #### PVC Ownership
@@ -55,7 +57,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). 
 
-## Upgrade the Control Plane
+### Upgrade Control Plane
 
 === "Connected"
     ``` bash
@@ -87,12 +89,4 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 ## Upgrade Cluster 
 
-=== "Connected"
-    To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
-
-=== "Airgapped"
-    ```
-    helm get values runai-cluster -n runai > values.yaml
-    helm upgrade runai-cluster -n runai runai-cluster-<version>.tgz -f values.yaml
-    ```
-    (replace `<version>` with the cluster version)
+To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).

@@ -1,6 +1,6 @@
 # Role based access control
 
-User authorization to system resources and assets is managed using [Role-based access control(RBAC)](https://en.wikipedia.org/wiki/Role-based_access_control){target=_blank}. RBAC is a policy-neutral access control mechanism defined around roles and privileges. The components of RBAC make it simple to manage access to system resources and assets.
+User authorization to system resources and assets is managed using [Role-based access control (RBAC)](https://en.wikipedia.org/wiki/Role-based_access_control){target=_blank}. RBAC is a policy-neutral access control mechanism defined around roles and privileges. The components of RBAC make it simple to manage access to system resources and assets.
 
 ## RBAC components
 
@@ -18,35 +18,36 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 A role is a combination of entities and actions. Run:ai supports the following roles and actions within the user's granted scope:
 
-| Managed Entity                                                        | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
-|-----------------------------------------------------------------------|------------------|----------------------|------------|------------------|------------|---------|--------|---------------|---------------|--------------------|--------------------|-------------------------|-----------------|-------------------|
-| Create local users and applications                                   | CRUD             | CRUD                 |            |                  |            |         |        |               |               |                    |                    |                         |                 |                   |
-| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | CRUD             | CRUD                 | CRUD       |                  |            |         |        |               |               |                    |                    |                         |                 |                   |
-| Roles                                                                 | CRUD             | R                    | R          |                  |            |         |        |               |               |                    |                    |                         |                 |                   |
-| Departments                                                           | CRUD             | R (6)                | CRUD       |                  |            | R       | R      |               |               | R                  | R                  | R                       | R               | R                 |
-| Projects                                                              | CRUD             | CRUD                 | CRUD       | R (2) (3)        | R          | R       | R      | R             | CRUD          | R                  | R                  | R                       | R               | R                 |
-| Jobs                                                                  | CRUD             | CRUD                 | CRUD       | R                | CRUD       |         | R      | CRUD          | CRUD          | R                  | R                  | R                       | R               | R                 |
-| Deployments                                                           | CRUD             | CRUD                 | R          |                  |            | CRUD    | R      |               |               |                    |                    |                         |                 | R                 |
-| Workspaces                                                            | CRUD             | CRUD                 | CRUD       | R                | CRUD       |         | R      | CRUD          | CRUD          | R                  | R                  | R                       | R               | R                 |
-| Trainings                                                             | CRUD             | CRUD                 | CRUD       | R                | CRUD       |         | R      | CRUD          |               | R                  | R                  | R                       | R               | R                 |
-| Environments                                                          | CRUD             | CRUD                 | CRUD       | CRUD             | CRUD       |         | R      | R             | R             | CRUD               | R                  | R                       | R               | R                 |
-| Data Sources                                                          | CRUD             | CRUD                 | CRUD       | CRUD             | CRUD       |         | R      | R             | R             | R                  | CRUD               | R                       | R               | R                 |
-| Compute Resources                                                     | CRUD             | CRUD                 | CRUD       | CRUD             | CRUD       |         | R      | R             | R             | R                  | R                  | CRUD                    | R               | R                 |
-| Templates                                                             | CRUD             | CRUD                 | CRUD       | CRUD             | CRUD       |         | R      | R             | R             | R                  | R                  | R                       | CRUD            | R                 |
-| Policies (7)                                                          | CRUD             | CRUD                 | R          | R                | R          | R       | R      | R             |               | R                  | R                  | R                       | R               | R                 |
-| Clusters                                                              | CRUD             | R                    | R          | R                | R          | R       | R      | R             |               | R                  | R                  | R                       | R               | R                 |
-| Node Pools                                                            | CRUD             | R                    | R          |                  |            | R       | R      |               |               |                    |                    |                         |                 |                   |
-| Nodes                                                                 | R                | R                    | R          |                  |            | R       | R      |               |               |                    |                    |                         |                 |                   |
-| Settings.General                                                      | CRUD             |                      |            |                  |            |         |        |               |               |                    |                    |                         |                 |                   |
-| Credentials (Settings.Cre...)                                         | CRUD             | R                    | R          | R                | R          | R       | R      | R             |               |                    | R                  |                         |                 |                   |
-| Events History                                                        | R                |                      |            |                  |            |         |        |               |               |                    |                    |                         |                 |                   |
-| Dashboard.Overview                                                    | R                | R                    | R          | R                | R          | R       | R      | R             | R             | R                  | R                  | R                       | R               | R                 |
-| Dashboards.Analytics                                                  | R                | R                    | R          | R                | R          | R       | R      | R             | R             | R                  | R                  | R                       | R               | R                 |
-| Dashboards.Consumption                                                | R                | R                    |            |                  |            |         |        | R             | R             |                    |                    |                         |                 |                   |
+| Managed Entity | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| Create local users and applications | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |
+| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | CRUD | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |
+| Roles | CRUD | R | R |  |  |  |  |  |  |  |  |  |  |  |
+| Departments | CRUD | R (6) | CRUD |  |  | R | R |  |  | R | R | R | R | R |
+| Projects | CRUD | CRUD | CRUD | R (2) (3) | R | R | R | R | CRUD | R | R | R | R | R |
+| Jobs | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
+| Deployments | CRUD | CRUD | R |  |  | CRUD | R |  |  |  |  |  |  | R |
+| Workspaces | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
+| Trainings | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD |  | R | R | R | R | R |
+| Environments | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | CRUD | R | R | R | R |
+| Data Sources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | CRUD | R | R | R |
+| Compute Resources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | CRUD | R | R |
+| Templates | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | R | CRUD | R |
+| Policies (7) | CRUD | CRUD | R | R | R | R | R | R |  | R | R | R | R | R |
+| Clusters | CRUD | R | R | R | R | R | R | R |  | R | R | R | R | R |
+| Node Pools | CRUD | R | R |  |  | R | R |  |  |  |  |  |  |  |
+| Nodes | R | R | R |  |  | R | R |  |  |  |  |  |  |  |
+| Settings.General | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Credentials (Settings.Cre...) | CRUD | R | R | R | R | R | R | R |  |  | R |  |  |  |
+| Events History | R |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Dashboard.Overview | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
+| Dashboards.Analytics | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
+| Dashboards.Consumption | R | R |  |  |  |  |  | R |   |  |  |  |  |  |
 
 Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
 
-!!!Note
+!!! Note
+    Keep the following in mind when upgrading from versions 2.13 or earlier:
 
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
@@ -101,7 +102,7 @@ To create a new access rule:
 5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *Save rule* when done.
 
 !!! Note
-    You cannot edit *Access rules*. To change an *Access rule*, you need to delete the rule, create a new rule to replace it. You can also add multiple rules for the same user.
+    You cannot edit *Access rules*. To change an *Access rule*, you need to delete the rule, then create a new rule to replace it. You can also add multiple rules for the same user.
 
 To delete a rule:
 

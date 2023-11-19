@@ -1,6 +1,6 @@
 # Interactive Workload Parameters
 
-Following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter.
+The following is a full list of all interactive workload parameters. The text below is equivalent to running `kubectl explain interactiveworkload.spec`. You can also run `kubectl explain interactiveworkload.spec.<parameter-name>` to see the description of a specific parameter.
 
 ``` YAML
 KIND:     InteractiveWorkload
@@ -12,6 +12,10 @@ DESCRIPTION:
      The specifications of this InteractiveWorkload
 
 FIELDS:
+   active	<Object>
+     kubebuilder:default:={value: true} Specifies whether the workload should be
+     active or suspended.
+
    allowPrivilegeEscalation	<Object>
      Allow the container running the workload and all launched processes to gain
      additional privileges after the workload starts. For more information see
@@ -25,6 +29,14 @@ FIELDS:
    arguments	<Object>
      When set,contains the arguments sent along with the command. These override
      the entry point of the image in the created workload.
+
+   autoDeletionTimeAfterCompletionSeconds	<Object>
+     Specifies the duration after which it is possible for a finished workload
+     to be automatically deleted. When the workload is being deleted, its
+     lifecycle guarantees (e.g. finalizers) will be honored. If this field is
+     unset, the workload won't be automatically deleted. If this field is set to
+     zero, the workload becomes eligible to be deleted immediately after it
+     finishes.
 
    baseWorkload	<string>
      Reference to another workload. When set, this workload inherits its values
@@ -156,6 +168,10 @@ FIELDS:
      A prefix used for assigning a name to the created resource. Either name of
      namePrefix should be provided, but not both.
 
+   nfs	<Object>
+     Specifies nfs volumes to mount into a container running the created
+     workload.
+
    nodePool	<Object>
      Specifies the NodePool name to be used to schedule this job on - DEPRECATED
      use NodePools instead
@@ -181,7 +197,7 @@ FIELDS:
      https://jupyter-notebook.readthedocs.io/en/stable/security.html
 
    podAffinity	<Object>
-     Indicates whether pod affinity scheduling rules applies.
+     Indicates whether pod affinity scheduling rules apply.
 
    podAffinitySchedulingRule	<Object>
      Indicates if we want to use the Pod affinity rule as : the "hard"
@@ -201,6 +217,9 @@ FIELDS:
      preemptible workloads can be scheduled above the guaranteed quota but may
      be reclaimed at any time.
 
+   preemptionLimit	<Object>
+     indicates the number of times the job can be preempted
+
    processes	<Object>
      Number of distributed training processes that will be allocated for the
      created mpijob.
@@ -212,6 +231,12 @@ FIELDS:
    runAsGid	<Object>
      Specifies the Unix group id with which the container should run. Will be
      used only if runAsUser is set to true.
+
+   runAsNonRoot	<Object>
+     Indicates that the container must run as a non-root user. If true, the
+     Kubelet will validate the image at runtime to ensure that it does not run
+     as UID 0 (root) and fail to start the container if it does. If unset or
+     false, no such validation will be performed.
 
    runAsUid	<Object>
      Specifies the Unix user id with which the container running the created
@@ -229,6 +254,12 @@ FIELDS:
 
    s3	<Object>
      Specifies S3 buckets to mount into the container running the workload
+
+   seccompProfileType	<Object>
+     Indicates which kind of seccomp profile will be applied to the container.
+     Valid options are: RuntimeDefault - the container runtime default profile
+     should be used. Unconfined - no profile should be applied. Localhost is not
+     yet supported by Run:ai.
 
    serviceType	<Object>
      Specifies the default service exposure method for ports. The default shall
@@ -254,6 +285,10 @@ FIELDS:
 
    tensorboardLogdir	<Object>
      The TensorBoard Logs directory
+
+   terminateAfterPreemption	<Object>
+     Indicates whether the job should be terminated, by the system, after it has
+     been preempted. Default to false.
 
    tolerations	<Object>
      Toleration rules which apply to the pods running the workload. Toleration
@@ -284,6 +319,4 @@ FIELDS:
    workingDir	<Object>
      Specifies a directory that will be used as the current directory when the
      container running the created workload starts.
-
-
 ```
