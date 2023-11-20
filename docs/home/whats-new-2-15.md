@@ -72,7 +72,7 @@
 * Improved control over how over-quota is managed by adding the ability to block over-subscription of quota in *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
 
 <!-- RUN-13167/RUN-13168 Department Over-Quota Priority behavior -->
-* 
+* Improved the fairness for departments using the `over quota priority` switch (in Settings). When the feature flag is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources.
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 

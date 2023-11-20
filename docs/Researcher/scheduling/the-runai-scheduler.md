@@ -160,6 +160,8 @@ With the addition of node pools, the principles of Over-Quota and Over-Quota pri
 
 * Note: Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
 
+When the Over Quota Priority is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources.
+
 ### Bin-packing & Consolidation
 
 Part of an efficient scheduler is the ability to eliminate fragmentation:
