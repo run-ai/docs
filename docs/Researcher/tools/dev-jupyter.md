@@ -1,9 +1,8 @@
 # Use a Jupyter Notebook with a Run:ai Job
 
-A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook __runs inside the user container__. 
+A [Jupyter Notebook](https://jupyter.org){target=_blank} is an open-source web application that allows you to create and share documents that contain live code. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more. Jupyter Notebooks are popular with Researchers as a way to code and run deep-learning code. A Jupyter Notebook **runs inside the user container**.
 
-This document is about accessing the remote container created by Run:ai via such a notebook. Alternatively, Run:ai provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a __separate service__ that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:ai](../../admin/integration/jupyterhub.md).
-
+This document is about accessing the remote container created by Run:ai via such a notebook. Alternatively, Run:ai provides integration with JupyterHub. [JupyterHub](https://jupyter.org/hub){target=_blank} is a **separate service** that makes it possible to serve pre-configured data science environments. For more information see [Connecting JupyterHub with Run:ai](https://runai.my.site.com/community/s/article/How-to-connect-JupyterHub-with-Run-ai){target=_blank}.
 
 ## Submit a Jupyter Notebook Workload
 
@@ -13,12 +12,11 @@ There are two ways to submit a Jupyter Notebook Job: via the Command-line interf
 
 * Within the user interface go to the Job list.
 * Select `New Job` on the top right.
-* Select `Interactive` at the top. 
+* Select `Interactive` at the top.
 * Add an image that supports Jupyter Notebook. For example `jupyter/scipy-notebook`.
 * Select the `Jupyter Notebook` button.
 
 Submit the Job. When running, select the job and press `Connect` on the top right.
-
 
 ## Submit a Workload
 
@@ -28,7 +26,7 @@ Run the following command to connect to the Jupyter Notebook container as if it 
 runai submit build-jupyter --jupyter -g 1
 ```
 
-The terminal will show the following: 
+The terminal will show the following:
 
 ``` shell
 ~> runai submit build-jupyter --jupyter -g 1 --attach
@@ -52,10 +50,8 @@ Forwarding from [::1]:8888 -> 8888
 * The Job starts a Jupyter notebook container.
 * The connection is redirected to the local machine (127.0.0.1) on port 8888
 
-
-Browse to [http://localhost:8888](http://localhost:8888){target=_blank}. Use the token in the output to log into the notebook. 
+Browse to [http://localhost:8888](http://localhost:8888){target=_blank}. Use the token in the output to log into the notebook.
 
 ## Alternatives
 
-The above flag `--jupyter` is a shortcut with a predefined image. If you want to run your own notebook, use the quickstart on [running a build workload with connected ports](../Walkthroughs/walkthrough-build-ports.md). 
-
+The above flag `--jupyter` is a shortcut with a predefined image. If you want to run your own notebook, use the quickstart on [running a build workload with connected ports](../Walkthroughs/walkthrough-build-ports.md).

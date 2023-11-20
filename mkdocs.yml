@@ -90,7 +90,7 @@ plugins:
         'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
-        'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
+      #  'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'

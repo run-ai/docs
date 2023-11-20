@@ -113,4 +113,4 @@ kubectl apply -f deployment1.yaml
 The Run:ai command line interface provides limited support for Kubernetes Workloads.
 
 ## See Also
-Run:ai has specific integrations with additional third-party tools such as [KubeFlow](../../admin/integration/kubeflow.md), [MLFlow](../../admin/integration/mlflow.md), and more. These integrations use the same instructions as described above.
+Run:ai has specific integrations with additional third-party tools such as [KubeFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Kubeflow){target=_blank}, [MLFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-MLflow){target=_blank}, and more. These integrations use the same instructions as described above.
