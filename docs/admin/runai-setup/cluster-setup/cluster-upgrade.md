@@ -18,6 +18,8 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 The cluster installation has changed in version 2.15 such that no _values file_ ia needed and old customizations do not have to be copied. Hence, simply follow the instructions for [Installing Run:ai](cluster-install.md#install-runai) to install Run:ai.
 
+All customizations done in `RunaiConfig` are saved during the upgrade. 
+
 ### Upgrade from version 2.9, 2.10, 2.11 or 2.12 to version 2.13
 
 
@@ -36,7 +38,7 @@ helm get values runai-cluster -n runai > old-values.yaml
 !!! Note
     To upgrade to a __specific__ version of the Run:ai cluster, add `--version <version-number>` to the `helm upgrade` command. You can find the relevant version with `helm search repo` as described above. 
 
-### Upgrade from version 2.8 or earlier
+### Upgrade from version 2.7 or 2.8
 
 The process of upgrading from 2.7 or 2.8 requires [uninstalling](./cluster-delete.md) and then [installing](./cluster-install.md) again. No data is lost during the process. 
 

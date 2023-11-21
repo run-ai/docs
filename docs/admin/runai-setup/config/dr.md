@@ -10,6 +10,9 @@ With the __self-hosted__ version, it is the responsibility of the IT organizatio
 ### Database
 
 Run:ai uses an internal PostgreSQL database. The database is stored on a Kubernetes _Persistent Volume_ (PV). You must provide a backup solution for the database. Typically by backing up the persistent volume holding the database storage.
+
+Run:ai also supports an external PostgreSQL database. For details on how to configure an external database please contact Run:ai customer support
+
 ### Metrics
 
 Run:ai stores metric history using [Thanos](https://github.com/thanos-io/thanos){target=_blank}. Thanos is configured to store data on a persistent volume. The recommendation is to back up the PV.
