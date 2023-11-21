@@ -151,7 +151,7 @@ By default, the Run:ai software at the cluster level maintains the current fairn
 
 **For *Projects***
 
-When Over-Quota is enabled, the excess resources are split between the Projects according to the over-quota-priority weight the admin set. When Over-Quota priority is disabled, excess resources are split between the Projects according to weights, and the weights are equal to the deserved quota.
+When *Over-Quota Priority* is enabled, the excess resources are split between the Projects according to the over-quota-priority weight set by the admin. When *Over-Quota Priority* is disabled, excess resources are split between the Projects according to weights, and the weights are equal to the deserved quota. This means Projects with a higher deserved quota will get a larger portion of the unused resources.
 
 An example with Over-Quota Weights for projects:
 
