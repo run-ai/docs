@@ -1,4 +1,4 @@
-# Run:ai version 2.15 - November 5, 2023
+# Run:ai version 2.15 - November 25, 2023
 
 ## New Features
 
@@ -33,7 +33,6 @@
 * New cluster wizard for adding and installing new clusters to your system.
   
 * New cluster installation. The new installation no longer requires downloading and customizing a *values file*. Cluster configurations are preserved during upgrade and are performed using the `runaiconfig` file which creates a separation between installation related flags and cluster customization flags. For more information, see [Customize cluster installation.](../admin/runai-setup/cluster-setup/customize-cluster-install.md).
-
 
 --8<-- "home/whats-new-2-14.md:6:8"
 
@@ -72,7 +71,7 @@
 * Improved control over how over-quota is managed by adding the ability to block over-subscription of quota in *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
 
 <!-- RUN-13167/RUN-13168 Department Over-Quota Priority behavior -->
-* 
+* Improved the fairness for departments using the `over quota priority` switch (in Settings). When the feature flag is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources. For more information, see [Over Quota Priority](../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority).
 
 <!-- RUN-10404/RUN-11747 Submit distributed training
 * RUN-11194/RUN-11239 All changes done in the UI for distributed training are hidden behind feature flag 
