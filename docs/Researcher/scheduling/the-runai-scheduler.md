@@ -146,19 +146,28 @@ This behavior allows you to go back to the original current behavior.
 By default, the Run:ai software at the cluster level maintains the current fairness mode after an upgrade. To change to the fairness mode, the Admin must change the `RunaiConfig file and change the parameters above.
 
 ### Over-Quota Priority
-When the Over-quota Priority feature is enabled, The Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over-quota Priority for each Project.
-GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
 
-Let's examine the previous example with Over-Quota Weights:
+*Over-Quota Priority* prioritizes the distribution of unused resources so that they are allocated to departments and projects fairly. Priority is determined by an assigned weight. *Over-Quota Priority* values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
+
+**For *Projects***
+
+When Over-Quota is enabled, the excess resources are split between the Projects according to the over-quota-priority weight the admin set. When Over-Quota priority is disabled, excess resources are split between the Projects according to weights, and the weights are equal to the deserved quota.
+
+An example with Over-Quota Weights for projects:
 
 * Project A has been allocated with a quota of 3 GPUs and GPU over-quota weight is set to Low.
 * Project B has been allocated with a quota of 1 GPU and GPU over-quota weight is set to High.
+
+**For *Departments***
+
+When *Departments* are enabled, excess resources are first split to the departments, then internally to the projects.Excess resources between Departments are always split between departments according to the weights which are equal to the deserved quota regardless of the Over-Quota-Priority flag.
 
 Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over-quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
 
 With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
 
-* Note: Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
+!!! Note
+    Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
 
 When the Over Quota Priority is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources.
 
