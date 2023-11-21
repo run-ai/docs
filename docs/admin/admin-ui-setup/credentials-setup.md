@@ -103,7 +103,6 @@ kubectl label secret -n <NAMESPACE_OF_PROJECT> <SECRET_NAME> run.ai/credentials=
 
 You can create a credential using a user-id and password. Use the user-id and password of the target resource.
 
-### Docker registry
 
 
 
