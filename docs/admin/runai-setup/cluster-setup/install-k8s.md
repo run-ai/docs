@@ -16,7 +16,7 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 * Get the script by running:
   
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
@@ -44,7 +44,7 @@ On each designated worker node:
 * Get the script by running:
   
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
@@ -79,7 +79,7 @@ The same script also contains an option to completely remove Kubernetes from nod
 * Get the script by running:
 
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.15/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
