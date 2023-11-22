@@ -36,8 +36,8 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
-| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select _On Premise_  |
-| Bright  | [NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+| RKE | Rancher Kubernetes Engine          | When installing Run:ai, select *On Premise*  |
+| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai <br><br> Limitation: When configuring the Kubernetes cluster you can only use the default `cluster.local` domain.  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
 
