@@ -42,7 +42,3 @@ To recover Run:ai
 * Re-install the Run:ai control plane. Use the additional configuration previously saved and connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
 * Re-install the cluster. Add additional configuration post-install.  
 * If the cluster is configured such that Projects do not create a namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [Kubernetes](../self-hosted/k8s/project-management.md) or [OpenShift](../self-hosted/ocp/project-management.md).
-
-
-
-

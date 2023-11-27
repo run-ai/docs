@@ -28,7 +28,7 @@ kubectl scale deployment -n runai-backend <deployment name> --replicas=2
 ```
 kubectl edit deploy -n runai-backend runai-backend-thanos-query 
 ```
-Change the limit and requestto 2 CPUs and 2GB of memory. 
+Change the limit and request to 2 CPUs and 2 GB of memory. 
 
 
 ## Scaling the Run:ai Cluster 
@@ -102,11 +102,3 @@ queueConfig:
 This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight. 
 
 Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](../cluster-setup/customize-cluster-install.md#configurations)
-
-
-
-
-
-
-
-
