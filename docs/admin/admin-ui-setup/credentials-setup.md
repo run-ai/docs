@@ -2,7 +2,7 @@
 
 Credentials are used to unlock protected resources such as applications, containers, and other assets.
 
-The *Credentials* manager in the Run:ai environment supports 4 types of credentials:
+The *Credentials* manager in the Run:ai environment supports 3 types of credentials:
 
 1. [Docker registry](#docker-registry)
 2. [Access key](#access-key)
@@ -31,7 +31,7 @@ The following command makes the secret available to the entire scope of a depart
 kubectl label secret -n runai <SECRET_NAME> run.ai/resource=<credential_type> run.ai/department=<department-id>
 ```
 
-`credential_type` is one of the following: `password` / `access-key` / `docker-image`
+`credential_type` is one of the following: `password` / `access-key` / `docker-registry`
 
 The following command makes the secret available to a specific project in the cluster.
 
