@@ -29,7 +29,7 @@ Each of the Run:ai deployments can be set to scale up, by adding a helm settings
 Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 
 * **Keycloak**&mdash;Stores the Run:ai authentication configuration as well as user identities. To scale Keycloak, use the helm flag `--set keycloakx.autoscaling.enabled=true`. By default, Keycloak set a minimum of 3 pods and will scale to more on transaction load. 
-* __PostgreSQL__: It is not possible to configure an internal PostgreSQL to scale horizontally. If this is of importance, please contact Customer Support to understand how to connect Run:ai to an external PostgreSQL service which can be configured for high availability. 
+* **PostgreSQL**&mdash;It is not possible to configure an internal PostgreSQL to scale horizontally. If this is of importance, please contact Customer Support to understand how to connect Run:ai to an external PostgreSQL service which can be configured for high availability. 
 * __Thanos__: at the time of writing, there is no known solution for Thanos High availability. 
  
 
