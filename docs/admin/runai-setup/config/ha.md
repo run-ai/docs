@@ -22,7 +22,7 @@ The Run:ai control plane is running on a single Kubernetes namespace named `runa
 
 #### Deployments
 
-Each of the Run:ai deployments can be set to scale up, by adding a helm settings on install/upgrade. E.g. `--set policyService.autoscaling=true`. For a full list of settings, please contact Run:ai customer support. 
+Each of the Run:ai deployments can be set to scale up, by adding a helm settings on install/upgrade. E.g. `--set policyService.autoscaling.enabled=true`. For a full list of settings, please contact Run:ai customer support. 
 
 #### StatefulSets
 
@@ -38,7 +38,7 @@ Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 
 ### Run:ai system workers
 
-The Run:ai control plane allows the __mandatory__ [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#optional-mark-runai-system-workers). If the feature is used, it is important to set more than one node as a Run:ai system worker to remove this single point of failure. 
+The Run:ai cluster allows the __mandatory__ [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#optional-mark-runai-system-workers). If the feature is used, it is important to set more than one node as a Run:ai system worker to remove this single point of failure. 
 
 ### Prometheus 
 

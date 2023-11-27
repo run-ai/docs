@@ -85,19 +85,18 @@ resources:
 
 ### Sending Metrics
 
-Run:ai uses [Prometheus](https://prometheus.io/){target=_blank} to retrieve metrics from the Run:ai cluster and to send them ti the Run:ai control plane. The number of metrics is a function of the number of Nodes, Jobs and Projects which the system contains. When reaching hundreds of Nodes and Projects, the system will be sending large quantities of metrics which will create a strain on the network as well as the receiving side in the control plane (SaaS or self-hosted).
+Run:ai uses [Prometheus](https://prometheus.io/){target=_blank} to scrape metrics from the Run:ai cluster and to send them to the Run:ai control plane. The number of metrics is a function of the number of Nodes, Jobs and Projects which the system contains. When reaching hundreds of Nodes and Projects, the system will be sending large quantities of metrics which, in turn, will create a strain on the network as well as the receiving side in the control plane (SaaS or self-hosted).
 
 To reduce this strain, we suggest to configure Prometheus to send information in larger bulks and reduce the number of network connections:
 
 * Edit the `runaiconfig` as described under [customizing the cluster](../cluster-setup/customize-cluster-install.md).
-* Under `prometheus` add the following:
+* Under `prometheus.remoteWrite` add the following:
 
 ``` yaml
-remoteWrite:
-  queueConfig:
-    capacity: 5000
-    maxSamplesPerSend: 1000
-    maxShards: 100
+queueConfig:
+  capacity: 5000
+  maxSamplesPerSend: 1000
+  maxShards: 100
 ```
 
 This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight. 
