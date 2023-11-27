@@ -39,7 +39,7 @@ Under Kubernetes, each of the Run:ai containers, has default resource requiremen
 
 #### Service Groups
 
-Run:ai supports setting requests and limits configurations for CPU and memory for Run:ai containers. The configuration is set per _service group_. Each service group reflects a certain load type:
+Run:ai supports setting requests and limits configurations for CPU and memory for Run:ai containers. The configuration is set per *service group*. Each service group reflects a certain load type:
 
 | Service Group | Description | Run:ai containers |
 |---------------|-------------|-------------------|
