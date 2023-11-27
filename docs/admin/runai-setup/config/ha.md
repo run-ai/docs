@@ -12,7 +12,7 @@ A different scenario is a high transaction rate leading to system overload. To a
 
 ### Run:ai system workers
 
-The Run:ai control plane allows the __optional__ [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#optional-mark-runai-system-workers). If the feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not work and the system will remain with a single point of failure.  
+The Run:ai control plane allows the **optional** [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#optional-mark-runai-system-workers). If the feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not work and the system will remain with a single point of failure.  
 
 ### Horizontal Scalability of Run:ai services
 
