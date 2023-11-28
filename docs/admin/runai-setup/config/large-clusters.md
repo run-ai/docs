@@ -14,9 +14,15 @@ The Control plane [deployments](https://kubernetes.io/docs/concepts/workloads/co
 
 To increase the number of replicas, run:
 
+
+To increase the number of replicas, use the following Run:ai control-plane helm flags 
+
 ```
-kubectl scale deployment -n runai-backend <deployment name> --replicas=2
+--set backend.autoscaling.enabled=true 
+--set frontend.autoscaling.enabled=true
+--set grafana.autoscaling.enabled=true  --set grafana.autoscaling.minReplicas=2
 ```
+
 
 !!! Important
     If you have chosen to mark some of the nodes as Run:ai System Workers, the new replicas will attempt to use these nodes first. Thus, for [high availability](ha.md) purposes, you will want to mark more than one node as a Run:ai System Worker.  
