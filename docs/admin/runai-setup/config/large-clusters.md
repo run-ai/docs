@@ -6,39 +6,37 @@ The purpose of this document is to provide information on how to scale the Run:a
 
 The Control plane [deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){target=_blank} which may encounter load are:
 
-| Name |  Kubernetes Deployment name | Purpose | 
+| Name |  Kubernetes Deployment name | Purpose |
 |------|-----------------------------|---------|
-| Backend | runai-backend-backend | Main control-plane service | 
-| Frontend | runai-backend-frontend | Serving of the Run:ai console | 
-| Grafana | runai-backend-grafana | Serving of the Run:ai metrics inside the Run:ai console | 
+| Backend | runai-backend-backend | Main control-plane service |
+| Frontend | runai-backend-frontend | Serving of the Run:ai console |
+| Grafana | runai-backend-grafana | Serving of the Run:ai metrics inside the Run:ai console |
 
 To increase the number of replicas, run:
 
+To increase the number of replicas, use the following Run:ai control-plane helm flags
 
-To increase the number of replicas, use the following Run:ai control-plane helm flags 
-
-```
+```bash
 --set backend.autoscaling.enabled=true 
 --set frontend.autoscaling.enabled=true
 --set grafana.autoscaling.enabled=true --set grafana.autoscaling.minReplicas=2
 ```
-
 
 !!! Important
     If you have chosen to mark some of the nodes as Run:ai System Workers, the new replicas will attempt to use these nodes first. Thus, for [high availability](ha.md) purposes, you will want to mark more than one node as a Run:ai System Worker.  
 
 ### Thanos Querier
 
-[Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function. Use the following Run:ai control-plane helm flags: 
+[Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function. Use the following Run:ai control-plane helm flags:
 
-```
+```bash
 --set thanos.query.resources.limits.memory=2G 
 --set thanos.query.resources.requests.memory=2G 
 --set thanos.query.resources.limits.cpu=2 
 --set thanos.query.resources.requests.cpu=2
 ```
 
-## Scaling the Run:ai Cluster 
+## Scaling the Run:ai Cluster
 
 ### CPU & Memory Resources
 
@@ -51,10 +49,11 @@ Run:ai supports setting requests and limits configurations for CPU and memory fo
 | Service Group | Description | Run:ai containers |
 |---------------|-------------|-------------------|
 | SchedulingServices | Containers associated with the Run:ai scheduler | Scheduler, StatusUpdater, MetricsExporter, PodGrouper, PodGroupAssigner, Binder |
-| SyncServices | Containers associated with syncing updates between the Run:ai cluster and the Run:ai control plane | Agent, ClusterSync, AssetsSync | 
+| SyncServices | Containers associated with syncing updates between the Run:ai cluster and the Run:ai control plane | Agent, ClusterSync, AssetsSync |
 | WorkloadServices| Containers associated with submitting Run:ai Workloads | WorkloadController, JobController |
 
 #### Configuration Steps
+
 To configure resource requirements for a group of services, update the RunaiConfig. Set the `spec.global.<service-group>.` resources section.
 The following example shows the configuration of scheduling services resource requirements:
 
@@ -74,7 +73,7 @@ spec:
          memory: 512Mi
 ```
 
-Use `syncServices` and `workloadServices` for the other two service groups. 
+Use `syncServices` and `workloadServices` for the other two service groups.
 
 #### Recommended Resource Specifications For Large Clusters
 
@@ -106,6 +105,6 @@ queueConfig:
   maxShards: 100
 ```
 
-This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight. 
+This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight.
 
 Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](../cluster-setup/customize-cluster-install.md#configurations)
