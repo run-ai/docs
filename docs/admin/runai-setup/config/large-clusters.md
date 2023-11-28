@@ -20,7 +20,7 @@ To increase the number of replicas, use the following Run:ai control-plane helm 
 ```
 --set backend.autoscaling.enabled=true 
 --set frontend.autoscaling.enabled=true
---set grafana.autoscaling.enabled=true  --set grafana.autoscaling.minReplicas=2
+--set grafana.autoscaling.enabled=true --set grafana.autoscaling.minReplicas=2
 ```
 
 
@@ -29,13 +29,14 @@ To increase the number of replicas, use the following Run:ai control-plane helm 
 
 ### Thanos Querier
 
-[Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function:
+[Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function. Use the following Run:ai control-plane helm flags: 
 
 ```
-kubectl edit deploy -n runai-backend runai-backend-thanos-query 
+--set thanos.query.resources.limits.memory=2G 
+--set thanos.query.resources.requests.memory=2G 
+--set thanos.query.resources.limits.cpu=2 
+--set thanos.query.resources.requests.cpu=2
 ```
-Change the limit and request to 2 CPUs and 2 GB of memory. 
-
 
 ## Scaling the Run:ai Cluster 
 
