@@ -32,12 +32,9 @@ Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 * **PostgreSQL**&mdash;It is not possible to configure an internal PostgreSQL to scale horizontally. If this is of importance, please contact Customer Support to understand how to connect Run:ai to an external PostgreSQL service which can be configured for high availability. 
 * **Thanos**&mdash;To enable Thanos autoscaling, use the following Run:ai control-plane helm flags: 
 ```
---set thanos.receive.autoscaling.enabled=true 
 --set thanos.query.autoscaling.enabled=true  
 --set thanos.query.autoscaling.maxReplicas=2 
---set thanos.receive.autoscaling.maxReplicas=3 
 --set thanos.query.autoscaling.minReplicas=2 
---set thanos.receive.autoscaling.minReplicas=3
 ``` 
 
 ## Run:ai Cluster
