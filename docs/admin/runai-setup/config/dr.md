@@ -3,7 +3,7 @@
 
 ## Run:ai Cluster
 
-The SaaS version of Run:ai does not store any data. The required data is moved into the control-plane. As such, backup of data is not an issue in such environments. 
+The SaaS version of Run:ai does not store any data. The required data is moved into the control-plane. As such, backup of data is not an issue in such environments.
 
 ### Backing up Cluster Configuration
 
@@ -14,7 +14,8 @@ kubectl get runaiconfig runai -n runai -o yaml -o=jsonpath='{.spec}'
 ```
 
 ## Run:ai Control Plane
-The [self-hosted](../installation-types.md#self-hosted-installation) variant of Run:ai also installs the control-plane at the customer site. As such, it becomes the responsibility of the IT organization to verify that the system is configured for proper backup and learn how to recover the data when needed. 
+
+The [self-hosted](../installation-types.md#self-hosted-installation) variant of Run:ai also installs the control-plane at the customer site. As such, it becomes the responsibility of the IT organization to verify that the system is configured for proper backup and learn how to recover the data when needed.
 
 ### Database Storage
 
@@ -32,17 +33,16 @@ Run:ai stores metric history using [Thanos](https://github.com/thanos-io/thanos)
 
 ### Backing up Control-Plane Configuration
 
-The installation of the Run:ai control plane can be [configured](../self-hosted/k8s/backend.md#optional-additional-configurations). The configuration is provided as `--set` command in the helm installation. These changes will be preserved on upgrade, but will not be preserved on uninstall or on damage to Kubernetes. Thus, it is best to back up these customizations. For a list of customizations used during the installation, run: 
+The installation of the Run:ai control plane can be [configured](../self-hosted/k8s/backend.md#optional-additional-configurations). The configuration is provided as `--set` command in the helm installation. These changes will be preserved on upgrade, but will not be preserved on uninstall or on damage to Kubernetes. Thus, it is best to back up these customizations. For a list of customizations used during the installation, run:
 
-```helm get values runai-backend -n runai-backend```
-
+`helm get values runai-backend -n runai-backend`
 
 ### Recovery
 
 To recover Run:ai
 
 * Re-create the Kubernetes/OpenShift cluster.
-* Recover the persistent volumes for metrics and database. 
-* Re-install the Run:ai control plane. Use the additional configuration previously saved and connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV. 
+* Recover the persistent volumes for metrics and database.
+* Re-install the Run:ai control plane. Use the additional configuration previously saved and connect to the restored PostgreSQL PV. Connect Prometheus to the stored metrics PV.
 * Re-install the cluster. Add additional configuration post-install.  
 * If the cluster is configured such that Projects do not create a namespace automatically, you will need to re-create namespaces and apply role bindings as discussed in [Kubernetes](../self-hosted/k8s/project-management.md) or [OpenShift](../self-hosted/ocp/project-management.md).
