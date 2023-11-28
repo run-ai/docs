@@ -186,7 +186,7 @@ nav:
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
-      - 'Registry integration': 'admin/researcher-setup/registry-integration.md'
+    #  - 'Registry integration': 'admin/researcher-setup/registry-integration.md'
     #  - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
