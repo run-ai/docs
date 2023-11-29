@@ -63,6 +63,7 @@ The `Status` column in the *Node* and *Node pools* table enable you to quickly v
 | Not ready (Undrained migrated node) | Evict all pod to make the node ready. |
 | Not ready (Missing Nvidia Container Toolkit ) | The *NVIDIA Container Toolkit* enables users to build and run GPU-accelerated containers. |
 | Not ready ( Missing Nvidia DCGM Exporter) | DCGM-Exporter allows users to gather GPU metrics and understand workload behavior or monitor GPUs in clusters. |
+<!-- I need to update this table -->
 
 ### Download Node and Node-pools Table
 
