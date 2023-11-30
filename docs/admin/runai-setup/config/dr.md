@@ -19,7 +19,7 @@ The [self-hosted](../installation-types.md#self-hosted-installation) variant of 
 
 ### Database Storage
 
-Run:ai uses an internal PostgreSQL database. The database is stored on a Kubernetes _Persistent Volume_ (PV). You must provide a backup solution for the database. Some options:
+Run:ai uses an internal PostgreSQL database. The database is stored on a Kubernetes *Persistent Volume* (PV). You must provide a backup solution for the database. Some options:
 
 * Backing up of PostgreSQL itself. Example: `kubectl -n runai-backend exec -it runai-backend-postgresql-0 -- env  PGPASSWORD=password pg_dump -U postgres   backend   > cluster_name_db_backup.sql`
 * Backing up the persistent volume holding the database storage.
