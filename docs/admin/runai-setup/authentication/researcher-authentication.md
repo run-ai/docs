@@ -106,6 +106,20 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
     Where the `OIDC` flags are provided in the Run:ai server configuration section as described above. 
 
+    Then update runaiconfig with  the Anthos endpoint - gke-oidc-envoy.
+    Get the externel IP of the service in the Anthos namespace.
+
+    ```
+    kubectl get svc -n anthos-identity-service
+    NAME               TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)              AGE
+    gke-oidc-envoy     LoadBalancer   10.32.7.102   35.236.229.19   443:31545/TCP        12h
+    ```
+
+    Add the IP to runai confoguration 
+    
+    ```
+    kubectl -n runai patch runaiconfig runai -p '{"spec": {"researcher-service": {"args": {"gkeOidcEnvoyHost": "35.236.229.19"}}}}'  --type="merge"
+    ```
 
     To create a kubeconfig profile for Researchers run:
 
