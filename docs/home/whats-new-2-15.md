@@ -1,4 +1,4 @@
-# Run:ai version 2.15 - November 25, 2023
+# Run:ai version 2.15 - December 3, 2023
 
 ## New Features
 
@@ -51,7 +51,7 @@
 ## Improvements
 
 <!-- RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
-* Improved the readability of the node table to include a more detailed status and its description. The added information in the table help to easily asses issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../Researcher/scheduling/using-node-pools.md#node-and-node-pool-status)
+* Improved the readability of the node table to include a more detailed status and its description. The added information in the table helps to easily inspect issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../Researcher/scheduling/using-node-pools.md#node-and-node-pool-status)
 
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
@@ -65,7 +65,7 @@
 <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
 
 <!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
-* Improved support for KubeFlow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
+* Improved support for Kubeflow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
 
 <!-- RUN-10251/RUN-10252 - Block over-subscription of quota by Projects/Departments- -->
 * Improved control over how over-quota is managed by adding the ability to block over-subscription of quota in *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
