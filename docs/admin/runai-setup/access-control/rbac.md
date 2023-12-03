@@ -18,33 +18,33 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 A role is a combination of entities and actions. Run:ai supports the following roles and actions within the user's granted scope:
 
-| Managed Entity | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| Create local users and applications | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |
-| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | CRUD | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |
-| Roles | CRUD | R | R |  |  |  |  |  |  |  |  |  |  |  |
-| Departments | CRUD | R (6) | CRUD |  |  | R | R |  |  | R | R | R | R | R |
-| Projects | CRUD | CRUD | CRUD | R (2) (3) | R | R | R | R | CRUD | R | R | R | R | R |
-| Jobs | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
-| Deployments | CRUD | CRUD | R |  |  | CRUD | R |  |  |  |  |  |  | R |
-| Workspaces | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
-| Trainings | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD |  | R | R | R | R | R |
-| Environments | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | CRUD | R | R | R | R |
-| Data Sources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | CRUD | R | R | R |
-| Compute Resources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | CRUD | R | R |
-| Templates | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | R | CRUD | R |
-| Policies (7) | CRUD | CRUD | R | R | R | R | R | R |  | R | R | R | R | R |
-| Clusters | CRUD | R | R | R | R | R | R | R |  | R | R | R | R | R |
-| Node Pools | CRUD | R | R |  |  | R | R |  |  |  |  |  |  |  |
-| Nodes | R | R | R |  |  | R | R |  |  |  |  |  |  |  |
-| Settings.General | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| Credentials (Settings.Cre...) | CRUD | R | R | R | R | R | R | R |  |  | R |  |  |  |
-| Events History | R |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| Dashboard.Overview | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
-| Dashboards.Analytics | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
-| Dashboards.Consumption | R | R |  |  |  |  |  | R |   |  |  |  |  |  |
+| Managed Entity | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager |  ML Engineer | Viewer | Researcher L1 | Researcher L2 | Environment Admin | Data Source Admin | Compute Resource Admin | Template Admin | Department Viewer |
+|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+| Create local users and applications | VECD | VECD |  |  |  |  |  |  |  |  |  |  |  |  
+| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | VECD | VECD | VECD |  |    |  |  |  |  |  |  |  |  |
+| Roles | VECD | V | V |  |  |  |  |  |  |  |  |  |  |
+| Departments | VECD | V (6) | VECD |  | V | V |  |  | V | V | V | V | V |
+| Projects | VECD | VECD | VECD | V (2) (3) | V | V | V | VECD | V | V | V | V | V |
+| Jobs | VECD | VECD | VECD | V |  | V | VECD | VECD | V | V | V | V | V |
+| Deployments | VECD | VECD | V |  | VECD | V |  |  |  |  |  |  | V |
+| Workspaces | VECD | VECD | VECD | V | | V | VECD | VECD | V | V | V | V | V |
+| Trainings | VECD | VECD | VECD | V | | V | VECD |  | V | V | V | V | V |
+| Environments | VECD | VECD | VECD | VECD |   | V | V | V | VECD | V | V | V | V |
+| Data Sources | VECD | VECD | VECD | VECD | | V | V | V | V | VECD | V | V | V |
+| Compute Resources | VECD | VECD | VECD | VECD |  | V | V | V | V | V | VECD | V | V |
+| Templates | VECD | VECD | VECD | VECD | | V | V | V | V | V | V | VECD | V |
+| Policies (7) | VECD | VECD | V | V | V | V | V |  | V | V | V | V | V |
+| Clusters | VECD | V | V | V | V | V | V |  | V | V | V | V | V |
+| Node Pools | VECD | V | V |  | V | V |  |  |  |  |  |  |  |
+| Nodes | V | V | V |  | V | V |  |  |  |  |  |  |  |
+| Settings.General | VECD |  |  |  |  |  |  |  |  |  |  |  |  |
+| Credentials (Settings.Cre...) | VECD | V | V | V | V | V | V |  |  | V |  |  |  |
+| Events History | V |  |  |  |  |  |  |  |  |  |  |  |  |
+| Dashboards Overview | V | V | V | V |  V | V | V |   | V | V | V | V | V |
+| Dashboards Analytics | V | V | V | V | V | V | V |   | V | V | V | V | V |
+| Dashboards Consumption | V | V |  |  |  |  | V |   |  |  |  |  |  |
 
-Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
+Permissions:     **V** = View, **E** = Edit, **C** = Create, **D** = Delete
 
 !!! Note
     Keep the following in mind when upgrading from versions 2.13 or earlier:
@@ -52,9 +52,9 @@ Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
     3. To preserve backward compatibility, users with the role of *Research Manager* are assigned to all current projects, but not to new projects.
-    4. To allow the *Department Admin* to assign a *Researcher* role to a user, group, or app, the *Department Admin* must have **CRUD** permissions for **Jobs** and **Workspaces**. This creates a broader span of managed objects.
+    4. To allow the *Department Admin* to assign a *Researcher* role to a user, group, or app, the *Department Admin* must have **VECD** permissions for **Jobs** and **Workspaces**. This creates a broader span of managed objects.
     5. To preserve backward compatibility, users with the role *Editor*, are assigned to the same scope they had before the upgrade. However, with new user assignments, the *Admin* can limit the scope to only part of the organizational scope.
-    6. *Department Admin* permissions for **Departments** remain **Read** as long as there is no hierarchy. Once a hierarchy is introduced, permissions need to change to **CRUD** to allow the *Department Admin* to create new Departments under its own department.
+    6. *Department Admin* permissions for **Departments** remain **Read** as long as there is no hierarchy. Once a hierarchy is introduced, permissions need to change to **VECD** to allow the *Department Admin* to create new Departments under its own department.
     7. Policies are accessible through **Clusters** using YAML files. There is no UI interface, although these policies affect UI elements (for example, Job Forms, Workspaces, Trainings).
 
 ### Scope
