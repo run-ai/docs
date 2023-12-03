@@ -16,35 +16,24 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 ### Roles
 
-A role is a combination of entities and actions. Run:ai supports the following roles and actions within the user's granted scope:
+A role is a combination of entities and actions. Run:ai supports the following roles:
 
-| Managed Entity | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager |  ML Engineer | Viewer | Researcher L1 | Researcher L2 | Environment Admin | Data Source Admin | Compute Resource Admin | Template Admin | Department Viewer |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| Create local users and applications | VECD | VECD |  |  |  |  |  |  |  |  |  |  |  |  
-| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | VECD | VECD | VECD |  |    |  |  |  |  |  |  |  |  |
-| Roles | VECD | V | V |  |  |  |  |  |  |  |  |  |  |
-| Departments | VECD | V (6) | VECD |  | V | V |  |  | V | V | V | V | V |
-| Projects | VECD | VECD | VECD | V (2) (3) | V | V | V | VECD | V | V | V | V | V |
-| Jobs | VECD | VECD | VECD | V |  | V | VECD | VECD | V | V | V | V | V |
-| Deployments | VECD | VECD | V |  | VECD | V |  |  |  |  |  |  | V |
-| Workspaces | VECD | VECD | VECD | V | | V | VECD | VECD | V | V | V | V | V |
-| Trainings | VECD | VECD | VECD | V | | V | VECD |  | V | V | V | V | V |
-| Environments | VECD | VECD | VECD | VECD |   | V | V | V | VECD | V | V | V | V |
-| Data Sources | VECD | VECD | VECD | VECD | | V | V | V | V | VECD | V | V | V |
-| Compute Resources | VECD | VECD | VECD | VECD |  | V | V | V | V | V | VECD | V | V |
-| Templates | VECD | VECD | VECD | VECD | | V | V | V | V | V | V | VECD | V |
-| Policies (7) | VECD | VECD | V | V | V | V | V |  | V | V | V | V | V |
-| Clusters | VECD | V | V | V | V | V | V |  | V | V | V | V | V |
-| Node Pools | VECD | V | V |  | V | V |  |  |  |  |  |  |  |
-| Nodes | V | V | V |  | V | V |  |  |  |  |  |  |  |
-| Settings.General | VECD |  |  |  |  |  |  |  |  |  |  |  |  |
-| Credentials (Settings.Cre...) | VECD | V | V | V | V | V | V |  |  | V |  |  |  |
-| Events History | V |  |  |  |  |  |  |  |  |  |  |  |  |
-| Dashboards Overview | V | V | V | V |  V | V | V |   | V | V | V | V | V |
-| Dashboards Analytics | V | V | V | V | V | V | V |   | V | V | V | V | V |
-| Dashboards Consumption | V | V |  |  |  |  | V |   |  |  |  |  |  |
-
-Permissions:     **V** = View, **E** = Edit, **C** = Create, **D** = Delete
+| Role | Description |
+| -- | -- |
+Environment administrator | Create, view, edit, and delete *Environments*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Data sources*, *Compute resources*, and *Templates*. |
+| Credentials administrator | Create view, edit, and delete *Credentials*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Data sources*, *Compute resources, *Templates*, and environments. |
+| Data source administrator| Create, view, edit, and delete *Data sources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Templates*. |
+| Compute resource administrator | Create, view, edit, and delete *Compute resources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Data sources*, and *Templates*. |
+| System administrator | Controls all aspects of the system. This role has global system control and should be limited to a small group of skilled IT administrators. |
+| Department administrator | Create, view, edit, and delete: *Departments* and *Projects*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.<br>View *Dashboards* (including the *Consumption dashboard). |
+| Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
+| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, and *Templates*.<br>View *Projects*, related *Jobs* and *Workspaces*, and *Dashboards*. |
+| L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*.<br>View *Dashboards*.
+| ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
+| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
+| L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. |
+| Template administrator | Create, view, edit, and delete *Templates*.<br>View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Data sources*. |
+| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Deployments*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*), and *Dashboards*. |
 
 !!! Note
     Keep the following in mind when upgrading from versions 2.13 or earlier:
