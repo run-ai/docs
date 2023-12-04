@@ -1,4 +1,4 @@
-# Run:ai version 2.15 - November 25, 2023
+# Run:ai version 2.15 - December 3, 2023
 
 ## New Features
 
@@ -21,7 +21,7 @@
 * Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
-* Added the ability to prevent the submission of workloads that use data sources of type `host path` using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies.md#prevent-data-storage-on-the-node).
+* Added the ability to prevent the submission of workloads that use data sources of type `host path` using policies. This prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies.md#prevent-data-storage-on-the-node).
 
 <!-- ADDLINK and uncomment when complete) RUN-10602/RUN-10603 - GPU Memory Request & Limit 
 * Added the ability to use Dynamic GPU fractions. This allows a workload to request a certain amount of guaranteed GPU memory fraction, and at the same time also request to grow beyond that guaranteed memory fraction more is available. This allows a workload to request a certain amount of guaranteed GPU fraction processing, and at the same time also request to grow beyond that guaranteed fraction if more is available. For more information, see [Dynamic GPU fractions](). -->
@@ -51,7 +51,7 @@
 ## Improvements
 
 <!-- RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->
-* Improved the readability of the node table to include a more detailed status and its description. The added information in the table help to easily asses issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../Researcher/scheduling/using-node-pools.md#node-and-node-pool-status)
+* Improved the readability of the node table to include a more detailed status and its description. The added information in the table helps to easily inspect issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../Researcher/scheduling/using-node-pools.md#node-and-node-pool-status)
 
 <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->
 * Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
@@ -65,7 +65,7 @@
 <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring -->
 
 <!-- RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->
-* Improved support for KubeFlow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
+* Improved support for Kubeflow Notebooks. Now Run:ai supports scheduling of Kubeflow notebook CRDs with fractional GPUs. Kubeflow notebooks are identified automatically and use a special icon in the *Jobs* UI.
 
 <!-- RUN-10251/RUN-10252 - Block over-subscription of quota by Projects/Departments- -->
 * Improved control over how over-quota is managed by adding the ability to block over-subscription of quota in *Projects* or *Departments*. For more information, see [Over quota blocking](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
@@ -80,7 +80,7 @@
 * RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page
 * RUN-11231/RUN-11240 Environment for distributed training
 -->
-* Added support to run distributed workloads via Run:ai workspaces and training. You can configure distributed training on the following:
+* Added support to run distributed workloads via training. You can configure distributed training on the following:
 
       * Trainings form
       * Environments form

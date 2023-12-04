@@ -68,7 +68,7 @@ extra:
 
 plugins:
   - mike:
-      version_selector: false
+      version_selector: true
       canonical_version: null
   - search:
       lang: en

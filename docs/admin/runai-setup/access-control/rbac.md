@@ -16,35 +16,24 @@ A *Subject* is an entity that receives the rule. *Subjects* are:
 
 ### Roles
 
-A role is a combination of entities and actions. Run:ai supports the following roles and actions within the user's granted scope:
+A role is a combination of entities and actions. Run:ai supports the following roles:
 
-| Managed Entity | System Admin (1) | Department Admin (4) | Editor (5) | Research Manager | Researcher | ML Eng. | Viewer | Researcher L1 | Researcher L2 | Environments Admin | Data Sources Admin | Compute Resources Admin | Templates Admin | Department Viewer |
-|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-| Create local users and applications | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |
-| Assign Users/Groups/Apps to Roles with scopes (Departments, Projects) | CRUD | CRUD | CRUD |  |  |  |  |  |  |  |  |  |  |  |
-| Roles | CRUD | R | R |  |  |  |  |  |  |  |  |  |  |  |
-| Departments | CRUD | R (6) | CRUD |  |  | R | R |  |  | R | R | R | R | R |
-| Projects | CRUD | CRUD | CRUD | R (2) (3) | R | R | R | R | CRUD | R | R | R | R | R |
-| Jobs | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
-| Deployments | CRUD | CRUD | R |  |  | CRUD | R |  |  |  |  |  |  | R |
-| Workspaces | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD | CRUD | R | R | R | R | R |
-| Trainings | CRUD | CRUD | CRUD | R | CRUD |  | R | CRUD |  | R | R | R | R | R |
-| Environments | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | CRUD | R | R | R | R |
-| Data Sources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | CRUD | R | R | R |
-| Compute Resources | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | CRUD | R | R |
-| Templates | CRUD | CRUD | CRUD | CRUD | CRUD |  | R | R | R | R | R | R | CRUD | R |
-| Policies (7) | CRUD | CRUD | R | R | R | R | R | R |  | R | R | R | R | R |
-| Clusters | CRUD | R | R | R | R | R | R | R |  | R | R | R | R | R |
-| Node Pools | CRUD | R | R |  |  | R | R |  |  |  |  |  |  |  |
-| Nodes | R | R | R |  |  | R | R |  |  |  |  |  |  |  |
-| Settings.General | CRUD |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| Credentials (Settings.Cre...) | CRUD | R | R | R | R | R | R | R |  |  | R |  |  |  |
-| Events History | R |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| Dashboard.Overview | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
-| Dashboards.Analytics | R | R | R | R | R | R | R | R |   | R | R | R | R | R |
-| Dashboards.Consumption | R | R |  |  |  |  |  | R |   |  |  |  |  |  |
-
-Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
+| Role | Description |
+| -- | -- |
+Environment administrator | Create, view, edit, and delete *Environments*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Data sources*, *Compute resources*, and *Templates*. |
+| Credentials administrator | Create view, edit, and delete *Credentials*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Data sources*, *Compute resources, *Templates*, and environments. |
+| Data source administrator| Create, view, edit, and delete *Data sources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Templates*. |
+| Compute resource administrator | Create, view, edit, and delete *Compute resources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Data sources*, and *Templates*. |
+| System administrator | Controls all aspects of the system. This role has global system control and should be limited to a small group of skilled IT administrators. |
+| Department administrator | Create, view, edit, and delete: *Departments* and *Projects*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.<br>View *Dashboards* (including the *Consumption dashboard). |
+| Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
+| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, and *Templates*.<br>View *Projects*, related *Jobs* and *Workspaces*, and *Dashboards*. |
+| L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*.<br>View *Dashboards*.
+| ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
+| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
+| L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. |
+| Template administrator | Create, view, edit, and delete *Templates*.<br>View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Data sources*. |
+| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Deployments*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*), and *Dashboards*. |
 
 !!! Note
     Keep the following in mind when upgrading from versions 2.13 or earlier:
@@ -52,9 +41,9 @@ Permissions:    **C** = Create, **R** = Read, **U** = Update, **D** = Delete
     1. *Admin* becomes *System Admin* with full access to all managed objects and scopes.
     2. *Research Manager* is **not** automatically assigned to all projects but to Projects set by the relevant *Admin* when assigning this role to a user, group, or app.
     3. To preserve backward compatibility, users with the role of *Research Manager* are assigned to all current projects, but not to new projects.
-    4. To allow the *Department Admin* to assign a *Researcher* role to a user, group, or app, the *Department Admin* must have **CRUD** permissions for **Jobs** and **Workspaces**. This creates a broader span of managed objects.
+    4. To allow the *Department Admin* to assign a *Researcher* role to a user, group, or app, the *Department Admin* must have **VECD** permissions for **Jobs** and **Workspaces**. This creates a broader span of managed objects.
     5. To preserve backward compatibility, users with the role *Editor*, are assigned to the same scope they had before the upgrade. However, with new user assignments, the *Admin* can limit the scope to only part of the organizational scope.
-    6. *Department Admin* permissions for **Departments** remain **Read** as long as there is no hierarchy. Once a hierarchy is introduced, permissions need to change to **CRUD** to allow the *Department Admin* to create new Departments under its own department.
+    6. *Department Admin* permissions for **Departments** remain **Read** as long as there is no hierarchy. Once a hierarchy is introduced, permissions need to change to **VECD** to allow the *Department Admin* to create new Departments under its own department.
     7. Policies are accessible through **Clusters** using YAML files. There is no UI interface, although these policies affect UI elements (for example, Job Forms, Workspaces, Trainings).
 
 ### Scope
