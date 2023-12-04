@@ -21,7 +21,7 @@
 * Added a new dashboard for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#cpu-dashboard).
 
 <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->
-* Added the ability to prevent the submission of workloads that use data sources of type `host path` using policies. This is prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies.md#prevent-data-storage-on-the-node).
+* Added the ability to prevent the submission of workloads that use data sources of type `host path` using policies. This prevents data from being stored on the node. When a node is deleted, all data stored on that node is lost. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies.md#prevent-data-storage-on-the-node).
 
 <!-- ADDLINK and uncomment when complete) RUN-10602/RUN-10603 - GPU Memory Request & Limit 
 * Added the ability to use Dynamic GPU fractions. This allows a workload to request a certain amount of guaranteed GPU memory fraction, and at the same time also request to grow beyond that guaranteed memory fraction more is available. This allows a workload to request a certain amount of guaranteed GPU fraction processing, and at the same time also request to grow beyond that guaranteed fraction if more is available. For more information, see [Dynamic GPU fractions](). -->
@@ -80,7 +80,7 @@
 * RUN-11219/RUN-11602 Submitting an MPI distributed training from UI - 3rd form page
 * RUN-11231/RUN-11240 Environment for distributed training
 -->
-* Added support to run distributed workloads via Run:ai workspaces and training. You can configure distributed training on the following:
+* Added support to run distributed workloads via training. You can configure distributed training on the following:
 
       * Trainings form
       * Environments form
