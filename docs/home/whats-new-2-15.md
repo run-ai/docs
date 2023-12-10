@@ -91,9 +91,9 @@ date: 2023-Dec-3
 * <!-- RUN-13167/RUN-13168 Department Over-Quota Priority behavior -->Improved the scheduler fairness for departments using the `over quota priority` switch (in Settings). When the feature flag is disabled, over-quota weights are equal to the deserved quota and any excess resources are divided in the same proportion as the in-quota resources. For more information, see [Over Quota Priority](../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority).
 * Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one department may preempt in-quota smaller workloads from another department. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota or over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md#fairness).
 
-#### Notifications
+<!-- #### Notifications
 
-* <!-- RUN-9868/RUN-10087 support per user scheduling events notifications (slack/email) -->Added new functionality that provides notifications from scheduling events. Run:ai can now send notifications via email and can be configured so that each user will only get events that are relevant to their workloads. For more information, see [email notifications](../admin/researcher-setup/email-messaging.md#email-notifications).
+* <!-- RUN-9868/RUN-10087 support per user scheduling events notifications (slack/email) COMMENTEND Added new functionality that provides notifications from scheduling events. Run:ai can now send notifications via email and can be configured so that each user will only get events that are relevant to their workloads. For more information, see [email notifications](../admin/researcher-setup/email-messaging.md#email-notifications). -->
 
 ### Control & Visibility
 
