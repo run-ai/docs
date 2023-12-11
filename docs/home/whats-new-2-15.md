@@ -95,7 +95,7 @@ date: 2023-Dec-3
 
 * <!-- RUN-9868/RUN-10087 support per user scheduling events notifications (slack/email) COMMENTEND Added new functionality that provides notifications from scheduling events. Run:ai can now send notifications via email and can be configured so that each user will only get events that are relevant to their workloads. For more information, see [email notifications](../admin/researcher-setup/email-messaging.md#email-notifications). -->
 
-### Control & Visibility
+### Control and Visibility
 
 #### Dashboards
 
