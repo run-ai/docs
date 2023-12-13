@@ -1,3 +1,13 @@
+---
+title: Policies
+summary: Policies
+authors:
+    - Jason Novich
+date: 2023-Dec-12
+hide:
+  - navigation
+  - toc
+---
 # Configure Policies
 
 ## What are Policies?
@@ -354,3 +364,12 @@ To access _project-specific_ policies, replace the `-n runai` parameter with the
 ## See Also
 
 * For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)
+
+**API LINK HERE!!!!!!!!**
+
+<!-- <swagger-ui src="../../policy-API.json"> -->
+
+<body>
+    <redoc spec-url='../../../policy-API.json'></redoc>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+  </body>
