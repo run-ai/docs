@@ -28,8 +28,6 @@ date: 2023-Dec-4
 
 <!-- TODO RUN-12658/RUN-14155	TW - Expose GPU health info  -->
 
-<!-- RUN-12445/RUN-14112	TW - Centralized & Persistent Logs -->
-
 <!--TODO RUN-13545/RUN-14027	TW - LLM Model Catalog - Internal demo milestone -->
 
 #### Authentication and Authorization
@@ -67,10 +65,7 @@ date: 2023-Dec-4
 
 <!-- TODO RUN-11787/RUN-11788	TW - Support new Kubernetes and OpenShift releases - Q4/2023 -->
 
-
 ----------------------------------------------------
-
-<!-- RUN-13606/RUN-13607	TW - [DBS] Add configuration for our services to use route address instead of internal HTTP address -->
 
 <!-- TODO RUN-13470	TW - Update Workload Parameters pages -->
 
