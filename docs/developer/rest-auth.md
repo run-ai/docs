@@ -73,7 +73,7 @@ Replace `<COMPANY-URL>` below with  `app.run.ai` for SaaS installations (not `<c
             return
     ```
 
-### Response 
+### Response
 
 The API response will look as follows: 
 
