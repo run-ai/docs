@@ -7,7 +7,7 @@ The following document explains how to authenticate with Run:ai APIs.
 Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in several ways:
 
 * When logging into the Run:ai user interface, you enter an email and password (or authenticated via single sign-on) which are used to obtain a token.
-* When using the Run:ai command-line, you use a Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift). The command attachs a token to the profile and allows you access to Run:ai functionality.
+* When using the Run:ai command-line, you use a Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift). The command attaches a token to the profile and allows you access to Run:ai functionality.
 * When using Run:ai APIs, you need to create an __Application__ through the Run:ai user interface. The Application is created with specific roles and contains a _secret_. Using the secret you can obtain a token and use it within subsequent API calls.
 
 
@@ -46,20 +46,31 @@ Replace `<COMPANY-URL>` below with  `app.run.ai` for SaaS installations (not `<c
 
 === "Python"
     ``` python
-    url = <COMPANY-URL> + "/auth/realms/" + <REALM> + "/protocol/openid-connect/token"
+    import requests
+    import json
 
-    payload = 'grant_type=client_credentials&scope=openid&response_type=id_token&client_id=' + <APPLICATION-NAME> + '&client_secret=' + <CLIENT-SECRET>
-    headers = {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    
-    response = requests.request("POST", url, headers=headers, data=payload)
-    if response.status_code //100 == 2:
-        j = json.loads(response.text)
-        return j["access_token"]
-    else:
-        print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
-        return
+    COMPANY_URL = "app.run.ai"
+    COMPANY_REALM = "acme"
+    APPLICATION_NAME = "app-name"
+    CLIENT_SECRET = "secret"
+
+    def  runai_authenticate():    
+        url = "https://" + COMPANY_URL + "/auth/realms/" +  \
+            COMPANY_REALM + "/protocol/openid-connect/token"
+
+        payload = 'grant_type=client_credentials&scope=openid&response_type=id_token&client_id=' + \
+            APPLICATION_NAME + '&client_secret=' + CLIENT_SECRET
+        headers = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        
+        response = requests.request("POST", url, headers=headers, data=payload)
+        if response.status_code //100 == 2:
+            j = json.loads(response.text)
+            return j["access_token"]
+        else:
+            print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+            return
     ```
 
 ### Response 
