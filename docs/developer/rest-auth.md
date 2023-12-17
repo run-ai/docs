@@ -10,7 +10,6 @@ Run:ai APIs are accessed using _bearer tokens_. A token can be obtained in sever
 * When using the Run:ai command-line, you use a Kubernetes profile and are authenticated by pre-running `runai login` (or oc login with OpenShift). The command attaches a token to the profile and allows you access to Run:ai functionality.
 * When using Run:ai APIs, you need to create an __Application__ through the Run:ai user interface. The Application is created with specific roles and contains a _secret_. Using the secret you can obtain a token and use it within subsequent API calls.
 
-
 ## Create a Client Application
 
 * Open the Run:ai Run:ai User Interface.
@@ -75,7 +74,7 @@ Replace `<COMPANY-URL>` below with  `app.run.ai` for SaaS installations (not `<c
 
 ### Response
 
-The API response will look as follows: 
+The API response will look as follows:
 
 ``` JSON title="API Response"
 {
