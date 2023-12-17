@@ -83,7 +83,7 @@ plugins:
         - skip-lightbox
 #  - render_swagger:
 #      allow_arbitrary_locations : true
-  - swagger-ui-tag
+#  - swagger-ui-tag
   - minify:
       minify_html: true
   - redirects:
