@@ -16,29 +16,29 @@ The domain used for Administrator REST APIs is the same domain used to browse fo
 For example, if you have an Administrator role, you can get a list of clusters by running:
 
 === "cURL"
-```
-curl 'https://<COMPANY-URL>/v1/k8s/clusters' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <ACCESS-TOKEN>'
-```
+    ```
+    curl 'https://<COMPANY-URL>/v1/k8s/clusters' \
+    --header 'Accept: application/json' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <ACCESS-TOKEN>'
+    ```
 
 === "Python"
-``` python
-import http.client
+    ``` python
+    import http.client
 
-conn = http.client.HTTPSConnection("https://<COMPANY-URL>")
-headers = {
-    'content-type': "application/json",
-    'authorization': "Bearer <ACCESS-TOKEN>"
-    }
-conn.request("GET", "/v1/k8s/clusters", headers=headers)
+    conn = http.client.HTTPSConnection("https://<COMPANY-URL>")
+    headers = {
+        'content-type': "application/json",
+        'authorization': "Bearer <ACCESS-TOKEN>"
+        }
+    conn.request("GET", "/v1/k8s/clusters", headers=headers)
 
-res = conn.getresponse()
-data = res.read()
+    res = conn.getresponse()
+    data = res.read()
 
-print(data.decode("utf-8"))
-```
+    print(data.decode("utf-8"))
+    ```
 (replace `<ACCESS-TOKEN>` with the bearer token from above).
 
 For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai Administrator REST API to create a User and a Project and set the User to the Project.  
