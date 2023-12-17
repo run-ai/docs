@@ -11,6 +11,7 @@ theme:
   favicon: images/favicon.ico
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
+    - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - search.highlight
@@ -80,7 +81,9 @@ plugins:
       draggable: true
       skip_classes:
         - skip-lightbox
-#  - render_swagger
+#  - render_swagger:
+#      allow_arbitrary_locations : true
+  - swagger-ui-tag
   - minify:
       minify_html: true
   - redirects:
@@ -118,7 +121,8 @@ nav:
   - Home: 
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
-    - 'Whats New' :
+    - 'Whats New' : 
+      - 'home/index.md'
       - 'Version 2.15' : 'home/whats-new-2-15.md'
     #  - 'Version 2.14' : 'home/whats-new-2-14.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'

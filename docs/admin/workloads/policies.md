@@ -1,356 +1,229 @@
-# Configure Policies
+---
+title: Policies
+summary: This article contains details about Policies in the Run:ai platform.
+authors:
+    - Jason Novich
+date: 2023-Dec-12
+---
 
-## What are Policies?
+## Introduction
 
-Policies allow administrators to _impose restrictions_ and set _default values_ for Researcher Workloads. For example:
+*Policies* allow administrators to impose restrictions and set default values for researcher workloads. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
 
-1. Restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory for an interactive workload.
-2. Set the default memory of each training job to 1GB, or mount a default volume to be used by any submitted Workload.
+For example, an administrator can create and apply a policy that will restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory per type of workload.
 
-Policies are stored as Kubernetes [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources){default=_blank}.
+Another example is, an administrator who wants to set different amounts of CPU, GPUs and memory for different kinds of workloads. A training workload can have a default of 1 GB of memory, or an interactive workload can have a default amount of GPUs.
 
-Policies are specific to Workload type as such there are several kinds of Policies:
+Policies are created per Run:ai project (Kubernetes namespace). When a policy is created in the `runai` namespace, it will take effect when there is no project-specific policy for the workloads of the same kind.
 
-|  Workload Type | Kubernetes Workload Name | Kubernetes Policy Name |
-|----------------|-----------------|-------------|
-| Interactive    | `InteractiveWorkload` | `InteractivePolicy` |
-| Training       | `TrainingWorkload`| `TrainingPolicy` |
-| Distributed Training | `DistributedWorkload` | `DistributedPolicy` |
-| Inference      | `InferenceWorkload` | `InferencePolicy` |
+In interactive workloads or workspaces, applied policies will only allow researchers access to resources that are permitted in the policy. This can include compute resources as well as node pools and node pool priority.
 
-A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
+To use the new *Policy Manager*:
 
- When researchers create a new interactive workload or workspace, they see list of available node pools and their priority. Priority is set by dragging and dropping the node pools in the desired order of priority. When the node pool priority list is **locked** by an administrator **policy**, the node pool list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+1. Press the *Tools and Settings* icon, then press *General*.
+2. Toggle the *New Policy Manager* switch to on.
 
-## Creating a Policy
+To return to the previous *Policy Manager* toggle the switch off.
 
-### Creating your First Policy
+!!! Warning
+    Policy files from Run:ai version 2.15 and lower are not supported in the *New Policy Manager*. You will need to generate new policy files, or see your Run:ai representative to help you convert your current policy files.
 
-To create a sample `InteractivePolicy`, prepare a file (e.g. `policy.yaml`) containing the following YAML:
+## Policy Types
 
-``` YAML title="gpupolicy.yaml"
-apiVersion: run.ai/v2alpha1
-kind: InteractivePolicy
-metadata:
-  name: interactive-policy1
-  namespace: runai-team-a # (1)
-spec:
-  gpu:
-    rules:
-      required: true
-      min: "1"  # (2)
-      max: "4"  
-    value: "1"
-```
+When you configure a policy, you need to specify the workload type.
 
-1. Set the Project namespace here.
-2. GPU values are quoted as they can contain non-integer values.
+| Policy Type | Affected Workload |
+| --- |  --- |
+| Workspace | Interactive |
+| Training | Training |
+| Distributed Training | Distributed |
+| Inference | InferencePolicy |
 
-The policy places a default and limit on the available values for GPU allocation. To apply this policy, run:
+## List of Configurable Parameters
 
-``` bash
-kubectl apply -f gpupolicy.yaml 
-```
+The following parameters can be configured in the policy manager.
 
-Now, try the following command:
+### Defaults
 
-``` bash
-runai submit --gpu 5 --interactive -p team-a
-```
+The `defaults` section of the policy file is...
 
-The following message will appear:
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `environment` | `object` or `null` | [Environment](#environment-fields) fields that can be overridden when creating a workload. |
+| `compute` | `object` or `null` | Compute resources requested. |
+| `hostPath` | `object` or `null` | Volumes resource definitions. |
+| `nfs` | `object` or `null` | NFS volume definitions. |
+| `pvc` | `object` or `null` | PVC definitions. |
+| `git` | `object` or `null` | Git repository definitions. |
+| `s3` | `object` or `null` | S3 resource definitions.
+| `imposedAssets` | `object` or `null` | A list of asset to be imposed on the workloads created in org units affected by this policy.|
 
-```
-gpu: must be no greater than 4
-```
+#### Environment Fields
 
-A similar message will appear in the _New Job_ form of the Run:ai user interface, when attempting to enter the number of GPUs, which is out of range for a training job.
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `command` | `string` or `null` (non-empty) | A command sent to the server used as the entry point of the container running the workspace. |
+| `args` | `string` or `null` (non-empty) | Arguments applied to the command that the container running the workspace executes. |
+| `environmentVariables` | `array of objects` or `null` or `null` |An array of [environment variables](#environment-variables) to populate into the container running the workspace. |
+| `runAsUid` | `integer` <int64> or `null` | The userid to run the entrypoint of the container. Default to the (optional) value specified in the environment asset `runAsUid` field. Can be provided only when the source uid/gid of the environment asset is not `fromTheImage`, and `overrideUidGidInWorkspace` is enabled. |
+| `runAsGid` | `integer` <int64> or `null` | The group id to run the entrypoint of the container. Default to the (optional) value specified in the environment asset runAsGid field. Can be provided only when the source uid/gid of the environment asset is not `fromTheImage`, and `overrideUidGidInWorkspace` is enabled. |
+| `supplementalGroups` | `string` or `null` | Comma seperated list of groups that the user running the container belongs to, in addition to the group indicated by `runAsGid`. Can be provided only when the source uid/gid of the environment asset is not `fromTheImage`, and `overrideUidGidInWorkspace` is enabled. Empty string implies reverting to the supplementary groups of the image. |
+| `image`| `string` or `null` (non-empty) | Docker image name. Image name is mandatory for creating a workspace. See [Images](https://kubernetes.io/docs/concepts/containers/images>){target=_blank} |
+| `imagePullPolicy` | `string` or `null` (non-empty) | Image pull policy.  Select from: `Always`, `Never`, or `IfNotPresent`. Defaults to Always if `latest tag` is specified, or `IfNotPresent` otherwise. |
+| `workingDir` | `string` or `null` (non-empty) | The container's working directory. If not specified, the container runtime default will be used, which might be configured in the container image. |
+| `hostIpc` | `boolean` or `null` | Enable host IPC. Defaults to `false`. |
+| `hostNetwork` | `boolean` or `null` | Enable host networking. Default to `false`. |
+| `connections` | `array of objects` | List of [connections](#connections-variables) that either expose ports from the container (each port is associated with a tool that the container runs), or URL's to be used for connecting to an external tool that is related to the action of the container (such as Weights & Biases). |
+| `createHomeDir` | `boolean` or `null` | Create a home directory for the container. |
+| `allowPrivilegeEscalation` | `boolean` or `null` | Allow the container running the workload and all launched processes to gain additional privileges after the workload starts. For more information, see [User Identity in Container](https://docs.run.ai/admin/runai-setup/config/non-root-containers/){target_blank}. |
+| `uidGidSource` | `string` or `null` | Indicate the way to determine the user and group ids of the container. Choose from: </br> `fromTheImage`&mdash;user and group ids are determined by the docker image that the container runs (Default).</br> `custom`&mdash;user and group ids can be specified in the environment asset and/or the workspace creation request. <br/> `idpToken`&mdash;user and group ids are determined according to the identity provider (idp) access token. This option is intended for internal use of the environment UI form. For more information see [User Identity guide](../runai-setup/config/non-root-containers.md). |
+| `overrideUidGidInWorkspace` | `boolean` | Allow specifying uid/gid as part of create workspace. This is relevant only for custom uigGidSource. Default: false|
+| `capabilities` | `array of strings` or `null` | The POSIX capabilities to add when running containers. Defaults to the default set of capabilities granted by the container runtime. Choose from: `AUDIT CONTROL `, `AUDIT READ `, `AUDIT WRITE `, `BLOCK SUSPEND `, `CHOWN `, `DAC OVERRIDE `, `DAC READ SEARCH `, `FOWNER `, `FSETID `, `IPC LOCK `, `IPC OWNER `, `KILL `, `LEASE `, `LINUX IMMUTABLE `, `MAC ADMIN `, `MAC OVERRIDE `, `MKNOD `, `NET ADMIN `, `NET BIND SERVICE `, `NET BROADCAST `, `NET RAW `, `SETGID `, `SETFCAP `, `SETPCAP `, `SETUID `, `SYS ADMIN `, `SYS BOOT `, `SYS CHROOT `, `SYS MODULE `, `SYS NICE `, `SYS PACCT `, `SYS PTRACE `, `SYS RAWIO `, `SYS RESOURCE `, `SYS TIME `, `SYS TTY CONFIG `, `SYSLOG `, `WAKE ALARM`. |
+| `seccompProfileType` | `string` or `null` | Indicates which kind of seccomp profile will be applied to the container. Choose from: `Runtime` (default)&mdash;the container runtime default profile should be used. </br> `Unconfined`&mdashno profile should be applied. </br> `Localhost` is not yet supported by Run:ai. |
+| `runAsNonRoot` | `boolean` or `null` | Indicates that the container must run as a non-root user. |
 
-#### GPU and CPU memory limits
+##### Environment Variables
 
-The following policy places a default and limit on the available values for CPU and GPU memory allocation.
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `name` (required) | `string` (non-empty) | The name of the environment variable. |
+| `value` (required) | `string` | The value to set the environment variable to. |
+| `deleted` | `boolean` | Exclude this environment variable from the workload. This is necessary in case the variable definition is inherited from a policy.|
 
-```YAML title="gpumemorypolicy.yaml"
-apiVersion: run.ai/v2alpha1
-kind: TrainingPolicy
-metadata:
-  name: training-policy
-  namespace: runai
-spec:
-  gpuMemory:
-    rules:
-      min: 100M
-      max: 2G
-memory:
-    rules:
-      min: 100M
-      max: 2G
-```
+##### Connections Variables
 
-## Read-only values
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `namerequired` | `string` (non-empty) | A unique name of this connection. This name correlates between the connection information specified at the environment asset, to the information about the connection as specified in `SpecificEnv` for a specific workspace. |
+| `isExternal` | `boolean` | Internal tools (`isExternal=false`) are tools that run as part of the container. External tools (`isExternal=true`) run outside the container, typically in the cloud. Default: false. |
+| `internalToolInfo` | `object` or `null` | Information about the [internal tool](#internal-tool-variables). |
+| `externalToolInfo` | `object` or `null` | Information about the [external tool](). |
 
-When you do not want the user to be able to change a value, you can force the corresponding user interface control to become read-only by using the `canEdit` key. For example,
+###### Internal Tool Variables
 
-``` YAML title="runasuserpolicy.yaml"
-apiVersion: run.ai/v2alpha1
-kind: TrainingPolicy
-metadata:
-  name: train-policy1
-  namespace: runai-team-a # (1) 
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `toolType` (required) | `string` (non-empty) | The type of the internal tool. This runs within the container and exposes ports associated with the tool using `NodePort`, `LoadBalancer` or `ExternalUrl`. Choose from: `jupyter-notebook`, `pycharm`, `visual-studio-code`, `tensorboard`, `rstudio`, `mlflow`, `custom`, or `matlab`. |
+| `connectionType` (required) | `string` (non-empty) | The type of connection that exposes the container port. Choose from: `LoadBalancer`, `NodePort`, or `ExternalUrl`. |
+| `containerPort` (required) | `integer` <int32>  | The port within the container that the connection exposes. |
+| `nodePortInfo` | `object` or `null` | Use the `isCustomPort` variable (`boolean`) to ensute that the node port is provided in the specific env of the workspace. Use the default `false` to ensure the node port is auto generated by the system. |
+| `externalUrlInfo` | `object` or `null` | Use the `isCustomUrl` variable (boolean) to indicate whether the external url is provided in the specific env of the workspace. Use the default `false`to ensure the external url is auto generated by the system. </br> Use the `externalUrl` variable (`string` or `null` - non-empty) to decalre the default value for the external url. You can override it in the specific env of the workspace. |
 
-spec:
-  runAsUser:
-    rules:
-      required: true  # (2)
-      canEdit: false  # (3)
-    value: true # (4)
+###### External Tool Variables
 
-```
+|Parameter | Type | Definition |
+| -- | -- | --|
+| `toolType` (required) | `string` (non-empty) | The type of external tool that is associated with the connection. External tools typically run in the cloud and require an external url to connect to it. Choose from `wandb` or `comet`. |
+| `externalUrl` (required) | `string` (non-empty) | The external url for connecting to the external tool. The url can include environment variables that will be replaced with the values provided when the workspace is created. |
 
-1. Set the Project namespace here.
-2. The field is required.
-3. The field will be shown as read-only in the user interface.
-4. The field value is true.  
 
-### Complex Values
+#### Compute Resource Fields
 
-The example above illustrated rules for parameters of "primitive" types, such as _GPU allocation_, _CPU memory_, _working directory_, etc. These parameters contain a single value.
+|Parameter | Type | Definition |
+| -- | -- | --|
 
-Other workload parameters, such as _ports_ or _volumes_, are "complex", in the sense that they may contain multiple values: a workload may contain multiple ports and multiple volumes.
+#### Hostpath Resource Fields
 
-The following is an example of a policy containing the value `ports`, which is complex: The `ports` flag typically contains two values: The `external` port that is mapped to an internal `container` port. One can have multiple port tuples defined for a single Workload:
+#### NFS Definition Fields
 
-``` YAML
-apiVersion: run.ai/v2alpha1
-kind: InteractivePolicy
-metadata:
-  name: interactive-policy
-  namespace: runai
-spec:
-  ports:
-    rules:
-      canAdd: true
-    itemRules:
-      container:
-        min: 30000
-        max: 32767
-      external:
-        max: 32767
-    items:
-      admin-port-a:
-        rules:
-          canRemove: false
-          canEdit: false
-        value:
-          container: 30100
-          external: 8080
-      admin-port-b:
-        value:
-          container: 30101
-          external: 8081
-```
+#### PVC Definition Fields
 
-A policy for a complex field is composed of three parts:
+#### Git Repository Definition Fields
 
-* __Rules__: Rules apply to the `ports` parameter as a whole. In this example, the administrator specifies `canAdd` rule with `true` value, indicating that a researcher submitting an interactive job can add additional ports to the ports listed by the policy (_true_ is the default for `canAdd`, so it actually could have been omitted from the policy above). When `canAdd` is set to `false`, the researcher will not be able to add any additional port except those already specified by the policy.
-* __itemRules__: itemRules impose restrictions on the data members of each item, in this case - `container` and `external`. In the above example, the administrator has limited the value of `container` to 30000-32767, and the value of `external` to a maximum of 32767.
-* __Items__: Specifies a list of default ports. Each port is an item in the ports list and given a label (e.g. `admin-port-b`). The administrator can also specify whether a researcher can change/delete ports from the submitted workload. In the above example, `admin-port-a` is hardwired and cannot be changed or deleted, while `admin-port-b` can be changed or deleted by the researcher when submitting the Workload. It is possible to specify a label using the reserved name of `DEFAULTS`. This item provides the defaults for all other items.
+#### S3 Resource Definition Fields
 
-The following is an example of a complex policy for PVCs which contains `DEFAULTS`.
+#### Imposed Assets
 
-```yml
-apiVersion: run.ai/v2alpha1
-kind: TrainingPolicy
-metadata:
-  name: tp # use your name.
-  namespace: runai-team-a # use your namespace
-spec:
-  pvcs:
-    itemRules:
-      existingPvc:
+
+
+
+### Rules
+
+The `rules` section of the policy file is...
+
+## Viewing a Policy
+
+This section describes how to view policies that have been applied in the Run:ai platform.
+
+### User Interface
+
+
+
+### Using the API
+
+## Appyling a Policy
+
+This section describes how to apply a policy to a Run:ai project namespace.
+
+### User Interface
+
+### Using the API
+
+This section describes how to view a policy in a Run:ai namepace.
+
+## Example Policy
+
+The following is an example of a policy you can apply in your platform.
+
+```YAML
+meta:
+  name: pol-d-1
+  departmentId: "1"
+  scope: department
+policy:
+  defaults:
+    environment:
+      allowPrivilegeEscalation: false
+      createHomeDir: true
+      environmentVariables:
+        - name: MY_ENV
+          value: my_value
+    workspace:
+      allowOverQuota: true
+  rules:
+    compute:
+      cpuCoreLimit:
+        min: 0
+        max: 9
+        required: true
+      gpuPortion:
+        min: 0
+        max: 10
+    s3:
+      url:
+        options:
+          - displayed: "https://www.google.com"
+            value: "https://www.google.com"
+          - displayed: "https://www.yahoo.com"
+            value: "https://www.yahoo.com"
+    environment:
+      imagePullPolicy:
+        options:
+          - displayed: "Always"
+            value: "Always"
+          - displayed: "Never"
+            value: "Never"
+        required: true
+      runAsUid:
+        min: 1
+        max: 32700
+        required: true
+      createHomeDir:
         canEdit: false
-      claimName:
-        required: true
-    items:
-      DEFAULTS:
-        value:
-          existingPvc: true
-          path: nil
+      allowPrivilegeEscalation:
+        canEdit: false
+    workspace:
+      allowOverQuota:
+        canEdit: false
+    imposedAssets:
+      dataSources:
+        nfs:
+          canAdd: false
+
+
 ```
 
-### Syntax
+## API Reference
 
-The complete syntax of the policy YAML can be obtained using the `explain` command of kubectl. For example:
+Access the *Policy* [API reference ](./policy-API-page.md){target=_blank} to see how to apply *Policies* in the Run:ai platform.
 
-```bash
-kubectl explain trainingpolicy.spec
-```
-Should provide the list of all possible fields in the spec of training policies:
-
-```yaml
-KIND:     TrainingPolicy
-VERSION:  run.ai/v2alpha1
-
-RESOURCE: spec <Object>
-
-DESCRIPTION:
-The specifications of this TrainingPolicy
-
-FIELDS:
-annotations	<Object>
-Specifies annotations to be set in the container running the created
-workload.
-
-arguments	<Object>
-If set, the arguments are sent along with the command which overrides the
-image's entry point of the created workload.
-
-command	<Object>
-If set, overrides the image's entry point with the supplied command.
-...
-```
-
-You can further drill down to get the syntax for `ports` by running:
-
-```bash
-kubectl explain trainingpolicy.spec.ports
-```
-
-```yaml
-KIND:     TrainingPolicy
-VERSION:  run.ai/v2alpha1
-
-RESOURCE: ports <Object>
-
-DESCRIPTION:
-     Specify the set of ports exposed from the container running the created
-     workload. Used together with --service-type.
-
-FIELDS:
-   itemRules	<Object>
-
-   items	<map[string]Object>
-
-   rules	<Object>
-     these rules apply to a value of type map (=non primitive) as a whole
-     additionally there are rules which apply for specific items of the map
-```
-
-Drill down into the `ports.rules` object by running:
-
-```bash
-kubectl explain trainingpolicy.spec.ports.rules
-```
-
-```yaml
-KIND:     TrainingPolicy
-VERSION:  run.ai/
-
-RESOURCE: rules <Object>
-
-DESCRIPTION:
-     these rules apply to a value of type map (=non primitive) as a whole
-     additionally there are rules which apply for specific items of the map
-
-FIELDS:
-   canAdd	<boolean>
-     is it allowed for a workload to add items to this map
-
-   required	<boolean>
-     if the map as a whole is required
-```
-
-Note that each kind of policy has a slightly different set of parameters. For example, an `InteractivePolicy` has a `jupyter` parameter that is not available under `TrainingPolicy`.
-
-### Using Secrets for Environment Variables
-
-It is possible to add values from Kubernetes secrets as the value of environment variables included in the policy.
-The secret will be extracted from the secret object when the Job is created. For example:
-
-``` YAML
-  environment:
-    items:
-      MYPASSWORD:
-        value: "SECRET:my-secret,password"
-```
-
-When submitting a workload that is affected by this policy, the created container will have an environment variable called
-`MYPASSWORD` whose value is the key `password` residing in Kubernetes secret `my-secret` which has been pre-created in
-the namespace where the workload runs.
-
-!!! Note
-    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
-
-### Prevent Data Storage on the Node
-
-You can configure policies to prevent the submission of workloads that use data sources that consist of a host path. This setting prevents data from being stored on the node so that in the event when a node is deleted, all data stored on that node is lost.
-
-Example for rejecting workloads requesting host path:
-
-```yml
-spec:
-  volumes:
-    itemRules:
-      nfsServer:
-        required: true
-```
-
-## Terminate Run:ai training Jobs after preemption policy
-
-Administrators can set a ‘termination after preemption’ policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (e.g. GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted and typically goes back to the pending queue. However, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace.
-
-To use this feature the administrator should configure either a cluster wide or namespace policy.
-
-For cluster wide (all namespaces/projects) use this YAML based policy:
-
-```YAML
-apiVersion: run.ai/v2alpha1
-kind: TrainingPolicy
-metadata:
-  name: training-policy
-  namespace: runai
-spec:
-  terminateAfterPreemption:
-    value: true
-```
-
-For per namespace (project) use this YAML based policy:
-
-```YAML
-apiVersion: run.ai/v2alpha1
-kind: TrainingPolicy
-metadata:
-  name: training-policy
-  namespace: runai-<PROJECT_NAME>
-spec:
-  terminateAfterPreemption:
-    value: false
-```
-## Modifying/Deleting Policies
-
-Use the standard kubectl get/apply/delete commands to modify and delete policies.
-
-For example, to view the _global_ interactive policy:
-
-```bash
-kubectl get interactivepolicies -n runai
-```
-
-Should return the following:
-
-```bash
-NAME                 AGE
-interactive-policy   2d3h
-```
-
-To delete this policy:
-
-```bash
-kubectl delete InteractivePolicy interactive-policy -n runai
-```
-
-To access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
-
-## See Also
-
-* For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)

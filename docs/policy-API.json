@@ -1,0 +1,3079 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Assets",
+    "description": "An API for managing policies",
+    "contact": {
+      "email": "support@run.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://app.run.ai"
+    },
+    {
+      "url": "https://staging.run.ai"
+    },
+    {
+      "url": "https://test.run.ai"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Policy",
+      "description": "Administrator applied workload policies."
+    },
+    {
+      "name": "Synchronization",
+      "description": "Policy synchronization from the control panel to the cluster."
+    }
+  ],
+  "paths": {
+    "/api/v1/policy": {
+      "get": {
+        "summary": "List policies",
+        "description": "Returns a list of all the applied policies for this tenant.",
+        "operationId": "list_policies",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolicyListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/workspace": {
+      "patch": {
+        "summary": "Update workspace policy",
+        "description": "Apply changes to workspace policy for a given org unit",
+        "operationId": "update_workspace_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ValidateOnly"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkspacePolicyChangeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Policy applied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspacePolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite workspace policy",
+        "description": "Apply a workspace policy for a given org unit",
+        "operationId": "overwrite_workspace_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ValidateOnly"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkspacePolicyOverwriteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Policy applied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspacePolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get workspace policy",
+        "description": "Returns the details of a workspace policy for a given org unit",
+        "operationId": "get_workspace_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Scope"
+          },
+          {
+            "$ref": "#/components/parameters/DepartmentId"
+          },
+          {
+            "$ref": "#/components/parameters/ProjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspacePolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete workspace policy",
+        "description": "Delete workspace policy for a given org unit.",
+        "operationId": "delete_workspace_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Scope"
+          },
+          {
+            "$ref": "#/components/parameters/DepartmentId"
+          },
+          {
+            "$ref": "#/components/parameters/ProjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The policy was deleted successfully."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/training": {
+      "patch": {
+        "summary": "Update training policy",
+        "description": "Apply changes to training policy for a given org unite",
+        "operationId": "update_training_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ValidateOnly"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrainingPolicyChangeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Policy applied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingPolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite training policy",
+        "description": "Apply a training policy for a given org unite",
+        "operationId": "overwrite_training_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ValidateOnly"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrainingPolicyOverwriteRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Policy applied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingPolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get training policy",
+        "description": "Returns the details of an training policy for a given org unit",
+        "operationId": "get_training_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Scope"
+          },
+          {
+            "$ref": "#/components/parameters/DepartmentId"
+          },
+          {
+            "$ref": "#/components/parameters/ProjectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingPolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete training policy",
+        "description": "Delete training policy for a given org unit.",
+        "operationId": "delete_training_policy",
+        "x-no-authorization": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Scope"
+          },
+          {
+            "$ref": "#/components/parameters/DepartmentId"
+          },
+          {
+            "$ref": "#/components/parameters/ProjectId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The policy was deleted successfully."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/workspace/cluster": {
+      "get": {
+        "summary": "Get cluster policies",
+        "description": "Returns a list of policy objects that can be applied in a cluster, given a list of policy descriptors",
+        "operationId": "get_workspace_cluster_policy",
+        "x-internal": true,
+        "x-authorize": {
+          "resource-type": "policies",
+          "action": "sync"
+        },
+        "tags": [
+          "Synchronization"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ClusterId"
+          },
+          {
+            "$ref": "#/components/parameters/SyncAfter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterPolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/training/cluster": {
+      "get": {
+        "summary": "Get cluster policies",
+        "description": "Returns a list of policy objects that can be applied in a cluster, given a list of policy descriptors",
+        "operationId": "get_training_cluster_policy",
+        "x-internal": true,
+        "x-authorize": {
+          "resource-type": "policies",
+          "action": "sync"
+        },
+        "tags": [
+          "Synchronization"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ClusterId"
+          },
+          {
+            "$ref": "#/components/parameters/SyncAfter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterPolicy"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/workspace/sync/status": {
+      "put": {
+        "summary": "Update the sync status of a workspace policy",
+        "description": "This API intended for the cluster sync to update the sync status of a given workspace policy",
+        "operationId": "update_sync_status_workspace",
+        "x-internal": true,
+        "x-authorize": {
+          "resource-type": "policies",
+          "action": "sync"
+        },
+        "tags": [
+          "Synchronization"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncStatusUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No content."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/policy/training/sync/status": {
+      "put": {
+        "summary": "Update the sync status of a training policy",
+        "description": "This API intended for the cluster sync to update the sync status of a given training policy",
+        "operationId": "update_sync_status_training",
+        "x-internal": true,
+        "x-authorize": {
+          "resource-type": "policies",
+          "action": "sync"
+        },
+        "tags": [
+          "Synchronization"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncStatusUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No content."
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/internal/policy/asset/{AssetId}": {
+      "put": {
+        "summary": "Asset changed hook for asset service",
+        "description": "Hook for asset service to report a change in spec of a given asset",
+        "operationId": "asset_changed_hook",
+        "x-no-authorization": true,
+        "x-internal": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AssetId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "asset change acknowledged"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Asset deleted hook for asset service",
+        "description": "Hook for asset service to report a deletion of a given asset",
+        "operationId": "asset_deleted_hook",
+        "x-no-authorization": true,
+        "x-internal": true,
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AssetId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "asset deletion acknowledged"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthenticated"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Bearer authentication"
+      }
+    },
+    "schemas": {
+      "PolicyType": {
+        "description": "The type of policy which determines the kind of workloads it is affecting",
+        "type": "string",
+        "enum": [
+          "workspace",
+          "training"
+        ]
+      },
+      "PolicyId": {
+        "description": "The unique id of the policy.",
+        "type": "string",
+        "minLength": 1,
+        "format": "uuid"
+      },
+      "TenantId": {
+        "description": "The id of the tenant.",
+        "type": "integer",
+        "format": "int32"
+      },
+      "ClusterId": {
+        "description": "The id of the cluster, provided for policies of scope department and project.",
+        "type": "string",
+        "minLength": 1,
+        "format": "uuid",
+        "nullable": true
+      },
+      "PolicyReadOnlyFields": {
+        "required": [
+          "id",
+          "createdBy",
+          "createdAt",
+          "updatedBy",
+          "updatedAt"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/PolicyId"
+          },
+          "tenantId": {
+            "$ref": "#/components/schemas/TenantId"
+          },
+          "clusterId": {
+            "$ref": "#/components/schemas/ClusterId"
+          },
+          "createdBy": {
+            "description": "The user who created the policy.",
+            "type": "string",
+            "minLength": 1
+          },
+          "createdAt": {
+            "description": "The time at which the policy wes created",
+            "type": "string",
+            "minLength": 1,
+            "format": "date-time"
+          },
+          "updatedBy": {
+            "description": "The user who updated the policy.",
+            "type": "string",
+            "minLength": 1
+          },
+          "updatedAt": {
+            "description": "The time at which the policy has been updated",
+            "type": "string",
+            "minLength": 1,
+            "format": "date-time"
+          }
+        }
+      },
+      "Scope": {
+        "description": "The scope that the policy relates to.",
+        "nullable": false,
+        "type": "string",
+        "enum": [
+          "tenant",
+          "department",
+          "project"
+        ]
+      },
+      "ProjectId": {
+        "description": "The id of the project. Must be specified for project scoped assets.",
+        "type": "integer",
+        "format": "int32",
+        "nullable": true
+      },
+      "DepartmentId": {
+        "description": "The id of the department. Must be specified for department scoped policies.",
+        "type": "string",
+        "format": "uuid",
+        "nullable": true,
+        "minLength": 1
+      },
+      "PolicyName": {
+        "description": "A chosen name for the policy.",
+        "type": "string",
+        "minLength": 1,
+        "example": "my-policy"
+      },
+      "PolicyCreationFields": {
+        "required": [
+          "name",
+          "scope"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "projectId": {
+            "$ref": "#/components/schemas/ProjectId"
+          },
+          "departmentId": {
+            "$ref": "#/components/schemas/DepartmentId"
+          },
+          "name": {
+            "$ref": "#/components/schemas/PolicyName"
+          }
+        }
+      },
+      "PolicyMeta": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PolicyReadOnlyFields"
+          },
+          {
+            "$ref": "#/components/schemas/PolicyCreationFields"
+          }
+        ]
+      },
+      "PolicySyncStatusOfCluster": {
+        "required": [
+          "clusterId",
+          "status"
+        ],
+        "properties": {
+          "clusterId": {
+            "description": "The id of the cluster",
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "description": "Policy sync status of the cluster",
+            "type": "string",
+            "enum": [
+              "Not ready",
+              "Applying",
+              "Failed",
+              "Ready",
+              "Pending deletion",
+              "Deleting",
+              "Deleted",
+              "Deletion failed"
+            ]
+          },
+          "errorMessage": {
+            "description": "In case sync failed, holds the error message received from the cluster",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PolicySyncStatus": {
+        "properties": {
+          "clusters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PolicySyncStatusOfCluster"
+            }
+          }
+        }
+      },
+      "PolicyListEntry": {
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PolicyType"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PolicyMeta"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PolicySyncStatus"
+          }
+        },
+        "nullable": true
+      },
+      "PolicyListResponse": {
+        "properties": {
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PolicyListEntry"
+            }
+          }
+        }
+      },
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      },
+      "EnvironmentVariable": {
+        "description": "Details of an environment variable which is populated into the container.",
+        "required": [
+          "name",
+          "value"
+        ],
+        "properties": {
+          "name": {
+            "description": "The name of the environment variable.",
+            "type": "string",
+            "minLength": 1,
+            "example": "HOME"
+          },
+          "value": {
+            "description": "The value to set the environment variable to.",
+            "type": "string",
+            "example": "/home/myfolder"
+          },
+          "deleted": {
+            "description": "Whether to exclude this environment variable from the workload. This is necessary in case the variable definition is inherited from a policy.",
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "nullable": true
+      },
+      "EnvironmentVariables": {
+        "description": "Set of environment variables to populate into the container running the workspace.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/EnvironmentVariable"
+        },
+        "nullable": true
+      },
+      "OverridableSpecFields": {
+        "description": "Fields of environment spec that can be overridden when creating a workload.",
+        "properties": {
+          "command": {
+            "description": "A command to server as the entry point of the container running the workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "args": {
+            "description": "Arguments to the command that the container running the workspace executes.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "environmentVariables": {
+            "$ref": "#/components/schemas/EnvironmentVariables"
+          },
+          "runAsUid": {
+            "description": "The user id to run the entrypoint of the container which executes the workspace. Default to the (optional) value specified in the environment asset runAsUid field. Can be provided only when the source uid/gid of the environment asset is not fromTheImage, and overrideUidGidInWorkspace is enabled.",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "example": 500
+          },
+          "runAsGid": {
+            "description": "The group id to run the entrypoint of the container which executes the workspace. Default to the (optional) value specified in the environment asset runAsGid field. Can be provided only when the source uid/gid of the environment asset is not fromTheImage, and overrideUidGidInWorkspace is enabled.",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "example": 30
+          },
+          "supplementalGroups": {
+            "description": "Comma seperated list of groups that the user running the container belongs to, in addition to the group indicated by runAsGid. Can be provided only when the source uid/gid of the environment asset is not fromTheImage, and overrideUidGidInWorkspace is enabled. Empty string implies reverting to the supplementary groups of the image.",
+            "type": "string",
+            "nullable": true,
+            "example": "2,3,5,8"
+          }
+        }
+      },
+      "ImagePullPolicy": {
+        "description": "Image pull policy. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "Always",
+          "Never",
+          "IfNotPresent"
+        ],
+        "nullable": true
+      },
+      "InternalToolType": {
+        "description": "The type of the internal tool. Internal tool runs within the container and exposes ports associated with the tool using NodePort, LoadBalancer or ExternalUrl.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "jupyter-notebook",
+          "pycharm",
+          "visual-studio-code",
+          "tensorboard",
+          "rstudio",
+          "mlflow",
+          "custom",
+          "matlab"
+        ]
+      },
+      "InternalConnectionType": {
+        "description": "The type of connection that exposes the container port.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "LoadBalancer",
+          "NodePort",
+          "ExternalUrl"
+        ]
+      },
+      "NodePortInfo": {
+        "properties": {
+          "isCustomPort": {
+            "description": "Whether the node port is provided in the specific env of the workspace. Default is false, and in this case the node port is auto generated by the system.",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "nullable": true
+      },
+      "ExternalUrlInfo": {
+        "properties": {
+          "isCustomUrl": {
+            "description": "Whether external url is provided in the specific env of the workspace. Default is false, and in this case the external url is auto generated by the system.",
+            "type": "boolean",
+            "default": false
+          },
+          "externalUrl": {
+            "description": "Default value for the external url. You can override it in the specific env of the workspace. Should be specified for ExternalUrl only.",
+            "type": "string",
+            "nullable": true,
+            "minLength": 1
+          }
+        },
+        "nullable": true
+      },
+      "InternalToolInfo": {
+        "description": "Information of the internal tool.",
+        "required": [
+          "toolType",
+          "connectionType",
+          "containerPort"
+        ],
+        "properties": {
+          "toolType": {
+            "$ref": "#/components/schemas/InternalToolType"
+          },
+          "connectionType": {
+            "$ref": "#/components/schemas/InternalConnectionType"
+          },
+          "containerPort": {
+            "description": "The port within the container that the connection exposes.",
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "nodePortInfo": {
+            "$ref": "#/components/schemas/NodePortInfo"
+          },
+          "externalUrlInfo": {
+            "$ref": "#/components/schemas/ExternalUrlInfo"
+          }
+        },
+        "nullable": true
+      },
+      "ExternalToolType": {
+        "description": "The type of external tool that is associated with the connection. External tool typically runs in the cloud and require external url for connecting to it.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "wandb",
+          "comet"
+        ]
+      },
+      "ExternalToolInfo": {
+        "description": "Information of the external tool.",
+        "required": [
+          "toolType",
+          "externalUrl"
+        ],
+        "properties": {
+          "toolType": {
+            "$ref": "#/components/schemas/ExternalToolType"
+          },
+          "externalUrl": {
+            "description": "The external url for connecting to the external tool. The url can include environment variables that will be replaced with the value provided for those variables when the workspace is created.",
+            "example": "https://wandb.com/myteam/${PROJECT_NAME}",
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "nullable": true
+      },
+      "Connection": {
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "description": "A unique name of this connection. This name correlates between the connection information specified at the environment asset, to the information about the connection as specified in SpecificEnv for a specific workspace.",
+            "type": "string",
+            "minLength": 1
+          },
+          "isExternal": {
+            "description": "Internal tools (isExternal=false) are tools that run as part of the container. External tools (isExternal=true) run outside the container, typically in the cloud.",
+            "type": "boolean",
+            "default": false
+          },
+          "internalToolInfo": {
+            "$ref": "#/components/schemas/InternalToolInfo"
+          },
+          "externalToolInfo": {
+            "$ref": "#/components/schemas/ExternalToolInfo"
+          }
+        }
+      },
+      "Capability": {
+        "type": "string",
+        "enum": [
+          "AUDIT_CONTROL",
+          "AUDIT_READ",
+          "AUDIT_WRITE",
+          "BLOCK_SUSPEND",
+          "CHOWN",
+          "DAC_OVERRIDE",
+          "DAC_READ_SEARCH",
+          "FOWNER",
+          "FSETID",
+          "IPC_LOCK",
+          "IPC_OWNER",
+          "KILL",
+          "LEASE",
+          "LINUX_IMMUTABLE",
+          "MAC_ADMIN",
+          "MAC_OVERRIDE",
+          "MKNOD",
+          "NET_ADMIN",
+          "NET_BIND_SERVICE",
+          "NET_BROADCAST",
+          "NET_RAW",
+          "SETGID",
+          "SETFCAP",
+          "SETPCAP",
+          "SETUID",
+          "SYS_ADMIN",
+          "SYS_BOOT",
+          "SYS_CHROOT",
+          "SYS_MODULE",
+          "SYS_NICE",
+          "SYS_PACCT",
+          "SYS_PTRACE",
+          "SYS_RAWIO",
+          "SYS_RESOURCE",
+          "SYS_TIME",
+          "SYS_TTY_CONFIG",
+          "SYSLOG",
+          "WAKE_ALARM"
+        ]
+      },
+      "NonOverridableSpecFields": {
+        "description": "Fields of environment spec that cannot be overridden when creating a workload.",
+        "properties": {
+          "image": {
+            "description": "Docker image name. More info at https://kubernetes.io/docs/concepts/containers/images Image name is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "example": "python:3.8",
+            "nullable": true
+          },
+          "imagePullPolicy": {
+            "$ref": "#/components/schemas/ImagePullPolicy"
+          },
+          "workingDir": {
+            "description": "Container's working directory. If not specified, the container runtime default will be used, which might be configured in the container image.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true,
+            "example": "/home/myfolder"
+          },
+          "hostIpc": {
+            "description": "Whether to enable host IPC. Defaults to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "hostNetwork": {
+            "description": "Whether to enable host networking. Default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "connections": {
+            "description": "List of connections that either expose ports from the container (each port is associated with a tool that the container runs), or URL's to be used for connecting to an external tool that is related to the action of the container (such as Weights & Biases).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            }
+          },
+          "createHomeDir": {
+            "description": "Whether to create a home directory for the container.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "allowPrivilegeEscalation": {
+            "description": "Allow the container running the workload and all launched processes to gain additional privileges after the workload starts. For more information consult the User Identity in Container guide at https://docs.run.ai/admin/runai-setup/config/non-root-containers/",
+            "type": "boolean",
+            "nullable": true
+          },
+          "uidGidSource": {
+            "description": "Indicate the way to determine the user and group ids of the container. The options are a. fromTheImage - user and group ids are determined by the docker image that the container runs. this is the default option. b. custom - user and group ids can be specified in the environment asset and/or the workspace creation request. c. idpToken - user and group ids are determined according to the identity provider (idp) access token. This option is intended for internal use of the environment UI form. For further details consult the User Identity guide at https://docs.run.ai/admin/runai-setup/config/non-root-containers/",
+            "type": "string",
+            "enum": [
+              "fromTheImage",
+              "fromIdpToken",
+              "custom"
+            ],
+            "nullable": true
+          },
+          "overrideUidGidInWorkspace": {
+            "description": "Allow specifying uid/gid as part of create workspace. This is relevant only for custom uigGidSource.",
+            "type": "boolean",
+            "default": false
+          },
+          "capabilities": {
+            "description": "The POSIX capabilities to add when running containers. Defaults to the default set of capabilities granted by the container runtime.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Capability"
+            },
+            "nullable": true,
+            "example": [
+              "CHOWN",
+              "KILL"
+            ]
+          },
+          "seccompProfileType": {
+            "description": "Indicates which kind of seccomp profile will be applied to the container. The options are a. RuntimeDefault - the container runtime default profile should be used. b. Unconfined - no profile should be applied. c. Localhost is not yet supported by Run:ai.",
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "RuntimeDefault",
+              "Unconfined",
+              "Localhost"
+            ]
+          },
+          "runAsNonRoot": {
+            "description": "Indicates that the container must run as a non-root user.",
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "EnvironmentAssetSpec": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/OverridableSpecFields"
+          },
+          {
+            "$ref": "#/components/schemas/NonOverridableSpecFields"
+          }
+        ]
+      },
+      "GpuRequestType": {
+        "description": "Whether the request for GPU resources is stated in terms of portion, memory or mig profile. If gpuDevicesRequest > 1, only portion with gpuPortionRequest 1 is supported. If gpuDeviceRequest = 1, request type can be stated as portion, memory or migProfile.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "portion",
+          "memory",
+          "migProfile"
+        ],
+        "nullable": true
+      },
+      "MigProfile": {
+        "description": "Required if and only if gpuRequestType is migProfile. States the memory profile to be used for workload running on NVIDIA Multi-Instance GPU (MIG) technology.",
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "1g.5gb",
+          "1g.10gb",
+          "2g.10gb",
+          "2g.20gb",
+          "3g.20gb",
+          "3g.40gb",
+          "4g.20gb",
+          "4g.40gb",
+          "7g.40gb",
+          "7g.80gb"
+        ],
+        "nullable": true
+      },
+      "ExtendedResource": {
+        "description": "Quantity of an extended resource.",
+        "required": [
+          "resource",
+          "quantity"
+        ],
+        "properties": {
+          "resource": {
+            "description": "The name of the extended resource.",
+            "type": "string",
+            "minLength": 1
+          },
+          "quantity": {
+            "description": "The requested quantity for the given resource.",
+            "type": "string",
+            "minLength": 1
+          },
+          "deleted": {
+            "description": "Whether to exclude this extended resource from the workload. This is necessary in case the extended resource definition is inherited from a policy.",
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "nullable": true
+      },
+      "ExtendedResources": {
+        "description": "Set of extended resources with their quantity",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExtendedResource"
+        },
+        "nullable": true
+      },
+      "ComputeAssetSpec": {
+        "properties": {
+          "gpuDevicesRequest": {
+            "description": "Requested number of GPU devices. Currently if more than one device is requested, it is not possible to provide values for gpuMemory/migProfile/gpuPortion.",
+            "type": "integer",
+            "format": "int32",
+            "example": 2,
+            "nullable": true
+          },
+          "gpuRequestType": {
+            "$ref": "#/components/schemas/GpuRequestType"
+          },
+          "gpuPortionRequest": {
+            "description": "Required if and only if gpuRequestType is portion. States the portion of the GPU to allocate for the created workload, per GPU device, between 0 and 1. The default is no allocated GPUs.",
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "example": 0.5
+          },
+          "gpuPortionLimit": {
+            "description": "Limitations on the portion consumed by the workload, per GPU device. The system guarantees The gpuPotionLimit must be no less than the gpuPortionRequest.",
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "example": 0.5
+          },
+          "gpuMemoryRequest": {
+            "description": "Required if and only if gpuRequestType is memory. States the GPU memory to allocate for the created workload, per GPU device. Note that the workload will not be scheduled unless the system can guarantee this amount of GPU memory to the workload.",
+            "type": "string",
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "nullable": true,
+            "example": "10M"
+          },
+          "gpuMemoryLimit": {
+            "description": "Limitation on the memory consumed by the workload, per GPU device. The system guarantees The gpuMemoryLimit must be no less than gpuMemoryRequest.",
+            "type": "string",
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "nullable": true,
+            "example": "10M"
+          },
+          "migProfile": {
+            "$ref": "#/components/schemas/MigProfile"
+          },
+          "cpuCoreRequest": {
+            "description": "CPU units to allocate for the created workload (0.5, 1, .etc). The workload will receive at least this amount of CPU. Note that the workload will not be scheduled unless the system can guarantee this amount of CPUs to the workload.",
+            "nullable": true,
+            "format": "double",
+            "type": "number",
+            "example": 0.5
+          },
+          "cpuCoreLimit": {
+            "description": "Limitations on the number of CPUs consumed by the workload (0.5, 1, .etc). The system guarantees that this workload will not be able to consume more than this amount of CPUs.",
+            "nullable": true,
+            "format": "double",
+            "type": "number",
+            "example": 2
+          },
+          "cpuMemoryRequest": {
+            "description": "The amount of CPU memory to allocate for this workload (1G, 20M, .etc). The workload will receive at least this amount of memory. Note that the workload will not be scheduled unless the system can guarantee this amount of memory to the workload",
+            "type": "string",
+            "nullable": true,
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "example": "20M"
+          },
+          "cpuMemoryLimit": {
+            "description": "Limitations on the CPU memory to allocate for this workload (1G, 20M, .etc). The system guarantees that this workload will not be able to consume more than this amount of memory. The workload will receive an error when trying to allocate more memory than this limit.",
+            "type": "string",
+            "nullable": true,
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "example": "30M"
+          },
+          "largeShmRequest": {
+            "description": "A large /dev/shm device to mount into a container running the created workload. An shm is a shared file system mounted on RAM.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "extendedResources": {
+            "$ref": "#/components/schemas/ExtendedResources"
+          }
+        }
+      },
+      "HostPathSpec": {
+        "required": [
+          "path",
+          "mountPath"
+        ],
+        "properties": {
+          "path": {
+            "description": "Local path within the controller to which the host volume will be mapped. Path is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "readOnly": {
+            "description": "Whether to force the volume to be mounted with read-only permissions. Defaults to false.",
+            "type": "boolean",
+            "default": true,
+            "nullable": true
+          },
+          "mountPath": {
+            "description": "The path that the host volume will be mounted to when in use. MountPath is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          }
+        }
+      },
+      "NFSAssetSpec": {
+        "required": [
+          "path",
+          "server",
+          "mountPath"
+        ],
+        "properties": {
+          "path": {
+            "description": "Path that is exported by the NFS server. More info at https://kubernetes.io/docs/concepts/storage/volumes#nfs. Path is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "readOnly": {
+            "description": "Whether to force the NFS export to be mounted with read-only permissions.",
+            "type": "boolean",
+            "default": true,
+            "nullable": true
+          },
+          "server": {
+            "description": "The hostname or IP address of the NFS server. Server is mandatory for creating a workspace",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "mountPath": {
+            "description": "The path that the NFS volume will be mounted to when in use. MountPath is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          }
+        }
+      },
+      "PvcAccessModes": {
+        "description": "Requested access mode(s) for the newly created PVC.",
+        "properties": {
+          "readWriteOnce": {
+            "description": "Requesting claim that can be mounted in read/write mode to exactly one host. This is the default access mode.",
+            "type": "boolean",
+            "default": true,
+            "nullable": true
+          },
+          "readOnlyMany": {
+            "description": "Requesting claim that can be mounted in read-only mode to many hosts.",
+            "type": "boolean",
+            "default": false,
+            "nullable": true
+          },
+          "readWriteMany": {
+            "description": "Requesting claim that can be mounted in read/write mode to many hosts.",
+            "type": "boolean",
+            "default": false,
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ClaimInfo": {
+        "description": "Claim information for the newly created PVC. The information should not be provided when attempting to use existing PVC.",
+        "required": [
+          "size"
+        ],
+        "properties": {
+          "size": {
+            "description": "Requested size for the PVC. Mandatory when existingPvc is false.",
+            "type": "string",
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+          },
+          "storageClass": {
+            "description": "Storage class name to associate with the PVC. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. Further details at https://kubernetes.io/docs/concepts/storage/storage-classes.",
+            "type": "string",
+            "nullable": true,
+            "minLength": 1
+          },
+          "accessModes": {
+            "$ref": "#/components/schemas/PvcAccessModes"
+          },
+          "volumeMode": {
+            "description": "The volume mode required by the claim, either Filesystem (default) or Block.",
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "Filesystem",
+              "Block"
+            ]
+          }
+        },
+        "nullable": true
+      },
+      "PVCAssetSpec": {
+        "required": [
+          "path",
+          "claimName"
+        ],
+        "properties": {
+          "existingPvc": {
+            "description": "Whether to assume that the PVC exists. If set to true, PVC is assumed to exist. If set to false, the PVC will be create if it does not exist.",
+            "type": "boolean",
+            "default": false,
+            "nullable": true
+          },
+          "claimName": {
+            "description": "A given name for the PVC. Allowed referencing it across workspaces. ClaimName is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "path": {
+            "description": "Local path within the workspace to which the PVC bucket will be mapped. Path is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "readOnly": {
+            "description": "Whether the path to the PVC permits only read access.",
+            "type": "boolean",
+            "default": true,
+            "nullable": true
+          },
+          "ephemeral": {
+            "description": "Whether the PVC is ephemeral. If set to true, the PVC will be deleted when the workspace is stopped.",
+            "type": "boolean",
+            "default": false,
+            "nullable": true
+          },
+          "claimInfo": {
+            "$ref": "#/components/schemas/ClaimInfo"
+          }
+        }
+      },
+      "GitAssetSpec": {
+        "required": [
+          "repository",
+          "path"
+        ],
+        "properties": {
+          "repository": {
+            "description": "URL to a remote git repository. The content of this repository will be mapped to the container running the workload. Repository name is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "branch": {
+            "description": "Specific branch to synchronize the repository from.",
+            "type": "string",
+            "nullable": true,
+            "minLength": 1
+          },
+          "revision": {
+            "description": "Specific revision to synchronize the repository from.",
+            "type": "string",
+            "nullable": true,
+            "minLength": 1
+          },
+          "path": {
+            "description": "Local path within the workspace to which the S3 bucket will be mapped. Path is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "passwordAssetId": {
+            "description": "ID of credentials asset of type password. Needed for non public repository which requires authentication.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "minLength": 1
+          }
+        }
+      },
+      "S3AssetSpec": {
+        "required": [
+          "bucket",
+          "path"
+        ],
+        "properties": {
+          "bucket": {
+            "description": "The name of the bucket Bucket name is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "path": {
+            "description": "Local path within the workspace to which the S3 bucket will be mapped. Path is mandatory for creating a workspace.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "accessKeyAssetId": {
+            "description": "ID of credentials asset of type access-key, for private S3 buckets.",
+            "type": "string",
+            "format": "uuid",
+            "minLength": 1,
+            "nullable": true
+          },
+          "url": {
+            "description": "The url of the S3 service provider. The default is the URL of the Amazon AWS S3 service.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          }
+        }
+      },
+      "Annotation": {
+        "description": "Details of an annotation which is populated into the container.",
+        "required": [
+          "name",
+          "value"
+        ],
+        "properties": {
+          "name": {
+            "description": "The name of the annotation.",
+            "type": "string",
+            "minLength": 1,
+            "example": "HOME"
+          },
+          "value": {
+            "description": "The value to set the annotation to.",
+            "type": "string",
+            "example": "/home/myfolder"
+          },
+          "deleted": {
+            "description": "Whether to exclude this annotation from the workload. This is necessary in case the annotation definition is inherited from a policy.",
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "nullable": true
+      },
+      "Annotations": {
+        "description": "Set of annotations to populate into the container running the workspace.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Annotation"
+        },
+        "nullable": false
+      },
+      "Label": {
+        "description": "Details of a label which is populated into the container.",
+        "required": [
+          "name",
+          "value"
+        ],
+        "properties": {
+          "name": {
+            "description": "The name of the label.",
+            "type": "string",
+            "minLength": 1,
+            "example": "HOME"
+          },
+          "value": {
+            "description": "The value to set the label to.",
+            "type": "string",
+            "example": "/home/myfolder"
+          },
+          "deleted": {
+            "description": "Whether to exclude this label from the workload. This is necessary in case the label definition is inherited from a policy.",
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "nullable": true
+      },
+      "Labels": {
+        "description": "Set of labels to populate into the container running the workspace.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Label"
+        },
+        "nullable": false
+      },
+      "SpecificRunParamsFields": {
+        "properties": {
+          "nodeType": {
+            "description": "Nodes (machines) or a group of nodes on which the workload will run. To use this feature, your Administrator will need to label nodes as explained in the Group Nodes guide at https://docs.run.ai/admin/researcher-setup/limit-to-node-group. This flag can be used in conjunction with Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set in the Project. For more information consult the Projects guide at https://docs.run.ai/admin/admin-ui-setup/project-setup.",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "nodePools": {
+            "description": "A prioritize list of node pools for the scheduler to run the workspace on. The scheduler will always try to use the first node pool before moving to the next one when the fist is not available.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "allowOverQuota": {
+            "description": "Whether to allow the workspace to exceed the quota of the project.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "annotations": {
+            "$ref": "#/components/schemas/Annotations"
+          },
+          "labels": {
+            "$ref": "#/components/schemas/Labels"
+          },
+          "autoDeletionTimeAfterCompletionSeconds": {
+            "description": "Specifies the duration after which a finished workload (Completed or Failed) will be automatically deleted.",
+            "format": "int64",
+            "nullable": true,
+            "type": "integer"
+          },
+          "terminateAfterPreemption": {
+            "description": "Indicates whether the job should be terminated, by the system, after it has been preempted.",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ImposedAssets": {
+        "description": "A list of asset to be imposed on the workloads created in org units affected by this policy.",
+        "properties": {
+          "datasources": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "WorkspacePolicyDefaults": {
+        "properties": {
+          "environment": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnvironmentAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "compute": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ComputeAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "hostPath": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HostPathSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "nfs": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NFSAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "pvc": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PVCAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "git": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GitAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "s3": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/S3AssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "workspace": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SpecificRunParamsFields"
+              }
+            ],
+            "nullable": true
+          },
+          "imposedAssets": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ImposedAssets"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "SourceOfRule": {
+        "description": "This field is used by the system along with effective rules, in order to specify the org unit from which this effective rule has been derived. It should be left empty when sending apply policy requests.",
+        "required": [
+          "scope"
+        ],
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "projectId": {
+            "$ref": "#/components/schemas/ProjectId"
+          },
+          "departmentId": {
+            "$ref": "#/components/schemas/DepartmentId"
+          }
+        },
+        "example": {
+          "scope": "project",
+          "projectId": 3
+        },
+        "nullable": true
+      },
+      "BooleanRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether the field is mandatory. default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable. default to true",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "StringOption": {
+        "description": "One of the values that the field can be assigned to, when options police is applied on the field.",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "description": "The value that the field should hold",
+            "type": "string"
+          },
+          "displayed": {
+            "description": "Textual description of the value. to be used by user interface applications.",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "example": {
+          "value": "value",
+          "displayed": "A description of the value."
+        }
+      },
+      "StringRulesOptional": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable, default to true",
+            "type": "boolean",
+            "nullable": true
+          },
+          "options": {
+            "description": "Set of options that the value of the field must be chosen from.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringOption"
+            },
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ArrayRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether this array is mandatory. Mandatory array must include at least one item. default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the array, as a whole, is editable. default to false.",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ItemRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "canAdd": {
+            "description": "Whether it is permitted to add items. Default to true.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "locked": {
+            "description": "Set of keys for items that are \"locked\", i.e. cannot be removed or deleted.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "HOME",
+              "USER"
+            ]
+          }
+        },
+        "nullable": true
+      },
+      "EnvironmentVariablesRules": {
+        "properties": {
+          "itemRules": {
+            "$ref": "#/components/schemas/ItemRules"
+          }
+        },
+        "nullable": true
+      },
+      "StringRulesCommon": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether the field is mandatory, default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable, default to true",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "example": {
+          "required": true,
+          "canEdit": false
+        }
+      },
+      "StringRulesOptions": {
+        "properties": {
+          "options": {
+            "description": "Set of options that the value of the field must be chosen from.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringOption"
+            },
+            "nullable": true
+          }
+        }
+      },
+      "StringRules": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringRulesCommon"
+          },
+          {
+            "$ref": "#/components/schemas/StringRulesOptions"
+          }
+        ],
+        "nullable": true
+      },
+      "ImagePullPolicyOptions": {
+        "properties": {
+          "options": {
+            "description": "Limit the permitted values for imagePullPolicy to a given set of values.",
+            "type": "array",
+            "items": {
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "$ref": "#/components/schemas/ImagePullPolicy"
+                },
+                "displayed": {
+                  "description": "Textual description of the value",
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            },
+            "nullable": true
+          }
+        }
+      },
+      "ImagePullPolicyRules": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringRulesCommon"
+          },
+          {
+            "$ref": "#/components/schemas/ImagePullPolicyOptions"
+          }
+        ],
+        "nullable": true
+      },
+      "BooleanRulesOptional": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable. default to true",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "IntegerRulesOptional": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable. default to true",
+            "type": "boolean",
+            "nullable": true
+          },
+          "min": {
+            "description": "The minimum value that the field can be assigned to.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max": {
+            "description": "The maximum value that the field can be assigned to.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "step": {
+            "description": "The minimal difference between two values the field can be assigned to. For example, min=2, max=10, step=2 implies that the values the field can hold are 2, 4, 6, 8 and 10.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "EnvironmentRules": {
+        "properties": {
+          "allowPrivilegeEscalation": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "args": {
+            "$ref": "#/components/schemas/StringRulesOptional"
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/ArrayRules"
+          },
+          "command": {
+            "$ref": "#/components/schemas/StringRulesOptional"
+          },
+          "createHomeDir": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "environmentVariables": {
+            "$ref": "#/components/schemas/EnvironmentVariablesRules"
+          },
+          "hostIpc": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "hostNetwork": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "image": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "imagePullPolicy": {
+            "$ref": "#/components/schemas/ImagePullPolicyRules"
+          },
+          "overrideUidGidInWorkspace": {
+            "$ref": "#/components/schemas/BooleanRulesOptional"
+          },
+          "runAsUid": {
+            "$ref": "#/components/schemas/IntegerRulesOptional"
+          },
+          "runAsGid": {
+            "$ref": "#/components/schemas/IntegerRulesOptional"
+          },
+          "supplementalGroups": {
+            "$ref": "#/components/schemas/StringRulesOptional"
+          },
+          "uidGidSource": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "workingDir": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "runAsNonRoot": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "seccompProfileType": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "NumberRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether the field is mandatory. default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable. default to true",
+            "type": "boolean",
+            "nullable": true
+          },
+          "min": {
+            "description": "The minimum value that the field can be assigned to.",
+            "type": "number",
+            "nullable": true
+          },
+          "max": {
+            "description": "The maximum value that the field can be assigned to.",
+            "type": "number",
+            "nullable": true
+          },
+          "step": {
+            "description": "The minimal difference between two values the field can be assigned to. For example, min=2, max=3, step=0.25 implies that the values the field can hold are 2, 2.25, 2.5 and 3.",
+            "type": "number",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "QuantityRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether the field is mandatory, default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable, default to true",
+            "type": "boolean",
+            "nullable": true
+          },
+          "min": {
+            "description": "The minimum value that the field can be assigned to.",
+            "type": "string",
+            "nullable": true,
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+          },
+          "max": {
+            "description": "The maximum value that the field can be assigned to.",
+            "type": "string",
+            "nullable": true,
+            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+          }
+        },
+        "nullable": true
+      },
+      "ExtendedResourcesRules": {
+        "properties": {
+          "itemRules": {
+            "$ref": "#/components/schemas/ItemRules"
+          },
+          "members": {
+            "properties": {
+              "quantity": {
+                "$ref": "#/components/schemas/StringRules"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "GpuRequestOptions": {
+        "properties": {
+          "options": {
+            "description": "Limit the permitted values for gpuRequest to a given set of values.",
+            "type": "array",
+            "items": {
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "$ref": "#/components/schemas/GpuRequestType"
+                },
+                "displayed": {
+                  "description": "Textual description of the value",
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            },
+            "nullable": true
+          }
+        }
+      },
+      "GpuRequestRules": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringRulesCommon"
+          },
+          {
+            "$ref": "#/components/schemas/GpuRequestOptions"
+          }
+        ],
+        "nullable": true
+      },
+      "MigProfileOptions": {
+        "properties": {
+          "options": {
+            "description": "Limit the permitted values for migProfile to a given set of values.",
+            "type": "array",
+            "items": {
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "$ref": "#/components/schemas/MigProfile"
+                },
+                "displayed": {
+                  "description": "Textual description of the value",
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            },
+            "nullable": true
+          }
+        }
+      },
+      "MigProfileRules": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringRulesCommon"
+          },
+          {
+            "$ref": "#/components/schemas/MigProfileOptions"
+          }
+        ],
+        "nullable": true
+      },
+      "IntegerRules": {
+        "properties": {
+          "sourceOfRule": {
+            "$ref": "#/components/schemas/SourceOfRule"
+          },
+          "required": {
+            "description": "Whether the field is mandatory. default to false.",
+            "type": "boolean",
+            "nullable": true
+          },
+          "canEdit": {
+            "description": "Whether the value of the field is editable. default to true",
+            "type": "boolean",
+            "nullable": true
+          },
+          "min": {
+            "description": "The minimum value that the field can be assigned to.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max": {
+            "description": "The maximum value that the field can be assigned to.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "step": {
+            "description": "The minimal difference between two values the field can be assigned to. For example, min=2, max=10, step=2 implies that the values the field can hold are 2, 4, 6, 8 and 10.",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ComputeRules": {
+        "properties": {
+          "cpuCoreRequest": {
+            "$ref": "#/components/schemas/NumberRules"
+          },
+          "cpuCoreLimit": {
+            "$ref": "#/components/schemas/NumberRules"
+          },
+          "cpuMemoryRequest": {
+            "$ref": "#/components/schemas/QuantityRules"
+          },
+          "cpuMemoryLimit": {
+            "$ref": "#/components/schemas/QuantityRules"
+          },
+          "extendedResources": {
+            "$ref": "#/components/schemas/ExtendedResourcesRules"
+          },
+          "largeShmRequest": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "gpuRequestType": {
+            "$ref": "#/components/schemas/GpuRequestRules"
+          },
+          "migProfile": {
+            "$ref": "#/components/schemas/MigProfileRules"
+          },
+          "gpuDevicesRequest": {
+            "$ref": "#/components/schemas/IntegerRules"
+          },
+          "gpuPortionRequest": {
+            "$ref": "#/components/schemas/NumberRules"
+          },
+          "gpuPortionLimit": {
+            "$ref": "#/components/schemas/NumberRules"
+          },
+          "gpuMemoryRequest": {
+            "$ref": "#/components/schemas/QuantityRules"
+          },
+          "gpuMemoryLimit": {
+            "$ref": "#/components/schemas/QuantityRules"
+          }
+        },
+        "nullable": true
+      },
+      "HostPathRules": {
+        "properties": {
+          "path": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "readOnly": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "mountPath": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "NfsAssetRules": {
+        "properties": {
+          "path": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "readOnly": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "server": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "mountPath": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "ClaimInfoRules": {
+        "properties": {
+          "size": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "storageClass": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "PvcAssetRules": {
+        "properties": {
+          "claimName": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "path": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "readOnly": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "claimInfo": {
+            "$ref": "#/components/schemas/ClaimInfoRules"
+          }
+        },
+        "nullable": true
+      },
+      "GitAssetRules": {
+        "properties": {
+          "repository": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "branch": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "revision": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "path": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "S3AssetRules": {
+        "properties": {
+          "bucket": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "path": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "url": {
+            "$ref": "#/components/schemas/StringRules"
+          }
+        },
+        "nullable": true
+      },
+      "ImposedAssetRules": {
+        "properties": {
+          "canAdd": {
+            "description": "Whether it is possible to add non-imposed assets in the workload",
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "ImposedAssetsRules": {
+        "description": "set of rules to apply on imposed assets",
+        "properties": {
+          "datasources": {
+            "properties": {
+              "hostPath": {
+                "$ref": "#/components/schemas/ImposedAssetRules"
+              },
+              "nfs": {
+                "$ref": "#/components/schemas/ImposedAssetRules"
+              },
+              "pvc": {
+                "$ref": "#/components/schemas/ImposedAssetRules"
+              },
+              "git": {
+                "$ref": "#/components/schemas/ImposedAssetRules"
+              },
+              "s3": {
+                "$ref": "#/components/schemas/ImposedAssetRules"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "AnnotationsRules": {
+        "properties": {
+          "itemRules": {
+            "$ref": "#/components/schemas/ItemRules"
+          }
+        },
+        "nullable": true
+      },
+      "LabelsRules": {
+        "properties": {
+          "itemRules": {
+            "$ref": "#/components/schemas/ItemRules"
+          }
+        },
+        "nullable": true
+      },
+      "SpecificRunParamsRules": {
+        "properties": {
+          "nodeType": {
+            "$ref": "#/components/schemas/StringRules"
+          },
+          "nodePools": {
+            "$ref": "#/components/schemas/ArrayRules"
+          },
+          "allowOverQuota": {
+            "$ref": "#/components/schemas/BooleanRules"
+          },
+          "annotations": {
+            "$ref": "#/components/schemas/AnnotationsRules"
+          },
+          "labels": {
+            "$ref": "#/components/schemas/LabelsRules"
+          },
+          "autoDeletionTimeAfterCompletionSeconds": {
+            "$ref": "#/components/schemas/IntegerRules"
+          },
+          "terminateAfterPreemption": {
+            "$ref": "#/components/schemas/BooleanRules"
+          }
+        },
+        "nullable": true
+      },
+      "WorkspacePolicyRules": {
+        "properties": {
+          "environment": {
+            "$ref": "#/components/schemas/EnvironmentRules"
+          },
+          "compute": {
+            "$ref": "#/components/schemas/ComputeRules"
+          },
+          "hostPath": {
+            "$ref": "#/components/schemas/HostPathRules"
+          },
+          "nfs": {
+            "$ref": "#/components/schemas/NfsAssetRules"
+          },
+          "pvc": {
+            "$ref": "#/components/schemas/PvcAssetRules"
+          },
+          "git": {
+            "$ref": "#/components/schemas/GitAssetRules"
+          },
+          "s3": {
+            "$ref": "#/components/schemas/S3AssetRules"
+          },
+          "imposedAssets": {
+            "$ref": "#/components/schemas/ImposedAssetsRules"
+          },
+          "workspace": {
+            "$ref": "#/components/schemas/SpecificRunParamsRules"
+          }
+        },
+        "nullable": true
+      },
+      "WorkspacePolicyDefaultsAndRules": {
+        "properties": {
+          "defaults": {
+            "$ref": "#/components/schemas/WorkspacePolicyDefaults"
+          },
+          "rules": {
+            "$ref": "#/components/schemas/WorkspacePolicyRules"
+          }
+        },
+        "nullable": true
+      },
+      "Timestamp": {
+        "description": "The time at which an event occurred. e.g. the time an effective policy has been updated",
+        "type": "string",
+        "minLength": 1,
+        "format": "date-time"
+      },
+      "WorkspacePolicy": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyMeta"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/WorkspacePolicyDefaultsAndRules"
+          },
+          "effective": {
+            "$ref": "#/components/schemas/WorkspacePolicyDefaultsAndRules"
+          },
+          "effectiveUpdatedAt": {
+            "$ref": "#/components/schemas/Timestamp"
+          }
+        },
+        "nullable": true
+      },
+      "WorkspacePolicyOverwriteRequest": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyCreationFields"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/WorkspacePolicyDefaultsAndRules"
+          }
+        },
+        "nullable": true
+      },
+      "FieldsToReset": {
+        "description": "set of fields in jsonpath format that is requested to clear their policy (default and rules)",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "environment.runAsGpu",
+          "compute.gpu"
+        ]
+      },
+      "WorkspacePolicyChangeRequest": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyCreationFields"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/WorkspacePolicyDefaultsAndRules"
+          },
+          "reset": {
+            "$ref": "#/components/schemas/FieldsToReset"
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicyDefaults": {
+        "properties": {
+          "environment": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnvironmentAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "compute": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ComputeAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "hostPath": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HostPathSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "nfs": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NFSAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "pvc": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PVCAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "git": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GitAssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "s3": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/S3AssetSpec"
+              }
+            ],
+            "nullable": true
+          },
+          "training": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SpecificRunParamsFields"
+              }
+            ],
+            "nullable": true
+          },
+          "imposedAssets": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ImposedAssets"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicyRules": {
+        "properties": {
+          "environment": {
+            "$ref": "#/components/schemas/EnvironmentRules"
+          },
+          "compute": {
+            "$ref": "#/components/schemas/ComputeRules"
+          },
+          "hostPath": {
+            "$ref": "#/components/schemas/HostPathRules"
+          },
+          "nfs": {
+            "$ref": "#/components/schemas/NfsAssetRules"
+          },
+          "pvc": {
+            "$ref": "#/components/schemas/PvcAssetRules"
+          },
+          "git": {
+            "$ref": "#/components/schemas/GitAssetRules"
+          },
+          "s3": {
+            "$ref": "#/components/schemas/S3AssetRules"
+          },
+          "imposedAssets": {
+            "$ref": "#/components/schemas/ImposedAssetsRules"
+          },
+          "training": {
+            "$ref": "#/components/schemas/SpecificRunParamsRules"
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicyDefaultsAndRules": {
+        "properties": {
+          "defaults": {
+            "$ref": "#/components/schemas/TrainingPolicyDefaults"
+          },
+          "rules": {
+            "$ref": "#/components/schemas/TrainingPolicyRules"
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicy": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyMeta"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/TrainingPolicyDefaultsAndRules"
+          },
+          "effective": {
+            "$ref": "#/components/schemas/TrainingPolicyDefaultsAndRules"
+          },
+          "effectiveUpdatedAt": {
+            "$ref": "#/components/schemas/Timestamp"
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicyOverwriteRequest": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyCreationFields"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/TrainingPolicyDefaultsAndRules"
+          }
+        },
+        "nullable": true
+      },
+      "TrainingPolicyChangeRequest": {
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/PolicyCreationFields"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/TrainingPolicyDefaultsAndRules"
+          },
+          "reset": {
+            "$ref": "#/components/schemas/FieldsToReset"
+          }
+        },
+        "nullable": true
+      },
+      "ClusterPolicy": {
+        "properties": {
+          "requestInfo": {
+            "properties": {
+              "after": {
+                "type": "integer",
+                "format": "int64",
+                "description": "after parameter as requested by the agent"
+              }
+            }
+          },
+          "responseInfo": {
+            "properties": {
+              "lowestUpdate": {
+                "type": "integer",
+                "format": "int64",
+                "description": "lowest update count included in this bulk. zero if the bulk is empty."
+              },
+              "highestUpdate": {
+                "type": "integer",
+                "format": "int64",
+                "description": "highest update count included in this bulk. zero if the bulk is empty."
+              }
+            }
+          },
+          "systemInfo": {
+            "properties": {
+              "highestUpdate": {
+                "type": "integer",
+                "format": "int64",
+                "description": "the highest update count in the system."
+              },
+              "updatesPerBulk": {
+                "type": "integer",
+                "description": "number of policy updates the system is configured to include in every bulk."
+              }
+            }
+          },
+          "clusterPolicies": {
+            "type": "array",
+            "items": {
+              "required": [
+                "meta",
+                "updatedCounter"
+              ],
+              "properties": {
+                "meta": {
+                  "$ref": "#/components/schemas/PolicyCreationFields"
+                },
+                "effective": {
+                  "type": "object"
+                },
+                "isDeleted": {
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "updateCounter": {
+                  "description": "number which uniquely identifies each update.",
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        },
+        "nullable": true
+      },
+      "ScopeId": {
+        "description": "cluster, department or project id, depending on the scope type",
+        "type": "string",
+        "nullable": true,
+        "minLength": 1
+      },
+      "SyncStatusUpdate": {
+        "properties": {
+          "clusterId": {
+            "description": "The id of the reporting cluster.",
+            "type": "string",
+            "minLength": 1,
+            "format": "uuid"
+          },
+          "scopeType": {
+            "$ref": "#/components/schemas/Scope"
+          },
+          "scopeId": {
+            "$ref": "#/components/schemas/ScopeId"
+          },
+          "updateCounter": {
+            "description": "number which uniquely identifies the update. For deletion, the updateCounter holds the update count of the recent applied policy, rather than of the deletion.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "action": {
+            "description": "The action that the agent performed",
+            "type": "string",
+            "enum": [
+              "apply",
+              "delete"
+            ]
+          },
+          "errorMessage": {
+            "description": "optional error indicating the update has failed.",
+            "type": "string",
+            "nullable": true,
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthenticated": {
+        "description": "Unauthenticated",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "ServiceUnavailable": {
+        "description": "Service Unavailable",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Bad request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "The specified resource was not found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "Scope": {
+        "name": "scope",
+        "in": "query",
+        "required": true,
+        "description": "The scope that the policy relates to.",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "tenant",
+            "cluster",
+            "department",
+            "project"
+          ]
+        }
+      },
+      "DepartmentId": {
+        "name": "departmentId",
+        "in": "query",
+        "required": false,
+        "description": "The unique id of the department.",
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "format": "uuid"
+        }
+      },
+      "ProjectId": {
+        "name": "projectId",
+        "in": "query",
+        "required": false,
+        "description": "The id of the project.",
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        }
+      },
+      "ValidateOnly": {
+        "name": "validateOnly",
+        "in": "query",
+        "required": false,
+        "description": "Validate the given policy payload without applying it",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "ClusterId": {
+        "name": "clusterId",
+        "in": "query",
+        "description": "The id of the cluster",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "format": "uuid"
+        }
+      },
+      "SyncAfter": {
+        "name": "after",
+        "description": "search for updates with updateCount greater than the value passed for this parameter",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int64",
+          "example": 123
+        }
+      },
+      "AssetId": {
+        "name": "AssetId",
+        "in": "path",
+        "required": true,
+        "description": "Unique identifier of the asset.",
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
