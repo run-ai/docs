@@ -1,4 +1,4 @@
-name: publish docs CI to staging 
+name: deploy docs CI to staging 
 
 on:
   workflow_dispatch:
