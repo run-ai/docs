@@ -12,7 +12,7 @@ date: 2023-Dec-12
 
 For example, an administrator can create and apply a policy that will restrict researchers from requesting more than 2 GPUs, or less than 1GB of memory per type of workload.
 
-Another example is, an administrator who wants to set different amounts of CPU, GPUs and memory for different kinds of workloads. A training workload can have a default of 1 GB of memory, or an interactive workload can have a default amount of GPUs.
+Another example is an administrator who wants to set different amounts of CPU, GPUs and memory for different kinds of workloads. A training workload can have a default of 1 GB of memory, or an interactive workload can have a default amount of GPUs.
 
 Policies are created per Run:ai project (Kubernetes namespace). When a policy is created in the `runai` namespace, it will take effect when there is no project-specific policy for the workloads of the same kind.
 
@@ -27,6 +27,10 @@ To return to the previous *Policy Manager* toggle the switch off.
 
 !!! Warning
     Policy files from Run:ai version 2.15 and lower are not supported in the *New Policy Manager*. You will need to generate new policy files, or see your Run:ai representative to help you convert your current policy files.
+
+## Run:ai Policies vs. Kyverno Policies
+
+explain this here.
 
 ## Policy Types
 
@@ -45,7 +49,7 @@ This section describes how to view policies that have been applied in the Run:ai
 
 To view a policy:
 
-1. Press *Tools and Settings*
+1. Press *Tools and Settings*.
 2. Press *Policies*. The policy grid is displayed.
 3. Select a policy from the list. If there are no policies, then [create a new policy]().
 4. Pres *Edit* to view the policy details, then press *Edit Policy* to edit the YAML file.
@@ -59,7 +63,7 @@ To view a policy:
 
 To create a policy:
 
-1. Press *Tools and Settings*
+1. Press *Tools and Settings*.
 2. Press *Policies*. The policy grid is displayed.
 3. Press *New Policy*.
 4. Select a scope for the policy.
