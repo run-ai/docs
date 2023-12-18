@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.17/docs/
+edit_uri: edit/v2.16/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -21,7 +21,7 @@ theme:
     - content.action.edit
     - navigation.top
     - toc.follow
-  #  - toc.integrate 
+
   icon:
     edit: material/pencil 
     view: material/eye
@@ -197,7 +197,10 @@ nav:
     #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
     - 'Workloads' : 
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
-      - 'Policies' : 'admin/workloads/policies.md'
+      - 'Policies' :
+        - 'admin/workloads/policies/README.md'
+        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
+        - 'Workspaces Policy' : admin/workloads/policies/workspaces-policy.md
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :
