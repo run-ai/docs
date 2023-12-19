@@ -18,8 +18,6 @@ date: 2023-Dec-4
 
 <!-- TODO  RUN-12619/RUN-14041 Workloads - Reliable data in API and UI -->
 
-<!--  TODO RUN-13270/RUN-13271	TW - Improve error upon UI-V2 workload submission -->
-
 ### Run:ai Administrator
 
 * <!--  ADDLINK UN-13296/RUN-13299	TW - Administrator Messages Doc into the "Settings" page - same place where users are setup.-->Added the capability for administrators to configure messages to users when logging into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages]().
@@ -65,8 +63,6 @@ date: 2023-Dec-4
 <!-- TODO  RUN-13470 Update Workload Parameters pages -->
 
 <!--  TODO RUN-12615/RUN-12616	TW - [Playtika] Dynamic fractions SWAP  -->
-
-<!-- TODO  RUN-12089	TW - Re-build settings - Level of control and New UX -->
 
 <!--   RUN-10387/RUN-10388 Product scope for trial 
 RUN-10385/RUN-10386	Trial cluster creation 
