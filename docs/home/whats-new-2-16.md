@@ -40,11 +40,6 @@ date: 2023-Dec-4
 
 <!--  TODO RUN-11125/RUN-11746	TW - Policy Sync  -->
 
-#### Node and Node Pools
-
-
-<!--  TODO RUN-12615/RUN-12616 Dynamic fractions SWAP  -->
-
 ### Control and Visibility
 
 
