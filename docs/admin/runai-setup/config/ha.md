@@ -48,4 +48,4 @@ The default Prometheus installation uses a single pod replica. If the node runni
 
 [Prometheus supports](https://prometheus.io/docs/introduction/faq/#can-prometheus-be-made-highly-available){target=_blank} high availability by allowing to run multiple instances. The tradeoff of this approach is that all instances will scrape and send the same data. The Run:ai control plane will identify duplicate metric series and ignore them. This approach will thus increase network, CPU and memory consumption.
 
-To change the number of Prometheus instances, edit the `runaiconfig` as described under [customizing the Run:ai cluster](../cluster-setup/customize-cluster-install.md). Under `prometheus`, set `replicas` to 2.
+To change the number of Prometheus instances, edit the `runaiconfig` as described under [customizing the Run:ai cluster](../cluster-setup/customize-cluster-install.md). Under `prometheus.spec`, set `replicas` to 2.
