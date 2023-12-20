@@ -30,7 +30,7 @@ To return to the previous *Policy Manager* toggle the switch off.
 
 ## Run:ai Policies vs. Kyverno Policies
 
-explain this here.
+explain this here. For more information, see [How Kyverno Works](https://kyverno.io/docs/introduction/#how-kyverno-works){target=_blank}.
 
 ## Policy Types
 
@@ -74,18 +74,12 @@ To create a policy:
 
 ### Using the API
 
-
 ## Example Policy
 
-The following is an example of a policy you can apply in your platform. (not working well)
+The following is an example of a workspace policy you can apply in your platform. Copy the values and paste them into the policy editor in the UI.
 
 ```YAML
-meta:
-  name: pol-d-1
-  departmentId: "1"
-  scope: department
-policy:
-  defaults:
+defaults:
     environment:
       allowPrivilegeEscalation: false
       createHomeDir: true
@@ -94,13 +88,13 @@ policy:
           value: my_value
     workspace:
       allowOverQuota: true
-  rules:
+rules:
     compute:
       cpuCoreLimit:
         min: 0
         max: 9
         required: true
-      gpuPortion:
+      gpuPortionRequest:
         min: 0
         max: 10
     s3:
@@ -121,7 +115,6 @@ policy:
       runAsUid:
         min: 1
         max: 32700
-        required: true
       createHomeDir:
         canEdit: false
       allowPrivilegeEscalation:
