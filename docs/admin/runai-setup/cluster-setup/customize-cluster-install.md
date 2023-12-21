@@ -38,7 +38,7 @@ All customizations will be saved when upgrading the cluster to a future version.
 | `global.image.registry` | | In air-gapped environment, allow cluster images to be pulled from local docker registry. For more information see [self-hosted cluster installation](../self-hosted/k8s/cluster.md#install-cluster) |
 | `global.nodeAffinity.restrictScheduling` | false | Restrict scheduling of workloads to specific nodes, based on node labels. For more information see [node roles](../config/node-roles.md#dedicated-gpu--cpu-nodes) |
 | `spec.prometheus.spec.retention` | 2h | The interval of time where Prometheus will save Run:ai metrics. Promethues is only used as an intermediary to another metrics storage facility and metrics are typically moved within tens of seconds, so changing this setting is mostly for debugging purposes. |
-<!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
+| `spec.prometheus.spec.retentionSize` | Not set | The amount of storage allocated for metrics by Prometheus. For more information see [Prometheus Storage](https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects){target=_blank}. |
 
 ## Understanding Custom Access Roles
 
