@@ -132,5 +132,5 @@ rules:
 
 ## API Reference
 
-Access the *Policy* [API reference ](./policy-API-page.md){target=_blank} to see how to apply *Policies* in the Run:ai platform.
+Access the *Policy* [API reference ](../../../developer/policies/policy-API-page.md){target=_blank} to see how to apply *Policies* in the Run:ai platform.
 

@@ -5,10 +5,10 @@ authors:
     - Jason Novich
 date: 2023-Dec-12
 hide:
-  - navigation
+#  - navigation
   - toc
 ---
-Use this page as a reference when applying policies usifg the *Policies API*.
+Use this page as a reference when applying policies using the *Policies API*.
 
 <body>
     <redoc spec-url='../policy-API.json'></redoc>

@@ -200,7 +200,7 @@ nav:
         - 'admin/workloads/policies/README.md'
         - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
         - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
-        - 'Policies API Reference' : 'admin/workloads/policies/policy-API-page.md'
+#        - 'Policies API Reference' : 'admin/workloads/policies/policy-API-page.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :
@@ -338,4 +338,6 @@ nav:
       - 'Inference API' :
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
+      - 'Policies API' : 
+        - 'Policies API Reference' : 'developer/policies/policy-API-page.md'
