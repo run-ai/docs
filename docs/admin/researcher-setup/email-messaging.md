@@ -18,13 +18,34 @@ The following Run:ai notifications are available:
 
 |Event|Kind|Reason|Description|Additional info|
 |:----|:----|:----|:----|:----|
+|Job submitted|`PodGroup`|`Submitted`|a job was submitted to Run:ai|PodGroup, Workload, Project, Namespace, User|
+|Job is pending|`PodGroup`|`Pending`|a job is pending to be scheduled|PodGroup, Workload, Project, Namespace, User|
+|Job is initializing|`PodGroup`|`Init`|a job is initializing|PodGroup, Workload, Project, Namespace, User|
+|Job is initializing (pods initializing)|`PodGroup`|`PodInitializing`|a job is initializing|PodGroup, Workload, Project, Namespace, User|
+|Job is initializing (container creating)|`PodGroup`|`ContainerCreating`|a job is initializing|PodGroup, Workload, Project, Namespace, User|
+|Job is running|`PodGroup`|`Running`|a job started running|PodGroup, Workload, Project, Namespace, User|
+|Job suspended|`PodGroup`|`Suspended`|a job was suspended|PodGroup, Workload, Project, Namespace, User|
+|Job succeeded|`PodGroup`|`Succeeded`|a job succeeded|PodGroup, Workload, Project, Namespace, User|
+|Job failed|`PodGroup`|`Failed`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job failed (Error)|`PodGroup`|`Error`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job failed (StartError)|`PodGroup`|`StartError`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job failed (CrashLoopBackOff)|`PodGroup`|`CrashLoopBackOff`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job failed (UnexpectedAdmissionError)|`PodGroup`|`UnexpectedAdmissionError`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job failed (CreateContainerConfigError)|`PodGroup`|`CreateContainerConfigError`|a job failed, it is recommended to check the job's status history|PodGroup, Workload, Project, Namespace, User|
+|Job reached timeout|`PodGroup`|`Timeout`|a job exceeded the timeout configured in the project settings|PodGroup, Workload, Project, Namespace, User|
+|Interactive job is about to reach timeout|`Runaijob`|`WarningBeforeTimeoutInteractive`|an interactive job is about to be terminated (half-time) due to regular / idle timeout|PodGroup, Workload, Project, Namespace, User|
+|Training job is about to reach timeout|`Runaijob`|`WarningBeforeTimeoutTraining`|a training job is about to be terminated (half-time) due to regular / idle timeout|PodGroup, Workload, Project, Namespace, User|
+
+!!! Tip
+    You can configure the notifications service to send event messages about additional Kubernetes events using the relevant `kind` and event `reason`.
+
+<!--
 |Pod scheduled|`Pod`|`Scheduled`|a pod was scheduled on a node|Pod, Job, Project, Namespace, User|
 |Pod evicted|`PodGroup`|`Evict`|a pod was evicted to make room for another pod with higher priority, or to reclaim resources that belong to other project or department|Pod, Job, Project, Namespace, User|
 |Pod unschedulable|`Pod`|`Unschedulable`|a pod was determined as unschedulable and couldn't be scheduled on any node in the cluster| Pod, Job, Project, Namespace, User|
 |Failed scheduling pod|`Pod`|`FailedScheduling`|binding a pod to a node failed| Pod, Job, Project, Namespace, User|
+-->
 
-!!! Tip
-    You can configure the notifications service to send event messages about additional Kubernetes events using the relevant `kind` and event `reason`.
 <!--
 The following table shows the expected messages for each event:
 
@@ -86,17 +107,17 @@ This section defines the objects and events that the service will listen to and 
 | Component | Field | Description | Default |
 | --- |  --- |  --- |  --- |
 | `kubelistener` | `listener.relevant_objects` | white list of Kubernetes components for notifications | relevant_objects: <br> `kind:` <br>    `Podreasons:UnschedulableScheduled` <br><br> `kind:` <br>`PodGroupreasons: - Evict` |
-| `kubelistener` | `listener.relevant_namespaces` | white list of namespaces that the service should listen to for events (regex) | `runai-.*` |
+| `kubelistener` | `listener.relevant_namespaces` | this field is for internal use only, keep the default value | `runai-.*` |
 
 ### `enrich` configuration
 
-!!! Note
-    This section of the `configmap` is for internal use only. Keep the default values.
+This section of the `configmap` is mostly for internal use, please note the description of each field.
 
-| Component | Field | Default |
-| --- | --- | --- |
-|`KubeMetadata`|`enricher.kubeMetadata.lables`| `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
-|`KubeMetadata`|`enricher.kubeMetadata.annotations`|`"user": "user"`|
+|Component|Field|Description|Default|
+| --- | --- | --- | --- |
+|`KubeMetadata`|`enricher.kubeMetadata.lables`| this field is for internal use only, keep the default value | `release: workloadDisplayName` <br><br>`training.kubeflow.org/job-name: workloadDisplayName` <br><br>`serving.knative.dev/service: workloadDisplayName` <br><br>`project: project`|
+|`KubeMetadata`|`enricher.kubeMetadata.annotations`| this field is for internal use only, keep the default value |`"user": "user"`|
+|`Static`|`enricher.static`|Add static data to the event as key-value pairs. This data can then be used as a part of the email subject configured under the `notify` section |Empty|
 
 ### `notify` configuration
 
@@ -113,6 +134,7 @@ Use the following table to configure options in the `notify` section of the `con
 |`Email`|`notify.email.password` (M)|SMTP server user's password |password|
 |`Email`|`notify.email.direct_notifications` (together with Recipients)|when set to true, email notifications will be sent dynamically to the user who submitted the workload|false|
 |`Email`|`notify.email.recipients` (together with Direct Notifications)|additional email address recipients list for all the events - broadcast|Empty list|
+|`Email`|`notify.email.subject`|customize the email subject. You can use the static data configured under the `enrich` section|Empty list|
 
 **(M)** = mandatory to include in the `configmap` file.
 
