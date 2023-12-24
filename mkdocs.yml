@@ -21,6 +21,7 @@ theme:
     - content.action.edit
     - navigation.top
     - toc.follow
+    - navigation.path
 
   icon:
     edit: material/pencil 
@@ -339,5 +340,5 @@ nav:
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
-      - 'Policies API' : 
-        - 'Policies API Reference' : 'developer/policies/policy-API-page.md'
+    - 'Policies API' : 
+      - 'Policies API Reference' : 'developer/policies/policy-API-page.md'

@@ -5,7 +5,7 @@ authors:
     - Jason Novich
 date: 2023-Dec-12
 hide:
-#  - navigation
+  - navigation
   - toc
 ---
 Use this page as a reference when applying policies using the *Policies API*.

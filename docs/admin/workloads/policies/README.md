@@ -37,9 +37,9 @@ explain this here. For more information, see [How Kyverno Works](https://kyverno
 When you configure a policy, you need to specify the workload type.
 
 | Policy Type | Affected Workload |
-| --- |  --- |
-| [Workspace](workspaces-policy.md){target=_blank} | Interactive |
-| [Training](training-policy.md){target=_blank} | Training |
+| --- | --- |
+| [Workspace](workspaces-policy.md) | Interactive |
+| [Training](training-policy.md) | Training |
 
 ## Viewing or Edit a Policy
 
@@ -132,5 +132,5 @@ rules:
 
 ## API Reference
 
-Access the *Policy* [API reference ](../../../developer/policies/policy-API-page.md){target=_blank} to see how to apply *Policies* in the Run:ai platform.
+Access the *Policy* [API reference](../../../developer/policies/policy-API-page.md) to see how to apply *Policies* in the Run:ai platform.
 
