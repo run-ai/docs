@@ -24,7 +24,7 @@ date: 2023-Dec-4
 
 #### Monitoring and Analytics
 
-<!--  TODO RUN-12597/RUN-13404 - Additional configurations for Prometheus speak with Guy or Roi - ask Yaron if he added docs to this. -->
+<!--  NODOCS RUN-12597/RUN-13404 - Additional configurations for Prometheus speak with Guy or Roi - ask Yaron if he added docs to this. -->
 
 <!-- TODO  RUN-12658/RUN-14155	TW - Expose GPU health info  -->
 
