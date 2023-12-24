@@ -17,6 +17,8 @@ The Run:ai cluster creation wizard requires the download of a _Helm values file_
 | `kube-prometheus-stack.prometheusOperator.enabled` |  `true`  | (Version 2.8 or lower)  Set to `false` when the cluster has an existing Prometheus installation __based__ on the Prometheus __operator__ and Run:ai should use the existing one rather than install a new one | 
 | `prometheus-adapter.enabled` | `false` | (Version 2.8 or lower) Install Prometheus Adapter. Used for Inference workloads using a custom metric for autoscaling. Set to `true` if __Prometheus Adapter__ is not already installed in the cluster |
 | `prometheus-adapter.prometheus` |   The address of the default Prometheus Service | (Version 2.8 or lower) If you installed your own custom Prometheus Service, set this field accordingly with `url` and `port` |
+| `spec.prometheus.spec.retention` | 2h | The interval of time where Prometheus will save Run:ai metrics. Promethues is only used as an intermediary to another metrics storage facility and metrics are typically moved within tens of seconds, so changing this setting is mostly for debugging purposes. |
+| `spec.prometheus.spec.retentionSize` | Not set | The amount of storage allocated for metrics by Prometheus. For more information see [Prometheus Storage](https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects){target=_blank}. |
 
 
 <!-- | `runai-operator.config.project-controller.createRoleBindings` | `true` | Set to `false` when using OpenShift. When set to false, will require an additional manual step when assigning users to Run:ai Projects |  -->
