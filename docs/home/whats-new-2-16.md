@@ -10,7 +10,7 @@ date: 2023-Dec-4
 
 ### Researcher
 
-* <!--  TODO RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to the creator, or any user in the same scope ad the creator.
+* <!--  TODO ADDLINK RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to the creator, or any user in the same scope as the creator.
 
 #### Jobs, Workloads, and Workspaces
 
@@ -28,22 +28,20 @@ date: 2023-Dec-4
 
 <!-- TODO  RUN-12658/RUN-14155	TW - Expose GPU health info  -->
 
+<!--  TODO RUN-14703 - Additional columns to consumption report>
+
 #### Authentication and Authorization
 
 <!--  TODO RUN-13107/RUN-13108 - SSO users visibility-->
 
-<!--  TODO RUN-9473/RUN-9474	TW - SSO Supportability - phase 2 -->
 
 #### Policies
 
-<!-- TODO  RUN-9808/RUN-9810 - Show effective project policy from the UI -->
+<!--  TODO RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->
 
-<!--  TODO RUN-11125/RUN-11746	TW - Policy Sync  -->
+* <!-- TODO  RUN-9808/RUN-9810 - Show effective project policy from the UI -->Add support to see how policies affect resources in a project. Press the clipboard icon on a resource card to see a pop-up with details as to how that resource is affected by an applied policy.
 
 ### Control and Visibility
-
-
-
 
 ### Installation and Configuration
 
@@ -56,8 +54,6 @@ date: 2023-Dec-4
 ----------------------------------------------------
 
 <!-- TODO  RUN-13470 Update Workload Parameters pages -->
-
-<!--  TODO RUN-12615/RUN-12616	TW - [Playtika] Dynamic fractions SWAP  -->
 
 <!--   RUN-10387/RUN-10388 Product scope for trial 
 RUN-10385/RUN-10386	Trial cluster creation 
