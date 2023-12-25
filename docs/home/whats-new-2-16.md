@@ -1,5 +1,5 @@
 ---
-title: What's new - 2.16 February 1, 2024
+title: What's new - 2.16 January 5, 2024
 summary: This article describes new features and functionality in the version.
 authors:
     - Jason Novich
@@ -16,24 +16,21 @@ date: 2023-Dec-4
 
 * <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the submission form. Pressing on *Policy* will open a window that displays the effective policy.
 
-<!-- TODO  RUN-12619/RUN-14041 Workloads - Reliable data in API and UI -->
+<!-- TODO  RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->
 
 ### Run:ai Administrator
 
-* <!--  ADDLINK UN-13296/RUN-13299	TW - Administrator Messages Doc into the "Settings" page - same place where users are setup.-->Added the capability for administrators to configure messages to users when logging into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages]().
+* <!--  ADDLINK RUN-13296/RUN-13299	TW - Administrator Messages Doc into the "Settings" page - same place where users are setup.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages]().
 
 #### Monitoring and Analytics
 
-<!--  NODOCS RUN-12597/RUN-13404 - Additional configurations for Prometheus speak with Guy or Roi - ask Yaron if he added docs to this. -->
-
 <!-- TODO  RUN-12658/RUN-14155	TW - Expose GPU health info  -->
 
-<!--  TODO RUN-14703 - Additional columns to consumption report>
+<!--  TODO RUN-14703 - Additional columns to consumption report -->
 
 #### Authentication and Authorization
 
 <!--  TODO RUN-13107/RUN-13108 - SSO users visibility-->
-
 
 #### Policies
 
