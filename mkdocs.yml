@@ -21,6 +21,7 @@ theme:
     - content.action.edit
     - navigation.top
     - toc.follow
+    - navigation.path
 
   icon:
     edit: material/pencil 
@@ -81,9 +82,6 @@ plugins:
       draggable: true
       skip_classes:
         - skip-lightbox
-#  - render_swagger:
-#      allow_arbitrary_locations : true
-#  - swagger-ui-tag
   - minify:
       minify_html: true
   - redirects:
@@ -199,8 +197,9 @@ nav:
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' :
         - 'admin/workloads/policies/README.md'
+        - 'Former Policies' : 'admin/workloads/policies/policies.md'
         - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
-        - 'Workspaces Policy' : admin/workloads/policies/workspaces-policy.md
+        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :
@@ -338,4 +337,6 @@ nav:
       - 'Inference API' :
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
+    - 'Policies API' : 
+      - 'Policies API Reference' : 'developer/policies/policy-API-page.md'
