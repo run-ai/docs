@@ -10,7 +10,7 @@ date: 2023-Dec-4
 
 ### Researcher
 
-* <!--  TODO ADDLINK RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to the creator, or any user in the same scope as the creator.
+* <!--  TODO ADDLINK RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to only the creator, or any user in the same scope as the creator. The *Private* toggle appears on any form that requires an *Environment* to be selected. <!-- maybe adds links here to the environment, trainings, workloads pages. -->
 
 #### Jobs, Workloads, and Workspaces
 
