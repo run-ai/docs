@@ -36,7 +36,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select *On Premise*  |
-| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai <br><br> Limitation: When configuring the Kubernetes cluster you can only use the default `cluster.local` domain.  |
+| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
 
@@ -254,7 +254,7 @@ Post-install, you must configure Knative to use the Run:ai scheduler and allow p
 kubectl patch configmap/config-features \
   --namespace knative-serving \
   --type merge \
-  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled"}}'
+  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled"}}'
 ```
 
 #### Inference Autoscaling
@@ -335,7 +335,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 |Run:ai  Repository| Run:ai Helm Package Repository| <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> |443 |
 | Docker Images Repository | Run:ai images | gcr.io/run-ai-prod |443 |
 | Docker Images Repository | Third party Images |<a href="http://hub.docker.com/">hub.docker.com </a> and <a href="http://quay.io/">quay.io</a>  |  443  |
-| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | |443, 53 |
+| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | 443 |
 
 ### Post Installation
 
@@ -344,7 +344,7 @@ In addition, once running, Run:ai requires an outbound network connection to the
 | Name | Description | URLs | Ports |
 |------|-------------|------|-------|
 | Grafana |Grafana Metrics Server | <a href="https://prometheus-us-central1.grafana.net">prometheus-us-central1.grafana.net</a> and <a href="https://runailabs.com">runailabs.com</a> |443 |
-| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> |443, 53 |
+| Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | 443 |
 
 ### Network Proxy
 

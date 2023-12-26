@@ -1,13 +1,13 @@
 # Native Kubernetes Installation
 
-Kubernetes is composed of master(s) and workers. The instructions and script below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as Rancher Kubernetes Engine, or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
+Kubernetes is composed of master(s) and workers. The instructions and script below are for creating a bare-bones installation of a single master and several workers for __testing__ purposes. For a more complex, __production-grade__, Kubernetes installation, use tools such as Rancher Kubernetes Engine or review [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/){target=_blank} to learn how to customize the native installation.
 
 ## Prerequisites
 
-* The script below assumes all machines have Ubuntu 18.04 or later. For other Linux-based operating-systems see [Kubernetes documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
+* The script below assumes all machines have Ubuntu 18.04 or later. For other Linux-based operating systems see [Kubernetes](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/){target=_blank}. 
 * The script must be run with ROOT privileges.
 * Inbound ports 6443,443,8080 must be allowed. 
-* The script support Kubernetes 1.24 or later.
+* The script supports Kubernetes 1.24 or later.
 
 ## Install Kubernetes
 
@@ -16,7 +16,7 @@ Kubernetes is composed of master(s) and workers. The instructions and script bel
 * Get the script by running:
   
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.16/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
@@ -44,7 +44,7 @@ On each designated worker node:
 * Get the script by running:
   
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.16/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
@@ -79,7 +79,7 @@ The same script also contains an option to completely remove Kubernetes from nod
 * Get the script by running:
 
 ```
-wget https://raw.githubusercontent.com/run-ai/docs/v2.17/install/kube-install.sh
+wget https://raw.githubusercontent.com/run-ai/docs/v2.16/install/kube-install.sh
 ```
 
 * Run the script with ROOT privileges: `sudo ./kube-install.sh`
