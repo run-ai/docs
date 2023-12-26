@@ -333,6 +333,9 @@ The *Total department consumption* table includes consumption details for each d
 * GPU hours
 * CPU hours
 * Memory hours
+* GPU Idle allocated hours&mdash;The portion of time the GPUs spend idle from the total allocation hours
+* CPU usage hours&mdash;The actual usage time of CPU
+* Memory usage time&mdash;The actual usage time of CPU memory
 * GPU cost (only when configured)
 * CPU cost (only when configured)
 * CPU memory (only when configured)
