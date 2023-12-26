@@ -97,16 +97,6 @@ To assign the *Access rule* to the department:
 4. If you want to add another rule, use the *+Access rule*.
 5. When all the rules are configured, press *Close*.
 
-<!-- After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
-
-To assign the Department Administrator user to the correct department:
-
-1. Go to `Settings | Departments`.
-2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [Adding a new department](#adding-departments).
-3. Select `Department Administrator`, then select `Users` or `Applications`.
-4. If you selected `Users`, select one or more users from the drop down menu.
-5. Press save when complete. -->
-
 ### Assigning Projects to Departments
 
 Under **Projects** edit an existing Project. You will see a new **Department** drop-down with which you can associate a Project with a Department.
