@@ -199,9 +199,9 @@ nav:
       - 'Overview' : 'admin/workloads/workload-overview-admin.md'
       - 'Policies' :
         - 'admin/workloads/policies/README.md'
+        - 'Former Policies' : 'admin/workloads/policies/policies.md'
         - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
         - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
-#        - 'Policies API Reference' : 'admin/workloads/policies/policy-API-page.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :

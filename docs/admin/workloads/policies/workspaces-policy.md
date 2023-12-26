@@ -6,26 +6,95 @@ authors:
 date: 2023-Dec-18
 ---
 
-A workspaces policy is...
+A *Workspaces* policy places resource restrictions on workspaces in the Run:ai platform.
 
 ## Example
 
-```yml
-
-# insert example here
-
+```YAML
+defaults:
+    environment:
+      allowPrivilegeEscalation: false
+      createHomeDir: true
+      environmentVariables:
+        - name: MY_ENV
+          value: my_value
+    workspace:
+      allowOverQuota: true
+rules:
+    compute:
+      cpuCoreLimit:
+        min: 0
+        max: 9
+        required: true
+      gpuPortionRequest:
+        min: 0
+        max: 10
+    s3:
+      url:
+        options:
+          - displayed: "https://www.google.com"
+            value: "https://www.google.com"
+          - displayed: "https://www.yahoo.com"
+            value: "https://www.yahoo.com"
+    environment:
+      imagePullPolicy:
+        options:
+          - displayed: "Always"
+            value: "Always"
+          - displayed: "Never"
+            value: "Never"
+        required: true
+      runAsUid:
+        min: 1
+        max: 32700
+      createHomeDir:
+        canEdit: false
+      allowPrivilegeEscalation:
+        canEdit: false
+    workspace:
+      allowOverQuota:
+        canEdit: false
+    imposedAssets:
+      dataSources:
+        nfs:
+          canAdd: false
 ```
-## Parameters List
 
-## List of Configurable Parameters
+## Viewing or Edit a Policy
+
+To view or edit a policy:
+
+1. Press *Tools and Settings*.
+2. Press *Policies*. The policy grid is displayed.
+3. Select a policy from the list. If there are no policies, then [create a new policy](#creating-a-new-policy).
+4. Pres *Edit* to view the policy details, then press *Edit Policy* to edit the YAML file.
+5. When done, press *Apply*.
+
+## Creating a New Policy
+
+To create a policy:
+
+1. Press *Tools and Settings*.
+2. Press *Policies*. The policy grid is displayed.
+3. Press *New Policy*.
+4. Select a scope for the policy.
+5. Select a workload type using the dropdown.
+6. Press *Save Policy*. The policy editor will open.
+7. Pres *Edit Policy* to edit the YAML file. Add policy properties and variables in YAML format.
+8. When done, press *Apply*.
+
+## Configurable Fields
 
 The following parameters can be configured in the policy manager.
+
+!!! Note
+    In the tables below, when a **Type** has `null` as an option, you can choose to either not use the **Field** or use the value `null` in the policy YAML.
 
 ### Defaults
 
 The `defaults` section of the policy file is...
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `environment` | `object` or `null` | [Environment](#environment-fields) fields that can be overridden when creating a workload. |
 | `compute` | `object` or `null` | Compute resources requested. |
@@ -38,7 +107,7 @@ The `defaults` section of the policy file is...
 
 #### Environment Fields
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `command` | `string` or `null` (non-empty) | A command sent to the server used as the entry point of the container running the workspace. |
 | `args` | `string` or `null` (non-empty) | Arguments applied to the command that the container running the workspace executes. |
@@ -62,7 +131,7 @@ The `defaults` section of the policy file is...
 
 ##### Environment Variables
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `name` (required) | `string` (non-empty) | The name of the environment variable. |
 | `value` (required) | `string` | The value to set the environment variable to. |
@@ -70,7 +139,7 @@ The `defaults` section of the policy file is...
 
 ##### Connections Variables
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `namerequired` | `string` (non-empty) | A unique name of this connection. This name correlates between the connection information specified at the environment asset, to the information about the connection as specified in `SpecificEnv` for a specific workspace. |
 | `isExternal` | `boolean` | Internal tools (`isExternal=false`) are tools that run as part of the container. External tools (`isExternal=true`) run outside the container, typically in the cloud. Default: false. |
@@ -79,7 +148,7 @@ The `defaults` section of the policy file is...
 
 ###### Internal Tool Variables
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `toolType` (required) | `string` (non-empty) | The type of the internal tool. This runs within the container and exposes ports associated with the tool using `NodePort`, `LoadBalancer` or `ExternalUrl`. Choose from: `jupyter-notebook`, `pycharm`, `visual-studio-code`, `tensorboard`, `rstudio`, `mlflow`, `custom`, or `matlab`. |
 | `connectionType` (required) | `string` (non-empty) | The type of connection that exposes the container port. Choose from: `LoadBalancer`, `NodePort`, or `ExternalUrl`. |
@@ -89,7 +158,7 @@ The `defaults` section of the policy file is...
 
 ###### External Tool Variables
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 | `toolType` (required) | `string` (non-empty) | The type of external tool that is associated with the connection. External tools typically run in the cloud and require an external url to connect to it. Choose from `wandb` or `comet`. |
 | `externalUrl` (required) | `string` (non-empty) | The external url for connecting to the external tool. The url can include environment variables that will be replaced with the values provided when the workspace is created. |
@@ -97,18 +166,18 @@ The `defaults` section of the policy file is...
 
 #### Compute Resource Fields
 
-|Parameter | Type | Definition |
+|Field | Type | Description |
 | -- | -- | --|
 
 #### Hostpath Resource Fields
 
-#### NFS Definition Fields
+#### NFS Description Fields
 
-#### PVC Definition Fields
+#### PVC Description Fields
 
-#### Git Repository Definition Fields
+#### Git Repository Description Fields
 
-#### S3 Resource Definition Fields
+#### S3 Resource Description Fields
 
 #### Imposed Assets
 
