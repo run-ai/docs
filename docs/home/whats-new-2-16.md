@@ -26,7 +26,11 @@ date: 2023-Dec-4
 
 <!-- TODO  RUN-12658/RUN-14155	TW - Expose GPU health info  -->
 
-<!--  TODO RUN-14703 - Additional columns to consumption report -->
+* <!--  ADDLINK RUN-14703 - Additional columns to consumption report -->Added three columns to the consumption report for both *Projects* *Departments* tables. The new columns are:
+  
+    * GPU Idle allocated hours&mdash;the portion of time the GPUs spend idle from the total allocation hours.
+    * CPU usage hours&mdash;the actual usage time of CPU.
+    * Memory usage time&mdash;the actual usage time of CPU memory.
 
 #### Authentication and Authorization
 
