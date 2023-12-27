@@ -41,6 +41,21 @@ Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
 The following analysis can apply to both GPU and CPU dashboards.
 
+### Total and Ready GPU or CPU Nodes
+
+The *Indicators* panel of the *GPU Overview Dashboard* displays the total number of GPU nodes, the number of ready GPU nodes, the total number of GPUs, and the total number of ready GPUs.
+
+The *Indicators* panel of the *CPU Overview Dashboard* displays the total number of CPU nodes, the number of ready CPU nodes, the total number of CPUs, and the total number of ready CPUs.
+
+These panes help calculate the number of available (unscheduled) resources in the platform.
+
+* **Total GPU/CPU Nodes**&mdash;indicates the number of nodes configured to work with the platform.
+* **Ready GPU/CPU Nodes**&mdash;indicates the number of nodes that are available to the scheduler. This is calculated by subtracting the number of unscheduled nodes from the total number of nodes.
+* **Total GPUs/CPUs**&mdash;indicates the total number of GPUs or CPUs configured to work with the platform.
+* **Ready GPUs/CPUs**&mdash;indicates the number of GPUs or CPUs that are available to work with the scheduler. This is calculated by subtracting the number of unscheduled GPUs or CPUs from the total number of GPUs or CPUs.
+
+The *Free GPUs* graph displays the number of nodes and GPUs or CPUs configured to work with the platform.
+
 ### Workloads with idle GPUs or CPUs
 
 Locate workloads with idle GPUs or CPUs, defined as GPUs/CPUs with 0% utilization for more than 5 minutes.
