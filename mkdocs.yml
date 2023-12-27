@@ -324,7 +324,7 @@ nav:
         - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
         - 'Distributed Training Workloads' : 'developer/cluster-api/reference/distributed.md'
         - 'Inference Workloads' : 'developer/cluster-api/reference/inference.md'
-    - 'Administrator API' : 'developer/admin-rest-api/overview.md'
+    - 'Control Plane API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
     - 'Deprecated APIs' :
