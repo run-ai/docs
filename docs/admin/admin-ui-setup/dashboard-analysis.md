@@ -54,7 +54,7 @@ These panes help calculate the number of available (unscheduled) resources in th
 * **Total GPUs/CPUs**&mdash;indicates the total number of GPUs or CPUs configured to work with the platform.
 * **Ready GPUs/CPUs**&mdash;indicates the number of GPUs or CPUs that are available to work with the scheduler. This is calculated by subtracting the number of unscheduled GPUs or CPUs from the total number of GPUs or CPUs.
 
-The *Free GPUs* graph displays the number of nodes and GPUs or CPUs configured to work with the platform.
+The *Free GPUs* graph displays the number of nodes and how many GPUs or CPUs are configured in each node.
 
 ### Workloads with idle GPUs or CPUs
 
