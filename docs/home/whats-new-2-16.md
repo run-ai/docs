@@ -16,7 +16,15 @@ date: 2023-Dec-4
 
 * <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the submission form. Pressing on *Policy* will open a window that displays the effective policy.
 
-<!-- TODO  RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->
+* <!-- TODO ADDLINK RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+
+      * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
+      * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
+      * Search for a workload by pressing *Search* and entering the name of the workload.
+      * Advanced workload management.
+      * Added workload statuses for better tracking of workload flow.
+
+    For more information, see [Workloads Overview]().
 
 ### Run:ai Administrator
 
@@ -24,7 +32,12 @@ date: 2023-Dec-4
 
 #### Monitoring and Analytics
 
-<!-- TODO  RUN-12658/RUN-14155	TW - Expose GPU health info  -->
+* <!-- TODO ADDLINK RUN-12658/RUN-14155	TW - Expose GPU health info  -->Added to the dashboard updated GPU and CPU resource availability.
+
+      * Added a chart displaying the number of free GPUs per node. Free GPU are GPUs that have not been allocated to a workload.
+      * Added a dashlet that displays the total vs. ready resources for GPUs and CPUs. The dashlet indicates how many total nodes are in the platform, and how many are available. 
+
+    For more information, see [Dashboards]().
 
 * <!--  ADDLINK RUN-14703 - Additional columns to consumption report -->Added three columns to the consumption report for both *Projects* *Departments* tables. The new columns are:
   
