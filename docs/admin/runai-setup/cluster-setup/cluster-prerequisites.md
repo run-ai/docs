@@ -36,7 +36,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select *On Premise*  |
-| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+| Base Command Manager (Bright)  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
 
@@ -52,7 +52,8 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:
 | Run:ai 2.9     | 1.21 through 1.26 | 4.8 through 4.11 |
 | Run:ai 2.10    | 1.21 through 1.26 (see note below) | 4.8 through 4.11 |
 | Run:ai 2.13    | 1.23 through 1.28 (see note below) | 4.10 through 4.13 |
-| Run:ai 2.15    | 1.25 through 1.28 (see note below) | 4.11 through 4.13 |
+| Run:ai 2.15    | 1.25 through 1.28  | 4.11 through 4.13 |
+| Run:ai 2.16    | 1.26 through 1.28  | 4.11 through 4.14 |
 
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit.md#new-pvc-stringarray). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
