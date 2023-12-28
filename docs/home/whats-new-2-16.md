@@ -47,7 +47,7 @@ date: 2023-Dec-4
 
 #### Authentication and Authorization
 
-<!--  TODO RUN-13107/RUN-13108 - SSO users visibility-->
+* <!--  TODO ADDLINK RUN-13107/RUN-13108 - SSO users visibility-->Added a column to the *Users* table for the type of user that was created (Local or SSO). You can now also view the user's access role assignments directly from the *Users* table by pressing *VIEW*. In addition, SSO users who have logged into the system will now be visible in the *Users* table. For more information see [Users]().
 
 #### Policies
 
@@ -61,11 +61,9 @@ date: 2023-Dec-4
 
 ### Installation and Configuration
 
-
-
 #### OpenShift Support
 
-<!-- TODO  RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases -->
+<!-- TODO ADDLINK RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases - Yaron updated this - send to preqs page. -->
 
 ----------------------------------------------------
 
