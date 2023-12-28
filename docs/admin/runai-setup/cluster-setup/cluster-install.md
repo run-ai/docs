@@ -35,7 +35,7 @@ In the left menu, press *Clusters* to view the cluster table. Use *Add filter* t
 The table provides the following columns:
 
 * **Cluster**&mdash;the name of the cluster.
-* **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status).
+* **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
 * **Creattion time**&mdash;the timestamp the cluster was created.
 * **URL**&mdash;the URL that was given to the cluster at the time of creation.
 * **Run:ai cluster version**&mdash;the version of the cluster.
@@ -47,7 +47,13 @@ The following table describes the different statuses that a cluster could be in.
 
 | Status | Description |
 | -- | -- |
+| Waiting to connect | The cluster is waiting to connect or has never been connected. |
+| Disconnected | All the services that communicate with the control plane are not reporting. This may bean issue outside of of the Run:ai platform. |
+| Missing prerequisites | At least one of the [Mandatory Prerequisites](cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been met. |
+| Service issues | At least one of the *Services* is not working properly. |
+| Connected | All services are connected and up and running. |
 
+See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot statuses.
 
 ## Verify your Installation
 
