@@ -49,12 +49,12 @@ The *Indicators* panel of the *CPU Overview Dashboard* displays the total number
 
 These panes help calculate the number of available (unscheduled) resources in the platform.
 
-* **Total GPU/CPU Nodes**&mdash;indicates the number of nodes configured to work with the platform.
+* **Total GPU/CPU Nodes**&mdash;indicates the sum total of nodes in all clusters connected to the platform.
 * **Ready GPU/CPU Nodes**&mdash;indicates the number of nodes that are available to the scheduler. This is calculated by subtracting the number of unscheduled nodes from the total number of nodes.
-* **Total GPUs/CPUs**&mdash;indicates the total number of GPUs or CPUs configured to work with the platform.
+* **Total GPUs/CPUs**&mdash;indicates ihe total number of GPUs/CPUs in all the clusters that are connected to the platform.
 * **Ready GPUs/CPUs**&mdash;indicates the number of GPUs or CPUs that are available to work with the scheduler. This is calculated by subtracting the number of unscheduled GPUs or CPUs from the total number of GPUs or CPUs.
 
-The *Free GPUs* graph displays the number of nodes and how many GPUs or CPUs are configured in each node.
+The *Free GPUs* graph displays the number of free GPUs or CPUs on each node.
 
 ### Workloads with idle GPUs or CPUs
 
