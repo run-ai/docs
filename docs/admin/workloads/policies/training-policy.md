@@ -10,7 +10,7 @@ A *Training* policy places resource restrictions and defaults on training worloa
 
 ## Example
 
-Below is an example policy you can use in your platform. 
+Below is an example policy you can use in your platform.
 
 !!! Note
 
