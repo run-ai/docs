@@ -659,7 +659,7 @@ Required if and only if gpuRequestType is migProfile. States the memory profile 
 | `size` | `object` or `null` (StringRules) | -- |
 | `storageClass` | `object` or `null` (StringRules) | -- |
 
-#######  Size
+######  Size
 
 |Field | Type | Description |
 | -- | -- | --|
@@ -668,7 +668,7 @@ Required if and only if gpuRequestType is migProfile. States the memory profile 
 | `canEdit` | `boolean` or `null` | Whether the value of the field is editable, default to true |
 | `options` | `Array of objects` or `null` (StringOption)Set of options that the value of the field must be chosen from. | <table><tbody><tr><td>`value required`</td><td>`string`</td><td>The value that the field should hold.</td></tr><tr><td>`displayed`</td><td>`string` or `null`</td><td>Textual description of the value. to be used by user interface applications.</td></tr></tbody></table> |
 
-####### Storage Class
+###### Storage Class
 
 |Field | Type | Description |
 | -- | -- | --|
