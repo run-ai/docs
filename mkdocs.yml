@@ -338,5 +338,3 @@ nav:
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
         - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
-    - 'Policies API' : 
-      - 'Policies API Reference' : 'developer/policies/policy-API-page.md'
