@@ -8,8 +8,6 @@ Workspace is a simplified tool for researchers to conduct experiments, build AI 
 
 Run:ai workspaces abstract complex concepts related to running containerized workloads in a Kubernetes environment. Aspects such as networking, storage, and secrets, are built from predefined abstracted setups, that ease and streamline the researcher's AI model development.
 
-<!-- A workspace is a work environment with a specific setup. This setup is set to facilitate the research needs and yet to ensure infrastructure owners keep control and efficiency when supporting the various needs. -->
-
 A workspace consists of all the setup and configuration needed for the research, including container images, data sets, resource requests, as well as all required tools for the research, in a single place. 
 This setup is set to facilitate the research needs and yet to ensure infrastructure owners keep control and efficiency when supporting the various needs.
 
@@ -40,4 +38,4 @@ Workspaces can be used via the user interface or programmatically via the Run:ai
 ## Next Steps
 
 * Workspaces are made from _building blocks_. Read about the various [building blocks](blocks/building-blocks.md)
-* See how to [create a Workspace](create/workspace.md).  
+* See how to [create a Workspace](create/workspace-v2.md).  

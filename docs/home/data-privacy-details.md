@@ -1,6 +1,6 @@
 # Data Privacy  
 
-Run:ai [SaaS Cluster installation](../admin/runai-setup/installation-types.md) uses the Run:ai cloud as its control plane. The cluster sends information to the cloud for the purpose of control as well as dashboards. The document below is a run-down of the data that is being sent to the Run:ai cloud.
+Run:ai [SaaS Cluster installation](../admin/runai-setup/installation-types.md) uses the Run:ai cloud as its control plane. The cluster sends information to the cloud for control as well as analytics. The document below is a run-down of the data that is being sent to the Run:ai cloud.
 
 
 !!! Note
@@ -13,7 +13,9 @@ Following is a list of platform data items that are sent to the Run:ai cloud.
 
 | Asset   | Data Details  | 
 |---------|---------------|
-| Job Metrics | Job names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |
+| Workload Metrics | Workload names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |
+| Workload Assets | Workload [Assets](../Researcher/user-interface/workspaces/blocks/building-blocks.md) such as environments, compute resources and data resoruces |
+| Resource Credentials | [Credentials](../admin/admin-ui-setup/credentials-setup.md) to cluster resources are stored and encrypted using a SHA-512 algorithm. The encryption is tenant-specific |
 | Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |
 | Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |
 | Projects & Departments | Names, quota information |

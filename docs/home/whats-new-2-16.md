@@ -14,6 +14,7 @@ date: 2023-Dec-4
 
 #### Jobs, Workloads, and Workspaces
 
+
 * <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects](../admin/admin-ui-setup/project-setup.md#viewing-project-policies).
 
 * <!-- RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
@@ -47,6 +48,7 @@ date: 2023-Dec-4
 
 #### Authentication and Authorization
 
+
 * <!--  TODO ADDLINK RUN-13107/RUN-13108 - SSO users visibility-->Added a column to the *Users* table for the type of user that was created (Local or SSO). You can now also view the user's access role assignments directly from the *Users* table by pressing *VIEW*. In addition, SSO users who have logged into the system will now be visible in the *Users* table. For more information, see [Users]().
 
 #### Policies
@@ -62,6 +64,7 @@ date: 2023-Dec-4
 ### Installation and Configuration
 
 #### OpenShift Support
+
 
 * <!-- TODO ADDLINK RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases - Yaron updated this - send to preqs page. -->Updated installation prequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
 

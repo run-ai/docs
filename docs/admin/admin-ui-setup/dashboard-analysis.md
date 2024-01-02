@@ -41,6 +41,21 @@ Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
 The following analysis can apply to both GPU and CPU dashboards.
 
+### Total and Ready GPU or CPU Nodes
+
+The *Indicators* panel of the *GPU Overview Dashboard* displays the total number of GPU nodes, the number of ready GPU nodes, the total number of GPUs, and the total number of ready GPUs.
+
+The *Indicators* panel of the *CPU Overview Dashboard* displays the total number of CPU nodes, the number of ready CPU nodes, the total number of CPUs, and the total number of ready CPUs.
+
+These panes help calculate the number of available (unscheduled) resources in the platform.
+
+* **Total GPU/CPU Nodes**&mdash;indicates the sum total of nodes in all clusters connected to the platform.
+* **Ready GPU/CPU Nodes**&mdash;indicates the number of nodes that are available to the scheduler. This is calculated by subtracting the number of unscheduled nodes from the total number of nodes.
+* **Total GPUs/CPUs**&mdash;indicates ihe total number of GPUs/CPUs in all the clusters that are connected to the platform.
+* **Ready GPUs/CPUs**&mdash;indicates the number of GPUs or CPUs that are available to work with the scheduler. This is calculated by subtracting the number of unscheduled GPUs or CPUs from the total number of GPUs or CPUs.
+
+The *Free GPUs* graph displays the number of free GPUs or CPUs on each node.
+
 ### Workloads with idle GPUs or CPUs
 
 Locate workloads with idle GPUs or CPUs, defined as GPUs/CPUs with 0% utilization for more than 5 minutes.
@@ -320,6 +335,9 @@ The *Total consumption* table includes consumption details based on the filters 
 * GPU hours
 * CPU hours
 * Memory hours
+* GPU Idle allocated hours&mdash;the portion of time the GPUs spend idle from the total allocation hours.
+* CPU usage hours&mdash;the actual usage time of CPU.
+* Memory usage time&mdash;the actual usage time of CPU memory.
 * GPU cost (only when configured)
 * CPU cost (only when configured)
 * CPU memory (only when configured)
@@ -330,6 +348,9 @@ The *Total department consumption* table includes consumption details for each d
 * GPU hours
 * CPU hours
 * Memory hours
+* GPU Idle allocated hours&mdash;the portion of time the GPUs spend idle from the total allocation hours.
+* CPU usage hours&mdash;the actual usage time of CPU.
+* Memory usage time&mdash;the actual usage time of CPU memory.
 * GPU cost (only when configured)
 * CPU cost (only when configured)
 * CPU memory (only when configured)

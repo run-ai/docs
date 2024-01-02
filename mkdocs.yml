@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.17/docs/
+edit_uri: edit/v2.16/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -11,6 +11,7 @@ theme:
   favicon: images/favicon.ico
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
+    - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - search.highlight
@@ -20,7 +21,8 @@ theme:
     - content.action.edit
     - navigation.top
     - toc.follow
-  #  - toc.integrate 
+    - navigation.path
+
   icon:
     edit: material/pencil 
     view: material/eye
@@ -80,7 +82,6 @@ plugins:
       draggable: true
       skip_classes:
         - skip-lightbox
-#  - render_swagger
   - minify:
       minify_html: true
   - redirects:
@@ -193,8 +194,12 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
     #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
     - 'Workloads' : 
-      - 'Overview' : 'admin/workloads/workload-overview-admin.md'
-      - 'Policies' : 'admin/workloads/policies.md'
+      - 'admin/workloads/README.md'
+      - 'Policies' :
+        - 'admin/workloads/policies/README.md'
+        - 'Former Policies' : 'admin/workloads/policies/policies.md'
+        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
+        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :
@@ -319,7 +324,7 @@ nav:
         - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
         - 'Distributed Training Workloads' : 'developer/cluster-api/reference/distributed.md'
         - 'Inference Workloads' : 'developer/cluster-api/reference/inference.md'
-    - 'Administrator API' : 'developer/admin-rest-api/overview.md'
+    - 'Control Plane API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
     - 'Deprecated APIs' :
@@ -332,4 +337,6 @@ nav:
       - 'Inference API' :
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
+    - 'Policies API' : 
+      - 'Policies API Reference' : 'developer/policies/policy-API-page.md'
