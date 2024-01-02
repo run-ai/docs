@@ -95,7 +95,7 @@ To view a project policy:
 
 3. To view the a policy restriction, expand a section of the policy. The following categories are available:
 
-    * Pararmeter
+    * Parameter
     * Rule
     * Default
     * Source
