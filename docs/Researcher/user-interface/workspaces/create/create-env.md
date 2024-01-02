@@ -9,7 +9,7 @@ To create an environment:
 5. Choose a supported workload type. Configure this section based on the type of workload you expect to run in this environment. Choose from:
 
       * `Single node`&mdash;use for running workloads on a single node.
-      * `Mult-node`&mdash;use for running distributed workloads on multiple nodes.
+      * `Multi-node`&mdash;use for running distributed workloads on multiple nodes.
 
     Then choose the workload that can use the environment:
 
@@ -20,11 +20,11 @@ To create an environment:
       1. If you selected `Single node`, select `Workspace`, or `Training` or both.
       2. If you selected `Multi-node (Distributed)`, select a framework from the dropdown, then select `Workspace`, or `Training` or both.
 
-7. Select a tool from the list. You can add multiple tools by pressing *+ Tool+. Selecting a tool is optional.
+7. Select a tool from the list. You can add multiple tools by pressing *+ Tool*. Selecting a tool is optional.
 
     Tools can be:
 
-      * Different applications such as Code editor IDEs (for example, VS Code), Experiment tracking (for example,. Weight and Biases), visualization tools (for example,. Tensor Board), and more.
+      * Different applications such as Code editor IDEs (for example, VS Code), Experiment tracking (for example, Weight and Biases), visualization tools (for example, Tensor Board), and more.
       * Open source tools (for example, Jupyter notebook) or commercial 3rd party tools (for example,. MATLAB)
 
     It is also possible to set up a custom tool used by the organization.
@@ -37,7 +37,7 @@ To create an environment:
     !!! Note
         Selecting a tool requires configuration to be up and running. To configure a tool:
 
-    * The container image needs to support the tool. 
+    * The container image needs to support the tool.
     * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
 
 8. Configure runtime settings with:

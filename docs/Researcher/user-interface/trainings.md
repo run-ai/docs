@@ -30,8 +30,14 @@ To add a training:
 2. In the *Projects* pane, select the destination project. Use the search box to find projects that are not listed. If you can't find the project, you can create your own, or see your system administrator.
 3. In the *Multi-node* pane, choose `Single node` for a single node training, or `Multi-node (distributed)` for distributed training. When you choose `Multi-node`, select a framework that is listed, then select the `multi-node` training configuration by selecting either `Workers & master` or `Workers only`.
 4. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, see [Creating a new template](../../admin/admin-ui-setup/templates.md#creating-templates), or see your system administrator.
-5. In the *Training name* pane, enter a name for the *Traninng*, then press continue.
-6. In the *Environment* pane select or [create a new environment](workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+5. In the *Training name* pane, enter a name for the *Training*, then press continue.
+6. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](workspaces/create/create-env.md) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
+
+       In the *Runtime Settings*:
+    
+       1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
+       2. Press *Environment variable* to add an environment variable. Press again if you need more environment variables.
+   
 7. In the *Compute resource* pane:
 
        1. Select the number of workers for your training.
@@ -49,10 +55,10 @@ To add a training:
        5. Enter the *Container path* for volume target location.
        6. Select a *Volume persistency.
 
-9. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+9.  (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 10. (Optional) In the *General* pane, add special settings for your training (optional):
 
-       1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+       1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
        2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
        3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -74,7 +80,7 @@ To add a training:
        4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](workspaces/create/create-ds.md) When complete press, *Create Data Source*.
        5. (Optional) In the *General* pane, add special settings for your training (optional):
 
-          1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+          1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
           2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
           3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -100,7 +106,7 @@ To manage your trainings:
 
 Training details are displayed using the *Show details* action. The details available per training job include;
 
-* **Event hostory**&mdash;a graph of the job's status over time along with a list of events found in the log.
+* **Event history**&mdash;a graph of the job's status over time along with a list of events found in the log.
 * **Metrics**&mdash;a graph of available metrics for the job. Use the drop down select a date and a time slice. Metrics include:
 
   * GPU utilization
