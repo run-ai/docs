@@ -80,12 +80,12 @@ User **user@domain.com** is a **department admin** in **Department A**.
 
 ### Access Rules Table
 
-The *Access Rules* table provides a list of users that have been assigned access to the platform. Use *Add filter* to add one or more filter results based on the columns that are in the table. In the *Contains* pane, you can use partial or complete text. Filtered text is ***not*** case sensitive. To remove the filter, press *X* next to the filter.
+The *Access Rules* table provides a list of subjects (users, SSO groups, applications) that have been assigned access to the platform. Use *Add filter* to add one or more filter results based on the columns that are in the table. In the *Contains* pane, you can use partial or complete text. Filtered text is ***not*** case sensitive. To remove the filter, press *X* next to the filter.
 
 The table contains the following columns:
 
-* **Type**&mdash;the type of user (SSO or other).
-* **Subject**&mdash;the user id of the user with role assignments.
+* **Type**&mdash;the type of subject assigned to the access rule (User, SSO group, or Application).
+* **Subject**&mdash;the user, SSO group, or application id of the subject with role assignments.
 * **Role**&mdash;the name of the role assigned to the user.
 * **Scope**&mdash;the scope to which the user has rights. Press the name of the scope to see the scope and related children.
 * **Athorized by**&mdash;the user who granted the access roles.

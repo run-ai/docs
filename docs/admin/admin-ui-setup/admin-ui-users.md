@@ -22,7 +22,7 @@ You can create local users, as well as update and delete local users.
 !!! Note
 
     * To be able to review, add, update and delete users, you must have *System Administrator* access. To upgrade your access, contact a system administrator.
-    * When SSO is enabled, users created using the procedure below will be local users only. You cannot create new SSO users. 
+    * When SSO is enabled, users created using the procedure below will be local users only. You can only provide SSO users with access to the system. You cannot create new SSO users.
 
 To create a new user:
 
@@ -41,7 +41,7 @@ The *Users* table displays a list of users who are authorized to login to the Ru
 
 The *Users* table contains informtion about users who have logged into the Run:ai Platform. The table includes columns for:
 
-* **User**&mdash;the email and user ID of the user.
+* **User**&mdash;the email address which is the user identifier.
 * **Type**&mdash;the type of user (local or SSO).
 * **Last login**&mdash;the last time the user logged into the platform.
 * **Access rule(s)**&mdash;press *VIEW* to view the access rule(s) assigned to the user.
@@ -53,7 +53,7 @@ When you press *View* in the *Access rule(s)* column, a pop-up will appear that 
 
 * **Role**&mdash;the name of the role assigned to the user.
 * **Scope**&mdash;the scope to which the user has rights.
-* **Type**&mdash;the type of user (SSO or other)
+* **Type**&mdash;the type of subject assigned to the access rule (User or SSO group)
 * **Group**&mdash;the group to which the user is assigned. (Applies only to SSO users)
 * **Athorized by**&mdash;the user who granted the access roles.
 * **Creation time**&mdash;the timestamp for when the user was created.
