@@ -66,7 +66,7 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
   
 <!-- 4. In *Access control*, add one or more applications or users. If your user or application isn't in the list, see [Roles and permissions](admin-ui-users.md#roles-and-permissions), and verify that the users have the correct permissions. To change user permissions, see [Working with users](admin-ui-users.md#working-with-users). -->
 
-## Assign users to a Project
+## Assign Access Rules to a Project
 
 <!-- This is no longer available even when it is set to enabled!!
 When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.  -->
@@ -74,12 +74,32 @@ When [Researcher Authentication](../runai-setup/authentication/researcher-authen
 To assign *Access rules* to the project:
 
 1. Select a project from the list, then press *Access rules*, then press then press *+Access rule*.
-2. From the *Subject type* dropdown choose *User* or *Application*, then enter the user name or the application name.
+2. From the *Subject* dropdown choose *User* or *Application*, then enter the user name or the application name.
 3. From the *Role* dropdown, select the desired role, then press *Save rule*.
 4. If you want to add another rule, use the *+Access rule*.
 5. When all the rules are configured, press *Close*.
 
 If you are using Single-sign-on, you can also assign Groups.
+
+## Viewing Project Policies
+
+Run:ai now provides the ability to view how policies effect your *Project*.
+
+To view a project policy:
+
+1. In the left menu, press *Projects*, then select a project from the list.
+2. Press *View Policy*, and select a policy type. The *Policy Viewer* opens.
+
+    !!! Note
+        Policy types are greyed out if there are no policies applied in the platform.
+
+3. To view the a policy restriction, expand a section of the policy. The following categories are available:
+
+    * Pararmeter
+    * Rule
+    * Default
+    * Source
+
 
 ## Other Project Properties
 
