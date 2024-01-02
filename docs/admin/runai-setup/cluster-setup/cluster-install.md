@@ -4,7 +4,7 @@ Below are instructions on how to install a Run:ai cluster.
 Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 !!! Important
-    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met.
+    It is strongly recommend that you run the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met.
 
 ## Install Run:ai
 
@@ -36,7 +36,7 @@ The table provides the following columns:
 
 * **Cluster**&mdash;the name of the cluster.
 * **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
-* **Creattion time**&mdash;the timestamp the cluster was created.
+* **Creation time**&mdash;the timestamp the cluster was created.
 * **URL**&mdash;the URL that was given to the cluster at the time of creation.
 * **Run:ai cluster version**&mdash;the version of the cluster.
 * **Run:ai cluster UUI**&mdash;the unique ID of the cluster.
@@ -47,13 +47,13 @@ The following table describes the different statuses that a cluster could be in.
 
 | Status | Description |
 | -- | -- |
-| Waiting to connect | The cluster is waiting to connect or has never been connected. |
-| Disconnected | All the services that communicate with the control plane are not reporting. This may bean issue outside of of the Run:ai platform. |
+| Waiting to connect | The cluster has never been connected. |
+| Disconnected | There is no communication from the cluster to the Control Plane. This may be a network issue outside of the Run:ai platform. |
 | Missing prerequisites | At least one of the [Mandatory Prerequisites](cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been met. |
-| Service issues | At least one of the *Services* is not working properly. |
+| Service issues | At least one of the *Services* is not working properly. You can view the list of nonfunctioning services for more information |
 | Connected | All services are connected and up and running. |
 
-See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot statuses.
+See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot issues in the cluster.
 
 ## Verify your Installation
 
