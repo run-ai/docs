@@ -47,23 +47,23 @@ date: 2023-Dec-4
 
 #### Authentication and Authorization
 
-* <!--  TODO ADDLINK RUN-13107/RUN-13108 - SSO users visibility-->Added a column to the *Users* table for the type of user that was created (Local or SSO). You can now also view the user's access role assignments directly from the *Users* table by pressing *VIEW*. In addition, SSO users who have logged into the system will now be visible in the *Users* table. For more information see [Users]().
+* <!--  TODO ADDLINK RUN-13107/RUN-13108 - SSO users visibility-->Added a column to the *Users* table for the type of user that was created (Local or SSO). You can now also view the user's access role assignments directly from the *Users* table by pressing *VIEW*. In addition, SSO users who have logged into the system will now be visible in the *Users* table. For more information, see [Users]().
 
 #### Policies
 
 * <!--  TODO ADDLINK RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Policies](../admin/workloads/policies/README.md).
 
-* <!-- TODO  RUN-9808/RUN-9810 - Show effective project policy from the UI -->Add support to see how policies affect resources in a project. Press the clipboard icon on a resource card to see a pop-up with details as to how that resource is affected by an applied policy.
+* <!-- TODO ADDLINK RUN-9808/RUN-9810 - Show effective project policy from the UI -->Add support to see how policies affect resources in a project. Press the clipboard icon on a resource card to see a pop-up with details as to how that resource is affected by an applied policy.
 
 ### Control and Visibility
 
-* <!--  TODO RUN-7310/RUN-11951 Installation - Cluster visibility -->Added new dashboards that report on the state of the cluster.
+* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Added new dashboards that report on the state of the cluster.
 
 ### Installation and Configuration
 
 #### OpenShift Support
 
-<!-- TODO ADDLINK RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases - Yaron updated this - send to preqs page. -->
+* <!-- TODO ADDLINK RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases - Yaron updated this - send to preqs page. -->Updated installation prequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
 
 ----------------------------------------------------
 
