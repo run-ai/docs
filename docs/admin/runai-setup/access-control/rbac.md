@@ -78,18 +78,39 @@ An *Access rule* is the assignment of a *Role* to a *Subject* in a *Scope*. *Acc
 **For example**:  
 User **user@domain.com** is a **department admin** in **Department A**.
 
+### Access Rules Table
+
+The *Access Rules* table provides a list of subjects (users, SSO groups, applications) that have been assigned access to the platform. Use *Add filter* to add one or more filter results based on the columns that are in the table. In the *Contains* pane, you can use partial or complete text. Filtered text is ***not*** case sensitive. To remove the filter, press *X* next to the filter.
+
+The table contains the following columns:
+
+* **Type**&mdash;the type of subject assigned to the access rule (User, SSO group, or Application).
+* **Subject**&mdash;the user, SSO group, or application id of the subject with role assignments.
+* **Role**&mdash;the name of the role assigned to the user.
+* **Scope**&mdash;the scope to which the user has rights. Press the name of the scope to see the scope and related children.
+* **Athorized by**&mdash;the user who granted the access roles.
+* **Creation time**&mdash;the timestamp for when the user was created.
+* **Last updated**&mdash;the last time the user information was updated.
+
 ### Create or delete rules
 
 To create a new access rule:
 
-1. Press the ![Tools and Settings](../../admin-ui-setup/img/tools-and-settings.svg) icon, then *Roles and Access rules*.
-2. Choose *Access rules*, then *New access rule*.
-3. Select a user type from the dropdown, then select a user by typing in the email address.
-4. Select a role from the dropdown.
-5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *Save rule* when done.
+1. Press the ![Tools and Settings](../../admin-ui-setup/img/tools-and-settings.svg) icon, then *Access rules & Roles*.
+2. Choose the *ACCESS RULES* tab, then press *NEW ACCESS RULE*.
+3. Select a subject type from the dropdown. Choose from:
+
+      1. **User**&mdash;a user that has been created in the platform, or a known SSO user listed in your IDP. Enter an email address to select a user.
+      2. **SSO Group**&mdash;a known group listed in your IDP server.
+    !!! Note
+        To add SSO users and groups, you must enter a user id, or group id that is recognized by the configured IDP.
+      4. **Application**&mdash;an application that has been created in the platform.
+
+4. Select a [Role] from the dropdown.
+5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *SAVE RULE* when done.
 
 !!! Note
-    You cannot edit *Access rules*. To change an *Access rule*, you need to delete the rule, then create a new rule to replace it. You can also add multiple rules for the same user.
+    You cannot edit access rules. To change an access rules, you need to delete the rule, then create a new rule to replace it. You can also add multiple rules for the same user.
 
 To delete a rule:
 
