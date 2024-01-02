@@ -14,7 +14,7 @@ date: 2023-Dec-4
 
 #### Jobs, Workloads, and Workspaces
 
-* <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the submission form. Pressing on *Policy* will open a window that displays the effective policy.
+* <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects]().
 
 * <!-- RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
 
