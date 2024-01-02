@@ -194,7 +194,7 @@ nav:
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
     #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
     - 'Workloads' : 
-      - 'Overview' : 'admin/workloads/workload-overview-admin.md'
+      - 'admin/workloads/README.md'
       - 'Policies' :
         - 'admin/workloads/policies/README.md'
         - 'Former Policies' : 'admin/workloads/policies/policies.md'
