@@ -49,19 +49,12 @@ To create a policy:
 !!! Note
     After saving, the form will wait for the policy to sync with the cluster.
 
+--8<-- "../docs/snippets/snippets-policies.md:1:170"
 
-## Parameters List
+#### Training
 
-### Default Spec
+--8<-- "../docs/snippets/snippets-policies.md:172:775"
 
-The `default` section of the policy dictates what...
+#### Training
 
-#### Environment
-
-The environment section of the policy dictates...
-
-#### Next table
-
-The environment section of the policy dictates...
-
-### Rules Spec
+--8<-- "../docs/snippets/snippets-policies.md:777:843"
