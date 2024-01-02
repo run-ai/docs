@@ -16,7 +16,7 @@ date: 2023-Dec-4
 
 * <!-- TODO ADDLINK RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the submission form. Pressing on *Policy* will open a window that displays the effective policy.
 
-* <!-- TODO ADDLINK RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+* <!-- RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
 
       * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
       * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
@@ -24,7 +24,7 @@ date: 2023-Dec-4
       * Advanced workload management.
       * Added workload statuses for better tracking of workload flow.
 
-    For more information, see [Workloads Overview]().
+    For more information, see [Workloads Overview](../admin/workloads/README.md).
 
 ### Run:ai Administrator
 
