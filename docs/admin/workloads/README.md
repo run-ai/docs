@@ -12,16 +12,16 @@ Run:ai *Workloads* is specifically designed and optimized for AI and data scienc
 
 Runai is an open platform and supports three types of workloads each with a different set of features:
 
-1. Run:ai native workloads (trainings, workspaces, deployments)
+<!--#--> 1. Run:ai native workloads (trainings, workspaces, deployments)
       1. Submit via UI/CLI
       2. Actions - Delete/stop/connect
       3. Policies (defaults and enforcing rules)
       4. Scheduling rules
       5. RBAC
-2. Framework integrations
+<!--#-->2. Framework integrations
       1. Smart gang scheduling (workload aware)
       2. Specific workload aware visibility (GPU Utilization, workload view, dashboards)
-3. Typical Kubernetes workloads
+<!--#-->3. Typical Kubernetes workloads
       1. Scheduling capabilities:
            1. Fairness
            2. Nodepools
@@ -30,7 +30,7 @@ Runai is an open platform and supports three types of workloads each with a diff
            1. Fractions
            2. Overprovisioning
 
-To enable the *Workloads* view, press *Jobs* and then press *Try Workloads*. To return to the *Jobs* view, press *Go Back To Jobs View*.
+<!--To enable the *Workloads* view,  press *Try Workloads* at the upper right corner of the view. To return to the *Jobs* view, press *Go Back To Jobs View*.-->
 
 ## Workloads Monitoring
 
@@ -42,16 +42,19 @@ Access the platform [API documentation](https://app.run.ai/api/docs){target=_bla
 
 ## Workloads View
 
-The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+<!--The Workloads view provides a more advanced UI than the previous Jobs UI and is a replacement for the Jobs, Trainings, and workspaces views all at once. --> 
+The new table format provides:
 
 * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
 * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
 * Search for a workload by pressing *Search* and entering the name of the workload.
 * Advanced workload management.
 
+  
+
 To create new workloads, press [*New Workload*](submitting-workloads.md).
 
-## Manging Workloads
+## Managing Workloads
 
 You can manage a workload by selecting one from the table. Once selected, you can:
 
@@ -81,7 +84,7 @@ The *Status* column shows the current status of the workload. The following tabl
 | **Failed** | Workload encountered errors: image retrieval failed or containers experienced a crash. Consult logs for specifics. | An error occurs preventing the successful completion of the job. | Terminal state. | 
 | **Completed** | Workload has successfully finished its execution. | The job has finished processing without errors. | Terminal state. | 
 
-### Successful flows
+### Successful flow
 
 A successful flow will follow the following flow chart:
 
@@ -93,11 +96,6 @@ flowchart LR
  D-->E(Completed)
 ```
 
-#### Single pod
-
-#### Distributed
-
-### Error flows
 
 ## Runai Native Workloads
 
@@ -122,4 +120,4 @@ To assist you with other platforms, and other types of workloads use the integra
 
 ## Standard Kubernetes Workloads
 
-You can still enjoy the Run:ai platform when you submit standard Kubernetes workloads. Feel free to download or build you own.
+You can still enjoy the Run:ai platform when you submit standard Kubernetes workloads. Feel free to <!-- submit -->  your CRDs.
