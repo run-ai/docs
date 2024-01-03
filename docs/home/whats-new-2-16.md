@@ -16,14 +16,27 @@ date: 2023-Dec-4
 
 * <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects](../admin/admin-ui-setup/project-setup.md#viewing-project-policies).
 
-* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign--> <!--
+
+Running machine learning workloads effectively on Kubernetes can be difficult, but Run:ai makes it easy. The new Workloads experience introduces a simpler and more efficient way to manage machine learning workloads, which will appeal to data scientists and engineers alike. The new API and UI are not just a cosmetic change; they are the gateway to several enhancements that improve the workload management experience.
+
+The new Workloads experience 
+Fast, reliable, and easy-to-use unified interface.
+* Fast - Fast-query data from the new workloads service, allowing a slick experience
+* Reliable - One source of truth, all clients will use it. CLI, UI, API
+* Easy to use - replace 3 grids with one unified view.
+* Unified - All workload types in one place
+
+
+ this section i would move to the dedicated doc, in the ui section
+ The new table format provides:
 
       * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
       * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
       * Search for a workload by pressing *Search* and entering the name of the workload.
       * Advanced workload management.
       * Added workload statuses for better tracking of workload flow.
-
+-->
     For more information, see [Workloads Overview](../admin/workloads/README.md).
 
 ### Run:ai Administrator
