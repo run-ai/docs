@@ -10,11 +10,12 @@ date: 2023-Dec-4
 
 ### Researcher
 
+<!-- Let's start with a sentence about the value before the description of the feature (this is big and very unique capability, which many organizations need I do not want it to be oveseen. Something like: Added support to secure and private access to researcher tools, such as Jupyter Notebook. In order to enable this feature a new toggle was added... -->
 * <!--  DONE RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to only the creator, or any user in the same scope as the creator. The *Private* toggle appears on any form that requires an *Environment* to be selected. For more information, see [Creating a new Workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
 
 #### Jobs, Workloads, and Workspaces
 
-* <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects](../admin/admin-ui-setup/project-setup.md#viewing-project-policies).
+* <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects](../admin/admin-ui-setup/project-setup.md#viewing-project-policies). <!-- The URLs addresses only viewing policies and not editing policies, I guess it is still work in porogress (let's also be consistent with the terms here and use "edit" like we use in the product and not "change") -->
 
 * <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign--> <!--
 
@@ -30,6 +31,9 @@ Fast, reliable, and easy-to-use unified interface.
 
  this section i would move to the dedicated doc, in the ui section
  The new table format provides:
+
+* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign--><!-- The following sentence is not clear and sounds a little like fluff. What does "specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications" mean? -->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+
 
       * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
       * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
@@ -68,14 +72,14 @@ Fast, reliable, and easy-to-use unified interface.
 
 * <!--  TODO ADDLINK RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Viewing Project Policies](../admin/workloads/policies/README.md).
 
-* <!-- TODO ADDLINK RUN-9808/RUN-9810 - Show effective project policy from the UI -->Add support to see how policies affect resources in a project. Press the clipboard icon on a resource card to see a pop-up with details as to how that resource is affected by an applied policy.
+* <!-- TODO ADDLINK RUN-9808/RUN-9810 - Show effective project policy from the UI --><!-- Something is not clear here. First "Added". Then what do you mean by "resources"? Is this a term we use? Do you mean "compute resources"? Not sure I fully get it. It looks like something is missing / broken in this sentence -->Add support to see how policies affect resources in a project. Press the clipboard icon on a resource card to see a pop-up with details as to how that resource is affected by an applied policy.
 
 ### Control and Visibility
 
-* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Added new dashboards that report on the state of the cluster.
+* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! --><!-- Looks like WIP. If a placeholder for cluster state visibility, then "dashboard" is not the right term to use for this feature -->Added new dashboards that report on the state of the cluster.
 
 ### Installation and Configuration
 
 #### OpenShift Support
 
-* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases -->Updated installation prerequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
+* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases --><!-- I followed the link and did not understand where the link is trying to take me. There is a note for OCP about certification, but I did not see any updated installation prerequisites. The epic look like the general epic that we have in each resease for new kubernetes and openshift versios support. There is a dedicated place for the suported versions and there is no need to add an item in the RN. Unless there is a change in the prerequisites and then it is super critical to include in the RN. I am not aware of any change and did not see such a change in the epic. Gal would know best -->Updated installation prerequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
