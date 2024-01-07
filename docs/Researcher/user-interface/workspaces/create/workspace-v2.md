@@ -1,4 +1,11 @@
-# Create a new workspace
+---
+title: Create a new workspace
+summary: This article describes how to create new workspaces.
+authors:
+    - Jason Novich
+date: 2024-Jan-7
+---
+
 A Workspace is assigned to a project and is affected by the project’s quota just like any other workload. A workspace is shared with all project members for collaboration.
 
 !!! Note

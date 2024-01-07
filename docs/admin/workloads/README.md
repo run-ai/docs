@@ -1,12 +1,10 @@
 ---
 title: Workloads Overview
-summary: This article describes the Workloads page.
+summary: This article is an overview of the Workloads feature.
 authors:
     - Jason Novich
 date: 2023-Dec-26
 ---
-
-## Overview
 
 Run:ai *Workloads* is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. Run:ai augments Kubernetes workloads with additional resources crucial for AI pipelines (for example, Compute resources, NW <!-- we cannot use NW here -->, and storage).
 

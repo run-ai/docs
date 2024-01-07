@@ -10,8 +10,7 @@ date: 2023-Dec-4
 
 ### Researcher
 
-<!-- Let's start with a sentence about the value before the description of the feature (this is big and very unique capability, which many organizations need I do not want it to be oveseen. Something like: Added support to secure and private access to researcher tools, such as Jupyter Notebook. In order to enable this feature a new toggle was added... -->
-* <!--  DONE RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added a *Private* toggle to the *Environment* card window after selecting a tool to enable Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to only the creator, or any user in the same scope as the creator. The *Private* toggle appears on any form that requires an *Environment* to be selected. For more information, see [Creating a new Workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
+* <!--  DONE RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added support for secure and private access to researcher tools such as Jupyter Notebook, and others. In order to enable secure and private access, a *Private* toggle has been added to the *Environment* card which enables Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to only the creator, or any user in the same scope as the creator. The *Private* toggle appears on any form that requires an *Environment* to be selected. For more information, see [Creating a new Workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
 
 #### Jobs, Workloads, and Workspaces
 
@@ -32,8 +31,8 @@ Fast, reliable, and easy-to-use unified interface.
  this section i would move to the dedicated doc, in the ui section
  The new table format provides:
 
-* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign--><!-- The following sentence is not clear and sounds a little like fluff. What does "specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications" mean? -->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
-
+* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
+<!-- The following sentence is not clear and sounds a little like fluff. What does "specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications" mean? -->
 
       * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
       * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
@@ -76,10 +75,14 @@ Fast, reliable, and easy-to-use unified interface.
 
 ### Control and Visibility
 
-* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! --><!-- Looks like WIP. If a placeholder for cluster state visibility, then "dashboard" is not the right term to use for this feature -->Added new dashboards that report on the state of the cluster.
+* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Improved the clarity of the status column in the *Clusters* view. Now users have more insight about the actual status of the cluster. Users can now see extended details about each cluster, the state of the cluster services, and if they are connected.  For more information, see [Cluster status](../admin/runai-setup/cluster-setup/cluster-install.md#cluster-status).
+<!-- Looks like WIP. If a placeholder for cluster state visibility, then "dashboard" is not the right term to use for this feature -->
+
+The goal of this feature is to provide more clarity to the users about the status of their cluster, by providing extended details about each cluster, including mandatory prerequisites, optional prerequisites, cluster services state, sync with the cluster, metrics, etc.
 
 ### Installation and Configuration
 
 #### OpenShift Support
 
-* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases --><!-- I followed the link and did not understand where the link is trying to take me. There is a note for OCP about certification, but I did not see any updated installation prerequisites. The epic look like the general epic that we have in each resease for new kubernetes and openshift versios support. There is a dedicated place for the suported versions and there is no need to add an item in the RN. Unless there is a change in the prerequisites and then it is super critical to include in the RN. I am not aware of any change and did not see such a change in the epic. Gal would know best -->Updated installation prerequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
+* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases -->Updated installation prerequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
+  <!-- I followed the link and did not understand where the link is trying to take me. There is a note for OCP about certification, but I did not see any updated installation prerequisites. The epic look like the general epic that we have in each release for new kubernetes and openshift versions support. There is a dedicated place for the supported versions and there is no need to add an item in the RN. Unless there is a change in the prerequisites and then it is super critical to include in the RN. I am not aware of any change and did not see such a change in the epic. Gal would know best -->
