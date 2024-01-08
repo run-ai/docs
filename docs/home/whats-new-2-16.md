@@ -16,30 +16,12 @@ date: 2023-Dec-4
 
 * <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability show and change policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Projects](../admin/admin-ui-setup/project-setup.md#viewing-project-policies). <!-- The URLs addresses only viewing policies and not editing policies, I guess it is still work in porogress (let's also be consistent with the terms here and use "edit" like we use in the product and not "change") -->
 
-* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign--> <!--
+* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Running machine learning workloads effectively on Kubernetes can be difficult, but Run:ai makes it easy. The new *Workloads* experience introduces a simpler and more efficient way to manage machine learning workloads, which will appeal to data scientists and engineers alike. The *Workloads* experience provides a fast, reliable, and easy to use unified interface.
 
-Running machine learning workloads effectively on Kubernetes can be difficult, but Run:ai makes it easy. The new Workloads experience introduces a simpler and more efficient way to manage machine learning workloads, which will appeal to data scientists and engineers alike. The new API and UI are not just a cosmetic change; they are the gateway to several enhancements that improve the workload management experience.
+    * Fast-query of data from the new workloads service.
+    * Reliable data retrieval and presentation in the CLI, UI, and API.
+    * Easy to use single unified view with all workload types in one place.
 
-The new Workloads experience 
-Fast, reliable, and easy-to-use unified interface.
-* Fast - Fast-query data from the new workloads service, allowing a slick experience
-* Reliable - One source of truth, all clients will use it. CLI, UI, API
-* Easy to use - replace 3 grids with one unified view.
-* Unified - All workload types in one place
-
-
- this section i would move to the dedicated doc, in the ui section
- The new table format provides:
-
-* <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Improved Run:ai *Workloads* so that it is specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications. The Workloads view provides a more advanced UI than the previous Jobs UI. The new table format provides:
-<!-- The following sentence is not clear and sounds a little like fluff. What does "specifically designed and optimized for AI and data science workloads, enhancing Kubernetes management of containerized applications" mean? -->
-
-      * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
-      * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
-      * Search for a workload by pressing *Search* and entering the name of the workload.
-      * Advanced workload management.
-      * Added workload statuses for better tracking of workload flow.
--->
     For more information, see [Workloads Overview](../admin/workloads/README.md).
 
 ### Run:ai Administrator
@@ -75,7 +57,7 @@ Fast, reliable, and easy-to-use unified interface.
 
 ### Control and Visibility
 
-* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Improved the clarity of the status column in the *Clusters* view. Now users have more insight about the actual status of the cluster. Users can now see extended details about each cluster, the state of the cluster services, and if they are connected.  For more information, see [Cluster status](../admin/runai-setup/cluster-setup/cluster-install.md#cluster-status).
+* <!--  TODO ADDLINK RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Improved the clarity of the status column in the *Clusters* view. Now users have more insight about the actual status of the cluster. Users can now see extended details about each cluster, the state of the cluster services, and if they are connected. For more information, see [Cluster status](../admin/runai-setup/cluster-setup/cluster-install.md#cluster-status).
 <!-- Looks like WIP. If a placeholder for cluster state visibility, then "dashboard" is not the right term to use for this feature -->
 
 The goal of this feature is to provide more clarity to the users about the status of their cluster, by providing extended details about each cluster, including mandatory prerequisites, optional prerequisites, cluster services state, sync with the cluster, metrics, etc.
@@ -84,5 +66,5 @@ The goal of this feature is to provide more clarity to the users about the statu
 
 #### OpenShift Support
 
-* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases -->Updated installation prerequisites. For more information, see [Supported Kubernetes Versions](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes).
+* <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases -->Updated installation prerequisites. For more information, see [Kubernetes support matrix](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#releases).
   <!-- I followed the link and did not understand where the link is trying to take me. There is a note for OCP about certification, but I did not see any updated installation prerequisites. The epic look like the general epic that we have in each release for new kubernetes and openshift versions support. There is a dedicated place for the supported versions and there is no need to add an item in the RN. Unless there is a change in the prerequisites and then it is super critical to include in the RN. I am not aware of any change and did not see such a change in the epic. Gal would know best -->
