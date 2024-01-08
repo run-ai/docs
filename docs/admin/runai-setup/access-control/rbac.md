@@ -88,9 +88,9 @@ The table contains the following columns:
 * **Subject**&mdash;the user, SSO group, or application id of the subject with role assignments.
 * **Role**&mdash;the name of the role assigned to the user.
 * **Scope**&mdash;the scope to which the user has rights. Press the name of the scope to see the scope and related children.
-* **Athorized by**&mdash;the user who granted the access roles.
-* **Creation time**&mdash;the timestamp for when the user was created.
-* **Last updated**&mdash;the last time the user information was updated.
+* **Authorized by**&mdash;the user who granted the access rule.
+* **Creation time**&mdash;the timestamp for when the rule was created.
+* **Last updated**&mdash;the last time the rule information was updated.
 
 ### Create or delete rules
 

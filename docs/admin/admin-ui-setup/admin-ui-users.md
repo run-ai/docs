@@ -8,16 +8,12 @@ date: 2023-Dec-28
 
 ## Introduction
 
-The Run:ai UI allows the creation of Run:ai **local** users. Local users are users that are only in the Run:ai platform. Users are assigned levels of access to all aspects of the UI including submitting jobs on the cluster.
+The Run:ai UI allows you to manage all of the users in the Run:ai platform. There are two types of users, **local** users and **SSO** users. Local users are users that are created and managed in the Run:ai platform and SSO users are authorized to use the Run:ai platform using an identity provider. All users are assigned levels of access to all aspects of the UI including submitting jobs on the cluster.
 
 !!! Tip
     It is possible to connect the Run:ai UI to the organization's directory and use single sign-on (SSO). This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [single sign-on configuration](../runai-setup/authentication/sso.md).
 
-## Working with Users
-
-You can create local users, as well as update and delete local users.
-
-### Create a User
+## Create a User
 
 !!! Note
 
@@ -54,8 +50,8 @@ When you press *View* in the *Access rule(s)* column, a pop-up will appear that 
 * **Role**&mdash;the name of the role assigned to the user.
 * **Scope**&mdash;the scope to which the user has rights.
 * **Type**&mdash;the type of subject assigned to the access rule (User or SSO group)
-* **Group**&mdash;he name of the group assigned to the access rule. (Applies only to SSO)
-* **Authorized by**&mdash;the user who granted the access rules.
+* **Group**&mdash;the name of the group assigned to the access rule, in case the access rule is inherited from an SSO group.
+* **Authorized by**&mdash;the user who granted the access rule.
 * **Creation time**&mdash;the timestamp for when the rule was created.
 * **Last updated**&mdash;the last time the rule information was updated.
 
