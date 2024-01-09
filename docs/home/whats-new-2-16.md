@@ -1,5 +1,5 @@
 ---
-title: What's new - 2.16 January 5, 2024
+title: What's new - 2.16 January 9, 2024
 summary: This article describes new features and functionality in the version.
 authors:
     - Jason Novich
