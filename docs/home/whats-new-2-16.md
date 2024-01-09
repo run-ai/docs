@@ -48,7 +48,7 @@ date: 2023-Dec-4
 
 #### Authentication and Authorization
 
-* <!--  DONE RUN-13107/RUN-13108 - SSO users visibility-->Added a column to the *Users* table for the type of user that was created (Local or SSO). You can now also view the user's access role assignments directly from the *Users* table by pressing *View*. In addition, SSO users who have logged into the system will now be visible in the *Users* table. For more information, see [Adding, Updating, and Deleting Users](../admin/admin-ui-setup/admin-ui-users.md#adding-updating-and-deleting-users).
+* <!--  DONE RUN-13107/RUN-13108 - SSO users visibility-->SSO users who have logged into the system will now be visible in the *Users* table. In addition, added a column to the *Users* table for the type of user that was created (Local or SSO). For more information, see [Adding, Updating, and Deleting Users](../admin/admin-ui-setup/admin-ui-users.md#adding-updating-and-deleting-users).
 
 #### Policies
 
@@ -58,7 +58,7 @@ date: 2023-Dec-4
 
 ### Control and Visibility
 
-* <!--  DONE RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Improved the clarity of the status column in the *Clusters* view. Now users have more insight about the actual status of the cluster. Users can now see extended details about each cluster, the state of the cluster services, connectivity state. For more information, see [Cluster status](../admin/runai-setup/cluster-setup/cluster-install.md#cluster-status).
+* <!--  DONE RUN-7310/RUN-11951 Installation - Cluster visibility IMPROVE HERE!!! -->Improved the clarity of the status column in the *Clusters* view. Now users have more insight about the actual status of Run:ai on the cluster. Users can now see extended details about the state of the Run:ai installation and services on the cluster, and its connectivity state. For more information, see [Cluster status](../admin/runai-setup/cluster-setup/cluster-install.md#cluster-status).
 
 <!-- DONE RUN-11787/RUN-11788 Support new Kubernetes and OpenShift releases
 
