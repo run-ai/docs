@@ -24,7 +24,7 @@ Using the cluster wizard:
 On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
-*  Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
 
 ## Cluster Table
 
@@ -38,7 +38,7 @@ The table provides the following columns:
 * **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
 * **Creation time**&mdash;the timestamp the cluster was created.
 * **URL**&mdash;the URL that was given to the cluster at the time of creation.
-* **Run:ai cluster version**&mdash;the version of the cluster.
+* **Run:ai cluster version**&mdash;the Run:ai version installed on the cluster.
 * **Run:ai cluster UUI**&mdash;the unique ID of the cluster.
 
 ### Cluster Status
@@ -48,7 +48,7 @@ The following table describes the different statuses that a cluster could be in.
 | Status | Description |
 | -- | -- |
 | Waiting to connect | The cluster has never been connected. |
-| Disconnected | There is no communication from the cluster to the Control Plane. This may be a network issue outside of the Run:ai platform. |
+| Disconnected | There is no communication from the cluster to the Control Plane. This may be due to a network issue. |
 | Missing prerequisites | At least one of the [Mandatory Prerequisites](cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been met. |
 | Service issues | At least one of the *Services* is not working properly. You can view the list of nonfunctioning services for more information |
 | Connected | All services are connected and up and running. |

@@ -45,7 +45,7 @@ Run:ai has been tested with the following Kubernetes distributions. Please conta
 | Ezmeral | HPE Ezmeral Container Platform | See Run:ai at [Ezmeral marketplace](https://www.hpe.com/us/en/software/marketplace/runai.html){target=_blank}  |
 | Tanzu | VMWare Kubernetes | Tanzu supports *containerd* rather than *docker*. See the NVIDIA prerequisites below as well as [cluster customization](customize-cluster-install.md) for changes required for containerd |
 
-Following is a Kubernetes support matrix for the latest Run:ai releases:
+Following is a Kubernetes support matrix for the latest Run:ai releases:<a name="releases"></a>
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
 |----------------|-------------------------------|--------|
