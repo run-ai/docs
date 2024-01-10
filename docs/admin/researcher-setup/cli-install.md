@@ -2,7 +2,7 @@
 
 The Run:ai Command-line Interface (CLI) is **one** of the ways for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, etc.
 
-The instructions below will guide you through the process of installing the CLI. The Run:ai CLI runs on Mac and Linux. You can run the CLI on Windows by using Docker for Windows. See the end of this document.
+The instructions below will guide you through the process of installing the CLI. The Run:ai CLI runs on Mac, Linux and Windows. 
 
 
 ## Researcher Authentication
