@@ -35,7 +35,7 @@ As described in [authentication overview](authentication-overview.md), you must 
 
 Modifying the API Server configuration differs between Kubernetes distributions:
 
-=== "Native Kubernetes"
+=== "Vanilla Kubernetes"
 
     * Locate the Kubernetes API Server configuration file. The file's location may differ between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
     * Edit the document, under the `command` tag, add the __server__ configuration text described above.
