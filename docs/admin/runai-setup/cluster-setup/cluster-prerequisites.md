@@ -30,7 +30,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 
 | Kubernetes Distribution           | Description | Installation Notes |
 |-----------------------------------|-------------|--------------------|
-| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s native installation  |  See instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md) script. |
+| Vanilla Kubernetes                       |  Using no specific distribution but rather k8s vanilla installation  |  See instructions for a simple (non-production-ready) [Kubernetes Installation](install-k8s.md) script. |
 | OCP | OpenShift Container Platform       |   The Run:ai operator is [certified](https://catalog.redhat.com/software/operators/detail/60be3acc3308418324b5e9d8){target=_blank} for OpenShift by Red Hat. |
 | EKS | Amazon Elastic Kubernetes Service  |  |
 | AKS | Azure Kubernetes Services          |   |
