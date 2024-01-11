@@ -216,6 +216,23 @@ nav:
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
+      - 'Alert Manager Alerts' :
+        - 'admin/troubleshooting/alertmanager/README.md'
+        - 'Runai Agent Cluster Info PushR ateLow' : 'admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow.md'
+        - 'Runai Agent Pull Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentPullRateLow.md'
+        - 'Runai Container Memory Usage Critical' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical.md'
+        - 'Runai Container Memory Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning.md'
+        - 'Runai Container Restarting' : 'admin/troubleshooting/alertmanager/RunaiContainerRestarting.md'
+        - 'Runai Cpu Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiCpuUsageWarning.md'
+        - 'Runai Critical Problem' : 'admin/troubleshooting/alertmanager/RunaiCriticalProblem.md'
+        - 'Runai DaemonSet Rollout Stuck' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck.md'
+        - 'Runai DaemonSet Unavailable On Nodes' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetUnavailableOnNodes.md'
+        - 'Runai Deployment Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentInsufficientReplicas.md'
+        - 'Runai Deployment NoAvailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentNoAvailableReplicas.md'
+        - 'Runai Deployment Unavailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentUnavailableReplicas.md'
+        - 'Runai Project Controller Reconcile Failure' : 'admin/troubleshooting/alertmanager/RunaiProjectControllerReconcileFailure.md'
+        - 'Runai StatefulSet Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetInsufficientReplicas.md'
+        - 'Runai StatefulSet No Available Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetNoAvailableReplicas.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
 #    - 'Integrations' :
