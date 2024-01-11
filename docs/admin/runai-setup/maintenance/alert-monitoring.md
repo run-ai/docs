@@ -120,3 +120,7 @@ In each step, copy the contents of the code snippets to a new file and apply it 
         Different receivers can be configured using Alertmanager [receiver-integration-settings](https://prometheus.io/docs/alerting/latest/configuration/#receiver-integration-settings){target=_blank}.
 
 3. Save and exit the editor. The configuration will automatically be reloaded.
+
+## Alert Messages
+
+Alerts help you troubleshoot your system and give you a better understanding of currently occurring issues that affect performance. For more insight into the meaning of the alert messages, see []().
