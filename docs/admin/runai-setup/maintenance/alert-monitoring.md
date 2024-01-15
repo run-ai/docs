@@ -1,4 +1,11 @@
-# Setting up Alert Monitoring for Run:ai Using Alertmanager in Prometheus
+---
+title: Setting up Alert Monitoring for Run:ai Using Alertmanager in Prometheus
+summary: This article describes how to set up and configure Alertmanager in Prometheus.
+authors:
+    - Jason Novich
+    - Viktor Koukouliev
+date: 2024-Jan-15
+---
 
 ## Introduction
 

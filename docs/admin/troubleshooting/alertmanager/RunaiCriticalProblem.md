@@ -9,11 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-One of the critical runai alerts is active
+One of the critical Run:ai alerts is active.
 
 ## Impact
 
-based on the active alert
+The impact is based on the active alert.
 
 ## Severity
 
@@ -21,12 +21,8 @@ Critical
 
 ## Diagnosis
 
-Check runai alerts in prometheus
+Check Run:ai alerts in Prometheus.
 
 ## Mitigation
 
-Resolve the active alert.
-
-Contact runai.
-
-Be the first to add a reaction
+Resolve the active alert. If you cannot, then contact Run:ai.

@@ -9,11 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-Runai daemonset has 0 available pods on a relevant node
+Then Run:ai daemonset has zero available pods on a relevant node.
 
 ## Impact
 
-No fractional gpu workloads support
+Fractional gpu workloads support is not configured.
 
 ## Severity
 
@@ -21,20 +21,8 @@ Critical
 
 ## Diagnosis
 
-run
-
-`kubectl get daemonset -n runai-backend`
-
-One or more of the daemonsets will have no running pods on certain nodes
+Run `kubectl get daemonset -n runai-backend` to see if one or more of the daemonsets will have no running pods on certain nodes.
 
 ## Mitigation
 
-Run
-
-`kubectl describe daemonset X -n runai`
-
-Try to figure out why the daemonset cannot create pods.
-
-Contact runai.
-
-Be the first to add a reaction
+Run `kubectl describe daemonset X -n runai` to try amd figure out why the daemonset cannot create pods. Contact Run:ai if you cannot correct the issue.

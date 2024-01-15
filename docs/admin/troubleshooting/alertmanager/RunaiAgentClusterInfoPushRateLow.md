@@ -9,11 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-cluster-sync pod in ‘runai’ namespace might not be functioning properly.
+The cluster-sync pod in the ‘runai’ namespace might not be functioning properly.
 
 ## Impact
 
-Possible impact - no info/partial info from the cluster is being synced back to the control-plane.
+No information or partial information from the cluster is being synced back to the control-plane.
 
 ## Severity
 
@@ -21,20 +21,10 @@ Critical
 
 ## Diagnosis
 
-Run:
-
-`kubectl get pod -n runai`
-
-And see if the `cluster-sync` pod is running.
+Run `kubectl get pod -n runai` to see if the `cluster-sync` pod is running.
 
 ## Mitigation
 
-Run
+Run `kubectl describe deployment cluster-sync -n runai kubectl logs deployment/cluster-sync -n runai` to try and figure out why the cluster-sync is not functioning properly.
 
-`kubectl describe deployment cluster-sync -n runai kubectl logs deployment/cluster-sync -n runai`
-
-Try to figure out why the cluster-sync is not functioning properly.
-
-Perhaps there’s a connectivity issue with the control-plane?
-
-Be the first to add a reaction
+It is possible that there is a connectivity issue with the control-plane.

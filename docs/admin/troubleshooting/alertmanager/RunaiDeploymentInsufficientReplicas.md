@@ -9,12 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-Runai deployment has 1 or more unavailable pods.
+The Run:ai deployment has one or more unavailable pods.
 
 ## Impact
 
-Scale issues.  
-New version deployment cannot deploy - missing features.
+This indicates scaling issues. The new version deployment can not deploy due to missing features.
 
 ## Severity
 
@@ -22,20 +21,8 @@ Critical
 
 ## Diagnosis
 
-run
-
-`kubectl get deployment -n runai kubectl get deployment -n runai-backend`
-
-One or more of the deployment will missing pods
+Run `kubectl get deployment -n runai kubectl get deployment -n runai-backend` to see if one or more of the deployments are missing pods.
 
 ## Mitigation
 
-Run
-
-`kubectl describe deployment X -n runai/runai-backend kubectl describe replicaset X -n runai/runai-backend kubectl logs deployment/X -n runai/runai-backend`
-
-Try to figure out why the deployment cannot create pods.
-
-Contact runai.
-
-Be the first to add a reaction
+Run `kubectl describe deployment X -n runai/runai-backend kubectl describe replicaset X -n runai/runai-backend kubectl logs deployment/X -n runai/runai-backend` to try and figure out why the deployment cannot create pods. Contact Run:ai if you cannot correct the issue.

@@ -9,11 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-The runai agent might be too loaded or is slow in processing data (possible in very big clusters), or the agent pod itself in ‘runai’ namespace might not be functioning properly.
+The `runai` agent may be too loaded, is slow in processing data (possible in very big clusters), or the agent pod itself in the ‘runai’ namespace may not be functioning properly.
 
 ## Impact
 
-Possible impact - no info/partial info from the control-plane is being synced in the cluster.
+No information or partial information from the control-plane is being synced in the cluster.
 
 ## Severity
 
@@ -21,30 +21,17 @@ Critical
 
 ## Diagnosis
 
-Run:
-
-`kubectl get pod -n runai`
-
-And see if the `runai-agent` pod is running.
+Run `kubectl get pod -n runai` to see if the `runai-agent` pod is running.
 
 ## Mitigation
 
-Run
+Run `kubectl describe deployment runai-agent -n runai kubectl logs deployment/runai-agent -n runai` to try and figure out why the agent is not functioning properly.
 
-`kubectl describe deployment runai-agent -n runai kubectl logs deployment/runai-agent -n runai`
+It is possible that there is a connectivity issue with the control-plane.
 
-Try to figure out why the agent is not functioning properly.
+If it seems that the agent is functioning properly, but the cluster is very big and loaded, it is possible that the agent is taking time to process the data coming from the control-plane. If this is the case, and you want the alert to stop firing, you can try to edit the value under which the alert starts firing.
 
-Perhaps there’s a connectivity issue with the control-plane?
+Run `kubectl edit runaiconfig -n runai`.
 
-If it seems that the agent is functioning properly, but the cluster is very big and loaded, it makes sense that the agent takes time to process the data coming from the control-plane.
-
-In that case, if we want the alert to stop firing, we can try to edit the value under which the alert starts firing.
-
-The default is 0.05, you can try to change it to less than that (for example, 0.045 or 0.04).
-
-`kubectl edit runaiconfig -n runai`
-
-under: `spec` -> `prometheus` -> `agentPullPushRateMinForAlert` (if the value doesn’t exist, add it)
-
-Be the first to add a reaction
+In the  `spec`:`prometheus` verify that the  `agentPullPushRateMinForAlert` (if the property does not exist, add it).
+If the property exists, the default value is 0.05. You can change it to less than that (for example, 0.045 or 0.04).
