@@ -101,3 +101,8 @@ kube-prometheus-stack:
 ```
 
 You can find an example in the Prometheus documentation [here](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/){target=_blank}.
+
+
+## Alert Messages
+
+After you configure the Prometheus Alertmanager, the triggered alerts will help you troubleshoot your system and give you a better understanding of currently occurring issues that affect the Run:ai system. For more insight into the meaning of the alerts, see [Prometheus Alerts](../../troubleshooting/alertmanager/README.md).
