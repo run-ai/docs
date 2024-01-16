@@ -21,11 +21,16 @@ Warning
 
 ## Diagnosis
 
-To diagnose the issue, and the pods with issues, run `kubectl get pods -n runai kubectl get pods -n runai-backend`.
+To diagnose the issue, and the pods with issues, run:
+```
+kubectl get pods -n runai
+kubectl get pods -n runai-backend
+```
 
 The expected result should be one or more pods where the restart count >= 2.
 
 ## Mitigation
 
-Run `kubectl logs -n NAMESPACE POD_NAME` on the relevant pod. Check to see if there is something in the logs stands out. Then, check that the container has enough resources.
+Run `kubectl logs -n NAMESPACE POD_NAME` on the relevant pod. Check to see if there is something in the logs that stands out. Then, check that the container has enough resources.
+
 Contact Run:ai for more assistance.
