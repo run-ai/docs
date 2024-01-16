@@ -230,7 +230,7 @@ nav:
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
       - 'Alert Manager Alerts' :
         - 'admin/troubleshooting/alertmanager/README.md'
-        - 'Runai Agent Cluster Info PushR ateLow' : 'admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow.md'
+        - 'Runai Agent Cluster Info Push Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow.md'
         - 'Runai Agent Pull Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentPullRateLow.md'
         - 'Runai Container Memory Usage Critical' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical.md'
         - 'Runai Container Memory Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning.md'
