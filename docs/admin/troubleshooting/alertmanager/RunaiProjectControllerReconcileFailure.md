@@ -31,12 +31,6 @@ And try to find errors in the logs.
 
 The error in the logs should be descriptive and help to understand what is wrong.
 
-If you see which of the projects failed to reconcile, you can check their status (versions 2.13+) using:
+If you see which of the projects failed to reconcile, you can check their status by running `kubectl get project <PROJECT_NAME> -oyaml`. The status describes what the issue may be. 
 
-`kubectl get project <PROJECT_NAME> -oyaml`
-
-Usually, the status will be descriptive as well.
-
-Contact runai support if this keeps happening.
-
-Be the first to add a reaction
+If you cannot correct the issue, contact Run:ai support.
