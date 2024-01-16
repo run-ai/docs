@@ -9,7 +9,7 @@ date: 2024-Jan-10
 
 ## Meaning
 
-The runai agent might be too loaded or is slow in processing data (possible in very big clusters), or the agent pod itself in ‘runai’ namespace might not be functioning properly.
+The `runai-agent` pod may be too loaded, is slow in processing data (possible in very big clusters), or the ‘runai-agent‘ pod itself in the ‘runai’ namespace may not be functioning properly.
 
 ## Impact
 
@@ -29,11 +29,13 @@ And see if the `runai-agent` pod is running.
 
 ## Mitigation
 
-Run
+Run: 
+```
+kubectl describe deployment runai-agent -n runai
+kubectl logs deployment/runai-agent -n runai
+```
 
-`kubectl describe deployment runai-agent -n runai kubectl logs deployment/runai-agent -n runai`
-
-Try to figure out why the agent is not functioning properly.
+From the logs and pod details, try and figure out why the `runai-agent` pod is not functioning properly.
 
 Perhaps there’s a connectivity issue with the control-plane?
 
