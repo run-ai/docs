@@ -1,5 +1,5 @@
 ---
-title: RunaiAgentClusterInfoPushRateLow 
+title: Runai Agent Cluster Info Push Rate Low 
 summary: This article describes the RunaiAgentClusterInfoPushRateLow alert.
 authors:
     - Jason Novich
