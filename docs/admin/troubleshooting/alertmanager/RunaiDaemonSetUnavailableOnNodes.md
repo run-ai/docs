@@ -24,9 +24,10 @@ Critical
 Run 
 `kubectl get daemonset -n runai-backend` 
 
-Identify the one or more of the daemonsets that have no running pods on some of the nodes.
+Identify the one or more daemonsets that have no running pods on some of the nodes.
 
 ## Mitigation
 
 Run `kubectl describe daemonset X -n runai` on the relevant deamonset(s) to try and figure out why it cannot create pods. 
+
 If you cannot correct the issue, contact Run:ai support. 
