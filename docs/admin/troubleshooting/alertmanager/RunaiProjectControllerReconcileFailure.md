@@ -28,4 +28,5 @@ Run `kubectl logs deployment/project-controller -n runai` to try and find errors
 The error in the logs should be descriptive and help to understand what is wrong.
 
 If you see which of the projects failed to reconcile, you can check their status by running `kubectl get project <PROJECT_NAME> -oyaml`. The status describes what the issue may be. 
+
 If you cannot correct the issue, contact Run:ai support.
