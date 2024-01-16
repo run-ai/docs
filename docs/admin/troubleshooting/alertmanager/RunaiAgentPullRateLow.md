@@ -9,7 +9,7 @@ date: 2024-Jan-10
 
 ## Meaning
 
-The `runai-agent` pod may be too loaded, is slow in processing data (possible in very big clusters), or the ‘runai-agent‘ pod itself in the ‘runai’ namespace may not be functioning properly.
+The `runai-agent` pod may be too loaded, is slow in processing data (possible in very big clusters), or the `runai-agent` pod itself in the `runai` namespace may not be functioning properly.
 
 ## Impact
 
