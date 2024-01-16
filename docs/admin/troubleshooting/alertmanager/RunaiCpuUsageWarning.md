@@ -9,7 +9,7 @@ date: 2024-Jan-10
 
 ## Meaning
 
-The `runai` container is using more than 80% of its CPU limit.
+A Run:ai container is using more than 80% of its CPU limit.
 
 ## Impact
 
@@ -21,10 +21,11 @@ Warning
 
 ## Diagnosis
 
-Use <!-- add a command here --> on the relevant pod. 
+Use the command `kubectl top` on the relevant pod. 
 
-If this tool is unavailable, you can calculate the cpu usage by running `rate(container_cpu_usage_seconds_total{namespace=~"runai|runai-backend"}[2m])`.
+If this tool is unavailable, you can calculate the CPU usage by running `rate(container_cpu_usage_seconds_total{namespace=~"runai|runai-backend"}[2m])`.
 
 ## Mitigation
 
-Add cpu resources to the container. If the issue does not resolve, contact Run:ai.
+Add CPU resources to the container. 
+If the issue is not resolved, contact Run:ai support.

@@ -21,8 +21,9 @@ Critical
 
 ## Diagnosis
 
-Check Run:ai alerts in Prometheus.
+Check Run:ai alerts in Prometheus to find the the active critical alert. 
 
 ## Mitigation
 
-Resolve the active alert. If you cannot, then contact Run:ai.
+Go to the mitigation section of the relevant alert.
+If you cannot resolve the issue, contact Run:ai support.

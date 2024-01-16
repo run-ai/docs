@@ -7,7 +7,7 @@ authors:
 date: 2024-Jan-10
 ---
 <!-- you can take some text from here https://prometheus-operator.dev/docs/user-guides/alerting/ -->
-The Prometheus Operator introduces an Alertmanager resource that sends alerts about the cluster. Alertmanager is used to:
+The [Prometheus Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) handles alerts created and sent as by client applications using [alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/). It takes care of deduplicating, grouping, and sending out notifications via methods such as email, on-call notification systems, and chat platforms.
 
 <!-- fill in here a small list -->
 
@@ -15,12 +15,12 @@ To configure Prometheus to send alerts, see [Setting up Alert Monitoring for Run
 
 ## List of Alerts
 
-The following is a list of alerts that you will receive once Prometheus is configured.
+The following is a list of Run:ai alerts that you will receive once Prometheus is configured.
 
 | Alert Name |
 |--|
-| [RunaiAgentClusterInfoPushRateLow](RunaiAgentClusterInfoPushRateLow.md)&mdash;cluster-sync pod in ‘runai’ namespace might not be functioning properly. |
-| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)&mdash;The runai agent may not be functioning properly.                                               |
+| [RunaiAgentClusterInfoPushRateLow](RunaiAgentClusterInfoPushRateLow.md) |
+| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)|
 | [RunaiContainerMemoryUsageCritical](RunaiContainerMemoryUsageCritical.md)                                                                              |
 | [RunaiContainerMemoryUsageWarning](RunaiContainerMemoryUsageWarning.md)                                                                                |
 | [RunaiContainerRestarting](RunaiContainerRestarting.md)                                                                                                |
