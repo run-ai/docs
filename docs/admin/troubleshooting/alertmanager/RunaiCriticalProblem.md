@@ -21,7 +21,7 @@ Critical
 
 ## Diagnosis
 
-Check Run:ai alerts in Prometheus to find the the active critical alert. 
+Check Run:ai alerts in Prometheus to find the active critical alert. 
 
 ## Mitigation
 
