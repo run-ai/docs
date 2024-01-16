@@ -9,7 +9,7 @@ date: 2024-Jan-10
 
 ## Meaning
 
-cluster-sync pod in ‘runai’ namespace might not be functioning properly.
+The `cluster-sync` pod in the `runai` namespace might not be functioning properly.
 
 ## Impact
 
@@ -29,9 +29,11 @@ And see if the `cluster-sync` pod is running.
 
 ## Mitigation
 
-Run
-
-`kubectl describe deployment cluster-sync -n runai kubectl logs deployment/cluster-sync -n runai`
+Run 
+```
+kubectl describe deployment cluster-sync -n runai 
+kubectl logs deployment/cluster-sync -n runai
+```
 
 Try to figure out why the cluster-sync is not functioning properly.
 
