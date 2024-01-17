@@ -84,7 +84,7 @@ Log in to `<company-name>.run.ai/dashboards/now`.
 
 * Verify that all metrics in the overview dashboard are showing. 
 * Verify that all metrics are showing in the Nodes view. 
-* Go to __Projects__ and create a new Project. Find the new Project using the CLI command: `runai list projects`
+* Go to **Projects** and create a new Project. Find the new Project using the CLI command: `runai list projects`
 
 
 ### Verify that the Run:ai services are running
