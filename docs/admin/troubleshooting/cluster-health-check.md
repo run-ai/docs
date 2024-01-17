@@ -116,7 +116,7 @@ Run:
 kubectl get daemonset -n runai
 ```
 
-A _Daemonset_ runs on every node. Some of the Run:ai daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the _desired_ number is equal to  _current_ and to _ready_. 
+A *Daemonset* runs on every node. Some of the Run:ai daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the *desired* number is equal to *current* and to *ready*. 
 
 
 ### Submit a Job via the command-line interface
