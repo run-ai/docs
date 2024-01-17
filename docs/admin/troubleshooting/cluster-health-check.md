@@ -90,7 +90,7 @@ When a cluster's status shows *Service issues*, this means that one or more Run:
 
 ## General tests to verify the Run:ai cluster health
 
-Use the following tests regularly to determine the health of the Run:ai cluster in addition to the troubleshooting options previously described, regardless of the cluster status.
+Use the following tests regularly to determine the health of the Run:ai cluster, regardless of the cluster status and the troubleshooting options previously described.
 
 ### Verify that data is sent to the cloud
 
