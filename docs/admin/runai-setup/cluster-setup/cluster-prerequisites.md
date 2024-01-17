@@ -62,16 +62,19 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 #### Pod Security Admission
 
-Run:ai version 2.15 supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
+Run:ai version 2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
 
-For Run:ai on OpenShift to run with PSA `restricted` policy, the `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+For Run:ai on OpenShift to run with PSA `restricted` policy:
 
-```
-pod-security.kubernetes.io/audit=privileged
-pod-security.kubernetes.io/enforce=privileged
-pod-security.kubernetes.io/warn=privileged
-```
+1. The `runai` namespace should still be marked as `privileged` as described in [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
 
+   ```
+   pod-security.kubernetes.io/audit=privileged
+   pod-security.kubernetes.io/enforce=privileged
+   pod-security.kubernetes.io/warn=privileged
+   ```
+2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies.md).
+   
 ### NVIDIA
 
 Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
