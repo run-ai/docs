@@ -66,14 +66,14 @@ Run:ai version 2.15 and above supports `restricted` policy for [Pod Security Adm
 
 For Run:ai on OpenShift to run with PSA `restricted` policy:
 
-1. The `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+1. The `runai` namespace should still be marked as `privileged` as described in [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
 
    ```
    pod-security.kubernetes.io/audit=privileged
    pod-security.kubernetes.io/enforce=privileged
    pod-security.kubernetes.io/warn=privileged
    ```
-2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [policies](../../workloads/policies.md).
+2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies.md).
    
 ### NVIDIA
 
