@@ -22,6 +22,7 @@ theme:
     - navigation.top
     - toc.follow
     - navigation.path
+    - content.code.copy
 
   icon:
     edit: material/pencil 
