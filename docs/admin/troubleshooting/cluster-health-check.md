@@ -142,4 +142,4 @@ runai list jobs
 ### Submit a Job via the user interface
 
 Log into the Run:ai user interface, and verify that you have a `Researcher` or `Research Manager` role. 
-Go to the `Jobs` area. On the top right, press the button to create a Job. Once the form opens -- submit a Job. 
+Go to the `Jobs` area. On the top right, press the button to create a Job. Once the form opens, you can submit a Job. 
