@@ -53,12 +53,10 @@ Use the following steps to troubleshoot the issue:
     * Check both Kubernetes Network Policies and any network-related configurations at the infrastructure level.
     * Verify that the required ports and protocols are not blocked.
 
-* Contact Run:ai Support
-
-  If the issue persists, and you couldn’t resolve it after completing the previous steps, contact Run:ai support for assistance.
+5. If the issue persists, and you couldn’t resolve it after completing the previous steps, contact Run:ai support for assistance.
 
 !!! Note
-    The above steps can be used if you installed the cluster and the status is stuck in “Waiting to connect” for a long time.
+    The previous steps can be used if you installed the cluster and the status is stuck in “Waiting to connect” for a long time.
 
 ## Cluster has Service issues
 
