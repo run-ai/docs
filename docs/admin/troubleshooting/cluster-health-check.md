@@ -31,7 +31,7 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
 
 * Check the network connection from the runai namespace in your cluster to the Control Plane. You can do that by running a connectivity check pod.
 
-  Create a pod within the runai namespace. This pod can be a simple container with basic network troubleshooting tools, such as curl or get. Use the following command to determine if the pod can establish connections to the necessary Control Plane endpoints:
+  Create a pod within the runai namespace. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to determine if the pod can establish connections to the necessary Control Plane endpoints:
 
   `kubectl run control-plane-connectivity-check -n runai --image=wbitt/network-multitool --command -- /bin/sh -c 'curl -sSf <control-plane-endpoint> > /dev/null && echo "Connection Successful" || echo "Failed connecting to the Control Plane"'`
 
