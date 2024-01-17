@@ -37,9 +37,9 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
 
   Replace `control-plane-endpoint` with the URL of the Control Plane in your environment.
 
-* Check potential network issues. You can use the following guidelines:
+* Check potential network issues. Use the following guidelines:
   
-    * Ensure that the network policies in your Kubernetes cluster allow communication between the Run:ai services that communicate with the Control Plane to the Control Plane.
+    * Ensure that the network policies in your Kubernetes cluster allow communication between the Control Plane and the Run:ai services that communicate with the Control Plane.
    
     * Check both Kubernetes Network Policies and any network-related configurations at the infrastructure level.
   
@@ -47,36 +47,36 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
 
 * Contact Run:ai Support
 
-  If the issue persists and you couldn’t resolve it after completing the above steps, contact Run:ai support for assistance.
+  If the issue persists, and you couldn’t resolve it after completing the above steps, contact Run:ai support for assistance.
 
 !!! Note 
-    The above steps can also be relevant if you installed the cluster and it is stuck in the status “Waiting to connect” for a long time.
+    The above steps can be used if you installed the cluster and the status is stuck in “Waiting to connect” for a long time.
 
 ## Cluster has Service issues
 
-When a cluster is in the status “Service issues”, this means that one or more Run:ai services that are running in the cluster are not available.
+When a cluster's status shows “Service issues”, this means that one or more Run:ai services that are running in the cluster are not available.
 
-* In this case, first run the following command, to verify which are the non-functioning services, and get more details about deployment issues and resources required by these services that may not be ready (e.g. ingress is was not created or is unhealthy): 
+* First run the following command, to verify which are the non-functioning services, and get more details about deployment issues and resources required by these services that may not be ready (for example, ingress was not created or is unhealthy): 
 
   `kubectl get runaiconfig -n runai runai -ojson | jq -r '.status.conditions | map(select(.type == "Available"))'`
 
   The list of non-functioning services is also available on the UI Clusters page.
 
-* After determining the non-functioning services, you can use the following guidelines to further investigate the issue.
+* After determining the non-functioning services, use the following guidelines to further investigate the issue.
 
   Get all Kubernetes events and look for recent failures:
 
   `Kubectl get events  -A`
 
-  If a required resource was created but not available or unhealthy, you can also check its details by running:
+  If a required resource was created but not available or unhealthy, check its details by running:
 
   `Kubectl describe <resource_type> <name>`
 
-* If the issue persists and you couldn’t resolve it, contact Run:ai support for assistance. 
+* If the issue persists and you could not resolve it, contact Run:ai support for assistance. 
 
 ## General tests to verify the Run:ai cluster health
 
-In addition of the troubleshooting options described above, regardless of the cluster status, you can use the following tests regularly, to determine the Run:ai cluster health.
+Use the following tests regularly to determine the health of the Run:ai cluster in addition to the troubleshooting options described above, regardless of the cluster status.
 
 ### Verify that data is sent to the cloud
 
