@@ -2,7 +2,7 @@
 
 ## Cluster is Disconnected
 
-When a cluster is in the status “Disconnected”, this means that no communication from the Run:ai cluster services reaches the Run:ai Control Plane. 
+When a cluster's status shows “Disconnected”, this means that no communication from the Run:ai cluster services reaches the Run:ai Control Plane. 
 
 This may reflect a networking issue from or to your Kubernetes cluster regardless of Run:ai components. In some cases, it may indicate an issue with one or more Run:ai services that communicate with the Control Plane, which are:
 * Cluster sync (`cluster-sync`)
