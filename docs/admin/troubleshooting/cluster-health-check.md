@@ -1,5 +1,7 @@
 # Cluster Health and Troubleshooting
 
+This toubleshooting guide helps you diagnose and resolve issues you may find in your cluster.
+
 ## Cluster is Disconnected
 
 When a cluster's status shows “Disconnected”, this means that no communication from the Run:ai cluster services reaches the Run:ai Control Plane. 
