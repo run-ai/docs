@@ -21,17 +21,19 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
 
   Run the following command on each one of the services:
 
-  `kubectl logs <runai-agent / cluster-sync / assets-sync>`
+  ```
+  kubectl logs runai-agent -n runai
+  kubectl logs cluster-sync -n runai
+  kubectl logs assets-sync -n runai
+  ```
 
-* Check the network connection from the runai namespace in your cluster to the Control Plane. You can do that by running a connectivity check pod as follows:
+* Check the network connection from the runai namespace in your cluster to the Control Plane. You can do that by running a connectivity check pod.
 
-  Create a pod within the runai namespace. This pod can be a simple container with basic network troubleshooting tools, such as curl or wget.
-
-  Use the following command to determine if the pod can establish connections to the necessary Control Plane endpoints:
+  Create a pod within the runai namespace. This pod can be a simple container with basic network troubleshooting tools, such as curl or get. Use the following command to determine if the pod can establish connections to the necessary Control Plane endpoints:
 
   `kubectl run control-plane-connectivity-check -n runai --image=wbitt/network-multitool --command -- /bin/sh -c 'curl -sSf <control-plane-endpoint> > /dev/null && echo "Connection Successful" || echo "Failed connecting to the Control Plane"'`
 
-  Replace <control-plane-endpoint> with the URL of the Control Plane in your environment.
+  Replace `control-plane-endpoint` with the URL of the Control Plane in your environment.
 
 * Check potential network issues. You can use the following guidelines:
   
@@ -46,33 +48,33 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
   If the issue persists and you couldn’t resolve it after completing the above steps, contact Run:ai support for assistance.
 
 !!! Note 
-    The above steps can also be relevant if you installed the cluster and it is stuck in the status “Waiting to connect” for a long time → Disconnected.
+    The above steps can also be relevant if you installed the cluster and it is stuck in the status “Waiting to connect” for a long time.
 
 ## Cluster has Service issues
 
 When a cluster is in the status “Service issues”, this means that one or more Run:ai services that are running in the cluster are not available.
 
-In this case, first run the following command, to verify which are the non-functioning services, and get more details about deployment issues and resources required by these services that may not be ready (e.g. ingress is was not created or is unhealthy): 
+* In this case, first run the following command, to verify which are the non-functioning services, and get more details about deployment issues and resources required by these services that may not be ready (e.g. ingress is was not created or is unhealthy): 
 
-`kubectl get runaiconfig -n runai runai -ojson | jq -r '.status.conditions | map(select(.type == "Available"))'`
+  `kubectl get runaiconfig -n runai runai -ojson | jq -r '.status.conditions | map(select(.type == "Available"))'`
 
-The list of non-functioning services is also available on the UI Clusters page.
+  The list of non-functioning services is also available on the UI Clusters page.
 
-After determining the non-functioning services, you can use the following commands to further investigate the issue:
+* After determining the non-functioning services, you can use the following guidelines to further investigate the issue.
 
-Get all Kubernetes events and look for recent failures:
+  Get all Kubernetes events and look for recent failures:
 
-`Kubectl get events  -A`
+  `Kubectl get events  -A`
 
-If a required resource was created but not available or unhealthy, you can also check its details by running:
+  If a required resource was created but not available or unhealthy, you can also check its details by running:
 
-`Kubectl describe <resource_type> <name>`
+  `Kubectl describe <resource_type> <name>`
 
-If the issue persists and you couldn’t resolve it, contact Run:ai support for assistance. 
+* If the issue persists and you couldn’t resolve it, contact Run:ai support for assistance. 
 
 ## General tests to verify the Run:ai cluster health
 
-In addition and regardless of the troubleshooting options described above, for when the cluster status indicates issues in the cluster, you can use the following tests regularly, to determine the Run:ai cluster health.
+In addition of the troubleshooting options described above, regardless of the cluster status, you can use the following tests regularly, to determine the Run:ai cluster health.
 
 ### Verify that data is sent to the cloud
 
@@ -86,7 +88,13 @@ Log in to `<company-name>.run.ai/dashboards/now`.
 ### Verify that the Run:ai services are running
 
 Run:
+```
+kubectl get runaiconfig -n runai runai -ojson | jq -r '.status.conditions | map(select(.type == "Available"))'
+```
+Verify that all the Run:ai services are available and have all their required resources available as well.
 
+
+Run:
 ```
 kubectl get pods -n runai
 kubectl get pods -n monitoring
@@ -94,7 +102,6 @@ kubectl get pods -n monitoring
 Verify that all pods are in `Running` status and a ready state (1/1 or similar)
 
 Run:
-
 ```
 kubectl get deployments -n runai
 ```
