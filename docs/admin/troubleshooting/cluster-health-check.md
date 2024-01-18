@@ -56,7 +56,7 @@ Use the following steps to troubleshoot the issue:
 5. If the issue persists, and you couldn’t resolve it after completing the previous steps, contact Run:ai support for assistance.
 
 !!! Note
-    The previous steps can be used if you installed the cluster and the status is stuck in “Waiting to connect” for a long time.
+    The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
 
 ## Cluster has Service issues
 
