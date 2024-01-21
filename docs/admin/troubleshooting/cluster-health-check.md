@@ -17,7 +17,7 @@ This may reflect a networking issue from or to your Kubernetes cluster regardles
 
 * Cluster sync (`cluster-sync`)
 * Agent (`runai-agent`)
-* Asset sync (`asset-sync`)
+* Assets sync (`assets-sync`)
 
 ### Troubleshooting actions
 
@@ -32,14 +32,14 @@ Use the following steps to troubleshoot the issue:
     Run the following command on each one of the services:
 
     ```bash
-    kubectl logs runai-agent -n runai
-    kubectl logs cluster-sync -n runai
-    kubectl logs assets-sync -n runai
+    kubectl logs deployment/runai-agent -n runai
+    kubectl logs deployment/cluster-sync -n runai
+    kubectl logs deployment/assets-sync -n runai
     ```
 
-3. Check the network connection from the `runai` namespace in your cluster to the Control Plane. You can do that by running a connectivity check pod.
+3. Check the network connection from the `runai` namespace in your cluster to the Control Plane.
 
-    Create a pod within the `runai` namespace. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to determine if the pod can establish connections to the necessary Control Plane endpoints:
+   You can do that by running a connectivity check pod. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to create the pod and determine if it can establish connections to the necessary Control Plane endpoints:
 
     ```bash
     kubectl run control-plane-connectivity-check -n runai --image=wbitt/network-multitool --command -- /bin/sh -c 'curl -sSf <control-plane-endpoint> > /dev/null && echo "Connection Successful" || echo "Failed connecting to the Control Plane"'
@@ -53,7 +53,7 @@ Use the following steps to troubleshoot the issue:
     * Check both Kubernetes Network Policies and any network-related configurations at the infrastructure level.
     * Verify that the required ports and protocols are not blocked.
 
-5. If the issue persists, and you couldn’t resolve it after completing the previous steps, contact Run:ai support for assistance.
+5. If the issue persists after completing the previous steps, contact Run:ai support for assistance.
 
 !!! Note
     The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
@@ -84,7 +84,7 @@ When a cluster's status shows *Service issues*, this means that one or more Run:
     Kubectl describe <resource_type> <name>
     ```
 
-3. If the issue persists and you could not resolve it, contact Run:ai support for assistance.
+3. If the issue persists, contact Run:ai support for assistance.
 
 ## General tests to verify the Run:ai cluster health
 
