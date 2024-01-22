@@ -25,7 +25,7 @@ date: 2023-Dec-4
 
     For more information, see [Workloads Overview](../admin/workloads/README.md).
 
-* <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editbale by default, allowing researchers the ability to change the value using the workload submission form. Using workload policies, administrators can increase, decrease, set the value to `never`, or lock access to this value so that researchers can not edit it.
+* <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editable by default, allowing researchers the ability to change the value while submitting a workload. Using workload policies, administrators can increase, decrease, set the default value to `never`, or even lock access to this value so researchers can not edit it when they submit workloads.
 
 ### Run:ai Administrator
 
