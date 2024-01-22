@@ -27,17 +27,9 @@ Use the following steps to troubleshoot the issue:
 
     `kubectl get pods -n runai | grep -E 'runai-agent|cluster-sync|assets-sync'`
 
-2. Verify Run:ai services logs. Inspecting the logs of the Run:ai services that communicate with the CP is an essential first step to identify any error messages or connection issues.
-
-    Run the following command on each one of the services:
-
-    ```bash
-    kubectl logs deployment/runai-agent -n runai
-    kubectl logs deployment/cluster-sync -n runai
-    kubectl logs deployment/assets-sync -n runai
-    ```
-
-3. Check the network connection from the `runai` namespace in your cluster to the Control Plane.
+   If one or more of the services are not running, use the guidelines described under [Cluster has Service issues](#cluster-has-service-issues).
+   
+2. Check the network connection from the `runai` namespace in your cluster to the Control Plane.
 
    You can do that by running a connectivity check pod. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to create the pod and determine if it can establish connections to the necessary Control Plane endpoints:
 
@@ -47,13 +39,25 @@ Use the following steps to troubleshoot the issue:
 
     Replace `control-plane-endpoint` with the URL of the Control Plane in your environment.
 
-4. Check potential network issues. Use the following guidelines:
+    If the pod has failed to connect to the Control Plane, check for potential network issues. Use the following guidelines:
   
     * Ensure that the network policies in your Kubernetes cluster allow communication between the Control Plane and the Run:ai services that communicate with the Control Plane.
     * Check both Kubernetes Network Policies and any network-related configurations at the infrastructure level.
     * Verify that the required ports and protocols are not blocked.
 
-5. If the issue persists after completing the previous steps, contact Run:ai support for assistance.
+3. Verify Run:ai services logs. Inspecting the logs of the Run:ai services that communicate with the CP is essential to identify any error messages.
+
+    Run the following command on each one of the services:
+
+    ```bash
+    kubectl logs deployment/runai-agent -n runai
+    kubectl logs deployment/cluster-sync -n runai
+    kubectl logs deployment/assets-sync -n runai
+    ```
+
+    From the logs, try to identify the problem. If you cannot resolve the issue, continue to the next step. 
+
+4. If the issue persists after completing the previous steps, contact Run:ai support for assistance.
 
 !!! Note
     The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
