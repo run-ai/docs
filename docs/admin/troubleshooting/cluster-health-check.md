@@ -27,7 +27,7 @@ Use the following steps to troubleshoot the issue:
 
     `kubectl get pods -n runai | grep -E 'runai-agent|cluster-sync|assets-sync'`
 
-   If one or more of the services are not running, use the guidelines described under [Cluster has Service issues](#cluster-has-service-issues).
+   If one or more of the services are not running, see [Cluster has Service issues](#cluster-has-service-issues) for futher guidelines.
    
 2. Check the network connection from the `runai` namespace in your cluster to the Control Plane.
 
