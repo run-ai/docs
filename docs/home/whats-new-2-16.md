@@ -25,6 +25,8 @@ date: 2023-Dec-4
 
     For more information, see [Workloads Overview](../admin/workloads/README.md).
 
+* <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editable by default, allowing researchers the ability to change the value while submitting a workload. Using workload policies, administrators can increase, decrease, set the default value to `never`, or even lock access to this value so researchers can not edit it when they submit workloads.
+
 ### Run:ai Administrator
 
 * <!-- DONE RUN-13296/RUN-13299	TW - Administrator Messages - Doc gap, there is no page for settings.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages](../admin/admin-ui-setup/overview.md#administrator-messages).
