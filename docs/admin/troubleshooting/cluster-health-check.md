@@ -55,9 +55,9 @@ Use the following steps to troubleshoot the issue:
     kubectl logs deployment/assets-sync -n runai
     ```
 
-    From the logs, try to identify the problem. If you cannot resolve the issue, continue to the next step. 
+   Try to identify the problem from the logs. If you cannot resolve the issue, continue to the next step. 
 
-4. If the issue persists after completing the previous steps, contact Run:ai support for assistance.
+4. If the issue persists, contact Run:ai support for assistance.
 
 !!! Note
     The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
