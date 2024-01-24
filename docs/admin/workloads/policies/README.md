@@ -38,7 +38,7 @@ Explain Run:ai policies and why they are better.
 
 When you configure a policy, you need to specify the workload type. The following workload types are available:
 
-* [**Trainging**](training-policy.md)&mdash;
+* [**Training**](training-policy.md)&mdash;places policy restrictions on [trainings](../../../Researcher/user-interface/trainings.md#trainings).
 * [**Workspace**](workspaces-policy.md)&mdash;places policy restrictions on [Workspaces](../../../Researcher/user-interface/workspaces/overview.md#getting-familiar-with-workspaces).
 
 ### Policy Inheritance
