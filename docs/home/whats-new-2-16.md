@@ -1,12 +1,12 @@
 ---
-title: What's new - 2.16 January 9, 2024
+title: Version 2.16
 summary: This article describes new features and functionality in the version.
 authors:
     - Jason Novich
 date: 2023-Dec-4
 ---
 
-## Release Content
+## Release Content - January 25, 2024
 
 ### Researcher
 
