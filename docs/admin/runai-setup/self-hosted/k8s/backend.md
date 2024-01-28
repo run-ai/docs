@@ -17,7 +17,7 @@ Run the helm command below:
 
 === "Connected"
     ``` bash
-    helm repo add runai-backend https://backend-charts.storage.googleapis.com
+    helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
     helm repo update
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
         --set global.domain=<DOMAIN>  # (1)
