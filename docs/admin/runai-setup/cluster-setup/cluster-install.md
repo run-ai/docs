@@ -116,7 +116,7 @@ To customize specific aspects of the cluster installation see [customize cluster
 When installing a production cluster you may want to:
 
 * Set one or more Run:ai system nodes. These are nodes dedicated to Run:ai software.
-* Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines.
+* Machine learning frequently requires jobs that require CPU but **not GPU**. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines.
 * Limit Run:ai to specific nodes in the cluster.
 
 To perform these tasks. See [Set Node Roles](../config/node-roles.md).
