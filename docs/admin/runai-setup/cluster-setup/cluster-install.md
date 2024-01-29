@@ -99,15 +99,15 @@ For a more extensive verification of cluster health, see [Determining the health
 and obtain logs from any failing pod `kubectl logs <pod_name>`
 
 #### Common Issues
-1. Run:ai was previously installed in the cluster and was deleted unsuccessfully, resulting in remaining CRDs
-    2. Diagnosis: This can be detected by running `kubectl get crds` in the relevant namespaces (or adding `-A` and checking for Run:ai CRDs)
-    3. Solution: Force delete said CRDs and reinstall
-3. One or more of the pods have issues around valid certificates
-    4. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`
-    4. Solution:
-        5. This is usually due to an expired or invalid certificate in the cluster, and if so - renew the certificate
-        6. If Certificate is valid, but is Signed by a local CA, make sure to have followed the steps here https://docs.run.ai/v2.15/admin/runai-setup/config/org-cert/
 
+1. Run:ai was previously installed in the cluster and was deleted unsuccessfully, resulting in remaining CRDs.
+    1. Diagnosis: This can be detected by running `kubectl get crds` in the relevant namespaces (or adding `-A` and checking for Run:ai CRDs).
+    2. Solution: Force delete the listed CRDs and reinstall.
+2. One or more of the pods have issues around valid certificates.
+    1. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`.
+    2. Solution:
+        1. This is usually due to an expired or invalid certificate in the cluster, and if so, renew the certificate.
+        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../../config/org-cert.md).
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
