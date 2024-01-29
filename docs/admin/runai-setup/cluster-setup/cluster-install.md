@@ -88,7 +88,7 @@ For a more extensive verification of cluster health, see [Determining the health
 3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
 
 #### Resources not deployed / System Unavailable / Reconciliation Failed
-1. Run Preinstall diagnostic script https://docs.run.ai/v2.15/admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script and check for issues
+1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues
 2. Run
 ```
    kubectl get pods -n runai
