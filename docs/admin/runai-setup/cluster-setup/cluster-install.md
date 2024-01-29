@@ -19,7 +19,7 @@ Using the cluster wizard:
 * Choose a name for your cluster.
 * Choose the Run:ai version for the cluster.
 * Choose a target Kubernetes distribution (see [table](cluster-prerequisites.md#kubernetes) for supported distributions).
-* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
+* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more information, see [Cluster prerequisites](cluster-prerequisites.md#cluster-url).
 * Press `Continue`.
 
 On the next page:
