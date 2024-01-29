@@ -1,8 +1,7 @@
 Below are instructions on how to install a Run:ai cluster.
 
 ## Prerequisites
-Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
-
+Before installing, please review the installation prerequisites listed in [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 !!! Important
     We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met.
@@ -11,8 +10,8 @@ Before installing, please review the installation prerequisites here: [Run:ai GP
 
 Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials provided by Run:ai Customer Support:
 
-*   If no clusters are currently configured, you will see a Cluster installation wizard.
-*   If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top left, click `New Cluster`.
+* If no clusters are currently configured, you will see a Cluster installation wizard.
+* If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top left, click `New Cluster`.
 
 Using the cluster wizard:
 
@@ -26,7 +25,6 @@ On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
 * Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
-
 
 ## Verify your Installation
 
@@ -90,13 +88,16 @@ For a more extensive verification of cluster health, see [Determining the health
 3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
 
 #### Resources not deployed / System Unavailable / Reconciliation Failed
-1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues
+
+1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues.
 2. Run
+
 ```
    kubectl get pods -n runai
    kubectl get pods -n monitoring
 ```
-Then run `kubectl logs <pod_name>` to get logs from any failing pod.
+
+You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
 
 #### Common Issues
 
@@ -107,7 +108,8 @@ Then run `kubectl logs <pod_name>` to get logs from any failing pod.
     1. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`.
     2. Solution:
         1. This is usually due to an expired or invalid certificate in the cluster, and if so, renew the certificate.
-        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../../config/org-cert.md).
+        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../config/org-cert.md).
+
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
@@ -116,7 +118,7 @@ If you will be using the Run:ai [command-line interface](../../researcher-setup/
 
 To customize specific aspects of the cluster installation see [customize cluster installation](customize-cluster-install.md).
 
-## (Optional) Set Node Roles
+## Set Node Roles (Optional)
 
 When installing a production cluster you may want to:
 
