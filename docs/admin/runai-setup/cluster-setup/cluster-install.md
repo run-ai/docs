@@ -85,7 +85,7 @@ For a more extensive verification of cluster health, see [Determining the health
 #### Dependencies are not fulfilled
 1. Make sure to install the missing dependencies.
 2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
-3. Make sure there are no necessary adjustments for specific flavors as noted here https://docs.run.ai/v2.15/admin/runai-setup/cluster-setup/cluster-prerequisites
+3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
 
 #### Resources not deployed / System Unavailable / Reconciliation Failed
 1. Run Preinstall diagnostic script https://docs.run.ai/v2.15/admin/runai-setup/cluster-setup/cluster-prerequisites/#pre-install-script and check for issues
