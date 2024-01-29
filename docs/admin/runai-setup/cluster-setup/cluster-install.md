@@ -92,11 +92,6 @@ For a more extensive verification of cluster health, see [Determining the health
 #### Resources not deployed / System Unavailable / Reconciliation Failed
 1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues
 2. Run
-```
-   kubectl get pods -n runai
-   kubectl get pods -n monitoring
-```
-and obtain logs from any failing pod `kubectl logs <pod_name>`
 
 #### Common Issues
 
