@@ -1,11 +1,11 @@
-Below are instructions on how to install a Run:ai cluster. 
+Below are instructions on how to install a Run:ai cluster.
 
 ## Prerequisites
-Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md). 
+Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 
 !!! Important
-    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
+    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met.
 
 ## Install Run:ai
 
@@ -17,15 +17,15 @@ Log in to Run:ai user interface at `<company-name>.run.ai`. Use credentials prov
 Using the cluster wizard:
 
 * Choose a name for your cluster.
-* Choose the Run:ai version for the cluster. 
+* Choose the Run:ai version for the cluster.
 * Choose a target Kubernetes distribution (see [table](cluster-prerequisites.md#kubernetes) for supported distributions).
-* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
+* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more information, see [Cluster prerequisites](cluster-prerequisites.md#cluster-url).
 * Press `Continue`.
 
 On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
-*  Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
 
 
 ## Verify your Installation
@@ -42,13 +42,13 @@ Example output:
 cluster-version: 2.9.0
 runai-public: 
   version: 2.9.0
-  runaiConfigStatus: # (1)
+  runaiConfigStatus:
     conditions:
-    - type: DependenciesFulfilled
+    - type: DependenciesFulfilled   # (1)
       status: "True"
       reason: dependencies_fulfilled
       message: Dependencies are fulfilled
-    - type: Deployed
+    - type: Deployed               
       status: "True"
       reason: deployed
       message: Resources Deployed
@@ -56,12 +56,12 @@ runai-public:
       status: "True"
       reason: available
       message: System Available
-    - type: Reconciled
+    - type: Reconciled              # (2)
       status: "True"
       reason: reconciled
       message: Reconciliation completed successfully
-  optional:  # (2)
-    knative:    # (3)  
+  optional:  # (3)
+    knative:    # (4)  
       components:
         hpa:
           available: true
@@ -69,20 +69,48 @@ runai-public:
           available: true
         kourier:
           available: true
-    mpi:        # (4) 
+    mpi:        # (5) 
       available: true
 ```
 
-1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
-2. Checks whether optional product dependencies have been met.
-3. See [Inference prerequisites](cluster-prerequisites.md#inference).
-4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
+1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller.
+2. Verifies that all of Run:ai managed resources have been successfully deployed.
+3. Checks whether optional product dependencies have been met.
+4. See [Inference prerequisites](cluster-prerequisites.md#inference).
+5. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
 
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
 
+### Troubleshooting
+
+#### Dependencies are not fulfilled
+
+1. Make sure to install the missing dependencies.
+2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
+3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
+
+#### Resources not deployed / System Unavailable / Reconciliation Failed
+1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues
+2. Run
+```
+   kubectl get pods -n runai
+   kubectl get pods -n monitoring
+```
+Then run `kubectl logs <pod_name>` to get logs from any failing pod.
+
+#### Common Issues
+
+1. Run:ai was previously installed in the cluster and was deleted unsuccessfully, resulting in remaining CRDs.
+    1. Diagnosis: This can be detected by running `kubectl get crds` in the relevant namespaces (or adding `-A` and checking for Run:ai CRDs).
+    2. Solution: Force delete the listed CRDs and reinstall.
+2. One or more of the pods have issues around valid certificates.
+    1. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`.
+    2. Solution:
+        1. This is usually due to an expired or invalid certificate in the cluster, and if so, renew the certificate.
+        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../../config/org-cert.md).
 ## Researcher Authentication
 
-If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md). 
+If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
 
 ## Customize your installation
 
@@ -92,9 +120,9 @@ To customize specific aspects of the cluster installation see [customize cluster
 
 When installing a production cluster you may want to:
 
-* Set one or more Run:ai system nodes. These are nodes dedicated to Run:ai software. 
-* Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
-* Limit Run:ai to specific nodes in the cluster. 
+* Set one or more Run:ai system nodes. These are nodes dedicated to Run:ai software.
+* Machine learning frequently requires jobs that require CPU but **not GPU**. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines.
+* Limit Run:ai to specific nodes in the cluster.
 
 To perform these tasks. See [Set Node Roles](../config/node-roles.md).
 
