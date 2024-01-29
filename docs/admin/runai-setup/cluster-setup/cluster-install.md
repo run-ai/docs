@@ -25,7 +25,7 @@ Using the cluster wizard:
 On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
-*  Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
 
 
 ## Verify your Installation
@@ -92,6 +92,11 @@ For a more extensive verification of cluster health, see [Determining the health
 #### Resources not deployed / System Unavailable / Reconciliation Failed
 1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues
 2. Run
+```
+   kubectl get pods -n runai
+   kubectl get pods -n monitoring
+```
+Then run `kubectl logs <pod_name>` to get logs from any failing pod.
 
 #### Common Issues
 
