@@ -82,7 +82,9 @@ runai-public:
 For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
 
 ### Troubleshooting
+
 #### Dependencies are not fulfilled
+
 1. Make sure to install the missing dependencies.
 2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
 3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
