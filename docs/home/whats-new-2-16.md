@@ -70,13 +70,13 @@ date: 2023-Dec-4
 
 * Updated installation prerequisites. For more information, see [Kubernetes support matrix](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#releases). -->
 
-## Upcoming Changes
+## Deprecation Notifications
 
-### Deprecation Notifications
+Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
 
-#### Project migration
+### Project migration
 
-* In a future release, Run:ai will be deprecating the migration of projects between departments. This affects:
+* Run:ai will be deprecating the migration of projects between departments. This affects:
   
     * API&mdash;the `departmentId` field will be marked as deprecated in the `projects` endpoint.
     * User Interface&mdash;there will no longer be an option to:
