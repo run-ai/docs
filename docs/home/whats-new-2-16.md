@@ -72,7 +72,9 @@ date: 2023-Dec-4
 
 ## Upcoming Changes
 
-### Project migration
+### Deprecation Notifications
+
+#### Project migration
 
 * In a future release, Run:ai will be deprecating the migration of projects between departments. This affects:
   
