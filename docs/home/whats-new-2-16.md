@@ -78,7 +78,7 @@ Deprecation notifications allow you to plan for future changes in the Run:ai Pla
 
 * Run:ai will be deprecating the migration of projects between departments. This affects:
   
-    * API&mdash;the `departmentId` field will be marked as deprecated in the `projects` endpoint.
+    * API&mdash;the `departmentId` field will be marked as deprecated in the`put` endpoint in the `projects` category.
     * User Interface&mdash;there will no longer be an option to:
         * migrate projects to another department, when deleting departments.
         * change departments, when editing a project.
