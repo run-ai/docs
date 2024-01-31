@@ -2,882 +2,967 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.run.ai/v2.13/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/overview-researcher/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/use-cases/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/quickstart-inference/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/quickstart-mig/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/quickstart-overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-build-ports/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-build/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-distributed-training/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-fractions/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-hpo/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-overquota/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-queue-fairness/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/Walkthroughs/walkthrough-train/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/best-practices/bare-metal-to-docker-images/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/best-practices/convert-to-unattended/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/best-practices/env-variables/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/best-practices/save-dl-checkpoints/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/Introduction/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-attach/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-bash/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-config/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-delete/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-describe/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-exec/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-list/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-login/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-logout/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-logs/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-port-forwarding/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-resume/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-TF/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-mpi/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-pytorch/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit-dist-xgboost/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-submit/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-suspend/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-top-node/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-update/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-version/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/cli-reference/runai-whoami/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/allocation-of-cpu-and-memory/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/fractions/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/hpo/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/job-statuses/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/schedule-to-aws-groups/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/strategies/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/the-runai-scheduler/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/scheduling/using-node-pools/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/tools/dev-jupyter/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/tools/dev-pycharm/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/tools/dev-tensorboard/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/tools/dev-vscode/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/tools/dev-x11forward-pycharm/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/trainings/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/statuses/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/blocks/building-blocks/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/blocks/compute/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/blocks/datasources/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/blocks/environments/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/create/create-compute/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/create/create-ds/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/create/create-env/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/Researcher/user-interface/workspaces/create/workspace/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/overview-administrator/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/admin-ui-users/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/credentials-setup/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/dashboard-analysis/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/department-setup/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/deployments/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/jobs/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/admin-ui-setup/project-setup/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/airflow/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/argo-workflows/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/clearml/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/comet/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/deepspeed/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/jupyterhub/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/kubeflow/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/kubevirt/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/messaging/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/mlflow/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/ray/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/seldon/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/spark/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/integration/weights-and-biases/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/cli-install/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/cluster-wide-pvc/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/docker-registry-config/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/docker-to-runai/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/limit-to-node-group/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/registry-integration/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/researcher-setup/researcher-setup-intro/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/installation-types/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/authentication/authentication-overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/authentication/researcher-authentication/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/authentication/sso/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/cluster-delete/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/cluster-install/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/cluster-prerequisites/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/cluster-setup-intro/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/cluster-upgrade/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/customize-cluster-install/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/dgx-bundle/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/cluster-setup/install-k8s/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/access-roles/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/allow-external-access-to-containers/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/cli-admin-install/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/dr/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/large-clusters/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/node-affinity-with-cloud-node-pools/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/node-roles/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/non-root-containers/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/config/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/alert-monitoring/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/audit-log/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/maintenance/node-downtime/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/additional-clusters/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/backend/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/cluster/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/next-steps/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/preparations/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/prerequisites/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/project-management/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/uninstall/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/k8s/upgrade/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/additional-clusters/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/backend/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/cluster/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/next-steps/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/preparations/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/prerequisites/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/project-management/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/uninstall/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/runai-setup/self-hosted/ocp/upgrade/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/troubleshooting/cluster-health-check/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/troubleshooting/diagnostics/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/troubleshooting/troubleshooting/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiAgentPullRateLow/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiContainerRestarting/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiCpuUsageWarning/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiCriticalProblem/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiDaemonSetUnavailableOnNodes/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiDeploymentInsufficientReplicas/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiDeploymentNoAvailableReplicas/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiDeploymentUnavailableReplicas/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiProjectControllerReconcileFailure/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiStatefulSetInsufficientReplicas/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/admin/troubleshooting/alertmanager/RunaiStatefulSetNoAvailableReplicas/</loc>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/workloads/inference-overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/workloads/policies/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/workloads/secrets/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/admin/workloads/workload-overview-admin/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/overview-developer/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/rest-auth/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/admin-rest-api/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/other-resources/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/submit-cron-yaml/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/submit-rest/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/submit-yaml/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/workload-overview-dev/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/reference/distributed/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/reference/inference/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/reference/interactive/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/cluster-api/reference/training/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/inference/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/inference/setup/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/inference/submit-via-cli/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/k8s-api/launch-job-via-kubernetes-api/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/k8s-api/launch-job-via-yaml/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/k8s-api/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/deprecated/researcher-rest-api/overview/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/developer/metrics/metrics/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/components/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/data-privacy-details/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2-10/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2-12/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2-13/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2-8/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2-9/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2020/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2021/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/home/whats-new-2022/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.13/home/changelog/hotfixes-2-13/</loc>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.13/snippets/common-submit-cli-commands/</loc>
-         <lastmod>2023-12-21</lastmod>
+         <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
