@@ -42,6 +42,10 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
+## (Air-gapped only) Local Certificate Authority
+
+Perform the instructions for [local certificate authority](../../config/org-cert.md). 
+
 
 ## (Optional) Additional Configurations
 

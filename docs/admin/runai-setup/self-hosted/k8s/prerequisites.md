@@ -53,6 +53,12 @@ The Run:ai control-plane requires a __default storage class__ to create persiste
     kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
 
+
+### (Air-gapped only) Local Certificate Authority
+
+In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
+
+
 ### NVIDIA Prerequisites
 
 See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
