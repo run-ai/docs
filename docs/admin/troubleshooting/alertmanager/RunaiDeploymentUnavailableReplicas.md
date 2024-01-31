@@ -22,20 +22,23 @@ Warning
 
 ## Diagnosis
 
-run
+Run:
+```
+kubectl get deployment -n runai
+kubectl get deployment -n runai-backend
+```
 
-`kubectl get deployment -n runai kubectl get deployment -n runai-backend`
-
-One or more of the deployment will missing pods
+Identify one or more deployments that have missing pods.
 
 ## Mitigation
 
-Run
+Run:
+```
+kubectl describe deployment X -n runai/runai-backend 
+kubectl describe replicaset X -n runai/runai-backend 
+kubectl logs deployment/X -n runai/runai-backend
+```
 
-`kubectl describe deployment X -n runai/runai-backend kubectl describe replicaset X -n runai/runai-backend kubectl logs deployment/X -n runai/runai-backend`
+From the logs and deployment details, try and figure out why the deployment cannot create pods. 
 
-Try to figure out why the deployment cannot create pods.
-
-Contact runai.
-
-Be the first to add a reaction
+If you cannot correct the issue, contact Run:ai support.
