@@ -25,15 +25,20 @@ To increase the number of replicas, use the following Run:ai control-plane helm 
 !!! Important
     If you have chosen to mark some of the nodes as Run:ai System Workers, the new replicas will attempt to use these nodes first. Thus, for [high availability](ha.md) purposes, you will want to mark more than one node as a Run:ai System Worker.  
 
-### Thanos Querier
+### Thanos
 
 [Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function. Use the following Run:ai control-plane helm flags:
 
 ```bash
---set thanos.query.resources.limits.memory=2G 
---set thanos.query.resources.requests.memory=2G 
---set thanos.query.resources.limits.cpu=2 
---set thanos.query.resources.requests.cpu=2
+--set thanos.query.resources.limits.memory=3G
+--set thanos.query.resources.requests.memory=3G
+--set thanos.query.resources.limits.cpu=1
+--set thanos.query.resources.requests.cpu=1
+
+--set thanos.receive.resources.limits.memory=6G 
+--set thanos.receive.resources.requests.memory=6G
+--set thanos.receive.resources.limits.cpu=1 
+--set thanos.receive.resources.requests.cpu=1
 ```
 
 ## Scaling the Run:ai Cluster
