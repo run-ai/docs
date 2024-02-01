@@ -23,11 +23,13 @@ Run the helm command below:
     helm upgrade -i runai-backend  ./control-plane-<version>.tgz -n runai-backend \ 
         --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ # (1)
         --set global.config.kubernetesDistribution=openshift \
-        -f custom-env.yaml  # (2)
+        --set global.customCA.enabled=true \ # (2)
+        -f custom-env.yaml  # (3)
     ```
 
     1. The domain configured for the OpenShift cluster. To find out the OpenShift cluster domain, run `oc get routes -A`
-    2. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
+    2. See the Local Certificate Authority instructions below
+    3. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
     (replace `<version>` with the control plane version)
 
