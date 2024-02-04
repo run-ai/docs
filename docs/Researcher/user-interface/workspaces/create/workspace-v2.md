@@ -77,11 +77,11 @@ Use the *Jobs form* below if you have not enabled the *Workloads* feature.
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*. Choose from *Persistent* or *Ephemeral*.
 
-      8. Select a data source from the tiles. If your data source is not listed, use the *Search compute resources* box to find it. Press *New data source* to create a new data source if needed.
-      9. In the *General* pane, add special settings for your workspace:
-    
-         1.  Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
-         2.  Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
-         3.  Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
-    
-      10. Press *Create workspace*
+8. Select a data source from the tiles. If your data source is not listed, use the *Search data resources* box to find it. Press *New data source* to create a new data source if needed.
+9. In the *General* pane, add special settings for your workspace:
+
+      1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
+      2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
+      3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
+
+10. Press *Create workspace*
