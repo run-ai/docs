@@ -146,4 +146,4 @@ This documentation outlines the steps required to set up Alertmanager within the
 
 ## Alert Messages
 
-Alerts help you troubleshoot your system and give you a better understanding of currently occurring issues that affect performance. For more insight into the meaning of the alert messages, see []().
+Alerts help you troubleshoot your system and give you a better understanding of currently occurring issues that affect performance. For more insight into the meaning of the alert messages, see [Prometheus Alerts](../../troubleshooting/alertmanager/README.md).
