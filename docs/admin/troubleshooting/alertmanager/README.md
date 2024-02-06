@@ -20,7 +20,7 @@ The following is a list of Run:ai alerts that you will receive once Prometheus i
 | Alert Name |
 |--|
 | [RunaiAgentClusterInfoPushRateLow](RunaiAgentClusterInfoPushRateLow.md) |
-| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)|
+| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)                                              |
 | [RunaiContainerMemoryUsageCritical](RunaiContainerMemoryUsageCritical.md)                                                                              |
 | [RunaiContainerMemoryUsageWarning](RunaiContainerMemoryUsageWarning.md)                                                                                |
 | [RunaiContainerRestarting](RunaiContainerRestarting.md)                                                                                                |
