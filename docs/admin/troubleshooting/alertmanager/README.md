@@ -19,8 +19,8 @@ The following is a list of alerts that you will receive once Prometheus is confi
 
 | Alert Name |
 |--|
-| [RunaiAgentClusterInfoPushRateLow](RunaiAgentClusterInfoPushRateLow.md)&mdash;cluster-sync pod in ‘runai’ namespace might not be functioning properly. |
-| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)&mdash;The runai agent may not be functioning properly.                                               |
+| [RunaiAgentClusterInfoPushRateLow](RunaiAgentClusterInfoPushRateLow.md) |
+| [RunaiAgentPullRateLow](RunaiAgentPullRateLow.md)                                              |
 | [RunaiContainerMemoryUsageCritical](RunaiContainerMemoryUsageCritical.md)                                                                              |
 | [RunaiContainerMemoryUsageWarning](RunaiContainerMemoryUsageWarning.md)                                                                                |
 | [RunaiContainerRestarting](RunaiContainerRestarting.md)                                                                                                |
