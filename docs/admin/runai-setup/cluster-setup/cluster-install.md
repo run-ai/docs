@@ -111,8 +111,8 @@ You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
         2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../config/org-cert.md).
 
 #### Get Installation Logs
-You can use script in the following [link](https://github.com/run-ai/public/blob/main/installation/get-installation-logs.sh) to obtain any relevant installation logs in case of an error
 
+You can use the [get instllation logs](https://github.com/run-ai/public/blob/main/installation/get-installation-logs.sh) script to obtain any relevant installation logs in case of an error.
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
