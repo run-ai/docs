@@ -76,38 +76,9 @@ runai-public:
 3. See [Inference prerequisites](cluster-prerequisites.md#inference).
 4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
 
-For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
+<!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
 
-## Cluster Table
-
-After you have installed your cluster on the platform, you will see it appear in the *Cluster Table*. The *Cluster Table* provides a quick and easy way to see the status of your cluster.
-
-In the left menu, press *Clusters* to view the cluster table. Use *Add filter* to add one or more filter results based on the columns that are in the table. In the *Contains* pane, you can use partial or complete text. Filtered text is ***not*** case sensitive. To remove the filter, press *X* next to the filter.
-
-The table provides the following columns:
-
-* **Cluster**&mdash;the name of the cluster.
-* **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
-* **Creation time**&mdash;the timestamp the cluster was created.
-* **URL**&mdash;the URL that was given to the cluster at the time of creation.
-* **Run:ai cluster version**&mdash;the Run:ai version installed on the cluster.
-* **Run:ai cluster UUI**&mdash;the unique ID of the cluster.
-
-### Cluster Status
-
-The following table describes the different statuses that a cluster could be in.
-
-| Status | Description |
-| -- | -- |
-| Waiting to connect | The cluster has never been connected. |
-| Disconnected | There is no communication from the cluster to the Control Plane. This may be due to a network issue. |
-| Missing prerequisites | At least one of the [Mandatory Prerequisites](cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been met. |
-| Service issues | At least one of the *Services* is not working properly. You can view the list of nonfunctioning services for more information |
-| Connected | All services are connected and up and running. |
-
-See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot issues in the cluster.
-
-### Troubleshooting
+### Troubleshooting you installation
 
 #### Dependencies are not fulfilled
 
@@ -144,6 +115,36 @@ You can use the [get instllation logs](https://github.com/run-ai/public/blob/mai
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
+
+
+## Cluster Table
+
+After you have installed your cluster on the platform, you will see it appear in the *Cluster Table*. The *Cluster Table* provides a quick and easy way to see the status of your cluster.
+
+In the left menu, press *Clusters* to view the cluster table. Use *Add filter* to add one or more filter results based on the columns that are in the table. In the *Contains* pane, you can use partial or complete text. Filtered text is ***not*** case sensitive. To remove the filter, press *X* next to the filter.
+
+The table provides the following columns:
+
+* **Cluster**&mdash;the name of the cluster.
+* **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
+* **Creation time**&mdash;the timestamp the cluster was created.
+* **URL**&mdash;the URL that was given to the cluster at the time of creation.
+* **Run:ai cluster version**&mdash;the Run:ai version installed on the cluster.
+* **Run:ai cluster UUI**&mdash;the unique ID of the cluster.
+
+### Cluster Status
+
+The following table describes the different statuses that a cluster could be in.
+
+| Status | Description |
+| -- | -- |
+| Waiting to connect | The cluster has never been connected. |
+| Disconnected | There is no communication from the cluster to the Control Plane. This may be due to a network issue. |
+| Missing prerequisites | At least one of the [Mandatory Prerequisites](cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been met. |
+| Service issues | At least one of the *Services* is not working properly. You can view the list of nonfunctioning services for more information |
+| Connected | All services are connected and up and running. |
+
+See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot issues in the cluster.
 
 ## Customize your installation
 
