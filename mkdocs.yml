@@ -55,8 +55,8 @@ markdown_extensions:
   - toc:
       permalink: True 
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.twemoji.to_svg 
 extra:
   social:
     - icon: fontawesome/brands/twitter
