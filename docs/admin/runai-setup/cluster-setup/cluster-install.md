@@ -78,7 +78,7 @@ runai-public:
 
 <!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
 
-### Troubleshooting you installation
+### Troubleshooting your installation
 
 #### Dependencies are not fulfilled
 
