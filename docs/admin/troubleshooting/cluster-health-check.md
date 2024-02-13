@@ -7,9 +7,9 @@ authors:
 date: 2024-Jan-17
 ---
 
-This toubleshooting guide helps you diagnose and resolve issues you may find in your cluster.
+This troubleshooting guide helps you diagnose and resolve issues you may find in your cluster.
 
-## Cluster is Disconnected
+## Cluster is disconnected
 
 When a cluster's status shows *Disconnected*, this means that no communication from the Run:ai cluster services reaches the Run:ai Control Plane.
 
@@ -27,11 +27,11 @@ Use the following steps to troubleshoot the issue:
 
     `kubectl get pods -n runai | grep -E 'runai-agent|cluster-sync|assets-sync'`
 
-   If one or more of the services are not running, see [Cluster has Service issues](#cluster-has-service-issues) for futher guidelines.
-   
+    If one or more of the services are not running, see [Cluster has Service issues](#cluster-has-service-issues) for futher guidelines.
+
 2. Check the network connection from the `runai` namespace in your cluster to the Control Plane.
 
-   You can do that by running a connectivity check pod. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to create the pod and determine if it can establish connections to the necessary Control Plane endpoints:
+    You can do that by running a connectivity check pod. This pod can be a simple container with basic network troubleshooting tools, such as `curl` or `get`. Use the following command to create the pod and determine if it can establish connections to the necessary Control Plane endpoints:
 
     ```bash
     kubectl run control-plane-connectivity-check -n runai --image=wbitt/network-multitool --command -- /bin/sh -c 'curl -sSf <control-plane-endpoint> > /dev/null && echo "Connection Successful" || echo "Failed connecting to the Control Plane"'
@@ -55,14 +55,14 @@ Use the following steps to troubleshoot the issue:
     kubectl logs deployment/assets-sync -n runai
     ```
 
-   Try to identify the problem from the logs. If you cannot resolve the issue, continue to the next step. 
+    Try to identify the problem from the logs. If you cannot resolve the issue, continue to the next step.
 
 4. If the issue persists, contact Run:ai support for assistance.
 
-!!! Note
-    The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
+    !!! Note
+        The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
 
-## Cluster has Service issues
+## Cluster has service issues
 
 When a cluster's status shows *Service issues*, this means that one or more Run:ai services that are running in the cluster are not available.
 
@@ -137,7 +137,7 @@ kubectl get daemonset -n runai
 
 A *Daemonset* runs on every node. Some of the Run:ai daemon-sets run on all nodes. Others run only on nodes that contain GPUs. Verify that for all daemonsets the *desired* number is equal to *current* and to *ready*.
 
-### Submit a Job via the command-line interface
+### Submit a job using the command-line interface
 
 Submitting a Job allows you to verify that the Run:ai scheduling service is running properly.
 
@@ -157,7 +157,7 @@ Submitting a Job allows you to verify that the Run:ai scheduling service is runn
 
 4. Verify that the Job is showing in the Jobs area at `<company-name>.run.ai/jobs`.
 
-### Submit a Job via the user interface
+### Submit a job using the user interface
 
 Log into the Run:ai user interface, and verify that you have a `Researcher` or `Research Manager` role.
 Go to the `Jobs` area. On the top right, press the button to create a Job. Once the form opens, you can submit a Job.
