@@ -112,6 +112,9 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 === "RKE2"
     Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 -->
+=== "RKE2"
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
 
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
