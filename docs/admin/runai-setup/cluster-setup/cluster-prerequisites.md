@@ -114,6 +114,11 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     !!! Important
         * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
+
+=== "RKE2"
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system. 
+
 <!-- 
 === "RKE2"
     Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
