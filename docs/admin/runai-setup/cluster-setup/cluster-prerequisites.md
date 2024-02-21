@@ -108,14 +108,14 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     !!! Important
         * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
+
+=== "RKE2"
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
 <!-- 
 === "RKE2"
     Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
 -->
-=== "RKE2"
-    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
-    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
-
 !!! Notes
     * Use the default namespace `gpu-operator`. Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in [customized cluster installation](customize-cluster-install.md).
     * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} is one such example as it comes bundled with NVIDIA Drivers.
