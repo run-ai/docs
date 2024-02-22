@@ -8,6 +8,8 @@ date: 2024-Jan-22
 
 The following is a list of the known and fixed issues for Run:ai V2.13.
 
+
+
 ## Version 2.13.37
 
 | Internal ID | Description  |
@@ -34,10 +36,41 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 
 ## Version 2.13.20
 
+### Release content
+
+* <!-- RUN-12537 hide credentials from the UI when cluster version is not compatible -->Added the prevention of selecting tenant or department scopes for credentials, and the prevention of selecting s3, PVC, and Git data sources if the cluster version does not support these.
+* <!--RUN-12349	Enable quota management by default -->Quota management is now enabled by default.
+
 | Internal ID | Description  |
 | ---------------------------- | ---- |
 | RUN-12923 | Fixed an issue in upgrading due to a misconfigured image for airgapped systems in 2.13.19. The helm chart contained an error, and the image is not used even though it is packaged as part of the tar. |
 | RUN-12928, </br>RUN-12968 | Fixed an issue in upgrading Prometheus due to a misconfigured image for airgapped systems in 2.13.19. The helm chart contained an error, and the image is not used even though it is packaged as part of the tar. |
+| RUN-12751 | Fixed an issue when upgrading from 2.9 to 2.13 results with a missing engine-config file. |
+| RUN-12717 | Fixed an issue where the user that is logged in as researcher manager can't see the clusters. |
+| RUN-12642 | Fixed an issue where Assets-sync could not restart due to failing to get token from control plane. |
+| RUN-12191 | Fixed an issue where there was a Time out while waiting for the `runai_allocated_gpu_count_per_project` metric to return values. |
+| RUN-10474 | Fixed an issue where the `runai-conatiner-toolkit-exporter` DaemonSet fails to start. |
+
+## Version 2.13.19 - September 27, 2023
+
+### Release content
+
+* <!--RUN-12508  Identify and present Kubeflow Notebooks in Jobs table -->Added the ability to identify Kubeflow notebooks and display them in the Jobs table.
+* <!-- RUN-12507 Support scheduling of Kubeflow workloads -->Added the ability to schedule Kubelow workloads.
+* <!--RUN-12420 Show only logged-in user's jobs -->Added functionality that displays Jobs that only belong to the user that is logged in.
+* <!-- RUN-12405 Refine out of the box alerts to run:ai rules --> Added and refined alerts to the state of Run:ai components, schedule latency, and warnings for out of memory on Jobs.
+* <!-- RUN-11711 Pod Security Admission issues in control plane -->Added the ability to work with restricted PSA policy.
+
+### Fixed issues
+
+| Internal ID | Description  |
+|-------------- | ------------------- |
+| RUN-12650 | Fixed an issue that used an incorrect metric in analytics GPU ALLOCATION PER NODE panel. Now the correct allocation is in percentage. |
+| RUN-12602 | Fixed an issue in `runaiconfig` where `WorkloadServices` have any memory requests/limits and cpu requests/limits and is overwritten with a default. |
+| RUN-12587 | Fixed an issue where the scheduler enters an endless loop running elastic jobs. |
+| RUN-12585 | Fixed an issue where the workload-controller creates a delay in running jobs. |
+| RUN-12031 | Fixed an issue when upgrading from 2.9 to 2.13 where the Scheduler pod fails to upgrade due to the change of owner. |
+| RUN-11091  | Fixed an issue when `departments FF` is off you are not able to schedule non-preemable jobs. |
 
 ## Version 2.13.13
 
@@ -47,20 +80,21 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | RUN-11307 | Fixed an issue where node affinity might change mid way through a job. Node affinity in now calculated only once at job submission. |
 | RUN-11129 | Fixed an issue where CRDs are not automatically upgraded when upgrading from 2.9 to 2.13. |
 
+## Version 2.13.12 - August 7, 2023
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-11476 | Fixed an issue with analytics node pool filter in Allocated GPUs per Project panel. |
+
 ## Version 2.13.11
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
 | RUN-11408 | Added to the Run:ai job-controller 2 configurable parameters `QPS` and `Burst` which are applied as environment variables in the job-controller Deployment object. |
 
+## Version 2.13.7 - July 2023
 
-## Version 2.13.7
-
-### Release date
-
-July 2023
-
-#### Release content
+### Release content
 
 <!-- RUN-10803 -->
 * Added filters to the historic quota ratio widget on the *Quota management* dashboard.
@@ -87,13 +121,9 @@ July 2023
 |-----------|--------------|
 | RUN-11089 | Fixed an issue when creating an environment, commands in the *Runtime settings* pane and are not persistent and cannot be found in other assets (for example in a new *Training*). |
 
-## Version 2.13.1
+## Version 2.13.1 - July 2023
 
-### Release date
-
-July 2023
-
-#### Release content
+### Release content
 
 <!-- RUN-11024 -->
 * Made an improvement so that occurrences of labels that are not in use anymore are deleted.
