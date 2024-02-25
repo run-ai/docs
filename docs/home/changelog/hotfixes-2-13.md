@@ -8,13 +8,33 @@ date: 2024-Jan-22
 
 The following is a list of the known and fixed issues for Run:ai V2.13.
 
+## Versiion 2.13.43 - February 15, 2024
 
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-14946 | Fixed an issue where Dashboards are displaying the hidden Grafana path. |
 
 ## Version 2.13.37
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
 | RUN-13300 | Fixed an issue where projects will appear with a status of empty while waiting for the project controller to update its status. This was caused because the cluster-sync works faster than the project controller. |
+
+## Version 2.13.35 - December 19, 2023
+
+### Release content
+
+* <!-- RUN-14441 Add ability to set node affinity for Prometheus -->Added the ability to set node affinity for Prometheus.
+
+### Fixed issues
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-14472 | Fixed an issue where template updates were not being applieed to the workload. |
+| RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multipled by seven. |
+| RUN-13956 | Fixed an issue where changing an exisitng template created a `Promise error` on existing job templates. |
+| RUN-13825 | Fixed an issue where GPU sharing configmaps are leaked. |
+| RUN-13343 | Fixed an issue where an error in the Chief pod calculations caused the status updater to send incorrect statuses.
 
 ## Version 2.13.31
 
@@ -34,7 +54,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | ---------------------------- | ---- |
 | RUN-12563 | Fixed an issue where users are unable to login after upgrading the control plane from 2.9.16 to 2.13.16. To correct the issue, secrets need to be upgraded manually in keycloak. |
 
-## Version 2.13.20
+## Version 2.13.20 - September 28, 2023
 
 ### Release content
 
