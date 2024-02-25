@@ -38,6 +38,6 @@ To create a compute resource:
 4. In the resources pane, set the resource request.
       1. To add GPU resources, enter the number of GPUs to request. You can then enter the amount of GPU memory by selecting a percentage of the GPU, memory size in MB or GB, or multi-instance GPUs.
       2. To add CPU resources, in the CPU compute pane enter the number of requested resources by choosing cores or millicores. In the CPU memory pane, enter the amount of memory to request, and choose from MB or GB. Select limit if you want limit the number of resources, and enter the limit.
-5. Press *More settings to add additional settings to the resource.
+5. Press *More* settings to add additional settings to the resource.
       1. Enable *Increased shared memory size* to increase the default memory size.
       2. Press *Extended resource* to add additional resources. Enter the resource subdomain and name and the quantity of resources to request. For more information, see [Extended resources](https://kubernetes.io/docs/tasks/configure-pod-container/extended-resource/){target=_blank} and [Quantity](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/){target=_blank}.
