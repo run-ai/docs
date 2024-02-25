@@ -34,7 +34,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multipled by seven. |
 | RUN-13956 | Fixed an issue where changing an exisitng template created a `Promise error` on existing job templates. |
 | RUN-13825 | Fixed an issue where GPU sharing configmaps are leaked. |
-| RUN-13343 | Fixed an issue where an error in the Chief pod calculations caused the status updater to send incorrect statuses.
+| RUN-13343 | Fixed an issue where an error in the Chief pod calculations caused the status updater to send incorrect statuses. |
 
 ## Version 2.13.31
 
