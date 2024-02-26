@@ -1,6 +1,6 @@
 ---
 title: Changelog Version 2.13
-summary: This article lists the fixed and known issues in the patch versions as well as additional new features that were added in each patch verion.
+summary: This article lists the fixed and known issues in the patch versions as well as additional new features that were added in each patch version.
 authors:
     - Jason Novich
 date: 2024-Jan-22
