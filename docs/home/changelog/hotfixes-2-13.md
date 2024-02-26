@@ -8,7 +8,7 @@ date: 2024-Jan-22
 
 The following is a list of the known and fixed issues for Run:ai V2.13.
 
-## Versiion 2.13.43 - February 15, 2024
+## Version 2.13.43 - February 15, 2024
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
