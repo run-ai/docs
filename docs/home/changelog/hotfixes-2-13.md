@@ -63,7 +63,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
-| RUN-12923 | Fixed an issue in upgrading due to a misconfigured image for airgapped systems in 2.13.19. The helm chart contained an error, and the image is not used even though it is packaged as part of the tar. |
+| RUN-12923 | Fixed an issue in upgrading due to a misconfigured Docker image for airgapped systems in 2.13.19. The helm chart contained an error, and the image is not used even though it is packaged as part of the tar. |
 | RUN-12928, </br>RUN-12968 | Fixed an issue in upgrading Prometheus due to a misconfigured image for airgapped systems in 2.13.19. The helm chart contained an error, and the image is not used even though it is packaged as part of the tar. |
 | RUN-12751 | Fixed an issue when upgrading from 2.9 to 2.13 results with a missing engine-config file. |
 | RUN-12717 | Fixed an issue where the user that is logged in as researcher manager can't see the clusters. |
