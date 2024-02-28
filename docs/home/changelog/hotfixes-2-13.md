@@ -87,7 +87,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 |-------------- | ------------------- |
 | RUN-12650 | Fixed an issue that used an incorrect metric in analytics GPU ALLOCATION PER NODE panel. Now the correct allocation is in percentage. |
 | RUN-12602 | Fixed an issue in `runaiconfig` where the `WorkloadServices` spec has memory requests/limits and cpu requests/limits and gets overwritten with the system default. |
-| RUN-12587 | Fixed an issue where the scheduler enters an endless loop running elastic jobs. |
+| RUN-12587 | Fixed an issue where elastic scheduling of jobs enters an endless loop. |
 | RUN-12585 | Fixed an issue where the workload-controller creates a delay in running jobs. |
 | RUN-12031 | Fixed an issue when upgrading from 2.9 to 2.13 where the Scheduler pod fails to upgrade due to the change of owner. |
 | RUN-11091  | Fixed an issue where the *Departments* feature is disabled, you are not able to schedule non-preemable jobs. |
