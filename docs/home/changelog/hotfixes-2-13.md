@@ -33,7 +33,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | RUN-14472 | Fixed an issue where template updates were not being applied to the workload. |
 | RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multiplied by seven. |
 | RUN-13956 | Fixed an issue when changing an existing template created a `Promise error` on existing job templates. |
-| RUN-13825 | Fixed an issue where GPU sharing configmaps are leaked. |
+| RUN-13825 | Fixed an issue when deleting a job that is allocated a fraction of a GPU, an associated configmap is not deleted. |
 | RUN-13343 | Fixed an issue in pod status calculation. |
 
 ## Version 2.13.31
@@ -86,11 +86,11 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | Internal ID | Description  |
 |-------------- | ------------------- |
 | RUN-12650 | Fixed an issue that used an incorrect metric in analytics GPU ALLOCATION PER NODE panel. Now the correct allocation is in percentage. |
-| RUN-12602 | Fixed an issue in `runaiconfig` where `WorkloadServices` have any memory requests/limits and cpu requests/limits and is overwritten with a default. |
+| RUN-12602 | Fixed an issue in `runaiconfig` where the `WorkloadServices` spec has memory requests/limits and cpu requests/limits and gets overwritten with the system default. |
 | RUN-12587 | Fixed an issue where the scheduler enters an endless loop running elastic jobs. |
 | RUN-12585 | Fixed an issue where the workload-controller creates a delay in running jobs. |
 | RUN-12031 | Fixed an issue when upgrading from 2.9 to 2.13 where the Scheduler pod fails to upgrade due to the change of owner. |
-| RUN-11091  | Fixed an issue when `departments FF` is off you are not able to schedule non-preemable jobs. |
+| RUN-11091  | Fixed an issue where the *Departments* feature is disabled, you are not able to schedule non-preemable jobs. |
 
 ## Version 2.13.13
 
