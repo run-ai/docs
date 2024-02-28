@@ -30,11 +30,11 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
-| RUN-14472 | Fixed an issue where template updates were not being applieed to the workload. |
-| RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multipled by seven. |
-| RUN-13956 | Fixed an issue where changing an exisitng template created a `Promise error` on existing job templates. |
+| RUN-14472 | Fixed an issue where template updates were not being applied to the workload. |
+| RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multiplied by seven. |
+| RUN-13956 | Fixed an issue when changing an existing template created a `Promise error` on existing job templates. |
 | RUN-13825 | Fixed an issue where GPU sharing configmaps are leaked. |
-| RUN-13343 | Fixed an issue where an error in the Chief pod calculations caused the status updater to send incorrect statuses. |
+| RUN-13343 | Fixed an issue in pod status calculation. |
 
 ## Version 2.13.31
 
@@ -68,7 +68,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | RUN-12751 | Fixed an issue when upgrading from 2.9 to 2.13 results with a missing engine-config file. |
 | RUN-12717 | Fixed an issue where the user that is logged in as researcher manager can't see the clusters. |
 | RUN-12642 | Fixed an issue where Assets-sync could not restart due to failing to get token from control plane. |
-| RUN-12191 | Fixed an issue where there was a Time out while waiting for the `runai_allocated_gpu_count_per_project` metric to return values. |
+| RUN-12191 | Fixed an issue where there was a timeout while waiting for the `runai_allocated_gpu_count_per_project` metric to return values. |
 | RUN-10474 | Fixed an issue where the `runai-conatiner-toolkit-exporter` DaemonSet fails to start. |
 
 ## Version 2.13.19 - September 27, 2023
