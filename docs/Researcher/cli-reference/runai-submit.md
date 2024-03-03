@@ -453,4 +453,4 @@ Note that the submit call may use a *policy* to provide defaults to any of the a
 ## See Also
 
 * See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-* See [policy configuration](../../admin/workloads/policies.md) for a description on how policies work.
+* See [policy configuration](../../admin/workloads/policies/policies.md) for a description on how policies work.

@@ -59,7 +59,7 @@ As part of the introduction of Run:ai workspaces a few new development and resea
 
 **Weight and Biases**
 
-Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models to make informed decisions. This integration provides data researchers with connectivity between the running Workspace in Run:ai and the relevant project for experiment tracking. For more information, see [Weights and Biases](../admin/integration/weights-and-biases.md)
+Weights and Biases is a commercial tool that provides experiment tracking, model visualization, and collaboration for machine learning projects. It helps researchers and developers keep track of their experiments, visualize their results, and compare different models to make informed decisions. This integration provides data researchers with connectivity between the running Workspace in Run:ai and the relevant project for experiment tracking. For more information, see [Weights and Biases](https://runai.my.site.com/community/s/article/How-to-integrate-with-Weights-and-Biases){target=_blank}.
 
 **Node pools enhancements**
 

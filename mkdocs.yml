@@ -39,7 +39,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs
+      base_path: ["docs/snippets", "docs/admin"]
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
