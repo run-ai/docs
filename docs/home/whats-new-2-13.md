@@ -116,7 +116,7 @@ The association between workspaces and node pools is done using *Compute resourc
 
 **Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
-* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../admin/workloads/policies.md#complex-values).
+* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../admin/workloads/policies/policies.md#complex-values).
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.
@@ -129,11 +129,11 @@ The association between workspaces and node pools is done using *Compute resourc
 **Integrations**
 
 <!-- RUN-9651/9652 Schedule and support of Elastic Jobs (Spark) -->
-* Added support for Spark and Elastic jobs. For more information, see [Running Spark jobs with Run:ai](../admin/integration/spark.md#).
+* Added support for Spark and Elastic jobs. For more information, see [Running Spark jobs with Run:ai](https://runai.my.site.com/community/s/article/How-to-Run-Spark-jobs-with-Run-AI){target=_blank}.
 <!-- RUN-9024/9027 Ray Support - schedule and support of Ray Jobs -->
-* Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](../admin/integration/ray.md#integrate-runai-with-ray).
+* Added support for Ray jobs. Ray is an open-source unified framework for scaling AI and Python applications. For more information, see [Integrate Run:ai with Ray](https://runai.my.site.com/community/s/article/How-to-Integrate-Run-ai-with-Ray){target=_blank}.
 
-* Added integration with Weights & Biases Sweep to allow data scientists to submit hyperparameter optimization workloads directly from the Run:ai UI. To configure sweep, see [Sweep configuration](../admin/integration/weights-and-biases.md#sweep-configuration).
+* Added integration with Weights & Biases Sweep to allow data scientists to submit hyperparameter optimization workloads directly from the Run:ai UI. To configure sweep, see [Sweep configuration](https://runai.my.site.com/community/s/article/How-to-integrate-with-Weights-and-Biases){target=_blank}.
 
 <!-- RUN-9510 -->
 * Added support for XGBoost. XGBoost, which stands for Extreme Gradient Boosting, is a scalable, distributed gradient-boosted decision tree (GBDT) machine learning library. It provides parallel tree boosting and is the leading machine learning library for regression, classification, and ranking problems. For more information, see [runai submit-dist xgboost](../Researcher/cli-reference/runai-submit-dist-xgboost.md)

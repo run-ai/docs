@@ -2,13 +2,13 @@
 
 ## Kubernetes Secrets
 
-Sometimes you want to use sensitive information within your code. For example passwords, OAuth tokens, or ssh keys. The best practice for saving such information in Kubernetes is via __Kubernetes Secrets__. Kubernetes Secrets let you store and manage sensitive information. Access to secrets is limited via configuration.
+Sometimes you want to use sensitive information within your code. For example passwords, OAuth tokens, or ssh keys. The best practice for saving such information in Kubernetes is via **Kubernetes Secrets**. Kubernetes Secrets let you store and manage sensitive information. Access to secrets is limited via configuration.
 
-A Kubernetes secret may hold multiple __key - value__ pairs.
+A Kubernetes secret may hold multiple **key - value** pairs.
 
 ## Using Secrets in Run:ai Workloads
 
-Our goal is to provide Run:ai Workloads with secrets as input in a secure way. Using the Run:ai command line, you will be able to pass a reference to a secret that already exists in Kubernetes. 
+Our goal is to provide Run:ai Workloads with secrets as input in a secure way. Using the Run:ai command line, you will be able to pass a reference to a secret that already exists in Kubernetes.
 
 ## Creating a secret
 
@@ -74,4 +74,4 @@ runai-adm remove secret <secret name> --cluster-wide
 
 ## Secrets and Policies
 
-A Secret can be set at the policy level. For additional information see [policies guide](policies.md)
+A Secret can be set at the policy level. For additional information see [policies guide](../workloads/policies/policies.md).

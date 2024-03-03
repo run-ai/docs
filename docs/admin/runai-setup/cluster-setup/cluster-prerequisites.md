@@ -73,7 +73,7 @@ For Run:ai on OpenShift to run with PSA `restricted` policy:
    pod-security.kubernetes.io/enforce=privileged
    pod-security.kubernetes.io/warn=privileged
    ```
-2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies.md).
+2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies/policies.md).
    
 ### NVIDIA
 

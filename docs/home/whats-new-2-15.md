@@ -26,7 +26,7 @@ date: 2023-Dec-3
     * XGBoost
     * MPI
 
-    For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/ workspaces/create/create-env.md#creating-a-new-environment).
+    For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/user-interface/workspaces/create/create-env.md#creating-a-new-environment).
 
 * <!-- RUN-10241/RUN-12872 - New Workloads view -->Preview the new *Workloads* view. *Workloads* is a new view for jobs that are running in the AI cluster. The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
 
@@ -78,8 +78,8 @@ date: 2023-Dec-3
 #### Policies
 
 * <!-- RUN-12698/RUN-12699 -->During Workspaces and Training creation, assets that do not comply with policies cannot be selected. These assets are greyed out and have a button on the cards when the item does not comply with a configured policy. The button displays information about which policies are non-compliant.
-* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies.md#prevent-data-storage-on-the-node).
-* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../admin/workloads/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
+* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies/policies.md#prevent-data-storage-on-the-node).
+* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../admin/workloads/policies/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
 
 #### Nodes and Node Pools
 
