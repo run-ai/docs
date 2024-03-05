@@ -45,8 +45,6 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 
 ### Release content
 
-<!-- RUN-14306 - Workload-controller google deprecated library removal -->
-
 * <!-- RUN-14193 - Update ray crds in pod-grouper -->Added support for Ray CRDs.
 
 * <!-- RUN-14077 - [runai-cli] allow configuring client burst and QPS -->Added support for customizable QPS and burst support using environment variables.
@@ -58,6 +56,7 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 | Internal ID | Description |
 |--|--|
 | RUN-14292 | Fixed an issue where Bright installation was failing due to missing `create cluster` permissions. |
+| RUN-14289 | Fixed an issue where metrics were not working due to incorrect parameter in the cluster-config file. |
 | RUN-14202 | Fixed an issue where the cluster-installer fails to install if the `runaiconfig` CRD does not exist. |
 | RUN-14198 | Fixed an issue where interactive job scheduled are not scheduled due to an unassigned node pool. |
 | RUN-14191 | Fixed an issue where consolidation failures cause running jobs to be considered `pending`. This could possibly cause running jobs to be evicted and enter a reclaim loop. |
