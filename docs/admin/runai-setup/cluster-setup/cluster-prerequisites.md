@@ -77,7 +77,7 @@ For Run:ai on OpenShift to run with PSA `restricted` policy:
    
 ### NVIDIA
 
-Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.3. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
+Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.9. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
 
 Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the NVIDIA GPU Operator, or see the distribution-specific instructions below:
 
