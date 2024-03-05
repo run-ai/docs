@@ -14,7 +14,7 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 
 | Internal ID | Description |
 |--|--|
-| RUN-15296 | Fixed an issue where the `resources` field was deprecated when creating a project. Now use `nodePoolResources. |
+| RUN-15296 | Fixed an issue where the `resources` parameter was deprecated in the *Projects* and *Departments* API . |
 
 ## Version 2.15.4 - January 5, 2024
 
@@ -35,7 +35,6 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 |--|--|
 | RUN-14645 | Fixed an issue where a workload volume is mounted as read-only when created in the workspace training form. |
 | RUN-14635 | Fixed an issue where the Status updater was missing the correct permissions. |
-| RUN-14472 | Fixed an issue where template updates were not being applied to the workload. |
 | RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multiplied by seven. |
 | RUN-14425 | Fixed an issue when calculating deserved quota metrics for project, nodepool, or cluster causing unlimited quotas to display -1. |
 | RUN-13401 | Fixed an issue where there was no accurate error information when a predicate fails (was `not found`). |
@@ -58,7 +57,7 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 | RUN-14292 | Fixed an issue where Bright installation was failing due to missing `create cluster` permissions. |
 | RUN-14289 | Fixed an issue where metrics were not working due to incorrect parameter in the cluster-config file. |
 | RUN-14202 | Fixed an issue where the cluster-installer fails to install if the `runaiconfig` CRD does not exist. |
-| RUN-14198 | Fixed an issue where interactive job scheduled are not scheduled due to an unassigned node pool. |
+| RUN-14198 | Fixed an issue where multi nodepool jobs are not scheduled due to an unassigned nodepool by improving internal services performance. |
 | RUN-14191 | Fixed an issue where consolidation failures cause running jobs to be considered `pending`. This could possibly cause running jobs to be evicted and enter a reclaim loop. |
 | RUN-14154 | Fixed an issue where the cluster wizard dropdown lists versions that are incompatible with the installed control plane. |
 | RUN-14073 | Fixed an issue where frequent scheduler wake ups are caused by all the users being idle. |
