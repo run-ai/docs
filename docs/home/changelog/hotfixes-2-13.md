@@ -32,7 +32,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | ---------------------------- | ---- |
 | RUN-14472 | Fixed an issue where template updates were not being applied to the workload. |
 | RUN-14434 | Fixed an issue where `runai_allocated_gpu_count_per_gpu` was multiplied by seven. |
-| RUN-13956 | Fixed an issue when changing an existing template created a `Promise error` on existing job templates. |
+| RUN-13956 | Fixed an issue where editing templates failed. |
 | RUN-13825 | Fixed an issue when deleting a job that is allocated a fraction of a GPU, an associated configmap is not deleted. |
 | RUN-13343 | Fixed an issue in pod status calculation. |
 
