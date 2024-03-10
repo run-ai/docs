@@ -132,6 +132,7 @@ nav:
     - 'Changelog':
       - 'Hot Fixes for 2.13' : 'home/changelog/hotfixes-2-13.md'
       - 'Hot Fixes for 2.15' : 'home/changelog/hotfixes-2-15.md'
+      - 'Hot Fixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
