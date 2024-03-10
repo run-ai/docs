@@ -47,12 +47,12 @@ The following is a list of the known and fixed issues for Run:ai V2.15.
 
 | Internal ID | Description |
 |--|--|
-| RUN-14292 | Fixed an issue where Bright installations were failing due to missing `create cluster` permissions. |
+| RUN-14292 | Fixed an issue where BCM installations were failing due to missing `create cluster` permissions. |
 | RUN-14289 | Fixed an issue where metrics were not working due to an incorrect parameter in the cluster-config file. |
 | RUN-14198 | Fixed an issue in services where multi nodepool jobs were not scheduled due to an unassigned nodepool status. |
 | RUN-14191 | Fixed an issue where a consolidation failure would cause unnecessary evictions. |
-| RUN-14154 | Fixed an issue where the cluster wizard dropdown listed versions that were incompatible with the installed control plane. |
-| RUN-13956 | Fixed an issue where templates were not edited successfully. |
+| RUN-14154 | Fixed an issue in the *New cluster* form, whefre the dropdown listed versions that were incompatible with the installed control plane. |
+| RUN-13956 | Fixed an issue in the *Jobs* table where templates were not edited successfully. |
 | RUN-13891 | Fixed an issue where Ray job statuses were shown as empty. |
 | RUN-13825 | Fixed an issue where GPU sharing configmaps were not deleted. |
 | RUN-13628 | Fixed an issue where the `pre-install` pod failed to run `pre-install` tasks due to the request being denied (Unauthorized). |
