@@ -54,7 +54,7 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:<a name=
 | Run:ai 2.13    | 1.23 through 1.28 (see note below) | 4.10 through 4.13 |
 | Run:ai 2.15    | 1.25 through 1.28  | 4.11 through 4.13 |
 | Run:ai 2.16    | 1.26 through 1.28  | 4.11 through 4.14 |
-| Run:ai 2.17    | 1.27 through 1.29  | 4.12 through 4.15 |
+| Run:ai 2.17    | 1.27 through 1.29  | 4.12 through 4.14 |
 
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit.md#new-pvc-stringarray). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
