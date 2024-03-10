@@ -35,7 +35,11 @@ kubectl -n runai-backend create secret generic runai-ca-cert \
 kubectl -n runai create secret generic runai-ca-cert \
     --from-file=runai-ca.pem=<ca_bundle_path>
 ```
-
+* In case you're using Openshift, add the public key to the `openshift-monitoring` namespace:
+```
+kubectl -n openshift-monitoring create secret generic runai-ca-cert \
+    --from-file=runai-ca.pem=<ca_bundle_path>
+```
 * Install the Run:ai operator, add the following flag to the helm command `--set global.customCA.enabled=true`
 
 

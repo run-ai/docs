@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.16/docs/
+edit_uri: edit/v2.17/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -22,6 +22,7 @@ theme:
     - navigation.top
     - toc.follow
     - navigation.path
+    - content.code.copy
 
   icon:
     edit: material/pencil 
@@ -38,7 +39,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs
+      base_path: ["docs/snippets", "docs/admin"]
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -54,8 +55,8 @@ markdown_extensions:
   - toc:
       permalink: True 
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -120,12 +121,9 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
-      - 'Version 2.16' : 'home/whats-new-2-16.md'
+      - 'home/whats-new-2-16.md'
       - 'Version 2.15' : 'home/whats-new-2-15.md'
-    #  - 'Version 2.14' : 'home/whats-new-2-14.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
-    #  - 'Version 2.12' : 'home/whats-new-2-12.md'
-    #  - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
@@ -216,6 +214,23 @@ nav:
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
+      - 'Alert Manager Alerts' :
+        - 'admin/troubleshooting/alertmanager/README.md'
+        - 'Runai Agent Cluster Info Push Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow.md'
+        - 'Runai Agent Pull Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentPullRateLow.md'
+        - 'Runai Container Memory Usage Critical' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical.md'
+        - 'Runai Container Memory Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning.md'
+        - 'Runai Container Restarting' : 'admin/troubleshooting/alertmanager/RunaiContainerRestarting.md'
+        - 'Runai Cpu Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiCpuUsageWarning.md'
+        - 'Runai Critical Problem' : 'admin/troubleshooting/alertmanager/RunaiCriticalProblem.md'
+        - 'Runai DaemonSet Rollout Stuck' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck.md'
+        - 'Runai DaemonSet Unavailable On Nodes' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetUnavailableOnNodes.md'
+        - 'Runai Deployment Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentInsufficientReplicas.md'
+        - 'Runai Deployment NoAvailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentNoAvailableReplicas.md'
+        - 'Runai Deployment Unavailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentUnavailableReplicas.md'
+        - 'Runai Project Controller Reconcile Failure' : 'admin/troubleshooting/alertmanager/RunaiProjectControllerReconcileFailure.md'
+        - 'Runai StatefulSet Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetInsufficientReplicas.md'
+        - 'Runai StatefulSet No Available Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetNoAvailableReplicas.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
 #    - 'Integrations' :

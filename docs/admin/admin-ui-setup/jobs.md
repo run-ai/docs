@@ -32,4 +32,4 @@ You can also delete a selected Job or suspend/resume a selected Job.
 
 ## Workloads Toggle
 
-The workloads toggle changes the current *Jobs* view to *Workloads*. For more information, see the [Workloads]() page.
+The workloads toggle changes the current *Jobs* view to *Workloads*. For more information, see the [Workloads](../workloads/README.md) page.

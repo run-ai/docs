@@ -1,10 +1,10 @@
 Below are instructions on how to install a Run:ai cluster.
 
 ## Prerequisites
-Before installing, please review the installation prerequisites here: [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
+Before installing, please review the installation prerequisites listed in [Run:ai GPU Cluster Prerequisites](cluster-prerequisites.md).
 
 !!! Important
-    It is strongly recommend that you run the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met.
+    We strongly recommend running the Run:ai [pre-install script](cluster-prerequisites.md#pre-install-script) to verify that all prerequisites are met. 
 
 ## Install Run:ai
 
@@ -18,7 +18,7 @@ Using the cluster wizard:
 * Choose a name for your cluster.
 * Choose the Run:ai version for the cluster.
 * Choose a target Kubernetes distribution (see [table](cluster-prerequisites.md#kubernetes) for supported distributions).
-* (SaaS and remote self-hosted cluster only) Enter the URL of a Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
+* (SaaS and remote self-hosted cluster only) Enter a URL for the Kubernetes cluster. The URL need only be accessible within the organization's network. For more informtaion see [here](cluster-prerequisites.md#cluster-url).
 * Press `Continue`.
 
 On the next page:
@@ -40,13 +40,13 @@ Example output:
 cluster-version: 2.9.0
 runai-public: 
   version: 2.9.0
-  runaiConfigStatus: # (1)
+  runaiConfigStatus:
     conditions:
-    - type: DependenciesFulfilled
+    - type: DependenciesFulfilled   # (1)
       status: "True"
       reason: dependencies_fulfilled
       message: Dependencies are fulfilled
-    - type: Deployed
+    - type: Deployed               
       status: "True"
       reason: deployed
       message: Resources Deployed
@@ -54,12 +54,12 @@ runai-public:
       status: "True"
       reason: available
       message: System Available
-    - type: Reconciled
+    - type: Reconciled              # (2)
       status: "True"
       reason: reconciled
       message: Reconciliation completed successfully
-  optional:  # (2)
-    knative:    # (3)  
+  optional:  # (3)
+    knative:    # (4)  
       components:
         hpa:
           available: true
@@ -67,16 +67,55 @@ runai-public:
           available: true
         kourier:
           available: true
-    mpi:        # (4) 
+    mpi:        # (5) 
       available: true
 ```
 
-1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller.
+1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
 2. Checks whether optional product dependencies have been met.
 3. See [Inference prerequisites](cluster-prerequisites.md#inference).
 4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
 
-For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md).
+<!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
+
+### Troubleshooting your installation
+
+#### Dependencies are not fulfilled
+
+1. Make sure to install the missing dependencies.
+2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
+3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
+
+#### Resources not deployed / System Unavailable / Reconciliation Failed
+
+1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues.
+2. Run
+
+```
+   kubectl get pods -n runai
+   kubectl get pods -n monitoring
+```
+
+You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
+
+#### Common Issues
+
+1. Run:ai was previously installed in the cluster and was deleted unsuccessfully, resulting in remaining CRDs.
+    1. Diagnosis: This can be detected by running `kubectl get crds` in the relevant namespaces (or adding `-A` and checking for Run:ai CRDs).
+    2. Solution: Force delete the listed CRDs and reinstall.
+2. One or more of the pods have issues around valid certificates.
+    1. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`.
+    2. Solution:
+        1. This is usually due to an expired or invalid certificate in the cluster, and if so, renew the certificate.
+        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../config/org-cert.md).
+
+#### Get Installation Logs
+
+You can use the [get instllation logs](https://github.com/run-ai/public/blob/main/installation/get-installation-logs.sh) script to obtain any relevant installation logs in case of an error.
+## Researcher Authentication
+
+If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
+
 
 ## Cluster Table
 
@@ -107,15 +146,11 @@ The following table describes the different statuses that a cluster could be in.
 
 See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md#verifying-cluster-health) to help troubleshoot issues in the cluster.
 
-## Researcher Authentication
-
-If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
-
 ## Customize your installation
 
 To customize specific aspects of the cluster installation see [customize cluster installation](customize-cluster-install.md).
 
-## (Optional) Set Node Roles
+## Set Node Roles (Optional)
 
 When installing a production cluster you may want to:
 

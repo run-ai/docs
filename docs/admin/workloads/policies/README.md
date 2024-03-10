@@ -32,13 +32,11 @@ To return to the previous *Policy Manager* toggle the switch off.
 
 Kyverno runs as a dynamic admission controller in a Kubernetes cluster. Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server and applies matching policies to return results that enforce admission policies or reject requests. Kyverno policies can match resources using the resource kind, name, label selectors, and much more. For more information, see [How Kyverno Works](https://kyverno.io/docs/introduction/#how-kyverno-works){target=_blank}.
 
-Explain Run:ai policies and why they are better.
-
 ## Policy Types
 
 When you configure a policy, you need to specify the workload type. The following workload types are available:
 
-* [**Trainging**](training-policy.md)&mdash;
+* [**Training**](training-policy.md)&mdash;places policy restrictions on [trainings](../../../Researcher/user-interface/trainings.md#trainings).
 * [**Workspace**](workspaces-policy.md)&mdash;places policy restrictions on [Workspaces](../../../Researcher/user-interface/workspaces/overview.md#getting-familiar-with-workspaces).
 
 ### Policy Inheritance
@@ -49,11 +47,11 @@ A policy configured to a specific scope, is applied to all elements in that scop
 
 ### Policy Editor UI
 
-Policies are added to the system using the policy editor and are written in YAML format. YAML™ is a human-friendly, cross language, Unicode based data serialization language designed around the common native data types of dynamic programming languages. It is broadly useful for programming needs ranging from configuration files to internet messaging to object persistence to data auditing and visualization. For more information, see [YAML.org](https://yaml.org/){target=_blank}.
+Policies are added to the system using the policy editor and are written in YAML format. YAML™ is a human-friendly, cross language, Unicode based data serialization language designed around the common native data types of dynamic programming languages. It is useful for programming needs ranging from configuration files to internet messaging to object persistence to data auditing and visualization. For more information, see [YAML.org](https://yaml.org/){target=_blank}.
 
 ### Policy API
 
-Access the *Policy* [API reference](../../../developer/policies/policy-API-page.md) to see how to apply *Policies* in the Run:ai platform.
+Access the *Policy* [API reference](https://app.run.ai/api/docs#tag/Policy){target=_blank} to see how to apply *Policies* in the Run:ai platform.
 
 ### Example Policy
 

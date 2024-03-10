@@ -36,7 +36,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select *On Premise*  |
-| BCM | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
 
@@ -56,23 +56,27 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:<a name=
 | Run:ai 2.16    | 1.26 through 1.28  | 4.11 through 4.14 |
 | Run:ai 2.17    | 1.27 through 1.29  | 4.12 through 4.14 |
 
+For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
+
 !!! Note
     Run:ai allows scheduling of Jobs with PVCs. See for example the command-line interface flag [--pvc-new](../../../Researcher/cli-reference/runai-submit.md#new-pvc-stringarray). A Job scheduled with a PVC based on a specific type of storage class (a storage class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`) will [not work](https://kubernetes.io/docs/concepts/storage/storage-capacity/){target=_blank} on Kubernetes 1.23 or lower.
 
-For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
-
 #### Pod Security Admission
 
-Run:ai version 2.15^ supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
 
-For Run:ai on OpenShift to run with PSA `restricted` policy, the `runai` namespace should still be marked as `privileged` as described [here](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+Run:ai version 2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
 
-```
-pod-security.kubernetes.io/audit=privileged
-pod-security.kubernetes.io/enforce=privileged
-pod-security.kubernetes.io/warn=privileged
-```
+For Run:ai on OpenShift to run with PSA `restricted` policy:
 
+1. The `runai` namespace should still be marked as `privileged` as described in [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank}. Specifically, label the namespace with the following labels:
+
+   ```
+   pod-security.kubernetes.io/audit=privileged
+   pod-security.kubernetes.io/enforce=privileged
+   pod-security.kubernetes.io/warn=privileged
+   ```
+2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies/policies.md).
+   
 ### NVIDIA
 
 Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.9. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
@@ -116,6 +120,11 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     !!! Important
         * Run:ai on GKE has only been tested with GPU Operator version 22.9 and up.
         * The above only works for Run:ai 2.7.16 and above. 
+
+=== "RKE2"
+    * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system. 
+
 <!-- 
 === "RKE2"
     Install the NVIDIA GPU Operator as discussed [here](https://thenewstack.io/install-a-nvidia-gpu-operator-on-rke2-kubernetes-cluster/){target=_blank}.
@@ -222,10 +231,10 @@ Distributed training allows the Researcher to train models over multiple nodes. 
 * XGBoost
 * MPI
 
-All are part of the *Kubeflow Training Operator*. Run:ai supports Training Operator version 1.5 and up. To install run:
+All are part of the *Kubeflow Training Operator*. Run:ai supports Training Operator version 1.7 and up. To install run:
 
 ```
-kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.5.0"
+kubectl apply -k "github.com/kubeflow/training-operator/manifests/overlays/standalone?ref=v1.7.0"
 ```
 
 The Kuberflow Training Operator is packaged with MPI version 1.0 which is **not** supported by Run:ai. You need to separately install MPI v2beta1:
@@ -256,7 +265,7 @@ Post-install, you must configure Knative to use the Run:ai scheduler and allow p
 kubectl patch configmap/config-features \
   --namespace knative-serving \
   --type merge \
-  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled"}}'
+  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
 ```
 
 #### Inference Autoscaling

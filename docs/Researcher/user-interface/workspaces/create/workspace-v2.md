@@ -24,7 +24,7 @@ Use the *Jobs form* below if you have not enabled the *Workloads* feature.
           A template contains a set of predefined building blocks as well as additional configurations which allow the user to immediately create a templated-based workspace.
 
       4. Enter a name for your workspace and press *Continue*.
-      5. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](workspaces/create/create-env.md) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
+      5. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](../create/create-env.md) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
  
          In the *Runtime Settings*:
 
@@ -77,11 +77,11 @@ Use the *Jobs form* below if you have not enabled the *Workloads* feature.
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*. Choose from *Persistent* or *Ephemeral*.
 
-      8. Select a data source from the tiles. If your data source is not listed, use the *Search compute resources* box to find it. Press *New data source* to create a new data source if needed.
-      9. In the *General* pane, add special settings for your workspace:
-    
-         1.  Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
-         2.  Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
-         3.  Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
-    
-      10. Press *Create workspace*
+8. Select a data source from the tiles. If your data source is not listed, use the *Search data resources* box to find it. Press *New data source* to create a new data source if needed.
+9. In the *General* pane, add special settings for your workspace:
+
+      1. Press *Auto-deletion* to delete the workspace automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the workspace will be deleted immediately after it completes or fails.
+      2. Press *Annotation* to a name and value to annotate the workspace. Repeat this step to add multiple annotations.
+      3. Press *Label* to a name and value to label the workspace. Repeat this step to add multiple labels.
+
+10. Press *Create workspace*

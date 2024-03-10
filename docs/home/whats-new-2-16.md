@@ -1,16 +1,16 @@
 ---
-title: What's new - 2.16 January 9, 2024
+title: Version 2.16
 summary: This article describes new features and functionality in the version.
 authors:
     - Jason Novich
 date: 2023-Dec-4
 ---
 
-## Release Content
+## Release Content - January 25, 2024
 
 ### Researcher
 
-* <!--  DONE RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added support for secure and private access to researcher tools such as Jupyter Notebook, and other tool integrations. In order to enable secure and private access, a *Private* toggle has been added to the *Environment* card which enables Authentication and authorization for Workload URLs. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. When enabled, this limits the access of this tool to only the creator, or any user in the same scope as the creator. The *Private* toggle appears on any form that requires an *Environment* to be selected. For more information, see [Creating a new Workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
+* <!--  DONE RUN-12597/RUN-12601	TW - Hide IDEs behind runai authentication -->Added enterprise level security for researcher tools such as Jupyter Notebooks, VSCode, or any other URL associated with the workload. Using this feature, anyone within the organization requesting access to a specific URL will be redirected to the login page to be authenticated and authorized. This results in protected URLs which cannot be reached from outside the organization. Researchers can enhance the URL privacy by using the *Private* toggle which means that only the researcher who created the workload can is authorized to access it. The Private toggle is available per tool that uses an external URL as a connection type and is located in the workload creation from in the UI in the environment section. This toggle sets a flag of `isPrivate` in the `connections` section of a policy for the connection type `ExternalUrl`. For more information, see [Creating a new Workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
 
 #### Jobs, Workloads, and Workspaces
 
@@ -24,6 +24,12 @@ date: 2023-Dec-4
     * Easy to use single unified view with all workload types in one place.
 
     For more information, see [Workloads Overview](../admin/workloads/README.md).
+
+* <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editable by default, allowing researchers the ability to change the value while submitting a workload. Using workload policies, administrators can increase, decrease, set the default value to `never`, or even lock access to this value so researchers can not edit it when they submit workloads.
+
+#### Assets
+
+* When creating an asset such as data sources, credentials, or others, the scope is limited to the cluster selected at the top of the UI.
 
 ### Run:ai Administrator
 
@@ -67,3 +73,16 @@ date: 2023-Dec-4
 #### OpenShift Support
 
 * Updated installation prerequisites. For more information, see [Kubernetes support matrix](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#releases). -->
+
+## Deprecation Notifications
+
+Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+
+### Project migration
+
+* Run:ai will be deprecating the migration of projects between departments. This affects:
+  
+    * API&mdash;the `departmentId` field will be marked as deprecated in the`put` endpoint in the `projects` category.
+    * User Interface&mdash;there will no longer be an option to:
+        * migrate projects to another department, when deleting departments.
+        * change departments, when editing a project.

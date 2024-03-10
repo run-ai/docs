@@ -49,12 +49,12 @@ To create a policy:
 !!! Note
     After saving, the form will wait for the policy to sync with the cluster.
 
---8<-- "../docs/snippets/snippets-policies.md:1:170"
+--8<-- "snippets-policies.md:1:170"
 
 #### Training
 
---8<-- "../docs/snippets/snippets-policies.md:172:775"
+--8<-- "snippets-policies.md:172:775"
 
 #### Training
 
---8<-- "../docs/snippets/snippets-policies.md:777:843"
+--8<-- "snippets-policies.md:777:843"
