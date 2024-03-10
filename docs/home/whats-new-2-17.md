@@ -1,0 +1,32 @@
+---
+title: Version 2.17
+summary: This article describes new features and functionality in the version.
+authors:
+    - Jason Novich
+date: 2024-Mar-10
+---
+
+## Release Content - March 31, 2024
+
+### Researcher
+
+#### Jobs, Workloads, and Workspaces
+
+#### Assets
+
+### Run:ai Administrator
+
+#### Monitoring and Analytics
+* <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 --> renamed the metrics, for details see:
+As of cluster version 2.17, we will support metrics through Run:ai API.
+
+#### Authentication and Authorization
+
+#### Policies
+
+### Control and Visibility
+
+## Deprecation Notifications
+
+Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+
