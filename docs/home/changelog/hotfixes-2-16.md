@@ -30,7 +30,7 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 
 ### Release content
 
-* <!-- RUN-12664 - [Control-plane] Implement get workload/pods API -->Implemented a new Workloads API for pods.
+* <!-- RUN-12664 - [Control-plane] Implement get workload/pods API -->Implemented a new Workloads API to support the *Workloads* feature.
 
 ### Fixed issues
 
