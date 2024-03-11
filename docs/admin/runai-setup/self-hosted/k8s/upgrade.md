@@ -19,6 +19,13 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
+### Upgrade from Version 2.9 or 2.13
+
+Before upgrading the control plane, run:
+
+``` bash
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+```
 
 ### Upgrade from Version 2.7 or 2.8
 
