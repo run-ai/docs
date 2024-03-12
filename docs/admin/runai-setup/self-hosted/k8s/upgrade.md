@@ -20,6 +20,16 @@ title: Upgrade self-hosted Kubernetes installation
 
 ## Upgrade Control Plane
 
+### Upgrade from Version 2.9, 2.13, 2.15 or 2.16
+
+Before upgrading the control plane, run:
+
+``` bash
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+```
+
 ### Upgrade from Version 2.7 or 2.8
 
 Before upgrading the control plane, run: 
