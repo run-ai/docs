@@ -19,7 +19,7 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade from Version 2.7 or 2.8
+### Upgrade to Version 2.17 and above
 
 Before upgrading the control plane, run: 
 
