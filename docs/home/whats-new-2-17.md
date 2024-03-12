@@ -16,6 +16,10 @@ date: 2024-Mar-10
 
 ### Run:ai Administrator
 
+#### Clusters
+
+* <!-- RUN-14431/RUN-14432 New columns on cluster table-->Added new columns to the *Clusters* table to show Kubernetes distribution and version.
+
 #### Monitoring and Analytics
 * <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 --> renamed the metrics, for details see:
 As of cluster version 2.17, we will support metrics through Run:ai API.
