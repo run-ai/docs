@@ -125,7 +125,7 @@ In the left menu, press *Clusters* to view the cluster table. Use *Add filter* t
 The table provides the following columns:
 
 * **Cluster**&mdash;the name of the cluster.
-* **Kubernetes distribution**&mdash;the flavor of Kubernetes distrubtion.
+* **Kubernetes distribution**&mdash;the flavor of Kubernetes distribution.
 * **Kubernetes version**&mdash;the version of Kubernetes installed.
 * **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
 * **Creation time**&mdash;the timestamp the cluster was created.
