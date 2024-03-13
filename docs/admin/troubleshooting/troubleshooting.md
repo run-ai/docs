@@ -52,7 +52,7 @@
     * Verify that all pods are running.
     * The default Prometheus installation is not built for high availability. If a node is down, the Prometheus pod may not recover by itself unless manually deleted. Delete the pod to see it start on a different node and consider adding a second replica to Prometheus.
 
-??? "GPU Relates metrics not showing"
+??? "GPU Related metrics not showing"
     __Symptom:__ GPU-related metrics such as `GPU Nodes` and `Total GPUs` are showing zero but other metrics, such as `Cluster load` are shown.
 
     __Root cause:__ An installation issue related to the NVIDIA stack.

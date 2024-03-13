@@ -1,8 +1,8 @@
 site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
-copyright: Copyright © 2020 - 2023 Run:ai
+copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.14/docs/
+edit_uri: edit/v2.16/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -11,6 +11,7 @@ theme:
   favicon: images/favicon.ico
   logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
   features:
+    - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - search.highlight
@@ -20,7 +21,9 @@ theme:
     - content.action.edit
     - navigation.top
     - toc.follow
-  #  - toc.integrate 
+    - navigation.path
+    - content.code.copy
+
   icon:
     edit: material/pencil 
     view: material/eye
@@ -36,7 +39,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs/docs
+      base_path: ["docs/snippets", "docs/admin"]
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -52,8 +55,8 @@ markdown_extensions:
   - toc:
       permalink: True 
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -68,7 +71,7 @@ extra:
 
 plugins:
   - mike:
-      version_selector: false
+      version_selector: true
       canonical_version: null
   - search:
       lang: en
@@ -80,47 +83,16 @@ plugins:
       draggable: true
       skip_classes:
         - skip-lightbox
-#  - render_swagger
   - minify:
       minify_html: true
   - redirects:
       redirect_maps:
         'Administrator/Cluster-Setup/cluster-prerequisites.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'Administrator/Researcher-Setup/cli-install.md' : 'admin/researcher-setup/cli-install.md'
-        # 'Administrator/Admin-User-Interface-Setup/Working-with-Projects.md' : 'admin/admin-ui-setup/project-setup.md'
-        # 'Administrator/Admin-User-Interface-Setup/Working-with-Departments.md' : 'admin/admin-ui-setup/department-setup.md'
-        # 'Researcher/scheduling/The-Run-AI-Scheduler.md' : 'Researcher/scheduling/the-runai-scheduler.md'
-        # 'Administrator/admin-ui-setup/admin-ui-users.md' : 'admin/admin-ui-setup/admin-ui-users.md'
-        # 'Administrator/admin-ui-setup/dashboard-analysis.md' : 'admin/admin-ui-setup/dashboard-analysis.md'
-        # 'Administrator/admin-ui-setup/department-setup.md' : 'admin/admin-ui-setup/department-setup.md'
-        # 'Administrator/admin-ui-setup/project-setup.md' : 'admin/admin-ui-setup/project-setup.md'
-        # 'Administrator/Cluster-Setup/access-roles.md' : 'admin/runai-setup/config/access-roles.md'
-        # 'Administrator/Cluster-Setup/allow-external-access-to-containers.md' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
-        # 'Administrator/Cluster-Setup/cli-admin-install.md' : 'admin/runai-setup/config/cli-admin-install.md'
-        # 'Administrator/Cluster-Setup/cluster-delete.md' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
-        # 'Administrator/Cluster-Setup/cluster-setup-intro.md' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
-        # 'Administrator/Cluster-Setup/install-k8s.md' : 'admin/runai-setup/cluster-setup/install-k8s.md'
-        # 'Administrator/Cluster-Setup/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
-        # 'Administrator/Cluster-Setup/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
-        # 'Administrator/Cluster-Setup/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
-        # 'Administrator/Cluster-Setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
-        # 'Administrator/Cluster-Setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
-        # 'Administrator/Cluster-Setup/single-node-install.md' : 'admin/runai-setup/cluster-setup/single-node-install.md'
-        # 'Administrator/integration/airflow.md' : 'admin/integration/airflow.md'
-        # 'Administrator/integration/jupyterhub.md' : 'admin/integration/jupyterhub.md'
-        # 'Administrator/integration/kubeflow.md' : 'admin/integration/kubeflow.md'
-        'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
-        # 'Administrator/overview-admin.md' : 'admin/overview-administrator.md'
-        # 'Administrator/Researcher-Setup/docker-registry-config.md' : 'admin/researcher-setup/docker-registry-config.md'
-        # 'Administrator/Researcher-Setup/docker-to-runai.md' : 'admin/researcher-setup/docker-to-runai.md'
-        # 'Administrator/Researcher-Setup/limit-to-node-group.md' : 'admin/researcher-setup/limit-to-node-group.md'
-        # 'Administrator/Researcher-Setup/researcher-setup-intro.md' : 'admin/researcher-setup/researcher-setup-intro.md'
-        # 'Administrator/Researcher-Setup/use-secrets.md' :  'admin/workloads/secrets.md'
-        # 'admin/researcher-setup/use-secrets.md' : 'admin/workloads/secrets.md'
-        # 'Administrator/runai-setup/installation-types.md' : 'admin/runai-setup/installation-types.md'
+      #  'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
@@ -132,7 +104,7 @@ plugins:
         'admin/runai-setup/advanced/cli-admin-install.md' : 'admin/runai-setup/config/cli-admin-install.md'
         'admin/runai-setup/advanced/dr.md' : 'admin/runai-setup/config/dr.md'
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
-        'admin/runai-setup/advanced/monitoring.md' : 'admin/runai-setup/maintenance/monitoring.md'
+        'admin/runai-setup/advanced/alert-monitoring.md' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
         'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
@@ -149,10 +121,9 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
-      - 'Version 2.14' : 'home/whats-new-2-14.md'
+      - 'home/whats-new-2-16.md'
+      - 'Version 2.15' : 'home/whats-new-2-15.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
-      - 'Version 2.12' : 'home/whats-new-2-12.md'
-      - 'Version 2.10' : 'home/whats-new-2-10.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
@@ -160,7 +131,6 @@ nav:
     - 'Overview' : 'admin/overview-administrator.md'
     - 'Run:ai Setup' : 
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
-    #  - 'Try on the Cloud' : 'admin/runai-setup/try-azure.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
         - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
@@ -169,7 +139,6 @@ nav:
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
-       # - 'Quick Single Node Install' : 'admin/runai-setup/cluster-setup/single-node-install.md'  
         - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
@@ -200,28 +169,35 @@ nav:
         - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
         - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
-        - 'Disaster Recovery' : 'admin/runai-setup/config/dr.md'
         - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
-      - 'Authentication and Access Control' :
+        - 'Local Certificate Authority' : 'admin/runai-setup/config/org-cert.md'
+        - 'Backup & Restore' : 'admin/runai-setup/config/dr.md'
+        - 'High Availability' : 'admin/runai-setup/config/ha.md'
+        - 'Scaling' : 'admin/runai-setup/config/large-clusters.md'
+      - 'Authentication' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
-        - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/monitoring.md'
+        - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         - 'Audit Log' : 'admin/runai-setup/maintenance/audit-log.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
       - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
-      - 'Registry integration': 'admin/researcher-setup/registry-integration.md'
-      - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
+    #  - 'Registry integration': 'admin/researcher-setup/registry-integration.md'
+    #  - 'Use a Docker Registry with Credentials' : 'admin/researcher-setup/docker-registry-config.md'
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
-      - 'Email notifications' : 'admin/researcher-setup/email-messaging.md'
+    #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
     - 'Workloads' : 
-      - 'Overview' : 'admin/workloads/workload-overview-admin.md'
-      - 'Policies' : 'admin/workloads/policies.md'
+      - 'admin/workloads/README.md'
+      - 'Policies' :
+        - 'admin/workloads/policies/README.md'
+        - 'Former Policies' : 'admin/workloads/policies/policies.md'
+        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
+        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
     - 'User Interface' :
@@ -233,27 +209,45 @@ nav:
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'
       - 'Deployments' : 'admin/admin-ui-setup/deployments.md'
+      - 'Templates': 'admin/admin-ui-setup/templates.md'
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
+      - 'Alert Manager Alerts' :
+        - 'admin/troubleshooting/alertmanager/README.md'
+        - 'Runai Agent Cluster Info Push Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow.md'
+        - 'Runai Agent Pull Rate Low' : 'admin/troubleshooting/alertmanager/RunaiAgentPullRateLow.md'
+        - 'Runai Container Memory Usage Critical' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical.md'
+        - 'Runai Container Memory Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning.md'
+        - 'Runai Container Restarting' : 'admin/troubleshooting/alertmanager/RunaiContainerRestarting.md'
+        - 'Runai Cpu Usage Warning' : 'admin/troubleshooting/alertmanager/RunaiCpuUsageWarning.md'
+        - 'Runai Critical Problem' : 'admin/troubleshooting/alertmanager/RunaiCriticalProblem.md'
+        - 'Runai DaemonSet Rollout Stuck' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck.md'
+        - 'Runai DaemonSet Unavailable On Nodes' : 'admin/troubleshooting/alertmanager/RunaiDaemonSetUnavailableOnNodes.md'
+        - 'Runai Deployment Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentInsufficientReplicas.md'
+        - 'Runai Deployment NoAvailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentNoAvailableReplicas.md'
+        - 'Runai Deployment Unavailable Replicas' : 'admin/troubleshooting/alertmanager/RunaiDeploymentUnavailableReplicas.md'
+        - 'Runai Project Controller Reconcile Failure' : 'admin/troubleshooting/alertmanager/RunaiProjectControllerReconcileFailure.md'
+        - 'Runai StatefulSet Insufficient Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetInsufficientReplicas.md'
+        - 'Runai StatefulSet No Available Replicas' : 'admin/troubleshooting/alertmanager/RunaiStatefulSetNoAvailableReplicas.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
-    - 'Integrations' :
-      - 'JupyterHub' : 'admin/integration/jupyterhub.md'
-      - 'Airflow' : 'admin/integration/airflow.md' 
-      - 'MLflow' :   'admin/integration/mlflow.md'
-      - 'Kubeflow' : 'admin/integration/kubeflow.md'
-      - 'Seldon Core' : 'admin/integration/seldon.md'
-      - 'ClearML' : 'admin/integration/clearml.md'
-      - 'Argo Workflows'  : 'admin/integration/argo-workflows.md'
-      - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
-      - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
-      - 'Event Messaging': 'admin/integration/messaging.md'
-      - 'DeepSpeed': 'admin/integration/deepspeed.md'
-      - 'Comet' : 'admin/integration/comet.md'
-      - 'Spark' : 'admin/integration/spark.md'
-      - 'Ray' : 'admin/integration/ray.md'
+#    - 'Integrations' :
+#      - 'JupyterHub' : 'admin/integration/jupyterhub.md'
+#      - 'Airflow' : 'admin/integration/airflow.md' 
+#      - 'MLflow' :   'admin/integration/mlflow.md'
+#      - 'Kubeflow' : 'admin/integration/kubeflow.md'
+#      - 'Seldon Core' : 'admin/integration/seldon.md'
+#      - 'ClearML' : 'admin/integration/clearml.md'
+#      - 'Argo Workflows'  : 'admin/integration/argo-workflows.md'
+#      - 'KubeVirt (VM)' : 'admin/integration/kubevirt.md'
+#      - 'Weights & Biases' : 'admin/integration/weights-and-biases.md'
+#      - 'Event Messaging': 'admin/integration/messaging.md'
+#      - 'DeepSpeed': 'admin/integration/deepspeed.md'
+#      - 'Comet' : 'admin/integration/comet.md'
+#      - 'Spark' : 'admin/integration/spark.md'
+#      - 'Ray' : 'admin/integration/ray.md'
   - 'Researcher' :
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
@@ -277,9 +271,9 @@ nav:
           - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
           - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
         - 'Creation' :
-            - 'Create an Environments' : 'Researcher/user-interface/workspaces/create/create-env.md'
-            - 'Create a Compute Resources' : 'Researcher/user-interface/workspaces/create/create-compute.md'
-            - 'Create a Data Sources' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+            - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
+            - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+            - 'Create a Data Source' :  'Researcher/user-interface/workspaces/create/create-ds.md'
             - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
@@ -316,6 +310,8 @@ nav:
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
+      - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
+      - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
@@ -343,7 +339,7 @@ nav:
         - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
         - 'Distributed Training Workloads' : 'developer/cluster-api/reference/distributed.md'
         - 'Inference Workloads' : 'developer/cluster-api/reference/inference.md'
-    - 'Administrator API' : 'developer/admin-rest-api/overview.md'
+    - 'Control Plane API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
     - 'Deprecated APIs' :
@@ -356,4 +352,4 @@ nav:
       - 'Inference API' :
         - 'Overview' : 'developer/deprecated/inference/overview.md' 
         - 'Setup' : 'developer/deprecated/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md' 
+        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'

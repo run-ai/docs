@@ -180,7 +180,7 @@ Added feature to leverage [Placement Groups](https://docs.aws.amazon.com/AWSEC2/
 
 **Job Status Notifications**
 
-Added the capability to send job statuses notifications to Slack. For configuration information, see [Event Router](../admin/integration/messaging.md).
+Added the capability to send job statuses notifications to Slack. For configuration information, see Event Router.
 
 ### Storage
 

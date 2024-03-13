@@ -11,7 +11,7 @@ Unattended workloads are a good fit for long-duration runs, or sets of smaller h
 
 ### Docker Image
 
-A docker container is based on a docker image. Some Researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}. 
+A docker container is based on a docker image. Some Researchers use generic images such as ones provided by Nvidia, for example: [NVIDIA NGC TensorFlow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow){target=_blank}.
 Others, use generic images as the __base__ image to a more customized image using [Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/){target=_blank}.
 
 Realizing that Researchers are not always proficient with building docker files, as a best practice, you will want to:
@@ -26,9 +26,9 @@ You will want to minimize the cycle of code change-and-run. There are a couple o
 
 1. Code resides on the network file storage. This way you can change the code and immediately run the Job. The Job picks up the new files from the network.
 2. Use the `runai submit` flag `--git-sync`. The flag allows the Researcher to provide details of a Git repository. The repository will be automatically cloned into a specified directory when the container starts.
-3. The code can be embedded within the image. In this case, you will want to create an automatic CI/CD process, which packages the code into a modified image. 
+3. The code can be embedded within the image. In this case, you will want to create an automatic CI/CD process, which packages the code into a modified image.
 
-The document below assumes option #1. 
+The document below assumes option #1.
 
 ### Create a Startup Script
 
@@ -36,7 +36,7 @@ Gather the commands you ran inside the interactive Job into a single script. The
 
 An example of a common startup script __start.sh__:
 
-``` 
+```
 pip install -r requirements.txt
 ...
 python training.py
@@ -97,7 +97,7 @@ Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-su
 
 ### Use CLI Policies
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to set administrator policies for these configurations and use pre-configured configuration when submitting a Workload. Please refer to [Configure Command-Line Interface Policies](../../admin/workloads/policies.md). 
+Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to set administrator policies for these configurations and use pre-configured configuration when submitting a Workload. Please refer to [Configure Command-Line Interface Policies](../../admin/workloads/policies/policies.md).
 
 ## Attached Files
 

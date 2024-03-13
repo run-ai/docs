@@ -60,6 +60,15 @@ To add a new department:
 
 <!-- 4. In *Access control* select a user or application to be department administrator. If there are no users assigned the role of department administrator, see [Assigning Department Administrator role](#assigning-department-administrator-role). -->
 
+### Download Departments Table
+
+You can download the Departments table to a CSV file. Downloading a CSV can provide a snapshot history of your departments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+To download the Departments table to a CSV:
+1. Open *Departments*.
+2. From the *Columns* icon, select the columns you would like to have displayed in the table.
+3. Click on the ellipsis labeled *More*, and download the CSV.
+
 ### Assigning Department Administrator role
 
 There are two ways to add *Department Administrator* roles to a department.
@@ -87,16 +96,6 @@ To assign the *Access rule* to the department:
 3. From the *Role* dropdown, select *Department administrator*, then press *Save rule*.
 4. If you want to add another rule, use the *+Access rule*.
 5. When all the rules are configured, press *Close*.
-
-<!-- After you have created the user with the Department Administrator role, you will need to assign the user to the correct department.
-
-To assign the Department Administrator user to the correct department:
-
-1. Go to `Settings | Departments`.
-2. Select a department from the list, then press `Edit`. If you do not have a department, you will need to create one. See [Adding a new department](#adding-departments).
-3. Select `Department Administrator`, then select `Users` or `Applications`.
-4. If you selected `Users`, select one or more users from the drop down menu.
-5. Press save when complete. -->
 
 ### Assigning Projects to Departments
 
