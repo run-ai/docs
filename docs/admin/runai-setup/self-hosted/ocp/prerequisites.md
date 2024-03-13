@@ -42,8 +42,11 @@ Run:ai supports OpenShift. OpenShift Versions supported are detailed [here](../.
 
 * OpenShift must be configured with a trusted certificate. Run:ai installation relies on OpenShift to create certificates for subdomains. 
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank} (Idp). 
+* If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../config/org-cert.md).
 
+### (Air-gapped only) Local Certificate Authority
 
+In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
 
 ### NVIDIA Prerequisites
 

@@ -64,6 +64,23 @@ Every new workload is associated with a Project. The Project contains a deserved
 * If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
 * If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
 
+### Limit Quota Over or Under Subscription
+
+Run:ai provides the ability to limit over subscription of quotas by *Projects* or *Departments*.
+
+Over quota will be limited under the following circumstances:
+
+* If a project’s quota request (with or without nodepools) increases the sum of all the department projects quotas to more than the department quota (for GPU and CPU, compute and memory).
+* If a department’s quota decrease request (with or without nodepools) causes the sum of all projects quotas to surpass the department quota (for GPU and CPU, compute and memory).
+* If a project’s quota decrease request (with or without nodepools) causes the sum of all allocated non-preemptible workloads in that project to surpass it (for GPU and CPU, compute and memory).
+
+To configure limiting over or under quota subscriptions:
+
+1. Press the *Tools and settings* icon, then go to *General*.
+2. Enable the *Limit quota over/under subscription* toggle.
+
+To disable the limiting of over quota subscription, disable the toggle.
+
 ### Quota with Multiple Resources
 
 A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over-quota" it will have to have at *least one* resource over its quota. For a project to be under-quota it needs to have *all of its* resources under-quota.
@@ -129,19 +146,30 @@ This behavior allows you to go back to the original current behavior.
 By default, the Run:ai software at the cluster level maintains the current fairness mode after an upgrade. To change to the fairness mode, the Admin must change the `RunaiConfig file and change the parameters above.
 
 ### Over-Quota Priority
-When the Over-quota Priority feature is enabled, The Run:ai scheduler allocates GPUs within-quota and over-quota using different weights. Within quota, GPUs are allocated based on assigned GPUs. The remaining over-quota GPUs are allocated based on their relative portion of GPU Over-quota Priority for each Project.
-GPUs Over-Quota Priority values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
 
-Let's examine the previous example with Over-Quota Weights:
+*Over-Quota Priority* prioritizes the distribution of unused resources so that they are allocated to departments and projects fairly. Priority is determined by an assigned weight. *Over-Quota Priority* values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
+
+**For *Projects***
+
+When *Over-Quota Priority* is enabled, the excess resources are split between the Projects according to the over-quota-priority weight set by the admin. When *Over-Quota Priority* is disabled, excess resources are split between the Projects according to weights, and the weights are equal to the deserved quota. This means Projects with a higher deserved quota will get a larger portion of the unused resources.
+
+An example with Over-Quota Weights for projects:
 
 * Project A has been allocated with a quota of 3 GPUs and GPU over-quota weight is set to Low.
 * Project B has been allocated with a quota of 1 GPU and GPU over-quota weight is set to High.
+
+**For *Departments***
+
+When *Departments* are enabled, excess resources are first split to the departments, then internally to the projects.Excess resources between Departments are always split between departments according to the weights which are equal to the deserved quota regardless of the Over-Quota-Priority flag.
 
 Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over-quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
 
 With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
 
-* Note: Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
+!!! Note
+    Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
+
+When the Over Quota Priority is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources.
 
 ### Bin-packing & Consolidation
 

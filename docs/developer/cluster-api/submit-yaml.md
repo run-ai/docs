@@ -73,7 +73,6 @@ spec:
 
 1. This is an _Interactive_ workload.
 
-
 ## Inference Workload Example
 
 Creating an inference workload is similar to the above two examples.

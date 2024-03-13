@@ -17,7 +17,7 @@ Run the helm command below:
 
 === "Connected"
     ``` bash
-    helm repo add runai-backend https://backend-charts.storage.googleapis.com
+    helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
     helm repo update
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
         --set global.domain=<DOMAIN>  # (1)
@@ -42,6 +42,10 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
+## (Air-gapped only) Local Certificate Authority
+
+Perform the instructions for [local certificate authority](../../config/org-cert.md). 
+
 
 ## (Optional) Additional Configurations
 
@@ -55,6 +59,7 @@ There may be cases where you need to set additional properties as follows:
 | `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with domain certificate. See [above](#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
 | `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for the Run:ai database  |
 | `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for the Run:ai database  |
+| `global.postgresql.auth.port`  | PostgreSQL port | Override the default PostgreSQL port for the Run:ai database  |
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
 | `thanos.receive.persistence.storageClass` and `postgresql.primary.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |

@@ -1,4 +1,10 @@
-# Configure Policies
+---
+title: Policies
+summary: This article is about the V1 policies. These are policies that worked from version 2.15 and lower.
+authors:
+    - Jason Novich
+date: 2023-Dec-12
+---
 
 ## What are Policies?
 
@@ -20,7 +26,10 @@ Policies are specific to Workload type as such there are several kinds of Polici
 
 A Policy can be created per Run:ai Project (Kubernetes namespace). Additionally, a Policy resource can be created in the `runai` namespace. This special Policy will take effect when there is no project-specific Policy for the relevant workload kind.
 
- When researchers create a new interactive workload or workspace, they see list of available node pools and their priority. Priority is set by dragging and dropping the node pools in the desired order of priority. When the node pool priority list is **locked** by an administrator **policy**, the node pool list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+When researchers create a new interactive workload or workspace, they see list of available node pools and their priority. Priority is set by dragging and dropping the node pools in the desired order of priority. When the node pool priority list is **locked** by an administrator **policy**, the node pool list isn't editable by the Researcher even if the workspace is created from a template or copied from another workspace.
+
+!!! Note
+    Policies on this page cannot be added to platform 2.16 or higher that have the *New Policy Manager* enabled.
 
 ## Creating a Policy
 
@@ -178,7 +187,6 @@ spec:
           path: nil
 ```
 
-
 ### Syntax
 
 The complete syntax of the policy YAML can be obtained using the `explain` command of kubectl. For example:
@@ -280,8 +288,22 @@ When submitting a workload that is affected by this policy, the created containe
 the namespace where the workload runs.
 
 !!! Note
-    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](secrets.md#secrets-and-projects)
-  
+    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../secrets.md#secrets-and-projects).
+
+### Prevent Data Storage on the Node
+
+You can configure policies to prevent the submission of workloads that use data sources that consist of a host path. This setting prevents data from being stored on the node so that in the event when a node is deleted, all data stored on that node is lost.
+
+Example for rejecting workloads requesting host path:
+
+```yml
+spec:
+  volumes:
+    itemRules:
+      nfsServer:
+        required: true
+```
+
 ## Terminate Run:ai training Jobs after preemption policy
 
 Administrators can set a ‘termination after preemption’ policy to Run:ai training jobs. After applying this policy, a training job will be terminated once it has been preempted from any reason. For example, a training job that is using over-quota resources (e.g. GPUs) and the owner of those GPUs wants to reclaim them back, the Training job is preempted and typically goes back to the pending queue. However, if the termination policy is applied, the job is terminated instead of reinstated as pending. The Termination after Preemption Policy can be set as a cluster-wide policy (applicable to all namespaces/projects) or per project/namespace.
@@ -340,4 +362,13 @@ To access _project-specific_ policies, replace the `-n runai` parameter with the
 
 ## See Also
 
-* For creating workloads based on policies, see the Run:ai [submitting workloads](../../developer/cluster-api/workload-overview-dev.md)
+* For creating workloads based on policies, see the Run:ai [submitting workloads](../../../developer/cluster-api/workload-overview-dev.md)
+
+**API LINK HERE!!!!!!!!**
+
+<!-- <swagger-ui src="../../policy-API.json"> -->
+
+<body>
+    <redoc spec-url='../../../policy-API.json'></redoc>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+  </body>

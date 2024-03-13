@@ -13,7 +13,7 @@ To uninstall the cluster see: [cluster delete](../../cluster-setup/cluster-delet
 To delete the control plane, run:
 
 ``` shell
-helm delete runai-backend -n runai-backend
+helm uninstall runai-backend -n runai-backend
 
 ```
 
