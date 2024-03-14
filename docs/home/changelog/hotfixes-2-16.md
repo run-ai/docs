@@ -36,7 +36,6 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 
 | Internal ID | Description |
 |--|--|
-| RUN-16346 | Fixed an issue where the *Jobs* and *Deployments* pages were not displayed for trial users. |
 | RUN-16070 | Fixed an issue where missing metrics caused the *Nodepools* table to appear empty. |
 
 ## Version 2.16.14
@@ -49,7 +48,7 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 
 | Internal ID | Description |
 |--|--|
-| RUN-16255 | Fixed an issue in the *Analytics* dashboard where some node panels were displaying incorrect data. |
+| RUN-16255 | Fixed an issue in the *Analytics* dashboard where the *GPU Allocation per Node* and *GPU Memory Allocation per Node* panels were displaying incorrect data. |
 | RUN-16035 | Fixed an issue in the *Workloads* table where completed pods continue to be counted in the requested resources column. |
 
 ## Version 2.16.12
@@ -58,15 +57,12 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 
 | Internal ID | Description |
 |--|--|
-| RUN-16110 | Fixed an issue where creating a training workload (Standard or Distributed) with a new PVC or Volume, resulted in the *Workloads* table showing the workload in the Unknown/Pending status. |
+| RUN-16110 | Fixed an issue where creating a training workload (single or multi-node) with a new PVC or Volume, resulted in the *Workloads* table showing the workload in the Unknown/Pending status. |
 | RUN-16086 | Fixed an issue in airgapped environments where incorrect installation commands were shown. |
 
 ## Version 2.16.11
 
-| Internal ID | Description |
-|--|--|
-| RUN-16102 | Fixed an issue where browser pages behaved strangely for users who logged in and did not have the correct permissions. |
-| RUN-16068 | Fixed an issue in the UI where the *Projects* selection pane is not working. |
+N/A
 
 ## Version 2.16.9
 
@@ -86,10 +82,7 @@ N/A
 
 ### Fixed issues
 
-| Internal ID | Description |
-|--|--|
-| RUN-15709 | Fixed an issue where internal system audits were exposed to the event history in the API and the UI. |
-| RUN-15706 | Fixed an issue in the *Workspace* table, where the copy and edit buttons did not work. |
+N/A
 
 ## Version 2.16.6
 
