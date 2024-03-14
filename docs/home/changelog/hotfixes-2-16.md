@@ -58,7 +58,7 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 | Internal ID | Description |
 |--|--|
 | RUN-16110 | Fixed an issue where creating a training workload (single or multi-node) with a new PVC or Volume, resulted in the *Workloads* table showing the workload in the Unknown/Pending status. |
-| RUN-16086 | Fixed an issue in airgapped environments where incorrect installation commands were shown. |
+| RUN-16086 | Fixed an issue in airgapped environments where incorrect installation commands were shown when upgrading to V2.15. |
 
 ## Version 2.16.11
 
