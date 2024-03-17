@@ -2,23 +2,8 @@
 # Install the Run:ai Control Plane 
 
 ## Prerequisites 
-### Domain certificate
+Follow the prerequisites as explained in [Control Plane prerequisites](./prerequisites.md).
 
-You must provide the [domain's](prerequisites.md#domain-name) private key and crt as a Kubernetes secret in the `runai-backend` namespace. Run: 
-
-```
-kubectl create secret tls runai-backend-tls -n runai-backend \
-    --cert /path/to/fullchain.pem --key /path/to/private.pem
-```
-
-### (Air-gapped only) Local Certificate Authority
-
-Perform the instructions for [local certificate authority](../../config/org-cert.md). 
-
-### (Optional) Private docker registry 
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret).
-
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Create a Secret based on existing credentials](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials){target=_blank}.
 
 ## Install the Control Plane
 
