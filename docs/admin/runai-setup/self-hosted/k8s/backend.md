@@ -15,7 +15,7 @@ kubectl create secret tls runai-backend-tls -n runai-backend \
 
 Perform the instructions for [local certificate authority](../../config/org-cert.md). 
 
-### (Optional) Private docker registry credentials 
+### (Optional) Private docker registry 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret).
 
 Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Create a Secret based on existing credentials](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials){target=_blank}.
