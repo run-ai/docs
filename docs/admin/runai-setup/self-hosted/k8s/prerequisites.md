@@ -2,6 +2,18 @@
 
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 
+## Run:ai Components
+
+As part of the installation process you will install:
+
+* A control-plane managing cluster
+* One or more clusters
+
+Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
+
+!!! Important
+    In OpenShift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
+    
 ## Installer machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
