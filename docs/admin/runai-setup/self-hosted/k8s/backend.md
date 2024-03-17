@@ -69,7 +69,7 @@ There may be cases where you need to set additional properties as follows:
 Use the `--set` syntax in the helm command above.  
 
 #### Custom docker registry credentials 
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
+To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret).
 
 Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Create a Secret based on existing credentials](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials){target=_blank}.
 
