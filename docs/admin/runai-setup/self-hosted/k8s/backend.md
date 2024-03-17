@@ -1,9 +1,9 @@
 
 # Install the Run:ai Control Plane 
 
-## Prerequisites 
-Follow the prerequisites as explained in [Control Plane prerequisites](./prerequisites.md).
+## Prerequisites and preperations
 
+Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
 
 ## Install the Control Plane
 
@@ -38,7 +38,7 @@ Run the helm command below:
 
 
 
-### (Optional) Additional Configurations
+### Additional configurations (optional)
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
@@ -58,17 +58,15 @@ There may be cases where you need to set additional properties as follows:
 
 Use the `--set` syntax in the helm command above.  
 
-
-
-
 ## Next Steps
-### Connect to Run:ai User Interface
+
+### Connect to Run:ai User interface
 
 Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
 
-### (Optional) Enable "Forgot password"
+### Enable Forgot Password (optional)
 
-To support the “Forgot password” functionality, follow the steps below.
+To suppot the *Forgot password* functionality, follow the steps below.
 
 * Go to `runai.<domain>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.

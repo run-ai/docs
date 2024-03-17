@@ -1,26 +1,24 @@
 # Self-Hosted installation over Kubernetes - Prerequisites
 
-
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 
-
-## Hardware Requirements
-
-See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
-
-In addition, the control plane installation of Run:ai requires the configuration of Kubernetes Persistent Volumes of a total size of 110GB. 
-
-### Installer Machine
+## Installer machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
 
 * At least 50GB of free space.
 * Docker installed.
 
+## Cluster hardware requirements
 
-## Run:ai Software Requirements
+See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
 
-### Operating System
+In addition, the control plane installation of Run:ai requires the configuration of Kubernetes Persistent Volumes of a total size of 110GB. 
+
+
+## Run:ai software requirements
+
+### Operating system
 
 See Run:ai Cluster prerequisites [operating system](../../cluster-setup/cluster-prerequisites.md#operating-system) requirements.
 
@@ -44,7 +42,7 @@ The Run:ai control-plane requires a __default storage class__ to create persiste
     kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
 
-## Install Prerequisites
+## Install prerequisites
 
 ### Helm
 
@@ -66,12 +64,8 @@ See Run:ai Cluster prerequisites [Prometheus](../../cluster-setup/cluster-prereq
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
 
-### (Air-gapped only) Local Certificate Authority
 
-In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
-
-
-### (Optional) Inference
+### Inference (Optional)
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
@@ -94,7 +88,9 @@ You must provide the domain's private key and crt as a Kubernetes secret in the 
 kubectl create secret tls runai-backend-tls -n runai-backend \
     --cert /path/to/fullchain.pem --key /path/to/private.pem
 ```
+### Local Certificate Authority (air-gapped only) 
 
+In air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
 
 ## Validate Prerequisites
 
@@ -114,5 +110,6 @@ If the script fails, or if the script succeeds but the Kubernetes system contain
 
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
-## Next Steps
-Continue to prepare the [Prepare to install Run:ai Control-Plane](./preparations.md) installation
+## Next steps
+Continue to [Preparing for a Run:ai Kubernetes Installation
+](./preparations.md).
