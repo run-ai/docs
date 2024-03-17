@@ -38,8 +38,6 @@ Run the helm command below:
 
 
 
-
-
 ### (Optional) Additional Configurations
 There may be cases where you need to set additional properties as follows:
 
