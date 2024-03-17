@@ -4,15 +4,6 @@
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 
 
-## Run:ai Components
-
-As part of the installation process you will install:
-
-* Run:ai Control-Plane
-* One or more Run:ai Clusters
-
-Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
-
 ## Hardware Requirements
 
 See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
@@ -26,13 +17,6 @@ The machine running the installation script (typically the Kubernetes master) mu
 * At least 50GB of free space.
 * Docker installed.
 
-## Run:ai Software 
-
-=== "Connected"
-    You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
-
-=== "Airgapped"
-    You should receive a single file `runai-air-gapped-<version>.tar.gz` from Run:ai customer support
 
 ## Run:ai Software Requirements
 
@@ -112,14 +96,6 @@ kubectl create secret tls runai-backend-tls -n runai-backend \
 ```
 
 
-### (Optional) Private Docker Registry 
-
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
-
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
-
-* Airgapped installation only - Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-
 ## Validate Prerequisites
 
 Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
@@ -139,4 +115,4 @@ If the script fails, or if the script succeeds but the Kubernetes system contain
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
 ## Next Steps
-Continue with installing a [Run:ai Control-Plane](./backend.md).
+Continue to prepare the [Prepare to install Run:ai Control-Plane](./preparations.md) installation

@@ -1,15 +1,23 @@
 ---
-title: Self-Hosted Installation over Kubernetes - Preparations
+title: Self Hosted installation over Kubernetes - Preparations
 ---
+# Preparing for a Run:ai Kubernetes Installation
+
+The following section provides IT with the information needed to prepare for a Run:ai installation. 
 
 ## Prerequisites 
 
 See the Prerequisites section [above](prerequisites.md).
 
 
-## Prepare Installation Artifacts
+## Software Artifacts
 
-### Run:ai Software Files
+=== "Connected"
+    You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
+
+=== "Airgapped"
+    You should receive a single file `runai-air-gapped-<version>.tar.gz` from Run:ai customer support
+ 
 
 SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
@@ -23,10 +31,12 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     ```
 
 === "Airgapped" 
+    Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ``` bash
-    tar xvf runai-air-gapped-<version>.tar.gz
+    tar xvf runai-air-gapped-<VERSION>.tar.gz
     cd deploy
 
     kubectl create namespace runai-backend
@@ -49,6 +59,12 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
 
     The script should create a file named `custom-env.yaml` which will be used by the control-plane installation.
+
+### (Optional) Private Docker Registry 
+
+To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
+
+Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
 
 ## (Optional) Mark Run:ai System Workers

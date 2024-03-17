@@ -28,15 +28,6 @@ The machine running the installation script (typically the Kubernetes master) mu
 
 ## Run:ai Software
 
-=== "Connected"
-    You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
-
-=== "Airgapped"
-    You should receive a single file `runai-<version>.tar` from Run:ai customer support
-
-
-## Run:ai Software Prerequisites
-
 ### Operating System
 
 OpenShift has specific operating system requirements that can be found in the RedHat documentation. 
@@ -101,4 +92,4 @@ If the script fails, or if the script succeeds but the Kubernetes system contain
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
 ## Next Steps
-Continue with installing a [Run:ai Control-Plane](./backend.md).
+Continue to prepare the [Prepare to install Run:ai Control-Plane](./preparations.md) installation
