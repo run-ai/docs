@@ -9,7 +9,7 @@ The following section provides IT with the information needed to prepare for a R
 See the Prerequisites section [above](prerequisites.md).
 
 
-## Create dedicated OpenShift project
+## Create OpenShift project
 
 The Run:ai control plane uses a namespace (or _project_ in OpenShift terminology) name `runai-backend`. You must create it before installing:
 
@@ -70,7 +70,7 @@ Create the secret named `runai-reg-creds` based on your existing credentials. Fo
 
 ## Mark Run:ai system workers (optional)
 
-You can *optionally* set the Run:ai control plane to run on specific nodes. Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
+You can **optionally** set the Run:ai control plane to run on specific nodes. Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
 
 To set system worker nodes run:
 

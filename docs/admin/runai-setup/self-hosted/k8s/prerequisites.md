@@ -13,7 +13,7 @@ Both the control plane and clusters require Kubernetes. Typically the control pl
 
 !!! Important
     In OpenShift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
-    
+
 ## Installer machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
@@ -77,7 +77,7 @@ See Run:ai Cluster prerequisites [Prometheus](../../cluster-setup/cluster-prereq
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
 
 
-### Inference (Optional)
+### Inference (optional)
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
