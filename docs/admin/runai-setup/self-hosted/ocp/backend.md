@@ -1,10 +1,6 @@
 # Install the Run:ai Control Plane
-## Prerequisites
-### (Optional) Private docker registry 
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
-
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
-
+## Prerequisites 
+Follow the prerequisites as explained in [Control Plane prerequisites](./prerequisites.md).
 
 ## Install the Control Plane
 

@@ -1,10 +1,8 @@
----
-title: Self Hosted installation over OpenShift - Prerequisites
----
+# Self Hosted installation over OpenShift - Prerequisites
 
 Before proceeding with this document, please review the [installation types](../../installation-types.md) documentation to understand the difference between _air-gapped_ and _connected_ installations. 
 
-## Control-plane and clusters
+## Run:ai Components
 
 As part of the installation process you will install:
 
@@ -19,6 +17,13 @@ Both the control plane and clusters require Kubernetes. Typically the control pl
 ## Hardware Requirements
 
 See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
+
+### Installer Machine
+
+The machine running the installation script (typically the Kubernetes master) must have:
+
+* At least 50GB of free space.
+* Docker installed.
 
 
 ## Run:ai Software
@@ -44,11 +49,12 @@ Run:ai supports OpenShift. OpenShift Versions supported are detailed [here](../.
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank} (Idp). 
 * If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../config/org-cert.md).
 
-### (Air-gapped only) Local Certificate Authority
+## Install Prerequisites
+### Helm
 
-In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
-### NVIDIA Prerequisites
+### NVIDIA GPU Operator
 
 See Run:ai Cluster prerequisites [installing NVIDIA dependencies in OpenShift](cluster.md#prerequisites).
 
@@ -57,29 +63,26 @@ The Run:ai control plane, when installed without a Run:ai cluster, does not requ
 Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped){target=_blank}. 
 
 
-### (Optional) Inference Prerequisites 
+### (Optional) Inference 
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
-### Helm
+## Configure your environment
 
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+### (Air-gapped only) Local Certificate Authority
+In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
 
-## Installer Machine
+### (Optional) Private docker registry 
+To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
-The machine running the installation script (typically the Kubernetes master) must have:
+Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
-* At least 50GB of free space.
-* Docker installed.
-
-## Other
-
-* (Airgapped installation only) __Private Docker Registry__. Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+* Airgapped installation only - Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
 
 
-## Pre-install Script
+## Validate Prerequisites
 
 Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
 
@@ -97,3 +100,5 @@ If the script fails, or if the script succeeds but the Kubernetes system contain
 
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
+## Next Steps
+Continue with installing a [Run:ai Control-Plane](./backend.md).

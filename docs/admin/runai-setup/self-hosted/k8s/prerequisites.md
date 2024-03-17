@@ -118,7 +118,7 @@ To access the organization's docker registry it is required to set the registry'
 
 Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
-* (Airgapped installation only)  __Private Docker Registry__. Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
+* Airgapped installation only - Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
 
 ## Validate Prerequisites
 
@@ -139,4 +139,4 @@ If the script fails, or if the script succeeds but the Kubernetes system contain
 For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
 ## Next Steps
-Continue with installing a [Run:ai Control-Plane](backend.md).
+Continue with installing a [Run:ai Control-Plane](./backend.md).
