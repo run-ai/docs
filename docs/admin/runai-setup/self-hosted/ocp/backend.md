@@ -1,4 +1,10 @@
 # Install the Run:ai Control Plane
+## Prerequisites 
+### (Optional) Custom docker registry credentials 
+To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
+
+Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
+
 
 ## Install the Control Plane
 
@@ -37,13 +43,13 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
-## (Air-gapped only) Local Certificate Authority
+### (Air-gapped only) Local Certificate Authority
 
 Perform the instructions for [local certificate authority](../../config/org-cert.md). 
 
-## (Optional) Additional Configurations
 
-### Helm values
+### (Optional) Additional Configurations
+
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
@@ -61,17 +67,21 @@ There may be cases where you need to set additional properties as follows:
 
 Use the `--set` syntax in the helm command above.  
 
-### Custom docker registry credentials 
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
-
-# Connect to Run:ai User Interface
+### Connect to Run:ai User Interface
 
 * Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. 
 * Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. 
 * Go to the Users area and change the password. 
 
-# Next Steps
-
+## Next Steps
+### Install Run:ai Cluster
 Continue with installing a [Run:ai Cluster](cluster.md).
+
+### (Optional) Enable "Forgot password"
+
+To support the “Forgot password” functionality, follow the steps below.
+
+* Go to `runai.<openshift-cluster-domain>/auth` and Log in. 
+* Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
+* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
