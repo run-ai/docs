@@ -43,6 +43,7 @@ Perform the instructions for [local certificate authority](../../config/org-cert
 
 ## (Optional) Additional Configurations
 
+#### Helm values
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
@@ -55,9 +56,16 @@ There may be cases where you need to set additional properties as follows:
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
 | `thanos.receive.persistence.storageClass` and `postgresql.primary.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |
-| `global.imagePullSecrets:` <br> &ensp; `- name: <secret-name>`  | Docker secret | Provide credentials for accessing the organization's docker registry. This is required for air-gapped environments  |
 | `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<component>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |   
-|<div style="width:200px"></div>| | |Use the `--set` syntax in the helm command above.  
+|<div style="width:200px"></div>| | |
+
+Use the `--set` syntax in the helm command above.  
+
+#### Custom docker registry credentials 
+To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
+
+Create the secret named `runai-reg-creds` based on your existing credentials as explained [here](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
+
 
 ## Connect to Run:ai User Interface
 
