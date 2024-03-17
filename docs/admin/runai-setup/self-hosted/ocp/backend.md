@@ -43,7 +43,7 @@ Perform the instructions for [local certificate authority](../../config/org-cert
 
 ## (Optional) Additional Configurations
 
-#### Helm values
+### Helm values
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
@@ -61,18 +61,18 @@ There may be cases where you need to set additional properties as follows:
 
 Use the `--set` syntax in the helm command above.  
 
-#### Custom docker registry credentials 
+### Custom docker registry credentials 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
 Create the secret named `runai-reg-creds` based on your existing credentials as explained [here](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
 
-## Connect to Run:ai User Interface
+# Connect to Run:ai User Interface
 
 * Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. 
 * Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. 
 * Go to the Users area and change the password. 
 
-## Next Steps
+# Next Steps
 
 Continue with installing a [Run:ai Cluster](cluster.md).
