@@ -48,7 +48,7 @@ Perform the instructions for [local certificate authority](../../config/org-cert
 
 
 ## (Optional) Additional Configurations
-#### Helm values
+### Helm values
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
