@@ -64,8 +64,7 @@ Use the `--set` syntax in the helm command above.
 ### Custom docker registry credentials 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
-Create the secret named `runai-reg-creds` based on your existing credentials as explained [here](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
-
+Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
 # Connect to Run:ai User Interface
 
