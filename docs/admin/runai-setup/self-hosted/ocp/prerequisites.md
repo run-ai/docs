@@ -59,37 +59,6 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
-## Configure your environment
-
-### Local Certificate Authority (air-gapped only)
-In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
-
-### Private docker registry (optional)
-To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
-
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
-
-* Airgapped installation only - Run:ai assumes the existence of a Docker registry for images. Most likely installed within the organization. The installation requires the network address and port for the registry (referenced below as `<REGISTRY_URL>`). 
-
-
-## Validate prerequisites
-
-Once you believe that the Run:ai prerequisites are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
-
-* Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
-* Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation. 
-
-To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
-
-```
-chmod +x preinstall-diagnostics-<platform>
-./preinstall-diagnostics-<platform> 
-```
-
-If the script fails, or if the script succeeds but the Kubernetes system contains components other than Run:ai, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:ai technical support. 
-
-For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
-
 ## Next steps
 Continue to [Preparing for a Run:ai OpenShift Installation
 ](./preparations.md).

@@ -9,14 +9,6 @@ The following section provides IT with the information needed to prepare for a R
 See the Prerequisites section [above](prerequisites.md).
 
 
-## Create OpenShift project
-
-The Run:ai control plane uses a namespace (or _project_ in OpenShift terminology) name `runai-backend`. You must create it before installing:
-
-```
-oc new-project runai-backend
-```
-
 ## Software artifactss
 
 === "Connected"
@@ -61,14 +53,27 @@ oc new-project runai-backend
 
     The script should create a file named custom-env.yaml which will be used by the control-plane installation.
 
-
 ### Private Docker Registry (optional)
 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
 Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
 
-## Mark Run:ai system workers (optional)
+## Configure your environment
+
+### Create OpenShift project
+
+The Run:ai control plane uses a namespace (or _project_ in OpenShift terminology) name `runai-backend`. You must create it before installing:
+
+```
+oc new-project runai-backend
+```
+
+### Local Certificate Authority (air-gapped only)
+In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed. 
+
+
+### Mark Run:ai system workers (optional)
 
 You can **optionally** set the Run:ai control plane to run on specific nodes. Kubernetes will attempt to schedule Run:ai pods to these nodes. If lacking resources, the Run:ai nodes will move to another, non-labeled node.  
 
@@ -81,9 +86,28 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 !!! Warning
     Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
 
+
 ## Additional permissions
 
 As part of the installation, you will be required to install the [Control plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/){target=_blank}. The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts. 
+
+## Validate prerequisites
+
+Once you believe that the Run:ai prerequisites and preperations are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+
+* Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
+* Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation. 
+
+To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
+
+```
+chmod +x preinstall-diagnostics-<platform>
+./preinstall-diagnostics-<platform> 
+```
+
+If the script fails, or if the script succeeds but the Kubernetes system contains components other than Run:ai, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:ai technical support. 
+
+For more information on the script including additional command-line flags, see [here](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
 ## Next steps
 
