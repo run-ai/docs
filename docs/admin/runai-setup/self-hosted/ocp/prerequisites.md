@@ -21,6 +21,10 @@ The machine running the installation script (typically the Kubernetes master) mu
 * At least 50GB of free space.
 * Docker installed. 
 
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
 ## Cluster hardware requirements
 
 See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
@@ -40,9 +44,6 @@ Run:ai supports OpenShift. OpenShift Versions supported are detailed [here](../.
 * If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../config/org-cert.md).
 
 ## Install prerequisites
-### Helm
-
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ### NVIDIA GPU Operator
 

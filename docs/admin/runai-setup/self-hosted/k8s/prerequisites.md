@@ -21,6 +21,11 @@ The machine running the installation script (typically the Kubernetes master) mu
 * At least 50GB of free space.
 * Docker installed.
 
+
+### Helm
+
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
 ## Cluster hardware requirements
 
 See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
@@ -55,10 +60,6 @@ The Run:ai control-plane requires a __default storage class__ to create persiste
     ```
 
 ## Install prerequisites
-
-### Helm
-
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ### Ingress Controller
 
