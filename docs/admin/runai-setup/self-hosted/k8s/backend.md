@@ -25,13 +25,15 @@ Run the helm command below:
 === "Airgapped"
     ``` bash
     helm upgrade -i runai-backend control-plane-<VERSION>.tgz  \ # (1)
-        --set global.domain=<DOMAIN>  # (2)
-        -n runai-backend -f custom-env.yaml  # (3)
+        --set global.domain=<DOMAIN>  \ # (2)
+        --set global.customCA.enabled=true \  # (3)
+        -n runai-backend -f custom-env.yaml  # (4)
     ```
        
     1. Replace `<VERSION>` with the Run:ai control plane version.
     2. Domain name described [here](prerequisites.md#domain-name). 
-    3. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
+    3. See the Local Certificate Authority instructions below
+    4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
