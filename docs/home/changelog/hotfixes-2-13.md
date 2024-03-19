@@ -8,16 +8,13 @@ date: 2024-Jan-22
 
 The following is a list of the known and fixed issues for Run:ai V2.13.
 
-* <!--RUN-16574 Update EULA PDF file -->Updated the EULA agreement.
-
 ## Version 2.13.48 - March 14, 2024
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
-| RUN-16787 | pytorch jobs - pvcs from policy are not mounted to master pod                                    |
-| RUN-16626 | Workspace/Training - when using a template UID, GID taken from idP are of the template's creator |
-| RUN-16357 | [2.13.41] [UI] Project button in jobs screen redirects to projects page but on the wrong cluster |
-| RUN-14842 | "Use Optimized Analytics Dashboard Queries" flag should be ON by default for new customers       |
+| RUN-16787 | Fixed an issue after an upgrade to 2.13 where distributed PyTorch jobs were not able to run due to PVCs being assigned to only worker pods. |
+| RUN-16626 | Fixed an issue in SSO environments, where *Workspaces* created using a template were assigned the template creator's UID/GID and not the *Workspace* creator's UID/GID. |
+| RUN-16357 | Fixed an issue where pressing the *Project* button in *Jobs* screen redirects the view to the *Projects* of a different cluster in multi-cluster environments. |
 
 ## Version 2.13.43 - February 15, 2024
 
