@@ -3,10 +3,10 @@
     "version": "v2.16",
     "title": "2.16",
     "aliases": [
-      "v2.16-alias",
-      "2.16-alias",
       "latest",
-      "2.16"
+      "2.16",
+      "v2.16-alias",
+      "2.16-alias"
     ]
   },
   {
