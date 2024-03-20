@@ -9,7 +9,7 @@ The following section provides IT with the information needed to prepare for a R
 See the Prerequisites section [above](prerequisites.md).
 
 
-## Software artifactss
+## Software artifacts
 
 === "Connected"
     You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.

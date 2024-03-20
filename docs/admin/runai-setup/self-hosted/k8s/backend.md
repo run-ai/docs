@@ -68,7 +68,7 @@ Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.a
 
 ### Enable Forgot Password (optional)
 
-To suppot the *Forgot password* functionality, follow the steps below.
+To support the *Forgot password* functionality, follow the steps below.
 
 * Go to `runai.<domain>/auth` and Log in. 
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
