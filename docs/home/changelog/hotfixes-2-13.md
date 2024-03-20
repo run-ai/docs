@@ -49,6 +49,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | Internal ID | Description  |
 | ---------------------------- | ---- |
 | RUN-11367 | Fixed an issue where a double click on *SSO Users* redirects to a blank screen. |
+| RUN-10560 | Fixed an issue where the [`RunaiDaemonSetRolloutStuck`](../../admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck.md) alert did not work. |
 
 ## Version 2.13.25
 
