@@ -20,7 +20,7 @@ SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
     ``` bash
     kubectl create namespace runai-backend
-    kubectl apply -f runai-gcr-secret.yaml
+    kubectl apply -f runai-reg-creds.yaml
     ```
 
 === "Airgapped" 

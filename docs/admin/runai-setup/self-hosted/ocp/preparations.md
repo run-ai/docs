@@ -12,7 +12,7 @@ See the Prerequisites section [above](prerequisites.md).
 ## Software artifacts
 
 === "Connected"
-    You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
+    You should receive a file: `runai-reg-creds.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
 
     SSH into a node with `oc` access (`oc` is the OpenShift command line) to the cluster and `Docker` installed.
 
