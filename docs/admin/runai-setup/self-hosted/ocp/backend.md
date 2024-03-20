@@ -1,5 +1,9 @@
 # Install the Run:ai Control Plane
 
+## Prerequisites and preperations
+
+Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
+
 ## Install the Control Plane
 
 Run the helm command below:
@@ -37,11 +41,7 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
 
-## (Air-gapped only) Local Certificate Authority
-
-Perform the instructions for [local certificate authority](../../config/org-cert.md). 
-
-## (Optional) Additional Configurations
+### Additional configurations (optional)
 
 There may be cases where you need to set additional properties as follows:
 
@@ -55,16 +55,29 @@ There may be cases where you need to set additional properties as follows:
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
 | `thanos.receive.persistence.storageClass` and `postgresql.primary.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |
-| `global.imagePullSecrets:` <br> &ensp; `- name: <secret-name>`  | Docker secret | Provide credentials for accessing the organization's docker registry. This is required for air-gapped environments  |
 | `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<component>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |   
-|<div style="width:200px"></div>| | |Use the `--set` syntax in the helm command above.  
+|<div style="width:200px"></div>| | |
 
-## Connect to Run:ai User Interface
+Use the `--set` syntax in the helm command above.  
+
+
+
+## Next steps
+### Connect to Run:ai user interface
 
 * Run: `oc get routes -n runai-backend` to find the Run:ai Administration User Interface URL. 
 * Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. 
 * Go to the Users area and change the password. 
 
-## Next Steps
+### Enable Forgot Password (optional)
 
+To support the *Forgot password* functionality, follow the steps below.
+
+* Go to `runai.<openshift-cluster-domain>/auth` and Log in. 
+* Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
+* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
+
+### Install Run:ai Cluster
 Continue with installing a [Run:ai Cluster](cluster.md).
+
+
