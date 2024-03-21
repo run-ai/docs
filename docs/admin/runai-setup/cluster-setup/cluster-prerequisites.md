@@ -52,7 +52,7 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
     * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
 ### NVIDIA 
 
-Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9.0 The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
 
 !!! Important
     NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9 and is resolved in 22.9.0. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
