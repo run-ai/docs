@@ -63,7 +63,7 @@ Run:ai v2.9 is compatible with the following specific versions of the NVIDIA GPU
 
 #### Unsupported Versions
 
-Run:ai does not currently support any of the following:
+Run:ai v2.9 does not currently support any of the following:
 
 Interim versions (1.10 and 1.11) of the NVIDIA GPU Operator due to documented issues.
 Versions above 22.9.0, including 22.9.1. Testing revealed incompatibility with this version.
