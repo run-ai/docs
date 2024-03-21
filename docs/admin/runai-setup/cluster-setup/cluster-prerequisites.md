@@ -50,12 +50,23 @@ Run:ai provides instructions for a simple (non-production-ready) [Kubernetes Ins
 !!! Notes
     * Kubernetes [recommends](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/){target=_blank} the usage of the `systemd` as the [container runtime cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker){target=_blank}. Kubernetes 1.22 and above defaults to `systemd`. 
     * Run:ai 2.8 or earlier Supports Kubernetes [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){target=_blank} if used. Pod Security Policy is deprecated and will be removed from Kubernetes 1.25. As such, Run:ai has removed support for PSP in Run:ai 2.9
-### NVIDIA 
+### NVIDIA GPU Operator
 
-Run:ai requires NVIDIA GPU Operator version 1.9 or 22.9. The interim versions (1.10 and 1.11) have a documented issue as per the note below. 
+Run:ai requires the NVIDIA GPU Operator to be installed and running on your cluster.
 
-!!! Important
-    NVIDIA GPU Operator has a bug that affects metrics and scheduling. The bug affects NVIDIA GPU Operator versions 1.10 and 1.11 but does not exist in 1.9 and is resolved in 22.9.0. For more details see [NVIDIA bug report](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}. 
+#### Supported Versions
+
+Run:ai v2.9 is compatible with the following specific versions of the NVIDIA GPU Operator only:
+
+- 1.9
+- 22.9.0
+
+#### Unsupported Versions
+
+Run:ai does not currently support any of the following:
+
+Interim versions (1.10 and 1.11) of the NVIDIA GPU Operator due to documented issues.
+Versions above 22.9.0, including 22.9.1. Testing revealed incompatibility with this version.
 
 === "On Prem"    
     Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#install-nvidia-gpu-operator){target=blank} to install the __NVIDIA GPU Operator__.
