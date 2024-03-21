@@ -67,7 +67,19 @@ To create a host path data source, provide:
 !!! Note
     The data can be limited to read-only permission regardless of any other user privileges.
 
-### Download Data Sources Table
+## Create a ConfigMap data source
+
+* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+  
+    !!! Note
+        You can only choose a project as a scope.
+
+* A data source name.
+* A data mount consisting of:
+    * A ConfigMap name&mdash;select from the drop down.
+    * A target location&mdash;the path to the container.
+
+## Download Data Sources Table
 
 You can download the Data Sources table to a CSV file. Downloading a CSV can provide a snapshot history of your Data Sources over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
