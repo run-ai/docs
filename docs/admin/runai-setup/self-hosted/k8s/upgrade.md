@@ -26,8 +26,6 @@ Before upgrading the control plane, run:
 ``` bash
 POSTGRES_PV=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $3}')
 kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-kubectl delete secret -n runai-backend runai-backend-postgresql
-kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
 
 Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
