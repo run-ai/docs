@@ -119,8 +119,6 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
     !!! Note
     The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
 
-## Next Steps
-
-### Upgrade Cluster 
+## Upgrade Cluster 
 
 To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
