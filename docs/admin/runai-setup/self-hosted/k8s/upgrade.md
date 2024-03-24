@@ -8,6 +8,7 @@ title: Upgrade self-hosted Kubernetes installation
     Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.12, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
 
     From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. As such, they are subject to storage class [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} policy.
+    
 ## Preparations
 
 === "Connected"
@@ -18,9 +19,12 @@ title: Upgrade self-hosted Kubernetes installation
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 
-## Upgrade Control Plane
+## Before Upgrade
 
-### Upgrade from Version 2.9, 2.13, 2.15 or 2.16
+Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
+
+
+### Upgrade from version 2.13, 2.15 or 2.16
 
 Before upgrading the control plane, run:
 
@@ -29,31 +33,6 @@ POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spe
 THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
 kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
-
-### Upgrade from Version 2.7 or 2.8
-
-Before upgrading the control plane, run: 
-
-``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-
-kubectl delete secret -n runai-backend runai-backend-postgresql
-kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
-```
-
-Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
-
-``` bash
-kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
-kubectl delete ingressclass nginx 
-```
-(If Run:ai configuration has previously disabled NGINX installation then these lines should not be run).
-
-Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
-
-Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
 ### Upgrade from version 2.9, 2.10, 2.11 
 
@@ -89,17 +68,52 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
+### Upgrade from Version 2.7 or 2.8
+
+Before upgrading the control plane, run: 
+
+``` bash
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+
+kubectl delete secret -n runai-backend runai-backend-postgresql
+kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
+```
+
+Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
+
+``` bash
+kubectl delete ValidatingWebhookConfiguration runai-backend-nginx-ingress-admission
+kubectl delete ingressclass nginx 
+```
+(If Run:ai configuration has previously disabled NGINX installation then these lines should not be run).
+
+Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
+
+Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
+
 ### Upgrade Control Plane
 
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
-```
-helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+=== "2.13, 2.15, 2.16"
+    ```
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml
+    ```
+
+=== "2.7, 2.8, 2.9, 2.11"
+    ```
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
-```
+    ```
+
+
 
 !!! Note
     The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
