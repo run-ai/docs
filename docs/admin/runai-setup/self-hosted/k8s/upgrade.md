@@ -116,7 +116,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 
 
 
-!!! Note
+    !!! Note
     The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
 
 
