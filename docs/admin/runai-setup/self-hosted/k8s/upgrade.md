@@ -94,7 +94,7 @@ THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.s
 kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
 
-### Upgrade Control Plane
+## Upgrade Control Plane
 
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
@@ -119,7 +119,8 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
     !!! Note
     The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
 
+## Next Steps
 
-## Upgrade Cluster 
+### Upgrade Cluster 
 
 To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
