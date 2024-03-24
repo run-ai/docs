@@ -19,56 +19,11 @@ title: Upgrade self-hosted Kubernetes installation
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 
-## Before Upgrade
+## Before upgrade
 
 Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
 
-
-### Upgrade from version 2.13, 2.15 or 2.16
-
-Before upgrading the control plane, run:
-
-``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-```
-
-### Upgrade from version 2.9, 2.10, 2.11 
-
-Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
-
-#### PVC Ownership
-
-Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
-
-* Run:ai [requires](prerequisites.md#kubernetes) a Kubernetes storage class to be installed.
-* The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
-
-The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/concepts/storage/storage-classes/#introduction){target=_blank}, controls the [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} behavior: whether the data is saved or deleted when the Run:ai control plane is deleted.  
-
-To remove the ownership in an older installation, run:
-
-```
-kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
-kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
-```
-
-#### Ingress
-
-Delete the ingress object which will be recreated by the control plane upgrade
-
-```
-kubectl delete ing -n runai-backend runai-backend-ingress
-```
-#### Installation Customization
-
-The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
-
-* Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
-* Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
-
-### Upgrade from Version 2.7 or 2.8
+### Upgrade from version 2.7 or 2.8
 
 Before upgrading the control plane, run: 
 
@@ -92,6 +47,52 @@ kubectl delete ingressclass nginx
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
+
+
+### Upgrade from version 2.9, 2.10, 2.11 
+
+Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
+
+#### PVC ownership
+
+Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
+
+* Run:ai [requires](prerequisites.md#kubernetes) a Kubernetes storage class to be installed.
+* The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
+
+The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/concepts/storage/storage-classes/#introduction){target=_blank}, controls the [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} behavior: whether the data is saved or deleted when the Run:ai control plane is deleted.  
+
+To remove the ownership in an older installation, run:
+
+```
+kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+```
+
+#### Ingress
+
+Delete the ingress object which will be recreated by the control plane upgrade
+
+```
+kubectl delete ing -n runai-backend runai-backend-ingress
+```
+#### Installation customization
+
+The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
+
+* Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
+* Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
+
+
+### Upgrade from version 2.13, 2.15 or 2.16
+
+Before upgrading the control plane, run:
+
+``` bash
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+```
 
 ### Upgrade Control Plane
 
