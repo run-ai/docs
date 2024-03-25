@@ -126,6 +126,13 @@ nav:
       - 'Version 2.13' : 'home/whats-new-2-13.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
       - 'Version 2.8' : 'home/whats-new-2-8.md'
+      - 'Whats New 2022' : 'home/whats-new-2022.md'
+      - 'Whats New 2021' : 'home/whats-new-2021.md'
+      - 'Whats New 2020' : 'home/whats-new-2020.md'
+    - 'Changelog':
+      - 'Hot Fixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
+      - 'Hot Fixes for 2.15' : 'home/changelog/hotfixes-2-15.md'
+      - 'Hot Fixes for 2.13' : 'home/changelog/hotfixes-2-13.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
@@ -200,6 +207,7 @@ nav:
         - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
+      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
