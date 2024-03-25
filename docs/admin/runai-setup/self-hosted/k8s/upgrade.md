@@ -99,7 +99,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
-=== "2.13, 2.15, 2.16"
+=== "2.13, and later"
     ```
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
 
