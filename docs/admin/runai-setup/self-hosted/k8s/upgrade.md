@@ -19,27 +19,13 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade from Version 2.9 or 2.13
+### Upgrade to Version 2.17 and above
 
 Before upgrading the control plane, run:
 
 ``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-```
-
-### Upgrade from Version 2.7 or 2.8
-
-Before upgrading the control plane, run: 
-
-``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-
-kubectl delete secret -n runai-backend runai-backend-postgresql
-kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
+POSTGRES_PV=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $3}')
+kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
 
 Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
