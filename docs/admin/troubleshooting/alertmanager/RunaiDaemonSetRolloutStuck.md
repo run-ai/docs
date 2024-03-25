@@ -9,11 +9,11 @@ date: 2024-Jan-10
 
 ## Meaning
 
-Runai daemonset has 0 available pods on a relevant node
+Runai daemonset has 0 available pods on a relevant node.
 
 ## Impact
 
-No fractional gpu workloads support
+No fractional gpu workloads support.
 
 ## Severity
 
@@ -29,6 +29,6 @@ Identify the one or more daemonsets that have no running pods on some of the nod
 
 ## Mitigation
 
-Run `kubectl describe daemonset X -n runai` on the relevant deamonset(s) to try and figure out why it cannot create pods. 
+Run `kubectl describe daemonset X -n runai` on the relevant deamonset(s) to try and figure out why it cannot create pods.
 
-If you cannot correct the issue, contact Run:ai support. 
+If you cannot correct the issue, contact Run:ai support.

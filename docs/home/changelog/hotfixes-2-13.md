@@ -8,6 +8,14 @@ date: 2024-Jan-22
 
 The following is a list of the known and fixed issues for Run:ai V2.13.
 
+## Version 2.13.48 - March 14, 2024
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-16787 | Fixed an issue after an upgrade to 2.13 where distributed PyTorch jobs were not able to run due to PVCs being assigned to only worker pods. |
+| RUN-16626 | Fixed an issue in SSO environments, where *Workspaces* created using a template were assigned the template creator's UID/GID and not the *Workspace* creator's UID/GID. |
+| RUN-16357 | Fixed an issue where pressing the *Project* link in *Jobs* screen redirects the view to the *Projects* of a different cluster in multi-cluster environments. |
+
 ## Version 2.13.43 - February 15, 2024
 
 | Internal ID | Description  |
@@ -41,6 +49,7 @@ The following is a list of the known and fixed issues for Run:ai V2.13.
 | Internal ID | Description  |
 | ---------------------------- | ---- |
 | RUN-11367 | Fixed an issue where a double click on *SSO Users* redirects to a blank screen. |
+| RUN-10560 | Fixed an issue where the [`RunaiDaemonSetRolloutStuck`](../../admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck.md) alert did not work. |
 
 ## Version 2.13.25
 
