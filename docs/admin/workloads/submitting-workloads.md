@@ -93,6 +93,9 @@ To submit a workload using the UI:
 
       12. When your training configuration is complete. press *Create training*.
 
+=== "Inference"
+
+
 ## Workload Policies
 
 As an administrator, you can set *Policies* on Workloads.  Policies allow administrators to *impose restrictions* and set *default values* for Researcher Workloads. For more information see [Workload Policies](../workloads/policies/policies.md).
