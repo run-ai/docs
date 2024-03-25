@@ -19,13 +19,14 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade to Version 2.17 and above
+### Upgrade to from 2.9 and below 
 
 Before upgrading the control plane, run: 
 
 ``` bash
-POSTGRES_PV=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $3}')
-kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 
 kubectl delete secret -n runai-backend runai-backend-postgresql
 kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
@@ -83,10 +84,12 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
 ```
+POSTGRES_PVC=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $1}')
+THANOS_PVC=$(kubectl get pvc -n runai-backend | grep '\-thanos' | awk '{print $1}')
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
-    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
-    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+    --set postgresql.primary.persistence.existingClaim=$POSTGRES_PVC \ 
+    --set thanos.receive.persistence.existingClaim=$THANOS_PVC 
 ```
 
 !!! Note
