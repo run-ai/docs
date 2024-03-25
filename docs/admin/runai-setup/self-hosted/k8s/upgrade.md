@@ -19,7 +19,7 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade to from 2.9 and below 
+### Upgrade from 2.9
 
 Before upgrading the control plane, run: 
 
@@ -27,7 +27,10 @@ Before upgrading the control plane, run:
 POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
 THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
 kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+```
 
+### if the version is under 2.9
+``` bash
 kubectl delete secret -n runai-backend runai-backend-postgresql
 kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
