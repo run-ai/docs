@@ -23,7 +23,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     ```
 
 === "Airgapped"
-    You should receive a single file `runai-air-gapped-<version>.tar.gz` from Run:ai customer support
+    You should receive a single file `control-plane-<VERSION>.tar.gz` from Run:ai customer support
 
     SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
@@ -32,7 +32,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ``` bash
-    tar xvf runai-air-gapped-<VERSION>.tar.gz
+    tar xvf control-plane-<VERSION>.tgz
     cd deploy
 
     kubectl create namespace runai-backend
