@@ -9,7 +9,7 @@ title: Upgrade self-hosted OpenShift installation
     No preparation required.
 
 === "Airgapped" 
-    * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
+    * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tgz` from Run:ai customer support. The file contains the new version you want to upgrade to. `NEW-VERSION` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 ## Upgrade Control Plane

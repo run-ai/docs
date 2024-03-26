@@ -23,7 +23,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     ```
 
 === "Airgapped"
-    You should receive a single file `control-plane-<VERSION>.tar.gz` from Run:ai customer support
+    You should receive a single file `control-plane-<VERSION>.tgz` from Run:ai customer support
 
     SSH into a node with `kubectl` access to the cluster and `Docker` installed.
 
