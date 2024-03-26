@@ -20,7 +20,7 @@ title: Upgrade self-hosted Kubernetes installation
 
 ## Upgrade Control Plane
 
-### Upgrade to Version 2.17 and above
+### Upgrade from 2.9
 
 Before upgrading the control plane, run:
 
@@ -83,10 +83,12 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
 ```
+POSTGRES_PVC=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $1}')
+THANOS_PVC=$(kubectl get pvc -n runai-backend | grep '\-thanos' | awk '{print $1}')
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
-    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
-    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+    --set postgresql.primary.persistence.existingClaim=$POSTGRES_PVC \ 
+    --set thanos.receive.persistence.existingClaim=$THANOS_PVC 
 ```
 
 !!! Note
