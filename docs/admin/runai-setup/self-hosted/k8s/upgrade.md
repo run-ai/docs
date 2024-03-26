@@ -12,6 +12,7 @@ title: Upgrade self-hosted Kubernetes installation
 ## Preparations
 
 === "Connected"
+
     Run the helm command below:
 
     ``` bash
@@ -19,8 +20,9 @@ title: Upgrade self-hosted Kubernetes installation
     helm repo update
     ```
 
-=== "Airgapped" bash
-    * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
+=== "Airgapped"
+
+    * Ask for a tar file `constrol-plane-<NEW-VERSION>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 
@@ -113,7 +115,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend  -f runai_control_plane_values.yaml
+    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml
     ```
 
 ### Upgrade from version 2.7, 2.8, 2.9, or 2.11
@@ -132,7 +134,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
  
 === "Airgapped"
     ``` bash
-    helm upgrade -i runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend runai-backend/control-plane \
+    helm upgrade -i runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
