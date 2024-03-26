@@ -12,7 +12,12 @@ title: Upgrade self-hosted Kubernetes installation
 ## Preparations
 
 === "Connected"
-    No preparation required.
+    Run the helm command below:
+
+    ```
+    helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
+    helm repo update
+    ```
 
 === "Airgapped" 
     * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
@@ -49,7 +54,7 @@ Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisite
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
 
 
-### Upgrade from version 2.9, 2.10, 2.11 
+### Upgrade from version 2.9, 2.10 , or 2.11 
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
@@ -84,7 +89,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
 
-### Upgrade from version 2.13, 2.15 or 2.16
+### Upgrade from version 2.13, or later
 
 Before upgrading the control plane, run:
 
@@ -96,28 +101,43 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 
 ## Upgrade Control Plane
 
+### Upgrade from version 2.13, or later
+=== "Connected"
+    ```
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml
+    ```
+=== "Airgapped"
+    ```
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend  -f runai_control_plane_values.yaml
+    ```
+
+### Upgrade from version 2.7, 2.8, 2.9, or 2.11
+    
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
-=== "2.13, and later"
-    ```
-    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+=== "Connected"
 
-    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml
-    ```
-
-=== "2.7, 2.8, 2.9, 2.11"
     ```
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
     ```
-
-
+ 
+=== "Airgapped"
+    ```
+    helm upgrade -i runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend runai-backend/control-plane \
+    --set global.domain=<DOMAIN> \
+    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
+    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
+    ```
 
     !!! Note
-    The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
+        The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
+
 
 ## Upgrade Cluster 
 
