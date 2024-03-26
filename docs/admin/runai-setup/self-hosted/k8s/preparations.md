@@ -60,7 +60,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
-Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets){target=_blank}.
+Create the secret named `runai-reg-creds` based on your existing credentials. For more information, see [Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/){target=_blank}.
 
 ## Configure your environment
 

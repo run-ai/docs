@@ -133,6 +133,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
     ```
  
 === "Airgapped"
+
     ``` bash
     helm upgrade -i runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
