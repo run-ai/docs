@@ -9,7 +9,7 @@ title: Upgrade self-hosted OpenShift installation
     No preparation required.
 
 === "Airgapped" 
-    * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tgz` from Run:ai customer support. The file contains the new version you want to upgrade to. `NEW-VERSION` is the updated version of the Run:ai control plane.
+    * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tar.gz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 ## Upgrade Control Plane
@@ -78,7 +78,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 === "Airgapped"
     ``` bash
 
-    helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend \
+    helm upgrade -i runai-backend  ./control-plane-<NEW-VERSION>.tgz -n runai-backend \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \

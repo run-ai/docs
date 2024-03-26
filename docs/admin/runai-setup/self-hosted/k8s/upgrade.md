@@ -22,7 +22,7 @@ title: Upgrade self-hosted Kubernetes installation
 
 === "Airgapped"
 
-    * Ask for a tar file `constrol-plane-<NEW-VERSION>.tgz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
+    * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tar.gz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
 
