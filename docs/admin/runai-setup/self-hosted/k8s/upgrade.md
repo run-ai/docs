@@ -14,12 +14,12 @@ title: Upgrade self-hosted Kubernetes installation
 === "Connected"
     Run the helm command below:
 
-    ```
+    ``` bash
     helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
     helm repo update
     ```
 
-=== "Airgapped" 
+=== "Airgapped" bash
     * Ask for a tar file `runai-air-gapped-<new-version>.tar` from Run:ai customer support. The file contains the new version you want to upgrade to. `new-version` is the updated version of the Run:ai control plane.
     * Upload the images as described [here](preparations.md#runai-software-files).
 
@@ -69,7 +69,7 @@ The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/conc
 
 To remove the ownership in an older installation, run:
 
-```
+``` bash
 kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
@@ -78,7 +78,7 @@ kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotation
 
 Delete the ingress object which will be recreated by the control plane upgrade
 
-```
+``` bash
 kubectl delete ing -n runai-backend runai-backend-ingress
 ```
 #### Installation customization
@@ -102,13 +102,16 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 ## Upgrade Control Plane
 
 ### Upgrade from version 2.13, or later
+
 === "Connected"
-    ```
+
+    ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
     helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml
     ```
 === "Airgapped"
-    ```
+
+    ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
     helm upgrade runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend  -f runai_control_plane_values.yaml
     ```
@@ -120,7 +123,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
 
 === "Connected"
 
-    ```
+    ``` bash
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
@@ -128,7 +131,7 @@ kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPo
     ```
  
 === "Airgapped"
-    ```
+    ``` bash
     helm upgrade -i runai-backend runai-backend/runai-control-plane-<version>.tgz -n runai-backend runai-backend/control-plane \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
