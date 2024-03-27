@@ -12,7 +12,7 @@ title: Upgrade self-hosted Kubernetes installation
 ## Preparations
 
 ### Helm
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later.
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later.
 Before you continue, validate your installed helm client version.
 To install or upgrade Helm, see [Installing Helm](https://helm.sh/docs/intro/install/){target=_blank}.
 If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
@@ -127,19 +127,18 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
     ```
+
+    !!! Note
+        The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
  
 === "Airgapped"
 
     ``` bash
-    helm upgrade -i runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend runai-backend/control-plane \
+    helm upgrade -i runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
     ```
-
-    !!! Note
-        The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
-
 
 ## Upgrade Cluster 
 
