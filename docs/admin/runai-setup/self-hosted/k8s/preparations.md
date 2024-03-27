@@ -32,7 +32,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ``` bash
-    tar xvf runai-air-gapped-<VERSION>.tgz
+    tar xvf runai-air-gapped-<VERSION>.tar.gz
     cd deploy
 
     kubectl create namespace runai-backend
