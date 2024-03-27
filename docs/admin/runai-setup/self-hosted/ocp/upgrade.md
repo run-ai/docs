@@ -49,10 +49,10 @@ kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 
 Then upgrade the control plane as described [below](#upgrade-the-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from Version 2.9, 2.10 or 2.11
+### Upgrade from version 2.9, 2.10 or 2.11
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
-#### PVC Ownership
+#### PVC ownership
 
 Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
 
@@ -67,7 +67,7 @@ To remove the ownership in an older installation, run:
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
 
-#### Installation Customization
+#### Installation customization
 
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
 
@@ -112,8 +112,8 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 
 
 === "Airgapped"
-    ``` bash
 
+    ``` bash
     helm upgrade -i runai-backend  ./control-plane-<NEW-VERSION>.tgz -n runai-backend \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
