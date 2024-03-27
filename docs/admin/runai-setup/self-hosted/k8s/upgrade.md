@@ -91,15 +91,6 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
 
 
-### Upgrade from version 2.13, or later
-
-Before upgrading the control plane, run:
-
-``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-```
-
 ## Upgrade Control Plane
 
 ### Upgrade from version 2.13, or later
@@ -108,13 +99,13 @@ kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Reta
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
 === "Airgapped"
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml
+    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
 
 ### Upgrade from version 2.7, 2.8, 2.9, or 2.11
