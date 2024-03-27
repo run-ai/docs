@@ -11,9 +11,6 @@ As part of the installation process you will install:
 
 Both the control plane and clusters require Kubernetes. Typically the control plane and first cluster are installed on the same Kubernetes cluster but this is not a must. 
 
-!!! Important
-    In OpenShift environments, adding a cluster connecting to a __remote__ control plane currently requires the assistance of customer support.  
-
 ## Installer machine
 
 The machine running the installation script (typically the Kubernetes master) must have:
@@ -24,7 +21,7 @@ The machine running the installation script (typically the Kubernetes master) mu
 
 ### Helm
 
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later. To install Helm, see [Installing Helm](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later. To install Helm, see [Installing Helm](https://helm.sh/docs/intro/install/){target=_blank}. If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ## Cluster hardware requirements
 
