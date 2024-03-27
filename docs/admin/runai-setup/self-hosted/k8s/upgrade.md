@@ -11,6 +11,14 @@ title: Upgrade self-hosted Kubernetes installation
     
 ## Preparations
 
+### Helm
+Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.10 or later.
+Before you continue, validate your installed helm client version.
+To install or upgrade Helm, see [Installing Helm](https://helm.sh/docs/intro/install/){target=_blank}.
+If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
+### Software files
+
 === "Connected"
 
     Run the helm command below:
