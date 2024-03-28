@@ -24,6 +24,14 @@ date: 2024-Mar-10
 
 * <!-- RUN-14431/RUN-14432 New columns on cluster table-->Added new columns to the *Clusters* table to show Kubernetes distribution and version.
 
+* <!-- RUN-16237/RUN16238 - Remove cluster filter from top bar in assets -->Added a new *Cluster* filter to the top bar of the following tables:
+  
+    * Data sources
+    * Environments
+    * Computer resources
+    * Templates
+    * Credentials
+
 #### Monitoring and Analytics
 * <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 --> renamed the metrics, for details see:
 As of cluster version 2.17, we will support metrics through Run:ai API.
