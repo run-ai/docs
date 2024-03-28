@@ -4,7 +4,7 @@ The Run:ai Administration User Interface provides a set of dashboards that help 
 
 There are 5 dashboards:
 
-* [**GPU/CPU Overview**](#overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
+* [**GPU/CPU Overview**](#gpucpu-overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
 * [**Quota Management**](#quota-management-dashboard) dashboard&mdash;Provides information about quota utilization.
 * [**Analytics**](#analytics-dashboard) dashboard&mdash;Provides long term analysis of cluster behavior.
 * [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
@@ -20,9 +20,9 @@ The Overview dashboard provides information about what is happening **right now*
 
 The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
 
-The dashboard has a dropdown filter for node pools. From the dropdown, select one or more node pools. The default setting is `all`.
+To filter the dashboard by node pool, press *Add filter* and select a node pool from the list.
 
-Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
+Use the time range selector to choose a range of time for the tiles of the dashboard.
 
 ### GPU Dashboard
 
