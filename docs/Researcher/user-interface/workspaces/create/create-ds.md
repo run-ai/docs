@@ -30,6 +30,17 @@ To create an PVC data source, provide:
 
 * The path within the container where the data will be mounted.
 
+### PVC Status
+
+The *Datasources* table contains a column for the status of the data source. The following statuses are supported:
+
+| Status |  Description |
+| -- | -- |
+| **No issues found** | No issues were found when propagating the data source to the *PROJECTS* in the scope the user is assigned to. |
+| **Issues found** | Failed to create the data source for some or all of the *PROJECTS* in the scope the user is assigned to. |
+| **Issues found** | Failed to access the cluster. |
+| **Deleting** | The data source is being removed. |
+
 ## Create an S3 data source
 
 S3 storage saves data in *buckets*. S3 is typically attributed to AWS cloud service but can also be used as a separate service unrelated to Amazon.
