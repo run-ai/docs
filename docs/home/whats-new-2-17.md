@@ -16,6 +16,8 @@ date: 2024-Mar-10
 
 * <!-- RUN14616/RUN-14759 - Add configmap as data source -->Added the capability to use a configmap as a data source. For more information, see [Configure a configmap as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-configmap-data-source).
 
+* <!-- RUN-16242/RUN-16243 Add status table for credentials, configmap-DS, PVC-ds -->Added a status column to the *Credentials* table, and the *Data sources* table. The *status* column displays the state of the resource and provides troubleshooting information.
+
 ### Run:ai Administrator
 
 #### Clusters
