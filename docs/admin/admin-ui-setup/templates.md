@@ -53,6 +53,6 @@ Use the *Add filter* to add additional filters to the table.
 
 To download the templates table to a CSV:
 
-1. Open *templates*.
+1. Open *Templates*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
