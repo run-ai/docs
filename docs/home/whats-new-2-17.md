@@ -14,6 +14,8 @@ date: 2024-Mar-10
 
 #### Assets
 
+* <!-- RUN14616/RUN-14759 - Add configmap as data source -->Added the capability to use a configmap as a data source. For more information, see [Configure a configmap as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-config,ap-data-source).
+
 ### Run:ai Administrator
 
 #### Clusters
