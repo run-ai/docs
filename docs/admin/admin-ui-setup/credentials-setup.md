@@ -100,7 +100,17 @@ To configure *Credentials*:
 
 4. Press `Create credential` to create the credential.
 
-## Download Credentials Table
+## Credentials Table
+
+The *Credentials* table contains a column that shows the status of the credential. The following statuses are supported:
+
+| Status |  Description |
+| -- | -- |
+| **No issues found** | No issues were found when propagating the credential to the configured scope. |
+| **Issues found** | Issues were found while propagating the credentials to the configured scope. |
+| **Issues found** | The credential could not be created in the cluster. |
+| **No status** | Status could not be displayed because the credentials scope is an account. |
+| **No Status** | Status could not be displayed because the current version of the cluster is not up to date. |
 
 You can download the Credentials table to a CSV file. Downloading a CSV can provide a snapshot history of your credentials over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
