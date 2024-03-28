@@ -36,8 +36,8 @@ The *Datasources* table contains a column for the status of the data source. The
 
 | Status |  Description |
 | -- | -- |
-| **No issues found** | No issues were found when propagating the data source to the *PROJECTS* in the scope the user is assigned to. |
-| **Issues found** | Failed to create the data source for some or all of the *PROJECTS* in the scope the user is assigned to. |
+| **No issues found** | No issues were found when propagating the data source to the *PROJECTS*. |
+| **Issues found** | Failed to create the data source for some or all of the *PROJECTS*. |
 | **Issues found** | Failed to access the cluster. |
 | **Deleting** | The data source is being removed. |
 
