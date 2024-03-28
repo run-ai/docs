@@ -4,13 +4,13 @@ The Run:ai Administration User Interface provides a set of dashboards that help 
 
 There are 5 dashboards:
 
-* [**Overview**](#overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
+* [**GPU/CPU Overview**](#overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
 * [**Quota Management**](#quota-management-dashboard) dashboard&mdash;Provides information about quota utilization.
 * [**Analytics**](#analytics-dashboard) dashboard&mdash;Provides long term analysis of cluster behavior.
 * [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
 * [**Consumption**](#consumption-dashboard) dashboard&mdash;Provides information about resource consumption.
 
-## Overview Dashboard
+## GPU/CPU Overview Dashboard
 
 The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster, including:
 
@@ -34,8 +34,8 @@ The CPU dashboards display specific information for CPU based nodes, node-pools,
 
 To enable CPU Dashboards:
 
-1. Press the `Settings` icon, then press `General`
-2. Toggle the *Show CPU dashboard* switch to enable the feature.
+1. Press the `Tools & Settings` icon, then press `General`.
+2. Open the `Analytics` pane and toggle the *Show CPU dashboard* switch to enable the feature.
 
 Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
@@ -309,11 +309,14 @@ Use the drop down menus at the top of the dashboard to apply filters for:
 * Per department (single, multiple or all)
 * Per cluster (single, multiple, all)
 
-Use cost fields at the top of the dashboard to provides calculated costs for:
+To enable the Consumption Dashboard:
 
-* GPU
-* CPU
-* CPU memory (in GB)
+1. Press the `Tools & Settings` icon, then press `General`.
+2. Open the `Analytics` pane and toggle the *Consumption* switch to enable the feature.
+3. Enter the cost of:
+   1. GPU compute / Hour
+   2. CPU compute / Hour
+   3. CPU memory / Hour
 
 Use the time picker dropdown to select relative time range options and set custom absolute time ranges.
 You can change the Timezone and fiscal year settings from the time range controls by clicking the Change time settings button.
