@@ -7,6 +7,10 @@ You can select one or more resources. For example, one compute resource may cons
 !!! Note
     Selecting resources more than the cluster can supply will result in a permanently failed workspace.
 
+Use the *Cluster* filter at the top of the table to see compute resources that are assigned to specific clusters.
+
+Use the *Add filter* to add additional filters to the table.
+
 ## Set GPU resources
 
 GPU resources can be expressed in various ways:
@@ -33,7 +37,7 @@ A CPU resource consists of cores and memory. When GPU resources are requested th
 To create a compute resource:
 
 1. Select the `New Compute Resource` button.
-2. In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
+2. In the *Scope* pane, choose a cluster, department, or project from the tree. The compute resource is assigned to that item and all its subsidiaries.
 3. Give the resource a meaningful name.
 4. In the resources pane, set the resource request.
       1. To add GPU resources, enter the number of GPUs to request. You can then enter the amount of GPU memory by selecting a percentage of the GPU, memory size in MB or GB, or multi-instance GPUs.

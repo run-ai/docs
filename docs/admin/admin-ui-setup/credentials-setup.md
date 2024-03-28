@@ -57,7 +57,7 @@ To configure *Credentials*:
 
 ### `Docker registry`
 
-1. Select a `Scope` for the credential.
+1. Select a `Scope` (cluster, department, or project) for the credential.
 2. In the `Credential name` field, enter a name for the credential.
 3. In the `Secret` field, choose from `Existing secret` or `New secret`.
 
@@ -72,7 +72,7 @@ To configure *Credentials*:
 
 ### `Access key`
 
-1. Select a `Scope` for the credential.
+1. Select a `Scope` (cluster, department, or project) for the credential.
 2. In the `Credential name` field, enter a name for the credential.
 3. In the `Secret` field, choose from `Existing secret` or `New secret`.
 
@@ -87,7 +87,7 @@ To configure *Credentials*:
 
 ### `Username and password`
 
-1. Select a `Scope` for the credential.
+1. Select a `Scope` (cluster, department, or project) for the credential.
 2. In the `Credential name` field, enter a name for the credential.
 3. In the `Secret` field, choose from `Existing secret` or `New secret`.
 
@@ -104,7 +104,12 @@ To configure *Credentials*:
 
 You can download the Credentials table to a CSV file. Downloading a CSV can provide a snapshot history of your credentials over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
+Use the *Cluster* filter at the top of the table to see credentials that are assigned to specific clusters.
+
+Use the *Add filter* to add additional filters to the table.
+
 To download the Credentials table to a CSV:
+
 1. Open *Credentials*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
