@@ -33,8 +33,10 @@ date: 2024-Mar-10
     * Credentials
 
 #### Monitoring and Analytics
-* <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 --> renamed the metrics, for details see:
-As of cluster version 2.17, we will support metrics through Run:ai API.
+
+* <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. In addition, the *Workloads* table now has additional columns including connections and preemtability. In addition, using the *Copy & edit* button, you can submit a new workload based on the selected workload.
+
+the metrics as of cluster version 2.17, we will support metrics through Run:ai API.
 
 #### Authentication and Authorization
 
