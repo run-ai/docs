@@ -270,15 +270,12 @@ kubectl patch configmap/config-features \
 
 #### Inference Autoscaling
 
-Run:ai allows to autoscale a deployment according to various metrics:
+Run:ai allows to autoscale a deployment using the following metrics:
 
-1. GPU Utilization (%)
-2. CPU Utilization (%)
-3. Latency (milliseconds)
-4. Throughput (requests/second)
-5. Concurrency
-6. Any custom metric
+1. Throughput (requests/second)
+2. Concurrency
 
+<!--
 Additional installation may be needed for some of the metrics as follows:
 
 * Using *Throughput* or *Concurrency* does not require any additional installation.
@@ -286,6 +283,7 @@ Additional installation may be needed for some of the metrics as follows:
 * Using *GPU Utilization_, *Latency* or *Custom metric* will **also** require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md) for further information.
 
 If you wish to use an *existing* Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support.
+-->
 
 #### Accessing Inference from outside the Cluster
 
