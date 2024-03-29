@@ -65,10 +65,11 @@ Access the platform [API documentation](https://app.run.ai/api/docs){target=_bla
 
 You can manage a workload by selecting one from the view. Once selected, you can:
 
-* Delete a workload
-* Connect
-* Stop a workload
-* Activate a workload
+* Run a workload.
+* Stop a workload.
+* Connect to a workload.
+* Delete a workload.
+* Copy and edit a workload&mdash;use this function to run another workload based on the selected workload.
 * Show details&mdash;provides in-depth information about the selected workload including:
 
       * Event history&mdash;workload status over time. Use the filter to search through the history for specific events.
