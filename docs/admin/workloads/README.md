@@ -79,10 +79,10 @@ You can manage a workload by selecting one from the view. Once selected, you can
       * Event history&mdash;workload status over time. Use the filter to search through the history for specific events.
       * Metrics&mdash;use the drop down to filter metrics per pod. Select a category from the list below:
 
-          * GPU compute utilization
-          * GPU memory usage
-          * CPU usage
-          * CPU memory usage
+          * GPU compute utilization&mdash;hover over for individual GPU details
+          * GPU memory usage&mdash;hover over for individual GPU details
+          * CPU usage&mdash;hover over for usage details
+          * CPU memory usage&mdash;hover over for usage details
   
       * Logs&mdash;logs of the selected workload. Use the drop down to filter metrics per pod. Use the Download button to download the logs.
 
