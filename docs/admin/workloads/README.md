@@ -67,9 +67,13 @@ You can manage a workload by selecting one from the view. Once selected, you can
 
 * Run a workload.
 * Stop a workload.
-* Connect to a workload.
+* Connect to a workload&mdash;provides a connection to the selected workload's designated tool. Press the item in the column to show the connection URL.
 * Delete a workload.
 * Copy and edit a workload&mdash;use this function to run another workload based on the selected workload.
+
+    * If the workload was submitted using the UI, then a copy of the original workload form will open allowing you to make changes to the workload properties.
+    * If the workload was submitted using the CLI, then a window shows with the original CLI command. Copy the command and make changes to the submission.
+
 * Show details&mdash;provides in-depth information about the selected workload including:
 
       * Event history&mdash;workload status over time. Use the filter to search through the history for specific events.
