@@ -2,6 +2,27 @@
 
 The Run:ai Administration User Interface provides a set of dashboards that help you monitor Clusters, Cluster Nodes, Projects, and Workloads. This document provides the key metrics to monitor, how to assess them as well as suggested actions.
 
+Dashboards are used by system administrators to analyze and diagnose issues that relate to:
+
+* Physical Resources.
+* Organization resource allocation and utilization.
+* Usage characteristics.
+
+System administrators need to know important information about the physical resources that are currently being used. Important information such as:
+
+* Resource health.
+* Available resources and their distribution.
+* Is there a lack of resources.
+* Are resources being utilized correctly.
+
+With this information, system administrators can hone in on:
+
+* How resources are allocated across the organization.
+* How the different organizational units utilized quotas and resources within those quotas.
+* The actual performance of the organizational units.
+
+These dashboards give system administrators the ability to drill down to see details of the different types of workloads that each of the organizational units is running. These usage and performance metrics ensure that system administrators can then take actions to correct issues that affect performance.
+
 There are 5 dashboards:
 
 * [**GPU/CPU Overview**](#gpucpu-overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
