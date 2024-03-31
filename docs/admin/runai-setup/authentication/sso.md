@@ -55,7 +55,7 @@ You can configure your IdP to map several IdP attributes:
     	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload. 
     	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
     
-    2. Copy the `Redirect URL` and `Entity ID` for use with your identity provider if required.
+    2. Copy the `Redirect URL` and `Entity ID` and use them in your identity provider.
     3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
     4. When complete, press `Save`.
     5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
@@ -82,7 +82,7 @@ You can configure your IdP to map several IdP attributes:
     6. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
 
 !!! Important Note
-    Upon pressing `Save`, all existing users will be rendered non-functional, and the only valid user will be the *Administrator email* entered above. You can always revert by disabling *Login via SSO*.
+    When pressing `Save`, all existing users will be rendered non-functional. You can always revert by deleting the identity provider.
 
 ### Test
 
