@@ -49,20 +49,20 @@ You can configure your IdP to map several IdP attributes:
     Use your SAML response file to fill in the fields below.
 
 === "Saml 2"
-    
+
     1. Choose `From computer` or `From URL`.
     
     	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload.
     	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
     
-    2. Copy the `Rediect URL` and `Entity ID` for use with your identity provider if required.
+    2. Copy the `Redirect URL` and `Entity ID` for use with your identity provider if required.
     3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
     4. When complete, press `Save`.
     5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
     6. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
-    
+
 === "Open ID Connect"
-    
+
     1. In the `Discovery URL` field, enter the discovery URL .
     2. In the `Client ID` field, enter the client ID.
     3. In the `Client Secret` field, enter the client secret.
@@ -83,6 +83,7 @@ Test Connectivity to Administration User Interface:
 * You will be redirected to the IdP login page. Use the previously entered *Administrator* email* to log in.
 
 ### Troubleshooting
+
 The SSO login can be separated into two parts:
 
 1. Run:ai redirects to the IdP (for example, Google) for login using a *SAML Request*.
@@ -90,7 +91,7 @@ The SSO login can be separated into two parts:
 
 You can follow that by following the URL changes from [app.run.ai](https://app.run.ai) to the IdP provider (for example, [accounts.google.com](https://accounts.google.com)) and back to [app.run.ai](https://app.run.ai):
 
-* If there is an issue on the IdP site (for example, `app_is_not_configred` error in Google), the problem is likely to be in the SAML Request.
+* If there is an issue on the IdP site (for example, `app_is_not_configured` error in Google), the problem is likely to be in the SAML Request.
 * If the user is redirected back to Run:ai and something goes wrong, the problem is most likely in the SAML Response.
 
 #### Troubleshooting SAML Request
