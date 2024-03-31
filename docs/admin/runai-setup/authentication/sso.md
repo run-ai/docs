@@ -45,38 +45,37 @@ You can configure your IdP to map several IdP attributes:
 2. Open the `Security` pane and press `+Identity provider`.
 3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
 
-=== "SAML 2"
+    === "SAML 2"
 
-    1. Choose `From computer` or `From URL`.
+        1. Choose `From computer` or `From URL`.
+        
+        	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload. 
+        	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
+        
+        2. Copy the `Redirect URL` and `Entity ID` and use them in your identity provider.
+        3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        4. When complete, press `Save`.
     
-    	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload. 
-    	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
+        After you have configured the SAML 2 settings, you can download the XML file, and view the identity provider settings. 
+    	
+    	Press `Download` to download the file.
     
-    2. Copy the `Redirect URL` and `Entity ID` and use them in your identity provider.
-    3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
-    4. When complete, press `Save`.
-    5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-    6. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
+    	Pres `Edit` to both download the file, and view the:
+    
+        * Identity provider URL.
+        * Identity provider entity ID.
+        * Certificate expiration date.
 
-    After you have configured the SAML 2 settings, you can download the XML file, and view the identity provider settings. 
-	
-	Press `Download` to download the file.
+    === "Open ID Connect"
 
-	Pres `Edit` to both download the file, and view the:
+        1. In the `Discovery URL` field, enter the discovery URL .
+        2. In the `Client ID` field, enter the client ID.
+        3. In the `Client Secret` field, enter the client secret.
+        4. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        5.When complete, press `Save`.
 
-    * Identity provider URL.
-    * Identity provider entity ID.
-    * Certificate expiration date.
-
-=== "Open ID Connect"
-
-    1. In the `Discovery URL` field, enter the discovery URL .
-    2. In the `Client ID` field, enter the client ID.
-    3. In the `Client Secret` field, enter the client secret.
-    4. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
-    5.When complete, press `Save`.
-    5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-    6. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
+ 4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+ 5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
 
 !!! Important Note
     When pressing `Save`, all existing users will be rendered non-functional. You can always revert by deleting the identity provider.
