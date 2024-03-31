@@ -79,6 +79,8 @@ To create a host path data source, provide:
     * A ConfigMap name&mdash;select from the drop down.
     * A target location&mdash;the path to the container.
 
+## Data sources table
+
 The *Data sources* table contains a column for the status of the data source. The following statuses are supported:
 
 | Status |  Description |
@@ -88,7 +90,7 @@ The *Data sources* table contains a column for the status of the data source. Th
 | **Issues found** | Failed to access the cluster. |
 | **Deleting** | The data source is being removed. |
 
-## Download Data Sources Table
+### Download Data Sources Table
 
 You can download the Data Sources table to a CSV file. Downloading a CSV can provide a snapshot history of your Data Sources over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
