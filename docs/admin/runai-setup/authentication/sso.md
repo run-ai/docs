@@ -42,7 +42,7 @@ You can configure your IdP to map several IdP attributes:
 ## Step 1: UI Configuration
 
 1. Press the `Tools & Settings` then press `General`.
-2. Open the `Security` pane and press `Identity provider`.
+2. Open the `Security` pane and press `+Identity provider`.
 3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
 
 !!! Note
