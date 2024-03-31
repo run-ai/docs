@@ -45,9 +45,6 @@ You can configure your IdP to map several IdP attributes:
 2. Open the `Security` pane and press `+Identity provider`.
 3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
 
-!!! Note
-    Use your SAML response file to fill in the fields below.
-
 === "SAML 2"
 
     1. Choose `From computer` or `From URL`.
