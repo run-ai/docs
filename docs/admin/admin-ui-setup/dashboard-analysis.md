@@ -25,12 +25,12 @@ The dashboard has the following tiles:
 * Allocated GPU compute&mdash;displays the total number of GPUs allocated from all the nodes.
 * Running workloads&mdash;displays the number of running workloads.
 * Pending workloads&mdash;displays the number of workloads in the pending status.
-* Allocation ration by node pool&mdash;the graph displays the percentage of GPUs allocated per node pool. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details.
+* Allocation ration by node pool&mdash;displays the percentage of GPUs allocated per node pool. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details.
 * Free resources by node pool&mdash;the graph displays the amount of free resources per node pool. Press a entry in the graph for more details. Hover over the resource bubbles for specific details for the workers in the node. Use the ellipsis to download the graph as a CSV file.
-* Resource allocation by workload type&mdash;the graph displays the resource allocation by workload type. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
-* Workload by status&mdash;the graph displays the number of workloads for each status in the workloads table. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
-* Resources utilization&mdash;this graph displays the resource utilization over time. The right pane of the graph shows the average utilization of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
-* Resource allocation&mdash;this graph displays the resource allocation over time. The right pane of the graph shows the average allocation of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
+* Resource allocation by workload type&mdash;displays the resource allocation by workload type. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
+* Workload by status&mdash;displays the number of workloads for each status in the workloads table. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
+* Resources utilization&mdash;displays the resource utilization over time. The right pane of the graph shows the average utilization of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
+* Resource allocation&mdash;displays the resource allocation over time. The right pane of the graph shows the average allocation of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
 
 ### CPU Dashboard
 
@@ -43,6 +43,24 @@ To enable CPU Dashboards:
 
 Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
+The dashboard contains the following tiles:
+
+* Total CPU Nodes&mdash;displays the total amount of CPU nodes.
+* Ready CPU nodes&mdash;displays the total amount of CPU nodes in the ready state.
+* Total CPUs&mdash;displays the total amount of CPUs.
+* Ready CPUs&mdash;displays the total amount of CPUs in the ready state.
+* Allocated CPUs&mdash;displays the amount of allocated CPUs.
+* Running workloads&mdash;displays the amount of workloads in the running state.
+* Pending workloads&mdash;displays the amount of workloads in the pending state.
+* Allocated CPUs per project&mdash;displays the amount of CPUs allocated per project.
+* Active projects&mdash;displays the active projects  with the CPU allocation and amount of running and pending workloads.
+* Utilization per resource type&mdash;displays the CPU compute and CPU memory utilization over time.
+* CPU compute utilization&mdash;displays the current CPU compute utilization.
+* CPU memory utilization&mdash;displays the current CPU memory utilization.
+* Pending workloads&mdash;displays the requested resources and wait time for workloads in the pending status.
+* Workloads with error&mdash;displays the amount of workloads that are currently not running due to an error.
+* Workload Count per CPU Compute Utilization&mdash;
+* 5 longest running workloads&mdash;displays up to 5 of workloads that have the longest running time.
 
 **Analysis and Suggested actions**:
 
@@ -54,11 +72,7 @@ Toggle the switch to `disable` to disable *CPU Dashboards* option.
 ### Workloads with an Error
 
 Search for Workloads with an error status. These Workloads may be holding GPUs/CPUs without actually using them.
-<!--
-**How to**: view the following panel:
 
-![](img/jobs-with-errors.png)
--->
 **Analysis and Suggested actions**:
 
 Search for workloads with an Error status on the Workloads view and discuss with the Job owner. Consider deleting these Workloads to free up the resources for other users.
@@ -66,11 +80,7 @@ Search for workloads with an Error status on the Workloads view and discuss with
 ### Workloads with a Long Duration
 
 View list of 5 longest Workloads.
-<!-- 
-**How to**: view the following panel:
 
-![](img/long-jobs.png)
--->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions |
@@ -81,11 +91,7 @@ View list of 5 longest Workloads.
 ### Job Queue
 
 Identify queueing bottlenecks.
-<!-- 
-**How to**: view the following panel:
 
-![](img/queue.png)
--->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions  |
