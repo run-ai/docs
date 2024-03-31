@@ -12,6 +12,8 @@ date: 2024-Mar-10
 
 #### Jobs, Workloads, and Workspaces
 
+* <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. In addition, the *Workloads* table now has additional columns including connections and preemtability. In addition, using the *Copy & edit* button, you can submit a new workload based on the selected workload.
+
 #### Assets
 
 * <!-- RUN14616/RUN-14759 - Add configmap as data source -->Added the capability to use a configmap as a data source. For more information, see [Configure a configmap as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-configmap-data-source).
@@ -34,9 +36,9 @@ date: 2024-Mar-10
 
 #### Monitoring and Analytics
 
-* <!-- TODO @lavianalon RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. In addition, the *Workloads* table now has additional columns including connections and preemtability. In addition, using the *Copy & edit* button, you can submit a new workload based on the selected workload.
+* <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->New GPU Overview dashboard that provides rich and extensive GPU allocation and performance data. The GPU Overview dashboard now contains interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/admin-ui-setup/dashboard-analysis.md#overview-dashboard).
 
-the metrics as of cluster version 2.17, we will support metrics through Run:ai API.
+
 
 #### Authentication and Authorization
 
