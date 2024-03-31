@@ -41,34 +41,35 @@ You can configure your IdP to map several IdP attributes:
 
 ## Step 1: UI Configuration
 
-1. Open the Administration User interface.
-2. Go to `Settings | General`.
-3. Turn on `Login with SSO`.
-4. Enter the administrator email.
-5. Select the SSO protocol. Choose `Saml 2` or `Open ID Connect`.
+1. Press the `Tools & Settings` then press `General`.
+2. Open the `Security` pane and press `Identity provider`.
+3. Select the SSO protocol. Choose `Saml 2` or `Open ID Connect`.
 
 !!! Note
     Use your SAML response file to fill in the fields below.
 
-For `Saml 2`:
-
-   1. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
-   2. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
-   3. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   4.  Press `Save`.
-
-For `Open ID Connect`:
-
-:octicons-versions-24: Version 2.10 and later.
-
-   1. In the `Discovery Document URL` field, enter the URL to the discovery document.
-   2. In the `Client ID` field, enter the client ID.
-   3. In the `Client Secret` field, enter the client secret.
-   4. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
-   5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   6.  Press `Save`.
-
-Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
+=== "Saml 2"
+    
+    1. Choose `From computer` or `From URL`.
+    
+    	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload.
+    	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
+    
+    2. Copy the `Rediect URL` and `Entity ID` for use with your identity provider if required.
+    3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+    4. When complete, press `Save`.
+    5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+    6. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
+    
+=== "Open ID Connect"
+    
+    1. In the `Discovery URL` field, enter the discovery URL .
+    2. In the `Client ID` field, enter the client ID.
+    3. In the `Client Secret` field, enter the client secret.
+    4. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+    5.When complete, press `Save`.
+    6. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+    7. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
 
 !!! Important Note
     Upon pressing `Save`, all existing users will be rendered non-functional, and the only valid user will be the *Administrator email* entered above. You can always revert by disabling *Login via SSO*.
