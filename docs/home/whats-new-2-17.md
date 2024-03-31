@@ -38,8 +38,6 @@ date: 2024-Mar-10
 
 * <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->New GPU Overview dashboard that provides rich and extensive GPU allocation and performance data. The GPU Overview dashboard now contains interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/admin-ui-setup/dashboard-analysis.md#overview-dashboard).
 
-
-
 #### Authentication and Authorization
 
 * <!-- RUN-15431/RUN-15585 -  View & Edit SSO settings - SAML -->Added new functionality to SAML 2 SSO configuration to assist with troubleshooting login or permissions issues that may arise. Now administrators have the ability to:
@@ -56,4 +54,3 @@ For more information, see [SSO UI configuration](../admin/runai-setup/authentica
 ## Deprecation Notifications
 
 Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
-
