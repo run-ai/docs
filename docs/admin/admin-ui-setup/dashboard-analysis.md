@@ -66,7 +66,7 @@ The dashboard contains the following tiles:
 
 | Review  | Analysis  & Actions |
 |---------|---------------------|
-| Interactive Workloads are too frequently idle | *  Consider setting time limits for interactive Workloads through the Projects tab. <br> *  Consider also reducing GPU/CPU quotas for specific Projects to encourage users to run more training Workloads as opposed to interactive Workloads (note that interactive Workloads can not use more than the GPU/CPU quota assigned to their Project). |
+| Interactive Workloads are too frequently idle | *Consider setting time limits for interactive Workloads through the Projects tab. <br>*  Consider also reducing GPU/CPU quotas for specific Projects to encourage users to run more training Workloads as opposed to interactive Workloads (note that interactive Workloads can not use more than the GPU/CPU quota assigned to their Project). |
 | Training Workloads are too frequently idle | Identify and notify the right users and work with them to improve the utilization of their training scripts |
 
 ### Workloads with an Error
@@ -215,9 +215,9 @@ Provides a holistic, aggregated view across Clusters, including information abou
 
 This dashboard enables users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines. The dashboard also provides costing analysis for GPU, CPU, and memory costs for the system.
 
-![!copnsumption dasboard](img/consumption-dashboard.png)
+![!consumption dashboard](img/consumption-dashboard.png)
 
-The dashboard has 4 dashlets for:
+The dashboard has 4 tiles for:
 
 * Cumulative GPU allocation per Project or Department
 * Cumulative CPU allocation per Project or Department
