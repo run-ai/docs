@@ -40,6 +40,13 @@ the metrics as of cluster version 2.17, we will support metrics through Run:ai A
 
 #### Authentication and Authorization
 
+* <!-- RUN-15431/RUN-15585 -  View & Edit SSO settings - SAML -->Added new functionality to SAML 2 SSO configuration to assist with troubleshooting login or permissions issues that may arise. Now administrators have the ability to:
+
+    * View and edit SSO settings.
+    * Upload or download a settings XML file.
+
+For more information, see [SSO UI configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
+
 #### Policies
 
 ### Control and Visibility
