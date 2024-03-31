@@ -276,6 +276,10 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 > 
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
+#### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
+
+> Configure a `Configmap` object for use in a container.
+
 ### Network
 
 #### --address `<string>`

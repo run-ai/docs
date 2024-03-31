@@ -273,6 +273,10 @@ runai submit-dist tf --name distributed-job --workers=2 -g 1 \
 > 
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
+#### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
+
+> Configure a `Configmap` object for use in a container.
+
 ### Network
 
 #### --address `<string>`
