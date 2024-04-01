@@ -348,7 +348,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
 
-> Mlount a `Configmap` object for use as a data volume.
+> Mount a `Configmap` object for use as a data volume.
 
 ### Network
 
