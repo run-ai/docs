@@ -20,6 +20,8 @@ date: 2024-Mar-10
 
 * <!-- RUN-16242/RUN-16243 Add status table for credentials, configmap-DS, PVC-ds -->Added a status column to the *Credentials* table, and the *Data sources* table. The *status* column displays the state of the resource and provides troubleshooting information.
 
+* <!-- RUN-15725/RUN-16236 - Validate all tree scopes for version compatibility for assets creations -->Added functionality that validates version compatibility for assets such as credentials, PVC and configmap data sources. Invalid assets will appear greyed out and will show a pop up with the reason for the invalidation.
+
 ### Run:ai Administrator
 
 #### Clusters
@@ -33,6 +35,8 @@ date: 2024-Mar-10
     * Computer resources
     * Templates
     * Credentials
+
+* <!-- RUN-15619/RUN-16391 - Prevent multi-cluster scope & enable single-cluster scope (for all assets including policies & templates) -->Added functionality that prevents the account to be selected as part of the scope when creating assets, policies, and templates. Assets, polices, and templates that are created are cluster specific, even when the account has multiple clusters setup.
 
 #### Monitoring and Analytics
 
