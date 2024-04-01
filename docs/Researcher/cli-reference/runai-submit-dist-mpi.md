@@ -278,7 +278,7 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 
 #### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
 
-> Configure a `Configmap` object for use in a container.
+> Mlount a `Configmap` object for use as a data volume.
 
 ### Network
 

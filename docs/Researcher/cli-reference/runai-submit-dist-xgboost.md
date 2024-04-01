@@ -270,7 +270,7 @@ runai submit-dist xgboost --name distributed-job --workers=2 -g 1 \
 
 #### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
 
-> Configure a `Configmap` object for use in a container.
+> Mlount a `Configmap` object for use as a data volume.
 
 ### Network
 
