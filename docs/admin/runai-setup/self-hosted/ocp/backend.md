@@ -8,7 +8,7 @@ Run the helm command below:
     ``` bash
     helm repo add runai-backend https://backend-charts.storage.googleapis.com
     helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \ 
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.13.0" \ 
         --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ # (1)
         --set global.config.kubernetesDistribution=openshift 
     ```
