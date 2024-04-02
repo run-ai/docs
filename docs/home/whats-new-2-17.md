@@ -22,6 +22,8 @@ date: 2024-Mar-10
 
 * <!-- RUN-15725/RUN-16236 - Validate all tree scopes for version compatibility for assets creations -->Added functionality for asset creation that validates based on version compatibility for the cluster or the control plane within a specific scope. Invalid scopes will appear greyed out and will show a pop-up with the reason for the invalidation. This improvement is designed to increase the confidence that an asset is to be created properly and successfully.
 
+* <!-- RUN-15718/RUN-16235 - Omit the global cluster filter in asset creation forms -->Improved asset creation forms to remove the cluster filter from the top bar. This is only applicable if the cluster version is 2.17 and above.
+
 ### Run:ai Administrator
 
 #### Clusters
@@ -36,7 +38,7 @@ date: 2024-Mar-10
     * Templates
     * Credentials
 
-* <!-- RUN-15619/RUN-16391 - Prevent multi-cluster scope & enable single-cluster scope (for all assets including policies & templates) -->Added functionality that prevents the account from being selected as the scope when creating assets. This improvement in the UI removes the global cluster filter in the header. Enforcing a cluster specific scope increases the confidence that an asset is created properly and successfully. This is only applicable if the cluster version is <ask @Tom Bechar> for the specific cluster version> and above.
+* <!-- RUN-15619/RUN-16391 - Prevent multi-cluster scope & enable single-cluster scope (for all assets including policies & templates) -->Added functionality that prevents the account from being selected as the scope when creating assets. This improvement in the UI removes the global cluster filter in the header. Enforcing a cluster specific scope increases the confidence that an asset is created properly and successfully. This is only applicable if the cluster version is 2.17 and above.
 
 #### Monitoring and Analytics
 
