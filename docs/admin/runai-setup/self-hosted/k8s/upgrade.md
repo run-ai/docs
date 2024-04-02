@@ -85,7 +85,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
 ```
-helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.15.0" \
     --set global.domain=<DOMAIN> \
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
