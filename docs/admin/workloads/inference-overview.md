@@ -36,7 +36,7 @@ Run:ai provides Inference services as an equal part together with any other Work
 
 To withstand SLA, Inference workloads are typically set with *autoscaling*. Autoscaling is the ability to add more computing power (Kubernetes pods) when the load increases and shrink allocated resources when the system is idle.
 
-There are a number of ways to trigger auto-scaling. Run:ai supports the following:
+There are a number of ways to trigger autoscaling. Run:ai supports the following:
 
 | Metric          | Units        |   Run:ai name   |
 |-----------------|--------------|-----------------|
@@ -45,7 +45,7 @@ There are a number of ways to trigger auto-scaling. Run:ai supports the followin
 
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 
-Auto Scaling also supports a scale to zero policy with *Throughput* and *Concurrency* metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
+Autoscaling also supports a scale to zero policy with *Throughput* and *Concurrency* metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
 This has the benefit of conserving resources at the risk of a delay from "cold starting" the model when traffic resumes.
 
 ## See Also
