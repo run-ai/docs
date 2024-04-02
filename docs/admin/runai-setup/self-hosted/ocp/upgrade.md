@@ -59,7 +59,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 
 === "Connected"
     ``` bash
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.13.0"  \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
@@ -76,7 +76,7 @@ Then upgrade the control plane as described [below](#upgrade-the-control-plane).
 === "Airgapped"
     ``` bash
 
-    helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend --version "~2.13.0" \
+    helm upgrade -i runai-backend  ./runai-backend-<version>.tgz -n runai-backend --version \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
