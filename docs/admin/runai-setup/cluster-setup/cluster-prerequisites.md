@@ -343,7 +343,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 
 | Name | Description | URLs | Ports |
 |------|-------------|------|-------|
-|Run:ai  Repository| Run:ai Helm Package Repository| <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> |443 |
+|Run:ai  Repository| Run:ai Helm Package Repository| <a href="https://runai.jfrog.io/ui/native/run-ai-charts">runai.jfrog.io/ui/native/run-ai-charts</a> |443 |
 | Docker Images Repository | Run:ai images | gcr.io/run-ai-prod |443 |
 | Docker Images Repository | Third party Images |<a href="http://hub.docker.com/">hub.docker.com </a> and <a href="http://quay.io/">quay.io</a>  |  443  |
 | Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | 443 |

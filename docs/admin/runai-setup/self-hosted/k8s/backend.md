@@ -13,7 +13,7 @@ Run the helm command below:
     ``` bash
     helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
     helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.17.0" \
         --set global.domain=<DOMAIN>  # (1)
     ```
     
