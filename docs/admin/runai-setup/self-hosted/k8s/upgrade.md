@@ -19,13 +19,18 @@ title: Upgrade self-hosted Kubernetes installation
 
 
 ## Specific version instructions
-### Upgrade to Version 2.17 and above
 
-Before upgrading the control plane, run:
+## Upgrade from Version 2.7 or 2.8
+
+Before upgrading the control plane, run: 
 
 ``` bash
-POSTGRES_PV=$(kubectl get pvc -n runai-backend | grep '\-postgresql' | awk '{print $3}')
-kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
+THANOS_PV=$(kubectl get pvc pvc-thanos-receive -n runai-backend -o jsonpath='{.spec.volumeName}')
+kubectl patch pv $POSTGRES_PV $THANOS_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+
+kubectl delete secret -n runai-backend runai-backend-postgresql
+kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 ```
 
 Before version 2.9, the Run:ai installation, by default, included NGINX. It was possible to disable this installation. If NGINX is enabled in your current installation, as per the default, run the following 2 lines:
@@ -39,6 +44,7 @@ kubectl delete ingressclass nginx
 Next, install NGINX as described [here](../../cluster-setup/cluster-prerequisites.md#ingress-controller)
 
 Then create a TLS secret and upgrade the control plane as described in the [control plane installation](backend.md). Before upgrading, find customizations and merge them as discussed below. 
+
 
 ### Upgrade from version 2.9, 2.10, 2.11 
 
