@@ -22,11 +22,11 @@ To create an PVC data source, provide:
 * A Run:ai project scope which is assigned to that item and all its subsidiaries.
 * Select an existing PVC or create a new one by providing:
 
-    * A claim name
-    * A storage class
-    * Access mode
-    * Required storage size
-    * Volume system mode
+  * A claim name
+  * A storage class
+  * Access mode
+  * Required storage size
+  * Volume system mode
 
 * The path within the container where the data will be mounted.
 
@@ -78,8 +78,9 @@ To create a host path data source, provide:
 
 * A data source name.
 * A data mount consisting of:
-    * A ConfigMap name&mdash;select from the drop down.
-    * A target location&mdash;the path to the container.
+
+  * A ConfigMap name&mdash;select from the drop down.
+  * A target location&mdash;the path to the container.
 
 ## Data sources table
 
