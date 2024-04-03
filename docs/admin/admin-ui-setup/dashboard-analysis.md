@@ -31,7 +31,7 @@ There are 5 dashboards:
 * [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
 * [**Consumption**](#consumption-dashboard) dashboard&mdash;Provides information about resource consumption.
 
-## GPU/CPU Overview Dashboard
+## GPU/CPU Overview Dashboard (New and legacy)
 
 The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster. The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
 
