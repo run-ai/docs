@@ -132,7 +132,9 @@ To submit a workload using the UI:
          4. In the *Data sources* field, add a *New data source*. (optional)
    
             !!! Note
-                Data sources that have private credentials that have the status of issues found will be greyed out.
+                
+                * Data sources that have private credentials that have the status of issues found will be greyed out.
+                * Only PVC, Git, and ConfigMap resources are supported.
 
          5. In the *General field you can:
             1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional)
