@@ -53,7 +53,14 @@ To create an S3 data source, provide
 * The bucket name of the data.
 * The path within the container where the data will be mounted.
 
-Note that an S3 data source can be public or private. For the latter option, please select the relevant credentials associated with the project to allow access to the data.
+An S3 data source can be public or private. For the latter option, please select the relevant credentials associated with the project to allow access to the data. S3 buckets that use credentials will have a status associated with it. Statuses include:
+
+| Status |  Description |
+| -- | -- |
+| **No issues found** | No issues were found when propagating the data source to the *PROJECTS*. |
+| **Issues found** | Failed to create the data source for some or all of the *PROJECTS*. |
+| **Issues found** | Failed to access the cluster. |
+| **Deleting** | The data source is being removed. |
 
 ## Create a Git data source
 
@@ -64,7 +71,14 @@ To create a Git data source, provide:
 * The relevant repository URL.
 * The path within the container where the data will be mounted.
 
-The Git data source can be public or private. To allow access to a private Git data source, you must select the relevant credentials associated with the project.
+The Git data source can be public or private. To allow access to a private Git data source, you must select the relevant credentials associated with the project. Git data sources that use credentials will have a status associated with it. Statuses include:
+
+| Status |  Description |
+| -- | -- |
+| **No issues found** | No issues were found when propagating the data source to the *PROJECTS*. |
+| **Issues found** | Failed to create the data source for some or all of the *PROJECTS*. |
+| **Issues found** | Failed to access the cluster. |
+| **Deleting** | The data source is being removed. |
 
 ## Create a host path data source
 
@@ -78,7 +92,12 @@ To create a host path data source, provide:
 !!! Note
     The data can be limited to read-only permission regardless of any other user privileges.
 
-### Download Data Sources Table
+### Data sources table
+
+The *Data sources* table shows the data sources that are available and which ones are being used.
+
+!!! Note
+    The *Status* column in the table shows statuses based on your level of permissions. For example, a system administrator will see status that are calculated from the entire scope, while researchers will only be able to see statuses that from a subset of the scope (assets that they have permissions to).
 
 You can download the Data Sources table to a CSV file. Downloading a CSV can provide a snapshot history of your Data Sources over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
