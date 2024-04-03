@@ -14,6 +14,14 @@ date: 2024-Mar-10
 
 * <!-- ADDLINK RUN-11488/RUN-16508 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. In addition, the *Workloads* table now has additional columns including connections and preemtability. In addition, using the *Copy & edit* button, you can submit a new workload based on the selected workload. For more information, see [Workloads](../admin/workloads/README.md#workloads-view).
 
+* <!-- RUN-16435/RUN-16668 - Delete workspaces, trainings and jobs views -->Added a unified workloads submission pane. Now you can submit workloads by pressing *+New workloads* in the *Workloads* table. You can submit the following workloads from this table:
+
+      * Workspace
+      * Training
+      * Inference
+
+This improvement phases out the previous version's *Workspace* and *Jobs* tables. The *Jobs* table and submission forms have been deprecated and can be reactivated. To reenable the *Jobs* table and forms, press *Tools & settings*, then *General*, then *Workloads*, and then Toggle the *Jobs view* and the *Jobs submission* buttons.
+
 #### Assets
 
 * <!-- RUN14616/RUN-14759 - Add configmap as data source -->Added the capability to use a ConfigMap as a data source. For more information, see [Configure a ConfigMap as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-configmap-data-source).
