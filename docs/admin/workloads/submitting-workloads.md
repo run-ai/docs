@@ -30,13 +30,17 @@ To submit a workload using the UI:
          6. Select a *Volume persistency.
 
       7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+      
+        !!! Note
+            Data sources that have private credentials that have the status of issues found will be greyed out.
+
       8. In the *General* pane, add special settings for your training (optional):
 
          1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
          2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
          3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
-      9. When complete, press *Create workspace.
+      9.  When complete, press *Create workspace.
 
 === "Training"
 
@@ -50,8 +54,8 @@ To submit a workload using the UI:
          1. Select the number of workers for your training.
          2. Select *Compute resources* for your training or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 
-         !!! Note
-             The number of compute resources for the workers is based on the number of workers selected.
+        !!! Note
+            The number of compute resources for the workers is based on the number of workers selected.
 
       7. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
@@ -63,7 +67,11 @@ To submit a workload using the UI:
          6. Select a *Volume persistency.
 
       8. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
-      9. (Optional) In the *General* pane, add special settings for your training (optional):
+   
+        !!! Note
+            Data sources that have private credentials that have the status of issues found will be greyed out.
+
+      9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
          1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
          2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
@@ -85,6 +93,10 @@ To submit a workload using the UI:
             6. Select a *Volume persistency.
 
          4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+
+          !!! Note
+              Data sources that have private credentials that have the status of issues found will be greyed out.
+
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 
             1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
@@ -118,6 +130,10 @@ To submit a workload using the UI:
             1. In the *Replica autoscaling* section, set the minimum and maximum replicas for your inference. Then select *Never* or *After one minute of inactivity*  to set when the replicas should be automatically scaled down to zero.
             2. In the *Nodes* field, change the order of priority of the node pools, or add a new node pool to the list.
          4. In the *Data sources* field, add a *New data source*. (optional)
+   
+            !!! Note
+                Data sources that have private credentials that have the status of issues found will be greyed out.
+
          5. In the *General field you can:
             1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional)
             2. Add one or more *Annotation*. (optional)
