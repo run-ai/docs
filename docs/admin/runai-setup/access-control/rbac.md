@@ -29,11 +29,11 @@ Environment administrator | Create, view, edit, and delete *Environments*.<br> V
 | Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
 | Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, and *Templates*.<br>View *Projects*, related *Jobs* and *Workspaces*, and *Dashboards*. |
 | L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*.<br>View *Dashboards*.
-| ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
-| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
+| ML engineer | Create, edit, view, and delete *Inference*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
+| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Inference, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
 | L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. |
 | Template administrator | Create, view, edit, and delete *Templates*.<br>View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Data sources*. |
-| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Deployments*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*), and *Dashboards*. |
+| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Inference*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*), and *Dashboards*. |
 
 !!! Note
     Keep the following in mind when upgrading from versions 2.13 or earlier:
@@ -59,7 +59,7 @@ RBAC uses [rules](#access-rules) to ensure that only authorized users or applica
 
 * Departments
 * Projects
-* Deployments
+* Inference
 * Workspaces
 * Environments
 * Quota management dashboard

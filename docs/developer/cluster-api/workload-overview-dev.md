@@ -2,9 +2,9 @@
 
 ## Workloads
 
-Run:ai schedules __Workloads__. Run:ai workloads contain:
+Run:ai schedules **Workloads**. Run:ai workloads contain:
 
-* The _Kubernetes resource_ (Job, Deployment, etc) that is used to launch the container inside which the data science code runs.
+* The *Kubernetes resource* (Job, Deployment, etc) that is used to launch the container inside which the data science code runs.
 * A set of additional resources that is required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more.
 
 Run:ai supports the following Workloads types:
@@ -16,10 +16,9 @@ Run:ai supports the following Workloads types:
 | Distributed Training | `DistributedWorkload` | Submit a distributed training workload using TensorFlow, PyTorch or MPI |
 | Inference      | `InferenceWorkload` | Submit an inference workload |
 
-
 ## Values
 
-A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.  
+A Workload will typically have a list of *values*, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.  
 
 You can also find the exact YAML syntax run:
 
@@ -57,7 +56,6 @@ FIELDS:
    value	<string>
 ```
 
-
 ## How to Submit
 
 A Workload can be submitted via various channels:
@@ -68,7 +66,7 @@ A Workload can be submitted via various channels:
 
 ## Policies
 
-An Administrator can set _Policies_ for Workload submission. Policies serve two purposes:
+An Administrator can set *Policies* for Workload submission. Policies serve two purposes:
 
 1. To constrain the values a researcher can specify.
 2. To provide default values.
@@ -80,6 +78,6 @@ For example, an administrator can,
 
 Each workload type has a matching kind of workload policy. For example, an `InteractiveWorkload` has a matching `InteractivePolicy`
 
-A Policy of each type can be defined _per-project_. There is also a _global_ policy that applies to any project that does not have a per-project policy.
+A Policy of each type can be defined *per-project*. There is also a *global* policy that applies to any project that does not have a per-project policy.
 
 For further details on policies, see [Policies](../../admin/workloads/policies/policies.md).

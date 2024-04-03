@@ -16,7 +16,7 @@ Runai is an open platform and supports three types of workloads each with a diff
 
 ### Run:ai native workloads
 
-Run:ai native workloads are workloads (trainings, workspaces, deployments) that are fully controlled by Run:ai. Run: workloads are the most comprehensive and include *Third party integrations* and *Typical Kubernetes* workload types. Specific characteristics of Run: ai native workloads include:
+Run:ai native workloads are workloads (trainings, workspaces, inference) that are fully controlled by Run:ai. Run: workloads are the most comprehensive and include *Third party integrations* and *Typical Kubernetes* workload types. Specific characteristics of Run: ai native workloads include:
 
 1. Submitting of workloads via UI/CLI.
 2. Workload control (delete/stop/connect).
@@ -110,7 +110,7 @@ To get the full experience of Run:ai’s environment and platform use the follow
 * [Workspaces](../../Researcher/user-interface/workspaces/overview.md#getting-familiar-with-workspaces)
 * [Trainings](../../Researcher/user-interface/trainings.md#trainings) (Only available when using the *Jobs* view)
 * [Distributed trainings](../../Researcher/user-interface/trainings.md#trainings)
-* [Deployment](../admin-ui-setup/deployments.md#viewing-and-submitting-deployments)
+* [Inference](inference-overview.md)
 
 ## Supported integrations
 
