@@ -346,6 +346,10 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 >
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
 
+#### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
+
+> Mount a `ConfigMap` object for use as a data volume.
+
 ### Network
 
 <!-- 

@@ -41,37 +41,44 @@ You can configure your IdP to map several IdP attributes:
 
 ## Step 1: UI Configuration
 
-1. Open the Administration User interface.
-2. Go to `Settings | General`.
-3. Turn on `Login with SSO`.
-4. Enter the administrator email.
-5. Select the SSO protocol. Choose `Saml 2` or `Open ID Connect`.
+1. Press the `Tools & Settings` then press `General`.
+2. Open the `Security` pane and press `+Identity provider`.
+3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
 
-!!! Note
-    Use your SAML response file to fill in the fields below.
+    === "SAML 2"
 
-For `Saml 2`:
+        1. Choose `From computer` or `From URL`.
+        
+        	1. For `From computer`, press the `Metadata XML file` field, then select your file for upload. 
+        	2. For `From URL`, in the `Metadata XML Url` field, enter the URL to the XML Metadata file.
+        
+        2. Copy the `Redirect URL` and `Entity ID` and use them in your identity provider.
+        3. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        4. When complete, press `Save`.
+    
+        After you have configured the SAML 2 settings, you can download the XML file, and view the identity provider settings. 
+    	
+    	Press `Download` to download the file.
+    
+    	Pres `Edit` to both download the file, and view the:
+    
+        * Identity provider URL.
+        * Identity provider entity ID.
+        * Certificate expiration date.
 
-   1. In the `Metadata XML Url` field, enter the URL to the XML Metadata file.
-   2. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
-   3. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   4.  Press `Save`.
+    === "Open ID Connect"
 
-For `Open ID Connect`:
+        1. In the `Discovery URL` field, enter the discovery URL .
+        2. In the `Client ID` field, enter the client ID.
+        3. In the `Client Secret` field, enter the client secret.
+        4. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        5.When complete, press `Save`.
 
-:octicons-versions-24: Version 2.10 and later.
-
-   1. In the `Discovery Document URL` field, enter the URL to the discovery document.
-   2. In the `Client ID` field, enter the client ID.
-   3. In the `Client Secret` field, enter the client secret.
-   4. Find your identity provider's attribute names for `GID`, `GROUPS`, `SUPPLEMENTARYGROUPS` and `UID`. If they are not in line with the Run:ai defaults described in the table above, you can change them here.   
-   5. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
-   6.  Press `Save`.
-
-Once you press `Save` you will receive a `Redirect URI` and an `Entity ID`. Both values must be set on the IdP side.
+ 4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
+ 5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
 
 !!! Important Note
-    Upon pressing `Save`, all existing users will be rendered non-functional, and the only valid user will be the *Administrator email* entered above. You can always revert by disabling *Login via SSO*.
+    When pressing `Save`, all existing users will be rendered non-functional. You can always revert by deleting the identity provider.
 
 ### Test
 
@@ -82,6 +89,7 @@ Test Connectivity to Administration User Interface:
 * You will be redirected to the IdP login page. Use the previously entered *Administrator* email* to log in.
 
 ### Troubleshooting
+
 The SSO login can be separated into two parts:
 
 1. Run:ai redirects to the IdP (for example, Google) for login using a *SAML Request*.
@@ -89,7 +97,7 @@ The SSO login can be separated into two parts:
 
 You can follow that by following the URL changes from [app.run.ai](https://app.run.ai) to the IdP provider (for example, [accounts.google.com](https://accounts.google.com)) and back to [app.run.ai](https://app.run.ai):
 
-* If there is an issue on the IdP site (for example, `app_is_not_configred` error in Google), the problem is likely to be in the SAML Request.
+* If there is an issue on the IdP site (for example, `app_is_not_configured` error in Google), the problem is likely to be in the SAML Request.
 * If the user is redirected back to Run:ai and something goes wrong, the problem is most likely in the SAML Response.
 
 #### Troubleshooting SAML Request
@@ -233,7 +241,7 @@ Check in the above that:
 
 ## Step 2: Cluster Authentication
 
-Researchers should be authenticated when accessing the Run:ai GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must **do so again** and replace the client-side and server-side configuration values with the new values as provided by on `Settings | General | Researcher Authentication`.
+Researchers should be authenticated when accessing the Run:ai GPU Cluster. To perform that, the Kubernetes cluster and the user's Kubernetes profile must be aware of the IdP. Follow the instructions [here](researcher-authentication.md). If you have followed these instructions in the past, you must **do so again** and replace the client-side and server-side configuration values. To see the new values, press `Tools & Settings` then `General`, and expand the   `Cluster Authentication` pane.
 
 ### Connectivity test
 
@@ -245,7 +253,7 @@ Test connectivity to Run:ai command-line interface:
 
 ## Step 3: UID/GID Mapping
 
-Configure the IdP to add UID, GID, and Supplementary groups in the IdP.
+You can configure the IdP to add UID, GID, and Supplementary groups in the IdP. To configure, see [UI Configuration](#step-1-ui-configuration).
 
 ### Mapping test
 
@@ -270,13 +278,13 @@ The latter option is easier to maintain.
 
 ### Adding Roles for a User
 
-* Go to `Settings | Users`.
+* Go to `Tools & Settings`, then press `Users`.
 * Select the `Users` button at the top.
 * Map users as explained [here](../../admin-ui-setup/admin-ui-users.md).
 
 ### Mapping Role Groups
 
-* Go to `Settings | Users`.
+* Go to Go to `Tools & Settings`, then press `Users`.
 * Select the `Groups` button.
 * Assuming you have mapped the IdP `Groups` attribute as described in the prerequisites section above, add a name of a group that has been created in the directory and create an equivalent Run:ai Group.
 * If the role group contains the `Researcher` role, you can assign this group to a Run:ai Project. All members of the group will have access to the cluster.

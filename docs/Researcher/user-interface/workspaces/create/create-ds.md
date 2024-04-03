@@ -69,9 +69,21 @@ To create a host path data source, provide:
 !!! Note
     The data can be limited to read-only permission regardless of any other user privileges.
 
+## Create a ConfigMap data source
+
+* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+  
+    !!! Note
+        You can only choose a project as a scope.
+
+* A data source name.
+* A data mount consisting of:
+    * A ConfigMap name&mdash;select from the drop down.
+    * A target location&mdash;the path to the container.
+
 ## Data sources table
 
-The *Data sources* table shows the data sources that are available and which ones are being used. Statuses of created resources:
+The *Data sources* table contains a column for the status of the data source. The following statuses are supported:
 
 | Status |  Description |
 | -- | -- |
