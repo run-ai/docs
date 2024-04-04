@@ -59,7 +59,7 @@ Every new workload is associated with a Project. The Project contains a deserved
 
 **Node pools are enabled**
 
-Every new workload is associated with a Project. The Project contains a deserved GPU quota that is the sum off all node pools GPU quotas. During scheduling:
+Every new workload is associated with a Project. The Project contains a deserved GPU quota that is the sum of all node pools GPU quotas. During scheduling:
 
 * If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
 * If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
@@ -100,6 +100,7 @@ The Run:ai scheduler wakes up periodically to perform allocation tasks on pendin
 * The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
 
 ### Node Pools
+
 A *Node Pool* is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
 By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
