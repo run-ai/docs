@@ -50,8 +50,6 @@ kubectl label node <node-name> <key>=<value>
 !!! Note
     * You can annotate multiple nodes with the same label.
 
-To create a node pool with the chosen common label use the [create node pool](https://app.run.ai/api/docs/#/NodePools/createNodePool){target=_blank} Run:ai API.
-
 
 ## Multiple Node Pools Selection
 
