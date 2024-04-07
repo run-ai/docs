@@ -28,11 +28,14 @@ On the next page:
 
 ## Verify your Installation
 
-* Verify the cluster health status via the Run:ai UI. If there are any issues, see [Cluster Health](../../troubleshooting/cluster-health-check.md).
-* In case the UI is not available, you can run the following command to verify the installation (assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled):
+* Verify the cluster health status via the Run:ai Control Plane by viewing the "Clusters" page and check that your new cluster is Connected in the Status column. If there are any issues, see [Cluster Health](../../troubleshooting/cluster-health-check.md).
+* In case the Control Plane is not available, execute the following command to verify the installation (assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is installed):
+
+
 ```bash
 kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P
 ```
+
 Example output:  
 
 ``` YAML
@@ -84,8 +87,7 @@ runai-public:
 
 #### Dependencies are not fulfilled
 
-1. Make sure to install the missing dependencies.  
-For dependencies installation troubleshooting, see [Prometheus Operator Troubleshooting](cluster-prerequisites.md#prometheus-operator-troubleshooting) and [GPU Operator Troubleshooting](cluster-prerequisites.md#gpu-operator-troubleshooting).
+1. Make sure to install the missing dependencies. See [Cluster Prerequisites](cluster-prerequisites.md) for more information. 
 2. Make sure there are no necessary adjustments for specific kubernetes flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
 
 #### Resources not deployed / System Unavailable / Reconciliation Failed
@@ -98,7 +100,7 @@ For dependencies installation troubleshooting, see [Prometheus Operator Troubles
    kubectl get pods -n monitoring
 ```
 
-You can also run `kubectl logs -n <pod_namespace> <pod_name>` to get logs from any failing pod.
+Look for any failing pods and check their logs for more information by running `kubectl describe pod -n <pod_namespace> <pod_name>`.
 
 #### Common Issues
 
@@ -114,6 +116,7 @@ You can also run `kubectl logs -n <pod_namespace> <pod_name>` to get logs from a
 #### Get Installation Logs
 
 You can use the following script to obtain any relevant installation logs in case of an error.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh | bash
 ```
