@@ -28,7 +28,7 @@ On the next page:
 
 ## Verify your Installation
 
-* Verify the cluster health status via the Run:ai Control Plane by viewing the "Clusters" page and check that your new cluster is Connected in the Status column. If there are any issues, see [Cluster Health](../../troubleshooting/cluster-health-check.md).
+* Verify that the cluster status in the Run:ai Control Plane's [Clusters Table](#cluster-table) is `Connected`.
 * In case the Control Plane is not available, execute the following command to verify the installation (assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is installed):
 
 
