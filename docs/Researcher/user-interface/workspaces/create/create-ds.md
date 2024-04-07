@@ -95,7 +95,7 @@ The *Data sources* table contains a column for the status of the data source. Th
 
 !!! Note
 
-    * The *Status* column in the table shows statuses based on your level of permissions. For example, a system administrator will see status that are calculated from the entire scope, while researchers will only be able to see statuses that from a subset of the scope (assets that they have permissions to).
+    * The *Status* column in the table shows statuses based on your level of permissions. For example, a user that has create permissions for the scope, will see statuses that are calculated from the entire scope, while users who have only view and use permissions, will only be able to see statuses from a subset of the scope (assets that they have permissions to).
     * The status of “-” indicates that there is no status because this asset is not cluster-syncing.
 
 You can download the Data Sources table to a CSV file. Downloading a CSV can provide a snapshot history of your Data Sources over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
