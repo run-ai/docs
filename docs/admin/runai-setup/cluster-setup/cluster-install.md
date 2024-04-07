@@ -28,14 +28,12 @@ On the next page:
 
 ## Verify your Installation
 
-* Go to `<company-name>.run.ai/dashboards/now`.
-* Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
-* Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
-
-(assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
-
+* Verify the cluster health status via the Run:ai UI. If there are any issues, see [Cluster Health](../../troubleshooting/cluster-health-check.md).
+* In case the UI is not available, you can run the following command to verify the installation (assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled):
+```bash
+kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P
+```
 Example output:
-
 ``` YAML
 cluster-version: 2.9.0
 runai-public: 
@@ -70,21 +68,22 @@ runai-public:
     mpi:        # (5) 
       available: true
 ```
-
 1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
-2. Checks whether optional product dependencies have been met.
-3. See [Inference prerequisites](cluster-prerequisites.md#inference).
-4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
-
+2. Verifies that all of Run:ai managed resources have been successfully deployed.
+3. Checks whether optional product dependencies have been met.
+4. See [Inference prerequisites](cluster-prerequisites.md#inference).
+5. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
 <!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
+* Go to `<company-name>.run.ai/dashboards/now`.
+* Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
 ### Troubleshooting your installation
 
 #### Dependencies are not fulfilled
 
-1. Make sure to install the missing dependencies.
-2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
-3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
+1. Make sure to install the missing dependencies.  
+For dependencies installation troubleshooting, see [Prometheus Operator Troubleshooting](cluster-prerequisites.md#prometheus-operator-troubleshooting) and [GPU Operator Troubleshooting](cluster-prerequisites.md#gpu-operator-troubleshooting).
+2. Make sure there are no necessary adjustments for specific kubernetes flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
 
 #### Resources not deployed / System Unavailable / Reconciliation Failed
 
@@ -96,7 +95,7 @@ runai-public:
    kubectl get pods -n monitoring
 ```
 
-You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
+You can also run `kubectl logs -n <pod_namespace> <pod_name>` to get logs from any failing pod.
 
 #### Common Issues
 
@@ -111,7 +110,11 @@ You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
 
 #### Get Installation Logs
 
-You can use the [get instllation logs](https://github.com/run-ai/public/blob/main/installation/get-installation-logs.sh) script to obtain any relevant installation logs in case of an error.
+You can use the following script to obtain any relevant installation logs in case of an error.
+```bash
+curl -s https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh | bash
+```
+
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
