@@ -33,7 +33,8 @@ On the next page:
 ```bash
 kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P
 ```
-Example output:
+Example output:  
+
 ``` YAML
 cluster-version: 2.9.0
 runai-public: 
@@ -68,12 +69,14 @@ runai-public:
     mpi:        # (5) 
       available: true
 ```
+
 1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
 2. Verifies that all of Run:ai managed resources have been successfully deployed.
 3. Checks whether optional product dependencies have been met.
 4. See [Inference prerequisites](cluster-prerequisites.md#inference).
 5. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
 <!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
+
 * Go to `<company-name>.run.ai/dashboards/now`.
 * Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
 
@@ -112,7 +115,7 @@ You can also run `kubectl logs -n <pod_namespace> <pod_name>` to get logs from a
 
 You can use the following script to obtain any relevant installation logs in case of an error.
 ```bash
-curl -s https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh | bash
+curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh | bash
 ```
 
 ## Researcher Authentication
