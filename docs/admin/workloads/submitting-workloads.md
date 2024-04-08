@@ -137,7 +137,7 @@ To submit a workload using the UI:
                 * Assets that are cluster syncing will be greyed out.
                 * Only PVC, Git, and ConfigMap resources are supported.
 
-         5. In the *General field you can:
+         5. In the *General* field you can:
             1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional)
             2. Add one or more *Annotation*. (optional)
             3. Add one or more *Labels*. (optional)
