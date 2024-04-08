@@ -18,12 +18,16 @@ To create an environment:
       * *Inference*
 
     If you selected *Inference*, in the *endpoint* pane, select a *Protocol* from the dropdown, then enter the *Container port*.
+
 6. Select a tool from the list. You can add multiple tools by pressing *+ Tool*. Selecting a tool is optional.
 
     Tools can be:
 
       * Different applications such as Code editor IDEs (for example, VS Code), Experiment tracking (for example, Weight and Biases), visualization tools (for example, Tensor Board), and more.
       * Open source tools (for example, Jupyter notebook) or commercial 3rd party tools (for example,. MATLAB)
+
+    !!! Note
+        Tool configuration is not supported with *Inference* environments.
 
     It is also possible to set up a custom tool used by the organization.
 
@@ -33,7 +37,9 @@ To create an environment:
       * External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, access the tool using `http://<HOST_IP>:<NODEPORT>` (for example, http://203.0.113.20:30556).
 
     !!! Note
-        Selecting a tool requires configuration to be up and running. To configure a tool:
+        Selecting a tool requires a configuration to be up and running.
+
+    To configure a tool:
 
     * The container image needs to support the tool.
     * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
@@ -52,10 +58,10 @@ To create an environment:
        1. Settings in the image&mdash;security settings that come with the image file. 
        2. Custom settings:
    
-            1. User ID.
-            2. Group ID.
-            3. Supplementary Groups.
-            4. Values modification settings.
+          1. User ID.
+          2. Group ID.
+          3. Supplementary Groups.
+          4. Values modification settings.
     
        3. Add linux capabilities.
 
