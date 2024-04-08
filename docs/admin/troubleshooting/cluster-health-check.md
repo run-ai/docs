@@ -63,7 +63,7 @@ Use the following steps to troubleshoot the issue:
     !!! Note
         The previous steps can be used if you installed the cluster and the status is stuck in *Waiting to connect* for a long time.
 
-## Cluster has service issues
+## Cluster has *service issues*
 
 When a cluster's status shows *Service issues*, this means that one or more Run:ai services that are running in the cluster are not available.
 
@@ -91,13 +91,13 @@ When a cluster's status shows *Service issues*, this means that one or more Run:
 
 3. If the issue persists, contact Run:ai support for assistance.
 
-## Cluster has missing prerequisites
+## Cluster has *missing prerequisites*
 
-When a cluster's status displays Missing prerequisites, it indicates that at least one of the [Mandatory Prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been fulfilled. In such cases, Run:ai services may not function properly.
+When a cluster's status displays *Missing prerequisites*, it indicates that at least one of the [Mandatory Prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been fulfilled. In such cases, Run:ai services may not function properly.
 
-If you have ensured that all prerequisites are installed and the status still shows Missing prerequisites, follow these steps:
+If you have ensured that all prerequisites are installed and the status still shows *Missing prerequisites*, follow these steps:
 
-1. Check the message in the UI for further details regarding the missing prerequisites.
+1. Check the message in the Control Plane for further details regarding the missing prerequisites.
 2. Inspect the [runai-public ConfigMap](#runai-public-configmap) and look for the `dependencies.required` field to obtain detailed information about the missing resources.
 3. If the issue persists, contact Run:ai support for assistance.
 
@@ -173,7 +173,7 @@ Submitting a Job allows you to verify that the Run:ai scheduling service is runn
 Log into the Run:ai user interface, and verify that you have a `Researcher` or `Research Manager` role.
 Go to the `Jobs` area. On the top right, press the button to create a Job. Once the form opens, you can submit a Job.
 
-## Advanced Troubleshooting
+## Advanced troubleshooting
 
 ### Run:ai public ConfigMap
 
@@ -181,10 +181,10 @@ Run:ai services use the `runai-public` ConfigMap to store information about the 
 Inspect the ConfigMap by running:
 
 ```bash
-kubectl get cm runai-public -oyaml | yq .data.runai-public
+kubectl get cm runai-public -oyaml
 ```
 
-### Resources not deployed / System Unavailable / Reconciliation Failed
+### Resources not deployed / System unavailable / Reconciliation failed
 
 1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues.
 2. Run
