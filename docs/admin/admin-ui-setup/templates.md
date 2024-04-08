@@ -22,7 +22,7 @@ To create a template:
     
        1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
        2. Press *Environment variable* to add an environment variable. Press again if you need more environment variables.
-   
+
 5. In the *Compute resource* pane, select a compute resource. Use the *Search compute resources* if you do not see your resource listed. Press *New compute resource* to add a new compute resource to the system. Press *More settings* to add a node type (node affinity) to the compute resource selected.
 6. (Optional) In the *Volume* pane, press *+volume* to add a new volume to the template.
 
@@ -38,7 +38,7 @@ To create a template:
 8. In the *General* pane, choose to add the following:
 
     * Auto-deletion&mdash;the time after which a workload that has completed or failed will be deleted. Press *+Auto-deletion* then configure the time in days, hours, minutes, and seconds.
-    * Annotation&mdash;press *+Annottion* then enter a name and a value. You can add multiple annotations by pressing the *+Annottion*.
+    * Annotation&mdash;press *+ Annotation* then enter a name and a value. You can add multiple annotations by pressing the *+ Annotation*.
     * Label&mdash;press *+Label* then enter a name and a value. You can add multiple labels by pressing the *+Label*.
 
 9. Press *Create template* when your configuration is complete.
