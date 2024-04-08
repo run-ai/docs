@@ -47,7 +47,6 @@
 
     * Verify that the certificate is valid and trusted.
     * If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../runai-setup/config/org-cert.md).
- 
 
 ## Dashboard Issues
 
