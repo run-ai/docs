@@ -217,7 +217,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 
 1. The Grafana component is not required for Run:ai.
 
-!!! Notes
+!!! Note
     * For troubleshooting information, see the [Prometheus Troubleshooting Guide](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/troubleshooting.md){target=_blank}.
 
 ## Optional Software Requirements
