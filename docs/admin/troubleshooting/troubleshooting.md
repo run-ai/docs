@@ -15,6 +15,38 @@
     ingress-nginx:
         enabled: false
     ```
+
+??? "How to get installation logs"
+    __Symptom:__ Installation fails and you need to troubleshoot the issue.
+
+    __Resolution:__ Run the following script to obtain any relevant installation logs in case of an error.
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh | bash
+    ```
+
+??? "Upgrade fails with "rendered manifests contain a resource that already exists" error"
+    __Symptom:__ The installation fails with error: `Error: rendered manifests contain a resource that already exists. Unable to continue with install:...`
+
+    __Root cause:__ The Run:ai installation is trying to create a resource that already exists, which may be due to a previous installation that was not properly removed.
+
+    __Resolution:__ Run the following script to remove all Run:ai resources and reinstall:
+
+    ```bash
+    helm template <release-name> <chart-name> --namespace <namespace> | kubectl delete -f -
+    ```
+
+    Then reinstall Run:ai.
+
+??? "Pods are failing due to certificate issues"
+    __Symptom:__ Pods are failing with certificate issues.
+
+    __Root cause:__ The certificate provided during the Control Plane's installation is not valid.
+
+    __Resolution:__ 
+
+    * Verify that the certificate is valid and trusted.
+    * If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../runai-setup/config/org-cert.md).
  
 
 ## Dashboard Issues
