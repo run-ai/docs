@@ -176,6 +176,7 @@ Go to the `Jobs` area. On the top right, press the button to create a Job. Once 
 
 ## Advanced Troubleshooting
 ### Run:ai public ConfigMap
+
 Run:ai services use the `runai-public` ConfigMap to store information about the cluster status. This ConfigMap can be helpful in troubleshooting issues with Run:ai services.
 Inspect the ConfigMap by running:
 
