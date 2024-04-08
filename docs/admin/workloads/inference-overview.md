@@ -1,6 +1,6 @@
 ---
 title: Inference overview
-summary: This article describes inference worloads.
+summary: This article describes inference workloads.
 authors:
     - Jason Novich
 date: 2024-Mar-29

@@ -1,4 +1,11 @@
-Below are the prerequisites of a cluster installed with Run:ai.
+---
+title: Prerequisites in a nutshell
+summary: This article outlines the required prerequisites for a Run:ai installation.
+authors:
+    - Jason Novich
+    - Yaron Goldberg
+date: 2024-Apr-8
+---
 
 ## Prerequisites in a Nutshell
 
@@ -63,7 +70,6 @@ For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release Hi
 
 #### Pod Security Admission
 
-
 Run:ai version 2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `Privileged` policy.
 
 For Run:ai on OpenShift to run with PSA `restricted` policy:
@@ -75,8 +81,9 @@ For Run:ai on OpenShift to run with PSA `restricted` policy:
    pod-security.kubernetes.io/enforce=privileged
    pod-security.kubernetes.io/warn=privileged
    ```
+
 2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies/policies.md).
-   
+
 ### NVIDIA
 
 Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.9. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
@@ -123,7 +130,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 
 === "RKE2"
     * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
-    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system. 
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
 
 <!-- 
 === "RKE2"
@@ -302,7 +309,7 @@ However, for the URL to be accessible outside the cluster you must configure you
         -H 'Host: <host-name>'
     ```
 
-# Hardware Requirements
+## Hardware Requirements
 
 (see picture below)
 
