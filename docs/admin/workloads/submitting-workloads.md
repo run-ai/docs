@@ -133,7 +133,8 @@ To submit a workload using the UI:
    
             !!! Note
                 
-                * Data sources that have private credentials that have the status of issues found will be greyed out.
+                * Data sources that are not available will be greyed out.
+                * Assets that are cluster syncing will be greyed out.
                 * Only PVC, Git, and ConfigMap resources are supported.
 
          5. In the *General field you can:
