@@ -7,7 +7,7 @@ When you select `New Compute Resource` you will be presented with various data s
 To create an NFS data source, provide:
 
 * A data source name.
-* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * An NFS server.
 * The path to the data within the server.
 * The path within the container where the data will be mounted.
@@ -19,7 +19,7 @@ The data can be set as read-write or limited to read-only permission regardless 
 To create an PVC data source, provide:
 
 * A data source name
-* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * Select an existing PVC or create a new one by providing:
 
   * A claim name
@@ -39,7 +39,7 @@ S3 storage saves data in *buckets*. S3 is typically attributed to AWS cloud serv
 To create an S3 data source, provide
 
 * A data source name
-* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant S3 service URL server
 * The bucket name of the data.
 * The path within the container where the data will be mounted.
@@ -51,7 +51,7 @@ An S3 data source can be public or private. For the latter option, please select
 To create a Git data source, provide:
 
 * A data source name.
-* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant repository URL.
 * The path within the container where the data will be mounted.
 
@@ -62,7 +62,7 @@ The Git data source can be public or private. To allow access to a private Git d
 To create a host path data source, provide:
 
 * A data source name.
-* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant path on the host.
 * The path within the container where the data will be mounted.
 
@@ -99,6 +99,13 @@ The *Data sources* table contains a column for the status of the data source. Th
     * The status of “-” indicates that there is no status because this asset is not cluster-syncing.
 
 You can download the Data Sources table to a CSV file. Downloading a CSV can provide a snapshot history of your Data Sources over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+Use the *Cluster* filter at the top of the table to see data sources that are assigned to specific clusters.
+
+!!! Note
+    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+
+Use the *Add filter* to add additional filters to the table.
 
 To download the Data Sources table to a CSV:
 

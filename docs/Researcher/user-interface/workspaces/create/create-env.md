@@ -3,7 +3,7 @@
 To create an environment:
 
 1. In the left menu, press *New Environment*.
-2. In the *Scope* pane, choose one item from the tree. The compute resource is assigned to that item and all its subsidiaries.
+2. In the *Scope* pane, choose a cluster, department, or project from the tree. The environment is assigned to that item and all its subsidiaries.
 3. Enter an *Environment name*.
 4. Enter the image URL path and an image pull policy.
 5. Choose a supported workload type. Configure this section based on the type of workload you expect to run in this environment. Choose from:
@@ -64,6 +64,13 @@ To create an environment:
 ## Download Environments Table
 
 You can download the Environments table to a CSV file. Downloading a CSV can provide a snapshot history of your environments over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
+
+Use the *Cluster* filter at the top of the table to see environments that are assigned to specific clusters.
+
+!!! Note
+    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+
+Use the *Add filter* to add additional filters to the table.
 
 To download the Environments table to a CSV:
 
