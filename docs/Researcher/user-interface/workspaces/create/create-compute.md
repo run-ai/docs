@@ -9,6 +9,9 @@ You can select one or more resources. For example, one compute resource may cons
 
 Use the *Cluster* filter at the top of the table to see compute resources that are assigned to specific clusters.
 
+!!! Note
+    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+
 Use the *Add filter* to add additional filters to the table.
 
 ## Set GPU resources

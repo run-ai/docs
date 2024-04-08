@@ -73,6 +73,9 @@ You can download the Data Sources table to a CSV file. Downloading a CSV can pro
 
 Use the *Cluster* filter at the top of the table to see data sources that are assigned to specific clusters.
 
+!!! Note
+    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+
 Use the *Add filter* to add additional filters to the table.
 
 To download the Data Sources table to a CSV:

@@ -49,6 +49,9 @@ You can download the templates table to a CSV file. Downloading a CSV can provid
 
 Use the *Cluster* filter at the top of the table to see templates that are assigned to specific clusters.
 
+!!! Note
+    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+
 Use the *Add filter* to add additional filters to the table.
 
 To download the templates table to a CSV:
