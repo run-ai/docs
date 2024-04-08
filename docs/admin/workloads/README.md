@@ -47,15 +47,13 @@ Typical Kubernetes workloads are any kind of workload built for Kubernetes. The 
 
 Run:ai makes it easy to run machine learning workloads effectively on Kubernetes. Run:ai provides both a UI and API interface that introduces a simple and more efficient way to manage machine learning workloads, which will appeal to data scientists and engineers alike.
 
-The Workloads view provides a replacement for the Jobs, Trainings, and Workspaces views. The new table format provides:
+The Workloads table provides:
 
 * Changing of the layout of the *Workloads* table by pressing *Columns* to add or remove columns from the table.
 * Download the table to a CSV file by pressing *More*, then pressing *Download as CSV*.
 * Search for a workload by pressing *Search* and entering the name of the workload.
 * Advanced workload management.
 * Added workload statuses for better tracking of workload flow.
-
-To enable the *Workloads* view, press *Try Workloads*. To return to the *Jobs* view, press *Go Back To Jobs View*.
 
 To create new workloads, press [*New Workload*](submitting-workloads.md).
 
@@ -67,15 +65,26 @@ Access the platform [API documentation](https://app.run.ai/api/docs){target=_bla
 
 You can manage a workload by selecting one from the view. Once selected, you can:
 
-* Delete a workload
-* Connect
-* Stop a workload
-* Activate a workload
+* Run a workload.
+* Stop a workload.
+* Connect to a workload&mdash;provides a connection to the selected workload's designated tool. Press the item in the column to show the connection URL.
+* Delete a workload.
+* Copy and edit a workload&mdash;use this function to run another workload based on the selected workload.
+
+    * If the workload was submitted using the UI, then a copy of the original workload form will open allowing you to make changes to the workload properties.
+    * If the workload was submitted using the CLI, then a window shows with the original CLI command. Copy the command and make changes to the submission.
+
 * Show details&mdash;provides in-depth information about the selected workload including:
 
       * Event history&mdash;workload status over time. Use the filter to search through the history for specific events.
-      * Metrics&mdash;metrics for GPU utilization, CPU usage, GPU memory usage, and CPU memory usage. Use the date selector to choose the time period for the metrics.
-      * Logs&mdash;logs of the current status. Use the Download button to download the logs.
+      * Metrics&mdash;use the drop down to filter metrics per pod. Select a category from the list below:
+
+          * GPU compute utilization&mdash;hover over for individual GPU details
+          * GPU memory usage&mdash;hover over for individual GPU details
+          * CPU usage&mdash;hover over for usage details
+          * CPU memory usage&mdash;hover over for usage details
+  
+      * Logs&mdash;logs of the selected workload. Use the drop down to filter metrics per pod. Use the Download button to download the logs.
 
 ### Workloads Status
 
@@ -116,11 +125,10 @@ To get the full experience of Run:ai’s environment and platform use the follow
 
 To assist you with other platforms, and other types of workloads use the integrations listed below.
 
-1. [Airflow](https://docs.run.ai/v2.13/admin/integration/airflow/)
-2. [MLflow](https://docs.run.ai/v2.13/admin/integration/mlflow/)
-3. [Kubeflow](https://docs.run.ai/v2.13/admin/integration/kubeflow/)
-4. [Seldon Core](https://docs.run.ai/v2.13/admin/integration/seldon/)
-5. [Spark](https://docs.run.ai/v2.13/admin/integration/spark/)
-6. [Ray](https://docs.run.ai/v2.13/admin/integration/ray/)
-7. [KubeVirt (VM)](https://docs.run.ai/v2.13/admin/integration/kubevirt/)
-
+1. [Airflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Apache-Airflow){target=_blank}
+2. [MLflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-MLflow){target=_blank}
+3. [Kubeflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Kubeflow){target=_blank}
+4. [Seldon Core](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Seldon-Core){target=_blank}
+5. [Spark](https://runai.my.site.com/community/s/article/How-to-Run-Spark-jobs-with-Run-AI){target=_blank}
+6. [Ray](https://runai.my.site.com/community/s/article/How-to-Integrate-Run-ai-with-Ray){target=_blank}
+7. [KubeVirt (VM)](https://runai.my.site.com/community/s/article/{target=_blank}How-to-integrate-with-Kubevirt-Scheduling-Virtual-Machines-using-Run-ai)

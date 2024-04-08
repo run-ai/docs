@@ -1,4 +1,11 @@
-Below are the prerequisites of a cluster installed with Run:ai.
+---
+title: Prerequisites in a nutshell
+summary: This article outlines the required prerequisites for a Run:ai installation.
+authors:
+    - Jason Novich
+    - Yaron Goldberg
+date: 2024-Apr-8
+---
 
 ## Prerequisites in a Nutshell
 
@@ -54,6 +61,7 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:<a name=
 | Run:ai 2.13    | 1.23 through 1.28 (see note below) | 4.10 through 4.13 |
 | Run:ai 2.15    | 1.25 through 1.28  | 4.11 through 4.13 |
 | Run:ai 2.16    | 1.26 through 1.28  | 4.11 through 4.14 |
+| Run:ai 2.17    | 1.27 through 1.29  | 4.12 through 4.15 |
 
 For an up-to-date end-of-life statement of Kubernetes see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank}.
 
@@ -73,8 +81,9 @@ For Run:ai on OpenShift to run with PSA `restricted` policy:
    pod-security.kubernetes.io/enforce=privileged
    pod-security.kubernetes.io/warn=privileged
    ```
+
 2. The workloads submitted through Run:ai should comply with the restrictions of PSA `restricted` policy, which are dropping all Linux capabilities and setting `runAsNonRoot` to `true`. This can be done and enforced using [Policies](../../workloads/policies/policies.md).
-   
+
 ### NVIDIA
 
 Run:ai has been certified on **NVIDIA GPU Operator**  22.9 to 23.9. Older versions (1.10 and 1.11) have a documented [NVIDIA issue](https://github.com/NVIDIA/gpu-feature-discovery/issues/26){target=_blank}.
@@ -121,7 +130,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
 
 === "RKE2"
     * Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2){target=blank} to install the NVIDIA GPU Operator.
-    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system. 
+    * Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the document `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
 
 <!-- 
 === "RKE2"
@@ -268,15 +277,12 @@ kubectl patch configmap/config-features \
 
 #### Inference Autoscaling
 
-Run:ai allows to autoscale a deployment according to various metrics:
+Run:ai allows to autoscale a deployment using the following metrics:
 
-1. GPU Utilization (%)
-2. CPU Utilization (%)
-3. Latency (milliseconds)
-4. Throughput (requests/second)
-5. Concurrency
-6. Any custom metric
+1. Throughput (requests/second)
+2. Concurrency
 
+<!--
 Additional installation may be needed for some of the metrics as follows:
 
 * Using *Throughput* or *Concurrency* does not require any additional installation.
@@ -284,6 +290,7 @@ Additional installation may be needed for some of the metrics as follows:
 * Using *GPU Utilization_, *Latency* or *Custom metric* will **also** require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md) for further information.
 
 If you wish to use an *existing* Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support.
+-->
 
 #### Accessing Inference from outside the Cluster
 
@@ -302,7 +309,7 @@ However, for the URL to be accessible outside the cluster you must configure you
         -H 'Host: <host-name>'
     ```
 
-# Hardware Requirements
+## Hardware Requirements
 
 (see picture below)
 
@@ -341,7 +348,7 @@ Run:ai requires an installation over the Kubernetes cluster. The installation ac
 
 | Name | Description | URLs | Ports |
 |------|-------------|------|-------|
-|Run:ai  Repository| Run:ai Helm Package Repository| <a href="http://runai-charts.storage.googleapis.com/">runai-charts.storage.googleapis.com</a> |443 |
+|Run:ai  Repository| Run:ai Helm Package Repository| <a href="https://runai.jfrog.io/ui/native/run-ai-charts">runai.jfrog.io/ui/native/run-ai-charts</a> |443 |
 | Docker Images Repository | Run:ai images | gcr.io/run-ai-prod |443 |
 | Docker Images Repository | Third party Images |<a href="http://hub.docker.com/">hub.docker.com </a> and <a href="http://quay.io/">quay.io</a>  |  443  |
 | Run:ai | Run:ai   Cloud instance | <a href="https://app.run.ai">app.run.ai</a> | 443 |
