@@ -6,7 +6,7 @@ authors:
 date: 2024-Mar-10
 ---
 
-## Release Content - March 31, 2024
+## Release Content - April 8, 2024
 
 ### Researcher
 
