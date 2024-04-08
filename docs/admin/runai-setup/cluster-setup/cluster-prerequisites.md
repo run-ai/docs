@@ -142,6 +142,7 @@ Follow the [Getting Started guide](https://docs.nvidia.com/datacenter/cloud-nati
     * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/index.html){target=_blank} is one such example as it comes bundled with NVIDIA Drivers.
     <!-- * To work with *containerd* (e.g. for Tanzu), use the [defaultRuntime](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#chart-customization-options){target=_blank} flag accordingly. -->
     * To use [Dynamic MIG](../../../Researcher/scheduling/fractions.md#dynamic-mig), the GPU Operator must be installed with the flag `mig.strategy=mixed`. If the GPU Operator is already installed, edit the clusterPolicy by running ```kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}```
+    * For troubleshooting information, see the [NVIDIA GPU Operator Troubleshooting Guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/troubleshooting.html){target=_blank}.
 
 ### Ingress Controller
 
@@ -224,6 +225,9 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 ```
 
 1. The Grafana component is not required for Run:ai.
+
+!!! Notes
+    * For troubleshooting information, see the [Prometheus Troubleshooting Guide](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/troubleshooting.md){target=_blank}.
 
 ## Optional Software Requirements
 
