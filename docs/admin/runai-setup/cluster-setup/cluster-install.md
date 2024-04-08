@@ -116,7 +116,6 @@ You can use the [get instllation logs](https://github.com/run-ai/public/blob/mai
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
 
-
 ## Cluster Table
 
 After you have installed your cluster on the platform, you will see it appear in the *Cluster Table*. The *Cluster Table* provides a quick and easy way to see the status of your cluster.
@@ -126,6 +125,8 @@ In the left menu, press *Clusters* to view the cluster table. Use *Add filter* t
 The table provides the following columns:
 
 * **Cluster**&mdash;the name of the cluster.
+* **Kubernetes distribution**&mdash;the flavor of Kubernetes distribution.
+* **Kubernetes version**&mdash;the version of Kubernetes installed.
 * **Status**&mdash;the status of the cluster. For more information see [Cluster status](#cluster-status). Hover over the information icon to see a short description and links to troubleshooting.
 * **Creation time**&mdash;the timestamp the cluster was created.
 * **URL**&mdash;the URL that was given to the cluster at the time of creation.

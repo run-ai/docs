@@ -9,6 +9,10 @@ The purpose of this document is to detail the structure and purpose of metrics e
 
 Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
 
+!!! Note
+    From cluster version 2.17 onwards, we will support metrics via the Run:ai API and direct metrics queries will be deprecated.
+<!-- TODO 1. Add note as bullet to What's new 2. Define better "Direct metrics query" 3. Add this note to deprecation notifications-->
+
 ## Published Run:ai Metrics
 
 Following is the list of published Run:ai metrics, per cluster version (make sure to pick the right cluster version in the picker at the top of the page):

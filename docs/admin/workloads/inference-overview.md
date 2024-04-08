@@ -1,9 +1,9 @@
 ---
-title: Inference  Overview 
+title: Inference overview
 summary: This article summarizes machine learning inference workloads.
 authors:
     - Jason Novich
-date: 2024-Mar-25
+date: 2024-Mar-29
 ---
 
 ## What is Inference
@@ -30,26 +30,23 @@ Run:ai provides *Inference* services as an equal part together with the other tw
 
 * Multiple replicas will appear in Run:ai as a single *Inference* workload. The workload will appear in all Run:ai dashboards and views as well as the Command-line interface.
 
-* *Inference* workloads can be submitted via Run:ai [user interface](../admin-ui-setup/deployments.md) as well as [Run:ai API](../../developer/cluster-api/workload-overview-dev.md). Internally, spawning an *Inference* workload also creates a Kubernetes *Service*. The service is an end-point to which clients can connect.
+* Inference workloads can be submitted via Run:ai [user interface](../admin-ui-setup/deployments.md) as well as [Run:ai API](../../developer/cluster-api/workload-overview-dev.md). Internally, spawning an Inference workload also creates a Kubernetes *Service*. The service is an end-point to which clients can connect.
 
-## Auto Scaling
+## Autoscaling
 
 To withstand SLA, *Inference* workloads are typically set with *auto scaling*. Auto-scaling is the ability to add more computing power (Kubernetes pods) when the load increases and shrink allocated resources when the system is idle.
 
-There are a number of ways to trigger auto-scaling. Run:ai supports the following:
+There are a number of ways to trigger autoscaling. Run:ai supports the following:
 
 | Metric          | Units        |   Run:ai name   |
 |-----------------|--------------|-----------------|
-| GPU Utilization |   %          | gpu-utilization |
-| CPU Utilization |   %          | cpu-utilization |
-| Latency         | milliseconds | latency         |
 | Throughput      | requests/second | throughput |
 | Concurrency     |              |    concurrency  |
-| Custom metric   |              |    custom       |
 
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 
-Auto Scaling also supports a scale to zero policy with *Throughput* and *Concurrency* metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
+Autoscaling also supports a scale to zero policy with *Throughput* and *Concurrency* metrics, meaning that given enough time under the target threshold, the number of replicas will be scaled down to 0.
+
 This has the benefit of conserving resources at the risk of a delay from "cold starting" the model when traffic resumes.
 
 ## See Also
