@@ -43,10 +43,7 @@
 
     __Root cause:__ The certificate provided during the Control Plane's installation is not valid.
 
-    __Resolution:__ 
-
-    * Verify that the certificate is valid and trusted.
-    * If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../runai-setup/config/org-cert.md).
+    __Resolution:__ Verify that the certificate is valid and trusted. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../runai-setup/config/org-cert.md).
 
 ## Dashboard Issues
 
