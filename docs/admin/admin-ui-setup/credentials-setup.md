@@ -115,6 +115,7 @@ The *Credentials* table contains a column that shows the status of the credentia
 You can download the Credentials table to a CSV file. Downloading a CSV can provide a snapshot history of your credentials over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 To download the Credentials table to a CSV:
+
 1. Open *Credentials*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.

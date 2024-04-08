@@ -22,7 +22,7 @@ To create a template:
     
        1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
        2. Press *Environment variable* to add an environment variable. Press again if you need more environment variables.
-   
+
 5. In the *Compute resource* pane, select a compute resource. Use the *Search compute resources* if you do not see your resource listed. Press *New compute resource* to add a new compute resource to the system. Press *More settings* to add a node type (node affinity) to the compute resource selected.
 6. (Optional) In the *Volume* pane, press *+volume* to add a new volume to the template.
 
