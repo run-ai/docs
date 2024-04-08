@@ -25,11 +25,13 @@ On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
 * Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* In case of a failure, see the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
 
-## Verify your Installation
+## Verify your cluster's health
 
 * Verify that the cluster status in the Run:ai Control Plane's [Clusters Table](#cluster-table) is `Connected`.
 * Go to the [Overview Dashboard](../../admin-ui-setup/dashboard-analysis.md#overview-dashboard) and verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
+* In case of issues, see the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md).
 
 ## Researcher Authentication
 
