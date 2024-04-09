@@ -18,6 +18,7 @@ The `defaults` section of the policy file is...
 | `pvc` | `object` or `null` | PVC definitions. |
 | `git` | `object` or `null` | Git repository definitions. |
 | `s3` | `object` or `null` | S3 resource definitions. |
+| `configmap` | `object` or `null` | ConfigMap definitions. |
 | `imposedAssets` | `object` or `null` | A list of asset to be imposed on the workloads created in org units affected by this policy. |
 
 #### Environment Fields
@@ -167,6 +168,13 @@ The `defaults` section of the policy file is...
 | `pathrequired` | `string` or `null` non-empty | Local path within the workspace to which the S3 bucket will be mapped. Path is mandatory for creating a workspace. |
 | `accessKeyAssetId` | `string`<uuid> or `null` non-empty | ID of credentials asset of type access-key, for private S3 buckets. |
 | `url` | `string` or `null` non-empty | The url of the S3 service provider. The default is the URL of the Amazon AWS S3 service. |
+
+#### ConfigMap Resource Description Fields
+
+|Field | Type | Description |
+| -- | -- | --|
+|`json:"configMap"` | `string` | The name of the ConfigMap resource. ConfigMap is mandatory for creating a workspace. |
+|`json:"mountPath"` | `string` | Local path within the workspace to which the PVC bucket will be mapped. ClaimName is mandatory for creating a workspace. |
 
 #### Workspace
 
