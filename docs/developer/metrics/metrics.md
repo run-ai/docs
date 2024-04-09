@@ -110,20 +110,20 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 
 ## Metrics APIs
 
-Starting in version 2.17, Run:ai metrics are available as API endpoints. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. The following table lists the metrics that were changed.
+Starting in version 2.17, some Run:ai metrics are available as API endpoints. Using the API endpoints is more efficient and provides an easier way of retrieving metrics for use in any application. The following table lists the metrics that were changed.
 
 | 2.16 | 2.17 | API Endpoint |
 | --- |  --- |  --- |
-| runai\_active\_job\_cpu\_requested\_cores | chaned to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_REQUEST" metricType |
-| runai\_active\_job\_memory\_requested\_bytes | chaned to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_REQUEST" metricType |
-| runai\_cluster\_cpu\_utilization | chaned to API | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics ; with "CPU\_UTILIZATION" metricType |
-| runai\_cluster\_memory\_utilization | chaned to API | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics ; with "CPU\_MEMORY\_UTILIZATION" metricType |
+| runai\_active\_job\_cpu\_requested\_cores | changed to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_REQUEST" metricType |
+| runai\_active\_job\_memory\_requested\_bytes | changed to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_REQUEST" metricType |
+| runai\_cluster\_cpu\_utilization | changed to API | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics ; with "CPU\_UTILIZATION" metricType |
+| runai\_cluster\_memory\_utilization | changed to API | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics ; with "CPU\_MEMORY\_UTILIZATION" metricType |
 | runai\_gpu\_utilization\_non\_fractional\_jobs | no longer available |  |
 | runai\_allocated\_gpu\_count\_per\_workload | labels changed |  |
-| runai\_gpu\_utilization\_per\_pod\_per\_gpu | chaned to API | https://app.run.ai/api/v1/workloads/{workloadId}/pods/{podId}/metrics ; with "GPU\_UTILIZATION\_PER\_GPU" metricType |
+| runai\_gpu\_utilization\_per\_pod\_per\_gpu | changed to API | https://app.run.ai/api/v1/workloads/{workloadId}/pods/{podId}/metrics ; with "GPU\_UTILIZATION\_PER\_GPU" metricType |
 | runai\_gpu\_utilization\_per\_workload | changed to API + labels changed | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "GPU\_UTILIZATION" metricType |
 | runai\_job\_image | no longer available |  |
-| runai\_job\_requested\_gpu\_memory | chaned to API + renamed to: "runai\_requested\_gpu\_memory\_mb\_per\_workload" with different labels | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "GPU\_MEMORY\_REQUEST" metricType |
+| runai\_job\_requested\_gpu\_memory | changed to API + renamed to: "runai\_requested\_gpu\_memory\_mb\_per\_workload" with different labels | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "GPU\_MEMORY\_REQUEST" metricType |
 | runai\_job\_requested\_gpus | renamed to: "runai\_requested\_gpus\_per\_workload" with different labels |  |
 | runai\_job\_total\_runtime | renamed to: "runai\_run\_time\_seconds\_per\_workload" with different labels |  |
 | runai\_job\_total\_wait\_time | renamed to: "runai\_wait\_time\_seconds\_per\_workload" with different labels |  |
@@ -132,9 +132,9 @@ Starting in version 2.17, Run:ai metrics are available as API endpoints. Using t
 | runai\_node\_gpu\_used\_memory\_bytes | renamed and changed units: "runai\_gpu\_memory\_used\_mebibytes\_per\_node" |  |
 | runai\_node\_total\_memory\_bytes | renamed and changed units: "runai\_gpu\_memory\_total\_mebibytes\_per\_node" |  |
 | runai\_project\_info | labels changed |  |
-| runai\_active\_job\_cpu\_limits | chaned to API + renamed to: "runai\_cpu\_limits\_per\_active\_workload" | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_LIMIT" metricType |
+| runai\_active\_job\_cpu\_limits | changed to API + renamed to: "runai\_cpu\_limits\_per\_active\_workload" | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_LIMIT" metricType |
 | runai\_job\_cpu\_usage | changed to API + labels changed | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_USAGE" metricType |
-| runai\_active\_job\_memory\_limits | chaned to API + renamed to: "runai\_memory\_limits\_per\_active\_workload" | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_LIMIT" metricType |
+| runai\_active\_job\_memory\_limits | changed to API + renamed to: "runai\_memory\_limits\_per\_active\_workload" | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_LIMIT" metricType |
 | runai\_running\_job\_memory\_requested\_bytes | was a duplication of "runai\_active\_job\_memory\_requested\_bytes", see above |  |
 | runai\_job\_memory\_used\_bytes | changed to API + labels changed | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_USAGE" metricType |
 | runai\_job\_swap\_memory\_used\_bytes | no longer available |  |
@@ -142,6 +142,6 @@ Starting in version 2.17, Run:ai metrics are available as API endpoints. Using t
 | runai\_last\_gpu\_utilization\_time\_per\_workload | labels changed |  |
 | runai\_gpu\_idle\_time\_per\_workload | renamed to: "runai\_gpu\_idle\_seconds\_per\_workload" with different labels |  |
 
-## Create custom dasbhoards
+## Create custom dashboards
 
 To create custom dashboards based on the above metrics, please contact Run:ai customer support.
