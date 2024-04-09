@@ -216,6 +216,10 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
 
 1. The Grafana component is not required for Run:ai.
 
+!!! Notes
+    * In an air-gapped environment, if needed, configure the `global.imageRegistry` value to reference the local registry hosting the Prometheus images.
+    * For troubleshooting information, see the [Prometheus Troubleshooting Guide](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/troubleshooting.md){target=_blank}.
+
 ## Optional Software Requirements
 
 The following software enables specific features of Run:ai
