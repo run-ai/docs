@@ -229,6 +229,16 @@ To set a duration limit for Training Jobs:
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
 
+## Setting Run:ai as default scheduler per Project/Namespace
+
+By default, Kubernetes will use its native scheduler to schedule any type of submitted workload. However, Kubernetes also provides a standard way to use other schedulers such as Run:ai. This is done by adding to the submitted container workload’s YAML file:  
+
+`schedulerName: runai-scheduler`
+
+There are however cases where you cannot change the YAML file and still want to use the Run:ai Scheduler to schedule those workloads. For these cases, another option is to configure the Run:ai Scheduler as the default scheduler for a specific namespace (Project). This will now make any workload type that is submitted to that namespace (Project) use the Run:ai scheduler. To configure this, add the following annotation on the namesapce itself:
+
+`runai/enforce-scheduler-name: true`
+
 ## See Also
 
 Run:ai supports an additional (optional) level of resource allocation called [Departments](department-setup.md).
