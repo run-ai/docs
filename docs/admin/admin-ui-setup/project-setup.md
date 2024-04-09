@@ -100,7 +100,6 @@ To view a project policy:
     * Default
     * Source
 
-
 ## Other Project Properties
 
 ### Download Project Table
@@ -108,6 +107,7 @@ To view a project policy:
 You can download the Projects table to a CSV file. Downloading a CSV can provide a snapshot history of your projects over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 To download the Projects table to a CSV:
+
 1. Open *Projects*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
@@ -235,7 +235,7 @@ By default, Kubernetes will use its native scheduler to schedule any type of sub
 
 `schedulerName: runai-scheduler`
 
-There are however cases where you cannot change the YAML file and still want to use the Run:ai Scheduler to schedule those workloads. For these cases, another option is to configure the Run:ai Scheduler as the default scheduler for a specific namespace (Project). This will now make any workload type that is submitted to that namespace (Project) use the Run:ai scheduler. To configure this, add the following annotation on the namesapce itself:
+There may be cases where you cannot change the YAML file and still want to use the Run:ai Scheduler to schedule those workloads. For these cases, another option is to configure the Run:ai Scheduler as the default scheduler for a specific namespace (Project). This will now make any workload type that is submitted to that namespace (Project) use the Run:ai scheduler. To configure this, add the following annotation on the namespace itself:
 
 `runai/enforce-scheduler-name: true`
 
