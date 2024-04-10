@@ -104,11 +104,11 @@ For more information, see [SSO UI configuration](../admin/runai-setup/authentica
 
 ## Deprecation Notifications
 
-Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+Deprecation notifications allow you to plan for future changes in the Run:ai Platform.
 
 ### Feature deprecations
 
-The following features have been marked for deprecation:
+Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative. The following features have been marked for deprecation:
 
 ### API support and endpoint deprecations
 
