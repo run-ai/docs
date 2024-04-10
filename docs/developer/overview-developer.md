@@ -6,18 +6,16 @@ authors:
 date: 2024-Apr-10
 ---
 
-# Overview: Developer Documentation
-
-Developers can access Run:ai through various programmatic interfaces. 
+Developers can access Run:ai through various programmatic interfaces.
 
 ## API Support
 
 The endpoints and parameters specified in the following references are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
 
-Endpoints and parameters marked as deprecated means they remain operational and can be used; however, Run:ai will **NO LONGER RECOMMEND USING THEM**, **WILL NOT ADD FUNCTIONALITY TO THEM**, and **WILL NO LONGER BE SUPPORTED AFTER**
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
 
 Option1 : <#of versions>
-Option 2: <time period>. 
+Option 2: <time period>.
 
 For details, see the [Deprecation notifications](../home/whats-new-2-16.md#deprecation-notifications).
 
@@ -35,25 +33,26 @@ Below is a diagram of the Run:ai API Architecture. A developer may:
 
 ## Administrator API
 
-Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more. 
+Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more.
 
 The API is provided as REST and is accessible via the control plane endpoint.  
 
-For more information see [Administrator REST API](admin-rest-api/overview.md). 
+For more information see [Administrator REST API](admin-rest-api/overview.md).
 
 ## Cluster API
 
-Submit and delete Workloads. 
+Submit and delete Workloads.
 
 The API is provided as [Kubernetes API](./cluster-api/submit-yaml.md).
 
-Cluster API is accessible via the GPU cluster itself. As such, __multiple clusters may have multiple endpoints__.
+Cluster API is accessible via the GPU cluster itself. As such, **multiple clusters may have multiple endpoints**.
 
 !!! Note
-    The same functionality is also available via the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md). The CLI provides an alternative for automating with shell scripts. 
+    The same functionality is also available via the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md). The CLI provides an alternative for automating with shell scripts.
+
 ## Metrics API
 
-Retrieve metrics from multiple GPU clusters. 
+Retrieve metrics from multiple GPU clusters.
 
 See the [Metrics API](metrics/metrics.md) document.
 
