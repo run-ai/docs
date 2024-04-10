@@ -87,7 +87,7 @@ date: 2024-Apr-14
   
   For more information, see [Autoscaling metrics](../admin/workloads/inference-overview.md#autoscaling).
   
-* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved functionality of metrics by using Run:ai APIs. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. For more information, see [Metrics](../developer/metrics/metrics.md#metrics-apis).
+* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved functionality of metrics by using Run:ai APIs. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
 
 #### Authentication and Authorization
 
@@ -131,4 +131,4 @@ The following list of API endpoints have been marked for deprecation:
 | -- | -- |
 | https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics |
 
-In some cases name of metrics have been changed. For more information, see [Metrics](../developer/metrics/metrics.md).
+In some cases name of metrics have been changed. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
