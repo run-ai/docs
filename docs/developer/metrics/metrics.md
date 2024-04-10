@@ -110,7 +110,7 @@ Run:ai exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 
 For additional information, see Kubernetes [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} and NVIDIA [dcgm exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}.
 
-## Metrics APIs
+## Changed metrics and API mapping
 
 Starting in version 2.17, Run:ai metrics are available as API endpoints. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. The following table lists the metrics that were changed.
 
