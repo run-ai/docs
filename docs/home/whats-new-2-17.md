@@ -116,6 +116,9 @@ The endpoints and parameters specified in the API reference are the ones that ar
 
 The following list of API endpoints have been marked for deprecation:
 
+* Jobs&mdash;the *Jobs* feature (submission form and view) has been moved to the category of *Legacy*. To enable them, go to *Tools & Settings*, *General*, open the *Workloads* pane, and then toggle the *Jobs view* and *Job submission* switch to the enabled position.
+* Deployments&mdash;the *Deployments* feature has been removed. It has been replaced by *Inference* workloads. For more information, see [Jobs, Workloads, and Workspaces](#jobs-workloads-and-workspaces) above.
+
 #### Jobs, events, pods API (replaced by workloads/pods/events)
 
 | Deprecated endpoint | Replacement endpoint |
