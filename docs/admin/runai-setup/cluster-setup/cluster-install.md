@@ -25,93 +25,14 @@ On the next page:
 
 * (SaaS and remote self-hosted cluster only) Install a trusted certificate to the domain entered above.
 * Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* In case of a failure, see the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
 
-## Verify your Installation
+## Verify your cluster's health
 
-* Go to `<company-name>.run.ai/dashboards/now`.
-* Verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
-* Run: `kubectl get cm runai-public -n runai -o jsonpath='{.data}' | yq -P`
+* Verify that the cluster status in the Run:ai Control Plane's [Clusters Table](#cluster-table) is `Connected`.
+* Go to the [Overview Dashboard](../../admin-ui-setup/dashboard-analysis.md#overview-dashboard) and verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
+* In case of issues, see the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md).
 
-(assumes that [yq](https://mikefarah.gitbook.io/yq/v/v3.x/){target=_blank} is instaled)
-
-Example output:
-
-``` YAML
-cluster-version: 2.9.0
-runai-public: 
-  version: 2.9.0
-  runaiConfigStatus:
-    conditions:
-    - type: DependenciesFulfilled   # (1)
-      status: "True"
-      reason: dependencies_fulfilled
-      message: Dependencies are fulfilled
-    - type: Deployed               
-      status: "True"
-      reason: deployed
-      message: Resources Deployed
-    - type: Available
-      status: "True"
-      reason: available
-      message: System Available
-    - type: Reconciled              # (2)
-      status: "True"
-      reason: reconciled
-      message: Reconciliation completed successfully
-  optional:  # (3)
-    knative:    # (4)  
-      components:
-        hpa:
-          available: true
-        knative:
-          available: true
-        kourier:
-          available: true
-    mpi:        # (5) 
-      available: true
-```
-
-1. Verifies that all mandatory dependencies are met: NVIDIA GPU Operator, Prometheus and NGINX controller. 
-2. Checks whether optional product dependencies have been met.
-3. See [Inference prerequisites](cluster-prerequisites.md#inference).
-4. See [distributed training prerequisites](cluster-prerequisites.md#distributed-training).
-
-<!-- For a more extensive verification of cluster health, see [Determining the health of a cluster](../../troubleshooting/cluster-health-check.md). -->
-
-### Troubleshooting your installation
-
-#### Dependencies are not fulfilled
-
-1. Make sure to install the missing dependencies.
-2. If dependencies are installed, make sure that the CRDs of said dependency are installed, and that the version is supported
-3. Make sure there are no necessary adjustments for specific flavors as noted in the [Cluster prerequisites](cluster-prerequisites.md)
-
-#### Resources not deployed / System Unavailable / Reconciliation Failed
-
-1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues.
-2. Run
-
-```
-   kubectl get pods -n runai
-   kubectl get pods -n monitoring
-```
-
-You can also run `kubectl logs <pod_name>` to get logs from any failing pod.
-
-#### Common Issues
-
-1. Run:ai was previously installed in the cluster and was deleted unsuccessfully, resulting in remaining CRDs.
-    1. Diagnosis: This can be detected by running `kubectl get crds` in the relevant namespaces (or adding `-A` and checking for Run:ai CRDs).
-    2. Solution: Force delete the listed CRDs and reinstall.
-2. One or more of the pods have issues around valid certificates.
-    1. Diagnosis: The logs contains a message similar to the following `failed to verify certificate: x509: certificate signed by unknown authority`.
-    2. Solution:
-        1. This is usually due to an expired or invalid certificate in the cluster, and if so, renew the certificate.
-        2. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../config/org-cert.md).
-
-#### Get Installation Logs
-
-You can use the [get instllation logs](https://github.com/run-ai/public/blob/main/installation/get-installation-logs.sh) script to obtain any relevant installation logs in case of an error.
 ## Researcher Authentication
 
 If you will be using the Run:ai [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes, you must now set up [Researcher Access Control](../authentication/researcher-authentication.md).
