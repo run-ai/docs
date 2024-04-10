@@ -114,7 +114,7 @@ For additional information, see Kubernetes [kube-state-metrics](https://github.c
 
 Starting in version 2.17, Run:ai metrics are available as API endpoints. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. The following table lists the metrics that were changed.
 
-| 2.16 | Change Description | 2.17 API Endpoint |
+| Metric name in version 2.16 | 2.17 Change Description | 2.17 API Endpoint |
 | --- |  --- |  --- |
 | runai\_active\_job\_cpu\_requested\_cores | changed to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_REQUEST" metricType |
 | runai\_active\_job\_memory\_requested\_bytes | changed to API | https://app.run.ai/api/v1/workloads/{workloadId}/metrics ; with "CPU\_MEMORY\_REQUEST" metricType |
