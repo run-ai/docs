@@ -14,7 +14,7 @@ date: 2024-Apr-14
 
 * <!-- RUN-14094/RUN-14095/RUN-10891/RUN-10892/RUN-12686/RUN-12687/RUN-12688/RUN-12689/RUN-13654/RUN-13655 Over provisioning -->Added functionality to configure over provisioning ratios for node pools running any kind of workload. Over provisioning assumes that workloads are using GPUs either intermittently or under utilized meaning that the real utilization is lower than the actual allocation requested. Over provisioning allows the administrator to condense more workloads on a single GPU than the required GPU  resources by the workload. For more information, see [Optimize performance with Node Level Scheduler](../Researcher/scheduling/node-level-scheduler.md).
   
-* Added the *GPU Resource Optimization* feature to the UI. Now you can enable and configure *GPU Portion (Fraction) limit* and *GPU Memory Limit* from the UI. For more information, see [Compute resources UI with Dynamic Fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#compute-reources-ui-with-dynamic-fractions-support).
+* Added the *GPU Resource Optimization* feature to the UI. Now you can enable and configure *GPU Portion (Fraction) limit* and *GPU Memory Limit* from the UI. For more information, see [Compute resources UI with Dynamic Fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#compute-reources-ui-with-dynamic-fractions-support). <!-- ADDLINK -->
 
 * <!-- RUN-15071/RUN-15680 -- Demo Run:ai integration with OpenShift AI -->Added the ability to set Run:ai as the default scheduler for any project or namespace. This provides the administrator the ability to ensure that all workloads in a project or namespace are scheduled using the Run:ai scheduler. For more information, see [Setting Run:ai as default scheduler](../admin/admin-ui-setup/project-setup.md).
 
@@ -73,16 +73,21 @@ date: 2024-Apr-14
 
 * <!-- RUN-15619/RUN-16391 - Prevent multi-cluster scope & enable single-cluster scope (for all assets including policies & templates) RUN-15718/RUN-16235/RUN-16237/RUN-16238 - Omit the global cluster filter in asset creation forms and grids RUN-16127/RUN- 16128-->Improvement in the UI that removes the global cluster filter in the header. The cluster filter has been relocated to filter bar in any asset table. Now you can filter an assets table by cluster. Using the filter in the table, and then creating a new asset, will automatically display only the scope of the selected cluster. In addition, there is now added functionality that prevents the account from being selected as the scope when creating assets. Enforcing a cluster specific scope increases the confidence that an asset is created properly and successfully.
   
-  !! Note
+  !!! Note
       This feature is only applicable if the all the clusters are version 2.17 and above.
 
 #### Monitoring and Analytics
 
 * <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->New GPU Overview dashboard that provides rich and extensive GPU allocation and performance data. The GPU Overview dashboard now contains interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/admin-ui-setup/dashboard-analysis.md#overview-dashboard).
 
-* <!-- RUN-15878/RUN-16796 omit Knative metrics -->Removed support for knative metrics and hpa autoscaler.
+* <!-- RUN-15878/RUN-16796/RUN-15878/RUN-16085 omit Knative metrics and update supported metrics and hpa autoscaler -->Updated the knative and autoscaler metrics. Run:ai currently supports the following metrics:
 
-* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->
+    * Throughput
+    * Concurrency
+  
+  For more information, see [Autoscaling metrics](../admin/workloads/inference-overview.md#autoscaling).
+  
+* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved functionality of metrics by using Run:ai APIs. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. For more information, see [Metrics](../developer/metrics/metrics.md#metrics-apis).
 
 #### Authentication and Authorization
 
@@ -93,7 +98,6 @@ date: 2024-Apr-14
 
 For more information, see [SSO UI configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
 
-
 #### Policies
 
 ### Control and Visibility
@@ -101,3 +105,30 @@ For more information, see [SSO UI configuration](../admin/runai-setup/authentica
 ## Deprecation Notifications
 
 Deprecation notifications allow you to plan for future changes in the Run:ai Platform. Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+
+### Feature deprecations
+
+The following features have been marked for deprecation:
+
+### API support and endpoint deprecations
+
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
+
+The following list of API endpoints have been marked for deprecation:
+
+#### Jobs, events, pods API (replaced by workloads/pods/events)
+
+| Deprecated endpoint | Replacement endpoint |
+| -- | -- |
+| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs | https://app.run.ai/api/v1/workloads |
+| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/count | https://app.run.ai/api/v1/workloads/count |
+| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
+| https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods | 
+
+#### cluster metrics (v1) - replaced v2
+
+| Deprecated endpoint | Replacement endpoint |
+| -- | -- |
+| https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics |
+
+In some cases name of metrics have been changed. For more information, see [Metrics](../developer/metrics/metrics.md).

@@ -1,11 +1,25 @@
 ---
 title: Developer Documentation Overview
+summary: This article is an overview of the developer documentation for the Run:ai platform.
+authors:
+    - Jason Novich
+date: 2024-Apr-10
 ---
 
 # Overview: Developer Documentation
 
 Developers can access Run:ai through various programmatic interfaces. 
 
+## API Support
+
+The endpoints and parameters specified in the following references are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
+
+Endpoints and parameters marked as deprecated means they remain operational and can be used; however, Run:ai will **NO LONGER RECOMMEND USING THEM**, **WILL NOT ADD FUNCTIONALITY TO THEM**, and **WILL NO LONGER BE SUPPORTED AFTER**
+
+Option1 : <#of versions>
+Option 2: <time period>. 
+
+For details, see the [Deprecation notifications](../home/whats-new-2-16.md#deprecation-notifications).
 
 ## API Architecture
 
@@ -18,7 +32,6 @@ Below is a diagram of the Run:ai API Architecture. A developer may:
 3. Access cluster metrics via the _Metrics API_.  
 
 ![api architecture image](img/api-architecture.png)
-
 
 ## Administrator API
 
@@ -47,4 +60,3 @@ See the [Metrics API](metrics/metrics.md) document.
 ## API Authentication
 
 See [API Authentication](rest-auth.md) for information on how to gain authenticated access to Run:ai APIs.
-
