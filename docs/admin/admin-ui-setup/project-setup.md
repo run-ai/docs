@@ -239,6 +239,43 @@ There may be cases where you cannot change the YAML file and still want to use t
 
 `runai/enforce-scheduler-name: true`
 
+### Example
+
+To annotate a project named `proj-a`, use the following command:
+	
+```bash
+kubectl annotate ns runai-proj-a runai/enforce-scheduler-name=true
+```
+
+Verify the namespace in yaml format to see the annotation:
+
+```bash
+kubectl get ns runai-proj-a -o yaml
+```
+
+Output: 
+
+```YAML
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    runai/enforce-scheduler-name: "true"
+  creationTimestamp: "2024-04-09T08:15:50Z"
+  labels:
+    kubernetes.io/metadata.name: runai-proj-a
+    runai/namespace-version: v2
+    runai/queue: proj-a
+  name: runai-proj-a
+  resourceVersion: "388336"
+  uid: c53af666-7989-43df-9804-42bf8965ce83
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
+```
+
 ## See Also
 
 Run:ai supports an additional (optional) level of resource allocation called [Departments](department-setup.md).
