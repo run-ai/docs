@@ -10,14 +10,14 @@ Developers can access Run:ai through various programmatic interfaces.
 
 ## API Support
 
-The endpoints and parameters specified in the following references are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
 
 Option1 : <#of versions>
 Option 2: <time period>.
 
-For details, see the [Deprecation notifications](../home/whats-new-2-16.md#deprecation-notifications).
+For details, see the [Deprecation notifications](../home/whats-new-2-17.md#deprecation-notifications).
 
 ## API Architecture
 
