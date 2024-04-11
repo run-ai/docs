@@ -64,9 +64,9 @@ date: 2024-Apr-14
 * <!-- RUN-14431/RUN-14432 New columns on cluster table-->Added new columns to the *Clusters* table to show Kubernetes distribution and version. This helps administrators view potential compatibility issues that may arise.
 
 * <!-- RUN-16237/RUN-16238 - Remove cluster filter from top bar in assets RUN-15619/RUN-16391 - Prevent multi-cluster scope & enable single-cluster scope (for all assets including policies & templates) RUN-15718/RUN-16235/RUN-16237/RUN-16238 - Omit the global cluster filter in asset creation forms and grids RUN-16127/RUN- 16128-->Improved the location of the cluster filter. The cluster filter has been relocated to filter bar and the drop down cluster filter in the header of the page has been removed. This improvement creates the following:
-    
+
     * Filter assets by cluster in the following tables:
-   
+
         * Data sources
         * Environments
         * Computer resources
@@ -117,15 +117,15 @@ Deprecation notifications allow you to plan for future changes in the Run:ai Pla
 
 Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative. The following features have been marked for deprecation:
 
+* Jobs&mdash;the *Jobs* feature (submission form and view) has been moved to the category of *Legacy*. To enable them, go to *Tools & Settings*, *General*, open the *Workloads* pane, and then toggle the *Jobs view* and *Job submission* switch to the enabled position.
+* Deployments&mdash;the *Deployments* feature has been removed. It has been replaced by *Inference* workloads. For more information, see [Jobs, Workloads, and Workspaces](#jobs-workloads-and-workspaces) above.
+* Workspaces view&mdash;the *Workspaces* menu has been removed. You can now submit a *Workspace* workload using the *+ New workload* form from the *Workloads* table.
+
 ### API support and endpoint deprecations
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
 
 The following list of API endpoints have been marked for deprecation:
-
-* Jobs&mdash;the *Jobs* feature (submission form and view) has been moved to the category of *Legacy*. To enable them, go to *Tools & Settings*, *General*, open the *Workloads* pane, and then toggle the *Jobs view* and *Job submission* switch to the enabled position.
-* Deployments&mdash;the *Deployments* feature has been removed. It has been replaced by *Inference* workloads. For more information, see [Jobs, Workloads, and Workspaces](#jobs-workloads-and-workspaces) above.
-* Workspaces view&mdash;the *Workspaces* menu has been removed. You can now submit a *Workspace* workload using the *+ New workload* form from the *Workloads* table.
 
 #### Jobs, events, pods API (replaced by workloads/pods/events)
 
@@ -134,18 +134,26 @@ The following list of API endpoints have been marked for deprecation:
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs | https://app.run.ai/api/v1/workloads |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/count | https://app.run.ai/api/v1/workloads/count |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
-| https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods | 
-### Users, Applications, and Groups API 
+| https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
+
+### Users, Applications, and Groups API
 
 | Deprecated endpoint | Replacement endpoint |
 | -- | -- |
 | https://app.run.ai/v1/k8s/apps | https://app.run.ai/api/v1/k8s/apps |
 | https://app.run.ai/v1/k8s/users | https://app.run.ai/api/v1/k8s/users |
 | https://app.run.ai/v1/k8s/groups | https://app.run.ai/api/v1/authorization/access-rules (groups should no longer be created, you can only add access rules to them) |
+
 #### Cluster metrics v1 (replaced by v2)
 
 | Deprecated endpoint | Replacement endpoint |
 | -- | -- |
 | https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics |
 
-In some cases name of metrics have been changed. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
+## Breaking changes
+
+Breaking changes notifications allow you to plan around potential changes that may interfere your current workflow when interfacing with the Run:ai Platform.
+
+### Metrics
+
+Be aware that some names of metrics have been changed and/or have been replaced by the Metrics API. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
