@@ -119,7 +119,7 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 ### API support and endpoint deprecations
 
-The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
 
 The following list of API endpoints have been marked for deprecation:
 
