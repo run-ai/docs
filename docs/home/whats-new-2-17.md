@@ -128,30 +128,69 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
 
-The following list of API endpoints have been marked for deprecation:
+The following list of API endpoints and fields that have been marked for deprecation:
 
-#### Jobs, events, pods API (replaced by workloads/pods/events)
+#### Jobs and Pods API
 
-| Deprecated endpoint | Replacement endpoint |
+| Deprecated | Replacement |
 | -- | -- |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs | https://app.run.ai/api/v1/workloads |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/count | https://app.run.ai/api/v1/workloads/count |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
 
-#### Users, Applications, and Groups API
-
-| Deprecated endpoint | Replacement endpoint |
+#### Clusters API
+| Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/apps | https://app.run.ai/api/v1/k8s/apps |
-| https://app.run.ai/v1/k8s/users | https://app.run.ai/api/v1/k8s/users |
-| https://app.run.ai/v1/k8s/groups | https://app.run.ai/api/v1/authorization/access-rules (groups should no longer be created, you can only add access rules to them) |
+| https://app.run.ai/v1/k8s/clusters | https://app.run.ai/api/v1/workloads |
+| https://app.run.ai/v1/k8s/clusters/{uuid} | https://app.run.ai/api/v1/workloads/count |
+| https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v1/clusters/{clusterUuid}/metrics |
 
-#### Cluster metrics v1 (replaced by v2)
+#### Authorization and Authentication API
 
-| Deprecated endpoint | Replacement endpoint |
+| Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics |
+| https://app.run.ai/v1/k8s/auth/token/exchange | https://app.run.ai/api/v1/token |
+| https://app.run.ai/v1/k8s/auth/oauth/tokens/refresh | https://app.run.ai/api/v1/token |
+| https://app.run.ai/v1/k8s/auth/oauth/apptoken | https://app.run.ai/api/v1/token |
+| https://app.run.ai/v1/k8s/users/roles | https://app.run.ai/api/v1/authorization/roles |
+| https://app.run.ai/v1/k8s/users | https://app.run.ai/api/v1/users |
+| https://app.run.ai/v1/k8s/users/{userId} | https://app.run.ai/api/v1/users/{userId} |
+| https://app.run.ai/v1/k8s/users/{userId}/roles | https://app.run.ai/api/v1/authorization/access-rules |
+| https://app.run.ai/v1/k8s/apps | https://app.run.ai/api/v1/apps |
+| https://app.run.ai/v1/k8s/apps/{clientId} | https://app.run.ai/api/v1/apps/{appId} |
+| https://app.run.ai/v1/k8s/groups | https://app.run.ai/api/v1/authorization/access-rules |
+| https://app.run.ai/v1/k8s/groups/{groupName} | https://app.run.ai/api/v1/authorization/access-rules |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/departments/{department-id}/access-control | https://app.run.ai/api/v1/authorization/access-rules |
+| https://app.run.ai/api/v1/authorization/access-rules - _subjectIdFilter_ field | Use _filterBy_ / _sortBy_ fields |
+| https://app.run.ai/api/v1/authorization/access-rules - _scopeType_ field | Use _filterBy_ / _sortBy_ fields |
+| https://app.run.ai/api/v1/authorization/access-rules - _roleId_ field | Use _filterBy_ / _sortBy_ fields |
+
+#### Projects API
+
+| Deprecated | Replacement |
+| -- | -- |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _permissions_ field | https://app.run.ai/api/v1/authorization/access-rules |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _resources_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _deservedGpus_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _gpuOverQuotaWeight_ field | Use _nodePoolResources_ field |
+
+#### Departments API
+
+| Deprecated | Replacement |
+| -- | -- |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _resources_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _deservedGpus_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _allowOverQuota_ field | Use _nodePoolResources_ field |
+| https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
+
+#### Policy API
+
+| Deprecated | Replacement |
+| -- | -- |
+| https://app.run.ai/api/v1/policy/workspace | https://app.run.ai/api/v2/policy/workspaces |
+| https://app.run.ai/api/v1/policy/training | https://app.run.ai/api/v2/policy/trainings |
 
 ## Breaking changes
 
