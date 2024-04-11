@@ -12,7 +12,7 @@ Developers can access Run:ai through various programmatic interfaces.
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. Endpoints and parameters that are **NOT** listed in the reference are not officially supported.
 
-Endpoints and parameters marked as deprecated means they remain operational and can be used; however, Run:ai will **NO LONGER RECOMMEND USING THEM**, **WILL NOT ADD FUNCTIONALITY TO THEM**, and **WILL NO LONGER BE SUPPORTED AFTER**
+Endpoints and parameters marked as `deprecated` means they remain operational and can be used; however, Run:ai will **NO LONGER RECOMMEND USING THEM**, **WILL NOT ADD FUNCTIONALITY TO THEM**, and **WILL NO LONGER BE SUPPORTED AFTER**
 
 Option1 : <#of versions>
 Option 2: <time period>.
