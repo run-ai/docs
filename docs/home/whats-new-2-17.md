@@ -8,6 +8,9 @@ date: 2024-Apr-14
 
 ## Release Content - April 14, 2024
 
+* [Deprecation notifications](#deprecation-notifications)
+* [Breaking changes](#breaking-changes)
+
 ### Researcher
 
 #### Scheduler
@@ -91,7 +94,7 @@ date: 2024-Apr-14
   
     For more information, see [Autoscaling metrics](../admin/workloads/inference-overview.md#autoscaling).
   
-* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved availability of metrics by using Run:ai APIs. Using the API endpoints is more efficient and provides an easier way of retrieving metrics in any application. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
+* <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved availability of metrics by using Run:ai APIs. Using the API endpoints is now the preferred method to retrieve metrics for use in any application. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
 
 #### Authentication and Authorization
 
@@ -136,7 +139,7 @@ The following list of API endpoints have been marked for deprecation:
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
 
-### Users, Applications, and Groups API
+#### Users, Applications, and Groups API
 
 | Deprecated endpoint | Replacement endpoint |
 | -- | -- |
@@ -156,4 +159,4 @@ Breaking changes notifications allow you to plan around potential changes that m
 
 ### Metrics
 
-Be aware that some names of metrics have been changed and/or have been replaced by the Metrics API. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
+Be aware that some names of metrics have been changed. For more information, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
