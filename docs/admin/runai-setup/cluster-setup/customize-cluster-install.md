@@ -17,7 +17,7 @@ This document explains how to customize the Run:ai cluster installation. Customi
 **After** the cluster is installed, you can edit the `runaiconfig` object to add/change configuration. Use the command:
 
 ```
-kubectl edit runaconfig runai -n runai
+kubectl edit runaiconfig runai -n runai
 ```
 
 All customizations will be saved when upgrading the cluster to a future version.
