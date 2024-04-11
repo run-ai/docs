@@ -142,7 +142,7 @@ The following list of API endpoints have been marked for deprecation:
 | https://app.run.ai/v1/k8s/apps | https://app.run.ai/api/v1/k8s/apps |
 | https://app.run.ai/v1/k8s/users | https://app.run.ai/api/v1/k8s/users |
 | https://app.run.ai/v1/k8s/groups | https://app.run.ai/api/v1/authorization/access-rules (groups should no longer be created, you can only add access rules to them) |
-#### cluster metrics (v1) - replaced v2
+#### Cluster metrics v1 (replaced by v2)
 
 | Deprecated endpoint | Replacement endpoint |
 | -- | -- |
