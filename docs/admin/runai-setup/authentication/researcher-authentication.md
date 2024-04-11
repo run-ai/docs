@@ -108,7 +108,7 @@ As described in [authentication overview](authentication-overview.md), you must 
     * Go to `Configuration` and then to `Authentication`.
     * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. The process can take up to 30 minutes. 
 
-=== "Bright"
+=== "Base Command Manager"
 
     Run the following. Replace `<TENANT-NAME>` and `<REALM-NAME>` with the appropriate values:
 
