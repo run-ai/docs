@@ -174,7 +174,7 @@ The `defaults` section of the policy file is...
 |Field | Type | Description |
 | -- | -- | --|
 |`json:"configMap"` | `string` | The name of the ConfigMap resource. ConfigMap is mandatory for creating a workspace. |
-|`json:"mountPath"` | `string` | Local path within the workspace to which the PVC bucket will be mapped. ClaimName is mandatory for creating a workspace. |
+|`json:"mountPath"` | `string` | Local path within the workspace to which the ConfigMap bucket will be mapped. ClaimName is mandatory for creating a workspace. |
 
 #### Workspace
 
