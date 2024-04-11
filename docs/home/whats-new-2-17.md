@@ -98,10 +98,10 @@ date: 2024-Apr-14
 
 #### Authentication and Authorization
 
-* <!-- RUN-15585/RUN-15586 -  View & Edit SSO settings - SAML -->Added new functionality to SAML 2 in the *SSO configuration* in the *Security* category* of the *Tools & Settings* menu. The added functionality assists with troubleshooting login or permissions issues that may arise. Now administrators now have the ability to:
+* <!-- RUN-15585/RUN-15586 -  View & Edit SSO settings - SAML -->Added new functionality to SAML 2.0 identity provider configuration in the *Security* category of the *General* settings. The added functionality assists with troubleshooting SSO configuration and authentication issues that may arise. Now administrators now have the ability to:
 
-    * View and edit SSO settings.
-    * Upload or download a settings XML file.
+    * View and edit the identity provider settings for SAML 2.0
+    * Upload or download the SAML 2.0 identity provider metadata XML file.
 
 For more information, see [SSO UI configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
 
