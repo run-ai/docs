@@ -7,9 +7,9 @@ NVIDIA [DGX](https://www.nvidia.com/en-us/data-center/dgx-systems/){target=_blan
 NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this document is to guide you through the process of installing and configuring Run:ai in this scenario
 
 
-## NVIDIA Bright Cluster Manager
+## NVIDIA Base Command Manager
 
-[NVIDIA Bright Cluster Manager](https://www.nvidia.com/en-us/data-center/bright-cluster-manager/){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Bright installer.
+[NVIDIA Base Command Manager](https://docs.nvidia.com/base-command-manager){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Base Command Manager installer.
 
 ## Prerequisites 
 
@@ -17,9 +17,9 @@ NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this documen
 
 Run:ai assumes the following components to be pre-installed:
 
-* `NVIDIA GPU Operator` - available for installation via the bright installer
-* `Prometheus` - available for installation via the bright installer
-* `Ingress controller` - NGINX is available for installation via the bright installer. 
+* `NVIDIA GPU Operator` - available for installation via the Base Command Manager installer
+* `Prometheus` - available for installation via the Base Command Manager installer
+* `Ingress controller` - NGINX is available for installation via the Base Command Manager installer. 
 
 
 ###  Run:ai prerequisites 
@@ -33,11 +33,11 @@ The Run:ai cluster installer will require the following:
 * Post-installation - credentials for the Run:ai user interface. Provided by Run:ai customer support.
 ## Installing Run:ai installer
 
-Select Run:ai via the bright installer. Remember to select all of the above software prerequisites as well. 
+Select Run:ai via the Base Command Manager installer. Remember to select all of the above software prerequisites as well. 
 
 ## Using the Run:ai installer
 
-Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>:30080/runai-installer`. Alternatively use the Bright landing page at `http://<CLUSTER-IP>/#runai`.  
+Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>:30080/runai-installer`. Alternatively use the Base Command Manager landing page at `http://<CLUSTER-IP>/#runai`.  
 
 !!! Note
     * Use `http` rather than `https`.
@@ -67,7 +67,7 @@ Save the URL for future use.
 
 Post installation, you will want to:
 
-* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. Note the _Bright_ section in that document.
+* (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work. Note the _Base Command Manager_ section in that document.
 * Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
 * Set up Projects for Researchers [Working with Projects](../../admin-ui-setup/project-setup.md).
 
