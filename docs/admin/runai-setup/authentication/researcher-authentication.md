@@ -139,7 +139,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
     * Go to `Configuration` and then to `Authentication`.
     * Associate a new `identity provider`. Use the parameters provided in the server configuration section as described above. The process can take up to 30 minutes.
 
-=== "Bright"
+=== "BCM"
 
     Run the following. Replace `<TENANT-NAME>` and `<REALM-NAME>` with the appropriate values:
 
