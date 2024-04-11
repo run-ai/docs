@@ -36,7 +36,7 @@ Run:ai requires Kubernetes. Run:ai is been certified with the following Kubernet
 | AKS | Azure Kubernetes Services          |   |
 | GKE | Google Kubernetes Engine           |  |
 | RKE | Rancher Kubernetes Engine          | When installing Run:ai, select *On Premise*  |
-| Bright  | [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
+| BCM  | [NVIDIA Base Command Manager](https://docs.nvidia.com/base-command-manager){target=_blank}     | In addition, NVIDIA DGX comes [bundled](dgx-bundle.md) with Run:ai  |
 
 Run:ai has been tested with the following Kubernetes distributions. Please contact Run:ai Customer Support for up to date certification details:
 
