@@ -15,6 +15,7 @@ Run:ai APIs are accessed using *bearer tokens*. A token can be obtained in sever
 * Go to `Settings & Tools`, `Application` and create a new Application.
 * Copy the `<APPLICATION>` and `<SECRET KEY>` to be used below
 
+
 ### Access rules for the Application
 
 In order for you API requests to be accepted, you will need to set access rules for the application.
@@ -31,6 +32,7 @@ Use the above parameters to get a temporary token to access Run:ai as follows.
 Replace `<COMPANY-URL>` below with:
 
   * For SaaS installations use `<company>.run.ai`
+
   * For self-hosted use the Run:ai user interface URL.
 
 === "cURL"
