@@ -128,9 +128,11 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
 
+#### Deprecated APIs and API fields
+
 The following list of API endpoints and fields that have been marked for deprecation:
 
-#### Jobs and Pods API
+##### Jobs and Pods API
 
 | Deprecated | Replacement |
 | -- | -- |
@@ -139,14 +141,14 @@ The following list of API endpoints and fields that have been marked for depreca
 | https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
 | https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
 
-#### Clusters API
+##### Clusters API
 | Deprecated | Replacement |
 | -- | -- |
 | https://app.run.ai/v1/k8s/clusters | https://app.run.ai/api/v1/workloads |
 | https://app.run.ai/v1/k8s/clusters/{uuid} | https://app.run.ai/api/v1/workloads/count |
 | https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v1/clusters/{clusterUuid}/metrics |
 
-#### Authorization and Authentication API
+##### Authorization and Authentication API
 
 | Deprecated | Replacement |
 | -- | -- |
@@ -166,7 +168,7 @@ The following list of API endpoints and fields that have been marked for depreca
 | https://app.run.ai/api/v1/authorization/access-rules - _scopeType_ field | Use _filterBy_ / _sortBy_ fields |
 | https://app.run.ai/api/v1/authorization/access-rules - _roleId_ field | Use _filterBy_ / _sortBy_ fields |
 
-#### Projects API
+##### Projects API
 
 | Deprecated | Replacement |
 | -- | -- |
@@ -176,7 +178,7 @@ The following list of API endpoints and fields that have been marked for depreca
 | https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
 | https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _gpuOverQuotaWeight_ field | Use _nodePoolResources_ field |
 
-#### Departments API
+##### Departments API
 
 | Deprecated | Replacement |
 | -- | -- |
@@ -185,12 +187,22 @@ The following list of API endpoints and fields that have been marked for depreca
 | https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _allowOverQuota_ field | Use _nodePoolResources_ field |
 | https://app.run.ai/v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
 
-#### Policy API
+##### Policy API
 
 | Deprecated | Replacement |
 | -- | -- |
 | https://app.run.ai/api/v1/policy/workspace | https://app.run.ai/api/v2/policy/workspaces |
 | https://app.run.ai/api/v1/policy/training | https://app.run.ai/api/v2/policy/trainings |
+
+#### Removed APIs and API fields (completed deprecation)
+
+The following list of API endpoints and fields that have completed their deprecation process and therefore will be changed as follows:
+
+##### Assets API
+
+| Endpoint | Change |
+| -- | -- |
+| https://app.run.ai/api/v1/asset/compute |  |
 
 ## Breaking changes
 
