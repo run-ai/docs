@@ -142,10 +142,11 @@ The following list of API endpoints and fields that have been marked for depreca
 | https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
 
 ##### Clusters API
+
 | Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/clusters | https://app.run.ai/api/v1/workloads |
-| https://app.run.ai/v1/k8s/clusters/{uuid} | https://app.run.ai/api/v1/workloads/count |
+| https://app.run.ai/v1/k8s/clusters | https://app.run.ai/api/v1/clusters |
+| https://app.run.ai/v1/k8s/clusters/{uuid} | https://app.run.ai/api/v1/clusters/{uuid} |
 | https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v1/clusters/{clusterUuid}/metrics |
 
 ##### Authorization and Authentication API
