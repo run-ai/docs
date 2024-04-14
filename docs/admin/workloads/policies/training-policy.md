@@ -8,7 +8,7 @@ date: 2023-Dec-18
 
 A *Training* policy places resource restrictions and defaults on training worloads in the Run:ai platform. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
 
-## Example
+<!-- ## Example
 
 Below is an example policy you can use in your platform.
 
@@ -22,7 +22,7 @@ Below is an example policy you can use in your platform.
 # insert example here
 
 ```
-
+-->
 ## Viewing or Edit a Policy
 
 To view or edit a policy:
