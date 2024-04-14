@@ -15,12 +15,13 @@ Run:ai APIs are accessed using *bearer tokens*. A token can be obtained in sever
 * Go to `Settings & Tools`, `Application` and create a new Application.
 * Copy the `<APPLICATION>` and `<SECRET KEY>` to be used below
 
+
 ### Access rules for the Application
 
-* Set the required roles:
-    * Select `Researcher` to manipulate *Jobs* using the [Cluster API](cluster-api/submit-rest.md). To provide access to a specific project, you will also need to go to `Application | Projects` and provide the Application with access to specific projects.
-    * Select `Editor` to manipulate *Projects* and *Departments* using the [Administrator REST API](admin-rest-api/overview.md).
-    * Select `Administrator` to manipulate *Users*, *Tenant Settings* and *Clusters* using the [Administrator REST API](admin-rest-api/overview.md).
+In order for you API requests to be accepted, you will need to set access rules for the application.
+To assign roles to an application, see [Create or Delete rules](../admin/runai-setup/access-control/rbac.md#create-or-delete-rules).
+
+Use the [Roles](../admin/runai-setup/access-control/rbac.md#roles) table to assign the correct roles to the application.
 
 ## Request an API Token
 
@@ -30,7 +31,8 @@ Use the above parameters to get a temporary token to access Run:ai as follows.
 
 Replace `<COMPANY-URL>` below with:
 
-  * For SaaS installations use `<company>.run.ai` 
+  * For SaaS installations use `<company>.run.ai`
+
   * For self-hosted use the Run:ai user interface URL.
 
 === "cURL"
