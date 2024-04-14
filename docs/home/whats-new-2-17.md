@@ -202,7 +202,7 @@ The following list of API endpoints and fields that have completed their depreca
 
 | Endpoint | Change |
 | -- | -- |
-| https://app.run.ai/api/v1/asset/compute |  |
+| https://app.run.ai/api/v1/asset/compute | _gpuRequest_ field was removed and is replaced by the following fields _gpuDevicesRequest_, _gpuRequestType_, _gpuPortionRequest_, _gpuPortionLimit_, _gpuMemoryRequest_, _gpuMemoryLimit_, _migProfile_ |
 
 ## Breaking changes
 
