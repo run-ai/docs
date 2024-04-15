@@ -163,28 +163,28 @@ The following list of API endpoints and fields that have been marked for depreca
 | /v1/k8s/groups | /api/v1/authorization/access-rules |
 | /v1/k8s/groups/{groupName} | /api/v1/authorization/access-rules |
 | /v1/k8s/clusters/{clusterId}/departments/{department-id}/access-control | /api/v1/authorization/access-rules |
-| /api/v1/authorization/access-rules - _subjectIdFilter_ field | Use _filterBy_ / _sortBy_ fields |
-| /api/v1/authorization/access-rules - _scopeType_ field | Use _filterBy_ / _sortBy_ fields |
-| /api/v1/authorization/access-rules - _roleId_ field | Use _filterBy_ / _sortBy_ fields |
+| /api/v1/authorization/access-rules - `subjectIdFilter` field | Use `filterBy` / `sortBy` fields |
+| /api/v1/authorization/access-rules - `scopeType` field | Use `filterBy` / `sortBy` fields |
+| /api/v1/authorization/access-rules - `roleId` field | Use `filterBy` / `sortBy` fields |
 
 ##### Projects API
 
 | Deprecated | Replacement |
 | -- | -- |
-| /v1/k8s/clusters/{clusterId}/projects - _permissions_ field | /api/v1/authorization/access-rules |
-| /v1/k8s/clusters/{clusterId}/projects - _resources_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _deservedGpus_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _gpuOverQuotaWeight_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/projects - `permissions` field | /api/v1/authorization/access-rules |
+| /v1/k8s/clusters/{clusterId}/projects - `resources` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `deservedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `maxAllowedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `gpuOverQuotaWeight` field | Use `nodePoolResources` field |
 
 ##### Departments API
 
 | Deprecated | Replacement |
 | -- | -- |
-| /v1/k8s/clusters/{clusterId}/departments - _resources_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/departments - _deservedGpus_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/departments - _allowOverQuota_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/departments - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/departments - `resources` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `deservedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `allowOverQuota` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `maxAllowedGpus` field | Use `nodePoolResources` field |
 
 ##### Policy API
 
@@ -201,13 +201,13 @@ The following list of API endpoints and fields that have completed their depreca
 
 | Endpoint | Change |
 | -- | -- |
-| /api/v1/asset/compute | _gpuRequest_ field was removed and is replaced by the following fields _gpuDevicesRequest_, _gpuRequestType_, _gpuPortionRequest_, _gpuPortionLimit_, _gpuMemoryRequest_, _gpuMemoryLimit_, _migProfile_ |
+| /api/v1/asset/compute | `gpuRequest` field was removed and is replaced by the following fields `gpuDevicesRequest`, `gpuRequestType`, `gpuPortionRequest`, `gpuPortionLimit`, `gpuMemoryRequest`, `gpuMemoryLimit`, `migProfile` |
 
 ### Metrics deprecations
 
 The following metrics are deprecated and replaced by API. For details about the replacement APIs, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping):
 
-| Metric | 
+| Metric |
 | -- |
 | runai\_active\_job\_cpu\_requested\_cores |
 | runai\_active\_job\_memory\_requested\_bytes |
@@ -220,7 +220,7 @@ The following metrics are deprecated and replaced by API. For details about the 
 | runai\_gpu\_memory\_used\_mebibytes\_per\_pod\_per\_gpu |
 | runai\_active\_job\_cpu\_limits |
 | runai\_job\_cpu\_usage |
-| runai\_active\_job\_memory\_limits |                                                                                       
+| runai\_active\_job\_memory\_limits |
 | runai\_job\_memory\_used\_bytes |
 
 ## Breaking changes
