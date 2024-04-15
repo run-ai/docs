@@ -205,7 +205,7 @@ The following list of API endpoints and fields that have completed their depreca
 
 ### Metrics deprecations
 
-The following metrics are deprecated and replaced by API. For details about the replacement APIs, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping):
+The following metrics are deprecated and replaced by API endpoints. For details about the replacement APIs, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping):
 
 | Metric |
 | -- |
