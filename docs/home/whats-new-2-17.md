@@ -203,6 +203,26 @@ The following list of API endpoints and fields that have completed their depreca
 | -- | -- |
 | /api/v1/asset/compute | _gpuRequest_ field was removed and is replaced by the following fields _gpuDevicesRequest_, _gpuRequestType_, _gpuPortionRequest_, _gpuPortionLimit_, _gpuMemoryRequest_, _gpuMemoryLimit_, _migProfile_ |
 
+### Metrics deprecations
+
+The following metrics are deprecated and replaced by API. For details about the replacement APIs, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping):
+
+| Metric | 
+| -- |
+| runai\_active\_job\_cpu\_requested\_cores |
+| runai\_active\_job\_memory\_requested\_bytes |
+| runai\_cluster\_cpu\_utilization |
+| runai\_cluster\_memory\_utilization |
+| runai\_gpu\_utilization\_per\_pod\_per\_gpu |
+| runai\_gpu\_utilization\_per\_workload |
+| runai\_job\_requested\_gpu\_memory |
+| runai\_gpu\_memory\_used\_mebibytes\_per\_workload |
+| runai\_gpu\_memory\_used\_mebibytes\_per\_pod\_per\_gpu |
+| runai\_active\_job\_cpu\_limits |
+| runai\_job\_cpu\_usage |
+| runai\_active\_job\_memory\_limits |                                                                                       
+| runai\_job\_memory\_used\_bytes |
+
 ## Breaking changes
 
 Breaking changes notifications allow you to plan around potential changes that may interfere your current workflow when interfacing with the Run:ai Platform.
