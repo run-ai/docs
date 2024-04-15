@@ -181,10 +181,10 @@ The following list of API endpoints and fields that have been marked for depreca
 
 | Deprecated | Replacement |
 | -- | -- |
-| /v1/k8s/clusters/{clusterId}/projects - _resources_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _deservedGpus_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _allowOverQuota_ field | Use _nodePoolResources_ field |
-| /v1/k8s/clusters/{clusterId}/projects - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/departments - _resources_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/departments - _deservedGpus_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/departments - _allowOverQuota_ field | Use _nodePoolResources_ field |
+| /v1/k8s/clusters/{clusterId}/departments - _maxAllowedGpus_ field | Use _nodePoolResources_ field |
 
 ##### Policy API
 
