@@ -128,30 +128,100 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
 
-The following list of API endpoints have been marked for deprecation:
+#### Deprecated APIs and API fields
 
-#### Jobs, events, pods API (replaced by workloads/pods/events)
+The following list of API endpoints and fields that have been marked for deprecation:
 
-| Deprecated endpoint | Replacement endpoint |
+##### Jobs and Pods API
+
+| Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs | https://app.run.ai/api/v1/workloads |
-| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/count | https://app.run.ai/api/v1/workloads/count |
-| https://app.run.ai/v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | https://app.run.ai/api/v1/workloads/{workloadId}/pods |
-| https://app.run.ai/v1/k8s/clusters/{uuid}/pods | https://app.run.ai/api/v1/workloads/pods |
+| /v1/k8s/clusters/{uuid}/jobs | /api/v1/workloads |
+| /v1/k8s/clusters/{uuid}/jobs/count | /api/v1/workloads/count |
+| /v1/k8s/clusters/{uuid}/jobs/{jobId}/pods | /api/v1/workloads/{workloadId}/pods |
+| /v1/k8s/clusters/{uuid}/pods | /api/v1/workloads/pods |
 
-#### Users, Applications, and Groups API
+##### Clusters API
 
-| Deprecated endpoint | Replacement endpoint |
+| Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/apps | https://app.run.ai/api/v1/k8s/apps |
-| https://app.run.ai/v1/k8s/users | https://app.run.ai/api/v1/k8s/users |
-| https://app.run.ai/v1/k8s/groups | https://app.run.ai/api/v1/authorization/access-rules (groups should no longer be created, you can only add access rules to them) |
+| /v1/k8s/clusters/{clusterUuid}/metrics | /api/v1/clusters/{clusterUuid}/metrics |
 
-#### Cluster metrics v1 (replaced by v2)
+##### Authorization and Authentication API
 
-| Deprecated endpoint | Replacement endpoint |
+| Deprecated | Replacement |
 | -- | -- |
-| https://app.run.ai/v1/k8s/clusters/{clusterUuid}/metrics | https://app.run.ai/api/v2/clusters/{clusterUuid}/metrics |
+| /v1/k8s/auth/token/exchange | /api/v1/token |
+| /v1/k8s/auth/oauth/tokens/refresh | /api/v1/token |
+| /v1/k8s/auth/oauth/apptoken | /api/v1/token |
+| /v1/k8s/users/roles | /api/v1/authorization/roles |
+| /v1/k8s/users | /api/v1/users |
+| /v1/k8s/users/{userId} | /api/v1/users/{userId} |
+| /v1/k8s/users/{userId}/roles | /api/v1/authorization/access-rules |
+| /v1/k8s/apps | /api/v1/apps |
+| /v1/k8s/apps/{clientId} | /api/v1/apps/{appId} |
+| /v1/k8s/groups | /api/v1/authorization/access-rules |
+| /v1/k8s/groups/{groupName} | /api/v1/authorization/access-rules |
+| /v1/k8s/clusters/{clusterId}/departments/{department-id}/access-control | /api/v1/authorization/access-rules |
+| /api/v1/authorization/access-rules - `subjectIdFilter` field | Use `filterBy` / `sortBy` fields |
+| /api/v1/authorization/access-rules - `scopeType` field | Use `filterBy` / `sortBy` fields |
+| /api/v1/authorization/access-rules - `roleId` field | Use `filterBy` / `sortBy` fields |
+
+##### Projects API
+
+| Deprecated | Replacement |
+| -- | -- |
+| /v1/k8s/clusters/{clusterId}/projects - `permissions` field | /api/v1/authorization/access-rules |
+| /v1/k8s/clusters/{clusterId}/projects - `resources` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `deservedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `maxAllowedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/projects - `gpuOverQuotaWeight` field | Use `nodePoolResources` field |
+
+##### Departments API
+
+| Deprecated | Replacement |
+| -- | -- |
+| /v1/k8s/clusters/{clusterId}/departments - `resources` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `deservedGpus` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `allowOverQuota` field | Use `nodePoolResources` field |
+| /v1/k8s/clusters/{clusterId}/departments - `maxAllowedGpus` field | Use `nodePoolResources` field |
+
+##### Policy API
+
+| Deprecated | Replacement |
+| -- | -- |
+| /api/v1/policy/workspace | /api/v2/policy/workspaces |
+| /api/v1/policy/training | /api/v2/policy/trainings |
+
+#### Removed APIs and API fields (completed deprecation)
+
+The following list of API endpoints and fields that have completed their deprecation process and therefore will be changed as follows:
+
+##### Assets API
+
+| Endpoint | Change |
+| -- | -- |
+| /api/v1/asset/compute | `gpuRequest` field was removed and is replaced by the following fields `gpuDevicesRequest`, `gpuRequestType`, `gpuPortionRequest`, `gpuPortionLimit`, `gpuMemoryRequest`, `gpuMemoryLimit`, `migProfile` |
+
+### Metrics deprecations
+
+The following metrics are deprecated and replaced by API endpoints. For details about the replacement APIs, see [Changed Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping):
+
+| Metric |
+| -- |
+| runai\_active\_job\_cpu\_requested\_cores |
+| runai\_active\_job\_memory\_requested\_bytes |
+| runai\_cluster\_cpu\_utilization |
+| runai\_cluster\_memory\_utilization |
+| runai\_gpu\_utilization\_per\_pod\_per\_gpu |
+| runai\_gpu\_utilization\_per\_workload |
+| runai\_job\_requested\_gpu\_memory |
+| runai\_gpu\_memory\_used\_mebibytes\_per\_workload |
+| runai\_gpu\_memory\_used\_mebibytes\_per\_pod\_per\_gpu |
+| runai\_active\_job\_cpu\_limits |
+| runai\_job\_cpu\_usage |
+| runai\_active\_job\_memory\_limits |
+| runai\_job\_memory\_used\_bytes |
 
 ## Breaking changes
 
