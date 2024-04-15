@@ -95,5 +95,5 @@ The following list of API endpoints and fields that have completed their depreca
 
 | Endpoint | Change |
 | -- | -- |
-| /v1/k8s/clusters | The endpoint was and is replaced by /api/v1/clusters |
-| /v1/k8s/clusters/{uuid} | The endpoint was and is replaced by /api/v1/clusters/{uuid} |
+| /v1/k8s/clusters | The endpoint was removed and is replaced by /api/v1/clusters |
+| /v1/k8s/clusters/{uuid} | The endpoint was removed and is replaced by /api/v1/clusters/{uuid} |
