@@ -24,16 +24,14 @@ To complete this Quickstart you must have:
 
 ### Run an Inference Workload
 
-* In the Run:ai user interface go to *Workloads*.
-* Select *+ New Deployment* on the top right, then choose *Inference*
+* In the Run:ai user interface go to `Deployments`. If you do not see the `Deployments` section you may not have the required access control, or the inference module is disabled.
+* Select `New Deployment` on the top right.
 * Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`.
-* Select `Custom` in *Inference type.
-* Enter a name, and press continue.
-* Select an environment, then in `Compute Resources` select 0.5 GPUs from the second page.
-* Under `Replica Autoscaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
+* Under `Resources` add 0.5 GPUs.
+* Under `Autoscaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
 * Add a `Container port` of `8000`.
 
-This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress using the [Workloads](../../admin/workloads/submitting-workloads.md) in the user interface or by running `runai list jobs`.
+This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress using the [Deployment list](../../admin/admin-ui-setup/deployments.md) in the user interface or by running `runai list jobs`
 
 ### Query the Inference Server
 
@@ -56,7 +54,7 @@ runai logs inference-client
 ### View status on the Run:ai User Interface
 
 * Open the Run:ai user interface.
-* Under *Worklodas* you can view the new workload.
+* Under *Deployments* you can view the new Workload. When clicking the workload, note the utilization graphs go up.
 
 ### Stop Workload
 
@@ -64,5 +62,5 @@ Use the user interface to delete the workload.
 
 ## See also
 
-* You can also create Inference workloads via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
-* See [Workloads](../../admin/workloads/submitting-workloads.md) user interface.
+* You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
+* See [Deployment](../../admin/admin-ui-setup/deployments.md) user interface.

@@ -104,7 +104,7 @@ To create a new access rule:
       2. **SSO Group**&mdash;a known group listed in your IDP server.
     !!! Note
         To add SSO users and groups, you must enter a user id, or group id that is recognized by the configured IDP.
-      4. **Application**&mdash;an application that has been created in the platform.
+      3. **Application**&mdash;an application that has been created in the platform.
 
 4. Select a [Role] from the dropdown.
 5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *SAVE RULE* when done.

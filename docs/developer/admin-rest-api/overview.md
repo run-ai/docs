@@ -1,4 +1,4 @@
-# Administrator REST API
+# Control Plane REST API
 
 The purpose of the Administrator REST API is to provide an easy-to-use programming interface for administrative tasks.
 

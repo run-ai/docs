@@ -86,3 +86,14 @@ Deprecation notifications allow you to plan for future changes in the Run:ai Pla
     * User Interface&mdash;there will no longer be an option to:
         * migrate projects to another department, when deleting departments.
         * change departments, when editing a project.
+
+### API deprecations
+
+#### Removed APIs and API fields (completed deprecation) 
+
+The following list of API endpoints and fields that have completed their deprecation process and therefore will be changed as follows:
+
+| Endpoint | Change |
+| -- | -- |
+| /v1/k8s/clusters | The endpoint was removed and is replaced by /api/v1/clusters |
+| /v1/k8s/clusters/{uuid} | The endpoint was removed and is replaced by /api/v1/clusters/{uuid} |
