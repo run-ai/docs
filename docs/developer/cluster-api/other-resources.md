@@ -4,7 +4,7 @@
 
 Kubernetes has several built-in resources that encapsulate running *Pods*. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/){target=_blank} and **should not be confused** with [Run:ai Workloads](workload-overview-dev.md).
 
-Examples of such resources are a *Deployment* that manages a stateless application, or a *Job* that runs tasks to completion.
+Examples of such resources are a *Kubernetes Deployment* that manages a stateless application, or a *Job* that runs tasks to completion.
 
 Run:ai natively runs [Run:ai Workloads](workload-overview-dev.md). A Run:ai workload encapsulates all the resources needed to run, creates them, and deletes them together. However, Run:ai, being an **open platform** allows the scheduling of **any** Kubernetes Workflow.
 

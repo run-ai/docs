@@ -19,7 +19,7 @@ For detailed information on node pools, see [Using node pools](../../Researcher/
 By default, all nodes in a cluster are part of the `Default` node pool. The administrator can choose to create new node pools and include a set of nodes in a node pool by associating the nodes with a label.
 
 Each node pool is automatically associated with all Projects and Departments with zero resource allocation (Quotas).
-When submitting a Job (or Deployment), the Researcher can choose one or more node pools. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools. The scheduler will try to schedule the Job to the first node pool. If not successful the scheduler will try the second node pool in the list, and so forth until it finds a node pool that can provide the Job's specification.
+When submitting a Workload, the Researcher can choose one or more node pools. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools. The scheduler will try to schedule the Job to the first node pool. If not successful the scheduler will try the second node pool in the list, and so forth until it finds a node pool that can provide the Job's specification.
 
 An administrator can set a Project's `default priority list` of node pools. In case the Researcher did not specify any node pool (or node pool list), the scheduler will use the Project's default node pool priority list to determine the order that the scheduler will use when scheduling the Job.
 
