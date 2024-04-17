@@ -282,7 +282,7 @@ kubectl patch configmap/config-features \
 
 #### Inference Autoscaling
 
-Run:ai allows to autoscale a deployment using the following metrics:
+Run:ai allows to autoscale a Kubernetes deployment using the following metrics:
 
 1. Throughput (requests/second)
 2. Concurrency
