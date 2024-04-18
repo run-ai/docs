@@ -66,7 +66,11 @@ There may be cases where you need to set additional properties as follows:
 | `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<component>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |   
 |<div style="width:200px"></div>| | |
 
-Use the `--set` syntax in the helm command above.  
+Use the `--set` syntax in the helm command above. 
+
+!!! Note If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:
+    1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
+    2. Run `helm upgrade` for un:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
 
 ## Next steps
 ### Connect to Run:ai user interface
