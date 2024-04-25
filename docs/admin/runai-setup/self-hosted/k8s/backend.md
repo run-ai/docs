@@ -70,7 +70,7 @@ Use the `--set` syntax in the helm command above.
 
 !!! Note If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:
     1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
-    2. Run `helm upgrade` for un:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
+    2. Run `helm upgrade` for Run:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
 
 ## Next Steps
 
