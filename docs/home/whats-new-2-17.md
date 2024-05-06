@@ -193,6 +193,12 @@ The following list of API endpoints and fields that have been marked for depreca
 | /api/v1/policy/workspace | /api/v2/policy/workspaces |
 | /api/v1/policy/training | /api/v2/policy/trainings |
 
+##### Logo API
+
+| Deprecated | Replacement |
+| -- | -- |
+| /v1/k8s/tenant/{tenantId}/logo | /api/v1/logo |
+
 #### Removed APIs and API fields (completed deprecation)
 
 The following list of API endpoints and fields that have completed their deprecation process and therefore will be changed as follows:
