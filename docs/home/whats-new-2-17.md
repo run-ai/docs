@@ -201,7 +201,7 @@ The following list of API endpoints and fields that have completed their depreca
 
 | Endpoint | Change |
 | -- | -- |
-| /api/v1/asset/compute | `gpuRequest` field was removed and is replaced by the following fields `gpuDevicesRequest`, `gpuRequestType`, `gpuPortionRequest`, `gpuPortionLimit`, `gpuMemoryRequest`, `gpuMemoryLimit`, `migProfile` |
+| /api/v1/asset/compute | `gpuRequest` field was removed and is replaced by the following fields: <br> * `gpuDevicesRequest` (New and mandatory) <br> * `gpuRequestType` (New and mandatory if  `gpuDevicesRequest=1` otherwise optional for values 0 or greater than 1) <br> * `gpuPortion` was changed to `gpuPortionRequest` and accepts values between 0 and 1 (for example 0.75) <br> * `gpuPortionLimit` (New and optional) <br> * `gpuMemory` was changed to `gpuMemoryRequest` <br> * `gpuMemoryLimit` (New and optional) |
 
 ### Metrics deprecations
 
