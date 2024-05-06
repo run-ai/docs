@@ -103,6 +103,8 @@ spec:
         port1:
           value:
             container: 8000
+            protocol: http
+            serviceType: ServingPort
 ```
 
 1. Possible metrics can be `cpu-utilization`, `latency`, `throughput`, `concurrency`, `gpu-utilization`, `custom`. Different metrics may require additional [installations](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference) at the cluster level.

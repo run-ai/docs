@@ -48,6 +48,7 @@ There may be cases where you need to set additional properties as follows:
 |----------|----------|-------------|
 | `keycloakx.adminUser` | KeyCloak (Run:ai internal identity provider) administrator username | Override the default user name of the Keycloak administrator user |
 | `keycloakx.adminPassword` | KeyCloak (Run:ai internal identity provider) administrator password | Override the default password of the Keycloak administrator user |
+| `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress | 
 | `global.postgresql.auth.port`  | PostgreSQL port | Override the default PostgreSQL port for the Run:ai database  |
 | `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for accessing the Run:ai database  |
 | `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for accessing the Run:ai database  |
