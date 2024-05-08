@@ -44,7 +44,7 @@ See the Prerequisites section [above](prerequisites.md).
     Run the following script (you must have at least 20GB of free disk space to run): 
 
     ```  
-    ./prepare_installation.sh
+    ./setup.sh
     ```
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
