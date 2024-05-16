@@ -309,6 +309,16 @@ The dashboard has a graph of the Project over-quota GPU consumption.
 
 !![](img/consumption-dashboard-project-over-quota-graph.png)
 
+
+### Metrics used for consumption calculation
+
+* GPU allocation hours     - `runai_allocated_gpu_count_per_pod:hourly`
+* CPU allocation hours     - `runai_allocated_millicpus_per_pod:hourly`
+* Memory allocation hours  - `runai_allocated_memory_per_pod:hourly`
+* CPU usage hours          - `runai_used_cpu_cores_per_pod:hourly`
+* Memory usage hours       - `runai_used_memory_bytes_per_pod:hourly`
+* GPU Idle allocated hours - `runai_gpu_idle_hours_per_queue:hourly`
+
 ## Quota management dashboard
 
 The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
