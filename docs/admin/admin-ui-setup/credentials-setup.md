@@ -22,7 +22,7 @@ creation tool to create a pre-existing secret for the credential. You must `labe
 The following command makes the secret available to all projects in the cluster.
 
 ```console
-kubectl label secret -n runai <SECRET_NAME> run.ai/cluster-wide-credentials=true
+kubectl label secret -n runai <SECRET_NAME> run.ai/resource=<credential_type> run.ai/cluster-wide-credentials=true
 ```
 
 The following command makes the secret available to the entire scope of a department.
