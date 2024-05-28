@@ -10,7 +10,7 @@ Developers can access Run:ai through various programmatic interfaces.
 
 ## API Support
 
-The endpoints and fields specified in the API reference are the ones that are officially supported by Run:ai. Endpoints and fields that are not listed in the API reference are not supported.
+The endpoints and fields specified in the [API reference](https://app.run.ai/api/docs) are the ones that are officially supported by Run:ai. Endpoints and fields that are not listed in the API reference are not supported.
 
 Run:ai does not recommend using API endpoints and fields marked as `deprecated` and will not add functionality to them. Once an API endpoint or field is marked as `deprecated`, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
 
