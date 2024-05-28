@@ -361,9 +361,4 @@ runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
 
 ## Output
 
-The command will attempt to submit an _mpi_ Job. You can follow up on the Job by running `runai list jobs` or `runai describe job <job-name>`.
-
-## See Also
-
-< please let me know if this is needed, or if additional documentation is needed in the link >
-*   See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
+The command will attempt to submit a _distributed pytorch_ workload. You can follow up on the workload by running `runai list jobs` or `runai describe job <job-name>`.
