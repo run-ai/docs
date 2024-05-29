@@ -31,8 +31,7 @@ See the Prerequisites section [above](prerequisites.md).
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ```
-    tar xvf runai-<VERSION>.tar.gz
-    cd deploy
+    tar xvf runai-airgapped-package-<VERSION>.tar.gz
     ```
     __Upload images__
 
@@ -45,7 +44,7 @@ See the Prerequisites section [above](prerequisites.md).
     Run the following script (you must have at least 20GB of free disk space to run): 
 
     ```  
-    sudo -E ./prepare_installation.sh
+    ./setup.sh
     ```
 
     (If docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required).
