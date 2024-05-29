@@ -312,7 +312,7 @@ The dashboard has a graph of the Project over-quota GPU consumption.
 
 ### Metrics used for consumption calculation
 
-* `runai_allocated_gpu_count_per_pod:hourly`&mdash;GPU allocation hour
+* `runai_allocated_gpu_count_per_pod:hourly`&mdash;GPU allocation hourly
 * `runai_allocated_millicpus_per_pod:hourly`&mdash;CPU allocation hours
 * `runai_allocated_memory_per_pod:hourly`&mdash;Memory allocation hours 
 * `runai_used_cpu_cores_per_pod:hourly`&mdash;CPU usage hours
