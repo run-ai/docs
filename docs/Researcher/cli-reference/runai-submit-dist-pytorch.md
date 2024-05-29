@@ -91,7 +91,7 @@ runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
   
 #### --image `<string>` | -i `<string>`
 
->  Image to use when creating the container for this Job
+>  Image to use when creating the container for this Job.
 
 #### --image-pull-policy `<string>`
 
@@ -106,6 +106,30 @@ runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
 ####  -l | --label `<stringArray>`
 
 > Set labels variables in the container.
+
+#### --master-args string `<string>`
+
+>  Arguments to pass to the master pod container command. If used together with `--command`, overrides the image's entrypoint of the master pod container with the given command.
+
+#### --master-environment `<stringArray>`
+
+>  Set environment variables in the master pod container. To prevent from a worker environment variable from being set in the master, use the format: `name=-`.
+
+#### --master-extended-resource `<stringArray>`
+
+>  Request access to an extended resource in the master pod. Use the format: `resource_name=quantity`.
+
+#### --master-gpu `<float>`
+
+>  GPU units to allocate for the master pod.
+
+#### --master-no-pvcs
+
+>  Do not mount any persistent volumes in the master pod.
+
+#### --no-master
+
+>  Do not create a separate pod for the master.
 
 #### --preferred-pod-topology-key `<string>`
 
