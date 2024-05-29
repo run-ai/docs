@@ -115,10 +115,6 @@ runai submit-dist xgboost --name distributed-job --workers=2 -g 1 \
 
 >  Do not mount any persistent volumes in the master pod.
 
-#### --no-master
-
->  Do not create a separate pod for the master.
-
 #### --preferred-pod-topology-key `<string>`
 
 > If possible, all pods of this job will be scheduled onto nodes that have a label with this key and identical values.
