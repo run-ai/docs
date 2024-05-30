@@ -79,7 +79,6 @@ Use the `--set` syntax in the helm command above.
 
 
 
-* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
 ### Install Run:ai Cluster
 
