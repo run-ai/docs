@@ -1,5 +1,5 @@
 
-# Install the Run:ai Control Plane 
+# Install the Run:ai Control Plane
 
 
 ## Domain certificate
@@ -22,7 +22,7 @@ Run the helm command below:
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.15.0" \
         --set global.domain=<DOMAIN>  # (1)
     ```
-    
+
     1. Domain name described [here](prerequisites.md#domain-name). 
 
     !!! Info
@@ -34,36 +34,45 @@ Run the helm command below:
         --set global.domain=<DOMAIN>  # (2)
         -n runai-backend -f custom-env.yaml  # (3)
     ```
-       
+
     1. Replace `<VERSION>` with the Run:ai control plane version.
     2. Domain name described [here](prerequisites.md#domain-name). 
     3. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
 ## (Air-gapped only) Local Certificate Authority
 
-Perform the instructions for [local certificate authority](../../config/org-cert.md). 
+Perform the instructions for [local certificate authority](../../config/org-cert.md).
 
-
-## (Optional) Additional Configurations
+### Additional configurations (optional)
 
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
-|----------|----------|-------------| 
-| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
-| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
+|----------|----------|-------------|
+| `keycloakx.adminUser` | KeyCloak (Run:ai internal identity provider) administrator username | Override the default user name of the Keycloak administrator user |
+| `keycloakx.adminPassword` | KeyCloak (Run:ai internal identity provider) administrator password | Override the default password of the Keycloak administrator user |
+| `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress |
 | `global.ingress.ingressClass` |  Ingress class  |  Run:ai default is using NGINX. If your cluster has a different ingress controller, you can configure the ingress class to be created by Run:ai |
 | `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with domain certificate. See [above](#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
-| `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for the Run:ai database  |
-| `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for the Run:ai database  |
+| `global.postgresql.auth.port`  | PostgreSQL port | Override the default PostgreSQL port for the Run:ai database  |
+| `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for accessing the Run:ai database  |
+| `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for accessing the Run:ai database  |
+| `global.postgresql.auth.postgresPassword`  | PostgreSQL default admin password | Set the password of the admin user created by default by PostgreSQL |
+| `postgresql.primary.initdb.password`  | PostgreSQL default admin password | Set the same password as in `global.postgresql.auth.postgresPassword` (if changed) |
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
+| `grafana.dbUser`  | Grafana's username for PostgreSQL  |   Override the Run:ai default user name for Grafana to access Run:ai database (PostgreSQL) |
+| `grafana.dbPassword`  | Grafana's password for PostgreSQL |   Override the Run:ai default password for Grafana to access Run:ai database (PostgreSQL) |
+| `grafana.grafana.ini.database.user`  | Reference to Grafana's username for PostgreSQL  |  Don't override this value |
+| `grafana.grafana.ini.database.password`  | Reference to Grafana's password for PostgreSQL |   Don't override this value |
+| `tenantsManager.config.adminUsername`  | Run:ai first admin username |   Override the default user name of the first admin user created with Run:ai |
+| `tenantsManager.config.adminPassword`  | Run:ai first admin user's password |   Override the default password of the first admin user created with Run:ai |
 | `thanos.receive.persistence.storageClass` and `postgresql.primary.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |
-| `global.imagePullSecrets:` <br> &ensp; `- name: <secret-name>`  | Docker secret | Provide credentials for accessing the organization's docker registry. This is required for air-gapped environments  |
-| `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<component>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |   
+`global.imagePullSecrets:` <br> &ensp; `- name: <secret-name>` | Docker secret | Provide credentials for accessing the organization's docker registry. This is required for air-gapped environments |
+| `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  `<component>` may be anyone of the following: `backend`, `frontend`, `assetsService`, `identityManager`, `tenantsManager`, `keycloakx`, `grafana`, `authorization`, `orgUnitService`,`policyService`  |
 |<div style="width:200px"></div>| | |
 
 
@@ -71,20 +80,26 @@ There may be cases where you need to set additional properties as follows:
 
 Use the `--set` syntax in the helm command above.  
 
+!!! Note
+    If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:
+
+    1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
+    2. Run `helm upgrade` for Run:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
+
 ### Connect to Run:ai User Interface
 
 Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
 
+Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password.
 
 ## (Optional) Enable "Forgot password"
 
 To support the “Forgot password” functionality, follow the steps below.
 
-* Go to `runai.<company-name>/auth` and Log in. 
+* Go to `runai.<domain>/auth` and Log in.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
 * Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
-## Next Steps
+## Next steps
 
 Continue with installing a [Run:ai Cluster](cluster.md).
-
