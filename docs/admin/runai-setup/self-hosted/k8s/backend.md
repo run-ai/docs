@@ -95,6 +95,6 @@ To support the “Forgot password” functionality, follow the steps below.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
 * Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
-### Install Run:ai Cluster
+## Next steps
 
 Continue with installing a [Run:ai Cluster](cluster.md).
