@@ -77,7 +77,6 @@ Use the `--set` syntax in the helm command above.
 * Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`.
 * Go to the Users area and change the password.
 
-### Enable Forgot Password (optional)
 
 To support the *Forgot password* functionality, follow the steps below.
 
