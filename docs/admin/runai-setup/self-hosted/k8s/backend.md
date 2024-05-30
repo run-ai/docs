@@ -86,7 +86,7 @@ Use the `--set` syntax in the helm command above.
     1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
     2. Run `helm upgrade` for Run:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
 
-## Next Steps
+### Connect to Run:ai User Interface
 
 Go to: `runai.<company-name>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
 
@@ -100,6 +100,6 @@ To support the “Forgot password” functionality, follow the steps below.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
 * Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
-### Install Run:ai Cluster
+## Next steps
 
 Continue with installing a [Run:ai Cluster](cluster.md).
