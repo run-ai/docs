@@ -87,7 +87,7 @@ With GPU fractions add the annotaiton to the executor pods:
 
 ```
 --conf spark.kubernetes.executor.annotation.gpu-fraction=0.5 \
---conf spark.executor.resource.gpu.amount=1 \
+--conf spark.executor.resource.gpu.amount=0 \
 --conf spark.executor.resource.gpu.vendor=nvidia.com \
 --conf spark.executor.resource.gpu.discoveryScript=/opt/spark/examples/src/main/scripts/getGpusResources.sh \
 ```
