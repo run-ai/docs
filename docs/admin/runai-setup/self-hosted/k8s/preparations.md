@@ -32,8 +32,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     To extract Run:ai files, replace `<VERSION>` in the command below and run: 
 
     ``` bash
-    tar xvf runai-air-gapped-<VERSION>.tar.gz
-    cd deploy
+    tar xvf runai-airgapped-package-<VERSION>.tar.gz
 
     kubectl create namespace runai-backend
     ```
@@ -49,7 +48,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
     Run the following script (you must dockerd installed and at least 20GB of free disk space to run): 
 
     ```  
-    sudo -E ./prepare_installation.sh
+    ./setup.sh
     ```
 
     If Docker is configured to [run as non-root](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user){target=_blank} then `sudo` is not required.
