@@ -79,7 +79,6 @@ Use the `--set` syntax in the helm command above.
 
 
 
-* Go to `runai.<openshift-cluster-domain>/auth` and Log in.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
 * Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
