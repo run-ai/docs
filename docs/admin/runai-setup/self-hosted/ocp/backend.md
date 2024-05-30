@@ -78,7 +78,6 @@ Use the `--set` syntax in the helm command above.
 * Go to the Users area and change the password.
 
 
-To support the *Forgot password* functionality, follow the steps below.
 
 * Go to `runai.<openshift-cluster-domain>/auth` and Log in.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
