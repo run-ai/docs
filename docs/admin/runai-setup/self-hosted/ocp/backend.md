@@ -2,7 +2,7 @@
 
 ## Prerequisites and preperations
 
-Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
+Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preparations.md).
 
 ## Install the Control Plane
 
