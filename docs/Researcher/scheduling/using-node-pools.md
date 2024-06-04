@@ -13,7 +13,7 @@ The *Node Pools* feature is enabled by default:
 
 Once the feature is enabled by the administrator, all nodes in each of your upgraded clusters are associated with the `Default` node pool.
 
-## Creating and Using Node-Pools
+## Creating and using Node-Pools
 
 An administrator creates logical groups of nodes by specifying a unique label (key & value) and associating it with a node pool. Run:ai allows an administrator to use any label key and value as the designated node-pool label (e.g. `gpu-type = A100` or `faculty = computer-science`). Each node pool has a unique name and label used to identify and group nodes into a node pool.
 Once a new node pool is created, it is automatically assigned to all Projects and Departments with a quota of zero GPU resources and CPU resources. This allows any Project and Department to use any node pool when over-quota is enabled, even if the administrator has not assigned a quota for a specific node pool in a Project or Department.
