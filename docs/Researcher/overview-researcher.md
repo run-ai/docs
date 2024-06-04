@@ -1,11 +1,11 @@
 ---
-title: Researcher Documentation  Overview
+title: Researcher Documentation Overview
 ---
 # Overview: Researcher Documentation
 
-Researchers use Run:ai to submit all jobs. 
+Researchers use Run:ai to submit jobs. 
 
-As part of the Researcher documentation you will find:
+As part of the Researcher documentation you can find:
 
 * __Quickstart Guides__ which provide step-by-step guides to Run:ai technology.
 * __Command line interface__ reference documentation.
