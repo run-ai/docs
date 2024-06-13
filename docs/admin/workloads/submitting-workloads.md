@@ -36,11 +36,13 @@ To submit a workload using the UI:
 
       8. In the *General* pane, add special settings for your training (optional):
 
-         1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-         2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-         3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+         1. Toggle the switch to allow the workspace to exceed the project's quota.
+         2. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         4. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+         5. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
-      9.  When complete, press *Create workspace.
+      9.  When complete, press *Create workspace*.
 
 === "Training"
 
@@ -73,9 +75,10 @@ To submit a workload using the UI:
 
       9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
-         1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-         2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-         3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+         1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+         4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
       10. If you if selected  `Workers & master` Press *Continue* to `Configure the master` and go to the next step. If not, then press *Create training*.
 
@@ -99,9 +102,10 @@ To submit a workload using the UI:
 
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 
-            1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-            2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-            3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+            1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+            3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+            4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
       12. When your training configuration is complete. press *Create training*.
 
