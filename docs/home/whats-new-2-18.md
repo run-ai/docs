@@ -2,11 +2,11 @@
 title: Version 2.17
 summary: This article describes new features and functionality in the version.
 authors:
-    - Jason Novich
-date: 2024-Apr-14
+    - Jamie Weider
+date: 2024-June-14
 ---
 
-## Release Content - April 14, 2024
+## Release Content - June 30, 2024
 
 * [Deprecation notifications](#deprecation-notifications)
 * [Breaking changes](#breaking-changes)
