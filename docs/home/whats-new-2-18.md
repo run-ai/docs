@@ -15,7 +15,7 @@ date: 2024-June-14
 
 #### Jobs, Workloads, and Workspaces
 
-* <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`.
+* <!-- TODO ADD LINK TO DOC Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`.
 
 
 
