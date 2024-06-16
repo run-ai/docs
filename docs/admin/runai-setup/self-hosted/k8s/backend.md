@@ -45,6 +45,7 @@ There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
+| `redis.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
 | `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
 | `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
 | `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress | 
