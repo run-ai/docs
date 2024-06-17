@@ -381,10 +381,55 @@ Once you believe that the Run:ai prerequisites are met, we highly recommend inst
 
 To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
 
-```
-chmod +x preinstall-diagnostics-<platform>
-./preinstall-diagnostics-<platform>
-```
+
+
+=== "SaaS"
+    * On EKS deployments, run `aws configure` prior to execution
+
+    ``` bash
+    chmod +x ./preinstall-diagnostics-<platform> && \
+    ./preinstall-diagnostics-<platform> \
+      --domain ${TENANT_NAME}.run.ai \
+      --cluster-domain ${CLUSTER_FQDN}
+    ```
+
+=== "Self-hosted"
+
+    ``` bash
+    chmod +x ./preinstall-diagnostics-<platform> && \ 
+    ./preinstall-diagnostics-<platform> \
+      --domain ${CONTROL_PLANE_FQDN} \
+      --cluster-domain ${CLUSTER_FQDN} \
+    #if the diagnostics image is hosted in a private registry
+      --image-pull-secret ${IMAGE_PULL_SECRET_NAME} \
+      --image ${PRIVATE_REGISTRY_IMAGE_URL}    
+    ```
+
+=== "Airgap"
+
+    In an air-gapped deployment, the diagnostics image is saved, pushed, and pulled manually from the organization's registry.
+
+
+    ``` bash
+    #Save the image locally
+    docker save --output preinstall-diagnostics.tar gcr.io/run-ai-lab/preinstall-diagnostics:${VERSION}
+    #Load the image to the organization's registry
+    docker load --input preinstall-diagnostics.tar
+    docker tag gcr.io/run-ai-lab/preinstall-diagnostics:${VERSION} ${CLIENT_IMAGE_AND_TAG} 
+    docker push ${CLIENT_IMAGE_AND_TAG}
+    ```
+
+    Run the binary with the `--image` parameter to modify the diagnostics image to be used:
+
+    ``` bash
+    chmod +x ./preinstall-diagnostics-darwin-arm64 && \
+    ./preinstall-diagnostics-darwin-arm64 \
+      --domain ${CONTROL_PLANE_FQDN} \
+      --cluster-domain ${CLUSTER_FQDN} \
+      --image-pull-secret ${IMAGE_PULL_SECRET_NAME} \
+      --image ${PRIVATE_REGISTRY_IMAGE_URL}    
+    ```
+
 
 If the script shows warnings or errors, locate the file `runai-preinstall-diagnostics.txt` in the current directory and send it to Run:ai technical support.
 
