@@ -71,8 +71,9 @@ You can configure your IdP to map several IdP attributes:
         1. In the `Discovery URL` field, enter the discovery URL .
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-        4. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
-        5.When complete, press `Save`.
+		4. Add OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+        5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        6.When complete, press `Save`.
 
  4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
  5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
