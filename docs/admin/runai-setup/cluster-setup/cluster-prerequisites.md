@@ -407,9 +407,8 @@ To use the script [download](https://github.com/run-ai/preinstall-diagnostics/re
 
 === "Airgap"
 
-    On an air-gapped deployment, the diagnostics image should be pulled, saved and manually pushed to the organization's registry.
+    In an air-gapped deployment, the diagnostics image is saved, pushed, and pulled manually from the organization's registry.
 
-    The binary should be run with `--image` parameter to modify the diagnostics image to be used:
 
     ``` bash
     #Save the image locally
@@ -420,7 +419,8 @@ To use the script [download](https://github.com/run-ai/preinstall-diagnostics/re
     docker push ${CLIENT_IMAGE_AND_TAG}
     ```
 
-    Finally, run the diagnostics tool:
+    Run the binary with the `--image` parameter to modify the diagnostics image to be used:
+
     ``` bash
     chmod +x ./preinstall-diagnostics-darwin-arm64 && \
     ./preinstall-diagnostics-darwin-arm64 \
