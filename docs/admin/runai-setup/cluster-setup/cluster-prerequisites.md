@@ -384,7 +384,7 @@ To use the script [download](https://github.com/run-ai/preinstall-diagnostics/re
 
 
 === "SaaS"
-    * On EKS deployments, please run `aws configure` prior to execution
+    * On EKS deployments, run `aws configure` prior to execution
 
     ``` bash
     chmod +x ./preinstall-diagnostics-<platform> && \
