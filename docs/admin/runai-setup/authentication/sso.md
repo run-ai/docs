@@ -31,14 +31,14 @@ To define OAuthClient, follow these steps:
 
 1. Create a new ```OAuthClient``` Kubernetes object with the following content
 ```
-	apiVersion: oauth.openshift.io/v1
-	grantMethod: auto
-	kind: OAuthClient
-	metadata:
-	name: my-client
-	redirectURIs:
+apiVersion: oauth.openshift.io/v1
+grantMethod: auto
+kind: OAuthClient
+metadata:
+name: my-client
+redirectURIs:
 	- https://<runai_env_url>/auth/realms/runai/broker/openshift-v4/endpoint
-	secret: this-is-my-secret
+secret: this-is-my-secret
 ```
 2. Run the following command to apply the OAuthClient object to the environment. Create the object on OpenShift cluster where you define your OpenShift IDP:
 ```
@@ -88,7 +88,7 @@ You can configure your IdP to map several IdP attributes:
     	
     	Press `Download` to download the file.
     
-    	Pres `Edit` to both download the file, and view the:
+    	Press `Edit` to both download the file, and view the:
     
         * Identity provider URL.
         * Identity provider entity ID.
@@ -102,6 +102,14 @@ You can configure your IdP to map several IdP attributes:
 		4. Add the OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
         5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
         6.When complete, press `Save`.
+
+		After you have configured the OIDC settings, you can view and edit the identity provider settings. 
+    	  
+    	Press `Edit` to view and edit the:
+    
+        * Discovery URL.
+        * Client ID.
+        * Client secret.
 
 	=== "OpenShift V4"
 
