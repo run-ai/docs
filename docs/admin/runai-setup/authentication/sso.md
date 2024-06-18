@@ -1,8 +1,9 @@
 # Single Sign-On
 
-Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
+Single Sign-On (SSO) is an authentication scheme allowing users to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect or [OIDC](https://openid.net/developers/how-connect-works/){target=_blank}.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol, Open ID Connect [OIDC](https://openid.net/developers/how-connect-works/){target=_blank} and [OpenShift V4](https://en.wikipedia.org/wiki/OpenShift){target=_blank}.
+
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
@@ -13,13 +14,40 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 ## SAML Prerequisites
 
-**XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+**XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server so that you have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
 
 ## OIDC Prerequisites
 
 * **Discovery URL**&mdash;the OpenID server where the content discovery information is published.
 * **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
 * **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
+
+
+## OpenShift Prerequisites
+
+Before using OpenShift, first define OAuthClient to control various aspects of the OAuth flow, such as redirect URIs and authentication methods to ensure secure and approprpriate access to resources.
+
+To define OAuthClient, follow these steps:
+
+1. Create a new ```OAuthClient``` Kubernetes object with the following content
+```
+	apiVersion: oauth.openshift.io/v1
+	grantMethod: auto
+	kind: OAuthClient
+	metadata:
+	name: my-client
+	redirectURIs:
+	- https://<runai_env_url>/auth/realms/runai/broker/openshift-v4/endpoint
+	secret: this-is-my-secret
+```
+2. Run the following command to apply the OAuthClient object to the environment. Create the object on OpenShift cluster where you define your OpenShift IDP:
+```
+oc apply <file name>
+```
+3. Check that the file has been applied successfully by running the following command:
+```
+oc get oauthclient
+```
 
 ### Additional attribute mappings
 
@@ -71,9 +99,18 @@ You can configure your IdP to map several IdP attributes:
         1. In the `Discovery URL` field, enter the discovery URL .
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-		4. Add OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+		4. Add the OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
         5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
         6.When complete, press `Save`.
+
+	=== "OpenShift V4"
+
+        1. In the `Discovery URL` field, enter the discovery URL .
+        2. In the `Client ID` field, enter the client ID.
+        3. In the `Client Secret` field, enter the client secret.
+		4. Add the OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+        5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        6. When complete, press `Save`.
 
  4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
  5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
