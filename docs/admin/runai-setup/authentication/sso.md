@@ -12,7 +12,7 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 *Identity Provider (Idp)*&mdash; a system that creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0.
 
-## SAML Prerequisites
+## SAML 2 Prerequisites
 
 **XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server so that you have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
 
