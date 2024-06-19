@@ -62,11 +62,11 @@ You can configure your IdP to map several IdP attributes:
 
 | IdP attribute | Default Run:ai name | Description |
 |--|--|--|
-| User email | email (cannot be changed) | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
-| User role groups | GROUPS  | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
 | Linux User ID | UID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
 | Linux Group ID | GID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
+| User role groups | GROUPS  | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
 | Linux Supplementary Groups | SUPPLEMENTARYGROUPS  | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
+| Email | Email  | (Optional) Defines the user attribute holding the user's email address, which is the user identifier in Run:ai |
 | User first name | firstName | (Optional) Used as the first name showing in the Run:ai user interface. |
 | User last name | lastName | (Optional) Used as the last name showing in the Run:ai user interface |
 
