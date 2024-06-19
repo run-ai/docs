@@ -1,4 +1,4 @@
-name: Haim-Test
+name: Automated-Publish-Docs
 
 on:
   push:
@@ -80,7 +80,7 @@ jobs:
             mike deploy --push ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} --title=${{ needs.env.outputs.TITLE }}
             mike list
           fi
-          
+
   slack-notification:
     name: Slack Notification
     needs: [env, install-dependencies, deploy]
