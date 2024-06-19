@@ -12,18 +12,22 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 *Identity Provider (Idp)*&mdash; a system that creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0.
 
-## SAML 2 Prerequisites
+## Prerequisites
+
+For each of the SSO options, there are prerequisites that should be considered.
+
+### SAML 2
 
 **XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server so that you have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
 
-## OIDC Prerequisites
+### OIDC 
 
 * **Discovery URL**&mdash;the OpenID server where the content discovery information is published.
 * **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
 * **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
 
 
-## OpenShift Prerequisites
+### OpenShift V4
 
 Before using OpenShift, first define OAuthClient to control various aspects of the OAuth flow, such as redirect URIs and authentication methods to ensure secure and approprpriate access to resources.
 
@@ -49,7 +53,7 @@ oc apply <file name>
 oc get oauthclient
 ```
 
-### Additional attribute mappings
+## Additional attribute mappings
 
 You can configure your IdP to map several IdP attributes:
 
