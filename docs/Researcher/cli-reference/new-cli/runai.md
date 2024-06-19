@@ -24,7 +24,7 @@ runai [flags]
   -v, --verbose              enable verbose mode
 ```
 
-### SEE ALSO
+### See Also
 
 * [runai cluster](runai_cluster.md)&mdash;cluster management
 * [runai config](runai_config.md)&mdash;configuration management
