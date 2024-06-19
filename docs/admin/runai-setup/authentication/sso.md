@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme allowing users to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol, Open ID Connect [OIDC](https://openid.net/developers/how-connect-works/){target=_blank} and [OpenShift V4](https://en.wikipedia.org/wiki/OpenShift){target=_blank}.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol, Open ID Connect [OIDC](https://openid.net/developers/how-connect-works/){target=_blank} and [OpenShift V4](https://en.wikipedia.org/wiki/OpenShift){target=_blank} (which is based on OIDC).
 
 
 !!! Caution
@@ -29,7 +29,7 @@ For each of the SSO options, there are prerequisites that should be considered.
 
 ### OpenShift V4
 
-Before using OpenShift, first define OAuthClient to control various aspects of the OAuth flow, such as redirect URIs and authentication methods to ensure secure and approprpriate access to resources.
+Before using OpenShift, first define OAuthClient. The OAuth client interacts with OpenShift’s OAuth server to authenticate users and request access tokens.
 
 To define OAuthClient, follow these steps:
 
@@ -44,6 +44,9 @@ redirectURIs:
 	- https://<runai_env_url>/auth/realms/runai/broker/openshift-v4/endpoint
 secret: this-is-my-secret
 ```
+Replace `<runai_env_url>` with the URL of your Run:ai platform.
+Replace `my-client` and `this-is-my-secret` with client name and secret you have chosen.
+
 2. Run the following command to apply the OAuthClient object to the environment. Create the object on OpenShift cluster where you define your OpenShift IDP:
 ```
 oc apply <file name>
@@ -75,9 +78,9 @@ You can configure your IdP to map several IdP attributes:
 
 1. Press the `Tools & Settings` then press `General`.
 2. Open the `Security` pane and press `+Identity provider`.
-3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
+3. Select the SSO protocol. Choose `Custom SAML 2.0`, `Custom OpenID Connect` or `OpenShift V4`.
 
-    === "SAML 2"
+    === "SAML 2.0"
 
         1. Choose `From computer` or `From URL`.
         
@@ -103,7 +106,7 @@ You can configure your IdP to map several IdP attributes:
         1. In the `Discovery URL` field, enter the discovery URL .
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-		4. Add the OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
         5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
         6.When complete, press `Save`.
 
@@ -117,11 +120,11 @@ You can configure your IdP to map several IdP attributes:
 
 	=== "OpenShift V4"
 
-        1. In the `Discovery URL` field, enter the discovery URL .
+        1. In the `Base URL` field, enter the OpenShift Base URL (https://api.<your-openshift-domain>:6443).
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-		4. Add the OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
-        5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+        5. In the `User attributes` field enter the attribute and the value in the identity provider (optional).
         6. When complete, press `Save`.
 
  4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
