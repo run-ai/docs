@@ -19,6 +19,10 @@ date: 2024-June-14
 
 
 
+### Run:ai Administrator
+
+#### Authentication and Authorization
+
 
 ## Deprecation Notifications
 

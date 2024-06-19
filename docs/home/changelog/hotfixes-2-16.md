@@ -8,6 +8,14 @@ date: 2024-Feb-26
 
 The following is a list of the known and fixed issues for Run:ai V2.16.
 
+
+## Version 2.16.25
+
+| Internal ID | Description |
+|--|--|
+| RUN-17241 | Fixed an issue where the nodes page showed nodes as not ready to to "tookit not installed". |
+
+
 ## Version 2.16.21
 
 | Internal ID | Description |
