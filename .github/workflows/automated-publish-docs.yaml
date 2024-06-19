@@ -1,0 +1,99 @@
+name: Haim-Test
+
+on:
+  push:
+    branches:
+      - v*.*
+
+jobs:
+  env:
+    runs-on: ubuntu-latest
+    outputs:
+          CURRENT_BRANCH: ${{ steps.calculate-env.outputs.current_branch }}
+          NEWEST_VERSION: ${{ steps.calculate-env.outputs.newest_version }}
+          ALIAS: ${{ steps.calculate-env.outputs.alias }}
+          TITLE: ${{ steps.calculate-env.outputs.title }}
+          SLACK_CHANNEL: "docs-review"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get all v*.* branches
+        id: calculate-env
+        run: |
+          BRANCHES=$(git branch --list --all | grep -v master | grep 'origin/v*.*' | sed -n -E 's:.*/(v[0-9]+\.[0-9]+).*:\1:p' | sort -Vu)
+          NEWEST_VERSION=$(printf '%s\n' "${BRANCHES[@]}" | sort -V | tail -n 1)
+          CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
+          ALIAS=$CURRENT_BRANCH-alias
+          TITLE=$(echo $CURRENT_BRANCH | cut -b 2-)
+          echo current_branch=$CURRENT_BRANCH >> $GITHUB_OUTPUT
+          echo newest_version=$NEWEST_VERSION >> $GITHUB_OUTPUT
+          echo alias=$ALIAS >> $GITHUB_OUTPUT
+          echo title=$TITLE >> $GITHUB_OUTPUT
+          
+          if [[ "$CURRENT_BRANCH" == "$NEWEST_VERSION" ]]; then
+            echo "Deploying $NEWEST_VERSION as latest..."
+          else
+            echo "Deploying $CURRENT_BRANCH which is not the latest version ( => $NEWEST_VERSION )..."
+            fi
+
+  install-dependencies:
+    name: install dependencies
+    needs: [env]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout latest
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.env.outputs.CURRENT_BRANCH }}
+          fetch-depth: 0
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+
+      - name: install dependencies
+        run: |
+          pip3 install -r requirements.txt
+      
+      - name: Configure Git User
+        run: |
+          git config user.name "circleci-runai"
+          git config user.email "circleci-runai@run.ai"
+
+  deploy:
+    name: deploy mkdocs
+    needs: [env, install-dependencies]
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy mkdocs latest
+        run: |
+          if [[ "${{ needs.env.outputs.CURRENT_BRANCH }}" == "${{ needs.env.outputs.NEWEST_VERSION }}" ]]; then
+            mike list
+            mike deploy --push ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} --title=${{ needs.env.outputs.TITLE }}
+            mike set-default ${{ needs.env.outputs.ALIAS }} --push latest
+            mike list
+          else
+            mike list
+            mike deploy --push ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} --title=${{ needs.env.outputs.TITLE }}
+            mike list
+          fi
+          
+  slack-notification:
+    name: Slack Notification
+    needs: [env, install-dependencies, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
+          SLACK_TITLE: "Airgapped package for ${{ inputs.env }} environment ${{ contains(needs.*.result, 'failure') && 'failed' || 'finished successfully' }}"
+          SLACK_MESSAGE_ON_SUCCESS: "Docs were updated successfully for version ${{ needs.env.outputs.TITLE }}"
+          SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}"
+          MSG_MINIMAL: true
+          SLACK_FOOTER: ""
