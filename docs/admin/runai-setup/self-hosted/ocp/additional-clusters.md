@@ -2,12 +2,6 @@
 
 The first Run:ai cluster is typically installed on the same OpenShift cluster as the Run:ai control plane. Run:ai supports multiple clusters per single control plane. This document is about installing additional clusters on different OpenShift clusters.
 
-The instructions are for Run:ai version **2.13** and up.
-
-## Configuration
-
-The exact configuration details must be worked on together with Run:ai customer support.
-
 ## Additional cluster installation
 
 Create a new cluster, then:
