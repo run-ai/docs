@@ -100,7 +100,6 @@ To view a project policy:
     * Default
     * Source
 
-
 ## Other Project Properties
 
 ### Download Project Table
@@ -108,6 +107,7 @@ To view a project policy:
 You can download the Projects table to a CSV file. Downloading a CSV can provide a snapshot history of your projects over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
 
 To download the Projects table to a CSV:
+
 1. Open *Projects*.
 2. From the *Columns* icon, select the columns you would like to have displayed in the table.
 3. Click on the ellipsis labeled *More*, and download the CSV.
@@ -228,6 +228,53 @@ To set a duration limit for Training Jobs:
   * Set a time limit for Idle Training Jobs, i.e. a Training Job idle for X time is stopped. Idle means no GPU activity.
 
 The setting only takes effect for Jobs that have started after the duration has been changed.
+
+## Setting Run:ai as default scheduler per Project/Namespace
+
+By default, Kubernetes will use its native scheduler to schedule any type of submitted workload. However, Kubernetes also provides a standard way to use other schedulers such as Run:ai. This is done by adding to the submitted container workload’s YAML file:  
+
+`schedulerName: runai-scheduler`
+
+There may be cases where you cannot change the YAML file and still want to use the Run:ai Scheduler to schedule those workloads. For these cases, another option is to configure the Run:ai Scheduler as the default scheduler for a specific namespace (Project). This will now make any workload type that is submitted to that namespace (Project) use the Run:ai scheduler. To configure this, add the following annotation on the namespace itself:
+
+`runai/enforce-scheduler-name: true`
+
+### Example
+
+To annotate a project named `proj-a`, use the following command:
+	
+```bash
+kubectl annotate ns runai-proj-a runai/enforce-scheduler-name=true
+```
+
+Verify the namespace in yaml format to see the annotation:
+
+```bash
+kubectl get ns runai-proj-a -o yaml
+```
+
+Output: 
+
+```YAML
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    runai/enforce-scheduler-name: "true"
+  creationTimestamp: "2024-04-09T08:15:50Z"
+  labels:
+    kubernetes.io/metadata.name: runai-proj-a
+    runai/namespace-version: v2
+    runai/queue: proj-a
+  name: runai-proj-a
+  resourceVersion: "388336"
+  uid: c53af666-7989-43df-9804-42bf8965ce83
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
+```
 
 ## See Also
 

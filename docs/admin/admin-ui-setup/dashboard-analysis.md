@@ -2,31 +2,56 @@
 
 The Run:ai Administration User Interface provides a set of dashboards that help you monitor Clusters, Cluster Nodes, Projects, and Workloads. This document provides the key metrics to monitor, how to assess them as well as suggested actions.
 
+Dashboards are used by system administrators to analyze and diagnose issues that relate to:
+
+* Physical Resources.
+* Organization resource allocation and utilization.
+* Usage characteristics.
+
+System administrators need to know important information about the physical resources that are currently being used. Important information such as:
+
+* Resource health.
+* Available resources and their distribution.
+* Is there a lack of resources.
+* Are resources being utilized correctly.
+
+With this information, system administrators can hone in on:
+
+* How resources are allocated across the organization.
+* How the different organizational units utilized quotas and resources within those quotas.
+* The actual performance of the organizational units.
+
+These dashboards give system administrators the ability to drill down to see details of the different types of workloads that each of the organizational units is running. These usage and performance metrics ensure that system administrators can then take actions to correct issues that affect performance.
+
 There are 5 dashboards:
 
-* [**Overview**](#overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
+* [**GPU/CPU Overview**](#gpucpu-overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
 * [**Quota Management**](#quota-management-dashboard) dashboard&mdash;Provides information about quota utilization.
 * [**Analytics**](#analytics-dashboard) dashboard&mdash;Provides long term analysis of cluster behavior.
 * [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.
 * [**Consumption**](#consumption-dashboard) dashboard&mdash;Provides information about resource consumption.
 
-## Overview Dashboard
+## GPU/CPU Overview Dashboard (New and legacy)
 
-The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster, including:
-
-* The number of available and allocated resources and their cluster-wide utilization.
-* The number of running and pending **Workloads**, their utilization, information on Workloads with errors or Workloads with idle GPUs or CPUs.
-* Active **Projects**, their assigned and allocated GPUs or CPUs and number of running and pending Workloads.
-
-The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
-
-The dashboard has a dropdown filter for node pools. From the dropdown, select one or more node pools. The default setting is `all`.
-
-Cluster administrators can use the Overview dashboard to find issues and fix them. Below are a few examples:
+The Overview dashboard provides information about what is happening **right now** in the cluster.  Administrators can view high-level information on the state of the cluster. The dashboard has two tabs that change the display to provide a focused view for [GPU Dashboards](#gpu-dashboard) (default view) and [CPU Dashboards](#cpu-dashboard).
 
 ### GPU Dashboard
 
-The GPU dashboard displays specific information for GPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to GPU based environments.
+The GPU dashboard displays specific information for GPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that specific to GPU based environments. The dashboard contains tiles that show information about specific resource allocation and performance metrics. The tiles are interactive allowing you to link directly to the assets or drill down to specific scopes. Use the time frame selector to choose a time frame for all the tiles in the dashboard.
+
+The dashboard has the following tiles:
+
+* Ready nodes&mdash;displays GPU nodes that are in the ready state.
+* Ready GPU devices&mdash;displays the number of GPUs in nodes that are in the ready state.
+* Allocated GPU compute&mdash;displays the total number of GPUs allocated from all the nodes.
+* Running workloads&mdash;displays the number of running workloads.
+* Pending workloads&mdash;displays the number of workloads in the pending status.
+* Allocation ration by node pool&mdash;displays the percentage of GPUs allocated per node pool. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details.
+* Free resources by node pool&mdash;the graph displays the amount of free resources per node pool. Press a entry in the graph for more details. Hover over the resource bubbles for specific details for the workers in the node. Use the ellipsis to download the graph as a CSV file.
+* Resource allocation by workload type&mdash;displays the resource allocation by workload type. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
+* Workload by status&mdash;displays the number of workloads for each status in the workloads table. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details. Use the ellipsis to download the graph as a CSV file.
+* Resources utilization&mdash;displays the resource utilization over time. The right pane of the graph shows the average utilization of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
+* Resource allocation&mdash;displays the resource allocation over time. The right pane of the graph shows the average allocation of the selected time frame of the dashboard. Hover over the graph to see details of a specific time in the graph. Use the ellipsis to download the graph as a CSV file.
 
 ### CPU Dashboard
 
@@ -34,51 +59,41 @@ The CPU dashboards display specific information for CPU based nodes, node-pools,
 
 To enable CPU Dashboards:
 
-1. Press the `Settings` icon, then press `General`
-2. Toggle the *Show CPU dashboard* switch to enable the feature.
+1. Press the `Tools & Settings` icon, then press `General`.
+2. Open the `Analytics` pane and toggle the *Show CPU dashboard* switch to enable the feature.
 
 Toggle the switch to `disable` to disable *CPU Dashboards* option.
 
-The following analysis can apply to both GPU and CPU dashboards.
+The dashboard contains the following tiles:
 
-### Total and Ready GPU or CPU Nodes
+* Total CPU Nodes&mdash;displays the total amount of CPU nodes.
+* Ready CPU nodes&mdash;displays the total amount of CPU nodes in the ready state.
+* Total CPUs&mdash;displays the total amount of CPUs.
+* Ready CPUs&mdash;displays the total amount of CPUs in the ready state.
+* Allocated CPUs&mdash;displays the amount of allocated CPUs.
+* Running workloads&mdash;displays the amount of workloads in the running state.
+* Pending workloads&mdash;displays the amount of workloads in the pending state.
+* Allocated CPUs per project&mdash;displays the amount of CPUs allocated per project.
+* Active projects&mdash;displays the active projects  with the CPU allocation and amount of running and pending workloads.
+* Utilization per resource type&mdash;displays the CPU compute and CPU memory utilization over time.
+* CPU compute utilization&mdash;displays the current CPU compute utilization.
+* CPU memory utilization&mdash;displays the current CPU memory utilization.
+* Pending workloads&mdash;displays the requested resources and wait time for workloads in the pending status.
+* Workloads with error&mdash;displays the amount of workloads that are currently not running due to an error.
+* Workload Count per CPU Compute Utilization&mdash;
+* 5 longest running workloads&mdash;displays up to 5 of workloads that have the longest running time.
 
-The *Indicators* panel of the *GPU Overview Dashboard* displays the total number of GPU nodes, the number of ready GPU nodes, the total number of GPUs, and the total number of ready GPUs.
-
-The *Indicators* panel of the *CPU Overview Dashboard* displays the total number of CPU nodes, the number of ready CPU nodes, the total number of CPUs, and the total number of ready CPUs.
-
-These panes help calculate the number of available (unscheduled) resources in the platform.
-
-* **Total GPU/CPU Nodes**&mdash;indicates the sum total of nodes in all clusters connected to the platform.
-* **Ready GPU/CPU Nodes**&mdash;indicates the number of nodes that are available to the scheduler. This is calculated by subtracting the number of unscheduled nodes from the total number of nodes.
-* **Total GPUs/CPUs**&mdash;indicates ihe total number of GPUs/CPUs in all the clusters that are connected to the platform.
-* **Ready GPUs/CPUs**&mdash;indicates the number of GPUs or CPUs that are available to work with the scheduler. This is calculated by subtracting the number of unscheduled GPUs or CPUs from the total number of GPUs or CPUs.
-
-The *Free GPUs* graph displays the number of free GPUs or CPUs on each node.
-
-### Workloads with idle GPUs or CPUs
-
-Locate workloads with idle GPUs or CPUs, defined as GPUs/CPUs with 0% utilization for more than 5 minutes.
-<!--
-**How to**: view the following panel:
-
-![](img/idle-gpus.png)
--->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis  & Actions |
 |---------|---------------------|
-| Interactive Workloads are too frequently idle | *  Consider setting time limits for interactive Workloads through the Projects tab. <br> *  Consider also reducing GPU/CPU quotas for specific Projects to encourage users to run more training Workloads as opposed to interactive Workloads (note that interactive Workloads can not use more than the GPU/CPU quota assigned to their Project). |
+| Interactive Workloads are too frequently idle | *Consider setting time limits for interactive Workloads through the Projects tab. <br>*  Consider also reducing GPU/CPU quotas for specific Projects to encourage users to run more training Workloads as opposed to interactive Workloads (note that interactive Workloads can not use more than the GPU/CPU quota assigned to their Project). |
 | Training Workloads are too frequently idle | Identify and notify the right users and work with them to improve the utilization of their training scripts |
 
 ### Workloads with an Error
 
 Search for Workloads with an error status. These Workloads may be holding GPUs/CPUs without actually using them.
-<!--
-**How to**: view the following panel:
 
-![](img/jobs-with-errors.png)
--->
 **Analysis and Suggested actions**:
 
 Search for workloads with an Error status on the Workloads view and discuss with the Job owner. Consider deleting these Workloads to free up the resources for other users.
@@ -86,11 +101,7 @@ Search for workloads with an Error status on the Workloads view and discuss with
 ### Workloads with a Long Duration
 
 View list of 5 longest Workloads.
-<!-- 
-**How to**: view the following panel:
 
-![](img/long-jobs.png)
--->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions |
@@ -101,11 +112,7 @@ View list of 5 longest Workloads.
 ### Job Queue
 
 Identify queueing bottlenecks.
-<!-- 
-**How to**: view the following panel:
 
-![](img/queue.png)
--->
 **Analysis and Suggested actions**:
 
 | Review  | Analysis & Actions  |
@@ -114,70 +121,6 @@ Identify queueing bottlenecks.
 | Cluster is not fully loaded | Go to the Workloads view to review the resources requested for that Job (CPU, CPU memory, GPU, GPU memory).<br> Go to the Nodes view to verify that there is no Node with enough free resources that can host that Job. |
 
 Also, check the command that the user used to submit the job. The Researcher may have requested a specific Node for that Job.
-
-## Quota management dashboard
-
-The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
-
-* **Add Filter**
-* **Quota / Total**
-* **Allocated / Quota**
-* **Pending workloads**
-* **Quota by node pool**
-* **Allocation by node pool**
-* **Pending workloads by node pool**
-* **Departments with lowest allocation by node pool**
-* **Projects with lowest allocation ratio by node pool**
-* **Over time allocation / quota**
-
-### Add Filter
-
-Use the *Add Filter* dropdown to select filters for the dashboard. The filters will change the data shown on the dashboard. Available filters are:
-
-* Departments
-* Projects
-* Nodes
-
-Select a filter from the dropdown, then select a item from the list, and press apply.
-
-!!! Note
-    You can create a filter with multiple categories, but you can use each category and item only once.
-
-### Quota / Total
-
-This section shows the number of GPUs that are in the quota based on the filter selection. The quota of GPUs is the number of GPUs that are reserved for use.
-
-### Allocated / Quota
-
-This section shows the number of GPUs that are allocated based on the filter selection. Allocated GPUs are the number of GPUs that are being used.
-
-### Pending workloads
-
-This section shows the number workloads that are pending based on the filter selection. Pending workloads are workloads that have not started.
-
-### Quota by node pool
-
-This section shows the quota of GPUs by node pool based on the filter. The quota is the number of GPUs that are reserved for use. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
-
-### Allocation by node pool
-
-This section shows the allocation of GPUs by node pool based on the filter. The allocation is the number of GPUs that are being used. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
-
-### Pending workloads by node pool
-
-This section shows the number of pending workloads by node pool. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
-
-### Departments with lowest allocation by node pool
-
-This section shows the departments with the lowest allocation of GPUs by percentage relative to the total number of GPUs.
-
-### Projects with lowest allocation ratio by node pool
-
-This section shows the projects with the lowest allocation of GPUS by percentage relative to the total number of GPUs.
-
-### Over time allocation / quota
-
-This section shows the allocation of GPUs from the quota over a period of time.
 
 ## Analytics Dashboard
 
@@ -293,9 +236,9 @@ Provides a holistic, aggregated view across Clusters, including information abou
 
 This dashboard enables users and admins to view consumption usage using run:AI services. The dashboard provides views based on configurable filters and timelines. The dashboard also provides costing analysis for GPU, CPU, and memory costs for the system.
 
-![!copnsumption dasboard](img/consumption-dashboard.png)
+![!consumption dashboard](img/consumption-dashboard.png)
 
-The dashboard has 4 dashlets for:
+The dashboard has 4 tiles for:
 
 * Cumulative GPU allocation per Project or Department
 * Cumulative CPU allocation per Project or Department
@@ -309,11 +252,14 @@ Use the drop down menus at the top of the dashboard to apply filters for:
 * Per department (single, multiple or all)
 * Per cluster (single, multiple, all)
 
-Use cost fields at the top of the dashboard to provides calculated costs for:
+To enable the Consumption Dashboard:
 
-* GPU
-* CPU
-* CPU memory (in GB)
+1. Press the `Tools & Settings` icon, then press `General`.
+2. Open the `Analytics` pane and toggle the *Consumption* switch to enable the feature.
+3. Enter the cost of:
+   1. GPU compute / Hour
+   2. CPU compute / Hour
+   3. CPU memory / Hour
 
 Use the time picker dropdown to select relative time range options and set custom absolute time ranges.
 You can change the Timezone and fiscal year settings from the time range controls by clicking the Change time settings button.
@@ -362,3 +308,67 @@ The dashboard has a graph of the GPU allocation over time.
 The dashboard has a graph of the Project over-quota GPU consumption.
 
 !![](img/consumption-dashboard-project-over-quota-graph.png)
+
+## Quota management dashboard
+
+The Quota management dashboard provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard is divided into sections with essential metrics and data visualizations to identify resource usage patterns, potential bottlenecks, and areas for optimization. The sections of the dashboard include:
+
+* **Add Filter**
+* **Quota / Total**
+* **Allocated / Quota**
+* **Pending workloads**
+* **Quota by node pool**
+* **Allocation by node pool**
+* **Pending workloads by node pool**
+* **Departments with lowest allocation by node pool**
+* **Projects with lowest allocation ratio by node pool**
+* **Over time allocation / quota**
+
+### Add Filter
+
+Use the *Add Filter* dropdown to select filters for the dashboard. The filters will change the data shown on the dashboard. Available filters are:
+
+* Departments
+* Projects
+* Nodes
+
+Select a filter from the dropdown, then select a item from the list, and press apply.
+
+!!! Note
+    You can create a filter with multiple categories, but you can use each category and item only once.
+
+### Quota / Total
+
+This section shows the number of GPUs that are in the quota based on the filter selection. The quota of GPUs is the number of GPUs that are reserved for use.
+
+### Allocated / Quota
+
+This section shows the number of GPUs that are allocated based on the filter selection. Allocated GPUs are the number of GPUs that are being used.
+
+### Pending workloads
+
+This section shows the number workloads that are pending based on the filter selection. Pending workloads are workloads that have not started.
+
+### Quota by node pool
+
+This section shows the quota of GPUs by node pool based on the filter. The quota is the number of GPUs that are reserved for use. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Allocation by node pool
+
+This section shows the allocation of GPUs by node pool based on the filter. The allocation is the number of GPUs that are being used. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Pending workloads by node pool
+
+This section shows the number of pending workloads by node pool. You can drill down into the data in this section by pressing on the graph or the link at the bottom of the section.
+
+### Departments with lowest allocation by node pool
+
+This section shows the departments with the lowest allocation of GPUs by percentage relative to the total number of GPUs.
+
+### Projects with lowest allocation ratio by node pool
+
+This section shows the projects with the lowest allocation of GPUS by percentage relative to the total number of GPUs.
+
+### Over time allocation / quota
+
+This section shows the allocation of GPUs from the quota over a period of time.

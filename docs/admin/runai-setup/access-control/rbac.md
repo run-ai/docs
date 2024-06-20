@@ -27,7 +27,7 @@ Environment administrator | Create, view, edit, and delete *Environments*.<br> V
 | System administrator | Controls all aspects of the system. This role has global system control and should be limited to a small group of skilled IT administrators. |
 | Department administrator | Create, view, edit, and delete: *Departments* and *Projects*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.<br>View *Dashboards* (including the *Consumption dashboard). |
 | Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
-| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, and *Templates*.<br>View *Projects*, related *Jobs* and *Workspaces*, and *Dashboards*. |
+| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, *Templates*, and *Projects*<br>View related *Jobs* and *Workspaces*, and *Dashboards*. |
 | L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*.<br>View *Dashboards*.
 | ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
 | Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
@@ -104,7 +104,7 @@ To create a new access rule:
       2. **SSO Group**&mdash;a known group listed in your IDP server.
     !!! Note
         To add SSO users and groups, you must enter a user id, or group id that is recognized by the configured IDP.
-      4. **Application**&mdash;an application that has been created in the platform.
+      3. **Application**&mdash;an application that has been created in the platform.
 
 4. Select a [Role] from the dropdown.
 5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *SAVE RULE* when done.

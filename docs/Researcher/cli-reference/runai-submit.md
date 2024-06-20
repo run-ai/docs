@@ -314,7 +314,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > > `storageclass` may be omitted if there is a single storage class in the system, or you are using the default storage class.
 >
 > * **size**&mdash;The volume size you want to allocate for the PVC when creating it. See [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){target=_blank} to specify volume sizes.
-> * **accessmode**&mdash;The description of thr desired volume capabilities for the PVC.
+> * **accessmode**&mdash;The description ofthedesired volume capabilities for the PVC.
 > * **ro**&mdash;Mount the PVC with read-only access.
 > * **ephemeral**&mdash;The PVC will be created as volatile temporary storage which is only present during the running lifetime of the job.
 >
@@ -345,6 +345,10 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 > `-v /public/data:/root/data::nfs.example.com`
 >
 > Mount /root/data to NFS path /public/data on NFS server nfs.example.com for read-write access.
+
+#### --configmap-volume name=<name of configmap>,path=<path to mount> ...'
+
+> Mount a `ConfigMap` object for use as a data volume.
 
 ### Network
 
