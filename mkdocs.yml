@@ -268,7 +268,7 @@ nav:
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
     - 'Command Line Interface (CLI) Reference' :
-      - 'CLI V2': 
+      - 'Improved CLI': 
         - 'Introduction': 'Researcher/cli-reference/new-cli/runai.md'
         -  'Researcher/cli-reference/new-cli/runai_cluster.md'
         -  'Researcher/cli-reference/new-cli/runai_cluster_list.md'
@@ -317,7 +317,7 @@ nav:
         -  'Researcher/cli-reference/new-cli/runai_workspace_resume.md'
         -  'Researcher/cli-reference/new-cli/runai_workspace_submit.md'
         -  'Researcher/cli-reference/new-cli/runai_workspace_suspend.md'
-      - 'CLI V1': 
+      - 'Legacy CLI': 
         - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
         - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
         - 'runai bash' : 'Researcher/cli-reference/runai-bash.md'
