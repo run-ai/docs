@@ -9,25 +9,30 @@ This document is about accessing the remote container created by Run:ai, from [V
 
 You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `gcr.io/run-ai-demo/pycharm-demo`. The image runs both python and ssh. Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank}. The image is configured to use the ``root`` user and password for SSH.
 
-Run the following command to connect to the container as if it were running locally:
-
+Run the following command to create the interactive workload:
 ```
-runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo --interactive  \
-        --service-type=portforward --port 2222:22
+runai submit build-remote -i gcr.io/run-ai-demo/pycharm-demo --interactive
+```
+
+Output:
+```
+Job build-remote submitted successfully.
+You can check the status of the job by running:
+	runai describe job build-remote -p ziggy
+```
+
+
+Run the following command to connect to the container as if it were running locally:
+```
+runai port-forward build-remote --port 2222:22
 ```
 
 The terminal will show the connection: 
-
 ``` shell
-The job 'build-remote' has been submitted successfully
-You can run `runai describe job build-remote -p team-a` to check the job status
-INFO[0007] Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-INFO[0045] Job started
-Open access point(s) to service from localhost:2222
+open access point(s) to service from localhost:2222
+Forwarding from 127.0.0.1:2222 -> 22
 Forwarding from [::1]:2222 -> 22
+Handling connection for 2222
 ```
 
 * The Job starts an sshd server on port 22.
