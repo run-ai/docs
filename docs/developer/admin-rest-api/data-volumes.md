@@ -99,10 +99,20 @@ This section outlines the procedure for creating, sharing, and submitting (Resea
 !!! Note
     Data volume admins can create data volumes within specific projects. Since data volumes are created from PVCs, there has to be a PVC in the namespace of a run:ai project for Run:Ai to have access to it and create the Data volume from it. Once the DV is created, the admin manages its sharing configurations.
 
-Data Volumes are created using the API endpoint.
-
-[Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes)
+Data Volumes are created using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes)
 
 ### Sharing Data volumes
 
 Sharing permissions is a sub-entity of the Data volume management permissions. Meaning they can be assigned independently. A user can have permission to create a DV but not to share it and vice versa. A data volume can be shared with one or multiple scopes. In all the scopes that the DV is shared, it can be used by the users in their workloads.
+
+Data Volumes are shared using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes).
+
+### Using Data Volumes in Workloads
+
+You can attach a data volume to a workload during submission in the same way other data sources are used. You need to specify the desired data path within the data source parameters.
+
+Researchers can list available data volumes within their permitted scopes for easy selection.
+
+For more information on using a data volume when submitting a workload, see [Submitting Worklodas]().
+
+You can also add a data volumes to your workload when submitting a workload via the API. For more information, see [Workloads](https://app.run.ai/api/docs#tag/Workloads).
