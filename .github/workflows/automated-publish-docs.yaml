@@ -74,15 +74,14 @@ jobs:
             echo "Deploying ${{ needs.env.outputs.NEWEST_VERSION }} as latest..."
             mike list
             git fetch origin gh-pages --depth=1
-            ### REMOVE "LATEST" FROM CURRENT VERSION ON THIS LINE ###
-            mike deploy --push --update-aliases ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} latest --title=${{ needs.env.outputs.TITLE }}
-            mike set-default ${{ needs.env.outputs.ALIAS }} --push latest
+            mike deploy ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} latest --title=${{ needs.env.outputs.TITLE }} --push --update-aliases
+            mike set-default latest --push
             mike list
           else
             echo "Deploying ${{ needs.env.outputs.CURRENT_BRANCH }} which is not the latest version ( => ${{ needs.env.outputs.NEWEST_VERSION }} )..."
             mike list
             git fetch origin gh-pages --depth=1
-            mike deploy --push ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} --title=${{ needs.env.outputs.TITLE }}
+            mike deploy ${{ needs.env.outputs.CURRENT_BRANCH }} ${{ needs.env.outputs.ALIAS }} --title=${{ needs.env.outputs.TITLE }} --push
             mike list
           fi
 
