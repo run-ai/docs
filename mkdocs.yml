@@ -247,7 +247,6 @@ nav:
       - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
       - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
-      - 'Hyperparameter Optimization' : 'Researcher/Walkthroughs/walkthrough-hpo.md'
       - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
@@ -358,7 +357,6 @@ nav:
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
       - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
       - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
-      - 'Hyperparameter Optimization' : 'Researcher/scheduling/hpo.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
