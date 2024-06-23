@@ -30,7 +30,9 @@ date: 2024-June-14
     For more information about installing and using the Improved CLI, see [Improved CLI]().
 
 ### Run:ai Administrator
-New info here
+
+* <!-- TODO add link to doc RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. 
+
 ## Deprecation Notifications
 
 Deprecation notifications allow you to plan for future changes in the Run:ai Platform.
