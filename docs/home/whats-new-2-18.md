@@ -31,7 +31,13 @@ date: 2024-June-14
 
 ### Run:ai Administrator
 
-* <!-- TODO add link to doc RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. 
+* <!-- TODO add link to doc RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
+
+    * Managed with dedicated permissions&mdash;Data admins, a new role within Run.ai, have exclusive control over data volume creation, data population, and sharing.
+    * Shared between multiple scopes&mdash;Unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
+    * Coupled to workloads in the submission process&mdash; Similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
+  
+  For more information, see [Data Volumes]().
 
 ## Deprecation Notifications
 
