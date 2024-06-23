@@ -43,6 +43,31 @@ date: 2024-June-14
 
 Deprecation notifications allow you to plan for future changes in the Run:ai Platform.
 
+### Feature deprecations
+
+Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+
+### API support and endpoint deprecations
+
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
+
+#### Deprecated APIs and API fields
+
+##### Departments API
+
+| Deprecated | Replacement |
+| --- |  --- |
+| /v1/k8s/clusters/{clusterId}/departments | /api/v1/org-unit/departments |
+| /v1/k8s/clusters/{clusterId}/departments/{department-id} | /api/v1/org-unit/departments/{departmentId} |
+| /v1/k8s/clusters/{clusterId}/departments/{department-id} | /api/v1/org-unit/departments/{departmentId}+PUT/PATCH /api/v1/org-unit/departments/{departmentId}/resources |
+
+##### Projects APi
+
+| Deprecated | Replacement |
+| --- |  --- |
+| /v1/k8s/clusters/{clusterId}/projects | /api/v1/org-unit/projects |
+| /v1/k8s/clusters/{clusterId}/projects/{id} | /api/v1/org-unit/projects/{projectId} |
+| /v1/k8s/clusters/{clusterId}/projects/{id} | /api/v1/org-unit/projects/{projectId} + /api/v1/org-unit/projects/{projectId}/resources |
 
 ## Breaking changes
 
