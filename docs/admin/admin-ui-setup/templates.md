@@ -37,7 +37,7 @@ To create a template:
 7. In the *Data sources* pane, select a data source. Press *New data source* to add a new data source to the system.
 8. In the *General* pane, choose to add the following:
 
-    * Auto-deletion&mdash;the time after which a workload that has completed or failed will be deleted. Press *+Auto-deletion* then configure the time in days, hours, minutes, and seconds.
+    * Auto-deletion&mdash;the time after which a workload that has completed or failed will be deleted. Press *+Auto-deletion* then configure the time in days, hours, minutes, and seconds. (default = 30 days)
     * Annotation&mdash;press *+ Annotation* then enter a name and a value. You can add multiple annotations by pressing the *+ Annotation*.
     * Label&mdash;press *+Label* then enter a name and a value. You can add multiple labels by pressing the *+Label*.
 

@@ -38,7 +38,7 @@ To submit a workload using the UI:
 
          1. Toggle the switch to allow the workspace to exceed the project's quota.
          2. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
          4. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
          5. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -76,7 +76,7 @@ To submit a workload using the UI:
       9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
          1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
          3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
          4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -103,7 +103,7 @@ To submit a workload using the UI:
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 
             1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
             3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
             4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -159,7 +159,7 @@ To submit a workload using the UI:
                 * Only PVC, Git, and ConfigMap resources are supported.
 
          11. In the *General* field you can:
-            1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional)
+            1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional) (default = 30 days)
             2. Add one or more *Annotation*. (optional)
             3. Add one or more *Labels*. (optional)
          12. When complete, press *Create inference*.
