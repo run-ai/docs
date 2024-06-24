@@ -1,5 +1,5 @@
 ---
-title: Version 2.17
+title: Version 2.18
 summary: This article describes new features and functionality in the version.
 authors:
     - Jamie Weider
