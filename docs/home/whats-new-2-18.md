@@ -45,7 +45,9 @@ date: 2024-June-14
 
 #### SSO
 
-* <!-- TODO Change ticket numbers and description to SSO RUN-16758/RUN-18432 - Data volumes -->
+* <!-- TODO Change ticket numbers and description -->Run:ai now supports SSO using OpenShift v4 (which is based on OIDC). Before using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
+
+* OIDC scopes have been added to the authentication request. Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resourcea are available when they are used to access OAuth 2.0 protected endopoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
 
 ## Deprecation Notifications
 
