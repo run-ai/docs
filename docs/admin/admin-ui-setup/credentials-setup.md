@@ -11,7 +11,7 @@ The *Credentials* manager in the Run:ai environment supports the following types
 [Username and password](#username-and-password)
 
 [Generic Secret](#generic-secret)
- 
+
 ## Secrets
 
 Credentials are built using `Secrets`. A `Secret` is an object that contains a small amount of sensitive data so that you don't need to include confidential data in your application code. When creating a credential you can either [create a new secret](#configuring-credentials) or use an [existing secret](#existing-secrets).
