@@ -62,6 +62,18 @@ There may be cases where you need to set additional properties as follows:
 
 Use the `--set` syntax in the helm command above.  
 
+#### External PostgreSQL database
+
+If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional),  refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+
+* `postgresql.enabled` - set to `false`
+* `global.postgresql.auth.password`
+* `global.postgresql.auth.username`
+* `global.postgresql.auth.host`
+* `global.postgresql.auth.port`
+* `grafana.dbUser`
+* `grafana.dbPassword`
+
 ## Next Steps
 
 ### Connect to Run:ai User interface

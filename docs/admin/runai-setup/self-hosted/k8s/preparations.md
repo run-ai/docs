@@ -95,22 +95,55 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 !!! Warning
     Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
 
- ### External Postgres database (optional)
+### External Postgres database (optional)
 
-If you have chosen to use an external Postgress database, an first setup is required in order to complete the installation successfully. 
+If you have opted to use an [external PostgreSQL database](prerequisites.md#external-postgresql-database-optional).
+, you need to perform initial setup to ensure successful installation. Follow these steps:
 
-Run the following command in a machine where `pgsql` is instllaed:
+1. Create a SQL script file, edit the parameters below, and save it locally:
+    * Replace `<DATABASE_NAME>` with the name of your PostgreSQL database.
+    * Replace `<ROLE_NAME>` with the password for the PostgreSQL role (user).
+    * Replace `<ROLE_PASSWORD>` with the name of the PostgreSQL role (user) to be created.
+    * Replace `<GRAFANA_PASSWORD>` with the password to be set for Grafana integration.
 
-``` bash
-curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/externalpg-script.sql | psql --host <POSTGRESQL_HOST> \ 
- --user <POSTGRESQL_USER> \ # (1)
- --port <POSTGRESQL_PORT> \ # (2)
- --dbname <POSTGRESQL_DB> \ # (3)
- --set=database_name='my_database' \ # (4)
- --set=role_name='my_role' \ # (5)
- --set=role_password='my_password' \ # (6)
- --set=grafana_password='grafana_password' # (7)
-```
+    ``` sql
+    -- Create a new database for runai
+    CREATE DATABASE <DATABASE_NAME>; 
+
+    -- Create the role with login and password
+    CREATE ROLE <ROLE_NAME>  WITH LOGIN PASSWORD '<ROLE_PASSWORD>'; 
+
+    -- Grant all privileges on the database to the role
+    GRANT ALL PRIVILEGES ON DATABASE <DATABASE_NAME> TO <ROLE_NAME>; 
+
+    -- Connect to the newly created database
+    \c <DATABASE_NAME> 
+
+    -- grafana
+    CREATE ROLE grafana WITH LOGIN PASSWORD '<GRAFANA_PASSWORD>'; 
+    CREATE SCHEMA grafana authorization grafana;
+    ALTER USER grafana set search_path='grafana';
+    -- Exit psql
+    \q
+    ```
+
+
+2. run the following command on a machine where PostgreSQL client (`pgsql`) is installed:
+
+    ``` bash
+    psql --host <POSTGRESQL_HOST> \ # (1)
+    --user <POSTGRESQL_USER> \ # (2)
+    --port <POSTGRESQL_PORT> \ # (3)
+    --dbname <POSTGRESQL_DB> \ # (4)
+    -a -f <SQL_FILE> \ # (5)
+    ```
+        
+    1. Replace `<POSTGRESQL_HOST>` with the PostgreSQL ip address or hostname.
+    1. Replace `<POSTGRESQL_USER>` with the PostgreSQL username.
+    2. Replace `<POSTGRESQL_PORT>` with the port number where PostgreSQL is running.
+    3. Replace `<POSTGRESQL_DB>` with the name of your PostgreSQL database.
+    4. Replace `<POSTGRESQL_DB>` with the name of your PostgreSQL database.
+    5. Replace `<SQL_FILE>` with the path to the SQL script created in the previous step.
 
 
 ## Additional permissions

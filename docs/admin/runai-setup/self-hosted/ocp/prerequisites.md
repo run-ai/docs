@@ -60,7 +60,7 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 > The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
 
- ### External Postgres database (optional)
+### External PostgreSQL database (optional)
 
 The Run:ai Control Plane installation includes a default PostgreSQL database. However, you may opt to use an existing PostgreSQL database if you have specific requirements or preferences. Please ensure that your PostgreSQL database is version 16 or higher.
 
