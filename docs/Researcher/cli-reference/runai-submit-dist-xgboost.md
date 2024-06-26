@@ -10,8 +10,7 @@ Syntax notes:
 
 ```console
 runai submit-dist xgboost --name distributed-job --workers=2 -g 1 \
-	-i <image_name
->
+	-i <image_name>
 ```
 
 ## Options
