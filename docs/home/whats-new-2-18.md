@@ -33,6 +33,10 @@ date: 2024-June-14
 
     For more information about installing and using the Improved CLI, see [Improved CLI](../Researcher/cli-reference/new-cli/runai.md).
 
+#### GPU memory swap
+
+* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md). 
+
 ### Run:ai Administrator
 
 * <!-- TODO verify link to doc post merge RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
