@@ -84,7 +84,6 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
     Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
 
 ### External Postgres database (optional)
-### External Postgres database (optional)
 
 If you have opted to use an [external PostgreSQL database](prerequisites.md#external-postgresql-database-optional).
 , you need to perform initial setup to ensure successful installation. Follow these steps:
