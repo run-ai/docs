@@ -21,6 +21,8 @@ date: 2024-June-14
 
 * <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value. Previously the default was **90 days** now the default is **30 days**.
 
+* <!-- TODO better explanation RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data sources to workload to include project secrets.
+
 #### Command Line Interface
 
 * <!-- TODO verify link to doc post merge to page RUN-14715/RUN-16337 - CLI V2 -->Added an improved researcher focused Command Line Interface (CLI). The improved CLI brings usability enhancements for researcher which include:
@@ -35,9 +37,11 @@ date: 2024-June-14
 
 #### GPU memory swap
 
-* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md). 
+* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md).
 
 ### Run:ai Administrator
+
+#### Data Sources
 
 * <!-- TODO verify link to doc post merge RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
 
@@ -46,6 +50,12 @@ date: 2024-June-14
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
+
+* <!-- TODO better explanation RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source type. Run:ai now allows you to configure a *Credential* (Secret) as a data source.
+
+#### Credentials
+
+* <!-- TODO better explanation RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new *Generic secret* to the *Credentials*.
 
 #### SSO
 
