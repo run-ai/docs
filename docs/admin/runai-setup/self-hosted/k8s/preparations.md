@@ -77,6 +77,7 @@ You must provide the domain's private key and crt as a Kubernetes secret in the 
 kubectl create secret tls runai-backend-tls -n runai-backend \
     --cert /path/to/fullchain.pem --key /path/to/private.pem
 ```
+
 ### Local Certificate Authority (air-gapped only)
 
 In air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
@@ -93,6 +94,24 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 !!! Warning
     Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
+
+ ### External Postgres database (optional)
+
+If you have chosen to use an external Postgress database, an first setup is required in order to complete the installation successfully. 
+
+Run the following command in a machine where `pgsql` is instllaed:
+
+``` bash
+curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/externalpg-script.sql | psql --host <POSTGRESQL_HOST> \ 
+ --user <POSTGRESQL_USER> \ # (1)
+ --port <POSTGRESQL_PORT> \ # (2)
+ --dbname <POSTGRESQL_DB> \ # (3)
+ --set=database_name='my_database' \ # (4)
+ --set=role_name='my_role' \ # (5)
+ --set=role_password='my_password' \ # (6)
+ --set=grafana_password='grafana_password' # (7)
+```
+
 
 ## Additional permissions
 
