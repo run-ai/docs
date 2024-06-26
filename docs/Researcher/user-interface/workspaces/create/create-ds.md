@@ -82,6 +82,20 @@ To create a host path data source, provide:
   * A ConfigMap name&mdash;select from the drop down.
   * A target location&mdash;the path to the container.
 
+## Create a Secret as data source
+
+* A Run:ai project scope which is assigned to that item and all its subsidiaries.
+* A *Credentials*. To create a new *Credentials*, see [Configuring Credentials](../../../../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
+  
+    !!! Note
+        You can only choose a project as a scope.
+
+* A data source name and description.
+* A data mount consisting of:
+
+  * A *Credentials*&mdash;select from the drop down.
+  * A target location&mdash;the path to the container.
+
 ## Data sources table
 
 The *Data sources* table contains a column for the status of the data source. The following statuses are supported:

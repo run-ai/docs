@@ -2,14 +2,16 @@
 
 Credentials are used to unlock protected resources such as applications, containers, and other assets.
 
-The *Credentials* manager in the Run:ai environment supports 3 types of credentials:
+The *Credentials* manager in the Run:ai environment supports the following types of credentials:
 
-1. [Docker registry](#docker-registry)
-2. [Access key](#access-key)
-3. [User name and password](#username-and-password)
-<!-- 4. [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret){target=_blank}.
--->
+[Docker registry](#docker-registry)
 
+[Access key](#access-key)
+
+[Username and password](#username-and-password)
+
+[Generic Secret](#generic-secret)
+ 
 ## Secrets
 
 Credentials are built using `Secrets`. A `Secret` is an object that contains a small amount of sensitive data so that you don't need to include confidential data in your application code. When creating a credential you can either [create a new secret](#configuring-credentials) or use an [existing secret](#existing-secrets).
@@ -68,7 +70,7 @@ To configure *Credentials*:
 
       * If you choose `New secret`, enter a username and password.
 
-4. Enter a URL for the docker registry, then press `Create credential` to create the credential.
+4. Enter a URL for the docker registry, then press `Create credentials` to create the credential.
 
 ### `Access key`
 
@@ -83,7 +85,7 @@ To configure *Credentials*:
 
       * If you choose `New secret`, enter an access key and access secret.
 
-4. Press `Create credential` to create the credential.
+4. Press `Create credentials` to create the credential.
 
 ### `Username and password`
 
@@ -98,7 +100,22 @@ To configure *Credentials*:
 
       * If you choose `New secret`, enter a username and password.
 
-4. Press `Create credential` to create the credential.
+4. Press `Create credentials` to create the credential.
+
+### Generic Secret
+
+1. Select a `Scope` (cluster, department, or project) for the credential.
+2. In the `Credential name` field, enter a name for the credential, and the in the *Description* field, enter a description..
+3. In the `Secret` field, choose from `Existing secret` or `New secret`.
+
+      * If you select `Existing secret`, select an unused secret from the drop down.
+  
+        !!! Note
+            Existing secrets can't be used more than once.
+
+      * If you choose `New secret`, enter a key, valuer pair.
+
+4. Press `Create credentials` to create the credential.
 
 ## Credentials Table
 
