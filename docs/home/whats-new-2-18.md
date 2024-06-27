@@ -49,7 +49,7 @@ It provides the infrastructure to demo, run and deploy artificial intelligence (
 
 #### YAML Workload Reference table
 
-* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added doc containing the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available exammple workload snippets. For more information see ...
+* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added a file detailing the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The individual YAML field details contains information on the value type and currently available exammple workload snippets. For more information see ...
 
 ### Run:ai Administrator
 
