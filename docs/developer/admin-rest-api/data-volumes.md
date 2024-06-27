@@ -97,7 +97,7 @@ This section outlines the procedure for creating, sharing, and submitting (Resea
 ### Creating Data Volumes
 
 !!! Note
-    Data volume admins can create data volumes within specific projects. Since data volumes are created from PVCs, there has to be a PVC in the namespace of a run:ai project for Run:Ai to have access to it and create the Data volume from it. Once the DV is created, the admin manages its sharing configurations.
+    Data volume admins can create data volumes within specific projects. Since data volumes are created from PVs, there has to be a PV in the namespace of a run:ai project for Run:Ai to have access to it and create the Data volume from it. Once the DV is created, the admin manages its sharing configurations.
 
 Data Volumes are created using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes)
 
