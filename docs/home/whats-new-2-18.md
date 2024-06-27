@@ -67,9 +67,13 @@ It provides the infrastructure to demo, run and deploy artificial intelligence (
 
 #### SSO
 
-* <!-- TODO Change ticket numbers and description RUN-XXXXX/RUN-XXXXX-->Run:ai now supports SSO using OpenShift v4 (which is based on OIDC). Before using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
+* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Run:ai now supports SSO using OpenShift v4 (which is based on OIDC). Before using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
 
-* <!-- RUN-XXXX/RUN-XXXXX - OIDC Scopes -->OIDC scopes have been added to the authentication request. Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
+* <!-- RUN-16788/RUN-16866 - OIDC Scopes -->OIDC scopes have been added to the authentication request. Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
+
+#### Ownership protection
+
+* <!-- TODO Need to confirm text RUN-19098/RUN-19557 Need to add link -->Ownership protection in Run:ai ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
 
 ## Deprecation Notifications
 
