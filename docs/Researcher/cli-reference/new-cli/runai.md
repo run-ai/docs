@@ -34,7 +34,7 @@ Auto-completion is installed automatically.
 
 To install it manually:
 
-* For *ZSH*, edit the file ~/.zshrc and add the following lines:
+* For *ZSH*, edit the file `~/.zshrc` and add the following lines:
 
 ```zsh
 autoload -U compinit; compinit -i
@@ -47,7 +47,7 @@ source <(runai completion zsh)
   * Ubuntu/Debian: `sudo apt-get install bash-completion`
   * Fedora/Centos: `sudo yum install bash-completion`
   
-Then, edit the file ~/.bashrc and add the following lines:
+Then, edit the file `~/.bashrc` and add the following lines:
 
 ```bash
 [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
