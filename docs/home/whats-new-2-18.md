@@ -47,7 +47,7 @@ date: 2024-June-14
 
 #### YAML Workload Reference table
 
-* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added doc containing the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see ...
+* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added doc containing the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference]().
 
 ### Run:ai Administrator
 
