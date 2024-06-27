@@ -25,6 +25,8 @@ date: 2024-June-14
 
 * <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature is used to set a target threshold for the response time of requests. This will adjust the number of applications to keep the response time below that threshold. For more information, see [Auto scaling]().
 
+* <!-- TODO Add docs for models explanation. RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for ChatUi models. Run:ai has improved autoscaling performance with ChatI models by adding them to *Environments*. ChatUi is an addition to inference workloads and is not mandatory for all types of workloads. For more information, see [Models]().  
+
 #### Command Line Interface
 
 * <!-- TODO verify link to doc post merge to page RUN-14715/RUN-16337 - CLI V2 -->Added an improved researcher focused Command Line Interface (CLI). The improved CLI brings usability enhancements for researcher which include:
