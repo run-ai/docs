@@ -1,5 +1,5 @@
 ---
-title: Run:ai Command-line Interface
+title: Run:ai Enhanced Command-line Interface
 summary: This article is the summary article for the CLI V2.
 authors:
     -  Jason Novich 
@@ -13,6 +13,20 @@ The Run:ai Command-line Interface (CLI) tool for a Researcher to send deep learn
 ```
 runai [flags]
 ```
+
+## Installing the Improved Command Line Interface
+
+!!! Note
+    * Make sure the flag for the enhanced command line interface is enabled. To enable the Improved Command Line Interface Press the *Tools and Settings* icon, then *General*, then *Workloads*, then enable the *Improved Command Line Interface* toggle.
+    * Only clusters that are version 2.18 or later are supported.
+
+To install the Improved Command Line Interface:
+
+1. Press the *Help* icon, then select *Researcher Command Line Interface*.
+2. From the dropdown, select a cluster.
+3. Select your operating system.
+4. Copy the installer command to your clipboard, then paste it into a terminal window and run the command.
+5. Follow the instruction prompts during the installation process. Press `Enter` to use the default values (recommended).
 
 ### Options
 
