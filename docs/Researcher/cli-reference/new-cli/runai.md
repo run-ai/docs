@@ -43,9 +43,9 @@ source <(runai completion zsh)
 
 * For *bash*, install the bash-completion package. Choose your operating system:
   
-  * Mac: brew install bash-completion
-  * Ubuntu/Debian: sudo apt-get install bash-completion
-  * Fedora/Centos: sudo yum install bash-completion
+  * Mac: `brew install bash-completion`
+  * Ubuntu/Debian: `sudo apt-get install bash-completion`
+  * Fedora/Centos: `sudo yum install bash-completion`
   
 Then, edit the file ~/.bashrc and add the following lines:
 
@@ -59,7 +59,9 @@ source <(runai completion bash)
 
 After you have configured your shell, you will need to login to authenticate the CLI.
 In your terminal widow run:
+
 `runai login`
+
 You will be redirected to your platform's login page.
 Enter your user name and password and login.
 
