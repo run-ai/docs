@@ -28,7 +28,44 @@ To install the Improved Command Line Interface:
 4. Copy the installer command to your clipboard, then paste it into a terminal window and run the command.
 5. Follow the instruction prompts during the installation process. Press `Enter` to use the default values (recommended).
 
+### Install Command Auto-Completion
+
+Auto-completion is installed automatically. 
+
+To install it manually:
+
+* For *ZSH*, edit the file ~/.zshrc and add the following lines:
+
+```zsh
+autoload -U compinit; compinit -i
+source <(runai completion zsh)
+```
+
+* For *bash*, install the bash-completion package. Choose your operating system:
+  
+  * Mac: brew install bash-completion
+  * Ubuntu/Debian: sudo apt-get install bash-completion
+  * Fedora/Centos: sudo yum install bash-completion
+  
+Then, edit the file ~/.bashrc and add the following lines:
+
+```bash
+[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+
+source <(runai completion bash)
+```
+
+After you have configured your shell, you will need to login to authenticate the CLI.
+In your terminal widow run:
+`runai login`
+You will be redirected to your platform's login page.
+Enter your user name and password and login.
+
+You can then return to the terminal window to use the CLI.
+
 ### Options
+
+You can use the following configuration options with your CLI to customize your CLI.
 
 ```
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
