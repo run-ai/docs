@@ -47,6 +47,10 @@ It provides the infrastructure to demo, run and deploy artificial intelligence (
 
 * <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md).
 
+#### YAML Workload Reference table
+
+* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added doc containing the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available exammple workload snippets. For more information see ...
+
 ### Run:ai Administrator
 
 #### Data Sources
