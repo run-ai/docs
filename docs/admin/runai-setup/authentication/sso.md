@@ -1,8 +1,9 @@
 # Single Sign-On
 
-Single Sign-On (SSO) is an authentication scheme that allows a user to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
+Single Sign-On (SSO) is an authentication scheme allowing users to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.
 
-Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol and Open ID Connect or [OIDC](https://openid.net/developers/how-connect-works/){target=_blank}.
+Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language){target=_blank} protocol, Open ID Connect [OIDC](https://openid.net/developers/how-connect-works/){target=_blank} and [OpenShift V4](https://en.wikipedia.org/wiki/OpenShift){target=_blank} (which is based on OIDC).
+
 
 !!! Caution
     Single sign-on is only available with SaaS installations where the tenant has been created post-January 2022 or any Self-hosted installation of release 2.0.58 or later. If you are using single sign-on with older versions of Run:ai, please contact Run:ai customer support
@@ -11,27 +12,61 @@ Run:ai supports SSO using the [SAML 2.0](https://en.wikipedia.org/wiki/Security_
 
 *Identity Provider (Idp)*&mdash; a system that creates, maintains, and manages identity information. Example IdPs: Google, Keycloak, Salesforce, Auth0.
 
-## SAML Prerequisites
+## Prerequisites
 
-**XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server such that you will have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+For each of the SSO options, there are prerequisites that should be considered.
 
-## OIDC Prerequisites
+### SAML 2
+
+**XML Metadata**&mdash;you must have an *XML Metadata file* retrieved from your IdP. Upload the file to a web server so that you have a URL to the file. The URL must have the *XML* file extension. For example, to connect using Google, you must create a custom SAML App [here](https://admin.google.com/ac/apps/unified){target=_blank}, download the Metadata file, and upload it to a web server.
+
+### OIDC 
 
 * **Discovery URL**&mdash;the OpenID server where the content discovery information is published.
 * **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
 * **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
 
-### Additional attribute mappings
+
+### OpenShift V4
+
+Before using OpenShift, first define OAuthClient. The OAuth client interacts with OpenShift’s OAuth server to authenticate users and request access tokens.
+
+To define OAuthClient, follow these steps:
+
+1. Create a new ```OAuthClient``` Kubernetes object with the following content
+```
+apiVersion: oauth.openshift.io/v1
+grantMethod: auto
+kind: OAuthClient
+metadata:
+name: my-client
+redirectURIs:
+	- https://<runai_env_url>/auth/realms/runai/broker/openshift-v4/endpoint
+secret: this-is-my-secret
+```
+Replace `<runai_env_url>` with the URL of your Run:ai platform.
+Replace `my-client` and `this-is-my-secret` with client name and secret you have chosen.
+
+2. Run the following command to apply the OAuthClient object to the environment. Create the object on OpenShift cluster where you define your OpenShift IDP:
+```
+oc apply <file name>
+```
+3. Check that the file has been applied successfully by running the following command:
+```
+oc get oauthclient
+```
+
+## Additional attribute mappings
 
 You can configure your IdP to map several IdP attributes:
 
 | IdP attribute | Default Run:ai name | Description |
 |--|--|--|
-| User email | email (cannot be changed) | **(Mandatory)**  `e-mail` is the user identifier with Run:ai. |
-| User role groups | GROUPS  | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
 | Linux User ID | UID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux User `UID`. Used to map access to network resources such as file systems to users. The IdP attribute must be of integer type. |
 | Linux Group ID | GID  | (Optional) If exists in IdP, allows Researcher containers to start with the Linux Group `GID`. The IdP attribute must be of integer type. |
+| User role groups | GROUPS  | (Optional) If exists, allows assigning Run:ai role groups via the IdP. The IdP attribute must be of a type of list of strings. See more below |
 | Linux Supplementary Groups | SUPPLEMENTARYGROUPS  | (Optional) If exists in IdP, allows Researcher containers to start with the relevant Linux supplementary groups. The IdP attribute must be of a type of list of integers. |
+| Email | Email  | (Optional) Defines the user attribute holding the user's email address, which is the user identifier in Run:ai |
 | User first name | firstName | (Optional) Used as the first name showing in the Run:ai user interface. |
 | User last name | lastName | (Optional) Used as the last name showing in the Run:ai user interface |
 
@@ -43,9 +78,9 @@ You can configure your IdP to map several IdP attributes:
 
 1. Press the `Tools & Settings` then press `General`.
 2. Open the `Security` pane and press `+Identity provider`.
-3. Select the SSO protocol. Choose `SAML 2` or `Open ID Connect`.
+3. Select the SSO protocol. Choose `Custom SAML 2.0`, `Custom OpenID Connect` or `OpenShift V4`.
 
-    === "SAML 2"
+    === "SAML 2.0"
 
         1. Choose `From computer` or `From URL`.
         
@@ -60,7 +95,7 @@ You can configure your IdP to map several IdP attributes:
     	
     	Press `Download` to download the file.
     
-    	Pres `Edit` to both download the file, and view the:
+    	Press `Edit` to both download the file, and view the:
     
         * Identity provider URL.
         * Identity provider entity ID.
@@ -71,9 +106,26 @@ You can configure your IdP to map several IdP attributes:
         1. In the `Discovery URL` field, enter the discovery URL .
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-		4. Add OIDC scope to be used during authentication to authorize access to a user's details.  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
         5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
         6.When complete, press `Save`.
+
+		After you have configured the OIDC settings, you can view and edit the identity provider settings. 
+    	  
+    	Press `Edit` to view and edit the:
+    
+        * Discovery URL.
+        * Client ID.
+        * Client secret.
+
+	=== "OpenShift V4"
+
+        1. In the `Base URL` field, enter the OpenShift Base URL (https://api.<your-openshift-domain>:6443).
+        2. In the `Client ID` field, enter the client ID.
+        3. In the `Client Secret` field, enter the client secret.
+	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+        5. In the `User attributes` field enter the attribute and the value in the identity provider (optional).
+        6. When complete, press `Save`.
 
  4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
  5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
