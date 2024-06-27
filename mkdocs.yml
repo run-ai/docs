@@ -373,6 +373,7 @@ nav:
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
       - 'Submit CRON job via YAML'  : 'developer/cluster-api/submit-cron-yaml.md'
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
+      - 'Data Volumes': 'developer/admin-rest-api/data-volumes.md'
       - 'Reference' :
         - 'Training Workloads' : 'developer/cluster-api/reference/training.md'
         - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
