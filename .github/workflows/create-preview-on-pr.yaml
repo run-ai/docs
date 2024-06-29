@@ -1,61 +1,61 @@
-# name: Create Preview for PRs
+name: Create Preview for PRs
 
-# on:
-#   pull_request:
-#     branches:
-#       - master
-#       - v*.*
+on:
+  pull_request:
+    branches:
+      - master
+      - v*.*
 
-# env:
-#   PR_NUMBER: ${{ github.event.number }}
+env:
+  PR_NUMBER: ${{ github.event.number }}
 
-# jobs:
-#   comment-on-pr:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Comment on PR
-#         uses: hasura/comment-progress@v2.2.0
-#         with:
-#             github-token: ${{ secrets.GITHUB_TOKEN }}
-#             repository: ${{ github.repository }}
-#             number: ${{ github.event.number }}
-#             id: deploy-preview
-#             message: "Starting deployment of preview ⏳..."
+jobs:
+  comment-on-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on PR
+        uses: hasura/comment-progress@v2.2.0
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            repository: ${{ github.repository }}
+            number: ${{ github.event.number }}
+            id: deploy-preview
+            message: "Starting deployment of preview ⏳..."
 
-#   create-preview:
-#     name: create preview
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: checkout latest
-#         uses: actions/checkout@v4
-#         with:
-#           fetch-depth: 0
+  create-preview:
+    name: create preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout latest
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-#       - name: setup python
-#         uses: actions/setup-python@v5
-#         with:
-#           python-version: '3.9'
-#           cache: 'pip' # caching pip dependencies
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
 
-#       - name: install dependencies
-#         run: |
-#           pip3 install -r requirements.txt
+      - name: install dependencies
+        run: |
+          pip3 install -r requirements.txt
       
-#       - name: Configure Git User
-#         run: |
-#           git config user.name "circleci-runai"
-#           git config user.email "circleci-runai@run.ai"
+      - name: Configure Git User
+        run: |
+          git config user.name "circleci-runai"
+          git config user.email "circleci-runai@run.ai"
   
-#       - name: building preview
-#         run: |
-#           mike deploy ${{ env.PR_NUMBER }} ${{ env.PR_NUMBER }}-alias -t ${{ env.PR_NUMBER }} --prop-set hidden=true
+      - name: building preview
+        run: |
+          mike deploy ${{ env.PR_NUMBER }} ${{ env.PR_NUMBER }}-alias -t ${{ env.PR_NUMBER }} --prop-set hidden=true
 
-#       - name: Update comment
-#         uses: hasura/comment-progress@v2.2.0
-#         if: github.ref != 'refs/heads/main'
-#         with:
-#           github-token: ${{ secrets.GITHUB_TOKEN }}
-#           repository: ${{ github.repository }}
-#           number: ${{ github.event.number }}
-#           id: deploy-preview
-#           message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨ docs.run.ai/${{ env.PR_NUMBER }} ✨\n\n🚀 Happy reviewing! 🚀"
+      - name: Update comment
+        uses: hasura/comment-progress@v2.2.0
+        if: github.ref != 'refs/heads/main'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          number: ${{ github.event.number }}
+          id: deploy-preview
+          message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨ docs.run.ai/${{ env.PR_NUMBER }} ✨\n\n🚀 Happy reviewing! 🚀"
