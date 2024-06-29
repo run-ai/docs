@@ -2,6 +2,11 @@ name: Create Preview for PRs
 
 on:
   pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
     branches:
       - master
       - v*.*
