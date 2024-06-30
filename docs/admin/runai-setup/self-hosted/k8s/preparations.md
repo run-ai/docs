@@ -77,7 +77,6 @@ You must provide the domain's private key and crt as a Kubernetes secret in the 
 kubectl create secret tls runai-backend-tls -n runai-backend \
     --cert /path/to/fullchain.pem --key /path/to/private.pem
 ```
-
 ### Local Certificate Authority (air-gapped only)
 
 In air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
