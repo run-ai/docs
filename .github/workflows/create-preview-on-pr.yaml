@@ -63,4 +63,4 @@ jobs:
           repository: ${{ github.repository }}
           number: ${{ github.event.number }}
           id: deploy-preview
-          message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨ docs.run.ai/${{ env.PR_NUMBER }} ✨\n\n🚀 Happy reviewing! 🚀"
+          message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨ https://docs.run.ai/${{ env.PR_NUMBER }} ✨\n\n🚀 Happy reviewing! 🚀"
