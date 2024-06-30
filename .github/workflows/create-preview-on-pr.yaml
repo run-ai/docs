@@ -53,7 +53,7 @@ jobs:
   
       - name: building preview
         run: |
-          mike deploy ${{ env.PR_NUMBER }} ${{ env.PR_NUMBER }}-alias -t ${{ env.PR_NUMBER }} --prop-set hidden=true
+          mike deploy ${{ env.PR_NUMBER }} ${{ env.PR_NUMBER }}-alias -t ${{ env.PR_NUMBER }} --prop-set hidden=true --push
 
       - name: Update comment
         uses: hasura/comment-progress@v2.2.0
