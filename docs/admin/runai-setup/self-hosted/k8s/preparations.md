@@ -101,9 +101,9 @@ If you have opted to use an [external PostgreSQL database](prerequisites.md#exte
 , you need to perform initial setup to ensure successful installation. Follow these steps:
 
 1. Create a SQL script file, edit the parameters below, and save it locally:
-    * Replace `<DATABASE_NAME>` with the name of your PostgreSQL database.
-    * Replace `<ROLE_NAME>` with the password for the PostgreSQL role (user).
-    * Replace `<ROLE_PASSWORD>` with the name of the PostgreSQL role (user) to be created.
+    * Replace `<DATABASE_NAME>` with a dedicate database name for RunAi in your PostgreSQL database.
+    * Replace `<ROLE_NAME>` with a dedicated role name (user) for RunAi database.
+    * Replace `<ROLE_PASSWORD>` with a password for the new PostgreSQL role.
     * Replace `<GRAFANA_PASSWORD>` with the password to be set for Grafana integration.
 
     ``` sql
@@ -126,7 +126,6 @@ If you have opted to use an [external PostgreSQL database](prerequisites.md#exte
     -- Exit psql
     \q
     ```
-
 
 2. run the following command on a machine where PostgreSQL client (`pgsql`) is installed:
 

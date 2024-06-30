@@ -51,7 +51,6 @@ There may be cases where you need to set additional properties as follows:
 | `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress | 
 | `global.ingress.ingressClass` |  Ingress class  |  Run:ai default is using NGINX. If your cluster has a different ingress controller, you can configure the ingress class to be created by Run:ai |
 | `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with domain certificate. See [above](#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
-
 | `postgresql.enabled`| PostgreSQL installation | If set to `false` the PostgreSQL will not be installed |
 | `global.postgresql.auth.host`  | PostgreSQL host | Hostname or IP address of the PostgreSQL server  |
 | `global.postgresql.auth.port`  | PostgreSQL port | Port number on which PostgreSQL is running  |

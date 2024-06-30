@@ -4,7 +4,6 @@
 
 Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
 
-
 ## Install the Control Plane
 
 Run the helm command below:
@@ -79,7 +78,6 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 * `global.postgresql.auth.port`
 * `grafana.dbUser`
 * `grafana.dbPassword`
-
 
 ## Next steps
 ### Connect to Run:ai user interface
