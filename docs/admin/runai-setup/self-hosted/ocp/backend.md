@@ -69,7 +69,7 @@ Use the `--set` syntax in the helm command above.
 
 #### External PostgreSQL database
 
-If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional),  refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
 
 * `postgresql.enabled` - set to `false`
 * `global.postgresql.auth.password`

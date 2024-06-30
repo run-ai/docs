@@ -62,7 +62,7 @@ See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequ
 
 ### External PostgreSQL database (optional)
 
-The Run:ai Control Plane installation includes a default PostgreSQL database. However, you may opt to use an existing PostgreSQL database if you have specific requirements or preferences. Please ensure that your PostgreSQL database is version 16 or higher.
+The Run:ai control plane installation includes a default PostgreSQL database. However, you may opt to use an existing PostgreSQL database if you have specific requirements or preferences. Please ensure that your PostgreSQL database is version 16 or higher.
 
 ## Next steps
 Continue to [Preparing for a Run:ai OpenShift Installation
