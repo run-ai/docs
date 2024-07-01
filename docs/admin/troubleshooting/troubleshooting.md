@@ -288,7 +288,7 @@
 
     __Symptoms:__ 
     
-    * The `New Deployment` button on the top right of the Deployment list is grayed out.
+    * The `New workload type` -> `Inference` button is grayed out.
     * Cannot create a deployment via [Inference API](../../developer/cluster-api/submit-yaml.md#inference-workload-example).
 
     __Root Cause:__ Run:ai Inference prerequisites have not been met.
@@ -296,23 +296,13 @@
     __Resolution:__ Review [inference prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) and install accordingly.
 
 
-??? "New Deployment button is not showing"
-     __Symptom:__ The `New Deployment` button on the top right of the Deployments list does not show.
+??? "Submitted workload type of inference remains in Pending state"
+    __Symptom:__ A submitted inference is not running.
 
-    __Root Cause:__ You do not have `ML Engineer` permissions.
+    __Root Cause:__ The [patch](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) statement to add the runai-scheduler has not been performed. 
 
-??? "Submitted Deployment remains in Pending state"
-    __Symptom:__ A submitted deployment is not running.
-
-    __Root Cause:__ The [patch](../runai-setup/cluster-setup/cluster-prerequisites.md#inference) statement to add the runai-scheduler has not been performed.
-
-??? "Some Autoscaling metrics are not working"
-    __Symptom:__ Deployments do not autoscale when using metrics other than `requests-per-second` or `concurrency`.
-
-    __Root Cause:__ The [horizontal pod autoscaler](../runai-setup/cluster-setup/cluster-prerequisites.md#inference-autoscaling) prerequisite has not been installed. 
-
-??? "Deployment status is "Failed""
-    __Symptom:__ Deployment status is always `Failed`.
+??? "Workload of type inference status is "Failed""
+    __Symptom:__ Inference status is always `Failed`.
 
     __Root Cause:__ (multiple)
     
@@ -320,9 +310,9 @@
     * Server model command is misconfigured (i.e sleep infinity).
     * Server port is misconfigured. 
 
-??? "Deployment does not scale up from zero"
+??? "Worload of type inference does not scale up from zero"
 
-    __Symptom:__ In the Deployment form, when "Auto-scaling" is enabled, and "Minimum Replicas" is set to zero, the deployment cannot scale up from zero.
+    __Symptom:__ In the Inference form, when "Auto-scaling" is enabled, and "Minimum Replicas" is set to zero, the inference cannot scale up from zero.
 
     __Root Cause:__ 
 
