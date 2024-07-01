@@ -23,8 +23,12 @@ In interactive workloads or workspaces, applied policies will only allow researc
 
 To enable the new *Policy Manager*:
 
-1. Press the *Tools and Settings* icon, then press *General*.
-2. Toggle the *New Policy Manager* switch to on.
+1. Enable the Policy Manager feature in the clusters `runaiconfig`:
+```
+kubectl patch runaiconfigs runai -n runai --type=merge -p='{"spec": {"global": {"controlPlanePoliciesEnabled": true}}}'
+```
+2. In the UI, Press the *Tools and Settings* icon, then press *General*.
+3. Toggle the *New Policy Manager* switch to on.
 
 To return to the previous *Policy Manager* toggle the switch off.
 
