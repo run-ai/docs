@@ -17,11 +17,11 @@ date: 2024-June-14
 
 * <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added to UI backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`.
 
-* <!-- RUN-16830/RUN-16831 - Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
-
-* <!-- TODO Talk to lior about being new feature - after backoff limit RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value. Previously the default was **90 days** now the default is **30 days**.
+* <!-- TODO Talk to lior about being new feature RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value. Previously the default was **90 days** now the default is **30 days**.
 
 * <!-- TODO better explanation RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new data sources to workload to include project secrets.
+
+* <!-- RUN-16830/RUN-16831 - Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
 
 * <!-- TODO add link to doc when ready pair with inference - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature is used to set a target threshold for the response time of requests. This will adjust the number of applications to keep the response time below that threshold. For more information, see [Auto scaling]().
 
