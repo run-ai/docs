@@ -25,15 +25,16 @@ Environment administrator | Create, view, edit, and delete *Environments*.<br> V
 | Data source administrator| Create, view, edit, and delete *Data sources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Templates*. |
 | Compute resource administrator | Create, view, edit, and delete *Compute resources*.<br> View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Data sources*, and *Templates*. |
 | System administrator | Controls all aspects of the system. This role has global system control and should be limited to a small group of skilled IT administrators. |
-| Department administrator | Create, view, edit, and delete: *Departments* and *Projects*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.<br>View *Dashboards* (including the *Consumption dashboard). |
-| Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
-| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, *Templates*, and *Projects*<br>View related *Jobs* and *Workspaces*, and *Dashboards*. |
-| L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*.<br>View *Dashboards*.
-| ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
-| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
-| L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. |
+| Department administrator | Create, view, edit, and delete: *Departments*, *Projects* and *Data Volumes (including sharing)*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.*<br>View *Dashboards* (including the *Consumption dashboard). |
+| Data Volumes administrator | Create, view, edit, and delete: *Data Volumes*, *Data Volumes sharing list*<br>View: *Account*, *Department*,*Project*, *Jobs*, *Workloads*, *Cluster*, *Overview dashboard*, *Consumption dashboard*, *Analytics dashboard*, *Policies*, *Workloads*, *Workspaces*, *Trainings*, *Environments*, *Compute resources*, *Templates*, *Data source*, *Inferences* |
+| Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*.<br> Create: *Data Volumes* |
+| Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, *Templates*, *Data Volumes (including sharing)*, and *Projects*<br>View related *Jobs* and *Workspaces*, and *Dashboards*. |
+| L1 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates* and *Data Volumes*.<br>View *Dashboards*.
+| ML engineer | Create, edit, view, and delete *Deployments*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards* and *Data Volumes*. |
+| Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards* and *Data Volumes*.<br> A viewer cannot edit *Configurations*. |
+| L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. View: *Data Volumes*|
 | Template administrator | Create, view, edit, and delete *Templates*.<br>View *Jobs*, *Workspaces*, *Dashboards*, *Environments*, *Compute resources*, and *Data sources*. |
-| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Deployments*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*), and *Dashboards*. |
+| Department viewer | View *Departments*, *Projects*, assigned subordinates (*Jobs*, *Deployments*, *Workspaces*, *Environments*, *Data sources*, *Compute resources*, *Templates*),*Dashboards* and *Data Volumes (including sharing)*. |
 
 !!! Note
     Keep the following in mind when upgrading from versions 2.13 or earlier:
