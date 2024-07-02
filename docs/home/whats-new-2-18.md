@@ -113,5 +113,3 @@ The endpoints and parameters specified in the API reference are the ones that ar
 ## Breaking changes
 
 Breaking changes notifications allow you to plan around potential changes that may interfere your current workflow when interfacing with the Run:ai Platform.
-
-
