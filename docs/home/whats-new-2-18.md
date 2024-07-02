@@ -17,7 +17,7 @@ date: 2024-June-14
 
 * <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added to UI backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`.
 
-* <!-- TODO Talk to lior about being new feature RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value. Previously the default was **90 days** now the default is **30 days**.
+* <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* is determined when any Run:ai workload reaches a a completed, or failed status will be automatically deleted (including logs). This change only affects new or cloned workloads.
 
 * <!-- TODO better explanation RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new data sources to workload to include project secrets.
 
@@ -25,7 +25,7 @@ date: 2024-June-14
 
 * <!-- TODO add link to doc when ready pair with inference - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature is used to set a target threshold for the response time of requests. This will adjust the number of applications to keep the response time below that threshold. For more information, see [Auto scaling]().
 
-* <!-- TODO Add docs for models explanation. pair LLM RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for ChatUi models. Run:ai has improved autoscaling performance with ChatI models by adding them to *Environments*. ChatUi is an addition to inference workloads and is not mandatory for all types of workloads. For more information, see [Models]().
+* <!-- TODO Add to inference doc models explanation after autoscaling. pair LLM RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for ChatUi models. Run:ai has improved autoscaling performance with ChatI models by adding them to *Environments*. ChatUi is an addition to inference workloads and is not mandatory for all types of workloads. For more information, see [Models]().
 
 * <!-- TODO add this as a section to the "models catalog" doc pair LLM RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc).
 
