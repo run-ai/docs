@@ -29,7 +29,7 @@ For each of the SSO options, there are prerequisites that should be considered.
 ### OpenShift V4
 
 * **OpenShift OAuth client** - see [Registering an additional OAuth client](https://docs.openshift.com/container-platform/4.16/authentication/configuring-oauth-clients.html#oauth-register-additional-client_configuring-oauth-clients){target=_blank}
-* **Base URL**&mdash;the OpenShift API Server endpoint (example: https://api.<cluster-url>:6443)
+* **Base URL**&mdash;the OpenShift API Server endpoint (example: `https://api.<your-openshift-domain>:6443`)
 * **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
 * **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
 
@@ -99,7 +99,7 @@ You can configure your IdP to map several IdP attributes:
 
 	=== "OpenShift V4"
 
-        1. In the `Base URL` field, enter the OpenShift API server endpoint (https://api.<your-openshift-domain>:6443).
+        1. In the `Base URL` field, enter the OpenShift API server endpoint (example: `https://api.<your-openshift-domain>:6443`).
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
 	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional). Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
