@@ -3,6 +3,7 @@ title: Version 2.18
 summary: This article describes new features and functionality in the version.
 authors:
     - Jamie Weider
+    - Jason Novich
 date: 2024-June-14
 ---
 
@@ -27,7 +28,7 @@ date: 2024-June-14
 
 * <!-- TODO Add to inference doc models explanation after autoscaling. pair LLM RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for ChatUi models. Run:ai has improved autoscaling performance with ChatI models by adding them to *Environments*. ChatUi is an addition to inference workloads and is not mandatory for all types of workloads. For more information, see [Models]().
 
-* <!-- TODO add this as a section to the "models catalog" doc pair LLM RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc).
+* <!-- TODO add this as a section to the "models catalog" doc pair LLM  - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
 
 #### Command Line Interface
 
@@ -44,7 +45,7 @@ date: 2024-June-14
 
 #### GPU memory swap
 
-* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md).
+* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->Added new GPU to CPU memory swap. To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU.  For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md).
 
 #### YAML Workload Reference table
 
@@ -70,13 +71,13 @@ date: 2024-June-14
 
 #### SSO
 
-* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Run:ai now supports SSO using OpenShift v4 (which is based on OIDC). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
+* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Added support for SSO using OpenShift v4 (OIDC based). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
 
-* <!-- RUN-16788/RUN-16866 - OIDC Scopes -->OIDC scopes have been added to the authentication request. Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
+* <!-- RUN-16788/RUN-16866 - OIDC Scopes -->Added OIDC scopes to authentication requests. OIDC Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
 
 #### Ownership protection
 
-* <!-- TODO Need to confirm text RUN-19098/RUN-19557 Need to add link -->Ownership protection in Run:ai ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
+* <!-- TODO Need to confirm text RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
 
 ## Deprecation Notifications
 
