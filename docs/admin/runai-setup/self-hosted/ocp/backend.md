@@ -99,7 +99,7 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 ### Redis
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
-| `redis.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
+| `redisCache.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
 
 ## Next steps
 
