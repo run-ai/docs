@@ -60,7 +60,7 @@ RBAC uses [rules](#access-rules) to ensure that only authorized users or applica
 
 * Departments
 * Projects
-* Deployments
+* Inference
 * Workspaces
 * Environments
 * Quota management dashboard
