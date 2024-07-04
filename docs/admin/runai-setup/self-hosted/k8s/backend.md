@@ -108,6 +108,7 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
 | `redisCache.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
+| `redisCache.auth.existingSecret`  | Redis credentials (secret) | Existing secret name with authentication credentials   |
 
 ## Next Steps
 

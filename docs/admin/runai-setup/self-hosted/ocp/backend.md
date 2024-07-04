@@ -83,7 +83,7 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 |----------|----------|-------------| 
 | `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
 | `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
-| `keycloakx.existingSecret`  | Keycloakx Credentials (secret) | Existing secret name with authentication credentials   |
+| `keycloakx.existingSecret`  | Keycloakx credentials (secret) | Existing secret name with authentication credentials   |
 | `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress |
 
 ### Grafana
@@ -100,6 +100,8 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
 | `redisCache.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
+| `redisCache.auth.existingSecret`  | Redis credentials (secret) | Existing secret name with authentication credentials   |
+
 
 ## Next steps
 
