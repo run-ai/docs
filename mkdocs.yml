@@ -183,6 +183,8 @@ nav:
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
+      - 'Notifications':
+        - 'System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
@@ -346,6 +348,7 @@ nav:
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
+      - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
