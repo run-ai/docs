@@ -18,6 +18,10 @@ The system administrator needs to enable and setup email notifications so that u
 To enable email notifications for the system:
 
 1. Press *Tools & Settings*, then select *Notifications*.
+
+   !!! Note
+       For SaaS deployments, enable the *Enable email notifications* toggle.
+
 2. In the *SMTP Host* field, enter the SMTP host and port number.
 3. Select an *Authentication type*:
    1. **Plain**&mdash;enter a username and password to be used for authentication.
