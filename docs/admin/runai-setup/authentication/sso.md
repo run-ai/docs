@@ -26,35 +26,12 @@ For each of the SSO options, there are prerequisites that should be considered.
 * **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
 * **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
 
-
 ### OpenShift V4
 
-Before using OpenShift, first define OAuthClient. The OAuth client interacts with OpenShift’s OAuth server to authenticate users and request access tokens.
-
-To define OAuthClient, follow these steps:
-
-1. Create a new ```OAuthClient``` Kubernetes object with the following content
-```
-apiVersion: oauth.openshift.io/v1
-grantMethod: auto
-kind: OAuthClient
-metadata:
-name: my-client
-redirectURIs:
-	- https://<runai_env_url>/auth/realms/runai/broker/openshift-v4/endpoint
-secret: this-is-my-secret
-```
-Replace `<runai_env_url>` with the URL of your Run:ai platform.
-Replace `my-client` and `this-is-my-secret` with client name and secret you have chosen.
-
-2. Run the following command to apply the OAuthClient object to the environment. Create the object on OpenShift cluster where you define your OpenShift IDP:
-```
-oc apply <file name>
-```
-3. Check that the file has been applied successfully by running the following command:
-```
-oc get oauthclient
-```
+* **OpenShift OAuth client** - see [Registering an additional OAuth client](https://docs.openshift.com/container-platform/4.16/authentication/configuring-oauth-clients.html#oauth-register-additional-client_configuring-oauth-clients){target=_blank}
+* **Base URL**&mdash;the OpenShift API Server endpoint (example: `https://api.<your-openshift-domain>:6443`)
+* **ClientID**&mdash;the ID used to identify the client with the Authorization Server.
+* **Client Secret**&mdash;a secret password that only the Client and Authorization Server know.
 
 ## Additional attribute mappings
 
@@ -106,9 +83,10 @@ You can configure your IdP to map several IdP attributes:
         1. In the `Discovery URL` field, enter the discovery URL .
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
-        5. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
-        6.When complete, press `Save`.
+	4. Copy the `Redirect URL` and use it in your identity provider.
+	5. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+        6. In the `User attributes` field enter the attribute and the value in the identity provider. (optional)
+        7.When complete, press `Save`.
 
 		After you have configured the OIDC settings, you can view and edit the identity provider settings. 
     	  
@@ -117,15 +95,24 @@ You can configure your IdP to map several IdP attributes:
         * Discovery URL.
         * Client ID.
         * Client secret.
+		* OIDC Scopes
 
 	=== "OpenShift V4"
 
-        1. In the `Base URL` field, enter the OpenShift Base URL (https://api.<your-openshift-domain>:6443).
+        1. In the `Base URL` field, enter the OpenShift API server endpoint (example: `https://api.<your-openshift-domain>:6443`).
         2. In the `Client ID` field, enter the client ID.
         3. In the `Client Secret` field, enter the client secret.
-	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional).  Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
+	4. Add the OIDC scope to be used during authentication to authorize access to a user's details (optional). Each scope returns a set of user attributes.  The scope must match the names in your identity provider.
         5. In the `User attributes` field enter the attribute and the value in the identity provider (optional).
         6. When complete, press `Save`.
+
+		After you have configured the OpenShift V4 settings, you can view and edit the identity provider settings. 
+    	  
+    	Press `Edit` to view and edit the:
+    
+        * Base URL.
+        * Client ID.
+        * Client secret.
 
  4. In the `Logout uri` field, enter the desired URL logout page. If left empty, you will be redirected to the Run:ai portal.
  5. In the `Session timeout` field, enter the amount of idle time before users are automatically logged out. (Default is 60 minutes)
