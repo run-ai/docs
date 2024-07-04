@@ -28,7 +28,75 @@ To install the Improved Command Line Interface:
 4. Copy the installer command to your clipboard, then paste it into a terminal window and run the command.
 5. Follow the instruction prompts during the installation process. Press `Enter` to use the default values (recommended).
 
+### Install Command Auto-Completion
+
+Auto-completion is installed automatically.
+
+To install it manually:
+
+* For *ZSH*, edit the file `~/.zshrc` and add the following lines:
+
+```zsh
+autoload -U compinit; compinit -i
+source <(runai completion zsh)
+```
+
+* For *bash*, install the bash-completion package. Choose your operating system:
+  
+  * Mac: `brew install bash-completion`
+  * Ubuntu/Debian: `sudo apt-get install bash-completion`
+  * Fedora/Centos: `sudo yum install bash-completion`
+  
+Then, edit the file `~/.bashrc` and add the following lines:
+
+```bash
+[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+
+source <(runai completion bash)
+```
+
+### Authenticating your CLI
+
+After you have configured your shell, you will need to login to authenticate the CLI.
+In your terminal widow run:
+
+`runai login`
+
+You will be redirected to your platform's login page.
+Enter your user name and password and login.
+
+You can then return to the terminal window to use the CLI.
+
+### Set the default cluster
+
+When you only have one cluster connected to the tenant, it will be set as default cluster when you first login.
+
+When there are multiple clusters, you can select the cluster you want to set as default by running the following:
+
+`runai cluster set --name <CLUSTER NAME>`
+
+To find the desired cluster name run:
+
+`runai cluster list`
+
+### Set a default project
+
+!!! Recommendation
+    Setting a default working project to, allows you to easily submit workloads without mentioning the project name in every command.
+
+`runai project set --name=<project_name>`
+
+If successful the following message will return:
+
+`project <project name> configured successfully`
+
+To see the current configuration run:
+
+`runai config generate --json`
+
 ### Options
+
+You can use the following configuration options with your CLI to customize your CLI.
 
 ```
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
