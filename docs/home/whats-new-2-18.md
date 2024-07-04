@@ -28,7 +28,7 @@ date: 2024-June-14
 
 * <!-- TODO Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for ChatUi models. Run:ai has improved autoscaling performance with ChatI models by adding them to *Environments*. ChatUi is an addition to inference workloads and is not mandatory for all types of workloads.
 
-* <!-- TODO add this as a section to the "models catalog" doc - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
+<!-- TODO add this as a section to the "models catalog" doc - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
 
 #### Command Line Interface
 
@@ -49,7 +49,7 @@ date: 2024-June-14
 
 #### YAML Workload Reference table
 
-* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference]().
+* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](../developer/cluster-api/submit-yaml.md) PDF.
 
 ### Run:ai Administrator
 
@@ -63,7 +63,7 @@ date: 2024-June-14
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
 
-* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* (Secret) as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-new-data-source#secret).
+* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* (Secret) as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-new-data-source#create-a-secret-as-data-source).
 
 #### Credentials
 
