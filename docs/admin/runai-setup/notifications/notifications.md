@@ -19,7 +19,7 @@ Email Notifications, introduced in Run:ai version 2.18, address this need by sen
 
 The system administrator needs to enable and setup email notifications so that users are kept informed about different system statuses.
 
-To enable email notifications:
+To enable email notifications for the system:
 
 1. Press *Tools & Settings*, then select *Notifications*.
 2. In the *SMTP Host* field, enter the SMTP host and port number.
@@ -30,19 +30,24 @@ To enable email notifications:
 5. Press *Verify* to ensure that the email configuration is working.
 6. Press *Save* when complete.
 
-For AI practitioners to receive notification emails for their jobs, they will need to add the configuration to the personal settings.
+#### AI Practitioners Notification statuses
 
-Within personal settings, select the desired notification types. This allows customization based on individual preferences.
-Available Notifications
-Status Changes: Receive alerts whenever your workload transitions between different lifecycle phases.
-Warnings: Get notified before workload termination due to project-defined timeouts.
-Email Content
-After configuration, emails will be sent upon a workload reaching a relevant stage. These emails include:
-Workload type
-Project and cluster information
-Event timestamp
+Once the system administrator configures the email notifications, users will receive notifications about their jobs that transition from one status to another. In addition, the user will get warning notifications before workload termination due to project-defined timeouts. Details included in the email are:
 
+* Workload type
+* Project and cluster information
+* Event timestamp
+
+!!! Note
+    For AI practitioners to receive notification emails for their jobs, they will need to add the configuration to the personal settings.
+
+To configure the types of email notifications a user can receive:
+
+1. The user must log in to their account.
+2. Press the user icon, then select settings.
+3. In the *Email notifications*, and in the *Send me an email about my workloads when* section, select relevant workload statuses to receive an email about.
+4. When complete, press *save*.
 
 ## System Notifications
 
-Administrators can set system wide notifications for all the users in order to alert them of important information. 
+Administrators can set system wide notifications for all the users in order to alert them of important information.
