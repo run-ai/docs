@@ -153,3 +153,19 @@ To submit a workload using the UI:
 ## Workload Policies
 
 As an administrator, you can set *Policies* on Workloads.  Policies allow administrators to *impose restrictions* and set *default values* for Researcher Workloads. For more information see [Workload Policies](../workloads/policies/policies.md).
+
+## Worklaod Ownership Protection
+
+Workload ownership protection in Run:ai ensures that only users who created a workload can delete or modify them. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
+
+By enforcing ownership rules, Run:ai helps maintain the integrity and security of your machine learning operations. This additional layer of security ensures that only users with the appropriate permissions can delete and suspend workloads.
+
+This protection maintains workflow stability and prevents disruptions in shared or collaborative environments.
+
+This feature is implemented at the cluster management entity level.
+
+To enable ownership protection:
+
+1. Update the runai-public configmap and set `workloadOwnershipProtection=true`.
+2. Perform a cluster-sync to update cluster-service in the CP.
+3. Use the workload-service flag to block deletion and suspension of workloads, when appropriate.
