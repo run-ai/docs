@@ -2,7 +2,7 @@
 ## Prerequisites and preperations
 Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
 
-## Install the Control Plane
+## Helm Install
 Run the helm command below:
 
 === "Connected"
