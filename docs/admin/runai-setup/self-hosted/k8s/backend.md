@@ -38,7 +38,8 @@ Run the helm command below:
 
 
 ## Additional Run:ai configurations (optional)
-There may be cases where you need to set additional properties as follows:
+There may be cases where you need to set additional properties,
+To apply the changes run `helm upgrade` and use `--set` to set specific confiogurations, and restart the relevant Run:ai pods so they can fetch the new configurations.
 
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
@@ -47,8 +48,6 @@ There may be cases where you need to set additional properties as follows:
 | `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  Set Run:ai & 3rd party services' resources  |   
 |<div style="width:200px"></div>| | |
 
-
-Use the `--set` syntax in the helm command above.  
 
 ## Additional 3rd party configurations (optional)
 The Run:ai Control Plane chart, includes multiple sub-charts of 3rd party components:
@@ -109,24 +108,6 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
 | `redis.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
-
-#### External PostgreSQL database
-
-If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
-
-* `postgresql.enabled` - set to `false`
-* `global.postgresql.auth.password`
-* `global.postgresql.auth.username`
-* `global.postgresql.auth.host`
-* `global.postgresql.auth.port`
-* `grafana.dbUser`
-* `grafana.dbPassword`
-
-!!! Note
-    If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:
-
-    1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
-    2. Run `helm upgrade` for Run:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
 
 ## Next Steps
 
