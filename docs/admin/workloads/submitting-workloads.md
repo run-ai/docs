@@ -29,18 +29,21 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency.
 
-      7. In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+      7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
       
         !!! Note
-            Data sources that have private credentials that have the status of issues found will be greyed out.
+            * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
+            * Data sources can now include *Secrets*.
 
       8. In the *General* pane, add special settings for your training (optional):
 
-         1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-         2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-         3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+         1. Toggle the switch to allow the workspace to exceed the project's quota.
+         2. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         4. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+         5. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
-      9.  When complete, press *Create workspace.
+      9.  When complete, press *Create workspace*.
 
 === "Training"
 
@@ -66,16 +69,18 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency.
 
-      8. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+      8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
    
         !!! Note
-            Data sources that have private credentials that have the status of issues found will be greyed out.
+            * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
+            * * Data sources can now include *Secrets*.
 
       9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
-         1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-         2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-         3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+         1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+         4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
       10. If you if selected  `Workers & master` Press *Continue* to `Configure the master` and go to the next step. If not, then press *Create training*.
 
@@ -92,16 +97,18 @@ To submit a workload using the UI:
             5. Enter the *Container path* for volume target location.
             6. Select a *Volume persistency.
 
-         4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+         4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 
           !!! Note
-              Data sources that have private credentials that have the status of issues found will be greyed out.
+              * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
+              * * Data sources can now include *Secrets*.
 
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 
-            1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
-            2. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
-            3. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
+            1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
+            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+            3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
+            4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
       12. When your training configuration is complete. press *Create training*.
 
@@ -146,3 +153,19 @@ To submit a workload using the UI:
 ## Workload Policies
 
 As an administrator, you can set *Policies* on Workloads.  Policies allow administrators to *impose restrictions* and set *default values* for Researcher Workloads. For more information see [Workload Policies](../workloads/policies/policies.md).
+
+## Worklaod Ownership Protection
+
+Workload ownership protection in Run:ai ensures that only users who created a workload can delete or modify them. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
+
+By enforcing ownership rules, Run:ai helps maintain the integrity and security of your machine learning operations. This additional layer of security ensures that only users with the appropriate permissions can delete and suspend workloads.
+
+This protection maintains workflow stability and prevents disruptions in shared or collaborative environments.
+
+This feature is implemented at the cluster management entity level.
+
+To enable ownership protection:
+
+1. Update the runai-public configmap and set `workloadOwnershipProtection=true`.
+2. Perform a cluster-sync to update cluster-service in the CP.
+3. Use the workload-service flag to block deletion and suspension of workloads, when appropriate.

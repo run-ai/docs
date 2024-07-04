@@ -43,17 +43,22 @@ Run the helm command below:
 There may be cases where you need to set additional properties as follows:
 
 |  Key     | Change   | Description |
-|----------|----------|-------------|
-| `keycloakx.adminUser` | KeyCloak (Run:ai internal identity provider) administrator username | Override the default user name of the Keycloak administrator user |
-| `keycloakx.adminPassword` | KeyCloak (Run:ai internal identity provider) administrator password | Override the default password of the Keycloak administrator user |
-| `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress |
+|----------|----------|-------------| 
+| `redis.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
+| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak | 
+| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak | 
+| `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress | 
 | `global.ingress.ingressClass` |  Ingress class  |  Run:ai default is using NGINX. If your cluster has a different ingress controller, you can configure the ingress class to be created by Run:ai |
 | `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with domain certificate. See [above](#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
-| `global.postgresql.auth.port`  | PostgreSQL port | Override the default PostgreSQL port for the Run:ai database  |
-| `global.postgresql.auth.username`  | PostgreSQL username | Override the Run:ai default user name for accessing the Run:ai database  |
-| `global.postgresql.auth.password`  | PostgreSQL password | Override the Run:ai default password for accessing the Run:ai database  |
-| `global.postgresql.auth.postgresPassword`  | PostgreSQL default admin password | Set the password of the admin user created by default by PostgreSQL |
-| `postgresql.primary.initdb.password`  | PostgreSQL default admin password | Set the same password as in `global.postgresql.auth.postgresPassword` (if changed) |
+| `postgresql.enabled`| PostgreSQL installation | If set to `false` the PostgreSQL will not be installed |
+| `global.postgresql.auth.host`  | PostgreSQL host | Hostname or IP address of the PostgreSQL server  |
+| `global.postgresql.auth.port`  | PostgreSQL port | Port number on which PostgreSQL is running  |
+| `global.postgresql.auth.username`  | PostgreSQL username | Username for connecting to PostgreSQL  |
+| `global.postgresql.auth.password`  | PostgreSQL password | Password for the PostgreSQL user specified by `global.postgresql.auth.username`  |
+| `global.postgresql.auth.postgresPassword`  | PostgreSQL default admin password | Password for the built-in PostgreSQL superuser (`postgres`)  |
+| `postgresql.primary.initdb.password`  |  PostgreSQL default admin password    | Set the same password as in `global.postgresql.auth.postgresPassword` (if changed) |
+| `grafana.dbUser`  | Grafana database username  | Username for accessing the Grafana database |
+| `grafana.dbPassword`  | Grafana database password | Password for the Grafana database user |
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
 | `grafana.dbUser`  | Grafana's username for PostgreSQL  |   Override the Run:ai default user name for Grafana to access Run:ai database (PostgreSQL) |
@@ -67,6 +72,30 @@ There may be cases where you need to set additional properties as follows:
 |<div style="width:200px"></div>| | |
 
 Use the `--set` syntax in the helm command above.  
+
+#### External PostgreSQL database
+
+If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+
+* `postgresql.enabled` - set to `false`
+* `global.postgresql.auth.password`
+* `global.postgresql.auth.username`
+* `global.postgresql.auth.host`
+* `global.postgresql.auth.port`
+* `grafana.dbUser`
+* `grafana.dbPassword`
+
+#### External PostgreSQL database
+
+If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+
+* `postgresql.enabled` - set to `false`
+* `global.postgresql.auth.password`
+* `global.postgresql.auth.username`
+* `global.postgresql.auth.host`
+* `global.postgresql.auth.port`
+* `grafana.dbUser`
+* `grafana.dbPassword`
 
 !!! Note
     If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:

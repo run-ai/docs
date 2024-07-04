@@ -45,7 +45,7 @@ To use Node Level Scheduler the Administrator should follow the steps:
       global: 
           core: 
             nodeScheduler:
-            enabled: true
+              enabled: true
     ```
 
     The Administrator can also use this patch command to perform the change:

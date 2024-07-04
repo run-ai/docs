@@ -1,6 +1,6 @@
 # Introduction
 
-Researchers submit Jobs. To streamline resource allocation and prioritize work, Run:ai introduces the concept of **Projects**. Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
+Researchers submit Workloads. To streamline resource allocation and prioritize work, Run:ai introduces the concept of **Projects**. Projects are the tool to implement resource allocation policies as well as create segregation between different initiatives. A project in most cases represents a team, an individual, or an initiative that shares resources or has a specific resources budget (quota).
 
 A Researcher submitting a Job needs to associate a Project name with the request. The Run:ai scheduler will compare the request against the current allocations and the Project and determine whether the workload can be allocated resources or whether it should remain in the queue for future allocation.
 
@@ -19,7 +19,7 @@ For detailed information on node pools, see [Using node pools](../../Researcher/
 By default, all nodes in a cluster are part of the `Default` node pool. The administrator can choose to create new node pools and include a set of nodes in a node pool by associating the nodes with a label.
 
 Each node pool is automatically associated with all Projects and Departments with zero resource allocation (Quotas).
-When submitting a Job (or Deployment), the Researcher can choose one or more node pools. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools. The scheduler will try to schedule the Job to the first node pool. If not successful the scheduler will try the second node pool in the list, and so forth until it finds a node pool that can provide the Job's specification.
+When submitting a Workload (or Inference), the Researcher can choose one or more node pools. When choosing more than one node pool, the researcher sets the order of priority between the chosen node pools. The scheduler will try to schedule the Job to the first node pool. If not successful the scheduler will try the second node pool in the list, and so forth until it finds a node pool that can provide the Job's specification.
 
 An administrator can set a Project's `default priority list` of node pools. In case the Researcher did not specify any node pool (or node pool list), the scheduler will use the Project's default node pool priority list to determine the order that the scheduler will use when scheduling the Job.
 

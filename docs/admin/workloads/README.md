@@ -77,8 +77,11 @@ You can manage a workload by selecting one from the view. Once selected, you can
 * Show details&mdash;provides in-depth information about the selected workload including:
 
       * Event history&mdash;workload status over time. Use the filter to search through the history for specific events.
-      * Metrics&mdash;use the drop down to filter metrics per pod. Select a category from the list below:
+      * Metrics&mdash;use the drop down to filter metrics per pod and over time. Select a category from the list below:
 
+          * Throughput&mdash;total of requests per second across all* replica at any given time
+          * Latency&mdash;average of time it took to answer any request across all replicas at any given time
+          * Number of replicas&mdash;Total number of all* replicas at any given time
           * GPU compute utilization&mdash;hover over for individual GPU details
           * GPU memory usage&mdash;hover over for individual GPU details
           * CPU usage&mdash;hover over for usage details
