@@ -34,7 +34,7 @@ Run the helm command below:
     4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. 
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
 
 ## Additional Run:ai configurations (optional)
