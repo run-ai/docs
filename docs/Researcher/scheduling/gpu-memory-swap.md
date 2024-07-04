@@ -39,7 +39,7 @@ Whenever the inference/interactive workload stops using the GPU, the swap mechan
 
 Running multiple inference models is a demanding task and you will need to ensure that your SLA is met. You need to provide high performance and low latency, while maximizing GPU utilization. This becomes even more challenging when the exact model usage patterns are unpredictable. You must plan for the agility of inference services and strive to keep models on standby in a ready state rather than an idle state.
 
-Run:ai’s *GPU memory swap* feature enables you to load multiple models to a single GPU, where each can use up to the full amount GPU memory. Using an application load balancer, the administrator can control to which server each inference request is sent. Then the GPU can be loaded with multiple models, where the model in use is loaded into the GPU memory and the rest of the models are swapped-out to the CPU memory. The swapped models are stored as ready models to be loaded when required. *GPU memory swap* always maintains the context of the workload (model) on the GPU so it can easily and quickly switch between models, unlike industry-standard model servers that load models completelyfrom scratch into the GPU when required.
+Run:ai’s *GPU memory swap* feature enables you to load multiple models to a single GPU, where each can use up to the full amount GPU memory. Using an application load balancer, the administrator can control to which server each inference request is sent. Then the GPU can be loaded with multiple models, where the model in use is loaded into the GPU memory and the rest of the models are swapped-out to the CPU memory. The swapped models are stored as ready models to be loaded when required. *GPU memory swap* always maintains the context of the workload (model) on the GPU so it can easily and quickly switch between models, unlike industry-standard model servers that load models completely from scratch into the GPU when required.
 
 ## Configuring memory swap
 
@@ -69,7 +69,7 @@ To make a workload swappable, a number of conditions must be met:
 
 1. The workload MUST use Dynamic Fractions. This means the workload’s memory request is less than a full GPU, but it may add a GPU memory limit to allow the workload to effectively use the full GPU memory.
 
-2. The administrator must label each node that they want to provide GPU memory swap with a `run.ai/swap-enabled=true` this enables the feature on that node. Enabling the feature reserves CPU memory to serve the swapped GPU memory from all GPUs on that node. The administrator sets the size of the CPU reserved RAM memory using the runaiconfigs file.
+2. The administrator must label each node that they want to provide GPU memory swap with a `run.ai/swap-enabled=true` this enables the feature on that node. Enabling the feature reserves CPU memory to serve the swapped GPU memory from all GPUs on that node. The administrator sets the size of the CPU reserved RAM memory using the `runaiconfigs` file.
 
 3. Optionally configure *Node Level Scheduler*. Using node level scheduler can help in the following ways:
 
@@ -105,12 +105,11 @@ If you prefer your workloads not to be swapped into CPU memory, you can specify 
 
 ## Known Limitations
 
-* GPU memory swap cannot be enabled if fairshare time-slicing or strict time-slicing is used, GPU memory swap can only be used with the default time-slicing mechanism.
+* GPU memory swap cannot be enabled if `fairshare time-slicing` or `strict time-slicing` is used, GPU memory swap can only be used with the default time-slicing mechanism.
 * CPU RAM size cannot be decreased once GPU memory swap is enabled.
 
 ## What happens when CPU SWAP file is exhausted?
 
 CPU memory is limited, and since a single CPU serves multiple GPUs on a node, this number is usually between 2 to 8. For example, when using 80GB of GPU memory, each swapped workload consumes up to 80GB (but may use less) assuming each GPU is shared between 2-4 workloads. In this example, you can see how the swap file can become very large. Therefore, we give administrators a way to limit the size of the CPU reserved memory for swapped GPU memory on each swap enabled node.
 
-Limiting the CPU reserved memory means that there may be scenarios where the GPU memory cannot be swapped out to the CPU reserved RAM. Whenever the CPU reserved memory for swapped GPU memory is exhausted, the workloads currently running will not be swapped out to the CPU reserved RAM, instead, *Node Level Scheduler* and *Dynamic Fractions* logic takes over and provides GPU resource optimization. For more information, see [Dynamic Fractions]() and [Node Level Scheduler]().
-<!-- TODO add links to docs in section above -->
+Limiting the CPU reserved memory means that there may be scenarios where the GPU memory cannot be swapped out to the CPU reserved RAM. Whenever the CPU reserved memory for swapped GPU memory is exhausted, the workloads currently running will not be swapped out to the CPU reserved RAM, instead, *Node Level Scheduler* and *Dynamic Fractions* logic takes over and provides GPU resource optimization. For more information, see [Dynamic Fractions](fractions.md#dynamic-mig) and [Node Level Scheduler](node-level-scheduler.md#how-to-configure-node-level-scheduler).
