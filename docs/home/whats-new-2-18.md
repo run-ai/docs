@@ -79,6 +79,10 @@ date: 2024-June-14
 
 * <!-- TODO Need to confirm text RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload. For configuration information, see your Run:ai representative.
 
+#### System notification
+
+* <!-- TODO add doc link RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications, provide a way of sending alerts for critical workload life cycle changes. This empowers data scientists to take necessary actions and prevent delays. For more information, see [Email notifications]().
+
 ## Deprecation Notifications
 
 Deprecation notifications allow you to plan for future changes in the Run:ai Platform.
