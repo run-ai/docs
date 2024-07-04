@@ -1,5 +1,5 @@
 
-# Install the Run:ai Control Plane 
+# Install the Run:ai Control Plane
 
 ## Prerequisites and preperations
 Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preperations](./preperations.md).
@@ -14,7 +14,7 @@ Run the helm command below:
     helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.17.0" \
         --set global.domain=<DOMAIN>  # (1)
     ```
-    
+
     1. Domain name described [here](prerequisites.md#domain-name). 
 
     !!! Info
@@ -27,7 +27,7 @@ Run the helm command below:
         --set global.customCA.enabled=true \  # (3)
         -n runai-backend -f custom-env.yaml  # (4)
     ```
-       
+
     1. Replace `<VERSION>` with the Run:ai control plane version.
     2. Domain name described [here](prerequisites.md#domain-name). 
     3. See the Local Certificate Authority instructions below
@@ -104,32 +104,44 @@ If you have opted to connect to an [external PostgreSQL database](preperations.m
 | `grafana.admin.existingSecret`  | Grafana admin default credentials (secret) | Existing secret name with authentication credentials   |
 | `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
 | `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
-| `keycloakx.existingSecret`  | Keycloakx Credentials (secret) | Existing secret name with authentication credentials   |
-
 
 ### Redis
 |  Key     | Change   | Description |
 |----------|----------|-------------| 
 | `redis.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
 
+#### External PostgreSQL database
+
+If you have opted to connect to an [external PostgreSQL database](preperations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+
+* `postgresql.enabled` - set to `false`
+* `global.postgresql.auth.password`
+* `global.postgresql.auth.username`
+* `global.postgresql.auth.host`
+* `global.postgresql.auth.port`
+* `grafana.dbUser`
+* `grafana.dbPassword`
+
+!!! Note
+    If you modify one of the usernames or passwords (KeyCloak, PostgreSQL, Grafana) after Run:ai is already installed, perform the following steps to apply the change:
+
+    1. Modify the username/password within the relevant component as well (KeyCloak, PostgreSQL, Grafana).
+    2. Run `helm upgrade` for Run:ai with the right values, and restart the relevant Run:ai pods so they can fetch the new username/password.
+
 ## Next Steps
 
 ### Connect to Run:ai User interface
 
-Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password. 
+Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password.
 
 ### Enable Forgot Password (optional)
 
 To support the *Forgot password* functionality, follow the steps below.
 
-* Go to `runai.<domain>/auth` and Log in. 
+* Go to `runai.<domain>/auth` and Log in.
 * Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
 * Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
 
-
 ### Install Run:ai Cluster
+
 Continue with installing a [Run:ai Cluster](cluster.md).
-
-
-
-
