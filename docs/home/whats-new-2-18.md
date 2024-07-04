@@ -81,10 +81,10 @@ date: 2024-June-14
 
 #### System notifications
 
-* <!-- TODO add doc links RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
+* <!-- TODO verify doc links RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
-    * System administrators will need to configure the email notifications. For more information, see [Email notifications]().
-    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications]().
+    * System administrators will need to configure the email notifications. For more information, see [System notifications](docs/admin/runai-setup/notifications/notifications.md).
+    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications](docs/Researcher/best-practices/researcher-notifications.md).
 
 ## Deprecation Notifications
 
