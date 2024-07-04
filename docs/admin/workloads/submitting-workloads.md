@@ -163,6 +163,6 @@ This feature is implemented at the cluster management entity level.
 
 To enable ownership protection:
 
-1. Update the runai-public configmap for `workloadOwnershipProtection=true`.
+1. Update the runai-public configmap and set `workloadOwnershipProtection=true`.
 2. Perform a cluster-sync to update cluster-service in the CP.
 3. Use the workload-service flag to block deletion and suspension of workloads, when appropriate.
