@@ -26,13 +26,13 @@
 
 ``` bash
 runai config project team-a
-runai submit nginx-test -i zembutsu/docker-sample-nginx --interactive \
-  --service-type portforward --port 8080:80 
+runai submit nginx-test -i zembutsu/docker-sample-nginx --interactive
+runai port-forward nginx-test --port 8080:80
 ```
 
 *   The Job is based on a sample _NGINX_ webserver docker image `zembutsu/docker-sample-nginx`. Once accessed via a browser, the page shows the container name. 
 *   Note the _interactive_ flag which means the Job will not have a start or end. It is the Researcher's responsibility to close the Job.  
-*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8080 to localhost as long as the `runai submit` command is not stopped
+*   In this example, we have chosen the simplest scheme to expose ports which is port forwarding. We temporarily expose port 8080 to localhost as long as the `runai port-forward` command is not stopped
 *   It is possible to forward traffic from multiple IP addresses by using the "--address" parameter. Check the CLI reference for further details. 
 
 The result will be:
@@ -40,9 +40,7 @@ The result will be:
 ``` bash
 The job 'nginx-test-0' has been submitted successfully
 You can run `runai describe job nginx-test-0 -p team-a` to check the job status
-Waiting for pod to start running...
-INFO[0023] Job started
-Open access point(s) to service from localhost:8080
+
 Forwarding from 127.0.0.1:8080 -> 80
 Forwarding from [::1]:8080 -> 80
 ```

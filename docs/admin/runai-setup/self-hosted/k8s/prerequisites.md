@@ -66,20 +66,25 @@ The Run:ai control plane installation assumes an existing installation of NGINX 
 
 See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
 
-The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
+ > The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
 ### Prometheus
 
 See Run:ai Cluster prerequisites [Prometheus](../../cluster-setup/cluster-prerequisites.md#prometheus) requirements.
 
-The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
+ > The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites. 
 
 
 ### Inference (optional)
 
 See Run:ai Cluster prerequisites [Inference](../../cluster-setup/cluster-prerequisites.md#inference) requirements.
 
-The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
+ > The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites. 
+
+### External Postgres database (optional)
+
+The Run:ai control plane installation includes a default PostgreSQL database. However, you may opt to use an existing PostgreSQL database if you have specific requirements or preferences. Please ensure that your PostgreSQL database is version 16 or higher.
+
 
 ## Next steps
 Continue to [Preparing for a Run:ai Kubernetes Installation

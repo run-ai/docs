@@ -24,14 +24,14 @@ To complete this Quickstart you must have:
 
 ### Run an Inference Workload
 
-* In the Run:ai user interface go to `Deployments`. If you do not see the `Deployments` section you may not have the required access control, or the inference module is disabled.
-* Select `New Deployment` on the top right.
+* In the Run:ai user interface go to `Inference`. If you do not see the `Inference` section you may not have the required access control, or the inference module is disabled.
+* Select `New workload` -> `Inference` on the top right.
 * Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`.
 * Under `Resources` add 0.5 GPUs.
 * Under `Autoscaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
 * Add a `Container port` of `8000`.
 
-This would start an inference workload for team-a with an allocation of a single GPU. Follow up on the Job's progress using the [Deployment list](../../admin/admin-ui-setup/deployments.md) in the user interface or by running `runai list jobs`
+This would start an inference workload for team-a with an allocation of a single GPU.
 
 ### Query the Inference Server
 
@@ -63,4 +63,3 @@ Use the user interface to delete the workload.
 ## See also
 
 * You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
-* See [Deployment](../../admin/admin-ui-setup/deployments.md) user interface.
