@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.17/docs/
+edit_uri: edit/master/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -121,12 +121,14 @@ nav:
     - 'Overview': 'index.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'home/whats-new-2-18.md'
       - 'home/whats-new-2-17.md'
       - 'home/whats-new-2-16.md'
       - 'Version 2.15' : 'home/whats-new-2-15.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
       - 'Version 2.9' : 'home/whats-new-2-9.md'
     - 'Changelog':
+      - 'Hot Fixes for 2.17' : 'home/changelog/hotfixes-2-17.md'
       - 'Hot Fixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
       - 'Hot Fixes for 2.15' : 'home/changelog/hotfixes-2-15.md'
       - 'Hot Fixes for 2.13' : 'home/changelog/hotfixes-2-13.md'
@@ -183,6 +185,8 @@ nav:
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
+      - 'Notifications':
+        - 'System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
@@ -346,6 +350,7 @@ nav:
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
+      - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
