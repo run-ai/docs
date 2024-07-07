@@ -81,7 +81,7 @@ You can manage a workload by selecting one from the view. Once selected, you can
 
           * Throughput&mdash;total of requests per second across all* replica at any given time
           * Latency&mdash;average of time it took to answer any request across all replicas at any given time
-          * Number of replicas&mdash;Total number of all* replicas at any given time
+          * Number of replicas&mdash;Total number of *all* replicas at any given time
           * GPU compute utilization&mdash;hover over for individual GPU details
           * GPU memory usage&mdash;hover over for individual GPU details
           * CPU usage&mdash;hover over for usage details
