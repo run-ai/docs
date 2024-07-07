@@ -21,7 +21,6 @@ Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 
 ![data-volumes-architecture](../img/data-volumes-arch.svg)
 
-
 ## Data volumes use cases
 
 The following are typical use cases for Data Volumes:
@@ -115,6 +114,6 @@ You can attach a data volume to a workload during submission in the same way oth
 
 Researchers can list available data volumes within their permitted scopes for easy selection.
 
-For more information on using a data volume when submitting a workload, see [Submitting Worklodas]().
+For more information on using a data volume when submitting a workload, see [Submitting Worklodas](../../admin/workloads/submitting-workloads.md).
 
 You can also add a data volumes to your workload when submitting a workload via the API. For more information, see [Workloads](https://app.run.ai/api/docs#tag/Workloads).
