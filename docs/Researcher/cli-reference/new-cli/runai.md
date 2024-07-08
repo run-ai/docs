@@ -17,11 +17,10 @@ runai [flags]
 ## Installing the Improved Command Line Interface
 
 !!! Note
-* Make sure the flag for the Improved command line interface is enabled. To enable the Improved Command Line Interface Press the *Tools and Settings* icon, then *General*, then *Workloads*, then enable the *Improved Command Line Interface* toggle.
 
-* Only clusters that are version 2.18 or later are supported.
-
-* Only Linux and Mac OS are currently supported
+    * Make sure the flag for the Improved command line interface is enabled. To enable the Improved Command Line Interface Press the *Tools and Settings* icon, then *General*, then *Workloads*, then enable the *Improved Command Line Interface* toggle.
+    * Only clusters that are version 2.18 or later are supported.
+    * Only Linux and Mac OS are currently supported
 
 To install the Improved Command Line Interface:
 
@@ -115,7 +114,7 @@ You can use the following configuration options with your CLI to customize your 
 
 * [runai cluster](runai_cluster.md)&mdash;cluster management
 * [runai config](runai_config.md)&mdash;configuration management
-* [runai list](runai_list.md)&mdash;[Deprecated] display resource list. By default displays the job list
+* [runai list](runai_list.md)&mdash;(Deprecated) display resource list. By default displays the job list
 * [runai login](runai_login.md)&mdash;login to the control plane
 * [runai logout](runai_logout.md)&mdash;logout from control plane
 * [runai node](runai_node.md)&mdash;node management
