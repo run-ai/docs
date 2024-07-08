@@ -95,11 +95,11 @@ date: 2024-June-14
 
 ## Deprecation Notifications
 
-Deprecation notifications allow you to plan for future changes in the Run:ai Platform.
+[Existing notifications feature](https://docs.run.ai/v2.10/admin/researcher-setup/email-messaging/)requires cluster configuration, is being deprecated in favor of an improved Notification System. If you have been using the existing notifications feature in the cluster, you can continue to use it for the next **two** versions. It is recommend that you change to the new notifications system in the Control Plane for better control and improved message granularity.
 
 ### Feature deprecations
 
-Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
+Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative. 
 
 <!-- * Command Line Interface (CLI)&mdash;from cluster version 2.18 and higher, the *Legacy CLI* is deprecated. The *Legacy CLI* is still available for use on clusters that are 2.18 or higher, but it is recommended that you use the new *Improved CLI*. -->
 
