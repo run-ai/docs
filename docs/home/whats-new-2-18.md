@@ -22,7 +22,7 @@ date: 2024-June-14
 
 * <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
-* <!-- TODO change link and check the page for correct infoRUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
+* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
 
 * <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA.
 
@@ -30,9 +30,9 @@ date: 2024-June-14
 
 * <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero.
 
-<!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest opensource community language models. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc).
+<!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../admin/workloads/submitting-workloads.md).
 
-* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads]().
+* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../admin/workloads/submitting-workloads.md).
 
 * <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform.
 
@@ -77,7 +77,7 @@ date: 2024-June-14
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
 
-* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-new-data-source#secret).
+* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source).
 
 #### Credentials
 
@@ -105,7 +105,7 @@ date: 2024-June-14
 
 ### Feature deprecations
 
-Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative. 
+Deprecated features will be available for **two** versions ahead of the notification. For questions, see your Run:ai representative.
 
 <!-- * Command Line Interface (CLI)&mdash;from cluster version 2.18 and higher, the *Legacy CLI* is deprecated. The *Legacy CLI* is still available for use on clusters that are 2.18 or higher, but it is recommended that you use the new *Improved CLI*. -->
 
