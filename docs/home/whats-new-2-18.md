@@ -30,7 +30,7 @@ date: 2024-June-14
 
 * <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero.
 
-<!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../admin/workloads/submitting-workloads.md).
+* <!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../admin/workloads/submitting-workloads.md).
 
 * <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../admin/workloads/submitting-workloads.md).
 
