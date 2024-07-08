@@ -185,8 +185,8 @@ nav:
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
-      - 'Notifications':
-        - 'System Notifications': 'admin/runai-setup/notifications/notifications.md'
+      - 'Notifications System':
+        - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
