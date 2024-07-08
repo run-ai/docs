@@ -73,9 +73,9 @@ date: 2024-June-14
 
 * <!-- TODO add doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new *Generic secret* to *Credentials*. *Credentials* had been used only for access to data sources (S3, Git, etc.). However, AI practitioners need to use secrets to access sensitive data (interacting with 3rd party APIs, or other services) without having to put their credentials in their source code. *Generic secrets* leverage multiple key value pairs which helps reduce the number of Kubernetes resources and simplifies resource management by reducing the overhead associated with maintaining multiple Secrets. *Generic secrets* are best used as a data source of type *Secret* so that they can be used in containers to keep access credentials hidden.
 
-#### SSO
+#### Single Sign On
 
-* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Added support for SSO using OpenShift v4 (OIDC based). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
+* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Added support for Single Sign On using OpenShift v4 (OIDC based). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/sso/).
 
 * <!-- RUN-16788/RUN-16866 - OIDC Scopes -->Added OIDC scopes to authentication requests. OIDC Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/sso/#step-1-ui-configuration).
 
