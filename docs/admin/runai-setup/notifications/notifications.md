@@ -1,5 +1,5 @@
 ---
-title: Notifications
+title: Notifications System
 summary: This article describes the notifications that are available to the Run:ai platform, and how to configure them.
 authors:
     - Jason Novich
