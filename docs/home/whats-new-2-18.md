@@ -28,7 +28,13 @@ date: 2024-June-14
 
 * <!-- TODO Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for inference models by taking out ChatBot UI from models images. By moving ChatBot UI to predefined *Environments*, autoscaling is more accurate by taking into account all types of requests (API, and ChatBot UI). Adding a ChatBot UI environment preset by Run:ai allows AI practitioners to easily connect them to workloads.
 
-<!-- TODO add this as a section to the "models catalog" doc - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
+* <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero.
+
+<!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest opensource community language models. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc).
+
+* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads]().
+
+* <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform.
 
 #### Command Line Interface
 
@@ -117,7 +123,7 @@ The endpoints and parameters specified in the API reference are the ones that ar
 | /v1/k8s/clusters/{clusterId}/departments/{department-id} | /api/v1/org-unit/departments/{departmentId} |
 | /v1/k8s/clusters/{clusterId}/departments/{department-id} | /api/v1/org-unit/departments/{departmentId}+PUT/PATCH /api/v1/org-unit/departments/{departmentId}/resources |
 
-##### Projects APi
+##### Projects API
 
 | Deprecated | Replacement |
 | --- |  --- |
