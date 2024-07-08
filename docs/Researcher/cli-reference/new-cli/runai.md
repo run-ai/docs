@@ -73,7 +73,7 @@ To see the current configuration run:
 
 Auto-completion is installed automatically.
 
-To install it manually:
+To install auto-completion manually:
 
 * For *ZSH*, edit the file `~/.zshrc` and add the following lines:
 
