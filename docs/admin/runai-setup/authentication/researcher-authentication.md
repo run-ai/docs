@@ -195,7 +195,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
     --oidc-username-prefix=-
     ```
 
-    * For on-prem deployments, when Local Certificate Authority is configured - add the `oidc-ca-file` flag to the api server, For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}
+    * For on-prem deployments, when Local Certificate Authority is configured, add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}.
 
 
     All nodes with the `kube api server` role will automatically restart with the new flag.
