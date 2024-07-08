@@ -59,7 +59,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
             ...
             
     ```
-    * For on-prem deployments, when Local Certificate Authority is configured, add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}
+    * For on-prem deployments, when Local Certificate Authority is configured, add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}.
 
 
     1. These are example parameters. Copy the actual parameters from `Settings | General | Researcher Authentication` as described above.
@@ -74,7 +74,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
     - "oidc-client-id=runai" # (1)
     ...
     ```
-    * For on-prem deployments, when Local Certificate Authority is configured, add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}
+    * For on-prem deployments, when Local Certificate Authority is configured, add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}.
 
     
     1. These are example parameters. Copy the actual parameters from `Settings | General | Researcher Authentication` as described above.
