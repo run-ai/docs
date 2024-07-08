@@ -53,7 +53,7 @@ date: 2024-June-14
 
 #### Email Notifications - Workload Status and timeouts 
 
-* AI Practitioners can setup the types of notifications they want to receive, after the admin enabaled and configured notifications for the tenant. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
+* Added new *Email notification* system. AI Practitioners can setup the types of workload notifications they want to receive. In order to receive email notifications, you must ensure that the admin has enabaled and configured notifications for the tenant. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
 
 
 ### Run:ai Administrator
