@@ -18,9 +18,14 @@ runai [flags]
 
 !!! Note
 
-    * Make sure the flag for the Improved command line interface is enabled. To enable the Improved Command Line Interface Press the *Tools and Settings* icon, then *General*, then *Workloads*, then enable the *Improved Command Line Interface* toggle.
+    * Make sure the flag for the Improved command line interface is enabled.
     * Only clusters that are version 2.18 or later are supported.
     * Only Linux and Mac OS are currently supported
+
+To enable the Improved Command Line Interface:
+
+1. Press the *Tools and Settings* icon, then *General*.
+2. Press *Workloads*, then enable the *Improved Command Line Interface* toggle.
 
 To install the Improved Command Line Interface:
 
