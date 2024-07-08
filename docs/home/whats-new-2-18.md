@@ -51,6 +51,11 @@ date: 2024-June-14
 
 * <!-- RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](../developer/cluster-api/submit-yaml.md) PDF.
 
+#### Email Notifications - Workload Status and timeouts 
+
+* AI Practitioners can setup the types of notifications they want to receive, after the admin enabaled and configured notifications for the tenant. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
+
+
 ### Run:ai Administrator
 
 #### Data Sources
@@ -79,12 +84,11 @@ date: 2024-June-14
 
 * <!-- RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload. For configuration information, see your Run:ai representative.
 
-#### System notifications
+#### Email notifications
 
-* <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
+* <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new email notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
     * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
-    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
 
 ## Deprecation Notifications
 
