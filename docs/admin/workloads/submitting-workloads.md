@@ -39,7 +39,7 @@ To submit a workload using the UI:
 
          1. Toggle the switch to allow the workspace to exceed the project's quota.
          2. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         3. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
          4. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
          5. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -78,7 +78,7 @@ To submit a workload using the UI:
       9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
          1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+         2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
          3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
          4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -106,7 +106,7 @@ To submit a workload using the UI:
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 
             1. Set the backoff limit before workload failure, this can be changed, if necessary. Use integers only. (Default = 6, maximum = 100, minimum = 0). 
-            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails.
+            2. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minuets, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
             3. Press *Annotation* to a name and value to annotate the training. Repeat this step to add multiple annotations.
             4. Press *Label* to a name and value to label the training. Repeat this step to add multiple labels.
 
@@ -119,24 +119,41 @@ To submit a workload using the UI:
           
          When you select *Model*:
 
-         1. Select a model from the tiles. Use the search box to find a model that is not listed. If you can't find the model, see your system administrator.
+         1. Select a catalog. Choose from *Run:ai* or *Hugging Face*.
+            1. If you choose *Run:ai*, select a model from the tiles. Use the search box to find a model that is not listed. If you can't find the model, see your system administrator.
+            2. If you choose *Hugging Face*, go to the next step.
          2. In the *Inference name* field, enter a name for the workload.
-         3. In the *Compute resource* field, select a compute resource from the tiles.
-            1. In the *Replica autoscaling* section, set the minimum and maximum replicas for your inference. Then select *Never* or *After one minute of inactivity*  to set when the replicas should be automatically scaled down to zero.
-            2. In the *Nodes* field, change the order of priority of the node pools, or add a new node pool to the list.
-         4. When complete, press *Create inference*.
+         3. In the *Credentials* field, enter the token to access the model catalog.
+         4. If you selected *Hugging Face*, enter the name of the model in the *Model Name* section. This will not appear if you selected *Run:ai*.
+         5. In the *Compute resource* field, select a compute resource from the tiles.
+   
+            1. In the *Replica autoscaling* section, set the minimum and maximum replicas for your inference. 
+            2. In the *Set conditions for creating a new replica* section, use the drop down to select from `Throughput (Requests/sec)`, `Latency (milliseconds)`, or `Concurrency (Requests/sec)`. Then set the value. (default = 100) This section will only appear if you have 2 or more set as the maximum.
+            3. In the *Set when replicas should be automatically scaled down to zero* section, from the drop down select *Never*, *After one, five, 15 or 30 minutes of inactivity*.
+   
+            !!! Note
+                When automatic scaling to zero is enabled, the minimum number of replicas is 0.
+         
+            4. In the *Nodes* field, change the order of priority of the node pools, or add a new node pool to the list.
+         6. When complete, press *Create inference*.
 
          When you select *Custom*:
 
-         1. In the *Inference name* field, enter a name for the workload.
-         2. In the *Environment* field, select an environment. Use the search box to find an environment that is not listed. If you can't find an environment, press *New environment* or see your system administrator. 
+         7. In the *Inference name* field, enter a name for the workload.
+         8. In the *Environment* field, select an environment. Use the search box to find an environment that is not listed. If you can't find an environment, press *New environment* or see your system administrator. 
             1. In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available).
             2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
             3. In the *Environment variable* field, you can set one or more environment variables. (optional)
-         3. In the *Compute resource* field, select a compute resource from the tiles. Use the search box to find a compute resource that is not listed. If you can't find an environment, press *New compute resource* or see your system administrator.
-            1. In the *Replica autoscaling* section, set the minimum and maximum replicas for your inference. Then select *Never* or *After one minute of inactivity*  to set when the replicas should be automatically scaled down to zero.
-            2. In the *Nodes* field, change the order of priority of the node pools, or add a new node pool to the list.
-         4. In the *Data sources* field, add a *New data source*. (optional)
+         9.  In the *Compute resource* field, select a compute resource from the tiles. Use the search box to find a compute resource that is not listed. If you can't find an environment, press *New compute resource* or see your system administrator.
+   
+            1. In the *Replica autoscaling* section, set the minimum and maximum replicas for your inference. 
+            2. In the *Set conditions for creating a new replica* section, use the drop down to select from `Throughput (Requests/sec)`, `Latency (milliseconds)`, or `Concurrency (Requests/sec)`. Then set the value. (default = 100) This section will only appear if you have 2 or more set as the maximum.
+            3. In the *Set when replicas should be automatically scaled down to zero* section, from the drop down select *Never*, *After one, five, 15 or 30 minutes of inactivity*.
+   
+            !!! Note
+                When automatic scaling to zero is enabled, the minimum number of replicas is 0.
+
+         10. In the *Data sources* field, add a *New data source*. (optional)
    
             !!! Note
                 
@@ -144,11 +161,11 @@ To submit a workload using the UI:
                 * Assets that are cluster syncing will be greyed out.
                 * Only PVC, Git, and ConfigMap resources are supported.
 
-         5. In the *General* field you can:
-            1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional)
+         11. In the *General* field you can:
+            1. Add an *Auto-deletion* time. This sets the timeframe between inference completion/failure and auto-deletion. (optional) (default = 30 days)
             2. Add one or more *Annotation*. (optional)
             3. Add one or more *Labels*. (optional)
-         6. When complete, press *Create inference*.
+         12. When complete, press *Create inference*.
 
 ## Workload Policies
 
