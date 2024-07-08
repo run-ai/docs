@@ -185,8 +185,8 @@ nav:
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
-      - 'Notifications':
-        - 'System Notifications': 'admin/runai-setup/notifications/notifications.md'
+      - 'Notifications System':
+        - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
@@ -357,6 +357,7 @@ nav:
       - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
       - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
       - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
+      - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
