@@ -38,7 +38,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 === "Native Kubernetes"
     * Locate the Kubernetes API Server configuration file. The file's location may differ between different Kubernetes distributions. The location for vanilla Kubernetes is `/etc/kubernetes/manifests/kube-apiserver.yaml`
     * Edit the document, under the `command` tag, add the __server__ configuration text from `Settings | General | Researcher Authentication`.   
-    * For on-prem deployments, when Local Certificate Authority is configured - add the `oidc-ca-file` flag to the api server, For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}
+    * For on-prem deployments, when Local Certificate Authority is configured - add the `oidc-ca-file` flag to the api server. For more information see [configuring the api server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#configuring-the-api-server){target=_blank}
     * Verify that the `kube-apiserver-<master-node-name>` pod in the `kube-system` namespace has been restarted and that changes have been incorporated. Run the below and verify that the _oidc_ flags you have added:
 
     ```
