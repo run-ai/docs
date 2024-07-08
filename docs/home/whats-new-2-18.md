@@ -16,7 +16,6 @@ date: 2024-June-14
 
 #### Jobs, Workloads, and Workspaces
 
-
 * <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added to UI backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`. The UI will display the default number of retries based on 6 attempts for each pod in the workload. (For example, 6 pods = 36 attempts).
 
 * <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* count starts when any Run:ai workload reaches a a completed, or failed status will be automatically deleted (including logs). This change only affects new or cloned workloads.
@@ -52,6 +51,10 @@ date: 2024-June-14
 
 * <!-- RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](../developer/cluster-api/submit-yaml.md) PDF.
 
+#### Email Notifications - Workload Status and timeouts
+
+* Added new *Email notification* system. AI Practitioners can setup the types of workload notifications they want to receive. In order to receive email notifications, you must ensure that the admin has enabled and configured notifications for the tenant. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
+
 #### Assets
 
 * <!-- RUN-18486/RUN-18469 - Add description field to assets -->Improved UI asset creation form by adding a *Description* field. Now asset creators can add a free text description(max 250 characters) to any asset created. The description field is intended to help explain the nature and goal of the asset, this way AI practitioners will be able to make better decisions when choosing their assets in workload creation.
@@ -67,7 +70,6 @@ date: 2024-June-14
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
-
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-new-data-source#secret).
 
@@ -85,12 +87,11 @@ date: 2024-June-14
 
 * <!-- RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload. For configuration information, see your Run:ai representative.
 
-#### System notifications
+#### Email notifications
 
-* <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
+* <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new email notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
     * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
-    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
 
 ## Deprecation Notifications
 
