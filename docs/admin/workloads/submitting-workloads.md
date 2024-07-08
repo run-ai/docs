@@ -27,7 +27,7 @@ To submit a workload using the UI:
          3. Enter a claim size, and select the units.
          4. Select a *Volume system*, mode from the dropdown.
          5. Enter the *Container path* for volume target location.
-         6. Select a *Volume persistency.
+         6. Select a *Volume persistency*.
 
       7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
       
@@ -67,13 +67,13 @@ To submit a workload using the UI:
          3. Enter a claim size, and select the units.
          4. Select a *Volume system*, mode from the dropdown.
          5. Enter the *Container path* for volume target location.
-         6. Select a *Volume persistency.
+         6. Select a **.
 
       8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
    
         !!! Note
             * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
-            * * Data sources can now include *Secrets*.
+            * Data sources can now include *Secrets*.
 
       9.  (Optional) In the *General* pane, add special settings for your training (optional):
 
@@ -95,13 +95,13 @@ To submit a workload using the UI:
             3. Enter a claim size, and select the units.
             4. Select a *Volume system*, mode from the dropdown.
             5. Enter the *Container path* for volume target location.
-            6. Select a *Volume persistency.
+            6. Select a **.
 
          4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
 
           !!! Note
               * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
-              * * Data sources can now include *Secrets*.
+              * Data sources can now include *Secrets*.
 
          5. (Optional) In the *General* pane, add special settings for your training (optional):
 

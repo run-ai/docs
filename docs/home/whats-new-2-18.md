@@ -16,11 +16,12 @@ date: 2024-June-14
 
 #### Jobs, Workloads, and Workspaces
 
+
 * <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added to UI backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`. The UI will display the default number of retries based on 6 attempts for each pod in the workload. (For example, 6 pods = 36 attempts).
 
 * <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* count starts when any Run:ai workload reaches a a completed, or failed status will be automatically deleted (including logs). This change only affects new or cloned workloads.
 
-* <!-- TODO add doc link RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Workloads]().
+* <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
 * <!-- TODO change link and check the page for correct infoRUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
 
@@ -28,11 +29,11 @@ date: 2024-June-14
 
 * <!-- TODO Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for inference models by taking out ChatBot UI from models images. By moving ChatBot UI to predefined *Environments*, autoscaling is more accurate by taking into account all types of requests (API, and ChatBot UI). Adding a ChatBot UI environment preset by Run:ai allows AI practitioners to easily connect them to workloads.
 
-* <!-- TODO add this as a section to the "models catalog" doc - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
+<!-- TODO add this as a section to the "models catalog" doc - wait for release from Lior RUN-16806/RUN-16807 - Hugging face integration Added Hugging Face catalog integration in inference workloads. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to add models and data sets directly from the Hugging Face catalog. Hugging Face is a ML platform that helps users build, deploy and train machine learning models. It provides the infrastructure to demo, run and deploy artificial intelligence (AI) in live applications. Users can also browse through models and data sets that other people have uploaded. For more information on how Hugging Face is integrated, see [Hugging Face](link to hugging face in the models doc). -->
 
 #### Command Line Interface
 
-* <!-- TODO verify link to doc post merge to page RUN-14715/RUN-16337 - CLI V2 -->Added an improved researcher focused Command Line Interface (CLI). The improved CLI brings usability enhancements for researcher which include:
+* <!-- RUN-14715/RUN-16337 - CLI V2 -->Added an improved researcher focused Command Line Interface (CLI). The improved CLI brings usability enhancements for researcher which include:
 
     * Support multiple clusters
     * Self upgrade
@@ -49,7 +50,7 @@ date: 2024-June-14
 
 #### YAML Workload Reference table
 
-* <!-- TODO verify doc to upload pdf file RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference]().
+* <!-- RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](../developer/cluster-api/submit-yaml.md) PDF.
 
 #### Assets
 
@@ -59,13 +60,14 @@ date: 2024-June-14
 
 #### Data Sources
 
-* <!-- TODO verify link to doc post merge RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
+* <!-- RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
 
     * Managed with dedicated permissions&mdash;Data Admins, a new role within Run.ai, have exclusive control over data volume creation, data population, and sharing.
     * Shared between multiple scopes&mdash;unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
+
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-new-data-source#secret).
 
@@ -81,14 +83,14 @@ date: 2024-June-14
 
 #### Ownership protection
 
-* <!-- TODO Need to confirm text RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload. For configuration information, see your Run:ai representative.
+* <!-- RUN-19098/RUN-19557 Need to add link -->Added new ownership protection feature. Run:ai *Ownership Protection* ensures that only authorized users can delete or modify workloads. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload. For configuration information, see your Run:ai representative.
 
 #### System notifications
 
-* <!-- TODO verify doc links RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
+* <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new system notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
-    * System administrators will need to configure the email notifications. For more information, see [System notifications](docs/admin/runai-setup/notifications/notifications.md).
-    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications](docs/Researcher/best-practices/researcher-notifications.md).
+    * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
+    * AI Practitioners will need to setup the types of notifications they want to receive. For more information, see [Email notifications](../Researcher/best-practices/researcher-notifications.md).
 
 ## Deprecation Notifications
 

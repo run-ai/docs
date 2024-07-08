@@ -2,7 +2,7 @@ site_name: Run:ai Documentation Library
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2024 Run:ai
 repo_url: https://github.com/run-ai/docs/
-edit_uri: edit/v2.17/docs/
+edit_uri: edit/master/docs/
 docs_dir: docs 
 theme: 
   name: material
@@ -185,6 +185,8 @@ nav:
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
+      - 'Notifications System':
+        - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
         - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
@@ -348,12 +350,14 @@ nav:
       - 'Convert a Workload to Run Unattended' : 'Researcher/best-practices/convert-to-unattended.md'
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
+      - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
       - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
       - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
       - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
+      - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
