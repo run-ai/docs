@@ -33,7 +33,7 @@ To install the Improved Command Line Interface:
 
 ### Authenticating your CLI
 
-First you will need to login to authenticate the CLI.
+You will need to login to authenticate the CLI.
 In your terminal widow run:
 
 `runai login`
