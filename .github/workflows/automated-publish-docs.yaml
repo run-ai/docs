@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - v*.*
+    paths-ignore:
+      - 'github/**'
 
 jobs:
   env:
@@ -37,8 +39,8 @@ jobs:
             echo "Deploying $CURRENT_BRANCH which is not the latest version ( => $NEWEST_VERSION )..."
             fi
 
-  install-dependencies:
-    name: install dependencies
+  install-dependencies-and-deploy:
+    name: Install Dependencies and Deploy
     needs: [env]
     runs-on: ubuntu-latest
     steps:
@@ -63,12 +65,7 @@ jobs:
           git config user.name "circleci-runai"
           git config user.email "circleci-runai@run.ai"
 
-  deploy:
-    name: deploy mkdocs
-    needs: [env, install-dependencies]
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy mkdocs latest
+      - name: deploy mkdocs
         run: |
           if [[ "${{ needs.env.outputs.CURRENT_BRANCH }}" == "${{ needs.env.outputs.NEWEST_VERSION }}" ]]; then
             echo "Deploying ${{ needs.env.outputs.NEWEST_VERSION }} as latest..."
@@ -87,7 +84,7 @@ jobs:
 
   slack-notification:
     name: Slack Notification
-    needs: [env, install-dependencies, deploy]
+    needs: [env, install-dependencies-and-deploy]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -96,7 +93,7 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
-          SLACK_TITLE: "Airgapped package for ${{ inputs.env }} environment ${{ contains(needs.*.result, 'failure') && 'failed' || 'finished successfully' }}"
+          SLACK_TITLE: "RunAI-Docs: Version ${{ needs.env.outputs.CURRENT_BRANCH }} Deployment ${{ contains(needs.*.result, 'failure') && 'failed' || 'completed successfully' }}"
           SLACK_MESSAGE_ON_SUCCESS: "Docs were updated successfully for version ${{ needs.env.outputs.TITLE }}"
           SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}"
           MSG_MINIMAL: true
