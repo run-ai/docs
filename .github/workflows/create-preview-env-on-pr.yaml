@@ -1,4 +1,4 @@
-name: Create Preview Environment
+name: Create Preview Environment on PR
 
 on:
   pull_request:
