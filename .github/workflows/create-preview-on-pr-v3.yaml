@@ -58,7 +58,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `Preview environment URL: https://your-cloudfront-domain/PR-${{ github.event.number }}/`
+              body: `Preview environment URL: https://d161wck8lc3ih2.cloudfront.net/PR-${{ github.event.number }}/`
             })
 
   cleanup:
@@ -78,10 +78,10 @@ jobs:
         run: |
           aws s3 rm s3://${{ secrets.AWS_S3_BUCKET_NAME }}/PR-${{ github.event.number }} --recursive
 
-      - name: Invalidate CloudFront cache
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-        run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/PR-${{ github.event.number }}/*"
+      # - name: Invalidate CloudFront cache
+      #   env:
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      #   run: |
+      #     aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/PR-${{ github.event.number }}/*"
