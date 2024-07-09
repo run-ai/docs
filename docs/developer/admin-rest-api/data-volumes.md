@@ -19,6 +19,8 @@ Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 !!! Note
     Data volumes are not versioned.
 
+![data-volumes-architecture](../img/data-volumes-arch.svg)
+
 ## Data volumes use cases
 
 The following are typical use cases for Data Volumes:
@@ -30,6 +32,9 @@ The following are typical use cases for Data Volumes:
 
 There is now a new role called `Data Volumes Administrator` which contains the following two sets of permissions and allows you to manage your Data Volumes easily.
 
+!!! Note
+    CRUD = *Create*, *Read*, *Update*, and *Delete*.
+
 Data Volumes administrator contains two permission entities:
 
 * Data volumes - CRUD
@@ -39,8 +44,8 @@ Data volumes (should have the origin project in the scope)
 
 * Can create DV in the scope
 * Can read DV in the scope
-* Can update DV  in the scope
-* Can delete DV in the scope (even if DV is shared out of its scope)
+* Can update DV in the scope
+* Can delete DV in the scope
 
 Data volumes - sharing list
 
@@ -75,20 +80,19 @@ Data volumes - sharing list
 ### Data volume permissions for each role
 
 | Role | DV permissions |
-| --- |  --- |
+| --- |------------|
 | Data volume administrator | DV CRUD, Sharing CRUD |
 | System administrator | DV CRUD, Sharing CRUD |
 | Department admin | DV CRUD, Sharing CRUD |
-| Department viewer | DV R, Sharing R |
+| Department viewer | DV R       |
 | Researcher manager | DV CRUD, Sharing CRUD |
-| Editor | DV CRUD |
-| L1 | DV CRUD |
-| L2 | DV R |
-| ML engineer | DV R |
-| Assets admins  | DV R |
-| Application admin | DV R |
-| Cloud operator  | DV CRUD, Sharing CRUD |
-| Viewer | DV R |
+| Editor | DV CRUD, Sharing CRUD |
+| L1 | DV CRUD    |
+| L2 | DV R       |
+| ML engineer | DV R       |
+| Assets admins  | DV R       |
+| Application admin | DV R       |
+| Viewer | DV R       |
 
 ## Using Data volumes
 
@@ -97,13 +101,13 @@ This section outlines the procedure for creating, sharing, and submitting (Resea
 ### Creating Data Volumes
 
 !!! Note
-    Data volume admins can create data volumes within specific projects. Since data volumes are created from PVs, there has to be a PV in the namespace of a run:ai project for Run:Ai to have access to it and create the Data volume from it. Once the DV is created, the admin manages its sharing configurations.
+    Data volume admins can create data volumes within specific projects. Since data volumes are created from PVCs, there has to be a PVC in the namespace of a run:ai project, and a PV bound to it, for Run:Ai to have access to it and create the Data volume from it. Once the DV is created, the admin manages its sharing configurations.
 
 Data Volumes are created using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes)
 
 ### Sharing Data volumes
 
-Sharing permissions is a sub-entity of the Data volume management permissions. Meaning they can be assigned independently. A user can have permission to create a DV but not to share it and vice versa. A data volume can be shared with one or multiple scopes. In all the scopes that the DV is shared, it can be used by the users in their workloads.
+Sharing permissions is a sub-entity of the Data volume management permissions. Meaning they can be assigned independently. A user can have permission to create a DV but not to share it. A data volume can be shared with one or multiple scopes. In all the scopes that the DV is shared, it can be used by the users in their workloads.
 
 Data Volumes are shared using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes).
 
@@ -113,6 +117,6 @@ You can attach a data volume to a workload during submission in the same way oth
 
 Researchers can list available data volumes within their permitted scopes for easy selection.
 
-For more information on using a data volume when submitting a workload, see [Submitting Worklodas]().
+For more information on using a data volume when submitting a workload, see [Submitting Workloads](../../admin/workloads/submitting-workloads.md).
 
 You can also add a data volumes to your workload when submitting a workload via the API. For more information, see [Workloads](https://app.run.ai/api/docs#tag/Workloads).
