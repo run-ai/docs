@@ -6,6 +6,7 @@ on:
     branches:
       - master
       - v*.*
+      - add-automated-publish-docs-ci
 
 jobs:
   build-and-deploy:
