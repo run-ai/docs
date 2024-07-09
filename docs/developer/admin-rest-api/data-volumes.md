@@ -33,7 +33,7 @@ The following are typical use cases for Data Volumes:
 There is now a new role called `Data Volumes Administrator` which contains the following two sets of permissions and allows you to manage your Data Volumes easily.
 
 !!! Note
-    CRUD stands for *Create*, *Read*, *Update*, and *Delete*.
+    CRUD = *Create*, *Read*, *Update*, and *Delete*.
 
 Data Volumes administrator contains two permission entities:
 
