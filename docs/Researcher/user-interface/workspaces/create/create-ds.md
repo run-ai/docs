@@ -72,9 +72,11 @@ To create a host path data source, provide:
 ## Create a ConfigMap data source
 
 * A Run:ai project scope which is assigned to that item and all its subsidiaries.
-  
+
     !!! Note
         You can only choose a project as a scope.
+
+ConfigMaps must be created on the cluster before being used within Run:ai. When created, the ConfigMap must have a label of `run.ai/resourec: <resource-name>`. The resource name specified must be unique to that created resource. 
 
 * A data source name.
 * A data mount consisting of:
@@ -86,7 +88,7 @@ To create a host path data source, provide:
 
 * A Run:ai project scope which is assigned to that item and all its subsidiaries.
 * A *Credentials*. To create a new *Credentials*, see [Configuring Credentials](../../../../admin/admin-ui-setup/credentials-setup.md#configuring-credentials)
-  
+
     !!! Note
         You can only choose a project as a scope.
 
