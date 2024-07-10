@@ -76,7 +76,7 @@ To create a host path data source, provide:
     !!! Note
         You can only choose a project as a scope.
 
-ConfigMaps must be created on the cluster before being used within Run:ai. When created, the ConfigMap must have a label of `run.ai/resourec: <resource-name>`. The resource name specified must be unique to that created resource. 
+ConfigMaps must be created on the cluster before being used within Run:ai. When created, the ConfigMap must have a label of `run.ai/resource: <resource-name>`. The resource name specified must be unique to that created resource. 
 
 * A data source name.
 * A data mount consisting of:
