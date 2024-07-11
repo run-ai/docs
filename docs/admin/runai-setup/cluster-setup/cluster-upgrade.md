@@ -18,8 +18,6 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 * Select the cluster you wish to upgrade.
 * Click on `Get Installation instructions`.
 * Choose the `Run:ai version` to be installed on the Cluster.
-* If no clusters are currently configured, you will see a Cluster installation wizard. 
-* If a cluster has already been configured, use the menu on the top left and select `Clusters`. On the top left, click `New Cluster`.
 * Press `Continue`.
 * Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
 * In case of a failure, see the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
