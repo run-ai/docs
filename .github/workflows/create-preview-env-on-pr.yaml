@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-deploy:
-    if: github.event.action != 'closed'
+    if: github.event.action != 'closed' && github.repository == 'run-ai/docs'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -62,7 +62,7 @@ jobs:
             })
 
   cleanup:
-    if: github.event.action == 'closed'
+    if: github.event.action == 'closed' && github.repository == 'run-ai/docs'
     runs-on: ubuntu-latest
     steps:
       - name: Install AWS CLI
