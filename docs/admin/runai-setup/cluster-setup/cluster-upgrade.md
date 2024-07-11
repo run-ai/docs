@@ -19,7 +19,7 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 * Click on `Get Installation instructions`.
 * Choose the `Run:ai version` to be installed on the Cluster.
 * Press `Continue`.
-* Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
+* Copy the [Helm](https://helm.sh/docs/intro/install/) command provided in the `Installation Instructions` and run it on in the cluster.
 * In case of a failure, see the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
 
 ### Upgrade from version 2.9, 2.10, 2.11 or 2.12 
