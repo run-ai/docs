@@ -107,6 +107,7 @@ If you prefer your workloads not to be swapped into CPU memory, you can specify 
 
 ## Known Limitations
 
+* A pod created before the GPU memory swap feature was eneabled in that cluster is not able to be scheduled to a swap-enabled node. A proper event is generated in case no matching node is found. Users must re-submit those pods to make them swap-enabled.
 * GPU memory swap cannot be enabled if fairshare time-slicing or strict time-slicing is used, GPU memory swap can only be used with the default time-slicing mechanism.
 * CPU RAM size cannot be decreased once GPU memory swap is enabled.
 
