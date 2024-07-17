@@ -32,11 +32,11 @@ In addition, the control plane installation of Run:ai requires the configuration
 
 ## Run:ai software requirements
 
-### Operating system
+### Cluster Nodes
 
 See Run:ai Cluster prerequisites [operating system](../../cluster-setup/cluster-prerequisites.md#operating-system) requirements.
 
-The Run:ai control plane operating system prerequisites are identical.
+Nodes are required to be synchronized in time using NTP (Network Time Protocol) for proper system functionality.
 
 ### Kubernetes
 
