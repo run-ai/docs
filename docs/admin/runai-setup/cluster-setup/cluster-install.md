@@ -27,6 +27,9 @@ On the next page:
 * Run the [Helm](https://helm.sh/docs/intro/install/) command provided in the wizard.
 * In case of a failure, see the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
 
+!!! Note
+    A kubernetes user with `cluster-admin` role is required to ensure a successfull installation, for more information see [using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){target=_blank}.
+
 ## Verify your cluster's health
 
 * Verify that the cluster status in the Run:ai Control Plane's [Clusters Table](#cluster-table) is `Connected`.
