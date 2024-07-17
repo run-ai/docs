@@ -15,7 +15,7 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 ### Upgrade from version 2.15+
 * In the Run:ai interface, navigate to `Clusters`.
-* Select the cluster you wish to upgrade.
+* Select the cluster you want to upgrade.
 * Click on `Get Installation instructions`.
 * Choose the `Run:ai version` to be installed on the Cluster.
 * Press `Continue`.
