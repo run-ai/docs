@@ -36,7 +36,7 @@ In addition, the control plane installation of Run:ai requires the configuration
 
 See Run:ai Cluster prerequisites [operating system](../../cluster-setup/cluster-prerequisites.md#operating-system) requirements.
 
-Nodes are required to be synchronized in time using NTP (Network Time Protocol) for proper system functionality.
+Nodes are required to be synchronized by time using NTP (Network Time Protocol) for proper system functionality.
 
 ### Kubernetes
 
