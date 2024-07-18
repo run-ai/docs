@@ -33,7 +33,7 @@ See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.m
 
 ### Cluster Nodes
 
-Nodes are required to be synchronized in time using NTP (Network Time Protocol) for proper system functionality.
+Nodes are required to be synchronized by time using NTP (Network Time Protocol) for proper system functionality.
 
 ### OpenShift 
 
