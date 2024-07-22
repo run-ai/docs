@@ -187,7 +187,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 
 #### --stdin
 
-> Keep stdin open for the container(s) in the pod, even if nothing is attached.is attached.
+> Keep stdin open for the container(s) in the pod, even if nothing is attached.
 
 #### -t | --tty
 
