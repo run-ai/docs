@@ -8,6 +8,18 @@ date: 2024-Jun-19
 
 The following is a list of the known and fixed issues for Run:ai V2.17.
 
+## Version 2.17.43
+
+| Internal ID | Description |
+|--|--|
+| RUN-19949 | Fixed an issue where runai submit arguments were not parsed correctly to the command. |
+
+## Version 2.17.26
+
+| Internal ID | Description |
+|--|--|
+| RUN-19189 | Fixed an issue in cluster-sync that sometimes caused unnecessary sync process to the control-plane. |
+
 ## Version 2.17.25
 
 | Internal ID | Description |
