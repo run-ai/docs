@@ -18,7 +18,7 @@ The following is a list of the known and fixed issues for Run:ai V2.17.
 
 | Internal ID | Description |
 |--|--|
-| RUN-19189 | Fixed an issue in cluster-synv that sometimes caused unnecessary sync process to the control-plane. |
+| RUN-19189 | Fixed an issue in cluster-sync that sometimes caused unnecessary sync process to the control-plane. |
 
 ## Version 2.17.25
 
