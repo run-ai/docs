@@ -26,7 +26,7 @@ date: 2024-June-14
 
 * <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA.
 
-* <!-- TODO Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for inference models by taking out ChatBot UI from models images. By moving ChatBot UI to predefined *Environments*, autoscaling is more accurate by taking into account all types of requests (API, and ChatBot UI). Adding a ChatBot UI environment preset by Run:ai allows AI practitioners to easily connect them to workloads.
+* <!-- Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for inference models by taking out ChatBot UI from models images. By moving ChatBot UI to predefined *Environments*, autoscaling is more accurate by taking into account all types of requests (API, and ChatBot UI). Adding a ChatBot UI environment preset by Run:ai allows AI practitioners to easily connect them to workloads.
 
 * <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero.
 
