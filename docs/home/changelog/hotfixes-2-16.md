@@ -8,6 +8,12 @@ date: 2024-Feb-26
 
 The following is a list of the known and fixed issues for Run:ai V2.16.
 
+## Version 2.16.57
+
+| Internal ID | Description |
+|--|--|
+| RUN-20388 | Fixed an issue where cluster-sync caused a memory leak. |
+
 ## Version 2.16.25
 
 | Internal ID | Description |
