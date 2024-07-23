@@ -98,3 +98,4 @@ jobs:
           SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}"
           MSG_MINIMAL: true
           SLACK_FOOTER: ""
+          
