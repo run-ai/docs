@@ -25,7 +25,7 @@ jobs:
       - name: Get all v*.* branches
         id: calculate-env
         run: |
-          BRANCHES=$(git branch --list --all | grep -v master | grep 'origin/v*.*' | sed -n -E 's:.*/(v[0-9]+\.[0-9]+).*:\1:p' | sort -Vu)
+          BRANCHES=$(git branch -r | grep -E '^ *origin/v[0-9]{1,2}\.[0-9]{1,2}$' | sort -Vu | sed 's/origin\///g' | sed 's/ //g')
           NEWEST_VERSION=$(printf '%s\n' "${BRANCHES[@]}" | sort -V | tail -n 1)
           CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
           ALIAS=$CURRENT_BRANCH-alias
