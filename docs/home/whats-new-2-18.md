@@ -22,19 +22,19 @@ date: 2024-June-14
 
 * <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
-* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view).
+* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view). (Requires minimum cluster version v2.18).
 
-* <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA.
+* <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA. (Requires minimum cluster version v2.18).
 
 * <!-- Add to inference doc models explanation after autoscaling.  RUN-16872/RUN-18526 Separating ChatUi from model in favor of coherent autoscaling -->Improved autoscaling for inference models by taking out ChatBot UI from models images. By moving ChatBot UI to predefined *Environments*, autoscaling is more accurate by taking into account all types of requests (API, and ChatBot UI). Adding a ChatBot UI environment preset by Run:ai allows AI practitioners to easily connect them to workloads.
 
-* <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero.
+* <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero. (Requires minimum cluster version v2.18).
 
 * <!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../admin/workloads/submitting-workloads.md).
 
-* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../admin/workloads/submitting-workloads.md).
+* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../admin/workloads/submitting-workloads.md). (Requires minimum cluster version v2.18).
 
-* <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform.
+* <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform. (Requires minimum cluster version v2.18).
 
 #### Command Line Interface
 
@@ -47,11 +47,11 @@ date: 2024-June-14
     * Improved usability and performance
 
     This is an early access feature available for customers to use; however be aware that there may be functional gaps versus the legacy CLI.
-    For more information about installing and using the Improved CLI, see [Improved CLI](../Researcher/cli-reference/new-cli/runai.md).
+    For more information about installing and using the Improved CLI, see [Improved CLI](../Researcher/cli-reference/new-cli/runai.md). (Requires minimum cluster version v2.18).
 
 #### GPU memory swap
 
-* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->Added new GPU to CPU memory swap. To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU. For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md).
+* <!-- TODO verify link to doc post merge to page RUN-12615/RUN-12616 -->Added new GPU to CPU memory swap. To ensure efficient usage of an organization’s resources, Run:ai provides multiple features on multiple layers to help administrators and practitioners maximize their existing GPUs resource utilization.  Run:ai’s GPU memory swap feature helps administrators and AI practitioners to further increase the utilization of existing GPU HW by improving GPU sharing between AI initiatives and stakeholders. This is done by expending the GPU physical memory to the CPU memory which is typically an order of magnitude larger than that of the GPU. For more information see, [GPU Memory Swap](../Researcher/scheduling/gpu-memory-swap.md). (Requires minimum cluster version v2.18).
 
 #### YAML Workload Reference table
 
@@ -75,13 +75,13 @@ date: 2024-June-14
     * Shared between multiple scopes&mdash;unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
-    For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md).
+    For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md). (Requires minimum cluster version v2.18).
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source).
 
 #### Credentials
 
-* <!-- TODO add doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new *Generic secret* to *Credentials*. *Credentials* had been used only for access to data sources (S3, Git, etc.). However, AI practitioners need to use secrets to access sensitive data (interacting with 3rd party APIs, or other services) without having to put their credentials in their source code. *Generic secrets* leverage multiple key value pairs which helps reduce the number of Kubernetes resources and simplifies resource management by reducing the overhead associated with maintaining multiple Secrets. *Generic secrets* are best used as a data source of type *Secret* so that they can be used in containers to keep access credentials hidden.
+* <!-- TODO add doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new *Generic secret* to *Credentials*. *Credentials* had been used only for access to data sources (S3, Git, etc.). However, AI practitioners need to use secrets to access sensitive data (interacting with 3rd party APIs, or other services) without having to put their credentials in their source code. *Generic secrets* leverage multiple key value pairs which helps reduce the number of Kubernetes resources and simplifies resource management by reducing the overhead associated with maintaining multiple Secrets. *Generic secrets* are best used as a data source of type *Secret* so that they can be used in containers to keep access credentials hidden. (Requires minimum cluster version v2.18).
 
 #### Single Sign On
 
