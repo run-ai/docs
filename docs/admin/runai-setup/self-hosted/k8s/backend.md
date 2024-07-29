@@ -67,7 +67,7 @@ The Run:ai Control Plane chart, includes multiple sub-charts of 3rd party compon
 If you have opted to connect to an [external PostgreSQL database](preparations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
 
 1. Disable PostgreSQL deployment - `postgresql.enabled`
-2. Run:ai connection details - `global.postgresql.auth`, 
+2. Run:ai connection details - `global.postgresql.auth`
 3. Grafana connection details - `grafana.dbUser`, `grafana.dbPassword`
 
 ### PostgreSQL
