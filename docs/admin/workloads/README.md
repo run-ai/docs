@@ -124,7 +124,7 @@ To get the full experience of Run:ai’s environment and platform use the follow
 * [Distributed trainings](../../Researcher/user-interface/trainings.md#trainings)
 * [Deployment](../admin-ui-setup/deployments.md#viewing-and-submitting-deployments)
 
-## Supported integrations
+## Workload-related Integrations
 
 To assist you with other platforms, and other types of workloads use the integrations listed below. These integrations are not regularly tested by Run:ai and are hence provided on an as-is basis. The link below point to the Run:ai customer portal. 
 
