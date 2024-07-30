@@ -99,9 +99,9 @@ date: 2024-June-14
   
     * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
 
-#### Policy for Distributed and Inference workloads in the API
+#### Policy for distributed and inference workloads in the API
 
-* <!-- RUN-19064/ RUN-20522 - Policy 2.18 enhancements -->Added a new API for creating distributed training workload policies and inference workload policies.  These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
+Added a new API for creating distributed training workload policies and inference workload policies. These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
 
 ## Deprecation Notifications
 
