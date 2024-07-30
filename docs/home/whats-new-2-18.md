@@ -101,7 +101,7 @@ date: 2024-June-14
 
 #### Policy for distributed and inference workloads in the API
 
-Added a new API for creating distributed training workload policies and inference workload policies. These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
+* Added a new API for creating distributed training workload policies and inference workload policies. These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
 
 ## Deprecation Notifications
 
