@@ -99,6 +99,10 @@ date: 2024-June-14
   
     * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
 
+#### Policy for distributed and inference workloads in the API
+
+Added a new API for creating distributed training workload policies and inference workload policies. These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
+
 ## Deprecation Notifications
 
 [Existing notifications feature](https://docs.run.ai/v2.10/admin/researcher-setup/email-messaging/)requires cluster configuration, is being deprecated in favor of an improved Notification System. If you have been using the existing notifications feature in the cluster, you can continue to use it for the next **two** versions. It is recommend that you change to the new notifications system in the Control Plane for better control and improved message granularity.
