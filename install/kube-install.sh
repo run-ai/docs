@@ -160,6 +160,7 @@ elif [ "${task}" == "2" ]
 then
     read -p "$(echo -e "${YELLOW}Please enter kubernetes version, or press enter for default (1.24.7) :${NC}")" k8s_version
     k8s_version=${k8s_version:-"1.24.7"}
+    package_version=${k8s_version%.*}
     disable-swap
     load-kernel-modules
     network
