@@ -69,7 +69,7 @@ date: 2024-June-14
 
 #### Data Sources
 
-* <!-- RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
+* <!-- RUN-16758/RUN-18432 - Data volumes -->Added *Data Volumes* new feature. Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits. 
 
     * Managed with dedicated permissions&mdash;Data Admins, a new role within Run.ai, have exclusive control over data volume creation, data population, and sharing.
     * Shared between multiple scopes&mdash;unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
@@ -77,7 +77,7 @@ date: 2024-June-14
   
     For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md). (Requires minimum cluster version v2.18).
 
-* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source).
+* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source). 
 
 #### Credentials
 
@@ -98,6 +98,10 @@ date: 2024-June-14
 * <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new email notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
     * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
+
+#### Policy for distributed and inference workloads in the API
+
+* Added a new API for creating distributed training workload policies and inference workload policies. These new policies in the API allow to set defaults, enforce rules and impose setup on distributed training and inference workloads. For distributed policies, worker and master may require different rules due to their different specifications. The new capability is currently available via API only. Documentation on submitting policies to follow shortly.
 
 ## Deprecation Notifications
 
