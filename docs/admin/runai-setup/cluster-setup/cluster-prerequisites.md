@@ -62,7 +62,7 @@ Following is a Kubernetes support matrix for the latest Run:ai releases:<a name=
 | Run:ai 2.15    | 1.25 through 1.28  | 4.11 through 4.13 |
 | Run:ai 2.16    | 1.26 through 1.28  | 4.11 through 4.14 |
 | Run:ai 2.17    | 1.27 through 1.29  | 4.12 through 4.15 |
-| Run:ai 2.18    | 1.28 through 1.30  | 4.12 through 4.15 |
+| Run:ai 2.18    | 1.28 through 1.30  | 4.12 through 4.16 |
 
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. Within these notes, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai.
 

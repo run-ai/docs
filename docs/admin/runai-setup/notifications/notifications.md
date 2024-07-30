@@ -24,11 +24,7 @@ To enable email notifications for the system:
         For SaaS deployments, use the *Enable email notifications* toggle.
 
 2. In the *SMTP Host* field, enter the SMTP server address and in the *SMTP port* field the port number.
-3. Select an *Authentication type*:
-
-       1. **Plain**&mdash;enter a username and password to be used for authentication.
-       2. **Login**&mdash;enter a username and password to be used for authentication.
-
+3. Select an *Authentication type* **Plain** or **Login**. Enter a username and password to be used for authentication.
 4. Enter the *From email address* and the *Display name*.
 5. Press *Verify* to ensure that the email configuration is working.
 6. Press *Save* when complete.

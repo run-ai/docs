@@ -13,16 +13,16 @@ and record the chart version in the form of `runai-cluster-<version-number>`
 
 ## Upgrade Run:ai cluster 
 
+### Upgrade from version 2.15+
+* In the Run:ai interface, navigate to `Clusters`.
+* Select the cluster you want to upgrade.
+* Click on `Get Installation instructions`.
+* Choose the `Run:ai version` to be installed on the Cluster.
+* Press `Continue`.
+* Copy the [Helm](https://helm.sh/docs/intro/install/) command provided in the `Installation Instructions` and run it on in the cluster.
+* In the case of a failure, refer to the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
 
-### Upgrade to version 2.15
-
-The cluster installation has changed in version 2.15 such that no _values file_ ia needed and old customizations do not have to be copied. Hence, simply follow the instructions for [Installing Run:ai](cluster-install.md#install-runai) to install Run:ai.
-
-All customizations done in `RunaiConfig` are saved during the upgrade. 
-
-### Upgrade from version 2.9, 2.10, 2.11 or 2.12 to version 2.13
-
-
+### Upgrade from version 2.9, 2.10, 2.11 or 2.12 
 Run:
 
 ```

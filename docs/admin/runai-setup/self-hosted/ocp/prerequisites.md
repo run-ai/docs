@@ -31,9 +31,9 @@ See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.m
 
 ## Run:ai software requirements
 
-### Operating System
+### Cluster Nodes
 
-OpenShift has specific operating system requirements that can be found in the RedHat documentation. 
+Nodes are required to be synchronized by time using NTP (Network Time Protocol) for proper system functionality.
 
 ### OpenShift 
 
