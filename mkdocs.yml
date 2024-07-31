@@ -186,7 +186,7 @@ nav:
         - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
         - 'Node Downtime' : 'admin/runai-setup/maintenance/node-downtime.md'
-        - 'Monitoring Cluster Health' : 'admin/runai-setup/maintenance/alert-monitoring.md'
+        - 'System Monitoring' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         - 'Audit Log' : 'admin/runai-setup/maintenance/audit-log.md'
     - 'Researcher Setup' :
       - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
