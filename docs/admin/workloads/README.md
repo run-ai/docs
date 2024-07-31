@@ -121,8 +121,8 @@ To get the full experience of Run:ai’s environment and platform use the follow
 
 * [Workspaces](../../Researcher/user-interface/workspaces/overview.md#getting-familiar-with-workspaces)
 * [Trainings](../../Researcher/user-interface/trainings.md#trainings) (Only available when using the *Jobs* view)
-* [Distributed trainings](../../Researcher/user-interface/trainings.md#trainings)
-* [Deployment](../admin-ui-setup/deployments.md#viewing-and-submitting-deployments)
+* [Distributed training](../../Researcher/user-interface/trainings.md#trainings)
+* Deployments.
 
 ## Workload-related Integrations
 

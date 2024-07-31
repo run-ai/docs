@@ -226,5 +226,3 @@ To search for good hyperparameters, Researchers typically start a series of smal
 
 With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a *pod* (see definition above). Unlike Gang Scheduling, with HPO, pods are **independent**. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs.
 In case node pools are enabled, if the HPO workload has been assigned with more than one node pool, the different pods might end up running on different node pools.
-
-For more information on Hyperparameter Optimization in Run:ai see [here](../Walkthroughs/walkthrough-hpo.md)
