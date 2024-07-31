@@ -50,14 +50,6 @@ runai submit --name frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
 
 (see: [GPU fractions Quickstart](../Walkthroughs/walkthrough-fractions.md)).
 
-Hyperparameter Optimization
-
-```console
-runai submit --name hpo1 -i gcr.io/run-ai-demo/quickstart-hpo -g 1  \
-   --parallelism 3 --completions 12 -v /nfs/john/hpo:/hpo 
-```
-
-(see: [hyperparameter optimization Quickstart](../Walkthroughs/walkthrough-hpo.md)).
 
 Submit a Job without a name (automatically generates a name)
 

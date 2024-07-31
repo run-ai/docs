@@ -7,7 +7,6 @@ Follow the Quickstart documents below to learn more:
 * [Interactive build sessions with externalized services](walkthrough-build-ports.md)
 * [Using GPU Fractions](walkthrough-fractions.md)
 * [Distributed Training](walkthrough-distributed-training.md)
-* [Hyperparameter Optimization](walkthrough-hpo.md)
 * [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
 * [Fairness](walkthrough-queue-fairness.md)
 * [Inference](quickstart-inference.md)
