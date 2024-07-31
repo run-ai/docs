@@ -186,7 +186,7 @@ kubectl get cm runai-public -oyaml
 
 ### Resources not deployed / System unavailable / Reconciliation failed
 
-1. Run the [Preinstall diagnostic script](cluster-prerequisites.md#pre-install-script) and check for issues.
+1. Run the [Preinstall diagnostic script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and check for issues.
 2. Run
 
 ```
