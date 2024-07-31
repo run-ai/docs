@@ -176,12 +176,16 @@ nav:
         - 'Scaling' : 'admin/runai-setup/config/large-clusters.md'
       - 'Authentication & Authorization' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
-        - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
-        - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
         - 'Single Sign-On' : 
           - 'Setup SSO with SAML' : 'admin/runai-setup/authentication/sso/saml.md'
           - 'Setup SSO with OpenID Connect' : 'admin/runai-setup/authentication/sso/openidconnect.md'
           - 'Setup SSO with OpenShift' : 'admin/runai-setup/authentication/sso/openshift.md'
+        - 'Users' : 'admin/runai-setup/authentication/users.md'
+        - 'Applications' : 'admin/runai-setup/authentication/applications.md'
+        - 'Roles' : 'admin/runai-setup/authentication/roles.md'
+        - 'Access Rules' : 'admin/runai-setup/authentication/accessrules.md'
+        - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
+        - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
       - 'Notifications System':
         - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
