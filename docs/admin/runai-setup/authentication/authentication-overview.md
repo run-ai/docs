@@ -1,64 +1,65 @@
-## Authentication Overview
-
-To access Run:ai resources, you have to authenticate. The purpose of this document is to explain how authentication works at Run:ai.
-
-## Authentication Endpoints
-
-Generally speaking, there are two authentication endpoints:
-
-* The Run:ai control plane.
-* Run:ai GPU clusters.
-
-Both endpoints are accessible via APIs as well as a user interface. 
+# Authentication & Authorization
 
 
-## Identity Service
+Run:ai Authentication & Authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
-Run:ai includes an internal identity service. The identity service ensures users are who they claim to be and gives them the right kind of access to Run:ai.
- 
-## Users
+Authentication verifies user identity during login, and Authorization assigns the user with specific permissions according to the assigned access rules.
 
-Out of the box, The Run:ai identity service provides a way to create users and associate them with access roles. 
+Authenticated access is required to use all aspects of the Run:ai interfaces, including the Run:ai platform, the Run:ai Command Line Interface (CLI) and APIs.
 
-It is also possible to configure the Run:ai identity service to connect to a company directory using the SAML protocol. For more information see [single sign-on](sso.md).
+## **Authentication**
 
-## Authentication Method
+There are multiple methods to authenticate and access Run:ai.
 
-Both endpoints described above are protected via time-limited oauth2-like JWT authentication tokens.
+### **Single Sign-On (SSO)**
 
-There are two ways of getting a token:
+Single Sign-On (SSO) is the preferred authentication method by large organizations, as it avoids the need to manage duplicate sets of user identities.
 
-* Using a user/password combination.
-* Using [client applications](../../../developer/overview-developer.md) for API access.
+Run:ai offers SSO integration, enabling users to utilize existing organizational credentials to access Run:ai without requiring dedicated credentials.
+
+Run:ai supports three methods to setup SSO:
+
+* SAML  
+* OpenID Connect (OIDC)  
+* OpenShift
+
+When using SSO, it is highly recommended to manage at least one local user, as a breakglass account (an emergency account), in case access to SSO is not possible.
+
+### **Username and password**
+
+Username and password access can be used when SSO integration is not possible.
+
+### **Secret key (for Application programmatic access)**
+
+Secret is the authentication method for Applications. Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on its assigned access rules.
+
+## **Authorization**
+
+The Run:ai platform uses Role Base Access Control (RBAC) to manage authorization.
+
+Once a user or an application is authenticated, they can perform actions according to their assigned access rules.
+
+### **Role Based Access Control (RBAC) in Run:ai**
+
+While Kubernetes RBAC is limited to a single cluster, Run:ai expands the scope of Kubernetes RBAC, making it easy for administrators to manage access rules across multiple clusters.
+
+RBAC at Run:ai is configured using access rules.
+
+An access rule is the assignment of a role to a subject in a scope: \<Subject\> is a \<Role\> in a \<Scope\>.
+
+* **Subject**  
+  * A user, a group, or an application assigned with the role  
+* **Role**  
+  * A set of permissions that can be assigned to subjects  
+  * A permission is a set of actions (view, edit, create and delete) over a Run:ai entity (e.g. projects, workloads, users)  
+    * For example, a role might allow a user to create and read Project, but not update or delete them  
+    * Roles at Run:ai are system defined and cannot be created, edited or deleted  
+* **Scope**  
+  * A set of resources that are accessible to a subject for a specific role  
+  * A scope is a part of an organization that can be accessed based on assigned roles. Scopes include Projects, Departments, Clusters, Account (all clusters)
+
+An example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
+
+![](img/auth-rbac.png)
 
 
-## Authentication Flows
-
-### Run:ai control plane
-
-You can use the Run:ai user interface to provide user/password. These are validated against the identity service. Run:ai will return a token with the right access rights for continued operation. 
-
-You can also use a client application to get a token and then connect directly to the [administration API endpoint](../../../developer/admin-rest-api/overview.md). 
-### Run:ai GPU Clusters
-
-The Run:ai GPU cluster is a _Kubernetes_ cluster. All communication into Kubernetes flows through the [Kubernetes API server](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/){target=_blank}.
-
-To facilitate authentication via Run:ai the Kubernetes API server must be configured to use the Run:ai identity service to validate authentication tokens. For more information on how to configure the Kubernetes API server see _Kubernetes configuration_ under [researcher authentication](researcher-authentication.md#mandatory-kubernetes-configuration).
-
-## Inactivity timeout
-
-:octicons-versions-24: Version 2.10 and later.
-
-Run:ai session should timeout after 1 hour of inactivity.
-
-!!! Note
-    Timeout settings are configured in minutes.
-
-To configure the inactivity timeout:
-1. Open `Settings | General`.
-2. Set the inactivity timeout in minutes. (Default is 60)
-
-## See also
-
-* To configure authentication for researchers [researcher authentication](researcher-authentication.md).
-* To configure single sign-on, see [single sign-on](sso.md).
