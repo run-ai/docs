@@ -631,6 +631,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/aiinitiatives/overview/</loc>
+         <lastmod>2024-07-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cli-install/</loc>
          <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
