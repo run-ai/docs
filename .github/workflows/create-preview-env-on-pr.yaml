@@ -12,6 +12,9 @@ jobs:
     if: github.event.action != 'closed' && github.repository == 'run-ai/docs'
     runs-on: ubuntu-latest
     steps:
+      - name: test PR Link
+        run: |
+          echo "PR Link: ${{ github.event.pull_request.html_url }}"
       - name: Checkout code
         uses: actions/checkout@v4
 
