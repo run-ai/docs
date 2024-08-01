@@ -6,7 +6,7 @@ Run:ai uses Prometheus for externalizing metrics and providing visibility to end
 
 This document explains how to:
 
-* Configure alert destinations \- triggered alerts send data to specified destinations  
+* Configure alert destinations - triggered alerts send data to specified destinations  
 * Understand the out-of-the-box cluster alerts, provided by Run:ai  
 * Add additional custom alerts
 
@@ -37,7 +37,7 @@ In each of the steps in this section, copy the content of the code snippet to a 
 
 * Copy the following command to your terminal, to apply the YAML file to the cluster:
 
-kubectl apply \-f step1.yaml  
+kubectl apply -f step1.yaml  
 Copy the following command to your terminal to create the AlertManager CustomResource, to enable AlertManager: 
 
 ``` yaml
@@ -54,16 +54,16 @@ spec:
 ```
 
 * Copy the following command to your terminal to validate that the AlertManager instance has started:  
-   `kubectl get alertmanager \-n runai`  
+   `kubectl get alertmanager -n runai`  
 * Copy the following command to your terminal to validate that the Prometheus operator has created a Service for AlertManager:  
-    `kubectl get svc alertmanager-operated \-n runai`
+    `kubectl get svc alertmanager-operated -n runai`
 
 ### Configuring Prometheus to send alerts
 
 1. Open the terminal on your local machine or another machine that has access to your Kubernetes cluster  
 1. Copy and paste the following command in your terminal to edit the Prometheus configuration for the `runai` Namespace:
 ```
-kubectl edit prometheus runai \-n runai
+kubectl edit prometheus runai -n runai
 ```
 This command opens the Prometheus configuration file in your default text editor (usually `vi` or `nano`).
 
@@ -71,7 +71,7 @@ This command opens the Prometheus configuration file in your default text editor
 ``` yaml
 alerting:  
    alertmanagers:  
-      \- namespace: runai  
+      - namespace: runai  
         name: alertmanager-operated  
         port: web
 ```
@@ -98,7 +98,7 @@ metadata:
    name: alertmanager-smtp-password  
    namespace: runai  
 stringData:
-   password: "your\_smtp\_password"
+   password: "your_smtp_password"
 ```
 
 Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply`.  
@@ -191,16 +191,16 @@ Runai agent cluster info push rate low
 | **Impact** | Possible impact - no info/partial info from the cluster is being synced back to the control-plane |
 | **Severity** | Critical |
 | **Diagnosis** | `kubectl get pod -n runai` to see if the `cluster-sync` pod is running |
-| **Troubleshooting/Mitigation** | To diagnose issues with the `cluster-sync` pod, follow these steps: **Paste the following command to your terminal, to receive detailed information about the** `cluster-sync` deployment:`kubectl describe deployment cluster-sync -n runai` **Check the Logs**: Use the following command to view the logs of the `cluster-sync` deployment:`kubectl logs deployment/cluster-sync -n runai` **Analyze the Logs and Pod Details**: From the information provided by the logs and the deployment details, attempt to identify the reason why the `cluster-sync` pod is not functioning correctly **Check Connectivity**: Ensure there is a stable network connection between the cluster and the Run:ai Control Plane. A connectivity issue may be the root cause of the problem. **Contact Support**: If the network connection is stable and you are still unable to resolve the issue, contact Run:ai support for further assistance |
+| **Troubleshooting/Mitigation** | To diagnose issues with the `cluster-sync` pod, follow these steps: **Paste the following command to your terminal, to receive detailed information about the** `cluster-sync` deployment:`kubectl describe deployment cluster-sync -n runai` **Check the Logs**: Use the following command to view the logs of the `cluster-sync` deployment:`kubectl logs deployment/cluster-sync -n runai` **Analyze the Logs and Pod Details**: From the information provided by the logs and the deployment details, attempt to identify the reason why the `cluster-sync` pod is not functioning correctly **Check Connectivity**: Ensure there is a stable network connection between the cluster and the Run:ai Control Plane. A connectivity issue may be the root cause of the problem. **Contact Support**: If the network connection is stable and you are still unable to resolve the issue, contact Run:ai support for further assistance |
 
 Runai agent pull rate low
 
 | Meaning | The `runai-agent` pod may be too loaded, is slow in processing data (possible in very big clusters), or the `runai-agent` pod itself in the `runai` namespace may not be functioning properly. |
 | :---- | :---- |
-| **Impact** | Possible impact \- no info/partial info from the control-plane is bein[g synced i](http://running.To)n the cluster |
+| **Impact** | Possible impact - no info/partial info from the control-plane is bein[g synced i](http://running.To)n the cluster |
 | **Severity** | Critical |
 | **Diagnosis** | Run: `kubectl get pod -n runai` And see if the `runai-agent` pod is running. |
-| **Troubleshooting/Mitigation** | To diagnose issues with the `runai-agent` pod, follow these steps: **Describe the Deployment**: Run the following command to get detailed information about the `runai-agent` deployment:`kubectl describe deployment runai-agent -n runai` **Check the Logs**: Use the following command to view the logs of the `runai-agent` deployment:`kubectl logs deployment/runai-agent -n runai` **Analyze the Logs and Pod Details**: From the information provided by the logs and the deployment details, attempt to identify the reason why the `runai-agent` pod is not functioning correctly. There may be a connectivity issue with the control plane. **Check Connectivity**: Ensure there is a stable network connection between the `runai-agent` and the control plane. A connectivity issue may be the root cause of the problem. **Consider Cluster Load**: If the `runai-agent` appears to be functioning properly but the cluster is very large and heavily loaded, it may take more time for the agent to process data from the control plane. **Adjust Alert Threshold**: If the cluster load is causing the alert to fire, you can adjust the threshold at which the alert triggers. The default value is 0.05. You can try changing it to a lower value (e.g., 0.045 or 0.04).To edit the value, paste the following in your terminal:`kubectl edit runaiconfig -n runai`In the editor, navigate to:spec:   prometheus:     agentPullPushRateMinForAlert: \<new\_value\>If the `agentPullPushRateMinForAlert` value does not exist, add it under `spec -> prometheus` |
+| **Troubleshooting/Mitigation** | To diagnose issues with the `runai-agent` pod, follow these steps: **Describe the Deployment**: Run the following command to get detailed information about the `runai-agent` deployment:`kubectl describe deployment runai-agent -n runai` **Check the Logs**: Use the following command to view the logs of the `runai-agent` deployment:`kubectl logs deployment/runai-agent -n runai` **Analyze the Logs and Pod Details**: From the information provided by the logs and the deployment details, attempt to identify the reason why the `runai-agent` pod is not functioning correctly. There may be a connectivity issue with the control plane. **Check Connectivity**: Ensure there is a stable network connection between the `runai-agent` and the control plane. A connectivity issue may be the root cause of the problem. **Consider Cluster Load**: If the `runai-agent` appears to be functioning properly but the cluster is very large and heavily loaded, it may take more time for the agent to process data from the control plane. **Adjust Alert Threshold**: If the cluster load is causing the alert to fire, you can adjust the threshold at which the alert triggers. The default value is 0.05. You can try changing it to a lower value (e.g., 0.045 or 0.04).To edit the value, paste the following in your terminal:`kubectl edit runaiconfig -n runai`In the editor, navigate to:spec:   prometheus:     agentPullPushRateMinForAlert: <new_value>If the `agentPullPushRateMinForAlert` value does not exist, add it under `spec -> prometheus` |
 
 Runai container memory usage critical
 
@@ -226,8 +226,8 @@ Runai container restarting
 | :---- | :---- |
 | **Impact** | The container might become unavailable and impact the Run:ai system |
 | **Severity** | Warning |
-| **Diagnosis** | To diagnose the issue and identify the problematic pods, paste this into your terminal: `kubectl get pods -n runai kubectl get pods -n runai-backend`One or more of the pods have a restart count \>= 2\. |
-| **Troubleshooting/Mitigation** | Paste this into your terminal:`kubectl logs -n NAMESPACE POD_NAME`Replace `NAMESPACE` and `POD_NAME` with the relevant pod information from the previous step. Check the logs for any standout issues and verify that the container has sufficient resources. If you need further assistance, contact Run:ai |
+| **Diagnosis** | To diagnose the issue and identify the problematic pods, paste this into your terminal: `kubectl get pods -n runai kubectl get pods -n runai-backend`One or more of the pods have a restart count >= 2. |
+| **Troubleshooting/Mitigation** | Paste this into your terminal:`kubectl logs -n NAMESPACE POD_NAME`Replace `NAMESPACE` and `POD_NAME` with the relevant pod information from the previous step. Check the logs for any standout issues and verify that the container has sufficient resources. If you need further assistance, contact Run:ai |
 
 Runai CPU usage warning
 
@@ -253,7 +253,7 @@ Runai daemonSet rollout stuck / Runai DaemonSet unavailable on nodes
 | **Impact** | No fractional GPU workloads support |
 | **Severity** | Critical |
 | **Diagnosis** | Paste the following command to your terminal: `kubectl get daemonset -n runai-backend` In the result of this command, identify the daemonset(s) that don’t have any running pods |
-| **Troubleshooting/Mitigation** | Paste the following command to your terminal, where `daemonsetX` is the problematic daemonset from the pervious step: `kubectl describe daemonsetX -n runai` on the relevant deamonset(s) from the previous step. The next step is to look for the specific error which prevents it from creating pods. Possible reasons might be:**Node Resource Constraints**: The nodes in the cluster may lack sufficient resources (CPU, memory, etc.) to accommodate new pods from the daemonset. **Node Selector or Affinity Rules**: The daemonset may have node selector or affinity rules that are not matching with any nodes currently available in the cluster, thus preventing pod creation. |
+| **Troubleshooting/Mitigation** | Paste the following command to your terminal, where `daemonsetX` is the problematic daemonset from the pervious step: `kubectl describe daemonsetX -n runai` on the relevant deamonset(s) from the previous step. The next step is to look for the specific error which prevents it from creating pods. Possible reasons might be:**Node Resource Constraints**: The nodes in the cluster may lack sufficient resources (CPU, memory, etc.) to accommodate new pods from the daemonset. **Node Selector or Affinity Rules**: The daemonset may have node selector or affinity rules that are not matching with any nodes currently available in the cluster, thus preventing pod creation. |
 
 Runai deployment insufficient replicas / Runai deployment no available replicas /RunaiDeploymentUnavailableReplicas
 
@@ -261,8 +261,8 @@ Runai deployment insufficient replicas / Runai deployment no available replicas 
 | :---- | :---- |
 | **Impact** | When this happens, there may be scale issues. Additionally, new versions cannot be deployed, potentially resulting in missing features. |
 | **Severity** | Critical |
-| **Diagnosis** | Paste the following commands to your terminal, in order to get the status of the deployments in the `runai` and `runai-backend` namespaces:`kubectl get deployment -n runai kubectl get deployment -n runai-backend`Identify any deployments that have missing pods. Look for discrepancies in the `DESIRED` and `AVAILABLE` columns. If the number of `AVAILABLE` pods is less than the `DESIRED` pods, it indicates that there are missing pods. |
-| **Troubleshooting/Mitigation** | Paste the following commands to your terminal, to receive detailed information about the problematic deployment:`kubectl describe deployment <DEPLOYMENT_NAME> -n runai kubectl describe deployment <DEPLOYMENT_NAME> -n runai-backend` Paste the following commands to your terminal, to check the replicaset details associated with the deployment:`kubectl describe replicaset <REPLICASET_NAME> -n runai kubectl describe replicaset <REPLICASET_NAME> -n runai-backend` Paste the following commands to your terminal to retrieve the logs for the deployment to identify any errors or issues:`kubectl logs deployment/<DEPLOYMENT_NAME> -n runai kubectl logs deployment/<DEPLOYMENT_NAME> -n runai-backend` From the logs and the detailed information provided by the `describe` commands, analyze the reasons why the deployment is unable to create pods. Look for common issues such as: Resource constraints (CPU, memory) Misconfigured deployment settings or replicasets Node selector or affinity rules preventing pod schedulingIf the issue persists, contact Run:ai. |
+| **Diagnosis** | Paste the following commands to your terminal, in order to get the status of the deployments in the `runai` and `runai-backend` namespaces:`kubectl get deployment -n runai kubectl get deployment -n runai-backend`Identify any deployments that have missing pods. Look for discrepancies in the `DESIRED` and `AVAILABLE` columns. If the number of `AVAILABLE` pods is less than the `DESIRED` pods, it indicates that there are missing pods. |
+| **Troubleshooting/Mitigation** | Paste the following commands to your terminal, to receive detailed information about the problematic deployment:`kubectl describe deployment <DEPLOYMENT_NAME> -n runai kubectl describe deployment <DEPLOYMENT_NAME> -n runai-backend` Paste the following commands to your terminal, to check the replicaset details associated with the deployment:`kubectl describe replicaset <REPLICASET_NAME> -n runai kubectl describe replicaset <REPLICASET_NAME> -n runai-backend` Paste the following commands to your terminal to retrieve the logs for the deployment to identify any errors or issues:`kubectl logs deployment/<DEPLOYMENT_NAME> -n runai kubectl logs deployment/<DEPLOYMENT_NAME> -n runai-backend` From the logs and the detailed information provided by the `describe` commands, analyze the reasons why the deployment is unable to create pods. Look for common issues such as: Resource constraints (CPU, memory) Misconfigured deployment settings or replicasets Node selector or affinity rules preventing pod schedulingIf the issue persists, contact Run:ai. |
 
 Runai project controller reconcile failure
 
@@ -270,17 +270,17 @@ Runai project controller reconcile failure
 | :---- | :---- |
 | **Impact** | Some projects might not be in the “Ready” state. This means that they are not fully operational and may not have all the necessary components running or configured correctly. |
 | **Severity** | Critical |
-| **Diagnosis** | Retrieve the logs for the `project-controller` deployment by pasting the following command in your terminal:`kubectl logs deployment/project-controller -n runai` Carefully examine the logs for any errors or warning messages. These logs help you understand what might be going wrong with the project controller. |
-| **Troubleshooting/Mitigation** | Once errors in the log have been identified, follow these steps to mitigate the issue: The error messages in the logs should provide detailed information about the problem. Read through them to understand the nature of the issue. If the logs indicate which project failed to reconcile, you can further investigate by checking the status of that specific project. Run the following command, replacing `<PROJECT_NAME>` with the name of the problematic project:`kubectl get project <PROJECT_NAME> -o yaml` Review the status section in the YAML output. This section describes the current state of the project and provide insights into what might be causing the failure.If the issue persists, contact Run:ai. |
+| **Diagnosis** | Retrieve the logs for the `project-controller` deployment by pasting the following command in your terminal:`kubectl logs deployment/project-controller -n runai` Carefully examine the logs for any errors or warning messages. These logs help you understand what might be going wrong with the project controller. |
+| **Troubleshooting/Mitigation** | Once errors in the log have been identified, follow these steps to mitigate the issue: The error messages in the logs should provide detailed information about the problem. Read through them to understand the nature of the issue. If the logs indicate which project failed to reconcile, you can further investigate by checking the status of that specific project. Run the following command, replacing `<PROJECT_NAME>` with the name of the problematic project:`kubectl get project <PROJECT_NAME> -o yaml` Review the status section in the YAML output. This section describes the current state of the project and provide insights into what might be causing the failure.If the issue persists, contact Run:ai. |
 
 Runai StatefulSet insufficient replicas / Runai StatefulSet no available replicas
 
 | Meaning | `Runai` statefulset has no available pods |
 | :---- | :---- |
-| **Impact** | Absence of Metrics Database Unavailability |
+| **Impact** | Absence of Metrics Database Unavailability |
 | **Severity** | Critical |
-| **Diagnosis** | To diagnose the issue, follow these steps: Check the status of the stateful sets in the `runai-backend` namespace by running the following command:`kubectl get statefulset -n runai-backend` Identify any stateful sets that have no running pods. These are the ones that might be causing the problem. |
-| **Troubleshooting/Mitigation** | Once you've identified the problematic stateful sets, follow these steps to mitigate the issue: Describe the stateful set to get detailed information on why it cannot create pods. Replace `X` with the name of the stateful set:`kubectl describe statefulset X -n runai-backend` Review the description output to understand the root cause of the issue. Look for events or error messages that explain why the pods are not being created. If you're unable to resolve the issue based on the information gathered, contact Run:ai support for further assistance. |
+| **Diagnosis** | To diagnose the issue, follow these steps: Check the status of the stateful sets in the `runai-backend` namespace by running the following command:`kubectl get statefulset -n runai-backend` Identify any stateful sets that have no running pods. These are the ones that might be causing the problem. |
+| **Troubleshooting/Mitigation** | Once you've identified the problematic stateful sets, follow these steps to mitigate the issue: Describe the stateful set to get detailed information on why it cannot create pods. Replace `X` with the name of the stateful set:`kubectl describe statefulset X -n runai-backend` Review the description output to understand the root cause of the issue. Look for events or error messages that explain why the pods are not being created. If you're unable to resolve the issue based on the information gathered, contact Run:ai support for further assistance. |
 
 ### Adding a custom alert
 
