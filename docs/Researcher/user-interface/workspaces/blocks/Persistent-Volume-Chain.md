@@ -42,8 +42,8 @@ The actions taken by the admin are based on the scope (cluster, department or pr
 1. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label:  
    [run.ai/cluster-wide](http://run.ai/cluster-wide): "true"
 
-!!!NOTE
-   This step is also relevant for creating the data source of type PVC via API.
+!!! NOTE
+    This step is also relevant for creating the data source of type PVC via API.
 
 In the Run:ai platform finish creating the data source of type PVC:
 
@@ -52,7 +52,7 @@ In the Run:ai platform finish creating the data source of type PVC:
    1. Complete all mandatory fields  
    1. Click Create
 
-### For a department scope:
+### For a department scope
 
 1. Locate the PVC in the runai namespace  
 1. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label:  
@@ -63,7 +63,7 @@ In the Run:ai platform finish creating the data source of type PVC:
    1. Complete all mandatory fields  
    1. Click Create
 
-### For a project scope:
+### For a project scope
 
 !!! NOTE
     For project scope, no labels are required.
@@ -83,6 +83,6 @@ When creating a data source of type PVC using a new PVC, Run:ai creates the PVC 
 1. Complete all mandatory fields  
 1. Click Create
 
-!!!NOTES
-   * When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster runai namespace (even if no workload has requested to use this PVC)  
-   * A PVC created in the cluster by selecting the option “New PVC” never appears as a PVC in the “Existing PVC“ option.
+!!! NOTES
+    When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster runai namespace (even if no workload has requested to use this PVC)  
+    A PVC created in the cluster by selecting the option “New PVC” never appears as a PVC in the “Existing PVC“ option.
