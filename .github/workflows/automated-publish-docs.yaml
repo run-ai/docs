@@ -25,7 +25,7 @@ jobs:
       - name: Get all v*.* branches
         id: calculate-env
         run: |
-          BRANCHES=$(git branch --list --all | grep -v master | grep 'origin/v*.*' | sed -n -E 's:.*/(v[0-9]+\.[0-9]+).*:\1:p' | sort -Vu)
+          BRANCHES=$(git branch -r | grep -E '^ *origin/v[0-9]{1,2}\.[0-9]{1,2}$' | sort -Vu | sed 's/origin\///g' | sed 's/ //g')
           NEWEST_VERSION=$(printf '%s\n' "${BRANCHES[@]}" | sort -V | tail -n 1)
           CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
           ALIAS=$CURRENT_BRANCH-alias
@@ -50,7 +50,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ needs.env.outputs.CURRENT_BRANCH }}
-          fetch-depth: 0
 
       - name: setup python
         uses: actions/setup-python@v5
@@ -100,3 +99,4 @@ jobs:
           SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}. PR Link: ${{ github.event.pull_request.html_url }}"
           MSG_MINIMAL: true
           SLACK_FOOTER: ""
+          
