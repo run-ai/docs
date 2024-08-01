@@ -541,6 +541,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/Existing%20PVC/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/building-blocks/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
