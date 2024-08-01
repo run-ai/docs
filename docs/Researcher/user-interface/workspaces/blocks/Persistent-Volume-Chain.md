@@ -84,5 +84,5 @@ When creating a data source of type PVC using a new PVC, Run:ai creates the PVC 
 1. Click Create
 
 !!! NOTES
-    When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster runai namespace (even if no workload has requested to use this PVC)  
+    When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster runai namespace (even if no workload has requested to use this PVC).  
     A PVC created in the cluster by selecting the option “New PVC” never appears as a PVC in the “Existing PVC“ option.
