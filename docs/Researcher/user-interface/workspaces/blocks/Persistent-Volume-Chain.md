@@ -21,11 +21,12 @@ For example: By selecting Department B as the scope of the asset, any user with 
 
 There are two different ways of creating data source of type PVC:
 
-1. **Existing PVC** \- Data source of type PVC using an existing PVC in the cluster  
-1. **New PVC** \- Data source of type PVC by creating a new pvc in the cluster
+1. **Existing PVC**&mdash;Data source of type PVC using an existing PVC in the cluster  
+1. **New PVC**&mdash;Data source of type PVC by creating a new pvc in the cluster
 ![](img/10-pvc.png)
 
-**NOTE**: If there are no existing PVCs that Run:ai has visibility or authorization to use, this option is disabled in the Run:ai platform. For details on providing visibility and authorization, see below Existing PVC.
+!!! NOTE
+    If there are no existing PVCs that Run:ai has visibility or authorization to use, this option is disabled in the Run:ai platform. For details on providing visibility and authorization, see below Existing PVC.
 
 ## Existing PVC
 
@@ -39,10 +40,12 @@ The actions taken by the admin are based on the scope (cluster, department or pr
 
 1. Locate the PVC in the runai namespace  
 1. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label:  
-   [run.ai/cluster-wide](http://run.ai/cluster-wide): "true"  
-   **NOTE:** This step is also relevant for creating the data source of type PVC via API.
+   [run.ai/cluster-wide](http://run.ai/cluster-wide): "true"
 
-	In the Run:ai platform finish creating the data source of type PVC:
+!!!NOTE
+   This step is also relevant for creating the data source of type PVC via API.
+
+In the Run:ai platform finish creating the data source of type PVC:
 
 1. Select your cluster as a scope  
    1. Select the existing PVC  
@@ -62,7 +65,8 @@ The actions taken by the admin are based on the scope (cluster, department or pr
 
 ### For a project scope:
 
-**NOTE**: For project scope, no labels are required.
+!!! NOTE
+    For project scope, no labels are required.
 
 1. In the Run:ai platform finish creating the data source of type PVC:  
    1. Select your project as a scope  
