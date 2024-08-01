@@ -32,8 +32,6 @@ There are two different ways of creating data source of type PVC:
 
 To select an existing PVC in the Run:ai platform, the admin is responsible for performing a number of actions prior to creating the data source via the Run:ai UI (or API). These actions provide Run:ai with access to the existing PVC, authorization to share across the selected scope and eventually result in exposing the existing PVC in the UI for the user to select.
 
-Click the link for more information on [creating a data source of type PVC via API](https://envinaclickstaging.staging.run.ai/api/docs\#tag/PVC/operation/create\_pvc\_asset).
-
 The actions taken by the admin are based on the scope (cluster, department or project) that the admin wants for data source of type PVC.
 
 ### For a cluster scope
