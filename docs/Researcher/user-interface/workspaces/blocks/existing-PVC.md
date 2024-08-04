@@ -23,8 +23,8 @@ For example: By selecting Department B as the scope of the asset, any user with 
 
 There are two different ways of creating data source of type PVC:
 
-1. **Existing PVC** \- Data source of type PVC using an existing PVC in the cluster  
-1. **New PVC** \- Data source of type PVC by creating a new pvc in the cluster!
+1. **Existing PVC**-Data source of type PVC using an existing PVC in the cluster  
+1. **New PVC**-Data source of type PVC by creating a new pvc in the cluster!
 ![](img/10-pvc.png)
 
 !!! NOTE
