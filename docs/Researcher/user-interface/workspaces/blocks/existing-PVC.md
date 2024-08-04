@@ -23,8 +23,8 @@ For example: By selecting Department B as the scope of the asset, any user with 
 
 There are two different ways of creating data source of type PVC:
 
-1. **Existing PVC**-Data source of type PVC using an existing PVC in the cluster  
-1. **New PVC**-Data source of type PVC by creating a new pvc in the cluster!
+1. **Existing PVC** - Data source of type PVC using an existing PVC in the cluster.
+1. **New PVC** - Data source of type PVC by creating a new PVC in the cluster.
 ![](img/10-pvc.png)
 
 !!! NOTE
@@ -86,5 +86,5 @@ When creating a data source of type PVC using a new PVC, Run:ai creates the PVC 
 1. Click Create
 
 !!! NOTES
-    When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster runai namespace (even if no workload has requested to use this PVC).
+    When creating data source of type PVC using a new PVC, the PVC is created immediately in the cluster (even if no workload has requested to use this PVC).
     A PVC created in the cluster by selecting the option “New PVC” never appears as a PVC in the “Existing PVC“ option.
