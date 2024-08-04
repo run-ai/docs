@@ -111,6 +111,7 @@ plugins:
         'admin/runai-setup/authentication/sso.md' : 'admin/runai-setup/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'admin/admin-ui-setup/project-setup.md' : 'admin/aiinitiatives/org/projects.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -213,6 +214,9 @@ nav:
       - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
     - 'Managing AI Intiatives' :
       - 'Overview' : 'admin/aiinitiatives/overview.md'
+      - 'Managing your Organization' :
+        - 'Projects' : 'admin/aiinitiatives/org/projects.md'
+
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
