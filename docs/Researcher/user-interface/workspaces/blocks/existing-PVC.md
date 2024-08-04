@@ -1,5 +1,3 @@
-# Persistent volume claim (PVCs)
-
 # Persistent Volumes (PVs) & Persistent Volume Claims (PVCs)
 
 Persistent Volumes (PVs) and Persistent Volume Claims (PVCs) are concepts in Kubernetes for managing storage. A PV is a piece of storage in the cluster, provisioned by an administrator or dynamically by Kubernetes using a StorageClass. It is a resource in the cluster, just like a node is a cluster resource.
