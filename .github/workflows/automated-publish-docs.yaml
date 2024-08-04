@@ -34,6 +34,7 @@ jobs:
           echo newest_version=$NEWEST_VERSION >> $GITHUB_OUTPUT
           echo alias=$ALIAS >> $GITHUB_OUTPUT
           echo title=$TITLE >> $GITHUB_OUTPUT
+          cho "commit_url=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$GITHUB_SHA" >> $GITHUB_ENV
           
           if [[ "$CURRENT_BRANCH" == "$NEWEST_VERSION" ]]; then
             echo "Deploying $NEWEST_VERSION as latest..."
@@ -97,6 +98,6 @@ jobs:
           SLACK_COLOR: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
           SLACK_TITLE: "RunAI-Docs: Version ${{ needs.env.outputs.CURRENT_BRANCH }} Deployment ${{ contains(needs.*.result, 'failure') && 'failed' || 'completed successfully' }}"
           SLACK_MESSAGE_ON_SUCCESS: "Docs were updated successfully for version ${{ needs.env.outputs.TITLE }}. PR Link: ${{ github.event.pull_request.html_url }}"
-          SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}. PR Link: ${{ github.event.pull_request.html_url }}"
+          SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}. Commit URL: ${{ env.commit_url }}"
           MSG_MINIMAL: true
           SLACK_FOOTER: ""
