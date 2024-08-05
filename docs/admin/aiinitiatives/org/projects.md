@@ -171,9 +171,9 @@ To create a new access rule for a project:
 3. Click +ACCESS RULE  
 4. Select a subject  
 5. Select or enter the subject identifier:  
-   1. User Email for a local user created in Run:ai or for SSO user as recognized by the IDP  
-   2. Group name as recognized by the IDP  
-   3. Application name as created in Run:ai  
+    1. User Email for a local user created in Run:ai or for SSO user as recognized by the IDP  
+    2. Group name as recognized by the IDP  
+    3. Application name as created in Run:ai  
 6. Select a role  
 7. Click SAVE RULE  
 8. Click CLOSE

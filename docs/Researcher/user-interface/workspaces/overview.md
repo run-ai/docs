@@ -17,7 +17,7 @@ Researchers can only view and use workspaces that are created under projects the
 
 ![](img/1-Workspaces-grid.png)
 
-Workspaces can be created with just a few clicks of a button. See [Workspace creation](create/workspace.md).  
+Workspaces can be created with just a few clicks of a button. See [Workspace creation](create/workspace-v2.md).  
 
 Workspaces can be stopped and started to save expensive resources without losing complex environment configurations.
 
