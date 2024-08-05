@@ -66,7 +66,7 @@ Save the URL for future use.
 Post installation, you will want to:
 
 * (Mandatory) Set up [Researcher Access Control](../authentication/researcher-authentication.md). Without this, the Job Submit form will not work.
-* Set up Run:ai Users [Working with Users](../../admin-ui-setup/admin-ui-users.md).
+* Set up Run:ai Users [Working with Users](../../runai-setup/authentication/users.md).
 * Set up Projects for Researchers [Working with Projects](../../aiinitiatives/org/projects.md).
 
 ## Troubleshooting
