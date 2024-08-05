@@ -651,6 +651,56 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/accessrules/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/applications/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/authentication-overview/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/rbac/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/researcher-authentication/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/roles/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/users/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/sso/openidconnect/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/sso/openshift/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/sso/saml/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cli-install/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -677,56 +727,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/installation-types/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/access-control/rbac/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/accessrules/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/applications/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/authentication-overview/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/researcher-authentication/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/roles/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/users/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/openidconnect/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/openshift/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/saml/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1092,11 +1092,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/metrics/metrics/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/home/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
