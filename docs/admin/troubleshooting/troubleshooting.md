@@ -166,7 +166,7 @@
     For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
 
 ??? "Single-sign-on issues"
-    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../runai-setup/authentication/authentication-overview.md) configuration documents. 
+    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../authentication/authentication-overview.md) configuration documents. 
 
 ## User Interface Submit Job Issues
 
@@ -181,7 +181,7 @@
     __Resolution for 401 HTTP Error__
 
     * The Cluster certificate provided as part of the installation is valid and trusted (not self-signed).
-    * [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) has not been properly configured. Try running `runai login` from the Command-line interface. Alternatively, run: `kubectl get pods -n kube-system`, identify the api-server pod and review its logs. 
+    * [Researcher Authentication](../authentication/researcher-authentication.md) has not been properly configured. Try running `runai login` from the Command-line interface. Alternatively, run: `kubectl get pods -n kube-system`, identify the api-server pod and review its logs. 
 
     __Resolution for 403 HTTP Error__
 
@@ -211,7 +211,7 @@
 
     __Root Cause:__  SSO is on and researcher authentication is not properly configured as such.
 
-    __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../runai-setup/authentication/researcher-authentication.md).
+    __Resolution:__ Verify API Server settings as described in [Researcher Authentication configuration](../authentication/researcher-authentication.md).
 
 
 ??? "Job form is not opening on OpenShift"

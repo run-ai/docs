@@ -69,7 +69,7 @@ As an administrator, you may want to disconnect the two parameters. So, for exam
 ## Assign Access Rules to a Project
 
 <!-- This is no longer available even when it is set to enabled!!
-When [Researcher Authentication](../runai-setup/authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.  -->
+When [Researcher Authentication](../authentication/researcher-authentication.md) is enabled, the Project form will contain an additional *Access Control* tab. The tab will allow you to assign Researchers to their Projects.  -->
 
 To assign *Access rules* to the project:
 

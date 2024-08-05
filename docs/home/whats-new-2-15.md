@@ -73,7 +73,7 @@ date: 2023-Dec-3
 
 #### Authorization
 
-* <!-- RUN-7510/9002 and lots of others -->Run:ai has now revised and updated the *Role Based Access Control (RBAC)* mechanism, expanding the scope of Kubernetes. Using the new *RBAC* mechanism makes it easier for administrators to manage access policies across multiple clusters and to define specific access rules over specific scopes for specific users and groups. Along with the revised *RBAC* mechanism, new user interface views are introduced to support the management of users, groups, and access rules. For more information, see [Role based access control](../admin/runai-setup/access-control/rbac.md#role-based-access-control).
+* <!-- RUN-7510/9002 and lots of others -->Run:ai has now revised and updated the *Role Based Access Control (RBAC)* mechanism, expanding the scope of Kubernetes. Using the new *RBAC* mechanism makes it easier for administrators to manage access policies across multiple clusters and to define specific access rules over specific scopes for specific users and groups. Along with the revised *RBAC* mechanism, new user interface views are introduced to support the management of users, groups, and access rules. For more information, see [Role based access control](../admin/authentication/rbac.md#role-based-access-control).
 
 #### Policies
 

@@ -11,7 +11,7 @@ date: 2023-Dec-28
 The Run:ai UI allows you to manage all of the users in the Run:ai platform. There are two types of users, **local** users and **SSO** users. Local users are users that are created and managed in the Run:ai platform and SSO users are authorized to use the Run:ai platform using an identity provider. All users are assigned levels of access to all aspects of the UI including submitting jobs on the cluster.
 
 !!! Tip
-    It is possible to connect the Run:ai UI to the organization's directory and use single sign-on (SSO). This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [single sign-on configuration](../runai-setup/authentication/authentication-overview.md).
+    It is possible to connect the Run:ai UI to the organization's directory and use single sign-on (SSO). This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [single sign-on configuration](../authentication/authentication-overview.md).
 
 ## Create a User
 
@@ -61,7 +61,7 @@ Once you have created the users you can assign them *Access rules*. This provide
 
 ### Roles and permissions
 
-Roles provide a way for administrators to group and identify collections of permissions that administrators assign to [subjects](../runai-setup/access-control/rbac.md#subjects). Permissions define the actions that can be performed on managed entities. The [Roles](../runai-setup/access-control/rbac.md#roles) table shows the default roles and permissions that come with the system. See [Role based access control](../runai-setup/access-control/rbac.md) for more information.
+Roles provide a way for administrators to group and identify collections of permissions that administrators assign to [subjects](../authentication/rbac.md#subjects). Permissions define the actions that can be performed on managed entities. The [Roles](../authentication/rbac.md#roles) table shows the default roles and permissions that come with the system. See [Role based access control](../authentication/rbac.md) for more information.
 
 To add an *Access rule* to a user:
 
