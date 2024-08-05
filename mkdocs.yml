@@ -111,6 +111,8 @@ plugins:
         'admin/runai-setup/authentication/sso.md' : 'admin/runai-setup/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'admin/admin-ui-setup/project-setup.md' : 'admin/aiinitiatives/org/projects.md'
+        'admin/admin-ui-setup/department-setup.md' : 'admin/aiinitiatives/org/departments.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -213,11 +215,17 @@ nav:
       - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
     - 'Managing AI Intiatives' :
       - 'Overview' : 'admin/aiinitiatives/overview.md'
+      - 'Managing your Organization' :
+        - 'Projects' : 'admin/aiinitiatives/org/projects.md'
+        - 'Departments' : 'admin/aiinitiatives/org/departments.md'
+      # - 'Managing your resources' : 
+      #   - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
+      #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
-      - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
-      - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
+#      - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
+#      - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'

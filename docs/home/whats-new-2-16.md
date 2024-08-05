@@ -14,7 +14,7 @@ date: 2023-Dec-4
 
 #### Jobs, Workloads, and Workspaces
 
-* <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability view and edit policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Viewing Project Policies](../admin/admin-ui-setup/project-setup.md#viewing-project-policies).
+* <!-- DONE RUN-10859/RUN-10860 Presenting Policy in workloads creation forms (V2) -->Added the capability view and edit policies directly in the project submission form. Pressing on *Policy* will open a window that displays the effective policy. For more information, see [Viewing Project Policies](../admin/aiinitiatives/org/projects.md#viewing-a-projects-policy).
 <!-- The URLs addresses only viewing policies and not editing policies, I guess it is still work in porogress (let's also be consistent with the terms here and use "edit" like we use in the product and not "change") -->
 
 * <!-- DONE RUN-12619/RUN-14041 Workloads - Reliable data in API and UI Workloads redesign-->Running machine learning workloads effectively on Kubernetes can be difficult, but Run:ai makes it easy. The new *Workloads* experience introduces a simpler and more efficient way to manage machine learning workloads, which will appeal to data scientists and engineers alike. The *Workloads* experience provides a fast, reliable, and easy to use unified interface.
@@ -60,7 +60,7 @@ date: 2023-Dec-4
 
 * <!--  DONE RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added new *Policy Manager. The new *Policy Manager* provides administrators the ability to impose restrictions and default vaules on system resources. The new *Policy Manager* provides a YAML editor for configuration of the policies. Administrators can easily add both *Workspace* or *Training* policies. The editor makes it easy to see the configuration that has been applied and provides a quick and easy method to edit the policies. The new *Policy Editor* brings other important policy features such as the ability to see non-compliant resources in workloads. For more information, see [Policies](../admin/workloads/policies/README.md#policies).
 
-* <!-- DONE RUN-9808/RUN-9810 - Show effective project policy from the UI -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Viewing Project Policies](../admin/admin-ui-setup/project-setup.md#viewing-project-policies).
+* <!-- DONE RUN-9808/RUN-9810 - Show effective project policy from the UI -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Viewing Project Policies](../admin/aiinitiatives/org/projects.md#adding-a-new-project).
 
 ### Control and Visibility
 

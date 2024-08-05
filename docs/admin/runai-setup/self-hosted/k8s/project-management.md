@@ -3,7 +3,7 @@ title: Self Hosted installation over Kubernetes - Create Projects
 ---
 ## Introduction
 
-The Administrator creates Run:ai Projects via the [Run:ai user interface](../../../admin-ui-setup/project-setup.md#create-a-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:ai Projects via the [Run:ai user interface](../../../aiinitiatives/org/projects.md#adding-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
 
 Run:ai Projects are implemented as Kubernetes namespaces. When creating a new Run:ai Project, Run:ai does the following automatically:
 
