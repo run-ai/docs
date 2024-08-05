@@ -202,21 +202,12 @@ nav:
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
     #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
-    - 'Workloads' : 
-      - 'admin/workloads/README.md'
-      - 'Policies' :
-        - 'admin/workloads/policies/README.md'
-        - 'Former Policies' : 'admin/workloads/policies/policies.md'
-        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
-        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
-      - 'Secrets' : 'admin/workloads/secrets.md'
-      - 'Inference' : 'admin/workloads/inference-overview.md'
-      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
     - 'Managing AI Intiatives' :
       - 'Overview' : 'admin/aiinitiatives/overview.md'
       - 'Managing your Organization' :
         - 'Projects' : 'admin/aiinitiatives/org/projects.md'
         - 'Departments' : 'admin/aiinitiatives/org/departments.md'
+        - 'Scheduling Rules' : 'admin/aiinitiatives/org/scheduling-rules.md'
       # - 'Managing your resources' : 
       #   - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
       #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
@@ -229,6 +220,16 @@ nav:
       - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'
       - 'Templates': 'admin/admin-ui-setup/templates.md'
+    - 'Workloads' : 
+      - 'admin/workloads/README.md'
+      - 'Policies' :
+        - 'admin/workloads/policies/README.md'
+        - 'Former Policies' : 'admin/workloads/policies/policies.md'
+        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
+        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
+      - 'Secrets' : 'admin/workloads/secrets.md'
+      - 'Inference' : 'admin/workloads/inference-overview.md'
+      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'

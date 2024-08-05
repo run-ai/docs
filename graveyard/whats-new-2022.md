@@ -21,7 +21,7 @@
     The command-line interface utility for version 2.3 is not compatible with a cluster version of 2.5 or later. If you upgrade the cluster, you must also upgrade the command-line interface. 
 * __Inference__. Run:ai inference offering has been overhauled with the ability to submit deployments via the user interface and a new and consistent API. For more information see [Inference overview](../admin/workloads/inference-overview.md). To enable the new inference module call by Run:ai customer support.
 * __CPU and CPU memory quotas__ can now be configured for projects and departments. These are hard quotas which means that the total amount of the requested resource for all workloads associated with a project/department cannot exceed the set limit. To enable this feature please call Run:ai customer support.
-* __Workloads__. We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/workload-overview-admin.md). The change includes:
+* __Workloads__. We have revamped the way Run:ai submits Jobs. Run:ai now submits [Workloads](../admin/workloads/submitting-workloads.md). The change includes:
     * New [Cluster API](../developer/cluster-api/workload-overview-dev.md). The older [API](../developer/deprecated/researcher-rest-api/overview.md) has been deprecated and remains for backward compatibility. The API creates all the resources required for the run, including volumes, services, and the like. It also deletes all resources when the workload itself is deleted. 
     * Administrative templates have been replaced with [Policies](../admin/workloads/policies.md). Policies apply across all ways to submit jobs: command-line, API, and user interface. 
 * `runai delete` has been changed in favor of `runai delete job` 
