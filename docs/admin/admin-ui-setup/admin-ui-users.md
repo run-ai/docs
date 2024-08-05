@@ -11,7 +11,7 @@ date: 2023-Dec-28
 The Run:ai UI allows you to manage all of the users in the Run:ai platform. There are two types of users, **local** users and **SSO** users. Local users are users that are created and managed in the Run:ai platform and SSO users are authorized to use the Run:ai platform using an identity provider. All users are assigned levels of access to all aspects of the UI including submitting jobs on the cluster.
 
 !!! Tip
-    It is possible to connect the Run:ai UI to the organization's directory and use single sign-on (SSO). This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [single sign-on configuration](../runai-setup/authentication/sso.md).
+    It is possible to connect the Run:ai UI to the organization's directory and use single sign-on (SSO). This allows you to set Run:ai roles for users and groups from the organizational directory. For further information see [single sign-on configuration](../runai-setup/authentication/authentication-overview.md).
 
 ## Create a User
 
