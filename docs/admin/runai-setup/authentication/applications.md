@@ -95,5 +95,5 @@ To regenerate an application’s key:
 
 ## Using API
 
-Go to the [Applications](https://app.run.ai/api/docs\#tag/Applications), [Access rules](https://app.run.ai/api/docs\#tag/Access-rules) API reference to view the available actions
+Go to the [Applications](https://app.run.ai/api/docs#tag/Applications), [Access rules](https://app.run.ai/api/docs#tag/Access-rules) API reference to view the available actions
 

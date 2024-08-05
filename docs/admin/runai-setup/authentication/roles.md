@@ -23,16 +23,16 @@ The Roles table consists of the following columns:
 
 ### Customizing the table view
 
-* Filter \- Click ADD FILTER, select the column to filter by, and enter the filter values  
-* Search \- Click SEARCH and type the value to search by  
-* Sort \- Click each column header to sort by  
-* Column selection \- Click COLUMNS and select the columns to display in the table  
-* Download table \- Click MORE and then Click Download as CSV
+* Filter - Click ADD FILTER, select the column to filter by, and enter the filter values  
+* Search - Click SEARCH and type the value to search by  
+* Sort - Click each column header to sort by  
+* Column selection - Click COLUMNS and select the columns to display in the table  
+* Download table - Click MORE and then Click Download as CSV
 
 ## Reviewing a role
 
-* **Role name** \- The name of the role  
-* **Permissions** \- Displays the available permissions defining the role, as follows:
+* **Role name** - The name of the role  
+* **Permissions** - Displays the available permissions defining the role, as follows:
 
 | Column | Description |
 | :---- | :---- |
@@ -44,5 +44,5 @@ The Roles table consists of the following columns:
 
 *   
   ## Using API
-  Go to the [Roles](https://app.run.ai/api/docs\#tag/Roles) API reference to view the available actions
+  Go to the [Roles](https://app.run.ai/api/docs#tag/Roles) API reference to view the available actions
 

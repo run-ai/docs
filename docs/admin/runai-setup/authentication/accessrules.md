@@ -35,11 +35,11 @@ The Access rules table consists of the following columns:
 
 ### Customizing the table view
 
-* Filter \- Click ADD FILTER, select the column to filter by, and enter the filter values  
-* Search \- Click SEARCH and type the value to search by  
-* Sort \- Click each column header to sort by  
-* Column selection \- Click COLUMNS and select the columns to display in the table  
-* Download table \- Click MORE and then Click Download as CSV
+* Filter - Click ADD FILTER, select the column to filter by, and enter the filter values  
+* Search - Click SEARCH and type the value to search by  
+* Sort - Click each column header to sort by  
+* Column selection - Click COLUMNS and select the columns to display in the table  
+* Download table - Click MORE and then Click Download as CSV
 
 ## Adding new access rules
 
@@ -70,5 +70,5 @@ Access rules cannot be edited. To change an access rule, you must delete the rul
 
 ## Using API
 
-Go to the [Access rules](https://app.run.ai/api/docs\#tag/Access-rules) API reference to view the available actions
+Go to the [Access rules](https://app.run.ai/api/docs#tag/Access-rules) API reference to view the available actions
 

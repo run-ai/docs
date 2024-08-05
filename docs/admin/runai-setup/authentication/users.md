@@ -13,6 +13,7 @@ You can manage local users and manage user permissions (access rules) for both l
 
 !!! Note
     __Single Sign-On users__
+
     SSO users are managed by the identity provider and appear once they have signed in to Run:ai
 
 ![](img/userstable.png)
@@ -31,11 +32,11 @@ The Users table consists of the following columns:
 
 ### Customizing the table view
 
-* Filter \- Click ADD FILTER, select the column to filter by, and enter the filter values  
-* Search \- Click SEARCH and type the value to search by  
-* Sort \- Click each column header to sort by  
-* Column selection \- Click COLUMNS and select the columns to display in the table  
-* Download table \- Click MORE and then Click Download as CSV
+* Filter - Click ADD FILTER, select the column to filter by, and enter the filter values  
+* Search - Click SEARCH and type the value to search by  
+* Sort - Click each column header to sort by  
+* Column selection - Click COLUMNS and select the columns to display in the table  
+* Download table - Click MORE and then Click Download as CSV
 
 ## Creating a local user
 
@@ -97,5 +98,5 @@ To reset a user’s password:
 
 ## Using API
 
-Go to the [Users](https://app.run.ai/api/docs\#tag/Users), [Access rules](https://app.run.ai/api/docs\#tag/Access-rules) API reference to view the available actions
+Go to the [Users](https://app.run.ai/api/docs#tag/Users), [Access rules](https://app.run.ai/api/docs#tag/Access-rules) API reference to view the available actions
 
