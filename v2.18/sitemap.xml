@@ -636,6 +636,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/aiinitiatives/org/scheduling-rules/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/aiinitiatives/resources/node-pools/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
