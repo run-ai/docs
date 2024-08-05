@@ -1,3 +1,5 @@
+Previous version of document
+
 # Single Sign-On
 
 Single Sign-On (SSO) is an authentication scheme allowing users to log in with a single ID to other, independent, software systems. SSO solves security issues involving multiple user/password data entries, multiple compliance schemes, etc.

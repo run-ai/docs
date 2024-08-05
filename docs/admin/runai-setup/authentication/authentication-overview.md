@@ -1,6 +1,5 @@
 # Authentication & Authorization
 
-
 Run:ai Authentication & Authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
 Authentication verifies user identity during login, and Authorization assigns the user with specific permissions according to the assigned access rules.
@@ -17,10 +16,10 @@ Single Sign-On (SSO) is the preferred authentication method by large organizatio
 
 Run:ai offers SSO integration, enabling users to utilize existing organizational credentials to access Run:ai without requiring dedicated credentials.
 
-Run:ai supports three methods to set up SSO:
+Run:ai supports three methods to setup SSO:
 
 * [SAML](sso/saml.md) 
-* [OpenID Connect (OIDC)](sso/openidconnect.md)  
+* [OpenID Connect (OIDC)](sso/openidconnect.md) 
 * [OpenShift](sso/openshift.md)
 
 When using SSO, it is highly recommended to manage at least one local user, as a breakglass account (an emergency account), in case access to SSO is not possible.
@@ -45,7 +44,7 @@ While Kubernetes RBAC is limited to a single cluster, Run:ai expands the scope o
 
 RBAC at Run:ai is configured using access rules.
 
-An access rule is the assignment of a role to a subject in a scope: \<Subject\> is a \<Role\> in a \<Scope\>.
+An access rule is the assignment of a role to a subject in a scope: `<Subject>` is a `<Role>` in a `<Scope>`.
 
 * **Subject**  
   * A user, a group, or an application assigned with the role  
@@ -58,7 +57,9 @@ An access rule is the assignment of a role to a subject in a scope: \<Subject\> 
   * A set of resources that are accessible to a subject for a specific role  
   * A scope is a part of an organization that can be accessed based on assigned roles. Scopes include Projects, Departments, Clusters, Account (all clusters)
 
-An example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
+Below is an example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
+
+
 
 ![](img/auth-rbac.png)
 
