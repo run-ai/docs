@@ -60,7 +60,7 @@ A best practice is to store the user identifier (UID) and the group identifier (
 
 To perform this, you must:
 
-* Set up [single sign-on](../authentication/authentication-overview.md). Perform the steps for UID/GID integration.
+* Set up [single sign-on](../../authentication/authentication-overview.md). Perform the steps for UID/GID integration.
 * Run: `runai login` and enter your credentials
 * Use the flag --run-as-user
 

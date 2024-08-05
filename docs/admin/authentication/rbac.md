@@ -115,5 +115,5 @@ To create a new access rule:
 
 To delete a rule:
 
-1. Press the ![Tools and Settings](../../admin-ui-setup/img/tools-and-settings.svg) icon, then *Roles and Access rules*.
+1. Press the ![Tools and Settings](../admin-ui-setup/img/tools-and-settings.svg) icon, then *Roles and Access rules*.
 2. Choose *Access rules*, then select a rule and press *Delete*.
