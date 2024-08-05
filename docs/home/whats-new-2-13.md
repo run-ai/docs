@@ -88,7 +88,7 @@ The association between workspaces and node pools is done using *Compute resourc
 
 **Time limit duration**
 
-* Improved the behavior of any workload time limit (for example, *Idle time limit*) so that the time limit will affect existing workloads that were created before the time limit was configured. This is an optional feature which provides help in handling situations where researchers leave sessions open even when they do not need to access the resources. For more information, see [Limit duration of interactive training jobs](../admin/admin-ui-setup/project-setup.md#limit-duration-of-interactive-and-training-jobs).
+* Improved the behavior of any workload time limit (for example, *Idle time limit*) so that the time limit will affect existing workloads that were created before the time limit was configured. This is an optional feature which provides help in handling situations where researchers leave sessions open even when they do not need to access the resources. For more information, see [Limit duration of interactive training jobs](#).
 
 * Improved workspaces time limits. Workspaces that reach a time limit will now transition to a state of `stopped` so that they can be reactivated later.
 
