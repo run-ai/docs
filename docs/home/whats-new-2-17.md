@@ -17,7 +17,7 @@ date: 2024-Apr-14
 
 * <!-- RUN-14094/RUN-14095/RUN-10891/RUN-10892/RUN-12686/RUN-12687/RUN-12688/RUN-12689/RUN-13654/RUN-13655 Over provisioning -->Added functionality to configure over provisioning ratios for node pools running any kind of workload. Over provisioning assumes that workloads are either under utilizing or intermittently using GPUs. This indicates that the real utilization is lower than the actual GPU allocation requested. Over provisioning allows the administrator to condense more workloads on a single GPU than what the workload required. For more information, see [Optimize performance with Node Level Scheduler](../Researcher/scheduling/node-level-scheduler.md).
   
-* Added the *GPU Resource Optimization* feature to the UI. Now you can enable and configure *GPU Portion (Fraction) limit* and *GPU Memory Limit* from the UI. For more information, see [Compute resources UI with Dynamic Fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#compute-reources-ui-with-dynamic-fractions-support). <!-- ADDLINK verify this is working-->
+* Added the *GPU Resource Optimization* feature to the UI. Now you can enable and configure *GPU Portion (Fraction) limit* and *GPU Memory Limit* from the UI. For more information, see [Compute resources UI with Dynamic Fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#compute-resources-ui-with-dynamic-fractions-support). <!-- ADDLINK verify this is working-->
 
 * <!-- RUN-15071/RUN-15680 -- Demo Run:ai integration with OpenShift AI -->Added the ability to set Run:ai as the default scheduler for any project or namespace. This provides the administrator the ability to ensure that all workloads in a project or namespace are scheduled using the Run:ai scheduler. For more information, see [Setting Run:ai as default scheduler](../admin/aiinitiatives/org/projects.md).
 
@@ -85,7 +85,7 @@ date: 2024-Apr-14
 
 #### Monitoring and Analytics
 
-* <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->Improved GPU Overview dashboard. This improvement provides rich and extensive GPU allocation and performance data and now has interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/admin-ui-setup/dashboard-analysis.md#overview-dashboard).
+* <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->Improved GPU Overview dashboard. This improvement provides rich and extensive GPU allocation and performance data and now has interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/admin-ui-setup/dashboard-analysis.md).
 
 * <!-- RUN-15878/RUN-16796/RUN-15878/RUN-16085 omit Knative metrics and update supported metrics and hpa autoscaler -->Updated the knative and autoscaler metrics. Run:ai currently supports the following metrics:
 
@@ -126,7 +126,7 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 ### API support and endpoint deprecations
 
-The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#overview-developer-documentation).
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#administrator-api).
 
 #### Deprecated APIs and API fields
 

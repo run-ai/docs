@@ -123,7 +123,6 @@ nav:
       - 'home/whats-new-2-16.md'
       - 'Version 2.15' : 'home/whats-new-2-15.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
-      - 'Version 2.9' : 'home/whats-new-2-9.md'
     - 'Changelog':
       - 'Hot Fixes for 2.17' : 'home/changelog/hotfixes-2-17.md'
       - 'Hot Fixes for 2.16' : 'home/changelog/hotfixes-2-16.md'

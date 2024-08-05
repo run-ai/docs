@@ -112,9 +112,9 @@ To create a new access rule for a department:
 3. Click +ACCESS RULE  
 4. Select a subject  
 5. Select or enter the subject identifier:  
-   * User Email for a local user created in Run:ai or for SSO user as recognized by the IDP  
-   * Group name as recognized by the IDP  
-   * Application name as created in Run:ai  
+    * User Email for a local user created in Run:ai or for SSO user as recognized by the IDP  
+    * Group name as recognized by the IDP  
+    * Application name as created in Run:ai  
 6. Select a role  
 7. Click SAVE RULE  
 8. Click CLOSE
