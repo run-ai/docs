@@ -96,8 +96,6 @@ plugins:
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
-        'admin/runai-setup/advanced/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
-        'admin/runai-setup/advanced/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/advanced/access-roles.md' : 'admin/runai-setup/config/access-roles.md'
         'admin/runai-setup/advanced/allow-external-access-to-containers.md' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
         'admin/runai-setup/advanced/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
@@ -106,11 +104,11 @@ plugins:
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
         'admin/runai-setup/advanced/alert-monitoring.md' : 'admin/runai-setup/maintenance/alert-monitoring.md'
         'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
-        'admin/runai-setup/config/sso.md' : 'admin/runai-setup/authentication/sso.md'
         'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
-        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/sso.md'
+        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/authentication-overview.md'
+        'admin/runai-setup/authentication/sso.md' : 'admin/runai-setup/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
 nav:
@@ -177,11 +175,18 @@ nav:
         - 'Backup & Restore' : 'admin/runai-setup/config/dr.md'
         - 'High Availability' : 'admin/runai-setup/config/ha.md'
         - 'Scaling' : 'admin/runai-setup/config/large-clusters.md'
-      - 'Authentication' :
+      - 'Authentication & Authorization' :
         - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
+        - 'Single Sign-On' : 
+          - 'Setup SSO with SAML' : 'admin/runai-setup/authentication/sso/saml.md'
+          - 'Setup SSO with OpenID Connect' : 'admin/runai-setup/authentication/sso/openidconnect.md'
+          - 'Setup SSO with OpenShift' : 'admin/runai-setup/authentication/sso/openshift.md'
+        - 'Users' : 'admin/runai-setup/authentication/users.md'
+        - 'Applications' : 'admin/runai-setup/authentication/applications.md'
+        - 'Roles' : 'admin/runai-setup/authentication/roles.md'
+        - 'Access Rules' : 'admin/runai-setup/authentication/accessrules.md'
         - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
         - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
-        - 'Single Sign-On' : 'admin/runai-setup/authentication/sso.md'
       - 'Notifications System':
         - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
