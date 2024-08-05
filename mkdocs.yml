@@ -216,7 +216,10 @@ nav:
       - 'Overview' : 'admin/aiinitiatives/overview.md'
       - 'Managing your Organization' :
         - 'Projects' : 'admin/aiinitiatives/org/projects.md'
-
+        - 'Departments' : 'admin/aiinitiatives/org/departments.md'
+      - 'Managing your resources' : 
+        - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
+        - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
       - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
