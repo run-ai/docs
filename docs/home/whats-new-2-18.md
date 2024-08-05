@@ -85,9 +85,9 @@ date: 2024-June-14
 
 #### Single Sign On
 
-* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Added support for Single Sign On using OpenShift v4 (OIDC based). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/runai-setup/authentication/authentication-overview.md#single-sign-on-sso).
+* <!-- TODO Change ticket numbers and description RUN-16859/RUN-16860-->Added support for Single Sign On using OpenShift v4 (OIDC based). When using OpenShift, you must first define OAuthClient which interacts with OpenShift's OAuth server to authenticate users and request access tokens. For more information, see [Single Sign-On](../admin/authentication/authentication-overview.md#single-sign-on-sso).
 
-* <!-- RUN-16788/RUN-16866 - OIDC Scopes -->Added OIDC scopes to authentication requests. OIDC Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/runai-setup/authentication/authentication-overview.md#single-sign-on-sso).
+* <!-- RUN-16788/RUN-16866 - OIDC Scopes -->Added OIDC scopes to authentication requests. OIDC Scopes are used to specify what access privileges are being requested for access tokens. The scopes associated with the access tokens determine what resource are available when they are used to access OAuth 2.0 protected endpoints. Protected endpoints may perform different actions and return different information based on the scope values and other parameters used when requesting the presented access token. For more information, see [UI configuration](../admin/authentication/authentication-overview.md#single-sign-on-sso).
 
 #### Ownership protection
 

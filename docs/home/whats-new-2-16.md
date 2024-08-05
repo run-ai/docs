@@ -54,7 +54,7 @@ date: 2023-Dec-4
 
 #### Authentication and Authorization
 
-* <!--  DONE RUN-13107/RUN-13108 - SSO users visibility-->SSO users who have logged into the system will now be visible in the *Users* table. In addition, added a column to the *Users* table for the type of user that was created (Local or SSO). For more information, see [Adding, Updating, and Deleting Users](../admin/runai-setup/authentication/users.md).
+* <!--  DONE RUN-13107/RUN-13108 - SSO users visibility-->SSO users who have logged into the system will now be visible in the *Users* table. In addition, added a column to the *Users* table for the type of user that was created (Local or SSO). For more information, see [Adding, Updating, and Deleting Users](../admin/authentication/users.md).
 
 #### Policies
 
