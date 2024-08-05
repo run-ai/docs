@@ -60,7 +60,7 @@ This version contains features and fixes from previous versions starting with 2.
 
 **Projects**
 <!-- RUN-9312/9313 Projects V2 -->
-* Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../admin/admin-ui-setup/project-setup.md).
+* Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../admin/aiinitiatives/org/projects.md).
 
 **Dashboards**
 
