@@ -681,6 +681,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/accessrules/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/applications/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/authentication-overview/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -691,7 +701,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/</loc>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/roles/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/users/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/openidconnect/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/openshift/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/authentication/sso/saml/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
