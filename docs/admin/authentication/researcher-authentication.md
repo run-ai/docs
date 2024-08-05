@@ -29,7 +29,7 @@ Assign Researchers to Projects:
 ## Kubernetes Configuration
 
 !!! Important
-    As of Run:ai version 2.15, you only need to perform this step when accessing Run:ai from the [command-line interface](../../researcher-setup/cli-install.md) or sending [YAMLs directly](../../../developer/cluster-api/submit-yaml.md) to Kubernetes
+    As of Run:ai version 2.15, you only need to perform this step when accessing Run:ai from the [command-line interface](../researcher-setup/cli-install.md) or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes
 
 As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. The flags show in the Run:ai user interface under `Settings` | `General` | `Researcher Authentication` | `Server configuration`.
 
@@ -151,7 +151,7 @@ Modifying the API Server configuration differs between Kubernetes distributions:
 
 ## Command-line Interface Access
 
-To control access to Run:ai (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../../researcher-setup/cli-install.md#kubernetes-configuration).
+To control access to Run:ai (and Kubernetes) resources, you must modify the Kubernetes configuration file. The file is distributed to users as part of the [Command-line interface installation](../researcher-setup/cli-install.md#kubernetes-configuration).
 
 When making changes to the file, keep a copy of the original file to be used for cluster administration. After making the modifications, distribute the modified file to Researchers.
 
@@ -174,4 +174,4 @@ You can also submit a Job from the Run:ai User interface and verify that the new
 * On the top-right, select `Submit Job`.
 
 !!! Tip
-    If you do not see the button or it is disabled, then you either do not have `Researcher` access or the cluster has not been set up correctly. For more information, refer to [user interface overview](../../admin-ui-setup/overview.md).
+    If you do not see the button or it is disabled, then you either do not have `Researcher` access or the cluster has not been set up correctly. For more information, refer to [user interface overview](../admin-ui-setup/overview.md).

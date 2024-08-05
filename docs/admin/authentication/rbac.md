@@ -97,7 +97,7 @@ The table contains the following columns:
 
 To create a new access rule:
 
-1. Press the ![Tools and Settings](../../admin-ui-setup/img/tools-and-settings.svg) icon, then *Access rules & Roles*.
+1. Press the ![Tools and Settings](../admin-ui-setup/img/tools-and-settings.svg) icon, then *Access rules & Roles*.
 2. Choose the *ACCESS RULES* tab, then press *NEW ACCESS RULE*.
 3. Select a subject type from the dropdown. Choose from:
 
@@ -108,7 +108,7 @@ To create a new access rule:
       3. **Application**&mdash;an application that has been created in the platform.
 
 4. Select a [Role] from the dropdown.
-5. Press the ![Scope](../../../images/scope-icon.svg) icon and select a scope, and press *SAVE RULE* when done.
+5. Press the ![Scope](../../images/scope-icon.svg) icon and select a scope, and press *SAVE RULE* when done.
 
 !!! Note
     You cannot edit access rules. To change an access rules, you need to delete the rule, then create a new rule to replace it. You can also add multiple rules for the same user.

@@ -132,7 +132,7 @@ This feature provides configuration for credentials that are used to unlock prot
 
 **SSO custom URL logout**
 
-This feature configures a custom logout URL in your tenant. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#logout-url).
+This feature configures a custom logout URL in your tenant. For configuration information, see [SSO UI Configuration](../admin/authentication/sso.md#logout-url).
 
 **Department Administrator**
 
@@ -140,11 +140,11 @@ The new role of *Department Administrator* adds a layer of delegation in the adm
 
 **Enable SSO Using OIDC**
 
-Added an additional SSO configuration option using OIDC as the identity provider. For configuration information, see [SSO UI Configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
+Added an additional SSO configuration option using OIDC as the identity provider. For configuration information, see [SSO UI Configuration](../admin/authentication/sso.md#step-1-ui-configuration).
 
 **Inactivity timeout**
 
-Added inactivity timeout for automated logout. The inactivity timeout is configured in minutes. For configuration information, see [Inactivity timeout](../admin/runai-setup/authentication/authentication-overview.md#inactivity-timeout).
+Added inactivity timeout for automated logout. The inactivity timeout is configured in minutes. For configuration information, see [Inactivity timeout](../admin/authentication/authentication-overview.md#inactivity-timeout).
 
 ### Researcher tools
 

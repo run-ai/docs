@@ -103,12 +103,12 @@ plugins:
         'admin/runai-setup/advanced/dr.md' : 'admin/runai-setup/config/dr.md'
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
         'admin/runai-setup/advanced/alert-monitoring.md' : 'admin/runai-setup/maintenance/alert-monitoring.md'
-        'admin/runai-setup/config/researcher-authentication.md' : 'admin/runai-setup/authentication/researcher-authentication.md'
+        'admin/runai-setup/config/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md'
         'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
-        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/runai-setup/authentication/authentication-overview.md'
-        'admin/runai-setup/authentication/sso.md' : 'admin/runai-setup/authentication/authentication-overview.md'
+        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/authentication/authentication-overview.md'
+        'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
         'admin/admin-ui-setup/project-setup.md' : 'admin/aiinitiatives/org/projects.md'
@@ -176,18 +176,6 @@ nav:
         - 'Backup & Restore' : 'admin/runai-setup/config/dr.md'
         - 'High Availability' : 'admin/runai-setup/config/ha.md'
         - 'Scaling' : 'admin/runai-setup/config/large-clusters.md'
-      - 'Authentication & Authorization' :
-        - 'Overview' : 'admin/runai-setup/authentication/authentication-overview.md'
-        - 'Single Sign-On' : 
-          - 'Setup SSO with SAML' : 'admin/runai-setup/authentication/sso/saml.md'
-          - 'Setup SSO with OpenID Connect' : 'admin/runai-setup/authentication/sso/openidconnect.md'
-          - 'Setup SSO with OpenShift' : 'admin/runai-setup/authentication/sso/openshift.md'
-        - 'Users' : 'admin/runai-setup/authentication/users.md'
-        - 'Applications' : 'admin/runai-setup/authentication/applications.md'
-        - 'Roles' : 'admin/runai-setup/authentication/roles.md'
-        - 'Access Rules' : 'admin/runai-setup/authentication/accessrules.md'
-        - 'Access control' : 'admin/runai-setup/access-control/rbac.md'
-        - 'Researcher Authentication' : 'admin/runai-setup/authentication/researcher-authentication.md'
       - 'Notifications System':
         - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
@@ -202,6 +190,19 @@ nav:
       - 'Setup cluster wide PVC' : 'admin/researcher-setup/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/researcher-setup/limit-to-node-group.md'
     #  - 'Messaging setup' : 'admin/researcher-setup/email-messaging.md'
+    - 'Authentication & Authorization' :
+      - 'Overview' : 'admin/authentication/authentication-overview.md'
+      - 'Single Sign-On' : 
+        - 'Setup SSO with SAML' : 'admin/authentication/sso/saml.md'
+        - 'Setup SSO with OpenID Connect' : 'admin/authentication/sso/openidconnect.md'
+        - 'Setup SSO with OpenShift' : 'admin/authentication/sso/openshift.md'
+      - 'Users' : 'admin/authentication/users.md'
+      - 'Applications' : 'admin/authentication/applications.md'
+      - 'Roles' : 'admin/authentication/roles.md'
+      - 'Access Rules' : 'admin/authentication/accessrules.md'
+      - 'Access control' : 'admin/authentication/rbac.md'
+      - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md'
+
     - 'Managing AI Intiatives' :
       - 'Overview' : 'admin/aiinitiatives/overview.md'
       - 'Managing your Organization' :

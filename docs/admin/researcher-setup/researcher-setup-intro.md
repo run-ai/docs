@@ -18,7 +18,7 @@ To submit workloads with Run:ai, the Researcher must be provided with a _Project
 
 ## Provide access to the Run:ai User Interface
 
-See [Setting up users](../runai-setup/authentication/users.md) for further information on how to provide access to users.  
+See [Setting up users](../authentication/users.md) for further information on how to provide access to users.  
 
 ## Schedule an Onboarding Session
 

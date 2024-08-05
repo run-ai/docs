@@ -9,7 +9,7 @@
 ## June 2022 Run:ai Version 2.6 (Cloud update only)
 
 * The login screen now provides the capability to recover a password. 
-* With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/runai-setup/authentication/sso.md#prerequisites)
+* With single-sign-on, you can now (optionally) map the user's first and last name from the organizational directory. See [single-sign-on prerequisites](../admin/authentication/sso.md#prerequisites)
 * A new user role of __ML Engineer__. The role allows the user to view and manage inference deployments and cluster resources. 
 * [Clearer documentation](../admin/researcher-setup/cli-install.md#install-runai-cli) on how to perform port-forwarding when accessing the Run:ai cluster from Windows.
 * Using the Run:ai user interface it is now possible to clone an existing Job. The clone operation will open a Job form and allow you to change parameters before re-submitting. 
@@ -29,7 +29,7 @@
 * To send logs to Run:ai customer support there is a utility to package all logs into one tar file. Version 2.5 brings a new method that __automatically sends all new logs to Run:ai support__ servers for a set amount of time. See [collecting logs](../index.md#collect-logs-to-send-to-support) for more information.
 * It is now possible to mount an __S3 bucket__ into a Run:ai Job. The option is only available via the command-line interface. For more information see [runai submit](../Researcher/cli-reference/runai-submit.md).
 * User interface improvements: The top navigation bar of the Run:ai user interface has been improved and now allows users to easily access everything related to the account, as well as multiple helpful links to the product documentation, CLI and APIs. 
-* [Researcher Authentication](../admin/runai-setup/authentication/researcher-authentication.md) configuration is now mandatory. 
+* [Researcher Authentication](../admin/authentication/researcher-authentication.md) configuration is now mandatory. 
 
 
 ### Newly Supported Versions
@@ -82,7 +82,7 @@ Other features:
 
 ## February 2022 Run:ai Version 2.2 (Cloud update only)
 
-* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign-on](../admin/runai-setup/authentication/sso.md).
+* When enabling Single-Sign, you can now use _role groups_. With groups, you no longer need to provide roles to individuals. Rather, you can create a group in the organization's directory and assign its members with specific Run:ai Roles such as Administrator, Researcher, and the like. For more information see [single-sign-on](../admin/authentication/sso.md).
 * REST API has changed. The new API relies on `Applications`. See [Calling REST APIs](../developer/rest-auth.md) for more information. 
 * Added a new user role `Research Manager`. The role automatically assigns the user as a Researcher to all projects, including future projects. 
 
