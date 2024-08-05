@@ -666,11 +666,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/researcher-setup/registry-integration/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/researcher-setup-intro/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -762,11 +757,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/dgx-bundle/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/install-k8s/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1137,11 +1127,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-18/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/home/whats-new-2-9/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
