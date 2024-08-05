@@ -86,10 +86,10 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
       **Description**: After trying to log-in, the following message is received in the RunLai log-in page.
       **Mitigation:**
       1. Go to the Tools & Settings menu  
-      1. Click **General**  
-      1. Open the Security section  
-      1. In the identity provider box, check for a "Certificate expired” error  
-      1. If it is expired, update the SAML metadata file to include a valid certificate
+      2. Click **General**  
+      3. Open the Security section  
+      4. In the identity provider box, check for a "Certificate expired” error  
+      5. If it is expired, update the SAML metadata file to include a valid certificate
 
 ??? "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."
       **Description:** Authentication failed because email attribute was not found.
@@ -105,14 +105,14 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
       **Mitigation**:
 
       1. Validate either the user or its related group/s are assigned with [access rules](../accessrules.md)  
-      1. Validate the user’s groups attribute is mapped correctly
+      2. Validate the user’s groups attribute is mapped correctly
 
       **Advanced:**
 
       1. Open the Chrome DevTools: Right-click on page → Inspect → Console tab  
-      1. Run the following command to retrieve and paste the user’s token: `localStorage.token;`  
-      1. Paste in [https://jwt.io](https://jwt.io)  
-      1. Under the Payload section validate the values of the user’s attributes
+      2. Run the following command to retrieve and paste the user’s token: `localStorage.token;`  
+      3. Paste in [https://jwt.io](https://jwt.io)  
+      4. Under the Payload section validate the values of the user’s attributes
 
 ### Advanced Troubleshooting
 
@@ -126,15 +126,15 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
       Validate the SAML Request to ensure the SAML flow works as expected:
 
       1. Go to the Run:ai login screen  
-      1. Open the Chrome Network inspector: Right-click → Inspect on the page → Network tab  
-      1. On the sign-in page click CONTINUE WITH SSO.  
-      1. Once redirected to the Identity Provider, search in the Chrome network inspector for an HTTP request showing the SAML Request. Depending on the IDP url, this would be a request to the IDP domain name. For example, `accounts.google.com/idp?1234`.  
-      1. When found, go to the Payload tab and copy the value of the SAML Request  
-      1. Paste the value into a SAML decoder (e.g. [https://www.samltool.com/decode.php](https://www.samltool.com/decode.php))  
-      1. Validate the request:  
+      2. Open the Chrome Network inspector: Right-click → Inspect on the page → Network tab  
+      3. On the sign-in page click CONTINUE WITH SSO.  
+      4. Once redirected to the Identity Provider, search in the Chrome network inspector for an HTTP request showing the SAML Request. Depending on the IDP url, this would be a request to the IDP domain name. For example, `accounts.google.com/idp?1234`.  
+      5. When found, go to the Payload tab and copy the value of the SAML Request  
+      6. Paste the value into a SAML decoder (e.g. [https://www.samltool.com/decode.php](https://www.samltool.com/decode.php))  
+      7. Validate the request:  
          * The content of the `<saml:Issuer>` tag is the same as `Entity ID` given when adding the identity provider  
          * The content of the `AssertionConsumerServiceURL` is the same as the `Redirect URI` given when adding the identity provider  
-      1. Validate the response:  
+      8. Validate the response:  
          * The user email under the `<saml2:Subject>` tag is the same as the logged-in user  
          * Make sure that under the `<saml2:AttributeStatement>` tag, there is an Attribute named `email` (lowercase). This attribute is mandatory.  
          * If other, optional user attributes (`groups`, `firstName`, `lastName`, `uid`, `gid`) are mapped make sure they also exist under `<saml2:AttributeStatement>` along with their respective values.

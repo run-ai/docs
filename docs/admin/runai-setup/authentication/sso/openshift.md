@@ -18,12 +18,12 @@ Follow the steps below to setup SSO with OpenShift.
 ### Adding the identity provider
 
 1. Go to **Tools & Settings** → **General**  
-1. Open the Security section and click **+IDENTITY PROVIDER**  
-1. Select **OpenShift V4**  
-1. Enter the **Base URL**, Client ID, and **Client Secret** from your OpenShift OAuth client.  
-1. Copy the Redirect URL to be used in your OpenShift OAuth client  
-1. Optional: Enter the user attributes and their value in the identity provider (see the user attributes table below)  
-1. Click **SAVE**  
+2. Open the Security section and click **+IDENTITY PROVIDER**  
+3. Select **OpenShift V4**  
+4. Enter the **Base URL**, Client ID, and **Client Secret** from your OpenShift OAuth client.  
+5. Copy the Redirect URL to be used in your OpenShift OAuth client  
+6. Optional: Enter the user attributes and their value in the identity provider (see the user attributes table below)  
+7. Click **SAVE**  
    User attributes
 
 | Attribute | Default value in Run:ai | Description |
@@ -39,30 +39,30 @@ Follow the steps below to setup SSO with OpenShift.
 ### Testing the setup
 
 1. Open the Run:ai platform as an admin  
-1. Add [Access Rules](../accessrules.md) to an SSO user defined in the IDP  
-1. Open the Run:ai platform in an incognito browser tab  
-1. On the sign-in page click **CONTINUE WITH SSO**  
+2. Add [Access Rules](../accessrules.md) to an SSO user defined in the IDP  
+3. Open the Run:ai platform in an incognito browser tab  
+4. On the sign-in page click **CONTINUE WITH SSO**  
    You are redirected to the OpenShift IDP sign-in page  
-1. In the identity provider sign-in page, log-in with the SSO user who you granted with access rules  
-1. If you are unsuccessful signing-in to the identity provider, follow the Troubleshooting section below
+5. In the identity provider sign-in page, log-in with the SSO user who you granted with access rules  
+6. If you are unsuccessful signing-in to the identity provider, follow the Troubleshooting section below
 
 ## Editing the identity provider
 
 You can view the identity provider details and edit its configuration:
 
 1. Go to **Tools & Settings** → **General**  
-1. Open the Security section  
-1. On the identity provider box, click **Edit identity provider**  
-1. You can edit either the **Base URL**, **Client ID**, **Client Secret**, or the **User attributes**
+2. Open the Security section  
+3. On the identity provider box, click **Edit identity provider**  
+4. You can edit either the **Base URL**, **Client ID**, **Client Secret**, or the **User attributes**
 
 ### Removing the identity provider
 
 You can remove the identity provider configuration:
 
 1. Go to **Tools & Settings** → **General**  
-1. Open the Security section  
-1. On the identity provider card, click **Remove identity provider**  
-1. In the dialog, click **REMOVE** to confirm the action
+2. Open the Security section  
+3. On the identity provider card, click **Remove identity provider**  
+4. In the dialog, click **REMOVE** to confirm the action
 
 !!! Note
     To avoid losing access, removing the identity provider must be carried out by a local user.
@@ -79,15 +79,15 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
     **Mitigation**:
 
     1. Validate either the user or its related group/s are assigned with [access rules](../accessrules.md)  
-    1. Validate groups attribute is available in the configured OIDC Scopes  
-    1. Validate the user’s groups attribute is mapped correctly
+    2. Validate groups attribute is available in the configured OIDC Scopes  
+    3. Validate the user’s groups attribute is mapped correctly
 
     **Advanced:**
 
     1. Open the Chrome DevTools: Right-click on page → Inspect → Console tab  
-    1. Run the following command to retrieve and copy the user’s token: `localStorage.token;`  
-    1. Paste in [https://jwt.io](https://jwt.io/)  
-    1. Under the Payload section validate the value of the user’s attributes
+    2. Run the following command to retrieve and copy the user’s token: `localStorage.token;`  
+    3. Paste in [https://jwt.io](https://jwt.io/)  
+    4. Under the Payload section validate the value of the user’s attributes
 
 ??? "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."
     **Description:** Authentication failed because e-mail attribute was not found.
@@ -95,7 +95,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
     **Mitigation**:
 
     1. Validate email attribute is available in the configured OIDC Scopes  
-    1. Validate the user’s email attribute is mapped correctly
+    2. Validate the user’s email attribute is mapped correctly
 
 ??? "Unexpected error when authenticating with identity provider"
     ![](img/openshift-identityerror.png)
@@ -118,7 +118,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
     **Mitigation**:
 
     1. Validate that the configured OIDC scope exists in the Identity Provider  
-    1. Validate that the configured Client Secret matches the Client Secret value in the OAuthclient Kubernetes object.
+    2. Validate that the configured Client Secret matches the Client Secret value in the OAuthclient Kubernetes object.
 
     **Advanced:**
 
