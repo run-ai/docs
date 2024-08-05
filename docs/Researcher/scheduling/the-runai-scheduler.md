@@ -22,13 +22,13 @@ Projects are quota entities that associate a Project name with a **deserved** GP
 
 A Researcher submitting a workload must associate a Project with any workload request. The Run:ai scheduler will then compare the request against the current allocations and the Project's deserved quota and determine whether the workload can be allocated with resources or whether it should remain in a pending state.
 
-For further information on Projects and how to configure them, see: [Working with Projects](../../admin/admin-ui-setup/project-setup.md)
+For further information on Projects and how to configure them, see: [Working with Projects](../../admin/aiinitiatives/org/projects.md)
 
 ### Departments
 
 A *Department* is the second hierarchy of resource allocation above *Project*. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Projects' quota.  
 
-For further information on Departments and how to configure them, see: [Working with Departments](../../admin/admin-ui-setup/department-setup.md)
+For further information on Departments and how to configure them, see: [Working with Departments](../../admin/aiinitiatives/org/departments.md)
 
 ### Pods
 

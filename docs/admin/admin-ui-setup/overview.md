@@ -5,7 +5,6 @@ Run:ai provides a single user interface that, depending on your role, serves bot
 The control-plane part of the tool allows the administrator to:
 
 * Analyze cluster status using [dashboards](dashboard-analysis.md).
-* Manage Run:ai metadata such as [users](admin-ui-users.md), [departments](department-setup.md), and [projects](project-setup.md).
 * View Job details to be able to help researchers solve Job-related issues.
 
 The researcher workbench part of the tool allows Researchers to submit, delete and pause [Jobs](jobs.md), view Job logs etc.

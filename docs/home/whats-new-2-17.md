@@ -19,7 +19,7 @@ date: 2024-Apr-14
   
 * Added the *GPU Resource Optimization* feature to the UI. Now you can enable and configure *GPU Portion (Fraction) limit* and *GPU Memory Limit* from the UI. For more information, see [Compute resources UI with Dynamic Fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#compute-reources-ui-with-dynamic-fractions-support). <!-- ADDLINK verify this is working-->
 
-* <!-- RUN-15071/RUN-15680 -- Demo Run:ai integration with OpenShift AI -->Added the ability to set Run:ai as the default scheduler for any project or namespace. This provides the administrator the ability to ensure that all workloads in a project or namespace are scheduled using the Run:ai scheduler. For more information, see [Setting Run:ai as default scheduler](../admin/admin-ui-setup/project-setup.md).
+* <!-- RUN-15071/RUN-15680 -- Demo Run:ai integration with OpenShift AI -->Added the ability to set Run:ai as the default scheduler for any project or namespace. This provides the administrator the ability to ensure that all workloads in a project or namespace are scheduled using the Run:ai scheduler. For more information, see [Setting Run:ai as default scheduler](../admin/aiinitiatives/org/projects.md).
 
 #### Jobs, Workloads, and Workspaces
 
