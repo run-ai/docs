@@ -166,7 +166,7 @@
     For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
 
 ??? "Single-sign-on issues"
-    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../runai-setup/authentication/sso.md#troubleshooting) configuration document. 
+    For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../runai-setup/authentication/authentication-overview.md) configuration documents. 
 
 ## User Interface Submit Job Issues
 

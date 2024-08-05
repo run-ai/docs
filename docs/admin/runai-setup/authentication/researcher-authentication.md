@@ -24,7 +24,7 @@ Assign Researchers to Projects:
 
 * Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a `Researcher` role.
 * Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project.
-* If you are using Single Sign-On, you can also assign _Groups_. For more information see the [Single Sign-On](sso.md) documentation.
+* If you are using Single Sign-On, you can also assign _Groups_. For more information see the [Single Sign-On](authentication-overview.md) documentation.
 
 ## Kubernetes Configuration
 

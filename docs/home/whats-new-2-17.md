@@ -103,7 +103,7 @@ date: 2024-Apr-14
     * View and edit the identity provider settings for SAML 2.0
     * Upload or download the SAML 2.0 identity provider metadata XML file.
 
-For more information, see [SSO UI configuration](../admin/runai-setup/authentication/sso.md#step-1-ui-configuration).
+For more information, see [SSO UI configuration](../admin/runai-setup/authentication/authentication-overview.md#single-sign-on-sso).
 
 <!-- #### Policies - 
 no new stories here
