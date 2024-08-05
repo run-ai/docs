@@ -586,11 +586,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/workspace/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/overview-administrator/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -961,86 +956,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiAgentClusterInfoPushRateLow/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiAgentPullRateLow/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageCritical/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiContainerMemoryUsageWarning/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiContainerRestarting/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiCpuUsageWarning/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiCriticalProblem/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiDaemonSetRolloutStuck/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiDaemonSetUnavailableOnNodes/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiDeploymentInsufficientReplicas/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiDeploymentNoAvailableReplicas/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiDeploymentUnavailableReplicas/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiProjectControllerReconcileFailure/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiStatefulSetInsufficientReplicas/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/alertmanager/RunaiStatefulSetNoAvailableReplicas/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/workloads/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -1057,11 +972,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/workloads/submitting-workloads/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/workloads/workload-overview-admin/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1151,11 +1061,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/developer/cluster-api/reference/yaml-reference/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/developer/deprecated/inference/overview/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -1232,11 +1137,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-18/</loc>
-         <lastmod>2024-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/home/whats-new-2-8/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
