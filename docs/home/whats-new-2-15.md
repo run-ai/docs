@@ -34,7 +34,7 @@ date: 2023-Dec-3
     * Improved filters and search
     * More information
   
-    Use the toggle at the top of the *Jobs* page to switch to the *Workloads* view. For more information, see [Workloads](../admin/workloads/workload-overview-admin.md#workloads-view).
+    Use the toggle at the top of the *Jobs* page to switch to the *Workloads* view. For more information.
 
 * <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->Improved support for Kubeflow Notebooks. Run:ai now supports the scheduling of Kubeflow notebooks with fractional GPUs. Kubeflow notebooks are identified automatically and appear with a dedicated icon in the *Jobs* UI.
 * <!-- RUN-11292/RUN-11592 General changes in favor of any asset based workload \(WS, training, DT\)-->Improved the *Trainings* and *Workspaces* forms. Now the runtime field for *Command* and *Arguments* can be edited directly in the new *Workspace* or *Training* creation form.

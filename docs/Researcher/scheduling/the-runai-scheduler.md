@@ -104,7 +104,7 @@ The Run:ai scheduler wakes up periodically to perform allocation tasks on pendin
 A *Node Pool* is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
 By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
 
-* An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups)
+* An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Scheduling Rules](../../admin/aiinitiatives/org/scheduling-rules.md)
 * The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on node pools - The Researcher can then submit a workload and specify a single node pool or a prioritized list of node pools to use and receive guaranteed resources.
 The second is by using node-pool(s) with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of node-pools. This means a Workload must be Preemptible as it uses resources out of the Project or node pool quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node pool and goes Over-Quota.
 * By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using the Project's 'Default node-pool list'.
@@ -113,7 +113,7 @@ The second is by using node-pool(s) with no guaranteed resource for that Project
 
 Both the Administrator and the Researcher can provide limitations as to which nodes can be selected for the Job. Limits are managed via [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){target=_blank}:
 
-* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Setup](../../admin/admin-ui-setup/project-setup.md#limit-jobs-to-run-on-specific-node-groups) for more information.
+* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Scheduling Rules](../../admin/aiinitiatives/org/scheduling-rules.md) for more information.
 * The Researcher can set a limit at the Job level, by using the command-line interface flag `--node-type`. The flag acts as a subset to the Project setting.
 
 Node affinity constraints are used during the *Allocation* phase to filter out candidate nodes for running the Job. For more information on how nodes are filtered see the `Filtering` section under [Node selection in kube-scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/#kube-scheduler-implementation){target=_blank}. The Run:ai scheduler works similarly.
