@@ -113,6 +113,9 @@ plugins:
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
         'admin/admin-ui-setup/project-setup.md' : 'admin/aiinitiatives/org/projects.md'
         'admin/admin-ui-setup/department-setup.md' : 'admin/aiinitiatives/org/departments.md'
+        'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
+        'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
+        'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -214,7 +217,7 @@ nav:
       #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
     - 'User Interface' :
       - 'Overview' : 'admin/admin-ui-setup/overview.md'
-      - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
+#      - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
 #      - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
 #      - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
