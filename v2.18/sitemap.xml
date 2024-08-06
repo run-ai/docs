@@ -1031,41 +1031,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/inference/overview/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/inference/setup/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/inference/submit-via-cli/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/k8s-api/launch-job-via-kubernetes-api/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/k8s-api/launch-job-via-yaml/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/k8s-api/overview/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/deprecated/researcher-rest-api/overview/</loc>
-         <lastmod>2024-08-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/developer/metrics/metrics/</loc>
          <lastmod>2024-08-06</lastmod>
          <changefreq>daily</changefreq>
