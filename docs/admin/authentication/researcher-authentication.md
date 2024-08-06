@@ -170,8 +170,6 @@ You can also submit a Job from the Run:ai User interface and verify that the new
 
 ## Test via User Interface
 
-* Open the Run:ai user interface, go to `Jobs`.
-* On the top-right, select `Submit Job`.
+* Open the Run:ai user interface, go to `Workloads`.
+* On the top-right, select `Submit Workload`.
 
-!!! Tip
-    If you do not see the button or it is disabled, then you either do not have `Researcher` access or the cluster has not been set up correctly. For more information, refer to [user interface overview](../admin-ui-setup/overview.md).

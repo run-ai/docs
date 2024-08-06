@@ -97,7 +97,7 @@ The table contains the following columns:
 
 To create a new access rule:
 
-1. Press the ![Tools and Settings](../admin-ui-setup/img/tools-and-settings.svg) icon, then *Access rules & Roles*.
+1. Press the ![Tools and Settings](img/tools-and-settings.svg) icon, then *Access rules & Roles*.
 2. Choose the *ACCESS RULES* tab, then press *NEW ACCESS RULE*.
 3. Select a subject type from the dropdown. Choose from:
 
@@ -115,5 +115,5 @@ To create a new access rule:
 
 To delete a rule:
 
-1. Press the ![Tools and Settings](../admin-ui-setup/img/tools-and-settings.svg) icon, then *Roles and Access rules*.
+1. Press the ![Tools and Settings](img/tools-and-settings.svg) icon, then *Roles and Access rules*.
 2. Choose *Access rules*, then select a rule and press *Delete*.

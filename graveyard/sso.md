@@ -322,7 +322,7 @@ The latter option is easier to maintain.
 
 * Go to `Tools & Settings`, then press `Users`.
 * Select the `Users` button at the top.
-* Map users as explained [here](../../admin-ui-setup/admin-ui-users.md).
+* Map users.
 
 ### Mapping Role Groups
 

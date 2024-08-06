@@ -116,6 +116,9 @@ plugins:
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
         'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
         'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
+        'admin/admin-ui-setup/credentials-setup.md' : 'admin/workloads/credentials-setup.md'
+        'admin/admin-ui-setup/templates.md' : 'admin/workloads/templates.md'
+        'admin/admin-ui-setup/dashboard-analysis.md' : 'admin/performance/dashboard-analysis.md'
 nav:
   - Home: 
     - 'Overview': 'index.md'
@@ -179,6 +182,7 @@ nav:
         - 'Backup & Restore' : 'admin/runai-setup/config/dr.md'
         - 'High Availability' : 'admin/runai-setup/config/ha.md'
         - 'Scaling' : 'admin/runai-setup/config/large-clusters.md'
+        - 'Administrator Messages' : 'admin/runai-setup/config/admin-messages.md'
       - 'Notifications System':
         - 'Email and System Notifications': 'admin/runai-setup/notifications/notifications.md'
       - 'Maintenance' : 
@@ -215,14 +219,12 @@ nav:
       # - 'Managing your resources' : 
       #   - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
       #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
-    - 'User Interface' :
-      - 'Overview' : 'admin/admin-ui-setup/overview.md'
+    - 'Review your performance' :
+#      - 'Overview' : 'admin/admin-ui-setup/overview.md'
 #      - 'Users' : 'admin/admin-ui-setup/admin-ui-users.md'
 #      - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
 #      - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
-      - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
-      - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'
-      - 'Templates': 'admin/admin-ui-setup/templates.md'
+      - 'Dashboard Analysis' : 'admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'admin/workloads/README.md'
       - 'Policies' :
@@ -233,6 +235,9 @@ nav:
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
       - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
+      - 'Credentials' : 'admin/workloads/credentials-setup.md'
+      - 'Templates': 'admin/workloads/templates.md'
+ 
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'

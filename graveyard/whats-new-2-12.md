@@ -64,7 +64,7 @@ May 2023
 
 **Single sign on**
 
-When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see [Create a new user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user).
+When SSO is enabled, you can still create and authenticate with Local users. For configuration of local users and SSO users, see Create a new user
 
 ##### Researcher tools enhancements
 
