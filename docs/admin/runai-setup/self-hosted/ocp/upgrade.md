@@ -65,7 +65,6 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
 * Search for the customizations you found in the [optional configurations](./backend.md#additional-runai-configurations-optional) table and add them in the new format.  
 
-
 ## Upgrade Control Plane
 ### Upgrade from version 2.13, or later
 === "Connected"
@@ -80,7 +79,6 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
     helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
-
 ### Upgrade from version 2.9
 
 === "Connected"

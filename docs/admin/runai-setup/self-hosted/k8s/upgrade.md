@@ -55,7 +55,6 @@ To remove the ownership in an older installation, run:
 kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
-
 #### Ingress
 
 Delete the ingress object which will be recreated by the control plane upgrade
@@ -72,9 +71,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 
 
 ## Upgrade Control Plane
-
 ### Upgrade from version 2.13, or later
-
 === "Connected"
 
     ``` bash
@@ -87,9 +84,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
     helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
-
 ### Upgrade from version 2.9
-    
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
