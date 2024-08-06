@@ -31,7 +31,7 @@ Third party integrations are tools that Run:ai supports and manages. These are t
 1. Smart gang scheduling (workload aware).
 2. Specific workload aware visibility so that different kinds of pods are identified as a single workload (for example, GPU Utilization, workload view, dashboards).
 
-For more information, see [Supported integrations](#supported-integrations).
+For more information, see [Supported integrations](#third-party-integrations).
 
 ### Typical Kubernetes workloads
 

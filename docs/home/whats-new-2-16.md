@@ -42,7 +42,6 @@ date: 2023-Dec-4
       * Added a chart displaying the number of free GPUs per node. Free GPU are GPUs that have not been allocated to a workload.
       * Added a dashlet that displays the total vs. ready resources for GPUs and CPUs. The dashlet indicates how many total nodes are in the platform, and how many are available. 
 
-    For more information, see [Total and Ready GPU or CPU Nodes](../admin/performance/dashboard-analysis.md#total-and-ready-gpu-or-cpu-nodes).
 
 * <!--  DONE RUN-14703 - Additional columns to consumption report -->Added additional columns to the consumption report for both *Projects* and *Departments* tables. The new columns are:
   
@@ -58,7 +57,7 @@ date: 2023-Dec-4
 
 #### Policies
 
-* <!--  DONE RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added new *Policy Manager. The new *Policy Manager* provides administrators the ability to impose restrictions and default vaules on system resources. The new *Policy Manager* provides a YAML editor for configuration of the policies. Administrators can easily add both *Workspace* or *Training* policies. The editor makes it easy to see the configuration that has been applied and provides a quick and easy method to edit the policies. The new *Policy Editor* brings other important policy features such as the ability to see non-compliant resources in workloads. For more information, see [Policies](../admin/workloads/policies/README.md#policies).
+* <!--  DONE RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added new *Policy Manager. The new *Policy Manager* provides administrators the ability to impose restrictions and default values on system resources. The new *Policy Manager* provides a YAML editor for the configuration of the policies. Administrators can easily add both *Workspace* or *Training* policies. The editor makes it easy to see the configuration that has been applied and provides a quick and easy method to edit the policies. The new *Policy Editor* brings other important policy features such as the ability to see non-compliant resources in workloads. For more information, see [Policies](../admin/workloads/policies/README.md#policy-editor-ui).
 
 * <!-- DONE RUN-9808/RUN-9810 - Show effective project policy from the UI -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Viewing Project Policies](../admin/aiinitiatives/org/projects.md#adding-a-new-project).
 

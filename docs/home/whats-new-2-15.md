@@ -38,7 +38,7 @@ date: 2023-Dec-3
 
 * <!-- RUN-10639/RUN-11389 - Researcher Service Refactoring RUN-12505/RUN-12506 - Support Kubeflow notebooks for scheduling/orchestration -->Improved support for Kubeflow Notebooks. Run:ai now supports the scheduling of Kubeflow notebooks with fractional GPUs. Kubeflow notebooks are identified automatically and appear with a dedicated icon in the *Jobs* UI.
 * <!-- RUN-11292/RUN-11592 General changes in favor of any asset based workload \(WS, training, DT\)-->Improved the *Trainings* and *Workspaces* forms. Now the runtime field for *Command* and *Arguments* can be edited directly in the new *Workspace* or *Training* creation form.
-* <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->Added new functionality to the Run:ai CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now offer the same functionality. For more information, see [runai submit](../Researcher/cli-reference/runai-submit.md#s----service-type-string).
+* <!-- RUN-10235/RUN-10485  Support multi service types in the CLI submission -->Added new functionality to the Run:ai CLI that allows submitting a workload with multiple service types at the same time in a CSV style format. Both the CLI and the UI now offer the same functionality. For more information, see [runai submit](../Researcher/cli-reference/runai-submit.md#-s----service-type-string).
 * <!-- RUN-10335/RUN-10510 Node port command line -->Improved functionality in the `runai submit` command so that the port for the container is specified using the `nodeport` flag. For more information, see `runai submit` [--service-type](../Researcher/cli-reference/runai-submit.md#-s-service-type-string) `nodeport`.
 
 #### Credentials
@@ -51,7 +51,7 @@ date: 2023-Dec-3
 
 #### Volumes and Storage
 
-* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is temporary storage that gets wiped out and lost when the workspace is deleted. Adding Ephemeral storage to a workspace ties that storage to the lifecycle of the *Workspace* to which it was added. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace).
+* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is temporary storage that gets wiped out and lost when the workspace is deleted. Adding Ephemeral storage to a workspace ties that storage to the lifecycle of the *Workspace* to which it was added. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
 
 #### Templates
 
@@ -67,7 +67,7 @@ date: 2023-Dec-3
 
 #### Auto Delete Jobs
 
-* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options to automatically delete jobs after a specified amount of time upon completion. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md#create-a-new-workspace). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#-auto-deletion-time-after-completion).
+* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options to automatically delete jobs after a specified amount of time upon completion. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#-auto-deletion-time-after-completion).
 
 ### Run:ai Administrator
 
