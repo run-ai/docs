@@ -383,11 +383,7 @@ nav:
       - 'Submit CRON job via YAML'  : 'developer/cluster-api/submit-cron-yaml.md'
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
       - 'Data Volumes': 'developer/admin-rest-api/data-volumes.md'
-      - 'Reference' :
-        - 'Training Workloads' : 'developer/cluster-api/reference/training.md'
-        - 'Interactive Workloads' : 'developer/cluster-api/reference/interactive.md'
-        - 'Distributed Training Workloads' : 'developer/cluster-api/reference/distributed.md'
-        - 'Inference Workloads' : 'developer/cluster-api/reference/inference.md'
+      - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Control Plane API' : 'developer/admin-rest-api/overview.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
