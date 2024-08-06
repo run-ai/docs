@@ -221,7 +221,6 @@ nav:
 #      - 'Projects' : 'admin/admin-ui-setup/project-setup.md'
 #      - 'Departments' : 'admin/admin-ui-setup/department-setup.md'
       - 'Dashboard Analysis' : 'admin/admin-ui-setup/dashboard-analysis.md'
-      - 'Jobs' : 'admin/admin-ui-setup/jobs.md'
       - 'Credentials' : 'admin/admin-ui-setup/credentials-setup.md'
       - 'Templates': 'admin/admin-ui-setup/templates.md'
     - 'Workloads' : 

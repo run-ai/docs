@@ -56,15 +56,12 @@ A Workload will typically have a list of *values* (sometimes called *flags*), su
 
 A Workload can be submitted via in the following ways:
 
-* The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
+* The Run:ai user interface.
 * The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
 * The Run:ai [Cluster API](../../developer/cluster-api/workload-overview-dev.md).
 * The Run:ai *Workloads* page.
 
 ### Submit a Workload Using the UI
-
-!!! Important
-    Make sure you have the `Workloads` view enabled. To enable this view, see [Workloads toggle](../admin-ui-setup/jobs.md#workloads-toggle)
 
 To submit a workload using the UI:
 
