@@ -79,4 +79,4 @@ The API response will look as follows:
 To call APIs, the application must pass the retrieved `accessToken` as a *Bearer token* in the Authorization header of your HTTP request.
 
 * To retrieve and manipulate Workloads, use the [Cluster API](cluster-api/workload-overview-dev.md). Researcher API works at the cluster level and you will have different endpoints for different clusters.
-* To retrieve and manipulate other metadata objects, use the [Administrator REST API](admin-rest-api/overview.md). Administrator API works at the control-plane level and you have a single endpoint for all clusters.
+* To retrieve and manipulate other metadata objects, use the [Control Plane REST API](admin-rest-api/overview.md). Control Plane API works at the control-plane level and you have a single endpoint for all clusters.
