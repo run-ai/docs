@@ -24,7 +24,7 @@ Follow the steps bellow, based on the Run:ai Cluster version you would like to u
     * Review the file `old-values.yaml` and see if there are any changes performed during the last installation.
     * In the Run:ai interface, navigate to `Clusters`.
     * Select the cluster you want to upgrade.
-    ** Click on `Get Installation instructions`.
+    * Click on `Get Installation instructions`.
     * Select `Run:ai version: 2.13`.
     * Select the `cluster's Kubernetes distribution` and the `Cluster location`
     * If the Cluster locaiton is remote to the control plane - Enter a  URL for the Kubernetes cluster.
