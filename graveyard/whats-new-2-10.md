@@ -128,7 +128,7 @@ April 2023
 
 **Credential Manager**
 
-This feature provides configuration for credentials that are used to unlock protected resources such as applications, containers, and other assets. For configuration information, see [Credentials](../admin/admin-ui-setup/credentials-setup.md).
+This feature provides configuration for credentials that are used to unlock protected resources such as applications, containers, and other assets. For configuration information, see [Credentials](../admin/workloads/credentials-setup.md).
 
 **SSO custom URL logout**
 
@@ -136,7 +136,7 @@ This feature configures a custom logout URL in your tenant. For configuration in
 
 **Department Administrator**
 
-The new role of *Department Administrator* adds a layer of delegation in the administration of departments. For an explanation of the role, see [Create a user](../admin/admin-ui-setup/admin-ui-users.md#create-a-user). For Department configuration information, see [Assigning the Department Administrator role](../admin/admin-ui-setup/department-setup.md#assign-department-administrator-role).
+The new role of *Department Administrator* adds a layer of delegation in the administration of departments. For an explanation of the role, see Create a user. For Department configuration information, see Assigning the Department Administrator role.
 
 **Enable SSO Using OIDC**
 

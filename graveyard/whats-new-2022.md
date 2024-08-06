@@ -69,8 +69,8 @@ To upgrade to version 2.3 cluster from earlier versions, you must uninstall vers
 
 The Researcher user interface and the Administrator user interface have been unified into a single unified _Run:ai user interface_. The new user interface is served from `https://<company-name>.run.ai`. The user interface capabilities are subject to the role of the individual user. 
 
-* See [instructions](../admin/admin-ui-setup/overview.md) on how to set up the unified user interface. 
-* See [user interface Jobs area](../admin/admin-ui-setup/jobs.md) for a description of how to submit, view and delete Jobs from the unified user interface. 
+* See instructions on how to set up the unified user interface. 
+* See user interface Jobs area for a description of how to submit, view and delete Jobs from the unified user interface. 
 
 
 Other features:
@@ -99,7 +99,7 @@ Future versions will be numbered using 2 digits (2.0, 2.1, 2.2, etc.). The numbe
 
 ### Release Contents
 
-* To allow for better control over resource allocation, the Run:ai platform now provides the ability to define different over-quota priorities for projects. For full details see [Controlling over-quota behavior](../../admin/admin-ui-setup/project-setup/#controlling-over-quota-behavior).
+* To allow for better control over resource allocation, the Run:ai platform now provides the ability to define different over-quota priorities for projects. For full details see Controlling over-quota behavior.
 * To help review and track resource consumption per department, the Department object was added to multiple dashboard metrics.
 
 Supportability enhancements:

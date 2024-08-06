@@ -62,7 +62,7 @@ FIELDS:
 
 A Workload can be submitted via various channels:
 
-* The Run:ai [user interface](../../admin/admin-ui-setup/jobs.md).
+* The Run:ai user interface.
 * The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
 * The Run:ai [Cluster API](submit-yaml.md).
 

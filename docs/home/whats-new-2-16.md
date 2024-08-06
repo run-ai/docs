@@ -33,7 +33,7 @@ date: 2023-Dec-4
 
 ### Run:ai Administrator
 
-* <!-- DONE RUN-13296/RUN-13299	TW - Administrator Messages - Doc gap, there is no page for settings.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages](../admin/admin-ui-setup/overview.md#administrator-messages).
+* <!-- DONE RUN-13296/RUN-13299	TW - Administrator Messages - Doc gap, there is no page for settings.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages](../admin/runai-setup/config/admin-messages.md).
 
 #### Monitoring and Analytics
 
@@ -42,7 +42,7 @@ date: 2023-Dec-4
       * Added a chart displaying the number of free GPUs per node. Free GPU are GPUs that have not been allocated to a workload.
       * Added a dashlet that displays the total vs. ready resources for GPUs and CPUs. The dashlet indicates how many total nodes are in the platform, and how many are available. 
 
-    For more information, see [Total and Ready GPU or CPU Nodes](../admin/admin-ui-setup/dashboard-analysis.md#total-and-ready-gpu-or-cpu-nodes).
+    For more information, see [Total and Ready GPU or CPU Nodes](../admin/performance/dashboard-analysis.md#total-and-ready-gpu-or-cpu-nodes).
 
 * <!--  DONE RUN-14703 - Additional columns to consumption report -->Added additional columns to the consumption report for both *Projects* and *Departments* tables. The new columns are:
   
@@ -50,7 +50,7 @@ date: 2023-Dec-4
       * CPU usage hours&mdash;the actual usage time of CPU.
       * Memory usage time&mdash;the actual usage time of CPU memory.
 
-    For more information, see [Consumption Dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
+    For more information, see [Consumption Dashboard](../admin/performance/dashboard-analysis.md#consumption-dashboard).
 
 #### Authentication and Authorization
 
