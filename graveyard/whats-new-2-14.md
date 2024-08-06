@@ -42,7 +42,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Resource costing
 
-* <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->Added an additional table to the Consumption dashboard that contains the consumption per department and the cost per department. For more information, see [Consumption dashboard](../admin/admin-ui-setup/dashboard-analysis.md#consumption-dashboard).
+* <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->Added table to the Consumption dashboard that contains the consumption per department and the cost per department. For more information, see Consumption dashboard
 
 ### Deployment improvements
 
