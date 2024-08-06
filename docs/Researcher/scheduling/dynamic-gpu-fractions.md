@@ -71,7 +71,7 @@ The supported values depend on the label used. You can use them in either the UI
 ## Compute Resources UI with Dynamic Fractions support
 
 To enable the UI elements for Dynamic Fractions, press *Settings*, *General*, then open the *Resources* pane and toggle *GPU Resource Optimization*. This enables all the UI features related to *GPU Resource Optimization* for the whole tenant. There are other per cluster or per node-pool configurations that should be configured in order to use the capabilities of ‘GPU Resource Optimization’ See the documentation for each of these features.
-Once the ‘GPU Resource Optimization’ feature is enabled, you will be able to create *Compute Resources* with the *GPU Portion (Fraction)* Limit and *GPU Memory Limit*. In addition, you will be able to view the workloads’ utilization vs. Request and Limit parameters in the [Metrics](../../admin/workloads/submitting-workloads.md#workloads-table) pane for each workload.
+Once the ‘GPU Resource Optimization’ feature is enabled, you will be able to create *Compute Resources* with the *GPU Portion (Fraction)* Limit and *GPU Memory Limit*. In addition, you will be able to view the workloads’ utilization vs. Request and Limit parameters in the Metrics pane for each workload.
 
 ![GPU Limit](img/GPU-resource-limit-enabled.png)
 

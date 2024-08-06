@@ -64,7 +64,7 @@ kubectl taint nodes <node-name> runai=drain:NoExecute-
 kubectl delete node <node-name>
 ```
 
-However, if you plan to bring back the node, you will need to rejoin the node into the cluster. See [Rejoin](#Rejoin-a-Node-into-the-Kubernetes-Cluster).
+However, if you plan to bring back the node, you will need to rejoin the node into the cluster. See [Rejoin](#rejoin-a-node-into-the-kubernetes-cluster).
 
 
 

@@ -48,7 +48,7 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
     * Do not add the helm repository and do not run `helm repo update`.
     * Instead, edit the `helm upgrade` command. 
         * Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`. 
-        * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#runai-software-files)
+        * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#software-artifacts)
         * Add `--set global.customCA.enabled=true` and perform the instructions for [local certificate authority](../../config/org-cert.md).
     
     The command should look like the following:

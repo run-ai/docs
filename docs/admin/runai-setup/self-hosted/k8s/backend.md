@@ -17,7 +17,7 @@ Run the helm command below:
         --set global.domain=<DOMAIN>  # (1)
     ```
 
-    1. Domain name described [here](prerequisites.md#domain-name). 
+    1. Domain name described [here](preparations.md#domain-certificate). 
 
     !!! Info
         To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
