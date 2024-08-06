@@ -387,14 +387,14 @@ nav:
       - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Metrics API' : 
       - 'Metrics' : 'developer/metrics/metrics.md'
-    - 'Deprecated APIs' :
-      - 'Researcher API' : 
-        - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
-        - 'Kubernetes API' : 
-          - 'Overview' : 'developer/deprecated/k8s-api/overview.md'
-          - 'Submit a Job via YAML' : 'developer/deprecated/k8s-api/launch-job-via-yaml.md'
-          - 'Submit a Job via Kubernetes API' : 'developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md'
-      - 'Inference API' :
-        - 'Overview' : 'developer/deprecated/inference/overview.md' 
-        - 'Setup' : 'developer/deprecated/inference/setup.md' 
-        - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
+    # - 'Deprecated APIs' :
+    #   - 'Researcher API' : 
+    #     - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
+    #     - 'Kubernetes API' : 
+    #       - 'Overview' : 'developer/deprecated/k8s-api/overview.md'
+    #       - 'Submit a Job via YAML' : 'developer/deprecated/k8s-api/launch-job-via-yaml.md'
+    #       - 'Submit a Job via Kubernetes API' : 'developer/deprecated/k8s-api/launch-job-via-kubernetes-api.md'
+    #   - 'Inference API' :
+    #     - 'Overview' : 'developer/deprecated/inference/overview.md' 
+    #     - 'Setup' : 'developer/deprecated/inference/setup.md' 
+    #     - 'Submit via CLI' : 'developer/deprecated/inference/submit-via-cli.md'
