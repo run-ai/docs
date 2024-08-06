@@ -43,10 +43,10 @@ For example, if you have an Administrator role, you can get a list of clusters b
 
 For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai Administrator REST API to create a User and a Project and set the User to the Project.  
 
-## Administrator API Documentation
+## Control Plane API Documentation
 
-The Administrator API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
+The Control Plane API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
 
 Detailed API documentation can be found at [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. This represents the latest control-plane documentation. If you are running a self-hosted version, see `https://<runai-company-url>/api/docs`.
 
-[Administrator API Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }
+[Control Plane API Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }
