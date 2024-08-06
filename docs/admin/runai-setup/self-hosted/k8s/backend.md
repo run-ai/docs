@@ -31,7 +31,7 @@ Run the helm command below:
     ```
 
     1. Replace `<VERSION>` with the Run:ai control plane version.
-    2. Domain name described [here](prerequisites.md#domain-name). 
+    2. Domain name described [here](preparations.md#domain-certificate). 
     3. See the Local Certificate Authority instructions below
     4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
 
