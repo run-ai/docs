@@ -22,19 +22,19 @@ Run:ai is composed of a single, multi-tenant control plane. Each tenant can be c
 
 Below is a diagram of the Run:ai API Architecture. A developer may:
 
-1. Access the control plane via the _Administrator API_.
+1. Access the control plane via the _Control Plane API_.
 2. Access any one of the GPU clusters via _Cluster API_.
 3. Access cluster metrics via the _Metrics API_.  
 
 ![api architecture image](img/api-architecture.png)
 
-## Administrator API
+## Control Plane API
 
 Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more.
 
 The API is provided as REST and is accessible via the control plane endpoint.  
 
-For more information see [Administrator REST API](admin-rest-api/overview.md).
+For more information see [Control Plane REST API](admin-rest-api/overview.md).
 
 ## Cluster API
 
