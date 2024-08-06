@@ -11,7 +11,7 @@ Run:ai supports simultaneous submission of multiple workloads to a single GPU wh
 
 ## New Time-slicing scheduler by Run:ai
 
-To provide customers with predictable and accurate GPU compute resources scheduling, Run:ai is introducing a new feature called Time-slicing GPU scheduler which adds **fractional compute** capabilities on top of other existing Run:ai **memory fractions** capabilities. Unlike the default NVIDIA GPU orchestrator which doesn’t provide the ability to split or limit the runtime of each workload, Run:ai created a new mechanism that gives each workload **exclusive** access to the full GPU for a **limited** amount of time ([lease time](#timeslicing-plan-and-lease-times)) in each scheduling cycle ([plan time](#timeslicing-plan-and-lease-times)). This cycle repeats itself for the lifetime of the workload.
+To provide customers with predictable and accurate GPU compute resources scheduling, Run:ai is introducing a new feature called Time-slicing GPU scheduler which adds **fractional compute** capabilities on top of other existing Run:ai **memory fractions** capabilities. Unlike the default NVIDIA GPU orchestrator which doesn’t provide the ability to split or limit the runtime of each workload, Run:ai created a new mechanism that gives each workload **exclusive** access to the full GPU for a **limited** amount of time ([lease time](#time-slicing-plan-and-lease-times)) in each scheduling cycle ([plan time](#timeslicing-plan-and-lease-times)). This cycle repeats itself for the lifetime of the workload.
 
 Using the GPU runtime this way guarantees a workload is granted its requested GPU compute resources proportionally to its requested GPU fraction.
 

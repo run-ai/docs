@@ -25,7 +25,7 @@ These dashboards give system administrators the ability to drill down to see det
 
 There are 5 dashboards:
 
-* [**GPU/CPU Overview**](#gpucpu-overview-dashboard) dashboard&mdash;Provides information about what is happening right now in the cluster.
+* [**GPU/CPU Overview**](#gpucpu-overview-dashboard-new-and-legacy) dashboard&mdash;Provides information about what is happening right now in the cluster.
 * [**Quota Management**](#quota-management-dashboard) dashboard&mdash;Provides information about quota utilization.
 * [**Analytics**](#analytics-dashboard) dashboard&mdash;Provides long term analysis of cluster behavior.
 * [**Multi-Cluster Overview**](#multi-cluster-overview-dashboard) dashboard&mdash;Provides a more holistic, multi-cluster view of what is happening right now. The dashboard is intended for organizations that have more than one connected cluster.

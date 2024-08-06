@@ -30,7 +30,7 @@ If you are installing an air-gapped version of Run:ai, The Run:ai tar file conta
 
 === "Airgapped"
     * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tar.gz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
-    * Upload the images as described [here](preparations.md#runai-software-files).
+    * Upload the images as described [here](preparations.md#software-artifacts).
 
 ## Before upgrade
 
@@ -94,7 +94,7 @@ kubectl delete ing -n runai-backend runai-backend-ingress
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
 
 * Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
-* Search for the customizations you found in the [optional configurations](./backend.md#optional-additional-configurations) table and add them in the new format. 
+* Search for the customizations you found in the [optional configurations](./backend.md#additional-runai-configurations-optional) table and add them in the new format. 
 
 
 ## Upgrade Control Plane

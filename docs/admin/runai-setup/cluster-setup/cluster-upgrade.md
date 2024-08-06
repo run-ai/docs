@@ -71,7 +71,7 @@ The process:
 
 ## Verify Successful Installation
 
-See [Verify your installation](cluster-install.md#verify-your-installation) on how to verify a Run:ai cluster installation
+See [Verify your installation](cluster-install.md#verify-your-clusters-health) on how to verify a Run:ai cluster installation
 
 
 

@@ -22,7 +22,7 @@ This process may **need to be altered** if,
 
 Run:ai allows the **association** of a Run:ai Project with any existing Kubernetes namespace:
 
-* When [setting up](cluster.md#customize-installation) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
+* When [setting up](cluster.md#optional-customize-installation) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
 * Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`. A namespace will **not** be created.
 * Associate and existing namepace `<NAMESPACE>` with the Run:ai project by running:
 

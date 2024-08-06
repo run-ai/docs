@@ -96,7 +96,7 @@ kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 
 ### External Postgres database (optional)
 
-If you have opted to use an [external PostgreSQL database](prerequisites.md#external-postgresql-database-optional), you need to perform initial setup to ensure successful installation. Follow these steps:
+If you have opted to use an [external PostgreSQL database](prerequisites.md#external-postgres-database-optional), you need to perform initial setup to ensure successful installation. Follow these steps:
 
 1. Create a SQL script file, edit the parameters below, and save it locally:
     * Replace `<DATABASE_NAME>` with a dedicate database name for RunAi in your PostgreSQL database.

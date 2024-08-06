@@ -22,7 +22,7 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
     * Do not add the helm repository and do not run `helm repo update`.
     * Instead, edit the `helm upgrade` command. 
         * Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`. 
-        * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#runai-software-files)
+        * Add  `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](./preparations.md#software-artifacts)
     
     The command should look like the following:
     
