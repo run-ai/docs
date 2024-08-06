@@ -3,8 +3,8 @@ This article explains the procedure of configuring and managing Scheduling rules
 There are 3 types of rules:
 
 * **Workload time limit** - This rule limits the duration of a workload run time. Workload run time is calculated as the total time in which the workload was in status “Running“.  
-* **Idle GPU time limit** - This rule limits the total GPU time of a workload. Workload idle time is counted since the first time the workload was in status “Running“ and the GPU was idle.  
-  For fractional workloads, workloads running on a MIG slice, multi GPU or multi-node workloads, each GPU idle second is calculated as follows: __<requires explanation about how it is calculated__
+* **Idle GPU time limit** - This rule limits the total GPU time of a workload. Workload idle time is counted from the first time the workload is in status Running and the GPU was idle. We calculate idleness by employing the `runai_gpu_idle_seconds_per_workload metric`. This metric determines the total duration of zero GPU utilization within each 30-second interval. If the GPU remains idle throughout the 30-second window, 30 seconds are added to the idleness sum; otherwise, the idleness count is reset.
+
 * **Node type (Affinity)** - This rule limits a workload to run on specific node types. node type is a node affinity applied on the node. Run:ai labels the nodes with the appropriate affinity and indicates the scheduler where it is allowed to schedule the workload.
 
 Adding a scheduling rule to a project

@@ -216,8 +216,8 @@ nav:
         - 'Projects' : 'admin/aiinitiatives/org/projects.md'
         - 'Departments' : 'admin/aiinitiatives/org/departments.md'
         - 'Scheduling Rules' : 'admin/aiinitiatives/org/scheduling-rules.md'
-      # - 'Managing your resources' : 
-      #   - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
+      - 'Managing your resources' : 
+        - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
       #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
     - 'Review your performance' :
 #      - 'Overview' : 'admin/admin-ui-setup/overview.md'
