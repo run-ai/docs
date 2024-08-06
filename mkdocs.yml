@@ -265,7 +265,7 @@ nav:
           - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
           - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
           - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
-          - 'Existing PVC' : 'Researcher/user-interface/workspaces/blocks/existing-PVC.md'
+          - 'PVCs' : 'Researcher/user-interface/workspaces/blocks/existing-PVC.md'
         - 'Creation' :
             - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
             - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
