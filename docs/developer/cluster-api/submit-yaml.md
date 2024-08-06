@@ -3,7 +3,7 @@
 
 You can use YAML to submit Workloads directly to Run:ai. Below are examples of how to create training, interactive and inference workloads via YAML.
 
-For details on YAML parameters, see the [YAML Reference](Workload-YAML-Reference-v1.pdf).
+For details on YAML parameters, see the [YAML Reference](reference.md).
 
 ## Submit Workload Example
 
