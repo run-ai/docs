@@ -3,7 +3,7 @@ title: Researcher Documentation Overview
 ---
 # Overview: Researcher Documentation
 
-Researchers use Run:ai to submit jobs. 
+_Researchers_, or _AI practitioners_, use Run:ai to submit Workloads. 
 
 As part of the Researcher documentation you will find:
 

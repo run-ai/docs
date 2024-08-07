@@ -20,7 +20,7 @@ FIELDS:
      Allow the container running the workload and all launched processes to gain
      additional privileges after the workload starts. For more information see
      the "User Identity in Container" guide at
-     https://docs.run.ai/admin/runai-setup/config/non-root-containers/
+     https://docs.run.ai/admin/authentication/non-root-containers/
 
    annotations	<Object>
      Specifies annotations to be set in the container that is running the
@@ -256,7 +256,7 @@ FIELDS:
      Alternatively, if your cluster is connected to Run:ai via SAML, you can map
      the container to use the Linux UID/GID which is stored in the
      organization's directory. For more information see the User Identity guide
-     at https://docs.run.ai/admin/runai-setup/config/non-root-containers/
+     at https://docs.run.ai/admin/authentication/non-root-containers/
 
    s3	<Object>
      Specifies S3 buckets to mount into the container running the workload

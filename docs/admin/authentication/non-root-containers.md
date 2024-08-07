@@ -18,7 +18,7 @@ then run `id`, you will see the **root** user.
 
 ## Use Run:ai flags to limit root access
 
-There are two [runai submit](../../../Researcher/cli-reference/runai-submit.md) flags which control user identity at the Researcher level:
+There are two [runai [submit](../../Researcher/cli-reference/runai-submit.md) flags that control user identity at the Researcher level:
 
 * The flag `--run-as-user` starts the container with a specific user. The user is the current Linux user (see below for other behaviors if used in conjunction with Single sign-on).
 * The flag `--prevent-privilege-escalation` prevents the container from elevating its own privileges into `root` (e.g. running `sudo` or changing system files.).
@@ -50,7 +50,7 @@ then verify that you cannot run `su` to become root within the container.
 ### Setting a Cluster-Wide Default
 
 
-The two flags are voluntary. They are not enforced by the system. It is however possible to enforce them using [Policies](../../workloads/policies/policies.md). Polices allow an Administrator to force compliance on both the User Interface and Command-line interface.
+The two flags are voluntary. They are not enforced by the system. It is however possible to enforce them using [Policies](../workloads/policies/policies.md). Policies allow an Administrator to force compliance on both the User Interface and Command-line interface.
 
 
 ## Passing user identity
@@ -60,7 +60,7 @@ A best practice is to store the user identifier (UID) and the group identifier (
 
 To perform this, you must:
 
-* Set up [single sign-on](../../authentication/authentication-overview.md). Perform the steps for UID/GID integration.
+* Set up [single sign-on](authentication-overview.md). Perform the steps for UID/GID integration.
 * Run: `runai login` and enter your credentials
 * Use the flag --run-as-user
 

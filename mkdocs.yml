@@ -98,7 +98,7 @@ plugins:
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
         'admin/runai-setup/advanced/access-roles.md' : 'admin/runai-setup/config/access-roles.md'
         'admin/runai-setup/advanced/allow-external-access-to-containers.md' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
-        'admin/runai-setup/advanced/non-root-containers.md' : 'admin/runai-setup/config/non-root-containers.md'
+        'admin/runai-setup/advanced/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'admin/runai-setup/advanced/cli-admin-install.md' : 'admin/runai-setup/config/cli-admin-install.md'
         'admin/runai-setup/advanced/dr.md' : 'admin/runai-setup/config/dr.md'
         'admin/runai-setup/advanced/node-downtime.md' : 'admin/runai-setup/maintenance/node-downtime.md'
@@ -120,6 +120,7 @@ plugins:
         'admin/admin-ui-setup/templates.md' : 'admin/workloads/templates.md'
         'admin/admin-ui-setup/dashboard-analysis.md' : 'admin/performance/dashboard-analysis.md'
         'index.md' : 'home/overview.md'
+        'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
@@ -179,7 +180,6 @@ nav:
       - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
       - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
       - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
-      - 'User Identity in Container' : 'admin/runai-setup/config/non-root-containers.md'
       - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
       - 'Node Affinity with Cloud Node Pools' : 'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md'
       - 'Local Certificate Authority' : 'admin/runai-setup/config/org-cert.md'
@@ -205,6 +205,7 @@ nav:
       - 'Access Rules' : 'admin/authentication/accessrules.md'
       - 'Access control' : 'admin/authentication/rbac.md'
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md' 
+      - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
       - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
@@ -220,6 +221,7 @@ nav:
       - 'Access Rules' : 'admin/authentication/accessrules.md'
       - 'Access control' : 'admin/authentication/rbac.md'
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md'
+      - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
 
     - 'System Configuration' : 
       - 'Administrator Messages' : 'admin/runai-setup/config/admin-messages.md'

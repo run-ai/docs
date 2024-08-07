@@ -7,7 +7,7 @@ The Platform Administrator is responsible for the day-to-day administration of t
 As part of the Platform Administrator documentation you will find:
 
 
-* Provide the right access to system users.
+* Provide the right access level to users.
 * Configure Run:ai meta-data such as Projects, Departments, Node pools etc.  
 * Setup Workload Policies and Assets
 * Analyze system performance and perform suggested actions. 

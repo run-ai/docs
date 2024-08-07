@@ -59,7 +59,7 @@ There is now an optional second level of Project hierarchy called __Departments_
 
 ## July 28th, 2020
 
-You can now enforce a cluster-wise setting that mandates all containers running using the Run:ai CLI to run as __non root__. For further information, see [Enforce non-root Containers](../admin/runai-setup/config/non-root-containers.md)
+You can now enforce a cluster-wise setting that mandates all containers running using the Run:ai CLI to run as __non root__. For further information, see [Enforce non-root Containers](../admin/authentication/non-root-containers.md)
 
 ## July 21th, 2020
 

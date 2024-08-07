@@ -9,9 +9,12 @@ This section provides a list of installation-related articles dealing with a wid
 |     Article                                             |  Purpose  |
 |---------------------------------------------------------|-----------|
 | [Designating Specific Role Nodes](node-roles.md) | Set one or more designated Run:ai system nodes or limit Run:ai monitoring and scheduling to specific nodes in the cluster. |
-| [Setup Project-based Researcher Access Control](../../authentication/researcher-authentication.md) | Enable  Run:ai access control is at the __Project__ level. | 
-| [Single sign-on](../../authentication/authentication-overview.md) | Integrate with the organization's Identity Provider to provide single sign-on for Run:ai | 
 | [Review Kubernetes Access provided to Run:ai](access-roles.md)     | In Restrictive Kubernetes environments such as when using OpenShift, understand and control what Kubernetes roles are provided to Run:ai | 
 | [External access to Containers](allow-external-access-to-containers.md) | Understand the available options for Researchers to access containers from the outside | 
-| [User Identity in Container](non-root-containers.md) | The identity of the user in the container determines its access to cluster resources. The document explains multiple way on how to propagate the user identity into the container. |
 | [Install the Run:ai Administrator Command-line Interface](cli-admin-install.md) | The Administrator command-line is useful in a variety of flows such as cluster upgrade, node setup etc. | 
+| [Set Node affinity with cloud node pools](node-affinity-with-cloud-node-pools.md) | Set node affinity when using a cloud provider for your cluster | 
+| [Local Certificate Authority](org-cert.md) | For self-hosted Run:ai environments, specifically air-gapped installation, setup a local certificate authority to allow customers to safely connect to Run:ai  | 
+| [Backup & Restore](dr.md) | For self-hosted Run:ai environments, set up a scheduled backup of Run:ai data | 
+| [High Availability](ha.md) | Configure Run:ai such that it will continue to provide service even if parts of the system are down. | 
+| [Scaling](large-clusters.md) | Scale the Run:ai cluster and the Run:ai control-plane to withstand large transaction loads | 
+| [Emails and system notification](../notifications/notifications.md) | Configure e-mail notification |
