@@ -1,5 +1,5 @@
 ---
-title: Metrics
+title: Metrics API
 summary: This article shows the available metrics supported by Run:ai.
 authors:
     - Jason Novich    

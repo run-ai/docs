@@ -395,8 +395,7 @@ nav:
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
       - 'Data Volumes': 'developer/admin-rest-api/data-volumes.md'
       - 'Reference' : 'developer/cluster-api/reference.md'
-    - 'Metrics API' : 
-      - 'Metrics' : 'developer/metrics/metrics.md'
+    - 'Metrics API' : 'developer/metrics/metrics.md'
     # - 'Deprecated APIs' :
     #   - 'Researcher API' : 
     #     - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
