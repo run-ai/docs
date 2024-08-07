@@ -8,33 +8,39 @@ date: 2024-Apr-10
 
 Developers can access Run:ai through various programmatic interfaces.
 
-## API Support
-
-The endpoints and fields specified in the [API reference](https://app.run.ai/api/docs) are the ones that are officially supported by Run:ai. Endpoints and fields that are not listed in the API reference are not supported.
-
-Run:ai does not recommend using API endpoints and fields marked as `deprecated` and will not add functionality to them. Once an API endpoint or field is marked as `deprecated`, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
-
-For details, see the [Deprecation notifications](../home/whats-new-2-17.md#deprecation-notifications).
 
 ## API Architecture
 
 Run:ai is composed of a single, multi-tenant control plane. Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/components.md) for detailed information.
 
-Below is a diagram of the Run:ai API Architecture. A developer may:
+The following programming interfaces are available:
 
-1. Access the control plane via the _Control Plane API_.
-2. Access any one of the GPU clusters via _Cluster API_.
-3. Access cluster metrics via the _Metrics API_.  
+| API     | Description | Purpose | 
+|---------|--------------|--------------|
+| __Control Plane API__ | Access the control plane for getting and modifying business objects | This is the API mostly used by system developers. The API is also used by the Run:ai user interface as well as the __new__ command-line interface | 
+| __Cluster API__ | Submit Workloads directly to the Cluster | A YAML-based API allowing submittion of Workloads directly to the Cluster. With Run:ai 2.18, this API is replaced by a Control-plane API to submit jobs, which is now the recommended method | 
+| __Metrics API__ (deprecated) | Get cluster metrics | Get utilization metrics directly from the monitoring agent (Prometheus). This API is in the process of being deprecated and is replaced with metric-specific control plane API | 
 
-![api architecture image](img/api-architecture.png)
+  
+
+<!-- ![api architecture image](img/api-architecture.png) -->
 
 ## Control Plane API
 
-Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users, and more.
+Allows you to Add, delete, modify and list Run:ai meta-data objects such as Projects, Departments, Users.
+For Clusters of Run:ai 2.18 and above, allows the submitting of Workloasd. 
 
 The API is provided as REST and is accessible via the control plane endpoint.  
 
 For more information see [Control Plane REST API](admin-rest-api/overview.md).
+
+
+!!! Important
+    The endpoints and fields specified in the [API reference](https://app.run.ai/api/docs) are the ones that are officially supported by Run:ai. Endpoints and fields that are not listed in the API reference are not supported.
+
+    Run:ai does not recommend using API endpoints and fields marked as `deprecated` and will not add functionality to them. Once an API endpoint or field is marked as `deprecated`, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
+
+    For details, see the [Deprecation notifications](../home/whats-new-2-17.md#deprecation-notifications).
 
 ## Cluster API
 
@@ -44,8 +50,9 @@ The API is provided as [Kubernetes API](./cluster-api/submit-yaml.md).
 
 Cluster API is accessible via the GPU cluster itself. As such, **multiple clusters may have multiple endpoints**.
 
-!!! Note
-    The same functionality is also available via the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md). The CLI provides an alternative for automating with shell scripts.
+!!! Important
+    * With Run:ai 2.18, this API is replaced by a Control-plane API to submit jobs, which is now the recommended method for cluster versions of 2.18 and above. 
+    * If you are looking to automate tasks, it's best to use the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md) which provides forward compatibility. 
 
 ## Metrics API
 
