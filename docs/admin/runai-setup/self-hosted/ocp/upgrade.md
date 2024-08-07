@@ -46,7 +46,7 @@ Then upgrade the control plane as described [below](#upgrade-control-plane). Bef
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
 
 #### PVC ownership
-Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
+Run:ai no longer directly creates the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
 
 * Run:ai requires a Kubernetes storage class to be installed.
 * The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
