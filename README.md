@@ -5,9 +5,11 @@ Welcome to the Run:ai documentation area. For an introduction about what is the 
 This documentation is based on [mkdocs](https://www.mkdocs.org/). To view the library as a website go to [docs.run.ai](https://docs.run.ai). 
 
 
-The Run:ai documentation is targeting three personas:
+The Run:ai documentation is targeting four personas:
 
-* Run:ai Administrator - Responsible for the setup and the day-to-day administration of the product. Administrator documentation can be found [here](docs/admin/overview-administrator.md).
+* Infrastructure Administrator - An IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. Infrastructure Administrator documentation can be found [here](docs/admin/overview-administrator.md).
+
+* Platform Administrator - Responsible for the day-to-day administration of the product. Platform Administrator documentation can be found [here](docs/admin/overview-administrator.md).
 
 * Researcher - Using Run:ai to submit jobs. Researcher documentation can be found [here](docs/Researcher/overview-researcher.md).
 
