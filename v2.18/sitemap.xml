@@ -631,6 +631,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/authentication/non-root-containers/</loc>
+         <lastmod>2024-08-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/rbac/</loc>
          <lastmod>2024-08-07</lastmod>
          <changefreq>daily</changefreq>
@@ -777,11 +782,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/node-roles/</loc>
-         <lastmod>2024-08-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/non-root-containers/</loc>
          <lastmod>2024-08-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
