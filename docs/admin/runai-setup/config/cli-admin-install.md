@@ -4,6 +4,9 @@ The Run:ai Administrator Command-line Interface (Administrator CLI) allows perfo
 
 The instructions below will guide you through the process of installing the Administrator CLI.
 
+!!! Tip
+    Most of the functionality of the Run:ai Administrator CLI has been removed. It now serves the limited purpose of collecting logs and setting node roles. 
+
 ## Prerequisites
 
 *   Run:ai Administrator CLI runs on Mac and Linux.   
