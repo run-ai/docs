@@ -64,7 +64,7 @@ The example above uses `100Gi` as the size of the swap memory.
 You can also use the `patch` command from your terminal:
 
 ``` yaml
-kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"enabled": true}}}}}'
+kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"enabled": true, "limits": {"cpuRam": "100Gi"}}}}}}'
 ```
 
 To make a workload swappable, a number of conditions must be met:
