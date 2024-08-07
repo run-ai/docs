@@ -1,11 +1,14 @@
-# Overview: Administrator Documentation
+# Overview: Infrastructure Administrator
 
-The role of Administrators is to set up Run:ai and perform day-to-day monitoring and maintenance.
+The Infrastructure Administrator is an IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. 
 
-As part of the Administrator documentation you will find:
 
-* __Run:ai Setup__ How to set up and modify a GPU cluster with Run:ai.
-* __Researcher Setup__ How to set up Researchers to work with Run:ai.
-* How to configure __Workloads__ and Workload __Policies__.
-* Setting and maintaining the cluster via the  __Run:ai User Interface__.
-* __Troubleshooting__ Run:ai and understanding cluster health.
+As part of the Infrastructure Administrator documentation you will find:
+
+* Install Run:ai 
+    * How to set up and modify a GPU cluster with Run:ai.
+    * Set up Researchers to work with Run:ai.
+* Configure the Run:ai system
+* Setup users by connecting Run:ai to an identity provider.
+* IT maintenance of the Run:ai system
+* Troubleshooting Run:ai and understanding cluster health.
