@@ -267,7 +267,7 @@ nav:
       - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
       - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
-    - 'User Interface' :
+    - 'Workloads' :
       - 'Workspaces' :
         - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
         - 'Building Blocks' : 
@@ -283,7 +283,7 @@ nav:
             - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
-    - 'Command Line Interface (CLI) Reference' :
+    - 'Command Line Interface Reference' :
       - 'Improved CLI': 
         - 'Introduction': 'Researcher/cli-reference/new-cli/runai.md'
         -  'Researcher/cli-reference/new-cli/runai_cluster.md'
