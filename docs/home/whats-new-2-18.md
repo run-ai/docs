@@ -79,6 +79,10 @@ date: 2024-June-14
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source). 
 
+* Additional storage unit sizes MiB, GiB & TiB (Megabyte, Gigabyte, and Terabyte respectively) added to the UI and API when creating a new data source of type PVC.
+
+
+
 #### Credentials
 
 * <!-- TODO add doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new *Generic secret* to *Credentials*. *Credentials* had been used only for access to data sources (S3, Git, etc.). However, AI practitioners need to use secrets to access sensitive data (interacting with 3rd party APIs, or other services) without having to put their credentials in their source code. *Generic secrets* leverage multiple key value pairs which helps reduce the number of Kubernetes resources and simplifies resource management by reducing the overhead associated with maintaining multiple Secrets. *Generic secrets* are best used as a data source of type *Secret* so that they can be used in containers to keep access credentials hidden. (Requires minimum cluster version v2.18).
