@@ -6,6 +6,9 @@ authors:
 date: 2024-Jun-18
 ---
 
+!!! Important
+    The following is the new Command-line interface of Run:ai. It works only for Run:ai clusters of version 2.18 and above. 
+
 ## Summary
 
 The Run:ai Command-line Interface (CLI) tool for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, and access other features in the Run:ai platform.
