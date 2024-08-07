@@ -6,9 +6,9 @@ The Infrastructure Administrator is an IT person, responsible for the installati
 As part of the Infrastructure Administrator documentation you will find:
 
 * Install Run:ai 
-    * How to set up and modify a GPU cluster with Run:ai.
+    * Set up a Run:ai Cluster.
     * Set up Researchers to work with Run:ai.
-* Configure the Run:ai system
-* Setup users by connecting Run:ai to an identity provider.
-* IT maintenance of the Run:ai system
-* Troubleshooting Run:ai and understanding cluster health.
+* IT Configuration of the Run:ai system
+* Connect Run:ai to an identity provider.
+* Maintenance & monitoring of the Run:ai system
+* Troubleshooting.
