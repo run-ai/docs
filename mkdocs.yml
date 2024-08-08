@@ -121,6 +121,9 @@ plugins:
         'admin/admin-ui-setup/dashboard-analysis.md' : 'admin/performance/dashboard-analysis.md'
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
+        'admin/workloads/policies/README.md' : 'admin/workloads/policies/overview.md'
+#        'admin/workloads/policies' : 'admin/workloads/policies/overview.md'
+
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
