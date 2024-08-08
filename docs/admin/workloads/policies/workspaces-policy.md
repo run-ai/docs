@@ -1,12 +1,10 @@
 ---
-title:  Workspaces Policy
-summary: This article outlines what is a  workspaces policy and details the variables that are used in the policy.
-authors:
-    - Jason Novich
-date: 2023-Dec-18
+title:   Policies
+summary: This article outlines what is a  policy and details the variables that are used in the policy.
+
 ---
 
-A *Workspaces* policy places resource restrictions and defaults on workspaces in the Run:ai platform. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
+A Policy places resource restrictions and defaults on Workloads in the Run:ai platform. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
 
 ## Example
 
@@ -25,8 +23,6 @@ defaults:
       environmentVariables:
         - name: MY_ENV
           value: my_value
-    workspace:
-      allowOverQuota: true
 rules:
     compute:
       cpuCoreLimit:
@@ -57,9 +53,6 @@ rules:
       createHomeDir:
         canEdit: false
       allowPrivilegeEscalation:
-        canEdit: false
-    workspace:
-      allowOverQuota:
         canEdit: false
     imposedAssets:
       dataSources:
@@ -92,5 +85,3 @@ To create a policy:
 
 !!! Note
     After saving, the form will wait for the policy to sync with the cluster.
-
---8<-- "../docs/snippets/snippets-policies.md"
