@@ -9,9 +9,10 @@ The Run:ai documentation is targeting four personas:
 
 * Platform Administrator - Responsible for the day-to-day administration of the product. Platform Administrator documentation can be found [here](../platform-admin/overview.md)).
 
-* Researcher - Using Run:ai to submit jobs. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
 
-* Developer - Using various APIs to manipulate Jobs and integrate with other systems. Developer documentation can be found [here](../developer/overview-developer.md).
+* Researcher — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
+
+* Developer — “Using various APIs to manipulate Workloads, deploy models, and integrate with other systems. Developer documentation can be found [here](../developer/overview-developer.md).
 
 ## How to get support
 
