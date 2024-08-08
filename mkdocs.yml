@@ -238,15 +238,14 @@ nav:
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
-      - 'admin/workloads/README.md'
+      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
       - 'Policies' :
-        - 'admin/workloads/policies/README.md'
-        - 'Former Policies' : 'admin/workloads/policies/policies.md'
-        - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
-        - 'Workspaces Policy' : 'admin/workloads/policies/workspaces-policy.md'
+        - 'Overview' : 'admin/workloads/policies/overview.md'
+        # - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
+        - 'Policies (API-based)' : 'admin/workloads/policies/workspaces-policy.md'
+        - 'Policies (YAML-based)' : 'admin/workloads/policies/policies.md'
       - 'Secrets' : 'admin/workloads/secrets.md'
       - 'Inference' : 'admin/workloads/inference-overview.md'
-      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
       - 'Credentials' : 'admin/workloads/credentials-setup.md'
       - 'Templates': 'admin/workloads/templates.md'
     - 'Best Practices' :
