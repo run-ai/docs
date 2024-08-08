@@ -283,7 +283,7 @@ nav:
             - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
-    - 'Command Line Interface Reference' :
+    - 'Command Line Interface' :
       - 'Improved CLI': 
         - 'Introduction': 'Researcher/cli-reference/new-cli/runai.md'
         -  'Researcher/cli-reference/new-cli/runai_cluster.md'
