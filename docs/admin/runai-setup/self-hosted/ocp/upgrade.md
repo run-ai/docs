@@ -35,8 +35,6 @@ If you are installing an air-gapped version of Run:ai, The Run:ai tar file conta
 
 Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
 
-### Upgrade from version 2.7 or 2.8
-
 Before upgrading the control plane, run: 
 
 ``` bash
@@ -49,12 +47,13 @@ kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
 
 Then upgrade the control plane as described [below](#upgrade-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
-### Upgrade from version 2.9, 2.10 or 2.11
+### Upgrade from version 2.9
 
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
+
 #### PVC ownership
 
-Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
+Run:ai no longer directly creates the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
 
 * Run:ai requires a Kubernetes storage class to be installed.
 * The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
@@ -92,7 +91,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
 
-### Upgrade from version 2.7, 2.8, 2.9, or 2.11
+### Upgrade from version 2.9
 
 === "Connected"
 
