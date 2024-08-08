@@ -5,16 +5,16 @@ Welcome to the Run:ai documentation area. For an introduction about what is the 
 
 The Run:ai documentation is targeting four personas:
 
-* Infrastructure Administrator - An IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. Infrastructure Administrator documentation can be found [here](../admin/overview-administrator.md).
+* __Infrastructure Administrator__ - An IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. Infrastructure Administrator documentation can be found [here](../admin/overview-administrator.md).
 
-* Platform Administrator - Responsible for the day-to-day administration of the product. Platform Administrator documentation can be found [here](../platform-admin/overview.md)).
+* __Platform Administrator__ - Responsible for the day-to-day administration of the product. Platform Administrator documentation can be found [here](../platform-admin/overview.md).
 
 
-* Researcher — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
+* __Researcher__ — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
 
-* Developer — “Using various APIs to manipulate Workloads, deploy models, and integrate with other systems. Developer documentation can be found [here](../developer/overview-developer.md).
+* __Developer__ — Using various APIs to manipulate Workloads, deploy models, and integrate with other systems. Developer documentation can be found [here](../developer/overview-developer.md).
 
-## How to get support
+## How to Get Support
 
 To get support use the following channels:
 
@@ -28,7 +28,7 @@ To get support use the following channels:
 
 ## Community 
 
-Run:ai provides its customers with access to the _Run:ai Customer Community portal_ in order to submit tickets, track ticket progress and update support cases.
+Run:ai provides its customers with access to the _Run:ai Customer _Community portal_ to submit tickets, track ticket progress and update support cases.
 
 [Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
 
@@ -67,4 +67,4 @@ The following images are used throughout the documentation:
 
 ## Contributing to the documentation
 
-This documentation is made better by a number of individuals from our customer and partner community. If you see something worth fixing, please comment at the bottom of the page or create a pull request via GitHub. The public GitHub repository can be found on the top-right of this page. 
+This documentation is made better by individuals from our customer and partner community. If you see something worth fixing, please comment at the bottom of the page or create a pull request via GitHub. The public GitHub repository can be found on the top-right of this page. 
