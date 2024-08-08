@@ -45,16 +45,3 @@ To create a policy:
 6. In the *Policy YAML* pane, press *+ POLICY YAML* to open the policy editor.
 7. Enter your policy in the policy editor. Add policy properties and variables in YAML format. When complete, press *APPLY*.
 8. When done, press *SAVE POLICY*.
-
-!!! Note
-    After saving, the form will wait for the policy to sync with the cluster.
-
---8<-- "snippets-policies.md:1:170"
-
-#### Training
-
---8<-- "snippets-policies.md:172:775"
-
-#### Training
-
---8<-- "snippets-policies.md:777:843"

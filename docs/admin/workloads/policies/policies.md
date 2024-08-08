@@ -1,10 +1,14 @@
 ---
-title: Policies
-summary: This article is about the V1 policies. These are policies that worked from version 2.15 and lower.
+title: Policies (YAML-based)
+summary: This article is about the V1 policies.
 authors:
     - Jason Novich
 date: 2023-Dec-12
 ---
+
+!!! Warning
+    The below describes the old Policies that rely on YAML-based Policies. While these still work, they have been replaced with Control-plane-based policies which are accessible via API and user interface. 
+    For a description of the new policies, see [API-based Policies](./workspaces-policy.md).
 
 ## What are Policies?
 
