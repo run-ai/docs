@@ -3,9 +3,6 @@
 
 Welcome to the Run:ai documentation area. For an introduction about what is the Run:ai Platform see [Run:ai platform](https://www.run.ai/platform/){target=_blank} on the run.ai website.
 
-
-The Run:ai documentation is targeting three personas:
-
 The Run:ai documentation is targeting four personas:
 
 * Infrastructure Administrator - An IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. Infrastructure Administrator documentation can be found [here](../admin/overview-administrator.md).
