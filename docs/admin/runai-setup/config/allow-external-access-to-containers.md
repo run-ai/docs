@@ -23,8 +23,6 @@ See [https://kubernetes.io/docs/concepts/services-networking/service](https://ku
 
 ## Workspaces configuration
 
-:octicons-versions-24: Version 2.9 and up 
-
 Version 2.9 introduces [Workspaces](../../../Researcher/user-interface/workspaces/overview.md) which allow the Researcher to build AI models interactively. 
 
 Workspaces allow the Researcher to launch tools such as Visual Studio code, TensorFlow, TensorBoard etc. These tools require access to the container. Access is provided via URLs. 
