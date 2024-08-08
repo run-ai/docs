@@ -956,17 +956,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/workloads/policies/</loc>
+         <loc>https://docs.run.ai/v2.18/admin/workloads/policies/overview/</loc>
          <lastmod>2024-08-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/workloads/policies/policies/</loc>
-         <lastmod>2024-08-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/workloads/policies/training-policy/</loc>
          <lastmod>2024-08-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
