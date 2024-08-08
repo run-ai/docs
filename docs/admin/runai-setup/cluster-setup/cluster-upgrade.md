@@ -2,9 +2,9 @@
 # Upgrading a Cluster Installation
 Below are the instructions on how to upgrade a Run:ai cluster.
 
-## Find out Run:ai Cluster version 
+## Upgrade Run:ai cluster 
 
-To find the Run:ai cluster version, run:
+Follow the steps below, based on the Run:ai cluster version you want to upgrade to:
 
 === "2.15-latest"
     * In the Run:ai interface, navigate to `Clusters`
