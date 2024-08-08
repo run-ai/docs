@@ -1,7 +1,5 @@
 ## Description
 
-:octicons-versions-24: Version 2.10 and later.
-
 Submit a distributed PyTorch training run:ai job to run.
 
 !!! Note

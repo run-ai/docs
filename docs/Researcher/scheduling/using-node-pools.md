@@ -1,7 +1,5 @@
 # Introduction
 
-:octicons-versions-24: Version 2.8 and up.
-
 Node pools assist in managing heterogeneous resources effectively.
 A node pool is a set of nodes grouped into a bucket of resources using a predefined (e.g. GPU-Type) or administrator-defined label (key & value). Typically, those nodes share a common feature or property, such as GPU type or other HW capability (such as Infiniband connectivity) or represent a proximity group (i.e. nodes interconnected via a local ultra-fast switch). Those nodes would typically be used by researchers to run specific workloads on specific resource types, or by MLops engineers to run specific Inference workloads that require specific node types.
 
@@ -83,8 +81,6 @@ To download the Node-Pools table to a CSV:
 3. Click on the ellipsis labeled *More*, and download the CSV.
 
 ## Multiple Node Pools Selection
-
-:octicons-versions-24: Version 2.9 and up
 
 Starting version 2.9, Run:ai system supports scheduling workloads to a node pool using a **list of prioritized node pools**. The scheduler will try to schedule the workload to the most prioritized node pool first, if it fails, it will try the second one and so forth. If the scheduler tried the entire list and failed to schedule the workload, it will start from the most prioritized node pool again. This pattern allows for maximizing the odds that a workload will be scheduled.
 
