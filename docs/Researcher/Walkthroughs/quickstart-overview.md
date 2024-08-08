@@ -1,5 +1,10 @@
 
-Below are a set of Quickstart documents. The purpose of these documents is to get you acquainted with an aspect of Run:ai in the simplest possible form.
+Below is a set of Quickstart documents. The purpose of these documents is to get you acquainted with an aspect of Run:ai in the simplest possible form.
+
+!!! Note
+    The Quickstart documents are based solely on the command-line interface. The same functionality can be achieved by using the [Workloads](../user-interface/workspaces/overview.md) User interface which allows for Workload submission and log viewing. 
+
+
 Follow the Quickstart documents below to learn more:
 
 * [Unattended training sessions](walkthrough-train.md)
