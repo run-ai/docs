@@ -4,9 +4,30 @@ summary: This article outlines what is a  policy and details the variables that 
 
 ---
 
+## Enabling the Policy Manager
+
+To use API-based Policies you need to enable the *New Policy Manager*. The policy manager provides information about resources that are non-compliant with the applied policies.  
+
+
+To enable the new *Policy Manager*:
+
+1. Press the *Tools and Settings* icon, then press *General*.
+2. Toggle the *New Policy Manager* switch to on.
+
+To return to the previous *Policy Manager* toggle the switch off.
+
+!!! Note
+    Using the new, API-based Policies, will not disable the older [YAML-based](./policies.md) policies. 
+
+
+## Viewing Policy compliance
+
 A Policy places resource restrictions and defaults on Workloads in the Run:ai platform. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
 
-## Example
+Non-compliant resources (e.g. data sources, compute resources) will appear greyed out. To see how a resource is not compliant, press on the clipboard icon in the upper right-hand corner of the resource.
+
+
+## Example Policy
 
 Below is an example policy you can use in your platform.
 
