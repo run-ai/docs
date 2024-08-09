@@ -178,6 +178,7 @@ nav:
       - 'Researcher Setup' :
         - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
         - 'Install the CLI' : 'admin/researcher-setup/cli-install.md'
+        - 'Install the New CLI' : 'admin/researcher-setup/new-cli-install.md'
     - 'Configuration' : 
       - 'Overview' : 'admin/runai-setup/config/overview.md'
       - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
