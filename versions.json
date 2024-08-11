@@ -18,8 +18,8 @@
     "version": "v2.16",
     "title": "2.16",
     "aliases": [
-      "v2.16-alias",
-      "2.16-alias"
+      "2.16-alias",
+      "v2.16-alias"
     ]
   },
   {
@@ -57,10 +57,5 @@
     "aliases": [
       "2.10-alias"
     ]
-  },
-  {
-    "version": "v2.9",
-    "title": "2.9",
-    "aliases": []
   }
 ]
