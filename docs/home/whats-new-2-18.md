@@ -75,7 +75,7 @@ date: 2024-June-14
     * Shared between multiple scopes&mdash;unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
-    For more information, see [Data Volumes](../developer/admin-rest-api/data-volumes.md). (Requires minimum cluster version v2.18).
+    For more information, see [Data Volumes](../admin/workloads/data-volumes.md). (Requires minimum cluster version v2.18).
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source). 
 
