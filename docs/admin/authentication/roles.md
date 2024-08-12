@@ -42,7 +42,6 @@ The Roles table consists of the following columns:
 | Create | If checked, an assigned user with this role can create new instances of this type of entity within their defined scope |
 | Delete | If checked, an assigned user with this role can delete instances of this type of entity within their defined scope |
 
-*   
-  ## Using API
+## Using API
   Go to the [Roles](https://app.run.ai/api/docs#tag/Roles) API reference to view the available actions
 
