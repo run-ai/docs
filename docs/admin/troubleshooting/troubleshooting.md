@@ -45,6 +45,10 @@
 
     __Resolution:__ Verify that the certificate is valid and trusted. If the certificate is valid, but is signed by a local CA, make sure you have followed the procedure for a [local certificate authority](../runai-setup/config/org-cert.md).
 
+## Cluster Health
+
+See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troubleshooting-scenarios)
+
 ## Dashboard Issues
 
 ??? "No Metrics are showing on Dashboard"
