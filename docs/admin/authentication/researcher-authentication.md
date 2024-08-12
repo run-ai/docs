@@ -1,37 +1,23 @@
 # Setup Researcher Access Control
 
+
 ## Introduction
 
-The following instructions explain how to complete the configuration of access control for Researchers. Run:ai access control is at the **Project** level. When you assign Users to Projects, only these users are allowed to submit Jobs and access Jobs details.
+The following instructions explain how to complete the configuration of access control for Researchers. This requires several steps:
 
-This requires several steps:
-
-* Assign users to their Projects.
-* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate credentials of incoming requests against the Run:ai Authentication authority.
+* (Mandatory) Modify the Kubernetes entry point (called the `Kubernetes API server`) to validate the credentials of incoming requests against the Run:ai Authentication authority.
 * (Command-line Interface usage only) Modify the Kubernetes profile to prompt the Researcher for credentials when running `runai login` (or `oc login` for OpenShift).
 
-## Administration User Interface Setup
 
-<!-- ### Enable Researcher Authentication
 
-* Open the Run:ai user interface and navigate to `Settings | General`. 
-* Enable the flag _Researcher Authentication_ (should be enabled by default for new tenants).
-* There are values for `Realm`, `client configuration`, and `server configuration` which appear on the screen. Use them as below.  -->
+!!! Important
+    * As of Run:ai version 2.16, you only need to perform these steps when accessing Run:ai from the [command-line interface](../researcher-setup/cli-install.md) or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes
+    * As of Run:ai version 2.18, you only need to perform these steps when if using the older command-line interface or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes.
 
-### Assign Users to Projects
-
-Assign Researchers to Projects:
-
-* Open the Run:ai user interface and navigate to `Users`. Add a Researcher and assign it a `Researcher` role.
-* Navigate to `Projects`. Edit or create a Project. Use the `Access Control` tab to assign the Researcher to the Project.
-* If you are using Single Sign-On, you can also assign _Groups_. For more information see the [Single Sign-On](authentication-overview.md) documentation.
 
 ## Kubernetes Configuration
 
-!!! Important
-    As of Run:ai version 2.15, you only need to perform this step when accessing Run:ai from the [command-line interface](../researcher-setup/cli-install.md) or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes
-
-As described in [authentication overview](authentication-overview.md), you must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. The flags show in the Run:ai user interface under `Settings` | `General` | `Researcher Authentication` | `Server configuration`.
+You must direct the Kubernetes API server to authenticate via Run:ai. This requires adding flags to the Kubernetes API Server. The flags show in the Run:ai user interface under `Settings` | `General` | `Researcher Authentication` | `Server configuration`.
 
 Modifying the API Server configuration differs between Kubernetes distributions:
 
