@@ -123,6 +123,7 @@ plugins:
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'admin/workloads/policies/README.md' : 'admin/workloads/policies/overview.md'
 #        'admin/workloads/policies' : 'admin/workloads/policies/overview.md'
+        'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
 
 nav:
   - Home: 
@@ -212,7 +213,7 @@ nav:
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md' 
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
-      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
+#      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
   
