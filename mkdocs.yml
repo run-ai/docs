@@ -124,6 +124,7 @@ plugins:
         'admin/workloads/policies/README.md' : 'admin/workloads/policies/overview.md'
 #        'admin/workloads/policies' : 'admin/workloads/policies/overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
+        'developer/admin-rest-api/data-volumes.md' : 'admin/workloads/data-volumes.md'
 
 nav:
   - Home: 
@@ -253,6 +254,8 @@ nav:
       - 'Inference' : 'admin/workloads/inference-overview.md'
       - 'Credentials' : 'admin/workloads/credentials-setup.md'
       - 'Templates': 'admin/workloads/templates.md'
+      - 'Data Volumes': 'admin/workloads/data-volumes.md' 
+
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
 
@@ -397,7 +400,6 @@ nav:
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
       - 'Submit CRON job via YAML'  : 'developer/cluster-api/submit-cron-yaml.md'
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
-      - 'Data Volumes': 'developer/admin-rest-api/data-volumes.md'
       - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Metrics API' : 'developer/metrics/metrics.md'
     # - 'Deprecated APIs' :
