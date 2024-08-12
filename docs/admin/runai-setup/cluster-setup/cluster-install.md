@@ -36,7 +36,7 @@ On the next page:
 
 * Verify that the cluster status in the Run:ai Control Plane's [Clusters Table](#cluster-table) is `Connected`.
 * Go to the [Overview Dashboard](../../performance/dashboard-analysis.md#gpucpu-overview-dashboard-new-and-legacy) and verify that the number of GPUs on the top right reflects your GPU resources on your cluster and the list of machines with GPU resources appears on the bottom line.
-* In case of issues, see the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md).
+* In case of issues, see the [Cluster troubleshooting](../config/clusters.md#troubleshooting) documentation.
 
 ## Researcher Authentication
 
@@ -71,7 +71,7 @@ The following table describes the different statuses that a cluster could be in.
 | Service issues | At least one of the *Services* is not working properly. You can view the list of nonfunctioning services for more information |
 | Connected | All services are connected and up and running. |
 
-See the [Troubleshooting guide](../../troubleshooting/cluster-health-check.md) to help troubleshoot issues in the cluster.
+See [Cluster troubleshooting](../config/clusters.md#troubleshooting) to help troubleshoot issues in the cluster.
 
 ## Customize your installation
 
