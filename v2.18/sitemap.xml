@@ -921,11 +921,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/troubleshooting/cluster-health-check/</loc>
-         <lastmod>2024-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/troubleshooting/diagnostics/</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
