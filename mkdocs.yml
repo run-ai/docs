@@ -226,7 +226,6 @@ nav:
       - 'Roles' : 'admin/authentication/roles.md'
       - 'Access Rules' : 'admin/authentication/accessrules.md'
       - 'Access control' : 'admin/authentication/rbac.md'
-      - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md'
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
 
     - 'System Configuration' : 
