@@ -2,7 +2,7 @@
 
 Run:ai Authentication & Authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
-Authentication verifies user identity during login, and Authorization assigns the user with specific permissions according to the assigned access rules.
+Authentication verifies user identity during login, and Authorization assigns the user with specific permissions according to the assigned [access rules](accessrules.md).
 
 Authenticated access is required to use all aspects of the Run:ai interfaces, including the Run:ai platform, the Run:ai Command Line Interface (CLI) and APIs.
 
@@ -16,7 +16,7 @@ Single Sign-On (SSO) is the preferred authentication method by large organizatio
 
 Run:ai offers SSO integration, enabling users to utilize existing organizational credentials to access Run:ai without requiring dedicated credentials.
 
-Run:ai supports three methods to setup SSO:
+Run:ai supports three methods to set up SSO:
 
 * [SAML](sso/saml.md) 
 * [OpenID Connect (OIDC)](sso/openidconnect.md) 
@@ -30,7 +30,7 @@ Username and password access can be used when SSO integration is not possible.
 
 ### Secret key (for Application programmatic access)
 
-Secret is the authentication method for Applications. Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on its assigned access rules.
+A Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access](accessrules.md) rules](accessrules.md).
 
 ## Authorization
 
@@ -51,7 +51,7 @@ An access rule is the assignment of a role to a subject in a scope: `<Subject>` 
 * **Role**  
   * A set of permissions that can be assigned to subjects  
   * A permission is a set of actions (view, edit, create and delete) over a Run:ai entity (e.g. projects, workloads, users)  
-    * For example, a role might allow a user to create and read Project, but not update or delete them  
+    * For example, a role might allow a user to create and read Projects, but not update or delete them  
     * Roles at Run:ai are system defined and cannot be created, edited or deleted  
 * **Scope**  
   * A set of resources that are accessible to a subject for a specific role  
