@@ -941,6 +941,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/workloads/data-volumes/</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/workloads/inference-overview/</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -982,11 +987,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/rest-auth/</loc>
-         <lastmod>2024-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/developer/admin-rest-api/data-volumes/</loc>
          <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
