@@ -1036,6 +1036,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/authentication/accessrules/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/authentication/applications/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/authentication/roles/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/authentication/users/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/performance/dashboard-analysis/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
