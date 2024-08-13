@@ -15,7 +15,7 @@ The purpose of this document is to detail the structure and purpose of metrics e
 Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
 
 !!! Warning
-    From cluster version 2.17 and onwards, Run:ai supports metrics via the [Run:ai Control-plane API](../admin-rest-api/overview.md). Direct metrics queries (metrics that are queried directly from Prometheus) are deprecated.
+    From cluster version 2.17 and onwards, Run:ai supports metrics via the [Run:ai Control-plane API](metrics-api.md). Direct metrics queries (metrics that are queried directly from Prometheus) are deprecated.
 
 ## Published Run:ai Metrics
 
