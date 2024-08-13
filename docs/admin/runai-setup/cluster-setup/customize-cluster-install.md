@@ -62,6 +62,6 @@ There are a couple of use cases that customers will want to disable this feature
 Follow these steps to achieve this:
 
 1. Disable the namespace creation functionality. See the  `runai-operator.config.project-controller.createNamespaces` flag above.
-2. [Create a Project](../../aiinitiatives/org/projects.md#adding-a-new-project) using the Run:ai User Interface.
+2. [Create a Project](../../../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project) using the Run:ai User Interface.
 3. Create the namespace if needed by running: `kubectl create ns <NAMESPACE>`. The suggested Run:ai default is `runai-<PROJECT-NAME>`.
 4. Label the namespace to connect it to the Run:ai Project by running `kubectl label ns <NAMESPACE>  runai/queue=<PROJECT_NAME>`, where `<PROJECT_NAME>` is the name of the project you have created in the Run:ai user interface above and `<NAMESPACE>` is the name you chose for your namespace.
