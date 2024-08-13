@@ -225,7 +225,7 @@ nav:
     - 'Overview' : 'platform-admin/overview.md'
 
     - 'Authentication & Authorization' :
-      - 'Users' : 'admin/authentication/users.md'
+      - 'Users' : 'platform-admin/authentication/users.md'
       - 'Applications' : 'admin/authentication/applications.md'
       - 'Roles' : 'admin/authentication/roles.md'
       - 'Access Rules' : 'admin/authentication/accessrules.md'
