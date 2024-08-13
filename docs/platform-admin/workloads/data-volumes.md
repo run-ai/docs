@@ -19,7 +19,7 @@ Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 !!! Note
     Data volumes are not versioned.
 
-![data-volumes-architecture](../img/data-volumes-arch.svg)
+![data-volumes-architecture](img/data-volumes-arch.svg)
 
 ## Data volumes use cases
 
