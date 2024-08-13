@@ -896,11 +896,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/workloads/data-volumes/</loc>
-         <lastmod>2024-08-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/developer/overview-developer/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
@@ -1097,16 +1092,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/workspaces-policy/</loc>
-         <lastmod>2024-08-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/snippets/common-submit-cli-commands/</loc>
-         <lastmod>2024-08-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/snippets/snippets-policies/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
