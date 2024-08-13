@@ -117,6 +117,6 @@ You can attach a data volume to a workload during submission in the same way oth
 
 Researchers can list available data volumes within their permitted scopes for easy selection.
 
-For more information on using a data volume when submitting a workload, see [Submitting Workloads](../../admin/workloads/submitting-workloads.md).
+For more information on using a data volume when submitting a workload, see [Submitting Workloads](../../platform-admin/workloads/submitting-workloads.md).
 
 You can also add a data volumes to your workload when submitting a workload via the API. For more information, see [Workloads](https://app.run.ai/api/docs#tag/Workloads).

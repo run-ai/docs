@@ -116,13 +116,16 @@ plugins:
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
         'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
         'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
-        'admin/admin-ui-setup/credentials-setup.md' : 'admin/workloads/credentials-setup.md'
-        'admin/admin-ui-setup/templates.md' : 'admin/workloads/templates.md'
+        'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/credentials-setup.md'
+        'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/templates.md'
         'admin/admin-ui-setup/dashboard-analysis.md' : 'admin/performance/dashboard-analysis.md'
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
-        'admin/workloads/policies/README.md' : 'admin/workloads/policies/overview.md'
-#        'admin/workloads/policies' : 'admin/workloads/policies/overview.md'
+        'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
+        'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
+#        'platform-admin/workloads/policies' : 'platform-admin/workloads/policies/overview.md'
+        'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
+        'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
 
 nav:
   - Home: 
@@ -242,16 +245,18 @@ nav:
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
-      - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
+      - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
       - 'Policies' :
-        - 'Overview' : 'admin/workloads/policies/overview.md'
-        # - 'Training Policy' : 'admin/workloads/policies/training-policy.md'
-        - 'Policies (API-based)' : 'admin/workloads/policies/workspaces-policy.md'
-        - 'Policies (YAML-based)' : 'admin/workloads/policies/policies.md'
-      - 'Secrets' : 'admin/workloads/secrets.md'
-      - 'Inference' : 'admin/workloads/inference-overview.md'
-      - 'Credentials' : 'admin/workloads/credentials-setup.md'
-      - 'Templates': 'admin/workloads/templates.md'
+        - 'Overview' : 'platform-admin/workloads/policies/overview.md'
+        # - 'Training Policy' : 'platform-admin/workloads/policies/training-policy.md'
+        - 'Policies (API-based)' : 'platform-admin/workloads/policies/workspaces-policy.md'
+        - 'Policies (YAML-based)' : 'platform-admin/workloads/policies/policies.md'
+      - 'Secrets' : 'platform-admin/workloads/secrets.md'
+      - 'Inference' : 'platform-admin/workloads/inference-overview.md'
+      - 'Credentials' : 'platform-admin/workloads/credentials-setup.md'
+      - 'Templates': 'platform-admin/workloads/templates.md'
+      - 'Data Volumes': 'platform-admin/workloads/data-volumes.md' 
+
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
 

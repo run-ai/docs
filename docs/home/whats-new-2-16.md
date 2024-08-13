@@ -23,7 +23,7 @@ date: 2023-Dec-4
     * Reliable data retrieval and presentation in the CLI, UI, and API.
     * Easy to use single unified view with all workload types in one place.
 
-    For more information, see [Workloads Overview](../admin/workloads/README.md).
+    For more information, see [Workloads Overview](../platform-admin/workloads/README.md).
 
 * <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editable by default, allowing researchers the ability to change the value while submitting a workload. Using workload policies, administrators can increase, decrease, set the default value to `never`, or even lock access to this value so researchers can not edit it when they submit workloads.
 
@@ -57,7 +57,7 @@ date: 2023-Dec-4
 
 #### Policies
 
-* <!--  DONE RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added new *Policy Manager. The new *Policy Manager* provides administrators the ability to impose restrictions and default values on system resources. The new *Policy Manager* provides a YAML editor for the configuration of the policies. Administrators can easily add both *Workspace* or *Training* policies. The editor makes it easy to see the configuration that has been applied and provides a quick and easy method to edit the policies. The new *Policy Editor* brings other important policy features such as the ability to see non-compliant resources in workloads. For more information, see [Policies](../admin/workloads/policies/workspaces-policy.md#viewing-or-edit-a-policy).
+* <!--  DONE RUN-11125/RUN-11746	TW - Policy Sync - Catch all for the new policies pages and features. -->Added new *Policy Manager. The new *Policy Manager* provides administrators the ability to impose restrictions and default values on system resources. The new *Policy Manager* provides a YAML editor for the configuration of the policies. Administrators can easily add both *Workspace* or *Training* policies. The editor makes it easy to see the configuration that has been applied and provides a quick and easy method to edit the policies. The new *Policy Editor* brings other important policy features such as the ability to see non-compliant resources in workloads. For more information, see [Policies](../platform-admin/workloads/policies/workspaces-policy.md#viewing-or-edit-a-policy).
 
 * <!-- DONE RUN-9808/RUN-9810 - Show effective project policy from the UI -->Added a new policy manager. Enabling the *New Policy Manager* provides new tools to discover how resources are not compliant. Non-compliant resources and will appear greyed out and cannot be selected. To see how a resource is not compliant, press on the clipboard icon in the upper right hand corner of the resource. Policies can also be applied to specific scopes within the Run:ai platform. For more information, see [Viewing Project Policies](../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project).
 

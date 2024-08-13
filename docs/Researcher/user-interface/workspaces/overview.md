@@ -28,7 +28,7 @@ When the workspace is active it exposes the connections to the tools (for exampl
 ![](img/2-connecting-to-tools.png)
 
 
-An active workspace is a Run:ai [interactive workload](../../../admin/workloads/submitting-workloads.md). The interactive workload starts when the workspace is started and stops when the workspace is stopped. 
+An active workspace is a Run:ai [interactive workload](../../../platform-admin/workloads/submitting-workloads.md). The interactive workload starts when the workspace is started and stops when the workspace is stopped. 
 
 
 Workspaces can be used via the user interface or programmatically via the Run:ai [Admin API](../../../developer/admin-rest-api/overview.md). Workspaces are not supported via the command line interface. You can still run an interactive workload via the command line. 
