@@ -99,7 +99,7 @@ date: 2023-Dec-3
 
 #### Dashboards
 
-* <!-- RUN-12313/12314 - CPU focused dashboards -->To ease the management of AI CPU and cluster resources, a new CPU focused dashboard was added for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that are specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/performance/dashboard-analysis.md#cpu-dashboard).
+* <!-- RUN-12313/12314 - CPU focused dashboards -->To ease the management of AI CPU and cluster resources, a new CPU focused dashboard was added for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that are specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../platform-admin/performance/dashboard-analysis.md#cpu-dashboard).
 * <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
 * <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->Added an additional table to the Consumption dashboard that displays the consumption and cost per department. For more information, see [Consumption dashboard](../admin/performance/dashboard-analysis.md#consumption-dashboard).
 

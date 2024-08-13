@@ -49,7 +49,7 @@ date: 2023-Dec-4
       * CPU usage hours&mdash;the actual usage time of CPU.
       * Memory usage time&mdash;the actual usage time of CPU memory.
 
-    For more information, see [Consumption Dashboard](../admin/performance/dashboard-analysis.md#consumption-dashboard).
+    For more information, see [Consumption Dashboard](../platform-admin/performance/dashboard-analysis.md#consumption-dashboard).
 
 #### Authentication and Authorization
 

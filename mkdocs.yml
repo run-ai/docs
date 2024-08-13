@@ -116,9 +116,9 @@ plugins:
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
         'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
         'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
-        'admin/admin-ui-setup/credentials-setup.md' : 'admin/workloads/credentials-setup.md'
-        'admin/admin-ui-setup/templates.md' : 'admin/workloads/templates.md'
-        'admin/admin-ui-setup/dashboard-analysis.md' : 'admin/performance/dashboard-analysis.md'
+        'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/credentials-setup.md'
+        'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/templates.md'
+        'admin/admin-ui-setup/dashboard-analysis.md' : 'platform-admin/performance/dashboard-analysis.md'
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'admin/workloads/policies/README.md' : 'admin/workloads/policies/overview.md'
@@ -212,7 +212,7 @@ nav:
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md' 
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
-      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
+#      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
   
@@ -240,7 +240,7 @@ nav:
         - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
       #   - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
     - 'Review your performance' :
-      - 'Dashboard Analysis' : 'admin/performance/dashboard-analysis.md'
+      - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'Submitting Workloads' : 'admin/workloads/submitting-workloads.md'
       - 'Policies' :

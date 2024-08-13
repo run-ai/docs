@@ -65,7 +65,7 @@ This version contains features and fixes from previous versions starting with 2.
 **Dashboards**
 
 <!-- RUN9530/9577 New Dashboard for Quota management -->
-* Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/performance/dashboard-analysis.md#quota-management-dashboard).
+* Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../platform-admin/performance/dashboard-analysis.md#quota-management-dashboard).
 
 * Added to the **Overview dashboard**, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md).
 
