@@ -111,8 +111,8 @@ plugins:
         'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
-        'admin/admin-ui-setup/project-setup.md' : 'admin/aiinitiatives/org/projects.md'
-        'admin/admin-ui-setup/department-setup.md' : 'admin/aiinitiatives/org/departments.md'
+        'admin/admin-ui-setup/project-setup.md' : 'platform-admin/aiinitiatives/org/projects.md'
+        'admin/admin-ui-setup/department-setup.md' : 'platform-admin/aiinitiatives/org/departments.md'
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
         'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
         'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
@@ -231,14 +231,14 @@ nav:
       - 'Administrator Messages' : 'admin/runai-setup/config/admin-messages.md'
 
     - 'Managing AI Intiatives' :
-      - 'Overview' : 'admin/aiinitiatives/overview.md'
+      - 'Overview' : 'platform-admin/aiinitiatives/overview.md'
       - 'Managing your Organization' :
-        - 'Projects' : 'admin/aiinitiatives/org/projects.md'
-        - 'Departments' : 'admin/aiinitiatives/org/departments.md'
-        - 'Scheduling Rules' : 'admin/aiinitiatives/org/scheduling-rules.md'
+        - 'Projects' : 'platform-admin/aiinitiatives/org/projects.md'
+        - 'Departments' : 'platform-admin/aiinitiatives/org/departments.md'
+        - 'Scheduling Rules' : 'platform-admin/aiinitiatives/org/scheduling-rules.md'
       - 'Managing your resources' : 
-        - 'Nodes' : 'admin/aiinitiatives/resources/nodes.md'
-      #   - 'Node Pools' : 'admin/aiinitiatives/resources/node-pools.md'
+        - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
+      #   - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'admin/performance/dashboard-analysis.md'
     - 'Workloads' : 

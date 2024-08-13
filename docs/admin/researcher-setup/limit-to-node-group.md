@@ -90,6 +90,6 @@ See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documenta
 
 Node Pools are automatically assigned to all Projects and Departments with zero resource allocation as default. Allocating resources to a node pool can be done for each Project and Department. Submitting a workload to a node pool that has zero allocation for a specific project (or department) results in that workload running as an over-quota workload.
 
-To assign and configure specific node affinity groups or node pools to a Project see [working with Projects](../aiinitiatives/org/projects.md).
+To assign and configure specific node affinity groups or node pools to a Project see [working with Projects](../../platform-admin/aiinitiatives/org/projects.md).
 
 When the command-line interface flag is used in conjunction with Project-based affinity, the flag is used to refine the list of allowable node groups set in the Project.
