@@ -2,7 +2,7 @@ This article explains the procedure to manage Access rules.
 
 Access rules provide users, groups, or applications privileges to system entities.
 
-An access rule is the assignment of a role to a subject in a scope: \<Subject\> is a \<Role\> in a \<Scope\>.
+An access rule is the assignment of a role to a subject in a scope: `<Subject>` is a `<Role>` in a `<Scope>`.
 
 For example, user **user@domain.com** is a **department admin** in **department A**.
 
@@ -10,7 +10,7 @@ For example, user **user@domain.com** is a **department admin** in **department 
 
 The Access rules table can be found under **Tools & Settings** in the Run:ai platform.
 
-The Access rules table provides a list of all the access rules defined in the platform, and allows you to manage them.
+The Access rules table provides a list of all the access rules defined in the platform and allows you to manage them.
 
 
 

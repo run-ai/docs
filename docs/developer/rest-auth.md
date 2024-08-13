@@ -18,10 +18,10 @@ Run:ai APIs are accessed using *bearer tokens*. A token can be obtained in sever
 
 ### Access rules for the Application
 
-In order for you API requests to be accepted, you will need to set access rules for the application.
-To assign roles to an application, see [Create or Delete rules](../admin/authentication/rbac.md#create-or-delete-rules).
+For you API requests to be accepted, you will need to set access rules for the application.
+To assign roles to an application, see [Create or Delete rules](../admin/authentication/accessrules.md).
 
-Use the [Roles](../admin/authentication/rbac.md#roles) table to assign the correct roles to the application.
+Use the [Roles](../admin/authentication/roles.md#roles-in-runai) table to assign the correct roles to the application.
 
 ## Request an API Token
 
