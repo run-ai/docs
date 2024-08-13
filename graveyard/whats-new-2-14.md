@@ -4,7 +4,7 @@
 
 ### Role based access control
 
-* <!-- RUN-7510/9002 and lots of others -->Run:ai has updated the authorization by expanding the scope of Kubernetes. This makes it easier for administrators to manage access policies across multiple clusters. Run:ai RBAC allows you to manage hierarchy levels within a cluster using *Departments*, giving administrators more flexibility in controlling access. For more information, see [Role based access control](../admin/authentication/rbac.md#role-based-access-control).
+* <!-- RUN-7510/9002 and lots of others -->Run:ai has updated the authorization by expanding the scope of Kubernetes. This makes it easier for administrators to manage access policies across multiple clusters. Run:ai RBAC allows you to manage hierarchy levels within a cluster using *Departments*, giving administrators more flexibility in controlling access. For more information, see [Role based access control](../admin/authentication/roles.md).
 <!-- When upgrading the system, previous access and authorizations that were configured will be migrated to the new RBAC roles. See the table below for role conversions:
 
 TODO Add RBAC old--new conversion table here. -->

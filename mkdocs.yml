@@ -125,7 +125,9 @@ plugins:
         'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
 #        'platform-admin/workloads/policies' : 'platform-admin/workloads/policies/overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
+        'admin/authentication/rbac.md' : 'admin/authentication/roles.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
+
 
 nav:
   - Home: 
@@ -211,7 +213,7 @@ nav:
       - 'Applications' : 'admin/authentication/applications.md'
       - 'Roles' : 'admin/authentication/roles.md'
       - 'Access Rules' : 'admin/authentication/accessrules.md'
-      - 'Access control' : 'admin/authentication/rbac.md'
+#      - 'Access control' : 'admin/authentication/rbac.md'
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md' 
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
@@ -227,7 +229,7 @@ nav:
       - 'Applications' : 'admin/authentication/applications.md'
       - 'Roles' : 'admin/authentication/roles.md'
       - 'Access Rules' : 'admin/authentication/accessrules.md'
-      - 'Access control' : 'admin/authentication/rbac.md'
+ #     - 'Access control' : 'admin/authentication/rbac.md'
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
 
     - 'System Configuration' : 
