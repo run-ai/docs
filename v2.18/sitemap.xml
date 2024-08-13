@@ -641,11 +641,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/performance/dashboard-analysis/</loc>
-         <lastmod>2024-08-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cli-install/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
@@ -1047,6 +1042,11 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/resources/nodes/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/performance/dashboard-analysis/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
