@@ -51,7 +51,7 @@ Run:ai provides Control-plane API which supports and aggregates metrics at vario
 
 ### Advanced Metrics
 
-NVIDIA provides extended metrics at the __Pod__ level. These are documented [here](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#profiling-metrics){target=_blank}. Due to the quantity of data and its effect on performance, you will need to enable these metrics before usage. Go to:  
+NVIDIA provides extended metrics at the __Pod__ level. These are documented [here](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#profiling-metrics){target=_blank}. To enable these metrics please contact Run:ai customer support. 
 
 
 | Metric | Cluster | Node Pool | Workload | Pod |
