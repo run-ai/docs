@@ -16,7 +16,7 @@ Run:ai provides Control-plane API which supports and aggregates metrics at vario
 | Level | Description | 
 | :---- | ----- |  
 | Cluster | Cluster is a set of Nodes Pools & Nodes. With Cluster metrics, metrics are aggregated at the Cluster level | 
-| Node Pool | Metrics are aggregated at the Node (machine) level |
+| Node Pool | Metrics are aggregated at the Node Pool level. |
 | Workload | Metrics are aggregated at the Workload level. Some Workloads, e.g. with distributed workloads, these metrics aggregate data from all worker pods |
 | Pod | The basic execution unit | 
 
