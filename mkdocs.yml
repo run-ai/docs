@@ -122,6 +122,7 @@ plugins:
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
+        'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
 #        'platform-admin/workloads/policies' : 'platform-admin/workloads/policies/overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
