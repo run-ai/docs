@@ -97,7 +97,7 @@ Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-su
 
 ### Use CLI Policies
 
-Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to set administrator policies for these configurations and use pre-configured configuration when submitting a Workload. Please refer to [Configure Command-Line Interface Policies](../../admin/workloads/policies/policies.md).
+Different run configurations may vary significantly and can be tedious to be written each time on the command-line. To make life easier, our CLI offers a way to set administrator policies for these configurations and use pre-configured configuration when submitting a Workload. Please refer to [Configure Command-Line Interface Policies](../../platform-admin/workloads/policies/policies.md).
 
 ## Attached Files
 
