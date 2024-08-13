@@ -137,4 +137,4 @@ To resume the workload, either set `active` to `true` or remove it entirely.
 
 ## See Also
 * To understand how to connect to the inference workload, see [Inference Quickstart](../../Researcher/Walkthroughs/quickstart-inference.md).
-* To learn more about Inference and Run:ai see [Inference overview](../../admin/workloads/inference-overview.md).
+* To learn more about Inference and Run:ai see [Inference overview](../../platform-admin/workloads/inference-overview.md).

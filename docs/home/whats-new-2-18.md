@@ -20,9 +20,9 @@ date: 2024-June-14
 
 * <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* count starts when any Run:ai workload reaches a a completed, or failed status will be automatically deleted (including logs). This change only affects new or cloned workloads.
 
-* <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
+* <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../platform-admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
-* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../admin/workloads/README.md#workloads-view). (Requires minimum cluster version v2.18).
+* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../platform-admin/workloads/README.md#workloads-view). (Requires minimum cluster version v2.18).
 
 * <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA. (Requires minimum cluster version v2.18).
 
@@ -30,9 +30,9 @@ date: 2024-June-14
 
 * <!-- RUN-16832/ RUN-16833 - Custom value for auto-scale to zero-->Added more precision to trigger auto-scaling to zero. Now users can configure a precise consecutive idle threshold custom setting to trigger Run:ai inference workloads to scale-to-zero. (Requires minimum cluster version v2.18).
 
-* <!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../admin/workloads/submitting-workloads.md).
+* <!-- RUN-16806/RUN-16807 - Hugging face integration -->Added Hugging Face catalog integration of community models. Run:ai has added Hugging Face integration directly to the inference workload form, providing the ability to select models (vLLM models) from Hugging Face. This allows organizations to quickly experiment with the latest open source community language models. For more information on how Hugging Face is integrated, see [Hugging Face](../platform-admin/workloads/submitting-workloads.md).
 
-* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../admin/workloads/submitting-workloads.md). (Requires minimum cluster version v2.18).
+* <!-- --RUN-18251/RUN-19580 - Access control for external URLs -->Improved access permissions to external tools. This improvement now allows more granular control over which personas can access external tools (external URLs) such as Jupyter Notebooks, Chatbot UI, and others. For configuration information, see [Submitting workloads](../platform-admin/workloads/submitting-workloads.md). (Requires minimum cluster version v2.18).
 
 * <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform. (Requires minimum cluster version v2.18).
 
@@ -75,7 +75,8 @@ date: 2024-June-14
     * Shared between multiple scopes&mdash;unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
     * Coupled to workloads in the submission process&mdash;similar to other Run:ai data sources, Data volumes can be easily attached to AI workloads during submission, specifying the data path within the workload environment.
   
-    For more information, see [Data Volumes](../admin/workloads/data-volumes.md). (Requires minimum cluster version v2.18).
+    For more information, see [Data Volumes](../platform-admin/workloads/data-volumes.md). (Requires minimum cluster version v2.18).
+
 
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source). 
 
