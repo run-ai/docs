@@ -85,7 +85,7 @@ date: 2024-Apr-14
 
 #### Monitoring and Analytics
 
-* <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->Improved GPU Overview dashboard. This improvement provides rich and extensive GPU allocation and performance data and now has interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../admin/performance/dashboard-analysis.md).
+* <!-- RUN-12901/RUN-16507 - Dashboard improvements MVP -->Improved GPU Overview dashboard. This improvement provides rich and extensive GPU allocation and performance data and now has interactive tiles that provide direct links to the *Nodes*, *Workloads*, and *Departments* tables. Hover over tiles with graphs to show rich data in the selected time frame filter. Tiles with graphs can be downloaded as CSV files. The new dashboard is enabled by default. Use the *Go back to legacy view* to return to the previous dashboard style. For more information, see [Dashboard analysis](../platform-admin/performance/dashboard-analysis.md).
 
 * <!-- RUN-15878/RUN-16796/RUN-15878/RUN-16085 omit Knative metrics and update supported metrics and hpa autoscaler -->Updated the knative and autoscaler metrics. Run:ai currently supports the following metrics:
 

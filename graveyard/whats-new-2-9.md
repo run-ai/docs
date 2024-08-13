@@ -67,11 +67,11 @@ Added additional support to multi-node pools. This new capability allows the res
 
 **New nodes and node pools Screens**
 
-Run:ai has revised the nodes table, adding new information fields and graphs. It is now easier to assess how resources are allocated and utilized. Run:ai has also added a new ‘node pools’ table where Administrators can add a new node pool, update, and delete an existing node pool. In addition, the node pools table presents a large number of metrics and details about each of the node pools. A set of graphs reflect the node pools’ resource status over time according to different criteria.
+Run:ai has revised the nodes table, adding new information fields and graphs. It is now easier to assess how resources are allocated and utilized. Run:ai has also added a new ‘node pools’ table where Administrators can add a new node pool, update, and delete an existing node pool. In addition, the node pools table presents a large number of metrics and details about each of the node pools. A set of graphs reflects the node pools’ resource status over time according to different criteria.
 
 **Consumption Dashboard**
 
-Added a “Consumption” dashboard. When enabled by the “Show Consumption Dashboard” alpha flag under “Settings”, this dashboard allows the admin to review consumption patterns for GPUs, CPUs and RAM over time. You can segregate consumption by over or in-quota allocation in the project or department level. For more information, see [Consumption dashboard](../admin/performance/dashboard-analysis.md#consumption-dashboard).
+Added a “Consumption” dashboard. When enabled by the “Show Consumption Dashboard” alpha flag under “Settings”, this dashboard allows the admin to review consumption patterns for GPUs, CPUs and RAM over time. You can segregate consumption by over or in-quota allocation at the project or department level. For more information, see [Consumption dashboard](../platform-admin/performance/dashboard-analysis.md#consumption-dashboard).
 
 **Event History (Audit Log UI)**
 

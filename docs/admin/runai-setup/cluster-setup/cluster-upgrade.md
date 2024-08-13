@@ -60,10 +60,10 @@ Delete the ingress object which will be recreated by the control plane upgrade.
     ```
     
 ### Upgrade from version 2.9
-* Create a `tls secret` as described in the [control plane installation](backend.md). 
-* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
+* Create a `tls secret` as described in the [control plane installation](../self-hosted/k8s/backend.md). 
+* Upgrade the control plane as described in the [control plane installation](../self-hosted/k8s/backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
 
 * ## Upgrade Cluster 
 
-To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
+To upgrade the cluster follow the instructions [here](cluster-upgrade.md).
     
