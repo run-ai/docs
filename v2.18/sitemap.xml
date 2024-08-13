@@ -936,6 +936,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/developer/metrics/metrics-api/</loc>
+         <lastmod>2024-08-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/developer/metrics/metrics/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
