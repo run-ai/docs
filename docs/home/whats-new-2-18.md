@@ -77,6 +77,7 @@ date: 2024-June-14
   
     For more information, see [Data Volumes](../platform-admin/workloads/data-volumes.md). (Requires minimum cluster version v2.18).
 
+
 * <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/user-interface/workspaces/create/create-ds.md/#create-a-secret-as-data-source). 
 
 * Additional storage unit sizes MiB, GiB & TiB (Megabyte, Gigabyte, and Terabyte respectively) added to the UI and API when creating a new data source of type PVC.

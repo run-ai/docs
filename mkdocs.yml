@@ -123,9 +123,9 @@ plugins:
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
         'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
-#        'platform-admin/workloads/policies' : 'platform-admin/workloads/policies/overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
+
 
 nav:
   - Home: 
@@ -215,7 +215,7 @@ nav:
       - 'Researcher Authentication' : 'admin/authentication/researcher-authentication.md' 
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
-      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
+#      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
   
@@ -256,6 +256,7 @@ nav:
       - 'Credentials' : 'platform-admin/workloads/credentials-setup.md'
       - 'Templates': 'platform-admin/workloads/templates.md'
       - 'Data Volumes': 'platform-admin/workloads/data-volumes.md' 
+
 
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
@@ -401,7 +402,6 @@ nav:
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
       - 'Submit CRON job via YAML'  : 'developer/cluster-api/submit-cron-yaml.md'
       - 'Kubernetes Workloads'  : 'developer/cluster-api/other-resources.md'
-      - 'Data Volumes': 'developer/admin-rest-api/data-volumes.md'
       - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Metrics API' : 'developer/metrics/metrics.md'
     # - 'Deprecated APIs' :
