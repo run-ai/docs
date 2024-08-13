@@ -6,7 +6,7 @@ _Metrics_ are numeric measurements recorded __over time__ that are emitted from 
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:ai to enable customers to create custom dashboards or integrate metric data into other monitoring systems.
 
-Run:ai provides metrics via the [Run:ai Control-plane API](../admin-rest-api/overview.md). Internally, Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics. In the past, Run:ai provided metrics information via direct access to Prometheus. This method is deprecated but is still documented [here](metrics.md).
+Run:ai provides metrics via the [Run:ai Control-plane API](../admin-rest-api/overview.md). In the past, Run:ai provided metrics information via direct access to an internal metrics store. This method is deprecated but is still documented [here](metrics.md).
 
 
 ## Metric Scopes
