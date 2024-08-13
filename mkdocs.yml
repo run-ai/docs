@@ -406,7 +406,7 @@ nav:
       - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Metrics' : 
       - 'Metrics via API' : 'developer/metrics/metrics-api.md' 
-      - '(Deprecated) Metrics via Promethues' : 'developer/metrics/metrics.md'
+      - '(Deprecated) Metrics via Prometheus' : 'developer/metrics/metrics.md'
     # - 'Deprecated APIs' :
     #   - 'Researcher API' : 
     #     - 'REST API' : 'developer/deprecated/researcher-rest-api/overview.md'
