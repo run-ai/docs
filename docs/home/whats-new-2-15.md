@@ -43,7 +43,7 @@ date: 2023-Dec-3
 
 #### Credentials
 
-* <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->Improved *Credentials* creation. A Run:ai scope can now be added to credentials. For more information, see [Credentials](../admin/workloads/credentials-setup.md).
+* <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->Improved *Credentials* creation. A Run:ai scope can now be added to credentials. For more information, see [Credentials](../platform-admin/workloads/credentials-setup.md).
 
 #### Environments
 
@@ -55,7 +55,7 @@ date: 2023-Dec-3
 
 #### Templates
 
-* <!-- RUN-11692/RUN-11694 Scoping for template-->Added support for Run:ai a *Scope* in the template form. For configuration information, see [Creating templates](../admin/workloads/templates.md#creating-templates).
+* <!-- RUN-11692/RUN-11694 Scoping for template-->Added support for Run:ai a *Scope* in the template form. For configuration information, see [Creating templates](../platform-admin/workloads/templates.md#creating-templates).
 
 #### Deployments
 
@@ -78,8 +78,8 @@ date: 2023-Dec-3
 #### Policies
 
 * <!-- RUN-12698/RUN-12699 -->During Workspaces and Training creation, assets that do not comply with policies cannot be selected. These assets are greyed out and have a button on the cards when the item does not comply with a configured policy. The button displays information about which policies are non-compliant.
-* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../admin/workloads/policies/policies.md#prevent-data-storage-on-the-node).
-* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../admin/workloads/policies/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
+* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../platform-admin/workloads/policies/policies.md#prevent-data-storage-on-the-node).
+* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../platform-admin/workloads/policies/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
 
 #### Nodes and Node Pools
 
@@ -99,9 +99,9 @@ date: 2023-Dec-3
 
 #### Dashboards
 
-* <!-- RUN-12313/12314 - CPU focused dashboards -->To ease the management of AI CPU and cluster resources, a new CPU focused dashboard was added for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that are specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../admin/performance/dashboard-analysis.md#cpu-dashboard).
+* <!-- RUN-12313/12314 - CPU focused dashboards -->To ease the management of AI CPU and cluster resources, a new CPU focused dashboard was added for CPU based environments. The dashboards display specific information for CPU based nodes, node-pools, clusters, or tenants. These dashboards also include additional metrics that are specific to CPU based environments. This will help optimize visual information eliminating the views of empty GPU dashlets. For more information see [CPU Dashboard](../platform-admin/performance/dashboard-analysis.md#cpu-dashboard).
 * <!-- RUN-11421/RUN-11508 Consumption report - Cost and bugs-->Improved the Consumption report interface by moving the Cost settings to the *General* settings menu.
-* <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->Added an additional table to the Consumption dashboard that displays the consumption and cost per department. For more information, see [Consumption dashboard](../admin/performance/dashboard-analysis.md#consumption-dashboard).
+* <!-- RUN-11421/RUN-11508 Consumption report cost and bugs -->Added table to the Consumption dashboard that displays the consumption and cost per department. For more information, see [Consumption dashboard](../platform-admin/performance/dashboard-analysis.md#consumption-dashboard).
 
 #### Nodes
 

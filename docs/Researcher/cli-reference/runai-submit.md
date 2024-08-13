@@ -407,7 +407,7 @@ runai submit --job-name-prefix -i gcr.io/run-ai-demo/quickstart -g 1
 #### --node-pools `<string>`
 
 > Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
-> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../admin/aiinitiatives/org/projects.md).
+> This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../platform-admin/aiinitiatives/org/projects.md).
 
 #### --node-type `<string>`
 
@@ -449,4 +449,4 @@ Note that the submit call may use a *policy* to provide defaults to any of the a
 ## See Also
 
 * See any of the Quickstart documents [here:](../Walkthroughs/quickstart-overview.md).
-* See [policy configuration](../../admin/workloads/policies/policies.md) for a description on how policies work.
+* See [policy configuration](../../platform-admin/workloads/policies/policies.md) for a description on how policies work.

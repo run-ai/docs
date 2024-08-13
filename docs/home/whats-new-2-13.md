@@ -60,12 +60,12 @@ This version contains features and fixes from previous versions starting with 2.
 
 **Projects**
 <!-- RUN-9312/9313 Projects V2 -->
-* Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../admin/aiinitiatives/org/projects.md).
+* Improved the **Projects** UI for ease of use. **Projects** follows UI upgrades and changes that are designed to make setting up of components and assets easier for administrators and researchers. To configure a project, see [Projects](../platform-admin/aiinitiatives/org/projects.md).
 
 **Dashboards**
 
 <!-- RUN9530/9577 New Dashboard for Quota management -->
-* Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../admin/performance/dashboard-analysis.md#quota-management-dashboard).
+* Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../platform-admin/performance/dashboard-analysis.md#quota-management-dashboard).
 
 * Added to the **Overview dashboard**, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md).
 
@@ -110,13 +110,13 @@ The association between workspaces and node pools is done using *Compute resourc
 **Credentials**
 
 <!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
-* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../admin/workloads/credentials-setup.md#configuring-credentials).
+* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../platform-admin/workloads/credentials-setup.md#configuring-credentials).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more added to projects v2-->
 
 **Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
-* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../admin/workloads/policies/policies.md#complex-values).
+* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../platform-admin/workloads/policies/policies.md#complex-values).
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.

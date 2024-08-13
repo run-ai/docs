@@ -67,7 +67,7 @@ Post installation, you will want to:
 
 * (Mandatory) Set up [Researcher Access Control](../../authentication/researcher-authentication.md). Without this, the Job Submit form will not work.
 * Set up Run:ai Users [Working with Users](../../authentication/users.md).
-* Set up Projects for Researchers [Working with Projects](../../aiinitiatives/org/projects.md).
+* Set up Projects for Researchers [Working with Projects](../../../platform-admin/aiinitiatives/org/projects.md).
 
 ## Troubleshooting
 
