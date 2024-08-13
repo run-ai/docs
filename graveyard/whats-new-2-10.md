@@ -128,7 +128,7 @@ April 2023
 
 **Credential Manager**
 
-This feature provides configuration for credentials that are used to unlock protected resources such as applications, containers, and other assets. For configuration information, see [Credentials](../admin/workloads/credentials-setup.md).
+This feature provides configuration for credentials that are used to unlock protected resources such as applications, containers, and other assets. For configuration information, see [Credentials](../platform-admin/workloads/credentials-setup.md).
 
 **SSO custom URL logout**
 

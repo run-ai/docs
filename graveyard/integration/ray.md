@@ -151,7 +151,7 @@ data:
 
 ## Ray autoscaling cluster
 
-For more information, see [Ray autoscaling](https://docs.run.ai/v2.12/admin/workloads/policies/#creating-a-policy){target=_blank}.
+For more information, see [Ray autoscaling](https://docs.run.ai/v2.12/platform-admin/workloads/policies/#creating-a-policy){target=_blank}.
 
 Use the following command to submit your Ray autoscaling cluster:
 
