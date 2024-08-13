@@ -606,11 +606,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/authentication/rbac/</loc>
-         <lastmod>2024-08-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/researcher-authentication/</loc>
          <lastmod>2024-08-13</lastmod>
          <changefreq>daily</changefreq>
