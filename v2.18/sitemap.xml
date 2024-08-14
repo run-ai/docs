@@ -921,11 +921,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/developer/cluster-api/submit-cron-yaml/</loc>
-         <lastmod>2024-08-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/submit-rest/</loc>
          <lastmod>2024-08-14</lastmod>
          <changefreq>daily</changefreq>
