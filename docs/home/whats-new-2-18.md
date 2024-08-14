@@ -124,6 +124,11 @@ The endpoints and parameters specified in the API reference are the ones that ar
 
 #### Deprecated APIs and API fields
 
+##### Cluster API Deprecation
+
+Run:ai REST API now supports job submission. The older, [Cluster API](../developer/cluster-api/workload-overview-dev.md) is now deprecated. 
+
+
 ##### Departments API
 
 | Deprecated | Replacement |
