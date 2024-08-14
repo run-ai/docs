@@ -1,6 +1,6 @@
 
 
-# Setting Run:ai as the default scheduler per Project
+# Setting Run:ai as the default scheduler per Namespace (Project)
 
 ## Introduction
 Kubernetes has a default scheduler that makes decisions on where to place Kubernetes Pods. Run:ai has implemented a different scheduler called the `runai-scheduler`. By default, Run:ai uses its own scheduler
