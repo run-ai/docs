@@ -156,7 +156,6 @@ nav:
         - 'Customize Installation' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
-#        - 'Kubernetes Install' : 'admin/runai-setup/cluster-setup/install-k8s.md'  
         - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
@@ -188,6 +187,7 @@ nav:
       - 'Overview' : 'admin/runai-setup/config/overview.md'
       - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
       - 'Clusters' :  'admin/runai-setup/config/clusters.md'
+      - 'Set Default Scheduler' : 'admin/runai-setup/config/default-scheduler.md'
       - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
       - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'
       - 'Install Administrator CLI' : 'admin/runai-setup/config/cli-admin-install.md'
