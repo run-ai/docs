@@ -1,4 +1,9 @@
-# Workloads Overview
+# Cluster API (Deprecated)
+
+The Run:ai Cluster API allows the submission of Workloads via YAML, directly to Kubernetes. 
+
+!!! Important
+      With Run:ai 2.18 clusters, you can now submit Workloads via the [Run:ai REST API](../admin-rest-api/overview.md). We recommend using this API if your cluster is of that version.  
 
 ## Workloads
 

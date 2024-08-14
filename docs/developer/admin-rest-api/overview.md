@@ -1,10 +1,10 @@
-# Control Plane REST API
+# Run:ai REST API
 
-The purpose of the Control Plane REST API is to provide an easy-to-use programming interface for administrative tasks.
+The purpose of the Run:ai REST API is to provide an easy-to-use programming interface for administrative tasks.
 
 ## Endpoint URL for API
 
-The domain used for Control Plane REST APIs is the same domain used to browse for the Run:ai User Interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
+The domain used for Run:ai REST APIs is the same domain used to browse for the Run:ai User Interface. Either `<company>.run.ai`, or `app.run.ai` for older tenants or a custom URL used for Self-hosted installations.
 
 ## Authentication
 
@@ -41,12 +41,12 @@ For example, if you have an Administrator role, you can get a list of clusters b
     ```
 (replace `<ACCESS-TOKEN>` with the bearer token from above).
 
-For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai Control Plane REST API to create a User and a Project and set the User to the Project.  
+For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai REST API to create a User and a Project and set the User to the Project.  
 
-## Control Plane API Documentation
+## Run:ai REST API Documentation
 
-The Control Plane API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
+The Run:ai REST API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
 
-Detailed API documentation can be found at [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. This represents the latest control-plane documentation. If you are running a self-hosted version, see `https://<runai-company-url>/api/docs`.
+Detailed API documentation can be found at [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. If you are running a self-hosted version, see `https://<runai-company-url>/api/docs`.
 
-[Control Plane API Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }
+[ Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }

@@ -157,8 +157,7 @@ To rejoin a node to the Kubernetes cluster, follow these steps:
 
     __Explanation__:  
 
-        * `kubectl get nodes`  
-        This command lists all nodes currently part of the Kubernetes cluster, along with their status  
+    This command lists all nodes currently part of the Kubernetes cluster, along with their status  
     
     __Result__: The rejoined node should appear in the list with a status of Ready 
 
