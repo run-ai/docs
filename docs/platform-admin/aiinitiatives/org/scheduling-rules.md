@@ -1,13 +1,23 @@
 This article explains the procedure of configuring and managing Scheduling rules. Scheduling rules refer to restrictions applied over workloads. These restrictions apply to either the resources (nodes) on which workloads can run or to the duration of the workload run time. Scheduling rules are set for Projects and apply to a specific workload type. Once scheduling rules are set for a project, all matching workloads associated with the project will have the restrictions as defined when the workload was submitted. New scheduling rules added to a project are not applied over already created workloads associated with that project.
 
-There are 3 types of rules:
+There are 3 types of scheduling rules:
 
-* **Workload time limit** - This rule limits the duration of a workload run time. Workload run time is calculated as the total time in which the workload was in status “Running“.  
-* **Idle GPU time limit** - This rule limits the total GPU time of a workload. Workload idle time is counted from the first time the workload is in status Running and the GPU was idle. We calculate idleness by employing the `runai_gpu_idle_seconds_per_workload metric`. This metric determines the total duration of zero GPU utilization within each 30-second interval. If the GPU remains idle throughout the 30-second window, 30 seconds are added to the idleness sum; otherwise, the idleness count is reset.
+* __Workload duration (time limit)__ 
+   This rule limits the duration of a workload run time. Workload run time is calculated as the total time in which the workload was in status Running. You can apply a single rule per workload type - Preemptive Workspaces, Non-preemptive Workspaces, and Training.  
+* __Idle GPU time limit__  
+   This rule limits the total GPU time of a workload. Workload idle time is counted from the first time the workload is in status Running and the GPU was idle.  
+  We calculate idleness by employing the `runai_gpu_idle_seconds_per_workload` metric. This metric determines the total duration of zero GPU utilization within each 30-second interval. If the GPU remains idle throughout the 30-second window, 30 seconds are added to the idleness sum; otherwise, the idleness count is reset.  
+  You can apply a single rule per workload type - Preemptive Workspaces, Non-preemptive Workspaces, and Training.  
+  
+!!! Note 
+    To make `Idle GPU timeout` effective, it must be set to a shorter duration than that workload duration of the same workload type. 
 
-* **Node type (Affinity)** - This rule limits a workload to run on specific node types. node type is a node affinity applied on the node. Run:ai labels the nodes with the appropriate affinity and indicates the scheduler where it is allowed to schedule the workload.
+* __Node type (Affinity)__  
+  Node type is used to select a group of nodes, typically with specific characteristics such as a hardware feature, storage type, fast networking interconnection, etc. The scheduler uses node type as an indication of which nodes should be used for your workloads, within this project.  
+   Node type is a label in the form of `run.ai/type` and a value (e.g. `run.ai/type = dgx200`) that the administrator uses to tag a set of nodes. Adding the node type to the project’s scheduling rules enables the user to submit workloads with any node type label/value pairs in this list, according to the workload type - Workspace or Training. The Scheduler then schedules workloads using a node selector, targeting nodes tagged with the Run:ai node type label/value pair. Node pools and a node type can be used in conjunction with each other. For example, specifying a node pool and a smaller group of nodes from that node pool that includes a fast SSD memory or other unique characteristics.
 
-Adding a scheduling rule to a project
+
+## Adding a scheduling rule to a project
 
 To add a scheduling rule:
 
