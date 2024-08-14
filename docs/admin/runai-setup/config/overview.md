@@ -9,6 +9,8 @@ This section provides a list of installation-related articles dealing with a wid
 |     Article                                             |  Purpose  |
 |---------------------------------------------------------|-----------|
 | [Designating Specific Role Nodes](node-roles.md) | Set one or more designated Run:ai system nodes or limit Run:ai monitoring and scheduling to specific nodes in the cluster. |
+| [Create and Troubleshoot Clusters](clusters.md) | Create new clusters, view properties and status, and troubleshoot cluster connectivity related issues. |
+| [Set Default Scheduler](default-scheduler.md) | Set the default scheduler for a specific namespace | 
 | [Review Kubernetes Access provided to Run:ai](access-roles.md)     | In Restrictive Kubernetes environments such as when using OpenShift, understand and control what Kubernetes roles are provided to Run:ai | 
 | [External access to Containers](allow-external-access-to-containers.md) | Understand the available options for Researchers to access containers from the outside | 
 | [Install the Run:ai Administrator Command-line Interface](cli-admin-install.md) | The Administrator command-line is useful in a variety of flows such as cluster upgrade, node setup etc. | 
