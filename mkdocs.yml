@@ -400,7 +400,7 @@ nav:
     - 'API Authentication' : 'developer/rest-auth.md'
     - 'REST API' : 'developer/admin-rest-api/overview.md'
     - 'Cluster API (Deprecated)' :
-      - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
+      - 'Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
       - 'Reference' : 'developer/cluster-api/reference.md'
