@@ -111,7 +111,7 @@ plugins:
         'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
-        'admin/admin-ui-setup/overview.md' : 'platform-admin/aiinitiatives/overview'   # installation points here
+        'admin/admin-ui-setup/overview.md' : 'platform-admin/aiinitiatives/overview.md'   # installation points here
         'admin/admin-ui-setup/project-setup.md' : 'platform-admin/aiinitiatives/org/projects.md'
         'admin/admin-ui-setup/department-setup.md' : 'platform-admin/aiinitiatives/org/departments.md'
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
@@ -244,7 +244,7 @@ nav:
         - 'Scheduling Rules' : 'platform-admin/aiinitiatives/org/scheduling-rules.md'
       - 'Managing your resources' : 
         - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
-      #   - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
+        - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
@@ -400,7 +400,7 @@ nav:
     - 'API Authentication' : 'developer/rest-auth.md'
     - 'REST API' : 'developer/admin-rest-api/overview.md'
     - 'Cluster API (Deprecated)' :
-      - 'Workloads Overview' : 'developer/cluster-api/workload-overview-dev.md'
+      - 'Overview' : 'developer/cluster-api/workload-overview-dev.md'
       - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
       - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
       - 'Reference' : 'developer/cluster-api/reference.md'
