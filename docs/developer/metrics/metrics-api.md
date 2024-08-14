@@ -27,10 +27,10 @@ Run:ai provides Control-plane API which supports and aggregates metrics at vario
 | :---- | ----- | ----- | ----- | ----- |
 | API | [Cluster API](https://app.run.ai/api/docs#tag/Clusters/operation/get_cluster_metrics){target=_blank} | [Node Pool API](https://app.run.ai/api/docs#tag/NodePools/operation/get_nodepool_metrics){target=_blank} | [Workload API](https://app.run.ai/api/docs#tag/Workloads/operation/get_workload_metrics){target=_blank} | [Pod API](https://app.run.ai/api/docs#tag/Pods/operation/get_workload_pod_metrics){target=_blank} |
 | ALLOCATED_GPU | TRUE | TRUE |  |  |
-| AVG_WORKLOAD_WAIT_TIME | TRUE | TRUE |  | n/a |
+| AVG_WORKLOAD_WAIT_TIME | TRUE | TRUE |  |  |
 | CPU_LIMIT_CORES |  |  | TRUE |  |
-| CPU_MEMORY_LIMIT_BYTES | n/a | n/a | TRUE |  |
-| CPU_MEMORY_REQUEST_BYTES | n/a | n/a | TRUE |  |
+| CPU_MEMORY_LIMIT_BYTES |  |  | TRUE |  |
+| CPU_MEMORY_REQUEST_BYTES |  |  | TRUE |  |
 | CPU_MEMORY_USAGE_BYTES |  |  | TRUE | TRUE |
 | CPU_MEMORY_UTILIZATION | TRUE | TRUE |  |  |
 | CPU_REQUEST_CORES |  |  | TRUE |  |
@@ -41,12 +41,12 @@ Run:ai provides Control-plane API which supports and aggregates metrics at vario
 | GPU_MEMORY_USAGE_BYTES |  |  | TRUE | TRUE |
 | GPU_MEMORY_USAGE_BYTES_PER_GPU |  |  |  | TRUE |
 | GPU_MEMORY_UTILIZATION | TRUE | TRUE |  |  |
-| GPU_QUOTA | TRUE | TRUE | n/a | n/a |
+| GPU_QUOTA | TRUE | TRUE |  |  |
 | GPU_UTILIZATION | TRUE | TRUE | TRUE | TRUE |
 | GPU_UTILIZATION_PER_GPU |  |  |  | TRUE |
-| POD_COUNT |  |  | TRUE | n/a |
-| RUNNING_POD_COUNT |  |  | TRUE | n/a |
-| TOTAL_GPU | TRUE | TRUE | n/a | n/a |
+| POD_COUNT |  |  | TRUE |  |
+| RUNNING_POD_COUNT |  |  | TRUE |  |
+| TOTAL_GPU | TRUE | TRUE |  |  |
 
 
 ### Advanced Metrics
