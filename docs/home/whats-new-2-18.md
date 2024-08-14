@@ -22,7 +22,7 @@ date: 2024-June-14
 
 * <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../platform-admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
-* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../platform-admin/workloads/README.md#workloads-view). (Requires minimum cluster version v2.18).
+* <!-- RUN-16830/RUN-16831 -  Graphs & special metrics for inference -->Added new graphs for *Inference* workloads. The new graphs provide more information for *Inference* workloads to help analyze performance of the workloads. New graphs include Latency, Throughput, and number of replicas. For more information, see [Workloads View](../platform-admin/workloads/workload-overview.md#workloads-view). (Requires minimum cluster version v2.18).
 
 * <!-- TODO add link to doc when ready - get approval for text RUN-16805/RUN-17416 - Provide latency-based metric for autoscaling for requests -->Added latency metric for autoscaling. This feature allows automatic scale-up/down the number of replicas of a Run:ai inference workload based on the threshold set by the ML Engineer. This ensures that response time is kept under the target SLA. (Requires minimum cluster version v2.18).
 
@@ -120,7 +120,7 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 ### API support and endpoint deprecations
 
-The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see note under [Developer overview](../developer/overview-developer.md#control-plane-api).
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see note under [Developer overview](../developer/overview-developer.md#runai-rest-api).
 
 #### Deprecated APIs and API fields
 

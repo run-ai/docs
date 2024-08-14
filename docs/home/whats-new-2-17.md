@@ -25,7 +25,7 @@ date: 2024-Apr-14
 
 <!-- RUN-10855/RUN-10856  full status (with new mechanism) for DistributedWorkloads - Not sure what this is. No descriptions int the ticket. -->
 
-* <!-- RUN-11488/RUN-16508/RUN-17720 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details view, the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. Also, the *Workloads* table now has additional columns including connections and preemtability adding more at a glance information about the workload. In addition, using the *Copy & edit* button, you can submit a new workload via CLI based on the selected workload. For more information, see [Workloads](../platform-admin/workloads/README.md#workloads-view).
+* <!-- RUN-11488/RUN-16508/RUN-17720 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details view, the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. Also, the *Workloads* table now has additional columns including connections and preemtability adding more at a glance information about the workload. In addition, using the *Copy & edit* button, you can submit a new workload via CLI based on the selected workload. For more information, see [Workloads](../platform-admin/workloads/workload-overview.md#workloads-view).
 
 * <!-- RUN-14524/RUN-14525/RUN-16113/RUN-16488/RUN-15153/RUN-15154 - Asset-based deployments added note for unsupported features -->Added *Inference* to workload types. *Inference* workloads can now be created and managed from the unified *Workloads* table. The *Deployments* workload type has been deprecated, and replaced with *Inference* workloads which are submitted using the workload form. For more information, see [Inference](../platform-admin/workloads/inference-overview.md) and for submitting an *Inference* workload, see [Submitting workloads](../platform-admin/workloads/submitting-workloads.md).
 
@@ -126,7 +126,7 @@ Deprecated features will be available for **two** versions ahead of the notifica
 
 ### API support and endpoint deprecations
 
-The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#control-plane-api).
+The endpoints and parameters specified in the API reference are the ones that are officially supported by Run:ai. For more information about Run:ai's API support policy and deprecation process, see [Developer overview](../developer/overview-developer.md#runai-rest-api).
 
 #### Deprecated APIs and API fields
 

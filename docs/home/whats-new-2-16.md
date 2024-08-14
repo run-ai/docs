@@ -23,7 +23,7 @@ date: 2023-Dec-4
     * Reliable data retrieval and presentation in the CLI, UI, and API.
     * Easy to use single unified view with all workload types in one place.
 
-    For more information, see [Workloads Overview](../platform-admin/workloads/README.md).
+    For more information, see [Workloads Overview](../platform-admin/workloads/workload-overview.md).
 
 * <!-- RUN-15456/RUN-15457 - Add a default auto deletion time after completion -->Changed the workload default *auto deletion time after completion* value from `Never` to `90 days`. This ensures that environments will be cleaned from old data. This field is editable by default, allowing researchers the ability to change the value while submitting a workload. Using workload policies, administrators can increase, decrease, set the default value to `never`, or even lock access to this value so researchers can not edit it when they submit workloads.
 
