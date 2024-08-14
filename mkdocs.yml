@@ -92,7 +92,6 @@ plugins:
         'Administrator/Cluster-Setup/cluster-install.md' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         'Administrator/Cluster-Setup/cluster-upgrade.md' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         'Administrator/Cluster-Setup/customize-cluster-install.md' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
-      #  'Administrator/integration/mlflow.md' : 'admin/integration/mlflow.md'
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/overview.md' : 'admin/runai-setup/config/overview.md'
         'admin/runai-setup/advanced/node-roles.md' : 'admin/runai-setup/config/node-roles.md'
@@ -120,11 +119,11 @@ plugins:
         'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/credentials-setup.md'
         'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/templates.md'
         'admin/admin-ui-setup/dashboard-analysis.md' : 'platform-admin/performance/dashboard-analysis.md'
-
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
         'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
+        'admin/workloads/README.md' : 'platform-admin/workloads/workload-overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
         'admin/authentication/rbac.md' : 'admin/authentication/roles.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
@@ -248,6 +247,7 @@ nav:
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
+      - 'Overview' : 'platform-admin/workloads/workload-overview.md'
       - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
       - 'Policies' :
         - 'Overview' : 'platform-admin/workloads/policies/overview.md'
@@ -259,7 +259,6 @@ nav:
       - 'Credentials' : 'platform-admin/workloads/credentials-setup.md'
       - 'Templates': 'platform-admin/workloads/templates.md'
       - 'Data Volumes': 'platform-admin/workloads/data-volumes.md' 
-
 
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
