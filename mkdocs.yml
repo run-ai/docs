@@ -111,6 +111,7 @@ plugins:
         'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'admin/admin-ui-setup/overview.md' : 'platform-admin/aiinitiatives/overview'   # installation points here
         'admin/admin-ui-setup/project-setup.md' : 'platform-admin/aiinitiatives/org/projects.md'
         'admin/admin-ui-setup/department-setup.md' : 'platform-admin/aiinitiatives/org/departments.md'
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'

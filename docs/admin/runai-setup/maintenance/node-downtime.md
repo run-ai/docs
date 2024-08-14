@@ -1,95 +1,167 @@
-# Planned and Unplanned Node Downtime  
+  
+This article provides detailed instructions on how to manage both planned and unplanned node downtime in a Kubernetes cluster that is running Run:ai. It covers all the steps to maintain service continuity and ensure the proper handling of workloads during these events.
 
-## Introduction
+## Prerequisites
 
-Nodes (Machines) that are part of the cluster are susceptible to occasional downtime. This can be either as part of __planned maintenance__ where we bring down the node for a specified time in an orderly fashion or an __unplanned downtime__ where the machine abruptly stops due to a software or hardware issue.
+* __Access to Kubernetes cluster__  
+  You must have administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands  
+* __Basic knowledge of Kubernetes__  
+  Familiarity with Kubernetes concepts such as nodes, taints, and workloads  
+* __Run:ai installation__  
+  The Run:ai software installed and configured within your Kubernetes cluster  
+* __Disaster recovery plan__  
+  For Self-hosted installations, ensure that a disaster recovery plan is in place, particularly for preserving the Run:ai data. For more details, see [backup & restore](https://portal.document360.io/saas/docs/backup-restore-1).  
+* __Node naming conventions__  
+  Know the names of the nodes within your cluster, as these are required when executing the commands
 
-The purpose of this document is to provide a process for retaining the Run:ai service and Researcher workloads during and after the downtime. 
+## Node types
 
-## Self-hosted installation
+This article distinguishes between two types of nodes within a Run:ai installation:
 
-The self-hosted installation differs from the Classic (SaaS) installation of Run:ai in that it includes the Run:ai control-plane. The control plane contains data that must be preserved during downtime. As such, you must first follow the [disaster recovery planning](../config/dr.md) process. 
+* Worker nodes  
+   Nodes are where workloads are executed  
+* Run:ai system nodes  
+  Nodes on which the Run:ai software runs, managing the cluster's operations
 
-## Node Types
-The document differentiates between __Run:ai System Worker Nodes__ and __GPU Worker Nodes__:
+### Worker nodes
 
-* Worker Nodes - are where Machine Learning workloads run. 
-* Run:ai System Nodes - In a production installation Run:ai software runs on one or more [Run:ai System Nodes](../cluster-setup/cluster-prerequisites.md#hardware-requirements) on which the Run:ai software runs. 
+Worker Nodes are responsible for running workloads. When a worker node goes down, either due to planned maintenance or unexpected failure, workloads ideally migrate to other available nodes or wait in the queue to be executed when possible.
 
+#### Training vs. Interactive workloads
 
-## Worker Nodes
-Worker Nodes are where machine learning workloads run. Ideally, when a node is down, whether for planned maintenance or due to an abrupt downtime, these workloads should migrate to other available nodes or wait in the queue to be started when possible. 
+Run:ai distinguishes between two types of workloads:
 
-### Training vs. Interactive
-Run:ai differentiates between _Training_ and _Interactive_ workloads. The key difference at node downtime is that Training workloads will automatically move to a new node while Interactive workloads require a manual process. The manual process is recommended for Training workloads as well, as it hastens the process -- it takes time for Kubernetes to identify that a node is down.
+* __Training workloads__  
+  These are long-running processes that, in case of node downtime, can automatically move to another node.  
+* __Interactive workloads__  
+  These are short-lived, interactive processes that require manual intervention to be relocated to another node.
 
-### Planned Maintenance
+While training workloads can be automatically migrated, it is recommended to manually manage this process for faster response, as it may take time for Kubernetes to detect a node failure.
 
-Before stopping a Worker node, perform the following: 
+#### Planned maintenance
 
-* Stop the Kubernetes scheduler from starting __new__ workloads on the node and drain node from all existing workloads. Workloads will move to other nodes or await on queue for renewed execution:
+Before stopping a worker node for maintenance, perform the following steps:
 
-```
-kubectl taint nodes <node-name> runai=drain:NoExecute
-```
+1. __Prevent new workloads on the node__  
+   To stop the Kubernetes Scheduler from assigning new workloads to the node and to safely remove all existing workloads, copy the following command to your terminal:  
 
-* Shut down the node and perform the required maintenance. 
+    ``` bash
+    kubectl taint nodes <node-name> runai=drain:NoExecute
+    ```
 
+    __Explanation:__ 
+    
+    * `<node-name>`  
+        Replace this placeholder with the actual name of the node you want to drain  
+    * `kubectl taint nodes`  
+        This command is used to add a taint to the node, which prevents any new pods from being scheduled on it  
+    * `runai=drain:NoExecute`  
+        This specific taint ensures that all existing pods on the node are evicted and rescheduled on other available nodes, if possible. 
 
-* When done, start the node and then run:
+    __Result__: The node stops accepting new workloads, and existing workloads either migrate to other nodes or are placed in a queue for later execution. 
 
-```
-kubectl taint nodes <node-name> runai=drain:NoExecute-
-```
+2. __Shut down and perform maintenance__  
+   After draining the node, you can safely shut it down and perform the necessary maintenance tasks. 
 
-### Unplanned Downtime
+3. __Restart the node__ 
+   Once maintenance is complete and the node is back online, remove the taint to allow the node to resume normal operations. Copy the following command to your terminal:  
 
-* If a node has failed and has immediately restarted, all services will automatically start. 
+    ``` bash
+    kubectl taint nodes <node-name> runai=drain:NoExecute-
+    ```
 
-* If a node is to remain down for some time, you will want to drain the node so that workloads will migrate to another node:
+    __Explanation:__ 
 
-```
-kubectl taint nodes <node-name> runai=drain:NoExecute
-```
+    * `runai=drain:NoExecute-`  
+      The `-` at the end of the command indicates the removal of the taint. This allows the node to start accepting new workloads again.
 
-When the node is up again, run: 
+    __Result__: The node rejoins the cluster's pool of available resources, and workloads can be scheduled on it as usual
 
-```
-kubectl taint nodes <node-name> runai=drain:NoExecute-
-```
+#### Unplanned downtime
 
-* If the node is to be permanently shut down, you can remove it completely from Kubernetes. Run:
+In the event of unplanned downtime:
 
-```
-kubectl delete node <node-name>
-```
+1. __Automatic Restart__  
+    If a node fails but immediately restarts, all services and workloads automatically resume.  
+2. __Extended Downtime__  
+   If the node remains down for an extended period, drain the node to migrate workloads to other nodes. Copy the following command to your terminal:  
 
-However, if you plan to bring back the node, you will need to rejoin the node into the cluster. See [Rejoin](#rejoin-a-node-into-the-kubernetes-cluster).
+    ``` bash
+    kubectl taint nodes <node-name> runai=drain:NoExecute
+    ```
 
+    __Explanation:__ The command works the same as in the planned maintenance section, ensuring that no workloads remain scheduled on the node while it is down.  
 
+3. __Reintegrate the Node__ 
+   Once the node is back online, remove the taint to allow it to rejoin the cluster's operations. Copy the following command to your terminal:  
 
-## Run:ai System Nodes
- 
- In a production installation, Run:ai software runs on one or more Run:ai system nodes. As a best practice, it's best to have __more than one__ such node so that during planned maintenance or unplanned downtime of a single node, the other node will take over. If a second node does not exist, you will have to [designate an arbitrary node](../config/node-roles.md) on the cluster as a Run:ai system node to complete the process below.
+    ``` bash
+    kubectl taint nodes <node-name> runai=drain:NoExecute-
+    ``` 
+    __Result__: This action reintegrates the node into the cluster, allowing it to accept new workloads.  
 
- Protocols for planned maintenance and unplanned downtime are identical to Worker Nodes. See the section above. 
+4. __Permanent Shutdown__  
+    If the node is to be permanently decommissioned, remove it from Kubernetes with the following command:  
 
+    ``` bash
+    kubectl delete node <node-name>
+    ```  
+    __Explanation__: 
 
+    * `kubectl delete node`  
+      This command completely removes the node from the cluster  
+    * `<node-name>`  
+      Replace this placeholder with the actual name of the node  
 
-## Rejoin a Node into the Kubernetes Cluster
+    __Result:__ The node is no longer part of the Kubernetes cluster. If you plan to bring the node back later, it must be rejoined to the cluster using the steps outlined in the next section.
 
-To rejoin a node to the cluster follow the following steps:
+### Run:ai System nodes
 
-* On the __master__ node, run:
+In a production environment, the Run:ai software operates on one or more Run:ai System Nodes. It is recommended to have more than one system node to ensure high availability. For more information, see [high availability](../config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second System Node does not exist, you must designate another node in the cluster as a temporary Run:ai System Node to maintain operations.
 
-```
-kubeadm token create --print-join-command
-```
-* This would output a `kubeadm join` command. Run the command on the worker node for it to re-join the Kubernetes cluster. 
-* Verify that the node is joined by running:
+The protocols for handling planned maintenance and unplanned downtime are identical to those for Worker Nodes. Refer to the above section for detailed instructions.
 
-```
-kubectl get nodes
-```
+## Rejoining a node into the Kubernetes cluster
 
-* When the machine is up you will need to [re-label nodes according to their role](../config/node-roles.md)
+To rejoin a node to the Kubernetes cluster, follow these steps:
+
+1. __Generate a join command on the master node__  
+   On the master node, copy the following command to your terminal:  
+
+    ``` bash
+    kubeadm token create --print-join-command
+    ``` 
+
+    __Explanation__: 
+
+    * `kubeadm token create`  
+        This command generates a token that can be used to join a node to the Kubernetes cluster.  
+    * `--print-join-command`  
+        This option outputs the full command that needs to be run on the worker node to rejoin it to the cluster.
+
+    __Result__: The command outputs a `kubeadm join` command. 
+    
+2. __Run the Join Command on the Worker Node__  
+   Copy the `kubeadm join` command generated from the previous step and run it on the worker node that needs to rejoin the cluster.
+
+    __Explanation:__  
+
+    * The `kubeadm join` command re-enrolls the node into the cluster, allowing it to start participating in the cluster's workload scheduling. 
+
+3. __Verify Node Rejoining__ 
+   Verify that the node has successfully rejoined the cluster by running:  
+
+    ``` bash
+    kubectl get nodes
+    ```
+
+    __Explanation__:  
+
+        * `kubectl get nodes`  
+        This command lists all nodes currently part of the Kubernetes cluster, along with their status  
+    
+    __Result__: The rejoined node should appear in the list with a status of Ready 
+
+4. __Re-label Nodes__  
+    Once the node is back online, ensure it is labeled according to its role within the cluster
+
