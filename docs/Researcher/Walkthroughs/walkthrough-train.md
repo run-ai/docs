@@ -2,21 +2,18 @@
 
 ## Introduction
 
-Deep learning workloads can be divided into two generic types:
-
-*   Interactive "build" sessions. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm, or similar and accesses GPU resources directly.
-*   Unattended "training" sessions. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. During the execution, the customer can examine the results.
+The purpose of this article is to provide a quick ramp-up to running an unattended training Workload using the Run:ai command-line interface (CLI).
 
 With this Quickstart you will learn how to:
 
-*   Use the Run:ai command-line interface (CLI) to start a deep learning __training__ workload.
-*   View training status and resource consumption using the Run:ai user interface and the Run:ai CLI.
-*   View training logs.
-*   Stop the training.
+*   Use the Run:ai command-line interface to start a deep learning __training__ workload.
+*   View training workload status and resource consumption using the Run:ai user interface and the Run:ai CLI.
+*   View training workload logs.
+*   Stop the training workload.
 
 ## Prerequisites 
 
-To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two CLI versions:
+To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two avaible CLI variants:
 
 * The older CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
 * A newer CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
@@ -31,7 +28,7 @@ To complete this Quickstart you must need the Run:ai CLI installed on your machi
 
 ### Run Workload
 
-*   At the command-line run:
+Open a terminal and run:
 
 === "Old CLI"
     ``` bash
@@ -45,7 +42,7 @@ To complete this Quickstart you must need the Run:ai CLI installed on your machi
     runai training submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
     ```
 
-This would start an unattended training Workload for team-a with an allocation of a single GPU. The Worlload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Workload ``train1``
+This would start an unattended training Workload for `team-a` with an allocation of a single GPU. The Workload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Workload ``train1``
 
 ### List Workloads
 
@@ -145,5 +142,5 @@ This would stop the training workload. You can verify this by [listing](#list-wo
 
 ## Next Steps
 
-*   Follow the Quickstart document: [Launch Interactive Workloads](walkthrough-build.md)
-*   Use your container to run an unattended training workload
+*   Follow the Quickstart document: [Launch Interactive Workloads](walkthrough-build.md).
+*   Use your container to run an unattended training workload.
