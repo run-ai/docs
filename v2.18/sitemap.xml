@@ -491,11 +491,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/scheduling/using-node-pools/</loc>
-         <lastmod>2024-08-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-jupyter/</loc>
          <lastmod>2024-08-15</lastmod>
          <changefreq>daily</changefreq>
