@@ -82,7 +82,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
 
-### Upgrade from version 2.7, 2.8, 2.9, or 2.11
+### Upgrade from version 2.9
     
 * Create a `tls secret` as described in the [control plane installation](backend.md). 
 * Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
