@@ -111,7 +111,25 @@ To create a new node pool:
   
    6. Click **CREATE NODE POOL**
 
-Editing a node pool
+
+### Labeling nodes for node-pool grouping:
+
+The Infrastructure Administrator can use a preset node label such as the `nvidia.com/gpu.product` that labels the GPU type, or configure any other node label (e.g. `faculty=physics`).
+
+To assign a label to nodes you want to group into a node pool, set a node label on each node:
+
+
+1. Get the list of nodes and their current labels using the following command:
+   ``` bash
+   kubectl get nodes --show-labels
+   ```
+
+2. Annotate a specific node with a new label using the following command:
+   ``` bash
+   kubectl label node <node-name> <key>=<value>
+   ```
+
+## Editing a node pool
 
 1. Select the node pool you want to edit  
 2. Click **EDIT**  
