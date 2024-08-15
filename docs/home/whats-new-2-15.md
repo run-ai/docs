@@ -105,11 +105,11 @@ date: 2023-Dec-3
 
 #### Nodes
 
-* <!-- RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->Improved the readability of the *Nodes* table to include more detailed statuses and descriptions. The added information in the table makes it easier to inspect issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../Researcher/scheduling/using-node-pools.md#node-and-node-pool-status).
+* <!-- RUN-9943/RUN-12176 Nodes - reflect the correct status of the node - add to nodes page the table from the TW ticket -->Improved the readability of the *Nodes* table to include more detailed statuses and descriptions. The added information in the table makes it easier to inspect issues that may impact resource availability in the cluster. For more information, see [Node and Node Pool Status](../platform-admin/aiinitiatives/resources/node-pools.md#node-pools-table).
 
 #### UI Enhancements
 
-* <!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report - NEW FEATURE -->Added the ability to download a CSV file from any page that contains a table. Downloading a CSV provides a snapshot of the page's history over the course of time, and helps with compliance tracking. All the columns that are selected (displayed) in the table are downloaded to the file.
+* <!-- RUN-10221/RUN-10426 Projects V2 - User will be able to export a CSV report - NEW FEATURE -->Added the ability to download a CSV file from any page that contains a table. Downloading a CSV provides a snapshot of the page's history over time, and helps with compliance tracking. All the columns that are selected (displayed) in the table are downloaded to the file.
 
 ### Installation and Configuration
 
