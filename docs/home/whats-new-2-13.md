@@ -67,11 +67,11 @@ This version contains features and fixes from previous versions starting with 2.
 <!-- RUN9530/9577 New Dashboard for Quota management -->
 * Added a new dashboard for **Quota management**, which provides an efficient means to monitor and manage resource utilization within the AI cluster. The dashboard filters the display of resource quotas based on *Departments*, *Projects*, and *Node pools*. For more information, see [Quota management dashboard](../platform-admin/performance/dashboard-analysis.md#quota-management-dashboard).
 
-* Added to the **Overview dashboard**, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../Researcher/scheduling/using-node-pools.md).
+* Added to the **Overview dashboard**, the ability to filter the cluster by one or more node pools. For more information, see [Node pools](../platform-admin/aiinitiatives/resources/node-pools.md).
 
 **Nodes and Node pools**
 <!-- RUN-9960/9961 Per node-pool GPU placement strategy -->
-* Run:ai scheduler supports 2 scheduling strategies: Bin Packing (default) and Spread. For more information, see [Scheduling strategies](../Researcher/scheduling/strategies.md). You can configure the scheduling strategy in the node pool level to improve the support of clusters with mixed types of resources and workloads. For configuration information, see [Creating new node pools](../Researcher/scheduling/using-node-pools.md#creating-new-node-pools).
+* Run:ai scheduler supports 2 scheduling strategies: Bin Packing (default) and Spread. For more information, see [Scheduling strategies](../Researcher/scheduling/strategies.md). You can configure the scheduling strategy in the node pool level to improve the support of clusters with mixed types of resources and workloads. For configuration information, see [Creating new node pools](../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool).
 
 * GPU device level DCGM Metrics are collected per GPU and presented by Run:ai in the Nodes table. Each node contains a list of its embedded GPUs with their respective DCGM metrics.
 See [DCGM Metrics](https://docs.nvidia.com/datacenter/dcgm/latest/user-guide/feature-overview.html#metrics){target=_blank} for the list of metrics which are provided by NVidia DCGM and collected by Run:ai. Contact your Run:ai customer representative to enable this feature.

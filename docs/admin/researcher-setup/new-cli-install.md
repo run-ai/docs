@@ -66,28 +66,26 @@ Set a default working project, to easily submit workloads without mentioning the
 Auto-completion assists with completing the command syntax automatically for ease of use. Auto-completion is installed automatically.  
  The interfaces below require manual installation:
 
-__Installation instructions for ZSH__
+=== "Zsh"
+      1. Edit the file `~/.zshrc`  
+      2. Add the following code:
 
-1. Edit the file `~/.zshrc`  
-2. Add the following code:
+      ``` bash
+      autoload -U compinit; compinit -i
+      source <(runai completion zsh)
+      ```
 
-``` bash
-autoload -U compinit; compinit -i
-source <(runai completion zsh)
-```
+=== "Bash"
+      1. Install the bash-completion package  
+      2. Choose your operating system:  
+         Mac: `brew install bash-completion`  
+         Ubuntu/Debian: `sudo apt-get install bash-completion`  
+         Fedora/Centos: `sudo yum install bash-completion`  
+      3. Edit the file `~/.bashrc` and add the following lines:
 
-__Installation instructions for Bash__
-
-1. Install the bash-completion package  
-2. Choose your operating system:  
-   Mac: `brew install bash-completion`  
-    Ubuntu/Debian: `sudo apt-get install bash-completion`  
-    Fedora/Centos: `sudo yum install bash-completion`  
-3. Edit the file `~/.bashrc` and add the following lines:
-
-``` bash
-[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
- 
-source <(runai completion bash)
-```
+      ``` bash
+      [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+      
+      source <(runai completion bash)
+      ```
 

@@ -66,29 +66,27 @@ runai list jobs
 
 It is possible to configure your Linux/Mac shell to complete Run:ai CLI commands. This feature works on _bash_ and _zsh_ shells only.
 
-### Zsh
+=== "Zsh"
+     Edit the file `~/.zshrc`. Add the lines:
 
-Edit the file `~/.zshrc`. Add the lines:
+     ```
+     autoload -U compinit; compinit -i
+     source <(runai completion zsh)
+     ```
 
-```
-autoload -U compinit; compinit -i
-source <(runai completion zsh)
-```
+=== "Bash"
+     Install the bash-completion package:
 
-### Bash
+     * Mac: `brew install bash-completion`
+     * Ubuntu/Debian: `sudo apt-get install bash-completion`
+     * Fedora/Centos: `sudo yum install bash-completion`
 
-Install the bash-completion package:
+     Edit the file `~/.bashrc`. Add the lines:
 
-* Mac: `brew install bash-completion`
-* Ubuntu/Debian: `sudo apt-get install bash-completion`
-* Fedora/Centos: `sudo yum install bash-completion`
-
-Edit the file `~/.bashrc`. Add the lines:
-
-``` bash
-[[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
-source <(runai completion bash)
-```
+     ``` bash
+     [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
+     source <(runai completion bash)
+     ```
 
 
 ## Troubleshoot the CLI Installation
@@ -103,6 +101,6 @@ To update the CLI to the latest version perform the same install process again.
 
 If you have installed using the default path, run:
 
-```
+``` bash
 sudo rm /usr/local/bin/runai
 ```
