@@ -2,11 +2,6 @@
 title: Upgrade self-hosted OpenShift installation
 ---
 # Upgrade Run:ai 
-!!! Important
-    Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.12, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
-
-    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. As such, they are subject to storage class [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} policy.
-
 ## Preparations
 ### Helm
 Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later.
@@ -29,18 +24,6 @@ If you are installing an air-gapped version of Run:ai, The Run:ai tar file conta
 
 ## Before upgrade
 Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
-
-Before upgrading the control plane, run: 
-
-``` bash
-POSTGRES_PV=$(kubectl get pvc pvc-postgresql -n runai-backend -o jsonpath='{.spec.volumeName}')
-kubectl patch pv $POSTGRES_PV -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
-
-kubectl delete secret -n runai-backend runai-backend-postgresql
-kubectl delete sts -n runai-backend keycloak runai-backend-postgresql
-```
-
-Then upgrade the control plane as described [below](#upgrade-control-plane). Before upgrading, find customizations and merge them as discussed below. 
 
 ### Upgrade from version 2.9
 Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 

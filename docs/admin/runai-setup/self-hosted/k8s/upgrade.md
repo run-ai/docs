@@ -2,15 +2,7 @@
 title: Upgrade self-hosted Kubernetes installation
 ---
 # Upgrade Run:ai 
-
-
-!!! Important
-    Run:ai data is stored in Kubernetes persistent volumes (PVs). Prior to Run:ai 2.12, PVs are owned by the Run:ai installation. Thus, uninstalling the `runai-backend` helm chart may delete all of your data. 
-
-    From version 2.12 forward, PVs are owned the customer and are independent of the Run:ai installation. As such, they are subject to storage class [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} policy.
-    
 ## Preparations
-
 ### Helm
 Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later.
 Before you continue, validate your installed helm client version.
@@ -18,7 +10,6 @@ To install or upgrade Helm, see [Installing Helm](https://helm.sh/docs/intro/ins
 If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
 
 ### Software files
-
 === "Connected"
 
     Run the helm command below:
@@ -33,17 +24,13 @@ If you are installing an air-gapped version of Run:ai, The Run:ai tar file conta
     * Upload the images as described [here](preparations.md#software-artifacts).
 
 ## Before upgrade
-
 Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
 
 ### Upgrade from version 2.9 
-
-Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
+Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_, _Ingress_ and _installation customization_. 
 
 #### PVC ownership
-
 Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
-
 * Run:ai [requires](prerequisites.md#kubernetes) a Kubernetes storage class to be installed.
 * The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
 
@@ -55,13 +42,14 @@ To remove the ownership in an older installation, run:
 kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
 ```
-#### Ingress
 
+#### Ingress
 Delete the ingress object which will be recreated by the control plane upgrade
 
 ``` bash
 kubectl delete ing -n runai-backend runai-backend-ingress
 ```
+
 #### Installation customization
 
 The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
