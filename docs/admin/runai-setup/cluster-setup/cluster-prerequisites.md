@@ -280,40 +280,6 @@ kubectl patch configmap/config-features \
   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
 ```
 
-#### Inference Autoscaling
-
-Run:ai allows to autoscale a deployment using the following metrics:
-
-1. Throughput (requests/second)
-2. Concurrency
-
-<!--
-Additional installation may be needed for some of the metrics as follows:
-
-* Using *Throughput* or *Concurrency* does not require any additional installation.
-* Any other metric will require installing the [HPA Autoscaler](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}.
-* Using *GPU Utilization_, *Latency* or *Custom metric* will **also** require the Prometheus adapter. The Prometheus adapter is part of the Run:ai installer and can be added by setting the `prometheus-adapter.enabled` flag to `true`. See [Customizing the Run:ai installation](./customize-cluster-install.md) for further information.
-
-If you wish to use an *existing* Prometheus adapter installation, you will need to configure it manually with the Run:ai Prometheus rules, specified in the Run:ai chart values under `prometheus-adapter.rules` field. For further information please contact Run:ai customer support.
--->
-
-#### Accessing Inference from outside the Cluster
-
-Inference workloads will typically be accessed by consumers residing outside the cluster. You will hence want to provide consumers with a URL to access the workload. The URL can be found in the Run:ai user interface under the deployment screen (alternatively, run `kubectl get ksvc -n <project-namespace>`).
-
-However, for the URL to be accessible outside the cluster you must configure your DNS as described [here](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#configure-dns){target=_blank}.
-
-??? "Alternative Configuration"
-    When the above DNS configuration is not possible, you can manually add the `Host` header to the REST request as follows:
-
-    * Get an `<external-ip>` by running `kubectl get service -n kourier-system kourier`. If you have been using *istio* during Run:ai installation, run:  `kubectl -n istio-system get service istio-ingressgateway` instead. 
-    * Send a request to your workload by using the external ip, and place the workload url as a `Host` header. For example
-
-    ```
-    curl http://<external-ip>/<container-specific-path>
-        -H 'Host: <host-name>'
-    ```
-
 ## Hardware Requirements
 
 (see picture below)
