@@ -128,6 +128,7 @@ plugins:
         'admin/authentication/rbac.md' : 'admin/authentication/roles.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
         'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
 
 
 nav:
@@ -386,7 +387,7 @@ nav:
       - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
       - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
-      - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
+#      - 'Using Node Pools' : 'Researcher/scheduling/using-node-pools.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
