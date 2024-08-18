@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of this article is to provide a quick ramp-up to running an unattended training Workload. Training Workloads are containers that run a task on start and close down automatically when the task is done. 
+The purpose of this article is to provide a quick ramp-up to running an unattended training Workload. Training Workloads are containers that execute a program on start and close down automatically when the task is done. 
 
 With this Quickstart you will learn how to:
 
@@ -58,6 +58,9 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
     ```
 
+    !!! Note
+        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
+
 === "CLI V2"
     Open a terminal and run:
 
@@ -65,6 +68,8 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     runai project set team-a
     runai training submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
     ```
+    !!! Note
+        For more information on the training submit command, see [cli documentation](../cli-reference/new-cli/runai_training_submit.md).
 
 === "User Interface"
     * In the Run:ai UI select __Workloads__
@@ -73,9 +78,11 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     * Select __NEW ENVIRONMENT__. Enter `quickstart` as the name and `gcr.io/run-ai-demo/quickstart` as the image. Then select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, select `one-gpu` under the Compute resource. 
     * Select __CREATE TRAINING__.
+    
+    !!! Note
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../user-interface/workspaces/overview.md).
 
 === "API"
-
     ``` bash
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/trainings' \ # (1)
     -H 'Content-Type: application/json' \
@@ -97,6 +104,10 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     2. `<TOKEN>` is an API access token. see above on how to obtain a valid token.
     3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
     4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+
+    !!! Note
+        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        * For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1) 
 
 This would start an unattended training Workload for `team-a` with an allocation of a single GPU. The Workload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Workload ``train1``
 
