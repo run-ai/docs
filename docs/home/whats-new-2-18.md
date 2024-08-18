@@ -36,18 +36,18 @@ date: 2024-June-14
 
 * <!-- RUN-18123/RUN-18124 - Inference Workloads APIs -->Added a new API for submitting Run:ai inference workloads. This API allows users to easily submit inference workloads. This new API provides a consistent user experience for workload submission which maintains data integrity across all the user interfaces in the Run:ai platform. (Requires minimum cluster version v2.18).
 
-#### Command Line Interface
+#### Command Line Interface V2
 
-* <!-- RUN-14715/RUN-16337 - CLI V2 -->Added an improved researcher focused Command Line Interface (CLI). The improved CLI brings usability enhancements for researcher which include:
+* <!-- RUN-14715/RUN-16337 - CLI V2 -->Added an improved, researcher-focused Command Line Interface (CLI). The improved CLI brings usability enhancements for the Researcher which include:
 
     * Support multiple clusters
-    * Self upgrade
+    * Self-upgrade
     * Interactive mode
     * Align CLI to be data consistent with UI and API
     * Improved usability and performance
 
-    This is an early access feature available for customers to use; however be aware that there may be functional gaps versus the legacy CLI.
-    For more information about installing and using the Improved CLI, see [Improved CLI](../Researcher/cli-reference/new-cli/runai.md). (Requires minimum cluster version v2.18).
+    This is an early access feature available for customers to use; however, be aware that there may be functional gaps versus the older, V1 CLI.
+    For more information about installing and using the V2 CLI, see [CLI V2](../Researcher/cli-reference/new-cli/runai.md). (Requires minimum cluster version v2.18).
 
 #### GPU memory swap
 
