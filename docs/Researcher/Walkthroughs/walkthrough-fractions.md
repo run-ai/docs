@@ -6,7 +6,7 @@ Run:ai provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:ai’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. This enables several workloads to run in containers side-by-side on the same GPU without interfering with each other. The solution is transparent, simple, and portable; it requires no changes to the containers themselves.
 
-A typical use-case could see 2-8 Jobs running on the same GPU, meaning you could do eight times the work with the same hardware. 
+A typical use-case could see a couple of Jobs running on the same GPU, meaning you could multiply the work with the same hardware. 
 
 ## Prerequisites
 
@@ -30,14 +30,14 @@ To complete this Quickstart you must need the Run:ai CLI installed on your machi
 
 Open a terminal and run:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai config project team-a   
     runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
     runai submit frac03 -i gcr.io/run-ai-demo/quickstart -g 0.3 
     ```
 
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai project set team-a
     runai training submit frac05 -i gcr.io/run-ai-demo/quickstart --gpu-portion-request 0.5
@@ -54,14 +54,14 @@ Open a terminal and run:
 
 Follow up on the Workload's progress by running:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai list jobs
     ```
     The result:
     ![mceclip30.png](img/mceclip30.png)
 
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai training list
     ```
@@ -102,12 +102,12 @@ Notes:
 
 Instead of requesting a fraction of the GPU, you can ask for specific GPU memory requirements. For example:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai submit  -i gcr.io/run-ai-demo/quickstart --gpu-memory 5G
     ```
 
-=== "New CLI"
+=== "CLI V2"
     ```
     runai training submit -i gcr.io/run-ai-demo/quickstart --gpu-memory-request 5G
     ```
