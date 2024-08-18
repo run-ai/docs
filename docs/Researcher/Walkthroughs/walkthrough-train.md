@@ -11,7 +11,11 @@ With this Quickstart you will learn how to:
 *   View training workload logs.
 *   Stop the training workload.
 
-To submit a workload you can use the Run:ai _command-line interface (CLI)_ or the _Run:ai user interface_. 
+There are various ways to submit a training Workload:
+
+* Run:ai __command-line interface (CLI)__
+* Run:ai __user interface__
+* Run:ai __API__
 
 ## Prerequisites 
 
@@ -37,6 +41,10 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
+
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [api authentication](../../developer/rest-auth.md) article.
+
 
 ### Run Workload
 
@@ -65,6 +73,29 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
     * When the previous screen comes up, select `one-gpu` under the Compute resource. 
     * Select __CREATE TRAINING__.
 
+=== "API"
+
+    ``` bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/trainings' \ # (1)
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -d '{ 
+        "name": "train-via-api", 
+        "projectId": "<PROJECT-ID>", '\ # (3)
+        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "spec": {
+            "image": "gcr.io/run-ai-demo/quickstart",
+            "compute": {
+            "gpuDevicesRequest": 1
+            }
+        }
+    }'
+    ``` 
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface. For example `acme.run.ai`
+    2. `<TOKEN>` is an API access token. see above on how to obtain a valid token.
+    3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
 
 This would start an unattended training Workload for `team-a` with an allocation of a single GPU. The Workload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Workload ``train1``
 
