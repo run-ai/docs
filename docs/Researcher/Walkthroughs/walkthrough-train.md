@@ -15,7 +15,7 @@ To submit a workload you can use the Run:ai _command-line interface (CLI)_ or th
 
 ## Prerequisites 
 
-To accomplish this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
+To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
 
 * _Researcher_ access to Run:ai 
 * To a Project named "team-a"
