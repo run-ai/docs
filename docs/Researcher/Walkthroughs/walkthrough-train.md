@@ -15,8 +15,8 @@ With this Quickstart you will learn how to:
 
 To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two avaible CLI variants:
 
-* The older CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
-* A newer CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
+* The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
+* A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
 
 ## Step by Step Walkthrough
 
