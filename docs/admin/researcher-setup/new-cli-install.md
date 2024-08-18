@@ -1,4 +1,4 @@
-# Installing the New Command-line interface
+# Installing the V2 Command-line interface
 
 This article explains the procedure for installing and configuring the __new__ researcher Command Line Interface (CLI). 
 
@@ -7,7 +7,7 @@ This article explains the procedure for installing and configuring the __new__ r
       The installation instructions for the older CLI are [here](cli-install.md).
 
 
-## Enabling the new CLI
+## Enabling the V2 CLI
 
 Under **Tools & Settings** → General settings → Workloads, enable the flag `Improved command line interface`
 
