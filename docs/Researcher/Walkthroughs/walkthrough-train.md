@@ -30,13 +30,13 @@ To complete this Quickstart you must need the Run:ai CLI installed on your machi
 
 Open a terminal and run:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai config project team-a   
     runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
     ```
 
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai project set team-a
     runai training submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
@@ -48,14 +48,14 @@ This would start an unattended training Workload for `team-a` with an allocation
 
 Follow up on the Workload's progress by running:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai list jobs
     ```
     The result:
     ![mceclip00.png](img/mceclip00.png)
 
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai training list
     ```
@@ -82,12 +82,12 @@ A full list of Workload statuses can be found [here](../scheduling/job-statuses.
 
 To get additional status on your Workload run:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai describe job train1
     ```
 
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai training describe train1
     ```
@@ -96,11 +96,11 @@ To get additional status on your Workload run:
 
 Run the following:
 
-=== "Old CLI"
+=== "CLI V1"
     ```
     runai logs train1
     ```
-=== "New CLI"
+=== "CLI V2"
     ``` bash
     runai training logs train1
     ```
@@ -128,12 +128,12 @@ Under Metrics you can see utilization graphs:
 
 Run the following:
 
-=== "Old CLI"
+=== "CLI V1"
     ``` bash
     runai delete job train1
     ```
 
-=== "New CLI"
+=== "CLI V2"
     ```    
     runai training delete train1
     ```
