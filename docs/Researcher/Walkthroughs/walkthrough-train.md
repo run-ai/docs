@@ -21,13 +21,13 @@ There are various ways to submit a training Workload:
 
 To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
 
-* _Researcher_ access to Run:ai 
-* To a Project named "team-a"
-* With at least 1 GPU assigned to the project. 
-* A link to the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
-* To complete this Quickstart __via the CLI__, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
-    * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
-    * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
+* _Researcher_ access to _Project_ in Run:ai named "team-a"
+* The project should be assigned a quota of at least 1 GPU. 
+* A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
+
+To complete this Quickstart __via the CLI__, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
+* The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
+* A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
 
 ## Step by Step Walkthrough
 
