@@ -26,6 +26,7 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 * A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
 
 To complete this Quickstart __via the CLI__, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
+
 * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
 * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
 
