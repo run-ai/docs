@@ -11,7 +11,7 @@ A typical use-case could see a couple of Jobs running on the same GPU, meaning y
 ## Prerequisites
 
 
-To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two avaible CLI variants:
+To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two available CLI variants:
 
 * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
 * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
