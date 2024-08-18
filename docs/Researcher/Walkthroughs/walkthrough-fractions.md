@@ -10,10 +10,12 @@ A typical use-case could see 2-8 Jobs running on the same GPU, meaning you could
 
 ## Prerequisites
 
-To complete this Quickstart you must have:
 
-*   Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-*   Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+To complete this Quickstart you must need the Run:ai CLI installed on your machine. There are two avaible CLI variants:
+
+* The older CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
+* A newer CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
+
 
 ## Step by Step Walkthrough
 
@@ -25,25 +27,52 @@ To complete this Quickstart you must have:
 
 ### Run Workload
 
-*   At the command-line run:
 
-        runai config project team-a
+Open a terminal and run:
 
-        runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5 --interactive
-        runai submit frac03 -i gcr.io/run-ai-demo/quickstart -g 0.3 
+=== "Old CLI"
+    ``` bash
+    runai config project team-a   
+    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
+    runai submit frac03 -i gcr.io/run-ai-demo/quickstart -g 0.3 
+    ```
+
+=== "New CLI"
+    ``` bash
+    runai project set team-a
+    runai training submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
+    runai training submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.3
+    ```
+
+
 
 *   The Jobs are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
 *   We named the Jobs _frac05_ and _frac03_ respectively. 
-*   Note that fractions may or may not use the ``--interactive`` flag. Setting the flag means that the Job will not automatically finish. Rather, it is the Researcher's responsibility to delete the Job. Fractions support both Interactive and non-interactive Jobs. 
-*   The Jobs are assigned to _team-a_ with an allocation of a single GPU. 
+*   The Jobs are assigned to _team-a_ with an allocation of  0.5 and 0.3 of a GPU respectively. Alternatively, you can request a specific size of GPU memory by using the `--gpu-memory` flag.
 
-Follow up on the Job's status by running:
+### List Workloads
 
+Follow up on the Workload's progress by running:
+
+=== "Old CLI"
+    ``` bash
     runai list jobs
+    ```
+    The result:
+    ![mceclip30.png](img/mceclip30.png)
 
-The result:
+=== "New CLI"
+    ``` bash
+    runai training list
+    ```
 
-![mceclip30.png](img/mceclip30.png)
+    The result:
+
+    ```
+    Workload               Type        Status      Project     Preemptible      Running/Requested Pods     GPU Allocation
+    ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    train1                 Training    Running     team-a      Yes              1/1                        0.00
+    ```
 
 Note that both Jobs were allocated to the __same__ node.
 
