@@ -64,7 +64,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/control-plane -f runai_control_plane_values.yaml --reset-then-reuse-values
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "~2.18.0" -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
 === "Airgapped"
 
@@ -78,7 +78,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 === "Connected"
 
     ``` bash
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane  \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.18.0" \
     --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ #(1)
     --set global.config.kubernetesDistribution=openshift \
     --set thanos.query.stores={thanos-grpc-port-forwarder:10901} \
