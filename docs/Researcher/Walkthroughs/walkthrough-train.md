@@ -88,7 +88,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer <TOKEN>' \ # (2)
     -d '{ 
-        "name": "train-via-api", 
+        "name": "train1", 
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
@@ -102,7 +102,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
     1. `<COMPANY-URL>` is the link to the Run:ai user interface. For example `acme.run.ai`
     2. `<TOKEN>` is an API access token. see above on how to obtain a valid token.
-    3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
+    3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
     4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
 
     !!! Note
