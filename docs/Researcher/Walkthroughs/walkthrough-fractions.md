@@ -6,9 +6,15 @@ Run:ai provides a Fractional GPU sharing system for containerized workloads on K
 
 Run:ai’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors. This enables several workloads to run in containers side-by-side on the same GPU without interfering with each other. The solution is transparent, simple, and portable; it requires no changes to the containers themselves.
 
-A typical use-case could see a couple of Workloads running on the same GPU, meaning you could multiply the work with the same hardware. 
+A typical use-case could see a couple of Workloads running on the same GPU, meaning you could multiply the work with the same hardware.
 
-To submit a workload you can use the Run:ai _command-line interface (CLI)_ or the _Run:ai user interface_. 
+The purpose of this article is to provide a quick ramp-up to running a training Workload with fractions of a GPU.  
+
+There are various ways to submit a  Workload:
+
+* Run:ai __command-line interface (CLI)__
+* Run:ai __user interface__
+* Run:ai __API__ 
 
 ## Prerequisites
 
@@ -36,6 +42,8 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [api authentication](../../developer/rest-auth.md) article.
 
 ### Run Workload
 
@@ -64,7 +72,37 @@ Open a terminal and run:
     * When the previous screen comes up, select `half-gpu` under the Compute resource. 
     * Select __CREATE TRAINING__.
     * Follow the process again to submit a second workload called `frac05-2`.
+    
+    !!! Note
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../user-interface/workspaces/overview.md).
 
+=== "API"
+    ``` bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/trainings' \ # (1)
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -d '{ 
+        "name": "frac05", 
+        "projectId": "<PROJECT-ID>", '\ # (3)
+        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "spec": {
+            "image": "gcr.io/run-ai-demo/quickstart",
+            "compute": {
+            "gpuRequestType": "portion",
+            "gpuPortionRequest" : 0.5
+            }
+        }
+    }'
+    ``` 
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface. For example `acme.run.ai`
+    2. `<TOKEN>` is an API access token. see above on how to obtain a valid token.
+    3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+
+    !!! Note
+        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        * For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1) 
 
 
 *   The Workloads are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
@@ -107,17 +145,17 @@ Follow up on the Workload's progress by running:
 
 ### View Partial GPU memory
 
-When both Workloads are running, bash into one of them:
+To verify that the Workload sees only parts of the GPU memory run:
 
-```
-runai bash frac05
-```
+=== "CLI V1"
+    ```
+    runai exec frac05 nvidia-smi
+    ```
 
- Now, inside the container,  run: 
-
-```
-nvidia-smi
-```
+=== "CLI V2"
+    ``` bash
+    runai training exec frac05 nvidia-smi
+    ```
 
 The result:
 
