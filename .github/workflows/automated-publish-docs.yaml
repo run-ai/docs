@@ -98,7 +98,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
           SLACK_TITLE: "RunAI-Docs: Version ${{ needs.env.outputs.CURRENT_BRANCH }} Deployment ${{ contains(needs.*.result, 'failure') && 'failed' || 'completed successfully' }}"
-          SLACK_MESSAGE_ON_SUCCESS: "Docs were updated successfully for version ${{ needs.env.outputs.TITLE }}. Commit URL: ${{ needs.env.outputs.COMMIT_URL }}"
-          SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }}. Commit URL: ${{ needs.env.outputs.COMMIT_URL }}"
+          SLACK_MESSAGE_ON_SUCCESS: "Docs were updated successfully for version ${{ needs.env.outputs.TITLE }} ==> Commit Message: '${{ github.event.head_commit.message }}' ==> Commit URL: ${{ needs.env.outputs.COMMIT_URL }}"
+          SLACK_MESSAGE_ON_FAILURE: "Docs update FAILED for version ${{ needs.env.outputs.TITLE }} ==> Commit Message: '${{ github.event.head_commit.message }}' ==> Commit URL: ${{ needs.env.outputs.COMMIT_URL }}"
           MSG_MINIMAL: true
           SLACK_FOOTER: ""
