@@ -23,7 +23,7 @@ See [https://kubernetes.io/docs/concepts/services-networking/service](https://ku
 
 ## Workspaces configuration
 
-Version 2.9 introduces [Workspaces](../../../Researcher/user-interface/workspaces/overview.md) which allow the Researcher to build AI models interactively. 
+[Workspaces](../../../Researcher/user-interface/workspaces/overview.md) allow the Researcher to build AI models interactively. 
 
 Workspaces allow the Researcher to launch tools such as Visual Studio code, TensorFlow, TensorBoard etc. These tools require access to the container. Access is provided via URLs. 
 
@@ -35,8 +35,8 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 
 To enable host-based routing you must perform the following steps:
 
-1. Create a second DNS entry `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) DNS.
-2. Obtain a __star__ SSL certificate for this DNS.
+1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) DNS.
+2. Obtain a __wildcard__ SSL certificate for this DNS.
 
 
 3. Add the certificate as a secret:
@@ -64,7 +64,7 @@ spec:
     secretName: runai-cluster-domain-star-tls-secret
 ```
 
-Replace `<CLUSTER_URL>` as described above.
+Replace `<CLUSTER_URL>` as described above and run: `kubectl apply -f <filename>`.
 
 5. Edit Runaiconfig to generate the URLs correctly:
 
