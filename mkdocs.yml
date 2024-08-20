@@ -130,7 +130,6 @@ plugins:
         'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
         'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
 
-
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
@@ -270,15 +269,21 @@ nav:
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
       - 'Run:ai Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
-      - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
-      - 'Build' : 'Researcher/Walkthroughs/walkthrough-build.md'
-      - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
-      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
-      - 'Distributed Training Workloads' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
-      - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
-      - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
+      - 'Train' : 
+        - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
+        - 'Distributed Training' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
+      - 'Build' :
+        - 'Basics' : 'Researcher/Walkthroughs/walkthrough-build.md'
+        - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
+        - 'Jupyter Notebook' : 'Researcher/Walkthroughs/quickstart-jupyter.md'
+        - 'Visual Studio Code Web' : 'Researcher/Walkthroughs/quickstart-vscode.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
-      - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+      - 'GPU Allocation' : 
+        - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
+        - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+      - 'Scheduling' :
+        - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
+        - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
       - 'Workspaces' :
         - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
