@@ -94,8 +94,6 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
-            "command" : "start-notebook.sh",
-            "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "quay.io/opendatahub-contrib/workbench-images:vscode-datascience-c9s-py311_2023c_latest",
             "compute": {
                 "gpuDevicesRequest": 1
