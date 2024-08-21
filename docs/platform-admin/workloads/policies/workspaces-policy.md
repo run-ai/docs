@@ -1,12 +1,12 @@
 ---
-title:   Policies
+title:   V2 Policies
 summary: This article outlines what is a  policy and details the variables that are used in the policy.
 
 ---
 
 ## Enabling the Policy Manager
 
-To use API-based Policies you need to enable the *New Policy Manager*. The policy manager provides information about resources that are non-compliant with the applied policies.  
+To use V2 Policies you need to enable the *New Policy Manager*. The policy manager provides information about resources that are non-compliant with the applied policies.  
 
 
 To enable the new *Policy Manager*:

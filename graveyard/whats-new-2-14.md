@@ -11,7 +11,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Auto delete jobs
 
-* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
+* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options which automatically delete jobs after a specified amount of time. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](workspace-v2.md). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md).
 
 ### Multiple service types
 
@@ -26,7 +26,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Ephemeral volumes
 
-* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is tied to the lifecycle of the *Workspace*, which is temporary storage that gets wiped out and lost when the workspace is deleted. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
+* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is tied to the lifecycle of the *Workspace*, which is temporary storage that gets wiped out and lost when the workspace is deleted. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](workspace-v2.md).
 
 ### Email notifications
 

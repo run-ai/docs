@@ -8,7 +8,7 @@ To configure Weights and Biases:
 
 1. Login to your account in [Weights and Biases](https://wandb.ai/site{target=_blank}). If you do not have a valid account, you will need to create one.
 2. Setup your Weights and Biases account [here](https://docs.wandb.ai/quickstart#1.-set-up-wandb{target=_blank})
-3. In your Run:ai account, create an [environment](../../Researcher/user-interface/workspaces/create/create-env.md) and set Weights and Biases as a tool then:
+3. In your Run:ai account, create an [environment](../../Researcher/workloads/assets/create-env.md) and set Weights and Biases as a tool then:
    1. Enter the following `<WANDB_results_URL>`
    2. Add an environment variable:
    
@@ -16,7 +16,7 @@ To configure Weights and Biases:
 
         ```Value = enter the URL destination for the results```
         
-The researcher must then create a [Workspace](../../Researcher/user-interface/workspaces/create/workspace.md) and select the Weights and Biases tool.
+The researcher must then create a [Workspace](../../Researcher/workloads/assets/workspace.md) and select the Weights and Biases tool.
 
 To configure the Weights and Biases tool, for the environemnt variable name `WANDB_results_URL` value, enter the ULR of the destination where the results are to be delivered.
 
