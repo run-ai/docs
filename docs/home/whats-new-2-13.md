@@ -105,12 +105,12 @@ The association between workspaces and node pools is done using *Compute resourc
 
 **PVC data sources**
 <!-- RUN-9826/10186 Support PVC from block storage -->
-* Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
+* Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/workloads/assets/datasources.md#create-a-pvc-data-source).
 
 **Credentials**
 
 <!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
-* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../platform-admin/workloads/credentials-setup.md#configuring-credentials).
+* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../platform-admin/workloads/assets/credentials.md#configuring-credentials).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more added to projects v2-->
 

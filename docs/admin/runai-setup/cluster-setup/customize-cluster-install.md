@@ -27,7 +27,7 @@ All customizations will be saved when upgrading the cluster to a future version.
 |  Key     |  Default  | Description |
 |----------|----------|-------------|
 | `spec.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects as described [below](#manual-creation-of-namespaces) |
-| `spec.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../platform-admin/workloads/secrets.md#secrets-and-projects) will not be available |
+| `spec.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../platform-admin/workloads/assets/secrets.md#secrets-and-projects) will not be available |
 | `spec.mps-server.enabled` | `false` | Set to `true` to allow the use of **NVIDIA MPS**. MPS is useful with *Inference* workloads  |
 | `spec.global.runtime` | `docker` | Defines the container runtime of the cluster (supports `docker` and `containerd`). Set to `containerd` when using Tanzu |
 | `spec.global.subdomainSupport` | `false` | Set to true to allow researcher tools with a sub domain to be spawned from the Run:ai user interface. For more information see [External access to containers](../config//allow-external-access-to-containers.md#workspaces-configuration) |  

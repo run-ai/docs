@@ -116,8 +116,8 @@ plugins:
         'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
         'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
         'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
-        'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/credentials-setup.md'
-        'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/templates.md'
+        'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/assets/credentials.md'
+        'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/assets/templates.md'
         'admin/admin-ui-setup/dashboard-analysis.md' : 'platform-admin/performance/dashboard-analysis.md'
         'index.md' : 'home/overview.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
@@ -126,9 +126,18 @@ plugins:
         'admin/workloads/README.md' : 'platform-admin/workloads/workload-overview.md'
         'admin/troubleshooting/cluster-health-check.md' : 'admin/runai-setup/config/clusters.md'
         'admin/authentication/rbac.md' : 'admin/authentication/roles.md'
-        'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/data-volumes.md'
+        'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/assets/data-volumes.md'
         'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
         'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
+        'Researcher/user-interface/workspaces/blocks/building-blocks.md' : 'Researcher/workloads/assets/building-blocks.md'
+        'Researcher/user-interface/workspaces/blocks/environments.md' : 'Researcher/workloads/assets/environments.md'
+        'Researcher/user-interface/workspaces/blocks/compute.md' : 'Researcher/workloads/assets/compute.md'
+        'Researcher/user-interface/workspaces/blocks/datasources.md' : 'Researcher/workloads/assets/datasources.md'
+        'Researcher/user-interface/workspaces/blocks/existing-PVC.md' : 'Researcher/workloads/assets/existing-PVC.md'
+        'Researcher/user-interface/workspaces/create/create-env.md' : 'Researcher/workloads/assets/environments.md'
+        'Researcher/user-interface/workspaces/create/create-compute.md' : 'Researcher/workloads/assets/compute.md'
+        'Researcher/user-interface/workspaces/create/create-ds.md' : 'Researcher/workloads/assets/datasources.md'
+ 
 
 nav:
   - Home: 
@@ -248,17 +257,27 @@ nav:
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
+      - 'Workload Assets' : 
+        - 'Overview' : 'platform-admin/workloads/assets/building-blocks.md'
+        - 'Environments' : 'platform-admin/workloads/assets/environments.md'
+        - 'Compute Resources': 'platform-admin/workloads/assets/compute.md'
+        - 'Data Sources' : 
+          - 'Overview' : 'platform-admin/workloads/assets/datasources.md'
+          - 'PVC Data Source' : 'platform-admin/workloads/assets/existing-PVC.md'
+        - 'Templates': 'platform-admin/workloads/assets/templates.md'
+        - 'Credentials' : 
+          - 'Credentials' : 'platform-admin/workloads/assets/credentials.md'
+          - 'Secrets' : 'platform-admin/workloads/assets/secrets.md'
+        - 'Data Volumes': 'platform-admin/workloads/assets/data-volumes.md' 
+
       - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
       - 'Policies' :
         - 'Overview' : 'platform-admin/workloads/policies/overview.md'
         # - 'Training Policy' : 'platform-admin/workloads/policies/training-policy.md'
-        - 'Policies (API-based)' : 'platform-admin/workloads/policies/workspaces-policy.md'
-        - 'Policies (YAML-based)' : 'platform-admin/workloads/policies/policies.md'
-      - 'Secrets' : 'platform-admin/workloads/secrets.md'
+        - 'Policies V2' : 'platform-admin/workloads/policies/workspaces-policy.md'
+        - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
       - 'Inference' : 'platform-admin/workloads/inference-overview.md'
-      - 'Credentials' : 'platform-admin/workloads/credentials-setup.md'
-      - 'Templates': 'platform-admin/workloads/templates.md'
-      - 'Data Volumes': 'platform-admin/workloads/data-volumes.md' 
+
 
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
@@ -285,18 +304,30 @@ nav:
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
+      - 'Workload Assets' : 
+        - 'Overview' : 'Researcher/workloads/assets/building-blocks.md'
+        - 'Environments' : 'Researcher/workloads/assets/environments.md'
+        - 'Compute Resources': 'Researcher/workloads/assets/compute.md'
+        - 'Data Sources' : 
+          - 'Overview' : 'Researcher/workloads/assets/datasources.md'
+          - 'PVC Data Source' : 'Researcher/workloads/assets/existing-PVC.md'
+        - 'Templates': 'Researcher/workloads/assets/templates.md'
+        - 'Credentials' : 
+          - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
+          - 'Secrets' : 'Researcher/workloads/assets/secrets.md'
+        - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
       - 'Workspaces' :
         - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
-        - 'Building Blocks' : 
-          - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
-          - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
-          - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
-          - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
-          - 'PVCs' : 'Researcher/user-interface/workspaces/blocks/existing-PVC.md'
+        # - 'Building Blocks' : 
+        #   - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
+        #   - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
+        #   - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
+        #   - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
+        #   - 'PVCs' : 'Researcher/user-interface/workspaces/blocks/existing-PVC.md'
         - 'Creation' :
-            - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
-            - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
-            - 'Create a Data Source' :  'Researcher/user-interface/workspaces/create/create-ds.md'
+        #    - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
+        #    - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
+        #    - 'Create a Data Source' :  'Researcher/user-interface/workspaces/create/create-ds.md'
             - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
         - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
       - 'Trainings' : 'Researcher/user-interface/trainings.md'
