@@ -74,7 +74,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     * Select __CREATE WORKSPACE__.
     
     !!! Note
-        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../user-interface/workspaces/overview.md).
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
 
 === "API"
     ``` bash

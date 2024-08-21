@@ -119,9 +119,9 @@ flowchart LR
 
 To get the full experience of Run:ai’s environment and platform use the following types of workloads.
 
-* [Workspaces](../../Researcher/user-interface/workspaces/overview.md#getting-familiar-with-workspaces)
-* [Trainings](../../Researcher/user-interface/trainings.md#trainings) (Only available when using the *Jobs* view)
-* [Distributed training](../../Researcher/user-interface/trainings.md#trainings)
+* [Workspaces](../../Researcher/workloads/workspaces/overview.md#getting-familiar-with-workspaces)
+* [Trainings](../../Researcher/workloads/trainings.md#trainings) (Only available when using the *Jobs* view)
+* [Distributed training](../../Researcher/workloads/trainings.md#trainings)
 * Deployments.
 
 ## Workload-related Integrations

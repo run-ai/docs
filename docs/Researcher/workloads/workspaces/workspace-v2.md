@@ -9,7 +9,7 @@ date: 2024-Jan-7
 A Workspace is assigned to a project and is affected by the project’s quota just like any other workload. A workspace is shared with all project members for collaboration.
 
 !!! Note
-      * You must have at least one project configured in the system. To configure a project, see [Creating a project](../../../../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project).
+      * You must have at least one project configured in the system. To configure a project, see [Creating a project](../../../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project).
       * You must have at least 1 researcher assigned to the project.
 
 Use the *Jobs form* below if you have not enabled the *Workloads* feature.
@@ -24,7 +24,7 @@ Use the *Jobs form* below if you have not enabled the *Workloads* feature.
           A template contains a set of predefined building blocks as well as additional configurations which allow the user to immediately create a templated-based workspace.
 
       4. Enter a name for your workspace and press *Continue*.
-      5. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](../../../workloads/assets/environments.md#creating-a-new-environment) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
+      5. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](../assets/environments.md#creating-a-new-environment) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
  
          In the *Runtime Settings*:
 
