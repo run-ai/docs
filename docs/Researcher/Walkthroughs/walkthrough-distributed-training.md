@@ -2,105 +2,237 @@
 
 ## Introduction
 
-Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a *worker node*. Worker nodes work in parallel to speed up model training. Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a **single container**.
+Distributed Training is the ability to split the training of a model among multiple processors. Each processor is called a __worker__. Worker nodes work in parallel to speed up model training. There is also a __master__ which coordinates the workers. 
 
-Getting Distributed Training to work is more complex than multi-GPU training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support Distributed Training. [Horovod](https://www.uber.com/en-JO/blog/horovod/){target=_blank} is a good example.
+Distributed Training should not be confused with multi-GPU training. Multi-GPU training is the allocation of more than a single GPU to your workload which runs on a **single container**.
 
-Run:ai provides the ability to run, manage, and view Distributed Training workloads. The following is a Quickstart document for such a scenario.
+Getting distributed training to work is more complex than a single-container training as it requires syncing of data and timing between the different workers. However, it is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Several Deep Learning frameworks support distributed training. This example will focus on PyTorch.
+
+Run:ai provides the ability to run, manage, and view distributed training workloads. The following is a Quickstart document for such a scenario.
+
+There are various ways to submit a distributed training Workload:
+
+* Run:ai __command-line interface (CLI)__
+* Run:ai __user interface__
+* Run:ai __API__
 
 ## Prerequisites
 
-To complete this Quickstart you must have:
+To complete this Quickstart, the [Infrastructure Administrator](../../admin/overview-administrator.md) will need to install the optional Kubeflow Training Operator as described [here](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training)
 
-* Run:ai software installed on your Kubernetes cluster. See: [Installing Run:ai on a Kubernetes Cluster](../../admin/runai-setup/installation-types.md)
-* During the installation, you have installed the Kubeflow MPI Operator as specified [here](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training)
-* Run:ai CLI installed on your machine. See: [Installing the Run:ai Command-Line Interface](../../admin/researcher-setup/cli-install.md)
+To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
+
+* _Researcher_ access to _Project_ in Run:ai named "team-a"
+* The project should be assigned a quota of at least 1 GPU. 
+* A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
+
+To complete this Quickstart __via the CLI__, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
+
+* The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
+* A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
+
+
+
 
 ## Step by Step Walkthrough
 
-### Setup
+### Login
 
-* Login to the Projects area of the Run:ai user interface.
-* Add a Project named "team-a".
-* Allocate 2 GPUs to the Project.
+=== "CLI V1"
+    Run `runai login` and enter your credentials.
 
-### Run Training Distributed Workload
+=== "CLI V2"
+    Run `runai login` and enter your credentials.
 
-* At the command-line run:
+=== "User Interface"
+    Browse to the provided Run:ai user interface and log in with your credentials.
 
-``` shell
-runai config project team-a
-runai submit-dist mpi --workers=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60
-```
-
-* We named the Job _dist_
-* The Job is assigned to _team-a_
-* There will be two worker pods (--workers=2), each allocated with a single GPU (-g 1)
-* The Job is based on a sample docker image ``gcr.io/run-ai-demo/quickstart-distributed:v0.3.0``.
-* The image contains a startup script that runs a deep learning Horovod-based workload.
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [api authentication](../../developer/rest-auth.md) article.
 
 
-Follow up on the Job's status by running:
 
-        runai list jobs
+### Run a Distributed Training Workload
 
-The result:
 
-![mceclip11.png](img/mceclip11.png)
+=== "CLI V1"
+    Open a terminal and run:
+
+    ``` bash
+    runai config project team-a
+    runai submit-dist pytorch dist-train1 --workers=2 -g 0.1 \
+        -i gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+    ```
+
+    !!! Note
+        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit-dist-pytorch.md).
+
+=== "CLI V2"
+    Open a terminal and run:
+
+    ``` bash
+    runai project set team-a
+    runai distributed submit dist-train1  --framework PyTorch \
+        -i gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0 --workers 2 
+        --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
+    ```
+    !!! Note
+        For more information on the training submit command, see [cli documentation](../cli-reference/new-cli/runai_training_submit.md).
+
+=== "User Interface"
+    * In the Run:ai UI select __Workloads__
+    * Select __New Workload__ and then __Training__
+    * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. 
+    * Under `Workload architecture` select `Distributed` and choose `PyTorch`. Set the distributed training configuration to `Workers & master`.
+    * Enter `train1` as the name and press __CONTINUE__.
+    * Select __NEW ENVIRONMENT__. Enter `pytorch-dt` as the name and `gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0` as the image. Then select __CREATE ENVIRONMENT__.
+    * When the previous screen comes up, under `Compute resource` enter 2 workers and select `small-fraction` as the Compute resource. 
+    * Select __CONTINUE__ and then __CREATE TRAINING__.
+    
+    !!! Note
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../user-interface/workspaces/overview.md).
+
+=== "API"
+    ``` bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/distributed' \ # (1)
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -d '{ 
+        "name": "dist-train1", 
+        "projectId": "<PROJECT-ID>", '\ # (3)
+        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "spec": {
+            "compute": {
+                "cpuCoreRequest": 0.1,
+                "gpuRequestType": "portion",
+                "cpuMemoryRequest": "100M",
+                "gpuDevicesRequest": 1,
+                "gpuPortionRequest": 0.1
+            },
+            "image": "gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0",  
+            "numWorkers": 2,  \ # (5)
+            "distributedFramework": "PyTorch" \ # (6)
+        }
+    }'
+    ``` 
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface. For example `acme.run.ai`
+    2. `<TOKEN>` is an API access token. see above on how to obtain a valid token.
+    3. `<PROJECT-ID>` is the the ID of the `team-a` Project. You can get the Project ID via the [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+    5. Use 2 workers.
+    6. Use PyTorch training operator 
+
+    !!! Note
+        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        * For more information on the Distributed Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Distributed/operation/create_distributed){target=_blank} 
+
+This would start a distributed training Workload for `team-a`. The Workload will have one master and two workers. We named the Workload ``dist-train1``
+
+### List Workloads
+
+Follow up on the Workload's progress by running:
+
+=== "CLI V1"
+    ``` bash
+    runai list jobs
+    ```
+    The result:
+    ![mceclip00.png](img/mceclip00.png)
+
+=== "CLI V2"
+    ``` bash
+    runai distributed list
+    ```
+
+    The result:
+
+    ```
+    Workload     Type         Status      Project     Preemptible      Running/Requested Pods     GPU Allocation
+    ───────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    dist-train1  Distributed  Running      team-a      Yes              0/2                        0.00
+    ```
+
+=== "User Interface"
+    * Open the Run:ai user interface.
+    * Under "Workloads" you can view the new Training Workload:
+
+    ![](img/dist-training-list.png)
+
+    * Select the `0/2` under Running/Requested Pods and watch the worker pod status:
+
+    ![](img/dist-training-pods.png)
+
+
+    Select the `dist-train1` workload and press `Show Details` to see the Workload details
+
+    ![](img/dist-details.png) 
+
+
+### Describe Workload
 
 The Run:ai scheduler ensures that all pods can run together. You can see the list of workers as well as the main "launcher" pod by running:
 
-        runai describe job dist
+=== "CLI V1"
+    ``` bash
+    runai describe job train1
+    ```
 
-You will see two worker pods, their status, and on which node they run:
+=== "CLI V2"
+    ``` bash
+    runai training describe train1
+    ```
 
-![mceclip12.png](img/mceclip12.png)
+=== "User Interface"
+    Workload parameters can be viewed by adding more columns to the Workload list and by reviewing the `Event History` tab for the specific Workload. 
 
-To see the merged logs of all pods run:
+### View Logs
 
-        runai logs dist
+Run the following:
 
-Finally, you can delete the distributed training workload by running:
+=== "CLI V1"
 
-        runai delete job dist
+    Get the name of the worker pods from the above `describe` command, then run: 
+    
+    ```
+    runai logs dist-train1 --pod dist-train1-worker-0
+    ```
 
-### Run an Interactive Distributed Workload
+    (where `dist-train1-worker-0` is the name of the first worker)
+    
+    You should see a log of a running container
 
-It is also possible to run a distributed training Job as "interactive". This is useful if you want to test your distributed training Job before committing on a long, unattended training session. To run such a session use:
+=== "CLI V2"
 
-``` shell
-runai submit-dist mpi dist-int --workers=2 -g 1 \
-        -i gcr.io/run-ai-demo/quickstart-distributed:v0.3.0 --interactive \
-        -- sh -c "sleep infinity" 
-```
+    Get the name of the worker pods from the above `describe` command, then run: 
 
-When the workers are running run:
+    ``` bash
+    runai distributed logs dist-train1 --pod dist-train1-worker-0
+    ```
 
-        runai bash dist-int
+    (where `dist-train1-worker-0` is the name of the first worker)
 
-This will provide shell access to the launcher process. From there, you can run your distributed workload. For Horovod version smaller than 0.17.0 run:
-
-``` shell
-horovodrun -np $RUNAI_MPI_NUM_WORKERS \
-        python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
-        --model=resnet20 --num_batches=1000000 --data_name cifar10 \
-        --data_dir /cifar10 --batch_size=64 --variable_update=horovod
-```
-
-For Horovod version 0.17.0 or later, add the `-hostfile` flag as follows:
-
-``` shell
-horovodrun -np $RUNAI_MPI_NUM_WORKERS -hostfile /etc/mpi/hostfile \
-        python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py \
-        --model=resnet20 --num_batches=1000000 --data_name cifar10 \
-        --data_dir /cifar10 --batch_size=64 --variable_update=horovod 
-```
+    You should see a log of a running container:
 
 
-The environment variable ``RUNAI_MPI_NUM_WORKERS`` is passed by Run:ai and contains the number of workers provided to the ``runai submit-dist mpi`` command (in the above example the value is 2).
+=== "User Interface"
+    Select the Workload, and press __Show Details__. Under `Logs` you can select each of the workers and see the logs emitted from the container
 
-## See Also
+### Stop Workload
 
-* The source code of the image used in this Quickstart document is in [Github](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank}
-* For a full list of the ``submit-dist mpi`` options see [runai submit-dist mpi](../cli-reference/runai-submit-dist-mpi.md)
+Run the following:
+
+=== "CLI V1"
+    ``` bash
+    runai delete job dist-train1
+    ```
+
+=== "CLI V2"
+    ```    
+    runai training delete dist-train1
+    ```
+
+=== "User Interface"
+    Select the Workload and press __DELETE__.
+
+This would stop the training workload. You can verify this by [listing](#list-workloads) training workloads again.
