@@ -109,7 +109,7 @@ Data Volumes are created using the API endpoint. For more information, see [Data
 
 Sharing permissions is a sub-entity of the Data volume management permissions. Meaning they can be assigned independently. A user can have permission to create a DV but not to share it. A data volume can be shared with one or multiple scopes. In all the scopes that the DV is shared, it can be used by the users in their workloads.
 
-Data Volumes are shared using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes).
+Data Volumes are shared using the API endpoint. For more information, see [Data Volumes](https://app.run.ai/api/docs#tag/Data-Volumes){target=_blank}.
 
 ### Using Data Volumes in Workloads
 
@@ -117,6 +117,6 @@ You can attach a data volume to a workload during submission in the same way oth
 
 Researchers can list available data volumes within their permitted scopes for easy selection.
 
-For more information on using a data volume when submitting a workload, see [Submitting Workloads](../submitting-workloads.md).
+For more information on using a data volume when submitting a workload, see [Submitting Workloads](submitting-workloads.md).
 
 You can also add a data volumes to your workload when submitting a workload via the API. For more information, see [Workloads](https://app.run.ai/api/docs#tag/Workloads).

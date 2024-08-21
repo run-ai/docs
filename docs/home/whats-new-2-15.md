@@ -43,7 +43,7 @@ date: 2023-Dec-3
 
 #### Credentials
 
-* <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->Improved *Credentials* creation. A Run:ai scope can now be added to credentials. For more information, see [Credentials](../platform-admin/workloads/credentials-setup.md).
+* <!-- RUN-10862/RUN-10863 Department as a workspace phase 2 - scope in credentials -->Improved *Credentials* creation. A Run:ai scope can now be added to credentials. For more information, see [Credentials](../platform-admin/workloads/assets/credentials.md).
 
 #### Environments
 

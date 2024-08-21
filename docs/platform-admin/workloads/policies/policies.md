@@ -292,7 +292,7 @@ When submitting a workload that is affected by this policy, the created containe
 the namespace where the workload runs.
 
 !!! Note
-    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../secrets.md#secrets-and-projects).
+    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../assets/secrets.md#secrets-and-projects).
 
 ### Prevent Data Storage on the Node
 
