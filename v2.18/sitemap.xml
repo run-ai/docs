@@ -541,47 +541,52 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/building-blocks/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/compute/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/datasources/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/environments/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/blocks/existing-PVC/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/create-compute/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/create-ds/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/create-env/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/workspace-v2/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/building-blocks/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/compute/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/credentials/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/data-volumes/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/datasources/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/environments/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/existing-PVC/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/secrets/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/templates/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1071,22 +1076,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/credentials-setup/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/data-volumes/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/inference-overview/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/secrets/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1096,12 +1086,52 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/templates/</loc>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/workload-overview/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/workload-overview/</loc>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/building-blocks/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/compute/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/credentials/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/data-volumes/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/datasources/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/environments/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/existing-PVC/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/secrets/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/templates/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
