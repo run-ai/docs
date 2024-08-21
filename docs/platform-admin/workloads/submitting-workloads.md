@@ -18,13 +18,13 @@ To submit a workload using the UI:
       1. In the *Projects* pane, select a project. Use the search box to find projects that are not listed. If you can't find the project, see your system administrator.
       2. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, create a new one, or see your system administrator.
       3. Enter a `Workspace` name, and press continue.
-      4. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed.
+      4. In the *Environment* pane select or [create a new environment](./assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed.
    
         1. In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
          3. In the *Environment variable* field, you can set one or more environment variables. (optional)
 
-      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](./assets/compute.md#create-a-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
       6. Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
          1. Select the *Storage class* from the dropdown.
@@ -34,7 +34,7 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*.
 
-      7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+      7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/workloads/assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
       
         !!! Note
             * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
@@ -56,14 +56,14 @@ To submit a workload using the UI:
       2. In the *Multi-node* pane, choose `Single node` for a single node training, or `Multi-node (distributed)` for distributed training. When you choose `Multi-node`, select a framework that is listed, then select the `multi-node` training configuration by selecting either `Workers & master` or `Workers only`.
       3. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, see your system administrator.
       4. In the *Training name* pane, enter a name for the *Training*, then press continue.
-      5. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed. 
+      5. In the *Environment* pane select or [create a new environment](./assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed. 
          1. In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
          3. In the *Environment variable* field, you can set one or more environment variables. (optional)
       6. In the *Compute resource* pane:
 
          1. Select the number of workers for your training.
-         2. Select *Compute resources* for your training or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+         2. Select *Compute resources* for your training or [create a new compute resource](./assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 
         !!! Note
             The number of compute resources for the workers is based on the number of workers selected.
@@ -77,7 +77,7 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*. Choose *Persistent* or *Ephemeral*.
 
-      8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+      8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](./assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
    
         !!! Note
             * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
@@ -94,11 +94,11 @@ To submit a workload using the UI:
 
       11. If you do not want a different setup for the master, press *Create training*. If you would like to have a different setup for the master, toggle the switch to enable to enable a different setup.
 
-         1. In the *Environment* pane select or [create a new environment](../../Researcher/user-interface/workspaces/create/create-env.md). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+         1. In the *Environment* pane select or [create a new environment](assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
             1.  In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
             2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
             3. In the *Environment variable* field, you can set one or more environment variables. (optional)
-         2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](../../Researcher/user-interface/workspaces/create/create-compute.md). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+         2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
          3. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
             1. Select the *Storage class* from the dropdown.
@@ -108,7 +108,7 @@ To submit a workload using the UI:
             5. Enter the *Container path* for volume target location.
             6. Select a *Volume persistency*. Choose *Persistent* or *Ephemeral*.
 
-         4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/user-interface/workspaces/create/create-ds.md) When complete press, *Create Data Source*.
+         4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
 
           !!! Note
               * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.

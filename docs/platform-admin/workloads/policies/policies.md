@@ -7,7 +7,7 @@ date: 2023-Dec-12
 ---
 
 !!! Warning
-    The below describes the old Policies that rely on YAML-based Policies. While these still work, they have been replaced with Control-plane-based policies which are accessible via API and user interface. 
+    The below describes the old V1 Policies. While these still work, they have been replaced with Control-plane-based v2 policies which are accessible via API and user interface. 
     For a description of the new policies, see [API-based Policies](./workspaces-policy.md).
 
 ## What are Policies?
@@ -292,7 +292,7 @@ When submitting a workload that is affected by this policy, the created containe
 the namespace where the workload runs.
 
 !!! Note
-    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../secrets.md#secrets-and-projects).
+    Run:ai provides a secret propagation mechanism from the `runai` namespace to all project namespaces. For further information see [secret propagation](../assets/secrets.md#secrets-and-projects).
 
 ### Prevent Data Storage on the Node
 

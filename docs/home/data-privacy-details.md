@@ -14,8 +14,8 @@ Following is a list of platform data items that are sent to the Run:ai cloud.
 | Asset   | Data Details  | 
 |---------|---------------|
 | Workload Metrics | Workload names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |
-| Workload Assets | Workload [Assets](../Researcher/user-interface/workspaces/blocks/building-blocks.md) such as environments, compute resources and data resoruces |
-| Resource Credentials | [Credentials](../platform-admin/workloads/credentials-setup.md) to cluster resources are stored and encrypted using a SHA-512 algorithm. The encryption is tenant-specific |
+| Workload Assets | Workload [Assets](../Researcher/workloads/assets/building-blocks.md) such as environments, compute resources and data resoruces |
+| Resource Credentials | [Credentials](../platform-admin/workloads/assets/credentials.md) to cluster resources are stored and encrypted using a SHA-512 algorithm. The encryption is tenant-specific |
 | Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |
 | Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |
 | Projects & Departments | Names, quota information |

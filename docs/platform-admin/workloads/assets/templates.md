@@ -16,7 +16,7 @@ To create a template:
 1. In the left menu, press *Templates*, then press *New Template*.
 2. In the *Scope* pane, select a cluster, department, or project.
 3. In the *Template Name* pane, enter a name for the template.
-4. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](../../Researcher/user-interface/workspaces/create/create-env.md) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
+4. Select an environment from the tiles. If your environment is not listed, use the *Search environments* box to find it or press [*New environment*](./environments.md#creating-a-new-environment) to create a new environment. Press  to create an environment if needed. In the *Set the connection for your tool(s)*, enter the URL of the tool if a custom URL has been enabled in the selected environment. Use the *Private* toggle to lock access to the tool to only the creator of the environment.
 
        In the *Runtime Settings*:
     

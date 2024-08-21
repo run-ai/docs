@@ -20,7 +20,7 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 * _Researcher_ access to _Project_ in Run:ai named "team-a"
 * The project should be assigned a quota of at least 1 GPU. 
 * A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
-* Create a new Visual Studio [Environment](../user-interface/workspaces/blocks/environments.md) asset. The asset should have:
+* Create a new Visual Studio [Environment](../workloads/assets/environments.md) asset. The asset should have:
     * The image `quay.io/opendatahub-contrib/workbench-images:vscode-datascience-c9s-py311_2023c_latest`.
     * Under `Tools`, add Visual Studio Code and change the port to `8787`.
     * Use the environment name `vscode`.
