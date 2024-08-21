@@ -74,7 +74,7 @@ Open a terminal and run:
     * Follow the process again to submit a second workload called `frac05-2`.
     
     !!! Note
-        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../user-interface/workspaces/overview.md).
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
 
 === "API"
     ``` bash

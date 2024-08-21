@@ -27,7 +27,7 @@ date: 2024-Apr-14
 
 * <!-- RUN-11488/RUN-16508/RUN-17720 - Workloads view - Metrics per GPU per pod with RUN-16234 -->Added to the workload details view, the ability to filter by pod. You can now filter metrics and logs per pod or all the pods. Also, the *Workloads* table now has additional columns including connections and preemtability adding more at a glance information about the workload. In addition, using the *Copy & edit* button, you can submit a new workload via CLI based on the selected workload. For more information, see [Workloads](../platform-admin/workloads/workload-overview.md#workloads-view).
 
-* <!-- RUN-14524/RUN-14525/RUN-16113/RUN-16488/RUN-15153/RUN-15154 - Asset-based deployments added note for unsupported features -->Added *Inference* to workload types. *Inference* workloads can now be created and managed from the unified *Workloads* table. The *Deployments* workload type has been deprecated, and replaced with *Inference* workloads which are submitted using the workload form. For more information, see [Inference](../platform-admin/workloads/inference-overview.md) and for submitting an *Inference* workload, see [Submitting workloads](../platform-admin/workloads/submitting-workloads.md).
+* <!-- RUN-14524/RUN-14525/RUN-16113/RUN-16488/RUN-15153/RUN-15154 - Asset-based deployments added note for unsupported features -->Added *Inference* to workload types. *Inference* workloads can now be created and managed from the unified *Workloads* table. The *Deployments* workload type has been deprecated, and replaced with *Inference* workloads which are submitted using the workload form. For more information, see [Inference](../Researcher/workloads/inference-overview.md) and for submitting an *Inference* workload, see [Submitting workloads](../platform-admin/workloads/submitting-workloads.md).
 
 * <!-- RUN-16435/RUN-16668 - Delete workspaces, trainings and jobs views -->Added functionality that supports a single workloads submission selection. Now you can submit workloads by pressing *+ New workloads* in the *Workloads* table. You can submit the following workloads from this table:
 
@@ -92,7 +92,7 @@ date: 2024-Apr-14
     * Throughput
     * Concurrency
   
-    For more information, see [Autoscaling metrics](../platform-admin/workloads/inference-overview.md#autoscaling).
+    For more information, see [Autoscaling metrics](../Researcher/workloads/inference-overview.md#autoscaling).
   
 * <!-- RUN-11488/RUN-17720 deprecation of direct metrics in favor of API -->Improved availability of metrics by using Run:ai APIs. Using the API endpoints is now the preferred method to retrieve metrics for use in any application. For more information, see [Metrics](../developer/metrics/metrics.md#changed-metrics-and-api-mapping).
 
