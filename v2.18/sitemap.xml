@@ -526,22 +526,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/trainings/</loc>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/inference-overview/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/overview/</loc>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/statuses/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/statuses/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/user-interface/workspaces/create/workspace-v2/</loc>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/trainings/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -587,6 +582,16 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/templates/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/workspaces/overview/</loc>
+         <lastmod>2024-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/workspaces/workspace-v2/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1072,11 +1077,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/performance/dashboard-analysis/</loc>
-         <lastmod>2024-08-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/inference-overview/</loc>
          <lastmod>2024-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
