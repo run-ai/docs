@@ -19,7 +19,7 @@ Workspaces can be created with just a few clicks of a button. See [Workspace cre
 
 Workspaces can be stopped and started to save expensive resources without losing complex environment configurations.
 
-Only when a workspace is in status active (see also [Workspace Statuses](./statuses.md)) does it consume resources. 
+Only when a workspace is in status active (see also [Workspace Statuses](../statuses.md)) does it consume resources. 
 
 When the workspace is active it exposes the connections to the tools (for example, a Jupyter notebook) within the workspace. 
 

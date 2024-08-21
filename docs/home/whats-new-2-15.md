@@ -26,7 +26,7 @@ date: 2023-Dec-3
     * XGBoost
     * MPI
 
-    For *Trainings* configuration, see [Adding trainings](../Researcher/user-interface/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/workloads/assets/environments.md#creating-a-new-environment).
+    For *Trainings* configuration, see [Adding trainings](../Researcher/workloads/trainings.md#adding-trainings). See your Run:ai representative to enable this feature. For *Environments* configuration, see [Creating an Environment](../Researcher/workloads/assets/environments.md#creating-a-new-environment).
 
 * <!-- RUN-10241/RUN-12872 - New Workloads view -->Preview the new *Workloads* view. *Workloads* is a new view for jobs that are running in the AI cluster. The *Workloads* view provides a more advanced UI than the previous *Jobs* UI. The new table format provides:
 
