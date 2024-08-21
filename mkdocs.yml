@@ -137,6 +137,11 @@ plugins:
         'Researcher/user-interface/workspaces/create/create-env.md' : 'Researcher/workloads/assets/environments.md'
         'Researcher/user-interface/workspaces/create/create-compute.md' : 'Researcher/workloads/assets/compute.md'
         'Researcher/user-interface/workspaces/create/create-ds.md' : 'Researcher/workloads/assets/datasources.md'
+        'platform-admin/workloads/inference-overview.md' : 'Researcher/workloads/inference-overview.md'
+        'Researcher/user-interface/trainings.md' : 'Researcher/workloads/trainings.md'
+        'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/workspaces/overview.md'
+        'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
+        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/statuses.md'
  
 
 nav:
@@ -276,7 +281,6 @@ nav:
         # - 'Training Policy' : 'platform-admin/workloads/policies/training-policy.md'
         - 'Policies V2' : 'platform-admin/workloads/policies/workspaces-policy.md'
         - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
-      - 'Inference' : 'platform-admin/workloads/inference-overview.md'
 
 
     - 'Best Practices' :
@@ -317,20 +321,12 @@ nav:
           - 'Secrets' : 'Researcher/workloads/assets/secrets.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
       - 'Workspaces' :
-        - 'Introduction' : 'Researcher/user-interface/workspaces/overview.md'
-        # - 'Building Blocks' : 
-        #   - 'Overview' : 'Researcher/user-interface/workspaces/blocks/building-blocks.md'
-        #   - 'Environments' : 'Researcher/user-interface/workspaces/blocks/environments.md'
-        #   - 'Compute Resources': 'Researcher/user-interface/workspaces/blocks/compute.md'
-        #   - 'Data Sources' : 'Researcher/user-interface/workspaces/blocks/datasources.md'
-        #   - 'PVCs' : 'Researcher/user-interface/workspaces/blocks/existing-PVC.md'
-        - 'Creation' :
-        #    - 'Create an Environment' : 'Researcher/user-interface/workspaces/create/create-env.md'
-        #    - 'Create a Compute Resource' : 'Researcher/user-interface/workspaces/create/create-compute.md'
-        #    - 'Create a Data Source' :  'Researcher/user-interface/workspaces/create/create-ds.md'
-            - 'Create a Workspace' :  'Researcher/user-interface/workspaces/create/workspace-v2.md'
-        - 'Statuses' :  'Researcher/user-interface/workspaces/statuses.md'
-      - 'Trainings' : 'Researcher/user-interface/trainings.md'
+        - 'Workspace' : 'Researcher/workloads/workspaces/overview.md'
+        - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
+      - 'Trainings' : 'Researcher/workloads/trainings.md'
+      - 'Inference' : 'Researcher/workloads/inference-overview.md'
+      - 'Statuses' :  'Researcher/workloads/statuses.md'
+
     - 'Command Line Interface' :
       - 'CLI V2': 
         - 'Introduction': 'Researcher/cli-reference/new-cli/runai.md'

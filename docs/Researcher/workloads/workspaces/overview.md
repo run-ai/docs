@@ -15,7 +15,7 @@ Researchers can only view and use workspaces that are created under projects the
 
 ![](img/1-Workspaces-grid.png)
 
-Workspaces can be created with just a few clicks of a button. See [Workspace creation](create/workspace-v2.md).  
+Workspaces can be created with just a few clicks of a button. See [Workspace creation](workspace-v2.md).  
 
 Workspaces can be stopped and started to save expensive resources without losing complex environment configurations.
 
@@ -36,4 +36,4 @@ Workspaces can be used via the user interface or programmatically via the Run:ai
 ## Next Steps
 
 * Workspaces are made from _building blocks_. Read about the various [building blocks](../../workloads/assets/building-blocks.md)
-* See how to [create a Workspace](create/workspace-v2.md).  
+* See how to [create a Workspace](workspace-v2.md).  

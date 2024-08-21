@@ -51,7 +51,7 @@ date: 2023-Dec-3
 
 #### Volumes and Storage
 
-* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is temporary storage that gets wiped out and lost when the workspace is deleted. Adding Ephemeral storage to a workspace ties that storage to the lifecycle of the *Workspace* to which it was added. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md).
+* <!--RUN-9958/RUN-10061 Ephemeral volumes in workspaces -->Added support for Ephemeral volumes in *Workspaces*. Ephemeral storage is temporary storage that gets wiped out and lost when the workspace is deleted. Adding Ephemeral storage to a workspace ties that storage to the lifecycle of the *Workspace* to which it was added. Ephemeral storage is added to the *Workspace* configuration form in the *Volume* pane. For configuration information, see [Create a new workspace](../Researcher/workloads/workspaces/workspace-v2.md).
 
 #### Templates
 
@@ -67,7 +67,7 @@ date: 2023-Dec-3
 
 #### Auto Delete Jobs
 
-* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options to automatically delete jobs after a specified amount of time upon completion. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/user-interface/workspaces/create/workspace-v2.md). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#-auto-deletion-time-after-completion).
+* <!-- RUN-8586/RUN-11777 -->Added new functionality to the UI and CLI that provides configuration options to automatically delete jobs after a specified amount of time upon completion. Auto-deletion provides more efficient use of resources and makes it easier for researchers to manage their jobs. For more configuration options in the UI, see *Auto deletion* (Step 9) in [Create a new workspace](../Researcher/workloads/workspaces/workspace-v2.md). For more information on the CLI flag, see [--auto-deletion-time-after-completion](../Researcher/cli-reference/runai-submit.md#-auto-deletion-time-after-completion).
 
 ### Run:ai Administrator
 
