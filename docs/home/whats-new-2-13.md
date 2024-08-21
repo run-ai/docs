@@ -105,7 +105,7 @@ The association between workspaces and node pools is done using *Compute resourc
 
 **PVC data sources**
 <!-- RUN-9826/10186 Support PVC from block storage -->
-* Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/user-interface/workspaces/create/create-ds.md#create-a-pvc-data-source).
+* Added support for PVC block storage in the *New data source* form. In the *New data source* form for a new PVC data source, in the *Volume mode* field, select from *Filesystem* or *Block*. For more information, see [Create a PVC data source](../Researcher/workloads/assets/datasources.md#create-a-pvc-data-source).
 
 **Credentials**
 

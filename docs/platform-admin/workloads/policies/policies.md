@@ -7,7 +7,7 @@ date: 2023-Dec-12
 ---
 
 !!! Warning
-    The below describes the old Policies that rely on YAML-based Policies. While these still work, they have been replaced with Control-plane-based policies which are accessible via API and user interface. 
+    The below describes the old V1 Policies. While these still work, they have been replaced with Control-plane-based v2 policies which are accessible via API and user interface. 
     For a description of the new policies, see [API-based Policies](./workspaces-policy.md).
 
 ## What are Policies?
