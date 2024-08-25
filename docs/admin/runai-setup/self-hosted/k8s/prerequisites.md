@@ -60,7 +60,7 @@ The Run:ai control-plane requires a __default storage class__ to create persiste
 
 ### Ingress Controller
 
-The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#kubernetes-ingress-controller) installation.
+The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [Kubernetes ingress controller](../../cluster-setup/cluster-prerequisites.md#kubernetes-ingress-controller) installation.
 
 ### NVIDIA GPU Operator
 
