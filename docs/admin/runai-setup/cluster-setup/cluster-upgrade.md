@@ -50,20 +50,3 @@ kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotation
 
 Delete the ingress object which will be recreated by the control plane upgrade.
 
-## Upgrade Control Plane
-### Upgrade from version 2.13, or later
-=== "Connected"
-
-    ``` bash
-    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
-    ```
-    
-### Upgrade from version 2.9
-* Create a `tls secret` as described in the [control plane installation](../self-hosted/k8s/backend.md). 
-* Upgrade the control plane as described in the [control plane installation](../self-hosted/k8s/backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
-
-* ## Upgrade Cluster 
-
-To upgrade the cluster follow the instructions [here](cluster-upgrade.md).
-    
