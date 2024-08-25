@@ -134,3 +134,23 @@ This would start a Workspace with a pre-configured Visual Studio Code image with
 ### Accessing Visual Studio Web 
 
 Via the Run:ai user interface, go to `Workloads`, select the `vs1` Workspace and press `Connect`.
+
+
+
+### Stop Workload
+
+Run the following:
+
+=== "CLI V1"
+    ``` bash
+    runai delete job vs1
+    ```
+
+=== "CLI V2"
+    ```    
+    runai workspace delete vs1
+    ```
+
+=== "User Interface"
+    Select the Workspace and press __DELETE__.
+

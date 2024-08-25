@@ -2,9 +2,7 @@
 
 ## Introduction
 
-Machine learning (ML) inference is the process of running live data points into a machine-learning algorithm to calculate an output.
-
-With Inference, you are taking a trained *Model* and deploying it into a production environment. The deployment must align with the organization's production standards such as average and 95% response time as well as up-time.
+Machine learning (ML) inference refers to the process of using a trained machine learning model to make predictions or generate outputs based on new, unseen data. After a model has been trained on a dataset, inference involves applying this model to new examples to produce results such as classifications, predictions, or other types of insights.
 
 The quickstart below shows an inference _server_ running the model and an inference _client_.
 
@@ -14,20 +12,20 @@ There are various ways to submit a Workload:
 * Run:ai __user interface__
 * Run:ai __API__
 
-At this time, Inference workloads cannot be created via the CLI. The CLI __can__ be used for making inference client calls. 
+At this time, Inference services cannot be created via the CLI. The CLI __can__ be used for creating a client to query the inference service
 
 ## Prerequisites
 
 
-To complete this Quickstart, the [Infrastructure Administrator](../../admin/overview-administrator.md) will need to install some optional prerequisites as described [here](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
+To complete this Quickstart, the [Infrastructure Administrator](../../admin/overview-administrator.md) will need to install some optional inference prerequisites as described [here](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
 
 To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
 
 * _ML Engineer_ access to _Project_ in Run:ai named "team-a"
 * The project should be assigned a quota of at least 1 GPU. 
-* A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
+* The URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
 
-As described, the inferenceclient can be performed via CLI. To perform this, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
+As described, the inference client can be created via CLI. To perform this, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
 
 * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
 * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
@@ -83,7 +81,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     * Under `Replica autoscaling, select a minimum of 0 and a maximum of 2. 
     * Under `conditions for a new replica` select `Concurrency` and set the value as 3.
     * Select the scale to zero option to `5 minutes`
-    * Select __CREATE WORKSPACE__.
+    * Select __CREATE INFERENCE__.
     
     !!! Note
         For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
@@ -94,7 +92,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer <TOKEN>' \ # (2)
     -d '{ 
-        "name": "vs1", 
+        "name": "inference-server-1", 
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
@@ -131,45 +129,69 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
         * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
         * For more information on the Inference Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Inferences) 
 
-This would start a triton inference server with a maximum of 2 instances, each instance taked half a GPU. 
+This would start a triton inference server with a maximum of 2 instances, each instance consumes half a GPU. 
 
-------
-* In the Run:ai user interface go to `Inference`. If you do not see the `Inference` section you may not have the required access control, or the inference module is disabled.
-* Select `New workload` -> `Inference` on the top right.
-* Select `team-a` as a project and add an arbitrary name. Use the image `gcr.io/run-ai-demo/example-triton-server`.
-* Under `Resources` add 0.5 GPUs.
-* Under `Autoscaling` select a minimum of 1, a maximum of 2. Use the `concurrency` autoscaling threshold method. Add a threshold of 3.
-* Add a `Container port` of `8000`.
-
-This would start an inference workload for team-a with an allocation of a single GPU.
 
 ### Query the Inference Server
 
-The specific inference server we just created is accepting queries over port 8000. You can use the Run:ai Triton demo client to send requests to the server:
+You can use the Run:ai Triton demo client to send requests to the server
 
-* Find an IP address by running `kubectl get svc -n runai-team-a`. Use the `inference1-00001-private` Cluster IP.
-* Replace `<IP>` below and run:
+#### Find the Inference Server Endpoint
 
-```
- runai submit inference-client  -i gcr.io/run-ai-demo/example-triton-client \
-    -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <IP>
-```
+* Under `Workloads`, select `Columns` on the top right. Add the column `Connections.
+* See the connections of the `inference-server-1` workload: 
 
-* To see the result, run the following:
+![](img/inference-connections.png)
 
-```
-runai logs inference-client
-```
+* Copy the inference endpoint URL.
 
-### View status on the Run:ai User Interface
+=== "CLI V1"
+    Open a terminal and run:
 
-* Open the Run:ai user interface.
-* Under *Deployments* you can view the new Workload. When clicking the workload, note the utilization graphs go up.
+    ``` bash
+    runai config project team-a   
+    runai submit inference-client-1  -i gcr.io/run-ai-demo/example-triton-client \
+    -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
+    ```
+
+
+=== "CLI V2"
+    Open a terminal and run:
+
+    ``` bash
+    runai project set team-a
+    runai training submit inference-client-1  -i gcr.io/run-ai-demo/example-triton-client \
+    -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
+    ```
+
+=== "User Interface"
+    * In the Run:ai UI select __Workloads__
+    * Select __New Workload__ and then __Training__
+    * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. Enter `inference-client-1` as the name and press __CONTINUE__.
+    * Select __NEW ENVIRONMENT__. Enter `inference-client` as the name and `gcr.io/run-ai-demo/example-triton-client` as the image. 
+    Select __CREATE ENVIRONMENT__.
+    * When the previous screen comes up, select `cpu-only` under the Compute resource.
+    * Under `runtime settings` enter the command as `perf_analyzer` and arguments `-m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>` (replace inference endpoint with above).
+    * Select __CREATE TRAINING__.
+  
+
+
+In the user interface, under `inference-server-1`, go to the `Metrics` tab and watch as the various GPU metrics graphs rise. 
+
+
+
 
 ### Stop Workload
 
-Use the user interface to delete the workload.
+Run the following:
 
-## See also
+=== "CLI V1"
+    Not available right now
 
-* You can also create Inference deployments via API. For more information see [Submitting Workloads via YAML](../../developer/cluster-api/submit-yaml.md).
+=== "CLI V2"
+    Not available right now
+
+=== "User Interface"
+    Select the two workloads and press __DELETE__.
+
+
