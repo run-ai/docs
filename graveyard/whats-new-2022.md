@@ -47,7 +47,7 @@ As these two variants are no longer needed, Run:ai now uses the standard NVIDIA 
 
 Going forward, we also mandate the usage of the NVIDIA GPU Operator version 1.9. The Operator easies the installation of all NVIDIA software. Drivers and Kubernetes components alike. 
 
-For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
+For further information see the [Run:ai NVIDIA prerequisites](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia-gpu-operator) as well as the [Run:ai cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md#upgrade-from-version-23-or-older-to-version-24-or-higher).
 
 ### Dynamic MIG Support
 

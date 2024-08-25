@@ -93,7 +93,7 @@ When a cluster's status shows *Service issues*, this means that one or more Run:
 
 ## Cluster has *missing prerequisites*
 
-When a cluster's status displays *Missing prerequisites*, it indicates that at least one of the [Mandatory Prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell) has not been fulfilled. In such cases, Run:ai services may not function properly.
+When a cluster's status displays *Missing prerequisites*, it indicates that at least one of the [Mandatory Prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md) has not been fulfilled. In such cases, Run:ai services may not function properly.
 
 If you have ensured that all prerequisites are installed and the status still shows *Missing prerequisites*, follow these steps:
 
@@ -186,7 +186,7 @@ kubectl get cm runai-public -oyaml
 
 ### Resources not deployed / System unavailable / Reconciliation failed
 
-1. Run the [Preinstall diagnostic script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and check for issues.
+1. Run the [Preinstall diagnostic script](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and check for issues.
 2. Run
 
 ```

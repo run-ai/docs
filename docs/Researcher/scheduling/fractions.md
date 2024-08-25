@@ -53,7 +53,7 @@ For more details on Run:ai fractions see the [dynamic MIG quickstart](../Walkthr
 
 As described above, MIG is only available in the latest NVIDIA architecture. 
 
-* When working with Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`. See [NVIDIA prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia) on how to set this flag. 
+* When working with Kubernetes, NVIDIA defines a concept called [MIG Strategy](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/mig-k8s.html#mig-strategies){target=_blank}. With Run:ai you must set the MIG strategy to `mixed`. See [NVIDIA prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#nvidia-gpu-operator) on how to set this flag. 
 * The administrator needs to specifically enable dynamic MIG on the node by running: 
     
     ```

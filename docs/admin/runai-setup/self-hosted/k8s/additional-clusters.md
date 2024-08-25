@@ -5,7 +5,7 @@ The first Run:ai cluster is typically installed on the same Kubernetes cluster a
 
 ## Installation
 
-Follow the Run:ai SaaS installation network instructions as described [here](../../cluster-setup/cluster-prerequisites.md#cluster-url).  Specifically:
+Follow the Run:ai SaaS installation network instructions as described [here](../../cluster-setup/cluster-prerequisites.md#domain-name-requirement).  Specifically:
 
 1. Install Run:ai [prerequisites](../../cluster-setup/cluster-prerequisites.md). Including ingress controller and Prometheus. 
 2. The Cluster should have a dedicated URL with a trusted certificate.

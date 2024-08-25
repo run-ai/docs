@@ -35,13 +35,13 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
 ## Cluster Installation
 
 === "Connected"
-    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md#install-runai). When creating a new cluster, select the **OpenShift**  target platform.
+    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md). When creating a new cluster, select the **OpenShift**  target platform.
 
     !!! Info
         To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.
 
 === "Airgapped"
-    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md#install-runai). When creating a new cluster, select the **OpenShift**  target platform.
+    Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md). When creating a new cluster, select the **OpenShift**  target platform.
 
     On the second tab of the cluster wizard, when copying the helm command for installation, you will need to use the pre-provided installation file instead of using helm repositories. As such:
 
