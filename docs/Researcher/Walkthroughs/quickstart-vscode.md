@@ -1,4 +1,4 @@
-# Quickstart: Launch WorkSpace with a Visual Studio Code for Web
+# Quickstart: Launch Workspace with a Visual Studio Code for Web
 
 ## Introduction
 
@@ -20,10 +20,6 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 * _Researcher_ access to _Project_ in Run:ai named "team-a"
 * The project should be assigned a quota of at least 1 GPU. 
 * A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
-* Create a new Visual Studio [Environment](../workloads/assets/environments.md) asset. The asset should have:
-    * The image `quay.io/opendatahub-contrib/workbench-images:vscode-datascience-c9s-py311_2023c_latest`.
-    * Under `Tools`, add Visual Studio Code and change the port to `8787`.
-    * Use the environment name `vscode`.
 
 To complete this Quickstart __via the CLI__, you will need to have the Run:ai CLI installed on your machine. There are two available CLI variants:
 
@@ -46,6 +42,18 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 === "API"
     To use the API, you will need to obtain a token. Please follow the [api authentication](../../developer/rest-auth.md) article.
 
+### Create a Visual Studio Environment
+
+To complete this Quickstart __via the UI__, you will need to create a new Visual Studio [Environment](../workloads/assets/environments.md) asset. 
+
+This is a __one-time__ step for all VSCode Workloads.
+
+Under `Environments` Select __NEW ENVIRONMENT__. Then select:
+
+* A default (cluster) scope.
+* Use the environment name `vscode`.
+* The image `quay.io/opendatahub-contrib/workbench-images:vscode-datascience-c9s-py311_2023c_latest`.
+* Under `Tools`, add Visual Studio Code and change the port to `8787`.
 
 ### Run Workload
 
