@@ -12,18 +12,18 @@ When implementing shared data volumes in Kubernetes, there are two primary appro
 
 Storage Classes being the recommended option.
 
-Run:ai Data Sources support both direct NFS mount and Kubernetes Storage Classes.
+Run:ai [Data Sources](../../../platform-admin/workloads/assets/datasources.md) support both direct NFS mount and Kubernetes Storage Classes.
 
 ### Kubernetes storage classes
 
 Storage classes in Kubernetes defines how storage is provisioned and managed. This allows you to select storage types optimized for AI workloads. For example, you can choose storage with high IOPS (Input/Output Operations Per Second) for rapid data access during intensive training sessions, or tiered storage options to balance cost and performance-based on your organization’s requirements. This approach supports dynamic provisioning, enabling storage to be allocated on-demand as required by your applications.
 
-Run:ai data sources such as Persistent Volume Claims (PVC) and Data Volume leverage storage class to manage and allocate storage efficiently. This ensures that the most suitable storage option is always accessible, contributing to the efficiency and performance of AI workloads.
+Run:ai data sources such as [Persistent Volume Claims (PVC)](../../../platform-admin/workloads/assets/existing-PVC.md) and [Data Volume](../../../platform-admin/workloads/assets/data-volumes.md) leverage storage class to manage and allocate storage efficiently. This ensures that the most suitable storage option is always accessible, contributing to the efficiency and performance of AI workloads.
 
 !!! Note
     Run:ai lists all available storage classes in the Kubernetes cluster, making it easy for users to select the appropriate storage. Additionally, policies can be set to restrict or enforce the use of specific storage classes, to helpl maintain compliance with organizational standards and optimize resource utilization.
 
-??? Kubernetes 1.23 (old)
+??? "Kubernetes 1.23 (old)"
     When using Kubernetes 1.23, Data Source of PVC type does not work using a Storage Class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`
 
 ### Direct NFS mount
