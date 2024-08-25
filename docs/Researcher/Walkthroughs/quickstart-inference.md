@@ -12,7 +12,7 @@ There are various ways to submit a Workload:
 * Run:ai __user interface__
 * Run:ai __API__
 
-At this time, Inference services cannot be created via the CLI. The CLI __can__ be used for creating a client to query the inference service
+At this time, Inference services cannot be created via the CLI. The CLI __can__ be used for creating a client to query the inference service.
 
 ## Prerequisites
 
