@@ -40,7 +40,7 @@ Nodes are required to be synchronized by time using NTP (Network Time Protocol) 
 
 ### Kubernetes
 
-See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prerequisites.md#kubernetes-distribution) requirements.
+See Run:ai Cluster prerequisites [Kubernetes distribution](../../cluster-setup/cluster-prerequisites.md#kubernetes-distribution) requirements.
 
 The Run:ai control plane operating system prerequisites are identical.
 
