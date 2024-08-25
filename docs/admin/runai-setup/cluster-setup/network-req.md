@@ -27,7 +27,7 @@ For the Run:ai cluster installation and usage, certain __outbound__ ports must b
 | Grafana | Run:ai cloud metrics store | Run:ai system nodes | prometheus-us-central1.grafana.net and runailabs.com | 443 |
 | Google Container Registry | Run:ai image repository | All K8S nodes	 | gcr.io/run-ai-prod | 443 |
 
-The Run:ai installation has [software requirements](cluster-prerequisites.md) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
+The Run:ai installation has [software requirements](cluster-prerequisites.md#software-requirements) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
 
 | Name | Description | Source | Destination | Port |
 | :---- | :---- | :---- | :---- | :---- |
