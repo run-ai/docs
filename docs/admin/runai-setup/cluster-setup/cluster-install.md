@@ -85,7 +85,7 @@ In the next Section, the Run:ai cluster installation steps will be presented.
 The cluster is displayed in the table with the status __Waiting to connect__, once installation is complete, the cluster status changes to __Connected__
 
 !!! Note
-    To customize the installation based on your environment, see Customize cluster installation.
+    To customize the installation based on your environment, see [Customize cluster installation](../../admin/runai-setup/cluster-setup/customize-cluster-install.md).
 
 ## Troubleshooting
 
