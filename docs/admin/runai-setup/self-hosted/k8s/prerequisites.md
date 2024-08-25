@@ -64,7 +64,7 @@ The Run:ai control plane installation assumes an existing installation of NGINX 
 
 ### NVIDIA GPU Operator
 
-See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia-gpu-operator) requirements.
+See Run:ai Cluster prerequisites [NVIDIA GPU operator](../../cluster-setup/cluster-prerequisites.md#nvidia-gpu-operator) requirements.
 
  > The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 
