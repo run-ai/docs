@@ -78,7 +78,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     * You should already have `Cluster` and `Project` selected. Enter `inference-server-1` as the name and press __CONTINUE__.
     * Under `Environment`,  select `inference-server`.
     * Under `Compute Resource`, select `half-gpu`. 
-    * Under `Replica autoscaling, select a minimum of 0 and a maximum of 2. 
+    * Under `Replica autoscaling, select a minimum of 1 and a maximum of 2. 
     * Under `conditions for a new replica` select `Concurrency` and set the value as 3.
     * Select the scale to zero option to `5 minutes`
     * Select __CREATE INFERENCE__.
@@ -102,7 +102,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
                 "container": 8000
             },
             "autoscaling": {
-                "minReplicas": 0,
+                "minReplicas": 1,
                 "maxReplicas": 2,
                 "metric": "concurrency",
                 "metricThreshold": 3,
@@ -138,7 +138,7 @@ You can use the Run:ai Triton demo client to send requests to the server
 
 #### Find the Inference Server Endpoint
 
-* Under `Workloads`, select `Columns` on the top right. Add the column `Connections.
+* Under `Workloads`, select `Columns` on the top right. Add the column `Connections`.
 * See the connections of the `inference-server-1` workload: 
 
 ![](img/inference-connections.png)
