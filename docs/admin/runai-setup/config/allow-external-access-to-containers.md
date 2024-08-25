@@ -35,7 +35,7 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 
 To enable host-based routing you must perform the following steps:
 
-1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#domain-name-requirement) DNS.
+1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the cluster [Fully Qualified Domain Name (FQDN)](../cluster-setup/cluster-prerequisites.md#fully-qualified-domain-name-fqdn)
 2. Obtain a __wildcard__ SSL certificate for this DNS.
 
 
