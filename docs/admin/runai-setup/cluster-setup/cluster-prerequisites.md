@@ -147,7 +147,7 @@ kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"sp
 *   For distribution-specific additional instructions see below:
 
 ??? "OpenShift Container Platform (OCP)"
-    The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator in OpenShift. Install the NFD Operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. For more information see Installing the Node Feature Discovery (NFD) Operator
+    The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator in OpenShift. Install the NFD Operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. For more information see [Installing the Node Feature Discovery (NFD) Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/install-nfd.html)
 
 ??? "Elastic Kubernetes Service (EKS)"
 
