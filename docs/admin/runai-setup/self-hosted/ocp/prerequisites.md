@@ -37,7 +37,7 @@ Nodes are required to be synchronized by time using NTP (Network Time Protocol) 
 
 ### OpenShift 
 
-Run:ai supports OpenShift. OpenShift Versions supported are detailed [here](../../cluster-setup/cluster-prerequisites.md#kubernetes-distribution).
+Run:ai supports OpenShift. OpenShift Versions supported are detailed in [Kubernetes distribution](../../cluster-setup/cluster-prerequisites.md#kubernetes-distribution).
 
 * OpenShift must be configured with a trusted certificate. Run:ai installation relies on OpenShift to create certificates for subdomains. 
 * OpenShift must have a configured [identity provider](https://docs.openshift.com/container-platform/4.9/authentication/understanding-identity-provider.html){target=_blank} (Idp). 
