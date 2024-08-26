@@ -98,7 +98,7 @@ pod-security.kubernetes.io/warn=privileged
 
 ### Kubernetes Ingress Controller
 
-Run:ai Cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
+Run:ai cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
 
 * OpenShift, RKE and RKE2 come pre-installed ingress controller.  
 * Internal tests are being performed on NGINX, Rancher NGINX, OpenShift Router, and ISTIO gateway.  
@@ -145,6 +145,9 @@ kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"sp
 ```
 
 *   For distribution-specific additional instructions see below:
+
+??? "OpenShift Container Platform (OCP)"
+    The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator in OpenShift. Install the NFD Operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. For more information see Installing the Node Feature Discovery (NFD) Operator
 
 ??? "Elastic Kubernetes Service (EKS)"
 

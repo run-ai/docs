@@ -2,15 +2,13 @@
 title: Self Hosted installation over Kubernetes - Cluster Setup
 ---
 
-
-
 ## Prerequisites
+Install prerequisites as per [System Requirements](../../cluster-setup/cluster-prerequisites.md) document.
 
-Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster-prerequisites.md) document.  
-
+!!! Note
+    For self-hosted deployments, [Kubernetes Ingress Controller](../../cluster-setup/cluster-prerequisites.md#kubernetes-ingress-controller) and Cluster [Fully Qualified Domain Name (FQDN)](../../cluster-setup/cluster-prerequisites.md#fully-qualified-domain-name-fqdn) requirements are only necessary when the Run:ai Control Plane and Run:ai Cluster reside on seperate Kuebrnetes clusters.
 
 ## Install Cluster
-
 === "Connected"
     Perform the cluster installation instructions explained [here](../../cluster-setup/cluster-install.md).
 
@@ -40,7 +38,6 @@ Install prerequisites as per [cluster prerequisites](../../cluster-setup/cluster
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../config/access-roles.md).
 
 ## (Optional) Customize Installation
-
 To customize specific aspects of the cluster installation see [customize cluster installation](../../cluster-setup/customize-cluster-install.md).
 
 
