@@ -105,7 +105,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
     * Use the default operator values to install 1 through 6.
     * If  NVIDIA Drivers (#1 above) are already installed on __all__ nodes, use the operator with a flag that disables drivers install. 
     
-    For more information see [Cluster prerequisites](../runai-setup/cluster-setup/.
+    For more information see [System requirements](../runai-setup/cluster-setup/.
 
     __NVIDIA GPU Operator__
 
