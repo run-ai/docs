@@ -35,6 +35,7 @@ The Run:ai installation has [software requirements](cluster-prerequisites.md#sof
 | Google Container Registry | GPU Operator, and Knative image repository | All K8S nodes	 | gcr.io | 443 |
 | Red Hat Container Registry | Prometheus Operator image repository | All K8S nodes	 | quay.io | 443 |
 | Docker Hub Registry | Training Operator image repository | All K8S nodes	 | docker.io | 443 |
+| JFrog Artifactory | Run:ai Helm repository  | Helm client machine	 | runai.jfrog.io | 443 |
 
 !!! Note
     If you are using an HTTP proxy, contact Run:ai support for further instructions.
