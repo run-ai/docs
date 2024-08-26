@@ -27,7 +27,7 @@ See [https://kubernetes.io/docs/concepts/services-networking/service](https://ku
 
 Workspaces allow the Researcher to launch tools such as Visual Studio code, TensorFlow, TensorBoard etc. These tools require access to the container. Access is provided via URLs. 
 
-Run:ai uses the [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) provided to dynamically create SSL-secured URLs for researchers’ workspaces in the format of `https://<CLUSTER_URL>/project-name/workspace-name`.
+Run:ai uses the [Cluster URL](../cluster-setup/cluster-prerequisites.md#domain-name-requirement) provided to dynamically create SSL-secured URLs for researchers’ workspaces in the format of `https://<CLUSTER_URL>/project-name/workspace-name`.
 
 While this form of path-based routing conveniently works with applications like Jupyter Notebooks, it may often not be compatible with other applications. These applications assume running at the root file system, so hardcoded file paths and settings within the container may become invalid when running at a path other than the root. For instance, if the container is expecting to find a file at `/etc/config.json` but is running at `/project-name/workspace-name`, the file will not be found. This can cause the container to fail or not function as intended.
 
@@ -35,7 +35,7 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 
 To enable host-based routing you must perform the following steps:
 
-1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the original [Cluster URL](../cluster-setup/cluster-prerequisites.md#cluster-url) DNS.
+1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the cluster [Fully Qualified Domain Name (FQDN)](../cluster-setup/cluster-prerequisites.md#fully-qualified-domain-name-fqdn)
 2. Obtain a __wildcard__ SSL certificate for this DNS.
 
 

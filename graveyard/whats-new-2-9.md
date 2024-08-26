@@ -87,7 +87,7 @@ Added an option ‘Editor’ so that Administrators can terminate idle workloads
 
 Cluster upgrade to 2.9 requires uninstalling and then installing. No data is lost during the process. For more information see [cluster upgrade](../admin/runai-setup/cluster-setup/cluster-upgrade.md).
 
-Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) is no longer available in this version. You must use a [domain name](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-url).
+Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#cluster-ip) is no longer available in this version. You must use a [domain name](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#domain-name-requirement).
 
 #### Cluster Prerequisites
 
@@ -95,7 +95,7 @@ Using an IP address for a [cluster URL](../admin/runai-setup/cluster-setup/clust
 
 - NGINX is no longer installed together with Run:ai. You must install an [Ingress controller](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#ingress-controller) before installing Run:ai. This is designed for organizations that already have an ingress controller installed. The Run:ai installation creates NGINX rules to work with the controller.
 
-- List of Run:ai installation Prerequisites can be found [here](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#prerequisites-in-a-nutshell).
+- List of Run:ai installation Prerequisites can be found [here](../admin/runai-setup/cluster-setup/cluster-prerequisites.md).
 
 - The Run:ai installation now performs a series of checks to verify the installation's validity. When the installation is complete, [verify](../admin/runai-setup/cluster-setup/cluster-install.md#verify-your-installation) by reviewing the following in the log file:
     - Are all mandatory prerequisites met?
