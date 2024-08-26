@@ -21,7 +21,7 @@ This configuration is the minimum requirement you need to install and use Run:ai
 
 ### Run:ai Cluster - Worker nodes
 
-Run:ai Workloads require compute resources, Run:ai Cluster supports both x86 Intel CPU and NVIDIA x86 GPUs.
+Run:ai Workloads require compute resources, Run:ai Cluster supports both x86 CPU and NVIDIA x86 GPUs.
 
 The following GPU models are supported:
 
