@@ -26,6 +26,7 @@ For the Run:ai cluster installation and usage, certain __outbound__ ports must b
 | Run:ai Platform | Run:ai cloud instance | Run:ai system nodes | app.run.ai | 443 |
 | Grafana | Run:ai cloud metrics store | Run:ai system nodes | prometheus-us-central1.grafana.net and runailabs.com | 443 |
 | Google Container Registry | Run:ai image repository | All K8S nodes	 | gcr.io/run-ai-prod | 443 |
+| JFrog Artifactory | Run:ai Helm repository  | Helm client machine	 | runai.jfrog.io | 443 |
 
 The Run:ai installation has [software requirements](cluster-prerequisites.md#software-requirements) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
 
@@ -35,7 +36,6 @@ The Run:ai installation has [software requirements](cluster-prerequisites.md#sof
 | Google Container Registry | GPU Operator, and Knative image repository | All K8S nodes	 | gcr.io | 443 |
 | Red Hat Container Registry | Prometheus Operator image repository | All K8S nodes	 | quay.io | 443 |
 | Docker Hub Registry | Training Operator image repository | All K8S nodes	 | docker.io | 443 |
-| JFrog Artifactory | Run:ai Helm repository  | Helm client machine	 | runai.jfrog.io | 443 |
 
 !!! Note
     If you are using an HTTP proxy, contact Run:ai support for further instructions.
