@@ -167,7 +167,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
 ##  Authentication Issues
 
 ??? "After a successful login, you are redirected to the same login page"
-    For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) to test this automatically. 
+    For a self-hosted installation, check Linux clock synchronization as described above. Use the Run:ai preinstall diagnostics tool to validate [System and network requirements](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and test this automatically. 
 
 ??? "Single-sign-on issues"
     For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../authentication/authentication-overview.md) configuration documents. 
