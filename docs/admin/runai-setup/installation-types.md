@@ -28,7 +28,7 @@ Run:ai self-hosting comes with two variants:
 
 ### Self-hosting with Kubernetes vs OpenShift
 
-Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/setup/#production-environment){target=_blank}. Run:ai has been certified with several of them (see the [Kubernetes prerequisites](cluster-setup/cluster-prerequisites.md#kubernetes) section). The OpenShift installation is different from the rest. As such, the Run:ai self-hosted installation instructions are divided into two separate sections:
+Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/setup/#production-environment){target=_blank}. Run:ai has been certified with several of them (see the [Kubernetes distribution](cluster-setup/cluster-prerequisites.md#kubernetes-distribution) section). The OpenShift installation is different from the rest. As such, the Run:ai self-hosted installation instructions are divided into two separate sections:
 
 * OpenShift-based installation. See [Run:ai OpenShift installation](self-hosted/ocp/prerequisites.md).
 * Kubernetes-based installation. See [Run:ai Kubernetes installation](self-hosted/k8s/prerequisites.md).
@@ -38,4 +38,4 @@ Kubernetes has many [Certified Kubernetes Providers](https://kubernetes.io/docs/
 In many organizations, Kubernetes is governed by IT compliance rules. In this scenario, there are strict access control rules during the installation and running of workloads:
 
 * OpenShift is secured using _Security Context Constraints_ (SCC). The Run:ai installation supports SCC.
-* Run:ai provides limited support for Kubernetes _Pod Security Admission (PSA)_. For more information see [Kubernetes prerequisites](cluster-setup/cluster-prerequisites.md#pod-security-admission).
+* Run:ai provides limited support for Kubernetes _Pod Security Admission (PSA)_. For more information see [Kubernetes prerequisites](cluster-setup/cluster-prerequisites.md#kubernetes-pod-security-admission).

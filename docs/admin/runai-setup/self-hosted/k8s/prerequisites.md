@@ -40,7 +40,7 @@ Nodes are required to be synchronized by time using NTP (Network Time Protocol) 
 
 ### Kubernetes
 
-See Run:ai Cluster prerequisites [Kubernetes](../../cluster-setup/cluster-prerequisites.md#kubernetes) requirements.
+See Run:ai Cluster prerequisites [Kubernetes distribution](../../cluster-setup/cluster-prerequisites.md#kubernetes-distribution) requirements.
 
 The Run:ai control plane operating system prerequisites are identical.
 
@@ -60,11 +60,11 @@ The Run:ai control-plane requires a __default storage class__ to create persiste
 
 ### Ingress Controller
 
-The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [ingress controller](../../cluster-setup/cluster-prerequisites.md#ingress-controller) installation.
+The Run:ai control plane installation assumes an existing installation of NGINX as the ingress controller. You can follow the Run:ai _Cluster_ prerequisites [Kubernetes ingress controller](../../cluster-setup/cluster-prerequisites.md#kubernetes-ingress-controller) installation.
 
 ### NVIDIA GPU Operator
 
-See Run:ai Cluster prerequisites [NVIDIA](../../cluster-setup/cluster-prerequisites.md#nvidia) requirements.
+See Run:ai Cluster prerequisites [NVIDIA GPU operator](../../cluster-setup/cluster-prerequisites.md#nvidia-gpu-operator) requirements.
 
  > The Run:ai control plane, when installed without a Run:ai cluster, does not require the NVIDIA prerequisites.
 

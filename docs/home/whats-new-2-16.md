@@ -71,7 +71,7 @@ date: 2023-Dec-4
 
 #### OpenShift Support
 
-* Updated installation prerequisites. For more information, see [Kubernetes support matrix](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#releases). -->
+* Updated installation prerequisites. For more information, see [Kubernetes support matrix](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#kubernetes-distribution). -->
 
 ## Deprecation Notifications
 

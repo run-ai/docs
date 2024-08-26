@@ -119,5 +119,5 @@ date: 2023-Dec-3
 
 #### OpenShift Support
 
-* <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/cluster-prerequisites.md#pod-security-admission).
+* <!-- RUN-7495/RUN11388 Support PSA / SCCs V2 \(security mechanism for pods on K8S/OCP\)-->Added support for `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/kubernetes-pod-security-admission/){target=_blank} (PSA) on OpenShift only. For more information, see [Pod security admission](../admin/runai-setup/cluster-setup/
 * <!-- RUN-12943 Ability to configure cluster routes certificate in OpenShift-->Added the ability, in OpenShift environments, to configure cluster routes created by Run:ai instead of using the OpenShift certificate. For more information, see the table entry [Dedicated certificate for the researcher service route](../admin/runai-setup/cluster-setup/customize-cluster-install.md#configurations).

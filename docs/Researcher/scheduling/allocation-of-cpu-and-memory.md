@@ -95,7 +95,7 @@ To change the cluster wide-ratio use the following process. The example shows:
 
 You must edit the cluster installation values file:
 
-* When installing the Run:ai cluster, edit the [values file](../../admin/runai-setup/cluster-setup/cluster-install.md#install-runai).
+* When installing the Run:ai cluster, edit the [values file](../../admin/runai-setup/cluster-setup/customize-cluster-install.md).
 * On an existing installation, use the [upgrade](../../admin/runai-setup/cluster-setup/cluster-upgrade.md) cluster instructions to modify the values file.
 * You must specify at least the first 4 values as follows:
 
