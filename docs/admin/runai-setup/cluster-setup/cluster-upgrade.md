@@ -1,52 +1,77 @@
+  
+This article explains how to upgrade Run:ai cluster version.
 
-# Upgrading a Cluster Installation
-Below are the instructions on how to upgrade a Run:ai cluster.
+## Before upgrade
 
-## Upgrade Run:ai cluster 
+There are a number of matters to consider prior to upgrading the Run:ai cluster version using Helm.
 
-Follow the steps below, based on the Run:ai cluster version you want to upgrade to:
+### System and network requirements
 
-=== "2.15-latest"
-    * In the Run:ai interface, navigate to `Clusters`
-    * Select the cluster you want to upgrade
-    * Click `Get Installation instructions`
-    * Choose the `Run:ai version` to upgrade to
-    * Click `Continue`
-    * Copy the [Helm](https://helm.sh/docs/intro/install/) command provided in the `Installation Instructions` and run it on in the cluster.
-    * In the case of a failure, refer to the [Installation troubleshooting guide](../../troubleshooting/troubleshooting.md#installation).
+Before upgrading the Run:ai cluster, validate that the latest [system requirements](./cluster-prerequisites.md) and [network requirements](./network-req.md) are met as they can change from time to time.
 
-=== "2.13"
-    Run:
+!!! Important
+    It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](cluster-prerequisites.md#kubernetes-distribution)
 
-    ```
+### Helm
+
+The latest releases of the Run:ai cluster require Helm 3.14 or above. To install latest Helm release, see [Helm Install](https://helm.sh/docs/helm/helm_install/).
+
+## Upgrade
+
+Follow these instructions to upgrade using Helm. The Helm commands to upgrade the Run:ai cluster version may differ from one version to another, and therefore are obtained in the Run:ai Platform.
+
+### Obtaining installation instructions
+
+Follow the steps below to obtain the installation instructions to upgrade the Run:ai cluster.
+
+1. In the Run:ai platform, go to `Clusters`  
+2. Select the cluster you want to upgrade  
+3. Click __INSTALLATION INSTRUCTIONS__  
+4. (Optional) Chose the Run:ai cluster version (latest, by default)  
+5. Click Continue
+
+??? "Upgrade to Run:ai cluster version 2.13 (old release)"
+    Run:ai cluster version 2.13 (old release) does not support migration of the configured Helm values, therefore if you have customized configurations your would like to migrate follow the additional steps below:
+
+    * Download the Run:ai Helm values file by running the command provided 
+
+    * Run the following command to save existing cluster Helm values into old-values.yaml
+    
+    ``` bash
     helm get values runai-cluster -n runai > old-values.yaml
     ```
 
-    * Review the file `old-values.yaml` and see if there are any changes performed during the last installation.
-    * In the Run:ai interface, navigate to `Clusters`.
-    * Select the cluster you want to upgrade.
-    * Click `Get Installation instructions`.
+    * Identify configured custom values that you want to migrate
 
-    * Follow the instructions to download a new values file. 
-    * Merge the changes from Step 1 into the new values file.
-    * Copy the [Helm](https://helm.sh/docs/intro/install/) command provided in the `Installation Instructions` and run it on in the cluster.
+    * Manually merge the values from old-values.yaml into the new values file
 
-## Verify Successful Upgrade
+!!! Note
+    To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
 
-See [Verify your installation](cluster-install.md#verify-your-clusters-health) on how to verify a Run:ai cluster installation
+### Upgrading Run:ai cluster
 
-Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
+In the next section, the Run:ai cluster installation steps are presented.
 
-### Upgrade from version 2.9 
+1. Follow the installation instructions and run the Helm commands provided on your Kubernetes cluster.  
+2. Click __DONE__
 
-Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_ and _installation customization_. 
+Once installation is complete, validate the cluster is Connected and listed with the new cluster version. Once you have done this, the cluster is upgraded to the latest version.
 
+## Troubleshooting
+
+If you encounter an issue with the cluster upgrade, use the troubleshooting scenario below.
+
+### Installation fails
+
+If the Run:ai cluster upgrade fails, check the installation logs to identify the issue.
+
+Run the following script to print the installation logs:
+
+``` bash
+curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh
 ```
-kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
-kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
-```
 
-#### Ingress
+### Cluster status
 
-Delete the ingress object which will be recreated by the control plane upgrade.
+If the Run:ai cluster upgrade completes, but the cluster status is not Connected, check the [cluster troubleshooting scenarios](../config/clusters.md#troubleshooting)
 

@@ -166,11 +166,12 @@ nav:
       - 'Installation Types' : 'admin/runai-setup/installation-types.md'
       - 'Classic (SaaS)' :
         - 'Introduction' : 'admin/runai-setup/cluster-setup/cluster-setup-intro.md'
-        - 'Prerequisites' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
+        - 'System Requirements' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
+        - 'Network Requirements' : 'admin/runai-setup/cluster-setup/network-req.md'
         - 'Cluster Install' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         - 'Customize Installation' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
-        - 'Cluster Delete' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
+        - 'Cluster Uninstall' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
@@ -202,6 +203,7 @@ nav:
       - 'Overview' : 'admin/runai-setup/config/overview.md'
       - 'Set Node Roles' : 'admin/runai-setup/config/node-roles.md'
       - 'Clusters' :  'admin/runai-setup/config/clusters.md'
+      - 'Shared Data Volumes' : 'admin/runai-setup/config/shared-data-vol.md'
       - 'Set Default Scheduler' : 'admin/runai-setup/config/default-scheduler.md'
       - 'Review Kubernetes Access provided to Run:ai' : 'admin/runai-setup/config/access-roles.md'
       - 'External access to Containers' : 'admin/runai-setup/config/allow-external-access-to-containers.md'

@@ -65,7 +65,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
 
     Add verbosity to Prometheus as describe [here](diagnostics.md).Verify that there are no errors. If there are connectivity-related errors you may need to:
 
-    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-access-requirements).
+    * Check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/network-req.md).
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 
@@ -105,7 +105,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
     * Use the default operator values to install 1 through 6.
     * If  NVIDIA Drivers (#1 above) are already installed on __all__ nodes, use the operator with a flag that disables drivers install. 
     
-    For more information see [Cluster prerequisites](../runai-setup/cluster-setup/cluster-prerequisites.md#nvidia).
+    For more information see [System requirements](../runai-setup/cluster-setup/.
 
     __NVIDIA GPU Operator__
 
@@ -167,7 +167,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
 ##  Authentication Issues
 
 ??? "After a successful login, you are redirected to the same login page"
-    For a self-hosted installation, check Linux clock synchronization as described above. Use the [Run:ai pre-install script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) to test this automatically. 
+    For a self-hosted installation, check Linux clock synchronization as described above. Use the Run:ai preinstall diagnostics tool to validate [System and network requirements](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and test this automatically. 
 
 ??? "Single-sign-on issues"
     For single-sign-on issues, see the troubleshooting section in the [single-sign-on](../authentication/authentication-overview.md) configuration documents. 
@@ -238,7 +238,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
 
     __Resolution:__
 
-    * Run the [preinstall script](../runai-setup/cluster-setup/cluster-prerequisites.md#pre-install-script) and search for networking errors.
+    * Run the preinstall diagnostics tool to validate [System and network requirements](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and test connectivity issues.
     * Run: `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
     * Run: `kubectl get nodes`. Check that all nodes are ready and connected.
     * Run: `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
@@ -254,7 +254,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
     __Resolution__
     
     * Run: `runai pods -n runai | grep agent`. See that the agent is in _Running_ state. Select the agent's full name and run: `kubectl logs -n runai runai-agent-<id>`.
-    * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/cluster-prerequisites.md#network-access-requirements). 
+    * Verify that there are no errors. If there are connectivity-related errors you may need to check your firewall for outbound connections. See the required permitted URL list in [Network requirements](../runai-setup/cluster-setup/network-req.md). 
     * If you need to set up an internet proxy or certificate, please contact Run:ai customer support. 
 
 ??? "Jobs are not syncing"
