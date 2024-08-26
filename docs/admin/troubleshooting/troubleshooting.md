@@ -238,7 +238,7 @@ See [Cluster Health Troubleshooting](../runai-setup/config/clusters.md#troublesh
 
     __Resolution:__
 
-    * Run the [preinstall script](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and search for networking errors.
+    * Run the preinstall diagnostics tool to validate [System and network requirements](../runai-setup/cluster-setup/cluster-install.md#system-and-network-requirements) and test connectivity issues.
     * Run: `kubectl get pods -n kube-system -o wide`. Verify that all networking pods are running. 
     * Run: `kubectl get nodes`. Check that all nodes are ready and connected.
     * Run: `kubectl get pods -o wide -A` to see which pods are Pending or in Error and which nodes they belong to. 
