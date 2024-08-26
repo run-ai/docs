@@ -268,8 +268,7 @@ kubectl patch configmap/config-features \
 ```
 
 ## Domain Name Requirement
-
-There are a number of requirements that must be followed for naming the domain.
+The following requirement must be followed for naming the domain.
 
 ### Fully Qualified Domain Name (FQDN)
 
