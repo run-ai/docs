@@ -80,7 +80,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     * Under `Compute Resource`, select `half-gpu`. 
     * Under `Replica autoscaling, select a minimum of 1 and a maximum of 2. 
     * Under `conditions for a new replica` select `Concurrency` and set the value as 3.
-    * Select the scale to zero option to `5 minutes`
+    * Set the `scale to zero` option to `5 minutes`
     * Select __CREATE INFERENCE__.
     
     !!! Note
@@ -171,12 +171,12 @@ You can use the Run:ai Triton demo client to send requests to the server
     * Select __NEW ENVIRONMENT__. Enter `inference-client` as the name and `gcr.io/run-ai-demo/example-triton-client` as the image. 
     Select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, select `cpu-only` under the Compute resource.
-    * Under `runtime settings` enter the command as `perf_analyzer` and arguments `-m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>` (replace inference endpoint with above).
+    * Under `runtime settings` enter the command as `perf_analyzer` and arguments `-m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>` (replace inference endpoint with the above URL).
     * Select __CREATE TRAINING__.
   
 
 
-In the user interface, under `inference-server-1`, go to the `Metrics` tab and watch as the various GPU metrics graphs rise. 
+In the user interface, under `inference-server-1`, go to the `Metrics` tab and watch as the various GPU and inference metrics graphs rise. 
 
 
 
