@@ -21,7 +21,7 @@ This configuration is the minimum requirement you need to install and use Run:ai
 
 ### Run:ai Cluster - Worker nodes
 
-Run:ai Workloads require compute resources, Run:ai Cluster supports both x86 Intel CPU and NVIDIA x86 GPUs.
+Run:ai Workloads require compute resources, Run:ai Cluster supports both x86 CPU and NVIDIA x86 GPUs.
 
 The following GPU models are supported:
 
@@ -36,7 +36,7 @@ The following GPU models are supported:
 
 Run:ai workloads must be able to access data from any worker node in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts.
 
-Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared data volumes](../config/shared-data-vol.md).
+Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](../config/shared-storage.md).
 
 ## Software requirements
 
