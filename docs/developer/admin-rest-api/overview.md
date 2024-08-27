@@ -45,8 +45,8 @@ For an additional example, see the [following](https://github.com/run-ai/docs/bl
 
 ## Run:ai REST API Documentation
 
-The Run:ai REST API provides the developer interfaces for getting and manipulating the Run:ai metadata objects such as Projects, Departments, Clusters, and Users.
+The Run:ai REST API offers developers a robust interface for interacting with and managing Run:ai metadata objects, including Projects, Departments, Clusters, and Users.
 
-Detailed API documentation can be found at [https://app.run.ai/api/docs](https://app.run.ai/api/docs){target=_blank}. If you are running a self-hosted version, see `https://<runai-company-url>/api/docs`.
+Public API documentation is available at [api-docs.run.ai](https://api-docs.run.ai){target=_blank}. For self-hosted deployments, access the documentation at `https://<control-plane-url>/api/docs`.
 
-[ Documentation](https://app.run.ai/api/docs){target=_blank .md-button .md-button--primary }
+[View Documentation](https://api-docs.run.ai){target=_blank .md-button .md-button--primary}
