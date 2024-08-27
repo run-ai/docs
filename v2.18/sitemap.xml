@@ -791,7 +791,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/shared-data-vol/</loc>
+         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/shared-storage/</loc>
          <lastmod>2024-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
