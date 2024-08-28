@@ -3,13 +3,13 @@
 suspend training
 
 ```
-runai training suspend [flags]
+runai training suspend [TRAINING_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-runai training --name=<training_name> --project=<project_name>
+runai training <training_name> -p=<project_name>
 runai training suspend --uuid=<training_workspace_uuid>
 ```
 
@@ -17,9 +17,8 @@ runai training suspend --uuid=<training_workspace_uuid>
 
 ```
   -h, --help             help for suspend
-      --name string      The name of the workload
-      --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --uuid string      The UUID of the workload
+  -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
+  -u, --uuid string      The UUID of the workload
 ```
 
 ### Options inherited from parent commands
@@ -28,7 +27,8 @@ runai training suspend --uuid=<training_workspace_uuid>
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
       --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
   -d, --debug                enable debug mode
-  -v, --verbose              enable verbose mode
+  -q, --quiet                enable quiet mode, suppress all output except error messages
+      --verbose              enable verbose mode
 ```
 
 ### SEE ALSO
