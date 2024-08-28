@@ -19,12 +19,14 @@ runai config [flags]
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
       --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
   -d, --debug                enable debug mode
-  -v, --verbose              enable verbose mode
+  -q, --quiet                enable quiet mode, suppress all output except error messages
+      --verbose              enable verbose mode
 ```
 
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai config generate](runai_config_generate.md)	 - generate config file
+* [runai config project](runai_config_project.md)	 - Deprecated] Configure a default project
 * [runai config set](runai_config_set.md)	 - Set configuration values
 

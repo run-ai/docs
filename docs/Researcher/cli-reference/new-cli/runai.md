@@ -1,23 +1,52 @@
----
-title: Run:ai V2 Command-line Interface
-summary: This article is the summary article for the CLI V2.
-authors:
-    -  Jason Novich 
-date: 2024-Jun-18
----
+## runai
 
-The Run:ai Command-line Interface (CLI) tool for a Researcher to send deep learning workloads, acquire GPU-based containers, list jobs, and access other features in the Run:ai platform.
+Run:ai Command-line Interface
 
-## The new V2 Command-line interface
-    
-This command-line interface is a complete revamp of the command-line interface. Few highlights:
+### Synopsis
 
-* The CLI internally uses the [Control-plane API](../../../developer/admin-rest-api/overview.md). This provides a single point of view on Workloads removing dissimilarities between the user interface and the command-line interface. 
-* As such, it also removes the need to configure the [Kubernetes API server](../../../admin/authentication/researcher-authentication.md) for authentication. 
-* The CLI is only available for Run:ai cluster version 2.18 and up.
-* The new V2 CLI is backward compatible with the older V1 CLI.
+runai - The Run:ai Researcher Command Line Interface
+	
+Description:  
+  A tool for managing Run:ai workloads and monitoring available resources.
+  It provides researchers with comprehensive control over their AI development environment.
 
 
-## Installing the Improved Command Line Interface
+```
+runai [flags]
+```
 
-See installation instructions [here](../../../admin/researcher-setup/new-cli-install.md).
+### Options
+
+```
+      --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
+      --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
+  -d, --debug                enable debug mode
+  -h, --help                 help for runai
+  -q, --quiet                enable quiet mode, suppress all output except error messages
+      --verbose              enable verbose mode
+```
+
+### SEE ALSO
+
+* [runai cluster](runai_cluster.md)	 - cluster management
+* [runai config](runai_config.md)	 - configuration management
+* [runai describe](runai_describe.md)	 - [Deprecated] Display detailed information about resources
+* [runai distributed](runai_distributed.md)	 - distributed management
+* [runai exec](runai_exec.md)	 - [Deprecated] exec
+* [runai list](runai_list.md)	 - [Deprecated] display resource list. By default displays the job list
+* [runai login](runai_login.md)	 - login to the control plane
+* [runai logout](runai_logout.md)	 - logout from control plane
+* [runai logs](runai_logs.md)	 - [Deprecated] logs
+* [runai node](runai_node.md)	 - node management
+* [runai nodepool](runai_nodepool.md)	 - node pool management
+* [runai port-forward](runai_port-forward.md)	 - [Deprecated] port forward
+* [runai project](runai_project.md)	 - project management
+* [runai report](runai_report.md)	 - [Experimental] report management
+* [runai submit](runai_submit.md)	 - [Deprecated] Submit a new workload
+* [runai training](runai_training.md)	 - training management
+* [runai upgrade](runai_upgrade.md)	 - upgrades the CLI to the latest version
+* [runai version](runai_version.md)	 - show the current version of the CLI
+* [runai whoami](runai_whoami.md)	 - show the current logged in user
+* [runai workload](runai_workload.md)	 - workload management
+* [runai workspace](runai_workspace.md)	 - workspace management
+
