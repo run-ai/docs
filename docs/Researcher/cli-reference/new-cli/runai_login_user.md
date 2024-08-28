@@ -14,8 +14,14 @@ runai login user [flags]
 
 ```
 
-  # Login using user credentials without browser
-  runai login user --user=<user> --password=<password>
+# Login with a username. the password will be prompted via stdin afterward (recommended)
+runai login user -u <username>
+
+# Login with a username and plain password (not recommended for security reasons)
+runai login user --user=user --password=pass
+
+# Login with a username and password (not recommended for security reasons)
+runai login user -u=user -p=pass
 
 ```
 
@@ -23,7 +29,7 @@ runai login user [flags]
 
 ```
   -h, --help              help for user
-  -p, --password string   the password of the given username
+  -p, --password string   plaintext password of the given username. not recommended for security reasons
   -u, --user string       the username to login with
 ```
 
@@ -33,7 +39,8 @@ runai login user [flags]
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
       --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
   -d, --debug                enable debug mode
-  -v, --verbose              enable verbose mode
+  -q, --quiet                enable quiet mode, suppress all output except error messages
+      --verbose              enable verbose mode
 ```
 
 ### SEE ALSO
