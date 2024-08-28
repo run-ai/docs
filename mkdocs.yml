@@ -331,8 +331,8 @@ nav:
 
     - 'Command Line Interface' :
       - 'CLI V2': 
-        - 'Introduction': 'Researcher/cli-reference/new-cli/overview.md'
-        - 'Introduction': 'Researcher/cli-reference/new-cli/runai.md'
+        - 'Overview': 'Researcher/cli-reference/new-cli/overview.md'
+        - 'CLI Reference': 'Researcher/cli-reference/new-cli/runai.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster_list.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster_set.md'
