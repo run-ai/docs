@@ -3,13 +3,13 @@
 resume workspace
 
 ```
-runai workspace resume [flags]
+runai workspace resume [WORKSPACE_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-runai workspace resume --name=<workspace_name> --project=<project_name>
+runai workspace resume <workspace_name> -p=<project_name>
 runai workspace resume --uuid=<workspace_uuid>
 ```
 
@@ -17,9 +17,8 @@ runai workspace resume --uuid=<workspace_uuid>
 
 ```
   -h, --help             help for resume
-      --name string      The name of the workload
-      --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --uuid string      The UUID of the workload
+  -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
+  -u, --uuid string      The UUID of the workload
 ```
 
 ### Options inherited from parent commands
@@ -28,7 +27,8 @@ runai workspace resume --uuid=<workspace_uuid>
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
       --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
   -d, --debug                enable debug mode
-  -v, --verbose              enable verbose mode
+  -q, --quiet                enable quiet mode, suppress all output except error messages
+      --verbose              enable verbose mode
 ```
 
 ### SEE ALSO
