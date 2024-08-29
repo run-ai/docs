@@ -57,7 +57,7 @@ Nodes not marked as GPU worker or CPU worker will not run Run:ai at all.
 To set __all__ workers not running runai-system as GPU workers run:
 
 ```
-runai-adm set node-role --all <node-name>
+runai-adm set node-role [--gpu-worker | --cpu-worker] --all
 ```
 
 To remove the CPU or GPU worker node role run:
