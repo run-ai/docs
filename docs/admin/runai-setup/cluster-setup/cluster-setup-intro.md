@@ -4,7 +4,7 @@ title: SaaS Cluster Setup Introduction
 
 This section is a step-by-step guide for setting up a Run:ai cluster. 
 
-* A Run:ai cluster is installed on top of a Kubernetes cluster.
+* A Run:ai cluster is a Kubernetes application installed on top of a Kubernetes cluster.
 * A Run:ai cluster connects to the Run:ai control plane on the cloud. The control plane provides a control point as well as a monitoring and control user interface for Administrators and Researchers.
 * A customer may have multiple Run:ai Clusters, all connecting to a single control plane.
 
@@ -12,10 +12,10 @@ For additional details see the [Run:ai system components](../../../home/componen
 
 ## Documents
 
-* Review Run:ai cluster [prerequisites](cluster-prerequisites.md).
-* Step-by-step [installation instructions](cluster-install.md).
+* Review Run:ai cluster [System Requirements](cluster-prerequisites.md) and [Network Requirements](network-req.md).
+* [Cluster Install](cluster-install.md) step-by-step guid.
 * Look for [troubleshooting](../../troubleshooting/troubleshooting.md) tips if required.
-* [Upgrade cluster](cluster-upgrade.md) and [delete cluster](cluster-delete.md) instructions. 
+* [Cluster Upgrade](cluster-upgrade.md) and [Cluster Uninstall](cluster-delete.md) instructions. 
 
 
 ## Customization
