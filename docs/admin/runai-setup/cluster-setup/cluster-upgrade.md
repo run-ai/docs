@@ -46,7 +46,7 @@ Follow the steps below to obtain the installation instructions to upgrade the Ru
     * Manually merge the values from old-values.yaml into the new values file
 
 !!! Note
-    To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
+    To upgrade to a specific version, modify the `--version` flag by specifying the desired version. You can find all available versions by using the `helm search repo` command.
 
 ### Upgrading Run:ai cluster
 

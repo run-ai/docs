@@ -7,7 +7,7 @@ Set out below are the system requirements for the Run:ai cluster.
 
 ## Hardware Requirements
 
-The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to set node roles, to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
+The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](../config/node-roles.md), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
 
 ### Run:ai Cluster - system nodes
 
