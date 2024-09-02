@@ -50,7 +50,7 @@ This is a __one-time__ step for all VSCode Workloads.
 
 Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
-* A default (cluster) scope.
+* A scope (where you want your environment to live).
 * Use the environment name `vscode`.
 * The image `quay.io/opendatahub-contrib/workbench-images:vscode-datascience-c9s-py311_2023c_latest`.
 * Under `Tools`, add Visual Studio Code and change the port to `8787`.
@@ -85,7 +85,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     * In the Run:ai UI select __Workloads__
     * Select __New Workload__ and then __Workspace__
     * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. Enter `vs1` as the name and press __CONTINUE__.
-    * Under `Environment`,  select `vscode`.
+    * Under `Environment`,  select select the previously created `vscode` environment.
     * Under `Compute Resource`, select `one-gpu`. 
     * Select __CREATE WORKSPACE__.
     
