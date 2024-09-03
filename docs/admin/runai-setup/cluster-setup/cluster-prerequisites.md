@@ -101,7 +101,7 @@ pod-security.kubernetes.io/warn=privileged
 Run:ai cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
 
 * OpenShift, RKE and RKE2 come pre-installed ingress controller.  
-* Internal tests are being performed on NGINX, Rancher NGINX, OpenShift Router, and ISTIO gateway.  
+* Internal tests are being performed on NGINX, Rancher NGINX, OpenShift Router, and Istio.  
 * Make sure that a default ingress controller is set.
 
 There are many ways to install and configure different ingress controllers. A simple example to install and configure NGINX ingress controller using [helm](https://helm.sh/):
@@ -258,9 +258,13 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
 
 Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.4 to 1.12
 
-Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the Run:ai scheduler and allow pod affinity, by running:
+Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the Run:ai scheduler and features, by running:
 
 ```
+kubectl patch configmap/config-autoscaler \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"enable-scale-to-zero":"true"}}' && \
 kubectl patch configmap/config-features \
   --namespace knative-serving \
   --type merge \
