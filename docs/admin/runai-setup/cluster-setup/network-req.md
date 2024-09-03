@@ -11,7 +11,7 @@ Ensure the inbound and outbound rules are correctly applied to your firewall.
 
 ### Inbound rules
 
-For your organization’s Run:ai users to communicate with the cluster via [Run:ai Command-line interface](../../researcher-setup/researcher-setup-intro.md), certain inbound ports must be open.
+To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../../researcher-setup/researcher-setup-intro.md), or access specific UI features, certain inbound ports need to be open.
 
 | Name | Description | Source | Destination | Port |
 | :---- | :---- | :---- | :---- | :---- |
