@@ -1,6 +1,6 @@
 # Metrics and telemetry
 
-## telemetry
+## Telemetry
 
 telemetry are numeric measurements recorded at current time that are emitted from the Run:ai cluster.
 
