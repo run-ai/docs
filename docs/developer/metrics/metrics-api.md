@@ -12,7 +12,7 @@ Telemetry is a numeric measurement recorded in real-time when emitted from the R
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:ai. This enables customers to create custom dashboards or integrate metric data into other monitoring systems.
 
-Run:ai provides metrics via the [Run:ai Control-plane API](http://../admin-rest-api/overview.md). In the past, Run:ai provided metrics information via direct access to an internal metrics store. This method is deprecated but is still documented [here](http://metrics.md).
+Run:ai provides metrics via the [Run:ai Control-plane API](http://../admin-rest-api/overview.md). Previoulsy, Run:ai provided metrics information via direct access to an internal metrics store. This method is deprecated but is still documented [here](http://metrics.md).
 
 ## Metric and telemetry Scopes
 
