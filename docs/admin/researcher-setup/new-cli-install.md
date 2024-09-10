@@ -84,8 +84,7 @@ Auto-completion assists with completing the command syntax automatically for eas
       3. Edit the file `~/.bashrc` and add the following lines:
 
       ``` bash
-      [[ -r “/usr/local/etc/profile.d/bash_completion.sh” ]] && . “/usr/local/etc/profile.d/bash_completion.sh”
-      
+      [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
       source <(runai completion bash)
       ```
 
