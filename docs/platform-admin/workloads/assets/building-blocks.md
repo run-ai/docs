@@ -24,6 +24,7 @@ When a workspace is created, the researcher chooses from preconfigured building 
 
 ![](img/4-workspace-form.png)
 
+## Scopes
 
 A building block has a _scope_. The scope links a building block to a specific Run:ai project or to all projects:   
 
@@ -37,6 +38,80 @@ A building block has a _scope_. The scope links a building block to a specific R
 Typically, building blocks are created by the administrator and then assigned to a project. You can grant permission to the researchers to create their own building blocks. These building blocks will only be available to the projects that are assigned to the researcher that created them.
 
 
-## Next Steps
+## Who can create an asset?
 
-Read about the various building blocks [Environments](environments.md), [Compute Resources](compute.md) and [Data Sources](datasources.md).
+According to Run:ai’s role-based access control mechanism \- any user, application, or SSO group with a role and permissions to **Create** an asset such as an environment, can do so in the scope of the role.
+
+| Workload asset | Role |
+| :---- | :---- |
+| Environment | Department administrator |
+|  | Editor |
+|  | Environment administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Data source | Department administrator |
+|  | Editor |
+|  | Data source administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Compute resource | Department administrator |
+|  | Editor |
+|  | Compute resource administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Credentials | Department administrator |
+|  | Editor |
+|  | Credentials administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+
+## Who can use an asset?
+
+Assets are used when submitting workloads, so the ability to use assets is possible when the ability to create workload exists. According to Run:ai’s role-based access control mechanism \- any user, application, or SSO group with the required role and permission can **Create** a workload/inference in the scope of the role.
+
+| Workload type | Role |
+| :---- | :---- |
+| Workload or Inference | Department administrator |
+|  | Editor |
+|  | L1 researcher |
+|  | L2 researcher |
+|  | ML engineer |
+|  | System administrator |
+
+## Who can view an asset?
+
+According to Run:ai’s role-based access control mechanism - any user, application, or SSO group with a role with permission to **View** an asset, such as environment, can do so in the scope of the role.
+
+| Workload asset | Role |
+| :---- | :---- |
+| Environment | Compute resource administrator |
+|  | Department administrator |
+|  | Editor |
+|  | Environment administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Data source | Department administrator |
+|  | Editor |
+|  | Data source administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Compute resource | Department administrator |
+|  |  |
+|  | Editor |
+|  | Compute resource administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+| Credentials | Department administrator |
+|  | Editor |
+|  | Credentials administrator |
+|  | L1 researcher |
+|  | Research manager |
+|  | System administrator |
+
