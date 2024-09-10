@@ -142,6 +142,7 @@ plugins:
         'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/workspaces/overview.md'
         'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
         'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/statuses.md'
+        'snippets/common-submit-cli-commands' : 'Researcher/cli-reference/new-cli/runai.md'
  
 
 nav:
