@@ -371,7 +371,7 @@ runai submit --job-name-prefix -i runai.jfrog.io/artifactory/demo/quickstart -g 
 >
 > For example:
 >
-> `runai submit test-jup -p team-a -i gcr.io/run-ai-demo/jupyter-tensorboard --service-type external-url --port 8888`
+> `runai submit test-jup -p team-a -i runai.jfrog.io/artifactory/demo/jupyter-tensorboard --service-type external-url --port 8888`
 >
 > `runai submit test-np -p team-a -i ubuntu --service-type nodeport --port 30000:7070`
 >

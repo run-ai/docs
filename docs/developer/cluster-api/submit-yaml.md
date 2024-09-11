@@ -91,7 +91,7 @@ spec:
   gpu:
     value: "0.5"
   image:
-    value: "gcr.io/run-ai-demo/example-triton-server"
+    value: "runai.jfrog.io/artifactory/demo/example-triton-server"
   minScale:
     value: 1
   maxScale:

@@ -1,1 +1,1 @@
-docker build -f Dockerfile -t gcr.io/run-ai-demo/pycharm-demo .
+docker build -f Dockerfile -t runai.jfrog.io/artifactory/demo/pycharm-demo .
