@@ -8,6 +8,13 @@ date: 2024-Feb-26
 
 The following is a list of the known and fixed issues for Run:ai V2.16.
 
+## Version 2.16.65
+
+| Internal ID | Description |
+|--|--|
+| RUN-21448 | Fixed an issue with degraded workload so the condition would reflect the actual state. |
+| RUN-20680 | Fixed an issue where the workload page did not present the requested GPU. |
+
 ## Version 2.16.57
 
 | Internal ID | Description |
