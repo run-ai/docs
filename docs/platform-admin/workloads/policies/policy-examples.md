@@ -47,12 +47,13 @@ This example shows how to add a new limitation to the GPU usage for workloads of
 
 3. Use the value type of the gpuDevicesRequest field indicated in the table - “integer” and navigate to the __Value types__ table to view the possible rules that can be applied to this value type - 
 
-    for integer, the options are:  
-        * canEdit  
-        * required  
-        * min  
-        * max  
-        * step  
+    for integer, the options are: 
+
+      * canEdit  
+      * required  
+      * min  
+      * max  
+      * step  
     
 4. Proceed to the [Rule Type](waiting-for-doc.md) table, select the required rule for the limitation of the field - for example “max” and use the examples syntax to indicate the maximum GPU device requested.
 
