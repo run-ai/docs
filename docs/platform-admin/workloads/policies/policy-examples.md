@@ -39,7 +39,7 @@ This example shows how to add a new limitation to the GPU usage for workloads of
     }
     ```
 
-2.   Search the field in the [Policy YAML fields - reference table](waiting-for-doc.md). For example, gpuDevicesRequest appears under the __Compute fields__ sub-table and appears as follow:
+2. Search the field in the [Policy YAML fields - reference table](waiting-for-doc.md). For example, gpuDevicesRequest appears under the __Compute fields__ sub-table and appears as follow:
 
 | Fields | Description | Value type | Supported Run:ai workload type |
 | :---- | :---- | :---- | :---- |
