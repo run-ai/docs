@@ -11,8 +11,3 @@ helm uninstall runai-cluster -n runai
 ```
 
 To delete the Run:ai cluster from the Run:ai Platform, see [Removing a cluster](../config/clusters.md#removing-a-cluster).
-
-
-
-
-

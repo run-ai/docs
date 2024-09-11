@@ -286,6 +286,7 @@ nav:
         - 'Policies V2' : 'platform-admin/workloads/policies/workspaces-policy.md'
         - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
         - 'Policy Examples' : 'platform-admin/workloads/policies/policy-examples.md'
+        - 'Policy Reference' : 'platform-admin/workloads/policies/policy-reference.md'
 
 
     - 'Best Practices' :
