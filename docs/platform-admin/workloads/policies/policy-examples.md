@@ -39,7 +39,7 @@ This example shows how to add a new limitation to the GPU usage for workloads of
     }
     ```
 
-2. Search the field in the [Policy YAML fields - reference table](waiting-for-doc.md). For example, gpuDevicesRequest appears under the __Compute fields__ sub-table and appears as follow:
+2. Search the field in the [Policy YAML fields - reference table](policy-reference.md). For example, gpuDevicesRequest appears under the __Compute fields__ sub-table and appears as follow:
 
 | Fields | Description | Value type | Supported Run:ai workload type |
 | :---- | :---- | :---- | :---- |
@@ -55,7 +55,7 @@ This example shows how to add a new limitation to the GPU usage for workloads of
       * max  
       * step  
     
-4. Proceed to the [Rule Type](waiting-for-doc.md) table, select the required rule for the limitation of the field - for example “max” and use the examples syntax to indicate the maximum GPU device requested.
+4. Proceed to the [Rule Type](policy-reference.md#rule-types) table, select the required rule for the limitation of the field - for example “max” and use the examples syntax to indicate the maximum GPU device requested.
 
 ``` YAML
 compute:
