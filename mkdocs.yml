@@ -338,6 +338,7 @@ nav:
       - 'CLI V2': 
         - 'Overview': 'Researcher/cli-reference/new-cli/overview.md'
         - 'CLI Reference': 'Researcher/cli-reference/new-cli/runai.md'
+        - 'CLI Examples': 'Researcher/cli-reference/new-cli/cli-examples.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster_list.md'
         # -  'Researcher/cli-reference/new-cli/runai_cluster_set.md'
