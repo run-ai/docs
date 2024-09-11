@@ -37,4 +37,4 @@ The following is a list of the known and fixed issues for Run:ai V2.17.
 
 | Internal ID | Description |
 |--|--|
-| RUN-18065 | Fixed an issue where the legacy job sumbission configuration was not available in the *Settings* page. |
+| RUN-18065 | Fixed an issue where the legacy job sumbission configuration was not available in the *Settings* page |
