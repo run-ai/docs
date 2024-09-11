@@ -43,7 +43,7 @@ The following is a list of the known and fixed issues for Run:ai V2.16.
 
 | Internal ID | Description |
 |--|--|
-| RUN-16340 | Fixed an issue in the *Workloads* table where filters were not saved correctly. |
+| RUN-16340 | Fixed an issue in the *Workloads* table where filters were not saved correctly |
 
 ## Version 2.16.15
 
