@@ -8,6 +8,12 @@ date: 2024-Jun-19
 
 The following is a list of the known and fixed issues for Run:ai V2.17.
 
+## Version 2.17.63
+
+| Internal ID | Description |
+|--|--|
+| RUN-21448 | Fixed an issue where a degraded workload was stuck and could not be released. |
+
 ## Version 2.17.43
 
 | Internal ID | Description |
