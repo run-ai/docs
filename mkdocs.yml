@@ -239,7 +239,6 @@ nav:
 #      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
-      - 'Logs collection' : 'admin/troubleshooting/log-collection.md'
   
   - 'Platform Administrator' :
     - 'Overview' : 'platform-admin/overview.md'
