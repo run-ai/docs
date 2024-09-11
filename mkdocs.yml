@@ -143,6 +143,7 @@ plugins:
         'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
         'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/statuses.md'
         'snippets/common-submit-cli-commands' : 'Researcher/cli-reference/new-cli/runai.md'
+
  
 
 nav:
@@ -284,6 +285,7 @@ nav:
         # - 'Training Policy' : 'platform-admin/workloads/policies/training-policy.md'
         - 'Policies V2' : 'platform-admin/workloads/policies/workspaces-policy.md'
         - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
+        - 'Policy Examples' : 'platform-admin/workloads/policies/policy-examples.md'
 
 
     - 'Best Practices' :
