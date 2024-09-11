@@ -32,15 +32,15 @@ Open a terminal and run the following command:
 
 === "CLI V1"
     ```
-    runai submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
-    runai submit a1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
-    runai submit b1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
+    runai submit a2 -i runai.jfrog.io/artifactory/demo/quickstart -g 2 -p team-a
+    runai submit a1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
+    runai submit b1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
     ```
 === "CLI V2"
     ```
-    runai training submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
-    runai training submit a1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
-    runai training submit b1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
+    runai training submit a2 -i runai.jfrog.io/artifactory/demo/quickstart -g 2 -p team-a
+    runai training submit a1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
+    runai training submit b1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
     ```
 
 System status after run:
@@ -59,11 +59,11 @@ Run the following command:
 === "CLI V1"
 
     ```
-    runai submit b2 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
+    runai submit b2 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
     ```
 === "CLI V2"
     ```
-    runai training submit b2 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
+    runai training submit b2 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
     ```
 
 System status after run:
@@ -122,11 +122,11 @@ Now, run a 2 GPU Job:
 === "CLI V1"
 
     ```
-    runai submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
+    runai submit a2 -i runai.jfrog.io/artifactory/demo/quickstart -g 2 -p team-a
     ```
 === "CLI V2"
     ```
-    runai training submit a2 -i gcr.io/run-ai-demo/quickstart -g 2 -p team-a
+    runai training submit a2 -i runai.jfrog.io/artifactory/demo/quickstart -g 2 -p team-a
     ```
 _
 The status now is:

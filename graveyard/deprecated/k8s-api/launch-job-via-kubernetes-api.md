@@ -36,7 +36,7 @@ with client.ApiClient() as api_client:
 
     resource = client.V1ResourceRequirements(limits= {'nvidia.com/gpu' : gpus})
     container = client.V1Container(
-        name=jobname, image='gcr.io/run-ai-demo/quickstart', resources=resource)
+        name=jobname, image='runai.jfrog.io/artifactory/demo/quickstart', resources=resource)
     template.template.spec = client.V1PodSpec(
         containers=[container], restart_policy='Never', scheduler_name='runai-scheduler')
     body.spec = client.V1JobSpec(template=template.template)

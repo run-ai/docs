@@ -55,7 +55,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
     ``` bash
     runai config project team-a   
-    runai submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
+    runai submit train1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1
     ```
 
     !!! Note
@@ -66,7 +66,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
     ``` bash
     runai project set team-a
-    runai training submit train1 -i gcr.io/run-ai-demo/quickstart -g 1
+    runai training submit train1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1
     ```
     !!! Note
         For more information on the training submit command, see [cli documentation](../cli-reference/new-cli/runai_training_submit.md).
@@ -75,7 +75,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     * In the Run:ai UI select __Workloads__
     * Select __New Workload__ and then __Training__
     * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. Enter `train1` as the name and press __CONTINUE__.
-    * Select __NEW ENVIRONMENT__. Enter `quickstart` as the name and `gcr.io/run-ai-demo/quickstart` as the image. Then select __CREATE ENVIRONMENT__.
+    * Select __NEW ENVIRONMENT__. Enter `quickstart` as the name and `runai.jfrog.io/artifactory/demo/quickstart` as the image. Then select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, select `one-gpu` under the Compute resource. 
     * Select __CREATE TRAINING__.
     
@@ -92,7 +92,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
-            "image": "gcr.io/run-ai-demo/quickstart",
+            "image": "runai.jfrog.io/artifactory/demo/quickstart",
             "compute": {
             "gpuDevicesRequest": 1
             }
@@ -109,7 +109,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
         * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
         * For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1){target=_blank} 
 
-This would start an unattended training Workload for `team-a` with an allocation of a single GPU. The Workload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``gcr.io/run-ai-demo/quickstart``. We named the Workload ``train1``
+This would start an unattended training Workload for `team-a` with an allocation of a single GPU. The Workload is based on a [sample](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} docker image ``runai.jfrog.io/artifactory/demo/quickstart``. We named the Workload ``train1``
 
 ### List Workloads
 

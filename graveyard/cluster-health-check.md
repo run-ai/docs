@@ -157,7 +157,7 @@ Submitting a Job allows you to verify that the Run:ai scheduling service is runn
 
     ```bash
     runai config project <project-name>
-    runai submit -i gcr.io/run-ai-demo/quickstart -g 1
+    runai submit -i runai.jfrog.io/artifactory/demo/quickstart -g 1
     ```
 
 3. Verify that the Job is in a *Running* state by running:

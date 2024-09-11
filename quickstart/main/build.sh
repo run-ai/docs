@@ -8,4 +8,4 @@ if [ ! -d "./cifar-10" ]; then
     rm cifar-10-python.tar.gz
 fi
 
-docker build -f Dockerfile -t gcr.io/run-ai-demo/quickstart:legacy .
+docker build -f Dockerfile -t runai.jfrog.io/artifactory/demo/quickstart:legacy .

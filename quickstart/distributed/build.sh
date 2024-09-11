@@ -10,4 +10,4 @@ fi
 
 tag=$1
 
-docker build -f "${tag:+$tag.}Dockerfile" -t "gcr.io/run-ai-demo/quickstart-distributed${tag:+:$tag}" .
+docker build -f "${tag:+$tag.}Dockerfile" -t "runai.jfrog.io/artifactory/demo/quickstart-distributed${tag:+:$tag}" .

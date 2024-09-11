@@ -11,17 +11,17 @@ This Quickstart is about __queue fairness__. It shows that Jobs will be schedule
 
 * 4 GPUs on 2 machines with 2 GPUs each.
 * 2 Projects: team-a and team-b with __1__ allocated GPU each.
-* Run:ai canonical image gcr.io/run-ai-demo/quickstart
+* Run:ai canonical image runai.jfrog.io/artifactory/demo/quickstart
 
 
 ## Part I: Immediate Displacement of Over-Quota
 
 Run the following commands:
 
-    runai submit a1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
-    runai submit a2 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
-    runai submit a3 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
-    runai submit a4 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-a
+    runai submit a1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
+    runai submit a2 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
+    runai submit a3 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
+    runai submit a4 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-a
 
 System status after run:
 ![overquota-fairness11](img/overquota-fairness1.png)
@@ -33,10 +33,10 @@ System status after run:
 
 Run the following commands:
 
-    runai submit b1 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
-    runai submit b2 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
-    runai submit b3 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
-    runai submit b4 -i gcr.io/run-ai-demo/quickstart -g 1 -p team-b
+    runai submit b1 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
+    runai submit b2 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
+    runai submit b3 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
+    runai submit b4 -i runai.jfrog.io/artifactory/demo/quickstart -g 1 -p team-b
 
 System status after run:
 ![overquota-fairness12](img/overquota-fairness2.png)

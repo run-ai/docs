@@ -10,7 +10,7 @@ runai training mpi submit [flags]
 
 ```
 # Submit an MPI training job
-runai training mpi submit <name> -p <project_name> -i gcr.io/run-ai-demo/quickstart
+runai training mpi submit <name> -p <project_name> -i runai.jfrog.io/artifactory/demo/quickstart
 ```
 
 ### Options

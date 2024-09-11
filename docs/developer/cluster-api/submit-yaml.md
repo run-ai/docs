@@ -19,7 +19,7 @@ spec:
   gpu:
     value: "1"
   image:
-    value: gcr.io/run-ai-demo/quickstart
+    value: runai.jfrog.io/artifactory/demo/quickstart
   name:
     value: job-1 # (4)
 ```
@@ -128,7 +128,7 @@ spec:
   active:
     value: false
   image:
-    value: gcr.io/run-ai-demo/quickstart
+    value: runai.jfrog.io/artifactory/demo/quickstart
   name:
     value: job-1 # 
 ```
