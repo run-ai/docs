@@ -115,7 +115,7 @@ date: 2024-June-14
 
 ## Deprecation Notifications
 
-[Existing notifications feature](https://docs.run.ai/v2.10/admin/researcher-setup/email-messaging/) requires cluster configuration, is being deprecated in favor of an improved Notification System. If you have been using the existing notifications feature in the cluster, you can continue to use it for the next **two** versions. It is recommend that you change to the new notifications system in the Control Plane for better control and improved message granularity.
+Existing notifications feature requires cluster configuration, is being deprecated in favor of an improved Notification System. If you have been using the existing notifications feature in the cluster, you can continue to use it for the next **two** versions. It is recommend that you change to the new notifications system in the Control Plane for better control and improved message granularity.
 
 ### Feature deprecations
 
