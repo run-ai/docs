@@ -74,4 +74,4 @@ runai-adm remove secret <secret name> --cluster-wide
 
 ## Secrets and Policies
 
-A Secret can be set at the policy level. For additional information see [policies guide](/docs/platform-admin/workloads/policies/policies.md).
+A Secret can be set at the policy level. For additional information see [policies guide](../../../platform-admin/workloads/policies/overview.md).
