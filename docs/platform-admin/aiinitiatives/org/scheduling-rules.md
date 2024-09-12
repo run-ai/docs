@@ -23,7 +23,7 @@ There are 3 types of scheduling rules:
 
 To add a scheduling rule:
 
-1. Select the project/department you want to add a scheduling rule for  
+1. Select the project/department for which you want to add a scheduling rule  
 2. Click **EDIT**  
 3. In the **Scheduling rules** section click **\+RULE**  
 4. Select the **rule type**  
