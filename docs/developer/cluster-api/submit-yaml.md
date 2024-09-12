@@ -19,7 +19,7 @@ spec:
   gpu:
     value: "1"
   image:
-    value: gcr.io/run-ai-demo/quickstart
+    value: runai.jfrog.io/demo/quickstart
   name:
     value: job-1 # (4)
 ```
@@ -91,7 +91,7 @@ spec:
   gpu:
     value: "0.5"
   image:
-    value: "gcr.io/run-ai-demo/example-triton-server"
+    value: "runai.jfrog.io/demo/example-triton-server"
   minScale:
     value: 1
   maxScale:
@@ -128,7 +128,7 @@ spec:
   active:
     value: false
   image:
-    value: gcr.io/run-ai-demo/quickstart
+    value: runai.jfrog.io/demo/quickstart
   name:
     value: job-1 # 
 ```

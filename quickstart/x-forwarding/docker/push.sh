@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker push gcr.io/run-ai-demo/quickstart-x-forwarding
+docker push runai.jfrog.io/demo/quickstart-x-forwarding

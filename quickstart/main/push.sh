@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker push gcr.io/run-ai-demo/quickstart:legacy
+docker push runai.jfrog.io/demo/quickstart:legacy
