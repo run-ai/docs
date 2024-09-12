@@ -54,28 +54,28 @@ Click the link to view the value type of each field.
 | ----- | ----- | ----- | ----- |
 | readiness | Specifies the Readiness Probe to use to determine if the container is ready to accept traffic. | - | Workspace Training |
 
-#### Readiness field details
+??? "Readiness field details"
 
-| Spec fields | readiness |  |
-| :---- | :---- | :---- |
-| **Description** | Specifies the Readiness Probe to use to determine if the container is ready to accept traffic |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Spec Readiness fields** | **Description** | **Value type** |
-| initialDelaySeconds | Number of seconds after the container has started before liveness or readiness probes are initiated. | integer |
-| periodSeconds | How often (in seconds) to perform the probe. | integer |
-| timeoutSeconds | Number of seconds after which the probe times out | integer |
-| successThreshold | Minimum consecutive successes for the probe to be considered successful after having failed. | integer |
-| failureThreshod | When a probe fails, the number of times to try before giving up. | integer |
+    | Spec fields | readiness |  |
+    | :---- | :---- | :---- |
+    | **Description** | Specifies the Readiness Probe to use to determine if the container is ready to accept traffic |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Spec Readiness fields** | **Description** | **Value type** |
+    | initialDelaySeconds | Number of seconds after the container has started before liveness or readiness probes are initiated. | integer |
+    | periodSeconds | How often (in seconds) to perform the probe. | integer |
+    | timeoutSeconds | Number of seconds after which the probe times out | integer |
+    | successThreshold | Minimum consecutive successes for the probe to be considered successful after having failed. | integer |
+    | failureThreshod | When a probe fails, the number of times to try before giving up. | integer |
 
-Example workload snippet:
+    Example workload snippet:
 
-``` yaml
-defaults:
-   probes:
-     readiness:
-         initialDelaySeconds: 2
-```
+    ``` yaml
+    defaults:
+      probes:
+        readiness:
+            initialDelaySeconds: 2
+    ```
 
 
 ### Security fields
@@ -125,149 +125,149 @@ defaults:
 | configMapVolumes | Specifies ConfigMaps to mount as volumes into a container running the created workload. | itemized | Workspace Training |
 | secretVolume | Set of secret volumes to use in the workload. A secret volume maps a secret resource in the cluster to a file-system mount point within the container running the workload. | itemized | Workspace Training |
 
-#### Storage field details
+??? "Storage field details"
 
-| Spec fields | hostPath |  |
-| :---- | :---- | :---- |
-| **Description** | Maps a folder to a file system mount oint within the container running the workload |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Git fields** | **Description** | **Value type** |
-| name | Unique name to identify the instance. primarily used for policy locked rules. | string |
-| path | Local path within the controller to which the host volume is mapped. | string |
-| readOnly | Force the volume to be mounted with read-only permissions. Defaults to false. | boolean |
-| mountPath | The path that the host volume is mounted to when in use. | string |
-| mountPropagation | Enum: "None" "HostToContainer" Share this volume mount with other containers. If set to HostToContainer, this volume mount receives all subsequent mounts that are mounted to this volume or any of its subdirectories. In case of multiple hostPath entries, this field should have the same value for all of them | string |
+    | Spec fields | hostPath |  |
+    | :---- | :---- | :---- |
+    | **Description** | Maps a folder to a file system mount oint within the container running the workload |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Git fields** | **Description** | **Value type** |
+    | name | Unique name to identify the instance. primarily used for policy locked rules. | string |
+    | path | Local path within the controller to which the host volume is mapped. | string |
+    | readOnly | Force the volume to be mounted with read-only permissions. Defaults to false. | boolean |
+    | mountPath | The path that the host volume is mounted to when in use. | string |
+    | mountPropagation | Enum: "None" "HostToContainer" Share this volume mount with other containers. If set to HostToContainer, this volume mount receives all subsequent mounts that are mounted to this volume or any of its subdirectories. In case of multiple hostPath entries, this field should have the same value for all of them | string |
 
-Example workload snippet:
+    Example workload snippet:
 
-``` yaml
-defaults:
-  storage:
-    hostPath:
-      instances:
-        - path: h3-path-1
-          mountPath: h3-mount-1
-        - path: h3-path-2
-          mountPath: h3-mount-2
-      attributes:
-        - readOnly: true
-```
+    ``` yaml
+    defaults:
+      storage:
+        hostPath:
+          instances:
+            - path: h3-path-1
+              mountPath: h3-mount-1
+            - path: h3-path-2
+              mountPath: h3-mount-2
+          attributes:
+            - readOnly: true
+    ```
 
-| Spec fields | git |  |
-| :---- | :---- | :---- |
-| **Description** | Details of the git repository and items mapped to it. |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Git fields** | **Description** | **Value type** |
-| repository | URL to a remote git repository. The content of this repository is mapped to the container running the workload | string |
-| revision | Specific revision to synchronize the repository from | string |
-| path | Local path within the workspace to which the S3 bucket is mapped. | string |
-| secretName | Optional name of Kubernetes secret that holds your git username and password. | string |
-| username | If secretName is provided, this field should contain the key, within the provided Kubernetes secret, which holds the value of your git username. Otherwise, this field should specify your git username in plain text (example: myuser). | string |
+    | Spec fields | git |  |
+    | :---- | :---- | :---- |
+    | **Description** | Details of the git repository and items mapped to it. |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Git fields** | **Description** | **Value type** |
+    | repository | URL to a remote git repository. The content of this repository is mapped to the container running the workload | string |
+    | revision | Specific revision to synchronize the repository from | string |
+    | path | Local path within the workspace to which the S3 bucket is mapped. | string |
+    | secretName | Optional name of Kubernetes secret that holds your git username and password. | string |
+    | username | If secretName is provided, this field should contain the key, within the provided Kubernetes secret, which holds the value of your git username. Otherwise, this field should specify your git username in plain text (example: myuser). | string |
 
-Example workload snippet:
+    Example workload snippet:
 
-``` yaml
-defaults:
-  storage:
-    git:
-      attributes:
-        Repository: https://runai.public.github.com
-      instances
-        - branch: "master"
-          path: /container/my-repository
-          passwordSecret: my-password-secret
-```
+    ``` yaml
+    defaults:
+      storage:
+        git:
+          attributes:
+            Repository: https://runai.public.github.com
+          instances
+            - branch: "master"
+              path: /container/my-repository
+              passwordSecret: my-password-secret
+    ```
 
-| Spec fields | pvc |  |
-| :---- | :---- | :---- |
-| **Description** | Specifies persistent volume claims to mount into a container running the created workload |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Spec PVC fields** | **Description** | **Value type** |
-| claimName (manadatory) | A given name for the PVC. Allowed referencing it across workspaces. | string |
-| ephemeral | Use **true** to set PVC to ephemeral. If set to **true**, the PVC is deleted when the workspace is stopped. | boolean |
-| path | Local path within the workspace to which the PVC bucket is mapped. | string |
-| readonly | Permits read only from the PVC, prevents additions or modifications to its content. | boolean |
-| ReadwriteOnce | Requesting claim that can be mounted in read/write mode to exactly 1 host. If none of the modes are specified, the default is readWriteOnce. | boolean |
-| size | Requested size for the PVC. Mandatory when existing PVC is false. | string |
-| storageClass | Storage class name to associate with the PVC. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. Further details at [Kubernetes storage classes](https://kubernetes.io/docs/concepts/storage/storage-classes.). | string |
-| readOnlyMany | Requesting claim that can be mounted in read-only mode to many hosts. | boolean |
-| readWriteMany | Requesting claim that can be mounted in read/write mode to many hosts. | boolean |
-
-
-Example workload snippet:
-
-``` yaml
-defaults:
-  storage:
-    pvc:
-      instances:
-        - claimName: pvc-staging-researcher1-home
-          existingPvc: true
-          path: /myhome
-          readOnly: false
-          claimInfo:
-            accessModes:
-              readWriteMany: true
-```
+    | Spec fields | pvc |  |
+    | :---- | :---- | :---- |
+    | **Description** | Specifies persistent volume claims to mount into a container running the created workload |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Spec PVC fields** | **Description** | **Value type** |
+    | claimName (manadatory) | A given name for the PVC. Allowed referencing it across workspaces. | string |
+    | ephemeral | Use **true** to set PVC to ephemeral. If set to **true**, the PVC is deleted when the workspace is stopped. | boolean |
+    | path | Local path within the workspace to which the PVC bucket is mapped. | string |
+    | readonly | Permits read only from the PVC, prevents additions or modifications to its content. | boolean |
+    | ReadwriteOnce | Requesting claim that can be mounted in read/write mode to exactly 1 host. If none of the modes are specified, the default is readWriteOnce. | boolean |
+    | size | Requested size for the PVC. Mandatory when existing PVC is false. | string |
+    | storageClass | Storage class name to associate with the PVC. This parameter may be omitted if there is a single storage class in the system, or you are using the default storage class. Further details at [Kubernetes storage classes](https://kubernetes.io/docs/concepts/storage/storage-classes.). | string |
+    | readOnlyMany | Requesting claim that can be mounted in read-only mode to many hosts. | boolean |
+    | readWriteMany | Requesting claim that can be mounted in read/write mode to many hosts. | boolean |
 
 
-| Spec fields | nfs |  |
-| :---- | :---- | :---- |
-| **Description** | Specifies NFS volume to mount into the container running the workload |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Spec PVC fields** | **Description** | **Value type** |
-| mountpath | The path that the NFS volume is mounted to when in use. | string |
-| path | Path that is exported by the NFS server. | string |
-| readOnly | Whether to force the NFS export to be mounted with read-only permissions. | boolean |
-| nfsServer | The hostname or IP address of the NFS server. | string |
+    Example workload snippet:
 
-Example workload snippet:
+    ``` yaml
+    defaults:
+      storage:
+        pvc:
+          instances:
+            - claimName: pvc-staging-researcher1-home
+              existingPvc: true
+              path: /myhome
+              readOnly: false
+              claimInfo:
+                accessModes:
+                  readWriteMany: true
+    ```
 
-``` yaml
-defaults:
- storage:
-   nfs:
-     instances:
-       - path: nfs-path
-         readOnly: true
-         server: nfs-server
-         mountPath: nfs-mount
-rules:
-  storage:
-    nfs:
-      instances:
-        canAdd: false
-```
 
-| Spec fields | s3 |  |
-| :---- | :---- | :---- |
-| **Description** | Specifies S3 buckets to mount into the container running the workload |  |
-| **Supported Run:ai workload types** | Workspace Training |  |
-| **Value type** | itemized |  |
-| **Spec PVC fields** | **Description** | **Value type** |
-| Bucket | The name of the bucket | string |
-| path | Local path within the workspace to which the S3 bucket is mapped | string |
-| url | The URL of the S3 service provider. The default is the URL of the Amazon AWS Se service | string |
+    | Spec fields | nfs |  |
+    | :---- | :---- | :---- |
+    | **Description** | Specifies NFS volume to mount into the container running the workload |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Spec PVC fields** | **Description** | **Value type** |
+    | mountpath | The path that the NFS volume is mounted to when in use. | string |
+    | path | Path that is exported by the NFS server. | string |
+    | readOnly | Whether to force the NFS export to be mounted with read-only permissions. | boolean |
+    | nfsServer | The hostname or IP address of the NFS server. | string |
 
-Example workload snippet:
+    Example workload snippet:
 
-``` yaml
-defaults:
-  storage:
-    s3:
-      instances:
-        - bucket: bucket-opt-1
-          path: /s3/path
-          accessKeySecret: s3-access-key
-          secretKeyOfAccessKeyId: s3-secret-id
-          secretKeyOfSecretKey: s3-secret-key
-      attributes:
-        url: https://amazonaws.s3.com
-```
+    ``` yaml
+    defaults:
+    storage:
+      nfs:
+        instances:
+          - path: nfs-path
+            readOnly: true
+            server: nfs-server
+            mountPath: nfs-mount
+    rules:
+      storage:
+        nfs:
+          instances:
+            canAdd: false
+    ```
+
+    | Spec fields | s3 |  |
+    | :---- | :---- | :---- |
+    | **Description** | Specifies S3 buckets to mount into the container running the workload |  |
+    | **Supported Run:ai workload types** | Workspace Training |  |
+    | **Value type** | itemized |  |
+    | **Spec PVC fields** | **Description** | **Value type** |
+    | Bucket | The name of the bucket | string |
+    | path | Local path within the workspace to which the S3 bucket is mapped | string |
+    | url | The URL of the S3 service provider. The default is the URL of the Amazon AWS Se service | string |
+
+    Example workload snippet:
+
+    ``` yaml
+    defaults:
+      storage:
+        s3:
+          instances:
+            - bucket: bucket-opt-1
+              path: /s3/path
+              accessKeySecret: s3-access-key
+              secretKeyOfAccessKeyId: s3-secret-id
+              secretKeyOfSecretKey: s3-secret-key
+          attributes:
+            url: https://amazonaws.s3.com
+    ```
 
 ## Value types
 
