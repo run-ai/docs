@@ -45,7 +45,7 @@ To edit a scheduling rule:
 5. Click **SAVE**
 
 !!! Note
-When a editing an inherited rule on a project/department (rule that defined by the department), you can only restrict the rule limitation
+When a editing an inherited rule on a project/department (a rule defined by the department), you can only restrict the rule limitation
 
 ## Deleting the project/department scheduling rule
 
