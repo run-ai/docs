@@ -12,14 +12,15 @@ Run:ai provides two policy technologies.
 
 [**YAML-Based policies**](policies.md) are the older policies. These policies:
 
-Require access to Kubernetes to view or change.
+* Require access to Kubernetes to view or change.
+* Contact Run:ai support to convert the old policies to the new V2 policies format.
 
 [**API-based policies**](workspaces-policy.md) which are the newer policies. These are:
 
-* Show in the Run:ai user interface
-* Can be viewed and modified via the user interface and the Control-plane API
+* Show in the Run:ai user interface.
+* Can be viewed and modified via the user interface and the Control-plane API.
+* Enable new rules addressing differences between project, department and cluster policies.
 * Only available with Run:ai clusters of version 2.18 and up. 
-
 
 ### Why use a workload policy?
 
