@@ -58,7 +58,7 @@ To delete a scheduling rule:
 5. Click **SAVE**
 
 !!!
-You can not delete rules inherited from the department from the project set of rules
+You cannot delete rules inherited from the department from the project's set of rules
 ## Using API
 
 Go to the [Projects](https://app.run.ai/api/docs#tag/Projects/operation/create_project) API reference to view the available actions
