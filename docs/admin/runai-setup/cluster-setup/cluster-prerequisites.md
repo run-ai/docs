@@ -256,7 +256,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
 
 ### Inference
 
-Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.4 to 1.12
+Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.10 to 1.15
 
 Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the Run:ai scheduler and features, by running:
 
