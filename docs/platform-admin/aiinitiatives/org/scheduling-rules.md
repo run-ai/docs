@@ -51,7 +51,7 @@ When a editing an inherited rule on a project/department (a rule defined by the 
 
 To delete a scheduling rule:
 
-1. Select the project/department you want to delete a scheduling rule from  
+1. Select the project/department from which you want to delete a scheduling rule  
 2. Click **EDIT**  
 3. Find the scheduling rule you would like to delete  
 4. Click on the x icon  
