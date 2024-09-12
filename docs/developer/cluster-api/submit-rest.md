@@ -20,7 +20,7 @@ spec:
   gpu:
     value: "1"
   image:
-    value: runai.jfrog.io/artifactory/demo/quickstart
+    value: runai.jfrog.io/demo/quickstart
   name:
     value: job-1  
 ```
@@ -84,7 +84,7 @@ payload = json.dumps({
   },
   "spec": {
     "image": {
-      "value": "runai.jfrog.io/artifactory/demo/quickstart"
+      "value": "runai.jfrog.io/demo/quickstart"
     },
     "name": {
       "value": "train1"

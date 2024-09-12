@@ -23,8 +23,8 @@ Follow the Quickstart documents below to learn more:
     * [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
     * [Fairness](walkthrough-queue-fairness.md)
 
-Most quickstarts rely on an image called `runai.jfrog.io/artifactory/demo/quickstart`. The image is based on  [TensorFlow Release 20-08](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_20-08.html). This TensorFlow image has minimal requirements for _CUDA_ and _NVIDIA Compute Capability_. 
+Most quickstarts rely on an image called `runai.jfrog.io/demo/quickstart`. The image is based on  [TensorFlow Release 20-08](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_20-08.html). This TensorFlow image has minimal requirements for _CUDA_ and _NVIDIA Compute Capability_. 
 
-If your GPUs do not meet these requirements, use `runai.jfrog.io/artifactory/demo/quickstart:legacy` instead. 
+If your GPUs do not meet these requirements, use `runai.jfrog.io/demo/quickstart:legacy` instead. 
 
  

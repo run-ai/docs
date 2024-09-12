@@ -19,4 +19,4 @@ if [ ! -d "./cifar-10" ]; then
     rm cifar-10-python.tar.gz
 fi
 
-docker build -f Dockerfile -t runai.jfrog.io/artifactory/demo/quickstart:cuda-$2 --build-arg ngc_image_tag=$1 --build-arg cuda=$2 .
+docker build -f Dockerfile -t runai.jfrog.io/demo/quickstart:cuda-$2 --build-arg ngc_image_tag=$1 --build-arg cuda=$2 .

@@ -3,7 +3,7 @@ from kfp import dsl, components
 def training_op():
     return dsl.ContainerOp(
         name='runai-gpu1',
-        image='runai.jfrog.io/artifactory/demo/quickstart',
+        image='runai.jfrog.io/demo/quickstart',
         command=["./entrypoint.sh"],
         arguments=[],
         container_kwargs={'image_pull_policy': 'IfNotPresent'},

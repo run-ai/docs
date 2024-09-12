@@ -70,7 +70,7 @@ optimizer = keras.optimizers.SGD(lr=config['lr'])
 
 ```
 runai config project team-a 
-runai submit hpo1 -i runai.jfrog.io/artifactory/demo/quickstart-hpo -g 1 \
+runai submit hpo1 -i runai.jfrog.io/demo/quickstart-hpo -g 1 \
     --parallelism 3 --completions 12 -v /nfs/john/hpo:/nfs
 ```
 
@@ -78,7 +78,7 @@ runai submit hpo1 -i runai.jfrog.io/artifactory/demo/quickstart-hpo -g 1 \
 *   The Job is assigned to _team-a_
 *   The Job will be complete when 12 pods will run (_--completions 12_), each allocated with a single GPU (_-g 1_)
 *   At most, there will be 3 pods running concurrently (_--parallelism 3_)
-*   The Job is based on a sample docker image ``runai.jfrog.io/artifactory/demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
+*   The Job is based on a sample docker image ``runai.jfrog.io/demo/quickstart-hpo``. The image contains a startup script that selects a set of hyperparameters and then uses them, as described above. 
 *   The command maps a shared volume ``/nfs/john/hpo`` to a directory in the container ``/nfs``. The running pods will use the directory to sync hyperparameters and save results.
 
 

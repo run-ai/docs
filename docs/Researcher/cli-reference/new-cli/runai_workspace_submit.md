@@ -9,7 +9,7 @@ runai workspace submit [flags]
 ### Examples
 
 ```
-runai workspace submit <workspace_name> -p=<project_name> -i=runai.jfrog.io/artifactory/demo/quickstart
+runai workspace submit <workspace_name> -p=<project_name> -i=runai.jfrog.io/demo/quickstart
 ```
 
 ### Options

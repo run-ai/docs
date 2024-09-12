@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker push runai.jfrog.io/artifactory/demo/quickstart:legacy
+docker push runai.jfrog.io/demo/quickstart:legacy

@@ -8,7 +8,7 @@ This section is about setting up X11 forwarding from a Run:ai-based container to
 
 ## Submit a Workload
 
-You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `runai.jfrog.io/artifactory/demo/quickstart-x-forwarding`. The image runs:
+You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `runai.jfrog.io/demo/quickstart-x-forwarding`. The image runs:
 
 * Python
 * SSH Daemon configured for X11Forwarding 
@@ -19,7 +19,7 @@ Details on how to create the image are [here](https://github.com/run-ai/docs/tre
 Run the following command to connect to the container as if it were running locally:
 
 ```
-runai submit xforward-remote -i runai.jfrog.io/artifactory/demo/quickstart-x-forwarding --interactive  \
+runai submit xforward-remote -i runai.jfrog.io/demo/quickstart-x-forwarding --interactive  \
         --service-type=portforward --port 2222:22
 ```
 

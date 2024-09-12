@@ -7,12 +7,12 @@ This document is about accessing the remote container created by Run:ai, from Je
 
 ## Submit a Workload
 
-You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `runai.jfrog.io/artifactory/demo/pycharm-demo`. The image runs both python and ssh. Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank}. The image is configured to use the ``root`` user and password for SSH.
+You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.com/ssh/sshd/){target=_blank}). For the purposes of this document, we have created an image named `runai.jfrog.io/demo/pycharm-demo`. The image runs both python and ssh. Details on how to create the image are [here](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank}. The image is configured to use the ``root`` user and password for SSH.
 
 Run the following command to connect to the container as if it were running locally:
 
 ```
-runai submit build-remote -i runai.jfrog.io/artifactory/demo/pycharm-demo --interactive  \
+runai submit build-remote -i runai.jfrog.io/demo/pycharm-demo --interactive  \
         --service-type=portforward --port 2222:22
 ```
 
@@ -38,7 +38,7 @@ Forwarding from [::1]:2222 -> 22
         It is possible to connect to the container using a remote IP address. However, this would be less convinient as you will need to maintain port numbers manually and change them when remote accessing using the development tool. As an example, run:
 
         ```
-        runai submit build-remote -i runai.jfrog.io/artifactory/demo/pycharm-demo -g 1 --interactive --service-type=nodeport --port 30022:22
+        runai submit build-remote -i runai.jfrog.io/demo/pycharm-demo -g 1 --interactive --service-type=nodeport --port 30022:22
         ```
 
         * The Job starts an sshd server on port 22.

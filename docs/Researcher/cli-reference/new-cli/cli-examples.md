@@ -51,5 +51,5 @@ runai workspace submit -p test -i ubuntu -e name=value -e name2=value2
 ```
 ### Requests and limits
 ```shell
-runai workspace submit  -p alon -i runai.jfrog.io/artifactory/demo/quickstart-demo   --cpu-core-request 0.3 --cpu-core-limit 1 --cpu-memory-request 50M --cpu-memory-limit 1G  --gpu-devices-request 1 --gpu-memory-request 1G
+runai workspace submit  -p alon -i runai.jfrog.io/demo/quickstart-demo   --cpu-core-request 0.3 --cpu-core-limit 1 --cpu-memory-request 50M --cpu-memory-limit 1G  --gpu-devices-request 1 --gpu-memory-request 1G
 ```
