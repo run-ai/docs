@@ -94,10 +94,12 @@ If you have opted to connect to an [external PostgreSQL database](preparations.m
 
 |  Key     | Change   | Description |
 |----------|----------|-------------|
-| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak |
+| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak,  |
 | `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak |
 | `keycloakx.existingSecret`  | Keycloakx Credentials (secret) | Existing secret name with authentication credentials   |
 | `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress |
+
+The `keycloakx.adminUser` can only be set during the initial installation. The admin password, however, can also be changed later through the Keycloak UI, but you must also update the `keycloakx.adminPassword` value in the Helm chart using helm upgrade. Failing to update the Helm values after changing the password can lead to control plane services encountering errors.
 
 ### Grafana
 
