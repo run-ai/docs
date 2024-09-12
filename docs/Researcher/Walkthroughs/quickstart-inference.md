@@ -57,7 +57,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
 * A default (cluster) scope.
 * Use the environment name `inference-server`.
-* The image `gcr.io/run-ai-demo/example-triton-server`.
+* The image `runai.jfrog.io/demo/example-triton-server`.
 * Under `type of workload` select `inference`.
 * Under `endpoint` set the container port as `8000` which is the port that the triton server is using. 
 
@@ -96,7 +96,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
-            "image": "gcr.io/run-ai-demo/example-triton-server",
+            "image": "runai.jfrog.io/demo/example-triton-server",
             "servingPort": {
                 "protocol": "http",
                 "container": 8000
@@ -150,7 +150,7 @@ You can use the Run:ai Triton demo client to send requests to the server
 
     ``` bash
     runai config project team-a   
-    runai submit inference-client-1  -i gcr.io/run-ai-demo/example-triton-client \
+    runai submit inference-client-1  -i runai.jfrog.io/demo/example-triton-client \
     -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
     ```
 
@@ -160,7 +160,7 @@ You can use the Run:ai Triton demo client to send requests to the server
 
     ``` bash
     runai project set team-a
-    runai training submit inference-client-1  -i gcr.io/run-ai-demo/example-triton-client \
+    runai training submit inference-client-1  -i runai.jfrog.io/demo/example-triton-client \
     -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
     ```
 
@@ -168,7 +168,7 @@ You can use the Run:ai Triton demo client to send requests to the server
     * In the Run:ai UI select __Workloads__
     * Select __New Workload__ and then __Training__
     * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. Enter `inference-client-1` as the name and press __CONTINUE__.
-    * Select __NEW ENVIRONMENT__. Enter `inference-client` as the name and `gcr.io/run-ai-demo/example-triton-client` as the image. 
+    * Select __NEW ENVIRONMENT__. Enter `inference-client` as the name and `runai.jfrog.io/demo/example-triton-client` as the image. 
     Select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, select `cpu-only` under the Compute resource.
     * Under `runtime settings` enter the command as `perf_analyzer` and arguments `-m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>` (replace inference endpoint with the above URL).
