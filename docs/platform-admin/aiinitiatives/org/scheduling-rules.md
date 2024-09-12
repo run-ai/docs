@@ -1,6 +1,6 @@
 This article explains the procedure of configuring and managing Scheduling rules. 
 Scheduling rules refer to restrictions applied over workloads. These restrictions apply to either the resources (nodes) on which workloads can run or to the duration of the workload run time. 
-Scheduling rules are set for Projects or departments and apply to a specific workload type. Once scheduling rules are set, all matching workloads associated with the project or (subordinate projects in case of department) will have the restrictions as defined when the workload was submitted. New scheduling rules added, are not applied over already created workloads associated with that project/department.
+Scheduling rules are set for projects or departments and apply to a specific workload type. Once scheduling rules are set, all matching workloads associated with the project or (subordinate projects in case of department) have the restrictions as defined when the workload was submitted. New scheduling rules added, are not applied over already created workloads associated with that project/department.
 
 There are 3 types of scheduling rules:
 
