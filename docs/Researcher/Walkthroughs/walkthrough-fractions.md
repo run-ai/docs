@@ -53,22 +53,22 @@ Open a terminal and run:
 === "CLI V1"
     ``` bash
     runai config project team-a   
-    runai submit frac05 -i gcr.io/run-ai-demo/quickstart -g 0.5
-    runai submit frac05-2 -i gcr.io/run-ai-demo/quickstart -g 0.5 
+    runai submit frac05 -i runai.jfrog.io/demo/quickstart -g 0.5
+    runai submit frac05-2 -i runai.jfrog.io/demo/quickstart -g 0.5 
     ```
 
 === "CLI V2"
     ``` bash
     runai project set team-a
-    runai training submit frac05 -i gcr.io/run-ai-demo/quickstart --gpu-portion-request 0.5
-    runai training submit frac05-2 -i gcr.io/run-ai-demo/quickstart --gpu-portion-request 0.5
+    runai training submit frac05 -i runai.jfrog.io/demo/quickstart --gpu-portion-request 0.5
+    runai training submit frac05-2 -i runai.jfrog.io/demo/quickstart --gpu-portion-request 0.5
     ```
 
 === "User Interface"
     * In the Run:ai UI select __Workloads__
     * Select __New Workload__ and then __Training__
     * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. Enter `frac05` as the name and press __CONTINUE__.
-    * Select __NEW ENVIRONMENT__. Enter `quickstart` as the name and `gcr.io/run-ai-demo/quickstart` as the image. Then select __CREATE ENVIRONMENT__.
+    * Select __NEW ENVIRONMENT__. Enter `quickstart` as the name and `runai.jfrog.io/demo/quickstart` as the image. Then select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, select `half-gpu` under the Compute resource. 
     * Select __CREATE TRAINING__.
     * Follow the process again to submit a second workload called `frac05-2`.
@@ -86,7 +86,7 @@ Open a terminal and run:
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
-            "image": "gcr.io/run-ai-demo/quickstart",
+            "image": "runai.jfrog.io/demo/quickstart",
             "compute": {
             "gpuRequestType": "portion",
             "gpuPortionRequest" : 0.5
@@ -105,7 +105,7 @@ Open a terminal and run:
         * For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1) 
 
 
-*   The Workloads are based on a sample docker image ``gcr.io/run-ai-demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
+*   The Workloads are based on a sample docker image ``runai.jfrog.io/demo/quickstart`` the image contains a startup script that runs a deep learning TensorFlow-based workload.
 *   We named the Workloads _frac05_ and _frac05-2_ respectively. 
 *   The Workloads are assigned to _team-a_ with an allocation of half a GPU. 
 
@@ -122,8 +122,8 @@ Follow up on the Workload's progress by running:
     ```
     Showing jobs for project team-a
     NAME      STATUS   AGE  NODE                  IMAGE                          TYPE   PROJECT  USER   GPUs Allocated (Requested)  PODs Running (Pending)  SERVICE URL(S)
-    frac05    Running  9s   runai-cluster-worker  gcr.io/run-ai-demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
-    frac05-2  Running  8s   runai-cluster-worker  gcr.io/run-ai-demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
+    frac05    Running  9s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
+    frac05-2  Running  8s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
     ```
 
 === "CLI V2"
@@ -172,12 +172,12 @@ Instead of requesting a fraction of the GPU, you can ask for specific GPU memory
 
 === "CLI V1"
     ``` bash
-    runai submit  -i gcr.io/run-ai-demo/quickstart --gpu-memory 5G
+    runai submit  -i runai.jfrog.io/demo/quickstart --gpu-memory 5G
     ```
 
 === "CLI V2"
     ```
-    runai training submit -i gcr.io/run-ai-demo/quickstart --gpu-memory-request 5G
+    runai training submit -i runai.jfrog.io/demo/quickstart --gpu-memory-request 5G
     ```
 
 === "User Interface"

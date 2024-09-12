@@ -4,7 +4,7 @@ import kfp.gcp as gcp
 def training_op():
     return dsl.ContainerOp(
         name='train',
-        image='gcr.io/run-ai-demo/quickstart',
+        image='runai.jfrog.io/demo/quickstart',
         command=["./entrypoint.sh"],
         arguments=[],
         container_kwargs={'image_pull_policy': 'IfNotPresent'},

@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: job1-container
-        image: gcr.io/run-ai-demo/quickstart
+        image: runai.jfrog.io/demo/quickstart
         resources:
           limits:
             nvidia.com/gpu: 1 # (4)

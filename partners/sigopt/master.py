@@ -42,7 +42,7 @@ print("Created experiment: https://app.sigopt.com/experiment/" + experiment.id)
 
 # change the following command to point to where remote.sh is located in your shared storage (now assuming Google Storage)
 # the command will launch multiple pods on the Run:AI cluster
-subprocess.call(["runai","submit",job_name + "-" + str(run_count),"--image","gcr.io/run-ai-demo/quickstart",
+subprocess.call(["runai","submit",job_name + "-" + str(run_count),"--image","runai.jfrog.io/demo/quickstart",
                 "--parallelism",parallel_bandwidth,"--completions",observation_budget,
                 "--project",project,"-g", "1", "--command","/bin/bash","--command","-c",
                 "--command","wget https://storage.googleapis.com/remote.sh && chmod 0755 ./remote.sh && ./remote.sh",

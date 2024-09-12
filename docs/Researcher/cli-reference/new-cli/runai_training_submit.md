@@ -9,7 +9,7 @@ runai training submit [flags]
 ### Examples
 
 ```
-runai training submit <training_name> -p=<project_name> -i=gcr.io/run-ai-demo/quickstart
+runai training submit <training_name> -p=<project_name> -i=runai.jfrog.io/demo/quickstart
 ```
 
 ### Options

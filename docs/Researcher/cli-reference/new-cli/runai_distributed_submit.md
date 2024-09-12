@@ -9,7 +9,7 @@ runai distributed submit [flags]
 ### Examples
 
 ```
-runai distributed submit <distributed_name> -p=<project_name> -i=gcr.io/run-ai-demo/quickstart -f XGBoost/PyTorch/TF/MPI
+runai distributed submit <distributed_name> -p=<project_name> -i=runai.jfrog.io/demo/quickstart -f XGBoost/PyTorch/TF/MPI
 ```
 
 ### Options
