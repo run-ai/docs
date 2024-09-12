@@ -185,9 +185,11 @@ compute:
         allowPrivilegeEscalation:
           canEdit: false
     ```
+
 ??? "Impose an asset (specific section)"
 
- ``` defaults: null
+ ``` yaml
+     defaults: null
      rules: null
      imposedAssets:
        - f12c965b-44e9-4ff6-8b43-01d8f9e630cc
