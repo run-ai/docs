@@ -38,7 +38,7 @@ To add a scheduling rule:
 
 To edit a scheduling rule:
 
-1. Select the project/department you want to edit its scheduling rule  
+1. Select the project/department for which you want to edit its scheduling rule  
 2. Click **EDIT**  
 3. Find the scheduling rule you would like to edit  
 4. Edit the rule  
