@@ -54,8 +54,7 @@ An access rule is the assignment of a role to a subject in a scope: `<Subject>` 
     * For example, a role might allow a user to create and read Projects, but not update or delete them  
     * Roles at Run:ai are system defined and cannot be created, edited or deleted  
 * **Scope**  
-  * A set of resources that are accessible to a subject for a specific role  
-  * A scope is a part of an organization that can be accessed based on assigned roles. Scopes include Projects, Departments, Clusters, Account (all clusters)
+  * A scope is part of an organization in which a set of permissions (roles) is effective. Scopes include Projects, Departments, Clusters, Account (all clusters).
 
 Below is an example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
 
