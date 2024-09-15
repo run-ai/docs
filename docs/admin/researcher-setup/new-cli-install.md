@@ -55,7 +55,7 @@ If only one cluster is connected to the account, it is set as the default cluste
 Set a default working project, to easily submit workloads without mentioning the project name in every command.
 
 1. Run the following command on the terminal:  
-   `runai project set --name=<project_name>`  
+   `runai project set <project_name>`  
 2. If successful, the following message is returned:  
    `project <project name> configured successfully`  
 3. To see the current configuration run:  
