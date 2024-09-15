@@ -48,16 +48,16 @@ If only one cluster is connected to the account, it is set as the default cluste
 
 1. Open the terminal on your local machine.  
 2. Run `runai cluster list` to find the required cluster name.  
-3. Run the following command `runai cluster set --name <CLUSTER NAME>`
+3. Run the following command `runai cluster set <CLUSTER_NAME>`
 
 ### Setting a default project
 
 Set a default working project, to easily submit workloads without mentioning the project name in every command.
 
 1. Run the following command on the terminal:  
-   `runai project set <project_name>`  
+   `runai project set <PROJECT_NAME>`  
 2. If successful, the following message is returned:  
-   `project <project name> configured successfully`  
+   `project <PROJECT_NAME> configured successfully`  
 3. To see the current configuration run:  
    `runai config generate --json`
 
