@@ -93,6 +93,10 @@ When no node pools are configured, you can set the following quota parameters:
 
 When node pools are enabled, it is possible to set the above quota parameters __for each node-pool separately__.
 
+* __Order of priority__
+This column is displayed only if more than one node pool exists. The default order in which the Scheduler uses node pools to schedule a workload. 
+This means, the Scheduler first tries to allocate resources using the highest priority node pool, followed by the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest priority again. The Scheduler uses the department list of prioritized node pools, only if the order of priority of node pools is not set in project or the workload during submission (either by an admin policy or by the user). An empty value indicates that the node pool is not part of the department’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission.
+Department nodepool priority sets defaults to the subordinate projects but does not enforce it, meaning projects are free to change their priority.
 * In addition, you can decide whether to allow a department to go over-quota. Allowing over-quota at the department level means that one department can receive more resources than its quota when not required by other departments. If the over-quota is disabled, workloads running under subordinated projects are not able to use more resources than the department’s quota, but each project can still go over-quota (if enabled at the project level) up to the department’s quota.
 
 Unlimited CPU(Cores) and CPU memory quotas are an exception - in this case, workloads of subordinated projects can consume available resources up to the physical limitation of the cluster or any of the node pools.

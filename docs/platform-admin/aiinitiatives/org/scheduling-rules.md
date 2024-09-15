@@ -1,4 +1,6 @@
-This article explains the procedure of configuring and managing Scheduling rules. Scheduling rules refer to restrictions applied over workloads. These restrictions apply to either the resources (nodes) on which workloads can run or to the duration of the workload run time. Scheduling rules are set for Projects and apply to a specific workload type. Once scheduling rules are set for a project, all matching workloads associated with the project will have the restrictions as defined when the workload was submitted. New scheduling rules added to a project are not applied over already created workloads associated with that project.
+This article explains the procedure of configuring and managing Scheduling rules. 
+Scheduling rules refer to restrictions applied over workloads. These restrictions apply to either the resources (nodes) on which workloads can run or to the duration of the workload run time. 
+Scheduling rules are set for projects or departments and apply to a specific workload type. Once scheduling rules are set, all matching workloads associated with the project or (subordinate projects in case of department) have the restrictions as defined when the workload was submitted. New scheduling rules added, are not applied over already created workloads associated with that project/department.
 
 There are 3 types of scheduling rules:
 
@@ -14,14 +16,14 @@ There are 3 types of scheduling rules:
 
 * __Node type (Affinity)__  
   Node type is used to select a group of nodes, typically with specific characteristics such as a hardware feature, storage type, fast networking interconnection, etc. The scheduler uses node type as an indication of which nodes should be used for your workloads, within this project.  
-   Node type is a label in the form of `run.ai/type` and a value (e.g. `run.ai/type = dgx200`) that the administrator uses to tag a set of nodes. Adding the node type to the project’s scheduling rules enables the user to submit workloads with any node type label/value pairs in this list, according to the workload type - Workspace or Training. The Scheduler then schedules workloads using a node selector, targeting nodes tagged with the Run:ai node type label/value pair. Node pools and a node type can be used in conjunction with each other. For example, specifying a node pool and a smaller group of nodes from that node pool that includes a fast SSD memory or other unique characteristics.
+   The node type is a label in the form of `run.ai/type` and a value (e.g. `run.ai/type = dgx200`) that the administrator uses to tag a set of nodes. Adding the node type to the project/department scheduling rules enables the user to submit workloads with any node type label/value pairs in this list, according to the workload type - workspace or training. The Scheduler then schedules workloads using a node selector, targeting nodes tagged with the Run:ai node type label/value pair. Node pools and a node type can be used in conjunction with each other. For example, specifying a node pool and a smaller group of nodes from the node pool that includes a fast SSD memory or other unique characteristics.
 
 
-## Adding a scheduling rule to a project
+## Adding a scheduling rule to a project/department
 
 To add a scheduling rule:
 
-1. Select the project you want to add a scheduling rule for  
+1. Select the project/department for which you want to add a scheduling rule  
 2. Click **EDIT**  
 3. In the **Scheduling rules** section click **\+RULE**  
 4. Select the **rule type**  
@@ -32,26 +34,31 @@ To add a scheduling rule:
 !!! Note
     You can review the defined rules in the Projects table in the relevant column.
 
-## Editing the project’s scheduling rule
+## Editing the project/department scheduling rule
 
 To edit a scheduling rule:
 
-1. Select the project you want to edit its scheduling rule  
+1. Select the project/department for which you want to edit its scheduling rule  
 2. Click **EDIT**  
 3. Find the scheduling rule you would like to edit  
 4. Edit the rule  
 5. Click **SAVE**
 
-## Deleting the project’s scheduling rule
+!!! Note
+When a editing an inherited rule on a project/department (a rule defined by the department), you can only restrict the rule limitation
+
+## Deleting the project/department scheduling rule
 
 To delete a scheduling rule:
 
-1. Select the project you want to delete a scheduling rule from  
+1. Select the project/department from which you want to delete a scheduling rule  
 2. Click **EDIT**  
 3. Find the scheduling rule you would like to delete  
 4. Click on the x icon  
 5. Click **SAVE**
 
+!!!
+You cannot delete rules inherited from the department from the project's set of rules
 ## Using API
 
 Go to the [Projects](https://app.run.ai/api/docs#tag/Projects/operation/create_project) API reference to view the available actions
