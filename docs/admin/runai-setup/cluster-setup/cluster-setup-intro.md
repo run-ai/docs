@@ -24,7 +24,7 @@ For a list of optional customizations see [Customize Installation](customize-clu
 
 ## Additional Configuration
 
-For a list of advanced configuration scenarios such as configuring researcher authentication, Single sign-on limiting the installation to specific nodes, and more, see the [Configuration Articles](../config/overview.md) section.
+For a list of advanced configuration scenarios such as configuring researcher authentication, Single sign-on limiting the installation to specific nodes, and more, see the [Configuration Articles](../../config/overview.md) section.
 
 ## Next Steps
 

@@ -24,7 +24,7 @@ kubectl -n runai-backend create secret generic runai-ca-cert \
     --from-file=runai-ca.pem=<ca_bundle_path>
 ```
 
-* As part of the installation instructions, you need to create a secret for [runai-backend-tls](../self-hosted/k8s/preparations.md#domain-certificate). Use the local certificate authority instead.
+* As part of the installation instructions, you need to create a secret for [runai-backend-tls](../runai-setup/self-hosted/k8s/preparations.md#domain-certificate). Use the local certificate authority instead.
 * Install the control plane, add the following flag to the helm command `--set global.customCA.enabled=true`
 
 ## Cluster Installation

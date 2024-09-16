@@ -19,4 +19,4 @@ This section provides a list of installation-related articles dealing with a wid
 | [Backup & Restore](dr.md) | For self-hosted Run:ai environments, set up a scheduled backup of Run:ai data | 
 | [High Availability](ha.md) | Configure Run:ai such that it will continue to provide service even if parts of the system are down. | 
 | [Scaling](large-clusters.md) | Scale the Run:ai cluster and the Run:ai control-plane to withstand large transaction loads | 
-| [Emails and system notification](../notifications/notifications.md) | Configure e-mail notification |
+| [Emails and system notification](notifications.md) | Configure e-mail notification |
