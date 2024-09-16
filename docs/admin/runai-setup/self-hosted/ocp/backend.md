@@ -47,7 +47,8 @@ To apply the changes run `helm upgrade` and use `--set` to set specific configur
 
 |  Key     | Change   | Description |
 |----------|----------|-------------|
-| `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  Set Run:ai and 3rd party services' resources  |
+| `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  Set Run:ai and 3rd party services' resources  |\
+| `disableIstioSidecarInjection.enabled` | Disable Istio sidecar injection | Disable the automatic injection of Istio sidecars across the entire Run:ai Control Plane services. | 
 |<div style="width:200px"></div>| | |
 
 ## Additional 3rd party configurations (optional)
