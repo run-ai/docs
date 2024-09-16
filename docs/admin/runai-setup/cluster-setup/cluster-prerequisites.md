@@ -38,7 +38,7 @@ The following software requirements must be fulfilled on the Kubernetes cluster.
 
 * Any **Linux** operating system supported by both Kubernetes and NVIDIA GPU Operator  
 * Run:ai cluster on Google Kubernetes Engine (GKE) only supports Ubuntu, as Container-Optimized OS (COS) is not supported by NVIDIA GPU Operator  
-* Internal tests are being performed on **Ubuntu 20.04** and **CoreOS** for OpenShift.
+* Internal tests are being performed on **Ubuntu 22.04** and **CoreOS** for OpenShift.
 
 ### Kubernetes distribution
 
