@@ -63,7 +63,7 @@ To retrieve the Audit log you need to call an API. You can do this via code or b
 
 ### Retrieve via Code
 
-Create an Application and generate a bearer token by following the [API Authentication](../../../developer/rest-auth.md) document.  
+Create an Application and generate a bearer token by following the [API Authentication](../../developer/rest-auth.md) document.  
 
 To get the first 40 records of the audit log starting January 1st, 2022, run:
 
@@ -75,7 +75,7 @@ curl -X 'GET' \
 ```
 
 1.  `<COMPANY-URL>` is `app.run.ai` for SaaS installations (not `<company>.run.ai`) or the Run:ai user interface URL for Self-hosted installations.
-2. To obtain a Bearer token see [API authentication](../../../developer/rest-auth.md).
+2. To obtain a Bearer token see [API authentication](../../developer/rest-auth.md).
 
 
 

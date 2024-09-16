@@ -156,7 +156,7 @@ Before starting, make sure you have the following:
         * Try to identify the problem from the logs. If you cannot resolve the issue, continue to the next step. 
 
     5. Contact Run:ai’s support  
-        * If the issue persists, [contact Run:ai’s support](../../../home/overview.md#how-to-get-support) for assistance.
+        * If the issue persists, [contact Run:ai’s support](../../home/overview.md#how-to-get-support) for assistance.
 
 ??? "Cluster has service issues"
     __Description__: When a cluster's status is _Has service issues_, it means that one or more Run:ai services running in the cluster are not available.
@@ -190,7 +190,7 @@ Before starting, make sure you have the following:
         ```
 
     4. Contact Run:ai’s Support  
-        * If the issue persists, contact [contact Run:ai’s support](../../../home/overview.md#how-to-get-support) for assistance.
+        * If the issue persists, contact [contact Run:ai’s support](../../home/overview.md#how-to-get-support) for assistance.
 
 ??? "Cluster is waiting to connect"
     __Description__: When the cluster's status is ‘waiting to connect’, it means that no communication from the cluster services reaches the Run:ai Platform. This may be due to networking issues or issues with Run:ai services.
@@ -281,7 +281,7 @@ Before starting, make sure you have the following:
         * Try to identify the problem from the logs. If you cannot resolve the issue, continue to the next step  
     
     5. Contact Run:ai’s support  
-        * If the issue persists, [contact Run:ai’s support](../../../home/overview.md#how-to-get-support) for assistance.
+        * If the issue persists, [contact Run:ai’s support](../../home/overview.md#how-to-get-support) for assistance.
 
 ??? "Cluster is missing prerequisites"
     __Description__: When a cluster's status displays Missing prerequisites, it indicates that at least one of the Mandatory Prerequisites has not been fulfilled. In such cases, Run:ai services may not function properly.
@@ -312,5 +312,5 @@ Before starting, make sure you have the following:
         * This section provides detailed information about any missing resources or prerequisites. Review this information to identify what is needed  
 
     5. Contact Run:ai’s support  
-        * If the issue persists, [contact Run:ai’s support](../../../home/overview.md#how-to-get-support) for assistance.
+        * If the issue persists, [contact Run:ai’s support](../../home/overview.md#how-to-get-support) for assistance.
 

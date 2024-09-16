@@ -266,7 +266,7 @@ FIELDS:
      be used for ports which do not specify service type. Options are:
      LoadBalancer, NodePort or ClusterIP. For more information see the External
      Access to Containers guide on
-     https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
+     https://docs.run.ai/admin//config/allow-external-access-to-containers/
 
    slotsPerWorker	<Object>
      Number of slots to allocate per worker in the created mpijob.

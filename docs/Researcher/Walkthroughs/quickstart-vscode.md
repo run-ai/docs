@@ -13,7 +13,7 @@ There are various ways to submit a Workspace:
 
 ## Prerequisites 
 
-To complete this Quickstart, the [Infrastructure Administrator](../../admin/overview-administrator.md) will need to configure a _wildcard_ certificate to Run:ai as described [here](../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
+To complete this Quickstart, the [Infrastructure Administrator](../../admin/overview-administrator.md) will need to configure a _wildcard_ certificate to Run:ai as described [here](../../admin//config/allow-external-access-to-containers.md#workspaces-configuration).
 
 To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
 

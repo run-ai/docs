@@ -33,7 +33,7 @@ date: 2023-Dec-4
 
 ### Run:ai Administrator
 
-* <!-- DONE RUN-13296/RUN-13299	TW - Administrator Messages - Doc gap, there is no page for settings.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages](../admin/runai-setup/config/admin-messages.md).
+* <!-- DONE RUN-13296/RUN-13299	TW - Administrator Messages - Doc gap, there is no page for settings.-->Added the capability for administrators to configure messages to users when they log into the platform. Messages are configured using the *Message Editor* screen. For more information, see [Administrator Messages](../admin//config/admin-messages.md).
 
 #### Monitoring and Analytics
 

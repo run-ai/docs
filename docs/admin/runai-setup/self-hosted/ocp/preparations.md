@@ -68,7 +68,7 @@ oc new-project runai-backend
 ```
 
 ### Local Certificate Authority (air-gapped only)
-In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
+In Air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
 
 ### Mark Run:ai system workers (optional)
 

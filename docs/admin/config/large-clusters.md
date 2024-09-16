@@ -100,7 +100,7 @@ Run:ai uses [Prometheus](https://prometheus.io/){target=_blank} to scrape metric
 
 To reduce this strain, we suggest to configure Prometheus to send information in larger bulks and reduce the number of network connections:
 
-* Edit the `runaiconfig` as described under [customizing the cluster](../cluster-setup/customize-cluster-install.md).
+* Edit the `runaiconfig` as described under [customizing the cluster](../runai-setup/cluster-setup/customize-cluster-install.md).
 * Under `prometheus.remoteWrite` add the following:
 
 ``` yaml
@@ -112,4 +112,4 @@ queueConfig:
 
 This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight.
 
-Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](../cluster-setup/customize-cluster-install.md#configurations)
+Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](../runai-setup/cluster-setup/customize-cluster-install.md#configurations)
