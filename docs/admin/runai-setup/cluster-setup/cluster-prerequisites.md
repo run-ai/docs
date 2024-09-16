@@ -76,7 +76,8 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 | v2.13 | 1.23 to 1.28 | 4.10 to 4.13 |
 | v2.16 | 1.26 to 1.28 | 4.11 to 4.14 |
 | v2.17 | 1.27 to 1.29 | 4.12 to 4.15 |
-| v2.18 (latest) | 1.28 to 1.30 | 4.12 to 4.16 |
+| v2.18 | 1.28 to 1.30 | 4.12 to 4.16 |
+| v2.19 (latest) | 1.28 to 1.31 | 4.12 to 4.16 |
 
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/) or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift)
 
