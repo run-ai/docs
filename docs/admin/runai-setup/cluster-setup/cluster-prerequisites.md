@@ -20,17 +20,9 @@ This configuration is the minimum requirement you need to install and use Run:ai
 | Disk space | 50GB |
 
 ### Run:ai Cluster - Worker nodes
-
-Run:ai Workloads require compute resources, Run:ai Cluster supports both x86 CPU and NVIDIA x86 GPUs.
-
-The following GPU models are supported:
-
-* NVIDIA H100  
-* NVIDIA A100-80  
-* NVIDIA A100-40  
-* NVIDIA A30  
-* NVIDIA Tesla V100  
-* NVIDIA Tesla T4
+The Run:ai Cluster supports both x86 CPUs and NVIDIA x86 GPUs.
+For the list of supported GPU models, see [Supported NVIDIA Data Center GPUs and Systems](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html#supported-nvidia-data-center-gpus-and-systems
+){target=_blank}.
 
 ### Shared storage
 
