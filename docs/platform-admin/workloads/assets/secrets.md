@@ -64,7 +64,7 @@ runai-adm set secret <secret name> --cluster-wide
 ```
 
 !!! Reminder
-    The Run:ai Administrator CLI can be obtained [here](../../../admin/runai-setup/config/cli-admin-install.md).
+    The Run:ai Administrator CLI can be obtained [here](../../../admin//config/cli-admin-install.md).
 
 To delete a secret from all Run:ai Projects, run:
 

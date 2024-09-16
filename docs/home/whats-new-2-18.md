@@ -103,7 +103,7 @@ date: 2024-June-14
 
 * <!-- RUN-12796/ RUN-20001 - Notifications infrastructure at the Control Plane -->Added new email notifications feature. Email Notifications sends alerts for critical workload life cycle changes empowering data scientists to take necessary actions and prevent delays.
   
-    * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/runai-setup/notifications/notifications.md).
+    * System administrators will need to configure the email notifications. For more information, see [System notifications](../admin/config/notifications.md).
 
 #### Policy for distributed and inference workloads in the API
 

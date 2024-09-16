@@ -11,7 +11,7 @@ A different scenario is a high transaction load, leading to system overload. To 
 
 ### Run:ai system workers
 
-The Run:ai control plane allows the **optional** [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not span multiple nodes, and the system will remain with a single point of failure.  
+The Run:ai control plane allows the **optional** [gathering of Run:ai pods into specific nodes](../runai-setup/self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not span multiple nodes, and the system will remain with a single point of failure.  
 
 ### Horizontal Scalability of Run:ai services
 
@@ -40,7 +40,7 @@ Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 
 ### Run:ai system workers
 
-The Run:ai cluster allows the **mandatory** [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below may not span multiple nodes, and the system will remain with a single point of failure.  
+The Run:ai cluster allows the **mandatory** [gathering of Run:ai pods into specific nodes](../runai-setup/self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below may not span multiple nodes, and the system will remain with a single point of failure.  
 
 ### Prometheus
 
@@ -48,4 +48,4 @@ The default Prometheus installation uses a single pod replica. If the node runni
 
 [Prometheus supports](https://prometheus.io/docs/introduction/faq/#can-prometheus-be-made-highly-available){target=_blank} high availability by allowing to run multiple instances. The tradeoff of this approach is that all instances will scrape and send the same data. The Run:ai control plane will identify duplicate metric series and ignore them. This approach will thus increase network, CPU and memory consumption.
 
-To change the number of Prometheus instances, edit the `runaiconfig` as described under [customizing the Run:ai cluster](../cluster-setup/customize-cluster-install.md). Under `prometheus.spec`, set `replicas` to 2.
+To change the number of Prometheus instances, edit the `runaiconfig` as described under [customizing the Run:ai cluster](../runai-setup/cluster-setup/customize-cluster-install.md). Under `prometheus.spec`, set `replicas` to 2.

@@ -9,7 +9,7 @@ To collect Run:ai logs, follow these steps precisely:
 ### Prerequisites
 
 * Ensure that you have administrator-level access to the Kubernetes cluster where Run:ai is installed.  
-* The Run:ai Administrator Command-Line Interface (CLI) must be [installed](../runai-setup/config/cli-admin-install.md).  
+* The Run:ai Administrator Command-Line Interface (CLI) must be [installed](..//config/cli-admin-install.md).  
 * You must be logged into the Run:ai CLI with the correct permissions.
 
 ### Step-by-Step Instructions
