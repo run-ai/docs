@@ -34,7 +34,7 @@ To create an environment:
     For each tool, you must set the type of connection interface and port. If not set, default values are provided. The supported connection types are:
 
       * External URL:  This connection type allows you to connect to your tool either by inserting a custom URL or having one generated for you. Either way, the URL should be unique per workspace as many workspaces may use the same environment. If the URL type was set to custom, the URL will be requested from the Researcher upon creating the workspace.
-      * External node port: A [NodePort](../../../../admin/runai-setup/config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, access the tool using `http://<HOST_IP>:<NODEPORT>` (for example, http://203.0.113.20:30556).
+      * External node port: A [NodePort](../../../../admin//config/allow-external-access-to-containers.md) exposes your application externally on every host of the cluster, access the tool using `http://<HOST_IP>:<NODEPORT>` (for example, http://203.0.113.20:30556).
 
     !!! Note
         Selecting a tool requires a configuration to be up and running.
@@ -42,7 +42,7 @@ To create an environment:
     To configure a tool:
 
     * The container image needs to support the tool.
-    * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin/runai-setup/config/allow-external-access-to-containers.md#workspaces-configuration).
+    * The administrator must configure a DNS record and certificate. For more information, see [Workspaces configuration](../../../../admin//config/allow-external-access-to-containers.md#workspaces-configuration).
 
 7. Configure runtime settings with:
 

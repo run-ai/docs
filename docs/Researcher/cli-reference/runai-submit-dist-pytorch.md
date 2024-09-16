@@ -346,12 +346,12 @@ runai submit-dist pytorch --name distributed-job --workers=2 -g 1 \
 
 #### --node-pools `<string>`
 
-> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
+> Instructs the scheduler to run this workload using specific set of nodes which are part of a [Node Pool](../../Researcher/scheduling/the-runai-scheduler.md#). You can specify one or more node pools to form a prioritized list of node pools that the scheduler will use to find one node pool that can provide the workload's specification. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/config/limit-to-node-group.md) or use existing node labels, then create a node-pool and assign the label to the node-pool.
 > This flag can be used in conjunction with node-type and Project-based affinity. In this case, the flag is used to refine the list of allowable node groups set from a node-pool. For more information see: [Working with Projects](../../platform-admin/aiinitiatives/org/projects.md).
 
 #### --node-type `<string>`
 
->  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/researcher-setup/limit-to-node-group.md).
+>  Allows defining specific Nodes (machines) or a group of Nodes on which the workload will run. To use this feature your Administrator will need to label nodes as explained here: [Limit a Workload to a Specific Node Group](../../admin/config/limit-to-node-group.md).
 
 #### --toleration `<string>`
 

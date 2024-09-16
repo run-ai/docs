@@ -11,7 +11,7 @@ A different scenario is a high transaction load, leading to system overload. To 
 
 ### Run:ai system workers
 
-The Run:ai control plane allows the **optional** [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not span multiple nodes, and the system will remain with a single point of failure.  
+The Run:ai control plane allows the **optional** [gathering of Run:ai pods into specific nodes](../runai-setup/self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below will not span multiple nodes, and the system will remain with a single point of failure.  
 
 ### Horizontal Scalability of Run:ai services
 
@@ -40,7 +40,7 @@ Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 
 ### Run:ai system workers
 
-The Run:ai cluster allows the **mandatory** [gathering of Run:ai pods into specific nodes](../self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below may not span multiple nodes, and the system will remain with a single point of failure.  
+The Run:ai cluster allows the **mandatory** [gathering of Run:ai pods into specific nodes](../runai-setup/self-hosted/k8s/preparations.md#mark-runai-system-workers-optional). When this feature is used, it is important to set more than one node as a Run:ai system worker. Otherwise, the horizontal scaling described below may not span multiple nodes, and the system will remain with a single point of failure.  
 
 ### Prometheus
 

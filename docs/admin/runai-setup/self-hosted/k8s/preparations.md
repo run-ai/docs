@@ -69,7 +69,7 @@ The Run:ai control plane requires a domain name (FQDN). You must supply a domain
 
 * When installing the first Run:ai cluster on the same Kubernetes cluster as the control plane, the Run:ai cluster URL will be the same as the control-plane URL.
 * When installing the Run:ai cluster on a separate Kubernetes cluster, follow the Run:ai [Domain name requirement](../../cluster-setup/cluster-prerequisites.md#domain-name-requirement).
-* If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../config/org-cert.md).
+* If your network is air-gapped, you will need to provide the Run:ai control-plane and cluster with information about the [local certificate authority](../../../config/org-cert.md).
 
 You must provide the domain's private key and crt as a Kubernetes secret in the `runai-backend` namespace. Run:
 
@@ -79,7 +79,7 @@ kubectl create secret tls runai-backend-tls -n runai-backend \
 ```
 ### Local Certificate Authority (air-gapped only)
 
-In air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
+In air-gapped environments, you must prepare the public key of your local certificate authority as described [here](../../../config/org-cert.md). It will need to be installed in Kubernetes for the installation to succeed.
 
 ### Mark Run:ai system workers (optional)
 
