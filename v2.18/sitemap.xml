@@ -669,19 +669,91 @@
          <lastmod>2024-09-16</lastmod>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/access-roles/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/admin-messages/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/allow-external-access-to-containers/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/cli-admin-install/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/cluster-wide-pvc/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/clusters/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/default-scheduler/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/dr/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/ha/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/large-clusters/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/limit-to-node-group/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/node-affinity-with-cloud-node-pools/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/node-roles/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/notifications/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/org-cert/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/overview/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/config/shared-storage/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/maintenance/alert-monitoring/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/maintenance/audit-log/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/admin/maintenance/node-downtime/</loc>
+         <lastmod>2024-09-16</lastmod>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cli-install/</loc>
          <lastmod>2024-09-16</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cluster-wide-pvc/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/docker-to-runai/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/researcher-setup/limit-to-node-group/</loc>
          <lastmod>2024-09-16</lastmod>
     </url>
     <url>
@@ -726,78 +798,6 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/network-req/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/access-roles/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/admin-messages/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/allow-external-access-to-containers/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/cli-admin-install/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/clusters/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/default-scheduler/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/dr/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/ha/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/large-clusters/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/node-affinity-with-cloud-node-pools/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/node-roles/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/org-cert/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/overview/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/config/shared-storage/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/maintenance/alert-monitoring/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/maintenance/audit-log/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/maintenance/node-downtime/</loc>
-         <lastmod>2024-09-16</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/v2.18/admin/runai-setup/notifications/notifications/</loc>
          <lastmod>2024-09-16</lastmod>
     </url>
     <url>
