@@ -35,20 +35,13 @@ All customizations will be saved when upgrading the cluster to a future version.
 | `spec.researcherService.ingress.tlsSecret` |  | On Kubernetes distributions other than OpenShift, set a dedicated certificate for the researcher service ingress in the cluster. When not set, the certificate inserted when installing the cluster will be used. The value should be a Kubernetes secret  in the runai namespace |
 | `spec.researcherService.route.tlsSecret` |  | On OpenShift, set a dedicated certificate for the researcher service route. When not set, the OpenShift certificate will be used.  The value should be a Kubernetes secret  in the runai namespace |
 | `global.image.registry` | | In air-gapped environment, allow cluster images to be pulled from private docker registry. For more information see [self-hosted cluster installation](../self-hosted/k8s/cluster.md#install-cluster) |
-| `global.additionalImagePullSecrets` | [] | Defines a list of secrets to be used to pull images from a private docker registry  |
+| `prometheus.spec.image` | `quay.io/prometheus/prometheus` | Due to a known [issue](https://github.com/prometheus-community/helm-charts/issues/4734){target=_blank} In the Prometheus Helm chart, the `imageRegistry` setting is ignored. To pull the image from a different registry, you can manually specify the Prometheus image reference. | 
+| `global.additionalImagePullSecrets` | `[]` | Defines a list of secrets to be used to pull images from a private docker registry  |
 | `global.nodeAffinity.restrictScheduling` | false | Restrict scheduling of workloads to specific nodes, based on node labels. For more information see [node roles](../../config/node-roles.md#dedicated-gpu-and-cpu-nodes) |
-| `spec.prometheus.spec.retention` | 2h | The interval of time where Prometheus will save Run:ai metrics. Promethues is only used as an intermediary to another metrics storage facility and metrics are typically moved within tens of seconds, so changing this setting is mostly for debugging purposes. |
+| `spec.prometheus.spec.retention` | `2h` | The interval of time where Prometheus will save Run:ai metrics. Promethues is only used as an intermediary to another metrics storage facility and metrics are typically moved within tens of seconds, so changing this setting is mostly for debugging purposes. |
 | `spec.prometheus.spec.retentionSize` | Not set | The amount of storage allocated for metrics by Prometheus. For more information see [Prometheus Storage](https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects){target=_blank}. |
 | `spec.prometheus.spec.imagePullSecrets` | Not set | An optional list of references to secrets in the runai namespace to use for pulling Prometheus images (relevant for air-gapped installations). |
 
-## Understanding Custom Access Roles
-
-To review the access roles created by the Run:ai Cluster installation, see [Understanding Access Roles](../../config/access-roles.md).
-
-<!-- 
-## Add a Proxy
-
-Allow outbound internet connectivity in a proxied network environment. See [Installing Run:ai with an Internet Proxy Server](proxy-server.md). -->
 
 ## Manual Creation of Namespaces
 
