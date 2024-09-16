@@ -84,12 +84,12 @@ runai submit job1 ... --node-pool-name “my pool” --node-type "my-nodes"
 !!! Note
     When submitting a workload, if you choose a node pool label and a node affinity (node type) label which does not intersect, the Run:ai scheduler will not be able to schedule that workload as it represents an empty nodes group.
 
-See the [runai submit](../Researcher/cli-reference/runai-submit.md) documentation for further information.
+See the [runai submit](../../Researcher/cli-reference/runai-submit.md) documentation for further information.
 
 ## Assigning Node Groups to a Project
 
 Node Pools are automatically assigned to all Projects and Departments with zero resource allocation as default. Allocating resources to a node pool can be done for each Project and Department. Submitting a workload to a node pool that has zero allocation for a specific project (or department) results in that workload running as an over-quota workload.
 
-To assign and configure specific node affinity groups or node pools to a Project see [working with Projects](../platform-admin/aiinitiatives/org/projects.md).
+To assign and configure specific node affinity groups or node pools to a Project see [working with Projects](../../platform-admin/aiinitiatives/org/projects.md).
 
 When the command-line interface flag is used in conjunction with Project-based affinity, the flag is used to refine the list of allowable node groups set in the Project.

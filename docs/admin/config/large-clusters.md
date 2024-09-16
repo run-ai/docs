@@ -100,7 +100,7 @@ Run:ai uses [Prometheus](https://prometheus.io/){target=_blank} to scrape metric
 
 To reduce this strain, we suggest to configure Prometheus to send information in larger bulks and reduce the number of network connections:
 
-* Edit the `runaiconfig` as described under [customizing the cluster](../cluster-setup/customize-cluster-install.md).
+* Edit the `runaiconfig` as described under [customizing the cluster](../runai-setup/cluster-setup/customize-cluster-install.md).
 * Under `prometheus.remoteWrite` add the following:
 
 ``` yaml

@@ -66,7 +66,7 @@ Run:ai stores metric history using [Thanos](https://github.com/thanos-io/thanos)
 
 ### Backing up Control-Plane Configuration
 
-The installation of the Run:ai control plane can be [configured](../self-hosted/k8s/backend.md#additional-runai-configurations-optional). The configuration is provided as `--set` command in the helm installation. These changes will be preserved on upgrade, but will not be preserved on uninstall or upon damage to Kubernetes. Thus, it is best to back up these customizations. For a list of customizations used during the installation, run:
+The installation of the Run:ai control plane can be [configured](../runai-setup/self-hosted/k8s/backend.md#additional-runai-configurations-optional). The configuration is provided as `--set` command in the helm installation. These changes will be preserved on upgrade, but will not be preserved on uninstall or upon damage to Kubernetes. Thus, it is best to back up these customizations. For a list of customizations used during the installation, run:
 
 `helm get values runai-backend -n runai-backend`
 

@@ -35,7 +35,7 @@ Install prerequisites as per [System Requirements](../../cluster-setup/cluster-p
     ```
 
 !!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../config/access-roles.md).
+    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../../config/access-roles.md).
 
 ## (Optional) Customize Installation
 To customize specific aspects of the cluster installation see [customize cluster installation](../../cluster-setup/customize-cluster-install.md).

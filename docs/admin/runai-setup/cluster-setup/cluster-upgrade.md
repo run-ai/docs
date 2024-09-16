@@ -73,5 +73,5 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster status
 
-If the Run:ai cluster upgrade completes, but the cluster status is not Connected, check the [cluster troubleshooting scenarios](../config/clusters.md#troubleshooting)
+If the Run:ai cluster upgrade completes, but the cluster status is not Connected, check the [cluster troubleshooting scenarios](../../config/clusters.md#troubleshooting)
 
