@@ -8,6 +8,7 @@ Workload assets enable organizations to:
 * Share the preconfigured setup with a wide audience of AI practitioners with similar needs
 
 !!! Note
+
     * The creation of assets is possible only via API and the Run:ai UI  
     * The submission of workloads using assets, is possible only via the Run:ai UI
 
@@ -28,18 +29,17 @@ There are four workload asset types used by the workload:
 
 When a workload asset is created, a [scope](../../aiinitiatives/overview.md#ai-initiatives) is required. The scope defines who in the organization can view and/or use the asset.
 
-Note
-
-When an asset is created via API, the scope can be the entire account, this is currently an experimental feature.
+!!! Note
+    When an asset is created via API, the scope can be the entire account, this is currently an experimental feature.
 
 ## Who can create an asset?
 
-Any subject (user, application, or SSO group) with a [role](https://run-ai.document360.io/preview/saas/en/d8ae654c-1d65-4f0d-af24-98056cfb4752/12#roles-in-runai) that has permissions to Create an asset, can do so within their scope.
+Any subject (user, application, or SSO group) with a [role](../../../admin/authentication/roles.md) that has permissions to Create an asset, can do so within their scope.
 
 ## Who can use an asset?
 
-Assets are used when submitting workloads. Any subject (user, application or SSO group) with a [role](https://run-ai.document360.io/preview/saas/en/d8ae654c-1d65-4f0d-af24-98056cfb4752/12#roles-in-runai) that has permissions to Create workloads, can also use assets.
+Assets are used when submitting workloads. Any subject (user, application or SSO group) with a [role](../../../admin/authentication/roles.md) that has permissions to Create workloads, can also use assets.
 
 ## Who can view an asset?
 
-Any subject (user, application, or SSO group) with a [role](https://run-ai.document360.io/preview/saas/en/d8ae654c-1d65-4f0d-af24-98056cfb4752/12#roles-in-runai) that has permission to View an asset, can do so within their scope.  
+Any subject (user, application, or SSO group) with a [role](../../../admin/authentication/roles.md) that has permission to View an asset, can do so within their scope.  
