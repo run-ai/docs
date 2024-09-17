@@ -55,10 +55,10 @@ Run:ai’s policies enforce Run:ai workloads. The policy type is per Run:ai work
 | ----- | :---- | ----- | :---- | ----- |
 | Workspace |  | Workspace |  | Interactive workload |
 | Training | Standard | Training | Standard | Training workload |
-|  | Distributed\* |  | Distributed | Distributed workload |
+|  | Distributed |  | Distributed | Distributed workload |
 | Inference\* |  | Inference |  | Inference workload |
 
-\* The submission of these policy types is supported currently via API only
+\* The submission of this policy type is supported currently via API only
 
 ### Policy structure \- rules, defaults, and imposed assets
 
@@ -76,19 +76,20 @@ For example, if a policy is set for Department A, all workloads submitted by any
 
 A scope for a policy can be:  
 
-        The entire account  
+        The entire account *  
             L Specific cluster  
                 L Specific department  
                     L Specific project
 
-!!! Note
-     The policy submission to the entire account scope is supported via API only
+\* The policy submission to the entire account scope is supported via API only
 
 The different scoping of policies also allows the breakdown of the responsibility between different administrators. This allows delegation of ownership between different levels within the organization. The policies, containing rules and defaults, propagate\* down the organizational tree, forming an “effective” policy that enforces any workload submitted by users within the project.
 
 ![](img/effective-policy.png)
 
-* If a rule for a specific field is already occupied by a policy in the organization, another unit within the same branch cannot submit an additional rule on the same field. As a result, administrators of higher scopes must request lower-scope administrators to free up the specific rule from their policy. However, defaults of the same field can be submitted by different organizational policies, as they are “soft” rules that are not critical to override, and the smallest level of the default is the one that becomes the effective default (project default ‚”wins” vs department default, department default “wins” vs cluster default etc.).
+!!! Note
+     If a rule for a specific field is already occupied by a policy in the organization, another unit within the same branch cannot submit an additional rule on the same field. As a result, administrators of higher scopes must request lower-scope administrators to free up the specific rule from their policy. However, defaults of the same field can be submitted by different organizational policies, as they are “soft” rules that are not critical to override, and the smallest level of the default is the one that becomes the effective default (project default‚ ”wins” vs department default, department default “wins” vs cluster default etc.).
+
 
 ## Run:ai Policies vs. Kyverno Policies
 
