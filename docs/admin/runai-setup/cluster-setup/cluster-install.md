@@ -2,11 +2,11 @@
 
 This article explains the steps required to install the Run:ai cluster on a Kubernetes cluster using Helm.
 
-## Before Installation
+## Before installation
 
 There are a number of matters to consider prior to installing using Helm.
 
-### System and Network Requirements
+### System and network requirements
 
 Before installing the Run:ai cluster, validate that the [system requirements](cluster-prerequisites.md) and [network requirements](network-req.md) are met.
 
@@ -84,7 +84,7 @@ Run:ai cluster must be installed in a namespace named `runai`. Create the namesp
 kubectl create ns runai
 ```
 
-### TLS Certificates
+### TLS certificates
 
 A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](cluster-prerequisites.md#domain-name-requirement) private and public keys, by running the following:
 
