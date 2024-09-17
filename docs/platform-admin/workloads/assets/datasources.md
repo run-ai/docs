@@ -92,7 +92,7 @@ ConfigMaps must be created on the cluster before being used within Run:ai. When 
 * A data mount consisting of:
 
   * A ConfigMap name&mdash;select from the drop down.
-  * A target location&mdash;the path to the container.
+  * A target location&mdash;the path to the container (the workload creator is able to override this when submitting the workload).
 
 ### Create a Secret as data source
 
@@ -106,7 +106,7 @@ ConfigMaps must be created on the cluster before being used within Run:ai. When 
 * A data mount consisting of:
 
   * A *Credentials*&mdash;select from the drop down.
-  * A target location&mdash;the path to the container.
+  * A target location&mdash;the path to the container (the workload creator is able to override this when submitting the workload).
 
 ### Data sources table
 
