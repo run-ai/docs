@@ -581,10 +581,6 @@
          <lastmod>2024-09-17</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/building-blocks/</loc>
-         <lastmod>2024-09-17</lastmod>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/compute/</loc>
          <lastmod>2024-09-17</lastmod>
     </url>
@@ -606,6 +602,10 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/existing-PVC/</loc>
+         <lastmod>2024-09-17</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/overview/</loc>
          <lastmod>2024-09-17</lastmod>
     </url>
     <url>
@@ -1033,10 +1033,6 @@
          <lastmod>2024-09-17</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/building-blocks/</loc>
-         <lastmod>2024-09-17</lastmod>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/compute/</loc>
          <lastmod>2024-09-17</lastmod>
     </url>
@@ -1058,6 +1054,10 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/existing-PVC/</loc>
+         <lastmod>2024-09-17</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/overview/</loc>
          <lastmod>2024-09-17</lastmod>
     </url>
     <url>
