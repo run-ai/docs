@@ -20,7 +20,7 @@ To create an NFS data source, provide:
 * A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * An NFS server.
 * The path to the data within the server.
-* The path within the container where the data will be mounted.
+* The path within the container where the data will be mounted (the workload creator is able to override this when submitting the workload).
 
 The data can be set as read-write or limited to read-only permission regardless of any other user privileges.
 
@@ -38,7 +38,7 @@ To create an PVC data source, provide:
   * Required storage size
   * Volume system mode
 
-* The path within the container where the data will be mounted.
+* The path within the container where the data will be mounted (the workload creator is able to override this when submitting the workload).
 
 You can see the status of the resources created in the [Data sources table](#data-sources-table).
 
@@ -52,7 +52,7 @@ To create an S3 data source, provide
 * A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant S3 service URL server
 * The bucket name of the data.
-* The path within the container where the data will be mounted.
+* The path within the container where the data will be mounted (the workload creator is able to override this when submitting the workload).
 
 An S3 data source can be public or private. For the latter option, please select the relevant credentials associated with the project to allow access to the data. S3 buckets that use credentials will have a status associated with it. For more information, see [Data sources table](#data-sources-table).
 
@@ -63,7 +63,7 @@ To create a Git data source, provide:
 * A data source name.
 * A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant repository URL.
-* The path within the container where the data will be mounted.
+* The path within the container where the data will be mounted (the workload creator is able to override this when submitting the workload).
 
 The Git data source can be public or private. To allow access to a private Git data source, you must select the relevant credentials associated with the project. Git data sources that use credentials will have a status associated with it. For more information, see [Data sources table](#data-sources-table).
 
@@ -74,7 +74,7 @@ To create a host path data source, provide:
 * A data source name.
 * A Run:ai scope (cluster, department, or project) which is assigned to that item and all its subsidiaries.
 * The relevant path on the host.
-* The path within the container where the data will be mounted.
+* The path within the container where the data will be mounted (the workload creator is able to override this when submitting the workload).
 
 !!! Note
     The data can be limited to read-only permission regardless of any other user privileges.
