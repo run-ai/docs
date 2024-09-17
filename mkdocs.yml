@@ -121,7 +121,7 @@ plugins:
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/assets/data-volumes.md'
         'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
         'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
-        'Researcher/user-interface/workspaces/blocks/building-blocks.md' : 'Researcher/workloads/assets/building-blocks.md'
+        'Researcher/user-interface/workspaces/blocks/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
         'Researcher/user-interface/workspaces/blocks/environments.md' : 'Researcher/workloads/assets/environments.md'
         'Researcher/user-interface/workspaces/blocks/compute.md' : 'Researcher/workloads/assets/compute.md'
         'Researcher/user-interface/workspaces/blocks/datasources.md' : 'Researcher/workloads/assets/datasources.md'
@@ -152,6 +152,8 @@ plugins:
         'admin/runai-setup/maintenance/audit-log.md' : 'admin/maintenance/audit-log.md'
         'admin/researcher-setup/cluster-wide-pvc.md' : 'admin/config/cluster-wide-pvc.md'
         'admin/researcher-setup/limit-to-node-group.md' :  'admin/config/limit-to-node-group.md'
+        'platform-admin/workloads/assets/building-blocks.md' : 'platform-admin/workloads/assets/overview.md'
+        'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
 
  
 
@@ -276,7 +278,7 @@ nav:
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
       - 'Workload Assets' : 
-        - 'Overview' : 'platform-admin/workloads/assets/building-blocks.md'
+        - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
         - 'Compute Resources': 'platform-admin/workloads/assets/compute.md'
         - 'Data Sources' : 
@@ -324,7 +326,7 @@ nav:
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
       - 'Workload Assets' : 
-        - 'Overview' : 'Researcher/workloads/assets/building-blocks.md'
+        - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
         - 'Compute Resources': 'Researcher/workloads/assets/compute.md'
         - 'Data Sources' : 
