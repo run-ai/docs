@@ -1,7 +1,7 @@
   
 This article explains what environments are and how to create and use them.
 
-Environments are one type of [workload asset](building-blocks.md). An environment consists of a configuration that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
+Environments are one type of [workload asset](overview.md). An environment consists of a configuration that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
 
 An environment asset is a preconfigured building block that encapsulates aspects for the workload such as:
 
@@ -23,7 +23,7 @@ The Environments table consists of the following columns:
 | :---- | :---- |
 | Environment | The name of the environment |
 | Description | A description of the essence of the environment |
-| Scope | The [scope](building-blocks.md#scopes) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
+| Scope | The [scope](overview.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Image | The application or service to be run by the workload |
 | Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on a multiple nodes |
 | Tool(s) | The tools and connection types the environment exposes |
@@ -44,14 +44,14 @@ The Environments table consists of the following columns:
 
 ## Adding a new environment
 
-Environment creation is limited to [specific roles](building-blocks.md#who-can-create-an-asset)
+Environment creation is limited to [specific roles](overview.md#who-can-create-an-asset)
 
 To add a new environment:
 
 1. Go to the Environments table  
 2. Click __+NEW ENVIRONMENT__  
 3. Select under which cluster to create the environment  
-4. Select a [scope](building-blocks.md#scopes)  
+4. Select a [scope](overview.md#asset-scope)  
 5. Enter a __name__ for the environment. The name must be unique.  
 6. Optional: Provide a __description__ of the essence of the environment  
 7. Enter the __Image URL__  
