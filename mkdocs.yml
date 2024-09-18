@@ -133,7 +133,7 @@ plugins:
         'Researcher/user-interface/trainings.md' : 'Researcher/workloads/trainings.md'
         'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/workspaces/overview.md'
         'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
-        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/statuses.md'
+        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/managing-workloads.md'
         'snippets/common-submit-cli-commands.md' : 'Researcher/cli-reference/new-cli/runai.md'
         'admin/runai-setup/config/overview.md' : 'admin/config/overview.md'
         'admin/runai-setup/config/node-roles.md' : 'admin/config/node-roles.md'
@@ -154,6 +154,8 @@ plugins:
         'admin/researcher-setup/limit-to-node-group.md' :  'admin/config/limit-to-node-group.md'
         'platform-admin/workloads/assets/building-blocks.md' : 'platform-admin/workloads/assets/overview.md'
         'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
+        'Researcher/workloads/statuses.md' : 'Researcher/workloads/managing-workloads.md'
+
 
  
 
@@ -277,6 +279,7 @@ nav:
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
+      - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
@@ -289,15 +292,13 @@ nav:
           - 'Credentials' : 'platform-admin/workloads/assets/credentials.md'
           - 'Secrets' : 'platform-admin/workloads/assets/secrets.md'
         - 'Data Volumes': 'platform-admin/workloads/assets/data-volumes.md' 
-
-      - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
       - 'Policies' :
         - 'Overview' : 'platform-admin/workloads/policies/overview.md'
-        # - 'Training Policy' : 'platform-admin/workloads/policies/training-policy.md'
-        - 'Policies V2' : 'platform-admin/workloads/policies/workspaces-policy.md'
-        - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
-        - 'Policy Examples' : 'platform-admin/workloads/policies/policy-examples.md'
-        - 'Policy Reference' : 'platform-admin/workloads/policies/policy-reference.md'
+        - 'Policies' : 'platform-admin/workloads/policies/workspaces-policy.md'
+        - 'Policies Examples' : 'platform-admin/workloads/policies/policy-examples.md'
+        - 'Policies Reference' : 'platform-admin/workloads/policies/policy-reference.md'
+        - 'Older Policies' : 
+          - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
 
 
     - 'Best Practices' :
@@ -338,12 +339,11 @@ nav:
           - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
           - 'Secrets' : 'Researcher/workloads/assets/secrets.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
-      - 'Workspaces' :
-        - 'Workspace' : 'Researcher/workloads/workspaces/overview.md'
+      - 'Workspace' :
+        - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
-      - 'Trainings' : 'Researcher/workloads/trainings.md'
+      - 'Training' : 'Researcher/workloads/trainings.md'
       - 'Inference' : 'Researcher/workloads/inference-overview.md'
-      - 'Statuses' :  'Researcher/workloads/statuses.md'
 
     - 'Command Line Interface' :
       - 'CLI V2': 
