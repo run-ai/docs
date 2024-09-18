@@ -18,7 +18,7 @@ To submit a workload using the UI:
       1. In the *Projects* pane, select a project. Use the search box to find projects that are not listed. If you can't find the project, see your system administrator.
       2. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, create a new one, or see your system administrator.
       3. Enter a `Workspace` name, and press continue.
-      4. In the *Environment* pane select or [create a new environment](./assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed.
+      4. In the *Environment* pane select or [create a new environment](./assets/environments.md#adding-a-new-environment). Use the search box to find environments that are not listed.
    
         1. In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
@@ -56,7 +56,7 @@ To submit a workload using the UI:
       2. In the *Multi-node* pane, choose `Single node` for a single node training, or `Multi-node (distributed)` for distributed training. When you choose `Multi-node`, select a framework that is listed, then select the `multi-node` training configuration by selecting either `Workers & master` or `Workers only`.
       3. In the *Templates* pane, select a template from the list. Use the search box to find templates that are not listed. If you can't find the specific template you need, see your system administrator.
       4. In the *Training name* pane, enter a name for the *Training*, then press continue.
-      5. In the *Environment* pane select or [create a new environment](./assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed. 
+      5. In the *Environment* pane select or [create a new environment](./assets/environments.md#adding-a-new-environment). Use the search box to find environments that are not listed. 
          1. In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
          3. In the *Environment variable* field, you can set one or more environment variables. (optional)
@@ -94,7 +94,7 @@ To submit a workload using the UI:
 
       11. If you do not want a different setup for the master, press *Create training*. If you would like to have a different setup for the master, toggle the switch to enable to enable a different setup.
 
-         1. In the *Environment* pane select or [create a new environment](assets/environments.md#creating-a-new-environment). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
+         1. In the *Environment* pane select or [create a new environment](assets/environments.md#adding-a-new-environment). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
             1.  In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
             2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
             3. In the *Environment variable* field, you can set one or more environment variables. (optional)
