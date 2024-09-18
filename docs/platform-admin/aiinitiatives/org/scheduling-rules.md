@@ -7,7 +7,7 @@ There are 3 types of scheduling rules:
 * __Idle GPU time limit__  
    This rule limits the total GPU time of a workload. Workload idle time is counted from the first time the workload is in status Running and the GPU was idle.  
   We calculate idleness by employing the `runai_gpu_idle_seconds_per_workload` metric. This metric determines the total duration of zero GPU utilization within each 30-second interval. If the GPU remains idle throughout the 30-second window, 30 seconds are added to the idleness sum; otherwise, the idleness count is reset.  
-  You can apply a single rule per workload type - Preemptive Workspaces, Non-preemptive Workspaces, and Training.  
+  You can apply a single rule per workload type - Preemptible Workspaces, Non-preemptible Workspaces, and Training.  
   
 !!! Note 
     To make `Idle GPU timeout` effective, it must be set to a shorter duration than that workload duration of the same workload type. 
