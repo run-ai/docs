@@ -1,108 +1,99 @@
----
-title:   V2 Policies
-summary: This article outlines what is a  policy and details the variables that are used in the policy.
+This article explains the procedure to manage workload policies.
 
----
+## Workload policies table
 
-## Enabling the Policy Manager
-
-To use V2 Policies you need to enable the *New Policy Manager*. The policy manager provides information about resources that are non-compliant with the applied policies.  
-
-
-To enable the new *Policy Manager*:
-
-1. Press the *Tools and Settings* icon, then press *General*.
-2. Toggle the *New Policy Manager* switch to on.
-
-To return to the previous *Policy Manager* toggle the switch off.
+The Workload policies table can be found under Tools & Settings in the Run:ai platform.
 
 !!! Note
-    Using the new, API-based Policies, will not disable the older [YAML-based](./policies.md) policies. 
+    Workload policies are disabled by default. If you cannot see Workload policies in the menu, then it must be enabled by your administrator, under General Settings → Workloads → Policies
+
+The Workload policies table provides a list of all the policies defined in the platform, and allows you to manage them.
+
+![](img/policies-table.png)
+
+The Workload policies table consists of the following columns:
+
+| Column | Description |
+| :---- | :---- |
+| Policy | The policy name which is a combination of the policy scope and the policy type |
+| Type | The policy type is per Run:ai workload type. This allows administrators to set different policies for each [workload type](../workload-overview.md). |
+| Status | Representation of the policy lifecycle (one of the following - “Creating…”, “Updating…”, “Deleting…”, Ready or Failed) |
+| Scope | The scope the policy affects. Click the name of the scope to view the organizational tree diagram. You can only view the parts of the organizational tree for which you have permission to view. |
+| Created by | The user who created the policy |
+| Creation time | The timestamp for when the policy was created |
+| Last updated | The last time the policy was updated |
+
+### Customizing the table view
+
+* Filter - Click ADD FILTER, select the column to filter by, and enter the filter values  
+* Search - Click SEARCH and type the value to search by  
+* Sort - Click each column header to sort by  
+* Column selection - Click COLUMNS and select the columns to display in the table  
+* Refresh - Click REFRESH to update the table with the latest data
+
+## Adding a policy
+
+To create a new policy:
+
+1. Click __+NEW POLICY__  
+2. Select a __scope__  
+3. Select the __workload type__  
+4. Click __+POLICY YAML__  
+5. In the __YAML editor__ type or paste a YAML policy with defaults and rules.  
+    You can utilize the following references and examples:  
+   * [Policy YAML reference](./policy-reference.md)  
+   * [Policy YAML examples](./policy-examples.md)  
+6. Click __SAVE POLICY__
+
+## Editing a policy
+
+1. Select the policy you want to edit  
+2. Click __EDIT__  
+3. Update the policy and click __APPLY__  
+4. Click __SAVE POLICY__
+
+## Troubleshooting
+
+Listed below are issues that might occur when creating or editing a policy via the YAML Editor:
+
+| Issue | Message | Mitigation |
+| :---- | ----- | :---- |
+| Cluster connectivity issues | There's no communication from cluster “cluster_name“. Actions may be affected, and the data may be stale. | Verify that you are on a network that has been allowed access to the cluster. Reach out to your cluster administrator for instructions on verifying the issue. |
+| Policy can’t be applied due to a rule that is occupied by a different policy | Field “field_name” already has rules in cluster: “cluster_id” | Remove the rule from the new policy or adjust the old policy for the specific rule. |
+| Policy is not visible in the UI | - | Check that the policy hasn’t been deleted. |
+| Policy syntax is no valid | Add a valid policy YAML;json: unknown field "field_name" | For correct syntax check the [Policy YAML reference](./policy-reference.md) or the [Policy YAML examples](./policy-examples.md). |
+| Policy can’t be saved for some reason | The policy couldn't be saved due to a network or other unknown issue. Download your draft and try pasting and saving it again later. | Possible cluster connectivity issues. Try updating the policy once again at a different time. |
+| Policies were submitted before version 2.18, you upgraded to version 2.18 or above and wish to submit new policies | If you have policies and want to create a new one, first contact Run:ai support to prevent potential conflicts | Contact Run:ai support. R&D can migrate your old policies to the new version. |
+
+## Viewing a policy
+
+To view a policy:
+
+1. Select the policy for which you want to view its [policies](./overview.md).  
+2. Click __VIEW POLICY__  
+3. In the Policy form per workload section, view the workload rules and defaults:  
+    * __Parameter__  
+      The workload submission parameter that Rules and Defaults are applied to  
+    * __Type__ (applicable for data sources only)  
+      The data source type (Git, S3, nfs, pvc etc.)  
+    * __Default__  
+      The default value of the Parameter  
+    * __Rule__  
+      Set up constraint on workload policy field  
+    * __Source__  
+      The origin of the applied policy (cluster, department or project)  
+
+!!! Note  
+    Some of the rules and defaults may be derived from policies of a parent cluster and/or department. You can see the source of each rule in the policy form. For more information, check the [Scope of effectiveness documentation](./overview.md#scope-of-effectiveness)
+
+## Deleting a policy
+
+1. Select the policy you want to delete  
+2. Click __DELETE__  
+3. On the dialog, click __DELETE__ to confirm the deletion
+
+## Using API
+
+Go to the [Policies](https://app.run.ai/api/docs#tag/Policy) API reference to view the available actions.
 
 
-## Viewing Policy compliance
-
-A Policy places resource restrictions and defaults on Workloads in the Run:ai platform. Restrictions and default values can be placed on CPUs, GPUs, and other resources or entities.
-
-Non-compliant resources (e.g. data sources, compute resources) will appear greyed out. To see how a resource is not compliant, press on the clipboard icon in the upper right-hand corner of the resource.
-
-
-## Example Policy
-
-Below is an example policy you can use in your platform.
-
-!!! Note
-
-    * Not all the configurable fields available are listed in the example below. 
-    * Replace the values listed in the example below with values that match your platform requirements.
-
-```YAML
-defaults:
-    environment:
-      allowPrivilegeEscalation: false
-      createHomeDir: true
-      environmentVariables:
-        - name: MY_ENV
-          value: my_value
-rules:
-    compute:
-      cpuCoreLimit:
-        min: 0
-        max: 9
-        required: true
-      gpuPortionRequest:
-        min: 0
-        max: 10
-    s3:
-      url:
-        options:
-          - displayed: "Google"
-            value: "https://www.google.com"
-          - displayed: "Yahoo"
-            value: "https://www.yahoo.com"
-    environment:
-      imagePullPolicy:
-        options:
-          - displayed: "Always"
-            value: "Always"
-          - displayed: "Never"
-            value: "Never"
-        required: true
-      runAsUid:
-        min: 1
-        max: 32700
-      createHomeDir:
-        canEdit: false
-      allowPrivilegeEscalation:
-        canEdit: false
-    imposedAssets:
-      dataSources:
-        nfs:
-          canAdd: false
-```
-
-## Viewing or Edit a Policy
-
-To view or edit a policy:
-
-1. Press *Tools and Settings*.
-2. Press *Policies*. The policy grid is displayed.
-3. Select a policy from the list. If there are no policies, then [create a new policy](#creating-a-new-policy).
-4. Pres *Edit* to view the policy details, then press *Edit Policy* to edit the YAML file.
-5. When done, press *Apply*.
-
-## Creating a New Policy
-
-To create a policy:
-
-1. Press *Tools and Settings*.
-2. Press *Policies*. The policy grid is displayed.
-3. Press *New Policy*.
-4. Select a scope for the policy.
-5. Select a workload type using the dropdown.
-6. In the *Policy YAML* pane, press *+ POLICY YAML* to open the policy editor.
-7. Enter your policy in the policy editor. Add policy properties and variables in YAML format. When complete, press *APPLY*.
-8. When done, press *SAVE POLICY*.
-
-!!! Note
-    After saving, the form will wait for the policy to sync with the cluster.
