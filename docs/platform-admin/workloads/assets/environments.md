@@ -28,11 +28,30 @@ The Environments table consists of the following columns:
 | Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on a multiple nodes |
 | Tool(s) | The tools and connection types the environment exposes |
 | Workload(s) | The list of existing workloads that use the environment |
-| Workload types | The workload type that can use the environment |
+| Workload types | The workload types that can use the environment |
 | Template(s) | The list of workload templates that use this environment |
-| Created by | The name of the user who created the environment |
+| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments](#tools-associated-with-the-environment) created by Run:ai  |
 | Creation time | The timestamp for when the environment was created |
 | Cluster | The cluster that the environment is associated with |
+
+### Tools associated with the environment
+
+Click one of the values in the tools column to view the list of tools and their connection type.
+
+| Column | Description |
+| :---- | :---- |
+| Tool name | The name of the tool or application AI practitioner can set up within the environment. |
+| Connection type | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc) |
+
+### Workloads associated with the environment
+
+Click one of the values in the Workload(s) column to view the list of workloads and their parameters.
+
+| Column | Description |
+| :---- | :---- |
+| Workload | The workload that uses the environment |
+| Type | The workload type (Workspace/Training/Inference) |
+| Status | Represents the workload lifecycle. see the full list of [workload status](../../../Researcher/workloads/managing-workloads.md#workload-status) |
 
 ### Customizing the table view
 
@@ -41,6 +60,21 @@ The Environments table consists of the following columns:
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
 * Download table - Click MORE and then Click Download as CSV
+
+## Environments created by Run:ai
+
+When installing Run:ai, you automatically get the environment created by Run:ai to ease up the onboarding process and support different use cases out of the box.  
+These environments are created at the [scope](./overview.md#asset-scope) of the account.
+
+| Environment | Image |
+| ----- | ----- |
+| Jupiter-lab | jupyter/scipy-notebook |
+| jupyter-tensorboard | gcr.io/run-ai-demo/jupyter-tensorboard |
+| tensorboard | tensorflow/tensorflow:latest |
+| llm-server | runai.jfrog.io/core-llm/runai-vllm:v0.5.5-0.5.0 |
+| chatbot-ui | runai.jfrog.io/core-llm/llm-app |
+| gpt2 | runai.jfrog.io/core-llm/quickstart-inference:gpt2-cpu |
+
 
 ## Adding a new environment
 
@@ -55,7 +89,7 @@ To add a new environment:
 5. Enter a __name__ for the environment. The name must be unique.  
 6. Optional: Provide a __description__ of the essence of the environment  
 7. Enter the __Image URL__  
-   If a token or secret is required to pull the image, it is possible to create it via credentials of type docker registry. These credentials are automatically used once the image is pulled (which happens when the workload is submitted)  
+   If a token or secret is required to pull the image, it is possible to create it via [credentials of type docker registry](./credentials.md#docker-registry). These credentials are automatically used once the image is pulled (which happens when the workload is submitted)  
 8. Set the __image pull policy__ - the condition for when to pull the image from the registry  
 9. Set the workload architecture:  
     * __Standard__  
@@ -94,7 +128,7 @@ To add a new environment:
     * __From the image__  
     * __From the IdP token__ (only available in an SSO installations)  
     * __Custom__ (manually set) - decide whether the submitter can modify these value upon submission.  
-16. Optional: Select __Linux capabilities__ - Grant certain privileges to a container without granting all the privileges of the root user.  
+16. Optional: Select __Linux capabilities__ - Grant certain privileges to a container without granting all the privileges of the root user. 
 17. Click __CREATE ENVIRONMENT__
 
 !!! Note
