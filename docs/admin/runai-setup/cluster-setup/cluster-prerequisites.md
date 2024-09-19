@@ -147,7 +147,7 @@ kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"sp
     * When setting-up the cluster, do **not** install the NVIDIA device plug-in (we want the NVIDIA GPU Operator to install it instead).  
     * When using the [eksctl](https://eksctl.io/) tool to create a cluster, use the flag `--install-nvidia-plugin=false` to disable the installation.
 
-    For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false.ticated`
+    For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false`
 
 ??? "Google Kubernetes Engine (GKE)"
 
