@@ -4,13 +4,11 @@ This article provides detailed instructions on how to manage both planned and un
 ## Prerequisites
 
 * __Access to Kubernetes cluster__  
-  You must have administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands  
+  Administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands  
 * __Basic knowledge of Kubernetes__  
   Familiarity with Kubernetes concepts such as nodes, taints, and workloads  
 * __Run:ai installation__  
-  The Run:ai software installed and configured within your Kubernetes cluster  
-* __Disaster recovery plan__  
-  For Self-hosted installations, ensure that a disaster recovery plan is in place, particularly for preserving the Run:ai data. For more details, see [backup & restore](https://portal.document360.io/saas/docs/backup-restore-1).  
+  The Run:ai software installed and configured within your Kubernetes cluster   
 * __Node naming conventions__  
   Know the names of the nodes within your cluster, as these are required when executing the commands
 
@@ -18,10 +16,8 @@ This article provides detailed instructions on how to manage both planned and un
 
 This article distinguishes between two types of nodes within a Run:ai installation:
 
-* Worker nodes  
-   Nodes are where workloads are executed  
-* Run:ai system nodes  
-  Nodes on which the Run:ai software runs, managing the cluster's operations
+* Worker nodes. Nodes on which AI practitioners can submit and run workloads
+* Run:ai system nodes. Nodes on which the Run:ai software runs, managing the cluster's operations
 
 ### Worker nodes
 
@@ -29,14 +25,14 @@ Worker Nodes are responsible for running workloads. When a worker node goes down
 
 #### Training vs. Interactive workloads
 
-Run:ai distinguishes between two types of workloads:
+The following workload types can run on worker nodes: 
 
-* __Training workloads__  
-  These are long-running processes that, in case of node downtime, can automatically move to another node.  
-* __Interactive workloads__  
-  These are short-lived, interactive processes that require manual intervention to be relocated to another node.
+* __Training workloads__. These are long-running processes that, in case of node downtime, can automatically move to another node.
 
-While training workloads can be automatically migrated, it is recommended to manually manage this process for faster response, as it may take time for Kubernetes to detect a node failure.
+* __Interactive workloads__. These are short-lived, interactive processes that require manual intervention to be relocated to another node.
+
+!!! Note
+    While training workloads can be automatically migrated, it is recommended to plan maintenance and manually manage this process for a faster response, as it may take time for Kubernetes to detect a node failure,
 
 #### Planned maintenance
 
@@ -117,9 +113,9 @@ In the event of unplanned downtime:
 
 ### Run:ai System nodes
 
-In a production environment, the Run:ai software operates on one or more Run:ai System Nodes. It is recommended to have more than one system node to ensure high availability. For more information, see [high availability](../config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second System Node does not exist, you must designate another node in the cluster as a temporary Run:ai System Node to maintain operations.
+In a production environment, the services responsible for scheduling, submitting and managing Run:ai workloads operate on one or more Run:ai system nodes. It is recommended to have more than one system node to ensure [high availability](../config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second system node does not exist, you must designate another node in the cluster as a temporary Run:ai system node to maintain operations.
 
-The protocols for handling planned maintenance and unplanned downtime are identical to those for Worker Nodes. Refer to the above section for detailed instructions.
+The protocols for handling planned maintenance and unplanned downtime are identical to those for worker nodes. Refer to the above section for detailed instructions. 
 
 ## Rejoining a node into the Kubernetes cluster
 
