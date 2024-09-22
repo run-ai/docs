@@ -251,6 +251,7 @@ nav:
       - 'User Identity in Container' : 'admin/authentication/non-root-containers.md'
     - 'Troubleshooting' : 
 #      - 'Cluster Health' : 'admin/troubleshooting/cluster-health-check.md'
+      - 'Logs Collection' : 'admin/troubleshooting/logs-collection.md'
       - 'Troubleshooting' : 'admin/troubleshooting/troubleshooting.md'
       - 'Diagnostics' : 'admin/troubleshooting/diagnostics.md'
   
