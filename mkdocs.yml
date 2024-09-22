@@ -233,7 +233,7 @@ nav:
       - 'Setup cluster wide PVC' : 'admin/config/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/config/limit-to-node-group.md'
     - 'Maintenance' : 
-      - 'Node Downtime' : 'admin/maintenance/node-downtime.md'
+      - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
       - 'Audit Log' : 'admin/maintenance/audit-log.md'
     - 'Authentication & Authorization' :
