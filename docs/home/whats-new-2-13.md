@@ -116,7 +116,7 @@ The association between workspaces and node pools is done using *Compute resourc
 
 **Policies**
 <!-- RUN-10588/10590 Allow workload policy to prevent the use of a new pvc -->
-* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../platform-admin/workloads/policies/policies.md#complex-values).
+* Improved policy support by adding `DEFAULTS` in the `items` section in the policy. The `DEFAULTS` section sets the default behavior for items declared in this section. For example, this can be use to limit the submission of workloads only to existing PVCs. For more information and an example, see Policies, [Complex values](../platform-admin/workloads/policies/old-policies.md#complex-values).
 
 <!-- RUN-8904/8960 - Cluster wide PVC in workspaces -->
 * Added support for making a PVC data source available to all projects. In the *New data source* form, when creating a new PVC data source, select *All* from the *Project* pane.

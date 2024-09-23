@@ -300,7 +300,7 @@ nav:
         - 'Policies Examples' : 'platform-admin/workloads/policies/policy-examples.md'
         - 'Policies Reference' : 'platform-admin/workloads/policies/policy-reference.md'
         - 'Older Policies' : 
-          - 'Policies V1' : 'platform-admin/workloads/policies/policies.md'
+          - 'Policies V1' : 'platform-admin/workloads/policies/old-policies.md'
 
 
     - 'Best Practices' :
@@ -329,6 +329,7 @@ nav:
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
       - 'Managing Workloads' : 'Researcher/workloads/managing-workloads.md'
+      - 'Workload Support' : 'Researcher/workloads/workload-support.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'

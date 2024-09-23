@@ -38,7 +38,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Policy improvements
 
-* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provides the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../platform-admin/workloads/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
+* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provides the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../platform-admin/workloads/old-policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
 
 ### Resource costing
 
