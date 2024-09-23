@@ -1,27 +1,27 @@
-# Data Privacy  
 
-Run:ai [SaaS Cluster installation](../admin/runai-setup/installation-types.md) uses the Run:ai cloud as its control plane. The cluster sends information to the cloud for control as well as analytics. The document below is a run-down of the data that is being sent to the Run:ai cloud.
+  
+This article details the data privacy and compliance considerations for deploying Run:ai. It is intended to help administrators and compliance teams understand the data management practices involved with Run:ai. This ensures the permissions align with organizational policies and regulatory requirements before installation and during integration and onboarding of the various teams.
 
+When using the Run:ai [SaaS cluster](../admin/runai-setup/installation-types.md), the Control plane operates through the Run:ai cloud, requiring the transmission of certain data for control and analytics. Below is a detailed breakdown of the specific data sent to the Run:ai cloud in the SaaS offering.
 
 !!! Note
-    If the data detailed below is not in line with your organization's policy, you can choose to install the Run:ai self-hosted version. The self-hosted installation includes the Run:ai control-plane and will not communicate with the cloud. The self-hosted installation has different pricing. 
+    For organizations where data privacy policies do not align with this data transmission, Run:ai offers a self-hosted version. This version includes the control plane on premise and does not communicate with the cloud.
 
+## Data sent to the Run:ai cloud
 
-## Data
+| Asset | Details |
+| :---- | :---- |
+| Workload Metrics | Includes workload names, CPU, GPU, and memory metrics, as well as parameters provided during the `runai submit` command. |
+| Workload Assets | Covers environments, compute resources, and data resources associated with workloads. |
+| Resource Credentials | Credentials for cluster resources, encrypted with a SHA-512 algorithm specific to each tenant. |
+| Node Metrics | Node-specific data including names, IPs, and performance metrics (CPU, GPU, memory). |
+| Cluster Metrics | Cluster-wide metrics such as names, CPU, GPU, and memory usage. |
+| Projects & Departments | Includes names and quota information for projects and departments. |
+| Users | User roles within Run:ai, email addresses, and passwords. |
 
-Following is a list of platform data items that are sent to the Run:ai cloud.
+## Key consideration
 
-| Asset   | Data Details  | 
-|---------|---------------|
-| Workload Metrics | Workload names, CPU, GPU, and Memory metrics, parameters sent using the `runai submit` command |
-| Workload Assets | Workload [Assets](../Researcher/workloads/assets/overview.md) such as environments, compute resources and data resoruces |
-| Resource Credentials | [Credentials](../platform-admin/workloads/assets/credentials.md) to cluster resources are stored and encrypted using a SHA-512 algorithm. The encryption is tenant-specific |
-| Node Metrics | Node names and IPs, CPU, GPU, and Memory metrics |
-| Cluster Metrics | Cluster names, CPU, GPU, and Memory metrics |
-| Projects & Departments | Names, quota information |
-| Users | User Run:ai roles, emails and passwords (when single-sign on not used) |
-
-Run:ai does __not send__ deep-learning artifacts to the cloud. As such any Code, images, container logs, training data, models, checkpoints and the like, stay behind corporate firewalls. 
+Run:ai ensures that no deep-learning artefacts, such as code, images, container logs, training data, models, or checkpoints, are transmitted to the cloud. These assets remain securely within your organization's firewalls, safeguarding sensitive intellectual property and data.  
 
 
 ## See Also
