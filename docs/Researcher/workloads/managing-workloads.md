@@ -15,32 +15,32 @@ The Workloads table consists of the following columns:
 | Workload | The name of the workload |
 | Type | The workload type |
 | Preemptible | Is the workload preemptible |
-| Status | The workload status |
-| Project | The project name contains the workload |
-| Department | The department name containing the workload |
-| Created by | The subject that created the used |
-| Running/requested pods | Number of running pods out of the requested |
-| Creation time | The creation time of the workload |
-| Completion time | The time the workload reached a terminal state (failed/completed) |
-| Connection(s) | A modal detailing all the available connections of the workload |
-| Data source(s) | Data resources assigned to the workload |
-| Environment | The environment the workload was created with |
-| Workload architecture | Single or distributed workload |
-| GPU compute request | Amount of GPU devices requested |
+| Status | The different [phases](#workload-status) in a workload life cycle. |
+| Project | The project in which the workload runs. |
+| Department | The department that the workload is associated with. this column is visible only if the department toggle is enabled by your administrator. |
+| Created by | The user who created the workload |
+| Running/requested pods | The number of running pods out of the requested |
+| Creation time | The timestamp for when the workload was created |
+| Completion time | The timestamp the workload reached a terminal state (failed/completed) |
+| Connection(s) | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc). Click one of the values in the column to view the list of connections and their parameters |
+| Data source(s) | Data resources used by the workload |
+| Environment | The environment used by the workload |
+| Workload architecture | Standard or distributed. A standard workload consists of a single process. A distributed workload consists of multiple processes working together. These processes can run on different nodes. |
+| GPU compute request | Amount of GPU devices Requested |
 | GPU compute allocation | Amount of GPU devices allocated |
-| GPU memory request | Amount of GPU memory requested |
+| GPU memory request | Amount of GPU memory Requested |
 | GPU memory allocation | Amount of GPU memory allocated |
 | CPU compute request | Amount of CPU cores requested |
 | CPU compute allocation | Amount of CPU cores allocated |
 | CPU memory request | Amount of CPU memory requested |
 | CPU memory allocation | Amount of CPU memory allocated |
-| Cluster | The cluster name containing the workload |
+| Cluster | The cluster that the workload is associated with |
 
 ### Workload status
 
 The following table describes the different phases in a workload life cycle.
 
-| Phase | Description | Entry Condition | Exit Condition |
+| Status | Description | Entry Condition | Exit Condition |
 | :---- | :---- | :---- | :---- |
 | Creating | Workload setup is initiated in the cluster. Resources and pods are now provisioning. | A workload is submitted. | A multi-pod group is created. |
 | Pending | Workload is queued and awaiting resource allocation. | A pod group exists. | All pods are scheduled. |
@@ -191,15 +191,16 @@ Go to the [Workloads](https://app.run.ai/api/docs#tag/Workloads) API reference t
 
 ## Troubleshooting
 
-To understand the condition of the workload, review the workload status in the Workload table. For additional information check the workload’s [event history](../../admin/maintenance/audit-log.md) for more details.
+To understand the condition of the workload, review the workload status in the Workload table. For more information, see check the workload’s [event history](../../admin/maintenance/audit-log.md).
 
 Listed below are a number of known issues when working with workloads and how to fix them:
 
 | Issue | Mediation |
 | :---- | :---- |
-| Cluster connectivity issues (there are issues with your connection to the cluster error message.) | Verify that you are on a network that has been granted access to the cluster Reach out to your cluster admin for instructions on verifying this If you are an admin, see the [troubleshooting](../../admin/config/clusters.md#troubleshooting) section in the cluster documentation |
-| Workload in “Initializing” status for some time | Check that you have access to the Container image registry Check the statuses of the pods in the pods’ modal Check the event history for more details |
-| Workload has been pending for some time | Check that you have the required quota Check the project’s available quota in the projects modal Check that all services needed to run are bound to the workload Check the event history for more details |
-| PVCs created using the K8s API or `kubectl` are not visible or mountable in Run:ai. | This is by design, you must create a data source in Run:ai, then select an existing PVC, choosing the PVC you created manually. You are then able to select and mount this PVC in your Run:ai submitted workloads. |
-| Workload is not visible in the UI. | Check that the workload hasn’t been deleted See the “Deleted” tab in the workloads view |
+| Cluster connectivity issues (there are issues with your connection to the cluster error message)| Verify that you are on a network that has been granted access to the cluster. <br> Reach out to your cluster admin for instructions on verifying this. <br> If you are an admin, see the [troubleshooting](../../admin/config/clusters.md#troubleshooting) section in the cluster documentation |
+| Workload in “Initializing” status for some time | Check that you have access to the Container image registry. <br> Check the statuses of the pods in the pods’ modal. <br> Check the event history for more details |
+| Workload has been pending for some time | Check that you have the required quota. <br> Check the project’s available quota in the project dialog. <br> Check that all services needed to run are bound to the workload. <br> Check the event history for more details. |
+| PVCs created using the K8s API or `kubectl` are not visible or mountable in Run:ai. | This is by design. <br> - Create a new data source of type PVC in the Run:ai UI <br> - In the Data mount section, select Existing PVC <br> - Select the PVC you created via the K8S API <br> You are now able to select and mount this PVC in your Run:ai submitted workloads. |
+| Workload is not visible in the UI. | Check that the workload hasn’t been deleted. <br> See the “Deleted” tab in the workloads view |
+
 
