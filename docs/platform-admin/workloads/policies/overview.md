@@ -10,7 +10,7 @@ A workload policy is an end-to-end solution for AI managers and administrators t
 
 Run:ai provides two policy technologies.
 
-[**YAML-Based policies**](policies.md) are the older policies. These policies:
+[**YAML-Based policies**](old-policies.md) are the older policies. These policies:
 
 * Require access to Kubernetes to view or change.
 * Contact Run:ai support to convert the old policies to the new V2 policies format.

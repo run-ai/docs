@@ -180,9 +180,9 @@ To submit a workload using the UI:
 
 ## Workload Policies
 
-As an administrator, you can set *Policies* on Workloads.  Policies allow administrators to *impose restrictions* and set *default values* for Researcher Workloads. For more information see [Workload Policies](../workloads/policies/policies.md).
+As an administrator, you can set *Policies* on Workloads.  Policies allow administrators to *impose restrictions* and set *default values* for Researcher Workloads. For more information see [Workload Policies](../workloads/policies/overview.md).
 
-## Worklaod Ownership Protection
+## Workload Ownership Protection
 
 Workload ownership protection in Run:ai ensures that only users who created a workload can delete or modify them. This feature is designed to safeguard important jobs and configurations from accidental or unauthorized modifications by users who did not originally create the workload.
 
