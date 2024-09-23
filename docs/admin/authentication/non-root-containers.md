@@ -50,7 +50,7 @@ then verify that you cannot run `su` to become root within the container.
 ### Setting a Cluster-Wide Default
 
 
-The two flags are voluntary. They are not enforced by the system. It is however possible to enforce them using [Policies](../../platform-admin/workloads/policies/policies.md). Policies allow an Administrator to force compliance on both the User Interface and Command-line interface.
+The two flags are voluntary. They are not enforced by the system. It is however possible to enforce them using [Policies](../../platform-admin/workloads/policies/overview.md). Policies allow an Administrator to force compliance on both the User Interface and Command-line interface.
 
 
 ## Passing user identity

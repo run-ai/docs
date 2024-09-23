@@ -78,8 +78,8 @@ date: 2023-Dec-3
 #### Policies
 
 * <!-- RUN-12698/RUN-12699 -->During Workspaces and Training creation, assets that do not comply with policies cannot be selected. These assets are greyed out and have a button on the cards when the item does not comply with a configured policy. The button displays information about which policies are non-compliant.
-* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../platform-admin/workloads/policies/policies.md#prevent-data-storage-on-the-node).
-* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../platform-admin/workloads/policies/policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
+* <!-- RUN-10622/RUN-10625 Policy blocks workloads that attempt to store data on the node-->Added configuration options to *Policies* in order to prevent the submission of workloads that use data sources of type `host path`. This prevents data from being stored on the node, so that data is not lost when a node is deleted. For configuration information, see [Prevent Data Storage on the Node](../platform-admin/workloads/policies/old-policies.md#prevent-data-storage-on-the-node).
+* <!-- RUN-10575/RUN-10579 Add numeric rules in the policy to GPU memory, CPU memory & CPU -->Improved flexibility when creating policies which provide the ability to allocate a `min` and a `max` value for CPU and GPU memory. For configuration information, see [GPU and CPU memory limits](../platform-admin/workloads/policies/old-policies.md#gpu-and-cpu-memory-limits) in *Configuring policies*.
 
 #### Nodes and Node Pools
 
