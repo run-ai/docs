@@ -96,7 +96,7 @@ When a workload is submitted, it goes to the chosen Kubernetes cluster, and the 
 
 The Scheduler’s main role is to find the best-suited node or nodes for each submitted workload, so that those nodes match the resources and other characteristics requested by the workload while adhering to the quota and fairness principles of the Run:ai system. A workload can be a single pod running on a single node, or a distributed workload using multiple pods, each running on a node (or part of a node). It is not rare to find large training workloads using 128 nodes and even more, or inference workloads using multiple pods and nodes. There are numerous types of workloads, some are Kubernetes native and some are 3rd party extensions on top of Kubernetes native pods.  The Run:ai Scheduler schedules any Kubernetes native workloads, Run:ai workloads, or any type of 3rd party workload.
 
-## Scopes in an organization
+## Scopes in the organization
 
 This is an example of an organization, as represented in the Run:ai platform:
 
@@ -107,12 +107,13 @@ The organizational tree is structured from top down under a single node headed b
 !!! Note
     Different [roles and permissions](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) can be granted to specific clusters, departments and projects within an organization.
 
-After mapping and building your hierarchal structured organization as shown above, you can assign or associate various Run:ai components (e.g. workloads, roles, assets, policies, and more) to **different parts** of the organization - these organizational parts are the **Scopes.**  
+The organizational tree is structured from top down under a single node headed by the account. The account is comprised of clusters, departments and projects.
 
+After mapping and building your hierarchal structured organization as shown above, you can assign or associate various Run:ai components (e.g. workloads, roles, assets, policies, and more) to __different parts__ of the organization - these organizational parts are the __Scopes__.
 The following organizational example consists of 5 optional scopes:
 
 ![](img/scope-example.png)
 
 !!! Note
-    When a scope is selected, the very same unit, including all of its subordinates (both existing and any future subordinates, if added), are selected as well
+    When a scope is selected, the very same unit, including all of its subordinates (both existing and any future subordinates, if added), are selected as well.
 
