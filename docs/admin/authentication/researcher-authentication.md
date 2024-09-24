@@ -144,6 +144,9 @@ When making changes to the file, keep a copy of the original file to be used for
 * Under the `~/.kube` directory edit the `config` file, remove the administrative user, and replace it with text from `Settings | General | Researcher Authentication` | `Client Configuration`.
 * Under `contexts | context | user` change the user to `runai-authenticated-user`.
 
+  !!! Important Security Note
+    * After adding the new user, **ensure to delete the following fields from the kubeconfig file** to prevent unauthorized access: - **Delete**: `client-certificate-data`- **Delete**: `client-key-data`- **Remove**: Any references to the `admin` user.
+
 ## Test via Command-line interface
 
 * Run: `runai login` (in OpenShift environments use `oc login` rather than `runai login`).
