@@ -156,7 +156,6 @@ compute:
           instances:
             canAdd: false
     ```
-    
 
 
 ??? "Environment creation (specific section)" 
@@ -184,6 +183,77 @@ compute:
           max: 32700
         allowPrivilegeEscalation:
           canEdit: false
+    ```
+
+??? "Policy for distributed training workloads (specific section)" 
+
+    __Best practice description__: Set rules and defaults for a distributed training workload with different settings for master and worker 
+
+    ``` yaml
+    defaults:
+      worker:
+        command: my-command-worker-1
+        environmentVariables:
+          instances:
+            - name: LOG_DIR
+              value: policy-worker-to-be-ignored
+            - name: ADDED_VAR
+              value: policy-worker-added
+       security:
+        runAsUid: 500
+      storage:
+         s3:
+         attributes:
+           bucket: bucket1-worker
+     master:
+       command: my-command-master-2
+       environmentVariables:
+         instances:
+           - name: LOG_DIR
+             value: policy-master-to-be-ignored
+           - name: ADDED_VAR
+             value: policy-master-added
+        security:
+          runAsUid: 800
+        storage:
+         s3:
+           attributes:
+             bucket: bucket1-master
+     rules:
+       worker:
+         command:
+           options:
+             - value: my-command-worker-1
+               displayed: command1
+             - value: my-command-worker-2
+               displayed: command2
+         storage:
+           nfs:
+             instances:
+               canAdd: false
+           s3:
+             attributes:
+               bucket:
+                 options:
+                   - value: bucket1-worker
+                   - value: bucket2-worker
+       master:
+         command:
+           options:
+             - value: my-command-master-1
+               displayed: command1
+             - value: my-command-master-2
+               displayed: command2
+         storage:
+           nfs:
+             instances:
+               canAdd: false
+           s3:
+             attributes:
+               bucket:
+                 options:
+                   - value: bucket1-master
+                   - value: bucket2-master
     ```
 
 ??? "Impose an asset (specific section)"
