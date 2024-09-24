@@ -88,8 +88,10 @@ The different scoping of policies also allows the breakdown of the responsibilit
 ![](img/effective-policy.png)
 
 !!! Note
-     If a rule for a specific field is already occupied by a policy in the organization, another unit within the same branch cannot submit an additional rule on the same field. As a result, administrators of higher scopes must request lower-scope administrators to free up the specific rule from their policy. However, defaults of the same field can be submitted by different organizational policies, as they are “soft” rules that are not critical to override, and the smallest level of the default is the one that becomes the effective default (project default‚ ”wins” vs department default, department default “wins” vs cluster default etc.).
-
+     From v2.19, if there are 2 rules, the new policy is not blocked from submission, and the new rule is regarded as follows:
+1. If the rule belongs to the group of computation resources or security rules - the highest hierarchy wins (tenant > cluster > department > project).
+2. If the rule does not belong to the group of computation resources or security rules - the lowest hierarchy “closest” to the actual workload wins (similar to defaults).
+As previously, while viewing the policy, each rule has the source of the rule present, allowing the user to understand the hierarchy of the effective policy.
 
 ## Run:ai Policies vs. Kyverno Policies
 
