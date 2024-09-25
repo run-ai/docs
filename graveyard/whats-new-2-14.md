@@ -22,7 +22,7 @@ TODO Add RBAC old--new conversion table here. -->
 
 ### Scheduler
 
-* Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one *Department* may preempt in-quota smaller workloads from another *Department*. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota/over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md#fairness).
+* Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one *Department* may preempt in-quota smaller workloads from another *Department*. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota/over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md).
 
 ### Ephemeral volumes
 
