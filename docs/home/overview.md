@@ -12,7 +12,7 @@ The Run:ai documentation is targeting four personas:
 
 * __Researcher__ — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
 
-* __Developer__ — Using various APIs to manipulate Workloads, deploy models, and integrate with other systems. Developer documentation can be found [here](../developer/overview-developer.md).
+* __Developer__ — Using various APIs to automate work with Run:ai. Developer documentation can be found [here](../developer/overview-developer.md).
 
 ## How to Get Support
 
@@ -28,7 +28,7 @@ To get support use the following channels:
 
 ## Community 
 
-Run:ai provides its customers with access to the _Run:ai Customer _Community portal_ to submit tickets, track ticket progress and update support cases.
+Run:ai provides its customers with access to the _Run:ai Customer Community portal_ to submit tickets, track ticket progress and update support cases.
 
 [Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
 
