@@ -66,6 +66,7 @@ Use the *Jobs form* below if you have not enabled the *Workloads* feature.
 
          1. Press *Commands and Arguments* to add special commands and arguments to your environment selection.
          2. Press *Environment variable* to add an environment variable. Press again if you need more environment variables.
+         3. You can configure a new *Environment variable* from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials - the predefined credentials name in the system and the available key types are displayed as an option.
 
       6. Select a compute resource from the tiles. If your compute resource is not listed, use the *Search compute resources* box to find it. Press *New compute resource* to create a compute resource if needed.
       7. Open the *Volume* pane, and press *Volume* to add a volume to your workspace.
