@@ -87,9 +87,17 @@ The different scoping of policies also allows the breakdown of the responsibilit
 
 ![](img/effective-policy.png)
 
-!!! Note
-     If a rule for a specific field is already occupied by a policy in the organization, another unit within the same branch cannot submit an additional rule on the same field. As a result, administrators of higher scopes must request lower-scope administrators to free up the specific rule from their policy. However, defaults of the same field can be submitted by different organizational policies, as they are “soft” rules that are not critical to override, and the smallest level of the default is the one that becomes the effective default (project default‚ ”wins” vs department default, department default “wins” vs cluster default etc.).
+#### Policy rules reconciliation
 
+For situations where a rule or a default for a specific field is already occupied by a policy in the organization, we have introduced a reonciliation mechanism. The mechanism works as follows:
+
+* For rules and defaults - If the rule is already occupied by a previous policy, the new policy submission is not blocked.
+* For defaults - The lowest hierarchy “closest” to the actual workload wins (projects defaults > department defaults > cluster defaults > tenants defaults).
+* For rules:
+  * If the rule belongs to the group of computatation resources or security rules - the highest hierarchy wins (tenant rules > cluster rules > department rules > project rules).
+  * If the rule does not belong to the group of computation resources or security rules - the lowest hierarchy “closest” to the actual workload wins (similar to defaults).
+
+While viewing the policy, for each rule and default the source of the rule is visible, allowing the user to understand the hierarchy of the effective policy.
 
 ## Run:ai Policies vs. Kyverno Policies
 
