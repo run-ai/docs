@@ -1,228 +1,201 @@
-# Introduction
+  
+Each time a user submits a workload via the Run:ai platform, through a 3rd party framework, or directly to Kubernetes APIs, the submitted workload goes to the selected Kubernetes cluster, and is handled by the Run:ai Scheduler.
 
-At the heart of the Run:ai solution is the Run:ai scheduler. The scheduler is the gatekeeper of your organization's hardware resources. It makes decisions on resource allocations according to pre-created rules.
+The Scheduler’s main role is to find the best-suited node or nodes for each submitted workload. The nodes must match the resources and other characteristics requested by the workload, while adhering to the quota and fairness principles of the Run:ai platform. A workload can be a single pod running on a single node, or a distributed workload using multiple pods, each running on a node (or part of a node). It is not rare to find large training workloads using 128 nodes and even more, or inference workloads using many pods (replicas) and nodes. There are numerous types of workloads, some are Kubernetes native and some are 3rd party extensions on top of Kubernetes native pods. The Run:ai Scheduler schedules any Kubernetes native workloads, Run:ai workloads, or any other type of 3rd party workload.
 
-The purpose of this document is to describe the Run:ai scheduler and explain how resource management works.
+## Scheduler basics
 
-## Terminology
+Set out below are some basic terms and information regarding the Run:ai Scheduler.
 
-### Workload Types
+### Terminology
 
-Run:ai differentiates between three types of deep learning workloads:
+This section describes the terminology and building blocks of the Run:ai scheduler, it also explains some of the scheduling principles used by the Run:ai scheduler.
 
-* **Interactive** build workloads. With these types of workloads, the data scientist opens an interactive session, via bash, Jupyter notebook, remote PyCharm, or similar and accesses GPU resources directly. Build workloads typically do not tax the GPU for a long duration. There are also typically real users behind an interactive workload that need an immediate scheduling response.
-* **Unattended** (or "non-interactive") training workloads. Training is characterized by a deep learning run that has a start and a finish. With these types of workloads, the data scientist prepares a self-running workload and sends it for execution. Training workloads typically utilize large percentages of the GPU. During the execution, the Researcher can examine the results. A Training session can take anything from a few minutes to a couple of weeks. It can be interrupted in the middle and later restored.
-It follows that a good practice for the Researcher is to save checkpoints and allow the code to restore from the last checkpoint.
+#### Workloads and Pod-Groups
 
-* **Inference** workloads. These are production workloads that serve requests. The Run:ai scheduler treats these workloads as *Interactive* workloads.
+The Run:ai scheduler attaches any newly created pod to a pod-group. A pod-group may contain one or more pods representing a workload. For example, if the submitted workload is a PyTorch distributed training with 32 workers, a single pod-group is created for the entire workload, and all pods are then attached to the pod-group with certain rules that may apply to the pod-group itself, for example, _gang scheduling_.
 
-### Projects
+#### Scheduling queue
 
-Projects are quota entities that associate a Project name with a **deserved** GPU quota as well as other preferences.
+A scheduling queue (or simply a queue) represents a scheduler primitive that manages the scheduling of workloads based on different parameters. A queue is created for each project/node pool pair and department/node pool pair. The Run:ai scheduler supports hierarchical queueing, project queues are bound to department queues, per node pool. This allows an organization to manage quota, over-quota, and other characteristics for projects and their associated departments.
 
-A Researcher submitting a workload must associate a Project with any workload request. The Run:ai scheduler will then compare the request against the current allocations and the Project's deserved quota and determine whether the workload can be allocated with resources or whether it should remain in a pending state.
+#### Priority and Preemption
 
-For further information on Projects and how to configure them, see: [Working with Projects](../../platform-admin/aiinitiatives/org/projects.md)
+Run:ai supports scheduling workloads using different priorities and preemption policies. In the Run:ai scheduling system, higher priority workloads (pods) may preempt lower priority workloads (pods) __within the same__ scheduling queue (project), according to their Preemption policy. Run:ai Scheduler implicitly assumes any PriorityClass >= 100 is non-preemptible and any PriorityClass < 100 is preemptible.
 
-### Departments
+Cross project and cross department workload preemptions are referred to as _Resource reclaim_ and are based on fairness between queues rather than the priority of the workloads.
 
-A *Department* is the second hierarchy of resource allocation above *Project*. A Department quota supersedes a Project quota in the sense that if the sum of Project quotas for Department A exceeds the Department quota -- the scheduler will use the Department quota rather than the Projects' quota.  
+To make it easier for users to submit AI workloads, Run:ai preconfigured several Kubernetes PriorityClass objects, the Run:ai preset PriorityClass objects have their _preemptionPolicy_ always set to _PreemptLowerPriority_, regardless of their actual Run:ai preemption policy within the Run:ai platform.
 
-For further information on Departments and how to configure them, see: [Working with Departments](../../platform-admin/aiinitiatives/org/departments.md)
+| PriorityClass Name | PriorityClass | Run:ai preemption policy | K8S preemption policy |
+| ----- | ----- | ----- | ----- |
+| Inference | 125 | Non-preemptible | PreemptLowerPriority |
+| Build | 100 | Non-preemptible | PreemptLowerPriority |
+| Interactive-preemptible | 75 | Preemptible | PreemptLowerPriority |
+| Train | 50 | Preemptible | PreemptLowerPriority |
 
-### Pods
+#### Quota
 
-*Pods* are units of work within a Job.
+Each project and department includes a set of guaranteed resource quotas per node pool per resource type. For example, Project LLM-Train/Node Pool NV-H100 quota parameters specify the number of GPUs, CPUs(cores), and the amount of CPU memory that this project guarantees for that node pool.
 
-* Typically, each Job has a single Pod. However, in some scenarios (see Hyperparameter Optimization and Distribute Training below) there will be multiple Pods per Job.
-* All Pods execute with the same arguments as added via ``runai submit``. E.g. The same image name, the same code script, the same number of Allocated GPUs, memory.
+#### Over-quota
 
-## Basic Scheduling Concepts
+Projects and departments can have a share in the unused resources of any node pool, beyond their quota of resources. We name these resources as over quota resources. The admin configures the over-quota parameters per node pool for each project and department.
 
-### Interactive, Training and Inference
+#### Over quota priority
 
-The Researcher uses the *--interactive* flag to specify whether the workload is an unattended "train" workload or an interactive "build" workload.
+Projects can receive a share of the cluster/node pool unused resources when the over-quota priority setting is enabled, the part each Project receives depends on its over-quota priority value, and the total weights of all other projects’ over-quota priorities. The admin configures the over-quota priority parameters per node pool for each project and department.
 
-* Interactive & Inference workloads will get precedence over training workloads.
-* Training workloads can be preempted when the scheduler determines a more urgent need for resources. Interactive workloads are never preempted.
+#### Fairshare and fairshare balancing
 
-### Guaranteed Quota and Over-Quota
+Run:ai Scheduler calculates a numerical value per project (or department) for each node-pool, representing the project’s (department’s) sum of guaranteed resources plus the portion of non-guaranteed resources in that node pool. We name this value fairshare.
 
-There are two use cases for Quota and Over-Quota:
+The scheduler strives to provide each project (or department) the resources they deserve using two main parameters - deserved quota and deserved fairshare (i.e. quota + over quota resources), this is done per node pool. If one project’s node pool queue is below fairshare and another project’s node pool queue is above fairshare, the scheduler shifts resources between queues to balance fairness; this may result in the preemption of some over-quota preemptible workloads.
 
-**Node pools are disabled**
+#### Over-subscription
 
-Every new workload is associated with a Project. The Project contains a deserved GPU quota. During scheduling:
+Over-subscription is a scenario where the sum of all guaranteed resource quotas surpasses the physical resources of the cluster or node pool. In this case, there may be scenarios in which the scheduler cannot find matching nodes to all workload requests, even if those requests were within the resource quota of their associated projects.
 
-* If the newly required resources, together with currently used resources, end up within the Project's quota, then the workload is ready to be scheduled as part of the guaranteed quota.
-* If the newly required resources together with currently used resources end up above the Project's quota, the workload will only be scheduled if there are 'spare' GPU resources. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made fully of interactive workloads. For additional details see below.
+#### Gang scheduling
 
-**Node pools are enabled**
+Gang scheduling describes a scheduling principle where a workload composed of multiple pods is either fully scheduled (i.e. all pods are scheduled and running) or fully pending (i.e. all pods are not running). Gang scheduling refers to a single pod group.
 
-Every new workload is associated with a Project. The Project contains a deserved GPU quota that is the sum of all node pools GPU quotas. During scheduling:
+#### Fairness (fair resource distribution)
 
-* If the newly required resources, together with currently used resources, end up within the overall Project's quota and the requested node pool(s) quota, then the workload is ready to be scheduled as part of the guaranteed quota.
-* If the newly required resources together with currently used resources end up above the Project's quota or the requested node pool(s) quota, the workload will only be scheduled if there are 'spare' GPU resources within the same node pool but not part of this Project. There are nuances in this flow that are meant to ensure that a Project does not end up with an over-quota made entirely of interactive workloads. For additional details see below.
+Fairness is a major principle within the Run:ai scheduling system. In essence, it means that the Run:ai Scheduler always respects certain resource splitting rules (fairness) between projects and between departments.
 
-### Limit Quota Over or Under Subscription
+#### Preemption of lower priority workloads within a project
 
-Run:ai provides the ability to limit over subscription of quotas by *Projects* or *Departments*.
+Workload priority is always respected within a project. This means higher priority workloads are scheduled before lower priority workloads, it also means that higher priority workloads may preempt lower priority workloads within the same project __if the lower priority workloads are preemptible__.
 
-Over quota will be limited under the following circumstances:
+#### Reclaim of resources between projects and departments
 
-* If a project’s quota request (with or without nodepools) increases the sum of all the department projects quotas to more than the department quota (for GPU and CPU, compute and memory).
-* If a department’s quota decrease request (with or without nodepools) causes the sum of all projects quotas to surpass the department quota (for GPU and CPU, compute and memory).
-* If a project’s quota decrease request (with or without nodepools) causes the sum of all allocated non-preemptible workloads in that project to surpass it (for GPU and CPU, compute and memory).
+Reclaim is an inter-project (and inter-department) scheduling action that takes back resources from one project (or department) that has used them as over-quota, back to a project (or department) that deserves those resources as part of its guaranteed quota, or to balance fairness between projects, each to its fairshare (i.e. sharing fairly the portion of the unused resources).
 
-To configure limiting over or under quota subscriptions:
+#### Multi-Level quota system
 
-1. Press the *Tools and settings* icon, then go to *General*.
-2. Enable the *Limit quota over/under subscription* toggle.
+Each project has a set of guaranteed resource quotas (GPUs, CPUs, and CPU memory) per node pool. Projects can go over-quota and get a share of the unused resources (over-quota) in a node pool beyond their guaranteed quota in that node pool. __The same applies to Departments__. The Scheduler balances the amount of over quota between departments, and then between projects.
 
-To disable the limiting of over quota subscription, disable the toggle.
+#### Placement strategy - bin-pack and spread
 
-### Quota with Multiple Resources
+The admin can set per node pool placement strategy of the scheduler for GPU based workloads and for CPU-only based workloads.
 
-A project may have a quota set for more than one resource (GPU, CPU or CPU Memory). For a project to be "Over-quota" it will have to have at *least one* resource over its quota. For a project to be under-quota it needs to have *all of its* resources under-quota.
+Each type’s strategy can be either bin-pack or spread.
 
-## Scheduler Details
+GPU workloads:
 
-### Allocation & Preemption
+* Bin-pack means the Scheduler places as many workloads as possible in each GPU and each node to use fewer resources and maximize GPU and node vacancy.  
+* Spread means the Scheduler spreads workloads across as many GPUs and nodes as possible to minimize the load and maximize the available resources per workload.  
+* GPU workloads are workloads that request both GPU and CPU resources.
 
-The Run:ai scheduler wakes up periodically to perform allocation tasks on pending workloads:
+CPU workloads:
 
-* The scheduler looks at each Project separately and selects the most 'deprived' Project.
-* For this deprived Project it chooses a single workload to work on:
+* Bin-pack means the scheduler places as many workloads as possible in each CPU and node to use fewer resources and maximize CPU and node vacancy.  
+* Spread means the scheduler spreads workloads across as many CPUs and nodes as possible to minimize the load and maximize the available resources per workload.  
+* CPU workloads are workloads that request only CPU resources
 
-    * Interactive & Inference workloads are tried first, but only up to the Project's guaranteed quota. If such a workload exists, it is scheduled even if it means **preempting** a running unattended workload in this Project.
-    * Else, it looks for an unattended workload and schedules it on guaranteed quota or over-quota.
+## Scheduler deep dive
 
-* The scheduler then recalculates the next 'deprived' Project and continues with the same flow until it finishes attempting to schedule all workloads
+### Allocation
 
-### Node Pools
+When a user submits a workload, the workload controller creates a pod or pods (for distributed training workloads or a deployment based Inference). When the scheduler gets a submit request with the first pod, it creates a pod group and allocates all the relevant building blocks of that workload. The next pods of the same workload are attached to the same pod group.
 
-A *Node Pool* is a set of nodes grouped by an Administrator into a distinct group of resources from which resources can be allocated to Projects and Departments.
-By default, any node pool created in the system is automatically associated with all Projects and Departments using zero quota resource (GPUs, CPUs, Memory) allocation. This allows any Project and Department to use any node pool with Over-Quota (for Preemptible workloads), thus maximizing the system resource utilization.
+A workload, with its associated pod group, is queued in the appropriate queue. In every scheduling cycle, the Scheduler ranks the order of queues by calculating their precedence for scheduling.
 
-* An Administrator can allocate resources from a specific node pool to chosen Projects and Departments. See [Project Scheduling Rules](../../platform-admin/aiinitiatives/org/scheduling-rules.md)
-* The Researcher can use node pools in two ways. The first one is where a Project has guaranteed resources on node pools - The Researcher can then submit a workload and specify a single node pool or a prioritized list of node pools to use and receive guaranteed resources.
-The second is by using node-pool(s) with no guaranteed resource for that Project (zero allocated resources), and in practice using Over-Quota resources of node-pools. This means a Workload must be Preemptible as it uses resources out of the Project or node pool quota. The same scenario occurs if a Researcher uses more resources than allocated to a specific node pool and goes Over-Quota.
-* By default, if a Researcher doesn't specify a node-pool to use by a workload, the scheduler assigns the workload to run using the Project's 'Default node-pool list'.
+The next step is for the scheduler to find nodes for those pods, assign the pods to their nodes (bind operation), and bind other building blocks of the pods such as storage, ingress etc.
 
-### Node Affinity
+If the pod-group has a _gang scheduling_ rule attached to it, the scheduler either allocates and binds all pods together, or puts all of them into the pending state. It retries to schedule them all together in the next scheduling cycle.
 
-Both the Administrator and the Researcher can provide limitations as to which nodes can be selected for the Job. Limits are managed via [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){target=_blank}:
+The scheduler also updates the status of the pods and their associate pod group, users are able to track the workload submission process both in the CLI or Run:ai UI.
 
-* The Administrator can set limits at the Project level. Example: Project `team-a` can only run `interactive` Jobs on machines with a label of `v-100` or `a-100`. See [Project Scheduling Rules](../../platform-admin/aiinitiatives/org/scheduling-rules.md) for more information.
-* The Researcher can set a limit at the Job level, by using the command-line interface flag `--node-type`. The flag acts as a subset to the Project setting.
+### Preemption
 
-Node affinity constraints are used during the *Allocation* phase to filter out candidate nodes for running the Job. For more information on how nodes are filtered see the `Filtering` section under [Node selection in kube-scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/#kube-scheduler-implementation){target=_blank}. The Run:ai scheduler works similarly.
+If the scheduler cannot find resources for the submitted workloads (and all of its associated pods), and the workload deserves resources either because it is under its queue quota or under its queue fairshare, the scheduler tries to reclaim resources from other queues; if this doesn’t solve the resources issue, the scheduler tries to preempt lower priority preemptible workloads within the same queue.
 
-### Reclaim
+#### Reclaim preemption between projects (and departments)
 
-During the above process, there may be a pending workload whose Project is below the deserved capacity. Still, it cannot be allocated due to the lack of GPU resources. The scheduler will then look for alternative allocations at the expense of another Project which has gone over-quota while preserving fairness between Projects.
+Reclaim is an inter-project (and inter-department) resource balancing action that takes back resources from one project (or department) that has used them as an over-quota, back to a project (or department) that deserves those resources as part of its deserved quota, or to balance fairness between projects (or departments), so a project (or department) doesn’t exceed its fairshare (portion of the unused resources).
 
-### Fairness
-
-The Run:ai scheduler determines fairness between multiple over-quota Projects according to their GPU quota. Consider for example two Projects, each spawning a significant amount of workloads (e.g. for Hyperparameter tuning) all of which wait in the queue to be executed. The Run:ai Scheduler allocates resources while preserving fairness between the different Projects regardless of the time they entered the system. The fairness works according to the **relative portion of the GPU quota for each Project.** To further illustrate that, suppose that:
-
-* Project A has been allocated a quota of 3 GPUs.
-* Project B has been allocated a quota of 1 GPU.
-
-Then, if both Projects go over-quota, Project A will receive 75% (=3/(1+3)) of the idle GPUs and Project B will receive 25% (=1/(1+3)) of the idle GPUs. This ratio will be recalculated every time a new Job is submitted to the system or an existing Job ends.
-
-This fairness equivalence will also be maintained amongst **running** Jobs. The scheduler will preempt training sessions to maintain this balance.
-
-Large distributed workloads from one *Department* may be able to preempt smaller workloads from another Department. You can preserve in-quota workloads even if the department quota or over-quota-fairness is not preserved. This is done by adding the following to the `Spec:` section of the `RunaiConfig` file:
-
-```
-runai-scheduler:
-     disable_department_fairness: false
-     fullHierarchyFairness: false
-```
-
-If you want to change the behavior of the scheduler so that you always preserve project guaranteed quota, change `runaiconfig.disable_department_fairness` to TRUE.
-This behavior allows you to go back to the original current behavior.
-
-By default, the Run:ai software at the cluster level maintains the current fairness mode after an upgrade. To change to the fairness mode, the Admin must change the `RunaiConfig file and change the parameters above.
-
-### Over-Quota Priority
-
-*Over-Quota Priority* prioritizes the distribution of unused resources so that they are allocated to departments and projects fairly. Priority is determined by an assigned weight. *Over-Quota Priority* values are translated into numeric values as follows: None-0, Low-1, Medium-2, High-3.
-
-**For *Projects***
-
-When *Over-Quota Priority* is enabled, the excess resources are split between the Projects according to the over-quota-priority weight set by the admin. When *Over-Quota Priority* is disabled, excess resources are split between the Projects according to weights, and the weights are equal to the deserved quota. This means Projects with a higher deserved quota will get a larger portion of the unused resources.
-
-An example with Over-Quota Weights for projects:
-
-* Project A has been allocated with a quota of 3 GPUs and GPU over-quota weight is set to Low.
-* Project B has been allocated with a quota of 1 GPU and GPU over-quota weight is set to High.
-
-**For *Departments***
-
-When *Departments* are enabled, excess resources are first split to the departments, then internally to the projects.Excess resources between Departments are always split between departments according to the weights which are equal to the deserved quota regardless of the Over-Quota-Priority flag.
-
-Then, Project A is allocated with 3 GPUs and project B is allocated with 1 GPU. If both Projects go over-quota, Project A will receive an additional 25% (=1/(1+3)) of the idle GPUs and Project B will receive an additional 75% (=3/(1+3)) of the idle GPUs.
-
-With the addition of node pools, the principles of Over-Quota and Over-Quota priority remain unchanged. However, the number of resources that are allocated with Over-Quota and Over-Quota Priority is calculated against node pool resources instead of the whole Project resources.
+This mode of operation means that a lower priority workload submitted in one project (e.g. training) can reclaim resources from a project that runs a higher priority workload (e.g. preemptive workspace) if fairness balancing is required.
 
 !!! Note
-    Over-Quota On/Off and Over-Quota Priority settings remain at the Project and Department level.  
+    Only preemptive workloads can go over-quota as they are susceptible to reclaim (cross-projects preemption) of the over-quota resources they are using. The amount of over-quota resources a project can gain depends on the over-quota priority or quota (if over-quota priority is disabled). Departments’ over-quota is always proportional to its quota.
 
-When the Over Quota Priority is disabled, over-quota weights are equal to deserved quota and any excess resources are divided in the same proportion as the in-quota resources.
+#### Priority preemption within a project
 
-### Bin-packing & Consolidation
+Higher priority workloads may preempt lower priority preemptible workloads within the same project/node pool queue. For example, in a project that runs a training workload that exceeds the project quota for a certain node pool, a newly submitted workspace within the same project/node pool may stop (preempt) the training workload if there are not enough over-quota resources for the project within that node pool to run both workloads (e.g. workspace using in-quota resources and training using over-quota resources).
 
-Part of an efficient scheduler is the ability to eliminate fragmentation:
+There is no priority notion between workloads of different projects.
 
-* The first step in avoiding fragmentation is bin packing: try and fill nodes (machines) up before allocating workloads to new machines.
-* The next step is to consolidate Jobs on demand. If a workload cannot be allocated due to fragmentation, the scheduler will try and move unattended workloads from node to node in order to get the required amount of GPUs to schedule the pending workload.
+### Quota, over-quota, and fairshare
 
-## Advanced
+Run:ai scheduler strives to ensure fairness between projects and between departments, this means each department and project always strive to get their deserved quota, and unused resources are split between projects according to known rules (e.g. over-quota weights).
 
-### GPU Fractions
+If a project needs more resources even beyond its fairshare, and the scheduler finds unused resources that no other project needs, this project can consume resources even beyond its fairshare.
 
-Run:ai provides a Fractional GPU sharing system for containerized workloads on Kubernetes. The system supports workloads running CUDA programs and is especially suited for lightweight AI tasks such as inference and model building. The fractional GPU system transparently gives data science and AI engineering teams the ability to run multiple workloads simultaneously on a single GPU.
+Some scenarios can prevent the scheduler from fully providing the deserved quota and fairness promise, such as fragmentation or other scheduling constraints like affinities, taints etc.
 
-Run:ai’s fractional GPU system effectively creates logical GPUs, with their own memory and computing space that containers can use and access as if they were self-contained processors.
+The example below illustrates a split of quota between different projects and departments, using several node pools:
 
-One important thing to note is that fraction scheduling divides up **GPU memory**. As such the GPU memory is divided up between Jobs. If a Job asks for 0.5 GPU, and the GPU has 32GB of memory, then the Job will see only 16GB. An attempt to allocate more than 16GB will result in an out-of-memory exception.
+__Legend:__
 
-GPU Fractions are scheduled as regular GPUs in the sense that:
+* __OQP__ = Over-quota priority
+* __OQ__ = Over-quota
 
-* Allocation is made using fractions such that the total of the GPU allocation for a single GPU is smaller or equal to 1.
-* Preemption is available for non-interactive workloads.  
-* Bin-packing & Consolidation work the same for fractions.
+![](img/quota-split.png)
 
-Support:
+The example below illustrates how fairshare is calculated per project/node pool and per department/node pool for the above example:
 
-* Hyperparameter Optimization supports fractions.
+![](img/fairshare.png)
 
-### Distributed Training
+The __Over quota (OQ)__ portion of each Project (per node pool) is calculated as:
 
-Distributed Training, is the ability to split the training of a model among multiple processors. It is often a necessity when multi-GPU training no longer applies; typically when you require more GPUs than exist on a single node. Each such split is a *pod* (see definition above). Run:ai spawns an additional *launcher* process that manages and coordinates the other worker pods.
+    [(OQ-Priority) / (Σ Projects OQ-Priorities)] x (Unused Resource per node pool)
 
-Distribute Training utilizes a practice sometimes known as **Gang Scheduling**:
+__Fairshare(FS)__ is calculated as: the sum of Quota + Over-Quota
 
-* The scheduler must ensure that multiple pods are started on what are typically multiple Nodes before the Job can start.
-* If one pod is preempted, the others are also immediately preempted.
-* When node pools are enabled, all pods must be scheduled to the same node pool.
+Let’s see how Project 2 __over quota__ and __fairshare__ are calculated:
 
-Gang Scheduling essentially prevents scenarios where part of the pods are scheduled while other pods belonging to the same Job are pending for resources to become available; scenarios that can cause deadlock situations and major inefficiencies in cluster utilization.
+For this example, we assume that out of the 40 available GPUs in node pool A, 20 GPUs are currently unused (unused means either not part of any project’s quota, or part of a project’s quota but not used by any workloads of that project).
 
-The Run:ai system provides:
+Project 2 __over quota__ share:
 
-* Inter-pod communication.
-* Command-line interface to access logs and an interactive shell.
+    [(Project 2 OQ-Priority) / (Σ all Projects OQ-Priorities)] x (Unused Resource within node pool A)
 
-For more information on Distributed Training in Run:ai see [here](../Walkthroughs/walkthrough-distributed-training.md)
+    [(3) / (2 + 3 + 1)] x (20) = (3/6) x 20 = 10 GPUs
 
-### Hyperparameter Optimization
+__Fairshare__ = deserved quota + over quota = 6 +10 = 16 GPUs
 
-Hyperparameter optimization (HPO) is the process of choosing a set of optimal hyperparameters for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, to define the model architecture or the data pre-processing process, etc. Example hyperparameters: learning rate, batch size, different optimizers, and the number of layers.
+Similarly, fairshare is also calculated for CPU and CPU memory.
 
-To search for good hyperparameters, Researchers typically start a series of small runs with different hyperparameter values, let them run for a while, and then examine the results to decide what works best.
+The scheduler can grant a project more resources than its fairshare if the scheduler finds resources not required by other projects that may deserve those resources.
 
-With HPO, the Researcher provides a single script that is used with multiple, varying, parameters. Each run is a *pod* (see definition above). Unlike Gang Scheduling, with HPO, pods are **independent**. They are scheduled independently, started, and end independently, and if preempted, the other pods are unaffected. The scheduling behavior for individual pods is exactly as described in the Scheduler Details section above for Jobs.
-In case node pools are enabled, if the HPO workload has been assigned with more than one node pool, the different pods might end up running on different node pools.
+One can also see in the above illustration that Project 3 has no guaranteed quota, but it still has a share of the excess resources in node pool A. Run:ai Scheduler ensures that Project 3 receives its part of the unused resources for over quota, even if this results in reclaiming resources from other projects and preempting preemptible workloads.
+
+### Fairshare balancing
+
+The Scheduler constantly re-calculates the fairshare of each project and department (per node pool, represented in the scheduler as queues), resulting in the re-balancing of resources between projects and between departments. This means that a preemptible workload that was granted resources to run in one scheduling cycle, can find itself preempted and go back to the pending state waiting for resources on the next cycle.
+
+A queue, representing a scheduler-managed object for each Project or Department per node pool, can be in one of 3 states:
+
+* __In-quota __ 
+  The *queue’s allocated resources* ≤ queue deserved quota  
+* __Over-quota (but below fairshare) __ 
+  The queue’s deserved quota < *queue’s allocates resources* <= queue’s fairshare  
+* __Over-Fairshare (and over-quota)__  
+  The queue’s fairshare < *queue’s allocated resources*
+
+![](img/queue.png)
+
+The scheduler’s first priority is to ensure each queue (representing a project/node pool or department/node pool scheduler object) receives its deserved quota. Then the scheduler tries to find and allocate more resources to queues that need resources beyond their deserved quota and up to their fairshare, finally, the scheduler tries to allocate resources to queues that need even more resources - beyond their fairshare.
+
+When re-balancing resources between queues of different projects and departments, the scheduler goes in the opposite direction, i.e. first take resources from over-fairshare queues, then from over-quota queues, and finally, in some scenarios, even from queues that are below their deserved quota.
+
+## Summary
+
+The scheduler’s role is to bind any submitted pod to a node that satisfies the pod’s requirements and constraints while adhering to the Run:ai quota and fairness system. In some scenarios, the scheduler finds a node for a pod (or nodes for a group of pods) immediately. In other scenarios, the scheduler has to preempt an already running workload to “make room”, while sometimes a workload becomes pending until resources are released by other workloads (e.g. wait for other workloads to terminate), and only then it is scheduled and run.
+
+Other than scenarios where the requested resources or other constraints cannot be met within the cluster, either because the resources physically don’t exist (e.g. a node with 16 GPUs, or a GPU with 200GB of memory), or a combination of constraints cannot be matched (e.g. a GPU with 80GB of memory together with a node with specific label or storage type), the scheduler eventually finds any workload its matching nodes to use, but this process may take some time.
+
+The Run:ai scheduler adheres to Kubernetes standard rules, but it also adds a layer of fairness between queues, queue hierarchy, node pools, and many more features, making the scheduling and Quota management more sophisticated, granular, and robust. The combination of these scheduler capabilities results in higher efficiency, scale, and maximization of cluster utilization.
+
