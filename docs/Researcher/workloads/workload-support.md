@@ -17,8 +17,8 @@ Different types of workloads have different levels of support. Understanding wha
 | ----- | :---: | :---: | :---: | :---: | ----- |
 |  | Run:ai workloads |  |  |  | Third-party workloads |
 |  | Training - Standard | Workspace | Inference | Training - distributed | All K8s workloads |
-| [Fairness](../../Researcher/scheduling/the-runai-scheduler.md#fairness) | v | v | v | v | v |
-| [Priority and preemption](../../Researcher/scheduling/the-runai-scheduler.md#allocation--preemption) | v | v | v | v | v |
+| [Fairness](../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v | v | v |
+| [Priority and preemption](../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v | v | v |
 | [Over quota](../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v | v | v |
 | [Node pools](../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v | v | v |
 | Bin packing / Spread | v | v | v | v | v |
@@ -27,7 +27,7 @@ Different types of workloads have different levels of support. Understanding wha
 | Node level scheduler | v | v | v | v | v |
 | GPU swap | v | v | v | v | v |
 | Elastic scaling | NA | NA | v | v | v |
-| [Gang scheduling](../../Researcher/scheduling/the-runai-scheduler.md#distributed-training) | v | v | v | v | v |
+| [Gang scheduling](../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v | v | v |
 | [Monitoring](../../admin/maintenance/alert-monitoring.md) | v | v | v | v | v |
 | [RBAC](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v | v |  |
 | Workload awareness | v | v | v | v |  |

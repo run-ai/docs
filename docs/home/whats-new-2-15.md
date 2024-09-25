@@ -87,9 +87,9 @@ date: 2023-Dec-3
 
 #### Quotas and Over-Quota
 
-* <!-- RUN-10251/RUN-10252 - Block over-subscription of quota by Projects/Departments- -->Improved control over how over-quota is managed by adding the ability to block over-subscription of the quota in *Projects* or *Departments*. For more information, see [Limit Over-Quota](../Researcher/scheduling/the-runai-scheduler.md#limit-quota-over-or-under-subscription).
+* <!-- RUN-10251/RUN-10252 - Block over-subscription of quota by Projects/Departments- -->Improved control over how over-quota is managed by adding the ability to block over-subscription of the quota in *Projects* or *Departments*. For more information, see [Limit Over-Quota](../Researcher/scheduling/the-runai-scheduler.md#over-quota).
 * <!-- RUN-13167/RUN-13168 Department Over-Quota Priority behavior -->Improved the scheduler fairness for departments using the `over quota priority` switch (in Settings). When the feature flag is disabled, over-quota weights are equal to the deserved quota and any excess resources are divided in the same proportion as the in-quota resources. For more information, see [Over Quota Priority](../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority).
-* Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one department may preempt in-quota smaller workloads from another department. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota or over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md#fairness).
+* Added new functionality to always guarantee in-quota workloads at the expense of inter-Department fairness. Large distributed workloads from one department may preempt in-quota smaller workloads from another department. This new setting in the `RunaiConfig` file preserves in-quota workloads, even if the department quota or over-quota-fairness is not preserved. For more information, see [Scheduler Fairness](../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution).
 
 <!-- #### Notifications
 
