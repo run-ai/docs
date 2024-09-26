@@ -20,7 +20,7 @@ Run:ai supports the following roles:
 | Data Volumes administrator | View Account, Department, Project, Jobs, Workloads, Cluster, Overview dashboard, Consumption dashboard, Analytics dashboard, Policies, Workloads, Workspaces, Trainings, Environments, Compute resources, Templates, Data source, Inferences |
 | Editor | View Screens and Dashboards Manage Departments and Projects Create Data Volumes |
 | Research manager | Create, view, edit and delete Environments, Data sources, Compute resources, Templates, Data Volumes (including sharing) and Projects View related Jobs, Workspaces and Dashboards |
-| L1 researcher | Create, view, edit and delete Jobs, Workspaces, Environments, Data sources, Compute resources, Templates and Data volumes View Dashboards |
+| L1 researcher | Create, view, edit and delete Jobs, Workspaces, Environments, Data sources, Compute resources, Templates, Data volumes and Deployments View Dashboards |
 | ML engineer | Create, edit, view ad delete Deployments View Departments, Projects, Clusters, Node pools, Nodes, Dashboards and Data Volumes |
 | Viewer | View Departments, Projects, Respective subordinates (Jobs, Deployments, Workspaces, Environments, Data sources, Compute resources, Templates), Dashboards and Data Volumes A viewer cannot edit Configurations |
 | L2 researcher | Create, view, edit, and delete Jobs, Workspaces An L2 researcher cannot create, edit, or delete Environments, Data sources, Compute resources, and Templates View Data Volumes |
