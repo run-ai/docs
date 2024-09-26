@@ -28,7 +28,7 @@ Environment administrator | Create, view, edit, and delete *Environments*.<br> V
 | Department administrator | Create, view, edit, and delete: *Departments* and *Projects*.<br>Assign *Roles (Researcher, ML engineer, Research manager, Viewer) within those departments and projects.<br>View *Dashboards* (including the *Consumption dashboard). |
 | Editor | View *Screens* and *Dashboards*<br>Manage *Departments* and *Projects*. |
 | Research manager | Create, view, edit, and delete: *Environments*, *Data sources*, *Compute resources*, *Templates* and *Projects*.<br>View related *Jobs* and *Workspaces*, and *Dashboards*. |
-| L1 researcher | Create, view, edit, delete: *Workspaces*, *Trainings*, *Environments*, *Data sources*, *Compute resources*, *Templates*, *Credentials* <br> View: *Clusters*, *Projects*, *Node pools*, *Inference*, *Policies*, *Dashboards* |
+| L1 researcher | Create, view, edit, delete: *Workspaces*, *Trainings*, *Environments*, *Data sources*, *Compute resources*, *Templates*, *Credentials*, *Deployments* <br> View: *Clusters*, *Projects*, *Node pools*, *Inference*, *Policies*, *Dashboards* |
 | ML engineer | Create, edit, view, and delete *Inference*.<br>View *Departments*, *Projects*, *Clusters*, *Node-pools*, *Nodes*, *Dashboards*. |
 | Viewer | View *Departments*, *Projects*, *Respective subordinates* (Jobs, Inference, Workspaces, Environments, Data sources, Compute resources, Templates), *Dashboards*.<br> A viewer cannot edit *Configurations*. |
 | L2 researcher | Create, view, edit, and delete *Jobs*, *Workspaces*.<br>An L2 researcher cannot create, edit, or delete *Environments*, *Data sources*, *Compute resources*, and *Templates*. |
