@@ -6,7 +6,7 @@ There are a number of matters to consider prior to upgrading the Run:ai cluster 
 
 ### Backup your cluster data
 
-Review the Backup & Restore [guide](./admin/config/dr.md) and ensure you know how to backup your data if needed.
+Review the Backup & Restore [guide](../config/dr.md) and ensure you know how to backup your data if needed.
 
 ### System and network requirements
 
