@@ -4,6 +4,10 @@ This article explains how to upgrade Run:ai cluster version.
 
 There are a number of matters to consider prior to upgrading the Run:ai cluster version.
 
+### Backup your cluster data
+
+Review the Backup & Restore [guide](../admin/config/dr.md) and ensure you know how to backup your data if needed.
+
 ### System and network requirements
 
 Before upgrading the Run:ai cluster, validate that the latest [system requirements](./cluster-prerequisites.md) and [network requirements](./network-req.md) are met, as they can change from time to time.
