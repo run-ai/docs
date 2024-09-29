@@ -18,7 +18,7 @@ See the Prerequisites section [above](prerequisites.md).
     Run the following to enable image download from the Run:ai Container Registry on Google cloud:
 
     ```
-    oc apply -f runai-gcr-secret.yaml -n runai-backend
+    oc apply -f runai-reg-creds.yaml -n runai-backend
     ```
 
 === "Airgapped"
