@@ -12,7 +12,7 @@ Follow the prerequisites as explained in [Self-Hosted installation over Kubernet
 ## Software artifacts
 
 === "Connected"
-    You should receive a file: `runai-gcr-secret.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
+    You should receive a file: `runai-reg-creds.yaml` from Run:ai Customer Support. The file provides access to the Run:ai Container registry.
 
     SSH into a node with `kubectl` access to the cluster and `Docker` installed.
     Run the following to enable image download from the Run:ai Container Registry on Google cloud:
