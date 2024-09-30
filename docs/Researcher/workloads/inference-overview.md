@@ -104,6 +104,15 @@ Starting version 2.19, all pods of a single KNative revision are grouped under a
 
 The resources (GPUs, CPUs) are not occupied by a new KNative revision until it succeeds in allocating all pods. The older revision pods are then terminated and release their resources (GPUs, CPUs) back to the cluster to be used by other workloads.
 
+## Securely sharing endpoints for internal consumers via API
+
+When securely sharing endpoints for consumers via API in Run:ai, it involves ensuring that services (such as inferencing) are accessible only to authorized users or services within a controlled environment. This typically includes the use of authentication mechanisms to regulate who can access specific resources. This is particularly necessary when you are handling sensitive information or when you want to limit the cost by sharing the service with a controlled group of consumers. 
+
+By default, the endpoint is open and there are no limitations on authentication of users. It is however, possible to define who can access the endpoint:
+* Specific users - the endpoints are only open to a list of specific users
+* Specific groups (GIDs) - the endpoints are only open to a list of specific users that are part of this groups
+
+
 ## See Also
 
 * To set up *Inference*, see [Cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
