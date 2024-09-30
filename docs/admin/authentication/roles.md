@@ -96,9 +96,9 @@ Run:ai supports the following roles and their permissions:
     * To allow the **Department Admin** to assign a **Researcher** role to a user, group or app, the **Department Admin** must have **VECD** permissions for jobs and workspaces. This creates a broader span of managed objects  
     * To preserve backwards compatibility, users with the role of **Editor**, are assigned to the same scope they had before the upgrade. However, with new user assignments, the **Admin** can limit the scope to only part of the organizational scope.
 
-## Managed workloads
+## Permitted workloads
 
-When assigning a role with View, Edit, Create and Delete permissions for workloads, the subject has permissions to manage not only Run:ai native workloads (Workspace, Training, Inference) but also a list of 3rd party workloads:
+When assigning a role with either one, all or any combination of the View, Edit, Create and Delete permissions for workloads, the subject has permissions to manage not only Run:ai native workloads (Workspace, Training, Inference), but also a list of 3rd party workloads:
 
 * k8s: StatefulSet
 * k8s: ReplicaSet
