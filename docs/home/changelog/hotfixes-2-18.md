@@ -15,7 +15,6 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-22054 | Fixed an issue where users could not attach to jobs. |
 | RUN-22377 | Removed uncached client from accessrule-controller. |
 | RUN-21697 | Fixed an issue where client may deadlock on suspension during allocation request. |
-| RUN-21404 | Fixed an issue of sporadic failures in consolidation e2e testing. |
 
 ## Version 2.18.45 
 
@@ -92,7 +91,6 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-20861 | Fixed an issue where a pod is stuck on pending due to a missing resource reservation pod. |
 | RUN-20842 | Fixed an issue of illegal model name with "." in hugging face integration. |
 | RUN-20791 | Fix an issue where notifications froze after startup. |
-| RUN-20842 | Fixed an issue of illegal model name with "." in hugging face integration. |
 | RUN-20865 | Fixed an issue where default departments are not deleted when a cluster is deleted. |
 
 ## Version 2.18.21
@@ -113,12 +111,6 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | ---------------------------- | ---- |
 | RUN-20612 | Fixed an issue where it was impossible with the use-table-data to hide node pool columns when there is only one default node pool. |
 | RUN-20735 | Fixed an issue where nodePool.name is undefined|
-
-## Version 2.18.13
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20722 | Fixed an issue where node pools UI test fails on nodes modal. |
 
 ## Version 2.18.12
 
