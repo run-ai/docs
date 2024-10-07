@@ -284,7 +284,7 @@ nav:
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
       - 'Managing Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
-      - 'Workload Support' : 'Researcher/workloads/overviews/workload-support.md'
+      - 'Workload Support' : 'platform-admin/workloads/overviews/workload-support.md'
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
