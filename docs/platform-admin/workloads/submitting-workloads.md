@@ -24,7 +24,7 @@ To submit a workload using the UI:
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
          3. In the *Environment variable* field, you can set one or more environment variables. (optional)
 
-      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](./assets/compute.md#create-a-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](./assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
       6. Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
          1. Select the *Storage class* from the dropdown.

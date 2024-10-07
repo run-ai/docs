@@ -31,7 +31,7 @@ Different types of workloads have different levels of support. Understanding wha
 | [Monitoring](../../admin/maintenance/alert-monitoring.md) | v | v | v | v | v |
 | [RBAC](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v | v |  |
 | Workload awareness | v | v | v | v |  |
-| [Workload submission](../../Researcher/workloads/managing-workloads.md) | v | v | v | v |  |
+| [Workload submission](../../Researcher/workloads/overviews/managing-workloads.md) | v | v | v | v |  |
 | Workload actions (stop/run) | v | v | v |  |  |
 | [Policies](../../platform-admin/workloads/policies/overview.md) | v | v | v | v |  |
 | [Scheduling rules](../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |  |  |
