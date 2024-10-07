@@ -138,14 +138,10 @@ To create a new workload:
 
 1. Click __+NEW WORKLOAD__  
 2. Select a workload type - Follow the links below to view the step-by-step guide for each workload type:  
-    * Workspace  
-    Used for data preparation and model-building tasks.  
-    * Training  
-    Used for training tasks of all sorts  
-    * Inference  
-    Used for inference and serving tasks  
-    * Job (legacy)  
-    This type is displayed only if enabled by your Administrator, under General Settings → Workloads → Workload policies  
+    * [Workspace](../../../Researcher/workloads/workspaces/overview.md). Used for data preparation and model-building tasks.  
+    * [Training](../../../Researcher/workloads/trainings.md). Used for training tasks of all sorts  
+    * [Inference](../../../Researcher/workloads/inference-overview.md). Used for inference and serving tasks  
+    * Job (legacy). This type is displayed only if enabled by your Administrator, under General Settings → Workloads → Workload policies  
 3. Click __CREATE WORKLOAD__
 
 ## Stopping a workload
