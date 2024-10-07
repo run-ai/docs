@@ -133,7 +133,7 @@ plugins:
         'Researcher/user-interface/trainings.md' : 'Researcher/workloads/trainings.md'
         'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/workspaces/overview.md'
         'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
-        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/managing-workloads.md'
+        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/overviews/managing-workloads.md'
         'snippets/common-submit-cli-commands.md' : 'Researcher/cli-reference/new-cli/runai.md'
         'admin/runai-setup/config/overview.md' : 'admin/config/overview.md'
         'admin/runai-setup/config/node-roles.md' : 'admin/config/node-roles.md'
@@ -155,6 +155,7 @@ plugins:
         'platform-admin/workloads/assets/building-blocks.md' : 'platform-admin/workloads/assets/overview.md'
         'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
         'Researcher/workloads/statuses.md' : 'Researcher/workloads/managing-workloads.md'
+        'platform-admin/workloads/submitting-workloads.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
 
 
  
@@ -233,6 +234,7 @@ nav:
       - 'Email and System Notifications': 'admin/config/notifications.md'
       - 'Setup cluster wide PVC' : 'admin/config/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/config/limit-to-node-group.md'
+      - 'Workload Ownership Protection' : 'admin/config/workload-ownership-protection.md'
     - 'Maintenance' : 
       - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
@@ -282,7 +284,7 @@ nav:
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
-      - 'Submitting Workloads' : 'platform-admin/workloads/submitting-workloads.md'
+      - 'Managing Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
@@ -329,7 +331,7 @@ nav:
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
-      - 'Managing Workloads' : 'Researcher/workloads/managing-workloads.md'
+      - 'Managing Workloads' : 'Researcher/workloads/overviews/managing-workloads.md'
       - 'Workload Support' : 'Researcher/workloads/workload-support.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
