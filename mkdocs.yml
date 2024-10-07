@@ -156,9 +156,8 @@ plugins:
         'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
         'Researcher/workloads/statuses.md' : 'Researcher/workloads/managing-workloads.md'
         'platform-admin/workloads/submitting-workloads.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
+        'Researcher/workloads/workload-support.md' : 'Researcher/workloads/overviews/workload-support.md'
 
-
- 
 
 nav:
   - Home: 
@@ -285,6 +284,7 @@ nav:
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
       - 'Managing Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
+      - 'Workload Support' : 'Researcher/workloads/overviews/workload-support.md'
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
@@ -332,7 +332,7 @@ nav:
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
       - 'Managing Workloads' : 'Researcher/workloads/overviews/managing-workloads.md'
-      - 'Workload Support' : 'Researcher/workloads/workload-support.md'
+      - 'Workload Support' : 'Researcher/workloads/overviews/workload-support.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
