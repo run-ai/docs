@@ -154,7 +154,7 @@ plugins:
         'admin/researcher-setup/limit-to-node-group.md' :  'admin/config/limit-to-node-group.md'
         'platform-admin/workloads/assets/building-blocks.md' : 'platform-admin/workloads/assets/overview.md'
         'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
-        'Researcher/workloads/statuses.md' : 'Researcher/workloads/managing-workloads.md'
+        'Researcher/workloads/statuses.md' : 'Researcher/workloads/overviews/managing-workloads.md'
         'platform-admin/workloads/submitting-workloads.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
         'Researcher/workloads/workload-support.md' : 'Researcher/workloads/overviews/workload-support.md'
 

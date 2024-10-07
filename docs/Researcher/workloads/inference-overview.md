@@ -56,9 +56,9 @@ This means that an ML engineer can submit updates to an existing inference workl
 
 Following are a few examples of updates that can be implemented:
 
-* Changing the container image to deploy a new version of the model
-* Changing different parameters (such as env variables)
-* Changing the compute resources to improve performance
+* Changing the container image to deploy a new version of the model  
+* Changing different parameters (such as env variables)  
+* Changing the compute resources to improve performance  
 * Change the number of replicas and scale plan to adapt to requirement changes and scales
 
 As stated above, during the update and until its successful completion, the service that the workload provides is not jeopardized as these are production-grade workloads. Hence consumers can continue using the model (send prompts for example) during the updating process.
@@ -69,31 +69,27 @@ Once the new revision is created completely (according to the desired spec) and 
 
 It is important to note that:
 
-* To finish the inference workload update successfully, the project must have sufficient free GPU quota in favor of the update.
+* To finish the inference workload update successfully, the project must have sufficient free GPU quota in favor of the update.  
+  For example:  
+    * Before the update: 3 replicas A running inference workload with 3 replicas (let's assume that each replica is equal to 1 GPU). This means the project is already using 3 GPUs of its quota. For the sake of simplicity, we will refer to this revision as revision #1.
 
-For example: 
-
-  * Before the update: 3 replicas
-A running inference workload with 3 replicas (let's assume that each replica is equal to 1 GPU). This means the project is already using 3 GPUs of its quota. For the sake of simplicity, we will refer to this revision as revision #1.
-  * The update: 8 replicas
-This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the 1st revision are reclaimed.
-
-* The submission of inference updates is currently possible only via API
-
-* Following are the API fields that can be updated:
-  * Command
-  * Argos
-  * Image
-  * imagePullPolicy
-  * workingDir
-  * createHomeDir
-  * Probes
-  * environmentVariables
-  * Autoscaling
+    * The update: 8 replicas This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the 1st revision are reclaimed.
 
 * The Workload grid in the user interface always displays the configuration of the desired specification (the latest submitted update). The status of the workload still represents the service status. For example, per the example described in point 1, during the update, the status of the workload is still “running” as the service is still being provided to the consumers (using revision #1).
 
+* The submission of inference updates is currently possible only via API. Following are the API fields that can be updated:  
+    * Command  
+    * Args  
+    * Image  
+    * imagePullPolicy  
+    * workingDir  
+    * createHomeDir  
+    * Probes  
+    * environmentVariables  
+    * Autoscaling
+
 * As long as the update process is not completed, GPUs are not allocated to the replicas of the new revision. This prevents the allocation of idle GPUs so others will not be deprived using them.
+
 
 ### Inference workloads with KNative new behavior in v2.19
 
@@ -103,15 +99,6 @@ Starting version 2.19, all pods of a single KNative revision are grouped under a
 * It fails and moves into a pending state, to retry again later to allocate all pods with their resources. 
 
 The resources (GPUs, CPUs) are not occupied by a new KNative revision until it succeeds in allocating all pods. The older revision pods are then terminated and release their resources (GPUs, CPUs) back to the cluster to be used by other workloads.
-
-## Securely sharing endpoints for internal consumers via API
-
-When securely sharing endpoints for consumers via API in Run:ai, it involves ensuring that services (such as inferencing) are accessible only to authorized users or services within a controlled environment. This typically includes the use of authentication mechanisms to regulate who can access specific resources. This is particularly necessary when you are handling sensitive information or when you want to limit the cost by sharing the service with a controlled group of consumers. 
-
-By default, the endpoint is open and there are no limitations on authentication of users. It is however, possible to define who can access the endpoint:
-* Specific users - the endpoints are only open to a list of specific users
-* Specific groups (GIDs) - the endpoints are only open to a list of specific users that are part of this groups
-
 
 ## See Also
 
