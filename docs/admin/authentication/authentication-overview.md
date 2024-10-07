@@ -30,7 +30,7 @@ Username and password access can be used when SSO integration is not possible.
 
 ### Secret key (for Application programmatic access)
 
-A Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access](accessrules.md) rules](accessrules.md).
+A Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access rules](accessrules.md).
 
 ## Authorization
 

@@ -4,7 +4,7 @@ This article explains the procedure for managing workloads.
 
 The Workloads table can be found under __Workloads__ in the Run:ai platform.
 
-The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../scheduling/the-runai-scheduler.md), and allows you to manage them.
+The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../../../Researcher/scheduling/the-runai-scheduler.md), and allows you to manage them.
 
 ![](img/workload-table.png)
 
@@ -88,7 +88,7 @@ Click one of the values in the Data source(s) column, to view the list of data s
 | Column | Description |
 | :---- | :---- |
 | Data source | The name of the data source mounted to the workload |
-| Type | The [data source type](./assets/datasources.md) |
+| Type | The [data source type](../assets/datasources.md) |
 
 ### Customizing the table view
 
@@ -191,13 +191,13 @@ Go to the [Workloads](https://app.run.ai/api/docs#tag/Workloads) API reference t
 
 ## Troubleshooting
 
-To understand the condition of the workload, review the workload status in the Workload table. For more information, see check the workload’s [event history](../../admin/maintenance/audit-log.md).
+To understand the condition of the workload, review the workload status in the Workload table. For more information, see check the workload’s [event history](../../../admin/maintenance/audit-log.md).
 
 Listed below are a number of known issues when working with workloads and how to fix them:
 
 | Issue | Mediation |
 | :---- | :---- |
-| Cluster connectivity issues (there are issues with your connection to the cluster error message)| Verify that you are on a network that has been granted access to the cluster. <br> Reach out to your cluster admin for instructions on verifying this. <br> If you are an admin, see the [troubleshooting](../../admin/config/clusters.md#troubleshooting) section in the cluster documentation |
+| Cluster connectivity issues (there are issues with your connection to the cluster error message)| Verify that you are on a network that has been granted access to the cluster. <br> Reach out to your cluster admin for instructions on verifying this. <br> If you are an admin, see the [troubleshooting](../../../admin/config/clusters.md#troubleshooting) section in the cluster documentation |
 | Workload in “Initializing” status for some time | Check that you have access to the Container image registry. <br> Check the statuses of the pods in the pods’ modal. <br> Check the event history for more details |
 | Workload has been pending for some time | Check that you have the required quota. <br> Check the project’s available quota in the project dialog. <br> Check that all services needed to run are bound to the workload. <br> Check the event history for more details. |
 | PVCs created using the K8s API or `kubectl` are not visible or mountable in Run:ai. | This is by design. <br> - Create a new data source of type PVC in the Run:ai UI <br> - In the Data mount section, select Existing PVC <br> - Select the PVC you created via the K8S API <br> You are now able to select and mount this PVC in your Run:ai submitted workloads. |

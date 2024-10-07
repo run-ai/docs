@@ -1,5 +1,5 @@
 
-Workloads are the basic unit of work in Run:ai. Researchers and Engineers use workloads for every stage in their AI [Project](../../platform-admin/aiinitiatives/org/projects.md) lifecycle. Workloads can be used to build, train, or deploy a model. Run:ai supports all types of Kubernetes workloads. Researchers can work with any workload in their organization but will get the largest value working with Run:ai native workloads.
+Workloads are the basic unit of work in Run:ai. Researchers and Engineers use workloads for every stage in their AI [Project](../../../platform-admin/aiinitiatives/org/projects.md) lifecycle. Workloads can be used to build, train, or deploy a model. Run:ai supports all types of Kubernetes workloads. Researchers can work with any workload in their organization but will get the largest value working with Run:ai native workloads.
 
 Run:ai offers three native types of workloads:
 
@@ -7,7 +7,7 @@ Run:ai offers three native types of workloads:
 * Training For training tasks of the model and data preparation  
 * Inference For deploying and serving the model
 
-Run:ai native workloads can be created via the Run:ai User interface, [API](https://api-docs.run.ai/2.18/tag/Workloads) or [Command-line interface](../../Researcher/cli-reference/Introduction.md).
+Run:ai native workloads can be created via the Run:ai User interface, [API](https://api-docs.run.ai/2.18/tag/Workloads) or [Command-line interface](../../../Researcher/cli-reference/Introduction.md).
 
 ## Levels of support
 
@@ -17,24 +17,24 @@ Different types of workloads have different levels of support. Understanding wha
 | ----- | :---: | :---: | :---: | :---: | ----- |
 |  | Run:ai workloads |  |  |  | Third-party workloads |
 |  | Training - Standard | Workspace | Inference | Training - distributed | All K8s workloads |
-| [Fairness](../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v | v | v |
-| [Priority and preemption](../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v | v | v |
-| [Over quota](../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v | v | v |
-| [Node pools](../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v | v | v |
+| [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v | v | v |
+| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v | v | v |
+| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v | v | v |
+| [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v | v | v |
 | Bin packing / Spread | v | v | v | v | v |
 | Fractions | v | v | v | v | v |
 | Dynamic fractions | v | v | v | v | v |
 | Node level scheduler | v | v | v | v | v |
 | GPU swap | v | v | v | v | v |
 | Elastic scaling | NA | NA | v | v | v |
-| [Gang scheduling](../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v | v | v |
-| [Monitoring](../../admin/maintenance/alert-monitoring.md) | v | v | v | v | v |
-| [RBAC](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v | v |  |
+| [Gang scheduling](../../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v | v | v |
+| [Monitoring](../../../admin/maintenance/alert-monitoring.md) | v | v | v | v | v |
+| [RBAC](../../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v | v |  |
 | Workload awareness | v | v | v | v |  |
-| [Workload submission](../../Researcher/workloads/managing-workloads.md) | v | v | v | v |  |
+| [Workload submission](../../../Researcher/workloads/overviews/managing-workloads.md) | v | v | v | v |  |
 | Workload actions (stop/run) | v | v | v |  |  |
-| [Policies](../../platform-admin/workloads/policies/overview.md) | v | v | v | v |  |
-| [Scheduling rules](../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |  |  |
+| [Policies](../../../platform-admin/workloads/policies/overview.md) | v | v | v | v |  |
+| [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |  |  |
 
 !!! Note
     __Workload awareness__
@@ -43,11 +43,11 @@ Different types of workloads have different levels of support. Understanding wha
 
 ## Workload scopes
 
-Workloads must be created under a [project](../../platform-admin/aiinitiatives/org/projects.md). A project is the fundamental organization unit in the Run:ai account. To manage workloads, it’s required to first create a project or have one created by the administrator.
+Workloads must be created under a [project](../../../platform-admin/aiinitiatives/org/projects.md). A project is the fundamental organization unit in the Run:ai account. To manage workloads, it’s required to first create a project or have one created by the administrator.
 
 ## Policies and rules
 
-[Policies and rules](../../platform-admin/workloads/policies/overview.md) empower administrators to establish default values and implement restrictions on workloads allowing enhanced control, assuring compatibility with organizational policies, and optimizing resource usage and utilization.
+[Policies and rules](../../../platform-admin/workloads/policies/overview.md) empower administrators to establish default values and implement restrictions on workloads allowing enhanced control, assuring compatibility with organizational policies, and optimizing resource usage and utilization.
 
 ## Workload statuses
 
