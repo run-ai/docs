@@ -9,10 +9,11 @@ runai list nodes [flags]
 ### Options
 
 ```
-  -h, --help    help for nodes
-      --json    Output structure JSON
-      --table   Output structure table
-      --yaml    Output structure YAML
+  -h, --help         help for nodes
+      --json         Output structure JSON
+      --no-headers   Output structure table without headers
+      --table        Output structure table
+      --yaml         Output structure YAML
 ```
 
 ### Options inherited from parent commands

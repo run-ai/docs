@@ -1,6 +1,6 @@
 ## runai training mpi list
 
-list MPI training
+list mpi training
 
 ```
 runai training mpi list [flags]
@@ -9,29 +9,30 @@ runai training mpi list [flags]
 ### Examples
 
 ```
-# List all MPI training workloads
+# List all mpi training workloads
 runai training mpi list -A
 
-# List MPI training workloads with default project
+# List mpi training workloads with default project
 runai training mpi list
 
-# List MPI training workloads in a specific project
+# List mpi training workloads in a specific project
 runai training mpi list -p <project_name>
 
-# List all MPI training workloads with a specific output format
+# List all training mpi workloads with a specific output format
 runai training mpi list -o wide
 
-# List MPI training workloads with pagination
+# List mpi training workloads with pagination
 runai training mpi list --limit 20 --offset 40
 ```
 
 ### Options
 
 ```
-  -A, --all              list jobs from all projects
+  -A, --all              list workloads from all projects
   -h, --help             help for list
       --json             Output structure JSON
-      --limit int32      number of workload in list, (default 50) (default 50)
+      --limit int32      number of workload in list (default 50)
+      --no-headers       Output structure table without headers
       --offset int32     offset number of limit, default 0 (first offset)
   -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
       --status string    filter by workload state
@@ -51,5 +52,5 @@ runai training mpi list --limit 20 --offset 40
 
 ### SEE ALSO
 
-* [runai training mpi](runai_training_mpi.md)	 - MPI management
+* [runai training mpi](runai_training_mpi.md)	 - mpi management
 

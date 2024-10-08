@@ -1,6 +1,6 @@
 ## runai training mpi delete
 
-delete MPI training
+delete mpi training workload
 
 ```
 runai training mpi delete [WORKLOAD_NAME] [flags]
@@ -26,5 +26,5 @@ runai training mpi delete [WORKLOAD_NAME] [flags]
 
 ### SEE ALSO
 
-* [runai training mpi](runai_training_mpi.md)	 - MPI management
+* [runai training mpi](runai_training_mpi.md)	 - mpi management
 

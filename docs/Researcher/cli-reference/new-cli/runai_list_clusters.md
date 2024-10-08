@@ -9,10 +9,11 @@ runai list clusters [flags]
 ### Options
 
 ```
-  -h, --help    help for clusters
-      --json    Output structure JSON
-      --table   Output structure table
-      --yaml    Output structure YAML
+  -h, --help         help for clusters
+      --json         Output structure JSON
+      --no-headers   Output structure table without headers
+      --table        Output structure table
+      --yaml         Output structure YAML
 ```
 
 ### Options inherited from parent commands
