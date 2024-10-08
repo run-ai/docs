@@ -9,7 +9,7 @@ runai training exec TRAINING_NAME [flags]
 ### Examples
 
 ```
-# Execute bush to training 
+# Execute bash to training 
 runai training exec jup --tty --stdin -- /bin/bash 
 
 # Execute ls to workload
@@ -22,10 +22,10 @@ runai training exec jup -- ls
   -c, --container string               Container name for log extraction
   -h, --help                           help for exec
       --pod string                     Workload pod ID for log extraction, default: master (0-0)
-      --pod-running-timeout duration   Pod check for running state timeout
+      --pod-running-timeout duration   Pod check for running state timeout.
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --stdin                          Pass stdin to the container
-      --tty                            Stdin is a TTY
+  -i, --stdin                          Pass stdin to the container
+  -t, --tty                            Stdin is a TTY
       --wait-timeout duration          Timeout for waiting for workload to be ready for log streaming
 ```
 

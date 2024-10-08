@@ -12,10 +12,10 @@ runai exec WORKLOAD_NAME [flags]
   -c, --container string               Container name for log extraction
   -h, --help                           help for exec
       --pod string                     Workload pod ID for log extraction, default: master (0-0)
-      --pod-running-timeout duration   Pod check for running state timeout
+      --pod-running-timeout duration   Pod check for running state timeout.
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --stdin                          Pass stdin to the container
-      --tty                            Stdin is a TTY
+  -i, --stdin                          Pass stdin to the container
+  -t, --tty                            Stdin is a TTY
       --type string                    The type of the workload (training, workspace, distributed)
       --wait-timeout duration          Timeout for waiting for workload to be ready for log streaming
 ```

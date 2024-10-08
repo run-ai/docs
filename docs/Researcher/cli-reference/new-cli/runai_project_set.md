@@ -1,6 +1,6 @@
 ## runai project set
 
-set project context
+set default project name
 
 ```
 runai project set PROJECT_NAME [flags]

@@ -27,5 +27,5 @@ runai project [flags]
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai project list](runai_project_list.md)	 - list available project
-* [runai project set](runai_project_set.md)	 - set project context
+* [runai project set](runai_project_set.md)	 - set default project name
 

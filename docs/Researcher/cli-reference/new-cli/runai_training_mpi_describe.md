@@ -1,6 +1,6 @@
 ## runai training mpi describe
 
-describe MPI training
+describe mpi training
 
 ```
 runai training mpi describe [WORKLOAD_NAME] [flags]
@@ -9,23 +9,23 @@ runai training mpi describe [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Describe an MPI training workload with a default project
-runai training mpi describe <training-mpi-name>
+# Describe a mpi training workload with a default project
+runai training mpi describe <mpi-name>
 
-# Describe an MPI training workload in a specific project
-runai training mpi describe <training-mpi-name> -p <project_name>
+# Describe a mpi training workload in a specific project
+runai training mpi describe <mpi-name> -p <project_name>
 
-# Describe an MPI training workload by UUID
-runai training mpi describe --uuid=<training_mpi_uuid>
+# Describe a mpi training workload by UUID
+runai training mpi describe --uuid=<mpi_uuid>
 
-# Describe an MPI training workload with specific output format
-runai training mpi describe <training-mpi-name> -o json
+# Describe a mpi training workload with specific output format
+runai training mpi describe <mpi-name> -o json
 
-# Describe an MPI training workload with specific sections
-runai training mpi describe <training-mpi-name> --general --compute --pods --events --networks
+# Describe a mpi training workload with specific sections
+runai training mpi describe <mpi-name> --general --compute --pods --events --networks
 
-# Describe an MPI training workload with container details and custom limits
-runai training mpi describe <training-mpi-name> --containers --pod-limit 20 --event-limit 100
+# Describe a mpi training workload with container details and custom limits
+runai training mpi describe <mpi-name> --containers --pod-limit 20 --event-limit 100
 ```
 
 ### Options
@@ -56,5 +56,5 @@ runai training mpi describe <training-mpi-name> --containers --pod-limit 20 --ev
 
 ### SEE ALSO
 
-* [runai training mpi](runai_training_mpi.md)	 - MPI management
+* [runai training mpi](runai_training_mpi.md)	 - mpi management
 

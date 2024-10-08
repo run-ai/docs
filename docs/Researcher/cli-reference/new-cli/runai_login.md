@@ -13,6 +13,12 @@ runai login [flags]
   # Login using browser
   runai login
 
+  # Login using SSO without browser
+  runai login sso
+
+  # Login using username and password without browser
+  runai login user -u <username> 
+
   # Login using browser with specific port and host
   runai login --listen-port=43121 --listen-host=localhost
 
