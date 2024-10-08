@@ -17,7 +17,6 @@
     
 * View your changes in [localhost:8000](http://localhost:8000)
 
-
 ## Deploy
 
 Push changes to master.
