@@ -1,6 +1,6 @@
 ## runai training mpi port-forward
 
-Forward one or more local ports to an MPI training job
+Forward one or more local ports to a mpi training job
 
 ```
 runai training mpi port-forward [WORKLOAD_NAME] [flags]
@@ -9,14 +9,14 @@ runai training mpi port-forward [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Forward connections from localhost:8080 to MPI training on port 8090:
-runai training mpi port-forward mpi-training-01 --port 8080:8090 --address localhost
+# Forward connections from localhost:8080 to training mpi on port 8090:
+runai training mpi port-forward mpi-01 --port 8080:8090 --address localhost
 
-# Forward connections from 0.0.0.0:8080 to MPI training on port 8080:
-runai training mpi port-forward mpi-training-01 --port 8080 --address 0.0.0.0 [requires privileges]
+# Forward connections from 0.0.0.0:8080 to mpi training on port 8080:
+runai training mpi port-forward mpi-01 --port 8080 --address 0.0.0.0 [requires privileges]
 
-# Forward multiple connections from localhost:8080 to MPI training on port 8090 and from localhost:6443 to MPI training on port 443:
-runai training mpi port-forward mpi-training-01 --port 8080:8090 --port 6443:443 --address localhost
+# Forward multiple connections from localhost:8080 to mpi training on port 8090 and from localhost:6443 to training mpi on port 443:
+runai training mpi port-forward mpi-01 --port 8080:8090 --port 6443:443 --address localhost
 ```
 
 ### Options
@@ -25,7 +25,7 @@ runai training mpi port-forward mpi-training-01 --port 8080:8090 --port 6443:443
       --address string                 --address [local-interface-ip\host] --address localhost --address 0.0.0.0 [privileged] (default "localhost")
   -h, --help                           help for port-forward
       --pod string                     Workload pod ID for port-forward, default: distributed(master) otherwise(random)
-      --pod-running-timeout duration   Pod check for running state timeout (default 0s)
+      --pod-running-timeout duration   Pod check for running state timeout.
       --port stringArray               port
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
 ```
@@ -42,5 +42,5 @@ runai training mpi port-forward mpi-training-01 --port 8080:8090 --port 6443:443
 
 ### SEE ALSO
 
-* [runai training mpi](runai_training_mpi.md)	 - MPI management
+* [runai training mpi](runai_training_mpi.md)	 - mpi management
 

@@ -19,7 +19,7 @@ runai workload attach ubuntu-wl --type workspace --tty --stdin
   -c, --container string               Container name for log extraction
   -h, --help                           help for attach
       --pod string                     Workload pod ID for log extraction, default: master (0-0)
-      --pod-running-timeout duration   Pod check for running state timeout
+      --pod-running-timeout duration   Pod check for running state timeout.
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
   -i, --stdin                          Pass stdin to the container
   -t, --tty                            Stdin is a TTY

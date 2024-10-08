@@ -9,9 +9,10 @@ runai list jobs [flags]
 ### Options
 
 ```
-  -A, --all-projects     list jobs from all projects
+  -A, --all-projects     list workloads from all projects
   -h, --help             help for jobs
       --json             Output structure JSON
+      --no-headers       Output structure table without headers
   -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
       --table            Output structure table
       --yaml             Output structure YAML

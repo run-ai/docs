@@ -25,7 +25,7 @@ runai distributed port-forward <distributed-name> --port 8080:8090 --port 6443:4
       --address string                 --address [local-interface-ip\host] --address localhost --address 0.0.0.0 [privileged] (default "localhost")
   -h, --help                           help for port-forward
       --pod string                     Workload pod ID for port-forward, default: distributed(master) otherwise(random)
-      --pod-running-timeout duration   Pod check for running state timeout (default 0s)
+      --pod-running-timeout duration   Pod check for running state timeout.
       --port stringArray               port
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
 ```
