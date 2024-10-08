@@ -164,12 +164,14 @@ nav:
     - 'Overview': 'home/overview.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
+      - 'home/whats-new-2-19.md'
       - 'home/whats-new-2-18.md'
       - 'home/whats-new-2-17.md'
       - 'home/whats-new-2-16.md'
       - 'Version 2.15' : 'home/whats-new-2-15.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
     - 'Changelog':
+      - 'Hotfixes for 2.19' : 'home/changelog/hotfixes-2-19.md'
       - 'Hotfixes for 2.18' : 'home/changelog/hotfixes-2-18.md'
       - 'Hotfixes for 2.17' : 'home/changelog/hotfixes-2-17.md'
       - 'Hotfixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
