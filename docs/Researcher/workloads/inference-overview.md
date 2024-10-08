@@ -48,7 +48,7 @@ Autoscaling also supports a scale-to-zero policy with *Throughput* and *Concurre
 
 This has the benefit of conserving resources at the risk of a delay from "cold starting" the model when traffic resumes.
 
-## Updating an inference workload
+## Rolling inference updates
 
 When deploying models and running inference workloads, it is relevant at times to update the workload configuration in a live manner, without impacting the important services that are provided by the workload.
 
