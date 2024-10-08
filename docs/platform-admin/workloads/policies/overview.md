@@ -89,15 +89,15 @@ The different scoping of policies also allows the breakdown of the responsibilit
 
 #### Policy rules reconciliation
 
-For situations where a rule or a default for a specific field is already occupied by a policy in the organization, we have introduced a reonciliation mechanism. The mechanism works as follows:
+For situations where a rule or a default for a specific field is already governed by a policy, newly submitted policies for additional organizational units mentioning this existing field are not blocked from submission. For those instances, the effective rules and defaults are selected based on the following logic:
 
-* For rules and defaults - If the rule is already occupied by a previous policy, the new policy submission is not blocked.
-* For defaults - The lowest hierarchy “closest” to the actual workload wins (projects defaults > department defaults > cluster defaults > tenants defaults).
-* For rules:
-  * If the rule belongs to the group of computatation resources or security rules - the highest hierarchy wins (tenant rules > cluster rules > department rules > project rules).
-  * If the rule does not belong to the group of computation resources or security rules - the lowest hierarchy “closest” to the actual workload wins (similar to defaults).
+* For policy defaults - The lowest organizational hierarchy “closest” to the actual workload becomes the effective policy defaults (project defaults > department defaults > cluster defaults > tenant defaults).
+* For policy rules - 
+  * If the rule belongs to the compute and security sections in the workload spec of the Run:ai API, the highest hierarchy is chosen for the effective policy for the field (tenant rules > cluster rules > department rules > project rules).
+  * If the rule does not belong to the compute or security sections, the lowest hierarchy “closest” to the actual workload becomes the effective policy for the field (similar to defaults).
 
-While viewing the policy, for each rule and default the source of the rule is visible, allowing the user to understand the hierarchy of the effective policy.
+While viewing the effective policy, for each rule and default the source of the policy origin is visible, allowing users to clearly understand the selected hierarchy of the effective policy.
+
 
 ## Run:ai Policies vs. Kyverno Policies
 
