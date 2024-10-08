@@ -3,9 +3,9 @@ Workloads are the basic unit of work in Run:ai. Researchers and Engineers use wo
 
 Run:ai offers three native types of workloads:
 
-* Workspaces For building the model  
-* Training For training tasks of the model and data preparation  
-* Inference For deploying and serving the model
+* [Workspace](../../../Researcher/workloads/workspaces/overview.md). Used for data preparation and model-building tasks.  
+* [Training](../../../Researcher/workloads/trainings.md). Used for training tasks.  
+* [Inference](../../../Researcher/workloads/inference-overview.md). Used for inference and model serving tasks  
 
 Run:ai native workloads can be created via the Run:ai User interface, [API](https://api-docs.run.ai/2.18/tag/Workloads) or [Command-line interface](../../../Researcher/cli-reference/Introduction.md).
 
