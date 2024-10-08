@@ -123,7 +123,7 @@ To add a new environment:
 13. Optional: __Set the environment variable(s)__  
     * The environment variable(s) are added to the default environment variables that are already set within the image  
     * The environment variables can be modified and new variables can be added while submitting a workload using the environment
-    * You can configure a new Environment variable from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials - the predefined credentials name in the system and the available key types are displayed as an option.  
+    * You can configure a new Environment variable from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials, the predefined name for the credential assets are displayed as an option. In addition, you can select the type of the credential to be used (username / password or access key / access secret).
 14. Optional: Set the container’s __working directory__ to define where the container’s process starts running. When left empty, the default directory is used.  
 15. Optional: Set where the UID, GID and supplementary groups are taken from, this can be:  
     * __From the image__  
