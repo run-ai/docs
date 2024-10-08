@@ -31,7 +31,6 @@ Click the link to view the value type of each field.
 | PodAffinitySchedulingRule | Indicates if we want to use the Pod affinity rule as: the “hard” (required) or the “soft” (preferred) option. This field can be specified only if PodAffinity is set to true. | string | Workspace Training |
 | podAffinityTopology | Specifies the Pod Affinity Topology to be used for scheduling the job. This field can be specified only if PodAffinity is set to true. | string | Workspace Training |
 | ports | Specifies a set of ports exposed from the container running the created workload. More information in Ports fields below. | itemized | Workspace Training |
-| preemptible | Specifies that the created workload is preemptible. Interactive preemptible workloads can be scheduled above the guaranteed quota but may be reclaimed at any time. | boolean | Workspace |
 | probes | Specifies the ReadinessProbe to use to determine if the container is ready to accept traffic. More information in Probes fields below | - | Workspace Training |
 | tolerations | Toleration rules which apply to the pods running the workload. Toleration rules guide (but do not require) the system to which node each pod can be scheduled to or evicted from, based on matching between those rules and the set of taints defined for each Kubernetes node. | itemized | Workspace Training |
 | storage | Contains all the fields related to storage configurations. More information in Storage fields below. | - | Workspace Training |
