@@ -173,6 +173,10 @@ Please read Run:ai’s documentation for more information on Run:ai and Karpente
 
 ### New Run:ai UI navigation
 
+<video  width="800" controls>
+<source src="../img/new-navigation2-19.mp4" type="video/mp4">
+</video>
+
   The platform navigation has been updated to offer a more modern design, easier  navigation, and address all personas interacting with the UI.  
   ![][image2]
 
@@ -256,10 +260,7 @@ For users with more than one cluster, in the legacy version the cluster selectio
     
 If a user prefers not to use the new UI navigation, there is an option to switch back to the legacy navigation by clicking the **Back to legacy navigation** option.  
     
-Click here to see a video of the new UI navigation 
-<video  width="800" controls>
-<source src="../img/new-navigation2-19.mp4" type="video/mp4">
-</video>
+
 
 
 **Installation and configuration**
