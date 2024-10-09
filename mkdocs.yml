@@ -157,6 +157,7 @@ plugins:
         'Researcher/workloads/statuses.md' : 'Researcher/workloads/overviews/managing-workloads.md'
         'platform-admin/workloads/submitting-workloads.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
         'Researcher/workloads/workload-support.md' : 'Researcher/workloads/overviews/workload-support.md'
+        'admin/admin-ui-setup/deployments.md' : 'platform-admin/workloads/submitting-workloads.md'
 
 
 nav:
@@ -306,6 +307,7 @@ nav:
         - 'Policies Reference' : 'platform-admin/workloads/policies/policy-reference.md'
         - 'Older Policies' : 
           - 'Policies V1' : 'platform-admin/workloads/policies/old-policies.md'
+      - 'Integrations' : 'platform-admin/workloads/integrations.md'
 
 
     - 'Best Practices' :
