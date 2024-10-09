@@ -62,7 +62,7 @@
   The Run:ai scheduler algorithm for handling large distributed workloads has been improved and is now more efficient, resulting in better handling of large distributed workloads, and better performance.   
   
 
-## Inference 
+## ML Engineer (Inference)
 
 ### Additional data sources for inference workloads
 
@@ -120,7 +120,7 @@
         * ALLOCATED_CPU_MEMORY_BYTES  
         * IDLE_ALLOCATED_GPUS
 
-## Run:ai Administrator
+## Administrator
 
 ### Pagination in user API  
   Pagination has been added, removing the limitation to the number of users listed in the Run:ai UI.
@@ -130,7 +130,7 @@
   The audit log has been updated, so system admins can view audit logs directly in the Run:ai UI and download them in CSV or JSON formats, providing flexible options for data analysis and compliance reporting. Version 2.19 reintroduces a fully functional audit log (event history), ensuring comprehensive tracking across projects, departments, access rules, and more. In the new version, all entities are logged except logins and workloads.   
   For more information, see [Audit logs](../admin/maintenance/audit-log.md).
 
-## Run:ai Platform Administrator
+## Platform Administrator
 
 ### Department scheduling rules  
   Scheduling rules have been added at the department level. For more information, see [scheduling rules](../platform-admin/aiinitiatives/org/scheduling-rules.md).  
@@ -257,7 +257,7 @@ For users with more than one cluster, in the legacy version the cluster selectio
 If a user prefers not to use the new UI navigation, there is an option to switch back to the legacy navigation by clicking the **Back to legacy navigation** option.  
     
 Click here to see a video of the new UI navigation 
-<video  width="600" controls>
+<video  width="800" controls>
 <source src="../img/new-navigation2-19.mp4" type="video/mp4">
 </video>
 
