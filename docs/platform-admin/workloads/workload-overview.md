@@ -126,12 +126,4 @@ To get the full experience of Run:ai’s environment and platform use the follow
 
 ## Workload-related Integrations
 
-To assist you with other platforms, and other types of workloads use the integrations listed below. These integrations are not regularly tested by Run:ai and are hence provided on an as-is basis. The link below point to the Run:ai customer portal. 
-
-1. [Airflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Apache-Airflow){target=_blank}
-2. [MLflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-MLflow){target=_blank}
-3. [Kubeflow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Kubeflow){target=_blank}
-4. [Seldon Core](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Seldon-Core){target=_blank}
-5. [Spark](https://runai.my.site.com/community/s/article/How-to-Run-Spark-jobs-with-Run-AI){target=_blank}
-6. [Ray](https://runai.my.site.com/community/s/article/How-to-Integrate-Run-ai-with-Ray){target=_blank}
-7. [KubeVirt (VM)](https://runai.my.site.com/community/s/article/{target=_blank}How-to-integrate-with-Kubevirt-Scheduling-Virtual-Machines-using-Run-ai)
+See [Integrations](./integrations.md)
