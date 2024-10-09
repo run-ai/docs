@@ -258,7 +258,7 @@ If a user prefers not to use the new UI navigation, there is an option to switch
     
 Click here to see a video of the new UI navigation 
 <video  width="600" controls>
-<source src="img/new-navigation2-19.mp4" type="video/mp4">
+<source src="../img/new-navigation2-19.mp4" type="video/mp4">
 </video>
 
 

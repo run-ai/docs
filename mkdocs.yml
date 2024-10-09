@@ -165,7 +165,7 @@ nav:
     - 'Overview': 'home/overview.md'
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
-      - 'home/whats-new-2-19.md'
+      - 'Version 2.19' : 'home/whats-new-2-19.md'
       - 'home/whats-new-2-18.md'
       - 'home/whats-new-2-17.md'
       - 'home/whats-new-2-16.md'
