@@ -27,7 +27,6 @@ All customizations will be saved when upgrading the cluster to a future version.
 |  Key     |  Default  | Description |
 |----------|----------|-------------|
 | `spec.project-controller.createNamespaces` | `true` | Set to `false`if unwilling to provide Run:ai the ability to create namespaces. When set to false, will requires an additional manual step when creating new Run:ai Projects as described [below](#manual-creation-of-namespaces) |
-| `spec.project-controller.clusterWideSecret` | `true` | Set to `false` if unwilling to provide Run:ai the ability to create Kubernetes Secrets. When not enabled, automatic [secret propagation](../../../platform-admin/workloads/assets/secrets.md#secrets-and-projects) will not be available |
 | `spec.mps-server.enabled` | `false` | Set to `true` to allow the use of **NVIDIA MPS**. MPS is useful with *Inference* workloads  |
 | `spec.global.subdomainSupport` | `false` | Set to true to allow researcher tools with a sub domain to be spawned from the Run:ai user interface. For more information see [External access to containers](../../config/allow-external-access-to-containers.md#workspaces-configuration) |  
 | `spec.global.schedulingservices` <br>  `spec.global.syncServices`<br>  `spec.global.workloadServices` |  | Set requests and limit configurations for CPU and memory for Run:ai containers. For more information see [Large cluster configuration](../../config/large-clusters.md) |
