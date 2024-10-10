@@ -110,7 +110,7 @@ The association between workspaces and node pools is done using *Compute resourc
 **Credentials**
 
 <!-- RUN-9843/9852 - Allow researcher to create docker registry secrets -->
-* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../platform-admin/workloads/assets/credentials.md#configuring-credentials).
+* Added *Docker registry* to the *Credentials* menu. Users can create docker credentials for use in specific projects for image pulling. To configure credentials, see [Configuring credentials](../platform-admin/workloads/assets/credentials.md).
 
 <!-- RUN-8453/8454/8927 Technical documentation of 'Projects new parameters and options' use existing namespace, status, and more added to projects v2-->
 

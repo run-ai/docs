@@ -94,7 +94,7 @@ ConfigMaps must be created on the cluster before being used within Run:ai. When 
 ### Create a Secret as data source
 
 * A Run:ai project scope which is assigned to that item and all its subsidiaries.
-* A *Credentials*. To create a new *Credentials*, see [Configuring Credentials](credentials.md#configuring-credentials)
+* A *Credentials*. To create a new *Credentials*, see [Configuring Credentials](credentials.md)
 
 * A data source name and description.
 * A data mount consisting of:
