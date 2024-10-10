@@ -24,11 +24,10 @@ Code for the Docker images referred to in these docs is available [here](https:/
 
 To get support use the following channels:
 
-* On our [website](https://run.ai), under _Support_ use the support form.
+* On the Run:ai user interface at `<company-name>.run.ai`, use the 'Contact Support' link on the top right.
 
-* On the bottom right of the Run:ai user interface, use the _Help_ widget.
+* Or submit a ticket by clicking the button below:
 
-* On the bottom right of this page, use the _Help_ widget.
-
+[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .md-button--primary }
 
 
