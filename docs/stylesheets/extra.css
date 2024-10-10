@@ -59,3 +59,10 @@
     background: transparent;
     color: white;
 }
+
+
+/* content area to always stretch to the available screen space 
+https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#content-area-width */ 
+.md-grid {
+    max-width: initial;
+}
