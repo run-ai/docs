@@ -1,145 +1,198 @@
-# Credentials
+This article explains what credentials are and how to create and use them.
 
-Credentials are used to unlock protected resources such as applications, containers, and other assets.
+Credentials are a workload asset that simplify the complexities of Kubernetes secrets. They consist of and mask sensitive access information, such as passwords, tokens, and access keys, which are necessary for gaining access to various resources.
 
-The *Credentials* manager in the Run:ai environment supports the following types of credentials:
+Credentials are crucial for the security of AI workloads and the resources they require, as they restrict access to authorized users, verify identities, and ensure secure interactions. By enforcing the protection of sensitive data, credentials help organizations comply with industry regulations, fostering a secure environment overall.
 
-[Docker registry](#docker-registry)
+Essentially, credentials enable AI practitioners to access relevant protected resources, such as private data sources and Docker images, thereby streamlining the workload submission process.
 
-[Access key](#access-key)
+## Credentials table
 
-[Username and password](#username-and-password)
+The Credentials table can be found under __Credentials__ in the Run:ai User interface.
 
-[Generic Secret](#generic-secret)
+The Credentials table provides a list of all the credentials defined in the platform and allows you to manage them.
 
-## Secrets
+![](img/credentials-table.png)
 
-Credentials are built using `Secrets`. A `Secret` is an object that contains a small amount of sensitive data so that you don't need to include confidential data in your application code. When creating a credential you can either [create a new secret](#configuring-credentials) or use an [existing secret](#existing-secrets).
+The Credentials table comprises the following columns:
 
-### Existing secrets
+| Column | Description |
+| --- | --- |
+| Credentials | The name of the credentials |
+| Description | A description of the credentials |
+| Type | The type of credentials, e.g., Docker registry |
+| Status | The different lifecycle phases and representation of the credentials’ condition |
+| Data source(s) | The private data source(s) that are accessed using the credentials |
+| Created by | The user who created the credentials |
+| Scope | The [scope](./overview.md#asset-scope) of this compute resource within the organizational treeClick the name of the scope to view the organizational tree diagram |
+| Creation time | The timestamp of when the credentials were created |
+| Cluster | The cluster with which the credentials are associated |
 
-An existing secret is a secret that you have created before creating the credential. One way to create a secret is to use the [Kubernetes Secrets](https://kubernetes.io/docs/concepts/configuration/secret/#working-with-secrets){target=_blank}
-creation tool to create a pre-existing secret for the credential. You must `label` these secrets so that they are registered in the Run:ai environment.
+### Credentials status
 
-The following command makes the secret available to all projects in the cluster.
+The following table describes the credentials’ condition and whether they were created successfully for the selected [scope](overview.md#asset-scope).
 
-```console
-kubectl label secret -n runai <SECRET_NAME> run.ai/resource=<credential_type> run.ai/cluster-wide-credentials=true
-```
+| Status | Description |
+| --- | --- |
+| No issues found | No issues were found while creating the credentials (this status may change while propagating the credentials to the selected scope) |
+| Issues found | Issues found while propagating the credentials |
+| Issues found | Failed to access the cluster |
+| Creating… | Credentials are being created |
+| Deleting… | Credentials are being deleted |
+| No status | When the credentials’ scope is an account, or the current version of the cluster is not up to date, the status cannot be displayed |
 
-The following command makes the secret available to the entire scope of a department.
+### Customizing the table view
 
-```console
-kubectl label secret -n runai <SECRET_NAME> run.ai/resource=<credential_type> run.ai/department=<department-id>
-```
+*   Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
+*   Search - Click SEARCH and type the value to search by
+*   Sort - Click each column header to sort by
+*   Column selection - Click COLUMNS and select the columns to display in the table
+*   Refresh - Click REFRESH to update the table with the latest data
 
-`credential_type` is one of the following: `password` / `access-key` / `docker-registry`
+## Adding new credentials
 
-The following command makes the secret available to a specific project in the cluster.
+Creating credentials is limited to [specific roles](./overview.md#who-can-create-an-asset).
 
-```console
-kubectl label secret -n <NAMESPACE_OF_PROJECT> <SECRET_NAME> run.ai/credentials=true
-```
+To add a new credential:
 
-### User-id and password
+1.  Go to the Credentials table:
+2.  Click __+NEW CREDENTIALS__
+3.  Select the credential type from the list  
+    Follow the step-by-step guide for each credential type:
 
-You can create a credential using a user-id and password. Use the user-id and password of the target resource.
+### Docker registry
 
-## Configuring Credentials
+These credentials allow users to authenticate and pull images from a Docker registry, enabling access to containerized applications and services.
 
-!!! Important
-    To configure *Credentials* you need to make sure `Workspaces` are enabled.
-<!-- 2. Target resource user-id and password for creating a secret in the UI.
-1. Configured pre-existing secrets with the applicable `label`.
--->
-To configure *Credentials*:
+After creating the credentials, it is used automatically when pulling images.
 
-1. Press `Credentials` in the left menu.
-2. Press `New Credential` and select one from the list.
+1.  Select a [scope](./overview.md#asset-scope).
+2.  Enter a name for the credential. The name must be unique.
+3.  Optional: Provide a description of the credentials
+4.  Set how the credential is created
+    *   __Existing secret__ (in the cluster)  
+        This option applies when the purpose is to create credentials based on an existing secret
+        *   Select a secret from the list (The list is empty if no secrets were created in advance)
+    *   __New secret__ (recommended)  
+        A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+        *   Enter the __username__, __password__, and __Docker registry URL__
+5.  Click __CREATE CREDENTIALS__
 
-### `Docker registry`
+After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-1. Select a `Scope` (cluster, department, or project) for the credential.
-2. In the `Credential name` field, enter a name for the credential.
-3. In the `Secret` field, choose from `Existing secret` or `New secret`.
+### Access key
 
-      * If you select `Existing secret`, select an unused secret from the drop down.
-  
-        !!! Note
-            Existing secrets can't be used more than once.
+These credentials are unique identifiers used to authenticate and authorize access to cloud services or APIs, ensuring secure communication between applications. They typically consist of two parts:
 
-      * If you choose `New secret`, enter a username and password.
+*   An access key ID
+*   A secret access key
 
-4. Enter a URL for the docker registry, then press `Create credentials` to create the credential.
+The purpose of this credential type is to allow access to restricted data.
 
-### `Access key`
+1.  Select a [scope](./overview.md#asset-scope).
+2.  Enter a name for the credential. The name must be unique.
+3.  Optional: Provide a __description__ of the credential
+4.  Set how the credential is created
+    *   __Existing secret__ (in the cluster)  
+        This option applies when the purpose is to create credentials based on an existing secret
+        *   Select a secret from the list (The list is empty if no secrets were created in advance)
+    *   __New secret__ (recommended)  
+        A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+        *   Enter the __Access key__ and __Access secret__
+5.  Click __CREATE CREDENTIALS__
 
-1. Select a `Scope` (cluster, department, or project) for the credential.
-2. In the `Credential name` field, enter a name for the credential.
-3. In the `Secret` field, choose from `Existing secret` or `New secret`.
+After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-      * If you select `Existing secret`, select an unused secret from the drop down.
+### Username & password
 
-        !!! Note
-            Existing secrets can't be used more than once.  
+These credentials require a username and corresponding password to access various resources, ensuring that only authorized users can log in.
 
-      * If you choose `New secret`, enter an access key and access secret.
+The purpose of this credential type is to allow access to restricted data.
 
-4. Press `Create credentials` to create the credential.
+1.  Select a [scope](./overview.md#asset-scope)
+2.  Enter a name for the credential. The name must be unique.
+3.  Optional: Provide a description of the credentials
+4.  Set how the credential is created
+    *   __Existing secret__ (in the cluster)  
+        This option applies when the purpose is to create credentials based on an existing secret
+        *   Select a secret from the list (The list is empty if no secrets were created in advance)
+    *   __New secret__ (recommended)  
+        A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+        *   Enter the __username__ and __password__
+5.  Click __CREATE CREDENTIALS__
 
-### `Username and password`
+After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-1. Select a `Scope` (cluster, department, or project) for the credential.
-2. In the `Credential name` field, enter a name for the credential.
-3. In the `Secret` field, choose from `Existing secret` or `New secret`.
+### Generic secret
 
-      * If you select `Existing secret`, select an unused secret from the drop down.
-  
-        !!! Note
-            Existing secrets can't be used more than once.
+These credentials are a flexible option that consists of multiple keys & values and can store various sensitive information, such as API keys or configuration data, to be used securely within applications.
 
-      * If you choose `New secret`, enter a username and password.
+The purpose of this credential type is to allow access to restricted data.
 
-4. Press `Create credentials` to create the credential.
+1.  Select a [scope](./overview.md#asset-scope)
+2.  Enter a name for the credential. The name must be unique.
+3.  Optional: Provide a description of the credentials
+4.  Set how the credential is created
+    *   __Existing secret__ (in the cluster)  
+        This option applies when the purpose is to create credentials based on an existing secret
+        *   Select a secret from the list (The list is empty if no secrets were created in advance)
+    *   __New secret__ (recommended)  
+        A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+        *   Click __+KEY & VALUE__ - to add key/value pairs to store in the new secret
+5.  Click __CREATE CREDENTIALS__
 
-### Generic Secret
+## Editing credentials
 
-1. Select a `Scope` (cluster, department, or project) for the credential.
-2. In the `Credential name` field, enter a name for the credential, and the in the *Description* field, enter a description..
-3. In the `Secret` field, choose from `Existing secret` or `New secret`.
+To rename a credential:
 
-      * If you select `Existing secret`, select an unused secret from the drop down.
-  
-        !!! Note
-            Existing secrets can't be used more than once.
+1.  Select the credential from the table
+2.  Click __Rename__ to edit its name and description
 
-      * If you choose `New secret`, enter a key, valuer pair.
+## Deleting credentials
 
-4. Press `Create credentials` to create the credential.
+To delete a credential:
 
-## Credentials Table
-
-The *Credentials* table contains a column that shows the status of the credential. The following statuses are supported:
-
-| Status |  Description |
-| -- | -- |
-| **No issues found** | No issues were found when propagating the credential to the configured scope. |
-| **Issues found** | Issues were found while propagating the credentials to the configured scope. |
-| **Issues found** | The credential could not be created in the cluster. |
-| **No status** | Status could not be displayed because the credentials scope is an account. |
-| **No Status** | Status could not be displayed because the current version of the cluster is not up to date. |
-
-You can download the Credentials table to a CSV file. Downloading a CSV can provide a snapshot history of your credentials over the course of time, and help with compliance tracking. All the columns that are selected (displayed) in the table will be downloaded to the file.
-
-Use the *Cluster* filter at the top of the table to see credentials that are assigned to specific clusters.
+1.  Select the credential you want to delete
+2.  Click __DELETE__
+3.  In the dialog, click __DELETE__ to confirm the deletion
 
 !!! Note
-    The cluster filter will be in the top bar when there are clusters that are installed with version 2.16 or lower.
+      Credentials cannot be deleted if they are being used by a workload and template.
 
-Use the *Add filter* to add additional filters to the table.
+## Using credentials
 
-To download the Credentials table to a CSV:
+You can use credentials (secrets) in various ways within the system
 
-1. Open *Credentials*.
-2. From the *Columns* icon, select the columns you would like to have displayed in the table.
-3. Click on the ellipsis labeled *More*, and download the CSV.
+### Access private data sources
+
+To access private data sources, attach credentials to data sources of the following types: [Git](./datasources.md#create-a-git-data-source), [S3 Bucket](./datasources.md#create-an-s3-data-source)
+
+### Use directly within the container
+
+To use the secret directly from within the container, you can choose between the following options
+
+1. Get the secret mounted to the file system by using the [Generic secret](./datasources.md#create-a-secret-as-data-source) data source
+2. Get the secret as an environment variable injected into the container. There are two equivalent ways to inject the environment variable.
+      a. By adding it to the Environment asset. 
+      b. By adding it ad-hoc as part of the workload.
+
+## Creating Credentials using an ‘existing secret’
+
+An ‘existing secret’ can be created by an Infrastructure administrator who has access to the cluster:
+
+1.  Locate the secret’s file in the Run:ai namespace: `runai`
+2.  Label the secret in the cluster per scope to provide Run:ai with visibility and authorization to share the secret:
+    1.  For ‘cluster’ scope - `run.ai/cluster-wide: "true"`
+    2.  For ‘department’ scope - `run.ai/department: "<name of department>"`
+    3.  For ‘project’ scope - no labels are required
+3.  Label the secret with the correct credential type:
+    1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
+    2.  Access key - `run.ai/cluster-wide: "access-key"`
+    3.  Username and password - `run.ai/cluster-wide: "password"`
+    4.  Generic secret - `run.ai/cluster-wide: "generic"`
+
+The secret now appears in the list of existing secrets while creating credentials in the Run:ai UI.
+
+## Using API
+
+To view the available actions, go to the [Credentials](https://app.run.ai/api/docs#tag/Credentials) API reference

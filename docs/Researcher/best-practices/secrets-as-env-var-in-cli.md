@@ -1,4 +1,6 @@
-# Secrets in Workloads
+# Propogating secrets as environment variables to workloads via the CLI
+
+The following is a specific knowledge articles for Run:ai command-line interface users who wish to propagate a Kubernetes secret an an environment variable.
 
 ## Kubernetes Secrets
 
@@ -34,7 +36,7 @@ kubectl apply -f <file-name>
     * Secrets are base64 encoded
     * Secrets are stored in the scope of a namespace and will not be accessible from other namespaces. Hence the reference to the Run:ai Project name above. Run:ai provides the ability to propagate secrets throughout all Run:ai Projects. See below.
 
-## Attaching a secret to a Workload on Submit
+## Attaching a secret to a Workload on Submit via CLI
 
 When you submit a new Workload, you will want to connect the secret to the new Workload. To do that, run:
 
@@ -48,30 +50,3 @@ For example:
 runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
 ```
 
-
-### Secrets and Projects
-
-<!-- !!! Important
-    The feature described below is not enabled by default in Run:ai cluster installations -->
-
-As per the note above, secrets are namespace-specific. If your secret relates to all Run:ai Projects, do the following to propagate the secret to all Projects:
-
-* Create a secret within the `runai` namespace.
-* Run the following once to allow Run:ai to propagate the secret to all Run:ai Projects:
-
-```
-runai-adm set secret <secret name> --cluster-wide
-```
-
-!!! Reminder
-    The Run:ai Administrator CLI can be obtained [here](../../../admin//config/cli-admin-install.md).
-
-To delete a secret from all Run:ai Projects, run:
-
-```
-runai-adm remove secret <secret name> --cluster-wide
-```
-
-## Secrets and Policies
-
-A Secret can be set at the policy level. For additional information see [policies guide](../../../platform-admin/workloads/policies/overview.md).
