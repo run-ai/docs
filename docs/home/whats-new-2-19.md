@@ -166,7 +166,7 @@ For workloads with the status of "Pending," the user can click the “i” icon 
 	  
 Run:ai now supports interworking with Karpenter. Karpenter is an open-source Kubernetes cluster auto-scaler built for cloud deployments. Karpenter optimizes the cloud cost of a customer’s cluster by moving workloads between different node types, bin-packing nodes, using lower-cost nodes where possible, scaling up new nodes on demand, and shutting down unused nodes with the goal of optimizing and reducing costs.
 
-Please read Run:ai’s documentation for more information on Run:ai and Karpenter interworking considerations.
+Please read the [documentation](../Researcher/scheduling/karpenter.md) for more information on Run:ai and Karpenter interworking considerations.
 
 ## Control and Visibility (UI changes)
 
