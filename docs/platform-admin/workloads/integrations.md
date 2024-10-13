@@ -36,6 +36,6 @@ The table below summarizes the integration capabilities with various third-party
 
 ## Integration support
 
-Support for integration varies. Where mentioned above, the integration is supported out of the box with Run:ai. With other integrations,  our customer success team has previous experience with integrating with the third party software and many times the community portal will contain additional reference documentation provided on an as-is basis.
+Support for integrations varies. Where mentioned above, the integration is supported out of the box with Run:ai. With other integrations,  our customer success team has previous experience with integrating with the third party software and many times the community portal will contain additional reference documentation provided on an as-is basis.
 
 The Run:ai community portal is password protected and access is provided to customers and partners.
