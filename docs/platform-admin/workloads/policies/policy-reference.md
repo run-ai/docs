@@ -33,6 +33,7 @@ Click the link to view the value type of each field.
 | ports | Specifies a set of ports exposed from the container running the created workload. More information in Ports fields below. | itemized | Workspace Training |
 | probes | Specifies the ReadinessProbe to use to determine if the container is ready to accept traffic. More information in Probes fields below | - | Workspace Training |
 | tolerations | Toleration rules which apply to the pods running the workload. Toleration rules guide (but do not require) the system to which node each pod can be scheduled to or evicted from, based on matching between those rules and the set of taints defined for each Kubernetes node. | itemized | Workspace Training |
+| priorityClass | Priority class of the workload. The values for workspace are build (default) or interactive-preemptible. For training only, use train. Enum: "build", "train", "interactive-preemptible" | string | Workspace |
 | storage | Contains all the fields related to storage configurations. More information in Storage fields below. | - | Workspace Training |
 | security | Contains all the fields related to security configurations. More information in Security fields below. | - | Workspace Training |
 | compute | Contains all the fields related to compute configurations. More information in Compute fields below. | - | Workspace Training |
