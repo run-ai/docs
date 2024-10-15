@@ -50,3 +50,23 @@ The Run:ai REST API offers developers a robust interface for interacting with an
 Public API documentation is available at [api-docs.run.ai](https://api-docs.run.ai){target=_blank}. For self-hosted deployments, access the documentation at `https://<control-plane-url>/api/docs`.
 
 [View Documentation](https://api-docs.run.ai){target=_blank .md-button .md-button--primary}
+
+## Run:ai API Policy
+
+At Run:ai, we are dedicated to delivering stable, reliable, and well-documented APIs. Our goal is to ensure that our APIs evolve in a predictable, transparent manner, offering users a seamless experience.
+
+Run:ai follows strict API design and operational standards to ensure a consistent and high-quality experience for users.
+
+### API Lifecycle and Deprecation
+
+While our goal is to maintain stable and backward-compatible APIs, there may be times when breaking changes or deprecations are necessary.
+
+In case of breaking changes, the deprecated version of the API will be supported for two additional versions in self-hosted deployments and for six months in SaaS deployments. During this period, no new features or functionality will be added to the deprecated API. 
+When an API or API field is deprecated, the following process is followed:
+Documentation: The deprecated API or field is clearly labeled in the documentation, with a replacement provided where applicable.
+Release Notes: Information about deprecated APIs, including those scheduled for future removal, is included in the release notes.
+Customer Notification: Customers are notified of upcoming deprecations as part of the regular release communications.
+
+### API Removal
+
+After the defined backward compatibility period has ended, deprecated APIs or fields are removed from both the codebase and the documentation.
