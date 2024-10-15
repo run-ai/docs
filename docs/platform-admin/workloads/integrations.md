@@ -3,7 +3,11 @@
 
 The table below summarizes the integration capabilities with various third-party products. 
 
+## Integration support
 
+Support for integrations varies. Where mentioned below, the integration is supported out of the box with Run:ai. With other integrations,  our customer success team has previous experience with integrating with the third party software and many times the community portal will contain additional reference documentation provided on an as-is basis.
+
+The Run:ai community portal is password protected and access is provided to customers and partners.
 
 ## Integrations
 
@@ -35,8 +39,4 @@ The table below summarizes the integration capabilities with various third-party
 | [XGBoost](https://xgboost.readthedocs.io/en/stable/){target=_blank}            | Training                              | Run:ai provides out of the box support for submitting XGBoost workloads                     | XGBoost [via API](../../Researcher/cli-reference/new-cli/runai_xgboost.md) or use Workflow submission [via user interface](../../Researcher/workloads/trainings.md)    |
 | [Karpenter](https://karpenter.sh){target=_blank} | Cost Optimization | Run:ai provides out of the box support for Karpenter to save cloud costs  | Integration notes with Karpenter can be found [here](../../Researcher/scheduling/karpenter.md) | 
 
-## Integration support
 
-Support for integrations varies. Where mentioned above, the integration is supported out of the box with Run:ai. With other integrations,  our customer success team has previous experience with integrating with the third party software and many times the community portal will contain additional reference documentation provided on an as-is basis.
-
-The Run:ai community portal is password protected and access is provided to customers and partners.
