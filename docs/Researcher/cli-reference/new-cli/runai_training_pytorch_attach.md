@@ -1,6 +1,6 @@
 ## runai training pytorch attach
 
-Attach to a running container in a pytorch training job
+attach to a running container in a pytorch training job
 
 ```
 runai training pytorch attach [WORKLOAD_NAME] [flags]

@@ -1,16 +1,19 @@
 ## runai training attach
 
-Attach to a process that is already running inside an existing container.
+attach to a running container in a standard training job
 
 ```
-runai training attach TRAINING_NAME [flags]
+runai training attach [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Attaching to ubuntu training 
-runai training attach ubuntu-wl --tty --stdin
+# Attaching to the main worker of a standard training
+runai training standard attach standard-01 --tty --stdin
+
+# Attaching to a specific pod of a standard training
+runai training standard attach standard-01 --pod standard-01-worker-1 --tty --stdin
 ```
 
 ### Options

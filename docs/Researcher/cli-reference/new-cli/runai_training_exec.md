@@ -1,19 +1,22 @@
 ## runai training exec
 
-exec management
+execute a command in a training standard job
 
 ```
-runai training exec TRAINING_NAME [flags]
+runai training exec [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Execute bash to training 
-runai training exec jup --tty --stdin -- /bin/bash 
+# Execute bash in the training standard's main worker
+runai training standard exec standard-01 --tty --stdin -- /bin/bash 
 
-# Execute ls to workload
-runai training exec jup -- ls
+# Execute ls command in the training standard's main worker
+runai training standard exec standard-01 -- ls
+
+# Execute a command in a specific training standard worker
+runai training standard exec standard-01 --pod standard-01-worker-1 -- nvidia-smi
 ```
 
 ### Options

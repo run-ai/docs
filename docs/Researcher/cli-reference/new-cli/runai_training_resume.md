@@ -1,16 +1,9 @@
 ## runai training resume
 
-resume training
+resume standard training
 
 ```
-runai training resume [TRAINING_NAME] [flags]
-```
-
-### Examples
-
-```
-runai training resume <training_name> -p=<project_name>
-runai training resume --uuid=<training_uuid>
+runai training resume [WORKLOAD_NAME] [flags]
 ```
 
 ### Options

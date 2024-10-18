@@ -15,7 +15,7 @@ runai port-forward WORKLOAD_NAME [flags]
       --pod-running-timeout duration   Pod check for running state timeout.
       --port stringArray               port
   -p, --project string                 Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --type string                    The type of the workload (training, workspace, distributed)
+      --type string                    The type of the workload (training, workspace)
 ```
 
 ### Options inherited from parent commands

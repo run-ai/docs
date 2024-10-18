@@ -1,6 +1,6 @@
 ## runai xgboost exec
 
-Execute a command in a training xgboost job
+execute a command in a training xgboost job
 
 ```
 runai xgboost exec [WORKLOAD_NAME] [flags]

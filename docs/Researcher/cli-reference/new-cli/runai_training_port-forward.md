@@ -1,22 +1,22 @@
 ## runai training port-forward
 
-port forward management
+forward one or more local ports to a standard training job
 
 ```
-runai training port-forward TRAINING_NAME [flags]
+runai training port-forward [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Forward connections from localhost:8080 to <training-name> on port 8090:
-runai training port-forward <training-name> --port 8080:8090 --address localhost
+# Forward connections from localhost:8080 to training standard on port 8090:
+runai training standard port-forward standard-01 --port 8080:8090 --address localhost
 
-# Forward connections from 0.0.0.0:8080 to <job-name> on port 8080:
-runai training port-forward <training-name> --port 8080 --address 0.0.0.0 [requires privileges]
+# Forward connections from 0.0.0.0:8080 to standard training on port 8080:
+runai training standard port-forward standard-01 --port 8080 --address 0.0.0.0 [requires privileges]
 
-# Forward multiple connections from localhost:8080 to <training-name> on port 8090 and from localhost:6443 to <training-name> on port 443:
-runai training port-forward <training-name> --port 8080:8090 --port 6443:443 --address localhost
+# Forward multiple connections from localhost:8080 to standard training on port 8090 and from localhost:6443 to training standard on port 443:
+runai training standard port-forward standard-01 --port 8080:8090 --port 6443:443 --address localhost
 ```
 
 ### Options

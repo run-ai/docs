@@ -1,6 +1,6 @@
 ## runai training mpi attach
 
-Attach to a running container in a mpi training job
+attach to a running container in a mpi training job
 
 ```
 runai training mpi attach [WORKLOAD_NAME] [flags]

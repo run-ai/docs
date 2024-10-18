@@ -1,6 +1,6 @@
 ## runai training tensorflow logs
 
-View logs of a tf training job
+view logs of a tf training job
 
 ```
 runai training tensorflow logs [WORKLOAD_NAME] [flags]

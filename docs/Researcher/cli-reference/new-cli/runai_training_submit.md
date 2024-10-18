@@ -1,6 +1,6 @@
 ## runai training submit
 
-submit training
+submit standard training
 
 ```
 runai training submit [flags]
@@ -9,7 +9,8 @@ runai training submit [flags]
 ### Examples
 
 ```
-runai training submit <training_name> -p=<project_name> -i=gcr.io/run-ai-demo/quickstart
+# Submit a standard training job
+runai training standard submit <name> -p <project_name> -i gcr.io/run-ai-demo/quickstart
 ```
 
 ### Options

@@ -1,6 +1,6 @@
 ## runai training mpi exec
 
-Execute a command in a training mpi job
+execute a command in a training mpi job
 
 ```
 runai training mpi exec [WORKLOAD_NAME] [flags]

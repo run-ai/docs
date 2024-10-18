@@ -1,6 +1,6 @@
 ## runai xgboost attach
 
-Attach to a running container in a xgboost training job
+attach to a running container in a xgboost training job
 
 ```
 runai xgboost attach [WORKLOAD_NAME] [flags]

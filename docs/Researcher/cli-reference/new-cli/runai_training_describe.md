@@ -1,9 +1,31 @@
 ## runai training describe
 
-Describe a training workload
+describe standard training
 
 ```
-runai training describe TRAINING_NAME [flags]
+runai training describe [WORKLOAD_NAME] [flags]
+```
+
+### Examples
+
+```
+# Describe a standard training workload with a default project
+runai training standard describe <standard-name>
+
+# Describe a standard training workload in a specific project
+runai training standard describe <standard-name> -p <project_name>
+
+# Describe a standard training workload by UUID
+runai training standard describe --uuid=<standard_uuid>
+
+# Describe a standard training workload with specific output format
+runai training standard describe <standard-name> -o json
+
+# Describe a standard training workload with specific sections
+runai training standard describe <standard-name> --general --compute --pods --events --networks
+
+# Describe a standard training workload with container details and custom limits
+runai training standard describe <standard-name> --containers --pod-limit 20 --event-limit 100
 ```
 
 ### Options

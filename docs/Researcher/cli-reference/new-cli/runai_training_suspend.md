@@ -1,16 +1,9 @@
 ## runai training suspend
 
-suspend training
+suspend standard training
 
 ```
-runai training suspend [TRAINING_NAME] [flags]
-```
-
-### Examples
-
-```
-runai training <training_name> -p=<project_name>
-runai training suspend --uuid=<training_workspace_uuid>
+runai training suspend [WORKLOAD_NAME] [flags]
 ```
 
 ### Options

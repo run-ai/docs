@@ -21,12 +21,12 @@ alias for pytorch management
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai pytorch attach](runai_pytorch_attach.md)	 - Attach to a running container in a pytorch training job
+* [runai pytorch attach](runai_pytorch_attach.md)	 - attach to a running container in a pytorch training job
 * [runai pytorch delete](runai_pytorch_delete.md)	 - delete pytorch training workload
 * [runai pytorch describe](runai_pytorch_describe.md)	 - describe pytorch training
-* [runai pytorch exec](runai_pytorch_exec.md)	 - Execute a command in a training pytorch job
+* [runai pytorch exec](runai_pytorch_exec.md)	 - execute a command in a training pytorch job
 * [runai pytorch list](runai_pytorch_list.md)	 - list pytorch training
-* [runai pytorch logs](runai_pytorch_logs.md)	 - View logs of a pytorch training job
-* [runai pytorch port-forward](runai_pytorch_port-forward.md)	 - Forward one or more local ports to a pytorch training job
+* [runai pytorch logs](runai_pytorch_logs.md)	 - view logs of a pytorch training job
+* [runai pytorch port-forward](runai_pytorch_port-forward.md)	 - forward one or more local ports to a pytorch training job
 * [runai pytorch submit](runai_pytorch_submit.md)	 - submit pytorch training
 

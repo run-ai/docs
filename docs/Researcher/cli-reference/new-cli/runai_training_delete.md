@@ -1,16 +1,9 @@
 ## runai training delete
 
-delete training workload
+delete standard training workload
 
 ```
-runai training delete [TRAINING_NAME] [flags]
-```
-
-### Examples
-
-```
-runai training delete <training_name> (optional)-p=<project_name>
-runai training delete --uuid=<training_uuid>
+runai training delete [WORKLOAD_NAME] [flags]
 ```
 
 ### Options

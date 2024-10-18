@@ -1,6 +1,6 @@
 ## runai pytorch logs
 
-View logs of a pytorch training job
+view logs of a pytorch training job
 
 ```
 runai pytorch logs [WORKLOAD_NAME] [flags]

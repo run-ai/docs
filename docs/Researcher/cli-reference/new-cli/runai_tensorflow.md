@@ -21,12 +21,12 @@ alias for tensorflow management
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai tensorflow attach](runai_tensorflow_attach.md)	 - Attach to a running container in a tf training job
+* [runai tensorflow attach](runai_tensorflow_attach.md)	 - attach to a running container in a tf training job
 * [runai tensorflow delete](runai_tensorflow_delete.md)	 - delete tf training workload
 * [runai tensorflow describe](runai_tensorflow_describe.md)	 - describe tf training
-* [runai tensorflow exec](runai_tensorflow_exec.md)	 - Execute a command in a training tf job
+* [runai tensorflow exec](runai_tensorflow_exec.md)	 - execute a command in a training tf job
 * [runai tensorflow list](runai_tensorflow_list.md)	 - list tf training
-* [runai tensorflow logs](runai_tensorflow_logs.md)	 - View logs of a tf training job
-* [runai tensorflow port-forward](runai_tensorflow_port-forward.md)	 - Forward one or more local ports to a tf training job
+* [runai tensorflow logs](runai_tensorflow_logs.md)	 - view logs of a tf training job
+* [runai tensorflow port-forward](runai_tensorflow_port-forward.md)	 - forward one or more local ports to a tf training job
 * [runai tensorflow submit](runai_tensorflow_submit.md)	 - submit tf training
 

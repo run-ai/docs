@@ -58,7 +58,7 @@ runai workload logs WORKLOAD_NAME [flags]
       --since-time string       Return logs after a specific date (RFC3339)
   -t, --tail int                Numer of tailed lines to fetch from the log, for no limit set to -1 (default -1)
       --timestamps              Show timestamps in log output
-      --type string             The type of the workload (training, workspace, distributed)
+      --type string             The type of the workload (training, workspace)
       --wait-timeout duration   Timeout for waiting for workload to be ready for log streaming
 ```
 
