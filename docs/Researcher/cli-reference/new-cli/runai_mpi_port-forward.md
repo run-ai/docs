@@ -1,6 +1,6 @@
 ## runai mpi port-forward
 
-Forward one or more local ports to a mpi training job
+forward one or more local ports to a mpi training job
 
 ```
 runai mpi port-forward [WORKLOAD_NAME] [flags]

@@ -21,12 +21,12 @@ tensorflow management
 ### SEE ALSO
 
 * [runai training](runai_training.md)	 - training management
-* [runai training tensorflow attach](runai_training_tensorflow_attach.md)	 - Attach to a running container in a tf training job
+* [runai training tensorflow attach](runai_training_tensorflow_attach.md)	 - attach to a running container in a tf training job
 * [runai training tensorflow delete](runai_training_tensorflow_delete.md)	 - delete tf training workload
 * [runai training tensorflow describe](runai_training_tensorflow_describe.md)	 - describe tf training
-* [runai training tensorflow exec](runai_training_tensorflow_exec.md)	 - Execute a command in a training tf job
+* [runai training tensorflow exec](runai_training_tensorflow_exec.md)	 - execute a command in a training tf job
 * [runai training tensorflow list](runai_training_tensorflow_list.md)	 - list tf training
-* [runai training tensorflow logs](runai_training_tensorflow_logs.md)	 - View logs of a tf training job
-* [runai training tensorflow port-forward](runai_training_tensorflow_port-forward.md)	 - Forward one or more local ports to a tf training job
+* [runai training tensorflow logs](runai_training_tensorflow_logs.md)	 - view logs of a tf training job
+* [runai training tensorflow port-forward](runai_training_tensorflow_port-forward.md)	 - forward one or more local ports to a tf training job
 * [runai training tensorflow submit](runai_training_tensorflow_submit.md)	 - submit tf training
 

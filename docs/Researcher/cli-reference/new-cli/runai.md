@@ -32,7 +32,6 @@ runai [flags]
 * [runai cluster](runai_cluster.md)	 - cluster management
 * [runai config](runai_config.md)	 - configuration management
 * [runai describe](runai_describe.md)	 - [Deprecated] Display detailed information about resources
-* [runai distributed](runai_distributed.md)	 - distributed management
 * [runai exec](runai_exec.md)	 - [Deprecated] exec
 * [runai list](runai_list.md)	 - [Deprecated] display resource list. By default displays the job list
 * [runai login](runai_login.md)	 - login to the control plane

@@ -1,6 +1,6 @@
 ## runai training tensorflow port-forward
 
-Forward one or more local ports to a tf training job
+forward one or more local ports to a tf training job
 
 ```
 runai training tensorflow port-forward [WORKLOAD_NAME] [flags]

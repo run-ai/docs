@@ -1,6 +1,6 @@
 ## runai pytorch exec
 
-Execute a command in a training pytorch job
+execute a command in a training pytorch job
 
 ```
 runai pytorch exec [WORKLOAD_NAME] [flags]

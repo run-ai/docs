@@ -1,6 +1,6 @@
 ## runai training standard exec
 
-Execute a command in a training standard job
+execute a command in a training standard job
 
 ```
 runai training standard exec [WORKLOAD_NAME] [flags]

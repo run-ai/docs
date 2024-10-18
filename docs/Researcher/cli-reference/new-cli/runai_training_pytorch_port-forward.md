@@ -1,6 +1,6 @@
 ## runai training pytorch port-forward
 
-Forward one or more local ports to a pytorch training job
+forward one or more local ports to a pytorch training job
 
 ```
 runai training pytorch port-forward [WORKLOAD_NAME] [flags]

@@ -1,6 +1,6 @@
 ## runai training mpi logs
 
-View logs of a mpi training job
+view logs of a mpi training job
 
 ```
 runai training mpi logs [WORKLOAD_NAME] [flags]

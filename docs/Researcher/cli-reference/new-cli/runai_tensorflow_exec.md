@@ -1,6 +1,6 @@
 ## runai tensorflow exec
 
-Execute a command in a training tf job
+execute a command in a training tf job
 
 ```
 runai tensorflow exec [WORKLOAD_NAME] [flags]

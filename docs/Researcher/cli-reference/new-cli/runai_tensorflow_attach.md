@@ -1,6 +1,6 @@
 ## runai tensorflow attach
 
-Attach to a running container in a tf training job
+attach to a running container in a tf training job
 
 ```
 runai tensorflow attach [WORKLOAD_NAME] [flags]

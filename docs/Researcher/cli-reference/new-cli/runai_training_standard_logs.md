@@ -1,6 +1,6 @@
 ## runai training standard logs
 
-View logs of a standard training job
+view logs of a standard training job
 
 ```
 runai training standard logs [WORKLOAD_NAME] [flags]

@@ -1,6 +1,6 @@
 ## runai config project
 
-Deprecated] Configure a default project
+[Deprecated] Configure a default project
 
 ```
 runai config project PROJECT_NAME [flags]

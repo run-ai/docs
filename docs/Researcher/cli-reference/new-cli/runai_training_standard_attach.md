@@ -1,6 +1,6 @@
 ## runai training standard attach
 
-Attach to a running container in a standard training job
+attach to a running container in a standard training job
 
 ```
 runai training standard attach [WORKLOAD_NAME] [flags]

@@ -20,7 +20,7 @@ runai workload describe WORKLOAD_NAME [flags]
       --pod-limit int32     Limit the number of pods displayed (-1 for no limit) (default 10)
       --pods                Show pods information (default true)
   -p, --project string      Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --type string         The type of the workload (training, workspace, distributed)
+      --type string         The type of the workload (training, workspace)
 ```
 
 ### Options inherited from parent commands

@@ -1,6 +1,6 @@
 ## runai training xgboost port-forward
 
-Forward one or more local ports to a xgboost training job
+forward one or more local ports to a xgboost training job
 
 ```
 runai training xgboost port-forward [WORKLOAD_NAME] [flags]

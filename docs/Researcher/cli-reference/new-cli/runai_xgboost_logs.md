@@ -1,6 +1,6 @@
 ## runai xgboost logs
 
-View logs of a xgboost training job
+view logs of a xgboost training job
 
 ```
 runai xgboost logs [WORKLOAD_NAME] [flags]

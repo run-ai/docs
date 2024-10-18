@@ -1,6 +1,6 @@
 ## runai training standard port-forward
 
-Forward one or more local ports to a standard training job
+forward one or more local ports to a standard training job
 
 ```
 runai training standard port-forward [WORKLOAD_NAME] [flags]
