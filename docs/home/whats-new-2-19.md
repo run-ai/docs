@@ -278,7 +278,14 @@ The legacy Jobs view will be fully deprecated in the Q1/25 release. We recommend
 !!! Note 
     Users can still submit workloads via the legacy Jobs submission form.
 
-    
+#### Dynamic MIG deprecation 
+
+Dynamic MIG deprecation process starts with Run:ai v2.19 (Q4/24 release)
+
+* The feature is still available and MIG Profile APIs still function but are marked as Deprecated. See the table below for more details.
+* In Q1/25 release, ‘Dynamic MIG’ will not be usable anymore but the APIs will still be accessible.
+* In Q2/25 all ‘Dynamic MIG’ APIs will be fully deprecated.
+
 #### Legacy navigation - Run:ai UI
 
 The legacy navigation will be fully deprecated in the Q1/25 release, and during Q1/25 for SaaS customers.
@@ -289,6 +296,14 @@ The legacy navigation will be fully deprecated in the Q1/25 release, and during 
 | Deprecated | Replacement |
 | :---- | :---- |
 | /v1/k8s/audit | /api/v1/audit/log |
+| /api/v1/asset/compute/spec/migProfile ||
+| /api/v1/workloads/spec/compute/migProfile ||
+| /api/v1/workloads/workspaces/spec/compute/migProfile  ||
+| /api/v1/workloads/Trainings/spec/compute/migProfile ||
+| /api/v1/workloads/Inferences/spec/compute/migProfile ||
+| /api/v1/workloads/distributed/spec/compute/migProfile ||
+| /api/v1/workloads/distributed/masterSpec/compute/migProfile ||
+
 
 
 
