@@ -296,5 +296,5 @@ The legacy navigation will be fully deprecated in the Q1/25 release, and during 
 
 ### Workload policy documentation
 
-  A comprehensive set of articles detailing the usage and the process of submitting new workload policies has been introduced. It covers the structure, syntax, best practices, and examples for configuring policy YAML files. The new documentation includes step-by-step explanations of how to create a new rule in a policy, together with information of the different value types, rule types, and policy spec sections. For more information, refer to the [Policies](../platform-admin/workloads/policies/workspaces-policy.md) section.  
+  A comprehensive set of articles detailing the usage and the process of submitting new workload policies has been introduced. It covers the structure, syntax, best practices, and examples for configuring policy YAML files. The new documentation includes step-by-step explanations of how to create a new rule in a policy, together with information of the different value types, rule types, and policy spec sections. For more information, refer to the [Policies](../platform-admin/workloads/policies/workspaces-policy.md) section.
   
