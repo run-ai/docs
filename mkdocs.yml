@@ -252,7 +252,7 @@ nav:
       - 'Email and System Notifications': 'admin/config/notifications.md'
       - 'Setup cluster wide PVC' : 'admin/config/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/config/limit-to-node-group.md'
-      - 'Workload Ownership Protection' : 'admin/config/workload-ownership-protection.md'
+      - 'Workload Deletion Protection' : 'admin/config/workload-ownership-protection.md'
     - 'Maintenance' : 
       - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
