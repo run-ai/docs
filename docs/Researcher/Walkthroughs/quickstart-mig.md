@@ -1,4 +1,4 @@
-# Quickstart: Launch Workloads with NVIDIA Dynamic MIG
+# Quickstart: Launch Workloads with NVIDIA Dynamic MIG (Deprecated)
 
 ## Introduction
 

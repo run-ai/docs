@@ -131,7 +131,7 @@ See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/
 
 * Use the default `gpu-operator` namespace . Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in customized cluster installation.  
 * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/dgx-os-6-user-guide/release_notes.html) is one such example as it comes bundled with NVIDIA Drivers.  
-* To use Dynamic MIG, the GPU Operator must be installed with the flag `mig.strategy=mixed` as described in customized cluster installation. If the GPU Operator is already installed, edit the `clusterPolicy` by running
+* To use Dynamic MIG (deprecated), the GPU Operator must be installed with the flag `mig.strategy=mixed` as described in customized cluster installation. If the GPU Operator is already installed, edit the `clusterPolicy` by running
 
 ``` bash
 kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}

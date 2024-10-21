@@ -47,7 +47,7 @@ Following is the list of published Run:ai metrics, per cluster version (make sur
 | runai_memory_limits_per_active_workload | {clusterId, job_name, job_uuid} | Bytes | Workloads CPU memory limit. See [link](https://docs.run.ai/latest/Researcher/scheduling/allocation-of-cpu-and-memory) |
 | runai_active_job_memory_requested_bytes | {clusterId, job_name, job_uuid} | Bytes | Workloads requested CPU memory. See [link](https://docs.run.ai/latest/Researcher/scheduling/allocation-of-cpu-and-memory) |
 | runai_job_memory_used_bytes | {clusterId, workload_id, workload_name, project} | Bytes | Workloads used CPU memory |
-| runai_mig_mode_gpu_count | {clusterId, node} | Double | Number of GPUs on MIG nodes |
+| runai_mig_mode_gpu_count | {clusterId, node} | Double | Number of GPUs on MIG nodes (Deprecated) |
 | runai_gpu_utilization_per_gpu | {clusterId, gpu, node} | % | GPU Utilization per GPU |
 | runai_gpu_utilization_per_node | {clusterId, node} | % | GPU Utilization per Node |
 | runai_gpu_memory_used_mebibytes_per_gpu | {clusterId, gpu, node} | MiB | Used GPU memory per GPU |

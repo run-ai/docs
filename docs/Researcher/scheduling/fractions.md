@@ -27,7 +27,7 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
 !!! Info
     For interoperability with other Kubernetes schedulers, Run:ai creates special _reservation_ pods. Once a workload has been allocated a fraction of a GPU, Run:ai will create a pod in a dedicated `runai-reservation` namespace with the full GPU as a resource. This would cause other schedulers to understand that the GPU is reserved.    
 
-## Dynamic MIG
+## Dynamic MIG (Deprecated)
 
 NVIDIA MIG allows GPUs based on the NVIDIA Ampere architecture (such as NVIDIA A100) to be partitioned into separate GPU Instances:
 
