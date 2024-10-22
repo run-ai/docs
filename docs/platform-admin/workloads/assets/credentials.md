@@ -176,23 +176,46 @@ To use the secret directly from within the container, you can choose between the
       a. By adding it to the Environment asset. 
       b. By adding it ad-hoc as part of the workload.
 
-## Creating Credentials using an ‘existing secret’
+---
+## Creating secrets in advance
 
-An ‘existing secret’ can be created by an Infrastructure administrator who has access to the cluster:
+Add secrets in advance to be used when creating credentials via the Run:ai UI.
 
-1.  Locate the secret’s file in the Run:ai namespace: `runai`
-2.  Label the secret in the cluster per scope to provide Run:ai with visibility and authorization to share the secret:
-    1.  For ‘cluster’ scope - `run.ai/cluster-wide: "true"`
-    2.  For ‘department’ scope - `run.ai/department: "<name of department>"`
-    3.  For ‘project’ scope - no labels are required
-3.  Label the secret with the correct credential type:
-    1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
-    2.  Access key - `run.ai/cluster-wide: "access-key"`
-    3.  Username and password - `run.ai/cluster-wide: "password"`
-    4.  Generic secret - `run.ai/cluster-wide: "generic"`
+Follow the steps below for each required scope:
 
-The secret now appears in the list of existing secrets while creating credentials in the Run:ai UI.
+=== "Cluster scope"
+    1.  Create the secret in the Run:ai namespace (runai)
+    2.  To authorize Run:ai to use the secret, label it: `run.ai/cluster-wide: "true"`
+    3.  Label the secret with the correct credential type:
+        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
+        2.  Access key - `run.ai/cluster-wide: "access-key"`
+        3.  Username and password - `run.ai/cluster-wide: "password"`
+        4.  Generic secret - `run.ai/cluster-wide: "generic"` ֿ
 
+
+=== "Department scope"
+
+    1.  Create the secret in the Run:ai namespace (runai)
+    2.  To authorize Run:ai to use the secret, label it: `run.ai/department: "<name of department>"`
+    3.  Label the secret with the correct credential type:
+        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
+        2.  Access key - `run.ai/cluster-wide: "access-key"`
+        3.  Username and password - `run.ai/cluster-wide: "password"`
+        4.  Generic secret - `run.ai/cluster-wide: "generic"`
+
+
+=== "Project scope"
+
+    1.  Create the secret in the project’s namespace
+    2.  Label the secret with the correct credential type:
+        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
+        2.  Access key - `run.ai/cluster-wide: "access-key"`
+        3.  Username and password - `run.ai/cluster-wide: "password"`
+        4.  Generic secret - `run.ai/cluster-wide: "generic"`
+
+The secret is now displayed for that scope in the list of existing secrets.
+
+ 
 ## Using API
 
 To view the available actions, go to the [Credentials](https://app.run.ai/api/docs#tag/Credentials) API reference
