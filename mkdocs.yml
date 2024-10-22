@@ -205,6 +205,7 @@ nav:
         - 'Network Requirements' : 'admin/runai-setup/cluster-setup/network-req.md'
         - 'Cluster Install' : 'admin/runai-setup/cluster-setup/cluster-install.md'
         - 'Customize Installation' : 'admin/runai-setup/cluster-setup/customize-cluster-install.md'
+        - 'Manually Create Projects' : 'admin/runai-setup/cluster-setup/project-management.md'
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Uninstall' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
         - 'NVIDIA DGX Bundle' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
@@ -253,6 +254,7 @@ nav:
       - 'Setup cluster wide PVC' : 'admin/config/cluster-wide-pvc.md'
       - 'Group Nodes' : 'admin/config/limit-to-node-group.md'
       - 'Workload Deletion Protection' : 'admin/config/workload-ownership-protection.md'
+      - 'Advanced Cluster Configuration' : 'admin/config/advanced-cluster-config.md'
     - 'Maintenance' : 
       - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
