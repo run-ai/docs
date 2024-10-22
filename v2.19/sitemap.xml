@@ -965,6 +965,10 @@
          <lastmod>2024-10-22</lastmod>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.19/admin/config/advanced-cluster-config/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.19/admin/config/allow-external-access-to-containers/</loc>
          <lastmod>2024-10-22</lastmod>
     </url>
@@ -1094,6 +1098,10 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.19/admin/runai-setup/cluster-setup/network-req/</loc>
+         <lastmod>2024-10-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.19/admin/runai-setup/cluster-setup/project-management/</loc>
          <lastmod>2024-10-22</lastmod>
     </url>
     <url>
