@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The Administrator creates Run:ai Projects via the [Run:ai user interface](../../../../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project). When enabling [Researcher Authentication](../../../authentication/researcher-authentication.md) you also assign users to Projects.
+The Administrator creates Run:ai Projects via the [Run:ai user interface](../../../platform-admin/aiinitiatives/org/projects.md#adding-a-new-project). When enabling [Researcher Authentication](../../authentication/researcher-authentication.md) you also assign users to Projects.
 
 Run:ai Projects are implemented as Kubernetes namespaces. When creating a new Run:ai Project, Run:ai does the following automatically:
 
@@ -23,7 +23,7 @@ This process may **need to be altered** if,
 
 Run:ai allows the **association** of a Run:ai Project with any existing Kubernetes namespace:
 
-* When [setting up](cluster.md#optional-customize-installation) a Run:ai cluster, Disable namespace creation by setting the cluster flag `createNamespaces` to `false`.
+* Disable namespace creation by setting the cluster flag `createNamespaces` to `false`. For more information see [Advanced Cluster Configuration](../../config/advanced-cluster-config.md) 
 * Using the Run:ai User Interface, create a new Project `<PROJECT-NAME>`. A namespace will **not** be created.
 * Associate and existing namepace `<NAMESPACE>` with the Run:ai project by running:
 
