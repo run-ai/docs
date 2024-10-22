@@ -175,7 +175,7 @@ plugins:
         'Administrator/integration/spark.md' : 'platform-admin/workloads/integrations.md'
         'Administrator/integration/ray.md' : 'platform-admin/workloads/integrations.md'
         'platform-admin/workloads/assets/secrets.md' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
-        'admin/runai-setup/access-control/rbac' : 'admin/authentication/roles.md'
+        'admin/runai-setup/access-control/rbac.md' : 'admin/authentication/roles.md'
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
