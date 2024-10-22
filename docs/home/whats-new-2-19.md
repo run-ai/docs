@@ -8,12 +8,12 @@
 
 ### Improved visibility into pending workloads
 
-For workloads with the status of "Pending," the user can click the “i” icon next to the status to view details of why the workload hasn’t been scheduled. (Requires minimum cluster version v2.19)    
+For workloads with the status of "Pending," the user can click the “i” icon next to the status to view details of why the workload hasn’t been scheduled. (Requires a minimum cluster version of v2.19)    
     
 ### New workload events  
     
   There are now new GPU resource optimization-related messages that are viewable as workload events. These events help users understand the decisions made by the Run:ai GPU toolkit while handling Run:ai’s GPU resource optimization features.  
-  Run:ai’s GPU resource optimization offers unique capabilities that take GPU utilization to a new level and helps customers increase their productivity while maximizing their return on GPU investment. (Requires minimum cluster version v2.19)    
+  Run:ai’s GPU resource optimization offers unique capabilities that take GPU utilization to a new level and helps customers increase their productivity while maximizing their return on GPU investment. (Requires a minimum cluster version of v2.19)    
 
 ### Improved command line interface autocompletion
 
@@ -26,60 +26,60 @@ For workloads with the status of "Pending," the user can click the “i” icon 
 
 ### Container path outside the data source asset  
     
-  AI practitioners can now override the predefined container path for each data source when submitting a workload via the Run:ai UI. While the container path must still be specified as part of the data source asset, researchers can now override the default container path when submitting workloads. (Requires minimum cluster version v2.16)     
+  AI practitioners can now override the predefined container path for each data source when submitting a workload via the Run:ai UI. While the container path must still be specified as part of the data source asset, researchers can now override the default container path when submitting workloads. (Requires a minimum cluster version of v2.16)     
     
 ### Node toleration for workloads  
     
   Researchers can now optionally set tolerations for workloads, letting them bypass node taints during workload submission via the Run:ai UI.  
   To use this feature, make sure it is activated under General Settings.  
-  For more information, refer to the Kubernetes [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) Guide. (Requires minimum cluster version v2.19)    
+  For more information, refer to the Kubernetes [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) Guide. (Requires a minimum cluster version of v2.19)    
     
 ### Topology-aware scheduling  
     
-  When submitting a distributed training workload through the Run:ai UI, researchers can enable topology-aware scheduling. This feature allows an optimized placement within specific placement groups, such as regions, availability zones, or other topologies. To use this, make sure it is activated under General Settings. (Requires minimum cluster version v2.19)    
+  When submitting a distributed training workload through the Run:ai UI, researchers can enable topology-aware scheduling. This feature allows an optimized placement within specific placement groups, such as regions, availability zones, or other topologies. To use this, make sure it is activated under General Settings. (Requires a minimum cluster version of v2.19)    
     
 ### Bulk deletion of workloads  
     
-  Users can now delete workloads in bulk via the Run:ai UI. They’ll be notified if they try to delete workloads for which they don’t have permissions (and those workloads will not be deleted in this process). Multi-selection can also be done using standard keyboard functions. (Requires minimum cluster version v2.19)     
+  Users can now delete workloads in bulk via the Run:ai UI. They’ll be notified if they try to delete workloads for which they don’t have permissions (and those workloads will not be deleted in this process). Multi-selection can also be done using standard keyboard functions. (Requires a minimum cluster version of v2.19)     
     
 ### Enhanced policy representation in the Run:ai UI
 
-  To improve AI practitioners' understanding of administrators’ policy rules and defaults, the UI now includes more clarity to the enforcement and the default values representation for workload fields that are not encapsulated in the asset selection. This update aims to make policy enforcement more intuitive and transparent for practitioners. (Requires minimum cluster version v2.18)    
+  To improve AI practitioners' understanding of administrators’ policy rules and defaults, the UI now includes more clarity to the enforcement and the default values representation for workload fields that are not encapsulated in the asset selection. This update aims to make policy enforcement more intuitive and transparent for practitioners. (Requires a minimum cluster version of v2.18)    
 
 ### Configuration of credentials as environment variables
 
-  Researchers can now easily define pre-configured credentials as environment variables to access private resources. This is available through the Run:ai UI during the workload submission process, specifically under the runtime settings section. (Requires minimum cluster version v2.18)    
+  Researchers can now easily define pre-configured credentials as environment variables to access private resources. This is available through the Run:ai UI during the workload submission process, specifically under the runtime settings section. (Requires a minimum cluster version pf v2.18)    
 
 
 ### Expanded scope of ConfigMap as data source
 
-  When creating a data source of type ConfigMap, researchers can now not only select a project but also a cluster or department. (Requires minimum cluster version v2.19)    
+  When creating a data source of type ConfigMap, researchers can now not only select a project but also a cluster or department. (Requires a minimum cluster version of v2.19)    
 
 
 ### Improved workload scheduling algorithm  
     
-  The Run:ai scheduler algorithm for handling large distributed workloads has been improved and is now more efficient, resulting in better handling of large distributed workloads, and better performance. (Requires minimum cluster version v2.19)    
+  The Run:ai scheduler algorithm for handling large distributed workloads has been improved and is now more efficient, resulting in better handling of large distributed workloads, and better performance. (Requires a minimum cluster version of v2.19)    
   
 
 ## ML Engineer (Inference)
 
 ### Additional data sources for inference workloads 
 
-  When submitting an inference workload via the UI and API, users can now use NFS and hostPath data sources. (Requires minimum cluster version v2.19)    
+  When submitting an inference workload via the UI and API, users can now use NFS and hostPath data sources. (Requires a minimum cluster version of v2.19)    
 
 ### Hugging Face integration improvements
 
-  To reduce errors when submitting inference workloads, additional validations are done for the Hugging Face integration, ensuring that only valid models are submitted, thus enhancing overall reliability. (Requires minimum cluster version v2.19)    
+  To reduce errors when submitting inference workloads, additional validations are done for the Hugging Face integration, ensuring that only valid models are submitted, thus enhancing overall reliability. (Requires a minimum cluster version of v2.19)    
 
 ### Rolling inference updates
 
   ML engineers can now roll updates onto existing inference workloads. Once the revised workload (the update) is up and running, request traffic is redirected to the new version of the workload and the previous version is terminated, ensuring that services are not impacted during the update.
 
-  See [Inference overview](../Researcher/workloads/inference-overview.md) for more information. (Requires minimum cluster version v2.19)    
+  See [Inference overview](../Researcher/workloads/inference-overview.md) for more information. (Requires a minimum cluster version of v2.19)    
 
 
 ### Inference endpoint authorization   
-  When sharing inference endpoints securely using Run:ai, ML engineers can limit access to the endpoint by specifying the authorized users or groups allowed to use the service (i.e., send requests to the endpoint) after being authenticated. This restriction is especially important when handling sensitive information or when you want to manage costs by sharing the service with a controlled group of consumers. (Requires minimum cluster version v2.19)    
+  When sharing inference endpoints securely using Run:ai, ML engineers can limit access to the endpoint by specifying the authorized users or groups allowed to use the service (i.e., send requests to the endpoint) after being authenticated. This restriction is especially important when handling sensitive information or when you want to manage costs by sharing the service with a controlled group of consumers. (Requires a minimum cluster version of v2.19)    
 
 ## Run:ai Developer
 
@@ -145,7 +145,7 @@ For workloads with the status of "Pending," the user can click the “i” icon 
 
 ### Workload policy for distributed training workloads in the Run:ai UI  
     
-  Distributed workload policies can now be created via the Run:ai UI. Admins can set defaults, enforce rules, and impose setup on distributed training through the UI YAML, as well as view the distributed policies (both in the policy grid and while submitting workloads). For distributed policies, workers and leaders may require different rules due to their different specifications. (Requires minimum cluster version v2.18)    
+  Distributed workload policies can now be created via the Run:ai UI. Admins can set defaults, enforce rules, and impose setup on distributed training through the UI YAML, as well as view the distributed policies (both in the policy grid and while submitting workloads). For distributed policies, workers and leaders may require different rules due to their different specifications. (Requires a minimum cluster version of v2.18)    
     
 ### Reconciliation of policy rules   
   A reconciliation mechanism for policy rules has been added to enhance flexibility in the policy submission process. Previously, if a specific field was governed by a policy for a certain hierarchy, other organizational units couldn’t submit a policy with rules that regarded this specific field. Now, new policies for hierarchies that mention an existing policy field will no longer be blocked.  
@@ -153,7 +153,7 @@ For workloads with the status of "Pending," the user can click the “i” icon 
 1. For the compute and security sections in the workload spec of the [Run:ai API](https://api-docs.run.ai/2.18/tag/Workspaces#operation/create_workspace1), the highest hierarchy is chosen for the effective policy (tenant > cluster > department > project).   
 2. For any other fields in the policy, the lowest hierarchy closest to the actual workload becomes the effective for the policy (similar to policy defaults).  
    Additionally, while viewing the effective policy, each rule displays its source of the origin policy, allowing users to clearly understand the selected hierarchy of the effective policy.  |
- (Requires minimum cluster version v2.18)  
+ (Requires a minimum cluster version of v2.18)  
    
 
 ## Infrastructure Administrator 
@@ -165,7 +165,7 @@ For workloads with the status of "Pending," the user can click the “i” icon 
 ### Run:ai and Karpenter interworking
 
 	  
-Run:ai now supports interworking with Karpenter. Karpenter is an open-source Kubernetes cluster auto-scaler built for cloud deployments. Karpenter optimizes the cloud cost of a customer’s cluster by moving workloads between different node types, bin-packing nodes, using lower-cost nodes where possible, scaling up new nodes on demand, and shutting down unused nodes with the goal of optimizing and reducing costs.  (Requires minimum cluster version v2.19)  
+Run:ai now supports interworking with Karpenter. Karpenter is an open-source Kubernetes cluster auto-scaler built for cloud deployments. Karpenter optimizes the cloud cost of a customer’s cluster by moving workloads between different node types, bin-packing nodes, using lower-cost nodes where possible, scaling up new nodes on demand, and shutting down unused nodes with the goal of optimizing and reducing costs.  (Requires a minimum cluster version of v2.19)  
 
 Please read the [documentation](../Researcher/scheduling/karpenter.md) for more information on Run:ai and Karpenter interworking considerations.
 
