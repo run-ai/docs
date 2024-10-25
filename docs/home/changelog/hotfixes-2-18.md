@@ -37,7 +37,6 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-22452 | Fixed an issue where the scheduler had signature errors if TopologySpreadConstraints was partially defined. |
 | RUN-22570 | Updated git-sync image to version v4.3.0. |
 
-
 ## Version 2.18.46 
 
 | Internal ID | Description  |
