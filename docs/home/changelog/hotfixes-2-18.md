@@ -8,6 +8,35 @@ date: 2024-Sep-29
 
 The following is a list of the known and fixed issues for Run:ai V2.18.
 
+## Version 2.18.55 
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-22457 | Fixed an issue where in rare edge cases the cluster-sync pod was out of memory. |
+| RUN-21825 | Fixed all CVEs in Run:ai's Goofys-based image used for S3 integration. |
+| RUN-22871 | Fixed an issue in runai-container-toolkit where in certain cases when a process is preempted, OOMKill metrics were not published correctly. |
+| RUN-22250 | Fixed an issue where workloads trying to use an ingress URL which is already in use were behaving inconsistentyly instead of failing immediately. |
+| RUN-22880 | Fixed an issue where the minAvailable field for training-operator CRDs did not consider all possible replica specs. |
+| RUN-22073 | Fixed an issue where runai-operator failed to parse cluster URLs ending with '/'. |
+| RUN-22453 | Fixed an issue where in rare edge cases the workload-overseer pod experienced a crash. |
+| RUN-22763 | Fixed an issue where in rare edge cases an 'attach' command from CLI-V2 caused a crash in the cluster-api service. |
+
+## Version 2.18.49 
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-21948 | Fixed an issue where in rare edge cases workload child resources could have duplicate names, causing inconsistent behavior.  |
+| RUN-22623 | Fixed an issue in Openshift where workloads were not suspended when reaching their idle GPU time limit. |
+| RUN-22600 | Fixed an issue in AWS EKS clusters where the V1-CLI returned an empty table when listing all projects as an administrator. |
+| RUN-21878 | Added a label to disable container toolkit from running on certain nodes `run.ai/container-toolkit-enabled`. |
+
+## Version 2.18.47
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-22452 | Fixed an issue where the scheduler has signature errors if TopologySpreadConstraints was partially defined. |
+| RUN-22570 | Updated git-sync image to version v4.3.0. |
+
 ## Version 2.18.46 
 
 | Internal ID | Description  |
