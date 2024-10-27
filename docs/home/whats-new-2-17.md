@@ -229,6 +229,9 @@ The following metrics are deprecated and replaced by API endpoints. For details 
 | runai\_active\_job\_memory\_limits |
 | runai\_job\_memory\_used\_bytes |
 
+For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
+
+
 ## Breaking changes
 
 Breaking changes notifications allow you to plan around potential changes that may interfere your current workflow when interfacing with the Run:ai Platform.
