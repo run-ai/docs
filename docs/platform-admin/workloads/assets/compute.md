@@ -79,7 +79,7 @@ To add a new compute resource:
                 * **% (of device) -** Fraction of a GPU device’s memory  
                 * **MB (memory size) -** An explicit GPU memory unit  
                 * **GB (memory size) -** An explicit GPU memory unit  
-                * **Multi-instance GPU (MIG)** - MIG profile  
+                * **Multi-instance GPU (MIG)** - MIG profile (Deprecated)  
             * Set the memory **Request -** The minimum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives this amount of GPU memory for each device(s) the pod utilizes  
             * Optional: Set the memory **Limit** - The maximum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of GPU memory for each device(s) the pod utilizes.  
             To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.  

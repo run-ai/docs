@@ -104,7 +104,7 @@ Click the link to view the value type of each field.
 | cpuMemoryLimit | Limitations on the CPU memory to allocate for this workload (1G, 20M, .etc). The system guarantees that this workload is not be able to consume more than this amount of memory. The workload receives an error when trying to allocate more memory than this limit. | quantity | Workspace Training |
 | largeShmRequest | A large /dev/shm device to mount into a container running the created workload (shm is a shared file system mounted on RAM). | boolean | Workspace Training |
 | gpuRequestType | Sets the unit type for GPU resources requests to either portion, memory or mig profile. Only if `gpuDeviceRequest = 1`, the request type can be stated as `portion`, `memory` or `migProfile`. | string | Workspace Training |
-| migProfile | Specifies the memory profile to be used for workload running on NVIDIA Multi-Instance GPU (MIG) technology. | string | Workspace Training |
+| migProfile | Specifies the memory profile to be used for workload running on NVIDIA Multi-Instance GPU (MIG) technology. | string | Workspace Training (Deprecated) |
 | gpuPortionRequest | Specifies the fraction of GPU to be allocated to the workload, between 0 and 1. For backward compatibility, it also supports the number of gpuDevices larger than 1, currently provided using the gpuDevices field. | number | Workspace Training |
 | gpuDeviceRequest | Specifies the number of GPUs to allocate for the created workload. Only if `gpuDeviceRequest = 1`, the gpuRequestType can be defined. | integer | Workspace Training |
 | gpuPortionLimit | When a fraction of a GPU is requested, the GPU limit specifies the portion limit to allocate to the workload. The range of the value is from 0 to 1. | number | Workspace Training |

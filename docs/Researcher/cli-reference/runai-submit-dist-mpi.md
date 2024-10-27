@@ -173,7 +173,7 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
 
 >  CPU memory to allocate for this Job (1G, 20M, .etc). The system guarantees that this Job will not be able to consume more than this amount of memory. The Job will receive an error when trying to allocate more memory than this limit.
 
-#### --mig-profile `<string>`
+#### --mig-profile `<string>` (Deprecated)
 
 > MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
 
