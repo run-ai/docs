@@ -96,3 +96,5 @@ The following list of API endpoints and fields that have completed their depreca
 | -- | -- |
 | /v1/k8s/clusters | The endpoint was removed and is replaced by /api/v1/clusters |
 | /v1/k8s/clusters/{uuid} | The endpoint was removed and is replaced by /api/v1/clusters/{uuid} |
+
+For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
