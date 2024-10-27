@@ -305,6 +305,7 @@ The legacy navigation will be fully deprecated in the Q1/25 release, and during 
 | /api/v1/workloads/distributed/spec/compute/migProfile ||
 | /api/v1/workloads/distributed/masterSpec/compute/migProfile ||
 
+For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
 
 
 
