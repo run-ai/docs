@@ -140,7 +140,7 @@ plugins:
         'Researcher/user-interface/workspaces/blocks/environments.md' : 'Researcher/workloads/assets/environments.md'
         'Researcher/user-interface/workspaces/blocks/compute.md' : 'Researcher/workloads/assets/compute.md'
         'Researcher/user-interface/workspaces/blocks/datasources.md' : 'Researcher/workloads/assets/datasources.md'
-        'Researcher/user-interface/workspaces/blocks/existing-PVC.md' : 'Researcher/workloads/assets/existing-PVC.md'
+        'Researcher/user-interface/workspaces/blocks/existing-PVC.md' : 'Researcher/workloads/assets/datasources.md'
         'Researcher/user-interface/workspaces/create/create-env.md' : 'Researcher/workloads/assets/environments.md'
         'Researcher/user-interface/workspaces/create/create-compute.md' : 'Researcher/workloads/assets/compute.md'
         'Researcher/user-interface/workspaces/create/create-ds.md' : 'Researcher/workloads/assets/datasources.md'
@@ -176,6 +176,7 @@ plugins:
         'Administrator/integration/ray.md' : 'platform-admin/workloads/integrations.md'
         'platform-admin/workloads/assets/secrets.md' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
         'admin/runai-setup/access-control/rbac.md' : 'admin/authentication/roles.md'
+        'platform-admin/workloads/assets/existing-PVC.md' : 'platform-admin/workloads/assets/datasources.md'
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
@@ -255,6 +256,8 @@ nav:
       - 'Group Nodes' : 'admin/config/limit-to-node-group.md'
       - 'Workload Deletion Protection' : 'admin/config/workload-ownership-protection.md'
       - 'Advanced Cluster Configuration' : 'admin/config/advanced-cluster-config.md'
+      - 'Mark Assets for Run:ai' : 'admin/config/create-k8s-assets-in-advance.md'
+      
     - 'Maintenance' : 
       - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
@@ -302,9 +305,7 @@ nav:
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
         - 'Compute Resources': 'platform-admin/workloads/assets/compute.md'
-        - 'Data Sources' : 
-          - 'Overview' : 'platform-admin/workloads/assets/datasources.md'
-          - 'PVC Data Source' : 'platform-admin/workloads/assets/existing-PVC.md'
+        - 'Data Sources' : 'platform-admin/workloads/assets/datasources.md'
         - 'Templates': 'platform-admin/workloads/assets/templates.md'
         - 'Credentials' : 'platform-admin/workloads/assets/credentials.md'
         - 'Data Volumes': 'platform-admin/workloads/assets/data-volumes.md' 
@@ -347,9 +348,7 @@ nav:
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
         - 'Compute Resources': 'Researcher/workloads/assets/compute.md'
-        - 'Data Sources' : 
-          - 'Overview' : 'Researcher/workloads/assets/datasources.md'
-          - 'PVC Data Source' : 'Researcher/workloads/assets/existing-PVC.md'
+        - 'Data Sources' : 'Researcher/workloads/assets/datasources.md'
         - 'Templates': 'Researcher/workloads/assets/templates.md'
         - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
