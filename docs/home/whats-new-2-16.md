@@ -97,4 +97,6 @@ The following list of API endpoints and fields that have completed their depreca
 | /v1/k8s/clusters | The endpoint was removed and is replaced by /api/v1/clusters |
 | /v1/k8s/clusters/{uuid} | The endpoint was removed and is replaced by /api/v1/clusters/{uuid} |
 
+Run:ai does not recommend using API endpoints and fields marked as deprecated and will not add functionality to them. Once an API endpoint or field is marked as deprecated, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
+
 For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
