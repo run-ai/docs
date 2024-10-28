@@ -229,6 +229,8 @@ The following metrics are deprecated and replaced by API endpoints. For details 
 | runai\_active\_job\_memory\_limits |
 | runai\_job\_memory\_used\_bytes |
 
+Run:ai does not recommend using API endpoints and fields marked as deprecated and will not add functionality to them. Once an API endpoint or field is marked as deprecated, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
+
 For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
 
 
