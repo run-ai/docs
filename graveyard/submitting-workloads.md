@@ -34,7 +34,7 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*.
 
-      7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/workloads/assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
+      7. In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](../../Researcher/workloads/assets/datasources.md#adding-a-new-data-source) When complete press, *Create Data Source*.
       
         !!! Note
             * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
@@ -77,7 +77,7 @@ To submit a workload using the UI:
          5. Enter the *Container path* for volume target location.
          6. Select a *Volume persistency*. Choose *Persistent* or *Ephemeral*.
 
-      8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](./assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
+      8. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](./assets/datasources.md#adding-a-new-data-source) When complete press, *Create Data Source*.
    
         !!! Note
             * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.
@@ -108,7 +108,7 @@ To submit a workload using the UI:
             5. Enter the *Container path* for volume target location.
             6. Select a *Volume persistency*. Choose *Persistent* or *Ephemeral*.
 
-         4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
+         4. (Optional) In the *Data sources* pane, select a data source. If you need a new data source, press *add a new data source*. For more information, see [Creating a new data source](assets/datasources.md#adding-a-new-data-source) When complete press, *Create Data Source*.
 
           !!! Note
               * Data sources that have private credentials, which have the status of *issues found*, will be greyed out.

@@ -20,12 +20,12 @@ GPU resources can be expressed in various ways:
 
 1. Request GPU devices: this option supports whole GPUs (for example, 1 GPU, 2 GPUs, 3 GPUs) or a fraction of GPU (for example, 0.1 GPU, 0.5 GPU, 0.93 GPU, etc.)
 2. Request partial memory of a single GPU device: this option allows to explicitly state the amount of memory needed (for example, 5GB GPU RAM).
-3. Request a MIG profile: this option will dynamically provision the requested [MIG profile](../../../scheduling/fractions.md#dynamic-mig) (if the relevant hardware exists).
+3. Request a MIG profile: this option will dynamically provision the requested MIG profile (if the relevant hardware exists).
 
 !!! Note
 
     * Selecting a GPU fraction (for example, 0.5 GPU) in a heterogeneous cluster may result in inconsistent results: For example, half of a V100 16GB GPU memory is different than A100 with 40GB). In such scenarios. Requesting specific GPU memory is a better strategy.
-    * When selecting partial memory of a single GPU device, if NVIDIA MIG is enabled on a node, then the memory can be provided as a MIG profile. For more information see [Dynamic MIG](../../../scheduling/fractions.md#dynamic-mig).
+    * When selecting partial memory of a single GPU device, if NVIDIA MIG is enabled on a node, then the memory can be provided as a MIG profile.
     * If GPUs are not requested, they will not be allocated even if resources are available. In that case, the project's GPU quota will not be affected.
 
 ## Set CPU resources
