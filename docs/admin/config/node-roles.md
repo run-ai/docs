@@ -31,7 +31,7 @@ runai-adm remove node-role --runai-system-worker <node-name>
 
 
 !!! Important
-    To enable this feature, you must set the cluster configuration flag `global.nodeAffinity.restrictScheduling` to `true`. For more information see [customize cluster](../runai-setup/cluster-setup/customize-cluster-install.md#configurations).
+    To enable this feature, you must set the cluster configuration flag `global.nodeAffinity.restrictScheduling` to `true`. For more information see [customize cluster](./advanced-cluster-config.md).
     
 Separate nodes into those that:
 

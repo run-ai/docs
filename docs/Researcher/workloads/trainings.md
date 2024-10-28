@@ -55,7 +55,7 @@ To add a training:
        5. Enter the *Container path* for volume target location.
        6. Select a *Volume persistency.
 
-9.  (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../workloads/assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
+9.  (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../workloads/assets/datasources.md#adding-a-new-data-source) When complete press, *Create Data Source*.
 10. (Optional) In the *General* pane, add special settings for your training (optional):
 
        1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)
@@ -77,7 +77,7 @@ To add a training:
           5. Enter the *Container path* for volume target location.
           6. Select a *Volume persistency.
 
-       4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../workloads/assets/datasources.md#create-a-new-data-source) When complete press, *Create Data Source*.
+       4. (Optional) In the *Data sources* pane, press *add a new data source*. For more information, see [Creating a new data source](../workloads/assets/datasources.md#adding-a-new-data-source) When complete press, *Create Data Source*.
        5. (Optional) In the *General* pane, add special settings for your training (optional):
 
           1. Press *Auto-deletion* to delete the training automatically when it either completes or fails. You can configure the timeframe in days, hours, minutes, and seconds. If the timeframe is set to 0, the training will be deleted immediately after it completes or fails. (default = 30 days)

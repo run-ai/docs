@@ -165,13 +165,13 @@ You can use credentials (secrets) in various ways within the system
 
 ### Access private data sources
 
-To access private data sources, attach credentials to data sources of the following types: [Git](./datasources.md#create-a-git-data-source), [S3 Bucket](./datasources.md#create-an-s3-data-source)
+To access private data sources, attach credentials to data sources of the following types: [Git](./datasources.md#git), [S3 Bucket](./datasources.md#s3-bucket)
 
 ### Use directly within the container
 
 To use the secret directly from within the container, you can choose between the following options
 
-1. Get the secret mounted to the file system by using the [Generic secret](./datasources.md#create-a-secret-as-data-source) data source
+1. Get the secret mounted to the file system by using the [Generic secret](./datasources.md#secret) data source
 2. Get the secret as an environment variable injected into the container. There are two equivalent ways to inject the environment variable.
       a. By adding it to the Environment asset. 
       b. By adding it ad-hoc as part of the workload.

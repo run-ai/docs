@@ -112,4 +112,4 @@ queueConfig:
 
 This [article](https://last9.io/blog/how-to-scale-prometheus-remote-write/){target=_blank} provides additional details and insight.
 
-Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](../runai-setup/cluster-setup/customize-cluster-install.md#configurations)
+Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described [here](./advanced-cluster-config.md)

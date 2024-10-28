@@ -77,7 +77,7 @@ date: 2024-June-14
   
     For more information, see [Data Volumes](../platform-admin/workloads/assets/data-volumes.md). (Requires minimum cluster version v2.18).
 
-* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/workloads/assets/datasources.md#create-a-secret-as-data-source).
+* <!-- TODO fix doc link RUN-16917/RUN-19363 Expose secrets in workload submission -->Added new data source of type *Secret*. Run:ai now allows you to configure a *Credential* as a data source. A *Data source* of type *Secret* is best used in workloads so that access to 3rd party interfaces and storage used in containers, keep access credentials hidden. For more information, see [Secrets as a data source](../Researcher/workloads/assets/datasources.md#secret).
   
 * Updated the logic of data source initializing state which keeps the workload in “initializing” status until S3 data is fully mapped. For more information see [Sidecar containers documentation](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/).
 
