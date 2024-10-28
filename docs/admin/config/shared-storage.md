@@ -18,7 +18,7 @@ Run:ai [Data Sources](../../platform-admin/workloads/assets/datasources.md) supp
 
 Storage classes in Kubernetes defines how storage is provisioned and managed. This allows you to select storage types optimized for AI workloads. For example, you can choose storage with high IOPS (Input/Output Operations Per Second) for rapid data access during intensive training sessions, or tiered storage options to balance cost and performance-based on your organization’s requirements. This approach supports dynamic provisioning, enabling storage to be allocated on-demand as required by your applications.
 
-Run:ai data sources such as [Persistent Volume Claims (PVC)](../../platform-admin/workloads/assets/existing-PVC.md) and [Data Volumes](../../platform-admin/workloads/assets/data-volumes.md) leverage storage class to manage and allocate storage efficiently. This ensures that the most suitable storage option is always accessible, contributing to the efficiency and performance of AI workloads.
+Run:ai data sources such as [Persistent Volume Claims (PVC)](../../platform-admin/workloads/assets/datasources.md#pvc) and [Data Volumes](../../platform-admin/workloads/assets/data-volumes.md) leverage storage class to manage and allocate storage efficiently. This ensures that the most suitable storage option is always accessible, contributing to the efficiency and performance of AI workloads.
 
 !!! Note
     Run:ai lists all available storage classes in the Kubernetes cluster, making it easy for users to select the appropriate storage. Additionally, policies can be set to restrict or enforce the use of specific storage classes, to helpl maintain compliance with organizational standards and optimize resource utilization.
