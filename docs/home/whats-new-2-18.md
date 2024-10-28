@@ -150,6 +150,7 @@ Run:ai REST API now supports job submission. The older, [Cluster API](../develop
 | /v1/k8s/clusters/{clusterId}/projects/{id} | /api/v1/org-unit/projects/{projectId} |
 | /v1/k8s/clusters/{clusterId}/projects/{id} | /api/v1/org-unit/projects/{projectId} + /api/v1/org-unit/projects/{projectId}/resources |
 
+Run:ai does not recommend using API endpoints and fields marked as deprecated and will not add functionality to them. Once an API endpoint or field is marked as deprecated, Run:ai will stop supporting it after 2 major releases for self-hosted deployments, and after 6 months for SaaS deployments.
 
 For a full explanation of the API Deprecation policy, see the [Run:ai API Policy](../developer/admin-rest-api/overview.md#api-lifecycle-and-deprecation)
 
