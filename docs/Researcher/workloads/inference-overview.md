@@ -89,16 +89,20 @@ It is important to note that:
     * Autoscaling
 
 * As long as the update process is not completed, GPUs are not allocated to the replicas of the new revision. This prevents the allocation of idle GPUs so others will not be deprived using them.
+* If the update process is not completed within the default time limit of 10 minutes, it will automatically stop. At that point, all replicas of the new revision will be removed, and the original revision will continue to run normally.
+* The default time limit for updates is configurable. Consider setting a longer duration if your workload requires extended time to pull the image due to its size, if the workload takes additional time to reach a 'READY' state due to a long initialization process, or if your cluster depends on autoscaling to allocate resources for new replicas. For example, to set the time limit to 30 minutes, you can run the following command:
+```
+kubectl patch ConfigMap config-deployment -n knative-serving --type='merge' -p '{"data": {"progress-deadline": "1800s"}}'
+```
 
+### Inference workloads with Knative new behavior in v2.19
 
-### Inference workloads with KNative new behavior in v2.19
-
-Starting version 2.19, all pods of a single KNative revision are grouped under a single Pod-Group. This means that when a new KNative revision is created:
+Starting version 2.19, all pods of a single Knative revision are grouped under a single Pod-Group. This means that when a new Knative revision is created:
 
 * It either succeeds in allocating the minimum number of pods; or 
 * It fails and moves into a pending state, to retry again later to allocate all pods with their resources. 
 
-The resources (GPUs, CPUs) are not occupied by a new KNative revision until it succeeds in allocating all pods. The older revision pods are then terminated and release their resources (GPUs, CPUs) back to the cluster to be used by other workloads.
+The resources (GPUs, CPUs) are not occupied by a new Knative revision until it succeeds in allocating all pods. The older revision pods are then terminated and release their resources (GPUs, CPUs) back to the cluster to be used by other workloads.
 
 ## See Also
 
