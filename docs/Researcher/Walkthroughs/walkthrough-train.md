@@ -158,7 +158,7 @@ Typical statuses you may see:
 *   Running - the Workload is running
 *   Succeeded - the Workload has ended
 
-A full list of Workload statuses can be found [here](../scheduling/job-statuses.md) 
+A full list of Workload statuses can be found [here](../workloads/overviews/workload-support.md#workload-statuses)
 
 ### Describe Workload
 
