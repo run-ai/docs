@@ -1,4 +1,4 @@
-# Interworking with Karpenter
+# Working with Karpenter
 
 Karpenter is an open-source, Kubernetes cluster autoscaler built for cloud deployments. Karpenter optimizes the cloud cost of a customer’s cluster by moving workloads between different node types, consolidating workloads into fewer nodes, using lower-cost nodes where possible, scaling up new nodes when needed, and shutting down unused nodes.
 
