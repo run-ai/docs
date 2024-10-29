@@ -357,6 +357,7 @@ nav:
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Training' : 'Researcher/workloads/trainings.md'
       - 'Inference' : 'Researcher/workloads/inference-overview.md'
+      - 'Connecting IDEs and Tools' : 'Researcher/workloads/connecting-ide-tool.md'
     - 'Command Line Interface' :
       - 'CLI V2': 
         - 'Overview': 'Researcher/cli-reference/new-cli/overview.md'
