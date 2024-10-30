@@ -39,4 +39,13 @@ The Run:ai community portal is password protected and access is provided to cust
 | [XGBoost](https://xgboost.readthedocs.io/en/stable/){target=_blank}            | Training                              | Run:ai provides out of the box support for submitting XGBoost workloads                     | XGBoost [via API](../../Researcher/cli-reference/new-cli/runai_xgboost.md) or use Workflow submission [via user interface](../../Researcher/workloads/trainings.md)    |
 | [Karpenter](https://karpenter.sh){target=_blank} | Cost Optimization | Run:ai provides out of the box support for Karpenter to save cloud costs  | Integration notes with Karpenter can be found [here](karpenter.md) | 
 
+## Kubernetes Workloads Integration
+
+Kubernetes has several built-in resources that encapsulate running *Pods*. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/){target=_blank} and **should not be confused** with Run:ai Workloads.
+
+Examples of such resources are a *Deployment* that manages a stateless application, or a *Job* that runs tasks to completion.
+
+Run:ai natively runs Run:ai Workloads. A Run:ai workload encapsulates all the resources needed to run, creates them, and deletes them together. However, Run:ai, being an **open platform** allows the scheduling of **any** Kubernetes Workflow.
+
+For more information see [Kubernetes Workloads Integration](../../developer/cluster-api/other-resources.md).
 
