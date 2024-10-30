@@ -126,4 +126,4 @@ To get the full experience of Run:ai’s environment and platform use the follow
 
 ## Workload-related Integrations
 
-See [Integrations](./integrations.md)
+See [Integrations](../integrations/integration-overview.md).
