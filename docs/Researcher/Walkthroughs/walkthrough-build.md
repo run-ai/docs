@@ -153,7 +153,7 @@ Typical statuses you may see:
 *   Pending - the job is waiting to be scheduled
 *   Running - the job is running
 
-A full list of Job statuses can be found [here](../scheduling/job-statuses.md)
+A full list of Job statuses can be found [here](../workloads/overviews/workload-support.md#workload-statuses)
 
 ### Describe Workload
 
