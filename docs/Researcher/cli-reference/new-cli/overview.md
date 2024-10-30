@@ -11,7 +11,8 @@ This command-line interface is a complete revamp of the command-line interface. 
 
 * The CLI internally uses the [Control-plane API](../../../developer/admin-rest-api/overview.md). This provides a single point of view on Workloads removing dissimilarities between the user interface, programming interface and the command-line interface. 
 * As such, it also removes the need to configure the [Kubernetes API server](../../../admin/authentication/researcher-authentication.md) for authentication. 
-* The CLI is only available for Run:ai cluster version 2.18 and up.
+* **The CLI is only available for Run:ai cluster version 2.18 and up.**
+* **Windows OS is not supported yet, will be added soon.**
 * The new V2 CLI is backward compatible with the older V1 CLI.
 
 
