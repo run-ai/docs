@@ -177,6 +177,8 @@ plugins:
         'platform-admin/workloads/assets/secrets.md' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
         'admin/runai-setup/access-control/rbac.md' : 'admin/authentication/roles.md'
         'platform-admin/workloads/assets/existing-PVC.md' : 'platform-admin/workloads/assets/datasources.md'
+        'Researcher/scheduling/job-statuses.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
+        'Researcher/scheduling/strategies.md' : 'Researcher/scheduling/the-runai-scheduler.md'
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
@@ -295,8 +297,6 @@ nav:
       - 'Managing your resources' : 
         - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
         - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
-    - 'Review your performance' :
-      - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
       - 'Managing Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
@@ -317,6 +317,8 @@ nav:
         - 'Older Policies' : 
           - 'Policies V1' : 'platform-admin/workloads/policies/old-policies.md'
       - 'Integrations' : 'platform-admin/workloads/integrations.md'
+    - 'Review your performance' :
+      - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'System Configuration' : 
@@ -357,6 +359,8 @@ nav:
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Training' : 'Researcher/workloads/trainings.md'
       - 'Inference' : 'Researcher/workloads/inference-overview.md'
+      - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
+
     - 'Command Line Interface' :
       - 'CLI V2': 
         - 'Overview': 'Researcher/cli-reference/new-cli/overview.md'
@@ -396,15 +400,15 @@ nav:
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
       - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
-      - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
-      - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
-      - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
-      - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
       - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
-      - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
-      - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
-      - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
-      - 'Interworking with Karpenter' : 'Researcher/scheduling/karpenter.md'
+      - 'Advanced' : 
+        - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
+        - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
+        - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
+        - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
+      # - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
+      # - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
+      - 'Working with Karpenter' : 'Researcher/scheduling/karpenter.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
