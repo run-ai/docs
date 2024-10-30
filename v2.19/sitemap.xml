@@ -813,10 +813,6 @@
          <lastmod>2024-10-30</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.19/Researcher/scheduling/karpenter/</loc>
-         <lastmod>2024-10-30</lastmod>
-    </url>
-    <url>
          <loc>https://docs.run.ai/v2.19/Researcher/scheduling/node-level-scheduler/</loc>
          <lastmod>2024-10-30</lastmod>
     </url>
@@ -1329,11 +1325,15 @@
          <lastmod>2024-10-30</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.19/platform-admin/performance/dashboard-analysis/</loc>
+         <loc>https://docs.run.ai/v2.19/platform-admin/integrations/integration-overview/</loc>
          <lastmod>2024-10-30</lastmod>
     </url>
     <url>
-         <loc>https://docs.run.ai/v2.19/platform-admin/workloads/integrations/</loc>
+         <loc>https://docs.run.ai/v2.19/platform-admin/integrations/karpenter/</loc>
+         <lastmod>2024-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.19/platform-admin/performance/dashboard-analysis/</loc>
          <lastmod>2024-10-30</lastmod>
     </url>
     <url>
