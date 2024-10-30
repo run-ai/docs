@@ -179,6 +179,8 @@ plugins:
         'platform-admin/workloads/assets/existing-PVC.md' : 'platform-admin/workloads/assets/datasources.md'
         'Researcher/scheduling/job-statuses.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
         'Researcher/scheduling/strategies.md' : 'Researcher/scheduling/the-runai-scheduler.md'
+        'platform-admin/workloads/integrations.md' : 'platform-admin/integrations/integration-overview.md'
+        'Researcher/scheduling/karpenter.md' : 'platform-admin/integrations/karpenter.md'
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
@@ -316,7 +318,10 @@ nav:
         - 'Policies Reference' : 'platform-admin/workloads/policies/policy-reference.md'
         - 'Older Policies' : 
           - 'Policies V1' : 'platform-admin/workloads/policies/old-policies.md'
-      - 'Integrations' : 'platform-admin/workloads/integrations.md'
+    - 'Integrations' : 
+      - 'Overview' : 'platform-admin/integrations/integration-overview.md'
+      - 'Working with Karpenter' : 'platform-admin/integrations/karpenter.md'
+
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
     - 'Best Practices' :
@@ -408,7 +413,6 @@ nav:
         - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
       # - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       # - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
-      - 'Working with Karpenter' : 'Researcher/scheduling/karpenter.md'
     - 'Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
