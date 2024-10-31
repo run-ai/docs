@@ -56,7 +56,7 @@ runai training tf submit <name> -p <project_name> -i gcr.io/run-ai-demo/quicksta
       --master-gpu-portion-request float               GPU portion request (between 0 and 1, e.g. 0.5, 0.2)
       --master-no-pvcs                                 Do not mount any persistent volumes in the master pod
       --max-replicas int32                             Maximum number of replicas for an elastic PyTorch job
-      --mig-profile string                             MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
+      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --min-replicas int32                             Minimum number of replicas for an elastic PyTorch job
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral

@@ -23,6 +23,7 @@ workspace management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai workspace attach](runai_workspace_attach.md)	 - Attach to a process that is already running inside an existing container.
+* [runai workspace bash](runai_workspace_bash.md)	 - open a bash shell in a job
 * [runai workspace delete](runai_workspace_delete.md)	 - delete workspace
 * [runai workspace describe](runai_workspace_describe.md)	 - Describe a training workload
 * [runai workspace exec](runai_workspace_exec.md)	 - exec management

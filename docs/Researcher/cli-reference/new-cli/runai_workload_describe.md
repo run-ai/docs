@@ -13,6 +13,7 @@ runai workload describe WORKLOAD_NAME [flags]
       --containers          Include container information in pods
       --event-limit int32   Limit the number of events displayed (-1 for no limit) (default 50)
       --events              Show events information (default true)
+      --framework string    filter by workload framework
       --general             Show general information (default true)
   -h, --help                help for describe
       --networks            Show networks information (default true)
