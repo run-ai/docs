@@ -39,7 +39,7 @@ runai submit [flags]
       --large-shm                                      Request large /dev/shm device to mount
       --memory string                                  CPU memory to allocate for the job (e.g. 1G, 500M)
       --memory-limit string                            CPU memory limit to allocate for the job (e.g. 1G, 500M)
-      --mig-profile string                             MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
+      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
       --node-pools stringArray                         List of node pools to use for scheduling the job, ordered by priority
       --node-type string                               Enforce node type affinity by setting a node-type label

@@ -22,6 +22,7 @@ alias for tensorflow management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai tensorflow attach](runai_tensorflow_attach.md)	 - attach to a running container in a tf training job
+* [runai tensorflow bash](runai_tensorflow_bash.md)	 - open a bash shell in a training tf job
 * [runai tensorflow delete](runai_tensorflow_delete.md)	 - delete tf training workload
 * [runai tensorflow describe](runai_tensorflow_describe.md)	 - describe tf training
 * [runai tensorflow exec](runai_tensorflow_exec.md)	 - execute a command in a training tf job

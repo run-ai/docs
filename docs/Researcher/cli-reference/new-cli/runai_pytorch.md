@@ -22,6 +22,7 @@ alias for pytorch management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai pytorch attach](runai_pytorch_attach.md)	 - attach to a running container in a pytorch training job
+* [runai pytorch bash](runai_pytorch_bash.md)	 - open a bash shell in a training pytorch job
 * [runai pytorch delete](runai_pytorch_delete.md)	 - delete pytorch training workload
 * [runai pytorch describe](runai_pytorch_describe.md)	 - describe pytorch training
 * [runai pytorch exec](runai_pytorch_exec.md)	 - execute a command in a training pytorch job

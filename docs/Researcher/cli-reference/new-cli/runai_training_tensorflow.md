@@ -22,6 +22,7 @@ tensorflow management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training tensorflow attach](runai_training_tensorflow_attach.md)	 - attach to a running container in a tf training job
+* [runai training tensorflow bash](runai_training_tensorflow_bash.md)	 - open a bash shell in a training tf job
 * [runai training tensorflow delete](runai_training_tensorflow_delete.md)	 - delete tf training workload
 * [runai training tensorflow describe](runai_training_tensorflow_describe.md)	 - describe tf training
 * [runai training tensorflow exec](runai_training_tensorflow_exec.md)	 - execute a command in a training tf job
