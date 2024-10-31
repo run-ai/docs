@@ -22,6 +22,7 @@ pytorch management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training pytorch attach](runai_training_pytorch_attach.md)	 - attach to a running container in a pytorch training job
+* [runai training pytorch bash](runai_training_pytorch_bash.md)	 - open a bash shell in a training pytorch job
 * [runai training pytorch delete](runai_training_pytorch_delete.md)	 - delete pytorch training workload
 * [runai training pytorch describe](runai_training_pytorch_describe.md)	 - describe pytorch training
 * [runai training pytorch exec](runai_training_pytorch_exec.md)	 - execute a command in a training pytorch job

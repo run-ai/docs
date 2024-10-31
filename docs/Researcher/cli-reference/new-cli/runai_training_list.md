@@ -1,6 +1,6 @@
 ## runai training list
 
-list training
+list all training frameworks
 
 ```
 runai training list [flags]

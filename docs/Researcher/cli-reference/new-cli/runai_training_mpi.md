@@ -22,6 +22,7 @@ mpi management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training mpi attach](runai_training_mpi_attach.md)	 - attach to a running container in a mpi training job
+* [runai training mpi bash](runai_training_mpi_bash.md)	 - open a bash shell in a training mpi job
 * [runai training mpi delete](runai_training_mpi_delete.md)	 - delete mpi training workload
 * [runai training mpi describe](runai_training_mpi_describe.md)	 - describe mpi training
 * [runai training mpi exec](runai_training_mpi_exec.md)	 - execute a command in a training mpi job
