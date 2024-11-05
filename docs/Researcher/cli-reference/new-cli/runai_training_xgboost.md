@@ -22,6 +22,7 @@ xgboost management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training xgboost attach](runai_training_xgboost_attach.md)	 - attach to a running container in a xgboost training job
+* [runai training xgboost bash](runai_training_xgboost_bash.md)	 - open a bash shell in a training xgboost job
 * [runai training xgboost delete](runai_training_xgboost_delete.md)	 - delete xgboost training workload
 * [runai training xgboost describe](runai_training_xgboost_describe.md)	 - describe xgboost training
 * [runai training xgboost exec](runai_training_xgboost_exec.md)	 - execute a command in a training xgboost job

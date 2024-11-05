@@ -22,6 +22,7 @@ alias for xgboost management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai xgboost attach](runai_xgboost_attach.md)	 - attach to a running container in a xgboost training job
+* [runai xgboost bash](runai_xgboost_bash.md)	 - open a bash shell in a training xgboost job
 * [runai xgboost delete](runai_xgboost_delete.md)	 - delete xgboost training workload
 * [runai xgboost describe](runai_xgboost_describe.md)	 - describe xgboost training
 * [runai xgboost exec](runai_xgboost_exec.md)	 - execute a command in a training xgboost job

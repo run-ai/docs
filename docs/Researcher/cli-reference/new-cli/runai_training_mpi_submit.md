@@ -52,7 +52,7 @@ runai training mpi submit <name> -p <project_name> -i gcr.io/run-ai-demo/quickst
       --master-environment stringArray                 Set master environment variables in the container
       --master-extended-resource stringArray           Request access to an extended resource. Use the format: resource_name=quantity
       --master-no-pvcs                                 Do not mount any persistent volumes in the master pod
-      --mig-profile string                             MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
+      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
       --nfs stringArray                                NFS storage details. Use the format: path=PATH,server=SERVER,mountpath=MOUNT_PATH,readwrite

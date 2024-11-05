@@ -22,6 +22,7 @@ alias for mpi management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai mpi attach](runai_mpi_attach.md)	 - attach to a running container in a mpi training job
+* [runai mpi bash](runai_mpi_bash.md)	 - open a bash shell in a training mpi job
 * [runai mpi delete](runai_mpi_delete.md)	 - delete mpi training workload
 * [runai mpi describe](runai_mpi_describe.md)	 - describe mpi training
 * [runai mpi exec](runai_mpi_exec.md)	 - execute a command in a training mpi job
