@@ -342,10 +342,10 @@ nav:
         - 'Jupyter Notebook' : 'Researcher/Walkthroughs/quickstart-jupyter.md'
         - 'Visual Studio Code Web' : 'Researcher/Walkthroughs/quickstart-vscode.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
-      - 'GPU Allocation' : 
-        - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
-        - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
-      - 'Scheduling' :
+ #    - 'GPU Allocation' : 
+      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
+#        - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
+      - 'Scheduling Basics' :
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
@@ -413,7 +413,7 @@ nav:
         - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
       # - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       # - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
-    - 'Tools' :
+    - 'Researcher Tools' :
       - 'Visual Studio Code' : 'Researcher/tools/dev-vscode.md'    
       - 'PyCharm' : 'Researcher/tools/dev-pycharm.md'    
       - 'X11 & PyCharm' : 'Researcher/tools/dev-x11forward-pycharm.md'  

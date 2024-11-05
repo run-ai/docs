@@ -18,7 +18,7 @@ Follow the Quickstart documents below to learn more:
 * [Inference](quickstart-inference.md)
 * GPU Allocation documents:
     * [Using GPU Fractions](walkthrough-fractions.md)
-    * [Dynamic MIG (Deprecated)](quickstart-mig.md)
+    <!-- * [Dynamic MIG (Deprecated)](quickstart-mig.md) -->
 * Scheduling documents:
     * [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
     * [Fairness](walkthrough-queue-fairness.md)
