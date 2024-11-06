@@ -58,3 +58,8 @@ runai workspace submit  -p alon -i runai.jfrog.io/demo/quickstart-demo   --cpu-c
 ```shell
 runai workspace submit  -p alon -i python  --attach -- python3
 ```
+### Submit a jupiter notebook 
+```shell
+runai workspace submit --image jupyter/scipy-notebook -p alon --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
+```
+
