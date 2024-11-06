@@ -8,6 +8,43 @@ date: 2024-Sep-29
 
 The following is a list of the known and fixed issues for Run:ai V2.18.
 
+
+## Hotfixes 
+
+| Internal ID | Hotfix # | Description |
+| :---- | :---- | :---- |
+| RUN-23055 | 2.18.60 | Fixed unified Distributed and Training CLI commands |
+| RUN-23243 | 2.18.59 | Fixed an issue where the scope tree wasn't calculating permissions correctly |
+| RUN-22463 | 2.18.59 | Fixed an error in CLI bash command |
+| RUN-22314 | 2.18.59 | Fixed distributed framework filtering in API commands |
+| RUN-23142 | 2.18.58 | Fixed an issue where advanced GPU metrics per-gpu don't have gpu label |
+| RUN-23001 | 2.18.58 | Fixed an issue of false overcommit on out-of-memory killed in the “swap” feature. |
+| RUN-22851 | 2.18.58 | Fixed an issue where client may get stuck on device lock acquired during “swap” out-migration  |
+| RUN-22758 | 2.18.58 | Fixed an issue where inference workload showed wrong status when submission failed. |
+| RUN-22544 | 2.18.58 | Updated Grafana version for security vulnerabilities. |
+| RUN-23055 | 2.18.57 | Fixed the unified Distributed and Training CLI commands |
+| RUN-23014 | 2.18.56 | Fixed an issue where node-scale-adjuster might not create a scaling pod if it is in cool-down and the pod was not updated after that. |
+| RUN-22660 | 2.18.56 | Fixed an issue where workload charts have an unclear state |
+| RUN-22457 |2.18.55 | Fixed an issue where in rare edge cases the cluster-sync pod was out of memory. |
+| RUN-21825 |2.18.55 | Fixed all CVEs in Run:ai's Goofys-based image used for S3 integration. |
+| RUN-22871 |2.18.55 | Fixed an issue in runai-container-toolkit where in certain cases when a process is preempted, OOMKill metrics were not published correctly. |
+| RUN-22250 |2.18.55 | Fixed an issue where workloads trying to use an ingress URL which is already in use were behaving inconsistentyly instead of failing immediately. |
+| RUN-22880 |2.18.55 | Fixed an issue where the minAvailable field for training-operator CRDs did not consider all possible replica specs. |
+| RUN-22073 |2.18.55 | Fixed an issue where runai-operator failed to parse cluster URLs ending with '/'. |
+| RUN-22453 |2.18.55 | Fixed an issue where in rare edge cases the workload-overseer pod experienced a crash. |
+| RUN-22763 |2.18.55 | Fixed an issue where in rare edge cases an 'attach' command from CLI-V2 caused a crash in the cluster-api service. |
+| RUN-21948 | 2.18.49 | Fixed an issue where in rare edge cases workload child resources could have duplicate names, causing inconsistent behavior.  |
+| RUN-22623 | 2.18.49 | Fixed an issue in Openshift where workloads were not suspended when reaching their idle GPU time limit. |
+| RUN-22600 | 2.18.49 | Fixed an issue in AWS EKS clusters where the V1-CLI returned an empty table when listing all projects as an administrator. |
+| RUN-21878 | 2.18.49 | Added a label to disable container toolkit from running on certain nodes `run.ai/container-toolkit-enabled`. |
+
+## Version 2.18.47
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-22452 | Fixed an issue where the scheduler has signature errors if TopologySpreadConstraints was partially defined. |
+| RUN-22570 | Updated git-sync image to version v4.3.0. |
+
 ## Version 2.18.46 
 
 | Internal ID | Description  |
