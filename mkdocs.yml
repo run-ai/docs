@@ -263,6 +263,7 @@ nav:
       - 'Mark Assets for Run:ai' : 'admin/config/create-k8s-assets-in-advance.md'
       
     - 'Maintenance' : 
+      - 'Monitoring and maintenance Overview' : 'admin/maintenance/overview.md'
       - 'Node Maintenance' : 'admin/maintenance/node-downtime.md'
       - 'System Monitoring' : 'admin/maintenance/alert-monitoring.md'
       - 'Audit Log' : 'admin/maintenance/audit-log.md'
