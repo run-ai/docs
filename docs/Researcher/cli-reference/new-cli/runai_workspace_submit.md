@@ -9,7 +9,9 @@ runai workspace submit [flags]
 ### Examples
 
 ```
-runai workspace submit <workspace_name> -p=<project_name> -i=gcr.io/run-ai-demo/quickstart
+
+runai workspace submit <workspace_name> -p=<project_name> -i=runai.jfrog.io/demo/quickstart-demo
+runai workspace submit --i jupyter/scipy-notebook --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
 ```
 
 ### Options
@@ -77,7 +79,7 @@ runai workspace submit <workspace_name> -p=<project_name> -i=gcr.io/run-ai-demo/
 
 ```
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
-      --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
+      --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH
   -d, --debug                enable debug mode
   -q, --quiet                enable quiet mode, suppress all output except error messages
       --verbose              enable verbose mode
