@@ -33,7 +33,7 @@ runai training tf bash tf-01 --pod tf-01-worker-1
 
 ```
       --config-file string   config file name; can be set by environment variable RUNAI_CLI_CONFIG_FILE (default "config.json")
-      --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH (default "~/.runai/")
+      --config-path string   config path; can be set by environment variable RUNAI_CLI_CONFIG_PATH
   -d, --debug                enable debug mode
   -q, --quiet                enable quiet mode, suppress all output except error messages
       --verbose              enable verbose mode
