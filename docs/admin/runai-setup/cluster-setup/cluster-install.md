@@ -15,7 +15,7 @@ Once all the requirements are met, it is highly recommend to use the Run:ai clus
 * Test the below requirements in addition to failure points related to Kubernetes, NVIDIA, storage, and networking  
 * Look at additional components installed and analyze their relevance to a successful installation
 
-To run the preinstall diagnostics tool, [download](https://github.com/run-ai/preinstall-diagnostics/releases) the latest version, and run:
+To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/) the latest version, and run:
 
 
 === "SaaS"
