@@ -56,7 +56,7 @@ In the Run:ai platform finish creating the data source of type PVC:
 
 1. Locate the PVC in the runai namespace  
 1. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label:  
-   [run.ai/department](http://run.ai/department): "\<name of department\>"  
+   [run.ai/department](http://run.ai/department): "id"  
 1. In the Run:ai platform finish creating the data source of type PVC:  
    1. Select you department as a scope (the same one as in the label)  
    1. Select the existing PVC  
