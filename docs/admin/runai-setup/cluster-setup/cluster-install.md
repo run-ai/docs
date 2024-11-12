@@ -15,7 +15,7 @@ Once all the requirements are met, it is highly recommend to use the Run:ai clus
 * Test the below requirements in addition to failure points related to Kubernetes, NVIDIA, storage, and networking  
 * Look at additional components installed and analyze their relevance to a successful installation
 
-To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/) the latest version, and run:
+To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/){target=_blank} the latest version, and run:
 
 
 === "SaaS"
@@ -69,11 +69,11 @@ For more information see [preinstall diagnostics](https://github.com/run-ai/prei
 
 ### Helm
 
-Run:ai cluster requires Helm 3.14 or above. To install Helm, see [Helm Install](https://helm.sh/docs/helm/helm\_install/).
+Run:ai cluster requires Helm 3.14 or above. To install Helm, see [Helm Install](https://helm.sh/docs/helm/helm\_install/){target=_blank}.
 
 ### Permissions
 
-A Kubernetes user with the `cluster-admin` role is required to ensure a successful installation, for more information see [Using RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+A Kubernetes user with the `cluster-admin` role is required to ensure a successful installation, for more information see [Using RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){target=_blank}.
 
 ### Run:ai namespace
 
@@ -86,7 +86,7 @@ kubectl create ns runai
 
 ### TLS certificates
 
-A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](cluster-prerequisites.md#domain-name-requirement) private and public keys, by running the following:
+A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){target=_blank} named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](cluster-prerequisites.md#domain-name-requirement) private and public keys, by running the following:
 
 
 ``` bash
