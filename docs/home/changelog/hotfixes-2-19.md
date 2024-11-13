@@ -6,6 +6,8 @@ summary: This article lists the fixed and known issues in the patch versions as 
 
 The following is a list of the known and fixed issues for Run:ai V2.19.
 
+## Hotfixes
+
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
 | RUN-23334 | 2.19.17 | Updated some dockerfiles to the latest ubi9 image for security vulnerabilities. |
@@ -20,5 +22,10 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | RUN-22720 | 2.19.12 | Fixed an issue where the cloud operator failed to get projects in node pools UI. |
 | RUN-22700 | 2.19.12 | Added auto refresh to the overview dashboard, Pods modal in the Workloads page, and Event history page |
 | RUN-22544 | 2.19.12 | Updated Grafana version for security vulnerabilities. |
-| RUN-21756 | 2.19.0 | Fixed an issue where the NFS mount path doesn’t accept “{}” characters |
-| RUN-21475 | 2.19.0 | Fixed an issue where users failed to select the compute resource from UI if the compute resource is last in the list and has a long name |
+
+## Version 2.19.0 Fixes
+
+| Internal ID | Description  |
+| ---------------------------- | ---- |
+| RUN-21756 | Fixed an issue where the NFS mount path doesn’t accept “{}” characters |
+| RUN-21475 | Fixed an issue where users failed to select the compute resource from UI if the compute resource is last in the list and has a long name |
