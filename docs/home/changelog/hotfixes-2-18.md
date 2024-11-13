@@ -36,201 +36,80 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-22623 | 2.18.49 | Fixed an issue in Openshift where workloads were not suspended when reaching their idle GPU time limit. |
 | RUN-22600 | 2.18.49 | Fixed an issue in AWS EKS clusters where the V1-CLI returned an empty table when listing all projects as an administrator. |
 | RUN-21878 | 2.18.49 | Added a label to disable container toolkit from running on certain nodes `run.ai/container-toolkit-enabled`. |
+| RUN-22452 | 2.18.47 | Fixed an issue where the scheduler has signature errors if TopologySpreadConstraints was partially defined. |
+| RUN-22570 | 2.18.47 | Updated git-sync image to version v4.3.0. |
+| RUN-22054 | 2.18.46 | Fixed an issue where users could not attach to jobs. |
+| RUN-22377 | 2.18.46 | Removed uncached client from accessrule-controller. |
+| RUN-21697 | 2.18.46 | Fixed an issue where client may deadlock on suspension during allocation request. |
+| RUN-20073 | 2.18.45 | Fixed an issue where it wasn't possible to authenticate with user credentials in the CLI. |
+| RUN-21957 | 2.18.45 | Fixed an issue where there was a missing username-loader container in inference workloads. |
+| RUN-22276 | 2.18.39 | Fixed an issue where Knative external URL was missing from the Connections modal. |
+| RUN-22280 | 2.18.39 | Fixed an issue when setting scale to zero - there was no pod counter in the Workload grid. |
+| RUN-19811 | 2.18.39 | Added an option to set k8s tolerations to run:ai daemonsets (container-toolkit, runai-device-plugin, mig-parted, node-exporter, etc..) . |
+| RUN-22128 | 2.18.39 | Added GID, UID, Supplemental groups to the V1 CLI. |
+| RUN-21800 | 2.18.37 | Fixed an issue with old workloads residing in the cluster. |
+| RUN-21907 | 2.18.34 | Fixed an issue where the SSO user credentials contain supplementary groups as string instead of int. |
+| RUN-21272 | 2.18.31 | Fixed an issue with multi-cluster credinatils creation, specifically with the same name in different clusters. |
+| RUN-20680 | 2.18.29 | Fixed an issue where workloads page do not present requested GPU. |
+| RUN-21200 | 2.18.29 |  Fixed issues with upgrades and connections from v2.13. |
+| RUN-20970 | 2.18.27 | Fixed an issue with PUT APIs. |
+| RUN-20927 | 2.18.26 | Fixed an issue where node affinity was not updated correctly in projects edit. |
+| RUN-20084 | 2.18.26 | Fixed an issue where default department were deleted instead of a message being displayed. |
+| RUN-21062 | 2.18.26 | Fixed issues with the API documentation. |
+| RUN-20434 | 2.18.25 | Fixed an issue when creating a Project/Department with memory resources requires 'units'. |
+| RUN-20923 | 2.18.25 | Fixed an issue with projects/departments page loading slowly. |
+| RUN-19872 | 2.18.23 | Fixed an issue where the Toolkit crashes and fails to create and replace the publishing binaries. |
+| RUN-20861 | 2.18.22 | Fixed an issue where a pod is stuck on pending due to a missing resource reservation pod. |
+| RUN-20842 | 2.18.22 | Fixed an issue of illegal model name with "." in hugging face integration. |
+| RUN-20791 | 2.18.22 | Fix an issue where notifications froze after startup. |
+| RUN-20865 | 2.18.22 | Fixed an issue where default departments are not deleted when a cluster is deleted. |
+| RUN-20698 | 2.18.21 | Fixed an issue where 2 processes requests a device at the same time received the same GPU, causing failures. |
+| RUN-20760 | 2.18.18 | Fixed an issue where workload protection UI shows wrong status. |
+| RUN-20612 | 2.18.15 | Fixed an issue where it was impossible with the use-table-data to hide node pool columns when there is only one default node pool. |
+| RUN-20735 | 2.18.15 | Fixed an issue where nodePool.name is undefined|
+| RUN-20721 | 2.18.12 | Added error handling to nodes pages. |
+| RUN-20578 | 2.18.10 | Fixed an issue regarding policy enforcement. |
+| RUN-20188 | 2.18.10 | Fixed issue with defining SSO in OpenShift identity provider. |
+| RUN-20673 | 2.18.9 | Fixed an issue where a researcher uses a distributed elastic job, it is possible that in a specific flow it is scheduled on more than one node-pools. |
+| RUN-20360 | 2.18.7 | Fixed an issue where the workload network status was misleading. |
+| RUN-22107 | 2.18.7 | Fixed an issue where passwords containing $ were removed from the configuration. |
+| RUN-20510 | 2.18.5 | Fixed an issue with external workloads - argocd workflow failed to be updated. |
+| RUN-20516 | 2.18.4 | Fixed an issue when after deploying to prod, the cluster-service and authorization-service got multiple OOMKilled every ~1 hour. |
+| RUN-20485 | 2.18.2 | Changed policy flags to Beta. |
+| RUN-20005 | 2.18.1 | Fixed an issue where a sidecar container failure failed the workload. |
+| RUN-20169 | 2.18.1 | Fixed an issue allowing the addition of annotations and labels to workload resources. |
+| RUN-20108 | 2.18.1 | Fixed an issue exposing service node ports to workload status. |
+| RUN-20160 | 2.18.1 | Fixed an issue with version display when installing a new cluster in an airgapped environment. |
+| RUN-19874 | 2.18.1 | Fixed an issue when copying and editing a workload with group access to a tool and the group wasn't removed when selecting users option. |
+| RUN-19893 | 2.18.1 | Fixed an issue when using a float number in the scale to zero inactivity value - custom which sometimes caused the submission to fail. |
+| RUN-20087 | 2.18.1 | Fixed an issue where inference graphs should be displayed only for minimum cluster versions. |
+| RUN-10733 | 2.18.1 | Fixed an issue where we needed to minify and obfuscate our code in production. |
+| RUN-19962 | 2.18.1 | Fixed an issue to fix sentry domains regex and map them to relevant projects. |
+| RUN-20104 | 2.18.1 | Fixed an issue where frontend Infinite loop on keycloak causes an error. |
+| RUN-19906 | 2.18.1 | Fixed an issue where inference workload name validation fails with 2.16 cluster. |
+| RUN-19605 | 2.18.1 | Fixed an issue where authorized users should support multiple users (workload-controller) . |
+| RUN-19903 | 2.18.1 | Fixed an issue where inference chatbot creation fails with 2.16 cluster. |
+| RUN-20409 | 2.18.1 | Fixed an issue where clicking on create new compute during the runai model flow did nothing. |
+| RUN-11224 | 2.18.1 | Fixed an issue where ruani-adm collect all logs was not collecting all logs. |
+| RUN-20478 | 2.18.1 | Improved workloads error status in overview panel. |
+| RUN-19850 | 2.18.1 | Fixed an issue where an application administrator could not submit a job with CLI. |
+| RUN-19863 | 2.18.1 | Fixed an issue where department admin received 403 on get tenants and cannot login to UI. |
+| RUN-19904 | 2.18.1 | Fixed an issue when filtering by allocatedGPU in get workloads with operator returns incorrect result. |
+| RUN-19925 | 2.18.1 | Fixed an issue when upgrade from v2.16 to v2.18 failed on worklaods migrations. |
+| RUN-19887 | 2.18.1 | Fixed an issue in the UI when there is a scheduling rule of timeout, the form opened with the rules collapsed and written "none". |
+| RUN-19941 | 2.18.1 | Fixed an issue where completed and failed jobs were shown in view pods in nodes screen. |
+| RUN-19940 | 2.18.1 | Fixed an issue where setting gpu quota failed because the department quota was taken from wrong department. |
+| RUN-19890 | 2.18.1 | Fixed an issue where editing a project by removing its node-affinity stuck updating. |
+| RUN-20120 | 2.18.1 | Fixed an issue where project update fails when there is no cluster version. |
+| RUN-20113 | 2.18.1 | Fixed an issue in the Workloads table where a researcher does not see other workloads once they clear their filters. |
+| RUN-19915 | 2.18.1 | Fixed an issue when turning departments toggles on on cluster v2.11+ the gpu limit is -1 and there is ui error. |
+| RUN-20178 | 2.18.1 | Fixed an issue where dashboard CPU tabs appeared in new overview. |
+| RUN-20247 | 2.18.1 | Fixed an issue where you couldn't create a workload with namespace of a deleted project. |
+| RUN-20138 | 2.18.1 | Fixed an issue where the system failed to create node-type on override-backend env. |
+| RUN-18994 | 2.18.1 | Fixed an issue where some limitations for department administrator are not working as expected. |
+| RUN-19830 | 2.18.1 | Fixed an issue where resources (GPU, CPU, Memory) units were added to k8s events that are published by run:ai scheduler making our messages more readable. |
 
-## Version 2.18.47
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-22452 | Fixed an issue where the scheduler had signature errors if TopologySpreadConstraints was partially defined. |
-| RUN-22570 | Updated git-sync image to version v4.3.0. |
-
-## Version 2.18.46 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-22054 | Fixed an issue where users could not attach to jobs. |
-| RUN-22377 | Removed uncached client from accessrule-controller. |
-| RUN-21697 | Fixed an issue where client may deadlock on suspension during allocation request. |
-
-## Version 2.18.45 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20073 | Fixed an issue where it wasn't possible to authenticate with user credentials in the CLI. |
-| RUN-21957 | Fixed an issue where there was a missing username-loader container in inference workloads. |
-
-## Version 2.18.39 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-22276 | Fixed an issue where Knative external URL was missing from the Connections modal. |
-| RUN-22280 | Fixed an issue when setting scale to zero - there was no pod counter in the Workload grid. |
-| RUN-19811 | Added an option to set k8s tolerations to run:ai daemonsets (container-toolkit, runai-device-plugin, mig-parted, node-exporter, etc..) . |
-| RUN-22128 | Added GID, UID, Supplemental groups to the V1 CLI. |
-
-## Version 2.18.37  
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-21800 | Fixed an issue with old workloads residing in the cluster. |
-
-## Version 2.18.34 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-21907 | Fixed an issue where the SSO user credentials contain supplementary groups as string instead of int. |
-
-## Version 2.18.31
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-21272 | Fixed an issue with multi-cluster credinatils creation, specifically with the same name in different clusters. |
-
-## Version 2.18.29
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20680 | Fixed an issue where workloads page do not present requested GPU. |
-| RUN-21200 | Fixed issues with upgrades and connections from v2.13. |
-
-## Version 2.18.27 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20970 | Fixed an issue with PUT APIs. |
-
-## Version 2.18.26 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20927 | Fixed an issue where node affinity was not updated correctly in projects edit. |
-| RUN-20084 | Fixed an issue where default department were deleted instead of a message being displayed. |
-| RUN-21062 | Fixed issues with the API documentation. |
-
-## Version 2.18.25 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20434 | Fixed an issue when creating a Project/Department with memory resources requires 'units'. |
-| RUN-20923 | Fixed an issue with projects/departments page loading slowly. |
-
-## Version 2.18.23 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-19872 | Fixed an issue where the Toolkit crashes and fails to create and replace the publishing binaries. |
-
-## Version 2.18.22
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20861 | Fixed an issue where a pod is stuck on pending due to a missing resource reservation pod. |
-| RUN-20842 | Fixed an issue of illegal model name with "." in hugging face integration. |
-| RUN-20791 | Fix an issue where notifications froze after startup. |
-| RUN-20865 | Fixed an issue where default departments are not deleted when a cluster is deleted. |
-
-## Version 2.18.21
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20698 | Fixed an issue where 2 processes requests a device at the same time received the same GPU, causing failures. |
-
-## Version 2.18.18
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20760 | Fixed an issue where workload protection UI shows wrong status. |
-
-## Version 2.18.15
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20612 | Fixed an issue where it was impossible with the use-table-data to hide node pool columns when there is only one default node pool. |
-| RUN-20735 | Fixed an issue where nodePool.name is undefined|
-
-## Version 2.18.12
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20721 | Added error handling to nodes pages. |
-
-## Version 2.18.10 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20578 | Fixed an issue regarding policy enforcement. |
-| RUN-20188 | Fixed issue with defining SSO in OpenShift identity provider. |
-
-## Version 2.18.9
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20673 | Fixed an issue where a researcher uses a distributed elastic job, it is possible that in a specific flow it is scheduled on more than one node-pools. |
-
-## Version 2.18.7 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20360 | Fixed an issue where the workload network status was misleading. |
-| RUN-22107 | Fixed an issue where passwords containing $ were removed from the configuration. |
-
-## Version 2.18.5 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20510 | Fixed an issue with external workloads - argocd workflow failed to be updated. |
-
-## Version 2.18.4
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20516 | Fixed an issue when after deploying to prod, the cluster-service and authorization-service got multiple OOMKilled every ~1 hour. |
-
-
-## Version 2.18.2 
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20485 | Changed policy flags to Beta. |
-
-## Version 2.18.1
-
-| Internal ID | Description  |
-| ---------------------------- | ---- |
-| RUN-20005 | Fixed an issue where a sidecar container failure failed the workload. |
-| RUN-20169 | Fixed an issue allowing the addition of annotations and labels to workload resources. |
-| RUN-20108 | Fixed an issue exposing service node ports to workload status. |
-| RUN-20160 | Fixed an issue with version display when installing a new cluster in an airgapped environment. |
-| RUN-19874 | Fixed an issue when copying and editing a workload with group access to a tool and the group wasn't removed when selecting users option. |
-| RUN-19893 | Fixed an issue when using a float number in the scale to zero inactivity value - custom which sometimes caused the submission to fail. |
-| RUN-20087 | Fixed an issue where inference graphs should be displayed only for minimum cluster versions. |
-| RUN-10733 | Fixed an issue where we needed to minify and obfuscate our code in production. |
-| RUN-19962 | Fixed an issue to fix sentry domains regex and map them to relevant projects. |
-| RUN-20104 | Fixed an issue where frontend Infinite loop on keycloak causes an error. |
-| RUN-19906 | Fixed an issue where inference workload name validation fails with 2.16 cluster. |
-| RUN-19605 | Fixed an issue where authorized users should support multiple users (workload-controller) . |
-| RUN-19903 | Fixed an issue where inference chatbot creation fails with 2.16 cluster. |
-| RUN-20409 | Fixed an issue where clicking on create new compute during the runai model flow did nothing. |
-| RUN-11224 | Fixed an issue where ruani-adm collect all logs was not collecting all logs. |
-| RUN-20478 | Improved workloads error status in overview panel. |
-| RUN-19850 | Fixed an issue where an application administrator could not submit a job with CLI. |
-| RUN-19863 | Fixed an issue where department admin received 403 on get tenants and cannot login to UI. |
-| RUN-19904 | Fixed an issue when filtering by allocatedGPU in get workloads with operator returns incorrect result. |
-| RUN-19925 | Fixed an issue when upgrade from v2.16 to v2.18 failed on worklaods migrations. |
-| RUN-19887 | Fixed an issue in the UI when there is a scheduling rule of timeout, the form opened with the rules collapsed and written "none". |
-| RUN-19941 | Fixed an issue where completed and failed jobs were shown in view pods in nodes screen. |
-| RUN-19940 | Fixed an issue where setting gpu quota failed because the department quota was taken from wrong department. |
-| RUN-19890 | Fixed an issue where editing a project by removing its node-affinity stuck updating. |
-| RUN-20120 | Fixed an issue where project update fails when there is no cluster version. |
-| RUN-20113 | Fixed an issue in the Workloads table where a researcher does not see other workloads once they clear their filters. |
-| RUN-19915 | Fixed an issue when turning departments toggles on on cluster v2.11+ the gpu limit is -1 and there is ui error. |
-| RUN-20178 | Fixed an issue where dashboard CPU tabs appeared in new overview. |
-| RUN-20247 | Fixed an issue where you couldn't create a workload with namespace of a deleted project. |
-| RUN-20138 | Fixed an issue where the system failed to create node-type on override-backend env. |
-| RUN-18994 | Fixed an issue where some limitations for department administrator are not working as expected. |
-| RUN-19830 | Fixed an issue where resources (GPU, CPU, Memory) units were added to k8s events that are published by run:ai scheduler making our messages more readable. |
-
-## Version 2.18.0
+## Version 2.18.0 Fixes
 
 | Internal ID | Description  |
 | ---------------------------- | ---- |
