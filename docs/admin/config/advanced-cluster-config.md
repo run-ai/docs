@@ -23,6 +23,7 @@ The following configurations allow you to enable or disable features, control pe
 | spec.prometheus.spec.retention (string) | Defines how long Prometheus retains Run:ai metrics locally, which is useful in case of potential connectivity issues. For more information, see Prometheus Storage| 2h |
 | spec.prometheus.spec.retentionSize (string) | Allocates storage space for Run:ai metrics in Prometheus, which is useful in case of potential connectivity issues. For more information, see Prometheus Storage| "" |
 | spec.prometheus.logLevel (string) | Sets the Prometheus log levelPossible values: [debug, info, warn, error] |  “info" |
+| spec.prometheus.additionalAlertLabels (object) | Sets additional custom labels for the [built-in alerts](../maintenance/alert-monitoring.md#built-in-alerts) Example: `{“env”: “prod”}` |  `{}` |
 | spec.global.schedulingServices (object) | Defines resource constraints uniformly for the entire set of Run:ai scheduling services. For more information, see Resource requests and limits of Pod and container | `{resources: {}}` |
 | spec.global.syncServices (object) | Defines resource constraints uniformly for the entire set of Run:ai sync services. For more information, see Resource requests and limits of Pod and container| `{resources: {}}` |
 | spec.global.workloadServices (object) | Defines resource constraints uniformly for the entire set of Run:ai workload services. For more information, see Resource requests and limits of Pod and container | `{resources: {}}` |
