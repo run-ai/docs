@@ -339,9 +339,9 @@ nav:
         - 'Distributed Training' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Build' :
         - 'Basics' : 'Researcher/Walkthroughs/walkthrough-build.md'
-        - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
         - 'Jupyter Notebook' : 'Researcher/Walkthroughs/quickstart-jupyter.md'
         - 'Visual Studio Code Web' : 'Researcher/Walkthroughs/quickstart-vscode.md'
+        - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
  #    - 'GPU Allocation' : 
       - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
