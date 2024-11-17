@@ -1,76 +1,93 @@
-<!-- DGX Bundle -->
-# Run:ai & NVIDIA DGX Bundle
+# Install using Base Command Manager
 
-NVIDIA [DGX](https://www.nvidia.com/en-us/data-center/dgx-systems/){target=_blank} is a line of NVIDIA-produced servers and workstations which specialize in using GPUs to accelerate deep learning applications.
+This article explains the steps required to install the Run:ai cluster on a DGX Kubernetes Cluster using NVIDIA [Base Command Manager (BCM)](https://docs.nvidia.com/base-command-manager/index.html){target=_blank}.
 
-NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this document is to guide you through the process of installing and configuring Run:ai in this scenario
+## Run:ai Installer
 
-## NVIDIA Base Command Manager
-
-[NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Base Command Manager installer.
-
-## Prerequisites
-
-### Software Prerequisites
-
-Run:ai assumes the following components to be pre-installed:
-
-* `NVIDIA GPU Operator` - available for installation via the Base Command Manager installer
-* `Prometheus` - available for installation via the Base Command Manager installer
-* `Ingress controller` - NGINX is available for installation via the Base Command Manager installer. 
-
-
-###  Run:ai prerequisites 
-
-The Run:ai cluster installer will require the following:
-
-* `Run:ai tenant name` - provided by Run:ai customer support.
-* `Run:ai install secret` - provided by Run:ai customer support.
-* `Cluster URL` - your organization should provide you with a domain name.
-* `Private and public keys` -your organization should provide a __trusted__ certificate for the above domain name. The Run:ai installer will require both private key and full-chain in PEM format. 
-* Post-installation - credentials for the Run:ai user interface. Provided by Run:ai customer support.
-## Installing Run:ai installer
-
-Select Run:ai via the Base Command Manager installer. Remember to select all of the above software prerequisites as well. 
-
-## Using the Run:ai installer
-
-Find out the cluster's IP address. Then browse to `http://<CLUSTER-IP>:30080/runai-installer`. Alternatively use the Base Command Manager landing page at `http://<CLUSTER-IP>/#runai`.  
+The Run:ai Installer is an User Interface (UI) wizard that simplifies the deployment of Run:ai Cluster on DGX. The Run:ai installer can be installed via the BCM cluster wizard on cluster creation.
 
 !!! Note
-    * Use `http` rather than `https`.
-    * Use the IP and not a domain name.
+    For advanced configuration and custom deployment options, refer to the Install using Helm.
 
-A wizard would open up containing 3 pages: Prerequisites, setup, and installation. 
+## Before installation
 
+There are a number of matters to consider prior to installing using the Run:ai Installer.
 
-### Prerequisites Page
+### Application secret key
 
-The first, verification page, verifies that all of the above software prerequisites are met. Press the "Verify" button. You will not be able to continue unless all prerequisites are met. When all are met, press the `Continue` button. 
+An **Application secret key** is required to connect the cluster to the Run:ai Platform, In order to get the Application secret key, a new cluster must be added.
 
-### Setup Page
+1.  follow the [Adding a new cluster](./cluster-install.md) setup instructions, **Do not follow the Installation instructions**.
+2.  Once cluster instructions are displayed, find the `controlPlane.clientSecret` flag in the displayed Helm command, copy and save its value.
 
-The setup page asks to provide all of the Run:ai prerequisites described above. The page will verify the Run:ai input (tenant name and install secret) but will not verify the validity of the cluster URL and certificate. If those are incorrect, the Run:ai installation will show as successful but certain aspects of Run:ai will not work. 
+!!! Note
+    For **DGX Bundle customers**, installing their first Run:ai cluster - The Application secret key will be provided by the Run:ai Support team.
 
-After filling up the form, press `Continue`. 
+### System and network requirements
 
-### Installation page
+Before installing the Run:ai cluster on a DGX system using BCM, ensure that your System requirements and Network requirements meets the necessary prerequisites.
 
-The Run:ai installation will start. Depending on your download network speed the installation can take from 2 to 10 minutes. When the installation is successful you will see a `START USING RUN:AI` button. Press the button and enter your credentials to enter the Run:ai user interface. 
+The BCM cluster wizard deploys essential [Software Requirements](./cluster-prerequisites.md#software-requirements), such as the [Kubernetes Ingress Controller](./cluster-prerequisites.md#kubernetes-ingress-controller), [NVIDIA GPU Operator](./cluster-prerequisites.md#nvidia-gpu-operator), and [Prometheus](./cluster-prerequisites.md#prometheus), as part of the Run:ai Installer deployment. Additional optional software requirements for [Distributed training](./cluster-prerequisites.md#distributed-training) and [Inference](./cluster-prerequisites.md#inference), requires manual setup.
 
-Save the URL for future use. 
+### Tenant Name
 
+Your tenant name is predefined and supplied by Run:ai. Each customer is provided with a unique, dedicated URL in the format `<tenant-name>.run.ai` which includes the required tenant name.
 
-## Post-installation. 
+### TLS certificate
 
-Post installation, you will want to:
+A TLS private and public keys for the cluster’s [Fully Qualified Domain Name (FQDN)](./cluster-prerequisites.md#fully-qualified-domain-name-fqdn) are required for HTTP access to the cluster
 
-* (Mandatory) Set up [Researcher Access Control](../../authentication/researcher-authentication.md). Without this, the Job Submit form will not work.
-* Set up Run:ai Users [Working with Users](../../authentication/users.md).
-* Set up Projects for Researchers [Working with Projects](../../../platform-admin/aiinitiatives/org/projects.md).
+!!! Important
+    TLS Certificate must be trusted, Self-signed certificates are not supported.
+
+## Installation
+
+Follow these instructions to install using BCM.
+
+### Installing a cluster
+
+The cluster installer is available via the locally installed BCM landing page,
+
+<style>
+.border-img {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+</style>
+
+1.  Go to the locally installed BCM landing page, Select the Run:ai tile or access directly to `http://<BCM-CLUSTER-IP>:30080/runai-installer` (HTTP only)  
+![image(56).png](img/bcm1.png){.border-img}
+2.  Click **VERIFY** in order to check System Requirements are met.  
+    ![image(57).png](img/bcm2.png){.border-img}
+3.  After verification completed successfully, click **CONTINUE**.  
+    ![image(58).png](img/bcm2.5.png){.border-img}
+4.  Enter the cluster information and click **CONTINUE**.  
+    ![image(61).png](img/bcm3.png){.border-img}
+5.  The Run:ai installation will start and should be complete within a few minutes  
+    ![image(63).png](img/bcm4.png){.border-img}
+6.  Once a message of **Run:ai was installed successfully!** is displayed, Click on **START USING RUN:AI** to launch the login page of the tenant in a new browser tab.  
+    ![image(62).png](img/bcm5.png){.border-img}
 
 ## Troubleshooting
 
-The cluster installer is a pod in Kubernetes. The pod is responsible for the installation preparation and prerequisite gathering phase. In case of an error during this pre-installation, you need to gather the pod's log. 
+If you encounter an issue with the installation, try the troubleshooting scenario below.
 
-Once the Run:ai cluster installation has started, the behavior is identical to any Run:ai cluster installation flavor. See the [troubleshooting page](../../troubleshooting/troubleshooting.md).
+### Run:ai Installer
+
+The Run:ai Installer is a pod in Kubernetes. The pod is responsible for the installation preparation and prerequisite gathering phase. In case of an error during the Prerequisites verification, Run the following command to print the logs:
+
+``` bash
+kubectl get pods -n runai | grep 'cluster-installer' # Find the cluster installer pod's name
+kubectl logs <POD-NAME> -n runai # Print the cluster installer pod logs
+```
+### Installation
+
+If the Run:ai cluster installation failed, check the installation logs to identify the issue. Run the following script to print the installation logs:
+
+``` bash
+curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh
+```
+
+### Cluster status
+
+If the Run:ai cluster installation completed, but the cluster status did not change its status to **Connected**, check the cluster [troubleshooting scenarios](../../config/clusters.md#troubleshooting-scenarios)
