@@ -34,6 +34,8 @@ The following configurations allow you to enable or disable features, control pe
 | spec.global.core.swap.limits.cpuRam (string) | Sets the CPU memory size used to swap GPU workloads | 100Gi |
 | spec.global.core.swap.limits.reservedGpuRam (string) | Sets the reserved GPU memory size used to swap GPU workloads | 2Gi |
 | spec.global.core.nodeScheduler.enabled  (boolean) | Enables the node-level scheduler | false |
+| spec.global.replicaCount  (int) | Sets a global number of pod replicas to be created for supported services | 1 |
+
 | spec.limitRange.cpuDefaultRequestCpuLimitFactorNoGpu  (string) | Sets a default ratio between the CPU request and the limit for workloads without GPU requests| 0.1 |
 | spec.limitRange.memoryDefaultRequestMemoryLimitFactorNoGpu  (string) | Sets a default ratio between the memory request and the limit for workloads without GPU requests | 0.1 |
 | spec.limitRange.cpuDefaultRequestGpuFactor (string) | Sets a default amount of CPU allocated per GPU when the CPU is not specified| | 100m |
