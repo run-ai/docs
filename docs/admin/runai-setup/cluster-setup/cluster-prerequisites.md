@@ -219,23 +219,22 @@ Distributed training enables training of AI models over multiple nodes. This req
 * [XGBoost](https://xgboost.readthedocs.io/)  
 * [MPI v2](https://docs.open-mpi.org/)
 
-There are many ways to install each framework. A simple example of installation is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/). Run:ai supports Kubeflow version 1.7 only - which includes TensorFlow, Pytorch, and XGBoost.
+There are many ways to install each framework. A simple example of installation is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) - which includes TensorFlow, Pytorch, and XGBoost. We recommend using **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
 
 To install run the following command:
 
 ``` bash
-kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.7.0"
+kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
 ```
 
-To install MPI v2, which is not included in the Kubeflow Training Operator, run the following command:
+To install the MPI operator, which is not included in the Kubeflow Training Operator, run the following command:
 
 ``` bash
-kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/master/deploy/v2beta1/mpi-operator.yaml
+kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
 ```
-
 !!! Note
 
-    If you need both MPI v2 and Kubeflow Training Operator, follow the steps below:
+    If you need both MPI operator and Kubeflow Training Operator, follow the steps below:
 
     * Install the Kubeflow Training operator as above.  
     * Disable and delete MPI v1 in the Kubeflow Training Operator by running:
@@ -245,7 +244,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
     kubectl delete crd mpijobs.kubeflow.org
     ```
 
-    * Install MPI v2 as described above.
+    * Install MPI operator as described above.
 
 ### Inference
 
