@@ -20,6 +20,10 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
     * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
     * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
 
+## Login
+
+Run `runai login` and enter your credentials.
+
 
 ## Part I: Immediate Displacement of Over-Quota
 
