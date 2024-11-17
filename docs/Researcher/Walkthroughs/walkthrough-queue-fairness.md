@@ -9,19 +9,36 @@ This Quickstart is about __queue fairness__. It shows that Jobs will be schedule
 
 ## Setup and configuration:
 
-* 4 GPUs on 2 machines with 2 GPUs each.
-* 2 Projects: team-a and team-b with __1__ allocated GPU each.
-* Run:ai canonical image runai.jfrog.io/demo/quickstart
+To complete this Quickstart, the [Platform Administrator](../../platform-admin/overview.md) will need to provide you with:
+
+* Your cluster should have 4 GPUs on 2 machines with 2 GPUs each.
+* _Researcher_ access to two _Projects_  named "team-a" and "team-b"
+* Each project should be assigned an exact quota of __1__ GPU. 
+* A URL of the Run:ai Console. E.g. [https://acme.run.ai](https://acme.run.ai).
+* Run:ai CLI installed on your machine. There are two available CLI variants:
+
+    * The older V1 CLI. See installation [here](../../admin/researcher-setup/cli-install.md)
+    * A newer V2 CLI, supported with clusters of version 2.18 and up. See installation [here](../../admin/researcher-setup/new-cli-install.md)
 
 
 ## Part I: Immediate Displacement of Over-Quota
 
 Run the following commands:
 
+=== "CLI V1"
+    ```
     runai submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
     runai submit a2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
     runai submit a3 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
     runai submit a4 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    ```
+=== "CLI V2"
+    ```
+    runai training submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    runai training submit a2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    runai training submit a3 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    runai training submit a4 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    ```
 
 System status after run:
 ![overquota-fairness11](img/overquota-fairness1.png)
@@ -33,10 +50,20 @@ System status after run:
 
 Run the following commands:
 
+=== "CLI V1"
+    ```
     runai submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     runai submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     runai submit b3 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     runai submit b4 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    ```
+=== "CLI V2"
+    ```
+    runai training submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    runai training submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    runai training submit b3 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    runai training submit b4 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    ```
 
 System status after run:
 ![overquota-fairness12](img/overquota-fairness2.png)
@@ -50,7 +77,14 @@ System status after run:
 
 Now lets start deleting Jobs. Alternatively, you can wait for Jobs to complete.
 
+=== "CLI V1"
+    ```
     runai delete job b2 -p team-b
+    ```
+=== "CLI V2"
+    ```
+    runai training delete b2 -p team-b
+    ```
 
 !!! Discussion
     As the quotas are equal (1 for each Project, the remaining pending Jobs will get scheduled one by one alternating between Projects, regardless of the time in which they were submitted. 
