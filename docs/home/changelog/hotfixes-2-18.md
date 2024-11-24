@@ -12,6 +12,15 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-23283 | 2.18.64 | Fixed a permissions issue with the Analytics dashboard post upgrade for SSO Users |
+| RUN-23420 | 2.18.63 | Replaced Redis with Keydb |
+| RUN-23140 | 2.18.63 | Fixed an issue where distributed workloads were created with the wrong types |
+| RUN-23130 | 2.18.63 | Fixed an issue where inference-workload-controller crashed when WorkloadOwnershipProtection was enabled |
+| RUN-23334 | 2.18.62 | Updated core Dockerfiles to ubi9 |
+| RUN-23296 | 2.18.62 | Fixed an issue in the CLI where runai attach did not work with auto-complete |
+| RUN-23215 | 2.18.62 | Fixed an issue where metrics requests from backend to mimir failed for certain tenants. |
+| RUN-22138 | 2.18.62 | Fixed an issue where private URL user(s) input was an email and not a string. |
+| RUN-23282 | 2.18.61 | CLI documentation fixes |
 | RUN-23055 | 2.18.60 | Fixed unified Distributed and Training CLI commands |
 | RUN-23243 | 2.18.59 | Fixed an issue where the scope tree wasn't calculating permissions correctly |
 | RUN-22463 | 2.18.59 | Fixed an error in CLI bash command |
