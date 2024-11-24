@@ -90,3 +90,10 @@ Auto-completion assists with completing the command syntax automatically for eas
       source <(runai completion bash)
       ```
 
+=== "Windows"
+    1. add the following code in the powershell profile
+    ```powershell
+    runai.exe completion powershell | Out-String | Invoke-Expression
+    Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+    ```
+    2. for more completion modes options - [see here](https://github.com/spf13/cobra/blob/main/site/content/completions/_index.md#powershell-completions)
