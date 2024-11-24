@@ -12,6 +12,7 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-23291 | 2.18.64 | CLI change text to be user friendly |
 | RUN-23283 | 2.18.64 | Fixed a permissions issue with the Analytics dashboard post upgrade for SSO Users |
 | RUN-23420 | 2.18.63 | Replaced Redis with Keydb |
 | RUN-23140 | 2.18.63 | Fixed an issue where distributed workloads were created with the wrong types |
