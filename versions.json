@@ -1,5 +1,12 @@
 [
   {
+    "version": "v.2.20-dist-capabilities",
+    "title": ".2.20-dist-capabilities",
+    "aliases": [
+      "v.2.20-dist-capabilities-alias"
+    ]
+  },
+  {
     "version": "v2.19",
     "title": "2.19",
     "aliases": [
