@@ -1,4 +1,4 @@
-# What's New for the Run:ai Platform
+# What's New for the Run:ai SaaS Platform
 
 The release notes are aimed to provide transparency into the latest changes and improvements to Run:ai’s SaaS platform. The updates include new features, optimizations, and fixes aimed at improving performance and user experience. 
 
@@ -12,8 +12,8 @@ SaaS features are gradually rolled out to customers over the course of a week to
 
 ### Product Enhancements
 
-- The display of the default GPU quota for the default department has been updated. Previously, the GPU quota was shown as \-1. It has now been changed to display as "-" for better clarity.  (RUN-22906)  
-- New permissions have been added for the Application Administrator role, enabling full CRUD (Create, Read, Update, Delete) capabilities for managing applications. (RUN-23441)
+- The display of the default GPU quota for the default department has been updated. Previously, the GPU quota was shown as __-1__. It has now been changed to display as "-" for better clarity.  <!-- (RUN-22906)   -->
+- New permissions have been added for the Application Administrator role, enabling full CRUD (Create, Read, Update, Delete) capabilities for managing applications. <!-- (RUN-23441) -->
 
 
 ### Resolved Bugs 
