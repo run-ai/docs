@@ -27,7 +27,15 @@ Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later. To instal
 
 ## Cluster hardware requirements
 
-See Cluster prerequisites [hardware](../../cluster-setup/cluster-prerequisites.md#hardware-requirements) requirements.
+The Run:ai control plane services require the following resources:
+
+| Component | Required Capacity |
+| :---- | :---- |
+| CPU | 10 cores |
+| Memory | 12GB |
+| Disk space | 110GB |
+
+If Run:ai cluster is planned to be installed on the same cluster as the Run:ai control plane: Ensure the control plane requirements are in addition to the Run:ai cluster [hardware requirements](../../cluster-setup/cluster-prerequisites.md#hardware-requirements).
 
 ## Run:ai software requirements
 
