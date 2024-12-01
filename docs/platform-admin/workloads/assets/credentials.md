@@ -184,34 +184,33 @@ Add secrets in advance to be used when creating credentials via the Run:ai UI.
 Follow the steps below for each required scope:
 
 === "Cluster scope"
+
     1.  Create the secret in the Run:ai namespace (runai)
     2.  To authorize Run:ai to use the secret, label it: `run.ai/cluster-wide: "true"`
     3.  Label the secret with the correct credential type:
-        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
-        2.  Access key - `run.ai/cluster-wide: "access-key"`
-        3.  Username and password - `run.ai/cluster-wide: "password"`
-        4.  Generic secret - `run.ai/cluster-wide: "generic"` ֿ
-
+        1.  Docker registry - `run.ai/resource: "docker-registry"`
+        2.  Access key - `run.ai/resource: "access-key"`
+        3.  Username and password - `run.ai/resource: "password"`
+        4.  Generic secret - `run.ai/resource: "generic"` ֿ
 
 === "Department scope"
 
     1.  Create the secret in the Run:ai namespace (runai)
-    2.  To authorize Run:ai to use the secret, label it: `run.ai/department: "<name of department>"`
+    2.  To authorize Run:ai to use the secret, label it: `run.ai/department: "<department id>"`
     3.  Label the secret with the correct credential type:
-        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
-        2.  Access key - `run.ai/cluster-wide: "access-key"`
-        3.  Username and password - `run.ai/cluster-wide: "password"`
-        4.  Generic secret - `run.ai/cluster-wide: "generic"`
-
+        1.  Docker registry - `run.ai/resource: "docker-registry"`
+        2.  Access key - `run.ai/resource: "access-key"`
+        3.  Username and password - `run.ai/resource: "password"`
+        4.  Generic secret - `run.ai/resource: "generic"`
 
 === "Project scope"
 
     1.  Create the secret in the project’s namespace
     2.  Label the secret with the correct credential type:
-        1.  Docker registry - `run.ai/cluster-wide: "docker-registry"`
-        2.  Access key - `run.ai/cluster-wide: "access-key"`
-        3.  Username and password - `run.ai/cluster-wide: "password"`
-        4.  Generic secret - `run.ai/cluster-wide: "generic"`
+        1.  Docker registry - `run.ai/resource: "docker-registry"`
+        2.  Access key - `run.ai/resource: "access-key"`
+        3.  Username and password - `run.ai/resource: "password"`
+        4.  Generic secret - `run.ai/resource: "generic"`
 
 The secret is now displayed for that scope in the list of existing secrets.
 
