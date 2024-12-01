@@ -12,7 +12,7 @@ The Run:ai documentation is targeting four personas:
 
 * __Researcher__ — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
 
-* __Developer__ — Using various APIs to automate work with Run:ai. Developer documentation can be found [here](../developer/overview-developer.md).
+* __Developer__ — Using various APIs to automate work with Run:ai. The Developer documentation can be found [here](../developer/overview-developer.md).
 
 ## How to Get Support
 
