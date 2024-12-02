@@ -1,4 +1,4 @@
-# What's New for the Run:ai SaaS Platform
+# SaaS Updates
 
 The release notes are aimed to provide transparency into the latest changes and improvements to Run:ai’s SaaS platform. The updates include new features, optimizations, and fixes aimed at improving performance and user experience. 
 
@@ -7,6 +7,17 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-19/](https
 ##  Gradual Rollout
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
+
+## December Release 
+
+### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-23583 | Fixed a bug where navigating through the context menu in the new UI could cause some pages to incorrectly appear as active |
+| RUN-23471 | Resolved a bug where deleting an environment variable from an environment asset prevented it from being re-added |
+| RUN-23446 | Fixed a bug where the node pool in quota management could display incorrectly when creating a new project |
+| RUN-23926 | Resolved an issue where the EULA page appeared blank for part of the users |
 
 ## November Release 
 
