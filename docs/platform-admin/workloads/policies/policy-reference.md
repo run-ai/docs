@@ -13,7 +13,7 @@ Click the link to view the value type of each field.
 | args | When set, contains the arguments sent along with the command. These override the entry point of the image in the created workload | string | Workspace Training |
 | command | A command to serve as the entry point of the container running the workspace | string | Workspace Training |
 | createHomeDir | Instructs the system to create a temporary home directory for the user within the container. Data stored in this directory is not saved when the container exists. When the runAsUser flag is set to true, this flag defaults to true as well | boolean | Workspace Training |
-| environmentVariables | Set of environmentVariables to populate the container running the workspace | string | Workspace Training |
+| environmentVariables | Set of environmentVariables to populate the container running the workspace | array | Workspace Training |
 | image | Specifies the image to use when creating the container running the workload | string | Workspace Training |
 | imagePullPolicy | Specifies the pull policy of the image when starting t a container running the created workload. Options are: always, ifNotPresent, or never | string | Workspace Training |
 | workingDir | Container’s working directory. If not specified, the container runtime default is used, which might be configured in the container image | string | Workspace Training |
