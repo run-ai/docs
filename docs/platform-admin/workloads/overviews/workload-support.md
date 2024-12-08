@@ -13,33 +13,39 @@ Run:ai native workloads can be created via the Run:ai User interface, [API](http
 
 Different types of workloads have different levels of support. Understanding what capabilities are needed before selecting the workload type to work with is important. The table below details the level of support for each workload type in Run:ai. The Run:ai native workloads are fully supported with all of Run:ai advanced features and capabilities. While third-party workloads are partially supported. The list of capabilities can change between different Run:ai versions.
 
-| Functionality | Workload Type |  |  |  |  |
-| ----- | :---: | :---: | :---: | :---: | ----- |
-|  | Run:ai workloads |  |  |  | Third-party workloads |
+| Functionality | Workload Type |  |  |                        |  |
+| ----- | :---: | :---: | :---: |:----------------------:| ----- |
+|  | Run:ai workloads |  |  |                        | Third-party workloads |
 |  | Training - Standard | Workspace | Inference | Training - distributed | All K8s workloads |
-| [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v | v | v |
-| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v | v | v |
-| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v | v | v |
-| [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v | v | v |
-| Bin packing / Spread | v | v | v | v | v |
-| Fractions | v | v | v | v | v |
-| Dynamic fractions | v | v | v | v | v |
-| Node level scheduler | v | v | v | v | v |
-| GPU swap | v | v | v | v | v |
-| Elastic scaling | NA | NA | v | v | v |
-| [Gang scheduling](../../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v | v | v |
-| [Monitoring](../../../admin/maintenance/alert-monitoring.md) | v | v | v | v | v |
-| [RBAC](../../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v | v |  |
-| Workload awareness | v | v | v | v |  |
-| [Workload submission](../../../Researcher/workloads/overviews/managing-workloads.md) | v | v | v | v |  |
-| Workload actions (stop/run) | v | v | v |  |  |
-| [Policies](../../../platform-admin/workloads/policies/overview.md) | v | v | v | v |  |
-| [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |  |  |
+| [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v |           v            | v |
+| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
+| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v |           v            | v |
+| [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
+| Bin packing / Spread | v | v | v |           v            | v |
+| Fractions | v | v | v |           v            | v |
+| Dynamic fractions | v | v | v |           v            | v |
+| Node level scheduler | v | v | v |           v            | v |
+| GPU swap | v | v | v |           v            | v |
+| Elastic scaling | NA | NA | v |           v            | v |
+| [Gang scheduling](../../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v |           v            | v |
+| [Monitoring](../../../admin/maintenance/alert-monitoring.md) | v | v | v |           v            | v |
+| [RBAC](../../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v |           v            |  |
+| Workload awareness | v | v | v |           v            |  |
+| [Workload submission](../../../Researcher/workloads/overviews/managing-workloads.md) | v | v | v |           v            |  |
+| Workload actions (stop/run) | v | v | v |           v            |  |
+| [Policies](../../../platform-admin/workloads/policies/overview.md) | v | v | v |           v            |  |
+| [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |           v            |  |
 
 !!! Note
     __Workload awareness__
 
     Specific workload-aware visibility, so that different pods are identified and treated as a single workload (for example GPU utilization, workload view, dashboards).
+
+!!! Note
+    __Workload actions__, __Scheduling rules__
+
+    Actions and scheduling rules for distributed training are supported from clusters v2.20 and above with the matching training operator versions. (see installation docs).
+
 
 ## Workload scopes
 
