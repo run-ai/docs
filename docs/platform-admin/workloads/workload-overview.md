@@ -97,7 +97,7 @@ The *Status* column shows the current status of the workload. The following tabl
 | --- | --- | --- | --- |
 | **Creating** |Workload setup is initiated in the cluster. Resources and pods are now provisioning. | A workload is submitted. | A multi-pod group is created.|
 | **Pending** | Workload is queued and awaiting resource allocation. | A pod group exists. | All pods are scheduled. |
-| **Initializing** | Workload is retrieving images, starting containers, and preparing pods. | All pods are scheduled—handling of multi-pod groups TBD. | All pods are initialized or a failure to initialize is detected. |
+| **Initializing** | Workload is retrieving images, starting containers, and preparing pods. | All pods are scheduled. | All pods are initialized or a failure to initialize is detected. |
 | **Running** | Workload is currently in progress with all pods operational. | All pods initialized (all containers in pods are ready). | Job completion or failure. |
 | **Degraded** | Pods may not align with specifications, network services might be incomplete, or persistent volumes may be detached. Check your logs for specific details. | **Pending**&mdash;All pods are running but with issues. </br> **Running**&mdash;All pods are running with no issues. | **Running**&mdash;All resources are OK.</br> **Completed**&mdash; Job finished with fewer resources.</br>**Failed**&mdash;Job failure or user-defined rules. |
 | **Deleting** | Workload and its associated resources are being decommissioned from the cluster. | Deleting of the workload. | Resources are fully deleted. |
