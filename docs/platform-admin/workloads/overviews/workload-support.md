@@ -63,7 +63,7 @@ The following table describes the different phases in a workload life cycle.
 | :---- | :---- | :---- | :---- |
 | Creating | Workload setup is initiated in the Cluster. Resources and pods are now provisioning | A workload is submitted | A multi-pod group is created |
 | Pending | Workload is queued and awaiting resource allocation. | A pod group exists | All pods are scheduled |
-| Initializing | Workload is retrieving images, starting containers, and preparing pods | All pods are scheduled—handling of multi-pod groups TBD | All pods are initialized or a failure to initialize is detected |
+| Initializing | Workload is retrieving images, starting containers, and preparing pods | All pods are scheduled | All pods are initialized or a failure to initialize is detected |
 | Running | Workload is currently in progress with all pods operational | All pods initialized (all containers in pods are ready) | workload completion or failure |
 | Degraded | Pods may not align with specifications, network services might be incomplete, or persistent volumes may be detached. Check your logs for specific details. | Pending: All pods are running but with issues Running: All pods are running with no issues. | Running: All resources are OK Completed: Workload finished with fewer resources Failed: Workload failure or user-defined rules |
 | Deleting | Workload and its associated resources are being decommissioned from the cluster | Deleting the workload. | Resources are fully deleted |
