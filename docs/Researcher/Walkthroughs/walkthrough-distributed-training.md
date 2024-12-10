@@ -109,7 +109,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
                 "gpuDevicesRequest": 1,
                 "gpuPortionRequest": 0.1
             },
-            "image": "/kubeflow/pytorch-dist-mnist:latest",  
+            "image": "kubeflow/pytorch-dist-mnist:latest",  
             "numWorkers": 2,  \ # (5)
             "distributedFramework": "PyTorch" \ # (6)
         }
