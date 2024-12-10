@@ -61,7 +61,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     ``` bash
     runai config project team-a
     runai submit-dist pytorch dist-train1 --workers=2 -g 0.1 \
-        -i gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+        -i /kubeflow/pytorch-dist-mnist:latest
     ```
 
     !!! Note
@@ -73,7 +73,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     ``` bash
     runai project set team-a
     runai distributed submit dist-train1  --framework PyTorch \
-        -i gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0 --workers 2 
+        -i /kubeflow/pytorch-dist-mnist:latest --workers 2 
         --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
     ```
     !!! Note
@@ -85,7 +85,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     * You should already have `Cluster`, `Project` and a `start from scratch` `Template` selected. 
     * Under `Workload architecture` select `Distributed` and choose `PyTorch`. Set the distributed training configuration to `Workers & master`.
     * Enter `train1` as the name and press __CONTINUE__.
-    * Select __NEW ENVIRONMENT__. Enter `pytorch-dt` as the name and `gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0` as the image. Then select __CREATE ENVIRONMENT__.
+    * Select __NEW ENVIRONMENT__. Enter `pytorch-dt` as the name and `/kubeflow/pytorch-dist-mnist:latest` as the image. Then select __CREATE ENVIRONMENT__.
     * When the previous screen comes up, under `Compute resource` enter 2 workers and select `small-fraction` as the Compute resource. 
     * Select __CONTINUE__ and then __CREATE TRAINING__.
     
@@ -109,7 +109,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
                 "gpuDevicesRequest": 1,
                 "gpuPortionRequest": 0.1
             },
-            "image": "gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0",  
+            "image": "/kubeflow/pytorch-dist-mnist:latest",  
             "numWorkers": 2,  \ # (5)
             "distributedFramework": "PyTorch" \ # (6)
         }
