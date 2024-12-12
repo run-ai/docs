@@ -73,6 +73,8 @@ kubectl patch RunaiConfig runai -n runai --type="merge" \
     -p '{"spec":{"global":{"subdomainSupport": true}}}' 
 ```
 
+For OpenShift, editing the Runaiconfig with the above command is the only step required to enable host-based routing.
+
 Once these requirements have been met, all workspaces will automatically be assigned a secured URL with a subdomain, ensuring full functionality for all researcher applications.
 
 ## See Also
