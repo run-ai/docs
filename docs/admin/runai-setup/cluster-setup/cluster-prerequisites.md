@@ -138,7 +138,7 @@ There are many ways to install and configure different ingress controllers. A si
     ``` bash
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
-    helm install ingress-nginx ingress-nginx/ingress-nginx \
+    helm install nginx-ingress ingress-nginx/ingress-nginx \
         --namespace ingress-nginx --create-namespace \
         --set controller.service.annotations.oci\\.oraclecloud\\.com/load-balancer-type=nlb \
         --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/is-preserve-source=True \
