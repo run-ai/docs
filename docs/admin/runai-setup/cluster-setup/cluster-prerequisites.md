@@ -144,7 +144,7 @@ There are many ways to install and configure different ingress controllers. A si
         --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/is-preserve-source=True \
         --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/security-list-management-mode=None \
         --set controller.service.externalTrafficPolicy=Local \
-        --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/subnet=<SUBNET-ID> # Replace <SUBNET-IP> with the subnet ID addresses of one of the nodes
+        --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/subnet=<SUBNET-ID> # Replace <SUBNET-ID> with the subnet ID of one of the nodes
     ```
 
 
