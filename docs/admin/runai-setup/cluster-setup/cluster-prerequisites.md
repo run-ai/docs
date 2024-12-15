@@ -131,7 +131,7 @@ There are many ways to install and configure different ingress controllers. A si
         --namespace nginx-ingress --create-namespace
     ```
 
-=== "Oracle Managed Kubernetes (OKE)"
+=== "Oracle Kubernetes Engine (OKE)"
 
     Run the following commands:
 
