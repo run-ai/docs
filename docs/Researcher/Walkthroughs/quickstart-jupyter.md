@@ -42,10 +42,7 @@ Before you start, make sure:
 
 === "User Interface"
     1. Go to the Workload manager → Workloads
-    2. Select __+NEW WORKLOAD__ and then __Workspace__
-
-       Within the New workspace form:
-       
+    2. Select __+NEW WORKLOAD__ and then __Workspace__   
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
@@ -72,8 +69,9 @@ Before you start, make sure:
                  * Enter __command__ - start-notebook.sh
                  * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
                
-                 !!! Note
-                     If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+            !!! Note
+                If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+
              8. Click __CREATE ENVIRONMENT__
             
         * The newly created jupyter-lab will be selected automatically
