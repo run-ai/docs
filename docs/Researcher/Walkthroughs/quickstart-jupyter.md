@@ -49,25 +49,28 @@ Before you start, make sure:
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
     6. Enter a __name__ for the workspace (If the name already exists in the project, you will be    requested to submit a different name)
     7. Click __CONTINUE__
-       In the next step:
     8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
         * If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
+
             1. Click __+NEW ENVIRONMENT__
             2. Select under which cluster to create the environment
             3. Select a [scope](../workloads/assets/overview.md). 
             4. Enter a __name__ for the environment. The name must be unique.
             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
             6. Tools - Set the connection for your tool 
-               * Click __+TOOL__
-               * Select __Jupyter__ tool from the list
+
+                * Click __+TOOL__
+                * Select __Jupyter__ tool from the list
             7. Set the runtime settings for the environment 
-               * Click __+COMMAND__ 
-               * Enter __command__ - start-notebook.sh
-               * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
-               !!! Note
-                   If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+
+                * Click __+COMMAND__ 
+                * Enter __command__ - start-notebook.sh
+                * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
+               
+                !!! Note
+                    If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
             8. Click __CREATE ENVIRONMENT__
             
         * The newly created jupyter-lab will be selected automatically
@@ -82,8 +85,10 @@ Before you start, make sure:
             4. Enter a __name__ for the compute resource. The name must be unique.
             5. Set __GPU devices per pod - 1__
             6. Set __GPU memory per device__ 
-               - Select __% (of device)__ - Fraction of a GPU device’s memory
-               - Set the memory __Request__ - 100 (The workload will allocate 100% of the GPU memory)
+
+                - Select __% (of device)__ - Fraction of a GPU device’s memory
+                - Set the memory __Request__ - 100 (The workload will allocate 100% of the GPU memory)
+
             7. Optional: set the __CPU compute per pod__ - 0.1 cores (default)
             8. Optional: set the __CPU memory per pod__ - 100 MB (default)
             9. Click __CREATE COMPUTE RESOURCE__
