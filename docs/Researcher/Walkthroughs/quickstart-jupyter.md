@@ -43,16 +43,15 @@ Before you start, make sure:
 === "User Interface"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
-       Within the New workspace form:  
-
+    Within the New workspace form:
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
     6. Enter a __name__ for the workspace (If the name already exists in the project, you will be   requested to submit a different name)
     7. Click __CONTINUE__
-       In the next step:
+    In the next step:
     8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
-        - If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
+        * If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
 
@@ -63,22 +62,23 @@ Before you start, make sure:
             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
             6. Tools - Set the connection for your tool 
 
-               - Click __+TOOL__
-               - Select __Jupyter__ tool from the list
+               * Click __+TOOL__
+               * Select __Jupyter__ tool from the list
 
             7. Set the runtime settings for the environment 
 
-               - Click __+COMMAND__ 
-               - Enter __command__ - start-notebook.sh
-               - Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
+               * Click __+COMMAND__ 
+               * Enter __command__ - start-notebook.sh
+               * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
 
                !!! Note
                    If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+
             8. Click __CREATE ENVIRONMENT__
             
-        - The newly created jupyter-lab will be selected automatically
+        * The newly created jupyter-lab will be selected automatically
     9. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
-        - If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
+        * If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
         
         ??? "Create a one-gpu compute resource"
 
@@ -94,7 +94,7 @@ Before you start, make sure:
             8. Optional: set the __CPU memory per pod__ - 100 MB (default)
             9. Click __CREATE COMPUTE RESOURCE__
 
-        - The newly created one-gpu compute resource will be selected automatically
+        * The newly created one-gpu compute resource will be selected automatically
 
     10. Click __CREATE WORKSPACE__
         
@@ -128,6 +128,8 @@ Before you start, make sure:
         For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
 
 === "API"
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
+
     ``` bash
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ # (1)
     -H 'Content-Type: application/json' \
@@ -175,14 +177,14 @@ Before you start, make sure:
     4. The selected tool is opened in a new tab on your browser
 
 === "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 
 === "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 === "API"
-    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 
 ## Next Steps
