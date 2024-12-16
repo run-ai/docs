@@ -43,6 +43,7 @@ Before you start, make sure:
 === "User Interface"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
+
     Within the New workspace form:
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
@@ -54,26 +55,20 @@ Before you start, make sure:
         * If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
-
             1. Click __+NEW ENVIRONMENT__
             2. Select under which cluster to create the environment
             3. Select a [scope](../workloads/assets/overview.md). 
             4. Enter a __name__ for the environment. The name must be unique.
             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
             6. Tools - Set the connection for your tool 
-
                * Click __+TOOL__
                * Select __Jupyter__ tool from the list
-
             7. Set the runtime settings for the environment 
-
                * Click __+COMMAND__ 
                * Enter __command__ - start-notebook.sh
                * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
-
                !!! Note
                    If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
-
             8. Click __CREATE ENVIRONMENT__
             
         * The newly created jupyter-lab will be selected automatically
