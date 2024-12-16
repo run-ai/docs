@@ -43,7 +43,8 @@ Before you start, make sure:
 === "User Interface"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
-       Within the New workspace form:
+       
+       Within the New workspace form:  
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
@@ -51,7 +52,7 @@ Before you start, make sure:
     7. Click __CONTINUE__
        In the next step:
     8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
-       - If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
+        - If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
 
@@ -96,7 +97,8 @@ Before you start, make sure:
         - The newly created one-gpu compute resource will be selected automatically
 
     10. Click __CREATE WORKSPACE__
-        After the workspace is created, it is added to the [workloads table](../workloads/workspaces/overview.md)
+        
+        After the workspace is created, it is added to the [workloads table](../workloads/overviews/managing-workloads.md).
 
 
 === "CLI V1"
@@ -185,4 +187,4 @@ Before you start, make sure:
 
 ## Next Steps
 
-Manage and monitor your newly created workspace using the [workloads table](../workloads/workspaces/overview.md).
+Manage and monitor your newly created workspace using the [workloads table](../workloads/overviews/managing-workloads.md).
