@@ -43,12 +43,12 @@ Before you start, make sure:
 === "User Interface"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
-       
        Within the New workspace form:  
+
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
-    6. Enter a __name__ for the workspace (If the name already exists in the project, you will be requested to submit a different name)
+    6. Enter a __name__ for the workspace (If the name already exists in the project, you will be   requested to submit a different name)
     7. Click __CONTINUE__
        In the next step:
     8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
