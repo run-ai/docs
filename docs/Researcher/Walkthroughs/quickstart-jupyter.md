@@ -54,27 +54,33 @@ Before you start, make sure:
        - If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
+
             1. Click __+NEW ENVIRONMENT__
             2. Select under which cluster to create the environment
-            3. Select a scope 
+            3. Select a [scope](../workloads/assets/overview.md). 
             4. Enter a __name__ for the environment. The name must be unique.
             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
             6. Tools - Set the connection for your tool 
+
                - Click __+TOOL__
                - Select __Jupyter__ tool from the list
+
             7. Set the runtime settings for the environment 
+
                - Click __+COMMAND__ 
                - Enter __command__ - start-notebook.sh
                - Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
+
                !!! Note
                    If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
             8. Click __CREATE ENVIRONMENT__
             
         - The newly created jupyter-lab will be selected automatically
     9. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
-       - If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
+        - If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
         
         ??? "Create a one-gpu compute resource"
+
             1. Click __+NEW COMPUTE RESOURCE__
             2. Select under which cluster to create the compute resource
             3. Select a scope
@@ -87,10 +93,10 @@ Before you start, make sure:
             8. Optional: set the __CPU memory per pod__ - 100 MB (default)
             9. Click __CREATE COMPUTE RESOURCE__
 
-      - The newly created one-gpu compute resource will be selected automatically
+        - The newly created one-gpu compute resource will be selected automatically
 
     10. Click __CREATE WORKSPACE__
-        After the workspace is created, it is added to the workloads table](../workloads/workspaces/overview.md)
+        After the workspace is created, it is added to the [workloads table](../workloads/workspaces/overview.md)
 
 
 === "CLI V1"
@@ -162,8 +168,8 @@ Before you start, make sure:
 
 === "User Interface"
     1. Select the newly created workspace with the Jupyter application that you want to connect to
-    2. Click CONNECT
-    3. Select the Jupyter tool 
+    2. Click __CONNECT__
+    3. Select the __Jupyter__ tool 
     4. The selected tool is opened in a new tab on your browser
 
 === "CLI V1"
