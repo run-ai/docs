@@ -3,7 +3,7 @@
 
 This guide provides a step-by-step walkthrough for running a Jupyter Notebook using workspaces.
 
-A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See Running workspaces for more information.
+A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See [Running workspaces](../workloads/workspaces/workspace-v2.md). for more information.
 
 
 
@@ -35,7 +35,7 @@ Before you start, make sure:
     ```
 
 === "API"
-    To use the API, you will need to obtain a token. Please follow the [api authentication](../../developer/rest-auth.md) article.
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
 
 
 ## Step 2: Submitting a workspace
@@ -43,54 +43,54 @@ Before you start, make sure:
 === "User Interface"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
-      Within the New workspace form:
-    3. Select under which cluster to create the workload
-    4. Select the project in which your workspace will run
-    5. Select a preconfigured template or select the Start from scratch to launch a new workspace quickly
-    6. Enter a name for the workspace (If the name already exists in the project, you will be requested to submit a different name)
-    7. Click CONTINUE
+       Within the New workspace form:
+    3. Select under which __cluster__ to create the workload
+    4. Select the __project__ in which your workspace will run
+    5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
+    6. Enter a __name__ for the workspace (If the name already exists in the project, you will be requested to submit a different name)
+    7. Click __CONTINUE__
        In the next step:
-    8. Select the ‘jupyter-lab’ environment for your workspace (Image URL: jupyter/scipy-notebook)
+    8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
        - If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
-       ??? "Create a jupyter-lab environment"
-            1. Click +NEW ENVIRONMENT
+        ??? "Create a jupyter-lab environment"
+            1. Click __+NEW ENVIRONMENT__
             2. Select under which cluster to create the environment
             3. Select a scope 
-            4. Enter a name for the environment. The name must be unique.
-            5. Enter the jupyter-lab Image URL - jupyter/scipy-notebook
+            4. Enter a __name__ for the environment. The name must be unique.
+            5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
             6. Tools - Set the connection for your tool 
-               - Click +TOOL
-               - Select Jupyter tool from the list
+               - Click __+TOOL__
+               - Select __Jupyter__ tool from the list
             7. Set the runtime settings for the environment 
-               - Click +COMMAND 
-               - Enter command - start-notebook.sh
-               - Enter arguments - --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''
+               - Click __+COMMAND__ 
+               - Enter __command__ - start-notebook.sh
+               - Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
                !!! Note
-                   If host-based routing is enabled on the cluster, enter the argument --NotebookApp.token='' only.
-            8. Click CREATE ENVIRONMENT
+                   If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+            8. Click __CREATE ENVIRONMENT__
             
         - The newly created jupyter-lab will be selected automatically
-    9. Select the ‘one-gpu’ compute resource for your workspace (GPU devices: 1) 
+    9. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
        - If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
         
-        ??? "Create a jupyter-lab environment"
-            1. Click +NEW COMPUTE RESOURCE
+        ??? "Create a one-gpu compute resource"
+            1. Click __+NEW COMPUTE RESOURCE__
             2. Select under which cluster to create the compute resource
             3. Select a scope
-            4. Enter a name for the compute resource. The name must be unique.
-            5. Set GPU devices per pod - 1
-            6. Set GPU memory per device 
-               - Select % (of device) - Fraction of a GPU device’s memory
-               - Set the memory Request - 100 (The workload will allocate 100% of the GPU memory)
-            7. Optional: set the  CPU compute per pod - 0.1 cores (default)
-            8. Optional: set the CPU memory per pod - 100 MB (default)
-            9. Click CREATE COMPUTE RESOURCE
+            4. Enter a __name__ for the compute resource. The name must be unique.
+            5. Set __GPU devices per pod - 1__
+            6. Set __GPU memory per device__ 
+               - Select __% (of device)__ - Fraction of a GPU device’s memory
+               - Set the memory __Request__ - 100 (The workload will allocate 100% of the GPU memory)
+            7. Optional: set the __CPU compute per pod__ - 0.1 cores (default)
+            8. Optional: set the __CPU memory per pod__ - 100 MB (default)
+            9. Click __CREATE COMPUTE RESOURCE__
 
       - The newly created one-gpu compute resource will be selected automatically
 
-    10. Click CREATE WORKSPACE
-        After the workspace is created, it is added to the workloads table
+    10. Click __CREATE WORKSPACE__
+        After the workspace is created, it is added to the workloads table](../workloads/workspaces/overview.md)
 
 
 === "CLI V1"
@@ -154,7 +154,7 @@ Before you start, make sure:
     6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
 
     !!! Note
-        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
 
 
 
@@ -167,18 +167,16 @@ Before you start, make sure:
     4. The selected tool is opened in a new tab on your browser
 
 === "CLI V1"
-    Alternatively, browse directly to `https://<COMPANY-URL>/team-a/jup1`.
+    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
 
 
 === "CLI V1"
-    Alternatively, browse directly to `https://<COMPANY-URL>/team-a/jup1`.
-
+    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
 
 === "API"
-    Alternatively, browse directly to `https://<COMPANY-URL>/team-a/jup1`.
+    To connect to the Jupyter Notebook, browse directly to https://<COMPANY-URL>/<PROJECT-NAME>/jup1.
 
 
+## Next Steps
 
-Next Steps
-
-Manage and monitor your newly created workspace using the workloads table.
+Manage and monitor your newly created workspace using the [workloads table](../workloads/workspaces/overview.md).
