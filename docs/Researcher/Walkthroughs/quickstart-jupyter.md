@@ -50,28 +50,29 @@ Before you start, make sure:
     6. Enter a __name__ for the workspace (If the name already exists in the project, you will be    requested to submit a different name)
     7. Click __CONTINUE__
     8. Select the __‘jupyter-lab’__ environment for your workspace (Image URL: jupyter/scipy-notebook)
+        
         * If the ‘jupyter-lab’ is not displayed in the gallery, follow the step-by-step guide: 
 
         ??? "Create a jupyter-lab environment"
 
-            1. Click __+NEW ENVIRONMENT__
-            2. Select under which cluster to create the environment
-            3. Select a [scope](../workloads/assets/overview.md). 
-            4. Enter a __name__ for the environment. The name must be unique.
-            5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
-            6. Tools - Set the connection for your tool 
+             1. Click __+NEW ENVIRONMENT__
+             2. Select under which cluster to create the environment
+             3. Select a [scope](../workloads/assets/overview.md). 
+             4. Enter a __name__ for the environment. The name must be unique.
+             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
+             6. Tools - Set the connection for your tool 
 
-                * Click __+TOOL__
-                * Select __Jupyter__ tool from the list
-            7. Set the runtime settings for the environment 
+                 * Click __+TOOL__
+                 * Select __Jupyter__ tool from the list
+             7. Set the runtime settings for the environment 
 
-                * Click __+COMMAND__ 
-                * Enter __command__ - start-notebook.sh
-                * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
+                 * Click __+COMMAND__ 
+                 * Enter __command__ - start-notebook.sh
+                 * Enter __arguments__ - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
                
-                !!! Note
-                    If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
-            8. Click __CREATE ENVIRONMENT__
+                 !!! Note
+                     If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
+             8. Click __CREATE ENVIRONMENT__
             
         * The newly created jupyter-lab will be selected automatically
     9. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
