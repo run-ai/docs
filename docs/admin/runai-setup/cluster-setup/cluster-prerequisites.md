@@ -215,7 +215,7 @@ kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"sp
 
 ??? "Oracle Kubernetes Engine (OKE)"
 
-    * During cluster setup, [create a nodepool](https://docs.oracle.com/en-us/iaas/tools/python/latest/api/container_engine/models/oci.container_engine.models.NodePool.html#oci.container_engine.models.NodePool.initial_node_labels), and set initial node labels the label `oci.oraclecloud.com/disable-gpu-device-plugin=true` to disable the NVIDIA GPU device plugin.
+    * During cluster setup, [create a nodepool](https://docs.oracle.com/en-us/iaas/tools/python/latest/api/container_engine/models/oci.container_engine.models.NodePool.html#oci.container_engine.models.NodePool.initial_node_labels), and set `initial_node_labels` the label `oci.oraclecloud.com/disable-gpu-device-plugin=true` to disable the NVIDIA GPU device plugin.
     * For GPU nodes, OKE defaults to Oracle Linux, which is incompatible with NVIDIA drivers. To resolve this, use a custom Ubuntu image instead.
 
 For troubleshooting information, see the [NVIDIA GPU Operator Troubleshooting Guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/troubleshooting.html).
