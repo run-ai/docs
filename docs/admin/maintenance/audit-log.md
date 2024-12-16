@@ -49,5 +49,5 @@ Since the amount of data is not trivial, the API is based on paging. It retrieve
 
 ### Limitations
  
-Workload submission auditing: Submissions of workloads are not audited. As a result, the system does not track or log details of workload submissions, such as timestamps or user activity.
+Submissions of workloads are not audited. As a result, the system does not track or log details of workload submissions, such as timestamps or user activity.
 
