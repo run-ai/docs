@@ -140,11 +140,11 @@ There are many ways to install and configure different ingress controllers. A si
     helm repo update
     helm install nginx-ingress ingress-nginx/ingress-nginx \
         --namespace ingress-nginx --create-namespace \
-        --set controller.service.annotations.oci\\.oraclecloud\\.com/load-balancer-type=nlb \
-        --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/is-preserve-source=True \
-        --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/security-list-management-mode=None \
+        --set controller.service.annotations.oci.oraclecloud.com/load-balancer-type=nlb \
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/is-preserve-source=True \
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/security-list-management-mode=None \
         --set controller.service.externalTrafficPolicy=Local \
-        --set controller.service.annotations.oci-network-load-balancer\\.oraclecloud\\.com/subnet=<SUBNET-ID> # Replace <SUBNET-ID> with the subnet ID of one of your cluster
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/subnet=<SUBNET-ID> # Replace <SUBNET-ID> with the subnet ID of one of your cluster
     ```
 
 
