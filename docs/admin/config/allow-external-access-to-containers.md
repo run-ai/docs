@@ -35,6 +35,9 @@ To address this issue, Run:ai provides support for __host-based routing__. When 
 
 To enable host-based routing you must perform the following steps:
 
+!!! Note
+    For OpenShift, editing the Runaiconfig command is the only step required to generate workspace URLs. Refer to the last step below.
+
 1. Create a second DNS entry (A record) for `*.<CLUSTER_URL>`, pointing to the same IP as the cluster [Fully Qualified Domain Name (FQDN)](../runai-setup/cluster-setup/cluster-prerequisites.md#fully-qualified-domain-name-fqdn)
 2. Obtain a __wildcard__ SSL certificate for this DNS.
 
