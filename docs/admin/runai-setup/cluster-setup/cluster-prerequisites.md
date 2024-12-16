@@ -67,7 +67,7 @@ Contact Run:ai customer support for up-to-date support details for:
 * Tanzu Platform
 
 !!! Important
-    The latest release of the Run:ai cluster supports **Kubernetes 1.28 to 1.31** and **OpenShift 4.14 to 4.17**
+    The latest release of the Run:ai cluster supports **Kubernetes 1.29 to 1.31** and **OpenShift 4.14 to 4.17**
 
 For existing Kubernetes clusters, see the following Kubernetes version support matrix for the latest Run:ai cluster releases:
 
