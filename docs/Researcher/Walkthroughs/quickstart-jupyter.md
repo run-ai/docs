@@ -44,8 +44,7 @@ Before you start, make sure:
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__
 
-       Within the New workspace form:
-       
+       Within the New workspace form:     
     3. Select under which __cluster__ to create the workload
     4. Select the __project__ in which your workspace will run
     5. Select a preconfigured template or select the __Start from scratch__ to launch a new workspace quickly
