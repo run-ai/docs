@@ -56,7 +56,8 @@ Run:ai Cluster requires Kubernetes. The following Kubernetes distributions are s
 * NVIDIA Base Command Manager (BCM)  
 * Elastic Kubernetes Engine (EKS)  
 * Google Kubernetes Engine (GKE)  
-* Azure Kubernetes Service (AKS)  
+* Azure Kubernetes Service (AKS)
+* Oracle Kubernetes Engine (OKE)
 * Rancher Kubernetes Engine (RKE1)  
 * Rancher Kubernetes Engine 2 (RKE2)
 
@@ -130,6 +131,23 @@ There are many ways to install and configure different ingress controllers. A si
         --namespace nginx-ingress --create-namespace
     ```
 
+=== "Oracle Kubernetes Engine (OKE)"
+
+    Run the following commands:
+
+    ``` bash
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install nginx-ingress ingress-nginx/ingress-nginx \
+        --namespace ingress-nginx --create-namespace \
+        --set controller.service.annotations.oci.oraclecloud.com/load-balancer-type=nlb \
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/is-preserve-source=True \
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/security-list-management-mode=None \
+        --set controller.service.externalTrafficPolicy=Local \
+        --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/subnet=<SUBNET-ID> # Replace <SUBNET-ID> with the subnet ID of one of your cluster
+    ```
+
+
 ### NVIDIA GPU Operator
 
 Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6
@@ -194,6 +212,11 @@ kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"sp
     Make sure to specify the `CONTAINERD_CONFIG` option exactly with the value specified in the [document](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2)
 
     `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl` even though the file may not exist in your system.
+
+??? "Oracle Kubernetes Engine (OKE)"
+
+    * During cluster setup, [create a nodepool](https://docs.oracle.com/en-us/iaas/tools/python/latest/api/container_engine/models/oci.container_engine.models.NodePool.html#oci.container_engine.models.NodePool.initial_node_labels), and set `initial_node_labels` to include `oci.oraclecloud.com/disable-gpu-device-plugin=true` which disables the NVIDIA GPU device plugin.
+    * For GPU nodes, OKE defaults to Oracle Linux, which is incompatible with NVIDIA drivers. To resolve this, use a custom Ubuntu image instead.
 
 For troubleshooting information, see the [NVIDIA GPU Operator Troubleshooting Guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/troubleshooting.html).
 
