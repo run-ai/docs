@@ -48,7 +48,6 @@ Go to the [Audit log API](https://api-docs.run.ai/2.18/tag/Audit/) reference to 
 Since the amount of data is not trivial, the API is based on paging. It retrieves a specified number of items for each API call. You can get more data by using subsequent calls.
 
 ### Limitations
-
-* User login auditing: User login events are not currently audited. This means, there is no record of when users log in or out of the system.  
-* Workload submission auditing: Submissions of workloads are not audited. As a result, the system does not track or log details of workload submissions, such as timestamps or user activity.
+ 
+Submissions of workloads are not audited. As a result, the system does not track or log details of workload submissions, such as timestamps or user activity.
 
