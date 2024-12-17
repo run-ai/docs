@@ -293,10 +293,10 @@ Before starting, make sure you have the following:
     1. Check the message in the Run:ai platform for further details regarding the missing prerequisites.  
     2. Inspect the `runai-public` ConfigMap:  
 
-        * Open your terminal. In the terminal, type the following command to list all ConfigMaps in the `runai-public` namespace: 
+        * Open your terminal. In the terminal, type the following command to list all ConfigMaps in the `runai` namespace: 
 
         ```bash
-        kubectl get configmap -n runai-public
+        kubectl get configmap -n runai
         ```
 
     3. Describe the ConfigMap  
@@ -304,7 +304,7 @@ Before starting, make sure you have the following:
         * To view the detailed contents of this ConfigMap, type the following command:  
 
         ``` bash
-        kubectl describe configmap runai-public -n runai-public
+        kubectl describe configmap runai-public -n runai
         ```
 
     4. Find Missing Prerequisites  
