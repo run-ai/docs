@@ -121,7 +121,8 @@ Before you start, make sure:
         --external-url container=8888  --command start-notebook.sh  \
         -- --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
     ```
-
+  
+    This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
 
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
