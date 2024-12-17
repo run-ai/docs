@@ -111,8 +111,6 @@ Before you start, make sure:
 
     This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
 
-    !!! Note
-        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
 
 === "CLI V2"
     Copy the following command to your terminal. Make sure to update the below with the name of your project:
@@ -124,8 +122,6 @@ Before you start, make sure:
         -- --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
     ```
 
-    !!! Note
-        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
 
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
