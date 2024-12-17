@@ -6,8 +6,7 @@ This article explains the procedure for installing and configuring the __new__ r
       This document refers to the new CLI which only works with clusters of version 2.18 and up. 
       The installation instructions for the older CLI are [here](cli-install.md).
 
-!!! Important
-      The new command line interface does not currently support Windows. You can, however, use the Run:ai command line with [WSL - Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux){target=_blank}
+
 
 ## Enabling the V2 CLI
 
