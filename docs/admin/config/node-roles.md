@@ -1,73 +1,76 @@
-# Designating Specific Role Nodes
+# Node roles
 
-When installing a production cluster you may want to:
+This article explains how to designate specific node roles in a Kubernetes cluster to ensure optimal performance and reliability in production deployments.
 
-* Set one or more Run:ai system nodes. These are nodes dedicated to Run:ai software. 
-* Machine learning frequently requires jobs that require CPU but __not GPU__. You may want to direct these jobs to dedicated nodes that do not have GPUs, so as not to overload these machines. 
-* Limit Run:ai monitoring and scheduling to specific nodes in the cluster. 
+For optimal performance in production clusters, it is essential to avoid extensive CPU usage on GPU nodes where possible. This can be done by ensuring the following:
 
-To perform these tasks you will need the Run:ai Administrator CLI. See [Installing the Run:ai Administrator Command-line Interface](cli-admin-install.md).
+* Run:ai system-level services run on dedicated CPU-only nodes.
+* Workloads that do not request GPU resources (e.g. Machine Learning jobs) are executed on CPU-only nodes.
 
-## Dedicated Run:ai System Nodes
+The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity){target=_blank} using node labels to manage scheduling for cluster services (system) and DaemonSets (worker).
 
-Find out the names of the nodes designated for the Run:ai system by running `kubectl get nodes`. For each such node run:
+## Prerequisites
 
-```
-runai-adm set node-role --runai-system-worker <node-name>
-```
+To perform these tasks, make sure to install the Run:ai [Administrator CLI](cli-admin-install.md).
 
-If you re-run `kubectl get nodes` you will see the node role of these nodes changed to `runai-system`
+## Configure Node Roles
 
-To remove the runai-system node role run:
+The following node roles can be configured on the cluster:
 
-```
-runai-adm remove node-role --runai-system-worker <node-name>
-```
+* __System node:__ Reserved for Run:ai system-level services.
+* __GPU Worker node:__ Dedicated for GPU-based workloads.
+* __CPU Worker node:__ Used for CPU-only workloads.
+
+### System nodes
+
+Run:ai system nodes run system-level services required to operate. This can be done via the Run:ai [Administrator CLI](cli-admin-install.md).
+
+!!! Recommendation
+    To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
+
+To set a system role for a node in your Kubernetes cluster, follow these steps:
+
+1. Run the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
+2. Run one of the following commands to set or remove a node’s role:
+    ```bash
+    runai-adm set node-role --runai-system-worker <node-name>
+    runai-adm remove node-role --runai-system-worker <node-name>
+    ```
+
+The `runai-adm` CLI will label the node and set relevant cluster configurations.
+
 
 !!! Warning
-    Do not select the Kubernetes master as a runai-system node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
+    Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
 
-## Dedicated GPU and CPU Nodes
+### Worker nodes
 
+Run:ai worker nodes run user-submitted workloads and system-level DeamonSets required to operate. This can be managed via the Run:ai [Administrator CLI](cli-admin-install.md), or [Kubectl](https://kubernetes.io/docs/reference/kubectl/){target=_blank}. 
 
-!!! Important
-    To enable this feature, you must set the cluster configuration flag `global.nodeAffinity.restrictScheduling` to `true`. For more information see [customize cluster](./advanced-cluster-config.md).
-    
-Separate nodes into those that:
+#### Run:ai Administrator CLI 
 
-* Run GPU workloads
-* Run CPU workloads
-* Do not run Run:ai at all. these jobs will not be monitored using the Run:ai Administration User interface. 
+To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](cli-admin-install.md), follow these steps:
 
-Review nodes names using `kubectl get nodes`. For each such node run:
+1. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
+2. Run one of the following commands to set or remove a node’s role:
+   ```bash
+    runai-adm set node-role [--gpu-worker | --cpu-worker] <node-name>
+    runai-adm remove node-role [--gpu-worker | --cpu-worker] <node-name>
+   ```
 
-```
-runai-adm set node-role --gpu-worker <node-name>
-```
+The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
-or 
+!!! Tip
+    Use the --all flag to set or remove a role to all nodes.
 
-```
-runai-adm set node-role --cpu-worker <node-name>
-```
+#### Kubectl
 
-Nodes not marked as GPU worker or CPU worker will not run Run:ai at all.
+To set a worker role for a node in your Kubernetes cluster using Kubectl, follow these steps:
 
-
-To set __all__ workers not running runai-system as GPU only or CPU only workers run:
-
-```
-runai-adm set node-role [--gpu-worker | --cpu-worker] --all
-```
-
-To remove the CPU or GPU worker node role run:
-
-```
-runai-adm remove node-role --cpu-worker <node-name>
-```
-
-or 
-
-```
-runai-adm remove node-role --gpu-worker <node-name>
-```
+1. Validate the `global.nodeAffinity.restrictScheduling` is set to true in the cluster’s [Configurations](advanced-cluster-config.md).
+2. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
+3. Run one of the following commands to label the node with its role:
+   ```bash
+   kubectl label nodes <node-name> [node-role.kubernetes.io/runai-gpu-worker=true | node-role.kubernetes.io/runai-cpu-worker=true]
+   kubectl label nodes <node-name> [node-role.kubernetes.io/runai-gpu-worker=false | node-role.kubernetes.io/runai-cpu-worker=false]
+   ```
