@@ -176,7 +176,7 @@ Before you start, make sure:
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 
-=== "CLI V1"
+=== "CLI V2"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 === "API"
