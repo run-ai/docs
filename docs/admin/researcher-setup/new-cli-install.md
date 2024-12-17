@@ -90,9 +90,9 @@ Auto-completion assists with completing the command syntax automatically for eas
       ```
 
 === "Windows"
-    1. add the following code in the powershell profile
+    Add the following code in the powershell profile:
     ```powershell
     runai.exe completion powershell | Out-String | Invoke-Expression
     Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
     ```
-    2. for more completion modes options - [see here](https://github.com/spf13/cobra/blob/main/site/content/completions/_index.md#powershell-completions)
+    For more completion modes options, see [Powershell completions](https://github.com/spf13/cobra/blob/main/site/content/completions/_index.md#powershell-completions).
