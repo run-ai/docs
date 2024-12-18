@@ -44,6 +44,7 @@ The dashboard has the following tiles:
 * Ready nodes&mdash;displays GPU nodes that are in the ready state.
 * Ready GPU devices&mdash;displays the number of GPUs in nodes that are in the ready state.
 * Allocated GPU compute&mdash;displays the total number of GPUs allocated from all the nodes.
+* Idle allocated GPU devices&mdash;displays the number of allocated GPU devices that have been idle for more than 5 minutes.
 * Running workloads&mdash;displays the number of running workloads.
 * Pending workloads&mdash;displays the number of workloads in the pending status.
 * Allocation ration by node pool&mdash;displays the percentage of GPUs allocated per node pool. Hover over the bar for detailed information. Use the scope selected at the bottom of the graph to drill down for more details.

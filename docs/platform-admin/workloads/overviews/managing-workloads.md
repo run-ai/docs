@@ -26,10 +26,11 @@ The Workloads table consists of the following columns:
 | Data source(s) | Data resources used by the workload |
 | Environment | The environment used by the workload |
 | Workload architecture | Standard or distributed. A standard workload consists of a single process. A distributed workload consists of multiple processes working together. These processes can run on different nodes. |
-| GPU compute request | Amount of GPU devices Requested |
+| GPU compute request | Amount of GPU devices requested |
 | GPU compute allocation | Amount of GPU devices allocated |
 | GPU memory request | Amount of GPU memory Requested |
 | GPU memory allocation | Amount of GPU memory allocated |
+| Idle GPU devices | The number of allocated GPU devices that have been idle for more than 5 minutes |
 | CPU compute request | Amount of CPU cores requested |
 | CPU compute allocation | Amount of CPU cores allocated |
 | CPU memory request | Amount of CPU memory requested |
