@@ -31,20 +31,12 @@ The Node pools table consists of the following columns:
 | Node(s) | List of nodes included in this node pool. Click the field to view details (the details are in the [Nodes](./nodes.md) article). |
 | GPU devices | The total number of GPU devices installed into nodes included in this node pool. For example, a node pool that includes 12 nodes each with 8 GPU devices would show a total number of 96 GPU devices. |
 | GPU memory | The total amount of GPU memory included in this node pool. The total amount of GPU memory installed in nodes included in this node pool. For example, a node pool that includes 12 nodes, each with 8 GPU devices, and each device with 80 GB of memory would show a total memory amount of 7.68 TB. |
-| Projects’ GPU quota | The sum of all Projects’ assigned GPU quota in this node pool. |
 | Allocated GPUs | The total allocation of GPU devices in units of GPUs (decimal number). For example, if 3 GPUs are 50% allocated, the field prints out the value 1.50. This value represents the portion of GPU memory consumed by all running pods using this node pool. ‘Allocated GPUs’ can be larger than ‘Projects’ GPU quota’ if over-quota is used by workloads, but not larger than GPU devices. |
-| Used GPU memory | The actual amount of memory (in GB or MB) used by pods running on nodes that are included in this node pool. |
-| GPU compute utilization | The average compute utilization of all GPU devices included in this node pool (decimal percentage) |
-| GPU memory utilization | The average memory utilization of all GPU devices included this node pool (decimal percentage) |
+| GPU resource optimization ratior | TBD |
 | CPUs (Cores) | The number of CPU cores installed on nodes included in this node |
 | CPU memory | The total amount of CPU memory installed on nodes using this node pool |
-| Projects’ CPU quota (Cores) | The sum of all Projects’ assigned CPU quota in this node pool. |
-| Projects’ CPU memory quota | The sum of all Projects’ assigned CPU memory quota in this node pool. |
 | Allocated CPUs (Cores) | The total allocation of CPU compute in units of Cores (decimal number). This value represents the amount of CPU cores consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ GPU quota’ if over-quota is used by workloads, but not larger than CPUs (Cores). |
 | Allocated CPU memory | The total allocation of CPU memory in units of TB/GB/MB (decimal number). This value represents the amount of CPU memory consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ CPU memory quota’ if over-quota is used by workloads, but not larger than CPU memory. |
-| Used CPU memory | The total amount of actually used CPU memory by pods running on nodes included in this node pool. Pods may allocate memory but not use all of it, or go beyond their CPU memory allocation if using Limit > Request for CPU memory (burstable workloads). |
-| CPU compute utilization | The average utilization of all CPU compute resources on nodes included in this node pool (percentage) |
-| CPU memory utilization | The average utilization of all CPU memory resources on nodes included in this node pool (percentage) |
 | GPU placement strategy | Sets the Scheduler strategy for the assignment of pods requesting **both GPU and CPU resources** to nodes, which can be either Bin-pack or Spread. By default, Bin-Pack is used, but can be changed to Spread by editing the node pool. When set to Bin-pack the scheduler will try to fill nodes as much as possible before using empty or sparse nodes, when set to spread the scheduler will try to keep nodes as sparse as possible by spreading workloads across as many nodes as it succeeds. |
 | CPU placement strategy | Sets the Scheduler strategy for the assignment of pods requesting **only CPU** **resources** to nodes, which can be either Bin-pack or Spread. By default, Bin-Pack is used, but can be changed to Spread by editing the node pool. When set to Bin-pack the scheduler will try to fill nodes as much as possible before using empty or sparse nodes, when set to spread the scheduler will try to keep nodes as sparse as possible by spreading workloads across as many nodes as it succeeds. |
 | Last update | The date and time when the node pool was last updated |
@@ -79,6 +71,30 @@ Click one of the values in the Workload(s) column, to view the list of workloads
 * Column selection - Click COLUMNS and select the columns to display in the table  
 * Download table - Click MORE and then Click Download as CSV  
 * Show/Hide details - Click to view additional information on the selected row
+
+### Show/Hide details
+
+Select a row in the Node pools table and then click Show details in the upper-right corner of the action bar. The details window appears, presenting metrics graphs for the whole node pool:
+
+* __Node GPU allocation__ - 
+This graph shows an overall sum of the Allocated, Unallocated, and Total number of GPUs for this node pool, over time. From observing this graph, you can learn about the occupancy of GPUs in this node pool, over time.
+
+
+
+* __GPU Utilization Distribution__ -
+This graph shows the distribution of GPU utilization in this node pool over time. Observing this graph, you can learn how many GPUs are utilized up to 25%, 25%-50%, 50%-75%, and 75%-100%. This information helps to understand how many available resources you have in this node pool, and how well those resources are utilized by comparing the allocation graph to the utilization graphs, over time.
+
+* __GPU Utilization__ -
+This graph shows the average GPU utilization in this node pool over time. Comparing this graph with the GPU Utilization Distribution helps to understand the actual distribution of GPU occupancy over time.
+
+* __GPU Memory Utilization__ -
+This graph shows the average GPU memory utilization in this node pool over time, for example an average of all nodes’ GPU memory utilization over time.
+
+* __CPU Utilization__ - 
+This graph shows the average CPU utilization in this node pool over time, for example, an average of all nodes’ CPU utilization over time.
+
+* __CPU Memory Utilization__ - 
+This graph shows the average CPU memory utilization in this node pool over time, for example an average of all nodes’ CPU memory utilization over time.
 
 ## Adding a new node pool
 
