@@ -255,13 +255,13 @@ There are several ways to install each framework. A simple method of installatio
 
 It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
 
-* To install the Kubeflow Training Operator, run the following command:
+* To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
 
 ``` bash
 kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
 ```
 
-* To install the MPI Operator, which is not included in the Kubeflow Training Operator, run the following command:
+* To install the MPI Operator for MPI V2, run the following command:
 
 ``` bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
@@ -270,7 +270,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
 
     If you require both the MPI Operator and Kubeflow Training Operator, follow the steps below:
 
-    * Install the Kubeflow Training Operator as above.  
+    * Install the Kubeflow Training Operator as described above.  
     * Disable and delete MPI v1 in the Kubeflow Training Operator by running:
 
     ``` bash
