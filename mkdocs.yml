@@ -403,6 +403,7 @@ nav:
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
       - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
+      - 'Personal Applications' : 'Researcher/best-practices/personal-applications.md'
       - 'Secrets as Environment Variables (CLI)' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
