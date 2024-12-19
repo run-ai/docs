@@ -2,7 +2,7 @@
 
 This article explains the procedure to create personal applications.
 
-Applications are used for API integrations with Run:ai. An application contains a client secret. Using the client key you can obtain a token and use it within subsequent API calls.
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. Using the client credentials you can obtain a token and use it within subsequent API calls.
 
 Personal applications are managed locally and assigned with the user's Access Rules to manage its permissions. TBD
 

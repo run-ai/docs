@@ -1,6 +1,6 @@
 This article explains the procedure to manage applications.
 
-Applications are used for API integrations with Run:ai. An application contains a client secret. With the client secret you can obtain a token and use it within subsequent API calls.
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. Using the client credentials you can obtain a token and use it within subsequent API calls.
 
 Applications are managed locally and assigned with Access Rules to manage permissions.
 
