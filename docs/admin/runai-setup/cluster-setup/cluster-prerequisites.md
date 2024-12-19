@@ -261,7 +261,7 @@ It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operat
 kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
 ```
 
-* To install the MPI Operator for MPI V2, run the following command:
+* To install the MPI Operator for MPI v2, run the following command:
 
 ``` bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
