@@ -41,11 +41,6 @@ Different types of workloads have different levels of support. Understanding wha
 
     Specific workload-aware visibility, so that different pods are identified and treated as a single workload (for example GPU utilization, workload view, dashboards).
 
-!!! Note
-    __Workload actions__, __Scheduling rules__
-
-    Actions and scheduling rules for distributed training are supported from clusters v2.20 and above with the matching training operator versions. (see installation docs).
-
 
 ## Workload scopes
 

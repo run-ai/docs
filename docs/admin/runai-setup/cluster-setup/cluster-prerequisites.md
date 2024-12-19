@@ -244,31 +244,33 @@ Optional Run:ai capabilities, Distributed Training and Inference require additio
 
 ### Distributed training
 
-Distributed training enables training of AI models over multiple nodes. This requires distributed training framework to be installed on the cluster. The following frameworks are supported:
+Distributed training enables training of AI models over multiple nodes. This requires installing a distributed training framework on the cluster. The following frameworks are supported:
 
 * [TensorFlow](https://www.tensorflow.org/)  
 * [PyTorch](https://pytorch.org/)  
 * [XGBoost](https://xgboost.readthedocs.io/)  
 * [MPI v2](https://docs.open-mpi.org/)
 
-There are many ways to install each framework. A simple example of installation is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) - which includes TensorFlow, Pytorch, and XGBoost. We recommend using **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
+There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) which includes TensorFlow, PyTorch, and XGBoost.
 
-To install run the following command:
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
+
+* To install the Kubeflow Training Operator, run the following command:
 
 ``` bash
 kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
 ```
 
-To install the MPI operator, which is not included in the Kubeflow Training Operator, run the following command:
+* To install the MPI Operator, which is not included in the Kubeflow Training Operator, run the following command:
 
 ``` bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
 ```
 !!! Note
 
-    If you need both MPI operator and Kubeflow Training Operator, follow the steps below:
+    If you require both the MPI Operator and Kubeflow Training Operator, follow the steps below:
 
-    * Install the Kubeflow Training operator as above.  
+    * Install the Kubeflow Training Operator as above.  
     * Disable and delete MPI v1 in the Kubeflow Training Operator by running:
 
     ``` bash
@@ -276,7 +278,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
     kubectl delete crd mpijobs.kubeflow.org
     ```
 
-    * Install MPI operator as described above.
+    * Install the MPI Operator as described above.
 
 ### Inference
 
