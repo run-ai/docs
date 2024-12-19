@@ -6,8 +6,6 @@ This article explains the procedure for installing and configuring the __new__ r
       This document refers to the new CLI which only works with clusters of version 2.18 and up. 
       The installation instructions for the older CLI are [here](cli-install.md).
 
-!!! Important
-      The new command line interface does not currently support Windows. You can, however, use the Run:ai command line with [WSL - Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux){target=_blank}
 
 ## Enabling the V2 CLI
 
@@ -90,3 +88,10 @@ Auto-completion assists with completing the command syntax automatically for eas
       source <(runai completion bash)
       ```
 
+=== "Windows"
+    Add the following code in the powershell profile:
+    ```powershell
+    runai.exe completion powershell | Out-String | Invoke-Expression
+    Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+    ```
+    For more completion modes options, see [Powershell completions](https://github.com/spf13/cobra/blob/main/site/content/completions/_index.md#powershell-completions).
