@@ -13,6 +13,14 @@ runai login
 runai login user -u john@acme.com -p "password"
 ```
 
+## Configuration
+
+### Setting a default project
+```shell
+runai project set "project-name"
+```
+
+
 ## Submitting a workload
 
 ### Naming a workload
@@ -62,4 +70,104 @@ runai workspace submit  -p alon -i python  --attach -- python3
 ```shell
 runai workspace submit --image jupyter/scipy-notebook -p alon --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
 ```
+
+
+### Distributed with TensorFlow framework
+```shell
+runai distributed submit -f TF --workers=5 --no-master -g 1 -i kubeflow/tf-mnist-with-summaries:latest -p alon --command -- python /var/tf_mnist/mnist_with_summaries.py --max_steps 1000000
+```
+
+### Multi pod submission
+
+```shell
+
+runai training submit  -i alpine -p test --parallelism 2 --completions 2  -- sleep 100000
+```
+
+### Submit and bash
+#### Submit a workload with bash command
+
+```shell
+
+runai training pytorch submit  -p alon -i nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04 -g 1 --workers 3 --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
+```
+
+#### bash into the workload
+```shell
+
+runai training pytorch bash pytorch-06027b585626 -p alon
+```
+
+### Submit MPI
+
+```shell
+
+runai  mpi submit dist1 --workers=2 -g 1 \
+    -i runai.jfrog.io/demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 -p alon
+```
+
+### Submit with PVC
+#### New PVC bounded to the workspace - will be deleted when the workload is deleted
+```shell
+
+runai workspace submit -i ubuntu --new-pvc claimname=yuval-3,size=10M,path=/tmp/test
+```
+#### New ephemeral PVC - will deleted when the workload is deleted or paused
+```shell
+
+runai workspace submit -i ubuntu --new-pvc claimname=yuval2,size=10M,path=/tmp/test,ephemeral
+```
+#### Existing PVC - will not deleted when the workload is deleted
+```shell
+runai workspace submit -i ubuntu --existing-pvc claimname=test-pvc-2-project-mn2xs,path=/home/test
+```
+
+### Msster/Worker configuration
+
+
+--command flag and -- are setting both leader(master) and workers command/arguments
+
+--master-args flag sets the master arguments
+
+--master-command flag set the master commands with arguments
+
+--master-args and --master-command flags can set together
+
+
+#### Override both the leader(master) and worker image's arguments
+```shell
+runai pytorch submit -i ubuntu -- -a argument_a -b argument_b -c
+```
+#### Override both the leader(master) and worker image's commands with arguments
+```shell
+runai pytorch submit -i ubuntu --command -- python -m pip install
+```
+#### Override arguments of the leader(master) and worker image's arguments with different values
+```shell
+runai pytorch submit -i ubuntu --master-args "-a master_arg_a -b master-arg_b'" -- '-a worker_arg_a'
+```
+#### Override command with arguments of the leader(master) and worker image's arguments
+```shell
+runai pytorch submit -i ubuntu --master-command "python_master -m pip install'" --command -- 'python_worker -m pip install'
+```
+
+## List objects
+### Listing all workloads in the user's scope
+```shell
+runai workload list -A
+```
+
+### Listing projects in a YAML format
+```shell
+
+runai project list --yaml
+```
+
+### Listing nodes in a JSON format
+```shell
+runai node list --json
+```
+
+## CLI reference
+For the full guide of the CLI syntax, see the [CLI reference](/saas/docs/cli-reference)
 
