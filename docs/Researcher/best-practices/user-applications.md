@@ -1,17 +1,15 @@
-# Personal Applications
+# User Applications
 
-This article explains the procedure to create personal applications.
+This article explains the procedure to create your applications.
 
-Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. Using the client credentials you can obtain a token and use it within subsequent API calls.
-
-Personal applications are managed locally and assigned with the user's Access Rules to manage its permissions. TBD
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials you can obtain a token and use it within subsequent API calls.
 
 
 ## Creating Personal Applications
 
 To create a personal application:
 
-1. Press the user icon, then select Settings.
+1. Press the user icon, then select Settings
 2. Click **+APPLICATION**  
 3. Enter the application’s **Name**  
 4. Click **CREATE**  

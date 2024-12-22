@@ -1,35 +1,31 @@
-This article explains the procedure to manage applications.
+This article explains the procedure to manage your organization's applications.
 
-Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. Using the client credentials you can obtain a token and use it within subsequent API calls.
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials you can obtain a token and use it within subsequent API calls.
+Applications are assigned with Access Rules to manage permissions.
 
-Applications are managed locally and assigned with Access Rules to manage permissions.
-
-For example, application **ci-pipeline-prod** assigned with a **Researcher** role in **Cluster: A**. TBD
+For example, application **ci-pipeline-prod** is assigned with a **Researcher** role in **Cluster: A**. 
 
 ## Applications table
 
 The Applications table can be found under **Access** in the Run:ai platform.
 
-The Applications table provides a list of all the applications defined in the platform, and allows you to manage them. TBD: not personal applications?
+The Applications table provides a list of all the applications defined in the platform, and allows you to manage them.
 
 ![](img/appstable.png)
 
-TBD: add new screenshot
 
 The Applications table consists of the following columns:
 
 | Column | Description |
 | :---- | :---- |
 | Application | The name of the application |
-| client ID | The name of the application TBD | 
-| Status | The status of the application |
+| Client ID | The client ID of the application | 
 | Access rule(s) | The access rules assigned to the application |
 | Last login | The timestamp for the last time the user signed in |
 | Created by | The user who created the application |
 | Creation time | The timestamp for when the application was created |
 | Last updated | The last time the application was updated |
 
-TBD: client ID same as app name but not in personal application
 
 ### Customizing the table view
 
@@ -92,7 +88,7 @@ To regenerate a client secret:
 
 1. Select the application you want to delete  
 1. Click **DELETE**  
-1. On the dialog, click **DELETE** to confirm the deletion
+1. On the dialog, click **DELETE** to confirm
 
 ## Using API
 
