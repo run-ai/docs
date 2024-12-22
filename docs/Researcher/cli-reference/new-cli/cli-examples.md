@@ -122,7 +122,7 @@ runai workspace submit -i ubuntu --new-pvc claimname=yuval2,size=10M,path=/tmp/t
 runai workspace submit -i ubuntu --existing-pvc claimname=test-pvc-2-project-mn2xs,path=/home/test
 ```
 
-### Msster/Worker configuration
+### Master/Worker configuration
 
 
 --command flag and -- are setting both leader(master) and workers command/arguments
