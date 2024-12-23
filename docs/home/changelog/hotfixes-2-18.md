@@ -28,9 +28,8 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-23211 | 2.18.70 | Fixed an issue where workloads were stuck at "Pending" when the command-line interface flag --gpu-memory was set to zero. |
 | RUN-23778 | 2.18.68 | Fixed an issue where in single-sign-on configuration, the mapping of UID and other properties would sometimes disappear. |
 | RUN-23762 | 2.18.68 | Fixed an issue where the wrong version of a Grafana dashboard was displayed in the UI. |
-| RUN-21198| 2.18.66 | Fixed an issue where creating a training workload via yaml (kubectl apply -f) and specifying spec.namePrefix, created infinite jobs. |
+| RUN-21198 | 2.18.66 | Fixed an issue where creating a training workload via yaml (kubectl apply -f) and specifying spec.namePrefix, created infinite jobs. |
 | RUN-23541 | 2.18.65 | Fixed an issue where in some cases workload authorization did not work properly due to wrong oidc configuration. |
-| RUN-23291 | 2.18.64 | CLI change text to be user friendly. |
 | RUN-23283 | 2.18.64 | Fixed a permissions issue with the Analytics dashboard post upgrade for SSO Users. |
 | RUN-23420 | 2.18.63 | Replaced Redis with Keydb. |
 | RUN-23140 | 2.18.63 | Fixed an issue where distributed workloads were created with the wrong types. |
