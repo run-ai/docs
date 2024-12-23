@@ -12,7 +12,24 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-23291 | 2.18.64 | CLI change text to be user friendly |
+| RUN-24020 | 2.18.77 | Fixed a security vulnerability in k8s.io.kubernetes with CVE CVE-2024-0793. |
+| RUN-24021 | 2.18.77 | Fixed a security vulnerability in pam with CVE CVE-2024-10963. |
+| RUN-23798 | 2.18.75 | Fixed an issue in distributed PyTorch workloads where the worker pods are deleted immediately after completion, not allowing logs to be viewed. |
+| RUN-23838 | 2.18.74 | Fixed an issue where the command-line interface could not access resources when configured as single-sign on in a self-hosted environment. |
+| RUN-23561 | 2.18.74 | Fixed an issue where the frontend in airgapped environment attempted to download font resources from the internet. |
+| RUN-23789 | 2.18.73 | Fixed an issue where in some cases, it was not possible to download the latest version of the command line interface. |
+| RUN-23790 | 2.18.73 | Fixed an issue where in some cases it was not possible to download the Windows version of the command line interface. |
+| RUN-23855 | 2.18.73 | Fixed an issue where the pods list in the UI showed past pods. |
+| RUN-23909 | 2.18.73 | Fixed an issue where users based on group permissions cannot see dashboards. |
+| RUN-23857 | 2.18.72 | Dashboard to transition from Grafana v9 to v10. |
+| RUN-24010 | 2.18.72 | Fixed an infinite loop issue in the cluster-sync service. |
+| RUN-23040 | 2.18.72 | Fixed an edge case where the Run:ai container toolkit hangs when user is spawning hundreds of sub-processes. |
+| RUN-23802 | 2.18.70 | Fixed an issue where new scheduling rules were not applied to existing workloads, if those new rules were set on existing projects which had no scheduling rules before. |
+| RUN-23211 | 2.18.70 | Fixed an issue where workloads were stuck at "Pending" when the command-line interface flag --gpu-memory was set to zero. |
+| RUN-23778 | 2.18.68 | Fixed an issue where in single-sign-on configuration, the mapping of UID and other properties would sometimes disappear. |
+| RUN-23762 | 2.18.68 | Fixed an issue where the wrong version of a Grafana dashboard was displayed in the UI. |
+| RUN-21198 | 2.18.66 | Fixed an issue where creating a training workload via yaml (kubectl apply -f) and specifying spec.namePrefix, created infinite jobs. |
+| RUN-23541 | 2.18.65 | Fixed an issue where in some cases workload authorization did not work properly due to wrong oidc configuration. |
 | RUN-23283 | 2.18.64 | Fixed a permissions issue with the Analytics dashboard post upgrade for SSO Users |
 | RUN-23420 | 2.18.63 | Replaced Redis with Keydb |
 | RUN-23140 | 2.18.63 | Fixed an issue where distributed workloads were created with the wrong types |
