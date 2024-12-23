@@ -10,16 +10,16 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-24521| 2.19.36 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
-| RUN-24595| 2.19.36 | Fixed an issue where the new command-line interface did not parse master and worker commands/args simultaneously for distributed workloads. |
+| RUN-24521 | 2.19.36 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
+| RUN-24595 | 2.19.36 | Fixed an issue where the new command-line interface did not parse master and worker commands/args simultaneously for distributed workloads. |
 | RUN-24565 | 2.19.34 | Fixed an issue where the UI was hanging at times during Hugging Face model memory calculation. |
 | RUN-24021 | 2.19.33 | Fixed a security vulnerability in pam with CVE-2024-10963. |
 | RUN-24506 | 2.19.33 | Fixed a security vulnerability in krb5-libs with CVE-2024-3596. |
 | RUN-24259 | 2.19.31 | Fixed an issue where the option to reset a local user password is sometimes not available.  |
 | RUN-23798 | 2.19.30 | Fixed an issue in distributed PyTorch workloads where the worker pods are deleted immediately after completion, not allowing logs to be viewed.  |
-| RUN-24184| 2.19.28 | Fixed an issue in database migration when upgrading from 2.16 to 2.19. |
-| RUN-23752| 2.19.27 | Fixed an issue in the distributed training submission form when a policy on the master pod was applied. |
-| RUN-23040| 2.19.27 | Fixed an edge case where the Run:ai container toolkit hangs when user is spawning hundreds of sub-processes. |
+| RUN-24184 | 2.19.28 | Fixed an issue in database migration when upgrading from 2.16 to 2.19. |
+| RUN-23752 | 2.19.27 | Fixed an issue in the distributed training submission form when a policy on the master pod was applied. |
+| RUN-23040 | 2.19.27 | Fixed an edge case where the Run:ai container toolkit hangs when user is spawning hundreds of sub-processes. |
 | RUN-23211 | 2.19.27 | Fixed an issue where workloads were stuck at "Pending" when the command-line interface flag --gpu-memory was set to zero.  |
 | RUN-23561 | 2.19.27 | Fixed an issue where the frontend in airgapped environment attempted to download font resources from the internet. |
 | RUN-23789 | 2.19.27 | Fixed an issue where in some cases, it was not possible to download the latest version of the command-line interface. |
@@ -28,7 +28,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | RUN-23838 | 2.19.27 | Fixed an issue where the command-line interface could not access resources when configured as single-sign on in a self-hosted environment. |
 | RUN-23855 | 2.19.27 | Fixed an issue where the pods list in the UI showed past pods. |
 | RUN-23857 | 2.19.27 | Dashboard to transition from Grafana v9 to v10. |
-| RUN-24010| 2.19.27 | Fixed an infinite loop issue in the cluster-sync service. |
+| RUN-24010 | 2.19.27 | Fixed an infinite loop issue in the cluster-sync service. |
 | RUN-23669 | 2.19.25 | Fixed an issue where export function of consumption Grafana dashboard was not showing. |
 | RUN-23778 | 2.19.24 | Fixed an issue where mapping of UID and other properties disappears.  |
 | RUN-23770 | 2.19.24 | Fixed an issue where older overview dashboard does not filter on cluster, even though a cluster is selected. |
