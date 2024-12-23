@@ -107,22 +107,25 @@ runai  mpi submit dist1 --workers=2 -g 1 \
 ```
 
 ### Submit with PVC
-#### New PVC bounded to the workspace - will be deleted when the workload is deleted
+#### New PVC bounded to the workspace
+ New PVCs will be deleted when the workload is deleted
 ```shell
 
 runai workspace submit -i ubuntu --new-pvc claimname=yuval-3,size=10M,path=/tmp/test
 ```
-#### New ephemeral PVC - will deleted when the workload is deleted or paused
+#### New ephemeral PVC 
+New ephemeral PVCs will deleted when the workload is deleted or paused
 ```shell
 
 runai workspace submit -i ubuntu --new-pvc claimname=yuval2,size=10M,path=/tmp/test,ephemeral
 ```
-#### Existing PVC - will not deleted when the workload is deleted
+#### Existing PVC
+Existing PVCs will not deleted when the workload is deleted
 ```shell
 runai workspace submit -i ubuntu --existing-pvc claimname=test-pvc-2-project-mn2xs,path=/home/test
 ```
 
-### Msster/Worker configuration
+### Master/Worker configuration
 
 
 --command flag and -- are setting both leader(master) and workers command/arguments
