@@ -33,7 +33,8 @@ Run:ai uses three third parties which are managed as Kubernetes StatefulSets:
 
 ```bash
 --set thanos.query.autoscaling.enabled=true  
---set thanos.query.autoscaling.maxReplicas=2 
+--set thanos.query.autoscaling.maxReplicas=2
+--set thanos.query.autoscaling.minReplicas=2 
 ```
 
 ## Run:ai Cluster
