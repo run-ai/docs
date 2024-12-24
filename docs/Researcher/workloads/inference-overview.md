@@ -50,34 +50,35 @@ This has the benefit of conserving resources at the risk of a delay from "cold s
 
 ## Rolling inference updates
 
-When deploying models and running inference workloads, it is relevant at times to update the workload configuration in a live manner, without impacting the important services that are provided by the workload.
+When deploying models and running inference workloads, you may need to update the workload configuration in a live manner, without impacting the important services that are provided by the workload.
 
-This means that an ML engineer can submit updates to an existing inference workload whether it is currently running, pending (or any other status).
+This means you can submit updates to an existing inference workload whether it is currently running, pending, or any other status.
 
-Following are a few examples of updates that can be implemented:
+The following are a few examples of updates that can be implemented:
 
 * Changing the container image to deploy a new version of the model  
-* Changing different parameters (such as env variables)  
-* Changing the compute resources to improve performance  
-* Change the number of replicas and scale plan to adapt to requirement changes and scales
+* Changing different parameters (such as environment variables)  
+* Changing compute resources to improve performance  
+* Changing the number of replicas and scale plan to adapt to requirement changes and scales
 
-As stated above, during the update and until its successful completion, the service that the workload provides is not jeopardized as these are production-grade workloads. Hence consumers can continue using the model (send prompts for example) during the updating process.
+During the update and until its successful completion, the service that the workload provides is not jeopardized as these are production-grade workloads. Hence, consumers can continue using the model (send prompts for example) during the update process.
 
-During the update process of an inference workload, a new revision of pod(s) is created. This revision is the new desired specification of the workload. Although several updates can be submitted consecutively (even if the process of the previous update is not complete), the target goal (the desired specification) is always according to the last submitted update (the previous updates are ignored).
+During the update process of an inference workload, a new revision of pod(s) is created. This revision is the new desired specification of the workload. Although several updates can be submitted consecutively even if the process of the previous update is not complete, the target goal is always according to the last submitted update. This means, the previous updates are ignored.
 
-Once the new revision is created completely (according to the desired spec) and up and running, the entire traffic of requests is navigated to the new revision, and the original workload is terminated. Then the update process is considered complete.
+Once the new revision is created completely and up and running, the entire traffic of requests is navigated to the new revision, and the original workload is terminated. Then the update process is considered complete.
 
 It is important to note that:
 
-* To finish the inference workload update successfully, the project must have sufficient free GPU quota in favor of the update.  
-  For example:  
-    * Before the update: 3 replicas A running inference workload with 3 replicas (let's assume that each replica is equal to 1 GPU). This means the project is already using 3 GPUs of its quota. For the sake of simplicity, we will refer to this revision as revision #1.
+* To finish the inference workload update successfully, the project must have sufficient free GPU quota in favor of the update. For example:  
 
-    * The update: 8 replicas This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the 1st revision are reclaimed.
+    * The existing workload uses 3 replicas: A running inference workload with 3 replicas, assuming that each replica is equal to 1 GPU, means the project is already using 3 GPUs of its quota. For the sake of simplicity, we will refer to this revision as revision #1.
 
-* The Workload grid in the user interface always displays the configuration of the desired specification (the latest submitted update). The status of the workload still represents the service status. For example, per the example described in point 1, during the update, the status of the workload is still “running” as the service is still being provided to the consumers (using revision #1).
+    * The workload is updated to use 8 replicas: This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the initial running inference workload are reclaimed.
 
-* The submission of inference updates is currently possible only via API. Following are the API fields that can be updated:  
+* The Workloads table in the user interface always displays the configuration of the desired specification (the latest submitted update). The status of the workload still represents the service status. For example, per the example described in point 1, during the update, the status of the workload is still “running” as the service is still being provided to the consumers (using revision #1). Additionally, hovering over the status of the workload in the grid will display the phase message of the update, providing further details about the current state of the update process.
+
+* The submission of inference updates is currently possible only via API. The following are the API fields that can be updated:  
+
     * Command  
     * Args  
     * Image  
@@ -97,7 +98,7 @@ kubectl patch ConfigMap config-deployment -n knative-serving --type='merge' -p '
 
 ### Inference workloads with Knative new behavior in v2.19
 
-Starting version 2.19, all pods of a single Knative revision are grouped under a single Pod-Group. This means that when a new Knative revision is created:
+Starting in version 2.19, all pods of a single Knative revision are grouped under a single Pod-Group. This means that when a new Knative revision is created:
 
 * It either succeeds in allocating the minimum number of pods; or 
 * It fails and moves into a pending state, to retry again later to allocate all pods with their resources. 
