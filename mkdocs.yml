@@ -326,6 +326,7 @@ nav:
 
     - 'Review your performance' :
       - 'Dashboard Analysis' : 'platform-admin/performance/dashboard-analysis.md'
+      - 'Reports' : 'platform-admin/performance/reports.md'
     - 'Best Practices' :
       - 'From Docker to Run:ai ' : 'admin/researcher-setup/docker-to-runai.md'
     - 'System Configuration' : 
