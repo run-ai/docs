@@ -19,7 +19,7 @@ To add a new workspace:
     Within the new workspace form:
 3.  Select under which __cluster__ to create the workload
 4.  Select the __project__ in which your workspace will run
-5.  Select a preconfigured template or select __Start from scratch__ to launch a new workspace quickly
+5.  Select a preconfigured [template](../assets/templates.md) or select __Start from scratch__ to launch a new workspace quickly
 6.  Enter a unique __name__ for the workspace (if the name already exists in the project, you will be requested to submit a different name)
 7.  Click __CONTINUE__  
     In the next step:
