@@ -4,6 +4,7 @@
 The following document explains how to authenticate with Run:ai APIs.
 
 Run:ai APIs are accessed using *bearer tokens*. A token can be obtained by creating an **Application** through the Run:ai user interface. 
+
 An application contains a client ID and a client secret. With the client credentials you can obtain a token and use it within subsequent API calls.
 
 * To create applications for your organization, see [Applications](../admin/authentication/applications.md).
@@ -16,9 +17,9 @@ Use the client credentials created to get a temporary token to access Run:ai as 
 
 ### Example command to get an API token
 
-Replace `<COMPANY-URL>` below with:
+Replace `<runai_url>` below with:
 
-  * For SaaS installations use `<company>.run.ai`
+  * For SaaS installations, use `<tenant-name>.run.ai`
 
   * For self-hosted use the Run:ai user interface URL.
 
@@ -29,7 +30,7 @@ Replace `<COMPANY-URL>` below with:
           --header 'Accept: */*' \
           --header 'Content-Type: application/json' \
           --data-raw '{
-          "grantType":"app_token",
+          "grantType":"client_credentials",
           "clientId":"<CLIENT ID>",
           "clientSecret" : "<CLIENT SECRET>"
         }'
@@ -39,13 +40,13 @@ Replace `<COMPANY-URL>` below with:
     ``` python
         import requests
         import json
-        reqUrl = "https://cp-590d-run-13764-kc-upgrade.runailabs.com/api/v1/token"
+        reqUrl = "https://<runai_url>/api/v1/token"
         headersList = {
          "Accept": "*/*",
          "Content-Type": "application/json"
         }
         payload = json.dumps({
-          "grantType":"app_token",
+          "grantType":"client_credentials",
           "clientId":"<CLIENT ID>",
           "clientSecret" : "<CLIENT SECRET>"
         })

@@ -403,7 +403,6 @@ nav:
       - 'Save Deep Learning Checkpoints' : 'Researcher/best-practices/save-dl-checkpoints.md'
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
       - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
-      - 'User Applications' : 'Researcher/best-practices/user-applications.md'
       - 'Secrets as Environment Variables (CLI)' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
     - 'Scheduling' :
       - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
@@ -425,6 +424,7 @@ nav:
     - 'Use Cases' : 'Researcher/use-cases.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
+    - 'User Applications' : 'developer/user-applications.md'
     - 'API Authentication' : 'developer/rest-auth.md'
     - 'REST API' : 'developer/admin-rest-api/overview.md'
     - 'Cluster API (Deprecated)' :

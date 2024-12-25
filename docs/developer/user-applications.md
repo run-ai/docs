@@ -8,9 +8,9 @@ Applications are used for API integrations with Run:ai. An application contains 
 
 To create an application:
 
-1. Press the user icon, then select Settings
+1. Click the user icon, then select Settings
 2. Click **+APPLICATION**  
-3. Enter the application’s **Name**  
+3. Enter the application’s **name**  
 4. Click **CREATE**  
 5. Copy the **Client ID** and **Client secret** and store securely
 6. Click **DONE**
@@ -42,5 +42,6 @@ To regenerate a client secret:
 
 ## Using API
 
-TBD
+Go to the [User Applications](https://api-docs.run.ai/#tag/User-Applications) API reference to view the available actions
+
 
