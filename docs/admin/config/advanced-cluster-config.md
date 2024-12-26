@@ -48,7 +48,7 @@ The following configurations allow you to enable or disable features, control pe
 
 ### Use nodeSelectorTerms Flag
 
-To include or exclude specific node from running worklaods within a cluster managed by Run:ai, use the `nodeSelectorTerms` flag.
+To include or exclude specific nodes from running workloads within a cluster managed by Run:ai, use the `nodeSelectorTerms` flag. For additional details, see [Kubernetes nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector).
 
 Label the nodes using the below:
 
@@ -56,9 +56,9 @@ Label the nodes using the below:
 * operator: Operator defining the inclusion/exclusion condition (In, NotIn, Exists, DoesNotExist).
 * values: List of values for the key when using In or NotIn.
 
-The below example shows how to exclude nodes without Nvidia GPUs:
+The below example shows how to exclude nodes by filtering out non-NVIDIA GPUs in a cluster with mixed nodes, based on product type GPU label:
 
-```
+``` bash
 nodeSelectorTerms:
 - matchExpressions:
   - key: nvidia.com/gpu.product  
