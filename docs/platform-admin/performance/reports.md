@@ -32,10 +32,10 @@ The Reports table comprises the following columns:
 | Report | The name of the report |
 | Description | The description of the report|
 | Status | The different lifecycle phases and representation of the report condition |
-| Type | The type of the report – e.g., consumption or others |
+| Type | The type of the report – e.g., consumption |
 | Created by | The user who created the report |
 | Creation time | The timestamp of when the report was created |
-| Collection period| TBD |
+| Collection period| The period in which the data was collected |
 
 ### Reports status
 
@@ -65,11 +65,11 @@ To create a new report:
 2. Enter a name for the report (if the name already exists, you will need to choose a different one)
 3. Optional: Provide a description of the report
 4. Set the report’s data collection period 
-       * Start date - the date at which the report data commenced
-       * End date - the date at which the report data concluded
+       * Start date - The date at which the report data commenced
+       * End date - The date at which the report data concluded
 5. Set the report segmentation and filters
-       * Filters - filter by project or department name
-       * Segment by - data is collected and aggregated based on the segment
+       * Filters - Filter by project or department name
+       * Segment by - Data is collected and aggregated based on the segment
 6. Click **CREATE REPORT**
 
 ## Deleting a report
