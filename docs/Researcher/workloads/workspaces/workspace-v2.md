@@ -116,9 +116,9 @@ To add a new workspace:
     Once created, the new data source will be automatically selected.
     *   Optional: Modify the data target location for the selected data source(s).
 12.  __Optional - General settings__:
-    *   Allow the workload to exceed the project quota (workloads running over quota may be preempted and stopped at any time).
-    *   Set the __backoff limit__ before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." (Enter a value between 1 and 100.)
-    *   Set the __timeframe for auto-deletion__ after workload completion or failure (the time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically).
+    *   Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time.
+    *   Set the __backoff limit__ before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.
+    *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.
     *   Set __annotations(s)__  
         Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
         *   Click __+ANNOTATION__
