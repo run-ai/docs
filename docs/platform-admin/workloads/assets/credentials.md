@@ -22,9 +22,11 @@ The Credentials table comprises the following columns:
 | Description | A description of the credentials |
 | Type | The type of credentials, e.g., Docker registry |
 | Status | The different lifecycle phases and representation of the credentials’ condition |
+| Scope | The [scope](./overview.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
+| Kubernetes name | The unique name of the credentials Kubernetes name as it appears in the cluster |
+| Environment(s) | The environment(s) that are associated with the credentials |
 | Data source(s) | The private data source(s) that are accessed using the credentials |
 | Created by | The user who created the credentials |
-| Scope | The [scope](./overview.md#asset-scope) of this compute resource within the organizational treeClick the name of the scope to view the organizational tree diagram |
 | Creation time | The timestamp of when the credentials were created |
 | Cluster | The cluster with which the credentials are associated |
 
@@ -154,7 +156,7 @@ To delete a credential:
 
 1.  Select the credential you want to delete
 2.  Click __DELETE__
-3.  In the dialog, click __DELETE__ to confirm the deletion
+3.  In the dialog, click __DELETE__ to confirm
 
 !!! Note
       Credentials cannot be deleted if they are being used by a workload and template.
@@ -173,6 +175,7 @@ To use the secret directly from within the container, you can choose between the
 
 1. Get the secret mounted to the file system by using the [Generic secret](./datasources.md#secret) data source
 2. Get the secret as an environment variable injected into the container. There are two equivalent ways to inject the environment variable.
+
       a. By adding it to the Environment asset. 
       b. By adding it ad-hoc as part of the workload.
 
