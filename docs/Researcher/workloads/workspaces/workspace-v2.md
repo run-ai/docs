@@ -19,7 +19,7 @@ To add a new workspace:
     Within the new workspace form:
 3.  Select under which __cluster__ to create the workload
 4.  Select the __project__ in which your workspace will run
-5.  Select a preconfigured [template](../assets/templates.md) or select __Start from scratch__ to launch a new workspace quickly
+5.  Select a __preconfigured [template](../assets/templates.md)__ or select __Start from scratch__ to launch a new workspace quickly
 6.  Enter a unique __name__ for the workspace (if the name already exists in the project, you will be requested to submit a different name)
 7.  Click __CONTINUE__  
     In the next step:
@@ -91,6 +91,7 @@ To add a new workspace:
             *   __NoSchedule__ - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
             *   __PreferNoSchedule__ - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
             *   __Any__ - All effects above match.
+            
 10. Optional: Set the volume needed for your workload  
     A volume allocates storage space to your workload that is persistent across restarts.
     *   Click __+VOLUME__
