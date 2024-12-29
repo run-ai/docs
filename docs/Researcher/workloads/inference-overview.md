@@ -37,10 +37,11 @@ Run:ai provides *Inference* services as an equal part together with the other tw
 To withstand SLA, *Inference* workloads are typically set with *auto scaling*. Auto-scaling is the ability to add more computing power (Kubernetes pods) when the load increases and shrink allocated resources when the system is idle.
 There are several ways to trigger autoscaling. Run:ai supports the following:
 
-| Metric          | Units        |   Run:ai name   |
-|-----------------|--------------|-----------------|
-| Throughput      | requests/second | throughput |
-| Concurrency     |              |    concurrency  |
+| Metric          | Units        |
+|-----------------|--------------|
+| Latency         | Millisecond  |
+| Throughput      | Requests/sec |
+| Concurrency     | Requests     | 
 
 The Minimum and Maximum number of replicas can be configured as part of the autoscaling configuration.
 
@@ -75,7 +76,8 @@ It is important to note that:
 
     * The workload is updated to use 8 replicas: This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the initial running inference workload are reclaimed.
 
-* The Workloads table in the user interface always displays the configuration of the desired specification (the latest submitted update). The status of the workload still represents the service status. For example, per the example described in point 1, during the update, the status of the workload is still “running” as the service is still being provided to the consumers (using revision #1). Additionally, hovering over the status of the workload in the grid will display the phase message of the update, providing further details about the current state of the update process.
+* In the UI, the **Workloads table** displays the configuration of the latest submitted update. For example, if you change the number of replicas, the **running/requested pods** column will display the updated replicas requested. 
+The **status** of the workload, however, continues to reflect the operational state of the service as it was originally requested. For instance, during an update, the workload status remains "Running" if the service is still being delivered to consumers. Hovering over the workload's **status** in the grid will display the phase message for the update, offering additional insights into its update state.
 
 * The submission of inference updates is currently possible only via API. The following are the API fields that can be updated:  
 
