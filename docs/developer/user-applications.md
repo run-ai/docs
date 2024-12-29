@@ -4,6 +4,9 @@ This article explains the procedure to create your own user applications.
 
 Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials, you can obtain a token as detailed in [API authentication](../developer/rest-auth.md) and use it within subsequent API calls.
 
+!!!Note
+    User applications are supported in cluster version 2.20 and above.
+
 ## Creating Applications
 
 To create an application:
