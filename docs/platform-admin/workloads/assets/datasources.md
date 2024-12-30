@@ -217,62 +217,7 @@ To delete a data source:
 !!! Note
     It is not possible to delete an environment being used by an existing workload or template.
 
-## Creating PVCs in advance 
 
-Add PVCs in advance to be used when creating a PVC-type data source via the Run:ai UI.
-
-The actions taken by the admin are based on the scope (cluster, department or project) that the admin wants for data source of type PVC. Follow the steps below for each required scope: 
-
-### Cluster scope
-
-1. Locate the PVC in the Run:ai namespace (runai)
-2. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label: run.ai/cluster-wide: "true”
-
-!!! Note
-    This step is also relevant for creating the data source of type PVC via API
-
-The PVC is now displayed for that scope in the list of existing PVCs. 
-
-### Department scope
-
-1. Locate the PVC in the Run:ai namespace (runai)
-2. To authorize Run:ai to use the PVC, label it: run.ai/department: "id"
-
-The PVC is now displayed for that scope in the list of existing PVCs. 
-
-### Project scope
-Locate the PVC in the project’s namespace 
-
-The PVC is now displayed for that scope in the list of existing PVCs. 
-
-
-## Creating ConfigMaps in advance
-
-Add ConfigMaps in advance to be used when creating a ConfigMap-type data source via the Run:ai UI.
-
-### Cluster scope
-
-1. Locate the ConfigMap in the Run:ai namespace (runai)
-2. To authorize Run:ai to use the ConfigMap, label it: run.ai/cluster-wide: "true”
-3. The ConfigMap must have a label of run.ai/resource: <resource-name>
-
-The ConfigMap is now displayed for that scope in the list of existing ConfigMaps. 
-
-
-### Department scope
-
-1. Locate the ConfigMap in the Run:ai namespace (runai)
-2. To authorize Run:ai to use the ConfigMap, label it: run.ai/department: "<department-id>"
-3. The ConfigMap must have a label of run.ai/resource: <resource-name>
-
-The ConfigMap is now displayed for that scope in the list of existing ConfigMaps. 
-
-### Project scope
-
-1. Locate the ConfigMap in the project’s namespace
-2. The ConfigMap must have a label of run.ai/resource: <resource-name>
-
-The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
 ## Using API
 
