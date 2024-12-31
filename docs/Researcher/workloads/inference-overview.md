@@ -76,7 +76,7 @@ It is important to note that:
 
     * The workload is updated to use 8 replicas: This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the initial revision (revision #1) are reclaimed..
 
-* In the UI, the **Workloads table** displays the configuration of the latest submitted update. For example, if you change the container image, the **image** column will display the name of updated image. The **status** of the workload, however, continues to reflect the operational state of the service as it was originally requested. For instance, during an update, the workload status remains "Running" if the service is still being delivered to consumers. Hovering over the workload's **status** in the grid will display the phase message for the update, offering additional insights into its update state.
+* In the UI, the **Workloads table** displays the configuration of the latest submitted update. For example, if you change the container image, the **image** column will display the name of updated image. The **status** of the workload continues to reflect  the operational state of the service the workload exposes, as it was originally requested. For instance, during an update, the workload status remains "Running" if the service is still being delivered to consumers. Hovering over the workload's **status** in the grid will display the phase message for the update, offering additional insights into its update state.
 
 * The submission of inference updates is currently possible only via API. The following are the API fields that can be updated:  
 
