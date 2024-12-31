@@ -1,14 +1,13 @@
-This article explains the procedure to manage applications and it’s permissions.
+This article explains the procedure to manage your organization's applications.
 
-Applications are used for API integrations with Run:ai. An application contains a secret key. Using the secret key you can obtain a token and use it within subsequent API calls.
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials, you can obtain a token as detailed in [API authentication](../developer/rest-auth.md) and use it within subsequent API calls.
 
-Applications are managed locally and assigned with Access Rules to manage its permissions.
-
-For example, application **ci-pipeline-prod** assigned with a **Researcher** role in **Cluster: A**.
+Applications are assigned with Access Rules to manage permissions.
+For example, application **ci-pipeline-prod** is assigned with a **Researcher** role in **Cluster: A**. 
 
 ## Applications table
 
-The Applications table can be found under **Tools & Settings** in the Run:ai platform.
+The Applications table can be found under **Access** in the Run:ai platform.
 
 The Applications table provides a list of all the applications defined in the platform, and allows you to manage them.
 
@@ -20,12 +19,13 @@ The Applications table consists of the following columns:
 | Column | Description |
 | :---- | :---- |
 | Application | The name of the application |
-| Status | The status of the application |
+| Client ID | The client ID of the application | 
 | Access rule(s) | The access rules assigned to the application |
 | Last login | The timestamp for the last time the user signed in |
 | Created by | The user who created the application |
 | Creation time | The timestamp for when the application was created |
 | Last updated | The last time the application was updated |
+
 
 ### Customizing the table view
 
@@ -40,27 +40,25 @@ The Applications table consists of the following columns:
 To create an application:
 
 1. Click **\+NEW APPLICATION**  
-1. Enter the application’s **Name**  
-1. Click **CREATE**  
-1. Copy the credentials and store it securely:  
-    * **Application name**  
-    * **Secret key**  
-1. Click **DONE**
+2. Enter the application’s **name**  
+3. Click **CREATE**  
+4. Copy the **Client ID** and **Client secret** and store them securely
+5. Click **DONE**
 
 !!!Note
-    The secret key is visible only at the time of creation, it cannot be recovered but can be regenerated.
+    The client secret is visible only at the time of creation. It cannot be recovered but can be regenerated.
 
 ## Adding an access rule to an application
 
 To create an access rule:
 
 1. Select the application you want to add an access rule for  
-1. Click **ACCESS RULES**  
-1. Click **\+ACCESS RULE**  
-1. Select a role  
-1. Select a scope  
-1. Click **SAVE RULE**  
-1. Click **CLOSE**
+2. Click **ACCESS RULES**  
+3. Click **\+ACCESS RULE**  
+4. Select a role  
+5. Select a scope  
+6. Click **SAVE RULE**  
+7. Click **CLOSE**
 
 ## Deleting an access rule from an application
 
@@ -72,26 +70,25 @@ To delete an access rule:
 1. Click on the trash icon  
 1. Click **CLOSE**
 
-## Regenerating key
+## Regenerating client secret
 
-To regenerate an application’s key:
+To regenerate a client secret:
 
-1. Select the application you want to regenerate it’s secret key  
-1. Click **REGENERATE KEY**  
-1. Click **REGENERATE**  
-1. Review the user’s credentials and store it securely:  
-    * **Application** name  
-    * **Secret key**  
-1. Click **DONE**
+1. Locate the application you want to regenerate its client secret 
+2. Click **REGENERATE CLIENT SECRET**  
+3. Click **REGENERATE**  
+4. Copy the **New client secret** and store it securely
+5. Click **DONE**
 
 !!!Warning
-    Regenerating an application key revokes its previous key.
+    Regenerating a client secret revokes the previous one.
+
 
 ## Deleting an application
 
 1. Select the application you want to delete  
 1. Click **DELETE**  
-1. On the dialog, click **DELETE** to confirm the deletion
+1. On the dialog, click **DELETE** to confirm
 
 ## Using API
 

@@ -425,6 +425,7 @@ nav:
     - 'Use Cases' : 'Researcher/use-cases.md'
   - 'Developer' :
     - 'Overview' : 'developer/overview-developer.md'
+    - 'User Applications' : 'developer/user-applications.md'
     - 'API Authentication' : 'developer/rest-auth.md'
     - 'REST API' : 'developer/admin-rest-api/overview.md'
     - 'Cluster API (Deprecated)' :
