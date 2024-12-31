@@ -7,7 +7,7 @@ This configuration simplifies the mapping of the data into the workload’s file
 
 ## Data sources table
 
-The data sources table can be found under __Data sources__ in the Run:ai platform.
+The data sources table can be found under __Workload manager__ in the Run:ai platform.
 
 The data sources table provides a list of all the data sources defined in the platform and allows you to manage them.
 

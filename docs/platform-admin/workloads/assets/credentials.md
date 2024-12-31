@@ -8,7 +8,7 @@ Essentially, credentials enable AI practitioners to access relevant protected re
 
 ## Credentials table
 
-The Credentials table can be found under __Credentials__ in the Run:ai User interface.
+The Credentials table can be found under __Workload manager__ in the Run:ai User interface.
 
 The Credentials table provides a list of all the credentials defined in the platform and allows you to manage them.
 
@@ -49,6 +49,7 @@ The following table describes the credentials’ condition and whether they were
 *   Search - Click SEARCH and type the value to search by
 *   Sort - Click each column header to sort by
 *   Column selection - Click COLUMNS and select the columns to display in the table
+* Download table - Click MORE and then click ‘Download as CSV’. Export to CSV is limited to 20,000 rows.
 *   Refresh - Click REFRESH to update the table with the latest data
 
 ## Adding new credentials
