@@ -62,11 +62,11 @@ The following are a few examples of updates that can be implemented:
 * Changing compute resources to improve performance  
 * Changing the number of replicas and scale plan to adapt to requirement changes and scales
 
-During the update and until its successful completion, the service that the workload provides is not jeopardized as these are production-grade workloads. Hence, consumers can continue using the model (send prompts for example) during the update process.
+During the update and until its successful completion, the service that the workload provides is not jeopardized as these are production-grade workloads. Hence, consumers can continue using the model (interact with the LLM) during the update process.
 
 During the update process of an inference workload, a new revision of pod(s) is created. This revision is the new desired specification of the workload. Although several updates can be submitted consecutively even if the process of the previous update is not complete, the target goal is always according to the last submitted update. This means, the previous updates are ignored.
 
-Once the new revision is created completely and up and running, the entire traffic of requests is navigated to the new revision, and the original workload is terminated. Then the update process is considered complete.
+Once the new revision is created completely and is up and running, the entire traffic of requests is navigated to the new revision, the original revision is terminated and the resources are sent back to the shared pool. Only then is the update process considered complete.
 
 It is important to note that:
 
@@ -74,10 +74,9 @@ It is important to note that:
 
     * The existing workload uses 3 replicas: A running inference workload with 3 replicas, assuming that each replica is equal to 1 GPU, means the project is already using 3 GPUs of its quota. For the sake of simplicity, we will refer to this revision as revision #1.
 
-    * The workload is updated to use 8 replicas: This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the initial running inference workload are reclaimed.
+    * The workload is updated to use 8 replicas: This means, to complete the update, an additional 8 GPUs of free quota is needed. Only when the update is complete, the 3 GPUs used for the initial revision (revision #1) are reclaimed..
 
-* In the UI, the **Workloads table** displays the configuration of the latest submitted update. For example, if you change the number of replicas, the **running/requested pods** column will display the updated replicas requested. 
-The **status** of the workload, however, continues to reflect the operational state of the service as it was originally requested. For instance, during an update, the workload status remains "Running" if the service is still being delivered to consumers. Hovering over the workload's **status** in the grid will display the phase message for the update, offering additional insights into its update state.
+* In the UI, the **Workloads table** displays the configuration of the latest submitted update. For example, if you change the container image, the **image** column will display the name of updated image. The **status** of the workload, however, continues to reflect the operational state of the service as it was originally requested. For instance, during an update, the workload status remains "Running" if the service is still being delivered to consumers. Hovering over the workload's **status** in the grid will display the phase message for the update, offering additional insights into its update state.
 
 * The submission of inference updates is currently possible only via API. The following are the API fields that can be updated:  
 
