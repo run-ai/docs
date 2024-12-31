@@ -11,7 +11,7 @@ An environment asset is a preconfigured building block that encapsulates aspects
 
 ## Environments table
 
-The Environments table can be found under __Environments__ in the Run:ai platform.
+The Environments table can be found under __Workloads manager__ in the Run:ai platform.
 
 The Environment table provides a list of all the environment defined in the platform and allows you to manage them.
 
@@ -31,7 +31,8 @@ The Environments table consists of the following columns:
 | Workload types | The workload types that can use the environment |
 | Template(s) | The list of workload templates that use this environment |
 | Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments](#tools-associated-with-the-environment) created by Run:ai  |
-| Creation time | The timestamp for when the environment was created |
+| Creation time | The timestamp of when the environment was created |
+| Last updated | The timestamp of when the environment was last updated |
 | Cluster | The cluster that the environment is associated with |
 
 ### Tools associated with the environment
@@ -40,7 +41,7 @@ Click one of the values in the tools column to view the list of tools and their 
 
 | Column | Description |
 | :---- | :---- |
-| Tool name | The name of the tool or application AI practitioner can set up within the environment. |
+| Tool name | The name of the tool or application AI practitioner can set up within the environment. | TBD: Noa
 | Connection type | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc) |
 
 ### Workloads associated with the environment
@@ -59,7 +60,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
 ## Environments created by Run:ai
 
@@ -120,7 +121,7 @@ To add a new environment:
     * When no command is added, the default command of the image is used (the image entrypoint)  
     * The command can be modified while submitting a workload using the environment  
     * The argument(s) can be modified while submitting a workload using the environment  
-13. Optional: __Set the environment variable(s)__  
+13. Optional: __Set the environment variable(s)__  TBD: Eli
     * The environment variable(s) are added to the default environment variables that are already set within the image  
     * The environment variables can be modified and new variables can be added while submitting a workload using the environment
     * You can configure a new Environment variable from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials, the predefined name for the credential assets are displayed as an option. In addition, you can select the type of the credential to be used (username / password or access key / access secret).
@@ -128,7 +129,11 @@ To add a new environment:
 15. Optional: Set where the UID, GID and supplementary groups are taken from, this can be:  
     * __From the image__  
     * __From the IdP token__ (only available in an SSO installations)  
-    * __Custom__ (manually set) - decide whether the submitter can modify these value upon submission.  
+    * Custom (manually set) - decide whether the submitter can modify these value upon submission.
+       * Set the User ID (UID), Group ID (GID) and the supplementary groups that can run commands in the container
+         * Enter UID
+         * Enter GID
+         * Add Supplementary groups (multiple groups can be added, separated by comma  
 16. Optional: Select __Linux capabilities__ - Grant certain privileges to a container without granting all the privileges of the root user. 
 17. Click __CREATE ENVIRONMENT__
 
@@ -139,19 +144,23 @@ To add a new environment:
 
 To edit an environment:
 
-1. Select the environment from the table  
-2. Click __Rename__ to edit its name and description
+1. Select the environment you want to edit
+2. Click __Edit__
+3. Click __SAVE ENVIRONMENT__
 
 !!! Note
-    Additional fields can be edited using the [API](https://app.run.ai/api/docs#tag/Environment)
+    The already bound workload that is using this asset will not be affected.
 
-## Copying & Editing an environment
+## Copying an environment 
 
-To copy & edit an environment:
+To make a copy of an existing environment:
 
-1. Select the project you want to duplicate  
-2. Click __COPY & EDIT__. 
-3. Update the environment and click __SAVE__.
+1. Select the environment you want to copy
+2. Click __MAKE A COPY__
+3. Select a [scope](overview.md#asset-scope) 
+4. Enter a __name__ for the environment. The name must be unique.
+5. Update the environment
+6. Click __CREATE ENVIRONMENT__ 
 
 ## Deleting an environment
 
@@ -159,10 +168,10 @@ To delete an environment:
 
 1. Select the environment you want to delete  
 2. Click __DELETE__  
-3. On the dialog, click __DELETE__ to confirm the deletion
+3. On the dialog, click __DELETE__ to confirm
 
 !!! Note
-    It is not possible to delete an environment being used by an existing workload and template.
+    The already bound workload that is using this asset will not be affected.
 
 ## Using API
 

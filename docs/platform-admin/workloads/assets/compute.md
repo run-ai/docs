@@ -9,7 +9,7 @@ A compute resource asset is a preconfigured building block that encapsulates all
 
 ## Compute resource table
 
-The Compute resource table can be found under **Compute resources** in the Run:ai UI.
+The Compute resource table can be found under __Workload Manager__ in the Run:ai UI.
 
 The Compute resource table provides a list of all the compute resources defined in the platform and allows you to manage them.
 
@@ -31,7 +31,8 @@ The Compute resource table consists of the following columns:
 | Workload(s) | The list of workloads associated with the compute resource |
 | Template(s) | The list of workload templates that use this compute resource |
 | Created by | The name of the user who created the compute resource |
-| Creation time | The timestamp for when the rule was created |
+| Creation time | The timestamp of when the compute resource was created | TBD: change in DOC 360
+| Last updated | The timestamp of when the compute resource was last updated |
 | Cluster | The cluster that the compute resource is associated with |
 
 ### Workloads associated with the compute resource
@@ -119,28 +120,32 @@ To add a new compute resource:
 
 To edit a compute resource:
 
-1. Select the compute resource from the table  
-2. Click **RENAME** to edit its name and description
+1. Select the compute resource you want to edit
+2. Click __Edit__
+3. Click __SAVE COMPUTE RESOURCE__
 
 !!! Note
-    Additional fields can be edited using the [API](https://api-docs.run.ai/2.18/tag/Compute).
+    The already bound workload that is using this asset will not be affected.
 
-## Copying & editing a compute resource
+## Copying a compute resource
 
-To copy & edit a compute resource:
+To make a copy of an existing compute resource:
 
-1. Select the compute resource you want to duplicate  
-2. Click **COPY & EDIT**  
-3. Update the compute resource and click **CREATE COMPUTE RESOURCE**
+1. Select the compute resource you want to copy
+2. Click __MAKE A COPY__
+3. Select a [scope](overview.md#asset-scope) 
+4. Enter a __name__ for the environment. The name must be unique.
+5. Update the environment
+6. Click __CREATE COMPUTE RESOURCE__ 
 
 ## Deleting a compute resource
 
 1. Select the compute resource you want to delete  
 2. Click **DELETE**  
-3. On the dialog, click **DELETE** to confirm the deletion  
+3. On the dialog, click **DELETE** to confirm   
 
 !!! Note 
-    It is not possible to delete a compute resource being used by an existing workload and template.
+   The already bound workload that is using this asset will not be affected.
 
 ## Using API
 
