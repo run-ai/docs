@@ -8,7 +8,7 @@ Run:ai APIs are accessed using *bearer tokens*. A token can be obtained by creat
 An application contains a client ID and a client secret. With the client credentials you can obtain a token and use it within subsequent API calls.
 
 * To create applications for your organization, see [Applications](../admin/authentication/applications.md).
-* To create your own user applications, see [User Applications](../Researcher/best-practices/user-applications.md).
+* To create your own user applications, see [User Applications](user-applications.md).
 
 
 ## Request an API Token
