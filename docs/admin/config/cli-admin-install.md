@@ -18,7 +18,7 @@ Before installing the CLI, review the following:
 
 ## Installation
 
-To install the Run:ai Administrator CLI, ensure that the CLI version matches the version of your Run:ai cluster. You can either install the latest version or a specific version from the [list](https://runai.jfrog.io/ui/native/cli/runai-admin-cli/){target=_blank}.
+To install the Run:ai Administrator CLI, ensure that the CLI version matches the version of your Run:ai cluster. You can either install the latest version or a specific version from the [list](https://runai.jfrog.io/ui/native/cp-cli-prod/runai-admin-cli/){target=_blank}.
 
 ### Installing the latest version
 
