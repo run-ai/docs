@@ -31,7 +31,7 @@ The Compute resource table consists of the following columns:
 | Workload(s) | The list of workloads associated with the compute resource |
 | Template(s) | The list of workload templates that use this compute resource |
 | Created by | The name of the user who created the compute resource |
-| Creation time | The timestamp of when the compute resource was created | TBD: change in DOC 360
+| Creation time | The timestamp of when the compute resource was created | 
 | Last updated | The timestamp of when the compute resource was last updated |
 | Cluster | The cluster that the compute resource is associated with |
 
@@ -43,7 +43,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the compute resource |
 | Type | (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. see the full list of [workload status](../overviews/managing-workloads.md#workload-status) |
+| Status | Represents the workload lifecycle. See the full list of [workload status](../overviews/managing-workloads.md#workload-status). |
 
 ### Customizing the table view
 
@@ -133,7 +133,6 @@ To make a copy of an existing compute resource:
 
 1. Select the compute resource you want to copy
 2. Click __MAKE A COPY__
-3. Select a [scope](overview.md#asset-scope) 
 4. Enter a __name__ for the environment. The name must be unique.
 5. Update the environment
 6. Click __CREATE COMPUTE RESOURCE__ 
@@ -145,7 +144,7 @@ To make a copy of an existing compute resource:
 3. On the dialog, click **DELETE** to confirm   
 
 !!! Note 
-   The already bound workload that is using this asset will not be affected.
+    The already bound workload that is using this asset will not be affected.
 
 ## Using API
 

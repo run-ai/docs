@@ -41,7 +41,7 @@ Click one of the values in the tools column to view the list of tools and their 
 
 | Column | Description |
 | :---- | :---- |
-| Tool name | The name of the tool or application AI practitioner can set up within the environment. | TBD: Noa
+| Tool name | The name of the tool or application AI practitioner can set up within the environment. See [Integrations](./integrations/integration-overview.md) | TBD: link
 | Connection type | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc) |
 
 ### Workloads associated with the environment
@@ -121,24 +121,34 @@ To add a new environment:
     * When no command is added, the default command of the image is used (the image entrypoint)  
     * The command can be modified while submitting a workload using the environment  
     * The argument(s) can be modified while submitting a workload using the environment  
-13. Optional: __Set the environment variable(s)__  TBD: Eli
-    * The environment variable(s) are added to the default environment variables that are already set within the image  
+13. Optional: __Set the environment variable(s)__  
+    * Click __+ENVIRONMENT VARIABLE__
+    * Enter a __name__
+    * Select the __source__ for the environment variable
+      * __Custom__
+        * Enter a __value__ 
+        * Leave __empty__
+        * Add __instructions__ for the expected value if any
+      * __Credentials__ - Select existing credentials as the environment variable
+        * Select a __credential name__  
+            To add new credentials to the credentials list, and for additional information, see [Credentials](./credentials.md).
+        * Select a __secret key__ 
     * The environment variables can be modified and new variables can be added while submitting a workload using the environment
-    * You can configure a new Environment variable from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials, the predefined name for the credential assets are displayed as an option. In addition, you can select the type of the credential to be used (username / password or access key / access secret).
 14. Optional: Set the container’s __working directory__ to define where the container’s process starts running. When left empty, the default directory is used.  
 15. Optional: Set where the UID, GID and supplementary groups are taken from, this can be:  
     * __From the image__  
     * __From the IdP token__ (only available in an SSO installations)  
-    * Custom (manually set) - decide whether the submitter can modify these value upon submission.
-       * Set the User ID (UID), Group ID (GID) and the supplementary groups that can run commands in the container
-         * Enter UID
-         * Enter GID
-         * Add Supplementary groups (multiple groups can be added, separated by comma  
+    * __Custom__ (manually set) - decide whether the submitter can modify these value upon submission.
+       * Set the __User ID (UID)__, __Group ID (GID)__ and the supplementary groups that can run commands in the container
+         * Enter __UID__
+         * Enter __GID__
+         * Add __Supplementary groups__ (multiple groups can be added, separated by commas)  
+         * Disable __Allow the values above to be modified within the workload__ if you want the above values to be used as the default
 16. Optional: Select __Linux capabilities__ - Grant certain privileges to a container without granting all the privileges of the root user. 
 17. Click __CREATE ENVIRONMENT__
 
 !!! Note
-    It is also possible to add environments directly when creating a specific workspace, training or inference workload
+    It is also possible to add environments directly when creating a specific workspace, training or inference workload.
 
 ## Editing an environment
 
@@ -149,7 +159,8 @@ To edit an environment:
 3. Click __SAVE ENVIRONMENT__
 
 !!! Note
-    The already bound workload that is using this asset will not be affected.
+    * The already bound workload that is using this asset will not be affected.
+    * llm-server and chatbot-ui environments cannot be edited. 
 
 ## Copying an environment 
 
@@ -157,7 +168,6 @@ To make a copy of an existing environment:
 
 1. Select the environment you want to copy
 2. Click __MAKE A COPY__
-3. Select a [scope](overview.md#asset-scope) 
 4. Enter a __name__ for the environment. The name must be unique.
 5. Update the environment
 6. Click __CREATE ENVIRONMENT__ 
