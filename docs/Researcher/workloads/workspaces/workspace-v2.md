@@ -51,18 +51,19 @@ To add a new workspace:
         When If no command is added, the container will use the image’s default command (entry-point).
         *   Modify the existing command or click __+COMMAND & ARGUMENTS__ to add a new command.
         *   Set multiple arguments separated by spaces, using the following format (e.g.: `--arg1=val1`).
-    *   Optional: Set the __environment variable(s)__  
-        The environment variable(s) are added to the environment variables already configured in the environment.
+    *   Set the __environment variable(s)__  
+        *  Modify the existing environment variable(s). The existing environment variables may include instructions to guide you with entering the correct values.
+        * (Optional) Add new variables
         *  Click __+ENVIRONMENT VARIABLE__
-        *  Enter a __name__
-        *  Select the __source__ for the environment variable
+            *  Enter a __name__
+            *  Select the __source__ for the environment variable
 
-             * __Custom__
-                  * Enter a value according to the provided instructions
-             * __Credentials__ - Select select an existing credentials as the environment variable
-                 * Select a __credential name__
-                   To add new credentials to the credentials list, and for additional information, see [Credentials](../assets/credentials.md).
-                 * Select a __secret key__
+                * __Custom__
+                    * Enter a value according to the provided instructions
+                * __Credentials__ - Select select an existing credentials as the environment variable
+                    * Select a __credential name__
+                    To add new credentials to the credentials list, and for additional information, see [Credentials](../assets/credentials.md).
+                    * Select a __secret key__
 
 9.  Select the __compute resource__ for your workspace
     *   Select a compute resource or click __+NEW COMPUTE RESOURCE__ to add a new compute resource to the gallery.  
