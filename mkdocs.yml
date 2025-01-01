@@ -366,8 +366,6 @@ nav:
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Training' : 'Researcher/workloads/trainings.md'
-      - 'Distributed Training' : 'Researcher/workloads/distributed-training.md'
-
       - 'Inference' : 'Researcher/workloads/inference-overview.md'
 #      - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
 
