@@ -22,18 +22,18 @@ The Environments table consists of the following columns:
 | Column | Description |
 | :---- | :---- |
 | Environment | The name of the environment |
-| Description | A description of the essence of the environment |
+| Description | A description of the environment |
 | Scope | The [scope](overview.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Image | The application or service to be run by the workload |
-| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on a multiple nodes |
+| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on multiple nodes |
 | Tool(s) | The tools and connection types the environment exposes |
 | Workload(s) | The list of existing workloads that use the environment |
-| Workload types | The workload types that can use the environment |
+| Workload types | The workload types that can use the environment (Workspace/ Training / Inference) |
 | Template(s) | The list of workload templates that use this environment |
-| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments](#tools-associated-with-the-environment) created by Run:ai  |
+| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](#environments-created-by-run:ai) created by Run:ai  |
 | Creation time | The timestamp of when the environment was created |
 | Last updated | The timestamp of when the environment was last updated |
-| Cluster | The cluster that the environment is associated with |
+| Cluster | The cluster with which the environment is associated |
 
 ### Tools associated with the environment
 
@@ -41,7 +41,7 @@ Click one of the values in the tools column to view the list of tools and their 
 
 | Column | Description |
 | :---- | :---- |
-| Tool name | The name of the tool or application AI practitioner can set up within the environment. See [Integrations](./integrations/integration-overview.md) | TBD: link
+| Tool name | The name of the tool or application AI practitioner can set up within the environment. |
 | Connection type | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc) |
 
 ### Workloads associated with the environment
@@ -52,7 +52,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the environment |
 | Type | The workload type (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. see the full list of [workload status](../../../Researcher/workloads/overviews/managing-workloads.md#workload-status) |
+| Status | Represents the workload lifecycle. See the full list of [workload status](../../../Researcher/workloads/overviews/managing-workloads.md#workload-status) |
 
 ### Customizing the table view
 
@@ -64,7 +64,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 
 ## Environments created by Run:ai
 
-When installing Run:ai, you automatically get the environment created by Run:ai to ease up the onboarding process and support different use cases out of the box.  
+When installing Run:ai, you automatically get the environments created by Run:ai to ease up the onboarding process and support different use cases out of the box.  
 These environments are created at the [scope](./overview.md#asset-scope) of the account.
 
 | Environment | Image |

@@ -42,7 +42,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | Column | Description |
 | :---- | :---- |
 | Workload | The workload that uses the compute resource |
-| Type | (Workspace/Training/Inference) |
+| Type | Workspace/Training/Inference |
 | Status | Represents the workload lifecycle. See the full list of [workload status](../overviews/managing-workloads.md#workload-status). |
 
 ### Customizing the table view
@@ -63,7 +63,7 @@ To add a new compute resource:
 5. Enter a **name** for the compute resource. The name must be unique.  
 6. Optional: Provide a **description** of the essence of the compute resource  
 7. Set the resource types needed within a single node  
-   (The Run:ai scheduler tries to match a single node that complies with the compute resource for each of the workload’s pods)  
+   (the Run:ai scheduler tries to match a single node that complies with the compute resource for each of the workload’s pods)  
     * **GPU**  
         * **GPU devices per pod**  
         The number of devices (physical GPUs) per pod  
@@ -79,8 +79,7 @@ To add a new compute resource:
             * Select the memory request format  
                 * **% (of device) -** Fraction of a GPU device’s memory  
                 * **MB (memory size) -** An explicit GPU memory unit  
-                * **GB (memory size) -** An explicit GPU memory unit  
-                * **Multi-instance GPU (MIG)** - MIG profile (Deprecated)  
+                * **GB (memory size) -** An explicit GPU memory unit    
             * Set the memory **Request -** The minimum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives this amount of GPU memory for each device(s) the pod utilizes  
             * Optional: Set the memory **Limit** - The maximum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of GPU memory for each device(s) the pod utilizes.  
             To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.  
