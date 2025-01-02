@@ -59,7 +59,7 @@ To add a new distributed training workload:
         *   __Node port__
             *   __Custom port__
                 *   Set the node port (enter a port between 30000 and 32767; if the node port is already in use, the workload will fail and display an error message)
-    *   Set the User ID (UID), Group ID (GID) and the supplementary groups that can run commands in the container
+    *   Set the __User ID (UID)__, __Group ID (GID)__ and the supplementary groups that can run commands in the container
         *   Enter __UID__
         *   Enter __GID__
         *   Add __Supplementary groups__ (multiple groups can be added, separated by commas).
@@ -68,7 +68,7 @@ To add a new distributed training workload:
         *   Modify the existing command or click __+COMMAND & ARGUMENTS__ to add a new command.
         *   Set multiple arguments separated by spaces, using the following format (e.g.: `--arg1=val1`).
     *   Set the __environment variable(s)__  
-        * Modify the existing environment variable(s). The existing environment variables may include instructions to guide you with entering the correct values.
+        * Modify the existing environment variable(s). The existing environment variables may include __instructions__ to guide you with entering the correct values.
         * (Optional) Add new variables
             *  Click __+ENVIRONMENT VARIABLE__
             *  Enter a __name__
@@ -144,7 +144,7 @@ To add a new distributed training workload:
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
     For a step-by-step guide on adding data sources to the gallery, see [data sources](assets/datasources.md).  
     Once created, the new data source will be automatically selected.
-    *   Optional: Modify the data target location for the selected data source(s).
+       *   Optional: Modify the data target location for the selected data source(s).
 
 13.  __Optional - General settings__:
     *  Set the __grace period__ for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min.
