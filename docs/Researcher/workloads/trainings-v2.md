@@ -117,12 +117,13 @@ To add a new training workload:
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
     For a step-by-step guide on adding data sources to the gallery, see [data sources](assets/datasources.md).  
     Once created, the new data source will be automatically selected.
-    *   Optional: Modify the data target location for the selected data source(s).
+        
+    *  Optional: Modify the data target location for the selected data source(s).
 
 13.  __Optional - General settings__:
     *  Set the __grace period__ for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min.
     * Set the __number of runs__ the workload must finish to be considered complete. Multiple runs enhance the reliability and validity of the training results. 
-         *  When the number of runs is above 1, you can set how many may be scheduled in __parallel__. Enter a value that is less than or equal to the number of runs.
+    * If the number of runs is above 1, enter a value under __Parallelism__ to specify how many runs may be scheduled in __parallel__. The value must be less than or equal to the number of runs.
     *   Set the __backoff limit__ before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.
     *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.
     *   Set __annotations(s)__  
@@ -150,7 +151,7 @@ The effects of the policy are reflected in the training creation form:
 
 ## Managing and monitoring
 
-After the training workload is created, it is added to the [Workloads](verviews/managing-workloads.md) table, where it can be managed and monitored.
+After the training workload is created, it is added to the [Workloads](overviews/managing-workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 
