@@ -72,7 +72,7 @@ These environments are created at the [scope](./overview.md#asset-scope) of the 
 | Jupiter-lab | jupyter/scipy-notebook |
 | jupyter-tensorboard | gcr.io/run-ai-demo/jupyter-tensorboard |
 | tensorboard | tensorflow/tensorflow:latest |
-| llm-server | runai.jfrog.io/core-llm/runai-vllm:v0.5.5-0.5.0 |
+| llm-server | rrunai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0 |
 | chatbot-ui | runai.jfrog.io/core-llm/llm-app |
 | gpt2 | runai.jfrog.io/core-llm/quickstart-inference:gpt2-cpu |
 
