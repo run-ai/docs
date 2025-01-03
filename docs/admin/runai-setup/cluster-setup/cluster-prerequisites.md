@@ -282,7 +282,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
 
 ### Inference
 
-Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.10 to 1.15
+Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.11 to 1.16.
 
 Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the Run:ai scheduler and features, by running:
 
@@ -295,6 +295,20 @@ kubectl patch configmap/config-features \
   --namespace knative-serving \
   --type merge \
   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.containerspec-addcapabilities":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
+```
+
+### Knative Autoscaling
+
+Run:ai allows for autoscaling a deployment according to the below metrics:
+
+* Latency (milliseconds)
+* Throughput (requests/sec)
+* Concurrency (requests)
+
+Using a custom metric (for example, Latency) requires installing the [Kubernetes Horizontal Pod Autoscaler (HPA)](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions). Use the following command to install. Make sure to update the {VERSION} in the below command with a [supported Knative version](#inference).
+
+```
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-{VERSION}/serving-hpa.yaml
 ```
 
 ## Domain Name Requirement
