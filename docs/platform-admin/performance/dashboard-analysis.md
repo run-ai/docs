@@ -60,7 +60,7 @@ The CPU dashboards display specific information for CPU based nodes, node-pools,
 
 To enable CPU Dashboards:
 
-1. Press the `Tools & Settings` icon, then press `General`.
+1. Press the `General settings` icon, then press `General`.
 2. Open the `Analytics` pane and toggle the *Show CPU dashboard* switch to enable the feature.
 
 Toggle the switch to `disable` to disable *CPU Dashboards* option.
@@ -255,7 +255,7 @@ Use the drop down menus at the top of the dashboard to apply filters for:
 
 To enable the Consumption Dashboard:
 
-1. Press the `Tools & Settings` icon, then press `General`.
+1. Press the `General settings` icon, then press `General`.
 2. Open the `Analytics` pane and toggle the *Consumption* switch to enable the feature.
 3. Enter the cost of:
    1. GPU compute / Hour

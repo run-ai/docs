@@ -12,7 +12,7 @@ Workloads can be submitted using a prioritized list of node pools, the node pool
 
 ## Node pools table
 
-The Node pools table can be found under **Nodes** in the Run:ai platform.
+The Node pools table can be found under **Resources** in the Run:ai platform.
 
 The Node pools table lists all the node pools defined in the Run:ai platform and allows you to manage them.
 

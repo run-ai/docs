@@ -8,7 +8,7 @@ For example, user **user@domain.com** is a **department admin** in **department 
 
 ## Access rules table
 
-The Access rules table can be found under **Tools & Settings** in the Run:ai platform.
+The Access rules table can be found under **Access** in the Run:ai platform.
 
 The Access rules table provides a list of all the access rules defined in the platform and allows you to manage them.
 

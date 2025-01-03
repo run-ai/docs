@@ -9,7 +9,7 @@ A compute resource asset is a preconfigured building block that encapsulates all
 
 ## Compute resource table
 
-The Compute resource table can be found under __Workload Manager__ in the Run:ai UI.
+The Compute resource table can be found under __Workload manager__ in the Run:ai UI.
 
 The Compute resource table provides a list of all the compute resources defined in the platform and allows you to manage them.
 
@@ -84,7 +84,7 @@ To add a new compute resource:
             * Optional: Set the memory **Limit** - The maximum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of GPU memory for each device(s) the pod utilizes.  
             To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.  
         !!! Note  
-            * GPU memory limit is disabled by default. If you cannot see the **Limit** toggle in the compute resource form, then it must be enabled by your Administrator, under General Settings → Resources → GPU resource optimization  
+            * GPU memory limit is disabled by default. If you cannot see the **Limit** toggle in the compute resource form, then it must be enabled by your Administrator, under General settings → Resources → GPU resource optimization  
             * When a **Limit** is set and is bigger than the **Request**, the scheduler allows each pod to reach the maximum amount of GPU memory in an opportunistic manner (only upon availability).  
             * If the GPU Memory Limit is bigger that the Request the pod is prone to be killed by the Run:ai toolkit (out of memory signal). The greater the difference between the GPU memory used and the request, the higher the risk of being killed  
             * If GPU resource optimization is turned off, the minimum and maximum are in fact equal  

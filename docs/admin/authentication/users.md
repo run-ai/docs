@@ -6,7 +6,7 @@ For example, user **user@domain.com** is a **department admin** in **department 
 
 ## Users table
 
-The Users table can be found under **Tools & Settings** in the Run:ai platform.
+The Users table can be found under **Access** in the Run:ai platform.
 
 The users table provides a list of all the users in the platform.  
 You can manage local users and manage user permissions (access rules) for both local and SSO users.

@@ -5,7 +5,7 @@ Nodes are Kubernetes elements automatically discovered by the Run:ai platform. O
 
 ## Nodes table
 
-The Nodes table can be found under Nodes in the Run:ai platform.
+The Nodes table can be found under __Resources__ in the Run:ai platform.
 
 The Nodes table displays a list of predefined nodes available to users in the Run:ai platform.
 

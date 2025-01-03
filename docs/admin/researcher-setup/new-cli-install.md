@@ -10,7 +10,7 @@ This article explains the procedure for installing and configuring the __new__ r
 
 ## Enabling the V2 CLI
 
-Under **Tools & Settings** → General settings → Workloads, enable the flag `Improved command line interface`
+Under **General settings** → Workloads, enable the flag `Improved command line interface`
 
 ## Installing the CLI
 

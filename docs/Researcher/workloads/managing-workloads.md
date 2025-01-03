@@ -2,7 +2,7 @@ This article explains the procedure for managing workloads.
 
 ## Workloads table
 
-The Workloads table can be found under __Workloads__ in the Run:ai platform.
+The Workloads table can be found under __Workload manager__ in the Run:ai platform.
 
 The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../../../Researcher/scheduling/the-runai-scheduler.md), and allows you to manage them.
 
@@ -142,7 +142,7 @@ To create a new workload:
     * [Workspace](../../../Researcher/workloads/workspaces/overview.md). Used for data preparation and model-building tasks.  
     * [Training](../../../Researcher/workloads/trainings.md). Used for training tasks of all sorts  
     * [Inference](../../../Researcher/workloads/inference-overview.md). Used for inference and serving tasks  
-    * Job (legacy). This type is displayed only if enabled by your Administrator, under General Settings → Workloads → Workload policies  
+    * Job (legacy). This type is displayed only if enabled by your Administrator, under General settings → Workloads → Workload policies  
 3. Click __CREATE WORKLOAD__
 
 ## Stopping a workload
@@ -176,7 +176,7 @@ To connect to an application running in the workload (for example, Jupyter Noteb
 
 !!! Note  
     Once a workload is deleted you can view it in the Deleted tab in the workloads view.  
-    This tab is displayed only if enabled by your Administrator, under General Settings → Workloads → Deleted workloads
+    This tab is displayed only if enabled by your Administrator, under General settings → Workloads → Deleted workloads
 
 4. Select the workload you want to copy and edit  
 5. Click __COPY & EDIT__  

@@ -7,7 +7,7 @@ For example, you may have several people involved in a specific face-recognition
 
 ## Projects table
 
-The Projects table can be found under Projects in the Run:ai platform.
+The Projects table can be found under __Organization__ in the Run:ai platform.
 
 The Projects table provides a list of all projects defined for a specific cluster, and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 

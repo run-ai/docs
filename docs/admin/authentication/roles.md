@@ -4,7 +4,7 @@ A role is a set of permissions that can be assigned to a [subject in a scope](..
 
 A permission is a set of actions (View, Edit, Create and Delete) over a Run:ai entity (e.g. projects, workloads, users).Roles table
 
-The Roles table can be found under **Tools & Settings** in the Run:ai platform.
+The Roles table can be found under **Access** in the Run:ai platform.
 
 The Roles table displays a list of predefined roles available to users in the Run:ai platform. It is not possible to create additional rules or edit or delete existing rules.
 

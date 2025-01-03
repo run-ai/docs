@@ -5,7 +5,7 @@ A template is a pre-set configuration that is used to quickly configure and subm
 
 ## Workspace templates table
 
-Access to the Templates table can be found on the left-hand menu in the Run:ai platform.
+The Templates table can be found under __Workload manager__ in the Run:ai User interface.
 
 The Templates table provides a list of all the templates defined in the platform, and allows you to manage them.
 

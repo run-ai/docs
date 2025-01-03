@@ -97,7 +97,7 @@ To add a new inference workload:
     * Optional: Set __toleration(s)__ to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 
-            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General Settings → Workloads → Tolerations
+            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
 
         *   Click __+TOLERATION__
         *   Enter a __key__

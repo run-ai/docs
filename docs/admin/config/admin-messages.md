@@ -5,7 +5,7 @@ System administrators can use *Administrator messages* to make announcements to 
 
 To configure an *Administrator message*:
 
-1. Press `Settings | General`.
+1. Press `General settings`.
 2. Expand the *Message from administrator* pane.
 3. Press *Message*.
 4. Enter your message in the text box. Use the formatting tools in the toolbar to add special formatting or links to the message.

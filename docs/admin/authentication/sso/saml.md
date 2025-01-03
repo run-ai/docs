@@ -14,7 +14,7 @@ Follow the steps below to setup SSO with SAML.
 
 ### Adding the identity provider
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section and click **+IDENTITY PROVIDER**  
 3. Select **Custom SAML 2.0**  
 4. Select either **From computer** or **From URL**  
@@ -50,17 +50,17 @@ Follow the steps below to setup SSO with SAML.
 
 You can view the identity provider details and edit its configuration:
 
-1. Go **Tools & Settings** → **General**  
-1. Open the Security section  
-1. On the identity provider box, click **Edit identity provider**  
-1. You can edit either the metadata file or the user attributes  
-1. You can view the identity provider URL, identity provider entity ID, and the certificate expiration date
+1. Go **General settings** 
+2. Open the Security section  
+3. On the identity provider box, click **Edit identity provider**  
+4. You can edit either the metadata file or the user attributes  
+5. You can view the identity provider URL, identity provider entity ID, and the certificate expiration date
 
 ### Removing the identity provider
 
 You can remove the identity provider configuration:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings** 
 1. Open the Security section  
 1. On the identity provider card, click **Remove identity provider**  
 1. In the dialog, click **REMOVE** to confirm the action
@@ -72,7 +72,7 @@ You can remove the identity provider configuration:
 
 You can download the XML file to view the identity provider settings:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**
 1. Open the Security section  
 1. On the identity provider card, click **Download metadata XML file**
 
@@ -85,11 +85,10 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 ??? "Invalid signature in response from identity provider"
       **Description**: After trying to log-in, the following message is received in the RunLai log-in page.
       **Mitigation:**
-      1. Go to the Tools & Settings menu  
-      2. Click **General**  
-      3. Open the Security section  
-      4. In the identity provider box, check for a "Certificate expired” error  
-      5. If it is expired, update the SAML metadata file to include a valid certificate
+      1. Go to **General settings**  
+      2. Open the Security section  
+      3. In the identity provider box, check for a "Certificate expired” error  
+      4. If it is expired, update the SAML metadata file to include a valid certificate
 
 ??? "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."
       **Description:** Authentication failed because email attribute was not found.

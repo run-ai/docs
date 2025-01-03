@@ -17,7 +17,7 @@ Follow the steps below to setup SSO with OpenID Connect.
 
 ### Adding the identity provider
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings** 
 2. Open the Security section and click **+IDENTITY PROVIDER**  
 3. Select **Custom OpenID Connect**  
 4. Enter the **Discovery URL**, **Client ID**, and **Client Secret**  
@@ -51,16 +51,16 @@ Follow the steps below to setup SSO with OpenID Connect.
 
 You can view the identity provider details and edit its configuration:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section  
 3. On the identity provider box, click **Edit identity provider**  
 4. You can edit either the **Discovery URL**, **Client ID**, **Client Secret**, **OIDC scopes**, or the **User attributes**
 
-   ### Removing the identity provider
+### Removing the identity provider
 
 You can remove the identity provider configuration:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section  
 3. On the identity provider card, click **Remove identity provider**  
 4. In the dialog, click **REMOVE** to confirm the action
