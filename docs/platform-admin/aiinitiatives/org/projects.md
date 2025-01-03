@@ -93,7 +93,7 @@ Click one of the values of Workload(s) column, to view the list of workloads and
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
 ## Adding a new project
 
