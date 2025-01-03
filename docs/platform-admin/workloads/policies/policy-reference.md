@@ -24,6 +24,7 @@ Click the link to view the value type of each field.
 | terminateAfterPreemtpion | Indicates whether the job should be terminated, by the system, after it has been preempted | boolean | Workspace Training |
 | autoDeletionTimeAfterCompletionSeconds | Specifies the duration after which a finished workload (Completed or Failed) is automatically deleted. If this field is set to zero, the workload becomes eligible to be deleted immediately after it finishes. | integer | Workspace Training |
 | backoffLimit | Specifies the number of retries before marking a workload as failed | integer | Workspace Training |
+| cleanPodPolicy | <p>Specifies which pods will be deleted when the workload reaches a terminal state (completed/failed). The policy can be one of the following values:</p><ul><li>`Running` - Only pods still running when a job completes (for example, parameter servers) will be deleted immediately. Completed pods will not be deleted so that the logs will be preserved. (Default).</li><li>`All` - All (including completed) pods will be deleted immediately when the job finishes.</li><li>`None` - No pods will be deleted when the job completes. It will keep running pods that consume GPU, CPU and memory over time. It is recommended to set to None only for debugging and obtaining logs from running pods.</li></ul> | string | Distributed |
 | completions | Used with Hyperparameter Optimization. Specifies the number of successful pods the job should reach to be completed. The Job is marked as successful once the specified amount of pods has succeeded. | integer | Workspace Training |
 | parallelism | Used with Hyperparameters Optimization. Specifies the maximum desired number of pods the workload should run at any given time. | itemized | Workspace Training |
 | exposeUrls | Specifies a set of exported URL (e.g. ingress) from the container running the created workload. | itemized | Workspace Training |
@@ -275,13 +276,13 @@ Each field has a specific value type. The following value types are supported.
 
 | Value type | Description | Supported rule type | Defaults |
 | ----- | ----- | ----- | ----- |
-| Boolean | A binary value that can be either True or False | canEdit required | true/false |
-| String | A sequence of characters used to represent text. It can include letters, numbers, symbols, and spaces | canEdit required options | abc |
-| Itemized | An ordered collection of items (objects), which can be of different types (all items in the list are of the same type). For further information see the chapter below the table. | canAdd locked | See below |
-| Integer | An Integer is a whole number without a fractional component. | canEdit required min max step | 100 |
-| Number | Capable of having non-integer values | canEdit required min | 10.3 |
-| Quantity | Holds a string composed of a number and a unit representing a quantity | canEdit required min max | 5M |
-| Array | Set of values that are treated as one, as opposed to Itemized in which each item can be referenced separately. | canEdit required | node-a node-b node-c |
+| Boolean | A binary value that can be either True or False | <ul><li>canEdit</li><li>required</ul> | true/false |
+| String | A sequence of characters used to represent text. It can include letters, numbers, symbols, and spaces | <ul><li>canEdit</li><li>required</li><li>options</ul>  | abc |
+| Itemized | An ordered collection of items (objects), which can be of different types (all items in the list are of the same type). For further information see the chapter below the table. | <ul><li>canAdd</li><li>locked</ul>  | See below |
+| Integer | An Integer is a whole number without a fractional component. | <ul><li>canEdit</li><li>required</li><li>min</li><li>max</li><li>step</li><li>defaultFrom</ul>  | 100 |
+| Number | Capable of having non-integer values | <ul><li>canEdit</li><li>required</li><li>min</li><li>defaultFrom</ul>  | 10.3 |
+| Quantity | Holds a string composed of a number and a unit representing a quantity | <ul><li>canEdit</li><li>required</li><li>min</li><li>max</li><li>defaultFrom</ul>  | 5M |
+| Array | Set of values that are treated as one, as opposed to Itemized in which each item can be referenced separately. | <ul><li>canEdit</li><li>required</ul> | node-a node-b node-c |
 
 ## Itemized
 
@@ -360,16 +361,18 @@ A workload submission request cannot exclude the default/cpu resource, as this k
 
 ## Rule types
 
+
 | Rule types | Description | Supported value types | Rule type example |
 | ----- | ----- | ----- | ----- |
 | canAdd | Whether the submission request can add items to an itemized field other than those listed in the policy defaults for this field. | itemized |  `storage:   hostPath:      instances:        canAdd: false`  |
 | locked | Set of items that the workload is unable to modify or exclude. In this example, a workload policy default is given to HOME and USER, that the submission request cannot modify or exclude from the workload. | itemized |  `storage:   hostPath:     Instances:       locked:         - HOME         - USER`  |
-| canEdit | Whether the submission request can modify the policy default for this field. In this example, it is assumed that the policy has default for imagePullPolicy. As canEdit is set to false, submission requests are not able to alter this default. | string boolean integer number quantity array |  `imagePullPolicy:     canEdit: false`  |
-| required | When set to true, the workload must have a value for this field. The value can be obtained from policy defaults. If no value specified in the policy defaults, a value must be specified for this field in the submission request. | string boolean integer number quantity array |  `image:     required: true`  |
-| min | The minimal value for the field. | integer number quantity |  `compute:   gpuDevicesRequest:     min: 3`  |
-| max | The maximal value for the field. | integer number quantity |  `compute:   gpuMemoryRequest:      max: 2G`  |
-| step | The allowed gap between values for this field. In this example the allowed values are: 1, 3, 5, 7 | integer number |  `compute:   cpuCoreRequest:     min: 1     max: 7     Step: 2`  |
+| canEdit | Whether the submission request can modify the policy default for this field. In this example, it is assumed that the policy has default for imagePullPolicy. As canEdit is set to false, submission requests are not able to alter this default. | <ul><li>string</li><li>boolean</li><li>integer</li><li>number</li><li>quantity</li><li>array</ul> |  `imagePullPolicy:     canEdit: false`  |
+| required | When set to true, the workload must have a value for this field. The value can be obtained from policy defaults. If no value specified in the policy defaults, a value must be specified for this field in the submission request. | <ul><li>string</li><li>boolean</li><li>integer</li><li>number</li><li>quantity</li><li>array</ul> |  `image:     required: true`  |
+| min | The minimal value for the field. | <ul><li>integer</li><li>number</li><li>quantity</ul> |  `compute:   gpuDevicesRequest:     min: 3`  |
+| max | The maximal value for the field. | <ul><li>integer</li><li>number</li><li>quantity</ul> |  `compute:   gpuMemoryRequest:      max: 2G`  |
+| step | The allowed gap between values for this field. In this example the allowed values are: 1, 3, 5, 7 | <ul><li>integer</li><li>number</ul> |  `compute:   cpuCoreRequest:     min: 1     max: 7     Step: 2`  |
 | options | Set of allowed values for this field. | string |  `image:   options:     - value: image-1     - value: image-2`  |
+| defaultFrom | Set a default value for a field that will be calculated based on the value of another field. | <ul><li>integer</li><li>number</li><li>quantity</ul> |  `computeCoreRequest:   defaultFrom:     field:compute.cpuCoreLimit    factor:0.5`  |
 
 ## Policy Spec Sections
 

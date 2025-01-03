@@ -11,7 +11,7 @@ An environment asset is a preconfigured building block that encapsulates aspects
 
 ## Environments table
 
-The Environments table can be found under __Environments__ in the Run:ai platform.
+The Environments table can be found under __Workloads manager__ in the Run:ai platform.
 
 The Environment table provides a list of all the environment defined in the platform and allows you to manage them.
 
@@ -22,17 +22,18 @@ The Environments table consists of the following columns:
 | Column | Description |
 | :---- | :---- |
 | Environment | The name of the environment |
-| Description | A description of the essence of the environment |
+| Description | A description of the environment |
 | Scope | The [scope](overview.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Image | The application or service to be run by the workload |
-| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on a multiple nodes |
+| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on multiple nodes |
 | Tool(s) | The tools and connection types the environment exposes |
 | Workload(s) | The list of existing workloads that use the environment |
-| Workload types | The workload types that can use the environment |
+| Workload types | The workload types that can use the environment (Workspace/ Training / Inference) |
 | Template(s) | The list of workload templates that use this environment |
-| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments](#tools-associated-with-the-environment) created by Run:ai  |
-| Creation time | The timestamp for when the environment was created |
-| Cluster | The cluster that the environment is associated with |
+| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](#environments-created-by-run:ai) created by Run:ai  |
+| Creation time | The timestamp of when the environment was created |
+| Last updated | The timestamp of when the environment was last updated |
+| Cluster | The cluster with which the environment is associated |
 
 ### Tools associated with the environment
 
@@ -51,7 +52,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the environment |
 | Type | The workload type (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. see the full list of [workload status](../../../Researcher/workloads/overviews/managing-workloads.md#workload-status) |
+| Status | Represents the workload lifecycle. See the full list of [workload status](../../../Researcher/workloads/overviews/managing-workloads.md#workload-status) |
 
 ### Customizing the table view
 
@@ -59,11 +60,11 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
 ## Environments created by Run:ai
 
-When installing Run:ai, you automatically get the environment created by Run:ai to ease up the onboarding process and support different use cases out of the box.  
+When installing Run:ai, you automatically get the environments created by Run:ai to ease up the onboarding process and support different use cases out of the box.  
 These environments are created at the [scope](./overview.md#asset-scope) of the account.
 
 | Environment | Image |
@@ -71,7 +72,7 @@ These environments are created at the [scope](./overview.md#asset-scope) of the 
 | Jupiter-lab | jupyter/scipy-notebook |
 | jupyter-tensorboard | gcr.io/run-ai-demo/jupyter-tensorboard |
 | tensorboard | tensorflow/tensorflow:latest |
-| llm-server | runai.jfrog.io/core-llm/runai-vllm:v0.5.5-0.5.0 |
+| llm-server | rrunai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0 |
 | chatbot-ui | runai.jfrog.io/core-llm/llm-app |
 | gpt2 | runai.jfrog.io/core-llm/quickstart-inference:gpt2-cpu |
 
@@ -121,37 +122,55 @@ To add a new environment:
     * The command can be modified while submitting a workload using the environment  
     * The argument(s) can be modified while submitting a workload using the environment  
 13. Optional: __Set the environment variable(s)__  
-    * The environment variable(s) are added to the default environment variables that are already set within the image  
+    * Click __+ENVIRONMENT VARIABLE__
+    * Enter a __name__
+    * Select the __source__ for the environment variable
+      * __Custom__
+        * Enter a __value__ 
+        * Leave __empty__
+        * Add __instructions__ for the expected value if any
+      * __Credentials__ - Select existing credentials as the environment variable
+        * Select a __credential name__  
+            To add new credentials to the credentials list, and for additional information, see [Credentials](./credentials.md).
+        * Select a __secret key__ 
     * The environment variables can be modified and new variables can be added while submitting a workload using the environment
-    * You can configure a new Environment variable from your credentials (of type generic secret, access key or username & password). When selecting an environment variable source from credentials, the predefined name for the credential assets are displayed as an option. In addition, you can select the type of the credential to be used (username / password or access key / access secret).
 14. Optional: Set the container’s __working directory__ to define where the container’s process starts running. When left empty, the default directory is used.  
 15. Optional: Set where the UID, GID and supplementary groups are taken from, this can be:  
     * __From the image__  
     * __From the IdP token__ (only available in an SSO installations)  
-    * __Custom__ (manually set) - decide whether the submitter can modify these value upon submission.  
+    * __Custom__ (manually set) - decide whether the submitter can modify these value upon submission.
+       * Set the __User ID (UID)__, __Group ID (GID)__ and the supplementary groups that can run commands in the container
+         * Enter __UID__
+         * Enter __GID__
+         * Add __Supplementary groups__ (multiple groups can be added, separated by commas)  
+         * Disable __Allow the values above to be modified within the workload__ if you want the above values to be used as the default
 16. Optional: Select __Linux capabilities__ - Grant certain privileges to a container without granting all the privileges of the root user. 
 17. Click __CREATE ENVIRONMENT__
 
 !!! Note
-    It is also possible to add environments directly when creating a specific workspace, training or inference workload
+    It is also possible to add environments directly when creating a specific workspace, training or inference workload.
 
 ## Editing an environment
 
 To edit an environment:
 
-1. Select the environment from the table  
-2. Click __Rename__ to edit its name and description
+1. Select the environment you want to edit
+2. Click __Edit__
+3. Click __SAVE ENVIRONMENT__
 
 !!! Note
-    Additional fields can be edited using the [API](https://app.run.ai/api/docs#tag/Environment)
+    * The already bound workload that is using this asset will not be affected.
+    * llm-server and chatbot-ui environments cannot be edited. 
 
-## Copying & Editing an environment
+## Copying an environment 
 
-To copy & edit an environment:
+To make a copy of an existing environment:
 
-1. Select the project you want to duplicate  
-2. Click __COPY & EDIT__. 
-3. Update the environment and click __SAVE__.
+1. Select the environment you want to copy
+2. Click __MAKE A COPY__
+4. Enter a __name__ for the environment. The name must be unique.
+5. Update the environment
+6. Click __CREATE ENVIRONMENT__ 
 
 ## Deleting an environment
 
@@ -159,10 +178,10 @@ To delete an environment:
 
 1. Select the environment you want to delete  
 2. Click __DELETE__  
-3. On the dialog, click __DELETE__ to confirm the deletion
+3. On the dialog, click __DELETE__ to confirm
 
 !!! Note
-    It is not possible to delete an environment being used by an existing workload and template.
+    The already bound workload that is using this asset will not be affected.
 
 ## Using API
 

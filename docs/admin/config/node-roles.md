@@ -7,7 +7,6 @@ For optimal performance in production clusters, it is essential to avoid extensi
 * Run:ai system-level services run on dedicated CPU-only nodes.
 * Workloads that do not request GPU resources (e.g. Machine Learning jobs) are executed on CPU-only nodes.
 
-The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity){target=_blank} using node labels to manage scheduling for cluster services (system) and DaemonSets (worker).
 
 ## Prerequisites
 
@@ -39,6 +38,7 @@ To set a system role for a node in your Kubernetes cluster, follow these steps:
 
 The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
+The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity){target=_blank} using node labels to manage scheduling for cluster services (system).
 
 !!! Warning
     Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
