@@ -4,48 +4,42 @@
 
 * [Deprecation notifications](#deprecation-notifications)  
 
-## Researchers
+## New Features
 
-## Enhanced workload status visibility
+### Enhanced workload status visibility
 
-- Users can now gain better insights into workloads with a "Failed" and status. By hovering over the status, you can view details of why the workload has not been scheduled. (requires a minimum cluster version of TBD) - Alon
+You can now gain better insights into workloads with a "Failed" and "Initializing" status. By clicking the icon next to each status, you can view more details for each status. See TBD. This requires a minimum cluster version of TBD.
 
-- Users can now gain better insights into workloads with a "Initialization" status. By hovering over the status, you can view details of why the workload is not running. (requires a minimum cluster version of TBD) - Alon
+### Stop/run actions for distributed workloads
 
-### Stop/Run actions for distributed workloads
-
-You can now stop and run distributed workloads directly from the UI. This new capability enhances control over distributed workloads, enabling greater flexibility and resource management. (requires a minimum cluster version of TBD) - Alon
-
-### Windows OS support for CLI v2
-
-CLI v2 now supports Windows operating systems, enabling you to leverage the full capabilities of the CLI. (requires a minimum cluster version of TBD) - Alon
+You can now stop and run distributed workloads directly from the UI. This new capability enhances control over distributed workloads, enabling greater flexibility and resource management. See TBD. This requires a minimum cluster version of TBD.
 
 ### Visibility into idle GPU devices
 
-Added idle GPU device column to the Workloads table. The column displays allocated GPU devices that have been idle for more than 5 minutes, offering enhanced visibility into resource utilization and supporting more efficient workload management. Alon
-
-### Unified command structure for consistency
-
-To align with the Run:ai UI, we’ve unified the `distributed` command into the `training` command. The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI. (requires a minimum cluster version of TBD) - Alon
-
-### Improved command line interface autocompletion
-
-CLI V2 now autocompletes nouns such as project names and workload names for better data consistency with the UI, auto-upgrades, and interactive mode. Alon (was in 2.19)
+Added idle GPU device column to the Workloads table. The column displays allocated GPU devices that have been idle for more than 5 minutes, offering enhanced visibility into resource utilization and supporting more efficient workload management. See TBD. This requires a minimum cluster version of TBD.
 
 ### Pod deletion policy for terminal workloads
 
-Administrators can now specify which pods should be deleted when a distributed workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater control over resource cleanup and helps maintain a more organized and efficient cluster environment. - Alon
+Administrators can now specify which pods should be deleted when a distributed workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater control over resource cleanup and helps maintain a more organized and efficient cluster environment. See TBD. This requires a minimum cluster version of TBD.
 
-### Configurable Workload Completion with Multiple Runs
+### Configurable workload completion with multiple runs
 
-You can now define the number of runs a workload must complete to be considered finished. This enhancement improves the reliability and validity of training results by allowing multiple runs. When the number of runs is set above 1, you can also configure how many runs can be scheduled in parallel, with the parallel runs value limited to the total number of runs. This provides greater flexibility and control over workload execution and resource utilization.
+You can now define the number of runs a workload must complete to be considered finished. This enhancement improves the reliability and validity of training results by allowing multiple runs. When the number of runs is set above 1, you can also configure how many runs can be scheduled in parallel, with the parallel runs value limited to the total number of runs. This provides greater flexibility and control over workload execution and resource utilization. See TBD. This requires a minimum cluster version of TBD.
 
-### Configurable Grace Period for Workload Preemption
-You can now set a grace period for workload preemption, providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted. The grace period can be configured between 0 seconds and 5 minutes, enabling more controlled and seamless preemption processes.
+### Configurable grace period for workload preemption
+You can now set a grace period for workload preemption, providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted. The grace period can be configured between 0 seconds and 5 minutes, enabling more controlled and seamless preemption processes. See TBD. This requires a minimum cluster version of TBD.
+
+### Windows OS support for CLI v2
+
+CLI v2 now supports Windows operating systems, enabling you to leverage the full capabilities of the CLI. See TBD. This requires a minimum cluster version of 2.18.
+
+### Unified command structure for consistency
+
+To align with the Run:ai UI, we’ve unified the `distributed` command into the `training` command. The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI. See TBD. This requires a minimum cluster version of TBD. 
 
 ### User applications for API Authentication
 
-User applications are now available for API integrations with Run:AI. Each application includes client credentials which can be used to obtain an authentication token and utilize for subsequent API calls. 
+User applications are now available for API integrations with Run:AI. Each application includes client credentials which can be used to obtain an authentication token and utilize for subsequent API calls. See TBD. This requires a minimum cluster version of TBD.  
 
 TBD: add changes to Applications and deprecation notice.
 
