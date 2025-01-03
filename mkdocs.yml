@@ -366,7 +366,9 @@ nav:
       - 'Workspace' :
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
-      - 'Training' : 'Researcher/workloads/trainings.md'
+      - 'Training' : 
+        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/trainings-v2.md'
+        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training.md'
       - 'Inference' :
         - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
         - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
