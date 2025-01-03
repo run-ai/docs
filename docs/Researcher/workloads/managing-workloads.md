@@ -39,7 +39,7 @@ The Workloads table consists of the following columns:
 
 ### Workload status
 
-The following table describes the different phases in a workload life cycle.
+The following table describes the different phases in a workload life cycle. The UI provides additional details for some of the below workload statuses which can be viewed by clicking the icon next to the status.
 
 | Status | Description | Entry Condition | Exit Condition |
 | :---- | :---- | :---- | :---- |
@@ -97,7 +97,7 @@ Click one of the values in the Data source(s) column, to view the list of data s
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV  
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows. 
 * Refresh - Click REFRESH to update the table with the latest data  
 * Show/Hide details - Click to view additional information on the selected row
 
