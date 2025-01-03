@@ -366,8 +366,12 @@ nav:
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Training' : 'Researcher/workloads/trainings.md'
-      - 'Inference' : 'Researcher/workloads/inference.md'
-      - 'Inference' : 'Researcher/workloads/inference-overview.md'
+      - 'Inference' :
+        - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
+        - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
+        - 'Deploy Inference Workloads from Hugging Face' : 'Researcher/workloads/inference/hugging-face-inference.md'
+        - 'Deploy Inference Workloads with NVIDIA NIM' : 'Researcher/workloads/inference/nim-inference.md'
+
 #      - 'Scheduling workloads to AWS placement groups' : 'Researcher/scheduling/schedule-to-aws-groups.md'
 
     - 'Command Line Interface' :
