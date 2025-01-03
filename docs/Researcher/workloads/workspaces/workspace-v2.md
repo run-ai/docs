@@ -47,12 +47,12 @@ To add a new workspace:
         *   Enter __UID__
         *   Enter __GID__
         *   Add __Supplementary groups__ (multiple groups can be added, separated by commas).
-    *   Optional: Set the __command and arguments__ for the container running the workload  
-        When If no command is added, the container will use the image’s default command (entry-point).
+    *   Optional: Set the __command and arguments__ for the container running the workload.  
+        If no command is added, the container will use the image’s default command (entry-point).
         *   Modify the existing command or click __+COMMAND & ARGUMENTS__ to add a new command.
         *   Set multiple arguments separated by spaces, using the following format (e.g.: `--arg1=val1`).
     *   Set the __environment variable(s)__  
-        *  Modify the existing environment variable(s). The existing environment variables may include instructions to guide you with entering the correct values.
+        *  Modify the existing environment variable(s). The existing environment variables may include __instructions__ to guide you with entering the correct values.
         * (Optional) Add new variables
         *  Click __+ENVIRONMENT VARIABLE__
             *  Enter a __name__
@@ -146,7 +146,7 @@ The effects of the policy are reflected in the workspace creation form:
 
 ## Managing and monitoring
 
-After the workspace is created, it is added to the [Workloads](../overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the workspace is created, it is added to the [Workloads](../../managing-workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 
