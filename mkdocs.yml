@@ -293,7 +293,7 @@ nav:
       - 'Roles' : 'platform-admin/authentication/roles.md'
       - 'Access Rules' : 'platform-admin/authentication/accessrules.md'
     - 'Managing AI Intiatives' :
-      - 'Overview' : 'platform-admin/aiinitiatives/overview.md'
+      - 'Adapting AI initiatives to your organization' : 'platform-admin/aiinitiatives/overview.md'
       - 'Managing your Organization' :
         - 'Projects' : 'platform-admin/aiinitiatives/org/projects.md'
         - 'Departments' : 'platform-admin/aiinitiatives/org/departments.md'

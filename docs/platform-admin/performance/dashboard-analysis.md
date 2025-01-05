@@ -60,7 +60,7 @@ The CPU dashboards display specific information for CPU based nodes, node-pools,
 
 To enable CPU Dashboards:
 
-1. Press the `General settings` icon, then press `General`.
+1. Click `General settings`
 2. Open the `Analytics` pane and toggle the *Show CPU dashboard* switch to enable the feature.
 
 Toggle the switch to `disable` to disable *CPU Dashboards* option.

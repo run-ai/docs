@@ -8,7 +8,7 @@ The inference workload is assigned to a project and is affected by the projectâ€
 
 To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workloads in Run:ai](overviews/workload-support.md).
 
-![](img/creating-inference-workloads.png)
+![](img/inference-workload.png)
 
 ## Creating a custom inference workload
 
