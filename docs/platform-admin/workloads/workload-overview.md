@@ -55,7 +55,7 @@ The Workloads table provides:
 * Advanced workload management.
 * Added workload statuses for better tracking of workload flow.
 
-To create new workloads, press [*New Workload*](./overviews/managing-workloads.md#adding-new-workload).
+To create new workloads, press [*New Workload*](managing-workloads.md#adding-new-workload).
 
 ### API Documentation
 

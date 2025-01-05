@@ -19,7 +19,7 @@ Workspaces can be created with just a few clicks of a button. See [Workspace cre
 
 Workspaces can be stopped and started to save expensive resources without losing complex environment configurations.
 
-Only when a workspace is in status active (see also [Workspace Statuses](../overviews/managing-workloads.md#workload-status)) does it consume resources. 
+Only when a workspace is in status active (see also [Workspace Statuses](../managing-workloads.md#workload-status)) does it consume resources. 
 
 When the workspace is active it exposes the connections to the tools (for example, a Jupyter notebook) within the workspace. 
 
@@ -28,7 +28,7 @@ When the workspace is active it exposes the connections to the tools (for exampl
 ![](img/2-connecting-to-tools.png)
 
 
-An active workspace is a Run:ai [interactive workload](../../../platform-admin/workloads/overviews/managing-workloads.md). The interactive workload starts when the workspace is started and stops when the workspace is stopped. 
+An active workspace is a Run:ai [interactive workload](../../../platform-admin/workloads/managing-workloads.md). The interactive workload starts when the workspace is started and stops when the workspace is stopped. 
 
 
 Workspaces can be used via the user interface or programmatically via the Run:ai [Admin API](../../../developer/admin-rest-api/overview.md). Workspaces are not supported via the command line interface. You can still run an interactive workload via the command line. 

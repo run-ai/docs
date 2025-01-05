@@ -220,10 +220,16 @@ To delete a project:
 
 1. Select the project you want to delete  
 2. Click DELETE  
-3. On the dialog, click DELETE to confirm the deletion
+3. On the dialog, click DELETE to confirm 
 
 !!! Note
-    Deleting a project does not delete its associated namespace, any of the workloads running using this namespace, or the policies defined for this project. However, any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
+     * **Clusters < v2.20**
+      
+         Deleting a project does not delete its associated namespace, any of the running workloads using this namespace, or the policies defined for this project. However, any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
+
+    * **Clusters >=v2.20**
+      
+         Deleting a project does not delete its associated namespace, but will attempt to delete its associated workloads and assets. Any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
 
 ## Using API
 

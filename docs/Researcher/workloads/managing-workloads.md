@@ -178,9 +178,11 @@ To connect to an application running in the workload (for example, Jupyter Noteb
     Once a workload is deleted you can view it in the Deleted tab in the workloads view.  
     This tab is displayed only if enabled by your Administrator, under General settings → Workloads → Deleted workloads
 
-4. Select the workload you want to copy and edit  
-5. Click __COPY & EDIT__  
-6. Update the workload and click __CREATE WORKLOAD__
+## Copy & Edit a workload
+
+1. Select the workload you want to copy and edit  
+2. Click __COPY & EDIT__  
+3. Update the workload and click __CREATE WORKLOAD__
 
 ## Using API
 
