@@ -52,7 +52,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the environment |
 | Type | The workload type (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. See the full list of [workload status](../../../Researcher/workloads/overviews/managing-workloads.md#workload-status) |
+| Status | Represents the workload lifecycle. See the full list of [workload status](../../../Researcher/workloads/managing-workloads.md#workload-status) |
 
 ### Customizing the table view
 

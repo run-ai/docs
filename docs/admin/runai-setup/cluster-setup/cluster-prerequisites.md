@@ -253,7 +253,7 @@ Distributed training enables training of AI models over multiple nodes. This req
 
 There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) which includes TensorFlow, PyTorch, and XGBoost.
 
-It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
 
 * To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
 

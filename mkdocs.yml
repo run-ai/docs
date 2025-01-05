@@ -352,8 +352,8 @@ nav:
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
-      - 'Workload at Run:ai' : 'Researcher/workloads/workloads-at-runai.md'
-      - "Run:ai workload types": 'Researcher/workloads/workload-types.md'
+      - 'Workloads at Run:ai' : 'Researcher/workloads/workloads-at-runai.md'
+      - "Workload Types": 'Researcher/workloads/workload-types.md'
       - 'Managing Workloads' : 'Researcher/workloads/managing-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
