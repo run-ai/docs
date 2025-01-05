@@ -8,7 +8,7 @@ The Cluster table provides a quick and easy way to see the status of your cluste
 
 ## Clusters table
 
-The Clusters table can be found under Clusters in the Run:ai platform.
+The Clusters table can be found under __Resources__ in the Run:ai platform.
 
 The clusters table provides a list of the clusters added to Run:ai platform, along with their status.
 
@@ -31,7 +31,7 @@ The clusters table consists of the following columns:
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows. 
 
 ### Cluster status
 

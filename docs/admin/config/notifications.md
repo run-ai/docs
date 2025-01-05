@@ -18,7 +18,7 @@ Managing numerous data science workloads requires monitoring various stages, inc
 
 To enable email notifications for the system:
 
-1. Press *Tools & Settings*, then select *Notifications*.
+1. Press *General settings*, then select *Notifications*.
 
     !!! Note
         For SaaS deployments, use the *Enable email notifications* toggle.
@@ -35,7 +35,7 @@ Administrators can set system wide notifications for all the users in order to a
 
 To configure system notifications:
 
-1. Press *Tools & Settings*, then select *Notifications*.
+1. Press *General settings*, then select *Notifications*.
 2. In the *System notification* pane, press *+MESSAGE*.
 3. Enter your message in the text box. Use the formatting tool bar to add special formats to your message text.
 4. Enable the "Don't show this again" option to allow users to opt out of seeing the message multiple times.

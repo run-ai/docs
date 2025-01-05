@@ -7,10 +7,10 @@ For example, in an academic environment, a department can be the Physics Departm
 
 ## Departments
 
-The Departments table can be found under Departments in the Run:ai platform.
+The Departments table can be found under __Organization__ in the Run:ai platform.
 
 !!! Note
-    Departments are disabled, by default. If you cannot see Departments in the menu, then it must be enabled by your Administrator, under General Settings → Resources → Departments
+    Departments are disabled, by default. If you cannot see Departments in the menu, then it must be enabled by your Administrator, under General settings → Resources → Departments
 
 The Departments table lists all departments defined for a specific cluster and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 
@@ -38,7 +38,7 @@ The Departments table consists of the following columns:
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
 ### Node pools with quota associated with the department
 

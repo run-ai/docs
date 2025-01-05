@@ -54,7 +54,7 @@ To use Node Level Scheduler the Administrator should follow the steps:
     kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"nodeScheduler":{"enabled": true}}}}}'
     ```
 
-2. To enable ‘GPU resource optimization’ on your tenant’s, go to your tenant’s UI and press *Tools & Settings*, *General*, the open the *Resources* pane and toggle *Resource Optimization* to on.
+2. To enable ‘GPU resource optimization’ on your tenant’s, go to your tenant’s UI and press *General settings*, then open the *Resources* pane and toggle *GPU Resource Optimization* to on.
 
 3. To enable ‘Node Level Scheduler’ on any of the Node Pools you want to use this feature, go to the tenant’s UI ‘Node Pools’ tab (under ‘Nodes’), and either create a new Node-Pool or edit an existing Node-Pool. In the Node-Pool’s form, under the ‘Resource Utilization Optimization’ tab, change the ‘Number of workloads on each GPU’ to any value other than ‘Not Enforced’ (i.e. 2, 3, 4, 5).
 

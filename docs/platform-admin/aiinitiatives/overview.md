@@ -1,4 +1,4 @@
-# AI Initiatives
+# Adapting AI initiatives to your organization
 
 AI initiatives refer to advancing research, development, and implementation of AI technologies. These initiatives represent your business needs and involve collaboration between individuals, teams, and other stakeholders. AI initiatives require compute resources and a methodology to effectively and efficiently use those compute resources and split them among the different AI initiatives stakeholders. The building blocks of AI compute resources are GPUs, CPUs, and CPU memory, which are built into nodes (servers) and can be further grouped into node pools. Nodes and node pools are part of a Kubernetes Cluster.
 
@@ -88,13 +88,6 @@ Example: assigning resources to projects
 Run:ai system is using ‘Role Based Access Control’ (RBAC) to manage users’ access rights to the different objects of the system, its resources, and the set of allowed actions.  
 To allow AI researchers, ML engineers, Project Admins, or any other stakeholder of your AI initiatives to access projects and use AI compute resources with their AI initiatives, the administrator needs to assign users to projects. After a user is assigned to a project with the proper role, e.g. ‘L1 Researcher’, the user can submit and monitor its workloads under that project. Assigning users to departments is usually done to assign ‘Department Admin’ to manage a specific department. Other roles, such as ‘L1 Researcher’, can also be assigned to departments, this allows the researcher access to all projects within that department.
 
-## Submitting workloads
-
-Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally submit workloads from a project and use compute resources to run your AI initiatives.
-
-When a workload is submitted, it goes to the chosen Kubernetes cluster, and the Run:ai Scheduler handles it.
-
-The Scheduler’s main role is to find the best-suited node or nodes for each submitted workload, so that those nodes match the resources and other characteristics requested by the workload while adhering to the quota and fairness principles of the Run:ai system. A workload can be a single pod running on a single node, or a distributed workload using multiple pods, each running on a node (or part of a node). It is not rare to find large training workloads using 128 nodes and even more, or inference workloads using multiple pods and nodes. There are numerous types of workloads, some are Kubernetes native and some are 3rd party extensions on top of Kubernetes native pods.  The Run:ai Scheduler schedules any Kubernetes native workloads, Run:ai workloads, or any type of 3rd party workload.
 
 ## Scopes in the organization
 

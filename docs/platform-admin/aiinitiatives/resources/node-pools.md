@@ -12,7 +12,7 @@ Workloads can be submitted using a prioritized list of node pools, the node pool
 
 ## Node pools table
 
-The Node pools table can be found under **Nodes** in the Run:ai platform.
+The Node pools table can be found under **Resources** in the Run:ai platform.
 
 The Node pools table lists all the node pools defined in the Run:ai platform and allows you to manage them.
 
@@ -69,7 +69,7 @@ Click one of the values in the Workload(s) column, to view the list of workloads
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV  
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows. 
 * Show/Hide details - Click to view additional information on the selected row
 
 ### Show/Hide details

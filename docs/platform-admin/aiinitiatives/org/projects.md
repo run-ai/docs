@@ -7,7 +7,7 @@ For example, you may have several people involved in a specific face-recognition
 
 ## Projects table
 
-The Projects table can be found under Projects in the Run:ai platform.
+The Projects table can be found under __Organization__ in the Run:ai platform.
 
 The Projects table provides a list of all projects defined for a specific cluster, and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 
@@ -93,7 +93,7 @@ Click one of the values of Workload(s) column, to view the list of workloads and
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
 ## Adding a new project
 

@@ -2,10 +2,10 @@ This article explains the procedure to manage workload policies.
 
 ## Workload policies table
 
-The Workload policies table can be found under Tools & Settings in the Run:ai platform.
+The Workload policies table can be found under **Policies** in the Run:ai platform.
 
 !!! Note
-    Workload policies are disabled by default. If you cannot see Workload policies in the menu, then it must be enabled by your administrator, under General Settings → Workloads → Policies
+    Workload policies are disabled by default. If you cannot see Workload policies in the menu, then it must be enabled by your administrator, under General settings → Workloads → Policies
 
 The Workload policies table provides a list of all the policies defined in the platform, and allows you to manage them.
 

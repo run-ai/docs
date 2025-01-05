@@ -1,6 +1,6 @@
 # Deploy inference workloads with NVIDIA NIM
 
-This article explains how to create an inference workload via the Run:ai UI using NVIDIA NIM.
+This article explains how to deploy a GenAI model from Nvidia NIM as an inference workload via the Run:ai UI.
 
 An inference workload provides the setup and configuration needed to deploy your trained model for real-time or batch predictions. It includes specifications for the container image, data sets, network settings, and resource requests required to serve your models.
 
@@ -8,7 +8,7 @@ The inference workload is assigned to a project and is affected by the project�
 
 To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workloads in Run:ai](overviews/workload-support.md).
 
-![](img/creating-inference-workloads.png)
+![](img/inference-workload.png)
 
 ## Creating a NIM inference workload
 
@@ -93,7 +93,7 @@ To add a new inference workload:
     * Optional: Set __toleration(s)__ to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 
-            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General Settings → Workloads → Tolerations
+            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
 
         *   Click __+TOLERATION__
         *   Enter a __key__

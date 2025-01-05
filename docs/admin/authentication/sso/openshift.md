@@ -17,7 +17,7 @@ Follow the steps below to setup SSO with OpenShift.
 
 ### Adding the identity provider
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section and click **+IDENTITY PROVIDER**  
 3. Select **OpenShift V4**  
 4. Enter the **Base URL**, Client ID, and **Client Secret** from your OpenShift OAuth client.  
@@ -50,7 +50,7 @@ Follow the steps below to setup SSO with OpenShift.
 
 You can view the identity provider details and edit its configuration:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section  
 3. On the identity provider box, click **Edit identity provider**  
 4. You can edit either the **Base URL**, **Client ID**, **Client Secret**, or the **User attributes**
@@ -59,7 +59,7 @@ You can view the identity provider details and edit its configuration:
 
 You can remove the identity provider configuration:
 
-1. Go to **Tools & Settings** → **General**  
+1. Go to **General settings**  
 2. Open the Security section  
 3. On the identity provider card, click **Remove identity provider**  
 4. In the dialog, click **REMOVE** to confirm the action

@@ -8,7 +8,7 @@ For example, user **user@domain.com** is a **department admin** in **department 
 
 ## Access rules table
 
-The Access rules table can be found under **Tools & Settings** in the Run:ai platform.
+The Access rules table can be found under **Access** in the Run:ai platform.
 
 The Access rules table provides a list of all the access rules defined in the platform and allows you to manage them.
 
@@ -39,7 +39,7 @@ The Access rules table consists of the following columns:
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows. 
 
 ## Adding new access rules
 

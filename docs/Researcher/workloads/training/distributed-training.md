@@ -94,7 +94,7 @@ To add a new distributed training workload:
     * Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 
-            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General Settings → Workloads → Tolerations
+            Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
 
         *   Click __+TOLERATION__
         *   Enter a __key__
@@ -112,7 +112,7 @@ To add a new distributed training workload:
     * Optional: Set topology to let the workload be scheduled on nodes with a matching topology. Topology lets the workload to be scheduled on nodes within the same region, zone, placement group or any other topology you define.
 
         !!! Note 
-            Setting topology is disabled, by default. If you cannot see Topology in the menu, then it must be enabled by your Administrator, under General Settings → Workloads → Topology
+            Setting topology is disabled, by default. If you cannot see Topology in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Topology
         
          * Click __+TOPOLOGY__
          * Enter a __key__

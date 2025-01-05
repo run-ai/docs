@@ -5,7 +5,7 @@ Nodes are Kubernetes elements automatically discovered by the Run:ai platform. O
 
 ## Nodes table
 
-The Nodes table can be found under Nodes in the Run:ai platform.
+The Nodes table can be found under __Resources__ in the Run:ai platform.
 
 The Nodes table displays a list of predefined nodes available to users in the Run:ai platform.
 
@@ -75,7 +75,7 @@ This column is only viewable if your role in the Run:ai platform gives you read 
 * Search - Click SEARCH and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click COLUMNS and select the columns to display in the table  
-* Download table - Click MORE and then Click Download as CSV  
+* Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.  
 * Show/Hide details - Click to view additional information on the selected row
 
 ### Show/Hide details

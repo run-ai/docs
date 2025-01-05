@@ -108,7 +108,7 @@ Follow the steps below to add a new cluster.
 
 If this is your first cluster and you have completed the New Cluster form, start at step 3\. Otherwise, start at step 1\.
 
-1. In the Run:ai platform, go to __Clusters__  
+1. In the Run:ai platform, go to __Resources__  
 2. Click __+NEW CLUSTER__  
 3. Enter a unique name for your cluster  
 4. Optional: Chose the Run:ai cluster version (latest, by default)  

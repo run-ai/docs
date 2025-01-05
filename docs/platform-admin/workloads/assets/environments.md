@@ -11,7 +11,7 @@ An environment asset is a preconfigured building block that encapsulates aspects
 
 ## Environments table
 
-The Environments table can be found under __Workloads manager__ in the Run:ai platform.
+The Environments table can be found under __Workload manager__ in the Run:ai platform.
 
 The Environment table provides a list of all the environment defined in the platform and allows you to manage them.
 

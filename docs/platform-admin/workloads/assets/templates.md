@@ -5,7 +5,7 @@ A template is a pre-set configuration that is used to quickly configure and subm
 
 ## Workspace templates table
 
-Access to the Templates table can be found on the left-hand menu in the Run:ai platform.
+The Templates table can be found under __Workload manager__ in the Run:ai User interface.
 
 The Templates table provides a list of all the templates defined in the platform, and allows you to manage them.
 
@@ -32,7 +32,7 @@ The Templates table consists of the following columns:
 * Search - Click __SEARCH__ and type the value to search by  
 * Sort - Click each column header to sort by  
 * Column selection - Click __COLUMNS__ and select the columns to display in the table  
-* Download table - Click __MORE__ and then Click Download as CSV  
+* Download table - Click __MORE__ and then click Download as CSV. Export to CSV is limited to 20,000 rows. 
 * Refresh (optional) - Click __REFRESH__ to update the table with the latest data  
 * Show/Hide details (optional) - Click to view additional information on the selected row
 
