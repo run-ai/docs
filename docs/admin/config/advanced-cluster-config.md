@@ -59,7 +59,7 @@ Label the nodes using the below:
 * operator: Operator defining the inclusion/exclusion condition (In, NotIn, Exists, DoesNotExist).
 * values: List of values for the key when using In or NotIn.
 
-The below example shows how to exclude nodes by filtering out non-NVIDIA GPUs in a cluster with mixed nodes, based on product type GPU label:
+The below example shows how to include NVIDIA GPUs only and exclude all other GPU types in a cluster with mixed nodes, based on product type GPU label:
 
 ``` bash
 nodeSelectorTerms:
