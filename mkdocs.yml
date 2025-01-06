@@ -352,9 +352,9 @@ nav:
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads' :
-      - 'Workloads at Run:ai' : 'Researcher/workloads/workloads-at-runai.md'
+      - 'Introduction to Workloads' : 'Researcher/workloads/introduction-to-workloads.md'
       - "Workload Types": 'Researcher/workloads/workload-types.md'
-      - 'Managing Workloads' : 'Researcher/workloads/managing-workloads.md'
+      - 'Workloads' : 'Researcher/workloads/managing-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
@@ -365,7 +365,7 @@ nav:
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
       - 'Workspace' :
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
-        - 'Create a Workspace' :  'Researcher/workloads/workspaces/workspace-v2.md'
+        - 'Running Workspaces' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Training' : 
         - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/trainings-v2.md'
         - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training.md'

@@ -6,9 +6,9 @@ An inference workload provides the setup and configuration needed to deploy your
 
 The inference workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workloads in Run:ai](overviews/workload-support.md).
+To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
 
-![](img/inference-workload.png)
+![](../img/inference-workload.png)
 
 ## Creating a Hugging Face inference workload
 
@@ -45,7 +45,7 @@ To add a new inference workload:
 
                         This option applies when the purpose is to create credentials based on an existing secret
                         
-                        * Select a secret from the list (the list is empty if no secrets were [created in advance](assets/credentials.md#creating-secrets-in-advance))
+                        * Select a secret from the list (the list is empty if no secrets were [created in advance](../assets/credentials.md#creating-secrets-in-advance))
                     
                     * __New secret__
                         
@@ -73,7 +73,7 @@ To add a new inference workload:
 
 9.  Select the __compute resource__ for your inference workload
     *   Select a compute resource or click __+NEW COMPUTE RESOURCE__ to add a new compute resource to the gallery.  
-        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](assets/compute.md). Once created, the new compute resource will be automatically selected.
+        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../assets/compute.md). Once created, the new compute resource will be automatically selected.
     *   Optional: Set the __minimum and maximum__ number of replicas to be scaled up and down to meet the changing demands of inference services.
     *   If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set __conditions for creating a new replica__. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources. 
 
@@ -90,10 +90,10 @@ To add a new inference workload:
         When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
         *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
         *   Click __+NODE POOL__ to add a new node pool from the list of node pools that were defined on the cluster.  
-            To configure a new node pool and for additional information, see [node pools](../../platform-admin/aiinitiatives/resources/node-pools.md).
+            To configure a new node pool and for additional information, see [node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md).
     *   Select a __node affinity__ to schedule the workload on a specific node type.  
-        If the administrator added a ‘[node type (affinity)](../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
-        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
+        If the administrator added a ‘[node type (affinity)](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
+        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
     * Optional: Set __toleration(s)__ to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 

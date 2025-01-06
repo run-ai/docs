@@ -1,4 +1,4 @@
-# Running Jupyter Notebook using workspaces
+# Running Jupyter Notebook Using Workspaces
 
 
 This guide provides a step-by-step walkthrough for running a Jupyter Notebook using workspaces.

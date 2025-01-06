@@ -1,10 +1,10 @@
-# Running workspaces
+# Running Workspaces
 
 This article explains how to create a workspace via the Run:ai UI.
 
 A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in a single place.
 
-To learn more about the workspace workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workloads in Run:ai](../overviews/workload-support.md).
+To learn more about the workspace workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
 
 ![](img/creating-workspace.png)
 

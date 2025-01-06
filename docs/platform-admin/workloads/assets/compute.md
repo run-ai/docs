@@ -1,6 +1,6 @@
 This article explains what compute resources are and how to create and use them.
 
-Compute resources are one type of workload asset. A compute resource is a template that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
+Compute resources are one type of [workload asset](overview.md). A compute resource is a template that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
 
 A compute resource asset is a preconfigured building block that encapsulates all the specifications of compute requirements for the workload including:
 

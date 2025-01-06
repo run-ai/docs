@@ -1,4 +1,4 @@
-# Workloads at Run:ai
+# Introduction to Workloads
 
 Run:ai enhances visibility and simplifies [management](../../Researcher/workloads/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../../platform-admin/aiinitiatives/overview.md). 
 

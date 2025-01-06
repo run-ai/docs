@@ -6,9 +6,9 @@ An inference workload provides the setup and configuration needed to deploy your
 
 The inference workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workloads in Run:ai](overviews/workload-support.md).
+To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
 
-![](img/inference-workload.png)
+![](../img/inference-workload.png)
 
 ## Creating a custom inference workload
 
@@ -27,7 +27,7 @@ To add a new custom inference workload:
     In the next step:
 8.  Select the __environment__ for your inference workload
     *   Select an environment or click __+NEW ENVIRONMENT__ to add a new environment to the gallery.  
-        For a step-by-step guide on adding environments to the gallery, see [Environments](assets/environments.md). Once created, the new environment will be automatically selected.
+        For a step-by-step guide on adding environments to the gallery, see [Environments](../assets/environments.md). Once created, the new environment will be automatically selected.
     *   Set an inference __serving endpoint__. The connection protocol and the container port are defined within the environment
         * Optional: Modify who can access the endpoint
             * __Public (default)__
@@ -76,12 +76,12 @@ To add a new custom inference workload:
                     * Enter a value according to the provided instructions
                 * __Credentials__ - Select existing credentials as the environment variable
                     * Select a __credential name__
-                    To add new credentials to the credentials list, and for additional information, see [Credentials](assets/credentials.md).
+                    To add new credentials to the credentials list, and for additional information, see [Credentials](../assets/credentials.md).
                     * Select a __secret key__
 
 9.  Select the __compute resource__ for your inference workload
     *   Select a compute resource or click __+NEW COMPUTE RESOURCE__ to add a new compute resource to the gallery.  
-        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](assets/compute.md). Once created, the new compute resource will be automatically selected.
+        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../assets/compute.md). Once created, the new compute resource will be automatically selected.
     *   Optional: Set the __minimum and maximum__ number of replicas to be scaled up and down to meet the changing demands of inference services.
     *   If the number of minimum and maximum replicas are different,  autoscaling will be triggered and you'll need to set __conditions for creating a new replica__. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.    
         * Select a __variable__ - The variable's values will be monitored via the container's port.
@@ -97,10 +97,10 @@ To add a new custom inference workload:
         When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
         *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
         *   Click __+NODE POOL__ to add a new node pool from the list of node pools that were defined on the cluster.  
-            To configure a new node pool and for additional information, see [node pools](../../platform-admin/aiinitiatives/resources/node-pools.md).
+            To configure a new node pool and for additional information, see [node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md).
     *   Select a __node affinity__ to schedule the workload on a specific node type.  
-        If the administrator added a ‘[node type (affinity)](../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
-        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
+        If the administrator added a ‘[node type (affinity)](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
+        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
     * Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 
@@ -119,7 +119,7 @@ To add a new custom inference workload:
             *   __Any__ - All effects above match.
 10. Optional: Select __data sources__ for your inference workload 
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](assets/datasources.md).  
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../assets/datasources.md).  
     Once created, the new data source will be automatically selected.
     *   Optional: Modify the data target location for the selected data source(s).
 
