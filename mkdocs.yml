@@ -351,7 +351,7 @@ nav:
       - 'Scheduling Basics' :
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
-    - 'Workloads' :
+    - 'Workloads in Run:ai' :
       - 'Introduction to Workloads' : 'Researcher/workloads/introduction-to-workloads.md'
       - "Workload Types": 'Researcher/workloads/workload-types.md'
       - 'Workloads' : 'Researcher/workloads/managing-workloads.md'
@@ -363,13 +363,13 @@ nav:
         - 'Templates': 'Researcher/workloads/assets/templates.md'
         - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
-      - 'Workspace' :
+      - 'Experiment Using Workspaces' :
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Running Workspaces' :  'Researcher/workloads/workspaces/workspace-v2.md'
-      - 'Training' : 
+      - 'Train Models Using Training' : 
         - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/trainings-v2.md'
         - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training.md'
-      - 'Inference' :
+      - 'Deploy Models Using Inference' :
         - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
         - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
         - 'Deploy Inference Workloads from Hugging Face' : 'Researcher/workloads/inference/hugging-face-inference.md'
