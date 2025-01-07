@@ -255,6 +255,23 @@ Runai critical problem
 | **Severity** | Critical |
 | **Diagnosis** | Check Run:ai alerts in Prometheus to identify any active critical alerts |
 
+Unknown state alert for a node
+
+| Meaning | The Kubernetes node hosting GPU workloads is in an unknown state, and its health and readiness cannot be determined. |
+| :---- | :---- |
+| **Impact** | This may interrupt GPU workload scheduling and execution. |
+| **Severity** | **Critical** - Node is either unschedulable or has unknown status. The node is in one of the following states: `Ready=Unknown`: The control plane cannot communicate with the node. `Ready=False`: The node is not healthy. `Unschedulable=True`: The node is marked as unschedulable. |
+| **Diagnosis** | Check the node's status using kubectl describe node, verify Kubernetes API server connectivity, and inspect system logs for GPU-specific or node-level errors. |
+
+
+Low Memory Node Alert
+
+| Meaning | The Kubernetes node hosting GPU workloads has insufficient memory to support current or upcoming workloads. |
+| :---- | :---- |
+| **Impact** | GPU workloads may fail to schedule, experience degraded performance, or crash due to memory shortages, disrupting dependent applications. |
+| **Severity** | **Critical** - Node is using more than 90% of its memory. **Warning** - Node is using more than 80% of its memory. |
+| **Diagnosis** | Use kubectl top node to assess memory usage, identify memory-intensive pods, consider resizing the node or optimizing memory usage in affected pods. |
+
 Runai daemonSet rollout stuck / Runai DaemonSet unavailable on nodes
 
 | Meaning | There are currently 0 available pods for the `runai` daemonset on the relevant node |
@@ -290,6 +307,9 @@ Runai StatefulSet insufficient replicas / Runai StatefulSet no available replica
 | **Severity** | Critical |
 | **Diagnosis** | To diagnose the issue, follow these steps: Check the status of the stateful sets in the `runai-backend` namespace by running the following command:`kubectl get statefulset -n runai-backend` Identify any stateful sets that have no running pods. These are the ones that might be causing the problem. |
 | **Troubleshooting/Mitigation** | Once you've identified the problematic stateful sets, follow these steps to mitigate the issue: Describe the stateful set to get detailed information on why it cannot create pods. Replace `X` with the name of the stateful set:`kubectl describe statefulset X -n runai-backend` Review the description output to understand the root cause of the issue. Look for events or error messages that explain why the pods are not being created. If you're unable to resolve the issue based on the information gathered, contact Run:ai support for further assistance. |
+
+
+
 
 ### Adding a custom alert
 
