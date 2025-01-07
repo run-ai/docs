@@ -32,6 +32,7 @@ The following configurations allow you to enable or disable features, control pe
 | spec.global.tolerations (object) | Configure Kubernetes tolerations for Run:ai system-level services. | | 
 | spec.daemonSetsTolerations (object) | Configure Kubernetes tolerations for Run:ai daemonSets / engine. | |  
 | spec.runai-container-toolkit.logLevel (boolean) | Specifies the run:ai-container-toolkit logging level: either 'SPAM', 'DEBUG', 'INFO', 'NOTICE', 'WARN', or 'ERROR' | INFO |
+| node-scale-adjuster.args.gpuMemoryToFractionRatio (object) | A scaling-pod requesting a single GPU device will be created for every 1 to 10 pods requesting fractional GPU memory (1/gpuMemoryToFractionRatio). This value represents the ratio (0.1-0.9) of fractional GPU memory (any size) to GPU fraction (portion) conversion. | 0.1
 | spec.global.core.dynamicFractions.enabled (boolean) | Enables dynamic GPU fractions | true |
 | spec.global.core.swap.enabled (boolean) | Enables memory swap for GPU workloads | false |
 | spec.global.core.swap.limits.cpuRam (string) | Sets the CPU memory size used to swap GPU workloads | 100Gi |
