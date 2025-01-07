@@ -368,8 +368,10 @@ nav:
         - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Running Workspaces' :  'Researcher/workloads/workspaces/workspace-v2.md'
       - 'Train Models Using Training' : 
-        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/trainings-v2.md'
-        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training.md'
+        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
+           - 'Standard Training Quick Start' : 'Researcher/workloads/training/standard-training/quick-starts/standard-training-quickstart.md'
+        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
+           - 'Distributed Training Quick Start' : 'Researcher/workloads/training/distributed-training/quick-starts/distributed-training-quickstart.md'
       - 'Deploy Models Using Inference' :
         - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
         - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'

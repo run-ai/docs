@@ -102,24 +102,21 @@ Before you start, make sure:
 
 
 === "CLI V1"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project:
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
     
     ``` bash
     runai config project "project-name"  
-    runai submit jup1 --jupyter -g 1
+    runai submit "workload-name" --jupyter -g 1
     ```
 
     This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
 
-    !!! Note
-        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
-
 === "CLI V2"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project:
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
     ``` bash
     runai project set "project-name"
-    runai workspace submit jup1  --image jupyter/scipy-notebook --gpu-devices-request 1 \
+    runai workspace submit "workload-name"  --image jupyter/scipy-notebook --gpu-devices-request 1 \
         --external-url container=8888  --command start-notebook.sh  \
         -- --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
     ```
@@ -135,7 +132,7 @@ Before you start, make sure:
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer <TOKEN>' \ # (2)
     -d '{ 
-        "name": "jup1", 
+        "name": "workload-name", 
         "projectId": "<PROJECT-ID>", '\ # (3)
         "clusterId": "<CLUSTER-UUID>", \ # (4)
         "spec": {
