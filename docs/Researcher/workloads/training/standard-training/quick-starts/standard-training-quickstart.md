@@ -48,11 +48,14 @@ Before you start, make sure:
     7. Enter a __name__ for the standard training workload (if the name already exists in the project, you will be requested to submit a different name)
     8. Click __CONTINUE__
     9. Click __+NEW ENVIRONMENT__
+        
         a. Enter __quickstart__ as the name
+        
         b. Enter __runai.jfrog.io/demo/quickstart__ as the __Image URL__
+        
         c. Click __CREATE ENVIRONMENT__
      
-    10.Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
+    10. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
         * If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
         
         ??? "Create a one-gpu compute resource"

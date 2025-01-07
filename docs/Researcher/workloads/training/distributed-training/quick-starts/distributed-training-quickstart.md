@@ -47,8 +47,11 @@ Before you start, make sure:
     7. Enter a __name__ for the distributed training workload (if the name already exists in the project, you will be requested to submit a different name)
     8. Click __CONTINUE__
     9. Click __+NEW ENVIRONMENT__
+       
         a. Enter __pytorch-dt__ as the name
+        
         b. Enter __kubeflow/pytorch-dist-mnist:latest__ as the __Image URL__
+        
         c. Click __CREATE ENVIRONMENT__
      
     10. When the previous screen comes up, enter 2 workers and select ‘small-fraction’ as the compute resource for your workload
