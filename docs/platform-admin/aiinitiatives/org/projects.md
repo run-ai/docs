@@ -121,11 +121,11 @@ To create a new Project:
     * CPU memory  
     This column is displayed only if CPU quota is enabled via the General settings.  
     The amount of CPU memory you want to allocate for this project in this node pool (in Megabytes or Gigabytes).  
-    * Over quota / Over quota priority  
-    If over-quota priority is enabled via the General settings then over-quota priority is presented, otherwise over-quota  is presented  
+    * Over quota / Over quota weight 
+    If over-quota weight is enabled via the General settings then over-quota weight is presented, otherwise over-quota  is presented  
         * Over quota  
         When enabled, the project can use non-guaranteed overage resources above its quota in this node pool. The amount of the non-guaranteed overage resources for this project is calculated proportionally to the project quota in this node pool. When disabled, the project cannot use more resources than the guaranteed quota in this node pool.  
-        * Over quota priority  
+        * Over quota weight 
         Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top  
         of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:  
             * Medium  
@@ -133,17 +133,14 @@ To create a new Project:
             * None  
             When set, the project cannot use more resources than the guaranteed quota in this node pool.  
             * Lowest  
-            Over-quota priority ‘lowest’ has a unique behavior, because its weight is 0, it can only use over-quota (unused overage) resources if no other project needs them, and any project with a higher over-quota priority can snap the average resources at any time.
+            Over-quota weight ‘lowest’ has a unique behavior, because its weight is 0, it can only use over-quota (unused overage) resources if no other project needs them, and any project with a higher over-quota weight can snap the average resources at any time.
 
 !!! Note
-    Setting the quota to 0 (either GPU, CPU, or CPU memory) and the over-quota to ‘disabled’ or over-quota priority to ‘none’ means the project is blocked from using those resources on this node pool.
+    Setting the quota to 0 (either GPU, CPU, or CPU memory) and the over-quota to ‘disabled’ or over-quota weight to ‘none’ means the project is blocked from using those resources on this node pool.
 
 When no node pools are configured, you can set the same parameters but it is for the whole project, instead of per node pool.
 
 After node pools are created, you can set the above parameters __for each node-pool separately__.
-
-![](img/quota-mgmt.png)
-
 
 6. Set Scheduling rules as required. You can have a scheduling rule for:  
     * Idle GPU timeout  

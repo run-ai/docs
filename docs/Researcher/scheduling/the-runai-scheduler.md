@@ -42,9 +42,9 @@ Each project and department includes a set of guaranteed resource quotas per nod
 
 Projects and departments can have a share in the unused resources of any node pool, beyond their quota of resources. We name these resources as over quota resources. The admin configures the over-quota parameters per node pool for each project and department.
 
-#### Over quota priority
+#### Over quota weight
 
-Projects can receive a share of the cluster/node pool unused resources when the over-quota priority setting is enabled, the part each Project receives depends on its over-quota priority value, and the total weights of all other projects’ over-quota priorities. The admin configures the over-quota priority parameters per node pool for each project and department.
+Projects can receive a share of the cluster/node pool unused resources when the over-quota weight setting is enabled, the part each Project receives depends on its over-quota weight value, and the total weights of all other projects’ over-quota priorities. The admin configures the over-quota weight parameters per node pool for each project and department.
 
 #### Fairshare and fairshare balancing
 
@@ -119,7 +119,7 @@ Reclaim is an inter-project (and inter-department) resource balancing action tha
 This mode of operation means that a lower priority workload submitted in one project (e.g. training) can reclaim resources from a project that runs a higher priority workload (e.g. preemptive workspace) if fairness balancing is required.
 
 !!! Note
-    Only preemptive workloads can go over-quota as they are susceptible to reclaim (cross-projects preemption) of the over-quota resources they are using. The amount of over-quota resources a project can gain depends on the over-quota priority or quota (if over-quota priority is disabled). Departments’ over-quota is always proportional to its quota.
+    Only preemptive workloads can go over-quota as they are susceptible to reclaim (cross-projects preemption) of the over-quota resources they are using. The amount of over-quota resources a project can gain depends on the over-quota weight or quota (if over-quota weight is disabled). Departments’ over-quota is always proportional to its quota.
 
 #### Priority preemption within a project
 
@@ -139,7 +139,7 @@ The example below illustrates a split of quota between different projects and de
 
 __Legend:__
 
-* __OQP__ = Over-quota priority
+* __OQP__ = Over-quota weight
 * __OQ__ = Over-quota
 
 ![](img/quota-split.png)
