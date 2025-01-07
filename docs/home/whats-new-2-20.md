@@ -24,8 +24,7 @@ You can now define the number of runs a training workload must complete to be co
 
 
 ### Configurable grace period for workload preemption
-You can now set a grace period in the UI, API and CLI V2 providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for [standard](../Researcher/workloads/training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training.md) workloads. The grace period can be configured between 0 seconds and 5 minutes. This avoids data loss and unnecessary retraining by ensuring the latest checkpoints are saved, especially, in case of checkpointing periods that are too far spread apart. This requires a minimum cluster version of 2.20. (Sherin)
-
+You can now set a grace period in the UI, API and CLI V2 providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for [standard](../Researcher/workloads/training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training.md) workloads. The grace period can be configured between 0 seconds and 5 minutes. This avoids data loss and unnecessary retraining, ensuring the latest checkpoints are saved. This requires a minimum cluster version of 2.20. 
 
 ### Pod deletion policy for terminal workloads
 
@@ -87,7 +86,7 @@ workload types. This enhancement provides better visibility into workload metada
 ## ML Engineers
 
 ### Enhanced visibility into rolling updates for inference workloads
-Run:ai now provides a phase message that provides detailed insights into the current state of the update, by hovering over the workload's status. This helps users monitor and manage updates more effectively. This requires a minimum cluster version of 2.20. See [rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates).
+Run:ai now provides a phase message that provides detailed insights into the current state of the update, by hovering over the workload's status. This helps users monitor and manage updates more effectively. This requires a minimum cluster version of 2.20. See [rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates) for more details.
 
 ### Inference serving endpoint configuration
 
@@ -150,12 +149,12 @@ Email notifications can now be configured via API in addition to the UI enabling
 * Run:ai now supports OpenShift version 4.17.
 
 ### Exclude Nodes in mixed node clusters
-Run:ai now allows you to exclude specific nodes in a mixed node cluster using the `nodeSelectorTerms` flag. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md).
+Run:ai now allows you to exclude specific nodes in a mixed node cluster using the `nodeSelectorTerms` flag. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md#runai-managed-nodes) for more details.
 
 ### Advanced configuration options for cluster services
 
-Introduced new cluster configuration options for setting node affinity and TolerationsNode affinity for Run:ai cluster services.
-These configuration ensure that the Run:ai cluster services are scheduled on the desired nodes. This requires a minimum cluster version of 2.20. (Sherin - check naming) See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md).
+Introduced new cluster configuration options for setting node affinity and tolerations for Run:ai cluster services.
+These configuration ensure that the Run:ai cluster services are scheduled on the desired nodes. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details.
 
 * `spec.global.affinity`
 * `spec.global.tolerations`
@@ -163,11 +162,11 @@ These configuration ensure that the Run:ai cluster services are scheduled on the
 
 ### Custom labels for built-in alerts
 
-Administrators can now add their own custom labels to the built-in alerts from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md).
+Administrators can now add their own custom labels to the built-in alerts from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for mode details.
 
 ### Enhanced configuration flexibility for cluster replica management
 
-Administrators can now use the `spec.global.replicaCount` to manage replicas for for Run:ai services. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md).
+Administrators can now use the `spec.global.replicaCount` to manage replicas for for Run:ai services. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details.
 
 ## Run:ai Developer
 
@@ -224,7 +223,6 @@ We recommend switching to **CLI v2**, which provides feature parity, backwards c
 
 Starting with version 2.20, the legacy **Jobs view** will be discontinued in favor of the more advanced **Workloads view**. The legacy submission form will still be accessible via the Workload manager view for a smoother transition. 
 
+### appID and appSecret deprecation
+Deprecating appID and appSecret parameters in the [Create and application token API](https://api-docs.run.ai/latest/tag/Tokens). To create application tokens, use your client credentials - Client ID and Client secret.
 
-Depracating these two, using client crdentials client secret and ID TBD Sherin
-"appID": "string",
-"appSecret": "string", TBD
