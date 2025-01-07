@@ -187,6 +187,7 @@ nav:
     - 'System Components' : 'home/components.md'
     - 'Whats New' :
       - 'Run:ai SaaS Updates' : 'home/saas-updates.md'
+      - 'Version 2.20' : 'home/whats-new-2-20.md'
       - 'Version 2.19' : 'home/whats-new-2-19.md'
       - 'Version 2.18' : 'home/whats-new-2-18.md'
       - 'Version 2.17' : 'home/whats-new-2-17.md'
