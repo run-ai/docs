@@ -23,6 +23,20 @@ For more details on Run:ai fractions see the [fractions quickstart](../Walkthrou
 !!! Info
     For interoperability with other Kubernetes schedulers, Run:ai creates special _reservation_ pods. Once a workload has been allocated a fraction of a GPU, Run:ai will create a pod in a dedicated `runai-reservation` namespace with the full GPU as a resource. This would cause other schedulers to understand that the GPU is reserved.    
 
+## Multi-GPU Fractions
+
+Run:ai also supports workload submission using multi-GPU fractions. Multi-GPU fractions work similarly to fractional single GPU workloads, however, the Run:ai Scheduler allocates the same fraction size on multiple GPU devices within the same node. For example, if practitioners  develop a new model that uses 8 GPUs and requires 40GB of memory per GPU, they can allocate 8×40GB with multi-GPU fractions instead of reserving the full memory of each GPU (e.g. 80GB). This leaves 40GB of GPU memory available on each of the 8 GPUs for other workloads within that node. This is useful during model development, where memory requirements are usually lower due to experimentation with smaller model or configurations. 
+
+This approach significantly improves GPU utilization and availability, enabling more precise and often smaller quota requirements for the end user. Time sharing where single GPUs can serve multiple workloads with fractions remains unchanged, only now, it serves multiple workloads using multi-GPU per workload, single GPU per workload, or a mix of both.
+
+### Configuring Multi-GPU Fractions
+
+Using the [compute resources](../workloads/assets/compute.md) asset,  you can define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB): 
+
+![](img/fractions-example1.png)
+
+![](img/fractions-example2.png)
+
 ## See Also
 
 * Fractions [quickstart](../Walkthroughs/walkthrough-fractions.md).

@@ -76,7 +76,25 @@ Once the ‘GPU Resource Optimization’ feature is enabled, you will be able to
 ![GPU Limit](img/GPU-resource-limit-enabled.png)
 
 !!! Note
-    To use Dynamic Fractions, *GPU devices per pod* must be equal to 1. If more than 1 GPU device is used per pod, or if a MIG profile is selected, Dynamic Fractions cannot be used for that Compute Resource (and any related pods).
-
-!!! Note
     When setting a workload with Dynamic Fractions, (for example, when using it with GPU Request or GPU memory Limits), you practically make the workload burstable. This means it can use memory that is not guaranteed for that workload and is susceptible to an ‘OOM Kill’ signal if the actual owner of that memory requires it back. This applies to non-preemptive workloads as well. For that reason, its recommended that you use Dynamic Fractions with Interactive workloads running Notebooks. Notebook pods are not evicted when their GPU process is OOM Kill’ed. This behavior is the same as standard Kubernetes burstable CPU workloads.
+
+
+## Multi-GPU Dynamic Fractions
+
+Run:ai also supports workload submission using multi-GPU dynamic fractions. Multi-GPU dynamic fractions work similarly to dynamic fractions on a single GPU workload, however, instead of a single GPU device, the Run:ai Scheduler allocates the same dynamic fraction pair (Request and Limit) on multiple GPU devices within the same node.  For example, if practitioners develop a new model that uses 8 GPUs and requires 40GB of memory per GPU, but may want to burst out and consume up to the full GPU memory, they can allocate 8×40GB with multi-GPU fractions and a limit of 80GB (e.g. H100 GPU) instead of reserving the full memory of each GPU (e.g. 80GB). This leaves 40GB of GPU memory available on each of the 8 GPUs for other workloads within that node.This is useful during model development, where memory requirements are usually lower due to experimentation with smaller model or configurations.
+
+This approach significantly improves GPU utilization and availability, enabling more precise and often smaller quota requirements for the end user. Time sharing where single GPUs can serve multiple workloads with dynamic fractions remains unchanged, only now, it serves multiple workloads using multi-GPU per workload.
+
+### Configuring Multi-GPU Dynamic Fractions
+
+You can configure multi-GPU dynamic fractions as follows:
+
+* Using the [compute resources](../workloads/assets/compute.md) asset, you can define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB), both with Request and Limit parameters: 
+
+![GPU Limit](../img/dynamic-fraction-example1.png)
+
+![GPU Limit](../img/dynamic-fraction-example2.png)
+
+* You can submit a workload with dynamic fractions using the CLI V2:
+
+![GPU Limit](../img/dynamic-fractions-CLI.png)
