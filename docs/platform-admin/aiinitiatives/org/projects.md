@@ -121,13 +121,12 @@ To create a new Project:
     * CPU memory  
     This column is displayed only if CPU quota is enabled via the General settings.  
     The amount of CPU memory you want to allocate for this project in this node pool (in Megabytes or Gigabytes).  
-    * Over quota / Over quota weight 
-    If over-quota weight is enabled via the General settings then over-quota weight is presented, otherwise over-quota  is presented  
+   
+    * Over quota / Over quota weight -  If over-quota weight is enabled via the General settings then over-quota weight is presented, otherwise over-quota is presented  
+       
         * Over quota  
-        When enabled, the project can use non-guaranteed overage resources above its quota in this node pool. The amount of the non-guaranteed overage resources for this project is calculated proportionally to the project quota in this node pool. When disabled, the project cannot use more resources than the guaranteed quota in this node pool.  
-        * Over quota weight 
-        Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top  
-        of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:  
+        When enabled, the project can use non-guaranteed overage resources above its quota in this node pool. The amount of the non-guaranteed overage resources for this project is calculated proportionally to the project quota in this node pool. When disabled, the project cannot use more resources than the guaranteed quota in this node pool.         
+        * Over quota weight - Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:  
             * Medium  
             The default value. The Admin can change the default to any of the following values: High, Low, Lowest, or None.  
             * None  

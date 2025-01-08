@@ -42,7 +42,7 @@ Different types of workloads have different levels of support. Understanding wha
 |  | Training - Standard | Workspace | Inference | Training - distributed |  |
 | [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md) | v | v | v |           v            | v |
 | [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
-| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v |           v            | v |
+| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-weight) | v | v | v |           v            | v |
 | [Node pools](../../aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
 | Bin packing / Spread | v | v | v |           v            | v |
 | Fractions | v | v | v |           v            | v |

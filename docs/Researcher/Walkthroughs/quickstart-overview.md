@@ -2,7 +2,7 @@
 Below is a set of Quickstart documents. The purpose of these documents is to get you acquainted with an aspect of Run:ai in the simplest possible form.
 
 !!! Note
-    The Quickstart documents are based solely on the command-line interface. The same functionality can be achieved by using the [Workloads](../workloads/workspaces/overview.md) User interface which allows for Workload submission and log viewing. 
+    The Quickstart documents are based solely on the command-line interface. The same functionality can be achieved by using the [Workloads](../../platform-admin/workloads/overviews/managing-workloads.md) User interface which allows for Workload submission and log viewing. 
 
 
 Follow the Quickstart documents below to learn more:
