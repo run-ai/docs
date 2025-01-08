@@ -8,12 +8,12 @@ Below is a set of Quickstart documents. The purpose of these documents is to get
 Follow the Quickstart documents below to learn more:
 
 * Training Quickstart documents:
-    * [Unattended training sessions](walkthrough-train.md)
-    * [Distributed Training](walkthrough-distributed-training.md)
+    * [Standard training sessions](../workloads/training/standard-training/quickstart-standard-training.md)
+    * [Distributed Training](../workloads/training/distributed-training/quickstart-distributed-training.md)
 * Build Quickstart documents: 
     * [Basic Interactive build sessions](walkthrough-build.md)
     * [Interfactive build session with connected ports](walkthrough-build-ports.md)
-    * [Jupyter Notebook](quickstart-jupyter.md)
+    * [Jupyter Notebook](../workloads/workspaces/quickstart-jupyter.md)
     * [Visual Studio Web](quickstart-vscode.md)
 * [Inference](quickstart-inference.md)
 * GPU Allocation documents:

@@ -93,7 +93,7 @@ Before you start, make sure:
     This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.
 
 === "CLI V2"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project:
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
     ``` bash
     runai project set "project-name"
