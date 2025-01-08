@@ -28,7 +28,7 @@ The following configurations allow you to enable or disable features, control pe
 | spec.global.syncServices (object) | Defines resource constraints uniformly for the entire set of Run:ai sync services. For more information, see Resource requests and limits of Pod and container| `{resources: {}}` |
 | spec.global.workloadServices (object) | Defines resource constraints uniformly for the entire set of Run:ai workload services. For more information, see Resource requests and limits of Pod and container | `{resources: {}}` |
 | spec.global.nodeAffinity.restrictScheduling (boolean) | Enables setting node roles and restricting workload scheduling to designated nodes| false |
-| spec.global.affinity (object) | Sets the system nodes where Run:ai system-level services are scheduled. Using global.affinity will overwrite the [node roles](node-roles.md) set using the Administrator CLI (runai-adm). | Nodes labelled with preferred `node-role.kubernetes.io/runai-system` |
+| spec.global.affinity (object) | Sets the system nodes where Run:ai system-level services are scheduled. Using global.affinity will overwrite the [node roles](node-roles.md) set using the Administrator CLI (runai-adm). | Prefer to schedule on nodes that are labeled with `node-role.kubernetes.io/runai-system` |
 | spec.global.tolerations (object) | Configure Kubernetes tolerations for Run:ai system-level services. | | 
 | spec.daemonSetsTolerations (object) | Configure Kubernetes tolerations for Run:ai daemonSets / engine. | |  
 | spec.runai-container-toolkit.logLevel (boolean) | Specifies the run:ai-container-toolkit logging level: either 'SPAM', 'DEBUG', 'INFO', 'NOTICE', 'WARN', or 'ERROR' | INFO |
