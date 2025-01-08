@@ -35,6 +35,11 @@ The Run:ai control plane services require the following resources:
 
 If Run:ai cluster is planned to be installed on the same cluster as the Run:ai control plane: Ensure the control plane requirements are in addition to the Run:ai cluster [hardware requirements](../../cluster-setup/cluster-prerequisites.md#hardware-requirements).
 
+### ARM Limitation
+
+The control plane does not support CPU nodes with ARM64k architecture. To schedule the Run:ai control plane services on supported nodes, use the `global.affinity` configuration paramter as detailed in [Additional Run:ai configurations](backend.md#additional-runai-configurations-optional).
+
+
 ## Run:ai software requirements
 
 ### Cluster Nodes
