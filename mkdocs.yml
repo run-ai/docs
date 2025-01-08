@@ -301,6 +301,7 @@ nav:
         - 'Scheduling Rules' : 'platform-admin/aiinitiatives/org/scheduling-rules.md'
       - 'Managing your resources' : 
         - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
+        - 'Configuring NVIDIA MIG Profiles' : platform-admin/aiinitiatives/resources/configuring-mig-profiles.md
         - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
     - 'Workloads' : 
       - 'Overview' : 'platform-admin/workloads/workload-overview.md'
