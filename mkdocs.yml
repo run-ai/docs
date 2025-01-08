@@ -303,9 +303,9 @@ nav:
         - 'Nodes' : 'platform-admin/aiinitiatives/resources/nodes.md'
         - 'Node Pools' : 'platform-admin/aiinitiatives/resources/node-pools.md'
     - 'Workloads' : 
-      - 'Overview' : 'platform-admin/workloads/workload-overview.md'
-      - 'Managing Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
-      - 'Workload Support' : 'platform-admin/workloads/overviews/workload-support.md'
+      - 'Introduction to Workloads' : 'platform-admin/workloads/overviews/introduction-to-workloads.md'
+      - "Workload Types": 'platform-admin/workloads/overviews/workload-types.md'
+      - 'Workloads' : 'platform-admin/workloads/overviews/managing-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
@@ -353,9 +353,9 @@ nav:
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
         - 'Queue Fairness' : 'Researcher/Walkthroughs/walkthrough-queue-fairness.md'
     - 'Workloads in Run:ai' :
-      - 'Introduction to Workloads' : 'Researcher/workloads/introduction-to-workloads.md'
-      - "Workload Types": 'Researcher/workloads/workload-types.md'
-      - 'Workloads' : 'Researcher/workloads/managing-workloads.md'
+      - 'Introduction to Workloads' : 'Researcher/workloads/overviews/introduction-to-workloads.md'
+      - "Workload Types": 'Researcher/workloads/overviews/workload-types.md'
+      - 'Workloads' : 'Researcher/workloads/overviews/managing-workloads.md'
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
