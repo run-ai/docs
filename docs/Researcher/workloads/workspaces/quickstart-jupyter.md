@@ -98,7 +98,7 @@ Before you start, make sure:
 
     10. Click __CREATE WORKSPACE__
         
-        After the workspace is created, it is added to the [workloads table](../workloads/managing-workloads.md).
+        After the workspace is created, it is added to the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).
 
 
 === "CLI V1"
@@ -186,4 +186,4 @@ Before you start, make sure:
 
 ## Next Steps
 
-Manage and monitor your newly created workspace using the [workloads table](../workloads/managing-workloads.md).
+Manage and monitor your newly created workspace using the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).

@@ -143,5 +143,5 @@ Before you start, make sure:
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../workloads/managing-workloads.md).
+* Manage and monitor your newly created workload using the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 * After validating your training performance and results, deploy your model using [inference](../../../inference/custom-inference.md).

@@ -123,4 +123,4 @@ To add a new inference workload:
 
 ## Managing and monitoring
 
-After the inference workload is created, it is added to the [Workloads](overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the inference workload is created, it is added to the [Workloads](../../../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.

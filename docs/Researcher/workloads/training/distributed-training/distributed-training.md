@@ -6,9 +6,9 @@ A training workload contains the setup and configuration needed for building you
 
 The distributed training workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
+To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../../../platform-admin/workloads/overviews/workload-types.md).
 
-![](../img/training-workload.png)
+![](../../img/training-workload.png)
 
 ## Creating a distributed training workload
 
@@ -36,13 +36,13 @@ To add a new distributed training workload:
         * Workers & master
         * Workers only
 
-6.  Select a __preconfigured [template](../assets/templates.md)__ or select __Start from scratch__ to launch a new training workload quickly
+6.  Select a __preconfigured [template](../../../../platform-admin/workloads/assets/templates.md)__ or select __Start from scratch__ to launch a new training workload quickly
 7.  Enter a unique __name__ for the training workload (if the name already exists in the project, you will be requested to submit a different name)
 8.  Click __CONTINUE__  
     In the next step:
 9.  Select the __environment__ for your training workload
     *   Select an environment or click __+NEW ENVIRONMENT__ to add a new environment to the gallery.  
-        For a step-by-step guide on adding environments to the gallery, see [Environments](../assets/environments.md). Once created, the new environment will be automatically selected.
+        For a step-by-step guide on adding environments to the gallery, see [Environments](../../../../platform-admin/workloads/assets/environments.md). Once created, the new environment will be automatically selected.
     *   Set the connection for your __tool(s)__. The tools are configured as part of the environment.
         *   __External URL__
             *   __Custom URL__
@@ -77,12 +77,12 @@ To add a new distributed training workload:
                     * Enter a value according to the provided instructions
                 * __Credentials__ - Select existing credentials as the environment variable
                     * Select a __credential name__
-                    To add new credentials to the credentials list, and for additional information, see [Credentials](../assets/credentials.md).
+                    To add new credentials to the credentials list, and for additional information, see [Credentials](../../../../platform-admin/workloads/assets/credentials.md).
                     * Select a __secret key__
 10.  Select the __compute resource__ for your training workload
     * Set the number of workers for your workload
     *   Select a compute resource or click __+NEW COMPUTE RESOURCE__ to add a new compute resource to the gallery.  
-        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../assets/compute.md). Once created, the new compute resource will be automatically selected.
+        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../../../platform-admin/workloads/assets/compute.md). Once created, the new compute resource will be automatically selected.
     *   Optional: Set the __order of priority__ for the __node pools__ on which the scheduler tries to run the workload.  
         When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
         *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
@@ -142,7 +142,7 @@ To add a new distributed training workload:
 12. Optional: Select __data sources__ for your training workload 
 
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](../assets/datasources.md).  
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../../../../platform-admin/workloads/assets/datasources.md).  
     Once created, the new data source will be automatically selected.
        *   Optional: Modify the data target location for the selected data source(s).
 
@@ -180,7 +180,7 @@ The effects of the policy are reflected in the training creation form:
 
 ## Managing and monitoring
 
-After the training workload is created, it is added to the [Workloads](overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the training workload is created, it is added to the [Workloads](../../../../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 

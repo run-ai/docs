@@ -27,7 +27,7 @@ There are four workload asset types used by the workload:
 
 ## Asset scope
 
-When a workload asset is created, a [scope](../../../platform-admin/aiinitiatives/overview.md#ai-initiatives) is required. The scope defines who in the organization can view and/or use the asset.
+When a workload asset is created, a [scope](../../../platform-admin/aiinitiatives/overview.md) is required. The scope defines who in the organization can view and/or use the asset.
 
 !!! Note
     When an asset is created via API, the scope can be the entire account, this is currently an experimental feature.

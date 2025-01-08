@@ -26,7 +26,7 @@ The __Workspace__ is where data scientists conduct initial research, experiment 
 
     Hence, the default for the Run:ai workspaces considerations is to allow scheduling those workloads without the ability to preempt them once the resources were allocated. However, this non-preemptable state doesn’t allow to utilize more resources outside of the project’s deserved quota. 
 
-See [Running workspaces](workspaces/workspace-v2.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../Walkthroughs/quickstart-jupyter.md).
+See [Running workspaces](../../../Researcher/workloads/workspaces/workspace-v2.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../../../Researcher/workloads/workspaces/quickstart-jupyter.md).
 
 ## Training: scaling resources for model development
 
@@ -40,7 +40,7 @@ As models mature and the need for more robust data processing and model training
 
     Training tasks demand high memory, compute power, and storage. Run:ai ensures that the allocated resources match the scale of the task and allows those workloads to utilize more compute resources than the project’s deserved quota. Make sure that if you wish your training workload not to be preempted, specify the number of GPU’s that are in your quota.  
 
-See [Standard training](training/trainings-v2.md) and [Distributed training](training/distributed-training.md) to learn more about how to submit a training workload via the Run:ai UI. For quick starts, see Run your first standard training and Run your first distributed training. TBD: add links
+See [Standard training](../../../Researcher/workloads/training/standard-training/trainings-v2.md) and [Distributed training](../../../Researcher/workloads/training/distributed-training/distributed-training.md) to learn more about how to submit a training workload via the Run:ai UI. For quick starts, see [Run your first standard training](../../../Researcher/workloads/training/standard-training/quickstart-standard-training.md) and [Run your first distributed training](../../../Researcher/workloads/training/distributed-training/quickstart-distributed-training.md). 
 
 ## Inference: deploying and serving models
 
@@ -54,5 +54,5 @@ Once a model is trained and validated, it moves to the Inference stage, where it
 
     Inference models differ in size and purpose, leading to varying computational requirements. For example, small OCR models can run efficiently on CPUs, whereas LLMs typically require significant GPU memory for deployment and serving. Inference workloads are considered production-critical and are given the highest priority to ensure compliance with SLAs. Additionally, Run:ai ensures that inference workloads cannot be preempted, maintaining consistent performance and reliability.
 
-See [Deploy a custom inference workload](inference/custom-inference.md) to learn more about how to submit an inference workload via the Run:ai UI. 
+See [Deploy a custom inference workload](../../../Researcher/workloads/inference/custom-inference.md) to learn more about how to submit an inference workload via the Run:ai UI. 
 

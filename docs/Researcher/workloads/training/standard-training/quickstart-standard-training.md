@@ -79,7 +79,7 @@ Before you start, make sure:
     11. Click __CONTINUE__
     12. Click __CREATE TRAINING__
         
-        After the standard training workload is created, it is added to the [workloads table](../workloads/managing-workloads.md).
+        After the standard training workload is created, it is added to the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 
 
 === "CLI V1"
@@ -136,5 +136,5 @@ Before you start, make sure:
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../workloads/managing-workloads.md).
+* Manage and monitor your newly created workload using the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 * After validating your training performance and results, deploy your model using [inference](../../../inference/custom-inference.md).

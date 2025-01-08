@@ -1,6 +1,6 @@
 # Introduction to Workloads
 
-Run:ai enhances visibility and simplifies [management](../../Researcher/workloads/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../../platform-admin/aiinitiatives/overview.md). 
+Run:ai enhances visibility and simplifies [management](../../../platform-admin/workloads/overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../../../platform-admin/aiinitiatives/overview.md). 
 
 ## Workloads across the AI lifecycle
 
@@ -25,7 +25,7 @@ The workload, defined by the AI practitioner, consists of:
 
 ## Workload scheduling and orchestration
 
-Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](../../Researcher/scheduling/the-runai-scheduler.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator. TBD links
+Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](../../aiinitiatives/org/scheduling-rules.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator. TBD links
 
 ## Run:ai and third-party workloads
 
@@ -40,24 +40,24 @@ Different types of workloads have different levels of support. Understanding wha
 | ----- | :---: | :---: | :---: |:----------------------:| ----- |
 |  | Run:ai workloads |  |  |                        | Third-party workloads |
 |  | Training - Standard | Workspace | Inference | Training - distributed |  |
-| [Fairness](../../Researcher/scheduling/the-runai-scheduler.md#fairness-fair-resource-distribution) | v | v | v |           v            | v |
-| [Priority and preemption](../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
-| [Over quota](../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v |           v            | v |
-| [Node pools](../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
+| [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md) | v | v | v |           v            | v |
+| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
+| [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-priority) | v | v | v |           v            | v |
+| [Node pools](../../aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
 | Bin packing / Spread | v | v | v |           v            | v |
 | Fractions | v | v | v |           v            | v |
 | Dynamic fractions | v | v | v |           v            | v |
 | Node level scheduler | v | v | v |           v            | v |
 | GPU swap | v | v | v |           v            | v |
 | Elastic scaling | NA | NA | v |           v            | v |
-| [Gang scheduling](../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v |           v            | v |
-| [Monitoring](../../admin/maintenance/alert-monitoring.md) | v | v | v |           v            | v |
-| [RBAC](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v |           v            |  |
+| [Gang scheduling](../../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v |           v            | v |
+| [Monitoring](../../../admin/maintenance/alert-monitoring.md) | v | v | v |           v            | v |
+| [RBAC](../../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) | v | v | v |           v            |  |
 | Workload awareness | v | v | v |           v            |  |
-| [Workload submission](../../Researcher/workloads/managing-workloads.md) | v | v | v |           v            |  |
-| [Workload actions (stop/run)](../../Researcher/workloads/managing-workloads.md) | v | v | v |           v            |  |
-| [Workload Policies](../../platform-admin/workloads/policies/overview.md) | v | v | v |           v            |  |
-| [Scheduling rules](../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |           v            |  |
+| [Workload submission](../../workloads/overviews/managing-workloads.md) | v | v | v |           v            |  |
+| [Workload actions (stop/run)](../../workloads/overviews/managing-workloads.md) | v | v | v |           v            |  |
+| [Workload Policies](../policies/overview.md) | v | v | v |           v            |  |
+| [Scheduling rules](../../aiinitiatives/org/scheduling-rules.md) | v | v | v |           v            |  |
 
 !!! Note
     __Workload awareness__

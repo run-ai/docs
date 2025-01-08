@@ -146,7 +146,7 @@ The effects of the policy are reflected in the workspace creation form:
 
 ## Managing and monitoring
 
-After the workspace is created, it is added to the [Workloads](../../managing-workloads.md) table, where it can be managed and monitored.
+After the workspace is created, it is added to the [Workloads](../../../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 
