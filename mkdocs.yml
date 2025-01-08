@@ -338,12 +338,8 @@ nav:
     - 'Overview' : 'Researcher/overview-researcher.md'
     - 'Quickstart Guides' :
       - 'Run:ai Quickstart Guides' : 'Researcher/Walkthroughs/quickstart-overview.md'
-      - 'Train' : 
-        - 'Training' : 'Researcher/Walkthroughs/walkthrough-train.md'
-        - 'Distributed Training' : 'Researcher/Walkthroughs/walkthrough-distributed-training.md'
       - 'Build' :
         - 'Basics' : 'Researcher/Walkthroughs/walkthrough-build.md'
-        - 'Jupyter Notebook' : 'Researcher/Walkthroughs/quickstart-jupyter.md'
         - 'Visual Studio Code Web' : 'Researcher/Walkthroughs/quickstart-vscode.md'
         - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
@@ -366,11 +362,13 @@ nav:
         - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
       - 'Experiment Using Workspaces' :
-        - 'Overview' : 'Researcher/workloads/workspaces/overview.md'
         - 'Running Workspaces' :  'Researcher/workloads/workspaces/workspace-v2.md'
+        -  'Running Jupyter Notebook Using Workspaces' : 'Researcher/workloads/workspaces/quickstart-jupyter.md'
       - 'Train Models Using Training' : 
-        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/trainings-v2.md'
-        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training.md'
+        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
+        - 'Training quick start' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
+        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
+        - 'Distributed Training Quick Start' : 'Researcher/workloads/training/distributed-training/quick-starts/quickstart-distributed-training.md'
       - 'Deploy Models Using Inference' :
         - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
         - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
