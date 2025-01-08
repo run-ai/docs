@@ -116,3 +116,31 @@ If you prefer your workloads not to be swapped into CPU memory, you can specify 
 CPU memory is limited, and since a single CPU serves multiple GPUs on a node, this number is usually between 2 to 8. For example, when using 80GB of GPU memory, each swapped workload consumes up to 80GB (but may use less) assuming each GPU is shared between 2-4 workloads. In this example, you can see how the swap memory can become very large. Therefore, we give administrators a way to limit the size of the CPU reserved memory for swapped GPU memory on each swap enabled node.
 
 Limiting the CPU reserved memory means that there may be scenarios where the GPU memory cannot be swapped out to the CPU reserved RAM. Whenever the CPU reserved memory for swapped GPU memory is exhausted, the workloads currently running will not be swapped out to the CPU reserved RAM, instead, *Node Level Scheduler* logic takes over and provides GPU resource optimization. See [Node Level Scheduler](node-level-scheduler.md#how-to-configure-node-level-scheduler).
+
+
+## Multi-GPU Memory Swap
+
+Run:ai also supports workload submission using multi-GPU memory swap. Multi-GPU memory swap works similarly to single GPU memory swap, but instead of swapping memory for a single GPU workload, it swaps memory for workloads across multiple GPUs simultaneously and synchronously. 
+
+The Run:ai Scheduler allocates the same dynamic fraction pair (Request and Limit) on multiple GPU devices in the same node. For example, if you want to run two LLM models, each consuming 8 GPUs that are not used simultaneously, you can use GPU memory swap to share their GPUs. This approach allows multiple models to be stacked on the same node. 
+
+The following outlines the advantages of stacking multiple models on the same node: 
+
+* __Maximizes GPU utilization__: Efficiently uses available GPU resources by enabling multiple workloads to share GPUs.
+* __Improves cold start times__: Loading large LLM models to a node and it’s GPUs can take several minutes during a “cold start”. Using memory swap turns this process into a “warm start” that takes only a faction of a second to a few seconds (depending on the model size and the GPU model).
+* __Increases GPU availability__: Frees up and maximizes GPU availability for additional workloads (and users), enabling better resource sharing.
+* __Smaller quota requirements__: Enables more precise and often smaller quota requirements for the end user.
+
+### Configuring multi-GPU memory swap
+
+You can configure multi-GPU memory swapping as follows:
+
+* Using the [compute resources](../workloads/assets/compute.md) asset, you can define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB). Both options require defining the Request and Limit parameters, Workloads can then be scheduled to nodes or node pools where memory swap is enabled.
+
+![GPU Limit](../img/dynamic-fraction-example1.png)
+
+![GPU Limit](../img/dynamic-fraction-example2.png)
+
+* You can submit a workload with dynamic fractions using the CLI V2:
+
+![GPU Limit](../img/dynamic-fractions-CLI.png)
