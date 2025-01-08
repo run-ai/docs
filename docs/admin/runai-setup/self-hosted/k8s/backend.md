@@ -38,6 +38,7 @@ Run the helm command below:
 !!! Tip
     Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
+
 ## Additional Run:ai configurations (optional)
 
 There may be cases where you need to set additional properties,
@@ -49,7 +50,7 @@ To apply the changes run `helm upgrade` and use `--set` to set specific configur
 | `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with [domain certificate](./preparations.md#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
 | `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  Set Run:ai and 3rd party services' resources  |
 | `disableIstioSidecarInjection.enabled` | Disable Istio sidecar injection | Disable the automatic injection of Istio sidecars across the entire Run:ai Control Plane services. | 
-
+| `global.affinity` | System nodes | Sets the system nodes where the Run:ai control plane services are scheduled. |
 
 ## Additional 3rd party configurations (optional)
 
