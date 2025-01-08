@@ -70,10 +70,8 @@ To add a new compute resource:
        (for example, if you requested 3 devices per pod and the running workload using this compute resource consists of 3 pods, there are 9 physical GPU devices used in total)  
 
         !!! Note  
-            * You can insert a whole number of devices (0; 1; 2; 3; …)  
             * When setting it to zero, the workload using this computer resource neither requests or uses GPU resources while running  
-            * Only when setting it to 1, a fraction of a GPU memory can be requested  
-            * When setting a number higher than 1, the entire GPU memory of the devices is used by the running workloads  
+            * You can set any number of GPU devices and specify the memory requirement to any portion size (1..100), or memory size value using GB or MB units per device 
         
         * **GPU memory per device**  
             * Select the memory request format  
