@@ -55,7 +55,7 @@ Before you start, make sure:
         
         c. Click __CREATE ENVIRONMENT__
      
-    10. Select the __‘one-gpu’__ compute resource for your workspace (GPU devices: 1) 
+    10. Select the __‘one-gpu’__ compute resource for your workload (GPU devices: 1) 
         * If the ‘one-gpu’ is not displayed in the gallery, follow the step-by-step guide: 
         
         ??? "Create a one-gpu compute resource"
