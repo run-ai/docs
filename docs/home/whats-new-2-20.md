@@ -2,227 +2,284 @@
 
 ## **Release Content** <date>
 
+TBD: overview
 * [Deprecation notifications](#deprecation-notifications)  
 
-## Researchers
+### Researchers
 
 
-### Stop/run actions for distributed workloads
+#### Workloads - Workspaces and Training 
 
-You can now stop and run distributed workloads from the UI and API. 
-Scheduling rules for training workloads will also be applied for distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. 
-This requires a minimum cluster version of 2.20.
+*  **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI and API. 
+Scheduling rules for training workloads will also be applied for distributed workloads. This enhances control over distributed workloads, 
+enabling greater flexibility and resource management. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Visibility into idle GPU devices
+* **Visibility into idle GPU devices** - Added idle GPU devices to Workloads in the UI and API to display the number of 
+allocated GPU devices that have been idle for more than 5 minutes. This offers enhanced visibility into resource utilization, 
+supporting more efficient workload management.
 
-Added idle GPU devices to Workloads in the UI and API to display the number of allocated GPU devices that have been idle for more than 5 minutes. This offers enhanced visibility into resource utilization, supporting more efficient workload management. This feature is not cluster version dependent.
+* **Configurable workload completion with multiple runs** - You can now define the number of runs a training workload must complete to 
+be considered finished directly in the **UI**, **API**, and **CLI v2**. Running training workloads multiple times improves 
+the reliability and validity of training results. Additionally, you can configure how many runs can be scheduled in parallel, 
+helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs.
+See [standard training](../Researcher/workloads/training/standard-training/trainings-v2.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
+* **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI V2 providing a 
+buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for
+[standard](../Researcher/workloads/training/standard-training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training/distributed-training.md) workloads. 
+The grace period can be configured between 0 seconds and 5 minutes. This avoids data loss and unnecessary retraining, ensuring the 
+latest checkpoints are saved. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span> 
 
-### Configurable workload completion with multiple runs
+* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
+workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater
+control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
 
-You can now define the number of runs a training workload must complete to be considered finished directly in the **UI**, **API**, and **CLI v2**. Running training workloads multiple times improves the reliability and validity of training results. Additionally, you can configure how many runs can be scheduled in parallel, helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs.  This requires a minimum cluster version of 2.20. See [standard training](../Researcher/workloads/training/trainings-v2.md) for more details.
+#### Workload Assets
 
-
-### Configurable grace period for workload preemption
-You can now set a grace period in the UI, API and CLI V2 providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for [standard](../Researcher/workloads/training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training.md) workloads. The grace period can be configured between 0 seconds and 5 minutes. This avoids data loss and unnecessary retraining, ensuring the latest checkpoints are saved. This requires a minimum cluster version of 2.20. 
-
-### Pod deletion policy for terminal workloads
-
-Administrators can now specify which pods should be deleted when a distributed workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater
-control over resource cleanup and helps maintain a more organized and efficient cluster environment. This feature is not cluster version dependent. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details.
-
-### User applications for API authentication
-
-Users can now create their own applications for API integrations with Run:ai. Each application includes client credentials which can be used to obtain an authentication token and utilize it for subsequent API calls. This requires a minimum cluster version of 2.20. See [User Applications](../developer/user-applications.md) for more details.
-
-
-### Adding instructions to environment variables 
-
-- Users can now add instructions to environment variables when creating new environments. These instructions provide guidance for other users enabling them to set the environment variable values correctly. 
-
-- Run:ai's environments now include default instructions to help users set the correct values for the environment variables. 
-
-Adding instructions is available in the UI and API. This feature is not cluster version dependent.
+* **Adding instructions to environment variables** - Users can now add instructions to environment variables when creating new environments via the UI and API. These instructions provide guidance for other users enabling them to set the environment variable values correctly. In addition, Run:ai's environments now include default instructions to help users set the correct values for the environment variables. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
+* **Enhanced environments and compute resources copy/edit** - The action bar now contains **Make a Copy** and **Edit**. The **Rename** option has been removed. A new **"Last Updated"** column has been added for easier tracking of asset modifications. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Enhancements for asset management
 
-#### Environments and compute resources
+* **Enhanced data sources and credentials tables** - Added a new "Kubernetes name" column to Data Sources and Credentials tables. This update enhances visibility into Kubernetes resource associations, making it easier for users to manage and track their assets. Added a new Environments column to the Credentials table displaying the environments associated with the credential. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-Introduced several updates to improve managing Environments and Compute Resources. This requires a minimum cluster version of 2.20:
+#### Authenitication and authorization
 
-* The action bar now contains **Make a Copy** and **Edit**. 
-* The **Rename** option has been removed.
-* A new **"Last Updated"** column has been added for easier tracking of asset modifications. 
+* **User applications for API authentication** - Users can now create their own applications for API integrations with Run:ai. 
+Each application includes client credentials which can be used to obtain an authentication token and utilize it for subsequent API calls. 
+See [User Applications](../developer/user-applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-#### Data sources and credentials 
+#### Scheduler
 
-- Added a new "Kubernetes name" column to Data Sources and Credentials tables. This update enhances visibility into Kubernetes resource associations, making it easier for users to manage and track their assets.
-- Added a new Environments column to the Credentials table displaying the environments associated with the credential.
+* **Support for multiple fractional GPUs in a single workload** - Run:ai now supports submitting workloads that utilize multiple fractional GPUs within a single workload using the UI and CLI. This feature enhances GPU utilization, increases scheduling probability in shorter timeframes, and allows workloads to consume only the memory they need. It maximizes quota usage and 
+enables more workloads to share the same GPUs effectively. See [Multi-GPU fractions](../Researcher/scheduling/fractions.md) and [Multi-GPU dynamic fractions](../Researcher/scheduling/dynamic-gpu-fractions.md) for more details. <span style="display:inline-block; background-color:white; color:#fc774a; padding:3px 8px; border-radius:3px; border:1px solid #fc774a; font-size:12px;">Beta for Dynamic Fractions</span> <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+ 
 
-This requires a minimum cluster version of 2.20.
+* **GPU memory swap with multiple GPUs per workload** - Run:ai now supports GPU memory swap for workloads utilizing multiple GPUs. 
+By leveraging GPU memory swap, you can maximize GPU utilization and serve more workloads using the same hardware. 
+The swap scheduler on each node ensures that all GPUs of a distributed model run simultaneously, maintaining synchronization across GPUs. 
+Workload configurations combine swap settings with multi-GPU dynamic fractions, providing flexibility and efficiency for managing 
+large-scale workloads. See [Multi-GPU memory swap](../Researcher/scheduling/gpu-memory-swap.md). 
+<span style="display:inline-block; background-color:white; color:#fc774a; padding:3px 8px; border-radius:3px; border:1px solid #fc774a; font-size:12px;">Beta</span> <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Windows OS support for CLI V2
 
-CLI V2 now supports Windows operating systems, enabling you to leverage the full capabilities of the CLI. This requires a minimum cluster version of 2.18.
+#### Command Line Interface (CLI V2)
 
-### Unified training command structure in CLI V2
+* **Added Windows OS support** - CLI V2 now supports Windows operating systems, enabling you to leverage the full 
+capabilities of the CLI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
-Unified the `distributed` command into the `training` command to align with the Run:ai UI,. The `training` command 
-now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience 
-across both the CLI and UI.
+* **Unified training command structure** - Unified the `distributed` command into the `training` command to align with the Run:ai UI. 
+The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI.
 
-### New CLI V2 command for Kubernetes access
-
-Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the kubeconfig file with Run:ai authorization parameters. This enhancement enables users to gain access to the Kubernetes cluster, 
+* **Added a new command for Kubernetes access** - Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the 
+kubeconfig file with Run:ai authorization parameters. This enhancement enables users to gain access to the Kubernetes cluster, 
 simplifying authentication and integration with Run:ai-managed environments. 
 
-### View workload labels in CLI V2
-Users can now view the labels associated with a workload when using the CLI V2 `runai workload describe` command for all 
-workload types. This enhancement provides better visibility into workload metadata. 
+* **Added view workload labels** - Users can now view the labels associated with a workload when using the CLI V2 `runai workload describe` command for all workload types. This enhancement provides better visibility into workload metadata. 
 
 
-## ML Engineers
+### ML Engineers
 
-### Enhanced visibility into rolling updates for inference workloads
-Run:ai now provides a phase message that provides detailed insights into the current state of the update, by hovering over the workload's status. This helps users monitor and manage updates more effectively. This requires a minimum cluster version of 2.20. See [rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates) for more details.
+#### Workloads - Inference
 
-### Inference serving endpoint configuration
+* **Enhanced visibility into rolling updates for inference workloads** - Run:ai now provides a phase message that provides detailed 
+insights into the current state of the update, by hovering over the workload's status. This helps users monitor and manage updates
+more effectively. See [rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-Users can now define an **inference serving endpoint** directly within the environment using the Run:ai UI. This requires a minimum cluster version of v2.19. 
+* **Inference serving endpoint configuration** - Users can now define an **inference serving endpoint** directly within the environment 
+using the Run:ai UI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.19 onward</span>
 
-### Persistent token management for Hugging Face models** 
-Run:ai now allows users to save their Hugging Face tokens persistently as part of their credentials within the Run:ai UI. Once saved, tokens can be easily selected from a list of stored credentials, removing the need to manually enter them each time. This enhancement improves the process of deploying Hugging Face models, making it more efficient and user-friendly.
-This requires a minimum cluster version of 2.13. See [inference workloads with Hugging Face](../Researcher/workloads/inference/hugging-face-inference.md) for more details.
+* **Persistent token management for Hugging Face models** - Run:ai now allows users to save their Hugging Face tokens persistently as part of their credentials within the Run:ai UI. Once saved, tokens can be easily selected from a list of stored credentials, removing the need to manually enter them each time. This enhancement improves the process of deploying Hugging Face models, making it more efficient and user-friendly. See [inference workloads with Hugging Face](../Researcher/workloads/inference/hugging-face-inference.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.13 onward</span>
 
-### Deploy and manage NVIDIA NIM models in inference workloads
-Run:ai now supports NVIDIA NIM models, enabling users to easily deploy and manage these models when submitting inference workloads. 
-Users can select a NIM model and leverage NVIDIA’s hardware optimizations directly through the Run:ai UI. This feature also allows you to take advantage of Run:ai capabilities such as autoscaling and GPU fractioning.
-This feature is not cluster version dependent. See [inference workloads with NVIDIA NIM](../Researcher/workloads/inference/nim-inference.md) for more details.
+* **Deploy and manage NVIDIA NIM models in inference workloads** - Run:ai now supports NVIDIA NIM models, enabling users to 
+easily deploy and manage these models when submitting inference workloads. Users can select a NIM model and leverage NVIDIA’s 
+hardware optimizations directly through the Run:ai UI. This feature also allows you to take advantage of Run:ai capabilities such as autoscaling and GPU fractioning. See [inference workloads with NVIDIA NIM](../Researcher/workloads/inference/nim-inference.md) for more details. 
 
+*  **Added Customizable autoscaling plans for inference workloads** - Run:ai now allows advanced users practicing 
+autoscaling for inference workloads to fine-tune their autoscaling plans 
+using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferences/#operation/update_inference_spec). This feature enables customers to achieve optimal behavior to meet fluctuating request demands. <span style="display:inline-block; background-color:white; color:#3dd37a; padding:3px 8px; border-radius:3px; border:1px solid #3dd37a; font-size:12px;">Experimental</span>
+<span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-## Platform Administrator
+### Platform Administrator
 
-### New Reports feature for Analytics
+#### Analytics
 
-The new Reports enables users to generate and organize large data in a structured, CSV-formatted layout. With this feature, users can monitor resource consumption, identify trends, and make informed decisions to optimize their AI workloads with greater efficiency. 
-This requires a minimum cluster version of 2.20.
+* **Added new reports** - The new Reports enables users to generate and organize large data in a structured, 
+CSV-formatted layout. With this feature, users can monitor resource consumption, identify trends, and make informed decisions 
+to optimize their AI workloads with greater efficiency. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Client credentials for applications
+#### Authorization and authentication
 
-Applications now use client credentials - Client ID and Client secret - to obtain an authentication token. This requires a minimum cluster version of 2.20. See [Applications](../platform-admin/authentication/applications.md) for more details.
+* **Client credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
+authentication token. See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Enhanced metrics for node pools
-Enhanced metric graphs in the DETAILS tab for node pools by aligning these graphs with the dashboard and the node pools API. As part of this improvement, the following columns have been removed from the [Node pools table](../platform-admin/aiinitiatives/resources/node-pools.md). This feature is not cluster version dependent. 
+#### Node pools
 
-* Node GPU Allocation
+* **Enhanced metrics for node pool** - Enhanced metric graphs in the DETAILS tab for node pools by aligning these graphs with 
+the dashboard and the node pools API. As part of this improvement, the following columns have been removed 
+from the [Node pools table](../platform-admin/aiinitiatives/resources/node-pools.md). 
+
+* Node GPU Allocation TBD
 * GPU Utilization Distribution 
 * GPU Utilization 
 * GPU Memory Utilization
 * CPU Utilization
 * CPU Memory Utilization
 
-### Enhanced project deletion 
+#### Organizations - Projects/Departments
 
-Deleting a [project](../platform-admin/aiinitiatives/org/projects.md) will now attempt to delete the project's associated workloads and assets, allowing better management of your organization assets. This requires a minimum cluster version of 2.20.
+* **Enhanced project deletion** - Deleting a [project](../platform-admin/aiinitiatives/org/projects.md) will now attempt to
+delete the project's associated workloads and assets, allowing better management of your organization assets. 
+<span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Policy-based default field values
-Administrators can now set default values for fields that are automatically calculated based on the values of other fields using [defaulFrom](../platform-admin/workloads/policies/policy-reference.md). This ensures that critical fields in the workload submission form are populated automatically if not provided by the user. This feature supports various field types. This requires a minimum cluster version of 2.20:
+* **Enhanced resource prioritization for projects and departments** - Run:ai now introduces advanced prioritization capabilities to
+manage resources between projects or between departments more effectively, using the Project and Department APIs. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-* integer fields (e.g., `cpuCoresRequest`),
-* number fields (e.g., `gpuPortionRequest`), 
-* and quantity fields (e.g., `gpuMemoryRequest`)
+    This feature allows administrators to: 
 
-### Improved control over data source and storage class visibility
+    * Prioritize resource allocation and reclaim between different departments. 
+    * Prioritize projects within the same department. 
+    * Set priorities per node-pool for both projects and departments. 
+    * Implement distinct SLAs by assigning strict priority levels to over-quota resources. 
 
-Run:ai now provides adminstrators with the ability to control the visibility of data source types and storage in the UI. Data source types that are restricted by policy will no longer appear during workload submission or when creating new data source assets. Additionally, administrators can configure storage classes as internal using an API. See TBD. This requires a minimum cluster version of 2.20.
 
-### Email notifications API
-Email notifications can now be configured via API in addition to the UI enabling integration with external tools. See [NotificationChannels API](https://api-docs.run.ai/latest/tag/NotificationChannels/) for more details.
+* **Updated over quota naming** - Renamed over quota priority to over quota weight to reflect its actual functionality.
 
-## Infrastructure Administrator 
 
-### Configuration and installation
+#### Policy
+
+* Policy-based default field values - Administrators can now set default values for fields that are automatically 
+calculated based on the values of other fields using [defaulFrom](../platform-admin/workloads/policies/policy-reference.md). 
+This ensures that critical fields in the workload submission form are populated automatically if not provided by the user. 
+<span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+
+    This feature supports various field types:
+
+    * Integer fields (e.g., `cpuCoresRequest`),
+    * Number fields (e.g., `gpuPortionRequest`), 
+    * Quantity fields (e.g., `gpuMemoryRequest`)
+
+#### Data sources
+
+* **Improved control over data source and storage class visibility** - Run:ai now provides adminstrators with the ability 
+to control the visibility of data source types and storage in the UI. Data source types that are restricted by policy 
+will no longer appear during workload submission or when creating new data source assets. Additionally, administrators 
+can configure storage classes as internal using an API. See TBD. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+
+#### Email notifications
+
+* **Email notifications API** - Email notifications can now be configured via API in addition to the UI enabling integration 
+with external tools. See [NotificationChannels API](https://api-docs.run.ai/latest/tag/NotificationChannels/) for more details. 
+
+### Infrastructure Administrator 
+
+
+#### Supported NVIDIA Data Center GPUs 
+
+* **Support for ARM-Based Grace-Hopper Superchip (GH200)** - Run:ai now supports the ARM-based Grace-Hopper Superchip (GH200). 
+Due to a limitation in version 2.20 with ARM64, the Run:ai control plane services must be scheduled on non-ARM based CPU nodes. 
+This limitation will be addressed in a future release. See [Self-Hosted installation over Kubernetes](../admin/runai-setup/self-hosted/k8s/prerequisites.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+
+#### System requirements 
 
 * Run:ai now supports Kubernetes version 1.32. 
 * Run:ai now supports OpenShift version 4.17.
 
-### Exclude Nodes in mixed node clusters
-Run:ai now allows you to exclude specific nodes in a mixed node cluster using the `nodeSelectorTerms` flag. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md#runai-managed-nodes) for more details.
+#### Advanced cluster configurations
 
-### Advanced configuration options for cluster services
+* **Exclude nodes in mixed node clusters** - Run:ai now allows you to exclude specific nodes in a mixed node cluster using the `nodeSelectorTerms` flag. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md#runai-managed-nodes) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-Introduced new cluster configuration options for setting node affinity and tolerations for Run:ai cluster services.
-These configuration ensure that the Run:ai cluster services are scheduled on the desired nodes. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details.
+* **Advanced configuration options for cluster services** - Introduced new cluster configuration options for setting node affinity and tolerations for Run:ai cluster services. These configuration ensure that the Run:ai cluster services are scheduled on the desired nodes.  See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-* `spec.global.affinity`
-* `spec.global.tolerations`
-* `spec.daemonSetsTolerations`
+    * `global.affinity`
+    * `global.tolerations`
+    * `daemonSetsTolerations`
 
-### Custom labels for built-in alerts
+* **Argo workflows auto-pod grouping** - Introduced a new cluster configuration option, `gangScheduleArgoWorkflow`, to modify the 
+default behavior for grouping ArgoWorkflow pods, allowing users to prevent pods from being grouped into a single pod-group. 
+See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">Cluster v2.20 and v2.18</span>
 
-Administrators can now add their own custom labels to the built-in alerts from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for mode details.
+* **Cloud auto-scaling for memory fractions** - Run:ai now supports auto-scaling for workloads using memory fractions in 
+cloud environments. Using `gpuMemoryToFractionRatio` configuration option allows a failed scheduling 
+attempt for a memory fractions workload to create Run:ai scaling pods, triggering the auto-scaler. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.19 onward</span>
 
-### Enhanced configuration flexibility for cluster replica management
+* **Stale gang eviction timeout for improved stability** - Run:ai has introduced a default timeout of 60 seconds 
+for gang eviction in gang scheduling workloads using `defaultStalenessGracePeriod`. This timeout allows both the workload controller and the scheduler sufficient time to remediate the workload, improving the stability of large training jobs. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
-Administrators can now use the `spec.global.replicaCount` to manage replicas for for Run:ai services. This requires a minimum cluster version of 2.20. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details.
+* **Custom labels for built-in alerts** - Administrators can now add their own custom labels to the built-in alerts 
+from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for mode details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-## Run:ai Developer
+* **Enhanced configuration flexibility for cluster replica management** - Administrators can now use the `spec.global.replicaCount` to 
+manage replicas for for Run:ai services. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-### Metrics and telemetry
+### Run:ai Developer
 
-  Additional metrics and telemetry are available via the API. For more details, see [Metrics API](../developer/metrics/metrics-api.md):
+#### Metrics and Telemtry 
 
-* Metrics (over time)  
-    * Project  
-        * GPU_QUOTA 
-        * CPU_QUOTA_MILLICORES
-        * CPU_MEMORY_QUOTA_MB
-        * GPU_ALLOCATION
-        * CPU_ALLOCATION_MILLICORES
-        * CPU_MEMORY_ALLOCATION_MB 
-    * Department  
-        * GPU_QUOTA 
-        * CPU_QUOTA_MILLICORES
-        * CPU_MEMORY_QUOTA_MB
-        * GPU_ALLOCATION
-        * CPU_ALLOCATION_MILLICORES
-        * CPU_MEMORY_ALLOCATION_MB 
+* Additional metrics and telemetry are available via the API. For more details, see [Metrics API](../developer/metrics/metrics-api.md):
 
-* Telemetry (current time)  
-    * Project  
-        * GPU_QUOTA 
-        * CPU_QUOTA 
-        * MEMORY_QUOTA
-        * GPU_ALLOCATION
-        * CPU_ALLOCATION
-        * MEMORY_ALLOCATION
-        * GPU_ALLOCATION_NON_PREEMPTIBLE
-        * CPU_ALLOCATION_NON_PREEMPTIBLE
-        * MEMORY_ALLOCATION_NON_PREEMPTIBLE 
-    * Department    
-        * GPU_QUOTA 
-        * CPU_QUOTA 
-        * MEMORY_QUOTA
-        * GPU_ALLOCATION
-        * CPU_ALLOCATION
-        * MEMORY_ALLOCATION
-        * GPU_ALLOCATION_NON_PREEMPTIBLE
-        * CPU_ALLOCATION_NON_PREEMPTIBLE
-        * MEMORY_ALLOCATION_NON_PREEMPTIBLE 
+    * Metrics (over time)  
+        * Project  
+            * GPU_QUOTA 
+            * CPU_QUOTA_MILLICORES
+            * CPU_MEMORY_QUOTA_MB
+            * GPU_ALLOCATION
+            * CPU_ALLOCATION_MILLICORES
+            * CPU_MEMORY_ALLOCATION_MB 
+        * Department  
+            * GPU_QUOTA 
+            * CPU_QUOTA_MILLICORES
+            * CPU_MEMORY_QUOTA_MB
+            * GPU_ALLOCATION
+            * CPU_ALLOCATION_MILLICORES
+            * CPU_MEMORY_ALLOCATION_MB 
+
+    * Telemetry (current time)  
+        * Project  
+            * GPU_QUOTA 
+            * CPU_QUOTA 
+            * MEMORY_QUOTA
+            * GPU_ALLOCATION
+            * CPU_ALLOCATION
+            * MEMORY_ALLOCATION
+            * GPU_ALLOCATION_NON_PREEMPTIBLE
+            * CPU_ALLOCATION_NON_PREEMPTIBLE
+            * MEMORY_ALLOCATION_NON_PREEMPTIBLE 
+        * Department    
+            * GPU_QUOTA 
+            * CPU_QUOTA 
+            * MEMORY_QUOTA
+            * GPU_ALLOCATION
+            * CPU_ALLOCATION
+            * MEMORY_ALLOCATION
+            * GPU_ALLOCATION_NON_PREEMPTIBLE
+            * CPU_ALLOCATION_NON_PREEMPTIBLE
+            * MEMORY_ALLOCATION_NON_PREEMPTIBLE 
 
 ## Deprecation notifications 
 
-### CLI V1 deprecation
+### Ongoing Dynamic MIG deprecation process
+The Dynamic MIG deprecation process started in version 2.19. Run:ai supports standard MIG profiles as detailed in [Configuring NVIDIA MIG profiles](../platform-admin/aiinitiatives/resources/configuring-mig-profiles.md).
 
-CLI v1 is being deprecated, and no new features will be developed for it. It will remain available for use for the next two releases to ensure a smooth transition for all users. 
-We recommend switching to **CLI v2**, which provides feature parity, backwards compatibility, and ongoing support for new enhancements. CLI v2 is designed to deliver a more robust, efficient, and user-friendly experience.
+* Before upgrading to version 2.20 users must remove workloads submitted with Dynamic MIG and associated node configurations.
+* In version 2.20, MIG was removed from the Run:ai UI under compute resources.
+* In Q2/25 all ‘Dynamic MIG’ APIs and CLI commands will be fully deprecated. (it will fail)
+
+
+### CLI V1 deprecation 
+CLI v1 is being deprecated, and no new features will be developed for it. It will remain available for use for the next 
+two releases to ensure a smooth transition for all users. We recommend switching to **CLI v2**, which provides feature parity, 
+backwards compatibility, and ongoing support for new enhancements. CLI v2 is designed to deliver a more robust, efficient, and 
+user-friendly experience.
 
 ### Legacy Jobs view deprecation
 
-Starting with version 2.20, the legacy **Jobs view** will be discontinued in favor of the more advanced **Workloads view**. The legacy submission form will still be accessible via the Workload manager view for a smoother transition. 
+Starting with version 2.20, the legacy **Jobs view** will be discontinued in favor of the more advanced **Workloads view**. 
+The legacy submission form will still be accessible via the Workload manager view for a smoother transition. 
 
-### appID and appSecret deprecation
-Deprecating appID and appSecret parameters in the [Create and application token API](https://api-docs.run.ai/latest/tag/Tokens). To create application tokens, use your client credentials - Client ID and Client secret.
+### appID and appSecret deprecation 
+
+Deprecating appID and appSecret parameters in the [Create and application token API](https://api-docs.run.ai/latest/tag/Tokens). 
+To create application tokens, use your client credentials - Client ID and Client secret.
 
