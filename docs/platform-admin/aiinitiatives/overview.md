@@ -112,4 +112,4 @@ The following organizational example consists of 5 optional scopes:
 
 ## Next Steps
 
-Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../../Researcher/workloads/managing-workloads.md) from a project and use compute resources to run your AI initiatives.
+Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../workloads/overviews/managing-workloads.md) from a project and use compute resources to run your AI initiatives.

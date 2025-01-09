@@ -6,7 +6,7 @@ This article explains the procedure of managing reports in Run:ai.
 Reports allow users to access and organize large amounts of data in a clear, CSV-formatted layout. They enable users to monitor resource consumption, analyze trends, and make data-driven decisions to optimize their AI workloads effectively.
 
 !!!Note
-     Reports is enabled by default for SaaS tenants. In order to enable the feature for  tenants, additional configuration must be added. See **Enabling reports for self-hosted accounts** below.
+     Reports is enabled by default for SaaS tenants. In order to enable the feature for  tenants, additional configuration must be added. See [Enabling reports for self-hosted accounts](#enabling-reports-for-self-hosted-accounts).
 
 
 

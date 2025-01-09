@@ -1,4 +1,4 @@
-# Launching distributed training workloads
+# Run your First Distributed Training
 
 This article provides a step-by-step walkthrough for running a PyTorch distributed training workload.
 
@@ -8,7 +8,7 @@ Distributed training is the ability to split the training of a model among multi
 
 Before you start, make sure:
 
-- You have created a project or have one created for you.
+- You have created a [project](../../../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
 - The project has an assigned quota of at least 1 GPU.
 
 
@@ -32,7 +32,7 @@ Before you start, make sure:
     ```
 
 === "API"
-    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../../../developer/rest-auth.md) article.
 
 
 ## Step 2: Submitting a distributed training workload
@@ -77,7 +77,7 @@ Before you start, make sure:
     11. Click __CONTINUE__
     12. Click __CREATE TRAINING__
         
-        After the distributed training workload is created, it is added to the [workloads table](../workloads/managing-workloads.md).
+        After the distributed training workload is created, it is added to the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 
 
 === "CLI V1"
@@ -137,11 +137,11 @@ Before you start, make sure:
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
 
     !!! Note
-        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../../../developer/cluster-api/submit-rest.md).
 
 
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../workloads/managing-workloads.md).
-* After validating your training performance and results, deploy your model using [inference](../../../inference/custom-inference.md).
+* Manage and monitor your newly created workload using the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
+* After validating your training performance and results, deploy your model using [inference](../../inference/inference-overview.md).

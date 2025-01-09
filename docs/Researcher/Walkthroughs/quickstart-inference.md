@@ -84,7 +84,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     * Select __CREATE INFERENCE__.
     
     !!! Note
-        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../../platform-admin/workloads/overviews/managing-workloads.md).
 
 === "API"
     ``` bash

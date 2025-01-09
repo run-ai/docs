@@ -373,4 +373,4 @@ The command will attempt to submit an *mpi* Job. You can follow up on the Job by
 
 ## See Also
 
-* See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
+* See Quickstart document [Running Distributed Training](../workloads/training/distributed-training/quickstart-distributed-training.md).

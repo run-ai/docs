@@ -16,7 +16,7 @@ You can start an unattended mpi training Job of name dist1, based on Project *te
     runai submit-dist mpi --name dist1 --workers=2 -g 1 \
         -i runai.jfrog.io/demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 
 
-(see: [distributed training Quickstart](../Walkthroughs/walkthrough-distributed-training.md)).
+(see: [distributed training Quickstart](../workloads/training/distributed-training/quickstart-distributed-training.md)).
 
 ## Options
 
@@ -380,4 +380,4 @@ The command will attempt to submit an _mpi_ Job. You can follow up on the Job by
 
 ## See Also
 
-*   See Quickstart document [Running Distributed Training](../Walkthroughs/walkthrough-distributed-training.md).
+*   See Quickstart document [Running Distributed Training](../workloads/training/distributed-training/quickstart-distributed-training.md).

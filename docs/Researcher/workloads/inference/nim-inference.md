@@ -6,7 +6,7 @@ An inference workload provides the setup and configuration needed to deploy your
 
 The inference workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
+To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../overviews/workload-types.md).
 
 ![](../img/inference-workload.png)
 
@@ -123,4 +123,4 @@ To add a new inference workload:
 
 ## Managing and monitoring
 
-After the inference workload is created, it is added to the [Workloads](overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the inference workload is created, it is added to the [Workloads](../../../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.

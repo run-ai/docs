@@ -16,7 +16,7 @@ The Workload policies table consists of the following columns:
 | Column | Description |
 | :---- | :---- |
 | Policy | The policy name which is a combination of the policy scope and the policy type |
-| Type | The policy type is per Run:ai workload type. This allows administrators to set different policies for each [workload type](../workload-overview.md). |
+| Type | The policy type is per Run:ai workload type. This allows administrators to set different policies for each [workload type](../overviews/workload-types.md). |
 | Status | Representation of the policy lifecycle (one of the following - “Creating…”, “Updating…”, “Deleting…”, Ready or Failed) |
 | Scope | The scope the policy affects. Click the name of the scope to view the organizational tree diagram. You can only view the parts of the organizational tree for which you have permission to view. |
 | Created by | The user who created the policy |

@@ -1,6 +1,6 @@
 # Use Visual Studio Code with a Run:ai Job
 
-Once you launch a workload using Run:ai, you will want to connect to it. You can do so via command line or via other tools such as a [Jupyter Notebook](../Walkthroughs/quickstart-jupyter.md)
+Once you launch a workload using Run:ai, you will want to connect to it. You can do so via command line or via other tools such as a [Jupyter Notebook](../workloads/workspaces/quickstart-jupyter.md)
 
 !!! Important
     This document is about accessing the remote container created by Run:ai, from the __installed version__ of [Visual Studio Code](https://code.visualstudio.com/){target=_blank}. If you want to use Visual Studio Code for __web__, please see [Visual Studio Code Web Quickstart](../Walkthroughs/quickstart-vscode.md).

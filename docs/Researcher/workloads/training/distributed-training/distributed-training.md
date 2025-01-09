@@ -6,9 +6,9 @@ A training workload contains the setup and configuration needed for building you
 
 The distributed training workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workload-types.md).
+To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../overviews/workload-types.md).
 
-![](../img/training-workload.png)
+![](../../img/training-workload.png)
 
 ## Creating a distributed training workload
 
@@ -29,20 +29,20 @@ To add a new distributed training workload:
         * XG Boost
         * MPI
         
-        In case one the above frameworks is not enabled, see Distributed training prerequisites for details on enabling.  
+        In case one the above frameworks is not enabled, see [Distributed training prerequisites](../../../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training) for details on enabling.  
     
     * Set the distributed workload configuration that defines how  distributed training workloads are divided across multiple machines or processes. Choose a configuration based on your training requirements and infrastructure -
     
         * Workers & master
         * Workers only
 
-6.  Select a __preconfigured [template](../assets/templates.md)__ or select __Start from scratch__ to launch a new training workload quickly
+6.  Select a __preconfigured [template](../../assets/templates.md)__ or select __Start from scratch__ to launch a new training workload quickly
 7.  Enter a unique __name__ for the training workload (if the name already exists in the project, you will be requested to submit a different name)
 8.  Click __CONTINUE__  
     In the next step:
 9.  Select the __environment__ for your training workload
     *   Select an environment or click __+NEW ENVIRONMENT__ to add a new environment to the gallery.  
-        For a step-by-step guide on adding environments to the gallery, see [Environments](../assets/environments.md). Once created, the new environment will be automatically selected.
+        For a step-by-step guide on adding environments to the gallery, see [Environments](../../assets/environments.md). Once created, the new environment will be automatically selected.
     *   Set the connection for your __tool(s)__. The tools are configured as part of the environment.
         *   __External URL__
             *   __Custom URL__
@@ -77,20 +77,20 @@ To add a new distributed training workload:
                     * Enter a value according to the provided instructions
                 * __Credentials__ - Select existing credentials as the environment variable
                     * Select a __credential name__
-                    To add new credentials to the credentials list, and for additional information, see [Credentials](../assets/credentials.md).
+                    To add new credentials to the credentials list, and for additional information, see [Credentials](../../assets/credentials.md).
                     * Select a __secret key__
 10.  Select the __compute resource__ for your training workload
     * Set the number of workers for your workload
     *   Select a compute resource or click __+NEW COMPUTE RESOURCE__ to add a new compute resource to the gallery.  
-        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../assets/compute.md). Once created, the new compute resource will be automatically selected.
+        For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../assets/compute.md). Once created, the new compute resource will be automatically selected.
     *   Optional: Set the __order of priority__ for the __node pools__ on which the scheduler tries to run the workload.  
         When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
         *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
         *   Click __+NODE POOL__ to add a new node pool from the list of node pools that were defined on the cluster.  
-            To configure a new node pool and for additional information, see [node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md).
+            To configure a new node pool and for additional information, see [node pools](../../../../platform-admin/aiinitiatives/resources/node-pools.md).
     *   Select a __node affinity__ to schedule the workload on a specific node type.  
-        If the administrator added a ‘[node type (affinity)](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
-        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
+        If the administrator added a ‘[node type (affinity)](../../../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
+        Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
     * Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
         
         !!! Note 
@@ -126,7 +126,7 @@ To add a new distributed training workload:
     *   Select the __storage class__
         * __None__ - Proceed without defining a storage class.
         * __Custom storage class__ - This option applies when selecting a storage class based on existing storage classes.  
-            To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../../admin/config/shared-storage.md).
+            To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../../../admin/config/shared-storage.md).
     *   Select the __access mode(s)__ (multiple modes can be selected)
         *  __Read-write by one node__ - The volume can be mounted as read-write by a single node.
         *  __Read-only by many nodes__ - The volume can be mounted as read-only by many nodes.
@@ -142,8 +142,9 @@ To add a new distributed training workload:
 12. Optional: Select __data sources__ for your training workload 
 
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](../assets/datasources.md).  
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../../assets/datasources.md).  
     Once created, the new data source will be automatically selected.
+       
        *   Optional: Modify the data target location for the selected data source(s).
 
 13.  __Optional - General settings__:
@@ -170,7 +171,7 @@ When disabled the master’s setup will inherit the workers’ setup.
 
 When creating a new workload, fields and assets may have limitations or defaults. These rules and defaults are derived from a policy your administrator set.
 
-Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../../platform-admin/workloads/policies/overview.md).
+Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../../../platform-admin/workloads/policies/overview.md).
 
 The effects of the policy are reflected in the training creation form:
 
@@ -180,11 +181,11 @@ The effects of the policy are reflected in the training creation form:
 
 ## Managing and monitoring
 
-After the training workload is created, it is added to the [Workloads](overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the training workload is created, it is added to the [Workloads](../../overviews/managing-workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 
-To view the available actions,see all possible distributed training workloads in the  [CLI v2 reference](../../cli-reference/new-cli/overview.md) or the [CLI v1 reference](../../cli-reference/Introduction.md).
+To view the available actions,see all possible distributed training workloads in the  [CLI v2 reference](../../../cli-reference/new-cli/overview.md) or the [CLI v1 reference](../../../cli-reference/Introduction.md).
 
 ## Using API
 

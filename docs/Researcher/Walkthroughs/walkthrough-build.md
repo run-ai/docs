@@ -74,7 +74,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     * Select __CREATE WORKSPACE__.
     
     !!! Note
-        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../workloads/workspaces/overview.md).
+        For more information on submitting Workloads and creating Assets via the user interface, see [Workload documentation](../../platform-admin/workloads/overviews/managing-workloads.md).
 
 === "API"
     ``` bash
@@ -153,7 +153,7 @@ Typical statuses you may see:
 *   Pending - the job is waiting to be scheduled
 *   Running - the job is running
 
-A full list of Job statuses can be found [here](../workloads/overviews/workload-support.md#workload-statuses)
+A full list of Job statuses can be found [here](../../platform-admin/workloads/overviews/managing-workloads.md)
 
 ### Describe Workload
 

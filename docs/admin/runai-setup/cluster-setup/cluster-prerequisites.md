@@ -158,12 +158,6 @@ See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/
 
 * Use the default `gpu-operator` namespace . Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in customized cluster installation.  
 * NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/dgx-os-6-user-guide/release_notes.html) is one such example as it comes bundled with NVIDIA Drivers.  
-* To use Dynamic MIG (deprecated), the GPU Operator must be installed with the flag `mig.strategy=mixed` as described in customized cluster installation. If the GPU Operator is already installed, edit the `clusterPolicy` by running
-
-``` bash
-kubectl patch clusterPolicy cluster-policy -n gpu-operator --type=merge -p '{"spec":{"mig":{"strategy": "mixed"}}}
-```
-
 *   For distribution-specific additional instructions see below:
 
 ??? "OpenShift Container Platform (OCP)"
@@ -253,7 +247,7 @@ Distributed training enables training of AI models over multiple nodes. This req
 
 There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) which includes TensorFlow, PyTorch, and XGBoost.
 
-It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../Researcher/workloads/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../platform-admin/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
 
 * To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
 

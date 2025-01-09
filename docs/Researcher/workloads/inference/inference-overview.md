@@ -108,6 +108,6 @@ The resources (GPUs, CPUs) are not occupied by a new Knative revision until it s
 
 ## See Also
 
-* To set up *Inference*, see [Cluster installation prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
-* For running *Inference* see [Inference quick-start](../../Researcher/Walkthroughs/quickstart-inference.md).
-* To run *Inference* using API see [Workload overview](../../developer/cluster-api/workload-overview-dev.md).
+* To set up *Inference*, see [Cluster installation prerequisites](../../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
+* For running *Inference* see [Inference quick-start](../../Walkthroughs/quickstart-inference.md).
+* To run *Inference* using API see [Workload overview](../../../developer/cluster-api/workload-overview-dev.md).

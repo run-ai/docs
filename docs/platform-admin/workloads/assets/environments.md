@@ -30,7 +30,7 @@ The Environments table consists of the following columns:
 | Workload(s) | The list of existing workloads that use the environment |
 | Workload types | The workload types that can use the environment (Workspace/ Training / Inference) |
 | Template(s) | The list of workload templates that use this environment |
-| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](#environments-created-by-run:ai) created by Run:ai  |
+| Created by | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](#environments-created-by-runai) created by Run:ai  |
 | Creation time | The timestamp of when the environment was created |
 | Last updated | The timestamp of when the environment was last updated |
 | Cluster | The cluster with which the environment is associated |
@@ -52,7 +52,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the environment |
 | Type | The workload type (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. See the full list of [workload status](../../../Researcher/workloads/managing-workloads.md#workload-status) |
+| Status | Represents the workload lifecycle. See the full list of [workload status](../../../platform-admin/workloads/overviews/managing-workloads.md#workload-status) |
 
 ### Customizing the table view
 

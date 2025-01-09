@@ -40,7 +40,7 @@ Start a Training Job
 runai submit --name train1 -i runai.jfrog.io/demo/quickstart -g 1 
 ```
 
-(see: [training Quickstart](../Walkthroughs/walkthrough-train.md)).
+(see: [training Quickstart](../workloads/training/standard-training/quickstart-standard-training.md)).
 
 Use GPU Fractions
 
