@@ -6,7 +6,7 @@ A workspace contains the setup and configuration needed for building your model,
 
 To learn more about the workspace workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../overviews/workload-types.md).
 
-![](../img/creating-workspace.png)
+![](img/creating-workspace.png)
 
 ## Creating a new Workspace
 

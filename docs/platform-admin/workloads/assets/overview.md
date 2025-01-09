@@ -1,6 +1,6 @@
   
 
-Run:ai [workload](../workload-overview.md) assets are preconfigured building blocks that simplify the workload submission effort and remove the complexities of Kubernetes and networks for AI practitioners.
+Run:ai [workload](../overviews/introduction-to-workloads.md) assets are preconfigured building blocks that simplify the workload submission effort and remove the complexities of Kubernetes and networks for AI practitioners.
 
 Workload assets enable organizations to:
 

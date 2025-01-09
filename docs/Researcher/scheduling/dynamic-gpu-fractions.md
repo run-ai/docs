@@ -91,10 +91,11 @@ You can configure multi-GPU dynamic fractions as follows:
 
 * Using the [compute resources](../workloads/assets/compute.md) asset, you can define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB), both with Request and Limit parameters: 
 
-![GPU Limit](../img/dynamic-fraction-example1.png)
+![](img/dynamic-fraction-example1.png)
 
-![GPU Limit](../img/dynamic-fraction-example2.png)
+![](img/dynamic-fraction-example2.png)
+
 
 * You can submit a workload with dynamic fractions using the CLI V2:
 
-![GPU Limit](../img/dynamic-fractions-CLI.png)
+![](img/dynamic-fractions-CLI.png)

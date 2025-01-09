@@ -38,7 +38,7 @@ Data volumes can be shared with additional scopes in the organization.
 
 ## Who can use a data volume?
 
-Data volumes are used when [submitting workloads](../../../platform-admin/workloads/overviews/managing-workloads.mdmanaging-workloads.md#adding-new-workload). Any user, application or SSO group with a [role](../../../platform-admin/authentication/roles.md) that has permissions to create workloads can also use data volumes.
+Data volumes are used when [submitting workloads](../../../platform-admin/workloads/overviews/managing-workloads.md#adding-new-workload). Any user, application or SSO group with a [role](../../../platform-admin/authentication/roles.md) that has permissions to create workloads can also use data volumes.
 
 Researchers can list available data volumes within their permitted scopes for easy selection.
 

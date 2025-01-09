@@ -3,7 +3,7 @@
 
 This guide provides a step-by-step walkthrough for running a Jupyter Notebook using workspaces.
 
-A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See [Running workspaces](../workloads/workspaces/workspace-v2.md) for more information.
+A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See [Running workspaces](workspace-v2.md) for more information.
 
 
 
@@ -11,7 +11,7 @@ A workspace contains the setup and configuration needed for building your model,
 
 Before you start, make sure:
 
-- You have created a project or have one created for you.
+- You have created a [project](../../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
 - The project has an assigned quota of at least 1 GPU.
 
 
@@ -35,7 +35,7 @@ Before you start, make sure:
     ```
 
 === "API"
-    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../../developer/rest-auth.md) article.
 
 
 ## Step 2: Submitting a workspace
@@ -56,7 +56,7 @@ Before you start, make sure:
 
              1. Click __+NEW ENVIRONMENT__
              2. Select under which cluster to create the environment
-             3. Select a [scope](../workloads/assets/overview.md). 
+             3. Select a [scope](../../../platform-admin/workloads/assets/overview.md). 
              4. Enter a __name__ for the environment. The name must be unique.
              5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
              6. Tools - Set the connection for your tool 
@@ -159,7 +159,7 @@ Before you start, make sure:
     6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
 
     !!! Note
-        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../../developer/cluster-api/submit-rest.md).
 
 
 

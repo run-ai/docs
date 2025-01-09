@@ -310,11 +310,12 @@ nav:
       - 'Workload Assets' : 
         - 'Overview' : 'platform-admin/workloads/assets/overview.md'
         - 'Environments' : 'platform-admin/workloads/assets/environments.md'
-        - 'Compute Resources': 'platform-admin/workloads/assets/compute.md'
         - 'Data Sources' : 'platform-admin/workloads/assets/datasources.md'
-        - 'Templates': 'platform-admin/workloads/assets/templates.md'
-        - 'Credentials' : 'platform-admin/workloads/assets/credentials.md'
         - 'Data Volumes': 'platform-admin/workloads/assets/data-volumes.md' 
+        - 'Compute Resources': 'platform-admin/workloads/assets/compute.md'
+        - 'Credentials' : 'platform-admin/workloads/assets/credentials.md'
+      - 'Workload Templates' :
+        - 'Workspace Templates': 'platform-admin/workloads/assets/templates.md'
       - 'Policies' :
         - 'Overview' : 'platform-admin/workloads/policies/overview.md'
         - 'Policies' : 'platform-admin/workloads/policies/workspaces-policy.md'
@@ -356,19 +357,25 @@ nav:
       - 'Workload Assets' : 
         - 'Overview' : 'Researcher/workloads/assets/overview.md'
         - 'Environments' : 'Researcher/workloads/assets/environments.md'
-        - 'Compute Resources': 'Researcher/workloads/assets/compute.md'
         - 'Data Sources' : 'Researcher/workloads/assets/datasources.md'
-        - 'Templates': 'Researcher/workloads/assets/templates.md'
-        - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
         - 'Data Volumes': 'Researcher/workloads/assets/data-volumes.md' 
+        - 'Compute Resources': 'Researcher/workloads/assets/compute.md'
+        - 'Credentials' : 'Researcher/workloads/assets/credentials.md'
+      - 'Workload Templates' :
+          - 'Workspace Templates': 'Researcher/workloads/assets/templates.md'
       - 'Experiment Using Workspaces' :
         - 'Running Workspaces' :  'Researcher/workloads/workspaces/workspace-v2.md'
-        -  'Running Jupyter Notebook Using Workspaces' : 'Researcher/workloads/workspaces/quickstart-jupyter.md'
+        - 'Quick Starts' : 
+          - 'Running Jupyter Notebook Using Workspaces' : 'Researcher/workloads/workspaces/quickstart-jupyter.md'
       - 'Train Models Using Training' : 
-        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
-        - 'Training quick start' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
-        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
-        - 'Distributed Training Quick Start' : 'Researcher/workloads/training/distributed-training/quick-starts/quickstart-distributed-training.md'
+        - 'Standard Training' :
+          - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
+          - 'Quick Starts' :
+            - 'Run your First Standard Training' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
+        - 'Distributed Training' :
+          - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
+          - 'Quick Starts' :
+            - 'Run your First Distributed Training' : 'Researcher/workloads/training/distributed-training/quickstart-distributed-training.md'
       - 'Deploy Models Using Inference' :
         - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
         - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'

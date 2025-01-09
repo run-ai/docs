@@ -1,6 +1,6 @@
 # Introduction to Workloads
 
-Run:ai enhances visibility and simplifies [management](../overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../../aiinitiatives/overview.md). 
+Run:ai enhances visibility and simplifies [management](../overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../../../platform-admin/aiinitiatives/overview.md). 
 
 ## Workloads across the AI lifecycle
 
@@ -25,7 +25,7 @@ The workload, defined by the AI practitioner, consists of:
 
 ## Workload scheduling and orchestration
 
-Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](../../aiinitiatives/org/scheduling-rules.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator. TBD links
+Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](../../../Researcher/scheduling/the-runai-scheduler.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator.
 
 ## Run:ai and third-party workloads
 
@@ -43,7 +43,7 @@ Different types of workloads have different levels of support. Understanding wha
 | [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md) | v | v | v |           v            | v |
 | [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
 | [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-weight) | v | v | v |           v            | v |
-| [Node pools](../../aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
+| [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
 | Bin packing / Spread | v | v | v |           v            | v |
 | Fractions | v | v | v |           v            | v |
 | Dynamic fractions | v | v | v |           v            | v |
@@ -56,8 +56,8 @@ Different types of workloads have different levels of support. Understanding wha
 | Workload awareness | v | v | v |           v            |  |
 | [Workload submission](../../workloads/overviews/managing-workloads.md) | v | v | v |           v            |  |
 | [Workload actions (stop/run)](../../workloads/overviews/managing-workloads.md) | v | v | v |           v            |  |
-| [Workload Policies](../policies/overview.md) | v | v | v |           v            |  |
-| [Scheduling rules](../../aiinitiatives/org/scheduling-rules.md) | v | v | v |           v            |  |
+| [Workload Policies](../../../platform-admin/workloads/policies/overview.md) | v | v | v |           v            |  |
+| [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md) | v | v | v |           v            |  |
 
 !!! Note
     __Workload awareness__

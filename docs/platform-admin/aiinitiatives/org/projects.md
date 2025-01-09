@@ -1,7 +1,7 @@
   
 This article explains the procedure to manage Projects.
 
-Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the concept of Projects. Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
+Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the [concept of Projects](../overview.md). Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
 
 For example, you may have several people involved in a specific face-recognition initiative collaborating under one project named “face-recognition-2024”. Alternatively, you can have a project per person in your team, where each member receives their own quota.
 
@@ -99,39 +99,39 @@ Click one of the values of Workload(s) column, to view the list of workloads and
 
 To create a new Project:
 
-1. Click +NEW PROJECT  
-2. Select a scope, you can only view clusters if you have permission to do so - within the scope of the roles assigned to you  
-3. Enter a name for the project  
+1. Click __+NEW PROJECT__ 
+2. Select a __scope__, you can only view clusters if you have permission to do so - within the scope of the roles assigned to you  
+3. Enter a __name__ for the project  
    Project names must start with a letter and can only contain lower case Latin letters, numbers or a hyphen ('-’)  
-4. Namespace associated with Project  
+4. __Namespace__ associated with Project  
    Each project has an associated (Kubernetes) namespace in the cluster.  
     All workloads under this project use this namespace.  
    a. By default, Run:ai creates a namespace based on the Project name (in the form of `runai-<name>`)  
    b. Alternatively, you can choose an existing namespace created for you by the cluster administrator  
-5. In the Quota management section, you can set the quota parameters and prioritize resources  
-    * Order of priority  
+5. In the __Quota management__ section, you can set the quota parameters and prioritize resources  
+    * __Order of priority__  
     This column is displayed only if more than one node pool exists. The default order in which the Scheduler uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. Empty value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission  
-    * Node pool  
+    * __Node pool__  
     This column is displayed only if more than one node pool exists. It represents the name of the node pool.  
-    * GPU devices  
+    * __GPU devices__  
     The number of GPUs you want to allocate for this project in this node pool (decimal number).  
-    * CPUs (Cores)  
+    * __CPUs (Cores)__  
     This column is displayed only if CPU quota is enabled via the General settings.  
     Represents the number of CPU cores you want to allocate for this project in this node pool (decimal number).  
-    * CPU memory  
+    * __CPU memory__  
     This column is displayed only if CPU quota is enabled via the General settings.  
     The amount of CPU memory you want to allocate for this project in this node pool (in Megabytes or Gigabytes).  
    
-    * Over quota / Over quota weight -  If over-quota weight is enabled via the General settings then over-quota weight is presented, otherwise over-quota is presented  
+    * __Over quota / Over quota weight__ -  If over-quota weight is enabled via the General settings then over-quota weight is presented, otherwise over-quota is presented  
        
-        * Over quota  
+        * __Over quota__  
         When enabled, the project can use non-guaranteed overage resources above its quota in this node pool. The amount of the non-guaranteed overage resources for this project is calculated proportionally to the project quota in this node pool. When disabled, the project cannot use more resources than the guaranteed quota in this node pool.         
-        * Over quota weight - Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:  
-            * Medium  
-            The default value. The Admin can change the default to any of the following values: High, Low, Lowest, or None.  
-            * None  
+        * __Over quota weight__ - Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:  
+            * __Medium__  
+            The default value. The Admin can change the default to any of the following values: __High, Low, Lowest, or None__.  
+            * __None__  
             When set, the project cannot use more resources than the guaranteed quota in this node pool.  
-            * Lowest  
+            * __Lowest__  
             Over-quota weight ‘lowest’ has a unique behavior, because its weight is 0, it can only use over-quota (unused overage) resources if no other project needs them, and any project with a higher over-quota weight can snap the average resources at any time.
 
 !!! Note
@@ -141,7 +141,7 @@ When no node pools are configured, you can set the same parameters but it is for
 
 After node pools are created, you can set the above parameters __for each node-pool separately__.
 
-6. Set Scheduling rules as required. You can have a scheduling rule for:  
+6. Set [Scheduling rules](../org/scheduling-rules.md) as required. You can have a scheduling rule for:  
     * Idle GPU timeout  
     Preempt a workload that does not use GPUs for more than a specified duration. You can apply a single rule per workload type - Preemptive Workspaces, Non-preemptive Workspaces, and Training.  
   
@@ -156,56 +156,56 @@ After node pools are created, you can set the above parameters __for each node-p
     Node type is used to select a group of nodes, usually with specific characteristics such as a hardware feature, storage type, fast networking interconnection, etc. The scheduler uses node type as an indication of which nodes should be used for your workloads, within this project.  
     Node type is a label in the form of [run.ai/type](http://run.ai/type) and a value (e.g. run.ai/type = dgx200) that the administrator uses to tag a set of nodes. Adding the node type to the project’s scheduling rules enables the user to submit workloads with any node type label/value pairs in this list, according to the workload type - Workspace or Training. The Scheduler then schedules workloads using a node selector, targeting nodes tagged with the Run:ai node type label/value pair. Node pools and a node type can be used in conjunction with each other. For example, specifying a node pool and a smaller group of nodes from that node pool that includes a fast SSD memory or other unique characteristics.  
 
-7. Click CREATE PROJECT
+7. Click __CREATE PROJECT__
 
 ## Adding an access rule to a project
 
 To create a new access rule for a project:
 
 1. Select the project you want to add an access rule for  
-2. Click ACCESS RULES  
-3. Click +ACCESS RULE  
-4. Select a subject  
+2. Click __ACCESS RULES__  
+3. Click __+ACCESS RULE__ 
+4. Select a __subject__  
 5. Select or enter the subject identifier:  
-    1. User Email for a local user created in Run:ai or for SSO user as recognized by the IDP  
-    2. Group name as recognized by the IDP  
-    3. Application name as created in Run:ai  
-6. Select a role  
-7. Click SAVE RULE  
-8. Click CLOSE
+    * __User Email__ for a local user created in Run:ai or for SSO user as recognized by the IDP  
+    * __Group name__ as recognized by the IDP  
+    * __Application name__ as created in Run:ai  
+6. Select a __role__  
+7. Click __SAVE RULE__  
+8. Click __CLOSE__
 
 ## Deleting an access rule from a project
 
 To delete an access rule from a project:
 
 1. Select the project you want to remove an access rule from  
-2. Click ACCESS RULES  
+2. Click __ACCESS RULES__  
 3. Find the access rule you want to delete  
 4. Click on the trash icon  
-5. Click CLOSE
+5. Click __CLOSE__
 
 ## Editing a project
 
 To edit a project:
 
 1. Select the project you want to edit  
-2. Click EDIT  
-3. Update the Project and click SAVE
+2. Click __EDIT__  
+3. Update the Project and click __SAVE__
 
 ## Viewing a project’s policy
 
 To view the policy of a project:
 
 1. Select the project for which you want to view its policies. This option is only active for projects with defined policies in place.  
-2. Click VIEW POLICY and select the workload type for which you want to view the policies:  
-    a. Workspace workload type policy with its set of rules  
-    b. Training workload type policies with its set of rules  
+2. Click __VIEW POLICY__ and select the workload type for which you want to view the policies:  
+    a. __Workspace__ workload type policy with its set of rules  
+    b. __Training__ workload type policies with its set of rules  
 3. In the Policy form, view the workload rules that are enforcing your project for the selected workload type as well as the defaults:  
-    * Parameter - The workload submission parameter that Rules and Defaults are applied to  
-    * Type (applicable for data sources only) - The data source type (Git, S3, nfs, pvc etc.)  
-    * Default - The default value of the Parameter  
-    * Rule - Set up constraints on workload policy fields  
-    * Source - The origin of the applied policy (cluster, department or project)  
+    * __Parameter__ - The workload submission parameter that Rules and Defaults are applied to  
+    * __Type__ (applicable for data sources only) - The data source type (Git, S3, nfs, pvc etc.)  
+    * __Default__ - The default value of the Parameter  
+    * __Rule__ - Set up constraints on workload policy fields  
+    * __Source__ - The origin of the applied policy (cluster, department or project)  
 
 !!! Note  
     The policy affecting the project consists of rules and defaults. Some of these rules and defaults may be derived from policies of a parent cluster and/or department (source). You can see the source of each rule in the policy form.
@@ -215,8 +215,8 @@ To view the policy of a project:
 To delete a project:
 
 1. Select the project you want to delete  
-2. Click DELETE  
-3. On the dialog, click DELETE to confirm 
+2. Click __DELETE__  
+3. On the dialog, click __DELETE__ to confirm 
 
 !!! Note
      * **Clusters < v2.20**

@@ -1,3 +1,5 @@
+# Workloads
+
 This article explains the procedure for managing workloads.
 
 ## Workloads table
@@ -141,8 +143,8 @@ To create a new workload:
 2. Select a workload type - Follow the links below to view the step-by-step guide for each workload type:  
     * [Workspace](../../../Researcher/workloads/workspaces/workspace-v2.md). Used for data preparation and model-building tasks.  
     * [Training](../../../Researcher/workloads/training/standard-training/trainings-v2.md). Used for standard training tasks of all sorts  
-     * [Distributed Training](../../../Researcher/workloads/training/distributed-training/distributed-training.md). Used for standard training tasks of all sorts  
-    * [Inference](../../../Researcher/workloads/inference/inference-overview.md). Used for inference and serving tasks  
+     * [Distributed Training](../../../Researcher/workloads/training/distributed-training/distributed-training.md). Used for distributed tasks of all sorts  
+    * [Inference](../../../Researcher/workloads/inference/custom-inference.md). Used for inference and serving tasks  
     * Job (legacy). This type is displayed only if enabled by your Administrator, under General settings → Workloads → Workload policies  
 3. Click __CREATE WORKLOAD__
 
