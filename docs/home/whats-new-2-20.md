@@ -105,18 +105,18 @@ using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferen
 
 #### Analytics
 
-* **Added new reports** - The new Reports enables generating and organizing large data in a structured, 
+* **Added a new Reports for analytrics** - The new Reports enables generating and organizing large data in a structured, 
 CSV-formatted layout. With this feature, you can monitor resource consumption, identify trends, and make informed decisions 
 to optimize their AI workloads with greater efficiency. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Authorization and authentication
 
-* **Client credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
+* **Added cllient credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
 authentication token. See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Node pools
 
-* **Enhanced metrics for node pool** - Enhanced metric graphs in the DETAILS tab for node pools by aligning these graphs with 
+* **Enhanced metric graphs for node pools** - Enhanced metric graphs in the DETAILS tab for node pools by aligning these graphs with 
 the dashboard and the node pools API. As part of this improvement, the following columns have been removed 
 from the [Node pools table](../platform-admin/aiinitiatives/resources/node-pools.md). 
 
@@ -213,6 +213,14 @@ from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their clus
 * **Enhanced configuration flexibility for cluster replica management** - Administrators can now use the `spec.global.replicaCount` to 
 manage replicas for for Run:ai services. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
+#### Built-in alerts
+
+* **Added unknown state alert for a node** - The Kubernetes node hosting GPU workloads is in an unknown state, and its health and readiness cannot be determined. See [Built-in alerts](../admin/maintenance/alert-monitoring.md#built-in-alerts). <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+
+* **Added low memory node alert** - The Kubernetes node hosting GPU workloads has insufficient memory to support current or upcoming workloads. See [Built-in alerts](../admin/maintenance/alert-monitoring.md#built-in-alerts). <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+
+
+
 ### Run:ai Developer
 
 #### Metrics and Telemtry 
@@ -280,6 +288,6 @@ The legacy submission form will still be accessible via the Workload manager vie
 
 ### appID and appSecret deprecation 
 
-Deprecating appID and appSecret parameters in the [Create and application token API](https://api-docs.run.ai/latest/tag/Tokens). 
+Deprecating appID and appSecret parameters in the [Create an application token API](https://api-docs.run.ai/latest/tag/Tokens). 
 To create application tokens, use your client credentials - Client ID and Client secret.
 
