@@ -18,7 +18,7 @@ runai training xgboost list
 # List xgboost training workloads in a specific project
 runai training xgboost list -p <project_name>
 
-# List all training xgboost workloads with a specific output format
+# List all xgboost training workloads with a specific output format
 runai training xgboost list -o wide
 
 # List xgboost training workloads with pagination

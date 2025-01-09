@@ -6,6 +6,19 @@ delete xgboost training workload
 runai training xgboost delete [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Delete a xgboost training workload with a default project
+runai training xgboost delete <xgboost-name>
+
+# Delete a xgboost training workload with a specific project
+runai training xgboost delete <xgboost-name> -p <project_name>
+
+# Delete a xgboost training workload by UUID
+runai training xgboost delete --uuid=<xgboost_uuid> -p <project_name>
+```
+
 ### Options
 
 ```

@@ -1,18 +1,18 @@
 ## runai workspace bash
 
-open a bash shell in a job
+open a bash shell in a workspace job
 
 ```
-runai workspace bash WORKSPACE_NAME [flags]
+runai workspace bash [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Open a bash shell in the main worker
+# Open a bash shell in the workspace's main worker
 runai workspace bash workspace-01
 
-# Open a bash shell in a specific worker
+# Open a bash shell in a specific workspace worker
 runai workspace bash workspace-01 --pod workspace-01-worker-1
 ```
 

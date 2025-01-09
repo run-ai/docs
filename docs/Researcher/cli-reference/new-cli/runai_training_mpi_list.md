@@ -18,7 +18,7 @@ runai training mpi list
 # List mpi training workloads in a specific project
 runai training mpi list -p <project_name>
 
-# List all training mpi workloads with a specific output format
+# List all mpi training workloads with a specific output format
 runai training mpi list -o wide
 
 # List mpi training workloads with pagination

@@ -1,6 +1,6 @@
 ## runai xgboost bash
 
-open a bash shell in a training xgboost job
+open a bash shell in a xgboost training job
 
 ```
 runai xgboost bash [WORKLOAD_NAME] [flags]
@@ -9,10 +9,10 @@ runai xgboost bash [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Open a bash shell in the training xgboost's main worker
+# Open a bash shell in the xgboost training's main worker
 runai training xgboost bash xgboost-01
 
-# Open a bash shell in a specific training xgboost worker
+# Open a bash shell in a specific xgboost training worker
 runai training xgboost bash xgboost-01 --pod xgboost-01-worker-1
 ```
 

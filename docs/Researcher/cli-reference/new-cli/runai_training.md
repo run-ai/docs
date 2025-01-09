@@ -22,10 +22,10 @@ training management
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai training attach](runai_training_attach.md)	 - attach to a running container in a standard training job
-* [runai training bash](runai_training_bash.md)	 - open a bash shell in a training standard job
+* [runai training bash](runai_training_bash.md)	 - open a bash shell in a standard training job
 * [runai training delete](runai_training_delete.md)	 - delete standard training workload
 * [runai training describe](runai_training_describe.md)	 - describe standard training
-* [runai training exec](runai_training_exec.md)	 - execute a command in a training standard job
+* [runai training exec](runai_training_exec.md)	 - execute a command in a standard training job
 * [runai training list](runai_training_list.md)	 - list all training frameworks
 * [runai training logs](runai_training_logs.md)	 - view logs of a standard training job
 * [runai training mpi](runai_training_mpi.md)	 - mpi management

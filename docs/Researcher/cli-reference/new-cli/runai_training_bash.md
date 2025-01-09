@@ -1,6 +1,6 @@
 ## runai training bash
 
-open a bash shell in a training standard job
+open a bash shell in a standard training job
 
 ```
 runai training bash [WORKLOAD_NAME] [flags]
@@ -9,10 +9,10 @@ runai training bash [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Open a bash shell in the training standard's main worker
+# Open a bash shell in the standard training's main worker
 runai training standard bash standard-01
 
-# Open a bash shell in a specific training standard worker
+# Open a bash shell in a specific standard training worker
 runai training standard bash standard-01 --pod standard-01-worker-1
 ```
 

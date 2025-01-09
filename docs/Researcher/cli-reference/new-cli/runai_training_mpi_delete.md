@@ -6,6 +6,19 @@ delete mpi training workload
 runai training mpi delete [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Delete a mpi training workload with a default project
+runai training mpi delete <mpi-name>
+
+# Delete a mpi training workload with a specific project
+runai training mpi delete <mpi-name> -p <project_name>
+
+# Delete a mpi training workload by UUID
+runai training mpi delete --uuid=<mpi_uuid> -p <project_name>
+```
+
 ### Options
 
 ```

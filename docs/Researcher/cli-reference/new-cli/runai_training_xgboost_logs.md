@@ -27,7 +27,7 @@ runai training xgboost logs xgboost-01 --timestamps
 # Follow the logs
 runai training xgboost logs xgboost-01 --follow
 
-# Get logs for the previous instance of the training xgboost
+# Get logs for the previous instance of the xgboost training
 runai training xgboost logs xgboost-01 --previous
 
 # Limit the logs to 1024 bytes

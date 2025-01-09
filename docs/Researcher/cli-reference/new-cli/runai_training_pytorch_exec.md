@@ -1,6 +1,6 @@
 ## runai training pytorch exec
 
-execute a command in a training pytorch job
+execute a command in a pytorch training job
 
 ```
 runai training pytorch exec [WORKLOAD_NAME] [flags]
@@ -9,13 +9,13 @@ runai training pytorch exec [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Execute bash in the training pytorch's main worker
+# Execute bash in the pytorch training's main worker
 runai training pytorch exec pytorch-01 --tty --stdin -- /bin/bash 
 
-# Execute ls command in the training pytorch's main worker
+# Execute ls command in the pytorch training's main worker
 runai training pytorch exec pytorch-01 -- ls
 
-# Execute a command in a specific training pytorch worker
+# Execute a command in a specific pytorch training worker
 runai training pytorch exec pytorch-01 --pod pytorch-01-worker-1 -- nvidia-smi
 ```
 

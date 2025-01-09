@@ -27,7 +27,7 @@ runai training pytorch logs pytorch-01 --timestamps
 # Follow the logs
 runai training pytorch logs pytorch-01 --follow
 
-# Get logs for the previous instance of the training pytorch
+# Get logs for the previous instance of the pytorch training
 runai training pytorch logs pytorch-01 --previous
 
 # Limit the logs to 1024 bytes

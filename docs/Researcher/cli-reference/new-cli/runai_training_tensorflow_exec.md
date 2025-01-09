@@ -1,6 +1,6 @@
 ## runai training tensorflow exec
 
-execute a command in a training tf job
+execute a command in a tf training job
 
 ```
 runai training tensorflow exec [WORKLOAD_NAME] [flags]
@@ -9,13 +9,13 @@ runai training tensorflow exec [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Execute bash in the training tf's main worker
+# Execute bash in the tf training's main worker
 runai training tf exec tf-01 --tty --stdin -- /bin/bash 
 
-# Execute ls command in the training tf's main worker
+# Execute ls command in the tf training's main worker
 runai training tf exec tf-01 -- ls
 
-# Execute a command in a specific training tf worker
+# Execute a command in a specific tf training worker
 runai training tf exec tf-01 --pod tf-01-worker-1 -- nvidia-smi
 ```
 

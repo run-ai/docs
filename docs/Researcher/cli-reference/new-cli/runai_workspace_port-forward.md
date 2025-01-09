@@ -1,22 +1,22 @@
 ## runai workspace port-forward
 
-port forward management
+forward one or more local ports to a workspace job
 
 ```
-runai workspace port-forward WORKSPACE_NAME [flags]
+runai workspace port-forward [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Forward connections from localhost:8080 to <workspace-name> on port 8090:
-runai workspace port-forward <workspace-name> --port 8080:8090 --address localhost
+# Forward connections from localhost:8080 to workspace on port 8090:
+runai workspace port-forward workspace-01 --port 8080:8090 --address localhost
 
-# Forward connections from 0.0.0.0:8080 to <job-name> on port 8080:
-runai workspace port-forward <workspace-name> --port 8080 --address 0.0.0.0 [requires privileges]
+# Forward connections from 0.0.0.0:8080 to workspace on port 8080:
+runai workspace port-forward workspace-01 --port 8080 --address 0.0.0.0 [requires privileges]
 
-# Forward multiple connections from localhost:8080 to <workload-name> on port 8090 and from localhost:6443 to <workspace-name> on port 443:
-runai workspace port-forward <workload-name> --port 8080:8090 --port 6443:443 --address localhost
+# Forward multiple connections from localhost:8080 to workspace on port 8090 and from localhost:6443 to workspace on port 443:
+runai workspace port-forward workspace-01 --port 8080:8090 --port 6443:443 --address localhost
 ```
 
 ### Options

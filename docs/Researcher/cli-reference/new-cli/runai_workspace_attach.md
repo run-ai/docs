@@ -1,16 +1,19 @@
 ## runai workspace attach
 
-Attach to a process that is already running inside an existing container.
+attach to a running container in a workspace job
 
 ```
-runai workspace attach WORKSPACE_NAME [flags]
+runai workspace attach [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Attaching to ubuntu workspace 
-runai workspace attach ubuntu-wl --tty --stdin
+# Attaching to the main worker of a workspace
+runai workspace attach workspace-01 --tty --stdin
+
+# Attaching to a specific pod of a workspace
+runai workspace attach workspace-01 --pod workspace-01-worker-1 --tty --stdin
 ```
 
 ### Options

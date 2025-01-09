@@ -22,12 +22,14 @@ mpi management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training mpi attach](runai_training_mpi_attach.md)	 - attach to a running container in a mpi training job
-* [runai training mpi bash](runai_training_mpi_bash.md)	 - open a bash shell in a training mpi job
+* [runai training mpi bash](runai_training_mpi_bash.md)	 - open a bash shell in a mpi training job
 * [runai training mpi delete](runai_training_mpi_delete.md)	 - delete mpi training workload
 * [runai training mpi describe](runai_training_mpi_describe.md)	 - describe mpi training
-* [runai training mpi exec](runai_training_mpi_exec.md)	 - execute a command in a training mpi job
+* [runai training mpi exec](runai_training_mpi_exec.md)	 - execute a command in a mpi training job
 * [runai training mpi list](runai_training_mpi_list.md)	 - list mpi training
 * [runai training mpi logs](runai_training_mpi_logs.md)	 - view logs of a mpi training job
 * [runai training mpi port-forward](runai_training_mpi_port-forward.md)	 - forward one or more local ports to a mpi training job
+* [runai training mpi resume](runai_training_mpi_resume.md)	 - resume mpi training
 * [runai training mpi submit](runai_training_mpi_submit.md)	 - submit mpi training
+* [runai training mpi suspend](runai_training_mpi_suspend.md)	 - suspend mpi training
 

@@ -22,10 +22,6 @@ workload management
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai workload attach](runai_workload_attach.md)	 - Attach to a process that is already running inside an existing container.
 * [runai workload describe](runai_workload_describe.md)	 - Describe a workload
-* [runai workload exec](runai_workload_exec.md)	 - exec management
 * [runai workload list](runai_workload_list.md)	 - List workloads
-* [runai workload logs](runai_workload_logs.md)	 - logs management
-* [runai workload port-forward](runai_workload_port-forward.md)	 - port forward management
 

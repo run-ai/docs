@@ -28,23 +28,17 @@ runai [flags]
 
 ### SEE ALSO
 
-* [runai attach](runai_attach.md)	 - [Deprecated] attach
 * [runai cluster](runai_cluster.md)	 - cluster management
 * [runai config](runai_config.md)	 - configuration management
-* [runai describe](runai_describe.md)	 - [Deprecated] Display detailed information about resources
-* [runai exec](runai_exec.md)	 - [Deprecated] exec
-* [runai list](runai_list.md)	 - [Deprecated] display resource list. By default displays the job list
+* [runai kubeconfig](runai_kubeconfig.md)	 - kubeconfig management
 * [runai login](runai_login.md)	 - login to the control plane
 * [runai logout](runai_logout.md)	 - logout from control plane
-* [runai logs](runai_logs.md)	 - [Deprecated] logs
 * [runai mpi](runai_mpi.md)	 - alias for mpi management
 * [runai node](runai_node.md)	 - node management
 * [runai nodepool](runai_nodepool.md)	 - node pool management
-* [runai port-forward](runai_port-forward.md)	 - [Deprecated] port forward
 * [runai project](runai_project.md)	 - project management
 * [runai pytorch](runai_pytorch.md)	 - alias for pytorch management
 * [runai report](runai_report.md)	 - [Experimental] report management
-* [runai submit](runai_submit.md)	 - [Deprecated] Submit a new workload
 * [runai tensorflow](runai_tensorflow.md)	 - alias for tensorflow management
 * [runai training](runai_training.md)	 - training management
 * [runai upgrade](runai_upgrade.md)	 - upgrades the CLI to the latest version

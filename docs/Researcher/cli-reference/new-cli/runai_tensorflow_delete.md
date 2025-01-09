@@ -6,6 +6,19 @@ delete tf training workload
 runai tensorflow delete [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Delete a tf training workload with a default project
+runai training tf delete <tf-name>
+
+# Delete a tf training workload with a specific project
+runai training tf delete <tf-name> -p <project_name>
+
+# Delete a tf training workload by UUID
+runai training tf delete --uuid=<tf_uuid> -p <project_name>
+```
+
 ### Options
 
 ```

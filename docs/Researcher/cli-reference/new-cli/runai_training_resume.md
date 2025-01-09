@@ -6,6 +6,19 @@ resume standard training
 runai training resume [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Resume a standard training workload
+runai training standard resume <standard-name>
+
+# Resume a standard training workload in a specific project
+runai training standard resume <standard-name> -p <project_name>
+
+# Resume a standard training workload by UUID
+runai training standard resume --uuid=<standard_uuid>
+```
+
 ### Options
 
 ```

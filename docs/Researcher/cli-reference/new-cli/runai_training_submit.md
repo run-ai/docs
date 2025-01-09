@@ -9,8 +9,15 @@ runai training submit [flags]
 ### Examples
 
 ```
-# Submit a standard training job
+# Submit a standard training workload
 runai training standard submit <name> -p <project_name> -i runai.jfrog.io/demo/quickstart-demo
+
+# Submit a standard training workload with arguments
+runai training standard submit <name> -p <project_name> -i ubuntu -- ls -la
+
+# Submit a standard training workload with a custom command
+runai training standard submit <name> -p <project_name> -i ubuntu --command -- echo "Hello, World"
+
 # Submit a standard training jupiter notebook
 runai training standard submit <name> -p <project_name> -i jupyter/scipy-notebook --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token='
 ```
@@ -22,10 +29,9 @@ runai training standard submit <name> -p <project_name> -i jupyter/scipy-noteboo
       --annotation stringArray                         Set of annotations to populate into the container running the workspace
       --attach                                         If true, wait for the pod to start running, and then attach to the pod as if 'runai attach' was called. Attach makes tty and stdin true by default. Defaults to false
       --auto-deletion-time-after-completion duration   The length of time (like 5s, 2m, or 3h, higher than zero) after which a completed job is automatically deleted (default 0s)
-      --backoff-limit int                              The number of times the job will be retried before failing
+      --backoff-limit int                              The number of times the job will be retried before failing (default 6)
       --capability stringArray                         The POSIX capabilities to add when running containers. Defaults to the default set of capabilities granted by the container runtime.
   -c, --command                                        If true, override the image's entrypoint with the command supplied after '--'
-      --completions int32                              Number of successful pods required for this job to be completed. Used with HPO
       --configmap-map-volume stringArray               Mount ConfigMap as a volume. Use the fhe format name=CONFIGMAP_NAME,path=PATH
       --cpu-core-limit float                           CPU core limit (e.g. 0.5, 1)
       --cpu-core-request float                         CPU core request (e.g. 0.5, 1)
@@ -51,13 +57,12 @@ runai training standard submit <name> -p <project_name> -i jupyter/scipy-noteboo
       --image-pull-policy string                       Set image pull policy. One of: Always, IfNotPresent, Never. Defaults to Always (default "Always")
       --label stringArray                              Set of labels to populate into the container running the workspace
       --large-shm                                      Request large /dev/shm device to mount
-      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
       --nfs stringArray                                NFS storage details. Use the format: path=PATH,server=SERVER,mountpath=MOUNT_PATH,readwrite
       --node-pools stringArray                         List of node pools to use for scheduling the job, ordered by priority
       --node-type string                               Enforce node type affinity by setting a node-type label
-      --parallelism int32                              Number of pods to run in parallel at any given time. Used with HPO
+      --parallelism int32                              Specifies the maximum number of pods that should run in parallel at any given time
       --pod-running-timeout duration                   Pod check for running state timeout.
       --port stringArray                               Expose ports from the job container. Use the format: service-type=NodePort,container=80,external=8080
       --preferred-pod-topology-key string              If possible, all pods of this job will be scheduled onto nodes that have a label with this key and identical values
@@ -66,6 +71,7 @@ runai training standard submit <name> -p <project_name> -i jupyter/scipy-noteboo
       --run-as-gid int                                 The group ID the container will run with
       --run-as-uid int                                 The user ID the container will run with
       --run-as-user                                    takes the uid, gid, and supplementary groups fields from the token, if all the fields do not exist, uses the local running terminal user credentials. if any of the fields exist take only the existing fields
+      --runs int32                                     Number of successful runs required for this workload to be considered completed
       --s3 stringArray                                 s3 storage details. Use the format: name=NAME,bucket=BUCKET,path=PATH,accesskey=ACCESS_KEY,url=URL
       --seccomp-profile string                         Indicates which kind of seccomp profile will be applied to the container, options: RuntimeDefault|Unconfined|Localhost
       --stdin                                          Keep stdin open on the container(s) in the pod, even if nothing is attached

@@ -18,7 +18,7 @@ runai training pytorch list
 # List pytorch training workloads in a specific project
 runai training pytorch list -p <project_name>
 
-# List all training pytorch workloads with a specific output format
+# List all pytorch training workloads with a specific output format
 runai training pytorch list -o wide
 
 # List pytorch training workloads with pagination

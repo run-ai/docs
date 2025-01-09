@@ -5,8 +5,7 @@ workspace management
 ### Options
 
 ```
-  -h, --help                 help for workspace
-      --interactive enable   set interactive mode (enabled|disabled)
+  -h, --help   help for workspace
 ```
 
 ### Options inherited from parent commands
@@ -22,14 +21,14 @@ workspace management
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai workspace attach](runai_workspace_attach.md)	 - Attach to a process that is already running inside an existing container.
-* [runai workspace bash](runai_workspace_bash.md)	 - open a bash shell in a job
-* [runai workspace delete](runai_workspace_delete.md)	 - delete workspace
-* [runai workspace describe](runai_workspace_describe.md)	 - Describe a training workload
-* [runai workspace exec](runai_workspace_exec.md)	 - exec management
+* [runai workspace attach](runai_workspace_attach.md)	 - attach to a running container in a workspace job
+* [runai workspace bash](runai_workspace_bash.md)	 - open a bash shell in a workspace job
+* [runai workspace delete](runai_workspace_delete.md)	 - delete workspace workload
+* [runai workspace describe](runai_workspace_describe.md)	 - describe workspace
+* [runai workspace exec](runai_workspace_exec.md)	 - execute a command in a workspace job
 * [runai workspace list](runai_workspace_list.md)	 - list workspace
-* [runai workspace logs](runai_workspace_logs.md)	 - logs management
-* [runai workspace port-forward](runai_workspace_port-forward.md)	 - port forward management
+* [runai workspace logs](runai_workspace_logs.md)	 - view logs of a workspace job
+* [runai workspace port-forward](runai_workspace_port-forward.md)	 - forward one or more local ports to a workspace job
 * [runai workspace resume](runai_workspace_resume.md)	 - resume workspace
 * [runai workspace submit](runai_workspace_submit.md)	 - submit workspace
 * [runai workspace suspend](runai_workspace_suspend.md)	 - suspend workspace

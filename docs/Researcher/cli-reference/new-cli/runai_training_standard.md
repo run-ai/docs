@@ -22,10 +22,10 @@ standard training management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training standard attach](runai_training_standard_attach.md)	 - attach to a running container in a standard training job
-* [runai training standard bash](runai_training_standard_bash.md)	 - open a bash shell in a training standard job
+* [runai training standard bash](runai_training_standard_bash.md)	 - open a bash shell in a standard training job
 * [runai training standard delete](runai_training_standard_delete.md)	 - delete standard training workload
 * [runai training standard describe](runai_training_standard_describe.md)	 - describe standard training
-* [runai training standard exec](runai_training_standard_exec.md)	 - execute a command in a training standard job
+* [runai training standard exec](runai_training_standard_exec.md)	 - execute a command in a standard training job
 * [runai training standard list](runai_training_standard_list.md)	 - list standard training
 * [runai training standard logs](runai_training_standard_logs.md)	 - view logs of a standard training job
 * [runai training standard port-forward](runai_training_standard_port-forward.md)	 - forward one or more local ports to a standard training job

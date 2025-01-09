@@ -3,13 +3,19 @@
 suspend workspace
 
 ```
-runai workspace suspend [WORKSPACE_NAME] [flags]
+runai workspace suspend [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-runai workspace <workspace_name> -p=<project_name>
+# Suspend a workspace workload
+runai workspace suspend <workspace-name>
+
+# Suspend a workspace workload in a specific project
+runai workspace suspend <workspace-name> -p <project_name>
+
+# Suspend a workspace workload by UUID
 runai workspace suspend --uuid=<workspace_uuid>
 ```
 

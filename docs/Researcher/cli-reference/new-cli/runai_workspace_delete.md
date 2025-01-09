@@ -1,16 +1,22 @@
 ## runai workspace delete
 
-delete workspace
+delete workspace workload
 
 ```
-runai workspace delete [WORKSPACE_NAME] [flags]
+runai workspace delete [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-runai workspace delete <workspace_name> (optional)-p=<project_name>
-runai workspace delete --uuid=<workload_uuid>
+# Delete a workspace workload with a default project
+runai workspace delete <workspace-name>
+
+# Delete a workspace workload with a specific project
+runai workspace delete <workspace-name> -p <project_name>
+
+# Delete a workspace workload by UUID
+runai workspace delete --uuid=<workspace_uuid> -p <project_name>
 ```
 
 ### Options

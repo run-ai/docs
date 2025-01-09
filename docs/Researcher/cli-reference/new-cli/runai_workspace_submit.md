@@ -9,9 +9,17 @@ runai workspace submit [flags]
 ### Examples
 
 ```
+# Submit a workspace workload
+runai workspace submit <name> -p <project_name> -i runai.jfrog.io/demo/quickstart-demo
 
-runai workspace submit <workspace_name> -p=<project_name> -i=runai.jfrog.io/demo/quickstart-demo
-runai workspace submit --i jupyter/scipy-notebook --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
+# Submit a workspace workload with arguments
+runai workspace submit <name> -p <project_name> -i ubuntu -- ls -la
+
+# Submit a workspace workload with a custom command
+runai workspace submit <name> -p <project_name> -i ubuntu --command -- echo "Hello, World"
+
+# Submit a workspace jupiter notebook
+runai workspace submit <name> -p <project_name> -i jupyter/scipy-notebook --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token='
 ```
 
 ### Options
@@ -21,7 +29,7 @@ runai workspace submit --i jupyter/scipy-notebook --gpu-devices-request 1 --exte
       --annotation stringArray                         Set of annotations to populate into the container running the workspace
       --attach                                         If true, wait for the pod to start running, and then attach to the pod as if 'runai attach' was called. Attach makes tty and stdin true by default. Defaults to false
       --auto-deletion-time-after-completion duration   The length of time (like 5s, 2m, or 3h, higher than zero) after which a completed job is automatically deleted (default 0s)
-      --backoff-limit int                              The number of times the job will be retried before failing
+      --backoff-limit int                              The number of times the job will be retried before failing (default 6)
       --capability stringArray                         The POSIX capabilities to add when running containers. Defaults to the default set of capabilities granted by the container runtime.
   -c, --command                                        If true, override the image's entrypoint with the command supplied after '--'
       --configmap-map-volume stringArray               Mount ConfigMap as a volume. Use the fhe format name=CONFIGMAP_NAME,path=PATH
@@ -49,7 +57,6 @@ runai workspace submit --i jupyter/scipy-notebook --gpu-devices-request 1 --exte
       --image-pull-policy string                       Set image pull policy. One of: Always, IfNotPresent, Never. Defaults to Always (default "Always")
       --label stringArray                              Set of labels to populate into the container running the workspace
       --large-shm                                      Request large /dev/shm device to mount
-      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
       --nfs stringArray                                NFS storage details. Use the format: path=PATH,server=SERVER,mountpath=MOUNT_PATH,readwrite

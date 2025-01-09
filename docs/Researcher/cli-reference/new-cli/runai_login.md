@@ -13,8 +13,9 @@ runai login [flags]
   # Login using browser
   runai login
 
-  # Login using SSO without browser
+  # Login using SSO with remote browser
   runai login sso
+  runai login remote-browser
 
   # Login using username and password without browser
   runai login user -u <username> 

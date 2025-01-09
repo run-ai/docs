@@ -27,7 +27,7 @@ runai training mpi logs mpi-01 --timestamps
 # Follow the logs
 runai training mpi logs mpi-01 --follow
 
-# Get logs for the previous instance of the training mpi
+# Get logs for the previous instance of the mpi training
 runai training mpi logs mpi-01 --previous
 
 # Limit the logs to 1024 bytes
