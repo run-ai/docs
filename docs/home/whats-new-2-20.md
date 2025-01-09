@@ -36,7 +36,7 @@ control over resource cleanup and helps maintain a more organized and efficient 
 
 #### Workload Assets
 
-* **Adding instructions to environment variables** - You can now add instructions to environment variables when creating new environments via the UI and API. In addition, Run:ai's environments now include default instructions. Adding instructions provide guidance enables anyone using the environment to set the environment variable values correctly. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+* **Instructions for environment variables** - You can now add instructions to environment variables when creating new environments via the UI and API. In addition, Run:ai's environments now include default instructions. Adding instructions provide guidance enables anyone using the environment to set the environment variable values correctly. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
 * **Enhanced environments and compute resource management** - The action bar now contains "Make a Copy" and "Edit" while the "Rename" option has been removed. A new "Last Updated" column has alos been added for easier tracking of asset modifications. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
@@ -56,7 +56,7 @@ See [User Applications](../developer/user-applications.md) for more details. <sp
 enables more workloads to share the same GPUs effectively. See [Multi-GPU fractions](../Researcher/scheduling/fractions.md#multi-gpu-fractions) and [Multi-GPU dynamic fractions](../Researcher/scheduling/dynamic-gpu-fractions.md#multi-gpu-dynamic-fractions) for more details. <span style="display:inline-block; background-color:white; color:#fc774a; padding:3px 8px; border-radius:3px; border:1px solid #fc774a; font-size:12px;">Beta for Dynamic Fractions</span> <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
  
 
-* **GPU memory swap with multiple GPUs per workload** - Run:ai now supports GPU memory swap for workloads utilizing multiple GPUs. 
+* **Support for GPU memory swap with multiple GPUs per workload** - Run:ai now supports GPU memory swap for workloads utilizing multiple GPUs. 
 By leveraging GPU memory swap, you can maximize GPU utilization and serve more workloads using the same hardware. 
 The swap scheduler on each node ensures that all GPUs of a distributed model run simultaneously, maintaining synchronization across GPUs. 
 Workload configurations combine swap settings with multi-GPU dynamic fractions, providing flexibility and efficiency for managing 
@@ -66,13 +66,13 @@ large-scale workloads. See [Multi-GPU memory swap](../Researcher/scheduling/gpu-
 
 #### Command Line Interface (CLI V2)
 
-* **Added Windows OS support** - CLI V2 now supports Windows operating systems, enabling you to leverage the full 
+* **Support for Windows OS** - CLI V2 now supports Windows operating systems, enabling you to leverage the full 
 capabilities of the CLI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
 * **Unified training command structure** - Unified the `distributed` command into the `training` command to align with the Run:ai UI. 
 The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI.
 
-* **Added a new command for Kubernetes access** - Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the 
+* **New command for Kubernetes access** - Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the 
 kubeconfig file with Run:ai authorization parameters. This enhancement enables users to gain access to the Kubernetes cluster, 
 simplifying authentication and integration with Run:ai-managed environments. 
 
@@ -96,7 +96,7 @@ using the Run:ai UI. <span style="display:inline-block; background-color:white; 
 easily deploy and manage these models when submitting inference workloads. You can select a NIM model and leverage NVIDIA’s 
 hardware optimizations directly through the Run:ai UI. This feature also allows you to take advantage of Run:ai capabilities such as autoscaling and GPU fractioning. See [inference workloads with NVIDIA NIM](../Researcher/workloads/inference/nim-inference.md) for more details. 
 
-*  **Added Customizable autoscaling plans for inference workloads** - Run:ai allows advanced users practicing 
+*  **Customizable autoscaling plans for inference workloads** - Run:ai allows advanced users practicing 
 autoscaling for inference workloads to fine-tune their autoscaling plans 
 using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferences/#operation/update_inference_spec). This feature enables you to achieve optimal behavior to meet fluctuating request demands. <span style="display:inline-block; background-color:white; color:#3dd37a; padding:3px 8px; border-radius:3px; border:1px solid #3dd37a; font-size:12px;">Experimental</span>
 <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
@@ -105,13 +105,13 @@ using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferen
 
 #### Analytics
 
-* **Added a new Reports for analytrics** - The new Reports enables generating and organizing large data in a structured, 
+* **New Reports view for analytics** - The new Reports enables generating and organizing large data in a structured, 
 CSV-formatted layout. With this feature, you can monitor resource consumption, identify trends, and make informed decisions 
 to optimize their AI workloads with greater efficiency. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Authorization and authentication
 
-* **Added cllient credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
+* **Client credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
 authentication token. See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Node pools
@@ -149,7 +149,7 @@ manage resources between projects or between departments more effectively, using
 
 #### Policy
 
-* **Policy-based default field values** - Administrators can now set default values for fields that are automatically 
+* **Added policy-based default field values** - Administrators can now set default values for fields that are automatically 
 calculated based on the values of other fields using [defaulFrom](../platform-admin/workloads/policies/policy-reference.md). 
 This ensures that critical fields in the workload submission form are populated automatically if not provided by the user. 
 <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
@@ -169,7 +169,7 @@ can configure storage classes as internal using the [Storage class configuration
 
 #### Email notifications
 
-* **Email notifications API** - Email notifications can now be configured via API in addition to the UI, enabling integration 
+* **Added email notifications API** - Email notifications can now be configured via API in addition to the UI, enabling integration 
 with external tools. See [NotificationChannels API](https://api-docs.run.ai/latest/tag/NotificationChannels/) for more details. 
 
 ### Infrastructure Administrator 
@@ -177,7 +177,7 @@ with external tools. See [NotificationChannels API](https://api-docs.run.ai/late
 
 #### NVIDIA Data Center GPUs - Grace-Hopper 
 
-* **Added support for ARM-Based Grace-Hopper Superchip (GH200)** - Run:ai now supports the ARM-based Grace-Hopper Superchip (GH200). 
+* **Support for ARM-Based Grace-Hopper Superchip (GH200)** - Run:ai now supports the ARM-based Grace-Hopper Superchip (GH200). 
 Due to a limitation in version 2.20 with ARM64, the Run:ai control plane services must be scheduled on non-ARM based CPU nodes. 
 This limitation will be addressed in a future release. See [Self-Hosted installation over Kubernetes](../admin/runai-setup/self-hosted/k8s/prerequisites.md#arm-limitation) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
@@ -196,18 +196,18 @@ This limitation will be addressed in a future release. See [Self-Hosted installa
     * `global.tolerations`
     * `daemonSetsTolerations`
 
-* **Argo workflows auto-pod grouping** - Introduced a new cluster configuration option, `gangScheduleArgoWorkflow`, to modify the 
+* **Added Argo workflows auto-pod grouping** - Introduced a new cluster configuration option, `gangScheduleArgoWorkflow`, to modify the 
 default behavior for grouping ArgoWorkflow pods, allowing you to prevent pods from being grouped into a single pod-group. 
 See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">Cluster v2.20 and v2.18</span>
 
-* **Cloud auto-scaling for memory fractions** - Run:ai now supports auto-scaling for workloads using memory fractions in 
+* **Added cloud auto-scaling for memory fractions** - Run:ai now supports auto-scaling for workloads using memory fractions in 
 cloud environments. Using `gpuMemoryToFractionRatio` configuration option allows a failed scheduling 
 attempt for a memory fractions workload to create Run:ai scaling pods, triggering the auto-scaler. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.19 onward</span>
 
-* **Stale gang eviction timeout for improved stability** - Run:ai has introduced a default timeout of 60 seconds 
+* **Added stale gang eviction timeout for improved stability** - Run:ai has introduced a default timeout of 60 seconds 
 for gang eviction in gang scheduling workloads using `defaultStalenessGracePeriod`. This timeout allows both the workload controller and the scheduler sufficient time to remediate the workload, improving the stability of large training jobs. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
-* **Custom labels for built-in alerts** - Administrators can now add their own custom labels to the built-in alerts 
+* **Added custom labels for built-in alerts** - Administrators can now add their own custom labels to the built-in alerts 
 from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for mode details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Enhanced configuration flexibility for cluster replica management** - Administrators can now use the `spec.global.replicaCount` to 
