@@ -6,6 +6,19 @@ delete standard training workload
 runai training standard delete [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Delete a standard training workload with a default project
+runai training standard delete <standard-name>
+
+# Delete a standard training workload with a specific project
+runai training standard delete <standard-name> -p <project_name>
+
+# Delete a standard training workload by UUID
+runai training standard delete --uuid=<standard_uuid> -p <project_name>
+```
+
 ### Options
 
 ```

@@ -27,7 +27,7 @@ runai training standard logs standard-01 --timestamps
 # Follow the logs
 runai training standard logs standard-01 --follow
 
-# Get logs for the previous instance of the training standard
+# Get logs for the previous instance of the standard training
 runai training standard logs standard-01 --previous
 
 # Limit the logs to 1024 bytes

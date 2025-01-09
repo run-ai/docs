@@ -18,7 +18,7 @@ runai training tf list
 # List tf training workloads in a specific project
 runai training tf list -p <project_name>
 
-# List all training tf workloads with a specific output format
+# List all tf training workloads with a specific output format
 runai training tf list -o wide
 
 # List tf training workloads with pagination

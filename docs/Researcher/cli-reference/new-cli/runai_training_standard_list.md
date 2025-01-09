@@ -18,7 +18,7 @@ runai training standard list
 # List standard training workloads in a specific project
 runai training standard list -p <project_name>
 
-# List all training standard workloads with a specific output format
+# List all standard training workloads with a specific output format
 runai training standard list -o wide
 
 # List standard training workloads with pagination

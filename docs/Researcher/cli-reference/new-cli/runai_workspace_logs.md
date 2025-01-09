@@ -1,46 +1,46 @@
 ## runai workspace logs
 
-logs management
+view logs of a workspace job
 
 ```
-runai workspace logs WORKSPACE_NAME [flags]
+runai workspace logs [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-  # Get logs for a workspace
-  runai workspace logs workspace-01
+# Get logs for a workspace
+runai workspace logs workspace-01
 
-  # Get logs for a specific pod in a workspace
-  runai workspace logs workspace-01 --pod=workspace-01-0
+# Get logs for a specific pod in a workspace
+runai workspace logs workspace-01 --pod=workspace-01-worker-0
 
-  # Get logs for a specific container in a workspace
-  runai workspace logs workspace-01 --container=container-01
+# Get logs for a specific container in a workspace
+runai workspace logs workspace-01 --container=workspace-worker
 
-  # Get the last 100 lines of logs
-  runai workspace logs workspace-01 --tail=100
+# Get the last 100 lines of logs
+runai workspace logs workspace-01 --tail=100
 
-  # Get logs with timestamps
-  runai workspace logs workspace-01 --timestamps
+# Get logs with timestamps
+runai workspace logs workspace-01 --timestamps
 
-  # Follow the logs
-  runai workspace logs workspace-01 --follow
+# Follow the logs
+runai workspace logs workspace-01 --follow
 
-  # Get logs for the previous instance of the workspace
-  runai workspace logs workspace-01 --previous
+# Get logs for the previous instance of the workspace
+runai workspace logs workspace-01 --previous
 
-  # GetLimit the logs to 1024 bytes
-  runai workspace logs workspace-01 --limit-bytes=1024
+# Limit the logs to 1024 bytes
+runai workspace logs workspace-01 --limit-bytes=1024
 
-  # Get logs since the last 5 minutes
-  runai workspace logs workspace-01 --since=300s
+# Get logs since the last 5 minutes
+runai workspace logs workspace-01 --since=300s
 
-  # Get logs since a specific timestamp
-  runai workspace logs workspace-01 --since-time=2023-05-30T10:00:00Z
+# Get logs since a specific timestamp
+runai workspace logs workspace-01 --since-time=2023-05-30T10:00:00Z
 
-  # Wait up to 30 seconds for workspace to be ready for logs
-  runai workspace logs workspace-01 --wait-timeout=30s
+# Wait up to 30 seconds for workspace to be ready for logs
+runai workspace logs workspace-01 --wait-timeout=30s
 ```
 
 ### Options

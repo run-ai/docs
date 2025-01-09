@@ -9,8 +9,23 @@ runai tensorflow submit [flags]
 ### Examples
 
 ```
-# Submit a tf training job
+# Submit a tf training workload
 runai training tf submit <name> -p <project_name> -i runai.jfrog.io/demo/quickstart-demo
+
+# Submit a tf training workload with arguments
+runai training tf submit <name> -p <project_name> -i ubuntu -- ls -la
+
+# Submit a tf training workload with a custom command
+runai training tf submit <name> -p <project_name> -i ubuntu --command -- echo "Hello, World"
+
+# Submit a tf training master args with worker args
+runai training tf submit <name> -p <project_name> -i ubuntu --master-args "-a master_arg_a -b master-arg_b'" -- '-a worker_arg_a'
+
+# Submit a tf training master command with worker args
+runai training tf submit <name> -p <project_name> -i ubuntu --master-command "echo -e 'master command'" -- '-a worker_arg_a'
+
+# Submit a tf training master command with worker command
+runai training tf submit <name> -p <project_name> -i ubuntu --master-command "echo -e 'master command'" --command -- echo -e 'worker command'
 ```
 
 ### Options
@@ -20,8 +35,9 @@ runai training tf submit <name> -p <project_name> -i runai.jfrog.io/demo/quickst
       --annotation stringArray                         Set of annotations to populate into the container running the workspace
       --attach                                         If true, wait for the pod to start running, and then attach to the pod as if 'runai attach' was called. Attach makes tty and stdin true by default. Defaults to false
       --auto-deletion-time-after-completion duration   The length of time (like 5s, 2m, or 3h, higher than zero) after which a completed job is automatically deleted (default 0s)
-      --backoff-limit int                              The number of times the job will be retried before failing
+      --backoff-limit int                              The number of times the job will be retried before failing (default 6)
       --capability stringArray                         The POSIX capabilities to add when running containers. Defaults to the default set of capabilities granted by the container runtime.
+      --clean-pod-policy string                        Specifies which pods will be deleted when the workload reaches a terminal state (completed/failed)
   -c, --command                                        If true, override the image's entrypoint with the command supplied after '--'
       --configmap-map-volume stringArray               Mount ConfigMap as a volume. Use the fhe format name=CONFIGMAP_NAME,path=PATH
       --cpu-core-limit float                           CPU core limit (e.g. 0.5, 1)
@@ -48,7 +64,8 @@ runai training tf submit <name> -p <project_name> -i runai.jfrog.io/demo/quickst
       --image-pull-policy string                       Set image pull policy. One of: Always, IfNotPresent, Never. Defaults to Always (default "Always")
       --label stringArray                              Set of labels to populate into the container running the workspace
       --large-shm                                      Request large /dev/shm device to mount
-      --master-args                                    Arguments to pass to the master pod container command. If used together with --master-command, overrides the image's entrypoint of the master pod container with the given command
+      --master-args string                             Specifies the arguments to pass to the master pod container command
+      --master-command string                          Specifies the command to run in the master pod container, overriding the image's default entrypoint. The command can include arguments following it.
       --master-environment stringArray                 Set master environment variables in the container
       --master-extended-resource stringArray           Request access to an extended resource. Use the format: resource_name=quantity
       --master-gpu-devices-request int32               GPU units to allocate for the job (e.g. 1, 2)
@@ -56,7 +73,6 @@ runai training tf submit <name> -p <project_name> -i runai.jfrog.io/demo/quickst
       --master-gpu-portion-request float               GPU portion request (between 0 and 1, e.g. 0.5, 0.2)
       --master-no-pvcs                                 Do not mount any persistent volumes in the master pod
       --max-replicas int32                             Maximum number of replicas for an elastic PyTorch job
-      --mig-profile string                             [Deprecated] MIG profile to allocate for the job (1g.5gb, 2g.10gb, 3g.20gb, 4g.20gb, 7g.40gb)
       --min-replicas int32                             Minimum number of replicas for an elastic PyTorch job
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral

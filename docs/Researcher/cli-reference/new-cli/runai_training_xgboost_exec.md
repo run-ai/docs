@@ -1,6 +1,6 @@
 ## runai training xgboost exec
 
-execute a command in a training xgboost job
+execute a command in a xgboost training job
 
 ```
 runai training xgboost exec [WORKLOAD_NAME] [flags]
@@ -9,13 +9,13 @@ runai training xgboost exec [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Execute bash in the training xgboost's main worker
+# Execute bash in the xgboost training's main worker
 runai training xgboost exec xgboost-01 --tty --stdin -- /bin/bash 
 
-# Execute ls command in the training xgboost's main worker
+# Execute ls command in the xgboost training's main worker
 runai training xgboost exec xgboost-01 -- ls
 
-# Execute a command in a specific training xgboost worker
+# Execute a command in a specific xgboost training worker
 runai training xgboost exec xgboost-01 --pod xgboost-01-worker-1 -- nvidia-smi
 ```
 

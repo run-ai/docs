@@ -27,6 +27,5 @@ runai config [flags]
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
 * [runai config generate](runai_config_generate.md)	 - generate config file
-* [runai config project](runai_config_project.md)	 - [Deprecated] Configure a default project
 * [runai config set](runai_config_set.md)	 - Set configuration values
 

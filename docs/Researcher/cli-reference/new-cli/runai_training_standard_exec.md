@@ -1,6 +1,6 @@
 ## runai training standard exec
 
-execute a command in a training standard job
+execute a command in a standard training job
 
 ```
 runai training standard exec [WORKLOAD_NAME] [flags]
@@ -9,13 +9,13 @@ runai training standard exec [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Execute bash in the training standard's main worker
+# Execute bash in the standard training's main worker
 runai training standard exec standard-01 --tty --stdin -- /bin/bash 
 
-# Execute ls command in the training standard's main worker
+# Execute ls command in the standard training's main worker
 runai training standard exec standard-01 -- ls
 
-# Execute a command in a specific training standard worker
+# Execute a command in a specific standard training worker
 runai training standard exec standard-01 --pod standard-01-worker-1 -- nvidia-smi
 ```
 

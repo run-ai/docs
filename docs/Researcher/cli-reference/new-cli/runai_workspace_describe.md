@@ -1,9 +1,31 @@
 ## runai workspace describe
 
-Describe a training workload
+describe workspace
 
 ```
-runai workspace describe WORKSPACE_NAME [flags]
+runai workspace describe [WORKLOAD_NAME] [flags]
+```
+
+### Examples
+
+```
+# Describe a workspace workload with a default project
+runai workspace describe <workspace-name>
+
+# Describe a workspace workload in a specific project
+runai workspace describe <workspace-name> -p <project_name>
+
+# Describe a workspace workload by UUID
+runai workspace describe --uuid=<workspace_uuid>
+
+# Describe a workspace workload with specific output format
+runai workspace describe <workspace-name> -o json
+
+# Describe a workspace workload with specific sections
+runai workspace describe <workspace-name> --general --compute --pods --events --networks
+
+# Describe a workspace workload with container details and custom limits
+runai workspace describe <workspace-name> --containers --pod-limit 20 --event-limit 100
 ```
 
 ### Options

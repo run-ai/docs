@@ -22,12 +22,14 @@ xgboost management
 
 * [runai training](runai_training.md)	 - training management
 * [runai training xgboost attach](runai_training_xgboost_attach.md)	 - attach to a running container in a xgboost training job
-* [runai training xgboost bash](runai_training_xgboost_bash.md)	 - open a bash shell in a training xgboost job
+* [runai training xgboost bash](runai_training_xgboost_bash.md)	 - open a bash shell in a xgboost training job
 * [runai training xgboost delete](runai_training_xgboost_delete.md)	 - delete xgboost training workload
 * [runai training xgboost describe](runai_training_xgboost_describe.md)	 - describe xgboost training
-* [runai training xgboost exec](runai_training_xgboost_exec.md)	 - execute a command in a training xgboost job
+* [runai training xgboost exec](runai_training_xgboost_exec.md)	 - execute a command in a xgboost training job
 * [runai training xgboost list](runai_training_xgboost_list.md)	 - list xgboost training
 * [runai training xgboost logs](runai_training_xgboost_logs.md)	 - view logs of a xgboost training job
 * [runai training xgboost port-forward](runai_training_xgboost_port-forward.md)	 - forward one or more local ports to a xgboost training job
+* [runai training xgboost resume](runai_training_xgboost_resume.md)	 - resume xgboost training
 * [runai training xgboost submit](runai_training_xgboost_submit.md)	 - submit xgboost training
+* [runai training xgboost suspend](runai_training_xgboost_suspend.md)	 - suspend xgboost training
 

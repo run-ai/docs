@@ -1,6 +1,6 @@
 ## runai tensorflow bash
 
-open a bash shell in a training tf job
+open a bash shell in a tf training job
 
 ```
 runai tensorflow bash [WORKLOAD_NAME] [flags]
@@ -9,10 +9,10 @@ runai tensorflow bash [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Open a bash shell in the training tf's main worker
+# Open a bash shell in the tf training's main worker
 runai training tf bash tf-01
 
-# Open a bash shell in a specific training tf worker
+# Open a bash shell in a specific tf training worker
 runai training tf bash tf-01 --pod tf-01-worker-1
 ```
 

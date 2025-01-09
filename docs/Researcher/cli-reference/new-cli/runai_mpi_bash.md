@@ -1,6 +1,6 @@
 ## runai mpi bash
 
-open a bash shell in a training mpi job
+open a bash shell in a mpi training job
 
 ```
 runai mpi bash [WORKLOAD_NAME] [flags]
@@ -9,10 +9,10 @@ runai mpi bash [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Open a bash shell in the training mpi's main worker
+# Open a bash shell in the mpi training's main worker
 runai training mpi bash mpi-01
 
-# Open a bash shell in a specific training mpi worker
+# Open a bash shell in a specific mpi training worker
 runai training mpi bash mpi-01 --pod mpi-01-worker-1
 ```
 

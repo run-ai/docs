@@ -6,6 +6,19 @@ delete pytorch training workload
 runai pytorch delete [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Delete a pytorch training workload with a default project
+runai training pytorch delete <pytorch-name>
+
+# Delete a pytorch training workload with a specific project
+runai training pytorch delete <pytorch-name> -p <project_name>
+
+# Delete a pytorch training workload by UUID
+runai training pytorch delete --uuid=<pytorch_uuid> -p <project_name>
+```
+
 ### Options
 
 ```

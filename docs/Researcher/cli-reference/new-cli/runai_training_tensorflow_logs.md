@@ -27,7 +27,7 @@ runai training tf logs tf-01 --timestamps
 # Follow the logs
 runai training tf logs tf-01 --follow
 
-# Get logs for the previous instance of the training tf
+# Get logs for the previous instance of the tf training
 runai training tf logs tf-01 --previous
 
 # Limit the logs to 1024 bytes

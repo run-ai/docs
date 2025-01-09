@@ -9,8 +9,20 @@ runai workspace list [flags]
 ### Examples
 
 ```
+# List all workspace workloads
 runai workspace list -A
-runai workspace list --state=<training_state> --limit=20
+
+# List workspace workloads with default project
+runai workspace list
+
+# List workspace workloads in a specific project
+runai workspace list -p <project_name>
+
+# List all workspace workloads with a specific output format
+runai workspace list -o wide
+
+# List workspace workloads with pagination
+runai workspace list --limit 20 --offset 40
 ```
 
 ### Options

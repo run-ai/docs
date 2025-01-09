@@ -3,13 +3,19 @@
 resume workspace
 
 ```
-runai workspace resume [WORKSPACE_NAME] [flags]
+runai workspace resume [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-runai workspace resume <workspace_name> -p=<project_name>
+# Resume a workspace workload
+runai workspace resume <workspace-name>
+
+# Resume a workspace workload in a specific project
+runai workspace resume <workspace-name> -p <project_name>
+
+# Resume a workspace workload by UUID
 runai workspace resume --uuid=<workspace_uuid>
 ```
 

@@ -1,6 +1,6 @@
 ## runai mpi exec
 
-execute a command in a training mpi job
+execute a command in a mpi training job
 
 ```
 runai mpi exec [WORKLOAD_NAME] [flags]
@@ -9,13 +9,13 @@ runai mpi exec [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Execute bash in the training mpi's main worker
+# Execute bash in the mpi training's main worker
 runai training mpi exec mpi-01 --tty --stdin -- /bin/bash 
 
-# Execute ls command in the training mpi's main worker
+# Execute ls command in the mpi training's main worker
 runai training mpi exec mpi-01 -- ls
 
-# Execute a command in a specific training mpi worker
+# Execute a command in a specific mpi training worker
 runai training mpi exec mpi-01 --pod mpi-01-worker-1 -- nvidia-smi
 ```
 

@@ -1,19 +1,22 @@
 ## runai workspace exec
 
-exec management
+execute a command in a workspace job
 
 ```
-runai workspace exec WORKSPACE_NAME [flags]
+runai workspace exec [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Execute bash to workspace 
-runai workspace exec jup --tty --stdin -- /bin/bash 
+# Execute bash in the workspace's main worker
+runai workspace exec workspace-01 --tty --stdin -- /bin/bash 
 
-# Execute ls to workload
-runai workspace exec jup -- ls
+# Execute ls command in the workspace's main worker
+runai workspace exec workspace-01 -- ls
+
+# Execute a command in a specific workspace worker
+runai workspace exec workspace-01 --pod workspace-01-worker-1 -- nvidia-smi
 ```
 
 ### Options

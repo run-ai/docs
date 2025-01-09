@@ -6,6 +6,19 @@ suspend standard training
 runai training suspend [WORKLOAD_NAME] [flags]
 ```
 
+### Examples
+
+```
+# Suspend a standard training workload
+runai training standard suspend <standard-name>
+
+# Suspend a standard training workload in a specific project
+runai training standard suspend <standard-name> -p <project_name>
+
+# Suspend a standard training workload by UUID
+runai training standard suspend --uuid=<standard_uuid>
+```
+
 ### Options
 
 ```

@@ -1,6 +1,6 @@
 ## runai training pytorch bash
 
-open a bash shell in a training pytorch job
+open a bash shell in a pytorch training job
 
 ```
 runai training pytorch bash [WORKLOAD_NAME] [flags]
@@ -9,10 +9,10 @@ runai training pytorch bash [WORKLOAD_NAME] [flags]
 ### Examples
 
 ```
-# Open a bash shell in the training pytorch's main worker
+# Open a bash shell in the pytorch training's main worker
 runai training pytorch bash pytorch-01
 
-# Open a bash shell in a specific training pytorch worker
+# Open a bash shell in a specific pytorch training worker
 runai training pytorch bash pytorch-01 --pod pytorch-01-worker-1
 ```
 
