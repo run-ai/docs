@@ -45,10 +45,10 @@ Different types of workloads have different levels of support. Understanding wha
 | [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-weight) | v | v | v |           v            | v |
 | [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
 | Bin packing / Spread | v | v | v |           v            | v |
-| Fractions | v | v | v |           v            | v |
-| Dynamic fractions | v | v | v |           v            | v |
-| Node level scheduler | v | v | v |           v            | v |
-| GPU swap | v | v | v |           v            | v |
+| [Multi-GPU fractions](../../../Researcher/scheduling/fractions.md) | v | v | v |           v            | v |
+| [Multi-GPU dynamic fractions](../../../Researcher/scheduling/dynamic-gpu-fractions.md) | v | v | v |           v            | v |
+| [Node level scheduler](../../../Researcher/scheduling/node-level-scheduler.md) | v | v | v |           v            | v |
+|[Multi-GPU memory swap](../../../Researcher/scheduling/gpu-memory-swap.md) | v | v | v |           v            | v |
 | Elastic scaling | NA | NA | v |           v            | v |
 | [Gang scheduling](../../../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling) | v | v | v |           v            | v |
 | [Monitoring](../../../admin/maintenance/alert-monitoring.md) | v | v | v |           v            | v |
