@@ -27,19 +27,16 @@ See [standard training](../Researcher/workloads/training/standard-training/train
 * **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI V2 providing a 
 buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for
 [standard](../Researcher/workloads/training/standard-training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training/distributed-training.md) workloads. 
-The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoids unnecessary retraining, ensuring the 
+The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoid unnecessary retraining, ensuring the 
 latest checkpoints are saved. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span> 
 
-* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
-workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater
-control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
 
 #### Workload Assets
 
-* **Instructions for environment variables** - You can now add instructions to environment variables when creating new environments via the UI and API. In addition, Run:ai's environments now include default instructions. Adding instructions provide guidance enables anyone using the environment to set the environment variable values correctly. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+* **Instructions for environment variables** - You can now add instructions to environment variables when creating new environments via the UI and API. In addition, Run:ai's environments now include default instructions. Adding instructions provides guidance enabling anyone using the environment to set the environment variable values correctly. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
-* **Enhanced environments and compute resource management** - The action bar now contains "Make a Copy" and "Edit" while the "Rename" option has been removed. A new "Last Updated" column has alos been added for easier tracking of asset modifications. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+* **Enhanced environments and compute resource management** - The action bar now contains "Make a Copy" and "Edit" while the "Rename" option has been removed. A new "Last Updated" column has also been added for easier tracking of asset modifications. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
 * **Enhanced data sources and credentials tables** - Added a new "Kubernetes name" column to data sources and credentials tables for visibility into Kubernetes resource associations. The credentials table now includes an  "Environments" column displaying the environments associated with the credential. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
@@ -130,11 +127,11 @@ from the [Node pools table](../platform-admin/aiinitiatives/resources/node-pools
 #### Organizations - Projects/Departments
 
 * **Enhanced project deletion** - Deleting a [project](../platform-admin/aiinitiatives/org/projects.md) will now attempt to
-delete the project's associated workloads and assets, allowing better management of your organization assets. 
+delete the project's associated workloads and assets, allowing better management of your organization's assets. 
 <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Enhanced resource prioritization for projects and departments** - Run:ai has introduced advanced prioritization capabilities to
-manage resources between projects or between departments more effectively, using the [Projects](https://api-docs.run.ai/latest/tag/Projects) and [Departments](https://api-docs.run.ai/latest/tag/Departments) APIs. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+manage resources between projects or between departments more effectively using the [Projects](https://api-docs.run.ai/latest/tag/Projects) and [Departments](https://api-docs.run.ai/latest/tag/Departments) APIs. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
     This feature allows administrators to:
 
@@ -150,7 +147,7 @@ manage resources between projects or between departments more effectively, using
 #### Policy
 
 * **Added policy-based default field values** - Administrators can now set default values for fields that are automatically 
-calculated based on the values of other fields using [defaulFrom](../platform-admin/workloads/policies/policy-reference.md). 
+calculated based on the values of other fields using [defaultFrom](../platform-admin/workloads/policies/policy-reference.md). 
 This ensures that critical fields in the workload submission form are populated automatically if not provided by the user. 
 <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
@@ -160,9 +157,14 @@ This ensures that critical fields in the workload submission form are populated 
     * Number fields (e.g., `gpuPortionRequest`), 
     * Quantity fields (e.g., `gpuMemoryRequest`)
 
+* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
+workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater
+control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
+
+
 #### Data sources
 
-* **Improved control over data source and storage class visibility** - Run:ai now provides adminstrators with the ability 
+* **Improved control over data source and storage class visibility** - Run:ai now provides administrators with the ability 
 to control the visibility of data source types and storage in the UI. Data source types that are restricted by policy 
 will no longer appear during workload submission or when creating new data source assets. Additionally, administrators 
 can configure storage classes as internal using the [Storage class configuration API](https://api-docs.run.ai/latest/tag/Storage-Classes). <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
