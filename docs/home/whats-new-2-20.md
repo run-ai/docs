@@ -14,7 +14,7 @@ The Run:ai v2.20 What's New provides a detailed summary of the latest features, 
 
 #### Workloads - Workspaces and Training 
 
-*  **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI and API. Scheduling rules for training workloads also apply to distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+*  **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI, CLI, and API. Scheduling rules for training workloads also apply to distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Visibility into idle GPU devices** - Idle GPU devices are now displayed in in the UI and API showing the number of allocated GPU devices that have been idle for more than 5 minutes. This provides better visibility into resource utilization, enabling more efficient workload management.
 
