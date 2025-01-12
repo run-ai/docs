@@ -24,7 +24,7 @@ the reliability and validity of training results. Additionally, you can configur
 helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs.
 See [standard training](../Researcher/workloads/training/standard-training/trainings-v2.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-* **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI V2 providing a 
+* **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLIv2 providing a 
 buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for
 [standard](../Researcher/workloads/training/standard-training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training/distributed-training.md) workloads. 
 The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoid unnecessary retraining, ensuring the 
