@@ -389,6 +389,8 @@ nav:
         - 'Overview': 'Researcher/cli-reference/new-cli/overview.md'
         - 'CLI Reference': 'Researcher/cli-reference/new-cli/runai.md'
         - 'CLI Examples': 'Researcher/cli-reference/new-cli/cli-examples.md'
+        - 'CLI Guides':
+          - 'Set cluster authorization': 'Researcher/cli-reference/new-cli/set-kubeconfig-with-oidc-parameters.md'
       - 'CLI V1': 
         - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
         - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'
