@@ -70,7 +70,7 @@ capabilities of the CLI. <span style="display:inline-block; background-color:whi
 The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI.
 
 * **New command for Kubernetes access** - Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the 
-kubeconfig file with Run:ai authorization parameters. This enhancement enables users to gain access to the Kubernetes cluster, 
+kubeconfig file with Run:ai authorization token. This enhancement enables users to gain access to the Kubernetes cluster, 
 simplifying authentication and integration with Run:ai-managed environments. 
 
 * **Added view workload labels** - You can now view the labels associated with a workload when using the CLI V2 `runai workload describe` command for all workload types. This enhancement provides better visibility into workload metadata. 
