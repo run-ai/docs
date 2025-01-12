@@ -1,38 +1,33 @@
 # Add Run:ai authorization to kubeconfig
 
+The ***runai kubeconfig set*** command allows users to configure their kubeconfig file with Run:AI authorization token. This setup enables users to gain access to the Kubernetes (k8s) cluster seamlessly.
 
-The runai kubeconfig set command allows users to configure their kubeconfig file with Run:AI authorization parameters. This setup enables users to gain access to the Kubernetes (k8s) cluster seamlessly.
-
-
-
-*  There is no need to set the kubeconfig in order to properly work with the CLI. It is used only in order to work with external workloads under Run:ai authorization.
-
-
-
-
+* There is no need to set the kubeconfig to work with the CLI properly. It is used only to work with external workloads under Run:ai authorization.
 
 ## Usage
 
-To set the kubeconfig file, run the following command:
+To set the token inside the kubeconfig file, run the following command:
 
 ```
 runai kubeconfig set
 ```
 
+## 
+
 ## Prerequisites
+
 Before executing the command, ensure that
 
-1. Cluster authentication is enabled
-2.  The user have a kubeconfig file that includes the following elements:
+1. Cluster authentication is configured and enabled  
+2. The user has a kubeconfig file that includes the following elements
+
+### 
 
 ### Cluster configuration
 
 To enable cluster authentication, add the following flags to the Kubernetes server API of each cluster
 
-
 ```
-
-
 spec:
   containers:
   - command:
@@ -42,8 +37,9 @@ spec:
     - --oidc-username-prefix=-
 ```
 
+### 
 
-### User configuration
+### User Kubeconfig configuration
 
 Add the following to the Kubernetes client configuration file (./kube/config)
 
@@ -67,15 +63,7 @@ users:
 - name: <USER_NAME>
 ```
 
-* Make sure to replace values with the actual cluster information and user credentials.
+* Make sure to replace values with the actual cluster information and user credentials.  
+* There can be multiple contexts in the kubeconfig file, the command will config the current context
 
-* There can be multiple conext in the kubeconfig file, the command will config the current context
-
-* When configuring the context, existing auth data will be run over.
-
-
-
-
-For the full command reference see [here](./runai_kubeconfig_set.md)
-
-
+For the full command reference see [here](http://./runai_kubeconfig_set.md)  
