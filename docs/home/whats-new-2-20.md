@@ -22,7 +22,7 @@ The Run:ai v2.20 What's New provides a detailed summary of the latest features, 
 be considered finished directly in the UI, API, and CLI v2. Running training workloads multiple times improves 
 the reliability and validity of training results. Additionally, you can configure how many runs can be scheduled in parallel, 
 helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs.
-See [standard training](../Researcher/workloads/training/standard-training/trainings-v2.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+See [Train models using a standard training workload](../Researcher/workloads/training/standard-training/trainings-v2.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI v2 providing a 
 buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for
@@ -49,7 +49,7 @@ control over resource cleanup and helps maintain a more organized and efficient 
 
 * **User applications for API authentication** - You can now create your own applications for API integrations with Run:ai. 
 Each application includes client credentials which can be used to obtain an authentication token to utilize for subsequent API calls. 
-See [User Applications](../developer/user-applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+See [User applications](../developer/user-applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Scheduler
 
@@ -86,16 +86,16 @@ simplifying authentication and integration with Run:ai-managed environments.
 
 * **Enhanced visibility into rolling updates for inference workloads** - Run:ai now provides a phase message that provides detailed 
 insights into the current state of the update, by hovering over the workload's status. This helps users to monitor and manage updates
-more effectively. See [rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+more effectively. See [Rolling inference updates](../Researcher/workloads/inference/inference-overview.md#rolling-inference-updates) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Inference serving endpoint configuration** - You can now define an **inference serving endpoint** directly within the environment 
 using the Run:ai UI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.19 onward</span>
 
-* **Persistent token management for Hugging Face models** - Run:ai allows users to save their Hugging Face tokens persistently as part of their credentials within the Run:ai UI. Once saved, tokens can be easily selected from a list of stored credentials, removing the need to manually enter them each time. This enhancement improves the process of deploying Hugging Face models, making it more efficient and user-friendly. See [inference workloads with Hugging Face](../Researcher/workloads/inference/hugging-face-inference.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.13 onward</span>
+* **Persistent token management for Hugging Face models** - Run:ai allows users to save their Hugging Face tokens persistently as part of their credentials within the Run:ai UI. Once saved, tokens can be easily selected from a list of stored credentials, removing the need to manually enter them each time. This enhancement improves the process of deploying Hugging Face models, making it more efficient and user-friendly. See [Deploy inference workloads from Hugging Face](../Researcher/workloads/inference/hugging-face-inference.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.13 onward</span>
 
 * **Deploy and manage NVIDIA NIM models in inference workloads** - Run:ai now supports NVIDIA NIM models, enabling you to 
 easily deploy and manage these models when submitting inference workloads. You can select a NIM model and leverage NVIDIA’s 
-hardware optimizations directly through the Run:ai UI. This feature also allows you to take advantage of Run:ai capabilities such as autoscaling and GPU fractioning. See [inference workloads with NVIDIA NIM](../Researcher/workloads/inference/nim-inference.md) for more details. 
+hardware optimizations directly through the Run:ai UI. This feature also allows you to take advantage of Run:ai capabilities such as autoscaling and GPU fractioning. See [Deploy inference workloads with NVIDIA NIM](../Researcher/workloads/inference/nim-inference.md) for more details. 
 
 *  **Customizable autoscaling plans for inference workloads** - Run:ai allows advanced users practicing 
 autoscaling for inference workloads to fine-tune their autoscaling plans 
