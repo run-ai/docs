@@ -5,7 +5,7 @@
 The Run:ai v2.20 What's New provides a detailed summary of the latest features, enhancements, and updates introduced in this version. They serve as a guide to help users, administrators, and researchers understand the new capabilities and how to leverage them for improved workload management, resource optimization, and more. 
 
 !!! Important Note
-    For a complete list of features that will be deprecated, see [Deprecation notifications](#deprecation-notifications).
+    For a complete list of deprecations, see [Deprecation notifications](#deprecation-notifications). Deprecated features and capabilities will be available for two versions ahead of the notification.
 
 
 
@@ -16,19 +16,23 @@ The Run:ai v2.20 What's New provides a detailed summary of the latest features, 
 
 *  **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI, CLI, and API. Scheduling rules for training workloads also apply to distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-* **Visibility into idle GPU devices** - Idle GPU devices are now displayed in in the UI and API showing the number of allocated GPU devices that have been idle for more than 5 minutes. This provides better visibility into resource utilization, enabling more efficient workload management.
+* **Visibility into idle GPU devices** - Idle GPU devices are now displayed in the UI and API showing the number of allocated GPU devices that have been idle for more than 5 minutes. This provides better visibility into resource utilization, enabling more efficient workload management.
 
 * **Configurable workload completion with multiple runs** - You can now define the number of runs a training workload must complete to 
-be considered finished directly in the UI, API, and CLI V2. Running training workloads multiple times improves 
+be considered finished directly in the UI, API, and CLI v2. Running training workloads multiple times improves 
 the reliability and validity of training results. Additionally, you can configure how many runs can be scheduled in parallel, 
 helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs.
 See [standard training](../Researcher/workloads/training/standard-training/trainings-v2.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-* **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLIv2 providing a 
+* **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI v2 providing a 
 buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for
 [standard](../Researcher/workloads/training/standard-training/trainings-v2.md) and [distributed training](../Researcher/workloads/training/distributed-training/distributed-training.md) workloads. 
 The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoid unnecessary retraining, ensuring the 
 latest checkpoints are saved. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span> 
+
+* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
+workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI v2 and API. This enhancement provides greater
+control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
 
 
 #### Workload Assets
@@ -61,19 +65,19 @@ large-scale workloads. See [Multi-GPU memory swap](../Researcher/scheduling/gpu-
 <span style="display:inline-block; background-color:white; color:#fc774a; padding:3px 8px; border-radius:3px; border:1px solid #fc774a; font-size:12px;">Beta</span> <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
-#### Command Line Interface (CLI V2)
+#### Command Line Interface (CLI v2)
 
-* **Support for Windows OS** - CLI V2 now supports Windows operating systems, enabling you to leverage the full 
+* **Support for Windows OS** - CLI v2 now supports Windows operating systems, enabling you to leverage the full 
 capabilities of the CLI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
 * **Unified training command structure** - Unified the `distributed` command into the `training` command to align with the Run:ai UI. 
 The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI.
 
-* **New command for Kubernetes access** - Added a new CLI V2 command, `runai kubconfig set`, allowing users to set the 
+* **New command for Kubernetes access** - Added a new CLI v2 command, `runai kubconfig set`, allowing users to set the 
 kubeconfig file with Run:ai authorization token. This enhancement enables users to gain access to the Kubernetes cluster, 
 simplifying authentication and integration with Run:ai-managed environments. 
 
-* **Added view workload labels** - You can now view the labels associated with a workload when using the CLI V2 `runai workload describe` command for all workload types. This enhancement provides better visibility into workload metadata. 
+* **Added view workload labels** - You can now view the labels associated with a workload when using the CLI v2 `runai workload describe` command for all workload types. This enhancement provides better visibility into workload metadata. 
 
 
 ### ML Engineers
@@ -109,7 +113,7 @@ to optimize their AI workloads with greater efficiency. <span style="display:inl
 #### Authorization and authentication
 
 * **Client credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
-authentication token. See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+authentication token, aligned with [OAuth standard](https://oauth.net/2/grant-types/client-credentials/). See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 #### Node pools
 
@@ -135,7 +139,7 @@ manage resources between projects or between departments more effectively using 
 
     This feature allows administrators to:
 
-    * Prioritize resource allocation and reclaim between different departments. 
+    * Prioritize resource allocation and reclaim between different projects and departments. 
     * Prioritize projects within the same department. 
     * Set priorities per node-pool for both projects and departments. 
     * Implement distinct SLAs by assigning strict priority levels to over-quota resources. 
@@ -157,9 +161,6 @@ This ensures that critical fields in the workload submission form are populated 
     * Number fields (e.g., `gpuPortionRequest`), 
     * Quantity fields (e.g., `gpuMemoryRequest`)
 
-* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
-workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI V2 and API. This enhancement provides greater
-control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
 
 
 #### Data sources
@@ -213,13 +214,11 @@ for gang eviction in gang scheduling workloads using `defaultStalenessGracePerio
 from Prometheus by setting `spec.prometheus.additionalAlertLabels` in their cluster. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for mode details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 * **Enhanced configuration flexibility for cluster replica management** - Administrators can now use the `spec.global.replicaCount` to 
-manage replicas for for Run:ai services. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+manage replicas for Run:ai services. See [Advanced Cluster Configurations](../admin/config/advanced-cluster-config.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-#### Built-in alerts
+#### Run:ai built-in alerts
 
-* **Added unknown state alert for a node** - The Kubernetes node hosting GPU workloads is in an unknown state, and its health and readiness cannot be determined. See [Built-in alerts](../admin/maintenance/alert-monitoring.md#built-in-alerts). <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
-
-* **Added low memory node alert** - The Kubernetes node hosting GPU workloads has insufficient memory to support current or upcoming workloads. See [Built-in alerts](../admin/maintenance/alert-monitoring.md#built-in-alerts). <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+* Added two new Run:ai built-in alerts for Kubernetes nodes hosting GPU workloads. The [unknown state alert](../admin/maintenance/alert-monitoring.md#built-in-alerts) notifies when the node's health and readiness cannot be determined, and the [low memory alert](../admin/maintenance/alert-monitoring.md#built-in-alerts) warns when the node has insufficient memory to support current or upcoming workloads. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
 
 
@@ -277,10 +276,10 @@ The Dynamic MIG deprecation process started in version 2.19. Run:ai supports sta
 * In Q2/25 all ‘Dynamic MIG’ APIs and CLI commands will be fully deprecated. (it will fail)
 
 
-### CLI V1 deprecation 
-CLI V1 is being deprecated, and no new features will be developed for it. It will remain available for use for the next 
-two releases to ensure a smooth transition for all users. We recommend switching to **CLI V2**, which provides feature parity, 
-backwards compatibility, and ongoing support for new enhancements. CLI V2 is designed to deliver a more robust, efficient, and 
+### CLI v1 deprecation 
+CLI V1 is deprecated and no new features will be developed for it. It will remain available for use for the next 
+two releases to ensure a smooth transition for all users. We recommend switching to **CLI v2**, which provides feature parity, 
+backwards compatibility, and ongoing support for new enhancements. CLI v2 is designed to deliver a more robust, efficient, and 
 user-friendly experience.
 
 ### Legacy Jobs view deprecation
@@ -290,6 +289,6 @@ The legacy submission form will still be accessible via the Workload manager vie
 
 ### appID and appSecret deprecation 
 
-Deprecating appID and appSecret parameters in the [Create an application token API](https://api-docs.run.ai/latest/tag/Tokens). 
-To create application tokens, use your client credentials - Client ID and Client secret.
+Deprecating appID and appSecret parameters used for [requesting an API token](../developer/rest-auth.md#request-an-api-token). It will remain available for use for the next 
+two releases. To create application tokens, use your client credentials - Client ID and Client secret.
 
