@@ -64,6 +64,6 @@ users:
 ```
 
 * Make sure to replace values with the actual cluster information and user credentials.  
-* There can be multiple contexts in the kubeconfig file, the command will config the current context
+* There can be multiple contexts in the kubeconfig file. The command will configure the current context.
 
 For the full command reference see [here](http://./guides/runai_kubeconfig_set.md)  
