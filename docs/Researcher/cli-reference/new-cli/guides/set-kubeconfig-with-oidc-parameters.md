@@ -22,7 +22,6 @@ Before executing the command, ensure that
 2. The user has a kubeconfig file configured.
 3. The user is logged in (use the [runai login](http://./runai_login.md)  command)
 
-### 
 
 ### Cluster configuration
 
