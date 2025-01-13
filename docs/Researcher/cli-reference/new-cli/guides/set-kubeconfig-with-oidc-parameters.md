@@ -20,6 +20,7 @@ Before executing the command, ensure that
 
 1. Cluster authentication is configured and enabled  
 2. The user has a kubeconfig file that includes the following elements
+3. The user is logged in (use the 'runai login' command)
 
 ### 
 
