@@ -6,7 +6,7 @@ The ***runai kubeconfig set*** command allows users to configure their kubeconfi
 
 ## Usage
 
-To set the token inside the kubeconfig file, run the following command:
+To set the token (will be fetched automatically, no need to bring it manually) inside the kubeconfig file, run the following command:
 
 ```
 runai kubeconfig set
