@@ -18,9 +18,9 @@ runai kubeconfig set
 
 Before executing the command, ensure that
 
-1. Cluster authentication is configured and enabled  
-2. The user has a kubeconfig file that includes the following elements
-3. The user is logged in (use the 'runai login' command)
+1. Cluster authentication is configured and enabled.
+2. The user has a kubeconfig file configured.
+3. The user is logged in (use the [runai login](http://./runai_login.md)  command)
 
 ### 
 
@@ -67,4 +67,4 @@ users:
 * Make sure to replace values with the actual cluster information and user credentials.  
 * There can be multiple contexts in the kubeconfig file, the command will config the current context
 
-For the full command reference see [here](http://./runai_kubeconfig_set.md)  
+For the full command reference see [here](http://./guides/runai_kubeconfig_set.md)  
