@@ -71,7 +71,7 @@ large-scale workloads. See [Multi-GPU memory swap](../Researcher/scheduling/gpu-
 capabilities of the CLI. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.18 onward</span>
 
 * **Unified training command structure** - Unified the `distributed` command into the `training` command to align with the Run:ai UI. 
-The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI and UI.
+The `training` command now includes a new sub-command to support distributed workloads, ensuring a more consistent and streamlined user experience across both the CLI v2 and UI.
 
 * **New command for Kubernetes access** - Added a new CLI v2 command, `runai kubconfig set`, allowing users to set the 
 kubeconfig file with Run:ai authorization token. This enhancement enables users to gain access to the Kubernetes cluster, 
