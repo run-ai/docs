@@ -33,16 +33,22 @@ Add ConfigMaps in advance to be used when creating a ConfigMap-type data source 
 ### Cluster scope
 
 1.  Locate the ConfigMap in the Run:ai namespace (runai)
-2.  To authorize Run:ai to use the ConfigMap, label it: `run.ai/cluster-wide: "true”`  
+2.  To authorize Run:ai to use the ConfigMap, label it: `run.ai/cluster-wide: "true”`
+3.  The ConfigMap must have a label of `run.ai/resource: <resource-name>`
+  
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
 ### Department scope
 
 1.  Locate the ConfigMap in the Run:ai namespace (runai)
-2.  To authorize Run:ai to use the ConfigMap, label it: `run.ai/department: "id"`  
+2.  To authorize Run:ai to use the ConfigMap, label it: `run.ai/department: "<department-id>"`  
+3.  The ConfigMap must have a label of `run.ai/resource: <resource-name>`
+   
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
 ### Project scope
 
-1.  Locate the ConfigMap in the project’s namespace  
+1.  Locate the ConfigMap in the project’s namespace
+2.  The ConfigMap must have a label of `run.ai/resource: <resource-name>`
+
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
