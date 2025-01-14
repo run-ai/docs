@@ -30,7 +30,7 @@ buffer time for preempted workloads to reach a safe checkpoint before being forc
 The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoid unnecessary retraining, ensuring the 
 latest checkpoints are saved. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span> 
 
-* **Pod deletion policy for terminal workloads** - Administrators can now specify which pods should be deleted when a distributed 
+* **Pod deletion policy for terminal workloads** - You can now specify which pods should be deleted when a distributed 
 workload reaches a terminal state (completed/failed) using cleanPodPolicy in CLI v2 and API. This enhancement provides greater
 control over resource cleanup and helps maintain a more organized and efficient cluster environment. See [cleanPodPolicy](../platform-admin/workloads/policies/policy-reference.md) for more details. 
 
