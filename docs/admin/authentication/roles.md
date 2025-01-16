@@ -2,7 +2,9 @@ This article explains the available roles in the Run:ai platform.
 
 A role is a set of permissions that can be assigned to a [subject in a scope](../../admin/authentication/authentication-overview.md).
 
-A permission is a set of actions (View, Edit, Create and Delete) over a Run:ai entity (e.g. projects, workloads, users).Roles table
+A permission is a set of actions (View, Edit, Create and Delete) over a Run:ai entity (e.g. projects, workloads, users).
+
+## Roles table
 
 The Roles table can be found under **Access** in the Run:ai platform.
 
