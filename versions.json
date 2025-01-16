@@ -12,16 +12,14 @@
   {
     "version": "v2.19-hotfixes",
     "title": "2.19-hotfixes",
-    "aliases": [
-      "v2.19-hotfixes-alias"
-    ]
+    "aliases": []
   },
   {
     "version": "v2.19",
     "title": "2.19",
     "aliases": [
-      "latest",
-      "v2.19-alias"
+      "v2.19-alias",
+      "latest"
     ]
   },
   {
