@@ -10,6 +10,12 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-24693 | 2.19.40 | Fixed an issue where users were unable to provide metric store authentication details using secret references. |
+| RUN-23744 | 2.19.40 | Fixed an issue where refreshing some pages (such as the settings, policy, and access rules) removed the side navigation. |
+| RUN-24715 | 2.19.40 | Fixed an issue in the templates form where selecting Secret as a data source got stuck in an infinite loading page. |
+| RUN-24873 | 2.19.40 | Fixed an issue where users were unable to configure email notifications regarding workload statuses. |
+| RUN-24921 | 2.19.40 | Fixed a security vulnerability in golang.org.x.net and golang.org.x.crypto. |
+| RUN-23914 | 2.19.38 | Fixed an issue where unexpected behavior could occur if an application was capturing a graph while memory was being swapped in as part of the GPU memory swap feature. |
 | RUN-24521 | 2.19.36 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
 | RUN-24595 | 2.19.36 | Fixed an issue where the new command-line interface did not parse master and worker commands/args simultaneously for distributed workloads. |
 | RUN-24565 | 2.19.34 | Fixed an issue where the UI was hanging at times during Hugging Face model memory calculation. |
