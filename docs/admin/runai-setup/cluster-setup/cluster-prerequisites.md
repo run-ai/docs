@@ -205,7 +205,7 @@ See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/
 
 ??? "Rancher Kubernetes Engine 2 (RKE2)"
 
-    Ensure to specify the `CONTAINERD_CONFIG` option exactly as outlined in the [documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2) and [custom configuration guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/install-gpu-operator.html#custom-configuration-for-runtime-containerd), using the path `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl`. **Do not create the file manually** if it does not already exist. The GPU Operator will handle this configuration during deployment.
+    Make sure to specify the `CONTAINERD_CONFIG` option exactly as outlined in the [documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2) and [custom configuration guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/install-gpu-operator.html#custom-configuration-for-runtime-containerd), using the path `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl`. **Do not create the file manually** if it does not already exist. The GPU Operator will handle this configuration during deployment.
 
 ??? "Oracle Kubernetes Engine (OKE)"
 
