@@ -5,10 +5,7 @@
     "aliases": [
       "v2.20-alias",
       "latest"
-    ],
-    "properties": {
-      "hidden": true
-    }
+    ]
   },
   {
     "version": "v2.19",
