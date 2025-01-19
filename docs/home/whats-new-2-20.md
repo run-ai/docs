@@ -162,7 +162,6 @@ This ensures that critical fields in the workload submission form are populated 
     * Quantity fields (e.g., `gpuMemoryRequest`)
 
 
-
 #### Data sources
 
 * **Improved control over data source and storage class visibility** - Run:ai now provides administrators with the ability 
@@ -188,6 +187,9 @@ This limitation will be addressed in a future release. See [Self-Hosted installa
 
 * Run:ai now supports Kubernetes version 1.32. 
 * Run:ai now supports OpenShift version 4.17.
+* Kubernetes version 1.28 is no longer supported.
+* OpenShift versions 4.12 to 4.13 are no longer supported. 
+
 
 #### Advanced cluster configurations
 
@@ -291,4 +293,3 @@ The legacy submission form will still be accessible via the Workload manager vie
 
 Deprecating appID and appSecret parameters used for [requesting an API token](../developer/rest-auth.md#request-an-api-token). It will remain available for use for the next 
 two releases. To create application tokens, use your client credentials - Client ID and Client secret.
-
