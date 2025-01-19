@@ -27,4 +27,3 @@ To get support use the following channels:
 * On the Run:ai user interface at `<company-name>.run.ai`, use the 'Contact Support' link on the top right.
 * Or, as partner or customer, submit a ticket by clicking [here](https://runai.secure.force.com/casesupport/CreateCaseForm)
 
-
