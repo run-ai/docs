@@ -14,6 +14,7 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | :---- | :---- | :---- |
 | RUN-24521 | 2.18.83 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
 | RUN-24733 | 2.18.83 | Fixed an issue where department admins were unable to load the quota management page. |
+| RUN-25094 | 2.18.82 | Fixed an issue where OpenShift could not be upgraded due to a broken 3rd binary. |
 | RUN-24921 | 2.18.80 | Fixed a security vulnerability in golang.org.x.net and golang.org.x.crypto. |
 | RUN-24632 | 2.18.80 | Fixed an issue where an existing monitoring Prometheus setup deployed in an unexpected namespace was reported as missing, causing Run:ai installation to fail on the cluster. The installation mechanism now searches for the monitoring prerequisite in additional relevant namespaces. |
 | RUN-24693 | 2.18.80 | Fixed an issue where users were unable to provide metric store authentication details using secret references. |

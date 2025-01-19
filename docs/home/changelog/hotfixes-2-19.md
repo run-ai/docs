@@ -10,16 +10,18 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-25062 | 2.19.45 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21614 with severity HIGH. |
+| RUN-25061 | 2.19.45 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21613 with severity HIGH. |
 | RUN-24857 | 2.19.45 | Fixed a security vulnerability in golang.org.x.net with CVE CVE-2024-45338 with severity HIGH. |
-| RUN-25061 | 2.19.45 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21614 with severity HIGH. |
-| RUN-24733 | 2.19.45 | Fixed an issue where department admins were unable to load the quota management page. |
+| RUN-24733 | 2.19.45 | Fixed an issue where users were unable to load the quota management dashboard. |
+| RUN-25094 | 2.19.44 | Fixed an issue where OpenShift could not be upgraded due to a broken 3rd binary. |
 | RUN-24026 | 2.19.40 | Fixed a security vulnerability in krb5-libs with CVE CVE-2024-3596. |
 | RUN-24649 | 2.19.40 | Fixed an issue where submitting a workload with `existingPvc=false` and not providing a `claimName` resulted in auto-generating a `claimName` that included both upper and lower case letters. Since Kubernetes rejects uppercase letters, the workload would fail. The behavior has been updated to generate names using only lowercase letters. |
-| RUN-24632 | 2.19.40 | Fixed an issue where an existing monitoring Prometheus setup deployed in an unexpected namespace was reported as missing, causing Run:ai installation to fail on the cluster. The installation mechanism now searches for the monitoring prerequisite in additional relevant namespaces. |
+| RUN-24632 | 2.19.40 | Fixed an issue where an existing Prometheus monitoring setup deployed in an unexpected namespace was reported as missing, causing Run:ai installation to fail on the cluster. The installation mechanism now searches for the monitoring prerequisite in additional relevant namespaces. |
 | RUN-24693 | 2.19.40 | Fixed an issue where users were unable to provide metric store authentication details using secret references. |
 | RUN-23744 | 2.19.40 | Fixed an issue where refreshing some pages (such as the settings, policy, and access rules) removed the side navigation. |
 | RUN-24715 | 2.19.40 | Fixed an issue in the templates form where selecting Secret as a data source got stuck in an infinite loading page. |
-| RUN-24831 | 2.19.40 | Fixed an issue where some edge cases triggered consolidation without it actually being necessary. The fix simulates these edge cases better in the Scheduler. |
+| RUN-24831 | 2.19.40 | Fixed an issue where some edge cases triggered consolidation without it actually being necessary. |
 | RUN-24873 | 2.19.40 | Fixed an issue where users were unable to configure email notifications regarding workload statuses. |
 | RUN-24921 | 2.19.40 | Fixed a security vulnerability in golang.org.x.net and golang.org.x.crypto. |
 | RUN-23914 | 2.19.38 | Fixed an issue where unexpected behavior could occur if an application was capturing a graph while memory was being swapped in as part of the GPU memory swap feature. |
