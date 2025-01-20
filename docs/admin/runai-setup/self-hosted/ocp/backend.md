@@ -12,7 +12,7 @@ Run the helm command below:
     ``` bash
     helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
     helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" \
+    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.21.0" \
         --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ # (1)
         --set global.config.kubernetesDistribution=openshift
     ```
