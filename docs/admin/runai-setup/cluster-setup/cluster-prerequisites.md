@@ -78,7 +78,9 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 | v2.17 | 1.27 to 1.29 | 4.12 to 4.15 |
 | v2.18 | 1.28 to 1.30 | 4.12 to 4.16 |
 | v2.19 | 1.28 to 1.31 | 4.12 to 4.17 |
-| v2.20 (latest) | 1.29 to 1.32 | 4.14 to 4.17 |
+| v2.20 | 1.29 to 1.32 | 4.14 to 4.17 |
+| v2.21 (latest) | 1.29 to 1.32 | 4.14 to 4.17 |
+
 
 
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank} or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift){target=_blank}
@@ -204,7 +206,6 @@ See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/
     ```
 
 ??? "Rancher Kubernetes Engine 2 (RKE2)"
-
 
     Make sure to specify the `CONTAINERD_CONFIG` option exactly as outlined in the [documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2) and [custom configuration guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/install-gpu-operator.html#custom-configuration-for-runtime-containerd), using the path `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl`. **Do not create the file manually** if it does not already exist. The GPU Operator will handle this configuration during deployment.
 
