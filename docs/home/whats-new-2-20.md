@@ -108,7 +108,7 @@ using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferen
 
 * **New Reports view for analytics** - The new Reports enables generating and organizing large data in a structured, 
 CSV-formatted layout. With this feature, you can monitor resource consumption, identify trends, and make informed decisions 
-to optimize their AI workloads with greater efficiency. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
+to optimize their AI workloads with greater efficiency.
 
 #### Authorization and authentication
 
@@ -275,7 +275,7 @@ The Dynamic MIG deprecation process started in version 2.19. Run:ai supports sta
 
 * Before upgrading to version 2.20, workloads submitted with Dynamic MIG and their associated node configurations must be removed
 * In version 2.20, MIG was removed from the Run:ai UI under compute resources.
-* In Q2/25 all ‘Dynamic MIG’ APIs and CLI commands will be fully deprecated. (it will fail)
+* In Q2/25 all ‘Dynamic MIG’ APIs and CLI commands will be fully deprecated.
 
 
 ### CLI v1 deprecation 
