@@ -139,7 +139,7 @@ The example below illustrates a split of quota between different projects and de
 
 __Legend:__
 
-* __OQP__ = Over-quota weight
+* __OQW__ = Over-quota weight
 * __OQ__ = Over-quota
 
 ![](img/quota-split.png)
@@ -150,7 +150,7 @@ The example below illustrates how fairshare is calculated per project/node pool 
 
 The __Over quota (OQ)__ portion of each Project (per node pool) is calculated as:
 
-    [(OQ-Priority) / (Σ Projects OQ-Priorities)] x (Unused Resource per node pool)
+    [(OQ-Weight) / (Σ Projects OQ-Weights)] x (Unused Resource per node pool)
 
 __Fairshare(FS)__ is calculated as: the sum of Quota + Over-Quota
 
@@ -160,7 +160,7 @@ For this example, we assume that out of the 40 available GPUs in node pool A, 20
 
 Project 2 __over quota__ share:
 
-    [(Project 2 OQ-Priority) / (Σ all Projects OQ-Priorities)] x (Unused Resource within node pool A)
+    [(Project 2 OQ-Weight) / (Σ all Projects OQ-Weights)] x (Unused Resource within node pool A)
 
     [(3) / (2 + 3 + 1)] x (20) = (3/6) x 20 = 10 GPUs
 
