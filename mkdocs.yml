@@ -401,6 +401,9 @@ nav:
         # -  'Researcher/cli-reference/new-cli/runai_workspace_resume.md'
         # -  'Researcher/cli-reference/new-cli/runai_workspace_submit.md'
         # -  'Researcher/cli-reference/new-cli/runai_workspace_suspend.md'
+        - 'CLI Guides' :
+          - 'Set cluster authorization': 'Researcher/cli-reference/new-cli/guides/set-kubeconfig-with-oidc-parameters.md'
+
       - 'CLI V1': 
         - 'Introduction' : 'Researcher/cli-reference/Introduction.md'
         - 'runai attach' : 'Researcher/cli-reference/runai-attach.md'

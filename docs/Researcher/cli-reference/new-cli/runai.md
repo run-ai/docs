@@ -30,6 +30,7 @@ runai [flags]
 
 * [runai cluster](runai_cluster.md)	 - cluster management
 * [runai config](runai_config.md)	 - configuration management
+* [runai kubeconfig](runai_kubeconfig.md)	 - kubeconfig management
 * [runai describe](runai_describe.md)	 - [Deprecated] Display detailed information about resources
 * [runai distributed](runai_distributed.md)	 - distributed management
 * [runai exec](runai_exec.md)	 - [Deprecated] exec
