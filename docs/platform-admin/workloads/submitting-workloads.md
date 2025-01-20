@@ -24,7 +24,7 @@ To submit a workload using the UI:
          2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
          3. In the *Environment variable* field, you can set one or more environment variables. (optional)
 
-      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](./assets/compute.md#create-a-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+      5. In the *Compute resource* pane, select resources for your trainings or [create a new compute resource](../../platform-admin/workloads/assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
       6. Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
          1. Select the *Storage class* from the dropdown.
@@ -63,7 +63,7 @@ To submit a workload using the UI:
       6. In the *Compute resource* pane:
 
          1. Select the number of workers for your training.
-         2. Select *Compute resources* for your training or [create a new compute resource](./assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+         2. Select *Compute resources* for your training or [create a new compute resource](../../platform-admin/workloads/assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 
         !!! Note
             The number of compute resources for the workers is based on the number of workers selected.
@@ -98,7 +98,7 @@ To submit a workload using the UI:
             1.  In the *Set the connection for your tool(s)* pane, choose a tool for your environment (if available). In the *Access* pane, edit the field and choose a type of access. *Everyone* allows all users in the platform to access the selected tool. *Group* allows you a select a specific group of users (Identity provider group). Press `+Group` to add more groups. *User* allows you to grant access individual users (by user email) in the platform. Press `+User` to add more users. (optional)
             2. In the *Runtime settings* field, Set commands and arguments for the container running in the pod. (optional)
             3. In the *Environment variable* field, you can set one or more environment variables. (optional)
-         2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+         2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
          3. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
             1. Select the *Storage class* from the dropdown.

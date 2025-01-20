@@ -41,6 +41,10 @@ All customizations will be saved when upgrading the cluster to a future version.
 | `spec.prometheus.spec.retention` | `2h` | The interval of time where Prometheus will save Run:ai metrics. Promethues is only used as an intermediary to another metrics storage facility and metrics are typically moved within tens of seconds, so changing this setting is mostly for debugging purposes. |
 | `spec.prometheus.spec.retentionSize` | Not set | The amount of storage allocated for metrics by Prometheus. For more information see [Prometheus Storage](https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects){target=_blank}. |
 | `spec.prometheus.spec.imagePullSecrets` | Not set | An optional list of references to secrets in the runai namespace to use for pulling Prometheus images (relevant for air-gapped installations). |
+| `pod-grouper.args.gangScheduleArgoWorkflow` | true | Groups all pods of a single ArgoWorkflow workload into a single Pod-Group for gang scheduling. |
+| `runai-scheduler.args.defaultStalenessGracePeriod` | 60s | Sets the timeout in seconds before the scheduler evicts a stale pod-group (gang) that went below its min-members in running state: 0s - Immediately (no timeout) -1 - Never |
+
+
 
 ## Understanding Custom Access Roles
 
