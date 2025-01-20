@@ -42,7 +42,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | :---- | :---- |
 | Workload | The workload that uses the compute resource |
 | Type | (Workspace/Training/Inference) |
-| Status | Represents the workload lifecycle. see the full list of [workload status](../workload-overview.md#workloads-status) |
+| Status | Represents the workload lifecycle. see the full list of [workload status](../../../platform-admin/workloads/workload-overview.md#workloads-status) |
 
 ### Customizing the table view
 

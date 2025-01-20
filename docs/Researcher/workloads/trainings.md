@@ -41,7 +41,7 @@ To add a training:
 7. In the *Compute resource* pane:
 
        1. Select the number of workers for your training.
-       2. Select *Compute resources* for your training or [create a new compute resource](../workloads/assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       2. Select *Compute resources* for your training or [create a new compute resource](../../platform-admin/workloads/assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
 
     !!! Note
         The number of compute resources for the workers is based on the number of workers selected.
@@ -67,7 +67,7 @@ To add a training:
 12. If you do not want a different setup for the master, press *Create training*. If you would like to have a different setup for the master, toggle the switch to enable to enable a different setup.
 
        1. In the *Environment* pane select or [create a new environment](../workloads/assets/environments.md#adding-a-new-environment). Use the search box to find environments that are not listed. Press *More settings* to add an `Environment variable` or to edit the *Command* and *Arguments* field for the environment you selected.
-       2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](../workloads/assets/compute.md#create-a-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
+       2. In the *Compute resource* pane, select a *Compute resources* for your training or [create a new compute resource](../workloads/assets/compute.md#adding-new-compute-resource). Use the search box to find resources that are not listed. Press *More settings* to use **Node Affinity** to limit the resources to a specific node.
        3. (Optional) Open the *Volume* pane, and press *Volume* to add a volume to your training.
 
           1. Select the *Storage class* from the dropdown.
