@@ -257,6 +257,14 @@
          <lastmod>2025-01-20</lastmod>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_kubeconfig/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_kubeconfig_set/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list/</loc>
          <lastmod>2025-01-20</lastmod>
     </url>
@@ -506,6 +514,10 @@
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_suspend/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/guides/set-kubeconfig-with-oidc-parameters/</loc>
          <lastmod>2025-01-20</lastmod>
     </url>
     <url>
