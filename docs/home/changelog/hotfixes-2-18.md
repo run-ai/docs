@@ -12,6 +12,16 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-24521 | 2.18.83 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
+| RUN-24733 | 2.18.83 | Fixed an issue where department admins were unable to load the quota management page. |
+| RUN-25094 | 2.18.82 | Fixed an issue where OpenShift could not be upgraded due to a broken 3rd binary. |
+| RUN-24921 | 2.18.80 | Fixed a security vulnerability in golang.org.x.net and golang.org.x.crypto. |
+| RUN-24632 | 2.18.80 | Fixed an issue where an existing monitoring Prometheus setup deployed in an unexpected namespace was reported as missing, causing Run:ai installation to fail on the cluster. The installation mechanism now searches for the monitoring prerequisite in additional relevant namespaces. |
+| RUN-24693 | 2.18.80 | Fixed an issue where users were unable to provide metric store authentication details using secret references. |
+| RUN-24752 | 2.18.79 | Fixed an issue where a workload would move to a failed state when created with a custom NodePort that was already allocated. |
+| RUN-24649 | 2.18.79 | Fixed an issue where submitting a workload with `existingPvc=false` and not providing a `claimName` resulted in auto-generating a `claimName` that included both upper and lower case letters. Since Kubernetes rejects uppercase letters, the workload would fail. The behavior has been updated to generate names using only lowercase letters. |
+| RUN-24595 | 2.18.78 | Fixed an issue where the new CLI did not parse master and worker commands/args simultaneously for distributed workloads. |
+| RUN-23914 | 2.18.78 | Fixed an issue where unexpected behavior could occur if an application was capturing a graph while memory was being swapped in as part of the GPU memory swap feature. |
 | RUN-24020 | 2.18.77 | Fixed a security vulnerability in k8s.io.kubernetes with CVE CVE-2024-0793. |
 | RUN-24021 | 2.18.77 | Fixed a security vulnerability in pam with CVE CVE-2024-10963. |
 | RUN-23798 | 2.18.75 | Fixed an issue in distributed PyTorch workloads where the worker pods are deleted immediately after completion, not allowing logs to be viewed. |
