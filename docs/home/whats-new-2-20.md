@@ -45,7 +45,7 @@ control over resource cleanup and helps maintain a more organized and efficient 
 
 * **Enhanced data sources and credentials tables** - Added a new "Kubernetes name" column to data sources and credentials tables for visibility into Kubernetes resource associations. The credentials table now includes an  "Environments" column displaying the environments associated with the credential. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
 
-#### Authenitication and authorization
+#### Authentication and authorization
 
 * **User applications for API authentication** - You can now create your own applications for API integrations with Run:ai. 
 Each application includes client credentials which can be used to obtain an authentication token to utilize for subsequent API calls. 
@@ -110,7 +110,7 @@ using the [Update inference spec API](https://api-docs.run.ai/latest/tag/Inferen
 CSV-formatted layout. With this feature, you can monitor resource consumption, identify trends, and make informed decisions 
 to optimize their AI workloads with greater efficiency.
 
-#### Authorization and authentication
+#### Authentication and authorization
 
 * **Client credentials for applications** - Applications now use client credentials - Client ID and Client secret - to obtain an 
 authentication token, aligned with [OAuth standard](https://oauth.net/2/grant-types/client-credentials/). See [Applications](../platform-admin/authentication/applications.md) for more details. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span>
@@ -226,7 +226,7 @@ manage replicas for Run:ai services. See [Advanced Cluster Configurations](../ad
 
 ### Run:ai Developer
 
-#### Metrics and Telemtry 
+#### Metrics and Telemetry 
 
 * Additional metrics and telemetry are available via the API. For more details, see [Metrics API](../developer/metrics/metrics-api.md):
 
@@ -281,7 +281,7 @@ The Dynamic MIG deprecation process started in version 2.19. Run:ai supports sta
 ### CLI v1 deprecation 
 CLI V1 is deprecated and no new features will be developed for it. It will remain available for use for the next 
 two releases to ensure a smooth transition for all users. We recommend switching to **CLI v2**, which provides feature parity, 
-backwards compatibility, and ongoing support for new enhancements. CLI v2 is designed to deliver a more robust, efficient, and 
+backward compatibility, and ongoing support for new enhancements. CLI v2 is designed to deliver a more robust, efficient, and 
 user-friendly experience.
 
 ### Legacy Jobs view deprecation
