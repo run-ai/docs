@@ -14,7 +14,7 @@ The following table lists the available Helm chart values that can be configured
 | --- | --- | --- |
 | global.image.registry (string) | Global Docker image registry | Default: `""` |
 | global.additionalImagePullSecrets (list) | List of image pull secrets references| Default: `[]` |
-| spec.researcherService.ingress.tlsSecret (string) | Existing secret key where cluster TLS Certificates are stored (non-OpenShift) | Default: "runai-cluster-domain-tls-secret” |
-| spec.researcherService.route.tlsSecret (string) | Existing secret key where cluster TLS Certificates are stored (OpenShift only) | Default: "" |
+| spec.researcherService.ingress.tlsSecret (string) | Existing secret key where cluster TLS Certificates are stored (non-OpenShift) | Default: `runai-cluster-domain-tls-secret` |
+| spec.researcherService.route.tlsSecret (string) | Existing secret key where cluster TLS Certificates are stored (OpenShift only) | Default: `` |
 | spec.prometheus.spec.image (string) | Due to a known issue In the Prometheus Helm chart, the imageRegistry setting is ignored. To pull the image from a different registry, you can manually specify the Prometheus image reference. | Default: `quay.io/prometheus/prometheus` |
-| spec.prometheus.spec.imagePullSecrets (string) | List of image pull secrets references in the runai namespace to use for pulling Prometheus images (relevant for air-gapped installations). | Default: [] | 
+| spec.prometheus.spec.imagePullSecrets (string) | List of image pull secrets references in the runai namespace to use for pulling Prometheus images (relevant for air-gapped installations). | Default: `[]` | 
