@@ -61,11 +61,6 @@ Run:ai Cluster requires Kubernetes. The following Kubernetes distributions are s
 * Rancher Kubernetes Engine (RKE1)  
 * Rancher Kubernetes Engine 2 (RKE2)
 
-Contact Run:ai customer support for up-to-date support details for:
-
-* Ezmeral Runtime Enterprise  
-* Tanzu Platform
-
 !!! Important
     The latest release of the Run:ai cluster supports **Kubernetes 1.29 to 1.32** and **OpenShift 4.14 to 4.17**
 
