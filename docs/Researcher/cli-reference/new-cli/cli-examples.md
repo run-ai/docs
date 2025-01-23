@@ -1,13 +1,13 @@
 This article provides examples of popular use cases illustrating how to use the Command Line Interface (CLI)
 
-## Login
+## Logging in
 
-### Login via run:ai sign in page (web)
-You can login from the UI, if you are using SSO or credentials
+### Logging in via run:ai sign in page (web)
+You can log in from the UI, if you are using SSO or credentials
 ```shell
 runai login
 ```
-### Login via terminal (credentials)
+### Logging in via terminal (credentials)
 
 ```shell
 runai login user -u john@acme.com -p "password"
@@ -59,25 +59,25 @@ runai workspace submit -p test -i ubuntu -e name=value -e name2=value2
 ```
 ### Requests and limits
 ```shell
-runai workspace submit  -p alon -i runai.jfrog.io/demo/quickstart-demo   --cpu-core-request 0.3 --cpu-core-limit 1 --cpu-memory-request 50M --cpu-memory-limit 1G  --gpu-devices-request 1 --gpu-memory-request 1G
+runai workspace submit  -p "project-name" -i runai.jfrog.io/demo/quickstart-demo   --cpu-core-request 0.3 --cpu-core-limit 1 --cpu-memory-request 50M --cpu-memory-limit 1G  --gpu-devices-request 1 --gpu-memory-request 1G
 ```
 
-### Submit and attach to process
+### Submitting and attaching to process
 ```shell
-runai workspace submit  -p alon -i python  --attach -- python3
+runai workspace submit  -p "project-name" -i python  --attach -- python3
 ```
-### Submit a jupiter notebook 
+### Submitting a jupyter notebook 
 ```shell
-runai workspace submit --image jupyter/scipy-notebook -p alon --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
+runai workspace submit --image jupyter/scipy-notebook -p "project-name" --gpu-devices-request 1 --external-url container=8888 --name-prefix jupyter --command -- start-notebook.sh --NotebookApp.base_url='/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}' --NotebookApp.token=''
 ```
 
 
-### Distributed with TensorFlow framework
+### Submitting distributed training workload with TensorFlow
 ```shell
-runai distributed submit -f TF --workers=5 --no-master -g 1 -i kubeflow/tf-mnist-with-summaries:latest -p alon --command -- python /var/tf_mnist/mnist_with_summaries.py --max_steps 1000000
+runai distributed submit -f TF --workers=5 --no-master -g 1 -i kubeflow/tf-mnist-with-summaries:latest -p "project-name" --command -- python /var/tf_mnist/mnist_with_summaries.py --max_steps 1000000
 ```
 
-### Multi pod submission
+### Submitting a multi-pod workload
 
 ```shell
 
@@ -85,28 +85,28 @@ runai training submit  -i alpine -p test --parallelism 2 --completions 2  -- sle
 ```
 
 ### Submit and bash
-#### Submit a workload with bash command
+#### Submitting a workload with bash command
 
 ```shell
 
-runai training pytorch submit  -p alon -i nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04 -g 1 --workers 3 --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
+runai training pytorch submit  -p "project-name" -i nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04 -g 1 --workers 3 --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
 ```
 
-#### bash into the workload
+#### Bashing into the workload
 ```shell
 
-runai training pytorch bash pytorch-06027b585626 -p alon
+runai training pytorch bash pytorch-06027b585626 -p "project-name"
 ```
 
-### Submit MPI
+### Submitting distributed training workload with MPI
 
 ```shell
 
 runai  mpi submit dist1 --workers=2 -g 1 \
-    -i runai.jfrog.io/demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 -p alon
+    -i runai.jfrog.io/demo/quickstart-distributed:v0.3.0 -e RUNAI_SLEEP_SECS=60 -p "project-name"
 ```
 
-### Submit with PVC
+### Submitting with PVC
 #### New PVC bounded to the workspace
  New PVCs will be deleted when the workload is deleted
 ```shell
@@ -114,13 +114,13 @@ runai  mpi submit dist1 --workers=2 -g 1 \
 runai workspace submit -i ubuntu --new-pvc claimname=yuval-3,size=10M,path=/tmp/test
 ```
 #### New ephemeral PVC 
-New ephemeral PVCs will deleted when the workload is deleted or paused
+New ephemeral PVCs will be deleted when the workload is deleted or paused
 ```shell
 
 runai workspace submit -i ubuntu --new-pvc claimname=yuval2,size=10M,path=/tmp/test,ephemeral
 ```
 #### Existing PVC
-Existing PVCs will not deleted when the workload is deleted
+Existing PVCs will not be deleted when the workload is deleted
 ```shell
 runai workspace submit -i ubuntu --existing-pvc claimname=test-pvc-2-project-mn2xs,path=/home/test
 ```
@@ -128,33 +128,33 @@ runai workspace submit -i ubuntu --existing-pvc claimname=test-pvc-2-project-mn2
 ### Master/Worker configuration
 
 
---command flag and -- are setting both leader(master) and workers command/arguments
+--command flag and -- are set both leader (master) and workers command/arguments
 
 --master-args flag sets the master arguments
 
---master-command flag set the master commands with arguments
+--master-command flag sets the master commands with arguments
 
---master-args and --master-command flags can set together
+--master-args and --master-command flags can be set together
 
 
-#### Override both the leader(master) and worker image's arguments
+#### Overriding both the leader (master) and worker image's arguments
 ```shell
 runai pytorch submit -i ubuntu -- -a argument_a -b argument_b -c
 ```
-#### Override both the leader(master) and worker image's commands with arguments
+#### Overriding both the leader (master) and worker image's commands with arguments
 ```shell
 runai pytorch submit -i ubuntu --command -- python -m pip install
 ```
-#### Override arguments of the leader(master) and worker image's arguments with different values
+#### Overriding arguments of the leader (master) and worker image's arguments with different values
 ```shell
 runai pytorch submit -i ubuntu --master-args "-a master_arg_a -b master-arg_b'" -- '-a worker_arg_a'
 ```
-#### Override command with arguments of the leader(master) and worker image's arguments
+#### Overriding command with arguments of the leader (master) and worker image's arguments
 ```shell
 runai pytorch submit -i ubuntu --master-command "python_master -m pip install'" --command -- 'python_worker -m pip install'
 ```
 
-## List objects
+## Listing objects
 ### Listing all workloads in the user's scope
 ```shell
 runai workload list -A
