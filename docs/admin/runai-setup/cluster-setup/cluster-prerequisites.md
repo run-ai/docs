@@ -298,7 +298,7 @@ Run:ai allows for autoscaling a deployment according to the below metrics:
 * Throughput (requests/sec)
 * Concurrency (requests)
 
-Using a custom metric (for example, Latency) requires installing the [Kubernetes Horizontal Pod Autoscaler (HPA)](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}. Use the following command to install. Make sure to update the {VERSION} in the below command with a [supported Knative version](#inference).
+Using a custom metric (for example, Latency) requires installing the [Kubernetes Horizontal Pod Autoscaler (HPA)](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions){target=_blank}. Use the following command to install. Make sure to update the VERSION in the below command with a [supported Knative version](#inference).
 
 ```
 kubectl apply -f https://github.com/knative/serving/releases/download/knative-{VERSION}/serving-hpa.yaml
