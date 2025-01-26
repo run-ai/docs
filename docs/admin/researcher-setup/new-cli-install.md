@@ -18,7 +18,7 @@ Under **General settings** → Workloads, enable the flag `Improved command line
 2. Select **Researcher Command Line Interface**  
 3. Select the **cluster** you want the CLI to communicate with  
 4. Select your computer’s **operating system**  
-5. Copy the installer command and run it in the terminal  
+5. Copy the installer command and run it in the terminal or download the binary file for **Windows** OS
 6. Follow the installation process instructions  
 7. Click `Enter` to use the default values (recommended)
 
@@ -32,6 +32,15 @@ To verify the CLI client was installed properly
 ## Configuring the CLI
 
 Follow the steps below to configure the CLI.
+
+**The following step is required for Windows users only!**
+
+### Setting the authentication URL
+
+Run the command `runai config set --auth-url <AUTHORIZATION_URL>`. 
+Most likely the same as the control plane URL
+
+This will also create the `config.json` file in the default folder
 
 ### Authenticating the CLI
 
