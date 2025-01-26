@@ -33,14 +33,12 @@ To verify the CLI client was installed properly
 
 Follow the steps below to configure the CLI.
 
-**The following step is required for Windows users only!**
 
-### Setting the authentication URL
+### Setting the Control plane URL
+**The following step is required for Windows users only. Linux and Mac clients are configured via the installation script automatically**
 
-Run the command `runai config set --auth-url <AUTHORIZATION_URL>`. 
-Most likely the same as the control plane URL
-
-This will also create the `config.json` file in the default folder
+Run the command `runai config set --cp-url <CONTROL_PLANE_URL>`. 
+This will also create the `config.json` file in the default path
 
 ### Authenticating the CLI
 
@@ -57,19 +55,32 @@ If only one cluster is connected to the account, it is set as the default cluste
  If there are multiple clusters, you must follow the steps below to set your preferred cluster for workload submission:
 
 1. Open the terminal on your local machine.  
-2. Run `runai cluster list` to find the required cluster name.  
+2. Run `runai cluster` and select the desried cluster from the interactive menu
+
+alernativly  
+
+1. Open the terminal on your local machine.  
+2. Run `runai cluster list` to find the desired cluster name.  
 3. Run the following command `runai cluster set <CLUSTER_NAME>`
 
 ### Setting a default project
 
 Set a default working project, to easily submit workloads without mentioning the project name in every command.
 
-1. Run the following command on the terminal:  
-   `runai project set <PROJECT_NAME>`  
-2. If successful, the following message is returned:  
-   `project <PROJECT_NAME> configured successfully`  
-3. To see the current configuration run:  
-   `runai config generate --json`
+
+1. Open the terminal on your local machine.  
+2. Run `runai project` and select the desried cluster from the interactive menu
+
+alernativly  
+
+1. Open the terminal on your local machine.  
+2. Run `runai cluster list` to find the desired project name.  
+3. Run the following command `runai project set <PROJECT_NAME>`  
+4. If successful, the following message is returned `project <PROJECT_NAME> configured successfully`  
+
+
+### Validating the configuration
+To view the current configuration run `runai config generate --json`
 
 ### Installing command auto-completion
 
