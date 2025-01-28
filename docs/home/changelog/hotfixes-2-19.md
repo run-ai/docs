@@ -10,6 +10,10 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-17284 | 2.19.49 | Fixed an issue where workloads were suspended when set with the termination after preemption option. |
+| RUN-25290 | 2.19.49 | Fixed a security vulnerability in golang.org/x/net v0.33.0 with CVE-2024-45338 with severity HIGH. |
+| RUN-25234 | 2.19.49 | Fixed security vulnerabilities by updating oauth2 proxy image to the latest. |
+| RUN-25234 | 2.19.48 | Fixed an authentication issue in CLI V1. |
 | RUN-25062 | 2.19.45 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21614 with severity HIGH. |
 | RUN-25061 | 2.19.45 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21613 with severity HIGH. |
 | RUN-24857 | 2.19.45 | Fixed a security vulnerability in golang.org.x.net with CVE CVE-2024-45338 with severity HIGH. |
