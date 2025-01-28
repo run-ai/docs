@@ -199,6 +199,7 @@ nav:
       - 'Version 2.15' : 'home/whats-new-2-15.md'
       - 'Version 2.13' : 'home/whats-new-2-13.md'
     - 'Hotfixes':
+      - 'Hotfixes for 2.20' : 'home/changelog/hotfixes-2-20.md'
       - 'Hotfixes for 2.19' : 'home/changelog/hotfixes-2-19.md'
       - 'Hotfixes for 2.18' : 'home/changelog/hotfixes-2-18.md'
       - 'Hotfixes for 2.17' : 'home/changelog/hotfixes-2-17.md'
