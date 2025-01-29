@@ -68,7 +68,7 @@
     width: 100%;
     z-index: 1;         /* Tells the renderer "this is important", otherwise Admonition and Code Blocks will render into it */
     text-align: center;
-    background-color: yellow;
+    background-color: #faddef;
 }
 
 .md-header {
