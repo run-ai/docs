@@ -14,6 +14,7 @@ To learn more about the inference workload type in Run:ai and determine that it 
 
 Before you start, make sure you have a project.
 
+
 To add a new inference workload:
 
 1.  Go to the Workload manager → Workloads
@@ -22,6 +23,10 @@ To add a new inference workload:
 3.  Select under which __cluster__ to create the inference workload
 4.  Select the __project__ in which your inference will run
 5. Select __NIM__ from __Inference type__ 
+
+    !!! Note 
+        Selecting the Inference type is disabled by default. If you cannot see it in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Models.
+        
 6.  Enter a unique __name__ for the inference workload (if the name already exists in the project, you will be requested to submit a different name)
 7.  Click __CONTINUE__  
     In the next step:
