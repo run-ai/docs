@@ -18,7 +18,7 @@ SaaS features are gradually rolled out to customers over the course of a week to
 - Improved permission error messaging when attempting to delete a user with higher privileges. <!-- (RUN-24366)   -->
 - Improved visibility of metrics in ‘resource utilization’ widget by repositioning them above the graphs. <!-- (RUN-25292)   -->
 - Added a new Idle Workloads table widget to help users easily identify and manage underutilized resources. <!-- (RUN-24376)   -->
-- Renamed and updated the "Workloads by type" widget to provide clearer insights into cluster usage with a focus on workload Renamed and updated the "Workloads by type" widget to provide clearer insights into cluster usage with a focus on workload distribution. <!-- (RUN-23978)   -->
+- Renamed and updated the "Workloads by type" widget to provide clearer insights into cluster usage with a focus on workload. <!-- (RUN-23978)   -->
 - Improved user experience by moving the date picker to a dedicated section within the overtime widgets (Resource utilization + Resource allocation). <!-- (RUN-23941)   -->
 - Simplified configuration by enabling auto-creation of storage class for discovered storage classes. <!-- (RUN-25302)   -->
 - Enhanced storage configuration by specifying context (Volume, PVC, both, or neither) and filtering storage classes based on selection. <!-- (RUN-25158)   -->
@@ -34,4 +34,8 @@ SaaS features are gradually rolled out to customers over the course of a week to
 | RUN-24354 | Fixed an issue where migrating workloads failed due to slow network connection. |
 | RUN-25220 | CLI v2: Changed --image flag from a required field to an optional one. |
 | RUN-25290 | Fixed a security vulnerability in golang.org/x/net v0.33.0 with CVE-2024-45338 with severity HIGH. |
+| RUN-24688 | Fixed an issue that blocked the Create Template submission due to a server error. This occurred when using the Copy & Edit Template form. |
+
+
+
 
