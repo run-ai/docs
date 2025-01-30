@@ -186,3 +186,60 @@ nav:
   - 'Cluster Installation' : 
     - 'System requirements' : 'cluster-installation/system-requirements.md'
     - 'Network requirements' : 'cluster-installation/network-requirements.md'
+    - 'Install using Helm' : 'cluster-installation/install-using-helm.md'
+    - 'Install using Base Command Manager' : 'cluster-installation/install-using-base-command-manager.md'
+    - 'Upgrade' : 'cluster-installation/upgrade.md'
+    - 'Uninstall' : 'cluster-installation/uninstall.md'
+  - 'Authentication & Authorization' : 
+    - 'Authentication & Authorization' : 'authentication-and-authorization/authentication-and-authorization.md'
+    - 'Users' : 'authentication-and-authorization/users.md'
+    - 'SSO' :
+      - 'Set up SSO with SAML' : 'authentication-and-authorization/sso/saml.md'
+      - 'Set up SSO with OpenID Connect' : 'authentication-and-authorization/sso/openidconnect.md'
+      - 'Set up SSO with OpenShift' : 'authentication-and-authorization/sso/openshift.md' 
+    - 'Roles' : 'authentication-and-authorization/roles.md'
+    - 'Applications' : 'authentication-and-authorization/applications.md'
+    - 'User Applications' : 'authentication-and-authorization/user-applications.md'
+    - 'Access rules' : 'authentication-and-authorization/accessrules.md'
+  - 'Manage AI initiatives' : 
+    - 'Adapting AI initiatives for your organization' : 'manage-ai-initiatives/adapting-ai-initiatives.md'
+    - 'Managing your organization' :
+      - 'Projects' : 'manage-ai-initiatives/managing-your-organization/projects.md'
+      - 'Departments' : 'manage-ai-initiatives/managing-your-organization/departments.md'
+    - 'Managing your resources' :
+      - 'Nodes' : 'manage-ai-initiatives/managing-your-resources/nodes.md'
+      - 'Configuring NVIDIA MIG Profiles' : 'manage-ai-initiatives/managing-your-resources/configuring-mig-profiles.md'
+      - 'Node pools' : 'manage-ai-initiatives/managing-your-resources/node-pools.md'
+  - 'Workloads in Run:ai' : 
+    - 'Introduction to workloads' : 'workloads-in-runai/introduction-to-workloads.md'
+    - 'Workload types' : 'workloads-in-runai/workload-types.md'
+    - 'Workloads' : 'workloads-in-runai/workloads.md'
+    - 'Workload assets' :
+      - 'Workload assets' : 'workloads-in-runai/workload-assets/workload-assets.md'
+      - 'Environments' : 'workloads-in-runai/workload-assets/environments.md'
+      - 'Data sources' : 'workloads-in-runai/workload-assets/datasources.md'
+      - 'Data volumes' : 'workloads-in-runai/workload-assets/data-volumes.md'
+      - 'Compute resources' : 'workloads-in-runai/workload-assets/compute-resources.md'
+      - 'Credentials' : 'workloads-in-runai/workload-assets/credentials.md'
+    - 'Workload templates' :
+      - 'Workspace templates' : 'workloads-in-runai/workload-assets/workspace-templates.md'
+  - 'Experiment Using Workspaces' :
+    - 'Running Workspaces' :  'experiment-using-workspaces/workspace-v2.md'
+      - 'Quick Starts' : 
+        - 'Running Jupyter Notebook Using Workspaces' : 'experiment-using-workspaces/quickstart-jupyter.md'
+    - 'Train Models Using Training' : 
+      - 'Standard Training' :
+        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
+        - 'Quick Starts' :
+          - 'Run your First Standard Training' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
+      - 'Distributed Training' :
+        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
+        - 'Quick Starts' :
+          - 'Run your First Distributed Training' : 'Researcher/workloads/training/distributed-training/quickstart-distributed-training.md'
+    - 'Deploy Models Using Inference' :
+      - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
+      - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
+      - 'Deploy Inference Workloads from Hugging Face' : 'Researcher/workloads/inference/hugging-face-inference.md'
+      - 'Deploy Inference Workloads with NVIDIA NIM' : 'Researcher/workloads/inference/nim-inference.md'
+
+
