@@ -82,106 +82,6 @@ plugins:
         - skip-lightbox
   - minify:
       minify_html: true
-  - redirects:
-      redirect_maps:
-        'index.md' : 'home/overview.md'
-        'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
-        'admin/runai-setup/advanced/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
-        'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
-        'admin/runai-setup/config/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md'
-        'admin/runai-setup/cluster-setup/cluster-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
-        'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
-        'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
-        'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/authentication/authentication-overview.md'
-        'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
-        'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
-        'admin/admin-ui-setup/overview.md' : 'platform-admin/aiinitiatives/overview.md'   # installation points here
-        'admin/admin-ui-setup/project-setup.md' : 'platform-admin/aiinitiatives/org/projects.md'
-        'admin/admin-ui-setup/department-setup.md' : 'platform-admin/aiinitiatives/org/departments.md'
-        'admin/admin-ui-setup/admin-ui-users.md' : 'admin/authentication/users.md'
-        'admin/runai-setup/authentication/authentication-overview.md' : 'admin/authentication/authentication-overview.md'
-        'admin/runai-setup/authentication/researcher-authentication.md' : 'admin/authentication/researcher-authentication.md' 
-        'admin/admin-ui-setup/credentials-setup.md' : 'platform-admin/workloads/assets/credentials.md'
-        'admin/admin-ui-setup/templates.md' : 'platform-admin/workloads/assets/templates.md'
-        'admin/admin-ui-setup/dashboard-analysis.md' : 'platform-admin/performance/dashboard-analysis.md'
-        'admin/admin-ui-setup/deployments.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
-        'admin/admin-ui-setup/jobs.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
-        'admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
-        'admin/workloads/README.md' : 'platform-admin/workloads/overviews/introduction-to-workloads.md'
-        'admin/troubleshooting/cluster-health-check.md' : 'admin/config/clusters.md'
-        'admin/runai-setup/config/overview.md' : 'admin/config/overview.md'
-        'admin/runai-setup/config/node-roles.md' : 'admin/config/node-roles.md'
-        'admin/runai-setup/config/clusters.md' : 'admin/config/clusters.md'
-        'admin/runai-setup/config/shared-storage.md' : 'admin/config/shared-storage.md'
-        'admin/runai-setup/config/default-scheduler.md' : 'admin/config/default-scheduler.md'
-        'admin/runai-setup/config/access-roles.md' : 'admin/config/access-roles.md'
-        'admin/runai-setup/config/allow-external-access-to-containers.md' : 'admin/config/allow-external-access-to-containers.md'
-        'admin/runai-setup/config/cli-admin-install.md' : 'admin/config/cli-admin-install.md'
-        'admin/runai-setup/config/node-affinity-with-cloud-node-pools.md' : 'admin/config/node-affinity-with-cloud-node-pools.md'
-        'admin/runai-setup/config/org-cert.md' : 'admin/config/org-cert.md'
-        'admin/runai-setup/config/large-clusters.md' : 'admin/config/large-clusters.md'
-        'admin/runai-setup/notifications/notifications.md' : 'admin/config/notifications.md'
-        'admin/runai-setup/maintenance/node-downtime.md' : 'admin/maintenance/node-downtime.md'
-        'admin/runai-setup/maintenance/alert-monitoring.md' : 'admin/maintenance/alert-monitoring.md'
-        'admin/runai-setup/maintenance/audit-log.md' : 'admin/maintenance/audit-log.md'
-        'admin/researcher-setup/cluster-wide-pvc.md' : 'admin/config/cluster-wide-pvc.md'
-        'admin/researcher-setup/limit-to-node-group.md' :  'admin/config/limit-to-node-group.md'
-        'admin/authentication/rbac.md' : 'admin/authentication/roles.md'
-        'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
-        'platform-admin/workloads/inference-overview.md' : 'Researcher/workloads/inference/inference-overview.md'
-        'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
-        'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/assets/data-volumes.md'
-        'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
-        'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
-        'Researcher/user-interface/workspaces/blocks/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
-        'Researcher/user-interface/workspaces/blocks/environments.md' : 'Researcher/workloads/assets/environments.md'
-        'Researcher/user-interface/workspaces/blocks/compute.md' : 'Researcher/workloads/assets/compute.md'
-        'Researcher/user-interface/workspaces/blocks/datasources.md' : 'Researcher/workloads/assets/datasources.md'
-        'Researcher/user-interface/workspaces/blocks/existing-PVC.md' : 'Researcher/workloads/assets/datasources.md'
-        'Researcher/user-interface/workspaces/create/create-env.md' : 'Researcher/workloads/assets/environments.md'
-        'Researcher/user-interface/workspaces/create/create-compute.md' : 'Researcher/workloads/assets/compute.md'
-        'Researcher/user-interface/workspaces/create/create-ds.md' : 'Researcher/workloads/assets/datasources.md'
-        'Researcher/user-interface/trainings.md' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
-        'Researcher/workloads/trainings.md' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
-        'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/workspaces/overview.md'
-        'Researcher/user-interface/workspaces/overview.md' : 'Researcher/workloads/overviews/workload-types.md'
-        'Researcher/user-interface/workspaces/create/workspace-v2.md' : 'Researcher/workloads/workspaces/workspace-v2.md'
-        'Researcher/user-interface/workspaces/statuses.md':  'Researcher/workloads/overviews/managing-workloads.md'
-        'snippets/common-submit-cli-commands.md' : 'Researcher/cli-reference/new-cli/runai.md'
-        'platform-admin/workloads/assets/building-blocks.md' : 'platform-admin/workloads/assets/overview.md'
-        'Researcher/workloads/assets/building-blocks.md' : 'Researcher/workloads/assets/overview.md'
-        'Researcher/workloads/statuses.md' : 'Researcher/workloads/overviews/managing-workloads.md'
-        'platform-admin/workloads/submitting-workloads.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
-        'Researcher/workloads/workload-support.md' : 'Researcher/workloads/overviews/introduction-to-workloads.md'
-        'Researcher/workloads/overviews/workload-support.md' : 'Researcher/workloads/overviews/introduction-to-workloads.md'
-        'admin/integration/kubeflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/jupyterhub.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/airflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/mlflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/seldon.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/clearml.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/argo-workflows.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/weights-and-biases.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/spark.md' : 'platform-admin/integrations/integration-overview.md'
-        'admin/integration/ray.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/kubeflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/jupyterhub.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/airflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/mlflow.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/seldon.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/clearml.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/argo-workflows.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/weights-and-biases.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/spark.md' : 'platform-admin/integrations/integration-overview.md'
-        'Administrator/integration/ray.md' : 'platform-admin/integrations/integration-overview.md'
-        'platform-admin/workloads/assets/secrets.md' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
-        'admin/runai-setup/access-control/rbac.md' : 'admin/authentication/roles.md'
-        'platform-admin/workloads/assets/existing-PVC.md' : 'platform-admin/workloads/assets/datasources.md'
-        'Researcher/scheduling/job-statuses.md' : 'platform-admin/workloads/overviews/managing-workloads.md'
-        'Researcher/scheduling/strategies.md' : 'Researcher/scheduling/the-runai-scheduler.md'
-        'platform-admin/workloads/integrations.md' : 'platform-admin/integrations/integration-overview.md'
-        'Researcher/scheduling/karpenter.md' : 'platform-admin/integrations/karpenter.md'
-        'platform-admin/workloads/workload-overview.md' : 'platform-admin/workloads/overviews/introduction-to-workloads.md'
 nav:
   - 'Cluster Installation' : 
     - 'System requirements' : 'cluster-installation/system-requirements.md'
@@ -210,6 +110,21 @@ nav:
       - 'Nodes' : 'manage-ai-initiatives/managing-your-resources/nodes.md'
       - 'Configuring NVIDIA MIG Profiles' : 'manage-ai-initiatives/managing-your-resources/configuring-mig-profiles.md'
       - 'Node pools' : 'manage-ai-initiatives/managing-your-resources/node-pools.md'
+  - 'Advanced setup' : 
+    - 'Node roles' : 'advanced-setup/node-roles.md'
+    - 'Integrations' :
+      - 'Interworking with Karpenter' : 'advanced-setup/integrations/karpenter.md'
+  - 'Infrastructure procedures' : 
+    - 'Run:ai at scale' : 'infrastructure-procedures/run:ai-at-scale.md'
+    - 'Monitoring and maintenance' : 'infrastructure-procedures/monitoring-and-maintenance.md'
+    - 'Run:ai system monitoring' : 'infrastructure-procedures/run:ai-system-monitoring.md'
+    - 'Clusters' : 'infrastructure-procedures/clusters.md'
+    - 'Shared storage' : 'infrastructure-procedures/shared-storage.md'
+    - 'Cluster restore' : 'infrastructure-procedures/cluster-restore.md'
+    - 'Secure your cluster' : 'infrastructure-procedures/secure-your-cluster.md'
+    - 'Compliance' : 'infrastructure-procedures/compliance.md'
+    - 'Logs collection' : 'infrastructure-procedures/logs-collection.md'
+    - 'Event history' : 'infrastructure-procedures/event-history.md'
   - 'Workloads in Run:ai' : 
     - 'Introduction to workloads' : 'workloads-in-runai/introduction-to-workloads.md'
     - 'Workload types' : 'workloads-in-runai/workload-types.md'
@@ -223,23 +138,23 @@ nav:
       - 'Credentials' : 'workloads-in-runai/workload-assets/credentials.md'
     - 'Workload templates' :
       - 'Workspace templates' : 'workloads-in-runai/workload-assets/workspace-templates.md'
-  - 'Experiment Using Workspaces' :
-    - 'Running Workspaces' :  'experiment-using-workspaces/workspace-v2.md'
-      - 'Quick Starts' : 
-        - 'Running Jupyter Notebook Using Workspaces' : 'experiment-using-workspaces/quickstart-jupyter.md'
-    - 'Train Models Using Training' : 
-      - 'Standard Training' :
-        - 'Train Models Using a Standard Training Workload' : 'Researcher/workloads/training/standard-training/trainings-v2.md'
-        - 'Quick Starts' :
-          - 'Run your First Standard Training' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
-      - 'Distributed Training' :
-        - 'Train Models Using a Distributed Training Workload' : 'Researcher/workloads/training/distributed-training/distributed-training.md'
-        - 'Quick Starts' :
-          - 'Run your First Distributed Training' : 'Researcher/workloads/training/distributed-training/quickstart-distributed-training.md'
-    - 'Deploy Models Using Inference' :
-      - 'Overview': 'Researcher/workloads/inference/inference-overview.md'
-      - 'Deploy a Custom Inference Workload' : 'Researcher/workloads/inference/custom-inference.md'
-      - 'Deploy Inference Workloads from Hugging Face' : 'Researcher/workloads/inference/hugging-face-inference.md'
-      - 'Deploy Inference Workloads with NVIDIA NIM' : 'Researcher/workloads/inference/nim-inference.md'
+  - 'Experiment using workspaces' :
+    - 'Running workspaces' :  'experiment-using-workspaces/workspace-v2.md'
+    - 'Quick starts' : 
+      - 'Running Jupyter Notebook using workspaces' : 'experiment-using-workspaces/quickstart-jupyter.md'
+  - 'Train models using training' : 
+    - 'Standard training' :
+      - 'Train models using a standard training workload' : 'deploy-models-using-training/standard-training/trainings-v2.md'
+      - 'Quick starts' :
+        - 'Run your first standard training' : 'deploy-models-using-training/standard-training/quickstart-standard-training.md' 
+    - 'Distributed training' :
+      - 'Train models using a distributed training workload' : 'deploy-models-using-training/distributed-training/distributed-training.md'
+      - 'Quick starts' :
+        - 'Run your first distributed training' : 'deploy-models-using-training/distributed-training/quickstart-distributed-training.md'
+  - 'Deploy models using inference' :
+    - 'Deploy a custom inference workload' : 'inference/custom-inference.md'
+    - 'Deploy inference workloads from Hugging Face' : 'inference/hugging-face-inference.md'
+    - 'Deploy inference workloads with NVIDIA NIM' : 'inference/nim-inference.md'
 
 
+      

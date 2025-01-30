@@ -1,1 +1,0 @@
-../../admin/authentication/applications.md
