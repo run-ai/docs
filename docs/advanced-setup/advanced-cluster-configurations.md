@@ -14,6 +14,8 @@ kubectl edit runaiconfig runai -n runai
 
 The following configurations allow you to enable or disable features, control permissions, and customize the behavior of your Run:ai cluster:
 
+TBD Sherin
+
 | Key | Description | Default | 
 | --- | --- |-------------|
 | spec.project-controller.createNamespaces (boolean) | Allows Kubernetes namespace creation for new projects| true |

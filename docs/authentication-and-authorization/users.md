@@ -1,3 +1,5 @@
+# Users
+
 This article explains the procedure to manage users and their permissions.
 
 Users can be managed locally, or via the Identity provider, while assigned with Access Rules to manage its permissions.

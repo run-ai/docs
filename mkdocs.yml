@@ -88,6 +88,7 @@ nav:
     - 'Network requirements' : 'cluster-installation/network-requirements.md'
     - 'Install using Helm' : 'cluster-installation/install-using-helm.md'
     - 'Install using Base Command Manager' : 'cluster-installation/install-using-base-command-manager.md'
+    - 'Customized installation' : 'cluster-installation/customized-installation.md'    
     - 'Upgrade' : 'cluster-installation/upgrade.md'
     - 'Uninstall' : 'cluster-installation/uninstall.md'
   - 'Authentication & Authorization' : 
@@ -132,6 +133,7 @@ nav:
     - 'Scheduling rules' : 'policies/scheduling-rules.md'
   - 'Advanced setup' : 
     - 'Node roles' : 'advanced-setup/node-roles.md'
+    - 'Advanced cluster configurations' : 'advanced-setup/advanced-cluster-configurations.md'
     - 'Integrations' :
       - 'Interworking with Karpenter' : 'advanced-setup/integrations/karpenter.md'
   - 'Infrastructure procedures' : 
@@ -140,6 +142,7 @@ nav:
     - 'Run:ai system monitoring' : 'infrastructure-procedures/run:ai-system-monitoring.md'
     - 'Clusters' : 'infrastructure-procedures/clusters.md'
     - 'Shared storage' : 'infrastructure-procedures/shared-storage.md'
+    - 'Nodes maintenance' : 'infrastructure-procedures/nodes-maintenance.md'
     - 'Cluster restore' : 'infrastructure-procedures/cluster-restore.md'
     - 'Secure your cluster' : 'infrastructure-procedures/secure-your-cluster.md'
     - 'Compliance' : 'infrastructure-procedures/compliance.md'

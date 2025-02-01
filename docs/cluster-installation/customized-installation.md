@@ -1,10 +1,12 @@
+# Customized installation
+
 This article explains the available configurations for customizing the Run:ai cluster installation.
 
 ## Helm chart values
 
 The Run:ai cluster installation can be customized to support your environment via Helm [values files](https://helm.sh/docs/chart_template_guide/values_files/) or [Helm install](https://helm.sh/docs/helm/helm_install/) flags.
 
-These configurations are saved in the runaiconfig Kubernetes object and can be edited post-installation as needed. For more information, see [Advanced Cluster Configurations](../../config/advanced-cluster-config.md).
+These configurations are saved in the runaiconfig Kubernetes object and can be edited post-installation as needed. For more information, see [Advanced Cluster Configurations](../advanced-setup/advanced-cluster-configurations.md).
 
 ### Values
 

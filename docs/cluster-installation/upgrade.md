@@ -1,3 +1,5 @@
+# Upgrade
+
 This article explains how to upgrade Run:ai cluster version.
 
 ## Before upgrade

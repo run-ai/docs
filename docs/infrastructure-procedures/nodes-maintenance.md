@@ -1,38 +1,34 @@
-  
-This article provides detailed instructions on how to manage both planned and unplanned node downtime in a Kubernetes cluster that is running Run:ai. It covers all the steps to maintain service continuity and ensure the proper handling of workloads during these events.
+# Nodes maintenance 
+
+This article provides detailed instructions on how to manage both planned and unplanned node downtimes in a Kubernetes cluster running Run:ai. It covers all the steps to maintain service continuity and ensure the proper handling of workloads during these events.
 
 ## Prerequisites
 
-* __Access to Kubernetes cluster__  
-  Administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands  
-* __Basic knowledge of Kubernetes__  
-  Familiarity with Kubernetes concepts such as nodes, taints, and workloads  
-* __Run:ai installation__  
-  The Run:ai software installed and configured within your Kubernetes cluster   
-* __Node naming conventions__  
-  Know the names of the nodes within your cluster, as these are required when executing the commands
+* **Access to Kubernetes cluster** - Administrative access to the Kubernetes cluster, including permissions to run kubectl commands
+* **Basic knowledge of Kubernetes** - Familiarity with Kubernetes concepts such as nodes, taints, and workloads
+* **Run:ai installation** - The Run:ai software installed and configured within your Kubernetes cluster
+* **Node naming conventions** - Know the names of the nodes within your cluster, as these are required when executing the commands
 
 ## Node types
 
 This article distinguishes between two types of nodes within a Run:ai installation:
 
-* Worker nodes. Nodes on which AI practitioners can submit and run workloads
-* Run:ai system nodes. Nodes on which the Run:ai software runs, managing the cluster's operations
+* **Worker nodes** - Nodes on which AI practitioners can submit and run workloads
+* **Run:ai system nodes** - Nodes on which the Run:ai software runs, managing the cluster's operations
 
 ### Worker nodes
 
-Worker Nodes are responsible for running workloads. When a worker node goes down, either due to planned maintenance or unexpected failure, workloads ideally migrate to other available nodes or wait in the queue to be executed when possible.
+Worker nodes are responsible for running workloads. When a worker node goes down, either due to planned maintenance or unexpected failure, workloads ideally migrate to other available nodes or wait in the queue to be executed when possible.
 
 #### Training vs. Interactive workloads
 
 The following workload types can run on worker nodes: 
 
-* __Training workloads__. These are long-running processes that, in case of node downtime, can automatically move to another node.
-
-* __Interactive workloads__. These are short-lived, interactive processes that require manual intervention to be relocated to another node.
+* **Training workloads** - These are long-running processes that, in case of node downtime, can automatically move to another node.
+* **Interactive workloads** - These are short-lived, interactive processes that require manual intervention to be relocated to another node.
 
 !!! Note
-    While training workloads can be automatically migrated, it is recommended to plan maintenance and manually manage this process for a faster response, as it may take time for Kubernetes to detect a node failure,
+    While training workloads can be automatically migrated, it is recommended to plan maintenance and manually manage this process for a faster response, as it may take time for Kubernetes to detect a node failure.
 
 #### Planned maintenance
 

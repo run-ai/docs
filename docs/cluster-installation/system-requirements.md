@@ -1,3 +1,5 @@
+# System requirements
+
 The Run:ai Cluster is a Kubernetes application.
 
 This article explains the required hardware and software system requirements for the Run:ai cluster.

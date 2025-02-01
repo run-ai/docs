@@ -1,4 +1,4 @@
-
+# Install using Helm
 
 This article explains the steps required to install the Run:ai cluster on a Kubernetes cluster using Helm.
 

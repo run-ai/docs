@@ -1,3 +1,5 @@
+# Access rules
+
 This article explains the procedure to manage Access rules.
 
 Access rules provide users, groups, or applications privileges to system entities.
