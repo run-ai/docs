@@ -1,10 +1,12 @@
-## Description
+# runai-logs
+
+### Description
 
 Show the logs of a Job.
 
-## Synopsis
+### Synopsis
 
-``` shell
+```shell
 runai logs <job-name> 
     [--follow | -f] 
     [--pod string | -p string] 
@@ -18,48 +20,56 @@ runai logs <job-name>
     [--help | -h]
 ```
 
-## Options
+### Options
 
-<job-name\> - The name of the Job to run the command with. Mandatory.
+\<job-name> - The name of the Job to run the command with. Mandatory.
 
+**--follow | -f**
 
-#### --follow | -f
->  Stream the logs.
+> Stream the logs.
 
-#### --pod | -p
->  Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running `runai describe job <job-name>`.
+**--pod | -p**
 
-#### --instance (string) | -i (string)
->  Show logs for a specific instance in cases where a Job contains multiple pods.
+> Specify a specific pod name. When a Job fails, it may start a couple of times in an attempt to succeed. The flag allows you to see the logs of a specific instance (called 'pod'). Get the name of the pod by running `runai describe job <job-name>`.
 
-#### --since (duration)
->  Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. The flags since and since-time cannot be used together.
+**--instance (string) | -i (string)**
 
-#### --since-time (date-time)
->  Return logs after specified date. Date format should be _RFC3339_, example: `2020-01-26T15:00:00Z`.
+> Show logs for a specific instance in cases where a Job contains multiple pods.
 
-#### --tail (int) | -t (int)
->  \# of lines of recent log file to display.
+**--since (duration)**
 
-#### --timestamps
->  Include timestamps on each line in the log output.
+> Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs. The flags since and since-time cannot be used together.
 
-### Global Flags
+**--since-time (date-time)**
 
-#### --loglevel (string)
->  Set the logging level. One of: debug | info | warn | error (default "info").
+> Return logs after specified date. Date format should be _RFC3339_, example: `2020-01-26T15:00:00Z`.
 
-#### --project | -p (string)
->  Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ``runai config project <project-name>``.
+**--tail (int) | -t (int)**
 
-#### --help | -h
->  Show help text.
+> \# of lines of recent log file to display.
 
-## Output
+**--timestamps**
+
+> Include timestamps on each line in the log output.
+
+#### Global Flags
+
+**--loglevel (string)**
+
+> Set the logging level. One of: debug | info | warn | error (default "info").
+
+**--project | -p (string)**
+
+> Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use `runai config project <project-name>`.
+
+**--help | -h**
+
+> Show help text.
+
+### Output
 
 The command will show the logs of the first process in the container. For training Jobs, this would be the command run at startup. For interactive Jobs, the command may not show anything.
 
-## See Also
+### See Also
 
-*   Training Workloads. See Quickstart document:  [Launch Unattended Training Workloads](../workloads/training/standard-training/quickstart-standard-training.md).
-
+* Training Workloads. See Quickstart document: [Launch Unattended Training Workloads](../docs/Researcher/workloads/training/standard-training/quickstart-standard-training.md).

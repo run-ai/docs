@@ -8,10 +8,9 @@ There are a number of matters to consider prior to upgrading the Run:ai cluster 
 
 ### System and network requirements
 
-Before upgrading the Run:ai cluster, validate that the latest [system requirements](./system-requirements.md) and [network requirements](./network-req.md) are met, as they can change from time to time.
+Before upgrading the Run:ai cluster, validate that the latest [system requirements](system-requirements.md) and [network requirements](../docs/cluster-installation/network-req.md) are met, as they can change from time to time.
 
-!!! Important
-    It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](../cluster-installation/system-requirements.md#kubernetes-distribution).
+!!! Important It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](system-requirements.md#kubernetes-distribution).
 
 ### Helm
 
@@ -27,34 +26,33 @@ Follow the setup and installation instructions below to get the installation ins
 
 #### Setup
 
-1. In the Run:ai UI, go to **Clusters**  
-2. Select the cluster you want to upgrade  
-3. Click **INSTALLATION INSTRUCTIONS**  
-4. Optional: Select the Run:ai cluster version (latest, by default)  
+1. In the Run:ai UI, go to **Clusters**
+2. Select the cluster you want to upgrade
+3. Click **INSTALLATION INSTRUCTIONS**
+4. Optional: Select the Run:ai cluster version (latest, by default)
 5. Click **CONTINUE**
 
 #### Installation instructions
 
-1. Follow the installation instructions (See the additional instructions below when [upgrading to v2.13](#upgrade-to-runai-cluster-version-213-old-release))  
-   run the Helm commands provided on your Kubernetes cluster (see the troubleshooting below if installation fails)  
-2. Click **DONE**  
+1. Follow the installation instructions (See the additional instructions below when [upgrading to v2.13](upgrade.md#upgrade-to-runai-cluster-version-213-old-release))\
+   run the Helm commands provided on your Kubernetes cluster (see the troubleshooting below if installation fails)
+2. Click **DONE**
 3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios)). Once you have done this, the cluster is upgraded to the latest version.
 
-!!! Note
-    To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
+!!! Note To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
 
 ## Upgrade to Run:ai cluster version 2.13 (old release)
 
 Run:ai cluster version 2.13 (old release) does not support migration of the configured Helm values. If you have customized configurations you want to migrate, follow the additional steps below:
 
-1. Download the Run:ai Helm values file by running the command provided in your terminal  
+1. Download the Run:ai Helm values file by running the command provided in your terminal
 2. Run the following command to save existing cluster Helm values into `old-values.yaml`
 
-``` bash
+```bash
 helm get values runai-cluster -n runai > old-values.yaml
 ```
 
-3. Identify configured custom values that you want to migrate  
+3. Identify configured custom values that you want to migrate
 4. Manually merge the values from `old-values.yaml` into the new values file
 
 ## Troubleshooting
@@ -62,6 +60,7 @@ helm get values runai-cluster -n runai > old-values.yaml
 If you encounter an issue with the cluster upgrade, use the troubleshooting scenario below.
 
 ### Installation fails
+
 If the Run:ai cluster upgrade fails, check the installation logs to identify the issue.
 
 Run the following script to print the installation logs:
@@ -71,6 +70,5 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 ```
 
 ### Cluster status
-    
-If the Run:ai cluster upgrade completes, but the cluster status does not show as **Connected**, refer to the [cluster troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios).
 
+If the Run:ai cluster upgrade completes, but the cluster status does not show as **Connected**, refer to the [cluster troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios).

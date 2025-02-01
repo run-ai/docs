@@ -1,30 +1,28 @@
 # Cluster API (Deprecated)
 
-The Run:ai Cluster API allows the submission of Workloads via YAML, directly to Kubernetes. 
+The Run:ai Cluster API allows the submission of Workloads via YAML, directly to Kubernetes.
 
-!!! Important
-      With Run:ai 2.18 clusters, you can now submit Workloads via the [Run:ai REST API](../admin-rest-api/overview.md). We recommend using this API if your cluster is of that version.  
+!!! Important With Run:ai 2.18 clusters, you can now submit Workloads via the [Run:ai REST API](../admin-rest-api/overview.md). We recommend using this API if your cluster is of that version.
 
 ## Workloads
 
-Run:ai schedules __Workloads__. Run:ai workloads contain:
+Run:ai schedules **Workloads**. Run:ai workloads contain:
 
 * The _Kubernetes resource_ (Job, Deployment, etc) that is used to launch the container inside which the data science code runs.
 * A set of additional resources that is required to run the Workload. Examples: a service entry point that allows access to the Job, a persistent volume claim to access data on the network and more.
 
 Run:ai supports the following Workloads types:
 
-|  Workload Type | Kubernetes Name | Description |
-|----------------|-----------------|-------------|
-| Interactive    | `InteractiveWorkload` | Submit an interactive workload |
-| Training       | `TrainingWorkload`| Submit a training workload |
+| Workload Type        | Kubernetes Name       | Description                                                             |
+| -------------------- | --------------------- | ----------------------------------------------------------------------- |
+| Interactive          | `InteractiveWorkload` | Submit an interactive workload                                          |
+| Training             | `TrainingWorkload`    | Submit a training workload                                              |
 | Distributed Training | `DistributedWorkload` | Submit a distributed training workload using TensorFlow, PyTorch or MPI |
-| Inference      | `InferenceWorkload` | Submit an inference workload |
-
+| Inference            | `InferenceWorkload`   | Submit an inference workload                                            |
 
 ## Values
 
-A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../Researcher/cli-reference/runai-submit.md) Command-line reference.  
+A Workload will typically have a list of _values_, such as name, image, and resources. A full list of values is available in the [runai-submit](../../cli-reference/runai-submit.md) Command-line reference.
 
 You can also find the exact YAML syntax run:
 
@@ -62,13 +60,12 @@ FIELDS:
    value	<string>
 ```
 
-
 ## How to Submit
 
 A Workload can be submitted via various channels:
 
 * The Run:ai user interface.
-* The Run:ai command-line interface, via the [runai submit](../../Researcher/cli-reference/runai-submit.md) command.
+* The Run:ai command-line interface, via the [runai submit](../../cli-reference/runai-submit.md) command.
 * The Run:ai [Cluster API](submit-yaml.md).
 
 ## Policies
@@ -87,4 +84,4 @@ Each workload type has a matching kind of workload policy. For example, an `Inte
 
 A Policy of each type can be defined _per-project_. There is also a _global_ policy that applies to any project that does not have a per-project policy.
 
-For further details on policies, see [Policies](../../platform-admin/workloads/policies/overview.md).
+For further details on policies, see [Policies](broken-reference).
