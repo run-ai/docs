@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Overview]
+* Overview
   * [Welcome to Run:ai](Overview/welcome-to-runai.md)
 * [Cluster Installation](cluster-installation/README.md)
   * [System requirements](cluster-installation/system-requirements.md)
