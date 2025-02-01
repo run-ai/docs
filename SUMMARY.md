@@ -81,7 +81,7 @@
   * [Running Workspaces](experiment-using-workspaces/workspace-v2.md)
   * [Running Jupyter Notebook Using Workspaces](experiment-using-workspaces/quickstart-jupyter.md)
 * [Deploy models using training](deploy-models-using-training/README.md)
- * [Standard training](deploy-models-using-training/standard-training/README.md)
+  * [Standard training](deploy-models-using-training/standard-training/README.md)
     * [Train models using a standard training workload](deploy-models-using-training/standard-training/trainings-v2.md)    
     * [Run your first standard training](deploy-models-using-training/standard-training/quickstart-standard-training.md)
   * [Distributed training](deploy-models-using-training/distributed-training/README.md) 
