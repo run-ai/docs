@@ -9,7 +9,7 @@ Set out below are the system requirements for the Run:ai cluster.
 
 ## Hardware Requirements
 
-The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](../../config/node-roles.md), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
+The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](../advanced-setup/node-roles.md), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
 
 ### Run:ai Cluster - system nodes
 
@@ -37,7 +37,7 @@ The following configuration represents the minimum hardware requirements for ins
 
 Run:ai workloads must be able to access data from any worker node in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts.
 
-Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](../../config/shared-storage.md).
+Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](../infrastructure-procedures/shared-storage.md).
 
 ## Software requirements
 
@@ -244,7 +244,7 @@ Distributed training enables training of AI models over multiple nodes. This req
 
 There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/){target=_blank} which includes TensorFlow, PyTorch, and XGBoost.
 
-It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../../../platform-admin/workloads/overviews/managing-workloads.md#stopping-a-workload) and [Scheduling rules](../../../platform-admin/aiinitiatives/org/scheduling-rules.md).
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](../workloads-in-runiai/workloads.md#stopping-a-workload) and [Scheduling rules](../policies/scheduling-rules.md).
 
 * To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
 

@@ -17,6 +17,7 @@ The way you map your AI initiatives and organization into Run:ai [projects](./ma
 ### Based on individuals
 
 A typical use case would be students (individual practitioners) within a faculty (business unit) - an individual practitioner may be involved in one or more initiatives. In this example, the resources are accounted for by the student (project) and aggregated per faculty (department).  
+
 Department = business unit / Project = individual practitioner
 
 ![](img/individuals.png)
@@ -43,7 +44,7 @@ AI initiatives require compute resources such as GPUs and CPUs to run. Compute r
 
 Another aspect of resource management is how to group your resources effectively, especially in large environments, or environments that are made of heterogeneous types of hardware, where some users need to use specific hardware types, or where other users should avoid occupying critical hardware of some users or initiatives.
 
-Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources ([over quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md)) per node pool.
+Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources ([over quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#over-quota)) per node pool.
 
 ### Grouping your resources
 
@@ -60,12 +61,12 @@ There are several reasons why you would group resources (nodes) into node pools:
 
 Set out below are illustrations of different grouping options.                              
 
-Example: grouping nodes by topology
+**Example: grouping nodes by topology**
 
 ![](img/groupbytopology.png)
 
 
-Example: grouping nodes by hardware type
+**Example: grouping nodes by hardware type**
 
 ![](img/groupbyhardware.png)
 

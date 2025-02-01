@@ -8,7 +8,7 @@ There are a number of matters to consider prior to installing using Helm.
 
 ### System and network requirements
 
-Before installing the Run:ai cluster, validate that the [system requirements](../docs/cluster-installation/cluster-prerequisites.md) and [network requirements](../docs/cluster-installation/network-req.md) are met.
+Before installing the Run:ai cluster, validate that the [system requirements](./system-requirements.md) and [network requirements](./network-requirements.md) are met.
 
 Once all the requirements are met, it is highly recommend to use the Run:ai cluster preinstall diagnostics tool to:
 
@@ -17,56 +17,13 @@ Once all the requirements are met, it is highly recommend to use the Run:ai clus
 
 To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/){target=\_blank} the latest version, and run:
 
-\=== "SaaS" \* On EKS deployments, run `aws configure` prior to execution
 
-````
 ``` bash
 chmod +x ./preinstall-diagnostics-<platform> && \
 ./preinstall-diagnostics-<platform> \
   --domain ${COMPANY_NAME}.run.ai \
   --cluster-domain ${CLUSTER_FQDN}
 ```
-````
-
-\=== "Self-hosted"
-
-````
-``` bash
-chmod +x ./preinstall-diagnostics-<platform> && \ 
-./preinstall-diagnostics-<platform> \
-  --domain ${CONTROL_PLANE_FQDN} \
-  --cluster-domain ${CLUSTER_FQDN} \
-#if the diagnostics image is hosted in a private registry
-  --image-pull-secret ${IMAGE_PULL_SECRET_NAME} \
-  --image ${PRIVATE_REGISTRY_IMAGE_URL}    
-```
-````
-
-\=== "Airgap"
-
-````
-In an air-gapped deployment, the diagnostics image is saved, pushed, and pulled manually from the organization's registry.
-
-``` bash
-#Save the image locally
-docker save --output preinstall-diagnostics.tar gcr.io/run-ai-lab/preinstall-diagnostics:${VERSION}
-#Load the image to the organization's registry
-docker load --input preinstall-diagnostics.tar
-docker tag gcr.io/run-ai-lab/preinstall-diagnostics:${VERSION} ${CLIENT_IMAGE_AND_TAG} 
-docker push ${CLIENT_IMAGE_AND_TAG}
-```
-
-Run the binary with the `--image` parameter to modify the diagnostics image to be used:
-
-``` bash
-chmod +x ./preinstall-diagnostics-darwin-arm64 && \
-./preinstall-diagnostics-darwin-arm64 \
-  --domain ${CONTROL_PLANE_FQDN} \
-  --cluster-domain ${CLUSTER_FQDN} \
-  --image-pull-secret ${IMAGE_PULL_SECRET_NAME} \
-  --image ${PRIVATE_REGISTRY_IMAGE_URL}    
-```
-````
 
 For more information see [preinstall diagnostics](https://github.com/run-ai/preinstall-diagnostics).
 
@@ -88,7 +45,7 @@ kubectl create ns runai
 
 ### TLS certificates
 
-A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){target=\_blank} named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](../docs/cluster-installation/cluster-prerequisites.md#domain-name-requirement) private and public keys, by running the following:
+A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){target=\_blank} named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](./system-requirements.md#fully-qualified-domain-name-fqdn) private and public keys, by running the following:
 
 ```bash
 kubectl create secret tls runai-cluster-domain-tls-secret -n runai \
@@ -108,23 +65,22 @@ Follow the steps below to add a new cluster.
 
 If this is your first cluster and you have completed the New Cluster form, start at step 3. Otherwise, start at step 1.
 
+#### Setup
+
 1. In the Run:ai platform, go to **Resources**
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
 4. Optional: Chose the Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL . For more information see [Domain Name Requirement](../docs/cluster-installation/cluster-prerequisites.md#fully-qualified-domain-name-fqdn)
+5. Enter the Cluster URL . For more information see [Domain Name Requirement](./system-requirements.md#domain-name-requirement)
 6. Click **Continue**
 
-### Installing Run:ai cluster
-
-In the next Section, the Run:ai cluster installation steps will be presented.
+### Installation instructions
 
 1. Follow the installation instructions and run the commands provided on your Kubernetes cluster.
 2. Click **DONE**
+3. The cluster is displayed in the table with the status **Waiting to connect**. Once installation is complete, the cluster status changes to **Connected**.
 
-The cluster is displayed in the table with the status **Waiting to connect**, once installation is complete, the cluster status changes to **Connected**
-
-!!! Note To customize the installation based on your environment, see [Customize cluster installation](../docs/cluster-installation/customize-cluster-install.md).
+!!! Note To customize the installation based on your environment, see [Customize cluster installation](./customized-installation.md).
 
 ## Troubleshooting
 
@@ -140,4 +96,4 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster status
 
-If the Run:ai cluster installation completed, but the cluster status did not change its status to Connected, check the cluster [troubleshooting scenarios](../troubleshooting/troubleshooting.md#cluster-health)
+If the Run:ai cluster installation completed, but the cluster status did not change its status to Connected, check the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios).

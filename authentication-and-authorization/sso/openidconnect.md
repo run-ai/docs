@@ -27,7 +27,6 @@ Follow the steps below to setup SSO with OpenID Connect.
 6. Optional: Add the OIDC scopes  
 7. Optional: Enter the user attributes and their value in the identity provider (see the user attributes table below)  
 8. Click **SAVE**  
-   User attributes
 
 | Attribute | Default value in Run:ai | Description |
 | :---- | :---- | :---- |

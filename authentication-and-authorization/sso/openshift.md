@@ -26,7 +26,6 @@ Follow the steps below to setup SSO with OpenShift.
 5. Copy the Redirect URL to be used in your OpenShift OAuth client  
 6. Optional: Enter the user attributes and their value in the identity provider (see the user attributes table below)  
 7. Click **SAVE**  
-   User attributes
 
 | Attribute | Default value in Run:ai | Description |
 | :---- | :---- | :---- |

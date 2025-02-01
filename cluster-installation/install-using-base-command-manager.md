@@ -2,40 +2,41 @@
 
 This article explains the steps required to install the Run:ai cluster on a DGX Kubernetes Cluster using NVIDIA [Base Command Manager (BCM)](https://docs.nvidia.com/base-command-manager/index.html){target=\_blank}.
 
-## Run:ai Installer
+## Run:ai installer
 
-The Run:ai Installer is an User Interface (UI) wizard that simplifies the deployment of Run:ai Cluster on DGX. The Run:ai installer can be installed via the BCM cluster wizard on cluster creation.
+The Run:ai installer is a wizard that simplifies the deployment of the Run:ai cluster on DGX. The Run:ai installer is installed via the BCM cluster wizard when the cluster is created.
 
-!!! Note For advanced configuration and custom deployment options, refer to the Install using Helm.
+!!! Note For custom deployment options, check the [Install using Helm](./install-using-helm.md).
 
 ## Before installation
 
-There are a number of matters to consider prior to installing using the Run:ai Installer.
-
-### Application secret key
-
-An **Application secret key** is required to connect the cluster to the Run:ai Platform, In order to get the Application secret key, a new cluster must be added.
-
-1. follow the [Adding a new cluster](../docs/cluster-installation/cluster-install.md) setup instructions, **Do not follow the Installation instructions**.
-2. Once cluster instructions are displayed, find the `controlPlane.clientSecret` flag in the displayed Helm command, copy and save its value.
-
-!!! Note For **DGX Bundle customers**, installing their first Run:ai cluster - The Application secret key will be provided by the Run:ai Support team.
+Before installing the cluster using the Run:ai installer, consider:
 
 ### System and network requirements
 
-Before installing the Run:ai cluster on a DGX system using BCM, ensure that your System requirements and Network requirements meets the necessary prerequisites.
+Before installing the Run:ai cluster on a DGX system using BCM, ensure that your [System requirements](./system-requirements.md) and [Network requirements](./network-requirements.md) meets the necessary prerequisites.
 
-The BCM cluster wizard deploys essential [Software Requirements](../docs/cluster-installation/cluster-prerequisites.md#software-requirements), such as the [Kubernetes Ingress Controller](../docs/cluster-installation/cluster-prerequisites.md#kubernetes-ingress-controller), [NVIDIA GPU Operator](../docs/cluster-installation/cluster-prerequisites.md#nvidia-gpu-operator), and [Prometheus](../docs/cluster-installation/cluster-prerequisites.md#prometheus), as part of the Run:ai Installer deployment. Additional optional software requirements for [Distributed training](../docs/cluster-installation/cluster-prerequisites.md#distributed-training) and [Inference](../docs/cluster-installation/cluster-prerequisites.md#inference), requires manual setup.
+The BCM cluster wizard deploys essential [Software Requirements](./system-requirements.md#software-requirements), such as the [Kubernetes Ingress Controller](./system-requirements.md#kubernetes-ingress-controller), [NVIDIA GPU Operator](./system-requirements.md#nvidia-gpu-operator), and [Prometheus](./system-requirements.md#prometheus), as part of the Run:ai Installer deployment. Additional optional software requirements for [Distributed training](./system-requirements.md#distributed-training) and [Inference](./system-requirements.md#inference) requires manual setup.
 
 ### Tenant Name
 
 Your tenant name is predefined and supplied by Run:ai. Each customer is provided with a unique, dedicated URL in the format `<tenant-name>.run.ai` which includes the required tenant name.
 
+### Application secret key
+
+An application secret key is required to connect the cluster to the Run:ai Platform, In order to get the Application secret key, a new cluster must be added.
+
+1. Follow the [Adding a new cluster](./install-using-helm.md) setup instructions. **Do not follow the Installation instructions**.
+2. Once cluster instructions are displayed, find the `controlPlane.clientSecret` flag in the displayed Helm command, copy and save its value.
+
+!!! Note For **DGX Bundle customers**, installing their first Run:ai cluster - the Application secret key will be provided by the Run:ai support team.
+
+
 ### TLS certificate
 
-A TLS private and public keys for the cluster’s [Fully Qualified Domain Name (FQDN)](../docs/cluster-installation/cluster-prerequisites.md#fully-qualified-domain-name-fqdn) are required for HTTP access to the cluster
+A TLS private and public keys for the cluster’s [Fully Qualified Domain Name (FQDN)](./system-requirements.md#fully-qualified-domain-name-fqdn) are required for HTTP access to the cluster
 
-!!! Important TLS Certificate must be trusted, Self-signed certificates are not supported.
+!!! Important TLS Certificate must be trusted. Self-signed certificates are not supported.
 
 ## Installation
 
@@ -81,4 +82,4 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster status
 
-If the Run:ai cluster installation completed, but the cluster status did not change its status to **Connected**, check the cluster [troubleshooting scenarios](../config/clusters.md#troubleshooting-scenarios)
+If the Run:ai cluster installation completed, but the cluster status did not change its status to **Connected**, check the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios)

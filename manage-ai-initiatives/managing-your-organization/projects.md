@@ -2,7 +2,7 @@
 
 This article explains the procedure to manage Projects.
 
-Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the [concept of Projects](../../docs/manage-ai-initiatives/managing-your-organization/adapting-ai-initiatives.md). Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
+Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the [concept of Projects](../adapting-ai-initiatives.md#mapping-your-organization). Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
 
 For example, you may have several people involved in a specific face-recognition initiative collaborating under one project named “face-recognition-2024”. Alternatively, you can have a project per person in your team, where each member receives their own quota.
 

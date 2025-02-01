@@ -24,6 +24,8 @@ Follow the steps below to setup SSO with SAML.
    * From URL - in the Metadata XML URL field, enter the URL to the XML Metadata file
 5. Copy the Redirect URL and Entity ID to be used in your identity provider
 6. Optional: Enter the user attributes and their value in the identity provider (see the user attributes table below)
+7. Click **SAVE**
+
 
 | Attribute            | Default value in Run:ai | Description                                                                                                                                                                                                  |
 | -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -35,7 +37,6 @@ Follow the steps below to setup SSO with SAML.
 | User first name      | firstName               | Used as the user’s first name appearing in the Run:ai platform.                                                                                                                                              |
 | User last name       | lastName                | Used as the user’s last name appearing in the Run:ai platform.                                                                                                                                               |
 
-7. Click **SAVE**
 
 ### Testing the setup
 

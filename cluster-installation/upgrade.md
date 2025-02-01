@@ -8,7 +8,7 @@ There are a number of matters to consider prior to upgrading the Run:ai cluster 
 
 ### System and network requirements
 
-Before upgrading the Run:ai cluster, validate that the latest [system requirements](system-requirements.md) and [network requirements](../docs/cluster-installation/network-req.md) are met, as they can change from time to time.
+Before upgrading the Run:ai cluster, validate that the latest [system requirements](system-requirements.md) and [network requirements](network-requirements.md) are met, as they can change from time to time.
 
 !!! Important It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](system-requirements.md#kubernetes-distribution).
 
@@ -34,8 +34,7 @@ Follow the setup and installation instructions below to get the installation ins
 
 #### Installation instructions
 
-1. Follow the installation instructions (See the additional instructions below when [upgrading to v2.13](upgrade.md#upgrade-to-runai-cluster-version-213-old-release))\
-   run the Helm commands provided on your Kubernetes cluster (see the troubleshooting below if installation fails)
+1. Follow the installation instructions (See the additional instructions below when [upgrading to v2.13](#upgrade-to-runai-cluster-version-213-old-release)). Run the Helm commands provided on your Kubernetes cluster (see the troubleshooting below if installation fails)
 2. Click **DONE**
 3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios)). Once you have done this, the cluster is upgraded to the latest version.
 
