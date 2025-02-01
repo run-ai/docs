@@ -1,7 +1,7 @@
   
 This article explains the procedure to manage Projects.
 
-Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the [concept of Projects](../overview.md). Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
+Researchers submit AI workloads. To streamline resource allocation and prioritize work, Run:ai introduces the [concept of Projects](adapting-ai-initiatives.md). Projects are the tool to implement resource allocation policies as well as the segregation between different initiatives. A project may represent a team, an individual, or an initiative that shares resources or has a specific resource quota. Projects may be aggregated in Run:ai [departments](departments.md).
 
 For example, you may have several people involved in a specific face-recognition initiative collaborating under one project named “face-recognition-2024”. Alternatively, you can have a project per person in your team, where each member receives their own quota.
 
@@ -141,7 +141,7 @@ When no node pools are configured, you can set the same parameters but it is for
 
 After node pools are created, you can set the above parameters __for each node-pool separately__.
 
-6. Set [Scheduling rules](../org/scheduling-rules.md) as required. You can have a scheduling rule for:  
+6. Set [Scheduling rules](../../policies/scheduling-rules.md) as required. You can have a scheduling rule for:  
     * Idle GPU timeout  
     Preempt a workload that does not use GPUs for more than a specified duration. You can apply a single rule per workload type - Preemptive Workspaces, Non-preemptive Workspaces, and Training.  
   
@@ -229,5 +229,5 @@ To delete a project:
 
 ## Using API
 
-Go to the [Projects](https://app.run.ai/api/docs#tag/Projects) API reference to view the available actions
+To view the available actions, go to the [Projects](https://app.run.ai/api/docs#tag/Projects) API reference.
 

@@ -1,14 +1,16 @@
+# Node pools
+
 This article explains the procedure for managing Node pools.
 
-Node pools assist in managing heterogeneous resources effectively. A node pool is a Run:ai construct representing a set of nodes grouped into a bucket of resources using a predefined node label (e.g. NVidia GPU type) or an administrator-defined node label (any key/value pair).
+Node pools assist in managing heterogeneous resources effectively. A node pool is a Run:ai construct representing a set of nodes grouped into a bucket of resources using a predefined node label (e.g. NVIDIA GPU type) or an administrator-defined node label (any key/value pair).
 
 Typically, the grouped nodes share a common feature or property, such as GPU type or other HW capability (such as Infiniband connectivity), or represent a proximity group (i.e. nodes interconnected via a local ultra-fast switch). Researchers and ML Engineers would typically use node pools to run specific workloads on specific resource types.
 
-Platform administrators can create, view, edit, and delete node pools. Creating a new node pool creates a new instance of the Run:ai scheduler, workloads submitted to a node pool will be scheduled using the node pool’s designated scheduler instance.
+In the Run:ai Platform a user with the System administrator role can create, view, edit, and delete node pools. Creating a new node pool creates a new instance of the Run:ai [Scheduler](../../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md). Workloads submitted to a node pool are scheduled using the node pool’s designated scheduler instance. 
 
-Once a new node pool is created, it is automatically assigned to all Projects and Departments with a quota of zero GPU resources, unlimited CPU resources, and over-quota enabled (Medium priority if over-quota weight is enabled). This allows any Project and Department to use any node pool when over-quota is enabled, even if the administrator has not assigned a quota for a specific node pool in a Project or Department.
+Once created, the new node pool is automatically assigned to all [projects](../managing-your-organization/projects.md) and [departments](../managing-your-organization/departments.md) with a quota of zero GPU resources, unlimited CPU resources, and over-quota enabled (medium weight if over-quota weight is enabled). This allows any project and department to use any node pool when over-quota is enabled, even if the administrator has not assigned a quota for a specific node pool within that project or department.
 
-Workloads can be submitted using a prioritized list of node pools, the node pool selector picks one node pool at a time (according to the prioritized list) and the designated node pool scheduler instance handles the submission request and tries to match the requested resources within that node pool. If the scheduler cannot find resources to satisfy the submitted workload, the node pool selector will move the request to the next node pool in the prioritized list, if no node pool satisfies the request, the node pool selector will start from the first node pool again until one of the node pools satisfies the request.
+When submitting a new [workload](../../workloads-in-runiai/workloads.md), users can add a prioritized list of node pools. The node pool selector picks one node pool at a time (according to the prioritized list) and the designated node pool scheduler instance handles the submission request and tries to match the requested resources within that node pool. If the scheduler cannot find resources to satisfy the submitted workload, the node pool selector moves the request to the next node pool in the prioritized list, if no node pool satisfies the request, the node pool selector starts from the first node pool again until one of the node pools satisfies the request.
 
 ## Node pools table
 
@@ -128,7 +130,7 @@ To create a new node pool:
    6. Click **CREATE NODE POOL**
 
 
-### Labeling nodes for node-pool grouping:
+### Labeling nodes for node-pool grouping
 
 The Infrastructure Administrator can use a preset node label such as the `nvidia.com/gpu.product` that labels the GPU type, or configure any other node label (e.g. `faculty=physics`).
 
@@ -162,5 +164,4 @@ To assign a label to nodes you want to group into a node pool, set a node label 
 
 ## Using API
 
-Go to the [Node pools](https://app.run.ai/api/docs#tag/NodePools) API reference to view the available actions
-
+To view the available actions, go to the [Node pools](https://app.run.ai/api/docs#tag/NodePools) API reference.

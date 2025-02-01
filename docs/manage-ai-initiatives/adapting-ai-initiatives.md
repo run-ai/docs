@@ -1,16 +1,18 @@
 # Adapting AI initiatives to your organization
 
-AI initiatives refer to advancing research, development, and implementation of AI technologies. These initiatives represent your business needs and involve collaboration between individuals, teams, and other stakeholders. AI initiatives require compute resources and a methodology to effectively and efficiently use those compute resources and split them among the different AI initiatives stakeholders. The building blocks of AI compute resources are GPUs, CPUs, and CPU memory, which are built into nodes (servers) and can be further grouped into node pools. Nodes and node pools are part of a Kubernetes Cluster.
+AI initiatives refer to advancing research, development, and implementation of AI technologies. These initiatives represent your business needs and involve collaboration between individuals, teams, and other stakeholders. AI initiatives require compute resources and a methodology to effectively and efficiently use those compute resources and split them among the different AI initiatives stakeholders. The building blocks of AI [compute resources](../workloads-in-runiai/workload-assets/compute-resources.md) are GPUs, CPUs, and  memory, which are built into [nodes](../manage-ai-initiatives/managing-your-resources/nodes.md) (servers) and can be further grouped into [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md). Nodes and node pools are part of a Kubernetes cluster.
 
 To manage AI initiatives in Run:ai you should:
 
-* Map your organization and initiatives to projects and optionally departments  
-* Map compute resources (node pools and quotas) to projects and optionally departments  
+* Map your organization and initiatives to projects and optionally departments
+* Map compute resources (node pools and quotas) to projects and optionally departments
 * Assign users (e.g. AI practitioners, ML engineers, Admins) to projects and departments
+
+
 
 ## Mapping your organization
 
-The way you map your AI initiatives and organization into Run:ai projects and departments should reflect your organization’s structure and Project management practices. There are multiple options, and we provide you here with 3 examples of typical forms in which to map your organization, initiatives, and users into Run:ai, but of course, other ways that suit your requirements are also acceptable.
+The way you map your AI initiatives and organization into Run:ai [projects](./managing-your-organization/projects.md) and [departments](./managing-your-organization/departments.md) should reflect your organization’s structure and Project management practices. There are multiple options, and we provide you here with 3 examples of typical forms in which to map your organization, initiatives, and users into Run:ai, but of course, other ways that suit your requirements are also acceptable.
 
 ### Based on individuals
 
@@ -41,7 +43,7 @@ AI initiatives require compute resources such as GPUs and CPUs to run. Compute r
 
 Another aspect of resource management is how to group your resources effectively, especially in large environments, or environments that are made of heterogeneous types of hardware, where some users need to use specific hardware types, or where other users should avoid occupying critical hardware of some users or initiatives.
 
-Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources (Over quota) per node pool.
+Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources ([over quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md)) per node pool.
 
 ### Grouping your resources
 
@@ -69,7 +71,7 @@ Example: grouping nodes by hardware type
 
 ### Assigning your resources
 
-After the initial grouping of resources, it is time to associate resources to AI initiatives, this is performed by assigning quotas to projects and optionally to departments. Assigning GPU quota to a project, on a node pool basis, means that the workloads submitted by that project are entitled to use those GPUs as guaranteed resources and can use them for all workload types.
+After the initial grouping of resources, it is time to associate resources to AI initiatives, this is performed by assigning quotas to projects and optionally to departments. Assigning GPU quota to a project, on a node pool basis, means that the workloads submitted by that project are entitled to use those GPUs as guaranteed resources and can use them for all [workload types](../workloads-in-runiai/workload-types.md).
 
 However, what happens if the project requires more resources than its quota? This depends on the type of workloads that the user wants to submit. If the user requires more resources for non-preemptible workloads, then the quota must be increased, because non-preemptible workloads require guaranteed resources. On the other hand, if the type of workload is, for example, a model Training workload that is preemptible - in this case the project can exploit unused resources of other projects, as long as the other projects don’t need them. Over-quota is set per project on a node-pool basis and per department.
 
@@ -89,16 +91,11 @@ Run:ai system is using ‘Role Based Access Control’ (RBAC) to manage users’
 To allow AI researchers, ML engineers, Project Admins, or any other stakeholder of your AI initiatives to access projects and use AI compute resources with their AI initiatives, the administrator needs to assign users to projects. After a user is assigned to a project with the proper role, e.g. ‘L1 Researcher’, the user can submit and monitor its workloads under that project. Assigning users to departments is usually done to assign ‘Department Admin’ to manage a specific department. Other roles, such as ‘L1 Researcher’, can also be assigned to departments, this allows the researcher access to all projects within that department.
 
 
-## Scopes in the organization
+## Scopes in an organization
 
 This is an example of an organization, as represented in the Run:ai platform:
 
 ![](img/scopes.png)
-
-The organizational tree is structured from top down under a single node headed by the account. The account is comprised of clusters, departments and projects.
-
-!!! Note
-    Different [roles and permissions](../../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) can be granted to specific clusters, departments and projects within an organization.
 
 The organizational tree is structured from top down under a single node headed by the account. The account is comprised of clusters, departments and projects.
 
@@ -112,4 +109,4 @@ The following organizational example consists of 5 optional scopes:
 
 ## Next Steps
 
-Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../workloads/overviews/managing-workloads.md) from a project and use compute resources to run your AI initiatives.
+Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../workloads-in-runiai/workloads.md) from a project and use compute resources to run your AI initiatives.

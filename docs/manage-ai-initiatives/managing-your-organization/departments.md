@@ -177,5 +177,5 @@ To view the policy of a department:
 
 ## Using API
 
-Go to the [Departments](https://app.run.ai/api/docs#tag/Departments) API reference to view the available actions
+To view the available actions, go to the [Departments](https://app.run.ai/api/docs#tag/Departments) API reference.
 

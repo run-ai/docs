@@ -110,6 +110,26 @@ nav:
       - 'Nodes' : 'manage-ai-initiatives/managing-your-resources/nodes.md'
       - 'Configuring NVIDIA MIG Profiles' : 'manage-ai-initiatives/managing-your-resources/configuring-mig-profiles.md'
       - 'Node pools' : 'manage-ai-initiatives/managing-your-resources/node-pools.md'
+  - 'Scheduling and resource optimization' : 
+     - 'Scheduling' : 
+       - 'The Run:ai Scheduler: concepts and principles' : 'scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md'
+       - 'How the Scheduler works' : 'scheduling-and-resource-optimization/how-the-scheduler-works.md'
+     - 'Resource optimization' : 
+       - 'GPU fractions' : 'scheduling-and-resource-optimization/gpu-fractions.md'
+       - 'Dynamic GPU fractions' : 'scheduling-and-resource-optimization/dynamic-gpu-fractions.md'
+       - 'Optimize performance with Node Level Scheduler' : 'scheduling-and-resource-optimization/node-level-scheduler.md'
+       - 'GPU time-slicing' : 'scheduling-and-resource-optimization/gpu-time-slicing.md'
+       - 'GPU memory swap' : 'scheduling-and-resource-optimization/gpu-memory-swap.md'
+       - 'Quick starts' : 
+         - 'Launching workloads with GPU fractions' : 'scheduling-and-resource-optimization/gpu-fractions-quickstart.md'
+         - 'Launching workloads with dynamic GPU fractions' : 'scheduling-and-resource-optimization/dynamic-gpu-fractions-quickstart.md'
+         - 'Running multiple LLMs using GPU memory swap' : 'scheduling-and-resource-optimization/gpu-memory-swap-quickstart.md'
+  - 'Policies' : 
+    - 'Policies and rules' : 'policies/policies-and-rules.md'
+    - 'Workload policies' : 'policies/workload-policies.md'
+    - 'Policy YAML examples' : 'policies/policy-yaml-examples.md'
+    - 'Policy YAML reference' : 'policies/policy-yaml-reference.md'
+    - 'Scheduling rules' : 'policies/scheduling-rules.md'
   - 'Advanced setup' : 
     - 'Node roles' : 'advanced-setup/node-roles.md'
     - 'Integrations' :
@@ -155,6 +175,9 @@ nav:
     - 'Deploy a custom inference workload' : 'inference/custom-inference.md'
     - 'Deploy inference workloads from Hugging Face' : 'inference/hugging-face-inference.md'
     - 'Deploy inference workloads with NVIDIA NIM' : 'inference/nim-inference.md'
+  - 'Review your performance' :
+    - 'Reports' : 'review-your-performance/reports.md'
+
 
 
       
