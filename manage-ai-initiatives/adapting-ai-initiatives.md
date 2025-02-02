@@ -1,6 +1,6 @@
 # Adapting AI initiatives to your organization
 
-AI initiatives refer to advancing research, development, and implementation of AI technologies. These initiatives represent your business needs and involve collaboration between individuals, teams, and other stakeholders. AI initiatives require compute resources and a methodology to effectively and efficiently use those compute resources and split them among the different AI initiatives stakeholders. The building blocks of AI [compute resources](../workloads-in-runiai/workload-assets/compute-resources.md) are GPUs, CPUs, and  memory, which are built into [nodes](../manage-ai-initiatives/managing-your-resources/nodes.md) (servers) and can be further grouped into [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md). Nodes and node pools are part of a Kubernetes cluster.
+AI initiatives refer to advancing research, development, and implementation of AI technologies. These initiatives represent your business needs and involve collaboration between individuals, teams, and other stakeholders. AI initiatives require compute resources and a methodology to effectively and efficiently use those compute resources and split them among the different AI initiatives stakeholders. The building blocks of AI [compute resources](../workloads-in-runai/workload-assets/compute-resources.md) are GPUs, CPUs, and  memory, which are built into [nodes](../manage-ai-initiatives/managing-your-resources/nodes.md) (servers) and can be further grouped into [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md). Nodes and node pools are part of a Kubernetes cluster.
 
 To manage AI initiatives in Run:ai you should:
 
@@ -72,7 +72,7 @@ Set out below are illustrations of different grouping options.
 
 ### Assigning your resources
 
-After the initial grouping of resources, it is time to associate resources to AI initiatives, this is performed by assigning quotas to projects and optionally to departments. Assigning GPU quota to a project, on a node pool basis, means that the workloads submitted by that project are entitled to use those GPUs as guaranteed resources and can use them for all [workload types](../workloads-in-runiai/workload-types.md).
+After the initial grouping of resources, it is time to associate resources to AI initiatives, this is performed by assigning quotas to projects and optionally to departments. Assigning GPU quota to a project, on a node pool basis, means that the workloads submitted by that project are entitled to use those GPUs as guaranteed resources and can use them for all [workload types](../workloads-in-runai/workload-types.md).
 
 However, what happens if the project requires more resources than its quota? This depends on the type of workloads that the user wants to submit. If the user requires more resources for non-preemptible workloads, then the quota must be increased, because non-preemptible workloads require guaranteed resources. On the other hand, if the type of workload is, for example, a model Training workload that is preemptible - in this case the project can exploit unused resources of other projects, as long as the other projects don’t need them. Over-quota is set per project on a node-pool basis and per department.
 
@@ -110,4 +110,4 @@ The following organizational example consists of 5 optional scopes:
 
 ## Next Steps
 
-Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../workloads-in-runiai/workloads.md) from a project and use compute resources to run your AI initiatives.
+Now that resources are grouped into node pools, organizational units or business initiatives are mapped into projects and departments, projects’ quota parameters are set per node pool, and users are assigned to projects, you can finally [submit workloads](../workloads-in-runai/workloads.md) from a project and use compute resources to run your AI initiatives.

@@ -1,6 +1,6 @@
 # workload-assets
 
-Run:ai [workload](../../docs/workloads-in-runiai/overviews/introduction-to-workloads.md) assets are preconfigured building blocks that simplify the workload submission effort and remove the complexities of Kubernetes and networks for AI practitioners.
+Run:ai [workload](../../docs/workloads-in-runai/overviews/introduction-to-workloads.md) assets are preconfigured building blocks that simplify the workload submission effort and remove the complexities of Kubernetes and networks for AI practitioners.
 
 Workload assets enable organizations to:
 
@@ -22,7 +22,7 @@ There are four workload asset types used by the workload:
   The container image, tools and connections for the workload
 * [Data sources](datasources.md)\
   The type of data, its origin and the target storage location such as PVCs or cloud storage buckets where datasets are stored
-* [Compute resources](../../docs/workloads-in-runiai/workload-assets/compute.md)\
+* [Compute resources](../../docs/workloads-in-runai/workload-assets/compute.md)\
   The compute specification, including GPU and CPU compute and memory
 * [Credentials](credentials.md)\
   The secrets to be used to access sensitive data, services, and applications such as docker registry or S3 buckets

@@ -2,7 +2,7 @@
 
 This article explains what data sources are and how to create and use them.
 
-Data sources are a type of [workload asset](../../docs/workloads-in-runiai/workload-assets/overview.md) and represent a location where data is actually stored. They may represent a remote data location, such as NFS, Git, or S3, or a Kubernetes local resource, such as PVC, ConfigMap, HostPath, or Secret.
+Data sources are a type of [workload asset](../../docs/workloads-in-runai/workload-assets/overview.md) and represent a location where data is actually stored. They may represent a remote data location, such as NFS, Git, or S3, or a Kubernetes local resource, such as PVC, ConfigMap, HostPath, or Secret.
 
 This configuration simplifies the mapping of the data into the workload’s file system and handles the mounting process during workload creation for reading and writing. These data sources are reusable and can be easily integrated and used by AI practitioners while submitting workloads across various scopes.
 
@@ -22,7 +22,7 @@ The data sources table comprises the following columns:
 | Description     | A description of the data source                                                                                                                                                                    |
 | Type            | The type of data source connected – e.g., S3 bucket, PVC, or others                                                                                                                                 |
 | Status          | The different lifecycle phases and representation of the data source condition                                                                                                                      |
-| Scope           | The [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope) of the data source within the organizational tree. Click the scope name to view the organizational tree diagram |
+| Scope           | The [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope) of the data source within the organizational tree. Click the scope name to view the organizational tree diagram |
 | Kubernetes name | The unique name of the data sources Kubernetes name as it appears in the cluster                                                                                                                    |
 | Workload(s)     | The list of existing workloads that use the data source                                                                                                                                             |
 | Template(s)     | The list of workload templates that use the data source                                                                                                                                             |
@@ -32,7 +32,7 @@ The data sources table comprises the following columns:
 
 #### Data sources status
 
-The following table describes the data sources' condition and whether they were created successfully for the selected [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope).
+The following table describes the data sources' condition and whether they were created successfully for the selected [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope).
 
 | Status          | Description                                                                                                                                                                   |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ To create a new data source:
 A Network File System ([NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs){target=\_blank}) is a Kubernetes concept used for sharing storage in the cluster among different pods. Like a PVC, the NFS volume’s content remains preserved, even outside the lifecycle of a single pod. However, unlike PVCs, which abstract storage management, NFS provides a method for network-based file sharing. The NFS volume can be pre-populated with data and can be mounted by multiple pod writers simultaneously. At Run:ai, an NFS-type data source is an abstraction that is mapped directly to a Kubernetes NFS volume. This integration allows multiple workloads under various scopes to mount and present the NFS data source.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a name for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
@@ -80,7 +80,7 @@ A Network File System ([NFS](https://kubernetes.io/docs/concepts/storage/volumes
 A Persistent Volume Claim ([PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/){target=\_blank}) is a Kubernetes concept used for managing storage in the cluster, which can be provisioned by an administrator or dynamically by Kubernetes using a StorageClass. PVCs allow users to request specific sizes and access modes (read/write once, read-only many). Run:ai ensures that data remains consistent and accessible across various scopes and workloads, beyond the lifecycle of individual pods, which is efficient while working with large datasets typically associated with AI projects.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Select PVC:
@@ -112,7 +112,7 @@ After the data source is created, check its status to monitor its proper creatio
 The [S3 bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html){target=\_blank} data source enables the mapping of a remote S3 bucket into the workload’s file system. Similar to a PVC, this mapping remains accessible across different workload executions, extending beyond the lifecycle of individual pods. However, unlike PVCs, data stored in an S3 bucket resides remotely, which may lead to decreased performance during the execution of heavy machine learning workloads. As part of the Run:ai connection to the S3 bucket, you can create [credentials](credentials.md) in order to access and map private buckets.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
@@ -133,7 +133,7 @@ After a private data source is created, check its status to monitor its proper c
 A Git-type data source is a Run:ai integration, that enables code to be copied from a Git branch into a dedicated folder in the container. It is mainly used to provide the workload with the latest code repository. As part of the integration with Git, in order to access private repositories, you can add predefined credentials to the data source mapping.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
@@ -154,7 +154,7 @@ After a private data source is created, check its status to monitor its proper c
 A [Host path](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath){target=\_blank} volume is a Kubernetes concept that enables mounting a host path file or a directory on the workload’s file system. Like a PVC, the host path volume’s data persists across workloads under various scopes. It also enables data serving from the hosting node.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
@@ -169,7 +169,7 @@ A [Host path](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath){tar
 A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/){target=\_blank} data source is a Run:ai abstraction for the Kubernetes ConfigMap concept. The ConfigMap is used mainly for storage that can be mounted on the workload container for non-confidential data. It is usually represented in key-value pairs (e.g., environment variables, command-line arguments etc.). It allows you to decouple environment-specific system configurations from your container images, so that your applications are easily portable. ConfigMaps must be created on the cluster prior to being used within the Run:ai system.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
@@ -183,7 +183,7 @@ A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/){targ
 A secret-type data source enables the mapping of a credential into the workload’s file system. [Credentials](credentials.md) are a workload asset that simplify the complexities of Kubernetes [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/){target=\_blank}. The credentials mask sensitive access information, such as passwords, tokens, and access keys, which are necessary for gaining access to various resources.
 
 1. Select the **cluster** under which to create this data source
-2. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+2. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 3. Enter a **name** for the data source. The name must be unique.
 4. Optional: Provide a **description** of the data source
 5. Set the data origin

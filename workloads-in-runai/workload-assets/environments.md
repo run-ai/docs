@@ -2,7 +2,7 @@
 
 This article explains what environments are and how to create and use them.
 
-Environments are one type of [workload asset](../../docs/workloads-in-runiai/workload-assets/overview.md). An environment consists of a configuration that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
+Environments are one type of [workload asset](../../docs/workloads-in-runai/workload-assets/overview.md). An environment consists of a configuration that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
 
 An environment asset is a preconfigured building block that encapsulates aspects for the workload such as:
 
@@ -24,7 +24,7 @@ The Environments table consists of the following columns:
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Environment           | The name of the environment                                                                                                                                                                                 |
 | Description           | A description of the environment                                                                                                                                                                            |
-| Scope                 | The [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
+| Scope                 | The [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Image                 | The application or service to be run by the workload                                                                                                                                                        |
 | Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on multiple nodes                                                                       |
 | Tool(s)               | The tools and connection types the environment exposes                                                                                                                                                      |
@@ -66,7 +66,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 ### Environments created by Run:ai
 
 When installing Run:ai, you automatically get the environments created by Run:ai to ease up the onboarding process and support different use cases out of the box.\
-These environments are created at the [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope) of the account.
+These environments are created at the [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope) of the account.
 
 | Environment         | Image                                                 |
 | ------------------- | ----------------------------------------------------- |
@@ -79,14 +79,14 @@ These environments are created at the [scope](../../docs/workloads-in-runiai/wor
 
 ### Adding a new environment
 
-Environment creation is limited to [specific roles](../../docs/workloads-in-runiai/workload-assets/overview.md#who-can-create-an-asset)
+Environment creation is limited to [specific roles](../../docs/workloads-in-runai/workload-assets/overview.md#who-can-create-an-asset)
 
 To add a new environment:
 
 1. Go to the Environments table
 2. Click **+NEW ENVIRONMENT**
 3. Select under which cluster to create the environment
-4. Select a [scope](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+4. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 5. Enter a **name** for the environment. The name must be unique.
 6. Optional: Provide a **description** of the essence of the environment
 7. Enter the **Image URL**\

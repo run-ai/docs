@@ -9,7 +9,7 @@ Data volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 1. Sharing with multiple scopes\
    Unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters, encouraging data reuse and collaboration within the organization.
 2. Storage saving\
-   A single copy of the data can be used across multiple [scopes](../../docs/workloads-in-runiai/workload-assets/overview.md#asset-scope)
+   A single copy of the data can be used across multiple [scopes](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
 
 ### Typical use cases
 
@@ -28,11 +28,11 @@ Working with data volumes is currently available using the API. To view the avai
 
 ### Adding a new data volume
 
-Data volume creation is limited to [specific roles](../../docs/workloads-in-runiai/workload-assets/overview.md#who-can-create-an-asset)
+Data volume creation is limited to [specific roles](../../docs/workloads-in-runai/workload-assets/overview.md#who-can-create-an-asset)
 
 ### Adding scopes for a data volume
 
-Data volume sharing (adding scopes) is limited to [specific roles](../../docs/workloads-in-runiai/workload-assets/overview.md#who-can-create-an-asset)
+Data volume sharing (adding scopes) is limited to [specific roles](../../docs/workloads-in-runai/workload-assets/overview.md#who-can-create-an-asset)
 
 Once created, the data volume is available to its originating project (see the prerequisites above).
 

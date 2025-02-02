@@ -8,19 +8,19 @@ This guide explores the Run:ai Scheduler’s allocation process, preemption mech
 
 ### Pod creation and grouping
 
-When a workload is submitted ,the workload controller creates a pod or pods (for distributed training workloads or deployment based inference). When the Scheduler gets a submit request with the first pod, it creates a pod group and allocates all the relevant building blocks of that workload. The next pods of the same workload are attached to the same pod group. 
+When a workload is submitted, the workload controller creates a pod or pods (for distributed training workloads or deployment based inference). When the Scheduler gets a submit request with the first pod, it creates a [pod group](./runai-scheduler-concepts-and-principles.md#workloads-and-pod-groups) and allocates all the relevant building blocks of that workload. The next pods of the same workload are attached to the same pod group. 
 
 ### Queue management
 
-A workload, with its associated pod group, is queued in the appropriate scheduling queue. In every scheduling cycle, the Scheduler ranks the order of queues by calculating their precedence for scheduling.
+A workload, with its associated pod group, is queued in the appropriate [scheduling queue](./runai-scheduler-concepts-and-principles.md#scheduling-queue). In every scheduling cycle, the Scheduler ranks the order of queues by calculating their precedence for scheduling.
 
 ### Resource binding
 
-The next step is for the Scheduler to find nodes for those pods, assign the pods to their nodes (bind operation), and bind other building blocks of the pods such as storage, ingress and so on. If the pod group has a ‘gang scheduling’ rule attached to it, the Scheduler either allocates and binds all pods together, or puts all of them into pending state. It retries to schedule them all together in the next scheduling cycle. The Scheduler also updates the status of the pods and their associated pod group. Users are able to track the workload submission process both in the CLI or Run:ai UI. For more details on submitting and managing workloads, see Workloads.
+The next step is for the Scheduler to find nodes for those pods, assign the pods to their nodes (bind operation), and bind other building blocks of the pods such as storage, ingress and so on. If the pod group has a [gang scheduling](./runai-scheduler-concepts-and-principles.md#gang-scheduling) rule attached to it, the Scheduler either allocates and binds all pods together, or puts all of them into pending state. It retries to schedule them all together in the next scheduling cycle. The Scheduler also updates the status of the pods and their associated pod group. Users are able to track the workload submission process both in the CLI or Run:ai UI. For more details on submitting and managing workloads, see [Workloads](../workloads-in-runai/workloads.md).
 
 ## Preemption
 
-If the Scheduler cannot find resources for the submitted workloads (and all of its associated pods), and the workload deserves resources either because it is under its queue quota or its queue fairshare, the Scheduler tries to reclaim resources from other queues. If this does not solve the resource issue, the Scheduler tries to preempt lower priority preemptible workloads within the same queue (project).
+If the Scheduler cannot find resources for the submitted workloads (and all of its associated pods), and the workload deserves resources either because it is under its queue quota or its queue [fairshare](runai-scheduler-concepts-and-principles.md#fairshare-and-fairshare-balancing), the Scheduler tries to [reclaim resources](./runai-scheduler-concepts-and-principles.md#reclaim-of-resources-between-projects-and-departments) from other queues. If this does not solve the resource issue, the Scheduler tries to preempt [lower priority preemptible workloads](./runai-scheduler-concepts-and-principles.md#preemption-of-lower-priority-workloads-within-a-project) within the same queue (project).
 
 ### Reclaim preemption between projects and departments
 
@@ -33,7 +33,7 @@ This mode of operation means that a lower priority workload submitted in one pro
 
 ### Priority preemption within a project 
 
-Higher priority workloads may preempt lower priority preemptible workloads within the same project/node pool queue. For example, in a project that runs a training workload that exceeds the project quota for a certain node pool, a newly submitted workspace within the same project/node pool may stop (preempt) the training workload if there are not enough over quota resources for the project within that node pool to run both workloads (e.g. workspace using in-quota resources and training using over quota resources).
+[Higher priority workloads](./runai-scheduler-concepts-and-principles.md#priority-and-preemption) may preempt lower priority preemptible workloads within the same project/node pool queue. For example, in a project that runs a training workload that exceeds the project quota for a certain node pool, a newly submitted workspace within the same project/node pool may stop (preempt) the training workload if there are not enough over quota resources for the project within that node pool to run both workloads (e.g. workspace using in-quota resources and training using over quota resources).
 
 !!! Note
     Workload priority applies only within the same project and does not influence workloads across different projects, where fairness determines precedence.
@@ -54,15 +54,15 @@ Some scenarios can prevent the Scheduler from fully providing deserved quota and
 
 The example below illustrates a split of quota between different projects and departments using several node pools:
 
-TBD image
+![](img/quota-split.png)
 
 The example below illustrates how fairshare is calculated per project/node pool for the above example:
 
-TBD image
+![](img/fairshare.png)
 
 * For each Project:
   * The over quota (OQ) portion of each project (per node pool) is calculated as: [(OQ-Weight) / (Σ Projects OQ-Weights)] x (Unused Resource per node pool)
-  Fairshare is calculated as the sum of quota + over quota.
+  * Fairshare is calculated as the sum of quota + over quota.
 
 * In Project 2, we assume that out of the 36 available GPUs in node pool A, 20 GPUs are currently unused. This means  either these GPUs are not part of any project’s quota, or they are part of a project’s quota but not used by any workloads of that project:
 
@@ -87,11 +87,11 @@ A queue, representing a scheduler-managed object for each project or department 
 
 When re-balancing resources between queues of different projects and departments, the Scheduler goes in the opposite direction, i.e. first take resources from over-fairshare queues, then from over quota queues, and finally, in some scenarios, even from queues that are below their deserved quota. 
 
-TBD image
+![](img/queue.png)
 
 ## Next Steps
 
-Now that you have gained insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments, you can [submit workloads](../workloads-in-runiai/workloads.md). Before submitting your workloads, it’s important to familiarize yourself with the following key topics:
+Now that you have gained insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments, you can [submit workloads](../workloads-in-runai/workloads.md). Before submitting your workloads, it’s important to familiarize yourself with the following key topics:
 
-* [Introduction to workloads](../workloads-in-runiai/introduction-to-workloads.md): Learn what workloads are and what is supported for both Run:ai-specific and third-party workloads.
-* [Run:ai workload types](../workloads-in-runiai/workload-types.md): Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs. 
+* [Introduction to workloads](../workloads-in-runai/introduction-to-workloads.md): Learn what workloads are and what is supported for both Run:ai-specific and third-party workloads.
+* [Run:ai workload types](../workloads-in-runai/workload-types.md): Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs. 
