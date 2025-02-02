@@ -24,7 +24,7 @@ The Credentials table comprises the following columns:
 | Description     | A description of the credentials                                                                                                                                                                                 |
 | Type            | The type of credentials, e.g., Docker registry                                                                                                                                                                   |
 | Status          | The different lifecycle phases and representation of the credentials’ condition                                                                                                                                  |
-| Scope           | The [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
+| Scope           | The [scope](workload-assets.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Kubernetes name | The unique name of the credentials Kubernetes name as it appears in the cluster                                                                                                                                  |
 | Environment(s)  | The environment(s) that are associated with the credentials                                                                                                                                                      |
 | Data source(s)  | The private data source(s) that are accessed using the credentials                                                                                                                                               |
@@ -34,7 +34,7 @@ The Credentials table comprises the following columns:
 
 #### Credentials status
 
-The following table describes the credentials’ condition and whether they were created successfully for the selected [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope).
+The following table describes the credentials’ condition and whether they were created successfully for the selected [scope](workload-assets.md#asset-scope).
 
 | Status          | Description                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -56,7 +56,7 @@ The following table describes the credentials’ condition and whether they were
 
 ### Adding new credentials
 
-Creating credentials is limited to [specific roles](../../docs/workloads-in-runai/workload-assets/overview.md#who-can-create-an-asset).
+Creating credentials is limited to [specific roles](workload-assets.md#who-can-create-an-asset).
 
 To add a new credential:
 
@@ -71,7 +71,7 @@ These credentials allow users to authenticate and pull images from a Docker regi
 
 After creating the credentials, it is used automatically when pulling images.
 
-1. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope).
+1. Select a [scope](workload-assets.md#asset-scope).
 2. Enter a name for the credential. The name must be unique.
 3. Optional: Provide a description of the credentials
 4. Set how the credential is created
@@ -94,7 +94,7 @@ These credentials are unique identifiers used to authenticate and authorize acce
 
 The purpose of this credential type is to allow access to restricted data.
 
-1. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope).
+1. Select a [scope](workload-assets.md#asset-scope)
 2. Enter a name for the credential. The name must be unique.
 3. Optional: Provide a **description** of the credential
 4. Set how the credential is created
@@ -114,7 +114,7 @@ These credentials require a username and corresponding password to access variou
 
 The purpose of this credential type is to allow access to restricted data.
 
-1. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
+1. Select a [scope](workload-assets.md#asset-scope)
 2. Enter a name for the credential. The name must be unique.
 3. Optional: Provide a description of the credentials
 4. Set how the credential is created
@@ -134,7 +134,7 @@ These credentials are a flexible option that consists of multiple keys & values 
 
 The purpose of this credential type is to allow access to restricted data.
 
-1. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
+1. Select a [scope](workload-assets.md#asset-scope)
 2. Enter a name for the credential. The name must be unique.
 3. Optional: Provide a description of the credentials
 4. Set how the credential is created

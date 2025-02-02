@@ -6,7 +6,6 @@ This article explains the procedure to view and manage Clusters.
 
 The Cluster table provides a quick and easy way to see the status of your cluster.
 
-[](img/cluster-list.png)
 
 ## Clusters table
 
@@ -14,12 +13,15 @@ The Clusters table can be found under __Resources__ in the Run:ai platform.
 
 The clusters table provides a list of the clusters added to Run:ai platform, along with their status.
 
+[](img/cluster-list.png)
+
+
 The clusters table consists of the following columns:
 
 | Column | Description |
 | :---- | :---- |
 | Cluster | The name of the cluster |
-| Status | The status of the cluster. For more information see the table below. Hover over the information icon for a short description and links to troubleshooting |
+| Status | The status of the cluster. For more information see the [table below](#cluster-status). Hover over the information icon for a short description and links to troubleshooting |
 | Creation time | The timestamp when the cluster was created |
 | URL | The URL that was given to the cluster |
 | Run:ai cluster version | The Run:ai version installed on the cluster |
@@ -40,14 +42,14 @@ The clusters table consists of the following columns:
 | Status | Description |
 | :---- | :---- |
 | Waiting to connect | The cluster has never been connected. |
-| Disconnected | There is no communication from the cluster to the {{glossary.Control plane}}. This may be due to a network issue. [See the troubleshooting scenarios.](#troubleshooting-scenarios) |
-| Missing prerequisites | Some prerequisites are missing from the cluster. As a result, some features may be impacted. [See the troubleshooting scenarios.](#troubleshooting-scenarios) |
-| Service issues | At least one of the services is not working properly. You can view the list of nonfunctioning services for more information. [See the troubleshooting scenarios.](#troubleshooting-scenarios) |
+| Disconnected | There is no communication from the cluster to the {{glossary.Control plane}}. This may be due to a network issue. [See troubleshooting scenarios.](#troubleshooting-scenarios) |
+| Missing prerequisites | Some prerequisites are missing from the cluster. As a result, some features may be impacted. [See  troubleshooting scenarios.](#troubleshooting-scenarios) |
+| Service issues | At least one of the services is not working properly. You can view the list of nonfunctioning services for more information. [See troubleshooting scenarios.](#troubleshooting-scenarios) |
 | Connected | The Run:ai cluster is connected, and all Run:ai services are running. |
 
 ## Adding a new cluster
 
-To add a new cluster see the installation guide.
+To add a new cluster, see the [installation guide](../cluster-installation/install-using-helm.md).
 
 ## Removing a cluster
 
@@ -62,10 +64,7 @@ Go to the [Clusters](https://app.run.ai/api/docs#tag/Clusters) API reference to 
 
 ## Troubleshooting
 
-Before starting, make sure you have the following:
-
-* Access to the Kubernetes cluster where Run:ai is deployed with the necessary permissions  
-* Access to the Run:ai Platform
+Before starting, make sure you have access to the Kubernetes cluster where Run:ai is deployed with the necessary permissions  
 
 ### Troubleshooting scenarios
 

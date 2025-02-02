@@ -2,7 +2,7 @@
 
 This article explains what compute resources are and how to create and use them.
 
-Compute resources are one type of [workload asset](../../docs/workloads-in-runai/workload-assets/overview.md). A compute resource is a template that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
+Compute resources are one type of [workload asset](workload-assets.md). A compute resource is a template that simplifies how workloads are submitted and can be used by AI practitioners when they submit their workloads.
 
 A compute resource asset is a preconfigured building block that encapsulates all the specifications of compute requirements for the workload including:
 
@@ -29,7 +29,7 @@ The Compute resource table consists of the following columns:
 | CPU memory limit              | The maximum amount of CPU memory per pod of the workload that uses this compute resource                                                                                                                         |
 | CPU compute request           | The minimum number of CPU cores per pod of the workload that uses this compute resource                                                                                                                          |
 | CPU compute limit             | The maximum number of CPU cores per pod of the workload that uses this compute resource                                                                                                                          |
-| Scope                         | The [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
+| Scope                         | The [scope](workload-assets.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
 | Workload(s)                   | The list of workloads associated with the compute resource                                                                                                                                                       |
 | Template(s)                   | The list of workload templates that use this compute resource                                                                                                                                                    |
 | Created by                    | The name of the user who created the compute resource                                                                                                                                                            |
@@ -45,7 +45,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Workload | The workload that uses the compute resource                                                                                                                |
 | Type     | Workspace/Training/Inference                                                                                                                               |
-| Status   | Represents the workload lifecycle. See the full list of [workload status](../../platform-admin/workloads/overviews/managing-workloads.md#workload-status). |
+| Status   | Represents the workload lifecycle. See the full list of [workload status](../workloads.md#workload-status). |
 
 #### Customizing the table view
 
@@ -61,7 +61,7 @@ To add a new compute resource:
 1. Go to the Compute resource table
 2. Click **+NEW COMPUTE RESOURCE**
 3. Select under which cluster to create the compute resource
-4. Select a [scope](../../docs/workloads-in-runai/workload-assets/overview.md#asset-scope)
+4. Select a [scope](workload-assets.md#asset-scope)
 5. Enter a **name** for the compute resource. The name must be unique.
 6. Optional: Provide a **description** of the essence of the compute resource
 7. Set the resource types needed within a single node\

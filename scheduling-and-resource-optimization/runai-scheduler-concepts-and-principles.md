@@ -1,6 +1,6 @@
 # The Run:ai Scheduler: concepts and principles
 
-When a user submits a workload,  the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.  
+When a user [submits a workload](../workloads-in-runai/workloads.md), the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.  
 
 The Run:ai Scheduler schedules native Kubernetes workloads, Run:ai workloads, or any other type of third-party workloads. To learn more about workloads support, see [Introduction to workloads](../workloads-in-runai/introduction-to-workloads.md). 
 
@@ -8,7 +8,7 @@ To understand what is behind the Run:ai Scheduler’s decision-making logic, get
 
 ## Workloads and pod groups
 
-[Workloads](../workloads-in-runai/workloads.md) can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes. 
+[Workloads](../workloads-in-runai/workload-types.md) can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes. 
 
 Every newly created pod is assigned to a pod group, which can represent one or multiple pods within a workload. For example, a distributed PyTorch training workload with 32 workers is grouped into a single pod group. All pods are attached to the pod group with certain rules, such as [gang scheduling](#gang-scheduling), applied to the entire pod group.
 
@@ -34,7 +34,7 @@ Projects can receive a share of the cluster/node pool unused resources when the 
 
 ### Multi-level quota system
 
-Each project has a set of guaranteed resource quotas (GPUs, CPUs, and CPU memory) per node pool. Projects can go over quota and get a share of the unused resources in a node pool beyond their guaranteed quota in that node pool. The same applies to Departments. The Scheduler balances the amount of over quota between departments, and then between projects. The department’s deserved quota and over quota limit the sum of resources of all projects, within the department. If the project shows it has deserved quota, but the department deserved quota is exhausted, the Scheduler will not give the project anymore deserved resources. The same applies to over quota resources. Over-quota resources are first given to the department, and only then split among its projects. 
+Each project has a set of guaranteed resource quotas (GPUs, CPUs, and CPU memory) per node pool. Projects can go over quota and get a share of the unused resources in a node pool beyond their guaranteed quota in that node pool. The same applies to Departments. The Scheduler balances the amount of over quota between departments, and then between projects. The department’s deserved quota and over quota limit the sum of resources of all projects, within the department. If the project shows it has deserved quota, but the department deserved quota is exhausted, the Scheduler will not give the project anymore deserved resources. The same applies to over quota resources. over quota resources are first given to the department, and only then split among its projects. 
 
 ### Fairshare and fairshare balancing
 

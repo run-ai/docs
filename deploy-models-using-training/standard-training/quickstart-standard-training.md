@@ -124,7 +124,7 @@ Before you start, make sure:
 
     1. `<COMPANY-URL>` is the link to the Run:ai user interface.
     2. `<TOKEN>` is the API access token obtained in Step 1. 
-    3. `<PROJECT-ID>` is #The ID of the Project the workload is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    3. `<PROJECT-ID>` is #The ID of the Project the workload is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects).
     4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
 
     This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.

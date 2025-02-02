@@ -65,7 +65,7 @@ Once timeSlicing is enabled in the `runaiconfig`, all submitted GPU fractions or
 
 ## Enabling GPU time-slicing
 
-Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md).
+Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [Advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md).
 
 Enable GPU time-slicing by setting the following cluster flag in the `runaiconfig` file: 
 

@@ -8,11 +8,11 @@ date: 2024-Apr-9
 
 ## What are Metrics
 
-[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics){target=_blank} are numeric measurements recorded __over time__ that are emitted from the Run:ai cluster. Typical metrics involve utilization, allocation, time measurements and so on. Metrics are used in Run:ai dashboards as well as in the Run:ai administration user interface.
+[Metrics](https://prometheus.io/docs/introduction/overview/#what-are-metrics) are numeric measurements recorded __over time__ that are emitted from the Run:ai cluster. Typical metrics involve utilization, allocation, time measurements and so on. Metrics are used in Run:ai dashboards as well as in the Run:ai administration user interface.
 
 The purpose of this document is to detail the structure and purpose of metrics emitted by Run:ai to enable customers to create custom dashboards or integrate metric data into other monitoring systems.
 
-Run:ai uses [Prometheus](https://prometheus.io){target=_blank} for collecting and querying metrics.
+Run:ai uses [Prometheus](https://prometheus.io) for collecting and querying metrics.
 
 !!! Warning
     From cluster version 2.17 and onwards, Run:ai supports metrics via the [Run:ai Control-plane API](metrics-api.md). Direct metrics queries (metrics that are queried directly from Prometheus) are deprecated.
@@ -108,7 +108,7 @@ Run:ai exports other metrics emitted by NVIDIA and Kubernetes packages, as follo
 | kube_pod_container_resource_requests_memory_bytes | Bytes of memory requested by a container                                    |
 | kube_pod_info                                     | Information about pod                                                       |
 
-For additional information, see Kubernetes [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics){target=_blank} and NVIDIA [dcgm exporter](https://github.com/NVIDIA/gpu-monitoring-tools){target=_blank}.
+For additional information, see Kubernetes [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) and NVIDIA [dcgm exporter](https://github.com/NVIDIA/gpu-monitoring-tools).
 
 ## Changed metrics and API mapping
 

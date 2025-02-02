@@ -70,7 +70,7 @@ Before configuring GPU memory swap, dynamic GPU fractions must be enabled. Yo
 
 To enable GPU memory swap in a Run:ai cluster:
 
-1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md):
+1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [Advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md):
 
 ```
  spec: 

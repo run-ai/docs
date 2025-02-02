@@ -2,7 +2,7 @@
 
 Efficient resource allocation is critical for managing AI and compute-intensive workloads in Kubernetes clusters. The Run:ai Scheduler enhances Kubernetes' native capabilities by introducing advanced scheduling principles such as fairness, quota management, and dynamic resource balancing. It ensures that workloads, whether simple single-pod or complex distributed tasks, are allocated resources effectively while adhering to organizational policies and priorities.
 
-This guide explores the Run:ai Scheduler’s allocation process, preemption mechanisms, and resource management. Through examples and detailed explanations, you'll gain insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments.
+This guide explores the Run:ai Scheduler’s allocation process, preemption mechanisms, and resource management. Through examples and detailed explanations, you'll gain insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across [projects and departments](../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization).
 
 ## Allocation process
 
@@ -61,19 +61,24 @@ The example below illustrates how fairshare is calculated per project/node pool 
 ![](img/fairshare.png)
 
 * For each Project:
-  * The over quota (OQ) portion of each project (per node pool) is calculated as: [(OQ-Weight) / (Σ Projects OQ-Weights)] x (Unused Resource per node pool)
-  * Fairshare is calculated as the sum of quota + over quota.
+  * The **over quota (OQ)** portion of each project (per node pool) is calculated as: 
+  
+  [(OQ-Weight) / (Σ Projects OQ-Weights)] x (Unused Resource per node pool)
+
+  * **Fairshare** is calculated as the sum of quota + over quota.
 
 * In Project 2, we assume that out of the 36 available GPUs in node pool A, 20 GPUs are currently unused. This means  either these GPUs are not part of any project’s quota, or they are part of a project’s quota but not used by any workloads of that project:
 
-  * Project 2 over quota share: 
+  * Project 2 **over quota share**: 
+    
     [(Project 2 OQ-Weight) / (Σ all Projects OQ-Weights)] x (Unused Resource within node pool A)
+    
     [(3) / (2 + 3 + 1)] x (20) = (3/6) x 20 = 10 GPUs
 
-  * Fairshare = deserved quota + over quota = 6 +10 = 16 GPUs. Similarly, fairshare is also calculated for CPU and CPU memory. The Scheduler can grant a project more resources than its fairshare if the Scheduler finds resources not required by other projects that may deserve those resources.
+  * **Fairshare** = deserved quota + over quota = 6 +10 = 16 GPUs. Similarly, fairshare is also calculated for CPU and CPU memory. The Scheduler can grant a project more resources than its fairshare if the Scheduler finds resources not required by other projects that may deserve those resources.
 
 
-* In Project 3, fairshare = deserved quota + over quota = 0 +3 = 3 GPUs. Project 3 has no guaranteed quota, but it still has a share of the excess resources in node pool A. The Run:ai Scheduler ensures that Project 3 receives its part of the unused resources for over quota, even if this results in reclaiming resources from other projects and preempting preemptible workloads.
+* In Project 3, **fairshare** = deserved quota + over quota = 0 +3 = 3 GPUs. Project 3 has no guaranteed quota, but it still has a share of the excess resources in node pool A. The Run:ai Scheduler ensures that Project 3 receives its part of the unused resources for over quota, even if this results in reclaiming resources from other projects and preempting preemptible workloads.
 
 ## Fairshare balancing
 
@@ -81,9 +86,9 @@ The Scheduler constantly re-calculates the fairshare of each project and departm
 
 A queue, representing a scheduler-managed object for each project or department per node pool, can be in one of 3 states:
 
-* In-quota: The queue’s allocated resources ≤ queue deserved quota. The Scheduler’s first priority is to ensure each queue receives its deserved quota. 
-* Over quota but below fairshare: The queue’s deserved quota < queue’s allocates resources <= queue’s fairshare. The Scheduler tries to find and allocate more resources to queues that need resources beyond their deserved quota and up to their fairshare. 
-* Over-fairshare and over quota: The queue’s fairshare < queue’s allocated resources. The Scheduler tries to allocate resources to queues that need even more resources beyond their fairshare.
+* **In-quota**: The queue’s allocated resources ≤ queue deserved quota. The Scheduler’s first priority is to ensure each queue receives its deserved quota. 
+* **Over quota but below fairshare**: The queue’s deserved quota < queue’s allocates resources <= queue’s fairshare. The Scheduler tries to find and allocate more resources to queues that need resources beyond their deserved quota and up to their fairshare. 
+* **Over-fairshare and over quota**: The queue’s fairshare < queue’s allocated resources. The Scheduler tries to allocate resources to queues that need even more resources beyond their fairshare.
 
 When re-balancing resources between queues of different projects and departments, the Scheduler goes in the opposite direction, i.e. first take resources from over-fairshare queues, then from over quota queues, and finally, in some scenarios, even from queues that are below their deserved quota. 
 

@@ -2,6 +2,8 @@
   
 This article details the data privacy and compliance considerations for deploying Run:ai. It is intended to help administrators and compliance teams understand the data management practices involved with Run:ai. This ensures the permissions align with organizational policies and regulatory requirements before installation and during integration and onboarding of the various teams.
 
+## Data privacy 
+
 When using the Run:ai SaaS cluster, the Control plane operates through the Run:ai cloud, requiring the transmission of certain data for control and analytics. Below is a detailed breakdown of the specific data sent to the Run:ai cloud in the SaaS offering.
 
 !!! Note

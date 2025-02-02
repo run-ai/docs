@@ -42,13 +42,13 @@ For example, if you have an Administrator role, you can get a list of clusters b
     ```
 (replace `<ACCESS-TOKEN>` with the bearer token from above).
 
-For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py){target=_blank} code. It is an example of how to use the Run:ai REST API to create a User and a Project and set the User to the Project.  
+For an additional example, see the [following](https://github.com/run-ai/docs/blob/master/examples/create-user-and-project.py) code. It is an example of how to use the Run:ai REST API to create a User and a Project and set the User to the Project.  
 
 ## Run:ai REST API Documentation
 
 The Run:ai REST API offers developers a robust interface for interacting with and managing Run:ai metadata objects, including Projects, Departments, Clusters, and Users.
 
-Public API documentation is available at [api-docs.run.ai](https://api-docs.run.ai){target=_blank}. For self-hosted deployments, access the documentation at `https://<control-plane-url>/api/docs`.
+Public API documentation is available at [api-docs.run.ai](https://api-docs.run.ai). For self-hosted deployments, access the documentation at `https://<control-plane-url>/api/docs`.
 
 [View Documentation](https://api-docs.run.ai){target=_blank .md-button .md-button--primary}
 

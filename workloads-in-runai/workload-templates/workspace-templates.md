@@ -12,7 +12,7 @@ The Templates table provides a list of all the templates defined in the platform
 
 !!! Note "Flexible Management" It is also possible to manage templates directly for a specific user, application, project, or department.
 
-![](../../docs/workloads-in-runai/workload-templates/img/template-table.png)
+![](../workload-assets/img/template-table.png)
 
 The Templates table consists of the following columns:
 

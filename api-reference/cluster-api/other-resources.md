@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Kubernetes has several built-in resources that encapsulate running *Pods*. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/){target=_blank} and **should not be confused** with [Run:ai Workloads](workload-overview-dev.md).
+Kubernetes has several built-in resources that encapsulate running *Pods*. These are called [Kubernetes Workloads](https://kubernetes.io/docs/concepts/workloads/) and **should not be confused** with [Run:ai Workloads](workload-overview-dev.md).
 
 Examples of such resources are a *Deployment* that manages a stateless application, or a *Job* that runs tasks to completion.
 
@@ -154,4 +154,4 @@ spec:
 The Run:ai command line interface provides limited support for Kubernetes Workloads.
 
 ## See Also
-Run:ai has specific integrations with additional third-party tools such as [KubeFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Kubeflow){target=_blank}, [MLFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-MLflow){target=_blank}, and more. These integrations use the same instructions as described above.
+Run:ai has specific integrations with additional third-party tools such as [KubeFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-Kubeflow), [MLFlow](https://runai.my.site.com/community/s/article/How-to-integrate-Run-ai-with-MLflow), and more. These integrations use the same instructions as described above.

@@ -427,23 +427,26 @@ The effective workload that runs has the following set of values:
 | security.runAsUid | 501 | Submission request |
 
 !!! Note
-   It is possible to specify a rule for each field, which states if a submission request is allowed to change the policy default for that given field, for example. If this policy is applied, the submission request above fails, as it attempts to change the value of security.runAsUid from 500 (the policy default) to 501 (the value provided in the submission request), which is forbidden due to canEdit rule set to false for this field.
+    It is possible to specify a rule for each field, which states if a submission request is allowed to change the policy default for that given field, for example. If this policy is applied, the submission request above fails, as it attempts to change the value of security.runAsUid from 500 (the policy default) to 501 (the value provided in the submission request), which is forbidden due to canEdit rule set to false for this field.
 
-   ``` yaml
-        defaults:
-        imagePullPolicy: Always
-        security:
-            runAsNonRoot: true
-            runAsUid: 500
-        rules:
-        security:
-            runAsUid:
-            canEdit: false
-    ```
+      ``` yaml
+            defaults:
+            imagePullPolicy: Always
+            security:
+                runAsNonRoot: true
+                runAsUid: 500
+            rules:
+            security:
+                runAsUid:
+                canEdit: false
+        ```
 
     
 
-### Imposed Assets
+
+
+
+### Imposed assets
 
 Default instances of a storage field can be provided using a datasource containing the details of this storage instance. To add such instances in the policy, specify those asset IDs in the imposedAssets section of the policy.
 

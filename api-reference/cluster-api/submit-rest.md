@@ -62,7 +62,7 @@ curl -X PATCH \ # (1)
 
 ## Using other Programming Languages
 
-You can use any Kubernetes client library together with the YAML documentation above to submit workloads via other programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/){target=_blank}.
+You can use any Kubernetes client library together with the YAML documentation above to submit workloads via other programming languages. For more information see [Kubernetes client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/).
 
 ### Python example
 

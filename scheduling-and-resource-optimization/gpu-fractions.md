@@ -10,7 +10,7 @@ Utilizing GPU fractions to share GPU resources among multiple workloads provides
 
 * For the AI practitioner:
   * **Reduced wait time** - Workloads with smaller GPU requests are more likely to be scheduled quickly, minimizing delays in accessing resources.
-  * **Increased workload capacity** - More workloads can be run using the same admin-defined GPU [quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#quota) and available unused resources ([over quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#over-quota)).
+  * **Increased workload capacity** - More workloads can be run using the same admin-defined GPU [quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#quota) and available unused resources ([over quota](../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#over quota)).
 
 * For the platform administrator:
   * **Improved GPU utilization** -  Sharing GPUs across workloads increases the utilization of individual GPUs, resulting in better overall platform efficiency.
@@ -33,7 +33,7 @@ For more details on mapping your organization and resources, see [Adapting AI in
 
 When a workload is submitted, the Scheduler finds a node with a GPU that can satisfy the requested GPU portion or GPU memory, then it schedules the pod to that node. The Run:ai GPU fractions logic, running locally on each Run:ai worker node, allocates the requested memory size on the selected GPU. **Each pod uses a its own separated virtual memory address space.** Run:ai’s GPU fractions logic enforces the requested memory size, so no workload can use more than requested, and no workload can run over another workload’s memory. This gives users the experience of a ‘logical GPU’ per workload. 
 
-Unlike MIG technology, which requires administrative work to configure every MIG slice and where a slice is a fixed chunk of memory, GPU fractions allow dynamic and fully flexible allocation of GPU memory chunks. By default, GPU fractions use NVIDIA’s time-slicing to share the GPU compute runtime, however, using the [Run:ai GPU time-slicing](./gpu-time-slicing.md), allows dynamic and fully flexible splitting of the GPU compute time. 
+While [MIG](../manage-ai-initiatives/managing-your-resources/configuring-mig-profiles.md) requires administrative work to configure every MIG slice, where a slice is a fixed chunk of memory, GPU fractions allow dynamic and fully flexible allocation of GPU memory chunks. By default, GPU fractions use NVIDIA’s time-slicing to share the GPU compute runtime. You can also use the [Run:ai GPU time-slicing](./gpu-time-slicing.md) which allows dynamic and fully flexible splitting of the GPU compute time. 
 
 Run:ai GPU fractions are agile and dynamic allowing a user to allocate and free GPU fractions during the runtime of system, at any size between zero to the maximum GPU portion (100%) or memory size (up to the maximum memory size of a GPU).
 
@@ -58,7 +58,7 @@ Time sharing where single GPUs can serve multiple workloads with fractions remai
 
 ## Setting GPU fractions
 
-Using the [compute resources](../workloads-in-runai/workload-assets/compute-resources.md) asset, you can define the compute requirements by specifying your requested GPU portion or GPU memory, and use it with any of the Run:ai workload types for single GPU and multi-GPU fractions.
+Using the [compute resources](../workloads-in-runai/workload-assets/compute-resources.md) asset, you can define the compute requirements by specifying your requested GPU portion or GPU memory, and use it with any of the [Run:ai workload types](../workloads-in-runai/workload-types.md) for single GPU and multi-GPU fractions.
 
 * **Single-GPU fractions** - Define the compute requirement to run 1 GPU device, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB).
 * **Multi-GPU fractions** - Define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB). 

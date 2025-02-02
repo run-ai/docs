@@ -8,7 +8,7 @@ Typically, the grouped nodes share a common feature or property, such as GPU typ
 
 In the Run:ai Platform a user with the System administrator role can create, view, edit, and delete node pools. Creating a new node pool creates a new instance of the Run:ai [Scheduler](../../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md). Workloads submitted to a node pool are scheduled using the node pool’s designated scheduler instance. 
 
-Once created, the new node pool is automatically assigned to all [projects](../managing-your-organization/projects.md) and [departments](../managing-your-organization/departments.md) with a quota of zero GPU resources, unlimited CPU resources, and over-quota enabled (medium weight if over-quota weight is enabled). This allows any project and department to use any node pool when over-quota is enabled, even if the administrator has not assigned a quota for a specific node pool within that project or department.
+Once created, the new node pool is automatically assigned to all [projects](../managing-your-organization/projects.md) and [departments](../managing-your-organization/departments.md) with a quota of zero GPU resources, unlimited CPU resources, and over quota enabled (medium weight if over quota weight is enabled). This allows any project and department to use any node pool when [over quota is enabled](../adapting-ai-initiatives.md), even if the administrator has not assigned a quota for a specific node pool within that project or department.
 
 When submitting a new [workload](../../workloads-in-runai/workloads.md), users can add a prioritized list of node pools. The node pool selector picks one node pool at a time (according to the prioritized list) and the designated node pool scheduler instance handles the submission request and tries to match the requested resources within that node pool. If the scheduler cannot find resources to satisfy the submitted workload, the node pool selector moves the request to the next node pool in the prioritized list, if no node pool satisfies the request, the node pool selector starts from the first node pool again until one of the node pools satisfies the request.
 
@@ -33,12 +33,12 @@ The Node pools table consists of the following columns:
 | Node(s) | List of nodes included in this node pool. Click the field to view details (the details are in the [Nodes](./nodes.md) article). |
 | GPU devices | The total number of GPU devices installed into nodes included in this node pool. For example, a node pool that includes 12 nodes each with 8 GPU devices would show a total number of 96 GPU devices. |
 | GPU memory | The total amount of GPU memory included in this node pool. The total amount of GPU memory installed in nodes included in this node pool. For example, a node pool that includes 12 nodes, each with 8 GPU devices, and each device with 80 GB of memory would show a total memory amount of 7.68 TB. |
-| Allocated GPUs | The total allocation of GPU devices in units of GPUs (decimal number). For example, if 3 GPUs are 50% allocated, the field prints out the value 1.50. This value represents the portion of GPU memory consumed by all running pods using this node pool. ‘Allocated GPUs’ can be larger than ‘Projects’ GPU quota’ if over-quota is used by workloads, but not larger than GPU devices. |
+| Allocated GPUs | The total allocation of GPU devices in units of GPUs (decimal number). For example, if 3 GPUs are 50% allocated, the field prints out the value 1.50. This value represents the portion of GPU memory consumed by all running pods using this node pool. ‘Allocated GPUs’ can be larger than ‘Projects’ GPU quota’ if over quota is used by workloads, but not larger than GPU devices. |
 | GPU resource optimization ratio | Shows the Node Level Scheduler mode. |
 | CPUs (Cores) | The number of CPU cores installed on nodes included in this node |
 | CPU memory | The total amount of CPU memory installed on nodes using this node pool |
-| Allocated CPUs (Cores) | The total allocation of CPU compute in units of Cores (decimal number). This value represents the amount of CPU cores consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ GPU quota’ if over-quota is used by workloads, but not larger than CPUs (Cores). |
-| Allocated CPU memory | The total allocation of CPU memory in units of TB/GB/MB (decimal number). This value represents the amount of CPU memory consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ CPU memory quota’ if over-quota is used by workloads, but not larger than CPU memory. |
+| Allocated CPUs (Cores) | The total allocation of CPU compute in units of Cores (decimal number). This value represents the amount of CPU cores consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ GPU quota’ if over quota is used by workloads, but not larger than CPUs (Cores). |
+| Allocated CPU memory | The total allocation of CPU memory in units of TB/GB/MB (decimal number). This value represents the amount of CPU memory consumed by all running pods using this node pool. ‘Allocated CPUs’ can be larger than ‘Projects’ CPU memory quota’ if over quota is used by workloads, but not larger than CPU memory. |
 | GPU placement strategy | Sets the Scheduler strategy for the assignment of pods requesting **both GPU and CPU resources** to nodes, which can be either Bin-pack or Spread. By default, Bin-Pack is used, but can be changed to Spread by editing the node pool. When set to Bin-pack the scheduler will try to fill nodes as much as possible before using empty or sparse nodes, when set to spread the scheduler will try to keep nodes as sparse as possible by spreading workloads across as many nodes as it succeeds. |
 | CPU placement strategy | Sets the Scheduler strategy for the assignment of pods requesting **only CPU** **resources** to nodes, which can be either Bin-pack or Spread. By default, Bin-Pack is used, but can be changed to Spread by editing the node pool. When set to Bin-pack the scheduler will try to fill nodes as much as possible before using empty or sparse nodes, when set to spread the scheduler will try to keep nodes as sparse as possible by spreading workloads across as many nodes as it succeeds. |
 | Last update | The date and time when the node pool was last updated |
@@ -56,7 +56,7 @@ Click one of the values in the Workload(s) column, to view the list of workloads
 | :---- | :---- |
 | Workload | The name of the workload. If the workloads’ type is one of the recognized types (for example: Pytorch, MPI, Jupyter, Ray, Spark, Kubeflow, and many more), an appropriate icon is printed. |
 | Type | The Run:ai platform type of the workload - Workspace, Training, or Inference |
-| Status | The state of the workload. The Workloads state is described in the ‘Run:ai Workloads’ article. |
+| Status | The state of the workload. The Workloads state is described in the Run:ai [workloads](../../workloads-in-runai/workloads.md) section |
 | Created by | The User or Application created this workload |
 | Running/requested pods | The number of running pods out of the number of requested pods within this workload. |
 | Creation time | The workload’s creation date and time |
@@ -132,17 +132,17 @@ To create a new node pool:
 
 ### Labeling nodes for node-pool grouping
 
-The Infrastructure Administrator can use a preset node label such as the `nvidia.com/gpu.product` that labels the GPU type, or configure any other node label (e.g. `faculty=physics`).
+The administrator can use a preset node label, such as the `nvidia.com/gpu.product` that labels the GPU type, or configure any other node label (e.g. `faculty=physics`).
 
 To assign a label to nodes you want to group into a node pool, set a node label on each node:
 
 
-1. Get the list of nodes and their current labels using the following command:
+1. Obtain the list of nodes and their current labels by copying the following to your terminal:
    ``` bash
    kubectl get nodes --show-labels
    ```
 
-2. Annotate a specific node with a new label using the following command:
+2. Annotate a specific node with a new label by copying the following to your terminal:
    ``` bash
    kubectl label node <node-name> <key>=<value>
    ```

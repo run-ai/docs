@@ -42,8 +42,8 @@ To create a new policy:
 4. Click **+POLICY YAML**
 5. In the **YAML editor** type or paste a YAML policy with defaults and rules.\
    You can utilize the following references and examples:
-   * [Policy YAML reference](../docs/policies/policy-reference.md)
-   * [Policy YAML examples](../docs/policies/policy-examples.md)
+   * [Policy YAML reference](policy-yaml-reference.md)
+   * [Policy YAML examples](policy-yaml-examples.md)
 6. Click **SAVE POLICY**
 
 ### Editing a policy
@@ -62,7 +62,7 @@ Listed below are issues that might occur when creating or editing a policy via t
 | Cluster connectivity issues                                                                                        | There's no communication from cluster “cluster\_name“. Actions may be affected, and the data may be stale.                           | Verify that you are on a network that has been allowed access to the cluster. Reach out to your cluster administrator for instructions on verifying the issue. |
 | Policy can’t be applied due to a rule that is occupied by a different policy                                       | Field “field\_name” already has rules in cluster: “cluster\_id”                                                                      | Remove the rule from the new policy or adjust the old policy for the specific rule.                                                                            |
 | Policy is not visible in the UI                                                                                    | -                                                                                                                                    | Check that the policy hasn’t been deleted.                                                                                                                     |
-| Policy syntax is no valid                                                                                          | Add a valid policy YAML;json: unknown field "field\_name"                                                                            | For correct syntax check the [Policy YAML reference](../docs/policies/policy-reference.md) or the [Policy YAML examples](../docs/policies/policy-examples.md). |
+| Policy syntax is no valid                                                                                          | Add a valid policy YAML;json: unknown field "field\_name"                                                                            | For correct syntax check the [Policy YAML reference](./policy-yaml-reference.md) or the [Policy YAML examples](./policy-yaml-examples.md). |
 | Policy can’t be saved for some reason                                                                              | The policy couldn't be saved due to a network or other unknown issue. Download your draft and try pasting and saving it again later. | Possible cluster connectivity issues. Try updating the policy once again at a different time.                                                                  |
 | Policies were submitted before version 2.18, you upgraded to version 2.18 or above and wish to submit new policies | If you have policies and want to create a new one, first contact Run:ai support to prevent potential conflicts                       | Contact Run:ai support. R\&D can migrate your old policies to the new version.                                                                                 |
 
@@ -70,7 +70,7 @@ Listed below are issues that might occur when creating or editing a policy via t
 
 To view a policy:
 
-1. Select the policy for which you want to view its [policies](../docs/policies/overview.md).
+1. Select the policy for which you want to view its [policies](policies-and-rules.md).
 2. Click **VIEW POLICY**
 3. In the Policy form per workload section, view the workload rules and defaults:
    * **Parameter**\
@@ -85,7 +85,7 @@ To view a policy:
      The origin of the applied policy (cluster, department or project)
 
 !!! Note\
-Some of the rules and defaults may be derived from policies of a parent cluster and/or department. You can see the source of each rule in the policy form. For more information, check the [Scope of effectiveness documentation](../docs/policies/overview.md#scope-of-effectiveness)
+Some of the rules and defaults may be derived from policies of a parent cluster and/or department. You can see the source of each rule in the policy form. For more information, check the [Scope of effectiveness documentation](./policies-and-rules.md#scope-of-effectiveness)
 
 ### Deleting a policy
 

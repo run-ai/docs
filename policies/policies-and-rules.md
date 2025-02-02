@@ -10,14 +10,14 @@ A workload policy is an end-to-end solution for AI managers and administrators t
 
 Implementing workload policies is essential when managing complex AI projects within an enterprise for several reasons:
 
-1. Resource control and management - Defining or limiting the use of costly resources across the enterprise via a centralized management system to ensure efficient allocation and prevent overuse. 
-2. Setting best practices - Provide managers with the ability to establish guidelines and standards to follow, reducing errors amongst AI practitioners within the organization.
-3. Security and compliance - Define and enforce permitted and restricted actions to uphold organizational security and meet compliance requirements. 
-4. Simplified setup - Conveniently allow setting defaults and streamline the workload submission process for AI practitioners.
-5. Scalability and diversity
-   a. Multi-purpose clusters with various workload types that may have different requirements and characteristics for resource usage.
-   b. The organization has multiple hierarchies, each with distinct goals, objectives, and degrees of flexibility. 
-   c. Manage multiple users and projects with distinct requirements and methods, ensuring appropriate utilization of resources. 
+1. **Resource control and management** - Defining or limiting the use of costly resources across the enterprise via a centralized management system to ensure efficient allocation and prevent overuse. 
+2. **Setting best practices** - Provide managers with the ability to establish guidelines and standards to follow, reducing errors amongst AI practitioners within the organization.
+3. **Security and compliance** - Define and enforce permitted and restricted actions to uphold organizational security and meet compliance requirements. 
+4. **Simplified setup** - Conveniently allow setting defaults and streamline the workload submission process for AI practitioners.
+5. **Scalability and diversity**
+     a. Multi-purpose clusters with various workload types that may have different requirements and characteristics for resource usage.
+     b. The organization has multiple hierarchies, each with distinct goals, objectives, and degrees of flexibility. 
+     c. Manage multiple users and projects with distinct requirements and methods, ensuring appropriate utilization of resources. 
 
 ### Understanding the mechanism 
 
@@ -29,7 +29,7 @@ The policy enforces the workloads regardless of whether they were submitted via 
 
 #### Policy types
 
-Run:ai’s policies enforce Run:ai workloads. The policy type is per Run:ai workload type. This allows administrators to set different policies for each workload type. 
+Run:ai’s policies enforce Run:ai workloads. The policy type is per [Run:ai workload type](../workloads-in-runai/workload-types.md). This allows administrators to set different policies for each workload type. 
 
 | Policy type |  | Workload type |  | Kubernetes name |
 | ----- | :---- | ----- | :---- | ----- |
@@ -45,7 +45,7 @@ A policy consists of rules for limiting and controlling the values of fields of 
 
 Furthermore, policies allow the enforcement of workload assets. For example, as an admin, you can impose a data source of type PVC to be used by any workload submitted.
 
-For more information see rules, defaults and imposed assets.
+For more information, see [rules](./policy-yaml-reference.md#rules), [defaults](policy-yaml-reference.md#defaults) and [imposed assets](policy-yaml-reference.md#).
 
 ### Scope of effectiveness
 
@@ -68,10 +68,10 @@ If a rule for a specific field is already occupied by a policy in the organizati
 
 ### Run:ai policies vs. Kyverno policies
 
-Kyverno runs as a dynamic admission controller in a Kubernetes cluster. Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server and applies matching policies to return results that enforce admission policies or reject requests. Kyverno policies can match resources using the resource kind, name, label selectors, and much more. For more information, see How Kyverno Works.
+Kyverno runs as a dynamic admission controller in a Kubernetes cluster. Kyverno receives validating and mutating admission webhook HTTP callbacks from the Kubernetes API server and applies matching policies to return results that enforce admission policies or reject requests. Kyverno policies can match resources using the resource kind, name, label selectors, and much more. For more information, see [How Kyverno Works](https://kyverno.io/docs/introduction/#how-kyverno-works).
 
 ## Scheduling rules
 
-Scheduling rules limit a researcher's access to resources and provides a way for the admin to control resource allocation and prevent the waste of resources. Admins should use the rules to prevent GPU idleness, prevent GPU hogging and allocate specific types of resources to different types of workloads.
+[Scheduling rules](scheduling-rules.md) limit a researcher's access to resources and provides a way for the admin to control resource allocation and prevent the waste of resources. Admins should use the rules to prevent GPU idleness, prevent GPU hogging and allocate specific types of resources to different types of workloads.
 
 Admin can limit the duration of a workload, the duration of the idle time, or the type of nodes the workload can use. Rules are defined for and apply to all workloads in the project or department. In addition, rules can be applied to a specific type of workload in a project or department (workspace, standard training, or inference). When a workload reaches the limitation of the rule, it is stopped if the rule is time-limited. The rule type prevents the workload from being scheduled on nodes that violate the rule limitation. 

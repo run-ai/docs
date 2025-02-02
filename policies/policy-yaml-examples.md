@@ -2,9 +2,9 @@
 
 This article provides examples of:
 
-1. [Creating a new rule within a policy](policy-yaml-examples.md#creating-a-new-rule-within-a-policy)
-2. [Best practices for adding sections to a policy](policy-yaml-examples.md#policy-yaml-best-practices)
-3. [A full example of a policy](policy-yaml-examples.md#example-of-a-full-policy).
+1. Creating a new rule within a policy
+2. Best practices for adding sections to a policy
+3. A full example of a policy
 
 ## Creating a new rule within a policy
 
@@ -39,7 +39,7 @@ This example shows how to add a new limitation to the GPU usage for workloads of
     }
     }
     ```
-2. Search the field in the [Policy YAML fields - reference table](../docs/policies/policy-reference.md). For example, gpuDevicesRequest appears under the **Compute fields** sub-table and appears as follow:
+2. Search the field in the [Policy YAML fields - reference table](./policy-yaml-reference.md). For example, gpuDevicesRequest appears under the **Compute fields** sub-table and appears as follow:
 
 | Fields           | Description                                                                                                                           | Value type | Supported Run:ai workload type |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------ |
@@ -54,7 +54,7 @@ This example shows how to add a new limitation to the GPU usage for workloads of
     * min
     * max
     * step
-4. Proceed to the [Rule Type](../docs/policies/policy-reference.md#rule-types) table, select the required rule for the limitation of the field - for example “max” and use the examples syntax to indicate the maximum GPU device requested.
+4. Proceed to the [Rule Type](./policy-yaml-reference.md#rule-types) table, select the required rule for the limitation of the field - for example “max” and use the examples syntax to indicate the maximum GPU device requested.
 
 ```yaml
 compute:

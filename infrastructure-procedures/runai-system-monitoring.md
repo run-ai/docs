@@ -18,29 +18,39 @@ This document explains how to:
 * Up and running Run:ai environment, including Prometheus Operator  
 * [kubectl](https://kubernetes.io/docs/reference/kubectl/) command-line tool installed and configured to interact with the cluster
 
-## Set-up
+## Set up
 
 Use the steps below to set up monitoring alerts.
 
 ### Validating Prometheus operator installed
 
-1. Verify that the Prometheus Operator Deployment is running  
-   Copy the following command and paste it in your terminal, where you have access to the Kubernetes cluster:  
-   `kubectl get deployment kube-prometheus-stack-operator -n monitoring`  
-   In your terminal, you can see an output indicating the deployment's status, including the number of replicas and their current state.  
-1. Verify that Prometheus instances are running  
-   Copy the following command and paste it in your terminal:  
-   `kubectl get prometheus -n runai`  
-   You can see the Prometheus instance(s) listed along with their status.
+1. Verify that the Prometheus Operator Deployment is running. Copy the following command and paste it in your terminal, where you have access to the Kubernetes cluster:  
+
+```
+kubectl get deployment kube-prometheus-stack-operator -n monitoring
+```  
+
+In your terminal, you can see an output indicating the deployment's status, including the number of replicas and their current state. 
+
+2. Verify that Prometheus instances are running. Copy the following command and paste it in your terminal:  
+
+```
+kubectl get prometheus -n runai
+``` 
+   
+You can see the Prometheus instance(s) listed along with their status.
 
 ### Enabling Prometheus AlertManager
 
 In each of the steps in this section, copy the content of the code snippet to a new YAML file (e.g., `step1.yaml`).
 
-* Copy the following command to your terminal, to apply the YAML file to the cluster:
+1. Copy the following command to your terminal, to apply the YAML file to the cluster:
 
-kubectl apply -f step1.yaml  
-Copy the following command to your terminal to create the AlertManager CustomResource, to enable AlertManager: 
+```
+kubectl apply -f step1.yaml 
+```
+
+2. Copy the following command to your terminal to create the AlertManager CustomResource, to enable AlertManager: 
 
 ``` yaml
 apiVersion: monitoring.coreos.com/v1  
@@ -55,21 +65,29 @@ spec:
          alertmanagerConfig: runai 
 ```
 
-* Copy the following command to your terminal to validate that the AlertManager instance has started:  
-   `kubectl get alertmanager -n runai`  
-* Copy the following command to your terminal to validate that the Prometheus operator has created a Service for AlertManager:  
-    `kubectl get svc alertmanager-operated -n runai`
+3. Copy the following command to your terminal to validate that the AlertManager instance has started:  
+
+``` 
+kubectl get alertmanager -n runai
+```   
+
+4. Copy the following command to your terminal to validate that the Prometheus operator has created a Service for AlertManager:  
+
+``` 
+kubectl get svc alertmanager-operated -n runai
+``` 
 
 ### Configuring Prometheus to send alerts
 
 1. Open the terminal on your local machine or another machine that has access to your Kubernetes cluster  
-1. Copy and paste the following command in your terminal to edit the Prometheus configuration for the `runai` Namespace:
+2. Copy and paste the following command in your terminal to edit the Prometheus configuration for the `runai` Namespace:
 ```
 kubectl edit prometheus runai -n runai
 ```
 This command opens the Prometheus configuration file in your default text editor (usually `vi` or `nano`).
 
 3. Copy and paste the following text to your terminal to change the configuration file:
+
 ``` yaml
 alerting:  
    alertmanagers:  
@@ -91,7 +109,7 @@ Set out below are the various alert destinations.
 
 In each step, copy the contents of the code snippets to a new file and apply it to the cluster using `kubectl apply -f`.
 
-Add your smtp password as a secret: 
+1. Add your smtp password as a secret: 
 
 ``` yaml
 apiVersion: v1  
@@ -103,7 +121,7 @@ stringData:
    password: "your_smtp_password"
 ```
 
-Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply`.  
+2. Replace the relevant smtp details with your own, then apply the `alertmanagerconfig` using `kubectl apply`.  
 
 ``` yaml
  apiVersion: monitoring.coreos.com/v1alpha1  
@@ -142,17 +160,17 @@ Replace the relevant smtp details with your own, then apply the `alertmanagercon
          key: password  
 ```
 
-Save and exit the editor. The configuration is automatically reloaded.
+3. Save and exit the editor. The configuration is automatically reloaded.
 
-### Third-party alert destinations
+### Third party alert destinations
 
 Prometheus AlertManager provides a structured way to connect to alert-management systems. There are built-in plugins for popular systems such as PagerDuty and OpsGenie, including a generic Webhook.
 
 #### Example: Integrating Run:ai with a Webhook
 
 1. Use [webhook.site](https://webhook.site/) to get a unique URL.  
-1. Use the upgrade cluster instructions to modify the values file:  
-    Edit the values file to add the following, and replace `<WEB-HOOK-URL>` with the URL from [webhook.site](http://webhook.site).
+2. Use the upgrade cluster instructions to modify the values file:  
+Edit the values file to add the following, and replace `<WEB-HOOK-URL>` with the URL from [webhook.site](http://webhook.site):
 
 ``` yaml
 codekube-prometheus-stack:  

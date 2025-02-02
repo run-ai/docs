@@ -13,23 +13,17 @@ With dynamic GPU fractions, users can [submit workloads](../workloads-in-runai/w
 
 When setting a GPU memory limit either as GPU fraction or GPU memory size, the Limit must be equal to or greater than the GPU fractional memory request. Both GPU fraction and GPU memory are translated into the actual requested memory size of the Request (guaranteed resources) and the Limit (burstable resources - non guaranteed).
 
-For example, a user can specify a workload with a GPU fraction request of 0.25 GPU, and add a limit of up to 0.80 GPU. The Run:ai Scheduler schedules the workload to a node that can provide the GPU fraction request (0.25), and then assigns the workload to a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory (based on the Limit), where only 0.25 of the GPU memory is guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as it is not needed by other workloads.
+For example, a user can specify a workload with a GPU fraction request of 0.25 GPU, and add a limit of up to 0.80 GPU. The Run:ai [Scheduler](../scheduling-and-resource-optimization/how-the-scheduler-works.md) schedules the workload to a node that can provide the GPU fraction request (0.25), and then assigns the workload to a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory (based on the Limit), where only 0.25 of the GPU memory is guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as it is not needed by other workloads.
 
-Run:ai automatically manages the state changes between Request and Limit as well as the reverse (when the balance need to be "returned"), updating the the workloads’ utilization vs. Request and Limit parameters in the [metrics pane for each workload]((../workloads-in-runai/workloads.md)).
+Run:ai automatically manages the state changes between Request and Limit as well as the reverse (when the balance needs to be "returned"), updating the the workloads’ utilization vs. Request and Limit parameters in the [metrics pane for each workload]((../workloads-in-runai/workloads.md)).
 
 To guarantee fair quality of service between different workloads using the same GPU, Run:ai developed an extendable GPUOOMKiller (Out Of Memory Killer) component that guarantees the quality of service using Kubernetes semantics for resources of Request and Limit.
 
 The OOMKiller capability requires adding CAP_KILL capabilities to the dynamic GPU fractions and to the Run:ai core scheduling module (toolkit daemon). This capability is enabled by default. 
 
-Dynamic GPU fractions is enabled by default in the cluster. Disabling dynamic GPU fractions in `runaiconfig` removes the CAP_KILL capability. 
+!!! Note
+    Dynamic GPU fractions is enabled by default in the cluster. Disabling dynamic GPU fractions in [`runaiconfig`](../advanced-setup/advanced-cluster-configurations.md) removes the CAP_KILL capability. 
 
-```
-spec: 
-   global: 
-     core: 
-       dynamicFraction: 
-         enabled: true # Boolean field default is true
-```
 
 ## Multi-GPU dynamic fractions
 
