@@ -6,9 +6,9 @@ A training workload contains the setup and configuration needed for building you
 
 The distributed training workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../docs/overviews/workload-types.md).
+To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../workloads-in-runai/workload-types.md).
 
-![](../../docs/img/training-workload.png)
+![](../img/training-workload.png)
 
 ## Creating a distributed training workload
 
@@ -29,17 +29,17 @@ To add a new distributed training workload:
        * XG Boost
        * MPI
 
-       In case one the above frameworks is not enabled, see [Distributed training prerequisites](../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#distributed-training) for details on enabling.
+       In case one the above frameworks is not enabled, see [Distributed training prerequisites](../../cluster-installation/system-requirements.md#distributed-training) for details on enabling.
    * Set the distributed workload configuration that defines how distributed training workloads are divided across multiple machines or processes. Choose a configuration based on your training requirements and infrastructure -
      * Workers & master
      * Workers only
-6. Select a **preconfigured** [**template**](../../docs/assets/templates.md) or select **Start from scratch** to launch a new training workload quickly
+6. Select a **preconfigured** [**template**](../../workloads-in-runai/workload-templates/workspace-templates.md) or select **Start from scratch** to launch a new training workload quickly
 7. Enter a unique **name** for the training workload (if the name already exists in the project, you will be requested to submit a different name)
 8. Click **CONTINUE**\
    In the next step:
 9. Select the **environment** for your training workload
    * Select an environment or click **+NEW ENVIRONMENT** to add a new environment to the gallery.\
-     For a step-by-step guide on adding environments to the gallery, see [Environments](../../docs/assets/environments.md). Once created, the new environment will be automatically selected.
+     For a step-by-step guide on adding environments to the gallery, see [Environments](../../workloads-in-runai/workload-assets/environments.md). Once created, the new environment will be automatically selected.
    * Set the connection for your **tool(s)**. The tools are configured as part of the environment.
      * **External URL**
        * **Custom URL**
@@ -73,18 +73,18 @@ To add a new distributed training workload:
          * **Custom**
            * Enter a value according to the provided instructions
          * **Credentials** - Select existing credentials as the environment variable
-           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../../docs/assets/credentials.md).
+           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../../workloads-in-runai/workload-assets/credentials.md).
            * Select a **secret key**
 10. Select the **compute resource** for your training workload \* Set the number of workers for your workload \* Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
-    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../docs/assets/compute.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **order of priority** for the **node pools** on which the scheduler tries to run the workload.\
+    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **order of priority** for the **node pools** on which the scheduler tries to run the workload.\
     When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
 
     * Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
     * Click **+NODE POOL** to add a new node pool from the list of node pools that were defined on the cluster.\
-      To configure a new node pool and for additional information, see [node pools](../../platform-admin/aiinitiatives/resources/node-pools.md). \* Select a **node affinity** to schedule the workload on a specific node type.\
-      If the administrator added a ‘[node type (affinity)](../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
-      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.\
-      \* Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
+      To configure a new node pool and for additional information, see [node pools](../../manage-ai-initiatives/managing-your-resources/node-pools.md). \* Select a **node affinity** to schedule the workload on a specific node type.\
+      If the administrator added a ‘[node type (affinity)](../../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
+      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.\
+      \* Optional: Set **toleration(s)** to allow the workload to be scheduled on a node with a matching taint
 
     !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
 
@@ -137,7 +137,7 @@ Kubernetes labels are key-value pairs attached to the workload. They are used fo
 
 When creating a new workload, fields and assets may have limitations or defaults. These rules and defaults are derived from a policy your administrator set.
 
-Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../platform-admin/workloads/policies/overview.md).
+Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../policies/policies-and-rules.md).
 
 The effects of the policy are reflected in the training creation form:
 
@@ -147,7 +147,7 @@ The effects of the policy are reflected in the training creation form:
 
 ## Managing and monitoring
 
-After the training workload is created, it is added to the [Workloads](../../docs/overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the training workload is created, it is added to the [Workloads](../../workloads-in-runai/workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 

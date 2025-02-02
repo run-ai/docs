@@ -11,7 +11,7 @@ A workspace contains the setup and configuration needed for building your model,
 
 Before you start, make sure:
 
-- You have created a [project](../../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
+- You have created a [project](../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 - The project has an assigned quota of at least 1 GPU.
 
 
@@ -184,4 +184,4 @@ Before you start, make sure:
 
 ## Next Steps
 
-Manage and monitor your newly created workspace using the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).
+Manage and monitor your newly created workspace using the [workloads table](../workloads-in-runai/workloads.md).

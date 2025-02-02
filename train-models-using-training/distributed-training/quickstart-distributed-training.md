@@ -8,7 +8,7 @@ Distributed training is the ability to split the training of a model among multi
 
 Before you start, make sure:
 
-- You have created a [project](../../../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
+- You have created a [project](../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 - The project has an assigned quota of at least 1 GPU.
 
 
@@ -143,5 +143,5 @@ Before you start, make sure:
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
+* Manage and monitor your newly created workload using the [workloads table](../../workloads-in-runai/workloads.md).
 * After validating your training performance and results, deploy your model using [inference](../../inference/inference-overview.md).

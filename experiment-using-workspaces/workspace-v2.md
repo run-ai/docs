@@ -70,8 +70,8 @@ To add a new workspace:
      * Click **+NODE POOL** to add a new node pool from the list of node pools that were defined on the cluster.\
        To configure a new node pool and for additional information, see [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md).
    * Select a **node affinity** to schedule the workload on a specific node type.\
-     If the administrator added a ‘[node type (affinity)](../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
-     Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
+     If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
+     Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
    *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
        !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
@@ -93,7 +93,7 @@ To add a new workspace:
     * Select the **storage class**
       * **None** - Proceed without defining a storage class.
       * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes.\
-        To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../admin/config/shared-storage.md)
+        To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../infrastructure-procedures/shared-storage.md)
     * Select the **access mode(s)** (multiple modes can be selected)
       * **Read-write by one node** - The volume can be mounted as read-write by a single node.
       * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.
@@ -108,7 +108,7 @@ To add a new workspace:
       * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
 11. Optional: Select **data sources** for your workspace\
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](../docs/assets/datasources.md).\
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
 12. **Optional - General settings**: \* Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time. \* Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100. \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
@@ -125,7 +125,7 @@ To add a new workspace:
 
 When creating a new workload, fields and assets may have limitations or defaults. These rules and defaults are derived from a policy your administrator set.
 
-Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../platform-admin/workloads/policies/overview.md).
+Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../policies/policies-and-rules.md).
 
 The effects of the policy are reflected in the workspace creation form:
 
@@ -135,7 +135,7 @@ The effects of the policy are reflected in the workspace creation form:
 
 ## Managing and monitoring
 
-After the workspace is created, it is added to the [Workloads](../docs/overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the workspace is created, it is added to the [Workloads](../workloads-in-runai/workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 

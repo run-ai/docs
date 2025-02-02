@@ -6,9 +6,9 @@ An inference workload provides the setup and configuration needed to deploy your
 
 The inference workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../docs/overviews/workload-types.md).
+To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workloads-in-runai/workload-types.md).
 
-![](../docs/img/inference-workload.png)
+![](img/inference-workload.png)
 
 ## Creating a NIM inference workload
 
@@ -53,36 +53,31 @@ To add a new inference workload:
        * Enter a key
        * (Optional) Click **Storage** - When downloading a model from NVIDIA NGC, selecting storage is **recommended**.\
          Select a data source where the model is already cached to reduce loading time or click **+NEW DATA SOURCE** to add a new data source to the gallery. This will cache the model and reduce loading time for future use. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
-         For a step-by-step guide on adding data sources to the gallery, see [data sources](../docs/assets/datasources.md).\
+         For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
          Once created, the new data source will be automatically selected.
    * **From storage** - The model is accessed directly and without being downloaded
      * **Storage** - Set where to load the model\
        Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
-       For a step-by-step guide on adding data sources to the gallery, see [data sources](../docs/assets/datasources.md).\
+       For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
        Once created, the new data source will be automatically selected.
 10. Select the **compute resource** for your inference workload \* Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
-    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../docs/assets/compute.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **minimum and maximum** number of replicas to be scaled up and down to meet the changing demands of inference services. \* If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set **conditions for creating a new replica**. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.
+    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **minimum and maximum** number of replicas to be scaled up and down to meet the changing demands of inference services. \* If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set **conditions for creating a new replica**. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.
     * Select a **variable** - The variable's values will be monitored via the container's port.
       * **Latency (milliseconds)**
       * **Throughput (Requests/sec)**
       * **Concurrency (Requests)**
     * Set a **value** - This value is the threshold at which autoscaling is triggered
-
-```
-* Optional: Set when the replicas should be automatically __scaled down to zero__.
-```
-
-```
-    This allows the compute resources to be freed up when the model is inactive (i.e., there are no requests being sent)
-    When automatic scaling to zero is enabled, the minimum number of replicas set in the previous step, automatically changes to 0
-*   Optional: Set the __order of priority__ for the __node pools__ on which the scheduler tries to run the workload.  
+    * Optional: Set when the replicas should be automatically __scaled down to zero__.
+      This allows the compute resources to be freed up when the model is inactive (i.e., there are no requests being sent)
+      When automatic scaling to zero is enabled, the minimum number of replicas set in the previous step, automatically changes to 0
+    *   Optional: Set the __order of priority__ for the __node pools__ on which the scheduler tries to run the workload.  
     When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
     *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
     *   Click __+NODE POOL__ to add a new node pool from the list of node pools that were defined on the cluster.  
-        To configure a new node pool and for additional information, see [node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md).
+        To configure a new node pool and for additional information, see [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md).
 *   Select a __node affinity__ to schedule the workload on a specific node type.  
-    If the administrator added a ‘[node type (affinity)](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
-    Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
+    If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
+    Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
 * Optional: Set __toleration(s)__ to allow the workload to be scheduled on a node with a matching taint
     
     !!! Note 
@@ -99,7 +94,6 @@ To add a new inference workload:
         *   __NoSchedule__ - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
         *   __PreferNoSchedule__ - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
         *   __Any__ - All effects above match.
-```
 
 11\. **Optional - General settings**: \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
 Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation. \* Click **+ANNOTATION** \* Enter a **name** \* Enter a **value** \* Set **labels(s)**\
@@ -107,4 +101,4 @@ Kubernetes labels are key-value pairs attached to the workload. They are used fo
 
 ## Managing and monitoring
 
-After the inference workload is created, it is added to the [Workloads](../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the inference workload is created, it is added to the [Workloads](../workloads-in-runai/workloads.md) table, where it can be managed and monitored.

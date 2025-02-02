@@ -6,9 +6,9 @@ A training workload contains the setup and configuration needed for building you
 
 The training workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../docs/overviews/workload-types.md).
+To learn more about the training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../workloads-in-runai/workload-types.md).
 
-![](../../docs/img/training-workload.png)
+![](../img/training-workload.png)
 
 ## Creating a standard training workload
 
@@ -22,13 +22,13 @@ To add a new training workload:
 3. Select under which **cluster** to create the training workload
 4. Select the **project** in which your training will run
 5. Set the training workload architecture as **standard**, which consists of a single main running process. This workload uses environments that support standard training workloads only.
-6. Select a **preconfigured** [**template**](../../docs/assets/templates.md) or select **Start from scratch** to launch a new training workload quickly
+6. Select a **preconfigured** [**template**](../../workloads-in-runai/workload-templates/workspace-templates.md) or select **Start from scratch** to launch a new training workload quickly
 7. Enter a unique **name** for the training workload (if the name already exists in the project, you will be requested to submit a different name)
 8. Click **CONTINUE**\
    In the next step:
 9. Select the **environment** for your training workload
    * Select an environment or click **+NEW ENVIRONMENT** to add a new environment to the gallery.\
-     For a step-by-step guide on adding environments to the gallery, see [Environments](../../docs/assets/environments.md). Once created, the new environment will be automatically selected.
+     For a step-by-step guide on adding environments to the gallery, see [Environments](../../workloads-in-runai/workload-assets/environments.md). Once created, the new environment will be automatically selected.
    * Set the connection for your **tool(s)**. The tools are configured as part of the environment.
      * **External URL**
        * **Custom URL**
@@ -62,10 +62,10 @@ To add a new training workload:
          * **Custom**
            * Enter a value according to the provided instructions
          * **Credentials** - Select existing credentials as the environment variable
-           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../../docs/assets/credentials.md).
+           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../../workloads-in-runai/workload-assets/credentials.md).
            * Select a **secret key**
 10. Select the **compute resource** for your training workload \* Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
-    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../docs/assets/compute.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **order of priority** for the **node pools** on which the scheduler tries to run the workload.\
+    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **order of priority** for the **node pools** on which the scheduler tries to run the workload.\
     When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
 
     * Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
@@ -94,7 +94,7 @@ To add a new training workload:
     * Select the **storage class**
       * **None** - Proceed without defining a storage class.
       * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes.\
-        To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../admin/config/shared-storage.md).
+        To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../infrastructure-procedures/shared-storage.md).
     * Select the **access mode(s)** (multiple modes can be selected)
       * **Read-write by one node** - The volume can be mounted as read-write by a single node.
       * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.
@@ -110,7 +110,7 @@ To add a new training workload:
 12. Optional: Select **data sources** for your training workload
 
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](../../docs/assets/datasources.md).\
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
 
     * Optional: Modify the data target location for the selected data source(s).
@@ -128,7 +128,7 @@ To add a new training workload:
 
 When creating a new workload, fields and assets may have limitations or defaults. These rules and defaults are derived from a policy your administrator set.
 
-Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../platform-admin/workloads/policies/overview.md).
+Policies allow you to control, standardize, and simplify the workload submission process. For additional information, see [Workload Policies and Rules](../../policies/policies-and-rules.md).
 
 The effects of the policy are reflected in the training creation form:
 
@@ -138,7 +138,7 @@ The effects of the policy are reflected in the training creation form:
 
 ## Managing and monitoring
 
-After the training workload is created, it is added to the [Workloads](../../docs/overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the training workload is created, it is added to the [Workloads](../../workloads-in-runai/workloads.md) table, where it can be managed and monitored.
 
 ## Using CLI
 

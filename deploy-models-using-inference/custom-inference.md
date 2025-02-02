@@ -6,9 +6,9 @@ An inference workload provides the setup and configuration needed to deploy your
 
 The inference workload is assigned to a project and is affected by the project’s quota.
 
-To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../docs/overviews/workload-types.md).
+To learn more about the inference workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../workloads-in-runai/workload-types.md).
 
-![](../docs/img/inference-workload.png)
+![](img/inference-workload.png)
 
 ## Creating a custom inference workload
 
@@ -27,7 +27,7 @@ To add a new custom inference workload:
    In the next step:
 8. Select the **environment** for your inference workload
    * Select an environment or click **+NEW ENVIRONMENT** to add a new environment to the gallery.\
-     For a step-by-step guide on adding environments to the gallery, see [Environments](../docs/assets/environments.md). Once created, the new environment will be automatically selected.
+     For a step-by-step guide on adding environments to the gallery, see [Environments](../workloads-in-runai/workload-assets/environments.md). Once created, the new environment will be automatically selected.
    * Set an inference **serving endpoint**. The connection protocol and the container port are defined within the environment
      * Optional: Modify who can access the endpoint
        *   **Public (default)**
@@ -71,11 +71,11 @@ To add a new custom inference workload:
          * **Custom**
            * Enter a value according to the provided instructions
          * **Credentials** - Select existing credentials as the environment variable
-           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../docs/assets/credentials.md).
+           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../workloads-in-runai/workload-assets/credentials.md).
            * Select a **secret key**
 9. Select the **compute resource** for your inference workload
    * Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
-     For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../docs/assets/compute.md). Once created, the new compute resource will be automatically selected.
+     For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected.
    * Optional: Set the **minimum and maximum** number of replicas to be scaled up and down to meet the changing demands of inference services.
    * If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set **conditions for creating a new replica**. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.
      * Select a **variable** - The variable's values will be monitored via the container's port.
@@ -88,10 +88,10 @@ To add a new custom inference workload:
      When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
      * Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
      * Click **+NODE POOL** to add a new node pool from the list of node pools that were defined on the cluster.\
-       To configure a new node pool and for additional information, see [node pools](../platform-admin/aiinitiatives/resources/node-pools.md).
+       To configure a new node pool and for additional information, see [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md).
    * Select a **node affinity** to schedule the workload on a specific node type.\
-     If the administrator added a ‘[node type (affinity)](../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
-     Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
+     If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
+     Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
    *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
        !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
@@ -108,7 +108,7 @@ To add a new custom inference workload:
          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
          * **Any** - All effects above match.
 10. Optional: Select **data sources** for your inference workload Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
-    For a step-by-step guide on adding data sources to the gallery, see [data sources](../docs/assets/datasources.md).\
+    For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
 11. **Optional - General settings**: \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
@@ -123,7 +123,7 @@ To add a new custom inference workload:
 
 ## Managing and monitoring
 
-After the inference workload is created, it is added to the [Workloads](../platform-admin/workloads/overviews/managing-workloads.md) table, where it can be managed and monitored.
+After the inference workload is created, it is added to the [Workloads](../workloads-in-runai/workloads.md) table, where it can be managed and monitored.
 
 ## Using API
 
