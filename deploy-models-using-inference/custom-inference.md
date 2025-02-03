@@ -111,14 +111,18 @@ To add a new custom inference workload:
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
-11. **Optional - General settings**: \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
-    Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
-    * Click **+ANNOTATION**
-    * Enter a **name**
-    * Enter a **value** \* Set **labels(s)**\
-      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying.
-    * Enter a **name**
-    * Enter a **value**
+11. **Optional - General settings**:&#x20;
+    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
+    * Set **annotations(s)**\
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
+      * Click **+ANNOTATION**
+        * Enter a **name**
+        * Enter a **value**&#x20;
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
+      * Click **+LABEL**
+      * Enter a **name**
+      * Enter a **value**
 12. Click **CREATE INFERENCE**
 
 ## Managing and monitoring

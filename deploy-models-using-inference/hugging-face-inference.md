@@ -99,14 +99,18 @@ To add a new inference workload:
          * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
          * **Any** - All effects above match.
-10. **Optional - General settings**: \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
-    Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
-    * Click **+ANNOTATION**
-    * Enter a **name**
-    * Enter a **value** \* Set **labels(s)**\
-      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying.
-    * Enter a **name**
-    * Enter a **value**
+10. **Optional - General settings**:&#x20;
+    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
+    * Set **annotations(s)**\
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
+      * Click **+ANNOTATION**
+        * Enter a **name**
+        * Enter a **value**&#x20;
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
+      * Click **+LABEL**
+      * Enter a **name**
+      * Enter a **value**
 11. Click **CREATE INFERENCE**
 
 ## Managing and monitoring
