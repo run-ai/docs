@@ -24,6 +24,7 @@
   * [Access rules](authentication-and-authorization/accessrules.md)
 * [Manage AI initiatives](manage-ai-initiatives/README.md)
   * [Adapting AI initiatives to your organization](manage-ai-initiatives/adapting-ai-initiatives.md)
+  * [Copy of Adapting AI initiatives to your organization](manage-ai-initiatives/adapting-ai-initiatives-1.md)
   * [Managing your organization](manage-ai-initiatives/managing-your-organization/README.md)
     * [Projects](manage-ai-initiatives/managing-your-organization/projects.md)
     * [Departments](manage-ai-initiatives/managing-your-organization/departments.md)
