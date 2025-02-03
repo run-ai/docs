@@ -12,13 +12,13 @@ SaaS features are gradually rolled out to customers over the course of a week to
 
 ### Product Enhancements
 
-- Workload Events API /api/v1/workloads/{workloadId}/events now supports the sort order parameter (asc, desc).  <!-- (RUN-25180)   -->
-- MIG profile and MIG options are now marked as deprecated CLI v2, following the deprecation notice in the last version. <!-- (RUN-23186)   -->
+- Workload Events API, [/api/v1/workloads/{workloadId}/events](https://api-docs.run.ai/latest/tag/Events#operation/get_workload_events), now supports the sort order parameter (asc, desc).  <!-- (RUN-25180)   -->
+- MIG profile and MIG options are now marked as deprecated in CLI v2, following the deprecation notice in the [last version](whats-new-2-20.md#deprecation-notifications). <!-- (RUN-23186)   -->
 - As part of inference support in CLI v2, Knative readiness is now validated on submit requests. <!-- (RUN-25177)   -->
 - Improved permission error messaging when attempting to delete a user with higher privileges. <!-- (RUN-24366)   -->
-- Improved visibility of metrics in ‘resource utilization’ widget by repositioning them above the graphs. <!-- (RUN-25292)   -->
+- Improved visibility of metrics in the ‘resource utilization’ widget by repositioning them above the graphs. <!-- (RUN-25292)   -->
 - Added a new Idle Workloads table widget to help users easily identify and manage underutilized resources. <!-- (RUN-24376)   -->
-- Renamed and updated the "Workloads by type" widget to provide clearer insights into cluster usage with a focus on workload. <!-- (RUN-23978)   -->
+- Renamed and updated the "Workloads by type" widget to provide clearer insights into cluster usage with a focus on workloads. <!-- (RUN-23978)   -->
 - Improved user experience by moving the date picker to a dedicated section within the overtime widgets (Resource utilization + Resource allocation). <!-- (RUN-23941)   -->
 - Simplified configuration by enabling auto-creation of storage class for discovered storage classes. <!-- (RUN-25302)   -->
 - Enhanced storage configuration by specifying context (Volume, PVC, both, or neither) and filtering storage classes based on selection. <!-- (RUN-25158)   -->
