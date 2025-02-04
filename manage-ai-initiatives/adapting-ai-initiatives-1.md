@@ -4,6 +4,8 @@ AI initiatives refer to advancing research, development, and implementation of A
 
 To manage AI initiatives in Run:ai you should:
 
+This is a test.
+
 * Map your organization and initiatives to projects and optionally departments
 * Map compute resources (node pools and quotas) to projects and optionally departments
 * Assign users (e.g. AI practitioners, ML engineers, Admins) to projects and departments
