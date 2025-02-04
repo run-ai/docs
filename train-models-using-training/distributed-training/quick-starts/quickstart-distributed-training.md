@@ -1,4 +1,4 @@
-# Run your First Distributed Training
+# Run your first distributed training
 
 This article provides a step-by-step walkthrough for running a PyTorch distributed training workload.
 

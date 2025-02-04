@@ -1,4 +1,4 @@
-# Run your First Standard Training
+# Run your first standard training
 
 This article provides a step-by-step walkthrough for running a standard training workload.
 

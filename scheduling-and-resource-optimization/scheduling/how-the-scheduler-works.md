@@ -2,7 +2,7 @@
 
 Efficient resource allocation is critical for managing AI and compute-intensive workloads in Kubernetes clusters. The Run:ai Scheduler enhances Kubernetes' native capabilities by introducing advanced scheduling principles such as fairness, quota management, and dynamic resource balancing. It ensures that workloads, whether simple single-pod or complex distributed tasks, are allocated resources effectively while adhering to organizational policies and priorities.
 
-This guide explores the Run:ai Scheduler’s allocation process, preemption mechanisms, and resource management. Through examples and detailed explanations, you'll gain insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across [projects and departments](../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization).
+This guide explores the Run:ai Scheduler’s allocation process, preemption mechanisms, and resource management. Through examples and detailed explanations, you'll gain insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across [projects and departments](../../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization).
 
 ## Allocation process
 
@@ -16,7 +16,7 @@ A workload, with its associated pod group, is queued in the appropriate [schedul
 
 ### Resource binding
 
-The next step is for the Scheduler to find nodes for those pods, assign the pods to their nodes (bind operation), and bind other building blocks of the pods such as storage, ingress and so on. If the pod group has a [gang scheduling](./runai-scheduler-concepts-and-principles.md#gang-scheduling) rule attached to it, the Scheduler either allocates and binds all pods together, or puts all of them into pending state. It retries to schedule them all together in the next scheduling cycle. The Scheduler also updates the status of the pods and their associated pod group. Users are able to track the workload submission process both in the CLI or Run:ai UI. For more details on submitting and managing workloads, see [Workloads](../workloads-in-runai/workloads.md).
+The next step is for the Scheduler to find nodes for those pods, assign the pods to their nodes (bind operation), and bind other building blocks of the pods such as storage, ingress and so on. If the pod group has a [gang scheduling](./runai-scheduler-concepts-and-principles.md#gang-scheduling) rule attached to it, the Scheduler either allocates and binds all pods together, or puts all of them into pending state. It retries to schedule them all together in the next scheduling cycle. The Scheduler also updates the status of the pods and their associated pod group. Users are able to track the workload submission process both in the CLI or Run:ai UI. For more details on submitting and managing workloads, see [Workloads](../../workloads-in-runai/workloads.md).
 
 ## Preemption
 
@@ -54,11 +54,11 @@ Some scenarios can prevent the Scheduler from fully providing deserved quota and
 
 The example below illustrates a split of quota between different projects and departments using several node pools:
 
-![](img/quota-split.png)
+![](../img/quota-split.png)
 
 The example below illustrates how fairshare is calculated per project/node pool for the above example:
 
-![](img/fairshare.png)
+![](../img/fairshare.png)
 
 * For each Project:
   * The **over quota (OQ)** portion of each project (per node pool) is calculated as: 
@@ -92,11 +92,11 @@ A queue, representing a scheduler-managed object for each project or department 
 
 When re-balancing resources between queues of different projects and departments, the Scheduler goes in the opposite direction, i.e. first take resources from over-fairshare queues, then from over quota queues, and finally, in some scenarios, even from queues that are below their deserved quota. 
 
-![](img/queue.png)
+![](../img/queue.png)
 
 ## Next Steps
 
-Now that you have gained insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments, you can [submit workloads](../workloads-in-runai/workloads.md). Before submitting your workloads, it’s important to familiarize yourself with the following key topics:
+Now that you have gained insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments, you can [submit workloads](../../workloads-in-runai/workloads.md). Before submitting your workloads, it’s important to familiarize yourself with the following key topics:
 
-* [Introduction to workloads](../workloads-in-runai/introduction-to-workloads.md): Learn what workloads are and what is supported for both Run:ai-specific and third-party workloads.
-* [Run:ai workload types](../workloads-in-runai/workload-types.md): Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs. 
+* [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md): Learn what workloads are and what is supported for both Run:ai-specific and third-party workloads.
+* [Run:ai workload types](../../workloads-in-runai/workload-types.md): Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs. 

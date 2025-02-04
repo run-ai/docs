@@ -3,7 +3,7 @@
 
 This guide provides a step-by-step walkthrough for running a Jupyter Notebook using workspaces.
 
-A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See [Running workspaces](workspace-v2.md) for more information.
+A workspace contains the setup and configuration needed for building your model, including the container, images, data sets, and resource requests, as well as the required tools for the research, all in one place. See [Running workspaces](../running-workspace.md) for more information.
 
 
 

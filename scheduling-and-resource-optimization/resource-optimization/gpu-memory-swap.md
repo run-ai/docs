@@ -10,7 +10,7 @@ There are several use cases where GPU memory swap can benefit and improve the us
 
 ### Sharing a GPU between multiple interactive workloads (notebooks)
 
-AI practitioners use notebooks to develop and test new AI models and to improve existing AI models. While developing or testing an AI model, notebooks use GPU resources intermittently, yet, required resources of the GPUs are pre-allocated by the notebook and cannot be used by other workloads after one notebook has already reserved them. To overcome this inefficiency, Run:ai introduced [dynamic GPU fractions](../scheduling-and-resource-optimization/dynamic-gpu-fractions.md) and [Node Level Scheduler](../scheduling-and-resource-optimization/node-level-scheduler.md).
+AI practitioners use notebooks to develop and test new AI models and to improve existing AI models. While developing or testing an AI model, notebooks use GPU resources intermittently, yet, required resources of the GPUs are pre-allocated by the notebook and cannot be used by other workloads after one notebook has already reserved them. To overcome this inefficiency, Run:ai introduced [dynamic GPU fractions](dynamic-gpu-fractions.md) and [Node Level Scheduler](node-level-scheduler.md).
 
 When one or more workloads require more than their requested GPU resources, there’s a high probability not all workloads can run on a single GPU because the total memory required is larger than the physical size of the GPU memory.
 
@@ -36,11 +36,11 @@ Swapping the workload’s GPU memory to and from the CPU is performed simultaneo
 
 In other cases, workloads will run serially, with each workload running for a few seconds before the system swaps them in/out. If multiple workloads occupy more than the GPU physical memory and attempt to run simultaneously, memory swapping will occur. In this scenario, each workload will run part of the time on the GPU while being swapped out to the CPU memory the other part of the time, slowing down the execution of the workloads. Therefore, it is important to evaluate whether memory swapping is suitable for your specific use cases, weighing the benefits against the potential for slower execution time. To better understand the benefits and use cases of GPU memory swap, refer to the detailed sections below. This will help you determine how to best utilize GPU swap for your workloads and achieve optimal performance.
 
-The workload MUST use [dynamic GPU fractions](../scheduling-and-resource-optimization/dynamic-gpu-fractions.md). This means the workload’s memory Request is less than a full GPU, but it may add a GPU memory Limit to allow the workload to effectively use the full GPU memory. The Run:ai Scheduler allocates the dynamic fraction pair (Request and Limit) on single or multiple GPU devices in the same node.
+The workload MUST use [dynamic GPU fractions](./dynamic-gpu-fractions.md). This means the workload’s memory Request is less than a full GPU, but it may add a GPU memory Limit to allow the workload to effectively use the full GPU memory. The Run:ai Scheduler allocates the dynamic fraction pair (Request and Limit) on single or multiple GPU devices in the same node.
 
 The administrator must label each node that they want to provide GPU memory swap with a run.ai/swap-enabled=true to enable that node. Enabling the feature reserves CPU memory to serve the swapped GPU memory from all GPUs on that node. The administrator sets the size of the CPU reserved RAM memory using the `runaiconfig` file as detailed in [enabling and configuring GPU memory swap](#enabling-and-configuring-gpu-memory-swap).
 
-Optionally, you can also configure the [Node Level Scheduler](../scheduling-and-resource-optimization/node-level-scheduler.md):
+Optionally, you can also configure the [Node Level Scheduler](node-level-scheduler.md):
 
 * The Node Level Scheduler automatically spreads workloads between the different GPUs on a node, ensuring maximum workload performance and GPU utilization.
 * In scenarios where Interactive notebooks are involved, if the CPU reserved memory for the GPU swap is full, the Node Level Scheduler preempts the GPU process of that workload and potentially routes the workload to another GPU to run.
@@ -70,7 +70,7 @@ Before configuring GPU memory swap, dynamic GPU fractions must be enabled. Yo
 
 To enable GPU memory swap in a Run:ai cluster:
 
-1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [Advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md):
+1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [Advanced cluster configurations](../../advanced-setup/advanced-cluster-configurations.md):
 
 ```
  spec: 

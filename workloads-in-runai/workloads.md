@@ -6,7 +6,7 @@ This article explains the procedure for managing workloads.
 
 The Workloads table can be found under **Workload manager** in the Run:ai platform.
 
-The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../Researcher/scheduling/the-runai-scheduler.md), and allows you to manage them.
+The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md), and allows you to manage them.
 
 ![](img/workload-table.png)
 
@@ -140,10 +140,10 @@ To create a new workload:
 
 1. Click **+NEW WORKLOAD**
 2. Select a workload type - Follow the links below to view the step-by-step guide for each workload type:
-   * [Workspace](../Researcher/workloads/workspaces/workspace-v2.md). Used for data preparation and model-building tasks.
-   * [Training](../Researcher/workloads/training/standard-training/trainings-v2.md). Used for standard training tasks of all sorts
-   * [Distributed Training](../Researcher/workloads/training/distributed-training/distributed-training.md). Used for distributed tasks of all sorts
-   * [Inference](../Researcher/workloads/inference/custom-inference.md). Used for inference and serving tasks
+   * [Workspace](../experiment-using-workspaces/running-workspace.md). Used for data preparation and model-building tasks.
+   * [Training](../train-models-using-training/standard-training/train-models.md). Used for standard training tasks of all sorts
+   * [Distributed Training](../train-models-using-training/distributed-training/distributed-training-models.md). Used for distributed tasks of all sorts
+   * [Inference](../deploy-models-using-inference/custom-inference.md). Used for inference and serving tasks
    * Job (legacy). This type is displayed only if enabled by your Administrator, under General settings → Workloads → Workload policies
 3. Click **CREATE WORKLOAD**
 

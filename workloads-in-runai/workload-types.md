@@ -26,7 +26,7 @@ The __Workspace__ is where data scientists conduct initial research, experiment 
 
     Hence, the default for the Run:ai workspaces considerations is to allow scheduling those workloads without the ability to preempt them once the resources were allocated. However, this non-preemptible state doesn’t allow to utilize more resources outside of the project’s deserved quota. 
 
-See [Running workspaces](../experiment-using-workspaces/workspace-v2.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../experiment-using-workspaces/quickstart-jupyter.md).
+See [Running workspaces](../experiment-using-workspaces/running-workspace.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../experiment-using-workspaces/quickstart-jupyter.md).
 
 ## Training: scaling resources for model development
 
@@ -40,7 +40,7 @@ As models mature and the need for more robust data processing and model training
 
     Training tasks demand high memory, compute power, and storage. Run:ai ensures that the allocated resources match the scale of the task and allows those workloads to utilize more compute resources than the project’s deserved quota. Make sure that if you wish your training workload not to be preempted, specify the number of GPU’s that are in your quota.  
 
-See [Standard training](../train-models-using-training/standard-training/trainings-v2.md) and [Distributed training](../train-models-using-training/distributed-training/distributed-training.md) to learn more about how to submit a training workload via the Run:ai UI. For quick starts, see [Run your first standard training](../train-models-using-training/standard-training/quickstart-standard-training.md) and [Run your first distributed training](../train-models-using-training/distributed-training/quickstart-distributed-training.md). 
+See [Standard training](../train-models-using-training/standard-training/train-models.md) and [Distributed training](../train-models-using-training/distributed-training/distributed-training-models.md) to learn more about how to submit a training workload via the Run:ai UI. For quick starts, see [Run your first standard training](../train-models-using-training/standard-training/quick-starts/quickstart-standard-training.md) and [Run your first distributed training](../train-models-using-training/distributed-training/quick-starts/quickstart-distributed-training.md.md). 
 
 ## Inference: deploying and serving models
 

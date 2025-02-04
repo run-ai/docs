@@ -29,11 +29,11 @@ gpu-compute-limit = 1.0
 
 The figure below illustrates how **Strict** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Strict time-slicing mode](img/strict-time-slicing-mode.png)
+![Strict time-slicing mode](../img/strict-time-slicing-mode.png)
 
 The figure below illustrates how **Fair** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Fair time-slicing mode](img/fair-time-slicing-mode.png)
+![Fair time-slicing mode](../img/fair-time-slicing-mode.png)
 
 ## Time-slicing plan and lease times
 
@@ -65,7 +65,7 @@ Once timeSlicing is enabled in the `runaiconfig`, all submitted GPU fractions or
 
 ## Enabling GPU time-slicing
 
-Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [Advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md).
+Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [Advanced cluster configurations](../../advanced-setup/advanced-cluster-configurations.md).
 
 Enable GPU time-slicing by setting the following cluster flag in the `runaiconfig` file: 
 

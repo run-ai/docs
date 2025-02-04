@@ -1,14 +1,14 @@
 # The Run:ai Scheduler: concepts and principles
 
-When a user [submits a workload](../workloads-in-runai/workloads.md), the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.  
+When a user [submits a workload](../../workloads-in-runai/workloads.md), the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.  
 
-The Run:ai Scheduler schedules native Kubernetes workloads, Run:ai workloads, or any other type of third-party workloads. To learn more about workloads support, see [Introduction to workloads](../workloads-in-runai/introduction-to-workloads.md). 
+The Run:ai Scheduler schedules native Kubernetes workloads, Run:ai workloads, or any other type of third-party workloads. To learn more about workloads support, see [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md). 
 
 To understand what is behind the Run:ai Scheduler’s decision-making logic, get to know the key concepts, resource management and scheduling principles of the Scheduler.
 
 ## Workloads and pod groups
 
-[Workloads](../workloads-in-runai/workload-types.md) can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes. 
+[Workloads](../../workloads-in-runai/workload-types.md) can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes. 
 
 Every newly created pod is assigned to a pod group, which can represent one or multiple pods within a workload. For example, a distributed PyTorch training workload with 32 workers is grouped into a single pod group. All pods are attached to the pod group with certain rules, such as [gang scheduling](#gang-scheduling), applied to the entire pod group.
 
@@ -16,7 +16,7 @@ Every newly created pod is assigned to a pod group, which can represent one or m
 
 A scheduling queue (or simply a queue) represents a scheduler primitive that manages the scheduling of workloads based on different parameters. 
 
-A queue is created for each [project/node pool pair](../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization) and [department/node pool pair](../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization). The Run:ai Scheduler supports hierarchical queueing, project queues are bound to department queues, per node pool. This allows an organization to manage quota, over quota and more for projects and their associated departments. 
+A queue is created for each [project/node pool pair](../../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization) and [department/node pool pair](../../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization). The Run:ai Scheduler supports hierarchical queueing, project queues are bound to department queues, per node pool. This allows an organization to manage quota, over quota and more for projects and their associated departments. 
 
 ## Resource management
 
@@ -48,7 +48,7 @@ Over-subscription is a scenario where the sum of all guaranteed resource quotas 
 
 ### Placement strategy - bin-pack and spread
 
-The administrator can set a [placement strategy](../manage-ai-initiatives/managing-your-resources/node-pools.md#adding-a-new-node-pool), bin-pack or spread, of the Scheduler per node pool. For GPU based workloads, workloads can request both GPU and CPU resources. For CPU-only based workloads, workloads can request CPU resources only.
+The administrator can set a [placement strategy](../../manage-ai-initiatives/managing-your-resources/node-pools.md#adding-a-new-node-pool), bin-pack or spread, of the Scheduler per node pool. For GPU based workloads, workloads can request both GPU and CPU resources. For CPU-only based workloads, workloads can request CPU resources only.
 
 * **GPU workloads:** 
   * **Bin-pack** - The Scheduler places as many workloads as possible in each GPU and node to use fewer resources and maximize GPU and node vacancy.
