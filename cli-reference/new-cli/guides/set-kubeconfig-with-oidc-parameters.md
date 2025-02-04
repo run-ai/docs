@@ -1,10 +1,8 @@
 # Add Run:ai authorization to kubeconfig
 
-The ***runai kubeconfig set*** command allows users to configure their kubeconfig file with Run:ai authorization token. This setup enables users to gain access to the Kubernetes (k8s) cluster seamlessly.
+The _**runai kubeconfig set**_ command allows users to configure their kubeconfig file with Run:ai authorization token. This setup enables users to gain access to the Kubernetes (k8s) cluster seamlessly.
 
-
-!!! Note
-    Setting kubeconfig is not required in order to use the CLI. This command is used to enable third-party workloads under Run:ai authorization.
+!!! Note Setting kubeconfig is not required in order to use the CLI. This command is used to enable third-party workloads under Run:ai authorization.
 
 ## Usage
 
@@ -14,15 +12,13 @@ To set the token (will be fetched automatically) inside the kubeconfig file, run
 runai kubeconfig set
 ```
 
-
 ## Prerequisites
 
 Before executing the command, ensure that
 
 1. Cluster authentication is configured and enabled.
 2. The user has a kubeconfig file configured.
-3. The user is logged in (use the [runai login](../runai_login.md) command).
-
+3. The user is logged in (use the [runai login](broken-reference) command).
 
 ### Cluster configuration
 
@@ -40,11 +36,10 @@ spec:
 
 ### User Kubeconfig configuration
 
-Add the following to the Kubernetes client configuration file (./kube/config). For the full command reference, see [kubeconfig set](../runai_kubeconfig_set.md).  
+Add the following to the Kubernetes client configuration file (./kube/config). For the full command reference, see [kubeconfig set](broken-reference).
 
-* Make sure to replace values with the actual cluster information and user credentials.  
+* Make sure to replace values with the actual cluster information and user credentials.
 * There can be multiple contexts in the kubeconfig file. The command will configure the current context.
-
 
 ```
 apiVersion: v1
@@ -65,5 +60,3 @@ clusters:
 users:
 - name: <USER_NAME>
 ```
-
-

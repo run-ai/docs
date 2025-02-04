@@ -1,4 +1,4 @@
-# Running Workspaces
+# Running workspaces
 
 This article explains how to create a workspace via the Run:ai UI.
 
@@ -139,7 +139,7 @@ After the workspace is created, it is added to the [Workloads](../workloads-in-r
 
 ## Using CLI
 
-To view the available actions on workspaces, see the Workspaces [CLI v2 reference](../cli-reference/new-cli/runai_workspace_submit.md) or the [CLI v1 reference](../cli-reference/runai-submit.md).
+To view the available actions on workspaces, see the Workspaces [CLI v2 reference](broken-reference) or the [CLI v1 reference](../cli-reference/runai-submit.md).
 
 ## Using API
 
