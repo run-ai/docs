@@ -34,6 +34,9 @@
     "aliases": [
       "v2.16-alias",
       "2.16-alias"
-    ]
+    ],
+    "properties": {
+      "hidden": true
+    }
   }
 ]
