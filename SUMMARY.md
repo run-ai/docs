@@ -90,7 +90,7 @@
   * [Standard training](train-models-using-training/standard-training/README.md)
     * [Train models using a standard training workload](train-models-using-training/standard-training/train-models.md)
     * [Quick starts](train-models-using-training/standard-training/README.md)
-      * [Run your first standard training](train-models-using-training/standard-training/quick-starts/quickstart-standard-training.md)
+       * [Run your first standard training](train-models-using-training/standard-training/quick-starts/quickstart-standard-training.md)
   * [Distributed training](train-models-using-training/distributed-training/README.md)
     * [Train models using a distributed training workload](train-models-using-training/distributed-training/distributed-training-models.md)
     * [Quick starts](train-models-using-training/distributed-training/README.md)
