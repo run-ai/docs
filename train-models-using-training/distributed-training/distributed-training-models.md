@@ -169,7 +169,7 @@ After the training workload is created, it is added to the [Workloads](../../wor
 
 ## Using CLI
 
-To view the available actions,see all possible distributed training workloads in the [CLI v2 reference](../../cli-reference/new-cli/overview.md) or the [CLI v1 reference](../../cli-reference/Introduction.md).
+To view the available actions,see all possible distributed training workloads in the [CLI v2 reference](broken-reference) or the [CLI v1 reference](../../cli-reference/Introduction.md).
 
 ## Using API
 

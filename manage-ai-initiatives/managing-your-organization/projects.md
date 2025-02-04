@@ -1,4 +1,4 @@
-# projects
+# Projects
 
 This article explains the procedure to manage Projects.
 
@@ -111,7 +111,7 @@ To create a new Project:
    b. Alternatively, you can choose an existing namespace created for you by the cluster administrator
 5. In the **Quota management** section, you can set the quota parameters and prioritize resources
    * **Order of priority**\
-     This column is displayed only if more than one node pool exists. The default order in which the [Scheduler](../../scheduling-and-resource-optimization/how-the-scheduler-works.md) uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. Empty value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission
+     This column is displayed only if more than one node pool exists. The default order in which the [Scheduler](broken-reference) uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. Empty value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission
    * **Node pool**\
      This column is displayed only if more than one node pool exists. It represents the name of the node pool.
    * **GPU devices**\
@@ -139,7 +139,7 @@ When no node pools are configured, you can set the same parameters but it is for
 
 After node pools are created, you can set the above parameters **for each node-pool separately**.
 
-6.  Set [Scheduling rules](../../policies/scheduling-rules.md) as required. 
+6. Set [Scheduling rules](../../policies/scheduling-rules.md) as required.
 7. Click **CREATE PROJECT**
 
 ### Adding an access rule to a project
