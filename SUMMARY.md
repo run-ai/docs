@@ -89,11 +89,11 @@
 * [Train models using training](train-models-using-training/README.md)
   * [Standard training](train-models-using-training/standard-training/README.md)
     * [Train models using a standard training workload](train-models-using-training/standard-training/train-models.md)
-    * [Quick starts](train-models-using-training/standard-training/README.md)
-       * [Run your first standard training](train-models-using-training/standard-training/quick-starts/quickstart-standard-training.md)
+    * [Quick starts]
+      * [Run your first standard training](train-models-using-training/standard-training/quick-starts/quickstart-standard-training.md)
   * [Distributed training](train-models-using-training/distributed-training/README.md)
     * [Train models using a distributed training workload](train-models-using-training/distributed-training/distributed-training-models.md)
-    * [Quick starts](train-models-using-training/distributed-training/README.md)
+    * [Quick starts]
       * [Run your first distributed training](train-models-using-training/distributed-training/quick-starts/quickstart-distributed-training.md)
 * [Deploy models using inference](deploy-models-using-inference/README.md)
   * [Inference overview](deploy-models-using-inference/inference-overview.md)
