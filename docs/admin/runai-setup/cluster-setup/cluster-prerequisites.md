@@ -45,6 +45,7 @@ The following software requirements must be fulfilled on the Kubernetes cluster.
 
 * Any **Linux** operating system supported by both Kubernetes and NVIDIA GPU Operator  
 * Run:ai cluster on Google Kubernetes Engine (GKE) supports both Ubuntu and Container Optimized OS (COS). COS is supported only with NVIDIA GPU Operator 24.6 or newer, and Run:ai cluster version 2.19 or newer.
+Run:ai cluster on Oracle Kubernetes Engine (OKE) supports only Ubuntu.
 * Internal tests are being performed on **Ubuntu 22.04** and **CoreOS** for OpenShift.
 
 ### Kubernetes distribution
@@ -68,7 +69,6 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
 | :---- | :---- | :---- |
-| v2.13 | 1.23 to 1.28 | 4.10 to 4.13 |
 | v2.16 | 1.26 to 1.28 | 4.11 to 4.14 |
 | v2.17 | 1.27 to 1.29 | 4.12 to 4.15 |
 | v2.18 | 1.28 to 1.30 | 4.12 to 4.16 |
@@ -149,7 +149,7 @@ There are many ways to install and configure different ingress controllers. A si
 
 ### NVIDIA GPU Operator
 
-Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6
+Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.9
 
 See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){target=_blank}, followed by notes below:
 
