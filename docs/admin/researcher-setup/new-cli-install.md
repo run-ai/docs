@@ -61,7 +61,7 @@ Alternatively:
 
 1. Open the terminal on your local machine.  
 2. Run `runai cluster list` to find the desired cluster name.  
-3. Run the following command `runai cluster set <CLUSTER_NAME>`
+3. Run the following command `runai cluster set <CLUSTER_NAME>`.
 
 ### Setting a default project
 
