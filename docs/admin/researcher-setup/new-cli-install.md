@@ -38,7 +38,7 @@ Follow the steps below to configure the CLI.
 The following step is required for Windows users only. Linux and Mac clients are configured via the installation script automatically
 
 Run the command `runai config set --cp-url <CONTROL_PLANE_URL>`. 
-This will also create the `config.json` file in the default path
+This will also create the `config.json` file in the default path.
 
 ### Authenticating the CLI
 
