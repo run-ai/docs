@@ -55,7 +55,7 @@ If only one cluster is connected to the account, it is set as the default cluste
  If there are multiple clusters, you must follow the steps below to set your preferred cluster for workload submission:
 
 1. Open the terminal on your local machine.  
-2. Run `runai cluster` and select the desried cluster from the interactive menu
+2. Run `runai cluster` and select the desired cluster from the interactive menu.
 
 Alternatively:  
 
