@@ -69,7 +69,7 @@ Set a default working project, to easily submit workloads without mentioning the
 
 
 1. Open the terminal on your local machine.  
-2. Run `runai project` and select the desried cluster from the interactive menu
+2. Run `runai project` and select the desired cluster from the interactive menu.
 
 alernativly  
 
