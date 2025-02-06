@@ -11,7 +11,7 @@ Browse to the provided Run:ai user interface and log in with your credentials.
 Log in using the following command. You will be prompted to enter your username and password:
 
 ```sh
-runai login
+// runai login
 ```
 {% endtab %}
 
@@ -19,7 +19,7 @@ runai login
 Log in using the following command. You will be prompted to enter your username and password:
 
 ```sh
-runai login --help
+// runai login --help
 ```
 {% endtab %}
 
