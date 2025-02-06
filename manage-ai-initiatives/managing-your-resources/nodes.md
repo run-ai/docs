@@ -2,7 +2,7 @@
 
 This article explains the procedure for managing Nodes.
 
-Nodes are Kubernetes elements automatically discovered by the Run:ai platform. Once a node is discovered by the Run:ai platform, an associated instance is created in the Nodes table, administrators can view the Node’s relevant information, and Run:ai scheduler can use the node for [Scheduling](broken-reference).
+Nodes are Kubernetes elements automatically discovered by the Run:ai platform. Once a node is discovered by the Run:ai platform, an associated instance is created in the Nodes table, administrators can view the Node’s relevant information, and Run:ai scheduler can use the node for [Scheduling](../../scheduling-and-resource-optimization/scheduling/how-the-scheduler-works.md).
 
 ## Nodes table
 
@@ -10,8 +10,10 @@ The Nodes table can be found under **Resources** in the Run:ai platform.
 
 The Nodes table displays a list of predefined nodes available to users in the Run:ai platform.
 
-!!! Note \* It is not possible to create additional nodes, or edit, or delete existing nodes.\
-\* Only users with relevant permissions can view the table.
+{% hint style="info" %}
+* It is not possible to create additional nodes, or edit, or delete existing nodes.
+* Only users with relevant permissions can view the table.
+{% endhint %}
 
 ![](img/node-list.png)
 
@@ -56,7 +58,9 @@ Click one of the values in the GPU devices column, to view the list of GPU devic
 
 Click one of the values in the Pod(s) column, to view the list of pods and their parameters.
 
-!!! Note This column is only viewable if your role in the Run:ai platform gives you read access to workloads, even if you are allowed to view workloads, you can only view the workloads within your allowed scope. This means, there might be more pods running on this node than appear in the list your are viewing.
+{% hint style="info" %}
+This column is only viewable if your role in the Run:ai platform gives you read access to workloads, even if you are allowed to view workloads, you can only view the workloads within your allowed scope. This means, there might be more pods running on this node than appear in the list your are viewing.
+{% endhint %}
 
 | Column        | Description                                                                                                                                                                           |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

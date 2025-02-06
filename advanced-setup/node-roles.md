@@ -9,7 +9,7 @@ For optimal performance in production clusters, it is essential to avoid extensi
 
 ## Prerequisites
 
-To perform these tasks, make sure to install the Run:ai [Administrator CLI](../docs/advanced-setup/cli-admin-install.md).
+To perform these tasks, make sure to install the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md).
 
 ## Configure Node Roles
 
@@ -21,9 +21,11 @@ The following node roles can be configured on the cluster:
 
 ### System nodes
 
-Run:ai system nodes run system-level services required to operate. This can be done via the Run:ai [Administrator CLI](../docs/advanced-setup/cli-admin-install.md).
+Run:ai system nodes run system-level services required to operate. This can be done via the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md).
 
-!!! Recommendation To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
+{% hint style="info" %}
+To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
+{% endhint %}
 
 To set a system role for a node in your Kubernetes cluster, follow these steps:
 
@@ -37,17 +39,17 @@ To set a system role for a node in your Kubernetes cluster, follow these steps:
 
 The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
-The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity){target=\_blank} using node labels to manage scheduling for cluster services (system).
+The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) using node labels to manage scheduling for cluster services (system).
 
 !!! Warning Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
 
 ### Worker nodes
 
-Run:ai worker nodes run user-submitted workloads and system-level DeamonSets required to operate. This can be managed via the Run:ai [Administrator CLI](../docs/advanced-setup/cli-admin-install.md), or [Kubectl](https://kubernetes.io/docs/reference/kubectl/){target=\_blank}.
+Run:ai worker nodes run user-submitted workloads and system-level DeamonSets required to operate. This can be managed via the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md), or [Kubectl](https://kubernetes.io/docs/reference/kubectl/).
 
 #### Run:ai Administrator CLI
 
-To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](../docs/advanced-setup/cli-admin-install.md), follow these steps:
+To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md), follow these steps:
 
 1. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
 2.  Run one of the following commands to set or remove a node’s role:
@@ -59,13 +61,15 @@ To set worker role for a node in your Kubernetes cluster via Run:ai [Administrat
 
 The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
-!!! Tip Use the --all flag to set or remove a role to all nodes.
+{% hint style="info" %}
+Use the --all flag to set or remove a role to all nodes.
+{% endhint %}
 
 #### Kubectl
 
 To set a worker role for a node in your Kubernetes cluster using Kubectl, follow these steps:
 
-1. Validate the `global.nodeAffinity.restrictScheduling` is set to true in the cluster’s [Configurations](../docs/advanced-setup/advanced-cluster-config.md).
+1. Validate the `global.nodeAffinity.restrictScheduling` is set to true in the cluster’s [Configurations](advanced-cluster-configurations.md).
 2. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
 3.  Run one of the following commands to label the node with its role:
 

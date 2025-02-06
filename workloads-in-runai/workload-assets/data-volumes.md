@@ -1,4 +1,4 @@
-# data-volumes
+# Data volumes
 
 Data volumes offer a powerful solution for storing, managing, and sharing AI training data within the Run:ai platform. They promote collaboration, simplify data access control, and streamline the AI development lifecycle.
 
@@ -6,16 +6,16 @@ Data volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 
 ### Why use a data volume?
 
-1. Sharing with multiple scopes\
+1. **Sharing with multiple scopes**\
    Unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters, encouraging data reuse and collaboration within the organization.
-2. Storage saving\
+2. **Storage saving**\
    A single copy of the data can be used across multiple [scopes](workload-assets.md#asset-scope)
 
 ### Typical use cases
 
-1. Sharing large data sets\
+1. **Sharing large data sets**\
    In large organizations, the data is often stored in a remote location, which can be a barrier for large model training. Even if the data is transferred into the cluster, sharing it easily with multiple users is still challenging. Data volumes can help share the data seamlessly, with maximum security and control.
-2. Sharing data with colleagues\
+2. **Sharing data with colleagues**\
    When sharing training results, generated data sets, or other artifacts with team members is needed, data volumes can help make the data available easily.
 
 ![data-volumes-architecture](img/data-volumes-arch.svg)
@@ -24,15 +24,15 @@ Data volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 
 To create a data volume, there must be a [project](../../manage-ai-initiatives/managing-your-organization/projects.md) with a PVC in its namespace.
 
-Working with data volumes is currently available using the API. To view the available actions, go to the [Data volumes](https://api-docs.run.ai/2.18/tag/Datavolumes) API reference.
+Working with data volumes is currently available using the API. To view the available actions, go to the [Data volumes](https://api-docs.run.ai/latest/tag/Datavolumes) API reference.
 
 ### Adding a new data volume
 
-Data volume creation is limited to [specific roles](./workload-assets.md#who-can-create-an-asset).
+Data volume creation is limited to [specific roles](workload-assets.md#who-can-create-an-asset).
 
 ### Adding scopes for a data volume
 
-Data volume sharing (adding scopes) is limited to [specific roles](./workload-assets.md#who-can-create-an-asset).
+Data volume sharing (adding scopes) is limited to [specific roles](workload-assets.md#who-can-create-an-asset).
 
 Once created, the data volume is available to its originating project (see the prerequisites above).
 

@@ -11,8 +11,11 @@ The Run:ai platform supports running workloads using NVIDIA MIG. Administrators 
 
 This guide explains how to configure MIG in each strategy to [submit workloads](../../workloads-in-runai/workloads.md). It also outlines the individual implications of each strategy and best practices for administrators.
 
-!!! Note \* Starting from v2.19, Dynamic MIG feature began a deprecation process and is now no longer supported. With Dynamic MIG, the Run:ai platform automatically configured MIG profiles according to on-demand user requests for different MIG profiles or memory fractions.\
-\* GPU fractions and memory fractions are not supported with MIG profiles. \* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md).
+{% hint style="info" %}
+* Starting from v2.19, Dynamic MIG feature began a deprecation process and is now no longer supported. With Dynamic MIG, the Run:ai platform automatically configured MIG profiles according to on-demand user requests for different MIG profiles or memory fractions.
+* GPU fractions and memory fractions are not supported with MIG profiles.
+* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see Introduction to workloads.
+{% endhint %}
 
 ## Before you start
 
@@ -51,8 +54,11 @@ A third-party workload submitted with a MIG profile of type Xg.Ygb (e.g. 3g.40gb
 
 ### Mixed strategy
 
-* Use mixed strategy with workloads that require diverse resources. Make sure to evaluate the workload requirements and plan accordingly.
+Use mixed strategy with workloads that require diverse resources. Make sure to evaluate the workload requirements and plan accordingly.
+
 * Configure individual MIG profiles on each node by using a limited set of MIG profile combinations to minimize complexity. Make sure to evaluate your requirements and node configurations.
 * Ensure Project quotas are allocated according to the MIG profile sizes.
 
-!!! Note Since MIG slices are a fixed size, once configured, changing MIG profiles requires administrative intervention.
+{% hint style="info" %}
+Since MIG slices are a fixed size, once configured, changing MIG profiles requires administrative intervention.
+{% endhint %}

@@ -60,44 +60,50 @@ To add a new inference workload:
        Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
        For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
        Once created, the new data source will be automatically selected.
-10. Select the **compute resource** for your inference workload \* Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
-    For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected. \* Optional: Set the **minimum and maximum** number of replicas to be scaled up and down to meet the changing demands of inference services. \* If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set **conditions for creating a new replica**. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.
-    * Select a **variable** - The variable's values will be monitored via the container's port.
-      * **Latency (milliseconds)**
-      * **Throughput (Requests/sec)**
-      * **Concurrency (Requests)**
-    * Set a **value** - This value is the threshold at which autoscaling is triggered
-    * Optional: Set when the replicas should be automatically __scaled down to zero__.
-      This allows the compute resources to be freed up when the model is inactive (i.e., there are no requests being sent)
-      When automatic scaling to zero is enabled, the minimum number of replicas set in the previous step, automatically changes to 0
-    *   Optional: Set the __order of priority__ for the __node pools__ on which the scheduler tries to run the workload.  
-    When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
-    *   Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
-    *   Click __+NODE POOL__ to add a new node pool from the list of node pools that were defined on the cluster.  
+10. Select the **compute resource** for your inference workload&#x20;
+    * Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
+      For a step-by-step guide on adding compute resources to the gallery, see [compute resources](../workloads-in-runai/workload-assets/compute-resources.md). Once created, the new compute resource will be automatically selected.&#x20;
+    * Optional: Set the **minimum and maximum** number of replicas to be scaled up and down to meet the changing demands of inference services.&#x20;
+    * If the number of minimum and maximum replicas are different, autoscaling will be triggered and you'll need to set **conditions for creating a new replica**. A replica will be created every time a condition is met. When a condition is no longer met after a replica was created, the replica will be automatically deleted to save resources.
+      * Select a **variable** - The variable's values will be monitored via the container's port.
+        * **Latency (milliseconds)**
+        * **Throughput (Requests/sec)**
+        * **Concurrency (Requests)**
+      * Set a **value** - This value is the threshold at which autoscaling is triggered
+    * Optional: Set when the replicas should be automatically **scaled down to zero**. This allows the compute resources to be freed up when the model is inactive (i.e., there are no requests being sent). When automatic scaling to zero is enabled, the minimum number of replicas set in the previous step, automatically changes to 0
+    * Optional: Set the **order of priority** for the **node pools** on which the scheduler tries to run the workload.\
+      When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
+      * Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
+      * Click **+NODE POOL** to add a new node pool from the list of node pools that were defined on the cluster.\
         To configure a new node pool and for additional information, see [node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md).
-*   Select a __node affinity__ to schedule the workload on a specific node type.  
-    If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.  
-    Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.  
-* Optional: Set __toleration(s)__ to allow the workload to be scheduled on a node with a matching taint
-    
-    !!! Note 
-        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
-
-    *   Click __+TOLERATION__
-    *   Enter a __key__
-    *   Select the operator
-        *   __Exists__ - If the key exists on the node, the effect will be applied.
-        *   __Equals__ - If the key and the value set below matches to the value on the node, the effect will be applied
-            *   Enter a __value__ matching the value on the node
-    *   Select the effect for the toleration
-        *   __NoExecute__ - Pods that do not tolerate this taint are evicted immediately.
-        *   __NoSchedule__ - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
-        *   __PreferNoSchedule__ - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
-        *   __Any__ - All effects above match.
-
-11\. **Optional - General settings**: \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
-Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation. \* Click **+ANNOTATION** \* Enter a **name** \* Enter a **value** \* Set **labels(s)**\
-Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. \* Enter a **name** \* Enter a **value** 12. Click **CREATE INFERENCE**
+    * Select a **node affinity** to schedule the workload on a specific node type.\
+      If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
+      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
+    * Optional: Set **toleration(s)** to allow the workload to be scheduled on a node with a matching taint !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
+      * Click **+TOLERATION**
+      * Enter a **key**
+      * Select the operator
+        * **Exists** - If the key exists on the node, the effect will be applied.
+        * **Equals** - If the key and the value set below matches to the value on the node, the effect will be applied
+          * Enter a **value** matching the value on the node
+      * Select the effect for the toleration
+        * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
+        * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
+        * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
+        * **Any** - All effects above match.
+11. **Optional - General settings**:
+    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
+    * Set **annotations(s)**\
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.&#x20;
+      * &#x20;Click **+ANNOTATION**&#x20;
+      * &#x20;Enter a **name**&#x20;
+      * &#x20;Enter a **value**&#x20;
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
+      * Click **+LABEL**
+      * &#x20;Enter a **name**&#x20;
+      * Enter a **value**&#x20;
+12. Click **CREATE INFERENCE**
 
 ## Managing and monitoring
 

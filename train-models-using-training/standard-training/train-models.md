@@ -127,11 +127,11 @@ To add a new training workload:
       * Click **+ANNOTATION**
         * Enter a **name**
         * Enter a **value**&#x20;
-        * Set **labels(s)**\
-          Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
-          * Click **+LABEL**
-          * Enter a **name**
-          * Enter a **value**
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
+      * Click **+LABEL**
+      * Enter a **name**
+      * Enter a **value**
 14. Click **CREATE TRAINING**
 
 ## Workload Policies
@@ -152,7 +152,7 @@ After the training workload is created, it is added to the [Workloads](../../wor
 
 ## Using CLI
 
-To view the available actions, see the training workload [CLI v2 reference](broken-reference) or the [CLI v1 reference](../../cli-reference/runai-submit.md).
+To view the available actions, see the training workload [CLI v2 reference](../../cli-reference/new-cli/) or the [CLI v1 reference](../../cli-reference/runai-submit.md).
 
 ## Using API
 

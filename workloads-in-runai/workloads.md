@@ -16,7 +16,7 @@ The Workloads table consists of the following columns:
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Workload               | The name of the workload                                                                                                                                                                                                                                                                                     |
 | Type                   | The workload type                                                                                                                                                                                                                                                                                            |
-| Preemptible            | Is the workload preemptible                                                                                                                                                                                                                                                                                  |
+| Preemptible            | Is the workload [preemptible](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#priority-and-preemption)                                                                                                                                                         |
 | Status                 | The different [phases](workloads.md#workload-status) in a workload life cycle.                                                                                                                                                                                                                               |
 | Project                | The project in which the workload runs.                                                                                                                                                                                                                                                                      |
 | Department             | The department that the workload is associated with. this column is visible only if the department toggle is enabled by your administrator.                                                                                                                                                                  |
@@ -88,10 +88,10 @@ Click one of the values in the Connection(s) column, to view the list of connect
 
 Click one of the values in the Data source(s) column, to view the list of data sources and their parameters.
 
-| Column      | Description                                           |
-| ----------- | ----------------------------------------------------- |
-| Data source | The name of the data source mounted to the workload   |
-| Type        | The [data source type](../docs/assets/datasources.md) |
+| Column      | Description                                            |
+| ----------- | ------------------------------------------------------ |
+| Data source | The name of the data source mounted to the workload    |
+| Type        | The [data source type](workload-assets/datasources.md) |
 
 ### Customizing the table view
 
@@ -113,15 +113,15 @@ Displays the workload status over time. It displays events describing the worklo
 
 #### Metrics
 
-* GPU utilization\
+* **GPU utilization**\
   Per GPU graph and an average of all GPUs graph, all on the same chart, along an adjustable period allows you to see the trends of all GPUs compute utilization (percentage of GPU compute) in this node.
-* GPU memory utilization\
+* **GPU memory utilization**\
   Per GPU graph and an average of all GPUs graph, all on the same chart, along an adjustable period allows you to see the trends of all GPUs memory usage (percentage of the GPU memory) in this node.
-* CPU compute utilization\
+* **CPU compute utilization**\
   The average of all CPUs’ cores compute utilization graph, along an adjustable period allows you to see the trends of CPU compute utilization (percentage of CPU compute) in this node.
-* CPU memory utilization\
+* **CPU memory utilization**\
   The utilization of all CPUs memory in a single graph, along an adjustable period allows you to see the trends of CPU memory utilization (percentage of CPU memory) in this node.
-* CPU memory usage\
+* **CPU memory usage**\
   The usage of all CPUs memory in a single graph, along an adjustable period allows you to see the trends of CPU memory usage (in GB or MB of CPU memory) in this node.
 * For GPUs charts - Click the GPU legend on the right-hand side of the chart, to activate or deactivate any of the GPU lines.
 * You can click the date picker to change the presented period
@@ -140,11 +140,11 @@ To create a new workload:
 
 1. Click **+NEW WORKLOAD**
 2. Select a workload type - Follow the links below to view the step-by-step guide for each workload type:
-   * [Workspace](../experiment-using-workspaces/running-workspace.md). Used for data preparation and model-building tasks.
-   * [Training](../train-models-using-training/standard-training/train-models.md). Used for standard training tasks of all sorts
-   * [Distributed Training](../train-models-using-training/distributed-training/distributed-training-models.md). Used for distributed tasks of all sorts
-   * [Inference](../deploy-models-using-inference/custom-inference.md). Used for inference and serving tasks
-   * Job (legacy). This type is displayed only if enabled by your Administrator, under General settings → Workloads → Workload policies
+   * [Workspace](../experiment-using-workspaces/running-workspace.md) - Used for data preparation and model-building tasks.
+   * [Training](../train-models-using-training/standard-training/train-models.md) - Used for standard training tasks of all sorts
+   * [Distributed Training](../train-models-using-training/distributed-training/distributed-training-models.md) - Used for distributed tasks of all sorts
+   * [Inference](../deploy-models-using-inference/custom-inference.md) - Used for inference and serving tasks
+   * Job (legacy). This type is displayed only if enabled by your Administrator, under **General settings** → Workloads → Workload policies
 3. Click **CREATE WORKLOAD**
 
 ## Stopping a workload
@@ -176,9 +176,9 @@ To connect to an application running in the workload (for example, Jupyter Noteb
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm the deletion
 
-!!! Note\
-Once a workload is deleted you can view it in the Deleted tab in the workloads view.\
-This tab is displayed only if enabled by your Administrator, under General settings → Workloads → Deleted workloads
+{% hint style="info" %}
+Once a workload is deleted you can view it in the Deleted tab in the workloads view. This tab is displayed only if enabled by your Administrator, under **General settings** → Workloads → Deleted workloads
+{% endhint %}
 
 ## Copy & Edit a workload
 
@@ -192,14 +192,14 @@ Go to the [Workloads](https://app.run.ai/api/docs#tag/Workloads) API reference t
 
 ## Troubleshooting
 
-To understand the condition of the workload, review the workload status in the Workload table. For more information, see check the workload’s [event history](../admin/maintenance/audit-log.md).
+To understand the condition of the workload, review the workload status in the Workload table. For more information, see check the [workload’s event history](../infrastructure-procedures/event-history.md).
 
 Listed below are a number of known issues when working with workloads and how to fix them:
 
-| Issue                                                                                            | Mediation                                                                                                                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cluster connectivity issues (there are issues with your connection to the cluster error message) | <p>Verify that you are on a network that has been granted access to the cluster.<br>Reach out to your cluster admin for instructions on verifying this.<br>If you are an admin, see the <a href="../admin/config/clusters.md#troubleshooting">troubleshooting</a> section in the cluster documentation</p> |
-| Workload in “Initializing” status for some time                                                  | <p>Check that you have access to the Container image registry.<br>Check the statuses of the pods in the pods’ modal.<br>Check the event history for more details</p>                                                                                                                                       |
-| Workload has been pending for some time                                                          | <p>Check that you have the required quota.<br>Check the project’s available quota in the project dialog.<br>Check that all services needed to run are bound to the workload.<br>Check the event history for more details.</p>                                                                              |
-| PVCs created using the K8s API or `kubectl` are not visible or mountable in Run:ai.              | <p>This is by design.<br>- Create a new data source of type PVC in the Run:ai UI<br>- In the Data mount section, select Existing PVC<br>- Select the PVC you created via the K8S API<br>You are now able to select and mount this PVC in your Run:ai submitted workloads.</p>                              |
-| Workload is not visible in the UI.                                                               | <p>Check that the workload hasn’t been deleted.<br>See the “Deleted” tab in the workloads view</p>                                                                                                                                                                                                         |
+| Issue                                                                                            | Mediation                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cluster connectivity issues (there are issues with your connection to the cluster error message) | <ul><li>Verify that you are on a network that has been granted access to the cluster.</li><li>Reach out to your cluster admin for instructions on verifying this.</li><li>If you are an admin, see the <a href="../infrastructure-procedures/clusters.md#troubleshooting">troubleshooting</a> section in the cluster documentation</li></ul> |
+| Workload in “Initializing” status for some time                                                  | <ul><li>Check that you have access to the Container image registry.</li><li>Check the statuses of the pods in the <a href="workloads.md#pods-associated-with-workload">pods’ dialog</a>.</li><li>Check the event history for more details</li></ul>                                                                                          |
+| Workload has been pending for some time                                                          | <ul><li>Check that you have the required quota.</li><li>Check the project’s available quota in the project dialog.</li><li>Check that all services needed to run are bound to the workload.</li><li>Check the event history for more details.</li></ul>                                                                                      |
+| PVCs created using the K8s API or `kubectl` are not visible or mountable in Run:ai               | <p>This is by design.</p><ol><li>Create a new data source of type PVC in the Run:ai UI</li><li>In the Data mount section, select Existing PVC</li><li>Select the PVC you created via the K8S API</li></ol><p>You are now able to select and mount this PVC in your Run:ai submitted workloads.</p>                                           |
+| Workload is not visible in the UI                                                                | <ul><li>Check that the workload hasn’t been deleted.</li><li>See the <a href="workloads.md#deleting-a-workload">“Deleted” tab</a> in the workloads view</li></ul>                                                                                                                                                                            |

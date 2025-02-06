@@ -1,4 +1,4 @@
-# Logs Collection
+# Logs collection
 
 This article provides instructions for IT administrators on collecting Run:ai logs for support, including prerequisites, CLI commands, and log file retrieval. It also covers enabling verbose logging for Prometheus and the Run:ai Scheduler.
 
@@ -20,10 +20,11 @@ To collect Run:ai logs, follow these steps:
 runai-adm collect-logs
 ```
 
-This command gathers all relevant Run:ai logs from the system and generate a compressed file.
-3. Locate the Generated File. After running the command, note the location of the generated compressed log file. You can retrieve and send this file to Run:ai Support for further troubleshooting.
+This command gathers all relevant Run:ai logs from the system and generate a compressed file. 3. Locate the Generated File. After running the command, note the location of the generated compressed log file. You can retrieve and send this file to Run:ai Support for further troubleshooting.
 
-!!! Note The tar file packages the logs of Run:ai components only. It does not include logs of researcher containers that may contain private information
+{% hint style="info" %}
+&#x20;The tar file packages the logs of Run:ai components only. It does not include logs of researcher containers that may contain private information.
+{% endhint %}
 
 ## Logs verbosity
 
@@ -43,51 +44,56 @@ Before you begin, ensure you have the following:
 
 ### Adding verbosity
 
-??? "Adding verbosity to Prometheus" To increase the logging verbosity for Prometheus, follow these steps:
+<details>
 
-````
-1. Edit the `RunaiConfig` to adjust Prometheus log levels. Copy the following command to your terminal:  
+<summary>Adding verbosity to Prometheus</summary>
 
-``` bash
-kubectl edit runaiconfig runai -n runai
-```
+To increase the logging verbosity for Prometheus, follow these steps:
 
-2. In the configuration file that opens, add or modify the following section to set the log level to `debug`:  
+1.  Edit the `RunaiConfig` to adjust Prometheus log levels. Copy the following command to your terminal:
 
-``` yaml
-spec:
-    prometheus:
+    ```bash
+    kubectl edit runaiconfig runai -n runai
+    ```
+2.  In the configuration file that opens, add or modify the following section to set the log level to `debug`:
+
+    ```bash
+    spec:
+      prometheus:
         spec:
-            logLevel: debug
-```
+          logLevel: debug
+    ```
+3.  Save the changes. To view the Prometheus logs with the new verbosity level, run:
 
-3. Save the changes. To view the Prometheus logs with the new verbosity level, run:  
+    ```bash
+    kubectl logs -n runai prometheus-runai-0 
+    ```
 
-``` bash
-kubectl logs -n runai prometheus-runai-0
-```
+    This command streams the last 100 lines of logs from Prometheus, providing detailed information useful for debu
 
-This command streams the last 100 lines of logs from Prometheus, providing detailed information useful for debugging.
-````
+</details>
 
-??? "Adding verbosity to the scheduler"
+<details>
 
-````
+<summary>Adding verbosity to the Scheduler</summary>
+
 To enable extended logging for the Run:ai scheduler:
 
-1. Edit the `RunaiConfig` to adjust scheduler verbosity:  
+1.  Edit the `RunaiConfig` to adjust scheduler verbosity:
 
-``` bash
-kubectl edit runaiconfig runai -n runai
-```
+    ```bash
+    kubectl edit runaiconfig runai -n runai
+    ```
+2.  Add or modify the following section under the scheduler settings:
 
-2.  Add or modify the following section under the scheduler settings:  
-
-``` yaml
-runai-scheduler:
-    args:
+    ```bash
+    runai-scheduler:
+      args:
         verbosity: 6
-```
+    ```
 
-This increases the verbosity level of the scheduler logs to provide more detailed output.
-````
+    This increases the verbosity level of the scheduler logs to provide more detailed output.
+
+**Warning:** Enabling verbose logging can significantly increase disk space usage. Monitor your storage capacity and adjust the verbosity level as necessary.
+
+</details>

@@ -1,8 +1,8 @@
-# Authentication & Authorization
+# Authentication & authorization
 
-Run:ai Authentication & Authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
+Run:ai authentication and authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
-Authentication verifies user identity during login, and Authorization assigns the user with specific permissions according to the assigned [access rules](accessrules.md).
+Authentication verifies user identity during login, and authorization assigns the user with specific permissions according to the assigned [access rules](accessrules.md).
 
 Authenticated access is required to use all aspects of the Run:ai interfaces, including the Run:ai platform, the Run:ai Command Line Interface (CLI) and APIs.
 
@@ -18,8 +18,8 @@ Run:ai offers SSO integration, enabling users to utilize existing organizational
 
 Run:ai supports three methods to set up SSO:
 
-* [SAML](sso/saml.md) 
-* [OpenID Connect (OIDC)](sso/openidconnect.md) 
+* [SAML](sso/saml.md)
+* [OpenID Connect (OIDC)](sso/openidconnect.md)
 * [OpenShift](sso/openshift.md)
 
 When using SSO, it is highly recommended to manage at least one local user, as a breakglass account (an emergency account), in case access to SSO is not possible.
@@ -30,7 +30,7 @@ Username and password access can be used when SSO integration is not possible.
 
 ### Secret key (for Application programmatic access)
 
-A Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access rules](accessrules.md).
+Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access rules](accessrules.md).
 
 ## Authorization
 
@@ -44,22 +44,18 @@ While Kubernetes RBAC is limited to a single cluster, Run:ai expands the scope o
 
 RBAC at Run:ai is configured using access rules.
 
-An access rule is the assignment of a role to a subject in a scope: `<Subject>` is a `<Role>` in a `<Scope>`.
+An access rule is the assignment of a [role](roles.md) to a subject in a [scope](../manage-ai-initiatives/adapting-ai-initiatives-1.md#scopes-in-an-organization): `<Subject>` is a `<Role>` in a `<Scope>`.
 
-* **Subject**  
-  * A user, a group, or an application assigned with the role  
-* **Role**  
-  * A set of permissions that can be assigned to subjects  
-  * A permission is a set of actions (view, edit, create and delete) over a Run:ai entity (e.g. projects, workloads, users)  
-    * For example, a role might allow a user to create and read Projects, but not update or delete them  
-    * Roles at Run:ai are system defined and cannot be created, edited or deleted  
-* **Scope**  
+* **Subject**
+  * A user, a group, or an application assigned with the role
+* **Role**
+  * A set of permissions that can be assigned to subjects
+  * A permission is a set of actions (view, edit, create and delete) over a Run:ai entity (e.g. projects, workloads, users)
+    * For example, a role might allow a user to create and read Projects, but not update or delete them
+    * Roles at Run:ai are system defined and cannot be created, edited or deleted
+* **Scope**
   * A scope is part of an organization in which a set of permissions (roles) is effective. Scopes include Projects, Departments, Clusters, Account (all clusters).
 
 Below is an example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
 
-
-
 ![](img/auth-rbac.png)
-
-

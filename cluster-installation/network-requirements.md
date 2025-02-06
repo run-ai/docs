@@ -1,4 +1,4 @@
-# Network Requirements
+# Network requirements
 
 The following network requirements are for the Run:ai cluster installation and usage.
 
@@ -10,7 +10,7 @@ Ensure the inbound and outbound rules are correctly applied to your firewall.
 
 ### Inbound rules
 
-To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../researcher-setup/researcher-setup-intro.md), or access specific UI features, certain inbound ports need to be open. TBD Sherin
+To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../cli-reference/), or access specific UI features, certain inbound ports need to be open.&#x20;
 
 | Name           | Description                     | Source  | Destination   | Port |
 | -------------- | ------------------------------- | ------- | ------------- | ---- |
@@ -27,7 +27,7 @@ For the Run:ai cluster installation and usage, certain **outbound** ports must b
 | Google Container Registry | Run:ai image repository    | All K8S nodes       | gcr.io/run-ai-prod                                   | 443  |
 | JFrog Artifactory         | Run:ai Helm repository     | Helm client machine | runai.jfrog.io                                       | 443  |
 
-The Run:ai installation has [software requirements](./system-requirements.md#software-requirements) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
+The Run:ai installation has [software requirements](system-requirements.md#software-requirements) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
 
 | Name                       | Description                                | Source        | Destination     | Port |
 | -------------------------- | ------------------------------------------ | ------------- | --------------- | ---- |

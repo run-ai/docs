@@ -53,13 +53,13 @@ To add a new workspace:
    * Set the **environment variable(s)**
      * Modify the existing environment variable(s). The existing environment variables may include **instructions** to guide you with entering the correct values.
      * (Optional) Add new variables
-     * Click **+ENVIRONMENT VARIABLE**
+       * Click **+ENVIRONMENT VARIABLE**
        * Enter a **name**
        * Select the **source** for the environment variable
          * **Custom**
            * Enter a value according to the provided instructions
-         * **Credentials** - Select select an existing credentials as the environment variable
-           * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../workloads-in-runai/workload-assets/credentials.md).
+         * **Credentials** - Select an existing credential as the environment variable
+           * Select a **credential name** - To add new credentials to the credentials list, and for additional information, see [Credentials](../workloads-in-runai/workload-assets/credentials.md).
            * Select a **secret key**
 9. Select the **compute resource** for your workspace
    * Select a compute resource or click **+NEW COMPUTE RESOURCE** to add a new compute resource to the gallery.\
@@ -74,7 +74,7 @@ To add a new workspace:
      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
    *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
-       !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
+       !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
 
        * Click **+TOLERATION**
        * Enter a **key**
@@ -111,14 +111,20 @@ To add a new workspace:
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
-12. **Optional - General settings**: \* Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time. \* Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100. \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
-    Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
-    * Click **+ANNOTATION**
-    * Enter a **name**
-    * Enter a **value** \* Set **labels(s)**\
-      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying.
-    * Enter a **name**
-    * Enter a **value**
+12. **Optional - General settings**:&#x20;
+    * &#x20;Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time.&#x20;
+    * Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.&#x20;
+    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
+    * Set **annotations(s)**\
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
+      * Click **+ANNOTATION**
+        * Enter a **name**
+        * Enter a **value**&#x20;
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
+      * Click **+LABEL**
+      * Enter a **name**
+      * Enter a **value**
 13. Click **CREATE WORKSPACE**
 
 ## Workload Policies
@@ -139,7 +145,7 @@ After the workspace is created, it is added to the [Workloads](../workloads-in-r
 
 ## Using CLI
 
-To view the available actions on workspaces, see the Workspaces [CLI v2 reference](broken-reference) or the [CLI v1 reference](../cli-reference/runai-submit.md).
+To view the available actions on workspaces, see the Workspaces [CLI v2 reference](../cli-reference/new-cli/) or the [CLI v1 reference](../cli-reference/runai-submit.md).
 
 ## Using API
 

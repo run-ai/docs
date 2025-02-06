@@ -1,4 +1,4 @@
-# Introduction to Workloads
+# Introduction to workloads
 
 Run:ai enhances visibility and simplifies [management](../docs/overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../platform-admin/aiinitiatives/overview.md).
 
@@ -36,31 +36,31 @@ Run:ai’s core mission is to optimize AI resource usage at scale. This is achie
 
 Different types of workloads have different levels of support. Understanding what capabilities are needed before selecting the workload type to work with is important. The table below details the level of support for each workload type in Run:ai. Run:ai workloads are fully supported with all of Run:ai advanced features and capabilities. While third-party workloads are partially supported. The list of capabilities can change between different Run:ai versions.
 
-| Functionality                                                                                      |    Workload Type    |           |           |                        |                       |
-| -------------------------------------------------------------------------------------------------- | :-----------------: | :-------: | :-------: | :--------------------: | --------------------- |
-|                                                                                                    |   Run:ai workloads  |           |           |                        | Third-party workloads |
-|                                                                                                    | Training - Standard | Workspace | Inference | Training - distributed |                       |
-| [Fairness](../Researcher/scheduling/the-runai-scheduler.md)                                        |          v          |     v     |     v     |            v           | v                     |
-| [Priority and preemption](../Researcher/scheduling/the-runai-scheduler.md#preemption)              |          v          |     v     |     v     |            v           | v                     |
-| [Over quota](../Researcher/scheduling/the-runai-scheduler.md#over quota-weight)                    |          v          |     v     |     v     |            v           | v                     |
-| [Node pools](../platform-admin/aiinitiatives/resources/node-pools.md)                              |          v          |     v     |     v     |            v           | v                     |
-| Bin packing / Spread                                                                               |          v          |     v     |     v     |            v           | v                     |
-| [Multi-GPU fractions](../Researcher/scheduling/fractions.md)                                       |          v          |     v     |     v     |            v           | v                     |
-| [Multi-GPU dynamic fractions](../Researcher/scheduling/dynamic-gpu-fractions.md)                   |          v          |     v     |     v     |            v           | v                     |
-| [Node level scheduler](../Researcher/scheduling/node-level-scheduler.md)                           |          v          |     v     |     v     |            v           | v                     |
-| [Multi-GPU memory swap](../Researcher/scheduling/gpu-memory-swap.md)                               |          v          |     v     |     v     |            v           | v                     |
-| Elastic scaling                                                                                    |          NA         |     NA    |     v     |            v           | v                     |
-| [Gang scheduling](../Researcher/scheduling/the-runai-scheduler.md#gang-scheduling)                 |          v          |     v     |     v     |            v           | v                     |
-| [Monitoring](../admin/maintenance/alert-monitoring.md)                                             |          v          |     v     |     v     |            v           | v                     |
-| [RBAC](../admin/authentication/authentication-overview.md#role-based-access-control-rbac-in-runai) |          v          |     v     |     v     |            v           |                       |
-| Workload awareness                                                                                 |          v          |     v     |     v     |            v           |                       |
-| [Workload submission](../workloads/overviews/managing-workloads.md)                                |          v          |     v     |     v     |            v           |                       |
-| [Workload actions (stop/run)](../workloads/overviews/managing-workloads.md)                        |          v          |     v     |     v     |            v           |                       |
-| [Workload Policies](../platform-admin/workloads/policies/overview.md)                              |          v          |     v     |     v     |            v           |                       |
-| [Scheduling rules](../platform-admin/aiinitiatives/org/scheduling-rules.md)                        |          v          |     v     |     v     |            v           |                       |
+| Functionality                                                                                                                                                |    Workload Type    |           |           |                        |                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-----------------: | :-------: | :-------: | :--------------------: | --------------------- |
+|                                                                                                                                                              |   Run:ai workloads  |           |           |                        | Third-party workloads |
+|                                                                                                                                                              | Training - Standard | Workspace | Inference | Training - distributed |                       |
+| [Fairness](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#fairness-fair-resource-distribution)                |          v          |     v     |     v     |            v           | v                     |
+| [Priority and preemption](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#priority-and-preemption)             |          v          |     v     |     v     |            v           | v                     |
+| [Over quota](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#over-quota)                                       |          v          |     v     |     v     |            v           | v                     |
+| [Node pools](../manage-ai-initiatives/managing-your-resources/node-pools.md)                                                                                 |          v          |     v     |     v     |            v           | v                     |
+| [Bin packing / Spread](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#placement-strategy-bin-pack-and-spread) |          v          |     v     |     v     |            v           | v                     |
+|                                                                                                                                                              |          v          |     v     |     v     |            v           | v                     |
+| [Multi-GPU dynamic fractions](../scheduling-and-resource-optimization/resource-optimization/dynamic-gpu-fractions.md)                                        |          v          |     v     |     v     |            v           | v                     |
+| [Node level scheduler](../scheduling-and-resource-optimization/resource-optimization/node-level-scheduler.md)                                                |          v          |     v     |     v     |            v           | v                     |
+| [Multi-GPU memory swap](../scheduling-and-resource-optimization/resource-optimization/gpu-memory-swap.md)                                                    |          v          |     v     |     v     |            v           | v                     |
+| Elastic scaling                                                                                                                                              |          NA         |     NA    |     v     |            v           | v                     |
+| [Gang scheduling](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#gang-scheduling)                             |          v          |     v     |     v     |            v           | v                     |
+| [Monitoring](../infrastructure-procedures/runai-system-monitoring.md)                                                                                        |          v          |     v     |     v     |            v           | v                     |
+| [RBAC](../authentication-and-authorization/authentication-and-authorization.md#role-based-access-control-rbac-in-run-ai)                                     |          v          |     v     |     v     |            v           |                       |
+| Workload awareness                                                                                                                                           |          v          |     v     |     v     |            v           |                       |
+| [Workload submission](workloads.md)                                                                                                                          |          v          |     v     |     v     |            v           |                       |
+| [Workload actions (stop/run)](workloads.md)                                                                                                                  |          v          |     v     |     v     |            v           |                       |
+| [Workload Policies](../policies/workload-policies.md)                                                                                                        |          v          |     v     |     v     |            v           |                       |
+| [Scheduling rules](../policies/scheduling-rules.md)                                                                                                          |          v          |     v     |     v     |            v           |                       |
 
-!!! Note **Workload awareness**
+{% hint style="info" %}
+**Workload awareness**
 
-```
 Specific workload-aware visibility, so that different pods are identified and treated as a single workload (for example GPU utilization, workload view, dashboards).
-```
+{% endhint %}

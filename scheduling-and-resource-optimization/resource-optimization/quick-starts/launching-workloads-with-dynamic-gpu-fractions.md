@@ -23,7 +23,7 @@ Browse to the provided Run:ai user interface and log in with your credentials.
 Log in using the following command. You will be prompted to enter your username and password:
 
 ```sh
-// runai login --help
+runai login --help
 ```
 {% endtab %}
 
@@ -65,26 +65,28 @@ To use the API, you will need to obtain a token as shown in [API authentication.
     * Click **CREATE ENVIRONMENT**
 
     The newly created jupyter-lab-name will be selected automatically
-9. Create a new “**request-limit**” compute resource
-   * Click **+NEW COMPUTE RESOURCE**
-   * Enter a **name** for the compute resource. The name must be unique.
-   * Set **GPU devices per pod** - 1
-   * Set **GPU memory per device**
-     * Select GB **-** fraction of a GPU device’s memory
-     * Set the memory **Request** to **4GB** (The workload will allocate 4GB of the GPU memory)
-     * Toggle **Limit** and set to **12**
-   * Optional: set the **CPU compute per pod** - 0.1 cores (default)
-   * Optional: set the **CPU memory per pod** - 100 MB (default)
-   * Select **More settings** and toggle **Increase shared memory size**
-   * Click **CREATE COMPUTE RESOURCE**
-10. The newly created request-limit compute resource will be selected automatically
-11. Click **CREATE WORKSPACE**
+9.  Create a new “**request-limit**” compute resource
+
+    * Click **+NEW COMPUTE RESOURCE**
+    * Enter a **name** for the compute resource. The name must be unique.
+    * Set **GPU devices per pod** - 1
+    * Set **GPU memory per device**
+      * Select GB **-** fraction of a GPU device’s memory
+      * Set the memory **Request** to **4GB** (The workload will allocate 4GB of the GPU memory)
+      * Toggle **Limit** and set to **12**
+    * Optional: set the **CPU compute per pod** - 0.1 cores (default)
+    * Optional: set the **CPU memory per pod** - 100 MB (default)
+    * Select **More settings** and toggle **Increase shared memory size**
+    * Click **CREATE COMPUTE RESOURCE**
+
+    The newly created request-limit compute resource will be selected automatically
+10. Click **CREATE WORKSPACE**
 
     After the workspace is created, it is added to the [workloads ](../../../workloads-in-runai/workloads.md)table
 {% endtab %}
 
 {% tab title="CLI v2" %}
-Copy the following command to your terminal. Make sure to update the below with the name of your project:
+Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
 ```sh
 runai project set "project-name"
@@ -97,7 +99,7 @@ runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example
 {% endtab %}
 
 {% tab title="API" %}
-Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
 ```sh
 curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -158,7 +160,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 
 {% tab title="CLI v2" %}
-Copy the following command to your terminal. Make sure to update the below with the name of your project:
+Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
 ```sh
 runai project set "project-name"
@@ -171,7 +173,7 @@ runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example
 {% endtab %}
 
 {% tab title="API" %}
-Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
 ```sh
 curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.

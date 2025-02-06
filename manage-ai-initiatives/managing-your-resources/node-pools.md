@@ -6,7 +6,7 @@ Node pools assist in managing heterogeneous resources effectively. A node pool i
 
 Typically, the grouped nodes share a common feature or property, such as GPU type or other HW capability (such as Infiniband connectivity), or represent a proximity group (i.e. nodes interconnected via a local ultra-fast switch). Researchers and ML Engineers would typically use node pools to run specific workloads on specific resource types.
 
-In the Run:ai Platform a user with the System administrator role can create, view, edit, and delete node pools. Creating a new node pool creates a new instance of the Run:ai [Scheduler](broken-reference). Workloads submitted to a node pool are scheduled using the node pool’s designated scheduler instance.
+In the Run:ai Platform a user with the System administrator role can create, view, edit, and delete node pools. Creating a new node pool creates a new instance of the Run:ai [Scheduler](../../scheduling-and-resource-optimization/scheduling/how-the-scheduler-works.md). Workloads submitted to a node pool are scheduled using the node pool’s designated scheduler instance.
 
 Once created, the new node pool is automatically assigned to all [projects](../managing-your-organization/projects.md) and [departments](../managing-your-organization/departments.md) with a quota of zero GPU resources, unlimited CPU resources, and over quota enabled (medium weight if over quota weight is enabled). This allows any project and department to use any node pool when [over quota is enabled](../adapting-ai-initiatives.md), even if the administrator has not assigned a quota for a specific node pool within that project or department.
 
@@ -18,7 +18,9 @@ The Node pools table can be found under **Resources** in the Run:ai platform.
 
 The Node pools table lists all the node pools defined in the Run:ai platform and allows you to manage them.
 
-!!! Note By default, the Run:ai platform includes a single node pool named ‘default’. When no other node pool is defined, all existing and new nodes are associated with the ‘default’ node pool. When deleting a node pool, if no other node pool matches any of the nodes’ labels, the node will be included in the default node pool.
+{% hint style="info" %}
+By default, the Run:ai platform includes a single node pool named ‘default’. When no other node pool is defined, all existing and new nodes are associated with the ‘default’ node pool. When deleting a node pool, if no other node pool matches any of the nodes’ labels, the node will be included in the default node pool.
+{% endhint %}
 
 ![](img/node-pools-view.png)
 
@@ -100,15 +102,15 @@ To create a new node pool:
      * Value must fit the following regular expression: `^(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?$`
    * A node pool is defined by a single key-value pair. You must not use different labels that are set on the same node by\
      different node pools, this situation may lead to unexpected results.
-   * Set the **GPU placement strategy**:
-     * **Bin-pack** - Place as many workloads as possible in each GPU and node to use fewer resources and maximize GPU and node vacancy.
-     * **Spread** Spread workloads across as many GPUs and nodes as possible to minimize the load and maximize the available resources per workload.
-     * GPU workloads are workloads that request both GPU and CPU resources
-   * Set the **CPU placement strategy**:
-     * **Bin-pack** - Place as many workloads as possible in each CPU and node to use fewer resources and maximize CPU and node vacancy.
-     * **Spread** - Spread workloads across as many CPUs and nodes as possible to minimize the load and maximize the available resources per workload.
-     * CPU workloads are workloads that request purely CPU resources
-   * Click **CREATE NODE POOL**
+4. Set the **GPU placement strategy**:
+   * **Bin-pack** - Place as many workloads as possible in each GPU and node to use fewer resources and maximize GPU and node vacancy.
+   * **Spread** Spread workloads across as many GPUs and nodes as possible to minimize the load and maximize the available resources per workload.
+   * GPU workloads are workloads that request both GPU and CPU resources
+5. Set the **CPU placement strategy**:
+   * **Bin-pack** - Place as many workloads as possible in each CPU and node to use fewer resources and maximize CPU and node vacancy.
+   * **Spread** - Spread workloads across as many CPUs and nodes as possible to minimize the load and maximize the available resources per workload.
+   * CPU workloads are workloads that request purely CPU resources
+6. Click **CREATE NODE POOL**
 
 ### Labeling nodes for node-pool grouping
 
@@ -139,7 +141,9 @@ To assign a label to nodes you want to group into a node pool, set a node label 
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm the deletion
 
-!!! Note The `default` node pool cannot be deleted. When deleting a node pool, if no other node pool matches any of the nodes’ labels, the node will be included in the default node pool.
+{% hint style="info" %}
+The default node pool cannot be deleted. When deleting a node pool, if no other node pool matches any of the nodes’ labels, the node will be included in the default node pool.
+{% endhint %}
 
 ## Using API
 

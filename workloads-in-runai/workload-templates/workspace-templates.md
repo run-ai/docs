@@ -1,4 +1,4 @@
-# workspace-templates
+# Workspace templates
 
 This article explains the procedure to manage templates.
 
@@ -10,7 +10,11 @@ The Templates table can be found under **Workload manager** in the Run:ai User i
 
 The Templates table provides a list of all the templates defined in the platform, and allows you to manage them.
 
-!!! Note "Flexible Management" It is also possible to manage templates directly for a specific user, application, project, or department.
+{% hint style="info" %}
+**Flexible Management**
+
+It is also possible to manage templates directly for a specific [user](../../authentication-and-authorization/users.md), [application](../../authentication-and-authorization/applications.md), [project](../../manage-ai-initiatives/managing-your-organization/projects.md), or [department](../../manage-ai-initiatives/managing-your-organization/departments.md).
+{% endhint %}
 
 ![](../workload-assets/img/template-table.png)
 

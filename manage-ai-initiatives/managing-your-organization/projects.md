@@ -106,23 +106,23 @@ To create a new Project:
    Project names must start with a letter and can only contain lower case Latin letters, numbers or a hyphen ('-’)
 4. **Namespace** associated with Project\
    Each project has an associated (Kubernetes) namespace in the cluster.\
-   All workloads under this project use this namespace.\
-   a. By default, Run:ai creates a namespace based on the Project name (in the form of `runai-<name>`)\
-   b. Alternatively, you can choose an existing namespace created for you by the cluster administrator
+   All workloads under this project use this namespace.
+   1. &#x20;By default, Run:ai creates a namespace based on the Project name (in the form of `runai-<name>`)
+   2. &#x20;Alternatively, you can choose an existing namespace created for you by the cluster administrator
 5. In the **Quota management** section, you can set the quota parameters and prioritize resources
    * **Order of priority**\
-     This column is displayed only if more than one node pool exists. The default order in which the [Scheduler](broken-reference) uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. Empty value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission
+     This column is displayed only if more than one node pool exists. The default order in which the [Scheduler](../../scheduling-and-resource-optimization/scheduling/how-the-scheduler-works.md) uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. **Empty** value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission
    * **Node pool**\
      This column is displayed only if more than one node pool exists. It represents the name of the node pool.
    * **GPU devices**\
      The number of GPUs you want to allocate for this project in this node pool (decimal number).
    * **CPUs (Cores)**\
-     This column is displayed only if CPU quota is enabled via the General settings.\
+     This column is displayed only if CPU quota is enabled via the **General settings**.\
      Represents the number of CPU cores you want to allocate for this project in this node pool (decimal number).
    * **CPU memory**\
-     This column is displayed only if CPU quota is enabled via the General settings.\
+     This column is displayed only if CPU quota is enabled via the **General settings**.\
      The amount of CPU memory you want to allocate for this project in this node pool (in Megabytes or Gigabytes).
-   * **Over quota / Over quota weight** - If over quota weight is enabled via the General settings then over quota weight is presented, otherwise over quota is presented
+   * **Over quota / Over quota weight** - If over quota weight is enabled via the **General settings** then over quota weight is presented, otherwise over quota is presented
      * **Over quota**\
        When enabled, the project can use non-guaranteed overage resources above its quota in this node pool. The amount of the non-guaranteed overage resources for this project is calculated proportionally to the project quota in this node pool. When disabled, the project cannot use more resources than the guaranteed quota in this node pool.
      * **Over quota weight** - Represents a weight used to calculate the amount of non-guaranteed overage resources a project can get on top of its quota in this node pool. All unused resources are split between projects that require the use of overage resources:
@@ -135,9 +135,7 @@ To create a new Project:
 
 !!! Note Setting the quota to 0 (either GPU, CPU, or CPU memory) and the over quota to ‘disabled’ or over quota weight to ‘none’ means the project is blocked from using those resources on this node pool.
 
-When no node pools are configured, you can set the same parameters but it is for the whole project, instead of per node pool.
-
-After node pools are created, you can set the above parameters **for each node-pool separately**.
+When no node pools are configured, you can set the same parameters but it is for the whole project, instead of per node pool. After node pools are created, you can set the above parameters **for each node-pool separately**.
 
 6. Set [Scheduling rules](../../policies/scheduling-rules.md) as required.
 7. Click **CREATE PROJECT**
@@ -202,15 +200,15 @@ To delete a project:
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm
 
-!!! Note \* **Clusters < v2.20**
+{% hint style="info" %}
+**Clusters < v2.20**
 
-```
-     Deleting a project does not delete its associated namespace, any of the running workloads using this namespace, or the policies defined for this project. However, any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
+Deleting a project does not delete its associated namespace, any of the workloads running using this namespace, or the policies defined for this project. However, any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
 
-* **Clusters >=v2.20**
-  
-     Deleting a project does not delete its associated namespace, but will attempt to delete its associated workloads and assets. Any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
-```
+**Clusters >=v2.20**
+
+Deleting a project does not delete its associated namespace, but will attempt to delete it’s associated workloads and assets. Any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
+{% endhint %}
 
 ### Using API
 

@@ -1,4 +1,4 @@
-# environments
+# Environments
 
 This article explains what environments are and how to create and use them.
 
@@ -20,21 +20,21 @@ The Environment table provides a list of all the environment defined in the plat
 
 The Environments table consists of the following columns:
 
-| Column                | Description                                                                                                                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Environment           | The name of the environment                                                                                                                                                                                 |
-| Description           | A description of the environment                                                                                                                                                                            |
-| Scope                 | The [scope](workload-assets.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram |
-| Image                 | The application or service to be run by the workload                                                                                                                                                        |
-| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on multiple nodes                                                                       |
-| Tool(s)               | The tools and connection types the environment exposes                                                                                                                                                      |
-| Workload(s)           | The list of existing workloads that use the environment                                                                                                                                                     |
-| Workload types        | The workload types that can use the environment (Workspace/ Training / Inference)                                                                                                                           |
-| Template(s)           | The list of workload templates that use this environment                                                                                                                                                    |
-| Created by            | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](environments.md#environments-created-by-runai) created by Run:ai                        |
-| Creation time         | The timestamp of when the environment was created                                                                                                                                                           |
-| Last updated          | The timestamp of when the environment was last updated                                                                                                                                                      |
-| Cluster               | The cluster with which the environment is associated                                                                                                                                                        |
+| Column                | Description                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Environment           | The name of the environment                                                                                                                                                          |
+| Description           | A description of the environment                                                                                                                                                     |
+| Scope                 | The [scope](workload-assets.md#asset-scope) of this environment within the organizational tree. Click the name of the scope to view the organizational tree diagram                  |
+| Image                 | The application or service to be run by the workload                                                                                                                                 |
+| Workload Architecture | This can be either standard for running workloads on a single node or distributed for running distributed workloads on multiple nodes                                                |
+| Tool(s)               | The tools and connection types the environment exposes                                                                                                                               |
+| Workload(s)           | The list of existing workloads that use the environment                                                                                                                              |
+| Workload types        | The workload types that can use the environment (Workspace/ Training / Inference)                                                                                                    |
+| Template(s)           | The list of workload templates that use this environment                                                                                                                             |
+| Created by            | The user who created the environment. By default Run:ai UI comes with [preinstalled environments created by Run:ai](environments.md#environments-created-by-runai) created by Run:ai |
+| Creation time         | The timestamp of when the environment was created                                                                                                                                    |
+| Last updated          | The timestamp of when the environment was last updated                                                                                                                               |
+| Cluster               | The cluster with which the environment is associated                                                                                                                                 |
 
 #### Tools associated with the environment
 
@@ -49,10 +49,10 @@ Click one of the values in the tools column to view the list of tools and their 
 
 Click one of the values in the Workload(s) column to view the list of workloads and their parameters.
 
-| Column   | Description                                                                                                                                               |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Workload | The workload that uses the environment                                                                                                                    |
-| Type     | The workload type (Workspace/Training/Inference)                                                                                                          |
+| Column   | Description                                                                                                 |
+| -------- | ----------------------------------------------------------------------------------------------------------- |
+| Workload | The workload that uses the environment                                                                      |
+| Type     | The workload type (Workspace/Training/Inference)                                                            |
 | Status   | Represents the workload lifecycle. See the full list of [workload status](../workloads.md#workload-status)) |
 
 #### Customizing the table view
@@ -147,7 +147,9 @@ To add a new environment:
 16. Optional: Select **Linux capabilities** - Grant certain privileges to a container without granting all the privileges of the root user.
 17. Click **CREATE ENVIRONMENT**
 
-!!! Note It is also possible to add environments directly when creating a specific workspace, training or inference workload.
+{% hint style="info" %}
+It is also possible to add environments directly when creating a specific workspace, training or inference workload.
+{% endhint %}
 
 ### Editing an environment
 
@@ -157,7 +159,9 @@ To edit an environment:
 2. Click **Edit**
 3. Click **SAVE ENVIRONMENT**
 
-!!! Note \* The already bound workload that is using this asset will not be affected. \* llm-server and chatbot-ui environments cannot be edited.
+{% hint style="info" %}
+The already bound workload that is using this asset will not be affected. \* llm-server and chatbot-ui environments cannot be edited.
+{% endhint %}
 
 ### Copying an environment
 
@@ -177,7 +181,9 @@ To delete an environment:
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm
 
-!!! Note The already bound workload that is using this asset will not be affected.
+{% hint style="info" %}
+&#x20;The already bound workload that is using this asset will not be affected.
+{% endhint %}
 
 ### Using API
 

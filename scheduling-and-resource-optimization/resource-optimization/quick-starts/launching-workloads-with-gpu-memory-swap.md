@@ -10,7 +10,7 @@ Before you start, make sure:
 
 * You have created a [project](../../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 1 GPU.
-* Dynamic GPU fractions are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+* [Dynamic GPU fractions](../dynamic-gpu-fractions.md) are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
 * GPU memory swap is enabled on at least one free node as detailed [here](../gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 * Host-based routing is configured.
 
@@ -41,8 +41,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
 7.  Click **CONTINUE**
 
     In the next step:
-8. Create an environment for your workload
-9.  Create an environment for your workload
+8.  Create an environment for your workload
 
     * Click **+NEW ENVIRONMENT**
     * Enter a **name** for the environment. The name must be unique.
@@ -56,7 +55,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
     * Click **CREATE ENVIRONMENT**
 
     The newly created environment will be selected automatically
-10. Create a new “**request-limit**” compute resource
+9.  Create a new “**request-limit**” compute resource
 
     * Click **+NEW COMPUTE RESOURCE**
     * Enter a **name** for the compute resource. The name must be unique.
@@ -71,7 +70,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
     * Click **CREATE COMPUTE RESOURCE**
 
     The newly created request-limit compute resource will be selected automatically
-11. Click **CREATE INFERENCE**
+10. Click **CREATE INFERENCE**
 
     After the inference workload is created, it is added to the [workloads](../../../workloads-in-runai/workloads.md) table
 {% endtab %}
@@ -207,7 +206,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% tab title="UI" %}
 1. Go to the Workload manager → Workloads
 2. Click COLUMNS and select **Connections**
-3. Select the link under the Connections column for the first inference workload created in Step 2
+3. Select the link under the Connections column for the first inference workload created in[ Step 2](launching-workloads-with-gpu-memory-swap.md#step-2-submitting-the-first-inference-workload)
 4. In the **Connections Associated with Workload form,** copy the URL under the **Address** column
 5.  Click **+NEW WORKLOAD** and select **Workspace**
 
@@ -293,7 +292,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% tab title="UI" %}
 1. Go to the Workload manager → Workloads
 2. Click COLUMNS and select **Connections**
-3. Select the link under the Connections column for the second inference workload created in Step 3
+3. Select the link under the Connections column for the second inference workload created in [Step 3](launching-workloads-with-gpu-memory-swap.md#step-3-submitting-the-second-inference-workload)
 4. In the **Connections Associated with Workload form,** copy the URL under the **Address** column
 5.  Click **+NEW WORKLOAD** and select **Workspace**
 
@@ -362,7 +361,8 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 
 {% tab title="API" %}
-To connect to the ChatbotUI tool, browse directly to <mark style="color:blue;">https://\<COMPANY-URL>/\<PROJECT-NAME>/workload-name</mark>
+1. To connect to the ChatbotUI tool, browse directly to <mark style="color:blue;">https://\<COMPANY-URL>/\<PROJECT-NAME>/workload-name</mark>
+2. Query both workspaces simultaneously and see them both responding. The one on CPU RAM at the time will take longer as it switches back to the GPU and vice versa.
 {% endtab %}
 {% endtabs %}
 

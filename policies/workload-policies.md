@@ -1,4 +1,4 @@
-# workload-policies
+# Workload policies
 
 This article explains the procedure to manage workload policies.
 
@@ -6,7 +6,9 @@ This article explains the procedure to manage workload policies.
 
 The Workload policies table can be found under **Policies** in the Run:ai platform.
 
-!!! Note Workload policies are disabled by default. If you cannot see Workload policies in the menu, then it must be enabled by your administrator, under General settings → Workloads → Policies
+{% hint style="info" %}
+Workload policies are disabled by default. If you cannot see Workload policies in the menu, then it must be enabled by your administrator, under **General settings** → Workloads → Policies
+{% endhint %}
 
 The Workload policies table provides a list of all the policies defined in the platform, and allows you to manage them.
 
@@ -62,7 +64,7 @@ Listed below are issues that might occur when creating or editing a policy via t
 | Cluster connectivity issues                                                                                        | There's no communication from cluster “cluster\_name“. Actions may be affected, and the data may be stale.                           | Verify that you are on a network that has been allowed access to the cluster. Reach out to your cluster administrator for instructions on verifying the issue. |
 | Policy can’t be applied due to a rule that is occupied by a different policy                                       | Field “field\_name” already has rules in cluster: “cluster\_id”                                                                      | Remove the rule from the new policy or adjust the old policy for the specific rule.                                                                            |
 | Policy is not visible in the UI                                                                                    | -                                                                                                                                    | Check that the policy hasn’t been deleted.                                                                                                                     |
-| Policy syntax is no valid                                                                                          | Add a valid policy YAML;json: unknown field "field\_name"                                                                            | For correct syntax check the [Policy YAML reference](./policy-yaml-reference.md) or the [Policy YAML examples](./policy-yaml-examples.md). |
+| Policy syntax is no valid                                                                                          | Add a valid policy YAML;json: unknown field "field\_name"                                                                            | For correct syntax check the [Policy YAML reference](policy-yaml-reference.md) or the [Policy YAML examples](policy-yaml-examples.md).                         |
 | Policy can’t be saved for some reason                                                                              | The policy couldn't be saved due to a network or other unknown issue. Download your draft and try pasting and saving it again later. | Possible cluster connectivity issues. Try updating the policy once again at a different time.                                                                  |
 | Policies were submitted before version 2.18, you upgraded to version 2.18 or above and wish to submit new policies | If you have policies and want to create a new one, first contact Run:ai support to prevent potential conflicts                       | Contact Run:ai support. R\&D can migrate your old policies to the new version.                                                                                 |
 
@@ -84,8 +86,9 @@ To view a policy:
    * **Source**\
      The origin of the applied policy (cluster, department or project)
 
-!!! Note\
-Some of the rules and defaults may be derived from policies of a parent cluster and/or department. You can see the source of each rule in the policy form. For more information, check the [Scope of effectiveness documentation](./policies-and-rules.md#scope-of-effectiveness)
+{% hint style="info" %}
+Some of the rules and defaults may be derived from policies of a parent cluster and/or department. You can see the source of each rule in the policy form. For more information, check the [Scope of effectiveness documentation](policies-and-rules.md#scope-of-effectiveness).
+{% endhint %}
 
 ### Deleting a policy
 

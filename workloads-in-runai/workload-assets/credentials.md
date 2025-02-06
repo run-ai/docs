@@ -1,8 +1,8 @@
-# credentials
+# Credentials
 
 This article explains what credentials are and how to create and use them.
 
-Credentials are a workload asset that simplify the complexities of Kubernetes secrets. They consist of and mask sensitive access information, such as passwords, tokens, and access keys, which are necessary for gaining access to various resources.
+Credentials are [workload assets](./) that simplify the complexities of Kubernetes secrets. They consist of and mask sensitive access information, such as passwords, tokens, and access keys, which are necessary for gaining access to various resources.
 
 Credentials are crucial for the security of AI workloads and the resources they require, as they restrict access to authorized users, verify identities, and ensure secure interactions. By enforcing the protection of sensitive data, credentials help organizations comply with industry regulations, fostering a secure environment overall.
 
@@ -18,19 +18,19 @@ The Credentials table provides a list of all the credentials defined in the plat
 
 The Credentials table comprises the following columns:
 
-| Column          | Description                                                                                                                                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Credentials     | The name of the credentials                                                                                                                                                                                      |
-| Description     | A description of the credentials                                                                                                                                                                                 |
-| Type            | The type of credentials, e.g., Docker registry                                                                                                                                                                   |
-| Status          | The different lifecycle phases and representation of the credentials’ condition                                                                                                                                  |
+| Column          | Description                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Credentials     | The name of the credentials                                                                                                                                              |
+| Description     | A description of the credentials                                                                                                                                         |
+| Type            | The type of credentials, e.g., Docker registry                                                                                                                           |
+| Status          | The different lifecycle [phases](../workloads.md#workload-status) and representation of the credentials’ condition                                                       |
 | Scope           | The [scope](workload-assets.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
-| Kubernetes name | The unique name of the credentials Kubernetes name as it appears in the cluster                                                                                                                                  |
-| Environment(s)  | The environment(s) that are associated with the credentials                                                                                                                                                      |
-| Data source(s)  | The private data source(s) that are accessed using the credentials                                                                                                                                               |
-| Created by      | The user who created the credentials                                                                                                                                                                             |
-| Creation time   | The timestamp of when the credentials were created                                                                                                                                                               |
-| Cluster         | The cluster with which the credentials are associated                                                                                                                                                            |
+| Kubernetes name | The unique name of the credentials Kubernetes name as it appears in the cluster                                                                                          |
+| Environment(s)  | The environment(s) that are associated with the credentials                                                                                                              |
+| Data source(s)  | The private data source(s) that are accessed using the credentials                                                                                                       |
+| Created by      | The user who created the credentials                                                                                                                                     |
+| Creation time   | The timestamp of when the credentials were created                                                                                                                       |
+| Cluster         | The cluster with which the credentials are associated                                                                                                                    |
 
 #### Credentials status
 
@@ -65,7 +65,9 @@ To add a new credential:
 3. Select the credential type from the list\
    Follow the step-by-step guide for each credential type:
 
-#### Docker registry
+<details>
+
+<summary>Docker registry</summary>
 
 These credentials allow users to authenticate and pull images from a Docker registry, enabling access to containerized applications and services.
 
@@ -77,7 +79,7 @@ After creating the credentials, it is used automatically when pulling images.
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
      This option applies when the purpose is to create credentials based on an existing secret
-     * Select a secret from the list (The list is empty if no secrets were created in advance)
+     * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
      A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
      * Enter the **username**, **password**, and **Docker registry URL**
@@ -85,7 +87,11 @@ After creating the credentials, it is used automatically when pulling images.
 
 After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-#### Access key
+</details>
+
+<details>
+
+<summary>Access key</summary>
 
 These credentials are unique identifiers used to authenticate and authorize access to cloud services or APIs, ensuring secure communication between applications. They typically consist of two parts:
 
@@ -100,7 +106,7 @@ The purpose of this credential type is to allow access to restricted data.
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
      This option applies when the purpose is to create credentials based on an existing secret
-     * Select a secret from the list (The list is empty if no secrets were created in advance)
+     * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
      A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
      * Enter the **Access key** and **Access secret**
@@ -108,7 +114,11 @@ The purpose of this credential type is to allow access to restricted data.
 
 After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-#### Username & password
+</details>
+
+<details>
+
+<summary>Username &#x26; password</summary>
 
 These credentials require a username and corresponding password to access various resources, ensuring that only authorized users can log in.
 
@@ -120,7 +130,7 @@ The purpose of this credential type is to allow access to restricted data.
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
      This option applies when the purpose is to create credentials based on an existing secret
-     * Select a secret from the list (The list is empty if no secrets were created in advance)
+     * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
      A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
      * Enter the **username** and **password**
@@ -128,7 +138,11 @@ The purpose of this credential type is to allow access to restricted data.
 
 After the credentials are created, check their status to monitor their proper creation across the selected scope.
 
-#### Generic secret
+</details>
+
+<details>
+
+<summary>Generic secret</summary>
 
 These credentials are a flexible option that consists of multiple keys & values and can store various sensitive information, such as API keys or configuration data, to be used securely within applications.
 
@@ -140,11 +154,13 @@ The purpose of this credential type is to allow access to restricted data.
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
      This option applies when the purpose is to create credentials based on an existing secret
-     * Select a secret from the list (The list is empty if no secrets were created in advance)
+     * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
      A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
      * Click **+KEY & VALUE** - to add key/value pairs to store in the new secret
 5. Click **CREATE CREDENTIALS**
+
+</details>
 
 ### Editing credentials
 
@@ -161,7 +177,9 @@ To delete a credential:
 2. Click **DELETE**
 3. In the dialog, click **DELETE** to confirm
 
-!!! Note Credentials cannot be deleted if they are being used by a workload and template.
+{% hint style="info" %}
+Credentials cannot be deleted if they are being used by a workload and template.
+{% endhint %}
 
 ### Using credentials
 
@@ -180,40 +198,44 @@ To use the secret directly from within the container, you can choose between the
 
     a. By adding it to the Environment asset. b. By adding it ad-hoc as part of the workload.
 
-***
-
 ### Creating secrets in advance
 
 Add secrets in advance to be used when creating credentials via the Run:ai UI.
 
 Follow the steps below for each required scope:
 
-\=== "Cluster scope" 1. Create the secret in the Run:ai namespace (runai) 2. To authorize Run:ai to use the secret, label it: `run.ai/cluster-wide: "true"` 3. Label the secret with the correct credential type: 1. Docker registry - `run.ai/resource: "docker-registry"` 2. Access key - `run.ai/resource: "access-key"` 3. Username and password - `run.ai/resource: "password"` 4. Generic secret - `run.ai/resource: "generic"` ֿ
+**Cluster scope:**
 
-\=== "Department scope"
+1. Create the secret in the Run:ai namespace (`runai`)
+2. To authorize Run:ai to use the secret, label it: `run.ai/cluster-wide: "true"`
+3. Label the secret with the correct credential type:
+   1. Docker registry - `run.ai/resource: "docker-registry"`
+   2. Access key - `run.ai/resource: "access-key"`
+   3. Username and password - `run.ai/resource: "password"`
+   4. Generic secret - `run.ai/resource: "generic"`
 
-```
-1.  Create the secret in the Run:ai namespace (runai)
-2.  To authorize Run:ai to use the secret, label it: `run.ai/department: "<department id>"`
-3.  Label the secret with the correct credential type:
-    1.  Docker registry - `run.ai/resource: "docker-registry"`
-    2.  Access key - `run.ai/resource: "access-key"`
-    3.  Username and password - `run.ai/resource: "password"`
-    4.  Generic secret - `run.ai/resource: "generic"`
-```
+The secret is now displayed for that scope in the list of existing secrets.&#x20;
 
-\=== "Project scope"
+**Department scope:**
 
-```
-1.  Create the secret in the project’s namespace
-2.  Label the secret with the correct credential type:
-    1.  Docker registry - `run.ai/resource: "docker-registry"`
-    2.  Access key - `run.ai/resource: "access-key"`
-    3.  Username and password - `run.ai/resource: "password"`
-    4.  Generic secret - `run.ai/resource: "generic"`
-```
+1. Create the secret in the Run:ai namespace (`runai`)
+2. To authorize Run:ai to use the secret, label it: `run.ai/department: "<department_id>"`
+3. Label the secret with the correct credential type:
+   1. Docker registry - `run.ai/resource: "docker-registry"`
+   2. Access key - `run.ai/resource: "access-key"`
+   3. Username and password - `run.ai/resource: "password"`
+   4. Generic secret - `run.ai/resource: "generic"`
 
-The secret is now displayed for that scope in the list of existing secrets.
+The secret is now displayed for that scope in the list of existing secrets.&#x20;
+
+**Project scope:**
+
+1. Create the secret in the project’s namespace
+2. Label the secret with the correct credential type:
+   1. Docker registry - `run.ai/resource: "docker-registry"`
+   2. Access key - `run.ai/resource: "access-key"`
+   3. Username and password - `run.ai/resource: "password"`
+   4. Generic secret - `run.ai/resource: "generic"`
 
 ### Using API
 

@@ -1,4 +1,4 @@
-# Shared storage 
+# Shared storage
 
 Shared storage is a critical component in AI and machine learning workflows, particularly in scenarios involving distributed training and shared datasets. In AI and ML environments, data must be readily accessible across multiple nodes, especially when training large models or working with vast datasets. Shared storage enable seamless access to data, ensuring that all nodes in a distributed training setup can read and write to the same datasets simultaneously. This setup not only enhances efficiency but is also crucial for maintaining consistency and speed in high-performance computing environments.
 
@@ -8,7 +8,7 @@ While Run:ai Platform supports a variety of remote data sources, such as Git and
 
 When implementing shared storage in Kubernetes, there are two primary approaches:
 
-* Utilizing the [Kubernetes Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/) of your storage provider (Recommended)  
+* Utilizing the [Kubernetes Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/) of your storage provider (Recommended)
 * Using a direct NFS (Network File System) mount
 
 Run:ai [Data Sources](../workloads-in-runai/workload-assets/datasources.md) support both direct NFS mount and Kubernetes Storage Classes.
@@ -19,15 +19,12 @@ Storage classes in Kubernetes defines how storage is provisioned and managed. Th
 
 Run:ai data sources such as [Persistent Volume Claims (PVC)](../workloads-in-runai/workload-assets/datasources.md#pvc) and [Data Volumes](../workloads-in-runai/workload-assets/data-volumes.md) leverage storage class to manage and allocate storage efficiently. This ensures that the most suitable storage option is always accessible, contributing to the efficiency and performance of AI workloads.
 
-!!! Note
-    Run:ai lists all available storage classes in the Kubernetes cluster, making it easy for users to select the appropriate storage. Additionally, [policies](../policies/policies-and-rules.md) can be set to restrict or enforce the use of specific storage classes, to help maintain compliance with organizational standards and optimize resource utilization.
-
-??? "Kubernetes 1.23 (old)"
-    When using Kubernetes 1.23, Data Source of PVC type does not work using a Storage Class with the property `volumeBindingMode` equals to `WaitForFirstConsumer`
+{% hint style="info" %}
+Run:ai lists all available storage classes in the Kubernetes cluster, making it easy for users to select the appropriate storage. Additionally, [policies](../policies/policies-and-rules.md) can be set to restrict or enforce the use of specific storage classes, to help maintain compliance with organizational standards and optimize resource utilization.
+{% endhint %}
 
 ### Direct NFS mount
 
 Direct NFS allows you to mount a shared file system directly across multiple nodes in your Kubernetes cluster. This method provides a straightforward way to share data among nodes and is often used for simple setups or when a dedicated NFS server is available.
 
 However, using NFS can present challenges related to security and control. Direct NFS setups might lack the fine-grained control and security features available with storage class.
-

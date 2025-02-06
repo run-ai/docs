@@ -13,6 +13,8 @@ Before you start, make sure:
 
 ## Step 1: Logging in
 
+{% include "../../../.gitbook/includes/logging-in-for-quick-starts.md" %}
+
 ## Step 2: Submitting a standard training workload
 
 {% tabs %}
