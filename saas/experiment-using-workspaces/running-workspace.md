@@ -91,6 +91,7 @@ To add a new workspace:
 
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.   
+      
       * Click **+VOLUME**
       * Select the **storage class**
         * **None** - Proceed without defining a storage class.
