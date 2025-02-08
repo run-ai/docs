@@ -78,40 +78,39 @@ To add a new workspace:
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
 
-       * Click **+TOLERATION**
-       * Enter a **key**
-       * Select the operator 
-         * **Exists** - If the key exists on the node, the effect will be applied.
-         * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
-         
-           * Enter a **value** matching the value on the node
+        * Click **+TOLERATION**
+        * Enter a **key**
+        * Select the operator 
+           * **Exists** - If the key exists on the node, the effect will be applied.
+           * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
+            * Enter a **value** matching the value on the node
 
         * Select the effect for the toleration
-          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
-          * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
-          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
-          * **Any** - All effects above match.
+            * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
+            * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
+            * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
+            * **Any** - All effects above match.
 
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.
     
-    * Click **+VOLUME**
-    * Select the **storage class**
-      * **None** - Proceed without defining a storage class.
-      * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes.\
+     * Click **+VOLUME**
+     * Select the **storage class**
+       * **None** - Proceed without defining a storage class.
+       * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes.\
         To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../infrastructure-procedures/shared-storage.md)
-    * Select the **access mode(s)** (multiple modes can be selected)
-      * **Read-write by one node** - The volume can be mounted as read-write by a single node.
-      * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.
-      * **Read-write by many nodes** - The volume can be mounted as read-write by many nodes.
-    * Set the **claim size** and its **units**
-    * Select the **volume mode**
-      * **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files.
-      * **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system.
-    * Set the **Container path** with the volume target location
-    * Set the volume persistency
-      * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
-      * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
+     * Select the **access mode(s)** (multiple modes can be selected)
+       * **Read-write by one node** - The volume can be mounted as read-write by a single node.
+       * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.
+       * **Read-write by many nodes** - The volume can be mounted as read-write by many nodes.
+     * Set the **claim size** and its **units**
+     * Select the **volume mode**
+       * **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files.
+       * **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system.
+     * Set the **Container path** with the volume target location
+     * Set the volume persistency
+       * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
+       * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
 
 11. Optional: Select **data sources** for your workspace\
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
