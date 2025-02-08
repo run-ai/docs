@@ -107,8 +107,8 @@ To create a new Project:
 4. **Namespace** associated with Project\
    Each project has an associated (Kubernetes) namespace in the cluster.\
    All workloads under this project use this namespace.
-   1. &#x20;By default, Run:ai creates a namespace based on the Project name (in the form of `runai-<name>`)
-   2. &#x20;Alternatively, you can choose an existing namespace created for you by the cluster administrator
+   1. By default, Run:ai creates a namespace based on the Project name (in the form of `runai-<name>`)
+   2. Alternatively, you can choose an existing namespace created for you by the cluster administrator
 5. In the **Quota management** section, you can set the quota parameters and prioritize resources
    * **Order of priority**\
      This column is displayed only if more than one node pool exists. The default order in which the [Scheduler](../../scheduling-and-resource-optimization/scheduling/how-the-scheduler-works.md) uses node pools to schedule a workload. This means the Scheduler first tries to allocate resources using the highest priority node pool, then the next in priority, until it reaches the lowest priority node pool list, then the Scheduler starts from the highest again. The Scheduler uses the Project list of prioritized node pools, only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or by the user. **Empty** value means the node pool is not part of the Project’s default node pool priority list, but a node pool can still be chosen by the admin policy or a user during workload submission
@@ -133,7 +133,9 @@ To create a new Project:
        * **Lowest**\
          over quota weight ‘lowest’ has a unique behavior, because its weight is 0, it can only use over quota (unused overage) resources if no other project needs them, and any project with a higher over quota weight can snap the average resources at any time.
 
-!!! Note Setting the quota to 0 (either GPU, CPU, or CPU memory) and the over quota to ‘disabled’ or over quota weight to ‘none’ means the project is blocked from using those resources on this node pool.
+{% hint style="info" %}
+Setting the quota to 0 (either GPU, CPU, or CPU memory) and the over quota to ‘disabled’ or over quota weight to ‘none’ means the project is blocked from using those resources on this node pool.
+{% endhint %}
 
 When no node pools are configured, you can set the same parameters but it is for the whole project, instead of per node pool. After node pools are created, you can set the above parameters **for each node-pool separately**.
 
@@ -189,8 +191,9 @@ To view the policy of a project:
    * **Rule** - Set up constraints on workload policy fields
    * **Source** - The origin of the applied policy (cluster, department or project)
 
-!!! Note\
+{% hint style="info" %}
 The policy affecting the project consists of rules and defaults. Some of these rules and defaults may be derived from policies of a parent cluster and/or department (source). You can see the source of each rule in the policy form.
+{% endhint %}
 
 ### Deleting a project
 

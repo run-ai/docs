@@ -55,7 +55,7 @@ Before you start, make sure you have a project.
 To create a new report:
 
 1. Click **+NEW REPORT**
-2. Enter a name for the report (if the name already exists, you will need to choose a different one)
+2. Enter a **name** for the report (if the name already exists, you will need to choose a different one)
 3. Optional: Provide a description of the report
 4. Set the report’s data collection period
    * Start date - The date at which the report data commenced

@@ -41,7 +41,9 @@ The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
 The Run:ai cluster applies [Kubernetes Node Affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) using node labels to manage scheduling for cluster services (system).
 
-!!! Warning Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
+{% hint style="warning" %}
+Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
+{% endhint %}
 
 ### Worker nodes
 

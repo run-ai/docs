@@ -13,7 +13,7 @@ Before you start, make sure:
 
 ### Step 1: Logging in
 
-{% include "../../../.gitbook/includes/logging-in-for-quick-starts.md" %}
+{% include "../../../.gitbook/includes/step-1-logging-in.md" %}
 
 ### Step 2: Submitting a workspace
 
@@ -44,7 +44,7 @@ Before you start, make sure:
          * Enter **command** - `start-notebook.sh`
          * Enter **arguments** - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
 
-         Note: If -based routing is enabled on the cluster, enter the  `--NotebookApp.token=''` only.
+         Note: If -based routing is enabled on the cluster, enter the `--NotebookApp.token=''` only.
      * Click **CREATE ENVIRONMENT**
    * The newly created jupyter-lab will be selected automatically
 9. Select the **‘small-fraction’** compute resource for your workspace (GPU % of devices: 10)
@@ -156,17 +156,5 @@ To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;"
 ### Next Steps
 
 Manage and monitor your newly created workspace using the [workloads](../../../workloads-in-runai/workloads.md) table.
-
-
-
-
-
-
-
-
-
-
-
-
 
 >

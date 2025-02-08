@@ -2,7 +2,7 @@
 
 Deploying Run:ai in mission-critical environments requires proper monitoring and maintenance of resources to ensure workloads run and are deployed as expected.
 
-Details on how to monitor different parts of the physical resources in your Kubernetes system, including [clusters](../docs/config/clusters.md) and [nodes](../platform-admin/aiinitiatives/resources/nodes.md), can be found in the monitoring and maintenance section. Adjacent configuration and troubleshooting sections also cover [high availability](../docs/config/ha.md), [restoring](../docs/config/dr.md) and [securing](../docs/config/secure-cluster.md) clusters, [collecting logs](../docs/troubleshooting/logs-collection.md), and [reviewing audit logs](../docs/infrastructure-procedures/audit-log.md) to meet compliance requirements.
+Details on how to monitor different parts of the physical resources in your Kubernetes system, including [clusters](clusters.md) and [nodes](../manage-ai-initiatives/managing-your-resources/nodes.md), can be found in the monitoring and maintenance section. Adjacent configuration and troubleshooting sections also cover high availability, [restoring](cluster-restore.md) and [securing](secure-your-cluster.md) clusters, [collecting logs](logs-collection.md), and [reviewing audit logs](event-history.md) to meet compliance requirements.
 
 In addition to monitoring Run:ai resources, it is also highly recommended to monitor Run:ai runs on Kubernetes, which manages containerized applications. In particular, focus on three main layers:
 
@@ -15,7 +15,7 @@ This is the highest layer and includes the parts of Run:ai pods, which run in co
 This layer includes the main Kubernetes system that runs and manages Run:ai components. Important elements to monitor include:
 
 * The health of the cluster and nodes (machines in the cluster).
-* The status of key Kubernetes services, such as the API server. For detailed information on managing clusters, see the [official Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/){target=\_blank}.
+* The status of key Kubernetes services, such as the API server. For detailed information on managing clusters, see the [official Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/).
 
 ## Host infrastructure
 

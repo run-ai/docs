@@ -6,7 +6,9 @@ This article explains the steps required to install the Run:ai cluster on a DGX 
 
 The Run:ai installer is a wizard that simplifies the deployment of the Run:ai cluster on DGX. The Run:ai installer is installed via the BCM cluster wizard when the cluster is created.
 
-!!! Note For custom deployment options, check the [Install using Helm](install-using-helm.md).
+{% hint style="info" %}
+For custom deployment options, check the [Install using Helm](install-using-helm.md).
+{% endhint %}
 
 ## Before installation
 
@@ -29,13 +31,17 @@ An application secret key is required to connect the cluster to the Run:ai Platf
 1. Follow the [Adding a new cluster](install-using-helm.md) setup instructions. **Do not follow the Installation instructions**.
 2. Once cluster instructions are displayed, find the `controlPlane.clientSecret` flag in the displayed Helm command, copy and save its value.
 
-!!! Note For **DGX Bundle customers**, installing their first Run:ai cluster - the Application secret key will be provided by the Run:ai support team.
+{% hint style="info" %}
+For **DGX Bundle customers**, installing their first Run:ai cluster, the Application secret key will be provided by the Run:ai support team.
+{% endhint %}
 
 ### TLS certificate
 
 A TLS private and public keys for the cluster’s [Fully Qualified Domain Name (FQDN)](system-requirements.md#fully-qualified-domain-name-fqdn) are required for HTTP access to the cluster
 
-!!! Important TLS Certificate must be trusted. Self-signed certificates are not supported.
+{% hint style="info" %}
+TLS Certificate must be trusted. Self-signed certificates are not supported.
+{% endhint %}
 
 ## Installation
 

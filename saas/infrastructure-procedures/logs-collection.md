@@ -9,7 +9,7 @@ To collect Run:ai logs, follow these steps:
 ### Prerequisites
 
 * Ensure that you have administrator-level access to the Kubernetes cluster where Run:ai is installed.
-* The Run:ai [Administrator Command-Line Interface](../docs/config/cli-admin-install.md) (CLI) must be installed. TBD Sherin
+* The Run:ai [Administrator Command-Line Interface](../cli-reference/new-cli/administrator-cli.md) (CLI) must be installed.&#x20;
 
 #### Step-by-Step Instructions
 
@@ -20,10 +20,12 @@ To collect Run:ai logs, follow these steps:
 runai-adm collect-logs
 ```
 
-This command gathers all relevant Run:ai logs from the system and generate a compressed file. 3. Locate the Generated File. After running the command, note the location of the generated compressed log file. You can retrieve and send this file to Run:ai Support for further troubleshooting.
+This command gathers all relevant Run:ai logs from the system and generate a compressed file.
+
+3. Locate the Generated File. After running the command, note the location of the generated compressed log file. You can retrieve and send this file to Run:ai Support for further troubleshooting.
 
 {% hint style="info" %}
-&#x20;The tar file packages the logs of Run:ai components only. It does not include logs of researcher containers that may contain private information.
+The tar file packages the logs of Run:ai components only. It does not include logs of researcher containers that may contain private information.
 {% endhint %}
 
 ## Logs verbosity

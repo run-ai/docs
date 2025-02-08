@@ -42,7 +42,7 @@ AI initiatives require compute resources such as GPUs and CPUs to run. Compute r
 
 Another aspect of resource management is how to group your resources effectively, especially in large environments, or environments that are made of heterogeneous types of hardware, where some users need to use specific hardware types, or where other users should avoid occupying critical hardware of some users or initiatives.
 
-Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources (\[over quota]\(../scheduling-and-resource-optimization/runai-scheduler-concepts-and-principles.md#over quota)) per node pool.
+Run:ai assists you with all of these complex issues by allowing you to map your cluster resources to node pools, then map each Project and Department a quota allocation per node pool, and set access rights to unused resources ([over quota](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md#over-quota)) per node pool.
 
 ### Grouping your resources
 

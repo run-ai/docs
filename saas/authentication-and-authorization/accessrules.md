@@ -56,7 +56,9 @@ To add a new access rule:
 5. Select a scope
 6. Click **SAVE RULE**
 
-!!!Note An access rule consists of a single subject with a single role in a single scope. To assign multiple roles or multiple scopes to the same subject, multiple access rules must be added.
+{% hint style="info" %}
+An access rule consists of a single subject with a single role in a single scope. To assign multiple roles or multiple scopes to the same subject, multiple access rules must be added.
+{% endhint %}
 
 ## Editing an access rule
 

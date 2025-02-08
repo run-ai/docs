@@ -21,7 +21,9 @@ To guarantee fair quality of service between different workloads using the same 
 
 The OOMKiller capability requires adding CAP\_KILL capabilities to the dynamic GPU fractions and to the Run:ai core scheduling module (toolkit daemon). This capability is enabled by default.
 
-!!! Note Dynamic GPU fractions is enabled by default in the cluster. Disabling dynamic GPU fractions in [`runaiconfig`](../../advanced-setup/advanced-cluster-configurations.md) removes the CAP\_KILL capability.
+{% hint style="info" %}
+Dynamic GPU fractions is enabled by default in the cluster. Disabling dynamic GPU fractions in [`runaiconfig`](../../advanced-setup/advanced-cluster-configurations.md) removes the CAP\_KILL capability.
+{% endhint %}
 
 ## Multi-GPU dynamic fractions
 

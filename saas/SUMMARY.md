@@ -1,6 +1,5 @@
 # Table of contents
 
-
 * [Overview](README.md)
   * [Welcome to Run:ai](Overview/welcome-to-runai.md)
 * [Cluster installation](cluster-installation/README.md)
@@ -137,5 +136,4 @@
   * [How to authenticate to the API](api-reference/rest-auth.md)
   * [Run:ai REST API](api-reference/admin-rest-api/overview.md)
   * [Metrics via API](api-reference/metrics/README.md)
-    * [Metrics API](api-reference/metrics/metrics.md)
     * [Metrics and telemetry](api-reference/metrics/metrics-api.md)

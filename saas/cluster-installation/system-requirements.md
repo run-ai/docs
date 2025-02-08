@@ -288,8 +288,6 @@ kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/s
 kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
 ```
 
-!!! Note
-
 {% hint style="info" %}
 If you require both the MPI Operator and Kubeflow Training Operator, follow the steps below:
 

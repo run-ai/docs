@@ -6,11 +6,13 @@ The following network requirements are for the Run:ai cluster installation and u
 
 Set out below are the domains to whitelist and ports to open for installation, upgrade, and usage of the application and its management.
 
+{% hint style="info" %}
 Ensure the inbound and outbound rules are correctly applied to your firewall.
+{% endhint %}
 
 ### Inbound rules
 
-To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../cli-reference/), or access specific UI features, certain inbound ports need to be open.&#x20;
+To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../cli-reference/), or access specific UI features, certain inbound ports need to be open.
 
 | Name           | Description                     | Source  | Destination   | Port |
 | -------------- | ------------------------------- | ------- | ------------- | ---- |
@@ -36,7 +38,9 @@ The Run:ai installation has [software requirements](system-requirements.md#softw
 | Red Hat Container Registry | Prometheus Operator image repository       | All K8S nodes | quay.io         | 443  |
 | Docker Hub Registry        | Training Operator image repository         | All K8S nodes | docker.io       | 443  |
 
-!!! Note If you are using an HTTP proxy, contact Run:ai support for further instructions.
+{% hint style="info" %}
+&#x20;If you are using an HTTP proxy, contact Run:ai support for further instructions
+{% endhint %}
 
 ## Internal network
 

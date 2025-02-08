@@ -66,7 +66,9 @@ You can remove the identity provider configuration:
 3. On the identity provider card, click **Remove identity provider**
 4. In the dialog, click **REMOVE** to confirm the action
 
-!!! Note To avoid losing access, removing the identity provider must be carried out by a local user.
+{% hint style="info" %}
+To avoid losing access, removing the identity provider must be carried out by a local user.
+{% endhint %}
 
 ## Troubleshooting
 
@@ -76,7 +78,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "403 - Sorry, we can’t let you see this page. Something about permissions…" </summary>
+<summary><strong>Error:</strong> "403 - Sorry, we can’t let you see this page. Something about permissions…"</summary>
 
 **Description:** The authenticated user is missing permissions
 
@@ -97,7 +99,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
+<summary><strong>Error:</strong> "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
 
 **Description:** Authentication failed because email attribute was not found.
 
@@ -110,11 +112,11 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "Unexpected error when authenticating with identity provider"</summary>
+<summary><strong>Error:</strong> "Unexpected error when authenticating with identity provider"</summary>
 
 **Description:** User authentication failed
 
-<img src="../../.gitbook/assets/Screenshot 2025-02-06 at 15.17.36.png" alt="" data-size="original">
+<img src="../../.gitbook/assets/Screenshot%202025-02-06%20at%2015.17.36.png" alt="" data-size="original">
 
 **Mitigation**: Validate the the configured OIDC Scopes exist and match the Identity Provider’s available scopes
 
@@ -128,10 +130,6 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** User authentication failed
 
-
-
-
-
 **Mitigation**:
 
 1. Validate the the configured OIDC scope exists in the Identity Provider
@@ -139,13 +137,11 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Advanced:** Look for the specific error message in the URL address
 
-
-
 </details>
 
 <details>
 
-<summary>Error: "Client not found" </summary>
+<summary><strong>Error:</strong> "Client not found"</summary>
 
 **Description:** OIDC Client ID was not found in the Identity Provider
 

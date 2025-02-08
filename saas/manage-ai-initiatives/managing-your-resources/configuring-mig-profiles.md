@@ -14,7 +14,7 @@ This guide explains how to configure MIG in each strategy to [submit workloads](
 {% hint style="info" %}
 * Starting from v2.19, Dynamic MIG feature began a deprecation process and is now no longer supported. With Dynamic MIG, the Run:ai platform automatically configured MIG profiles according to on-demand user requests for different MIG profiles or memory fractions.
 * GPU fractions and memory fractions are not supported with MIG profiles.
-* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see Introduction to workloads.
+* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md).
 {% endhint %}
 
 ## Before you start
@@ -39,7 +39,7 @@ When deploying MIG using mixed strategy, each GPU in a [node](nodes.md) can be c
 
 In mixed strategy, physical GPU devices continue to be displayed as physical GPU devices by CUDA, and each MIG profile is shown individually. The Run:ai platform identifies the physical GPU devices normally, however, MIG profiles are not visible in the UI or node APIs.
 
-When submitting third-party workloads with this strategy, the user should explicitly specify the exact requested MIG profile (for example, nvidia.com/gpu.product: A100-SXM4-40GB-MIG-3g.20gb). The Run:ai [Scheduler](broken-reference) finds a node that can provide this specific profile and binds it to the workload.
+When submitting third-party workloads with this strategy, the user should explicitly specify the exact requested MIG profile (for example, nvidia.com/gpu.product: A100-SXM4-40GB-MIG-3g.20gb). The Run:ai [Scheduler](broken-reference/) finds a node that can provide this specific profile and binds it to the workload.
 
 A third-party workload submitted with a MIG profile of type Xg.Ygb (e.g. 3g.40gb or 2g.20gb) is considered as consuming X GPUs. These X GPUs will be deducted from the workload’s project quota of GPUs. For example, a 3g.40gb profile deducts 3 GPUs from the associated [Project’s quota](../managing-your-organization/projects.md), while 2g.20gb deducts 2 GPUs from the associated Project’s quota. This is done to maintain a logical ratio according to the characteristics of the MIG profile.
 
@@ -54,8 +54,7 @@ A third-party workload submitted with a MIG profile of type Xg.Ygb (e.g. 3g.40gb
 
 ### Mixed strategy
 
-Use mixed strategy with workloads that require diverse resources. Make sure to evaluate the workload requirements and plan accordingly.
-
+* Use mixed strategy with workloads that require diverse resources. Make sure to evaluate the workload requirements and plan accordingly.
 * Configure individual MIG profiles on each node by using a limited set of MIG profile combinations to minimize complexity. Make sure to evaluate your requirements and node configurations.
 * Ensure Project quotas are allocated according to the MIG profile sizes.
 

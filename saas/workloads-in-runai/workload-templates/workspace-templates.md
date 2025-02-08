@@ -72,6 +72,6 @@ To delete a template:
 2. Click **DELETE**
 3. Confirm you want to delete the template
 
-### Using API\*\*
+### Using API
 
 Go to the [Workload template](https://app.run.ai/api/docs#tag/Template) API reference to view the available actions

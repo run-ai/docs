@@ -13,20 +13,20 @@ Before you start, make sure:
 
 ## Step 1: Logging in
 
-{% include "../../../.gitbook/includes/logging-in-for-quick-starts.md" %}
+{% include "../../../.gitbook/includes/step-1-logging-in.md" %}
 
 ## Step 2: Submitting a standard training workload
 
 {% tabs %}
 {% tab title="UI" %}
-1. Go to the Workload manager → Workloads&#x20;
+1. Go to the Workload manager → Workloads
 2. Click **+NEW WORKLOAD** and select **Training**
 3. Select under which **cluster** to create the workload
-4. Select the **project** in which your workload will run&#x20;
-5. Under **Workload architecture**, select **Standard**&#x20;
+4. Select the **project** in which your workload will run
+5. Under **Workload architecture**, select **Standard**
 6. Select a preconfigured template or select the **Start from scratch** to launch a new workload quickly
-7. &#x20;Enter a **name** for the standard training workload (if the name already exists in the project, you will be requested to submit a different name)&#x20;
-8. &#x20;Click **CONTINUE**&#x20;
+7. Enter a **name** for the standard training workload (if the name already exists in the project, you will be requested to submit a different name)
+8. Click **CONTINUE**
 9. Click **+NEW ENVIRONMENT**
    * Enter **quickstart** as the name
    * Enter `runai.jfrog.io/demo/quickstart` as the **Image URL**

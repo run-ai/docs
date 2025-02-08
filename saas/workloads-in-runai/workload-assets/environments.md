@@ -148,7 +148,7 @@ To add a new environment:
 17. Click **CREATE ENVIRONMENT**
 
 {% hint style="info" %}
-It is also possible to add environments directly when creating a specific workspace, training or inference workload.
+It is also possible to add data sources directly when creating a specific [workspace](../../experiment-using-workspaces/), [training](../../train-models-using-training/) or [inference](../../deploy-models-using-inference/) workload.
 {% endhint %}
 
 ### Editing an environment
@@ -160,7 +160,8 @@ To edit an environment:
 3. Click **SAVE ENVIRONMENT**
 
 {% hint style="info" %}
-The already bound workload that is using this asset will not be affected. \* llm-server and chatbot-ui environments cannot be edited.
+* The already bound workload that is using this asset will not be affected.
+* llm-server and chatbot-ui environments cannot be edited.
 {% endhint %}
 
 ### Copying an environment
@@ -182,7 +183,7 @@ To delete an environment:
 3. On the dialog, click **DELETE** to confirm
 
 {% hint style="info" %}
-&#x20;The already bound workload that is using this asset will not be affected.
+The already bound workload that is using this asset will not be affected.
 {% endhint %}
 
 ### Using API

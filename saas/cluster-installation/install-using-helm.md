@@ -60,7 +60,9 @@ Follow these instructions to install using Helm.
 
 Follow the steps below to add a new cluster.
 
-!!! Note When adding a cluster for the first time, the New Cluster form automatically opens when you log-in to the Run:ai platform. Other actions are prevented, until the cluster is created.
+{% hint style="info" %}
+When adding a cluster for the first time, the New Cluster form automatically opens when you log-in to the Run:ai platform. Other actions are prevented, until the cluster is created.
+{% endhint %}
 
 If this is your first cluster and you have completed the New Cluster form, start at step 3. Otherwise, start at step 1.
 
@@ -79,7 +81,9 @@ If this is your first cluster and you have completed the New Cluster form, start
 2. Click **DONE**
 3. The cluster is displayed in the table with the status **Waiting to connect**. Once installation is complete, the cluster status changes to **Connected**.
 
-!!! Note To customize the installation based on your environment, see [Customize cluster installation](customized-installation.md).
+{% hint style="info" %}
+To customize the installation based on your environment, see [Customize cluster installation](customized-installation.md).
+{% endhint %}
 
 ## Troubleshooting
 

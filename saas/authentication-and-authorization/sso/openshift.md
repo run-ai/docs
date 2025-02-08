@@ -65,7 +65,9 @@ You can remove the identity provider configuration:
 3. On the identity provider card, click **Remove identity provider**
 4. In the dialog, click **REMOVE** to confirm the action
 
-!!! Note To avoid losing access, removing the identity provider must be carried out by a local user.
+{% hint style="info" %}
+To avoid losing access, removing the identity provider must be carried out by a local user.
+{% endhint %}
 
 ## Troubleshooting
 
@@ -75,7 +77,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "403 - Sorry, we can’t let you see this page. Something about permissions…" <strong>Description:</strong> The authenticated user is missing permissions</summary>
+<summary><strong>Error:</strong> "403 - Sorry, we can’t let you see this page. Something about permissions…"</summary>
 
 **Description:** The authenticated user is missing permissions
 
@@ -96,26 +98,22 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
+<summary><strong>Error:</strong> "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
 
 **Description:** Authentication failed because email attribute was not found.
 
 **Mitigation**:
 
 1. Validate email attribute is available in the configured OIDC Scopes
-2. Validate the user’s email attribute is mapped correctly&#x20;
+2. Validate the user’s email attribute is mapped correctly
 
 </details>
 
 <details>
 
-<summary>Error: "Unexpected error when authenticating with identity provider"</summary>
+<summary><strong>Error:</strong> "Unexpected error when authenticating with identity provider"</summary>
 
 **Description:** User authentication failed
-
-
-
-
 
 **Mitigation**: Validate the the configured OIDC Scopes exist and match the Identity Provider’s available scopes
 
@@ -125,13 +123,9 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "Unexpected error when authenticating with identity provider (SSO sign-in is not available)"</summary>
+<summary><strong>Error:</strong> "Unexpected error when authenticating with identity provider (SSO sign-in is not available)"</summary>
 
 **Description:** User authentication failed
-
-
-
-
 
 **Mitigation**:
 
@@ -144,11 +138,9 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>Error: "unauthorized_client"</summary>
+<summary><strong>Error:</strong> "unauthorized_client"</summary>
 
 **Description:** OIDC Client ID was not found in the OpenShift IDP
-
-
 
 **Mitigation**: Validate the the configured Client ID matches the value in the OAuthclient Kubernetes object
 

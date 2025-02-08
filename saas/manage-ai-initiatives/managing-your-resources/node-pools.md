@@ -50,7 +50,9 @@ The Node pools table consists of the following columns:
 
 Click one of the values in the Workload(s) column, to view the list of workloads and their parameters.
 
-!!! Note This column is only viewable if your role in the Run:ai platform gives you read access to workloads, even if you are allowed to view workloads, you can only view the workloads within your allowed scope. This means, there might be more pods running on this node than appear in the list your are viewing.
+{% hint style="info" %}
+This column is only viewable if your role in the Run:ai platform gives you read access to workloads, even if you are allowed to view workloads, you can only view the workloads within your allowed scope. This means, there might be more pods running on this node than appear in the list your are viewing.
+{% endhint %}
 
 | Column                        | Description                                                                                                                                                                                |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -69,8 +69,6 @@ Before stopping a worker node for maintenance, perform the following steps:
 
 #### Unplanned downtime
 
-I
-
 In the event of unplanned downtime:
 
 1. **Automatic restart**\

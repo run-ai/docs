@@ -10,7 +10,9 @@ For example, in an academic environment, a department can be the Physics Departm
 
 The Departments table can be found under **Organization** in the Run:ai platform.
 
-!!! Note Departments are disabled, by default. If you cannot see Departments in the menu, then it must be enabled by your Administrator, under **General settings** → Resources → Departments
+{% hint style="info" %}
+Departments are disabled, by default. If you cannot see Departments in the menu, then it must be enabled by your Administrator, under **General settings** → Resources → Departments
+{% endhint %}
 
 The Departments table lists all departments defined for a specific cluster and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 
@@ -150,9 +152,10 @@ To view the policy of a department:
    * **Rule** - Set up constraints on workload policy fields
    * **Source** - The origin of the applied policy (cluster, department or project)
 
-!!! Notes\
-\* The policy affecting the department consists of rules and defaults. Some of these rules and defaults may be derived from the policies of a parent cluster (source). You can see the source of each rule in the policy form.\
-\* A policy set for a department affects all subordinated projects and their workloads, according to the policy workload type
+{% hint style="info" %}
+* The policy affecting the department consists of rules and defaults. Some of these rules and defaults may be derived from the policies of a parent cluster (source). You can see the source of each rule in the policy form.
+* A policy set for a department affects all subordinated projects and their workloads, according to the policy workload type
+{% endhint %}
 
 ### Deleting a department
 
@@ -160,7 +163,9 @@ To view the policy of a department:
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm the deletion
 
-!!! Note Deleting a department permanently deletes its subordinated projects, any assets created in the scope of this department, and any of its subordinated projects such as compute resources, environments, data sources, templates, and credentials. However, workloads running within the department’s subordinated projects, or the policies defined for this department or its subordinated projects - remain intact and running.
+{% hint style="info" %}
+Deleting a department permanently deletes its subordinated projects, any assets created in the scope of this department, and any of its subordinated projects such as compute resources, environments, data sources, templates, and credentials. However, workloads running within the department’s subordinated projects, or the policies defined for this department or its subordinated projects - remain intact and running.
+{% endhint %}
 
 ### Reviewing a department
 

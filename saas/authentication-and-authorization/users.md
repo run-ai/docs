@@ -52,7 +52,9 @@ To create a local user:
    * **Temporary password** to be used on first sign-in
 5. Click **DONE**
 
-!!! Note The temporary password is visible only at the time of user’s creation, and must be changed after the first sign-in
+{% hint style="info" %}
+The temporary password is visible only at the time of user’s creation, and must be changed after the first sign-in.
+{% endhint %}
 
 ## Adding an access rule to a user
 
@@ -94,7 +96,9 @@ To reset a user’s password:
 2. Click **DELETE**
 3. In the dialog, click **DELETE** to confirm the deletion
 
-!!!Note To ensure administrative operations are always available, at least one local user with System Administrator role should exist.
+{% hint style="info" %}
+To ensure administrative operations are always available, at least one local user with System Administrator role should exist.
+{% endhint %}
 
 ## Using API
 

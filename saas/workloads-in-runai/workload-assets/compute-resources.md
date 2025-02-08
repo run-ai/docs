@@ -67,28 +67,31 @@ To add a new compute resource:
 7. Set the resource types needed within a single node\
    (the Run:ai scheduler tries to match a single node that complies with the compute resource for each of the workload’s pods)
    * **GPU**
-     * **GPU devices per pod**\
-       The number of devices (physical GPUs) per pod\
-       (for example, if you requested 3 devices per pod and the running workload using this compute resource consists of 3 pods, there are 9 physical GPU devices used in total)
+     *   **GPU devices per pod**\
+         The number of devices (physical GPUs) per pod\
+         (for example, if you requested 3 devices per pod and the running workload using this compute resource consists of 3 pods, there are 9 physical GPU devices used in total)
 
-{% hint style="info" %}
-* When setting it to zero, the workload using this computer resource neither requests or uses GPU resources while running
-* You can set any number of GPU devices and specify the memory requirement to any portion size (1..100), or memory size value using GB or MB units per device
-{% endhint %}
+         {% hint style="info" %}
+         * When setting it to zero, the workload using this computer resource neither requests or uses GPU resources while running
+         * You can set any number of GPU devices and specify the memory requirement to any portion size (1..100), or memory size value using GB or MB units per device
+         {% endhint %}
 
 * **GPU memory per device**
   * Select the memory request format
     * **% (of device) -** Fraction of a GPU device’s memory
-      * **MB (memory size) -** An explicit GPU memory unit
-      * **GB (memory size) -** An explicit GPU memory unit
+    * **MB (memory size) -** An explicit GPU memory unit
+    *   **GB (memory size) -** An explicit GPU memory unit
+
         * Set the memory **Request -** The minimum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives this amount of GPU memory for each device(s) the pod utilizes
         * Optional: Set the memory **Limit** - The maximum amount of GPU memory that is provisioned per device. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of GPU memory for each device(s) the pod utilizes.\
-          To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.\
-          !!! Note
-        * GPU memory limit is disabled by default. If you cannot see the **Limit** toggle in the compute resource form, then it must be enabled by your Administrator, under General settings → Resources → GPU resource optimization
-        * When a **Limit** is set and is bigger than the **Request**, the scheduler allows each pod to reach the maximum amount of GPU memory in an opportunistic manner (only upon availability).
-        * If the GPU Memory Limit is bigger that the Request the pod is prone to be killed by the Run:ai toolkit (out of memory signal). The greater the difference between the GPU memory used and the request, the higher the risk of being killed
-        * If GPU resource optimization is turned off, the minimum and maximum are in fact equal
+          To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.
+
+        {% hint style="info" %}
+        - GPU memory limit is disabled by default. If you cannot see the **Limit** toggle in the compute resource form, then it must be enabled by your Administrator, under General settings → Resources → GPU resource optimization
+        - When a **Limit** is set and is bigger than the **Request**, the scheduler allows each pod to reach the maximum amount of GPU memory in an opportunistic manner (only upon availability).
+        - If the GPU Memory Limit is bigger that the Request the pod is prone to be killed by the Run:ai toolkit (out of memory signal). The greater the difference between the GPU memory used and the request, the higher the risk of being killed
+        - If GPU resource optimization is turned off, the minimum and maximum are in fact equal.
+        {% endhint %}
 * **CPU**
   * **CPU compute per pod**
     * Select the units for the CPU compute (Cores / Millicores)
@@ -99,24 +102,28 @@ To add a new compute resource:
   * **CPU memory per pod**
     * Select the units for the CPU memory (MB / GB)
     * Set the CPU memory **Request -** The minimum amount of CPU memory that is provisioned per pod. This means that any pod of a running workload that uses this compute resource, receives this amount of CPU memory for each pod.
-    * Optional: Set the CPU memory **Limit** - The maximum amount of CPU memory that is provisioned per pod. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of CPU memory.\
-      To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.\
-      By default, the limit is set to “Unlimited” - Meaning that the pod may consume all the node's free CPU memory resources.
+    *   Optional: Set the CPU memory **Limit** - The maximum amount of CPU memory that is provisioned per pod. This means that any pod of a running workload that uses this compute resource, receives **at most** this amount of CPU memory.\
+        To set a Limit, first enable the limit toggle. The limit value must be equal to or higher than the request.\
+        By default, the limit is set to “Unlimited” - Meaning that the pod may consume all the node's free CPU memory resources.
+
+
+
+        {% hint style="info" %}
+        If the CPU Memory **Limit** is bigger that the **Request** the pod is prone to be killed by the operating system (out of memory signal). The greater the difference between the CPU memory used and the request, the higher the risk of being killed.
+        {% endhint %}
+
+8. Optional: More settings
+
+* **Increase shared memory size**\
+  When enabled, the shared memory size available to the pod is increased from the default 64MB to the node's total available memory or the CPU memory limit, if set above.
+* **Set extended resource(s)**\
+  Click **+EXTENDED RESOURCES** to add resource/quantity pairs. For more information on how to set extended resources, see the [Extended resources](https://kubernetes.io/docs/tasks/configure-pod-container/extended-resource/) and [Quantity](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/) guides
+
+9. Click **CREATE COMPUTE RESOURCE**
 
 {% hint style="info" %}
-If the CPU Memory **Limit** is bigger that the **Request** the pod is prone to be killed by the operating system (out of memory signal). The greater the difference between the CPU memory used and the request, the higher the risk of being killed.
+It is also possible to add data sources directly when creating a specific [workspace](../../experiment-using-workspaces/), [training](../../train-models-using-training/) or [inference](../../deploy-models-using-inference/) workload.
 {% endhint %}
-
-
-
-1. Optional: More settings
-   * **Increase shared memory size**\
-     When enabled, the shared memory size available to the pod is increased from the default 64MB to the node's total available memory or the CPU memory limit, if set above.
-   * **Set extended resource(s)**\
-     Click **+EXTENDED RESOURCES** to add resource/quantity pairs. For more information on how to set extended resources, see the [Extended resources](https://kubernetes.io/docs/tasks/configure-pod-container/extended-resource/) and [Quantity](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/) guides
-2.  Click **CREATE COMPUTE RESOURCE**
-
-    !!! Note It is also possible to add compute resources directly when creating a specific Workspace, training or inference workload.
 
 ### Editing a compute resource
 
@@ -126,7 +133,9 @@ To edit a compute resource:
 2. Click **Edit**
 3. Click **SAVE COMPUTE RESOURCE**
 
-!!! Note The already bound workload that is using this asset will not be affected.
+{% hint style="info" %}
+The already bound workload that is using this asset will not be affected.
+{% endhint %}
 
 ### Copying a compute resource
 
@@ -144,7 +153,9 @@ To make a copy of an existing compute resource:
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm
 
-!!! Note The already bound workload that is using this asset will not be affected.
+{% hint style="info" %}
+The already bound workload that is using this asset will not be affected.
+{% endhint %}
 
 ### Using API
 

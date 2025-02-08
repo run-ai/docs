@@ -1,4 +1,4 @@
-# API Authentication
+# How to authenticate to the API
 
 The following document explains how to authenticate with Run:ai APIs.
 
@@ -20,9 +20,19 @@ Replace `<runai_url>` below with:
 * For SaaS installations, use `<tenant-name>.run.ai`
 * For self-hosted use the Run:ai user interface URL.
 
-\=== "cURL" `bash curl -X POST \ 'https://<runai_url>/api/v1/token' \ --header 'Accept: */*' \ --header 'Content-Type: application/json' \ --data-raw '{ "grantType":"client_credentials", "clientId":"<CLIENT ID>", "clientSecret" : "<CLIENT SECRET>" }'`
+{% tabs %}
+{% tab title="cURL" %}
+```
+curl -X POST \ 'https://<runai_url>/api/v1/token' \ --header 'Accept: */*' \ --header 'Content-Type: application/json' \ --data-raw '{ "grantType":"client_credentials", "clientId":"<CLIENT ID>", "clientSecret" : "<CLIENT SECRET>" }'
+```
+{% endtab %}
 
-\=== "Python" `python import requests import json reqUrl = "https://<runai_url>/api/v1/token" headersList = { "Accept": "*/*", "Content-Type": "application/json" } payload = json.dumps({ "grantType":"client_credentials", "clientId":"<CLIENT ID>", "clientSecret" : "<CLIENT SECRET>" }) response = requests.request("POST", reqUrl, data=payload, headers=headersList) print(response.text)`
+{% tab title="Python" %}
+```python
+import requests import json reqUrl = "https://<runai_url>/api/v1/token" headersList = { "Accept": "*/*", "Content-Type": "application/json" } payload = json.dumps({ "grantType":"client_credentials", "clientId":"<CLIENT ID>", "clientSecret" : "<CLIENT SECRET>" }) response = requests.request("POST", reqUrl, data=payload, headers=headersList) print(response.text)
+```
+{% endtab %}
+{% endtabs %}
 
 ### Response
 

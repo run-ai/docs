@@ -17,7 +17,7 @@ Run:ai provides various security-related permissions that can be customized to f
 | Secret propagation               | Determines whether Run:ai should propagate secrets across the cluster. Relevant for organizations with specific security protocols for managing sensitive data.              |
 | Disabling Kubernetes limit range | Chooses whether to disable the Kubernetes Limit Range feature. May be adjusted in environments with specific resource management needs.                                      |
 
-{% hint style="success" %}
+{% hint style="info" %}
 These security customizations allow organizations to tailor Run:ai to their specific needs. All changes should be modified cautiously and only when necessary to meet particular security, compliance or operational requirements.
 {% endhint %}
 

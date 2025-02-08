@@ -44,7 +44,9 @@ To create an application:
 4. Copy the **Client ID** and **Client secret** and store them securely
 5. Click **DONE**
 
-!!!Note The client secret is visible only at the time of creation. It cannot be recovered but can be regenerated.
+{% hint style="info" %}
+The client secret is visible only at the time of creation. It cannot be recovered but can be regenerated.
+{% endhint %}
 
 ## Adding an access rule to an application
 
@@ -78,7 +80,9 @@ To regenerate a client secret:
 4. Copy the **New client secret** and store it securely
 5. Click **DONE**
 
-!!!Warning Regenerating a client secret revokes the previous one.
+{% hint style="warning" %}
+Regenerating a client secret revokes the previous one.
+{% endhint %}
 
 ## Deleting an application
 

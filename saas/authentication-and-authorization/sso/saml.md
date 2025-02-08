@@ -83,8 +83,6 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <summary>Error: "Invalid signature in response from identity provider"</summary>
 
-
-
 **Description**: After trying to log-in, the following message is received in the RunLai log-in page.
 
 **Mitigation:**
@@ -99,7 +97,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>"401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
+<summary>Error: "401 - We’re having trouble identifying your account because your email is incorrect or can’t be found."</summary>
 
 **Description:** Authentication failed because email attribute was not found.
 
@@ -109,7 +107,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>"403 - Sorry, we can’t let you see this page. Something about permissions…"</summary>
+<summary>Error: "403 - Sorry, we can’t let you see this page. Something about permissions…"</summary>
 
 **Description:** The authenticated user is missing permissions
 
@@ -131,7 +129,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 <details>
 
-<summary>"Validating the SAML request"</summary>
+<summary>Validating the SAML request</summary>
 
 The SAML login flow can be separated into two parts:
 

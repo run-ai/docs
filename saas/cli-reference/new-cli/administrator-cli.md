@@ -1,6 +1,6 @@
 # Administrator CLI
 
-The Run:ai Administrator  (`runai-adm`) is a lightweight tool designed to support infrastructure administrators by simplifying two key tasks:
+The Run:ai Administrator (`runai-adm`) is a lightweight tool designed to support infrastructure administrators by simplifying two key tasks:
 
 * [Collecting logs](../../infrastructure-procedures/logs-collection.md) for troubleshooting and sharing with Run:ai support.
 * Configuring [node roles](../../advanced-setup/node-roles.md) in the cluster for optimal performance and reliability.
@@ -79,7 +79,7 @@ sudo mv runai-adm /usr/local/bin/runai-adm
 
 Verify your installation completed successfully by running the following command:
 
-```
+```sh
 runai-adm version  
 ```
 
@@ -89,11 +89,11 @@ runai-adm version
 
 To set or remove node rules using the `runai-adm` tool, run the following:
 
-```
+```sh
 runai-adm set node-role [--runai-system-worker | --gpu-worker | --cpu-worker] <node-name>
 ```
 
-```
+```sh
 runai-adm remove node-role [--runai-system-worker | --gpu-worker | --cpu-worker] <node-name>
 ```
 
@@ -107,7 +107,7 @@ To collect logs using the `runai-adm` tool:
 
 1.  Run the following command:
 
-    ```
+    ```sh
     runai-adm collect-logs
     ```
 2. Locate the generated compressed log file.
