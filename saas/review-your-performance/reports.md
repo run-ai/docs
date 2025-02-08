@@ -57,10 +57,12 @@ To create a new report:
 1. Click **+NEW REPORT**
 2. Enter a name for the report (if the name already exists, you will need to choose a different one)
 3. Optional: Provide a description of the report
-4. Set the report’s data collection period&#x20;
+4. Set the report’s data collection period
    * Start date - The date at which the report data commenced
    * End date - The date at which the report data concluded
-5. Set the report segmentation and filters \* Filters - Filter by project or department name \* Segment by - Data is collected and aggregated based on the segment
+5. Set the report segmentation and filters&#x20;
+   * &#x20;Filters - Filter by project or department name&#x20;
+   * Segment by - Data is collected and aggregated based on the segment
 6. Click **CREATE REPORT**
 
 ## Deleting a report
@@ -69,7 +71,7 @@ To create a new report:
 2. Click **DELETE**
 3. On the dialog, click **DELETE** to confirm
 
-## Downloading a report&#x20;
+## Downloading a report
 
 {% hint style="info" %}
 To download, the report must be in status “Ready”.
