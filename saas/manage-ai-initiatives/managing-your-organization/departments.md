@@ -69,7 +69,9 @@ Click one of the values of the Subject(s) column, to view the list of subjects a
 | Authorized by | The user who granted the access rule                                                                                                                                                                                            |
 | Last updated  | The last time the access rule was updated                                                                                                                                                                                       |
 
-!!!Note A role given in a certain scope, means the role applies to this scope and any descendant scopes in the organizational tree.
+{% hint style="info" %}
+A role given in a certain scope, means the role applies to this scope and any descendant scopes in the organizational tree.
+{% endhint %}
 
 ### Adding a new department
 

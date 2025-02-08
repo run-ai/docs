@@ -6,13 +6,19 @@
 
 The Run:ai v2.20 What's New provides a detailed summary of the latest features, enhancements, and updates introduced in this version. They serve as a guide to help users, administrators, and researchers understand the new capabilities and how to leverage them for improved workload management, resource optimization, and more.
 
-!!! Important Note For a complete list of deprecations, see Deprecation notifications. Deprecated features and capabilities will be available for two versions ahead of the notification.
+
+{% hint style="info" %}
+**Important Note**
+
+For a complete list of deprecations, see Deprecation notifications. Deprecated features and capabilities will be available for two versions ahead of the notification.
+{% endhint %}
+
 
 #### Researchers
 
 **Workloads - Workspaces and Training**
 
-* **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI, CLI, and API. Scheduling rules for training workloads also apply to distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. From cluster v2.20 onward
+* **Stop/run actions for distributed workloads** - You can now stop and run distributed workloads from the UI, CLI, and API. Scheduling rules for training workloads also apply to distributed workloads. This enhances control over distributed workloads, enabling greater flexibility and resource management. <span style="display:inline-block; background-color:white; color:#616161; padding:3px 8px; border-radius:3px; border:1px solid #616161; font-size:12px;">From cluster v2.20 onward</span> 
 * **Visibility into idle GPU devices** - Idle GPU devices are now displayed in the UI and API showing the number of allocated GPU devices that have been idle for more than 5 minutes. This provides better visibility into resource utilization, enabling more efficient workload management.
 * **Configurable workload completion with multiple runs** - You can now define the number of runs a training workload must complete to be considered finished directly in the UI, API, and CLI v2. Running training workloads multiple times improves the reliability and validity of training results. Additionally, you can configure how many runs can be scheduled in parallel, helping to significantly reduce training time and simplifying the process of managing jobs that require multiple runs. See Train models using a standard training workload for more details. From cluster v2.20 onward
 * **Configurable grace period for workload preemption** - You can now set a grace period in the UI, API and CLI v2 providing a buffer time for preempted workloads to reach a safe checkpoint before being forcibly preempted for standard and distributed training workloads. The grace period can be configured between 0 seconds and 5 minutes. This aims to minimize data loss and avoid unnecessary retraining, ensuring the latest checkpoints are saved. From cluster v2.20 onward

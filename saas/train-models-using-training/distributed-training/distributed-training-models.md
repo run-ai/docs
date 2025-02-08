@@ -89,7 +89,9 @@ To add a new distributed training workload:
       Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
     *   Optional: Set **toleration(s)** to allow the workload to be scheduled on a node with a matching taint
 
-        !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
+       {% hint style="info" %}
+       Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
+       {% endhint %}
 
         * Click **+TOLERATION**
         * Enter a **key**
@@ -103,6 +105,9 @@ To add a new distributed training workload:
           * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
           * **Any** - All effects above match.
     * Optional: Set topology to let the workload be scheduled on nodes with a matching topology. Topology lets the workload to be scheduled on nodes within the same region, zone, placement group or any other topology you define.
+      {% hint style="info" %}
+      Setting topology is disabled, by default. If you cannot see Topology in the menu, then it must be enabled by your Administrator, under **General Settings** → Workloads → Topology
+      {% endhint %}
       * Click **+TOPOLOGY**&#x20;
       * Enter a **key**&#x20;
       * Select the operator&#x20;

@@ -98,7 +98,9 @@ After mapping and building your hierarchal structured organization as shown abov
 
 ![](img/scope-example.png)
 
-!!! Note When a scope is selected, the very same unit, including all of its subordinates (both existing and any future subordinates, if added), are selected as well.
+{% hint style="info" %}
+When a scope is selected, the very same unit, including all of its subordinates (both existing and any future subordinates, if added), are selected as well.
+{% endhint %}
 
 ## Next Steps
 

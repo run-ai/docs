@@ -63,7 +63,10 @@ You can remove the identity provider configuration:
 3. On the identity provider card, click **Remove identity provider**
 4. In the dialog, click **REMOVE** to confirm the action
 
-!!! Note To avoid losing access, removing the identity provider must be carried out by a local user.
+{% hint style="info" %}
+To avoid losing access, removing the identity provider must be carried out by a local user.
+{% endhint %}
+
 
 ## Downloading the XML metadata file
 

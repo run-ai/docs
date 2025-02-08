@@ -86,7 +86,9 @@ To add a new inference workload:
      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
    *   Optional: Set **toleration(s)** to allow the workload to be scheduled on a node with a matching taint
 
-       !!! Note Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under General settings → Workloads → Tolerations
+       {% hint style="info" %}
+       Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
+       {% endhint %}
 
        * Click **+TOLERATION**
        * Enter a **key**
