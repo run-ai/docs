@@ -75,8 +75,7 @@ To add a new workspace:
    * Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
-       {% endhint %}
-        
+       {% endhint %}       
           * Click **+TOLERATION**
           * Enter a **key**
           * Select the operator 
@@ -88,10 +87,8 @@ To add a new workspace:
               * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
               * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
               * **Any** - All effects above match.
-
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.   
-      
       * Click **+VOLUME**
       * Select the **storage class**
         * **None** - Proceed without defining a storage class.
@@ -109,7 +106,6 @@ To add a new workspace:
       * Set the volume persistency
         * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
         * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
-
 11. Optional: Select **data sources** for your workspace
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
