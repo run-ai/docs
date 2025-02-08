@@ -77,12 +77,14 @@ To add a new workspace:
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
 
-       * Click **+TOLERATION**
-       * Enter a **key**
-       * Select the operator
+      * Click **+TOLERATION**
+      * Enter a **key**
+      * Select the operator 
          * **Exists** - If the key exists on the node, the effect will be applied.
          * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
+         
            * Enter a **value** matching the value on the node
+
        * Select the effect for the toleration
          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
          * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
@@ -114,7 +116,7 @@ To add a new workspace:
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
-    
+
 12. **Optional - General settings**:&#x20;
     * &#x20;Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time.&#x20;
     * Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.&#x20;
