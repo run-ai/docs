@@ -6,7 +6,7 @@ Run:ai APIs are accessed using _bearer tokens_. A token can be obtained by creat
 
 An application contains a client ID and a client secret. With the client credentials you can obtain a token and use it within subsequent API calls.
 
-* To create applications for your organization, see [Applications](../docs/admin/authentication/applications.md).
+* To create applications for your organization, see [Applications](../authentication-and-authorization/applications.md).
 * To create your own user applications, see [User Applications](../authentication-and-authorization/user-applications.md).
 
 ## Request an API Token
@@ -22,7 +22,7 @@ Replace `<runai_url>` below with:
 
 {% tabs %}
 {% tab title="cURL" %}
-```
+```bash
 curl -X POST \ 'https://<runai_url>/api/v1/token' \ --header 'Accept: */*' \ --header 'Content-Type: application/json' \ --data-raw '{ "grantType":"client_credentials", "clientId":"<CLIENT ID>", "clientSecret" : "<CLIENT SECRET>" }'
 ```
 {% endtab %}
