@@ -1,7 +1,6 @@
 # Table of contents
 
 
-
 * [Cluster installation](installation/README.md)
   * [Prerequisites](installation/prereq.md)
   * [Installation](installation/install.md)
