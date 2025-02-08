@@ -76,6 +76,7 @@ To add a new workspace:
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
+       
        * Click **+TOLERATION**
        * Enter a **key**
        * Select the operator
