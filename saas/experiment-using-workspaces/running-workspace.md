@@ -76,7 +76,7 @@ To add a new workspace:
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
-       
+
        * Click **+TOLERATION**
        * Enter a **key**
        * Select the operator
@@ -88,6 +88,7 @@ To add a new workspace:
          * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
          * **Any** - All effects above match.
+
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.
     * Click **+VOLUME**
@@ -107,11 +108,13 @@ To add a new workspace:
     * Set the volume persistency
       * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
       * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
+
 11. Optional: Select **data sources** for your workspace\
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
     * Optional: Modify the data target location for the selected data source(s).
+    
 12. **Optional - General settings**:&#x20;
     * &#x20;Allow the workload to exceed the project quota. Workloads running over quota may be preempted and stopped at any time.&#x20;
     * Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.&#x20;
