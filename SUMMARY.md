@@ -1,9 +1,20 @@
 # Table of contents
 
-* [Overview](README.md)
-  * [Welcome to Run:ai](Overview/welcome-to-runai.md)
-* [Cluster installation](cluster-installation/README.md)
-  * [System requirements](cluster-installation/system-requirements.md)
+[What's New](whats-new/README.md)
+[SaaS](SaaS/README.md)
+[API reference](api-reference/README.md)
+
+## What's New
+
+* [Release Notes](whats-new/release-notes.md)
+* [Changelog](whats-new/changelong.md)
+
+## SaaS
+
+* [Overview](Saas/README.md)
+  * [Welcome to Run:ai](SaaS/Overview/welcome-to-runai.md)
+* [Cluster installation](SaaS/cluster-installation/README.md)
+  * [System requirements](SaaS/cluster-installation/system-requirements.md)
   * [Network requirements](cluster-installation/network-requirements.md)
   * [Install using Helm](cluster-installation/install-using-helm.md)
   * [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
