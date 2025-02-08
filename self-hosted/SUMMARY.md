@@ -5,7 +5,7 @@
 * [Cluster installation](installation/README.md)
   * [Prerequisites](installation/prereq.md)
   * [Installation](installation/install.md)
-* [Authentication and authorization](authentication-and-authorization/README.md)
+* [Authentication and authorization](../saas/authentication-and-authorization/README.md)
   * [Authentication & authorization](../saas/authentication-and-authorization/authentication-and-authorization.md)
   * [Users](../saas/authentication-and-authorization/users.md)
   * [SSO](../saas/authentication-and-authorization/sso/README.md)
