@@ -73,26 +73,28 @@ To add a new workspace:
      If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
    *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
+      
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
 
-      * Click **+TOLERATION**
-      * Enter a **key**
-      * Select the operator 
+       * Click **+TOLERATION**
+       * Enter a **key**
+       * Select the operator 
          * **Exists** - If the key exists on the node, the effect will be applied.
          * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
          
            * Enter a **value** matching the value on the node
 
-       * Select the effect for the toleration
-         * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
-         * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
-         * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
-         * **Any** - All effects above match.
+        * Select the effect for the toleration
+          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
+          * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
+          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
+          * **Any** - All effects above match.
 
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.
+    
     * Click **+VOLUME**
     * Select the **storage class**
       * **None** - Proceed without defining a storage class.
