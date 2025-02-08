@@ -76,13 +76,13 @@ To add a new workspace:
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
        {% endhint %}
+        
         * Click **+TOLERATION**
         * Enter a **key**
         * Select the operator 
            * **Exists** - If the key exists on the node, the effect will be applied.
            * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
             * Enter a **value** matching the value on the node
-
         * Select the effect for the toleration
             * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
             * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
@@ -91,7 +91,6 @@ To add a new workspace:
 
 10. Optional: Set the volume needed for your workload\
     A volume allocates storage space to your workload that is persistent across restarts.   
-    
     * Click **+VOLUME**
     * Select the **storage class**
        * **None** - Proceed without defining a storage class.
@@ -110,11 +109,10 @@ To add a new workspace:
        * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
        * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”
 
-11. Optional: Select **data sources** for your workspace\
+11. Optional: Select **data sources** for your workspace
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
-     
       * Optional: Modify the data target location for the selected data source(s).
 
 12. **Optional - General settings**:&#x20;
