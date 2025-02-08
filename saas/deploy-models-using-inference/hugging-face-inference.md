@@ -84,7 +84,7 @@ To add a new inference workload:
    * Select a **node affinity** to schedule the workload on a specific node type.\
      If the administrator added a ‘[node type (affinity)](../policies/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
-   *   Optional: Set **toleration(s)** to allow the workload to be scheduled on a node with a matching taint
+   *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
        {% hint style="info" %}
        Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
@@ -92,28 +92,30 @@ To add a new inference workload:
 
        * Click **+TOLERATION**
        * Enter a **key**
-       * Select the operator
-         * **Exists** - If the key exists on the node, the effect will be applied.
-         * **Equals** - If the key and the value set below matches to the value on the node, the effect will be applied
-           * Enter a **value** matching the value on the node
-       * Select the effect for the toleration
+       * Select the operator&#x20;
+         * **Exists** - If the key exists on the node, the effect will be applied.&#x20;
+         * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied&#x20;
+           * Enter a **value** matching the value on the node&#x20;
+       * Select the effect for the toleration&#x20;
          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
-         * **NoSchedule** - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
-         * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
+         * **NoSchedule**- No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.&#x20;
+         * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.&#x20;
          * **Any** - All effects above match.
-10. **Optional - General settings**:&#x20;
+10. Optional: Select **data sources** for your workspace - Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection. For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md). Once created, the new data source will be automatically selected.&#x20;
+    * Optional: Modify the data target location for the selected data source(s).
+11. **Optional - General settings**:
     * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
     * Set **annotations(s)**\
-      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
-      * Click **+ANNOTATION**
-        * Enter a **name**
-        * Enter a **value**&#x20;
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.&#x20;
+      * Click **+ANNOTATION**&#x20;
+      * Enter a **name**&#x20;
+      * Enter a **value**&#x20;
     * Set **labels(s)**\
-      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:
-      * Click **+LABEL**
-      * Enter a **name**
-      * Enter a **value**
-11. Click **CREATE INFERENCE**
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:&#x20;
+      * Click **+LABEL**&#x20;
+      * Enter a **name**&#x20;
+      * Enter a **value**&#x20;
+12. &#x20;Click **CREATE INFERENCE**
 
 ## Managing and monitoring
 
