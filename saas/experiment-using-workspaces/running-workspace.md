@@ -90,7 +90,7 @@ To add a new workspace:
             * **Any** - All effects above match.
 
 10. Optional: Set the volume needed for your workload\
-    A volume allocates storage space to your workload that is persistent across restarts.
+    A volume allocates storage space to your workload that is persistent across restarts.   
     
     * Click **+VOLUME**
     * Select the **storage class**
@@ -114,6 +114,7 @@ To add a new workspace:
     Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.\
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../workloads-in-runai/workload-assets/datasources.md).\
     Once created, the new data source will be automatically selected.
+     
       * Optional: Modify the data target location for the selected data source(s).
 
 12. **Optional - General settings**:&#x20;
