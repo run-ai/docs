@@ -175,6 +175,7 @@ nav:
       - 'Hotfixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
       - 'Hotfixes for 2.15' : 'home/changelog/hotfixes-2-15.md'
       - 'Hotfixes for 2.13' : 'home/changelog/hotfixes-2-13.md'
+    - 'Product Support Policy' : 'home/product-support-policy.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Infrastructure Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
