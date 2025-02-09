@@ -30,7 +30,7 @@ Run:ai version release dates are listed in theRun:ai product documentation.
 
     * Run:ai Control Plane of a version equal to or greater than the versions of each of the Run:ai Clusters.
 
-    * Run:ai CLI of a version equal tothe version on the Run:ai Cluster.
+    * Run:ai CLI of a version equal to the version on the Run:ai Cluster.
 
 7. From time to time, Run:ai may provide API deprecation notices under the product     documentation of the applicable Run:ai version. For full details about Run:ai API deprecation notice and support policy see: [https://docs.run.ai/latest/developer/overview-developer/#api-support](https://docs.run.ai/latest/developer/overview-developer/#api-support){target=_blank}. 
 
