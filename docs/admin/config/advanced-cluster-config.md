@@ -66,10 +66,14 @@ Label the nodes using the below:
 The below example shows how to include NVIDIA GPUs only and exclude all other GPU types in a cluster with mixed nodes, based on product type GPU label:
 
 ``` bash
-nodeSelectorTerms:
-- matchExpressions:
-  - key: nvidia.com/gpu.product  
-    operator: Exists
+spec:   
+   global:
+      managedNodes:
+        inclusionCriteria:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: nvidia.com/gpu.product  
+              operator: Exists
 ```
 
 !!! Tip
