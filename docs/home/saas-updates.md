@@ -14,9 +14,9 @@ SaaS features are gradually rolled out to customers over the course of a week to
 
 | ID | Description |
 | :---- | :---- |
-| RUN-25511| Fixed an issue where deleting a workload in the new CLI caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+| RUN-25511| Fixed an issue where deleting a workload in the new CLI caused an error. |
 | RUN-25234 | Fixed an authentication issue in CLI V1. |
-| RUN-25098 | fixed an issue where a delay occurred with displaying workload metrics. |
+| RUN-25098 | Improved workload metrics by reducing the time it takes for workload metrics to be displayed. |
 | RUN-24032 | Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
 | RUN-24754| Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
 
