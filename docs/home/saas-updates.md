@@ -8,9 +8,22 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
-## February Release 
+## February 9th release
 
-### Product Enhancements
+### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-25511| Fixed an issue where deleting a workload in the new CLI caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+| RUN-25234 | Fixed an authentication issue in CLI V1. |
+| RUN-25098 | fixed an issue where a delay occurred with displaying workload metrics. |
+| RUN-24032 | Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
+| RUN-24754| Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
+
+
+## February 3rd release 
+
+### Product enhancements
 
 - Workload Events API, [/api/v1/workloads/{workloadId}/events](https://api-docs.run.ai/latest/tag/Events#operation/get_workload_events), now supports the sort order parameter (asc, desc).  <!-- (RUN-25180)   -->
 - MIG profile and MIG options are now marked as deprecated in CLI v2, following the deprecation notice in the [last version](whats-new-2-20.md#deprecation-notifications). <!-- (RUN-23186)   -->
