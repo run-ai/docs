@@ -67,9 +67,9 @@ The below example shows how to include NVIDIA GPUs only and exclude all other GP
 
 ``` bash
 spec:   
-   global:
-      managedNodes:
-        inclusionCriteria:
+  global:
+     managedNodes:
+       inclusionCriteria:
           nodeSelectorTerms:
           - matchExpressions:
             - key: nvidia.com/gpu.product  
