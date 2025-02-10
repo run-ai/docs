@@ -33,7 +33,7 @@ Follow the setup and installation instructions below to get the installation ins
 
 #### Installation instructions
 
-1. Follow the installation instructions (See the additional instructions below when [upgrading to v2.13](#upgrade-to-runai-cluster-version-213-old-release))  
+1. Follow the installation instructions 
    run the Helm commands provided on your Kubernetes cluster (see the troubleshooting below if installation fails)  
 2. Click **DONE**  
 3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster troubleshooting scenarios). Once you have done this, the cluster is upgraded to the latest version.
@@ -41,20 +41,6 @@ Follow the setup and installation instructions below to get the installation ins
 !!! Note
     To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
 
-## Upgrade to Run:ai cluster version 2.13 (old release)
-
-Run:ai cluster version 2.13 (old release) does not support migration of the configured Helm values. If you have customized configurations you want to migrate, follow the additional steps below:
-
-1. Download the Run:ai Helm values file by running the command provided in your terminal  
-2. Run the following command to save existing cluster Helm values into `old-values.yaml`
-
-``` bash
-helm get values runai-cluster -n runai > old-values.yaml
-```
-
-4.   
-   Identify configured custom values that you want to migrate  
-5. Manually merge the values from `old-values.yaml` into the new values file
 
 ## Troubleshooting
 
