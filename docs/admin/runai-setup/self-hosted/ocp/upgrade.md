@@ -49,7 +49,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Search for the customizations you found in the [optional configurations](./backend.md#additional-runai-configurations-optional) table and add them in the new format.  
 
 ## Upgrade Control Plane
-### Upgrade from version 2.13, or later
+### Upgrade from version 2.17, or later
 === "Connected"
 
     ``` bash
