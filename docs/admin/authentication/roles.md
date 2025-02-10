@@ -89,14 +89,7 @@ Run:ai supports the following roles and their permissions:
 ??? "Viewer"
     ![](img/roles-viewer.png)
 
-!!! Notes
-    Keep the following in mind when upgrading from versions 2.13 or earlier:
 
-    * **Admin** becomes **System Admin** with full access to all managed objects and scopes  
-    * **Research Manager** is not automatically assigned to all projects, but to projects set by the relevant **Admin** when assigning this role to a user, group or app  
-    * To preserve backwards compatibility, users with the role of **Research Manager** are assigned to all current projects, but not to new projects  
-    * To allow the **Department Admin** to assign a **Researcher** role to a user, group or app, the **Department Admin** must have **VECD** permissions for jobs and workspaces. This creates a broader span of managed objects  
-    * To preserve backwards compatibility, users with the role of **Editor**, are assigned to the same scope they had before the upgrade. However, with new user assignments, the **Admin** can limit the scope to only part of the organizational scope.
 
 ## Permitted workloads
 
