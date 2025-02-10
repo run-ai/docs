@@ -11,6 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.18 | 24/01/2025 | RUN-24700 |  CLI v2: Workload describe command no longer requires type or framework flags. |
+| 2.20.17 | 24/01/2025 | RUN-25534 | Fixed range of generated reports to 30 days. |
+| 2.20.17 | 24/01/2025 | RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
+| 2.20.16 | 24/01/2025 | RUN-24858 | Fixed High vulnerability CVE-2024-56344 for third party open source 'systeminformation'. |
+| 2.20.15 | 24/01/2025 | RUN-24354 | Fixed an issue where migrating workloads failed due to slow network connection. |
+| 2.20.15 | 24/01/2025 | RUN-24354 | Fixed an issue where migrating workloads failed due to slow network connection. |
 | 2.20.15 | 24/01/2025 | RUN-24354 | Fixed an issue where migrating workloads failed due to slow network connection. |
 | 2.20.14 | 23/01/2025 | RUN-24754 | Fixed an issue where the status of training and interactive workloads was not updated correctly. |
 | 2.20.14 | 23/01/2025 | RUN-24838 | Fixed an issue where an environment asset could not be created if it included an environment variable with no value specified. |
