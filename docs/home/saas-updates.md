@@ -18,7 +18,7 @@ SaaS features are gradually rolled out to customers over the course of a week to
 | RUN-25234 | Fixed an authentication issue in CLI V1. |
 | RUN-25098 | Improved workload metrics by reducing the time it takes for workload metrics to be displayed. |
 | RUN-24032 | Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
-| RUN-24754| Fixed an issue where inference workloads with large container sizes skipped the Initializing state. |
+| RUN-24754| Fixed an issue where the status of training and interactive workloads was not updated correctly. |
 
 
 ## February 3rd release 
