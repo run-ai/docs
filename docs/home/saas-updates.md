@@ -8,9 +8,23 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
-## February Release 
+* Latest release: [February 9, 2025](#february-9-2025)
+* Previous release: [February 3, 2025](#february-3-2025)
 
-### Product Enhancements
+## February 2025 releases
+
+### February 9, 2025
+
+#### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-25511| Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+
+
+### February 3. 2025
+
+#### Product enhancements
 
 - Workload Events API, [/api/v1/workloads/{workloadId}/events](https://api-docs.run.ai/latest/tag/Events#operation/get_workload_events), now supports the sort order parameter (asc, desc).  <!-- (RUN-25180)   -->
 - MIG profile and MIG options are now marked as deprecated in CLI v2, following the deprecation notice in the [last version](whats-new-2-20.md#deprecation-notifications). <!-- (RUN-23186)   -->
@@ -24,7 +38,7 @@ SaaS features are gradually rolled out to customers over the course of a week to
 - Enhanced PVC underlying storage configuration by specifying allowed context for the selected storage (Workload Volume, PVC, both, or neither). <!-- (RUN-25158)   -->
 - Added configurable grace period for workload preemption in CLI v2. <!-- (RUN-23760)   -->
 
-### Resolved Bugs 
+#### Resolved Bugs 
 
 | ID | Description |
 | :---- | :---- |
