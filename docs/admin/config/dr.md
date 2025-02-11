@@ -58,7 +58,7 @@ Run:ai uses an internal PostgreSQL database. The database is stored on a Kuberne
 * Backing up the persistent volume holding the database storage.
 * Using third-party backup solutions.
 
-Run:ai also supports an external PostgreSQL database. For details on how to configure an external database please contact Run:ai customer support.
+Run:ai also supports an external PostgreSQL database. For details see [external PostgreSQL database](../runai-setup/self-hosted/k8s/preparations.md#external-postgres-database-optional)
 
 ### Metrics Storage
 
