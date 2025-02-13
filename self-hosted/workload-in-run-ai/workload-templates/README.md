@@ -1,0 +1,2 @@
+# Workload templates
+
