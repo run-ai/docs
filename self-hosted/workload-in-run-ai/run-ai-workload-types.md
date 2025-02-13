@@ -1,2 +1,0 @@
-# Run:ai workload types
-

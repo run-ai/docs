@@ -1,2 +1,0 @@
-# Compute resources
-

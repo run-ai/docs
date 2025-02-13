@@ -1,2 +1,0 @@
-# Install and configure CLI
-
