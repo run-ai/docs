@@ -1,9 +1,13 @@
 # Table of contents
 
 * [Welcome to Run:ai self-hosted](README.md)
-* [Cluster installation](cluster-installation/README.md)
-  * [Prerequisites](installation/prereq.md)
-  * [Installation](installation/install.md)
+* [Installation](installation/overview.md)
+  * [Prerequisites](installation/prerequisites.md)
+  * [Preparations](installation/preparations.md)
+  * [Install control plane](installation/backend.md)
+  * [Install cluster](installation/cluster.md)
+  * [Upgrade](installation/upgrade.md)
+  * [Uninstall](installation/uninstall.md)
 * [Authentication and authorization](../saas/authentication-and-authorization/README.md)
   * [Authentication & authorization](../saas/authentication-and-authorization/authentication-and-authorization.md)
   * [Users](../saas/authentication-and-authorization/users.md)
