@@ -1,2 +1,0 @@
-# Policy YAML examples
-

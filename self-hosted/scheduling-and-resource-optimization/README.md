@@ -1,2 +1,0 @@
-# Scheduling and resource optimization
-

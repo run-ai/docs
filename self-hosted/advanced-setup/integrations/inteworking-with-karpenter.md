@@ -1,2 +1,0 @@
-# Inteworking with Karpenter
-
