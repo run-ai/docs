@@ -32,19 +32,16 @@
     <!-- End of  Swagger custom style -->
 {% endblock %}
 
-
 {% block site_nav %}
-  <div class="md-header__inner md-grid">
-    <!-- Custom Logo Container -->
-    <div class="custom-logo-container">
-      <img src="{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg" class="custom-logo">
-      <span class="logo-separator">|</span>
-      <img src="{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg" class="custom-logo">
-    </div>
-    <!-- Keep the original header content -->
-    {{ super() }}
+
+  <div class="custom-logo-container">
+    <img src="../docs/images/NVIDIA_Logo_MKdocs.svg class="custom-logo">
+    <span class="logo-separator">|</span>
+    <img src="../docs/images/RUNAI-LOGO-DIGITAL-2C_WP.svg" class="custom-logo">
   </div>
+  {{ super() }}
 {% endblock %}
+
 
 {% block footer %}
 
