@@ -81,23 +81,53 @@ To add a new training workload:
         Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
         {% endhint %}
 
-```
-    * Click **+TOLERATION**
-    * Enter a **key**
-    * Select the operator&#x20;
-      * **Exists** - If the key exists on the node, the effect will be applied.&#x20;
-      * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied&#x20;
-        * Enter a **value** matching the value on the node&#x20;
-    * Select the effect for the toleration&#x20;
-      * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
-      * **NoSchedule**- No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.&#x20;
-      * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.&#x20;
-      * **Any** - All effects above match.
-```
-
-11\. Optional: Set the volume needed for your workload - A volume allocates storage space to your workload that is persistent across restarts. \* Click **+VOLUME** \* Select the **storage class** \* **None**- Proceed without defining a storage class. \* **Custom storage class** - This option applies when selecting a storage class based on existing storage classes. To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../infrastructure-procedures/shared-storage.md) \* Select the **access mode(s)** (multiple modes can be selected) \* **Read-write by one node** - The volume can be mounted as read-write by a single node. \* **Read-only by many nodes** - The volume can be mounted as read-only by many nodes. \* **Read-write by many nodes** - The volume can be mounted as read-write by many nodes. \* Set the **claim size** and its **units** \* Select the **volume mode** \* **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files. \* **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system. \* Set the **Container path** with the volume target location \* Set the volume persistency \* **Persistent** - The volume and its data will be deleted only when the workload is deleted. \* **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.” 12. Optional: Select **data sources** for your workspace - Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection. For a step-by-step guide on adding data sources to the gallery, see [data sources](../../workloads-in-runai/workload-assets/datasources.md). Once created, the new data source will be automatically selected. \* Optional: Modify the data target location for the selected data source(s). 13. **Optional - General settings**: \* Set the **grace period** for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min. \* Set the **number of runs** the workload must finish to be considered complete. Multiple runs enhance the reliability and validity of the training results. \* If the number of runs is above 1, enter a value under **Parallelism** to specify how many runs may be scheduled in **parallel**. The value must be less than or equal to the number of runs. \* Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100. \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
-Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation. \* Click **+ANNOTATION** \* Enter a **name** \* Enter a **value** \* Set **labels(s)**\
-Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels: \* Click **+LABEL** \* Enter a **name** \* Enter a **value** 14. Click **CREATE TRAINING**
+        * Click **+TOLERATION**
+        * Enter a **key**
+        * Select the operator&#x20;
+          * **Exists** - If the key exists on the node, the effect will be applied.&#x20;
+          * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied&#x20;
+            * Enter a **value** matching the value on the node&#x20;
+        * Select the effect for the toleration&#x20;
+          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.
+          * **NoSchedule**- No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.&#x20;
+          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.&#x20;
+          * **Any** - All effects above match.
+11. &#x20;Optional: Set the volume needed for your workload -  A volume allocates storage space to your workload that is persistent across restarts.
+    * Click **+VOLUME**
+    * Select the **storage class**&#x20;
+      * **None**- Proceed without defining a storage class.
+      * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes. To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../infrastructure-procedures/shared-storage.md)
+    * Select the **access mode(s)** (multiple modes can be selected)
+      * **Read-write by one node** - The volume can be mounted as read-write by a single node.&#x20;
+      * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.&#x20;
+      * **Read-write by many nodes** - The volume can be mounted as read-write by many nodes.&#x20;
+    * Set the **claim size** and its **units**
+    * Select the **volume mode**
+      * **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files.&#x20;
+      * **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system.
+    * Set the **Container path** with the volume target location&#x20;
+    * Set the volume persistency&#x20;
+      * **Persistent** - The volume and its data will be deleted only when the workload is deleted.&#x20;
+      * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”&#x20;
+12. Optional: Select **data sources** for your workspace - Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection. For a step-by-step guide on adding data sources to the gallery, see [data sources](../../workloads-in-runai/workload-assets/datasources.md). Once created, the new data source will be automatically selected.&#x20;
+    * Optional: Modify the data target location for the selected data source(s).
+13. **Optional - General settings**:
+    * Set the **grace period** for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min.&#x20;
+    * Set the **number of runs** the workload must finish to be considered complete. Multiple runs enhance the reliability and validity of the training results.&#x20;
+    * If the number of runs is above 1, enter a value under **Parallelism** to specify how many runs may be scheduled in **parallel**. The value must be less than or equal to the number of runs.&#x20;
+    * Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.&#x20;
+    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
+    * Set **annotations(s)**\
+      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.&#x20;
+      * Click **+ANNOTATION**&#x20;
+      * Enter a **name**&#x20;
+      * Enter a **value**&#x20;
+    * Set **labels(s)**\
+      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:&#x20;
+      * Click **+LABEL**&#x20;
+      * Enter a **name**&#x20;
+      * Enter a **value**&#x20;
+14. &#x20;Click **CREATE TRAINING**
 
 ## Workload Policies
 
@@ -117,7 +147,7 @@ After the training workload is created, it is added to the [Workloads](../../wor
 
 ## Using CLI
 
-To view the available actions, see the training workload [CLI v2 reference](../../cli-reference/new-cli/) or the [CLI v1 reference](../../cli-reference/runai-submit.md).
+To view the available actions, see the training workload [CLI v2 reference](../../cli-reference/new-cli/) or the [CLI v1 reference](broken-reference).
 
 ## Using API
 
