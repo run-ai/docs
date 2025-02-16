@@ -27,10 +27,15 @@
     background-color: rgb(0, 76, 117) !important;
     border-top: 1px solid #1b2532 !important;
 }
+
+.md-header__button.md-logo {
+    display: none !important;
+}
+
 .custom-logo-container {
     display: flex;
     align-items: center;
-    margin-right: auto;
+    grid-column: 1;
     padding-left: 10px;
 }
 .custom-logo {
