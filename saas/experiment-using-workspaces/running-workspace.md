@@ -142,7 +142,7 @@ After the workspace is created, it is added to the [Workloads](../workloads-in-r
 
 ## Using CLI
 
-To view the available actions on workspaces, see the Workspaces [CLI v2 reference](../cli-reference/new-cli/) or the [CLI v1 reference](../cli-reference/runai-submit.md).
+To view the available actions on workspaces, see the Workspaces [CLI v2 reference](../cli-reference/new-cli/) or the [CLI v1 reference](broken-reference).
 
 ## Using API
 

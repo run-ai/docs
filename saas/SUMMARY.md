@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome to SaaS documentation](README.md)
-* [Overview](<README (1).md>)
+* [Overview](overview/README.md)
   * [Welcome to Run:ai](Overview/welcome-to-runai.md)
 * [Cluster installation](cluster-installation/README.md)
   * [System requirements](cluster-installation/system-requirements.md)

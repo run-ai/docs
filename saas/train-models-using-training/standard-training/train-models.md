@@ -147,7 +147,7 @@ After the training workload is created, it is added to the [Workloads](../../wor
 
 ## Using CLI
 
-To view the available actions, see the training workload [CLI v2 reference](../../cli-reference/new-cli/) or the [CLI v1 reference](../../cli-reference/runai-submit.md).
+To view the available actions, see the training workload [CLI v2 reference](../../cli-reference/new-cli/) or the [CLI v1 reference](broken-reference).
 
 ## Using API
 
