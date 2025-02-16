@@ -32,13 +32,16 @@
     <!-- End of  Swagger custom style -->
 {% endblock %}
 
-{% block extrahead %}
+{% block site_nav %}
 
-    <meta property="og:title" content="{{page.title}}" />
-    <meta property="og:description" content="{% for toc_item in page.toc %} | {{ toc_item.title }} | {% for toc_item in toc_item.children %}  {{ toc_item.title }}.   {% endfor %}  {% endfor %}" />
-    <meta property="og:image" content="https://docs.run.ai/home/img/RUNAI-LOGO-DIGITAL-2C_BP.png"/> 
-
+  <div class="custom-logo-container">
+    <img src="../docs/images/NVIDIA_Logo_MKdocs.svg class="custom-logo">
+    <span class="logo-separator">|</span>
+    <img src="../docs/images/RUNAI-LOGO-DIGITAL-2C_WP.svg" class="custom-logo">
+  </div>
+  {{ super() }}
 {% endblock %}
+
 
 {% block footer %}
 
