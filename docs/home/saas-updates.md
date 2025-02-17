@@ -9,7 +9,7 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
 * Latest release: [February 16, 2025](#february-16-2025)
-* Previous release: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
+* Previous releases: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
 
 ## February 2025 releases
 
