@@ -1,4 +1,5 @@
-## Uninstall Run:ai cluster
+
+## Uninstall Run:ai cluster 3
 
 Uninstall of Run:ai cluster from the Kubernetes cluster does **not** delete existing projects, departments or workloads submitted by users.
 
