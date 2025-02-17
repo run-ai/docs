@@ -115,6 +115,8 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** User authentication failed
 
+![](img/openshift-identityerror.png)
+
 **Mitigation**: Validate the the configured OIDC Scopes exist and match the Identity Provider’s available scopes
 
 **Advanced:** Look for the specific error message in the URL address
@@ -126,6 +128,9 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 <summary><strong>Error:</strong> "Unexpected error when authenticating with identity provider (SSO sign-in is not available)"</summary>
 
 **Description:** User authentication failed
+
+![](img/openid-unexpected.png)
+
 
 **Mitigation**:
 
@@ -141,6 +146,9 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 <summary><strong>Error:</strong> "unauthorized_client"</summary>
 
 **Description:** OIDC Client ID was not found in the OpenShift IDP
+
+![](img/unauthorized-client.png)
+
 
 **Mitigation**: Validate the the configured Client ID matches the value in the OAuthclient Kubernetes object
 

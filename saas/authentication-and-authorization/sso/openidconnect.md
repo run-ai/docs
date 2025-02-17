@@ -116,7 +116,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** User authentication failed
 
-<img src="../../.gitbook/assets/Screenshot%202025-02-06%20at%2015.17.36.png" alt="" data-size="original">
+![](img/openshift-identityerror.png)
 
 **Mitigation**: Validate the the configured OIDC Scopes exist and match the Identity Provider’s available scopes
 
@@ -129,6 +129,8 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 <summary>Error: "Unexpected error when authenticating with identity provider (SSO sign-in is not available)"</summary>
 
 **Description:** User authentication failed
+
+![](img/openid-unexpected.png)
 
 **Mitigation**:
 
