@@ -36,8 +36,8 @@ SaaS features are gradually rolled out to customers over the course of a week to
 | RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | RUN-23048 | Improved error handling to display meaningful messages from the CLI upgrade command. |
 | RUN-25552 | Fixed an issue where clicking on "View Access Rules" in the Users table displayed only the first group if a user belonged to multiple groups. |
-| RUN-25558 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
-| RUN-25659 | CLI v2: Fixed an issue where min and max replicas  were able to be submitted using TensorFlow. |
+| RUN-25558 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when scaled caused ETCD memory to increase. |
+| RUN-25659 | CLI v2: Fixed an issue where min and max replicas were submitted using TensorFlow. |
 
 
 ### February 9, 2025
