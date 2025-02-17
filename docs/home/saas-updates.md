@@ -8,12 +8,24 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
-* Latest release: [February 17, 2025](#february-17-2025)
+* Latest release: [February 16, 2025](#february-17-2025)
 * Previous release: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
 
 ## February 2025 releases
 
-### February 17, 2025
+### February 16, 2025
+
+#### Product enhancements
+
+* NIM and model store: UX improvements
+* New functionalities added for CLI v2:
+
+    * Allow users to list all available Persistent Volume Claims (PVCs) when submitting workloads. This enhancement simplifies the selection process for appropriate PVCs, making workload submission more efficient.
+    * Enable users to display the config file in multiple formats.  The available options are:
+
+        * --json: Output structure in JSON format
+        * --yaml: Output structure in YAML format
+
 
 #### Resolved Bugs 
 
