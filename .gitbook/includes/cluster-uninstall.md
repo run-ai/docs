@@ -10,4 +10,4 @@ To uninstall the Run:ai cluster, run the following [helm](https://helm.sh/) comm
 helm uninstall runai-cluster -n runai
 ```
 
-To remove the Run:ai cluster from the Run:ai Platform, see [Removing a cluster](../../saas/infrastructure-procedures/clusters.md#removing-a-cluster).
+To remove the Run:ai cluster from the Run:ai Platform, see [Removing a cluster.](../../saas/infrastructure-procedures/clusters.md#removing-a-cluster)
