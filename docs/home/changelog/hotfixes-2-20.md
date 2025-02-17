@@ -16,7 +16,7 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 | 2.20.17 | 30/01/2025 | RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | 2.20.16 | 28/01/2025 | RUN-24858 | Fixed High vulnerability CVE-2024-56344 for third party open source 'systeminformation'. |
 | 2.20.16 | 28/01/2025 | RUN-25405 | CLI v1: Fixed an issue where the generated PVC was not created properly. |
-| 2.20.15 | 24/01/2025 | RUN-24354 | Fixed an issue where migrating 
+| 2.20.15 | 24/01/2025 | RUN-24354 | Fixed an issue where migrating workloads failed due to slow network connection. |
 | 2.20.14 | 23/01/2025 | RUN-24754 | Fixed an issue where the status of training and interactive workloads was not updated correctly. |
 | 2.20.14 | 23/01/2025 | RUN-24838 | Fixed an issue where an environment asset could not be created if it included an environment variable with no value specified. |
 | 2.20.11 | 21/01/2025 | RUN-25303 | Fixed an issue where submitting with the --attach flag was supported only in a workspace workload. |
