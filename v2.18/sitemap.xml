@@ -2,1118 +2,1118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/overview-researcher/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/use-cases/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/quickstart-inference/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/quickstart-jupyter/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/quickstart-mig/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/quickstart-overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/quickstart-vscode/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-build-ports/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-build/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-distributed-training/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-fractions/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-overquota/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-queue-fairness/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/Walkthroughs/walkthrough-train/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/best-practices/bare-metal-to-docker-images/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/best-practices/convert-to-unattended/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/best-practices/env-variables/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/best-practices/researcher-notifications/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/best-practices/save-dl-checkpoints/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/Introduction/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-attach/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-bash/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-config/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-login/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-logout/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-port-forwarding/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-resume/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-submit-dist-TF/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-submit-dist-mpi/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-submit-dist-pytorch/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-submit-dist-xgboost/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-suspend/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-top-node/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-update/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-version/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/runai-whoami/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/cli-examples/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_cluster/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_cluster_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_cluster_set/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_config/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_config_generate/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_config_project/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_config_set/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_describe_job/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_describe_node/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_distributed_submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_kubeconfig/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_kubeconfig_set/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list_clusters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list_jobs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list_nodes/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_list_projects/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_login/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_login_application/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_login_sso/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_login_user/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_logout/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_node/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_node_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_nodepool/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_nodepool_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_project/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_project_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_project_set/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_report/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_report_metrics/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_report_metrics_clear/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_report_metrics_config/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_report_metrics_output/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_mpi_submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_resume/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_training_suspend/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_upgrade/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_version/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_whoami/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_attach/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workload_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_describe/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_exec/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_list/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_logs/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_port-forward/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_resume/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_submit/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/runai_workspace_suspend/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/cli-reference/new-cli/guides/set-kubeconfig-with-oidc-parameters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/GPU-time-slicing-scheduler/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/allocation-of-cpu-and-memory/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/dynamic-gpu-fractions/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/fractions/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/gpu-memory-swap/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/job-statuses/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/node-level-scheduler/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/schedule-to-aws-groups/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/strategies/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/scheduling/the-runai-scheduler/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-jupyter/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-pycharm/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-tensorboard/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-vscode/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/tools/dev-x11forward-pycharm/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/inference-overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/managing-workloads/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/trainings/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/workload-support/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/compute/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/credentials/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/data-volumes/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/datasources/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/environments/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/existing-PVC/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/secrets/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/assets/templates/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/workspaces/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/Researcher/workloads/workspaces/workspace-v2/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/overview-administrator/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/accessrules/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/applications/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/authentication-overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/non-root-containers/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/researcher-authentication/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/roles/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/users/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/sso/openidconnect/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/sso/openshift/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/authentication/sso/saml/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/access-roles/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/admin-messages/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/allow-external-access-to-containers/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/cli-admin-install/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/cluster-wide-pvc/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/clusters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/default-scheduler/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/dr/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/ha/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/large-clusters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/limit-to-node-group/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/node-affinity-with-cloud-node-pools/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/node-roles/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/notifications/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/org-cert/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/secure-cluster/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/config/shared-storage/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/maintenance/alert-monitoring/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/maintenance/audit-log/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/maintenance/node-downtime/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/cli-install/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/docker-to-runai/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/new-cli-install/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/researcher-setup/researcher-setup-intro/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/installation-types/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/cluster-delete/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/cluster-install/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/cluster-prerequisites/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/cluster-setup-intro/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/cluster-upgrade/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/customize-cluster-install/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/dgx-bundle/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/cluster-setup/network-req/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/additional-clusters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/backend/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/cluster/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/next-steps/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/preparations/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/prerequisites/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/project-management/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/uninstall/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/k8s/upgrade/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/additional-clusters/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/backend/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/cluster/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/next-steps/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/preparations/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/prerequisites/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/project-management/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/uninstall/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/runai-setup/self-hosted/ocp/upgrade/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/troubleshooting/diagnostics/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/troubleshooting/logs-collection/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/admin/troubleshooting/troubleshooting/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/overview-developer/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/rest-auth/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/admin-rest-api/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/other-resources/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/reference/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/submit-rest/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/submit-yaml/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/cluster-api/workload-overview-dev/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/metrics/metrics-api/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/developer/metrics/metrics/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/components/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/data-privacy-details/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/product-support-policy/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-13/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-15/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-16/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-17/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/whats-new-2-18/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/changelog/hotfixes-2-13/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/changelog/hotfixes-2-15/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/changelog/hotfixes-2-16/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/changelog/hotfixes-2-17/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/home/changelog/hotfixes-2-18/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/org/departments/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/org/projects/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/org/scheduling-rules/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/resources/node-pools/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/aiinitiatives/resources/nodes/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/authentication/accessrules/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/authentication/applications/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/authentication/roles/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/authentication/users/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/performance/dashboard-analysis/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/submitting-workloads/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/workload-overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/compute/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/credentials/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/data-volumes/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/datasources/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/environments/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/existing-PVC/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/secrets/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/assets/templates/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/old-policies/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/overview/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/policy-examples/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/policy-reference/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://docs.run.ai/v2.18/platform-admin/workloads/policies/workspaces-policy/</loc>
-         <lastmod>2025-02-12</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
 </urlset>
