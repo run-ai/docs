@@ -1,7 +1,7 @@
 ## Uninstall Run:ai cluster
 
 Uninstall of Run:ai cluster from the Kubernetes cluster does **not** delete existing projects, departments or workloads submitted by users.
-
+6
 To uninstall the Run:ai cluster, run the following [helm](https://helm.sh/) command in your terminal:
 
 ```bash
