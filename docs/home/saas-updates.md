@@ -8,7 +8,7 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
-* Latest release: [February 16, 2025](#february-17-2025)
+* Latest release: [February 16, 2025](#february-16-2025)
 * Previous release: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
 
 ## February 2025 releases
@@ -49,7 +49,7 @@ SaaS features are gradually rolled out to customers over the course of a week to
 | RUN-25511 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
 
 
-### February 3. 2025
+### February 3, 2025
 
 #### Product enhancements
 
