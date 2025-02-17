@@ -12,6 +12,14 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-25558 | 2.18.88 |  Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
+| RUN-25466 | 2.18.88 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
+| RUN-24700 | 2.18.88 |  CLI v2: Workload describe command no longer requires type or framework flags. |
+| RUN-25499 | 2.18.87 | Fixed an issue where policy update request would fail to sync to the cluster" perhaps mention the cluster version. |
+| RUN-25303 | 2.18.85 | Fixed an issue where submitting with the --attach flag was supported only in a workspace workload. |
+| RUN-25061 | 2.18.84 | Fixed a security vulnerability in github.com.go-git.go-git.v5 with CVE CVE-2025-21613 with severity HIGH. |
+| RUN-24857 | 2.18.84| Fixed a security vulnerability in golang.org.x.net with CVE CVE-2024-45338 with severity HIGH. |
+| RUN-17284 | 2.18.84 | Fixed an issue where workloads were suspended when set with the termination after preemption option. |
 | RUN-24521 | 2.18.83 | Fixed a security vulnerability in golang.org.x.crypto with CVE CVE-2024-45337 with severity HIGH. |
 | RUN-24733 | 2.18.83 | Fixed an issue where department admins were unable to load the quota management page. |
 | RUN-25094 | 2.18.82 | Fixed an issue where OpenShift could not be upgraded due to a broken 3rd binary. |

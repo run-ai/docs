@@ -10,6 +10,11 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-25558 | 2.19.59 |  Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
+| RUN-24700 | 2.19.57 |  CLI v2: Workload describe command no longer requires type or framework flags. |
+| RUN-25511 | 2.19.57 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+| RUN-24858 | 2.19.56 | Fixed High vulnerability CVE-2024-56344 for third party open source 'systeminformation'. |
+| RUN-25466 | 2.19.56 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | RUN-17284 | 2.19.49 | Fixed an issue where workloads were suspended when set with the termination after preemption option. |
 | RUN-25290 | 2.19.49 | Fixed a security vulnerability in golang.org/x/net v0.33.0 with CVE-2024-45338 with severity HIGH. |
 | RUN-25234 | 2.19.49 | Fixed security vulnerabilities by updating oauth2 proxy image to the latest. |
