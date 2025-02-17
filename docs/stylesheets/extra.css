@@ -4,13 +4,14 @@
 } */
 
 .md-header {
-    background-color: rgb(0, 76, 117) !important;
+    background-color: #232837 !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: rgb(0, 155, 223) !important;
+    background-color: #FAFAFA !important;
     font-weight: bold;
+    color: #000000
 }
 /* Footer */
 
@@ -26,8 +27,21 @@
     background-color: rgb(0, 76, 117) !important;
     border-top: 1px solid #1b2532 !important;
 }
-.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
-    width: 50px
+.custom-logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding-left: 10px;
+}
+.custom-logo {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+}
+.logo-separator {
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Adjust separator color */
 }
 
 /* for the mobile nav bar */
