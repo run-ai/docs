@@ -8,10 +8,24 @@ Latest GA release notes ([https://docs.run.ai/latest/home/whats-new-2-20/](https
 
 SaaS features are gradually rolled out to customers over the course of a week to ensure a smooth transition and minimize any potential disruption. 
 
-* Latest release: [February 9, 2025](#february-9-2025)
-* Previous release: [February 3, 2025](#february-3-2025)
+* Latest release: [February 17, 2025](#february-17-2025)
+* Previous release: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
 
 ## February 2025 releases
+
+### February 17, 2025
+
+#### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-25249 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
+| RUN-25269 | Fixed an issue where the Pods modal was not paginated, limiting the display to only 50 records.  |
+| RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted.  |
+| RUN-25552 | Fixed an issue where clicking on "View Access Rules" in the Users table displayed only the first group if a user belonged to multiple groups. |
+| RUN-25558 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
+| RUN-25659 | CLI v2: Fixed an issue where min and max replicas  were able to be submitted using TensorFlow. |
+
 
 ### February 9, 2025
 
@@ -19,7 +33,7 @@ SaaS features are gradually rolled out to customers over the course of a week to
 
 | ID | Description |
 | :---- | :---- |
-| RUN-25511| Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+| RUN-25511 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
 
 
 ### February 3. 2025
