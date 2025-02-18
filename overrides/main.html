@@ -6,9 +6,93 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZ9ZCK"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   {{ super() }}
+
+  <style>
+    /* Hide default logo */
+    .md-header__button.md-logo {
+      display: none;
+    }
+
+    /* Align header elements */
+    .md-header__title {
+      display: flex;
+      align-items: center;
+      gap: 12px; /* Adjust spacing */
+      flex-wrap: nowrap;
+    }
+
+    .md-header__title img {
+      height: 32px; /* Adjust logo size */
+    }
+
+    .logo-separator {
+      width: 2px;
+      height: 30px;
+      background-color: #ccc;
+      display: inline-block;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      .md-header__title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px; /* Reduce gap for small screens */
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var titleElement = document.querySelector(".md-header__title");
+      var menuButton = document.querySelector(".md-header__button[for=__drawer]"); // Burger menu button
+      var versionSelector = document.querySelector(".md-version"); // Version selector
+
+      if (titleElement && menuButton) {
+        // Clear existing content to prevent duplication
+        titleElement.innerHTML = "";
+
+        // Add first logo
+        let logo1 = document.createElement("img");
+        logo1.src = "{{ base_url }}/images/NVIDIA_Logo_MKdocs.svg";
+        logo1.alt = "Run:AI Logo";
+        titleElement.appendChild(logo1);
+
+        // Add separator
+        let separator = document.createElement("div");
+        separator.className = "logo-separator";
+        titleElement.appendChild(separator);
+
+        // Add second logo
+        let logo2 = document.createElement("img");
+        logo2.src = "{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg";
+        logo2.alt = "Second Logo";
+        titleElement.appendChild(logo2);
+
+        // Insert the burger menu button *after* the logos but *before* the title
+        titleElement.appendChild(menuButton);
+
+        // Add site title after the menu button
+        let siteTitle = document.createElement("span");
+        siteTitle.textContent = "Documentation"; // Update this if needed
+        titleElement.appendChild(siteTitle);
+
+        // If a version selector exists, keep it in place
+        if (versionSelector) {
+          titleElement.appendChild(versionSelector);
+        }
+      }
+    });
+  </script>
+
 {% endblock %}
+
+
+
+
 
 {% block analytics %}
 <!-- Google tag (gtag.js) -->
@@ -24,20 +108,17 @@
   {{ super() }}
 {% endblock %}
 
-
 {% block scripts %}
     {{ super() }}
-    <!-- Start of Swagger custom style. Should be before /body which is why its in scripts -->
+    <!-- Start of Swagger custom style. Should be before /body which is why it's in scripts -->
     <link rel="stylesheet" href="{{ base_url }}/stylesheets/theme-outline.css" />
-    <!-- End of  Swagger custom style -->
+    <!-- End of Swagger custom style -->
 {% endblock %}
 
 {% block extrahead %}
-
     <meta property="og:title" content="{{page.title}}" />
     <meta property="og:description" content="{% for toc_item in page.toc %} | {{ toc_item.title }} | {% for toc_item in toc_item.children %}  {{ toc_item.title }}.   {% endfor %}  {% endfor %}" />
     <meta property="og:image" content="https://docs.run.ai/home/img/RUNAI-LOGO-DIGITAL-2C_BP.png"/> 
-
 {% endblock %}
 
 {% block footer %}

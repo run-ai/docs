@@ -4,13 +4,14 @@
 } */
 
 .md-header {
-    background-color: rgb(0, 76, 117) !important;
+    background-color: #232837 !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: rgb(0, 155, 223) !important;
+    background-color: #FAFAFA !important;
     font-weight: bold;
+    color: #000000
 }
 /* Footer */
 
@@ -30,20 +31,29 @@
     width: 50px
 }
 
+.custom-ticket-button {
+    background-color: #0654FE !important; /* Change to your preferred color */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
 
     html .md-nav--primary .md-nav__title--site {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
     }
 
     .md-nav__source {
-        background-color: #1f4e79 !important;
+        background-color: #232837 !important;
     }
 
     html .md-nav--primary .md-nav__title {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
         color: #ffffff;
     }
