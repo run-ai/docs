@@ -65,7 +65,7 @@
     font-family: "Roboto", sans-serif !important;
     font-weight: 600 !important; /* Semi-Bold */
     font-size: 14px !important;
-    color: #919191 !important; /* Default color for non-selected tabs */
+    color: #838383 !important; /* Default color for non-selected tabs */
 }
 
 /* Style only the active (selected) tab */
