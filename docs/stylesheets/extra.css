@@ -4,14 +4,13 @@
 } */
 
 .md-header {
-    background-color: #232837 !important;
+    background-color: rgb(0, 76, 117) !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: #FAFAFA !important;
+    background-color: rgb(0, 155, 223) !important;
     font-weight: bold;
-    color: #000000
 }
 /* Footer */
 
@@ -31,6 +30,7 @@
     width: 50px
 }
 
+<<<<<<< HEAD
 .custom-ticket-button {
     background-color: #0654FE !important; /* Change to your preferred color */
     color: white !important;
@@ -125,20 +125,22 @@
 }
 
 
+=======
+>>>>>>> parent of 92d6b3db3e (Merge pull request #1404 from run-ai/CSS-updates)
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
 
     html .md-nav--primary .md-nav__title--site {
-        background-color: #232837 !important;
+        background-color: rgb(0, 76, 117) !important;
         border-bottom: 1px solid #1b2532 !important;
     }
 
     .md-nav__source {
-        background-color: #232837 !important;
+        background-color: #1f4e79 !important;
     }
 
     html .md-nav--primary .md-nav__title {
-        background-color: #232837 !important;
+        background-color: rgb(0, 76, 117) !important;
         border-bottom: 1px solid #1b2532 !important;
         color: #ffffff;
     }
