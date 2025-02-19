@@ -4,13 +4,14 @@
 } */
 
 .md-header {
-    background-color: rgb(0, 76, 117) !important;
+    background-color: #232837 !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: rgb(0, 155, 223) !important;
+    background-color: #FAFAFA !important;
     font-weight: bold;
+    color: #000000
 }
 /* Footer */
 
@@ -30,20 +31,82 @@
     width: 50px
 }
 
+.custom-ticket-button {
+    background-color: #0654FE !important; /* Change to your preferred color */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+/* Change Search Box Background to White (20% Opacity) */
+.md-search__input {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    color: #ffffff !important; /* Keep text white for readability */
+    border: none !important; /* Remove border */
+    padding: 8px 12px;
+    border-radius: 4px; /* Keep rounded corners */
+}
+
+/* Change placeholder text color */
+.md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Light placeholder for visibility */
+}
+
+/* Ensure search box remains visible on focus */
+.md-search__input:focus {
+    background-color: rgba(255, 255, 255, 0.3) !important; /* Slightly stronger white on focus */
+    outline: none; /* Remove focus outline */
+}
+
+/* Apply same font, weight, and size to all tabs */
+.md-tabs__link {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 600 !important; /* Semi-Bold */
+    font-size: 14px !important;
+    color: #838383 !important; /* Default color for non-selected tabs */
+}
+
+/* Style only the active (selected) tab */
+.md-tabs__item--active > .md-tabs__link {
+    color: #232837 !important; /* Dark blue-gray for selected tab */
+}
+
+/* Hide the default GitHub icon */
+.md-header__source .md-source__icon {
+    display: none !important;
+}
+
+/* Ensure the new GitHub PNG icon appears correctly */
+.md-header__source a {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the new GitHub icon */
+.md-header__source a img {
+    width: 24px !important; /* Adjust size */
+    height: 24px !important;
+    margin-right: 5px; /* Keep spacing consistent */
+    vertical-align: middle;
+}
+
+
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
 
     html .md-nav--primary .md-nav__title--site {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
     }
 
     .md-nav__source {
-        background-color: #1f4e79 !important;
+        background-color: #232837 !important;
     }
 
     html .md-nav--primary .md-nav__title {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
         color: #ffffff;
     }
