@@ -4,14 +4,13 @@
 } */
 
 .md-header {
-    background-color: #232837 !important;
+    background-color: rgb(0, 76, 117) !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: #FAFAFA !important;
+    background-color: rgb(0, 155, 223) !important;
     font-weight: bold;
-    color: #000000
 }
 /* Footer */
 
@@ -31,6 +30,7 @@
     width: 50px
 }
 
+<<<<<<< HEAD
 .custom-ticket-button {
     background-color: #0654FE !important; /* Change to your preferred color */
     color: white !important;
@@ -40,57 +40,25 @@
     text-decoration: none;
 }
 
-/* ✅ Restore Original Search Box Styling */
-.md-search__form {
-    background-color: transparent !important; /* Keep search bar background transparent */
-    border-radius: 5px; /* Restore rounded corners */
-    border: none !important;
-}
-
-/* ✅ Make Search Input Text White */
+/* Change Search Box Background to White (20% Opacity) */
 .md-search__input {
-    background-color: rgba(255, 255, 255, 0.2) !important; /* Transparent background */
-    color: #ffffff !important; /* White text */
-    border: none !important;
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    color: #ffffff !important; /* Keep text white for readability */
+    border: none !important; /* Remove border */
+    padding: 8px 12px;
+    border-radius: 4px; /* Keep rounded corners */
 }
 
-/* ✅ Ensure Placeholder is Readable */
+/* Change placeholder text color */
 .md-search__input::placeholder {
-    color: rgba(255, 255, 255, 0.6) !important; /* Light gray placeholder */
+    color: rgba(255, 255, 255, 0.6); /* Light placeholder for visibility */
 }
 
-/* ✅ Expand Search Box on Click */
+/* Ensure search box remains visible on focus */
 .md-search__input:focus {
-    background-color: #ffffff !important; /* White background only when typing */
-    color: #232837 !important; /* Dark text when expanded */
+    background-color: rgba(255, 255, 255, 0.3) !important; /* Slightly stronger white on focus */
+    outline: none; /* Remove focus outline */
 }
-
-/* ✅ Ensure Search Results Stay White */
-.md-search-result {
-    background-color: #ffffff !important; /* White background */
-    color: #232837 !important; /* Dark text */
-}
-
-/* ✅ Fix Search Result Titles & Meta Text */
-.md-search-result__meta {
-    color: #232837 !important; /* Darker text for readability */
-    font-weight: 500;
-}
-
-/* ✅ Fix Search Result Links */
-.md-search-result__link {
-    color: #0654FE !important; /* Keep links blue */
-    font-weight: 600;
-}
-
-/* ✅ Improve Highlighted Search Terms */
-.md-search-result__link em {
-    color: #f8c24d !important; /* Yellow highlight */
-    font-weight: bold;
-}
-
-
-
 
 /* Apply same font, weight, and size to all tabs */
 .md-tabs__link {
@@ -125,20 +93,22 @@
 }
 
 
+=======
+>>>>>>> parent of 92d6b3db3e (Merge pull request #1404 from run-ai/CSS-updates)
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
 
     html .md-nav--primary .md-nav__title--site {
-        background-color: #232837 !important;
+        background-color: rgb(0, 76, 117) !important;
         border-bottom: 1px solid #1b2532 !important;
     }
 
     .md-nav__source {
-        background-color: #232837 !important;
+        background-color: #1f4e79 !important;
     }
 
     html .md-nav--primary .md-nav__title {
-        background-color: #232837 !important;
+        background-color: rgb(0, 76, 117) !important;
         border-bottom: 1px solid #1b2532 !important;
         color: #ffffff;
     }
