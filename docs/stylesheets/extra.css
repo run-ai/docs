@@ -73,6 +73,25 @@
     color: #232837 !important; /* Dark blue-gray for selected tab */
 }
 
+/* Hide the default GitHub icon */
+.md-header__source .md-source__icon {
+    display: none !important;
+}
+
+/* Ensure the new GitHub PNG icon appears correctly */
+.md-header__source a {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the new GitHub icon */
+.md-header__source a img {
+    width: 24px !important; /* Adjust size */
+    height: 24px !important;
+    margin-right: 5px; /* Keep spacing consistent */
+    vertical-align: middle;
+}
+
 
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {

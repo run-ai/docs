@@ -37,7 +37,7 @@
 
     /* Logo separator */
     .logo-separator {
-      width: 1px;  /* Set width to 1px */
+      width: 1px;
       height: 30px;
       background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
       display: inline-block;
@@ -45,15 +45,29 @@
 
     /* Site Title Styling */
     .site-title {
-        font-family: "Roboto", sans-serif; /* Ensure Roboto font */
-        font-weight: 600; /* Semi-Bold */
-        font-size: 16px; /* Set size */
-        line-height: 18.75px; /* Adjust line height */
-        color: #FFFFFF; /* Keep it white or adjust as needed */
-        margin-left: 12px; /* Space between logos and title */
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18.75px;
+        color: #FFFFFF;
+        margin-left: 12px;
     }
 
+    /* Hide default GitHub icon */
+    .md-header__source .md-source__icon {
+        display: none !important;
+    }
 
+    /* Ensure new GitHub icon appears */
+    .md-header__source a {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Align PNG icon */
+    .md-header__source img {
+        vertical-align: middle;
+    }
 
     /* Responsive adjustments */
     @media screen and (max-width: 768px) {
@@ -61,7 +75,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 8px; /* Reduce gap for small screens */
+        gap: 8px;
       }
     }
   </style>
@@ -71,8 +85,12 @@
       var titleElement = document.querySelector(".md-header__title");
       var menuButton = document.querySelector(".md-header__button[for=__drawer]"); // Burger menu button
       var versionSelector = document.querySelector(".md-version"); // Version selector
+      var githubLink = document.querySelector(".md-header__source a"); // GitHub link
 
-      if (titleElement && menuButton) {
+      // Prevent adding multiple times
+      if (titleElement && !titleElement.classList.contains("custom-header-applied")) {
+          titleElement.classList.add("custom-header-applied");
+
           // Clear existing content to prevent duplication
           titleElement.innerHTML = "";
 
@@ -100,8 +118,8 @@
 
           // Add site title after the menu button
           let siteTitle = document.createElement("span");
-          siteTitle.textContent = "Documentation"; // Update this if needed
-          siteTitle.className = "site-title"; // Apply styling
+          siteTitle.textContent = "Documentation";
+          siteTitle.className = "site-title";
           titleElement.appendChild(siteTitle);
 
           // If a version selector exists, keep it in place
@@ -109,9 +127,30 @@
               titleElement.appendChild(versionSelector);
           }
       }
+
+      // Replace GitHub icon while keeping stars and forks
+      if (githubLink && !githubLink.classList.contains("custom-github-applied")) {
+          githubLink.classList.add("custom-github-applied");
+
+          // Remove existing GitHub icon
+          var oldIcon = githubLink.querySelector(".md-source__icon svg");
+          if (oldIcon) {
+              oldIcon.parentNode.remove();
+          }
+
+          // Create a new GitHub icon (PNG)
+          let customGitHub = document.createElement("img");
+          customGitHub.src = "{{ base_url }}/images/github-mark-white.svg"; // Updated path
+          customGitHub.alt = "GitHub";
+          customGitHub.style.width = "24px";
+          customGitHub.style.height = "24px";
+          customGitHub.style.marginRight = "5px"; // Keep spacing consistent
+
+          // Prepend the new GitHub icon inside the GitHub link
+          githubLink.prepend(customGitHub);
+      }
   });
 </script>
-
 
 {% endblock %}
 
@@ -131,9 +170,7 @@
 
 {% block scripts %}
     {{ super() }}
-    <!-- Start of Swagger custom style. Should be before /body which is why it's in scripts -->
     <link rel="stylesheet" href="{{ base_url }}/stylesheets/theme-outline.css" />
-    <!-- End of Swagger custom style -->
 {% endblock %}
 
 {% block extrahead %}
@@ -149,25 +186,6 @@
 {% block content %}
   {{ super() }}
 
-  <!-- Giscus -->
-  <!-- <h2 id="__comments">{{ lang.t("meta.comments") }}</h2> -->
-  <!-- Replace with generated snippet -->
-  <script src="https://giscus.app/client.js"
-    data-repo="run-ai/docs"
-    data-repo-id="MDEwOlJlcG9zaXRvcnkyODAxODMxOTY="
-    data-category="General"
-    data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTE1MTA2MDU4"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="light"
-    data-lang="en"
-    crossorigin="anonymous"
-    async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
   <script>
     var giscus = document.querySelector("script[src*=giscus]")
 
@@ -178,7 +196,7 @@
       giscus.setAttribute("data-theme", theme) 
     }
 
-    /* Register event handlers after documented loaded */
+    /* Register event handlers after document loaded */
     document.addEventListener("DOMContentLoaded", function() {
       var ref = document.querySelector("[data-md-component=palette]")
       ref.addEventListener("change", function() {
