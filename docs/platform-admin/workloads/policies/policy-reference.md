@@ -133,7 +133,7 @@ Click the link to view the value type of each field.
     | **Description** | Maps a folder to a file system mount oint within the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Git fields** | **Description** | **Value type** |
+    | **hostPath fields** | **Description** | **Value type** |
     | name | Unique name to identify the instance. primarily used for policy locked rules. | string |
     | path | Local path within the controller to which the host volume is mapped. | string |
     | readOnly | Force the volume to be mounted with read-only permissions. Defaults to false. | boolean |
@@ -220,7 +220,7 @@ Click the link to view the value type of each field.
     | **Description** | Specifies NFS volume to mount into the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Spec PVC fields** | **Description** | **Value type** |
+    | **nfs fields** | **Description** | **Value type** |
     | mountpath | The path that the NFS volume is mounted to when in use. | string |
     | path | Path that is exported by the NFS server. | string |
     | readOnly | Whether to force the NFS export to be mounted with read-only permissions. | boolean |
@@ -249,7 +249,7 @@ Click the link to view the value type of each field.
     | **Description** | Specifies S3 buckets to mount into the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Spec PVC fields** | **Description** | **Value type** |
+    | **s3 fields** | **Description** | **Value type** |
     | Bucket | The name of the bucket | string |
     | path | Local path within the workspace to which the S3 bucket is mapped | string |
     | url | The URL of the S3 service provider. The default is the URL of the Amazon AWS Se service | string |
