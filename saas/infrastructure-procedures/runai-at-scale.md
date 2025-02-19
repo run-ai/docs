@@ -30,26 +30,19 @@ By default, Run:ai cluster services are deployed with a single replica. For larg
 
 Run:ai relies on [Prometheus](../cluster-installation/system-requirements.md#prometheus) to scrape cluster metrics and forward them to the Run:ai control plane. The volume of metrics generated is directly proportional to the number of nodes, workloads, and projects in the system. When operating at scale—reaching hundreds, and thousands of nodes and projects—the system generates a significant volume of metrics which can place a strain on the cluster and the network bandwidth.&#x20;
 
-To mitigate this impact, it is recommended to optimize Prometheus configuration. You can follow this [article](https://last9.io/blog/optimizing-prometheus-remote-write-performance-guide/) for best practices, or apply the following configurations to reduce the number of network connections by batching data into larger chunks.
+To mitigate this impact, it is recommended to tune the Prometheus [remote-write](https://prometheus.io/docs/specs/remote_write_spec/) configurations. See [remote write tuning](https://prometheus.io/docs/practices/remote_write/#remote-write-tuning) to read more about the tuning parameters available via the remote write configuration and refer to this [article](https://last9.io/blog/optimizing-prometheus-remote-write-performance-guide/) for optimizing Prometheus remote write performance.
 
-1. Modify the `runaiconfig` configuration as described in the [edit cluster configurations](../advanced-setup/advanced-cluster-configurations.md#edit-cluster-configurations) section.
-2. Apply the following:
+You can apply the remote-write configurations required as described in [advanced cluster configurations.](../advanced-setup/advanced-cluster-configurations.md#prometheus)
+
+The following example demonstrates the recommended approach in Run:ai for tuning **Prometheus remote-write** configurations:
 
 ```yaml
-spec:
-  prometheus:
-    remoteWrite:
-      queueConfig:
-        capacity: 5000
-        maxSamplesPerSend: 1000
-        maxShards: 100
+remoteWrite:
+  queueConfig:
+    capacity: 5000
+    maxSamplesPerSend: 1000
+    maxShards: 100
 ```
-
-This configuration enlarges the Prometheus queues and thus increases the required memory. It is hence recommended to reduce the metrics retention period using `spec.prometheus.spec.retentionSize`. See [advanced cluster configurations](../advanced-setup/advanced-cluster-configurations.md#configurations) for more details.
-
-
-
-
 
 
 

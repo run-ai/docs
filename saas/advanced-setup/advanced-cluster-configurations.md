@@ -4,15 +4,21 @@ Advanced cluster configurations can be used to tailor your Run:ai cluster deploy
 
 After the Run:ai cluster is installed, you can adjust various settings to better align with your organization's operational needs and security requirements.
 
-### Edit cluster configurations
+### **Modify cluster configurations**
 
-Advanced cluster configurations are managed through the `runaiconfig` [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). To modify the cluster configurations, use the following command:
+Advanced cluster configurations in Run:ai are managed through the `runaiconfig` [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). To edit the cluster configurations, run:
 
 ```bash
 kubectl edit runaiconfig runai -n runai
 ```
 
-### Configurations
+To see the full `runaiconfig` object structure, use:
+
+```bash
+kubectl get crds/runaiconfigs.run.ai -n runai -o yaml
+```
+
+### **Configurations**
 
 The following configurations allow you to enable or disable features, control permissions, and customize the behavior of your Run:ai cluster:
 
@@ -21,10 +27,6 @@ The following configurations allow you to enable or disable features, control pe
 | spec.project-controller.createNamespaces _(boolean)_                  | <p>Allows Kubernetes namespace creation for new projects<br>Default: <code>true</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | spec.mps-server.enabled _(boolean)_                                   | <p>Enabled when using <a href="https://docs.nvidia.com/deploy/mps/index.html">NVIDIA MPS</a><br>Default: <code>false</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | spec.global.subdomainSupport _(boolean)_                              | <p>Allows the creation of subdomains for ingress endpoints, enabling access to workloads via unique subdomains on the <a href="../cluster-installation/system-requirements.md#fully-qualified-domain-name-fqdn">Fully Qualified Domain Name (FQDN)</a>. For details, see <a href="https://docs.run.ai/latest/admin/config/allow-external-access-to-containers/">External Access to Container</a><br>Default: <code>false</code></p>                                                                                                                                                     |
-| spec.prometheus.spec.retention _(string)_                             | <p>Defines how long Prometheus retains Run:ai metrics locally, which is useful in case of potential connectivity issues. For more information, see <a href="https://prometheus.io/docs/prometheus/latest/storage/#storage">Prometheus Storage</a>.<br>Default: <code>2h</code></p>                                                                                                                                                                                                                                                                                                      |
-| spec.prometheus.spec.retentionSize _(string)_                         | <p>Allocates storage space for Run:ai metrics in Prometheus, which is useful in case of potential connectivity issues. For more information, see <a href="https://prometheus.io/docs/prometheus/latest/storage/#storage">Prometheus Storage</a>.<br>Default: <code>“"</code></p>                                                                                                                                                                                                                                                                                                        |
-| spec.prometheus.logLevel _(string)_                                   | <p>Sets the Prometheus log levelPossible values: [debug, info, warn, error]<br>Default: <code>“info"</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| spec.prometheus.additionalAlertLabels _(object)_                      | <p>Sets additional custom labels for the <a href="../infrastructure-procedures/runai-system-monitoring.md#built-in-alerts">built-in alerts</a><br>Example: <code>{“env”: “prod”}</code><br>Default: <code>{}</code></p>                                                                                                                                                                                                                                                                                                                                                                 |
 | spec.global.nodeAffinity.restrictScheduling _(boolean)_               | <p>Enables setting <a href="node-roles.md">node roles</a> and restricting workload scheduling to designated nodes<br>Default: <code>false</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | spec.global.affinity _(object)_                                       | <p>Sets the system nodes where Run:ai system-level services are scheduled. Using global.affinity will overwrite the <a href="node-roles.md">node roles</a> set using the Administrator CLI (runai-adm).<br>Default: Prefer to schedule on nodes that are labeled with <a href="http://node-role.kubernetes.io/runai-system">node-role.kubernetes.io/runai-system</a></p>                                                                                                                                                                                                                |
 | spec.global.tolerations _(object)_                                    | Configure Kubernetes tolerations for Run:ai system-level services                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -66,7 +68,7 @@ Apply the following configuration in order to change resources request and limit
 ```yaml
 spec:
   global:
-   <service-group-name>: #schedulingServices | SyncServices | WorkloadServices
+   <service-group-name>: # schedulingServices | SyncServices | WorkloadServices
      resources:
        limits:
          cpu: 1000m
@@ -106,16 +108,39 @@ spec:
 
 &#x20;This can be overwritten for specific services (if supported). Services without the `replicas` configuration does not support replicas:
 
+<pre class="language-yaml"><code class="lang-yaml"><strong>spec:
+</strong>  &#x3C;service-name>: # for example: pod-grouper
+    replicas: 1 # default
+</code></pre>
+
+#### Prometheus&#x20;
+
+The Prometheus instance in Run:ai is used for metrics collection and alerting.&#x20;
+
+The configuration scheme follows the official [PrometheusSpec](https://prometheus-operator.dev/docs/api-reference/api/#monitoring.coreos.com/v1.PrometheusSpec) and supports additional custom configurations. The PrometheusSpec schema is available using the `spec.prometheus.spec` configuration.
+
+A common use case using the PrometheusSpec is for metrics retention. This prevents metrics loss during potential connectivity issues and can be achieved by configuring local temporary metrics retention. For more information, see [Prometheus Storage](https://prometheus.io/docs/prometheus/latest/storage/#storage):
+
 ```yaml
-spec:
-  <service-name>: # for example: pod-grouper
-    properties:
-      replicas: 1 # default
+spec:  
+  prometheus:
+    spec: # PrometheusSpec
+      retention: 2h # default 
+      retentionSize: 20GB
 ```
 
-#### Prometheus
+In addition to the PrometheusSpec schema, some custom Run:ai configurations are also available:
 
-The prometheus instance can be configured b
+* Additional labels – Set additional labels for Run:ai's [built-in alerts](../infrastructure-procedures/runai-system-monitoring.md#built-in-alerts) sent by Prometheus.
+* Log level configuration – Configure the `logLevel` setting for the Prometheus container.&#x20;
+
+```yaml
+spec:  
+  prometheus:
+    logLevel: info # debug | info | warn | error
+    additionalAlertLabels:
+      - env: prod # example
+```
 
 #### Run:ai managed nodes
 
@@ -129,12 +154,8 @@ Label the nodes using the below:
 
 The below example shows how to include NVIDIA GPUs only and exclude all other GPU types in a cluster with mixed nodes, based on product type GPU label:
 
-<pre class="language-bash"><code class="lang-bash">nodeSelectorTerms:
+<pre class="language-yaml"><code class="lang-yaml">nodeSelectorTerms:
 - matchExpressions:
 <strong>  - key: nvidia.com/gpu.product  
 </strong>    operator: Exists
 </code></pre>
-
-{% hint style="info" %}
-To view the full runaiconfig object structure, use the following command: `kubectl get crds/runaiconfigs.run.ai -n runai -o yaml`
-{% endhint %}
