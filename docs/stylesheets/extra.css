@@ -40,25 +40,57 @@
     text-decoration: none;
 }
 
-/* Change Search Box Background to White (20% Opacity) */
+/* ✅ Restore Original Search Box Styling */
+.md-search__form {
+    background-color: transparent !important; /* Keep search bar background transparent */
+    border-radius: 5px; /* Restore rounded corners */
+    border: none !important;
+}
+
+/* ✅ Make Search Input Text White */
 .md-search__input {
-    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
-    color: #ffffff !important; /* Keep text white for readability */
-    border: none !important; /* Remove border */
-    padding: 8px 12px;
-    border-radius: 4px; /* Keep rounded corners */
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Transparent background */
+    color: #ffffff !important; /* White text */
+    border: none !important;
 }
 
-/* Change placeholder text color */
+/* ✅ Ensure Placeholder is Readable */
 .md-search__input::placeholder {
-    color: rgba(255, 255, 255, 0.6); /* Light placeholder for visibility */
+    color: rgba(255, 255, 255, 0.6) !important; /* Light gray placeholder */
 }
 
-/* Ensure search box remains visible on focus */
+/* ✅ Expand Search Box on Click */
 .md-search__input:focus {
-    background-color: rgba(255, 255, 255, 0.3) !important; /* Slightly stronger white on focus */
-    outline: none; /* Remove focus outline */
+    background-color: #ffffff !important; /* White background only when typing */
+    color: #232837 !important; /* Dark text when expanded */
 }
+
+/* ✅ Ensure Search Results Stay White */
+.md-search-result {
+    background-color: #ffffff !important; /* White background */
+    color: #232837 !important; /* Dark text */
+}
+
+/* ✅ Fix Search Result Titles & Meta Text */
+.md-search-result__meta {
+    color: #232837 !important; /* Darker text for readability */
+    font-weight: 500;
+}
+
+/* ✅ Fix Search Result Links */
+.md-search-result__link {
+    color: #0654FE !important; /* Keep links blue */
+    font-weight: 600;
+}
+
+/* ✅ Improve Highlighted Search Terms */
+.md-search-result__link em {
+    color: #f8c24d !important; /* Yellow highlight */
+    font-weight: bold;
+}
+
+
+
 
 /* Apply same font, weight, and size to all tabs */
 .md-tabs__link {
