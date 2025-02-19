@@ -40,6 +40,40 @@
     text-decoration: none;
 }
 
+/* Change Search Box Background to White (20% Opacity) */
+.md-search__input {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    color: #ffffff !important; /* Keep text white for readability */
+    border: none !important; /* Remove border */
+    padding: 8px 12px;
+    border-radius: 4px; /* Keep rounded corners */
+}
+
+/* Change placeholder text color */
+.md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Light placeholder for visibility */
+}
+
+/* Ensure search box remains visible on focus */
+.md-search__input:focus {
+    background-color: rgba(255, 255, 255, 0.3) !important; /* Slightly stronger white on focus */
+    outline: none; /* Remove focus outline */
+}
+
+/* Apply same font, weight, and size to all tabs */
+.md-tabs__link {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 600 !important; /* Semi-Bold */
+    font-size: 14px !important;
+    color: #919191 !important; /* Default color for non-selected tabs */
+}
+
+/* Style only the active (selected) tab */
+.md-tabs__item--active > .md-tabs__link {
+    color: #232837 !important; /* Dark blue-gray for selected tab */
+}
+
+
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
 

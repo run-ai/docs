@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block header %}
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZ9ZCK"
@@ -10,7 +9,7 @@
   {{ super() }}
 
   <style>
-    /* Hide default logo */
+    /* Hide default MkDocs logo */
     .md-header__button.md-logo {
       display: none;
     }
@@ -23,16 +22,38 @@
       flex-wrap: nowrap;
     }
 
+    /* Ensure logos are exactly 40px wide */
     .md-header__title img {
-      height: 32px; /* Adjust logo size */
+      width: 40px;
+      height: auto; /* Maintain aspect ratio */
     }
 
+    /* High-quality rendering to prevent pixelation */
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+    }
+
+    /* Logo separator */
     .logo-separator {
-      width: 2px;
+      width: 1px;  /* Set width to 1px */
       height: 30px;
-      background-color: #ccc;
+      background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
       display: inline-block;
     }
+
+    /* Site Title Styling */
+    .site-title {
+        font-family: "Roboto", sans-serif; /* Ensure Roboto font */
+        font-weight: 600; /* Semi-Bold */
+        font-size: 16px; /* Set size */
+        line-height: 18.75px; /* Adjust line height */
+        color: #FFFFFF; /* Keep it white or adjust as needed */
+        margin-left: 12px; /* Space between logos and title */
+    }
+
+
 
     /* Responsive adjustments */
     @media screen and (max-width: 768px) {
@@ -45,54 +66,54 @@
     }
   </style>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
       var titleElement = document.querySelector(".md-header__title");
       var menuButton = document.querySelector(".md-header__button[for=__drawer]"); // Burger menu button
       var versionSelector = document.querySelector(".md-version"); // Version selector
 
       if (titleElement && menuButton) {
-        // Clear existing content to prevent duplication
-        titleElement.innerHTML = "";
+          // Clear existing content to prevent duplication
+          titleElement.innerHTML = "";
 
-        // Add first logo
-        let logo1 = document.createElement("img");
-        logo1.src = "{{ base_url }}/images/NVIDIA_Logo_MKdocs.svg";
-        logo1.alt = "Run:AI Logo";
-        titleElement.appendChild(logo1);
+          // Add first logo (NVIDIA)
+          let logo1 = document.createElement("img");
+          logo1.src = "{{ base_url }}/images/NVIDIA_Logo_MKdocs.svg";
+          logo1.alt = "NVIDIA Logo";
+          logo1.className = "logo-1";
+          titleElement.appendChild(logo1);
 
-        // Add separator
-        let separator = document.createElement("div");
-        separator.className = "logo-separator";
-        titleElement.appendChild(separator);
+          // Add separator
+          let separator = document.createElement("div");
+          separator.className = "logo-separator";
+          titleElement.appendChild(separator);
 
-        // Add second logo
-        let logo2 = document.createElement("img");
-        logo2.src = "{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg";
-        logo2.alt = "Second Logo";
-        titleElement.appendChild(logo2);
+          // Add second logo (Run:AI)
+          let logo2 = document.createElement("img");
+          logo2.src = "{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg";
+          logo2.alt = "Run:AI Logo";
+          logo2.className = "logo-2";
+          titleElement.appendChild(logo2);
 
-        // Insert the burger menu button *after* the logos but *before* the title
-        titleElement.appendChild(menuButton);
+          // Insert the burger menu button *after* the logos but *before* the title
+          titleElement.appendChild(menuButton);
 
-        // Add site title after the menu button
-        let siteTitle = document.createElement("span");
-        siteTitle.textContent = "Documentation"; // Update this if needed
-        titleElement.appendChild(siteTitle);
+          // Add site title after the menu button
+          let siteTitle = document.createElement("span");
+          siteTitle.textContent = "Documentation"; // Update this if needed
+          siteTitle.className = "site-title"; // Apply styling
+          titleElement.appendChild(siteTitle);
 
-        // If a version selector exists, keep it in place
-        if (versionSelector) {
-          titleElement.appendChild(versionSelector);
-        }
+          // If a version selector exists, keep it in place
+          if (versionSelector) {
+              titleElement.appendChild(versionSelector);
+          }
       }
-    });
-  </script>
+  });
+</script>
+
 
 {% endblock %}
-
-
-
-
 
 {% block analytics %}
 <!-- Google tag (gtag.js) -->
