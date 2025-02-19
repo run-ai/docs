@@ -178,6 +178,10 @@ Before starting, make sure you have the following:
         * Open your terminal  
         * Make sure you have access to the Kubernetes cluster with permissions to view events  
         * Copy and paste the following command to get all [Kubernetes events](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/):  
+
+        ```bash
+        kubectl get events  -A
+        ```
  
     3. Inspect resource details  
 
