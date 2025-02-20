@@ -16,7 +16,7 @@ The Reports table provides a list of all the reports defined in the platform and
 
 Users are able to access the reports they have generated themselves. Users with project viewing permissions throughout the tenant can access all reports within the tenant.
 
-![](img/reports-table.png)
+![](../review-your-performance/img/reports-table.png)
 
 The Reports table comprises the following columns:
 

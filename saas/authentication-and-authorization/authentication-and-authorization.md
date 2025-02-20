@@ -1,4 +1,4 @@
-# Authentication & authorization
+# Authentication and authorization
 
 Run:ai authentication and authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
@@ -44,7 +44,7 @@ While Kubernetes RBAC is limited to a single cluster, Run:ai expands the scope o
 
 RBAC at Run:ai is configured using access rules.
 
-An access rule is the assignment of a [role](roles.md) to a subject in a [scope](../manage-ai-initiatives/adapting-ai-initiatives-1.md#scopes-in-an-organization): `<Subject>` is a `<Role>` in a `<Scope>`.
+An access rule is the assignment of a [role](roles.md) to a subject in a [scope](broken-reference): `<Subject>` is a `<Role>` in a `<Scope>`.
 
 * **Subject**
   * A user, a group, or an application assigned with the role
@@ -54,7 +54,7 @@ An access rule is the assignment of a [role](roles.md) to a subject in a [scope]
     * For example, a role might allow a user to create and read Projects, but not update or delete them
     * Roles at Run:ai are system defined and cannot be created, edited or deleted
 * **Scope**
-  * A [scope](../manage-ai-initiatives/adapting-ai-initiatives-1.md#scopes-in-an-organization) is part of an organization in which a set of permissions (roles) is effective. Scopes include Projects, Departments, Clusters, Account (all clusters).
+  * A [scope](broken-reference) is part of an organization in which a set of permissions (roles) is effective. Scopes include Projects, Departments, Clusters, Account (all clusters).
 
 Below is an example of an access rule: **username@company.com** is a **Department admin** in **Department: A**
 

@@ -187,16 +187,6 @@ runai pytorch submit -i ubuntu --master-args "-a master_arg_a -b master-arg_b'" 
 runai pytorch submit -i ubuntu --master-command "python_master -m pip install'" --command -- 'python_worker -m pip install'
 ```
 
-
-
-#### Submitting with environment variables
-
-Submitting with a secret as an environment variable
-
-```
-runai 
-```
-
 ### Listing objects
 
 #### Listing all workloads in the user's scope
