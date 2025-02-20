@@ -22,7 +22,7 @@ To get support use the following channels:
 
 * Or submit a ticket by clicking the button below:
 
-[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .md-button--primary }
+[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .custom-ticket-button}
 
 
 
@@ -30,7 +30,7 @@ To get support use the following channels:
 
 Run:ai provides its customers with access to the _Run:ai Customer _Community portal_ to submit tickets, track ticket progress and update support cases.
 
-[Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .md-button--primary }
+[Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .custom-ticket-button}
 
 Reach out to customer support for credentials.
 
