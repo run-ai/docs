@@ -125,7 +125,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 3: Connecting to the Jupyter Notebook
+## Step 3: Connecting to the Jupyter Notebook
 
 {% tabs %}
 {% tab title="UI" %}

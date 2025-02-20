@@ -1,10 +1,10 @@
-# Advanced cluster configuration
+# Advanced cluster configurations
 
 Advanced cluster configurations can be used to tailor your Run:ai cluster deployment to meet specific operational requirements and optimize resource management. By fine-tuning these settings, you can enhance functionality, ensure compatibility with organizational policies, and achieve better control over your cluster environment. This article provides guidance on implementing and managing these configurations to adapt the Run:ai cluster to your unique needs.
 
 After the Run:ai cluster is installed, you can adjust various settings to better align with your organization's operational needs and security requirements.
 
-### **Modify cluster configurations**
+## **Modify cluster configurations**
 
 Advanced cluster configurations in Run:ai are managed through the `runaiconfig` [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/). To edit the cluster configurations, run:
 
@@ -18,7 +18,7 @@ To see the full `runaiconfig` object structure, use:
 kubectl get crds/runaiconfigs.run.ai -n runai -o yaml
 ```
 
-### **Configurations**
+## **Configurations**
 
 The following configurations allow you to enable or disable features, control permissions, and customize the behavior of your Run:ai cluster:
 
@@ -53,7 +53,7 @@ The following configurations allow you to enable or disable features, control pe
 | spec.limitRange.memoryDefaultLimitGpuFactor _(string)_                | <p>Sets a default memory limit based on the number of GPUs requested when no memory limit is specified<br>Default: <code>NO DEFAULT</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | spec.global.enableWorkloadOwnershipProtection _(boolean)_             | <p>Prevents users within the same project from deleting workloads created by others. This enhances workload ownership security and ensures better collaboration by restricting unauthorized modifications or deletions.<br>Default: <code>false</code></p>                                                                                                                                                                                                                                                                                                                              |
 
-#### Run:ai services resource management
+### Run:ai services resource management
 
 Run:ai cluster includes many different services. To simplify resource management, the configuration structure allows you to configure the containers CPU / memory resources for each service individually or group of services together.
 
@@ -94,7 +94,7 @@ spec:
 
 For resource recommendations, see [Vertical scaling](../infrastructure-procedures/runai-at-scale.md#vertical-scaling).
 
-#### Run:ai services replicas
+### Run:ai services replicas
 
 By default, all Run:ai containers are deployed with a single replica. Some services support multiple replicas for redundancy and performance.
 
@@ -113,7 +113,7 @@ spec:
     replicas: 1 # default
 </code></pre>
 
-#### Prometheus&#x20;
+### Prometheus&#x20;
 
 The Prometheus instance in Run:ai is used for metrics collection and alerting.&#x20;
 
@@ -142,7 +142,7 @@ spec:
       - env: prod # example
 ```
 
-#### Run:ai managed nodes
+### Run:ai managed nodes
 
 To include or exclude specific nodes from running workloads within a cluster managed by Run:ai, use the `nodeSelectorTerms` flag. For additional details, see [Kubernetes nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector).
 

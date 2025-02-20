@@ -11,7 +11,7 @@ To collect Run:ai logs, follow these steps:
 * Ensure that you have administrator-level access to the Kubernetes cluster where Run:ai is installed.
 * The Run:ai [Administrator Command-Line Interface](../cli-reference/new-cli/administrator-cli.md) (CLI) must be installed.&#x20;
 
-#### Step-by-Step Instructions
+### Step-by-Step Instructions
 
 1. Run the Command from your local machine or a Bastion Host (secure server). Open a terminal on your local machine (or any machine that has network access to the Kubernetes cluster) where the Run:ai Administrator CLI is installed.
 2. Collect the Logs. Execute the following command to collect the logs:

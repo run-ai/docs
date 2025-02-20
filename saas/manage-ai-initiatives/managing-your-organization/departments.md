@@ -6,7 +6,7 @@ Departments are a grouping of projects. By grouping projects into a department, 
 
 For example, in an academic environment, a department can be the Physics Department grouping various projects (AI Initiatives) within the department, or grouping projects where each project represents a single student.
 
-### Departments
+## Departments
 
 The Departments table can be found under **Organization** in the Run:ai platform.
 
@@ -34,7 +34,7 @@ The Departments table consists of the following columns:
 | Workload(s)             | The list of workloads under projects associated with this department. Click the values under this column to view the list of workloads with their resource parameters (as described below)                                                                                                                                                                           |
 | Cluster                 | The cluster that the department is associated with                                                                                                                                                                                                                                                                                                                   |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
 * Search - Click SEARCH and type the value to search by
@@ -42,7 +42,7 @@ The Departments table consists of the following columns:
 * Column selection - Click COLUMNS and select the columns to display in the table
 * Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
-#### Node pools with quota associated with the department
+### Node pools with quota associated with the department
 
 Click one of the values of Node pool(s) with quota column, to view the list of node pools and their parameters
 
@@ -56,7 +56,7 @@ Click one of the values of Node pool(s) with quota column, to view the list of n
 | Allocated CPU (Cores) | The total amount of CPUs (cores) allocated by workloads using this node pool under all projects associated with this department. The number of allocated CPUs (cores) may temporarily surpass the CPUs (Cores) quota of the department if over quota is used.                                                                 |
 | Allocated CPU memory  | The actual amount of CPU memory allocated by workloads using this node pool under all projects associated with this department. The number of Allocated CPU memory may temporarily surpass the CPU memory quota if over quota is used.                                                                                        |
 
-#### Subjects authorized for the project
+### Subjects authorized for the project
 
 Click one of the values of the Subject(s) column, to view the list of subjects and their parameters. This column is only viewable if your role in the Run:ai system affords you those permissions.
 
@@ -73,7 +73,7 @@ Click one of the values of the Subject(s) column, to view the list of subjects a
 A role given in a certain scope, means the role applies to this scope and any descendant scopes in the organizational tree.
 {% endhint %}
 
-### Adding a new department
+## Adding a new department
 
 To create a new Department:
 
@@ -106,7 +106,7 @@ Example of Quota management:
 
 5. Click **CREATE DEPARTMENT**
 
-### Adding an access rule to a department
+## Adding an access rule to a department
 
 To create a new access rule for a department:
 
@@ -122,7 +122,7 @@ To create a new access rule for a department:
 7. Click **SAVE RULE**
 8. Click **CLOSE**
 
-### Deleting an access rule from a department
+## Deleting an access rule from a department
 
 To delete an access rule from a department:
 
@@ -132,13 +132,13 @@ To delete an access rule from a department:
 4. Click on the trash icon
 5. Click **CLOSE**
 
-### Editing a department
+## Editing a department
 
 1. Select the Department you want to edit
 2. Click **EDIT**
 3. Update the Department and click **SAVE**
 
-### Viewing a department’s policy
+## Viewing a department’s policy
 
 To view the policy of a department:
 
@@ -159,7 +159,7 @@ To view the policy of a department:
 * A policy set for a department affects all subordinated projects and their workloads, according to the policy workload type
 {% endhint %}
 
-### Deleting a department
+## Deleting a department
 
 1. Select the department you want to delete
 2. Click **DELETE**
@@ -169,12 +169,12 @@ To view the policy of a department:
 Deleting a department permanently deletes its subordinated projects, any assets created in the scope of this department, and any of its subordinated projects such as compute resources, environments, data sources, templates, and credentials. However, workloads running within the department’s subordinated projects, or the policies defined for this department or its subordinated projects - remain intact and running.
 {% endhint %}
 
-### Reviewing a department
+## Reviewing a department
 
 1. Select the department you want to review
 2. Click **REVIEW**
 3. Review and click **CLOSE**
 
-### Using API
+## Using API
 
 To view the available actions, go to the [Departments](https://app.run.ai/api/docs#tag/Departments) API reference.

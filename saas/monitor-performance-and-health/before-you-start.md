@@ -2,7 +2,7 @@
 
 Run:ai provides [metrics and telemetry](metrics-api.md) for both physical cluster entities such as clusters, nodes, and node pools and application organization entities such as departments and projects. Metrics represent over-time data while telemetry represents current analytics data. This data is essential for monitoring and analyzing the performance and health of your platform.
 
-### Consuming metrics and telemetry data
+## Consuming metrics and telemetry data
 
 Users can consume the data based on their permissions:
 
@@ -10,14 +10,14 @@ Users can consume the data based on their permissions:
 2. **CLI**: Use the Run:ai [Command Line Interface](../cli-reference/) to query and manage the data.
 3. **UI**: Visualize the data through the Run:ai user interface.
 
-#### **API**
+### **API**
 
 * **Metrics API**: Access over-time detailed analytics data programmatically.
 * **Telemetry API:** Access current analytics data programmatically.&#x20;
 
 Refer to [metrics and telemetry](metrics-api.md) to see the full list of supported metrics and telemetry APIs.
 
-#### **CLI**
+### **CLI**
 
 Use the `list` an `describe` commands to fetch and manage the data. See [CLI reference](../cli-reference/new-cli/runai.md) for more details.
 
@@ -27,7 +27,7 @@ Use the `list` an `describe` commands to fetch and manage the data. See [CLI ref
 
 <figure><img src="../.gitbook/assets/2025-02-10_16-33-12.png" alt=""><figcaption><p>List projects and view their telemetry and metrics</p></figcaption></figure>
 
-#### **UI Views**
+### **UI Views**
 
 Refer to [metrics and telemetry](metrics-api.md) to see the full list of supported metrics and telemetry.
 

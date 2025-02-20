@@ -8,8 +8,6 @@ The Run:ai cluster installation can be customized to support your environment vi
 
 These configurations are saved in the `runaiconfig` Kubernetes object and can be edited post-installation as needed. For more information, see [Advanced Cluster Configurations](../advanced-setup/advanced-cluster-configurations.md).
 
-### Values
-
 The following table lists the available Helm chart values that can be configured to customize the Run:ai cluster installation.
 
 | Key                                                 | Description                                                                                                                                                                                                                                                                                                                                             |

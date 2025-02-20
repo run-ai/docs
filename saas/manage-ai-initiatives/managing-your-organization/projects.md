@@ -6,7 +6,7 @@ Researchers submit AI workloads. To streamline resource allocation and prioritiz
 
 For example, you may have several people involved in a specific face-recognition initiative collaborating under one project named “face-recognition-2024”. Alternatively, you can have a project per person in your team, where each member receives their own quota.
 
-### Projects table
+## Projects table
 
 The Projects table can be found under **Organization** in the Run:ai platform.
 
@@ -43,7 +43,7 @@ The Projects table consists of the following columns:
 | Workload(s)                                  | The list of workloads associated with the project. Click the values under this column to view the list of workloads with their resource parameters (as described below).                                                                                                                                                                                                                              |
 | Cluster                                      | The cluster that the project is associated with                                                                                                                                                                                                                                                                                                                                                       |
 
-#### Node pools with quota associated with the project
+### Node pools with quota associated with the project
 
 Click one of the values of Node pool(s) with quota column, to view the list of node pools and their parameters
 
@@ -58,7 +58,7 @@ Click one of the values of Node pool(s) with quota column, to view the list of n
 | Allocated CPU memory  | The actual amount of CPU memory allocated by workloads using this node pool under this Project. The number of Allocated CPU memory may temporarily surpass the CPU memory quota if over quota is used.                                                                                                                                                                                         |
 | Order of priority     | The default order in which the Scheduler uses node-pools to schedule a workload. This is used only if the order of priority of node pools is not set in the workload during submission, either by an admin policy or the user. An empty value means the node pool is not part of the project’s default list, but can still be chosen by an admin policy or the user during workload submission |
 
-#### Subjects authorized for the project
+### Subjects authorized for the project
 
 Click one of the values in the Subject(s) column, to view the list of subjects and their parameters. This column is only viewable, if your role in the Run:ai system affords you those permissions.
 
@@ -71,7 +71,7 @@ Click one of the values in the Subject(s) column, to view the list of subjects a
 | Authorized by | The user who granted the access rule                                                                                                                                                                                     |
 | Last updated  | The last time the access rule was updated                                                                                                                                                                                |
 
-#### Workloads associated with the project
+### Workloads associated with the project
 
 Click one of the values of Workload(s) column, to view the list of workloads and their parameters
 
@@ -88,7 +88,7 @@ Click one of the values of Workload(s) column, to view the list of workloads and
 | CPU memory request      | The amount of CPU memory requested (floating number, presented as an absolute memory size in MB or GB)                                                                                           |
 | CPU compute request     | The amount of CPU compute requested (floating number, represents the number of requested Cores)                                                                                                  |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
 * Search - Click SEARCH and type the value to search by
@@ -96,7 +96,7 @@ Click one of the values of Workload(s) column, to view the list of workloads and
 * Column selection - Click COLUMNS and select the columns to display in the table
 * Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
-### Adding a new project
+## Adding a new project
 
 To create a new Project:
 
@@ -142,7 +142,7 @@ When no node pools are configured, you can set the same parameters but it is for
 6. Set [Scheduling rules](../../policies/scheduling-rules.md) as required.
 7. Click **CREATE PROJECT**
 
-### Adding an access rule to a project
+## Adding an access rule to a project
 
 To create a new access rule for a project:
 
@@ -158,7 +158,7 @@ To create a new access rule for a project:
 7. Click **SAVE RULE**
 8. Click **CLOSE**
 
-### Deleting an access rule from a project
+## Deleting an access rule from a project
 
 To delete an access rule from a project:
 
@@ -168,7 +168,7 @@ To delete an access rule from a project:
 4. Click on the trash icon
 5. Click **CLOSE**
 
-### Editing a project
+## Editing a project
 
 To edit a project:
 
@@ -176,7 +176,7 @@ To edit a project:
 2. Click **EDIT**
 3. Update the Project and click **SAVE**
 
-### Viewing a project’s policy
+## Viewing a project’s policy
 
 To view the policy of a project:
 
@@ -195,7 +195,7 @@ To view the policy of a project:
 The policy affecting the project consists of rules and defaults. Some of these rules and defaults may be derived from policies of a parent cluster and/or department (source). You can see the source of each rule in the policy form.
 {% endhint %}
 
-### Deleting a project
+## Deleting a project
 
 To delete a project:
 
@@ -213,6 +213,6 @@ Deleting a project does not delete its associated namespace, any of the workload
 Deleting a project does not delete its associated namespace, but will attempt to delete it’s associated workloads and assets. Any assets created in the scope of this project such as compute resources, environments, data sources, templates and credentials, are permanently deleted from the system.
 {% endhint %}
 
-### Using API
+## Using API
 
 To view the available actions, go to the [Projects](https://app.run.ai/api/docs#tag/Projects) API reference.

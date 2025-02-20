@@ -29,7 +29,7 @@ Reclaim is an inter-project and inter-department resource balancing action that 
 This mode of operation means that a lower priority workload submitted in one project (e.g. training) can reclaim resources from a project that runs a higher priority workload (e.g. preemptive workspace) if fairness balancing is required.
 
 {% hint style="info" %}
-Only preemptive workloads can go over quota as they are susceptible to reclaim (cross-projects preemption) of the over quota resources they are using. The amount of over quota resources a project can gain depends on the over quota weight or quota (if over quota weight is disabled). Departments’ over quota is always proportional to its quota.&#x20;
+Only preemptive workloads can go over quota as they are susceptible to reclaim (cross-projects preemption) of the over quota resources they are using. The amount of over quota resources a project can gain depends on the over quota weight or quota (if over quota weight is disabled). Departments’ over quota is always proportional to its quota.
 {% endhint %}
 
 ### Priority preemption within a project
@@ -95,5 +95,5 @@ When re-balancing resources between queues of different projects and departments
 
 Now that you have gained insights into how the Scheduler dynamically balances workloads to optimize cluster utilization and maintain fairness across projects and departments, you can [submit workloads](../../workloads-in-runai/workloads.md). Before submitting your workloads, it’s important to familiarize yourself with the following key topics:
 
-* [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md): Learn what workloads are and what is supported for both Run:ai-specific and third-party workloads.
-* [Run:ai workload types](../../workloads-in-runai/workload-types.md): Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs.
+* [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md) - Learn what workloads are and what is supported for both Run:ai and third-party workloads.
+* [Run:ai workload types](../../workloads-in-runai/workload-types.md) - Explore the various Run:ai workload types available and understand their specific purposes to enable you to choose the most appropriate workload type for your needs.
