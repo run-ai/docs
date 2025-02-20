@@ -1,66 +1,38 @@
 # Before you start
 
-### Reviewing your performance
+Run:ai provides [metrics and telemetry](metrics-api.md) for both physical cluster entities such as clusters, nodes, and node pools and application organization entities such as departments and projects. Metrics represent over-time data while telemetry represents current analytics data. This data is essential for monitoring and analyzing the performance and health of your platform.
 
-Run:ai provides users with a comprehensive set of tools to monitor and analyze their Cluster's performance. This article details the importance of metrics and telemetry as tools for performance monitoring, key benefits, and best practices for using Run:ai to improve your cluster performance.
+### Consuming metrics and telemetry data
 
-### Importance of metrics and telemetry
+Users can consume the data based on their permissions:
 
-Metrics and telemetry are essential for understanding your cluster's health and performance. They provide quantifiable data that can be used to identify bottlenecks, inefficiencies, and potential issues. By tracking metrics over time, you can identify trends and patterns to help you make data-driven decisions about your cluster.
+1. **API**: Access the data programmatically through the [Run:ai API](../api-reference/admin-rest-api/overview.md).
+2. **CLI**: Use the Run:ai [Command Line Interface](../cli-reference/) to query and manage the data.
+3. **UI**: Visualize the data through the Run:ai user interface.
 
-### Key benefits of Run:ai performance monitoring
+#### **API**
 
-Run:ai offers several key benefits for cluster performance monitoring and analysis.
+* **Metrics API**: Access over-time detailed analytics data programmatically.
+* **Telemetry API:** Access current analytics data programmatically.&#x20;
 
-* **Real-time performance insights**\
-  Get up-to-date information on your cluster's performance, including GPU and CPU utilization, memory usage and resources allocation.
-* **Trend analysis for capacity planning**\
-  Identify long-term trends of your cluster's utilization and plan for future capacity needs.
-* **Early detection of anomalies**\
-  Get alerts when your cluster's performance deviates from normal, so you can investigate and resolve issues before they impact your users.
-* **Visualizations and dashboards**\
-  Get a clear picture of your cluster's performance with easy-to-read dashboards.
-* **API Access**\
-  Data collection and integration with external tools, making it easy to track and analyze your cluster's performance.
+Refer to [metrics and telemetry](metrics-api.md) to see the full list of supported metrics and telemetry APIs.
 
-### Visualizations and dashboards
+#### **CLI**
 
-#### Cluster-wide dashboards:
+Use the `list` an `describe` commands to fetch and manage the data. See [CLI reference](../cli-reference/new-cli/runai.md) for more details.
 
-**Overview**
+<figure><img src="../.gitbook/assets/2025-02-10_16-33-31.png" alt=""><figcaption><p>Describe a specific workload telemetry</p></figcaption></figure>
 
-* Provides a high-level summary of the cluster's health and performance, including key metrics such as GPU utilization, memory usage, and Node status.
-* Allows administrators to quickly identify any potential issues or areas for optimization.
 
-**Quota management**
 
-* Enables administrators to monitor and manage GPU quotas across the cluster.
-* Includes features for setting and adjusting quotas, tracking usage, and receiving alerts when quotas are exceeded.
+<figure><img src="../.gitbook/assets/2025-02-10_16-33-12.png" alt=""><figcaption><p>List projects and view their telemetry and metrics</p></figcaption></figure>
 
-**Analytics**
+#### **UI Views**
 
-* Offers advanced analytics capabilities for analyzing GPU usage patterns and identifying trends.
-* Helps administrators optimize Resource allocation and improve cluster efficiency.
+Refer to [metrics and telemetry](metrics-api.md) to see the full list of supported metrics and telemetry.
 
-#### Workload visualizations
-
-* Provides detailed insights into the resource usage and utilization of each GPU in the cluster.
-* Includes metrics such as GPU memory utilization, core utilization and power consumption.
-* Allows administrators to identify GPUs that are under-utilized and overloaded.
-
-### Node/Node pool visualizations
-
-**Resource usage and utilization for each GPU**
-
-* Similar to the workload visualizations, but focused on the resource usage and utilization of each GPU within a specific node or node pool.
-* Helps administrators identify potential issues or bottlenecks at the node level.
-
-**Advanced Nvidia metrics**
-
-* Provides access to a range of advanced Nvidia metrics, such as GPU temperature, fan speed, and voltage.
-* Enables administrators to monitor the health and performance of GPUs in greater detail.
-
-### Types of metrics in Run:ai
-
-* [https://docs.run.ai/latest/developer/metrics/metrics-api/](https://docs.run.ai/latest/developer/metrics/metrics-api/)
-* [https://docs.run.ai/latest/developer/metrics/metrics/](https://docs.run.ai/latest/developer/metrics/metrics/)
+* **Overview dashboard** - Provides a high-level summary of the cluster's health and performance, including key metrics such as GPU utilization, memory usage, and node status. Allows administrators to quickly identify any potential issues or areas for optimization. Offers advanced analytics capabilities for analyzing GPU usage patterns and identifying trends. Helps administrators optimize resource allocation and improve cluster efficiency.
+* **Quota management** - Enables administrators to monitor and manage GPU quotas across the cluster. Includes features for setting and adjusting quotas, tracking usage, and receiving alerts when quotas are exceeded.
+* **Workload visualizations** - Provides detailed insights into the resource usage and utilization of each GPU in the cluster. Includes metrics such as GPU memory utilization, core utilization, and power consumption. Allows administrators to identify GPUs that are under-utilized and overloaded.
+* **Node and node pool visualizations** - Similar to workload visualizations, but focused on the resource usage and utilization of each GPU within a specific node or node pool. Helps administrators identify potential issues or bottlenecks at the node level.
+* **Advanced NVIDIA metrics** - Provides access to a range of advanced NVIDIA metrics, such as GPU temperature, fan speed, and voltage. Enables administrators to monitor the health and performance of GPUs in greater detail. This data is available at the node and workload level. To enable these metrics, contact Run:ai customer support.
