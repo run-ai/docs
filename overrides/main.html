@@ -18,14 +18,14 @@
     .md-header__title {
       display: flex;
       align-items: center;
-      gap: 12px; /* Adjust spacing */
+      gap: 12px;
       flex-wrap: nowrap;
     }
 
     /* Ensure logos are exactly 40px wide */
     .md-header__title img {
       width: 40px;
-      height: auto; /* Maintain aspect ratio */
+      height: auto;
     }
 
     /* High-quality rendering to prevent pixelation */
@@ -39,7 +39,7 @@
     .logo-separator {
       width: 1px;
       height: 30px;
-      background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+      background-color: rgba(255, 255, 255, 0.2);
       display: inline-block;
     }
 
@@ -69,11 +69,13 @@
         vertical-align: middle;
     }
 
-    /* Ensure version selector is correctly aligned */
+    /* Ensure version selector is positioned correctly */
     .md-version {
-      margin-left: auto;
+      margin-left: 12px;
       display: flex;
       align-items: center;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     /* Responsive adjustments */
@@ -105,7 +107,6 @@
           let logo1 = document.createElement("img");
           logo1.src = "{{ base_url }}/images/NVIDIA_Logo_MKdocs.svg";
           logo1.alt = "NVIDIA Logo";
-          logo1.className = "logo-1";
           titleElement.appendChild(logo1);
 
           // Add separator
@@ -117,7 +118,6 @@
           let logo2 = document.createElement("img");
           logo2.src = "{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg";
           logo2.alt = "Run:AI Logo";
-          logo2.className = "logo-2";
           titleElement.appendChild(logo2);
 
           // Insert the burger menu button *after* the logos but *before* the title
@@ -129,8 +129,11 @@
           siteTitle.className = "site-title";
           titleElement.appendChild(siteTitle);
 
-          // If a version selector exists, keep it in place
+          // Move version selector next to site title with spacing
           if (versionSelector) {
+              versionSelector.style.marginLeft = "12px";
+              versionSelector.style.display = "inline-flex";
+              versionSelector.style.alignItems = "center";
               titleElement.appendChild(versionSelector);
           }
       }
@@ -151,7 +154,7 @@
           customGitHub.alt = "GitHub";
           customGitHub.style.width = "24px";
           customGitHub.style.height = "24px";
-          customGitHub.style.marginRight = "5px"; // Keep spacing consistent
+          customGitHub.style.marginRight = "5px";
 
           // Prepend the new GitHub icon inside the GitHub link
           githubLink.prepend(customGitHub);
@@ -162,7 +165,6 @@
 {% endblock %}
 
 {% block analytics %}
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F88LDKJCCH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -170,8 +172,6 @@
   gtag('js', new Date());
   gtag('config', 'G-F88LDKJCCH');
 </script>
-  <!-- End Google Tag Manager -->
-  
   {{ super() }}
 {% endblock %}
 
