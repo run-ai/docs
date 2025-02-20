@@ -74,7 +74,7 @@
       margin-left: 12px;
       display: flex;
       align-items: center;
-      font-size: 14px !important; /* Explicitly set font size */
+      font-size: 14px !important;
       font-weight: 600;
     }
 
@@ -99,26 +99,27 @@
   document.addEventListener("DOMContentLoaded", function() {
       var titleElement = document.querySelector(".md-header__title");
       var menuButton = document.querySelector(".md-header__button[for=__drawer]"); // Burger menu button
-      var versionSelector = document.querySelector(".md-version"); // Version selector
       var githubLink = document.querySelector(".md-header__source a"); // GitHub link
 
       // Function to dynamically fetch and insert version selector
       function ensureVersionSelector() {
-          if (!document.querySelector(".md-version")) {
-              fetch("{{ base_url }}/versions.json")
+          let existingVersionSelector = document.querySelector(".md-version");
+          
+          if (!existingVersionSelector) {
+              fetch("/versions.json") // Ensure correct path from root
                   .then(response => response.json())
                   .then(versions => {
                       let selector = document.createElement("select");
                       selector.className = "md-version";
                       selector.style.marginLeft = "12px";
-                      selector.style.fontSize = "14px";  // Ensure 14px font size
+                      selector.style.fontSize = "14px";
                       selector.style.fontWeight = "600";
 
                       versions.forEach(version => {
                           let option = document.createElement("option");
                           option.value = version.url;
                           option.textContent = version.title;
-                          option.style.fontSize = "14px"; // Ensure 14px for each option
+                          option.style.fontSize = "14px";
                           if (window.location.pathname.includes(version.url)) {
                               option.selected = true;
                           }
@@ -193,6 +194,10 @@
           // Prepend the new GitHub icon inside the GitHub link
           githubLink.prepend(customGitHub);
       }
+
+      // Ensure version selector reloads on page changes
+      var observer = new MutationObserver(ensureVersionSelector);
+      observer.observe(document.body, { childList: true, subtree: true });
   });
 </script>
 
@@ -224,9 +229,29 @@
 
 {% endblock %}
 
+
 {% block content %}
   {{ super() }}
 
+  <!-- Giscus -->
+  <!-- <h2 id="__comments">{{ lang.t("meta.comments") }}</h2> -->
+  <!-- Replace with generated snippet -->
+  <script src="https://giscus.app/client.js"
+    data-repo="run-ai/docs"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkyODAxODMxOTY="
+    data-category="General"
+    data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTE1MTA2MDU4"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
   <script>
     var giscus = document.querySelector("script[src*=giscus]")
 
@@ -237,7 +262,7 @@
       giscus.setAttribute("data-theme", theme) 
     }
 
-    /* Register event handlers after document loaded */
+    /* Register event handlers after documented loaded */
     document.addEventListener("DOMContentLoaded", function() {
       var ref = document.querySelector("[data-md-component=palette]")
       ref.addEventListener("change", function() {
