@@ -69,6 +69,13 @@
         vertical-align: middle;
     }
 
+    /* Ensure version selector is correctly aligned */
+    .md-version {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
     /* Responsive adjustments */
     @media screen and (max-width: 768px) {
       .md-header__title {
@@ -140,7 +147,7 @@
 
           // Create a new GitHub icon (PNG)
           let customGitHub = document.createElement("img");
-          customGitHub.src = "{{ base_url }}/images/github-mark-white.svg"; // Updated path
+          customGitHub.src = "{{ base_url }}/images/github-mark.png"; // Updated path
           customGitHub.alt = "GitHub";
           customGitHub.style.width = "24px";
           customGitHub.style.height = "24px";
