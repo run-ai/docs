@@ -1,152 +1,17 @@
 {% extends "base.html" %}
 
+
 {% block header %}
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZ9ZCK"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
+  
   {{ super() }}
-
-  <style>
-    /* Hide default MkDocs logo */
-    .md-header__button.md-logo {
-      display: none;
-    }
-
-    /* Align header elements */
-    .md-header__title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: nowrap;
-    }
-
-    /* Ensure logos are exactly 40px wide */
-    .md-header__title img {
-      width: 40px;
-      height: auto;
-    }
-
-    /* High-quality rendering to prevent pixelation */
-    img {
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
-    }
-
-    /* Logo separator */
-    .logo-separator {
-      width: 1px;
-      height: 30px;
-      background-color: rgba(255, 255, 255, 0.2);
-      display: inline-block;
-    }
-
-    /* Site Title Styling */
-    .site-title {
-        font-family: "Roboto", sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 18.75px;
-        color: #FFFFFF;
-        margin-left: 12px;
-    }
-
-    /* Hide default GitHub icon */
-    .md-header__source .md-source__icon {
-        display: none !important;
-    }
-
-    /* Ensure new GitHub icon appears */
-    .md-header__source a {
-        display: flex;
-        align-items: center;
-    }
-
-    /* Align PNG icon */
-    .md-header__source img {
-        vertical-align: middle;
-    }
-
-    /* Responsive adjustments */
-    @media screen and (max-width: 768px) {
-      .md-header__title {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
-      }
-    }
-  </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      var titleElement = document.querySelector(".md-header__title");
-      var menuButton = document.querySelector(".md-header__button[for=__drawer]"); // Burger menu button
-      var githubLink = document.querySelector(".md-header__source a"); // GitHub link
-
-      // Prevent adding multiple times
-      if (titleElement && !titleElement.classList.contains("custom-header-applied")) {
-          titleElement.classList.add("custom-header-applied");
-
-          // Clear existing content to prevent duplication
-          titleElement.innerHTML = "";
-
-          // Add first logo (NVIDIA)
-          let logo1 = document.createElement("img");
-          logo1.src = "{{ base_url }}/images/NVIDIA_Logo_MKdocs.svg";
-          logo1.alt = "NVIDIA Logo";
-          titleElement.appendChild(logo1);
-
-          // Add separator
-          let separator = document.createElement("div");
-          separator.className = "logo-separator";
-          titleElement.appendChild(separator);
-
-          // Add second logo (Run:AI)
-          let logo2 = document.createElement("img");
-          logo2.src = "{{ base_url }}/images/RUNAI-LOGO-DIGITAL-2C_WP.svg";
-          logo2.alt = "Run:AI Logo";
-          titleElement.appendChild(logo2);
-
-          // Insert the burger menu button *after* the logos but *before* the title
-          titleElement.appendChild(menuButton);
-
-          // Add site title after the menu button
-          let siteTitle = document.createElement("span");
-          siteTitle.textContent = "Documentation";
-          siteTitle.className = "site-title";
-          titleElement.appendChild(siteTitle);
-      }
-
-      // Replace GitHub icon while keeping stars and forks
-      if (githubLink && !githubLink.classList.contains("custom-github-applied")) {
-          githubLink.classList.add("custom-github-applied");
-
-          // Remove existing GitHub icon
-          var oldIcon = githubLink.querySelector(".md-source__icon svg");
-          if (oldIcon) {
-              oldIcon.parentNode.remove();
-          }
-
-          // Create a new GitHub icon (PNG)
-          let customGitHub = document.createElement("img");
-          customGitHub.src = "{{ base_url }}/images/github-mark-white.svg"; // Updated path
-          customGitHub.alt = "GitHub";
-          customGitHub.style.width = "24px";
-          customGitHub.style.height = "24px";
-          customGitHub.style.marginRight = "5px";
-
-          // Prepend the new GitHub icon inside the GitHub link
-          githubLink.prepend(customGitHub);
-      }
-  });
-</script>
-
 {% endblock %}
 
 {% block analytics %}
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F88LDKJCCH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -154,24 +19,30 @@
   gtag('js', new Date());
   gtag('config', 'G-F88LDKJCCH');
 </script>
+  <!-- End Google Tag Manager -->
+  
   {{ super() }}
 {% endblock %}
 
+
 {% block scripts %}
     {{ super() }}
+    <!-- Start of Swagger custom style. Should be before /body which is why its in scripts -->
     <link rel="stylesheet" href="{{ base_url }}/stylesheets/theme-outline.css" />
+    <!-- End of  Swagger custom style -->
 {% endblock %}
 
 {% block extrahead %}
+
     <meta property="og:title" content="{{page.title}}" />
     <meta property="og:description" content="{% for toc_item in page.toc %} | {{ toc_item.title }} | {% for toc_item in toc_item.children %}  {{ toc_item.title }}.   {% endfor %}  {% endfor %}" />
     <meta property="og:image" content="https://docs.run.ai/home/img/RUNAI-LOGO-DIGITAL-2C_BP.png"/> 
+
 {% endblock %}
 
 {% block footer %}
 
 {% endblock %}
-
 
 {% block content %}
   {{ super() }}
