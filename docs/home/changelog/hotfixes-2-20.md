@@ -11,6 +11,18 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.22 | 20/02/2025 | RUN-23048 | Improved error handling to display meaningful messages from the CLI upgrade command. |
+| 2.20.22 | 20/02/2025 | RUN-25323 | Fixed an issue in CLI v2 where “stopping the workload” event was missing when workloads reached the project’s running time limit. |
+| 2.20.22 | 20/02/2025 | RUN-25511 | Fixed an issue where deleting a workload in CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+| 2.20.22 | 20/02/2025 | RUN-25552 | Fixed an issue where clicking on "View Access Rules" in the Users table displayed only the first group if a user belonged to multiple groups. |
+| 2.20.22 | 20/02/2025 | RUN-25571 | Reduced memory consumption to improve stability and increase scaling. |
+| 2.20.22 | 20/02/2025 | RUN-25659 | CLI v2: Fixed an issue where min and max replicas  were able to be submitted using TensorFlow. | 
+| 2.20.22 | 20/02/2025 | RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| 2.20.22 | 20/02/2025 | RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
+| 2.20.21 | 20/02/2025 | RUN-25730 | Fixed an issue where upgrading from 2.19 to 2.20 caused workspaces to be deleted if the project was recreated during the upgrade. |
+| 2.20.20 | 20/02/2025 | RUN-25912 | Fixed an issue where pod terminations in PyTorch jobs did not apply the back-off limit attribute causing jobs to fail. |
+| 2.20.19 | 20/02/2025  | RUN-25249 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
+| 2.20.19 | 20/02/2025 | RUN-25558 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when scaled caused ETCD memory to increase. |
 | 2.20.18 | 03/02/2025 | RUN-24700 | CLI v2: Workload describe command no longer requires type or framework flags. |
 | 2.20.17 | 30/01/2025 | RUN-25534 | Fixed range of generated reports to 30 days. |
 | 2.20.17 | 30/01/2025 | RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
