@@ -10,10 +10,17 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-25558 | 2.19.59 |  Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
+| RUN-25323 | 2.19.68 | Fixed an issue in CLI v2 where “stopping the workload” event was missing when workloads reached the project’s running time limit. |
+| RUN-25946 | 2.19.68 | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| RUN-25921 | 2.19.68 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
+| RUN-25571 | 2.19.66 | Reduced memory consumption to improve stability and increase scaling. |
+| RUN-25912 | 2.19.65 | Fixed an issue where pod terminations in PyTorch jobs did not apply the back-off limit attribute, causing jobs to fail. |
+| RUN-25552 | 2.19.64 | Fixed an issue where clicking on "View Access Rules" in the Users table displayed only the first group if a user belonged to multiple groups. |
+| RUN-25558 | 2.19.59 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when scaled caused ETCD memory to increase. |
+| RUN-25249 | 2.19.58 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
 | RUN-24700 | 2.19.57 |  CLI v2: Workload describe command no longer requires type or framework flags. |
 | RUN-25511 | 2.19.57 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
-| RUN-24858 | 2.19.56 | Fixed High vulnerability CVE-2024-56344 for third party open source 'systeminformation'. |
+| RUN-24858 | 2.19.56 | Fixed high vulnerability CVE-2024-56344 for third party open source 'systeminformation'. |
 | RUN-25466 | 2.19.56 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | RUN-17284 | 2.19.49 | Fixed an issue where workloads were suspended when set with the termination after preemption option. |
 | RUN-25290 | 2.19.49 | Fixed a security vulnerability in golang.org/x/net v0.33.0 with CVE-2024-45338 with severity HIGH. |

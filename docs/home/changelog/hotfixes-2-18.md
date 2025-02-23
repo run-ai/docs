@@ -12,6 +12,7 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-25659 | 2.18.89 |  CLI v2: Fixed an issue where min and max replicas  were able to be submitted using TensorFLow. |
 | RUN-25558 | 2.18.88 |  Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
 | RUN-25466 | 2.18.88 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | RUN-24700 | 2.18.88 |  CLI v2: Workload describe command no longer requires type or framework flags. |
