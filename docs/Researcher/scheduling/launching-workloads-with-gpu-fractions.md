@@ -11,11 +11,29 @@ Before you start, make sure:
 * You have created a [project](../../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 0.5 GPU.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
-{% include "../../../.gitbook/includes/step-1-logging-in.md" %}
+=== "User Interface"
+    Browse to the provided Run:ai user interface and log in with your credentials.
 
-### Step 2: Submitting a workspace
+=== "CLI V1"
+    Log in using the following command. You will be prompted to enter your username and password:
+     
+    ``` bash
+    runai login
+    ```
+
+=== "CLI V2"
+    Run the below --help command to obtain the login options and log in according to your setup:
+    
+    ``` bash
+    runai login --help  
+    ```
+
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
+
+## Step 2: Submitting a workspace
 
 {% tabs %}
 {% tab title="UI" %}

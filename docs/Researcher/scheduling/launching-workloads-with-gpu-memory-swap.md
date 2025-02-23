@@ -14,17 +14,13 @@ Before you start, make sure:
 * GPU memory swap is enabled on at least one free node as detailed [here](../gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 * Host-based routing is configured.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
-{% tabs %}
-{% tab title="UI" %}
-Browse to the provided Run:ai user interface and log in with your credentials.
-{% endtab %}
+=== "User Interface"
+    Browse to the provided Run:ai user interface and log in with your credentials.
 
-{% tab title="API" %}
-To use the API, you will need to obtain a token as shown in [API authentication.](../../../api-reference/rest-auth.md)
-{% endtab %}
-{% endtabs %}
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
 
 ### Step 2:  Submitting the first inference workload
 

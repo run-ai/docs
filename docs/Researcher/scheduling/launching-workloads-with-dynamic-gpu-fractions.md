@@ -4,7 +4,7 @@ This article provides a step-by-step walkthrough for running a Jupyter Notebook 
 
 Run:ai’s dynamic GPU fractions optimizes GPU utilization by enabling workloads to dynamically adjust their resource usage. It allows users to specify a guaranteed fraction of GPU memory and compute resources with a higher limit that can be dynamically utilized when additional resources are requested.
 
-### Prerequisites
+## Prerequisites
 
 Before you start, make sure:
 
@@ -12,27 +12,22 @@ Before you start, make sure:
 * The project has an assigned quota of at least 0.5 GPU.
 * Dynamic GPU fractions are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
-{% tabs %}
-{% tab title="UI" %}
-Browse to the provided Run:ai user interface and log in with your credentials.
-{% endtab %}
+=== "User Interface"
+    Browse to the provided Run:ai user interface and log in with your credentials.
 
-{% tab title="CLI v2" %}
-Log in using the following command. You will be prompted to enter your username and password:
+=== "CLI V2"
+    Run the below --help command to obtain the login options and log in according to your setup:
+    
+    ``` bash
+    runai login --help  
+    ```
 
-```sh
-runai login --help
-```
-{% endtab %}
+=== "API"
+    To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
 
-{% tab title="API" %}
-To use the API, you will need to obtain a token as shown in [API authentication.](../../../api-reference/rest-auth.md)
-{% endtab %}
-{% endtabs %}
-
-### Step 2: Submitting the first workspace
+## Step 2: Submitting the first workspace
 
 {% tabs %}
 {% tab title="UI" %}
