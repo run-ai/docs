@@ -14,6 +14,7 @@
     color: #000000;
 }
 
+/* Properly align the Documentation title in the header */
 .md-header__title {
     font-family: "Roboto", sans-serif !important;
     font-weight: 600 !important; /* Matches weight 600 */
@@ -23,6 +24,11 @@
     color: #FFFFFF !important; /* Matches hex #FFFFFF */
     width: 145px !important; /* Matches width */
     height: 24px !important; /* Matches height */
+    display: flex; 
+    align-items: center; /* Ensures vertical alignment */
+    justify-content: center; /* Optional: Centers horizontally */
+    padding-top: 2px; /* Fine-tune vertical spacing */
+    padding-bottom: 2px; /* Fine-tune vertical spacing */
 }
 
 /* Set the initial background color before input */
@@ -142,17 +148,22 @@ html .md-nav__button.md-logo img {
     }
 }
 
-/* Apply same font, weight, and size to all tabs */
+/* Ensure non-selected tabs are always #6B6B6B */
 .md-tabs__link {
     font-family: "Roboto", sans-serif !important;
     font-weight: 600 !important; /* Semi-Bold */
     font-size: 14px !important;
-    color: #838383 !important; /* Default color for non-selected tabs */
+    color: #6B6B6B !important; /* Non-selected tabs */
 }
 
-/* Style only the active (selected) tab */
+/* Change color on hover */
+.md-tabs__link:hover {
+    color: #232837 !important; /* Hover color */
+}
+
+/* Style the active (selected) tab */
 .md-tabs__item--active > .md-tabs__link {
-    color: #232837 !important; /* Dark blue-gray for selected tab */
+    color: #232837 !important; /* Selected tab color */
 }
 
 /* for the mobile nav bar */
