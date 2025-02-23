@@ -11,24 +11,63 @@
     /* background-image: url(../assets/images/second-nav-blue.png); */
     background-color: #FAFAFA !important;
     font-weight: bold;
-    color: #000000
+    color: #000000;
 }
-/* Footer */
 
+/* Properly align the Documentation title in the header */
+.md-header__title {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 600 !important; /* Matches weight 600 */
+    font-size: 16px !important; /* Matches size 16px */
+    line-height: 18.75px !important; /* Matches line height */
+    letter-spacing: 0 !important; /* Matches letter spacing */
+    color: #FFFFFF !important; /* Matches hex #FFFFFF */
+    width: 145px !important; /* Matches width */
+    height: 24px !important; /* Matches height */
+    display: flex; 
+    align-items: center; /* Ensures vertical alignment */
+    justify-content: center; /* Optional: Centers horizontally */
+    padding-top: 2px; /* Fine-tune vertical spacing */
+    padding-bottom: 2px; /* Fine-tune vertical spacing */
+}
+
+/* Set the initial background color before input */
+.md-search__form {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    border-radius: 4px; /* Optional: rounded edges */
+}
+
+/* Default state before typing: white with 20% opacity */
+.md-search__form {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    border-radius: 4px; /* Optional rounded edges */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Keep placeholder text visible */
+.md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.8) !important; /* Light placeholder for readability */
+}
+
+/* When the user clicks inside the search bar (focus), change to full white */
+.md-search__input:focus, 
+.md-search__input:not(:placeholder-shown) {
+    background-color: rgba(255, 255, 255, 1) !important; /* Fully white when typing */
+    color: #000000 !important; /* Black text while typing */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Ensure search icon remains unchanged */
+.md-search__icon {
+    color: inherit !important; /* Keeps default color */
+}
+
+
+/* Footer */
 .md-footer-nav {
     /* background-image: url(../assets/images/second-nav-blue.png); */
     background-color: rgb(0, 76, 117) !important;
-
     /* max-height: 90px; */
-}
-
-
-.md-footer-meta {
-    background-color: rgb(0, 76, 117) !important;
-    border-top: 1px solid #1b2532 !important;
-}
-.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
-    width: 50px
 }
 
 .custom-ticket-button {
@@ -40,94 +79,95 @@
     text-decoration: none;
 }
 
-/* ✅ Restore Original Search Box Styling */
-.md-search__form {
-    background-color: transparent !important; /* Keep search bar background transparent */
-    border-radius: 5px; /* Restore rounded corners */
-    border: none !important;
+.md-footer-meta {
+    background-color: rgb(0, 76, 117) !important;
+    border-top: 1px solid #1b2532 !important;
 }
 
-/* ✅ Make Search Input Text White */
-.md-search__input {
-    background-color: rgba(255, 255, 255, 0.2) !important; /* Transparent background */
-    color: #ffffff !important; /* White text */
-    border: none !important;
+/* Default logo size for desktop */
+html .md-header-nav__button.md-logo img, 
+html .md-header-nav__button.md-logo svg {
+    width: 104px !important;
+    height: 30px !important;
 }
 
-/* ✅ Ensure Placeholder is Readable */
-.md-search__input::placeholder {
-    color: rgba(255, 255, 255, 0.6) !important; /* Light gray placeholder */
+/* Adjust logo for tablet view */
+@media only screen and (max-width: 1024px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 70px !important;
+        height: 20px !important;
+    }
 }
 
-/* ✅ Expand Search Box on Click */
-.md-search__input:focus {
-    background-color: #ffffff !important; /* White background only when typing */
-    color: #232837 !important; /* Dark text when expanded */
+/* Smaller logo for mobile view */
+@media only screen and (max-width: 768px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 50px !important;
+        height: 15px !important;
+    }
 }
 
-/* ✅ Ensure Search Results Stay White */
-.md-search-result {
-    background-color: #ffffff !important; /* White background */
-    color: #232837 !important; /* Dark text */
+/* Extra small logo for very narrow screens */
+@media only screen and (max-width: 480px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 40px !important;
+        height: 12px !important;
+    }
 }
 
-/* ✅ Fix Search Result Titles & Meta Text */
-.md-search-result__meta {
-    color: #232837 !important; /* Darker text for readability */
-    font-weight: 500;
+/* Fix for sidebar navigation logo */
+html .md-nav__button.md-logo img {
+    width: 104px !important;
+    height: 30px !important;
 }
 
-/* ✅ Fix Search Result Links */
-.md-search-result__link {
-    color: #0654FE !important; /* Keep links blue */
-    font-weight: 600;
+/* Adjust sidebar logo for tablet view */
+@media only screen and (max-width: 1024px) {
+    html .md-nav__button.md-logo img {
+        width: 70px !important;
+        height: 20px !important;
+    }
 }
 
-/* ✅ Improve Highlighted Search Terms */
-.md-search-result__link em {
-    color: #f8c24d !important; /* Yellow highlight */
-    font-weight: bold;
+/* Smaller sidebar logo for mobile view */
+@media only screen and (max-width: 768px) {
+    html .md-nav__button.md-logo img {
+        width: 50px !important;
+        height: 15px !important;
+    }
 }
 
+/* Extra small sidebar logo for very narrow screens */
+@media only screen and (max-width: 480px) {
+    html .md-nav__button.md-logo img {
+        width: 40px !important;
+        height: 12px !important;
+    }
+}
 
-
-
-/* Apply same font, weight, and size to all tabs */
+/* Ensure non-selected tabs are always #6B6B6B */
 .md-tabs__link {
     font-family: "Roboto", sans-serif !important;
     font-weight: 600 !important; /* Semi-Bold */
     font-size: 14px !important;
-    color: #838383 !important; /* Default color for non-selected tabs */
+    color: #6B6B6B !important; /* Non-selected tabs */
 }
 
-/* Style only the active (selected) tab */
+/* Change color on hover */
+.md-tabs__link:hover {
+    color: #232837 !important; /* Hover color */
+}
+
+/* Style the active (selected) tab */
 .md-tabs__item--active > .md-tabs__link {
-    color: #232837 !important; /* Dark blue-gray for selected tab */
+    color: #232837 !important; /* Selected tab color */
 }
-
-/* Hide the default GitHub icon */
-.md-header__source .md-source__icon {
-    display: none !important;
-}
-
-/* Ensure the new GitHub PNG icon appears correctly */
-.md-header__source a {
-    display: flex;
-    align-items: center;
-}
-
-/* Style for the new GitHub icon */
-.md-header__source a img {
-    width: 24px !important; /* Adjust size */
-    height: 24px !important;
-    margin-right: 5px; /* Keep spacing consistent */
-    vertical-align: middle;
-}
-
 
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
-
     html .md-nav--primary .md-nav__title--site {
         background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
@@ -146,7 +186,6 @@
     html .md-nav--primary .md-nav__title::before {
         color: #ffffff;
     }
-
 }
 
 /* override swagger code */

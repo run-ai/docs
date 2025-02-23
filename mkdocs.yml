@@ -9,7 +9,7 @@ theme:
   custom_dir: overrides
   language: en
   favicon: images/favicon.ico
-  logo: images/RUNAI-LOGO-DIGITAL-2C_WP.svg
+  logo: images/logos-nvidia-runai.svg
   features:
     - navigation.indexes
     - navigation.tabs
