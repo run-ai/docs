@@ -12,9 +12,20 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
 * Latest release: [February 16, 2025](#february-16-2025)
-* Previous releases: [February 9, 2025](#february-9-2025), [February 3, 2025](#february-3-2025)
+* Previous releases: [February 3, 2025](#february-3-2025)
 
 ## February 2025 releases
+
+### February 23, 2025
+
+#### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-25974 | Fixed an issue where using filters in the Quota management dashboard was not working properly. |
+| RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
+| RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
 
 ### February 16, 2025
 
