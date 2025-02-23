@@ -4,46 +4,170 @@
 } */
 
 .md-header {
-    background-color: rgb(0, 76, 117) !important;
+    background-color: #232837 !important;
 }
 
 .md-tabs {
     /* background-image: url(../assets/images/second-nav-blue.png); */
-    background-color: rgb(0, 155, 223) !important;
+    background-color: #FAFAFA !important;
     font-weight: bold;
+    color: #000000;
 }
-/* Footer */
 
+.md-header__title {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 600 !important; /* Matches weight 600 */
+    font-size: 16px !important; /* Matches size 16px */
+    line-height: 18.75px !important; /* Matches line height */
+    letter-spacing: 0 !important; /* Matches letter spacing */
+    color: #FFFFFF !important; /* Matches hex #FFFFFF */
+    width: 145px !important; /* Matches width */
+    height: 24px !important; /* Matches height */
+}
+
+/* Set the initial background color before input */
+.md-search__form {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    border-radius: 4px; /* Optional: rounded edges */
+}
+
+/* Default state before typing: white with 20% opacity */
+.md-search__form {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* White with 20% opacity */
+    border-radius: 4px; /* Optional rounded edges */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Keep placeholder text visible */
+.md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.8) !important; /* Light placeholder for readability */
+}
+
+/* When the user clicks inside the search bar (focus), change to full white */
+.md-search__input:focus, 
+.md-search__input:not(:placeholder-shown) {
+    background-color: rgba(255, 255, 255, 1) !important; /* Fully white when typing */
+    color: #000000 !important; /* Black text while typing */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Ensure search icon remains unchanged */
+.md-search__icon {
+    color: inherit !important; /* Keeps default color */
+}
+
+
+/* Footer */
 .md-footer-nav {
     /* background-image: url(../assets/images/second-nav-blue.png); */
     background-color: rgb(0, 76, 117) !important;
-
     /* max-height: 90px; */
 }
 
+.custom-ticket-button {
+    background-color: #0654FE !important; /* Change to your preferred color */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
 
 .md-footer-meta {
     background-color: rgb(0, 76, 117) !important;
     border-top: 1px solid #1b2532 !important;
 }
-.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
-    width: 50px
+
+/* Default logo size for desktop */
+html .md-header-nav__button.md-logo img, 
+html .md-header-nav__button.md-logo svg {
+    width: 104px !important;
+    height: 30px !important;
+}
+
+/* Adjust logo for tablet view */
+@media only screen and (max-width: 1024px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 70px !important;
+        height: 20px !important;
+    }
+}
+
+/* Smaller logo for mobile view */
+@media only screen and (max-width: 768px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 50px !important;
+        height: 15px !important;
+    }
+}
+
+/* Extra small logo for very narrow screens */
+@media only screen and (max-width: 480px) {
+    html .md-header-nav__button.md-logo img, 
+    html .md-header-nav__button.md-logo svg {
+        width: 40px !important;
+        height: 12px !important;
+    }
+}
+
+/* Fix for sidebar navigation logo */
+html .md-nav__button.md-logo img {
+    width: 104px !important;
+    height: 30px !important;
+}
+
+/* Adjust sidebar logo for tablet view */
+@media only screen and (max-width: 1024px) {
+    html .md-nav__button.md-logo img {
+        width: 70px !important;
+        height: 20px !important;
+    }
+}
+
+/* Smaller sidebar logo for mobile view */
+@media only screen and (max-width: 768px) {
+    html .md-nav__button.md-logo img {
+        width: 50px !important;
+        height: 15px !important;
+    }
+}
+
+/* Extra small sidebar logo for very narrow screens */
+@media only screen and (max-width: 480px) {
+    html .md-nav__button.md-logo img {
+        width: 40px !important;
+        height: 12px !important;
+    }
+}
+
+/* Apply same font, weight, and size to all tabs */
+.md-tabs__link {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 600 !important; /* Semi-Bold */
+    font-size: 14px !important;
+    color: #838383 !important; /* Default color for non-selected tabs */
+}
+
+/* Style only the active (selected) tab */
+.md-tabs__item--active > .md-tabs__link {
+    color: #232837 !important; /* Dark blue-gray for selected tab */
 }
 
 /* for the mobile nav bar */
 @media only screen and (max-width: 76.1875em) {
-
     html .md-nav--primary .md-nav__title--site {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
     }
 
     .md-nav__source {
-        background-color: #1f4e79 !important;
+        background-color: #232837 !important;
     }
 
     html .md-nav--primary .md-nav__title {
-        background-color: rgb(0, 76, 117) !important;
+        background-color: #232837 !important;
         border-bottom: 1px solid #1b2532 !important;
         color: #ffffff;
     }
@@ -51,7 +175,6 @@
     html .md-nav--primary .md-nav__title::before {
         color: #ffffff;
     }
-
 }
 
 /* override swagger code */
