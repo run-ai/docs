@@ -1,6 +1,6 @@
 # GPU time-slicing
 
-Run:ai supports simultaneous submission of multiple workloads to single or multi-GPUs when using [GPU fractions](gpu-fractions.md). This is achieved by slicing the GPU memory between the different workloads according to the requested GPU fraction, and by using NVIDIA’s GPU time-slicing to share the GPU compute runtime. Run:ai ensures each workload receives the exact share of the GPU memory (= gpu\_memory \* requested), while the NVIDIA GPU time-slicing splits the GPU runtime evenly between the different workloads running on that GPU.
+Run:ai supports simultaneous submission of multiple workloads to single or multi-GPUs when using [GPU fractions](fractions.md). This is achieved by slicing the GPU memory between the different workloads according to the requested GPU fraction, and by using NVIDIA’s GPU time-slicing to share the GPU compute runtime. Run:ai ensures each workload receives the exact share of the GPU memory (= gpu\_memory \* requested), while the NVIDIA GPU time-slicing splits the GPU runtime evenly between the different workloads running on that GPU.
 
 To provide customers with predictable and accurate GPU compute resources scheduling, Run:ai’s GPU time-slicing adds **fractional compute** capabilities on top of Run:ai GPU fraction capabilities.
 
@@ -16,16 +16,16 @@ Run:ai offers two GPU time-slicing modes:
 
 * **Strict** - Each workload gets its **precise** GPU compute fraction, which equals to its requested GPU (memory) fraction. In terms of official Kubernetes resource specification, this means:
 
-```sh
-gpu-compute-request = gpu-compute-limit = gpu-(memory-)fraction
-```
+    ```sh
+    gpu-compute-request = gpu-compute-limit = gpu-(memory-)fraction
+    ```
 
 * **Fair** - Each workload is guaranteed at least its GPU compute fraction, but at the same time can also use additional GPU runtime compute slices that are not used by other idle workloads. Those excess time slices are divided equally between all workloads running on that GPU (after each got at least its requested GPU compute fraction). In terms of official Kubernetes resource specification, this means:
 
-```sh
-gpu-compute-request = gpu-(memory-)fraction
-gpu-compute-limit = 1.0
-```
+    ```sh
+    gpu-compute-request = gpu-(memory-)fraction
+    gpu-compute-limit = 1.0
+    ```
 
 The figure below illustrates how **Strict** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
@@ -41,33 +41,32 @@ Each GPU scheduling cycle is a **plan**. The plan is determined by the lease tim
 
 Different workloads requires different SLA and precision, so it also possible to tune the lease time and precision for customizing the time-slicing capabilities to your cluster.
 
-{% hint style="info" %}
-Decreasing the lease time makes time-slicing less accurate. Increasing the lease time make the system more accurate, but each workload is less responsive.
-{% endhint %}
+!!! Note
+    Decreasing the lease time makes time-slicing less accurate. Increasing the lease time make the system more accurate, but each workload is less responsive.
 
 Once timeSlicing is enabled in the `runaiconfig`, all submitted GPU fractions or GPU memory workloads will have their gpu-compute-request/limit set automatically by the system, depending on the annotation used on the time-slicing mode:
 
 * Strict compute resources:
 
-| **Annotation** | **Value** | **GPU Compute Request** | **GPU Compute Limit** |
-| -------------- | --------- | ----------------------- | --------------------- |
-| `gpu-fraction` | x         | x                       | x                     |
-| `gpu-memory`   | x         | 0                       | 1.0                   |
+    | **Annotation** | **Value** | **GPU Compute Request** | **GPU Compute Limit** |
+    | -------------- | --------- | ----------------------- | --------------------- |
+    | `gpu-fraction` | x         | x                       | x                     |
+    | `gpu-memory`   | x         | 0                       | 1.0                   |
 
 * Fair compute resources:
 
-| **Annotation** | **Value** | **GPU Compute Request** | **GPU Compute Limit** |
-| -------------- | --------- | ----------------------- | --------------------- |
-| `gpu-fraction` | x         | x                       | 1.0                   |
-| `gpu-memory`   | x         | 0                       | 1.0                   |
+    | **Annotation** | **Value** | **GPU Compute Request** | **GPU Compute Limit** |
+    | -------------- | --------- | ----------------------- | --------------------- |
+    | `gpu-fraction` | x         | x                       | 1.0                   |
+    | `gpu-memory`   | x         | 0                       | 1.0                   |
 
-{% hint style="info" %}
-The above tables show that when submitting a workload using gpu-memory annotation, the system will split the GPU compute time between the different workloads running on that GPU. This means the workload can get anything from very little compute time (>0) to full GPU compute time (1.0).
-{% endhint %}
+
+!!! Note
+    The above tables show that when submitting a workload using gpu-memory annotation, the system will split the GPU compute time between the different workloads running on that GPU. This means the workload can get anything from very little compute time (>0) to full GPU compute time (1.0).
 
 ## Enabling GPU time-slicing
 
-Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [Advanced cluster configurations](../../advanced-setup/advanced-cluster-configurations.md).
+Run:ai’s GPU time-slicing is a cluster flag which changes the default NVIDIA time-slicing used by GPU fractions. For more details, see [Advanced cluster configurations](../../admin/config/advanced-cluster-config.md).
 
 Enable GPU time-slicing by setting the following cluster flag in the `runaiconfig` file:
 

@@ -61,7 +61,7 @@ The following outlines the advantages of stacking multiple models on the same no
 ## Deployment considerations
 
 * A pod created before the GPU memory swap feature was enabled in that cluster, cannot be scheduled to a swap-enabled node. A proper event is generated in case no matching node is found. Users must re-submit those pods to make them swap-enabled.
-* GPU memory swap cannot be enabled if the Run:ai [strict or fair time-slicing](gpu-time-slicing.md#gpu-time-slicing-modes) is used. GPU memory swap can only be used with the default NVIDIA time-slicing mechanism.
+* GPU memory swap cannot be enabled if the Run:ai [strict or fair time-slicing](GPU-time-slicing-scheduler.md#gpu-time-slicing-modes) is used. GPU memory swap can only be used with the default NVIDIA time-slicing mechanism.
 * CPU RAM size cannot be decreased once GPU memory swap is enabled.
 
 ## Enabling and configuring GPU memory swap¶
@@ -70,23 +70,23 @@ Before configuring GPU memory swap, dynamic GPU fractions must be enabled. You c
 
 To enable GPU memory swap in a Run:ai cluster:
 
-1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [Advanced cluster configurations](../../advanced-setup/advanced-cluster-configurations.md):
+1. Edit the `runaiconfig` file with the following parameters. This example uses 100Gi as the size of the swap memory. For more details, see [Advanced cluster configurations](../../admin/config/advanced-cluster-config.md):
 
-```yaml
- spec: 
-  global: 
-    core: 
-      swap:
-        enabled: true
-        limits:
-          cpuRam: 100Gi
-```
+    ```yaml
+    spec: 
+      global: 
+        core: 
+          swap:
+            enabled: true
+            limits:
+              cpuRam: 100Gi
+    ```
 
 2. Or, use the following patch command from your terminal:
 
-```bash
- kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"enabled": true, "limits": {"cpuRam": "100Gi"}}}}}}'
-```
+    ```bash
+    kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"enabled": true, "limits": {"cpuRam": "100Gi"}}}}}}'
+    ```
 
 ### Configuring system reserved GPU Resources¶
 
@@ -94,20 +94,20 @@ Swappable workloads require reserving a small part of the GPU for non-swappable 
 
 1. Editing the `runaiconfig` as follows:
 
-```yaml
- spec: 
-  global: 
-    core: 
-      swap:
-        limits:
-          reservedGpuRam: 2Gi
-```
+    ```yaml
+    spec: 
+      global: 
+        core: 
+          swap:
+            limits:
+              reservedGpuRam: 2Gi
+    ```
 
 2. Or, using the following patch command from your terminal:
 
-```bash
- kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"limits":{"reservedGpuRam": <quantity>}}}}}}'
-```
+    ```bash
+    kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"limits":{"reservedGpuRam": <quantity>}}}}}}'
+    ```
 
 ### Preventing your workloads from getting swapped¶
 

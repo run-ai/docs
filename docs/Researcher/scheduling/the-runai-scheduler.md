@@ -1,28 +1,28 @@
 # The Run:ai Scheduler: concepts and principles
 
-When a user [submits a workload](../../workloads-in-runai/workloads.md), the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.
+When a user [submits a workload](../../platform-admin/workloads/overviews/managing-workloads.md), the workload is directed to the selected Kubernetes cluster and managed by the Run:ai Scheduler. The Scheduler’s primary responsibility is to allocate workloads to the most suitable node or nodes based on resource requirements and other characteristics, as well as adherence to Run:ai’s fairness and quota management.
 
-The Run:ai Scheduler schedules native Kubernetes workloads, Run:ai workloads, or any other type of third-party workloads. To learn more about workloads support, see [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md).
+The Run:ai Scheduler schedules native Kubernetes workloads, Run:ai workloads, or any other type of third-party workloads. To learn more about workloads support, see [Introduction to workloads](../../platform-admin/workloads/overviews/introduction-to-workloads.md).
 
 To understand what is behind the Run:ai Scheduler’s decision-making logic, get to know the key concepts, resource management and scheduling principles of the Scheduler.
 
 ## Workloads and pod groups
 
-[Workloads](../../workloads-in-runai/workload-types.md) can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes.
+Workloads can range from a single pod running on individual nodes to distributed workloads using multiple pods, each running on a node (or part of a node). For example, a large scale training workload could use up to 128 nodes or more, while an inference workload could use many pods (replicas) and nodes.
 
-Every newly created pod is assigned to a pod group, which can represent one or multiple pods within a workload. For example, a distributed PyTorch training workload with 32 workers is grouped into a single pod group. All pods are attached to the pod group with certain rules, such as [gang scheduling](runai-scheduler-concepts-and-principles.md#gang-scheduling), applied to the entire pod group.
+Every newly created pod is assigned to a pod group, which can represent one or multiple pods within a workload. For example, a distributed PyTorch training workload with 32 workers is grouped into a single pod group. All pods are attached to the pod group with certain rules, such as [gang scheduling](#gang-scheduling), applied to the entire pod group.
 
 ## Scheduling queue
 
 A scheduling queue (or simply a queue) represents a scheduler primitive that manages the scheduling of workloads based on different parameters.
 
-A queue is created for each [project/node pool pair](../../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization) and [department/node pool pair](../../manage-ai-initiatives/adapting-ai-initiatives.md#mapping-your-organization). The Run:ai Scheduler supports hierarchical queueing, project queues are bound to department queues, per node pool. This allows an organization to manage quota, over quota and more for projects and their associated departments.
+A queue is created for each [project/node pool pair](../../platform-admin/aiinitiatives/overview.md#mapping-your-organization) and [department/node pool pair](../../platform-admin/aiinitiatives/overview.md#mapping-your-organization). The Run:ai Scheduler supports hierarchical queueing, project queues are bound to department queues, per node pool. This allows an organization to manage quota, over quota and more for projects and their associated departments.
 
 ## Resource management
 
 ### Quota
 
-Each project and department includes a set of deserved resource quotas, per node pool and resource type. For example, project “LLM-Train/Node Pool NV-H100” quota parameters specify the number of GPUs, CPUs(cores), and the amount of CPU memory that this project deserves to get when using this node pool. [Non-preemptible workloads](runai-scheduler-concepts-and-principles.md#priority-and-preemption) can only be scheduled if their requested resources are within the deserved resource quotas of their respective project/node-pool and department/node-pool.
+Each project and department includes a set of deserved resource quotas, per node pool and resource type. For example, project “LLM-Train/Node Pool NV-H100” quota parameters specify the number of GPUs, CPUs(cores), and the amount of CPU memory that this project deserves to get when using this node pool. [Non-preemptible workloads](#priority-and-preemption) can only be scheduled if their requested resources are within the deserved resource quotas of their respective project/node-pool and department/node-pool.
 
 ### Over quota
 
@@ -40,7 +40,7 @@ Each project has a set of guaranteed resource quotas (GPUs, CPUs, and CPU memory
 
 The Run:ai Scheduler calculates a numerical value, fairshare, per project (or department) for each node pool, representing the project’s (department’s) sum of guaranteed resources plus the portion of non-guaranteed resources in that node pool.
 
-The Scheduler aims to provide each project (or department) the resources they deserve per node pool using two main parameters: deserved quota and deserved fairshare (i.e. quota + over quota resources). If one project’s node pool queue is below fairshare and another project’s node pool queue is above fairshare, the Scheduler shifts resources between queues to balance [fairness](runai-scheduler-concepts-and-principles.md#fairness-fair-resource-distribution). This may result in the preemption of some over quota preemptible workloads.
+The Scheduler aims to provide each project (or department) the resources they deserve per node pool using two main parameters: deserved quota and deserved fairshare (i.e. quota + over quota resources). If one project’s node pool queue is below fairshare and another project’s node pool queue is above fairshare, the Scheduler shifts resources between queues to balance [fairness](#fairness-fair-resource-distribution). This may result in the preemption of some over quota preemptible workloads.
 
 ### Over-subscription
 
@@ -48,7 +48,7 @@ Over-subscription is a scenario where the sum of all guaranteed resource quotas 
 
 ### Placement strategy - bin-pack and spread
 
-The administrator can set a [placement strategy](../../manage-ai-initiatives/managing-your-resources/node-pools.md#adding-a-new-node-pool), bin-pack or spread, of the Scheduler per node pool. For GPU based workloads, workloads can request both GPU and CPU resources. For CPU-only based workloads, workloads can request CPU resources only.
+The administrator can set a [placement strategy](../../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool), bin-pack or spread, of the Scheduler per node pool. For GPU based workloads, workloads can request both GPU and CPU resources. For CPU-only based workloads, workloads can request CPU resources only.
 
 * **GPU workloads:**
   * **Bin-pack** - The Scheduler places as many workloads as possible in each GPU and node to use fewer resources and maximize GPU and node vacancy.
@@ -63,17 +63,17 @@ The administrator can set a [placement strategy](../../manage-ai-initiatives/man
 
 Run:ai supports scheduling workloads using different priority and preemption policies:
 
-* High-priority workloads (pods) can preempt [lower priority workloads](runai-scheduler-concepts-and-principles.md#preemption-of-lower-priority-workloads-within-a-project) (pods) within the same scheduling queue (project), according to their preemption policy. The Run:ai Scheduler implicitly assumes any PriorityClass >= 100 is non-preemptible and any PriorityClass < 100 is preemptible.
-* Cross project and cross department workload preemptions are referred to as [resource reclaim](runai-scheduler-concepts-and-principles.md#reclaim-of-resources-between-projects-and-departments) and are based on [fairness](runai-scheduler-concepts-and-principles.md#fairness-fair-resource-distribution) between queues rather than the priority of the workloads.
+* High-priority workloads (pods) can preempt [lower priority workloads](#preemption-of-lower-priority-workloads-within-a-project) (pods) within the same scheduling queue (project), according to their preemption policy. The Run:ai Scheduler implicitly assumes any PriorityClass >= 100 is non-preemptible and any PriorityClass < 100 is preemptible.
+* Cross project and cross department workload preemptions are referred to as [resource reclaim](#reclaim-of-resources-between-projects-and-departments) and are based on [fairness](#fairness-fair-resource-distribution) between queues rather than the priority of the workloads.
 
 To make it easier for users to submit workloads, Run:ai preconfigured several Kubernetes PriorityClass objects. The Run:ai preset PriorityClass objects have their ‘preemptionPolicy’ always set to ‘PreemptLowerPriority’, regardless of their actual Run:ai preemption policy within the Run:ai platform. A non-preemptible workload is only scheduled if in-quota and cannot be preempted after being scheduled, not even by a higher priority workload.
 
 | PriorityClass Name                                                                | PriorityClass | Run:ai preemption policy | K8S preemption policy |
 | --------------------------------------------------------------------------------- | ------------- | ------------------------ | --------------------- |
-| [Inference](../../workloads-in-runai/workload-types.md)                           | 125           | Non-preemptible          | PreemptLowerPriority  |
-| Build ([workspace](../../workloads-in-runai/workload-types.md))                   | 100           | Non-preemptible          | PreemptLowerPriority  |
-| Interactive-preemptible ([workspace](../../workloads-in-runai/workload-types.md)) | 75            | Preemptible              | PreemptLowerPriority  |
-| [Train](../../workloads-in-runai/workload-types.md)                               | 50            | Preemptible              | PreemptLowerPriority  |
+| [Inference](../../platform-admin/workloads/overviews/workload-types.md)                           | 125           | Non-preemptible          | PreemptLowerPriority  |
+| Build ([workspace](../../platform-admin/workloads/overviews/workload-types.md))                   | 100           | Non-preemptible          | PreemptLowerPriority  |
+| Interactive-preemptible ([workspace](../../platform-admin/workloads/overviews/workload-types.md)) | 75            | Preemptible              | PreemptLowerPriority  |
+| [Train](../../platform-admin/workloads/overviews/workload-types.md)                               | 50            | Preemptible              | PreemptLowerPriority  |
 
 ### Preemption of lower priority workloads within a project
 
