@@ -189,6 +189,14 @@ runai pytorch submit -i ubuntu --master-command "python_master -m pip install'" 
 
 ### Listing objects
 
+#### Submitting with clean pod policy
+
+Submitting a distributed workload with a policy to clean:
+
+```
+runai mpi submit --clean-pod-policy All -i nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04 -g 1
+```
+
 #### Listing all workloads in the user's scope
 
 ```shell
