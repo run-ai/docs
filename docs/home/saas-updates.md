@@ -16,18 +16,8 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 ## February 2025 releases
 
-### February 23, 2025
 
-#### Resolved Bugs 
-
-| ID | Description |
-| :---- | :---- |
-| RUN-25974 | Fixed an issue where using filters in the Quota management dashboard was not working properly. |
-| RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
-| RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
-| RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
-
-### February 16, 2025
+### February 16-23, 2025
 
 #### Product enhancements
 
@@ -45,13 +35,17 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 | ID | Description |
 | :---- | :---- |
+| RUN-25974 | Fixed an issue where using filters in the Quota management dashboard was not working properly. |
+| RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
+| RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
 | RUN-25249 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
 | RUN-25269 | Fixed an issue where the Pods modal was not paginated, limiting the display to only 50 records.  |
 | RUN-25466 | Fixed an issue where an environment variable with the value SECRET was not valid as only SECRET:xxx was accepted. |
 | RUN-23048 | Improved error handling to display meaningful messages from the CLI upgrade command. |
 | RUN-25552 | Fixed an issue where clicking on "View Access Rules" in the Users table displayed only the first group if a user belonged to multiple groups. |
 | RUN-25558 | Fixed a memory issue when handling external workloads (deployments, ray etc.) which when they were scaled caused ETCD memory to increase. |
-| RUN-25659 | CLI v2: Fixed an issue where min and max replicas  were able to be submitted using TensorFlow. |
+| RUN-25659 | CLI v2: Fixed an issue where min and max replicas were able to be submitted using TensorFlow. |
 
 
 ### February 9, 2025
