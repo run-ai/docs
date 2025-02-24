@@ -10,7 +10,7 @@ An environment asset is a preconfigured building block that encapsulates aspects
 * Tools and connections
 * The type of workload it serves
 
-### Environments table
+## Environments table
 
 The Environments table can be found under **Workload manager** in the Run:ai platform.
 
@@ -36,7 +36,7 @@ The Environments table consists of the following columns:
 | Last updated          | The timestamp of when the environment was last updated                                                                                                                               |
 | Cluster               | The cluster with which the environment is associated                                                                                                                                 |
 
-#### Tools associated with the environment
+### Tools associated with the environment
 
 Click one of the values in the tools column to view the list of tools and their connection type.
 
@@ -45,7 +45,7 @@ Click one of the values in the tools column to view the list of tools and their 
 | Tool name       | The name of the tool or application AI practitioner can set up within the environment.                                                                                                                           |
 | Connection type | The method by which you can access and interact with the running workload. It's essentially the "doorway" through which you can reach and use the tools the workload provide. (E.g node port, external URL, etc) |
 
-#### Workloads associated with the environment
+### Workloads associated with the environment
 
 Click one of the values in the Workload(s) column to view the list of workloads and their parameters.
 
@@ -55,7 +55,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | Type     | The workload type (Workspace/Training/Inference)                                                            |
 | Status   | Represents the workload lifecycle. See the full list of [workload status](../workloads.md#workload-status)) |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
 * Search - Click SEARCH and type the value to search by
@@ -63,7 +63,7 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 * Column selection - Click COLUMNS and select the columns to display in the table
 * Download table - Click MORE and then Click Download as CSV. Export to CSV is limited to 20,000 rows.
 
-### Environments created by Run:ai
+## Environments created by Run:ai
 
 When installing Run:ai, you automatically get the environments created by Run:ai to ease up the onboarding process and support different use cases out of the box.\
 These environments are created at the [scope](workload-assets.md#asset-scope) of the account.
@@ -77,7 +77,7 @@ These environments are created at the [scope](workload-assets.md#asset-scope) of
 | chatbot-ui          | runai.jfrog.io/core-llm/llm-app                       |
 | gpt2                | runai.jfrog.io/core-llm/quickstart-inference:gpt2-cpu |
 
-### Adding a new environment
+## Adding a new environment
 
 Environment creation is limited to [specific roles](workload-assets.md#who-can-create-an-asset)
 
@@ -151,7 +151,7 @@ To add a new environment:
 It is also possible to add data sources directly when creating a specific [workspace](../../experiment-using-workspaces/), [training](../../train-models-using-training/) or [inference](../../deploy-models-using-inference/) workload.
 {% endhint %}
 
-### Editing an environment
+## Editing an environment
 
 To edit an environment:
 
@@ -164,7 +164,7 @@ To edit an environment:
 * llm-server and chatbot-ui environments cannot be edited.
 {% endhint %}
 
-### Copying an environment
+## Copying an environment
 
 To make a copy of an existing environment:
 
@@ -174,7 +174,7 @@ To make a copy of an existing environment:
 4. Update the environment
 5. Click **CREATE ENVIRONMENT**
 
-### Deleting an environment
+## Deleting an environment
 
 To delete an environment:
 
@@ -186,6 +186,6 @@ To delete an environment:
 The already bound workload that is using this asset will not be affected.
 {% endhint %}
 
-### Using API
+## Using API
 
 Go to the [Environment](https://app.run.ai/api/docs#tag/Environment) API reference to view the available actions

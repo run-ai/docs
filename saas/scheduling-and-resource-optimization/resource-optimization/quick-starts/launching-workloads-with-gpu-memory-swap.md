@@ -4,7 +4,7 @@ This guide provides a step-by-step walkthrough for running multiple LLMs (infere
 
 GPU memory swap expands the GPU physical memory to the CPU memory, allowing Run:ai to place and run more workloads on the same GPU physical hardware. This provides a smooth workload context switching between GPU memory and CPU memory, eliminating the need to kill workloads when the memory requirement is larger than what the GPU physical memory can provide.
 
-### Prerequisites
+## Prerequisites
 
 Before you start, make sure:
 
@@ -14,7 +14,7 @@ Before you start, make sure:
 * GPU memory swap is enabled on at least one free node as detailed [here](../gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 * Host-based routing is configured.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
 {% tabs %}
 {% tab title="UI" %}
@@ -26,7 +26,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
 {% endtab %}
 {% endtabs %}
 
-### Step 2:  Submitting the first inference workload
+## Step 2: Submitting the first inference workload
 
 {% tabs %}
 {% tab title="UI" %}
@@ -128,7 +128,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 3:  Submitting the second inference workload
+## Step 3: Submitting the second inference workload
 
 {% tabs %}
 {% tab title="UI" %}
@@ -200,7 +200,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 4: Submitting the first workspace
+## Step 4: Submitting the first workspace
 
 {% tabs %}
 {% tab title="UI" %}
@@ -249,7 +249,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 
 {% tab title="API" %}
-Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
 ```sh
 curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -278,15 +278,13 @@ curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is 
 }'
 ```
 
-This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
-
 {% hint style="info" %}
 The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
 {% endhint %}
 {% endtab %}
 {% endtabs %}
 
-### Step 5: Submitting the second workspace
+## Step 5: Submitting the second workspace
 
 {% tabs %}
 {% tab title="UI" %}
@@ -312,7 +310,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 
 {% tab title="API" %}
-Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
 ```sh
 curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -341,15 +339,13 @@ curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is 
 }'
 ```
 
-This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
-
 {% hint style="info" %}
 The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
 {% endhint %}
 {% endtab %}
 {% endtabs %}
 
-### Step 6: Connecting to Chatbot-UI
+## Step 6: Connecting to Chatbot-UI
 
 {% tabs %}
 {% tab title="UI" %}
@@ -366,6 +362,6 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Next Steps
+## Next Steps
 
 Manage and monitor your newly created workspace using the [workloads](../../../workloads-in-runai/workloads.md) table.

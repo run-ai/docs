@@ -4,7 +4,7 @@ This article explains the procedure to manage templates.
 
 A template is a pre-set configuration that is used to quickly configure and submit workloads using existing assets. A template consists of all the assets a workload needs, allowing researchers to submit a workload in a single click, or make subtle adjustments to differentiate them from each other.
 
-### Workspace templates table
+## Workspace templates table
 
 The Templates table can be found under **Workload manager** in the Run:ai User interface.
 
@@ -30,7 +30,7 @@ The Templates table consists of the following columns:
 | Creation time    | The timestamp for when the template was created                                                              |
 | Cluster          | The cluster name containing the template                                                                     |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click **ADD FILTER**, select the column to filter by, and enter the filter values
 * Search - Click **SEARCH** and type the value to search by
@@ -40,7 +40,7 @@ The Templates table consists of the following columns:
 * Refresh (optional) - Click **REFRESH** to update the table with the latest data
 * Show/Hide details (optional) - Click to view additional information on the selected row
 
-### Adding a new workspace template
+## Adding a new workspace template
 
 To add a new template:
 
@@ -56,7 +56,7 @@ To add a new template:
 8. Set auto-deletion, annotations and labels, as required
 9. Click **CREATE TEMPLATE**
 
-### Editing a template
+## Editing a template
 
 To edit a template:
 
@@ -64,7 +64,7 @@ To edit a template:
 2. Click **Rename** to provide it with a new name
 3. Click **Copy & Edit** to make any changes to the template
 
-### Deleting a template
+## Deleting a template
 
 To delete a template:
 
@@ -72,6 +72,6 @@ To delete a template:
 2. Click **DELETE**
 3. Confirm you want to delete the template
 
-### Using API
+## Using API
 
 Go to the [Workload template](https://app.run.ai/api/docs#tag/Template) API reference to view the available actions

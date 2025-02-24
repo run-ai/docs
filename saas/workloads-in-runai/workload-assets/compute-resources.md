@@ -9,7 +9,7 @@ A compute resource asset is a preconfigured building block that encapsulates all
 * GPU devices and GPU memory
 * CPU memory and CPU compute
 
-### Compute resource table
+## Compute resource table
 
 The Compute resource table can be found under **Workload manager** in the Run:ai UI.
 
@@ -37,7 +37,7 @@ The Compute resource table consists of the following columns:
 | Last updated                  | The timestamp of when the compute resource was last updated                                                                                                              |
 | Cluster                       | The cluster that the compute resource is associated with                                                                                                                 |
 
-#### Workloads associated with the compute resource
+### Workloads associated with the compute resource
 
 Click one of the values in the Workload(s) column to view the list of workloads and their parameters.
 
@@ -47,14 +47,14 @@ Click one of the values in the Workload(s) column to view the list of workloads 
 | Type     | Workspace/Training/Inference                                                                                |
 | Status   | Represents the workload lifecycle. See the full list of [workload status](../workloads.md#workload-status). |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
 * Search - Click SEARCH and type the value to search by
 * Sort - Click each column header to sort by
 * Column selection - Click COLUMNS and select the columns to display in the table
 
-### Adding new compute resource
+## Adding new compute resource
 
 To add a new compute resource:
 
@@ -125,7 +125,7 @@ To add a new compute resource:
 It is also possible to add data sources directly when creating a specific [workspace](../../experiment-using-workspaces/), [training](../../train-models-using-training/) or [inference](../../deploy-models-using-inference/) workload.
 {% endhint %}
 
-### Editing a compute resource
+## Editing a compute resource
 
 To edit a compute resource:
 
@@ -137,7 +137,7 @@ To edit a compute resource:
 The already bound workload that is using this asset will not be affected.
 {% endhint %}
 
-### Copying a compute resource
+## Copying a compute resource
 
 To make a copy of an existing compute resource:
 
@@ -147,7 +147,7 @@ To make a copy of an existing compute resource:
 4. Update the environment
 5. Click **CREATE COMPUTE RESOURCE**
 
-### Deleting a compute resource
+## Deleting a compute resource
 
 1. Select the compute resource you want to delete
 2. Click **DELETE**
@@ -157,6 +157,6 @@ To make a copy of an existing compute resource:
 The already bound workload that is using this asset will not be affected.
 {% endhint %}
 
-### Using API
+## Using API
 
 Go to the [Compute resources](https://app.run.ai/api/docs#tag/Compute) API reference to view the available actions

@@ -8,7 +8,7 @@ Credentials are crucial for the security of AI workloads and the resources they 
 
 Essentially, credentials enable AI practitioners to access relevant protected resources, such as private data sources and Docker images, thereby streamlining the workload submission process.
 
-### Credentials table
+## Credentials table
 
 The Credentials table can be found under **Workload manager** in the Run:ai User interface.
 
@@ -32,7 +32,7 @@ The Credentials table comprises the following columns:
 | Creation time   | The timestamp of when the credentials were created                                                                                                                       |
 | Cluster         | The cluster with which the credentials are associated                                                                                                                    |
 
-#### Credentials status
+### Credentials status
 
 The following table describes the credentials’ condition and whether they were created successfully for the selected [scope](workload-assets.md#asset-scope).
 
@@ -54,7 +54,7 @@ The following table describes the credentials’ condition and whether they were
 * Download table - Click MORE and then click ‘Download as CSV’. Export to CSV is limited to 20,000 rows.
 * Refresh - Click REFRESH to update the table with the latest data
 
-### Adding new credentials
+## Adding new credentials
 
 Creating credentials is limited to [specific roles](workload-assets.md#who-can-create-an-asset).
 
@@ -162,14 +162,14 @@ The purpose of this credential type is to allow access to restricted data.
 
 </details>
 
-### Editing credentials
+## Editing credentials
 
 To rename a credential:
 
 1. Select the credential from the table
 2. Click **Rename** to edit its name and description
 
-### Deleting credentials
+## Deleting credentials
 
 To delete a credential:
 
@@ -181,15 +181,15 @@ To delete a credential:
 Credentials cannot be deleted if they are being used by a workload and template.
 {% endhint %}
 
-### Using credentials
+## Using credentials
 
 You can use credentials (secrets) in various ways within the system
 
-#### Access private data sources
+### Access private data sources
 
 To access private data sources, attach credentials to data sources of the following types: [Git](datasources.md#git), [S3 Bucket](datasources.md#s3-bucket)
 
-#### Use directly within the container
+### Use directly within the container
 
 To use the secret directly from within the container, you can choose between the following options
 
@@ -198,13 +198,13 @@ To use the secret directly from within the container, you can choose between the
 
     a. By adding it to the Environment asset. b. By adding it ad-hoc as part of the workload.
 
-### Creating secrets in advance
+## Creating secrets in advance
 
 Add secrets in advance to be used when creating credentials via the Run:ai UI.
 
 Follow the steps below for each required scope:
 
-**Cluster scope:**
+### **Cluster scope:**
 
 1. Create the secret in the Run:ai namespace (`runai`)
 2. To authorize Run:ai to use the secret, label it: `run.ai/cluster-wide: "true"`
@@ -214,9 +214,9 @@ Follow the steps below for each required scope:
    3. Username and password - `run.ai/resource: "password"`
    4. Generic secret - `run.ai/resource: "generic"`
 
-The secret is now displayed for that scope in the list of existing secrets.&#x20;
+The secret is now displayed for that scope in the list of existing secrets.
 
-**Department scope:**
+### **Department scope:**
 
 1. Create the secret in the Run:ai namespace (`runai`)
 2. To authorize Run:ai to use the secret, label it: `run.ai/department: "<department_id>"`
@@ -226,9 +226,9 @@ The secret is now displayed for that scope in the list of existing secrets.&#x20
    3. Username and password - `run.ai/resource: "password"`
    4. Generic secret - `run.ai/resource: "generic"`
 
-The secret is now displayed for that scope in the list of existing secrets.&#x20;
+The secret is now displayed for that scope in the list of existing secrets.
 
-**Project scope:**
+### **Project scope:**
 
 1. Create the secret in the project’s namespace
 2. Label the secret with the correct credential type:
@@ -237,6 +237,6 @@ The secret is now displayed for that scope in the list of existing secrets.&#x20
    3. Username and password - `run.ai/resource: "password"`
    4. Generic secret - `run.ai/resource: "generic"`
 
-### Using API
+## Using API
 
 To view the available actions, go to the [Credentials](https://app.run.ai/api/docs#tag/Credentials) API reference

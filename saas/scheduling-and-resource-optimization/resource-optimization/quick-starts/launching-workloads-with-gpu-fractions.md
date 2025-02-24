@@ -4,18 +4,18 @@ This article provides a step-by-step walkthrough for running a Jupyter Notebook 
 
 Run:ai’s GPU fractions provides an agile and easy-to-use method to share a GPU or multiple GPUs across workloads. With GPU fractions, you can divide the GPU/s memory into smaller chunks and share the GPU/s compute resources between different workloads and users, resulting in higher GPU utilization and more efficient resource allocation.
 
-### Prerequisites
+## Prerequisites
 
 Before you start, make sure:
 
 * You have created a [project](../../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 0.5 GPU.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
 {% include "../../../.gitbook/includes/step-1-logging-in.md" %}
 
-### Step 2: Submitting a workspace
+## Step 2: Submitting a workspace
 
 {% tabs %}
 {% tab title="UI" %}
@@ -130,7 +130,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 3: Connecting to the Jupyter Notebook
+## Step 3: Connecting to the Jupyter Notebook
 
 {% tabs %}
 {% tab title="UI" %}
@@ -153,7 +153,7 @@ To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;"
 {% endtab %}
 {% endtabs %}
 
-### Next Steps
+## Next Steps
 
 Manage and monitor your newly created workspace using the [workloads](../../../workloads-in-runai/workloads.md) table.
 

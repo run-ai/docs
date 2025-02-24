@@ -4,7 +4,7 @@ This article provides a step-by-step walkthrough for running a Jupyter Notebook 
 
 Run:ai’s dynamic GPU fractions optimizes GPU utilization by enabling workloads to dynamically adjust their resource usage. It allows users to specify a guaranteed fraction of GPU memory and compute resources with a higher limit that can be dynamically utilized when additional resources are requested.
 
-### Prerequisites
+## Prerequisites
 
 Before you start, make sure:
 
@@ -12,7 +12,7 @@ Before you start, make sure:
 * The project has an assigned quota of at least 0.5 GPU.
 * Dynamic GPU fractions are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
 
-### Step 1: Logging in
+## Step 1: Logging in
 
 {% tabs %}
 {% tab title="UI" %}
@@ -32,7 +32,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
 {% endtab %}
 {% endtabs %}
 
-### Step 2: Submitting the first workspace
+## Step 2: Submitting the first workspace
 
 {% tabs %}
 {% tab title="UI" %}
@@ -47,7 +47,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
 7.  Click **CONTINUE**
 
     In the next step:
-8.  Create **‘jupyter-lab-name’** environment for your workspace&#x20;
+8.  Create **‘jupyter-lab-name’** environment for your workspace
 
     * Click **+NEW ENVIRONMENT**
     * Enter a **name** for the environment. The name must be unique.
@@ -61,7 +61,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
             * Enter **command** - `start-notebook.sh`
             * Enter **arguments** - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
 
-          Note: If -based routing is enabled on the cluster, enter the  `--NotebookApp.token=''` only.
+          Note: If -based routing is enabled on the cluster, enter the `--NotebookApp.token=''` only.
     * Click **CREATE ENVIRONMENT**
 
     The newly created jupyter-lab-name will be selected automatically
@@ -137,7 +137,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 3: Submitting the second workspace
+## Step 3: Submitting the second workspace
 
 {% tabs %}
 {% tab title="UI" %}
@@ -211,7 +211,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 {% endtab %}
 {% endtabs %}
 
-### Step 4: Connecting to the Jupyter Notebook
+## Step 4: Connecting to the Jupyter Notebook
 
 {% tabs %}
 {% tab title="UI" %}
@@ -219,29 +219,29 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 2. Click **CONNECT**
 3. Select the Jupyter tool
 4. The selected tool is opened in a new tab on your browser
-5. Open a terminal and use the **watch nvidia-smi** to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
-6. Open the file **Untitled.ipynb** and move the frame so you can see both tabs
-7. Execute both cells in **Untitled.ipynb.** This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
-8. In the second cell, edit the value after **--image-size** from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
+5. Open a terminal and use the `watch nvidia-smi` to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
+6. Open the file `Untitled.ipynb` and move the frame so you can see both tabs
+7. Execute both cells in `Untitled.ipynb`. This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
+8. In the second cell, edit the value after `--image-size` from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
 {% endtab %}
 
 {% tab title="CLI v2" %}
 1. To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;">https://\<COMPANY-URL>/\<PROJECT-NAME>/workload-name</mark>
-2. Open a terminal and use the **watch nvidia-smi** to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
-3. Open the file **Untitled.ipynb** and move the frame so you can see both tabs
-4. Execute both cells in **Untitled.ipynb.** This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
-5. In the second cell, edit the value after **--image-size** from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
+2. Open a terminal and use the `watch nvidia-smi` to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
+3. Open the file `Untitled.ipynb` and move the frame so you can see both tabs
+4. Execute both cells in `Untitled.ipynb`. This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
+5. In the second cell, edit the value after `--image-size` from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
 {% endtab %}
 
 {% tab title="API" %}
 1. To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;">https://\<COMPANY-URL>/\<PROJECT-NAME>/workload-name</mark>
-2. Open a terminal and use the **watch nvidia-smi** to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
-3. Open the file **Untitled.ipynb** and move the frame so you can see both tabs
-4. Execute both cells in **Untitled.ipynb.** This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
-5. In the second cell, edit the value after **--image-size** from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
+2. Open a terminal and use the `watch nvidia-smi` to get a constant reading of the memory consumed by the pod. Note that the number shown in the memory box is the Limit and not the Request or Guarantee.
+3. Open the file `Untitled.ipynb` and move the frame so you can see both tabs
+4. Execute both cells in `Untitled.ipynb`. This will consume about **3 GB of GPU memory** and be well below the 4GB of the **GPU Memory Request** value.
+5. In the second cell, edit the value after `--image-size` from 100 to 200 and run the cell. This will increase the GPU memory utilization to about 11.5 GB which is above the Request value.
 {% endtab %}
 {% endtabs %}
 
-### Next Steps
+## Next Steps
 
 Manage and monitor your newly created workspace using the [workloads](../../../workloads-in-runai/workloads.md) table.

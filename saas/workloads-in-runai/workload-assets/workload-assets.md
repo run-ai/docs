@@ -12,7 +12,7 @@ Workload assets enable organizations to:
 - The submission of workloads using assets, is possible only via the Run:ai UI.
 {% endhint %}
 
-### Workload asset types
+## Workload asset types
 
 There are four workload asset types used by the workload:
 
@@ -25,7 +25,7 @@ There are four workload asset types used by the workload:
 * [Credentials](credentials.md)\
   The secrets to be used to access sensitive data, services, and applications such as docker registry or S3 buckets
 
-### Asset scope
+## Asset scope
 
 When a workload asset is created, a [scope](../../manage-ai-initiatives/adapting-ai-initiatives.md) is required. The scope defines who in the organization can view and/or use the asset.
 
@@ -33,14 +33,14 @@ When a workload asset is created, a [scope](../../manage-ai-initiatives/adapting
 When an asset is created via API, the scope can be the entire account, this is currently an experimental feature.
 {% endhint %}
 
-### Who can create an asset?
+## Who can create an asset?
 
 Any subject (user, application, or SSO group) with a [role](../../authentication-and-authorization/roles.md) that has permissions to **Create** an asset, can do so within their scope.
 
-### Who can use an asset?
+## Who can use an asset?
 
 Assets are used when submitting workloads. Any subject (user, application or SSO group) with a [role](../../authentication-and-authorization/roles.md) that has permissions to **Create** workloads, can also use assets.
 
-### Who can view an asset?
+## Who can view an asset?
 
 Any subject (user, application, or SSO group) with a [role](../../authentication-and-authorization/roles.md) that has permission to **View** an asset, can do so within their scope.

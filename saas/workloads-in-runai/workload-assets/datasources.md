@@ -6,7 +6,7 @@ Data sources are a type of [workload asset](workload-assets.md) and represent a 
 
 This configuration simplifies the mapping of the data into the workload’s file system and handles the mounting process during workload creation for reading and writing. These data sources are reusable and can be easily integrated and used by AI practitioners while submitting workloads across various scopes.
 
-### Data sources table
+## Data sources table
 
 The data sources table can be found under **Workload manager** in the Run:ai platform.
 
@@ -30,7 +30,7 @@ The data sources table comprises the following columns:
 | Creation time   | The timestamp for when the data source was created                                                                                                          |
 | Cluster         | The cluster that the data source is associated with                                                                                                         |
 
-#### Data sources status
+### Data sources status
 
 The following table describes the data sources' condition and whether they were created successfully for the selected [scope](workload-assets.md#asset-scope).
 
@@ -42,7 +42,7 @@ The following table describes the data sources' condition and whether they were 
 | Creating…       | The data source is being created                                                                                                                                              |
 | No status / “-” | When the data source’s scope is an account, the current version of the cluster is not up to date, or the asset is not a cluster-syncing entity, the status can’t be displayed |
 
-#### Customizing the table view
+### Customizing the table view
 
 * Filter - Click ADD FILTER, select the column to filter by, and enter the filter values
 * Search - Click SEARCH and type the value to search by
@@ -51,7 +51,7 @@ The following table describes the data sources' condition and whether they were 
 * Download table - Click MORE and then click ‘Download as CSV’
 * Refresh - Click REFRESH to update the table with the latest data
 
-### Adding a new data source
+## Adding a new data source
 
 To create a new data source:
 
@@ -196,8 +196,7 @@ A [Host path](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath) vol
 
 <summary>ConfigMap</summary>
 
-A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) data source is a Run:ai abstraction for the Kubernetes ConfigMap concept. The ConfigMap is used mainly for storage that can be mounted on the workload container for non-confidential data. It is usually represented in key-value pairs (e.g., environment variables, command-line arguments etc.). It allows you to decouple environment-specific system configurations from your container images, so that your applications are easily portable. ConfigMaps must be created on the cluster prior to being used within the Run:ai system.\
-
+A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) data source is a Run:ai abstraction for the Kubernetes ConfigMap concept. The ConfigMap is used mainly for storage that can be mounted on the workload container for non-confidential data. It is usually represented in key-value pairs (e.g., environment variables, command-line arguments etc.). It allows you to decouple environment-specific system configurations from your container images, so that your applications are easily portable. ConfigMaps must be created on the cluster prior to being used within the Run:ai system.\\
 
 1. Select the **cluster** under which to create this data source
 2. Select a [**scope**](workload-assets.md#asset-scope)
@@ -237,7 +236,7 @@ After the data source is created, check its status to monitor its proper creatio
 It is also possible to add data sources directly when creating a specific [workspace](../../experiment-using-workspaces/), [training](../../train-models-using-training/) or [inference](../../deploy-models-using-inference/) workload.
 {% endhint %}
 
-### Editing a data source
+## Editing a data source
 
 To edit a data source:
 
@@ -245,7 +244,7 @@ To edit a data source:
 2. Click **Rename** to provide it with a new name
 3. Click **Copy & Edit** to make any changes to the data source
 
-### Deleting a data source
+## Deleting a data source
 
 To delete a data source:
 
@@ -257,13 +256,13 @@ To delete a data source:
 It is not possible to delete an environment being used by an existing workload or template.
 {% endhint %}
 
-### Creating PVCs in advance
+## Creating PVCs in advance
 
 Add PVCs in advance to be used when creating a PVC-type data source via the Run:ai UI.
 
 The actions taken by the admin are based on the scope (cluster, department or project) that the admin wants for data source of type PVC. Follow the steps below for each required scope:
 
-**Cluster scope**
+### **Cluster scope**
 
 1. Locate the PVC in the Run:ai namespace (`runai`)
 2. Provide Run:ai with visibility and authorization to share the PVC to your selected scope by implementing the following label: `run.ai/cluster-wide: "true”`
@@ -274,7 +273,7 @@ This step is also relevant for creating the data source of type PVC via API
 
 The PVC is now displayed for that scope in the list of existing PVCs.
 
-**Department scope**
+### **Department scope**
 
 1. Locate the PVC in the Run:ai namespace (`runai`)
 2.  To authorize Run:ai to use the PVC, label it: `run.ai/department: "id"`
@@ -283,11 +282,11 @@ The PVC is now displayed for that scope in the list of existing PVCs.
 3. Locate the PVC in the project’s namespace
 4. The PVC is now displayed for that scope in the list of existing PVCs.
 
-### Creating ConfigMaps in advance
+## Creating ConfigMaps in advance
 
 Add ConfigMaps in advance to be used when creating a ConfigMap-type data source via the Run:ai UI.
 
-**Cluster scope**
+### **Cluster scope**
 
 1. Locate the ConfigMap in the Run:ai namespace (`runai`)
 2. To authorize Run:ai to use the ConfigMap, label it: `run.ai/cluster-wide: "true”`
@@ -295,7 +294,7 @@ Add ConfigMaps in advance to be used when creating a ConfigMap-type data source 
 
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
-**Department scope**
+### **Department scope**
 
 1. Locate the ConfigMap in the Run:ai namespace (`runai`)
 2. To authorize Run:ai to use the ConfigMap, label it: `run.ai/department: "<department-id>"`
@@ -303,13 +302,13 @@ Add ConfigMaps in advance to be used when creating a ConfigMap-type data source 
 
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
-**Project scope**
+### **Project scope**
 
 1. Locate the ConfigMap in the project’s namespace
 2.  The ConfigMap must have a label of `run.ai/resource: <resource-name>`
 
     The ConfigMap is now displayed for that scope in the list of existing ConfigMaps.
 
-### Using API
+## Using API
 
 To view the available actions, go to the [Data sources](https://app.run.ai/api/docs#tag/Datasources) API reference.

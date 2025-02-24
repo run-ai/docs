@@ -42,7 +42,7 @@ The Run:ai Scheduler can work alongside other schedulers. In order to avoid coll
 {% hint style="info" %}
 * Splitting a GPU into fractions may generate some fragmentation of the GPU memory. The [Scheduler](../scheduling/runai-scheduler-concepts-and-principles.md) will try to consolidate GPU resources where feasible (i.e. preemptible workloads).
 * Using [bin-pack](../../manage-ai-initiatives/managing-your-resources/node-pools.md#adding-a-new-node-pool) as a scheduling placement strategy can also reduce GPU fragmentation.
-* Using [bin-pack](../../manage-ai-initiatives/managing-your-resources/node-pools.md#adding-a-new-node-pool) as a scheduling placement strategy can also reduce GPU fragmentation.
+* Using [dynamic GPU fractions ](dynamic-gpu-fractions.md)ensures that even small unused fragments of GPU memory are utilized by workloads.
 {% endhint %}
 
 ## Multi-GPU fractions
