@@ -24,11 +24,23 @@
 
 *   At the command-line run:
 
-``` bash
-runai config project team-a
-runai submit nginx-test -i zembutsu/docker-sample-nginx --interactive
-runai port-forward nginx-test --port 8080:80
-```
+=== "CLI V1 [Deprecated]"
+    Open a terminal and run:
+    
+    ```shell
+    runai config project team-a
+    runai submit nginx-test -i zembutsu/docker-sample-nginx --interactive
+    runai port-forward nginx-test --port 8080:80
+    ```
+
+=== "CLI V2"
+    Open a terminal and run:
+
+    ``` bash
+    runai project set team-a
+    runai training submit nginx-test -i zembutsu/docker-sample-nginx
+    runai port-forward nginx-test --port 8080:80 
+    ```
 
 *   The Job is based on a sample _NGINX_ webserver docker image `zembutsu/docker-sample-nginx`. Once accessed via a browser, the page shows the container name. 
 *   Note the _interactive_ flag which means the Job will not have a start or end. It is the Researcher's responsibility to close the Job.  
@@ -36,14 +48,22 @@ runai port-forward nginx-test --port 8080:80
 *   It is possible to forward traffic from multiple IP addresses by using the "--address" parameter. Check the CLI reference for further details. 
 
 The result will be:
+=== "CLI V1 [Deprecated]"
+    ```shell
+    The job 'nginx-test-0' has been submitted successfully
+    You can run `runai describe job nginx-test-0 -p team-a` to check the job status
+    
+    Forwarding from 127.0.0.1:8080 -> 80
+    Forwarding from [::1]:8080 -> 80
+    ```
 
-``` bash
-The job 'nginx-test-0' has been submitted successfully
-You can run `runai describe job nginx-test-0 -p team-a` to check the job status
+=== "CLI V2"
+    ```shell
+    Creating workspace nginx-test...
+    To track the workload's status, run 'runai workspace list'
 
-Forwarding from 127.0.0.1:8080 -> 80
-Forwarding from [::1]:8080 -> 80
-```
+    port-forward stared, opening ports [8080:80]
+    ```
 
 ### Access the Webserver 
 

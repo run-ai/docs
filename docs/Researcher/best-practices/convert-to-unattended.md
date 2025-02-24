@@ -25,7 +25,7 @@ Realizing that Researchers are not always proficient with building docker files,
 You will want to minimize the cycle of code change-and-run. There are a couple of best practices which you can choose from:
 
 1. Code resides on the network file storage. This way you can change the code and immediately run the Job. The Job picks up the new files from the network.
-2. Use the `runai submit` flag `--git-sync`. The flag allows the Researcher to provide details of a Git repository. The repository will be automatically cloned into a specified directory when the container starts.
+2. Use the `runai training submit` flag `--git-sync`. The flag allows the Researcher to provide details of a Git repository. The repository will be automatically cloned into a specified directory when the container starts.
 3. The code can be embedded within the image. In this case, you will want to create an automatic CI/CD process, which packages the code into a modified image.
 
 The document below assumes option #1.
@@ -72,28 +72,49 @@ For more information on best practices for saving checkpoints, see [Saving Deep 
 
 ## Running the Job
 
-Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``-- [COMMAND]`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
-
 Example with Environment variables:
 
-```
-runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
-    -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
-    -e 'EPOCHS=30'  -e 'LEARNING_RATE=0.02'  
-    -- ./startup.sh  
-```
+=== "CLI V1 [Deprecated]"
+    Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``-- [COMMAND]`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
+
+    ```shell
+    runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+        -v /nfs/john:/mydir -g 1 --working-dir /mydir/ \
+        -e 'EPOCHS=30'  -e 'LEARNING_RATE=0.02' \
+        -- ./startup.sh  
+    ```
+
+=== "CLI V2"
+    Using ``runai training submit``. For submitting a Job using the script created above, please use ``-- [COMMAND]`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
+
+    ```shell
+    runai training submit -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+        --host-path path=/nfs/john,mount=/mydir -g 1 --working-dir /mydir/ \
+        -e 'EPOCHS=30' -e 'LEARNING_RATE=0.02' \
+        -- ./startup.sh  
+    ```
 
 Example with Command-line arguments:
 
+=== "CLI V1 [Deprecated]"
+    ```shell
+    runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+        -v /nfs/john:/mydir -g 1 --working-dir /mydir/ \
+        -- ./startup.sh batch-size=64 number-of-epochs=3
+    ```
 
-```
-runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3  
-    -v /nfs/john:/mydir -g 1  --working-dir /mydir/  
-    -- ./startup.sh batch-size=64 number-of-epochs=3
-```
+    Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:ai CLI.
 
+=== "CLI V2"
+    ```shell
+    runai training submit -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+        --host-path path=/nfs/john,mount=/mydir -g 1 --working-dir /mydir/ \
+        -e 'EPOCHS=30' -e 'LEARNING_RATE=0.02' \
+        -- ./startup.sh  
+    ```
 
-Please refer to [Command-Line Interface, runai submit](../cli-reference/runai-submit.md) for a list of all arguments accepted by the Run:ai CLI.
+    Please refer to [Command-Line Interface, runai submit](../cli-reference/new-cli/runai_training_submit.md) for a list of all arguments accepted by the Run:ai CLI.
+
 
 ### Use CLI Policies
 

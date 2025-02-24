@@ -28,7 +28,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "CLI V2"
@@ -44,7 +44,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 ### Create a Workspace
 
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Open a terminal and run:
 
     ``` bash
@@ -115,7 +115,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 Follow up on the Workload's progress by running:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai list jobs
     ```
@@ -159,7 +159,7 @@ A full list of Job statuses can be found [here](../../platform-admin/workloads/o
 
 To get additional status on your Workload run:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai describe job build1
     ```
@@ -175,7 +175,7 @@ To get additional status on your Workload run:
 
 ### Get a Shell to the container
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Run:
     ``` bash
     runai bash build1
@@ -195,7 +195,7 @@ This should provide a direct shell into the computer
 
 Run the following:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai delete job build1
     ```

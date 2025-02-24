@@ -30,7 +30,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "CLI V2"
@@ -58,7 +58,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 ### Run Workload
 
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Open a terminal and run:
 
     ``` bash
@@ -141,7 +141,7 @@ Via the Run:ai user interface, go to `Workloads`, select the `vs1` Workspace and
 
 Run the following:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai delete job vs1
     ```

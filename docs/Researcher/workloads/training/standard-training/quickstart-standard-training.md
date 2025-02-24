@@ -18,7 +18,7 @@ Before you start, make sure:
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Log in using the following command. You will be prompted to enter your username and password:
      
     ``` bash
@@ -82,7 +82,7 @@ Before you start, make sure:
         After the standard training workload is created, it is added to the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Copy the following command to your terminal. Make sure to update the below with the name of your project:
     
     ``` bash
