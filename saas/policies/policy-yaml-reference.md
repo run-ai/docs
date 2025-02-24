@@ -461,4 +461,4 @@ imposedAssets:
   - f12c965b-44e9-4ff6-8b43-01d8f9e630cc
 ```
 
-Assets with references to credentials assets (for example: private S3, containing reference to an AccessKey asset) cannot be used as imposedAssets.
+Assets with references to credential assets (for example: private S3, containing reference to an AccessKey asset) cannot be used as imposedAssets.
