@@ -17,7 +17,7 @@ Before you start, make sure:
 
 ## Step 1: Logging in
 
-=== "User Interface"
+=== "UI"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
 === "CLI V1"
@@ -40,7 +40,7 @@ Before you start, make sure:
 
 ## Step 2: Submitting a workspace
 
-=== "User Interface"
+=== "UI
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__   
     3. Select under which __cluster__ to create the workload
@@ -165,21 +165,21 @@ Before you start, make sure:
 
 ## Step 3: Connecting to the Jupyter Notebook
 
-=== "User Interface"
+=== "UI"
     1. Select the newly created workspace with the Jupyter application that you want to connect to
     2. Click __CONNECT__
     3. Select the __Jupyter__ tool 
     4. The selected tool is opened in a new tab on your browser
 
 === "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
 
 === "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
 === "API"
-    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
 
 ## Next Steps
