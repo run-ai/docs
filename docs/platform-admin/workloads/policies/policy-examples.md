@@ -77,8 +77,8 @@ compute:
         instances:
         - name: MY_ENV
           value: my_value
-    security:
-      allowPrivilegeEscalation: false
+      security:
+        allowPrivilegeEscalation: false
 
     rules:
       storage:
