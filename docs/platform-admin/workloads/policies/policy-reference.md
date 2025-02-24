@@ -82,7 +82,7 @@ Click the link to view the value type of each field.
 
 | Fields | Description | Value type | Supported Run:ai workload type |
 | ----- | ----- | ----- | ----- |
-| uidGidSource | Indicates the way to determine the user and group ids of the container. The options are: `fromTheImage` - user and group IDs are determined by the docker image that the container runs. This is the default option. `custom` - user and group IDs can be specified in the environment asset and/or the workspace creation request. `idpToken` - user and group IDs are determined according to the identity provider (idp) access token. This option is intended for internal use of the environment UI form. For more information, see [Non-root containers](https://docs.run.ai/latest/admin//config/non-root-containers/) | string | Workspace Training |
+| uidGidSource | Indicates the way to determine the user and group ids of the container. The options are: `fromTheImage` - user and group IDs are determined by the docker image that the container runs. This is the default option. `custom` - user and group IDs can be specified in the environment asset and/or the workspace creation request. `fromIdpToken` - user and group IDs are determined according to the identity provider (idp) access token. This option is intended for internal use of the environment UI form. For more information, see [Non-root containers](../../../admin/authentication/non-root-containers.md) | string | Workspace Training |
 | capabilities | The capabilities field allows adding a set of unix capabilities to the container running the workload. Capabilities are Linux distinct privileges traditionally associated with superuser which can be independently enabled and disabled | Array | Workspace Training |
 | seccompProfileType | Indicates which kind of seccomp profile is applied to the container. The options are: RuntimeDefault - the container runtime default profile should be used Unconfined - no profile should be applied | string | Workspace Training |
 | runAsNonRoot | Indicates that the container must run as a non-root user. | boolean | Workspace Training |
@@ -132,7 +132,7 @@ Click the link to view the value type of each field.
     | **Description** | Maps a folder to a file system mount oint within the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Git fields** | **Description** | **Value type** |
+    | **hostPath fields** | **Description** | **Value type** |
     | name | Unique name to identify the instance. primarily used for policy locked rules. | string |
     | path | Local path within the controller to which the host volume is mapped. | string |
     | readOnly | Force the volume to be mounted with read-only permissions. Defaults to false. | boolean |
@@ -219,7 +219,7 @@ Click the link to view the value type of each field.
     | **Description** | Specifies NFS volume to mount into the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Spec PVC fields** | **Description** | **Value type** |
+    | **nfs fields** | **Description** | **Value type** |
     | mountpath | The path that the NFS volume is mounted to when in use. | string |
     | path | Path that is exported by the NFS server. | string |
     | readOnly | Whether to force the NFS export to be mounted with read-only permissions. | boolean |
@@ -248,7 +248,7 @@ Click the link to view the value type of each field.
     | **Description** | Specifies S3 buckets to mount into the container running the workload |  |
     | **Supported Run:ai workload types** | Workspace Training |  |
     | **Value type** | itemized |  |
-    | **Spec PVC fields** | **Description** | **Value type** |
+    | **s3 fields** | **Description** | **Value type** |
     | Bucket | The name of the bucket | string |
     | path | Local path within the workspace to which the S3 bucket is mapped | string |
     | url | The URL of the S3 service provider. The default is the URL of the Amazon AWS Se service | string |
