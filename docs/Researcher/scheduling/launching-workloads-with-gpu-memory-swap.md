@@ -10,9 +10,12 @@ Before you start, make sure:
 
 * You have created a [project](../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
 * The project has an assigned quota of at least 1 GPU.
-* [Dynamic GPU fractions](dynamic-gpu-fractions.md) are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+* [Dynamic GPU fractions](dynamic-gpu-fractions.md) is enabled. 
 * GPU memory swap is enabled on at least one free node as detailed [here](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
-* Host-based routing is configured.
+* [Host-based routing](../../admin/config/allow-external-access-to-containers.md) is configured.
+
+!!! Note
+    Dynamic GPU fractions is disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
 
 ## Step 1: Logging in
 
@@ -22,7 +25,7 @@ Before you start, make sure:
 === "API"
     To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
 
-## Step 2:  Submitting the first inference workload
+## Step 2: Submitting the first inference workload
 
 === "UI"
 
@@ -45,7 +48,7 @@ Before you start, make sure:
             * Click **+ENVIRONMENT VARIABLE** and add the following
                 * **Name:** RUNAI\_MODEL **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct` (you can choose any vLLM supporting model from Hugging Face)
                 * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `Llama-3.2-1B-Instruct`
-                * **Name:** HF\_TOKEN **Source:** Custom **Value:** \<Your Hugging Face token> (only needed for gated models)
+                * **Name:** HF\_TOKEN **Source:** Custom **Value:** Your Hugging Face token (only needed for gated models)
                 * **Name:** VLLM\_RPC\_TIMEOUT **Source:** Custom **Value:** 60000
         5. Click **CREATE ENVIRONMENT**
 
@@ -121,12 +124,12 @@ Before you start, make sure:
         The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
 
 
-## Step 3:  Submitting the second inference workload
+## Step 3: Submitting the second inference workload
 
 === "UI"
 
     1. Go to the Workload manager → Workloads
-    2.  Click **+NEW WORKLOAD** and select **Inference**
+    2. Click **+NEW WORKLOAD** and select **Inference**
 
         Within the new inference form:
     3. Select the **cluster** where the previous inference workload was created
@@ -188,7 +191,7 @@ Before you start, make sure:
 
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
 
 
 ## Step 4: Submitting the first workspace
@@ -208,13 +211,13 @@ Before you start, make sure:
     9. Select the **‘chatbot-ui’** environment for your workspace (Image URL: runai.jfrog.io/core-llm/llm-app)
 
         * Set the runtime settings for the environment with the following **environment variables**:
-            * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
+            * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
             * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
             * Delete the **PATH\_PREFIX** environment variable if you are using host-based routing.
 
         * If the ‘chatbot-ui’ is not displayed in the gallery, follow the step-by-step guide:
 
-        ??? "Create a chatbot-ui compute resource"
+        ??? "Create a chatbot-ui environment"
 
             1. Click **+NEW ENVIRONMENT**
             2. Enter a **name** for the environment. The name must be unique.
@@ -224,7 +227,7 @@ Before you start, make sure:
                 * Select **Chatbot UI** tool from the list
             5. Set the runtime settings for the environment
                 * Click **+ENVIRONMENT VARIABLE**
-                * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
+                * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
                 * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
                 * **Name:** RUNAI\_MODEL\_TOKEN\_LIMIT **Source:** Custom **Value:** 8192
                 * **Name:** RUNAI\_MODEL\_MAX\_LENGTH **Source:** Custom **Value:** 16384
@@ -252,7 +255,7 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ```sh
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -282,7 +285,7 @@ Before you start, make sure:
     ```
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
   
 
 ## Step 5: Submitting the second workspace
@@ -300,10 +303,12 @@ Before you start, make sure:
     7. Select the **project** where the previous inference workloads were created
     8. Enter a **name** for the workspace (if the name already exists in the project, you will be requested to submit a different name)
     9. Select the **‘chatbot-ui’** environment
-       * Set the runtime settings for the environment with the following **environment variables**:
-        * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
-        * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
-        * Delete the **PATH\_PREFIX** environment variable if you are using host-based routing.
+        * Set the runtime settings for the environment with the following **environment variables**:
+                
+            * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
+            * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
+            * Delete the **PATH\_PREFIX** environment variable if you are using host-based routing.
+
     10. Select the **‘cpu-only’** compute resource
     11. Click **CREATE WORKSPACE**
 
@@ -311,7 +316,7 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details,  see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ```sh
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -341,7 +346,7 @@ Before you start, make sure:
     ```
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
 
 
 ## Step 6: Connecting to Chatbot-UI

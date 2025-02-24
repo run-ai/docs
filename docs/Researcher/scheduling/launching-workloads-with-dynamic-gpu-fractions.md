@@ -10,7 +10,10 @@ Before you start, make sure:
 
 * You have created a [project](../../platform-admin/aiinitiatives/org/projects.md) or have one created for you.
 * The project has an assigned quota of at least 0.5 GPU.
-* Dynamic GPU fractions are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+* Dynamic GPU fractions is enabled. 
+
+!!! Note
+    Dynamic GPU fractions is disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
 
 ## Step 1: Logging in
 
@@ -35,7 +38,7 @@ Before you start, make sure:
     2. Click **+NEW WORKLOAD** and select **Workspace**
 
         Within the New workspace form:
-    3. Select under which **cluster** to create the workload
+    3. Select under which **cluster** to create the workspace
     4. Select the **project** in which your workspace will run
     5. Select a preconfigured [**template**](../../platform-admin/workloads/assets/templates.md) or select the **Start from scratch** to launch a new workspace quickly
     6. Enter a **name** for the workspace (if the name already exists in the project, you will be requested to submit a different name)
@@ -59,7 +62,7 @@ Before you start, make sure:
             * Enter **command** - `start-notebook.sh`
             * Enter **arguments** - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
 
-            Note: If -based routing is enabled on the cluster, enter the  `--NotebookApp.token=''` only.
+            Note: If host-based routing is enabled on the cluster, enter the  `--NotebookApp.token=''` only.
 
         6. Click **CREATE ENVIRONMENT**
 
@@ -125,12 +128,12 @@ Before you start, make sure:
                     "toolType": "jupyter-notebook", \ #toolType will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
                     "toolName": "Jupyter" \ #toolName text will show when connecting to the Jupyter tool via the user interface. 
                 }
-            ]
+             ]
         }
     }'
     ```
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
 
 
 ## Step 3: Submitting the second workspace
@@ -152,7 +155,7 @@ Before you start, make sure:
     9. Select the compute resource created in the previous step
     10. Click **CREATE WORKSPACE**
 
-    After the workspace is created, it is added to the [workloads ](../../../workloads-in-runai/workloads.md)table
+    After the workspace is created, it is added to the [workloads](../../platform-admin/workloads/overviews/managing-workloads.md) table
 
 === "CLI v2"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
@@ -167,7 +170,7 @@ Before you start, make sure:
     ``` 
 
 === "API"
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ```sh
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.

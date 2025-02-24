@@ -41,7 +41,7 @@ Different types of workloads have different levels of support. Understanding wha
 |  | Run:ai workloads |  |  |                        | Third-party workloads |
 |  | Training - Standard | Workspace | Inference | Training - distributed |  |
 | [Fairness](../../../Researcher/scheduling/the-runai-scheduler.md) | v | v | v |           v            | v |
-| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#preemption) | v | v | v |           v            | v |
+| [Priority and preemption](../../../Researcher/scheduling/the-runai-scheduler.md#priority-and-preemption) | v | v | v |           v            | v |
 | [Over quota](../../../Researcher/scheduling/the-runai-scheduler.md#over-quota-weight) | v | v | v |           v            | v |
 | [Node pools](../../../platform-admin/aiinitiatives/resources/node-pools.md) | v | v | v |           v            | v |
 | Bin packing / Spread | v | v | v |           v            | v |

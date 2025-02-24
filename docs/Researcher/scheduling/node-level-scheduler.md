@@ -61,7 +61,7 @@ The Node Level Scheduler can be enabled per node pool. To use Node Level Schedul
 Enable Node Level Scheduler on any of the node pools:
 
 1. Select __Resources__ → Node pools
-2. [Create a new node pool](../../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool#adding-a-new-node-pool) or [edit an existing node pool](../../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool#editing-a-node-pool)
+2. [Create a new node pool](../../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool) or [edit an existing node pool](../../platform-admin/aiinitiatives/resources/node-pools.md#editing-a-node-pool)
 3. Under **Resource Utilization Optimization** tab, change the **number of workloads on each GPU** to any value other than **Not Enforced** (i.e. 2, 3, 4, 5)
 
 The Node Level Scheduler is now ready to be used on that node pool.

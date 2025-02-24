@@ -44,7 +44,7 @@ Before you start, make sure:
     2. Click **+NEW WORKLOAD** and select **Workspace**
 
         Within the New workspace form:
-    3. Select under which **cluster** to create the workload
+    3. Select under which **cluster** to create the workspace
     4. Select the **project** in which your workspace will run
     5. Select a preconfigured [**template**](../../platform-admin/workloads/assets/templates.md) or select the **Start from scratch** to launch a new workspace quickly
     6. Enter a **name** for the workspace (if the name already exists in the project, you will be requested to submit a different name)
@@ -59,15 +59,13 @@ Before you start, make sure:
         ??? "Create a jupyter-lab environment"
 
              1. Click __+NEW ENVIRONMENT__
-             2. Select under which cluster to create the environment
-             3. Select a [scope](../../../platform-admin/workloads/assets/overview.md). 
-             4. Enter a __name__ for the environment. The name must be unique.
-             5. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
-             6. Tools - Set the connection for your tool 
+             2. Enter a __name__ for the environment. The name must be unique.
+             3. Enter the jupyter-lab __Image URL__ - jupyter/scipy-notebook
+             4. Tools - Set the connection for your tool 
 
                  * Click __+TOOL__
                  * Select __Jupyter__ tool from the list
-             7. Set the runtime settings for the environment 
+             5. Set the runtime settings for the environment 
 
                  * Click __+COMMAND__ 
                  * Enter __command__ - start-notebook.sh
@@ -76,7 +74,7 @@ Before you start, make sure:
                 !!! Note
                     If host-based routing is enabled on the cluster, enter the argument `--NotebookApp.token=''` only.
 
-             8. Click __CREATE ENVIRONMENT__
+             6. Click __CREATE ENVIRONMENT__
             
         * The newly created jupyter-lab will be selected automatically
     9. Select the **‘small-fraction’** compute resource for your workspace (GPU % of devices: 10)
@@ -130,7 +128,7 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ```sh
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
@@ -164,7 +162,7 @@ Before you start, make sure:
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API.](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/)
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
 
 
 ## Step 3: Connecting to the Jupyter Notebook

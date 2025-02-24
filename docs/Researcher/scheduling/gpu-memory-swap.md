@@ -4,7 +4,7 @@ Run:ai’s GPU memory swap helps administrators and AI practitioners to further 
 
 Expanding the GPU physical memory helps the Run:ai system to put more workloads on the same GPU physical hardware, and to provide a smooth workload context switching between GPU memory and CPU memory, eliminating the need to kill workloads when the memory requirement is larger than what the GPU physical memory can provide.
 
-## Benefits of GPU memory swap¶
+## Benefits of GPU memory swap
 
 There are several use cases where GPU memory swap can benefit and improve the user experience and the system's overall utilization.
 
@@ -24,7 +24,7 @@ A single GPU can be shared between an interactive or inference workload (for exa
 
 Whenever the inference/interactive workload stops using the GPU, the swap mechanism swaps out the inference/interactive workload GPU data to the CPU memory. Kubernetes wise, the pod is still alive and running using the CPU. This allows the training workload to run faster when the inference/interactive workload is not using the GPU, and slower when it does, thus sharing the same resource between multiple workloads, fully utilizing the GPU at all times, and maintaining uninterrupted service for both workloads.
 
-### Serving inference warm models with GPU memory swap¶
+### Serving inference warm models with GPU memory swap
 
 Running multiple inference models is a demanding task and you will need to ensure that your SLA is met. You need to provide high performance and low latency, while maximizing GPU utilization. This becomes even more challenging when the exact model usage patterns are unpredictable. You must plan for the agility of inference services and strive to keep models on standby in a ready state rather than an idle state.
 
@@ -64,7 +64,7 @@ The following outlines the advantages of stacking multiple models on the same no
 * GPU memory swap cannot be enabled if the Run:ai [strict or fair time-slicing](GPU-time-slicing-scheduler.md#gpu-time-slicing-modes) is used. GPU memory swap can only be used with the default NVIDIA time-slicing mechanism.
 * CPU RAM size cannot be decreased once GPU memory swap is enabled.
 
-## Enabling and configuring GPU memory swap¶
+## Enabling and configuring GPU memory swap
 
 Before configuring GPU memory swap, dynamic GPU fractions must be enabled. You can also configure and use Node Level Scheduler. Dynamic GPU fractions enable you to make your workloads burstable, while both features will maximize your workloads’ performance and GPU utilization within a single node.
 
@@ -88,7 +88,7 @@ To enable GPU memory swap in a Run:ai cluster:
     kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"enabled": true, "limits": {"cpuRam": "100Gi"}}}}}}'
     ```
 
-### Configuring system reserved GPU Resources¶
+### Configuring system reserved GPU Resources
 
 Swappable workloads require reserving a small part of the GPU for non-swappable allocations like binaries and GPU context. To avoid getting out-of-memory (OOM) errors due to non-swappable memory regions, the system reserves a 2GiB of GPU RAM memory by default, effectively truncating the total size of the GPU memory. For example, a 16GiB T4 will appear as 14GiB on a swap-enabled node. The exact reserved size is application-dependent, and 2GiB is a safe assumption for 2-3 applications sharing and swapping on a GPU. This value can be changed by:
 
@@ -109,11 +109,11 @@ Swappable workloads require reserving a small part of the GPU for non-swappable 
     kubectl patch -n runai runaiconfigs.run.ai/runai --type='merge' --patch '{"spec":{"global":{"core":{"swap":{"limits":{"reservedGpuRam": <quantity>}}}}}}'
     ```
 
-### Preventing your workloads from getting swapped¶
+### Preventing your workloads from getting swapped
 
 If you prefer your workloads not to be swapped into CPU memory, you can specify on the pod an anti-affinity to `run.ai/swap enabled=true` node label when submitting your workloads and the Scheduler will ensure not to use swap-enabled nodes. An alternative way is to set swap on a dedicated node pool and not use this node pool for workloads you prefer not to swap.
 
-### What happens when the CPU reserved memory for GPU swap is exhausted?¶
+### What happens when the CPU reserved memory for GPU swap is exhausted?
 
 CPU memory is limited, and since a single CPU serves multiple GPUs on a node, this number is usually between 2 to 8. For example, when using 80GB of GPU memory, each swapped workload consumes up to 80GB (but may use less) assuming each GPU is shared between 2-4 workloads. In this example, you can see how the swap memory can become very large. Therefore, we give administrators a way to limit the size of the CPU reserved memory for swapped GPU memory on each swap enabled node as shown in [enabling and configuring GPU memory swap](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 

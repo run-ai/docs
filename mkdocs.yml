@@ -428,7 +428,6 @@ nav:
       - 'Scheduling' : 
           - 'The Run:ai Scheduler concepts and principles' : 'Researcher/scheduling/the-runai-scheduler.md'
           - 'How the Scheduler works' : 'Researcher/scheduling/how-the-scheduler-works.md'
-          - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
           - 'Quick Starts' :
             - 'Run your First Standard Training' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
       - 'Resource Optimization' :
@@ -437,6 +436,7 @@ nav:
           - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
           - 'GPU Time-Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
           - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
+          - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
           - 'Quick Starts' :
             - 'Launching Workloads with GPU Fractions' : 'Researcher/scheduling/launching-workloads-with-gpu-fractions.md'
             - 'Launching Workloads with Dynamic GPU Fractions' : 'Researcher/scheduling/launching-workloads-with-dynamic-gpu-fractions.md' 
