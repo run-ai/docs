@@ -18,18 +18,18 @@ Before you start, make sure:
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI V1 [Deprecated]"
-    Log in using the following command. You will be prompted to enter your username and password:
-     
-    ``` bash
-    runai login
-    ```
-
 === "CLI V2"
     Run the below --help command to obtain the login options and log in according to your setup:
     
     ``` bash
     runai login --help  
+    ```
+
+=== "CLI V1 [Deprecated]"
+    Log in using the following command. You will be prompted to enter your username and password:
+
+    ``` bash
+    runai login
     ```
 
 === "API"
@@ -81,23 +81,22 @@ Before you start, make sure:
         
         After the standard training workload is created, it is added to the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 
-
-=== "CLI V1 [Deprecated]"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project:
-    
-    ``` bash
-    runai config project "project-name"  
-    runai submit "workload-name" -i runai.jfrog.io/demo/quickstart -g 1
-    ```
-
-    This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.
-
 === "CLI V2"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
     ``` bash
     runai project set "project-name"
     runai training submit "workload-name" -i runai.jfrog.io/demo/quickstart -g 1
+    ```
+
+    This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.
+
+=== "CLI V1 [Deprecated]"
+    Copy the following command to your terminal. Make sure to update the below with the name of your project:
+
+    ``` bash
+    runai config project "project-name"  
+    runai submit "workload-name" -i runai.jfrog.io/demo/quickstart -g 1
     ```
 
     This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.
