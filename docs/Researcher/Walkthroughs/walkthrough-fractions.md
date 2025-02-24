@@ -33,7 +33,7 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "CLI V2"
@@ -50,7 +50,7 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 
 Open a terminal and run:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai config project team-a   
     runai submit frac05 -i runai.jfrog.io/demo/quickstart -g 0.5
@@ -113,7 +113,7 @@ Open a terminal and run:
 
 Follow up on the Workload's progress by running:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai list jobs
     ```
@@ -147,7 +147,7 @@ Follow up on the Workload's progress by running:
 
 To verify that the Workload sees only parts of the GPU memory run:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ```
     runai exec frac05 nvidia-smi
     ```
@@ -170,7 +170,7 @@ Notes:
 
 Instead of requesting a fraction of the GPU, you can ask for specific GPU memory requirements. For example:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ``` bash
     runai submit  -i runai.jfrog.io/demo/quickstart --gpu-memory 5G
     ```
