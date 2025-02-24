@@ -20,17 +20,17 @@ The Credentials table comprises the following columns:
 
 | Column          | Description                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Credentials     | The name of the credentials                                                                                                                                              |
-| Description     | A description of the credentials                                                                                                                                         |
-| Type            | The type of credentials, e.g., Docker registry                                                                                                                           |
-| Status          | The different lifecycle [phases](../workloads.md#workload-status) and representation of the credentials’ condition                                                       |
+| Credential     | The name of the credential                                                                                                                                              |
+| Description     | A description of the credential                                                                                                                                         |
+| Type            | The type of credential, e.g., Docker registry                                                                                                                           |
+| Status          | The different lifecycle [phases](../workloads.md#workload-status) and representation of the credential's condition                                                       |
 | Scope           | The [scope](workload-assets.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
-| Kubernetes name | The unique name of the credentials Kubernetes name as it appears in the cluster                                                                                          |
-| Environment(s)  | The environment(s) that are associated with the credentials                                                                                                              |
-| Data source(s)  | The private data source(s) that are accessed using the credentials                                                                                                       |
-| Created by      | The user who created the credentials                                                                                                                                     |
-| Creation time   | The timestamp of when the credentials were created                                                                                                                       |
-| Cluster         | The cluster with which the credentials are associated                                                                                                                    |
+| Kubernetes name | The unique name of the credential's Kubernetes name as it appears in the cluster                                                                                          |
+| Environment(s)  | The environment(s) that are associated with the credential                                                                                                              |
+| Data source(s)  | The private data source(s) that are accessed using the credential                                                                                                       |
+| Created by      | The user who created the credential                                                                                                                                     |
+| Creation time   | The timestamp of when the credential were created                                                                                                                       |
+| Cluster         | The cluster with which the credential are associated                                                                                                                    |
 
 ### Credentials status
 
@@ -38,12 +38,12 @@ The following table describes the credentials’ condition and whether they were
 
 | Status          | Description                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| No issues found | No issues were found while creating the credentials (this status may change while propagating the credentials to the selected scope) |
-| Issues found    | Issues found while propagating the credentials                                                                                       |
+| No issues found | No issues were found while creating the credential (this status may change while propagating the credential to the selected scope) |
+| Issues found    | Issues found while propagating the credential                                                                                       |
 | Issues found    | Failed to access the cluster                                                                                                         |
-| Creating…       | Credentials are being created                                                                                                        |
-| Deleting…       | Credentials are being deleted                                                                                                        |
-| No status       | When the credentials’ scope is an account, or the current version of the cluster is not up to date, the status cannot be displayed   |
+| Creating…       | Credential is being created                                                                                                        |
+| Deleting…       | Credential is being deleted                                                                                                        |
+| No status       | When the credential's scope is an account, or the current version of the cluster is not up to date, the status cannot be displayed   |
 
 #### Customizing the table view
 
@@ -61,7 +61,7 @@ Creating credentials is limited to [specific roles](workload-assets.md#who-can-c
 To add a new credential:
 
 1. Go to the Credentials table:
-2. Click **+NEW CREDENTIALS**
+2. Click **+NEW CREDENTIAL**
 3. Select the credential type from the list\
    Follow the step-by-step guide for each credential type:
 
@@ -71,21 +71,21 @@ To add a new credential:
 
 These credentials allow users to authenticate and pull images from a Docker registry, enabling access to containerized applications and services.
 
-After creating the credentials, it is used automatically when pulling images.
+After creating the credential, it is used automatically when pulling images.
 
 1. Select a [scope](workload-assets.md#asset-scope).
 2. Enter a name for the credential. The name must be unique.
-3. Optional: Provide a description of the credentials
+3. Optional: Provide a description of the credential
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
-     This option applies when the purpose is to create credentials based on an existing secret
+     This option applies when the purpose is to create the credential based on an existing secret
      * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
-     A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+     A new secret is created together with the credential. New secrets are not added to the list of existing secrets.
      * Enter the **username**, **password**, and **Docker registry URL**
-5. Click **CREATE CREDENTIALS**
+5. Click **CREATE CREDENTIAL**
 
-After the credentials are created, check their status to monitor their proper creation across the selected scope.
+After the credential is created, check the status to monitor proper creation across the selected scope.
 
 </details>
 
@@ -105,14 +105,14 @@ The purpose of this credential type is to allow access to restricted data.
 3. Optional: Provide a **description** of the credential
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
-     This option applies when the purpose is to create credentials based on an existing secret
+     This option applies when the purpose is to create the credential based on an existing secret
      * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
-     A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+     A new secret is created together with the credential. New secrets are not added to the list of existing secrets.
      * Enter the **Access key** and **Access secret**
-5. Click **CREATE CREDENTIALS**
+5. Click **CREATE CREDENTIAL**
 
-After the credentials are created, check their status to monitor their proper creation across the selected scope.
+After the credential is created, check the status to monitor proper creation across the selected scope.
 
 </details>
 
@@ -126,17 +126,17 @@ The purpose of this credential type is to allow access to restricted data.
 
 1. Select a [scope](workload-assets.md#asset-scope)
 2. Enter a name for the credential. The name must be unique.
-3. Optional: Provide a description of the credentials
+3. Optional: Provide a description of the credential
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
-     This option applies when the purpose is to create credentials based on an existing secret
+     This option applies when the purpose is to create the credential based on an existing secret
      * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
-     A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+     A new secret is created together with the credential. New secrets are not added to the list of existing secrets.
      * Enter the **username** and **password**
-5. Click **CREATE CREDENTIALS**
+5. Click **CREATE CREDENTIAL**
 
-After the credentials are created, check their status to monitor their proper creation across the selected scope.
+After the credential is created, check the status to monitor proper creation across the selected scope.
 
 </details>
 
@@ -150,15 +150,15 @@ The purpose of this credential type is to allow access to restricted data.
 
 1. Select a [scope](workload-assets.md#asset-scope)
 2. Enter a name for the credential. The name must be unique.
-3. Optional: Provide a description of the credentials
+3. Optional: Provide a description of the credential
 4. Set how the credential is created
    * **Existing secret** (in the cluster)\
-     This option applies when the purpose is to create credentials based on an existing secret
+     This option applies when the purpose is to create the credential based on an existing secret
      * Select a secret from the list (The list is empty if no secrets were [created in advance](credentials.md#creating-secrets-in-advance))
    * **New secret** (recommended)\
-     A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
+     A new secret is created together with the credential. New secrets are not added to the list of existing secrets.
      * Click **+KEY & VALUE** - to add key/value pairs to store in the new secret
-5. Click **CREATE CREDENTIALS**
+5. Click **CREATE CREDENTIAL**
 
 </details>
 
