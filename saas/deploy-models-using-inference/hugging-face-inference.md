@@ -32,23 +32,23 @@ To add a new inference workload:
      * **Provide a token**
        * **Access token**
          * Enter a token
-     * **Select credential**
-       * Select an **existing credential**. Make sure the existing credential contains an **HF\_TOKEN** key
-       *   Add a new credential with an HF\_TOKEN
+     * **Select credentials**
+       * Select **existing credentials**. Make sure the existing credentials contain an **HF\_TOKEN** key
+       *   Add new credentials with a HF\_TOKEN
 
-           Within the new credential form:
+           Within the new credentials form:
 
            * Enter a **name** for the credential. The name must be unique.
-           * Optional: Provide a **description** of the credential
+           * Optional: Provide a **description** of the credentials
            * Set how the credential is created
              *   **Existing secret** (in the cluster)
 
-                 This option applies when the purpose is to create the credential based on an existing secret
+                 This option applies when the purpose is to create credentials based on an existing secret
 
                  * Select a secret from the list (the list is empty if no secrets were [created in advance](../workloads-in-runai/workload-assets/credentials.md#creating-secrets-in-advance))
              *   **New secret**
 
-                 A new secret is created together with the credential. New secrets are not added to the list of existing secrets.
+                 A new secret is created together with the credentials. New secrets are not added to the list of existing secrets.
 
                  * Enter a **key**
                  * Enter the HF\_TOKEN as the **value**

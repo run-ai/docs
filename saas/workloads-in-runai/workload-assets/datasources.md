@@ -133,7 +133,7 @@ The [S3 bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/a
 4. Optional: Provide a **description** of the data source
 5. Set the data origin
    * Set the **S3 service URL**
-   * Select the **credential**
+   * Select the **credentials**
      * **None** - for public buckets
      *   **Credential names** - This option is relevant for private buckets based on existing credentials that were created for the scope.
 
@@ -160,7 +160,7 @@ A Git-type data source is a Run:ai integration, that enables code to be copied f
 5. Set the data origin
    * Set the **Repository URL**
    * Set the **Revision** (branch, tag, or hash)- If left empty, it will use the 'HEAD' (latest)
-   * Select the **credential**
+   * Select the **credentials**
      * **None** - for public repositories
      *   **Credential names** - This option applies to private repositories based on existing credentials that were created for the scope.
 
@@ -223,7 +223,7 @@ A secret-type data source enables the mapping of a credential into the workloadâ
 5. Set the data origin
    *   Select the **credential**
 
-       To add new credentials, and for additional information, check the [Credentials](credentials.md) article.
+       To add a new credential, and for additional information, check the [Credentials](credentials.md) article.
 6. Set the data target location
    * **container path**
 7. Click **CREATE DATA SOURCE**

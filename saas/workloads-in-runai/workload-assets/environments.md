@@ -129,7 +129,7 @@ To add a new environment:
         * Enter a **value**
         * Leave **empty**
         * Add **instructions** for the expected value if any
-      * **Credentials** - Select an existing credential as the environment variable
+      * **Credentials** - Select existing credentials as the environment variable
         * Select a **credential name**\
           To add new credentials to the credentials list, and for additional information, see [Credentials](credentials.md).
         * Select a **secret key**

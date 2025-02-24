@@ -61,7 +61,7 @@ To add a new training workload:
        * Select the **source** for the environment variable
          * **Custom**
            * Enter a value according to the provided instructions
-         * **Credentials** - Select an existing credential as the environment variable
+         * **Credentials** - Select existing credentials as the environment variable
            * Select a **credential name** To add new credentials to the credentials list, and for additional information, see [Credentials](../../workloads-in-runai/workload-assets/credentials.md).
            * Select a **secret key**
 10. Select the **compute resource** for your training workload
