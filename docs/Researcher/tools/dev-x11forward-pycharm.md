@@ -18,23 +18,18 @@ Details on how to create the image are [here](https://github.com/run-ai/docs/tre
 
 Run the following command to connect to the container as if it were running locally:
 
-```
-runai submit xforward-remote -i runai.jfrog.io/demo/quickstart-x-forwarding --interactive  \
-        --service-type=portforward --port 2222:22
+```shell
+runai workspace submit build-remote -i runai.jfrog.io/demo/pycharm-demo 
 ```
 
-The terminal will show the connection:
+Track the workload status:
+```shell
+runai workspace list
+```
 
-``` shell
-The job 'xforward-remote' has been submitted successfully
-You can run `runai describe job xforward-remote -p team-a` to check the job status
-INFO[0007] Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-INFO[0045] Job started
-Open access point(s) to service from localhost:2222
-Forwarding from [::1]:2222 -> 22
+Once the workload is running, you can connect using:
+```shell
+runai workspace port-forward build-remote --port 2222:22
 ```
 
 * The Job starts an sshd server on port 22.
