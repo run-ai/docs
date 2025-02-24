@@ -1,8 +1,8 @@
 # adapted from https://docs.docker.com/engine/examples/running_ssh_service/
-FROM python
+FROM python:3.13-slim-bullseye
 
-RUN apt-get update && apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
+RUN apt update && apt install -y openssh-server
+RUN mkdir /run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 

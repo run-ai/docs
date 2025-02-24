@@ -29,7 +29,7 @@ Run `runai login` and enter your credentials.
 
 Run the following commands:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ```
     runai submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
     runai submit a2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
@@ -54,7 +54,7 @@ System status after run:
 
 Run the following commands:
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ```
     runai submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     runai submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
@@ -81,7 +81,7 @@ System status after run:
 
 Now lets start deleting Jobs. Alternatively, you can wait for Jobs to complete.
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     ```
     runai delete job b2 -p team-b
     ```

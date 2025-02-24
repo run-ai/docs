@@ -20,7 +20,7 @@ Before you start, make sure:
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Log in using the following command. You will be prompted to enter your username and password:
      
     ``` bash
@@ -31,7 +31,7 @@ Before you start, make sure:
     Run the below --help command to obtain the login options and log in according to your setup:
     
     ``` bash
-    runai login --help  
+    runai login
     ```
 
 === "API"
@@ -101,7 +101,7 @@ Before you start, make sure:
         After the workspace is created, it is added to the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).
 
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
     
     ``` bash
@@ -116,9 +116,9 @@ Before you start, make sure:
 
     ``` bash
     runai project set "project-name"
-    runai workspace submit "workload-name"  --image jupyter/scipy-notebook --gpu-devices-request 1 \
-        --external-url container=8888  --command start-notebook.sh  \
-        -- --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
+    runai workspace submit jupyter-notebook -i jupyter/scipy-notebook -g 1 \
+        --external-url container=8888 --command  \
+        -- start-notebook.sh --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
     ```
 
 
@@ -171,12 +171,12 @@ Before you start, make sure:
     3. Select the __Jupyter__ tool 
     4. The selected tool is opened in a new tab on your browser
 
-=== "CLI V1"
+=== "CLI V1 [Deprecated]"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 
-=== "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
+=== "CLI V2"
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jupyter-notebook`.
 
 === "API"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
