@@ -70,7 +70,7 @@ Using the [compute resources](../../workloads-in-runai/workload-assets/compute-r
 
 ## Using CLI
 
-To view the available actions, go to the \[CLI v2] or the CLI v1 reference and run according to your workload.
+To view the available actions, go to the [CLI v2 reference](../../cli-reference/runai.md) or the [CLI v1 reference](https://docs.run.ai/v2.20/Researcher/cli-reference/runai-submit/) and run according to your workload.
 
 ## Using API
 

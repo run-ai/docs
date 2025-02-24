@@ -19,7 +19,7 @@ Refer to [metrics and telemetry](metrics-api.md) to see the full list of support
 
 ### **CLI**
 
-Use the `list` an `describe` commands to fetch and manage the data. See [CLI reference](../cli-reference/new-cli/runai.md) for more details.
+Use the `list` an `describe` commands to fetch and manage the data. See [CLI reference](../cli-reference/runai.md) for more details.
 
 <figure><img src="../.gitbook/assets/2025-02-10_16-33-31.png" alt=""><figcaption><p>Describe a specific workload telemetry</p></figcaption></figure>
 

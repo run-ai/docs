@@ -2,8 +2,8 @@
 
 The Run:ai Administrator (`runai-adm`) is a lightweight tool designed to support infrastructure administrators by simplifying two key tasks:
 
-* [Collecting logs](../../infrastructure-procedures/logs-collection.md) for troubleshooting and sharing with Run:ai support.
-* Configuring [node roles](../../advanced-setup/node-roles.md) in the cluster for optimal performance and reliability.
+* [Collecting logs](../infrastructure-procedures/logs-collection.md) for troubleshooting and sharing with Run:ai support.
+* Configuring [node roles](../advanced-setup/node-roles.md) in the cluster for optimal performance and reliability.
 
 This article outlines the installation and usage of the Run:ai Administrator CLI to help you get started quickly.
 

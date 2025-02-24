@@ -52,7 +52,7 @@ When setting a workload with dynamic GPU fractions, (for example, when using it 
 
 ## Using CLI
 
-To view the available actions, go to the CLI v2 reference and run according to your workload.
+To view the available actions, go to the [CLI v2 reference](../../cli-reference/runai.md) and run according to your workload.
 
 ## Using API
 

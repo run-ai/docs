@@ -9,7 +9,7 @@ For optimal performance in production clusters, it is essential to avoid extensi
 
 ## Prerequisites
 
-To perform these tasks, make sure to install the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md).
+To perform these tasks, make sure to install the Run:ai [Administrator CLI](../cli-reference/administrator-cli.md).
 
 ## Configure Node Roles
 
@@ -21,7 +21,7 @@ The following node roles can be configured on the cluster:
 
 ### System nodes
 
-Run:ai system nodes run system-level services required to operate. This can be done via the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md).
+Run:ai system nodes run system-level services required to operate. This can be done via the Run:ai [Administrator CLI](../cli-reference/administrator-cli.md).
 
 {% hint style="info" %}
 To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
@@ -47,11 +47,11 @@ Do not assign a system node role to the Kubernetes master node. This may disrupt
 
 ### Worker nodes
 
-Run:ai worker nodes run user-submitted workloads and system-level DeamonSets required to operate. This can be managed via the Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md), or [Kubectl](https://kubernetes.io/docs/reference/kubectl/).
+Run:ai worker nodes run user-submitted workloads and system-level DeamonSets required to operate. This can be managed via the Run:ai [Administrator CLI](../cli-reference/administrator-cli.md), or [Kubectl](https://kubernetes.io/docs/reference/kubectl/).
 
 #### Run:ai Administrator CLI
 
-To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](../cli-reference/new-cli/administrator-cli.md), follow these steps:
+To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](../cli-reference/administrator-cli.md), follow these steps:
 
 1. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
 2.  Run one of the following commands to set or remove a node’s role:
