@@ -17,18 +17,18 @@ Before you start, make sure:
 === "User Interface"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
+=== "CLI V2"
+    Run the below --help command to obtain the login options and log in according to your setup:
+
+    ``` bash
+    runai login --help  
+    ```
+
 === "CLI V1 [Deprecated]"
     Log in using the following command. You will be prompted to enter your username and password:
      
     ``` bash
     runai login
-    ```
-
-=== "CLI V2"
-    Run the below --help command to obtain the login options and log in according to your setup:
-    
-    ``` bash
-    runai login --help  
     ```
 
 === "API"
@@ -79,18 +79,6 @@ Before you start, make sure:
         
         After the distributed training workload is created, it is added to the [workloads table](../../../../platform-admin/workloads/overviews/managing-workloads.md).
 
-
-=== "CLI V1 [Deprecated]"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
-    
-    ``` bash
-    runai config project "project-name"  
-    runai submit-dist pytorch "workload-name" --workers=2 -g 0.1 \
-       -i kubeflow/pytorch-dist-mnist:latest
-    ```
-
-    This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
-
 === "CLI V2"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
@@ -99,6 +87,17 @@ Before you start, make sure:
     runai distributed submit "workload-name" --framework PyTorch \
        -i kubeflow/pytorch-dist-mnist:latest --workers 2 
        --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
+    ```
+
+    This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
+
+=== "CLI V1 [Deprecated]"
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
+    
+    ``` bash
+    runai config project "project-name"  
+    runai submit-dist pytorch "workload-name" --workers=2 -g 0.1 \
+       -i kubeflow/pytorch-dist-mnist:latest
     ```
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.

@@ -40,17 +40,6 @@ kubectl apply -f <file-name>
 
 When you submit a new Workload, you will want to connect the secret to the new Workload. To do that, run:
 
-=== "CLI V1 [Deprecated]"
-    ```shell
-    runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
-    ```
-    
-    For example:
-    
-    ```shell
-    runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
-    ```
-
 === "CLI V2"
     ```shell
     runai workspace submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
@@ -62,3 +51,13 @@ When you submit a new Workload, you will want to connect the secret to the new W
     runai workspace submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
     ```
 
+=== "CLI V1 [Deprecated]"
+    ```shell
+    runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
+    ```
+    
+    For example:
+    
+    ```shell
+    runai submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
+    ```

@@ -27,11 +27,10 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 ## Step by Step Quickstart
 
 ### Login
-
-=== "CLI V1 [Deprecated]"
+=== "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -43,6 +42,15 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 ### Create a Workspace
 
+=== "CLI V2"
+    Open a terminal and run:
+
+    ``` bash
+    runai project set team-a
+    runai workspace submit build1 -i ubuntu -g 1 --command -- sleep infinity
+    ```
+    !!! Note
+        For more information on the workspace submit command, see [cli documentation](../cli-reference/new-cli/runai_workspace_submit.md).
 
 === "CLI V1 [Deprecated]"
     Open a terminal and run:
@@ -54,16 +62,6 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
     !!! Note
         For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
-
-=== "CLI V2"
-    Open a terminal and run:
-
-    ``` bash
-    runai project set team-a
-    runai workspace submit build1 -i ubuntu -g 1 --command -- sleep infinity
-    ```
-    !!! Note
-        For more information on the workspace submit command, see [cli documentation](../cli-reference/new-cli/runai_workspace_submit.md).
 
 === "User Interface"
     * In the Run:ai UI select __Workloads__
@@ -115,14 +113,6 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 Follow up on the Workload's progress by running:
 
-=== "CLI V1 [Deprecated]"
-    ``` bash
-    runai list jobs
-    ```
-    The result:
-    ![mceclip20.png](img/mceclip20.png)
-
-
 === "CLI V2"
     ``` bash
     runai workspace list
@@ -135,6 +125,14 @@ Follow up on the Workload's progress by running:
     ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
     vs1          Workspace   Running     team-a      No               1/1                        1.00
     ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai list jobs
+    ```
+    The result:
+    ![mceclip20.png](img/mceclip20.png)
+
 
 === "User Interface"
     * Open the Run:ai user interface.
@@ -159,14 +157,14 @@ A full list of Job statuses can be found [here](../../platform-admin/workloads/o
 
 To get additional status on your Workload run:
 
-=== "CLI V1 [Deprecated]"
-    ``` bash
-    runai describe job build1
-    ```
-
 === "CLI V2"
     ``` bash
     runai workspace describe build1
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai describe job build1
     ```
 
 === "User Interface"
@@ -175,15 +173,15 @@ To get additional status on your Workload run:
 
 ### Get a Shell to the container
 
+=== "CLI V2"
+    ``` bash
+    runai workspace bash build1
+    ```
+
 === "CLI V1 [Deprecated]"
     Run:
     ``` bash
     runai bash build1
-    ```
-
-=== "CLI V2"
-    ``` bash
-    runai workspace bash build1
     ```
 
 This should provide a direct shell into the computer
@@ -195,14 +193,14 @@ This should provide a direct shell into the computer
 
 Run the following:
 
-=== "CLI V1 [Deprecated]"
-    ``` bash
-    runai delete job build1
-    ```
-
 === "CLI V2"
     ```    
     runai workspace delete build1
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai delete job build1
     ```
 
 === "User Interface"
