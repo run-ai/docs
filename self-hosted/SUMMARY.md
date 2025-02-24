@@ -27,6 +27,7 @@
     * [Departments](../saas/manage-ai-initiatives/managing-your-organization/departments.md)
   * [Managing your resources](../saas/manage-ai-initiatives/managing-your-resources/README.md)
     * [Nodes](../saas/manage-ai-initiatives/managing-your-resources/nodes.md)
+    
     * [Configuring NVIDIA MIG profiles](../saas/manage-ai-initiatives/managing-your-resources/configuring-mig-profiles.md)
     * [Node pools](../saas/manage-ai-initiatives/managing-your-resources/node-pools.md)
 * [Scheduling and resource optimization](../saas/scheduling-and-resource-optimization/README.md)

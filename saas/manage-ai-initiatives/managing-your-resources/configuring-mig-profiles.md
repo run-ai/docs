@@ -14,7 +14,7 @@ This guide explains how to configure MIG in each strategy to [submit workloads](
 {% hint style="info" %}
 * Starting from v2.19, Dynamic MIG feature began a deprecation process and is now no longer supported. With Dynamic MIG, the Run:ai platform automatically configured MIG profiles according to on-demand user requests for different MIG profiles or memory fractions.
 * GPU fractions and memory fractions are not supported with MIG profiles.
-* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see [Introduction to workloads](../../workloads-in-runai/introduction-to-workloads.md).
+* Single strategy supports both Run:ai and third-party workloads. Using mixed strategy can only be done using third-party workloads. For more details on Run:ai and third-party workloads, see [Introduction to workloads](../../workloads-in-runai/workloads.md).
 {% endhint %}
 
 ## Before you start
