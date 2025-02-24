@@ -20,16 +20,16 @@ Before you start, make sure:
 === "UI"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI V1 [Deprecated]"
-    Log in using the following command. You will be prompted to enter your username and password:
-     
+=== "CLI V2"
+    Run the below --help command to obtain the login options and log in according to your setup:
+
     ``` bash
     runai login
     ```
 
-=== "CLI V2"
-    Run the below --help command to obtain the login options and log in according to your setup:
-    
+=== "CLI V1 [Deprecated]"
+    Log in using the following command. You will be prompted to enter your username and password:
+     
     ``` bash
     runai login
     ```
@@ -96,17 +96,6 @@ Before you start, make sure:
         
         After the workspace is created, it is added to the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).
 
-
-=== "CLI V1 [Deprecated]"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
-    
-    ``` bash
-    runai config project "project-name"  
-    runai submit "workload-name" --jupyter -g 1
-    ```
-
-    This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
-
 === "CLI V2"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
@@ -117,6 +106,15 @@ Before you start, make sure:
         -- start-notebook.sh --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
     ```
 
+=== "CLI V1 [Deprecated]"
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
+    
+    ``` bash
+    runai config project "project-name"  
+    runai submit "workload-name" --jupyter -g 1
+    ```
+
+    This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
 
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
@@ -174,6 +172,9 @@ Before you start, make sure:
 === "CLI V1 (Deprecated)"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
+
+=== "CLI V1 [Deprecated]"
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/jup1`.
 
 === "API"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`

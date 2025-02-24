@@ -57,6 +57,29 @@ There are two ways to submit a TensorBoard Workload: via the Command-line interf
         1. Juypter
         2. TensorBoard 
 
+=== "CLI V2"
+    Run the following:
+
+    ```shell
+    runai workspace submit tb -i tensorflow/tensorflow:latest \
+        --external-url container=8888 --working-dir /mydir \
+        --host-path path=/mnt/nfs_share/john,mount=/mydir --command  \
+        -- tensorboard --logdir logs/fit --port 8888 --host 0.0.0.0
+    ```
+
+    The terminal will show the following: 
+
+    ``` shell
+    Creating workspace tb...
+    To track the workload's status, run 'runai workspace list'
+    ```
+    
+    Once the workload is running, you can connect using:
+    ```
+    runai workspace port-forward tb --port 8888
+    ```
+    Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
+
 === "CLI V1 [Deprecated]"
 
     Run the following:
@@ -78,30 +101,6 @@ There are two ways to submit a TensorBoard Workload: via the Command-line interf
     Forwarding from [::1]:8888 -> 8888
     ```
 
-    Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
-
-=== "CLI V2"
-
-    Run the following:
-
-    ```shell
-    runai workspace submit tb -i tensorflow/tensorflow:latest \
-        --external-url container=8888 --working-dir /mydir \
-        --host-path path=/mnt/nfs_share/john,mount=/mydir --command  \
-        -- tensorboard --logdir logs/fit --port 8888 --host 0.0.0.0
-    ```
-
-    The terminal will show the following: 
-
-    ``` shell
-    Creating workspace tb...
-    To track the workload's status, run 'runai workspace list'
-    ```
-    
-    Once the workload is running, you can connect using:
-    ```
-    runai workspace port-forward tb --port 8888
-    ```
     Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
 
 !!! Note
