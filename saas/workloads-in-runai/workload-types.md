@@ -26,7 +26,7 @@ The __Workspace__ is where data scientists conduct initial research, experiment 
 
     Hence, the default for the Run:ai workspaces considerations is to allow scheduling those workloads without the ability to preempt them once the resources were allocated. However, this non-preemptible state doesn’t allow to utilize more resources outside of the project’s deserved quota. 
 
-See [Running workspaces](../experiment-using-workspaces/running-workspace.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../experiment-using-workspaces/quickstart-jupyter.md).
+See [Running workspaces](../experiment-using-workspaces/running-workspace.md) to learn more about how to submit a workspace via the Run:ai platform. For quick starts, see [Running Jupyter Notebook using workspaces](../experiment-using-workspaces/quick-starts/quickstart-jupyter.md).
 
 ## Training: scaling resources for model development
 
