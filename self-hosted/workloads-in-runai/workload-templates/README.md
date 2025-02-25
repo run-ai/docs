@@ -1,2 +1,2 @@
-# Workload templates
+# workload-templates
 
