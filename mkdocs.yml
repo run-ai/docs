@@ -424,15 +424,21 @@ nav:
       - 'Environment Variables' : 'Researcher/best-practices/env-variables.md'
       - 'Email Notifications' : 'Researcher/best-practices/researcher-notifications.md'
       - 'Secrets as Environment Variables (CLI)' : 'Researcher/best-practices/secrets-as-env-var-in-cli.md'
-    - 'Scheduling' :
-      - 'The Run:ai Scheduler' : 'Researcher/scheduling/the-runai-scheduler.md'
-      - 'Allocation of GPU Fractions' : 'Researcher/scheduling/fractions.md'
-      - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
-      - 'Advanced' : 
-        - 'Dynamic GPU Fractions': 'Researcher/scheduling/dynamic-gpu-fractions.md'
-        - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
-        - 'GPU Time Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
-        - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
+    - 'Scheduling and resource optimization' :
+      - 'Scheduling' : 
+          - 'The Run:ai Scheduler concepts and principles' : 'Researcher/scheduling/the-runai-scheduler.md'
+          - 'How the Scheduler works' : 'Researcher/scheduling/how-the-scheduler-works.md'
+      - 'Resource Optimization' :
+          - 'GPU Fractions' : 'Researcher/scheduling/fractions.md'
+          - 'Dynamic GPU Fractions' : 'Researcher/scheduling/dynamic-gpu-fractions.md'
+          - 'Optimize performance with the Node Level Scheduler': 'Researcher/scheduling/node-level-scheduler.md' 
+          - 'GPU Time-Slicing' : 'Researcher/scheduling/GPU-time-slicing-scheduler.md'
+          - 'GPU Memory Swap' : 'Researcher/scheduling/gpu-memory-swap.md'
+          - 'Allocation of CPU and Memory' : 'Researcher/scheduling/allocation-of-cpu-and-memory.md'
+          - 'Quick Starts' :
+            - 'Launching Workloads with GPU Fractions' : 'Researcher/scheduling/launching-workloads-with-gpu-fractions.md'
+            - 'Launching Workloads with Dynamic GPU Fractions' : 'Researcher/scheduling/launching-workloads-with-dynamic-gpu-fractions.md' 
+            - 'Launching Workloads with GPU Memory Swap' : 'Researcher/scheduling/launching-workloads-with-gpu-memory-swap.md'
       # - 'Job Statuses' : 'Researcher/scheduling/job-statuses.md'
       # - 'Scheduling Strategies' : 'Researcher/scheduling/strategies.md'
     - 'Researcher Tools' :
