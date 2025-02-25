@@ -11,13 +11,13 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [February 16-23, 2025](#february-16---23-2025)
-* Previous releases: [February 02-09, 2025](#february-02---09-2025)
+* Latest release: [February 16-23, 2025](#february-16-23-2025)
+* Previous releases: [February 02-09, 2025](#february-02-09-2025)
 
 ## February 2025 releases
 
 
-### February 16 - 23, 2025
+### February 16-23, 2025
 
 #### Product enhancements
 
@@ -48,7 +48,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | RUN-25659 | CLI v2: Fixed an issue where min and max replicas were able to be submitted using TensorFlow. |
 
 
-### February 02 - 09, 2025
+### February 02-09, 2025
 
 #### Product enhancements
 
