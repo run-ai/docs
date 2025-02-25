@@ -1,5 +1,6 @@
 ---
 icon: hand-wave
+hidden: true
 layout:
   title:
     visible: true
