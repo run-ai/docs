@@ -11,13 +11,13 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [February 16-23, 2025](#february-16-23-2025)
-* Previous releases: [February 3, 2025](#february-3-2025)
+* Latest release: [February 16-23, 2025](#february-16---23-2025)
+* Previous releases: [February 02-09, 2025](#february-02---09-2025)
 
 ## February 2025 releases
 
 
-### February 16-23, 2025
+### February 16 - 23, 2025
 
 #### Product enhancements
 
@@ -48,16 +48,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | RUN-25659 | CLI v2: Fixed an issue where min and max replicas were able to be submitted using TensorFlow. |
 
 
-### February 9, 2025
-
-#### Resolved Bugs 
-
-| ID | Description |
-| :---- | :---- |
-| RUN-25511 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
-
-
-### February 3, 2025
+### February 02 - 09, 2025
 
 #### Product enhancements
 
@@ -84,6 +75,8 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | RUN-25220 | CLI v2: Changed `--image` flag from a required field to an optional one. |
 | RUN-25290 | Fixed a security vulnerability in golang.org/x/net v0.33.0 with CVE-2024-45338 with severity HIGH. |
 | RUN-24688 | Fixed an issue that blocked the Create Template submission due to a server error. This occurred when using the Copy & Edit Template form. |
+| RUN-25511 | Fixed an issue where deleting a workload in the CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
+
 
 
 
