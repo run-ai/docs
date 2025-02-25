@@ -34,10 +34,10 @@ As described, the inference client can be created via CLI. To perform this, you 
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -65,11 +65,10 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
 ### Run an Inference Workload
 
-
-=== "CLI V1"
+=== "CLI V2"
     Not available right now.
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Not available right now.
 
 === "User Interface"
@@ -145,22 +144,21 @@ You can use the Run:ai Triton demo client to send requests to the server
 
 * Copy the inference endpoint URL.
 
-=== "CLI V1"
-    Open a terminal and run:
-
-    ``` bash
-    runai config project team-a   
-    runai submit inference-client-1  -i runai.jfrog.io/demo/example-triton-client \
-    -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
-    ```
-
-
 === "CLI V2"
     Open a terminal and run:
 
     ``` bash
     runai project set team-a
-    runai training submit inference-client-1  -i runai.jfrog.io/demo/example-triton-client \
+    runai training submit inference-client-1 -i runai.jfrog.io/demo/example-triton-client \
+    -- perf_analyzer -m inception_graphdef -p 3600000 -u <INFERENCE-ENDPOINT>    
+    ```
+
+=== "CLI V1 [Deprecated]"
+    Open a terminal and run:
+
+    ``` bash
+    runai config project team-a   
+    runai submit inference-client-1  -i runai.jfrog.io/demo/example-triton-client \
     -- perf_analyzer -m inception_graphdef  -p 3600000 -u  <INFERENCE-ENDPOINT>    
     ```
 
@@ -185,10 +183,10 @@ In the user interface, under `inference-server-1`, go to the `Metrics` tab and w
 
 Run the following:
 
-=== "CLI V1"
+=== "CLI V2"
     Not available right now
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Not available right now
 
 === "User Interface"

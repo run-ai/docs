@@ -30,10 +30,10 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -57,18 +57,6 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
 ### Run Workload
 
-
-=== "CLI V1"
-    Open a terminal and run:
-
-    ``` bash
-    runai config project team-a   
-    runai submit vs1 --jupyter -g 1
-    ```
-
-    !!! Note
-        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
-
 === "CLI V2"
     Open a terminal and run:
 
@@ -80,6 +68,17 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
     !!! Note
         For more information on the workspace submit command, see [cli documentation](../cli-reference/new-cli/runai_workspace_submit.md).
+
+=== "CLI V1 [Deprecated]"
+    Open a terminal and run:
+
+    ``` bash
+    runai config project team-a   
+    runai submit vs1 --jupyter -g 1
+    ```
+
+    !!! Note
+        For more information on the workload submit command, see [cli documentation](../cli-reference/runai-submit.md).
 
 === "User Interface"
     * In the Run:ai UI select __Workloads__
@@ -141,14 +140,14 @@ Via the Run:ai user interface, go to `Workloads`, select the `vs1` Workspace and
 
 Run the following:
 
-=== "CLI V1"
-    ``` bash
-    runai delete job vs1
-    ```
-
 === "CLI V2"
     ```    
     runai workspace delete vs1
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai delete job vs1
     ```
 
 === "User Interface"

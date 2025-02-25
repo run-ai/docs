@@ -20,18 +20,18 @@ Before you start, make sure:
 === "UI"
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI V1"
-    Log in using the following command. You will be prompted to enter your username and password:
-     
+=== "CLI V2"
+    Run the below --help command to obtain the login options and log in according to your setup:
+
     ``` bash
     runai login
     ```
 
-=== "CLI V2"
-    Run the below --help command to obtain the login options and log in according to your setup:
-    
+=== "CLI V1 [Deprecated]"
+    Log in using the following command. You will be prompted to enter your username and password:
+     
     ``` bash
-    runai login --help  
+    runai login
     ```
 
 === "API"
@@ -96,8 +96,17 @@ Before you start, make sure:
         
         After the workspace is created, it is added to the [workloads table](../../../platform-admin/workloads/overviews/managing-workloads.md).
 
+=== "CLI V2"
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
-=== "CLI V1"
+    ``` bash
+    runai project set "project-name"
+    runai workspace submit jupyter-notebook -i jupyter/scipy-notebook -g 1 \
+        --external-url container=8888 --command  \
+        -- start-notebook.sh --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
+    ```
+
+=== "CLI V1 [Deprecated]"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
     
     ``` bash
@@ -106,17 +115,6 @@ Before you start, make sure:
     ```
 
     This would start a workspace with a pre-configured Jupyter image with one GPU allocated.
-
-=== "CLI V2"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
-
-    ``` bash
-    runai project set "project-name"
-    runai workspace submit "workload-name"  --image jupyter/scipy-notebook --gpu-devices-request 1 \
-        --external-url container=8888  --command start-notebook.sh  \
-        -- --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
-    ```
-
 
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
@@ -167,12 +165,13 @@ Before you start, make sure:
     3. Select the __Jupyter__ tool 
     4. The selected tool is opened in a new tab on your browser
 
-=== "CLI V1"
-    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
+=== "CLI V2"
+    To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`.
 
 
-=== "CLI V1"
+=== "CLI V1 (Deprecated)"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
+
 
 === "API"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`

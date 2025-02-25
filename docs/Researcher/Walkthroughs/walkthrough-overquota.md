@@ -30,17 +30,18 @@ Run `runai login` and enter your credentials.
 
 Open a terminal and run the following command:
 
-=== "CLI V1"
-    ```
-    runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
-    runai submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
-    runai submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
-    ```
 === "CLI V2"
     ```
     runai training submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
     runai training submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
     runai training submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ```
+    runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
+    runai submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
+    runai submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     ```
 
 System status after run:
@@ -56,14 +57,15 @@ System status after run:
 
 Run the following command:
 
-=== "CLI V1"
-
-    ```
-    runai submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
-    ```
 === "CLI V2"
     ```
     runai training submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
+    ```
+
+=== "CLI V1 [Deprecated]"
+
+    ```
+    runai submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     ```
 
 System status after run:
@@ -78,56 +80,62 @@ System status after run:
 
 Run the following command:
 
-=== "CLI V1"
-
-    ```
-    runai delete job a2 -p team-a
-     ```
 === "CLI V2"
     ```
     runai training delete a2
     ```
+
+=== "CLI V1 [Deprecated]"
+
+    ```
+    runai delete job a2 -p team-a
+     ```
+
 _a1_ is now going to start running again.
 
 Run:
 
-=== "CLI V1"
-
-    ```
-    runai list jobs -A
-    ```
 === "CLI V2"
     ```
     runai training list -A
+    ```
+
+=== "CLI V1 [Deprecated]"
+
+    ```
+    runai list jobs -A
     ```
 
 You have __two__ Jobs that are running on the first node and __one__ Job that is running alone the second node. 
 
 Choose one of the two Jobs from the full node and delete it:
 
-=== "CLI V1"
-
-    ```
-    runai delete job <job-name> -p <project>
-    ```
 === "CLI V2"
     ```
     runai training delete <job-name> -p <project>
+    ```
+
+=== "CLI V1 [Deprecated]"
+
+    ```
+    runai delete job <job-name> -p <project>
     ```
 
 The status now is:
 ![overquota3](img/overquota3.png)
 
 Now, run a 2 GPU Job:
-=== "CLI V1"
 
-    ```
-    runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
-    ```
 === "CLI V2"
     ```
     runai training submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
     ```
+=== "CLI V1 [Deprecated]"
+
+    ```
+    runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
+    ```
+
 _
 The status now is:
 ![overquota4](img/overquota4.png)

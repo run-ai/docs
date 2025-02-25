@@ -30,11 +30,11 @@ model.fit(x_train, y_train,
 The `logs` directory must be saved on a Network File Server such that it can be accessed by the TensorBoard Job. For example, by running the Job as follows:
 
 ```
-runai submit train-with-logs -i tensorflow/tensorflow:1.14.0-gpu-py3 \
-  -v /mnt/nfs_share/john:/mydir -g 1  --working-dir /mydir --command -- ./startup.sh
+runai training submit train-with-logs -i tensorflow/tensorflow:1.14.0-gpu-py3 \
+  --host-path path=/mnt/nfs_share/john,mount=/mydir -g 1 --working-dir /mydir --command -- ./startup.sh
 ```
 
-Note the volume flag (`-v`) and working directory flag (`--working-dir`). The logs directory will be created on `/mnt/nfs_share/john/logs/fit`.
+Note the host path flag (`--host-path`) and working directory flag (`--working-dir`). The logs directory will be created on `/mnt/nfs_share/john/logs/fit`.
 
 
 ## Submit a TensorBoard Workload
@@ -57,7 +57,30 @@ There are two ways to submit a TensorBoard Workload: via the Command-line interf
         1. Juypter
         2. TensorBoard 
 
-=== "CLI V1"
+=== "CLI V2"
+    Run the following:
+
+    ```shell
+    runai workspace submit tb -i tensorflow/tensorflow:latest \
+        --external-url container=8888 --working-dir /mydir \
+        --host-path path=/mnt/nfs_share/john,mount=/mydir --command  \
+        -- tensorboard --logdir logs/fit --port 8888 --host 0.0.0.0
+    ```
+
+    The terminal will show the following: 
+
+    ``` shell
+    Creating workspace tb...
+    To track the workload's status, run 'runai workspace list'
+    ```
+    
+    Once the workload is running, you can connect using:
+    ```
+    runai workspace port-forward tb --port 8888
+    ```
+    Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
+
+=== "CLI V1 [Deprecated]"
 
     Run the following:
 

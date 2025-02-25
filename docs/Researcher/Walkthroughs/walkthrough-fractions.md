@@ -33,10 +33,10 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 
 ### Login
 
-=== "CLI V1"
+=== "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V2"
+=== "CLI V1 [Deprecated]"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -50,18 +50,18 @@ To complete this Quickstart, the [Platform Administrator](../../platform-admin/o
 
 Open a terminal and run:
 
-=== "CLI V1"
-    ``` bash
-    runai config project team-a   
-    runai submit frac05 -i runai.jfrog.io/demo/quickstart -g 0.5
-    runai submit frac05-2 -i runai.jfrog.io/demo/quickstart -g 0.5 
-    ```
-
 === "CLI V2"
     ``` bash
     runai project set team-a
     runai training submit frac05 -i runai.jfrog.io/demo/quickstart --gpu-portion-request 0.5
     runai training submit frac05-2 -i runai.jfrog.io/demo/quickstart --gpu-portion-request 0.5
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai config project team-a   
+    runai submit frac05 -i runai.jfrog.io/demo/quickstart -g 0.5
+    runai submit frac05-2 -i runai.jfrog.io/demo/quickstart -g 0.5 
     ```
 
 === "User Interface"
@@ -113,19 +113,6 @@ Open a terminal and run:
 
 Follow up on the Workload's progress by running:
 
-=== "CLI V1"
-    ``` bash
-    runai list jobs
-    ```
-    The result:
-
-    ```
-    Showing jobs for project team-a
-    NAME      STATUS   AGE  NODE                  IMAGE                          TYPE   PROJECT  USER   GPUs Allocated (Requested)  PODs Running (Pending)  SERVICE URL(S)
-    frac05    Running  9s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
-    frac05-2  Running  8s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
-    ```
-
 === "CLI V2"
     ``` bash
     runai training list
@@ -139,6 +126,21 @@ Follow up on the Workload's progress by running:
     frac05      Training    Running  team-a      Yes              0/1                        0.00
     frac05-2    Training    Running  team-a      Yes              0/1                        0.00    
     ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai list jobs
+    ```
+
+    The result:
+
+    ```
+    Showing jobs for project team-a
+    NAME      STATUS   AGE  NODE                  IMAGE                          TYPE   PROJECT  USER   GPUs Allocated (Requested)  PODs Running (Pending)  SERVICE URL(S)
+    frac05    Running  9s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
+    frac05-2  Running  8s   runai-cluster-worker  runai.jfrog.io/demo/quickstart  Train  team-a   yaron  0.50 (0.50)                 1 (0)
+    ```
+
 === "User Interface"
     * Open the Run:ai user interface.
     * Under `Workloads` you can view the two new Training Workloads
@@ -147,14 +149,14 @@ Follow up on the Workload's progress by running:
 
 To verify that the Workload sees only parts of the GPU memory run:
 
-=== "CLI V1"
-    ```
-    runai exec frac05 nvidia-smi
-    ```
-
 === "CLI V2"
     ``` bash
     runai training exec frac05 nvidia-smi
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ```
+    runai exec frac05 nvidia-smi
     ```
 
 The result:
@@ -170,14 +172,14 @@ Notes:
 
 Instead of requesting a fraction of the GPU, you can ask for specific GPU memory requirements. For example:
 
-=== "CLI V1"
-    ``` bash
-    runai submit  -i runai.jfrog.io/demo/quickstart --gpu-memory 5G
-    ```
-
 === "CLI V2"
     ```
     runai training submit -i runai.jfrog.io/demo/quickstart --gpu-memory-request 5G
+    ```
+
+=== "CLI V1 [Deprecated]"
+    ``` bash
+    runai submit  -i runai.jfrog.io/demo/quickstart --gpu-memory 5G
     ```
 
 === "User Interface"

@@ -11,41 +11,39 @@ You will need your image to run an SSH server  (e.g [OpenSSH](https://www.ssh.co
 
 Run the following command to connect to the container as if it were running locally:
 
-```
-runai submit build-remote -i runai.jfrog.io/demo/pycharm-demo --interactive  \
-        --service-type=portforward --port 2222:22
-```
-
-The terminal will show the connection: 
-
-``` shell
-The job 'build-remote' has been submitted successfully
-You can run `runai describe job build-remote -p team-a` to check the job status
-INFO[0007] Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-Waiting for job to start
-INFO[0045] Job started
-Open access point(s) to service from localhost:2222
-Forwarding from [::1]:2222 -> 22
+```shell
+runai workspace submit build-remote -i runai.jfrog.io/demo/pycharm-demo 
 ```
 
-* The Job starts an sshd server on port 22.
+Track the workload status:
+```shell
+runai workspace list
+```
+
+Once the workload is running, you can connect using:
+```shell
+runai workspace port-forward build-remote --port 2222:22
+```
+
+* The Workload starts and sshd server on port 22.
 * The connection is redirected to the local machine (127.0.0.1) on port 2222
 
 !!! Note
 
-        It is possible to connect to the container using a remote IP address. However, this would be less convinient as you will need to maintain port numbers manually and change them when remote accessing using the development tool. As an example, run:
+    It is possible to connect to the container using a remote IP address. However, this would be less convinient as you will need to maintain port numbers manually and change them when remote accessing using the development tool.
+    As an example, run:
+    ```shell
+    runai workspace submit build-remote -i runai.jfrog.io/demo/pycharm-demo -g 1 --port service-type=NodePort,container=22,external=30022
+    ```
+    * The Workload starts an sshd server on port 22.
+    * The Workload redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} service type.
+    * Run: `runai workspace describe build-remote`
+    * Under the "Networks" title you will find the IP address and port. The port is 30222 
 
-        ```
-        runai submit build-remote -i runai.jfrog.io/demo/pycharm-demo -g 1 --interactive --service-type=nodeport --port 30022:22
-        ```
-
-        * The Job starts an sshd server on port 22.
-        * The Job redirects the external port 30022 to port 22 and uses a [Node Port](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types){target=_blank} service type.
-        * Run: `runai list worklaods`
-
-        * Next to the Job, under the "Service URL" column you will find the IP address and port. The port is 30222 
+    Networks
+    Name             Tool Type        Connection Type  URL              
+    ─────────────────────────────────────────────────────────────────────
+    port                              NodePort         172.18.0.5:30022
 
 
 ## PyCharm
