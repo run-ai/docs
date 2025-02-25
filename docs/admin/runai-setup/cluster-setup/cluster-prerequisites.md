@@ -245,7 +245,7 @@ Distributed training enables training of AI models over multiple nodes. This req
 * [XGBoost](https://xgboost.readthedocs.io/){target=_blank}  
 * [MPI v2](https://docs.open-mpi.org/){target=_blank}
 
-There are many ways to install each framework. A simple example of installation is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/){target=_blank}. Run:ai supports Training-Operator version 1.7.0 or higher - which includes TensorFlow, Pytorch, and XGBoost.
+There are many ways to install each framework. A simple example of installation is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/){target=_blank}. Run:ai supports Training-Operator version 1.7.0 - which includes TensorFlow, Pytorch, and XGBoost.
 
 To install run the following command:
 
