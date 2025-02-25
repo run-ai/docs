@@ -61,18 +61,16 @@ Before you start, make sure:
         ??? "Create a one-gpu compute resource"
 
             1. Click __+NEW COMPUTE RESOURCE__
-            2. Select under which cluster to create the compute resource
-            3. Select a scope
-            4. Enter a __name__ for the compute resource. The name must be unique.
-            5. Set __GPU devices per pod - 1__
-            6. Set __GPU memory per device__ 
+            2. Enter a __name__ for the compute resource. The name must be unique.
+            3. Set __GPU devices per pod - 1__
+            4. Set __GPU memory per device__ 
 
                 - Select __% (of device)__ - Fraction of a GPU device’s memory
                 - Set the memory __Request__ - 100 (The workload will allocate 100% of the GPU memory)
 
-            7. Optional: set the __CPU compute per pod__ - 0.1 cores (default)
-            8. Optional: set the __CPU memory per pod__ - 100 MB (default)
-            9. Click __CREATE COMPUTE RESOURCE__
+            5. Optional: set the __CPU compute per pod__ - 0.1 cores (default)
+            6. Optional: set the __CPU memory per pod__ - 100 MB (default)
+            7. Click __CREATE COMPUTE RESOURCE__
 
         * The newly created one-gpu compute resource will be selected automatically
 
