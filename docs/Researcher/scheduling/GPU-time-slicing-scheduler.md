@@ -29,11 +29,11 @@ Run:ai offers two GPU time-slicing modes:
 
 The figure below illustrates how **Strict** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Strict time-slicing mode](../img/strict-time-slicing-mode.png)
+![Strict time-slicing mode](img/strict-time-slicing-mode.png)
 
 The figure below illustrates how **Fair** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Fair time-slicing mode](../img/fair-time-slicing-mode.png)
+![Fair time-slicing mode](img/fair-time-slicing-mode.png)
 
 ## Time-slicing plan and lease times
 
@@ -73,8 +73,8 @@ Enable GPU time-slicing by setting the following cluster flag in the `runaiconfi
 ```yaml
 global: 
  core: 
-        timeSlicing: 
-            mode: fair/strict
+    timeSlicing: 
+        mode: fair/strict
 ```
 
 If the `timeSlicing` flag is not set, the system continues to use the default NVIDIA GPU time-slicing to maintain backward compatibility.

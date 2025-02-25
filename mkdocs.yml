@@ -428,8 +428,6 @@ nav:
       - 'Scheduling' : 
           - 'The Run:ai Scheduler concepts and principles' : 'Researcher/scheduling/the-runai-scheduler.md'
           - 'How the Scheduler works' : 'Researcher/scheduling/how-the-scheduler-works.md'
-          - 'Quick Starts' :
-            - 'Run your First Standard Training' : 'Researcher/workloads/training/standard-training/quickstart-standard-training.md' 
       - 'Resource Optimization' :
           - 'GPU Fractions' : 'Researcher/scheduling/fractions.md'
           - 'Dynamic GPU Fractions' : 'Researcher/scheduling/dynamic-gpu-fractions.md'

@@ -17,7 +17,7 @@ Before you start, make sure:
 
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI v1"
+=== "CLI v1 (Deprecated)"
 
     Log in using the following command. You will be prompted to enter your username and password:
      
@@ -100,7 +100,7 @@ Before you start, make sure:
 
 
 
-=== "CLI v1"
+=== "CLI v1 (Deprecated)"
 
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
 
@@ -175,7 +175,7 @@ Before you start, make sure:
     4. The selected tool is opened in a new tab on your browser
 
 
-=== "CLI v1"
+=== "CLI v1 (Deprecated)"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
 === "CLI v2"

@@ -53,11 +53,11 @@ Some scenarios can prevent the Scheduler from fully providing deserved quota and
 
 The example below illustrates a split of quota between different projects and departments using several node pools:
 
-![](../img/quota-split.png)
+![](img/quota-split.png)
 
 The example below illustrates how fairshare is calculated per project/node pool for the above example:
 
-![](../img/fairshare.png)
+![](img/fairshare.png)
 
 *   For each Project:
 
@@ -91,7 +91,7 @@ A queue, representing a scheduler-managed object for each project or department 
 
 When re-balancing resources between queues of different projects and departments, the Scheduler goes in the opposite direction, i.e. first take resources from over-fairshare queues, then from over quota queues, and finally, in some scenarios, even from queues that are below their deserved quota.
 
-![](../img/queue.png)
+![](img/queue.png)
 
 ## Next Steps
 

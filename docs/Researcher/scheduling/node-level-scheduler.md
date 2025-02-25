@@ -16,19 +16,19 @@ This use case is one scenario that shows how Node Level Scheduler locally optimi
 
 1. The below shows a node with 2 GPUs and 2 interactive pods that are submitted, requesting GPU resources:
 
-    ![Unallocated GPU nodes](../img/gpu-node-1.png)
+    ![Unallocated GPU nodes](img/gpu-node-1.png)
 
 2. The Scheduler instructs the node to put the 2 pods on a single GPU, [bin-packing](../../platform-admin/aiinitiatives/resources/node-pools.md#adding-a-new-node-pool) a single GPU and leaving the other free for a workload that might want a full GPU or more than half a GPU. This means GPU#2 is idle while the two notebooks can only use up to half a GPU, even if they temporarily need more:
 
-    ![Single allocated GPU node](../img/gpu-node-2.png)
+    ![Single allocated GPU node](img/gpu-node-2.png)
 
 3. With the Node Level Scheduler enabled, the local decision will be to spread those 2 pods on 2 GPUs and allow them to maximize both pods’ performance and GPUs’ utilization by bursting out up to the full GPU memory and GPU compute resources:
 
-    ![Two allocated GPU nodes](../img/gpu-node-3.png)
+    ![Two allocated GPU nodes](img/gpu-node-3.png)
 
 4. The Run:ai Scheduler still sees a node with one a full empty GPU and one fully occupied GPU. When a 3rd pod is scheduled, and it requires a full GPU (or more than 0.5 GPU), the Scheduler will send it to that node, and the Node Level Scheduler will move one of the interactive workloads to run with the other pod in GPU#1, as was the Scheduler’s initial plan. Moving the Jupyter notebook from GPU#1 back to GPU#2 maintains the pod running while the GPU process within the Jupyter notebook is killed and re-established on GPU#2, continuing to serve the Jupyter notebook.
 
-    ![Node Level Scheduler locally optimized GPU nodes](../img/gpu-node-4.png)
+    ![Node Level Scheduler locally optimized GPU nodes](img/gpu-node-4.png)
 
 ## Using Node Level Scheduler
 

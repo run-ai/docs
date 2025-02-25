@@ -40,9 +40,9 @@ Using the [compute resources](../../platform-admin/workloads/assets/compute.md) 
 * **Single dynamic GPU fractions** - Define the compute requirement to run 1 GPU device, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB) with a Limit. The limit must be equal to or greater than the GPU fractional memory request.
 * **Multi-GPU dynamic fractions** - Define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB) with a Limit. The limit must be equal to or greater than the GPU fractional memory request.
 
-![](../img/dynamic-fraction-example1.png)
+![](img/dynamic-fraction-example1.png)
 
-![](../img/dynamic-fraction-example2.png)
+![](img/dynamic-fraction-example2.png)
 
 !!! Note
     When setting a workload with dynamic GPU fractions, (for example, when using it with GPU Request or GPU memory Limits), you practically make the workload burstable. This means it can use memory that is not guaranteed for that workload and is susceptible to an ‘OOM Kill’ signal if the actual owner of that memory requires it back. This applies to non-preemptive workloads as well. For that reason, its recommended that you use dynamic GPU fractions with Interactive workloads running Notebooks. Notebook pods are not evicted when their GPU process is OOM Kill’ed. This behavior is the same as standard Kubernetes burstable CPU workloads.

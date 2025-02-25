@@ -18,7 +18,7 @@ With GPU memory swap, several workloads can run on the same GPU, even if the sum
 
 Notebooks typically use the GPU intermittently, therefore with high probability, only one workload (for example, an interactive notebook), will use the GPU at a time. The more notebooks the system puts on a single GPU, the higher the chances are that there will be more than one notebook requiring the GPU resources at the same time. Admins have a significant role here in fine tuning the number of notebooks running on the same GPU, based on specific use patterns and required SLAs. Using Node Level Scheduler reduces GPU access contention between different interactive notebooks running on the same node.
 
-### Sharing a GPU between inference/interactive workloads and training workloads¶
+### Sharing a GPU between inference/interactive workloads and training workload
 
 A single GPU can be shared between an interactive or inference workload (for example, a Jupyter notebook, image recognition services, or an LLM service), and a training workload that is not time-sensitive or delay-sensitive. At times when the inference/interactive workload uses the GPU, both training and inference/interactive workloads share the GPU resources, each running part of the time swapped-in to the GPU memory, and swapped-out into the CPU memory the rest of the time.
 
