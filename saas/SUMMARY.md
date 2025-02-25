@@ -3,6 +3,9 @@
 * [Welcome to SaaS documentation](README.md)
 * [Overview](overview/README.md)
   * [Welcome to Run:ai](Overview/welcome-to-runai.md)
+
+## SaaS installation
+
 * [Cluster installation](cluster-installation/README.md)
   * [System requirements](cluster-installation/system-requirements.md)
   * [Network requirements](cluster-installation/network-requirements.md)
@@ -11,6 +14,14 @@
   * [Customized installation](cluster-installation/customized-installation.md)
   * [Upgrade](cluster-installation/upgrade.md)
   * [Uninstall](cluster-installation/uninstall.md)
+
+## Self-hosted installation
+
+* [Upgrade](cluster-installation/upgrade.md)
+
+
+## Infrastructure setup
+
 * [Authentication and authorization](authentication-and-authorization/README.md)
   * [Authentication and authorization](authentication-and-authorization/authentication-and-authorization.md)
   * [Users](authentication-and-authorization/users.md)
@@ -23,6 +34,26 @@
   * [Applications](authentication-and-authorization/applications.md)
   * [User applications](authentication-and-authorization/user-applications.md)
   * [Access rules](authentication-and-authorization/accessrules.md)
+* [Advanced setup](advanced-setup/README.md)
+  * [Node roles](advanced-setup/node-roles.md)
+  * [Advanced cluster configurations](advanced-setup/advanced-cluster-configurations.md)
+  * [Integrations](advanced-setup/integrations/README.md)
+    * [Interworking with Karpenter](advanced-setup/integrations/karpenter.md)
+* [Infrastructure procedures](infrastructure-procedures/README.md)
+  * [Run:ai at scale](infrastructure-procedures/runai-at-scale.md)
+  * [Monitoring and maintenance](infrastructure-procedures/monitoring-and-maintenance.md)
+  * [Run:ai system monitoring](infrastructure-procedures/runai-system-monitoring.md)
+  * [Clusters](infrastructure-procedures/clusters.md)
+  * [Shared storage](infrastructure-procedures/shared-storage.md)
+  * [Nodes maintenance](infrastructure-procedures/nodes-maintenance.md)
+  * [Cluster restore](infrastructure-procedures/cluster-restore.md)
+  * [Secure your cluster](infrastructure-procedures/secure-your-cluster.md)
+  * [Compliance](infrastructure-procedures/compliance.md)
+  * [Logs collection](infrastructure-procedures/logs-collection.md)
+  * [Event history](infrastructure-procedures/event-history.md)
+
+## Platform management 
+
 * [Manage AI initiatives](manage-ai-initiatives/README.md)
   * [Adapting AI initiatives to your organization](manage-ai-initiatives/adapting-ai-initiatives.md)
   * [Managing your organization](manage-ai-initiatives/managing-your-organization/README.md)
@@ -52,34 +83,19 @@
   * [Policy YAML examples](policies/policy-yaml-examples.md)
   * [Policy YAML reference](policies/policy-yaml-reference.md)
   * [Scheduling rules](policies/scheduling-rules.md)
-* [Advanced setup](advanced-setup/README.md)
-  * [Node roles](advanced-setup/node-roles.md)
-  * [Advanced cluster configurations](advanced-setup/advanced-cluster-configurations.md)
-  * [Integrations](advanced-setup/integrations/README.md)
-    * [Interworking with Karpenter](advanced-setup/integrations/karpenter.md)
-* [Infrastructure procedures](infrastructure-procedures/README.md)
-  * [Run:ai at scale](infrastructure-procedures/runai-at-scale.md)
-  * [Monitoring and maintenance](infrastructure-procedures/monitoring-and-maintenance.md)
-  * [Run:ai system monitoring](infrastructure-procedures/runai-system-monitoring.md)
-  * [Clusters](infrastructure-procedures/clusters.md)
-  * [Shared storage](infrastructure-procedures/shared-storage.md)
-  * [Nodes maintenance](infrastructure-procedures/nodes-maintenance.md)
-  * [Cluster restore](infrastructure-procedures/cluster-restore.md)
-  * [Secure your cluster](infrastructure-procedures/secure-your-cluster.md)
-  * [Compliance](infrastructure-procedures/compliance.md)
-  * [Logs collection](infrastructure-procedures/logs-collection.md)
-  * [Event history](infrastructure-procedures/event-history.md)
-* [Workloads in Run:ai](workloads-in-runai/README.md)
-  * [Introduction to workloads](workloads-in-runai/introduction-to-workloads.md)
-  * [Run:ai workload types](workloads-in-runai/workload-types.md)
-  * [Workloads](workloads-in-runai/workloads.md)
-  * [Workload assets](workloads-in-runai/workload-assets/README.md)
-    * [Workload assets](workloads-in-runai/workload-assets/workload-assets.md)
-    * [Environments](workloads-in-runai/workload-assets/environments.md)
-    * [Data sources](workloads-in-runai/workload-assets/datasources.md)
-    * [Data volumes](workloads-in-runai/workload-assets/data-volumes.md)
-    * [Compute resources](workloads-in-runai/workload-assets/compute-resources.md)
-    * [Credentials](workloads-in-runai/workload-assets/credentials.md)
+
+## Workloads in Run:ai 
+
+* [Introduction to workloads](workloads-in-runai/introduction-to-workloads.md)
+* [Run:ai workload types](workloads-in-runai/workload-types.md)
+* [Workloads](workloads-in-runai/workloads.md)
+* [Workload assets](workloads-in-runai/workload-assets/README.md)
+  * [Workload assets](workloads-in-runai/workload-assets/workload-assets.md)
+  * [Environments](workloads-in-runai/workload-assets/environments.md)
+  * [Data sources](workloads-in-runai/workload-assets/datasources.md)
+  * [Data volumes](workloads-in-runai/workload-assets/data-volumes.md)
+  * [Compute resources](workloads-in-runai/workload-assets/compute-resources.md)
+  * [Credentials](workloads-in-runai/workload-assets/credentials.md)
   * [Workload templates](workloads-in-runai/workload-templates/README.md)
     * [Workspace templates](workloads-in-runai/workload-templates/workspace-templates.md)
 * [Experiment using workspaces](experiment-using-workspaces/README.md)
@@ -103,6 +119,9 @@
   * [Before you start](monitor-performance-and-health/before-you-start.md)
   * [Metrics and telemetry](monitor-performance-and-health/metrics-api.md)
   * [Reports](monitor-performance-and-health/reports.md)
+
+## Reference
+
 * [CLI reference](cli-reference/README.md)
   * [Install and configure CLI](cli-reference/install-and-configure-cli.md)
   * [Administrator CLI](cli-reference/administrator-cli.md)
