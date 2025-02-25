@@ -17,20 +17,19 @@ Before you start, make sure:
 
     Browse to the provided Run:ai user interface and log in with your credentials.
 
-=== "CLI v1 (Deprecated)"
-
-    Log in using the following command. You will be prompted to enter your username and password:
-     
-    ``` bash
-    runai login
-    ```
-
 === "CLI v2"
 
     Run the below --help command to obtain the login options and log in according to your setup:
     
     ``` bash
     runai login --help  
+    ```
+=== "CLI v1 (Deprecated)"
+
+    Log in using the following command. You will be prompted to enter your username and password:
+     
+    ``` bash
+    runai login
     ```
 
 === "API"
@@ -99,18 +98,6 @@ Before you start, make sure:
         After the workspace is created, it is added to the [workloads](../../platform-admin/workloads/overviews/managing-workloads.md) table
 
 
-
-=== "CLI v1 (Deprecated)"
-
-    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
-
-    ```sh
-    runai config project "project-name"
-    runai submit "workload-name" --jupyter -g 0.1
-    ```
-
-    This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
-
 === "CLI v2"
 
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
@@ -122,6 +109,17 @@ Before you start, make sure:
     --name-prefix jupyter --command -- start-notebook.sh 
     --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} 
     --NotebookApp.token=
+    ```
+
+    This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
+
+=== "CLI v1 (Deprecated)"
+
+    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
+
+    ```sh
+    runai config project "project-name"
+    runai submit "workload-name" --jupyter -g 0.1
     ```
 
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
@@ -175,10 +173,11 @@ Before you start, make sure:
     4. The selected tool is opened in a new tab on your browser
 
 
-=== "CLI v1 (Deprecated)"
+=== "CLI v2"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
-=== "CLI v2"
+
+=== "CLI v1 (Deprecated)"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
 
 === "API"
