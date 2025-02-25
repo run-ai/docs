@@ -917,6 +917,22 @@
          <lastmod>2025-02-25</lastmod>
     </url>
     <url>
+         <loc>https://docs.run.ai/v2.20/Researcher/scheduling/how-the-scheduler-works/</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.20/Researcher/scheduling/launching-workloads-with-dynamic-gpu-fractions/</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.20/Researcher/scheduling/launching-workloads-with-gpu-fractions/</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/v2.20/Researcher/scheduling/launching-workloads-with-gpu-memory-swap/</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
          <loc>https://docs.run.ai/v2.20/Researcher/scheduling/node-level-scheduler/</loc>
          <lastmod>2025-02-25</lastmod>
     </url>
