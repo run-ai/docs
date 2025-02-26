@@ -347,7 +347,6 @@ nav:
         - 'Build with Connected Ports' : 'Researcher/Walkthroughs/walkthrough-build-ports.md'
       - 'Inference' : 'Researcher/Walkthroughs/quickstart-inference.md'
  #    - 'GPU Allocation' : 
-      - 'GPU Fractions' : 'Researcher/Walkthroughs/walkthrough-fractions.md'
 #        - 'Dynamic MIG' : 'Researcher/Walkthroughs/quickstart-mig.md'
       - 'Scheduling Basics' :
         - 'Over-Quota, Basic Fairness & Bin-Packing' : 'Researcher/Walkthroughs/walkthrough-overquota.md'
