@@ -5,19 +5,19 @@
 
 ## SaaS installation
 
-* [System requirements](cluster-installation/system-requirements.md)
-* [Network requirements](cluster-installation/network-requirements.md)
-* [Install using Helm](cluster-installation/install-using-helm.md)
-* [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
-* [Customized installation](cluster-installation/customized-installation.md)
-* [Upgrade](cluster-installation/upgrade.md)
-* [Uninstall](cluster-installation/uninstall.md)
+  * [System requirements](cluster-installation/system-requirements.md)
+  * [Network requirements](cluster-installation/network-requirements.md)
+  * [Install using Helm](cluster-installation/install-using-helm.md)
+  * [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
+  * [Customized installation](cluster-installation/customized-installation.md)
+  * [Upgrade](cluster-installation/upgrade.md)
+  * [Uninstall](cluster-installation/uninstall.md)
 
 ## Self-hosted installation
 
-** [System requirements](installation/control-plane-system-requirements.md)
-* [Network requirements](installation/install-control-plane.md)
-* [Install using Helm](installation/cluster-installation-self-hosted.md)
+  * [Control plane system requirements](installation/control-plane-system-requirements.md)
+  * [Install control plane](installation/install-control-plane.md)
+  * [Install cluster in self-hosted](installation/cluster-installation-self-hosted.md)
 
 
 ## Infrastructure setup
