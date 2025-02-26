@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Untitled](README.md)
+* [Welcome to our product documentation](README.md)
 * [Overview](overview/README.md)
 
 ## SaaS installation
