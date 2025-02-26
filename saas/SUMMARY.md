@@ -2,8 +2,6 @@
 
 * [Overview](README.md)
 * [Welcome to SaaS documentation](readme-1.md)
-* [Overview](overview/README.md)
-  * [Welcome to Run:ai](Overview/welcome-to-runai.md)
 
 ## SaaS installation
 
