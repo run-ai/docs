@@ -62,7 +62,7 @@ workload-controller:
     tag: master
   gitSyncImage:
     name: git-sync
-    repository: egistry.k8s.io
+    repository: registry.k8s.io
     tag: v4.4.0
 ```
 
