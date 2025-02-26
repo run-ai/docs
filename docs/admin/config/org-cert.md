@@ -41,7 +41,7 @@ kubectl -n openshift-monitoring create secret generic runai-ca-cert \
 Run:ai enables AI practitioners to integrate with S3 or Git as data sources.
 When using a custom CA, sidecar containers used for S3 or Git integrations do not automatically inherit the CA configured at the cluster level. This requires manually building a custom container for each integration based on the default Run:ai image while incorporating the local CA certificates.
 
-1. [build tag and publish](https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/) the images for the S3 / Git integrations:
+1. [build tag and publish](https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/) the images for the S3 / Git integrations using the following Dockerfile:
 ```
 #FROM gcr.io/run-ai-prod/goofys:master # S3
 #FROM registry.k8s.io/git-sync/git-sync:v4.4.0 # Git
