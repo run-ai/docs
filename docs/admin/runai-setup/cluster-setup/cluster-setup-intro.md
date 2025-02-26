@@ -8,7 +8,7 @@ This section is a step-by-step guide for setting up a Run:ai cluster.
 * A Run:ai cluster connects to the Run:ai control plane on the cloud. The control plane provides a control point as well as a monitoring and control user interface for Administrators and Researchers.
 * A customer may have multiple Run:ai Clusters, all connecting to a single control plane.
 
-For additional details see the [Run:ai system components](../../../home/components.md)
+For additional details see the [Run:ai system components](../../../home/overview.md#runai-system-components)
 
 ## Documents
 
