@@ -50,10 +50,6 @@ The following software requirements must be fulfilled on the Kubernetes cluster.
 Run:ai cluster on Oracle Kubernetes Engine (OKE) supports only Ubuntu.
 * Internal tests are being performed on **Ubuntu 22.04** and **CoreOS** for OpenShift.
 
-### Container runtime
-
-Kubernetes must be configured with the Docker container runtime. Other container runtimes, such as containerd or CRI-O, are not supported.
-
 ### Kubernetes distribution
 
 Run:ai Cluster requires Kubernetes. The following Kubernetes distributions are supported:
