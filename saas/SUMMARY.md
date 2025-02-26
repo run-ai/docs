@@ -16,7 +16,7 @@
 
 ## Self-hosted installation
 
-* [Installation][cluster-installation/README.md]
+* [Installation][installation/README.md]
   * [Control plane system requirements](installation/control-plane-system-requirements.md)
   * [Install control plane](installation/install-control-plane.md)
   * [Install cluster in self-hosted](installation/cluster-installation-self-hosted.md)
