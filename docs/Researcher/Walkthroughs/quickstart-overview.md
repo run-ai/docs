@@ -17,7 +17,7 @@ Follow the Quickstart documents below to learn more:
     * [Visual Studio Web](quickstart-vscode.md)
 * [Inference](quickstart-inference.md)
 * GPU Allocation documents:
-    * [Using GPU Fractions](walkthrough-fractions.md)
+    * [Using GPU Fractions](../scheduling/launching-workloads-with-gpu-fractions.md)
     <!-- * [Dynamic MIG (Deprecated)](quickstart-mig.md) -->
 * Scheduling documents:
     * [Over-Quota, Basic Fairness & Bin Packing](walkthrough-overquota.md)
