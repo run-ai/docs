@@ -188,7 +188,7 @@ plugins:
 nav:
   - Home: 
     - 'Overview': 'home/overview.md'
-    - 'System Components' : 'home/components.md'
+    - 'Documentation Library' : 'home/documentation-library.md'
     - 'Whats New' :
       - 'Run:ai SaaS Updates' : 'home/saas-updates.md'
       - 'Version 2.20' : 'home/whats-new-2-20.md'

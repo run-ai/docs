@@ -11,7 +11,7 @@ Developers can access Run:ai through various programmatic interfaces.
 
 ## API Architecture
 
-Run:ai is composed of a single, multi-tenant control plane. Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/components.md) for detailed information.
+Run:ai is composed of a single, multi-tenant control plane. Each tenant can be connected to one or more GPU clusters. See [Run:ai system components](../home/overview.md#runai-system-components) for detailed information.
 
 The following programming interfaces are available:
 
