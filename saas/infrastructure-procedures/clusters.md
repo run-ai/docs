@@ -45,7 +45,7 @@ The clusters table consists of the following columns:
 
 ## Adding a new cluster
 
-To add a new cluster, see the [installation guide](../cluster-installation/install-using-helm.md).
+To add a new cluster, see the [installation guide](../saas-installation/installation/install-using-helm.md).
 
 ## Removing a cluster
 

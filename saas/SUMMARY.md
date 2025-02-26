@@ -5,20 +5,21 @@
 
 ## SaaS installation
 
-* [Installation][cluster-installation/README.md]
-* [System requirements](cluster-installation/system-requirements.md)
-* [Network requirements](cluster-installation/network-requirements.md)
-* [Install using Helm](cluster-installation/install-using-helm.md)
-* [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
-* [Customized installation](cluster-installation/customized-installation.md)
-* [Upgrade](cluster-installation/upgrade.md)
-* [Uninstall](cluster-installation/uninstall.md)
+* [Installation](saas-installation/installation/README.md)
+  * [System requirements](saas-installation/installation/system-requirements.md)
+  * [Network requirements](saas-installation/installation/network-requirements.md)
+  * [Install using Helm](saas-installation/installation/install-using-helm.md)
+  * [Install using Base Command Manager](saas-installation/installation/install-using-base-command-manager.md)
+  * [Customized installation](saas-installation/installation/customized-installation.md)
+  * [Upgrade](saas-installation/installation/upgrade.md)
+  * [Uninstall](saas-installation/installation/uninstall.md)
 
 ## Self-hosted installation
 
-* [Control plane system requirements](installation/control-plane-system-requirements.md)
-* [Install control plane](installation/install-control-plane.md)
-* [Install cluster in self-hosted](installation/cluster-installation-self-hosted.md)
+* [Installation](self-hosted-installation/installation/README.md)
+  * [Control plane system requirements](self-hosted-installation/installation/control-plane-system-requirements.md)
+  * [Install control plane](self-hosted-installation/installation/install-control-plane.md)
+  * [Install cluster in self-hosted](self-hosted-installation/installation/cluster-installation-self-hosted.md)
 
 ## Infrastructure setup
 

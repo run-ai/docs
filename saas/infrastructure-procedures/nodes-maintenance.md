@@ -6,7 +6,7 @@ This article provides detailed instructions on how to manage both planned and un
 
 * **Access to Kubernetes cluster** - Administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands
 * **Basic knowledge of Kubernetes** - Familiarity with Kubernetes concepts such as nodes, taints, and workloads
-* **Run:ai installation** - The [Run:ai software installed](../cluster-installation/install-using-helm.md) and configured within your Kubernetes cluster
+* **Run:ai installation** - The [Run:ai software installed](../saas-installation/installation/install-using-helm.md) and configured within your Kubernetes cluster
 * **Node naming conventions** - Know the names of the nodes within your cluster, as these are required when executing the commands
 
 ## Node types

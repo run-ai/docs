@@ -11,7 +11,7 @@ There are a number of matters to consider prior to upgrading the Run:ai cluster 
 Before upgrading the Run:ai cluster, validate that the latest [system requirements](system-requirements.md) and [network requirements](network-requirements.md) are met, as they can change from time to time.
 
 {% hint style="info" %}
-**Important**&#x20;
+**Important**
 
 It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](system-requirements.md#kubernetes-distribution).
 {% endhint %}
@@ -40,7 +40,7 @@ Follow the setup and installation instructions below to get the installation ins
 
 1. Follow the installation instructions. Run the Helm commands provided on your Kubernetes cluster. See the below if [installation fails](upgrade.md#installation-fails).
 2. Click **DONE**
-3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios)). Once you have done this, the cluster is upgraded to the latest version.
+3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster [troubleshooting scenarios](../../infrastructure-procedures/clusters.md#troubleshooting-scenarios)). Once you have done this, the cluster is upgraded to the latest version.
 
 {% hint style="info" %}
 To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
@@ -62,4 +62,4 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster status
 
-If the Run:ai cluster upgrade completes, but the cluster status does not show as **Connected**, refer to the [cluster troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios).
+If the Run:ai cluster upgrade completes, but the cluster status does not show as **Connected**, refer to the [cluster troubleshooting scenarios](../../infrastructure-procedures/clusters.md#troubleshooting-scenarios).

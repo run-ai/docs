@@ -12,7 +12,7 @@ Ensure the inbound and outbound rules are correctly applied to your firewall.
 
 ### Inbound rules
 
-To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../cli-reference/), or access specific UI features, certain inbound ports need to be open.
+To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../../cli-reference/), or access specific UI features, certain inbound ports need to be open.
 
 | Name           | Description                     | Source  | Destination   | Port |
 | -------------- | ------------------------------- | ------- | ------------- | ---- |
@@ -39,7 +39,7 @@ The Run:ai installation has [software requirements](system-requirements.md#softw
 | Docker Hub Registry        | Training Operator image repository         | All K8S nodes | docker.io       | 443  |
 
 {% hint style="info" %}
-&#x20;If you are using an HTTP proxy, contact Run:ai support for further instructions
+If you are using an HTTP proxy, contact Run:ai support for further instructions
 {% endhint %}
 
 ## Internal network

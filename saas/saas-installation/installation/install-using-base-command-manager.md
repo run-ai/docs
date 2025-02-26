@@ -52,17 +52,17 @@ Follow these instructions to install using BCM.
 The cluster installer is available via the locally installed BCM landing page,
 
 1. Go to the locally installed BCM landing page, Select the Run:ai tile or access directly to `http://<BCM-CLUSTER-IP>:30080/runai-installer` (HTTP only)\
-   ![image(56).png](img/bcm1.png)
+   ![image(56).png](../../cluster-installation/img/bcm1.png)
 2. Click **VERIFY** in order to check System Requirements are met.\
-   ![image(57).png](img/bcm2.png)
+   ![image(57).png](../../cluster-installation/img/bcm2.png)
 3. After verification completed successfully, click **CONTINUE**.\
-   ![image(58).png](img/bcm2.5.png)
+   ![image(58).png](../../cluster-installation/img/bcm2.5.png)
 4. Enter the cluster information and click **CONTINUE**.\
-   ![image(61).png](img/bcm3.png)
+   ![image(61).png](../../cluster-installation/img/bcm3.png)
 5. The Run:ai installation will start and should be complete within a few minutes\
-   ![image(63).png](img/bcm4.png)
+   ![image(63).png](../../cluster-installation/img/bcm4.png)
 6. Once a message of **Run:ai was installed successfully!** is displayed, Click on **START USING RUN:AI** to launch the login page of the tenant in a new browser tab.\
-   ![image(62).png](img/bcm5.png)
+   ![image(62).png](../../cluster-installation/img/bcm5.png)
 
 ## Troubleshooting
 
@@ -87,4 +87,4 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster status
 
-If the Run:ai cluster installation is complete but the cluster status did not change to **Connected**, check the cluster [troubleshooting scenarios](../infrastructure-procedures/clusters.md#troubleshooting-scenarios)
+If the Run:ai cluster installation is complete but the cluster status did not change to **Connected**, check the cluster [troubleshooting scenarios](../../infrastructure-procedures/clusters.md#troubleshooting-scenarios)
