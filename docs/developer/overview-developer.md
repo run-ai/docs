@@ -18,7 +18,6 @@ The following programming interfaces are available:
 | API     | Description | Purpose | 
 |---------|--------------|--------------|
 | __Run:ai REST API__ | Get and Modify any Run:ai business object | This is the API mostly used by system developers. The API is also used by the Run:ai user interface as well as the __new__ command-line interface | 
-| __Cluster API (Deprecated)__ | Submit Workloads directly to the Cluster | A YAML-based API allowing submittion of Workloads directly to the Cluster. With Run:ai 2.18, this API is replaced by the above Run:ai, which is now the recommended method | 
 | __Metrics API (deprecated)__ | Get cluster metrics | Get utilization metrics. | 
 
   
@@ -42,17 +41,6 @@ For more information see [Run:ai REST API](admin-rest-api/overview.md).
 
     For details, see the [Deprecation notifications](../home/whats-new-2-17.md#deprecation-notifications).
 
-## Cluster API (Deprecated)
-
-The [Cluster API](cluster-api/workload-overview-dev.md) allows you to submit and delete Workloads directly to the cluster itself.
-
-The API is provided as [Kubernetes API](./cluster-api/submit-yaml.md).
-
-Cluster API is accessible via the GPU cluster itself. As such, **multiple clusters may have multiple endpoints**.
-
-!!! Important
-    * This API is replaced by a Run:ai REST API to submit jobs, which is now the recommended method for cluster versions of 2.18 and above. 
-    * If you are looking to automate tasks with older versions of Run:ai, it's best to use the [Run:ai Command-line interface](../Researcher/cli-reference/Introduction.md) which provides forward compatibility.  
 
 ## Metrics API
 

@@ -55,7 +55,7 @@ date: 2024-June-14
 
 #### YAML Workload Reference table
 
-* <!-- RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](../developer/cluster-api/submit-yaml.md) PDF.
+* <!-- RUN-17487/RUN-17656 -->Added a new YAML reference document that contains the value types and workload YAML references. Each table contains the field name, its description and the supported Run:ai workload types. The YAML field details contains information on the value type and currently available example workload snippets. For more information see, [YAML Reference](https://docs.run.ai/v2.18/developer/cluster-api/submit-yaml/) PDF.
 
 #### Email Notifications - Workload Status and timeouts
 
@@ -131,7 +131,7 @@ The endpoints and parameters specified in the API reference are the ones that ar
 
 ##### Cluster API Deprecation
 
-Run:ai REST API now supports job submission. The older, [Cluster API](../developer/cluster-api/workload-overview-dev.md) is now deprecated. 
+Run:ai REST API now supports job submission. The older, [Cluster API](https://docs.run.ai/v2.18/developer/cluster-api/workload-overview-dev/) is now deprecated. 
 
 
 ##### Departments API

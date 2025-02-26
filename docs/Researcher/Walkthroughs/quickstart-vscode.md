@@ -124,8 +124,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     6. `toolName` text will show when connecting to the Visual Studio tool via the user interface.
 
     !!! Note
-        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
-        * For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1) 
+        For more information on the Training Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Trainings/operation/create_training1) 
 
 This would start a Workspace with a pre-configured Visual Studio Code image with an allocation of a single GPU. 
 

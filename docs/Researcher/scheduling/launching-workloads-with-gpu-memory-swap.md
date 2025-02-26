@@ -121,7 +121,7 @@ Before you start, make sure:
     ```
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. 
 
 
 ## Step 3: Submitting the second inference workload
@@ -191,7 +191,7 @@ Before you start, make sure:
 
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. 
 
 
 ## Step 4: Submitting the first workspace
@@ -285,7 +285,7 @@ Before you start, make sure:
     ```
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
+        The above API snippet runs with Run:ai clusters of 2.18 and above only.
   
 
 ## Step 5: Submitting the second workspace
@@ -346,7 +346,7 @@ Before you start, make sure:
     ```
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. 
 
 
 ## Step 6: Connecting to Chatbot-UI

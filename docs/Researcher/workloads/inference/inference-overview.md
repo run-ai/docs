@@ -30,7 +30,7 @@ Run:ai provides *Inference* services as an equal part together with the other tw
 
 * Multiple replicas will appear in Run:ai as a single *Inference* workload. The workload will appear in all Run:ai dashboards and views as well as the Command-line interface.
 
-* Inference workloads can be submitted via Run:ai user interface as well as [Run:ai API](../../developer/cluster-api/workload-overview-dev.md). Internally, spawning an Inference workload also creates a Kubernetes *Service*. The service is an end-point to which clients can connect.
+* Inference workloads can be submitted via Run:ai user interface as well as [Run:ai API](https://api-docs.run.ai/latest/tag/Inferences). Internally, spawning an Inference workload also creates a Kubernetes *Service*. The service is an end-point to which clients can connect.
 
 ## Autoscaling
 
@@ -110,4 +110,4 @@ The resources (GPUs, CPUs) are not occupied by a new Knative revision until it s
 
 * To set up *Inference*, see [Cluster installation prerequisites](../../../admin/runai-setup/cluster-setup/cluster-prerequisites.md#inference).
 * For running *Inference* see [Inference quick-start](../../Walkthroughs/quickstart-inference.md).
-* To run *Inference* using API see [Workload overview](../../../developer/cluster-api/workload-overview-dev.md).
+* To run *Inference* using API see [Inferences API](https://api-docs.run.ai/latest/tag/Inferences).

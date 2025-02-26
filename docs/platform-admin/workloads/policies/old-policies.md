@@ -362,6 +362,4 @@ kubectl delete InteractivePolicy interactive-policy -n runai
 
 To access _project-specific_ policies, replace the `-n runai` parameter with the namespace of the relevant project.
 
-## See Also
 
-* For creating workloads based on policies, see the Run:ai [submitting workloads](../../../developer/cluster-api/workload-overview-dev.md)
