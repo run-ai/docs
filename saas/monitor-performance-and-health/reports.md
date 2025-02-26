@@ -4,6 +4,10 @@ This article explains the procedure of managing reports in Run:ai.
 
 Reports allow users to access and organize large amounts of data in a clear, CSV-formatted layout. They enable users to monitor resource consumption, analyze trends, and make data-driven decisions to optimize their AI workloads effectively.
 
+{% hint style="info" %}
+Reports is enabled by default for SaaS tenants. In order to enable the feature for tenants, additional configuration must be added. See [Enabling reports for self-hosted accounts](#enabling-reports-for-self-hosted-accounts).
+{% endhint %}
+
 ## Report types
 
 Currently, only “Consumption Reports” are available, which provides insights into the consumption of resources such as GPU, CPU, and CPU memory across organizational units.
@@ -80,6 +84,51 @@ To download, the report must be in status “Ready”.
 1. Select the report you want to download
 2. Click **DOWNLOAD CSV**
 
+## Enabling reports for self-hosted accounts
+
+Reports must be saved in a storage solution compatible with S3. To activate this feature for self-hosted accounts, the storage needs to be linked to the account. The configuration should be incorporated into two ConfigMap objects within the Control Plane.
+
+1. Edit the `runai-backend-org-unit-service` ConfigMap:
+   ``` bash
+   kubectl edit cm runai-backend-org-unit-service -n runai-backend
+   ```
+
+2. Add the following lines to the file:
+   ``` bash
+   S3_ENDPOINT: <S3_END_POINT_URL>
+   S3_ACCESS_KEY_ID: <S3_ACCESS_KEY_ID>
+   S3_ACCESS_KEY: <S3_ACCESS_KEY>
+   S3_USE_SSL: "true"
+   S3_BUCKET: <BUCKET_NAME>
+   ```
+
+3. Edit the `runai-backend-metrics-service` ConfigMap:
+   ``` bash
+   kubectl edit cm runai-backend-metrics-service -n runai-backend
+   ```
+
+
+4. Add the following lines to the file:
+   ``` bash
+   S3_ENDPOINT: <S3_END_POINT_URL>
+   S3_ACCESS_KEY_ID: <S3_ACCESS_KEY_ID>
+   S3_ACCESS_KEY: <S3_ACCESS_KEY>
+   S3_USE_SSL: "true"
+   ```
+
+5. In addition on the same file, under `config.yaml section`, add the following right after `log_level: \"Info\"\n`:
+   ``` bash
+   reports:\n s3_config:\n bucket: \"<BUCKET_NAME>\"\n
+   ```
+
+6. Restart the deployments:
+   ``` bash
+   kubectl rollout restart deployment runai-backend-metrics-service runai-backend-org-unit-service -n runai-backend
+   ```
+
+7. Refresh the page to see **Reports** under Analytics in the Run:ai platform.
+
 ## Using API
 
 To view the available actions, go to the [Reports](https://api-docs.run.ai/latest/tag/Reports/) API reference.
+

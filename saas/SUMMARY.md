@@ -15,7 +15,10 @@
 
 ## Self-hosted installation
 
-*
+** [System requirements](installation/control-plane-system-requirements.md)
+* [Network requirements](installation/install-control-plane.md)
+* [Install using Helm](installation/cluster-installation-self-hosted.md)
+
 
 ## Infrastructure setup
 
@@ -33,6 +36,7 @@
   * [Access rules](authentication-and-authorization/accessrules.md)
 * [Advanced setup](advanced-setup/README.md)
   * [Node roles](advanced-setup/node-roles.md)
+  * [Advanced control plane configurations](advanced-setup/advanced-control-plane-configurations.md)
   * [Advanced cluster configurations](advanced-setup/advanced-cluster-configurations.md)
   * [Integrations](advanced-setup/integrations/README.md)
     * [Interworking with Karpenter](advanced-setup/integrations/karpenter.md)
