@@ -218,4 +218,4 @@ runai node list --json
 
 ### CLI reference
 
-For the full guide of the CLI syntax, see the [CLI reference](../docs/cli-reference/)
+For the full guide of the CLI syntax, see the [CLI reference](https://github.com/run-ai/docs/blob/New_TOC/saas/docs/cli-reference/README.md)

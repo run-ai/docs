@@ -150,4 +150,4 @@ To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;"
 
 ## Next Steps
 
-Manage and monitor your newly created workspace using the [workloads table](../workloads-in-runai/workloads.md).
+Manage and monitor your newly created workspace using the [workloads table](https://github.com/run-ai/docs/blob/New_TOC/saas/experiment-using-workspaces/workloads-in-runai/workloads.md).

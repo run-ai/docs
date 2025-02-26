@@ -1,6 +1,6 @@
 # Introduction to workloads
 
-Run:ai enhances visibility and simplifies [management](../docs/overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](../platform-admin/aiinitiatives/overview.md).
+Run:ai enhances visibility and simplifies [management](https://github.com/run-ai/docs/blob/New_TOC/saas/docs/overviews/managing-workloads.md), by monitoring, presenting and orchestrating all AI workloads in the clusters it is installed on. Workloads are the fundamental building blocks for consuming resources, enabling AI practitioners such as researchers, data scientists and engineers to efficiently support the entire life cycle of an [AI initiative](https://github.com/run-ai/docs/blob/New_TOC/saas/platform-admin/aiinitiatives/overview.md).
 
 ## Workloads across the AI lifecycle
 
@@ -25,7 +25,7 @@ The workload, defined by the AI practitioner, consists of:
 
 ## Workload scheduling and orchestration
 
-Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](../Researcher/scheduling/the-runai-scheduler.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator.
+Run:ai’s core mission is to optimize AI resource usage at scale. This is achieved through efficient [scheduling and orchestrating](https://github.com/run-ai/docs/blob/New_TOC/saas/Researcher/scheduling/the-runai-scheduler.md) of all cluster workloads using the Run:ai Scheduler. The Scheduler allows the prioritization of workloads across different departments and projects within the organization at large scales, based on the resource distribution set by the system administrator.
 
 ## Run:ai and third-party workloads
 

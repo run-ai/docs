@@ -8,7 +8,7 @@ Distributed training is the ability to split the training of a model among multi
 
 Before you start, make sure:
 
-* You have created a [project](../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
+* You have created a [project](https://github.com/run-ai/docs/blob/New_TOC/saas/train-models-using-training/manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 1 GPU.
 
 ## Step 1: Logging in
@@ -108,5 +108,5 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../../workloads-in-runai/workloads.md).
-* After validating your training performance and results, deploy your model using [inference](../../inference/custom-inference.md).
+* Manage and monitor your newly created workload using the [workloads table](https://github.com/run-ai/docs/blob/New_TOC/saas/train-models-using-training/workloads-in-runai/workloads.md).
+* After validating your training performance and results, deploy your model using [inference](https://github.com/run-ai/docs/blob/New_TOC/saas/train-models-using-training/inference/custom-inference.md).

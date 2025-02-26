@@ -71,10 +71,10 @@ To add a new training workload:
       When a workload is created, the scheduler will try to run it on the first node pool on the list. If the node pool doesn't have free resources, the scheduler will move on to the next one until it finds one that is available.
       * Drag and drop them to change the order, remove unwanted ones, or reset to the default order defined in the project.
       * Click **+NODE POOL** to add a new node pool from the list of node pools that were defined on the cluster.\
-        To configure a new node pool and for additional information, see [node pools](../../platform-admin/aiinitiatives/resources/node-pools.md).
+        To configure a new node pool and for additional information, see [node pools](https://github.com/run-ai/docs/blob/New_TOC/saas/platform-admin/aiinitiatives/resources/node-pools.md).
     * Select a **node affinity** to schedule the workload on a specific node type.\
-      If the administrator added a ‘[node type (affinity)](../../platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
-      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
+      If the administrator added a ‘[node type (affinity)](https://github.com/run-ai/docs/blob/New_TOC/saas/platform-admin/aiinitiatives/org/scheduling-rules.md#node-type-affinity)’ scheduling rule to the project/department, then this field is mandatory.\
+      Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](https://github.com/run-ai/docs/blob/New_TOC/saas/platform-admin/aiinitiatives/org/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
     *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
 

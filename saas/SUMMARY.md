@@ -1,10 +1,11 @@
 # Table of contents
 
-* [Welcome to SaaS documentation](README.md)
+* [Overview](README.md)
+* [Welcome to SaaS documentation](readme-1.md)
 * [Overview](overview/README.md)
   * [Welcome to Run:ai](Overview/welcome-to-runai.md)
 
-## **SaaS installation**
+## SaaS installation
 
 * [Cluster installation](cluster-installation/README.md)
   * [System requirements](cluster-installation/system-requirements.md)
@@ -15,12 +16,11 @@
   * [Upgrade](cluster-installation/upgrade.md)
   * [Uninstall](cluster-installation/uninstall.md)
 
-## **Self-hosted installation**
+## Self-hosted installation
 
 * [Upgrade](cluster-installation/upgrade.md)
 
-
-## **Infrastructure setup**
+## Infrastructure setup
 
 * [Authentication and authorization](authentication-and-authorization/README.md)
   * [Authentication and authorization](authentication-and-authorization/authentication-and-authorization.md)
@@ -52,7 +52,7 @@
   * [Logs collection](infrastructure-procedures/logs-collection.md)
   * [Event history](infrastructure-procedures/event-history.md)
 
-## **Platform management** 
+## Platform management
 
 * [Manage AI initiatives](manage-ai-initiatives/README.md)
   * [Adapting AI initiatives to your organization](manage-ai-initiatives/adapting-ai-initiatives.md)
@@ -88,7 +88,7 @@
   * [Metrics and telemetry](monitor-performance-and-health/metrics-api.md)
   * [Reports](monitor-performance-and-health/reports.md)
 
-## **Workloads in Run:ai** 
+## Workloads in Run:ai
 
 * [Introduction to workloads](workloads-in-runai/introduction-to-workloads.md)
 * [Run:ai workload types](workloads-in-runai/workload-types.md)
@@ -120,7 +120,7 @@
   * [Deploy inference workloads from Hugging Face](deploy-models-using-inference/hugging-face-inference.md)
   * [Deploy inference workloads with NVIDIA NIM](deploy-models-using-inference/nim-inference.md)
 
-## **Reference**
+## Reference
 
 * [CLI reference](cli-reference/README.md)
   * [Install and configure CLI](cli-reference/install-and-configure-cli.md)

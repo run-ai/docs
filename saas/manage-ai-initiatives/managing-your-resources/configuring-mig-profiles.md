@@ -39,7 +39,7 @@ When deploying MIG using mixed strategy, each GPU in a [node](nodes.md) can be c
 
 In mixed strategy, physical GPU devices continue to be displayed as physical GPU devices by CUDA, and each MIG profile is shown individually. The Run:ai platform identifies the physical GPU devices normally, however, MIG profiles are not visible in the UI or node APIs.
 
-When submitting third-party workloads with this strategy, the user should explicitly specify the exact requested MIG profile (for example, nvidia.com/gpu.product: A100-SXM4-40GB-MIG-3g.20gb). The Run:ai [Scheduler](broken-reference/) finds a node that can provide this specific profile and binds it to the workload.
+When submitting third-party workloads with this strategy, the user should explicitly specify the exact requested MIG profile (for example, nvidia.com/gpu.product: A100-SXM4-40GB-MIG-3g.20gb). The Run:ai [Scheduler](https://github.com/run-ai/docs/blob/New_TOC/saas/manage-ai-initiatives/managing-your-resources/broken-reference/README.md) finds a node that can provide this specific profile and binds it to the workload.
 
 A third-party workload submitted with a MIG profile of type Xg.Ygb (e.g. 3g.40gb or 2g.20gb) is considered as consuming X GPUs. These X GPUs will be deducted from the workload’s project quota of GPUs. For example, a 3g.40gb profile deducts 3 GPUs from the associated [Project’s quota](../managing-your-organization/projects.md), while 2g.20gb deducts 2 GPUs from the associated Project’s quota. This is done to maintain a logical ratio according to the characteristics of the MIG profile.
 

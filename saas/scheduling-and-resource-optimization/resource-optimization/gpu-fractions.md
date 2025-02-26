@@ -19,7 +19,7 @@ Utilizing GPU fractions to share GPU resources among multiple workloads provides
 
 ## Quota planning with GPU fractions
 
-When planning the quota distribution for your [projects](../../manage-ai-initiatives/managing-your-organization/projects.md) and [departments](../manage-ai-initiatives/managing-your-organization/departments.md), using fractions gives the platform administrator the ability to allocate more precise quota per project and department, assuming the usage of GPU fractions or enforcing it with [pre-defined policies](../../policies/policy-yaml-reference.md) or [compute resource](../../workloads-in-runai/workload-assets/compute-resources.md) templates.
+When planning the quota distribution for your [projects](../../manage-ai-initiatives/managing-your-organization/projects.md) and [departments](https://github.com/run-ai/docs/blob/New_TOC/saas/scheduling-and-resource-optimization/manage-ai-initiatives/managing-your-organization/departments.md), using fractions gives the platform administrator the ability to allocate more precise quota per project and department, assuming the usage of GPU fractions or enforcing it with [pre-defined policies](../../policies/policy-yaml-reference.md) or [compute resource](../../workloads-in-runai/workload-assets/compute-resources.md) templates.
 
 For example, in an organization with a department budgeted for **two nodes of 8×H100 GPUs** and a team of 32 researchers:
 

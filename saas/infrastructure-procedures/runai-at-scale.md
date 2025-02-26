@@ -50,3 +50,42 @@ remoteWrite:
 
 
 \
+
+
+Operating Run:ai at scale ensures that the system can efficiently handle fluctuating workloads while maintaining optimal performance. As clusters grow—whether due to an increasing number of nodes or a surge in workload demand—Run:ai services must be appropriately tuned to support large-scale environments.
+
+This guide outlines how to optimize Run:ai services for high-performance deployments, including vertical scaling (adjusting CPU and memory resources) and, where applicable, horizontal scaling (increasing service replicas). While all Run:ai services support vertical scaling, only specific services can be scaled horizontally.
+
+### Metrics Collection
+
+Run:ai relies on Prometheus to scrape cluster metrics and forward them to the Run:ai control plane. The volume of metrics generated is directly proportional to the number of nodes, jobs, and projects in the system. When operating at scale—reaching hundreds, and thousands of nodes and projects—the system generates a significant volume of metrics, which can place strain on the cluster and the network bandwidth.&#x20;
+
+To mitigate this impact, it is recommended to optimize Prometheus configuration following this [article](https://last9.io/blog/optimizing-prometheus-remote-write-performance-guide/). provides additional details and insight. by adjusting how data is sent. The following settings help reduce the number of network connections by batching data into larger chunks:
+
+1. Modify the `runaiconfig` configuration (as described in the [Edit Cluster Configurations](https://docs.run.ai/latest/admin/config/advanced-cluster-config/#edit-cluster-configurations)).
+2. Apply the following:
+
+```
+spec
+  prometheus:
+    remoteWrite:
+      queueConfig:
+        capacity: 5000
+        maxSamplesPerSend: 1000
+        maxShards: 100
+```
+
+This [article](https://last9.io/blog/optimizing-prometheus-remote-write-performance-guide/) provides additional details and insight.
+
+Also, note that this configuration enlarges the Prometheus queues and thus increases the required memory. It is hence suggested to reduce the metrics retention period as described in&#x20;
+
+
+
+
+
+
+
+\
+
+
+\

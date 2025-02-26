@@ -108,7 +108,7 @@ In the event of unplanned downtime:
 
 ### Run:ai system nodes
 
-In a production environment, the services responsible for scheduling, submitting and managing Run:ai workloads operate on one or more Run:ai system nodes. It is recommended to have more than one system node to ensure [high availability](../docs/config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second system node does not exist, you must designate another node in the cluster as a temporary Run:ai system node to maintain operations.
+In a production environment, the services responsible for scheduling, submitting and managing Run:ai workloads operate on one or more Run:ai system nodes. It is recommended to have more than one system node to ensure [high availability](https://github.com/run-ai/docs/blob/New_TOC/saas/docs/config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second system node does not exist, you must designate another node in the cluster as a temporary Run:ai system node to maintain operations.
 
 The protocols for handling planned maintenance and unplanned downtime are identical to those for worker nodes. Refer to the above section for detailed instructions.
 
