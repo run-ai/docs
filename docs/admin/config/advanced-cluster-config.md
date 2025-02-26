@@ -53,8 +53,7 @@ The following configurations allow you to enable or disable features, control pe
 | pod-grouper.args.gangScheduleArgoWorkflow (boolean) | Groups all pods of a single ArgoWorkflow workload into a single Pod-Group for gang scheduling. | true |
 
 ### S3 and Git sidecar images
-For airgapped environment when [Working with a Local Certificate Authority](./org-cert.md) it is required to replace the default sidecar images used for S3 and Git integrations edit the following configurations:
-
+For air-gapped environments, when [Working with a Local Certificate Authority](./org-cert.md), you must replace the default sidecar images in order to use the Git and S3 data source integrations. Use the following configurations:
 ``` 
 workload-controller:
   s3FileSystemImage:
