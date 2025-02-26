@@ -1,14 +1,11 @@
 # System requirements
 
 The Run:ai Cluster is a Kubernetes application.
-
 This article explains the required hardware and software system requirements for the Run:ai cluster.
 
-Set out below are the system requirements for the Run:ai cluster.
+## Hardware requirements
 
-## Hardware Requirements
-
-The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](../advanced-setup/node-roles.md), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
+The following hardware requirements are for the Kubernetes Cluster nodes. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [set node roles](../advanced-setup/node-roles.md), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU machines.
 
 ### Run:ai Cluster - system nodes
 
@@ -20,9 +17,9 @@ This configuration is the minimum requirement you need to install and use Run:ai
 | Memory     | 20GB              |
 | Disk space | 50GB              |
 
-### Run:ai Cluster - Worker nodes
+### Run:ai cluster - worker nodes
 
-The Run:ai Cluster supports both x86 CPUs and NVIDIA x86 GPUs. For the list of supported GPU models, see [Supported NVIDIA Data Center GPUs and Systems](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html#supported-nvidia-data-center-gpus-and-systems).
+The Run:ai cluster supports both x86 CPUs and NVIDIA x86 GPUs. For the list of supported GPU models, see [Supported NVIDIA Data Center GPUs and Systems](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html#supported-nvidia-data-center-gpus-and-systems).
 
 The following configuration represents the minimum hardware requirements for installing and operating the Run:ai cluster on worker nodes. Each node must meet these specifications:
 
@@ -79,7 +76,7 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/) or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift).
 
-### Kubernetes Pod Security Admission
+### Kubernetes pod security admission
 
 Run:ai v2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `privileged` policy.
 
@@ -95,7 +92,7 @@ pod-security.kubernetes.io/warn=privileged
 
 * The workloads submitted through Run:ai should comply with the restrictions of PSA restricted policy, This can be enforced using Policies.
 
-### Kubernetes Ingress Controller
+### Kubernetes ingress controller
 
 Run:ai cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
 
@@ -259,9 +256,9 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     -n monitoring --create-namespace --set grafana.enabled=false
 ```
 
-## Optional software requirements
+## Additional software requirements
 
-Optional Run:ai capabilities, Distributed Training and Inference require additional Kubernetes applications (frameworks) to be installed on the cluster.
+Additional Run:ai capabilities, Distributed Training and Inference require additional Kubernetes applications (frameworks) to be installed on the cluster. TBD: update
 
 ### Distributed training
 
@@ -319,7 +316,7 @@ kubectl patch configmap/config-features \
   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.containerspec-addcapabilities":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
 ```
 
-### Knative Autoscaling
+### Knative autoscaling
 
 Run:ai allows for autoscaling a deployment according to the below metrics:
 
@@ -333,10 +330,6 @@ Using a custom metric (for example, Latency) requires installing the [Kubernetes
 kubectl apply -f https://github.com/knative/serving/releases/download/knative-{VERSION}/serving-hpa.yaml
 ```
 
-## Domain Name Requirement
-
-The following requirement must be followed for naming the domain.
-
-### Fully Qualified Domain Name (FQDN)
+## Fully Qualified Domain Name (FQDN)
 
 You must have a Fully Qualified Domain Name (FQDN) to install Run:ai Cluster (ex: `runai.mycorp.local`). This cannot be an IP. The domain name must be accessible inside the organization only. You also need a TLS certificate (private and public) for HTTPS access.
