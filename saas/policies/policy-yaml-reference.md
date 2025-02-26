@@ -66,6 +66,7 @@ Click the link to view the value type of each field.
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                                              |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre>                    |   |
+|                                     |                                                                                               |   |
 | probes:                             |                                                                                               |   |
 
 ```
@@ -131,6 +132,7 @@ Click the link to view the value type of each field.
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                                    |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre>          |   |
+|                                     |                                                                                     |   |
 | storage:                            |                                                                                     |   |
 
 ```
@@ -159,6 +161,7 @@ Share this volume mount with other containers. If set to HostToContainer, this v
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                           |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre> |   |
+|                                     |                                                                            |   |
 | storage:                            |                                                                            |   |
 
 ```
@@ -180,6 +183,7 @@ git:
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                                          |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre>                |   |
+|                                     |                                                                                           |   |
 | storage:                            |                                                                                           |   |
 
 ```
@@ -203,6 +207,7 @@ pvc:
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                           |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre> |   |
+|                                     |                                                                            |   |
 | storage:                            |                                                                            |   |
 | nfs:                                |                                                                            |   |
 
@@ -223,6 +228,7 @@ rules: storage: nfs: instances: canAdd: false | | | **nfs fields** | **Descripti
 | **Value type**                      | [itemized](policy-yaml-reference.md#value-types)                           |   |
 | **Example workload snippet**        | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre> |   |
+|                                     |                                                                            |   |
 | storage:                            |                                                                            |   |
 
 ```
@@ -335,6 +341,7 @@ A workload submission request cannot exclude the default/cpu resource, as this k
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------- |
 | canAdd     | Whether the submission request can add items to an itemized field other than those listed in the policy defaults for this field. | [itemized](policy-yaml-reference.md#value-types) | <pre class="language-yaml"><code class="lang-yaml">storage:
 </code></pre> |
+|            |                                                                                                                                  |                                                  |                                                                           |
 | hostPath:  |                                                                                                                                  |                                                  |                                                                           |
 
 ```
@@ -439,8 +446,7 @@ options:
 
 \| | defaultFrom |
 
-Set a default value for a field that will be calculated based on the value of another field.\
-
+Set a default value for a field that will be calculated based on the value of another field.\\
 
 |
 
