@@ -1,63 +1,89 @@
-# Run:ai Documentation Library
+# Overview
 
+Run:ai is a GPU orchestration and optimization platform that helps organizations maximize compute utilization for AI workloads. By optimizing the use of expensive compute resources, Run:ai accelerates AI development cycles, and drives faster time-to-market for AI-powered innovations.
 
-Welcome to the Run:ai documentation area. For an introduction about what is the Run:ai Platform see [Run:ai platform](https://www.run.ai/platform/){target=_blank} on the run.ai website.
+Built on Kubernetes, Run:ai supports dynamic GPU allocation, workload submission, workload scheduling, and resource sharing, ensuring that AI teams get the compute power they need while IT teams maintain control over infrastructure efficiency.
 
-The Run:ai documentation is targeting four personas:
+## Benefits of using Run:ai
 
-* __Infrastructure Administrator__ - An IT person, responsible for the installation, setup and IT maintenance of the Run:ai product. Infrastructure Administrator documentation can be found [here](../admin/overview-administrator.md).
+### Cost optimization
 
-* __Platform Administrator__ - Responsible for the day-to-day administration of the product. Platform Administrator documentation can be found [here](../platform-admin/overview.md).
+The high cost of AI infrastructure makes cost optimization a crucial consideration for organizations. Run:ai contributes to cost savings through:
 
+* Improved hardware utilization, hence accelerating return on investment.
+* Automated resource allocation, minimizing manual intervention and management overheads.
+* Detailed analytics and reporting, enabling organizations to make data-driven decisions about resource provisioning and resource costs.
 
-* __Researcher__ — Using Run:ai to spin up notebooks, submit Workloads, prompt models, etc. Researcher documentation can be found [here](../Researcher/overview-researcher.md).
+### Accelerated time-to-market
 
-* __Developer__ — Using various APIs to automate work with Run:ai. The Developer documentation can be found [here](../developer/overview-developer.md).
+Run:ai's accelerates development cycles by:
 
-## How to Get Support
+* Increasing access to computational resources and shared resource pooling.
+* Reducing wait times for computational resources.
+* Enabling faster experimentation and streamlining the transition from development to production.
 
-To get support use the following channels:
+### Scalability
 
-* On the Run:ai user interface at `<company-name>.run.ai`, use the 'Contact Support' link on the top right.
+Designed to handle large-scale GPU clusters, including thousands of nodes, and manage a high throughput of workloads, makes it ideal for extensive and demanding environments.
 
-* Or submit a ticket by clicking the button below:
+## How Run:ai helps your organization
 
-[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .custom-ticket-button}
+### For infrastructure administrators
 
+Run:ai centralizes cluster management and optimizes infrastructure control by offering:
 
+* [**Centralized cluster management**](../admin/config/clusters.md) – Manage all clusters from a single platform, ensuring consistency and control across environments.
+* [**Usage monitoring and capacity planning**](../platform-admin/performance/dashboard-analysis.md) – Gain real-time and historical insights into GPU consumption across clusters to optimize resource allocation and plan future capacity needs efficiently.
+* [**Policy enforcement** ](../platform-admin/workloads/policies/overview.md)– Define and enforce security and usage policies to align GPU consumption with business and compliance requirements.
+* [**Enterprise-grade authentication**](../admin/authentication/authentication-overview.md) – Integrate with your organization's identity provider for streamlined authentication (Single Sign On) and role-based access control (RBAC).
+* **Kubernetes-native application** – Install as a Kubernetes-native application, seamlessly extending Kubernetes for native cloud experience and operational standards (install, upgrade, configure).
 
-## Community 
+### For platform administrators
 
-Run:ai provides its customers with access to the _Run:ai Customer Community portal_ to submit tickets, track ticket progress and update support cases.
+Run:ai simplifies AI infrastructure management by providing a structured approach to managing AI initiatives, resources, and user access. It enables platform administrators maintain control, efficiency, and scalability across their infrastructure:
 
-[Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .custom-ticket-button}
+* [**AI Initiative structuring and management**](../platform-admin/aiinitiatives/overview.md#mapping-your-organization) – Map and set up AI initiatives according to your organization's structure, ensuring clear resource allocation.
+* [**Centralized GPU resource management**](../platform-admin/aiinitiatives/overview.md#mapping-your-resources) – Enable seamless sharing and pooling of GPUs across multiple users, reducing idle time and optimizing utilization.
+* [**User and access control** ](../platform-admin/aiinitiatives/overview.md#assigning-users-to-projects-and-departments)– Assign users (AI practitioners, ML engineers) to specific projects and departments to manage access and enforce security policies, utilizing role-based access control (RBAC) to ensure permissions align with user roles.
+* [**Workload scheduling**](../Researcher/scheduling/how-the-scheduler-works.md) – Use scheduling to prioritize and allocate GPUs based on workload needs.
+* [**Monitoring and insights**](../platform-admin/performance/dashboard-analysis.md) – Track real-time and historical data on GPU usage to help track resource consumption and optimize costs.
 
-Reach out to customer support for credentials.
+### For AI practitioners
 
+Run:ai empowers data scientists and ML engineers by providing:
 
-## Run:ai Cloud Status Page
+* [**Optimized workload scheduling**](../Researcher/scheduling/how-the-scheduler-works.md) – Ensure high-priority jobs get GPU resources. Workloads dynamically receive resources based on demand.
+* [**Fractional GPU usage**](../Researcher/scheduling/fractions.md) – Request and utilize only a fraction of a GPU's memory, ensuring efficient resource allocation and leaving room for other workloads.
+* [**AI initiatives lifecycle support** ](../platform-admin/workloads/overviews/introduction-to-workloads.md)– Run your entire AI initiatives lifecycle – Jupyter Notebooks, training jobs, and inference workloads efficiently.
+* [**Interactive session**](../platform-admin/workloads/overviews/workload-types.md) – Ensure an uninterrupted experience when working on Jupyter Notebooks without taking away GPUs.
+* [**Scalability for training and inference**](../platform-admin/workloads/overviews/workload-types.md) – Support for distributed training across multiple GPUs and auto-scales inference workloads.
+* [**Integrations**](../platform-admin/integrations/integration-overview.md) – Integrate with popular ML frameworks - PyTorch, TensorFlow, XGBoost, Knative, Spark, Kubeflow Pipelines, Apache Airflow, Argo workloads, Ray and more.
+* [**Flexible workload submission** ](../platform-admin/workloads/overviews/introduction-to-workloads.md) – Submit workloads using the Run:ai UI, API, CLI or run third-party workloads.
 
-Run:ai cloud availability is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
+## Run:ai system components
 
-## Collect Logs to Send to Support
+Run:ai is made up of two components both installed over a [Kubernetes](https://kubernetes.io) cluster:
 
-As an IT Administrator, you can collect Run:ai logs to send to support. For more information see [logs collection](../admin/troubleshooting/logs-collection.md).
+* **Run:ai cluster** – Provides Scheduling and workload management, extending Kubernetes native capabilities.
+* **Run:ai control plane** – Provides resource management, handles workload submission and provides cluster monitoring and analytics.
 
-## Example Code
+![multi-cluster-architecture](img/multi-cluster-architecture.png)
 
-Code for the Docker images referred to on this site is available at [https://github.com/run-ai/docs/tree/master/quickstart](https://github.com/run-ai/docs/tree/master/quickstart){target=_blank}.
+### Run:ai cluster
 
-The following images are used throughout the documentation:
+The Run:ai cluster is responsible for scheduling AI workloads and efficiently allocating GPU resources across users and projects:
 
-|  Image | Description | Source |
-|--------|-------------|--------|
-| [runai.jfrog.io/demo/quickstart](https://runai.jfrog.io/artifactory/demo/quickstart){target=_blank} | Basic training image. Multi-GPU support | [https://github.com/run-ai/docs/tree/master/quickstart/main](https://github.com/run-ai/docs/tree/master/quickstart/main){target=_blank} | 
-| [runai.jfrog.io/demo/quickstart-distributed](https://runai.jfrog.io/artifactory/demo/quickstart-distributed){target=_blank} | Distributed training using MPI and Horovod | [https://github.com/run-ai/docs/tree/master/quickstart/distributed](https://github.com/run-ai/docs/tree/master/quickstart/distributed){target=_blank} | 
-| [zembutsu/docker-sample-nginx](https://hub.docker.com/r/zembutsu/docker-sample-nginx) | Build (interactive) with Connected Ports | [https://github.com/zembutsu/docker-sample-nginx](https://github.com/zembutsu/docker-sample-nginx){target=_blank} | 
-| [runai.jfrog.io/demo/quickstart-x-forwarding](https://runai.jfrog.io/artifactory/demo/quickstart-x-forwarding){target=_blank} | Use X11 forwarding from Docker image | [https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding](https://github.com/run-ai/docs/tree/master/quickstart/x-forwarding){target=_blank} | 
-| [runai.jfrog.io/demo/pycharm-demo](https://runai.jfrog.io/artifactory/demo/pycharm-demo){target=_blank} | Image used for tool integration (PyCharm and VSCode) | [https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh](https://github.com/run-ai/docs/tree/master/quickstart/python%2Bssh){target=_blank} |
-| [runai.jfrog.io/demo/example-triton-client](https://runai.jfrog.io/artifactory/demo/example-triton-client){target=_blank} and  [runai.jfrog.io/demo/example-triton-server](https://runai.jfrog.io/artifactory/demo/example-triton-server){target=_blank} |  Basic Inference | [https://github.com/run-ai/models/tree/main/models/triton](https://github.com/run-ai/models/tree/main/models/triton){target=_blank} |
+* [**Run:ai Scheduler**](../Researcher/scheduling/the-runai-scheduler.md) – Applies AI-aware rules to efficiently schedule workloads submitted by AI practitioners.
+* [**Workload management**](../platform-admin/workloads/overviews/introduction-to-workloads.md) – Handles workload management which includes the researcher code running as a Kubernetes container and the system resources required to run the code, such as storage, credentials, network endpoints to access the container and so on.
+* [**Kubernetes operator-based deployment** ](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)– Installed as a Kubernetes Operator to automate deployment, upgrades and configuration of Run:ai cluster services.
+* **Storage** – Supports Kubernetes-native storage using [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/), allowing organizations to bring their own storage solutions. Additionally, it also integrates with [external storage solutions](../platform-admin/workloads/assets/overview.md) such as Git, S3, and NFS to support various data requirements.
+* **Secured communication** – Uses an outbound-only, secured (SSL) connection to synchronize with the Run:ai control plane.
+* **Private** – Run:ai only synchronizes metadata and operational metrics (e.g., workloads, nodes) with the control plane. No proprietary data, model artifacts, or user data sets are ever transmitted, ensuring full data privacy and security.
 
-## Contributing to the documentation
+### Run:ai control plane
 
-This documentation is made better by individuals from our customer and partner community. If you see something worth fixing, please comment at the bottom of the page or create a pull request via GitHub. The public GitHub repository can be found on the top-right of this page. 
+The Run:ai control plane provides a centralized management interface for organizations to oversee their GPU infrastructure across multiple locations/subnets, accessible via Web UI, [API](../developer/overview-developer.md) and [CLI](../Researcher/cli-reference/new-cli/runai.md). The control plane can be deployed on the cloud or on-premise for organizations that require local control over their infrastructure - self-hosted. Self-hosted installation supports both connected and air-gapped. See [self-hosted installation](../admin/runai-setup/self-hosted/overview.md) for more details.
+
+* [**Multi-cluster management** ](../admin/config/clusters.md)– Manages multiple Run:ai clusters for a single tenant across different locations and subnets from a single unified interface.
+* [**Resource and access management** ](../platform-admin/aiinitiatives/overview.md)– Allows administrators to define Projects, Departments and user roles, enforcing policies for fair resource distribution.
+* [**Workload submission and monitoring**](../platform-admin/workloads/overviews/managing-workloads.md) – Allows teams to submit workloads, track usage, and monitor GPU performance in real time.
