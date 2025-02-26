@@ -82,7 +82,7 @@ The Run:ai cluster is responsible for scheduling AI workloads and efficiently al
 
 ### Run:ai control plane
 
-The Run:ai control plane provides a centralized management interface for organizations to oversee their GPU infrastructure across multiple locations/subnets, accessible via Web UI, [API ](api-reference/)and [CLI.](cli-reference/) The control plane can be deployed on the cloud or on-premise for organizations that require local control over their infrastructure (self-hosted). Self-hosted installation supports both connected and air-gapped. See [self-hosted installation](https://app.gitbook.com/s/Lalm8gxJMp5dA0whA4ip/overview) for more details.
+The Run:ai control plane provides a centralized management interface for organizations to oversee their GPU infrastructure across multiple locations/subnets, accessible via Web UI, [API](../developer/overview-developer.md) and [CLI](../Researcher/cli-reference/). The control plane can be deployed on the cloud or on-premise for organizations that require local control over their infrastructure - self-hosted. Self-hosted installation supports both connected and air-gapped. See [self-hosted installation](../admin/runai-setup/self-hosted/overview.md) for more details.
 
 * [**Multi-cluster management** ](../admin/config/clusters.md)– Manages multiple Run:ai clusters for a single tenant across different locations and subnets from a single unified interface.
 * [**Resource and access management** ](../platform-admin/aiinitiatives/overview.md)– Allows administrators to define Projects, Departments and user roles, enforcing policies for fair resource distribution.
