@@ -48,7 +48,7 @@ Run:ai simplifies AI infrastructure management by providing a structured approac
 * [**Workload scheduling**](../Researcher/scheduling/how-the-scheduler-works.md) – Use scheduling to prioritize and allocate GPUs based on workload needs.
 * [**Monitoring and insights**](../platform-admin/performance/dashboard-analysis.md) – Track real-time and historical data on GPU usage to help track resource consumption and optimize costs.
 
-### For AI Practitioners
+### For AI practitioners
 
 Run:ai empowers data scientists and ML engineers by providing:
 
