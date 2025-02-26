@@ -66,7 +66,6 @@ workload-controller:
     tag: v4.4.0
 ```
 
-
 ### Run:ai Managed Nodes
 
 To include or exclude specific nodes from running workloads within a cluster managed by Run:ai, use the `nodeSelectorTerms` flag. For additional details, see [Kubernetes nodeSelector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector).
