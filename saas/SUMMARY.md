@@ -2,18 +2,17 @@
 
 * [Welcome to SaaS documentation](README.md)
 * [Overview](overview/README.md)
-  * [Welcome to Run:ai](Overview/welcome-to-runai.md)
+
 
 ## **SaaS installation**
 
-* [Cluster installation](cluster-installation/README.md)
-  * [System requirements](cluster-installation/system-requirements.md)
-  * [Network requirements](cluster-installation/network-requirements.md)
-  * [Install using Helm](cluster-installation/install-using-helm.md)
-  * [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
-  * [Customized installation](cluster-installation/customized-installation.md)
-  * [Upgrade](cluster-installation/upgrade.md)
-  * [Uninstall](cluster-installation/uninstall.md)
+* [System requirements](cluster-installation/system-requirements.md)
+* [Network requirements](cluster-installation/network-requirements.md)
+* [Install using Helm](cluster-installation/install-using-helm.md)
+* [Install using Base Command Manager](cluster-installation/install-using-base-command-manager.md)
+* [Customized installation](cluster-installation/customized-installation.md)
+* [Upgrade](cluster-installation/upgrade.md)
+* [Uninstall](cluster-installation/uninstall.md)
 
 ## **Self-hosted installation**
 
