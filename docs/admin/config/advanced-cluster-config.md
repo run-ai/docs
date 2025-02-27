@@ -55,15 +55,16 @@ The following configurations allow you to enable or disable features, control pe
 ### S3 and Git sidecar images
 For air-gapped environments, when [working with a Local Certificate Authority](./org-cert.md), it is required to replace the default sidecar images in order to use the Git and S3 data source integrations. Use the following configurations:
 ``` 
-workload-controller:
-  s3FileSystemImage:
-    name: goofys 
-    registry: runai.jfrog.io/op-containers-prod
-    tag: 3.12.24
-  gitSyncImage:
-    name: git-sync
-    registry: registry.k8s.io
-    tag: v4.4.0
+spec:
+  workload-controller:
+    s3FileSystemImage:
+      name: goofys 
+      registry: runai.jfrog.io/op-containers-prod
+      tag: 3.12.24
+    gitSyncImage:
+      name: git-sync
+      registry: registry.k8s.io
+      tag: v4.4.0
 ```
 
 ### Run:ai Managed Nodes
