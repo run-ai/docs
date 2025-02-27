@@ -80,7 +80,7 @@ There are two ways to submit a TensorBoard Workload: via the Command-line interf
     ```
     Browse to [http://localhost:8888/](http://localhost:8888/){target=_blank} to view TensorBoard.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     Run the following:
 

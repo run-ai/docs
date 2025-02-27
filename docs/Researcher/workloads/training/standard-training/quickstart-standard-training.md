@@ -25,7 +25,7 @@ Before you start, make sure:
     runai login --help  
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Log in using the following command. You will be prompted to enter your username and password:
 
     ``` bash
@@ -89,7 +89,7 @@ Before you start, make sure:
 
     This would start a standard training workload based on a sample docker image, runai.jfrog.io/demo/quickstart, with one GPU allocated.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Copy the following command to your terminal. Make sure to update the below with the name of your project:
 
     ``` bash

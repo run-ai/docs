@@ -51,7 +51,7 @@ When you submit a new Workload, you will want to connect the secret to the new W
     runai workspace submit -i ubuntu -e MYUSERNAME=SECRET:my-secret,username
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ```shell
     runai submit -e <ENV-VARIABLE>=SECRET:<secret-name>,<secret-key> ....
     ```

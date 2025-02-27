@@ -33,7 +33,7 @@
     runai port-forward nginx-test --port 8080:80 
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Open a terminal and run:
 
     ```shell
@@ -57,7 +57,7 @@ The result will be:
     port-forward stared, opening ports [8080:80]
     ```
     
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ```shell
     The job 'nginx-test-0' has been submitted successfully
     You can run `runai describe job nginx-test-0 -p team-a` to check the job status

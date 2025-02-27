@@ -37,7 +37,7 @@ Open a terminal and run the following command:
     runai training submit b1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ```
     runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
     runai submit a1 -i runai.jfrog.io/demo/quickstart -g 1 -p team-a
@@ -62,7 +62,7 @@ Run the following command:
     runai training submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     ```
     runai submit b2 -i runai.jfrog.io/demo/quickstart -g 1 -p team-b
@@ -85,7 +85,7 @@ Run the following command:
     runai training delete a2
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     ```
     runai delete job a2 -p team-a
@@ -100,7 +100,7 @@ Run:
     runai training list -A
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     ```
     runai list jobs -A
@@ -115,7 +115,7 @@ Choose one of the two Jobs from the full node and delete it:
     runai training delete <job-name> -p <project>
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     ```
     runai delete job <job-name> -p <project>
@@ -130,7 +130,7 @@ Now, run a 2 GPU Job:
     ```
     runai training submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a
     ```
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
 
     ```
     runai submit a2 -i runai.jfrog.io/demo/quickstart -g 2 -p team-a

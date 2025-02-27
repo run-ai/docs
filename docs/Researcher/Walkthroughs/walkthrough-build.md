@@ -30,7 +30,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 === "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -52,7 +52,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     !!! Note
         For more information on the workspace submit command, see [cli documentation](../cli-reference/new-cli/runai_workspace_submit.md).
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Open a terminal and run:
 
     ``` bash
@@ -126,7 +126,7 @@ Follow up on the Workload's progress by running:
     vs1          Workspace   Running     team-a      No               1/1                        1.00
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ``` bash
     runai list jobs
     ```
@@ -162,7 +162,7 @@ To get additional status on your Workload run:
     runai workspace describe build1
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ``` bash
     runai describe job build1
     ```
@@ -178,7 +178,7 @@ To get additional status on your Workload run:
     runai workspace bash build1
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Run:
     ``` bash
     runai bash build1
@@ -198,7 +198,7 @@ Run the following:
     runai workspace delete build1
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ``` bash
     runai delete job build1
     ```

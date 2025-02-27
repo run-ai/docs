@@ -84,7 +84,7 @@ Example with Environment variables:
         -- ./startup.sh  
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Using ``runai submit``, drop the flag ``--interactive``. For submitting a Job using the script created above, please use ``-- [COMMAND]`` flag to specify a command, use the `--` syntax to pass arguments, and pass environment variables using the flag ``--environment``.
 
     ```shell
@@ -106,7 +106,7 @@ Example with Command-line arguments:
 
     Please refer to [Command-Line Interface, runai submit](../cli-reference/new-cli/runai_training_submit.md) for a list of all arguments accepted by the Run:ai CLI.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ```shell
     runai submit train1 -i tensorflow/tensorflow:1.14.0-gpu-py3 \
         -v /nfs/john:/mydir -g 1 --working-dir /mydir/ \
