@@ -46,7 +46,7 @@ When using a custom CA, sidecar containers used for S3 or Git integrations do no
 #FROM gcr.io/run-ai-prod/goofys:master # S3
 #FROM registry.k8s.io/git-sync/git-sync:v4.4.0 # Git
 USER root
-ADD anchors/ /usr/local/share/ca-certificates/
+ADD <ca_bundle_path> /usr/local/share/ca-certificates/ # example: anchors/
 RUN chmod 644 -R /usr/local/share/ca-certificates/ && update-ca-certificates
 WORKDIR /
 ENTRYPOINT ["sh"]
