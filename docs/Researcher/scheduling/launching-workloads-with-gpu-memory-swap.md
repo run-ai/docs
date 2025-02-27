@@ -103,9 +103,9 @@ Before you start, make sure:
             }
             ],
             "compute": {
-                "gpuDevicesRequest": 1
+                "gpuDevicesRequest": 1,
                 "gpuRequestType": "portion",
-                "gpuPortionRequest": 0.1
+                "gpuPortionRequest": 0.1,
                 "gpuPortionLimit": 1,
                 "cpuCoreRequest":0.2,
                 "cpuMemoryRequest": "200M",
@@ -172,9 +172,9 @@ Before you start, make sure:
             }
             ],
             "compute": {
-                "gpuDevicesRequest": 1
+                "gpuDevicesRequest": 1,
                 "gpuRequestType": "portion",
-                "gpuPortionRequest": 0.1
+                "gpuPortionRequest": 0.1,
                 "gpuPortionLimit": 1,
                 "cpuCoreRequest":0.2,
                 "cpuMemoryRequest": "200M",
