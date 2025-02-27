@@ -139,20 +139,20 @@ Before you start, make sure:
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/scipy-notebook",
+            "image": "jupyter/base-notebook",
+            "exposedUrls": [
+              {
+                "container": 8888,
+                "toolType": "jupyter-notebook",
+                "toolName": "Jupyter"
+              }
+            ],
             "compute": {
-                "gpuDevicesRequest": 1,
-                "gpuRequestType": "portion",
-                "gpuPortionRequest": 0.1
+              "gpuDevicesRequest": 1,
+              "gpuRequestType": "portion",
+              "gpuPortionRequest": 0.1
 
-            },
-            "exposedUrls" : [
-                { 
-                    "container" : 8888,
-                    "toolType": "jupyter-notebook", \ #toolType will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
-                    "toolName": "Jupyter" \ #toolName text will show when connecting to the Jupyter tool via the user interface. 
-                }
-            ]
+            }
         }
     }'
     ```

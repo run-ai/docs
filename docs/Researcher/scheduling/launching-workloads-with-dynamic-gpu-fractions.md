@@ -103,7 +103,7 @@ Before you start, make sure:
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
-    ```sh
+    ```bash
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
@@ -114,21 +114,20 @@ Before you start, make sure:
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/scipy-notebook",
+            "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
+            "exposedUrls": [
+              {
+                "container": 8888,
+                "toolType": "jupyter-notebook",
+                "toolName": "Jupyter"
+              }
+            ],
             "compute": {
-                "gpuDevicesRequest": 1,
-                "gpuMemoryRequest": "4G",
-                "gpuMemoryLimit": "12G",
-                "largeShmRequest": true
-
-            },
-            "exposedUrls" : [
-                { 
-                    "container" : 8888,
-                    "toolType": "jupyter-notebook", \ #toolType will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
-                    "toolName": "Jupyter" \ #toolName text will show when connecting to the Jupyter tool via the user interface. 
-                }
-             ]
+              "gpuDevicesRequest": 1,
+              "gpuMemoryRequest": "4G",
+              "gpuMemoryLimit": "12G",
+              "largeShmRequest": true
+            }     
         }
     }'
     ```
@@ -172,7 +171,7 @@ Before you start, make sure:
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
-    ```sh
+    ```bash
     curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
@@ -183,21 +182,20 @@ Before you start, make sure:
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/scipy-notebook",
+            "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
+            "exposedUrls": [
+              {
+                "container": 8888,
+                "toolType": "jupyter-notebook",
+                "toolName": "Jupyter"
+              }
+            ],
             "compute": {
-                "gpuDevicesRequest": 1,
-                "gpuMemoryRequest": "4G",
-                "gpuMemoryLimit": "12G",
-                "largeShmRequest": true
-
-            },
-            "exposedUrls" : [
-                { 
-                    "container" : 8888,
-                    "toolType": "jupyter-notebook", \ #toolType will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
-                    "toolName": "Jupyter" \ #toolName text will show when connecting to the Jupyter tool via the user interface. 
-                }
-            ]
+              "gpuDevicesRequest": 1,
+              "gpuMemoryRequest": "4G",
+              "gpuMemoryLimit": "12G",
+              "largeShmRequest": true
+            }
         }
     }'
     ```
