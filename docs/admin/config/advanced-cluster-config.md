@@ -54,7 +54,8 @@ The following configurations allow you to enable or disable features, control pe
 
 ### S3 and Git sidecar images
 For air-gapped environments, when [working with a Local Certificate Authority](./org-cert.md), it is required to replace the default sidecar images in order to use the Git and S3 data source integrations. Use the following configurations:
-``` 
+
+``` yaml
 spec:
   workload-controller:
     s3FileSystemImage:
@@ -79,7 +80,7 @@ Label the nodes using the below:
 
 The below example shows how to include NVIDIA GPUs only and exclude all other GPU types in a cluster with mixed nodes, based on product type GPU label:
 
-``` bash
+``` yaml
 spec:   
   global:
      managedNodes:
