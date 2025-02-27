@@ -133,6 +133,7 @@ plugins:
         'platform-admin/workloads/policies/README.md' : 'platform-admin/workloads/policies/overview.md'
         'platform-admin/workloads/inference-overview.md' : 'Researcher/workloads/inference/inference-overview.md'
         'developer/deprecated/inference/submit-via-yaml.md' : 'developer/cluster-api/other-resources.md'
+        'developer/cluster-api/other-resources.md' :  'developer/other-resources/other-resources.md'
         'developer/admin-rest-api/data-volumes.md' : 'platform-admin/workloads/assets/data-volumes.md'
         'developer/cluster-api/submit-cron-yaml.md' : 'developer/cluster-api/other-resources.md'
         'Researcher/scheduling/using-node-pools.md' : 'platform-admin/aiinitiatives/resources/node-pools.md'
@@ -452,12 +453,7 @@ nav:
     - 'User Applications' : 'developer/user-applications.md'
     - 'API Authentication' : 'developer/rest-auth.md'
     - 'REST API' : 'developer/admin-rest-api/overview.md'
-    - 'Cluster API (Deprecated)' :
-      - 'Overview' : 'developer/cluster-api/workload-overview-dev.md'
-      - 'Submit Workload via YAML'  : 'developer/cluster-api/submit-yaml.md'
-      - 'Submit Workload via HTTP/REST'  : 'developer/cluster-api/submit-rest.md'
-      - 'Reference' : 'developer/cluster-api/reference.md'
     - 'Metrics' : 
       - 'Metrics via API' : 'developer/metrics/metrics-api.md' 
       - '(Deprecated) Metrics via Prometheus' : 'developer/metrics/metrics.md'
-    - 'Kubernetes Workloads Integration'  : 'developer/cluster-api/other-resources.md'
+    - 'Kubernetes Workloads Integration'  : 'developer/other-resources/other-resources.md'

@@ -153,7 +153,7 @@ Before you start, make sure:
     6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
 
     !!! Note
-        The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../../developer/cluster-api/submit-rest.md).
+        The above API snippet will only work with Run:ai clusters of 2.18 and above.
 
 
 

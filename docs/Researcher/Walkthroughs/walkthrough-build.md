@@ -100,8 +100,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
     4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
 
     !!! Note
-        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
-        * For more information on the Workspace Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Workspaces/operation/create_workspace1){target=_blank} 
+        For more information on the Workspace Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Workspaces/operation/create_workspace1){target=_blank} 
 
 * This would start a workload of type Workspace for `team-a` with an allocation of a single GPU. 
 * We named the Workload `build1`. 

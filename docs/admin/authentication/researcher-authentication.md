@@ -11,8 +11,8 @@ The following instructions explain how to complete the configuration of access c
 
 
 !!! Important
-    * As of Run:ai version 2.16, you only need to perform these steps when accessing Run:ai from the [command-line interface](../researcher-setup/cli-install.md) or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes
-    * As of Run:ai version 2.18, you only need to perform these steps when if using the older command-line interface or sending [YAMLs directly](../../developer/cluster-api/submit-yaml.md) to Kubernetes.
+    * As of Run:ai version 2.16, you only need to perform these steps when accessing Run:ai from the [command-line interface](../researcher-setup/cli-install.md).
+    * As of Run:ai version 2.18, you only need to perform these steps when if using the older command-line interface.
 
 
 ## Kubernetes Configuration

@@ -293,7 +293,7 @@ See [Cluster Health Troubleshooting](..//config/clusters.md#troubleshooting-scen
     __Symptoms:__ 
     
     * The `New workload type` -> `Inference` button is grayed out.
-    * Cannot create a deployment via [Inference API](../../developer/cluster-api/submit-yaml.md#inference-workload-example).
+
 
     __Root Cause:__ Run:ai Inference prerequisites have not been met.
 

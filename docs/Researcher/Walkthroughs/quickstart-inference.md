@@ -125,7 +125,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 
 
     !!! Note
-        * The above API snippet will only work with Run:ai clusters of 2.18 and above. For older clusters, use, the now deprecated [Cluster API](../../developer/cluster-api/submit-rest.md).
+        * The above API snippet will only work with Run:ai clusters of 2.18 and above. 
         * For more information on the Inference Submit API see [API Documentation](https://app.run.ai/api/docs#tag/Inferences) 
 
 This would start a triton inference server with a maximum of 2 instances, each instance consumes half a GPU. 
