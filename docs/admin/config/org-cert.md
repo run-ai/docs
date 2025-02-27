@@ -9,7 +9,7 @@ In the context of Run:ai, the cluster and control-plane need to be aware of this
 
 You will need to have the public key of the local certificate authority. 
 
-## Control-Plane
+## Control-Plane Installation
 
 * Create the `runai-backend` namespace if it does not exist. 
 * Add the public key to the `runai-backend` namespace:
@@ -21,7 +21,7 @@ kubectl -n runai-backend create secret generic runai-ca-cert \
 * As part of the installation instructions, you need to create a secret for [runai-backend-tls](../runai-setup/self-hosted/k8s/preparations.md#domain-certificate). Use the local certificate authority instead.
 * Install the control plane, add the following flag to the helm command `--set global.customCA.enabled=true`
 
-## Cluster
+## Cluster Installation
 
 * Create the `runai` namespace if it does not exist. 
 * Add the public key to the `runai` namespace:
