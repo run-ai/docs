@@ -141,7 +141,7 @@ Before you start, make sure:
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "jupyter/scipy-notebook",
             "compute": {
-                "gpuDevicesRequest": 1
+                "gpuDevicesRequest": 1,
                 "gpuRequestType": "portion",
                 "gpuPortionRequest": 0.1
 

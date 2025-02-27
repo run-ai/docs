@@ -116,7 +116,7 @@ Before you start, make sure:
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "jupyter/scipy-notebook",
             "compute": {
-                "gpuDevicesRequest": 1
+                "gpuDevicesRequest": 1,
                 "gpuMemoryRequest": "4G",
                 "gpuMemoryLimit": "12G",
                 "largeShmRequest": true
@@ -185,7 +185,7 @@ Before you start, make sure:
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "jupyter/scipy-notebook",
             "compute": {
-                "gpuDevicesRequest": 1
+                "gpuDevicesRequest": 1,
                 "gpuMemoryRequest": "4G",
                 "gpuMemoryLimit": "12G",
                 "largeShmRequest": true
