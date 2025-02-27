@@ -1,0 +1,357 @@
+# Cluster system requirements
+
+The Run:ai Cluster is a Kubernetes application.
+
+This article explains the required hardware and software system requirements for the Run:ai cluster.
+
+The system requirements needed depends on where the control plane and cluster are installed. The following applies for **Kubernetes only**:
+
+* If you are installing the first cluster and control plane on the same Kubernetes cluster,  [Kubernetes ingress controller](cluster-system-requirements.md#kubernetes-ingress-controller), [Prometheus ](cluster-system-requirements.md#prometheus)and [Fully Qualified Domain Name](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) **are not required**.
+* If you are installing the first cluster and control plane on separate Kubernetes clusters, the [Kubernetes ingress controller](cluster-system-requirements.md#kubernetes-ingress-controller), [Prometheus ](cluster-system-requirements.md#prometheus)and [Fully Qualified Domain Name](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) **are required**.
+
+## Hardware Requirements
+
+The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](broken-reference), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
+
+If Run:ai cluster is planned to be installed on the same cluster as the Run:ai control plane, make sure the control plane requirements are in addition to the Run:ai cluster [hardware requirements](https://app.gitbook.com/s/QtPkBj3GaBS74eJqoraO/saas-installation/installation/system-requirements#hardware-requirements)
+
+### Run:ai Cluster - system nodes
+
+This configuration is the minimum requirement you need to install and use Run:ai Cluster.
+
+| Component  | Required Capacity |
+| ---------- | ----------------- |
+| CPU        | 10 cores          |
+| Memory     | 20GB              |
+| Disk space | 50GB              |
+
+### Run:ai Cluster - Worker nodes
+
+The Run:ai Cluster supports both x86 CPUs and NVIDIA x86 GPUs. For the list of supported GPU models, see [Supported NVIDIA Data Center GPUs and Systems](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html#supported-nvidia-data-center-gpus-and-systems).
+
+The following configuration represents the minimum hardware requirements for installing and operating the Run:ai cluster on worker nodes. Each node must meet these specifications:
+
+| Component | Required Capacity |
+| --------- | ----------------- |
+| CPU       | 2 cores           |
+| Memory    | 4GB               |
+
+### Shared storage
+
+Run:ai workloads must be able to access data from any worker node in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts.
+
+Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](broken-reference).
+
+## Software requirements
+
+The following software requirements must be fulfilled on the Kubernetes cluster.
+
+### Operating system
+
+* Any **Linux** operating system supported by both Kubernetes and NVIDIA GPU Operator
+* Run:ai cluster on Google Kubernetes Engine (GKE) supports both Ubuntu and Container Optimized OS (COS). COS is supported only with NVIDIA GPU Operator 24.6 or newer, and Run:ai cluster version 2.19 or newer.
+* Internal tests are being performed on **Ubuntu 22.04** and **CoreOS** for OpenShift.
+
+### Kubernetes distribution
+
+Run:ai Cluster requires Kubernetes. The following Kubernetes distributions are supported:
+
+* Vanilla Kubernetes
+* OpenShift Container Platform (OCP)
+* NVIDIA Base Command Manager (BCM)
+* Elastic Kubernetes Engine (EKS)
+* Google Kubernetes Engine (GKE)
+* Azure Kubernetes Service (AKS)
+* Oracle Kubernetes Engine (OKE)
+* Rancher Kubernetes Engine (RKE1)
+* Rancher Kubernetes Engine 2 (RKE2)
+
+{% hint style="info" %}
+The latest release of the Run:ai cluster supports **Kubernetes 1.29 to 1.32** and **OpenShift 4.14 to 4.17**
+{% endhint %}
+
+For existing Kubernetes clusters, see the following Kubernetes version support matrix for the latest Run:ai cluster releases:
+
+| Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
+| -------------- | ----------------------------- | ---------------------------- |
+| v2.16          | 1.26 to 1.28                  | 4.11 to 4.14                 |
+| v2.17          | 1.27 to 1.29                  | 4.12 to 4.15                 |
+| v2.18          | 1.28 to 1.30                  | 4.12 to 4.16                 |
+| v2.19          | 1.28 to 1.31                  | 4.12 to 4.17                 |
+| v2.20(latest)  | 1.29 to 1.32                  | 4.14 to 4.17                 |
+
+For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/) or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift).
+
+### Kubernetes Pod Security Admission
+
+Run:ai v2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `privileged` policy.
+
+For Run:ai on OpenShift to run with PSA `restricted` policy:
+
+* Label the `runai` namespace as described in [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) with the following labels:
+
+```
+pod-security.kubernetes.io/audit=privileged
+pod-security.kubernetes.io/enforce=privileged
+pod-security.kubernetes.io/warn=privileged
+```
+
+* The workloads submitted through Run:ai should comply with the restrictions of PSA restricted policy, This can be enforced using Policies.
+
+### Kubernetes Ingress Controller
+
+{% hint style="info" %}
+Installing ingress controller applies for Kubernetes only.
+{% endhint %}
+
+Run:ai cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
+
+* OpenShift, RKE and RKE2 come pre-installed ingress controller.
+* Internal tests are being performed on NGINX, Rancher NGINX, OpenShift Router, and Istio.
+* Make sure that a default ingress controller is set.
+
+There are many ways to install and configure different ingress controllers. A simple example to install and configure NGINX ingress controller using [helm](https://helm.sh/):
+
+<details>
+
+<summary>Vanilla Kubernetes</summary>
+
+Run the following commands:
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm upgrade -i nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace nginx-ingress --create-namespace \
+    --set controller.kind=DaemonSet \
+    --set controller.service.externalIPs="{<INTERNAL-IP>,<EXTERNAL-IP>}" # Replace <INTERNAL-IP> and <EXTERNAL-IP> with the internal and external IP addresses of one of the nodes
+```
+
+</details>
+
+<details>
+
+<summary>Managed Kubernetes (EKS, GKE, AKS)</summary>
+
+Run the following commands:
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace nginx-ingress --create-namespace
+```
+
+</details>
+
+<details>
+
+<summary>Oracle Kubernetes Engine (OKE)</summary>
+
+Run the following commands:
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace ingress-nginx --create-namespace \
+    --set controller.service.annotations.oci.oraclecloud.com/load-balancer-type=nlb \
+    --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/is-preserve-source=True \
+    --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/security-list-management-mode=None \
+    --set controller.service.externalTrafficPolicy=Local \
+    --set controller.service.annotations.oci-network-load-balancer.oraclecloud.com/subnet=<SUBNET-ID> # Replace <SUBNET-ID> with the subnet ID of one of your cluster
+```
+
+</details>
+
+### NVIDIA GPU Operator
+
+Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6. Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped).&#x20;
+
+See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html), followed by notes below:
+
+* Use the default `gpu-operator` namespace . Otherwise, you must specify the target namespace using the flag `runai-operator.config.nvidiaDcgmExporter.namespace` as described in customized cluster installation.
+* NVIDIA drivers may already be installed on the nodes. In such cases, use the NVIDIA GPU Operator flags `--set driver.enabled=false`. [DGX OS](https://docs.nvidia.com/dgx/dgx-os-6-user-guide/release_notes.html) is one such example as it comes bundled with NVIDIA Drivers.
+* For distribution-specific additional instructions see below:
+
+<details>
+
+<summary>OpenShift Container Platform (OCP)</summary>
+
+The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator in OpenShift. Install the NFD Operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. For more information, see [Installing the Node Feature Discovery (NFD) Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/install-nfd.html).
+
+</details>
+
+<details>
+
+<summary>Elastic Kubernetes Service (EKS)</summary>
+
+* When setting-up the cluster, do **not** install the NVIDIA device plug-in (we want the NVIDIA GPU Operator to install it instead).
+* When using the [eksctl](https://eksctl.io/) tool to create a cluster, use the flag `--install-nvidia-plugin=false` to disable the installation.
+
+For GPU nodes, EKS uses an AMI which already contains the NVIDIA drivers. As such, you must use the GPU Operator flags: `--set driver.enabled=false.`
+
+</details>
+
+<details>
+
+<summary>Google Kubernetes Engine (GKE)</summary>
+
+Before installing the GPU Operator:
+
+1. Create the `gpu-operator` namespace by running:
+
+```bash
+kubectl create ns gpu-operator
+```
+
+2. Create the following file:
+
+<pre class="language-yaml"><code class="lang-yaml">#resourcequota.yaml
+
+<strong>apiVersion: v1
+</strong>kind: ResourceQuota
+metadata:
+name: gcp-critical-pods
+namespace: gpu-operator
+spec:
+scopeSelector:
+    matchExpressions:
+    - operator: In
+    scopeName: PriorityClass
+    values:
+    - system-node-critical
+    - system-cluster-critical
+</code></pre>
+
+3. Run:
+
+<pre class="language-bash"><code class="lang-bash"><strong>kubectl apply -f resourcequota.yaml
+</strong></code></pre>
+
+</details>
+
+<details>
+
+<summary>Rancher Kubernetes Engine 2 (RKE2)</summary>
+
+Make sure to specify the `CONTAINERD_CONFIG` option exactly as outlined in the [documentation](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html#rancher-kubernetes-engine-2) and [custom configuration guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/install-gpu-operator.html#custom-configuration-for-runtime-containerd), using the path `/var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl`. **Do not create the file manually** if it does not already exist. The GPU Operator will handle this configuration during deployment.
+
+</details>
+
+<details>
+
+<summary>Oracle Kubernetes Engine (OKE)</summary>
+
+* During cluster setup, [create a nodepool](https://docs.oracle.com/en-us/iaas/tools/python/latest/api/container_engine/models/oci.container_engine.models.NodePool.html#oci.container_engine.models.NodePool.initial_node_labels), and set `initial_node_labels` to include `oci.oraclecloud.com/disable-gpu-device-plugin=true` which disables the NVIDIA GPU device plugin.
+* For GPU nodes, OKE defaults to Oracle Linux, which is incompatible with NVIDIA drivers. To resolve this, use a custom Ubuntu image instead.
+
+</details>
+
+For troubleshooting information, see the [NVIDIA GPU Operator Troubleshooting Guide](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/troubleshooting.html).
+
+### Prometheus
+
+{% hint style="info" %}
+Installing Prometheus applies for Kubernetes only.
+{% endhint %}
+
+Run:ai Cluster requires Prometheus to be installed on the Kubernetes cluster.
+
+* OpenShift comes pre-installed with prometheus
+* For RKE2 see [Enable Monitoring](https://ranchermanager.docs.rancher.com/how-to-guides/advanced-user-guides/monitoring-alerting-guides/enable-monitoring) instructions to install Prometheus
+
+There are many ways to install Prometheus. A simple example to install the community [Kube-Prometheus Stack](https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack) using [helm](https://helm.sh/), run the following commands:
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack \
+    -n monitoring --create-namespace --set grafana.enabled=false
+```
+
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites.&#x20;
+
+## Additional software requirements
+
+Additional Run:ai capabilities, Distributed Training and Inference require additional Kubernetes applications (frameworks) to be installed on the cluster.
+
+### Distributed training
+
+Distributed training enables training of AI models over multiple nodes. This requires installing a distributed training framework on the cluster. The following frameworks are supported:
+
+* [TensorFlow](https://www.tensorflow.org/)
+* [PyTorch](https://pytorch.org/)
+* [XGBoost](https://xgboost.readthedocs.io/)
+* [MPI v2](https://docs.open-mpi.org/)
+
+There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) which includes TensorFlow, PyTorch, and XGBoost.
+
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](broken-reference) and [Scheduling rules](broken-reference).
+
+* To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
+
+```bash
+kubectl apply -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
+```
+
+* To install the MPI Operator for MPI v2, run the following command:
+
+```bash
+kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
+```
+
+{% hint style="info" %}
+If you require both the MPI Operator and Kubeflow Training Operator, follow the steps below:
+
+* Install the Kubeflow Training Operator as described above.
+* Disable and delete MPI v1 in the Kubeflow Training Operator by running:
+
+```bash
+kubectl patch deployment training-operator -n kubeflow --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args", "value": ["--enable-scheme=tfjob", "--enable-scheme=pytorchjob", "--enable-scheme=xgboostjob"]}]'
+kubectl delete crd mpijobs.kubeflow.org
+```
+
+* Install the MPI Operator as described above.
+{% endhint %}
+
+### Inference
+
+Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.11 to 1.16.
+
+Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the Run:ai scheduler and features, by running:
+
+```bash
+kubectl patch configmap/config-autoscaler \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"enable-scale-to-zero":"true"}}' && \
+kubectl patch configmap/config-features \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.containerspec-addcapabilities":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
+```
+
+The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites.
+
+### Knative Autoscaling
+
+Run:ai allows for autoscaling a deployment according to the below metrics:
+
+* Latency (milliseconds)
+* Throughput (requests/sec)
+* Concurrency (requests)
+
+Using a custom metric (for example, Latency) requires installing the [Kubernetes Horizontal Pod Autoscaler (HPA)](https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/#install-optional-serving-extensions). Use the following command to install. Make sure to update the VERSION in the below command with a [supported Knative version](cluster-system-requirements.md#inference).
+
+```bash
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-{VERSION}/serving-hpa.yaml
+```
+
+## Fully Qualified Domain Name (FQDN)
+
+{% hint style="info" %}
+Fully Qualified Domain Name applies for Kubernetes only.
+{% endhint %}
+
+You must have a Fully Qualified Domain Name (FQDN) to install Run:ai Cluster (ex: `runai.mycorp.local`). This cannot be an IP. The domain name must be accessible inside the organization only. You also need a TLS certificate (private and public) for HTTPS access.

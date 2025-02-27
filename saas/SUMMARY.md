@@ -18,8 +18,14 @@
 
 * [Installation](self-hosted-installation/installation/README.md)
   * [Control plane system requirements](self-hosted-installation/installation/control-plane-system-requirements.md)
+  * [Control plane preparations](self-hosted-installation/installation/preparations.md)
   * [Install control plane](self-hosted-installation/installation/install-control-plane.md)
-  * [Install cluster in self-hosted](self-hosted-installation/installation/cluster-installation-self-hosted.md)
+  * [Cluster system requirements](self-hosted-installation/installation/cluster-system-requirements.md)
+  * [Cluster network requirements](self-hosted-installation/installation/cluster-network-requirements.md)
+  * [Install cluster](self-hosted-installation/installation/cluster-install.md)
+  * [Upgrade](self-hosted-installation/installation/upgrade.md)
+  * [Uninstall](self-hosted-installation/installation/uninstall.md)
+
 
 ## Infrastructure setup
 
