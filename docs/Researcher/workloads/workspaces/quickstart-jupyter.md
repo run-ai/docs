@@ -40,7 +40,7 @@ Before you start, make sure:
 
 ## Step 2: Submitting a workspace
 
-=== "UI
+=== "UI"
     1. Go to the Workload manager → Workloads
     2. Select __+NEW WORKLOAD__ and then __Workspace__   
     3. Select under which __cluster__ to create the workload
