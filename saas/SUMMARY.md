@@ -137,6 +137,7 @@
   * [Add Run:ai authorization to kubeconfig](cli-reference/set-kubeconfig-with-oidc-parameters.md)
   * [CLI reference](cli-reference/runai.md)
   * [CLI examples](cli-reference/cli-examples.md)
+  * [List objects with CLI](reference/cli-reference/list-objects-with-cli.md)
 * [API reference](api-reference/README.md)
   * [How to authenticate to the API](api-reference/rest-auth.md)
   * [Run:ai REST API](api-reference/admin-rest-api/overview.md)

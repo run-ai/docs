@@ -16,7 +16,7 @@ runai login
 {% endtab %}
 
 {% tab title="CLI v2" %}
-Run the below --help command to obtain the login options and log in according to your setup:
+Log in using the following command. You will be prompted to enter your username and password:
 
 ```sh
 runai login --help
