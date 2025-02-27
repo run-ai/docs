@@ -34,7 +34,7 @@
     ```
 
 === "CLI V1 [Deprecated]"
-Open a terminal and run:
+    Open a terminal and run:
 
     ```shell
     runai config project team-a
