@@ -4,7 +4,7 @@ The Run:ai control plane is a Kubernetes application.
 
 This article explains the required hardware and software system requirements for the Run:ai control plane.
 
-Before you start, make sure to review the [Installation overview](overview.md).
+Before you start, make sure to review the [Installation overview](./).
 
 ## Installer machine
 
@@ -15,7 +15,7 @@ The machine running the installation script (typically the Kubernetes master) mu
 
 ## Hardware requirements
 
-The following hardware requirements are for the control plane system nodes. By default, all Run:ai control plane services run on all available nodes.&#x20;
+The following hardware requirements are for the control plane system nodes. By default, all Run:ai control plane services run on all available nodes.
 
 ### Run:ai control plane - System nodes
 
@@ -31,21 +31,25 @@ You can **optionally** set the Run:ai control plane to run on specific nodes. Ku
 
 To set system nodes run:
 
-```
+```bash
 kubectl label node <NODE-NAME> node-role.kubernetes.io/runai-system=true
 ```
 
 {% hint style="warning" %}
+## Important
+
 Do not select the Kubernetes master as a `runai-system` node. This may cause Kubernetes to stop working (specifically if Kubernetes API Server is configured on 443 instead of the default 6443).
 {% endhint %}
 
 #### ARM Limitation
 
 {% hint style="info" %}
+## Note
+
 This applies for Kubernetes only. ARM is currently not supported on OpenShift.
 {% endhint %}
 
-The control plane does not support CPU nodes with ARM64k architecture. To schedule the Run:ai control plane services on supported nodes, use the `global.affinity` configuration parameter as detailed in [Additional Run:ai configurations](backend.md#additional-runai-configurations-optional).&#x20;
+The control plane does not support CPU nodes with ARM64k architecture. To schedule the Run:ai control plane services on supported nodes, use the `global.affinity` configuration parameter as detailed in [Additional Run:ai configurations](backend.md#additional-runai-configurations-optional).
 
 ## Software requirements
 
@@ -57,7 +61,7 @@ The following software requirements must be fulfilled on the Kubernetes cluster.
 * Run:ai cluster on Google Kubernetes Engine (GKE) supports both Ubuntu and Container Optimized OS (COS). COS is supported only with NVIDIA GPU Operator 24.6 or newer, and Run:ai cluster version 2.19 or newer.
 * Internal tests are being performed on **Ubuntu 22.04** and **CoreOS** for OpenShift.
 
-### Network time protocol&#x20;
+### Network time protocol
 
 Nodes are required to be synchronized by time using NTP (Network Time Protocol) for proper system functionality.
 
@@ -76,6 +80,8 @@ Run:ai control plane requires Kubernetes. The following Kubernetes distributions
 * Rancher Kubernetes Engine 2 (RKE2)
 
 {% hint style="info" %}
+## Note
+
 The latest release of the Run:ai control plane supports **Kubernetes 1.29 to 1.32** and **OpenShift 4.14 to 4.17**
 {% endhint %}
 
@@ -94,6 +100,8 @@ For information on supported versions of managed Kubernetes, it's important to c
 ### Default storage class
 
 {% hint style="info" %}
+## Note
+
 Default storage class applies for Kubernetes only.
 {% endhint %}
 
@@ -110,6 +118,8 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 ### Kubernetes ingress controller
 
 {% hint style="info" %}
+## Note
+
 Installing ingress controller applies for Kubernetes only.
 {% endhint %}
 
@@ -177,9 +187,9 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
 
 #### Kubernetes
 
-&#x20;You must have a Fully Qualified Domain Name (FQDN) to install Run:ai control plane (ex: `runai.mycorp.local`). This cannot be an IP. The domain name must be accessible inside the organization only. You also need a TLS certificate (private and public) for HTTPS access.
+You must have a Fully Qualified Domain Name (FQDN) to install Run:ai control plane (ex: `runai.mycorp.local`). This cannot be an IP. The domain name must be accessible inside the organization only. You also need a TLS certificate (private and public) for HTTPS access.
 
-#### OpenShift&#x20;
+#### OpenShift
 
 OpenShift must be configured with a trusted certificate. Run:ai installation relies on OpenShift to create certificates for subdomains.
 

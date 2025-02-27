@@ -6,14 +6,12 @@ This article explains the required hardware and software system requirements for
 
 The system requirements needed depends on where the control plane and cluster are installed. The following applies for **Kubernetes only**:
 
-* If you are installing the first cluster and control plane on the same Kubernetes cluster,  [Kubernetes ingress controller](cluster-system-requirements.md#kubernetes-ingress-controller), [Prometheus ](cluster-system-requirements.md#prometheus)and [Fully Qualified Domain Name](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) **are not required**.
+* If you are installing the first cluster and control plane on the same Kubernetes cluster, [Kubernetes ingress controller](cluster-system-requirements.md#kubernetes-ingress-controller), [Prometheus ](cluster-system-requirements.md#prometheus)and [Fully Qualified Domain Name](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) **are not required**.
 * If you are installing the first cluster and control plane on separate Kubernetes clusters, the [Kubernetes ingress controller](cluster-system-requirements.md#kubernetes-ingress-controller), [Prometheus ](cluster-system-requirements.md#prometheus)and [Fully Qualified Domain Name](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) **are required**.
 
 ## Hardware Requirements
 
-The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](broken-reference), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
-
-If Run:ai cluster is planned to be installed on the same cluster as the Run:ai control plane, make sure the control plane requirements are in addition to the Run:ai cluster [hardware requirements](https://app.gitbook.com/s/QtPkBj3GaBS74eJqoraO/saas-installation/installation/system-requirements#hardware-requirements)
+The following hardware requirements are for the Kubernetes Cluster nodes’. By default, all Run:ai cluster services run on all available nodes. For production deployments, you may want to [Set Node Roles](broken-reference/), to separate between system and worker nodes, reduce downtime and save CPU cycles on expensive GPU Machines.
 
 ### Run:ai Cluster - system nodes
 
@@ -36,11 +34,13 @@ The following configuration represents the minimum hardware requirements for ins
 | CPU       | 2 cores           |
 | Memory    | 4GB               |
 
+If Run:ai cluster is planned to be installed on the same cluster as the Run:ai control plane, make sure the control plane [hardware requirements](control-plane-system-requirements.md#hardware-requirements) are in addition to the Run:ai cluster hardware requirements
+
 ### Shared storage
 
 Run:ai workloads must be able to access data from any worker node in a uniform way, to access training data and code as well as save checkpoints, weights, and other machine-learning-related artifacts.
 
-Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](broken-reference).
+Typical protocols are Network File Storage (NFS) or Network-attached storage (NAS). Run:ai Cluster supports both, for more information see [Shared storage](broken-reference/).
 
 ## Software requirements
 
@@ -67,6 +67,8 @@ Run:ai Cluster requires Kubernetes. The following Kubernetes distributions are s
 * Rancher Kubernetes Engine 2 (RKE2)
 
 {% hint style="info" %}
+## Note
+
 The latest release of the Run:ai cluster supports **Kubernetes 1.29 to 1.32** and **OpenShift 4.14 to 4.17**
 {% endhint %}
 
@@ -99,10 +101,6 @@ pod-security.kubernetes.io/warn=privileged
 * The workloads submitted through Run:ai should comply with the restrictions of PSA restricted policy, This can be enforced using Policies.
 
 ### Kubernetes Ingress Controller
-
-{% hint style="info" %}
-Installing ingress controller applies for Kubernetes only.
-{% endhint %}
 
 Run:ai cluster requires [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) to be installed on the Kubernetes cluster.
 
@@ -166,7 +164,7 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
 
 ### NVIDIA GPU Operator
 
-Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6. Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped).&#x20;
+Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6. Information on how to download the GPU Operator for air-gapped installation can be found in the [NVIDIA GPU Operator pre-requisites](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/install-gpu-operator-air-gapped.html#install-gpu-operator-air-gapped).
 
 See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html), followed by notes below:
 
@@ -253,6 +251,8 @@ For troubleshooting information, see the [NVIDIA GPU Operator Troubleshooting Gu
 ### Prometheus
 
 {% hint style="info" %}
+## Note
+
 Installing Prometheus applies for Kubernetes only.
 {% endhint %}
 
@@ -270,8 +270,6 @@ helm install prometheus prometheus-community/kube-prometheus-stack \
     -n monitoring --create-namespace --set grafana.enabled=false
 ```
 
-The Run:ai control plane, when installed without a Run:ai cluster, does not require the Prometheus prerequisites.&#x20;
-
 ## Additional software requirements
 
 Additional Run:ai capabilities, Distributed Training and Inference require additional Kubernetes applications (frameworks) to be installed on the cluster.
@@ -287,7 +285,7 @@ Distributed training enables training of AI models over multiple nodes. This req
 
 There are several ways to install each framework. A simple method of installation example is the [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/installation/) which includes TensorFlow, PyTorch, and XGBoost.
 
-It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](broken-reference) and [Scheduling rules](broken-reference).
+It is recommended to use **Kubeflow Training Operator v1.8.1**, and **MPI Operator v0.6.0 or later** for compatibility with advanced workload capabilities, such as [Stopping a workload](broken-reference/) and [Scheduling rules](broken-reference/).
 
 * To install the Kubeflow Training Operator for TensorFlow, PyTorch and XGBoost frameworks, run the following command:
 
@@ -302,6 +300,8 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/kubeflow/mpi-op
 ```
 
 {% hint style="info" %}
+## Note
+
 If you require both the MPI Operator and Kubeflow Training Operator, follow the steps below:
 
 * Install the Kubeflow Training Operator as described above.
@@ -332,8 +332,6 @@ kubectl patch configmap/config-features \
   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.containerspec-addcapabilities":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
 ```
 
-The Run:ai control plane, when installed without a Run:ai cluster, does not require the Inference prerequisites.
-
 ### Knative Autoscaling
 
 Run:ai allows for autoscaling a deployment according to the below metrics:
@@ -351,6 +349,8 @@ kubectl apply -f https://github.com/knative/serving/releases/download/knative-{V
 ## Fully Qualified Domain Name (FQDN)
 
 {% hint style="info" %}
+## Note
+
 Fully Qualified Domain Name applies for Kubernetes only.
 {% endhint %}
 

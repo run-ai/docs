@@ -6,18 +6,18 @@ title: Self Hosted installation over Kubernetes - Cluster Setup
 
 ## System and network requirements <a href="#system-and-network-requirements" id="system-and-network-requirements"></a>
 
-Before installing the Run:ai cluster, validate that the [system requirements](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/) and [network requirements](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/network-req/) are met.
+Before installing the Run:ai cluster, validate that the [system requirements](cluster-system-requirements.md) and [network requirements ](cluster-network-requirements.md)are met.
 
 Once all the requirements are met, it is highly recommend to use the Run:ai cluster preinstall diagnostics tool to:
 
 * Test the below requirements in addition to failure points related to Kubernetes, NVIDIA, storage, and networking
 * Look at additional components installed and analyze their relevance to a successful installation
 
-For more information, see [preinstall diagnostics](https://github.com/run-ai/preinstall-diagnostics). To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/) the latest version, and run:&#x20;
+For more information, see [preinstall diagnostics](https://github.com/run-ai/preinstall-diagnostics). To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/) the latest version, and run:
 
 {% tabs %}
 {% tab title="Connected" %}
-```
+```bash
 chmod +x ./preinstall-diagnostics-<platform> && \ 
 ./preinstall-diagnostics-<platform> \
   --domain ${CONTROL_PLANE_FQDN} \
@@ -31,7 +31,7 @@ chmod +x ./preinstall-diagnostics-<platform> && \
 {% tab title="Airgapped" %}
 In an air-gapped deployment, the diagnostics image is saved, pushed, and pulled manually from the organization's registry.
 
-```
+```bash
 #Save the image locally
 docker save --output preinstall-diagnostics.tar gcr.io/run-ai-lab/preinstall-diagnostics:${VERSION}
 #Load the image to the organization's registry
@@ -42,7 +42,7 @@ docker push ${CLIENT_IMAGE_AND_TAG}
 
 Run the binary with the `--image` parameter to modify the diagnostics image to be used:
 
-```
+```bash
 chmod +x ./preinstall-diagnostics-darwin-arm64 && \
 ./preinstall-diagnostics-darwin-arm64 \
   --domain ${CONTROL_PLANE_FQDN} \
@@ -57,11 +57,11 @@ chmod +x ./preinstall-diagnostics-darwin-arm64 && \
 
 Run:ai requires [Helm](https://helm.sh/) 3.14 or later. To install Helm, see [Installing Helm](https://helm.sh/docs/intro/install/). If you are installing an air-gapped version of Run:ai, the Run:ai tar file contains the helm binary.
 
-## Permissions[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#permissions) <a href="#permissions" id="permissions"></a>
+## Permissions <a href="#permissions" id="permissions"></a>
 
 A Kubernetes user with the `cluster-admin` role is required to ensure a successful installation, for more information see [Using RBAC authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
-## Run:ai namespace[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#runai-namespace) <a href="#runai-namespace" id="runai-namespace"></a>
+## Run:ai namespace <a href="#runai-namespace" id="runai-namespace"></a>
 
 Run:ai cluster must be installed in a namespace named `runai`. Create the namespace by running:
 
@@ -81,9 +81,9 @@ The last namespace (`runai-scale-adjust`) is only required if the cluster is a c
 
 ## TLS certificates <a href="#tls-certificates" id="tls-certificates"></a>
 
-TBD K8 only and only if installed on separate&#x20;
+TBD K8 only and only if installed on separate
 
-A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#domain-name-requirement) private and public keys, by running the following:
+A TLS private and public keys are required for HTTP access to the cluster. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-cluster-domain-tls-secret` in the `runai` namespace with the cluster’s [Fully Qualified Domain Name (FQDN)](cluster-system-requirements.md#fully-qualified-domain-name-fqdn) private and public keys, by running the following:
 
 ```
 kubectl create secret tls runai-cluster-domain-tls-secret -n runai \    --cert /path/to/fullchain.pem  \ # Replace /path/to/fullchain.pem with the actual path to your TLS certificate    --key /path/to/private.pem # Replace /path/to/private.pem with the actual path to your private key
@@ -91,7 +91,7 @@ kubectl create secret tls runai-cluster-domain-tls-secret -n runai \    --cert /
 
 ## Installation
 
-### Kubernetes&#x20;
+### Kubernetes
 
 <details>
 
@@ -107,10 +107,10 @@ If this is your first cluster and you have completed the New Cluster form, start
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
 4. Optional: Chose the Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL . For more information see [Domain Name Requirement](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#fully-qualified-domain-name-fqdn)
+5. Enter the Cluster URL . For more information, see [Domain Name Requirement](cluster-system-requirements.md#fully-qualified-domain-name-fqdn)
 6. Click **Continue**
 
-#### Installing Run:ai cluster[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster) <a href="#installing-runai-cluster" id="installing-runai-cluster"></a>
+**Installing Run:ai cluster**[**¶**](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster)
 
 In the next Section, the Run:ai cluster installation steps will be presented.
 
@@ -119,7 +119,7 @@ In the next Section, the Run:ai cluster installation steps will be presented.
 
 The cluster is displayed in the table with the status **Waiting to connect**, once installation is complete, the cluster status changes to **Connected**
 
-**Note:** To customize the installation based on your environment, see [Customize cluster installation](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/customize-cluster-install/).
+**Note:** To customize the installation based on your environment, see [Customize cluster installation](../../saas-installation/installation/customized-installation.md).
 
 **Tip:** Use the `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
@@ -139,10 +139,10 @@ If this is your first cluster and you have completed the New Cluster form, start
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
 4. Optional: Chose the Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL . For more information see [Domain Name Requirement](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#fully-qualified-domain-name-fqdn)
+5. Enter the Cluster URL . For more information, see [Domain Name Requirement](cluster-system-requirements.md#fully-qualified-domain-name-fqdn)
 6. Click **Continue**
 
-#### Installing Run:ai cluster[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster) <a href="#installing-runai-cluster" id="installing-runai-cluster"></a>
+**Installing Run:ai cluster**[**¶**](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster)
 
 In the next Section, the Run:ai cluster installation steps will be presented.
 
@@ -168,9 +168,9 @@ In the next Section, the Run:ai cluster installation steps will be presented.
 
 The cluster is displayed in the table with the status **Waiting to connect**, once installation is complete, the cluster status changes to **Connected**
 
-**Note:** To customize the installation based on your environment, see [Customize cluster installation](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/customize-cluster-install/).
+**Note:** To customize the installation based on your environment, see [Customize cluster installation](../../saas-installation/installation/customized-installation.md).
 
-**Tip:** Use the `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details see [Understanding cluster access roles](../../config/access-roles.md). TBD
+**Tip:** Use the `--dry-run` flag to gain an understanding of what is being installed before the actual installation. For more details, see [access roles](../../authentication-and-authorization/accessrules.md).&#x20;
 
 </details>
 
@@ -192,10 +192,10 @@ If this is your first cluster and you have completed the New Cluster form, start
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
 4. Optional: Chose the Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL . For more information see [Domain Name Requirement](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#fully-qualified-domain-name-fqdn)
+5. Enter the Cluster URL . For more information, see [Domain Name Requirement](cluster-system-requirements.md#fully-qualified-domain-name-fqdn)
 6. Click **Continue**
 
-#### Installing Run:ai cluster[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster) <a href="#installing-runai-cluster" id="installing-runai-cluster"></a>
+**Installing Run:ai cluster**[**¶**](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster)
 
 In the next Section, the Run:ai cluster installation steps will be presented.
 
@@ -204,9 +204,9 @@ In the next Section, the Run:ai cluster installation steps will be presented.
 
 The cluster is displayed in the table with the status **Waiting to connect**, once installation is complete, the cluster status changes to **Connected**
 
-**Note:** To customize the installation based on your environment, see [Customize cluster installation](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/customize-cluster-install/).
+**Note:** To customize the installation based on your environment, see [Customize cluster installation](../../saas-installation/installation/customized-installation.md).
 
-**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`. TBD
+**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.&#x20;
 
 </details>
 
@@ -226,10 +226,10 @@ If this is your first cluster and you have completed the New Cluster form, start
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
 4. Optional: Chose the Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL . For more information see [Domain Name Requirement](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#fully-qualified-domain-name-fqdn)
+5. Enter the Cluster URL . For more information, see [Domain Name Requirement](cluster-system-requirements.md#fully-qualified-domain-name-fqdn)
 6. Click **Continue**
 
-#### Installing Run:ai cluster[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster) <a href="#installing-runai-cluster" id="installing-runai-cluster"></a>
+**Installing Run:ai cluster**[**¶**](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installing-runai-cluster)
 
 In the next Section, the Run:ai cluster installation steps will be presented.
 
@@ -239,8 +239,8 @@ In the next Section, the Run:ai cluster installation steps will be presented.
     * Do not add the helm repository and do not run `helm repo update`.
     * Instead, edit the `helm upgrade` command.
       * Replace `runai/runai-cluster` with `runai-cluster-<version>.tgz`.
-      * Add `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](https://docs.run.ai/v2.20/admin/runai-setup/self-hosted/ocp/preparations/#software-artifacts)
-      * Add `--set global.customCA.enabled=true` and perform the instructions for [local certificate authority](https://docs.run.ai/v2.20/admin/config/org-cert/).
+      * Add `--set global.image.registry=<Docker Registry address>` where the registry address is as entered in the [preparation section](https://docs.run.ai/v2.20/admin/runai-setup/self-hosted/ocp/preparations/#software-artifacts) TBD
+      * Add `--set global.customCA.enabled=true` and perform the instructions for [local certificate authority](https://docs.run.ai/latest/admin/config/org-cert/).
 
     The command should look like the following:
 
@@ -257,23 +257,21 @@ In the next Section, the Run:ai cluster installation steps will be presented.
 
 The cluster is displayed in the table with the status **Waiting to connect**, once installation is complete, the cluster status changes to **Connected**
 
-**Note:** To customize the installation based on your environment, see [Customize cluster installation](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/customize-cluster-install/).
+**Note:** To customize the installation based on your environment, see [Customize cluster installation](../../saas-installation/installation/customized-installation.md).
 
-**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.&#x20;
-
-
+**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-cluster`.
 
 </details>
 
 ### (Optional) Customize Installation
 
-To customize specific aspects of the cluster installation, see [customize cluster installation](https://app.gitbook.com/s/QtPkBj3GaBS74eJqoraO/saas-installation/installation/customized-installation).
+To customize specific aspects of the cluster installation, see [customize cluster installation](../../saas-installation/installation/customized-installation.md).
 
-### Troubleshooting[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#troubleshooting) <a href="#troubleshooting" id="troubleshooting"></a>
+### Troubleshooting <a href="#troubleshooting" id="troubleshooting"></a>
 
 If you encounter an issue with the installation, try the troubleshooting scenario below.
 
-#### Installation[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#installation_1) <a href="#installation_1" id="installation_1"></a>
+#### Installation <a href="#installation_1" id="installation_1"></a>
 
 If the Run:ai cluster installation failed, check the installation logs to identify the issue. Run the following script to print the installation logs:
 
@@ -281,7 +279,6 @@ If the Run:ai cluster installation failed, check the installation logs to identi
 curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh
 ```
 
-#### Cluster status[¶](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-install/#cluster-status) <a href="#cluster-status" id="cluster-status"></a>
+#### Cluster status <a href="#cluster-status" id="cluster-status"></a>
 
 If the Run:ai cluster installation completed, but the cluster status did not change its status to Connected, check the cluster [troubleshooting scenarios](https://docs.run.ai/v2.20/admin/troubleshooting/troubleshooting/#cluster-health)
-

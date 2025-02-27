@@ -7,12 +7,14 @@ The following network requirements are for the Run:ai cluster installation and u
 Set out below are the domains to whitelist and ports to open for installation, upgrade, and usage of the application and its management.
 
 {% hint style="info" %}
+## Note
+
 Ensure the inbound and outbound rules are correctly applied to your firewall.
 {% endhint %}
 
 ### Inbound rules
 
-To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](broken-reference), or access specific UI features, certain inbound ports need to be open.
+To allow your organization’s Run:ai users to interact with the cluster using the [Run:ai Command-line interface](../../cli-reference/runai.md), or access specific UI features, certain inbound ports need to be open.
 
 | Name           | Description                     | Source  | Destination   | Port |
 | -------------- | ------------------------------- | ------- | ------------- | ---- |
@@ -29,7 +31,7 @@ For the Run:ai cluster installation and usage, certain **outbound** ports must b
 | Google Container Registry | Run:ai image repository    | All K8S nodes       | gcr.io/run-ai-prod                                   | 443  |
 | JFrog Artifactory         | Run:ai Helm repository     | Helm client machine | runai.jfrog.io                                       | 443  |
 
-The Run:ai installation has [software requirements](broken-reference) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
+The Run:ai installation has [software requirements](cluster-system-requirements.md) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
 
 | Name                       | Description                                | Source        | Destination     | Port |
 | -------------------------- | ------------------------------------------ | ------------- | --------------- | ---- |
@@ -39,7 +41,9 @@ The Run:ai installation has [software requirements](broken-reference) that requi
 | Docker Hub Registry        | Training Operator image repository         | All K8S nodes | docker.io       | 443  |
 
 {% hint style="info" %}
-&#x20;If you are using an HTTP proxy, contact Run:ai support for further instructions
+## Note
+
+If you are using an HTTP proxy, contact Run:ai support for further instructions
 {% endhint %}
 
 ## Internal network

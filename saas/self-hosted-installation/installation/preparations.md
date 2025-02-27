@@ -2,9 +2,9 @@
 title: Self Hosted installation over Kubernetes - preparations
 ---
 
-# Preparations
+# Control plane preparations
 
-The following section provides the information needed to prepare for a Run:ai installation. Before you start, make sure to follow the [system requirements](prerequisites.md).
+The following section provides the information needed to prepare for a Run:ai installation. Before you start, make sure to follow the control plane [system requirements](control-plane-system-requirements.md).
 
 ## Software artifacts
 
@@ -91,7 +91,7 @@ SSH into a node with `oc` access (`oc` is the OpenShift command line) to the clu
 
 To extract Run:ai files, replace `<VERSION>` in the command below and run:
 
-```
+```bash
 tar xvf runai-airgapped-package-<VERSION>.tar.gz
 ```
 
@@ -133,7 +133,7 @@ Create the secret named `runai-reg-creds` based on your existing credentials. Fo
 
 To access the organization's docker registry it is required to set the registry's credentials (imagePullSecret)
 
-Create the secret named `runai-reg-creds` in the `runai-backend` namespace based on your existing credentials. The configuration will be copied over to the `runai` namespace at cluster install. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets).&#x20;
+Create the secret named `runai-reg-creds` in the `runai-backend` namespace based on your existing credentials. The configuration will be copied over to the `runai` namespace at cluster install. For more information, see [Allowing pods to reference images from other secured registries](https://docs.openshift.com/container-platform/latest/openshift_images/managing_images/using-image-pull-secrets.html#images-allow-pods-to-reference-images-from-secure-registries_using-image-pull-secrets).
 
 </details>
 
@@ -141,7 +141,7 @@ Create the secret named `runai-reg-creds` in the `runai-backend` namespace based
 
 ### External Postgres database (optional)
 
-If you have opted to use an [external PostgreSQL database](prerequisites.md#external-postgres-database-optional), you need to perform initial setup to ensure successful installation. Follow these steps:
+If you have opted to use an [external PostgreSQL database](control-plane-system-requirements.md#external-postgres-database-optional), you need to perform initial setup to ensure successful installation. Follow these steps:
 
 1.  Create a SQL script file, edit the parameters below, and save it locally:
 

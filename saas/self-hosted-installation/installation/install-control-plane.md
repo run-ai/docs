@@ -1,6 +1,6 @@
 # Install control plane
 
-Before you start, make sure you have followed the control plane [system requirements ](prerequisites.md)and [preparations](preparations.md).
+Before you start, make sure you have followed the control plane [system requirements](control-plane-system-requirements.md) and [preparations](preparations.md).
 
 ## Helm
 
@@ -8,7 +8,7 @@ Run:ai requires [Helm](https://helm.sh/) 3.14 or later. To install Helm, see [In
 
 ## Permissions
 
-As part of the installation, you will be required to install the [Run:ai Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/). The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts.
+As part of the installation, you will be required to install the Run:ai control plane and cluster [Helm charts](https://helm.sh/). The Helm charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts.
 
 ## Create OpenShift project <a href="#create-openshift-project" id="create-openshift-project"></a>
 
@@ -21,6 +21,8 @@ oc new-project runai-backend
 ## TLS certificates <a href="#tls-certificates" id="tls-certificates"></a>
 
 {% hint style="info" %}
+## Note
+
 TLS certificates apply for Kubernetes only.
 {% endhint %}
 
@@ -39,7 +41,7 @@ kubectl create secret tls runai-backend-tls -n runai-backend \
 
 <summary>Connected</summary>
 
-Run the following command. The `global.domain=<DOMAIN>` should be the one obtained [here](preparations.md#domain-certificate):&#x20;
+Run the following command. The `global.domain=<DOMAIN>` should be the one obtained [here](control-plane-system-requirements.md):
 
 ```bash
 bash helm repo add runai-backend 
@@ -59,7 +61,7 @@ Run the following command. Replace the following:
 
 1. `<VERSION>` with the Run:ai control plane version
 2. Domain name described here
-3. See the Local Certificate Authority instructions below&#x20;
+3. See the Local Certificate Authority instructions below
 4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section
 
 ```bash
@@ -77,7 +79,7 @@ bash helm upgrade -i runai-backend control-plane-<VERSION>.tgz \ # (1)
 
 <summary>Connected</summary>
 
-Run the following command. The `<OPENSHIFT-CLUSTER-DOMAIN>` is subdomain configured for the OpenShift cluster:&#x20;
+Run the following command. The `<OPENSHIFT-CLUSTER-DOMAIN>` is subdomain configured for the OpenShift cluster:
 
 ```bash
 helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
@@ -128,9 +130,7 @@ helm upgrade -i runai-backend  ./control-plane-<version>.tgz -n runai-backend \
 {% endtab %}
 {% endtabs %}
 
-2. Log in using the default credentials:&#x20;
+2. Log in using the default credentials:
    * User: `test@run.ai`
    * Password: `Abcd!234`
-3.  Click the user icon, then select **Settings**
-
-    &#x20;change the password TBD
+3. Click the user icon, then select **Change Password**
