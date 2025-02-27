@@ -160,7 +160,7 @@ Before you start, make sure:
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
 
     !!! Note
-        The above API snippet runs with Run:ai clusters of 2.18 and above only. For older clusters, use the now deprecated [Cluster API](https://docs.run.ai/v2.20/developer/cluster-api/workload-overview-dev/).
+        The above API snippet runs with Run:ai clusters of 2.18 and above only. 
 
 
 ## Step 3: Connecting to the Jupyter Notebook

@@ -47,5 +47,5 @@ Examples of such resources are a *Deployment* that manages a stateless applicati
 
 Run:ai natively runs Run:ai Workloads. A Run:ai workload encapsulates all the resources needed to run, creates them, and deletes them together. However, Run:ai, being an **open platform** allows the scheduling of **any** Kubernetes Workflow.
 
-For more information see [Kubernetes Workloads Integration](../../developer/cluster-api/other-resources.md).
+For more information see [Kubernetes Workloads Integration](../../developer/other-resources/other-resources.md).
 
