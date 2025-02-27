@@ -58,11 +58,11 @@ For air-gapped environments, when [Working with a Local Certificate Authority](.
 workload-controller:
   s3FileSystemImage:
     name: goofys 
-    repository: gcr.io/run-ai-prod
-    tag: master
+    registry: runai.jfrog.io/op-containers-prod
+    tag: 3.12.24
   gitSyncImage:
     name: git-sync
-    repository: registry.k8s.io
+    registry: registry.k8s.io
     tag: v4.4.0
 ```
 
