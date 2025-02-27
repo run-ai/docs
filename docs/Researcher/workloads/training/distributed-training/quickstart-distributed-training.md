@@ -24,7 +24,7 @@ Before you start, make sure:
     runai login --help  
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Log in using the following command. You will be prompted to enter your username and password:
      
     ``` bash
@@ -89,7 +89,7 @@ Before you start, make sure:
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
     
     ``` bash

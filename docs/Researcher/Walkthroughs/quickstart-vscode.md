@@ -33,7 +33,7 @@ To complete this Quickstart __via the CLI__, you will need to have the Run:ai CL
 === "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -69,7 +69,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
     !!! Note
         For more information on the workspace submit command, see [cli documentation](../cli-reference/new-cli/runai_workspace_submit.md).
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Open a terminal and run:
 
     ``` bash
@@ -145,7 +145,7 @@ Run the following:
     runai workspace delete vs1
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     ``` bash
     runai delete job vs1
     ```

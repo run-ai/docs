@@ -37,7 +37,7 @@ As described, the inference client can be created via CLI. To perform this, you 
 === "CLI V2"
     Run `runai login` and enter your credentials.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Run `runai login` and enter your credentials.
 
 === "User Interface"
@@ -68,7 +68,7 @@ Under `Environments` Select __NEW ENVIRONMENT__. Then select:
 === "CLI V2"
     Not available right now.
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Not available right now.
 
 === "User Interface"
@@ -153,7 +153,7 @@ You can use the Run:ai Triton demo client to send requests to the server
     -- perf_analyzer -m inception_graphdef -p 3600000 -u <INFERENCE-ENDPOINT>    
     ```
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Open a terminal and run:
 
     ``` bash
@@ -186,7 +186,7 @@ Run the following:
 === "CLI V2"
     Not available right now
 
-=== "CLI V1 [Deprecated]"
+=== "CLI V1 (Deprecated)"
     Not available right now
 
 === "User Interface"
