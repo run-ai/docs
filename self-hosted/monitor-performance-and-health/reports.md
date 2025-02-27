@@ -16,7 +16,7 @@ The Reports table provides a list of all the reports defined in the platform and
 
 Users are able to access the reports they have generated themselves. Users with project viewing permissions throughout the tenant can access all reports within the tenant.
 
-![](../review-your-performance/img/reports-table.png)
+![](broken-reference)
 
 The Reports table comprises the following columns:
 
@@ -60,8 +60,8 @@ To create a new report:
 4. Set the report’s data collection period
    * Start date - The date at which the report data commenced
    * End date - The date at which the report data concluded
-5. Set the report segmentation and filters&#x20;
-   * &#x20;Filters - Filter by project or department name&#x20;
+5. Set the report segmentation and filters
+   * Filters - Filter by project or department name
    * Segment by - Data is collected and aggregated based on the segment
 6. Click **CREATE REPORT**
 

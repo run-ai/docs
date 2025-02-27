@@ -13,7 +13,7 @@ Before you start, make sure:
 
 ## Step 1: Logging in
 
-{% include "../../.gitbook/includes/step-1-logging-in.md" %}
+{% include "../../../saas/.gitbook/includes/step-1-logging-in.md" %}
 
 ## Step 2: Submitting a workspace
 
@@ -150,4 +150,4 @@ To connect to the Jupyter Notebook, browse directly to <mark style="color:blue;"
 
 ## Next Steps
 
-Manage and monitor your newly created workspace using the [workloads table](../workloads-in-runai/workloads.md).
+Manage and monitor your newly created workspace using the [workloads table](../../../saas/experiment-using-workspaces/workloads-in-runai/workloads.md).

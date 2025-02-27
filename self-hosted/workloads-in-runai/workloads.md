@@ -8,7 +8,7 @@ The Workloads table can be found under **Workload manager** in the Run:ai platfo
 
 The workloads table provides a list of all the workloads scheduled on the run:ai [Scheduler](../scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md), and allows you to manage them.
 
-![](img/workload-table.png)
+![](../../saas/workloads-in-runai/img/workload-table.png)
 
 The Workloads table consists of the following columns:
 

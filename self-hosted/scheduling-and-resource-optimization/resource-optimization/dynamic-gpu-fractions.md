@@ -13,9 +13,9 @@ With dynamic GPU fractions, users can [submit workloads](../../workloads-in-runa
 
 When setting a GPU memory limit either as GPU fraction or GPU memory size, the Limit must be equal to or greater than the GPU fractional memory request. Both GPU fraction and GPU memory are translated into the actual requested memory size of the Request (guaranteed resources) and the Limit (burstable resources - non guaranteed).
 
-For example, a user can specify a workload with a GPU fraction request of 0.25 GPU, and add a limit of up to 0.80 GPU. The Run:ai [Scheduler](../scheduling/scheduling-and-resource-optimization/how-the-scheduler-works.md) schedules the workload to a node that can provide the GPU fraction request (0.25), and then assigns the workload to a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory (based on the Limit), where only 0.25 of the GPU memory is guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as it is not needed by other workloads.
+For example, a user can specify a workload with a GPU fraction request of 0.25 GPU, and add a limit of up to 0.80 GPU. The Run:ai [Scheduler](../../../saas/scheduling-and-resource-optimization/scheduling/scheduling-and-resource-optimization/how-the-scheduler-works.md) schedules the workload to a node that can provide the GPU fraction request (0.25), and then assigns the workload to a GPU. The GPU scheduler monitors the workload and allows it to occupy memory between 0 to 0.80 of the GPU memory (based on the Limit), where only 0.25 of the GPU memory is guaranteed to that workload. The rest of the memory (from 0.25 to 0.8) is “loaned” to the workload, as long as it is not needed by other workloads.
 
-Run:ai automatically manages the state changes between Request and Limit as well as the reverse (when the balance needs to be "returned"), updating the the workloads’ utilization vs. Request and Limit parameters in the [metrics pane for each workload](workloads-in-runai/workloads.md\)).
+Run:ai automatically manages the state changes between Request and Limit as well as the reverse (when the balance needs to be "returned"), updating the the workloads’ utilization vs. Request and Limit parameters in the [metrics pane for each workload](../../../saas/scheduling-and-resource-optimization/resource-optimization/workloads-in-runai/workloads.md\)).
 
 To guarantee fair quality of service between different workloads using the same GPU, Run:ai developed an extendable GPUOOMKiller (Out Of Memory Killer) component that guarantees the quality of service using Kubernetes semantics for resources of Request and Limit.
 
@@ -42,9 +42,9 @@ Using the [compute resources](../../workloads-in-runai/workload-assets/compute-r
 * **Single dynamic GPU fractions** - Define the compute requirement to run 1 GPU device, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB) with a Limit. The limit must be equal to or greater than the GPU fractional memory request.
 * **Multi-GPU dynamic fractions** - Define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB) with a Limit. The limit must be equal to or greater than the GPU fractional memory request.
 
-![](../img/dynamic-fraction-example1.png)
+![](../../../saas/scheduling-and-resource-optimization/img/dynamic-fraction-example1.png)
 
-![](../img/dynamic-fraction-example2.png)
+![](../../../saas/scheduling-and-resource-optimization/img/dynamic-fraction-example2.png)
 
 {% hint style="info" %}
 When setting a workload with dynamic GPU fractions, (for example, when using it with GPU Request or GPU memory Limits), you practically make the workload burstable. This means it can use memory that is not guaranteed for that workload and is susceptible to an ‘OOM Kill’ signal if the actual owner of that memory requires it back. This applies to non-preemptive workloads as well. For that reason, its recommended that you use dynamic GPU fractions with Interactive workloads running Notebooks. Notebook pods are not evicted when their GPU process is OOM Kill’ed. This behavior is the same as standard Kubernetes burstable CPU workloads.

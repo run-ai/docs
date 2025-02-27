@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme, allowing users to log in with a single pair of credentials to multiple, independent software systems.
 
-This article explains the procedure to [configure SSO to Run:ai](../authentication-and-authorization.md#single-sign-on-sso) using the SAML 2.0 protocol.
+This article explains the procedure to [configure SSO to Run:ai](../../../saas/authentication-and-authorization/authentication-and-authorization.md#single-sign-on-sso) using the SAML 2.0 protocol.
 
 ## Prerequisites
 
@@ -66,7 +66,6 @@ You can remove the identity provider configuration:
 {% hint style="info" %}
 To avoid losing access, removing the identity provider must be carried out by a local user.
 {% endhint %}
-
 
 ## Downloading the XML metadata file
 

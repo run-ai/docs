@@ -22,7 +22,7 @@ The Node pools table lists all the node pools defined in the Run:ai platform and
 By default, the Run:ai platform includes a single node pool named ‘default’. When no other node pool is defined, all existing and new nodes are associated with the ‘default’ node pool. When deleting a node pool, if no other node pool matches any of the nodes’ labels, the node will be included in the default node pool.
 {% endhint %}
 
-![](img/node-pools-view.png)
+![](../../../saas/manage-ai-initiatives/managing-your-resources/img/node-pools-view.png)
 
 The Node pools table consists of the following columns:
 

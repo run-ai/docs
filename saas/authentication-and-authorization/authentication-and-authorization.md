@@ -2,7 +2,7 @@
 
 Run:ai authentication and authorization enables a streamlined experience for the user with precise controls covering the data each user can see and the actions each user can perform in the Run:ai platform.
 
-Authentication verifies user identity during login, and authorization assigns the user with specific permissions according to the assigned [access rules](accessrules.md).
+Authentication verifies user identity during login, and authorization assigns the user with specific permissions according to the assigned [access rules](../../self-hosted/authentication-and-authorization/accessrules.md).
 
 Authenticated access is required to use all aspects of the Run:ai interfaces, including the Run:ai platform, the Run:ai Command Line Interface (CLI) and APIs.
 
@@ -12,15 +12,15 @@ There are multiple methods to authenticate and access Run:ai.
 
 ### Single Sign-On (SSO)
 
-Single Sign-On (SSO) is the preferred authentication method by large organizations, as it avoids the need to manage duplicate sets of user identities.
+{% include "../../self-hosted/.gitbook/includes/single-sign-on-sso-is-the....md" %}
 
-Run:ai offers SSO integration, enabling users to utilize existing organizational credentials to access Run:ai without requiring dedicated credentials.
+{% include "../../self-hosted/.gitbook/includes/run-ai-offers-sso-integrati....md" %}
 
 Run:ai supports three methods to set up SSO:
 
-* [SAML](sso/saml.md)
-* [OpenID Connect (OIDC)](sso/openidconnect.md)
-* [OpenShift](sso/openshift.md)
+* [SAML](../../self-hosted/authentication-and-authorization/sso/saml.md)
+* [OpenID Connect (OIDC)](../../self-hosted/authentication-and-authorization/sso/openidconnect.md)
+* [OpenShift](../../self-hosted/authentication-and-authorization/sso/openshift.md)
 
 When using SSO, it is highly recommended to manage at least one local user, as a breakglass account (an emergency account), in case access to SSO is not possible.
 
@@ -30,7 +30,7 @@ Username and password access can be used when SSO integration is not possible.
 
 ### Secret key (for Application programmatic access)
 
-Secret is the authentication method for [Applications](applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access rules](accessrules.md).
+Secret is the authentication method for [Applications](../../self-hosted/authentication-and-authorization/applications.md). Applications use the Run:ai APIs to perform automated tasks including scripts and pipelines based on their assigned [access rules](../../self-hosted/authentication-and-authorization/accessrules.md).
 
 ## Authorization
 
@@ -44,7 +44,7 @@ While Kubernetes RBAC is limited to a single cluster, Run:ai expands the scope o
 
 RBAC at Run:ai is configured using access rules.
 
-An access rule is the assignment of a [role](roles.md) to a subject in a [scope](broken-reference): `<Subject>` is a `<Role>` in a `<Scope>`.
+An access rule is the assignment of a [role](../../self-hosted/authentication-and-authorization/roles.md) to a subject in a [scope](broken-reference/): `<Subject>` is a `<Role>` in a `<Scope>`.
 
 * **Subject**
   * A user, a group, or an application assigned with the role

@@ -1,141 +1,136 @@
+# Install control plane
 
-# Install the Run:ai Control Plane
+Before you start, make sure you have followed the control plane [system requirements ](prerequisites.md)and [preparations](preparations.md).
 
-## Prerequisites and preparations
+## Helm
 
-Make sure you have followed the Control Plane [prerequisites](./prerequisites.md) and [preparations](./preparations.md).
+Run:ai requires [Helm](https://helm.sh/) 3.14 or later. To install Helm, see [Installing Helm](https://helm.sh/docs/intro/install/). If you are installing an air-gapped version of Run:ai, the Run:ai tar file contains the helm binary.
 
-## Helm install
+## Permissions
 
-Run the helm command below:
+As part of the installation, you will be required to install the [Run:ai Control Plane](backend.md) and [Cluster](cluster.md) Helm [Charts](https://helm.sh/). The Helm Charts require Kubernetes administrator permissions. You can review the exact permissions provided by using the `--dry-run` on both helm charts.
 
-=== "Connected"
-    ``` bash
-    helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
-    helm repo update
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.21.0" \
-        --set global.domain=<DOMAIN>  # (1)
-    ```
+## Create OpenShift project <a href="#create-openshift-project" id="create-openshift-project"></a>
 
-    1. Domain name described [here](preparations.md#domain-certificate). 
+The Run:ai control plane uses a namespace (or _project_ in OpenShift terminology) name `runai-backend`. You must create it before installing:
 
-    !!! Info
-        To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
+```bash
+oc new-project runai-backend
+```
 
-=== "Airgapped"
-    ``` bash
-    helm upgrade -i runai-backend control-plane-<VERSION>.tgz  \ # (1)
-        --set global.domain=<DOMAIN>  \ # (2)
-        --set global.customCA.enabled=true \  # (3)
-        -n runai-backend -f custom-env.yaml  # (4)
-    ```
+## TLS certificates <a href="#tls-certificates" id="tls-certificates"></a>
 
-    1. Replace `<VERSION>` with the Run:ai control plane version.
-    2. Domain name described [here](preparations.md#domain-certificate). 
-    3. See the Local Certificate Authority instructions below
-    4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section. 
+{% hint style="info" %}
+TLS certificates apply for Kubernetes only.
+{% endhint %}
 
-!!! Tip
-    Use the  `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
+A TLS private and public keys are required for HTTP access. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-backend-tls` in the `runai-backend` namespace with the [Fully Qualified Domain Name (FQDN)](https://docs.run.ai/v2.20/admin/runai-setup/cluster-setup/cluster-prerequisites/#domain-name-requirement) private key and cert, by running the following:
 
+```bash
+kubectl create secret tls runai-backend-tls -n runai-backend \
+    --cert /path/to/fullchain.pem --key /path/to/private.pem
+```
 
-## Additional Run:ai configurations (optional)
+## Installation
 
-There may be cases where you need to set additional properties,
-To apply the changes run `helm upgrade` and use `--set` to set specific configurations, and restart the relevant Run:ai pods so they can fetch the new configurations.
+### Kubernetes
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `global.ingress.ingressClass` |  Ingress class  |  Run:ai default is using NGINX. If your cluster has a different ingress controller, you can configure the ingress class to be created by Run:ai |
-| `global.ingress.tlsSecretName`  | TLS secret name  | Run:ai requires the creation of a secret with [domain certificate](./preparations.md#domain-certificate). If the `runai-backend` namespace already had such a secret, you can set the secret name here  |
-| `<component>` <br> &ensp;`resources:` <br> &emsp; `limits:` <br> &emsp; &ensp; `cpu: 500m` <br> &emsp; &ensp; `memory: 512Mi` <br> &emsp; `requests:` <br> &emsp; &ensp; `cpu: 250m` <br> &emsp; &ensp; `memory: 256Mi`  | Pod request and limits  |  Set Run:ai and 3rd party services' resources  |
-| `disableIstioSidecarInjection.enabled` | Disable Istio sidecar injection | Disable the automatic injection of Istio sidecars across the entire Run:ai Control Plane services. | 
-| `global.affinity` | System nodes | Sets the system nodes where the Run:ai control plane services are scheduled. |
+<details>
 
-## Additional 3rd party configurations (optional)
+<summary>Connected</summary>
 
-The Run:ai Control Plane chart, includes multiple sub-charts of 3rd party components:
+Run the following command. The `global.domain=<DOMAIN>` should be the one obtained [here](preparations.md#domain-certificate):&#x20;
 
-* [PostgreSQL](https://artifacthub.io/packages/helm/bitnami/postgresql){target=_blank} - Data store
-* [Thanos](https://artifacthub.io/packages/helm/bitnami/thanos
-){target=_blank} - Metrics Store
-* [Keycloakx](https://artifacthub.io/packages/helm/codecentric/keycloakx){target=_blank} - Identity & Access Management
-* [Grafana](https://artifacthub.io/packages/helm/grafana/grafana){target=_blank} - Analytics Dashboard
-* [Redis](https://artifacthub.io/packages/helm/bitnami/redis){target=_blank} - Caching (Disabled, by default)
+```bash
+bash helm repo add runai-backend 
+https://runai.jfrog.io/artifactory/cp-charts-prod helm repo update 
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" \ --set global.domain=<DOMAIN>
+```
 
-!!! Tip
-    Click on any component, to view it's chart values and configurations
+**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
 
-If you have opted to connect to an [external PostgreSQL database](preparations.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+</details>
 
-1. Disable PostgreSQL deployment - `postgresql.enabled`
-2. Run:ai connection details - `global.postgresql.auth`
-3. Grafana connection details - `grafana.dbUser`, `grafana.dbPassword`
+<details>
 
-### PostgreSQL
+<summary>Airgapped</summary>
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `postgresql.enabled`| PostgreSQL installation | If set to `false` the PostgreSQL will not be installed |
-| `global.postgresql.auth.host`  | PostgreSQL host | Hostname or IP address of the PostgreSQL server  |
-| `global.postgresql.auth.port`  | PostgreSQL port | Port number on which PostgreSQL is running  |
-| `global.postgresql.auth.username`  | PostgreSQL username | Username for connecting to PostgreSQL  |
-| `global.postgresql.auth.password`  | PostgreSQL password | Password for the PostgreSQL user specified by `global.postgresql.auth.username`  |
-| `global.postgresql.auth.postgresPassword`  | PostgreSQL default admin password | Password for the built-in PostgreSQL superuser (`postgres`)  |
-| `global.postgresql.auth.existingSecret`  | Postgres Credentials (secret) | Existing secret name with authentication credentials   |
-| `global.postgresql.auth.dbSslMode`  | Postgres connection SSL mode | Set the SSL mode, see list in [Protection Provided in Different Modes](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-PROTECTION), `prefer` mode is not supported    |
-| `postgresql.primary.initdb.password`  |  PostgreSQL default admin password    | Set the same password as in `global.postgresql.auth.postgresPassword` (if changed) |
-| `postgresql.primary.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |
+Run the following command. Replace the following:
 
-### Thanos
+1. `<VERSION>` with the Run:ai control plane version
+2. Domain name described here
+3. See the Local Certificate Authority instructions below&#x20;
+4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `thanos.receive.persistence.storageClass` | Storage class | The installation to work with a specific storage class rather than the default one |
+```bash
+bash helm upgrade -i runai-backend control-plane-<VERSION>.tgz \ # (1) 
+--set global.domain=<DOMAIN> \ # (2) --set global.customCA.enabled=true \ # (3) -n runai-backend -f custom-env.yaml # (4)
+```
 
-### Keycloakx
+**Tip:** Use the `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `keycloakx.adminUser` | User name of the internal identity provider administrator | This user is the administrator of Keycloak |
-| `keycloakx.adminPassword` | Password of the internal identity provider administrator | This password is for the administrator of Keycloak |
-| `keycloakx.existingSecret`  | Keycloakx Credentials (secret) | Existing secret name with authentication credentials   |
-| `global.keycloakx.host` |  KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access Keycloak from outside the Run:ai Control Plane cluster via ingress |
+</details>
 
-The `keycloakx.adminUser` can only be set during the initial installation. The admin password, however, can also be changed later through the Keycloak UI, but you must also update the `keycloakx.adminPassword` value in the Helm chart using helm upgrade. Failing to update the Helm values after changing the password can lead to control plane services encountering errors.
+### OpenShift
 
-### Grafana
+<details>
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `grafana.db.existingSecret`  | Grafana database connection credentials (secret) | Existing secret name with authentication credentials   |
-| `grafana.dbUser`  | Grafana database username  | Username for accessing the Grafana database |
-| `grafana.dbPassword`  | Grafana database password | Password for the Grafana database user |
-| `grafana.admin.existingSecret`  | Grafana admin default credentials (secret) | Existing secret name with authentication credentials   |
-| `grafana.adminUser`  | Grafana username  |   Override the Run:ai default user name for accessing Grafana |
-| `grafana.adminPassword`  | Grafana password  |   Override the Run:ai default password for accessing Grafana |
+<summary>Connected</summary>
 
-### Redis
+Run the following command. The `<OPENSHIFT-CLUSTER-DOMAIN>` is subdomain configured for the OpenShift cluster:&#x20;
 
-|  Key     | Change   | Description |
-|----------|----------|-------------|
-| `redisCache.auth.password` | Redis (Runai internal cache mechanism) applicative password | Override the default password |
-| `redisCache.auth.existingSecret`  | Redis credentials (secret) | Existing secret name with authentication credentials   |
+```bash
+helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
+helm repo update
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" \
+    --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ 
+    --set global.config.kubernetesDistribution=openshift
+```
 
-## Next Steps
+**Note:** To install a specific version, add `--version <version>` to the install command. You can find available versions by running `helm search repo -l runai-backend`.
 
-### Connect to Run:ai User interface
+**Tip:** Use the `--dry-run` flag to gain an understanding of what is being installed before the actual installation.
 
-Go to: `runai.<domain>`. Log in using the default credentials: User: `test@run.ai`, Password: `Abcd!234`. Go to the Users area and change the password.
+</details>
 
-### Enable Forgot Password (optional)
+<details>
 
-To support the *Forgot password* functionality, follow the steps below.
+<summary>Airgapped</summary>
 
-* Go to `runai.<domain>/auth` and Log in.
-* Under `Realm settings`, select the `Login` tab and enable the `Forgot password` feature.
-* Under the `Email` tab, define an SMTP server, as explained [here](https://www.keycloak.org/docs/latest/server_admin/#_email){target=_blank}
+Run the following command. Replace the following:
 
-### Install Run:ai Cluster
+1. `<VERSION>` with the Run:ai control plane version
+2. The domain configured for the OpenShift cluster. To find out the OpenShift cluster domain, run `oc get routes -A`
+3. See the Local Certificate Authority instructions below
+4. `custom-env.yaml` should have been created by the _prepare installation_ script in the previous section
 
-Continue with installing a [Run:ai Cluster](cluster.md).
+```bash
+helm upgrade -i runai-backend  ./control-plane-<version>.tgz -n runai-backend \
+    --set global.domain=runai.apps.<OPENSHIFT-CLUSTER-DOMAIN> \ 
+    --set global.config.kubernetesDistribution=openshift \
+    --set global.customCA.enabled=true \ 
+    -f custom-env.yaml 
+```
+
+</details>
+
+## Connect to Run:ai user interface
+
+1. Open your browser and go to:
+
+{% tabs %}
+{% tab title="Kubernetes" %}
+`https://<domain>`
+{% endtab %}
+
+{% tab title="OpenShift" %}
+`https://runai.apps.<OpenShift domain>`
+{% endtab %}
+{% endtabs %}
+
+2. Log in using the default credentials:&#x20;
+   * User: `test@run.ai`
+   * Password: `Abcd!234`
+3.  Click the user icon, then select **Settings**
+
+    &#x20;change the password TBD

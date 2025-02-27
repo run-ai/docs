@@ -26,7 +26,7 @@ The following configurations allow you to enable or disable features, control pe
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | spec.project-controller.createNamespaces _(boolean)_                  | <p>Allows Kubernetes namespace creation for new projects<br>Default: <code>true</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | spec.mps-server.enabled _(boolean)_                                   | <p>Enabled when using <a href="https://docs.nvidia.com/deploy/mps/index.html">NVIDIA MPS</a><br>Default: <code>false</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| spec.global.subdomainSupport _(boolean)_                              | <p>Allows the creation of subdomains for ingress endpoints, enabling access to workloads via unique subdomains on the <a href="../cluster-installation/system-requirements.md#fully-qualified-domain-name-fqdn">Fully Qualified Domain Name (FQDN)</a>. For details, see <a href="https://docs.run.ai/latest/admin/config/allow-external-access-to-containers/">External Access to Container</a><br>Default: <code>false</code></p>                                                                                                                                                     |
+| spec.global.subdomainSupport _(boolean)_                              | <p>Allows the creation of subdomains for ingress endpoints, enabling access to workloads via unique subdomains on the <a href="../../saas/cluster-installation/system-requirements.md#fully-qualified-domain-name-fqdn">Fully Qualified Domain Name (FQDN)</a>. For details, see <a href="https://docs.run.ai/latest/admin/config/allow-external-access-to-containers/">External Access to Container</a><br>Default: <code>false</code></p>                                                                                                                                             |
 | spec.global.nodeAffinity.restrictScheduling _(boolean)_               | <p>Enables setting <a href="node-roles.md">node roles</a> and restricting workload scheduling to designated nodes<br>Default: <code>false</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | spec.global.affinity _(object)_                                       | <p>Sets the system nodes where Run:ai system-level services are scheduled. Using global.affinity will overwrite the <a href="node-roles.md">node roles</a> set using the Administrator CLI (runai-adm).<br>Default: Prefer to schedule on nodes that are labeled with <a href="http://node-role.kubernetes.io/runai-system">node-role.kubernetes.io/runai-system</a></p>                                                                                                                                                                                                                |
 | spec.global.tolerations _(object)_                                    | Configure Kubernetes tolerations for Run:ai system-level services                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -61,7 +61,7 @@ Run:ai cluster includes many different services. To simplify resource management
 | ------------------ | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | SchedulingServices | Containers associated with the Run:ai Scheduler                                                    | Scheduler, StatusUpdater, MetricsExporter, PodGrouper, PodGroupAssigner, Binder |
 | SyncServices       | Containers associated with syncing updates between the Run:ai cluster and the Run:ai control plane | Agent, ClusterSync, AssetsSync                                                  |
-| WorkloadServices   | Containers associated with submitting Run:ai workloads                                             | <p>WorkloadController, </p><p>JobController</p>                                 |
+| WorkloadServices   | Containers associated with submitting Run:ai workloads                                             | <p>WorkloadController,</p><p>JobController</p>                                  |
 
 Apply the following configuration in order to change resources request and limit for a group of services:
 
@@ -106,16 +106,16 @@ spec:
     replicaCount: 1 # default
 ```
 
-&#x20;This can be overwritten for specific services (if supported). Services without the `replicas` configuration does not support replicas:
+This can be overwritten for specific services (if supported). Services without the `replicas` configuration does not support replicas:
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>spec:
 </strong>  &#x3C;service-name>: # for example: pod-grouper
     replicas: 1 # default
 </code></pre>
 
-### Prometheus&#x20;
+### Prometheus
 
-The Prometheus instance in Run:ai is used for metrics collection and alerting.&#x20;
+The Prometheus instance in Run:ai is used for metrics collection and alerting.
 
 The configuration scheme follows the official [PrometheusSpec](https://prometheus-operator.dev/docs/api-reference/api/#monitoring.coreos.com/v1.PrometheusSpec) and supports additional custom configurations. The PrometheusSpec schema is available using the `spec.prometheus.spec` configuration.
 
@@ -132,7 +132,7 @@ spec:
 In addition to the PrometheusSpec schema, some custom Run:ai configurations are also available:
 
 * Additional labels – Set additional labels for Run:ai's [built-in alerts](../infrastructure-procedures/runai-system-monitoring.md#built-in-alerts) sent by Prometheus.
-* Log level configuration – Configure the `logLevel` setting for the Prometheus container.&#x20;
+* Log level configuration – Configure the `logLevel` setting for the Prometheus container.
 
 ```yaml
 spec:  

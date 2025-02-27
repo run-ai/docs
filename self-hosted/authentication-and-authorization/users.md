@@ -11,14 +11,14 @@ For example, user **user@domain.com** is a **department admin** in **department 
 The Users table can be found under **Access** in the Run:ai platform.
 
 The users table provides a list of all the users in the platform.\
-You can manage local users and manage user permissions (access rules) for both local and [SSO users](authentication-and-authorization.md#single-sign-on-sso).
+You can manage local users and manage user permissions (access rules) for both local and [SSO users](../../saas/authentication-and-authorization/authentication-and-authorization.md#single-sign-on-sso).
 
 {% hint style="info" %}
 **Single Sign-On users**\
 SSO users are managed by the identity provider and appear once they have signed in to Run:ai.
 {% endhint %}
 
-![](img/userstable.png)
+![](../../saas/authentication-and-authorization/img/userstable.png)
 
 The Users table consists of the following columns:
 

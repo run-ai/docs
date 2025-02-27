@@ -2,7 +2,7 @@
 
 Single Sign-On (SSO) is an authentication scheme, allowing users to log-in with a single pair of credentials to multiple, independent software systems.
 
-This article explains the procedure to [configure single sign-on](../authentication-and-authorization.md#single-sign-on-sso) to Run:ai using the OpenID Connect protocol in OpenShift V4.
+This article explains the procedure to [configure single sign-on](../../../saas/authentication-and-authorization/authentication-and-authorization.md#single-sign-on-sso) to Run:ai using the OpenID Connect protocol in OpenShift V4.
 
 ## Prerequisites
 
@@ -115,7 +115,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** User authentication failed
 
-![](img/openshift-identityerror.png)
+<img src="../../../saas/authentication-and-authorization/sso/img/openshift-identityerror.png" alt="" data-size="original">
 
 **Mitigation**: Validate the the configured OIDC Scopes exist and match the Identity Provider’s available scopes
 
@@ -129,8 +129,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** User authentication failed
 
-![](img/openid-unexpected.png)
-
+<img src="../../../saas/authentication-and-authorization/sso/img/openid-unexpected.png" alt="" data-size="original">
 
 **Mitigation**:
 
@@ -147,8 +146,7 @@ If testing the setup was unsuccessful, try the different troubleshooting scenari
 
 **Description:** OIDC Client ID was not found in the OpenShift IDP
 
-![](img/unauthorized-client.png)
-
+<img src="../../../saas/authentication-and-authorization/sso/img/unauthorized-client.png" alt="" data-size="original">
 
 **Mitigation**: Validate the the configured Client ID matches the value in the OAuthclient Kubernetes object
 

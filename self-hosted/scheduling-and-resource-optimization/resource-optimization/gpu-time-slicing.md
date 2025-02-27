@@ -29,11 +29,11 @@ gpu-compute-limit = 1.0
 
 The figure below illustrates how **Strict** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Strict time-slicing mode](../img/strict-time-slicing-mode.png)
+![Strict time-slicing mode](../../../saas/scheduling-and-resource-optimization/img/strict-time-slicing-mode.png)
 
 The figure below illustrates how **Fair** time-slicing mode uses the GPU from Lease (slice) and Plan (cycle) perspective:
 
-![Fair time-slicing mode](../img/fair-time-slicing-mode.png)
+![Fair time-slicing mode](../../../saas/scheduling-and-resource-optimization/img/fair-time-slicing-mode.png)
 
 ## Time-slicing plan and lease times
 

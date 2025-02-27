@@ -13,7 +13,7 @@ Users can consume the data based on their permissions:
 ### **API**
 
 * **Metrics API**: Access over-time detailed analytics data programmatically.
-* **Telemetry API:** Access current analytics data programmatically.&#x20;
+* **Telemetry API:** Access current analytics data programmatically.
 
 Refer to [metrics and telemetry](metrics-api.md) to see the full list of supported metrics and telemetry APIs.
 
@@ -21,11 +21,9 @@ Refer to [metrics and telemetry](metrics-api.md) to see the full list of support
 
 Use the `list` an `describe` commands to fetch and manage the data. See [CLI reference](../cli-reference/runai.md) for more details.
 
-<figure><img src="../.gitbook/assets/2025-02-10_16-33-31.png" alt=""><figcaption><p>Describe a specific workload telemetry</p></figcaption></figure>
+<figure><img src="../../saas/.gitbook/assets/2025-02-10_16-33-31.png" alt=""><figcaption><p>Describe a specific workload telemetry</p></figcaption></figure>
 
-
-
-<figure><img src="../.gitbook/assets/2025-02-10_16-33-12.png" alt=""><figcaption><p>List projects and view their telemetry and metrics</p></figcaption></figure>
+<figure><img src="../../saas/.gitbook/assets/2025-02-10_16-33-12.png" alt=""><figcaption><p>List projects and view their telemetry and metrics</p></figcaption></figure>
 
 ### **UI Views**
 

@@ -8,12 +8,12 @@ A training workload contains the setup and configuration needed for building you
 
 Before you start, make sure:
 
-* You have created a [project](../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
+* You have created a [project](../../../../saas/train-models-using-training/manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 1 GPU.
 
 ## Step 1: Logging in
 
-{% include "../../../.gitbook/includes/step-1-logging-in.md" %}
+{% include "../../../../saas/.gitbook/includes/step-1-logging-in.md" %}
 
 ## Step 2: Submitting a standard training workload
 
@@ -100,5 +100,5 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 
 ## Next Steps
 
-* Manage and monitor your newly created workload using the [workloads table](../../workloads-in-runai/workloads.md).
-* After validating your training performance and results, deploy your model using [inference](../../inference/custom-inference.md).
+* Manage and monitor your newly created workload using the [workloads table](../../../../saas/train-models-using-training/workloads-in-runai/workloads.md).
+* After validating your training performance and results, deploy your model using [inference](../../../../saas/train-models-using-training/inference/custom-inference.md).

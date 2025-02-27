@@ -19,7 +19,7 @@ Utilizing GPU fractions to share GPU resources among multiple workloads provides
 
 ## Quota planning with GPU fractions
 
-When planning the quota distribution for your [projects](../../manage-ai-initiatives/managing-your-organization/projects.md) and [departments](../manage-ai-initiatives/managing-your-organization/departments.md), using fractions gives the platform administrator the ability to allocate more precise quota per project and department, assuming the usage of GPU fractions or enforcing it with [pre-defined policies](../../policies/policy-yaml-reference.md) or [compute resource](../../workloads-in-runai/workload-assets/compute-resources.md) templates.
+When planning the quota distribution for your [projects](../../manage-ai-initiatives/managing-your-organization/projects.md) and [departments](../../../saas/scheduling-and-resource-optimization/manage-ai-initiatives/managing-your-organization/departments.md), using fractions gives the platform administrator the ability to allocate more precise quota per project and department, assuming the usage of GPU fractions or enforcing it with [pre-defined policies](../../policies/policy-yaml-reference.md) or [compute resource](../../workloads-in-runai/workload-assets/compute-resources.md) templates.
 
 For example, in an organization with a department budgeted for **two nodes of 8×H100 GPUs** and a team of 32 researchers:
 
@@ -64,9 +64,9 @@ Using the [compute resources](../../workloads-in-runai/workload-assets/compute-r
 * **Single-GPU fractions** - Define the compute requirement to run 1 GPU device, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB).
 * **Multi-GPU fractions** - Define the compute requirement to run multiple GPU devices, by specifying either a fraction (percentage) of the overall memory or specifying the memory request (GB, MB).
 
-![](../img/fractions-example1.png)
+![](../../../saas/scheduling-and-resource-optimization/img/fractions-example1.png)
 
-![](../img/fractions-example2.png)
+![](../../../saas/scheduling-and-resource-optimization/img/fractions-example2.png)
 
 ## Using CLI
 

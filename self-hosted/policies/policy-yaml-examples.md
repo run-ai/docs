@@ -64,170 +64,189 @@ compute:
 
 ### Policy YAML best practices
 
-| General policy goals                                 | Best practices description                                                                               | Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Create a policy that has multiple defaults and rules | Presentation of the syntax while adding a set of defaults and rules                                      | <pre class="language-yaml"><code class="lang-yaml">defaults:
-  createHomeDir: true
-  environmentVariables:
-    instances:
-      - name: MY_ENV
-        value: my_value
-  security:
-    allowPrivilegeEscalation: false
-
-rules:
-  storage:
-    s3:
-      attributes:
-        url:
-          options:
-            - value: https://www.google.com
-              displayed: https://www.google.com
-            - value: https://www.yahoo.com
-              displayed: https://www.yahoo.com
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Allow only single selection out of many              | Blocking the option to create all types of data sources except the one that is allowed is the solution   | <pre class="language-yaml"><code class="lang-yaml">rules:
-  storage:
-    dataVolume:
-      instances:
-        canAdd: false
-    hostPath:
-      instances:
-        canAdd: false
-    pvc:
-      instances:
-        canAdd: false
-    git:
-      attributes:
-        repository:
-          required: true
-        branch:
-          required: true
-        path:
-          required: true
-    nfs:
-      instances:
-        canAdd: false
-    s3:
-      instances:
-        canAdd: false
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Create a robust set of guidelines                    | Set rules for specific compute resource usage, addressing most relevant spec fields                      | <pre class="language-yaml"><code class="lang-yaml">rules:
-  compute:
-    cpuCoreRequest:
-      required: true
-      min: 0
-      max: 8
-    cpuCoreLimit:
-      min: 0
-      max: 8
-    cpuMemoryRequest:
-      required: true
-      min: '0'
-      max: 16G
-    cpuMemoryLimit:
-      min: '0'
-      max: 8G
-    migProfile:
-      canEdit: false
-    gpuPortionRequest:
-      min: 0
-      max: 1
-    gpuMemoryRequest:
-      canEdit: false
-    extendedResources:
-      instances:
-        canAdd: false
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Policy for distributed training workloads            | Set rules and defaults for a distributed training workload with different setting for master and workers | <pre class="language-yaml"><code class="lang-yaml">defaults:
-  worker:
-    command: my-command-worker-1
-    environmentVariables:
-      instances:
-        - name: LOG_DIR
-          value: policy-worker-to-be-ignored
-        - name: ADDED_VAR
-          value: policy-worker-added
-    security:
-      runAsUid: 500
-    storage:
-      s3:
-        attributes:
-          bucket: bucket1-worker
-  master:
-    command: my-command-master-2
-    environmentVariables:
-      instances:
-        - name: LOG_DIR
-          value: policy-master-to-be-ignored
-        - name: ADDED_VAR
-          value: policy-master-added
-    security:
-      runAsUid: 800
-    storage:
-      s3:
-        attributes:
-          bucket: bucket1-master
-rules:
-  worker:
-    command:
-      options:
-        - value: my-command-worker-1
-          displayed: command1
-        - value: my-command-worker-2
-          displayed: command2
-    storage:
-      nfs:
-        instances:
-          canAdd: false
-      s3:
-        attributes:
-          bucket:
-            options:
-              - value: bucket1-worker
-              - value: bucket2-worker
-  master:
-    command:
-      options:
-        - value: my-command-master-1
-          displayed: command1
-        - value: my-command-master-2
-          displayed: command2
-    storage:
-      nfs:
-        instances:
-          canAdd: false
-      s3:
-        attributes:
-          bucket:
-            options:
-              - value: bucket1-master
-              - value: bucket2-master
+| General policy goals                                 | Best practices description                                          | Example                                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Create a policy that has multiple defaults and rules | Presentation of the syntax while adding a set of defaults and rules | <pre class="language-yaml"><code class="lang-yaml">defaults:
 </code></pre> |
-| Examples for specific sections in the policy         | Environment creation                                                                                     | <pre class="language-yaml"><code class="lang-yaml">rules:
-  imagePullPolicy:
-    required: true
-    options:
-      - value: Always
-        displayed: Always
-      - value: Never
-        displayed: Never
-  createHomeDir:
-    canEdit: false
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                                                      | Setting security measures                                                                                | <pre class="language-yaml"><code class="lang-yaml">rules:
-  security:
-    runAsUid:
-      min: 1
-      max: 32700
-    allowPrivilegeEscalation:
-      canEdit: false
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                                                      | Impose an asset                                                                                          | <pre class="language-yaml"><code class="lang-yaml">defaults: null
+| createHomeDir: true                                  |                                                                     |                                                                            |
+| environmentVariables:                                |                                                                     |                                                                            |
+
+```
+instances:
+  - name: MY_ENV
+    value: my_value
+```
+
+security: allowPrivilegeEscalation: false
+
+rules: storage: s3: attributes: url: options: - value: https://www.google.com displayed: https://www.google.com - value: https://www.yahoo.com displayed: https://www.yahoo.com | | Allow only single selection out of many | Blocking the option to create all types of data sources except the one that is allowed is the solution |
+
+```yaml
+rules:
+storage:
+dataVolume:
+instances:
+canAdd: false
+hostPath:
+instances:
+canAdd: false
+pvc:
+instances:
+canAdd: false
+git:
+attributes:
+repository:
+required: true
+branch:
+required: true
+path:
+required: true
+nfs:
+instances:
+canAdd: false
+s3:
+instances:
+canAdd: false
+```
+
+\| | Create a robust set of guidelines | Set rules for specific compute resource usage, addressing most relevant spec fields |
+
+```yaml
+rules:
+compute:
+cpuCoreRequest:
+required: true
+min: 0
+max: 8
+cpuCoreLimit:
+min: 0
+max: 8
+cpuMemoryRequest:
+required: true
+min: '0'
+max: 16G
+cpuMemoryLimit:
+min: '0'
+max: 8G
+migProfile:
+canEdit: false
+gpuPortionRequest:
+min: 0
+max: 1
+gpuMemoryRequest:
+canEdit: false
+extendedResources:
+instances:
+canAdd: false
+```
+
+\| | Policy for distributed training workloads | Set rules and defaults for a distributed training workload with different setting for master and workers |
+
+```yaml
+defaults:
+worker:
+command: my-command-worker-1
+environmentVariables:
+instances:
+- name: LOG_DIR
+value: policy-worker-to-be-ignored
+- name: ADDED_VAR
+value: policy-worker-added
+security:
+runAsUid: 500
+storage:
+s3:
+attributes:
+bucket: bucket1-worker
+master:
+command: my-command-master-2
+environmentVariables:
+instances:
+- name: LOG_DIR
+value: policy-master-to-be-ignored
+- name: ADDED_VAR
+value: policy-master-added
+security:
+runAsUid: 800
+storage:
+s3:
+attributes:
+bucket: bucket1-master
+rules:
+worker:
+command:
+options:
+- value: my-command-worker-1
+displayed: command1
+- value: my-command-worker-2
+displayed: command2
+storage:
+nfs:
+instances:
+canAdd: false
+s3:
+attributes:
+bucket:
+options:
+- value: bucket1-worker
+- value: bucket2-worker
+master:
+command:
+options:
+- value: my-command-master-1
+displayed: command1
+- value: my-command-master-2
+displayed: command2
+storage:
+nfs:
+instances:
+canAdd: false
+s3:
+attributes:
+bucket:
+options:
+- value: bucket1-master
+- value: bucket2-master
+```
+
+\| | Examples for specific sections in the policy | Environment creation |
+
+```yaml
+rules:
+imagePullPolicy:
+required: true
+options:
+- value: Always
+displayed: Always
+- value: Never
+displayed: Never
+createHomeDir:
+canEdit: false
+```
+
+\| | | Setting security measures |
+
+```yaml
+rules:
+security:
+runAsUid:
+min: 1
+max: 32700
+allowPrivilegeEscalation:
+canEdit: false
+```
+
+\| | | Impose an asset |
+
+```yaml
+defaults: null
 rules: null
 imposedAssets:
-  - f12c965b-44e9-4ff
-</code></pre>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+f12c965b-44e9-4ff
+```
+
+|
 
 ### Example of a whole policy
 

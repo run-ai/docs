@@ -16,7 +16,7 @@ The Templates table provides a list of all the templates defined in the platform
 It is also possible to manage templates directly for a specific [user](../../authentication-and-authorization/users.md), [application](../../authentication-and-authorization/applications.md), [project](../../manage-ai-initiatives/managing-your-organization/projects.md), or [department](../../manage-ai-initiatives/managing-your-organization/departments.md).
 {% endhint %}
 
-![](../workload-assets/img/template-table.png)
+![](../../../saas/workloads-in-runai/workload-assets/img/template-table.png)
 
 The Templates table consists of the following columns:
 

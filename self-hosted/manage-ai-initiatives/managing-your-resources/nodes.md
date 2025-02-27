@@ -15,7 +15,7 @@ The Nodes table displays a list of predefined nodes available to users in the Ru
 * Only users with relevant permissions can view the table.
 {% endhint %}
 
-![](img/node-list.png)
+![](../../../saas/manage-ai-initiatives/managing-your-resources/img/node-list.png)
 
 The Nodes table consists of the following columns:
 

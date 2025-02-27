@@ -14,36 +14,36 @@ The Credentials table can be found under **Workload manager** in the Run:ai User
 
 The Credentials table provides a list of all the credentials defined in the platform and allows you to manage them.
 
-![](img/credentials-table.png)
+![](../../../saas/workloads-in-runai/workload-assets/img/credentials-table.png)
 
 The Credentials table comprises the following columns:
 
 | Column          | Description                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Credential     | The name of the credential                                                                                                                                              |
-| Description     | A description of the credential                                                                                                                                         |
-| Type            | The type of credential, e.g., Docker registry                                                                                                                           |
+| Credential      | The name of the credential                                                                                                                                               |
+| Description     | A description of the credential                                                                                                                                          |
+| Type            | The type of credential, e.g., Docker registry                                                                                                                            |
 | Status          | The different lifecycle [phases](../workloads.md#workload-status) and representation of the credential's condition                                                       |
 | Scope           | The [scope](workload-assets.md#asset-scope) of this compute resource within the organizational tree. Click the name of the scope to view the organizational tree diagram |
-| Kubernetes name | The unique name of the credential's Kubernetes name as it appears in the cluster                                                                                          |
-| Environment(s)  | The environment(s) that are associated with the credential                                                                                                              |
-| Data source(s)  | The private data source(s) that are accessed using the credential                                                                                                       |
-| Created by      | The user who created the credential                                                                                                                                     |
-| Creation time   | The timestamp of when the credential were created                                                                                                                       |
-| Cluster         | The cluster with which the credential are associated                                                                                                                    |
+| Kubernetes name | The unique name of the credential's Kubernetes name as it appears in the cluster                                                                                         |
+| Environment(s)  | The environment(s) that are associated with the credential                                                                                                               |
+| Data source(s)  | The private data source(s) that are accessed using the credential                                                                                                        |
+| Created by      | The user who created the credential                                                                                                                                      |
+| Creation time   | The timestamp of when the credential were created                                                                                                                        |
+| Cluster         | The cluster with which the credential are associated                                                                                                                     |
 
 ### Credentials status
 
 The following table describes the credentials’ condition and whether they were created successfully for the selected [scope](workload-assets.md#asset-scope).
 
-| Status          | Description                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Status          | Description                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | No issues found | No issues were found while creating the credential (this status may change while propagating the credential to the selected scope) |
-| Issues found    | Issues found while propagating the credential                                                                                       |
-| Issues found    | Failed to access the cluster                                                                                                         |
+| Issues found    | Issues found while propagating the credential                                                                                      |
+| Issues found    | Failed to access the cluster                                                                                                       |
 | Creating…       | Credential is being created                                                                                                        |
 | Deleting…       | Credential is being deleted                                                                                                        |
-| No status       | When the credential's scope is an account, or the current version of the cluster is not up to date, the status cannot be displayed   |
+| No status       | When the credential's scope is an account, or the current version of the cluster is not up to date, the status cannot be displayed |
 
 #### Customizing the table view
 

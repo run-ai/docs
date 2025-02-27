@@ -10,7 +10,7 @@ The Clusters table can be found under **Resources** in the Run:ai platform.
 
 The clusters table provides a list of the clusters added to Run:ai platform, along with their status.
 
-<figure><img src="../.gitbook/assets/clusters.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../saas/.gitbook/assets/clusters.png" alt=""><figcaption></figcaption></figure>
 
 The clusters table consists of the following columns:
 
@@ -45,7 +45,7 @@ The clusters table consists of the following columns:
 
 ## Adding a new cluster
 
-To add a new cluster, see the [installation guide](../cluster-installation/install-using-helm.md).
+To add a new cluster, see the [installation guide](../../saas/cluster-installation/install-using-helm.md).
 
 ## Removing a cluster
 

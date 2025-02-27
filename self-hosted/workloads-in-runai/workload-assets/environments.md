@@ -16,7 +16,7 @@ The Environments table can be found under **Workload manager** in the Run:ai pla
 
 The Environment table provides a list of all the environment defined in the platform and allows you to manage them.
 
-![](img/env-table.png)
+![](../../../saas/workloads-in-runai/workload-assets/img/env-table.png)
 
 The Environments table consists of the following columns:
 

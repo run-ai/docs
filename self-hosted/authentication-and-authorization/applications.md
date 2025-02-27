@@ -2,7 +2,7 @@
 
 This article explains the procedure to manage your organization's applications.
 
-Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials, you can obtain a token as detailed in [API authentication](../api-reference/rest-auth.md) and use it within subsequent API calls.
+Applications are used for API integrations with Run:ai. An application contains a client ID and a client secret. With the client credentials, you can obtain a token as detailed in [API authentication](../../saas/api-reference/rest-auth.md) and use it within subsequent API calls.
 
 Applications are assigned with [access rules ](accessrules.md)to manage permissions. For example, application **ci-pipeline-prod** is assigned with a **Researcher** role in **Cluster: A**.
 
@@ -12,7 +12,7 @@ The Applications table can be found under **Access** in the Run:ai platform.
 
 The Applications table provides a list of all the applications defined in the platform, and allows you to manage them.
 
-![](img/appstable.png)
+![](../../saas/authentication-and-authorization/img/appstable.png)
 
 The Applications table consists of the following columns:
 

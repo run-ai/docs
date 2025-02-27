@@ -16,7 +16,7 @@ Departments are disabled, by default. If you cannot see Departments in the menu,
 
 The Departments table lists all departments defined for a specific cluster and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 
-![](img/department-list.png)
+![](../../../saas/manage-ai-initiatives/managing-your-organization/img/department-list.png)
 
 The Departments table consists of the following columns:
 
@@ -102,7 +102,7 @@ Unlimited CPU(Cores) and CPU memory quotas are an exception - in this case, work
 
 Example of Quota management:
 
-![](img/quota-mgmt.png)
+![](../../../saas/manage-ai-initiatives/managing-your-organization/img/quota-mgmt.png)
 
 5. Click **CREATE DEPARTMENT**
 

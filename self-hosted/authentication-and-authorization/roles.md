@@ -1,10 +1,8 @@
 # Roles
 
-
-
 This article explains the available roles in the Run:ai platform.
 
-A role is a set of permissions that can be assigned to a [subject in a scope](authentication-and-authorization.md#role-based-access-control-rbac-in-runai).
+A role is a set of permissions that can be assigned to a [subject in a scope](../../saas/authentication-and-authorization/authentication-and-authorization.md#role-based-access-control-rbac-in-runai).
 
 A permission is a set of actions (View, Edit, Create and Delete) over a Run:ai entity (e.g. projects, workloads, users).
 
@@ -14,7 +12,7 @@ The Roles table can be found under **Access** in the Run:ai platform.
 
 The Roles table displays a list of predefined roles available to users in the Run:ai platform. It is not possible to create additional rules or edit or delete existing rules.
 
-![](img/rolestable.png)
+![](../../saas/authentication-and-authorization/img/rolestable.png)
 
 The Roles table consists of the following columns:
 
@@ -185,8 +183,6 @@ Keep the following in mind when upgrading from versions 2.13 or earlier:
 <details>
 
 <summary>Permitted workloads</summary>
-
-
 
 When assigning a role with either one, all or any combination of the View, Edit, Create and Delete permissions for workloads, the subject has permissions to manage not only Run:ai native workloads (Workspace, Training, Inference), but also a list of 3rd party workloads:
 

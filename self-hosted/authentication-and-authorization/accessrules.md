@@ -20,7 +20,7 @@ The Access rules table provides a list of all the access rules defined in the pl
 It is also possible to manage access rules directly for a specific [user](users.md), [application](applications.md), [project](../manage-ai-initiatives/managing-your-organization/projects.md), or [department](../manage-ai-initiatives/managing-your-organization/departments.md).
 {% endhint %}
 
-![](img/accessrulestable.png)
+![](../../saas/authentication-and-authorization/img/accessrulestable.png)
 
 The Access rules table consists of the following columns:
 

@@ -2,13 +2,13 @@
 
 Operating Run:ai at scale ensures that the system can efficiently handle fluctuating workloads while maintaining optimal performance. As clusters grow—whether due to an increasing number of nodes or a surge in workload demand—Run:ai services must be appropriately tuned to support large-scale environments.
 
-This guide outlines the best practices for optimizing Run:ai for high-performance deployments, including Run:ai system services configurations, vertical scaling (adjusting CPU and memory resources) and where applicable, horizontal scaling (replicas).&#x20;
+This guide outlines the best practices for optimizing Run:ai for high-performance deployments, including Run:ai system services configurations, vertical scaling (adjusting CPU and memory resources) and where applicable, horizontal scaling (replicas).
 
 ## Run:ai services
 
 ### Vertical scaling
 
-Each of the Run:ai containers has default resource requirements that reflect an average customer load. With significantly larger cluster loads, certain Run:ai services will require more CPU and memory resources. Run:ai supports configuring these resources for each Run:ai service group separately.  For instructions and more information, see [Run:ai services resource management](../advanced-setup/advanced-cluster-configurations.md#run-ai-services-resource-management).&#x20;
+Each of the Run:ai containers has default resource requirements that reflect an average customer load. With significantly larger cluster loads, certain Run:ai services will require more CPU and memory resources. Run:ai supports configuring these resources for each Run:ai service group separately. For instructions and more information, see [Run:ai services resource management](../advanced-setup/advanced-cluster-configurations.md#run-ai-services-resource-management).
 
 #### Scheduling services
 
@@ -28,7 +28,7 @@ By default, Run:ai cluster services are deployed with a single replica. For larg
 
 ## Metrics collection
 
-Run:ai relies on [Prometheus](../cluster-installation/system-requirements.md#prometheus) to scrape cluster metrics and forward them to the Run:ai control plane. The volume of metrics generated is directly proportional to the number of nodes, workloads, and projects in the system. When operating at scale—reaching hundreds, and thousands of nodes and projects—the system generates a significant volume of metrics which can place a strain on the cluster and the network bandwidth.&#x20;
+Run:ai relies on [Prometheus](../../saas/cluster-installation/system-requirements.md#prometheus) to scrape cluster metrics and forward them to the Run:ai control plane. The volume of metrics generated is directly proportional to the number of nodes, workloads, and projects in the system. When operating at scale—reaching hundreds, and thousands of nodes and projects—the system generates a significant volume of metrics which can place a strain on the cluster and the network bandwidth.
 
 To mitigate this impact, it is recommended to tune the Prometheus [remote-write](https://prometheus.io/docs/specs/remote_write_spec/) configurations. See [remote write tuning](https://prometheus.io/docs/practices/remote_write/#remote-write-tuning) to read more about the tuning parameters available via the remote write configuration and refer to this [article](https://last9.io/blog/optimizing-prometheus-remote-write-performance-guide/) for optimizing Prometheus remote write performance.
 
@@ -44,9 +44,6 @@ remoteWrite:
     maxShards: 100
 ```
 
+\\
 
-
-\
-
-
-\
+\\

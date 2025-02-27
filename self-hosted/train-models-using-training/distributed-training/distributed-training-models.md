@@ -8,7 +8,7 @@ The distributed training workload is assigned to a project and is affected by th
 
 To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../workloads-in-runai/workload-types.md).
 
-![](../img/training-workload.png)
+![](../../../saas/train-models-using-training/img/training-workload.png)
 
 ## Creating a distributed training workload
 
@@ -29,7 +29,7 @@ To add a new distributed training workload:
        * XG Boost
        * MPI
 
-       In case one the above frameworks is not enabled, see [Distributed training prerequisites](../../cluster-installation/system-requirements.md#distributed-training) for details on enabling.
+       In case one the above frameworks is not enabled, see [Distributed training prerequisites](../../../saas/cluster-installation/system-requirements.md#distributed-training) for details on enabling.
    * Set the distributed workload configuration that defines how distributed training workloads are divided across multiple machines or processes. Choose a configuration based on your training requirements and infrastructure -
      * Workers & master
      * Workers only
@@ -89,73 +89,47 @@ To add a new distributed training workload:
       Otherwise, entering a node type (affinity) is optional. [Nodes must be tagged](../../policies/scheduling-rules.md#labelling-nodes-for-node-types-grouping) with a label that matches the node type key and value.
     *   Optional: Set toleration(s) to allow the workload to be scheduled on a node with a matching taint
 
-
-
         {% hint style="info" %}
         Tolerations are disabled, by default. If you cannot see Tolerations in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Tolerations
         {% endhint %}
 
-        * Click +**TOLERATION**
-        * Enter a **key**
-        * Select the **operator**
-          * **Exists** - If the key exists on the node, the effect will be applied.
-          * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
-            * Enter a **value** matching the value on the node
-        * Select the effect for the toleration&#x20;
-          * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.&#x20;
-          * **NoSchedule**- No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
-          * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.&#x20;
-          * **Any** - All effects above match.
-    *   Optional: Set topology to let the workload be scheduled on nodes with a matching topology. Topology lets the workload to be scheduled on nodes within the same region, zone, placement group or any other topology you define.
+```
+    * Click +**TOLERATION**
+    * Enter a **key**
+    * Select the **operator**
+      * **Exists** - If the key exists on the node, the effect will be applied.
+      * **Equals** - if the key and the value set below matches to the value on the node, the effect will be applied
+        * Enter a **value** matching the value on the node
+    * Select the effect for the toleration&#x20;
+      * **NoExecute** - Pods that do not tolerate this taint are evicted immediately.&#x20;
+      * **NoSchedule**- No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
+      * **PreferNoSchedule** - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.&#x20;
+      * **Any** - All effects above match.
+*   Optional: Set topology to let the workload be scheduled on nodes with a matching topology. Topology lets the workload to be scheduled on nodes within the same region, zone, placement group or any other topology you define.
 
 
 
-        {% hint style="info" %}
-        Setting topology is disabled, by default. If you cannot see Topology in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Topology
-        {% endhint %}
+    
+```
 
-        * Click +**TOPOLOGY**
-        * Enter a **key**
-        * Select the **operator**
-          * **Required** - If the scheduler can’t schedule all pods within the same topology, the workload will be pending.
-          * **Preferred** - The scheduler will try to schedule all pods within the same topology but may schedule some pods on nodes that are not part of the same topology.
-11. Optional: Set the volume needed for your workload - A volume allocates storage space to your workload that is persistent across restarts.&#x20;
-    * Click **+VOLUME**&#x20;
-    * Select the **storage class**&#x20;
-      * **None**- Proceed without defining a storage class.&#x20;
-      * **Custom storage class** - This option applies when selecting a storage class based on existing storage classes. To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../infrastructure-procedures/shared-storage.md)&#x20;
-    * Select the **access mode(s)** (multiple modes can be selected)&#x20;
-      * **Read-write by one node** - The volume can be mounted as read-write by a single node.&#x20;
-      * **Read-only by many nodes** - The volume can be mounted as read-only by many nodes.&#x20;
-      * **Read-write by many nodes** - The volume can be mounted as read-write by many nodes.
-    * Set the **claim size** and its **units**&#x20;
-    * Select the **volume mode**&#x20;
-      * **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files.&#x20;
-      * **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system.&#x20;
-    * Set the **Container path** with the volume target location
-    * Set the volume persistency&#x20;
-      * **Persistent** - The volume and its data will be deleted only when the workload is deleted.
-      * **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.”&#x20;
-12. Optional: Select **data sources** for your workspace - Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection. For a step-by-step guide on adding data sources to the gallery, see [data sources](../../workloads-in-runai/workload-assets/datasources.md). Once created, the new data source will be automatically selected.&#x20;
-    * Optional: Modify the data target location for the selected data source(s).&#x20;
-13. **Optional - General settings**:&#x20;
-    * Set the **grace period** for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min.&#x20;
-    * Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.&#x20;
-    * Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.&#x20;
-    * Set **annotations(s)**\
-      Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.&#x20;
-      * Click **+ANNOTATION**&#x20;
-      * Enter a **name**&#x20;
-      * Enter a **value**
-    * Set **labels(s)**\
-      Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels:&#x20;
-      * Click **+LABEL**
-      * Enter a **name**
-      * Enter a **value**&#x20;
-14. Click **CONTINUE**
-15. Decide if you wish to define a different setup between the Workers and the Master via the toggle. When disabled the master’s setup will inherit the workers’ setup.
-    * In case a different setup is requested or required, repeat steps 9-13 stated above with necessary changes.
-16. Click **CREATE TRAINING**
+{% hint style="info" %}
+```
+    Setting topology is disabled, by default. If you cannot see Topology in the menu, then it must be enabled by your Administrator, under **General settings** → Workloads → Topology
+    
+```
+{% endhint %}
+
+```
+    * Click +**TOPOLOGY**
+    * Enter a **key**
+    * Select the **operator**
+      * **Required** - If the scheduler can’t schedule all pods within the same topology, the workload will be pending.
+      * **Preferred** - The scheduler will try to schedule all pods within the same topology but may schedule some pods on nodes that are not part of the same topology.
+```
+
+11\. Optional: Set the volume needed for your workload - A volume allocates storage space to your workload that is persistent across restarts. \* Click **+VOLUME** \* Select the **storage class** \* **None**- Proceed without defining a storage class. \* **Custom storage class** - This option applies when selecting a storage class based on existing storage classes. To add new storage classes to the storage class list, and for additional information, see [Kubernetes storage classes](../../infrastructure-procedures/shared-storage.md) \* Select the **access mode(s)** (multiple modes can be selected) \* **Read-write by one node** - The volume can be mounted as read-write by a single node. \* **Read-only by many nodes** - The volume can be mounted as read-only by many nodes. \* **Read-write by many nodes** - The volume can be mounted as read-write by many nodes. \* Set the **claim size** and its **units** \* Select the **volume mode** \* **File system** (default) - This allows the volume to be mounted as a file system, enabling the usage of directories and files. \* **Block** - This exposes the volume as a block storage, which can be formatted or used directly by applications without a file system. \* Set the **Container path** with the volume target location \* Set the volume persistency \* **Persistent** - The volume and its data will be deleted only when the workload is deleted. \* **Ephemeral** - The volume and its data will be deleted every time the workload’s status changes to “Stopped.” 12. Optional: Select **data sources** for your workspace - Select a data source or click **+NEW DATA SOURCE** to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection. For a step-by-step guide on adding data sources to the gallery, see [data sources](../../workloads-in-runai/workload-assets/datasources.md). Once created, the new data source will be automatically selected. \* Optional: Modify the data target location for the selected data source(s). 13. **Optional - General settings**: \* Set the **grace period** for workload preemption. This is a buffer that allows a preempted workload to reach a safe checkpoint before it is forcibly preempted. Enter a timeframe between 0 sec and 5 min. \* Set the **backoff limit** before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100. \* Set the **timeframe for auto-deletion** after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. \* Set **annotations(s)**\
+Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation. \* Click **+ANNOTATION** \* Enter a **name** \* Enter a **value** \* Set **labels(s)**\
+Kubernetes labels are key-value pairs attached to the workload. They are used for categorizing to enable querying. To add labels: \* Click **+LABEL** \* Enter a **name** \* Enter a **value** 14. Click **CONTINUE** 15. Decide if you wish to define a different setup between the Workers and the Master via the toggle. When disabled the master’s setup will inherit the workers’ setup. \* In case a different setup is requested or required, repeat steps 9-13 stated above with necessary changes. 16. Click **CREATE TRAINING**
 
 ## Workload Policies
 

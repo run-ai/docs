@@ -1,7 +1,6 @@
 # Event history
 
-This article provides details about Run:ai’s Audit log.\
-
+This article provides details about Run:ai’s Audit log.\\
 
 The Run:ai control plane provides the audit log API and event history table in the Run:ai UI. Both reflect the same information regarding changes to business objects: clusters, projects and assets etc.
 
@@ -9,7 +8,7 @@ The Run:ai control plane provides the audit log API and event history table in t
 
 The Events history table can be found under Event history in the Run:ai UI.
 
-![](img/audit-log-table.png)
+![](../../saas/infrastructure-procedures/img/audit-log-table.png)
 
 The Event history table consists of the following columns:
 
@@ -40,7 +39,7 @@ The Event history table consists of the following columns:
 
 The Event history table saves events for the last 90 days. However, the table itself presents up to the last 30 days of information due to the potentially very high number of operations that might be logged during this period.
 
-![](img/audit-log-date-selector.png)
+![](../../saas/infrastructure-procedures/img/audit-log-date-selector.png)
 
 To view older events, or to refine your search for more specific results or fewer results, use the time selector and change the period you search for.\
 You can also refine your search by clicking and using ADD FILTER accordingly.

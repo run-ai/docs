@@ -6,7 +6,7 @@ This article provides detailed instructions on how to manage both planned and un
 
 * **Access to Kubernetes cluster** - Administrative access to the Kubernetes cluster, including permissions to run `kubectl` commands
 * **Basic knowledge of Kubernetes** - Familiarity with Kubernetes concepts such as nodes, taints, and workloads
-* **Run:ai installation** - The [Run:ai software installed](../cluster-installation/install-using-helm.md) and configured within your Kubernetes cluster
+* **Run:ai installation** - The [Run:ai software installed](../../saas/cluster-installation/install-using-helm.md) and configured within your Kubernetes cluster
 * **Node naming conventions** - Know the names of the nodes within your cluster, as these are required when executing the commands
 
 ## Node types
@@ -108,7 +108,7 @@ In the event of unplanned downtime:
 
 ### Run:ai system nodes
 
-In a production environment, the services responsible for scheduling, submitting and managing Run:ai workloads operate on one or more Run:ai system nodes. It is recommended to have more than one system node to ensure [high availability](../docs/config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second system node does not exist, you must designate another node in the cluster as a temporary Run:ai system node to maintain operations.
+In a production environment, the services responsible for scheduling, submitting and managing Run:ai workloads operate on one or more Run:ai system nodes. It is recommended to have more than one system node to ensure [high availability](../../saas/docs/config/ha.md). If one system node goes down, another can take over, maintaining continuity. If a second system node does not exist, you must designate another node in the cluster as a temporary Run:ai system node to maintain operations.
 
 The protocols for handling planned maintenance and unplanned downtime are identical to those for worker nodes. Refer to the above section for detailed instructions.
 

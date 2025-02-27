@@ -18,7 +18,7 @@ A typical use case would be students (individual practitioners) within a faculty
 
 Department = business unit / Project = individual practitioner
 
-![](img/individuals.png)
+![](../../saas/manage-ai-initiatives/img/individuals.png)
 
 ### Based on business units
 
@@ -26,7 +26,7 @@ A typical use case would be an AI service (business unit) split into AI capabili
 
 Department = business unit / Project = initiative
 
-![](img/bu.png)
+![](../../saas/manage-ai-initiatives/img/bu.png)
 
 ### Based on the organizational structure
 
@@ -34,7 +34,7 @@ A typical use case would be a business unit split into teams - an individual pra
 
 Department = business unit / Project = team
 
-![](img/org.png)
+![](../../saas/manage-ai-initiatives/img/org.png)
 
 ## Mapping your resources
 
@@ -61,11 +61,11 @@ Set out below are illustrations of different grouping options.
 
 **Example: grouping nodes by topology**
 
-![](img/groupbytopology.png)
+![](../../saas/manage-ai-initiatives/img/groupbytopology.png)
 
 **Example: grouping nodes by hardware type**
 
-![](img/groupbyhardware.png)
+![](../../saas/manage-ai-initiatives/img/groupbyhardware.png)
 
 ### Assigning your resources
 
@@ -79,24 +79,24 @@ It is essential to make sure that the sum of all projects' quota does NOT surpas
 
 **Example: assigning resources to projects**
 
-![](img/assigning.png)
+![](../../saas/manage-ai-initiatives/img/assigning.png)
 
 ## Assigning users to projects and departments
 
-Run:ai system is using [‘Role Based Access Control’ (RBAC)](../authentication-and-authorization/authentication-and-authorization.md#role-based-access-control-rbac-in-run-ai) to manage users’ access rights to the different objects of the system, its resources, and the set of allowed actions.\
+Run:ai system is using [‘Role Based Access Control’ (RBAC)](../../saas/authentication-and-authorization/authentication-and-authorization.md#role-based-access-control-rbac-in-run-ai) to manage users’ access rights to the different objects of the system, its resources, and the set of allowed actions.\
 To allow AI researchers, ML engineers, Project Admins, or any other stakeholder of your AI initiatives to access projects and use AI compute resources with their AI initiatives, the administrator needs to assign users to projects. After a user is assigned to a project with the proper role, e.g. ‘L1 Researcher’, the user can submit and monitor its workloads under that project. Assigning users to departments is usually done to assign ‘Department Admin’ to manage a specific department. Other roles, such as ‘L1 Researcher’, can also be assigned to departments, this allows the researcher access to all projects within that department.
 
 ## Scopes in an organization
 
 This is an example of an organization, as represented in the Run:ai platform:
 
-![](img/scopes.png)
+![](../../saas/manage-ai-initiatives/img/scopes.png)
 
 The organizational tree is structured from top down under a single node headed by the account. The account is comprised of clusters, departments and projects.
 
 After mapping and building your hierarchal structured organization as shown above, you can assign or associate various Run:ai components (e.g. workloads, roles, assets, policies, and more) to **different parts** of the organization - these organizational parts are the **Scopes**. The following organizational example consists of 5 optional scopes:
 
-![](img/scope-example.png)
+![](../../saas/manage-ai-initiatives/img/scope-example.png)
 
 {% hint style="info" %}
 When a scope is selected, the very same unit, including all of its subordinates (both existing and any future subordinates, if added), are selected as well.

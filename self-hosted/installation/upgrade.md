@@ -1,102 +1,123 @@
 ---
 title: Upgrade self-hosted Kubernetes installation
 ---
-# Upgrade Run:ai 
+
+# Upgrade
+
 ## Preparations
+
 ### Helm
-Run:ai requires [Helm](https://helm.sh/){target=_blank} 3.14 or later.
-Before you continue, validate your installed helm client version.
-To install or upgrade Helm, see [Installing Helm](https://helm.sh/docs/intro/install/){target=_blank}.
-If you are installing an air-gapped version of Run:ai, The Run:ai tar file contains the helm binary. 
+
+for both
+
+Run:ai requires [Helm](https://helm.sh/) 3.14 or later. Before you continue, validate your installed helm client version. To install or upgrade Helm, see [Installing Helm](https://helm.sh/docs/intro/install/). If you are installing an air-gapped version of Run:ai, the Run:ai tar file contains the helm binary.
 
 ### Software files
-=== "Connected"
 
-    Run the helm command below:
+for control plane
 
-    ``` bash
-    helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
-    helm repo update
-    ```
+{% tabs %}
+{% tab title="Connected" %}
+Run the helm command below:
 
-=== "Airgapped"
-    * Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tar.gz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.
-    * Upload the images as described [here](preparations.md#software-artifacts).
+```bash
+helm repo add runai-backend https://runai.jfrog.io/artifactory/cp-charts-prod
+helm repo update
+```
+{% endtab %}
+
+{% tab title="Airgapped" %}
+* Ask for a tar file `runai-air-gapped-<NEW-VERSION>.tar.gz` from Run:ai customer support. The file contains the new version you want to upgrade to. `<NEW-VERSION>` is the updated version of the Run:ai control plane.&#x20;
+* Upload the images as described [here](preparations.md#software-artifacts).
+{% endtab %}
+{% endtabs %}
 
 ## Before upgrade
+
 Before proceeding with the upgrade, it's crucial to apply the specific prerequisites associated with your current version of Run:ai and every version in between up to the version you are upgrading to.
 
-### Upgrade from version 2.9 
-Two significant changes to the control-plane installation have happened with version 2.12: _PVC ownership_, _Ingress_ and _installation customization_. 
+## Upgrade control plane
 
-#### PVC ownership
-Run:ai will no longer directly create the PVCs that store Run:ai data (metrics and database). Instead, going forward, 
-* Run:ai [requires](prerequisites.md#kubernetes) a Kubernetes storage class to be installed.
-* The PVCs are created by the Kubernetes [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){default=_blank}. 
+To upgrade from 2.17 or later, run the following:
 
-The storage class, as per [Kubernetes standards](https://kubernetes.io/docs/concepts/storage/storage-classes/#introduction){target=_blank}, controls the [reclaim](https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy){target=_blank} behavior: whether the data is saved or deleted when the Run:ai control plane is deleted.  
+{% tabs %}
+{% tab title="Connected" %}
+```bash
+helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" -f runai_control_plane_values.yaml --reset-then-reuse-values
+```
+{% endtab %}
 
-To remove the ownership in an older installation, run:
+{% tab title="Airgapped" %}
+```bash
+helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
+```
+{% endtab %}
+{% endtabs %}
 
-``` bash
-kubectl patch pvc -n runai-backend pvc-thanos-receive  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
-kubectl patch pvc -n runai-backend pvc-postgresql  -p '{"metadata": {"annotations":{"helm.sh/resource-policy": "keep"}}}'
+## Upgrade Cluster
+
+This article explains how to upgrade Run:ai cluster version.
+
+## Before upgrade
+
+There are a number of matters to consider prior to upgrading the Run:ai cluster version.
+
+### System and network requirements
+
+Before upgrading the Run:ai cluster, validate that the latest [system requirements](broken-reference) and [network requirements](broken-reference) are met, as they can change from time to time.
+
+{% hint style="info" %}
+**Important**&#x20;
+
+It is highly recommended to upgrade the Kubernetes version together with the Run:ai cluster version, to ensure compatibility with latest supported version of your [Kubernetes distribution](broken-reference).
+{% endhint %}
+
+### Helm
+
+The latest releases of the Run:ai cluster require [Helm 3.14](https://helm.sh/docs/helm/helm_install/) or above.
+
+## Upgrade
+
+Follow the instructions to upgrade using Helm. The Helm commands to upgrade the Run:ai cluster version may differ between versions. The steps below describe how to get the instructions from the Run:ai UI.
+
+### Getting installation instructions
+
+Follow the setup and installation instructions below to get the installation instructions to upgrade the Run:ai cluster.
+
+#### Setup
+
+1. In the Run:ai UI, go to **Clusters**
+2. Select the cluster you want to upgrade
+3. Click **INSTALLATION INSTRUCTIONS**
+4. Optional: Select the Run:ai cluster version (latest, by default)
+5. Click **CONTINUE**
+
+#### Installation instructions
+
+1. Follow the installation instructions. Run the Helm commands provided on your Kubernetes cluster. See the below if [installation fails](upgrade.md#installation-fails).
+2. Click **DONE**
+3. Once installation is complete, validate the cluster is **Connected** and listed with the new cluster version (see the cluster [troubleshooting scenarios](broken-reference)). Once you have done this, the cluster is upgraded to the latest version.
+
+{% hint style="info" %}
+To upgrade to a specific version, modify the `--version` flag by specifying the desired `<version-number>`. You can find all available versions by using the `helm search repo` command.
+{% endhint %}
+
+## Troubleshooting
+
+If you encounter an issue with the cluster upgrade, use the troubleshooting scenarios below.
+
+### Installation fails
+
+If the Run:ai cluster upgrade fails, check the installation logs to identify the issue.
+
+Run the following script to print the installation logs:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh
 ```
 
-#### Ingress
-Delete the ingress object which will be recreated by the control plane upgrade
+### Cluster status
 
-``` bash
-kubectl delete ing -n runai-backend runai-backend-ingress
-```
-
-#### Installation customization
-
-The Run:ai control-plane installation has been rewritten and is no longer using a _backend values file_. Instead, to customize the installation use standard `--set` flags. If you have previously customized the installation, you must now extract these customizations and add them as `--set` flag to the helm installation:
-
-* Find previous customizations to the control plane if such exist. Run:ai provides a utility for that here `https://raw.githubusercontent.com/run-ai/docs/v2.13/install/backend/cp-helm-vals-diff.sh`. For information on how to use this utility please contact Run:ai customer support. 
-* Search for the customizations you found in the [optional configurations](./backend.md#additional-runai-configurations-optional) table and add them in the new format. 
-
-
-## Upgrade Control Plane
-### Upgrade from version 2.17, or later
-=== "Connected"
-
-    ``` bash
-    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" -f runai_control_plane_values.yaml --reset-then-reuse-values
-    ```
-=== "Airgapped"
-
-    ``` bash
-    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
-    ```
-### Upgrade from version 2.9
-* Create a `tls secret` as described in the [control plane installation](backend.md). 
-* Upgrade the control plane as described in the [control plane installation](backend.md). During the upgrade, you must tell the installation __not__ to create the two PVCs:
-
-=== "Connected"
-
-    ``` bash
-    helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane --version "~2.20.0" \
-    --set global.domain=<DOMAIN> \
-    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
-    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
-    ```
-
-    !!! Note
-        The helm repository name has changed from `runai-backend/runai-backend` to `runai-backend/control-plane`.
- 
-=== "Airgapped"
-
-    ``` bash
-    helm upgrade -i runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend \
-    --set global.domain=<DOMAIN> \
-    --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
-    --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
-    ```
-
-## Upgrade Cluster 
-
-To upgrade the cluster follow the instructions [here](../../cluster-setup/cluster-upgrade.md).
+If the Run:ai cluster upgrade completes, but the cluster status does not show as **Connected**, refer to the [cluster troubleshooting scenarios](broken-reference).

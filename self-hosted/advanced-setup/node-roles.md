@@ -11,7 +11,7 @@ For optimal performance in production clusters, it is essential to avoid extensi
 
 To perform these tasks, make sure to install the Run:ai [Administrator CLI](../cli-reference/administrator-cli.md).
 
-## Configure Node Roles
+## Configure node roles
 
 The following node roles can be configured on the cluster:
 

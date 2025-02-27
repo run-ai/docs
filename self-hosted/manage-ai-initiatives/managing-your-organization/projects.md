@@ -12,7 +12,7 @@ The Projects table can be found under **Organization** in the Run:ai platform.
 
 The Projects table provides a list of all projects defined for a specific cluster, and allows you to manage them. You can switch between clusters by selecting your cluster using the filter at the top.
 
-![](img/project-list.png)
+![](../../../saas/manage-ai-initiatives/managing-your-organization/img/project-list.png)
 
 The Projects table consists of the following columns:
 

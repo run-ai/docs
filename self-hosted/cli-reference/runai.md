@@ -26,22 +26,22 @@ runai [flags]
 
 ## SEE ALSO
 
-* [runai cluster](new-cli/broken-reference/) - cluster management
-* [runai config](new-cli/broken-reference/) - configuration management
-* [runai kubeconfig](new-cli/broken-reference/) - kubeconfig management
-* [runai login](new-cli/broken-reference/) - login to the control plane
-* [runai logout](new-cli/broken-reference/) - logout from control plane
-* [runai mpi](new-cli/broken-reference/) - alias for mpi management
-* [runai node](new-cli/broken-reference/) - node management
-* [runai nodepool](new-cli/broken-reference/) - node pool management
-* [runai project](new-cli/broken-reference/) - project management
-* [runai pytorch](new-cli/broken-reference/) - alias for pytorch management
-* [runai report](new-cli/broken-reference/) - \[Experimental] report management
-* [runai tensorflow](new-cli/broken-reference/) - alias for tensorflow management
-* [runai training](new-cli/broken-reference/) - training management
-* [runai upgrade](new-cli/broken-reference/) - upgrades the CLI to the latest version
-* [runai version](new-cli/broken-reference/) - show the current version of the CLI
-* [runai whoami](new-cli/broken-reference/) - show the current logged in user
-* [runai workload](new-cli/broken-reference/) - workload management
-* [runai workspace](new-cli/broken-reference/) - workspace management
-* [runai xgboost](new-cli/broken-reference/) - alias for xgboost management
+* [runai cluster](../../saas/cli-reference/new-cli/broken-reference/) - cluster management
+* [runai config](../../saas/cli-reference/new-cli/broken-reference/) - configuration management
+* [runai kubeconfig](../../saas/cli-reference/new-cli/broken-reference/) - kubeconfig management
+* [runai login](../../saas/cli-reference/new-cli/broken-reference/) - login to the control plane
+* [runai logout](../../saas/cli-reference/new-cli/broken-reference/) - logout from control plane
+* [runai mpi](../../saas/cli-reference/new-cli/broken-reference/) - alias for mpi management
+* [runai node](../../saas/cli-reference/new-cli/broken-reference/) - node management
+* [runai nodepool](../../saas/cli-reference/new-cli/broken-reference/) - node pool management
+* [runai project](../../saas/cli-reference/new-cli/broken-reference/) - project management
+* [runai pytorch](../../saas/cli-reference/new-cli/broken-reference/) - alias for pytorch management
+* [runai report](../../saas/cli-reference/new-cli/broken-reference/) - \[Experimental] report management
+* [runai tensorflow](../../saas/cli-reference/new-cli/broken-reference/) - alias for tensorflow management
+* [runai training](../../saas/cli-reference/new-cli/broken-reference/) - training management
+* [runai upgrade](../../saas/cli-reference/new-cli/broken-reference/) - upgrades the CLI to the latest version
+* [runai version](../../saas/cli-reference/new-cli/broken-reference/) - show the current version of the CLI
+* [runai whoami](../../saas/cli-reference/new-cli/broken-reference/) - show the current logged in user
+* [runai workload](../../saas/cli-reference/new-cli/broken-reference/) - workload management
+* [runai workspace](../../saas/cli-reference/new-cli/broken-reference/) - workspace management
+* [runai xgboost](../../saas/cli-reference/new-cli/broken-reference/) - alias for xgboost management

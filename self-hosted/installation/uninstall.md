@@ -1,22 +1,17 @@
 ---
 title: Uninstall self-hosted Kubernetes installation
 ---
-# Uninstall Run:ai 
 
+# Uninstall
 
-## Uninstall a Run:ai Cluster
+## Uninstall a Run:ai cluster
 
 {% include "../../.gitbook/includes/cluster-uninstall.md" %}
 
-
-## Uninstall the Run:ai Control Plane
+## Uninstall the Run:ai control plane
 
 To delete the control plane, run:
 
-``` shell
+```bash
 helm uninstall runai-backend -n runai-backend
-
 ```
-
-
-

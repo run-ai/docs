@@ -18,7 +18,7 @@ Data volumes are snapshots of datasets stored in Kubernetes Persistent Volume Cl
 2. **Sharing data with colleagues**\
    When sharing training results, generated data sets, or other artifacts with team members is needed, data volumes can help make the data available easily.
 
-![data-volumes-architecture](img/data-volumes-arch.svg)
+![data-volumes-architecture](../../../saas/workloads-in-runai/workload-assets/img/data-volumes-arch.svg)
 
 ## Prerequisites
 
