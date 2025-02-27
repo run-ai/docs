@@ -26,7 +26,6 @@
   * [Upgrade](self-hosted-installation/installation/upgrade.md)
   * [Uninstall](self-hosted-installation/installation/uninstall.md)
 
-
 ## Infrastructure setup
 
 * [Authentication and authorization](authentication-and-authorization/README.md)
@@ -75,6 +74,8 @@
   * [Scheduling](scheduling-and-resource-optimization/scheduling/README.md)
     * [The Run:ai Scheduler: concepts and principles](scheduling-and-resource-optimization/scheduling/runai-scheduler-concepts-and-principles.md)
     * [How the Scheduler works](scheduling-and-resource-optimization/scheduling/how-the-scheduler-works.md)
+    * [Quick starts](platform-management/scheduling-and-resource-optimization/scheduling/quick-starts/README.md)
+      * [Over quota, fairness and preemption, bin-packing](platform-management/scheduling-and-resource-optimization/scheduling/quick-starts/over-quota-fairness-and-preemption-bin-packing.md)
   * [Resource optimization](scheduling-and-resource-optimization/resource-optimization/README.md)
     * [GPU fractions](scheduling-and-resource-optimization/resource-optimization/gpu-fractions.md)
     * [Dynamic GPU fractions](scheduling-and-resource-optimization/resource-optimization/dynamic-gpu-fractions.md)

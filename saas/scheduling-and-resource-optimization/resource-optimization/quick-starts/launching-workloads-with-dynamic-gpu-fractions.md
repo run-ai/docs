@@ -10,7 +10,11 @@ Before you start, make sure:
 
 * You have created a [project](../../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 0.5 GPU.
-* Dynamic GPU fractions are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+* Dynamic GPU fractions is enabled.&#x20;
+
+{% hint style="info" %}
+Dynamic GPU fractions is disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+{% endhint %}
 
 ## Step 1: Logging in
 
@@ -20,7 +24,7 @@ Browse to the provided Run:ai user interface and log in with your credentials.
 {% endtab %}
 
 {% tab title="CLI v2" %}
-Log in using the following command. You will be prompted to enter your username and password:
+Run the below --help command to obtain the login options and log in according to your setup:
 
 ```sh
 runai login --help
@@ -61,7 +65,7 @@ To use the API, you will need to obtain a token as shown in [API authentication.
             * Enter **command** - `start-notebook.sh`
             * Enter **arguments** - `--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''`
 
-          Note: If -based routing is enabled on the cluster, enter the `--NotebookApp.token=''` only.
+          Note: If host-based routing is enabled on the cluster, enter the `--NotebookApp.token=''` only.
     * Click **CREATE ENVIRONMENT**
 
     The newly created jupyter-lab-name will be selected automatically

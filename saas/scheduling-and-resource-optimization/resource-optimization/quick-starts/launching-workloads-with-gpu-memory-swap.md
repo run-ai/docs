@@ -10,9 +10,13 @@ Before you start, make sure:
 
 * You have created a [project](../../../manage-ai-initiatives/managing-your-organization/projects.md) or have one created for you.
 * The project has an assigned quota of at least 1 GPU.
-* [Dynamic GPU fractions](../dynamic-gpu-fractions.md) are enabled. Dynamic GPU fractions are disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+* [Dynamic GPU fractions](../dynamic-gpu-fractions.md) is enabled.&#x20;
 * GPU memory swap is enabled on at least one free node as detailed [here](../gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
-* Host-based routing is configured.
+* [Host-based routing](https://docs.run.ai/latest/admin/config/allow-external-access-to-containers/) is configured.
+
+{% hint style="info" %}
+Dynamic GPU fractions is disabled by default in the Run:ai UI. To use dynamic GPU fractions, it must be enabled by your Administrator, under **General Settings** → Resources → GPU resource optimization.
+{% endhint %}
 
 ## Step 1: Logging in
 
@@ -216,7 +220,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 8. Enter a **name** for the workspace (if the name already exists in the project, you will be requested to submit a different name)
 9. Select the **‘chatbot-ui’** environment for your workspace (Image URL: runai.jfrog.io/core-llm/llm-app)
    * Set the runtime settings for the environment with the following **environment variables**:
-     * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
+     * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
      * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
      * Delete the **PATH\_PREFIX** environment variable if you are using host-based routing.
    * If the ‘chatbot-ui’ is not displayed in the gallery, follow the step-by-step guide:
@@ -228,7 +232,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
        * Select **Chatbot UI** tool from the list
      * Set the runtime settings for the environment
        * Click **+ENVIRONMENT VARIABLE**
-       * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
+       * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
        * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
        * **Name:** RUNAI\_MODEL\_TOKEN\_LIMIT **Source:** Custom **Value:** 8192
        * **Name:** RUNAI\_MODEL\_MAX\_LENGTH **Source:** Custom **Value:** 16384
@@ -300,7 +304,7 @@ The above API snippet runs with Run:ai clusters of 2.18 and above only. For olde
 8. Enter a **name** for the workspace (if the name already exists in the project, you will be requested to submit a different name)
 9. Select the **‘chatbot-ui’** environment
    * Set the runtime settings for the environment with the following **environment variables**:
-     * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** meta-llama/Llama-3.2-1B-Instruct
+     * **Name:** RUNAI\_MODEL\_NAME **Source:** Custom **Value:** `meta-llama/Llama-3.2-1B-Instruct`
      * **Name:** RUNAI\_MODEL\_BASE\_URL **Source:** Custom **Value:** Add the address link from Step 4
      * Delete the **PATH\_PREFIX** environment variable if you are using host-based routing.
 10. Select the **‘cpu-only’** compute resource
