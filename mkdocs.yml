@@ -88,6 +88,7 @@ plugins:
   - redirects:
       redirect_maps:
         'index.md' : 'home/overview.md'
+        'home/components.md' : 'home/overview.md'
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
