@@ -88,8 +88,6 @@ plugins:
   - redirects:
       redirect_maps:
         'index.md' : 'home/overview.md'
-        'home/overview.md' : 'home/documentation-library'
-        'home/components.md' : 'home/product-overview'
         'admin/runai-setup/self-hosted/k8s/ui.md' : 'admin/runai-setup/self-hosted/k8s/backend.md'
         'admin/runai-setup/advanced/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
         'admin/runai-setup/config/non-root-containers.md' : 'admin/authentication/non-root-containers.md'
@@ -190,7 +188,7 @@ plugins:
         'platform-admin/workloads/workload-overview.md' : 'platform-admin/workloads/overviews/introduction-to-workloads.md'
 nav:
   - Home: 
-    - 'Overview': 'home/product-overview.md'
+    - 'Overview': 'home/overview.md'
     - 'Documentation Library' : 'home/documentation-library.md'
     - 'Whats New' :
       - 'Run:ai SaaS Updates' : 'home/saas-updates.md'
