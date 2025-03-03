@@ -81,6 +81,7 @@ For information on supported versions of managed Kubernetes, it's important to c
 
 ### Container Runtime
 Run:ai supports the following [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/){target=_blank}:
+
 * [Containerd](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd){target=_blank}  (default in Kubernetes)
 * [CRI-O](https://cri-o.io/){target=_blank} (default in OpenShift)
 
