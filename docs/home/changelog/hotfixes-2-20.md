@@ -11,6 +11,13 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.24 | 20/02/2025 | RUN-26304 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
+| 2.20.24 | 20/02/2025 | RUN-25969 | TBD |
+| 2.20.23 | 20/02/2025 | RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
+| 2.20.23 | 20/02/2025 | RUN-25982 | CLI v2: Fixed an issue where interactive mode did not return an error for invalid control plane/Authentication URLs and timeout duration. |
+| 2.20.23 | 20/02/2025 | RUN-26135 | Fixed an issue which prevented enabling/disabling email notifications. |
+| 2.20.23 | 20/02/2025 | RUN-26178 | Fixed an issue where the upgrade to 2.20 failed to migrate departments and projects if the job to validate the default department to clusters ran first.  |
+| 2.20.23 | 20/02/2025 | RUN-26248 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | 2.20.22 | 20/02/2025 | RUN-23048 | Improved error handling to display meaningful messages from the CLI upgrade command. |
 | 2.20.22 | 20/02/2025 | RUN-25323 | Fixed an issue in CLI v2 where “stopping the workload” event was missing when workloads reached the project’s running time limit. |
 | 2.20.22 | 20/02/2025 | RUN-25511 | Fixed an issue where deleting a workload in CLI v2 caused an error due to a missing response body. The CLI now correctly receives and handles the expected response body. |
