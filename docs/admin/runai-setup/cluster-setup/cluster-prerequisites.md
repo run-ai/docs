@@ -149,7 +149,7 @@ There are many ways to install and configure different ingress controllers. A si
 
 ### NVIDIA GPU Operator
 
-Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.6
+Run:ai Cluster requires NVIDIA GPU Operator to be installed on the Kubernetes Cluster, supports version 22.9 to 24.9
 
 See the [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){target=_blank}, followed by notes below:
 
