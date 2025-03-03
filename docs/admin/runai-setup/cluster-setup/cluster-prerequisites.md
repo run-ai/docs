@@ -71,16 +71,21 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
 | :---- | :---- | :---- |
-| v2.16 | 1.26 to 1.28 | 4.11 to 4.14 |
 | v2.17 | 1.27 to 1.29 | 4.12 to 4.15 |
 | v2.18 | 1.28 to 1.30 | 4.12 to 4.16 |
 | v2.19 | 1.28 to 1.31 | 4.12 to 4.17 |
 | v2.20 | 1.29 to 1.32 | 4.14 to 4.17 |
 | v2.21 (latest) | 1.29 to 1.32 | 4.14 to 4.17 |
 
-
-
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank} or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift){target=_blank}
+
+### Container Runtime
+Run:ai supports the following [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/){target=_blank}:
+
+* [Containerd](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd){target=_blank}  (default in Kubernetes)
+* [CRI-O](https://cri-o.io/){target=_blank} (default in OpenShift)
+
+Ensure your Kubernetes cluster is configured with one of these runtimes.
 
 ### Kubernetes Pod Security Admission
 
