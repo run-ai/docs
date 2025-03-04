@@ -10,6 +10,8 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26304 | 2.19.71 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
+| RUN-26248 | 2.19.70 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | RUN-25323 | 2.19.68 | Fixed an issue in CLI v2 where “stopping the workload” event was missing when workloads reached the project’s running time limit. |
 | RUN-25946 | 2.19.68 | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
 | RUN-25921 | 2.19.68 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
