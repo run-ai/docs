@@ -27,11 +27,11 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | :---- | :---- |
 | RUN-25131 | Fixed an issue where authentication failures in the Grafana proxy incorrectly returned a 401 error causing users to be signed out of the UI. |
 | RUN-26248 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
-| RUN-26178 | CLI v2: Fixed an issue where interactive mode did not return an error for invalid control plane/Authentication URLs and timeout duration. |
+| RUN-25982 | CLI v2: Fixed an issue where interactive mode did not return an error for invalid control plane/Authentication URLs and timeout duration. |
 | RUN-26178 | Fixed an issue where the upgrade to 2.20 failed to migrate departments and projects if the job to validate the default department to clusters ran first. |
 | RUN-26115 | Fixed an issue where projects that were updated due to changes in their department override fields were not updated in the cluster. |
 | RUN-26152 | GET API for retrieving Workspaces, Trainings, and Inferences by ID returns deleted items. |
-
+| RUN-25984 | Added a validation message to api/v1/me/password. |
 
 
 ## February 2025 releases
