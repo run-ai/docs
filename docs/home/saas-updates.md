@@ -23,7 +23,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 * Added functionality to verify the proper installation of Knative. The UI and API will reflect the status of various features based on their current state in Knative.
 * Added the NVIDIA logo to the platform, including the login page and other general areas.
 * Audit log: Only users with tenant-wide permissions now have the ability to access audit logs, ensuring proper access control and data security.
-* Users will be able to submit workloads and map secrets to volumes using the --secret-volume flag. This feature is applicable for all workload types - workspaces, training, and inference.
+* CLI v2: Users will be able to submit workloads and map secrets to volumes using the --secret-volume flag. This feature is applicable for all workload types - workspaces, training, and inference.
 
 
 #### Resolved Bugs 
