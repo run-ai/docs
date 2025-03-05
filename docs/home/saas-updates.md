@@ -30,13 +30,18 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 | ID | Description |
 | :---- | :---- |
+| RUN-26135 | Fixed an issue which prevented enabling/disabling email notifications. |
 | RUN-25131 | Fixed an issue where authentication failures in the Grafana proxy incorrectly returned a 401 error causing users to be signed out of the UI. |
 | RUN-26248 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | RUN-25982 | CLI v2: Fixed an issue where interactive mode did not return an error for invalid control plane/Authentication URLs and timeout duration. |
+| RUN-26356 | Fixed an issue where Lowest for over quota weight did not appear as 0. |
+| RUN-26249 | Fixed an issue where creating a policy with the fields "tty" and "stdin" resulted in a validation error. |
 | RUN-26178 | Fixed an issue where the upgrade to 2.20 failed to migrate departments and projects if the job to validate the default department to clusters ran first. |
 | RUN-26115 | Fixed an issue where projects that were updated due to changes in their department override fields were not updated in the cluster. |
 | RUN-26152 | GET API for retrieving Workspaces, Trainings, and Inferences by ID returns deleted items. |
 | RUN-25984 | Added a validation message to api/v1/me/password. |
+| RUN-26062 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations — such as creation, deletion, resumption, or stoppage — after upgrading from versions below 2.18 to 2.18 or higher. |
+
 
 
 ## February 2025 releases
@@ -62,7 +67,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | :---- | :---- |
 | RUN-25974 | Fixed an issue where using filters in the Quota management dashboard was not working properly. |
 | RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
-| RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| RUN-25946 | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
 | RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
 | RUN-25249 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
 | RUN-25269 | Fixed an issue where the Pods modal was not paginated, limiting the display to only 50 records.  |
