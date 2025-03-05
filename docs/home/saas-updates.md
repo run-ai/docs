@@ -11,8 +11,38 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [February 16-23, 2025](#february-16-23-2025)
-* Previous releases: [February 02-09, 2025](#february-02-09-2025)
+* Latest release: [March 04, 2025](#march-04-2025)
+* Previous releases: [February 16-23, 2025](#february-16-23-2025), [February 02-09, 2025](#february-02-09-2025)
+
+## March 2025 releases
+
+### March 04, 2025
+
+#### Product enhancements
+
+* Added functionality to verify the proper installation of Knative. The UI and API will reflect the status of various features based on their current state in Knative.
+* Added the NVIDIA logo to the platform, including the login page and other general areas.
+* Audit log: Only users with tenant-wide permissions now have the ability to access audit logs, ensuring proper access control and data security.
+* CLI v2: Users will be able to submit workloads and map secrets to volumes using the `--secret-volume` flag. This feature is applicable for all workload types - workspaces, training, and inference.
+
+
+#### Resolved Bugs 
+
+| ID | Description |
+| :---- | :---- |
+| RUN-26135 | Fixed an issue which prevented enabling/disabling email notifications. |
+| RUN-25131 | Fixed an issue where authentication failures in the Grafana proxy incorrectly returned a 401 error causing users to be signed out of the UI. |
+| RUN-26248 | CLI v2: Fixed an issue where submitting an interactive workload with `--attach` was not possible after the workload started running. |
+| RUN-25982 | CLI v2: Fixed an issue where interactive mode did not return an error for invalid control plane/Authentication URLs and timeout duration. |
+| RUN-26356 | Fixed an issue where Lowest for over quota weight did not appear as 0. |
+| RUN-26249 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
+| RUN-26178 | Fixed an issue where the upgrade to 2.20 failed to migrate departments and projects if the job to validate the default department to clusters ran first. |
+| RUN-25895 | Fixed an issue where projects that were updated due to changes in their department override fields were not updated in the cluster. |
+| RUN-26152 | GET API for retrieving Workspaces, Trainings, and Inferences by ID returns deleted items. |
+| RUN-25984 | Added a validation message to api/v1/me/password. |
+| RUN-26062 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations — such as creation, deletion, resumption, or stoppage — after upgrading from versions below 2.18 to 2.18 or higher. |
+
+
 
 ## February 2025 releases
 
@@ -37,7 +67,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | :---- | :---- |
 | RUN-25974 | Fixed an issue where using filters in the Quota management dashboard was not working properly. |
 | RUN-25969 | Fixed an issue where the UI incorrectly rejected valid toleration key inputs during validation checks. |
-| RUN-25946  | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
+| RUN-25946 | Fixed an issue where the Update Inference Spec API did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.19. |
 | RUN-25921 | Fixed an issue where the Workspaces, Trainings and Distributed APIs did not enforce a minimum cluster version returning a 400 Bad Request for versions below 2.18. |
 | RUN-25249 | Fixed an issue where submitting a workload using a yaml file with a port but without service type would use ClusterIP as the default service type. If no host port is provided, the target port will be used as the host. |
 | RUN-25269 | Fixed an issue where the Pods modal was not paginated, limiting the display to only 50 records.  |
