@@ -24,7 +24,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 * Added the NVIDIA logo to the platform, including the login page and other general areas.
 * Audit log: Only users with tenant-wide permissions now have the ability to access audit logs, ensuring proper access control and data security.
 * CLI v2: Users will be able to submit workloads and map secrets to volumes using the `--secret-volume` flag. This feature is applicable for all workload types - workspaces, training, and inference.
-* SSO OpenID Connect authentication now supports token exchange of JWT tokens with groups in both list and map formats. In the map format, the group name is used as the value. This applies to new identity providers only.
+* SSO OpenID Connect authentication now supports token exchange of JWT tokens with groups in both list and map formats. In map format, the group name is used as the value. This applies to new identity providers only.
 
 #### Resolved Bugs 
 
