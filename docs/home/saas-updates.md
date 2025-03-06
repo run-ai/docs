@@ -39,6 +39,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | RUN-26178 | Fixed an issue where the upgrade to 2.20 failed to migrate departments and projects if the job to validate the default department to clusters ran first. |
 | RUN-25895 | Fixed an issue where projects that were updated due to changes in their department override fields were not updated in the cluster. |
 | RUN-26152 | GET API for retrieving Workspaces, Trainings, and Inferences by ID returns deleted items. |
+| RUN-25987 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
 | RUN-25984 | Added a validation message to api/v1/me/password. |
 | RUN-26062 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations — such as creation, deletion, resumption, or stoppage — after upgrading from versions below 2.18 to 2.18 or higher. |
 
