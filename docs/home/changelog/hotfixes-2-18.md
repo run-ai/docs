@@ -12,6 +12,8 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26240 | 2.18.95 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| RUN-26249 | 2.18.95 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
 | RUN-26304 | 2.18.94 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
 | RUN-26248 | 2.18.93 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | RUN-25323 | 2.18.92 | Reduced memory consumption to improve stability and increase scaling. |
