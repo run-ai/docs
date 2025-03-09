@@ -11,6 +11,14 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.25 | 06/0/2025 | RUN-25984 | Added a validation message to api/v1/me/password. |
+| 2.20.25 | 06/03/2025 | RUN-26253 | CLI v2 list project now supports limit and offset flags. |
+| 2.20.25 | 06/03/2025 | RUN-26310 | Docker registry credentials/secrets weren't available to use as environment variable. |
+| 2.20.25 | 06/03/2025 | RUN-26355 | Collection metric on distributed workload didn't start. |
+| 2.20.25 | 06/03/2025 | RUN-26356 | Fixed an issue where Lowest for over quota weight did not appear as 0. |
+| 2.20.25 | 06/03/2025 | RUN-26272 | Allow the connection to the SMTP server to be without credentials. |
+| 2.20.25 | 06/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| 2.20.25 | 06/03/2025 | RUN-26249 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
 | 2.20.24 | 28/02/2025 | RUN-26304 | Fixed an issue where quota numbers were incorrectly displayed in the reclaim message. |
 | 2.20.24 | 28/02/2025 | RUN-25984 | Fixed an issue where api/v1/me/password was missing a validation message when changing a password. | 
 | 2.20.23 | 27/02/2025 | RUN-25895 | Fixed an issue where projects that were updated due to changes in their department override fields were not always updated in the cluster. |

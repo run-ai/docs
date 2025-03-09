@@ -10,6 +10,10 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26240 | 2.19.73 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| RUN-26272 | 2.19.73 | Allow the connection to the SMTP server to be without credentials. |
+| RUN-26355 | 2.19.72 | Collection metric on distributed workload didn't start. |
+| RUN-26249 | 2.19.72 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
 | RUN-26304 | 2.19.71 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
 | RUN-26248 | 2.19.70 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | RUN-25323 | 2.19.68 | Fixed an issue in CLI v2 where “stopping the workload” event was missing when workloads reached the project’s running time limit. |
