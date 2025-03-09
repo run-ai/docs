@@ -11,12 +11,12 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [March 05, 2025](#march-05-2025)
+* Latest release: [March 05-09, 2025](#march-05-09-2025)
 * Previous releases: [February 16-23, 2025](#february-16-23-2025), [February 02-09, 2025](#february-02-09-2025)
 
 ## March 2025 releases
 
-### March 05, 2025
+### March 05-09, 2025
 
 #### Product enhancements
 
@@ -30,6 +30,9 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 | ID | Description |
 | :---- | :---- |
+| RUN-26310 | Fixed an issue where Docker registry credentials/secrets were not found when adding environment variables. |
+| RUN-26253 | CLI v2 list project now supports limit and offset flags. |
+| RUN-25382 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |
 | RUN-26135 | Fixed an issue which prevented enabling/disabling email notifications. |
 | RUN-25131 | Fixed an issue where authentication failures in the Grafana proxy incorrectly returned a 401 error causing users to be signed out of the UI. |
 | RUN-26248 | CLI v2: Fixed an issue where submitting an interactive workload with `--attach` was not possible after the workload started running. |
