@@ -14,7 +14,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | RUN-25987 | 2.19.74 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
 | RUN-26479 | 2.19.74 | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. |
 | RUN-26240 | 2.19.74 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
-| RUN-26272 | 2.19.73 | Allow the connection to the SMTP server to be without credentials. |
+| RUN-26272 | 2.19.73 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
 | RUN-26308 | 2.19.73 | CLI v2: Fixed several text mismatches in `runai training list --help` and deprecated messages.|
 | RUN-26355 | 2.19.72 | Fixed an issue where collecting metrics on distributed workload did not start properly.  |
 | RUN-26249 | 2.19.72 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
