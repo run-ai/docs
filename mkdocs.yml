@@ -204,7 +204,9 @@ nav:
       - 'Hotfixes for 2.18' : 'home/changelog/hotfixes-2-18.md'
       - 'Hotfixes for 2.17' : 'home/changelog/hotfixes-2-17.md'
       - 'Hotfixes for 2.16' : 'home/changelog/hotfixes-2-16.md'
-    - 'Product Support Policy' : 'home/product-support-policy.md'
+    - 'Support Policy' :
+      - 'Product Support Policy' : 'home/product-support-policy.md'
+      - 'Product Version Lifecycle' : 'home/version-lifecycle.md'
     - 'Data Privacy' : 'home/data-privacy-details.md'
   - 'Infrastructure Administrator' :
     - 'Overview' : 'admin/overview-administrator.md'
