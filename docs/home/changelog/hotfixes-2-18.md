@@ -15,7 +15,9 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-25382 | 2.18.96 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |
 | RUN-25987 | 2.18.96 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
 | RUN-26240 | 2.18.96 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| RUN-26479 | 2.18.96 | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. |
 | RUN-26249 | 2.18.95 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
+| RUN-26308 | 2.18.95 | CLI v2: Fixed several text mismatches in `runai training list --help` and deprecated messages.|
 | RUN-26304 | 2.18.94 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
 | RUN-26248 | 2.18.93 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |
 | RUN-25323 | 2.18.92 | Reduced memory consumption to improve stability and increase scaling. |
@@ -83,7 +85,7 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 | RUN-22457 |2.18.55 | Fixed an issue where in rare edge cases the cluster-sync pod was out of memory. |
 | RUN-21825 |2.18.55 | Fixed all CVEs in Run:ai's Goofys-based image used for S3 integration. |
 | RUN-22871 |2.18.55 | Fixed an issue in runai-container-toolkit where in certain cases when a process is preempted, OOMKill metrics were not published correctly. |
-| RUN-22250 |2.18.55 | Fixed an issue where workloads trying to use an ingress URL which is already in use were behaving inconsistentyly instead of failing immediately. |
+| RUN-22250 |2.18.55 | Fixed an issue where workloads trying to use an ingress URL which is already in use were behaving inconsistently instead of failing immediately. |
 | RUN-22880 |2.18.55 | Fixed an issue where the minAvailable field for training-operator CRDs did not consider all possible replica specs. |
 | RUN-22073 |2.18.55 | Fixed an issue where runai-operator failed to parse cluster URLs ending with '/'. |
 | RUN-22453 |2.18.55 | Fixed an issue where in rare edge cases the workload-overseer pod experienced a crash. |

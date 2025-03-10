@@ -13,14 +13,15 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 |--|--|--|--|
 | 2.20.26 | 09/03/2025 | RUN-25987 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
 | 2.20.26 | 09/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
-| 2.20.25 | 06/03/2025 | RUN-25984 | Added a validation message to api/v1/me/password. |
+| 2.20.26 | 09/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| 2.20.26 | 09/03/2025 | RUN-26479  | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. | |
 | 2.20.25 | 06/03/2025 | RUN-26253 | CLI v2 list project now supports limit and offset flags. |
-| 2.20.25 | 06/03/2025 | RUN-26310 | Docker registry credentials/secrets weren't available to use as environment variable. |
-| 2.20.25 | 06/03/2025 | RUN-26355 | Collection metric on distributed workload didn't start. |
+| 2.20.25 | 06/03/2025 | RUN-26310 | Fixed an issue where Docker registry credentials/secrets were not found when adding environment variables. |
+| 2.20.25 | 06/03/2025 | RUN-26355 | Fixed an issue where collecting metrics on distributed workload did not start properly. |
 | 2.20.25 | 06/03/2025 | RUN-26356 | Fixed an issue where Lowest for over quota weight did not appear as 0. |
 | 2.20.25 | 06/03/2025 | RUN-26272 | Allow the connection to the SMTP server to be without credentials. |
-| 2.20.25 | 06/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
 | 2.20.25 | 06/03/2025 | RUN-26249 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
+| 2.20.25 | 06/03/2025 | RUN-26308 | CLI v2: Fixed several text mismatches in `runai training list --help` and deprecated messages. |
 | 2.20.24 | 28/02/2025 | RUN-26304 | Fixed an issue where quota numbers were incorrectly displayed in the reclaim message. |
 | 2.20.24 | 28/02/2025 | RUN-25984 | Fixed an issue where api/v1/me/password was missing a validation message when changing a password. | 
 | 2.20.23 | 27/02/2025 | RUN-25895 | Fixed an issue where projects that were updated due to changes in their department override fields were not always updated in the cluster. |
