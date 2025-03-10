@@ -1,4 +1,4 @@
-# Support Model
+# Product Version Lifecycle 
 
 ## Overview
 Run:ai follows a structured product lifecycle to ensure customers receive regular updates, security patches, and long-term stability for their deployments. 
