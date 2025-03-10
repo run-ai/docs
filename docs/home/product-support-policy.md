@@ -11,6 +11,8 @@ The product support levels for the Run:ai software are as follows:
 * Extended support period: 6 months after the end of the full support period.
 * End of support: 18 months from the release date of a Major Version
 
+For specific versions, see [Product Version Lifecycle](version-lifecycle.md).
+
 Notes:
 
 1. Run:ai may extend the support periods and/or otherwise amend this Product Support Levels Policy from time to time at its own discretion.
