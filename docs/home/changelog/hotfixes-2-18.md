@@ -12,7 +12,9 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-26240 | 2.18.95 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| RUN-25382 | 2.18.96 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |
+| RUN-25987 | 2.18.96 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
+| RUN-26240 | 2.18.96 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
 | RUN-26249 | 2.18.95 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
 | RUN-26304 | 2.18.94 | Fixed an issue where quota numbers was incorrectly displayed in the reclaim message. |
 | RUN-26248 | 2.18.93 | CLI v2: Fixed an issue where submitting an interactive workload with attach was not possible after the workload started running. |

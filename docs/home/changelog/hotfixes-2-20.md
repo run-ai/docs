@@ -11,7 +11,9 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
-| 2.20.25 | 06/0/2025 | RUN-25984 | Added a validation message to api/v1/me/password. |
+| 2.20.26 | 09/03/2025 | RUN-25987 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
+| 2.20.26 | 09/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| 2.20.25 | 06/03/2025 | RUN-25984 | Added a validation message to api/v1/me/password. |
 | 2.20.25 | 06/03/2025 | RUN-26253 | CLI v2 list project now supports limit and offset flags. |
 | 2.20.25 | 06/03/2025 | RUN-26310 | Docker registry credentials/secrets weren't available to use as environment variable. |
 | 2.20.25 | 06/03/2025 | RUN-26355 | Collection metric on distributed workload didn't start. |

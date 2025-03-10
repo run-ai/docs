@@ -10,7 +10,9 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-26240 | 2.19.73 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
+| RUN-25382 | 2.19.74 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |
+| RUN-25987 | 2.19.74 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
+| RUN-26240 | 2.19.74 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
 | RUN-26272 | 2.19.73 | Allow the connection to the SMTP server to be without credentials. |
 | RUN-26355 | 2.19.72 | Collection metric on distributed workload didn't start. |
 | RUN-26249 | 2.19.72 | Fixed an issue where creating a policy with the fields `tty` and `stdin` resulted in a validation error. |
