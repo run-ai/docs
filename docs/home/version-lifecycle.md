@@ -8,7 +8,7 @@ This document outlines the support phases for each release version, including th
 * **Extended Support** - After the full support period ends, the version continues to receive critical bug fixes.
 * **End of Support** - Once a version reaches this stage, it will no longer receive updates, and customers are encouraged to upgrade to a supported version.
 
-## Supported product versions
+## Versions
 
 The table below details the supported versions of Run:ai, along with their respective support timelines. 
 If your deployment is approaching the end of support, we recommend planning an upgrade to ensure continued security and functionality.
