@@ -1,41 +1,31 @@
-## runai training pytorch list
+## runai pvc list
 
-list pytorch training
+List PVC
 
 ```
-runai training pytorch list [flags]
+runai pvc list [flags]
 ```
 
 ### Examples
 
 ```
-# List all pytorch training workloads
-runai training pytorch list -A
+# List of PVC by project with table output
+runai pvc list -p <project_name>
 
-# List pytorch training workloads with default project
-runai training pytorch list
+# List of PVC by project with table JSON output
+runai pvc list -p <project_name> --json
 
-# List pytorch training workloads in a specific project
-runai training pytorch list -p <project_name>
-
-# List all pytorch training workloads with a specific output format
-runai training pytorch list --yaml
-
-# List pytorch training workloads with pagination
-runai training pytorch list --limit 20 --offset 40
+# List of PVC by project with YAML  output
+runai pvc list -p <project_name> --yaml
 ```
 
 ### Options
 
 ```
-  -A, --all              list workloads from all projects
   -h, --help             help for list
       --json             Output structure JSON
-      --limit int32      the maximum number of entries to return (default 50)
       --no-headers       Output structure table without headers
-      --offset int32     offset number of limit, default 0 (first offset)
   -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --status string    filter by workload state
       --table            Output structure table
       --yaml             Output structure YAML
 ```
@@ -52,5 +42,5 @@ runai training pytorch list --limit 20 --offset 40
 
 ### SEE ALSO
 
-* [runai training pytorch](runai_training_pytorch.md)	 - pytorch management
+* [runai pvc](runai_pvc.md)	 - PVC management
 

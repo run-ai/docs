@@ -39,7 +39,7 @@ runai workspace submit <name> -p <project_name> -i jupyter/scipy-notebook --gpu-
       --cpu-memory-request string                      CPU memory to allocate for the job (e.g. 1G, 500M)
       --create-home-dir                                Create a temporary home directory. Defaults to true when --run-as-user is set, false otherwise
   -e, --environment stringArray                        Set environment variables in the container
-      --existing-pvc stringArray                       Mount an existing persistent volume. Use the format: claimname=CLAIM_NAME,path=PATH
+      --existing-pvc stringArray                       Mount an existing persistent volume. Use the format: claimname=CLAIM_NAME,path=PATH <auto-complete supported>
       --extended-resource stringArray                  Request access to an extended resource. Use the format: resource_name=quantity
       --external-url stringArray                       Expose URL from the job container. Use the format: container=9443,url=https://external.runai.com,authusers=user1,authgroups=group1
       --git-sync stringArray                           Specifies git repositories to mount into the container. Use the format: name=NAME,repository=REPO,path=PATH,secret=SECRET,rev=REVISION
@@ -48,18 +48,18 @@ runai workspace submit <name> -p <project_name> -i jupyter/scipy-notebook --gpu-
       --gpu-memory-request string                      GPU memory to allocate for the job (e.g. 1G, 500M)
       --gpu-portion-limit float                        GPU portion limit, must be no less than the gpu-memory-request (between 0 and 1, e.g. 0.5, 0.2)
       --gpu-portion-request float                      GPU portion request (between 0 and 1, e.g. 0.5, 0.2)
-      --gpu-request-type string                        GPU request type (portion|memory|migProfile)
+      --gpu-request-type string                        GPU request type (portion|memory|migProfile[Deprecated])
   -h, --help                                           help for submit
       --host-ipc                                       Whether to enable host IPC. (Default: false)
       --host-network                                   Whether to enable host networking. (Default: false)
-      --host-path stringArray                          Volumes to mount into the container. Use the format: path=PATH,mount=MOUNT,mount-propagation=None|HostToContainer,readwrite
+      --host-path stringArray                          host paths (Volumes) to mount into the container. Format: path=PATH,mount=MOUNT,mount-propagation=None|HostToContainer,readwrite
   -i, --image string                                   The image for the workload
       --image-pull-policy string                       Set image pull policy. One of: Always, IfNotPresent, Never. Defaults to Always (default "Always")
       --label stringArray                              Set of labels to populate into the container running the workspace
       --large-shm                                      Request large /dev/shm device to mount
       --name-prefix string                             Set defined prefix for the workload name and add index as a suffix
       --new-pvc stringArray                            Mount a persistent volume, create it if it does not exist. Use the format: claimname=CLAIM_NAME,storageclass=STORAGE_CLASS,size=SIZE,path=PATH,accessmode-rwo,accessmode-rom,accessmode-rwm,ro,ephemeral
-      --nfs stringArray                                NFS storage details. Use the format: path=PATH,server=SERVER,mountpath=MOUNT_PATH,readwrite
+      --nfs stringArray                                NFS volumes to use in the workload. Format: path=PATH,server=SERVER,mountpath=MOUNT_PATH,readwrite
       --node-pools stringArray                         List of node pools to use for scheduling the job, ordered by priority
       --node-type string                               Enforce node type affinity by setting a node-type label
       --pod-running-timeout duration                   Pod check for running state timeout.
@@ -71,10 +71,12 @@ runai workspace submit <name> -p <project_name> -i jupyter/scipy-notebook --gpu-
       --run-as-gid int                                 The group ID the container will run with
       --run-as-uid int                                 The user ID the container will run with
       --run-as-user                                    takes the uid, gid, and supplementary groups fields from the token, if all the fields do not exist, uses the local running terminal user credentials. if any of the fields exist take only the existing fields
-      --s3 stringArray                                 s3 storage details. Use the format: name=NAME,bucket=BUCKET,path=PATH,accesskey=ACCESS_KEY,url=URL
+      --s3 stringArray                                 s3 buckets to use in the workload. Format: name=NAME,bucket=BUCKET,path=PATH,accesskey=ACCESS_KEY,url=URL
       --seccomp-profile string                         Indicates which kind of seccomp profile will be applied to the container, options: RuntimeDefault|Unconfined|Localhost
+      --secret-volume stringArray                      Secret volumes to use in the workload. Format: path=PATH,name=SECRET_RESOURCE_NAME
       --stdin                                          Keep stdin open on the container(s) in the pod, even if nothing is attached
       --supplemental-groups ints                       Comma seperated list of groups (IDs) that the user running the container belongs to
+      --termination-grace-period duration              The length of time (like 5s or 2m, higher than zero) the workload's pod is expected to terminate gracefully upon probe failure. In case value is not specified, kubernetes default of 30 seconds applies (default 0s)
       --toleration stringArray                         Toleration details. Use the format: operator=Equal|Exists,key=KEY,[value=VALUE],[effect=NoSchedule|NoExecute|PreferNoSchedule],[seconds=SECONDS]
   -t, --tty                                            Allocate a TTY for the container
       --user-group-source string                       Indicate the way to determine the user and group ids of the container, options: fromTheImage|fromIdpToken|fromIdpToken

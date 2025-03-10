@@ -1,21 +1,17 @@
-## runai project list
+## runai config describe
 
-list available project
+Returns information about the configuration.
 
 ```
-runai project list [flags]
+runai config describe [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help           help for list
-      --json           Output structure JSON
-      --limit int32    the maximum number of entries to return (default 50)
-      --no-headers     Output structure table without headers
-      --offset int32   offset number of limit, default 0 (first offset)
-      --table          Output structure table
-      --yaml           Output structure YAML
+  -h, --help   help for describe
+      --json   Output structure JSON
+      --yaml   Output structure YAML
 ```
 
 ### Options inherited from parent commands
@@ -30,5 +26,5 @@ runai project list [flags]
 
 ### SEE ALSO
 
-* [runai project](runai_project.md)	 - project management
+* [runai config](runai_config.md)	 - configuration management
 
