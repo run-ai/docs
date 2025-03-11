@@ -1,26 +1,35 @@
-## runai workload list
+## runai workload delete
 
-List workloads
+Delete workloads
 
 ```
-runai workload list [flags]
+runai workload delete [flags]
+```
+
+### Examples
+
+```
+# Delete multiple workloads
+runai delete -p proj1 workload01 workload02 workload03
+
+# Delete list of workloads with PyTorch framework filter
+runai delete -p proj1 --framework pytorch workload01 workload02 workload03
+
+# Delete list of workloads with training type filter
+runai delete -p proj1 --type training workload01 workload02 workload03
+
+# Delete multiple workloads by bypassing confirmation
+runai delete -p proj1 -y workload01 workload02 workload03
 ```
 
 ### Options
 
 ```
-  -A, --all                list workloads from all projects
       --framework string   filter by workload framework
-  -h, --help               help for list
-      --json               Output structure JSON
-      --limit int32        the maximum number of entries to return (default 50)
-      --no-headers         Output structure table without headers
-      --offset int32       offset number of limit, default 0 (first offset)
+  -h, --help               help for delete
   -p, --project string     Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
-      --status string      filter by workload state
-      --table              Output structure table
       --type string        filter by workload type
-      --yaml               Output structure YAML
+  -y, --yes                bypass confirmation dialog by answering yes
 ```
 
 ### Options inherited from parent commands
