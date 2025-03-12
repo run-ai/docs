@@ -71,6 +71,8 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 
 | Run:ai version | Supported Kubernetes versions | Supported OpenShift versions |
 | :---- | :---- | :---- |
+| v2.13 | 1.23 to 1.28 | 4.10 to 4.13 |
+| v2.16 | 1.26 to 1.28 | 4.11 to 4.14 |
 | v2.17 | 1.27 to 1.29 | 4.12 to 4.15 |
 | v2.18 | 1.28 to 1.30 | 4.12 to 4.16 |
 | v2.19 | 1.28 to 1.31 | 4.12 to 4.17 |
