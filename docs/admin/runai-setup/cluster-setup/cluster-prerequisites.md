@@ -77,6 +77,15 @@ For existing Kubernetes clusters, see the following Kubernetes version support m
 
 For information on supported versions of managed Kubernetes, it's important to consult the release notes provided by your Kubernetes service provider. There, you can confirm the specific version of the underlying Kubernetes platform supported by the provider, ensuring compatibility with Run:ai. For an up-to-date end-of-life statement see [Kubernetes Release History](https://kubernetes.io/releases/){target=_blank} or [OpenShift Container Platform Life Cycle Policy](https://access.redhat.com/support/policy/updates/openshift){target=_blank}.
 
+### Container Runtime
+
+Run:ai supports the following [container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/){target=_blank}:
+
+* [Containerd](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd){target=_blank}  (default in Kubernetes)
+* [CRI-O](https://cri-o.io/){target=_blank} (default in OpenShift)
+
+Ensure your Kubernetes cluster is configured with one of these runtimes.
+
 ### Kubernetes Pod Security Admission
 
 Run:ai v2.15 and above supports `restricted` policy for [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){target=_blank} (PSA) on OpenShift only. Other Kubernetes distributions are only supported with `privileged` policy.
