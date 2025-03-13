@@ -172,5 +172,5 @@ runai node list --json
 ```
 
 ## CLI reference
-For the full guide of the CLI syntax, see the [CLI reference](/saas/docs/cli-reference)
+For the full guide of the CLI syntax, see the [CLI reference](runai.md).
 
