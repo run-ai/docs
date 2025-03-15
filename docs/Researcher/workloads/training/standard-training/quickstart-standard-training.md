@@ -103,20 +103,20 @@ Before you start, make sure:
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Trainings API reference](https://api-docs.run.ai/latest/tag/Trainings):
 
     ``` bash
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/trainings' \ # (1)
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/trainings' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -H 'Authorization: Bearer <TOKEN>' \
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ # (3)
-        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "projectId": "<PROJECT-ID>",
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {  
            "image": "runai.jfrog.io/demo/quickstart", 
            "compute": { 
            "gpuDevicesRequest": 1
-           }, 
+           } 
         } 
-    }'
+    }
     ``` 
 
     1. `<COMPANY-URL>` is the link to the Run:ai user interface.
