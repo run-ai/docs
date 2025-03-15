@@ -76,30 +76,30 @@ Before you start, make sure:
 
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Inferences API](https://api-docs.run.ai/latest/tag/Inferences#operation/create_inference1):
 
-    ```sh
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/inferences' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    ```bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/inferences' \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
         "useGivenNameAsPrefix": true,
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {
             "image": "runai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0",
             "imagePullPolicy":"IfNotPresent",
             "environmentVariables": [
             {
-              "name": "RUNAI_MODEL",
-              "value": "meta-lama/Llama-3.2-1B-Instruct"
+                "name": "RUNAI_MODEL",
+                "value": "meta-lama/Llama-3.2-1B-Instruct"
             },
             {
-              "name": "VLLM_RPC_TIMEOUT",
-              "value": "60000"
+                "name": "VLLM_RPC_TIMEOUT",
+                "value": "60000"
             },
             {
-              "name": "HF_TOKEN",
-              "value":"<INSERT HUGGINGFACE TOKEN>"
+                "name": "HF_TOKEN",
+                "value":"<INSERT HUGGINGFACE TOKEN>"
             }
             ],
             "compute": {
@@ -116,9 +116,16 @@ Before you start, make sure:
                 "container": 8000,
                 "protocol": "http",
                 "authorizationType": "public"
+            }
         }
-    }'       
+    }       
     ```
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+ 
 
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only. 
@@ -143,32 +150,32 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Inferences API](https://api-docs.run.ai/latest/tag/Inferences#operation/create_inference1):
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. Use the **project** and **cluster** where the previous inference workload was created. For more details, see [Inferences API](https://api-docs.run.ai/latest/tag/Inferences#operation/create_inference1):
 
-    ```sh
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/inferences' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    ```bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/inferences' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \
     -d '{ 
         "name": "workload-name", 
         "useGivenNameAsPrefix": true,
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>", 
         "spec": {
             "image": "runai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0",
             "imagePullPolicy":"IfNotPresent",
             "environmentVariables": [
             {
-              "name": "RUNAI_MODEL",
-              "value": "meta-lama/Llama-3.2-1B-Instruct"
+                "name": "RUNAI_MODEL",
+                "value": "meta-lama/Llama-3.2-1B-Instruct"
             },
             {
-              "name": "VLLM_RPC_TIMEOUT",
-              "value": "60000"
+                "name": "VLLM_RPC_TIMEOUT",
+                "value": "60000"
             },
             {
-              "name": "HF_TOKEN",
-              "value":"<INSERT HUGGINGFACE TOKEN>"
+                "name": "HF_TOKEN",
+                "value":"<INSERT HUGGINGFACE TOKEN>"
             }
             ],
             "compute": {
@@ -185,10 +192,15 @@ Before you start, make sure:
                 "container": 8000,
                 "protocol": "http",
                 "authorizationType": "public"
+            }
         }
-    }'       
+    }       
     ```
-
+    
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
 
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only. 
@@ -255,34 +267,41 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. Use the **project** and **cluster** where the previous inference workloads were created. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
-    ```sh
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    ```bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>",
+        "clusterId": "<CLUSTER-UUID>", 
         "spec": {  
             "image": "runai.jfrog.io/core-llm/llm-app",
             "environmentVariables": [
             {
-              "name": "RUNAI_MODEL_NAME",
-              "value": "meta-llama/Llama-3.2-1B-Instruct"
+                "name": "RUNAI_MODEL_NAME",
+                "value": "meta-llama/Llama-3.2-1B-Instruct"
             },
             {
-              "name": "RUNAI_MODEL_BASE_URL",
-              "value": "<URL>" #The URL for connecting an external service related to the workload. You can get the URL via the List workloads API.
+                "name": "RUNAI_MODEL_BASE_URL",
+                "value": "<URL>" 
             }
             ],
             "compute": {
                 "cpuCoreRequest":0.1,
                 "cpuMemoryRequest": "100M",
+            }
         }
-    }'
+    }
     ```
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+
 
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only.
@@ -316,34 +335,41 @@ Before you start, make sure:
 
 === "API"
 
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. Use the **project** and **cluster** where the previous inference workloads were created. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
-    ```sh
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    ```bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>",
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {  
             "image": "runai.jfrog.io/core-llm/llm-app",
             "environmentVariables": [
-            {
-              "name": "RUNAI_MODEL_NAME",
-              "value": "meta-llama/Llama-3.2-1B-Instruct"
-            },
-            {
-              "name": "RUNAI_MODEL_BASE_URL",
-              "value": "<URL>" #The URL for connecting an external service related to the workload. You can get the URL via the List workloads API.
-            }
+              {
+                "name": "RUNAI_MODEL_NAME",
+                "value": "meta-llama/Llama-3.2-1B-Instruct"
+              },
+              {
+                "name": "RUNAI_MODEL_BASE_URL",
+                "value": "<URL>" 
+              }
             ],
             "compute": {
                 "cpuCoreRequest":0.1,
                 "cpuMemoryRequest": "100M",
+            }
         }
-    }'
+    }
     ```
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+
 
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only. 

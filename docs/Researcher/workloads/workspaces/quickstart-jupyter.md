@@ -101,9 +101,8 @@ Before you start, make sure:
 
     ``` bash
     runai project set "project-name"
-    runai workspace submit jupyter-notebook -i jupyter/scipy-notebook -g 1 \
-        --external-url container=8888 --command  \
-        -- start-notebook.sh --NotebookApp.base_url=/\${RUNAI_PROJECT}/\${RUNAI_JOB_NAME} --NotebookApp.token=''
+    runai workspace submit "workload-name" --image jupyter/scipy-notebook --gpu-devices-request 0 --command --external-url \
+    container=8888 -- start-notebook.sh --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=
     ```
 
 === "CLI V1 [Deprecated]"
@@ -120,13 +119,13 @@ Before you start, make sure:
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API reference](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ``` bash
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ # (1)
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ # (3)
-        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "projectId": "<PROJECT-ID>",
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
@@ -137,8 +136,8 @@ Before you start, make sure:
             "exposedUrls" : [
                 { 
                     "container" : 8888,
-                    "toolType": "jupyter-notebook", \ # (5)
-                    "toolName": "Jupyter" \ # (6)
+                    "toolType": "jupyter-notebook",
+                    "toolName": "Jupyter" 
                 }
             ]
         }
@@ -147,7 +146,7 @@ Before you start, make sure:
 
     1. `<COMPANY-URL>` is the link to the Run:ai user interface.
     2. `<TOKEN>` is the API access token obtained in Step 1. 
-    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    3. `<PROJECT-ID>` is #The ID of the Project the workload is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
     4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
     5. `toolType` will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
     6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
