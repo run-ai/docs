@@ -28,7 +28,6 @@ Enforce SSO tenant setting: An API has been added to the tenant settings, empowe
 | ID | Description |
 | :---- | :---- |
 | RUN-26686 | Fixed an issue where workload names exceeding 50 characters could cause failures due to Kubernetes label length constraints (max 63 characters). A validation check now prevents longer names and returns a 400 Bad Request error. |
-| RUN-26355 | Fixed an issue where collecting metrics on distributed workloads did not start properly. |
 | RUN-26272 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
 | RUN-26310 | Fixed an issue where Docker registry credentials/secrets were not found when adding environment variables. |
 | RUN-26659 | Fixed an issue where deleting the node pool, did not remove it from the default node pools list used when submitting a workload. |
