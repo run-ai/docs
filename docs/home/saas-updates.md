@@ -11,8 +11,8 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [March 05-09, 2025](#march-05-09-2025)
-* Previous releases: [February 16-23, 2025](#february-16-23-2025), [February 02-09, 2025](#february-02-09-2025)
+* Latest release: [March 16, 2025](#march-16-2025)
+* Previous releases: [March 05-09, 2025](#march-05-09-2025), [February 16-23, 2025](#february-16-23-2025), [February 02-09, 2025](#february-02-09-2025)
 
 ## March 2025 releases
 
@@ -20,21 +20,19 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 #### Product enhancements
 
-* Enforce SSO tenant setting: An API has been added to the tenant settings, empowering administrators to enforce Single Sign-On (SSO) for their organization. When enabled, this setting ensures that all users are required to authenticate through the configured SSO provider.
+Enforce SSO tenant setting: An API has been added to the tenant settings, empowering administrators to enforce Single Sign-On (SSO) for their organization. When enabled, this setting ensures that all users are required to authenticate through the configured SSO provider.
 
 
 #### Resolved Bugs 
 
 | ID | Description |
 | :---- | :---- |
- 
 | RUN-26686 | Fixed an issue where workload names exceeding 50 characters could cause failures due to Kubernetes label length constraints (max 63 characters). A validation check now prevents longer names and returns a 400 Bad Request error. |
 | RUN-26355 | Fixed an issue where collecting metrics on distributed workloads did not start properly. |
 | RUN-26272 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
 | RUN-26310 | Fixed an issue where Docker registry credentials/secrets were not found when adding environment variables. |
 | RUN-26659 | Fixed an issue where deleting the node pool, did not remove it from the default node pools list used when submitting a workload. |
 | RUN-26630 | Fixed an issue that prevented updating tenant-scoped data sources. |
-| RUN-26345 | Added `UIDGIDSOURCE_CUSTOM` when `SupplementalGroups` is set. |
 | RUN-26582 | Fixed an issue that prevented [Update IDP API](https://api-docs.run.ai/latest/tag/Idps#operation/update_idp_mappers). |
 | RUN-25769 | Fixed an issue where unusual text appeared at the end of each line when using the `--help` option for the `runai inference submit --help` command. |
 | RUN-25918 | Fixed an issue where the Running/Requested Pods column in the workload list displayed 1/0 instead of the correct format (1/1-3) for inference and other workload types that support minimum and maximum requested pods in the `runai workloads list` command. |
@@ -47,6 +45,7 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
 | RUN-26253 | CLI v2 list project now supports limit and offset flags. |
 | RUN-26479 | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. |
+| RUN-26345 | CLI v2: Added `UIDGIDSOURCE_CUSTOM` when `SupplementalGroups` is set. |
 
 
 
