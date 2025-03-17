@@ -18,11 +18,6 @@ In contrast, bug fixes are deployed as needed to address urgent issues and are r
 
 ### March 16, 2025
 
-#### Product enhancements
-
-Enforce SSO tenant setting: An API has been added to the tenant settings, empowering administrators to enforce Single Sign-On (SSO) for their organization. When enabled, this setting ensures that all users are required to authenticate through the configured SSO provider.
-
-
 #### Resolved Bugs 
 
 | ID | Description |
@@ -31,11 +26,9 @@ Enforce SSO tenant setting: An API has been added to the tenant settings, empowe
 | RUN-26272 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
 | RUN-26659 | Fixed an issue where deleting the node pool did not remove it from the default node pools list. |
 | RUN-26630 | Fixed an issue that prevented updating tenant-scoped data sources. |
-| RUN-26582 | Fixed an issue that prevented [Update IDP API](https://api-docs.run.ai/latest/tag/Idps#operation/update_idp_mappers) from functioning correctly. |
 | RUN-25769 | Fixed an issue where unusual text appeared at the end of each line when using the `--help` option for the `runai inference submit --help` command. |
 | RUN-25918 | Fixed an issue where the Running/Requested Pods column in the workload list displayed 1/0 instead of the correct format (1/1-3) for inference and other workload types that support minimum and maximum requested pods in the `runai workloads list` command. |
 | RUN-26473 | Fixed an issue where removing labels and annotations from a workload created using "Copy & Edit" did not properly remove them. |
-| RUN-26107 | Made the [Create IDP API](https://api-docs.run.ai/latest/tag/Idps/#operation/create_idp) validation more robust by ensuring proper URL validation.  |
 | RUN-26624 | Fixed an issue which caused workloads to fail if both gpuPortionRequest and gpuPortionLimit were set to 1 (100%). |
 | RUN-26270 | Fixed an issue in SSO SAML where the Entity ID field had a different value before and after configuring SAML. |
 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
