@@ -98,9 +98,7 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 
 
 ## Upgrade Control Plane
-
 ### Upgrade from version 2.13, or later
-
 === "Connected"
 
     ``` bash
