@@ -27,22 +27,18 @@ Enforce SSO tenant setting: An API has been added to the tenant settings, empowe
 
 | ID | Description |
 | :---- | :---- |
-| RUN-26686 | Fixed an issue where workload names exceeding 50 characters could cause failures due to Kubernetes label length constraints (max 63 characters). A validation check now prevents longer names and returns a 400 Bad Request error. |
+| RUN-26686 | Fixed an issue where workload names exceeding 50 characters caused failures due to Kubernetes label length constraints (max 63 characters). |
 | RUN-26272 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
-| RUN-26310 | Fixed an issue where Docker registry credentials/secrets were not found when adding environment variables. |
-| RUN-26659 | Fixed an issue where deleting the node pool, did not remove it from the default node pools list used when submitting a workload. |
+| RUN-26659 | Fixed an issue where deleting the node pool did not remove it from the default node pools list. |
 | RUN-26630 | Fixed an issue that prevented updating tenant-scoped data sources. |
-| RUN-26582 | Fixed an issue that prevented [Update IDP API](https://api-docs.run.ai/latest/tag/Idps#operation/update_idp_mappers). |
+| RUN-26582 | Fixed an issue that prevented [Update IDP API](https://api-docs.run.ai/latest/tag/Idps#operation/update_idp_mappers) from functioning correctly. |
 | RUN-25769 | Fixed an issue where unusual text appeared at the end of each line when using the `--help` option for the `runai inference submit --help` command. |
 | RUN-25918 | Fixed an issue where the Running/Requested Pods column in the workload list displayed 1/0 instead of the correct format (1/1-3) for inference and other workload types that support minimum and maximum requested pods in the `runai workloads list` command. |
 | RUN-26473 | Fixed an issue where removing labels and annotations from a workload created using "Copy & Edit" did not properly remove them. |
 | RUN-26107 | Made the [Create IDP API](https://api-docs.run.ai/latest/tag/Idps/#operation/create_idp) validation more robust by ensuring proper URL validation.  |
 | RUN-26624 | Fixed an issue which caused workloads to fail if both gpuPortionRequest and gpuPortionLimit were set to 1 (100%). |
-| RUN-25382 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |
-| RUN-26270 | Fixed an issue in SSO SAML where the Entity ID field had a different value before and after the SAML configuration. |
-| RUN-26272 | Fixed an issue where connecting to the SMTP server without credentials was not allowed. |
+| RUN-26270 | Fixed an issue in SSO SAML where the Entity ID field had a different value before and after configuring SAML. |
 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
-| RUN-26253 | CLI v2 list project now supports limit and offset flags. |
 | RUN-26479 | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. |
 | RUN-26345 | CLI v2: Added `UIDGIDSOURCE_CUSTOM` when `SupplementalGroups` is set. |
 
