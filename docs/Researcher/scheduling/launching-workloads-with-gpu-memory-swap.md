@@ -89,18 +89,18 @@ Before you start, make sure:
             "image": "runai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0",
             "imagePullPolicy":"IfNotPresent",
             "environmentVariables": [
-            {
+              {
                 "name": "RUNAI_MODEL",
                 "value": "meta-lama/Llama-3.2-1B-Instruct"
-            },
-            {
+              },
+              {
                 "name": "VLLM_RPC_TIMEOUT",
                 "value": "60000"
-            },
-            {
+              },
+              {
                 "name": "HF_TOKEN",
                 "value":"<INSERT HUGGINGFACE TOKEN>"
-            }
+              }
             ],
             "compute": {
                 "gpuDevicesRequest": 1,
@@ -165,18 +165,18 @@ Before you start, make sure:
             "image": "runai.jfrog.io/core-llm/runai-vllm:v0.6.4-0.10.0",
             "imagePullPolicy":"IfNotPresent",
             "environmentVariables": [
-            {
+              {
                 "name": "RUNAI_MODEL",
                 "value": "meta-lama/Llama-3.2-1B-Instruct"
-            },
-            {
+              },
+              {
                 "name": "VLLM_RPC_TIMEOUT",
                 "value": "60000"
-            },
-            {
+              },
+              {
                 "name": "HF_TOKEN",
                 "value":"<INSERT HUGGINGFACE TOKEN>"
-            }
+              }
             ],
             "compute": {
                 "gpuDevicesRequest": 1,
@@ -280,14 +280,14 @@ Before you start, make sure:
         "spec": {  
             "image": "runai.jfrog.io/core-llm/llm-app",
             "environmentVariables": [
-            {
+              {
                 "name": "RUNAI_MODEL_NAME",
                 "value": "meta-llama/Llama-3.2-1B-Instruct"
-            },
-            {
+              },
+              {
                 "name": "RUNAI_MODEL_BASE_URL",
                 "value": "<URL>" 
-            }
+              }
             ],
             "compute": {
                 "cpuCoreRequest":0.1,
