@@ -82,9 +82,9 @@ Before you start, make sure:
 
     ``` bash
     runai project set "project-name"
-    runai distributed submit "workload-name" --framework PyTorch \
-       -i kubeflow/pytorch-dist-mnist:latest --workers 2 
-       --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
+    runai distributed submit "workloand-name" --framework PyTorch \
+    -i kubeflow/pytorch-dist-mnist:latest --workers 2 \
+    --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
     ```
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
@@ -93,9 +93,9 @@ Before you start, make sure:
     Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
     
     ``` bash
-    runai config project "project-name"  
+    runai config project "project-name" 
     runai submit-dist pytorch "workload-name" --workers=2 -g 0.1 \
-       -i kubeflow/pytorch-dist-mnist:latest
+     -i kubeflow/pytorch-dist-mnist:latest
     ```
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
@@ -104,13 +104,13 @@ Before you start, make sure:
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Distributed API reference](https://api-docs.run.ai/latest/tag/Distributed):
 
     ``` bash
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/distributed' \ # (1)
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/distributed' \
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ # (2)
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ # (3)
-        "clusterId": "<CLUSTER-UUID>", \ # (4)
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>", 
         "spec": {  
             "compute": { 
                 "cpuCoreRequest": 0.1,
@@ -120,10 +120,10 @@ Before you start, make sure:
                 "gpuPortionRequest": 0.1 
             },      
             "image": "kubeflow/pytorch-dist-mnist:latest",  
-            "numWorkers": 2,  \ 
-            "distributedFramework": "PyTorch" \
+            "numWorkers": 2, 
+            "distributedFramework": "PyTorch" 
         } 
-    }'
+    }
     ``` 
 
     1. `<COMPANY-URL>` is the link to the Run:ai user interface.

@@ -35,6 +35,7 @@ Before you start, make sure:
 === "API"
     To use the API, you will need to obtain a token. Please follow the [API authentication](../../developer/rest-auth.md) article.
 
+
 ## Step 2: Submitting a workspace
 
 === "UI"
@@ -104,11 +105,10 @@ Before you start, make sure:
 
     ```sh
     runai project set "project-name"
-    runai workspace submit "workload-name" --image jupyter/scipy-notebook 
-    --gpu-devices-request 0.1 --command --external-url container=8888 
-    --name-prefix jupyter --command -- start-notebook.sh 
-    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} 
-    --NotebookApp.token=
+    runai workspace submit "workload-name" --image jupyter/scipy-notebook \
+    --gpu-devices-request 0.1 --command --external-url container=8888 \
+    --name-prefix jupyter --command -- start-notebook.sh \
+    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=
     ```
 
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
@@ -125,37 +125,44 @@ Before you start, make sure:
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
 
 === "API"
-
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
-    ```sh
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    ```bash
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>", 
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/base-notebook",
-            "exposedUrls": [
-              {
-                "container": 8888,
-                "toolType": "jupyter-notebook",
-                "toolName": "Jupyter"
-              }
-            ],
+            "image": "jupyter/scipy-notebook",
             "compute": {
-              "gpuDevicesRequest": 1,
-              "gpuRequestType": "portion",
-              "gpuPortionRequest": 0.1
+                "gpuDevicesRequest": 1,
+                "gpuRequestType": "portion",
+                "gpuPortionRequest": 0.1
 
-            }
+            },
+            "exposedUrls" : [
+                { 
+                    "container" : 8888,
+                    "toolType": "jupyter-notebook", 
+                    "toolName": "Jupyter"
+                }
+            ]
         }
-    }'
-    ```
+    }
+    ``` 
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workload is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+    5. `toolType` will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
+    6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
+
 
     This would start a workspace with a pre-configured Jupyter image with 10% of the GPU memory allocated.
 
@@ -182,6 +189,7 @@ Before you start, make sure:
 
 === "API"
     To connect to the Jupyter Notebook, browse directly to `https://<COMPANY-URL>/<PROJECT-NAME>/<WORKLOAD_NAME>`
+
     
 ## Next Steps
 

@@ -93,44 +93,52 @@ Before you start, make sure:
 
     ```sh
     runai project set "project-name"
-    runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example-jupyter --gpu-memory-request 4G 
-    --gpu-memory-limit 12G --large-shm --external-url container=8888 
-    --name-prefix jupyter --command -- start-notebook.sh 
-    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} 
-    --NotebookApp.token=
+    runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example-jupyter --gpu-memory-request 4G \
+    --gpu-memory-limit 12G --large-shm --external-url container=8888 \
+    --name-prefix jupyter --command -- start-notebook.sh \
+    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=
     ```
 
 === "API"
     Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API:](https://api-docs.run.ai/latest/tag/Workspaces)
 
     ```bash
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
-            "exposedUrls": [
-              {
-                "container": 8888,
-                "toolType": "jupyter-notebook",
-                "toolName": "Jupyter"
-              }
-            ],
             "compute": {
-              "gpuDevicesRequest": 1,
-              "gpuMemoryRequest": "4G",
-              "gpuMemoryLimit": "12G",
-              "largeShmRequest": true
-            }     
+                "gpuDevicesRequest": 1,
+                "gpuMemoryRequest": "4G",
+                "gpuMemoryLimit": "12G",
+                "largeShmRequest": true
+
+            },
+            "exposedUrls" : [
+                { 
+                    "container" : 8888,
+                    "toolType": "jupyter-notebook",
+                    "toolName": "Jupyter" 
+                }
+            ]
         }
-    }'
+    }
     ```
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+    5. `toolType` will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
+    6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
+
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only. 
 
@@ -157,48 +165,56 @@ Before you start, make sure:
     After the workspace is created, it is added to the [workloads](../../platform-admin/workloads/overviews/managing-workloads.md) table
 
 === "CLI v2"
-    Copy the following command to your terminal. Make sure to update the below with the name of your project and workload:
+    Copy the following command to your terminal. Make sure to update the below with the name of the project and workload. Use the **project** where the previous workspace was created:
 
     ```sh
     runai project set "project-name"
-    runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example-jupyter --gpu-memory-request 4G 
-    --gpu-memory-limit 12G --large-shm --external-url container=8888 
-    --name-prefix jupyter --command -- start-notebook.sh 
-    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} 
-    --NotebookApp.token=
+    runai workspace submit "workload-name" --image gcr.io/run-ai-lab/pytorch-example-jupyter --gpu-memory-request 4G \
+    --gpu-memory-limit 12G --large-shm --external-url container=8888 \
+    --name-prefix jupyter --command -- start-notebook.sh \
+    --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=
     ``` 
 
 === "API"
-    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
+    Copy the following command to your terminal. Make sure to update the below parameters according to the comments. Use the **project** and **cluster** where the previous workspace was created. For more details, see [Workspaces API](https://api-docs.run.ai/latest/tag/Workspaces):
 
     ```bash
-    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ #<COMPANY-URL> is the link to the Run:ai user interface.
+    curl -L 'https://<COMPANY-URL>/api/v1/workloads/workspaces' \ 
     -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer <TOKEN>' \ #<TOKEN> is the API access token obtained in Step 1. 
+    -H 'Authorization: Bearer <TOKEN>' \ 
     -d '{ 
         "name": "workload-name", 
-        "projectId": "<PROJECT-ID>", '\ #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API. 
-        "clusterId": "<CLUSTER-UUID>", \ #<CLUSTER-UUID> is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+        "projectId": "<PROJECT-ID>", 
+        "clusterId": "<CLUSTER-UUID>",
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
             "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
-            "exposedUrls": [
-              {
-                "container": 8888,
-                "toolType": "jupyter-notebook",
-                "toolName": "Jupyter"
-              }
-            ],
             "compute": {
-              "gpuDevicesRequest": 1,
-              "gpuMemoryRequest": "4G",
-              "gpuMemoryLimit": "12G",
-              "largeShmRequest": true
-            }
+                "gpuDevicesRequest": 1,
+                "gpuMemoryRequest": "4G",
+                "gpuMemoryLimit": "12G",
+                "largeShmRequest": true
+
+            },
+            "exposedUrls" : [
+                { 
+                    "container" : 8888,
+                    "toolType": "jupyter-notebook", 
+                    "toolName": "Jupyter" 
+                }
+            ]
         }
-    }'
+    }
     ```
+
+    1. `<COMPANY-URL>` is the link to the Run:ai user interface.
+    2. `<TOKEN>` is the API access token obtained in Step 1. 
+    3. `<PROJECT-ID>` is #The ID of the Project the workspace is running on. You can get the Project ID via the Get Projects API [Get Projects API](https://app.run.ai/api/docs#tag/Projects/operation/get_projects){target=_blank}.
+    4. `<CLUSTER-UUID>` is the unique identifier of the Cluster. You can get the Cluster UUID by adding the "Cluster ID" column to the Clusters view. 
+    5. `toolType` will show the Jupyter icon when connecting to the Jupyter tool via the user interface. 
+    6. `toolName` text will show when connecting to the Jupyter tool via the user interface.
+
 
     !!! Note
         The above API snippet runs with Run:ai clusters of 2.18 and above only. 
