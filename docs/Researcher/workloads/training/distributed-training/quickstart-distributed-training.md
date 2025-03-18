@@ -83,8 +83,8 @@ Before you start, make sure:
     ``` bash
     runai project set "project-name"
     runai distributed submit "workloand-name" --framework PyTorch \
-        -i kubeflow/pytorch-dist-mnist:latest --workers 2 \
-        --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
+    -i kubeflow/pytorch-dist-mnist:latest --workers 2 \
+    --gpu-request-type portion --gpu-portion-request 0.1 --gpu-devices-request 1 --cpu-memory-request 100M
     ```
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.
@@ -95,7 +95,7 @@ Before you start, make sure:
     ``` bash
     runai config project "project-name" 
     runai submit-dist pytorch "workload-name" --workers=2 -g 0.1 \
-        -i kubeflow/pytorch-dist-mnist:latest
+     -i kubeflow/pytorch-dist-mnist:latest
     ```
 
     This would start a distributed training workload based on kubeflow/pytorch-dist-mnist:latest with one master and two workers.

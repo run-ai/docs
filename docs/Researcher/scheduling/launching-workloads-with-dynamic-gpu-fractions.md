@@ -113,7 +113,7 @@ Before you start, make sure:
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/scipy-notebook",
+            "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
             "compute": {
                 "gpuDevicesRequest": 1,
                 "gpuMemoryRequest": "4G",
@@ -189,7 +189,7 @@ Before you start, make sure:
         "spec": {
             "command" : "start-notebook.sh",
             "args" : "--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token=''",
-            "image": "jupyter/scipy-notebook",
+            "image": "gcr.io/run-ai-lab/pytorch-example-jupyter",
             "compute": {
                 "gpuDevicesRequest": 1,
                 "gpuMemoryRequest": "4G",
