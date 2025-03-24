@@ -11,12 +11,12 @@ SaaS releases follow a scheduled rollout cadence, typically every two weeks, all
 
 In contrast, bug fixes are deployed as needed to address urgent issues and are released immediately to ensure the stability and security of the service.
 
-* Latest release: [March 16](#march-16-2025)
+* Latest release: [March 16-23](#march-16-23-2025)
 * Previous releases: [March 05-09](#march-05-09-2025), [February 16-23](#february-16-23-2025), [February 02-09](#february-02-09-2025)
 
 ## March 2025 releases
 
-### March 16, 2025
+### March 16-23, 2025
 
 #### Resolved Bugs 
 
