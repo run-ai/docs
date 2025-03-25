@@ -1,3 +1,11 @@
+!!! runai "📣 The Run:ai docs are moving!"
+   
+    We've been working hard at building out a new docs experience at [docshub.run.ai](https://docshub.run.ai). You can start using the new docs today.
+
+    Starting from version **2.20** and above, documentation is available at our new site.
+    Documentation for versions **2.19 and below** will remain on this site.
+
+
 # Overview
 
 Run:ai is a GPU orchestration and optimization platform that helps organizations maximize compute utilization for AI workloads. By optimizing the use of expensive compute resources, Run:ai accelerates AI development cycles, and drives faster time-to-market for AI-powered innovations.
