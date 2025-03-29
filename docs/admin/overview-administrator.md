@@ -1,8 +1,7 @@
-!!! runai "📣 The Run:ai docs are moving!"
+!!! runai "📣 The NVIDIA Run:ai docs are moving!"
    
-    We've been working hard at building out a new docs experience at [docshub.run.ai](https://docshub.run.ai). You can start using the new docs today.
+    We’ve launched a new documentation site to improve navigation, clarity, and access to the latest features starting from Run:ai v2.20 and above. Visit [docshub.run.ai](https://docshub.run.ai).
 
-    Starting from version **2.20** and above, documentation is available at our new site.
     Documentation for versions **2.19 and below** will remain on this site.
 
 # Overview: Infrastructure Administrator

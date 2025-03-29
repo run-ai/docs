@@ -4,7 +4,7 @@
 } */
 
 .md-header {
-    background-color: #232837 !important;
+    background-color: #000000 !important;
 }
 
 .md-tabs {
@@ -71,7 +71,7 @@
 }
 
 .custom-ticket-button {
-    background-color: #0654FE !important; /* Change to your preferred color */
+    background-color: #76B900 !important; /* Change to your preferred color */
     color: white !important;
     font-weight: bold;
     border-radius: 5px;
@@ -85,11 +85,14 @@
 }
 
 /* Default logo size for desktop */
-html .md-header-nav__button.md-logo img, 
+html .md-header-nav__button.md-logo img,
 html .md-header-nav__button.md-logo svg {
-    width: 104px !important;
-    height: 30px !important;
+    width: 330px !important;
+    height: 21px !important;
+    margin-top: 10px; /* approximate top spacing */
+    margin-left: 24px; /* as per screenshot */
 }
+
 
 /* Adjust logo for tablet view */
 @media only screen and (max-width: 1024px) {

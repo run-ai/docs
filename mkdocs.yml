@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: ""
 site_url: https://docs.run.ai/
 copyright: Copyright © 2020 - 2025 Run:ai
 repo_url: https://github.com/run-ai/docs/
@@ -9,7 +9,7 @@ theme:
   custom_dir: overrides
   language: en
   favicon: images/favicon.ico
-  logo: images/logos-nvidia-runai.svg
+  logo: images/NVIDIA_Logo_V.svg
   features:
     - navigation.indexes
     - navigation.tabs
