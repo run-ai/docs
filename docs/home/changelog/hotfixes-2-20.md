@@ -11,6 +11,14 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.33 | 26/03/2025 | RUN-26955 | Fixed an issue where duplicate results appeared in some cases for node metrics. |
+| 2.20.32 | 26/03/2025 | RUN-25985 | Fixed a bug that caused the deletion of a workload in the UI to fail when ownership protection was enabled and the workload was originally created via the CLI. |
+| 2.20.31 | 25/03/2025 | RUN-26324 | Fixed an issue in the documentation where the toleration name was incorrectly marked as mandatory. Also fixed an issue in CLI v2 where the required fields were incorrect: name is no longer mandatory, and key is now required. |
+| 2.20.29 | 20/03/2025 | RUN-26062 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations — such as creation, deletion, resumption, or stoppage — after upgrading from versions below 2.18 to 2.18 or higher. |
+| 2.20.29 | 20/03/2025 | RUN-26062 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations — such as creation, deletion, resumption, or stoppage — after upgrading from versions below 2.18 to 2.18 or higher. |
+| 2.20.29 | 20/03/2025 | RUN-26691 | Fixed a security vulnerability in axios related to CVE-2025-27152 with severity HIGH. |
+| 2.20.29 | 20/03/2025 | RUN-26772 | Fixed an issue where a GET request for a non-existent workload returned an unexpected response format. |
+| 2.20.28 | 17/03/2025 | RUN-26630 | Fixed an issue that prevented updating tenant-scoped data sources. |
 | 2.20.26 | 09/03/2025 | RUN-25987 | Updated all workload APIs to accurately reflect that both creating and deleting workloads return a 202 status code in the API documentation. |
 | 2.20.26 | 09/03/2025 | RUN-26240 | CLI v2: Fixed an issue in the install script, where setting the install path environment variable did not install all the files in the correct path. |
 | 2.20.26 | 09/03/2025 | RUN-26479  | CLI v2: Fixed an issue where using the wrong workload type in the workload describe command did not display an error. | |
