@@ -84,15 +84,6 @@
     border-top: 1px solid #1b2532 !important;
 }
 
-/* Default logo size for desktop */
-html .md-header-nav__button.md-logo img,
-html .md-header-nav__button.md-logo svg {
-    width: 330px !important;
-    height: 21px !important;
-    margin-top: 10px; /* approximate top spacing */
-    margin-left: 24px; /* as per screenshot */
-}
-
 
 /* Adjust logo for tablet view */
 @media only screen and (max-width: 1024px) {

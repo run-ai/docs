@@ -9,7 +9,7 @@ theme:
   custom_dir: overrides
   language: en
   favicon: images/favicon.ico
-  logo: images/NVIDIA_Logo_V.svg
+  logo: images/NVIDIA_Logo_docV1.svg
   features:
     - navigation.indexes
     - navigation.tabs
