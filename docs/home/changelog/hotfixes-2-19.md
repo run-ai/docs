@@ -11,7 +11,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
 | RUN-26324 | 2.19.84 | Fixed an issue in the documentation where the toleration name was incorrectly marked as mandatory. Also fixed an issue in CLI v2 where the required fields were incorrect: name is no longer mandatory, and key is now required. |
-| RUN-26800 | 2.19.84 | Fixed an issue where the `runai list nodes` command in CLI v1 did not display the correct number of free GPUs. |
+| RUN-26800 | 2.19.84 | | RUN-26800 | 2.18.99 | Fixed an issue where the `runai list nodes` command in CLI v1 did not display the correct number of free GPUs when using GPU memory. |
 | RUN-26955 | 2.19.84 | Fixed an issue where duplicate results appeared in some cases for node metrics. |
 | RUN-26691 | 2.19.76 | Fixed a security vulnerability in axios related to CVE-2025-27152 with severity HIGH. |
 | RUN-26764 | 2.19.76 | Fixed an issue where in some cases, a node pool was stuck in "Creating" phase. |
