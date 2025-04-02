@@ -96,6 +96,16 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
     --set postgresql.primary.persistence.existingClaim=pvc-postgresql \ 
     --set thanos.receive.persistence.existingClaim=pvc-thanos-receive 
     ```
+### Upgrade from version < 2.21 to >= 2.21
+In version 2.21 we swapped our redis pubsub system with nats.
+In order to prevent loss of pubsub events, we recommend keeping the redis alive for another version, thus, allowing all of the remaning messages to be handled.
+During the upgrade, please add the following:
+
+    ``` bash
+    --set redisQueue.enabled=true \ 
+    --set global.pubsub.additionalSubscriber.enabled=true 
+    ```
+
 
 ## Upgrade Cluster 
 
