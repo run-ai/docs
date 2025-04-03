@@ -85,10 +85,10 @@
 }
 
 .md-header__button.md-logo img {
-    max-height: 24px;  /* or whatever size looks good */
+    max-height: 24px !important;
     height: auto;
     width: auto;
-  }
+}
 
 
 /* Adjust logo for tablet view */
