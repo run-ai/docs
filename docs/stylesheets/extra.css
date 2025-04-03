@@ -84,6 +84,12 @@
     border-top: 1px solid #1b2532 !important;
 }
 
+.md-header__button.md-logo img {
+    max-height: 32px;  /* or whatever size looks good */
+    height: auto;
+    width: auto;
+  }
+
 
 /* Adjust logo for tablet view */
 @media only screen and (max-width: 1024px) {
