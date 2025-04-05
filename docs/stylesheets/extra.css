@@ -4,7 +4,9 @@
 } */
 
 .md-header {
-    background-color: #232837 !important;
+    background-color: #000000 !important;
+    top: 32px;          /* This setting prevents the Material header from imposing into the space of the banner! */
+
 }
 
 .md-tabs {
@@ -71,7 +73,7 @@
 }
 
 .custom-ticket-button {
-    background-color: #0654FE !important; /* Change to your preferred color */
+    background-color: #76B900 !important; /* Change to your preferred color */
     color: white !important;
     font-weight: bold;
     border-radius: 5px;
@@ -84,12 +86,12 @@
     border-top: 1px solid #1b2532 !important;
 }
 
-/* Default logo size for desktop */
-html .md-header-nav__button.md-logo img, 
-html .md-header-nav__button.md-logo svg {
-    width: 104px !important;
-    height: 30px !important;
+.md-header__button.md-logo img {
+    max-height: 24px !important;
+    height: auto;
+    width: auto;
 }
+
 
 /* Adjust logo for tablet view */
 @media only screen and (max-width: 1024px) {
@@ -193,3 +195,39 @@ html .md-nav__button.md-logo img {
     background: transparent;
     color: white;
 }
+
+
+/* Remove the default icon for the custom 'runai' admonition */
+.md-typeset .admonition.runai > .admonition-title::before,
+.md-typeset details.runai > summary::before {
+  content: none !important;
+}
+
+
+
+.banner {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    background-color: #76B900;
+    padding: 6px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  
+}
+
+.banner a {
+    background-color: black;
+    color: white;
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+  }
