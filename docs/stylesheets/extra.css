@@ -5,6 +5,8 @@
 
 .md-header {
     background-color: #000000 !important;
+    top: 32px;          /* This setting prevents the Material header from imposing into the space of the banner! */
+
 }
 
 .md-tabs {
@@ -229,8 +231,3 @@ html .md-nav__button.md-logo img {
     font-size: 14px;
     font-weight: 600;
   }
-
-
-.md-header {
-    top: 36px;          /* This setting prevents the Material header from imposing into the space of the banner! */
-}
