@@ -240,6 +240,12 @@ nav:
           - 'Next Steps' : 'admin/runai-setup/self-hosted/ocp/next-steps.md'
           - 'Upgrade' : 'admin/runai-setup/self-hosted/ocp/upgrade.md'
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
+        - 'Base Command Manager' :
+          - 'System Requirements' : 'admin/runai-setup/self-hosted/bcm/system-requirements.md'
+          - 'Deploy Kubernetes' : 'admin/runai-setup/self-hosted/bcm/k8s-deployment.md'
+          - 'Configure BCM' : 'admin/runai-setup/self-hosted/bcm/configure-bcm.md'
+          - 'Deploy Run:ai' : 'admin/runai-setup/self-hosted/bcm/deploy-runai.md'
+          - 'Configure Run:ai' : 'admin/runai-setup/self-hosted/bcm/configure-runai.md'
       - 'Researcher Setup' :
         - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
         - 'Install the V1 CLI' : 'admin/researcher-setup/cli-install.md'
