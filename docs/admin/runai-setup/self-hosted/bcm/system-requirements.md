@@ -1,8 +1,5 @@
 # System requirements
 
-!!! Note
-   Read the DGX SuperPOD Architecture: eBay Run:ai Overview before performing procedures in this deployment guide. It contains reference architecture, definitions and other concepts that are common to the documentation set.
-
 ## SBOM
 
 The table below provides the required versions of the various components for reference. For the latest version of the component Compatibility Matrix use the [official tracker](https://nvidia-my.sharepoint.com/:x:/r/personal/khushalis_nvidia_com/Documents/DGX%20SPOD_BCM_Component%20Matrix.xlsx?d=wae259e4b54934003b1bda194a0f42992&csf=1&web=1&e=hZAhW9&nav=MTVfezVFRTg0MjhCLTFFNjYtNEI2Ri1CN0MzLUYwNjI0M0VENUM4MX0).
@@ -38,14 +35,7 @@ The table below provides the required versions of the various components for ref
 1) 2.5.x is not currently validated or supported.
 
 
-### List of container images
-
-See [BCM Self-hosted Run:ai 2.13.35 list of images](https://docs.google.com/spreadsheets/d/1qTvQ4_1PUPVSb5t8JefGE5ODE-N4DXwah3TTEcDO6ok/edit#gid=86073572)
-
 ## Customer-provided Prerequisites
-
-### Site Validation
-After completing the physical installation and cabling of the equipment, NVPS engineers will complete a site validation of the DGX SuperPOD environment. This will include validation of the physical installation and cabling against the original design, noting customizations based on customer requirements, and documentation of the environment state. Once validated, NVPS will sign-off on the physical installation and proceed with the deployment of Base Command Manager.
 
 ### Customer DNS records
 * The Run:ai cluster creation wizard requires a domain name (FQDN) to the Kubernetes cluster as well as a **trusted** certificate for that domain. The domain name needs to be resolvable from the corporate DNS servers. For more information see Run:ai Domain name requirements:
@@ -60,12 +50,10 @@ After completing the physical installation and cabling of the equipment, NVPS en
       pdsh -g all host -4 <Run:ai endpoint FQDN>
       ```
     
-    - From a system external to the DGX SuperPOD (aka, where end users will be launching jobs from):
+    - From a system external to the DGX:
       ```
       nslookup <Run:ai endpoint FQDN>
       ```
-
-
 
 
 ### TLS/SSL certificates
@@ -120,31 +108,6 @@ The CSR file can be shared with the customer’s security team so that it can be
 
          runai-bcm-1220.pem: OK
          ```
-
-### Single Sign-On requirements
-
-* To leverage a Single Sign-On via OpenID the customer  should review the prerequisites and ensure that they are provided before the installation. See [https://docs.run.ai/latest/admin/runai-setup/authentication/sso/?h=sso#oidc-prerequisites](https://docs.run.ai/latest/admin/runai-setup/authentication/sso/?h=sso#oidc-prerequisites) for more details.
-* The OpenID provider should provide UID, GID and supplementary groups claims as part of the ID/AUTH JWT token for proper storage access control.
-
-At minimum the following should be provided:
-
-   * OpenID Client ID
-   * OpenID Client Secret
-   * OpenID discovery URL
-   * (Optional): LDAP attributes mapping if no standard attributes names are used i.e. “GroupID: instead of “Group”
-
-As this is sensitive, confidential information pertaining to security it needs to be handled carefully and stored on the SuperPOD cluster.
-
-!!! Note
-    SSO/OpenID will be validated after the Run:ai control plane deployment has been completed.**
-
-#### For NVIDIA Internal Environments Only
-Reach out to NVidia engineering to provide the above information for NVIDIA internal deployments.
-
-### DDN Storage details
-
-In order to be able to create DDN Lustre-backed Persistent Volumes and attach them to workload pods, the Lustre filesystem (e.g. /ddn_lustre/data) and Lustre MGS NID addresses (e.g. 192.168.227.11@tcp1:192.168.227.12@tcp1) need to be provided by the DDN PS team or the customer.
-
 
 ## Pre-installation Checklist
 

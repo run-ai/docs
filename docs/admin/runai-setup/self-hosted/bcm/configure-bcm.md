@@ -62,8 +62,6 @@ Create the following Kubernetes namespaces:
 
 You will need a JFrog container registry pull secret in order to download the Run:ai container images. The token can be found in Run:ai welcome e-mail together with the EULA and other relevant info. If you do not have one, reach out to sales for guidance.
 
-For NV-internal VPRs, you can use the credential from the CORP Prod Vault instance.
-
 ```
 TOKEN="eyJ2ZXIiOiIyIiwi...."
 

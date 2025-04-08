@@ -2,7 +2,7 @@
 
 ## Deployment Steps
 
-1. From the active BCM headnode, run the cm-kubernetes-setup command. The following screen will pop-up:
+1. From the active BCM headnode, run the `cm-kubernetes-setup` command. The following screen will pop-up:
 
     ![alt text](image.png)
 
@@ -42,7 +42,7 @@
 
     Given that in SuperPOD deployment the Management and DGX nodes are on different BCM networks, choose the network used by the management nodes during this step. We will verify that DGX nodes can communicate during the Calico CNI configuration.
 
-8. Select  at least 3 (three) Kubernetes master nodes:
+8. Select at least 3 (three) Kubernetes master nodes:
 
     ![alt text](image-7.png)
 
