@@ -9,8 +9,9 @@ runai upgrade [flags]
 ### Options
 
 ```
-      --force   upgrade CLI without checking for new version
-  -h, --help    help for upgrade
+      --exec string   the execute command that will be run the upgrade (default "bash")
+      --force         upgrade CLI without checking for new version
+  -h, --help          help for upgrade
 ```
 
 ### Options inherited from parent commands
