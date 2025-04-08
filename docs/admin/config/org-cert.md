@@ -19,10 +19,20 @@ You will need to have the public key of the local certificate authority.
 
 * Create the `runai-backend` namespace if it does not exist. 
 * Add the public key to the `runai-backend` namespace:
-```
-kubectl -n runai-backend create secret generic runai-ca-cert \ 
-    --from-file=runai-ca.pem=<ca_bundle_path>
-```
+
+=== "Kubernetes"
+
+    ```
+    kubectl -n runai-backend create secret generic runai-ca-cert \ 
+        --from-file=runai-ca.pem=<ca_bundle_path>
+    ```
+
+=== "OpenShift"
+
+    ```
+    oc -n runai-backend create secret generic runai-ca-cert \ 
+        --from-file=runai-ca.pem=<ca_bundle_path>
+    ```
 
 * As part of the installation instructions, you need to create a secret for [runai-backend-tls](../runai-setup/self-hosted/k8s/preparations.md#domain-certificate). Use the local certificate authority instead.
 * Install the control plane, add the following flag to the helm command `--set global.customCA.enabled=true`
@@ -30,16 +40,26 @@ kubectl -n runai-backend create secret generic runai-ca-cert \
 ## Cluster Installation
 
 * Create the `runai` namespace if it does not exist. 
-* Add the public key to the `runai` namespace:
-```
-kubectl -n runai create secret generic runai-ca-cert \
-    --from-file=runai-ca.pem=<ca_bundle_path>
-```
-* In case you're using Openshift, add the public key to the `openshift-monitoring` namespace:
-```
-kubectl -n openshift-monitoring create secret generic runai-ca-cert \
-    --from-file=runai-ca.pem=<ca_bundle_path>
-```
+* Add the public key to the `runai` namespace. In case you're using OpenShift, add the public key also to the `openshift-monitoring` namespace:
+
+
+=== "Kubernetes"
+    ```
+    kubectl -n runai create secret generic runai-ca-cert \
+        --from-file=runai-ca.pem=<ca_bundle_path>
+    kubectl label secret runai-ca-cert -n runai run.ai/cluster-wide=true run.ai/name=runai-ca-cert --overwrite;
+    ```
+
+=== "OpenShift"
+
+    ```
+    oc -n runai create secret generic runai-ca-cert \
+        --from-file=runai-ca.pem=<ca_bundle_path>
+    oc -n openshift-monitoring create secret generic runai-ca-cert \
+        --from-file=runai-ca.pem=<ca_bundle_path>
+    oc label secret runai-ca-cert -n runai run.ai/cluster-wide=true run.ai/name=runai-ca-cert --overwrite
+    ```
+
 * Install the Run:ai operator, add the following flag to the helm command `--set global.customCA.enabled=true`
 
 
