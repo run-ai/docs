@@ -41,7 +41,7 @@ You will need to have the public key of the local certificate authority.
     ```
     kubectl -n runai create secret generic runai-ca-cert \
         --from-file=runai-ca.pem=<ca_bundle_path>
-    kubectl label secret runai-ca-cert -n runai run.ai/cluster-wide=true run.ai/name=runai-ca-cert --overwrite;
+    kubectl label secret runai-ca-cert -n runai run.ai/cluster-wide=true run.ai/name=runai-ca-cert --overwrite
     ```
 
 === "OpenShift"
