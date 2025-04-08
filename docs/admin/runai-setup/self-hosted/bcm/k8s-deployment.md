@@ -205,3 +205,42 @@ root@headnode:~# cmsh
 ```
 Make sure that the CIDR shown spans the network range of both the DGX and Dell worker node Ethernet networks.
 
+## BCM Prerequisites
+
+The items below are non-default DGX SuperPOD items which need special attention prior to proceeding with the installation of K8S and Run:ai.  Pay special attention that these are incorporated before proceeding with the installation
+
+* BCM has been deployed and HA has been configured with shared storage as per the [DGX SuperPOD runbook](https://docs.nvidia.com/dgx-superpod-deployment-guide-dgx-a100.pdf).
+* All the networks that will be used for Kubernetes nodes have the same MTU.
+* The NVIDIA OFED has been installed in the **all **of the used software-images
+* The VAST Multi-path or DDN EXA Lustre driver has been installed in **all **of the used the software image and the Lustre/VAST has been mounted on all DGX and K8S  nodes using a BCM FSMount
+* Enable SR-IOV in the DGX H100 image by ensuring that the following kernel parameters are included: **intel_iommu=on iommu=pt (H100) **or **amd_iommu=on iommu=pt (H100). **After that, enable SR-IOV on the Mellanox HCAs, set the number of VFs to the desired number and reboot the DGX nodes.
+
+For example:
+```
+root@bcmhead1:~# cmsh
+[bcmhead1]% softwareimage use dgx-os-6.3-h100-image
+[bcmhead1->softwareimage[dgx-os-6.3-h100-image]]% append kernelparameters  " intel_iommu=on"
+[bcmhead1->softwareimage*[dgx-os-6.3-h100-image*]]% commit
+```
+
+Note the leading whitespace in `“ intel_iommu=on” above.`
+
+* The /var filesystem of the headnodes, CPU and DGX compute nodes have **at least 100GB** of space available. **DO NOT** proceed with installing Kubernetes until  this requirement is met on the control plane nodes.
+
+Run the following command on the headnode to verify requirement:
+```
+pdsh -g category=dgx-a100,k8s-control-plane,runai-control-plane df -h /var
+```
+
+* Ensure that NVME disk devices are named consistently across reboots. See [Appendix C](?tab=t.0#heading=h.afp9y7rd26kr) for instructions and example disk layouts.
+* The following three BCM node categories and software images need to be present:
+ 
+   * A node category for the DGX H100 nodes with a DGX Base OS software image (DGX OS 6.1 tested).
+   * A node category for the Kubernetes master nodes (3 DGX SuperPOD management nodes - Dell R760 tested) with an Ubuntu 22.04 software image.
+   * A node category for the Run:ai control plane nodes (2 DGX SuperPOD management nodes - Dell R760 tested) with an Ubuntu 22.04 software image.  We assume below (section 7.1) that this is called `runai-control-plane`
+
+* All compute nodes have been assigned to the right category, are provisioned and are up and running.
+
+
+
+
