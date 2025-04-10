@@ -11,6 +11,13 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.36 | 09/04/2025 | RUN-24016 | Fixed an issue where workloads could be submitted with non-positive memory quantity values. |
+| 2.20.36 | 09/04/2025 | RUN-27075 | Fixed an issue where, in some cases, creating a project through the API with partial parameters would return an error when the "Limit projects from exceeding department quota" setting was enabled. |
+| 2.20.36 | 09/04/2025 | RUN-27159 | Fixed an issue where allocated GPU memory for workloads was presented in MB but the value was in MiB. |
+| 2.20.36 | 09/04/2025 | RUN-27196 | Fixed an issue where workloads could be submitted with invalid memory quantity values. |
+| 2.20.35 | 03/04/2025 | RUN-26878 | Fixed an issue where, in some cases, previous inference request errors caused subsequent successful requests to report latency as NaN (Not a Number) instead of the actual value. As a result, these requests were not displayed in the UI latency graph, and the API returned NaN. |
+| 2.20.34 | 02/04/2025 | RUN-26671 | Fixed an issue where compute resource assets configured with multiple whole GPUs (e.g., 3 GPUs at 100%) were incorrectly submitted as a single GPU. |
+| 2.20.34 | 03/04/2025 | RUN-27035 | Fixed an issue where, on very rare occasions, a small subset of metrics was missing. |
 | 2.20.33 | 31/03/2025 | RUN-26955 | Fixed an issue where duplicate results appeared in some cases for node metrics. |
 | 2.20.32 | 26/03/2025 | RUN-25985 | Fixed a bug that caused the deletion of a workload in the UI to fail when ownership protection was enabled and the workload was originally created via the CLI. |
 | 2.20.32 | 26/03/2025 | RUN-26641 | Fixed an issue where CLI usage could be blocked even when the CLI version and control plane version were aligned. |
