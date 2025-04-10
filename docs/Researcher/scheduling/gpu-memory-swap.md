@@ -38,7 +38,7 @@ In other cases, workloads will run serially, with each workload running for a fe
 
 The workload MUST use [dynamic GPU fractions](dynamic-gpu-fractions.md). This means the workload’s memory Request is less than a full GPU, but it may add a GPU memory Limit to allow the workload to effectively use the full GPU memory. The Run:ai Scheduler allocates the dynamic fraction pair (Request and Limit) on single or multiple GPU devices in the same node.
 
-The administrator must label each node that they want to provide GPU memory swap with a run.ai/swap-enabled=true to enable that node. Enabling the feature reserves CPU memory to serve the swapped GPU memory from all GPUs on that node. The administrator sets the size of the CPU reserved RAM memory using the `runaiconfig` file as detailed in [enabling and configuring GPU memory swap](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
+The administrator must label each node that they want to provide GPU memory swap with a `run.ai/swap-enabled=true` to enable that node. Enabling the feature reserves CPU memory to serve the swapped GPU memory from all GPUs on that node. The administrator sets the size of the CPU reserved RAM memory using the `runaiconfig` file as detailed in [enabling and configuring GPU memory swap](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 
 Optionally, you can also configure the [Node Level Scheduler](node-level-scheduler.md):
 
@@ -111,10 +111,10 @@ Swappable workloads require reserving a small part of the GPU for non-swappable 
 
 ### Preventing your workloads from getting swapped
 
-If you prefer your workloads not to be swapped into CPU memory, you can specify on the pod an anti-affinity to `run.ai/swap enabled=true` node label when submitting your workloads and the Scheduler will ensure not to use swap-enabled nodes. An alternative way is to set swap on a dedicated node pool and not use this node pool for workloads you prefer not to swap.
+If you prefer your workloads not to be swapped into CPU memory, you can specify on the pod an anti-affinity to `run.ai/swap-enabled=true` node label when submitting your workloads and the Scheduler will ensure not to use swap-enabled nodes. An alternative way is to set swap on a dedicated node pool and not use this node pool for workloads you prefer not to swap.
 
 ### What happens when the CPU reserved memory for GPU swap is exhausted?
 
-CPU memory is limited, and since a single CPU serves multiple GPUs on a node, this number is usually between 2 to 8. For example, when using 80GB of GPU memory, each swapped workload consumes up to 80GB (but may use less) assuming each GPU is shared between 2-4 workloads. In this example, you can see how the swap memory can become very large. Therefore, we give administrators a way to limit the size of the CPU reserved memory for swapped GPU memory on each swap enabled node as shown in [enabling and configuring GPU memory swap](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
+CPU memory is limited, and since a single CPU serves multiple GPUs on a node, this number is usually between 2 to 8. For example, when using 80GB of GPU memory, each swapped workload consumes up to 80GB (but may use less) assuming each GPU is shared between 2-4 workloads. In this example, you can see how the swap memory can become very large. Therefore, we give administrators a way to limit the size of the CPU reserved memory for swapped GPU memory on each swap-enabled node as shown in [enabling and configuring GPU memory swap](gpu-memory-swap.md#enabling-and-configuring-gpu-memory-swap).
 
 Limiting the CPU reserved memory means that there may be scenarios where the GPU memory cannot be swapped out to the CPU reserved RAM. Whenever the CPU reserved memory for swapped GPU memory is exhausted, the workloads currently running will not be swapped out to the CPU reserved RAM, instead, [Node Level Scheduler](node-level-scheduler.md) (if enabled) logic takes over and provides GPU resource optimization.
