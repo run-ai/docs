@@ -1,0 +1,41 @@
+# Install Control Plane
+
+Installing the NVIDIA Run:ai control plane requires Internet connectivity and add the following flag to the helm command. TBD: Oz
+
+## System and Network Requirements
+Before installing the NVIDIA Run:ai control plane, validate that the [system requirements](./system-requirements.md) and [network requirements](./network-requirements.md) are met. Make sure you have the [software artifacts](./preparations.md) prepared.
+
+## Permissions
+
+As part of the installation, you will be required to install the NVIDIA Run:ai control plane [Helm chart](https://helm.sh/). The Helm charts require Kubernetes administrator permissions. You can review the exact objects that are created by the charts using the `--dry-run` on both helm charts.
+
+## Installation
+
+Run the following command. Replace global.domain=<DOMAIN> with the one obtained here: TBD: Oz
+
+```
+helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
+--version "2.19.83" \
+--set global.customCA.enabled=true \
+--set global.domain=bcm-runai-1.nvidia.com
+
+Release "runai-backend" does not exist. Installing it now.
+NAME: runai-backend
+LAST DEPLOYED: Mon Dec 30 17:30:19 2024
+NAMESPACE: runai-backend
+STATUS: deployed
+REVISION: 1
+```
+
+TBD: Oz only this 2.19 version?
+
+## Connect to NVIDIA Run:ai User Interface
+
+1. Open your browser and go to: `https://<DOMAIN>`.
+2. Log in using the default credentials:
+    
+    * User: `test@run.ai`
+    * Password: `Abcd!234`
+
+You will be prompted to change the password.
+
