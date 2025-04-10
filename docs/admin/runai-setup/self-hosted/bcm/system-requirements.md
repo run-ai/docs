@@ -85,7 +85,7 @@ The following configuration represents the minimum hardware requirements for ins
 ### Shared Storage
 
 The installation uses BCM’s default storage class, which is local path.
-This storage class is not used for workloads. To enable shared storage for workloads, you must install a SuperPod-certified CSI driver and configure it in the Run:ai configuration. TBD: Oz
+This storage class is not used for workloads. To enable shared storage for workloads, you must install a SuperPod-certified CSI driver and configure it in the NVIDIA Run:ai configuration. TBD: Oz
 
 
 ## Software Requirements
@@ -99,8 +99,7 @@ DGX OS is supported on your SuperPod and optimized for NVIDIA infrastructure.
 
 ### Kernel Parameters 
 
-To enable SR-IOV in the DGX image, ensure the following kernel parameter: intel_iommu=on. TBD: Sherin
-Once configured, enable SR-IOV, set the number of Virtual Functions (VFs) to the desired amount, and reboot the DGX nodes. For example:
+To enable SR-IOV in the DGX image, ensure the following kernel parameter is included: `intel_iommu=on`. Once configured, enable SR-IOV, set the number of Virtual Functions (VFs) to the desired amount, and reboot the DGX nodes. For example:
 
 ```
 root@bcmhead1:~# cmsh
@@ -169,9 +168,9 @@ Note the leading whitespace in “ `intel_iommu=on`” above.
     ![alt text](images/image-8.png)
 
     !!! Note
-        You need to choose both the DGX node and Run:ai control plane node categories outlined in [5. BCM prerequisites](?tab=t.0#heading=h.2xcytpi). TBD: Sherin
+        You need to choose both the DGX node and Run:ai control plane node categories outlined in [5. BCM prerequisites](?tab=t.0#heading=h.2xcytpi). TBD: Oz check it in the original doc
 
-10. Optional - “Choose individual Kubernetes worker nodes”  TUI screen - **DO NOT **make any selections in this step and instead hit the OK button to proceed to the next step. TBD: Oz
+10. Optional - “Choose individual Kubernetes worker nodes”  TUI screen - **DO NOT **make any selections in this step and instead hit the OK button to proceed to the next step. TBD: Oz so they should skip?
 
     ![alt text](images/image-9.png)
 
@@ -226,7 +225,7 @@ Select the following Operators and then click **Ok**:
 
 2. Provide the following [Helm values YAML](https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets/-/raw/main/NetworkOperator/helm-values-sriov-nvipam.yaml?ref_type=heads): TBD: Oz
 
-    ![alt text](images/image-29.png) TBD wrong screenshot
+    ![alt text](images/image-40.png)
 
 
     !!! Note
