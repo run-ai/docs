@@ -242,10 +242,11 @@ nav:
           - 'Uninstall' : 'admin/runai-setup/self-hosted/ocp/uninstall.md'
         - 'NVIDIA Run:ai on SuperPOD' :
           - 'System Requirements' : 'admin/runai-setup/self-hosted/bcm/system-requirements.md'
+          - 'Preparations' : 'admin/runai-setup/self-hosted/bcm/preparations.md'
           - 'Network Requirements' : 'admin/runai-setup/self-hosted/bcm/network-requirements.md'
-          - 'Configure BCM' : 'admin/runai-setup/self-hosted/bcm/configure-bcm.md'
-          - 'Deploy Run:ai' : 'admin/runai-setup/self-hosted/bcm/deploy-runai.md'
-          - 'Configure Run:ai' : 'admin/runai-setup/self-hosted/bcm/configure-runai.md'
+          - 'Install Control Plane' : 'admin/runai-setup/self-hosted/bcm/install-control-plane.md'
+          - 'Install Using Helm' : 'admin/runai-setup/self-hosted/bcm/helm-install.md'
+          - 'Next Steps' : 'admin/runai-setup/self-hosted/bcm/configure-runai.md'
       - 'Researcher Setup' :
         - 'Introduction' : 'admin/researcher-setup/researcher-setup-intro.md'
         - 'Install the V1 CLI' : 'admin/researcher-setup/cli-install.md'

@@ -1,4 +1,4 @@
-# Configure Run:ai
+# Next Steps
 
 ## Configure Single Sign-On for user authentication
 
