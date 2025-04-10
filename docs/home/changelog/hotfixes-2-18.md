@@ -12,6 +12,7 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26878 | 2.18.100 | Fixed an issue where, in some cases, previous inference request errors caused subsequent successful requests to report latency as NaN (Not a Number) instead of the actual value. As a result, these requests were not displayed in the UI latency graph, and the API returned NaN. |
 | RUN-26800 | 2.18.99 | Fixed an issue where the `runai list nodes` command in CLI v1 did not display the correct number of free GPUs when using GPU memory. |
 | RUN-26324 | 2.18.99 | Fixed an issue in the documentation where the toleration name was incorrectly marked as mandatory. Also fixed an issue in CLI v2 where the required fields were incorrect: name is no longer mandatory, and key is now required. |
 | RUN-25382 | 2.18.96 | Fixed an issue where invalid min/max policy values caused an error in the policy pod. |

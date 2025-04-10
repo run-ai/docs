@@ -10,6 +10,14 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-24016 | 2.19.86 | Fixed an issue where workloads could be submitted with non-positive memory quantity values. |
+| RUN-27075 | 2.19.86 | Fixed an issue where, in some cases, creating a project through the API with partial parameters would return an error when the "Limit projects from exceeding department quota" setting was enabled. |
+| RUN-27159 | 2.19.86 | Fixed an issue where allocated GPU memory for workloads was presented in MB but the value was in MiB. |
+| RUN-27196 | 2.19.86 | Fixed an issue where workloads could be submitted with invalid memory quantity values. |
+| RUN-27269 | 2.19.86 | Fixed an issue where the OKE environment was not correctly identified by the operator, causing it to behave incorrectly and not support fractional GPU allocations. |
+| RUN-26956 | 2.19.85 | Fixed an issue where resources used by pods in the "Initializing" phase were not considered allocated. |
+| RUN-27035 | 2.19.85 | Fixed an issue where, on very rare occasions, a small subset of metrics was missing. |
+| RUN-26878 | 2.19.85 | Fixed an issue where, in some cases, previous inference request errors caused subsequent successful requests to report latency as NaN (Not a Number) instead of the actual value. As a result, these requests were not displayed in the UI latency graph, and the API returned NaN. |
 | RUN-26324 | 2.19.84 | Fixed an issue in the documentation where the toleration name was incorrectly marked as mandatory. Also fixed an issue in CLI v2 where the required fields were incorrect: name is no longer mandatory, and key is now required. |
 | RUN-26800 | 2.19.84 | Fixed an issue where the `runai list nodes` command in CLI v1 did not display the correct number of free GPUs when using GPU memory. |
 | RUN-26955 | 2.19.84 | Fixed an issue where duplicate results appeared in some cases for node metrics. |
