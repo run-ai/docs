@@ -11,11 +11,11 @@ As part of the installation, you will be required to install the NVIDIA Run:ai c
 
 ## Installation
 
-Run the following command. Replace global.domain=<DOMAIN> with the one obtained here: TBD: Oz
+Run the following command. Replace global.domain=<DOMAIN> with the one  obtained [here](./system-requirements.md#fully-qualified-domain-name-fqdn): TBD: Oz
 
 ```
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
---version "2.19.83" \
+--version "<VERSION> " \
 --set global.customCA.enabled=true \
 --set global.domain=bcm-runai-1.nvidia.com
 
@@ -27,7 +27,9 @@ STATUS: deployed
 REVISION: 1
 ```
 
-TBD: Oz only this 2.19 version?
+
+!!! Note
+    To install a specific version, add --version <VERSION> to the install command. You can find available versions by running helm search repo -l runai-backend.
 
 ## Connect to NVIDIA Run:ai User Interface
 
