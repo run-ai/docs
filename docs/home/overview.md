@@ -11,28 +11,6 @@ Run:ai is a GPU orchestration and optimization platform that helps organizations
 
 Built on Kubernetes, Run:ai supports dynamic GPU allocation, workload submission, workload scheduling, and resource sharing, ensuring that AI teams get the compute power they need while IT teams maintain control over infrastructure efficiency.
 
-## Benefits of using Run:ai
-
-### Cost optimization
-
-The high cost of AI infrastructure makes cost optimization a crucial consideration for organizations. Run:ai contributes to cost savings through:
-
-* Improved hardware utilization, hence accelerating return on investment.
-* Automated resource allocation, minimizing manual intervention and management overheads.
-* Detailed analytics and reporting, enabling organizations to make data-driven decisions about resource provisioning and resource costs.
-
-### Accelerated time-to-market
-
-Run:ai's accelerates development cycles by:
-
-* Increasing access to computational resources and shared resource pooling.
-* Reducing wait times for computational resources.
-* Enabling faster experimentation and streamlining the transition from development to production.
-
-### Scalability
-
-Designed to handle large-scale GPU clusters, including thousands of nodes, and manage a high throughput of workloads, makes it ideal for extensive and demanding environments.
-
 ## How Run:ai helps your organization
 
 ### For infrastructure administrators
