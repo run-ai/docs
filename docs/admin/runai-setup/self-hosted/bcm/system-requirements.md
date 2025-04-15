@@ -129,7 +129,7 @@ Note the leading whitespace in “ `intel_iommu=on`” above.
 
     ![alt text](images/image-2.png)
 
-4. Optional: Provide a DockerHub container registry mirror if required, otherwise, leave blank:
+4. Optional: Provide a DockerHub container registry mirror if required and then click **Ok**. Otherwise, leave blank and click **Ok** to proceed:
 
     ![alt text](images/image-3.png)
 
@@ -138,7 +138,7 @@ Note the leading whitespace in “ `intel_iommu=on`” above.
     ![alt text](images/image-4.png)
 
     !!! Note
-        Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in the [FQDN section](#fully-qualified-domain-name-fqdn).
+        Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn).
 
 6. Select **yes** to expose the Kubernetes API servers to the cluster’s external network and then click **Ok**:
 
@@ -156,15 +156,15 @@ Note the leading whitespace in “ `intel_iommu=on`” above.
 
     ![alt text](images/image-7.png)
 
-!!! Note
-    To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
+    !!! Note
+        To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
 
-9. Select the BCM node categories for the Kubernetes worker node pool and then click **Ok**:
+9. Select the BCM node categories for the Kubernetes worker nodes and then click **Ok**:
 
     ![alt text](images/image-8.png)
 
     !!! Note
-        You need to choose both the DGX node and Run:ai control plane node categories outlined in TBD: Sherin
+        You need to choose both the DGX node and Run:ai control plane node categories outlined in [Node Categories](#node-categories).
 
 10. Optional - “Choose individual Kubernetes worker nodes”  TUI screen - **DO NOT **make any selections in this step and instead hit the OK button to proceed to the next step. TBD: Oz so they should skip?
 
@@ -174,15 +174,15 @@ Note the leading whitespace in “ `intel_iommu=on`” above.
 
     ![alt text](images/image-10.png)
 
-    Ignore the following message if it appears:
+    Ignore the following message if it appears and click **Ok**:
 
     ![alt text](images/image-11.png)
 
-12. Set the ports as shown below and then click **Ok**. **Do not modify the Etcd spool directory**:
+12. Set the ports as shown below and then click **Ok**. Do not modify the Etcd spool directory:
 
     ![alt text](images/image-12.png)
 
-13. Select **Calico** as the network plugin and then click **Ok**:
+13. Select **Calico** as the Kubernetes network plugin and then click **Ok**:
 
     ![alt text](images/image-13.png)
 
@@ -201,15 +201,15 @@ Select the following Operators and then click **Ok**:
 
 #### NVIDIA GPU Operator
 
-1. Select NVIDIA GPU Operator **v24.9.1** and then click **Ok**::
+1. Select NVIDIA GPU Operator **v24.9.1** and then click **Ok**:
     ![alt text](images/image-16.png)
 
 
-2. Leave the yaml configuration file path empty and then click **Ok**::
+2. Leave the yaml configuration file path empty and then click **Ok**:
     ![alt text](images/image-18.png)
 
 
-3. Configure the NVIDIA GPU Operator by selecting the following configuration parameters and then click **Ok**::
+3. Configure the NVIDIA GPU Operator by selecting the following configuration parameters and then click **Ok**:
     ![alt text](images/image-19.png)
 
 #### Network Operator
@@ -242,7 +242,7 @@ Select the following Operators and then click **Ok**:
 
 ### Permissions Manager
 
-Click **yes** to install the BCM Kubernetes permissions manager and then click **Ok**::
+Click **yes** to install the BCM Kubernetes permissions manager and then click **Ok**:
 
 ![alt text](images/image-24.png)
 
@@ -260,7 +260,7 @@ Click **yes** to install the BCM Kubernetes permissions manager and then click *
 
 ### Save your Configuration
 
-Select **save config & deploy** and then click **Ok**:
+Select **Save config & deploy** and then click **Ok**:
 
 ![alt text](images/image-27.png)
 
@@ -285,7 +285,7 @@ kubectl create ns runai
 
 ## Configure Kubernetes Ingress Controller
 
-### Scale-up the Ingress Deployment
+### Scale up the Ingress Deployment
 
 For high availability, increase the number of replicas from 1 to 3:
 
@@ -305,15 +305,15 @@ For high availability, increase the number of replicas from 1 to 3:
 
 1. From the active BCM headnode, run the `cm-kubernetes-setup` command. 
 
-2. The following screen will pop up. select **Configure Ingress** and then click **Ok**:
+2. The following screen will pop up. Select **Configure Ingress** and then click **Ok**:
 
     ![alt text](images/image-30.png)
 
-2. Select the Kubernetes cluster and then click **Ok**::
+2. Select the Kubernetes cluster and then click **Ok**:
 
     ![alt text](images/image-31.png)
 
-3. Click **yes** when asked to provide signed certificates and then click **Ok**::
+3. Select **yes** when asked to provide signed certificates and then click **Ok**:
 
     ![alt text](images/image-32.png)
 
@@ -326,10 +326,10 @@ For high availability, increase the number of replicas from 1 to 3:
 
 NVIDIA Run:ai can be exposed either through a reverse HTTPS proxy from the two BCM headnodes or through the MetalLB Load Balancer/Route Advertiser. In the latter, additional configuration is needed to expose the Kubernetes Ingress. The following prerequisites must be met:
 
-* MetalLB deployed as part of the Kubernetes installation.
-* A reserved range of IP addresses for the load balancer.
+* MetalLB is deployed as part of the Kubernetes installation.
+* A reserved range of IP addresses is available for the Load Balancer.
  
-    * The IP addresses need to be routable from the customer’s corporate network.
+    * The IP addresses need to be routable from your corporate network.
     * The DNS record needs to point to one of the IP addresses from that range. That address will be reserved and allocated to the Kubernetes NGINX Ingress.
     * Ensure that no firewall is blocking connectivity to that IP address range.
     * Ensure that there are no conflicts.
@@ -427,13 +427,13 @@ spec:
 
 ## Configure the Network Operator
 
-The default deployment of the Network Operator installs the boiler-plate services, but does not initialize the SR-IOV and Secondary network plugins. To that the following CRD resources have to be created in that exact order:
+The default deployment of the Network Operator installs the boiler-plate services, but does not initialize the SR-IOV and secondary network plugins. To that the following CRD resources have to be created in that exact order:
 
-* SR-IOV Network Policies for each NVIDIA IB NIC.
-* An nvIPAM IP address pool.
-* SR-IOV IB Networks.
+* SR-IOV Network Policies for each NVIDIA InfiniBand NIC
+* An nvIPAM IP address pool
+* SR-IOV InfiniBand networks
 
-The new Network operator YAML specs will work on Ampere, Hopper and Blackwell-based DGX systems. The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets
+The new Network Operator YAML specs will work on Ampere, Hopper and Blackwell-based DGX systems. The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets
 
 1. Increase the number of simultaneous updates by the Network operator:
     ```
@@ -462,7 +462,7 @@ The new Network operator YAML specs will work on Ampere, Hopper and Blackwell-ba
     ```
 
 !!! Note
-    The e Network operator will restart the DGX nodes if the number of Virtual Functions in the SR-IOV Network Policy file does not match the NVIDIA/Mellanox firmware configuration. TBD: Oz
+    The e Network Operator will restart the DGX nodes if the number of Virtual Functions in the SR-IOV Network Policy file does not match the NVIDIA/Mellanox firmware configuration. TBD: Oz
 
 
 ## Additional Software Requirements
@@ -563,7 +563,7 @@ TBD: Oz both namespaces?
 
 ## Label the NVIDIA Run:ai Control Plane Nodes 
 
-Label the nodes using CMSH:
+Label the nodes using CMSH. For example:
 
 ```
 cmsh
@@ -577,7 +577,7 @@ commit
 ```
 
 !!! Note
-    The names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
+    The above names of the categories are arbitrary names and are used as an example only. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
 
 
 ## Create the CPU Worker Node ConfigurationOverlay  
