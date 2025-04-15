@@ -41,16 +41,17 @@ If this is your first cluster and you have completed the New Cluster form, start
 1. In the NVIDIA Run:ai platform, go to **Resources**
 2. Click **+NEW CLUSTER**
 3. Enter a unique name for your cluster
-4. Optional: Choose the NVIDIA Run:ai cluster version (latest, by default)
-5. Enter the Cluster URL. For more information, see [Fully Qualified Domain Name](system-requirements.md#fully-qualified-domain-name-fqdn) requirement.
+4. Choose the NVIDIA Run:ai cluster version (latest, by default)
+5. Select **Same as control plane**
 6. Click **Continue**
 
 **Installing NVIDIA Run:ai Cluster**
 
 In the next Section, the NVIDIA Run:ai cluster installation steps will be presented.
 
-1. Follow the installation instructions and run the commands provided on your Kubernetes cluster.
-2. Click **DONE**
+1. Follow the installation instructions and run the commands provided on your Kubernetes cluster
+2. Append `--set global.customCA.enabled=true` to the Helm installation command
+3. Click **DONE**
 
 The cluster is displayed in the table with the status **Waiting to connect**. Once installation is complete, the cluster status changes to **Connected**.
 
@@ -59,7 +60,7 @@ The cluster is displayed in the table with the status **Waiting to connect**. On
 
 
 !!! Note
-    To customize the installation based on your environment, see [Customize cluster installation]. TBD: Oz
+    To customize the installation based on your environment, see [Customize cluster installation](../../cluster-setup/customize-cluster-install.md).
 
 ## Troubleshooting
 
@@ -67,7 +68,7 @@ If you encounter an issue with the installation, try the troubleshooting scenari
 
 ### Installation
 
-If the Run:ai cluster installation failed, check the installation logs to identify the issue. Run the following script to print the installation logs:
+If the NVIDIA Run:ai cluster installation failed, check the installation logs to identify the issue. Run the following script to print the installation logs:
 
 ``` bash
 curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get-installation-logs.sh
@@ -75,5 +76,5 @@ curl -fsSL https://raw.githubusercontent.com/run-ai/public/main/installation/get
 
 ### Cluster Status
 
-If the Run:ai cluster installation completed, but the cluster status did not change its status to Connected, check the cluster [troubleshooting scenarios](../../troubleshooting/troubleshooting.md#cluster-health)
+If the NVIDIA Run:ai cluster installation completed, but the cluster status did not change its status to Connected, check the cluster [troubleshooting scenarios](../../troubleshooting/troubleshooting.md#cluster-health)
 
