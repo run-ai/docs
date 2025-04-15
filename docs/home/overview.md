@@ -52,7 +52,7 @@ Run:ai is made up of two components both installed over a [Kubernetes](https://k
 * **Run:ai cluster** – Provides Scheduling and workload management, extending Kubernetes native capabilities.
 * **Run:ai control plane** – Provides resource management, handles workload submission and provides cluster monitoring and analytics.
 
-![multi-cluster-architecture](img/multi-cluster-architecture.png)
+![multi-cluster-architecture](img/multi-cluster.png)
 
 ### Run:ai cluster
 
