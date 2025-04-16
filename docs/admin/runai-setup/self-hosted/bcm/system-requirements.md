@@ -11,7 +11,7 @@ The following checklist is provided for convenience and can be seen as part of a
 | [SSL] SSL Private Key | Private certificate (e.g. *.key) | 
 | [SSL] CA trust chain public certificate | X509 PEM file | 
 | [Networking] FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | 
-| [Networking]  Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | 
+| [Networking] Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | 
 
 ## Installer Machine
 
@@ -23,7 +23,7 @@ The machine running the installation must have:
 
 The configuration of BCM as well the deployment of NVIDIA Run:ai can be performed through SSH access on the BCM headnodes:
 
-```
+```bash
 ssh root@<IP address of BCM headnode>
 ```
 
@@ -49,22 +49,6 @@ This configuration is the minimum requirement you need to install and use NVIDIA
 | Memory     | 42GB              |
 | Disk space | 160GB             |
 
-Label the nodes using CMSH:
-
-NOTE: the names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
-
-configuring system nodes and node roles (move after kubernetes deployment)
-cmsh
-kubernetes
-labelsets
-add runai-control-plane
-append categories runai-control-plane
-append labels 
-node-role.kubernetes.io/runai-system=true
-commit
-
-!!! Note
-    For more information, see [System nodes](../../../config/node-roles.md#system-nodes).
 
 ### NVIDIA Run:ai - Worker Nodes
 
@@ -78,27 +62,6 @@ The following configuration represents the minimum hardware requirements for ins
 | Memory    | 4GB               |
 
 
-Label the nodes using CMSH:
-
-NOTE: the names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
-
-
-cmsh
-kubernetes
-labelsets
-add runai-control-plane
-append categories TBD add dgx one
-append labels 
-node-role.kubernetes.io/runai-gpu-worker=true
-commit
-
-Via BCM and not directly through kubernetes
-
-
-!!! Note
-    For more information, see [Worker nodes](../../../config/node-roles.md#worker-nodes). 
-
-Post installation - advanced cluster config 
 
 ### Node Categories
 
@@ -106,33 +69,29 @@ In BCM, a node category is a way to group nodes that share the same hardware pro
 
 Before installing NVIDIA Run:ai, make sure the necessary BCM node categories are created for:
 
-* NVIDIA Run:ai GPU worker nodes (in the below steps, this is named TBD)
-* NVIDIA Run:ai system nodes (in the below steps, this is named runai-control-plane)
-* Optional node category: NVIDIA Run:ai CPU worker nodes
+* NVIDIA Run:ai system nodes (in the below steps, this is named runai-control-plane-spod)
+* NVIDIA Run:ai GPU worker nodes (in the below steps, dgx-h100-spod)
+* Optional node category: NVIDIA Run:ai CPU worker nodes 
 
-cmsh
-kubernetes
-labelsets
-add runai-control-plane
-append categories TBD runai-cpu-workers
-append labels 
-node-role.kubernetes.io/runai-cpu-worker=true
-commit
+TBD
+
 
 ## Reserved IPs
 
-TBD: Sherin 
-FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | 
-| [Networking]  Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | 
+Before installation, ensure that the following IPs are reserved and correctly configured:
+
+* FQDN / Reserved IP - Reserve a static IP address that will be mapped to your system’s [Fully Qualified Domain Name (FQDN)](#fully-qualified-domain-name-fqdn). This IP must be referenced in a DNS A record or a CNAME that ultimately resolves to it. The IP is assigned to the alias interface on the active BCM headnode and is used for system access.
+
+* Load Balancer IP Range - Reserve a block of at least 8 consecutive IP addresses. This range will be used by [MetalLB](#expose-the-nvidia-runai-endpoint---metallb) to expose Kubernetes LoadBalancer services externally, supporting components such as Inference and DataMover workloads. TBD: Oz
+
+All reserved IPs must be reachable within your internal network and must not conflict with any existing IP allocations.
 
 ## Fully Qualified Domain Name (FQDN)
 
 You must have a Fully Qualified Domain Name (FQDN) to install NVIDIA Run:ai control plane (ex: `runai.mycorp.local`). This cannot be an IP. The domain name must be accessible inside the organization's private network.
 
-The DNS record needs to point to the IP address (A record) of the shared, alias interface that is active on the active BCM headnode (<NIC device name>:cmha i.e. eth0:cmha) or be a CNAME alias to a host DNS record pointing to that same IP address.
-
-The DNS records which is the same as the FQDN needs to resolve the IP that is reserved for the load balancer.
-
+The DNS record needs to point to the IP address (A record) of the shared alias interface that is active on the active BCM headnode (<NIC device name>:cmha i.e. eth0:cmha) or be a CNAME alias to a host DNS record pointing to that same IP address.
+This IP is also used by the system’s load balancer and must match the one referenced in the [Reserved IPs](#reserved-ips) section.
 
 ## TLS/SSL Certificates
 
@@ -142,24 +101,22 @@ You must have a TLS certificates that is associated with the FQDN for HTTPS acce
 * The certificate needs to include at least one Subject Alternative Name DNS entry (SAN) for the same FQDN.
 * The certificate needs to include the full trust chain (signing CA public keys).
 
-TBD: Sherin update according to deployment guide
-
-
-## Software Requirements
-
-The following software requirements must be fulfilled.
 
 ## Operating System
 
-DGX OS is supported on your SuperPod and optimized for NVIDIA infrastructure.
+DGX OS is supported on your SuperPod and optimized for NVIDIA infrastructure. 
+SR-IOV enables InfiniBand support at the host level. When used together with the NVIDIA Network Operator, it allows workloads to leverage InfiniBand networking for high-performance communication.
 
-* The VAST Multi-path or DDN EXA Lustre driver has been installed in all of the used the software image and the Lustre/VAST has been mounted on all DGX and K8S nodes using a BCM FSMount. TBD: Oz
 
-sr-iov enables infiniband - host level together with the network operator - can use infiniband TBD: Sherin
+The VAST Multi-path or DDN EXA Lustre driver has been installed in all of the used the software image and the Lustre/VAST has been mounted on all DGX and K8S nodes using a BCM FSMount. TBD: Oz
 
-## Kubernetes on BCM
 
-1. From the active BCM headnode, run the `cm-kubernetes-setup` command. 
+## Deploy Kubernetes on Base Command Manager
+
+1. From the active BCM headnode, run the following command:
+    ```
+    cm-kubernetes-setup
+    ```
 
 2. The following screen will pop up. Select **Deploy** and then click **Ok**:
 
@@ -168,48 +125,48 @@ sr-iov enables infiniband - host level together with the network operator - can 
     !!! Note
         The number of entries in the above menu may vary.
 
-2. Select **Kubernetes v1.31** and then click **Ok**: TBD: Sherin update numbering
+2. Select **Kubernetes v1.31** and then click **Ok**:
 
     ![alt text](images/image-1.png)
 
-4. Optional: Provide a DockerHub container registry mirror if required and then click **Ok**. Otherwise, leave blank and click **Ok** to proceed:
+3. Optional: Provide a DockerHub container registry mirror if required and then click **Ok**. Otherwise, leave blank and click **Ok** to proceed:
 
     ![alt text](images/image-3.png)
 
-5. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network: Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn). TBD: Sherin
+4. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network: Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn). TBD: Sherin
 
     ![alt text](images/image-4.png)
 
-6. Select **yes** to expose the Kubernetes API servers to the cluster’s external network and then click **Ok**:
+5. Select **yes** to expose the Kubernetes API servers to the cluster’s external network and then click **Ok**:
 
     ![alt text](images/image-5.png)
 
 
-7. Select the internal network that will be used by the Kubernetes nodes and then click **Ok**:
+6. Select the internal network that will be used by the Kubernetes nodes and then click **Ok**:
 
     ![alt text](images/image-6.png)
 
-8. Select at least 3 Kubernetes master nodes and then click **Ok**:
+7. Select at least 3 Kubernetes master nodes and then click **Ok**:
 
     ![alt text](images/image-7.png)
 
     !!! Note
         To ensure high availability and prevent a single point of failure, it is recommended to configure at least three Kubernetes master nodes in your cluster.
 
-9. Select both the NVIDIA Run:ai system and worker [node categories](#node-categories) to operate as the Kubernetes worker nodes and then click **Ok**:
+8. Select both the NVIDIA Run:ai system and worker [node categories](#node-categories) to operate as the Kubernetes worker nodes and then click **Ok**:
 
     ![alt text](images/image-8.png)
 
 
-10. Selecting individual Kubernetes nodes is not required. Click **Ok** to proceed:
+9. Selecting individual Kubernetes nodes is not required. Click **Ok** to proceed:
 
     ![alt text](images/image-9.png)
 
-11. Select the Etcd nodes and then click **Ok**. Make sure to select the same three nodes as the Kubernetes master nodes (Step 8):
+10. Select the Etcd nodes and then click **Ok**. Make sure to select the same three nodes as the Kubernetes master nodes (Step 8):
 
     ![alt text](images/image-10.png)
 
-    Ignore the following message if it appears and click **Ok**:
+11. Ignore the following message if it appears and click **Ok**:
 
     ![alt text](images/image-11.png)
 
@@ -236,9 +193,9 @@ Select the following Operators and then click **Ok**:
 
 #### NVIDIA GPU Operator
 
-GPU operator - 22.9 - 24.9 
+NVIDIA Run:ai supports versions 22.9 to 25.3.
 
-1. Select the NVIDIA GPU Operator version and then click **Ok**:
+1. Select the required NVIDIA GPU Operator version and then click **Ok**:
     ![alt text](images/image-16.png)
 
 
@@ -335,15 +292,81 @@ Select **Save config & deploy** and then click **Ok**:
 At this point the deployment will start. Half way through the deployment all nodes that are members of the Kubernetes cluster will be rebooted and the installer will wait up to 60 minutes for all nodes to come back online.
 
 
-Configure on BCM 
+## Configure BCM Kubernetes for NVIDIA Run:ai
 
-## Configure Kubernetes Ingress Controller
+### Label the NVIDIA Run:ai System Nodes
 
-### Scale up the Ingress Deployment
+!!! Note
+    The names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
+
+Label the nodes using CMSH:
+
+```bash
+cmsh
+kubernetes
+labelsets
+add runai-control-plane
+append categories runai-control-plane
+append labels 
+node-role.kubernetes.io/runai-system=true
+commit
+```
+
+!!! Note
+    For more information, see [System nodes](../../../config/node-roles.md#system-nodes).
+
+### Label the NVIDIA Run:ai Worker Nodes
+
+!!! Note
+    The names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
+
+1. Label the nodes using CMSH - GPU workers:
+    ```bash
+    cmsh
+    kubernetes
+    labelsets
+    add runai-control-plane
+    append categories dgx-h100-spod
+    append labels 
+    node-role.kubernetes.io/runai-gpu-worker=true
+    commit
+    ```
+2. Optional: Label the nodes using CMSH - CPU workers:
+    ```bash
+    cmsh
+    kubernetes
+    labelsets
+    add runai-control-plane
+    append categories runai-cpu-workers
+    append labels 
+    node-role.kubernetes.io/runai-cpu-worker=true
+    commit
+    ```
+
+!!! Note
+    For more information, see [Worker nodes](../../../config/node-roles.md#worker-nodes). 
+
+
+
+### Create the NVIDIA Run:ai Namespaces
+
+Create the following Kubernetes namespaces:
+
+```bash
+kubectl create ns runai-backend
+kubectl create ns runai
+```
+
+!!! Note
+    If you cannot use kubectl, load the Kubernetes Lmod module using `module load kubernetes`.
+
+### Configure Kubernetes Ingress Controller
+
+#### Scale up the Ingress Deployment
 
 For high availability, increase the number of replicas from 1 to 3:
 
-```
+```bash
 # cmsh
 [bcmhead1->device]% kubernetes
 [bcmhead1->kubernetes[dra]]% appgroups
@@ -355,9 +378,12 @@ For high availability, increase the number of replicas from 1 to 3:
 [bcmhead1->kubernetes*[dra*]->appgroups*[system*]->applications*[ingress_controller*]->environment*]% commit
 ```
 
-### Configure the NGINX proxy TLS certificates
+#### Configure the NGINX Proxy TLS Certificates
 
-1. From the active BCM headnode, run the `cm-kubernetes-setup` command. 
+1. From the active BCM headnode, run the following command:
+    ```bash
+    cm-kubernetes-setup
+    ```
 
 2. The following screen will pop up. Select **Configure Ingress** and then click **Ok**:
 
@@ -376,23 +402,17 @@ For high availability, increase the number of replicas from 1 to 3:
     ![alt text](images/image-33.png)
 
 
-### Expose the NVIDIA Run:ai Endpoint - MetalLB
+#### Expose the NVIDIA Run:ai Endpoint - MetalLB
 
 **Requires testing**
 
-NVIDIA Run:ai is exposed through the MetalLB load balancer/Route Advertiser. Additional configuration is needed to expose the Kubernetes Ingress. The following prerequisites must be met:
+NVIDIA Run:ai is exposed through the MetalLB load balancer/Route Advertiser. Additional configuration is needed to expose the Kubernetes Ingress.
+Make sure MetalLB is deployed as part of the [Kubernetes installation](#kubernetes) and a reserved range of IP addresses is available for the load balancer as detailed in [Reserved IPs](#reserved-ips) section.
 
-* MetalLB is deployed as part of the [Kubernetes installation](#kubernetes).
-* A reserved range of IP addresses is available for the load balancer:
- 
-    * The IP addresses need to be routable from your corporate network.
-    * The DNS record needs to point to one of the IP addresses from that range. That address will be reserved and allocated to the Kubernetes NGINX Ingress.
-    * Ensure that no firewall is blocking connectivity to that IP address range.
-    * Ensure that there are no conflicts.
 
 1. Configure the Kubernetes API proxy with strict ARP validation:
 
-    ```
+    ```bash
     kubectl get configmap kube-proxy -n kube-system -o yaml | \
     sed -e "s/strictARP: false/strictARP: true/" | \
     kubectl apply -f - -n kube-system
@@ -400,7 +420,7 @@ NVIDIA Run:ai is exposed through the MetalLB load balancer/Route Advertiser. Add
 
 2. Create a new appGroup application in BCM:
 
-    ```
+    ```bash
     root@bcmhead1:~# cmsh
     [bcmhead1]% kubernetes
     [bcmhead1->kubernetes[dra]]% appgroups
@@ -414,71 +434,71 @@ NVIDIA Run:ai is exposed through the MetalLB load balancer/Route Advertiser. Add
 You will need to substitute the IP address with the reserved IP address.
 The below creates the MetalLB IP address pool and L2 advertisement CRD as well as the new Ingress Kubernetes service:
 
-```
----
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: l2-ingress
-  namespace: metallb-system
-spec:
-  ipAddressPools:
-    - ingress-pool
-  nodeSelectors:
-    - matchLabels:
-        node-role.kubernetes.io/runai-system: "true"
+    ```yaml
+    ---
+    apiVersion: metallb.io/v1beta1
+    kind: L2Advertisement
+    metadata:
+    name: l2-ingress
+    namespace: metallb-system
+    spec:
+    ipAddressPools:
+        - ingress-pool
+    nodeSelectors:
+        - matchLabels:
+            node-role.kubernetes.io/runai-system: "true"
 
----
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
-metadata:
-  name: ingress-pool
-  namespace: metallb-system
-spec:
-  addresses:
-    - <RESERVED IP>/32
-  autoAssign: false
-  serviceAllocation:
-    priority: 50
-    namespaces:
-      - ingress-nginx
+    ---
+    apiVersion: metallb.io/v1beta1
+    kind: IPAddressPool
+    metadata:
+    name: ingress-pool
+    namespace: metallb-system
+    spec:
+    addresses:
+        - <RESERVED IP>/32
+    autoAssign: false
+    serviceAllocation:
+        priority: 50
+        namespaces:
+        - ingress-nginx
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/component: controller
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
-    app.kubernetes.io/version: 1.11.2
-  name: ingress-nginx-controller-lb1
-  namespace: ingress-nginx
-spec:
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
-  ports:
-    - appProtocol: http
-      name: http
-      port: 80
-      protocol: TCP
-      targetPort: http
-    - appProtocol: https
-      name: https
-      port: 443
-      protocol: TCP
-      targetPort: https
-  selector:
-    app.kubernetes.io/component: controller
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/name: ingress-nginx
-  type: LoadBalancer
-  loadBalancerIP: <RESERVED IP>
-```
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+    labels:
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: ingress-nginx
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/part-of: ingress-nginx
+        app.kubernetes.io/version: 1.11.2
+    name: ingress-nginx-controller-lb1
+    namespace: ingress-nginx
+    spec:
+    ipFamilies:
+        - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+        - appProtocol: http
+        name: http
+        port: 80
+        protocol: TCP
+        targetPort: http
+        - appProtocol: https
+        name: https
+        port: 443
+        protocol: TCP
+        targetPort: https
+    selector:
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/instance: ingress-nginx
+        app.kubernetes.io/name: ingress-nginx
+    type: LoadBalancer
+    loadBalancerIP: <RESERVED IP>
+    ```
 
-## Configure the Network Operator
+### Configure the Network Operator
 
 The default deployment of the Network Operator installs the boiler-plate services, but does not initialize the SR-IOV and secondary network plugins. To that the following CRD resources have to be created in that exact order:
 
@@ -486,52 +506,41 @@ The default deployment of the Network Operator installs the boiler-plate service
 * An nvIPAM IP address pool
 * SR-IOV InfiniBand networks
 
-The new Network Operator YAML specs will work on Ampere, Hopper and Blackwell-based DGX systems. The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets
+The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets
 TBD: need access to yaml files
 
 1. Increase the number of simultaneous updates by the Network Operator:
-    ```
+    ```bash
     kubectl patch sriovoperatorconfigs.sriovnetwork.openshift.io -n network-operator default --patch '{ "spec": { "maxParallelNodeConfiguration": 0 } }' --type='merge'
     ```
     and
 
-    ```
+    ```bash
     kubectl patch sriovoperatorconfigs.sriovnetwork.openshift.io -n network-operator default --patch '{ "spec": { "featureGates": { "parallelNicConfig": true  } } }' --type='merge'
     ```
 2. Create the SR-IOV network node policies:
-    ```
+    ```bash
     kubectl apply -f sriov-network-node-policy.yaml
     ```
 
     Adjust the number of Virtual Function (numVfs) as needed.
 
 3. Create an IPAM IP Pool:
-    ```
+    ```bash
     kubectl apply -f nvipam-ip-pool.yaml
     ```
 
 4. Create the SR-IOV IB networks:
-    ```
+    ```bash
     kubectl apply -f sriov-ib-network.yaml
     ```
 
 !!! Note
     The Network Operator will restart the DGX nodes if the number of Virtual Functions in the SR-IOV Network Policy file does not match the NVIDIA/Mellanox firmware configuration. 
 
-## NVIDIA Run:ai Namespaces
+## Certificates Setup
 
-Create the following Kubernetes namespaces:
-
-```
-kubectl create ns runai-backend
-kubectl create ns runai
-```
-
-!!! Note
-    If you cannot use kubectl, load the Kubernetes Lmod module using `module load kubernetes`.
-
-
-## TLS certificate for NVIDIA Run:ai
+### TLS Certificate
 
 You must have TLS certificate that is associated with the FQDN for HTTPS access. Create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) named `runai-backend-tls` in the `runai-backend` namespace and include the path to the TLS `--cert` and its corresponding private `--key` by running the following:
 
@@ -541,19 +550,19 @@ kubectl create secret tls runai-backend-tls -n runai-backend \
   --key /path/to/private.pem # Replace /path/to/private.pem with the actual path to your private key
 ```
 
-## Local Certificate Authority
+### Local Certificate Authority
 
 A local certificate authority serves as the root certificate for organizations that cannot use publicly trusted certificate authority if external connections or standard HTTPS authentication is required. Follow the below steps to configure the local certificate authority. 
 
 
 1. Add the public key to the `runai-backend `namespace:
-    ```
+    ```bash
     kubectl -n runai-backend create secret generic runai-ca-cert \ 
         --from-file=runai-ca.pem=<ca_bundle_path>
     ```
 
 2. Add the public key to the `runai` namespace:
-    ```
+    ```bash
     kubectl -n runai create secret generic runai-ca-cert \
         --from-file=runai-ca.pem=<ca_bundle_path>
     kubectl label secret runai-ca-cert -n runai run.ai/cluster-wide=true run.ai/name=runai-ca-cert --overwrite
@@ -579,21 +588,21 @@ All are part of the Kubeflow Training Operator. NVIDIA Run:ai supports Training 
 The Kubeflow Training Operator is packaged with MPI version 1.0 which is not supported by NVIDIA Run:ai. You need to separately install MPI v2beta1:
 
 1. Run the below to install MPI v2beta:
-    ```
+    ```bash
     kubectl create -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
     ```
 2. Disable MPI in the Training operator by running:
-    ```
+    ```bash
     kubectl patch deployment training-operator -n kubeflow --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args", "value": ["--enable-scheme=tfjob", "--enable-scheme=pytorchjob", "--enable-scheme=xgboostjob"]}]'
     ``` 
 
 3. Run: 
-    ```
+    ```bash
     kubectl delete crd mpijobs.kubeflow.org
     ```
 
 4. Install MPI v2beta1 again:
-    ```
+    ```bash
     kubectl create -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
     # Ignore any errors in the above command
     kubectl replace -f https://raw.githubusercontent.com/kubeflow/mpi-operator/v0.6.0/deploy/v2beta1/mpi-operator.yaml
@@ -607,19 +616,19 @@ Inference enables serving of AI models. This requires the [Knative Serving](http
 Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the NVIDIA Run:ai Scheduler and features, by running:
 
 1. Install the Knative CRDs:
-    ```
+    ```bash
     kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.15.0/serving-crds.yaml
     ```
 2. Install Knative-serving:
-    ```
+    ```bash
     kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.15.0/serving-core.yaml
     ```
 3. Deploy the Koerier Ingress:
-    ```
+    ```bash
     kubectl apply -f https://github.com/knative/net-kourier/releases/download/knative-v1.15.0/kourier.yaml
     ```
 4. Patch the Knative deployment:
-    ```
+    ```bash
     kubectl patch configmap/config-autoscaler   --namespace knative-serving   --type merge   --patch '{"data":{"enable-scale-to-zero":"true"}}'
     kubectl patch configmap/config-features   --namespace knative-serving   --type merge   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
     kubectl patch configmap/config-network   --namespace knative-serving   --type merge   --patch '{"data":{"ingress-class":"kourier.ingress.networking.knative.dev"}}'
