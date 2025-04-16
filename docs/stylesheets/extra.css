@@ -266,7 +266,7 @@ html .md-nav__button.md-logo img {
   text-decoration: underline;
   text-decoration-color: #76B900;
   text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 1.5px;
   transition: all 0.2s ease;
 }
 
@@ -274,11 +274,22 @@ html .md-nav__button.md-logo img {
 .md-typeset a:focus {
   color: #232323 !important;
   text-decoration-color: #76B900;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 3px;
   text-underline-offset: 2px;
 }
 
-  
+.md-typeset a,
+.md-typeset a:visited {
+  color: #232323 !important;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 0 #76B900;
+  transition: box-shadow 0.2s ease;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  box-shadow: inset 0 -3px 0 0 #76B900;
+}
 
 /* Top banner */
 .banner {
