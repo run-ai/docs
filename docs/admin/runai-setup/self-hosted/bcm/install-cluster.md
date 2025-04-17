@@ -1,4 +1,4 @@
-# Install Using Helm
+# Install the Cluster
 
 
 ## System and Network Requirements 

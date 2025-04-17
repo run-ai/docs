@@ -1,6 +1,7 @@
-# Install Control Plane
+# Install the Control Plane
 
-Installing the NVIDIA Run:ai control plane requires Internet connectivity and add the following flag to the helm command. TBD: Oz
+Installing the NVIDIA Run:ai control plane requires Internet connectivity.
+
 
 ## System and Network Requirements
 Before installing the NVIDIA Run:ai control plane, validate that the [system requirements](./system-requirements.md) and [network requirements](./network-requirements.md) are met. Make sure you have the [software artifacts](./preparations.md) prepared.
