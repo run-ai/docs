@@ -1,8 +1,8 @@
-/* Optional custom code colors
+/* Optional custom code colors */
 :root {
     --md-code-bg-color: rgb(120, 150, 85);
     --md-code-fg-color: #ECB7B7;
-} */
+}
 
 /* Header styling */
 .md-header {
@@ -262,24 +262,6 @@ html .md-nav__button.md-logo img {
 /* Force all rendered Markdown links to use the correct style */
 .md-typeset a,
 .md-typeset a:visited {
-  color: #232323 !important; /* or your base text color */
-  text-decoration: underline;
-  text-decoration-color: #76B900;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
-  transition: all 0.2s ease;
-}
-
-.md-typeset a:hover,
-.md-typeset a:focus {
-  color: #232323 !important;
-  text-decoration-color: #76B900;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 2px;
-}
-
-.md-typeset a,
-.md-typeset a:visited {
   color: #232323 !important;
   text-decoration: none;
   box-shadow: inset 0 -1px 0 0 #76B900;
@@ -317,3 +299,53 @@ html .md-nav__button.md-logo img {
     font-size: 14px;
     font-weight: 600;
 }
+
+
+/* Sidebar: Default all links to black */
+.md-sidebar .md-nav__link {
+    color: #232323 !important;
+    font-weight: 400 !important;
+  }
+  
+  /* Only selected (current) link is green and bold */
+  .md-sidebar .md-nav__link--active {
+    color: #76B900 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Expandable section headers: do NOT stay green unless also active */
+  .md-sidebar .md-nav__item--active > .md-nav__link:not(.md-nav__link--active) {
+    color: #232323 !important;
+    font-weight: 400 !important;
+  }
+  
+  /* Hovered links */
+  .md-sidebar .md-nav__link:hover {
+    color: #76B900 !important;
+  }
+
+  /* Inline code (e.g. <tenant-name>) fix */
+.md-typeset code {
+    background-color: #f5f5f5;
+    color: #3c3c3c;
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    border-radius: 4px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    white-space: break-spaces;
+  }
+  
+  /* Fix .microlight override (used in Swagger blocks) */
+  .microlight > code {
+    background: none;
+    color: inherit;
+  }
+
+  .md-sidebar .md-nav__link--active:not(.md-nav__link--parent) {
+    color: #76B900 !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #76B900;
+    padding-left: 0.6rem;
+  }
+  
+  
