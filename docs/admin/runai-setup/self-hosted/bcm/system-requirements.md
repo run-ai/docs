@@ -7,11 +7,11 @@ The following checklist is provided for convenience and can be seen as part of a
 
 | **Component** | **Type** | Reference |
 | --- | --- | --- |
+| [Networking] FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | [Fully Qualified Domain Name](#fully-qualified-domain-name-fqdn) / [Reserved IPs](#reserved-ips) |
+| [Networking] Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | [Reserved IPs](#reserved-ips) |
 | [SSL] Full-chain SSL certificate | <*.p7b, *.der or *.pem file> | [TLS/SSL Certificates](#tlsssl-certificates) |
 | [SSL] SSL Private Key | Private certificate (e.g. *.key) | [TLS/SSL Certificates](#tlsssl-certificates) |
 | [SSL] CA trust chain public certificate | X509 PEM file | [Local Certificate Authority](#local-certificate-authority) |
-| [Networking] FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | [Fully Qualified Domain Name](#fully-qualified-domain-name-fqdn) / [Reserved IPs](#reserved-ips) |
-| [Networking] Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | [Reserved IPs](#reserved-ips) |
 
 ## Installer Machine
 
@@ -29,9 +29,12 @@ ssh root@<IP address of BCM headnode>
 
 ## Hardware Requirements
 
-The following hardware requirements are for the NVIDIA Run:ai control plane and cluster system nodes. By default, all NVIDIA Run:ai services run on all available nodes. TBD: Sherin
+The following hardware requirements cover all components needed to deploy and operate NVIDIA Run:ai. By default, all NVIDIA Run:ai services run on all available nodes.
 
 ### Kubernetes
+
+This configuration is the minimum requirement you need to deploy Kubernetes.
+
 
 | Component  | Required Capacity |
 | ---------- | ----------------- |
@@ -50,7 +53,7 @@ This configuration is the minimum requirement you need to install and use NVIDIA
 | Disk space | 160GB             |
 
 
-See [Label the NVIDIA Run:ai System Nodes](#label-the-nvidia-runai-system-nodes) to TBD: Sherin
+To designate nodes to NVIDIA Run:ai system services, follow the instructions as described in [Label the NVIDIA Run:ai System Nodes](#label-the-nvidia-runai-system-nodes).
 
 
 ### NVIDIA Run:ai - Worker Nodes
@@ -64,7 +67,8 @@ The following configuration represents the minimum hardware requirements for ins
 | CPU       | 2 cores           |
 | Memory    | 4GB               |
 
-See [Label the NVIDIA Run:ai Worker Nodes](#label-the-nvidia-runai-worker-nodes) to TBD: Sherin
+
+To designate nodes to NVIDIA Run:ai workloads, follow the instructions as described in [Label the NVIDIA Run:ai Worker Nodes](#label-the-nvidia-runai-worker-nodes).
 
 
 ### Node Categories
@@ -73,11 +77,9 @@ In BCM, a node category is a way to group nodes that share the same hardware pro
 
 Before installing NVIDIA Run:ai, make sure the necessary BCM node categories are created for:
 
-* NVIDIA Run:ai system nodes (in the below steps, this is named runai-control-plane-spod)
-* NVIDIA Run:ai GPU worker nodes (in the below steps, dgx-h100-spod)
-* Optional node category: NVIDIA Run:ai CPU worker nodes 
-
-TBD: Sherin
+* NVIDIA Run:ai system nodes (for example, `runai-control-plane-spod`)
+* NVIDIA Run:ai GPU worker nodes (for example, `dgx-h100-spod`)
+* Optional: NVIDIA Run:ai CPU worker nodes (for example, `runai-cpu-workers`)
 
 
 ## Reserved IPs
@@ -137,7 +139,7 @@ The VAST Multi-path or DDN EXA Lustre driver has been installed in all of the us
 
     ![alt text](images/image-3.png)
 
-4. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network: Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn). TBD: Sherin
+4. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network. Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn):
 
     ![alt text](images/image-4.png)
 
@@ -193,7 +195,7 @@ Select the following Operators and then click **Ok**:
 ![alt text](images/image-15.png)
 
 !!! Note
-    Do NOT select the Run:ai deployment operator in BCM10 at this stage as it is only relevant for NVIDIA Run:ai SaaS deployments.
+    Do NOT select the Run:ai operator.
 
 #### NVIDIA GPU Operator
 
@@ -300,10 +302,10 @@ At this point the deployment will start. Half way through the deployment all nod
 
 ### Label the NVIDIA Run:ai System Nodes
 
-!!! Note
-    The names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
+Label the system nodes to ensure that system services are scheduled on designated system nodes.
 
-Label the nodes using CMSH:
+!!! Note 
+    Node category names are user-defined and may vary. Make sure to label the correct category. Incorrect or mixed labels may result in pods being scheduled on unintended nodes or failing to schedule altogether.
 
 ```bash
 cmsh
@@ -321,10 +323,12 @@ commit
 
 ### Label the NVIDIA Run:ai Worker Nodes
 
-!!! Note
-    The names of the categories are arbitrary names so they may vary depending on the customer choice or any other preference. Make sure that you label the correct category. Mixing labels will result in pods running on incorrect nodes or not being scheduled at all.
+Label the GPU and optionally CPU worker nodes.
 
-1. Label the nodes using CMSH - GPU workers:
+!!! Note 
+    Node category names are user-defined and may vary. Make sure to label the correct category. Incorrect or mixed labels may result in pods being scheduled on unintended nodes or failing to schedule altogether.
+
+1. Label the nodes - GPU workers:
     ```bash
     cmsh
     kubernetes
@@ -335,7 +339,7 @@ commit
     node-role.kubernetes.io/runai-gpu-worker=true
     commit
     ```
-2. Optional: Label the nodes using CMSH - CPU workers:
+2. Optional: Label the nodes - CPU workers:
     ```bash
     cmsh
     kubernetes
@@ -350,15 +354,21 @@ commit
 !!! Note
     For more information, see [Worker nodes](../../../config/node-roles.md#worker-nodes). 
 
-#### Configure TBD
+### Restrict System Node Scheduling (Post-Installation)
 
-Add restrict scheduling 
+After installation, you can configure NVIDIA Run:ai to enforce stricter scheduling rules that ensure system components and workloads are assigned to the correct nodes. The following flags are set using the `runaiconfig`. See [Advanced Cluster Configurations](../../../config/advanced-cluster-config.md) for more details.
 
-post installation - two flags runai system and restrictscheduling 
 
-global.NodeAffinity.RestrictRunAISystem false by default need to be true
-makes sure the cluster services are scheduled on the system nodes
+1. Set `global.NodeAffinity.RestrictRunAISystem=true`. This ensures that NVIDIA Run:ai system components are scheduled only on nodes labeled as system nodes:
+    ```
+    node-role.kubernetes.io/runai-system=true
+    ```
 
+2. Set `global.nodeAffinity.restrictScheduling=true`. This restricts the scheduling of workloads (e.g., training, inference, workspace)to nodes explicitly labeled for those purposes:
+    ```
+    node-role.kubernetes.io/runai-gpu-worker=true
+    node-role.kubernetes.io/runai-cpu-worker=true
+    ```
 
 ### Create the NVIDIA Run:ai Namespaces
 
