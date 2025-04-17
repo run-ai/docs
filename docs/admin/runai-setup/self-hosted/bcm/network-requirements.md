@@ -2,20 +2,29 @@
 
 The following network requirements are for the NVIDIA Run:ai components installation and usage.
 
+## Installation
 
-## Installation Access prerequisites
+### Inbound rules
 
-The configuration of BCM as well the deployment of Run:ai can be performed through SSH access on the BCM headnodes, provided that the system accessing the headnode has SSH (Port TCP/22) and HTTP(s) connectivity (Ports: TCP/22, TCP/80, TCP/443 and TCP/10443 for Kubernetes) to the BCM headnodes.
+| Name                        | Description      | Source  | Destination                | Port |
+| --------------------------- | ---------------- | ------- | -------------------------- | ---- |
+| Installation via BCM    | SSH Access | Installer Machine | NVIDIA Base Command Manager headnodes | 22  |
 
-Note: If the Run:ai endpoint FQDN cannot be resolved add a local hostfile (i.e. /etc/hosts on Linux/MacOS) static entry.
+### Outbound rules
+| Name                        | Description      | Source  | Destination                | Port |
+| --------------------------- | ---------------- | ------- | -------------------------- | ---- |
+| Container Registry | Pull NVIDIA Run:ai images                                                        | All kubernetes nodes       | runai.jfrog.io                   | 443  |
+| Helm repository    | NVIDIA Run:ai Helm repository for installation                                   | Installer machine          | runai.jfrog.io                   | 443  |
 
-TBD: Oz I copied this but not sure what needs to be changed in our network requirements.
+The NVIDIA Run:ai installation has [software requirements](system-requirements.md) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
 
-* Install kubectl:
-[https://kubernetes.io/docs/tasks/tools/](https://kubernetes.io/docs/tasks/tools/) TBD: Oz move this to where
+| Name                       | Description                                | Source               | Destination     | Port |
+| -------------------------- | ------------------------------------------ | -------------------- | --------------- | ---- |
+| Kubernetes Registry        | Ingress Nginx image repository             | All kubernetes nodes | registry.k8s.io | 443  |
+| Google Container Registry  | GPU Operator, and Knative image repository | All kubernetes nodes | gcr.io          | 443  |
+| Red Hat Container Registry | Prometheus Operator image repository       | All kubernetes nodes | quay.io         | 443  |
+| Docker Hub Registry        | Training Operator image repository         | All kubernetes nodes | docker.io       | 443  |
 
-* Install Helm (v3.14 or greater):
-[https://docs.run.ai/v2.19/admin/runai-setup/cluster-setup/cluster-install/#helm](https://docs.run.ai/v2.19/admin/runai-setup/cluster-setup/cluster-install/#helm) TBD: Oz move this to where
 
 
 ## External access
@@ -33,7 +42,9 @@ To allow your organization’s NVIDIA Run:ai users to interact with the cluster 
 | Name                        | Description      | Source  | Destination                | Port |
 | --------------------------- | ---------------- | ------- | -------------------------- | ---- |
 | NVIDIA Run:ai control plane | HTTPS entrypoint | 0.0.0.0 | NVIDIA Run:ai system nodes | 443  |
-| NVIDIA Run:ai cluster       | HTTPS entrypoint | 0.0.0.0 | NVIDIA Run:ai system nodes | 443  |
+| NVIDIA Run:ai cluster       | HTTPS entrypoint | RFC1918 private IP ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)
+ | NVIDIA Run:ai system nodes | 443  |
+
 
 ### Outbound rules
 
@@ -47,17 +58,6 @@ For the NVIDIA Run:ai cluster installation and usage, certain **outbound** ports
 | ------------------ | -------------------------------------------------------------------------------- | -------------------------- | -------------------------------- | ---- |
 | Cluster sync       | Sync NVIDIA Run:ai cluster with NVIDIA Run:ai control plane                      | NVIDIA Run:ai system nodes | NVIDIA Run:ai control plane FQDN | 443  |
 | Metric store       | Push NVIDIA Run:ai cluster metrics to NVIDIA Run:ai control plane's metric store | NVIDIA Run:ai system nodes | NVIDIA Run:ai control plane FQDN | 443  |
-| Container Registry | Pull NVIDIA Run:ai images                                                        | All kubernetes nodes       | runai.jfrog.io                   | 443  |
-| Helm repository    | NVIDIA Run:ai Helm repository for installation                                   | Installer machine          | runai.jfrog.io                   | 443  |
-
-The NVIDIA Run:ai installation has [software requirements](system-requirements.md) that require additional components to be installed on the cluster. This article includes simple installation examples which can be used optionally and require the following cluster outbound ports to be open:
-
-| Name                       | Description                                | Source               | Destination     | Port |
-| -------------------------- | ------------------------------------------ | -------------------- | --------------- | ---- |
-| Kubernetes Registry        | Ingress Nginx image repository             | All kubernetes nodes | registry.k8s.io | 443  |
-| Google Container Registry  | GPU Operator, and Knative image repository | All kubernetes nodes | gcr.io          | 443  |
-| Red Hat Container Registry | Prometheus Operator image repository       | All kubernetes nodes | quay.io         | 443  |
-| Docker Hub Registry        | Training Operator image repository         | All kubernetes nodes | docker.io       | 443  |
 
 ## Internal network
 
