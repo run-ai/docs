@@ -5,13 +5,13 @@
 
 The following checklist is provided for convenience and can be seen as part of an expanded site survey for NVIDIA Run:ai deployments on SuperPOD. This information needs to be collected and validated before the NVIDIA Run:ai deployment begins.
 
-| **Component** | **Type** | 
-| --- | --- |
-| [SSL] Full-chain SSL certificate | <*.p7b, *.der or *.pem file> | 
-| [SSL] SSL Private Key | Private certificate (e.g. *.key) | 
-| [SSL] CA trust chain public certificate | X509 PEM file | 
-| [Networking] FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | 
-| [Networking] Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | 
+| **Component** | **Type** | Reference |
+| --- | --- | --- |
+| [SSL] Full-chain SSL certificate | <*.p7b, *.der or *.pem file> | [TLS/SSL Certificates](#tlsssl-certificates) |
+| [SSL] SSL Private Key | Private certificate (e.g. *.key) | [TLS/SSL Certificates](#tlsssl-certificates) |
+| [SSL] CA trust chain public certificate | X509 PEM file | [Local Certificate Authority](#local-certificate-authority) |
+| [Networking] FQDN name/ Reserved IP address | DNS A or CNAME record pointing to the load balancer reserved IP | [Fully Qualified Domain Name](#fully-qualified-domain-name-fqdn) / [Reserved IPs](#reserved-ips) |
+| [Networking] Load Balancer IP address range | Additional IP address space (8 or more) for the Kubernetes LoadBalancer (Inference, DataMover workloads) | [Reserved IPs](#reserved-ips) |
 
 ## Installer Machine
 
@@ -50,6 +50,9 @@ This configuration is the minimum requirement you need to install and use NVIDIA
 | Disk space | 160GB             |
 
 
+See [Label the NVIDIA Run:ai System Nodes](#label-the-nvidia-runai-system-nodes) to TBD: Sherin
+
+
 ### NVIDIA Run:ai - Worker Nodes
 
 NVIDIA Run:ai supports NVIDIA SuperPods built on the A100, H100, H200, and B200 GPU architectures. These systems are optimized for high-performance AI workloads at scale.
@@ -61,6 +64,7 @@ The following configuration represents the minimum hardware requirements for ins
 | CPU       | 2 cores           |
 | Memory    | 4GB               |
 
+See [Label the NVIDIA Run:ai Worker Nodes](#label-the-nvidia-runai-worker-nodes) to TBD: Sherin
 
 
 ### Node Categories
@@ -73,7 +77,7 @@ Before installing NVIDIA Run:ai, make sure the necessary BCM node categories are
 * NVIDIA Run:ai GPU worker nodes (in the below steps, dgx-h100-spod)
 * Optional node category: NVIDIA Run:ai CPU worker nodes 
 
-TBD
+TBD: Sherin
 
 
 ## Reserved IPs
@@ -105,13 +109,13 @@ You must have a TLS certificates that is associated with the FQDN for HTTPS acce
 ## Operating System
 
 DGX OS is supported on your SuperPod and optimized for NVIDIA infrastructure. 
-SR-IOV enables InfiniBand support at the host level. When used together with the NVIDIA Network Operator, it allows workloads to leverage InfiniBand networking for high-performance communication.
+SR-IOV enables InfiniBand support at the host level. When used together with the [NVIDIA Network Operator](#configure-the-network-operator), it allows workloads to leverage InfiniBand networking for high-performance communication.
 
 
 The VAST Multi-path or DDN EXA Lustre driver has been installed in all of the used the software image and the Lustre/VAST has been mounted on all DGX and K8S nodes using a BCM FSMount. TBD: Oz
 
 
-## Deploy Kubernetes on Base Command Manager
+## Deploy Kubernetes: Base Command Manager
 
 1. From the active BCM headnode, run the following command:
     ```
@@ -346,6 +350,14 @@ commit
 !!! Note
     For more information, see [Worker nodes](../../../config/node-roles.md#worker-nodes). 
 
+#### Configure TBD
+
+Add restrict scheduling 
+
+post installation - two flags runai system and restrictscheduling 
+
+global.NodeAffinity.RestrictRunAISystem false by default need to be true
+makes sure the cluster services are scheduled on the system nodes
 
 
 ### Create the NVIDIA Run:ai Namespaces
@@ -538,7 +550,7 @@ TBD: need access to yaml files
 !!! Note
     The Network Operator will restart the DGX nodes if the number of Virtual Functions in the SR-IOV Network Policy file does not match the NVIDIA/Mellanox firmware configuration. 
 
-## Certificates Setup
+## Certificates Setup for NVIDIA Run:ai 
 
 ### TLS Certificate
 
@@ -638,12 +650,6 @@ Follow the [Installing Knative](https://knative.dev/docs/install/) instructions.
     ```bash 
     kubectl --namespace kourier-system get service kourier
     ```
-
-
-post installation - two flags runai system and restrictscheduling 
-
-global.NodeAffinity.RestrictRunAISystem false by default need to be true
-makes sure the cluster services are scheduled on the system nodes
 
 
 
