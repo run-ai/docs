@@ -18,4 +18,4 @@ To uninstall the NVIDIA Run:ai cluster, run the following [helm](https://helm.sh
 helm uninstall runai-cluster -n runai
 ```
 
-To delete the NVIDIA Run:ai cluster from the NVIDIA Run:ai Platform, see [Removing a cluster](../../config/clusters.md#removing-a-cluster).
+To delete the NVIDIA Run:ai cluster from the NVIDIA Run:ai Platform, see [Removing a cluster](../../../config/clusters.md#removing-a-cluster).

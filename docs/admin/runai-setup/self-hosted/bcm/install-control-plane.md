@@ -8,13 +8,13 @@ Before installing the NVIDIA Run:ai control plane, validate that the [system req
 
 ## Permissions
 
-As part of the installation, you will be required to install the NVIDIA Run:ai control plane [Helm chart](https://helm.sh/). The Helm charts require Kubernetes administrator permissions. You can review the exact objects that are created by the charts using the `--dry-run` on both helm charts.
+As part of the installation, you will be required to install the NVIDIA Run:ai control plane [Helm chart](https://helm.sh/). The Helm charts require Kubernetes administrator permissions. You can review the exact objects that are created by the charts using the `--dry-run` flag on both helm charts.
 
 ## Installation
 
-Run the following command. Replace global.domain=<DOMAIN> with the one  obtained [here](./system-requirements.md#fully-qualified-domain-name-fqdn)
+Run the following command. Replace `global.domain=<DOMAIN>` with the one  obtained [here](./system-requirements.md#fully-qualified-domain-name-fqdn)
 
-```
+```bash
 helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
 --version "<VERSION> " \
 --set global.customCA.enabled=true \

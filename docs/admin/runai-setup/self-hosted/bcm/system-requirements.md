@@ -112,9 +112,9 @@ For inference workloads, configure a wildcard DNS record (`*.runai-inference.myc
 
 ## TLS/SSL Certificates
 
-You must have a TLS certificates that is associated with the FQDN for HTTPS access. The certificate will be installed on the Kubernetes control plane nodes as well as a [Kubernetes secret](#tls-certificate-for-nvidia-runai) for the NVIDIA Run:ai backend and the [Kubernetes Ingress controller](#configure-the-nginx-proxy-tls-certificates).
+You must have a TLS certificates that is associated with the FQDN for HTTPS access. The certificate will be installed on the Kubernetes control plane nodes as well as a [Kubernetes secret](#tls-certificate) for the NVIDIA Run:ai backend and the [Kubernetes Ingress controller](#configure-kubernetes-ingress-controller).
 
-* The certificate CN name needs to be equal to the [FQDN](#fully-qualified-domain-name-fqdn)
+* The certificate CN name needs to be equal to the [FQDN](#fully-qualified-domain-name-fqdn).
 * The certificate needs to include at least one Subject Alternative Name DNS entry (SAN) for the same FQDN.
 * The certificate needs to include the full trust chain (signing CA public keys).
 
@@ -147,7 +147,7 @@ SR-IOV enables InfiniBand support at the host level. When used together with the
 
     ![alt text](images/image-3.png)
 
-4. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network. Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in [FQDN](#fully-qualified-domain-name-fqdn):
+4. Set the Kubernetes networks and then click **Ok**. The subnets need to be in a private address space (per RFC 1918). Use the default values and only modify if necessary or in case of conflict with other internal subnets within the network. Make sure the domain names of the networks are configured correctly and modify as required to match the “Kubernetes External FQDN” using the same domain set in the [FQDN](#fully-qualified-domain-name-fqdn) section:
 
     ![alt text](images/image-4.png)
 
@@ -327,13 +327,11 @@ commit
 ```
 
 !!! Note
+    * [Node category names](#node-categories) are user-defined and may vary. Make sure to label the correct category. Incorrect or mixed labels may result in pods being scheduled on unintended nodes or failing to schedule altogether.
     * For more information, see [System nodes](../../../config/node-roles.md#system-nodes).
     * After installation, you can configure NVIDIA Run:ai to enforce stricter scheduling rules that ensure system components are assigned to the correct nodes. See [Next Steps](next-steps.md) for more details.
 
 ### Label the NVIDIA Run:ai Worker Nodes
-
-!!! Note 
-    [Node category names](#node-categories) are user-defined and may vary. Make sure to label the correct category. Incorrect or mixed labels may result in pods being scheduled on unintended nodes or failing to schedule altogether.
 
 1. Label the nodes - GPU workers:
     ```bash
@@ -359,6 +357,7 @@ commit
     ```
 
 !!! Note
+    * [Node category names](#node-categories) are user-defined and may vary. Make sure to label the correct category. Incorrect or mixed labels may result in pods being scheduled on unintended nodes or failing to schedule altogether.
     * For more information, see [Worker nodes](../../../config/node-roles.md#worker-nodes). 
     * After installation, you can configure NVIDIA Run:ai to enforce stricter scheduling rules that ensure workloads are assigned to the correct nodes. See [Next Steps](next-steps.md) for more details.
 

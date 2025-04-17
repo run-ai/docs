@@ -8,5 +8,4 @@ After installation, you can configure NVIDIA Run:ai to enforce stricter scheduli
 
 2. Set `global.nodeAffinity.restrictScheduling=true`. This prevents pure CPU workloads from being scheduled on GPU nodes. 
 
-For more details, see [Set Node Roles](../../../config/node-roles.md).
  
