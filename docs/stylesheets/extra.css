@@ -215,13 +215,19 @@ html .md-nav__button.md-logo img {
     color: #232323;
 }
 
-.md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
     font-family: "NVIDIASans", sans-serif;
     font-weight: 400;
     color: #232323;
 }
+
+.md-typeset h4 {
+    font-family: "NVIDIASans", sans-serif;
+    font-weight: 600;
+    color: #232323;
+}
+
 
 /* Left + right nav shared base font */
 .md-nav__title,
