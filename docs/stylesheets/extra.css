@@ -95,13 +95,6 @@
     text-align: center;
   }
   
-  /* Make inner text (e.g. <strong>) white too */
-  .md-button.custom-ticket-button * {
-    color: white !important;
-  }
-  
-  
-
 
 
 /* Logo adjustments */
@@ -363,6 +356,24 @@ html .md-nav__button.md-logo img {
     font-weight: 600 !important;
     border-left: 3px solid #76B900;
     padding-left: 0.6rem;
+  }
+  
+  
+/* Remove underline from images wrapped in links */
+.md-typeset a[href] img {
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    background: none !important;
+    display: inline-block;
+  }
+  
+  /* Remove underline from anchor if it only contains an image */
+  .md-typeset a[href]:has(> img) {
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    background: none !important;
   }
   
   
