@@ -78,14 +78,31 @@
     border-top: 1px solid #1b2532 !important;
 }
 
-.custom-ticket-button {
+.md-button.custom-ticket-button {
     background-color: #76B900 !important;
     color: white !important;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 15px;
-    text-decoration: none;
-}
+    font-family: 'MyFont', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    padding: 12px 20px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: inline-block !important;
+    min-width: 220px;
+    text-align: center;
+  }
+  
+  /* Make inner text (e.g. <strong>) white too */
+  .md-button.custom-ticket-button * {
+    color: white !important;
+  }
+  
+  
+
+
 
 /* Logo adjustments */
 .md-header__button.md-logo img {
