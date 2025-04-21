@@ -213,7 +213,7 @@ NVIDIA Run:ai supports versions 22.9 to 25.3.
     ![alt text](images/image-16.png)
 
 
-2. Leave the yaml configuration file path empty and then click **Ok**:
+2. Leave the YAML configuration file path empty and then click **Ok**:
     ![alt text](images/image-18.png)
 
 
@@ -222,37 +222,12 @@ NVIDIA Run:ai supports versions 22.9 to 25.3.
 
 #### Network Operator
 
-1. Select Network Operator **v24.7.0** and then click **Ok**:
+1. Select Network Operator **v24.7.0** and then click **Ok**: 
 
     ![alt text](images/image-17.png)
 
 
-2. Create a YAML file with the following Helm values:
-    ```yaml
-    deployCR: true
-    nfd:
-      enabled: true
-    ofedDriver:
-      deploy: false
-    psp:
-      enabled: false
-    rdmaSharedDevicePlugin:
-      deploy: false
-    secondaryNetwork:
-      cniPlugins:
-        deploy: true
-      deploy: true
-      ipamPlugin:
-        deploy: false
-      multus:
-        deploy: true
-    nvIpam:
-      deploy: true
-    sriovDevicePlugin:
-      deploy: false
-    sriovNetworkOperator:
-      enabled: true
-    ```
+2. Create a [YAML file](files/networkoperator.txt){target=_blank} with the required Helm values.
 
 3. Add the path to the YAML file and then click **Ok**:
 
@@ -403,37 +378,7 @@ Make sure a reserved range of IP addresses is available as described in [Reserve
     [bcmhead1->kubernetes[dra]->appgroups[system]->applications[ingress-metallb]]%
     ```
 
-3. Create the following YAML configuration to define the ingress IP pool and Layer 2 advertisement. You will need to substitute the IP address with the reserved IP address:
-
-    ```yaml
-    ---
-    apiVersion: metallb.io/v1beta1
-    kind: L2Advertisement
-    metadata:
-      name: l2-ingress
-      namespace: metallb-system
-    spec:
-      ipAddressPools:
-        - ingress-pool
-    nodeSelectors:
-        - matchLabels:
-            node-role.kubernetes.io/runai-system: "true"
-
-    ---
-    apiVersion: metallb.io/v1beta1
-    kind: IPAddressPool
-    metadata:
-      name: ingress-pool
-      namespace: metallb-system
-    spec:
-      addresses:
-        - <RESERVED IP>/32
-    autoAssign: false
-    serviceAllocation:
-        priority: 50
-        namespaces:
-        - ingress-nginx
-    ```
+3. Create the [YAML configuration](files/metallb.txt){target=_blank} to define the ingress IP pool and Layer 2 advertisement. You will need to substitute the IP address with the reserved IP address.
 
 2. Patch the ingress-nginx service. Assign the reserved control plane IP address to the ingress controller:
     ```bash
@@ -504,8 +449,7 @@ The default deployment of the Network Operator installs the boiler-plate service
 * An nvIPAM IP address pool
 * SR-IOV InfiniBand networks
 
-The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets
-TBD: need access to yaml files
+The above CRD YAML specs can be downloaded from the following Gitlab repo: https://gitlab-master.nvidia.com/kuberpod/runai-deployment-assets. TBD: Should we add these yaml files 
 
 1. Increase the number of simultaneous updates by the Network Operator:
     ```bash

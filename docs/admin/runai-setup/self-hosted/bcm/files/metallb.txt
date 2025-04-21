@@ -1,0 +1,28 @@
+
+    ---
+    apiVersion: metallb.io/v1beta1
+    kind: L2Advertisement
+    metadata:
+      name: l2-ingress
+      namespace: metallb-system
+    spec:
+      ipAddressPools:
+        - ingress-pool
+    nodeSelectors:
+        - matchLabels:
+            node-role.kubernetes.io/runai-system: "true"
+
+    ---
+    apiVersion: metallb.io/v1beta1
+    kind: IPAddressPool
+    metadata:
+      name: ingress-pool
+      namespace: metallb-system
+    spec:
+      addresses:
+        - <RESERVED IP>/32
+    autoAssign: false
+    serviceAllocation:
+        priority: 50
+        namespaces:
+        - ingress-nginx
