@@ -12,7 +12,7 @@ Applications are used for API integrations with Run:ai. An application contains 
 
 To create an application:
 
-1. Click the user avatar at the top right corner, then select Settings
+1. Click the user avatar at the top right corner, then select **Settings**
 2. Click **+APPLICATION**  
 3. Enter the application’s **name**  
 4. Click **CREATE**  
