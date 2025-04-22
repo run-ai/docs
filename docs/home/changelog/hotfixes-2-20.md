@@ -11,6 +11,8 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.38 | TBD | RUN-27309 | Fixed an issue where workloads configured with a multi node-pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
+| 2.20.37 | 14/04/2025 | RUN-27233 | Fixed an issue where PVCs were unexpectedly deleted. A validation request is now performed before deletion to ensure the PVC asset has already been removed from the system. |
 | 2.20.36 | 09/04/2025 | RUN-24016 | Fixed an issue where workloads could be submitted with non-positive memory quantity values. |
 | 2.20.36 | 09/04/2025 | RUN-27075 | Fixed an issue where, in some cases, creating a project through the API with partial parameters would return an error when the "Limit projects from exceeding department quota" setting was enabled. |
 | 2.20.36 | 09/04/2025 | RUN-27159 | Fixed an issue where allocated GPU memory for workloads was presented in MB but the value was in MiB. |
