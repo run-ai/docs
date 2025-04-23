@@ -10,6 +10,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26359 | 2.19.100 |Fixed security vulnerabilities in Spring framework used by db-mechanic service - CVE-2021-27568, CVE-2021-44228, CVE-2022-22965 ,CVE-2023-20873 , CVE-2024-22243, CVE-2024-22259 and CVE-2024-22262. |
 | RUN-26359 | 2.19.99 | Fixed an issue in CLI v2 where using the --toleration option required incorrect mandatory fields. The required fields are now properly validated. |
 | RUN-27088 | 2.19.88 | Fixed a security vulnerability in tar-fs related to CVE-2024-12905 with severity HIGH. |
 | RUN-27309 | 2.19.88 | Fixed an issue where workloads configured with a multi node-pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
