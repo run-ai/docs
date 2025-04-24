@@ -350,9 +350,6 @@ kubectl create ns runai
     If you cannot use kubectl, load the Kubernetes Lmod module using `module load kubernetes`.
 
 ### Expose the NVIDIA Run:ai Endpoint - MetalLB
-
-**Requires testing**
-
 NVIDIA Run:ai is exposed through the MetalLB load balancer/Route Advertiser. This includes the main Kubernetes Ingress for the NVIDIA Run:ai control plane and the Kourier Ingress used for Knative Serving.
 Make sure a reserved range of IP addresses is available as described in [Reserved IPs and Domain Configuration](#reserved-ips-and-domain-configuration) and MetalLB is deployed as part of the [Kubernetes installation](#deploy-kubernetes-base-command-manager).
 
@@ -380,19 +377,6 @@ Make sure a reserved range of IP addresses is available as described in [Reserve
 
 3. Create the [YAML configuration](files/metallb.txt){target=_blank} to define the ingress IP pool and Layer 2 advertisement. You will need to substitute the IP address with the reserved IP address.
 
-2. Patch the ingress-nginx service. Assign the reserved control plane IP address to the ingress controller:
-    ```bash
-    kubectl -n ingress-nginx patch svc ingress-nginx-controller \
-    --type='merge' \
-    -p '{"spec": {"type": "LoadBalancer", "loadBalancerIP": "<RESERVED-IP>"}}'
-    ```
-
-3. Patch Knative Kourier service. Assign the reserved IP address for inference workloads to the Knative ingress service:
-    ```bash
-    kubectl -n kourier-system patch svc kourier \
-    --type='merge' \
-    -p '{"spec": {"type": "LoadBalancer", "loadBalancerIP": "<RESERVED-IP>"}}'
-    ```
 
 ### Configure Kubernetes Ingress Controller
 
@@ -439,7 +423,14 @@ Follow these steps on the active BCM headnode to configure the NGINX Ingress con
 
     ![alt text](images/image-33.png)
 
+#### Confifure the NGINX with reserved IP for MetalLB
+Patch the ingress-nginx service. Assign the reserved control plane IP address to the ingress controller:
 
+```bash
+    kubectl -n ingress-nginx patch svc ingress-nginx-controller \
+    --type='merge' \
+    -p '{"spec": {"type": "LoadBalancer", "loadBalancerIP": "<RESERVED-IP>"}}'
+```
 
 ### Configure the Network Operator
 
@@ -555,7 +546,9 @@ The Kubeflow Training Operator is packaged with MPI version 1.0 which is not sup
 
 Inference enables serving of AI models. This requires the [Knative Serving](https://knative.dev/docs/serving/) framework to be installed on the cluster and supports Knative versions 1.10 to 1.15.
 
-Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation, configure Knative to use the NVIDIA Run:ai Scheduler and features, by running:
+Follow the [Installing Knative](https://knative.dev/docs/install/) instructions. After installation:
+
+1. configure Knative to use the NVIDIA Run:ai Scheduler and features, by running:
 
 ```bash
 kubectl patch configmap/config-autoscaler \
@@ -567,6 +560,18 @@ kubectl patch configmap/config-features \
   --type merge \
   --patch '{"data":{"kubernetes.podspec-schedulername":"enabled","kubernetes.podspec-affinity":"enabled","kubernetes.podspec-tolerations":"enabled","kubernetes.podspec-volumes-emptydir":"enabled","kubernetes.podspec-securitycontext":"enabled","kubernetes.containerspec-addcapabilities":"enabled","kubernetes.podspec-persistent-volume-claim":"enabled","kubernetes.podspec-persistent-volume-write":"enabled","multi-container":"enabled","kubernetes.podspec-init-containers":"enabled"}}'
 ```
+
+
+2. Patch Knative Kourier service. Assign the reserved IP address and DNS for inference workloads to the Knative ingress service:
+    ```bash
+    # Replace knative.example.com with your FQDN for Inference (without the wildcard)
+    kubectl patch configmap/config-domain --namespace knative-serving --type merge --patch '{"data":{"<knative.example.com>":""}}'
+
+    kubectl -n kourier-system patch svc kourier \
+    --type='merge' \
+    -p '{"spec": {"type": "LoadBalancer", "loadBalancerIP": "<RESERVED-IP>"}}'
+    ```
+
 
 ### Knative Autoscaling
 
