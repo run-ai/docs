@@ -54,7 +54,7 @@ To apply the changes run `helm upgrade` and use `--set` to set specific configur
 
 ## Additional Third-Party Configurations
 
-The NVIDIA Run:ai control plane chart includes multiple sub-charts of third-party components:
+The Run:ai control plane chart includes multiple sub-charts of third-party components:
 
 * Data store  - [PostgreSQL](https://artifacthub.io/packages/helm/bitnami/postgresql) (`postgresql`)
 * Metrics Store  - [Thanos](https://artifacthub.io/packages/helm/bitnami/thanos) (`thanos`)
@@ -71,7 +71,7 @@ The NVIDIA Run:ai control plane chart includes multiple sub-charts of third-part
 If you have opted to connect to an [external PostgreSQL database](../../self-hosted-installation/installation/cp-system-requirements.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
 
 1. Disable PostgreSQL deployment - `postgresql.enabled`
-2. NVIDIA Run:ai connection details - `global.postgresql.auth`
+2. Run:ai connection details - `global.postgresql.auth`
 3. Grafana connection details - `grafana.dbUser`, `grafana.dbPassword`
 
 | Key                                           | Change                            | Description                                                                                                                                                                                   |
@@ -103,7 +103,7 @@ The `keycloakx.adminUser` can only be set during the initial installation. The a
 | `keycloakx.adminUser`      | User name of the internal identity provider administrator     | This user is the administrator of Keycloak.                                                           |
 | `keycloakx.adminPassword`  | Password of the internal identity provider administrator      | This password is for the administrator of Keycloak.                                                   |
 | `keycloakx.existingSecret` | Keycloakx Credentials (secret)                                | Existing secret name with authentication credentials.                                                 |
-| `global.keycloakx.host`    | KeyCloak (NVIDIA Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access access Keycloack externally to the cluster. |
+| `global.keycloakx.host`    | KeyCloak (Run:ai internal identity provider) host path | Override the DNS for Keycloak. This can be used to access access Keycloack externally to the cluster. |
 
 ### Grafana
 
@@ -113,8 +113,8 @@ The `keycloakx.adminUser` can only be set during the initial installation. The a
 | `grafana.dbUser`               | Grafana database username                        | Username for accessing the Grafana database.                        |
 | `grafana.dbPassword`           | Grafana database password                        | Password for the Grafana database user.                             |
 | `grafana.admin.existingSecret` | Grafana admin default credentials (secret)       | Existing secret name with authentication credentials.               |
-| `grafana.adminUser`            | Grafana username                                 | Override the NVIDIA Run:ai default user name for accessing Grafana. |
-| `grafana.adminPassword`        | Grafana password                                 | Override the NVIDIA Run:ai default password for accessing Grafana.  |
+| `grafana.adminUser`            | Grafana username                                 | Override the Run:ai default user name for accessing Grafana. |
+| `grafana.adminPassword`        | Grafana password                                 | Override the Run:ai default password for accessing Grafana.  |
 
 ### KeyDB (Redis)
 
@@ -123,7 +123,7 @@ The `keycloakx.adminUser` can only be set during the initial installation. The a
 
 | Key                              | Change                                                             | Description                                           |
 | -------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
-| `redisCache.auth.password`       | Redis (NVIDIA Run:ai internal cache mechanism) applicative password | Override the default password.                        |
+| `redisCache.auth.password`       | Redis (Run:ai internal cache mechanism) applicative password | Override the default password.                        |
 | `redisCache.auth.existingSecret` | Redis credentials (secret)                                         | Existing secret name with authentication credentials. |
 
 ## Next Steps
