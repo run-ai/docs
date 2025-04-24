@@ -20,9 +20,10 @@
       namespace: metallb-system
     spec:
       addresses:
-        - <RESERVED IP>/32
+        -   192.168.0.250-192.168.0.251 # Example of two ip address - 
     autoAssign: false
     serviceAllocation:
         priority: 50
         namespaces:
         - ingress-nginx
+        - knative-serving
