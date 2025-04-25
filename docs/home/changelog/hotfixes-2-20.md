@@ -11,11 +11,11 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
-| 2.20.39 | 24/04/2025 | RUN-26608 | Fixed an issue by adding a flag to the cli config set command and the CLI install script, allowing users to set a cache directory. |
 | 2.20.39 | 24/04/2025 | RUN-26359 | Fixed an issue in CLI v2 where using the `--toleration` option required incorrect mandatory fields. |
 | 2.20.39 | 24/04/2025 | RUN-27088 | Fixed a security vulnerability in tar-fs related to CVE-2024-12905 with severity HIGH. |
+| 2.20.39 | 24/04/2025 | RUN-26608 | Fixed an issue by adding a flag to the `cli config set` command and the CLI install script, allowing users to set a cache directory. |
 | 2.20.39 | 24/04/2025 | RUN-27247 | Fixed security vulnerabilities in Spring framework used by `db-mechanic service` - CVE-2021-27568, CVE-2021-44228, CVE-2022-22965, CVE-2023-20873, CVE-2024-22243, CVE-2024-22259 and CVE-2024-22262. |
-| 2.20.39 | 24/04/2025 | RUN-27309 | Fixed an issue where workloads configured with a multi node-pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
+| 2.20.39 | 24/04/2025 | RUN-27309 | Fixed an issue where workloads configured with a multi node pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
 | 2.20.37 | 14/04/2025 | RUN-27233 | Fixed an issue where PVCs were unexpectedly deleted. A validation request is now performed before deletion to ensure the PVC asset has already been removed from the system. |
 | 2.20.36 | 09/04/2025 | RUN-24016 | Fixed an issue where workloads could be submitted with non-positive memory quantity values. |
 | 2.20.36 | 09/04/2025 | RUN-27075 | Fixed an issue where, in some cases, creating a project through the API with partial parameters would return an error when the "Limit projects from exceeding department quota" setting was enabled. |

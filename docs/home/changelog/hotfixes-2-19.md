@@ -15,7 +15,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | RUN-27247 | 2.19.100 | Fixed security vulnerabilities in Spring framework used by `db-mechanic service` - CVE-2021-27568, CVE-2021-44228, CVE-2022-22965, CVE-2023-20873, CVE-2024-22243, CVE-2024-22259 and CVE-2024-22262. |
 | RUN-26359 | 2.19.99 | Fixed an issue in CLI v2 where using the `--toleration` option required incorrect mandatory fields. |
 | RUN-27088 | 2.19.88 | Fixed a security vulnerability in tar-fs related to CVE-2024-12905 with severity HIGH. |
-| RUN-27309 | 2.19.88 | Fixed an issue where workloads configured with a multi node-pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
+| RUN-27309 | 2.19.88 | Fixed an issue where workloads configured with a multi node pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
 | RUN-24016 | 2.19.86 | Fixed an issue where workloads could be submitted with non-positive memory quantity values. |
 | RUN-27075 | 2.19.86 | Fixed an issue where, in some cases, creating a project through the API with partial parameters would return an error when the "Limit projects from exceeding department quota" setting was enabled. |
 | RUN-27159 | 2.19.86 | Fixed an issue where allocated GPU memory for workloads was presented in MB but the value was in MiB. |
