@@ -10,7 +10,7 @@ Data Volumes offer a powerful solution for storing, managing, and sharing AI tra
 
 ## What are Data Volumes
 
-Data Volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data, and offer several key benefits.
+Acting as a central repository for organizational data resources, data volumes can represent datasets or raw data, that is stored in Kubernetes Persistent Volume Claims (PVCs).
 
 * Managed with dedicated permissions&mdash;Data admins, a new role within Run.ai, have exclusive control over data volume creation, data population, and sharing.
 * Shared between multiple scopes&mdash;Unlike other Run:ai data sources, data volumes can be shared across projects, departments, or clusters. This promotes data reuse and collaboration within your organization.
