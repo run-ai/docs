@@ -1,6 +1,6 @@
-Data volumes offer a powerful solution for storing, managing, and sharing AI training data within the Run:ai platform. They promote collaboration, simplify data access control, and streamline the AI development lifecycle.
+Data volumes offer a powerful solution for storing, managing, and sharing AI training data within the NVIDIA Run:ai platform. They promote collaboration, simplify data access control, and streamline the AI development lifecycle.
 
-Data volumes are snapshots of datasets stored in Kubernetes Persistent Volume Claims (PVCs). They act as a central repository for training data.
+Acting as a central repository for organizational data resources, data volumes can represent datasets or raw data, that is stored in Kubernetes Persistent Volume Claims (PVCs).
 
 ## Why use a data volume?
 
