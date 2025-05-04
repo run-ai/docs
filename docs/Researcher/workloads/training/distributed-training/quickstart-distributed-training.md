@@ -4,6 +4,9 @@ This article provides a step-by-step walkthrough for running a PyTorch distribut
 
 Distributed training is the ability to split the training of a model among multiple processors. Each processor is called a worker. Worker nodes work in parallel to speed up model training. There is also a master which coordinates the workers.
 
+!!! Note
+    Multi-GPU training and distributed training are two distinct concepts. Multi-GPU training uses multiple GPUs within a single node, whereas distributed training spans multiple nodes and typically requires coordination between them.
+
 ## Prerequisites 
 
 Before you start, make sure:
