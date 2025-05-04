@@ -40,7 +40,11 @@ As models mature and the need for more robust data processing and model training
 
     Training tasks demand high memory, compute power, and storage. Run:ai ensures that the allocated resources match the scale of the task and allows those workloads to utilize more compute resources than the project’s deserved quota. Make sure that if you wish your training workload not to be preempted, specify the number of GPU’s that are in your quota.  
 
+
 See [Standard training](../../../Researcher/workloads/training/standard-training/trainings-v2.md) and [Distributed training](../../../Researcher/workloads/training/distributed-training/distributed-training.md) to learn more about how to submit a training workload via the Run:ai UI. For quick starts, see [Run your first standard training](../../../Researcher/workloads/training/standard-training/quickstart-standard-training.md) and [Run your first distributed training](../../../Researcher/workloads/training/distributed-training/quickstart-distributed-training.md). 
+
+!!! Note
+    Multi-GPU training and distributed training are two distinct concepts. Multi-GPU training uses multiple GPUs within a single node, whereas distributed training spans multiple nodes and typically requires coordination between them.
 
 ## Inference: deploying and serving models
 
