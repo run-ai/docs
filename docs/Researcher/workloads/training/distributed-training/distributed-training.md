@@ -8,6 +8,9 @@ The distributed training workload is assigned to a project and is affected by th
 
 To learn more about the distributed training workload type in Run:ai and determine that it is the most suitable workload type for your goals, see [Workload types](../../overviews/workload-types.md).
 
+!!! Note
+    Multi-GPU training and distributed training are two distinct concepts. Multi-GPU training uses multiple GPUs within a single node, whereas distributed training spans multiple nodes and typically requires coordination between them.
+
 ![](../../img/training-workload.png)
 
 ## Creating a distributed training workload
