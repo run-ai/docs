@@ -65,7 +65,7 @@ To run the preinstall diagnostics tool, [download](https://runai.jfrog.io/ui/nat
     ```
 
 
-For more information see [preinstall diagnostics](https://github.com/run-ai/preinstall-diagnostics).
+For more information see [preinstall diagnostics](https://github.com/run-ai/preinstall-diagnostics){target=_blank}.
 
 ### Helm
 
