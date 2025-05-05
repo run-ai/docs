@@ -67,7 +67,7 @@ The Run:ai control plane chart includes multiple sub-charts of third-party compo
 
 ### PostgreSQL
 
-If you have opted to connect to an [external PostgreSQL database](../../self-hosted-installation/installation/cp-system-requirements.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
+If you have opted to connect to an [external PostgreSQL database](./prerequisites.md#external-postgres-database-optional), refer to the additional configurations table below. Adjust the following parameters based on your connection details:
 
 1. Disable PostgreSQL deployment - `postgresql.enabled`
 2. Run:ai connection details - `global.postgresql.auth`
