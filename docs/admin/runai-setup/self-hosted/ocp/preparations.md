@@ -137,12 +137,12 @@ As part of the installation, you will be required to install the [Control plane]
 
 ## Validate prerequisites
 
-Once you believe that the Run:ai prerequisites and preperations are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://github.com/run-ai/preinstall-diagnostics){target=_blank}. The tool:
+Once you believe that the Run:ai prerequisites and preperations are met, we highly recommend installing and running the Run:ai [pre-install diagnostics script](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/){target=_blank}. The tool:
 
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
 * Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation.
 
-To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
+To use the script [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/){target=_blank} the latest version of the script and run:
 
 ```
 chmod +x preinstall-diagnostics-<platform>
