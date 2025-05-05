@@ -142,7 +142,7 @@ Once you believe that the Run:ai prerequisites and preperations are met, we high
 * Tests the below requirements as well as additional failure points related to Kubernetes, NVIDIA, storage, and networking.
 * Looks at additional components installed and analyzes their relevancy to a successful Run:ai installation.
 
-To use the script [download](https://github.com/run-ai/preinstall-diagnostics/releases){target=_blank} the latest version of the script and run:
+To use the script [download](https://runai.jfrog.io/ui/native/pd-cli-prod/preinstall-diagnostics-cli/){target=_blank} the latest version of the script and run:
 
 ```
 chmod +x preinstall-diagnostics-<platform>
