@@ -10,7 +10,15 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-27636 | 2.19.103 | Fixed a security vulnerability in golang.org.x.crypto related to CVE-2025-22869 with severity HIGH. |
+| RUN-27944 | 2.19.111 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v4` related to CVE-2025-30204 with severity HIGH. |
+| RUN-26994 | 2.19.111 | Fixed an issue where session timeouts occurred when using the CLI. |
+| RUN-28097 | 2.19.111 | Fixed an issue where the `allocated_gpu_count_per_gpu` metric displayed incorrect data for fractional pods. |
+| RUN-27837 | 2.19.110 | Fixed an issue where a node pool’s placement strategy stopped functioning correctly after being edited. |
+| RUN-27628 | 2.19.109 | Fixed an issue where a node pool could remain stuck in Updating status in certain cases. |
+| RUN-27640 | 2.19.109 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
+| RUN-27893 | 2.19.109 | Fixed an issue where workloads submitted with an invalid node port range would get stuck in Creating status. |
+| RUN-27309 | 2.19.105 | Fixed an issue where workloads configured with a multi node pool setup could fail to schedule on a specific node pool in the future after an initial scheduling failure, even if sufficient resources later became available. |
+| RUN-27636 | 2.19.103 | Fixed a security vulnerability in `golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
 | RUN-24627 | 2.19.101 | Fixed an issue where GPU_ALLOCATION metric in workloads returned an empty value. |
 | RUN-27247 | 2.19.100 | Fixed security vulnerabilities in Spring framework used by `db-mechanic service` - CVE-2021-27568, CVE-2021-44228, CVE-2022-22965, CVE-2023-20873, CVE-2024-22243, CVE-2024-22259 and CVE-2024-22262. |
 | RUN-26359 | 2.19.99 | Fixed an issue in CLI v2 where using the `--toleration` option required incorrect mandatory fields. |
