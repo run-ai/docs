@@ -10,7 +10,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-27944 | 2.19.111 | Fixed an issue where `runai workspace bash` CLI command failed to run. |
+| RUN-26994 | 2.19.111 | Fixed an issue where session timeouts occurred when using the CLI. |
 | RUN-27944 | 2.19.111 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v4` related to CVE-2025-30204 with severity HIGH. |
 | RUN-28097 | 2.19.111 | Fixed an issue where the `allocated_gpu_count_per_gpu` metric displayed incorrect data for fractional pods. |
 | RUN-27837 | 2.19.110 | Fixed an issue where a node pool’s placement strategy stopped functioning correctly after being edited. |
