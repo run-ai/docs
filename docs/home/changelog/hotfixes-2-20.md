@@ -11,13 +11,13 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
-| 2.20.41 | 06/05/2025 | RUN-28241 | Fixed a security vulnerability in github.com.golang-jwt.jwt.v5 related to CVE-2025-30204 with severity HIGH. |
-| 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the allocated_gpu_count_per_gpu metric displayed incorrect data for fractional pods. |
+| 2.20.41 | 06/05/2025 | RUN-28241 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
+| 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the `allocated_gpu_count_per_gpu metric` displayed incorrect data for fractional pods. |
 | 2.20.41 | 06/05/2025  | RUN-28006 | Fixed an issue where tokens became invalid for the API server after one hour. |
 | 2.20.41 | 06/05/2025  | RUN-27638 | Fixed a security vulnerability in axios related to CVE-2025-27152 with severity HIGH. |
 | 2.20.40 | 30/04/2025 | RUN-27837 | Fixed an issue where a node pool’s placement strategy stopped functioning correctly after being edited.|
 | 2.20.40 | 30/04/2025 | RUN-27628 | Fixed an issue where a node pool could remain stuck in Updating status in certain cases. |
-| 2.20.40 | 30/04/2025 | RUN-27893 | Fixed an issue where workloads submitted with an invalid node port range would get stuck in "Creating" status. |
+| 2.20.40 | 30/04/2025 | RUN-27893 | Fixed an issue where workloads submitted with an invalid node port range would get stuck in Creating status. |
 | 2.20.39 | 24/04/2025 | RUN-26359 | Fixed an issue in CLI v2 where using the `--toleration` option required incorrect mandatory fields. |
 | 2.20.39 | 24/04/2025 | RUN-27088 | Fixed a security vulnerability in tar-fs related to CVE-2024-12905 with severity HIGH. |
 | 2.20.39 | 24/04/2025 | RUN-26608 | Fixed an issue by adding a flag to the `cli config set` command and the CLI install script, allowing users to set a cache directory. |
