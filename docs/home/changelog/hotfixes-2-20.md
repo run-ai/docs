@@ -12,7 +12,7 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
 | 2.20.41 | 06/05/2025 | RUN-28241 | Fixed a security vulnerability in github.com.golang-jwt.jwt.v5 related to CVE-2025-30204 with severity HIGH. |
-| 2.20.41 | 06/05/2025  | RUN-28097 | Fixed an issue where the allocated_gpu_count_per_gpu metric displayed incorrect data for fractional pods. |
+| 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the allocated_gpu_count_per_gpu metric displayed incorrect data for fractional pods. |
 | 2.20.41 | 06/05/2025  | RUN-28006 | Fixed an issue where tokens became invalid for the API server after one hour. |
 | 2.20.41 | 06/05/2025  | RUN-27638 | Fixed a security vulnerability in axios related to CVE-2025-27152 with severity HIGH. |
 | 2.20.40 | 30/04/2025 | RUN-27837 | Fixed an issue where a node pool’s placement strategy stopped functioning correctly after being edited.|
