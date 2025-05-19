@@ -15,7 +15,7 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 | 2.20.43 | 15/05/2025 | RUN-27375| Fixed an issue where projects were not visible in the legacy job submission form, preventing users from selecting a target project. |
 | 2.20.43 | 15/05/2025 | RUN-27841 | Fixed an issue where workloads without a memory request failed validation in the workload-controller webhook. |
 | 2.20.42 | 13/05/2025 | RUN-27514 | Fixed an issue with incorrect calculation of the `ALLOCATED_CPU_MEMORY_BYTES` telemetry metric. |
-| 2.20.42 | 13/05/2025 | RUN-27521 | Fixed an issue where disabling the CPU quota feature in Admin UI did not remove existing CPU quotas from projects and departments. |
+| 2.20.42 | 13/05/2025 | RUN-27521 | Fixed an issue where disabling CPU quota in the General settings did not remove existing CPU quotas from projects and departments. |
 | 2.20.42 | 13/05/2025 | RUN-28380 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
 | 2.20.41 | 06/05/2025 | RUN-28241 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
 | 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the `ALLOCATED_GPU_COUNT_PER_GPU` metric displayed incorrect data for fractional pods. |

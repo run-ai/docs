@@ -12,7 +12,7 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | :---- | :---- | :---- |
 | RUN-27295 | 2.19.113 | Fixed an issue in CLI v2 where the `--node-type` flag for inference workloads was not properly propagated to the pod specification. |
 | RUN-27514 | 2.19.113 | Fixed an issue with incorrect calculation of the `ALLOCATED_CPU_MEMORY_BYTES` telemetry metric. |
-| RUN-27521 | 2.19.113 | Fixed an issue where disabling the CPU quota feature in Admin UI did not remove existing CPU quotas from projects and departments. |
+| RUN-27521 | 2.19.113 | Fixed an issue where disabling CPU quota in the General settings did not remove existing CPU quotas from projects and departments. |
 | RUN-27841 | 2.19.113 | Fixed an issue where workloads without a memory request failed validation in the workload-controller webhook. |
 | RUN-27638 | 2.19.112 | Fixed a security vulnerability in `axios` related to CVE-2025-27152 with severity HIGH. |
 | RUN-27867 | 2.19.112 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
