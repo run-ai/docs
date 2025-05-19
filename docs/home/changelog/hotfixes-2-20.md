@@ -11,8 +11,14 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.43 | 15/05/2025 | RUN-27295 | Fixed an issue in CLI v2 where the `--node-type` flag for inference workloads was not properly propagated to the pod specification. |
+| 2.20.43 | 15/05/2025 | RUN-27375| Fixed an issue where projects were not visible in the legacy job submission form, preventing users from selecting a target project. |
+| 2.20.43 | 15/05/2025 | RUN-27841 | Fixed an issue where workloads without a memory request failed validation in the workload-controller webhook. |
+| 2.20.42 | 13/05/2025 | RUN-27514 | Fixed an issue with incorrect calculation of the `ALLOCATED_CPU_MEMORY_BYTES` telemetry metric. |
+| 2.20.42 | 13/05/2025 | RUN-27521 | Fixed an issue where disabling CPU quota in the General settings did not remove existing CPU quotas from projects and departments. |
+| 2.20.42 | 13/05/2025 | RUN-28380 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
 | 2.20.41 | 06/05/2025 | RUN-28241 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
-| 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the `allocated_gpu_count_per_gpu metric` displayed incorrect data for fractional pods. |
+| 2.20.41 | 06/05/2025 | RUN-28097 | Fixed an issue where the `ALLOCATED_GPU_COUNT_PER_GPU` metric displayed incorrect data for fractional pods. |
 | 2.20.41 | 06/05/2025  | RUN-28006 | Fixed an issue where tokens became invalid for the API server after one hour. |
 | 2.20.41 | 06/05/2025  | RUN-27638 | Fixed a security vulnerability in axios related to CVE-2025-27152 with severity HIGH. |
 | 2.20.40 | 30/04/2025 | RUN-27837 | Fixed an issue where a node pool’s placement strategy stopped functioning correctly after being edited.|
