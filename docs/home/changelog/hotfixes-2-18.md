@@ -12,10 +12,11 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
-| RUN-27640 | 2.18.104 | Fixed a security vulnerability in github.com.golang-jwt.jwt.v5 related to CVE-2025-30204 with severity HIGH. |
+| RUN-27640 | 2.18.104 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
 | RUN-27893 | 2.18.104 | Fixed an issue where workloads submitted with an invalid node port range would get stuck in "Creating" status. |
 | RUN-28006 | 2.18.104 | Fixed an issue where tokens became invalid for the API server after one hour. |
-| RUN-28097 | 2.18.104 | Fixed an issue where the allocated_gpu_count_per_gpu metric displayed incorrect data for fractional pods. |
+| RUN-27543| 2.18.104 | Fixed an issue where the GPU quota for a department could not be edited because the maxAllowed parameter was not updated when the over quota weight feature flag was turned off. |
+| RUN-28097 | 2.18.104 | Fixed an issue where the `allocated_gpu_count_per_gpu` metric displayed incorrect data for fractional pods. |
 | RUN-26359 | 2.18.102 | Fixed an issue in CLI v2 where using the `--toleration` option required incorrect mandatory fields. |
 | RUN-26878 | 2.18.100 | Fixed an issue where, in some cases, previous inference request errors caused subsequent successful requests to report latency as NaN (Not a Number) instead of the actual value. As a result, these requests were not displayed in the UI latency graph, and the API returned NaN. |
 | RUN-26800 | 2.18.99 | Fixed an issue where the `runai list nodes` command in CLI v1 did not display the correct number of free GPUs when using GPU memory. |
