@@ -52,12 +52,11 @@ Run:ai worker nodes run user-submitted workloads and system-level DeamonSets req
 To set worker role for a node in your Kubernetes cluster via Run:ai [Administrator CLI](cli-admin-install.md), follow these steps:
 
 1. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
-2. Run one of the following commands to set or remove a node’s role:
-   ```bash
-    runai-adm set node-role [--gpu-worker | --cpu-worker] <node-name>
-    runai-adm remove node-role [--gpu-worker | --cpu-worker] <node-name>
-   ```
-
+2. Run one of the following commands to set or remove a node’s role. `<node-role>` must be either `--gpu-worker` or `--cpu-worker`:
+    ```bash
+    runai-adm set node-role <node-role> <node-name>
+    runai-adm remove node-role <node-role> <node-name>
+    ``` 
 The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
 !!! Tip
@@ -69,8 +68,8 @@ To set a worker role for a node in your Kubernetes cluster using Kubectl, follow
 
 1. Validate the `global.nodeAffinity.restrictScheduling` is set to true in the cluster’s [Configurations](advanced-cluster-config.md).
 2. Use the `kubectl get nodes` command to list all the nodes in your cluster and identify the name of the node you want to modify.
-3. Run one of the following commands to label the node with its role:
-   ```bash
-   kubectl label nodes <node-name> [node-role.kubernetes.io/runai-gpu-worker=true | node-role.kubernetes.io/runai-cpu-worker=true]
-   kubectl label nodes <node-name> [node-role.kubernetes.io/runai-gpu-worker=false | node-role.kubernetes.io/runai-cpu-worker=false]
-   ```
+3. Run one of the following commands to label the node with its role. Replace the label and value (true/false) to enable or disable GPU/CPU roles as needed:
+    ```bash
+    kubectl label nodes <node-name> node-role.kubernetes.io/runai-gpu-worker=true
+    kubectl label nodes <node-name> node-role.kubernetes.io/runai-cpu-worker=false
+    ```
