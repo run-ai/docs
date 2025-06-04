@@ -17,9 +17,10 @@ To increase the number of replicas, run:
 To increase the number of replicas, use the following Run:ai control-plane helm flags
 
 ```bash
---set backend.autoscaling.enabled=true 
---set frontend.autoscaling.enabled=true
---set grafana.autoscaling.enabled=true --set grafana.autoscaling.minReplicas=2
+--set backend.autoscaling.enabled=true \ 
+--set frontend.autoscaling.enabled=true \
+--set grafana.autoscaling.enabled=true \
+--set grafana.autoscaling.minReplicas=2
 ```
 
 !!! Important
@@ -30,14 +31,14 @@ To increase the number of replicas, use the following Run:ai control-plane helm 
 [Thanos](https://thanos.io/){target=_blank} is the 3rd party used by Run:ai to store metrics Under a significant user load, we would also need to increase resources for the Thanos query function. Use the following Run:ai control-plane helm flags:
 
 ```bash
---set thanos.query.resources.limits.memory=3G
---set thanos.query.resources.requests.memory=3G
---set thanos.query.resources.limits.cpu=1
---set thanos.query.resources.requests.cpu=1
+--set thanos.query.resources.limits.memory=3G \
+--set thanos.query.resources.requests.memory=3G \
+--set thanos.query.resources.limits.cpu=1 \
+--set thanos.query.resources.requests.cpu=1 \
 
---set thanos.receive.resources.limits.memory=6G 
---set thanos.receive.resources.requests.memory=6G
---set thanos.receive.resources.limits.cpu=1 
+--set thanos.receive.resources.limits.memory=6G \
+--set thanos.receive.resources.requests.memory=6G \
+--set thanos.receive.resources.limits.cpu=1 \
 --set thanos.receive.resources.requests.cpu=1
 ```
 
