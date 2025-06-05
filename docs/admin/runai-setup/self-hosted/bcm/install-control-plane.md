@@ -19,13 +19,6 @@ helm upgrade -i runai-backend -n runai-backend runai-backend/control-plane \
 --version "<VERSION> " \
 --set global.customCA.enabled=true \
 --set global.domain=<DOMAIN>
-
-Release "runai-backend" does not exist. Installing it now.
-NAME: runai-backend
-LAST DEPLOYED: Mon Dec 30 17:30:19 2024
-NAMESPACE: runai-backend
-STATUS: deployed
-REVISION: 1
 ```
 
 !!! Note
