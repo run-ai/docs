@@ -296,8 +296,7 @@ kubernetes
 labelsets
 add runai-control-plane
 append categories runai-control-plane
-append labels 
-node-role.kubernetes.io/runai-system=true
+append labels node-role.kubernetes.io/runai-system=true
 commit
 ```
 
