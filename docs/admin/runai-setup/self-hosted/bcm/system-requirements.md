@@ -312,7 +312,7 @@ commit
     cmsh
     kubernetes
     labelsets
-    add runai-control-plane
+    add runai-gpu-worker
     append categories dgx-h100-spod
     append labels 
     commit
