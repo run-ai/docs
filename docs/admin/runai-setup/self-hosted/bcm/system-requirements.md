@@ -322,7 +322,7 @@ commit
     cmsh
     kubernetes
     labelsets
-    add runai-control-plane
+    add runai-cpu-worker
     append categories runai-cpu-workers
     append labels 
     node-role.kubernetes.io/runai-cpu-worker=true
