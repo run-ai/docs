@@ -74,7 +74,7 @@ runai workspace submit --image jupyter/scipy-notebook -p "project-name" --gpu-de
 
 ### Submitting distributed training workload with TensorFlow
 ```shell
-runai distributed submit -f TF --workers=5 --no-master -g 1 -i kubeflow/tf-mnist-with-summaries:latest -p "project-name" --command -- python /var/tf_mnist/mnist_with_summaries.py --max_steps 1000000
+runai tensorflow submit --workers=5 --no-master -g 1 -i kubeflow/tf-mnist-with-summaries:latest -p "project-name" --command -- python /var/tf_mnist/mnist_with_summaries.py --max_steps 1000000
 ```
 
 ### Submitting a multi-pod workload
