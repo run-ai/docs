@@ -371,7 +371,6 @@ Make sure a reserved range of IP addresses is available as described in [Reserve
     [bcmhead1->kubernetes[dra]->appgroups[system]->applications]% add ingress-metallb
     [bcmhead1->kubernetes*[dra*]->appgroups*[system*]->applications*[ingress-metallb*]]% set config /root/ingress-metallb.yaml
     [bcmhead1->kubernetes*[dra*]->appgroups*[system*]->applications*[ingress-metallb*]]% commit
-    [bcmhead1->kubernetes[dra]->appgroups[system]->applications[ingress-metallb]]%
     ```
 
 3. Create the [YAML configuration](files/metallb.txt){target=_blank} to define the ingress IP pool and Layer 2 advertisement. You will need to substitute the IP address with the reserved IP address.
