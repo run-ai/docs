@@ -122,6 +122,7 @@ To add a new custom inference workload:
             *   __NoSchedule__ - No new pods will be scheduled on the tainted node unless they have a matching toleration. Pods currently running on the node will not be evicted.
             *   __PreferNoSchedule__ - The control plane will try to avoid placing a pod that does not tolerate the taint on the node, but it is not guaranteed.
             *   __Any__ - All effects above match.
+
 10. Optional: Select __data sources__ for your inference workload 
     Select a data source or click __+NEW DATA SOURCE__ to add a new data source to the gallery. If there are issues with the connectivity to the cluster, or issues while creating the data source, the data source won't be available for selection.  
     For a step-by-step guide on adding data sources to the gallery, see [data sources](../assets/datasources.md).  
