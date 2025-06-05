@@ -315,7 +315,6 @@ commit
     add runai-control-plane
     append categories dgx-h100-spod
     append labels 
-    node-role.kubernetes.io/runai-gpu-worker=true
     commit
     ```
 2. Optional: Label the nodes - CPU workers:
