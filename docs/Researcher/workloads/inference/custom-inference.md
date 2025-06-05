@@ -128,6 +128,9 @@ To add a new custom inference workload:
     Once created, the new data source will be automatically selected.
     *   Optional: Modify the data target location for the selected data source(s).
 
+    !!! Note 
+        S3 data sources are not supported for inference workloads.
+
 11.  __Optional - General settings__:
     *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.
     *   Set __annotations(s)__  

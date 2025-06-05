@@ -111,6 +111,9 @@ After the data source is created, check its status to monitor its proper creatio
 
 The [S3 bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html){target=_blank} data source enables the mapping of a remote S3 bucket into the workload’s file system. Similar to a PVC, this mapping remains accessible across different workload executions, extending beyond the lifecycle of individual pods. However, unlike PVCs, data stored in an S3 bucket resides remotely, which may lead to decreased performance during the execution of heavy machine learning workloads. As part of the Run:ai connection to the S3 bucket, you can create [credentials](./credentials.md) in order to access and map private buckets.
 
+!!! Note  
+    S3 data sources are not supported for custom inference workloads.
+
 1.  Select the __cluster__ under which to create this data source
 2.  Select a [scope](./overview.md#asset-scope)
 3.  Enter a __name__ for the data source. The name must be unique.
