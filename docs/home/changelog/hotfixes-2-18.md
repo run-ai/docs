@@ -12,6 +12,12 @@ The following is a list of the known and fixed issues for Run:ai V2.18.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-26361 | 2.18.105 | Fixed an issue where Prometheus remote-write credentials were not properly updated on OpenShift clusters. |
+| RUN-28286 | 2.18.105 | Fixed an issue where CPU-only workloads incorrectly triggered idle timeout notifications intended for GPU workloads. |
+| RUN-28212 | 2.18.105 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
+| RUN-28439 | 2.18.105 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` with CVE CVE-2024-45337 with severity HIGH. |
+| RUN-28445 | 2.18.105 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
+| RUN-29323 | 2.18.105 |Fixed an issue where Prometheus failed to send metrics for OpenShift. |
 | RUN-27640 | 2.18.104 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
 | RUN-27893 | 2.18.104 | Fixed an issue where workloads submitted with an invalid node port range would get stuck in Creating status. |
 | RUN-28006 | 2.18.104 | Fixed an issue where tokens became invalid for the API server after one hour. |
