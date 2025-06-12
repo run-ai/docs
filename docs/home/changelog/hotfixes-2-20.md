@@ -11,6 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.49 | 11/06/2025 | RUN-29548 | Fixed an issue in CLI v2 where the update server did not receive the terminal size during exec commands requiring TTY support. The terminal size is now set once upon session creation, ensuring proper behavior for interactive sessions. |
+| 2.20.49 | 11/06/2025 | RUN-26361 | Fixed an issue where Prometheus remote-write credentials were not properly updated on OpenShift clusters. |
+| 2.20.46 | 26/05/2025 | RUN-28286 | Fixed an issue where CPU-only workloads incorrectly triggered idle timeout notifications intended for GPU workloads. |
+| 2.20.46 | 26/05/2025 | RUN-28851 | Fixed an issue in CLI v2 where the port-forward command terminated SSH connections after 15–30 seconds due to an idle timeout. |
+| 2.20.45 | 21/05/2025 | RUN-28608 | Fixed an issue where users with the ML Engineer role were unable to delete multiple inference jobs at once. |
+| 2.20.44 | 20/05/2025 | RUN-28665 | Fixed an issue where using serving port authorization fields in the Create Inference API on unsupported clusters did not return an error. |
 | 2.20.43 | 15/05/2025 | RUN-27295 | Fixed an issue in CLI v2 where the `--node-type` flag for inference workloads was not properly propagated to the pod specification. |
 | 2.20.43 | 15/05/2025 | RUN-27375| Fixed an issue where projects were not visible in the legacy job submission form, preventing users from selecting a target project. |
 | 2.20.43 | 15/05/2025 | RUN-27841 | Fixed an issue where workloads without a memory request failed validation in the workload-controller webhook. |
