@@ -16,8 +16,8 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 | RUN-28665 | 2.19.114 | Fixed an issue where using serving port authorization fields in the Create Inference API on unsupported clusters did not return an error. |
 | RUN-29323 | 2.19.114 | Fixed an issue where Prometheus failed to send metrics for OpenShift. |
 | RUN-29548 | 2.19.114 | Fixed an issue in CLI v2 where the update server did not receive the terminal size during exec commands requiring TTY support. The terminal size is now set once upon session creation, ensuring proper behavior for interactive sessions. |
-| RUN-28991 | 2.19.114 | Fixed a security vulnerability in `golang.org/x/crypto` related to CVE-2024-45337 with severity High. |
-| RUN-28991 | 2.19.114 | Fixed a security vulnerability in `go-git/go-git` related to CVE-2025-21613 with severity High. |
+| RUN-28991 | 2.19.114 | Fixed a security vulnerability in `golang.org/x/crypto` related to CVE-2024-45337 with severity HIGH. |
+| RUN-28991 | 2.19.114 | Fixed a security vulnerability in `go-git/go-git` related to CVE-2025-21613 with severity HIGH. |
 | RUN-27295 | 2.19.113 | Fixed an issue in CLI v2 where the `--node-type` flag for inference workloads was not properly propagated to the pod specification. |
 | RUN-27514 | 2.19.113 | Fixed an issue with incorrect calculation of the `ALLOCATED_CPU_MEMORY_BYTES` telemetry metric. |
 | RUN-27521 | 2.19.113 | Fixed an issue where disabling CPU quota in the General settings did not remove existing CPU quotas from projects and departments. |
