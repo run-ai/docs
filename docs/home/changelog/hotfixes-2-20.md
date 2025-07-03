@@ -11,6 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.53 | 29/06/2025 | RUN-25883 | Fixed a security vulnerability in `io.netty:netty-handler` related to CVE-2025-24970 with severity HIGH. |
+| 2.20.53 | 29/06/2025 | RUN-29049 | Fixed a security vulnerability in `github.com.golang.org.x.crypto` related to CVE-2025-22869 with severity HIGH. |
+| 2.20.53 | 29/06/2025 | RUN-30674 | Fixed an issue where, on rare occasions, running the `runai upgrade` command deleted all files in the current directory. |
+| 2.20.52 | 24/06/2025 | RUN-29768 | Fixed an issue where the Get token request returned a 500 error when the email mapper failed. |
+| 2.20.52 | 24/06/2025 | RUN-29143 | Fixed an issue where nodes could become unschedulable when workloads were submitted to a different node pool. |
+| 2.20.51 | 24/06/2025 | RUN-29323 | Fixed an issue where Prometheus failed to send metrics for OpenShift. |
 | 2.20.49 | 11/06/2025 | RUN-29548 | Fixed an issue in CLI v2 where the update server did not receive the terminal size during exec commands requiring TTY support. The terminal size is now set once upon session creation, ensuring proper behavior for interactive sessions. |
 | 2.20.49 | 11/06/2025 | RUN-26361 | Fixed an issue where Prometheus remote-write credentials were not properly updated on OpenShift clusters. |
 | 2.20.46 | 26/05/2025 | RUN-28286 | Fixed an issue where CPU-only workloads incorrectly triggered idle timeout notifications intended for GPU workloads. |
