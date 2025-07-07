@@ -98,6 +98,3 @@ If you have set the environment variables or a `.env` file.
 ## Extending
 - Add more API calls by extending `RunAIClient` in `client.py`.
 - Use the `utils.py` module for logging and environment helpers.
-
----
-MIT License 

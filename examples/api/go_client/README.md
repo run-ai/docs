@@ -127,6 +127,3 @@ go test ./...
 ## Extending
 - Add more API calls by extending the `RunAIClient` struct in `pkg/client/runai_client.go`.
 - Use the `pkg/kubeconfig` package for kubeconfig manipulation helpers.
-
----
-MIT License 
