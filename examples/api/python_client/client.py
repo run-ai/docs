@@ -3,7 +3,7 @@ import time
 import logging
 import requests
 from typing import Optional, Any, Dict
-from runai_python_client.utils import set_runai_api_user_token
+from utils import set_runai_api_user_token
 
 class RunAIClient:
     """

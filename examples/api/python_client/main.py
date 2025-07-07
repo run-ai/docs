@@ -3,7 +3,7 @@ import time
 import argparse
 import logging
 from dotenv import load_dotenv
-from runai_python_client.client import RunAIClient
+from client import RunAIClient
 import pprint
 
 def main():
