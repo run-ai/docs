@@ -29,7 +29,7 @@ To get support use the following channels:
 
 * Or submit a ticket by clicking the button below:
 
-[Submit a Ticket](https://runai.secure.force.com/casesupport/CreateCaseForm){target=_blank .md-button .custom-ticket-button}
+[Submit a Ticket](https://www.nvidia.com/en-eu/support/enterprise/#contact-us){target=_blank .md-button .custom-ticket-button}
 
 
 
