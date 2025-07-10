@@ -32,16 +32,6 @@ To get support use the following channels:
 [Submit a Ticket](https://www.nvidia.com/en-eu/support/enterprise/#contact-us){target=_blank .md-button .custom-ticket-button}
 
 
-
-## Community 
-
-Run:ai provides its customers with access to the _Run:ai Customer Community portal_ to submit tickets, track ticket progress and update support cases.
-
-[Customer Community Portal](https://runai-support.force.com/community/s/){target=_blank .md-button .custom-ticket-button}
-
-Reach out to customer support for credentials.
-
-
 ## Run:ai Cloud Status Page
 
 Run:ai cloud availability is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
