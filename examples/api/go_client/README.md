@@ -1,6 +1,6 @@
-# Run:AI API Go Client
+# NVIDIA Run:ai API Go Client
 
-A professional Go client for the Run:AI API. This client authenticates using the application method (clientID/clientSecret), periodically calls the GET Workloads API, and automatically refreshes the token if it expires.
+A professional Go client for the NVIDIA Run:ai API. This client authenticates using the application method (clientID/clientSecret), periodically calls the GET Workloads API, and automatically refreshes the token if it expires.
 
 ## Features
 - Authenticate using client credentials (clientID/clientSecret)
@@ -8,7 +8,7 @@ A professional Go client for the Run:AI API. This client authenticates using the
 - Automatically refresh token on 401 Unauthorized
 - Configurable via CLI, environment variables, or `.env` file
 - Structured logging with configurable verbosity
-- Optionally updates your kubeconfig with the latest Run:AI API token under a `runai-api` user
+- Optionally updates your kubeconfig with the latest NVIDIA Run:ai API token under a `runai-api` user
 
 ## Installation
 
@@ -41,16 +41,16 @@ RUNAI_CLIENT_SECRET=your_client_secret_here
 
 ### CLI Arguments
 
-- `--client-id`         Run:AI client ID (overrides env)
-- `--client-secret`     Run:AI client secret (overrides env)
-- `--base-url`          Run:AI API base URL (default: https://api.run.ai)
+- `--client-id`         NVIDIA Run:ai client ID (overrides env)
+- `--client-secret`     NVIDIA Run:ai client secret (overrides env)
+- `--base-url`          NVIDIA Run:ai API base URL (default: https://api.run.ai)
 - `--interval`          Interval between API calls in seconds (default: 10800 = 3 hours)
 - `--log-level`         Logging level (DEBUG, INFO, WARNING, ERROR)
 - `--kubeconfig`        Path to kubeconfig file to update the `runai-api` user token (optional)
 
 ## Kubeconfig Integration
 
-If you provide the `--kubeconfig` option, the client will automatically set or update a user named `runai-api` in your kubeconfig file with the latest API token. This is useful for integrating with Kubernetes clusters that use Run:AI authentication.
+If you provide the `--kubeconfig` option, the client will automatically set or update a user named `runai-api` in your kubeconfig file with the latest API token. This is useful for integrating with Kubernetes clusters that use NVIDIA Run:ai authentication.
 
 - The token is updated after every successful authentication and on token refresh (e.g., after a 401 error).
 - If the user does not exist, it will be created.
