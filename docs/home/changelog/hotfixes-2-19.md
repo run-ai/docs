@@ -10,6 +10,12 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-28189 | 2.19.121 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
+| RUN-29607 | 2.19.120 | Fixed a security vulnerability in `cluster-installer` and `go-operator` related to CVE-2025-22869 with severity HIGH. |
+| RUN-29845 | 2.19.120 | Fixed a security vulnerability in cli-exposer, cluster-api, researcher-service, runai-cli, runaijob-controller, workload-controller, and workload-overseer related to CVE-2025-22874 with severity HIGH. |
+| RUN-30674 | 2.19.120 | Fixed an issue where, on rare occasions, running the `runai upgrade` command deleted all files in the current directory. |
+| RUN-26062 | 2.19.119 | Fixed an issue where a new API, intended for clusters running version 2.18 and above, was not disabled for older clusters, causing unintended workload operations - such as creation, deletion, resumption, or stoppage - after upgrading from versions below 2.18 to 2.18 or higher. |
+| RUN-29608 | 2.19.117 | Fix a security vulnerabilities in `golang.org/x/crypto` related to CVE-2025-22869 with severity HIGH. |
 | RUN-26361| 2.19.114 | Fixed an issue where Prometheus remote-write credentials were not properly updated on OpenShift clusters. |
 | RUN-28286 | 2.19.114 | Fixed an issue where CPU-only workloads incorrectly triggered idle timeout notifications intended for GPU workloads. |
 | RUN-28608 | 2.19.114 | Fixed an issue where users with the ML Engineer role were unable to delete multiple inference jobs at once. |
