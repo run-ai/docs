@@ -10,6 +10,11 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- |
+| RUN-28377 | 2.19.123 | Fixed an issue where the CLI cache folder was created in a location where the user might not have sufficient permissions, leading to failures. The cache folder is now created in the same directory as the config file. |
+| RUN-29092 | 2.19.123 | Fixed an issue where project quota could not be changed due to scheduling rules being set to 0 instead of null. |
+| RUN-29113 | 2.19.123 | Fixed a security vulnerability in `DOMPurify` related to CVE-2024-24762 with severity HIGH. |
+| RUN-29870 | 2.19.123 | Fixed an issue where updating the ClusterPolicy did not apply changes to the binder configuration unless the component was manually restarted. |
+| RUN-30673 | 2.19.123 | Fixed an issue where users with create permissions on one scope and read-only permissions on another were incorrectly allowed to create projects in both scopes. |
 | RUN-28189 | 2.19.121 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
 | RUN-29607 | 2.19.120 | Fixed a security vulnerability in `cluster-installer` and `go-operator` related to CVE-2025-22869 with severity HIGH. |
 | RUN-29845 | 2.19.120 | Fixed a security vulnerability in cli-exposer, cluster-api, researcher-service, runai-cli, runaijob-controller, workload-controller, and workload-overseer related to CVE-2025-22874 with severity HIGH. |
