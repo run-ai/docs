@@ -11,6 +11,7 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.59 | 14/07/2025 | RUN-28377 | Fixed an issue where the CLI cache folder was created in a location where the user might not have sufficient permissions, leading to failures. The cache folder is now created in the same directory as the config file. |
 | 2.20.58 | 14/07/2025 | RUN-28189 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
 | 2.20.57 | 13/07/2025 | RUN-30713 | Fixed an issue where configuring an incorrect Auth URL during CLI installation could lead to connectivity issues. To prevent this, the option to set the Auth URL during installation has been removed. The install script now automatically sets the control plane URL based on the script's source. |
 | 2.20.56 | 08/07/2025 | RUN-30673 | Fixed an issue where users with create permissions on one scope and read-only permissions on another were incorrectly allowed to create projects in both scopes. |
