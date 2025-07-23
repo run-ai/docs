@@ -49,19 +49,61 @@ The Run:ai control-plane installation has been rewritten and is no longer using 
 * Search for the customizations you found in the [optional configurations](./backend.md#additional-runai-configurations-optional) table and add them in the new format.  
 
 ## Upgrade Control Plane
-### Upgrade from version 2.13, or later
+
+!!! Note
+    To upgrade to a specific version, modify the `--version` flag by specifying the desired <VERSION>. You can find all available versions by using the `helm search repo runai-backend/control-plane --versions` command.
+
+
+### Upgrade from version 2.16
+
+You must perform a two-step upgrade:
+
+* Upgrade to version 2.18:
+
+=== "Connected"
+    
+    ``` bash
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "2.18.0" -f runai_control_plane_values.yaml --reset-then-reuse-values
+    ```
+
+=== "Airgapped"
+    ``` bash
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend control-plane-2.18.0.tgz -n runai-backend -f runai_control_plane_values.yaml --reset-then-reuse-values
+    ```
+
+* Then upgrade to the required version:
+
+=== "Connected"
+    ``` bash
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "<VERSION>" -f runai_control_plane_values.yaml --reset-then-reuse-values
+    ```
+
+=== "Airgapped"
+    ``` bash
+    helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
+    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend -f runai_control_plane_values.yaml --reset-then-reuse-values
+
+### Upgrade from version 2.17 or later
+
+If your current version is 2.17 or higher, you can upgrade directly to the required version:
+
 === "Connected"
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "~2.19.0" -f runai_control_plane_values.yaml --reset-then-reuse-values
+    helm upgrade runai-backend -n runai-backend runai-backend/control-plane --version "<VERSION>" -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
+
 === "Airgapped"
 
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
-    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend  -f runai_control_plane_values.yaml --reset-then-reuse-values
+    helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend -f runai_control_plane_values.yaml --reset-then-reuse-values
     ```
+
 ### Upgrade from version 2.9
 
 === "Connected"
