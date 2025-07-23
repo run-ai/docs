@@ -102,7 +102,6 @@ You must perform a two-step upgrade:
     ``` bash
     helm get values runai-backend -n runai-backend > runai_control_plane_values.yaml
     helm upgrade runai-backend control-plane-<NEW-VERSION>.tgz -n runai-backend -f runai_control_plane_values.yaml --reset-then-reuse-values
-    ```
 
 
 ### Upgrade from version 2.13, or later
