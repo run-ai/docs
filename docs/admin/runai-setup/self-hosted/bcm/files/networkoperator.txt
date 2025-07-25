@@ -1,0 +1,24 @@
+  
+    deployCR: true
+    nfd:
+      enabled: true
+    ofedDriver:
+      deploy: false
+    psp:
+      enabled: false
+    rdmaSharedDevicePlugin:
+      deploy: false
+    secondaryNetwork:
+      cniPlugins:
+        deploy: true
+      deploy: true
+      ipamPlugin:
+        deploy: false
+      multus:
+        deploy: true
+    nvIpam:
+      deploy: true
+    sriovDevicePlugin:
+      deploy: false
+    sriovNetworkOperator:
+      enabled: true
