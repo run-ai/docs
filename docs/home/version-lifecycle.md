@@ -15,7 +15,6 @@ If your deployment is approaching the end of support, we recommend planning an u
 
 | Version | Release Date | End of Full Support | End of Extended Support |
 |--|--|--|--|
-| [2.16](https://docs.run.ai/v2.16/) | 25 January 2024 | 25 January 2025 | 25 July 2025 |
 | [2.17](https://docs.run.ai/v2.17/) | 14 April 2024 | 14 April 2025 | 14 October 2025 |
 | [2.18](https://docs.run.ai/v2.18/home/overview/) | 21 July 2024 | 21 July 2025 | 21 January 2026 |
 | [2.19](https://docs.run.ai/v2.19/home/overview/) | 8 October 2024 | 8 October 2025 | 8 April 2026 |
