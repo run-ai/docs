@@ -33,16 +33,5 @@
     "properties": {
       "hidden": true
     }
-  },
-  {
-    "version": "v2.16",
-    "title": "2.16",
-    "aliases": [
-      "2.16-alias",
-      "v2.16-alias"
-    ],
-    "properties": {
-      "hidden": true
-    }
   }
 ]
