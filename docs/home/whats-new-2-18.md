@@ -18,7 +18,7 @@ date: 2024-June-14
 
 * <!-- Run-14732/Run-14733 Add backoff limit to workspace & standard training -->Added to UI backoff limit functionality to Training and Workspace workloads. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload's status will change to `Failed`. The UI will display the default number of retries based on 6 attempts for each pod in the workload. (For example, 6 pods = 36 attempts).
 
-* <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* count starts when any Run:ai workload reaches a a completed, or failed status will be automatically deleted (including logs). This change only affects new or cloned workloads.
+* <!-- RUN-18944/RUN-18945 Changing "Auto-deletion" default and presentation of the default value in the UI -->Updated *Auto-deletion time* default value from **never** to **30 days**. The *Auto-deletion time* count starts when any Run:ai workload reaches a a completed, or failed status will be automatically deleted. This change only affects new or cloned workloads. Logs are available only while the workload is in a non-terminal state. Once the workload completes or fails, logs are no longer accessible.
 
 * <!-- RUN-16917/RUN-19363 move to top Expose secrets in workload submission -->Added new *Data sources* of type *Secret* to workload form. *Data sources* of type *Secret* are used to hide 3rd party access credentials when submitting workloads. For more information, see [Submitting Workloads](../platform-admin/workloads/submitting-workloads.md#how-to-submit-a-workload).
 
