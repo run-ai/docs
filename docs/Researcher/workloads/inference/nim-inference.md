@@ -113,7 +113,6 @@ To add a new inference workload:
             *   __Any__ - All effects above match.
 
 11.  __Optional - General settings__:
-    *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.
     *   Set __annotations(s)__  
         Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
         *   Click __+ANNOTATION__
