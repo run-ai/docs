@@ -125,7 +125,7 @@ To add a new training workload:
     * Set the __number of runs__ the workload must finish to be considered complete. Multiple runs enhance the reliability and validity of the training results. 
     * If the number of runs is above 1, enter a value under __Parallelism__ to specify how many runs may be scheduled in __parallel__. The value must be less than or equal to the number of runs.
     *   Set the __backoff limit__ before workload failure. The backoff limit is the maximum number of retry attempts for failed workloads. After reaching the limit, the workload status will change to "Failed." Enter a value between 1 and 100.
-    *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically.
+    *   Set the __timeframe for auto-deletion__ after workload completion or failure. The time after which a completed or failed workload is deleted; if this field is set to 0 seconds, the workload will be deleted automatically. This setting does not affect log retention. Log retention is managed separately.
     *   Set __annotations(s)__  
         Kubernetes annotations are key-value pairs attached to the workload. They are used for storing additional descriptive metadata to enable documentation, monitoring and automation.
         *   Click __+ANNOTATION__
