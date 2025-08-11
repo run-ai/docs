@@ -11,12 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
-| 2.20.62 | 05/08/2025| RUN-28377 | Fixed an issue where the CLI cache folder was created in a location where the user might not have sufficient permissions, leading to failures. The cache folder is now created in the same directory as the config file. |
+| 2.20.62 | 05/08/2025 | RUN-28394 | Fixed an issue where the "Get Role by ID" API returned an "insufficient permissions" error for system administrator. |
 | 2.20.60 | 01/08/2025 | RUN-29092 | Fixed an issue where project quota could not be changed due to scheduling rules being set to 0 instead of null. |
-| 2.20.60  | 01/08/2025 | RUN-30746 | Fixed an issue where workloads could not be scheduled if the combined length of the project name and node pool name was excessively long. |
+| 2.20.60 | 01/08/2025 | RUN-30746 | Fixed an issue where workloads could not be scheduled if the combined length of the project name and node pool name was excessively long. |
 | 2.20.60  | 01/08/2025 | RUN-31039 | Fixed a base image security vulnerability in `libxml2` related to CVE-2025-49796 with severity HIGH. |
-| 2.20.60  | 01/08/2025 | RUN-31263 | Fixed an issue where setting defaults for servingPort fields failed and incorrectly required the container port default as well. |
-| 2.20.60  | 01/08/2025 | RUN-31265 | Fixed a security vulnerability related to CVE-2025-30749 with severity HIGH. |
+| 2.20.60 | 01/08/2025 | RUN-31263 | Fixed an issue where setting defaults for servingPort fields failed and incorrectly required the container port default as well. |
+| 2.20.60 | 01/08/2025 | RUN-31265 | Fixed a security vulnerability related to CVE-2025-30749 with severity HIGH. |
 | 2.20.60 | 01/08/2025 | RUN-31305 | Fixed a security vulnerability related to CVE-2025-22868 with severity HIGH. |
 | 2.20.59 | 14/07/2025 | RUN-28377 | Fixed an issue where the CLI cache folder was created in a location where the user might not have sufficient permissions, leading to failures. The cache folder is now created in the same directory as the config file. |
 | 2.20.58 | 14/07/2025 | RUN-28189 | Fixed a security vulnerability in `github.com.golang-jwt.jwt.v5` related to CVE-2025-30204 with severity HIGH. |
