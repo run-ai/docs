@@ -29,7 +29,7 @@ Run:ai system nodes run system-level services required to operate. This can be d
 By default, Run:ai applies a node affinity rule to prefer nodes that are labeled with `node-role.kubernetes.io/runai-system` for system services scheduling. You can modify the default node affinity rule by:
 
 * Editing the `spec.global.affinity` configuration parameter as detailed in [Advanced cluster configurations](../config/advanced-cluster-config.md).
-* Editing the `global.affinity` configuration as detailed in [Install control plane](../runai-setup/self-hosted/k8s/backend.md) for self-hosted deployments.
+* Editing the `global.affinity` configuration as detailed in [Install the Run:ai control plane](../runai-setup/self-hosted/k8s/backend.md) for self-hosted deployments.
 
 
 !!! Note
