@@ -40,8 +40,9 @@ To set a system role for a node in your Kubernetes cluster, follow these steps:
 The `runai-adm` CLI will label the node and set relevant cluster configurations.
 
 
-!!! Warning
-    Do not assign a system node role to the Kubernetes master node. This may disrupt Kubernetes functionality, particularly if the Kubernetes API Server is configured to use port 443 instead of the default 6443.
+!!! Note 
+    * To ensure high availability and prevent a single point of failure, it is recommended to configure at least three system nodes in your cluster.
+    * By default, Kubernetes master nodes are configured to prevent workloads from running on them as a best-practice measure to safeguard control plane stability. While this restriction is generally recommended, certain NVIDIA reference architectures allow adding tolerations to the NVIDIA Run:ai deployment so critical system services can run on these nodes.
 
 ### Worker nodes
 
