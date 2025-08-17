@@ -15,13 +15,11 @@ There are a number of matters to consider prior to installing using the Run:ai I
 
 ### Application secret key
 
-An **Application secret key** is required to connect the cluster to the Run:ai Platform, In order to get the Application secret key, a new cluster must be added.
+An **Application secret key** is required to connect the cluster to the Run:ai platform. In order to get the application secret key, a new cluster must be added.
 
 1.  follow the [Adding a new cluster](./cluster-install.md) setup instructions, **Do not follow the Installation instructions**.
 2.  Once cluster instructions are displayed, find the `controlPlane.clientSecret` flag in the displayed Helm command, copy and save its value.
 
-!!! Note
-    For **DGX Bundle customers**, installing their first Run:ai cluster - The Application secret key will be provided by the Run:ai Support team.
 
 ### System and network requirements
 
