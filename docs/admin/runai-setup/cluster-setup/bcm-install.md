@@ -1,5 +1,5 @@
 <!-- DGX Bundle -->
-# Install using Base Command Manager
+# Install Using Base Command Manager
 
 This article explains the steps required to install the Run:ai cluster on a DGX Kubernetes Cluster using NVIDIA Base Command Manager (BCM).
 
