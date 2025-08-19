@@ -221,7 +221,7 @@ nav:
         - 'Manually Create Projects' : 'admin/runai-setup/cluster-setup/project-management.md'
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Uninstall' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
-        - 'Install using Base Command Manager' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
+        - 'Install using Base Command Manager' : 'admin/runai-setup/cluster-setup/bcm-install.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
