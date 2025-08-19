@@ -96,6 +96,7 @@ plugins:
         'admin/runai-setup/cluster-setup/nvidia.md' : 'admin/runai-setup/cluster-setup/cluster-prerequisites.md'
         'admin/runai-setup/self-hosted/ocp/ocp-dependencies.md'  : 'admin/runai-setup/self-hosted/ocp/preparations.md'
         'admin/runai-setup/cluster-setup/researcher-authentication.md' : 'admin/authentication/authentication-overview.md'
+        'admin/runai-setup/cluster-setup/dgx-bundle.md' : 'admin/runai-setup/cluster-setup/bcm-install.md'
         'admin/runai-setup/authentication/sso.md' : 'admin/authentication/authentication-overview.md'
         'admin/researcher-setup/cli-troubleshooting.md' : 'admin/troubleshooting/troubleshooting.md'
         'admin/admin-ui-setup/overview.md' : 'platform-admin/aiinitiatives/overview.md'   # installation points here
@@ -220,7 +221,7 @@ nav:
         - 'Manually Create Projects' : 'admin/runai-setup/cluster-setup/project-management.md'
         - 'Cluster Upgrade' : 'admin/runai-setup/cluster-setup/cluster-upgrade.md'
         - 'Cluster Uninstall' : 'admin/runai-setup/cluster-setup/cluster-delete.md'
-        - 'Install using Base Command Manager' : 'admin/runai-setup/cluster-setup/dgx-bundle.md'  
+        - 'Install using Base Command Manager' : 'admin/runai-setup/cluster-setup/bcm-install.md'  
       - 'Self-hosted' : 
         - 'Overview' : 'admin/runai-setup/self-hosted/overview.md'
         - 'Kubernetes-based' :
