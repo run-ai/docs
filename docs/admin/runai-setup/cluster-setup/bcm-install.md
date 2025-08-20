@@ -1,13 +1,10 @@
 <!-- DGX Bundle -->
-# Run:ai & NVIDIA DGX Bundle
+# Install Using Base Command Manager
 
-NVIDIA [DGX](https://www.nvidia.com/en-us/data-center/dgx-systems/){target=_blank} is a line of NVIDIA-produced servers and workstations which specialize in using GPUs to accelerate deep learning applications.
+This article explains the steps required to install the Run:ai cluster on a DGX Kubernetes Cluster using [NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank}.
 
-NVIDIA DGX comes bundled out of the box with Run:ai. The purpose of this document is to guide you through the process of installing and configuring Run:ai in this scenario
+During the installation of the DGX you will select Run:ai as well as Run:ai prerequisites from the Base Command Manager installer.
 
-## NVIDIA Base Command Manager
-
-[NVIDIA Base Command Manager](https://www.nvidia.com/en-us/data-center/base-command/manager/){target=_blank} allows the deployment of software on NVIDIA DGX servers. During the installation of the DGX you will select `Run:ai` as well as Run:ai prerequisites from the Base Command Manager installer.
 
 ## Prerequisites
 
