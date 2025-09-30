@@ -6,13 +6,21 @@ generate config file
 runai config generate [flags]
 ```
 
+### Examples
+
+```
+# JSON configuration file
+runai config generate -f path/to/config.json
+# YAML configuration file
+runai config generate -f path/to/config.yaml
+
+```
+
 ### Options
 
 ```
-      --file string   Output structure to file
+  -f, --file string   file path for generating the configuration
   -h, --help          help for generate
-      --json          Output structure JSON
-      --yaml          Output structure YAML
 ```
 
 ### Options inherited from parent commands

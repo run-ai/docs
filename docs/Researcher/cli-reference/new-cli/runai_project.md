@@ -11,6 +11,8 @@ runai project [flags]
 ```
   -h, --help                 help for project
       --interactive enable   set interactive mode (enabled|disabled)
+      --limit int32          the maximum number of entries to return (default 50)
+      --offset int32         offset number of limit, default 0 (first offset)
 ```
 
 ### Options inherited from parent commands
