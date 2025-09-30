@@ -11,6 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.67 | 03/09/2025 | RUN-32057 | Fixed an issue where inference ownership protection did not work correctly. |
+| 2.20.67 | 03/09/2025 | RUN-31383 | Fixed a security vulnerability related to CVE-2025-7783 with severity HIGH. |
+| 2.20.67 | 03/09/2025 | RUN-31571 | Fixed a security vulnerability related to CVE-2025-6965 with severity HIGH. |
+| 2.20.67 | 03/09/2025 | RUN-31625 | Fixed a security vulnerability related to CVE-2025-7425 with severity HIGH. |
+| 2.20.67 | 03/09/2025 | RUN-31852 | Fixed a security vulnerability related to CVE-2025-47907 with severity HIGH. |
+| 2.20.67 | 03/09/2025 | RUN-31996 | Fixed a security vulnerability related to CVE-2025-22868 with severity HIGH. |
 | 2.20.63 | 14/08/2025 | RUN-31358 | Fixed an issue where enabling `enableWorkloadOwnershipProtection` for inference workloads caused newly submitted workloads to get stuck. |
 | 2.20.63 | 14/08/2025 | RUN-31483 | Fixed an issue which would apply the GPU value of the workload's pod with the wrong value if a default was set in the policy. |
 | 2.20.63 | 14/08/2025 | RUN-31792 | Fixed a security vulnerability related to CVE-2025-7425 with severity HIGH. |
