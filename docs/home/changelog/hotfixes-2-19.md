@@ -10,6 +10,14 @@ The following is a list of the known and fixed issues for Run:ai V2.19.
 
 | Internal ID | Hotfix # | Description |
 | :---- | :---- | :---- | 
+| RUN-31422 | 2.19.139 | Fixed an issue where updating project resources created through the deprecated Projects API did not work correctly. |
+| RUN-32146 | 2.19.139 | Fixed a security vulnerability related to CVE-2025-5914 with severity HIGH. |
+| RUN-32403 | 2.19.139 | Fixed a security vulnerability related to CVE-2025-47907 with severity HIGH. |
+| RUN-32400 | 2.19.139 | Fixed a security vulnerability related to CVE-2025-53547 with severity HIGH. |
+| RUN-32057 | 2.19.138 | Fixed an issue where inference ownership protection did not work correctly. |
+| RUN-31797 | 2.19.136 | Fixed a security vulnerability related to CVE-2025-53547 with severity HIGH. |
+| RUN-31961 | 2.19.136 | Fixed a security vulnerability related to CVE-2025-7425 with severity HIGH. |
+| RUN-31308 | 2.19.136 | Fixed a security vulnerability related to CVE-2025-22868 with severity HIGH. |
 | RUN-31305 | 2.19.126 | Fixed a security vulnerability in `golang.org/x/oauth2` related to CVE-2025-22868 with severity HIGH. |
 | RUN-28377 | 2.19.123 | Fixed an issue where the CLI cache folder was created in a location where the user might not have sufficient permissions, leading to failures. The cache folder is now created in the same directory as the config file. |
 | RUN-29092 | 2.19.123 | Fixed an issue where project quota could not be changed due to scheduling rules being set to 0 instead of null. |
