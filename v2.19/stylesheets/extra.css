@@ -289,32 +289,47 @@ html .md-nav__button.md-logo img {
   box-shadow: inset 0 -3px 0 0 #76B900;
 }
 
-/* Top banner */
-.banner {
-    position: sticky;
+/* Fix background flicker */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  /* Banner at top */
+  .banner {
+    position: fixed;
     top: 0;
-    z-index: 1001;
+    left: 0;
+    width: 100%;
+    height: 36px;
     background-color: #76B900;
-    padding: 6px 16px;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 14px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-}
 
-.banner a {
-    background-color: black;
-    color: white;
-    padding: 4px 10px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-}
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header sits below the banner */
+  .md-header {
+    position: fixed !important;
+    top: 36px !important; /* match banner height */
+    width: 100%;
+    z-index: 9998;
+    background-color: #000000 !important;
+  }
+  
+  /* Push main content below both */
+  .md-main {
+    margin-top: 92px !important; /* 36px banner + 56px header */
+  }
 
 
 /* Sidebar: Default all links to black */
