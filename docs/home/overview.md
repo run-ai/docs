@@ -32,10 +32,6 @@ To get support use the following channels:
 [Submit a Ticket](https://www.nvidia.com/en-eu/support/enterprise/#contact-us){target=_blank .md-button .custom-ticket-button}
 
 
-## Run:ai Cloud Status Page
-
-Run:ai cloud availability is monitored at [status.run.ai](https://status.run.ai){target=_blank}.
-
 ## Collect Logs to Send to Support
 
 As an IT Administrator, you can collect Run:ai logs to send to support. For more information see [logs collection](../admin/troubleshooting/logs-collection.md).
