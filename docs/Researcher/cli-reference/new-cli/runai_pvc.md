@@ -1,15 +1,11 @@
-## runai config
+## runai pvc
 
-configuration management
-
-```
-runai config [flags]
-```
+PVC management
 
 ### Options
 
 ```
-  -h, --help                 help for config
+  -h, --help                 help for pvc
       --interactive enable   set interactive mode (enabled|disabled)
 ```
 
@@ -26,7 +22,5 @@ runai config [flags]
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai config describe](runai_config_describe.md)	 - Returns information about the configuration.
-* [runai config generate](runai_config_generate.md)	 - generate config file
-* [runai config set](runai_config_set.md)	 - Set configuration values
+* [runai pvc list](runai_pvc_list.md)	 - List PVC
 
