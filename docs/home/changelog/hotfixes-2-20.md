@@ -11,7 +11,12 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
-| 2.20.67 | 03/09/2025 | RUN-32057 | Fixed an issue where inference ownership protection did not work correctly. |
+| 2.20.69 | 16/10/2025 | RUN-31422 | Fixed an issue where updating project resources created through the deprecated Projects API did not work correctly. |
+| 2.20.69 | 16/10/2025 | RUN-31995 | Fixed a security vulnerability related to CVE-2025-22868 with severity HIGH. |
+| 2.20.69 | 16/10/2025 | RUN-32146 | Fixed a security vulnerability related to CVE-2025-5914 with severity HIGH. |
+| 2.20.69 | 16/10/2025 | RUN-32730 | Fixed an issue where incorrect average GPU utilization per project and workload type was displayed in the Projects view charts and tables. |
+| 2.20.69 | 16/10/2025 | RUN-32789 | Fixed an issue in CLI v2 where the --master-extended-resource flag had no effect in MPI training workloads. |
+| 2.20.68 | 04/09/2025 | RUN-32057 | Fixed an issue where inference ownership protection did not work correctly. |
 | 2.20.67 | 03/09/2025 | RUN-31383 | Fixed a security vulnerability related to CVE-2025-7783 with severity HIGH. |
 | 2.20.67 | 03/09/2025 | RUN-31571 | Fixed a security vulnerability related to CVE-2025-6965 with severity HIGH. |
 | 2.20.67 | 03/09/2025 | RUN-31625 | Fixed a security vulnerability related to CVE-2025-7425 with severity HIGH. |
