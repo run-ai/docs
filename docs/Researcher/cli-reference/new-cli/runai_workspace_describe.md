@@ -42,6 +42,7 @@ runai workspace describe <workspace-name> --containers --pod-limit 20 --event-li
       --pod-limit int32     Limit the number of pods displayed (-1 for no limit) (default 10)
       --pods                Show pods information (default true)
   -p, --project string      Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
+      --sortEvents string   Sort the displayed events in ascending/descending order (asc, desc) (default "asc")
 ```
 
 ### Options inherited from parent commands
