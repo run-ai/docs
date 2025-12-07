@@ -56,7 +56,7 @@ runai training mpi logs mpi-01 --wait-timeout=30s
   -p, --project string          Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’
       --since duration          Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to all logs
       --since-time string       Return logs after a specific date (RFC3339)
-  -t, --tail int                Numer of tailed lines to fetch from the log, for no limit set to -1 (default -1)
+  -t, --tail int                Number of tailed lines to fetch from the log, for no limit set to -1 (default -1)
       --timestamps              Show timestamps in log output
       --wait-timeout duration   Timeout for waiting for workload to be ready for log streaming
 ```

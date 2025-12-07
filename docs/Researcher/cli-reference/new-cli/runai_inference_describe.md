@@ -1,31 +1,31 @@
-## runai training tensorflow describe
+## runai inference describe
 
-describe tf training
+describe inference
 
 ```
-runai training tensorflow describe [WORKLOAD_NAME] [flags]
+runai inference describe [WORKLOAD_NAME] [flags]
 ```
 
 ### Examples
 
 ```
-# Describe a tf training workload with a default project
-runai training tf describe <tf-name>
+# Describe a inference workload with a default project
+runai inference describe <inference-name>
 
-# Describe a tf training workload in a specific project
-runai training tf describe <tf-name> -p <project_name>
+# Describe a inference workload in a specific project
+runai inference describe <inference-name> -p <project_name>
 
-# Describe a tf training workload by UUID
-runai training tf describe --uuid=<tf_uuid>
+# Describe a inference workload by UUID
+runai inference describe --uuid=<inference_uuid>
 
-# Describe a tf training workload with specific output format
-runai training tf describe <tf-name> -o json
+# Describe a inference workload with specific output format
+runai inference describe <inference-name> -o json
 
-# Describe a tf training workload with specific sections
-runai training tf describe <tf-name> --general --compute --pods --events --networks
+# Describe a inference workload with specific sections
+runai inference describe <inference-name> --general --compute --pods --events --networks
 
-# Describe a tf training workload with container details and custom limits
-runai training tf describe <tf-name> --containers --pod-limit 20 --event-limit 100
+# Describe a inference workload with container details and custom limits
+runai inference describe <inference-name> --containers --pod-limit 20 --event-limit 100
 ```
 
 ### Options
@@ -57,5 +57,5 @@ runai training tf describe <tf-name> --containers --pod-limit 20 --event-limit 1
 
 ### SEE ALSO
 
-* [runai training tensorflow](runai_training_tensorflow.md)	 - tensorflow management
+* [runai inference](runai_inference.md)	 - inference management
 

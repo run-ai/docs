@@ -9,8 +9,24 @@ runai training list [flags]
 ### Examples
 
 ```
+# List all training workloads
 runai training list -A
-runai training list --state=<training_state> --limit=20
+
+# List training workloads in a specific project
+runai training list -p <project_name>
+
+# List training workloads filtered by status
+runai training list --status <status>
+
+# List training workloads filtered by framework
+runai training list --framework <framework>
+
+# List training workloads with a specific output format
+runai training list --yaml
+
+# List training workloads with pagination
+runai training list --limit 20 --offset 40
+
 ```
 
 ### Options
@@ -20,7 +36,7 @@ runai training list --state=<training_state> --limit=20
       --framework string   filter by workload framework
   -h, --help               help for list
       --json               Output structure JSON
-      --limit int32        number of workload in list (default 50)
+      --limit int32        the maximum number of entries to return (default 50)
       --no-headers         Output structure table without headers
       --offset int32       offset number of limit, default 0 (first offset)
   -p, --project string     Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’

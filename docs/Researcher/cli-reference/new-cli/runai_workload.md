@@ -5,8 +5,7 @@ workload management
 ### Options
 
 ```
-  -h, --help                 help for workload
-      --interactive enable   set interactive mode (enabled|disabled)
+  -h, --help   help for workload
 ```
 
 ### Options inherited from parent commands
@@ -22,6 +21,7 @@ workload management
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
+* [runai workload delete](runai_workload_delete.md)	 - Delete workloads
 * [runai workload describe](runai_workload_describe.md)	 - Describe a workload
 * [runai workload list](runai_workload_list.md)	 - List workloads
 

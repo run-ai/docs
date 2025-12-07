@@ -19,7 +19,7 @@ runai workspace list
 runai workspace list -p <project_name>
 
 # List all workspace workloads with a specific output format
-runai workspace list -o wide
+runai workspace list --yaml
 
 # List workspace workloads with pagination
 runai workspace list --limit 20 --offset 40
@@ -31,7 +31,7 @@ runai workspace list --limit 20 --offset 40
   -A, --all              list workloads from all projects
   -h, --help             help for list
       --json             Output structure JSON
-      --limit int32      number of workload in list (default 50)
+      --limit int32      the maximum number of entries to return (default 50)
       --no-headers       Output structure table without headers
       --offset int32     offset number of limit, default 0 (first offset)
   -p, --project string   Specify the project to which the command applies. By default, commands apply to the default project. To change the default project use ‘runai config project <project name>’

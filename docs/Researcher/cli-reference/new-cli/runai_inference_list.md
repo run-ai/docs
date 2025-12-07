@@ -1,28 +1,28 @@
-## runai training pytorch list
+## runai inference list
 
-list pytorch training
+list inference
 
 ```
-runai training pytorch list [flags]
+runai inference list [flags]
 ```
 
 ### Examples
 
 ```
-# List all pytorch training workloads
-runai training pytorch list -A
+# List all inference workloads
+runai inference list -A
 
-# List pytorch training workloads with default project
-runai training pytorch list
+# List inference workloads with default project
+runai inference list
 
-# List pytorch training workloads in a specific project
-runai training pytorch list -p <project_name>
+# List inference workloads in a specific project
+runai inference list -p <project_name>
 
-# List all pytorch training workloads with a specific output format
-runai training pytorch list --yaml
+# List all inference workloads with a specific output format
+runai inference list --yaml
 
-# List pytorch training workloads with pagination
-runai training pytorch list --limit 20 --offset 40
+# List inference workloads with pagination
+runai inference list --limit 20 --offset 40
 ```
 
 ### Options
@@ -52,5 +52,5 @@ runai training pytorch list --limit 20 --offset 40
 
 ### SEE ALSO
 
-* [runai training pytorch](runai_training_pytorch.md)	 - pytorch management
+* [runai inference](runai_inference.md)	 - inference management
 

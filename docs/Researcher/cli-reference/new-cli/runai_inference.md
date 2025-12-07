@@ -1,16 +1,11 @@
-## runai config
+## runai inference
 
-configuration management
-
-```
-runai config [flags]
-```
+inference management
 
 ### Options
 
 ```
-  -h, --help                 help for config
-      --interactive enable   set interactive mode (enabled|disabled)
+  -h, --help   help for inference
 ```
 
 ### Options inherited from parent commands
@@ -26,7 +21,9 @@ runai config [flags]
 ### SEE ALSO
 
 * [runai](runai.md)	 - Run:ai Command-line Interface
-* [runai config describe](runai_config_describe.md)	 - Returns information about the configuration.
-* [runai config generate](runai_config_generate.md)	 - generate config file
-* [runai config set](runai_config_set.md)	 - Set configuration values
+* [runai inference delete](runai_inference_delete.md)	 - delete inference workload
+* [runai inference describe](runai_inference_describe.md)	 - describe inference
+* [runai inference list](runai_inference_list.md)	 - list inference
+* [runai inference submit](runai_inference_submit.md)	 - submit inference
+* [runai inference update](runai_inference_update.md)	 - update inference
 
