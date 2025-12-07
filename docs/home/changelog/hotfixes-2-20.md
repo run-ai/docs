@@ -11,6 +11,16 @@ This section provides details on all hotfixes available for version 2.20. Hotfix
 
 | Version | Date | Internal ID | Description |
 |--|--|--|--|
+| 2.20.72 | 20/11/2025 | RUN-31738 | Fixed an issue where GPU fraction requests were not applied when submitting distributed workloads. |
+| 2.20.72 | 20/11/2025 | RUN-28762 | Fixed an issue with inference workload ownership protection. |
+| 2.20.72 | 20/11/2025 | RUN-32400 | Fixed a security vulnerability related to CVE-2025-53547 with severity HIGH. | 
+| 2.20.72 | 20/11/2025 | RUN-32572 | Fixed an issue where the RunaiAgentPullRateLow and RunaiAgentClusterInfoPushRateLow Prometheus alerts were firing incorrectly without cause. |
+| 2.20.72 | 20/11/2025 | RUN-32889 | Fixed an issue where idle GPU timeout rules were incorrectly applied to preemptible workspaces. |
+| 2.20.70 | 19/11/2025 | RUN-31803 | Fixed an issue where the Quota management dashboard occasionally displayed incorrect GPU quota values. |
+| 2.20.70 | 19/11/2025 | RUN-32945 | Fixed a security vulnerability related to CVE-2025-58754 with severity HIGH. |
+| 2.20.70 | 19/11/2025 | RUN-33006 | Fixed an issue in the CLI installer where the PATH was not configured for all shells. The installer now correctly configures PATH for both zsh and bash. |
+| 2.20.70 | 19/11/2025 | RUN-33613 | Fixed missing validations for CPU resources when the CPU quota feature flag was disabled, which caused project and department updates to skip required CPU checks. |
+| 2.20.70 | 19/11/2025 | RUN-33947 | Fixed an issue where SMTP configurations using the “none” option still sent empty username/password fields. Added the auth_none type to ensure no credentials are sent for passwordless SMTP servers. |
 | 2.20.69 | 16/10/2025 | RUN-31422 | Fixed an issue where updating project resources created through the deprecated Projects API did not work correctly. |
 | 2.20.69 | 16/10/2025 | RUN-31995 | Fixed a security vulnerability related to CVE-2025-22868 with severity HIGH. |
 | 2.20.69 | 16/10/2025 | RUN-32146 | Fixed a security vulnerability related to CVE-2025-5914 with severity HIGH. |
